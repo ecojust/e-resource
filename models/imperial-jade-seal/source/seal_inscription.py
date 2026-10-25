@@ -119,4 +119,4 @@ if __name__ == '__main__':
     print('INSCRIPTION_TEST',result,'final_faces',len(base.data.polygons))
     assert len(base.data.polygons)>100
     assert all(g['vertices']>20 for g in result['glyphs'])
-    bpy.ops.wm.save_as_mainfile(filepath='/workspace/seal_inscription_test.blend')
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'seal_inscription_test.blend'))
