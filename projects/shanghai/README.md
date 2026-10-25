@@ -2,11 +2,11 @@
 
 上海16区三维地图与第三人称漫游项目。**外滩10栋历史建筑提供近景建筑细节，另有4栋陆家嘴地标；全市背景由1,708个LoD1分块、1,796,419个普通建筑及部件要素组成。** 外滩模型根据公开照片与地图轮廓逐栋制作，包含真实凹窗、门洞、柱廊、檐口和屋顶构件；全市普通建筑仍为轮廓与高度挤出的体块。
 
-[在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html)（首次出现托管提示时点击 **Open the page**）。
+[在线预览](https://rawcdn.githack.com/ecojust/e-resource/bb464592ca0f802d834037e03af47f3a9f7ebc10/projects/shanghai/index.html)（首次出现托管提示时点击 **Open the page**）。
 
 ![外滩第三人称街景](assets/previews/bund-street.png)
 
-[网页启动包](downloads/shanghai-web-launcher.zip)可解压后按包内说明启动HTTP服务，页面按需联网加载模型和地图。完整模型、可编辑文件及重建源码也在本项目内。
+[网页启动包](downloads/shanghai-web-launcher.zip)约31.5MB，包含14栋地标、滨江街道和参考照片；解压后按包内说明启动HTTP服务。普通建筑分块按需从固定版本联网加载，地图仍需联网。完整模型、可编辑文件及重建源码也在本项目内。
 
 ## 打开页面与操作
 
