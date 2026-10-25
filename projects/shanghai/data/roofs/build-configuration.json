@@ -1,0 +1,50 @@
+{
+  "version": "source-qualified-roof-patch-v1",
+  "build_version": "shanghai-fullcity-v2.0",
+  "sampler_version": "2026-10-25-v1",
+  "compress": true,
+  "target_bytes": 9000000,
+  "height_lock_sha256": "b80c817ffa1ee7bbd8241cd4fa60374ad5fca7f3bb299cb33225fd3846279d45",
+  "height_raster_sha256": "3d4fe310d0c159e19ac847fe51bc7e14316877b8662ea0bc7cc2d75db9c73535",
+  "cnbh_raster_sha256": "6bdaefd92ce796c87c4ee0f25150cdafef6d22fdabd2cf2ad41741fd8ec52777",
+  "cmab_manifest_sha256": "8e953d042946c884af219c3f9e68489cec489f0bb669accd090350dfabaa910f",
+  "sampler_source_sha256": "fc208ef25dadc20edbc01adfcc75ec7e426a053b2000e96c1ce0830579520407",
+  "raster_sampler_source_sha256": "7cdfbaee8752edf2c90de97bf174e4a986b10f15e78861d3d74715052a01dad0",
+  "parent_residual_file_sha256": "c22096f0c05ed29692da4867897ff27e737eb847ee0df3fb6cf5d27c687fd682",
+  "landmark_exclusions_sha256": "37eb2686ebb792e3654a87a588887ae9241a4f8fe46653adc7ef33ad92051832",
+  "exporter_source_sha256": "2bcc6d412ce46cfe36abfe9e535623a3fa034a6115bc7738b4de6b434c35263b",
+  "mesh_writer_source_sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906",
+  "roof_geometry_source_sha256": "8454cf909230f2c4bce97f954294be6c375976c98e7fc6378dc878e3b4a6e561",
+  "roof_geometry_version": "source-roof-geometry-v1",
+  "roof_qualification_sha256": "25eeaa8e353190e54cbc575cabe0110530540c5dd1a04b3c04e943c5ffd3c0f2",
+  "qualification_schema_version": "shanghai-qualified-roofs-v1",
+  "qualification_input": {
+    "filename": "cached-roof-candidates.geojson",
+    "sha256": "f65d62b34d74070b63e928437e61fc706774b292234f8111e3c7f9fe4a03702b",
+    "feature_count": 1118
+  },
+  "qualification_policy": {
+    "accepted_shapes": [
+      "gabled",
+      "skillion"
+    ],
+    "height_semantics": "OSM height is absolute top above ground; eave=height-roof_height; base=max(0,min_height)",
+    "height_arithmetic": "Require roof_height <= height-base without epsilon inflation; preserve all numeric source values. Negative source min_height would clamp base to zero; no accepted record has a negative min_height.",
+    "minimum_area_m2": 1.0,
+    "minimum_span_m": 0.25,
+    "gabled_minimum_aspect_ratio": 1.2,
+    "gabled_minimum_rectangularity": 0.95,
+    "gabled_minimum_convexity": 0.98,
+    "gabled_maximum_edge_axis_error_degrees": 8.0,
+    "numeric_height_tolerance_m": 0.0001,
+    "numeric_direction_tolerance_degrees": 0.0001,
+    "geometry": "Keep exact cached polygon; no repairs, clipping, simplification, holes, multipart geometry, or MRR substitution.",
+    "direction": "Use exact-version OSM roof:direction downslope bearing; East/South unit=[sin(theta),-cos(theta)].",
+    "orientation": "Explicit exact-version OSM along/across only; along ridge follows long MRR axis, across follows short MRR axis.",
+    "has_parts_parent": "Reject whole parents with parts, including restored residual parents.",
+    "historical_geometry_limit": "Historical way tags are checked. Way node IDs alone do not verify historical node coordinates; footprints remain the cached Overture geometry.",
+    "maximum_network_concurrency": 2
+  },
+  "base_manifest_sha256": "0fd29b49216df68c8c669a3bfd0f018650b3d4c89ba43392db0fe1b4ef9bd3f3",
+  "partition_policy": "Replay original median-split tree; retain every current output ID. Fail rather than silently split or omit accepted roofs."
+}

@@ -310,7 +310,7 @@ def plan(project, commit):
     # Runtime models and city chunks are pinned above. Keep the project-info
     # link on the current documentation, where the latest launcher is published.
 
-    instructions = f'''上海漫游 v4 · 本地网页启动包
+    instructions = f'''上海漫游 v4.1 · 本地网页启动包
 
 一、启动
 完整解压后进入 shanghai 目录，在该目录运行：
@@ -336,7 +336,7 @@ WASD/方向键行走，Shift加速，拖动转向，滚轮调镜头；Q/E转动�
 外滩建筑按公开照片和轮廓复建柱廊、凹窗、檐口及屋顶；未获得实测资料的
 尺寸与侧后细节含推定。近处使用完整建筑、远处切换精简LOD；表面纹理来自
 可再分发的通用石材与沥青素材，不代表对外滩实地材料的扫描。全市普通建筑
-仍是公开足迹挤出的体块背景，高度以
+以公开足迹体块背景为主；126处另有已核验参数的斜屋顶。高度以
 公开预测/栅格估计为主。两类模型均不能用作测绘或现实导航。
 
 完整项目、原始模型、Blender文件、重建源码及来源：
@@ -349,7 +349,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
 更多数据说明见 data/SOURCES.md、data/heights/HEIGHT_SOURCES.md 和 data/bund/。
 '''
     payload['使用说明.txt'] = instructions.encode('utf-8')
-    payload['README.md'] = ('# 上海漫游 v4 启动包\n\n' + instructions).encode('utf-8')
+    payload['README.md'] = ('# 上海漫游 v4.1 启动包\n\n' + instructions).encode('utf-8')
 
     for name in payload:
         if name.startswith(OMITTED_PREFIXES) or name.endswith(('.blend', '.blend1')):
@@ -358,7 +358,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
             raise ValueError(f'Unexpected GLB outside the selected runtime models: {name}')
     references_checked = validate_static_references(payload)
     package_manifest = {
-        'version': 'shanghai-web-launcher-v4', 'commit': commit,
+        'version': 'shanghai-web-launcher-v4.1', 'commit': commit,
         'landmark_count': len(landmarks), 'scene_prop_count': len(props),
         'city_model_count': len(city['tiles']), 'city_feature_count': city.get('feature_count'),
         'city_manifest_source_sha256': sha256(city_data), 'city_cdn_prefix': city_prefix,

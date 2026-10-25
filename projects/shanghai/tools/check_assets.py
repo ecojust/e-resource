@@ -115,6 +115,45 @@ if city_path.is_file():
         if not city.get('coverage_balanced'):errors.append('City geometry does not balance against the source')
         if sum(city['height_quality'].values())!=city['feature_count']:errors.append('City height provenance totals do not agree')
     if not (ROOT/'vendor/meshopt_decoder.module.js').is_file():errors.append('Missing Meshopt decoder')
+if city_path.is_file() and city.get('source_roof_enhancement'):
+    try:
+        enhancement = city['source_roof_enhancement']
+        qualification_path = ROOT/'data/roofs/qualified-roofs.json'
+        qualified = json.loads(qualification_path.read_text())
+        qualification_sha = hashlib.sha256(qualification_path.read_bytes()).hexdigest()
+        assert qualification_sha == enhancement['patch_qualification_sha256'], 'qualification hash differs'
+        roofs = {r['key']: r for r in qualified['roofs']}
+        assert qualified['complete'] and len(roofs) == len(qualified['roofs']) == qualified['counts']['qualified'] == enhancement['count'], 'qualification totals differ'
+        applied = []
+        for record in city['tiles']:
+            detail = record.get('source_roof_enhancement')
+            if not detail:
+                continue
+            assert detail['qualification_sha256'] == qualification_sha, record['id']
+            assert detail['count'] == len(detail['keys']) == len(detail['roof_stats']), record['id']
+            assert set(detail['keys']) == {r['key'] for r in detail['roof_stats']}, record['id']
+            for roof in detail['roof_stats']:
+                source = roofs[roof['key']]
+                assert record['tile'] == source['owner_tile'], roof['key']
+                for field in ('height', 'base', 'roof_height', 'roof_shape'):
+                    assert roof[field] == source[field], (roof['key'], field)
+            applied.extend(detail['keys'])
+        assert len(applied) == len(set(applied)) == len(roofs) and set(applied) == set(roofs) == set(enhancement['qualified_keys']), 'roof coverage differs'
+        for roof in roofs.values():
+            source = roof['osm']
+            path = ROOT/'data/roofs/source-evidence'/source['evidence_file']
+            assert hashlib.sha256(path.read_bytes()).hexdigest() == source['sha256'], roof['key']
+            evidence = json.loads(path.read_text())
+            assert any(e.get('type') == 'way' and e.get('id') == source['way_id'] and e.get('version') == source['version'] for e in evidence['elements']), roof['key']
+        geometry_report = json.loads((ROOT/'data/roofs/geometry-validation.json').read_text())
+        assert geometry_report['status'] == 'pass' and geometry_report['qualified_audit']['passed_records'] == len(roofs), 'geometry checks incomplete'
+        assert geometry_report['qualified_audit']['input_qualification_sha256'] == qualification_sha, 'geometry report qualification differs'
+        assert geometry_report['module_sha256'] == hashlib.sha256((ROOT/'source/city/roof_geometry.py').read_bytes()).hexdigest(), 'roof geometry source changed after validation'
+        patch_qualification = ROOT/'assets/city/source-roof-patch-qualified-roofs.json'
+        assert hashlib.sha256(patch_qualification.read_bytes()).hexdigest() == qualification_sha, 'city copy of qualification differs'
+    except (OSError, KeyError, ValueError, AssertionError) as error:
+        errors.append('Source roof validation: ' + str(error))
+
 bund_path=ROOT/'data/bund/manifest.json'
 if bund_path.is_file():
     bund=json.loads(bund_path.read_text())

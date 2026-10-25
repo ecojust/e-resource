@@ -149,3 +149,13 @@ migrates their old configuration hashes. The V2 audit remains in
 `data/audit/fullcity-models-validation-v2.json`; the main audit file now covers
 the complete V3 merged city. Both source provenance and unknown/photo-estimated
 architectural dimensions are retained.
+
+## Source-qualified roof patch (v4.1)
+
+126 source features now use individually qualified gabled/skillion roofs.
+This is a small parametric subset, not a change to the whole-city LoD1 claim.
+Source tags were checked against exact historical OSM way versions; footprints
+remain the original frozen Overture polygons. See `data/roofs/README.md` and
+`source/city/SOURCE_ROOF_PATCHES.md` for offline qualification, build, merge,
+assumptions and validation. The original exporter remains flat-roof by default;
+only an explicit qualified override set activates the new roof geometry.

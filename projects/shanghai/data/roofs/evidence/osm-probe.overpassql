@@ -1,0 +1,1 @@
+[out:json][timeout:35];area(3600371650)->.a;wr(area.a)["roof:shape"];out count;

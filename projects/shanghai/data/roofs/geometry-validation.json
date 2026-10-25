@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-25T23:10:29.252192+00:00",
+  "module": "/workspace/shanghai_project/source/city/roof_geometry.py",
+  "module_sha256": "8454cf909230f2c4bce97f954294be6c375976c98e7fc6378dc878e3b4a6e561",
+  "audit_script_sha256": "ccea1b612de9643b86060b8f7c93e1af17ea94c6f6566459351077af9ecf0dd7",
+  "test_groups": [
+    "test_append_uses_existing_mesh_offsets_and_rejects_atomically",
+    "test_collinear_and_duplicate_input_vertices_preserve_closed_shell",
+    "test_decimal_zero_eave_roundoff_is_bounded_by_ulps",
+    "test_direction_reversal_semantics",
+    "test_invalid_sources_fail_explicitly",
+    "test_near_rectangular_clip_keeps_oblique_footprint_and_ridge_height",
+    "test_rectangular_roofs_have_exact_volume_and_closed_outward_shell",
+    "test_rotation_clockwise_and_large_offset",
+    "test_zero_eave_height_is_a_closed_wedge"
+  ],
+  "test_group_count": 9,
+  "test_groups_passed": true,
+  "checks": {
+    "boundary_closure": "Every exactly coordinate-welded shell edge occurs twice with opposite orientation.",
+    "outward_normals": "Every nondegenerate triangle agrees with its unit normals; shell signed volume is positive.",
+    "source_height": "All generated vertices stay within supplied absolute base/top; extrema equal both supplied values.",
+    "footprint_area": "Upward triangle projection union matches the input footprint to eight decimal places in square metres; vertices are within 1e-8m of the polygon.",
+    "no_extra_roof_volume": "Unit fixtures verify analytical roof volume and no retained flat top cap under pitched roofs."
+  },
+  "precision_notice": "Numerical tolerances verify generated mesh consistency only; they do not establish survey, source-footprint or architectural accuracy.",
+  "qualified_audit": {
+    "input_qualification": "/workspace/shanghai_realism_v4/roof-data-audit/qualified-roofs.json",
+    "input_qualification_sha256": "25eeaa8e353190e54cbc575cabe0110530540c5dd1a04b3c04e943c5ffd3c0f2",
+    "input_qualification_complete": true,
+    "qualified_records": 126,
+    "passed_records": 126,
+    "passed_by_shape": {
+      "gabled": 29,
+      "skillion": 97
+    },
+    "failures": []
+  },
+  "status": "pass"
+}

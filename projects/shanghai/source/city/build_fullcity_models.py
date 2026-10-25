@@ -129,16 +129,18 @@ def split_features(features,bbox):
     return [(list(x[0] for x in pairs[:mid]),left),(list(x[0] for x in pairs[mid:]),right)]
 
 
-def create_meshes(features,origin,sampler):
+def create_meshes(features,origin,sampler,roof_overrides=None):
     meshes=[Mesh() for _ in range(4)]
     quality=Counter({k:0 for k in HEIGHT_KEYS});districts=defaultdict(lambda:Counter({k:0 for k in HEIGHT_KEYS}))
     ids={'building':set(),'building_part':set()};sources=Counter();invalid=[]
     represented=[];polygon_count=0;building_count=part_count=0
     for feature in features:
         props=feature['properties'];layer=props.get('source_layer','building')
+        roof_override=(roof_overrides or {}).get(layer+':'+str(props.get('id','')))
         if props.get('id'):ids[layer].add(str(props['id']))
         if layer=='building_part' and props.get('building_id'):ids['building'].add(str(props['building_id']))
         if props.get('renderable') is False or props.get('_landmark_replaced'):
+            if roof_override:raise ValueError(f'Qualified roof is not renderable: {props.get("id")}')
             continue
         geometry=feature['geometry']
         if geometry['type'] not in ('Polygon','MultiPolygon'):
@@ -159,13 +161,30 @@ def create_meshes(features,origin,sampler):
                 if kind not in HEIGHT_KEYS:raise ValueError(f'Unknown height quality {kind}')
         roof=1 if height<18 else 2 if height<60 else 3
         polygons=geometry['coordinates'] if geometry['type']=='MultiPolygon' else [geometry['coordinates']]
+        if roof_override:
+            if geometry['type']!='Polygon' or len(polygons)!=1 or len(polygons[0])!=1 or props.get('_parent_residual'):
+                raise ValueError(f'Qualified roof topology changed: {props.get("id")}')
+            for name,actual in [('base',base),('height',height)]:
+                if name in roof_override and abs(float(roof_override[name])-actual)>1e-6:
+                    raise ValueError(f'Qualified roof {name} changed: {props.get("id")}')
         successful=0
         for polygon in polygons:
             rings=[cleaned_ring(r,origin,i==0) for i,r in enumerate(polygon)]
             if not rings or not rings[0]:
+                if roof_override:raise ValueError(f'Qualified roof exterior is degenerate: {props.get("id")}')
                 invalid.append({'id':props.get('id'),'reason':'degenerate exterior ring'});continue
-            try:successful+=int(meshes[roof].polygon(rings,base,height,meshes[0]))
-            except (ValueError,IndexError) as e:invalid.append({'id':props.get('id'),'reason':type(e).__name__})
+            if roof_override:
+                from roof_geometry import append_roof_shell
+                stats=append_roof_shell(meshes[roof],meshes[0],rings,base=base,height=height,
+                    roof_height=roof_override['roof_height'],roof_shape=roof_override['roof_shape'],
+                    ridge_unit=roof_override.get('ridge_unit'),down_slope_unit=roof_override.get('down_slope_unit'))
+                props['_applied_source_roof']={'key':layer+':'+str(props['id']),'id':str(props['id']),
+                    'source_layer':layer,'district_id':district,'roof_shape':roof_override['roof_shape'],
+                    'roof_height':roof_override['roof_height'],'base':base,'height':height,'geometry_stats':stats}
+                successful+=1
+            else:
+                try:successful+=int(meshes[roof].polygon(rings,base,height,meshes[0]))
+                except (ValueError,IndexError) as e:invalid.append({'id':props.get('id'),'reason':type(e).__name__})
         if not successful:
             # Source export already repairs polygon topology. Fail visibly so a
             # failed footprint is never silently omitted from a complete city.
@@ -189,7 +208,15 @@ def create_meshes(features,origin,sampler):
 
 def publish_chunk(features,origin,bbox,tile,chunk_id,raw_hash,source_meta,options,depth=0):
     output=Path(options['output'])
-    meshes,represented,quality,districts,ids,sources,invalid,polygon_count,buildings,parts=create_meshes(features,origin,_SAMPLER)
+    fixed=options.get('fixed_output_ids',{}).get('-'.join(map(str,tile)))
+    if fixed and chunk_id not in fixed:
+        if not any(identity.startswith(chunk_id+'-s') for identity in fixed):
+            raise ValueError(f'Unknown retained partition: {chunk_id}')
+        result=[]
+        for n,(group,group_bbox) in enumerate(split_features(features,bbox)):
+            if group:result.extend(publish_chunk(group,origin,group_bbox,tile,chunk_id+f'-s{n}',raw_hash,source_meta,options,depth+1))
+        return result
+    meshes,represented,quality,districts,ids,sources,invalid,polygon_count,buildings,parts=create_meshes(features,origin,_SAMPLER,options.get('roof_overrides'))
     if not represented:return []
     residual_features=[f for f in represented if f['properties'].get('_parent_residual')]
     residual_quality=Counter(f['properties']['_applied_height_quality'] for f in residual_features)
@@ -206,12 +233,19 @@ def publish_chunk(features,origin,bbox,tile,chunk_id,raw_hash,source_meta,option
            'residual_parent_area_m2':sum(f['properties'].get('_parent_residual_area_m2',0) for f in residual_features),
            'residual_height_policy':'Parent height and floor count are retained as raw source attributes but not treated as podium height. Exact residual footprints use explicitly estimated CMAB/CNBH/GHSL/default heights; source min_height is retained.',
            'district_counts':districts,'geometry_sources':sources}
+    roof_stats=[f['properties']['_applied_source_roof'] for f in represented if f['properties'].get('_applied_source_roof')]
+    if roof_stats:
+        extra['source_roof_enhancement']={'count':len(roof_stats),'keys':sorted(r['key'] for r in roof_stats),
+            'roofs_by_shape':dict(Counter(r['roof_shape'] for r in roof_stats)),
+            'roofs_by_district':dict(Counter(r['district_id'] for r in roof_stats)),
+            'qualification_sha256':options['roof_qualification_sha256'],'geometry_version':options['roof_geometry_version'],
+            'roof_stats':roof_stats}
     tempdir=output/'.work';tempdir.mkdir(parents=True,exist_ok=True)
     uncompressed=tempdir/(chunk_id+'.raw.glb')
     triangles=write_glb(uncompressed,meshes,extra)
     uncompressed_size=uncompressed.stat().st_size
     del meshes
-    if uncompressed_size>options['target_bytes'] and len(features)>1 and depth<16:
+    if not fixed and uncompressed_size>options['target_bytes'] and len(features)>1 and depth<16:
         uncompressed.unlink()
         result=[]
         for n,(group,group_bbox) in enumerate(split_features(features,bbox)):
@@ -246,6 +280,7 @@ def publish_chunk(features,origin,bbox,tile,chunk_id,raw_hash,source_meta,option
             'residual_parent_height_quality':dict(residual_quality),
             'compression':compression,'source_sha256':raw_hash,'source_release':extra['source_release'],
             'invalid_polygon_count':len(invalid),'invalid_polygons':invalid,'build_version':VERSION,'completed_at':utc()}
+    if roof_stats:record['source_roof_enhancement']=extra['source_roof_enhancement']
     atomic_json(output/'records'/(chunk_id+'.json'),record)
     return [record]
 
@@ -302,6 +337,11 @@ def export_source(source_name,options):
         elif identity in excluded[layer]:
             props['_landmark_replaced']=True;replacements[code]+=1
     records=publish_chunk(features,origin,bbox,tile,base_id,raw_hash,meta,options)
+    if options.get('roof_overrides') is not None:
+        expected_roofs={key for key in options['roof_overrides'] if any(key==f['properties'].get('source_layer','building')+':'+str(f['properties'].get('id','')) for f in features)}
+        applied=[key for record in records for key in record.get('source_roof_enhancement',{}).get('keys',[])]
+        if set(applied)!=expected_roofs or len(applied)!=len(expected_roofs):
+            raise ValueError(f'Qualified roof coverage mismatch in {base_id}: expected {sorted(expected_roofs)}, applied {applied}')
     rendered=Counter()
     for record in records:
         for code,counts in record['district_counts'].items():rendered[code]+=counts['features']
@@ -317,6 +357,9 @@ def export_source(source_name,options):
            'source_district_counts':dict(expected),'landmark_replacement_counts':dict(replacements),
            'residual_parent_counts':dict(residuals),'residual_parent_area_m2':dict(residual_areas),'parent_residual_sha256':residual_hash,
            'landmark_geometry_override_counts':dict(overrides),'completed_at':utc()}
+    if options.get('roof_overrides') is not None:
+        state['source_roof_enhancement']={'count':len(applied),'keys':sorted(applied),
+            'qualification_sha256':options['roof_qualification_sha256'],'geometry_version':options['roof_geometry_version']}
     atomic_json(state_path,state)
     return {'tile':base_id,'status':'done','models':len(records),'features':sum(r['building_count'] for r in records),'bytes':sum(r['size_bytes'] for r in records)}
 

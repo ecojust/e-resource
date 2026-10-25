@@ -1,0 +1,838 @@
+Simple 3D Buildings - OpenStreetMap Wiki
+(function(){var className="client-js skin-theme-clientpref-thumb-standard";var cookie=document.cookie.match(/(?:^|; )wikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"3e9d164d6dfee32b36715b40","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Simple_3D_Buildings","wgTitle":"Simple 3D Buildings","wgCurRevisionId":3106809,"wgRevisionId":3106809,"wgArticleId":90805,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages unavailable in Dutch","Tagging guidelines","Buildings","3D","3D mapping techniques"],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Simple_3D_Buildings","wgRelevantArticleId":90805,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgConfirmEditCaptchaNeededForGenericEdit":false,"wgConfirmEditForceShowCaptcha":false,"wgMFDisplayWikibaseDescriptions":{"search":false,"watchlist":false,"tagline":false},"wgULSAcceptLanguageList":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgCheckUserClientHintsHeadersJsApi":["brands","architecture","bitness","fullVersionList","mobile","model","platform","platformVersion"],"wgULSPosition":"personal","wgULSisCompactLinksEnabled":true,"wgVector2022LanguageInHeader":false,"wgULSisLanguageSelectorEmpty":false,"wgULSLanguageSelectorV2Enabled":false,"wgEditSubmitButtonLabelPublish":false,"wgVisualEditorPageIsDisambiguation":false};
+RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","skins.vector.styles.legacy":"ready","jquery.tablesorter.styles":"ready","ext.OsmWikibase-all":"ready","ext.uls.pt":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","mediawiki.page.media","site","mediawiki.page.ready","jquery.tablesorter","mediawiki.toc","skins.vector.legacy.js","ext.checkUser.clientHints","ext.gadget.taginfo","ext.gadget.dataitemlinks","ext.gadget.maps","ext.uls.compactlinks","ext.uls.interface","ext.visualEditor.desktopArticleTarget.init","wikibase.databox.fromWikidata"];
+(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});
+Simple 3D Buildings
+From OpenStreetMap Wiki
+Jump to navigation
+Jump to search
+.mw-parser-output .LanguageBarRoot{clear:both;font-size:95%;line-height:normal;margin:2px 0;border:1px solid #a2a9b1}.mw-parser-output .LanguageBar{margin:0;background:#f9f9f9;border:none;padding:0.5em;font-size:95%;line-height:normal;text-align:justify}.mw-parser-output .LanguageBar-header{background:#eeeeee}.mw-parser-output .LanguageBar-footer{background:#eeeeee}@media screen{html.skin-theme-clientpref-night .mw-parser-output .LanguageBarRoot{border-color:#a2a9b1}html.skin-theme-clientpref-night .mw-parser-output .LanguageBar{background-color:#090909}html.skin-theme-clientpref-night .mw-parser-output .LanguageBar-header{background-color:#333333}html.skin-theme-clientpref-night .mw-parser-output .LanguageBar-footer{background-color:#333333}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-night .mw-parser-output .LanguageBarRoot{border-color:#72777d}html.skin-theme-clientpref-os .mw-parser-output .LanguageBar{background-color:#090909}html.skin-theme-clientpref-os .mw-parser-output .LanguageBar-header{background-color:#333333}html.skin-theme-clientpref-os .mw-parser-output .LanguageBar-footer{background-color:#333333}}
+Help
+Simple 3D Buildings
+In other languages
+Afrikaans
+asturianu
+azərbaycanca
+Bahasa Indonesia
+Bahasa Melayu
+bosanski
+brezhoneg
+català
+čeština
+Crnogorski
+dansk
+Deutsch
+eesti
+English
+español
+Esperanto
+euskara
+français
+Frysk
+Gàidhlig
+galego
+hrvatski
+Ido
+interlingua
+íslenska
+italiano
+Kreyòl ayisyen
+kréyòl gwadloupéyen
+kurdî
+latviešu
+Lëtzebuergesch
+lietuvių
+magyar
+Nederlands
+norsk
+norsk nynorsk
+occitan
+polski
+português
+română
+sardu
+shqip
+slovenčina
+slovenščina
+srpski (latinica)
+suomi
+svenska
+Tagalog
+Tiếng Việt
+Türkçe
+Zazaki
+Ελληνικά
+беларуская
+български
+македонски
+монгол
+русский
+српски / srpski
+українська
+հայերեն
+עברית
+العربية
+سرائیکی
+فارسی
+پنجابی
+پښتو
+नेपाली
+मराठी
+हिन्दी
+বাংলা
+ਪੰਜਾਬੀ
+தமிழ்
+മലയാളം
+සිංහල
+ไทย
+မြန်မာဘာသာ
+တႆး
+한국어
+ქართული
+ⵜⴰⵎⴰⵣⵉⵖⵜ
+中文（简体）
+中文（繁體）
+日本語
+粵語
+Other languages...
+This page describes tags for basic 3D attributes of
+buildings
+. This description scheme is therefore limited, not all details can be described by it. You can report cases of complex edits
+on the talk page
+or consult the page
+F3DB
+(Full 3D Building) for 3D mapping proposals advanced.
+The following tagging methods are results of the
+2nd 3D Workshop Garching
+, where most 3D developers agreed on supporting a unified subset of tags in their programs. Basically, we describe the volume of a building using two types of areas: 1) building outlines  (
+building
+=*
+) for the most general area of a complex building and 2) building parts  (
+building:part
+=*
+) to describe sections of the building, especially those with different height or other attributes.
+Contents
+1
+How to map
+1.1
+Building outlines
+1.2
+Building parts
+1.2.1
+Editor Support
+1.2.1.1
+JOSM
+1.2.1.2
+iD
+1.2.2
+Underground parts
+1.3
+Building relations
+2
+Tagging for building outlines and parts
+2.1
+Tags for both building facades and roof
+2.2
+Tags for only the building facades under the roof
+2.3
+Tags for only the roof of the building
+2.3.1
+Roof shape
+2.3.2
+Other roof tags
+3
+3D examples
+4
+Software support
+4.1
+Editing tools
+4.2
+Map applications
+4.3
+Map frameworks
+4.4
+Design tools
+5
+Related Proposals
+6
+See also
+7
+References
+How to map
+Building outlines
+Two building:part areas (green) within a building area (red). Gaps between polygons are illustrative only, in reality their sides match precisely.
+The building outline represents the area of land covered by the union of all parts of the building. The outline may in most cases also be considered the building footprint. This is a closed way or
+multipolygon
+tagged with
+building
+=*
+.
+Building attributes (e.g., address, name, overall height, operator, etc.) must be tagged on this building outline. A building should have a single area tagged
+building
+=*
+.
+The building outline provides backward compatibility for 2D rendering software, such as Mapnik, and other data consumers not interested in 3D modeling. When a building has any
+building:part
+=*
+areas, the building outline is not considered for 3D rendering
+[
+1
+]
+.
+Building parts
+Parts of a building that have differing physical characteristics (height, color, etc) are usually modeled by drawing an area within the building outline tagged with the
+building:part
+=*
+tag. The value of the
+building:part
+=*
+tag is usually
+yes
+, but it can be any
+building
+=*
+value (example
+building
+=
+yes
+,
+building:part
+=
+government
+and
+building:part
+=
+school
+if a building has a part used by the town hall and a room used as a classroom).
+The entire building outline should be filled with
+building:part
+=*
+areas, tagged with their respective height and other attributes. These areas may overlap each other or may be disjunct, depending on the building. That said, while 2D footprints can (and often need to) overlap, avoid overlapping 3D volumes – especially if the volumes have common faces.
+See the following section for building tags typically applied to areas tagged with
+building:part
+=*
+.
+Areas tagged with
+building:part
+=*
+are mainly considered for 3D rendering. 2D renderers ignore the building attribute tags described in the following section.
+Editor Support
+Working with a distinct
+building
+=*
+and
+building:part
+=*
+ways on top of each other in editors can be problematic.
+JOSM
+Overlapping shapes like this can be selected via the middle mouse or a left click while holding down the 'Alt' key to cycle through overlapping objects to make the selection you want.
+[
+2
+]
+Drawing multiple ways on top of each other can be achieve via plugins including
+Shrinkwrap
+and
+DuplicateWayInPlace
+, or out of the box via Tools > Follow line, via Edit > Paste at source position followed by a Validator fix to remove overlapping nodes.
+iD
+Overlapping ways can be selected by first selecting a common node then using Ctrl + UpArrow to reveal a list of the parent ways at that node in the panel.
+Underground parts
+If a building extends underground
+beyond
+the outline or footprint visible above the ground, treat these parts in the same way as overhanging parts. That is, tag the underground outlines of the building with
+building:part
+=*
+with
+layer
+=
+-1
+(and the above ground parts with
+layer
+=
+1
+). Create a
+type
+=
+building
+relation including the
+building
+=*
+polygon and all the
+building:part
+=*
+polygons. Assign a
+role
+=
+outline
+to the
+building
+=*
+polygon and a
+role
+=
+part
+to the
+building:part
+=*
+polygons, especially the underground part.
+Building relations
+There is no need to create a
+type
+=
+building
+relation, i.e. simply position all building parts inside the building outline. Relation could be useful in the case where at least one part of a building is hanging over the building footprint or if the building has a complex structure with lots of parts, a
+type
+=
+building
+relation can be used to group the building outline and all building parts together.
+If the
+type
+=
+building
+relation is present for a building, all building parts must be listed as the relation members with the role
+part
+. The building outline must be listed with the role
+outline
+. The building parts can be located in any possible way (inside, outside, intersecting, touching) relative to the building outline in the presence of the
+type
+=
+building
+relation.
+If there is no
+type
+=
+building
+relation, an application should treat all building parts within the area of the building outline as part of that building.
+Tagging for building outlines and parts
+The following tags can be used on both building outlines and building parts.
+Tags for buildings/building parts are classified into 3 categories:
+tags for only the roof of the building = tags with the prefix roof:
+tags for only the building under the roof (the facades) = tags with the prefix building:
+tags for both = tags with no prefix
+Tags for both building facades and roof
+Schematic example of level and height tagging
+Key
+Comment
+height
+=*
+Distance between the lowest possible position with ground contact and the top of the roof of the building, excluding antennas, spires and other equipment mounted on the roof.
+See the section below for a good understanding of this tag and the usage of roof:height, building:levels and roof:levels.
+min_height
+=*
+Height below the building structure.
+Note that when
+min_height
+is used,
+height
+is still defined as the distance from the ground to the top of the structure. So "bridge" with 3 meters height, where bottom part of the bridge is positioned 10 meters above ground level will have
+min_height
+=
+10
+,
+height
+=
+13
+.
+Tags for only the building facades under the roof
+Key
+Comment
+building:levels
+=*
+Number of floors of the building above ground (without levels in the roof). Allows you to texturize the building in a simple way because some 3D renderings add rows of windows for each floor.
+If you tag new buildings,
+try to give a
+height
+value
+. Try to use
+building:levels
+=*
+only in addition to a height tag!
+See the section below for a good understanding of this tag and the usage of
+height
+=*
+,
+roof:height
+=*
+and
+roof:levels
+=*
+.
+building:min_level
+=*
+Levels skipped in a building part, analogous to
+min_height
+building:material
+=*
+Outer material for the building façades.
+building:colour
+=*
+Colour of the building façades. See
+colour
+=*
+for possible values.
+Note: there is no tag for the height of the facades (no tag
+building:height
+). This value is automatically calculated as the building's total
+height
+=*
+minus
+roof:height
+=*
+.
+Tags for only the roof of the building
+Roof shape
+You can characterize the building roof using a catalogue of well-known roof types. Here are just a few of the most popular
+roof:shape=*
+values in no particular order:
+Image
+roof:shape
+flat
+skillion
+gabled
+half-hipped
+hipped
+pyramidal
+Image
+roof:shape
+gambrel
+mansard
+dome
+onion
+round
+saltbox
+Not all values of
+roof:shape
+=*
+which are found in the OSM database are standardized as part of Simple 3D Buildings. Additional roof shapes may be introduced later (
+S3DB Proposals
+), including advanced approaches for manual modelling (e.g.,
+ProposedRoofLines
+or parts of
+OSM-4D/Roof table
+).
+Other roof tags
+Key
+Comment
+roof:orientation
+=
+along/across
+For roofs with a ridge the ridge is assumed to be parallel to the longest side of the building (
+roof:orientation
+=
+along
+). But it can be tagged explicitly with this tag.
+roof:direction
+=*
+Direction from back side of roof to front, i.e. the direction towards which the main face of the roof is looking
+roof:height
+=*
+The height of the building (i.e. the height of the façade) is calculated as the building's total
+height
+=*
+minus
+roof:height
+=*
+.
+roof:levels
+=*
+Number of floors within the roof, which are not already counted in
+building:levels
+=*
+.
+roof:angle
+=*
+Alternatively to
+roof:height
+=*
+, roof height can be indicated implicitly by providing the inclination of the sides (in degrees).
+roof:colour
+=*
+The (dominant) colour of the roof. Useful in conjunction with
+roof:material
+=*
+.
+roof:material
+=*
+The outermost material of the roof. Useful in conjunction with
+roof:colour
+=*
+.
+3D examples
+To view numerous 3D buildings on a large scale, see examples here:
+3D Demo Areas
+To view individual 3D buildings, see examples here:
+3D Building Examples
+See also these
+models
+.
+Software support
+Main article:
+3D development
+Many maps and tools support the simple 3D buildings schema. Among the first were the
+OSM-3D.org
+renderer in 2009, the
+OSM2World
+renderer and
+Kendzi3D
+JOSM plugin in 2011, and the Nutiteq Android 3D Mapping SDK (now
+Carto Mobile SDK
+) and
+WikiMiniAtlas
+in 2012.
+OSMBuildings
+launched a
+2.5D
+display in 2012, followed by a 3D version in 2015. In 2013,
+F4 Map
+became the first browser-based renderer to fully support the Simple 3D Buildings schema.
+Editing tools
+Software name
+Platform
+Schema support
+License
+Active Development
+Notes
+Urban Eye 3D
+Windows, macOS, Linux
+﻿yes
+GPL-3.0
+﻿yes
+JOSM plugin for viewing and editing 3D buildings in realtime. See
+community thread
+Simple 3D Editor
+Web
+ISC (MIT)
+﻿yes
+See
+community thread
+. Supports
+OpenHistoricalMap
+Rapid
+Web
+﻿no
+The Rapid Editor has a "Show 3D map" option under "Background Settings" which shows a small MapLibre GL powered 3D building model.
+SketchOSM
+Windows
+﻿partial
+Proprietary
+﻿no
+SketchUp
+plugin in beta, discontinued July 2020
+Kendzi3d
+Windows, macOS, Linux
+﻿yes
+BSD
+﻿no
+discontinued
+Map applications
+Application name
+Platform
+Schema support
+License
+Notes
+CartoType Maps App
+Windows, Linux, Macintosh
+﻿partial
+Proprietary but unrestricted use
+A free demonstration application for the proprietary
+CartoType
+library. The CartoType GL version implements most roof shapes. Includes a style sheet editor.
+Cesium OSM Buildings
+Web
+﻿partial
+Updated monthly.
+CoMaps
+Android
+﻿partial
+Apache 2.0
+Height of buildings is rendered based on height tags (if set) or levels tags. Roofs are flat.
+F4 Map
+Web
+﻿yes
+Proprietary
+Demo Web Map
+with rendering and scene support
+Mapbox Static API
+Web
+﻿partial
+BSD
+Requires a free
+Mapbox Studio
+account.
+OpenScienceMap
+Web
+﻿partial
+LGPL
+Interprets only height/min_height tags client-side. The S3DB Layer uses vtm meshes generated on the server (using plpgsql with PostGIS and SFCGAL).
+Rendering example
+.
+Organic Maps
+Android
+﻿partial
+Apache 2.0
+Height of buildings is rendered based on height tags (if set) or levels tags. Roofs are flat.
+OSM2World
+Windows, Linux, Macintosh
+﻿yes
+LGPL
+Generates 3D models from OSM and renders them to OpenGL or exports them to glTF, obj and other formats.
+OsmAnd
+Android, iOS
+﻿partial
+GNU GPL v3
+Height of buildings is rendered based on height tags (if set) or levels tags.
+OSM-3D.org
+Web
+﻿partial
+Currently offline unless you have an older Java version (≤1.6). New WebGL version in development.
+osmapa.pl Mapnik stylesheet
+Web (no longer available)
+﻿partial
+Most roof types implemented in 2.5D view.
+OSM Building Viewer
+Web
+﻿partial
+MIT
+Visualizes an individual building based on live OSM data.
+OSMBuildings
+Web
+﻿partial
+BSD/Proprietary
+Fronted code is a free software, while backend code is proprietary
+OSM go
+Web
+﻿partial
+GPL
+Only pyramidal and dome (yet, flat is default)
+Streets GL
+Web
+﻿yes
+MIT
+Updated manually.
+VR Map
+Web
+﻿partial
+MPL
+Heights and colors only.
+WikiMiniAtlas
+Web
+﻿partial
+GPL
+Only pyramidal roofs.
+Map frameworks
+Main article:
+Frameworks
+Software name
+Platform
+Language
+Schema support
+License
+Notes
+Carto Mobile SDK
+Android, iOS, Windows Phone
+Java, Objective-C++, Swift, C#
+﻿partial
+BSD
+most roof shapes supported; see
+Carto
+'s
+documentation
+CartoType for Android
+Android
+Java
+﻿partial
+Proprietary
+Most roof shapes supported.Styles can be controlled using CartoType's XML style sheets. Uses OpenGL ES graphics acceleration. Viewing angle, height, field of view, etc., can be modified.
+CartoType
+for C++
+Windows, Linux, OS X (Macintosh)
+C++
+CartoType
+for iOS
+iOS
+Objective C, Swift
+CartoType
+for .NET
+Windows
+C#, VB.NET and other .NET languages
+CartoType
+for Qt
+Qt on Windows, Mac (OS X) and Linux
+C++
+Mapbox Android SDK
+Android
+Java
+﻿partial
+BSD
+Options for customizing 3D building display are included in the
+Mapbox Style Specification
+. (See
+Mapbox
+'s
+blog post
+announcing GL JS support.)
+Mapbox GL JS
+Web
+JavaScript
+Mapbox iOS SDK
+iOS
+Objective-C, Swift, Interface Builder
+Mapbox macOS SDK
+macOS
+Objective-C, Swift, Interface Builder, AppleScript
+Mapbox Qt SDK
+Qt
+C++, QML
+Mapbox Unity SDK
+Cross-platform
+C#
+Apache
+node-mapbox-gl-native
+Node.js
+JavaScript
+BSD
+osm2x3d
+Web
+﻿partial
+?
+see also
+[1]
+and
+[2]
+OSMBuildings
+Web
+JavaScript
+﻿partial
+BSD
+2.5D and 3D versions available
+Tangram
+Web
+JavaScript
+﻿partial
+MIT
+Mapzen
+renders 3D buildings in
+Tangram
+and other products
+Tangram ES
+Android, iOS, Linux, macOS
+C++
+V
+TM
+Android, iOS, Web
+Java
+﻿partial
+LGPL
+Part of the
+mapsforge
+project.
+Design tools
+Software name
+Platform
+Schema support
+License
+Description
+blender-osm
+Windows, macOS, Linux
+﻿partial
+GPL
+One click download and import of OpenStreetMap and terrain. Can import more than 100,000 buildings. A large number of roof shapes is supported: flat, gabled, hipped (for a quadrangle outline only), mono-pitched, half-hipped, round, pyramidal, gambrel, dome, onion and saltbox.
+Mapbox Studio
+Web
+﻿partial
+Proprietary
+Includes a
+Mapbox GL
+style editor that supports building (part) heights.
+Maputnik
+Web
+﻿partial
+MIT
+A
+Mapbox GL
+style editor that supports building (part) heights.
+Tangram Play
+Web
+﻿partial
+MIT
+A Tangram scene editor that supports extruded buildings with heights based on OSM data.
+Related Proposals
+F3DB
+(Abandoned
+Full 3D buildings
+proposal)
+See also
+windows
+=*
+- Describes whether a building(part) has windows.
+Roof diagram
+- Diagram of the main architectural elements that make up a pitched roof (can help to understand some architectural terms)
+References
+↑
+This doesn't apply to
+F4 Map
+, see:
+Non-building:part parts of buildings are not rendered #3
+,
+Streets GL
+GitHub, StrandedKitty comment, 3 May 2023
+↑
+blog.mapbox.com
+Retrieved from "
+https://wiki.openstreetmap.org/w/index.php?title=Simple_3D_Buildings&oldid=3106809
+"
+Categories
+:
+Tagging guidelines
+Buildings
+3D
+3D mapping techniques
+Hidden category:
+Pages unavailable in Dutch
+Navigation menu
+Personal tools
+English
+Create account
+Log in
+associated-pages
+Page
+Discussion
+English
+Views
+Read
+View source
+View history
+More
+Search
+Site
+Main Page
+The map
+Map Features
+Contributors
+Help
+Blogs
+Shop
+Donations
+Wiki discussion
+Recent changes
+Special pages
+Tools
+What links here
+Related changes
+Printable version
+Permanent link
+Page information
+Cite this page
+In other projects
+In other languages
+Add links
+This page was last edited on 19 October 2026, at 20:29.
+Content is available under
+Creative Commons Attribution-ShareAlike 2.0 license
+unless otherwise noted.
+Privacy policy
+About OpenStreetMap Wiki
+Disclaimers
+Mobile view
+(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":222,"wgPageParseReport":{"limitreport":{"cputime":"0.513","walltime":"1.060","ppvisitednodes":{"value":2121,"limit":1000000},"revisionsize":{"value":19958,"limit":2097152},"postexpandincludesize":{"value":43768,"limit":2097152},"templateargumentsize":{"value":260,"limit":2097152},"expansiondepth":{"value":14,"limit":100},"expensivefunctioncount":{"value":9,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":8657,"limit":5000000},"entityaccesscount":{"value":0,"limit":250},"timingprofile":["100.00%  849.419      1 -total"," 52.86%  449.013     60 Template:Tag"," 11.94%  101.379     13 Template:TagValue"," 10.67%   90.622      1 Template:Languages","  6.68%   56.777      5 Template:LangSwitch","  5.86%   49.802     15 Template:Langcode","  5.21%   44.217      2 Template:Role","  3.81%   32.352      2 Template:IconRole","  3.78%   32.099      8 Template:LangPrefix","  3.75%   31.877      2 Template:Main"]},"scribunto":{"limitreport-timeusage":{"value":"0.510","limit":"15"},"limitreport-virtmemusage":{"value":7147520,"limit":52428800},"limitreport-estmemusage":0},"cachereport":{"timestamp":"20261025123003","ttl":86400,"transientcontent":false}}});});

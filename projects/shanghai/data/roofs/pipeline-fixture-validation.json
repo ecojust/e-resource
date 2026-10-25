@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "tests": [
+    "default export byte stability",
+    "existing split retained despite target change",
+    "accepted roof applied exactly once",
+    "unchanged IDs/counts/heights/footprints",
+    "nonrenderable and degenerate acceptance fails",
+    "normalized parameters must match raw source",
+    "actual isolated merge",
+    "detail_patch and 14 landmarks preserved",
+    "base files unchanged",
+    "district index hashes match"
+  ],
+  "scope": "Synthetic two-building fixture using the actual exporter and merge CLI; no production cell export, network fetch, raster sampling or browser run.",
+  "test_count": 10,
+  "command": "python source/city/check_source_roof_pipeline.py",
+  "default_export_check": "Two independent default-path exports of identical fixture inputs produced identical GLB bytes.",
+  "fixture_model_count": 2,
+  "fixture_feature_count": 2,
+  "fixture_roof_count": 1,
+  "production_model_validation": false,
+  "browser_validation": false,
+  "source_files": [
+    {
+      "file": "source/city/check_source_roof_pipeline.py",
+      "sha256": "5e5fe83c258902adcf460c67314b186fdbf4bb09eddf82c4327e17a2a197cbf1"
+    },
+    {
+      "file": "source/city/build_fullcity_models.py",
+      "sha256": "2bcc6d412ce46cfe36abfe9e535623a3fa034a6115bc7738b4de6b434c35263b"
+    },
+    {
+      "file": "source/city/build_source_roof_patches.py",
+      "sha256": "973270e0e3f7283d82e5b7b15ffa3171f65b378c2880ab11830792aa58b41fa0"
+    },
+    {
+      "file": "source/city/merge_source_roof_patches.py",
+      "sha256": "057a6f3c6765d69bfe615770b71c278a534623530aa450f8d9b454e4772dedd1"
+    },
+    {
+      "file": "source/city/roof_geometry.py",
+      "sha256": "8454cf909230f2c4bce97f954294be6c375976c98e7fc6378dc878e3b4a6e561"
+    }
+  ]
+}
