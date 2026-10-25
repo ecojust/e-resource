@@ -6,6 +6,8 @@
 
 ## 打开页面
 
+[打开在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html)（第三方静态托管，首次出现提示时点击 **Open the page**）。
+
 无需 npm 安装或构建。在本项目目录启动一个静态服务器：
 
 ```sh
