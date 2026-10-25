@@ -4,7 +4,7 @@
 
 ## 独立项目
 
-- [上海漫游 · Shanghai Explorer](projects/shanghai/)：覆盖上海 16 区的真实地理地图、21 个 GLB 模型和第三人称漫游 HTML，支持桌面与手机。[在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html)（首次点击 Open the page）。
+- [上海漫游 · Shanghai Explorer](projects/shanghai/)：覆盖上海 16 区的 1,708 个全域建筑分块、约 180 万建筑/部件、5 个细化地标及第三人称漫游 HTML，支持桌面与手机；单文件均低于 100 MB。[在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html)（首次点击 Open the page）。
 
 ## 三维模型
 

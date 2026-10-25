@@ -1,5 +1,9 @@
 import * as THREE from '../vendor/three.module.js';
 import { GLTFLoader } from '../vendor/GLTFLoader.js';
+import { MeshoptDecoder } from '../vendor/meshopt_decoder.module.js';
+import { applyBuildingMaterial } from './building-material.js';
+import { applyStreetWidths, applyStreetColors } from './road-width.js';
+import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -64,15 +68,6 @@ function nearestOnLine(point, coordinates) {
   }
   return best;
 }
-function circlePolygon(lng, lat, radius) {
-  const coordinates = [];
-  for (let i = 0; i <= 20; i++) {
-    const p = offsetLngLat({lng, lat}, Math.sin(i * Math.PI / 10) * radius, Math.cos(i * Math.PI / 10) * radius);
-    coordinates.push([p.lng, p.lat]);
-  }
-  return {type: 'Polygon', coordinates: [coordinates]};
-}
-
 function configureStyle(style) {
   style = structuredClone(style);
   style.name = 'Shanghai · city walk';
@@ -84,7 +79,18 @@ function configureStyle(style) {
     && !(layer.type === 'symbol' && layer['source-layer'] === 'poi')
     && !layer.id.includes('one_way_arrow'));
   for (const layer of style.layers) {
+    applyStreetWidths(layer);
     if (layer.type === 'symbol') layer.maxzoom = Math.min(layer.maxzoom ?? 24, 19.5);
+    if (layer.id === 'road_area_pattern') {
+      delete layer.paint['fill-pattern'];
+      layer.paint['fill-color'] = '#cdd2d0';
+      layer.paint['fill-antialias'] = false;
+    }
+    if (['road_path_pedestrian', 'bridge_path_pedestrian'].includes(layer.id)) {
+      delete layer.paint['line-dasharray'];
+      layer.paint['line-color'] = '#aeb8b4';
+    }
+    applyStreetColors(layer);
     if (layer.id === 'background') layer.paint = {...layer.paint, 'background-color': '#eceee8'};
     if (layer['source-layer'] === 'water' && layer.type === 'fill') layer.paint = {...layer.paint, 'fill-color': '#8bbbc8'};
     if (layer['source-layer'] === 'park' && layer.type === 'fill') layer.paint = {...layer.paint, 'fill-color': '#c4d6b8'};
@@ -141,8 +147,17 @@ export async function createShanghaiScene(options = {}) {
   const maplibregl = window.maplibregl;
   if (!maplibregl) throw new Error('MapLibre 未加载，请检查本地 vendor 文件。');
   const start = {lng: 121.4896, lat: 31.2390, bearing: 90, ...options.start};
-  const response = await fetch(new URL('../data/map-style.json', import.meta.url));
+  const [response, landmarkExclusions] = await Promise.all([
+    fetch(new URL('../data/map-style.json', import.meta.url)),
+    options.landmarkExclusions ? Promise.resolve(options.landmarkExclusions)
+      : fetch(new URL('../data/landmark-exclusions.json', import.meta.url))
+        .then(result => result.ok ? result.json() : {}).catch(() => ({}))]);
   if (!response.ok) throw new Error(`地图样式读取失败 (${response.status})`);
+  const landmarkBoundaries = new Map((landmarkExclusions.landmark_sources || [])
+    .map(item => [item.landmark_id, item]));
+  const landmarkReplacementIds = {
+    building: new Set(landmarkExclusions.building_ids || []),
+    building_part: new Set(landmarkExclusions.building_part_ids || [])};
   const style = configureStyle(await response.json());
   const map = new maplibregl.Map({container, style, center: [start.lng, start.lat],
     zoom: options.zoom ?? 20.5, bearing: start.bearing, pitch: 72, maxPitch: 85, maxZoom: 22.5,
@@ -186,7 +201,8 @@ export async function createShanghaiScene(options = {}) {
       ...(filter ? {filter} : {}), layout: {visibility: visible ? 'visible' : 'none'},
       paint: {'fill-extrusion-color': ['interpolate', ['linear'], height,
         0, '#d7d9d3', 25, '#d3d8d4', 80, '#b7cbd0', 200, '#8baebc'],
-      'fill-extrusion-height': ['max', ['+', baseHeight, 3], height], 'fill-extrusion-base': baseHeight,
+      'fill-extrusion-height': ['case', ['boolean', ['feature-state', 'localModel'], false], 0, ['max', ['+', baseHeight, 3], height]],
+      'fill-extrusion-base': ['case', ['boolean', ['feature-state', 'localModel'], false], 0, baseHeight],
       'fill-extrusion-opacity': 1, 'fill-extrusion-vertical-gradient': true}}, firstSymbol);
   }
   try {
@@ -202,6 +218,7 @@ export async function createShanghaiScene(options = {}) {
       maplibregl.addProtocol('pmtiles', window.__shanghaiPMTilesProtocol.tile);
     }
     map.addSource(OVERTURE_SOURCE, {type: 'vector', url: `pmtiles://${overtureURL}`,
+      promoteId: {building: 'id', building_part: 'id'},
       attribution: '© <a href="https://overturemaps.org/" target="_blank">Overture Maps</a> · <a href="https://docs.overturemaps.org/attribution/" target="_blank">建筑数据来源</a>'});
     buildingSourceId = OVERTURE_SOURCE; buildingMode = 'overture';
     addBuildingLayer(BUILDINGS, OVERTURE_SOURCE, 'building', overtureHeight, true,
@@ -260,9 +277,28 @@ export async function createShanghaiScene(options = {}) {
   const camera = new THREE.Camera(); camera.matrixAutoUpdate = false;
   let renderer, animationTime = 0, speed = 0, current = {lng: start.lng, lat: start.lat};
   let explicitCamera = null, customLayerReady = false;
-  const loader = new GLTFLoader();
+  const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const landmarkRecords = new Map();
-  const neighborhoodRecords = new Map();
+  let localDataKind = 'city', streamingSignature = '', streamNoticeTime = 0, streamErrorTime = 0;
+  const tileSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
+  // Separate owners keep local tile replacement independent of successful
+  // landmark loading. Replaced landmark IDs are excluded from tile ownership.
+  const landmarkSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
+  const lowMemory = typeof navigator !== 'undefined' && navigator.deviceMemory && navigator.deviceMemory <= 4;
+  const localStreamer = new LocalModelStreamer({scene, loader, suppression:tileSuppression,
+    prepareObject:prepareCityObject, disposeObject:disposeModel,
+    prepareFeatureIds(ids) {
+      return Object.fromEntries(['building','building_part'].map(layer=>
+        [layer,(ids[layer] || []).filter(id=>!landmarkReplacementIds[layer].has(id))]));
+    },
+    maxVisible:lowMemory ? 4 : 6, maxCache:lowMemory ? 6 : 8, concurrency:2,
+    memoryBudget:(lowMemory ? 64 : 128)*1024*1024, triangleBudget:lowMemory ? 650000 : 1200000,
+    onChange:handleStreamingChange,
+    onError(error) {
+      if (performance.now()-streamErrorTime > 12000) {streamErrorTime=performance.now();onLoadError(error);}
+    }});
+  const renderMetrics = {fps:0,drawCalls:0,triangles:0,geometries:0,textures:0};
+  let renderFrameCount=0, renderPeriodStart=performance.now();
 
   const customLayer = {id: CUSTOM, type: 'custom', renderingMode: '3d',
     onAdd(_map, gl) {
@@ -290,7 +326,15 @@ export async function createShanghaiScene(options = {}) {
         camera.matrixWorld.identity(); camera.matrixWorldInverse.identity(); camera.projectionMatrix.copy(combined);
       }
       camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
-      renderer.resetState(); renderer.render(scene, camera); renderer.resetState();
+      renderer.resetState(); renderer.render(scene, camera);
+      renderMetrics.drawCalls=renderer.info.render.calls;
+      renderMetrics.triangles=renderer.info.render.triangles;
+      renderMetrics.geometries=renderer.info.memory.geometries;
+      renderMetrics.textures=renderer.info.memory.textures;
+      renderFrameCount++;
+      const period=performance.now()-renderPeriodStart;
+      if (period>=1000) {renderMetrics.fps=renderFrameCount*1000/period;renderFrameCount=0;renderPeriodStart=performance.now();}
+      renderer.resetState();
     },
     onRemove() {
       scene.traverse(obj => {
@@ -311,7 +355,7 @@ export async function createShanghaiScene(options = {}) {
     record.status = 'loading'; reportLandmarks();
     try {
       const data = await loader.loadAsync(record.url);
-      if (destroyed) return;
+      if (destroyed) {disposeModel(data.scene);return;}
       const group = data.scene; group.name = record.name || record.id;
       group.position.copy(geographicPosition(record.lng, record.lat, record.altitude || 0));
       const latitudeScale = maplibregl.MercatorCoordinate.fromLngLat([record.lng, record.lat]).meterInMercatorCoordinateUnits() / metreScale;
@@ -319,7 +363,8 @@ export async function createShanghaiScene(options = {}) {
       group.rotation.y = -(record.heading || 0) * DEG;
       group.traverse(obj => {
         if (obj.isMesh) {
-          obj.frustumCulled = false;
+          obj.frustumCulled = true;
+          obj.geometry?.computeBoundingSphere();
           if (obj.material) {
             const mats = Array.isArray(obj.material) ? obj.material : [obj.material];
             for (const m of mats) { m.envMapIntensity = .7; if (m.metalness > .7) m.metalness = .55; }
@@ -334,7 +379,7 @@ export async function createShanghaiScene(options = {}) {
   }
   function updateLandmarkVisibility(force = false) {
     let changed = false;
-    const center = map.getCenter(), target = map.getZoom() < 16 ? {lng: center.lng, lat: center.lat} : current;
+    const center = map.getCenter(), target = walker.group.visible ? current : {lng: center.lng, lat: center.lat};
     for (const record of landmarkRecords.values()) {
       const distance = distanceMetres(target, record);
       const nearby = force || distance < (map.getZoom() < 16 ? 12000 : 3200);
@@ -343,27 +388,34 @@ export async function createShanghaiScene(options = {}) {
         if (record.object.visible !== nearby) changed = true;
         record.object.visible = nearby;
       }
+      const active=record.status==='loaded' && Boolean(record.object?.visible);
+      if(active!==record.exclusionActive) {
+        record.exclusionActive=active;
+        const exact=landmarkBoundaries.get(record.id);
+        const ids=active && exact ? {building:exact.building_ids,building_part:exact.building_part_ids} : null;
+        landmarkSuppression.setOwner(record.id,ids).then(()=>{if(!destroyed)map.triggerRepaint();});
+      }
     }
     if (changed) updateBuildingExclusions();
-    updateNeighborhoodVisibility();
+    updateLocalModels();
   }
   function updateBuildingExclusions() {
     for (const id of [BUILDINGS, BUILDING_PARTS, OSM_BUILDINGS]) {
       if (!map.getLayer(id)) continue;
       const base = buildingBaseFilters.get(id), filter = base ? ['all', base] : ['all'];
-      for (const record of landmarkRecords.values()) {
-        // Only suppress map extrusion once the replacement mesh has loaded.
-        if (record.status === 'loaded' && record.object?.visible) filter.push(['!', ['within', circlePolygon(record.lng, record.lat, record.exclusionRadius || 80)]]);
-      }
-      for (const record of neighborhoodRecords.values()) {
-        if (record.status !== 'loaded' || !record.object?.visible) continue;
-        if (id !== OSM_BUILDINGS && buildingBaseFilters.has(BUILDING_PARTS) && record.featureIds?.length) {
-          // Sample exports retain full footprints, including buildings crossing
-          // the sample edge. Stable GERS identifiers avoid boundary duplicates.
-          filter.push(['!', ['in', ['get', 'id'], ['literal', record.featureIds]]]);
-        } else {
-          const [west, south, east, north] = record.bounds;
-          const polygon = {type: 'Polygon', coordinates: [[[west,south],[east,south],[east,north],[west,north],[west,south]]]};
+      // Near GLBs suppress Overture by promoted GERS feature-state, never by
+      // a growing city-wide UUID expression. Only the emergency OSM fallback
+      // needs a few active tile bounding boxes (there are at most six).
+      if (map.getLayer(id).source !== OVERTURE_SOURCE) {
+        // Emergency OSM fallback uses confirmed footprints, never a radius
+        // that could erase neighboring buildings around a landmark.
+        for(const record of landmarkRecords.values()) {
+          const boundary=landmarkBoundaries.get(record.id)?.confirmed_boundary;
+          if(boundary && record.status==='loaded' && record.object?.visible)filter.push(['!', ['within',boundary]]);
+        }
+        for (const record of localStreamer.getVisible()) {
+          const [west,south,east,north]=record.geometryBounds || record.bounds;
+          const polygon={type:'Polygon',coordinates:[[[west,south],[east,south],[east,north],[west,north],[west,south]]]};
           filter.push(['!', ['within', polygon]]);
         }
       }
@@ -382,88 +434,84 @@ export async function createShanghaiScene(options = {}) {
     }
     updateLandmarkVisibility(); reportLandmarks();
   }
-  function reportNeighborhoods() {
-    const records = [...neighborhoodRecords.values()];
-    onStatus({kind: 'neighborhoods', message: '区级建筑模型', loaded: records.filter(r => r.status === 'loaded').length,
-      visible: records.filter(r => r.object?.visible).length, total: records.length,
-      failed: records.filter(r => r.status === 'error').length});
-  }
   function disposeModel(object) {
-    object.traverse(child => {
-      child.geometry?.dispose();
-      if (child.material) for (const material of Array.isArray(child.material) ? child.material : [child.material]) material.dispose();
+    if (!object) return;
+    const geometries=new Set(), materials=new Set(), textures=new Set();
+    object.traverse(child=>{
+      if(child.geometry)geometries.add(child.geometry);
+      for(const material of child.material ? (Array.isArray(child.material)?child.material:[child.material]) : []) {
+        materials.add(material);
+        for(const value of Object.values(material))if(value?.isTexture)textures.add(value);
+      }
     });
     scene.remove(object);
+    for(const geometry of geometries)geometry.dispose();
+    for(const material of materials)material.dispose();
+    for(const texture of textures){texture.dispose();texture.source?.data?.close?.();}
   }
-  async function loadNeighborhood(record) {
-    if (record.status !== 'idle') return;
-    record.status = 'loading'; reportNeighborhoods();
+  function prepareCityObject(group, record) {
+    group.name=`${record.name} · mapped city tile`;
+    group.position.copy(geographicPosition(record.lng,record.lat,0));
+    const scale=maplibregl.MercatorCoordinate.fromLngLat([record.lng,record.lat]).meterInMercatorCoordinateUnits()/metreScale;
+    group.scale.multiplyScalar(scale);
+    group.traverse(object=>{
+      if(!object.isMesh)return;
+      // The map projection already supplies the full view transform, so normal
+      // Three frustum culling remains valid for the local metre coordinates.
+      object.frustumCulled=true;
+      object.geometry.computeBoundingSphere();
+      for(const material of Array.isArray(object.material)?object.material:[object.material]) {
+        if(!material?.color)continue;
+        if(/walls/i.test(material.name))material.color.setRGB(.38,.37,.30);
+        else material.color.setRGB(.40,.39,.31);
+        material.roughness=.88;material.metalness=0;
+        applyBuildingMaterial(material);
+      }
+    });
+  }
+  function handleStreamingChange(state) {
+    const signature=state.active.filter(record=>record.visible).map(record=>record.id).sort().join('|');
+    const changed=signature!==streamingSignature;
+    if(changed){streamingSignature=signature;updateBuildingExclusions();map.triggerRepaint();}
+    const time=performance.now();
+    if(changed || time-streamNoticeTime>250) {
+      streamNoticeTime=time;
+      onStatus({kind:localDataKind==='legacy'?'neighborhoods':'streaming',message:'附近建筑分块',...state});
+    }
+  }
+  function updateLocalModels(force=false) {
+    const center=map.getCenter(), walking=walker.group.visible;
+    const target=walking?current:{lng:center.lng,lat:center.lat};
+    localStreamer.update({...target,zoom:map.getZoom(),bearing:map.getBearing(),mode:walking?'walk':'overview'},force);
+  }
+  async function setCityManifest(input, settings={}) {
+    localDataKind='city';
     try {
-      const data = await loader.loadAsync(record.url);
-      if (destroyed) {disposeModel(data.scene); return;}
-      const group = data.scene;
-      group.name = `${record.name} · local mapped neighborhood`;
-      group.position.copy(geographicPosition(record.lng, record.lat, 0));
-      const latitudeScale = maplibregl.MercatorCoordinate.fromLngLat([record.lng, record.lat]).meterInMercatorCoordinateUnits() / metreScale;
-      group.scale.multiplyScalar(latitudeScale);
-      group.traverse(object => {
-        if (!object.isMesh) return;
-        object.frustumCulled = false;
-        // Match the warm, low-contrast map palette when a local block replaces vector buildings.
-        for (const material of (Array.isArray(object.material) ? object.material : [object.material])) {
-          if (!material?.color) continue;
-          if (/walls/i.test(material.name)) material.color.setRGB(.38, .37, .30);
-          else material.color.setRGB(.40, .39, .31);
-          material.roughness = .88;
-          material.metalness = 0;
-        }
-      });
-      scene.add(group); record.object = group; record.status = 'loaded'; record.lastUsed = performance.now();
-      updateNeighborhoodVisibility();
-      // Keep a small GPU cache while visiting all 16 districts. HTTP caching
-      // avoids another download if a recently unloaded area is revisited.
-      const inactive = [...neighborhoodRecords.values()].filter(r => r.object && !r.object.visible)
-        .sort((a,b) => a.lastUsed - b.lastUsed);
-      let loaded = [...neighborhoodRecords.values()].filter(r => r.object).length;
-      while (loaded > 4 && inactive.length) {
-        const old = inactive.shift(); disposeModel(old.object); old.object = null; old.status = 'idle'; loaded--;
+      let manifest=input, baseURL=settings.baseURL;
+      if(typeof input==='string' || input instanceof URL) {
+        const url=new URL(input,document.baseURI);
+        const response=await fetch(url,{signal:AbortSignal.timeout(25000)});
+        if(!response.ok)throw new Error(`建筑目录读取失败 (${response.status})`);
+        manifest=await response.json();baseURL ||= new URL('.',url).href;
       }
-      updateBuildingExclusions(); reportNeighborhoods(); map.triggerRepaint();
-    } catch (error) {
-      record.status = 'error'; reportNeighborhoods();
-      onLoadError(new Error(`${record.name} 本地区域模型加载失败，继续使用在线建筑：${error.message}`));
+      baseURL ||= new URL('../assets/city/',import.meta.url).href;
+      await localStreamer.setManifest(manifest,{baseURL});
+      updateLocalModels(true);
+      return localStreamer.getState();
+    } catch(error) {
+      onLoadError(new Error(`本地建筑目录暂不可用，继续使用在线地图：${error.message}`));
+      return {...localStreamer.getState(),fallback:true,error:error.message};
     }
   }
-  function updateNeighborhoodVisibility() {
-    const center = map.getCenter(), zoom = map.getZoom();
-    const target = zoom < 16 ? {lng:center.lng, lat:center.lat} : current;
-    let changed = false;
-    for (const record of neighborhoodRecords.values()) {
-      const distance = distanceMetres(target, record);
-      const nearby = zoom >= 14 && distance < (record.object?.visible ? 1600 : 900);
-      if (nearby && record.status === 'idle') loadNeighborhood(record);
-      if (record.object) {
-        if (record.object.visible !== nearby) changed = true;
-        record.object.visible = nearby;
-        if (nearby) record.lastUsed = performance.now();
-      }
-    }
-    if (changed) {updateBuildingExclusions(); reportNeighborhoods();}
-  }
-  function setNeighborhoods(metadata) {
-    const entries = Array.isArray(metadata) ? metadata : metadata?.models || [];
-    for (const item of entries) {
-      const id = String(item.district_id || item.id || ''), lng = Number(item.origin_longitude ?? item.lng), lat = Number(item.origin_latitude ?? item.lat);
-      const bounds = item.geographic_bbox || item.bounds;
-      if (!id || neighborhoodRecords.has(id) || !Number.isFinite(lng) || !Number.isFinite(lat)
-        || !Array.isArray(bounds) || bounds.length !== 4) continue;
-      const path = item.url || `assets/districts/${item.file || `${id}.glb`}`;
-      const url = /^(https?:|data:)/.test(path) ? path : new URL(path.startsWith('../') ? path : `../${path}`, import.meta.url).href;
-      neighborhoodRecords.set(id, {id, name:item.district_name || item.name || id, lng, lat, bounds, url,
-        status:'idle', lastUsed:0, heightQuality:item.height_quality || null,
-        featureIds:Array.isArray(item.featureIds) ? [...new Set(item.featureIds.filter(Boolean))] : []});
-    }
-    updateNeighborhoodVisibility(); reportNeighborhoods();
+  async function setNeighborhoods(metadata) {
+    // Compatibility for previous per-district releases; it uses the same bounded
+    // scheduler and state cleanup rather than a second, unbounded loading path.
+    localDataKind='legacy';
+    const entries=(Array.isArray(metadata)?metadata:metadata?.models || []).map(item=>({...item,
+      id:String(item.district_id || item.id),file:item.url || `assets/districts/${item.file || `${item.district_id}.glb`}`}));
+    await localStreamer.setManifest({tiles:entries},{baseURL:new URL('../',import.meta.url).href});
+    updateLocalModels(true);
+    return localStreamer.getState();
   }
   // Update exclusions only on successful loading, rather than on every frame.
   const originalReport = reportLandmarks;
@@ -471,7 +519,8 @@ export async function createShanghaiScene(options = {}) {
 
   let collisionDirty = true, collisionUpdated = 0, polygons = [], largePolygons = [], grid = new Map(), roadLines = [];
   map.on('sourcedata', () => { collisionDirty = true; });
-  map.on('moveend', () => { collisionDirty = true; updateLandmarkVisibility(); });
+  map.on('moveend', () => { collisionDirty = true; updateLandmarkVisibility(); updateLocalModels(true); });
+  map.on('move', () => updateLocalModels());
   function sourceFeatures(layer, source = sourceId) {
     try { return map.querySourceFeatures(source, {sourceLayer: layer}); } catch { return []; }
   }
@@ -589,15 +638,18 @@ export async function createShanghaiScene(options = {}) {
   }
   setPlayer(start.lng,start.lat,start.bearing,0,0);
   setLandmarks(options.landmarks||[]);
-  setNeighborhoods(options.neighborhoods||[]);
+  if(options.cityManifest)await setCityManifest(options.cityManifest,options.cityManifestOptions || {});
+  else if(options.neighborhoods)await setNeighborhoods(options.neighborhoods);
   onStatus({kind:'ready',message:'三维地图已就绪',loaded:1,total:1});
   return {map,ready:loadedStyle,sourceId,setPlayer,setCamera,setCameraFromTo,collisionAt,findSafePosition,waitForData,
-    setLandmarks,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
-    setAvatarVisible(visible){setWalkModeLabels(visible);walker.group.visible=visible;map.triggerRepaint();},
+    setLandmarks,setCityManifest,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
+    setAvatarVisible(visible){setWalkModeLabels(visible);walker.group.visible=visible;updateLocalModels(true);map.triggerRepaint();},
     loadLandmarks(){updateLandmarkVisibility(true);},
-    getNeighborhoodState(){return [...neighborhoodRecords.values()].map(({id,name,status,object})=>({id,name,status,visible:Boolean(object?.visible)}));},
+    getNeighborhoodState(){return localStreamer.getRecords();},
+    getStreamingState(){return {...localStreamer.getState(),renderer:{...renderMetrics}};},
     getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status})=>({id,name,status}));},
+    getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;map.remove();}};
+    destroy(){destroyed=true;localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

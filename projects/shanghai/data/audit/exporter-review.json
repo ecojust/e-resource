@@ -1,0 +1,201 @@
+{
+  "reviewed_at": "2026-10-25T17:25:26.363005+00:00",
+  "status": "conditional_pass_pending_final_citywide_audit",
+  "scope": "Read-only review of polygon extrusion, hole triangulation, normal orientation, float precision, meshopt quantization, feature-ID sidecars, height precedence, and suppression/replacement counts. No production or app files modified.",
+  "source_sha256": {
+    "/workspace/shanghai_source/build_fullcity_models.py": "9a5e1f3f616646f6b5cc7345682cc54e40578854f7db73e54115885e5e253298",
+    "/workspace/shanghai_source/build_district_models.py": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906"
+  },
+  "material_findings": [
+    {
+      "severity": "high",
+      "id": "parent_residual_omission",
+      "original_status": "confirmed",
+      "summary": "Suppressed parent volume was entirely omitted when any building part existed, although parts could cover only a small fraction of the parent footprint.",
+      "location": "fetch_fullcity.py renderable assignment; propagated by build_fullcity_models.py create_meshes skip and legacy build_district_models.py export_one parent skip.",
+      "evidence": "17 suppressed parents in tile 14/13720/6694 inspected with all surrounding 8 owner tiles (27,184 features). 12 parent footprints had <95% part coverage; Golden Bell Plaza 14.290622%, Lansheng Building 32.549881%, Hongtai parent 8.392822%.",
+      "examples_file": "parent-residual-examples.json",
+      "resolution": "Global exact parent-minus-union(parts) override file is now integrated. Relevant per-source residual hash invalidates changed owner cells; unaffected old meshes remain reusable. Original parent tower height/floors are not reused as podium height; residual footprints get explicitly labeled estimates.",
+      "resolution_status": "source_fix_reviewed_and_representative_residuals_verified; final full-city completion audit still required",
+      "restored_parent_count": 402,
+      "restored_source_area_m2": 953690.012,
+      "expected_final_modeled_feature_count": 1796435
+    }
+  ],
+  "passed_checks": {
+    "hole_and_closed_solid_fixture": {
+      "roof_area_m2": 300.00000005280646,
+      "hole_intrusion_m2": 0.0,
+      "wrong_normals": 0,
+      "nonmanifold_edges": 0
+    },
+    "sampled_completed_glbs": [
+      {
+        "tile": "14-13692-6700",
+        "features": 199,
+        "triangles": 2672,
+        "bytes": 33332,
+        "position_step_m": 0.0299397968,
+        "source_feature_count": 199,
+        "source_holes": 0
+      },
+      {
+        "tile": "14-13699-6708",
+        "features": 1369,
+        "triangles": 21192,
+        "bytes": 215880,
+        "position_step_m": 0.0324796252,
+        "source_feature_count": 1369,
+        "source_holes": 5
+      },
+      {
+        "tile": "14-13702-6695",
+        "features": 1243,
+        "triangles": 17684,
+        "bytes": 187228,
+        "position_step_m": 0.032411702,
+        "source_feature_count": 1243,
+        "source_holes": 6
+      },
+      {
+        "tile": "14-13704-6694",
+        "features": 985,
+        "triangles": 14064,
+        "bytes": 150548,
+        "position_step_m": 0.0323117524,
+        "source_feature_count": 985,
+        "source_holes": 0
+      },
+      {
+        "tile": "14-13705-6713",
+        "features": 793,
+        "triangles": 11452,
+        "bytes": 119940,
+        "position_step_m": 0.0323317498,
+        "source_feature_count": 793,
+        "source_holes": 0
+      },
+      {
+        "tile": "14-13707-6686",
+        "features": 619,
+        "triangles": 10956,
+        "bytes": 113808,
+        "position_step_m": 0.0326103568,
+        "source_feature_count": 619,
+        "source_holes": 8
+      },
+      {
+        "tile": "14-13708-6697",
+        "features": 621,
+        "triangles": 8636,
+        "bytes": 95016,
+        "position_step_m": 0.0324479714,
+        "source_feature_count": 621,
+        "source_holes": 1
+      },
+      {
+        "tile": "14-13709-6705",
+        "features": 1799,
+        "triangles": 32114,
+        "bytes": 321472,
+        "position_step_m": 0.0328742377,
+        "source_feature_count": 1800,
+        "source_holes": 10
+      },
+      {
+        "tile": "14-13710-6711",
+        "features": 856,
+        "triangles": 12148,
+        "bytes": 126708,
+        "position_step_m": 0.0322252065,
+        "source_feature_count": 856,
+        "source_holes": 9
+      },
+      {
+        "tile": "14-13711-6713",
+        "features": 471,
+        "triangles": 7740,
+        "bytes": 81456,
+        "position_step_m": 0.0326133221,
+        "source_feature_count": 471,
+        "source_holes": 3
+      },
+      {
+        "tile": "14-13712-6712",
+        "features": 2033,
+        "triangles": 26244,
+        "bytes": 281356,
+        "position_step_m": 0.0325208716,
+        "source_feature_count": 2033,
+        "source_holes": 5
+      },
+      {
+        "tile": "14-13713-6713",
+        "features": 1533,
+        "triangles": 21228,
+        "bytes": 226384,
+        "position_step_m": 0.0331216864,
+        "source_feature_count": 1533,
+        "source_holes": 3
+      }
+    ],
+    "sampled_source_holes": 50,
+    "sidecar_ids": "All original IDs in each sampled whole-cell output were present, with only permitted parent IDs added. Checks include nonrenderable parents for online overlap suppression.",
+    "hashes_and_headers": "Sample GLB SHA256, file length, required meshopt/quantization extensions, and exact triangle counts match records.",
+    "float32_max_local_coordinate_error_m": 6.103049190642196e-05,
+    "meshopt_max_position_step_m": 0.0331216864,
+    "meshopt_max_rounding_per_axis_m": 0.0165608432,
+    "height_precedence_fixture": {
+      "source_height": 150,
+      "floors_20_height": 64,
+      "raster_estimate": 55.2,
+      "sample_below_min_height_rejected": true,
+      "suspended_min_height": 60,
+      "suspended_fallback_top": 72,
+      "sampler_calls": 2
+    },
+    "initial_completed_record_scan": {
+      "records": 609,
+      "invalid_polygon_count": 0,
+      "largest_uncompressed_bytes": 2801312,
+      "largest_glb_bytes": 519908,
+      "split_records": 0
+    },
+    "residual_extrusion_fixture": {
+      "parent_count": 402,
+      "input_polygons": 1335,
+      "emitted_polygons": 1241,
+      "no_parent_lost_entirely": true
+    }
+  },
+  "nonblocking_precision_notes": [
+    {
+      "id": "parent_area_threshold",
+      "details": "42 complete-parent residuals of total area <=1 m² are intentionally omitted; aggregate omitted area 22.635866 m². This is an explicit numerical mesh policy, not evidence those areas do not exist."
+    },
+    {
+      "id": "component_mesh_threshold",
+      "details": "The mesh writer also removes consecutive vertices closer than 1 mm and rings below 0.01 m². Among retained parent residuals, 94 tiny exterior components are skipped, total area 0.1047021300 m², largest 0.0093729406 m². Record these separately; the phrase all small components remain intact is only true for the override GeoJSON, not its final mesh.",
+      "details_file": "residual-mesh-review.json"
+    },
+    {
+      "id": "multipart_failure_accounting",
+      "details": "create_meshes fails if every polygon of a feature fails; a partly successful MultiPolygon is counted as a represented feature and failed components are recorded. Therefore final validation must inspect invalid_polygons and their areas; feature-count balance alone is not geometry-area completeness."
+    },
+    {
+      "id": "legacy_entrypoint",
+      "details": "build_district_models.py export_one still skips a complete parent when any child part is present. Full-city production imports its geometry helpers only; rebuilding legacy district samples through that entrypoint would retain the original omission unless separately adapted."
+    }
+  ],
+  "operational_notes": [
+    "The generic >100 MB assertion in write_glb runs before publish_chunk can split it; a pathological >100 MB raw owner cell would fail visibly rather than split. Observed source cells are far smaller, so this does not affect current production.",
+    "Changed partitioning on a rerun can leave orphan records unless cleanup/audit rejects them. Current sample had no split owner cells; final audit should enforce that every record belongs to exactly one source state.",
+    "Code-source checksums should accompany the published build. Per-source residual hashes correctly permit unaffected pre-fix cells to be reused; do not interpret this as generic cache invalidation for all future geometry changes."
+  ],
+  "remaining_validation": [
+    "Wait for all 1,708 owner source cells to finish.",
+    "Confirm modeled + 83 landmark replacements = 1,796,116 raw renderable features + 402 restored residual parents.",
+    "Run full SHA256, sidecar-ID membership, orphan-record, district-balance, triangle-count and file-size audit.",
+    "Report residual tiny-component skips and height-estimate classes in the final manifest/accuracy documentation."
+  ]
+}

@@ -1,5 +1,6 @@
 import { createShanghaiScene } from './map-scene.js';
 import { WalkController } from './walk-controller.js';
+import { districtAt } from './geography.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
@@ -33,6 +34,7 @@ function updateLocation(place) {
 }
 function syncMode(next, announce=true) {
   mode=next;
+  if(location.hash){const hash=new URLSearchParams(location.hash.slice(1));hash.set('mode',next);history.replaceState(null,'',`#${hash}`);}
   if(scene?.map.setVerticalFieldOfView)scene.map.setVerticalFieldOfView(next==='walk'?55:36.87);
   controller?.setMode(next);
   scene?.setDistrictVisibility(next==='overview');
@@ -44,19 +46,19 @@ function syncMode(next, announce=true) {
   $('mode-label').textContent=next==='walk'?'第三人称漫游':'城市俯瞰';
   $('hint-text').textContent=next==='walk'
     ?(mobile()?'左侧摇杆行走 · 拖动场景转向':'WASD 行走 · Shift 加速 · 拖动转向 · 滚轮远近')
-    :'拖动平移 · 滚轮缩放 · 选择地点开始漫游';
+    :'拖动平移 · 滚轮缩放 · 双击地图选择漫游起点';
   $('mobile-controls').hidden=!(next==='walk'&&(mobile()||matchMedia('(pointer:coarse)').matches));
   updateLocation(activePlace);
   if(next==='walk') {
     if(mobile()) togglePanel(false);
-    if(announce) toast('已进入第三人称漫游，使用 WASD 或方向键行走');
+    if(announce) toast(mobile()?'已进入第三人称漫游，拖动左侧摇杆行走':'已进入第三人称漫游，使用 WASD 或方向键行走');
   }
 }
 function showOverview(place=activePlace) {
   if(!scene) return;
   syncMode('overview',false);
   const center=place.lng?[place.lng,place.lat]:(place.walkStart||place.center);
-  scene.map.flyTo({center,zoom:place.id==='bund'?14.8:place.height_m?16.4:14.8,pitch:56,bearing:place.bearing??35,duration:1000,essential:true});
+  scene.map.flyTo({center,zoom:place.custom?16.4:place.id==='bund'?14.8:place.height_m?16.4:14.8,pitch:56,bearing:place.bearing??35,duration:1000,essential:true});
 }
 async function selectPlace(place) {
   if(!controller) return;
@@ -67,12 +69,18 @@ async function selectPlace(place) {
   controller.teleport({lng,lat,bearing:place.bearing??45});
   if(mode==='overview') showOverview(place);
   if(mobile()) togglePanel(false);
-  history.replaceState(null,'',`#${place.height_m?'landmark':'district'}=${encodeURIComponent(place.id)}&mode=${mode}`);
+  const hash=place.custom?`lng=${lng.toFixed(6)}&lat=${lat.toFixed(6)}`:`${place.height_m?'landmark':'district'}=${encodeURIComponent(place.id)}`;
+  history.replaceState(null,'',`#${hash}&mode=${mode}`);
   $('live-status').textContent='加载当前区域';
   try {
     await scene.waitForData(10000);
     if(ticket===navigation) $('live-status').textContent='全域地图已连接';
   } catch { if(ticket===navigation) toast('当前区域的地图仍在加载，请稍候。'); }
+}
+function mapPlace(lng,lat) {
+  const district=districtAt(boundaries,lng,lat);
+  if(!district)return null;
+  return {id:'selected-location',name:'自选街区',districtId:String(district.id),walkStart:[lng,lat],bearing:scene.map.getBearing(),custom:true};
 }
 function renderPlaces() {
   const query=$('place-search').value.trim().toLowerCase();
@@ -171,14 +179,27 @@ async function main(){
   if(location.protocol==='file:') return;
   installUi();loadingProgress(18);
   try{
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','assets/districts/metadata.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
     $('landmark-count').textContent=landmarks.length;renderPlaces();drawMiniMap();updateLocation(BUND);loadingProgress(35);
     scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:65},zoom:14.8,landmarks,
-      onStatus:status=>{if(status.message){$('loading-message').textContent=status.message;$('live-status').textContent=status.kind==='landmarks'?'地标加载中':'全域地图已连接';}},
+      onStatus:status=>{
+        if(status.message)$('loading-message').textContent=status.message;
+        if(status.kind==='streaming')$('live-status').textContent=status.loading?'加载附近建筑':status.visible?'附近建筑已加载':'全域地图已连接';
+        else if(status.kind==='landmarks')$('live-status').textContent=status.loaded<status.total?'地标加载中':'地标已加载';
+        else if(status.message)$('live-status').textContent='全域地图已连接';
+      },
       onLoadError:error=>{console.warn('[Shanghai map]',error);$('live-status').textContent='地图连接稍慢';}});
     scene.map.dragRotate.enable();scene.setDistricts(boundaries);scene.setDistrictVisibility(true);
-    scene.setNeighborhoods(responses[3].models);
+    scene.map.doubleClickZoom.disable();
+    scene.map.on('dblclick',event=>{
+      if(mode!=='overview')return;
+      event.preventDefault();
+      const place=mapPlace(event.lngLat.lng,event.lngLat.lat);
+      if(place){selectPlace(place);toast('已选择街区，点击“进入漫游”出发。');}
+      else toast('请在上海行政区范围内选择起点。');
+    });
+    await scene.setCityManifest('assets/city/manifest.json');
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});
     controller.setMode('overview');controller.setEnabled(true);controller.teleport({lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:0});
     scene.map.jumpTo({center:[121.4970,31.2387],zoom:14.8,pitch:57,bearing:65});
@@ -189,7 +210,8 @@ async function main(){
     scene.map.on('rotate',()=>$('compass-needle').style.transform=`rotate(${-scene.map.getBearing()}deg)`);
     window.__SHANGHAI_APP__={scene,controller,districts,landmarks,get mode(){return mode;},selectPlace,syncMode};
     const hash=new URLSearchParams(location.hash.slice(1));
-    const destination=districts.find(d=>d.id===hash.get('district'))||landmarks.find(p=>p.id===hash.get('landmark'));
+    const destination=districts.find(d=>d.id===hash.get('district'))||landmarks.find(p=>p.id===hash.get('landmark'))
+      ||(hash.has('lng')&&hash.has('lat')?mapPlace(Number(hash.get('lng')),Number(hash.get('lat'))):null);
     if(destination)await selectPlace(destination);
     if(hash.get('mode')==='walk')syncMode('walk',false);
   }catch(error){

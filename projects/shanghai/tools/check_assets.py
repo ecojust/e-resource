@@ -4,9 +4,15 @@ from pathlib import Path
 import json
 import struct
 import sys
+import hashlib
+import math
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
 LIMIT = 100_000_000  # Deliberately below GitHub's 100 MiB limit.
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--allow-partial',action='store_true',help='Allow an in-progress city manifest during generation only')
+args=parser.parse_args()
 errors = []
 files = [p for p in ROOT.rglob('*') if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts]
 for path in files:
@@ -24,6 +30,9 @@ for path in ROOT.rglob('*.glb'):
     try:
         document = json.loads(data[20:20+size])
         assert kind == 0x4E4F534A and document.get('meshes')
+        for accessor in document.get('accessors',[]):
+            for key in ('min','max'):
+                assert all(math.isfinite(x) for x in accessor.get(key,[])), 'nonfinite accessor bounds'
         for buffer in document.get('buffers', []):
             assert not buffer.get('uri'), 'external buffer dependency'
     except (ValueError, AssertionError) as error:
@@ -37,6 +46,24 @@ for model in metadata['models']:
 districts = json.loads((ROOT/'data/districts.json').read_text())['districts']
 assert len(districts) == 16 and len({d['id'] for d in districts}) == 16
 assert (ROOT/'index.html').is_file()
+city_path=ROOT/'assets/city/manifest.json'
+if city_path.is_file():
+    city=json.loads(city_path.read_text());seen=set();total=0
+    if not city.get('complete') and not args.allow_partial:errors.append('Full-city manifest is incomplete')
+    if city.get('errors'):errors.append('Full-city manifest contains export errors')
+    for model in city['tiles']:
+        if model['id'] in seen:errors.append('Duplicate city tile: '+model['id'])
+        seen.add(model['id']);total+=model['building_count']
+        for key,hashkey in [('file','sha256'),('feature_ids_file','feature_ids_sha256')]:
+            path=city_path.parent/model[key]
+            if not path.is_file():errors.append('Missing city asset: '+model[key]);continue
+            if hashlib.sha256(path.read_bytes()).hexdigest()!=model[hashkey]:errors.append('City checksum mismatch: '+model[key])
+    if len(seen)!=city['model_count'] or total!=city['feature_count']:errors.append('City model/feature totals do not agree')
+    if city.get('complete'):
+        if len(city['districts'])!=16:errors.append('City manifest must cover 16 districts')
+        if not city.get('coverage_balanced'):errors.append('City geometry does not balance against the source')
+        if sum(city['height_quality'].values())!=city['feature_count']:errors.append('City height provenance totals do not agree')
+    if not (ROOT/'vendor/meshopt_decoder.module.js').is_file():errors.append('Missing Meshopt decoder')
 if errors:
     print('\n'.join(errors), file=sys.stderr)
     raise SystemExit(1)

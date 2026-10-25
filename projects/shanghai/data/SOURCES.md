@@ -25,9 +25,9 @@
 
 OpenFreeMap 项目代码采用 MIT，但其地图数据库来自 OpenStreetMap，仍需按来源保持归属信息。建议保留 TileJSON 自带的标准署名：**OpenFreeMap · © OpenMapTiles · Data from OpenStreetMap**。服务条款与说明：https://openfreemap.org/ 及 https://openfreemap.org/tos 。地图在运行时联网加载，不是随仓库离线复制的全市瓦片包。
 
-本次只下载 16 个缩放 14 的样本瓦片用于验证，总量约 1.45 MB，并限制至多 4 个并发请求。样本不是全市统计。数据中各区 `sampleCoverage` 记录的是入场点对应样本瓦片的要素数量。
+道路底图的起点核验使用 16 个缩放 14 的样本瓦片，总量约 1.45 MB，并限制至多 4 个并发请求。这些底图样本不是全市统计；建筑已另行完成下述全域 Overture 提取。数据中各区 `sampleCoverage` 记录的是入场点对应样本瓦片的要素数量。
 
-**建筑覆盖有明显差异**：中心区域有较多建筑轮廓；部分郊区和农村样本仅含少量建筑。项目不会用虚构楼宇填补这些空白，也不声称提供全市每栋建筑的完整实景模型。
+OSM 单独的建筑覆盖在郊区较稀疏，因此当前页面使用下述全域 Overture 轮廓及本地模型。没有用随机城市网格填充空白；公开源仍可能漏楼或包含影像提取误差。
 
 ## 漫游起点
 
@@ -39,7 +39,7 @@ OpenFreeMap 项目代码采用 MIT，但其地图数据库来自 OpenStreetMap�
 
 ## 地标定位
 
-`landmark-anchors.json` 的经纬度来自实时 Overpass 查询的 OSM 建筑轮廓中心；江海关大楼使用同名景点节点。均附 OSM 对象编号及链接。
+`landmark-anchors.json` 的经纬度来自实时 Overpass 查询的 OSM 建筑轮廓中心；海关前楼使用 way178407318 实际前楼多边形质心与朝向。均附 OSM 对象编号及链接。
 
 同时查询了 Wikipedia 坐标进行交叉核对；最终以 OSM 对象位置对齐同源地图。模型外形为程序化近似，定位依据与建筑外形精度分开记录。
 
@@ -51,9 +51,14 @@ OpenFreeMap 项目代码采用 MIT，但其地图数据库来自 OpenStreetMap�
 
 - 2026-10-21.0 版本：`https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles`。
 - 来源建筑图层：`building`、`building_part`。
-- 全市数据由页面在线按需读取；本地另提供每区漫游起点周围约 1 km² 的 GeoJSON 和 GLB 样本，包含全部 16 区。
-- 本地 16 个模型共表示 8,294 个建筑/分部：91 个有来源高度，271 个有楼层数并按 3.2 米/层估算，其余 7,932 个采用统一 12 米可视化默认高度。这一高度不是实测值。
+- 全域轮廓已保存于 `fullcity-raw/`，全部处理为 `../assets/city/` 分块 GLB；在线 PMTiles 提供远景和失败时回退。浏览器按位置读取本地模型，不一次加载整座城市。
+- 完整提取检查2,892个相交z14格，1,734个源瓦片下载成功，得到1,796,667个唯一地上建筑/部件，地下11个单独保留。源最大缩放14，编码量化细度不等同于实地轮廓精度；无源海域与下载失败分开记录。
+- 保留源高度与楼层估计，再以CMAB严格轮廓匹配、CNBH10m、GHSL区域均高补充，并标注估算。实际统计见完整模型manifest和 `heights/HEIGHT_SOURCES.md`。
+- 551个有parts的父体逐一核验，另恢复402个未被parts覆盖的剩余足迹，裙房单独估高。地标采用精确OSM/GERS关系替换，保留邻楼及后翼。
+- `neighborhoods/`及`../assets/districts/`为早期16区1km²样本，仅用于历史比较与高度一致性抽样，不代表当前全域模型覆盖。
 - Overture 建筑主题及其衍生数据遵循 ODbL 1.0；需要保留 © Overture Maps Foundation、© OpenStreetMap contributors 和逐要素原始数据归属。East Asian buildings 数据由 Qian Shi 等发布（2023），原始许可为 CC BY 4.0： https://doi.org/10.5281/zenodo.8174931 。
 - 许可总览：https://docs.overturemaps.org/attribution/ 。
 
-正式重建应从最新 STAC 版本选择数据，因为旧版公共 PMTiles 可能在保留期后过期；本地 GeoJSON 和 GLB 样本已保存，不依赖旧版服务。
+本次固定2026-10-21.0版本，并完整保存提取快照、模型、SHA256和重建源码；重跑新版本应记录版本差异。在线旧版本失效时网页尝试官方最新STAC，最后回退OSM。已发布全域GLB不会因公共PMTiles版本过期而丢失。
+
+详见 `audit/ACCURACY.md`、`audit/cmab-alignment.json`、`heights/HEIGHT_SOURCES.md`、`parent-residual-overrides.json` 和 `landmark-exclusions.json`。

@@ -1,11 +1,11 @@
 {
   "name": "shanghai-explorer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "description": "Independent Shanghai 16-district geographic map and third-person walking scene",
   "scripts": {
-    "test": "node tests/walk-controller.test.mjs",
+    "test": "node tests/walk-controller.test.mjs && node tests/local-model-streamer.test.mjs && node tests/geography.test.mjs && node tests/road-width.test.mjs",
     "check:assets": "python tools/check_assets.py"
   }
 }
