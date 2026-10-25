@@ -6,6 +6,8 @@
 
 ![上海城市俯瞰](assets/previews/overview.png)
 
+也可下载[轻量网页启动包](downloads/shanghai-web-launcher.zip)（约8.5MB），解压后按包内说明启动HTTP服务。启动包包含页面与5个地标，全域建筑按需从固定Git提交联网加载；完整源数据仍保存在本项目中。
+
 ## 打开页面与操作
 
 无需npm安装或构建。在本目录运行：

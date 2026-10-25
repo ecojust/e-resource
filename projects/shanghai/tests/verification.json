@@ -99,7 +99,9 @@
     "fullcity": "../data/audit/fullcity-models-validation.json",
     "exporter": "../data/audit/exporter-review.json",
     "height_package": "../data/heights/package_portability_validation.json",
-    "published_model_hashes": "published-model-check.json"
+    "published_model_hashes": "published-model-check.json",
+    "public_preview": "published-preview.json",
+    "launcher_cdn": "launcher-cdn-check.json"
   },
   "limitations": [
     "Coverage is complete for the captured public source, not a survey of every physical building.",
@@ -107,5 +109,14 @@
     "Road/water/name tiles and distant-building fallback need network access.",
     "Software GPU tests validate functionality and memory bounds, not hardware frame rates.",
     "Mobile double-tap automation was repeated with physical event timestamps; details are retained in its report."
-  ]
+  ],
+  "published_app_commit": "b36ab343101ee49be69c7ff20beed0e2bcb7b005",
+  "launcher": {
+    "file": "../downloads/shanghai-web-launcher.zip",
+    "bytes": 8464768,
+    "zip_integrity": true,
+    "sample_model_and_ids_hashes": true,
+    "cors": "*",
+    "network_required": true
+  }
 }
