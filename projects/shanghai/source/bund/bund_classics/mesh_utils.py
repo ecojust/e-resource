@@ -12,7 +12,13 @@ class Builder:
         c=Vector(center);axes=basis or [Vector((1,0,0)),Vector((0,1,0)),Vector((0,0,1))]
         verts=[c+axes[0]*a*size[0]/2+axes[1]*b*size[1]/2+axes[2]*d*size[2]/2
                for a,b,d in [(-1,-1,-1),(1,-1,-1),(1,1,-1),(-1,1,-1),(-1,-1,1),(1,-1,1),(1,1,1),(-1,1,1)]]
-        self.geom(verts,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)],mat)
+        faces=[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
+        # Facade tangential/outward/up axes are left-handed. A reflection
+        # reverses winding, so compensate without moving or merging vertices.
+        # Keep the first corner so Blender retains the original quad diagonals.
+        if Vector(axes[0]).cross(Vector(axes[1])).dot(Vector(axes[2])) < 0:
+            faces=[face[:1]+tuple(reversed(face[1:])) for face in faces]
+        self.geom(verts,faces,mat)
     def cylinder(self,center,radius,depth,mat,segments=48,axis=(0,0,1)):
         c=Vector(center);n=Vector(axis).normalized();u=n.cross(Vector((0,0,1)))
         if u.length<.01:u=Vector((1,0,0))

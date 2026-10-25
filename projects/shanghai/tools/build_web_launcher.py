@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build the v3 local web launcher; city tiles remain on a pinned commit CDN.
+"""Build the v4 local web launcher; city tiles remain on a pinned commit CDN.
 
 Example (inspect only, without writing an archive):
-  python build_web_launcher_v3.py --commit <40-hex-SHA> --project ../shanghai_project \
-      --output shanghai-web-launcher-v3.zip --dry-run
+  python tools/build_web_launcher.py --commit <40-hex-SHA> --project . \
+      --output shanghai-web-launcher-v4.zip --dry-run
 
 Run without --dry-run only after the supplied commit contains the final app and
 its city tiles/ID sidecars. No repository or project files are modified.
@@ -23,6 +23,9 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 HERE = Path(__file__).resolve().parent
 MAX_BYTES = 100_000_000
+MATERIAL_ROOT = 'assets/materials/realism-v4/'
+ROAD_REMAINDER_METADATA = 'data/bund/basemap-road-remainders-v4.json'
+ROAD_REMAINDER_GEOMETRY = 'data/bund/basemap-road-remainders-v4.geojson'
 CORE_DATA = (
     'districts.json', 'districts-display.geojson', 'landmarks.json',
     'scene-props.json', 'landmark-exclusions.json', 'map-style.json',
@@ -82,6 +85,45 @@ def check_self_contained_glb(data, name):
 def runtime_model(item):
     # This order intentionally matches map-scene.js setLandmarks().
     return relative_path(item.get('url') or item.get('model') or '')
+
+
+def verify_manifest_file(payload, name, expected_size, expected_sha256):
+    if name not in payload:
+        raise FileNotFoundError(f'Manifest asset is missing: {name}')
+    if not isinstance(expected_size, int) or not 0 < expected_size < MAX_BYTES:
+        raise ValueError(f'Invalid manifest size: {name}')
+    if not isinstance(expected_sha256, str) or not re.fullmatch(r'[0-9a-f]{64}', expected_sha256):
+        raise ValueError(f'Invalid manifest SHA256: {name}')
+    if len(payload[name]) != expected_size or sha256(payload[name]) != expected_sha256:
+        raise ValueError(f'Asset size/SHA256 differs from metadata: {name}')
+
+
+def validate_materials(payload):
+    manifest = json.loads(payload[MATERIAL_ROOT + 'manifest.json'])
+    textures, seen = [], set()
+    if manifest.get('license') != 'CC0-1.0' or len(manifest.get('assets', [])) != 3:
+        raise ValueError('The v4 launcher requires the three verified CC0 surface sets.')
+    for asset in manifest['assets']:
+        if asset.get('license') != 'CC0-1.0' or not asset.get('authors') or not asset.get('assetURL'):
+            raise ValueError(f'Incomplete material provenance: {asset.get("id")}')
+        if {item.get('role') for item in asset.get('maps', [])} != {'basecolor', 'roughness', 'normalOpenGL'}:
+            raise ValueError(f'Material must include colour, roughness and OpenGL normal: {asset.get("id")}')
+        for entry in asset['maps']:
+            name = MATERIAL_ROOT + relative_path(entry['file'])
+            if name in seen or entry.get('pixels') != [1024, 1024]:
+                raise ValueError(f'Duplicate/non-1K material texture: {name}')
+            seen.add(name)
+            verify_manifest_file(payload, name, entry.get('size'), entry.get('sha256'))
+            textures.append({'file': name, 'bytes': len(payload[name]), 'sha256': sha256(payload[name])})
+    if len(textures) != 9:
+        raise ValueError('The v4 launcher requires exactly nine local surface maps.')
+    support = {entry['file']: entry for entry in manifest.get('supportFiles', [])}
+    for name in ('README.md', 'SOURCES.md', 'LICENSE-CC0.txt'):
+        if name not in support:
+            raise ValueError(f'Material documentation is missing from the manifest: {name}')
+        entry = support[name]
+        verify_manifest_file(payload, MATERIAL_ROOT + name, entry.get('size'), entry.get('sha256'))
+    return textures
 
 
 def rewrite_download_links(value, bundled, cdn_root):
@@ -178,15 +220,33 @@ def plan(project, commit):
     for name in CORE_DATA:
         add('data/' + name)
     add_tree('data/bund', suffixes={'.json', '.md', '.txt'})
+    # One runtime GeoJSON is deliberately included. Validation/source GeoJSONs
+    # remain outside the launcher rather than widening this tree's suffix list.
+    add(ROAD_REMAINDER_GEOMETRY)
+    road_metadata = json.loads(payload[ROAD_REMAINDER_METADATA])
+    if road_metadata.get('geojson') != ROAD_REMAINDER_GEOMETRY:
+        raise ValueError('Unexpected runtime road remainder geometry reference.')
+    verify_manifest_file(payload, ROAD_REMAINDER_GEOMETRY, road_metadata.get('geojson_bytes'), road_metadata.get('geometry_sha256'))
+    road_geometry = json.loads(payload[ROAD_REMAINDER_GEOMETRY])
+    road_ids = road_metadata.get('suppressed_feature_ids', [])
+    if (not road_metadata.get('coverage_validation', {}).get('passed')
+            or len(road_ids) != 2 or len(set(road_ids)) != 2
+            or road_geometry.get('type') != 'FeatureCollection'
+            or not isinstance(road_geometry.get('features'), list)
+            or any(feature.get('properties', {}).get('source_mvt_id') not in road_ids
+                   for feature in road_geometry['features'])):
+        raise ValueError('Runtime road remainder metadata/geometry is inconsistent.')
     add_tree('assets/references/bund')
+    add_tree(MATERIAL_ROOT.rstrip('/'))
+    textures = validate_materials(payload)
 
     landmarks = json.loads(payload['data/landmarks.json'])
     props = json.loads(payload['data/scene-props.json'])
     if not isinstance(landmarks, list) or len(landmarks) != 14:
-        raise ValueError('The v3 launcher requires all 14 final landmarks.')
-    if not isinstance(props, list) or not props:
-        raise ValueError('The v3 launcher requires scene-props.json including the street GLB.')
-    models = []
+        raise ValueError('The v4 launcher requires all 14 final landmarks.')
+    if not isinstance(props, list) or len(props) != 1:
+        raise ValueError('The v4 launcher requires the single street scene prop.')
+    models, lod_models = [], []
     for item in landmarks + props:
         name = runtime_model(item)
         if not name.endswith('.glb') or not any(part in PurePosixPath(name).parts for part in ('web', 'optimized')):
@@ -196,6 +256,17 @@ def plan(project, commit):
         if item.get('web_sha256') and sha256(payload[name]) != item['web_sha256']:
             raise ValueError(f'Runtime model SHA256 differs from metadata: {name}')
         models.append({'id': item['id'], 'file': name, 'bytes': len(payload[name]), 'sha256': sha256(payload[name])})
+        if item.get('candidate_id') or item.get('lod_model'):
+            lod_name = relative_path(item.get('lod_model') or '')
+            if not lod_name.endswith('.glb') or not lod_name.startswith('assets/models/bund/'):
+                raise ValueError(f'Unexpected local Bund LOD path: {lod_name}')
+            if lod_name == name:
+                raise ValueError(f'Bund LOD must be separate from the primary model: {lod_name}')
+            add(lod_name)
+            check_self_contained_glb(payload[lod_name], lod_name)
+            verify_manifest_file(payload, lod_name, item.get('lod_bytes'), item.get('lod_sha256'))
+            lod_models.append({'id': item['id'], 'file': lod_name, 'bytes': len(payload[lod_name]),
+                               'sha256': sha256(payload[lod_name]), 'triangles': item.get('lod_triangles')})
         reference = item.get('reference')
         if reference and reference.get('image'):
             photo = relative_path(reference['image'])
@@ -205,6 +276,17 @@ def plan(project, commit):
                 raise ValueError(f'Reference photograph SHA256 differs from metadata: {photo}')
     if not any('street' in item['id'] for item in props):
         raise ValueError('No street scene prop was found.')
+    if len(lod_models) != 10 or len({item['file'] for item in lod_models}) != 10:
+        raise ValueError('The v4 launcher requires one separate LOD for each of the ten Bund buildings.')
+    lod_release = json.loads(payload['data/bund/lod-v4.json'])
+    lod_records = lod_release.get('models', [])
+    lod_by_model = {item['model']: item for item in lod_records}
+    if len(lod_records) != 10 or len(lod_by_model) != 10:
+        raise ValueError('The LOD release manifest must contain exactly ten distinct models.')
+    for item in lod_models:
+        record = lod_by_model.get(item['file'], {})
+        if any(record.get(key) != item[value] for key, value in [('sha256', 'sha256'), ('bytes', 'bytes'), ('triangles', 'triangles')]):
+            raise ValueError(f'LOD release manifest differs from navigation metadata: {item["id"]}')
 
     _, city_data = read_required(project, 'assets/city/manifest.json')
     city = deepcopy(json.loads(city_data))
@@ -225,12 +307,10 @@ def plan(project, commit):
         if name.endswith('.json') and name.startswith('data/'):
             value = rewrite_download_links(json.loads(payload[name]), bundled, cdn_root)
             payload[name] = encode_json(value)
-    # The package's project-information link uses the same fixed release.
-    payload['index.html'] = payload['index.html'].replace(
-        b'https://github.com/ecojust/e-resource/tree/master/projects/shanghai',
-        f'https://github.com/ecojust/e-resource/tree/{commit}/projects/shanghai'.encode())
+    # Runtime models and city chunks are pinned above. Keep the project-info
+    # link on the current documentation, where the latest launcher is published.
 
-    instructions = f'''上海漫游 v3 · 本地网页启动包
+    instructions = f'''上海漫游 v4 · 本地网页启动包
 
 一、启动
 完整解压后进入 shanghai 目录，在该目录运行：
@@ -241,7 +321,8 @@ macOS/Linux 如使用 python3：
 
 二、包内与联网部分
 本包包含网页程序、本地第三方库、14个网页优化地标、外滩街道模型、
-外滩参考照片及运行时数据。原始GLB、Blender源文件和全市分块没有打入本包。
+10个外滩建筑远景LOD、9张本地1K表面纹理、外滩参考照片及运行时数据。
+原始GLB、Blender源文件和全市分块没有打入本包。
 漫游仍需联网：道路、水系、中文标注和远景地图来自公开地图服务；
 全市 {len(city['tiles']):,} 个建筑分块及精确ID索引按需从固定Git提交加载。
 固定提交：{commit}
@@ -253,7 +334,9 @@ WASD/方向键行走，Shift加速，拖动转向，滚轮调镜头；Q/E转动�
 
 四、模型与精度
 外滩建筑按公开照片和轮廓复建柱廊、凹窗、檐口及屋顶；未获得实测资料的
-尺寸与侧后细节含推定。全市普通建筑仍是公开足迹挤出的体块背景，高度以
+尺寸与侧后细节含推定。近处使用完整建筑、远处切换精简LOD；表面纹理来自
+可再分发的通用石材与沥青素材，不代表对外滩实地材料的扫描。全市普通建筑
+仍是公开足迹挤出的体块背景，高度以
 公开预测/栅格估计为主。两类模型均不能用作测绘或现实导航。
 
 完整项目、原始模型、Blender文件、重建源码及来源：
@@ -261,35 +344,49 @@ https://github.com/ecojust/e-resource/tree/{commit}/projects/shanghai
 
 代码许可见 LICENSE，第三方库许可见 licenses/；照片作者、许可和原网页
 保留在 data/landmarks.json，界面参考图弹窗同时显示署名。照片许可不被代码MIT替代。
+表面纹理为CC0；作者、来源、原始文件校验值及许可全文保留在
+assets/materials/realism-v4/；不需要联网下载这些纹理。
 更多数据说明见 data/SOURCES.md、data/heights/HEIGHT_SOURCES.md 和 data/bund/。
 '''
     payload['使用说明.txt'] = instructions.encode('utf-8')
-    payload['README.md'] = ('# 上海漫游 v3 启动包\n\n' + instructions).encode('utf-8')
+    payload['README.md'] = ('# 上海漫游 v4 启动包\n\n' + instructions).encode('utf-8')
 
     for name in payload:
         if name.startswith(OMITTED_PREFIXES) or name.endswith(('.blend', '.blend1')):
             raise ValueError(f'Raw/native/offline-city payload unexpectedly included: {name}')
-        if name.endswith('.glb') and name not in {item['file'] for item in models}:
+        if name.endswith('.glb') and name not in {item['file'] for item in models + lod_models}:
             raise ValueError(f'Unexpected GLB outside the selected runtime models: {name}')
     references_checked = validate_static_references(payload)
     package_manifest = {
-        'version': 'shanghai-web-launcher-v3', 'commit': commit,
+        'version': 'shanghai-web-launcher-v4', 'commit': commit,
         'landmark_count': len(landmarks), 'scene_prop_count': len(props),
         'city_model_count': len(city['tiles']), 'city_feature_count': city.get('feature_count'),
         'city_manifest_source_sha256': sha256(city_data), 'city_cdn_prefix': city_prefix,
         'requires_network_for_map_and_city_tiles': True,
-        'raw_native_models_included': False, 'runtime_models': models,
+        'raw_native_models_included': False, 'runtime_models': models, 'lod_models': lod_models,
+        'local_surface_textures': textures,
+        'local_road_remainders': {'file': ROAD_REMAINDER_GEOMETRY,
+                                 'bytes': len(payload[ROAD_REMAINDER_GEOMETRY]),
+                                 'sha256': sha256(payload[ROAD_REMAINDER_GEOMETRY])},
         'static_references_checked': references_checked,
         'files': [{'file': name, 'bytes': len(content), 'sha256': sha256(content)}
                   for name, content in sorted(payload.items())],
     }
     payload['LAUNCHER-MANIFEST.json'] = encode_json(package_manifest)
+    for name, content in payload.items():
+        if len(content) >= MAX_BYTES:
+            raise ValueError(f'Individual packaged file is not below 100 MB: {name}')
     total = sum(len(content) for content in payload.values())
     report = {
         'version': package_manifest['version'], 'commit': commit,
         'project': str(project), 'landmarks': len(landmarks), 'scene_props': len(props),
-        'runtime_glbs': len({item['file'] for item in models}),
-        'local_runtime_glb_bytes': sum(len(payload[name]) for name in {item['file'] for item in models}),
+        'runtime_glbs': len({item['file'] for item in models + lod_models}),
+        'primary_runtime_glbs': len({item['file'] for item in models}),
+        'bund_lod_glbs': len(lod_models),
+        'local_runtime_glb_bytes': sum(len(payload[name]) for name in {item['file'] for item in models + lod_models}),
+        'local_surface_textures': len(textures),
+        'local_surface_texture_bytes': sum(item['bytes'] for item in textures),
+        'local_road_remainder_bytes': len(payload[ROAD_REMAINDER_GEOMETRY]),
         'reference_photos': sum(name.startswith('assets/references/bund/') for name in payload),
         'city_models_streamed': len(city['tiles']), 'city_features': city.get('feature_count'),
         'file_count': len(payload), 'uncompressed_bytes': total,
@@ -331,8 +428,8 @@ def write_archive(payload, output):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--commit', required=True, help='Final published Git commit, exactly 40 hexadecimal characters')
-    parser.add_argument('--project', type=Path, default=HERE.parent / 'shanghai_project', help='Source app directory')
-    parser.add_argument('--output', type=Path, default=HERE / 'shanghai-web-launcher-v3.zip', help='Destination ZIP')
+    parser.add_argument('--project', type=Path, default=HERE.parent, help='Source app directory')
+    parser.add_argument('--output', type=Path, default=HERE.parent / 'downloads/shanghai-web-launcher-v4.zip', help='Destination ZIP')
     parser.add_argument('--dry-run', action='store_true', help='Validate inputs and report the plan; do not create an archive or output directory')
     args = parser.parse_args()
     if not re.fullmatch(r'[0-9a-fA-F]{40}', args.commit):

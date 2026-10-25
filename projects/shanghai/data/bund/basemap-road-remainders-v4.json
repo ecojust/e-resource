@@ -1,0 +1,180 @@
+{
+  "version": 4,
+  "suppressed_feature_ids": [
+    403013682,
+    4489314812
+  ],
+  "layer_ids": [
+    "road_secondary_tertiary_casing",
+    "road_secondary_tertiary"
+  ],
+  "source_layer": "transportation",
+  "source_snapshot": "OpenFreeMap 20261018_080001_pt",
+  "geojson": "data/bund/basemap-road-remainders-v4.geojson",
+  "crop_wgs84_west_south_east_north": [
+    121.4842,
+    31.23545,
+    121.4892,
+    31.2419
+  ],
+  "crop": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          121.4842,
+          31.23545
+        ],
+        [
+          121.4892,
+          31.23545
+        ],
+        [
+          121.4892,
+          31.2419
+        ],
+        [
+          121.4842,
+          31.2419
+        ],
+        [
+          121.4842,
+          31.23545
+        ]
+      ]
+    ]
+  },
+  "units": "Lengths in local Mercator metres at latitude 31.2385, consistent with the street model.",
+  "deduplication": "Clip each buffered source feature to its nominal tile core, then unary_union and linemerge. Tiny tile-seam roundoff is retained; no coordinate snapping or widening.",
+  "source_inputs": [
+    {
+      "file": "bund-map.14.13720.6693.pbf",
+      "tile": [
+        14,
+        13720,
+        6693
+      ],
+      "bytes": 171299,
+      "sha256": "676e73ea867ba371a56193d55626893518c4151b006527cfba9e2ad64df79196"
+    },
+    {
+      "file": "bund-map.14.13720.6694.pbf",
+      "tile": [
+        14,
+        13720,
+        6694
+      ],
+      "bytes": 266380,
+      "sha256": "67922bea16ebb050696ed6c55d4b3ae6fb77441f5767c7d1e25c96cece1a0803"
+    },
+    {
+      "file": "bund-map.14.13721.6693.pbf",
+      "tile": [
+        14,
+        13721,
+        6693
+      ],
+      "bytes": 143364,
+      "sha256": "2729a7a0880e1cb19685d49038cc0f0c9b957a4486978d370d36d15ed0365c48"
+    },
+    {
+      "file": "bund-map.14.13721.6694.pbf",
+      "tile": [
+        14,
+        13721,
+        6694
+      ],
+      "bytes": 183344,
+      "sha256": "b88b4cbea9d42dbe56d85177d206ccc044649e299bd96d30f25170a98256753b"
+    }
+  ],
+  "features": [
+    {
+      "source_mvt_id": 403013682,
+      "source_properties": {
+        "bicycle": "no",
+        "surface": "paved",
+        "class": "secondary",
+        "oneway": 1
+      },
+      "source_tiles": [
+        [
+          14,
+          13720,
+          6693
+        ],
+        [
+          14,
+          13720,
+          6694
+        ],
+        [
+          14,
+          13721,
+          6694
+        ]
+      ],
+      "buffered_source_length_sum_m": 973.170174848678,
+      "original_deduplicated_core_length_m": 767.3507969194904,
+      "retained_outside_crop_length_m": 24.530294792663824,
+      "removed_inside_crop_length_m": 742.8205021268267,
+      "retained_fragment_count": 1,
+      "original_merged_piece_count": 2,
+      "outside_source_coverage_loss_m": 0.0,
+      "missing_partition_length_m": 0.0,
+      "retained_length_inside_crop_m": 0.0,
+      "length_balance_error_m": 1.1368683772161603e-13
+    },
+    {
+      "source_mvt_id": 4489314812,
+      "source_properties": {
+        "bicycle": "no",
+        "surface": "paved",
+        "class": "secondary",
+        "oneway": 1
+      },
+      "source_tiles": [
+        [
+          14,
+          13720,
+          6693
+        ],
+        [
+          14,
+          13720,
+          6694
+        ]
+      ],
+      "buffered_source_length_sum_m": 141.52899728799886,
+      "original_deduplicated_core_length_m": 116.99965195534578,
+      "retained_outside_crop_length_m": 0.0,
+      "removed_inside_crop_length_m": 116.99965195534578,
+      "retained_fragment_count": 0,
+      "original_merged_piece_count": 1,
+      "outside_source_coverage_loss_m": 0.0,
+      "missing_partition_length_m": 0.0,
+      "retained_length_inside_crop_m": 0.0,
+      "length_balance_error_m": 0.0
+    }
+  ],
+  "totals": {
+    "original_deduplicated_core_length_m": 884.3504488748363,
+    "retained_outside_crop_length_m": 24.530294792663824,
+    "removed_inside_crop_length_m": 859.8201540821725
+  },
+  "coverage_validation": {
+    "passed": true,
+    "all_requested_feature_ids_found": true,
+    "only_two_requested_ids_used": true,
+    "all_source_outside_crop_preserved": true,
+    "no_retained_segment_inside_crop": true,
+    "length_partition_balanced": true,
+    "tolerance_m": 0.001,
+    "no_geometry_widening": true
+  },
+  "activation": "Only while the local Bund street GLB is successfully visible, walk mode is active and zoom>=18. Restore original layer filters on disable/load failure; keep remainder layers hidden otherwise.",
+  "geometry_sha256": "d3ce08909ab3d4344114aad44cb5fbebe00252fbed4ba4d2f1f47b1f98018c15",
+  "geojson_bytes": 385,
+  "attribution": "© OpenStreetMap contributors; OpenFreeMap / OpenMapTiles",
+  "license": "ODbL-1.0 derived line geometry; original generator MIT"
+}

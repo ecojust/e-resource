@@ -48,7 +48,16 @@ ctl.setMode('walk');assert.equal(map.dragPan.enabled,false);
 ctl.setMoveVector(9,9);assert.ok(Math.abs(Math.hypot(ctl.moveVector.x,ctl.moveVector.y)-1)<1e-10);
 ctl.setLookDelta(0,100000);assert.equal(ctl.pitch,48);
 ctl.setLookDelta(0,-100000);assert.equal(ctl.pitch,82);
-ctl.resetCamera();assert.equal(ctl.cameraDistance,12);assert.equal(ctl.pitch,78);
+ctl.resetCamera();assert.equal(ctl.cameraDistance,14);assert.equal(ctl.pitch,82);
 ctl._updateCamera(.05,true);assert.ok(cameras.length>0);assert.ok(cameras.at(-1).from.alt>cameras.at(-1).to.alt);
+assert.equal(cameras.at(-1).to.alt,3.0,'street architecture framing target');
+// A shortened camera must recompose both its aim point and altitude, including
+// when the smoothed follow anchor trails a player moving toward the camera.
+ctl._follow=offsetPosition(ctl.position,0,.6);scene.collisionAt=()=> 'building';
+ctl._updateCamera(.05,true);
+assert.equal(cameras.at(-1).to.alt,.90,'close wall lowers target instead of cropping feet');
+assert.ok(distanceMetres(ctl.position,cameras.at(-1).to)<.71,'close wall uses the player anchor and shorter look-ahead');
+assert.ok(distanceMetres(cameras.at(-1).from,cameras.at(-1).to)<3.5,'camera boom shortens by a wall');
+scene.collisionAt=()=>null;
 ctl.destroy();assert.equal(map.dragPan.enabled,true);
 console.log('PASS: speed, diagonal normalization, camera-relative movement, water/building collision, sliding, mode gestures, camera limits, and cleanup');

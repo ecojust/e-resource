@@ -4,7 +4,7 @@ import { districtAt } from './geography.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
-const BUND = {id:'bund', name:'外滩历史建筑群', districtId:'310101', walkStart:[121.485805,31.23794], bearing:263};
+const BUND = {id:'bund', name:'外滩历史建筑群', districtId:'310101', walkStart:[121.48582997998342,31.2404532310156], bearing:265.447};
 let scene, controller, districts=[], landmarks=[], boundaries, activePlace=BUND;
 let mode='overview', category='landmarks', activeDistrict='310101', toastTimer, navigation=0;
 let districtPaths = new Map();
@@ -36,7 +36,7 @@ function updateLocation(place) {
 function syncMode(next, announce=true) {
   mode=next;
   if(location.hash){const hash=new URLSearchParams(location.hash.slice(1));hash.set('mode',next);history.replaceState(null,'',`#${hash}`);}
-  if(scene?.map.setVerticalFieldOfView)scene.map.setVerticalFieldOfView(next==='walk'?55:36.87);
+  if(scene?.map.setVerticalFieldOfView)scene.map.setVerticalFieldOfView(next==='walk'?64:36.87);
   controller?.setMode(next);
   scene?.setDistrictVisibility(next==='overview');
   document.body.classList.toggle('walking',next==='walk');
@@ -194,11 +194,12 @@ function installUi() {
 async function main(){
   if(location.protocol==='file:') return;
   installUi();loadingProgress(18);
+  const startWalking=!location.hash || new URLSearchParams(location.hash.slice(1)).get('mode')==='walk';
   try{
     const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
     $('landmark-count').textContent=landmarks.length;setCategory('landmarks');drawMiniMap();updateLocation(BUND);loadingProgress(35);
-    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:17.3,landmarks:[...landmarks,...responses[3]],
+    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:startWalking?20.0:17.3,landmarks:[...landmarks,...responses[3]],
       onStatus:status=>{
         if(status.message)$('loading-message').textContent=status.message;
         if(status.kind==='streaming')$('live-status').textContent=status.loading?'加载附近建筑':status.visible?'附近建筑已加载':'全域地图已连接';
@@ -218,7 +219,8 @@ async function main(){
     await scene.setCityManifest('assets/city/manifest.json');
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});
     controller.setMode('overview');controller.setEnabled(true);controller.teleport({lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing});
-    scene.map.jumpTo({center:[121.48552,31.23845],zoom:17.3,pitch:60,bearing:285});
+    if(startWalking)syncMode('walk',false);
+    else scene.map.jumpTo({center:[121.48552,31.23845],zoom:17.3,pitch:60,bearing:285});
     loadingProgress(78);$('loading-message').textContent='正在铺开道路、建筑与城市地标…';
     const tilesReady=await scene.waitForData(16000);loadingProgress(100);
     if(!tilesReady)toast('部分地图数据仍在加载，请保持网络连接。',5000);
@@ -229,7 +231,7 @@ async function main(){
     const destination=districts.find(d=>d.id===hash.get('district'))||landmarks.find(p=>p.id===hash.get('landmark'))
       ||(hash.has('lng')&&hash.has('lat')?mapPlace(Number(hash.get('lng')),Number(hash.get('lat'))):null);
     if(destination)await selectPlace(destination);
-    if(hash.get('mode')==='walk')syncMode('walk',false);
+    if(hash.get('mode')==='walk' || !location.hash)syncMode('walk',false);
   }catch(error){
     console.error(error);$('loading-message').textContent=`场景暂时未能加载：${error.message}`;$('retry-button').hidden=false;
     $('live-status').textContent='连接需要重试';loadingProgress(0);

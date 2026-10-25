@@ -198,6 +198,30 @@ roads['audit']['building_validation_scope']={
  'scope':'Only the ten listed Bund candidate ground footprints, clipped to this street crop. Not a check against all Shanghai buildings, neighboring generic buildings, detailed mesh projections, linked parts or related_geometries (including the Bank of China western wing).',
  'street_crop_wgs84':[121.4842,31.23545,121.4892,31.2419],
  'observed_overlap_m2':roads['audit']['surface_building_overlap_m2']}
+# Fill the actual mapped pedestrian polygon left between the older path-based
+# pavement strips. This is a real MVT polygon, never an invented rectangle.
+pedestrian_features=[f for f in map_features if f.get('id')==21420773 and f['geometry']['type'] in ('Polygon','MultiPolygon')]
+assert pedestrian_features, 'The mapped Bund pedestrian footprint is required.'
+pedestrian_footprint=unary_union([metric(shape(f['geometry'])) for f in pedestrian_features]).intersection(crop)
+existing_paving=promenade.union(walk_surface).union(roads['shoulder'])
+pedestrian_paving=pedestrian_footprint.difference(water).difference(buildings).difference(roads['surface']).difference(existing_paving).difference(roads['curb'])
+solid('BundStonePaving',pedestrian_paving,.005,.035)
+paving_audit={'passed':True,'source':'bund-map.geojson / OpenFreeMap transportation polygon',
+ 'source_mvt_feature_id':21420773,'source_tiles':[list(tile) for tile in sorted(expected_tiles)],
+ 'source_geometry_is_mapped_polygon':True,'mapped_polygon_area_within_crop_m2':pedestrian_footprint.area,
+ 'new_paving_area_m2':pedestrian_paving.area,'top_height_m':.035,
+ 'water_overlap_m2':pedestrian_paving.intersection(water).area,
+ 'candidate_footprint_overlap_m2':pedestrian_paving.intersection(buildings).area,
+ 'road_surface_overlap_m2':pedestrian_paving.intersection(roads['surface']).area,
+ 'existing_paving_overlap_m2':pedestrian_paving.intersection(existing_paving).area,
+ 'area_outside_mapped_polygon_m2':pedestrian_paving.difference(pedestrian_footprint).area,
+ 'building_validation_scope':roads['audit']['building_validation_scope'],
+ 'note':'MVT feature 21420773 is a source feature identifier, not asserted to be an OSM way ID. Physical paving thickness/material are reconstruction estimates; plan geometry follows the actual mapped footprint.'}
+assert all(paving_audit[key]<1e-6 for key in ('water_overlap_m2','candidate_footprint_overlap_m2','road_surface_overlap_m2','existing_paving_overlap_m2','area_outside_mapped_polygon_m2')), paving_audit
+(ROOT/'bund-streets-paving-check.json').write_text(json.dumps(paving_audit,ensure_ascii=False,indent=2))
+(ROOT/'bund-streets-paving-check.geojson').write_text(json.dumps({'type':'FeatureCollection','features':[
+ {'type':'Feature','properties':{'role':role,'source_mvt_feature_id':21420773},'geometry':mapping(geographic(g))}
+ for role,g in [('mapped_pedestrian_footprint',pedestrian_footprint),('new_3d_paving',pedestrian_paving),('previous_3d_paving',existing_paving.intersection(crop))]]},separators=(',',':')))
 solid('BundRoadSurface',roads['surface'],.002,.020)
 solid('BundStonePaving',walk_surface.union(roads['shoulder']).difference(water),.003,.075)
 solid('BundGraniteCurb',roads['curb'],.006,.14)
@@ -244,6 +268,7 @@ output=ROOT/'bund-streets.glb';output.write_bytes(struct.pack('<III',0x46546c67,
 metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.08,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
 metadata['shoreline_validation']=shoreline_audit
 metadata['road_validation']=roads['audit']
+metadata['paving_validation']=paving_audit
 metadata['version']=4
 metadata['source_roads']='osm-roads.json / OpenStreetMap ODbL-1.0'
 metadata['reference_2025']='street-reference-evidence.json: Suicasmo CC0 street-level facade views, 2025-05-01'

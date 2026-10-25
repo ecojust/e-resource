@@ -21,3 +21,5 @@ BUND_CLASSICS_OUTPUT=./output blender --background --python build_classics.py
 17 号使用 `build_news.py` 和 `news-footprint.json`，共享前述两个 Python 文件；调用方法相同。`validate_glb.py` 用标准 Python 与 NumPy 检查导出后的有限坐标、法线、零面积三角形、地面高度、文件大小与独立加载所需资源。
 
 小型浮雕、石材纹样、完整背立面及内部空间未测绘；本模型属于建筑辨识细节重建，不是文保实测成果。
+
+v4 normal correction: `Builder.box` now reverses face winding only for a negative-determinant basis. It keeps each face's first corner, preserving the original triangle diagonals. Vertex positions, dimensions, materials and triangle counts are unchanged. This affects Bund 2, 3 and 17; it is not a whole-building normal flip. Run `blender --background --threads 1 --python check_box_winding.py` to verify ordinary and mirrored unit boxes. The release comparison is recorded in the project's `data/bund/validation/normals-v4.json`.

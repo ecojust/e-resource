@@ -1,9 +1,87 @@
 {
-  "installed_source_no_argument_rebuild": true,
-  "raw_glb_byte_identical": true,
-  "generated_metadata_identical": true,
-  "scene_props_relative_paths_resolve": true,
-  "scene_props_hashes_match": true,
-  "temporary_test_output_kept_outside_working": true,
-  "source_geometry_sha256": "654fbc9e118b65babbbfec692fcd20f7e3f975c0bcdc41a5f172033d60db0449"
+  "installed_source_matches_portable_tested_source": true,
+  "no_argument_portable_rebuild_byte_identical": true,
+  "scene_props_paths_and_hashes_match": true,
+  "legacy_inputs_preserved": true,
+  "traffic_generation_byte_identical": true,
+  "traffic_component_cpu_validation": true,
+  "road_geometry_unchanged": true,
+  "paving_validation": {
+    "passed": true,
+    "source": "bund-map.geojson / OpenFreeMap transportation polygon",
+    "source_mvt_feature_id": 21420773,
+    "source_tiles": [
+      [
+        14,
+        13720,
+        6693
+      ],
+      [
+        14,
+        13720,
+        6694
+      ],
+      [
+        14,
+        13721,
+        6693
+      ],
+      [
+        14,
+        13721,
+        6694
+      ]
+    ],
+    "source_geometry_is_mapped_polygon": true,
+    "mapped_polygon_area_within_crop_m2": 27473.47060646315,
+    "new_paving_area_m2": 7099.025775721276,
+    "top_height_m": 0.035,
+    "water_overlap_m2": 0.0,
+    "candidate_footprint_overlap_m2": 0.0,
+    "road_surface_overlap_m2": 0.0,
+    "existing_paving_overlap_m2": 0.0,
+    "area_outside_mapped_polygon_m2": 4.1055510467015594e-14,
+    "building_validation_scope": {
+      "source": "../bund-candidates.json",
+      "geometry_field": "candidates[*].geometry",
+      "candidate_count": 10,
+      "candidate_ids": [
+        "bund02",
+        "bund03",
+        "bund12",
+        "bund13",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23"
+      ],
+      "candidates_intersecting_street_crop": [
+        "bund02",
+        "bund03",
+        "bund12",
+        "bund13",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23"
+      ],
+      "geometry_sha256": "654fbc9e118b65babbbfec692fcd20f7e3f975c0bcdc41a5f172033d60db0449",
+      "footprint_buffer_m": 0.08,
+      "scope": "Only the ten listed Bund candidate ground footprints, clipped to this street crop. Not a check against all Shanghai buildings, neighboring generic buildings, detailed mesh projections, linked parts or related_geometries (including the Bank of China western wing).",
+      "street_crop_wgs84": [
+        121.4842,
+        31.23545,
+        121.4892,
+        31.2419
+      ],
+      "observed_overlap_m2": 0.0
+    },
+    "note": "MVT feature 21420773 is a source feature identifier, not asserted to be an OSM way ID. Physical paving thickness/material are reconstruction estimates; plan geometry follows the actual mapped footprint."
+  },
+  "raw_sha256": "ef6868e3b7ba56177f33e876feae42ae4b5ecbc70c9f840eda9c8e050f669a60",
+  "web_sha256": "86b76bd5f8e5bd1386f7a61a0e6d5a5c7b8ab3d71ab8cd0f84939440c22c23cb"
 }

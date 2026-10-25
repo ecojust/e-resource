@@ -1,0 +1,74 @@
+{
+  "release": "shanghai-bund-architectural-v3",
+  "checked_at": "2026-10-25T20:39:29.146922+00:00",
+  "passed": true,
+  "browser": {
+    "engine": "Chromium WebGL2 / SwiftShader; 2-CPU software renderer, not a hardware FPS benchmark",
+    "report": "bund-v3-browser.json",
+    "navigation_models_loaded": 14,
+    "streetscape_loaded": true,
+    "page_errors": [],
+    "shader_errors": [],
+    "movement_metres": 0.21000095998559185,
+    "mobile": {
+      "overflow": false,
+      "joystick": true,
+      "mode": "walk",
+      "controls_do_not_overlap_card": true
+    },
+    "reference_photo_and_attribution": true
+  },
+  "models": {
+    "bund_buildings": 10,
+    "bund_raw_triangles": 1461884,
+    "largest_bund_glb_bytes": 13289092,
+    "bund_web_total_bytes": 13635948,
+    "native_blend_files": 10,
+    "source_and_web_hashes_verified": true,
+    "detailed_geometry_reports": "../data/bund/validation/"
+  },
+  "city": {
+    "districts": 16,
+    "models": 1708,
+    "features": 1796419,
+    "source_unique_above_ground": 1796667,
+    "replaced_renderable_features": 98,
+    "generic_residual_parents": 401,
+    "full_raw_audit": "../data/audit/fullcity-models-validation.json",
+    "coverage_balanced": true
+  },
+  "checks": {
+    "npm_test": [
+      "walking/collision/camera/input",
+      "streaming concurrency/cache/release",
+      "45 geographic checkpoints",
+      "road width scaling"
+    ],
+    "asset_validator": "tools/check_assets.py: GLB headers, self-contained buffers, finite bounds, city SHA, detailed raw/web/native SHA and photo licensing",
+    "file_size_limit_bytes_exclusive": 100000000
+  },
+  "visual_review": {
+    "browser_screenshots": [
+      "../assets/previews/bund-overview.png",
+      "../assets/previews/bund-street.png"
+    ],
+    "individual_model_reviews": "../source/bund/README.md",
+    "shoreline_validation": "../source/bund/street/bund-streets-delivery.json",
+    "known_limits": "Photograph-guided reconstruction, not measured/photogrammetric geometry. Hidden elevations and several dimensions are inferred. Generic city background remains LoD1; no traversable historical interiors."
+  },
+  "previous_release": "verification-v2.json",
+  "launcher": {
+    "report": "launcher-v3.json",
+    "bytes": 31523187,
+    "sha256": "4e9784c3d855637db6dd9f59f55855008ad601a732c84d1797ad08cebe91dffa",
+    "pinned_app_commit": "bb464592ca0f802d834037e03af47f3a9f7ebc10",
+    "remote_city_and_id_checks_passed": true
+  },
+  "published_preview": {
+    "url": "https://rawcdn.githack.com/ecojust/e-resource/bb464592ca0f802d834037e03af47f3a9f7ebc10/projects/shanghai/index.html",
+    "report": "bund-v3-public.json",
+    "passed": true,
+    "landmarks_loaded": 14,
+    "movement_metres": 0.4200019222236837
+  }
+}

@@ -2,7 +2,11 @@ import * as THREE from '../vendor/three.module.js';
 import { GLTFLoader } from '../vendor/GLTFLoader.js';
 import { MeshoptDecoder } from '../vendor/meshopt_decoder.module.js';
 import { applyBuildingMaterial } from './building-material.js';
-import { applyPavingMaterial } from './paving-material.js';
+import { createArchitecturalMaterials } from './architectural-material.js';
+import { createRealisticLighting } from './realistic-lighting.js';
+import { makeWalker } from './walker-model.js';
+import { createStreetTraffic } from './street-traffic.js';
+import { createStreetBasemapReplacement } from './street-basemap.js';
 import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
 
@@ -92,9 +96,9 @@ function configureStyle(style) {
       layer.paint['line-color'] = '#aeb8b4';
     }
     applyStreetColors(layer);
-    if (layer.id === 'background') layer.paint = {...layer.paint, 'background-color': '#eceee8'};
-    if (layer['source-layer'] === 'water' && layer.type === 'fill') layer.paint = {...layer.paint, 'fill-color': '#8bbbc8'};
-    if (layer['source-layer'] === 'park' && layer.type === 'fill') layer.paint = {...layer.paint, 'fill-color': '#c4d6b8'};
+    if (layer.id === 'background') layer.paint = {...layer.paint, 'background-color': '#d9ddd8'};
+    if (layer['source-layer'] === 'water' && layer.type === 'fill') layer.paint = {...layer.paint, 'fill-color': '#899a93'};
+    if (layer['source-layer'] === 'park' && layer.type === 'fill') layer.paint = {...layer.paint, 'fill-color': '#a9b9a2'};
     if (layer.type === 'symbol' && layer.layout?.['text-field'] && !layer.id.includes('shield')) {
       layer.layout['text-field'] = ['coalesce', ['get', 'name:zh'], ['get', 'name:nonlatin'], ['get', 'name'], ['get', 'name:en'], ''];
     }
@@ -103,43 +107,6 @@ function configureStyle(style) {
     }
   }
   return style;
-}
-
-function makeWalker() {
-  const walker = new THREE.Group();
-  walker.name = 'Third-person walker';
-  const orange = new THREE.MeshStandardMaterial({color: '#e7783c', roughness: .83});
-  const dark = new THREE.MeshStandardMaterial({color: '#28394a', roughness: .92});
-  const skin = new THREE.MeshStandardMaterial({color: '#d7ac88', roughness: .82});
-  const shoe = new THREE.MeshStandardMaterial({color: '#26333b', roughness: .92});
-  const hair = new THREE.MeshStandardMaterial({color: '#342b26', roughness: .95});
-  const add = (geometry, material, parent, x, y, z) => {
-    const mesh = new THREE.Mesh(geometry, material); mesh.position.set(x, y, z); parent.add(mesh); return mesh;
-  };
-  add(new THREE.CapsuleGeometry(.21, .33, 4, 12), orange, walker, 0, 1.20, 0);
-  add(new THREE.SphereGeometry(.145, 16, 12), skin, walker, 0, 1.66, -.012);
-  add(new THREE.SphereGeometry(.151, 16, 8, 0, Math.PI * 2, 0, Math.PI * .56), hair, walker, 0, 1.68, -.006);
-  add(new THREE.BoxGeometry(.28, .34, .15), dark, walker, 0, 1.23, .20);
-  const legs = [], arms = [];
-  for (const side of [-1, 1]) {
-    const leg = new THREE.Group(); leg.position.set(side * .12, .92, 0); walker.add(leg);
-    add(new THREE.CapsuleGeometry(.083, .55, 4, 10), dark, leg, 0, -.35, 0);
-    add(new THREE.BoxGeometry(.17, .12, .29), shoe, leg, 0, -.81, -.07); legs.push(leg);
-    const arm = new THREE.Group(); arm.position.set(side * .27, 1.41, 0); walker.add(arm);
-    add(new THREE.CapsuleGeometry(.065, .34, 4, 10), orange, arm, 0, -.23, 0);
-    add(new THREE.SphereGeometry(.07, 10, 8), skin, arm, 0, -.47, 0); arms.push(arm);
-    add(new THREE.BoxGeometry(.035, .36, .02), dark, walker, side * .14, 1.25, -.20);
-  }
-  const shadow = add(new THREE.CircleGeometry(.38, 28),
-    new THREE.MeshBasicMaterial({color: '#213b40', transparent: true, opacity: .20, depthWrite: false}), walker, 0, .052, 0);
-  shadow.rotation.x = -Math.PI / 2;
-  walker.traverse(o => { if (o.isMesh) o.frustumCulled = false; });
-  return {group: walker, animate(speed, time) {
-    const amount = clamp(speed / 3.5, 0, 1), stride = Math.sin(time * 9.5) * .47 * amount;
-    legs[0].rotation.x = stride; legs[1].rotation.x = -stride;
-    arms[0].rotation.x = -stride * .75; arms[1].rotation.x = stride * .75;
-    walker.position.y = .03 + Math.abs(Math.sin(time * 9.5)) * .025 * amount;
-  }};
 }
 
 /** Geographic rendering: WGS84 coordinates, metres, heading clockwise from north. */
@@ -183,8 +150,8 @@ export async function createShanghaiScene(options = {}) {
     map.once('style.load', () => { clearTimeout(timer); loadedStyle = true; resolve(); });
   });
   map.setLight({anchor: 'map', position: [1.5, 120, 40], color: '#fff2d7', intensity: .48});
-  if (map.setSky) map.setSky({'sky-color': '#c8e0e7', 'horizon-color': '#e7f0ed',
-    'fog-color': '#e7efed', 'sky-horizon-blend': .5, 'horizon-fog-blend': .7, 'fog-ground-blend': .8});
+  if (map.setSky) map.setSky({'sky-color': '#aec7d6', 'horizon-color': '#dce2df',
+    'fog-color': '#dce2df', 'sky-horizon-blend': .5, 'horizon-fog-blend': .7, 'fog-ground-blend': .8});
   const sourceId = style.sources.openmaptiles ? 'openmaptiles'
     : Object.keys(style.sources).find(key => style.sources[key].type === 'vector');
   const firstSymbol = map.getStyle().layers.find(layer => layer.type === 'symbol')?.id;
@@ -271,11 +238,13 @@ export async function createShanghaiScene(options = {}) {
       (p.y - mercatorOrigin.y) / metreScale);
   }
   const scene = new THREE.Scene();
-  scene.add(new THREE.HemisphereLight('#eef6ff', '#a8b4a1', 1.3));
-  const sun = new THREE.DirectionalLight('#fff0d5', 2.8); sun.position.set(420, 580, 240); scene.add(sun);
-  const fill = new THREE.DirectionalLight('#b6d8ed', .4); fill.position.set(-200, 180, -400); scene.add(fill);
-  const walker = makeWalker(); scene.add(walker.group);
+  const walker = makeWalker();
+  // Moving people use their own contact shadow; the architectural depth map is
+  // cached and must not retain an old animated silhouette.
+  walker.group.traverse(object=>{if(object.isMesh)object.castShadow=false;});
+  scene.add(walker.group);
   const camera = new THREE.Camera(); camera.matrixAutoUpdate = false;
+  let lighting, surfaces, traffic, streetBasemap, shadowsEnabled=true;
   let renderer, animationTime = 0, speed = 0, current = {lng: start.lng, lat: start.lat};
   let explicitCamera = null, customLayerReady = false;
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
@@ -305,7 +274,8 @@ export async function createShanghaiScene(options = {}) {
     onAdd(_map, gl) {
       renderer = new THREE.WebGLRenderer({canvas: map.getCanvas(), context: gl, antialias: true, alpha: true});
       renderer.autoClear = false; renderer.outputColorSpace = THREE.SRGBColorSpace;
-      renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+      lighting = createRealisticLighting({THREE,scene,renderer,lowMemory});
       customLayerReady = true;
     },
     render(_gl, args) {
@@ -327,6 +297,7 @@ export async function createShanghaiScene(options = {}) {
         camera.matrixWorld.identity(); camera.matrixWorldInverse.identity(); camera.projectionMatrix.copy(combined);
       }
       camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
+      lighting?.update({position:camera.position,enabled:shadowsEnabled});
       renderer.resetState(); renderer.render(scene, camera);
       renderMetrics.drawCalls=renderer.info.render.calls;
       renderMetrics.triangles=renderer.info.render.triangles;
@@ -338,6 +309,7 @@ export async function createShanghaiScene(options = {}) {
       renderer.resetState();
     },
     onRemove() {
+      lighting?.dispose(); traffic?.dispose(); surfaces?.dispose();
       scene.traverse(obj => {
         if (obj.geometry) obj.geometry.dispose();
         if (obj.material) for (const m of Array.isArray(obj.material) ? obj.material : [obj.material]) m.dispose();
@@ -345,44 +317,73 @@ export async function createShanghaiScene(options = {}) {
       renderer?.dispose();
     }};
   map.addLayer(customLayer);
+  try { streetBasemap=await createStreetBasemapReplacement(map); }
+  catch(error) { onLoadError(error); }
+  try {
+    surfaces = await createArchitecturalMaterials(THREE,{anisotropy:Math.min(4,renderer.capabilities.getMaxAnisotropy())});
+  } catch(error) { onLoadError(error); }
+  try {
+    traffic=await createStreetTraffic({THREE,geographicPosition});
+    scene.add(traffic.group);lighting?.configureModel(traffic.group,{detailed:true});
+  } catch(error) { onLoadError(error); }
 
   function reportLandmarks() {
     const records = [...landmarkRecords.values()];
     onStatus({kind: 'models', message: '地标模型', loaded: records.filter(r => r.status === 'loaded').length,
       total: records.length, failed: records.filter(r => r.status === 'error').length});
   }
-  async function loadLandmark(record) {
-    if (record.status !== 'idle') return;
-    record.status = 'loading'; reportLandmarks();
+  function desiredVariant(record) {
+    if (!record.lodUrl || record.failedVariants?.has('distant')) return 'full';
+    let eye=explicitCamera;
+    if (!eye && map.transform?.getCameraLngLat) {
+      const p=map.transform.getCameraLngLat();eye={lng:p.lng,lat:p.lat,alt:map.transform.getCameraAltitude()};
+    }
+    const distance=Math.hypot(distanceMetres(eye || current,record),(eye?.alt || 0)-(record.height_m || 30)*.5);
+    const threshold=record.activeVariant==='distant' ? (record.lod_switch_in_m || 300) : (record.lod_switch_out_m || 400);
+    return distance>threshold ? 'distant' : 'full';
+  }
+  async function loadLandmark(record,variant='full') {
+    if (record.loadingModel) return;
+    record.loadingModel=true;
+    if (!record.object) record.status='loading';
+    reportLandmarks();
+    let pendingGroup=null;
     try {
-      const data = await loader.loadAsync(record.url);
+      const data = await loader.loadAsync(variant==='distant' ? record.lodUrl : record.url);
       if (destroyed) {disposeModel(data.scene);return;}
-      const group = data.scene; group.name = record.name || record.id;
+      const group = data.scene; pendingGroup=group; group.name = record.name || record.id;
       group.position.copy(geographicPosition(record.lng, record.lat, record.altitude || 0));
       const latitudeScale = maplibregl.MercatorCoordinate.fromLngLat([record.lng, record.lat]).meterInMercatorCoordinateUnits() / metreScale;
       group.scale.multiplyScalar(latitudeScale * (record.scale || 1));
       group.rotation.y = -(record.heading || 0) * DEG;
       group.traverse(obj => {
-        if (obj.isMesh) {
-          obj.frustumCulled = true;
-          obj.geometry?.computeBoundingSphere();
-          if (obj.material) {
-            const mats = Array.isArray(obj.material) ? obj.material : [obj.material];
-            for (const m of mats) {
-              m.envMapIntensity = .55;
-              if (m.metalness > .7) m.metalness = .55;
-              applyPavingMaterial(m);
-            }
-          }
-        }
+        if (!obj.isMesh) return;
+        obj.frustumCulled = true;
+        obj.geometry?.computeBoundingSphere();
+        if (variant==='full') surfaces?.apply(obj,record.id==='bund-streets'?'street':record.candidate_id?'bund':'modern');
       });
-      scene.add(group); record.object = group; record.status = 'loaded';
+      lighting?.configureModel(group,{detailed:Boolean(record.candidate_id),ground:record.id==='bund-streets'});
+      const old=record.object;
+      scene.add(group); record.object = group; record.status = 'loaded'; record.activeVariant=variant;
+      if(old)disposeModel(old);
+      lighting?.invalidate();
       updateLandmarkVisibility(); reportLandmarks(); map.triggerRepaint();
     } catch (error) {
-      record.status = 'error'; reportLandmarks(); onLoadError(new Error(`${record.name || record.id} 模型加载失败：${error.message}`));
+      if(pendingGroup && pendingGroup!==record.object)disposeModel(pendingGroup);
+      if(destroyed)return;
+      record.failedVariants ||= new Set();record.failedVariants.add(variant);
+      record.status = record.object ? 'loaded' : variant==='distant' ? 'idle' : 'error';
+      reportLandmarks();
+      if(variant==='full')onLoadError(new Error(`${record.name || record.id} 模型加载失败：${error.message}`));
     } finally {
+      record.loadingModel=false;
       if (!destroyed) updateLandmarkVisibility();
     }
+  }
+  function updateStreetBasemap() {
+    const street=landmarkRecords.get('bund-streets');
+    streetBasemap?.setActive(Boolean(walker.group.visible && map.getZoom()>=18
+      && street?.status==='loaded' && street.object?.visible));
   }
   function updateLandmarkVisibility(force = false) {
     let changed = false;
@@ -391,7 +392,8 @@ export async function createShanghaiScene(options = {}) {
     for (const record of landmarkRecords.values()) {
       const distance = distanceMetres(target, record);
       const nearby = force || distance < (record.maxDistance || (map.getZoom() < 16 ? 12000 : 3200));
-      if (nearby && record.status === 'idle') pending.push({record,distance});
+      const variant=desiredVariant(record);
+      if (nearby && !record.loadingModel && (record.status==='idle' || (record.status==='loaded' && record.activeVariant!==variant && !record.failedVariants?.has(variant)))) pending.push({record,distance,variant});
       if (record.object) {
         if (record.object.visible !== nearby) changed = true;
         record.object.visible = nearby;
@@ -406,9 +408,10 @@ export async function createShanghaiScene(options = {}) {
     }
     // Detailed facades contain substantially more geometry than city blocks.
     // Start the nearest three first and keep decoding/fetch pressure bounded.
-    const available=3-[...landmarkRecords.values()].filter(record=>record.status==='loading').length;
-    for (const {record} of pending.sort((a,b)=>a.distance-b.distance).slice(0,Math.max(0,available))) loadLandmark(record);
+    const available=3-[...landmarkRecords.values()].filter(record=>record.loadingModel).length;
+    for (const {record,variant} of pending.sort((a,b)=>a.distance-b.distance).slice(0,Math.max(0,available))) loadLandmark(record,variant);
     if (changed) updateBuildingExclusions();
+    updateStreetBasemap();
     updateLocalModels();
   }
   function updateBuildingExclusions() {
@@ -442,18 +445,20 @@ export async function createShanghaiScene(options = {}) {
       if (!Number.isFinite(lng) || !Number.isFinite(lat) || !p.id || landmarkRecords.has(p.id)) continue;
       const path = p.url || p.model || `../assets/models/${p.id}.glb`;
       const url = /^(https?:|data:)/.test(path) ? path : new URL(path.startsWith('../') ? path : `../${path}`, import.meta.url).href;
-      landmarkRecords.set(p.id, {...p, lng, lat, url, status: 'idle'});
+      const lodUrl=p.lod_model ? (/^(https?:|data:)/.test(p.lod_model) ? p.lod_model : new URL(p.lod_model.startsWith('../')?p.lod_model:`../${p.lod_model}`,import.meta.url).href) : null;
+      landmarkRecords.set(p.id, {...p, lng, lat, url, lodUrl, status: 'idle'});
     }
     updateLandmarkVisibility(); reportLandmarks();
   }
   function disposeModel(object) {
     if (!object) return;
+    lighting?.releaseModel(object);
     const geometries=new Set(), materials=new Set(), textures=new Set();
     object.traverse(child=>{
       if(child.geometry)geometries.add(child.geometry);
       for(const material of child.material ? (Array.isArray(child.material)?child.material:[child.material]) : []) {
         materials.add(material);
-        for(const value of Object.values(material))if(value?.isTexture)textures.add(value);
+        for(const value of Object.values(material))if(value?.isTexture && !value.userData.shared)textures.add(value);
       }
     });
     scene.remove(object);
@@ -474,8 +479,8 @@ export async function createShanghaiScene(options = {}) {
       object.geometry.computeBoundingSphere();
       for(const material of Array.isArray(object.material)?object.material:[object.material]) {
         if(!material?.color)continue;
-        if(/walls/i.test(material.name))material.color.setRGB(.38,.37,.30);
-        else material.color.setRGB(.40,.39,.31);
+        if(/walls/i.test(material.name))material.color.setRGB(.38,.40,.39);
+        else material.color.setRGB(.34,.36,.35);
         material.roughness=.88;material.metalness=0;
         applyBuildingMaterial(material);
       }
@@ -618,6 +623,9 @@ export async function createShanghaiScene(options = {}) {
   }
   function setCameraFromTo({from,to}) {
     explicitCamera={...from,alt:from.alt??from.altitude??8};
+    // MapLibre otherwise resets centre elevation to ground on every render,
+    // even with no terrain, silently discarding the elevated walk look target.
+    map.setCenterClampedToGround(false);
     const opts=map.calculateCameraOptionsFromTo([from.lng,from.lat],explicitCamera.alt,[to.lng,to.lat],to.alt??to.altitude??1.2);
     map.jumpTo({...opts,pitch:clamp(opts.pitch,0,85),zoom:clamp(opts.zoom,8,22.5)});
   }
@@ -636,6 +644,13 @@ export async function createShanghaiScene(options = {}) {
     if (walkLabelsHidden === hidden) return;
     walkLabelsHidden = hidden;
     for (const layer of map.getStyle().layers) {
+      // Underground carriageways remain useful in the overview map, but are
+      // not asphalt on the pedestrian's ground plane.
+      if (layer.type==='line' && layer.id.startsWith('tunnel_')) {
+        if (!overviewLabelVisibility.has(layer.id)) overviewLabelVisibility.set(layer.id,map.getLayoutProperty(layer.id,'visibility') || 'visible');
+        map.setLayoutProperty(layer.id,'visibility',hidden?'none':overviewLabelVisibility.get(layer.id));
+        continue;
+      }
       if (layer.type !== 'symbol') continue;
       const placement = layer.layout?.['symbol-placement'];
       const isLine = typeof placement === 'string' ? placement.includes('line')
@@ -655,13 +670,23 @@ export async function createShanghaiScene(options = {}) {
   onStatus({kind:'ready',message:'三维地图已就绪',loaded:1,total:1});
   return {map,ready:loadedStyle,sourceId,setPlayer,setCamera,setCameraFromTo,collisionAt,findSafePosition,waitForData,
     setLandmarks,setCityManifest,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
-    setAvatarVisible(visible){setWalkModeLabels(visible);walker.group.visible=visible;updateLocalModels(true);map.triggerRepaint();},
+    setAvatarVisible(visible){
+      if(!visible){
+        explicitCamera=null;
+        // Overview gestures and fitBounds use the ordinary ground-centred map.
+        map.setCenterClampedToGround(true);
+        map.setCenterElevation(0);
+      }
+      setWalkModeLabels(visible);walker.group.visible=visible;updateStreetBasemap();updateLocalModels(true);map.triggerRepaint();
+    },
     loadLandmarks(){updateLandmarkVisibility(true);},
     getNeighborhoodState(){return localStreamer.getRecords();},
     getStreamingState(){return {...localStreamer.getState(),renderer:{...renderMetrics}};},
-    getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status})=>({id,name,status}));},
+    getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status,activeVariant,loadingModel})=>({id,name,status,activeVariant,loadingModel}));},
+    setVisualQuality({shadows=true,surfaceNormals=true}={}){shadowsEnabled=Boolean(shadows);surfaces?.configure({normalStrength:surfaceNormals?1:0});lighting?.invalidate();map.triggerRepaint();},
+    getRealismState(){return {surfaces:surfaces?.stats,lighting:lighting?.getState(),traffic:traffic?.stats,streetBasemap:streetBasemap?.getState()};},
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
+    destroy(){destroyed=true;streetBasemap?.dispose();localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

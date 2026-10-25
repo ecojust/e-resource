@@ -11,3 +11,21 @@ Road widths use OSM width if available, otherwise lane count with an explicit es
 Photos are visual references only: Suicasmo, 2025-05-01, CC0; URLs and supported details are in `street-reference-evidence.json`. Reference photographs are not required to rebuild. Original geometry/code MIT; OSM-derived street geometry ODbL-1.0, © OpenStreetMap contributors.
 
 The raw GLB needs no external textures/buffers. Material names `BundStonePaving`, `BundRoadSurface`, `BundGraniteCurb` are stable hooks for the viewer's local PBR detail module. Compress losslessly for the webpage with `gltfpack -i bund-streets.glb -o bund-streets-web.glb -cc -noq -km -ke`. Geometry and shoreline audits are emitted on every rebuild.
+
+The extra riverside paving follows OpenFreeMap transportation polygon feature `21420773`, unioned across the same four retained tiles and clipped to the Bund street crop. Water, candidate footprints, road surfaces, existing pavement and curbs are subtracted. Top height is 0.035m; `bund-streets-paving-check.json` records source and overlap tests. The feature number is an MVT ID, not a claimed OSM way ID.
+
+## Static traffic illustration
+
+The original procedural vehicles are deliberately sparse and static, not a live traffic feed or a claim about real parking or a bus route. Source lane directions/counts follow the actual two OSM carriageways; vehicle appearance, color and presence are illustrative. The module uses eight InstancedMesh batches, no animation loop or extra light.
+
+Regenerate positions from the installed project with `python source/bund/street/generate_traffic.py`; run the CPU geometry/resource validation with `node source/bund/street/validate_traffic.mjs`. Both default to the relative project root and can accept an explicit project-root argument. The validation transforms every actual component vertex into its vehicle frame, checks the dimensions against the previously road-contained envelope, checks ground clearance, and confirms idempotent disposal. It does not open a browser.
+
+Outputs: `data/bund/traffic-v4.json` and `data/bund/validation/traffic-v4.json`; rendering module: `src/street-traffic.js`. The mapped-road placement excludes crossing/junction safety zones, water and the ten candidate footprints. All geometry and bounds are authored locally; there are no downloaded car models, brand marks or external textures.
+
+## Basemap road stroke replacement
+
+`generate_basemap_remainders.py` reads only the four preserved MVT files, extracts numeric features `403013682` and `4489314812` from `transportation`, removes duplicated tile-buffer portions by clipping to the nominal tile cores, and unions the centerlines before subtracting the exact street crop. All portions outside the crop are retained with their original style attributes and `source_mvt_id`; neither the map centerline nor the GLB road is widened. Run `python source/bund/street/generate_basemap_remainders.py` to regenerate `data/bund/basemap-road-remainders-v4.geojson` and its `.json` metadata. Length partition and outside-coverage checks run during generation.
+
+`src/street-basemap.js` exports `async createStreetBasemapReplacement(map)`, returning `setActive(bool)`, `getState()` and `dispose()`. The owner must activate it only when the local street GLB has loaded successfully and is visible, walk mode is active, and zoom is at least 18. While active, only the two numeric IDs are excluded from the original `road_secondary_tertiary` and casing layers; exact clones draw the retained outside fragments. Disable on model unload/failure, overview or lower zoom; original filters are restored. Call `dispose()` before `map.remove()`. Repeated identical activation requests do not rewrite filters.
+
+Run `node source/bund/street/validate_basemap_replacement.mjs` for the small mock test of enable/disable, duplicate calls, style preservation, rollback on load/install/filter failure, and disposal. Both scripts use the project-relative default root and accept an explicit root argument. This is a cartographic rendering correction, not additional physical road modeling.

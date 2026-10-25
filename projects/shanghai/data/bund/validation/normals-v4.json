@@ -1,0 +1,819 @@
+{
+  "version": "bund-box-winding-fix-v4",
+  "passed": true,
+  "affected_models": [
+    "bund02",
+    "bund03",
+    "bund17"
+  ],
+  "source": "source/bund/bund_classics/mesh_utils.py",
+  "change": "Reverse only negative-determinant box basis faces, preserving the first corner and original quad diagonals",
+  "original_world_positions_unchanged": true,
+  "native_ordered_world_positions_unchanged": true,
+  "raw_web_lod_triangle_counts_unchanged": true,
+  "raw_web_lod_bounds_unchanged": true,
+  "photographs_footprints_uuids_unchanged": true,
+  "unaffected_asset_sha256": {
+    "assets/models/bund/bund12.glb": "6b60b1d06932d8ddb2a46fafbc62bff50c07dcdfe5bbf401f4a870eb383444d2",
+    "assets/models/bund/web/bund12.glb": "6992a58d0cb7177112e6d825adaeb8b074f4c18dda0fb09595b655f85a878802",
+    "assets/native/bund/bund12.blend": "0b2b427c25ae49fb18a303718c4ba679f913a3ad8e8721d07f5acb84a13cb9e2",
+    "assets/models/bund/lod-v4/bund12.glb": "dfcf187f4c6b79c3125469c2223cc484bde41bac58de52f9ded619db38c6ef20",
+    "assets/models/bund/bund13.glb": "7265f6c0542570e854d0ad3ae99d81d3c4a01e861647dc8cc191b278f0615ac4",
+    "assets/models/bund/web/bund13.glb": "77d403590f2719b9b21367dcb8d52bd63bd2f19f2b6cb9e663158fad8492745f",
+    "assets/native/bund/bund13.blend": "c985279ec993592b8e7f711ec1c3c08299ed923483aaeee049ce16a383733360",
+    "assets/models/bund/lod-v4/bund13.glb": "0e3f2f8135a0544ea010b76e2065251f8a7635c9c868eac0fbda27fa466dcc7a",
+    "assets/models/bund/bund15.glb": "46b4b1f9c35c4afaa15d11f037d3a23651fdb23f47aea3c2a892464b65208027",
+    "assets/models/bund/web/bund15.glb": "4fb7ca3c71c0d87ed4565021da8b51bae770be33bda4623f349c3f02d9bc1743",
+    "assets/native/bund/bund15.blend": "9b3a576b10d69202666be4bb8e5e4089739a279f9f471afc38e508065121b76b",
+    "assets/models/bund/lod-v4/bund15.glb": "9643c30cda83ba8ab3006b591290077e27c61408320c283d3838e573d61a95dd",
+    "assets/models/bund/bund18.glb": "7d0b6297ffc1d7f4b01c8eb6add0bb119d6ca15a5e91931e2a2892f1965d2f6d",
+    "assets/models/bund/web/bund18.glb": "ae7e7c391bb71fa1200a3d88bb0020551396b09021f0bf9889cbc65d47fd5879",
+    "assets/native/bund/bund18.blend": "19286a2d2759941650c3883bc1311d3bfb0b906cabb716490506fabc16b85538",
+    "assets/models/bund/lod-v4/bund18.glb": "ba6dcdf7be640b9bd39e3d6c42417554745399cbb876abd99796e5a82a5e360b",
+    "assets/models/bund/bund19.glb": "61a4584951c9bb41ec802b8d780bfba0024b5a90485acd5bf4e80e2154840e2a",
+    "assets/models/bund/web/bund19.glb": "4c998f2a3704ad8751ffc9342c2b2b7733e62c2486b5a06f071461a1c6e04ef8",
+    "assets/native/bund/bund19.blend": "ebbd80bb77ef85224528721537aae9e7aa4dbe353251e610c4f508ff5388f390",
+    "assets/models/bund/lod-v4/bund19.glb": "c6c8e35d3f2690ecc4b7d1d08172052a90d46b6804432d46b690480a115495f2",
+    "assets/models/bund/bund20.glb": "24981b8c10c8eb4737d9bdb570b991df6f028b872048229eb41ac83a70773103",
+    "assets/models/bund/web/bund20.glb": "75601d328442d7445d7ba07d175d3fea336f45584304f6cc797e53193a43f795",
+    "assets/native/bund/bund20.blend": "124faf9cdbd178d6421bf44a09e63232ac237bc996d50fe3e4eb61f7701d9839",
+    "assets/models/bund/lod-v4/bund20.glb": "c06b32b35df5f4bacce5f04a0febd4a3a3bbbf78051e999052e119fac6c67107",
+    "assets/models/bund/bund23.glb": "c3519b2d6e7f54fdf80ada0395d4e98d4eca8a7837fb50c431e6bb7d932d3e82",
+    "assets/models/bund/web/bund23.glb": "09ef128294e926f744885cf018e02ae07c128e7b96a980fabe26d6c52650e3b7",
+    "assets/native/bund/bund23.blend": "080a8de23fb04f4ea5ba3863b622a6ba0920f298203823ab17dc113f2d02ba34",
+    "assets/models/bund/lod-v4/bund23.glb": "a2f4ff1ded220a8a21a4c4bc9328f74af2de4d0f438021d577f68e19a4e284f8"
+  },
+  "updated_assets": [
+    {
+      "file": "assets/models/bund/bund02.glb",
+      "sha256": "fde77cefd067587e96fe06c29ae300cb6f9f3754d1afed19f0f49a17e9954749",
+      "bytes": 4036596
+    },
+    {
+      "file": "assets/models/bund/web/bund02.glb",
+      "sha256": "18ec4bb507b502850a40a7a6bddbb159f21c8f4c085787e52a42a7b9d5a0f6fd",
+      "bytes": 778636
+    },
+    {
+      "file": "assets/native/bund/bund02.blend",
+      "sha256": "12bfafb437fad1f6e940f0ac76b18649ea7b4db9c90d627836ef2d924473990d",
+      "bytes": 4752416
+    },
+    {
+      "file": "assets/models/bund/lod-v4/bund02.glb",
+      "sha256": "93754817d2549345c41c1f231d2cb6fa85c4fd7c36870c04984657350302dd8b",
+      "bytes": 579040
+    },
+    {
+      "file": "assets/models/bund/bund03.glb",
+      "sha256": "058496e901e24d0f2191e62057edc944fab269ed50db5903fee78386baaa0174",
+      "bytes": 9567784
+    },
+    {
+      "file": "assets/models/bund/web/bund03.glb",
+      "sha256": "275f57b85cbf53304c85a750d6a1691b91805cc17854a5033bfa7ea6c007f695",
+      "bytes": 1767512
+    },
+    {
+      "file": "assets/native/bund/bund03.blend",
+      "sha256": "1af7541deeb739ae55df1dc2f85d3f8cd05a89c6ce8f349ccbe70babe51e2ff7",
+      "bytes": 9656964
+    },
+    {
+      "file": "assets/models/bund/lod-v4/bund03.glb",
+      "sha256": "c3d397d62ff2aee671aac3f24c4c9913e97279e28b8ce7102d9ba42cf32202ca",
+      "bytes": 904516
+    },
+    {
+      "file": "assets/models/bund/bund17.glb",
+      "sha256": "608dc0e3820f37fe8fd408644c5a2134009f57afdc152c8dff88eea02b5c92a1",
+      "bytes": 3641120
+    },
+    {
+      "file": "assets/models/bund/web/bund17.glb",
+      "sha256": "e9ec2c032dc98fa01db33420f5e4cdcb4d0fabee77f2a554126e2ff34e8dbb2d",
+      "bytes": 772116
+    },
+    {
+      "file": "assets/native/bund/bund17.blend",
+      "sha256": "29e92b2452933fcdf04a94d18e3b206a5842025c46b5cb317714f1f1d346314a",
+      "bytes": 4893976
+    },
+    {
+      "file": "assets/models/bund/lod-v4/bund17.glb",
+      "sha256": "d6db76cdec8f253a647140968b95cb12665f4e4f84dc44c187b981347b5b3be8",
+      "bytes": 695536
+    }
+  ],
+  "source_builder_audit": {
+    "box_cases": [
+      {
+        "case": "identity",
+        "all_faces_outward": true,
+        "minimum_outward_dot": 12.0
+      },
+      {
+        "case": "left-handed-facade",
+        "all_faces_outward": true,
+        "minimum_outward_dot": 12.0
+      },
+      {
+        "case": "rotated-left-handed",
+        "all_faces_outward": true,
+        "minimum_outward_dot": 11.999997615814209
+      }
+    ],
+    "models": [
+      {
+        "id": "bund02",
+        "vertices": 48498,
+        "faces": 34505,
+        "reversed_faces": 13668,
+        "exact_vertex_coordinates_unchanged": true,
+        "face_materials_unchanged": true,
+        "smoothing_unchanged": true,
+        "only_reversed_face_index_tuples": true
+      },
+      {
+        "id": "bund03",
+        "vertices": 111675,
+        "faces": 75160,
+        "reversed_faces": 27198,
+        "exact_vertex_coordinates_unchanged": true,
+        "face_materials_unchanged": true,
+        "smoothing_unchanged": true,
+        "only_reversed_face_index_tuples": true
+      },
+      {
+        "id": "bund17",
+        "vertices": 49256,
+        "faces": 37272,
+        "reversed_faces": 21066,
+        "exact_vertex_coordinates_unchanged": true,
+        "face_materials_unchanged": true,
+        "smoothing_unchanged": true,
+        "only_reversed_face_index_tuples": true
+      }
+    ]
+  },
+  "raw_geometry_audit": {
+    "audit": "Independent GLB vertex and geometric-winding comparison",
+    "models": [
+      {
+        "before": {
+          "path": "previous-release/assets/models/bund/bund02.glb",
+          "sha256": "108f7dd8507d41962ec68f65981baf110f31c788259da7abec037f5ffe892810",
+          "bytes": 4036596,
+          "primitives": [
+            {
+              "material": 0,
+              "position_count": 20876,
+              "indices_count": 30252,
+              "indices_sha256": "757ee6d03f2067f81c3f0f04d3cecd6a444577bee313ec24fc3db0161a052b9a"
+            },
+            {
+              "material": 1,
+              "position_count": 79491,
+              "indices_count": 136692,
+              "indices_sha256": "c9693e4aa7ab9debfde54b8445c79cae80b0e52c2a7fb03e47454563473378cf"
+            },
+            {
+              "material": 2,
+              "position_count": 5243,
+              "indices_count": 7374,
+              "indices_sha256": "3e2793c23ef59a6bfdfb864317dd707d474250b46f5317c6d963f96f3714fa88"
+            },
+            {
+              "material": 3,
+              "position_count": 32376,
+              "indices_count": 44280,
+              "indices_sha256": "fa5ce95919bcdaf2f2b974837124e859517dfe7dd26c48446ebb20fdad5364fa"
+            },
+            {
+              "material": 4,
+              "position_count": 54,
+              "indices_count": 84,
+              "indices_sha256": "57c16313f397561b6c093deacbd7f99e6e1a04f5da880d7323bac7f705140547"
+            },
+            {
+              "material": 5,
+              "position_count": 48,
+              "indices_count": 72,
+              "indices_sha256": "ea90e96fe92653735640889069ef0cfa970d336068b18b7b742e6b3d69fb46a3"
+            },
+            {
+              "material": 6,
+              "position_count": 212,
+              "indices_count": 312,
+              "indices_sha256": "ab0bf01791b2fdd1ff49ee0a2f4fcaf96b57d5c659cee80303ec6c70acd76fdc"
+            }
+          ],
+          "material_names": [
+            "limestone",
+            "carved pale stone",
+            "recessed blue grey glazing",
+            "painted window frames",
+            "weathered slate",
+            "wrought iron",
+            "deep shadow"
+          ]
+        },
+        "after": {
+          "path": "assets/models/bund/bund02.glb",
+          "sha256": "fde77cefd067587e96fe06c29ae300cb6f9f3754d1afed19f0f49a17e9954749",
+          "bytes": 4036596,
+          "primitives": [
+            {
+              "material": 0,
+              "position_count": 20876,
+              "indices_count": 30252,
+              "indices_sha256": "6f835a6e9aa402d839b1f6da4aa10ae619c419810355ccf59c3225b147625c49"
+            },
+            {
+              "material": 1,
+              "position_count": 79491,
+              "indices_count": 136692,
+              "indices_sha256": "08bc1cb69488619b124a2602426209ad2575484f63f2931a7bddd44b6b9ae91c"
+            },
+            {
+              "material": 2,
+              "position_count": 5243,
+              "indices_count": 7374,
+              "indices_sha256": "fb1bbadd7372bc01b240c32a4cc085908240129c298b60b3a4024fd64d316cc9"
+            },
+            {
+              "material": 3,
+              "position_count": 32376,
+              "indices_count": 44280,
+              "indices_sha256": "fa5ce95919bcdaf2f2b974837124e859517dfe7dd26c48446ebb20fdad5364fa"
+            },
+            {
+              "material": 4,
+              "position_count": 54,
+              "indices_count": 84,
+              "indices_sha256": "bda16dc0955ee3d62294efcee2ec4e28ba1932df5ba04ac6e8ab65731832ef50"
+            },
+            {
+              "material": 5,
+              "position_count": 48,
+              "indices_count": 72,
+              "indices_sha256": "a50c37b2b1538af39f738f42f834f1dcb9e130212ef6b4fc2c0cf25eb5b38b0a"
+            },
+            {
+              "material": 6,
+              "position_count": 212,
+              "indices_count": 312,
+              "indices_sha256": "6ada658dbe1dda89bce1b7c8a4c153d157534bade833403567cda4385114ac69"
+            }
+          ],
+          "material_names": [
+            "limestone",
+            "carved pale stone",
+            "recessed blue grey glazing",
+            "painted window frames",
+            "weathered slate",
+            "wrought iron",
+            "deep shadow"
+          ]
+        },
+        "position_tolerance_m": 1e-05,
+        "source_position_count": 138300,
+        "rebuilt_position_count": 138300,
+        "source_unique_positions": 46585,
+        "rebuilt_unique_positions": 46585,
+        "unique_world_positions_exactly_equal": true,
+        "unique_world_positions_equal_at_tolerance": true,
+        "source_bounds_m": [
+          [
+            -32.428035736083984,
+            0.0,
+            -24.80279541015625
+          ],
+          [
+            32.823272705078125,
+            35.0,
+            24.195528030395508
+          ]
+        ],
+        "rebuilt_bounds_m": [
+          [
+            -32.428035736083984,
+            0.0,
+            -24.80279541015625
+          ],
+          [
+            32.823272705078125,
+            35.0,
+            24.195528030395508
+          ]
+        ],
+        "maximum_bounds_change_m": 0.0,
+        "source_triangle_count": 73022,
+        "rebuilt_triangle_count": 73022,
+        "triangle_count_equal": true,
+        "matched_triangles_same_orientation": 46970,
+        "matched_triangles_reversed_orientation": 26052,
+        "reversed_geometric_normal_dot_min": -1.0000000000000004,
+        "reversed_geometric_normal_dot_max": -0.9999999999999997,
+        "unmatched_source_triangles": 0,
+        "unmatched_rebuilt_triangles": 0,
+        "reversed_triangles_by_material": {
+          "0": 7560,
+          "1": 16464,
+          "2": 1908,
+          "4": 12,
+          "5": 24,
+          "6": 84
+        },
+        "unmatched_can_include_quad_diagonal_changes": true,
+        "id": "bund02"
+      },
+      {
+        "before": {
+          "path": "previous-release/assets/models/bund/bund03.glb",
+          "sha256": "735067414af4cf41c2af8c517cac4de2777f32726dc6af946a9a11a360c44e22",
+          "bytes": 9567784,
+          "primitives": [
+            {
+              "material": 0,
+              "position_count": 40290,
+              "indices_count": 56454,
+              "indices_sha256": "4139cc4ed83d0844c851f8925c6901c67830d3629b9c3d8090c0e16d0d0ef458"
+            },
+            {
+              "material": 1,
+              "position_count": 157457,
+              "indices_count": 227964,
+              "indices_sha256": "2e6ab1b9a124ed59be88b0eeda93c818e6a213addd05ac7cb5ba25fbb8e724c2"
+            },
+            {
+              "material": 2,
+              "position_count": 10315,
+              "indices_count": 15381,
+              "indices_sha256": "0d2057f0ea7b87f0a460fb622c993d81fbcf0cad00f1a21bd1247d61fe010878"
+            },
+            {
+              "material": 3,
+              "position_count": 108738,
+              "indices_count": 144036,
+              "indices_sha256": "6fdb26a8eceee4bc1f08881b5fa593fbf293dfd46d70901360e82f4522319ac5"
+            },
+            {
+              "material": 4,
+              "position_count": 32,
+              "indices_count": 48,
+              "indices_sha256": "790eb20090573cbd551aa0f87cad1feaf8684be830332a5c54bc8770445d9230"
+            },
+            {
+              "material": 5,
+              "position_count": 10446,
+              "indices_count": 13596,
+              "indices_sha256": "50165054845bbd74361ac595f5c2af66fee72ef963b0cc64ba6575c7cdebeb21"
+            },
+            {
+              "material": 6,
+              "position_count": 1092,
+              "indices_count": 1524,
+              "indices_sha256": "32ac5a9f97fd8fd22a380905765cf25bcf076460949f5b357cf7b561b46b49ea"
+            },
+            {
+              "material": 7,
+              "position_count": 528,
+              "indices_count": 2736,
+              "indices_sha256": "db169d5468de113b2772083f273d8f319b631f129776f2051b002814c89a9ded"
+            }
+          ],
+          "material_names": [
+            "limestone.001",
+            "carved pale stone.001",
+            "recessed blue grey glazing.001",
+            "painted window frames.001",
+            "weathered slate.001",
+            "wrought iron.001",
+            "deep shadow.001",
+            "aged cupola metal.001"
+          ]
+        },
+        "after": {
+          "path": "assets/models/bund/bund03.glb",
+          "sha256": "058496e901e24d0f2191e62057edc944fab269ed50db5903fee78386baaa0174",
+          "bytes": 9567784,
+          "primitives": [
+            {
+              "material": 0,
+              "position_count": 40290,
+              "indices_count": 56454,
+              "indices_sha256": "5eb9f18753982e0f47fcaf4c66c6fba9eb9f6b013499d23573a84775a16046c0"
+            },
+            {
+              "material": 1,
+              "position_count": 157457,
+              "indices_count": 227964,
+              "indices_sha256": "b2a607d54ee30aee99165a5179d70871484ecb92cfbd63151396daa125900bf9"
+            },
+            {
+              "material": 2,
+              "position_count": 10315,
+              "indices_count": 15381,
+              "indices_sha256": "11bcf6fd4081dc2a3920c7c813a4c28d49abf17388b65f76d741c72b9a05938c"
+            },
+            {
+              "material": 3,
+              "position_count": 108738,
+              "indices_count": 144036,
+              "indices_sha256": "6fdb26a8eceee4bc1f08881b5fa593fbf293dfd46d70901360e82f4522319ac5"
+            },
+            {
+              "material": 4,
+              "position_count": 32,
+              "indices_count": 48,
+              "indices_sha256": "790eb20090573cbd551aa0f87cad1feaf8684be830332a5c54bc8770445d9230"
+            },
+            {
+              "material": 5,
+              "position_count": 10446,
+              "indices_count": 13596,
+              "indices_sha256": "f76aeb93aad0620120a9049dc92fe36b2451b81cf07d532fd14b13157badaf08"
+            },
+            {
+              "material": 6,
+              "position_count": 1092,
+              "indices_count": 1524,
+              "indices_sha256": "557f76c58c010d59c5dbf33af0c91fc65446ccfb2c0648b1417a54030c95cac5"
+            },
+            {
+              "material": 7,
+              "position_count": 528,
+              "indices_count": 2736,
+              "indices_sha256": "db169d5468de113b2772083f273d8f319b631f129776f2051b002814c89a9ded"
+            }
+          ],
+          "material_names": [
+            "limestone.001",
+            "carved pale stone.001",
+            "recessed blue grey glazing.001",
+            "painted window frames.001",
+            "weathered slate.001",
+            "wrought iron.001",
+            "deep shadow.001",
+            "aged cupola metal.001"
+          ]
+        },
+        "position_tolerance_m": 1e-05,
+        "source_position_count": 328898,
+        "rebuilt_position_count": 328898,
+        "source_unique_positions": 104195,
+        "rebuilt_unique_positions": 104195,
+        "unique_world_positions_exactly_equal": true,
+        "unique_world_positions_equal_at_tolerance": true,
+        "source_bounds_m": [
+          [
+            -39.78239059448242,
+            0.0,
+            -23.289213180541992
+          ],
+          [
+            40.538246154785156,
+            45.75,
+            23.436763763427734
+          ]
+        ],
+        "rebuilt_bounds_m": [
+          [
+            -39.78239059448242,
+            0.0,
+            -23.289213180541992
+          ],
+          [
+            40.538246154785156,
+            45.75,
+            23.436763763427734
+          ]
+        ],
+        "maximum_bounds_change_m": 0.0,
+        "source_triangle_count": 153913,
+        "rebuilt_triangle_count": 153913,
+        "triangle_count_equal": true,
+        "matched_triangles_same_orientation": 101245,
+        "matched_triangles_reversed_orientation": 52668,
+        "reversed_geometric_normal_dot_min": -1.0000000000000004,
+        "reversed_geometric_normal_dot_max": -0.9999999999999994,
+        "unmatched_source_triangles": 0,
+        "unmatched_rebuilt_triangles": 0,
+        "reversed_triangles_by_material": {
+          "0": 11460,
+          "1": 34932,
+          "2": 1296,
+          "5": 4488,
+          "6": 492
+        },
+        "unmatched_can_include_quad_diagonal_changes": true,
+        "id": "bund03"
+      },
+      {
+        "before": {
+          "path": "previous-release/assets/models/bund/bund17.glb",
+          "sha256": "d06d5a4ea07f8c5d0b1e0257365d80009eb1c7b80f6b91e555436176fafdaa38",
+          "bytes": 3641120,
+          "primitives": [
+            {
+              "material": 0,
+              "position_count": 31385,
+              "indices_count": 46824,
+              "indices_sha256": "6e94fe964d90142c9438a562cd8f11b4a07bcb870e5b65ef55169e4b33f82364"
+            },
+            {
+              "material": 1,
+              "position_count": 63922,
+              "indices_count": 127128,
+              "indices_sha256": "53b633456c566055de96c74234ca6bd7ff4f64c2e9526e184336a4ab3078cea9"
+            },
+            {
+              "material": 2,
+              "position_count": 7619,
+              "indices_count": 10812,
+              "indices_sha256": "78d888b46c86fd0b66ff87af16bdd1610d001016fc5e5354a40f42aa5b9ce990"
+            },
+            {
+              "material": 3,
+              "position_count": 28102,
+              "indices_count": 38844,
+              "indices_sha256": "e5db5d327f068cc687344fa97053904fbb9a6571cffdcb9e62dafc749d1302a9"
+            },
+            {
+              "material": 4,
+              "position_count": 26,
+              "indices_count": 36,
+              "indices_sha256": "a98559c63aedd4c8f6f4e5f76900a2ec1a87d605e95b7b37627e67d3d65a6eff"
+            },
+            {
+              "material": 5,
+              "position_count": 1304,
+              "indices_count": 1944,
+              "indices_sha256": "74ad771149ff0daf5a4814311f6b094097ca4f7e0f66b9eae204edc2d5fe211e"
+            },
+            {
+              "material": 6,
+              "position_count": 24,
+              "indices_count": 36,
+              "indices_sha256": "af644d3eb9ccd94b989e6a18d96f68e02696f5ab726c1c43bfeb3458ea29e0e3"
+            },
+            {
+              "material": 7,
+              "position_count": 224,
+              "indices_count": 312,
+              "indices_sha256": "bc2aff6016e8565f9d062591ef1ea5221103ec8860168f787c6dc959b4aaf7d4"
+            }
+          ],
+          "material_names": [
+            "limestone",
+            "carved pale stone",
+            "recessed blue grey glazing",
+            "painted window frames",
+            "weathered slate",
+            "wrought iron",
+            "deep shadow",
+            "AIA red lettering"
+          ]
+        },
+        "after": {
+          "path": "assets/models/bund/bund17.glb",
+          "sha256": "608dc0e3820f37fe8fd408644c5a2134009f57afdc152c8dff88eea02b5c92a1",
+          "bytes": 3641120,
+          "primitives": [
+            {
+              "material": 0,
+              "position_count": 31385,
+              "indices_count": 46824,
+              "indices_sha256": "2c72ac3d74f6fe524d4dfab5382df8ad51b5274bb60652fb2661459c6284f1a9"
+            },
+            {
+              "material": 1,
+              "position_count": 63922,
+              "indices_count": 127128,
+              "indices_sha256": "2f379b02a357b089035cc7659e415cbbe27fdadb82246f0c03f4556697efe732"
+            },
+            {
+              "material": 2,
+              "position_count": 7619,
+              "indices_count": 10812,
+              "indices_sha256": "ce24eb38e5c6199790b89650000f18e545aa6c8daeb95a8ae4a1570e4247e69d"
+            },
+            {
+              "material": 3,
+              "position_count": 28102,
+              "indices_count": 38844,
+              "indices_sha256": "e5db5d327f068cc687344fa97053904fbb9a6571cffdcb9e62dafc749d1302a9"
+            },
+            {
+              "material": 4,
+              "position_count": 26,
+              "indices_count": 36,
+              "indices_sha256": "a98559c63aedd4c8f6f4e5f76900a2ec1a87d605e95b7b37627e67d3d65a6eff"
+            },
+            {
+              "material": 5,
+              "position_count": 1304,
+              "indices_count": 1944,
+              "indices_sha256": "f3d211e563be150bf8b91e69b5b64af425ea349071735d3098cf4d0cf8a65b77"
+            },
+            {
+              "material": 6,
+              "position_count": 24,
+              "indices_count": 36,
+              "indices_sha256": "af644d3eb9ccd94b989e6a18d96f68e02696f5ab726c1c43bfeb3458ea29e0e3"
+            },
+            {
+              "material": 7,
+              "position_count": 224,
+              "indices_count": 312,
+              "indices_sha256": "bc2aff6016e8565f9d062591ef1ea5221103ec8860168f787c6dc959b4aaf7d4"
+            }
+          ],
+          "material_names": [
+            "limestone",
+            "carved pale stone",
+            "recessed blue grey glazing",
+            "painted window frames",
+            "weathered slate",
+            "wrought iron",
+            "deep shadow",
+            "AIA red lettering"
+          ]
+        },
+        "position_tolerance_m": 1e-05,
+        "source_position_count": 132606,
+        "rebuilt_position_count": 132606,
+        "source_unique_positions": 46886,
+        "rebuilt_unique_positions": 46886,
+        "unique_world_positions_exactly_equal": true,
+        "unique_world_positions_equal_at_tolerance": true,
+        "source_bounds_m": [
+          [
+            -28.303380966186523,
+            0.0,
+            -16.34966278076172
+          ],
+          [
+            27.567840576171875,
+            40.0,
+            15.863197326660156
+          ]
+        ],
+        "rebuilt_bounds_m": [
+          [
+            -28.303380966186523,
+            0.0,
+            -16.34966278076172
+          ],
+          [
+            27.567840576171875,
+            40.0,
+            15.863197326660156
+          ]
+        ],
+        "maximum_bounds_change_m": 0.0,
+        "source_triangle_count": 75312,
+        "rebuilt_triangle_count": 75312,
+        "triangle_count_equal": true,
+        "matched_triangles_same_orientation": 36052,
+        "matched_triangles_reversed_orientation": 39260,
+        "reversed_geometric_normal_dot_min": -1.0000000000000004,
+        "reversed_geometric_normal_dot_max": -0.9999999999999996,
+        "unmatched_source_triangles": 0,
+        "unmatched_rebuilt_triangles": 0,
+        "reversed_triangles_by_material": {
+          "0": 11552,
+          "1": 23628,
+          "2": 3504,
+          "5": 576
+        },
+        "unmatched_can_include_quad_diagonal_changes": true,
+        "id": "bund17"
+      }
+    ]
+  },
+  "native_geometry_audit": {
+    "models": [
+      {
+        "id": "bund02",
+        "native_scene_meshes": 1,
+        "vertices": 48498,
+        "triangles": 73022,
+        "ordered_world_vertices_exactly_equal": true,
+        "material_slots_unchanged": true
+      },
+      {
+        "id": "bund03",
+        "native_scene_meshes": 1,
+        "vertices": 111675,
+        "triangles": 153913,
+        "ordered_world_vertices_exactly_equal": true,
+        "material_slots_unchanged": true
+      },
+      {
+        "id": "bund17",
+        "native_scene_meshes": 1,
+        "vertices": 49256,
+        "triangles": 75312,
+        "ordered_world_vertices_exactly_equal": true,
+        "material_slots_unchanged": true
+      }
+    ]
+  },
+  "web_decoding_audit": {
+    "passed": true,
+    "models": [
+      {
+        "id": "bund02",
+        "web": {
+          "triangles": 73022,
+          "meshes": 7,
+          "bounds": [
+            -32.4280357,
+            0,
+            -24.8027954,
+            32.823280324100004,
+            34.999836131520006,
+            24.195182975860007
+          ]
+        },
+        "lod": {
+          "triangles": 45980,
+          "meshes": 7,
+          "bounds": [
+            -32.4280357,
+            0,
+            -24.8027954,
+            32.823280324100004,
+            34.999836131520006,
+            24.195182975860007
+          ]
+        },
+        "webBoundsChange": 0,
+        "lodBoundsChange": 0,
+        "webAndLodTrianglesUnchanged": true
+      },
+      {
+        "id": "bund03",
+        "web": {
+          "triangles": 153913,
+          "meshes": 8,
+          "bounds": [
+            -39.7823906,
+            0,
+            -23.2892132,
+            40.5382451719,
+            45.74973208352,
+            23.437333512500004
+          ]
+        },
+        "lod": {
+          "triangles": 71022,
+          "meshes": 8,
+          "bounds": [
+            -39.7823906,
+            0,
+            -23.2892132,
+            40.5382451719,
+            45.74973208352,
+            23.437333512500004
+          ]
+        },
+        "webBoundsChange": 0,
+        "lodBoundsChange": 0,
+        "webAndLodTrianglesUnchanged": true
+      },
+      {
+        "id": "bund17",
+        "web": {
+          "triangles": 75312,
+          "meshes": 8,
+          "bounds": [
+            -28.303381,
+            0,
+            -16.3496628,
+            27.567840613789997,
+            40.000333362286,
+            15.863568430289998
+          ]
+        },
+        "lod": {
+          "triangles": 59546,
+          "meshes": 8,
+          "bounds": [
+            -28.303381,
+            0,
+            -16.3496628,
+            27.567840613789997,
+            40.000333362286,
+            15.863568430289998
+          ]
+        },
+        "webBoundsChange": 0,
+        "lodBoundsChange": 0,
+        "webAndLodTrianglesUnchanged": true
+      }
+    ]
+  }
+}

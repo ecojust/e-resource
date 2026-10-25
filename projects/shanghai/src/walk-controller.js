@@ -61,9 +61,9 @@ export class WalkController {
     this.position = { lng: 121.4869, lat: 31.2403 };
     this.heading = 45;
     this.bearing = 45;
-    this.pitch = 78;
-    this.zoom = 21.1;
-    this.cameraDistance = 12;
+    this.pitch = 82;
+    this.zoom = 21.1 - Math.log2(14 / 12);
+    this.cameraDistance = 14;
     this.speed = 0;
     this.distance = 0;
     this.mode = 'walk';
@@ -300,9 +300,9 @@ export class WalkController {
 
   resetCamera() {
     this.bearing = this.heading;
-    this.pitch = 78;
-    this.cameraDistance = 12;
-    this.zoom = 21.1;
+    this.pitch = 82;
+    this.cameraDistance = 14;
+    this.zoom = 21.1 - Math.log2(14 / 12);
     this._lastCamera = null;
   }
 
@@ -391,24 +391,40 @@ export class WalkController {
         Math.abs(previous.pitch - this.pitch) < 0.01 &&
         Math.abs(previous.distance - this.cameraDistance) < 0.001) return;
     const angle = this.bearing * TO_RAD;
-    const lookAhead = Math.min(3, this.cameraDistance * 0.20);
-    const target = offsetPosition(this._follow, Math.sin(angle) * lookAhead, Math.cos(angle) * lookAhead);
+    const targetForDistance = distance => {
+      // A close camera follows the actual player to avoid backward movement
+      // clipping the shoes while the ordinary follow anchor catches up.
+      const lag = clamp((distance - 3.5) / 4.5, 0, 1);
+      const anchor = {
+        lng: this.position.lng + (this._follow.lng - this.position.lng) * lag,
+        lat: this.position.lat + (this._follow.lat - this.position.lat) * lag,
+      };
+      const ahead = Math.min(3, distance * .20);
+      return offsetPosition(anchor, Math.sin(angle) * ahead, Math.cos(angle) * ahead);
+    };
+    let target = targetForDistance(this.cameraDistance);
     if (typeof this.scene.setCameraFromTo === 'function') {
       let effectiveDistance = this.cameraDistance;
       // Shorten the boom when a wall would cover the avatar. Water does not
       // obstruct the camera, and only nearby loaded building footprints count.
       for (let attempt = 0; attempt < 3; attempt++) {
+        target = targetForDistance(effectiveDistance);
         const horizontal = Math.sin(this.pitch * TO_RAD) * effectiveDistance;
         const candidate = offsetPosition(target, -Math.sin(angle) * horizontal, -Math.cos(angle) * horizontal);
         const midpoint = offsetPosition(target, -Math.sin(angle) * horizontal * .6, -Math.cos(angle) * horizontal * .6);
         if (this._collision(candidate) !== 'building' && this._collision(midpoint) !== 'building') break;
         effectiveDistance = Math.max(3.5, effectiveDistance * .6);
       }
+      target = targetForDistance(effectiveDistance);
       const horizontal = Math.sin(this.pitch * TO_RAD) * effectiveDistance;
       const from = offsetPosition(target, -Math.sin(angle) * horizontal, -Math.cos(angle) * horizontal);
+      // Default composition places the visitor's centre near 70% screen height
+      // and gives the street architecture more room. Lower the target for a
+      // shortened boom so the same framing does not crop the feet by a wall.
+      const targetHeight = .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);
       this.scene.setCameraFromTo({
-        from: { ...from, alt: 1.25 + Math.cos(this.pitch * TO_RAD) * effectiveDistance },
-        to: { ...target, alt: 1.25 },
+        from: { ...from, alt: targetHeight + Math.cos(this.pitch * TO_RAD) * effectiveDistance },
+        to: { ...target, alt: targetHeight },
       });
     } else {
       this.scene.setCamera({ ...target, bearing: this.bearing, pitch: this.pitch, zoom: this.zoom });
