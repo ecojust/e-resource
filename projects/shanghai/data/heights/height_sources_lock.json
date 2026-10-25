@@ -1,0 +1,1378 @@
+{
+  "sampler_version": "2026-10-25-v1",
+  "priority": [
+    "source height",
+    "num_floors * 3.2m",
+    "cmab_estimate_matched_rooftop",
+    "cnbh_estimate_10m",
+    "raster_estimate_2018",
+    "explicitly marked default 12m"
+  ],
+  "constructor": {
+    "cnbh_path": "alternatives/cnbh_2020_shanghai_core_dm.tif",
+    "ghsl_path": "shanghai_ghsl_anbh_2018_3arcsec.tif",
+    "cmab_path": "cmab/shards"
+  },
+  "quality_keys": [
+    "cmab_estimate_matched_rooftop",
+    "cnbh_estimate_10m",
+    "raster_estimate_2018"
+  ],
+  "files": [
+    {
+      "path": "building_height_sampler.py",
+      "bytes": 5242,
+      "sha256": "fc208ef25dadc20edbc01adfcc75ec7e426a053b2000e96c1ce0830579520407"
+    },
+    {
+      "path": "raster_height_sampler.py",
+      "bytes": 7934,
+      "sha256": "7cdfbaee8752edf2c90de97bf174e4a986b10f15e78861d3d74715052a01dad0"
+    },
+    {
+      "path": "alternatives/cnbh_2020_shanghai_core_dm.tif",
+      "bytes": 24314417,
+      "sha256": "6bdaefd92ce796c87c4ee0f25150cdafef6d22fdabd2cf2ad41741fd8ec52777"
+    },
+    {
+      "path": "shanghai_ghsl_anbh_2018_3arcsec.tif",
+      "bytes": 2685448,
+      "sha256": "3d4fe310d0c159e19ac847fe51bc7e14316877b8662ea0bc7cc2d75db9c73535"
+    },
+    {
+      "path": "cmab/shards/manifest.json",
+      "bytes": 31417,
+      "sha256": "8e953d042946c884af219c3f9e68489cec489f0bb669accd090350dfabaa910f"
+    },
+    {
+      "path": "cmab/shards/2693_729.parquet",
+      "bytes": 6403,
+      "sha256": "98d2d6b0dbcb45db1407da4b41b3028fcc4172de09523aaf31785338f5edc263"
+    },
+    {
+      "path": "cmab/shards/2694_729.parquet",
+      "bytes": 1330851,
+      "sha256": "f6197f76f8ff248e464c82505074d0e6557579d182655c74e7f5f46f61428a07"
+    },
+    {
+      "path": "cmab/shards/2694_730.parquet",
+      "bytes": 82407,
+      "sha256": "9372896b87c957407734ada1c5f6c8a677cb4cb2bdcd381bdf0fd3454d01bd06"
+    },
+    {
+      "path": "cmab/shards/2695_722.parquet",
+      "bytes": 144877,
+      "sha256": "e9c7f35e774f764b76c70f42f408f551906d964f24500051e55ac28ef2021124"
+    },
+    {
+      "path": "cmab/shards/2695_723.parquet",
+      "bytes": 490370,
+      "sha256": "0d1df13d5309b2380d2ccaf764af4b4b43dd1db64c25435626a28f22d6f59e6d"
+    },
+    {
+      "path": "cmab/shards/2695_729.parquet",
+      "bytes": 837901,
+      "sha256": "a81ff2f91cc53cb5737ba06c31d6ccab5f050078473e80a0b3a217b260ef45ed"
+    },
+    {
+      "path": "cmab/shards/2695_730.parquet",
+      "bytes": 536814,
+      "sha256": "1789bdb701c2c1adbda0d91179f63321a1bd1a9abb3b619f4ec8e024d4afda7d"
+    },
+    {
+      "path": "cmab/shards/2695_731.parquet",
+      "bytes": 257475,
+      "sha256": "68ca916d33bc754935978d480062daca0e9da970e0299e51ff1e76d1b0472f64"
+    },
+    {
+      "path": "cmab/shards/2695_732.parquet",
+      "bytes": 184349,
+      "sha256": "5e331d08a63ea5d7e55adb8bc01250dc97b65402f989937e27e7f5c808909785"
+    },
+    {
+      "path": "cmab/shards/2696_722.parquet",
+      "bytes": 32617,
+      "sha256": "b461c5a1b8b3da8c32e1783221303d586856acdfe171cd5a164b1ac82034f302"
+    },
+    {
+      "path": "cmab/shards/2696_723.parquet",
+      "bytes": 137967,
+      "sha256": "cd308e762806c8562391b3a69491e6e479b7a603fae087985ffb422ba7de23b6"
+    },
+    {
+      "path": "cmab/shards/2696_726.parquet",
+      "bytes": 141245,
+      "sha256": "198916e70e80c361cbc6afc02d490f4c03a900d3615d93f5ebc89e867b68cc1b"
+    },
+    {
+      "path": "cmab/shards/2696_727.parquet",
+      "bytes": 590189,
+      "sha256": "c1c263618925d9fdcd9239085d88a22cd0bb1e6752caf715f02331cbb10c14c0"
+    },
+    {
+      "path": "cmab/shards/2696_729.parquet",
+      "bytes": 20954,
+      "sha256": "09405ebe04aee0cc4115ae09668e10157aea44541ca3ec61c3bc748cc00ed385"
+    },
+    {
+      "path": "cmab/shards/2696_730.parquet",
+      "bytes": 2267737,
+      "sha256": "42649e875836d1b1528f937574778ec48f5bbc505b6961343a8725f3526d6619"
+    },
+    {
+      "path": "cmab/shards/2696_731.parquet",
+      "bytes": 1234784,
+      "sha256": "b54d53b7477abb350c59caffc5626eb124f75e2eb43c3e1386fb487e42322cf9"
+    },
+    {
+      "path": "cmab/shards/2696_732.parquet",
+      "bytes": 495597,
+      "sha256": "fa0639803bbf4ad6d4fe9ba35f34987cedadc18a7adbbf075fc3f46009f9b401"
+    },
+    {
+      "path": "cmab/shards/2696_733.parquet",
+      "bytes": 87373,
+      "sha256": "0ed9d3ee3364f0179cab92eb0ceac9aaf5ea76daa3db752b519cb254c5348712"
+    },
+    {
+      "path": "cmab/shards/2697_723.parquet",
+      "bytes": 988584,
+      "sha256": "fb5997afdf18b1edf8440519417c401cc96d8bf114ed22472533a8b948b74fd8"
+    },
+    {
+      "path": "cmab/shards/2697_724.parquet",
+      "bytes": 268672,
+      "sha256": "1be4c52a1b497e1b12dfa7b8cbf855a6d645a1bba31e3cd413c61aa2cc194d89"
+    },
+    {
+      "path": "cmab/shards/2697_725.parquet",
+      "bytes": 144823,
+      "sha256": "7ac5235ff1658def09bb64a0f446a6a3a85eea8e804a796086a79cc1496be730"
+    },
+    {
+      "path": "cmab/shards/2697_726.parquet",
+      "bytes": 576952,
+      "sha256": "c1bacb698fb149af60d65b8c4b0f0b6921e5d6e5b56af58ca924c3d2de76c253"
+    },
+    {
+      "path": "cmab/shards/2697_727.parquet",
+      "bytes": 903741,
+      "sha256": "65c8d9cb784763ae7d562fd72f98d9b63f6f765994d5862e7ae219955754c376"
+    },
+    {
+      "path": "cmab/shards/2697_728.parquet",
+      "bytes": 68744,
+      "sha256": "348dcb8afe24372c06e537905b0febdd5e2ec34e3ab9f59945c625809952603b"
+    },
+    {
+      "path": "cmab/shards/2697_729.parquet",
+      "bytes": 648149,
+      "sha256": "9a8697c2eecd8e8fd95a1331f2a3e8267980dc7293b77ca9ab620320d2946576"
+    },
+    {
+      "path": "cmab/shards/2697_730.parquet",
+      "bytes": 1072874,
+      "sha256": "06ec4c9609e34edaae1284eb3ae7370d45f7929e04a756daef8729d6334a7202"
+    },
+    {
+      "path": "cmab/shards/2697_731.parquet",
+      "bytes": 1088226,
+      "sha256": "dd769724cc0abb1e2af455f77b0a22cbff04c3048aa9159cd1e8577d19cbcd3d"
+    },
+    {
+      "path": "cmab/shards/2697_732.parquet",
+      "bytes": 110242,
+      "sha256": "0a96952534287a6dde32a974cc18e3342f87a881e4a1cc8b00adcebc284706a4"
+    },
+    {
+      "path": "cmab/shards/2697_733.parquet",
+      "bytes": 456328,
+      "sha256": "a9f3c2a00251c8b305cf326be7253d91502ac0fecd811793ff16ba27f92bc6be"
+    },
+    {
+      "path": "cmab/shards/2697_734.parquet",
+      "bytes": 1461862,
+      "sha256": "63864865132c38b2f8d9505db1b7e447cb26ec52b525a2868523d7d12c3bd0dd"
+    },
+    {
+      "path": "cmab/shards/2697_735.parquet",
+      "bytes": 831804,
+      "sha256": "bbb48fcc2f12186c9b21f6b1a982c70d396ca287b4fcc994173f501de84b58be"
+    },
+    {
+      "path": "cmab/shards/2697_736.parquet",
+      "bytes": 1061965,
+      "sha256": "4e1485064e2e12a8d68e6cc2b2473550591bcd692beb3336dd2f5d94152c887e"
+    },
+    {
+      "path": "cmab/shards/2697_737.parquet",
+      "bytes": 194609,
+      "sha256": "8f450cb429f5dfe6b5a26e1148e7f3d7bc203d7d576649ffef72030dbdd90f64"
+    },
+    {
+      "path": "cmab/shards/2697_738.parquet",
+      "bytes": 87894,
+      "sha256": "f5c29a880c84a5f8fd7fe8285cf8857cbefef9c0d4aee4a2af5bf6131a4c4399"
+    },
+    {
+      "path": "cmab/shards/2698_725.parquet",
+      "bytes": 142407,
+      "sha256": "d74afc0557a4c17560fcf91ae48197f337c7dab6077fd41af5c4197a2f9f5348"
+    },
+    {
+      "path": "cmab/shards/2698_726.parquet",
+      "bytes": 1780344,
+      "sha256": "e3d1dcc326f30c3bb3e820e4a86278659352c36500aec00a4350673f51704d04"
+    },
+    {
+      "path": "cmab/shards/2698_727.parquet",
+      "bytes": 2065770,
+      "sha256": "cb55cb473413594084287d378dd1ea8552672c2b0dcd38efe601b49b220b30e6"
+    },
+    {
+      "path": "cmab/shards/2698_728.parquet",
+      "bytes": 419268,
+      "sha256": "9ee24e0f03ac62bc03dce3f4b2a1367a939e2d04314e6f51530324eb169984e8"
+    },
+    {
+      "path": "cmab/shards/2698_729.parquet",
+      "bytes": 955669,
+      "sha256": "4a054a16189b8f5fdbf1d0ddfc7b24294f2a4d86f635597d636cde2cf0871d6d"
+    },
+    {
+      "path": "cmab/shards/2698_730.parquet",
+      "bytes": 1302724,
+      "sha256": "b8146e531576b273abf751055f2edab6a462d5705cba46a7fcd61a3b49c2401f"
+    },
+    {
+      "path": "cmab/shards/2698_731.parquet",
+      "bytes": 1445377,
+      "sha256": "2a67cf798c6b8b06f82edb6f1eadfcc73e77116ba5569485038b21b3ea50ebcb"
+    },
+    {
+      "path": "cmab/shards/2698_732.parquet",
+      "bytes": 1333909,
+      "sha256": "6930bac6792d9ec0c627f187f9c96ff02fa3ae4d11e4a1d1b4a8b593bcda9b1e"
+    },
+    {
+      "path": "cmab/shards/2698_733.parquet",
+      "bytes": 2296692,
+      "sha256": "ca209a2acffab101c0bfdd38e64f7af07aecc494539f90f2d7eb408b9c55a172"
+    },
+    {
+      "path": "cmab/shards/2698_734.parquet",
+      "bytes": 1768793,
+      "sha256": "295ae512fb9d476dbc3f6616d015b1e2c222b86f5b8d58ec789917ca64c78c77"
+    },
+    {
+      "path": "cmab/shards/2698_735.parquet",
+      "bytes": 768451,
+      "sha256": "7f42359f2edfeb4e6a52e1a8d7ee740d399185e783efc3d529f9c424f2065406"
+    },
+    {
+      "path": "cmab/shards/2698_736.parquet",
+      "bytes": 711358,
+      "sha256": "bc650da98862521e4bbd79a2ec09393eb267a40b25485cfe981c42643ef6b52c"
+    },
+    {
+      "path": "cmab/shards/2698_737.parquet",
+      "bytes": 1842307,
+      "sha256": "296e9190af3abc765b66bfcbe539a10490c3b57f54017d9a747687e479759cf1"
+    },
+    {
+      "path": "cmab/shards/2698_738.parquet",
+      "bytes": 159372,
+      "sha256": "3a20d675cd561492a91b494c6668d7e46e31c7b57428f628d4fa57f076d176d4"
+    },
+    {
+      "path": "cmab/shards/2699_718.parquet",
+      "bytes": 68912,
+      "sha256": "a244d8dcc1a2b498058c1186615ec7c00556251adce4a46330f9855572915432"
+    },
+    {
+      "path": "cmab/shards/2699_719.parquet",
+      "bytes": 48890,
+      "sha256": "996e93994b2dbeafbddca88f39a89f9d057f5737ae1269ba770a3fe09b8ce6fe"
+    },
+    {
+      "path": "cmab/shards/2699_726.parquet",
+      "bytes": 1372447,
+      "sha256": "1aa2e267b68d57e71498a6731eb1aae307010e96db5df485bbff140eebb62193"
+    },
+    {
+      "path": "cmab/shards/2699_727.parquet",
+      "bytes": 1881593,
+      "sha256": "8cada5c403d74d3ecd397d2f17f69b719ee38a9d2ffb9161f77127f39eac1873"
+    },
+    {
+      "path": "cmab/shards/2699_728.parquet",
+      "bytes": 1021808,
+      "sha256": "5dd943db7360b9fc24ff57c1bb7ade8f915d411c61129b0712cfd6d4f4ff3ee1"
+    },
+    {
+      "path": "cmab/shards/2699_729.parquet",
+      "bytes": 1850064,
+      "sha256": "c5886fcb79eb56e7e04ed13fd484b7e343783d43040b8f572595fb59964d3fba"
+    },
+    {
+      "path": "cmab/shards/2699_730.parquet",
+      "bytes": 990519,
+      "sha256": "cad7c19b74115467c6a31b7bf4310cf3182c233e53345cba0c4e633a095f5f1f"
+    },
+    {
+      "path": "cmab/shards/2699_731.parquet",
+      "bytes": 2355002,
+      "sha256": "4661a7a8e292f67fd2b6bc9a316846531c370394f3915f2d829d0ba6839db8e0"
+    },
+    {
+      "path": "cmab/shards/2699_732.parquet",
+      "bytes": 2067719,
+      "sha256": "aadf2a3025ea3092632c9b2ac8f5ecde45cb15681508dd274d299d8b7a43e702"
+    },
+    {
+      "path": "cmab/shards/2699_733.parquet",
+      "bytes": 2146884,
+      "sha256": "0aa762290c4667edf9bcf459af980f183bd4c7f365371023d075de35e028edf0"
+    },
+    {
+      "path": "cmab/shards/2699_734.parquet",
+      "bytes": 1084240,
+      "sha256": "9f85c607e0a4c6d7a5869bed1c06a725dc0da261a0dea6941e275602165ef507"
+    },
+    {
+      "path": "cmab/shards/2699_735.parquet",
+      "bytes": 1503726,
+      "sha256": "1abf1ebbe9ca1d0878367ee8846ee82f0ab6e2dcc8ed9fc3e255cbdc33a9ae06"
+    },
+    {
+      "path": "cmab/shards/2699_736.parquet",
+      "bytes": 2849093,
+      "sha256": "7e2fde285824e09b8e12bff4910f27cb670d3721a95a1b297e25681d88915b3d"
+    },
+    {
+      "path": "cmab/shards/2699_737.parquet",
+      "bytes": 1045195,
+      "sha256": "1da2929c752b5e98679fd2705828ae21a77608459b1676af7a2b8230215442ba"
+    },
+    {
+      "path": "cmab/shards/2699_738.parquet",
+      "bytes": 754111,
+      "sha256": "c615eb1081d98db73942c6463f4cb1e7dd4a19f23d8cef4a7b7b1fb984a58188"
+    },
+    {
+      "path": "cmab/shards/2700_718.parquet",
+      "bytes": 456189,
+      "sha256": "36eaca4c5ca9cacbbe18a470f7c821c20dd0de507ff2567df69b4e0bc7c1c7d8"
+    },
+    {
+      "path": "cmab/shards/2700_719.parquet",
+      "bytes": 1901999,
+      "sha256": "6a6bdf1656bdbf4d151fe68ab0e95faa8240d6fabccbb1d3e75067d7c4b4b72c"
+    },
+    {
+      "path": "cmab/shards/2700_720.parquet",
+      "bytes": 136205,
+      "sha256": "aa1a38fb2cf923a5981563587fe28278b506480824287cfc5cfbd73367a5a75f"
+    },
+    {
+      "path": "cmab/shards/2700_722.parquet",
+      "bytes": 141695,
+      "sha256": "701119be8d5629a49c5550cfd6c02bc34a6a008858eecf413bceb79775ab0818"
+    },
+    {
+      "path": "cmab/shards/2700_723.parquet",
+      "bytes": 524979,
+      "sha256": "0a914934339d56796df01c5707cc6c35e59af4412a5ab3983cb8a99e153ed266"
+    },
+    {
+      "path": "cmab/shards/2700_724.parquet",
+      "bytes": 17754,
+      "sha256": "798a993dddac03f678a1ba69032540b21b100665ae6cac56bdf53cabe85903d7"
+    },
+    {
+      "path": "cmab/shards/2700_725.parquet",
+      "bytes": 34339,
+      "sha256": "15a16644f8f3795dfdd9dd9de3200f22aefbe542e45cf6b9476b6dc2dbb162cf"
+    },
+    {
+      "path": "cmab/shards/2700_726.parquet",
+      "bytes": 1118182,
+      "sha256": "1afa30d2f6834a46c21a618f5eb7ad10efa8b194c09ee03ccc04466be500f252"
+    },
+    {
+      "path": "cmab/shards/2700_727.parquet",
+      "bytes": 1968771,
+      "sha256": "6dc2881949d72468c63796a10a13b9a6eb71a02e01afc5d8fda072e3760cfce6"
+    },
+    {
+      "path": "cmab/shards/2700_728.parquet",
+      "bytes": 1634825,
+      "sha256": "99a8d2c6aa8a96ae196fbc411f8a299499558c6e7a9054dbb61aa00e54d3e8aa"
+    },
+    {
+      "path": "cmab/shards/2700_729.parquet",
+      "bytes": 2006742,
+      "sha256": "337126219f3e8d119b5393bf441fbe9975e3beada030072051bb650a2156a2b9"
+    },
+    {
+      "path": "cmab/shards/2700_730.parquet",
+      "bytes": 3137197,
+      "sha256": "b011e23e9c1a6189a45ac11ce2819e7df655c6a1be3e2b4dd52ab8d5057b8c7f"
+    },
+    {
+      "path": "cmab/shards/2700_731.parquet",
+      "bytes": 2394270,
+      "sha256": "d878c17b810b79875b306e864b89f61f8ad8bb9fdbd2e4fd5b2a1cb177f77269"
+    },
+    {
+      "path": "cmab/shards/2700_732.parquet",
+      "bytes": 1714427,
+      "sha256": "217a57dd0a1d681f95bcf1375bbb6056e5a474583140fbeee764f87697e02d37"
+    },
+    {
+      "path": "cmab/shards/2700_733.parquet",
+      "bytes": 1819736,
+      "sha256": "2e648b8657cb8067f9a69a0bcabe7c5a684620ab8206d663a402962893396bf4"
+    },
+    {
+      "path": "cmab/shards/2700_734.parquet",
+      "bytes": 2737967,
+      "sha256": "fc318f31f73ba29c33fa8ab82274fd2d8ab847981fd6db10bf3bf2b9e2694df2"
+    },
+    {
+      "path": "cmab/shards/2700_735.parquet",
+      "bytes": 2712286,
+      "sha256": "b37222144755ed55a8cf72d44d671d13b3f18735c011108743e0873a1dea14cd"
+    },
+    {
+      "path": "cmab/shards/2700_736.parquet",
+      "bytes": 1549277,
+      "sha256": "c316f56318b38b27201d10dab362ae797c14a0a0f4ebc3155c4a97f8a5d53937"
+    },
+    {
+      "path": "cmab/shards/2700_737.parquet",
+      "bytes": 393436,
+      "sha256": "f63a27636ef8ab006ba946fc8963eaff02924819f567809b7c5475e8dcce8a98"
+    },
+    {
+      "path": "cmab/shards/2700_738.parquet",
+      "bytes": 344791,
+      "sha256": "a3bd335c6eba79abd1cabbb4df06787a1eb89b33e68df84a86247b2278a63100"
+    },
+    {
+      "path": "cmab/shards/2700_739.parquet",
+      "bytes": 117406,
+      "sha256": "313281c7af3f162f679c32d69b2ddd6bb6579a5bf003932ccd2efd59d15f7c28"
+    },
+    {
+      "path": "cmab/shards/2701_718.parquet",
+      "bytes": 213744,
+      "sha256": "36ba5a5ff409aa37bcbed86142b07b4eb0f5e5ba152fa23c616c2e9a71394e8c"
+    },
+    {
+      "path": "cmab/shards/2701_719.parquet",
+      "bytes": 1988381,
+      "sha256": "cb6f38f0dff4cca9fd3b64db410d4a20b0a26403a51d7fe0346e4c413729d1a8"
+    },
+    {
+      "path": "cmab/shards/2701_720.parquet",
+      "bytes": 1287436,
+      "sha256": "f4af6c9da63e9e400d5ee69b58815fceb3b5f0112c94a91f4e62757c37568ba1"
+    },
+    {
+      "path": "cmab/shards/2701_721.parquet",
+      "bytes": 692903,
+      "sha256": "bb3ba3b5718eb7cff30c56fdc3ddc3235556fd5b4e03d2085d50707005ca6e4c"
+    },
+    {
+      "path": "cmab/shards/2701_722.parquet",
+      "bytes": 753025,
+      "sha256": "0a055e6e721e22f1c9e2f650c7224c83a331ea04596c39b2cb59dbd75c3aae41"
+    },
+    {
+      "path": "cmab/shards/2701_723.parquet",
+      "bytes": 890076,
+      "sha256": "63e5be82a8e77b1f3495b7d7fd415268316338d664358b6d6ef27ffd420f8b2c"
+    },
+    {
+      "path": "cmab/shards/2701_724.parquet",
+      "bytes": 51674,
+      "sha256": "b6bd5aaf09011ae2615852425d3be3549b0eed4c7d2b42415eb5db9fd20c46a8"
+    },
+    {
+      "path": "cmab/shards/2701_726.parquet",
+      "bytes": 843085,
+      "sha256": "9a3c4f18afa27c59caa5770ab6aef3fd69c81b06ca24d85a6e71421a9d42964c"
+    },
+    {
+      "path": "cmab/shards/2701_727.parquet",
+      "bytes": 748180,
+      "sha256": "71bb1ce7a7a46b85234593e021ce5888566e31a06d2f34b3dfc006d00c45ff3e"
+    },
+    {
+      "path": "cmab/shards/2701_728.parquet",
+      "bytes": 3339904,
+      "sha256": "ce4ea5063957eae005e48cbba2b6d5c9d74944094a46b841274b661c31071faf"
+    },
+    {
+      "path": "cmab/shards/2701_729.parquet",
+      "bytes": 2848524,
+      "sha256": "35cf0756ef9c2ca479459d3246a95e8aabcd130765f4fac911de6475fdabfb5b"
+    },
+    {
+      "path": "cmab/shards/2701_730.parquet",
+      "bytes": 2894318,
+      "sha256": "fb3a4a7fa329d4d2ae5c666cd38e0f6f919da7c6cd094152e4a23ad95e8cc983"
+    },
+    {
+      "path": "cmab/shards/2701_731.parquet",
+      "bytes": 1448169,
+      "sha256": "2268dd1a0e007407c1a100189b157b3d347dc0633f0cd5b3767488b78984a3af"
+    },
+    {
+      "path": "cmab/shards/2701_732.parquet",
+      "bytes": 2103595,
+      "sha256": "450b3e8ac25d6ab265292cfcfffc48645a258355ba7fc754df058d0a28c07de3"
+    },
+    {
+      "path": "cmab/shards/2701_733.parquet",
+      "bytes": 2180096,
+      "sha256": "cf5c16284c6d8b7b50636a3000a1886c5203cf34e67e5c4e441a636a0b41bc70"
+    },
+    {
+      "path": "cmab/shards/2701_734.parquet",
+      "bytes": 2198502,
+      "sha256": "27b4630e23fc64ca70717376d8a3e4c4c6ff978f17210dad48e2267bbe19bb53"
+    },
+    {
+      "path": "cmab/shards/2701_735.parquet",
+      "bytes": 1686984,
+      "sha256": "9c5f2f14ad9b8280db2460a3d7fd4f631423b997518060aa8f50f28f701ab1ee"
+    },
+    {
+      "path": "cmab/shards/2701_736.parquet",
+      "bytes": 1655826,
+      "sha256": "b93cd80362ea872cb4bbdff962ae04428e18c0a2f3dacd446df74b99a1a545fa"
+    },
+    {
+      "path": "cmab/shards/2701_737.parquet",
+      "bytes": 2240789,
+      "sha256": "9286710e6b81fde31a1c68de26461e6f3462df875219bc4e318b0ecfddf0efda"
+    },
+    {
+      "path": "cmab/shards/2701_738.parquet",
+      "bytes": 1394554,
+      "sha256": "58f856c504555833d9b6ec04329a38a71d50be1d2a7c60f5cc9844c3c4e9f0a4"
+    },
+    {
+      "path": "cmab/shards/2701_739.parquet",
+      "bytes": 540473,
+      "sha256": "434438f5bdd0d7313c7ab0382168f22c6ee20f91cef53cbf2ddb91f08f41b1fd"
+    },
+    {
+      "path": "cmab/shards/2702_719.parquet",
+      "bytes": 82052,
+      "sha256": "6278a75b96e1fefe8b986c65d0a4f957bb4bc09cc656d6b32c5069d158484a3f"
+    },
+    {
+      "path": "cmab/shards/2702_720.parquet",
+      "bytes": 164406,
+      "sha256": "7dacb102f1bb9aa532cbbf21cd00b3008d5a4d8e943b7af0abbb76e590985d19"
+    },
+    {
+      "path": "cmab/shards/2702_721.parquet",
+      "bytes": 11653,
+      "sha256": "dff7216b90a861bda25b0650179a49a8bf91e9356835518869dc20da9968fcb7"
+    },
+    {
+      "path": "cmab/shards/2702_724.parquet",
+      "bytes": 86780,
+      "sha256": "af09e2313e1e652ff66bc97517b5c04bf80a6a8d16e4a97c2d955b429617bc18"
+    },
+    {
+      "path": "cmab/shards/2702_726.parquet",
+      "bytes": 1960324,
+      "sha256": "888a266ce56bfbd3255e25838072165de9e7664110e873b63cee437667436d1b"
+    },
+    {
+      "path": "cmab/shards/2702_727.parquet",
+      "bytes": 2602973,
+      "sha256": "491ba154a49fea32d6394e11e4b0ff6708df73549543f5f7c2ec3e81f7271497"
+    },
+    {
+      "path": "cmab/shards/2702_728.parquet",
+      "bytes": 2646301,
+      "sha256": "2d5d50dc325cc7441a2b481082b6d5881fdb96715e921f4c52e680e1013f53ab"
+    },
+    {
+      "path": "cmab/shards/2702_729.parquet",
+      "bytes": 2579077,
+      "sha256": "5ba3c1eeb1446cb20ab9d8fa98f4d5818a3a550f0459cb5c0f36e51c7a73d575"
+    },
+    {
+      "path": "cmab/shards/2702_730.parquet",
+      "bytes": 2416596,
+      "sha256": "044e07f02e32280d19865ca080039eafac2158db0d5a3947e5044047bcc98783"
+    },
+    {
+      "path": "cmab/shards/2702_731.parquet",
+      "bytes": 2957518,
+      "sha256": "4800a6abbb1cce3b9d2b6c98b514f316008a6e6fe7f4eeda4bc6ad37adc0ac12"
+    },
+    {
+      "path": "cmab/shards/2702_732.parquet",
+      "bytes": 2933620,
+      "sha256": "ada552680729d637684bf44344b13f704e0f728ca22b80a3e7631c19d4e8c847"
+    },
+    {
+      "path": "cmab/shards/2702_733.parquet",
+      "bytes": 2493046,
+      "sha256": "9c193671388fe63941d6767a01290f255ba58358179eced2467288f85f043bd6"
+    },
+    {
+      "path": "cmab/shards/2702_734.parquet",
+      "bytes": 1795567,
+      "sha256": "ed222bc7dfbddb1153bf4e74d6160136f0e1af8618c09724dca02a4f17ae6c8d"
+    },
+    {
+      "path": "cmab/shards/2702_735.parquet",
+      "bytes": 2396047,
+      "sha256": "c338b64a42a93597d91a998ef68075758154cb0c28bc2eef2693919a806b084a"
+    },
+    {
+      "path": "cmab/shards/2702_736.parquet",
+      "bytes": 2045418,
+      "sha256": "a1f5ccf0b3a46ddc7b7fd2f79cfd1a8149defc402d5303922ce0b91b64619a54"
+    },
+    {
+      "path": "cmab/shards/2702_737.parquet",
+      "bytes": 1800320,
+      "sha256": "21f20683067c5584384bd83aeb4b242812fe4daf3e4ea8f886497f956e74366b"
+    },
+    {
+      "path": "cmab/shards/2702_738.parquet",
+      "bytes": 1127544,
+      "sha256": "28881c51de476d8c8bd1afa7e6c2e4cb47853c4cc1964ff9e45bb81a1638ae2d"
+    },
+    {
+      "path": "cmab/shards/2702_739.parquet",
+      "bytes": 69819,
+      "sha256": "52422e4f05541ddf125c5721b3e665c0f7495038d48ffb503d4d36939b906a03"
+    },
+    {
+      "path": "cmab/shards/2702_742.parquet",
+      "bytes": 1054478,
+      "sha256": "f82878426b7cb52d055a81b02e6a30c96cc9703eddd1b70e96fd7f8cc0fdca85"
+    },
+    {
+      "path": "cmab/shards/2702_743.parquet",
+      "bytes": 804485,
+      "sha256": "04628b732835ee416b735176cccc9a010da415f622b82d81b5b2167f718cdba9"
+    },
+    {
+      "path": "cmab/shards/2703_720.parquet",
+      "bytes": 415303,
+      "sha256": "3ed9664392f35f79cee874c547826875ff6a3ba4c7e21ece31f11e9ce3289b12"
+    },
+    {
+      "path": "cmab/shards/2703_721.parquet",
+      "bytes": 648547,
+      "sha256": "30ad74e98f23e7c231d15c729f3cdc1b23e500d8d427548a8343667aca45a278"
+    },
+    {
+      "path": "cmab/shards/2703_722.parquet",
+      "bytes": 84120,
+      "sha256": "ac3179554a7c2ebae152d6124bbf7247362369e54d66cc2f9db926721e1a428d"
+    },
+    {
+      "path": "cmab/shards/2703_723.parquet",
+      "bytes": 19180,
+      "sha256": "dc861921a48e7ca07585c6f3a7c57f0b405557ae8bd72d75d2d7af36063f3975"
+    },
+    {
+      "path": "cmab/shards/2703_724.parquet",
+      "bytes": 1341286,
+      "sha256": "abc29bca1326b779956332493be26ce5be83d0a1460a2d7c6c8a0382e51ad670"
+    },
+    {
+      "path": "cmab/shards/2703_725.parquet",
+      "bytes": 1258703,
+      "sha256": "580e6a41ea3c1d7def11a18f039d486269ded1411ac1b71540370e9efeb9413d"
+    },
+    {
+      "path": "cmab/shards/2703_726.parquet",
+      "bytes": 1825943,
+      "sha256": "f15976ca36d3521a13c650f7c00ff67be2fa9edb920e2fd5e3b4e4455152f98c"
+    },
+    {
+      "path": "cmab/shards/2703_727.parquet",
+      "bytes": 2192624,
+      "sha256": "371859445262eec8bc61c77abe1923a1f06ae0f47f2aa108d124dfd3a80a5e3f"
+    },
+    {
+      "path": "cmab/shards/2703_728.parquet",
+      "bytes": 2250097,
+      "sha256": "b60cbd489ca79d53f83ee554fe45d2fd813bf7065ec18244d5406386e52e5c0c"
+    },
+    {
+      "path": "cmab/shards/2703_729.parquet",
+      "bytes": 2372382,
+      "sha256": "511e03199b930259c0a4b5d778e7d4152fa991b389d92c49cf4bc2a084ae1ab2"
+    },
+    {
+      "path": "cmab/shards/2703_730.parquet",
+      "bytes": 2771613,
+      "sha256": "fa3bd2477eee04dc611a20a2923dade9efa7694a1c4f5f7112fded7eb4498b94"
+    },
+    {
+      "path": "cmab/shards/2703_731.parquet",
+      "bytes": 3457697,
+      "sha256": "036a8316e0769416483f28dd6f12b6783a8ad3b3b460ea39366f111b3f9ab28b"
+    },
+    {
+      "path": "cmab/shards/2703_732.parquet",
+      "bytes": 3927133,
+      "sha256": "8c704419043f7ef91a4e77e4d53f5a5e73ee948ae9384786c8988212421456d7"
+    },
+    {
+      "path": "cmab/shards/2703_733.parquet",
+      "bytes": 3286095,
+      "sha256": "d4ad1d80242e0e6d75b073d74c3e0c9bcfcc7c6ac1fbcf6482da3e79a56ff3cd"
+    },
+    {
+      "path": "cmab/shards/2703_734.parquet",
+      "bytes": 2465787,
+      "sha256": "073e4697e3ecf4974a69d925049a216410df956052c273af2204f38c088b8682"
+    },
+    {
+      "path": "cmab/shards/2703_735.parquet",
+      "bytes": 2472429,
+      "sha256": "394e0efa1899c05964954f7c120d9cc523a729f764f4ae1102566c8477c5f4f2"
+    },
+    {
+      "path": "cmab/shards/2703_736.parquet",
+      "bytes": 2635089,
+      "sha256": "3c9814cfee6a70167a605c4824467e5b8f01faf3762d24d9d6826090e0509274"
+    },
+    {
+      "path": "cmab/shards/2703_737.parquet",
+      "bytes": 1825298,
+      "sha256": "3a9dd29fdc22eb25a8d780f6b77853696c47394e9b490ec632f1c3e8230f27b6"
+    },
+    {
+      "path": "cmab/shards/2703_738.parquet",
+      "bytes": 495646,
+      "sha256": "cb73363d3e3474addc2cf7930158443d09ab21e3cb25d65e5393eb45efa027dd"
+    },
+    {
+      "path": "cmab/shards/2703_742.parquet",
+      "bytes": 390698,
+      "sha256": "f6a2ecd97e35e0bbae61c6b50048d98941d477383b433480fa1c02d3e07b3e63"
+    },
+    {
+      "path": "cmab/shards/2703_743.parquet",
+      "bytes": 253652,
+      "sha256": "5992ab9ec411684bfe717ee78edee1119b4a95aaaddae938f78e9a3e6cb4d8ed"
+    },
+    {
+      "path": "cmab/shards/2704_720.parquet",
+      "bytes": 80670,
+      "sha256": "89ed0fb7777750709d57ec1d39685572728add928ed5e97cfb278e33a0f5088e"
+    },
+    {
+      "path": "cmab/shards/2704_721.parquet",
+      "bytes": 747096,
+      "sha256": "f2cfc0dd536aaf0264a1e4d5466d78c2e3e38dde06087e41d7c8c927de5e69eb"
+    },
+    {
+      "path": "cmab/shards/2704_722.parquet",
+      "bytes": 834519,
+      "sha256": "75c01ba7c69c895b207ba6a89ca401d5298d84031d2fb5a17bd0013843ca1d15"
+    },
+    {
+      "path": "cmab/shards/2704_723.parquet",
+      "bytes": 236698,
+      "sha256": "0c05e6fd31159df091ce35cda040ca2d6219ed540cade7bc482b74d06a88199f"
+    },
+    {
+      "path": "cmab/shards/2704_724.parquet",
+      "bytes": 1928475,
+      "sha256": "0371ae7b51fc32795393852b78b26c2d46ac3c6f6e8268d46497729b09b81e50"
+    },
+    {
+      "path": "cmab/shards/2704_725.parquet",
+      "bytes": 899094,
+      "sha256": "7d174d86f979a0d6796cd2d42916c94a811a275135296394410b1a208c43043d"
+    },
+    {
+      "path": "cmab/shards/2704_726.parquet",
+      "bytes": 24449,
+      "sha256": "3cd378f83b2ec2dbaf61cbddb0e394f80404533e65738aa22c755b75662e5d25"
+    },
+    {
+      "path": "cmab/shards/2704_727.parquet",
+      "bytes": 1002562,
+      "sha256": "cd99325ee7baf43cc8de40ad0124982173d291bf024a8e2ea26c086db107675e"
+    },
+    {
+      "path": "cmab/shards/2704_728.parquet",
+      "bytes": 1014886,
+      "sha256": "a5f08831dfcacc2c660da96d920f54ed231fa1ec5731396d94873921a692e9d9"
+    },
+    {
+      "path": "cmab/shards/2704_729.parquet",
+      "bytes": 1739238,
+      "sha256": "23a4fd1ad633a837662574a695084a5949e89b98d9e82a323a734ab987a12d7c"
+    },
+    {
+      "path": "cmab/shards/2704_730.parquet",
+      "bytes": 1655434,
+      "sha256": "41186ed34745e3f211a368977f7d588113b7b485b21363f9c8cafaafc12a3bb5"
+    },
+    {
+      "path": "cmab/shards/2704_731.parquet",
+      "bytes": 2227989,
+      "sha256": "755492267ff9ccf05c67f9b3eae2266b2459632b5ed2fdc1f577eb46ad503acf"
+    },
+    {
+      "path": "cmab/shards/2704_732.parquet",
+      "bytes": 4873520,
+      "sha256": "9e318825fd36d524044ca6976db347dbf81347b0c9cdfd3dfd2cd49f158f3a49"
+    },
+    {
+      "path": "cmab/shards/2704_733.parquet",
+      "bytes": 4240373,
+      "sha256": "f9a6b481874e55196f19f90f2b6ccb64a5a739a5532e073401ad1dcae607059b"
+    },
+    {
+      "path": "cmab/shards/2704_734.parquet",
+      "bytes": 3352668,
+      "sha256": "bfd836bbbf6a89329f40119536ec167438f18c16426f74fc50ed6c77fc48dc3e"
+    },
+    {
+      "path": "cmab/shards/2704_735.parquet",
+      "bytes": 2803254,
+      "sha256": "bad85b7d0fc97c40c2da5292b6defb3dc047f3a42c4fe1e3b5d8c624752d4338"
+    },
+    {
+      "path": "cmab/shards/2704_736.parquet",
+      "bytes": 3051408,
+      "sha256": "638a40e25dc0920f2bcf34240a1fc1446130bbb6e5ec86b7e95b2bf0b5b8c357"
+    },
+    {
+      "path": "cmab/shards/2704_737.parquet",
+      "bytes": 1376737,
+      "sha256": "4fc7bbe469680d188f545b437f79b93793e9e89dc1d454ea70f1278bdae40f61"
+    },
+    {
+      "path": "cmab/shards/2704_738.parquet",
+      "bytes": 5289,
+      "sha256": "820cab035bf6dc604fdc66b6c40715c72aa5e3113a32fff5c7e31c24d002cf6e"
+    },
+    {
+      "path": "cmab/shards/2705_721.parquet",
+      "bytes": 296249,
+      "sha256": "f169cc0eddac0e176edc28289d5648f58d12d92172723070d5a4ad54750381a9"
+    },
+    {
+      "path": "cmab/shards/2705_722.parquet",
+      "bytes": 1508615,
+      "sha256": "3d5086af08c60544282bf92e8536c1266e2b1ab41f11b8b64425eb7c951ab4f9"
+    },
+    {
+      "path": "cmab/shards/2705_723.parquet",
+      "bytes": 129430,
+      "sha256": "37ffef87b0cecc830a65e8788f97a9bb0b0aced1b02ed31aaa36f1f78527a6ab"
+    },
+    {
+      "path": "cmab/shards/2705_724.parquet",
+      "bytes": 655200,
+      "sha256": "1b8ffd983e0c614a3ad56c8fd60ffcf8c4dba6dda31703f38648944dcf26e0e9"
+    },
+    {
+      "path": "cmab/shards/2705_725.parquet",
+      "bytes": 479644,
+      "sha256": "fffa876be41e615362721bdd139048934e61d4c4678399c84e2c0e79bfd7b00b"
+    },
+    {
+      "path": "cmab/shards/2705_726.parquet",
+      "bytes": 77111,
+      "sha256": "74ad8ec3582410e474a6a9cbe8cde9ef515b78303c77437c7bf2eee40caa097a"
+    },
+    {
+      "path": "cmab/shards/2705_727.parquet",
+      "bytes": 1160131,
+      "sha256": "fb295b86bc7a590cfde6720ada3d1467eff6c1fd163864590ef036c7e7279bc5"
+    },
+    {
+      "path": "cmab/shards/2705_728.parquet",
+      "bytes": 1583660,
+      "sha256": "ff8e75595be94a75f9d795697523ffb5241ddf3c3e1f7050cd7a53dea2a21379"
+    },
+    {
+      "path": "cmab/shards/2705_729.parquet",
+      "bytes": 1693618,
+      "sha256": "d541b1bd32ce9ffd6562fcb8f92d28d5bd202f73fb83b7d90dd20b2bc3de94ac"
+    },
+    {
+      "path": "cmab/shards/2705_730.parquet",
+      "bytes": 2189807,
+      "sha256": "58160de5320556fa9962a5cb6a12086332979c7135de4a99df7c61d12f01cabc"
+    },
+    {
+      "path": "cmab/shards/2705_731.parquet",
+      "bytes": 2670990,
+      "sha256": "6472da5457df9d8113f902e717a655a8cee5d7e1701e46e21de7cc341f8450b5"
+    },
+    {
+      "path": "cmab/shards/2705_732.parquet",
+      "bytes": 2331079,
+      "sha256": "742558c3569652c587bc291260d2fe7bf6c01328d3c40a3b02b3f32e9dd874b7"
+    },
+    {
+      "path": "cmab/shards/2705_733.parquet",
+      "bytes": 3795621,
+      "sha256": "709df00733d118205e32de9378741aa58fbfe5da0683f9bcdb2bea3ec15b4a0a"
+    },
+    {
+      "path": "cmab/shards/2705_734.parquet",
+      "bytes": 3211723,
+      "sha256": "4d54e02bd62415a94eb067a420cc2b9b88d4acbcc9d5373c58f874477f7192b9"
+    },
+    {
+      "path": "cmab/shards/2705_735.parquet",
+      "bytes": 1860913,
+      "sha256": "4342fb3fd5849f5a43ea165631d413086b2c42828bf8de79596f253a422cc1ce"
+    },
+    {
+      "path": "cmab/shards/2705_736.parquet",
+      "bytes": 525566,
+      "sha256": "0125d1cfad85922f2a7af3b632469f979cdcdc66333225c71041668aca1667e8"
+    },
+    {
+      "path": "cmab/shards/2705_737.parquet",
+      "bytes": 29352,
+      "sha256": "905a014afdefe30170032bb45993f878ce1c409c78581ff3883af3ea2f102096"
+    },
+    {
+      "path": "cmab/shards/2706_721.parquet",
+      "bytes": 15039,
+      "sha256": "43d4c29dcb645ed0cc5605945fe889fef9b3f434752a948a4075e9b7ef95f5b5"
+    },
+    {
+      "path": "cmab/shards/2706_722.parquet",
+      "bytes": 421770,
+      "sha256": "2bc66e99ff5927e42401cdbb4995801e6968c2d9b9248c1e07c81b8fdf4ab21e"
+    },
+    {
+      "path": "cmab/shards/2706_723.parquet",
+      "bytes": 83214,
+      "sha256": "1334d133d0450233ebfeb30d2d8b92212db996a713446d15df4f569f348f9209"
+    },
+    {
+      "path": "cmab/shards/2706_724.parquet",
+      "bytes": 929089,
+      "sha256": "1ec60a7ef3babbeead2c73c7fd95e0debb6f8495363ccc32835c1b7e868ce773"
+    },
+    {
+      "path": "cmab/shards/2706_727.parquet",
+      "bytes": 1536827,
+      "sha256": "7c63a5f9c11d8e2f05d92e714f9d5b04b7a0b173037843a569fad4c2b48fedd8"
+    },
+    {
+      "path": "cmab/shards/2706_728.parquet",
+      "bytes": 1458467,
+      "sha256": "b1e1300ee16dd9f76959f76da551c106844484d68c685b067f4e914eea30f63e"
+    },
+    {
+      "path": "cmab/shards/2706_729.parquet",
+      "bytes": 2715406,
+      "sha256": "7f971594e4cf81a959f4582a9395b15529ea13c42ada711a3845b2e6cdc9d8b5"
+    },
+    {
+      "path": "cmab/shards/2706_730.parquet",
+      "bytes": 2158736,
+      "sha256": "6795fa151ebbcafaa7bf6a6d2c18c15ef9cb0d27992e1be2ec7139e67ce80318"
+    },
+    {
+      "path": "cmab/shards/2706_731.parquet",
+      "bytes": 1782171,
+      "sha256": "c507883c9af7b0790fe39b40e309d9d680e6858578daf9bceb02492988757dfd"
+    },
+    {
+      "path": "cmab/shards/2706_732.parquet",
+      "bytes": 2119996,
+      "sha256": "843e165fbde9775ccddc192e96d684ce5065d0f19f11cd0026dd560ccc9b35ed"
+    },
+    {
+      "path": "cmab/shards/2706_733.parquet",
+      "bytes": 3066201,
+      "sha256": "c8964047e6347fa4a012ff2cbad4a135c9e9a8ff46260844dfa78c479fbd1183"
+    },
+    {
+      "path": "cmab/shards/2706_734.parquet",
+      "bytes": 1861181,
+      "sha256": "bd5d8f6e81f6c2d17c68ee339127290643e0435694c8810556360e0543a3d0d9"
+    },
+    {
+      "path": "cmab/shards/2706_735.parquet",
+      "bytes": 3074649,
+      "sha256": "326adecf6e17bc3141e530e203e186927edc73acf3ea91775488f3856f1a6d0d"
+    },
+    {
+      "path": "cmab/shards/2706_736.parquet",
+      "bytes": 1117589,
+      "sha256": "2e14483a359194bd805b66f84878f5f4e84f10b43d46f1d93ee665763ffcc036"
+    },
+    {
+      "path": "cmab/shards/2707_723.parquet",
+      "bytes": 201110,
+      "sha256": "b1d6c37cc1261d673e4a84af07ae03759f0b7571e006786e2903a18a47041c7e"
+    },
+    {
+      "path": "cmab/shards/2707_724.parquet",
+      "bytes": 1098307,
+      "sha256": "732ad6ffac587833629371eb57af57cf6aa3aa5b0faebe3c8ebf53b00cbd0f93"
+    },
+    {
+      "path": "cmab/shards/2707_726.parquet",
+      "bytes": 6620,
+      "sha256": "d7c58c21603fda883dcde412fb55714804998db861b08ab0d995bb498b4f8468"
+    },
+    {
+      "path": "cmab/shards/2707_727.parquet",
+      "bytes": 1085702,
+      "sha256": "30d552831644c2948dbb4a0edcd597986de5ba6a5fa670b6609bd55d7451a0d8"
+    },
+    {
+      "path": "cmab/shards/2707_728.parquet",
+      "bytes": 504253,
+      "sha256": "c25ce9e4b5dea769eacfe3db82bcb15daecfa8619e3b685e30647be68a5cefb4"
+    },
+    {
+      "path": "cmab/shards/2707_729.parquet",
+      "bytes": 955729,
+      "sha256": "a585a20737dca55e144becac001d447687d81ce3c7faa70a29cc99c85cf67aff"
+    },
+    {
+      "path": "cmab/shards/2707_730.parquet",
+      "bytes": 1253548,
+      "sha256": "6ca0956c8d86d62acca8a32a0bd24fc7f4b4dbd3be3e3348870b23c934dee703"
+    },
+    {
+      "path": "cmab/shards/2707_731.parquet",
+      "bytes": 1671264,
+      "sha256": "a744af5309ac6d6baf4282396c9b7cda0687aff9c3291b7c4b7f43822aacde7c"
+    },
+    {
+      "path": "cmab/shards/2707_732.parquet",
+      "bytes": 961812,
+      "sha256": "d2b2361e7d8af09cd5dea0308fe216f195b95fbd24c94e22a771f9a053666d10"
+    },
+    {
+      "path": "cmab/shards/2707_733.parquet",
+      "bytes": 1952063,
+      "sha256": "daefe411ea46499c3571471da24ac696432071e1d5d3164f540b922618ca3920"
+    },
+    {
+      "path": "cmab/shards/2707_734.parquet",
+      "bytes": 1519609,
+      "sha256": "123ec51cbd93c084f9f2abdce9e84e3215888c7be7be6212a26ef1be07181c6a"
+    },
+    {
+      "path": "cmab/shards/2707_735.parquet",
+      "bytes": 1864091,
+      "sha256": "58c90bd877a702cd9aa912f6cc30fa93e5536350b172d6b33d2450c673cabe95"
+    },
+    {
+      "path": "cmab/shards/2707_736.parquet",
+      "bytes": 126708,
+      "sha256": "14e54afe125ae39a3d7216561afe29abb162d25d0131f948efe5405245f7e1ef"
+    },
+    {
+      "path": "cmab/shards/2707_740.parquet",
+      "bytes": 1058467,
+      "sha256": "f841f9c995afa5c16f4117d3918a279e595f332d4fce05b8bd5087e897ebd102"
+    },
+    {
+      "path": "cmab/shards/2708_724.parquet",
+      "bytes": 1426223,
+      "sha256": "ec34ce67f5542e3e7e719970b483ef703b5d005e309d4ab64224d21efb203090"
+    },
+    {
+      "path": "cmab/shards/2708_726.parquet",
+      "bytes": 26361,
+      "sha256": "8dab3ced4019102aa2319bb890e720fc7ea5756f271ac192ee82f096000da482"
+    },
+    {
+      "path": "cmab/shards/2708_727.parquet",
+      "bytes": 1182103,
+      "sha256": "bdc2bc3f656d31133e42523b7436ec0cd1757104a4c201c36f30582a815d5b9e"
+    },
+    {
+      "path": "cmab/shards/2708_729.parquet",
+      "bytes": 44540,
+      "sha256": "820245a1ae6df5cec95e9e6f21e771ae136964dc31541516e3738959555e64c5"
+    },
+    {
+      "path": "cmab/shards/2708_730.parquet",
+      "bytes": 597730,
+      "sha256": "d667e7f8d8fc7bdfb578835638f3900696fd00157ee706217bc68eeb3ea9a6d9"
+    },
+    {
+      "path": "cmab/shards/2708_731.parquet",
+      "bytes": 1048193,
+      "sha256": "b7bd21bdfaf25838d8fad2c58d246efce55cd8858ed47362269507b623f4a006"
+    },
+    {
+      "path": "cmab/shards/2708_732.parquet",
+      "bytes": 1316775,
+      "sha256": "365b2cd94f5bb00fb4db377a8524f01db187a8d511b41c30ee6c864f20003386"
+    },
+    {
+      "path": "cmab/shards/2708_733.parquet",
+      "bytes": 1921747,
+      "sha256": "00775280b4ca11ea43310bcda734a9e4ed2f9c03a1f078efcb9f0ef8a20ea854"
+    },
+    {
+      "path": "cmab/shards/2708_734.parquet",
+      "bytes": 1432724,
+      "sha256": "2c41ad63a386d40713a600df47f470886ddb62fd98f2688ce9d6c274f62c1b07"
+    },
+    {
+      "path": "cmab/shards/2708_735.parquet",
+      "bytes": 421268,
+      "sha256": "8a47be9228d886ddff8e1040dce3d354b10c15cc677482cfcd1844b2f03335b4"
+    },
+    {
+      "path": "cmab/shards/2709_724.parquet",
+      "bytes": 686081,
+      "sha256": "2b322b6ef7e49045d36ab298c406bebfafaa17aeb5bb6ba2d6116ec8734efd61"
+    },
+    {
+      "path": "cmab/shards/2709_725.parquet",
+      "bytes": 428480,
+      "sha256": "753a0c86935b8e518c3492f5532c933d85bb485262dc02b06e6e0926a8bfbaf2"
+    },
+    {
+      "path": "cmab/shards/2709_726.parquet",
+      "bytes": 5122,
+      "sha256": "934c69ab2f68bf8d6ff0c15bd5a0ba5e5ece81150b90a848a21a14bfa8bf216e"
+    },
+    {
+      "path": "cmab/shards/2709_727.parquet",
+      "bytes": 1337897,
+      "sha256": "76373538953ce88ba0d88a9e479919b6c79c52f04340c78430153787c9a7a8e0"
+    },
+    {
+      "path": "cmab/shards/2709_728.parquet",
+      "bytes": 1220642,
+      "sha256": "c1f1c19f8b3a1d43fb0f05edd5ffd9b113ba1de5c61b0e5eb4777ba5aa52b6aa"
+    },
+    {
+      "path": "cmab/shards/2709_729.parquet",
+      "bytes": 475659,
+      "sha256": "0ee84208617d555bce70fc174b9ba725a5ac21decfa706e7423617cf5cb9239f"
+    },
+    {
+      "path": "cmab/shards/2709_730.parquet",
+      "bytes": 413929,
+      "sha256": "1e0ee171da81ce08e71fdcd9e9dceb9b0ea51464797924005474ab860f5323c8"
+    },
+    {
+      "path": "cmab/shards/2709_731.parquet",
+      "bytes": 2098641,
+      "sha256": "e4be5730f44273f73a2879387f0d162702d27701c630bba958f11e77d249dba6"
+    },
+    {
+      "path": "cmab/shards/2709_732.parquet",
+      "bytes": 1898316,
+      "sha256": "cbe7be0454bc540d1a0f51de186dd06d3334b3f35aafd46881477388c32adb8f"
+    },
+    {
+      "path": "cmab/shards/2709_733.parquet",
+      "bytes": 1621611,
+      "sha256": "dca4ad6ae83bdf9f6a888313f710fede447c99a14662d48d555dde8ecb73984f"
+    },
+    {
+      "path": "cmab/shards/2709_734.parquet",
+      "bytes": 214513,
+      "sha256": "26f30b91ac892bd3559682e147fd26670611b6c9fda29fa4b854ec33fa925670"
+    },
+    {
+      "path": "cmab/shards/2710_722.parquet",
+      "bytes": 12956,
+      "sha256": "2eeb04db4a3572994c1e5e48cf8b82a4d5626edb6eebad11a7e649c8d92136b2"
+    },
+    {
+      "path": "cmab/shards/2710_723.parquet",
+      "bytes": 596935,
+      "sha256": "c8f959bb192b9ae130fe6cdd8301e9b5a769d68462e2fc1d4b0c9f933bc4c73f"
+    },
+    {
+      "path": "cmab/shards/2710_724.parquet",
+      "bytes": 588301,
+      "sha256": "8576e351837686d122c5989ed5f5c59fefc8613ab39e0261f83b4f26b4112bae"
+    },
+    {
+      "path": "cmab/shards/2710_725.parquet",
+      "bytes": 119654,
+      "sha256": "66a2a8112840ab03e35932963076dd963538ac74ed0f60331821dd9816673da7"
+    },
+    {
+      "path": "cmab/shards/2710_726.parquet",
+      "bytes": 19786,
+      "sha256": "063d99da27aa5d132753f5a3d2a130ae68d9aed80093f76ae865c830f90e837a"
+    },
+    {
+      "path": "cmab/shards/2710_727.parquet",
+      "bytes": 2239131,
+      "sha256": "bf0fcc0b424689bdd0e49715b7a652c06993f2e5eeadbb9e70c9e8fe22b8fff3"
+    },
+    {
+      "path": "cmab/shards/2710_728.parquet",
+      "bytes": 1117777,
+      "sha256": "987ea31b48a8e14c2aabb66820d89e728c3515b4f512a501788940b4f41e4c94"
+    },
+    {
+      "path": "cmab/shards/2710_729.parquet",
+      "bytes": 897121,
+      "sha256": "686f8a40c86a376a0c23d625364bb6c4d2f169b3f2c6de7e8f0fdb2b6fa75b15"
+    },
+    {
+      "path": "cmab/shards/2710_730.parquet",
+      "bytes": 1811647,
+      "sha256": "cc54846e1824e7acb1af94084ca7ae8b231e0a80201aecdba93c33ec68f68243"
+    },
+    {
+      "path": "cmab/shards/2710_731.parquet",
+      "bytes": 1145365,
+      "sha256": "9348157d1f51c36ca474f8918c963932b5717a5efa2dc29e22ae12df42498d43"
+    },
+    {
+      "path": "cmab/shards/2710_732.parquet",
+      "bytes": 527777,
+      "sha256": "438ee8ebbaf2532135ade3068965ea2f22d8e36caa1393a201dcb6a0ce04c4bb"
+    },
+    {
+      "path": "cmab/shards/2710_733.parquet",
+      "bytes": 505831,
+      "sha256": "f04dc85d0cc6297f152f96e397cb9f1ea9d28783d7bcdcb7f048e8a5127b9ae5"
+    },
+    {
+      "path": "cmab/shards/2711_722.parquet",
+      "bytes": 287822,
+      "sha256": "25ecb32b077acbbd65524c51970b6c9c6b40350b3abc4f11df7ad0e92207bf61"
+    },
+    {
+      "path": "cmab/shards/2711_723.parquet",
+      "bytes": 485647,
+      "sha256": "926196d684a1b3ca556541f568d78ec42f607faa2fd3bcf40b1ad3f2525a292e"
+    },
+    {
+      "path": "cmab/shards/2711_724.parquet",
+      "bytes": 303592,
+      "sha256": "808cbbc939f7b949d804b3aad8216cd34f226e36d318c37dc31a83194faa9f91"
+    },
+    {
+      "path": "cmab/shards/2711_726.parquet",
+      "bytes": 80058,
+      "sha256": "8f52e799858bb7704f82e81ac56c8775fd0f066d90dca97b7b4eba3fb5564d73"
+    },
+    {
+      "path": "cmab/shards/2711_727.parquet",
+      "bytes": 1103813,
+      "sha256": "94b6d4d8780d93edbdfb0c112309d60f3572b18c98ebd7f10d0c125183acefc9"
+    },
+    {
+      "path": "cmab/shards/2711_728.parquet",
+      "bytes": 326829,
+      "sha256": "67c36c9c24184bb6dfb20ac34f8115e4d1f229ff087318e3acde1916965b5feb"
+    },
+    {
+      "path": "cmab/shards/2711_729.parquet",
+      "bytes": 545207,
+      "sha256": "8b1900874e884da272fc19a5c91d9518a1b2ae9fb2389b5a3d9e33f4a6a0c7a3"
+    },
+    {
+      "path": "cmab/shards/2711_730.parquet",
+      "bytes": 909002,
+      "sha256": "a1ef32ef44522d7a12e9999a2ded6fe82340ee4180d74aff44a7fb7358143e43"
+    },
+    {
+      "path": "cmab/shards/2711_731.parquet",
+      "bytes": 363105,
+      "sha256": "aa02f9377fb2ddeca7ccd3dfd9b3e019bd204588e0b8cc420427ca15fe549621"
+    },
+    {
+      "path": "cmab/shards/2711_738.parquet",
+      "bytes": 179958,
+      "sha256": "b78f6e24e0285dd7e65d640c46d0965b959b8ca2679f4a6075b3cf3929359c7e"
+    },
+    {
+      "path": "cmab/shards/2712_722.parquet",
+      "bytes": 212205,
+      "sha256": "c3f5be0221cf24185f9939bea5911668d48889609470c2063308870ad443909d"
+    },
+    {
+      "path": "cmab/shards/2712_723.parquet",
+      "bytes": 818956,
+      "sha256": "c6c1863283e11120e5239f41f9ad1d7749f108eeec8a5b1a00c25f71b6cb7f1d"
+    },
+    {
+      "path": "cmab/shards/2712_724.parquet",
+      "bytes": 279565,
+      "sha256": "9c66d2f66932992176e2a21de849f0823e65e189e9560ae5c73f5f660469cc39"
+    },
+    {
+      "path": "cmab/shards/2712_728.parquet",
+      "bytes": 10558,
+      "sha256": "510886198636215e93a0d2b63419a23c2f589542d2be8f40eecd8f41c398a3f1"
+    },
+    {
+      "path": "cmab/shards/2712_729.parquet",
+      "bytes": 176516,
+      "sha256": "2801ea5257f9705ebfa5bd5a0f8e0570cce7820e5a0840732aeab76168f5c10c"
+    },
+    {
+      "path": "cmab/shards/2712_730.parquet",
+      "bytes": 199391,
+      "sha256": "82e6210759b80abe2f6813ac70a1ee72a5b11d0e54c902e1a3bd8d7412eba177"
+    },
+    {
+      "path": "cmab/shards/2712_738.parquet",
+      "bytes": 377910,
+      "sha256": "be2952f6236392deac097544b553adea691b8c3a5c631ee20850049d8563c8d1"
+    },
+    {
+      "path": "cmab/shards/2712_740.parquet",
+      "bytes": 589013,
+      "sha256": "fd3d7da112d90d9ca7a2e70203720d702393a7615b72bf0fa5d1ef6a52955941"
+    },
+    {
+      "path": "cmab/shards/2713_722.parquet",
+      "bytes": 63955,
+      "sha256": "ab747dc3cf06d4401b3f457600de8f65d353a917ad352380021fa1a918528743"
+    },
+    {
+      "path": "cmab/shards/2713_723.parquet",
+      "bytes": 255819,
+      "sha256": "6ee1d8714a73357f71a60e59c74a049682af94a009ad0825ca21cc35d9454797"
+    },
+    {
+      "path": "cmab/shards/2713_740.parquet",
+      "bytes": 6035,
+      "sha256": "cc180836f2332b3dc3dfd39b59dd654753acf9824625328af6b4ed27f2811595"
+    },
+    {
+      "path": "cmab/shards/2714_722.parquet",
+      "bytes": 12411,
+      "sha256": "41bd5c16f5c52079feeb8c1a550c85d2e424b4713819ea54bcd41b4d62cb97b5"
+    },
+    {
+      "path": "cmab/shards/2714_723.parquet",
+      "bytes": 232596,
+      "sha256": "cec15436126b311f2a084cb7639abd622ebcffdc1add92e6731a0a8f5d53dd94"
+    }
+  ]
+}

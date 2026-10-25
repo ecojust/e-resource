@@ -1,0 +1,25 @@
+{
+  "source": "Microsoft Building Density & Height Dataset 2023Q4",
+  "source_url": "https://github.com/microsoft/buildings",
+  "license": "CDLA-Permissive-2.0",
+  "license_file": "LICENSE-CDLA-Permissive-2.0.txt",
+  "output": "microsoft_2023q4_shanghai_height_m.tif",
+  "bytes": 2609062,
+  "sha256": "f80c6b05cec0f3c1790459d2004912f147731b2c61cb549cbdd25880c7af9947",
+  "crs": "EPSG:3857",
+  "shape": [
+    4767,
+    6736
+  ],
+  "dtype": "float32",
+  "nodata": -1.0,
+  "resolution_projected_m": [
+    76.43702828518872,
+    76.4370282851778
+  ],
+  "units": "meters",
+  "conversion": "Source band 2 multiplied by 100, retaining -1 nodata; source band 1 omitted; administrative Shanghai union mask applied",
+  "role": "comparison only; not used by the shipped unified height sampler",
+  "source_tiles_manifest": "microsoft_shanghai_manifest.json",
+  "note": "The source_tiles_manifest also records the two-band research intermediate, which is deliberately not included in this release."
+}

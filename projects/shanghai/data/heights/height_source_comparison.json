@@ -1,0 +1,1022 @@
+{
+  "purpose": "Cross-source consistency check; NOT independent ground-truth accuracy validation",
+  "reference_definition": "Overture explicit height where present, otherwise num_floors * 3.2m (assumed, not surveyed)",
+  "reference_records": 375,
+  "explicit_height_records": 93,
+  "floor_estimate_records": 282,
+  "sampling": {
+    "cmab": "EPSG3857 rooftop overlap IoU>=0.60 and both coverage>=0.70; ambiguous conflicting heights rejected; no shifts/no nearest neighbor",
+    "cnbh": "Positive 10m pixels whose centers are within footprint; median. Narrow footprints without centers use representative point. No neighboring-pixel fill.",
+    "ghsl": "2018 net built-surface cell average at polygon representative point"
+  },
+  "all_neighborhood_coverage": [
+    {
+      "district": "黄浦区",
+      "features": 680,
+      "cmab_rejected_or_missing": 645,
+      "cnbh_estimate_10m": 653,
+      "raster_estimate_2018": 27,
+      "cmab_matched": 35,
+      "cmab_matched_height_range_m": [
+        13.944,
+        95.691
+      ]
+    },
+    {
+      "district": "徐汇区",
+      "features": 443,
+      "cmab_rejected_or_missing": 426,
+      "cnbh_estimate_10m": 409,
+      "raster_estimate_2018": 34,
+      "cmab_matched": 17,
+      "cmab_matched_height_range_m": [
+        15.859,
+        58.612
+      ]
+    },
+    {
+      "district": "长宁区",
+      "features": 779,
+      "cmab_rejected_or_missing": 752,
+      "raster_estimate_2018": 50,
+      "cnbh_estimate_10m": 729,
+      "cmab_matched": 27,
+      "cmab_matched_height_range_m": [
+        10.587,
+        42.612
+      ]
+    },
+    {
+      "district": "静安区",
+      "features": 773,
+      "cmab_rejected_or_missing": 755,
+      "cnbh_estimate_10m": 692,
+      "raster_estimate_2018": 81,
+      "cmab_matched": 18,
+      "cmab_matched_height_range_m": [
+        13.943,
+        53.29
+      ]
+    },
+    {
+      "district": "普陀区",
+      "features": 482,
+      "cmab_rejected_or_missing": 460,
+      "cnbh_estimate_10m": 444,
+      "raster_estimate_2018": 38,
+      "cmab_matched": 22,
+      "cmab_matched_height_range_m": [
+        12.514,
+        31.633
+      ]
+    },
+    {
+      "district": "虹口区",
+      "features": 590,
+      "cmab_rejected_or_missing": 548,
+      "cnbh_estimate_10m": 544,
+      "raster_estimate_2018": 46,
+      "cmab_matched": 42,
+      "cmab_matched_height_range_m": [
+        9.467,
+        64.221
+      ]
+    },
+    {
+      "district": "杨浦区",
+      "features": 949,
+      "cmab_rejected_or_missing": 917,
+      "cnbh_estimate_10m": 913,
+      "raster_estimate_2018": 36,
+      "cmab_matched": 32,
+      "cmab_matched_height_range_m": [
+        11.323,
+        75.987
+      ]
+    },
+    {
+      "district": "闵行区",
+      "features": 365,
+      "cmab_rejected_or_missing": 355,
+      "cnbh_estimate_10m": 329,
+      "cmab_matched": 10,
+      "raster_estimate_2018": 36,
+      "cmab_matched_height_range_m": [
+        13.254,
+        27.724
+      ]
+    },
+    {
+      "district": "宝山区",
+      "features": 760,
+      "cmab_rejected_or_missing": 655,
+      "cnbh_estimate_10m": 732,
+      "cmab_matched": 105,
+      "raster_estimate_2018": 28,
+      "cmab_matched_height_range_m": [
+        6.385,
+        43.806
+      ]
+    },
+    {
+      "district": "嘉定区",
+      "features": 372,
+      "cmab_rejected_or_missing": 282,
+      "cnbh_estimate_10m": 306,
+      "cmab_matched": 90,
+      "raster_estimate_2018": 66,
+      "cmab_matched_height_range_m": [
+        3.0,
+        32.776
+      ]
+    },
+    {
+      "district": "浦东新区",
+      "features": 291,
+      "cmab_rejected_or_missing": 284,
+      "raster_estimate_2018": 70,
+      "cnbh_estimate_10m": 221,
+      "cmab_matched": 7,
+      "cmab_matched_height_range_m": [
+        15.812,
+        73.175
+      ]
+    },
+    {
+      "district": "金山区",
+      "features": 147,
+      "cmab_rejected_or_missing": 128,
+      "cnbh_estimate_10m": 111,
+      "cmab_matched": 19,
+      "raster_estimate_2018": 36,
+      "cmab_matched_height_range_m": [
+        6.697,
+        48.316
+      ]
+    },
+    {
+      "district": "松江区",
+      "features": 114,
+      "cmab_rejected_or_missing": 88,
+      "cnbh_estimate_10m": 104,
+      "raster_estimate_2018": 10,
+      "cmab_matched": 26,
+      "cmab_matched_height_range_m": [
+        9.001,
+        32.658
+      ]
+    },
+    {
+      "district": "青浦区",
+      "features": 559,
+      "cmab_rejected_or_missing": 501,
+      "raster_estimate_2018": 25,
+      "cnbh_estimate_10m": 534,
+      "cmab_matched": 58,
+      "cmab_matched_height_range_m": [
+        10.05,
+        28.54
+      ]
+    },
+    {
+      "district": "奉贤区",
+      "features": 288,
+      "cmab_rejected_or_missing": 224,
+      "cnbh_estimate_10m": 256,
+      "cmab_matched": 64,
+      "raster_estimate_2018": 32,
+      "cmab_matched_height_range_m": [
+        8.33,
+        40.023
+      ]
+    },
+    {
+      "district": "崇明区",
+      "features": 730,
+      "cmab_rejected_or_missing": 639,
+      "cnbh_estimate_10m": 700,
+      "raster_estimate_2018": 30,
+      "cmab_matched": 91,
+      "cmab_matched_height_range_m": [
+        4.125,
+        51.525
+      ]
+    }
+  ],
+  "source_comparisons": {
+    "cmab": {
+      "overall": {
+        "reference_records": 375,
+        "paired_records": 29,
+        "reported_height_records": 2,
+        "floor_estimate_records": 27,
+        "median_absolute_difference_m": 16.692,
+        "p90_absolute_difference_m": 47.006,
+        "median_signed_difference_m": 7.236,
+        "mean_absolute_difference_m": 24.585,
+        "reference_median_m": 22.4,
+        "estimate_median_m": 36.918
+      },
+      "by_reference_kind": {
+        "reported_height": {
+          "reference_records": 93,
+          "paired_records": 2,
+          "reported_height_records": 2,
+          "floor_estimate_records": 0,
+          "median_absolute_difference_m": 79.749,
+          "p90_absolute_difference_m": 113.248,
+          "median_signed_difference_m": -41.873,
+          "mean_absolute_difference_m": 79.749,
+          "reference_median_m": 97.5,
+          "estimate_median_m": 55.627
+        },
+        "floors_times_3.2m": {
+          "reference_records": 282,
+          "paired_records": 27,
+          "reported_height_records": 0,
+          "floor_estimate_records": 27,
+          "median_absolute_difference_m": 15.982,
+          "p90_absolute_difference_m": 45.907,
+          "median_signed_difference_m": 7.236,
+          "mean_absolute_difference_m": 20.498,
+          "reference_median_m": 22.4,
+          "estimate_median_m": 36.872
+        }
+      },
+      "by_district": [
+        {
+          "district": "黄浦区",
+          "reference_records": 153,
+          "paired_records": 16,
+          "reported_height_records": 0,
+          "floor_estimate_records": 16,
+          "median_absolute_difference_m": 17.205,
+          "p90_absolute_difference_m": 46.099,
+          "median_signed_difference_m": 7.518,
+          "mean_absolute_difference_m": 24.028,
+          "reference_median_m": 25.6,
+          "estimate_median_m": 42.009
+        },
+        {
+          "district": "徐汇区",
+          "reference_records": 5,
+          "paired_records": 1,
+          "reported_height_records": 0,
+          "floor_estimate_records": 1,
+          "median_absolute_difference_m": 29.197,
+          "p90_absolute_difference_m": 29.197,
+          "median_signed_difference_m": 29.197,
+          "mean_absolute_difference_m": 29.197,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 48.397
+        },
+        {
+          "district": "长宁区",
+          "reference_records": 44,
+          "paired_records": 2,
+          "reported_height_records": 0,
+          "floor_estimate_records": 2,
+          "median_absolute_difference_m": 16.318,
+          "p90_absolute_difference_m": 19.706,
+          "median_signed_difference_m": 4.235,
+          "mean_absolute_difference_m": 16.318,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 23.435
+        },
+        {
+          "district": "静安区",
+          "reference_records": 25,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "普陀区",
+          "reference_records": 3,
+          "paired_records": 1,
+          "reported_height_records": 0,
+          "floor_estimate_records": 1,
+          "median_absolute_difference_m": 2.74,
+          "p90_absolute_difference_m": 2.74,
+          "median_signed_difference_m": 2.74,
+          "mean_absolute_difference_m": 2.74,
+          "reference_median_m": 22.4,
+          "estimate_median_m": 25.14
+        },
+        {
+          "district": "虹口区",
+          "reference_records": 7,
+          "paired_records": 1,
+          "reported_height_records": 0,
+          "floor_estimate_records": 1,
+          "median_absolute_difference_m": 12.112,
+          "p90_absolute_difference_m": 12.112,
+          "median_signed_difference_m": 12.112,
+          "mean_absolute_difference_m": 12.112,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 21.712
+        },
+        {
+          "district": "杨浦区",
+          "reference_records": 4,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "闵行区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "宝山区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "嘉定区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "浦东新区",
+          "reference_records": 116,
+          "paired_records": 5,
+          "reported_height_records": 2,
+          "floor_estimate_records": 3,
+          "median_absolute_difference_m": 37.877,
+          "p90_absolute_difference_m": 91.774,
+          "median_signed_difference_m": 31.407,
+          "mean_absolute_difference_m": 48.259,
+          "reference_median_m": 12.8,
+          "estimate_median_m": 47.877
+        },
+        {
+          "district": "金山区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "松江区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "青浦区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "奉贤区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "崇明区",
+          "reference_records": 18,
+          "paired_records": 3,
+          "reported_height_records": 0,
+          "floor_estimate_records": 3,
+          "median_absolute_difference_m": 4.288,
+          "p90_absolute_difference_m": 4.93,
+          "median_signed_difference_m": 4.288,
+          "mean_absolute_difference_m": 3.507,
+          "reference_median_m": 16.0,
+          "estimate_median_m": 20.288
+        }
+      ],
+      "by_reference_height_bin": [
+        {
+          "bin": "0-10m",
+          "reference_records": 52,
+          "paired_records": 3,
+          "reported_height_records": 1,
+          "floor_estimate_records": 2,
+          "median_absolute_difference_m": 37.877,
+          "p90_absolute_difference_m": 45.177,
+          "median_signed_difference_m": 37.877,
+          "mean_absolute_difference_m": 32.33,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 47.877
+        },
+        {
+          "bin": "10-30m",
+          "reference_records": 167,
+          "paired_records": 20,
+          "reported_height_records": 0,
+          "floor_estimate_records": 20,
+          "median_absolute_difference_m": 13.277,
+          "p90_absolute_difference_m": 32.784,
+          "median_signed_difference_m": 11.136,
+          "mean_absolute_difference_m": 15.879,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 30.177
+        },
+        {
+          "bin": "30-60m",
+          "reference_records": 32,
+          "paired_records": 1,
+          "reported_height_records": 0,
+          "floor_estimate_records": 1,
+          "median_absolute_difference_m": 7.236,
+          "p90_absolute_difference_m": 7.236,
+          "median_signed_difference_m": 7.236,
+          "mean_absolute_difference_m": 7.236,
+          "reference_median_m": 35.2,
+          "estimate_median_m": 42.436
+        },
+        {
+          "bin": "60-100m",
+          "reference_records": 49,
+          "paired_records": 2,
+          "reported_height_records": 0,
+          "floor_estimate_records": 2,
+          "median_absolute_difference_m": 50.242,
+          "p90_absolute_difference_m": 62.712,
+          "median_signed_difference_m": -50.242,
+          "mean_absolute_difference_m": 50.242,
+          "reference_median_m": 96.0,
+          "estimate_median_m": 45.758
+        },
+        {
+          "bin": "100m+",
+          "reference_records": 75,
+          "paired_records": 3,
+          "reported_height_records": 1,
+          "floor_estimate_records": 2,
+          "median_absolute_difference_m": 36.723,
+          "p90_absolute_difference_m": 104.642,
+          "median_signed_difference_m": -36.723,
+          "mean_absolute_difference_m": 63.551,
+          "reference_median_m": 128.0,
+          "estimate_median_m": 91.277
+        }
+      ]
+    },
+    "cnbh": {
+      "overall": {
+        "reference_records": 375,
+        "paired_records": 370,
+        "reported_height_records": 90,
+        "floor_estimate_records": 280,
+        "median_absolute_difference_m": 16.45,
+        "p90_absolute_difference_m": 124.47,
+        "median_signed_difference_m": -0.8,
+        "mean_absolute_difference_m": 44.543,
+        "reference_median_m": 25.6,
+        "estimate_median_m": 29.1
+      },
+      "by_reference_kind": {
+        "reported_height": {
+          "reference_records": 93,
+          "paired_records": 90,
+          "reported_height_records": 90,
+          "floor_estimate_records": 0,
+          "median_absolute_difference_m": 76.785,
+          "p90_absolute_difference_m": 247.04,
+          "median_signed_difference_m": -76.785,
+          "mean_absolute_difference_m": 112.821,
+          "reference_median_m": 106.035,
+          "estimate_median_m": 29.7
+        },
+        "floors_times_3.2m": {
+          "reference_records": 282,
+          "paired_records": 280,
+          "reported_height_records": 0,
+          "floor_estimate_records": 280,
+          "median_absolute_difference_m": 11.5,
+          "p90_absolute_difference_m": 72.11,
+          "median_signed_difference_m": 2.8,
+          "mean_absolute_difference_m": 22.597,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 26.725
+        }
+      },
+      "by_district": [
+        {
+          "district": "黄浦区",
+          "reference_records": 153,
+          "paired_records": 152,
+          "reported_height_records": 2,
+          "floor_estimate_records": 150,
+          "median_absolute_difference_m": 8.675,
+          "p90_absolute_difference_m": 75.94,
+          "median_signed_difference_m": 1.025,
+          "mean_absolute_difference_m": 22.104,
+          "reference_median_m": 22.4,
+          "estimate_median_m": 26.3
+        },
+        {
+          "district": "徐汇区",
+          "reference_records": 5,
+          "paired_records": 5,
+          "reported_height_records": 0,
+          "floor_estimate_records": 5,
+          "median_absolute_difference_m": 18.9,
+          "p90_absolute_difference_m": 23.46,
+          "median_signed_difference_m": 18.9,
+          "mean_absolute_difference_m": 17.31,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 29.55
+        },
+        {
+          "district": "长宁区",
+          "reference_records": 44,
+          "paired_records": 40,
+          "reported_height_records": 10,
+          "floor_estimate_records": 30,
+          "median_absolute_difference_m": 31.8,
+          "p90_absolute_difference_m": 80.63,
+          "median_signed_difference_m": -27.3,
+          "mean_absolute_difference_m": 35.524,
+          "reference_median_m": 60.8,
+          "estimate_median_m": 35.675
+        },
+        {
+          "district": "静安区",
+          "reference_records": 25,
+          "paired_records": 25,
+          "reported_height_records": 3,
+          "floor_estimate_records": 22,
+          "median_absolute_difference_m": 19.1,
+          "p90_absolute_difference_m": 51.72,
+          "median_signed_difference_m": 17.3,
+          "mean_absolute_difference_m": 32.488,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 29.8
+        },
+        {
+          "district": "普陀区",
+          "reference_records": 3,
+          "paired_records": 3,
+          "reported_height_records": 0,
+          "floor_estimate_records": 3,
+          "median_absolute_difference_m": 2.0,
+          "p90_absolute_difference_m": 15.44,
+          "median_signed_difference_m": -0.8,
+          "mean_absolute_difference_m": 7.2,
+          "reference_median_m": 22.4,
+          "estimate_median_m": 21.6
+        },
+        {
+          "district": "虹口区",
+          "reference_records": 7,
+          "paired_records": 7,
+          "reported_height_records": 0,
+          "floor_estimate_records": 7,
+          "median_absolute_difference_m": 11.15,
+          "p90_absolute_difference_m": 25.45,
+          "median_signed_difference_m": 1.5,
+          "mean_absolute_difference_m": 11.357,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 30.65
+        },
+        {
+          "district": "杨浦区",
+          "reference_records": 4,
+          "paired_records": 4,
+          "reported_height_records": 0,
+          "floor_estimate_records": 4,
+          "median_absolute_difference_m": 41.125,
+          "p90_absolute_difference_m": 42.785,
+          "median_signed_difference_m": -41.125,
+          "mean_absolute_difference_m": 33.538,
+          "reference_median_m": 67.2,
+          "estimate_median_m": 24.975
+        },
+        {
+          "district": "闵行区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "宝山区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "嘉定区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "浦东新区",
+          "reference_records": 116,
+          "paired_records": 116,
+          "reported_height_records": 75,
+          "floor_estimate_records": 41,
+          "median_absolute_difference_m": 44.5,
+          "p90_absolute_difference_m": 245.6,
+          "median_signed_difference_m": -44.5,
+          "mean_absolute_difference_m": 90.821,
+          "reference_median_m": 73.3,
+          "estimate_median_m": 29.7
+        },
+        {
+          "district": "金山区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "松江区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "青浦区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "奉贤区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "崇明区",
+          "reference_records": 18,
+          "paired_records": 18,
+          "reported_height_records": 0,
+          "floor_estimate_records": 18,
+          "median_absolute_difference_m": 1.7,
+          "p90_absolute_difference_m": 3.06,
+          "median_signed_difference_m": 1.7,
+          "mean_absolute_difference_m": 1.725,
+          "reference_median_m": 16.0,
+          "estimate_median_m": 18.375
+        }
+      ],
+      "by_reference_height_bin": [
+        {
+          "bin": "0-10m",
+          "reference_records": 52,
+          "paired_records": 49,
+          "reported_height_records": 5,
+          "floor_estimate_records": 44,
+          "median_absolute_difference_m": 19.0,
+          "p90_absolute_difference_m": 29.64,
+          "median_signed_difference_m": 19.0,
+          "mean_absolute_difference_m": 19.757,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 28.3
+        },
+        {
+          "bin": "10-30m",
+          "reference_records": 167,
+          "paired_records": 167,
+          "reported_height_records": 11,
+          "floor_estimate_records": 156,
+          "median_absolute_difference_m": 5.8,
+          "p90_absolute_difference_m": 16.08,
+          "median_signed_difference_m": 4.3,
+          "mean_absolute_difference_m": 7.234,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 24.5
+        },
+        {
+          "bin": "30-60m",
+          "reference_records": 32,
+          "paired_records": 30,
+          "reported_height_records": 9,
+          "floor_estimate_records": 21,
+          "median_absolute_difference_m": 13.7,
+          "p90_absolute_difference_m": 27.5,
+          "median_signed_difference_m": -13.7,
+          "mean_absolute_difference_m": 14.847,
+          "reference_median_m": 38.4,
+          "estimate_median_m": 27.7
+        },
+        {
+          "bin": "60-100m",
+          "reference_records": 49,
+          "paired_records": 49,
+          "reported_height_records": 19,
+          "floor_estimate_records": 30,
+          "median_absolute_difference_m": 43.1,
+          "p90_absolute_difference_m": 62.74,
+          "median_signed_difference_m": -43.1,
+          "mean_absolute_difference_m": 45.67,
+          "reference_median_m": 75.4,
+          "estimate_median_m": 31.4
+        },
+        {
+          "bin": "100m+",
+          "reference_records": 75,
+          "paired_records": 75,
+          "reported_height_records": 46,
+          "floor_estimate_records": 29,
+          "median_absolute_difference_m": 124.2,
+          "p90_absolute_difference_m": 260.12,
+          "median_signed_difference_m": -124.2,
+          "mean_absolute_difference_m": 154.956,
+          "reference_median_m": 160.0,
+          "estimate_median_m": 32.7
+        }
+      ]
+    },
+    "ghsl": {
+      "overall": {
+        "reference_records": 375,
+        "paired_records": 375,
+        "reported_height_records": 93,
+        "floor_estimate_records": 282,
+        "median_absolute_difference_m": 17.724,
+        "p90_absolute_difference_m": 132.173,
+        "median_signed_difference_m": 1.404,
+        "mean_absolute_difference_m": 46.865,
+        "reference_median_m": 25.6,
+        "estimate_median_m": 28.175
+      },
+      "by_reference_kind": {
+        "reported_height": {
+          "reference_records": 93,
+          "paired_records": 93,
+          "reported_height_records": 93,
+          "floor_estimate_records": 0,
+          "median_absolute_difference_m": 71.669,
+          "p90_absolute_difference_m": 254.969,
+          "median_signed_difference_m": -71.669,
+          "mean_absolute_difference_m": 115.698,
+          "reference_median_m": 91.7,
+          "estimate_median_m": 20.031
+        },
+        "floors_times_3.2m": {
+          "reference_records": 282,
+          "paired_records": 282,
+          "reported_height_records": 0,
+          "floor_estimate_records": 282,
+          "median_absolute_difference_m": 15.124,
+          "p90_absolute_difference_m": 72.684,
+          "median_signed_difference_m": 6.788,
+          "mean_absolute_difference_m": 24.164,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 29.67
+        }
+      },
+      "by_district": [
+        {
+          "district": "黄浦区",
+          "reference_records": 153,
+          "paired_records": 153,
+          "reported_height_records": 2,
+          "floor_estimate_records": 151,
+          "median_absolute_difference_m": 14.42,
+          "p90_absolute_difference_m": 76.879,
+          "median_signed_difference_m": 7.164,
+          "mean_absolute_difference_m": 25.882,
+          "reference_median_m": 22.4,
+          "estimate_median_m": 30.624
+        },
+        {
+          "district": "徐汇区",
+          "reference_records": 5,
+          "paired_records": 5,
+          "reported_height_records": 0,
+          "floor_estimate_records": 5,
+          "median_absolute_difference_m": 31.748,
+          "p90_absolute_difference_m": 35.274,
+          "median_signed_difference_m": 31.748,
+          "mean_absolute_difference_m": 28.82,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 35.973
+        },
+        {
+          "district": "长宁区",
+          "reference_records": 44,
+          "paired_records": 44,
+          "reported_height_records": 13,
+          "floor_estimate_records": 31,
+          "median_absolute_difference_m": 25.613,
+          "p90_absolute_difference_m": 67.088,
+          "median_signed_difference_m": -4.162,
+          "mean_absolute_difference_m": 30.934,
+          "reference_median_m": 56.0,
+          "estimate_median_m": 50.227
+        },
+        {
+          "district": "静安区",
+          "reference_records": 25,
+          "paired_records": 25,
+          "reported_height_records": 3,
+          "floor_estimate_records": 22,
+          "median_absolute_difference_m": 15.124,
+          "p90_absolute_difference_m": 48.169,
+          "median_signed_difference_m": 15.124,
+          "mean_absolute_difference_m": 30.921,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 24.724
+        },
+        {
+          "district": "普陀区",
+          "reference_records": 3,
+          "paired_records": 3,
+          "reported_height_records": 0,
+          "floor_estimate_records": 3,
+          "median_absolute_difference_m": 7.387,
+          "p90_absolute_difference_m": 10.928,
+          "median_signed_difference_m": -7.387,
+          "mean_absolute_difference_m": 8.862,
+          "reference_median_m": 22.4,
+          "estimate_median_m": 15.013
+        },
+        {
+          "district": "虹口区",
+          "reference_records": 7,
+          "paired_records": 7,
+          "reported_height_records": 0,
+          "floor_estimate_records": 7,
+          "median_absolute_difference_m": 10.059,
+          "p90_absolute_difference_m": 17.978,
+          "median_signed_difference_m": 3.705,
+          "mean_absolute_difference_m": 10.467,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 22.905
+        },
+        {
+          "district": "杨浦区",
+          "reference_records": 4,
+          "paired_records": 4,
+          "reported_height_records": 0,
+          "floor_estimate_records": 4,
+          "median_absolute_difference_m": 43.32,
+          "p90_absolute_difference_m": 43.32,
+          "median_signed_difference_m": -43.32,
+          "mean_absolute_difference_m": 34.46,
+          "reference_median_m": 67.2,
+          "estimate_median_m": 23.88
+        },
+        {
+          "district": "闵行区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "宝山区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "嘉定区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "浦东新区",
+          "reference_records": 116,
+          "paired_records": 116,
+          "reported_height_records": 75,
+          "floor_estimate_records": 41,
+          "median_absolute_difference_m": 53.269,
+          "p90_absolute_difference_m": 254.969,
+          "median_signed_difference_m": -53.269,
+          "mean_absolute_difference_m": 95.321,
+          "reference_median_m": 73.3,
+          "estimate_median_m": 20.031
+        },
+        {
+          "district": "金山区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "松江区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "青浦区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "奉贤区",
+          "reference_records": 0,
+          "paired_records": 0,
+          "reported_height_records": 0,
+          "floor_estimate_records": 0
+        },
+        {
+          "district": "崇明区",
+          "reference_records": 18,
+          "paired_records": 18,
+          "reported_height_records": 0,
+          "floor_estimate_records": 18,
+          "median_absolute_difference_m": 1.585,
+          "p90_absolute_difference_m": 4.623,
+          "median_signed_difference_m": -0.835,
+          "mean_absolute_difference_m": 2.286,
+          "reference_median_m": 16.0,
+          "estimate_median_m": 17.337
+        }
+      ],
+      "by_reference_height_bin": [
+        {
+          "bin": "0-10m",
+          "reference_records": 52,
+          "paired_records": 52,
+          "reported_height_records": 8,
+          "floor_estimate_records": 44,
+          "median_absolute_difference_m": 15.414,
+          "p90_absolute_difference_m": 37.453,
+          "median_signed_difference_m": 15.414,
+          "mean_absolute_difference_m": 20.48,
+          "reference_median_m": 9.6,
+          "estimate_median_m": 24.888
+        },
+        {
+          "bin": "10-30m",
+          "reference_records": 167,
+          "paired_records": 167,
+          "reported_height_records": 11,
+          "floor_estimate_records": 156,
+          "median_absolute_difference_m": 9.509,
+          "p90_absolute_difference_m": 21.123,
+          "median_signed_difference_m": 9.308,
+          "mean_absolute_difference_m": 10.618,
+          "reference_median_m": 19.2,
+          "estimate_median_m": 29.729
+        },
+        {
+          "bin": "30-60m",
+          "reference_records": 32,
+          "paired_records": 32,
+          "reported_height_records": 9,
+          "floor_estimate_records": 23,
+          "median_absolute_difference_m": 16.084,
+          "p90_absolute_difference_m": 30.609,
+          "median_signed_difference_m": -14.959,
+          "mean_absolute_difference_m": 16.097,
+          "reference_median_m": 38.4,
+          "estimate_median_m": 27.891
+        },
+        {
+          "bin": "60-100m",
+          "reference_records": 49,
+          "paired_records": 49,
+          "reported_height_records": 19,
+          "floor_estimate_records": 30,
+          "median_absolute_difference_m": 45.938,
+          "p90_absolute_difference_m": 68.368,
+          "median_signed_difference_m": -45.938,
+          "mean_absolute_difference_m": 44.528,
+          "reference_median_m": 75.4,
+          "estimate_median_m": 28.457
+        },
+        {
+          "bin": "100m+",
+          "reference_records": 75,
+          "paired_records": 75,
+          "reported_height_records": 46,
+          "floor_estimate_records": 29,
+          "median_absolute_difference_m": 132.405,
+          "p90_absolute_difference_m": 269.289,
+          "median_signed_difference_m": -132.405,
+          "mean_absolute_difference_m": 160.52,
+          "reference_median_m": 160.0,
+          "estimate_median_m": 25.225
+        }
+      ]
+    }
+  },
+  "seconds": 8.266
+}
