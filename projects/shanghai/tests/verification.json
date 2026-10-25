@@ -1,6 +1,6 @@
 {
   "version": "shanghai-source-roofs-v4.1",
-  "status": "local-verified-public-check-pending",
+  "status": "public-verified",
   "date_utc": "2026-10-25",
   "previous_release": {
     "report": "verification-v4.json",
@@ -43,19 +43,28 @@
     "osm_fallback_unit": "../data/roofs/osm-fallback-unit-validation.json",
     "osm_fallback_test_count": 57,
     "osm_fallback_review": "../data/roofs/osm-fallback-review.json",
-    "osm_fallback_local": "osm-fallback-local.json"
+    "osm_fallback_local": "osm-fallback-local.json",
+    "launcher_remote": "launcher-roofs-remote.json",
+    "osm_fallback_public": "osm-fallback-public.json",
+    "fallback_final_ready": true,
+    "fallback_transient_timeouts_recovered": 2
   },
   "asset_limits": {
     "all_files_below_bytes": 100000000,
     "maximum_city_glb_bytes": 940388,
     "total_city_model_bytes": 285776832,
-    "largest_deliverable_bytes": 38754509
+    "largest_deliverable_bytes": 38765634
   },
   "limits": [
     "126 source-parametric roofs do not constitute citywide LoD2 or photogrammetry.",
     "Source tags and polygons are not independently surveyed roof geometry; centered gabled ridges and single planar skillions remain assumptions.",
-    "Browser software rendering checks correctness and loading; they are not a hardware FPS benchmark."
+    "Browser software rendering checks correctness and loading; they are not a hardware FPS benchmark.",
+    "Conservatively retained crossing/ambiguous OSM components can overlap local geometry at coverage edges."
   ],
-  "app_commit": "91abba60af13237bbe3cd9650cf907912b69d613",
-  "preview": "https://rawcdn.githack.com/ecojust/e-resource/91abba60af13237bbe3cd9650cf907912b69d613/projects/shanghai/index.html"
+  "app_commit": "72e344b6e927b1a3130b2ff6e6901875f260eb3e",
+  "preview": "https://rawcdn.githack.com/ecojust/e-resource/72e344b6e927b1a3130b2ff6e6901875f260eb3e/projects/shanghai/index.html",
+  "download_commit": "4dc07e9ad00fe895a7d1700876c38bed74bfddec",
+  "download": "https://raw.githubusercontent.com/ecojust/e-resource/4dc07e9ad00fe895a7d1700876c38bed74bfddec/projects/shanghai/downloads/shanghai-web-launcher.zip",
+  "download_sha256": "6032488c58efcb7c9cbe171d7b91a37636abc6b489ca446107336407c2b3eab8",
+  "model_commit": "91abba60af13237bbe3cd9650cf907912b69d613"
 }

@@ -31,3 +31,5 @@ python source/city/qualify_roofs.py --offline
 Optional --project, --input, --output and --evidence paths are supported. Omit --offline to fetch missing exact-version evidence, bounded to two concurrent requests. Requires Python, Shapely, NumPy and mapbox-earcut (the project's coordinate helper dependencies). No model export is performed.
 
 Source footprints: Overture Maps buildings release 2026-10-21.0, OSM-derived candidates. Historical tags: © OpenStreetMap contributors, ODbL-1.0; https://www.openstreetmap.org/copyright . Responses retain their original attribution/license fields.
+
+公开版故障回退复测：[外滩第三人称截图](../../assets/previews/roofs/public-bund-fallback.png) · [长宁屋顶截图](../../assets/previews/roofs/public-changning-roofs-after.png) · [完整浏览器记录](../../tests/osm-fallback-public.json)。独立组件替换通过实际23809960要素验证；软件渲染期间的两次暂时超时随后恢复，最终剩余组件已就绪，无未完成替换。
