@@ -1,122 +1,60 @@
 {
-  "checked_at": "2026-10-25T17:47:17.607602+00:00",
-  "release": "shanghai-fullcity-v2.0",
+  "release": "shanghai-bund-architectural-v3",
+  "checked_at": "2026-10-25T20:39:29.146922+00:00",
   "passed": true,
-  "browser": "Chromium, WebGL2 / SwiftShader software renderer; not a hardware FPS benchmark",
-  "desktop": {
-    "viewport": [
-      1440,
-      1000
-    ],
-    "districts_loaded": 16,
-    "district_ids": [
-      "310101",
-      "310104",
-      "310105",
-      "310106",
-      "310107",
-      "310109",
-      "310110",
-      "310112",
-      "310113",
-      "310114",
-      "310115",
-      "310116",
-      "310117",
-      "310118",
-      "310120",
-      "310151"
-    ],
-    "landmarks_loaded": 5,
-    "movement_metres": 0.42000192266336345,
+  "browser": {
+    "engine": "Chromium WebGL2 / SwiftShader; 2-CPU software renderer, not a hardware FPS benchmark",
+    "report": "bund-v3-browser.json",
+    "navigation_models_loaded": 14,
+    "streetscape_loaded": true,
     "page_errors": [],
     "shader_errors": [],
-    "report": "desktop-final.json"
-  },
-  "mobile": {
-    "viewport": [
-      390,
-      844
-    ],
-    "districts_loaded": [
-      "310101",
-      "310120",
-      "310151",
-      "310115"
-    ],
-    "native_touch_joystick": {
-      "before": {
-        "lng": 121.4798098,
-        "lat": 31.2338426
-      },
-      "held": {
-        "lng": 121.47981565017317,
-        "lat": 31.233847602238026
-      },
-      "heldVector": {
-        "x": 0,
-        "y": 0.9375
-      },
-      "movedMetres": 0.787499991942777,
-      "releaseVector": {
-        "x": 0,
-        "y": 0
-      },
-      "releaseSpeed": 0,
-      "driftAfterReleaseMetres": 0.0,
-      "knobTransform": ""
+    "movement_metres": 0.21000095998559185,
+    "mobile": {
+      "overflow": false,
+      "joystick": true,
+      "mode": "walk",
+      "controls_do_not_overlap_card": true
     },
-    "double_tap_selects_custom_location": true,
-    "page_errors": [],
-    "shader_errors": [],
-    "report": "mobile-final.json"
+    "reference_photo_and_attribution": true
   },
-  "asset_check": {
-    "passed": true,
-    "all_glbs_validated": 1734,
-    "fullcity_glbs": 1708,
-    "model_features": 1796435,
-    "triangles": 27009498,
-    "total_fullcity_glb_bytes": 285707040,
-    "largest_fullcity_glb_bytes": 940388,
-    "largest_project_file_bytes": 24314417,
-    "limit_bytes": 100000000,
-    "all_glb_and_ids_sha256_verified": true
+  "models": {
+    "bund_buildings": 10,
+    "bund_raw_triangles": 1461884,
+    "largest_bund_glb_bytes": 13289092,
+    "bund_web_total_bytes": 13635948,
+    "native_blend_files": 10,
+    "source_and_web_hashes_verified": true,
+    "detailed_geometry_reports": "../data/bund/validation/"
   },
-  "automated_checks": [
-    "walk speed, diagonal normalization and camera-relative movement",
-    "building and water collision, wall sliding, camera limits and cleanup",
-    "spatial selection across 1000 mocked tiles, request cap 2, cache cap 8, stale request cancellation and disposal",
-    "45 published geographic checkpoints plus outside and polygon holes",
-    "46 road layers preserve original widths through zoom 16 and scale by metres at near range",
-    "1708 source cells and all 1796667 source IDs independently audited",
-    "16 real desktop district transitions and 4 mobile district transitions",
-    "All 5 optimized landmark models load in WebGL2",
-    "Native mobile joystick movement and release, native touch double tap, mode transitions",
-    "No horizontal overflow on desktop or mobile"
-  ],
-  "additional_evidence": {
-    "fullcity": "../data/audit/fullcity-models-validation.json",
-    "exporter": "../data/audit/exporter-review.json",
-    "height_package": "../data/heights/package_portability_validation.json",
-    "published_model_hashes": "published-model-check.json",
-    "public_preview": "published-preview.json",
-    "launcher_cdn": "launcher-cdn-check.json"
+  "city": {
+    "districts": 16,
+    "models": 1708,
+    "features": 1796419,
+    "source_unique_above_ground": 1796667,
+    "replaced_renderable_features": 98,
+    "generic_residual_parents": 401,
+    "full_raw_audit": "../data/audit/fullcity-models-validation.json",
+    "coverage_balanced": true
   },
-  "limitations": [
-    "Coverage is complete for the captured public source, not a survey of every physical building.",
-    "Most heights are estimates; ordinary facades are procedural visualizations.",
-    "Road/water/name tiles and distant-building fallback need network access.",
-    "Software GPU tests validate functionality and memory bounds, not hardware frame rates.",
-    "Mobile double-tap automation was repeated with physical event timestamps; details are retained in its report."
-  ],
-  "published_app_commit": "b36ab343101ee49be69c7ff20beed0e2bcb7b005",
-  "launcher": {
-    "file": "../downloads/shanghai-web-launcher.zip",
-    "bytes": 8464768,
-    "zip_integrity": true,
-    "sample_model_and_ids_hashes": true,
-    "cors": "*",
-    "network_required": true
-  }
+  "checks": {
+    "npm_test": [
+      "walking/collision/camera/input",
+      "streaming concurrency/cache/release",
+      "45 geographic checkpoints",
+      "road width scaling"
+    ],
+    "asset_validator": "tools/check_assets.py: GLB headers, self-contained buffers, finite bounds, city SHA, detailed raw/web/native SHA and photo licensing",
+    "file_size_limit_bytes_exclusive": 100000000
+  },
+  "visual_review": {
+    "browser_screenshots": [
+      "../assets/previews/bund-overview.png",
+      "../assets/previews/bund-street.png"
+    ],
+    "individual_model_reviews": "../source/bund/README.md",
+    "shoreline_validation": "../source/bund/street/bund-streets-delivery.json",
+    "known_limits": "Photograph-guided reconstruction, not measured/photogrammetric geometry. Hidden elevations and several dimensions are inferred. Generic city background remains LoD1; no traversable historical interiors."
+  },
+  "previous_release": "verification-v2.json"
 }

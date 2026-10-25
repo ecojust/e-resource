@@ -4,9 +4,9 @@ import { districtAt } from './geography.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
-const BUND = {id:'bund', name:'外滩滨江', districtId:'310101', walkStart:[121.4862591,31.23945165], bearing:0};
+const BUND = {id:'bund', name:'外滩历史建筑群', districtId:'310101', walkStart:[121.485805,31.23794], bearing:263};
 let scene, controller, districts=[], landmarks=[], boundaries, activePlace=BUND;
-let mode='overview', category='districts', activeDistrict='310101', toastTimer, navigation=0;
+let mode='overview', category='landmarks', activeDistrict='310101', toastTimer, navigation=0;
 let districtPaths = new Map();
 let panelOpen=!mobile();
 const loadingProgress = value => $('loading-progress').style.width=`${value}%`;
@@ -29,6 +29,7 @@ function updateLocation(place) {
   $('location-district').textContent=(district?.name||'上海市')+(place.height_m?' · 城市地标':' · 城市探索');
   $('start-walk').innerHTML=mode==='walk'?'正在漫游 <span>↗</span>':'进入漫游 <span>↗</span>';
   activeDistrict=district?.id||activeDistrict;
+  $('reference-button').hidden=!place.reference;
   districtPaths.forEach((p,id)=>p.classList.toggle('active',id===activeDistrict));
   renderPlaces();
 }
@@ -50,7 +51,7 @@ function syncMode(next, announce=true) {
   $('mobile-controls').hidden=!(next==='walk'&&(mobile()||matchMedia('(pointer:coarse)').matches));
   updateLocation(activePlace);
   if(next==='walk') {
-    if(mobile()) togglePanel(false);
+    togglePanel(false);
     if(announce) toast(mobile()?'已进入第三人称漫游，拖动左侧摇杆行走':'已进入第三人称漫游，使用 WASD 或方向键行走');
   }
 }
@@ -58,7 +59,7 @@ function showOverview(place=activePlace) {
   if(!scene) return;
   syncMode('overview',false);
   const center=place.lng?[place.lng,place.lat]:(place.walkStart||place.center);
-  scene.map.flyTo({center,zoom:place.custom?16.4:place.id==='bund'?14.8:place.height_m?16.4:14.8,pitch:56,bearing:place.bearing??35,duration:1000,essential:true});
+  scene.map.flyTo({center,zoom:place.overviewZoom??(place.custom?16.4:place.id==='bund'?17.3:place.height_m?16.4:14.8),pitch:60,bearing:place.bearing??35,duration:1000,essential:true});
 }
 async function selectPlace(place) {
   if(!controller) return;
@@ -97,7 +98,7 @@ function renderPlaces() {
     const icon=document.createElement('span');icon.className=p.height_m?'landmark-icon':'place-number';icon.textContent=p.height_m?'▥':String(districts.findIndex(d=>d.id===p.id)+1).padStart(2,'0');
     const words=document.createElement('span');
     const label=document.createElement('span');label.className='place-name';label.textContent=p.name;words.append(label);
-    if(p.height_m){const small=document.createElement('small');small.className='landmark-description';small.textContent=`${p.height_m} m · ${p.districtId==='310101'?'外滩':'陆家嘴'}`;words.append(small);}
+    if(p.height_m){const small=document.createElement('small');small.className='landmark-description';small.textContent=p.bund_number?`外滩 ${p.bund_number} 号 · ${p.architecture_style||'历史建筑'}`:`${p.height_m} m · 陆家嘴`;words.append(small);}
     const arrow=document.createElement('span');arrow.className='place-arrow';arrow.textContent='↗';
     button.append(icon,words,arrow);button.addEventListener('click',()=>selectPlace(p));list.append(button);
   });
@@ -143,7 +144,22 @@ function updateHud(state) {
 }
 function installUi() {
   $('panel-toggle').addEventListener('click',()=>togglePanel());
-  $('info-button').addEventListener('click',()=>{controller?.setEnabled(false);$('info-dialog').showModal();});
+  const showInfo=()=>{
+    const reference=activePlace.reference;
+    $('building-reference').hidden=!reference;
+    if(reference){
+      $('reference-title').textContent=activePlace.name;
+      $('reference-image').src=reference.image;
+      $('reference-image').alt=`${activePlace.name}实景参考照片`;
+      $('reference-credit').textContent=`${reference.author} · ${reference.license}`;
+      $('reference-source').href=reference.source;
+      $('reference-note').textContent=activePlace.detail_note||'按照片重建立面结构；缺少测绘资料的尺寸和侧后立面仍有推定。';
+    }
+    controller?.setEnabled(false);$('info-dialog').showModal();
+  };
+  $('info-button').addEventListener('click',showInfo);
+  $('reference-button').addEventListener('click',showInfo);
+  $('bund-start').addEventListener('click',()=>{setCategory('landmarks');selectPlace(BUND);syncMode('walk',false);});
   $('info-dialog').addEventListener('close',()=>controller?.setEnabled(true));
   $('info-dialog').addEventListener('click',e=>{if(e.target===$('info-dialog'))$('info-dialog').close();});
   $('district-tab').addEventListener('click',()=>setCategory('districts'));
@@ -179,14 +195,14 @@ async function main(){
   if(location.protocol==='file:') return;
   installUi();loadingProgress(18);
   try{
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
-    $('landmark-count').textContent=landmarks.length;renderPlaces();drawMiniMap();updateLocation(BUND);loadingProgress(35);
-    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:65},zoom:14.8,landmarks,
+    $('landmark-count').textContent=landmarks.length;setCategory('landmarks');drawMiniMap();updateLocation(BUND);loadingProgress(35);
+    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:17.3,landmarks:[...landmarks,...responses[3]],
       onStatus:status=>{
         if(status.message)$('loading-message').textContent=status.message;
         if(status.kind==='streaming')$('live-status').textContent=status.loading?'加载附近建筑':status.visible?'附近建筑已加载':'全域地图已连接';
-        else if(status.kind==='landmarks')$('live-status').textContent=status.loaded<status.total?'地标加载中':'地标已加载';
+        else if(status.kind==='models')$('live-status').textContent=status.loaded<status.total?'建筑模型加载中':'建筑模型已加载';
         else if(status.message)$('live-status').textContent='全域地图已连接';
       },
       onLoadError:error=>{console.warn('[Shanghai map]',error);$('live-status').textContent='地图连接稍慢';}});
@@ -201,8 +217,8 @@ async function main(){
     });
     await scene.setCityManifest('assets/city/manifest.json');
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});
-    controller.setMode('overview');controller.setEnabled(true);controller.teleport({lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:0});
-    scene.map.jumpTo({center:[121.4970,31.2387],zoom:14.8,pitch:57,bearing:65});
+    controller.setMode('overview');controller.setEnabled(true);controller.teleport({lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing});
+    scene.map.jumpTo({center:[121.48552,31.23845],zoom:17.3,pitch:60,bearing:285});
     loadingProgress(78);$('loading-message').textContent='正在铺开道路、建筑与城市地标…';
     const tilesReady=await scene.waitForData(16000);loadingProgress(100);
     if(!tilesReady)toast('部分地图数据仍在加载，请保持网络连接。',5000);

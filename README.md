@@ -4,7 +4,7 @@
 
 ## 独立项目
 
-- [上海漫游 · Shanghai Explorer](projects/shanghai/)：覆盖上海 16 区的 1,708 个全域建筑分块、约 180 万建筑/部件、5 个细化地标及第三人称漫游 HTML，支持桌面与手机；单文件均低于 100 MB。[在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html)（首次点击 Open the page）。
+- [上海漫游 · Shanghai Explorer](projects/shanghai/)：10 栋外滩历史建筑近景模型、4 栋陆家嘴地标，以及覆盖上海 16 区的 1,708 个城市背景分块。外滩模型具有凹窗、柱廊、檐口与屋顶构件，附 Blender 文件、照片参考和第三人称漫游 HTML；单文件均低于 100 MB。[在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html)（首次点击 Open the page）。
 
 ## 三维模型
 

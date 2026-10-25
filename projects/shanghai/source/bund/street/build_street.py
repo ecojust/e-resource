@@ -5,20 +5,27 @@ No facade imagery is used as a texture. GLB has local metres, X east/Y up/Z sout
 from pathlib import Path
 import sys,json,math,struct,subprocess
 import numpy as np
-from shapely.geometry import shape,LineString,Polygon,box,Point
-from shapely.ops import transform,unary_union
-ROOT=Path(__file__).parent
+from shapely.geometry import shape,LineString,Polygon,box,Point,mapping
+from shapely.ops import transform,unary_union,linemerge
+ROOT=Path(__file__).resolve().parent
 PROJECT=Path(sys.argv[1]) if len(sys.argv)>1 else Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(PROJECT/'source/city'))
 from build_district_models import Mesh,local_coordinates
 ORIGIN=(121.4862,31.2385)
 local=lambda x,y,z=None:local_coordinates(x,y,ORIGIN)
 def metric(g):return transform(local,g)
+def geographic(g):
+ scale=math.cos(math.radians(ORIGIN[1]));origin_y=math.asinh(math.tan(math.radians(ORIGIN[1])))
+ def inverse(x,z):return ORIGIN[0]+math.degrees(x/(6378137*scale)),math.degrees(math.atan(math.sinh(origin_y-z/(6378137*scale))))
+ return transform(inverse,g)
 COLORS={'BundStonePaving':(.39,.40,.37,1),'BundGraniteCurb':(.48,.49,.46,1),'BundRoadPaint':(.82,.83,.76,1),'BundRoadSurface':(.22,.25,.25,1),'BundRailingSteel':(.12,.14,.14,1),'BundLampSilver':(.34,.36,.35,1),'BundLampGlass':(.80,.84,.76,1)}
 M={name:Mesh() for name in COLORS}
+TRACK_RAIL=False
+RAIL_VERTICES=[]
 def face(mesh,points):
  p=np.asarray(points,float);n=np.cross(p[1]-p[0],p[2]-p[0]);length=np.linalg.norm(n)
  if length<1e-10:return
+ if TRACK_RAIL:RAIL_VERTICES.extend((float(v[0]),float(v[2])) for v in p)
  start=mesh.vertices([tuple(v) for v in p],tuple(n/length))
  for i in range(1,len(points)-1):mesh.indices.extend([start,start+i,start+i+1])
 def cuboid(name,center,size):
@@ -96,35 +103,100 @@ for _,line in crossings:
 
 map_features=json.loads((ROOT/'bund-map.geojson').read_text())['features']
 water=unary_union([metric(shape(f['geometry'])) for f in map_features if f['properties']['layer']=='water' and f['geometry']['type'] in ['Polygon','MultiPolygon']])
-shorelines=[l for l in lines(water.boundary.intersection(crop)) if l.length>100]
-shore=max(shorelines,key=lambda l:l.length)
+tile_source=json.loads((ROOT/'tile-source.json').read_text())
+expected_tiles={(14,x,y) for x in (13720,13721) for y in (6693,6694)}
+assert {tuple(item['tile']) for item in tile_source.get('tiles',[])}==expected_tiles, 'Fetch all four Bund tiles before shoreline extraction.'
+coverage=metric(box(*tile_source['coverage_bounds']))
+assert coverage.contains(crop.buffer(5)), 'Bund crop must stay inside complete tile coverage.'
+# Do not mistake polygon clipping edges for shore. Union the four water tiles
+# first, then reject any remaining segment coincident with a nominal tile edge.
+tile_edges=[]
+for item in tile_source['tiles']:
+ w,s,e,n=item['bounds']
+ tile_edges.extend(metric(LineString(pair)) for pair in [((w,s),(w,n)),((e,s),(e,n)),((w,s),(e,s)),((w,n),(e,n))])
+physical_segments=[];rejected_tile_edge_m=0.0
+for line in lines(water.boundary.intersection(crop)):
+ for a,b in zip(line.coords,list(line.coords)[1:]):
+  segment=LineString([a,b])
+  if segment.length<.001:continue
+  cut=any(Point(a).distance(edge)<.005 and Point(b).distance(edge)<.005 for edge in tile_edges)
+  if cut:rejected_tile_edge_m+=segment.length
+  else:physical_segments.append(segment)
+joined=unary_union(physical_segments)
+joined=linemerge(joined) if joined.geom_type!='LineString' else joined
+# An independent mapped promenade identifies the Puxi bank. A long artificial
+# edge or the opposite bank must never win simply because it is the longest.
+inner=ways[909084827].intersection(crop);inner=max(lines(inner),key=lambda l:l.length)
+shore_candidates=[]
+for line in lines(joined):
+ if line.length<100:continue
+ samples=[line.interpolate(d) for d in np.linspace(.5,line.length-.5,41)]
+ western=sum(water.covers(Point(p.x+3,p.y)) and not water.covers(Point(p.x-3,p.y)) for p in samples)/len(samples)
+ mean_distance=sum(p.distance(inner) for p in samples)/len(samples)
+ if western>=.95 and mean_distance<70:shore_candidates.append((mean_distance,line,western))
+assert shore_candidates, 'No verified west-bank shoreline near the mapped promenade.'
+mean_inner_distance,shore,west_bank_fraction=min(shore_candidates,key=lambda item:item[0])
+assert shore.bounds[1]<=crop.bounds[1]+1 and shore.bounds[3]>=crop.bounds[3]-1, 'Selected shore does not span the Bund crop.'
 t,n=vector_at(shore,shore.length/2);mid=np.array(shore.interpolate(shore.length/2).coords[0]);land_side=1 if not water.contains(Point(mid+n)) else -1
-rail=shore.offset_curve(land_side*.8,join_style=2)
+rail_setback=.65  # .43m square granite posts also stay within 1m of the shoreline.
+rail=shore.offset_curve(land_side*rail_setback,join_style=1)
 rail=max(lines(rail),key=lambda l:l.length)
 # Pavement between two mapped references. Its exact construction edge/altitude
 # is not surveyed; it stays close to the existing map's level for walk controls.
-inner=ways[909084827].intersection(crop);inner=max(lines(inner),key=lambda l:l.length)
 a=list(rail.coords);b=list(inner.coords)
 if a[0][1]>a[-1][1]:a.reverse()
 if b[0][1]<b[-1][1]:b.reverse()
 promenade=Polygon(a+b).buffer(0).difference(water).difference(buildings)
 solid('BundStonePaving',promenade,.005,.035)
 post_count=0;lamps=0
+rail_breaks=[rail.project(Point(point)) for point in rail.coords]
+def waterward(d):
+ p=np.array(rail.interpolate(d).coords[0]);q=np.array(shore.interpolate(shore.project(Point(p))).coords[0]);v=q-p
+ return v/np.linalg.norm(v)
+TRACK_RAIL=True
 for d0 in np.arange(0,rail.length,8.0):
  d1=min(d0+8.0,rail.length)
  p=np.array(rail.interpolate(d0).coords[0]);t,n=vector_at(rail,d0+.01)
  # Keep the leaning top toward water; OSM geometry determines the side.
- toward_water=n if water.contains(Point(p+n*2)) else -n
+ toward_water=waterward(d0)
  cuboid('BundGraniteCurb',(p[0],.51,p[1]),(.43,1.02,.43));post_count+=1
  for h,radius in [(.29,.022),(.52,.022),(.76,.022),(1.08,.055)]:
-  pa=np.array(rail.interpolate(d0).coords[0])+toward_water*(h/1.08*.24)
-  pb=np.array(rail.interpolate(d1).coords[0])+toward_water*(h/1.08*.24)
-  rod('BundRailingSteel',(pa[0],h,pa[1]),(pb[0],h,pb[1]),radius,8)
+  # Follow every mapped bend; a single 8m chord can cut across a curved shore.
+  knots=sorted(set([float(d0),float(d1)]+[d for d in rail_breaks if d0<d<d1]))
+  for da,db in zip(knots,knots[1:]):
+   pa=np.array(rail.interpolate(da).coords[0])+waterward(da)*(h/1.08*.24)
+   pb=np.array(rail.interpolate(db).coords[0])+waterward(db)*(h/1.08*.24)
+   rod('BundRailingSteel',(pa[0],h,pa[1]),(pb[0],h,pb[1]),radius,8)
  for d in np.arange(d0+.9,d1,.95):
-  p=np.array(rail.interpolate(d).coords[0]);top=p+toward_water*.24
+  p=np.array(rail.interpolate(d).coords[0]);top=p+waterward(d)*.24
   rod('BundRailingSteel',(p[0],.12,p[1]),(top[0],1.08,top[1]),.035,8)
  if round(d0)%32==0:
-  p=p-toward_water*.75;lamp(p[0],p[1]);lamps+=1
+  TRACK_RAIL=False
+  p=p-waterward(min(d1,rail.length))*.75;lamp(p[0],p[1]);lamps+=1
+  TRACK_RAIL=True
+end=np.array(rail.interpolate(rail.length).coords[0])
+cuboid('BundGraniteCurb',(end[0],.51,end[1]),(.43,1.02,.43));post_count+=1
+TRACK_RAIL=False
+# Validate both a densely sampled centreline and every emitted railing/post
+# vertex against the merged real west shoreline, not against a tile rectangle.
+sample_distances=[rail.interpolate(d).distance(shore) for d in np.linspace(0,rail.length,int(math.ceil(rail.length/.25))+1)]
+vertex_distances=[Point(x,z).distance(shore) for x,z in set(RAIL_VERTICES)]
+max_sample_distance=max(sample_distances);max_vertex_distance=max(vertex_distances)
+assert max_sample_distance<1.0 and max_vertex_distance<1.0, (max_sample_distance,max_vertex_distance)
+assert not any(water.contains(rail.interpolate(d)) for d in np.linspace(0,rail.length,1001)), 'Railing centreline entered the river.'
+shoreline_audit={'passed':True,'source_tiles':[list(tile) for tile in sorted(expected_tiles)],
+ 'water_union_before_boundary':True,'selected_west_bank_fraction':west_bank_fraction,
+ 'mean_distance_to_mapped_promenade_m':mean_inner_distance,'shoreline_length_m':shore.length,
+ 'rail_setback_m':rail_setback,'centreline_sample_spacing_max_m':.25,'centreline_samples':len(sample_distances),
+ 'railing_and_post_vertices_tested':len(set(RAIL_VERTICES)),
+ 'max_centreline_distance_to_real_shore_m':max_sample_distance,
+ 'max_railing_vertex_distance_to_real_shore_m':max_vertex_distance,
+ 'remaining_tile_edge_segments_rejected_m':rejected_tile_edge_m,'rail_in_water':False}
+(ROOT/'bund-streets-shoreline-check.json').write_text(json.dumps(shoreline_audit,ensure_ascii=False,indent=2))
+(ROOT/'bund-streets-shoreline-check.geojson').write_text(json.dumps({'type':'FeatureCollection',
+ 'coordinate_system':'WGS84 longitude / latitude',
+ 'features':[{'type':'Feature','properties':{'role':role},'geometry':mapping(geographic(g))} for role,g in
+ [('merged_water',water.intersection(crop)),('real_west_shoreline',shore),('railing_centerline',rail),('mapped_inner_promenade',inner)]]},separators=(',',':')))
 
 # Pack one primitive per material; no external texture or buffer dependency.
 binary=bytearray();views=[];accessors=[];primitives=[];materials=[]
@@ -145,4 +217,6 @@ gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction 
 j=json.dumps(gltf,separators=(',',':')).encode();j+=b' '*((-len(j))%4);binary+=b'\0'*((-len(binary))%4)
 output=ROOT/'bund-streets.glb';output.write_bytes(struct.pack('<III',0x46546c67,2,12+8+len(j)+8+len(binary))+struct.pack('<II',len(j),0x4e4f534a)+j+struct.pack('<II',len(binary),0x004e4942)+binary)
 metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.08,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
+metadata['shoreline_validation']=shoreline_audit
+metadata['source_tiles']=[list(tile) for tile in sorted(expected_tiles)]
 (ROOT/'bund-streets.json').write_text(json.dumps(metadata,ensure_ascii=False,indent=2));assert output.stat().st_size<100_000_000;print(json.dumps(metadata,ensure_ascii=False))

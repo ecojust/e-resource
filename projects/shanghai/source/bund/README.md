@@ -1,0 +1,108 @@
+# 外滩10栋建筑：v3源码、资料与重建
+
+此目录对应外滩2、3、12、13、15、17、18、19、20、23号的近景模型。公开照片用于辨识开间、柱廊、屋顶和立面构件，OSM轮廓用于平面与地理定位。模型包含真正开孔的墙面、内退玻璃、洞口侧壁及独立柱、窗套、栏杆等几何；细小雕刻与未见侧后立面含解释和简化。**这些是照片参照下的建筑重建，不是全城测绘、摄影测量或可游览室内模型。**
+
+发布入口为[外滩资产清单](../../data/bund/manifest.json)，全市网页的建筑清单为[data/landmarks.json](../../data/landmarks.json)。下表原始GLB适合编辑，网页GLB供运行时压缩加载；.blend保留原生网格、材质与相应预览场景。预览地面、相机和灯光不属于建筑GLB。
+
+| 建筑 | 生成入口 | 发布文件 |
+|---|---|---|
+| 2号 · 上海总会 | [bund_classics/build_classics.py](bund_classics/build_classics.py) | [网页GLB](../../assets/models/bund/web/bund02.glb) · [原始GLB](../../assets/models/bund/bund02.glb) · [.blend](../../assets/native/bund/bund02.blend) |
+| 3号 · 有利大楼 · 外滩3号 | [bund_classics/build_classics.py](bund_classics/build_classics.py) | [网页GLB](../../assets/models/bund/web/bund03.glb) · [原始GLB](../../assets/models/bund/bund03.glb) · [.blend](../../assets/native/bund/bund03.blend) |
+| 12号 · 汇丰银行大楼 | [classical_bank/build_classical_banks.py](classical_bank/build_classical_banks.py) | [网页GLB](../../assets/models/bund/web/bund12.glb) · [原始GLB](../../assets/models/bund/bund12.glb) · [.blend](../../assets/native/bund/bund12.blend) |
+| 13号 · 江海关大楼 | [customs_refined/customs_house_v3.py](customs_refined/customs_house_v3.py) | [网页GLB](../../assets/models/bund/web/bund13.glb) · [原始GLB](../../assets/models/bund/bund13.glb) · [.blend](../../assets/native/bund/bund13.blend) |
+| 15号 · 华俄道胜银行大楼 | [classical_bank/build_classical_banks.py](classical_bank/build_classical_banks.py) | [网页GLB](../../assets/models/bund/web/bund15.glb) · [原始GLB](../../assets/models/bund/bund15.glb) · [.blend](../../assets/native/bund/bund15.blend) |
+| 17号 · 字林西报大楼 | [bund_classics/build_news.py](bund_classics/build_news.py) | [网页GLB](../../assets/models/bund/web/bund17.glb) · [原始GLB](../../assets/models/bund/bund17.glb) · [.blend](../../assets/native/bund/bund17.blend) |
+| 18号 · 麦加利银行 · 外滩18号 | [chartered_bank/build_chartered_bank.py](chartered_bank/build_chartered_bank.py) | [网页GLB](../../assets/models/bund/web/bund18.glb) · [原始GLB](../../assets/models/bund/bund18.glb) · [.blend](../../assets/native/bund/bund18.blend) |
+| 19号 · 和平饭店南楼 · 汇中饭店 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund19.glb) · [原始GLB](../../assets/models/bund/bund19.glb) · [.blend](../../assets/native/bund/bund19.blend) |
+| 20号 · 和平饭店北楼 · 沙逊大厦 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund20.glb) · [原始GLB](../../assets/models/bund/bund20.glb) · [.blend](../../assets/native/bund/bund20.blend) |
+| 23号 · 中国银行大楼 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund23.glb) · [原始GLB](../../assets/models/bund/bund23.glb) · [.blend](../../assets/native/bund/bund23.blend) |
+
+[网页街景预览](../../assets/previews/bund-street.png) · [汇丰柱廊细部](../../assets/previews/bund/hsbc-column-detail.png) · [麦加利柱廊细部](../../assets/previews/bund/chartered-column-detail.png) · [海关窗洞细部](../../assets/previews/bund/customs-window-detail.png)
+
+## 源码包对应关系
+
+| 目录 | 建筑与必要输入 | 说明 |
+|---|---|---|
+| [bund_classics/](bund_classics/README.md) | 2、3号用build_classics.py；17号用build_news.py；保留mesh_utils.py、footprints.json、news-footprint.json及相互导入的脚本 | architecture-evidence.json、reference-photos.json记录开间与屋顶资料；两类脚本共用几何工具 |
+| [classical_bank/](classical_bank/README.md) | 12、15号；build_classical_banks.py、geometry-input.json、assets/字体子集 | sources.json、references/保留照片与历史图纸；现状照片优先于历史立面图 |
+| [customs_refined/](customs_refined/SOURCES_AND_METHOD.md) | 13号；customs_house_v3.py与facade_geometry.py | 源组件JSON/GeoJSON、照片和覆盖验证一并保留；官方高度与后翼排除范围单独说明 |
+| [chartered_bank/](chartered_bank/SOURCES.md) | 18号；build_chartered_bank.py、building-source.json、photo-source.json | 三个文件即可生成几何；参考照片、来源说明与验证报告应随发布保留 |
+| [art_deco/](art_deco/README.md) | 19、20、23号；build_art_deco.py、architecture.py、footprints.json、assets/字体子集 | references.json保留照片证据；中国银行主楼、西翼及其高度解释需按本包资料区分 |
+| [street/](street/) | build_street.py及同目录OSM路径、岸线和照片元数据；还依赖../city/build_district_models.py | 外滩街道环境：铺装、路缘、过街标线、栏杆与灯杆；路径据地图，宽度、构件尺度与间距为推定 |
+
+[bund-candidates.json](bund-candidates.json)保存所选建筑的地图轮廓、锚点与临街边线。每个源码包保留自身冻结输入，重建不应重新以名称搜索或用包围盒代替实际足迹。
+
+## 高度与可核实范围
+
+| 建筑 | 尺度依据与推定范围 |
+|---|---|
+| 2号 上海总会 | 公开文字、照片和真实平面用于主体比例；柱廊、顶层拱窗与双亭按照片辨识。屋顶亭阁和构件高度含推定，主屋面与总包围高度不能混用。 |
+| 3号 有利大楼 | 层数、转角塔楼及双街立面参考照片与建筑资料；高度取公开二手资料和比例解释，各层分配、塔冠细节非实测。 |
+| 12号 汇丰银行 | 现状照片结合历史立面/平面图核对六柱柱廊、中庭与穹顶；未取得可核验的完整竖向测量，鼓座、穹顶及分层高度属于推定。 |
+| 13号 江海关 | 官方存档给出主楼约36.2m、钟楼部分约43m、总高约79.2m、钟盘直径5.4m；墙厚、窗退距、角亭分层和未见后立面按照片解释。模型不包含西侧独立后翼。 |
+| 15号 华俄道胜银行 | 真实轮廓与照片支持五开间、柱廊及拱券；约29m包围高度及分层、侧后墙面按照片比例推定。 |
+| 17号 字林西报 | 窄临街面、深进轮廓、顶层双亭据地图和照片；资料层数存在口径差异，采用照片可辨层次，约40m为模型估计。 |
+| 18号 麦加利银行 | 正面三开间、爱奥尼柱、山花与栏杆据照片；主檐口约24.65m、山花顶约28.36m、旗杆顶约34.45m均为照片比例估计，侧后细节为同风格推定。 |
+| 19号 和平南楼 | 文字资料的主体约30m结合六层立面照片；角亭、铜顶和屋面附属部分按照片比例推定。 |
+| 20号 和平北楼 | 公开建筑说明给出约77m屋顶、83m旗杆顶；各层高度、雕花、背面与内庭细节含推定，真实地图内庭保持为空洞。 |
+| 23号 中国银行 | 东塔与后接西翼分别采用真实轮廓；主楼退台、牌匾和中式檐口按照片辨识。西翼层数资料有冲突，未见部分与剩余足迹的立面按包内说明解释，可信度低于临江主楼。 |
+
+清单中的height_m是模型包围高度，可能含旗杆、亭阁和尖顶；height_estimated及逐栋来源说明用于判断其依据。模型坐标小数、网格与源轮廓吻合度只反映计算与导出一致性，不证明源数据或现场尺寸具有同等精度。
+
+## 本地重建
+
+生成脚本以Blender 4.3系列验证。以下命令在项目根目录运行；若只搬迁单个源码包，应保留上表列出的辅助脚本、JSON与assets/。参考图片不作为贴图嵌入模型，但发布时仍须附带来源和许可。
+
+```sh
+# 2、3号；17号单独生成
+BUND_CLASSICS_OUTPUT=exported/bund-classics BUND_CLASSICS_RENDER=0 blender --background --python source/bund/bund_classics/build_classics.py
+BUND_CLASSICS_OUTPUT=exported/bund-classics BUND_CLASSICS_RENDER=0 blender --background --python source/bund/bund_classics/build_news.py
+
+# 12、15号；加 --render 生成预览
+blender --background --python source/bund/classical_bank/build_classical_banks.py -- --building hsbc --output exported/classical-bank
+blender --background --python source/bund/classical_bank/build_classical_banks.py -- --building russo --output exported/classical-bank
+
+# 13号
+CUSTOMS_OUTPUT_DIR=exported/bund13 CUSTOMS_RENDER=0 blender --background --python source/bund/customs_refined/customs_house_v3.py
+
+# 18号；加 --render 生成预览
+blender --background --python source/bund/chartered_bank/build_chartered_bank.py -- --output exported/bund18
+
+# 19、20、23号；输出在源码包内对应建筑子目录
+blender --background --python source/bund/art_deco/build_art_deco.py -- peace_south --no-render
+blender --background --python source/bund/art_deco/build_art_deco.py -- peace_north --no-render
+blender --background --python source/bund/art_deco/build_art_deco.py -- bank_china --no-render
+```
+
+中文牌匾字体子集随classical_bank/assets/与art_deco/assets/附带，许可分别见各包Noto字体许可/OFL记录；导出时转换为网格，网页无需字体文件。街道生成使用普通Python及城市生成器依赖，入口为street/build_street.py；完整项目目录是它的默认依赖根目录。
+
+各包生成器使用hsbc、russo、chartered-bank等原始输出名，发布目录统一命名为bundNN；[资产清单](../../data/bund/manifest.json)负责这一对应关系。直接重建得到的是原始可编辑GLB，网页优化副本是后续压缩产物，不应拿压缩差异当作源几何变化。
+
+## 地理定位与城市替换
+
+GLB采用米制 **X向东、Y向上、Z向南**，地面为0，地理朝向已烘焙；位置根据各自WGS84锚点设置。不能再次把包围盒中心移到原点，也不要重复施加建筑朝向。各原生Blender场景采用对应的东/北/上坐标。
+
+v3全市背景仍为1,708块，包含1,796,419个普通要素：1,796,116个源可渲染要素，按精确ID替换98个，再加401处父体剩余足迹。v2历史核验的402处残差中有1处已由中国银行细模接管；原始402处报告是可追溯证据，当前普通残差数量为401。只替换已经确认覆盖的对象或组件，不能按半径删去周围建筑。
+
+[坐标验证](../../data/bund/geometry-frame-validation.json)、[分块替换验证](../../data/bund/validation/city-patches.json)和[各建筑几何验证](../../data/bund/validation/)记录检查方法。凹窗检查包含从洞外向内的射线首命中验证；海关另有源组件与最终GLB底面覆盖比对。这些验证确认几何实现和定位过程，不证明未拍到的立面、室内或估计高度与现场一致。
+
+## 参考照片与许可
+
+以下主要参考图的作者、来源和许可按[data/bund/manifest.json](../../data/bund/manifest.json)列出。点击原图页面可查看作者上传记录；随附参考图仍保留其原许可。不同建筑可能使用同一作者的不同照片。
+
+| 建筑 | 作者 | 照片许可 | 原图与副本 |
+|---|---|---|---|
+| 2号 · 上海总会 | Legolas1024 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [原图页面](https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E7%B8%BD%E6%9C%83.JPG) · [随附参考图](../../assets/references/bund/bund02.jpg) |
+| 3号 · 有利大楼 · 外滩3号 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:Union_Building,_Shanghai_20250501.jpg) · [随附参考图](../../assets/references/bund/bund03.jpg) |
+| 12号 · 汇丰银行大楼 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg) · [随附参考图](../../assets/references/bund/bund12.jpg) |
+| 13号 · 江海关大楼 | Diomidis Spinellis | [CC BY 2.5](https://creativecommons.org/licenses/by/2.5/) | [原图页面](https://commons.wikimedia.org/wiki/File:ShanghaiBundCustomsHouse.jpg) · [随附参考图](../../assets/references/bund/bund13.jpg) |
+| 15号 · 华俄道胜银行大楼 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:Former_Russo-Chinese_Bank_Building,_Shanghai_20250501.jpg) · [随附参考图](../../assets/references/bund/bund15.jpg) |
+| 17号 · 字林西报大楼 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:North_China_Daily_News_Building_20250501.jpg) · [随附参考图](../../assets/references/bund/bund17.jpg) |
+| 18号 · 麦加利银行 · 外滩18号 | ScareCriterion12 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [原图页面](https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E5%A4%96%E6%BB%A9%E9%BA%A6%E5%8A%A0%E5%88%A9%E9%93%B6%E8%A1%8C%E6%97%A7%E5%9D%802021.jpg) · [随附参考图](../../assets/references/bund/bund18.jpg) |
+| 19号 · 和平饭店南楼 · 汇中饭店 | Livelikerw | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [原图页面](https://commons.wikimedia.org/wiki/File:Shanghai_Palace_Hotel_1.JPG) · [随附参考图](../../assets/references/bund/bund19.jpg) |
+| 20号 · 和平饭店北楼 · 沙逊大厦 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:Sassoon_House_20250501.jpg) · [随附参考图](../../assets/references/bund/bund20.jpg) |
+| 23号 · 中国银行大楼 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:Bank_of_China_Building,_Shanghai_20250501.jpg) · [随附参考图](../../assets/references/bund/bund23.jpg) |
+
+补充照片和历史图纸见各包sources.json、references.json、reference-photos.json、photo-source.json或SOURCES_AND_METHOD.md。其中海关补充正面照片作者Onedesign23，CC BY-SA 4.0；和平北楼补充正面照片作者ScareCriterion12，CC BY-SA 4.0。所有复制的图片都应按其各自记录署名，不能仅用上表一张主图的许可概括整个源码包。
+
+原创生成代码适用项目[MIT许可](../../LICENSE)；OSM及其派生平面数据库按ODbL 1.0署名 **© OpenStreetMap contributors**。照片、历史图纸、字体和外部数据保持各自许可，**不因放入本目录而变成MIT**。没有把照片贴到建筑网格，也不把这些参考照片称为测绘级三维资产。

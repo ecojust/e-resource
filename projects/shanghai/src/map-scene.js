@@ -2,6 +2,7 @@ import * as THREE from '../vendor/three.module.js';
 import { GLTFLoader } from '../vendor/GLTFLoader.js';
 import { MeshoptDecoder } from '../vendor/meshopt_decoder.module.js';
 import { applyBuildingMaterial } from './building-material.js';
+import { applyPavingMaterial } from './paving-material.js';
 import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
 
@@ -130,7 +131,7 @@ function makeWalker() {
     add(new THREE.BoxGeometry(.035, .36, .02), dark, walker, side * .14, 1.25, -.20);
   }
   const shadow = add(new THREE.CircleGeometry(.38, 28),
-    new THREE.MeshBasicMaterial({color: '#213b40', transparent: true, opacity: .20, depthWrite: false}), walker, 0, .025, 0);
+    new THREE.MeshBasicMaterial({color: '#213b40', transparent: true, opacity: .20, depthWrite: false}), walker, 0, .052, 0);
   shadow.rotation.x = -Math.PI / 2;
   walker.traverse(o => { if (o.isMesh) o.frustumCulled = false; });
   return {group: walker, animate(speed, time) {
@@ -181,7 +182,7 @@ export async function createShanghaiScene(options = {}) {
     const timer = setTimeout(() => reject(new Error('地图样式加载超时，请检查网络连接。')), 25000);
     map.once('style.load', () => { clearTimeout(timer); loadedStyle = true; resolve(); });
   });
-  map.setLight({anchor: 'map', position: [1.5, 210, 45], color: '#fff2d7', intensity: .48});
+  map.setLight({anchor: 'map', position: [1.5, 120, 40], color: '#fff2d7', intensity: .48});
   if (map.setSky) map.setSky({'sky-color': '#c8e0e7', 'horizon-color': '#e7f0ed',
     'fog-color': '#e7efed', 'sky-horizon-blend': .5, 'horizon-fog-blend': .7, 'fog-ground-blend': .8});
   const sourceId = style.sources.openmaptiles ? 'openmaptiles'
@@ -270,9 +271,9 @@ export async function createShanghaiScene(options = {}) {
       (p.y - mercatorOrigin.y) / metreScale);
   }
   const scene = new THREE.Scene();
-  scene.add(new THREE.HemisphereLight('#eef6ff', '#a8b4a1', 2.2));
-  const sun = new THREE.DirectionalLight('#fff0d5', 3.2); sun.position.set(-300, 600, -300); scene.add(sun);
-  const fill = new THREE.DirectionalLight('#b6d8ed', .8); fill.position.set(200, 180, 400); scene.add(fill);
+  scene.add(new THREE.HemisphereLight('#eef6ff', '#a8b4a1', 1.3));
+  const sun = new THREE.DirectionalLight('#fff0d5', 2.8); sun.position.set(420, 580, 240); scene.add(sun);
+  const fill = new THREE.DirectionalLight('#b6d8ed', .4); fill.position.set(-200, 180, -400); scene.add(fill);
   const walker = makeWalker(); scene.add(walker.group);
   const camera = new THREE.Camera(); camera.matrixAutoUpdate = false;
   let renderer, animationTime = 0, speed = 0, current = {lng: start.lng, lat: start.lat};
@@ -367,7 +368,11 @@ export async function createShanghaiScene(options = {}) {
           obj.geometry?.computeBoundingSphere();
           if (obj.material) {
             const mats = Array.isArray(obj.material) ? obj.material : [obj.material];
-            for (const m of mats) { m.envMapIntensity = .7; if (m.metalness > .7) m.metalness = .55; }
+            for (const m of mats) {
+              m.envMapIntensity = .55;
+              if (m.metalness > .7) m.metalness = .55;
+              applyPavingMaterial(m);
+            }
           }
         }
       });
@@ -375,15 +380,18 @@ export async function createShanghaiScene(options = {}) {
       updateLandmarkVisibility(); reportLandmarks(); map.triggerRepaint();
     } catch (error) {
       record.status = 'error'; reportLandmarks(); onLoadError(new Error(`${record.name || record.id} 模型加载失败：${error.message}`));
+    } finally {
+      if (!destroyed) updateLandmarkVisibility();
     }
   }
   function updateLandmarkVisibility(force = false) {
     let changed = false;
     const center = map.getCenter(), target = walker.group.visible ? current : {lng: center.lng, lat: center.lat};
+    const pending=[];
     for (const record of landmarkRecords.values()) {
       const distance = distanceMetres(target, record);
-      const nearby = force || distance < (map.getZoom() < 16 ? 12000 : 3200);
-      if (nearby && record.status === 'idle') loadLandmark(record);
+      const nearby = force || distance < (record.maxDistance || (map.getZoom() < 16 ? 12000 : 3200));
+      if (nearby && record.status === 'idle') pending.push({record,distance});
       if (record.object) {
         if (record.object.visible !== nearby) changed = true;
         record.object.visible = nearby;
@@ -396,6 +404,10 @@ export async function createShanghaiScene(options = {}) {
         landmarkSuppression.setOwner(record.id,ids).then(()=>{if(!destroyed)map.triggerRepaint();});
       }
     }
+    // Detailed facades contain substantially more geometry than city blocks.
+    // Start the nearest three first and keep decoding/fetch pressure bounded.
+    const available=3-[...landmarkRecords.values()].filter(record=>record.status==='loading').length;
+    for (const {record} of pending.sort((a,b)=>a.distance-b.distance).slice(0,Math.max(0,available))) loadLandmark(record);
     if (changed) updateBuildingExclusions();
     updateLocalModels();
   }

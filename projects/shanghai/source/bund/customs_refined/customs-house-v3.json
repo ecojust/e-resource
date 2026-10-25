@@ -1,0 +1,110 @@
+{
+  "id": "customs-house",
+  "asset_version": 3,
+  "name": "上海海关大楼前楼·真实凹窗版",
+  "anchor": {
+    "longitude": 121.4854354265109,
+    "latitude": 31.238615036350964
+  },
+  "height": 79.2,
+  "main_block_height": 36.2,
+  "clock_tower_height": 43.0,
+  "clock_face_diameter": 5.4,
+  "minute_hand_total_length": 3.17,
+  "minute_hand_tip": 2.45,
+  "minute_hand_tail": 0.72,
+  "hour_hand_total_length": 2.3,
+  "clock_chamber_width": 8.2,
+  "three_window_tower_width": 10.6,
+  "clock_plan_center_local_body_axes": [
+    6.502430314325223,
+    1.979341540131338
+  ],
+  "clock_plan_center_source": "OSM way178407326 live mapped polygon centroid; original complete tower moved without changing its dimensions",
+  "front_block_footprint_dimensions": [
+    36.3450488238,
+    23.4250526504
+  ],
+  "front_block_footprint_area": 850.547654668,
+  "footprint_source": "https://www.openstreetmap.org/way/178407318",
+  "footprint_license": "ODbL-1.0",
+  "orientation_degrees_ccw_from_east": 6.56531510671183,
+  "orientation_baked": true,
+  "exclusionRadius": 25.5,
+  "dimensions_source": "https://web.archive.org/web/20100610110157/http://shanghai.customs.gov.cn/publish/portal27/tab8419/module26899/info82241.htm",
+  "photo_references": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:ShanghaiBundCustomsHouse.jpg",
+      "author": "Diomidis Spinellis",
+      "license_selected": "CC BY 2.5"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Custom_House_Shanghai.jpg",
+      "author": "Onedesign23",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "units": "meters",
+  "axis": "X east / Y up / Z south",
+  "boundsBlender": {
+    "min": [
+      -16.687957763671875,
+      -20.655689239501953,
+      0.0
+    ],
+    "max": [
+      15.400022506713867,
+      22.536413192749023,
+      79.19999694824219
+    ]
+  },
+  "triangles": 87420,
+  "vertices": 56348,
+  "glb": {
+    "format": "glTF 2.0 GLB",
+    "axis": "X east / Y up / Z south",
+    "bounds": {
+      "min": [
+        -16.687957763671875,
+        0,
+        -22.536413192749023
+      ],
+      "max": [
+        15.400022506713867,
+        79.19999694824219,
+        20.655689239501953
+      ]
+    },
+    "bytes": 4323112
+  },
+  "sha256": "7265f6c0542570e854d0ad3ae99d81d3c4a01e861647dc8cc191b278f0615ac4",
+  "scope": "Mapped front block plus its four shared-node corner pavilions and clock-tower component. Independent western rear wings remain outside this model.",
+  "confirmed_component_ways": [
+    178407318,
+    178407323,
+    178407326,
+    178407328,
+    178407330,
+    178407333
+  ],
+  "confirmed_coverage_file": "customs-v3-confirmed-coverage.geojson",
+  "accuracy": "Official overall/clock dimensions and OSM front outline. Window depths, masonry, entry portals, stair and moldings are photo-interpreted, not surveyed dimensions.",
+  "changes": [
+    "Removed filled main-building mass; rectangular aperture cells form 0.72m stone shells.",
+    "Five central slots plus the two mapped front-corner slots have glass fronts 0.43m behind the facade; obsolete concealed end windows were removed.",
+    "Both side walls and rear elevation have true clear openings with jambs and physical sills.",
+    "Four corner pavilions follow live OSM polygons 178407323/328/330/333, including projecting return walls; all have true upper arches and physical roof profiles.",
+    "Clock-tower lower triple windows also penetrate a stone shell; dial and tower proportions retained.",
+    "Five entrance portals are recessed about1.12m with gates, transoms, plinths, steps and projecting lintels."
+  ],
+  "aperture_validation": {
+    "passed": true,
+    "count": 199,
+    "file": "aperture-validation.json"
+  },
+  "notes": [
+    "No photographic textures are embedded. Materials and detailed geometry are procedural.",
+    "Do not apply a second yaw; geographic orientation is baked into the GLB.",
+    "Overall 79.2m envelope includes the thin flag mast. Preview ground and lights are excluded from GLB."
+  ]
+}

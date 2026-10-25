@@ -261,6 +261,8 @@ def bank():
             else:
                 front.cell(a,c,z0,z1,w,2.85,joints=True,spandrel=12 if typ=='strip' else None)
                 if typ=='strip':
+                    gap=(pitch-2.85)/2
+                    for zz in [z0+gap/2,z1-gap/2]:front.flat((a+c)/2,zz,w-.06,gap-.035,12,.075)
                     for u in [(a+c)/2-w*.32,(a+c)/2,(a+c)/2+w*.32]:front.box(u,z0+.53,.055,.85,.10,4,.08)
     # Two upper floors are set back at both ends; opaque massing never covers windows.
     front.panel(0,28,10.4,10.8,0,joints=True)
@@ -401,10 +403,11 @@ def south():
 
 def text_label(text,name,loc,size,rotation,material):
     cu=bpy.data.curves.new(name,'FONT');cu.body=text;cu.align_x='CENTER';cu.size=size;cu.extrude=.022;cu.bevel_depth=.006;cu.bevel_resolution=1
-    font=Path('/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc')
-    if font.exists():
-        try:cu.font=bpy.data.fonts.load(str(font))
-        except Exception:pass
+    font=HERE/'assets'/'BundArtDecoInscription-Bold.otf'
+    if not font.is_file():
+        raise FileNotFoundError(f'Missing bundled inscription font: {font}. Copy the assets directory with build_art_deco.py; system font fallback is intentionally disabled.')
+    try:cu.font=bpy.data.fonts.load(str(font))
+    except Exception as exc:raise RuntimeError(f'Cannot load bundled inscription font: {font}') from exc
     obj=bpy.data.objects.new(name,cu);bpy.context.collection.objects.link(obj);obj.location=loc;obj.rotation_euler=rotation;cu.materials.append(material)
     bpy.context.view_layer.objects.active=obj;obj.select_set(True);bpy.ops.object.convert(target='MESH');obj.select_set(False);return obj
 
@@ -471,6 +474,7 @@ def main(slug,render=True):
         meta['geographic_bbox']=[min(p[0] for p in coords_geo),min(p[1] for p in coords_geo),max(p[0] for p in coords_geo),max(p[1] for p in coords_geo)]
     meta['landmark_source_id']=d['source']['id'];meta['reference_metadata']='../references.json'
     meta['previews']={'overview':'overview.png','riverfront':'front.png','entrance_detail':'detail.png'}
+    meta['source_files'].append('../assets/BundArtDecoInscription-Bold.otf')
     assert triangles<300000,(slug,triangles)
     assert meta['glb_bytes']<100_000_000
     (out/'metadata.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2))

@@ -1,0 +1,85 @@
+{
+  "architectural_height_m": 73.5,
+  "description": "Bank of China east tower: carved podium, three recessed entrances, central bronze spandrels, alternating pierced grilles, two-stage setbacks, small upper windows and swept Chinese eaves.",
+  "limits": [
+    "Height 73.5m is an architectural-reference approximation pending surveyed datum.",
+    "Carved reliefs and unobserved rear elevations are simplified geometric interpretations."
+  ],
+  "id": "bank_china",
+  "name": "中国银行大楼",
+  "units": "metres",
+  "coordinate_system": "glTF X east, Y up, Z south",
+  "origin_longitude": 121.4852665999813,
+  "origin_latitude": 31.24149739999038,
+  "geographic_bbox": [
+    121.4836297,
+    31.2413612,
+    121.4853893,
+    31.2417904
+  ],
+  "replacement": {
+    "building_ids": [
+      "8a9135f1-9dec-4ed3-8849-b52fe05f5a31",
+      "5ffad866-ee1e-43e1-8665-fa818bac102b"
+    ],
+    "building_part_ids": [
+      "fe059296-0a9a-378b-b347-5bb336741e38"
+    ],
+    "only_exact_ids": true,
+    "do_not_delete_nearby_buildings_by_radius": true,
+    "additional_overlap_candidates": [],
+    "optional_groups": [
+      {
+        "id": "bank-west-wing",
+        "building_ids": [
+          "5ffad866-ee1e-43e1-8665-fa818bac102b"
+        ],
+        "building_part_ids": [],
+        "requires_actual_modeled_coverage_confirmation": true
+      }
+    ]
+  },
+  "geometry_source": "https://www.openstreetmap.org/way/177995050",
+  "geometry_license": "ODbL-1.0; © OpenStreetMap contributors",
+  "triangles": 205442,
+  "meshes": 5,
+  "glb_bytes": 8659628,
+  "bounds_enu": {
+    "min": [
+      -157.1835174560547,
+      -15.775273323059082,
+      0.0
+    ],
+    "max": [
+      15.155613899230957,
+      33.975006103515625,
+      73.53813934326172
+    ]
+  },
+  "source_files": [
+    "../build_art_deco.py",
+    "../architecture.py",
+    "../footprints.json",
+    "../assets/BundArtDecoInscription-Bold.otf"
+  ],
+  "western_wing": {
+    "included": true,
+    "source": "https://www.openstreetmap.org/way/177998983",
+    "modeled_storeys": 4,
+    "model_roof_m": 20.45,
+    "confidence": "lower than the photographed east tower",
+    "floor_conflict": {
+      "osm": 9,
+      "architectural_text_west_building": 4,
+      "source": "https://zh.wikipedia.org/wiki/中国银行大楼_(上海)",
+      "quote": "西大楼为次楼，楼高四层。"
+    }
+  },
+  "landmark_source_id": "bund23",
+  "reference_metadata": "../references.json",
+  "previews": {
+    "overview": "overview.png",
+    "riverfront": "front.png",
+    "entrance_detail": "detail.png"
+  }
+}

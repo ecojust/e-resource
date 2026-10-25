@@ -14,7 +14,9 @@ blender --background --threads 2 --python build_art_deco.py -- peace_south
 
 附加 `--no-render` 可仅生成模型。Blender 没有编译 OpenImageDenoise 时也可重建，因为脚本默认关闭该降噪器。`architecture.py` 是同目录依赖；`footprints.json` 包含地图原始引用、真实平面与屋顶三角形，因此重建不需联网。
 
-中文牌匾在导出前由系统的 `NotoSerifCJK-Bold.ttc` 转为实体网格。重新生成中文字形需安装 Noto CJK 字体（Debian 包 `fonts-noto-cjk`）；现有 GLB 和 Blend 不依赖运行时字体。`front.png`、`detail.png` 和最终 `overview.png` 是实际 GLB 在 Three.js 中的几何检查截图；Blender 重建也能生成 Cycles 渲染。
+中文牌匾在导出前转为实体网格。重建使用随源码附带的 `assets/BundArtDecoInscription-Bold.otf`（仅 6.7 KB），无需系统字体；缺少该文件时脚本会明确报错，避免生成方框。该子集保留原始 Noto Serif CJK collection face 0 的八个中文及空格字形轮廓，已经将 family、PostScript 与 CFF 名称独立改为 BundArtDecoInscription，许可和原始出处在同目录 `OFL.txt`、`font-source.json`。现有 GLB 和 Blend 不依赖运行时字体。
+
+`front.png`、`detail.png` 和最终 `overview.png` 是实际 GLB 在 Three.js 中的几何检查截图；Blender 重建也能生成 Cycles 渲染。`font-portability.json` 记录移至临时目录、只使用随附字体重新生成银行模型的逐字节比对。
 
 Blender 使用米制东/北/上坐标；GLB 导出后为 **X 东、Y 上、Z 南**。每栋的 WGS84 anchor 在 metadata 中，不能将网格包围盒中心再次移动到原点。地面位于高度零；相邻普通建筑仅应按 metadata 的精确源 ID 替换，不应半径删除。
 

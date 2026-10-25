@@ -86,7 +86,7 @@ class Facade:
         u=(u0+u1)/2;z=(z0+z1)/2 if center is None else center
         self.panel(u0,u-ww/2,z0,z1,m,joints=joints);self.panel(u+ww/2,u1,z0,z1,m,joints=joints)
         self.panel(u-ww/2,u+ww/2,z0,z-wh/2,m,joints=joints);self.panel(u-ww/2,u+ww/2,z+wh/2,z1,m,joints=joints)
-        self.window(u,z,ww,wh,m,glass=window_m)
+        self.window(u,z,ww,wh,m,glass=window_m,sill=spandrel!=12)
         if spandrel is not None:
             self.flat(u,(z0+z-wh/2)/2,ww-.1,max(.1,z-wh/2-z0-.2),spandrel,.06)
     def arch(self,u,zbase,spring,r,top,cell0,cell1,m=0,glass=5,joints=True):

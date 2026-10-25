@@ -120,3 +120,32 @@ capture dates and incomplete source attribution, heights, and building coverage.
 Model completeness means all available downloaded source geometry within the
 documented display boundary, not a claim that every physical building in
 Shanghai has been mapped or individually surveyed.
+
+
+## V3 Bund historical-building patch
+
+The original full-city generation steps above remain valid. The current project
+exclusion file additionally covers nine newly detailed Bund buildings and the
+refined Customs House roof components. The generic result is 1,796,419 features:
+1,796,116 original renderable source features + 401 retained parent residuals
+− 98 exact detailed-model replacements. Fourteen detailed landmark records load
+separately; their existence does not make the remaining city LoD1 geometry a
+surveyed architectural model.
+
+The V3 update changed only owner cells `14/13720/6693` and `14/13720/6694`.
+`build_bund_city_patches.py` reads the frozen model coverage table in
+`data/bund/bund-model-confirmations.json`, resolves exact UUID/part closure, and
+exports a separate patch. `merge_bund_city_patches.py` creates an isolated merged
+city; it unlinks patched assets before replacing them and preserves every
+unrelated cell state/configuration hash. See `data/bund/CITY_PATCHES.md` for the
+full command. The previous five-landmark exclusion configuration is retained as
+`data/bund/landmark-exclusions-v2.json` for baseline reproduction.
+
+After final model-only embellishment changes,
+`finalize_bund_patch_model_metadata.py` refreshes model hashes while retaining the
+exact generic-generation exclusion snapshot. It proves IDs, anchors, boundaries
+and overrides remain unchanged; it never claims generic meshes were rebuilt or
+migrates their old configuration hashes. The V2 audit remains in
+`data/audit/fullcity-models-validation-v2.json`; the main audit file now covers
+the complete V3 merged city. Both source provenance and unknown/photo-estimated
+architectural dimensions are retained.

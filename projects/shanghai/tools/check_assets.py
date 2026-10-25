@@ -64,6 +64,33 @@ if city_path.is_file():
         if not city.get('coverage_balanced'):errors.append('City geometry does not balance against the source')
         if sum(city['height_quality'].values())!=city['feature_count']:errors.append('City height provenance totals do not agree')
     if not (ROOT/'vendor/meshopt_decoder.module.js').is_file():errors.append('Missing Meshopt decoder')
+bund_path=ROOT/'data/bund/manifest.json'
+if bund_path.is_file():
+    bund=json.loads(bund_path.read_text())
+    if not bund.get('complete') or len(bund.get('buildings',[]))!=10:
+        errors.append('Bund architectural release must contain all ten buildings')
+    landmarks=json.loads((ROOT/'data/landmarks.json').read_text())
+    public={item['id']:item for item in landmarks}
+    if len(public)!=14 or len(public)!=len(landmarks):
+        errors.append('Expected ten Bund and four Lujiazui navigation models')
+    for building in bund['buildings']:
+        if public.get(building['id'])!=building:
+            errors.append('Bund navigation metadata differs: '+building['id'])
+        for pathkey,hashkey,sizekey in [('model','web_sha256','web_bytes'),('editable_model','raw_sha256','raw_bytes'),('native_model','native_sha256','native_bytes')]:
+            path=ROOT/building[pathkey]
+            if not path.is_file():
+                errors.append('Missing Bund model: '+building[pathkey]);continue
+            if path.stat().st_size!=building[sizekey] or hashlib.sha256(path.read_bytes()).hexdigest()!=building[hashkey]:
+                errors.append('Bund model checksum/size differs: '+building[pathkey])
+        ref=building['reference'];path=ROOT/ref['image']
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=ref['sha256']:
+            errors.append('Reference photo missing or changed: '+ref['image'])
+        if not all(ref.get(key) for key in ['author','license','source','license_url']):
+            errors.append('Incomplete photo attribution: '+building['id'])
+    props=json.loads((ROOT/'data/scene-props.json').read_text())
+    for item in landmarks+props:
+        model_path=item.get('url') or item.get('model')
+        if not model_path or not (ROOT/model_path).is_file():errors.append('Runtime model missing: '+str(model_path))
 if errors:
     print('\n'.join(errors), file=sys.stderr)
     raise SystemExit(1)
