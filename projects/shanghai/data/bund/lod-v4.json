@@ -1,0 +1,946 @@
+{
+  "version": "bund-distant-lod-v4",
+  "complete": true,
+  "generator": "tools/build_bund_lods.py",
+  "gltfpack_version": "gltfpack 1.3",
+  "maximum_bounds_change_limit_m": 0.35,
+  "source_bounds_method": "Referenced POSITION vertices transformed through the full node hierarchy",
+  "output_bounds_method": "Accessor extrema with validated axis-aligned node transforms; supports quantized normalized attributes",
+  "bounds_check_limit": "Extrema preservation is not a Hausdorff or photographic-accuracy guarantee; distant geometry is simplified.",
+  "close_up_assets_modified": false,
+  "native_assets_modified": false,
+  "fallback_policy": [
+    {
+      "target_triangle_ratio": 0.35,
+      "relative_error_limit": 0.002,
+      "permissive_attribute_simplification": true
+    },
+    {
+      "target_triangle_ratio": 0.35,
+      "relative_error_limit": 0.0005,
+      "permissive_attribute_simplification": true
+    },
+    {
+      "target_triangle_ratio": 0.6,
+      "relative_error_limit": 0.0001,
+      "permissive_attribute_simplification": false
+    },
+    {
+      "target_triangle_ratio": 1.0,
+      "relative_error_limit": null,
+      "permissive_attribute_simplification": false
+    }
+  ],
+  "models": [
+    {
+      "id": "bund02",
+      "candidate_id": "bund02",
+      "model": "assets/models/bund/lod-v4/bund02.glb",
+      "sha256": "2ef86456ec578743948cd85374149a9bcdd04818fffeb729437d069c9cfc39b0",
+      "bytes": 599572,
+      "triangles": 45980,
+      "full_triangles": 73022,
+      "actual_triangle_ratio": 0.6296732491577881,
+      "draw_primitives": 7,
+      "maximum_bounds_change_m": 0.00034505453550082166,
+      "source_bounds_glb": {
+        "min": [
+          -32.428035736083984,
+          0.0,
+          -24.80279541015625
+        ],
+        "max": [
+          32.823272705078125,
+          35.0,
+          24.195528030395508
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -32.4280357,
+          0.0,
+          -24.8027954
+        ],
+        "max": [
+          32.823280324100004,
+          34.999836131520006,
+          24.195182975860007
+        ]
+      },
+      "full_model_unchanged_sha256": "108f7dd8507d41962ec68f65981baf110f31c788259da7abec037f5ffe892810",
+      "close_up_web_unchanged_sha256": "19db6788afc972cd1de52eb4c61d9e1afcf2be21461acd77463b5b792b04e153",
+      "native_unchanged_sha256": "a7d0e9dfd96d4994ed0a451452760467e73c640ef1d453713442ab387ddc054a",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 45980,
+        "bytes": 599572,
+        "maximum_bounds_change_m": 0.00034505453550082166,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 45980,
+          "bytes": 599572,
+          "maximum_bounds_change_m": 0.00034505453550082166,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund03",
+      "candidate_id": "bund03",
+      "model": "assets/models/bund/lod-v4/bund03.glb",
+      "sha256": "f74412907c707899f5bc7885a7c43a29530f84f62d26d3fbad8cce2c6dbd655a",
+      "bytes": 943816,
+      "triangles": 71022,
+      "full_triangles": 153913,
+      "actual_triangle_ratio": 0.46144250323234554,
+      "draw_primitives": 8,
+      "maximum_bounds_change_m": 0.0005697490722695875,
+      "source_bounds_glb": {
+        "min": [
+          -39.78239059448242,
+          0.0,
+          -23.289213180541992
+        ],
+        "max": [
+          40.538246154785156,
+          45.75,
+          23.436763763427734
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -39.7823906,
+          0.0,
+          -23.2892132
+        ],
+        "max": [
+          40.5382451719,
+          45.74973208352,
+          23.437333512500004
+        ]
+      },
+      "full_model_unchanged_sha256": "735067414af4cf41c2af8c517cac4de2777f32726dc6af946a9a11a360c44e22",
+      "close_up_web_unchanged_sha256": "6ee82d66a4a66e6117e4f644ab12366eee30f93733c4ddf8e1a084c4b7719c99",
+      "native_unchanged_sha256": "3b51fb3d7dbcdf2763364872b19cb825b68070c72d6afd834f383189d11de734",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 71022,
+        "bytes": 943816,
+        "maximum_bounds_change_m": 0.0005697490722695875,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 71022,
+          "bytes": 943816,
+          "maximum_bounds_change_m": 0.0005697490722695875,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund12",
+      "candidate_id": "bund12",
+      "model": "assets/models/bund/lod-v4/bund12.glb",
+      "sha256": "dfcf187f4c6b79c3125469c2223cc484bde41bac58de52f9ded619db38c6ef20",
+      "bytes": 1574532,
+      "triangles": 144184,
+      "full_triangles": 227925,
+      "actual_triangle_ratio": 0.6325940550619722,
+      "draw_primitives": 9,
+      "maximum_bounds_change_m": 0.0006147604077284541,
+      "source_bounds_glb": {
+        "min": [
+          -38.369869232177734,
+          0.0,
+          -47.16672134399414
+        ],
+        "max": [
+          36.886470794677734,
+          55.720001220703125,
+          47.5187873840332
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -38.3698692,
+          0.0,
+          -47.1667213
+        ],
+        "max": [
+          36.885856034270006,
+          55.720473426859996,
+          47.51878474235
+        ]
+      },
+      "full_model_unchanged_sha256": "6b60b1d06932d8ddb2a46fafbc62bff50c07dcdfe5bbf401f4a870eb383444d2",
+      "close_up_web_unchanged_sha256": "6992a58d0cb7177112e6d825adaeb8b074f4c18dda0fb09595b655f85a878802",
+      "native_unchanged_sha256": "0b2b427c25ae49fb18a303718c4ba679f913a3ad8e8721d07f5acb84a13cb9e2",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 144184,
+        "bytes": 1574532,
+        "maximum_bounds_change_m": 0.0006147604077284541,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 144184,
+          "bytes": 1574532,
+          "maximum_bounds_change_m": 0.0006147604077284541,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "customs-house",
+      "candidate_id": "bund13",
+      "model": "assets/models/bund/lod-v4/bund13.glb",
+      "sha256": "0e3f2f8135a0544ea010b76e2065251f8a7635c9c868eac0fbda27fa466dcc7a",
+      "bytes": 624600,
+      "triangles": 48552,
+      "full_triangles": 87420,
+      "actual_triangle_ratio": 0.5553877831159918,
+      "draw_primitives": 10,
+      "maximum_bounds_change_m": 0.000495104166134297,
+      "source_bounds_glb": {
+        "min": [
+          -16.687957763671875,
+          0.0,
+          -22.536413192749023
+        ],
+        "max": [
+          15.400022506713867,
+          79.19999694824219,
+          20.655689239501953
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -16.6879578,
+          0.0,
+          -22.5364132
+        ],
+        "max": [
+          15.400517610880001,
+          79.1999938254,
+          20.655892885599997
+        ]
+      },
+      "full_model_unchanged_sha256": "7265f6c0542570e854d0ad3ae99d81d3c4a01e861647dc8cc191b278f0615ac4",
+      "close_up_web_unchanged_sha256": "77d403590f2719b9b21367dcb8d52bd63bd2f19f2b6cb9e663158fad8492745f",
+      "native_unchanged_sha256": "c985279ec993592b8e7f711ec1c3c08299ed923483aaeee049ce16a383733360",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 48552,
+        "bytes": 624600,
+        "maximum_bounds_change_m": 0.000495104166134297,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 48552,
+          "bytes": 624600,
+          "maximum_bounds_change_m": 0.000495104166134297,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund15",
+      "candidate_id": "bund15",
+      "model": "assets/models/bund/lod-v4/bund15.glb",
+      "sha256": "9643c30cda83ba8ab3006b591290077e27c61408320c283d3838e573d61a95dd",
+      "bytes": 494436,
+      "triangles": 48822,
+      "full_triangles": 96352,
+      "actual_triangle_ratio": 0.5067045831949518,
+      "draw_primitives": 11,
+      "maximum_bounds_change_m": 0.00024613160700326375,
+      "source_bounds_glb": {
+        "min": [
+          -24.97776222229004,
+          0.0,
+          -22.484010696411133
+        ],
+        "max": [
+          23.73923683166504,
+          29.0,
+          22.601665496826172
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -24.9777622,
+          0.0,
+          -22.4840107
+        ],
+        "max": [
+          23.739237358204996,
+          28.999753868392997,
+          22.60160802595
+        ]
+      },
+      "full_model_unchanged_sha256": "46b4b1f9c35c4afaa15d11f037d3a23651fdb23f47aea3c2a892464b65208027",
+      "close_up_web_unchanged_sha256": "4fb7ca3c71c0d87ed4565021da8b51bae770be33bda4623f349c3f02d9bc1743",
+      "native_unchanged_sha256": "9b3a576b10d69202666be4bb8e5e4089739a279f9f471afc38e508065121b76b",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 48822,
+        "bytes": 494436,
+        "maximum_bounds_change_m": 0.00024613160700326375,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 48822,
+          "bytes": 494436,
+          "maximum_bounds_change_m": 0.00024613160700326375,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund17",
+      "candidate_id": "bund17",
+      "model": "assets/models/bund/lod-v4/bund17.glb",
+      "sha256": "40a91b4d012241fd83616fc3b2febe034b980b3a7040036751b571a6750fb3a3",
+      "bytes": 725428,
+      "triangles": 59546,
+      "full_triangles": 75312,
+      "actual_triangle_ratio": 0.7906575313363077,
+      "draw_primitives": 8,
+      "maximum_bounds_change_m": 0.0003711036298419401,
+      "source_bounds_glb": {
+        "min": [
+          -28.303380966186523,
+          0.0,
+          -16.34966278076172
+        ],
+        "max": [
+          27.567840576171875,
+          40.0,
+          15.863197326660156
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -28.303381,
+          0.0,
+          -16.3496628
+        ],
+        "max": [
+          27.567840613789997,
+          40.000333362286,
+          15.863568430289998
+        ]
+      },
+      "full_model_unchanged_sha256": "d06d5a4ea07f8c5d0b1e0257365d80009eb1c7b80f6b91e555436176fafdaa38",
+      "close_up_web_unchanged_sha256": "39cfed4cc3200d35bf71a824d2729b5810f026c2a17da416ec486cd184e2e139",
+      "native_unchanged_sha256": "8b92d96b2c060f25296f797d63a35488e127d123fcdbef8c1ab5902731fcf93f",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 59546,
+        "bytes": 725428,
+        "maximum_bounds_change_m": 0.0003711036298419401,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 59546,
+          "bytes": 725428,
+          "maximum_bounds_change_m": 0.0003711036298419401,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund18",
+      "candidate_id": "bund18",
+      "model": "assets/models/bund/lod-v4/bund18.glb",
+      "sha256": "ba6dcdf7be640b9bd39e3d6c42417554745399cbb876abd99796e5a82a5e360b",
+      "bytes": 915300,
+      "triangles": 71701,
+      "full_triangles": 127290,
+      "actual_triangle_ratio": 0.5632885536962841,
+      "draw_primitives": 14,
+      "maximum_bounds_change_m": 0.0004590934010977321,
+      "source_bounds_glb": {
+        "min": [
+          -32.16176223754883,
+          0.0,
+          -23.538339614868164
+        ],
+        "max": [
+          29.588212966918945,
+          34.45000076293945,
+          22.4916934967041
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -32.1617622,
+          0.0,
+          -23.5383396
+        ],
+        "max": [
+          29.588214920355007,
+          34.450334378186,
+          22.491234403303004
+        ]
+      },
+      "full_model_unchanged_sha256": "7d0b6297ffc1d7f4b01c8eb6add0bb119d6ca15a5e91931e2a2892f1965d2f6d",
+      "close_up_web_unchanged_sha256": "ae7e7c391bb71fa1200a3d88bb0020551396b09021f0bf9889cbc65d47fd5879",
+      "native_unchanged_sha256": "19286a2d2759941650c3883bc1311d3bfb0b906cabb716490506fabc16b85538",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 71701,
+        "bytes": 915300,
+        "maximum_bounds_change_m": 0.0004590934010977321,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 71701,
+          "bytes": 915300,
+          "maximum_bounds_change_m": 0.0004590934010977321,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund19",
+      "candidate_id": "bund19",
+      "model": "assets/models/bund/lod-v4/bund19.glb",
+      "sha256": "c6c8e35d3f2690ecc4b7d1d08172052a90d46b6804432d46b690480a115495f2",
+      "bytes": 789852,
+      "triangles": 72433,
+      "full_triangles": 162900,
+      "actual_triangle_ratio": 0.44464702271332107,
+      "draw_primitives": 10,
+      "maximum_bounds_change_m": 0.0005239173210966896,
+      "source_bounds_glb": {
+        "min": [
+          -44.9910774230957,
+          0.0,
+          -20.9458065032959
+        ],
+        "max": [
+          45.526947021484375,
+          38.099998474121094,
+          21.458839416503906
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -44.9910774,
+          0.0,
+          -20.9458065
+        ],
+        "max": [
+          45.526942650749994,
+          38.0994745568,
+          21.45891973145
+        ]
+      },
+      "full_model_unchanged_sha256": "61a4584951c9bb41ec802b8d780bfba0024b5a90485acd5bf4e80e2154840e2a",
+      "close_up_web_unchanged_sha256": "4c998f2a3704ad8751ffc9342c2b2b7733e62c2486b5a06f071461a1c6e04ef8",
+      "native_unchanged_sha256": "ebbd80bb77ef85224528721537aae9e7aa4dbe353251e610c4f508ff5388f390",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 72433,
+        "bytes": 789852,
+        "maximum_bounds_change_m": 0.0005239173210966896,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 72433,
+          "bytes": 789852,
+          "maximum_bounds_change_m": 0.0005239173210966896,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund20",
+      "candidate_id": "bund20",
+      "model": "assets/models/bund/lod-v4/bund20.glb",
+      "sha256": "c06b32b35df5f4bacce5f04a0febd4a3a3bbbf78051e999052e119fac6c67107",
+      "bytes": 1335084,
+      "triangles": 129543,
+      "full_triangles": 252308,
+      "actual_triangle_ratio": 0.5134319958146393,
+      "draw_primitives": 12,
+      "maximum_bounds_change_m": 0.0009695630149266776,
+      "source_bounds_glb": {
+        "min": [
+          -71.51979064941406,
+          0.0,
+          -35.296958923339844
+        ],
+        "max": [
+          79.92460632324219,
+          83.0,
+          39.37821578979492
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -71.5197906,
+          0.0,
+          -35.2969589
+        ],
+        "max": [
+          79.92459984945,
+          83.00035357859,
+          39.377246226779995
+        ]
+      },
+      "full_model_unchanged_sha256": "24981b8c10c8eb4737d9bdb570b991df6f028b872048229eb41ac83a70773103",
+      "close_up_web_unchanged_sha256": "75601d328442d7445d7ba07d175d3fea336f45584304f6cc797e53193a43f795",
+      "native_unchanged_sha256": "124faf9cdbd178d6421bf44a09e63232ac237bc996d50fe3e4eb61f7701d9839",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 129543,
+        "bytes": 1335084,
+        "maximum_bounds_change_m": 0.0009695630149266776,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 129543,
+          "bytes": 1335084,
+          "maximum_bounds_change_m": 0.0009695630149266776,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "id": "bund23",
+      "candidate_id": "bund23",
+      "model": "assets/models/bund/lod-v4/bund23.glb",
+      "sha256": "a2f4ff1ded220a8a21a4c4bc9328f74af2de4d0f438021d577f68e19a4e284f8",
+      "bytes": 835540,
+      "triangles": 94594,
+      "full_triangles": 205442,
+      "actual_triangle_ratio": 0.460441389783978,
+      "draw_primitives": 11,
+      "maximum_bounds_change_m": 0.01760825767984109,
+      "source_bounds_glb": {
+        "min": [
+          -156.43771273912137,
+          0.0,
+          -33.26004931955186
+        ],
+        "max": [
+          14.558837578079833,
+          73.53813934326172,
+          15.748750200132484
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -156.437714,
+          0.0,
+          -33.2600479
+        ],
+        "max": [
+          14.541229320399992,
+          73.53907797928,
+          15.749480600399991
+        ]
+      },
+      "full_model_unchanged_sha256": "c3519b2d6e7f54fdf80ada0395d4e98d4eca8a7837fb50c431e6bb7d932d3e82",
+      "close_up_web_unchanged_sha256": "09ef128294e926f744885cf018e02ae07c128e7b96a980fabe26d6c52650e3b7",
+      "native_unchanged_sha256": "080a8de23fb04f4ea5ba3863b622a6ba0920f298203823ab17dc113f2d02ba34",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-vp",
+          "16",
+          "-vn",
+          "12",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 94594,
+        "bytes": 835540,
+        "maximum_bounds_change_m": 0.01760825767984109,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-vp",
+            "16",
+            "-vn",
+            "12",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 94594,
+          "bytes": 835540,
+          "maximum_bounds_change_m": 0.01760825767984109,
+          "accepted": true
+        }
+      ]
+    }
+  ]
+}
