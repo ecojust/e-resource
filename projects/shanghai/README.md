@@ -46,8 +46,8 @@ python -m http.server 8000
 - [东方明珠 GLB](assets/models/oriental-pearl.glb) · 468 m
 - [上海中心 GLB](assets/models/shanghai-tower.glb) · 632 m
 - [环球金融中心 GLB](assets/models/swfc.glb) · 492 m，顶部开口为实际贯通几何
-- [金茂大厦 GLB](assets/models/jin-mao.glb) · 模型高度 420 m
-- [江海关大楼 GLB](assets/models/customs-house.glb) · 90 m
+- [金茂大厦 GLB](assets/models/jin-mao.glb) · 模型高度 420.5 m
+- [江海关大楼 GLB](assets/models/customs-house.glb) · 79.2 m（上海海关官方资料）
 - [陆家嘴四地标 Blender 场景](assets/native/shanghai-landmarks.blend)
 
 ### 16 区街区

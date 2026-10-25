@@ -12,7 +12,7 @@ LANDMARKS = {
     'oriental-pearl': {'name':'东方明珠广播电视塔','center':(85,65),'height':468,'longitude':121.4951673,'latitude':31.2419382,'osmWay':40778038},
     'shanghai-tower': {'name':'上海中心大厦','center':(178,-40),'height':632,'longitude':121.5012667,'latitude':31.2356172,'osmWay':165792123},
     'swfc': {'name':'上海环球金融中心','center':(226,18),'height':492,'longitude':121.5030405,'latitude':31.2365768,'osmWay':10691100},
-    'jin-mao': {'name':'金茂大厦','center':(160,20),'height':420,'longitude':121.5014197,'latitude':31.2372502,'osmWay':376075961},
+    'jin-mao': {'name':'金茂大厦','center':(160,20),'height':420.5,'longitude':121.5014197,'latitude':31.2372502,'osmWay':376075961},
 }
 
 

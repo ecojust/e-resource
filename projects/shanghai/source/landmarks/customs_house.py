@@ -1,7 +1,9 @@
 """Shanghai Customs House / 江海关大楼, procedural architectural interpretation.
 
-Local meters, ground at z=0; Blender Z-up -> glTF Y-up. The model's stated 90 m
-height includes its clock tower and finial. It is not a surveyed building mesh.
+Local meters, ground at z=0; Blender Z-up -> glTF Y-up. Official height: 79.2 m,
+with a 36.2 m main block, 43 m clock tower, and 5.4 m clock faces.
+Dimensions are taken from Shanghai Customs' archived building description;
+other facade details remain a procedural interpretation, not a survey mesh.
 WGS84 placement anchor: OSM node 476149343, (121.4856441, 31.2386397).
 
 Run: CUSTOMS_OUTPUT_DIR=/path/to/landmarks blender --background --python customs_house.py
@@ -49,19 +51,19 @@ class MeshBuilder:
             a=math.pi*i/segments
             for r in [radius,radius+thickness]:pts.append((x,y+r*math.cos(a),z+r*math.sin(a)))
         self.geom(pts,[(2*i,2*i+1,2*i+3,2*i+2) for i in range(segments)],material)
-    def clock(self,normal,z=71.0):
+    def clock(self,normal,z=61.361572):
         n=Vector(normal);u=Vector((-n.y,n.x,0));v=Vector((0,0,1));center=n*12.33+Vector((0,0,z))
-        self.cylinder(center,5.60,.32,5,64,n)
-        self.cylinder(center+n*.20,5.16,.18,6,64,n)
+        self.cylinder(center,2.90,.20,5,64,n)
+        self.cylinder(center+n*.14,2.70,.12,6,64,n)
         for i in range(60):
             a=math.tau*i/60;radial=u*math.sin(a)+v*math.cos(a);tangent=u*math.cos(a)-v*math.sin(a)
             major=i%5==0
-            self.box(center+n*.34+radial*(4.55 if major else 4.85),(.20 if major else .07,.11,.65 if major else .20),7,[tangent,n,radial])
+            self.box(center+n*.34+radial*(2.40 if major else 2.52),(.11 if major else .045,.08,.30 if major else .10),7,[tangent,n,radial])
         # Ten past ten, with raised dark hands and hub.
-        for a,length,width in [(math.radians(-55),2.8,.27),(math.radians(60),3.95,.18)]:
+        for a,tip,tail,width in [(math.radians(-55),1.85,.45,.15),(math.radians(60),2.45,.72,.10)]:
             radial=u*math.sin(a)+v*math.cos(a);tangent=u*math.cos(a)-v*math.sin(a)
-            self.box(center+n*.48+radial*(length*.45),(width,.14,length),7,[tangent,n,radial])
-        self.cylinder(center+n*.58,.32,.22,5,24,n)
+            self.box(center+n*.48+radial*((tip-tail)*.5),(width,.10,tip+tail),7,[tangent,n,radial])
+        self.cylinder(center+n*.48,.16,.16,5,24,n)
 
 
 def mat(name,color,rough=.65,metal=0):
@@ -139,8 +141,7 @@ def build_customs_house():
         for y in [-11.9,11.9]:
             b.box((x,y,69.6),(1.7,1.7,17.5),1)
             b.box((x,y,79.8),(2.4,2.4,1.3),1)
-    for normal in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0)]:b.clock(normal)
-    # Tiered oxidised copper crown with a slender 90 m finial.
+    # Tiered copper crown; construction coordinates are normalized below.
     b.frustum(79.4,82.2,(24.2,24.2),(17.2,17.2),3)
     b.box((0,0,82.45),(18,18,.5),1)
     b.frustum(82.7,85.2,(17.5,17.5),(11.4,11.4),3)
@@ -149,15 +150,24 @@ def build_customs_house():
     b.box((0,0,88.1),(4.9,4.9,.4),1)
     b.frustum(88.3,89.25,(4.2,4.2),(.7,.7),3)
     b.cylinder((0,0,89.60),.18,.80,5,12)
+    # Official section heights: main parapet 36.2 m, clock tower 43 m.
+    # Keep the clock circles circular by adding them after vertical normalization.
+    def official_z(z):
+        return z * 36.2 / 44.2 if z <= 44.2 else 36.2 + (z-44.2) * 43.0 / (90.0-44.2)
+    b.vertices=[(v[0],v[1],official_z(v[2])) for v in b.vertices]
+    for normal in [(1,0,0),(-1,0,0),(0,1,0),(0,-1,0)]:b.clock(normal,z=official_z(71.0))
     mesh=bpy.data.meshes.new('Shanghai Customs House geometry')
     mesh.from_pydata(b.vertices,[],b.faces);mesh.update()
     obj=bpy.data.objects.new('Shanghai Customs House · 江海关大楼',mesh);bpy.context.collection.objects.link(obj)
     for m in mats:mesh.materials.append(m)
     for p,mi,smooth in zip(mesh.polygons,b.materials,b.smooth):p.material_index=mi;p.use_smooth=smooth
-    obj['height_m']=90.0
+    obj['height_m']=79.2
+    obj['main_block_height_m']=36.2
+    obj['clock_diameter_m']=5.4
     obj['name_zh']='江海关大楼'
     obj['wgs84_longitude']=121.4856441;obj['wgs84_latitude']=31.2386397
     obj['source']='https://www.openstreetmap.org/node/476149343'
+    obj['height_source']='https://web.archive.org/web/20100610110157/http://shanghai.customs.gov.cn/publish/portal27/tab8419/module26899/info82241.htm'
     obj['accuracy']='Recognizable procedural architectural interpretation, not a survey mesh.'
     return obj
 
@@ -172,9 +182,9 @@ def main():
     bpy.ops.export_scene.gltf(filepath=str(out/'customs-house.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
     positions=[obj.matrix_world@v.co for v in obj.data.vertices]
     low=[min(p[i] for p in positions) for i in range(3)];high=[max(p[i] for p in positions) for i in range(3)]
-    assert abs(low[2])<1e-5 and abs(high[2]-90)<1e-5,(low,high)
+    assert abs(low[2])<1e-5 and abs(high[2]-79.2)<1e-5,(low,high)
     assert (out/'customs-house.glb').stat().st_size<5_000_000
-    metadata={'id':'customs-house','name':'江海关大楼','anchor':{'longitude':121.4856441,'latitude':31.2386397},'height':90,'units':'meters','up':'Y','source':'https://www.openstreetmap.org/node/476149343','boundsBlender':{'min':low,'max':high},'triangles':sum(len(p.vertices)-2 for p in obj.data.polygons),'bytes':(out/'customs-house.glb').stat().st_size}
+    metadata={'id':'customs-house','name':'江海关大楼','anchor':{'longitude':121.4856441,'latitude':31.2386397},'height':79.2,'main_block_height':36.2,'clock_tower_height':43.0,'clock_face_diameter':5.4,'dimensions_source':obj['height_source'],'units':'meters','up':'Y','source':'https://www.openstreetmap.org/node/476149343','boundsBlender':{'min':low,'max':high},'triangles':sum(len(p.vertices)-2 for p in obj.data.polygons),'bytes':(out/'customs-house.glb').stat().st_size}
     (out/'customs-house.json').write_text(json.dumps(metadata,ensure_ascii=False,indent=2))
     print('CUSTOMS_HOUSE_VALIDATED',json.dumps(metadata,ensure_ascii=False))
 
