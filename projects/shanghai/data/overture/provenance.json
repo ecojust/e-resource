@@ -1,0 +1,71 @@
+{
+  "title": "Shanghai building footprints from Overture Maps",
+  "checked_date": "2026-10-25",
+  "crs": "EPSG:4326 / WGS84",
+  "current_release": "2026-10-21.0",
+  "catalog_url": "https://stac.overturemaps.org/catalog.json",
+  "theme_catalog_pattern": "https://stac.overturemaps.org/{release}/buildings/catalog.json",
+  "pmtiles_url": "https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles",
+  "pmtiles_protocol": "HTTP Range requests; Access-Control-Allow-Origin: * verified",
+  "release_retention": "Response advertises 60-day release retention. Resolve the latest STAC release at runtime instead of permanently pinning a tile URL.",
+  "vector_layers": [
+    {
+      "id": "building",
+      "minzoom": 5,
+      "maxzoom": 14
+    },
+    {
+      "id": "building_part",
+      "minzoom": 8,
+      "maxzoom": 14
+    }
+  ],
+  "height_properties": [
+    "height",
+    "min_height",
+    "num_floors",
+    "min_floor"
+  ],
+  "footprint_properties": [
+    "id",
+    "has_parts",
+    "building_id",
+    "@geometry_source",
+    "@height_source",
+    "sources"
+  ],
+  "license": "ODbL-1.0",
+  "license_source": "https://docs.overturemaps.org/attribution/#buildings",
+  "attribution": "© OpenStreetMap contributors; © Overture Maps Foundation; Qian Shi et al. (East Asian Buildings)",
+  "primary_china_source": {
+    "title": "A First High-quality Vector Data of Buildings in East Asian Countries Based on a Comprehensive Large-scale Mapping Framework",
+    "authors": "Qian Shi et al.",
+    "doi": "10.5281/zenodo.8174931",
+    "url": "https://doi.org/10.5281/zenodo.8174931",
+    "publication_date": "2023-07-22",
+    "overture_source_version": "2024-11-01",
+    "license": "CC-BY-4.0",
+    "license_evidence": "https://docs.overturemaps.org/attribution/#buildings"
+  },
+  "sample_download": {
+    "district_count": 16,
+    "width_m": 1000,
+    "features": 8322,
+    "features_with_height_or_floors": 375,
+    "geometry_source_counts": {
+      "OpenStreetMap": 2927,
+      "doi:10.5281/zenodo.8174931": 5395
+    },
+    "max_geojson_bytes": 599657,
+    "total_geojson_bytes": 5357760,
+    "selection": "Each district walk start ±500m square. Footprints selected by centroid; full polygons retained. Adjacent tile pieces merged by ID; geometry holes preserved.",
+    "coverage_warning": "These sixteen downloadable extracts are central-neighborhood samples, not offline copies of the entire districts. The browser streams worldwide Overture footprints on demand for the full Shanghai view."
+  },
+  "quality_notes": [
+    "Building footprints are sourced geometry, not randomly generated blocks.",
+    "Most features lack measured heights or floor counts. Missing-height extrusion is a visualization assumption and must not be described as a measured building height.",
+    "Footprints can reflect different source acquisition dates; a release date is not a survey date.",
+    "MVT at maximum source zoom14 has quantized/generalized geometry; it is suitable for city visualization, not cadastral measurement.",
+    "The combined buildings theme is ODbL; the East Asian Buildings contributor is CC BY4.0. Keep data attribution separate from application code licenses."
+  ]
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#174e50">
+  <meta name="description" content="探索上海全部16个区：真实地理地图、立体建筑与地标模型，支持第三人称街头漫游。">
+  <title>上海漫游 · SHANGHAI EXPLORER</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/maplibre-gl.css"><link rel="stylesheet" href="src/styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script src="vendor/maplibre-gl.js"></script>
+  <script src="vendor/pmtiles.js"></script>
+</head>
+<body>
+  <div id="map" aria-label="上海三维漫游场景"></div>
+  <div class="map-vignette" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="上海漫游首页">
+      <svg class="brand-mark" viewBox="0 0 36 38" fill="none" aria-hidden="true"><path d="M4 32V23h6v9M13 32V13h7v19M24 32V7h7v25M1 36h34" stroke="currentColor" stroke-width="2.2"/><path d="M16.5 2v8M11 16h11" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="10" r="3" fill="currentColor"/><path d="m24 7 7-4v4" stroke="currentColor" stroke-width="2"/></svg>
+      <span><strong>上海漫游</strong><small>SHANGHAI EXPLORER</small></span>
+    </a>
+    <div class="mode-switch" role="group" aria-label="浏览模式">
+      <button id="overview-mode" class="active" type="button" aria-pressed="true"><svg viewBox="0 0 20 20"><path d="m2 7 8-4 8 4-8 4-8-4Zm0 4 8 4 8-4M2 15l8 4 8-4"/></svg><span>城市俯瞰</span></button>
+      <button id="walk-mode" type="button" aria-pressed="false"><svg viewBox="0 0 20 20"><circle cx="11" cy="3" r="2"/><path d="m8 18 2-6-2-4-3 4m6-6 3 5 3 1m-7 0 4 6"/></svg><span>第三人称</span></button>
+    </div>
+    <div class="top-actions"><span class="live-chip"><i></i><span id="live-status">正在连接地图</span></span><button id="info-button" class="icon-button" title="项目与数据说明" aria-label="项目与数据说明"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></svg></button><button id="panel-toggle" class="icon-button" title="打开或收起导航" aria-label="打开或收起导航" aria-expanded="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 4v16"/></svg></button></div>
+  </header>
+
+  <aside id="explore-panel" class="explore-panel" aria-label="上海探索导航">
+    <div class="panel-heading"><span class="eyebrow">EXPLORE THE CITY</span><h1>十六区，一座城<span>。</span></h1><p>沿着街道，发现上海的另一面。</p></div>
+    <div class="search-box"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="place-search" type="search" placeholder="搜索行政区或地标" aria-label="搜索行政区或地标" autocomplete="off"><kbd>/</kbd></div>
+    <div class="section-tabs" role="tablist" aria-label="探索类别"><button id="district-tab" role="tab" aria-selected="true" class="active">行政区 <span>16</span></button><button id="landmark-tab" role="tab" aria-selected="false">城市地标 <span id="landmark-count">5</span></button></div>
+    <div id="place-list" class="place-list" role="tabpanel" aria-label="可探索地点"></div>
+    <div class="region-map"><div class="region-caption"><span>上海全域</span><button id="fit-city" type="button">查看全市 <span>↗</span></button></div><svg id="district-map" viewBox="0 0 270 140" role="img" aria-label="上海16区导航地图"></svg><div class="region-legend"><span><i></i>当前区域</span><small>点击地图或选择行政区跳转</small></div></div>
+    <div class="panel-foot"><span class="status-dot"></span>真实道路与建筑轮廓<small>© OpenStreetMap</small></div>
+  </aside>
+
+  <section id="location-card" class="location-card" aria-live="polite"><span class="location-pin"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><span id="location-district" class="eyebrow">黄浦区 · 滨江</span><strong id="location-name">外滩</strong><small id="coordinate-readout">31.2395° N · 121.4868° E</small></div><button id="start-walk" class="primary-button">进入漫游 <span>↗</span></button></section>
+
+  <div class="map-tools"><button id="compass" class="compass" title="朝北 / 重置视角" aria-label="朝北 / 重置视角"><span>N</span><svg id="compass-needle" viewBox="0 0 32 32"><path d="m16 3 7 23-7-6-7 6Z"/></svg></button><button id="zoom-in" class="tool-button" aria-label="拉近视角" title="拉近视角">+</button><button id="zoom-out" class="tool-button" aria-label="拉远视角" title="拉远视角">−</button><button id="reset-place" class="tool-button reset" aria-label="回到当前位置起点" title="回到当前位置起点"><svg viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 3 8M3 4v7h7"/></svg></button></div>
+  <div class="bottom-hud"><div id="controls-hint" class="controls-hint"><span class="hint-icon">✥</span><span id="hint-text">拖动平移 · 滚轮缩放 · 选择地点开始漫游</span></div><div class="trip-meter"><span id="mode-label">城市俯瞰</span><i></i><strong id="distance-readout">0</strong><small>m</small></div></div>
+  <div id="mobile-controls" class="mobile-controls" hidden><div id="joystick" class="joystick" role="button" aria-label="拖动摇杆行走" tabindex="0"><span id="joystick-knob"></span></div><button id="touch-run" class="touch-run" aria-label="按住加速">加速</button></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="loading" class="loading-screen"><div class="loading-content"><span class="eyebrow">SHANGHAI EXPLORER</span><div class="loading-skyline" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h2>让城市，在眼前展开。</h2><p id="loading-message">正在准备上海地图与漫游场景…</p><div class="loading-track"><span id="loading-progress"></span></div><button id="retry-button" class="primary-button" hidden>重新加载</button><small>16 个行政区 · 真实地理数据 · 自由探索</small></div></div>
+
+  <dialog id="info-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><span class="eyebrow">ABOUT THIS PROJECT</span><h2>一座可以走进的上海</h2><p>独立的上海全域地图与第三人称漫游项目。可选择全部 16 个区，切换城市俯瞰与街头行走，并查看单独建模的主要地标。</p><dl><dt>地图与建筑</dt><dd>道路、水系与行政区边界来自 OpenStreetMap，建筑轮廓由 Overture Maps 补充。地图按需联网加载；数据覆盖和更新情况因区域而异。缺少高度的普通建筑采用估算高度，主要地标为依据公开资料制作的外形模型。</dd><dt>操作方式</dt><dd>WASD / 方向键行走，Shift 加速；拖动场景转向，滚轮调整镜头远近。Q / E 转动镜头，R 重置视角。手机可使用摇杆与拖动操作。</dd><dt>数据许可</dt><dd>© OpenStreetMap contributors、Overture Maps Foundation · ODbL 1.0；东亚建筑数据 © Qian Shi 等，CC BY 4.0。底图服务由 OpenFreeMap 提供。地图与模型的来源和版本见项目说明。</dd></dl><a href="https://github.com/ecojust/e-resource/tree/master/projects/shanghai" target="_blank" rel="noopener">查看项目说明与模型下载 ↗</a></dialog>
+  <noscript><div class="no-script">请启用 JavaScript 以加载三维地图。</div></noscript>
+  <script type="module" src="src/app.js"></script>
+  <script>if(location.protocol==='file:'){document.getElementById('loading-message').textContent='请在项目目录运行 python -m http.server 8000，然后打开 http://localhost:8000。';document.getElementById('loading-progress').style.width='0';}</script>
+</body>
+</html>
