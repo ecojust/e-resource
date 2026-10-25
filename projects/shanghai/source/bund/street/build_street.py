@@ -1,9 +1,9 @@
-"""Bund pavement/curbs/crossings and photo-proportioned waterside fittings.
+"""Bund v4 mapped roads, pavement, crossings and photo-proportioned waterside fittings.
 Public OSM positions; dimensions and fitting spacing are reconstruction estimates.
 No facade imagery is used as a texture. GLB has local metres, X east/Y up/Z south.
 """
 from pathlib import Path
-import sys,json,math,struct,subprocess
+import sys,json,math,struct,subprocess,hashlib
 import numpy as np
 from shapely.geometry import shape,LineString,Polygon,box,Point,mapping
 from shapely.ops import transform,unary_union,linemerge
@@ -11,6 +11,7 @@ ROOT=Path(__file__).resolve().parent
 PROJECT=Path(sys.argv[1]) if len(sys.argv)>1 else Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(PROJECT/'source/city'))
 from build_district_models import Mesh,local_coordinates
+from road_geometry import assemble as assemble_roads
 ORIGIN=(121.4862,31.2385)
 local=lambda x,y,z=None:local_coordinates(x,y,ORIGIN)
 def metric(g):return transform(local,g)
@@ -18,7 +19,7 @@ def geographic(g):
  scale=math.cos(math.radians(ORIGIN[1]));origin_y=math.asinh(math.tan(math.radians(ORIGIN[1])))
  def inverse(x,z):return ORIGIN[0]+math.degrees(x/(6378137*scale)),math.degrees(math.atan(math.sinh(origin_y-z/(6378137*scale))))
  return transform(inverse,g)
-COLORS={'BundStonePaving':(.39,.40,.37,1),'BundGraniteCurb':(.48,.49,.46,1),'BundRoadPaint':(.82,.83,.76,1),'BundRoadSurface':(.22,.25,.25,1),'BundRailingSteel':(.12,.14,.14,1),'BundLampSilver':(.34,.36,.35,1),'BundLampGlass':(.80,.84,.76,1)}
+COLORS={'BundStonePaving':(.39,.40,.37,1),'BundGraniteCurb':(.48,.49,.46,1),'BundRoadPaint':(.82,.83,.76,1),'BundRoadSurface':(.065,.075,.080,1),'BundRoadYellowPaint':(.62,.43,.055,1),'BundRoadGutter':(.20,.21,.20,1),'BundDrainDark':(.025,.030,.028,1),'BundDrainSteel':(.13,.15,.14,1),'BundRailingSteel':(.12,.14,.14,1),'BundLampSilver':(.34,.36,.35,1),'BundLampGlass':(.80,.84,.76,1)}
 M={name:Mesh() for name in COLORS}
 TRACK_RAIL=False
 RAIL_VERTICES=[]
@@ -81,23 +82,8 @@ for e in osm:
  for l in lines(line):
   if 5<l.length<70 and l.distance(sidewalk)<5:crossings.append((e['id'],l))
 walk_surface=sidewalk.buffer(2.0,cap_style=2,join_style=2).difference(buildings)
-solid('BundStonePaving',walk_surface,0,.075)
-crossing_cuts=unary_union([line.buffer(2.15) for _,line in crossings])
-for line in lines(sidewalk):
- _,n=vector_at(line,line.length/2);sign=1 if n[0]>0 else -1
- curb=line.offset_curve(sign*1.95,join_style=2).buffer(.105,cap_style=2).difference(crossing_cuts)
- solid('BundGraniteCurb',curb,0,.14)
+# Crossing locations also anchor the retained photo-proportioned road lamps.
 for _,line in crossings:
- # The source path is the crossing axis, not an invented road grid.
- start,end=1.8,line.length-1.8
- if end<=start:continue
- path=LineString([line.interpolate(d).coords[0] for d in np.linspace(start,end,20)])
- solid('BundRoadSurface',path.buffer(1.9,cap_style=2),.004,.008)
- for d in np.arange(start+.25,end-.25,1.15):
-  p=np.array(line.interpolate(d).coords[0]);t,n=vector_at(line,d)
-  stripe=Polygon([p-t*.24-n*1.75,p+t*.24-n*1.75,p+t*.24+n*1.75,p-t*.24+n*1.75])
-  solid('BundRoadPaint',stripe,.012,.018)
- # Street-side endpoint is mapped; the small lamp offset and form are inferred.
  ends=[Point(line.coords[0]),Point(line.coords[-1])];point=min(ends,key=lambda p:p.distance(sidewalk))
  x,z=sidewalk.interpolate(sidewalk.project(point)).coords[0];lamp(x+1.65,z+2.8,road=True)
 
@@ -198,6 +184,41 @@ shoreline_audit={'passed':True,'source_tiles':[list(tile) for tile in sorted(exp
  'features':[{'type':'Feature','properties':{'role':role},'geometry':mapping(geographic(g))} for role,g in
  [('merged_water',water.intersection(crop)),('real_west_shoreline',shore),('railing_centerline',rail),('mapped_inner_promenade',inner)]]},separators=(',',':')))
 
+# v4 actual OSM vehicular network, excluding all underground/raised ways.
+road_elements=json.loads((ROOT/'osm-roads.json').read_text())['elements']
+roads=assemble_roads(road_elements,metric,crop,buildings,water,walk_surface,crossings)
+roads['audit']['building_validation_scope']={
+ 'source':'../bund-candidates.json',
+ 'geometry_field':'candidates[*].geometry',
+ 'candidate_count':len(source_candidates),
+ 'candidate_ids':[c['id'] for c in source_candidates],
+ 'candidates_intersecting_street_crop':[c['id'] for c in source_candidates if metric(shape(c['geometry'])).intersects(crop)],
+ 'geometry_sha256':hashlib.sha256(json.dumps({c['id']:c['geometry'] for c in source_candidates},sort_keys=True,separators=(',',':')).encode()).hexdigest(),
+ 'footprint_buffer_m':.08,
+ 'scope':'Only the ten listed Bund candidate ground footprints, clipped to this street crop. Not a check against all Shanghai buildings, neighboring generic buildings, detailed mesh projections, linked parts or related_geometries (including the Bank of China western wing).',
+ 'street_crop_wgs84':[121.4842,31.23545,121.4892,31.2419],
+ 'observed_overlap_m2':roads['audit']['surface_building_overlap_m2']}
+solid('BundRoadSurface',roads['surface'],.002,.020)
+solid('BundStonePaving',walk_surface.union(roads['shoulder']).difference(water),.003,.075)
+solid('BundGraniteCurb',roads['curb'],.006,.14)
+solid('BundRoadGutter',roads['gutter'],.020,.023)
+solid('BundRoadYellowPaint',roads['yellow_curb'],.012,.143)
+solid('BundRoadPaint',roads['lane_paint'].union(roads['zebras']),.025,.029)
+solid('BundRoadYellowPaint',roads['median_paint'],.025,.029)
+for drain in roads['drains']:
+ solid('BundDrainDark',drain['polygon'],.024,.030)
+ p,t,n=drain['center'],drain['tangent'],drain['inward']
+ for offset in np.linspace(-.34,.34,9):
+  a=p+t*offset-n*.115;b=p+t*offset+n*.115
+  bar=LineString([a,b]).buffer(.013,cap_style=2).intersection(drain['polygon'])
+  solid('BundDrainSteel',bar,.030,.035)
+assert roads['audit']['passed'], 'Road/water/building geometric overlap validation failed.'
+(ROOT/'bund-streets-road-check.json').write_text(json.dumps(roads['audit'],ensure_ascii=False,indent=2))
+(ROOT/'bund-streets-road-check.geojson').write_text(json.dumps({'type':'FeatureCollection','features':[
+ {'type':'Feature','properties':{'role':role},'geometry':mapping(geographic(roads[key]))}
+ for role,key in [('asphalt_surface','surface'),('curb','curb'),('gutter','gutter'),('lane_paint','lane_paint'),('central_separation_estimate','median_paint'),('mapped_crossings','zebras'),('sidewalk_infill_estimate','shoulder')]]
+ +[{'type':'Feature','properties':{'role':'OSM_centerline','osm_way':r['id'],'tags':r['tags'],'estimated_width_m':r['width']},'geometry':mapping(geographic(r['line']))} for r in roads['records']]},ensure_ascii=False,separators=(',',':')))
+
 # Pack one primitive per material; no external texture or buffer dependency.
 binary=bytearray();views=[];accessors=[];primitives=[];materials=[]
 def append(data,target,component,type_,count,minimum=None,maximum=None):
@@ -206,17 +227,31 @@ def append(data,target,component,type_,count,minimum=None,maximum=None):
  a={'bufferView':view,'componentType':component,'count':count,'type':type_}
  if minimum is not None:a['min']=minimum;a['max']=maximum
  accessors.append(a);return len(accessors)-1
-triangles=0
+triangles=0;discarded_zero_area_triangles=0
 for name,mesh in M.items():
  if not mesh.indices:continue
- v=np.asarray(mesh.positions,dtype='<f4');n=np.asarray(mesh.normals,dtype='<f4');idx=np.asarray(mesh.indices,dtype='<u4')
+ v=np.asarray(mesh.positions,dtype='<f4');n=np.asarray(mesh.normals,dtype='<f4');idx=np.asarray(mesh.indices,dtype='<u4').reshape(-1,3)
+ # Float32 conversion can collapse sub-millimetre polygon slivers. Remove only
+ # exact zero-area triangles, preserving every measurable construction face.
+ tv=v[idx].astype(float);keep=np.linalg.norm(np.cross(tv[:,1]-tv[:,0],tv[:,2]-tv[:,0]),axis=1)>0
+ discarded_zero_area_triangles+=int((~keep).sum());idx=idx[keep].reshape(-1)
  vi=append(v.tobytes(),34962,5126,'VEC3',len(v),v.min(axis=0).tolist(),v.max(axis=0).tolist());ni=append(n.tobytes(),34962,5126,'VEC3',len(n));ii=append(idx.tobytes(),34963,5125,'SCALAR',len(idx))
- mi=len(materials);materials.append({'name':name,'pbrMetallicRoughness':{'baseColorFactor':COLORS[name],'metallicFactor':.45 if 'Steel' in name or 'Silver' in name else .02,'roughnessFactor':.35 if 'Glass' in name else .72}})
+ mi=len(materials);materials.append({'name':name,'pbrMetallicRoughness':{'baseColorFactor':COLORS[name],'metallicFactor':.45 if 'Steel' in name or 'Silver' in name else .02,'roughnessFactor':.35 if 'Glass' in name else .94 if name=='BundRoadSurface' else .72}})
  primitives.append({'attributes':{'POSITION':vi,'NORMAL':ni},'indices':ii,'material':mi});triangles+=len(idx)//3
-gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v3'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
+gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v4'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
 j=json.dumps(gltf,separators=(',',':')).encode();j+=b' '*((-len(j))%4);binary+=b'\0'*((-len(binary))%4)
 output=ROOT/'bund-streets.glb';output.write_bytes(struct.pack('<III',0x46546c67,2,12+8+len(j)+8+len(binary))+struct.pack('<II',len(j),0x4e4f534a)+j+struct.pack('<II',len(binary),0x004e4942)+binary)
 metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.08,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
 metadata['shoreline_validation']=shoreline_audit
+metadata['road_validation']=roads['audit']
+metadata['version']=4
+metadata['source_roads']='osm-roads.json / OpenStreetMap ODbL-1.0'
+metadata['reference_2025']='street-reference-evidence.json: Suicasmo CC0 street-level facade views, 2025-05-01'
+metadata['accuracy']+=' Ground road centerlines/lane counts follow OSM; widths and paint/drain dimensions are estimated and itemized in road_validation.'
 metadata['source_tiles']=[list(tile) for tile in sorted(expected_tiles)]
-(ROOT/'bund-streets.json').write_text(json.dumps(metadata,ensure_ascii=False,indent=2));assert output.stat().st_size<100_000_000;print(json.dumps(metadata,ensure_ascii=False))
+metadata['sha256']=hashlib.sha256(output.read_bytes()).hexdigest()
+for name,mesh in M.items():
+ assert np.isfinite(np.asarray(mesh.positions)).all(), 'Nonfinite vertices in '+name
+ if mesh.indices:assert min(mesh.indices)>=0 and max(mesh.indices)<len(mesh.positions), 'Invalid indices in '+name
+metadata['geometry_validation']={'finite_vertices':True,'indices_in_range':True,'zero_area_triangles_removed':discarded_zero_area_triangles,'exported_zero_area_triangles':0,'single_file_under_100MB':output.stat().st_size<100_000_000}
+(ROOT/'bund-streets.json').write_text(json.dumps(metadata,ensure_ascii=False,indent=2));assert output.stat().st_size<100_000_000;print(json.dumps({'bytes':metadata['bytes'],'triangles':triangles,'sha256':metadata['sha256'],'roads':len(roads['records']),'shoreline':shoreline_audit},ensure_ascii=False))
