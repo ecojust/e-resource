@@ -1,0 +1,4027 @@
+{
+  "version": 2,
+  "status": "geometry verified; architectural measurements require photographic/source-specific confirmation",
+  "crs": "WGS84 / EPSG:4326",
+  "area_and_bbox_length_measurement_crs": "EPSG:32651 only for areas and scalar lengths; UTM azimuths are explicitly named and not model yaw",
+  "model_geometry_crs": "WGS84 normalized Web Mercator deltas scaled by cos(origin latitude), exactly matching city/viewer metre frame",
+  "model_coordinates": "X east, Y up, Z south, relative to candidate origin",
+  "source": "OpenStreetMap live API + Overture Maps 2026-10-21.0 retained source UUIDs",
+  "license": "ODbL-1.0; © OpenStreetMap contributors; © Overture Maps Foundation",
+  "candidates": [
+    {
+      "id": "bund02",
+      "name_zh": "上海总会",
+      "name_en": "Shanghai Club Building",
+      "historic_bund_number": "2",
+      "current_osm_name": "华尔道夫酒店",
+      "osm": {
+        "type": "way",
+        "id": 178410325,
+        "url": "https://www.openstreetmap.org/way/178410325",
+        "architectural_tags": {
+          "addr:housenumber": "2",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "yes",
+          "building:levels": "7",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "1989年6号",
+          "name": "华尔道夫酒店",
+          "name:en": "Waldorf-Astoria Shanghai on the Bund",
+          "name:zh": "华尔道夫酒店",
+          "name:zh-Hans": "华尔道夫酒店",
+          "name:zh-Hant": "華爾道夫飯店",
+          "start_date": "1910",
+          "website": "http://www.waldorfastoria.com"
+        }
+      },
+      "origin_longitude": 121.48654591540638,
+      "origin_latitude": 31.235791522738786,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.486209,
+              31.2358692
+            ],
+            [
+              121.4863102,
+              31.2355774
+            ],
+            [
+              121.4867049,
+              31.2356775
+            ],
+            [
+              121.4867138,
+              31.2356519
+            ],
+            [
+              121.486879,
+              31.2356937
+            ],
+            [
+              121.4867689,
+              31.2360111
+            ],
+            [
+              121.486209,
+              31.2358692
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.486209,
+        31.2355774,
+        121.486879,
+        31.2360111
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -32.06850868505181,
+              8.646996719428207
+            ],
+            [
+              -22.436022257949578,
+              -23.8360072372217
+            ],
+            [
+              15.132578460133317,
+              -12.692945560477213
+            ],
+            [
+              15.979704242482638,
+              -15.542720699562498
+            ],
+            [
+              31.70388168998752,
+              -10.88957183240705
+            ],
+            [
+              21.22426948053596,
+              24.443257313078778
+            ],
+            [
+              -32.06850868505181,
+              8.646996719428207
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 1925.294,
+        "oriented_bbox_long_m": 55.71,
+        "oriented_bbox_short_m": 36.716,
+        "courtyard_count": 0,
+        "exterior_vertices": 6,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 55.70928960118257,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 74.35143209085474
+          },
+          {
+            "length_m": 36.71576954585816,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 164.3510717807036
+          },
+          {
+            "length_m": 55.70978499322574,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 254.35148454259235
+          },
+          {
+            "length_m": 36.715718546254735,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 344.3518448516032
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 65.944,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 36.854,
+            "outward_azimuth_deg": 73.48,
+            "road_distance_m": 18.577,
+            "endpoints_wgs84": [
+              [
+                121.486879,
+                31.2356937
+              ],
+              [
+                121.4867689,
+                31.236011099999992
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                31.704,
+                -10.89
+              ],
+              [
+                21.224,
+                24.443
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "6f4fdeec-6dff-49a9-be52-a4a324392f6e",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "华尔道夫酒店",
+          "names": "{\"common\":{\"en\":\"Waldorf-Astoria Shanghai on the Bund\",\"zh\":\"华尔道夫酒店\",\"zh-Hans\":\"华尔道夫酒店\",\"zh-Hant\":\"華爾道夫飯店\"},\"primary\":\"华尔道夫酒店\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w178410325@7",
+              "update_time": "2023-08-13T12:58:27.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "num_floors": 7,
+          "has_parts": false,
+          "id": "6f4fdeec-6dff-49a9-be52-a4a324392f6e",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 2
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48688078,
+                31.23569236
+              ],
+              [
+                121.48671448,
+                31.23565108
+              ],
+              [
+                121.48670375,
+                31.2356786
+              ],
+              [
+                121.48647308,
+                31.23561897
+              ],
+              [
+                121.48647308,
+                31.235619159474716
+              ],
+              [
+                121.48631215,
+                31.23557769
+              ],
+              [
+                121.48621023,
+                31.23587124
+              ],
+              [
+                121.48676813,
+                31.23600885
+              ],
+              [
+                121.48688078,
+                31.23569236
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.990148
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 22.400000000000002,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "6f4fdeec-6dff-49a9-be52-a4a324392f6e"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [],
+      "height_and_floor_evidence": [
+        {
+          "kind": "floor_structure",
+          "status": "official_historical_gazetteer",
+          "data": {
+            "above_ground": 5,
+            "below_ground": 1,
+            "source": "https://web.archive.org/web/20200927112603/http://www.shtong.gov.cn/Newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108914.html",
+            "quote": "建筑地面5层，地下1层。"
+          }
+        },
+        {
+          "kind": "reported_height",
+          "status": "reported, not a surveyed total-height constraint",
+          "data": {
+            "value_m": 26.9,
+            "datum": "unspecified; article does not distinguish cornice, roof ridge or pavilion finial",
+            "status": "reported, not a surveyed total-height constraint",
+            "source": "https://www.163.com/dy/article/HRTM2VOH0514IGIT.html",
+            "publisher": "上海黄浦官方账号，记者张雯，2023-01-25",
+            "quote": "高26.9米，共6层，包括地面5层和地下1层。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bund03",
+      "name_zh": "有利大楼 / 外滩3号",
+      "name_en": "Union Building",
+      "historic_bund_number": "3",
+      "current_osm_name": "有利大楼",
+      "osm": {
+        "type": "way",
+        "id": 178408816,
+        "url": "https://www.openstreetmap.org/way/178408816",
+        "architectural_tags": {
+          "addr:housenumber": "3",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "commercial",
+          "building:levels": "7",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "A-Ⅲ-010",
+          "name": "有利大楼",
+          "name:en": "Union Building",
+          "name:zh": "有利大楼",
+          "name:zh-Hans": "有利大楼",
+          "name:zh-Hant": "有利大樓",
+          "start_date": "1922",
+          "wikidata": "Q7885446",
+          "wikipedia": "en:Union Building"
+        }
+      },
+      "origin_longitude": 121.4863058897794,
+      "origin_latitude": 31.23607631357823,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4858971,
+              31.2360894
+            ],
+            [
+              121.4859856,
+              31.2358738
+            ],
+            [
+              121.4867231,
+              31.2360439
+            ],
+            [
+              121.4865945,
+              31.2362636
+            ],
+            [
+              121.4865194,
+              31.2362774
+            ],
+            [
+              121.4858971,
+              31.2360894
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4858971,
+        31.2358738,
+        121.4867231,
+        31.2362774
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -38.90958627776908,
+              1.456773908836723
+            ],
+            [
+              -30.48594518088346,
+              -22.543684244511173
+            ],
+            [
+              39.71106395667388,
+              -3.608262403961839
+            ],
+            [
+              27.47060920976517,
+              20.848649770307492
+            ],
+            [
+              20.322412076893894,
+              22.384861900382525
+            ],
+            [
+              -38.90958627776908,
+              1.456773908836723
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 1966.14,
+        "oriented_bbox_long_m": 72.553,
+        "oriented_bbox_short_m": 30.856,
+        "courtyard_count": 0,
+        "exterior_vertices": 5,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 72.55337672776434,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 71.41391462362144
+          },
+          {
+            "length_m": 30.855637965100684,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 161.41448583682464
+          },
+          {
+            "length_m": 72.55273332948667,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 251.41386231984302
+          },
+          {
+            "length_m": 30.85570419683615,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 341.41329111298404
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 61.577,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 27.349,
+            "outward_azimuth_deg": 63.412,
+            "road_distance_m": 18.027,
+            "endpoints_wgs84": [
+              [
+                121.48672310000002,
+                31.23604389999999
+              ],
+              [
+                121.48659450000001,
+                31.236263600000004
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                39.711,
+                -3.608
+              ],
+              [
+                27.471,
+                20.849
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "0c49c288-a11e-4d5a-85c2-737bc7e2393d",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "有利大楼",
+          "names": "{\"common\":{\"en\":\"Union Building\",\"zh\":\"有利大楼\",\"zh-Hans\":\"有利大楼\",\"zh-Hant\":\"有利大樓\"},\"primary\":\"有利大楼\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w178408816@9",
+              "update_time": "2023-08-13T12:58:27.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "subtype": "commercial",
+          "num_floors": 7,
+          "has_parts": false,
+          "id": "0c49c288-a11e-4d5a-85c2-737bc7e2393d",
+          "class": "commercial",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 2
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48659647,
+                31.23626571
+              ],
+              [
+                121.48672521,
+                31.23604554
+              ],
+              [
+                121.48647308,
+                31.23598591
+              ],
+              [
+                121.48647308,
+                31.235987739702413
+              ],
+              [
+                121.48598492,
+                31.23587583
+              ],
+              [
+                121.48589909,
+                31.23609141
+              ],
+              [
+                121.48652136,
+                31.23627947
+              ],
+              [
+                121.48659647,
+                31.23626571
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.983485
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 22.400000000000002,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "0c49c288-a11e-4d5a-85c2-737bc7e2393d"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [
+        "Riverfront direction is not the principal entrance; heritage references place entrance on Guangdong Road. Model both street faces."
+      ],
+      "height_and_floor_evidence": [
+        {
+          "kind": "floor_structure",
+          "status": "official_historical_gazetteer",
+          "data": {
+            "above_ground": 6,
+            "entrance_tower_local_levels": 7,
+            "source": "https://web.archive.org/web/20200927105220/http://www.shtong.gov.cn/Newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108915.html",
+            "quote": "正立面是三段式，高6层，入口处7层。"
+          }
+        },
+        {
+          "kind": "reported_height",
+          "status": "secondary search-result value only; not confirmed in official gazetteer",
+          "data": {
+            "value_m": 45.75,
+            "datum": "unspecified; unverified whether includes finial or pole",
+            "status": "secondary search-result value only; not confirmed in official gazetteer",
+            "source": "https://baike.baidu.com/item/上海有利大廈/3939684",
+            "corroborating_secondary": "https://sh.bendibao.com/tour/2016107/170191.shtm",
+            "warning": "Bendibao chronology contains a questionable 1860 first-tallest claim; do not use it as authority for construction chronology."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bund12",
+      "name_zh": "汇丰银行大楼",
+      "name_en": "HSBC Building",
+      "historic_bund_number": "12",
+      "current_osm_name": "上海浦东发展银行",
+      "osm": {
+        "type": "relation",
+        "id": 2380996,
+        "url": "https://www.openstreetmap.org/relation/2380996",
+        "architectural_tags": {
+          "addr:housenumber": "10-12",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "amenity": "bank",
+          "brand": "上海浦东发展银行",
+          "brand:en": "Shanghai Pudong Development Bank",
+          "brand:wikidata": "Q1479076",
+          "brand:wikipedia": "zh:上海浦东发展银行",
+          "brand:zh": "上海浦东发展银行",
+          "building": "office",
+          "building:levels": "7",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "1989年1号",
+          "name": "上海浦东发展银行",
+          "name:en": "Shanghai Pudong Development Bank",
+          "name:zh": "上海浦东发展银行",
+          "start_date": "1923",
+          "type": "multipolygon"
+        }
+      },
+      "origin_longitude": 121.48535376371086,
+      "origin_latitude": 31.23796434896247,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4849574,
+              31.2382928
+            ],
+            [
+              121.4854099,
+              31.2383464
+            ],
+            [
+              121.4854052,
+              31.2383638
+            ],
+            [
+              121.4855912,
+              31.2383822
+            ],
+            [
+              121.4856239,
+              31.2383537
+            ],
+            [
+              121.4857325,
+              31.2376105
+            ],
+            [
+              121.4854958,
+              31.2375914
+            ],
+            [
+              121.4854905,
+              31.237569
+            ],
+            [
+              121.4853911,
+              31.2375583
+            ],
+            [
+              121.485393,
+              31.2375754
+            ],
+            [
+              121.4851558,
+              31.2375433
+            ],
+            [
+              121.4851449,
+              31.2376401
+            ],
+            [
+              121.4851075,
+              31.2376373
+            ],
+            [
+              121.4849574,
+              31.2382928
+            ]
+          ],
+          [
+            [
+              121.4852356,
+              31.2381744
+            ],
+            [
+              121.4854959,
+              31.2382026
+            ],
+            [
+              121.4855142,
+              31.2380792
+            ],
+            [
+              121.4854569,
+              31.238073
+            ],
+            [
+              121.4854855,
+              31.2378803
+            ],
+            [
+              121.4855464,
+              31.2378869
+            ],
+            [
+              121.4855648,
+              31.2377624
+            ],
+            [
+              121.485301,
+              31.2377338
+            ],
+            [
+              121.4852356,
+              31.2381744
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4849574,
+        31.2375433,
+        121.4857325,
+        31.2383822
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -37.726089440699035,
+              36.56306581327928
+            ],
+            [
+              5.3430791129864215,
+              42.5298129582454
+            ],
+            [
+              4.8957308437794484,
+              44.466780110124844
+            ],
+            [
+              22.59930068036841,
+              46.515067601649676
+            ],
+            [
+              25.711702473406604,
+              43.34244855896777
+            ],
+            [
+              36.04830292683215,
+              -39.390212545922346
+            ],
+            [
+              13.519082602250744,
+              -41.5164066411247
+            ],
+            [
+              13.014626042580751,
+              -44.00995309429667
+            ],
+            [
+              3.5536860334533364,
+              -45.201066593949164
+            ],
+            [
+              3.734528951224005,
+              -43.29751131081912
+            ],
+            [
+              -18.842281614733622,
+              -46.87085164569871
+            ],
+            [
+              -19.879748879981413,
+              -36.09516744457539
+            ],
+            [
+              -23.439498943579174,
+              -36.4068609453454
+            ],
+            [
+              -37.726089440699035,
+              36.56306581327928
+            ]
+          ],
+          [
+            [
+              -11.246879072423315,
+              23.382800535425233
+            ],
+            [
+              13.528600651337545,
+              26.522017624263636
+            ],
+            [
+              15.270403489494415,
+              12.785166787150073
+            ],
+            [
+              9.816561814524327,
+              12.09498512743557
+            ],
+            [
+              12.53872362746597,
+              -9.356283542006901
+            ],
+            [
+              18.33521504250898,
+              -8.621575529979046
+            ],
+            [
+              20.08653592975265,
+              -22.480831638723956
+            ],
+            [
+              -5.022075483641741,
+              -25.664561786539508
+            ],
+            [
+              -11.246879072423315,
+              23.382800535425233
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 4050.862,
+        "oriented_bbox_long_m": 88.121,
+        "oriented_bbox_short_m": 63.657,
+        "courtyard_count": 1,
+        "exterior_vertices": 13,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 63.656720363317895,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 80.33055690203484
+          },
+          {
+            "length_m": 88.1212521276829,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 170.33059389363575
+          },
+          {
+            "length_m": 63.65672297579202,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 260.33059388728634
+          },
+          {
+            "length_m": 88.12121103635248,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 350.3305955922563
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 82.416,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 83.376,
+            "outward_azimuth_deg": 82.878,
+            "road_distance_m": 18.938,
+            "endpoints_wgs84": [
+              [
+                121.48573250000001,
+                31.237610500000002
+              ],
+              [
+                121.48562390000001,
+                31.238353699999998
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                36.048,
+                -39.39
+              ],
+              [
+                25.712,
+                43.342
+              ]
+            ]
+          },
+          {
+            "length_m": 2.544,
+            "outward_azimuth_deg": 101.437,
+            "road_distance_m": 45.518,
+            "endpoints_wgs84": [
+              [
+                121.4854905,
+                31.237569000000004
+              ],
+              [
+                121.48549580000001,
+                31.237591400000007
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                13.015,
+                -44.01
+              ],
+              [
+                13.519,
+                -41.516
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "bc1649bc-9916-47cf-a174-fb2062d3d5c0",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "上海浦东发展银行",
+          "names": "{\"common\":{\"en\":\"Shanghai Pudong Development Bank\",\"zh\":\"上海浦东发展银行\"},\"primary\":\"上海浦东发展银行\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "r2380996@7",
+              "update_time": "2025-08-22T07:34:59.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "subtype": "commercial",
+          "num_floors": 7,
+          "has_parts": false,
+          "id": "bc1649bc-9916-47cf-a174-fb2062d3d5c0",
+          "class": "office",
+          "version": 3,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 1
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48573279,
+                31.23760962
+              ],
+              [
+                121.48549676,
+                31.23759128
+              ],
+              [
+                121.48549139,
+                31.23756834
+              ],
+              [
+                121.48538947,
+                31.23755917
+              ],
+              [
+                121.48539484,
+                31.23757752
+              ],
+              [
+                121.48515344,
+                31.23754541
+              ],
+              [
+                121.48514271,
+                31.23764173
+              ],
+              [
+                121.48510516,
+                31.23763714
+              ],
+              [
+                121.48495495,
+                31.23829304
+              ],
+              [
+                121.48541093,
+                31.23834808
+              ],
+              [
+                121.48540556,
+                31.23836184
+              ],
+              [
+                121.48559332,
+                31.23838019
+              ],
+              [
+                121.48562551,
+                31.23835267
+              ],
+              [
+                121.48573279,
+                31.23760962
+              ]
+            ],
+            [
+              [
+                121.4855665,
+                31.23776098
+              ],
+              [
+                121.48554504,
+                31.23788482
+              ],
+              [
+                121.48548603,
+                31.23788024
+              ],
+              [
+                121.48545921,
+                31.23807288
+              ],
+              [
+                121.48551285,
+                31.23807747
+              ],
+              [
+                121.48549676,
+                31.23820131
+              ],
+              [
+                121.4852339,
+                31.23817379
+              ],
+              [
+                121.48530364,
+                31.23773346
+              ],
+              [
+                121.4855665,
+                31.23776098
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.985571
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 22.400000000000002,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "bc1649bc-9916-47cf-a174-fb2062d3d5c0"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [],
+      "height_and_floor_evidence": [
+        {
+          "kind": "floor_structure",
+          "status": "published_secondary_architecture_description",
+          "source": "https://en.wikipedia.org/wiki/HSBC_Building,_the_Bund",
+          "statement": "Main structure five storeys; central section seven storeys; basement one and a half storeys. Six Ionic columns span floors2–4; central dome and triangular pediment. This conflicts with extruding the entire footprint as seven equal 3.2m floors.",
+          "total_height_m": null
+        }
+      ]
+    },
+    {
+      "id": "bund13",
+      "name_zh": "江海关大楼",
+      "name_en": "Customs House",
+      "historic_bund_number": "13",
+      "current_osm_name": "上海海关",
+      "osm": {
+        "type": "way",
+        "id": 178407318,
+        "url": "https://www.openstreetmap.org/way/178407318",
+        "architectural_tags": {
+          "addr:housenumber": "13",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "yes",
+          "building:levels": "7",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "1989年4号",
+          "name": "上海海关",
+          "name:en": "Shanghai Customs",
+          "start_date": "1927",
+          "wikidata": "Q5196503",
+          "wikimedia_commons": "Category:Customs House, Shanghai",
+          "wikipedia": "en:Custom House, Shanghai"
+        }
+      },
+      "origin_longitude": 121.48543542650972,
+      "origin_latitude": 31.238615036351664,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4852915,
+              31.2387658
+            ],
+            [
+              121.4852984,
+              31.2387146
+            ],
+            [
+              121.4853261,
+              31.2385075
+            ],
+            [
+              121.4853351,
+              31.2384403
+            ],
+            [
+              121.4853999,
+              31.2384467
+            ],
+            [
+              121.4855179,
+              31.2384583
+            ],
+            [
+              121.4855794,
+              31.2384643
+            ],
+            [
+              121.4855703,
+              31.2385319
+            ],
+            [
+              121.4855417,
+              31.2387449
+            ],
+            [
+              121.4855357,
+              31.2387898
+            ],
+            [
+              121.4854616,
+              31.2387825
+            ],
+            [
+              121.48535,
+              31.2387715
+            ],
+            [
+              121.4852915,
+              31.2387658
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4852915,
+        31.2384403,
+        121.4855794,
+        31.2387898
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -13.698900349676082,
+              16.782945956471266
+            ],
+            [
+              -13.042159540569111,
+              11.083380475573902
+            ],
+            [
+              -10.40567832332162,
+              -11.970885095065753
+            ],
+            [
+              -9.549059876425124,
+              -19.45154369939327
+            ],
+            [
+              -3.3814070622870727,
+              -18.739100251794635
+            ],
+            [
+              7.849812567736819,
+              -17.447796380607834
+            ],
+            [
+              13.703371951255981,
+              -16.77988052311827
+            ],
+            [
+              12.837235522187283,
+              -9.254692260466904
+            ],
+            [
+              10.115092458627037,
+              14.456365143094903
+            ],
+            [
+              9.544013494480236,
+              19.45461833860274
+            ],
+            [
+              2.4911882855764946,
+              18.6419845840949
+            ],
+            [
+              -8.130880448906613,
+              17.41746808575925
+            ],
+            [
+              -13.698900349676082,
+              16.782945956471266
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 850.304,
+        "oriented_bbox_long_m": 36.34,
+        "oriented_bbox_short_m": 23.422,
+        "courtyard_count": 0,
+        "exterior_vertices": 12,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 36.339823666144994,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 354.2204899947814
+          },
+          {
+            "length_m": 23.421560050062475,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 84.22024584460553
+          },
+          {
+            "length_m": 36.3398511487621,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 174.2200689237972
+          },
+          {
+            "length_m": 23.421827114255244,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 264.22031307449924
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 83.772,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 7.575,
+            "outward_azimuth_deg": 83.434,
+            "road_distance_m": 21.698,
+            "endpoints_wgs84": [
+              [
+                121.48557940000002,
+                31.238464299999993
+              ],
+              [
+                121.4855703,
+                31.2385319
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                13.703,
+                -16.78
+              ],
+              [
+                12.837,
+                -9.255
+              ]
+            ]
+          },
+          {
+            "length_m": 23.867,
+            "outward_azimuth_deg": 83.451,
+            "road_distance_m": 21.804,
+            "endpoints_wgs84": [
+              [
+                121.4855703,
+                31.2385319
+              ],
+              [
+                121.48554170000001,
+                31.238744899999997
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                12.837,
+                -9.255
+              ],
+              [
+                10.115,
+                14.456
+              ]
+            ]
+          },
+          {
+            "length_m": 5.031,
+            "outward_azimuth_deg": 83.482,
+            "road_distance_m": 21.9,
+            "endpoints_wgs84": [
+              [
+                121.48554170000001,
+                31.238744899999997
+              ],
+              [
+                121.48553570000001,
+                31.2387898
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                10.115,
+                14.456
+              ],
+              [
+                9.544,
+                19.455
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "6d8beca9-15a2-4a16-92ba-7f10f8ad6cc4",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "上海海关",
+          "names": "{\"common\":{\"en\":\"Shanghai Customs\"},\"primary\":\"上海海关\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w178407318@9",
+              "update_time": "2023-11-05T22:06:03.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "num_floors": 7,
+          "has_parts": false,
+          "id": "6d8beca9-15a2-4a16-92ba-7f10f8ad6cc4",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 1
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48535192,
+                31.23877005
+              ],
+              [
+                121.48553431,
+                31.2387884
+              ],
+              [
+                121.48557723,
+                31.23846275
+              ],
+              [
+                121.48533583,
+                31.23843981
+              ],
+              [
+                121.48529291,
+                31.23876547
+              ],
+              [
+                121.48535192,
+                31.23877005
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.981133
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 22.400000000000002,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": true
+      },
+      "replacement": {
+        "building_ids": [
+          "6d8beca9-15a2-4a16-92ba-7f10f8ad6cc4"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": [
+          {
+            "id": "70c7c81c-2fcb-449d-bb8f-d7b2c71a9e20",
+            "source_layer": "building",
+            "name": null,
+            "contained_fraction": 1.0,
+            "area_m2": 57.289,
+            "source_properties": {
+              "is_underground": false,
+              "@geometry_source": "OpenStreetMap",
+              "sources": [
+                {
+                  "resource": "planet",
+                  "version": "2026-09-06T00:00:00.000Z",
+                  "license": "ODbL-1.0",
+                  "record_id": "w178407326@2",
+                  "update_time": "2016-10-11T09:34:38.000Z",
+                  "provider": "osm",
+                  "property": "",
+                  "dataset": "OpenStreetMap"
+                }
+              ],
+              "num_floors": 10,
+              "has_parts": false,
+              "id": "70c7c81c-2fcb-449d-bb8f-d7b2c71a9e20",
+              "version": 1,
+              "source_layer": "building",
+              "district_id": "310101",
+              "district_name": "黄浦区",
+              "renderable": true,
+              "fragment_count": 1
+            },
+            "status": "geometric containment only; inspect photos before replacement"
+          }
+        ],
+        "optional_groups": [
+          {
+            "id": "customs-roof-components",
+            "building_ids": [
+              "70c7c81c-2fcb-449d-bb8f-d7b2c71a9e20",
+              "3272c4d2-21fc-4459-afd3-835d7b156493",
+              "3c97dcf8-b7df-43ee-a5af-7940168a4f2c",
+              "be49dcb4-eb0f-45d9-9e85-b7ca28834553",
+              "da79d4f8-d796-407c-b945-a5febe856f7f"
+            ],
+            "building_part_ids": [],
+            "requires_actual_modeled_coverage_confirmation": true,
+            "affiliation_evidence_file": "customs-components.json",
+            "scope": "central clock source body and four exact roof-corner pavilion footprints; excludes western rear wing"
+          }
+        ]
+      },
+      "parts": [],
+      "verified_height_evidence": [
+        {
+          "height_m": 79.2,
+          "body_height_m": 36.2,
+          "clock_tower_above_body_m": 43.0,
+          "source": "https://web.archive.org/web/20100610110157/http://shanghai.customs.gov.cn/publish/portal27/tab8419/module26899/info82241.htm",
+          "authority": "Shanghai Customs official description (archived)",
+          "status": "official published approximate dimension",
+          "quote": "海关大楼主楼高度约120英尺（合36.2米），钟楼高度约140英尺（合43米），大楼总高度约260英尺（合79.2米）"
+        }
+      ],
+      "geometry_notes": [
+        "This 850m² OSM polygon is the east/front building only. Existing rear wing has separate geometry; preserve it unless separately modeled."
+      ]
+    },
+    {
+      "id": "bund15",
+      "name_zh": "华俄道胜银行大楼",
+      "name_en": "Russo-Chinese Bank Building",
+      "historic_bund_number": "15",
+      "current_osm_name": "上海外汇交易中心",
+      "osm": {
+        "type": "way",
+        "id": 178405875,
+        "url": "https://www.openstreetmap.org/way/178405875",
+        "architectural_tags": {
+          "addr:housenumber": "15",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "yes",
+          "building:levels": "5",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "A-Ⅲ-005",
+          "name": "上海外汇交易中心",
+          "name:en": "Shanghai Foreign Exchange",
+          "name:ko": "상하이 외환 트레이딩 센터",
+          "name:zh": "上海外汇交易中心",
+          "name:zh-Hans": "上海外汇交易中心",
+          "name:zh-Hant": "上海外匯交易中心",
+          "start_date": "1903"
+        }
+      },
+      "origin_longitude": 121.48523498524573,
+      "origin_latitude": 31.239574220872143,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4849792,
+              31.2396787
+            ],
+            [
+              121.4850765,
+              31.2393769
+            ],
+            [
+              121.4854743,
+              31.2394628
+            ],
+            [
+              121.4854132,
+              31.23977
+            ],
+            [
+              121.4849792,
+              31.2396787
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4849792,
+        31.2393769,
+        121.4854743,
+        31.23977
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.34534832192632,
+              11.630569743852048
+            ],
+            [
+              -15.084445156201275,
+              -21.96563606804267
+            ],
+            [
+              22.777705707783603,
+              -12.403307436683688
+            ],
+            [
+              16.96227730612491,
+              21.79405540657225
+            ],
+            [
+              -24.34534832192632,
+              11.630569743852048
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 1411.343,
+        "oriented_bbox_long_m": 42.56,
+        "oriented_bbox_short_m": 34.701,
+        "courtyard_count": 0,
+        "exterior_vertices": 4,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 42.559879441688445,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 77.02822371261533
+          },
+          {
+            "length_m": 34.70109991594149,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 167.02866272988737
+          },
+          {
+            "length_m": 42.55987944095353,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 257.0282237207504
+          },
+          {
+            "length_m": 34.70109990989865,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 347.028662728674
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 83.094,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 34.688,
+            "outward_azimuth_deg": 80.349,
+            "road_distance_m": 20.285,
+            "endpoints_wgs84": [
+              [
+                121.4854743,
+                31.239462799999984
+              ],
+              [
+                121.4854132,
+                31.239769999999996
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                22.778,
+                -12.403
+              ],
+              [
+                16.962,
+                21.794
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "de00bf90-1da1-41f4-bab7-93b950d90c7b",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "上海外汇交易中心",
+          "names": "{\"common\":{\"ko\":\"상하이 외환 트레이딩 센터\",\"en\":\"Shanghai Foreign Exchange\",\"zh\":\"上海外汇交易中心\",\"zh-Hans\":\"上海外汇交易中心\",\"zh-Hant\":\"上海外匯交易中心\"},\"primary\":\"上海外汇交易中心\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w178405875@7",
+              "update_time": "2023-08-15T05:56:29.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "num_floors": 5,
+          "has_parts": false,
+          "id": "de00bf90-1da1-41f4-bab7-93b950d90c7b",
+          "version": 2,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 1
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48541093,
+                31.23976994
+              ],
+              [
+                121.4854753,
+                31.23946263
+              ],
+              [
+                121.48507833,
+                31.23937549
+              ],
+              [
+                121.48498178,
+                31.2396782
+              ],
+              [
+                121.48541093,
+                31.23976994
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.988934
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 16.0,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "de00bf90-1da1-41f4-bab7-93b950d90c7b"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [],
+      "height_and_floor_evidence": [
+        {
+          "kind": "unresolved_height",
+          "source": "https://en.wikipedia.org/wiki/Russo-Chinese_Bank_Building",
+          "status": "do not infer metric height from OSM floor count alone",
+          "total_height_m": null
+        }
+      ]
+    },
+    {
+      "id": "bund17",
+      "name_zh": "字林西报大楼 / 友邦大厦",
+      "name_en": "North China Daily News Building",
+      "historic_bund_number": "17",
+      "current_osm_name": "友邦大厦",
+      "osm": {
+        "type": "way",
+        "id": 1196704497,
+        "url": "https://www.openstreetmap.org/way/1196704497",
+        "architectural_tags": {
+          "addr:housenumber": "17",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "yes",
+          "building:levels": "10",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "A-Ⅲ-007",
+          "name": "友邦大厦",
+          "name:en": "American International Assurance Building",
+          "name:zh": "友邦大厦",
+          "name:zh-Hans": "友邦大厦",
+          "name:zh-Hant": "友邦塔樓",
+          "start_date": "1924",
+          "wikidata": "Q7054807"
+        }
+      },
+      "origin_longitude": 121.48510967852314,
+      "origin_latitude": 31.24008960624246,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.484817,
+              31.2400915
+            ],
+            [
+              121.4848763,
+              31.2399512
+            ],
+            [
+              121.4853869,
+              31.2400789
+            ],
+            [
+              121.4853516,
+              31.2402324
+            ],
+            [
+              121.484817,
+              31.2400915
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.484817,
+        31.2399512,
+        121.4853869,
+        31.2402324
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -27.856656448087854,
+              0.21081212640494257
+            ],
+            [
+              -22.212580793444992,
+              -15.407301145274698
+            ],
+            [
+              26.385480416661856,
+              -1.1918133915060978
+            ],
+            [
+              23.025684959559193,
+              15.895740392908433
+            ],
+            [
+              -27.856656448087854,
+              0.21081212640494257
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 877.71,
+        "oriented_bbox_long_m": 53.263,
+        "oriented_bbox_short_m": 17.255,
+        "courtyard_count": 0,
+        "exterior_vertices": 4,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 53.2627026805987,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 73.73254667654527
+          },
+          {
+            "length_m": 17.254525901578447,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 163.73251274341
+          },
+          {
+            "length_m": 53.262702680524136,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 253.73254667704367
+          },
+          {
+            "length_m": 17.254525901115123,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 343.7325127431624
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 82.844,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 17.415,
+            "outward_azimuth_deg": 78.876,
+            "road_distance_m": 20.577,
+            "endpoints_wgs84": [
+              [
+                121.48538690000001,
+                31.2400789
+              ],
+              [
+                121.4853516,
+                31.240232399999996
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                26.385,
+                -1.192
+              ],
+              [
+                23.026,
+                15.896
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "c7d36a36-851c-4a58-9827-94a3a81531dd",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "友邦大厦",
+          "names": "{\"common\":{\"en\":\"American International Assurance Building\",\"zh\":\"友邦大厦\",\"zh-Hans\":\"友邦大厦\",\"zh-Hant\":\"友邦塔樓\"},\"primary\":\"友邦大厦\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196704497@1",
+              "update_time": "2023-08-10T07:35:51.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "num_floors": 10,
+          "has_parts": false,
+          "id": "c7d36a36-851c-4a58-9827-94a3a81531dd",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 1
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48535192,
+                31.24023318
+              ],
+              [
+                121.48538947,
+                31.24007724
+              ],
+              [
+                121.48487449,
+                31.2399534
+              ],
+              [
+                121.48481548,
+                31.240091
+              ],
+              [
+                121.48535192,
+                31.24023318
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.985841
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 32.0,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "c7d36a36-851c-4a58-9827-94a3a81531dd"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [],
+      "height_and_floor_evidence": [
+        {
+          "kind": "floor_conflict",
+          "status": "requires photographic partitioning, not uniform floors",
+          "source": "https://zh.wikipedia.org/wiki/字林大楼",
+          "reported_floors": 9,
+          "osm_floors": 10,
+          "photo_structure": "two-storey base + five middle window rows + upper recessed gallery and twin roof pavilions",
+          "total_height_m": null
+        }
+      ]
+    },
+    {
+      "id": "bund18",
+      "name_zh": "麦加利银行大楼 / 外滩18号",
+      "name_en": "Chartered Bank Building",
+      "historic_bund_number": "18",
+      "current_osm_name": "外滩18号",
+      "osm": {
+        "type": "way",
+        "id": 1196704498,
+        "url": "https://www.openstreetmap.org/way/1196704498",
+        "architectural_tags": {
+          "addr:housenumber": "18",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "commercial",
+          "building:levels": "7",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "A-Ⅲ-008",
+          "name": "外滩18号",
+          "name:en": "Bund18",
+          "name:zh": "外滩18号",
+          "name:zh-Hans": "外滩18号",
+          "name:zh-Hant": "外灘18號",
+          "start_date": "1923"
+        }
+      },
+      "origin_longitude": 121.48503212540848,
+      "origin_latitude": 31.24034316560891,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4846985,
+              31.2403917
+            ],
+            [
+              121.4847948,
+              31.2401448
+            ],
+            [
+              121.485328,
+              31.2402783
+            ],
+            [
+              121.485303,
+              31.2405467
+            ],
+            [
+              121.4851957,
+              31.2405353
+            ],
+            [
+              121.4851984,
+              31.2405146
+            ],
+            [
+              121.4846985,
+              31.2403917
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4846985,
+        31.2401448,
+        121.485328,
+        31.2405467
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -31.75382784858352,
+              5.402825089506127
+            ],
+            [
+              -22.588178157821783,
+              -22.08193538864254
+            ],
+            [
+              28.160777341106147,
+              -7.220804074878106
+            ],
+            [
+              25.781325189619537,
+              22.657369185341963
+            ],
+            [
+              15.56871655323164,
+              21.388324332914976
+            ],
+            [
+              15.825697385278401,
+              19.08400643811526
+            ],
+            [
+              -31.75382784858352,
+              5.402825089506127
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 1635.024,
+        "oriented_bbox_long_m": 60.087,
+        "oriented_bbox_short_m": 30.878,
+        "courtyard_count": 0,
+        "exterior_vertices": 6,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 60.08668101755425,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 254.53967278325888
+          },
+          {
+            "length_m": 30.878243590372737,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 344.53967279567007
+          },
+          {
+            "length_m": 60.08668101755425,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 74.5396727832589
+          },
+          {
+            "length_m": 30.878243590372737,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 164.53967279567007
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 83.117,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 29.973,
+            "outward_azimuth_deg": 85.447,
+            "road_distance_m": 22.205,
+            "endpoints_wgs84": [
+              [
+                121.485328,
+                31.240278299999996
+              ],
+              [
+                121.485303,
+                31.240546699999985
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                28.161,
+                -7.221
+              ],
+              [
+                25.781,
+                22.657
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "31b91d93-cb3b-4203-afb8-8656dfc0277e",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "外滩18号",
+          "names": "{\"common\":{\"en\":\"Bund18\",\"zh\":\"外滩18号\",\"zh-Hans\":\"外滩18号\",\"zh-Hant\":\"外灘18號\"},\"primary\":\"外滩18号\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196704498@1",
+              "update_time": "2023-08-10T07:38:33.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "subtype": "commercial",
+          "num_floors": 7,
+          "has_parts": false,
+          "id": "31b91d93-cb3b-4203-afb8-8656dfc0277e",
+          "class": "commercial",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 1
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48519635,
+                31.24051296
+              ],
+              [
+                121.48519635,
+                31.2405359
+              ],
+              [
+                121.48530364,
+                31.24054507
+              ],
+              [
+                121.48533046,
+                31.24027905
+              ],
+              [
+                121.48479402,
+                31.24014604
+              ],
+              [
+                121.48469746,
+                31.24039371
+              ],
+              [
+                121.48519635,
+                31.24051296
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.990665
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 22.400000000000002,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "31b91d93-cb3b-4203-afb8-8656dfc0277e"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [],
+      "height_and_floor_evidence": [
+        {
+          "kind": "unresolved_height",
+          "source": "https://en.wikipedia.org/wiki/Chartered_Bank_Building,_Shanghai",
+          "total_height_m": null,
+          "status": "current source has no authoritative metric total; proportion estimates must be labeled"
+        }
+      ]
+    },
+    {
+      "id": "bund19",
+      "name_zh": "汇中饭店 / 和平饭店南楼",
+      "name_en": "Palace Hotel / Peace Hotel South",
+      "historic_bund_number": "19",
+      "current_osm_name": "和平饭店南楼",
+      "osm": {
+        "type": "way",
+        "id": 177998982,
+        "url": "https://www.openstreetmap.org/way/177998982",
+        "architectural_tags": {
+          "addr:housenumber": "19",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "building": "hotel",
+          "building:levels": "8",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "1989年7号",
+          "name": "和平饭店南楼",
+          "name:en": "Peace Hotel South Building",
+          "start_date": "1908",
+          "tourism": "hotel",
+          "wikidata": "Q11133012",
+          "wikimedia_commons": "Category:Shanghai Palace Hotel",
+          "wikipedia": "zh:汇中饭店大楼"
+        }
+      },
+      "origin_longitude": 121.48483092492646,
+      "origin_latitude": 31.240615342749262,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.484437,
+              31.2406245
+            ],
+            [
+              121.4843649,
+              31.2406106
+            ],
+            [
+              121.4843692,
+              31.2405934
+            ],
+            [
+              121.4843972,
+              31.2404861
+            ],
+            [
+              121.484466,
+              31.2404991
+            ],
+            [
+              121.4844738,
+              31.2404739
+            ],
+            [
+              121.4845355,
+              31.2404858
+            ],
+            [
+              121.4845465,
+              31.2404569
+            ],
+            [
+              121.4845697,
+              31.2404373
+            ],
+            [
+              121.4846041,
+              31.2404284
+            ],
+            [
+              121.4846404,
+              31.2404306
+            ],
+            [
+              121.4846688,
+              31.2404414
+            ],
+            [
+              121.4846968,
+              31.2404638
+            ],
+            [
+              121.4847082,
+              31.2404914
+            ],
+            [
+              121.4847032,
+              31.240516
+            ],
+            [
+              121.4849137,
+              31.2405569
+            ],
+            [
+              121.485296,
+              31.2406294
+            ],
+            [
+              121.4852929,
+              31.2407377
+            ],
+            [
+              121.4853007,
+              31.2407477
+            ],
+            [
+              121.4853025,
+              31.2407583
+            ],
+            [
+              121.4852974,
+              31.2407735
+            ],
+            [
+              121.4852893,
+              31.2407849
+            ],
+            [
+              121.4852758,
+              31.2407946
+            ],
+            [
+              121.4852609,
+              31.2407977
+            ],
+            [
+              121.4852435,
+              31.240796
+            ],
+            [
+              121.4852337,
+              31.240791
+            ],
+            [
+              121.4852271,
+              31.240783
+            ],
+            [
+              121.4852272,
+              31.240775
+            ],
+            [
+              121.4845099,
+              31.2406371
+            ],
+            [
+              121.4844999,
+              31.2406456
+            ],
+            [
+              121.4844879,
+              31.2406512
+            ],
+            [
+              121.4844733,
+              31.2406538
+            ],
+            [
+              121.4844572,
+              31.2406495
+            ],
+            [
+              121.484445,
+              31.2406421
+            ],
+            [
+              121.4844379,
+              31.2406329
+            ],
+            [
+              121.484437,
+              31.2406245
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4843649,
+        31.2404284,
+        121.4853025,
+        31.2407977
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -37.492912523674484,
+              1.0193805382870462
+            ],
+            [
+              -44.35523275601952,
+              -0.5279604195457307
+            ],
+            [
+              -43.94596816512051,
+              -2.442655390522024
+            ],
+            [
+              -41.280989433968294,
+              -14.387227193628473
+            ],
+            [
+              -34.73275598093692,
+              -12.940075693682406
+            ],
+            [
+              -33.99036904813669,
+              -15.745323034371832
+            ],
+            [
+              -28.11789805817275,
+              -14.420622994842061
+            ],
+            [
+              -27.070942129381486,
+              -17.637751374256727
+            ],
+            [
+              -24.86281689492092,
+              -19.819609507985945
+            ],
+            [
+              -21.588700167728955,
+              -20.810351061928504
+            ],
+            [
+              -18.13374559798383,
+              -20.56544866419302
+            ],
+            [
+              -15.430695743009002,
+              -19.36320044591968
+            ],
+            [
+              -12.765717011856776,
+              -16.869648148559957
+            ],
+            [
+              -11.680689956537796,
+              -13.797234682716956
+            ],
+            [
+              -12.156579015817039,
+              -11.058778446180494
+            ],
+            [
+              7.8783503742936025,
+              -6.505815075801019
+            ],
+            [
+              44.264827835071365,
+              1.5648461107996925
+            ],
+            [
+              43.96977661834529,
+              13.620755669469437
+            ],
+            [
+              44.71216354979297,
+              14.73395207851058
+            ],
+            [
+              44.883483611728614,
+              15.913940399962371
+            ],
+            [
+              44.39807677047931,
+              17.605999357276502
+            ],
+            [
+              43.62713649582654,
+              18.875043753865857
+            ],
+            [
+              42.34223603536682,
+              19.95484480911096
+            ],
+            [
+              40.92408663949916,
+              20.299935890985346
+            ],
+            [
+              39.2679927133156,
+              20.11069239283305
+            ],
+            [
+              38.33525015734469,
+              19.554093888621424
+            ],
+            [
+              37.70707660006993,
+              18.663536344242786
+            ],
+            [
+              37.71659438068744,
+              17.772978874938264
+            ],
+            [
+              -30.55445004097914,
+              2.422006351876863
+            ],
+            [
+              -31.506228159537628,
+              3.3682222848503103
+            ],
+            [
+              -32.64836190126679,
+              3.99161165104031
+            ],
+            [
+              -34.037957953929364,
+              4.281042440827627
+            ],
+            [
+              -35.570320725322496,
+              3.8023684471301373
+            ],
+            [
+              -36.73149002963923,
+              2.9786039491446545
+            ],
+            [
+              -37.407252492706654,
+              1.954464393832375
+            ],
+            [
+              -37.492912523674484,
+              1.0193805382870462
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 1625.387,
+        "oriented_bbox_long_m": 90.753,
+        "oriented_bbox_short_m": 27.535,
+        "courtyard_count": 0,
+        "exterior_vertices": 35,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 90.75329554485381,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 78.6585866899854
+          },
+          {
+            "length_m": 27.53505553319512,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 168.65858670312198
+          },
+          {
+            "length_m": 90.75329554476224,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 258.65858669027364
+          },
+          {
+            "length_m": 27.535055532738554,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 348.6585867029314
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 84.848,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 12.06,
+            "outward_azimuth_deg": 88.598,
+            "road_distance_m": 21.369,
+            "endpoints_wgs84": [
+              [
+                121.485296,
+                31.2406294
+              ],
+              [
+                121.48529290000002,
+                31.2407377
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                44.265,
+                1.565
+              ],
+              [
+                43.97,
+                13.621
+              ]
+            ]
+          },
+          {
+            "length_m": 2.779,
+            "outward_azimuth_deg": 80.142,
+            "road_distance_m": 79.004,
+            "endpoints_wgs84": [
+              [
+                121.48470820000001,
+                31.240491400000003
+              ],
+              [
+                121.4847032,
+                31.240515999999996
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                -11.681,
+                -13.797
+              ],
+              [
+                -12.157,
+                -11.059
+              ]
+            ]
+          },
+          {
+            "length_m": 3.258,
+            "outward_azimuth_deg": 109.451,
+            "road_distance_m": 79.567,
+            "endpoints_wgs84": [
+              [
+                121.48469680000001,
+                31.240463799999997
+              ],
+              [
+                121.48470820000001,
+                31.240491400000003
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                -12.766,
+                -16.87
+              ],
+              [
+                -11.681,
+                -13.797
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "878ed461-b518-461a-b739-7ff5f59147bd",
+        "owner_tile": [
+          14,
+          13720,
+          6694
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "和平饭店南楼",
+          "names": "{\"common\":{\"en\":\"Peace Hotel South Building\"},\"primary\":\"和平饭店南楼\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w177998982@10",
+              "update_time": "2025-08-22T07:31:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "subtype": "commercial",
+          "num_floors": 8,
+          "has_parts": false,
+          "id": "878ed461-b518-461a-b739-7ff5f59147bd",
+          "class": "hotel",
+          "version": 2,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 2
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48447216,
+                31.24065515
+              ],
+              [
+                121.48450971,
+                31.2406368
+              ],
+              [
+                121.484797242,
+                31.24069184
+              ],
+              [
+                121.48479402,
+                31.24069184
+              ],
+              [
+                121.48522854,
+                31.2407744
+              ],
+              [
+                121.48524463,
+                31.24079733
+              ],
+              [
+                121.48527682,
+                31.24079274
+              ],
+              [
+                121.48528755,
+                31.24078357
+              ],
+              [
+                121.48530364,
+                31.24075605
+              ],
+              [
+                121.48529291,
+                31.2407377
+              ],
+              [
+                121.48529828,
+                31.24062763
+              ],
+              [
+                121.48470283,
+                31.24051755
+              ],
+              [
+                121.48470819,
+                31.24049003
+              ],
+              [
+                121.48469746,
+                31.24046251
+              ],
+              [
+                121.48467064,
+                31.24043958
+              ],
+              [
+                121.48463845,
+                31.2404304
+              ],
+              [
+                121.48460627,
+                31.2404304
+              ],
+              [
+                121.48456872,
+                31.24043958
+              ],
+              [
+                121.48454726,
+                31.24045792
+              ],
+              [
+                121.48453653,
+                31.24048544
+              ],
+              [
+                121.48447216,
+                31.24047168
+              ],
+              [
+                121.48446679,
+                31.2404992
+              ],
+              [
+                121.48439705,
+                31.24048544
+              ],
+              [
+                121.48436487,
+                31.24060928
+              ],
+              [
+                121.4844346,
+                31.24062304
+              ],
+              [
+                121.48443997,
+                31.24063221
+              ],
+              [
+                121.48447216,
+                31.24065515
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.986563
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 25.6,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "878ed461-b518-461a-b739-7ff5f59147bd"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [],
+      "height_and_floor_evidence": [
+        {
+          "kind": "reported_height",
+          "status": "secondary published figure; primary architectural drawing not obtained",
+          "source": "https://en.wikipedia.org/wiki/Peace_Hotel#South_Building",
+          "height_m": 30,
+          "above_ground_storeys": 6,
+          "quote": "six stories reaching 30 metres",
+          "osm_conflict": "OSM lists eight floors; do not extrude eight equal floors"
+        }
+      ]
+    },
+    {
+      "id": "bund20",
+      "name_zh": "沙逊大厦 / 和平饭店北楼",
+      "name_en": "Sassoon House / Peace Hotel North",
+      "historic_bund_number": "20",
+      "current_osm_name": "和平饭店",
+      "osm": {
+        "type": "relation",
+        "id": 2376366,
+        "url": "https://www.openstreetmap.org/relation/2376366",
+        "architectural_tags": {
+          "addr:city": "上海市",
+          "addr:district": "黄浦区",
+          "addr:housenumber": "20",
+          "addr:postcode": "200002",
+          "addr:province": "上海市",
+          "addr:street": "南京东路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "alt_name": "Fairmont Peace Hotel",
+          "brand": "Fairmont",
+          "brand:wikidata": "Q1393345",
+          "building": "hotel",
+          "building:levels": "11",
+          "built": "1929",
+          "internet_access": "yes",
+          "internet_access:fee": "customers",
+          "layer": "1",
+          "name": "和平饭店",
+          "name:en": "Fairmont Peace Hotel",
+          "rooms": "270",
+          "stars": "5",
+          "tourism": "hotel",
+          "type": "multipolygon",
+          "website": "https://www.fairmont.com/peacehotel"
+        }
+      },
+      "origin_longitude": 121.48449473386786,
+      "origin_latitude": 31.241108119479534,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4839402,
+              31.2410523
+            ],
+            [
+              121.4838215,
+              31.2412861
+            ],
+            [
+              121.4837495,
+              31.2414194
+            ],
+            [
+              121.4852526,
+              31.2412625
+            ],
+            [
+              121.4853149,
+              31.2412138
+            ],
+            [
+              121.4853187,
+              31.2410357
+            ],
+            [
+              121.4852929,
+              31.2410014
+            ],
+            [
+              121.4839202,
+              31.2407601
+            ],
+            [
+              121.4838699,
+              31.2409114
+            ],
+            [
+              121.4839272,
+              31.2409242
+            ],
+            [
+              121.4839732,
+              31.2409345
+            ],
+            [
+              121.4839402,
+              31.2410523
+            ]
+          ],
+          [
+            [
+              121.4841524,
+              31.2412389
+            ],
+            [
+              121.4843481,
+              31.2412217
+            ],
+            [
+              121.4843586,
+              31.2410013
+            ],
+            [
+              121.4841661,
+              31.2409678
+            ],
+            [
+              121.4841524,
+              31.2412389
+            ]
+          ],
+          [
+            [
+              121.4844109,
+              31.2412162
+            ],
+            [
+              121.4846192,
+              31.2411979
+            ],
+            [
+              121.4846268,
+              31.2410479
+            ],
+            [
+              121.4844227,
+              31.2410124
+            ],
+            [
+              121.4844109,
+              31.2412162
+            ]
+          ],
+          [
+            [
+              121.4847177,
+              31.2411892
+            ],
+            [
+              121.4849366,
+              31.24117
+            ],
+            [
+              121.4849488,
+              31.241104
+            ],
+            [
+              121.4847278,
+              31.2410655
+            ],
+            [
+              121.4847177,
+              31.2411892
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4837495,
+        31.2407601,
+        121.4853187,
+        31.2414194
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -52.77904477244642,
+              -6.213794201087285
+            ],
+            [
+              -64.07659209592427,
+              19.81271957690217
+            ],
+            [
+              -70.92935879611797,
+              34.651646131868084
+            ],
+            [
+              72.13166379547067,
+              17.185574972142525
+            ],
+            [
+              78.06121053818961,
+              11.764308306992234
+            ],
+            [
+              78.42288433505688,
+              -8.061696494064613
+            ],
+            [
+              75.96730960198175,
+              -11.879951408169871
+            ],
+            [
+              -54.68259107858177,
+              -38.741279875282046
+            ],
+            [
+              -59.47001003680797,
+              -21.89868948595307
+            ],
+            [
+              -54.01634987197542,
+              -20.473802874871858
+            ],
+            [
+              -49.638193369487176,
+              -19.32721429011978
+            ],
+            [
+              -52.77904477244642,
+              -6.213794201087285
+            ]
+          ],
+          [
+            [
+              -32.5824184714377,
+              14.558431023672592
+            ],
+            [
+              -13.956217871232328,
+              12.643733304683442
+            ],
+            [
+              -12.956856061999074,
+              -11.891083343971392
+            ],
+            [
+              -31.278489252465363,
+              -15.620281407017801
+            ],
+            [
+              -32.5824184714377,
+              14.558431023672592
+            ]
+          ],
+          [
+            [
+              -7.9790824723478115,
+              12.03147538679788
+            ],
+            [
+              11.846352299478488,
+              9.994326571968694
+            ],
+            [
+              12.569699895918125,
+              -6.703599659696993
+            ],
+            [
+              -6.855990152485382,
+              -10.655438321065981
+            ],
+            [
+              -7.9790824723478115,
+              12.03147538679788
+            ]
+          ],
+          [
+            [
+              21.221317854895766,
+              9.025846126007618
+            ],
+            [
+              42.05563216827047,
+              6.888510284918129
+            ],
+            [
+              43.21679541468843,
+              -0.4585783538904113
+            ],
+            [
+              22.182608738926046,
+              -4.744377689035666
+            ],
+            [
+              21.221317854895766,
+              9.025846126007618
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 5709.519,
+        "oriented_bbox_long_m": 141.557,
+        "oriented_bbox_short_m": 74.863,
+        "courtyard_count": 3,
+        "exterior_vertices": 11,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 74.86306992489737,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 349.2763703979962
+          },
+          {
+            "length_m": 141.55678795932113,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 79.27628232350986
+          },
+          {
+            "length_m": 74.86304257450638,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 169.27627124691796
+          },
+          {
+            "length_m": 141.5569175108171,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 259.2762712533551
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 92.046,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 19.829,
+            "outward_azimuth_deg": 88.955,
+            "road_distance_m": 19.126,
+            "endpoints_wgs84": [
+              [
+                121.4853187,
+                31.241035699999998
+              ],
+              [
+                121.4853149,
+                31.241213799999993
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                78.423,
+                -8.062
+              ],
+              [
+                78.061,
+                11.764
+              ]
+            ]
+          },
+          {
+            "length_m": 4.54,
+            "outward_azimuth_deg": 122.746,
+            "road_distance_m": 19.56,
+            "endpoints_wgs84": [
+              [
+                121.48529290000002,
+                31.241001399999984
+              ],
+              [
+                121.4853187,
+                31.241035699999998
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                75.967,
+                -11.88
+              ],
+              [
+                78.423,
+                -8.062
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "bf84cdc1-0db3-47ec-a9c4-4faa9a109acf",
+        "owner_tile": [
+          14,
+          13720,
+          6693
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "和平饭店",
+          "names": "{\"rules\":[{\"variant\":\"alternate\",\"value\":\"Fairmont Peace Hotel\"}],\"common\":{\"en\":\"Fairmont Peace Hotel\"},\"primary\":\"和平饭店\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "r2376366@9",
+              "update_time": "2026-05-27T12:17:33.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "level": 1,
+          "subtype": "commercial",
+          "num_floors": 11,
+          "has_parts": false,
+          "id": "bf84cdc1-0db3-47ec-a9c4-4faa9a109acf",
+          "class": "hotel",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": true,
+          "fragment_count": 2
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48397326,
+                31.24093493
+              ],
+              [
+                121.48394108,
+                31.24105418
+              ],
+              [
+                121.48374796,
+                31.2414211
+              ],
+              [
+                121.48507830353206,
+                31.24127892
+              ],
+              [
+                121.48509443,
+                31.24127892
+              ],
+              [
+                121.48525,
+                31.24126057
+              ],
+              [
+                121.48531437,
+                31.2412147
+              ],
+              [
+                121.48531973,
+                31.24103583
+              ],
+              [
+                121.48529291,
+                31.24099914
+              ],
+              [
+                121.48391962,
+                31.24076064
+              ],
+              [
+                121.48387134,
+                31.24091199
+              ],
+              [
+                121.48392498,
+                31.24092575
+              ],
+              [
+                121.48397326,
+                31.24093493
+              ]
+            ],
+            [
+              [
+                121.48415029,
+                31.24123764
+              ],
+              [
+                121.48416638,
+                31.24096703
+              ],
+              [
+                121.4843595,
+                31.24099914
+              ],
+              [
+                121.48434877,
+                31.24122388
+              ],
+              [
+                121.48415029,
+                31.24123764
+              ]
+            ],
+            [
+              [
+                121.48441315,
+                31.2412147
+              ],
+              [
+                121.48442388,
+                31.2410129
+              ],
+              [
+                121.48462772,
+                31.24104959
+              ],
+              [
+                121.48461699,
+                31.24119636
+              ],
+              [
+                121.48441315,
+                31.2412147
+              ]
+            ],
+            [
+              [
+                121.48493886,
+                31.24116884
+              ],
+              [
+                121.48471892,
+                31.24118719
+              ],
+              [
+                121.48472965,
+                31.24106335
+              ],
+              [
+                121.48494959,
+                31.24110463
+              ],
+              [
+                121.48493886,
+                31.24116884
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.988333
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 35.2,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 0,
+        "parts_union_parent_coverage": 0,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "bf84cdc1-0db3-47ec-a9c4-4faa9a109acf"
+        ],
+        "building_part_ids": [],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": []
+      },
+      "parts": [],
+      "verified_height_evidence": [],
+      "geometry_notes": [
+        "Historic Bund No.20; current OSM address is Nanjing East Road No.20. Do not conflate with Peace South at Zhongshan East No.1 Road No.19."
+      ],
+      "height_and_floor_evidence": [
+        {
+          "kind": "reported_height",
+          "status": "secondary source contains inconsistent top-of-tower/roofline wording; treat endpoints cautiously",
+          "source": "https://en.wikipedia.org/wiki/Peace_Hotel#North_Building",
+          "roofline_m": 77,
+          "spire_m": 83,
+          "copper_pyramid_reported_height_m": 10,
+          "statement": "Art Deco stepped massing, eastern copper pyramid, substantial lower rear/side wings. The 11-floor OSM tag does not define any of those subheights."
+        }
+      ]
+    },
+    {
+      "id": "bund23",
+      "name_zh": "中国银行大楼",
+      "name_en": "Bank of China Building",
+      "historic_bund_number": "23",
+      "current_osm_name": "中国银行大楼",
+      "osm": {
+        "type": "way",
+        "id": 177995050,
+        "url": "https://www.openstreetmap.org/way/177995050",
+        "architectural_tags": {
+          "addr:housenumber": "23",
+          "addr:street": "中山东一路",
+          "addr:street:en": "East Zhongshan No. 1 Road",
+          "amenity": "bank",
+          "building": "yes",
+          "building:levels": "16",
+          "heritage": "yes",
+          "heritage:operator": "上海市优秀历史建筑",
+          "heritage:ref": "1989年3号",
+          "name": "中国银行大楼",
+          "name:en": "Bank of China Building",
+          "start_date": "1937",
+          "wikidata": "Q23807"
+        }
+      },
+      "origin_longitude": 121.4852665999813,
+      "origin_latitude": 31.24149739999038,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4851795,
+              31.2416336
+            ],
+            [
+              121.4851439,
+              31.241383
+            ],
+            [
+              121.4853537,
+              31.2413612
+            ],
+            [
+              121.4853893,
+              31.2416118
+            ],
+            [
+              121.4851795,
+              31.2416336
+            ]
+          ]
+        ]
+      },
+      "geographic_bbox": [
+        121.4851439,
+        31.2413612,
+        121.4853893,
+        31.2416336
+      ],
+      "model_geometry_local_east_north_m": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.289908214479066,
+              15.16172664858499
+            ],
+            [
+              -11.678206674043263,
+              -12.734940963622595
+            ],
+            [
+              8.289911774378627,
+              -15.161702643858563
+            ],
+            [
+              11.678210232590276,
+              12.734958529592292
+            ],
+            [
+              -8.289908214479066,
+              15.16172664858499
+            ]
+          ]
+        ]
+      },
+      "model_geometry_convention": "Mercator differences scaled by cos(origin latitude), same as viewer; convert 2D [east,north] to glTF [east,height,-north]. This differs from UTM grid-north angle by about 0.8 degrees.",
+      "dimensions": {
+        "footprint_area_m2": 563.349,
+        "oriented_bbox_long_m": 28.009,
+        "oriented_bbox_short_m": 20.129,
+        "courtyard_count": 0,
+        "exterior_vertices": 4,
+        "oriented_bbox_edges": [
+          {
+            "length_m": 28.0093035077455,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 187.74468903614843
+          },
+          {
+            "length_m": 20.128848709577046,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 277.74452930388827
+          },
+          {
+            "length_m": 28.009380385329997,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 7.744588403449496
+          },
+          {
+            "length_m": 20.12889790439906,
+            "utm_grid_azimuth_deg_do_not_use_as_model_yaw": 97.7447481318904
+          }
+        ]
+      },
+      "streetfront": {
+        "facing_azimuth_degrees_clockwise_from_north": 99.223,
+        "angle_reference": "viewer-local true east/north Mercator metre frame, not UTM grid north",
+        "method": "centroid to nearest mapped Zhongshan East No.1 Road centreline; check individual entry facade in photos",
+        "candidate_edges": [
+          {
+            "length_m": 28.102,
+            "outward_azimuth_deg": 96.925,
+            "road_distance_m": 18.876,
+            "endpoints_wgs84": [
+              [
+                121.4853537,
+                31.241361199999993
+              ],
+              [
+                121.48538930000001,
+                31.2416118
+              ]
+            ],
+            "endpoints_local_east_north_m": [
+              [
+                8.29,
+                -15.162
+              ],
+              [
+                11.678,
+                12.735
+              ]
+            ]
+          }
+        ]
+      },
+      "source": {
+        "overture_id": "8a9135f1-9dec-4ed3-8849-b52fe05f5a31",
+        "owner_tile": [
+          14,
+          13720,
+          6693
+        ],
+        "release": "2026-10-21.0",
+        "properties": {
+          "is_underground": false,
+          "@name": "中国银行大楼",
+          "names": "{\"common\":{\"en\":\"Bank of China Building\"},\"primary\":\"中国银行大楼\"}",
+          "@geometry_source": "OpenStreetMap",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w177995050@7",
+              "update_time": "2021-03-25T21:47:00.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "num_floors": 16,
+          "has_parts": true,
+          "id": "8a9135f1-9dec-4ed3-8849-b52fe05f5a31",
+          "version": 1,
+          "source_layer": "building",
+          "district_id": "310101",
+          "district_name": "黄浦区",
+          "renderable": false,
+          "fragment_count": 1
+        },
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48538947,
+                31.24161373
+              ],
+              [
+                121.48535192,
+                31.24136147
+              ],
+              [
+                121.48514271,
+                31.24138441
+              ],
+              [
+                121.48518026,
+                31.24163208
+              ],
+              [
+                121.48538947,
+                31.24161373
+              ]
+            ]
+          ]
+        },
+        "current_osm_overlap_iou": 0.986602
+      },
+      "existing_lod1": {
+        "base_m": 0,
+        "height_if_floor_priority_m": 51.2,
+        "height_m": null,
+        "height_is_measured": false,
+        "has_roof_shape": false,
+        "flat_roof_by_exporter": true,
+        "explicit_parts_count": 1,
+        "parts_union_parent_coverage": 0.733182,
+        "customs_precise_model_already_replaces_lod1": false
+      },
+      "replacement": {
+        "building_ids": [
+          "8a9135f1-9dec-4ed3-8849-b52fe05f5a31"
+        ],
+        "building_part_ids": [
+          "fe059296-0a9a-378b-b347-5bb336741e38"
+        ],
+        "only_exact_ids": true,
+        "do_not_delete_nearby_buildings_by_radius": true,
+        "additional_overlap_candidates": [],
+        "optional_groups": [
+          {
+            "id": "bank-west-wing",
+            "building_ids": [
+              "5ffad866-ee1e-43e1-8665-fa818bac102b"
+            ],
+            "building_part_ids": [],
+            "requires_actual_modeled_coverage_confirmation": true
+          }
+        ]
+      },
+      "parts": [
+        {
+          "id": "fe059296-0a9a-378b-b347-5bb336741e38",
+          "source_layer": "building_part",
+          "name": "Sassoon House",
+          "source_properties": {
+            "is_underground": false,
+            "building_id": "8a9135f1-9dec-4ed3-8849-b52fe05f5a31",
+            "@name": "Sassoon House",
+            "names": "{\"rules\":[{\"variant\":\"alternate\",\"language\":\"en\",\"value\":\"Sassoon House\"}],\"primary\":\"Sassoon House\"}",
+            "@geometry_source": "OpenStreetMap",
+            "sources": [
+              {
+                "resource": "planet",
+                "version": "2026-09-06T00:00:00.000Z",
+                "license": "ODbL-1.0",
+                "record_id": "w177995048@5",
+                "update_time": "2025-03-17T08:52:20.000Z",
+                "provider": "osm",
+                "property": "",
+                "dataset": "OpenStreetMap"
+              }
+            ],
+            "id": "fe059296-0a9a-378b-b347-5bb336741e38",
+            "version": 1,
+            "source_layer": "building_part",
+            "district_id": "310101",
+            "district_name": "黄浦区",
+            "renderable": true,
+            "fragment_count": 1
+          },
+          "area_m2": 410.857,
+          "parent_overlap_fraction": 1.0,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  121.48520708,
+                  31.24141193
+                ],
+                [
+                  121.48515344,
+                  31.24141651
+                ],
+                [
+                  121.48517489,
+                  31.2415908
+                ],
+                [
+                  121.48522854,
+                  31.24158621
+                ],
+                [
+                  121.48522854,
+                  31.24159997
+                ],
+                [
+                  121.48531973,
+                  31.24159539
+                ],
+                [
+                  121.48531437,
+                  31.24157704
+                ],
+                [
+                  121.48537874,
+                  31.24156787
+                ],
+                [
+                  121.48535728,
+                  31.24139817
+                ],
+                [
+                  121.48529291,
+                  31.24140275
+                ],
+                [
+                  121.48529291,
+                  31.24138441
+                ],
+                [
+                  121.48520172,
+                  31.24139358
+                ],
+                [
+                  121.48520708,
+                  31.24141193
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "verified_height_evidence": [],
+      "geometry_notes": [
+        "Linked part 177995048 carries old_name:en Sassoon House but lies in Bank of China footprint; do not identify architecture by this inconsistent inherited label."
+      ],
+      "related_geometries": {
+        "western_wing": {
+          "osm_way_id": 177998983,
+          "source_url": "https://www.openstreetmap.org/way/177998983",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  121.4836836,
+                  31.2417904
+                ],
+                [
+                  121.483673,
+                  31.2417287
+                ],
+                [
+                  121.483655,
+                  31.2417324
+                ],
+                [
+                  121.4836297,
+                  31.2415902
+                ],
+                [
+                  121.4836494,
+                  31.2415873
+                ],
+                [
+                  121.4836433,
+                  31.2415542
+                ],
+                [
+                  121.4851078,
+                  31.2413868
+                ],
+                [
+                  121.4851454,
+                  31.2416322
+                ],
+                [
+                  121.4841771,
+                  31.2417423
+                ],
+                [
+                  121.4841672,
+                  31.2416974
+                ],
+                [
+                  121.4839974,
+                  31.2417147
+                ],
+                [
+                  121.4840019,
+                  31.2417513
+                ],
+                [
+                  121.4836836,
+                  31.2417904
+                ]
+              ]
+            ]
+          },
+          "model_geometry_local_east_north_m": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -150.66506734615479,
+                  32.61666246332506
+                ],
+                [
+                  -151.673942731041,
+                  25.74823081794225
+                ],
+                [
+                  -153.38712734497147,
+                  26.160113950818157
+                ],
+                [
+                  -155.79510349756274,
+                  10.33045489153279
+                ],
+                [
+                  -153.920118113299,
+                  10.00762805559706
+                ],
+                [
+                  -154.50069734436443,
+                  6.3229500486488135
+                ],
+                [
+                  -15.114093594992818,
+                  -12.311927402334522
+                ],
+                [
+                  -11.535441289887194,
+                  15.005879138041491
+                ],
+                [
+                  -103.69525584113629,
+                  27.262179709561316
+                ],
+                [
+                  -104.63750737845992,
+                  22.26392280105614
+                ],
+                [
+                  -120.79854890523289,
+                  24.189754245548396
+                ],
+                [
+                  -120.37025275276471,
+                  28.264057771841106
+                ],
+                [
+                  -150.66506734615479,
+                  32.61666246332506
+                ]
+              ]
+            ]
+          },
+          "origin_is_main_candidate_origin": true,
+          "area_m2": 3760.624,
+          "overture_id": "5ffad866-ee1e-43e1-8665-fa818bac102b",
+          "owner_tile": [
+            14,
+            13720,
+            6693
+          ],
+          "osm_tags": {
+            "architect": "George \"Tug\" Wilson",
+            "building": "yes",
+            "building:levels": "9"
+          },
+          "source_geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  121.48400009,
+                  31.24175133
+                ],
+                [
+                  121.48399472,
+                  31.24171464
+                ],
+                [
+                  121.48416638,
+                  31.24169629
+                ],
+                [
+                  121.48417711,
+                  31.24174215
+                ],
+                [
+                  121.48514807,
+                  31.24163208
+                ],
+                [
+                  121.48510516,
+                  31.24138899
+                ],
+                [
+                  121.48364067,
+                  31.24155411
+                ],
+                [
+                  121.4836514,
+                  31.24158621
+                ],
+                [
+                  121.48362994,
+                  31.2415908
+                ],
+                [
+                  121.48365676,
+                  31.24173298
+                ],
+                [
+                  121.48367286,
+                  31.24172839
+                ],
+                [
+                  121.48368359,
+                  31.24179261
+                ],
+                [
+                  121.48400009,
+                  31.24175133
+                ]
+              ]
+            ]
+          },
+          "confidence": "adjacent rear wing consistent with photographed building and documented east/west compound; floor count conflict unresolved",
+          "floor_conflict": {
+            "osm": 9,
+            "architectural_text_west_building": 4,
+            "source": "https://zh.wikipedia.org/wiki/中国银行大楼_(上海)",
+            "quote": "西大楼为次楼，楼高四层。"
+          },
+          "replacement_requires_model_author_confirmation": true
+        }
+      },
+      "height_and_floor_evidence": [
+        {
+          "kind": "floor_structure",
+          "status": "secondary text conflicts with OSM levels; metric heights not verified here",
+          "source": "https://zh.wikipedia.org/wiki/中国银行大楼_(上海)",
+          "east_above_ground_storeys": 15,
+          "east_including_basements": 17,
+          "west_storeys": 4,
+          "osm_east_floors": 16,
+          "osm_west_floors": 9,
+          "total_height_m": null,
+          "statement": "Documented compound consists of eastern tower and western lower building; use separate volumes and preserve Chinese roof/eave details from photographs."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "ready; geometric checks and render inspection completed",
+  "models": [
+    {
+      "id": "shanghai-club",
+      "candidateId": "bund02",
+      "glb": "shanghai-club.glb",
+      "metadata": "shanghai-club.json",
+      "render": "shanghai-club-render.png",
+      "bytes": 4036596,
+      "sha256": "108f7dd8507d41962ec68f65981baf110f31c788259da7abec037f5ffe892810",
+      "replaceExactBuildingIds": [
+        "6f4fdeec-6dff-49a9-be52-a4a324392f6e"
+      ],
+      "coverage": {
+        "completeCandidateFootprint": true,
+        "includesSideAndRearMass": true,
+        "includesRoof": true,
+        "facadeOnly": false,
+        "detailLimit": "Street-facing recognizable details follow photographs; hidden rear openings and many vertical dimensions remain estimates."
+      },
+      "heightStatus": "Reported 26.9 m has no documented endpoint; roof ridge assignment and 35 m belvedere tips are photo-based estimates, not measured elevations."
+    },
+    {
+      "id": "union-building",
+      "candidateId": "bund03",
+      "glb": "union-building.glb",
+      "metadata": "union-building.json",
+      "render": "union-building-render.png",
+      "bytes": 9567784,
+      "sha256": "735067414af4cf41c2af8c517cac4de2777f32726dc6af946a9a11a360c44e22",
+      "replaceExactBuildingIds": [
+        "0c49c288-a11e-4d5a-85c2-737bc7e2393d"
+      ],
+      "coverage": {
+        "completeCandidateFootprint": true,
+        "includesSideAndRearMass": true,
+        "includesRoof": true,
+        "facadeOnly": false,
+        "detailLimit": "Street-facing recognizable details follow photographs; hidden rear openings and many vertical dimensions remain estimates."
+      },
+      "heightStatus": "45.75 m is a secondary-source published overall height, not independently surveyed; all floor and roof/tower split elevations are photo estimates."
+    },
+    {
+      "id": "north-china-daily-news",
+      "candidateId": "bund17",
+      "glb": "north-china-daily-news.glb",
+      "metadata": "north-china-daily-news.json",
+      "render": "north-china-daily-news-render.png",
+      "bytes": 3641120,
+      "sha256": "d06d5a4ea07f8c5d0b1e0257365d80009eb1c7b80f6b91e555436176fafdaa38",
+      "replaceExactBuildingIds": [
+        "c7d36a36-851c-4a58-9827-94a3a81531dd"
+      ],
+      "coverage": {
+        "completeCandidateFootprint": true,
+        "includesSideAndRearMass": true,
+        "includesRoof": true,
+        "facadeOnly": false,
+        "detailLimit": "Street-facing recognizable details follow photographs; hidden rear openings and many vertical dimensions remain estimates."
+      },
+      "heightStatus": "40 m is a photo-proportioned working estimate, not a verified or surveyed height. Public search snippets with more precise numbers were not accepted as primary evidence."
+    }
+  ],
+  "portableSources": [
+    "build_classics.py",
+    "build_news.py",
+    "mesh_utils.py",
+    "footprints.json",
+    "news-footprint.json"
+  ],
+  "sources": [
+    "architecture-evidence.json",
+    "reference-photos.json"
+  ],
+  "validation": "validation.json"
+}
