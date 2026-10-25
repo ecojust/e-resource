@@ -4,9 +4,9 @@
 
 全市1,708分块及1,796,419个普通建筑/部件计数不变；其余1,702个模型与状态字节不变。这一补充不代表全城精细模型或摄影测量成果。完整来源核查见 [ROOF_DATA_AUDIT.md](ROOF_DATA_AUDIT.md)，生成与复核命令见 [SOURCE_ROOF_PATCHES.md](../../source/city/SOURCE_ROOF_PATCHES.md)。
 
-[单坡更新前](../../assets/previews/roofs/jiading-roof-before.png) · [单坡更新后](../../assets/previews/roofs/jiading-roof-after.png)（同机位网页截屏）
+[单坡更新前](../../assets/previews/roofs/jiading-roof-before.png) · [单坡更新后](../../assets/previews/roofs/jiading-roof-after.png)· [双坡更新前](../../assets/previews/roofs/changning-roofs-before.png) · [双坡更新后](../../assets/previews/roofs/changning-roofs-after.png)（两组均为同机位网页截屏；双坡样本为屋顶小部件）
 
-[几何检查](geometry-validation.json) · [实际分块检查](roof-validation.json) · [全市对账](fullcity-validation.json) · [合并检查](merge-report.json)
+[备用楼块遮挡修复](OSM_FALLBACK_FIX.md) · [几何检查](geometry-validation.json) · [实际分块检查](roof-validation.json) · [全市对账](fullcity-validation.json) · [合并检查](merge-report.json)
 
 # Bounded roof qualification
 

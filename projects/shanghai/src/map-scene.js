@@ -9,6 +9,8 @@ import { createStreetTraffic } from './street-traffic.js';
 import { createStreetBasemapReplacement } from './street-basemap.js';
 import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
+import { OSMBuildingSuppressor } from './osm-building-suppression.js';
+import { OSMResidualLayer } from './osm-residual-layer.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -136,6 +138,9 @@ export async function createShanghaiScene(options = {}) {
   map.dragRotate.disable(); map.keyboard.disable(); map.touchZoomRotate.disableRotation();
   map.getCanvas().setAttribute('aria-label', '上海三维地图，使用漫游控制操作');
   let destroyed = false, mapErrorTime = 0, loadedStyle = false;
+  // Source errors may arrive while asynchronous scene setup is still running.
+  let osmSuppression = null;
+  let collisionDirty = true, collisionUpdated = 0, polygons = [], largePolygons = [], grid = new Map(), roadLines = [];
   map.on('error', event => {
     if (event.sourceId === OVERTURE_SOURCE) recoverBuildingSource(event.error);
     const now = performance.now();
@@ -205,6 +210,8 @@ export async function createShanghaiScene(options = {}) {
     buildingSourceId = sourceId; buildingMode = 'osm';
     for (const id of [BUILDINGS, BUILDING_PARTS]) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none');
     if (map.getLayer(OSM_BUILDINGS)) map.setLayoutProperty(OSM_BUILDINGS, 'visibility', 'visible');
+    osmSuppression?.setActive(true);
+    osmSuppression?.refresh();
     collisionDirty = true;
     onStatus({kind: 'building-source', message: '建筑服务暂不可用，已切换 OSM', source: 'osm', fallback: true});
     if (error) onLoadError(error);
@@ -267,6 +274,24 @@ export async function createShanghaiScene(options = {}) {
     onError(error) {
       if (performance.now()-streamErrorTime > 12000) {streamErrorTime=performance.now();onLoadError(error);}
     }});
+  const osmResidualLayer = new OSMResidualLayer({map,
+    templateLayerId:map.getLayer(OSM_BUILDINGS)?OSM_BUILDINGS:BUILDINGS,
+    beforeId:firstSymbol,onInvalidated(){osmSuppression?.residualInvalidated();}});
+  osmSuppression = new OSMBuildingSuppressor({map, source:sourceId, residualLayer:osmResidualLayer,
+    getCoverage() {
+      return {
+        // Use original owner bounds, not enlarged geometry bounds that can
+        // include buildings owned by an adjacent, not-yet-loaded cell.
+        cells:localStreamer.getVisible().map(record=>({id:record.id,bounds:record.bounds})),
+        landmarks:[...landmarkRecords.values()].filter(record=>record.status==='loaded' && record.object?.visible)
+          .map(record=>({id:record.id,geometry:landmarkBoundaries.get(record.id)?.confirmed_boundary})).filter(item=>item.geometry),
+        // Generic GLBs omit these buildings even when their detailed download
+        // fails. Reserve their footprints so a generic cell cannot hide them.
+        reserved:[...landmarkBoundaries].map(([id,boundary])=>({id,geometry:boundary.confirmed_boundary})).filter(item=>item.geometry),
+      };
+    },
+    onChange(){if(!destroyed)map.triggerRepaint();}});
+  osmSuppression.setActive(buildingMode==='osm');
   const renderMetrics = {fps:0,drawCalls:0,triangles:0,geometries:0,textures:0};
   let renderFrameCount=0, renderPeriodStart=performance.now();
 
@@ -418,24 +443,14 @@ export async function createShanghaiScene(options = {}) {
     for (const id of [BUILDINGS, BUILDING_PARTS, OSM_BUILDINGS]) {
       if (!map.getLayer(id)) continue;
       const base = buildingBaseFilters.get(id), filter = base ? ['all', base] : ['all'];
-      // Near GLBs suppress Overture by promoted GERS feature-state, never by
-      // a growing city-wide UUID expression. Only the emergency OSM fallback
-      // needs a few active tile bounding boxes (there are at most six).
-      if (map.getLayer(id).source !== OVERTURE_SOURCE) {
-        // Emergency OSM fallback uses confirmed footprints, never a radius
-        // that could erase neighboring buildings around a landmark.
-        for(const record of landmarkRecords.values()) {
-          const boundary=landmarkBoundaries.get(record.id)?.confirmed_boundary;
-          if(boundary && record.status==='loaded' && record.object?.visible)filter.push(['!', ['within',boundary]]);
-        }
-        for (const record of localStreamer.getVisible()) {
-          const [west,south,east,north]=record.geometryBounds || record.bounds;
-          const polygon={type:'Polygon',coordinates:[[[west,south],[east,south],[east,north],[west,north],[west,south]]]};
-          filter.push(['!', ['within', polygon]]);
-        }
-      }
+      // Both providers now use their own real feature IDs. MapLibre `within`
+      // cannot test polygon features, so it cannot suppress OSM extrusions.
       map.setFilter(id, filter.length > 1 ? filter : null);
     }
+    osmSuppression?.setActive(buildingMode==='osm');
+    // Visibility loss restores online buildings within the same update; only
+    // source/move bursts are debounced by the fallback controller.
+    osmSuppression?.refresh();
   }
   function setLandmarks(items) {
     const array = Array.isArray(items) ? items : items?.landmarks || items?.features || [];
@@ -534,9 +549,9 @@ export async function createShanghaiScene(options = {}) {
   const originalReport = reportLandmarks;
   reportLandmarks = function () { originalReport(); updateBuildingExclusions(); };
 
-  let collisionDirty = true, collisionUpdated = 0, polygons = [], largePolygons = [], grid = new Map(), roadLines = [];
-  map.on('sourcedata', () => { collisionDirty = true; });
-  map.on('moveend', () => { collisionDirty = true; updateLandmarkVisibility(); updateLocalModels(true); });
+  map.on('sourcedata', event => { collisionDirty = true; if(event.sourceId===sourceId)osmSuppression?.sourceChanged(); });
+  map.on('move', () => { osmSuppression?.schedule(); });
+  map.on('moveend', () => { collisionDirty = true; updateLandmarkVisibility(); updateLocalModels(true); osmSuppression?.schedule(); });
   map.on('move', () => updateLocalModels());
   function sourceFeatures(layer, source = sourceId) {
     try { return map.querySourceFeatures(source, {sourceLayer: layer}); } catch { return []; }
@@ -684,9 +699,9 @@ export async function createShanghaiScene(options = {}) {
     getStreamingState(){return {...localStreamer.getState(),renderer:{...renderMetrics}};},
     getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status,activeVariant,loadingModel})=>({id,name,status,activeVariant,loadingModel}));},
     setVisualQuality({shadows=true,surfaceNormals=true}={}){shadowsEnabled=Boolean(shadows);surfaces?.configure({normalStrength:surfaceNormals?1:0});lighting?.invalidate();map.triggerRepaint();},
-    getRealismState(){return {surfaces:surfaces?.stats,lighting:lighting?.getState(),traffic:traffic?.stats,streetBasemap:streetBasemap?.getState()};},
+    getRealismState(){return {surfaces:surfaces?.stats,lighting:lighting?.getState(),traffic:traffic?.stats,streetBasemap:streetBasemap?.getState(),osmFallback:osmSuppression?.getState()};},
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;streetBasemap?.dispose();localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
+    destroy(){destroyed=true;osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

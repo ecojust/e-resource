@@ -1,0 +1,139 @@
+{
+  "version": "osm-component-residual-independent-review-v1",
+  "status": "passed_static_review",
+  "scope": "Independent read-only source review and Node tests. The sole written artifact is this report; no browser or model generation was performed.",
+  "tests": {
+    "command": "node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs",
+    "exit_code": 0,
+    "tests": 57,
+    "passed": 57,
+    "failed": 0,
+    "skipped": 0,
+    "groups": {
+      "original_suppression_regressions": 28,
+      "component_plans_and_controller": 13,
+      "residual_renderer_lifecycle": 16
+    },
+    "duration_ms": 483.932838,
+    "rerun_after_timeout_adjustment": true
+  },
+  "geometry_audit": {
+    "fixture": "tests/fixtures/osm-bund18-23809960.geojson",
+    "source_feature_id": 23809960,
+    "original_components": 46,
+    "replaced_component_index": 44,
+    "replacement_landmark": "bund18",
+    "retained_components": 45,
+    "coordinates_holes_and_properties_exactly_preserved": true,
+    "source_render_height": 26,
+    "source_render_min_height": 0,
+    "independent_engine": "Shapely union, validity, equality and symmetric_difference",
+    "all_geometries_valid": true,
+    "retained_union_replaced_equals_original": true,
+    "symmetric_difference_area_square_degrees": 0.0,
+    "retained_replaced_overlap_area_square_degrees": 0.0,
+    "coverage_fixture": "Target component bounds plus the loaded Bund18 confirmed boundary and its reserved owner; browser coverage is checked separately."
+  },
+  "reviewed_invariants": [
+    "Actual source IDs are grouped with numeric/string aliases; unsafe numeric IDs and unknown geometry are retained conservatively.",
+    "Only complete MultiPolygon components are replaced. Single crossing polygons and ambiguous nonidentical overlapping fragments remain in the original source.",
+    "Residual geometry retains original coordinates, holes and source height properties; no footprint clipping or invented union is emitted.",
+    "Original aggregate state is hidden only after scoped residual content, source readiness and a subsequent rendered frame.",
+    "Original states are restored before replacing or clearing residual data; failed restoration prevents residual replacement.",
+    "New original-source fragments restore masks immediately and invalidate in-flight snapshots by source epoch.",
+    "Coverage changes require visible loaded owner cells and loaded reserved landmarks; stale transactions cannot reapply old masks.",
+    "Residual source/layer identity, source ownership and visibility are guarded during updates and after readiness.",
+    "The residual GeoJSON has a separate source ID; its own data events do not call original-source sourceChanged, avoiding a self-triggered update loop.",
+    "Standalone destruction preserves residual cover if original restoration failed; map-scene explicitly uses immediate map removal to finish teardown."
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Pending residual updates did not initially guard against missing or replaced residual layers.",
+      "resolution": "Source/layer identity and visibility guards now reject readiness; destruction removes only resources still owned by this helper."
+    },
+    {
+      "finding": "A layer could become missing or hidden after successful readiness while cached original masks remained applied.",
+      "resolution": "Persistent guards invalidate readiness once, synchronously restore original masks through residualInvalidated, and recheck readiness before the same-signature fast path can hide originals again."
+    },
+    {
+      "finding": "The 6,000 ms residual readiness deadline repeatedly rejected valid but very slowly rendered fallback updates.",
+      "evidence": {
+        "artifact": "qa/fallback-components-local/browser.json",
+        "artifact_scope": "Parent-task roof-data-audit staging tree",
+        "sha256": "936d21e4204a3409d1b9ee48a4250ae68e199e5e52ae43adb2c0f2cc81682c55",
+        "forced_osm_fallback": true,
+        "browser_run_passed": false,
+        "measured_fps": 0.2971679890640864,
+        "loaded_landmarks": 15,
+        "loaded_city_tiles": 4,
+        "failed_city_tiles": 0,
+        "residual_errors": 12,
+        "last_error": "OSM residual render readiness timed out.",
+        "hardware_performance_benchmark": false
+      },
+      "resolution": "Default and invalid-option fallback deadlines increased from 6,000 ms to 30,000 ms. Source-content, source-loaded and subsequent-render requirements remain unchanged; original geometry stays visible while waiting.",
+      "verification": {
+        "timeout_and_comment_only_change_verified_against_previous_source_sha256": "1dd44c402954e08d99afed244bebbcab54fe7b700e714ee6cfc74dc571b9bd4e",
+        "source_hash_after_change": "07e44d867d68cd5a6a4954fae8ee57c88f2acb3c6603009a2d3176f90448a684",
+        "regression_tests_passed": 57,
+        "post_change_browser_confirmation": "Separate parent-task browser run in progress; this static report does not claim that run passed."
+      }
+    }
+  ],
+  "open_findings": [],
+  "limits": [
+    "No browser was opened by this reviewer. The parent supplied the failed 6-second forced-outage run as evidence; post-change forced-outage validation is a separate parent-task publication check.",
+    "Continuous changes to original source fragments deliberately keep original buildings visible until a stable residual snapshot is ready.",
+    "Conservative retention can leave an overlap for unsupported crossing or ambiguous components; it avoids removing unrepresented source footprints."
+  ],
+  "reviewed_files": [
+    {
+      "file": "src/osm-building-suppression.js",
+      "bytes": 22836,
+      "sha256": "76fd62f1c64abb6c157f617ce2db1606692f8a86a50311f2cb3ff4d772b95c77"
+    },
+    {
+      "file": "src/osm-residual-layer.js",
+      "bytes": 13572,
+      "sha256": "07e44d867d68cd5a6a4954fae8ee57c88f2acb3c6603009a2d3176f90448a684"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 42190,
+      "sha256": "c70847d89dc7096419cc50dde2f28a9167cb7abaab300796f76bd38e3498bac9"
+    },
+    {
+      "file": "tests/osm-building-suppression.test.mjs",
+      "bytes": 18127,
+      "sha256": "e2e1aa5272c3083737c76ce960c42baf9203db592519c0d3e65cb25c4b1a791f"
+    },
+    {
+      "file": "tests/osm-building-residual-plans.test.mjs",
+      "bytes": 10403,
+      "sha256": "a97cdefa674f6cad5481bfa27a3fa0ee362de81cff9cd4a96866365c85bdf11a"
+    },
+    {
+      "file": "tests/osm-residual-layer.test.mjs",
+      "bytes": 14181,
+      "sha256": "c0ef6f5f6723a704b5c7bd588b4a62539a946ccf0b55a6ecc942f3092984bca6"
+    },
+    {
+      "file": "tests/fixtures/osm-bund18-23809960.geojson",
+      "bytes": 15512,
+      "sha256": "65d0d8a84a145b24c9ce3805b10b22d0f9763ab2f33820cd8973290391251764"
+    },
+    {
+      "file": "data/landmark-exclusions.json",
+      "bytes": 335331,
+      "sha256": "37eb2686ebb792e3654a87a588887ae9241a4f8fe46653adc7ef33ad92051832"
+    }
+  ],
+  "timeout_adjustment": {
+    "old_default_ms": 6000,
+    "new_default_ms": 30000,
+    "readiness_logic_unchanged": true,
+    "original_visibility_during_wait_preserved": true,
+    "browser_evidence_reviewed_read_only": true,
+    "browser_opened_by_reviewer": false
+  }
+}

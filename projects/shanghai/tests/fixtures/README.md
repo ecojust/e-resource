@@ -1,0 +1,3 @@
+`osm-bund18-23809960.geojson` is a captured OpenFreeMap / OpenStreetMap building-source feature used to reproduce a fallback rendering bug. OpenMapTiles building feature 23809960 (a tile feature ID, not an individual OSM way ID) has 46 separate polygon components sharing `render_height: 26` and `render_min_height: 0`; component 44 overlaps Bund 18. The test retains the original geometry and properties, including the components far outside the nearby model coverage.
+
+Source attribution: © OpenStreetMap contributors, ODbL-1.0. Basemap provider: https://openfreemap.org/ ; source endpoint: https://tiles.openfreemap.org/planet . This is a source-data regression fixture, not surveyed building geometry.

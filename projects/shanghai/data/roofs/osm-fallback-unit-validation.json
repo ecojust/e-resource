@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "tests": 57,
+  "command": "npm test",
+  "scope": "Geometry containment, exact OpenMapTiles source-ID state lifecycle, component-preserving residuals, real 46-component regression, asynchronous render acknowledgment, failures and source/layer replacement. Browser service-outage checks recorded separately.",
+  "source_sha256": {
+    "src/map-scene.js": "c70847d89dc7096419cc50dde2f28a9167cb7abaab300796f76bd38e3498bac9",
+    "src/osm-building-suppression.js": "76fd62f1c64abb6c157f617ce2db1606692f8a86a50311f2cb3ff4d772b95c77",
+    "src/osm-residual-layer.js": "07e44d867d68cd5a6a4954fae8ee57c88f2acb3c6603009a2d3176f90448a684",
+    "tests/osm-building-suppression.test.mjs": "e2e1aa5272c3083737c76ce960c42baf9203db592519c0d3e65cb25c4b1a791f",
+    "tests/osm-building-residual-plans.test.mjs": "a97cdefa674f6cad5481bfa27a3fa0ee362de81cff9cd4a96866365c85bdf11a",
+    "tests/osm-residual-layer.test.mjs": "c0ef6f5f6723a704b5c7bd588b4a62539a946ccf0b55a6ecc942f3092984bca6",
+    "tests/fixtures/osm-bund18-23809960.geojson": "65d0d8a84a145b24c9ce3805b10b22d0f9763ab2f33820cd8973290391251764"
+  },
+  "independent_review": "osm-fallback-review.json",
+  "cache_initialization_fix": "Collision cache declared before asynchronous building-source events; forced outage reproduced the prior temporal-dead-zone error.",
+  "slow_renderer_regression": "slow-renderer-regression.json"
+}

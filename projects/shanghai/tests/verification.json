@@ -1,6 +1,6 @@
 {
   "version": "shanghai-source-roofs-v4.1",
-  "status": "locally-verified",
+  "status": "local-verified-public-check-pending",
   "date_utc": "2026-10-25",
   "previous_release": {
     "report": "verification-v4.json",
@@ -35,16 +35,27 @@
     "fullcity": "../data/roofs/fullcity-validation.json",
     "local_browser": "source-roofs-local.json",
     "npm_test_passed": true,
-    "asset_check_passed": true
+    "asset_check_passed": true,
+    "published_model_hashes": "../data/roofs/published-models-validation.json",
+    "launcher": "launcher-roofs.json",
+    "compressed_model_decode": "../data/roofs/compressed-model-validation.json",
+    "public_browser": "source-roofs-public.json",
+    "osm_fallback_unit": "../data/roofs/osm-fallback-unit-validation.json",
+    "osm_fallback_test_count": 57,
+    "osm_fallback_review": "../data/roofs/osm-fallback-review.json",
+    "osm_fallback_local": "osm-fallback-local.json"
   },
   "asset_limits": {
     "all_files_below_bytes": 100000000,
     "maximum_city_glb_bytes": 940388,
-    "total_city_model_bytes": 285776832
+    "total_city_model_bytes": 285776832,
+    "largest_deliverable_bytes": 38754509
   },
   "limits": [
     "126 source-parametric roofs do not constitute citywide LoD2 or photogrammetry.",
     "Source tags and polygons are not independently surveyed roof geometry; centered gabled ridges and single planar skillions remain assumptions.",
     "Browser software rendering checks correctness and loading; they are not a hardware FPS benchmark."
-  ]
+  ],
+  "app_commit": "91abba60af13237bbe3cd9650cf907912b69d613",
+  "preview": "https://rawcdn.githack.com/ecojust/e-resource/91abba60af13237bbe3cd9650cf907912b69d613/projects/shanghai/index.html"
 }
