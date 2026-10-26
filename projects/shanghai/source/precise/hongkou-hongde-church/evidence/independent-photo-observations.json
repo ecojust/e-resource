@@ -1,0 +1,87 @@
+{
+  "schema": "hongde-day-night-observation-review-v1",
+  "actual_originals_viewed": [
+    {
+      "file_relative_to_output": "../research-b/photos/commons-37225841.jpg",
+      "bytes": 4925546,
+      "sha256": "78f6c927b0c0e0b600b7cf340d217df4c17a17e5c39a49ee42b978882202339e",
+      "actually_viewed": true,
+      "epoch": 2014,
+      "stored_dimensions_px": [
+        3264,
+        4912
+      ],
+      "exif_orientation": 1,
+      "artist": "Livelikerw",
+      "license": "CC BY-SA 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fitch_Memorial_Church_Shanghai.JPG",
+      "camera_make": "SONY",
+      "camera_model": "NEX-3N",
+      "role": "earlier structural/material-class reference; do not mix changed symbols"
+    },
+    {
+      "file_relative_to_output": "../research-b/photos/commons-143735176.jpg",
+      "bytes": 2644371,
+      "sha256": "7afe9179667d9a600e76bc99d27c385a11530f79020386c52d61e633f65e4558",
+      "actually_viewed": true,
+      "epoch": 2024,
+      "stored_dimensions_px": [
+        1200,
+        1800
+      ],
+      "exif_orientation": 1,
+      "artist": "Windmemories",
+      "license": "CC BY-SA 4.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:20240107_Hongde_Tang_Christian_Church_on_Duolun_Road.jpg",
+      "camera_make": "Apple",
+      "camera_model": "iPhone 15 Pro Max",
+      "role": "2024 visible front configuration"
+    }
+  ],
+  "preferred_epoch": 2024,
+  "stable_visible_structure": [
+    "中央前突砖塔与左右较低翼部连续；不能用单一等高盒体代替。",
+    "塔front三层可数开口：底部中央拱门；中层三口中央圆拱、两侧直顶；上层三窄直窗。",
+    "左翼圆窗与低部高拱窗、红柱、彩绘檐下构件、翼部低瓦檐。两图位置可对应；右翼受树遮，应保守处理。",
+    "中央塔屋顶有双重上翘檐线、有限厚度瓦面与可见檐底/斗拱；不是平面三角尖顶。"
+  ],
+  "epoch_differences": [
+    {
+      "feature": "红十字/金字",
+      "2014": "上部三窄窗下有明显红十字；金字上帝爱世人在中层三窗下、灰牌上。",
+      "2024": "该红十字同位置未见，金字位于上部三窄窗下；不能把2014十字和2024文字同时硬加。",
+      "certainty": "Visible configuration differs; neither removal date nor cause is inferred."
+    },
+    {
+      "feature": "堂名匾",
+      "2014": "浅灰/白底深字、石质框感。",
+      "2024": "蓝底金字金边。",
+      "certainty": "Choose2024front-visible configuration."
+    },
+    {
+      "feature": "窗门与玻璃",
+      "2014": "较暗红框/部分简单直格及少量彩色玻璃可见。",
+      "2024": "夜间透光彩色玻璃、斜格/星状分格更显著，门扇开合及可见内门不同。",
+      "certainty": "Do not infer permanent replacement date from lighting or a door being open; sample/count chosen2024window individually."
+    },
+    {
+      "feature": "外墙/斗拱颜色",
+      "2014": "自然光下灰砖、红褐檐瓦/柱，部分表面旧化。",
+      "2024": "泛光灯使砖暖黄、檐底青白发亮。",
+      "certainty": "Night illumination is not diffuse albedo; use2014only materialclass/structure reference, no invented measured paint change."
+    }
+  ],
+  "exclude_from_permanent_building": [
+    "2024节日树与灯串、人、路上物品",
+    "照片树冠/光影作为建筑贴图",
+    "无来源后半部装饰窗"
+  ],
+  "metric_constraints": [
+    "两图同为东北低视角，完整正面两个外端均受出画/树遮影响。",
+    "tower front and recessed wing walls are different planes; do not fit one21.03m facade homography through mixeddepth points.",
+    "2014SonyNEX3N/16mm may allow future intrinsic/vanishingpoint work but currently lacks independent precise sensor calibration and fully visible same-plane scale endpoints.",
+    "2024iPhone image is1200×1800 processed/downsized; do not construct a sensorK from nominal EXIF alone.",
+    "No independent tower height is certified.17.25m raster estimate is not a measured tower height."
+  ],
+  "model_acceptance": false
+}

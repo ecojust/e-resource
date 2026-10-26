@@ -1,0 +1,32 @@
+{
+  "schema": "hongde-final-source-freeze-v8",
+  "status": "Final immutable geometry input; subsequent camera/calibration/nav in separate files",
+  "file": "geometry-input-frozen-aa1d4225.json",
+  "canonical_file": "geometry-input.json",
+  "bytes": 36862,
+  "sha256": "aa1d42251a01fc487ee01bc90190e2e561e85d60ee0b61e8cacdc69808fa4179",
+  "initial_file": "history/geometry-input-before-front-review.json",
+  "initial_sha256": "8fcff8f1377c616ce96d250b95f9adbdc0a061ccb86e719a38f80c5b3c152e25",
+  "diff": [
+    {
+      "field": "/facade_frame/photographic_axis_note",
+      "before": "Front assumed north edge3 pending independent facade orientation review; native source order retained.",
+      "after": "Independent actual-photo and Duolun Road review confirms north sourceedge3 as main facade. Original edge3 is approximately eastward; seen from northeast, photographic left-to-right is negative native u. Preserve original source ring; a facade builder may reverse its local front endpoints."
+    },
+    {
+      "field": "/facade_frame/photographic_left_to_right_native_u_sign",
+      "before": null,
+      "after": -1
+    }
+  ],
+  "unchanged": [
+    "exact raw geometry and coordinate order",
+    "anchor/frontedge/front width",
+    "source IDs/OSM record/version/parent parts",
+    "macro/local/near and retained neighbors",
+    "source roof/residual state",
+    "height source baseline"
+  ],
+  "independent_review_reason": "Agent facade17 actual-photo/street review established photographic horizontal convention only",
+  "geometry_mutation": false
+}

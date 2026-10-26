@@ -1,0 +1,75 @@
+{
+  "schema": "hongde-photo-relative-calibration-v8",
+  "appearance_epoch": "2024-01-07 visible facade; 2014 daylight provides material classes and structurally consistent details only",
+  "height_is_measured": false,
+  "source_geometry_sha256": "aa1d42251a01fc487ee01bc90190e2e561e85d60ee0b61e8cacdc69808fa4179",
+  "front_width_m": 21.02771730361077,
+  "source_width_status": "Exact current source edge length, not surveyed wall-face width",
+  "nominal_estimates_m": {
+    "tower_width": 7.25,
+    "tower_depth": 7.5,
+    "tower_masonry_top": 13.2,
+    "tower_lower_eave_center": 13.75,
+    "tower_lower_roof_inner": 16.3,
+    "tower_upper_eave_center": 16.9,
+    "tower_upper_apex": 21.2,
+    "wing_front_recess": 1.15,
+    "wing_wall_top": 6.35,
+    "wing_column_radius": 0.34,
+    "nave_clerestory_top": 8.9,
+    "nave_roof_ridge": 11.8,
+    "entry_platform": 0.72
+  },
+  "sensitivity_ranges_m_not_measurement_intervals": {
+    "tower_width": [
+      6.5,
+      8.3
+    ],
+    "tower_masonry_top": [
+      11.5,
+      15.0
+    ],
+    "tower_apex": [
+      18.5,
+      24.0
+    ],
+    "wing_wall_top": [
+      5.7,
+      7.2
+    ],
+    "wing_front_recess": [
+      0.7,
+      1.8
+    ]
+  },
+  "visible_opening_topology": {
+    "tower_front": "Ground1round arch; middle3windows center arched with2rectangular flanks; upper3narrow rectangles",
+    "east_visible_tower_return": "At least3round-headed upper openings beneath the lower eave, estimated depth spacing; lower return kept blind where photographed",
+    "each_wing_front": "One high round-arched opening plus a separate round window; far wing dimensions partly hidden and explicitly estimated",
+    "clerestory_wing_front": "Two visible rectangular upper openings on the near wing; far counterpart symmetry is a declared construction hypothesis"
+  },
+  "metric_limit": "Both photographs are low oblique views; the two outer ends of a common21m facade plane are not both visible. Tower is forward of wings. No whole-image height/width ratio or raster17.25m is used as measured tower height. Nominals are a consistent photo-relative prototype requiring native comparison.",
+  "roof_scope": "Observed tower uses two curved square hipped/pyramidal eave tiers, not flat triangular gables. Rear nave roof intersection/profile and hidden roof faces are conservative construction estimates.",
+  "signs": {
+    "plaque": "鴻德堂",
+    "upper_lettering": "上帝愛世人",
+    "red_cross": false,
+    "typeface_traced": false
+  },
+  "limitations": [
+    "No surveyed height, wall thickness or photogrammetric camera solution is claimed.",
+    "Exact source parallelogram, all four vertices and source owner remain unchanged; internal tower/wing divisions are photo-informed estimates.",
+    "Unseen west/rear openings are not populated with invented repetitive windows.",
+    "Night illumination is not baked into the material. Bronze/gold/brick paint colors use daylight classes and remain approximate.",
+    "No original photo pixels are embedded; fine carved animal ornament, inscriptions and hidden roof decoration are simplified and labeled."
+  ],
+  "revision": "v2",
+  "v2_changes": [
+    "Low wing roofs are short-depth continuous curved sheds rising rearward to the setback front wall; no independent pavilion apex",
+    "Bricks use low-amplitude deterministic row-and-column hash color selection",
+    "Low wing arched windows have diamond upper transoms and rectangular lower panes; oculi use predominantly blue glass",
+    "Roof tile overlap step22mm with12mm skin, to be checked against emitted Float32 triangles",
+    "Upper tower drum expanded4.45 to4.70m to cover lower roof inner ring; nave inner opening solidly capped",
+    "Conservative upper side walls clipped behind depth3.0m to avoid unsupported protruding wallheads"
+  ]
+}
