@@ -1,0 +1,83 @@
+{
+  "schema": "city-radius-mismatch-diagnostic-v1",
+  "builder_radius": 6378137.0,
+  "maplibre_radius": 6371008.8,
+  "ratio": 1.0011188494983714,
+  "origin": [
+    121.058349609375,
+    31.11879392996346
+  ],
+  "localId": 1148,
+  "source_key": "building:89f6310b-5602-4121-92c5-ac67809118a5",
+  "source_geometry": {
+    "coordinates": [
+      [
+        [
+          121.05110765,
+          31.11289289
+        ],
+        [
+          121.05107546,
+          31.11296179
+        ],
+        [
+          121.05128467,
+          31.11302149
+        ],
+        [
+          121.05131686,
+          31.1129526
+        ],
+        [
+          121.05110765,
+          31.11289289
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "runtime_mapped_geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          121.05109954733739,
+          31.112886287418945
+        ],
+        [
+          121.05106732132163,
+          31.112955264512443
+        ],
+        [
+          121.05127676539612,
+          31.113015031311853
+        ],
+        [
+          121.05130899141189,
+          31.11294606422958
+        ],
+        [
+          121.05109954733739,
+          31.112886287418945
+        ]
+      ]
+    ]
+  },
+  "checks": [
+    {
+      "capture": "qingpu-beidajie-208-212-walk-full",
+      "source_contains_eye": false,
+      "runtime_radius_scaled_footprint_contains_eye": true,
+      "distance_to_runtime_boundary_m": 0.18306821124817774,
+      "center_ray_intersection_m": 7.844962674991258
+    },
+    {
+      "capture": "qingpu-beidajie-208-212-windows-oblique",
+      "source_contains_eye": true,
+      "runtime_radius_scaled_footprint_contains_eye": true,
+      "distance_to_runtime_boundary_m": 3.9439787902410157,
+      "center_ray_intersection_m": 5.296429193266685
+    }
+  ],
+  "scope": "Predicted render-time footprint from actual production builder local_coordinates and scene metreScale transforms; actual GLB comparison pending."
+}

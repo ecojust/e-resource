@@ -1,0 +1,107 @@
+{
+  "schema": "precise-building-root-visual-review-v7",
+  "passed": false,
+  "final": true,
+  "reviewer": "root",
+  "utc": "2026-10-26T11:19:59.838499+00:00",
+  "building_ids": [
+    "xuhui-wukang-210",
+    "qingpu-beidajie-208-212"
+  ],
+  "browser_report_sha256": "dd1c19ffb8d278e9464f6e36ac26bd1d86b67149074608083bba0e05a85e1361",
+  "expectations_sha256": "76d82b8e5edd94efb77c39a49a285331e0b369a25740643b6e0e343182fe4e31",
+  "actually_viewed": [
+    {
+      "file": "xuhui-wukang-210-walk-full.png",
+      "bytes": 286945,
+      "sha256": "fbfaa08b9d7a036037cd45b96ee4f565e1e2c22d5699aca6a8c1713ec58f3b9b",
+      "actually_viewed": true
+    },
+    {
+      "file": "xuhui-wukang-210-windows-oblique.png",
+      "bytes": 338038,
+      "sha256": "30a7527254d3fb06f18726370e7cff2e259f5dc7fe840225c19c14960d83b00a",
+      "actually_viewed": true
+    },
+    {
+      "file": "xuhui-wukang-210-distant-lod.png",
+      "bytes": 520916,
+      "sha256": "57cc1415bd4b576a059e62733854ec77b6dd6b8b2f3dc5c9be9cc5585198e216",
+      "actually_viewed": true
+    },
+    {
+      "file": "xuhui-wukang-210-returned-full.png",
+      "bytes": 286955,
+      "sha256": "6bd757e50a6d5f630e579d63a6ab9c59b9562f0ce4cb89483d3d7e4789427c12",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-walk-full.png",
+      "bytes": 311324,
+      "sha256": "254dd4ff6e62a2698c79d9f83f7b8235d3c10549ee0ef324f4fd7e305ec086ea",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-windows-oblique.png",
+      "bytes": 345569,
+      "sha256": "bd69eeb3432134ce9a251e28e1911653c65e72fbb8d72830807edda0f26b8536",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-distant-lod.png",
+      "bytes": 442014,
+      "sha256": "682adc5bb30de5d6062e455a7d0ac0ba339770121b83e0001ab25ca82a09bce2",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-returned-full.png",
+      "bytes": 300183,
+      "sha256": "c46f575dae118f3810e778c29203c1a04c5d11ab55f904340b576cb4d935eb8a",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-released.png",
+      "bytes": 148645,
+      "sha256": "5e016edc01704de74b59eb332e3591a0f74ccd09878f0ba0acd79c93ce4ba0a1",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-returned.png",
+      "bytes": 311309,
+      "sha256": "c0dcbeffdfc0572da49c5371ed7aa06031560cb9a96138478cfec30ea2df1d0a",
+      "actually_viewed": true
+    },
+    {
+      "file": "after-city-manifest-reset.png",
+      "bytes": 311344,
+      "sha256": "9dc416f5d881037c9cb76d6b421ec0c7a818fde5ab66ea78901626464d60df60",
+      "actually_viewed": true
+    }
+  ],
+  "scope": "Actual root visual inspection of all11 captures, static23 candidate. Technical checks passed but B walking views failed; no combined acceptance.",
+  "per_building": {
+    "xuhui-wukang-210": {
+      "limited_visual_passed": true,
+      "observations": [
+        "Full and oblique views show the curved balcony, shared sills and closed roof junction; return retains the replacement without its old source box.",
+        "Distant screenshot target is tiny/occluded; it does not independently verify facade details."
+      ]
+    },
+    "qingpu-beidajie-208-212": {
+      "limited_visual_passed": false,
+      "observations": [
+        "Oblique overview shows intact roof, three arches and gallery.",
+        "Initial walking, returned walking, owner-return and manifest-reset views contain large foreground frames from the opposite ordinary building; camera is inside another building.",
+        "Preserve neighboring buildings; fix navigation/collision and recheck actual views."
+      ]
+    }
+  },
+  "limitations": [
+    "No catalog workflow tested.",
+    "Neighborhood remains estimated baseline geometry; no street-context accuracy claim.",
+    "Software renderer; no hardware performance assertion."
+  ],
+  "browser_acceptance_passed": false,
+  "catalog_acceptance_passed": false,
+  "followup": "Diagnose actual loaded collision versus source footprint and idle-camera cache; isolated correction required."
+}

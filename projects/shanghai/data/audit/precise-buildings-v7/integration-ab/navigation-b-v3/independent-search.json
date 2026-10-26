@@ -1,0 +1,2536 @@
+{
+  "schema": "teahouse-navigation-v3-source-FOV-candidates-v1",
+  "building_id": "qingpu-beidajie-208-212",
+  "analysis_only": true,
+  "browser_passed": false,
+  "accepted": false,
+  "navigation_frozen": false,
+  "app_or_old_navigation_modified": false,
+  "source_geometry": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/new-model-b/geometry-input.json",
+    "bytes": 46801,
+    "sha256": "15db7395c2c48970ad829019344d396d3391a682ba74727d9d9d57318943f7c9"
+  },
+  "source_macro": {
+    "file": "/workspace/shanghai_project/assets/city-detail/macros/14-13701-6700/feature-table.json.gz",
+    "bytes": 262129,
+    "sha256": "45c5ac2f165e1646f351cfd81d544470900a7fbb1a766ef1df0d4f59555a964e"
+  },
+  "source_feature_count": 2088,
+  "coordinate_frame": {
+    "C_door_enu_m": [
+      3.5790677003307825,
+      -5.1129803834410215
+    ],
+    "positive_model_u_enu": [
+      0.8320519775117088,
+      0.5546976714561319
+    ],
+    "outward_N_enu": [
+      0.5546976714561319,
+      -0.8320519775117088
+    ],
+    "front_ne_positive_u_enu_m": [
+      6.646494952263606,
+      -3.0680423266905046
+    ],
+    "front_sw_negative_u_enu_m": [
+      0.5116404483979587,
+      -7.157918440191539
+    ]
+  },
+  "formula": {
+    "start": "p=C+u*U+d*N;v=(p-C)/norm(p-C);heading=atan2(Ceast-peast,Cnorth-pnorth)",
+    "conservative_capsule": "Full segment[p-2.8v,p+14v] with round radius0.12m, all2088polygons; bodyPoint(p) radius0.38m.",
+    "actual_camera": "D14;target=p-2.8v;eye=p+(14*sin(pitch)-2.8)*v;targetHeight3;eyeHeight3+14*cos(pitch).",
+    "fan": "Approximate plan-horizontal triangle with eyeE and C±norm(C-E)*tan(horizontalFOV/2)*perpendicular(C-E). Includes all foreign footprints before the perpendicular plane through doorC.",
+    "ray_checks": "Exact full segment-to-polygon distances and intersections to doorC and both original source-front endpoints; target25 excluded only from occluder tests, included in body/camera tests."
+  },
+  "limited_grid": {
+    "u_range_m": [
+      -5,
+      -1
+    ],
+    "d_range_m": [
+      2.5,
+      5
+    ],
+    "step_m": 0.05,
+    "total": 4131,
+    "full_conservative_capsule_and_body_valid": 2289,
+    "then_three_rays_distance_at_least0.8m": 1106,
+    "fully_clear_45deg_fans": 0,
+    "fully_clear_60deg_fans": 0,
+    "best45_by_overlap": [
+      {
+        "u_m": -3.1000000000000068,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 3.000310588722771,
+        "fov45_overlap_m2": 0.01685007205962025,
+        "fov60_overlap_m2": 3.699561294196867
+      },
+      {
+        "u_m": -3.050000000000007,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 2.9593314405975106,
+        "fov45_overlap_m2": 0.016939657767253574,
+        "fov60_overlap_m2": 3.604496151694552
+      },
+      {
+        "u_m": -3.1500000000000066,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 3.040355517756261,
+        "fov45_overlap_m2": 0.016963740463725188,
+        "fov60_overlap_m2": 3.8004919810667284
+      },
+      {
+        "u_m": -3.000000000000007,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 2.9173918827657848,
+        "fov45_overlap_m2": 0.01723978572920858,
+        "fov60_overlap_m2": 3.515173331994662
+      },
+      {
+        "u_m": -3.2000000000000064,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 3.0794917702911246,
+        "fov45_overlap_m2": 0.017277315803444528,
+        "fov60_overlap_m2": 3.907421969688777
+      }
+    ],
+    "best60_by_overlap": [
+      {
+        "u_m": -2.20000000000001,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 2.0920068101841927,
+        "fov45_overlap_m2": 0.07947453579948154,
+        "fov60_overlap_m2": 2.8129717274784984
+      },
+      {
+        "u_m": -2.15000000000001,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 2.0291654197205813,
+        "fov45_overlap_m2": 0.09088022926692843,
+        "fov60_overlap_m2": 2.8146696954374906
+      },
+      {
+        "u_m": -2.2500000000000098,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 2.1533589857557884,
+        "fov45_overlap_m2": 0.06958104051097663,
+        "fov60_overlap_m2": 2.817005478637269
+      },
+      {
+        "u_m": -2.1000000000000103,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 1.964801209188148,
+        "fov45_overlap_m2": 0.10400266710209174,
+        "fov60_overlap_m2": 2.8222759849396915
+      },
+      {
+        "u_m": -2.3000000000000096,
+        "d_m": 2.5,
+        "minimum_three_ray_distance_m": 2.2132556625329958,
+        "fov45_overlap_m2": 0.061017879720686154,
+        "fov60_overlap_m2": 2.826622134332125
+      }
+    ],
+    "scope": "Finite grid at actualD14/pitch82; not a proof over all possible street poses. FOV estimates must be replaced by controls actual matrices before visual acceptance."
+  },
+  "candidates": [
+    {
+      "label": "requested_u-2_d4",
+      "u_m": -2,
+      "outward_d_m": 4,
+      "start_wgs84": [
+        121.05104909505405,
+        31.112967846305857
+      ],
+      "heading_to_door_degrees": 352.8751575089385,
+      "start_enu_m": [
+        4.133754431131893,
+        -9.55058363640012
+      ],
+      "target_enu_m": [
+        3.7864656049711383,
+        -6.772204527778713
+      ],
+      "conservative_back_enu_m": [
+        5.8701985619356645,
+        -23.442479179507156
+      ],
+      "body_radius_m": 0.38,
+      "body_radius_hits": [],
+      "body_nearest_sources": [
+        {
+          "local_id": 1148,
+          "distance_m": 2.6016128336901416
+        },
+        {
+          "local_id": 25,
+          "distance_m": 3.999999999999999
+        },
+        {
+          "local_id": 958,
+          "distance_m": 12.434032976634407
+        },
+        {
+          "local_id": 978,
+          "distance_m": 13.364280764735737
+        },
+        {
+          "local_id": 421,
+          "distance_m": 13.959454128543907
+        },
+        {
+          "local_id": 410,
+          "distance_m": 19.0844068394414
+        }
+      ],
+      "conservative_boom_radius_m": 0.12,
+      "conservative_front_m": 2.8,
+      "conservative_back_m": 14,
+      "conservative_boom_nearest_sources": [
+        {
+          "local_id": 25,
+          "distance_m": 1.495603865200235
+        },
+        {
+          "local_id": 958,
+          "distance_m": 1.5852397056552834
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 2.4097175395406523
+        },
+        {
+          "local_id": 1985,
+          "distance_m": 9.788868710273144
+        },
+        {
+          "local_id": 421,
+          "distance_m": 12.486028007160968
+        },
+        {
+          "local_id": 978,
+          "distance_m": 13.127179708657671
+        }
+      ],
+      "conservative_boom_radius_hits": [],
+      "door_connection_other_hits": [],
+      "all_source_polygons_checked": 2088,
+      "actual_camera": {
+        "48": {
+          "D_m": 14,
+          "pitch_degrees": 48,
+          "behind_player_ground_m": 7.60402755668352,
+          "eye_enu_m": [
+            5.076895075508553,
+            -17.095894816711183
+          ],
+          "eye_wgs84": [
+            121.0510589909633,
+            31.112900065536845
+          ],
+          "eye_height_m": 12.367828489024015,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 1.495603865200235
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 2.4097175395406514
+            },
+            {
+              "local_id": 958,
+              "distance_m": 4.987189931858823
+            },
+            {
+              "local_id": 421,
+              "distance_m": 12.486028007160968
+            },
+            {
+              "local_id": 978,
+              "distance_m": 13.127179708657668
+            },
+            {
+              "local_id": 1985,
+              "distance_m": 15.966143734831162
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 2.4097175395406514
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 4.987189931858823
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.127179708657668
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 15.966143734831162
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.7958118076068814
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 4.987189931858823
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 15.12575301260522
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.583266045892428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 4.009172040604001
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 4.987189931858823
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834918495016256
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 15.966143734831162
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  5.076895075508553,
+                  -17.095894816711183
+                ],
+                [
+                  -1.3844179746860283,
+                  -5.733400796333348
+                ],
+                [
+                  8.542553375347593,
+                  -4.492559970548695
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 0.0945350340650301,
+                  "nearest_distance_from_eye_m": 6.634756340258145
+                }
+              ],
+              "total_foreign_area_m2": 0.0945350340650301,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  5.076895075508553,
+                  -17.095894816711183
+                ],
+                [
+                  -3.3392711733939966,
+                  -5.977751421699498
+                ],
+                [
+                  10.497406574055562,
+                  -4.248209345182545
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 1.4177870328746012,
+                  "nearest_distance_from_eye_m": 5.702141508900176
+                }
+              ],
+              "total_foreign_area_m2": 1.4177870328746012,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        },
+        "82": {
+          "D_m": 14,
+          "pitch_degrees": 82,
+          "behind_player_ground_m": 11.063752962381987,
+          "eye_enu_m": [
+            5.506010780859825,
+            -20.528905098410945
+          ],
+          "eye_wgs84": [
+            121.05106349346255,
+            31.11286922622588
+          ],
+          "eye_height_m": 4.948423413440917,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 1.495603865200235
+            },
+            {
+              "local_id": 958,
+              "distance_m": 2.0304856976873586
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 2.4097175395406514
+            },
+            {
+              "local_id": 421,
+              "distance_m": 12.486028007160968
+            },
+            {
+              "local_id": 1985,
+              "distance_m": 12.597644303650197
+            },
+            {
+              "local_id": 978,
+              "distance_m": 13.127179708657668
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 2.0304856976873586
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 2.4097175395406514
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 12.597644303650197
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.127179708657668
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.46645901540346346
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 2.0304856976873586
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 12.597644303650197
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 15.449155400682233
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 2.0304856976873586
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 4.673907776568086
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834918495016256
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 12.597644303650197
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  5.506010780859825,
+                  -20.528905098410945
+                ],
+                [
+                  -2.80641739313235,
+                  -5.911146341317141
+                ],
+                [
+                  9.964552793793915,
+                  -4.314814425564902
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 2.6489183290508986,
+                  "nearest_distance_from_eye_m": 8.085341651268056
+                }
+              ],
+              "total_foreign_area_m2": 2.6489183290508986,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  5.506010780859825,
+                  -20.528905098410945
+                ],
+                [
+                  -5.321320583664107,
+                  -6.2255014896975505
+                ],
+                [
+                  12.479455984325671,
+                  -4.0004592771844925
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 8.25066399916073,
+                  "nearest_distance_from_eye_m": 6.94882522868071
+                }
+              ],
+              "total_foreign_area_m2": 8.25066399916073,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        }
+      }
+    },
+    {
+      "label": "requested_u-3_d4",
+      "u_m": -3,
+      "outward_d_m": 4,
+      "start_wgs84": [
+        121.05104036474339,
+        31.112962863367272
+      ],
+      "heading_to_door_degrees": 3.1800039777045392,
+      "start_enu_m": [
+        3.3017024536201838,
+        -10.105281307856252
+      ],
+      "target_enu_m": [
+        3.457026991778119,
+        -7.309592790183723
+      ],
+      "conservative_back_enu_m": [
+        2.5250797628305075,
+        -24.0837238962189
+      ],
+      "body_radius_m": 0.38,
+      "body_radius_hits": [],
+      "body_nearest_sources": [
+        {
+          "local_id": 1148,
+          "distance_m": 3.3469260378237657
+        },
+        {
+          "local_id": 25,
+          "distance_m": 3.999999999999999
+        },
+        {
+          "local_id": 958,
+          "distance_m": 11.905411813590504
+        },
+        {
+          "local_id": 978,
+          "distance_m": 12.584237018092042
+        },
+        {
+          "local_id": 421,
+          "distance_m": 14.946705522274128
+        },
+        {
+          "local_id": 410,
+          "distance_m": 19.13199885400147
+        }
+      ],
+      "conservative_boom_radius_m": 0.12,
+      "conservative_front_m": 2.8,
+      "conservative_back_m": 14,
+      "conservative_boom_nearest_sources": [
+        {
+          "local_id": 958,
+          "distance_m": 0.0
+        },
+        {
+          "local_id": 25,
+          "distance_m": 1.76
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 3.3462704217435717
+        },
+        {
+          "local_id": 1985,
+          "distance_m": 11.194462210607451
+        },
+        {
+          "local_id": 978,
+          "distance_m": 12.563763902615149
+        },
+        {
+          "local_id": 421,
+          "distance_m": 13.071995191576143
+        }
+      ],
+      "conservative_boom_radius_hits": [
+        958
+      ],
+      "door_connection_other_hits": [],
+      "all_source_polygons_checked": 2088,
+      "actual_camera": {
+        "48": {
+          "D_m": 14,
+          "pitch_degrees": 48,
+          "behind_player_ground_m": 7.60402755668352,
+          "eye_enu_m": [
+            2.879883857769441,
+            -17.697600067958255
+          ],
+          "eye_wgs84": [
+            121.05103593880908,
+            31.112894660317696
+          ],
+          "eye_height_m": 12.367828489024015,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 1.76
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 3.346270421743572
+            },
+            {
+              "local_id": 958,
+              "distance_m": 4.454567921982491
+            },
+            {
+              "local_id": 978,
+              "distance_m": 12.56376390261515
+            },
+            {
+              "local_id": 421,
+              "distance_m": 13.071995191576143
+            },
+            {
+              "local_id": 1985,
+              "distance_m": 16.26471862526703
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 3.346270421743572
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 4.454567921982491
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 12.563763902615152
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 16.045925299494428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 1.784417832762278
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 4.454567921982491
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.946620845558094
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.583266045892428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 4.454567921982491
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 5.313260842265218
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834918495016256
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 16.26471862526703
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  2.879883857769441,
+                  -17.697600067958255
+                ],
+                [
+                  -1.6336524503036762,
+                  -4.823368953259979
+                ],
+                [
+                  8.79178785096524,
+                  -5.402591813622064
+                ]
+              ],
+              "foreign_overlaps": [],
+              "total_foreign_area_m2": 0,
+              "full_plan_fan_clear": true
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  2.879883857769441,
+                  -17.697600067958255
+                ],
+                [
+                  -3.6866658621743045,
+                  -4.7093064037251935
+                ],
+                [
+                  10.844801262835869,
+                  -5.516654363156849
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 0.8620570149904807,
+                  "nearest_distance_from_eye_m": 7.659101754495147
+                }
+              ],
+              "total_foreign_area_m2": 0.8620570149904807,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        },
+        "82": {
+          "D_m": 14,
+          "pitch_degrees": 82,
+          "behind_player_ground_m": 11.063752962381987,
+          "eye_enu_m": [
+            2.6879623396289443,
+            -21.15199813617652
+          ],
+          "eye_wgs84": [
+            121.05103392507134,
+            31.11286362887484
+          ],
+          "eye_height_m": 4.948423413440917,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 958,
+              "distance_m": 1.2332271368572798
+            },
+            {
+              "local_id": 25,
+              "distance_m": 1.76
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 3.346270421743572
+            },
+            {
+              "local_id": 978,
+              "distance_m": 12.56376390261515
+            },
+            {
+              "local_id": 421,
+              "distance_m": 13.071995191576143
+            },
+            {
+              "local_id": 1985,
+              "distance_m": 13.381796624757985
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 1.2332271368572798
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 3.346270421743572
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 12.563763902615152
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 13.381796624757985
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 1.2332271368572798
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 1.5303539714468104
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 13.381796624757985
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 14.280234625914138
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 1.2332271368572798
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 5.59070282028444
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834891776881193
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 13.381796624757985
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  2.6879623396289443,
+                  -21.15199813617652
+                ],
+                [
+                  -3.064510979995099,
+                  -4.743872457534952
+                ],
+                [
+                  10.222646380656665,
+                  -5.482088309347091
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 1.2861508063905398,
+                  "nearest_distance_from_eye_m": 10.492613917457927
+                }
+              ],
+              "total_foreign_area_m2": 1.2861508063905398,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  2.6879623396289443,
+                  -21.15199813617652
+                ],
+                [
+                  -5.681063516748242,
+                  -4.5985004635634965
+                ],
+                [
+                  12.839198917409806,
+                  -5.627460303318546
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 6.981516696524255,
+                  "nearest_distance_from_eye_m": 9.443195846728782
+                }
+              ],
+              "total_foreign_area_m2": 6.981516696524255,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        }
+      }
+    },
+    {
+      "label": "alternative_u-3_d2.5",
+      "u_m": -3,
+      "outward_d_m": 2.5,
+      "start_wgs84": [
+        121.0510316344901,
+        31.112974075052442
+      ],
+      "heading_to_door_degrees": 16.50453523959532,
+      "start_enu_m": [
+        2.469655946435986,
+        -8.85720334158869
+      ],
+      "target_enu_m": [
+        3.2651114158015866,
+        -6.172571039716355
+      ],
+      "conservative_back_enu_m": [
+        -1.5076214003920176,
+        -22.280364850950363
+      ],
+      "body_radius_m": 0.38,
+      "body_radius_hits": [],
+      "body_nearest_sources": [
+        {
+          "local_id": 25,
+          "distance_m": 2.500000000000001
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 4.395021829171917
+        },
+        {
+          "local_id": 978,
+          "distance_m": 11.673738042151596
+        },
+        {
+          "local_id": 958,
+          "distance_m": 13.22700858328534
+        },
+        {
+          "local_id": 421,
+          "distance_m": 14.790412032418049
+        },
+        {
+          "local_id": 410,
+          "distance_m": 17.633698566896864
+        }
+      ],
+      "conservative_boom_radius_m": 0.12,
+      "conservative_front_m": 2.8,
+      "conservative_back_m": 14,
+      "conservative_boom_nearest_sources": [
+        {
+          "local_id": 25,
+          "distance_m": 0.7074836809394565
+        },
+        {
+          "local_id": 958,
+          "distance_m": 1.4892102681184942
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 4.393254862763448
+        },
+        {
+          "local_id": 978,
+          "distance_m": 11.23858700064037
+        },
+        {
+          "local_id": 421,
+          "distance_m": 12.543388123039797
+        },
+        {
+          "local_id": 413,
+          "distance_m": 14.938798967845733
+        }
+      ],
+      "conservative_boom_radius_hits": [],
+      "door_connection_other_hits": [],
+      "all_source_polygons_checked": 2088,
+      "actual_camera": {
+        "48": {
+          "D_m": 14,
+          "pitch_degrees": 48,
+          "behind_player_ground_m": 7.60402755668352,
+          "eye_enu_m": [
+            0.30941833601789615,
+            -16.14792405694581
+          ],
+          "eye_wgs84": [
+            121.0510089681832,
+            31.112908581316464
+          ],
+          "eye_height_m": 12.367828489024015,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 0.7074836809394565
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 4.393254862763449
+            },
+            {
+              "local_id": 958,
+              "distance_m": 6.732621435110428
+            },
+            {
+              "local_id": 978,
+              "distance_m": 11.238587000640372
+            },
+            {
+              "local_id": 421,
+              "distance_m": 12.543388123039797
+            },
+            {
+              "local_id": 410,
+              "distance_m": 15.744211344659945
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 4.393254862763448
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.732621435110428
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 11.238587000640369
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 16.045925299494428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 3.120422096398639
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.732621435110428
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 11.811451914097802
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.583266045892428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 6.202271602595452
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.732621435110428
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.677598528251593
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                },
+                {
+                  "local_id": 1652,
+                  "distance_m": 17.300278929286886
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  0.30941833601789615,
+                  -16.14792405694581
+                ],
+                [
+                  -0.9917556292580838,
+                  -3.758647272538055
+                ],
+                [
+                  8.14989102991965,
+                  -6.467313494343988
+                ]
+              ],
+              "foreign_overlaps": [],
+              "total_foreign_area_m2": 0,
+              "full_plan_fan_clear": true
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  0.30941833601789615,
+                  -16.14792405694581
+                ],
+                [
+                  -2.791960000059565,
+                  -3.2252474427992883
+                ],
+                [
+                  9.95009540072113,
+                  -7.000713324082755
+                ]
+              ],
+              "foreign_overlaps": [],
+              "total_foreign_area_m2": 0,
+              "full_plan_fan_clear": true
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        },
+        "82": {
+          "D_m": 14,
+          "pitch_degrees": 82,
+          "behind_player_ground_m": 11.063752962381987,
+          "eye_enu_m": [
+            -0.6734593412913781,
+            -19.465099263998127
+          ],
+          "eye_wgs84": [
+            121.05099865533289,
+            31.112878782574363
+          ],
+          "eye_height_m": 4.948423413440917,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 0.7074836809394565
+            },
+            {
+              "local_id": 958,
+              "distance_m": 3.8963423567161195
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 4.393254862763448
+            },
+            {
+              "local_id": 978,
+              "distance_m": 11.238587000640372
+            },
+            {
+              "local_id": 421,
+              "distance_m": 12.543388123039797
+            },
+            {
+              "local_id": 410,
+              "distance_m": 15.744211344659945
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 3.8963423567161195
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 4.393254862763448
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 11.238587000640372
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 16.045925299494428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 2.91739188276578
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 3.8963423567161195
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 12.180217934263979
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.583266045892428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 3.8963423567161195
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 6.400565873169012
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.522792137007418
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 16.768839988161385
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  -0.6734593412913781,
+                  -19.465099263998127
+                ],
+                [
+                  -2.3657745887869326,
+                  -3.351526008442787
+                ],
+                [
+                  9.523909989448498,
+                  -6.874434758439255
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 0.01723978572920858,
+                  "nearest_distance_from_eye_m": 11.716493574034889
+                }
+              ],
+              "total_foreign_area_m2": 0.01723978572920858,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  -0.6734593412913781,
+                  -19.465099263998127
+                ],
+                [
+                  -4.707131998800373,
+                  -2.6577827512243037
+                ],
+                [
+                  11.865267399461937,
+                  -7.56817801565774
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 3.515173331994656,
+                  "nearest_distance_from_eye_m": 11.00784365015863
+                }
+              ],
+              "total_foreign_area_m2": 3.515173331994656,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        }
+      }
+    },
+    {
+      "label": "alternative_u-2.2_d2.5",
+      "u_m": -2.2,
+      "outward_d_m": 2.5,
+      "start_wgs84": [
+        121.05103861873866,
+        31.11297806140289
+      ],
+      "heading_to_door_degrees": 7.657883551554184,
+      "start_enu_m": [
+        3.135297528445353,
+        -8.413445204423784
+      ],
+      "target_enu_m": [
+        3.5084191068598622,
+        -5.638417224795207
+      ],
+      "conservative_back_enu_m": [
+        1.2696896363728045,
+        -22.28858510256667
+      ],
+      "body_radius_m": 0.38,
+      "body_radius_hits": [],
+      "body_nearest_sources": [
+        {
+          "local_id": 25,
+          "distance_m": 2.5
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 3.9508729701047733
+        },
+        {
+          "local_id": 978,
+          "distance_m": 12.341350943138739
+        },
+        {
+          "local_id": 958,
+          "distance_m": 13.604662162383354
+        },
+        {
+          "local_id": 421,
+          "distance_m": 13.9916612547274
+        },
+        {
+          "local_id": 410,
+          "distance_m": 17.595624955248805
+        }
+      ],
+      "conservative_boom_radius_m": 0.12,
+      "conservative_front_m": 2.8,
+      "conservative_back_m": 14,
+      "conservative_boom_nearest_sources": [
+        {
+          "local_id": 25,
+          "distance_m": 0.39800215261628547
+        },
+        {
+          "local_id": 958,
+          "distance_m": 0.6033397300413543
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 3.7212552404041994
+        },
+        {
+          "local_id": 421,
+          "distance_m": 12.028269866564266
+        },
+        {
+          "local_id": 978,
+          "distance_m": 12.19106367278978
+        },
+        {
+          "local_id": 1985,
+          "distance_m": 13.364904468525715
+        }
+      ],
+      "conservative_boom_radius_hits": [],
+      "door_connection_other_hits": [],
+      "all_source_polygons_checked": 2088,
+      "actual_camera": {
+        "48": {
+          "D_m": 14,
+          "pitch_degrees": 48,
+          "behind_player_ground_m": 7.60402755668352,
+          "eye_enu_m": [
+            2.1220022554963593,
+            -15.949655642875033
+          ],
+          "eye_wgs84": [
+            121.05102798673154,
+            31.11291036239462
+          ],
+          "eye_height_m": 12.367828489024015,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 0.39800215261628547
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 3.721255240404199
+            },
+            {
+              "local_id": 958,
+              "distance_m": 6.347784780691596
+            },
+            {
+              "local_id": 421,
+              "distance_m": 12.028269866564266
+            },
+            {
+              "local_id": 978,
+              "distance_m": 12.19106367278978
+            },
+            {
+              "local_id": 410,
+              "distance_m": 15.429206711044593
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 3.7212552404041985
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.347784780691596
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 12.19106367278978
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 16.045925299494428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 2.371663947549021
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.347784780691596
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.09013292753383
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.583266045892428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 5.481905534255186
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.347784780691596
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834918495016256
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                },
+                {
+                  "local_id": 1652,
+                  "distance_m": 17.300278929286886
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  2.1220022554963593,
+                  -15.949655642875033
+                ],
+                [
+                  -0.9096301631597634,
+                  -4.509444114925417
+                ],
+                [
+                  8.067765563821329,
+                  -5.716516651956626
+                ]
+              ],
+              "foreign_overlaps": [],
+              "total_foreign_area_m2": 0,
+              "full_plan_fan_clear": true
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  2.1220022554963593,
+                  -15.949655642875033
+                ],
+                [
+                  -2.6774896778240014,
+                  -4.271743256638965
+                ],
+                [
+                  9.835625078485567,
+                  -5.954217510243078
+                ]
+              ],
+              "foreign_overlaps": [],
+              "total_foreign_area_m2": 0,
+              "full_plan_fan_clear": true
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        },
+        "82": {
+          "D_m": 14,
+          "pitch_degrees": 82,
+          "behind_player_ground_m": 11.063752962381987,
+          "eye_enu_m": [
+            1.6609671825481478,
+            -19.378525215248274
+          ],
+          "eye_wgs84": [
+            121.05102314931808,
+            31.112879560283698
+          ],
+          "eye_height_m": 4.948423413440917,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 0.39800215261628547
+            },
+            {
+              "local_id": 958,
+              "distance_m": 3.2404256935144224
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 3.7212552404041994
+            },
+            {
+              "local_id": 421,
+              "distance_m": 12.028269866564266
+            },
+            {
+              "local_id": 978,
+              "distance_m": 12.19106367278978
+            },
+            {
+              "local_id": 1985,
+              "distance_m": 15.426381041582676
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 3.2404256935144224
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 3.7212552404041994
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 12.191063672789781
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 15.426381041582676
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 2.09200681018418
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 3.2404256935144224
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.513216459437933
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 15.426381041582676
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 958,
+                  "distance_m": 3.2404256935144224
+                },
+                {
+                  "local_id": 1148,
+                  "distance_m": 5.820736914905632
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.815506515697193
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.337435301794246
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 15.426381041582676
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  1.6609671825481478,
+                  -19.378525215248274
+                ],
+                [
+                  -2.3299144436451944,
+                  -4.318477134980598
+                ],
+                [
+                  9.48804984430676,
+                  -5.907483631901445
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 0.07947453579948421,
+                  "nearest_distance_from_eye_m": 10.194055169207015
+                }
+              ],
+              "total_foreign_area_m2": 0.07947453579948421,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  1.6609671825481478,
+                  -19.378525215248274
+                ],
+                [
+                  -4.65714844844981,
+                  -4.005564533166456
+                ],
+                [
+                  11.815283849111374,
+                  -6.2203962337155865
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 2.8129717274785033,
+                  "nearest_distance_from_eye_m": 9.321780053395178
+                }
+              ],
+              "total_foreign_area_m2": 2.8129717274785033,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": []
+        }
+      }
+    },
+    {
+      "label": "historical_v2_reported_visual_failure",
+      "u_m": -0.6,
+      "outward_d_m": 3,
+      "start_wgs84": [
+        121.05105549732015,
+        31.11298229687545
+      ],
+      "heading_to_door_degrees": 337.6200388058807,
+      "start_enu_m": [
+        4.743929528192153,
+        -7.941954918849827
+      ],
+      "target_enu_m": [
+        3.677837929824681,
+        -5.352853008169159
+      ],
+      "conservative_back_enu_m": [
+        10.07438752002951,
+        -20.88746447225317
+      ],
+      "body_radius_m": 0.38,
+      "body_radius_hits": [],
+      "body_nearest_sources": [
+        {
+          "local_id": 1148,
+          "distance_m": 2.9716982116583126
+        },
+        {
+          "local_id": 25,
+          "distance_m": 3.0
+        },
+        {
+          "local_id": 421,
+          "distance_m": 12.436858599190458
+        },
+        {
+          "local_id": 978,
+          "distance_m": 13.966989536110722
+        },
+        {
+          "local_id": 958,
+          "distance_m": 14.057785873414534
+        },
+        {
+          "local_id": 410,
+          "distance_m": 18.03187011055064
+        }
+      ],
+      "conservative_boom_radius_m": 0.12,
+      "conservative_front_m": 2.8,
+      "conservative_back_m": 14,
+      "conservative_boom_nearest_sources": [
+        {
+          "local_id": 25,
+          "distance_m": 0.2543741080654238
+        },
+        {
+          "local_id": 1148,
+          "distance_m": 0.8066231233409787
+        },
+        {
+          "local_id": 958,
+          "distance_m": 5.950991574137685
+        },
+        {
+          "local_id": 1985,
+          "distance_m": 10.9784055581965
+        },
+        {
+          "local_id": 421,
+          "distance_m": 11.721405375995133
+        },
+        {
+          "local_id": 375,
+          "distance_m": 12.317210296508412
+        }
+      ],
+      "conservative_boom_radius_hits": [],
+      "door_connection_other_hits": [],
+      "all_source_polygons_checked": 2088,
+      "actual_camera": {
+        "48": {
+          "D_m": 14,
+          "pitch_degrees": 48,
+          "behind_player_ground_m": 7.60402755668352,
+          "eye_enu_m": [
+            7.639140203883237,
+            -14.973241445949025
+          ],
+          "eye_wgs84": [
+            121.05108587533665,
+            31.11291913368542
+          ],
+          "eye_height_m": 12.367828489024015,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 0.2543741080654238
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 0.8418600561999593
+            },
+            {
+              "local_id": 958,
+              "distance_m": 7.858243100632561
+            },
+            {
+              "local_id": 421,
+              "distance_m": 11.721405375995133
+            },
+            {
+              "local_id": 978,
+              "distance_m": 13.306500069504736
+            },
+            {
+              "local_id": 410,
+              "distance_m": 15.289978846654073
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.8418600561999593
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 7.858243100632561
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.273570025394283
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.03703475339127
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 16.045925299494428
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.0
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 7.858243100632561
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.583266045892428
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 16.26188993562211
+                }
+              ],
+              "intersected_other_sources": [
+                {
+                  "local_id": 1148,
+                  "key": "building:89f6310b-5602-4121-92c5-ac67809118a5",
+                  "intersection_length_m": 2.085425133266097,
+                  "first_contact_from_eye_m": 2.8737097665228557
+                }
+              ]
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.8418600561999593
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 7.858243100632561
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834918495016256
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 15.022072235841026
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                },
+                {
+                  "local_id": 375,
+                  "distance_m": 16.964476713924856
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  7.639140203883237,
+                  -14.973241445949025
+                ],
+                [
+                  -0.5051861602993761,
+                  -6.794717478630534
+                ],
+                [
+                  7.6633215609609415,
+                  -3.431243288251509
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 1.4176042133512141,
+                  "nearest_distance_from_eye_m": 2.2550077987114543
+                }
+              ],
+              "total_foreign_area_m2": 1.4176042133512141,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  7.639140203883237,
+                  -14.973241445949025
+                ],
+                [
+                  -2.113756678388198,
+                  -7.457064336296428
+                ],
+                [
+                  9.271892079049763,
+                  -2.7688964305856145
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 2.9446786433060206,
+                  "nearest_distance_from_eye_m": 1.7137998978674231
+                }
+              ],
+              "total_foreign_area_m2": 2.9446786433060206,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": [
+            {
+              "local_id": 1148,
+              "area_m2": 0.620057515162226
+            }
+          ]
+        },
+        "82": {
+          "D_m": 14,
+          "pitch_degrees": 82,
+          "behind_player_ground_m": 11.063752962381987,
+          "eye_enu_m": [
+            8.956420270909533,
+            -18.17237775249344
+          ],
+          "eye_wgs84": [
+            121.05109969690614,
+            31.112890395309947
+          ],
+          "eye_height_m": 4.948423413440917,
+          "target_height_m": 3,
+          "camera_boom_nearest_sources": [
+            {
+              "local_id": 25,
+              "distance_m": 0.2543741080654238
+            },
+            {
+              "local_id": 1148,
+              "distance_m": 0.8069033334110213
+            },
+            {
+              "local_id": 958,
+              "distance_m": 6.18149558990171
+            },
+            {
+              "local_id": 421,
+              "distance_m": 11.721405375995133
+            },
+            {
+              "local_id": 978,
+              "distance_m": 13.306500069504736
+            },
+            {
+              "local_id": 1985,
+              "distance_m": 13.889865925342118
+            }
+          ],
+          "camera_boom_radius_hits": [],
+          "three_rays": {
+            "door_center": {
+              "target_enu_m": [
+                3.5790677003307825,
+                -5.1129803834410215
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.8069033334110213
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.18149558990171
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 11.656516003850902
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 13.273570025394283
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 13.889865925342118
+                },
+                {
+                  "local_id": 375,
+                  "distance_m": 14.283775260026085
+                }
+              ],
+              "intersected_other_sources": []
+            },
+            "front_ne_end_positive_u": {
+              "target_enu_m": [
+                6.646494952263606,
+                -3.0680423266905046
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.0
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.18149558990171
+                },
+                {
+                  "local_id": 421,
+                  "distance_m": 7.975596705907563
+                },
+                {
+                  "local_id": 1256,
+                  "distance_m": 13.144736275383611
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 13.889865925342118
+                },
+                {
+                  "local_id": 375,
+                  "distance_m": 14.283775260026085
+                }
+              ],
+              "intersected_other_sources": [
+                {
+                  "local_id": 1148,
+                  "key": "building:89f6310b-5602-4121-92c5-ac67809118a5",
+                  "intersection_length_m": 4.8326697965135095,
+                  "first_contact_from_eye_m": 3.558483072929897
+                }
+              ]
+            },
+            "front_sw_end_negative_u": {
+              "target_enu_m": [
+                0.5116404483979587,
+                -7.157918440191539
+              ],
+              "nearest_other_sources": [
+                {
+                  "local_id": 1148,
+                  "distance_m": 0.8069033334110213
+                },
+                {
+                  "local_id": 958,
+                  "distance_m": 6.18149558990171
+                },
+                {
+                  "local_id": 978,
+                  "distance_m": 9.834918495016256
+                },
+                {
+                  "local_id": 1985,
+                  "distance_m": 13.889865925342118
+                },
+                {
+                  "local_id": 375,
+                  "distance_m": 14.283775260026085
+                },
+                {
+                  "local_id": 410,
+                  "distance_m": 15.169207208434583
+                }
+              ],
+              "intersected_other_sources": []
+            }
+          },
+          "horizontal_FOV_approximation": {
+            "45": {
+              "triangle_enu_m": [
+                [
+                  8.956420270909533,
+                  -18.17237775249344
+                ],
+                [
+                  -1.830311806350244,
+                  -7.340352747836565
+                ],
+                [
+                  8.98844720701181,
+                  -2.885608019045477
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 7.633779886544771,
+                  "nearest_distance_from_eye_m": 2.1613726607500863
+                }
+              ],
+              "total_foreign_area_m2": 7.633779886544771,
+              "full_plan_fan_clear": false
+            },
+            "60": {
+              "triangle_enu_m": [
+                [
+                  8.956420270909533,
+                  -18.17237775249344
+                ],
+                [
+                  -3.960778886145921,
+                  -8.21759633759219
+                ],
+                [
+                  11.118914286807486,
+                  -2.0083644292898533
+                ]
+              ],
+              "foreign_overlaps": [
+                {
+                  "local_id": 1148,
+                  "area_m2": 12.643152927818875,
+                  "nearest_distance_from_eye_m": 1.642637443366514
+                }
+              ],
+              "total_foreign_area_m2": 12.643152927818875,
+              "full_plan_fan_clear": false
+            }
+          },
+          "source_facade_silhouette_triangle_foreign_overlaps": [
+            {
+              "local_id": 1148,
+              "area_m2": 2.6142532268512606
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "findings": [
+    "Requestedu-2/d4keeps the conservative full camera capsule clear and its three source-front rays clear, but the NE-end ray is only0.466459m from1148. The45/60degree plan fans still include1148.",
+    "Requestedu-3/d4has clearer source-front rays at actualD14/pitch82, but conservative14m behind-player arm hits958. It is not accepted under the conservative arm requirement.",
+    "u-3/d2.5keeps full conservative arm clear, has minimum source-front ray clearance2.917392m atpitch82, and reduces45degree fan overlap to0.017240m2;60degree fan still overlaps1148.",
+    "Historicalv2u-.6/d3passes central-ray clearance but itsNEfacade-end ray crosses1148for4.8327m atpitch82. This explains why a collision-only proof did not establish an unobstructed building view."
+  ],
+  "limitations": [
+    "All fan results are2Dplan approximations from source footprints, not the final GLB silhouette or actual camera projection matrix. Source heights, camera pitch and real material visibility may change actual pixel occlusion.",
+    "A foreign footprint appearing at the image edge is not automatically blocking the model; full fan overlap is reported separately from the building-front silhouette and its three rays.",
+    "Footprints may be roof outlines. No source polygon including1148or958was deleted/moved/hidden; source outline uncertainty and model overhangs remain.",
+    "Original source front endpoints do not include modeled roof/sign/lantern projections; root must test actual GLB bounds/triangles.",
+    "No real sidewalk survey/safety, rendered visibility, browser acceptance or final camera choice is claimed. Root reportedv2visualFAIL; screenshots were not re-reviewed in this mathematical task."
+  ],
+  "diagram": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/candidate-view-fans.png",
+    "bytes": 372899,
+    "sha256": "2073cdc8973e18ad812cc97a434b1d7e7ce2d4d395823a2fb357ede175e7b1c3"
+  }
+}

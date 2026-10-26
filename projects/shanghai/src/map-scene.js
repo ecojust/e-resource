@@ -25,6 +25,8 @@ import { preparePhotographicGlass } from './photographic-glass.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
+// A shortened third-person camera needs zoom above 22.5 to reach its clear eye point.
+const WALK_CAMERA_MAX_ZOOM = 24;
 const ORIGIN = [121.4737, 31.2304];
 const BUILDINGS = 'shanghai-buildings-3d';
 const BUILDING_PARTS = 'shanghai-building-parts-3d';
@@ -148,7 +150,7 @@ export async function createShanghaiScene(options = {}) {
     building_part: new Set(landmarkExclusions.building_part_ids || [])};
   const style = configureStyle(await response.json());
   const map = new maplibregl.Map({container, style, center: [start.lng, start.lat],
-    zoom: options.zoom ?? 20.5, bearing: start.bearing, pitch: 72, maxPitch: 85, maxZoom: 22.5,
+    zoom: options.zoom ?? 20.5, bearing: start.bearing, pitch: 72, maxPitch: 85, maxZoom: WALK_CAMERA_MAX_ZOOM,
     minZoom: 8, renderWorldCopies: false, antialias: true, attributionControl: false,
     maxBounds: [[120.65, 30.55], [122.3, 32.0]],
     canvasContextAttributes: {antialias: true, preserveDrawingBuffer: false}});
@@ -158,7 +160,7 @@ export async function createShanghaiScene(options = {}) {
   let destroyed = false, mapErrorTime = 0, loadedStyle = false;
   // Source errors may arrive while asynchronous scene setup is still running.
   let osmSuppression = null;
-  let collisionDirty = true, collisionUpdated = 0, polygons = [], largePolygons = [], grid = new Map(), roadLines = [];
+  let collisionDirty = true, collisionUpdated = 0, collisionRevision = 0, polygons = [], largePolygons = [], grid = new Map(), roadLines = [];
   map.on('error', event => {
     if (event.sourceId === OVERTURE_SOURCE) recoverBuildingSource(event.error);
     const now = performance.now();
@@ -573,7 +575,11 @@ export async function createShanghaiScene(options = {}) {
     group.name=`${record.name} · mapped city tile`;
     group.position.copy(geographicPosition(record.lng,record.lat,0));
     const scale=maplibregl.MercatorCoordinate.fromLngLat([record.lng,record.lat]).meterInMercatorCoordinateUnits()/metreScale;
-    group.scale.multiplyScalar(scale);
+    // City X/Z were authored from EPSG:3857 (R=6378137), while MapLibre's
+    // altitude/metre conversion uses its mean-earth radius. Keep Y/anchor as
+    // before, but map authored horizontal metres back to Mercator units.
+    const horizontalScale=1/(2*Math.PI*EARTH*Math.cos(record.lat*DEG))/metreScale;
+    group.scale.multiply(new THREE.Vector3(horizontalScale,scale,horizontalScale));
     group.traverse(object=>{
       if(!object.isMesh)return;
       // The map projection already supplies the full view transform, so normal
@@ -710,6 +716,7 @@ export async function createShanghaiScene(options = {}) {
       for (const coordinates of lines) roadLines.push({coordinates, bridge: properties.brunnel === 'bridge',
         width: ['motorway','trunk','primary','secondary'].includes(type) ? 13 : 6});
     }
+    collisionRevision += 1;
   }
   function onBridge(lng, lat) {
     return roadLines.some(road => road.bridge && (nearestOnLine({lng, lat}, road.coordinates)?.distance ?? Infinity) < road.width);
@@ -766,7 +773,7 @@ export async function createShanghaiScene(options = {}) {
     // even with no terrain, silently discarding the elevated walk look target.
     map.setCenterClampedToGround(false);
     const opts=map.calculateCameraOptionsFromTo([from.lng,from.lat],explicitCamera.alt,[to.lng,to.lat],to.alt??to.altitude??1.2);
-    map.jumpTo({...opts,pitch:clamp(opts.pitch,0,85),zoom:clamp(opts.zoom,8,22.5)});
+    map.jumpTo({...opts,pitch:clamp(opts.pitch,0,85),zoom:clamp(opts.zoom,8,WALK_CAMERA_MAX_ZOOM)});
   }
   function setDistricts(geojson) {
     if(map.getSource(BOUNDARY_SOURCE)){map.getSource(BOUNDARY_SOURCE).setData(geojson);return;}
@@ -808,6 +815,7 @@ export async function createShanghaiScene(options = {}) {
   else if(options.neighborhoods)await setNeighborhoods(options.neighborhoods);
   onStatus({kind:'ready',message:'三维地图已就绪',loaded:1,total:1});
   return {map,ready:loadedStyle,sourceId,setPlayer,setCamera,setCameraFromTo,collisionAt,findSafePosition,waitForData,
+    collisionRevision:()=>{rebuildCollisionCache();return collisionRevision;},
     groundAt:(lng,lat)=>streetInteraction.groundAt(lng,lat),
     sweepLocalCollision:(from,to,options)=>streetInteraction.sweep(from,to,options),
     localCameraCollision:(from,to,options)=>streetInteraction.cameraCollision(from,to,options),
@@ -848,7 +856,7 @@ export async function createShanghaiScene(options = {}) {
     setVisualQuality({shadows=true,surfaceNormals=true}={}){shadowsEnabled=Boolean(shadows);surfaces?.configure({normalStrength:surfaceNormals?1:0});lighting?.invalidate();map.triggerRepaint();},
     getRealismState(){return {surfaces:surfaces?.stats,lighting:lighting?.getState(),traffic:traffic?.stats,streetBasemap:streetBasemap?.getState(),osmFallback:osmSuppression?.getState()};},
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
-    getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,buildingSource:buildingMode,release:overtureRelease};},
+    getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,revision:collisionRevision,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
     destroy(){destroyed=true;ordinaryCatalog?.destroy();osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

@@ -1,0 +1,125 @@
+{
+  "schema": "teahouse-photo-observations-v7",
+  "building": "北大街208–212号江南第一茶楼",
+  "source_photo": "photos/commons-33172025.jpg",
+  "source_pixels": [
+    1424,
+    2144
+  ],
+  "exif_orientation": 1,
+  "observed": {
+    "front_arch_bays": 3,
+    "upper_open_gallery_bays": 3,
+    "balustrade": "turned narrow timber spindles, continuous handrail, substantial turned support posts",
+    "masonry": "grey brick wall with orange red arch voussoirs and horizontal bands",
+    "sign": "green raised vertical 江南第一茶樓 on wooden board; horizontal club-teahouse sign partly shaded",
+    "lanterns": "yellow lanterns under gallery and under main roof; small detail count is model interpretation",
+    "roof": "grey curved cover tiles with exposed under-eave rafters; gable/depth and ridge hidden"
+  },
+  "model_estimates_m": {
+    "front_width_source": 7.373162578391104,
+    "wall_thickness": 0.32,
+    "ground_threshold": 0.16,
+    "arch_top": 3.25,
+    "upper_floor": 3.7,
+    "upper_railing_top": 4.7,
+    "front_eave": 6.51,
+    "roof_ridge": 8.1,
+    "gallery_recess": 1.17,
+    "height_range_not_survey": [
+      6.8,
+      9.0
+    ],
+    "relative_bays": [
+      1,
+      1,
+      1
+    ]
+  },
+  "height_is_measured": false,
+  "height_method": "Photograph-informed dimensional estimate conditioned on source short-edge width; steep oblique image and incomplete left boundary prevent a trustworthy metric camera solution. Existing8.579m cell-average is not a measured building height.",
+  "limitations": [
+    "Only2016 EXIF facade is used as primary appearance evidence; Commons page states2013 and current facade is not claimed exact.",
+    "The complete roof pitch/ridge, side/rear openings and internal rooms are not visible; conservative modeled roof/shell and three gallery rear joinery panels are explicit estimates.",
+    "Three near-equal bays, lantern dimensions, brick module, joinery subdivisions and font outlines are approximate photo interpretation, not surveyed or hand-traced sculpture.",
+    "No original photograph is pasted across the entire facade or stretched into windows. Colored glass is a material estimate; no texture image is embedded.",
+    "Model has not yet been reviewed through native rendering or actual HTML; numerical watertightness is not visual acceptance.",
+    "v2 fills both inferred side gables up to the actual roof underside without adding any unseen openings; this is conservative architectural closure, not newly observed side-facade evidence.",
+    "v3 vertical board position and concealed mounts are explicit construction estimates. 一 restores the licensed font natural aspect; it does not claim to trace the original brush style. Roof lap18.5mm is a physical construction estimate, not measured from the photograph."
+  ],
+  "photo_control_observations": [
+    {
+      "label": "vertical sign",
+      "normalized_image_quad_approx": [
+        [
+          0.218,
+          0.0
+        ],
+        [
+          0.42,
+          0.0
+        ],
+        [
+          0.393,
+          0.43
+        ],
+        [
+          0.189,
+          0.46
+        ]
+      ],
+      "use": "identification only; top cropped, not metric width or texture control"
+    },
+    {
+      "label": "three street arches",
+      "normalized_image_region_approx": [
+        0.11,
+        0.43,
+        0.73,
+        0.98
+      ],
+      "use": "count and opening type; oblique image, foreground obscures first left jamb"
+    },
+    {
+      "label": "open upper gallery",
+      "normalized_image_region_approx": [
+        0.4,
+        0.17,
+        0.75,
+        0.56
+      ],
+      "use": "actual open gallery, turned wood railing and posts; not a flat glass wall"
+    }
+  ],
+  "revision": "v3 vertical sign and physically separated tile laps",
+  "vertical_sign_correction": {
+    "board_center_outward_depth_m": 0.9,
+    "previous_board_center_outward_depth_m": 0.19,
+    "glyph_face_outward_m": [
+      0.995,
+      1.027
+    ],
+    "vertical_and_horizontal_letter_centers_unchanged": true,
+    "one_glyph_source_bbox_units": [
+      35,
+      390,
+      973,
+      538
+    ],
+    "one_glyph_width_m": 0.43,
+    "one_glyph_height_m": 0.06784648187633262,
+    "method": "Natural uniform X/Y scale for 一, fixing per-glyph square-bbox scaling; no font/glyph outline rotation or re-triangulation workaround",
+    "position_is_estimated": true,
+    "purpose": "Move six-character board ahead of the .62m eave/rafters; photograph supports outside-hanging board but not exact depth",
+    "concealed_mounts_are_estimated": true
+  },
+  "tile_lap_correction": {
+    "original_longitudinal_overlap_m": 0.035,
+    "nominal_outer_skin_step_m": 0.0185,
+    "original_backing_ridge_pitch_and_side_gables_unchanged": true,
+    "both_slope_directions_respect_uphill_over_downhill_lap": true,
+    "back_pitch_last_hidden_lap_clipped_to_ridge": true,
+    "shell_vertical_thickness_m": 0.015,
+    "inner_skin_note": "Main roof inner/outer skins share lateral coordinates and keep15mm vertical thickness. Concentric radial inner skins would still intersect at shoulders after18.5mm lift. The ground canopy has no longitudinal neighbor lap and remains byte-identical."
+  }
+}

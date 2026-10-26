@@ -1,0 +1,171 @@
+{
+  "schema": "b-camera-diagnostic-poses-v1",
+  "building_id": "qingpu-beidajie-208-212",
+  "walks": [
+    {
+      "id": "nav-v2-after-city-projection-fix",
+      "walkStart": [
+        121.05105549732018,
+        31.11298229687545
+      ],
+      "bearing": 337.6200388058807,
+      "evidence": {
+        "actual_two_near_glb_probe_report": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+          "bytes": 26959,
+          "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+        },
+        "front_grid_occlusions": 52,
+        "front_grid_samples": 169,
+        "interpretation": "Diagnostic control; known partially blocked front"
+      }
+    },
+    {
+      "id": "side-u-minus2-d4",
+      "walkStart": [
+        121.05104909505407,
+        31.112967846305857
+      ],
+      "bearing": 352.8751575089385,
+      "evidence": {
+        "actual_two_near_glb_probe_report": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+          "bytes": 26959,
+          "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+        },
+        "front_grid_occlusions": 0,
+        "front_grid_samples": 169,
+        "interpretation": "No sampled front ray hits retained actual meshes; still requires actual root image review"
+      }
+    },
+    {
+      "id": "side-u-minus3-d2p5",
+      "walkStart": [
+        121.05103163449012,
+        31.112974075052442
+      ],
+      "bearing": 16.504535239595327,
+      "evidence": {
+        "actual_two_near_glb_probe_report": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+          "bytes": 26959,
+          "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+        },
+        "front_grid_occlusions": 0,
+        "front_grid_samples": 169,
+        "interpretation": "No sampled front ray hits retained actual meshes; still requires actual root image review"
+      }
+    }
+  ],
+  "oblique": {
+    "from": {
+      "lng": 121.05101708383839,
+      "lat": 31.11292798269147,
+      "alt": 4.5
+    },
+    "to": {
+      "lng": 121.0510433170166,
+      "lat": 31.113007658612247,
+      "alt": 4.1
+    },
+    "fov": 50,
+    "evidence": {
+      "actual_two_near_glb_probe_report": {
+        "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+        "bytes": 26959,
+        "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+      },
+      "source_check": {
+        "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/diagnostic-source-check.json",
+        "bytes": 2574,
+        "sha256": "14f3b2227cac80c2285745b9009603f3d6004a4fea8d976e8618888de67641f6"
+      },
+      "front_grid_occlusions": 0,
+      "front_grid_samples": 169,
+      "physical_view": "photo-u=-7m,source-front outward d=6m,from height4.5m to actual precise front height4.1m"
+    }
+  },
+  "scope": "Diagnostic candidates only, not accepted. Requires the separately reviewed city-only X/Z radius correction before interpreting these rays. Preserves every neighbor; no navigation/model mutation. First walk retains v2 as a known52/169front-ray-occluded control, other two and oblique are0/169.",
+  "actual_glb_assets": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/14-13701-6700/-3_2-s0-s0.glb.gz",
+      "sha256": "71dcb8b7dd1ee130bcb5f97f130b6485b37188583d1cb388eb6fbe7be2ed43fb",
+      "bytes": 102662,
+      "retained_local_ids": [
+        1358,
+        9,
+        1785,
+        474,
+        638,
+        1291,
+        102,
+        2005,
+        197,
+        581,
+        1893,
+        28,
+        410,
+        1789,
+        768,
+        1652,
+        862,
+        841,
+        1427,
+        140,
+        67,
+        859,
+        1256,
+        1968,
+        1101,
+        976,
+        1307
+      ],
+      "meshCount": 18
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/14-13701-6700/-3_2-s1-s0.glb.gz",
+      "sha256": "fb6e5bed1fb7071d2687171ffe7793a6483fcd31469ae2a10ca3990d8450084d",
+      "bytes": 113874,
+      "retained_local_ids": [
+        179,
+        709,
+        1926,
+        1119,
+        978,
+        1232,
+        413,
+        1863,
+        411,
+        1018,
+        958,
+        1714,
+        1464,
+        1056,
+        1329,
+        1148,
+        1282,
+        632,
+        375,
+        1618,
+        895,
+        1985,
+        101,
+        1912,
+        699,
+        2083,
+        1010
+      ],
+      "meshCount": 14
+    }
+  ],
+  "source_review": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/diagnostic-source-check.json",
+    "bytes": 2574,
+    "sha256": "14f3b2227cac80c2285745b9009603f3d6004a4fea8d976e8618888de67641f6"
+  },
+  "limits": [
+    "Ray grid is finite and does not certify an entirely empty image or the whole camera near plane. Visible neighboring buildings at frame edges can remain.",
+    "Not a browser acceptance. Root must inspect short actual walk and oblique diagnostic views before freezing navigation/profile.",
+    "Only the two relevant near blocks were decoded, not every city model; all2088 source polygons are separately available for broad footprint checks."
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "precise-building-root-visual-review-v7",
+  "passed": false,
+  "final": true,
+  "reviewer": "root",
+  "utc": "2026-10-26T11:46:32.474904+00:00",
+  "building_ids": [
+    "xuhui-wukang-210",
+    "qingpu-beidajie-208-212"
+  ],
+  "browser_report_sha256": "c896759c3a99c6abdb4a69a5d8f92120c6a868f1e7b1b683885c650009067d1f",
+  "expectations_sha256": "6d8a21f99dff5abb1830e665c08b63d8c72a918fccde658b1f457d1c05b5ecdd",
+  "actually_viewed": [
+    {
+      "file": "xuhui-wukang-210-walk-full.png",
+      "bytes": 286953,
+      "sha256": "e9f5b8ff6092bd7f6e9388820fabd608f3c3dea40c17e457505c05f8862c55b3",
+      "actually_viewed": true
+    },
+    {
+      "file": "xuhui-wukang-210-windows-oblique.png",
+      "bytes": 338038,
+      "sha256": "30a7527254d3fb06f18726370e7cff2e259f5dc7fe840225c19c14960d83b00a",
+      "actually_viewed": true
+    },
+    {
+      "file": "xuhui-wukang-210-distant-lod.png",
+      "bytes": 520916,
+      "sha256": "57cc1415bd4b576a059e62733854ec77b6dd6b8b2f3dc5c9be9cc5585198e216",
+      "actually_viewed": true
+    },
+    {
+      "file": "xuhui-wukang-210-returned-full.png",
+      "bytes": 286941,
+      "sha256": "815e9e5e65238c6867ea8d305d63c9d053a108586b824e3f98768f6ef3b4b325",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-walk-full.png",
+      "bytes": 279506,
+      "sha256": "6d279bade3489249d8507888448b571ab85c8e26ed482ebb3a2e45309ad4a089",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-windows-oblique.png",
+      "bytes": 404374,
+      "sha256": "8d9fd770c925be0a46e8a3a2c8ccf149b43aea52be6217d0ba728ca61758d7da",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-distant-lod.png",
+      "bytes": 425878,
+      "sha256": "0371f4d85eac7d464a8d8759dc09cb50730f0d85cbf580655fe4b94a434d0186",
+      "actually_viewed": true
+    },
+    {
+      "file": "qingpu-beidajie-208-212-returned-full.png",
+      "bytes": 279506,
+      "sha256": "6d279bade3489249d8507888448b571ab85c8e26ed482ebb3a2e45309ad4a089",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-released.png",
+      "bytes": 148703,
+      "sha256": "cd00890f0dc43230171a96eb17e5c30a47f8506ad599ccb3d9282f7e66fc886f",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-returned.png",
+      "bytes": 279509,
+      "sha256": "275e58400a583511733900152170c09005d066056a2af59bd5f7f8c6f90613e1",
+      "actually_viewed": true
+    },
+    {
+      "file": "after-city-manifest-reset.png",
+      "bytes": 279509,
+      "sha256": "275e58400a583511733900152170c09005d066056a2af59bd5f7f8c6f90613e1",
+      "actually_viewed": true
+    }
+  ],
+  "scope": "Actual root inspection of all11 captures from static23-v2 with the permanent camera revision/24 zoom fix and B navigationv2. Technical checks passed; B walking and oblique views still visually fail.",
+  "per_building": {
+    "xuhui-wukang-210": {
+      "limited_visual_passed": true,
+      "observations": [
+        "Full and oblique views show the curved balcony, shared sills and closed roof junction; return retains the replacement without its old source box.",
+        "Distant screenshot target is tiny/occluded; it does not independently verify facade details."
+      ]
+    },
+    "qingpu-beidajie-208-212": {
+      "limited_visual_passed": false,
+      "observations": [
+        "Walking, returned, owner-return and reset all contain a central foreground wall and frames from the opposite city building.",
+        "Oblique overview also passes through the opposite building; the QA chosen pose needs independent geometric review.",
+        "New camera cache revision and24 zoom fix are active. Independent actual GLB raycast identifies a city horizontal coordinate radius mismatch: authored6378137 vs MapLibre6371008.8 shifts the rendered neighbor relative to its source footprint.",
+        "No building deletion or model geometry edits used to hide the problem."
+      ]
+    }
+  },
+  "limitations": [
+    "No catalog workflow tested.",
+    "Neighborhood remains estimated baseline geometry; no street-context accuracy claim.",
+    "Software renderer; no hardware performance assertion."
+  ],
+  "browser_acceptance_passed": false,
+  "catalog_acceptance_passed": false,
+  "followup": "Correct only city horizontal author-unit conversion while preserving vertical metres and anchors, validate actual neighbor geometry, then diagnose reviewed walking/oblique poses before final browser rerun.",
+  "runtime_manifest_sha256": "40857e0b05ec906f640818a8101d9503bc591a243933e0cdd53d0a0f2c5874dd",
+  "runtime_files": [
+    {
+      "file": "src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 52603,
+      "sha256": "9effcf1ad817d853afdc3e2f6743c208dc7010c8cef5e19314dfe57714be7a43"
+    },
+    {
+      "file": "package.json",
+      "bytes": 1800,
+      "sha256": "0276679344b58a1192eab25c0c06bffbac913d68f4e10a0da4f8209ee9c19dca"
+    },
+    {
+      "file": "tests/camera-collision-revision.test.mjs",
+      "bytes": 10420,
+      "sha256": "d9928c2d7ed7e363cc99e648b3fd4b5faec873f0cd4c22a0104f2c869af90d2d"
+    }
+  ],
+  "runtime_before_after_unchanged": true,
+  "runtime_scope_note": "The four runtime/test/package files match their actual before-install plan and after-run bytes. This review does not accept the obstructed B views."
+}

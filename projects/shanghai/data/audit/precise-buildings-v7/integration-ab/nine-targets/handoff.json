@@ -1,0 +1,104 @@
+{
+  "schema": "incremental-precise-owner-handoff-v1",
+  "geometry_passed": true,
+  "runtime_owner_test_passed": true,
+  "browser_passed": false,
+  "new_building_model_accepted": false,
+  "targets": 9,
+  "macros": 3,
+  "near_blocks": 7,
+  "fresh_near_blocks": 1,
+  "reused_near_blocks": 6,
+  "total_source_features": 125,
+  "target_source_features": 9,
+  "stored_bytes": 647215,
+  "expanded_triangles": 689176,
+  "registry": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/precise-buildings-v6.json",
+    "bytes": 29278,
+    "sha256": "94bc1152c40287e97578ee0677fe987d50c76648a98fb6b5bdda88348435262d"
+  },
+  "geometry_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/geometry-validation.json",
+    "bytes": 52202,
+    "sha256": "b100ad2f871573fb414b7ad55a9d64f1d90de4478027e09a649886628dfc3385"
+  },
+  "ordinary_catalog_descriptor_present": false,
+  "production_or_candidate_installed": false,
+  "catalog_scope": "Do not attach an older partial ordinary_catalog to this larger static macro. Pending new precise models require separate static candidate QA; accepted macro index/replacement must later include every accepted ordinary owner in that macro.",
+  "runtime_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/runtime-owner-validation.json",
+    "bytes": 2380,
+    "sha256": "7a22d928b695b5f5a25ac7c49c9eebd6d00118656a4b711b5f47345cb6c9a910"
+  },
+  "runtime_actual_far_features": 9309,
+  "total_retained_neighbors": 116,
+  "scope_note": "Exact-source baseline owner partitioning only; new A/B detailed models and browser/catalog acceptance are separate.",
+  "added_a": {
+    "id": "xuhui-wukang-210",
+    "macro": "14-13718-6695",
+    "local_id": 563,
+    "feature_key": "building:239ee254-3511-4df1-83c3-64d09e707e35",
+    "near_id": "14-13718-6695-1_0-s1-s1",
+    "retained_neighbors": 23,
+    "same_near_local235_preserved": true,
+    "other_near_local999_not_targeted": true,
+    "model": {
+      "file": "assets/city-overrides-v6/14-13718-6695/1_0-s1-s1.glb.gz",
+      "sha256": "4cdb05627091cdb9dbdc96046cd6718a860fcd32e968bfa1690c84f9f53f4cbc",
+      "size_bytes": 121154,
+      "content_encoding": "gzip",
+      "decoded_sha256": "28eb9dacb3c1aed37107438be1310fc16da2c3eb79289797bf205db2d7bd8127",
+      "decoded_size_bytes": 472348,
+      "expandedTriangles": 117000,
+      "geometryBytes": 1646312,
+      "drawCalls": 16,
+      "compression": {
+        "quantization": false,
+        "type": "EXT_meshopt_compression",
+        "gzip_level": 6,
+        "gzip_mtime": 0,
+        "preserve_named_nodes": true,
+        "owner_groups_compressed_separately_then_buffer_relocated": true
+      }
+    },
+    "normal_directions": {
+      "compared_triangles": 117000,
+      "nonidentical_normal_triangles": 2214,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 1.538473215489944e-08,
+      "max_direction_difference_degrees": 9.492757990886653e-07,
+      "component_limit": 1e-07,
+      "direction_limit_degrees": 1e-05,
+      "pass": true
+    },
+    "negative_controls": [
+      {
+        "model": "14-13718-6695-1_0-s1-s1",
+        "target_group": "city_target_xuhui-wukang-210",
+        "actual_decoded_normal_modified": true,
+        "attribute_vertex": 0,
+        "component": 0,
+        "delta": 0.01,
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "normal_directions": {
+          "compared_triangles": 117000,
+          "nonidentical_normal_triangles": 2332,
+          "missing_geometry": 0,
+          "remaining_geometry": 0,
+          "max_component_difference": 0.0028586872155044463,
+          "max_direction_difference_degrees": 0.16816512370343076,
+          "component_limit": 1e-07,
+          "direction_limit_degrees": 1e-05,
+          "pass": false
+        },
+        "rejected": true
+      }
+    ]
+  }
+}

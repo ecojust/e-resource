@@ -1,0 +1,72 @@
+{
+  "schema": "root-diagnostic-camera-pose-review-v1",
+  "reviewer": "root",
+  "utc": "2026-10-26T11:57:09.096057+00:00",
+  "selection_passed": true,
+  "model_acceptance_passed": false,
+  "diagnosis_sha256": "51195f23f783d09604942ef8bd28205924a8274aca5a96877f88d39aa7b565c6",
+  "poses_sha256": "0962811a79d310d73d81d11c544bb13fa2c987f6bf4a0863d0b04195f2ac03e3",
+  "runtime_manifest_sha256": "1a47c317951e4c1a9fd70dca2e9c05ded259630a12be89ce74a731e7728db8ef",
+  "actually_viewed": [
+    {
+      "file": "walk-nav-v2-after-city-projection-fix.png",
+      "bytes": 311968,
+      "sha256": "4311bd85c11cc78744af0dc1ba34ffca0e80164d530f7087aa2630cd15a0edb8",
+      "actually_viewed": true
+    },
+    {
+      "file": "walk-side-u-minus2-d4.png",
+      "bytes": 295732,
+      "sha256": "61227c35218d12b253cf75e9b517baa6f0d9f04df0dcd8b34ae096d72faa78ce",
+      "actually_viewed": true
+    },
+    {
+      "file": "walk-side-u-minus3-d2p5.png",
+      "bytes": 251858,
+      "sha256": "0989bc917641c79768189b2c0fcdfc244f768e51d55af4af50b503b27c1cdaa9",
+      "actually_viewed": true
+    },
+    {
+      "file": "reviewed-oblique.png",
+      "bytes": 324941,
+      "sha256": "670e4361a7b076b82ce63aadf5c43f411e61a8dc24368b6115b9db4f4cfe0ca0",
+      "actually_viewed": true
+    }
+  ],
+  "selected_walk_id": "side-u-minus2-d4",
+  "selected_walk": {
+    "walkStart": [
+      121.05104909505407,
+      31.112967846305857
+    ],
+    "bearing": 352.8751575089385
+  },
+  "oblique_approved": true,
+  "reviewed_oblique": {
+    "from": {
+      "lng": 121.05101715900082,
+      "lat": 31.112928210976463,
+      "alt": 4.9030108060378
+    },
+    "to": {
+      "lng": 121.0510433170166,
+      "lat": 31.113007658612247,
+      "alt": 4.1
+    },
+    "fov": 50
+  },
+  "oblique_pose_normalization": "The viewed original request was clamped to pitch85; use its observed actual eye for the formal explicit pose. Original request/from4.5 and final eye/from4.903010806 are both retained in diagnosis.",
+  "observations": [
+    "Oldnavv2 control still has the opposite building covering the right facade after the horizontal coordinate fix; it is rejected.",
+    "Selected u=-2,d4 gives a complete frontal building view with three arches, gallery, sign and roof visible, without floating foreground frames or an intervening central wall.",
+    "The other u=-3,d2.5 pose is clear but gives more of the estimated side wall, so it was not selected.",
+    "Reviewed oblique shows geometric sign letters, turned gallery balusters, brick arches and tiled canopy at close range; left edge and lower base are cropped."
+  ],
+  "remaining_ui_adjustment": "Shorten the display name to 江南第一茶楼 · 北大街208–212号; the original long label card covers the lower avatar. Keep full identity/address/scope in source evidence.",
+  "scope": "Diagnostic temporary normal selections and explicit oblique only. Final registered navigation/label, model LOD/return/reset/ownership and dynamic catalogs still require actual QA.",
+  "limits": [
+    "Neighboring buildings remain visible at frame edges.",
+    "Does not guarantee every user rotation, walking position or camera distance is collision-free.",
+    "No claim of physical surveyed street or material accuracy."
+  ]
+}

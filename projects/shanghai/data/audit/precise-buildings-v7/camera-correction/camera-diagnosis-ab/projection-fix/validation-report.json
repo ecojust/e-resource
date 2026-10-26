@@ -1,0 +1,60 @@
+{
+  "schema": "city-projection-fix-staged-validation-v1",
+  "passed": true,
+  "scope": "Unit/coordinate correctness of isolated city-only X/Z scale correction; no final visual/model acceptance.",
+  "installation_plan": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/projection-fix/installation-plan.json",
+    "bytes": 1811,
+    "sha256": "f836d0518be495ad3009580f99b4da48088dddcb5cc5c357e7faa5cb3cea64c2"
+  },
+  "patch": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/projection-fix/projection-fix.patch",
+    "bytes": 11574,
+    "sha256": "89bec4e737a54465d41547f2f79d30aef8a4841181ec62447d24d7ecdb163093"
+  },
+  "tests": {
+    "candidate": {
+      "pass": 5,
+      "fail": 0,
+      "exit_code": 0
+    },
+    "original_source_negative_control": {
+      "pass": 3,
+      "fail": 2,
+      "exit_code": 1
+    },
+    "actual_vendor_modules": true,
+    "actual_scene_prepare_functions": true,
+    "browser_started": false,
+    "network_used": false,
+    "source_point_checks": {
+      "qingpu_1148_points": 4,
+      "district_anchors": 16,
+      "points_per_anchor": 9,
+      "horizontal_tolerance_m": 0.002,
+      "float32_geometry_accounted_for": true
+    },
+    "vertical_scope": {
+      "y_scale_unchanged": true,
+      "anchor_unchanged": true,
+      "max_test_extent_from_anchor_m": 1500,
+      "test_height_m": 300,
+      "altitude_residual_bound_m": 0.06,
+      "all_vertices_exact_claimed": false
+    }
+  },
+  "actual_glb_independent_evidence": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/actual-neighbor-raycast.json",
+    "bytes": 12771,
+    "sha256": "78742bcb5f6cd3edb0672c588ee50ba2068be0d6ed462c0762980afd4d0bc678"
+  },
+  "vendored_projection_evidence": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/vendored-city-projection.json",
+    "bytes": 1017,
+    "sha256": "463fd828fe1079cb7f726d4ab708efdb0ed182345cf35bc28bef989a4fc2e125"
+  },
+  "model_or_source_geometry_modified": false,
+  "main_or_candidate_modified_by_this_agent": false,
+  "no_blender_started": true,
+  "pending": "root controlled candidate install, one short diagnostic browser to choose valid walk/oblique, then formal AB11 under final runtime"
+}

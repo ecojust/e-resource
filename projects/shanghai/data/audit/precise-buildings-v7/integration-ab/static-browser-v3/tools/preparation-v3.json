@@ -1,0 +1,77 @@
+{
+  "schema": "reviewed-camera-v3-qa-preparation-v1",
+  "preparation_passed": true,
+  "browser_started_by_this_agent": false,
+  "model_acceptance_claimed": false,
+  "files": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/browser-review/browser-next.py",
+      "bytes": 45945,
+      "sha256": "cc04added14e65fc0327bb7805eacc706569bec8edaf8fb349a3443b3243cde9"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/browser-review/browser-next-v3.py",
+      "bytes": 48269,
+      "sha256": "0a784f7f4de9273001ce344f1a1e73ed3c9915bdf288314dd5f71db565fa2b97"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/browser-review/browser-next-v3.patch",
+      "bytes": 3539,
+      "sha256": "bb6c8c354804b3bb4486a63f23cb0c39ab1b315066c9b128c91c69f6b7fd0bde"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/browser-review/prepare_expectations_v3.py",
+      "bytes": 5036,
+      "sha256": "7903319f7be5ea921326d42bea09b28eb9f863bb0c7bbe0f125e05499169fcfd"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/browser-review/test_reviewed_camera_v3.py",
+      "bytes": 3257,
+      "sha256": "494275070c64c7a0a56ac9443d0fac202f72616131f24bfa0cdce9f221509456"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/browser-review/expectations-ab-v3.json",
+      "bytes": 20470,
+      "sha256": "d836657c30ec4fd3456f1dbe3a90021d3bbb197c9e0efba71dee5c44a486c592"
+    }
+  ],
+  "changed_scope": [
+    "Optional explicit root-reviewed oblique for B only; no binding changes A orLOD",
+    "Bind root diagnosis/image/review hashes while preserving candidate acceptance status",
+    "Assert actual verticalFOV and actual eye within1cm of normalized approved request"
+  ],
+  "all_other_runner_bytes_restored_identical": true,
+  "readonly_probes": {
+    "INSTALL_PROBE": {
+      "byte_identical": true,
+      "sha256": "7e5c8e0c6e48f0f07fd485c4e4e805f78d17ad3fe42879da733a253005abc072"
+    },
+    "FETCH_JSON": {
+      "byte_identical": true,
+      "sha256": "2c25dddce74c8a4b77ac09d51c2c18264f6a57c14b662447ef68201a16245325"
+    },
+    "AUDIT_ASSET": {
+      "byte_identical": true,
+      "sha256": "c11f392c1df6290462baf02968dad2db53cc3dad723304cfbfcbd47fd96cde15"
+    }
+  },
+  "tests": {
+    "targeted_cases": 6,
+    "passed": 6,
+    "browser_used": false,
+    "actual_root_camera_evidence_binding_verified": true
+  },
+  "actual_profile": {
+    "navigation_count": 23,
+    "nav_sha256": "4a47d8759cb10ad718ab841fa6380dae388b2097263585787f043d79cd7a7685",
+    "registry_sha256": "7b148ff3ab33dbb2a0f908a59f3e800a84f80d6354c773315482277c4e880e91",
+    "preserved_neighbors": 50,
+    "camera_review": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/pose-review/root-visual-review.json",
+      "bytes": 3234,
+      "sha256": "d9d61b9f2cc53d5a58cab60e83f076e9d954a45670e01d2977d0f7e3c2f84dfa"
+    }
+  },
+  "runtime_scope": "Formal browser report does not contain5runtime fileSHA array. Accepted gate must explicitly bind root runtime plan/install and before-after evidence; no such internal runtime hash claim made.",
+  "status": "frozen; root formalAB11 plus visual review pending"
+}

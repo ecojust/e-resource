@@ -84,6 +84,7 @@ export class WalkController {
     this._lastUiUpdate = -Infinity;
     this._lastNotice = -Infinity;
     this._lastCamera = null;
+    this._lastCameraRequest = null;
     this._spawnGeneration = 0;
     this._destroyed = false;
     this._listeners = [];
@@ -437,12 +438,16 @@ export class WalkController {
     this._follow.lng += (this.position.lng - this._follow.lng) * blend;
     this._follow.lat += (this.position.lat - this._follow.lat) * blend;
     const previous = this._lastCamera;
+    // Vector footprints can arrive after a teleport while the visitor is idle.
+    // The scene getter rebuilds only when dirty and observes its existing throttle.
+    const collisionRevision = this.scene.collisionRevision?.() ?? 0;
     if (!instant && previous &&
         distanceMetres(previous, this._follow) < 0.005 &&
         Math.abs(angleDelta(previous.bearing, this.bearing)) < 0.01 &&
         Math.abs(previous.pitch - this.pitch) < 0.01 &&
         Math.abs(previous.groundHeight - this.groundHeight) < 0.0001 &&
         previous.groundRevision === this._groundRevision &&
+        previous.collisionRevision === collisionRevision &&
         Math.abs(previous.distance - this.cameraDistance) < 0.001) return;
     const angle = this.bearing * TO_RAD;
     const targetForDistance = distance => {
@@ -481,15 +486,22 @@ export class WalkController {
       // and gives the street architecture more room. Lower the target for a
       // shortened boom so the same framing does not crop the feet by a wall.
       const targetHeight = groundOffset + .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);
-      this.scene.setCameraFromTo({
+      const request = {
         from: { ...from, alt: targetHeight + Math.cos(this.pitch * TO_RAD) * effectiveDistance },
         to: { ...target, alt: targetHeight },
-      });
+      };
+      const lastRequest = this._lastCameraRequest;
+      // jumpTo triggers moveend and dirties source queries. A rebuilt but
+      // unchanged cache must not recursively submit the same camera again.
+      const samePoint = (a, b) => a.lng === b.lng && a.lat === b.lat && a.alt === b.alt;
+      if (instant || !lastRequest || !samePoint(request.from, lastRequest.from) ||
+          !samePoint(request.to, lastRequest.to)) this.scene.setCameraFromTo(request);
+      this._lastCameraRequest = request;
     } else {
       this.scene.setCamera({ ...target, bearing: this.bearing, pitch: this.pitch, zoom: this.zoom, altitude: groundOffset });
     }
     this._lastCamera = { ...this._follow, bearing: this.bearing, pitch: this.pitch, distance: this.cameraDistance,
-      groundHeight:this.groundHeight,groundRevision:this._groundRevision };
+      groundHeight:this.groundHeight,groundRevision:this._groundRevision,collisionRevision };
   }
 
   _emitUpdate(now, force = false) {

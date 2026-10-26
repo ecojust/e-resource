@@ -1,0 +1,631 @@
+{
+  "actual_geometry_scope": {
+    "front_grid_samples": 169,
+    "horizontal_city_scale": 0.9988824009267909,
+    "near_blocks": 2,
+    "retained_neighbors": 54,
+    "scope": "Actual Three/Meshopt-decoded retained meshes; finite front-grid rays. Source broad check separately covers all2088footprints. No city mesh or neighbor was moved, removed or regenerated.",
+    "selected_walk_front_ray_hits": 0,
+    "y_and_anchor_unchanged": true
+  },
+  "browser_passed": false,
+  "building_id": "qingpu-beidajie-208-212",
+  "coordinate_frame": {
+    "C_door_enu_m": [
+      3.5790677003307825,
+      -5.1129803834410215
+    ],
+    "front_ne_positive_u_enu_m": [
+      6.646494952263606,
+      -3.0680423266905046
+    ],
+    "front_sw_negative_u_enu_m": [
+      0.5116404483979587,
+      -7.157918440191539
+    ],
+    "outward_N_enu": [
+      0.5546976714561319,
+      -0.8320519775117088
+    ],
+    "positive_model_u_enu": [
+      0.8320519775117088,
+      0.5546976714561319
+    ]
+  },
+  "diagnostic_pose_selection_passed": true,
+  "evidence": [
+    {
+      "bytes": 26959,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/corrected-city-pose-probes.json",
+      "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+    },
+    {
+      "bytes": 2574,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/diagnostic-source-check.json",
+      "sha256": "14f3b2227cac80c2285745b9009603f3d6004a4fea8d976e8618888de67641f6"
+    },
+    {
+      "bytes": 75289,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/independent-search.json",
+      "sha256": "c490145fe5264a1e1c97bccc39fe24ca4b9da9d360d5ebad13165ea052e91ec8"
+    },
+    {
+      "bytes": 12771,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/actual-neighbor-raycast.json",
+      "sha256": "78742bcb5f6cd3edb0672c588ee50ba2068be0d6ed462c0762980afd4d0bc678"
+    },
+    {
+      "bytes": 372899,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/candidate-view-fans.png",
+      "sha256": "2073cdc8973e18ad812cc97a434b1d7e7ce2d4d395823a2fb357ede175e7b1c3"
+    },
+    {
+      "bytes": 5651,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/diagnostic-poses.json",
+      "sha256": "0962811a79d310d73d81d11c544bb13fa2c987f6bf4a0863d0b04195f2ac03e3"
+    },
+    {
+      "bytes": 3234,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/root-visual-review.json",
+      "sha256": "d9d61b9f2cc53d5a58cab60e83f076e9d954a45670e01d2977d0f7e3c2f84dfa"
+    },
+    {
+      "bytes": 38949,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/diagnosis.json",
+      "sha256": "51195f23f783d09604942ef8bd28205924a8274aca5a96877f88d39aa7b565c6"
+    },
+    {
+      "bytes": 311968,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/walk-nav-v2-after-city-projection-fix.png",
+      "sha256": "4311bd85c11cc78744af0dc1ba34ffca0e80164d530f7087aa2630cd15a0edb8"
+    },
+    {
+      "bytes": 295732,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/walk-side-u-minus2-d4.png",
+      "sha256": "61227c35218d12b253cf75e9b517baa6f0d9f04df0dcd8b34ae096d72faa78ce"
+    },
+    {
+      "bytes": 251858,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/walk-side-u-minus3-d2p5.png",
+      "sha256": "0989bc917641c79768189b2c0fcdfc244f768e51d55af4af50b503b27c1cdaa9"
+    },
+    {
+      "bytes": 324941,
+      "file": "data/audit/precise-buildings-v7/integration-ab/navigation-b-v3/reviewed-oblique.png",
+      "sha256": "670e4361a7b076b82ce63aadf5c43f411e61a8dc24368b6115b9db4f4cfe0ca0"
+    }
+  ],
+  "formula": {
+    "actual_camera": "D14;target=p-2.8v;eye=p+(14*sin(pitch)-2.8)*v;targetHeight3;eyeHeight3+14*cos(pitch).",
+    "conservative_capsule": "Full segment[p-2.8v,p+14v] with round radius0.12m, all2088polygons; bodyPoint(p) radius0.38m.",
+    "fan": "Approximate plan-horizontal triangle with eyeE and C±norm(C-E)*tan(horizontalFOV/2)*perpendicular(C-E). Includes all foreign footprints before the perpendicular plane through doorC.",
+    "ray_checks": "Exact full segment-to-polygon distances and intersections to doorC and both original source-front endpoints; target25 excluded only from occluder tests, included in body/camera tests.",
+    "start": "p=C+u*U+d*N;v=(p-C)/norm(p-C);heading=atan2(Ceast-peast,Cnorth-pnorth)"
+  },
+  "full_name": "青浦朱家角北大街208–212号江南第一茶楼临街前楼",
+  "history": "qa-ab and qa-ab-v2 completed numeric checks but failed root visual acceptance. Their apps/reports remain unchanged. The old v2 pose remained partly blocked even after the city horizontal radius correction and was rejected in the short diagnostic.",
+  "limits": [
+    "Neighboring buildings remain visible at frame edges.",
+    "Does not guarantee every user rotation, walking position or camera distance is collision-free.",
+    "No claim of physical surveyed street or material accuracy.",
+    "The finite169front-ray sample is not a proof that the entire image or every arbitrary camera pose is clear.",
+    "The conservative14mback+2.8mforward plan capsule is a source-footprint check, not a surveyed physical pedestrian route.",
+    "The explicit oblique uses the observed actual eye after pitch85 clamping, not the originally requested4.5m altitude."
+  ],
+  "model_acceptance_passed": false,
+  "name": "江南第一茶楼 · 北大街208–212号",
+  "navigation": {
+    "bearing": 352.8751575089385,
+    "listed": true,
+    "overviewZoom": 19,
+    "walkStart": [
+      121.05104909505407,
+      31.112967846305857
+    ]
+  },
+  "oblique_pose_normalization": "The viewed original request was clamped to pitch85; use its observed actual eye for the formal explicit pose. Original request/from4.5 and final eye/from4.903010806 are both retained in diagnosis.",
+  "required_runtime_manifest_sha256": "1a47c317951e4c1a9fd70dca2e9c05ded259630a12be89ce74a731e7728db8ef",
+  "reviewed_oblique": {
+    "fov": 50,
+    "from": {
+      "alt": 4.9030108060378,
+      "lat": 31.112928210976463,
+      "lng": 121.05101715900082
+    },
+    "to": {
+      "alt": 4.1,
+      "lat": 31.113007658612247,
+      "lng": 121.0510433170166
+    }
+  },
+  "schema": "teahouse-navigation-v3-selected-pose-v1",
+  "scope": "Root selected this normal14m third-person camera arrival after actually viewing all four diagnostic images. Final registered navigation, shortened label, LOD/return/reset and ownership still require the fresh full A/B browser run; catalog acceptance is separate.",
+  "scope_building": "Only the mapped street-front building at Zhujiajiao North Street208–212; not the entire teahouse complex.",
+  "selected_walk_id": "side-u-minus2-d4",
+  "source_geometry": {
+    "bytes": 46801,
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/new-model-b/geometry-input.json",
+    "sha256": "15db7395c2c48970ad829019344d396d3391a682ba74727d9d9d57318943f7c9"
+  },
+  "source_macro": {
+    "bytes": 262129,
+    "file": "/workspace/shanghai_project/assets/city-detail/macros/14-13701-6700/feature-table.json.gz",
+    "sha256": "45c5ac2f165e1646f351cfd81d544470900a7fbb1a766ef1df0d4f59555a964e"
+  },
+  "source_selected_pose": {
+    "actual_camera": {
+      "48": {
+        "D_m": 14,
+        "behind_player_ground_m": 7.60402755668352,
+        "camera_boom_nearest_sources": [
+          {
+            "distance_m": 1.495603865200235,
+            "local_id": 25
+          },
+          {
+            "distance_m": 2.4097175395406514,
+            "local_id": 1148
+          },
+          {
+            "distance_m": 4.987189931858823,
+            "local_id": 958
+          },
+          {
+            "distance_m": 12.486028007160968,
+            "local_id": 421
+          },
+          {
+            "distance_m": 13.127179708657668,
+            "local_id": 978
+          },
+          {
+            "distance_m": 15.966143734831162,
+            "local_id": 1985
+          }
+        ],
+        "camera_boom_radius_hits": [],
+        "eye_enu_m": [
+          5.076895075508553,
+          -17.095894816711183
+        ],
+        "eye_height_m": 12.367828489024015,
+        "eye_wgs84": [
+          121.0510589909633,
+          31.112900065536845
+        ],
+        "horizontal_FOV_approximation": {
+          "45": {
+            "foreign_overlaps": [
+              {
+                "area_m2": 0.0945350340650301,
+                "local_id": 1148,
+                "nearest_distance_from_eye_m": 6.634756340258145
+              }
+            ],
+            "full_plan_fan_clear": false,
+            "total_foreign_area_m2": 0.0945350340650301,
+            "triangle_enu_m": [
+              [
+                5.076895075508553,
+                -17.095894816711183
+              ],
+              [
+                -1.3844179746860283,
+                -5.733400796333348
+              ],
+              [
+                8.542553375347593,
+                -4.492559970548695
+              ]
+            ]
+          },
+          "60": {
+            "foreign_overlaps": [
+              {
+                "area_m2": 1.4177870328746012,
+                "local_id": 1148,
+                "nearest_distance_from_eye_m": 5.702141508900176
+              }
+            ],
+            "full_plan_fan_clear": false,
+            "total_foreign_area_m2": 1.4177870328746012,
+            "triangle_enu_m": [
+              [
+                5.076895075508553,
+                -17.095894816711183
+              ],
+              [
+                -3.3392711733939966,
+                -5.977751421699498
+              ],
+              [
+                10.497406574055562,
+                -4.248209345182545
+              ]
+            ]
+          }
+        },
+        "pitch_degrees": 48,
+        "source_facade_silhouette_triangle_foreign_overlaps": [],
+        "target_height_m": 3,
+        "three_rays": {
+          "door_center": {
+            "intersected_other_sources": [],
+            "nearest_other_sources": [
+              {
+                "distance_m": 2.4097175395406514,
+                "local_id": 1148
+              },
+              {
+                "distance_m": 4.987189931858823,
+                "local_id": 958
+              },
+              {
+                "distance_m": 11.656516003850902,
+                "local_id": 421
+              },
+              {
+                "distance_m": 13.127179708657668,
+                "local_id": 978
+              },
+              {
+                "distance_m": 15.03703475339127,
+                "local_id": 410
+              },
+              {
+                "distance_m": 15.966143734831162,
+                "local_id": 1985
+              }
+            ],
+            "target_enu_m": [
+              3.5790677003307825,
+              -5.1129803834410215
+            ]
+          },
+          "front_ne_end_positive_u": {
+            "intersected_other_sources": [],
+            "nearest_other_sources": [
+              {
+                "distance_m": 0.7958118076068814,
+                "local_id": 1148
+              },
+              {
+                "distance_m": 4.987189931858823,
+                "local_id": 958
+              },
+              {
+                "distance_m": 7.975596705907563,
+                "local_id": 421
+              },
+              {
+                "distance_m": 13.144736275383611,
+                "local_id": 1256
+              },
+              {
+                "distance_m": 15.12575301260522,
+                "local_id": 978
+              },
+              {
+                "distance_m": 15.583266045892428,
+                "local_id": 410
+              }
+            ],
+            "target_enu_m": [
+              6.646494952263606,
+              -3.0680423266905046
+            ]
+          },
+          "front_sw_end_negative_u": {
+            "intersected_other_sources": [],
+            "nearest_other_sources": [
+              {
+                "distance_m": 4.009172040604001,
+                "local_id": 1148
+              },
+              {
+                "distance_m": 4.987189931858823,
+                "local_id": 958
+              },
+              {
+                "distance_m": 9.834918495016256,
+                "local_id": 978
+              },
+              {
+                "distance_m": 15.169207208434583,
+                "local_id": 410
+              },
+              {
+                "distance_m": 15.337435301794246,
+                "local_id": 421
+              },
+              {
+                "distance_m": 15.966143734831162,
+                "local_id": 1985
+              }
+            ],
+            "target_enu_m": [
+              0.5116404483979587,
+              -7.157918440191539
+            ]
+          }
+        }
+      },
+      "82": {
+        "D_m": 14,
+        "behind_player_ground_m": 11.063752962381987,
+        "camera_boom_nearest_sources": [
+          {
+            "distance_m": 1.495603865200235,
+            "local_id": 25
+          },
+          {
+            "distance_m": 2.0304856976873586,
+            "local_id": 958
+          },
+          {
+            "distance_m": 2.4097175395406514,
+            "local_id": 1148
+          },
+          {
+            "distance_m": 12.486028007160968,
+            "local_id": 421
+          },
+          {
+            "distance_m": 12.597644303650197,
+            "local_id": 1985
+          },
+          {
+            "distance_m": 13.127179708657668,
+            "local_id": 978
+          }
+        ],
+        "camera_boom_radius_hits": [],
+        "eye_enu_m": [
+          5.506010780859825,
+          -20.528905098410945
+        ],
+        "eye_height_m": 4.948423413440917,
+        "eye_wgs84": [
+          121.05106349346255,
+          31.11286922622588
+        ],
+        "horizontal_FOV_approximation": {
+          "45": {
+            "foreign_overlaps": [
+              {
+                "area_m2": 2.6489183290508986,
+                "local_id": 1148,
+                "nearest_distance_from_eye_m": 8.085341651268056
+              }
+            ],
+            "full_plan_fan_clear": false,
+            "total_foreign_area_m2": 2.6489183290508986,
+            "triangle_enu_m": [
+              [
+                5.506010780859825,
+                -20.528905098410945
+              ],
+              [
+                -2.80641739313235,
+                -5.911146341317141
+              ],
+              [
+                9.964552793793915,
+                -4.314814425564902
+              ]
+            ]
+          },
+          "60": {
+            "foreign_overlaps": [
+              {
+                "area_m2": 8.25066399916073,
+                "local_id": 1148,
+                "nearest_distance_from_eye_m": 6.94882522868071
+              }
+            ],
+            "full_plan_fan_clear": false,
+            "total_foreign_area_m2": 8.25066399916073,
+            "triangle_enu_m": [
+              [
+                5.506010780859825,
+                -20.528905098410945
+              ],
+              [
+                -5.321320583664107,
+                -6.2255014896975505
+              ],
+              [
+                12.479455984325671,
+                -4.0004592771844925
+              ]
+            ]
+          }
+        },
+        "pitch_degrees": 82,
+        "source_facade_silhouette_triangle_foreign_overlaps": [],
+        "target_height_m": 3,
+        "three_rays": {
+          "door_center": {
+            "intersected_other_sources": [],
+            "nearest_other_sources": [
+              {
+                "distance_m": 2.0304856976873586,
+                "local_id": 958
+              },
+              {
+                "distance_m": 2.4097175395406514,
+                "local_id": 1148
+              },
+              {
+                "distance_m": 11.656516003850902,
+                "local_id": 421
+              },
+              {
+                "distance_m": 12.597644303650197,
+                "local_id": 1985
+              },
+              {
+                "distance_m": 13.127179708657668,
+                "local_id": 978
+              },
+              {
+                "distance_m": 15.03703475339127,
+                "local_id": 410
+              }
+            ],
+            "target_enu_m": [
+              3.5790677003307825,
+              -5.1129803834410215
+            ]
+          },
+          "front_ne_end_positive_u": {
+            "intersected_other_sources": [],
+            "nearest_other_sources": [
+              {
+                "distance_m": 0.46645901540346346,
+                "local_id": 1148
+              },
+              {
+                "distance_m": 2.0304856976873586,
+                "local_id": 958
+              },
+              {
+                "distance_m": 7.975596705907563,
+                "local_id": 421
+              },
+              {
+                "distance_m": 12.597644303650197,
+                "local_id": 1985
+              },
+              {
+                "distance_m": 13.144736275383611,
+                "local_id": 1256
+              },
+              {
+                "distance_m": 15.449155400682233,
+                "local_id": 978
+              }
+            ],
+            "target_enu_m": [
+              6.646494952263606,
+              -3.0680423266905046
+            ]
+          },
+          "front_sw_end_negative_u": {
+            "intersected_other_sources": [],
+            "nearest_other_sources": [
+              {
+                "distance_m": 2.0304856976873586,
+                "local_id": 958
+              },
+              {
+                "distance_m": 4.673907776568086,
+                "local_id": 1148
+              },
+              {
+                "distance_m": 9.834918495016256,
+                "local_id": 978
+              },
+              {
+                "distance_m": 12.597644303650197,
+                "local_id": 1985
+              },
+              {
+                "distance_m": 15.169207208434583,
+                "local_id": 410
+              },
+              {
+                "distance_m": 15.337435301794246,
+                "local_id": 421
+              }
+            ],
+            "target_enu_m": [
+              0.5116404483979587,
+              -7.157918440191539
+            ]
+          }
+        }
+      }
+    },
+    "all_source_polygons_checked": 2088,
+    "body_nearest_sources": [
+      {
+        "distance_m": 2.6016128336901416,
+        "local_id": 1148
+      },
+      {
+        "distance_m": 3.999999999999999,
+        "local_id": 25
+      },
+      {
+        "distance_m": 12.434032976634407,
+        "local_id": 958
+      },
+      {
+        "distance_m": 13.364280764735737,
+        "local_id": 978
+      },
+      {
+        "distance_m": 13.959454128543907,
+        "local_id": 421
+      },
+      {
+        "distance_m": 19.0844068394414,
+        "local_id": 410
+      }
+    ],
+    "body_radius_hits": [],
+    "body_radius_m": 0.38,
+    "conservative_back_enu_m": [
+      5.8701985619356645,
+      -23.442479179507156
+    ],
+    "conservative_back_m": 14,
+    "conservative_boom_nearest_sources": [
+      {
+        "distance_m": 1.495603865200235,
+        "local_id": 25
+      },
+      {
+        "distance_m": 1.5852397056552834,
+        "local_id": 958
+      },
+      {
+        "distance_m": 2.4097175395406523,
+        "local_id": 1148
+      },
+      {
+        "distance_m": 9.788868710273144,
+        "local_id": 1985
+      },
+      {
+        "distance_m": 12.486028007160968,
+        "local_id": 421
+      },
+      {
+        "distance_m": 13.127179708657671,
+        "local_id": 978
+      }
+    ],
+    "conservative_boom_radius_hits": [],
+    "conservative_boom_radius_m": 0.12,
+    "conservative_front_m": 2.8,
+    "door_connection_other_hits": [],
+    "heading_to_door_degrees": 352.8751575089385,
+    "label": "requested_u-2_d4",
+    "outward_d_m": 4,
+    "start_enu_m": [
+      4.133754431131893,
+      -9.55058363640012
+    ],
+    "start_wgs84": [
+      121.05104909505405,
+      31.112967846305857
+    ],
+    "target_enu_m": [
+      3.7864656049711383,
+      -6.772204527778713
+    ],
+    "u_m": -2
+  }
+}

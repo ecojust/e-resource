@@ -1,0 +1,1294 @@
+{
+  "schema": "b-reviewed-camera-pose-diagnostic-v1",
+  "completed": true,
+  "not_model_acceptance": true,
+  "poses_file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/diagnostic-poses.json",
+  "poses_sha256": "0962811a79d310d73d81d11c544bb13fa2c987f6bf4a0863d0b04195f2ac03e3",
+  "poses": {
+    "schema": "b-camera-diagnostic-poses-v1",
+    "building_id": "qingpu-beidajie-208-212",
+    "walks": [
+      {
+        "id": "nav-v2-after-city-projection-fix",
+        "walkStart": [
+          121.05105549732018,
+          31.11298229687545
+        ],
+        "bearing": 337.6200388058807,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "front_grid_occlusions": 52,
+          "front_grid_samples": 169,
+          "interpretation": "Diagnostic control; known partially blocked front"
+        }
+      },
+      {
+        "id": "side-u-minus2-d4",
+        "walkStart": [
+          121.05104909505407,
+          31.112967846305857
+        ],
+        "bearing": 352.8751575089385,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "front_grid_occlusions": 0,
+          "front_grid_samples": 169,
+          "interpretation": "No sampled front ray hits retained actual meshes; still requires actual root image review"
+        }
+      },
+      {
+        "id": "side-u-minus3-d2p5",
+        "walkStart": [
+          121.05103163449012,
+          31.112974075052442
+        ],
+        "bearing": 16.504535239595327,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "front_grid_occlusions": 0,
+          "front_grid_samples": 169,
+          "interpretation": "No sampled front ray hits retained actual meshes; still requires actual root image review"
+        }
+      }
+    ],
+    "oblique": {
+      "from": {
+        "lng": 121.05101708383839,
+        "lat": 31.11292798269147,
+        "alt": 4.5
+      },
+      "to": {
+        "lng": 121.0510433170166,
+        "lat": 31.113007658612247,
+        "alt": 4.1
+      },
+      "fov": 50,
+      "evidence": {
+        "actual_two_near_glb_probe_report": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+          "bytes": 26959,
+          "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+        },
+        "source_check": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/diagnostic-source-check.json",
+          "bytes": 2574,
+          "sha256": "14f3b2227cac80c2285745b9009603f3d6004a4fea8d976e8618888de67641f6"
+        },
+        "front_grid_occlusions": 0,
+        "front_grid_samples": 169,
+        "physical_view": "photo-u=-7m,source-front outward d=6m,from height4.5m to actual precise front height4.1m"
+      }
+    },
+    "scope": "Diagnostic candidates only, not accepted. Requires the separately reviewed city-only X/Z radius correction before interpreting these rays. Preserves every neighbor; no navigation/model mutation. First walk retains v2 as a known52/169front-ray-occluded control, other two and oblique are0/169.",
+    "actual_glb_assets": [
+      {
+        "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/14-13701-6700/-3_2-s0-s0.glb.gz",
+        "sha256": "71dcb8b7dd1ee130bcb5f97f130b6485b37188583d1cb388eb6fbe7be2ed43fb",
+        "bytes": 102662,
+        "retained_local_ids": [
+          1358,
+          9,
+          1785,
+          474,
+          638,
+          1291,
+          102,
+          2005,
+          197,
+          581,
+          1893,
+          28,
+          410,
+          1789,
+          768,
+          1652,
+          862,
+          841,
+          1427,
+          140,
+          67,
+          859,
+          1256,
+          1968,
+          1101,
+          976,
+          1307
+        ],
+        "meshCount": 18
+      },
+      {
+        "file": "/workspace/shanghai_expansion/building-by-building-v7/overrides-review/nine-targets/14-13701-6700/-3_2-s1-s0.glb.gz",
+        "sha256": "fb6e5bed1fb7071d2687171ffe7793a6483fcd31469ae2a10ca3990d8450084d",
+        "bytes": 113874,
+        "retained_local_ids": [
+          179,
+          709,
+          1926,
+          1119,
+          978,
+          1232,
+          413,
+          1863,
+          411,
+          1018,
+          958,
+          1714,
+          1464,
+          1056,
+          1329,
+          1148,
+          1282,
+          632,
+          375,
+          1618,
+          895,
+          1985,
+          101,
+          1912,
+          699,
+          2083,
+          1010
+        ],
+        "meshCount": 14
+      }
+    ],
+    "source_review": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/diagnostic-source-check.json",
+      "bytes": 2574,
+      "sha256": "14f3b2227cac80c2285745b9009603f3d6004a4fea8d976e8618888de67641f6"
+    },
+    "limits": [
+      "Ray grid is finite and does not certify an entirely empty image or the whole camera near plane. Visible neighboring buildings at frame edges can remain.",
+      "Not a browser acceptance. Root must inspect short actual walk and oblique diagnostic views before freezing navigation/profile.",
+      "Only the two relevant near blocks were decoded, not every city model; all2088 source polygons are separately available for broad footprint checks."
+    ]
+  },
+  "source_script_sha256": "9bbe3558f97abc72b6befccd32b580333cead4e718d3ec93a09ce754dad56c65",
+  "network": {
+    "enabled": true,
+    "source_environment": "HTTPS_PROXY",
+    "scheme": "http",
+    "host": "proxy",
+    "port": 8080,
+    "bypass": "localhost,127.0.0.1",
+    "credentials_supplied": false,
+    "scope": "Explicit Playwright BrowserContext proxy shared by browser requests, context.request and route.fetch; localhost remains direct.",
+    "remote_urls_or_bytes_rewritten": false
+  },
+  "single_browser": true,
+  "events": [
+    {
+      "time": 1793015511.1679766,
+      "name": "launch"
+    },
+    {
+      "time": 1793015511.6903498,
+      "name": "served-source-preflight READY"
+    },
+    {
+      "time": 1793015538.5585704,
+      "name": "app-ready"
+    },
+    {
+      "time": 1793015538.559078,
+      "name": "walk BEGIN",
+      "pose": "nav-v2-after-city-projection-fix"
+    },
+    {
+      "time": 1793015568.5241928,
+      "name": "render-frame BEGIN"
+    },
+    {
+      "time": 1793015570.8916197,
+      "name": "render-frame READY"
+    },
+    {
+      "time": 1793015584.1527367,
+      "name": "capture READY",
+      "capture": "walk-nav-v2-after-city-projection-fix"
+    },
+    {
+      "time": 1793015584.1534069,
+      "name": "walk BEGIN",
+      "pose": "side-u-minus2-d4"
+    },
+    {
+      "time": 1793015595.2842903,
+      "name": "render-frame BEGIN"
+    },
+    {
+      "time": 1793015597.0771248,
+      "name": "render-frame READY"
+    },
+    {
+      "time": 1793015607.1437902,
+      "name": "capture READY",
+      "capture": "walk-side-u-minus2-d4"
+    },
+    {
+      "time": 1793015607.1449168,
+      "name": "walk BEGIN",
+      "pose": "side-u-minus3-d2p5"
+    },
+    {
+      "time": 1793015630.4851835,
+      "name": "render-frame BEGIN"
+    },
+    {
+      "time": 1793015632.0599232,
+      "name": "render-frame READY"
+    },
+    {
+      "time": 1793015641.7738483,
+      "name": "capture READY",
+      "capture": "walk-side-u-minus3-d2p5"
+    },
+    {
+      "time": 1793015641.7751267,
+      "name": "reviewed-oblique BEGIN"
+    },
+    {
+      "time": 1793015647.698261,
+      "name": "render-frame BEGIN"
+    },
+    {
+      "time": 1793015651.5725527,
+      "name": "render-frame READY"
+    },
+    {
+      "time": 1793015659.6257327,
+      "name": "capture READY",
+      "capture": "reviewed-oblique"
+    },
+    {
+      "time": 1793015659.6269639,
+      "name": "diagnostic-completed"
+    }
+  ],
+  "captures": [
+    {
+      "name": "walk-nav-v2-after-city-projection-fix",
+      "requested": {
+        "id": "nav-v2-after-city-projection-fix",
+        "walkStart": [
+          121.05105549732018,
+          31.11298229687545
+        ],
+        "bearing": 337.6200388058807,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "front_grid_occlusions": 52,
+          "front_grid_samples": 169,
+          "interpretation": "Diagnostic control; known partially blocked front"
+        }
+      },
+      "state": {
+        "points": {
+          "player": {
+            "lng": 121.05105549732018,
+            "lat": 31.11298229687545
+          },
+          "desiredTarget": {
+            "lng": 121.0510443113557,
+            "lat": 31.113005555173636
+          },
+          "desiredEye": {
+            "lng": 121.05109969687294,
+            "lat": 31.112890395423506
+          },
+          "desiredMidpoint": {
+            "lng": 121.05107754266604,
+            "lat": 31.11293645932356
+          },
+          "actualEye": {
+            "lng": 121.05109969688652,
+            "lat": 31.112890395423506,
+            "alt": 4.948417410616472
+          }
+        },
+        "collisions": {
+          "player": null,
+          "desiredTarget": null,
+          "desiredEye": null,
+          "desiredMidpoint": null,
+          "actualEye": null
+        },
+        "source": {
+          "polygons": 6124,
+          "roads": 4345,
+          "updated": 60875,
+          "revision": 28,
+          "buildingSource": "overture",
+          "release": "2026-10-21.0"
+        },
+        "controller": {
+          "position": {
+            "lng": 121.05105549732018,
+            "lat": 31.11298229687545
+          },
+          "bearing": 337.62003880588077,
+          "pitch": 82,
+          "cameraDistance": 14,
+          "lastCamera": {
+            "lng": 121.05105549732018,
+            "lat": 31.11298229687545,
+            "bearing": 337.62003880588077,
+            "pitch": 82,
+            "distance": 14,
+            "groundHeight": 0.075,
+            "groundRevision": 0,
+            "collisionRevision": 27
+          }
+        },
+        "camera": {
+          "center": [
+            121.05104431135567,
+            31.11300555517363
+          ],
+          "bearing": -22.379973452916488,
+          "pitch": 81.9911855312276,
+          "zoom": 21.4729786990871,
+          "eye": {
+            "lng": 121.05109969688652,
+            "lat": 31.112890395423506,
+            "alt": 4.948417410616472
+          }
+        },
+        "asset": {
+          "id": "qingpu-beidajie-208-212",
+          "status": "loaded",
+          "visible": true,
+          "variant": "full",
+          "photoMeshes": 0,
+          "triangles": 199228,
+          "greenery": null,
+          "images": []
+        },
+        "streaming": {
+          "total": 1708,
+          "visible": 4,
+          "loaded": 6,
+          "loading": 2,
+          "queued": 0,
+          "wanted": 6,
+          "radius": 1800,
+          "geometryBytes": 12434040,
+          "maxVisible": 6,
+          "maxCache": 8,
+          "concurrency": 2,
+          "requests": 8,
+          "completed": 6,
+          "cancelled": 0,
+          "discarded": 0,
+          "failed": 0,
+          "evicted": 0,
+          "candidates": 7,
+          "selectionMs": 0.10000000894069672,
+          "peakConcurrent": 2,
+          "peakCache": 6,
+          "owners": 6,
+          "hiddenFeatures": 6420,
+          "pendingStates": 0,
+          "active": [
+            {
+              "id": "14-13720-6694",
+              "name": "14-13720-6694",
+              "visible": false,
+              "triangles": 53852,
+              "sizeBytes": 1046956
+            },
+            {
+              "id": "14-13720-6693",
+              "name": "14-13720-6693",
+              "visible": false,
+              "triangles": 60644,
+              "sizeBytes": 1161544
+            },
+            {
+              "id": "14-13701-6700",
+              "name": "14-13701-6700",
+              "visible": true,
+              "triangles": 29904,
+              "sizeBytes": 611820
+            },
+            {
+              "id": "14-13700-6700",
+              "name": "14-13700-6700",
+              "visible": true,
+              "triangles": 24852,
+              "sizeBytes": 517012
+            },
+            {
+              "id": "14-13701-6701",
+              "name": "14-13701-6701",
+              "visible": true,
+              "triangles": 20508,
+              "sizeBytes": 422032
+            },
+            {
+              "id": "14-13700-6701",
+              "name": "14-13700-6701",
+              "visible": true,
+              "triangles": 16080,
+              "sizeBytes": 332516
+            }
+          ],
+          "detail": {
+            "requests": 6,
+            "completed": 5,
+            "failed": 0,
+            "cancelled": 0,
+            "evicted": 0,
+            "discarded": 0,
+            "metadataMismatches": 0,
+            "parents": 5,
+            "available": 512,
+            "visible": 5,
+            "loaded": 5,
+            "loading": 1,
+            "precise": {
+              "registered": 9,
+              "visible": [
+                "qingpu-beidajie-222",
+                "qingpu-beidajie-208-212"
+              ],
+              "overrideTiles": 2,
+              "hiddenGroups": 2
+            },
+            "geometryBytes": 5519092,
+            "memoryBytes": 5539572,
+            "maskBytes": 20480,
+            "triangles": 462356,
+            "features": 121,
+            "active": [
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s1-s1",
+                "features": 23,
+                "triangles": 69554
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s0",
+                "features": 28,
+                "triangles": 76252
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s1",
+                "features": 28,
+                "triangles": 106964
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s0",
+                "features": 28,
+                "triangles": 121360
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s1-s0",
+                "features": 14,
+                "triangles": 88226
+              }
+            ],
+            "ordinaryRegistries": 0
+          },
+          "renderer": {
+            "fps": 0.4288164665523156,
+            "drawCalls": 93,
+            "triangles": 571976,
+            "geometries": 147,
+            "textures": 10
+          }
+        }
+      },
+      "image": "walk-nav-v2-after-city-projection-fix.png"
+    },
+    {
+      "name": "walk-side-u-minus2-d4",
+      "requested": {
+        "id": "side-u-minus2-d4",
+        "walkStart": [
+          121.05104909505407,
+          31.112967846305857
+        ],
+        "bearing": 352.8751575089385,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "front_grid_occlusions": 0,
+          "front_grid_samples": 169,
+          "interpretation": "No sampled front ray hits retained actual meshes; still requires actual root image review"
+        }
+      },
+      "state": {
+        "points": {
+          "player": {
+            "lng": 121.05104909505407,
+            "lat": 31.112967846305857
+          },
+          "desiredTarget": {
+            "lng": 121.05104545112714,
+            "lat": 31.11299280491004
+          },
+          "desiredEye": {
+            "lng": 121.05106349344956,
+            "lat": 31.112869226366225
+          },
+          "desiredMidpoint": {
+            "lng": 121.05105627652058,
+            "lat": 31.11291865778375
+          },
+          "actualEye": {
+            "lng": 121.05106349345431,
+            "lat": 31.11286922636623,
+            "alt": 4.948416971782485
+          }
+        },
+        "collisions": {
+          "player": null,
+          "desiredTarget": null,
+          "desiredEye": null,
+          "desiredMidpoint": null,
+          "actualEye": null
+        },
+        "source": {
+          "polygons": 5866,
+          "roads": 3360,
+          "updated": 83559.70000000298,
+          "revision": 36,
+          "buildingSource": "overture",
+          "release": "2026-10-21.0"
+        },
+        "controller": {
+          "position": {
+            "lng": 121.05104909505407,
+            "lat": 31.112967846305857
+          },
+          "bearing": 352.8751575089385,
+          "pitch": 82,
+          "cameraDistance": 14,
+          "lastCamera": {
+            "lng": 121.05104909505407,
+            "lat": 31.112967846305857,
+            "bearing": 352.8751575089385,
+            "pitch": 82,
+            "distance": 14,
+            "groundHeight": 0.075,
+            "groundRevision": 0,
+            "collisionRevision": 36
+          }
+        },
+        "camera": {
+          "center": [
+            121.05104545112715,
+            31.11299280491005
+          ],
+          "bearing": -7.1248470766831815,
+          "pitch": 81.99118634507747,
+          "zoom": 21.472979072138195,
+          "eye": {
+            "lng": 121.05106349345431,
+            "lat": 31.11286922636623,
+            "alt": 4.948416971782485
+          }
+        },
+        "asset": {
+          "id": "qingpu-beidajie-208-212",
+          "status": "loaded",
+          "visible": true,
+          "variant": "full",
+          "photoMeshes": 0,
+          "triangles": 199228,
+          "greenery": null,
+          "images": []
+        },
+        "streaming": {
+          "total": 1708,
+          "visible": 6,
+          "loaded": 6,
+          "loading": 0,
+          "queued": 0,
+          "wanted": 6,
+          "radius": 1800,
+          "geometryBytes": 6318384,
+          "maxVisible": 6,
+          "maxCache": 8,
+          "concurrency": 2,
+          "requests": 8,
+          "completed": 8,
+          "cancelled": 0,
+          "discarded": 0,
+          "failed": 0,
+          "evicted": 2,
+          "candidates": 7,
+          "selectionMs": 0,
+          "peakConcurrent": 2,
+          "peakCache": 8,
+          "owners": 8,
+          "hiddenFeatures": 7441,
+          "pendingStates": 0,
+          "active": [
+            {
+              "id": "14-13701-6700",
+              "name": "14-13701-6700",
+              "visible": true,
+              "triangles": 29904,
+              "sizeBytes": 611820
+            },
+            {
+              "id": "14-13700-6700",
+              "name": "14-13700-6700",
+              "visible": true,
+              "triangles": 24852,
+              "sizeBytes": 517012
+            },
+            {
+              "id": "14-13701-6701",
+              "name": "14-13701-6701",
+              "visible": true,
+              "triangles": 20508,
+              "sizeBytes": 422032
+            },
+            {
+              "id": "14-13700-6701",
+              "name": "14-13700-6701",
+              "visible": true,
+              "triangles": 16080,
+              "sizeBytes": 332516
+            },
+            {
+              "id": "14-13701-6699",
+              "name": "14-13701-6699",
+              "visible": true,
+              "triangles": 5256,
+              "sizeBytes": 109424
+            },
+            {
+              "id": "14-13700-6699",
+              "name": "14-13700-6699",
+              "visible": true,
+              "triangles": 9084,
+              "sizeBytes": 191116
+            }
+          ],
+          "detail": {
+            "requests": 6,
+            "completed": 6,
+            "failed": 0,
+            "cancelled": 0,
+            "evicted": 0,
+            "discarded": 0,
+            "metadataMismatches": 0,
+            "parents": 6,
+            "available": 638,
+            "visible": 6,
+            "loaded": 6,
+            "loading": 0,
+            "precise": {
+              "registered": 9,
+              "visible": [
+                "qingpu-beidajie-222",
+                "qingpu-beidajie-208-212"
+              ],
+              "overrideTiles": 2,
+              "hiddenGroups": 2
+            },
+            "geometryBytes": 6909240,
+            "memoryBytes": 6927672,
+            "maskBytes": 18432,
+            "triangles": 580028,
+            "features": 166,
+            "active": [
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s0",
+                "features": 45,
+                "triangles": 117672
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s1-s1",
+                "features": 23,
+                "triangles": 69554
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s0",
+                "features": 28,
+                "triangles": 76252
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s1",
+                "features": 28,
+                "triangles": 106964
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s0",
+                "features": 28,
+                "triangles": 121360
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s1-s0",
+                "features": 14,
+                "triangles": 88226
+              }
+            ],
+            "ordinaryRegistries": 0
+          },
+          "renderer": {
+            "fps": 0.5592528382053575,
+            "drawCalls": 121,
+            "triangles": 719978,
+            "geometries": 188,
+            "textures": 12
+          }
+        }
+      },
+      "image": "walk-side-u-minus2-d4.png"
+    },
+    {
+      "name": "walk-side-u-minus3-d2p5",
+      "requested": {
+        "id": "side-u-minus3-d2p5",
+        "walkStart": [
+          121.05103163449012,
+          31.112974075052442
+        ],
+        "bearing": 16.504535239595327,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "front_grid_occlusions": 0,
+          "front_grid_samples": 169,
+          "interpretation": "No sampled front ray hits retained actual meshes; still requires actual root image review"
+        }
+      },
+      "state": {
+        "points": {
+          "player": {
+            "lng": 121.05103163449012,
+            "lat": 31.112974075052442
+          },
+          "desiredTarget": {
+            "lng": 121.0510399808047,
+            "lat": 31.11299819151473
+          },
+          "desiredEye": {
+            "lng": 121.05099865536056,
+            "lat": 31.112878782702047
+          },
+          "desiredMidpoint": {
+            "lng": 121.05101518553822,
+            "lat": 31.112926546227122
+          },
+          "actualEye": {
+            "lng": 121.05099865535004,
+            "lat": 31.11287878270204,
+            "alt": 4.9484171891320345
+          }
+        },
+        "collisions": {
+          "player": null,
+          "desiredTarget": null,
+          "desiredEye": null,
+          "desiredMidpoint": null,
+          "actualEye": null
+        },
+        "source": {
+          "polygons": 6117,
+          "roads": 3733,
+          "updated": 118762.59999999404,
+          "revision": 43,
+          "buildingSource": "overture",
+          "release": "2026-10-21.0"
+        },
+        "controller": {
+          "position": {
+            "lng": 121.05103163449012,
+            "lat": 31.112974075052442
+          },
+          "bearing": 16.504535239595327,
+          "pitch": 82,
+          "cameraDistance": 14,
+          "lastCamera": {
+            "lng": 121.05103163449012,
+            "lat": 31.112974075052442,
+            "bearing": 16.504535239595327,
+            "pitch": 82,
+            "distance": 14,
+            "groundHeight": 0.075,
+            "groundRevision": 0,
+            "collisionRevision": 43
+          }
+        },
+        "camera": {
+          "center": [
+            121.05103998080472,
+            31.112998191514734
+          ],
+          "bearing": 16.504545072364408,
+          "pitch": 81.9911859600046,
+          "zoom": 21.472978898255604,
+          "eye": {
+            "lng": 121.05099865535004,
+            "lat": 31.11287878270204,
+            "alt": 4.9484171891320345
+          }
+        },
+        "asset": {
+          "id": "qingpu-beidajie-208-212",
+          "status": "loaded",
+          "visible": true,
+          "variant": "full",
+          "photoMeshes": 0,
+          "triangles": 199228,
+          "greenery": null,
+          "images": []
+        },
+        "streaming": {
+          "total": 1708,
+          "visible": 6,
+          "loaded": 6,
+          "loading": 0,
+          "queued": 0,
+          "wanted": 6,
+          "radius": 1800,
+          "geometryBytes": 6318384,
+          "maxVisible": 6,
+          "maxCache": 8,
+          "concurrency": 2,
+          "requests": 8,
+          "completed": 8,
+          "cancelled": 0,
+          "discarded": 0,
+          "failed": 0,
+          "evicted": 2,
+          "candidates": 7,
+          "selectionMs": 0,
+          "peakConcurrent": 2,
+          "peakCache": 8,
+          "owners": 8,
+          "hiddenFeatures": 7441,
+          "pendingStates": 0,
+          "active": [
+            {
+              "id": "14-13701-6700",
+              "name": "14-13701-6700",
+              "visible": true,
+              "triangles": 29904,
+              "sizeBytes": 611820
+            },
+            {
+              "id": "14-13700-6700",
+              "name": "14-13700-6700",
+              "visible": true,
+              "triangles": 24852,
+              "sizeBytes": 517012
+            },
+            {
+              "id": "14-13701-6701",
+              "name": "14-13701-6701",
+              "visible": true,
+              "triangles": 20508,
+              "sizeBytes": 422032
+            },
+            {
+              "id": "14-13700-6701",
+              "name": "14-13700-6701",
+              "visible": true,
+              "triangles": 16080,
+              "sizeBytes": 332516
+            },
+            {
+              "id": "14-13701-6699",
+              "name": "14-13701-6699",
+              "visible": true,
+              "triangles": 5256,
+              "sizeBytes": 109424
+            },
+            {
+              "id": "14-13700-6699",
+              "name": "14-13700-6699",
+              "visible": true,
+              "triangles": 9084,
+              "sizeBytes": 191116
+            }
+          ],
+          "detail": {
+            "requests": 6,
+            "completed": 6,
+            "failed": 0,
+            "cancelled": 0,
+            "evicted": 0,
+            "discarded": 0,
+            "metadataMismatches": 0,
+            "parents": 6,
+            "available": 638,
+            "visible": 6,
+            "loaded": 6,
+            "loading": 0,
+            "precise": {
+              "registered": 9,
+              "visible": [
+                "qingpu-beidajie-222",
+                "qingpu-beidajie-208-212"
+              ],
+              "overrideTiles": 2,
+              "hiddenGroups": 2
+            },
+            "geometryBytes": 6909240,
+            "memoryBytes": 6927672,
+            "maskBytes": 18432,
+            "triangles": 580028,
+            "features": 166,
+            "active": [
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s0",
+                "features": 45,
+                "triangles": 117672
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s1-s1",
+                "features": 23,
+                "triangles": 69554
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s0",
+                "features": 28,
+                "triangles": 76252
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s1",
+                "features": 28,
+                "triangles": 106964
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s0",
+                "features": 28,
+                "triangles": 121360
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s1-s0",
+                "features": 14,
+                "triangles": 88226
+              }
+            ],
+            "ordinaryRegistries": 0
+          },
+          "renderer": {
+            "fps": 0.6383657835939993,
+            "drawCalls": 112,
+            "triangles": 770268,
+            "geometries": 189,
+            "textures": 12
+          }
+        }
+      },
+      "image": "walk-side-u-minus3-d2p5.png"
+    },
+    {
+      "name": "reviewed-oblique",
+      "requested": {
+        "from": {
+          "lng": 121.05101708383839,
+          "lat": 31.11292798269147,
+          "alt": 4.5
+        },
+        "to": {
+          "lng": 121.0510433170166,
+          "lat": 31.113007658612247,
+          "alt": 4.1
+        },
+        "fov": 50,
+        "evidence": {
+          "actual_two_near_glb_probe_report": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/corrected-city-pose-probes.json",
+            "bytes": 26959,
+            "sha256": "527637d66d5e8fcb06af4876f996316e9a308ebc73bea88495d2ecaa4f3b90f0"
+          },
+          "source_check": {
+            "file": "/workspace/shanghai_expansion/building-by-building-v7/integration-ab/navigation-b-v3-candidates/diagnostic-source-check.json",
+            "bytes": 2574,
+            "sha256": "14f3b2227cac80c2285745b9009603f3d6004a4fea8d976e8618888de67641f6"
+          },
+          "front_grid_occlusions": 0,
+          "front_grid_samples": 169,
+          "physical_view": "photo-u=-7m,source-front outward d=6m,from height4.5m to actual precise front height4.1m"
+        }
+      },
+      "state": {
+        "points": {
+          "player": {
+            "lng": 121.05103163449012,
+            "lat": 31.112974075052442
+          },
+          "desiredTarget": {
+            "lng": 121.0510399808047,
+            "lat": 31.11299819151473
+          },
+          "desiredEye": {
+            "lng": 121.05099865536056,
+            "lat": 31.112878782702047
+          },
+          "desiredMidpoint": {
+            "lng": 121.05101518553822,
+            "lat": 31.112926546227122
+          },
+          "actualEye": {
+            "lng": 121.05101715900082,
+            "lat": 31.112928210976463,
+            "alt": 4.9030108060378
+          }
+        },
+        "collisions": {
+          "player": null,
+          "desiredTarget": null,
+          "desiredEye": null,
+          "desiredMidpoint": null,
+          "actualEye": null
+        },
+        "source": {
+          "polygons": 6216,
+          "roads": 4345,
+          "updated": 141764.29999999702,
+          "revision": 44,
+          "buildingSource": "overture",
+          "release": "2026-10-21.0"
+        },
+        "controller": {
+          "position": {
+            "lng": 121.05103163449012,
+            "lat": 31.112974075052442
+          },
+          "bearing": 16.504535239595327,
+          "pitch": 82,
+          "cameraDistance": 14,
+          "lastCamera": null
+        },
+        "camera": {
+          "center": [
+            121.05104331701659,
+            31.113007658612247
+          ],
+          "bearing": 15.742409832327553,
+          "pitch": 85,
+          "zoom": 22.497271483802773,
+          "eye": {
+            "lng": 121.05101715900082,
+            "lat": 31.112928210976463,
+            "alt": 4.9030108060378
+          }
+        },
+        "asset": {
+          "id": "qingpu-beidajie-208-212",
+          "status": "loaded",
+          "visible": true,
+          "variant": "full",
+          "photoMeshes": 0,
+          "triangles": 199228,
+          "greenery": null,
+          "images": []
+        },
+        "streaming": {
+          "total": 1708,
+          "visible": 4,
+          "loaded": 6,
+          "loading": 0,
+          "queued": 0,
+          "wanted": 4,
+          "radius": 850,
+          "geometryBytes": 6318384,
+          "maxVisible": 6,
+          "maxCache": 8,
+          "concurrency": 2,
+          "requests": 8,
+          "completed": 8,
+          "cancelled": 0,
+          "discarded": 0,
+          "failed": 0,
+          "evicted": 2,
+          "candidates": 4,
+          "selectionMs": 0,
+          "peakConcurrent": 2,
+          "peakCache": 8,
+          "owners": 6,
+          "hiddenFeatures": 6420,
+          "pendingStates": 0,
+          "active": [
+            {
+              "id": "14-13701-6700",
+              "name": "14-13701-6700",
+              "visible": true,
+              "triangles": 29904,
+              "sizeBytes": 611820
+            },
+            {
+              "id": "14-13700-6700",
+              "name": "14-13700-6700",
+              "visible": true,
+              "triangles": 24852,
+              "sizeBytes": 517012
+            },
+            {
+              "id": "14-13701-6701",
+              "name": "14-13701-6701",
+              "visible": true,
+              "triangles": 20508,
+              "sizeBytes": 422032
+            },
+            {
+              "id": "14-13700-6701",
+              "name": "14-13700-6701",
+              "visible": true,
+              "triangles": 16080,
+              "sizeBytes": 332516
+            },
+            {
+              "id": "14-13701-6699",
+              "name": "14-13701-6699",
+              "visible": false,
+              "triangles": 5256,
+              "sizeBytes": 109424
+            },
+            {
+              "id": "14-13700-6699",
+              "name": "14-13700-6699",
+              "visible": false,
+              "triangles": 9084,
+              "sizeBytes": 191116
+            }
+          ],
+          "detail": {
+            "requests": 6,
+            "completed": 6,
+            "failed": 0,
+            "cancelled": 0,
+            "evicted": 0,
+            "discarded": 0,
+            "metadataMismatches": 0,
+            "parents": 6,
+            "available": 638,
+            "visible": 6,
+            "loaded": 6,
+            "loading": 0,
+            "precise": {
+              "registered": 9,
+              "visible": [
+                "qingpu-beidajie-222",
+                "qingpu-beidajie-208-212"
+              ],
+              "overrideTiles": 2,
+              "hiddenGroups": 2
+            },
+            "geometryBytes": 6909240,
+            "memoryBytes": 6927672,
+            "maskBytes": 18432,
+            "triangles": 580028,
+            "features": 166,
+            "active": [
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s0",
+                "features": 45,
+                "triangles": 117672
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--4_2-s1-s1",
+                "features": 23,
+                "triangles": 69554
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s0",
+                "features": 28,
+                "triangles": 76252
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s0-s1",
+                "features": 28,
+                "triangles": 106964
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s0",
+                "features": 28,
+                "triangles": 121360
+              },
+              {
+                "id": "14-13701-6700/14-13701-6700--3_2-s1-s1-s0",
+                "features": 14,
+                "triangles": 88226
+              }
+            ],
+            "ordinaryRegistries": 0
+          },
+          "renderer": {
+            "fps": 0.5307573907983459,
+            "drawCalls": 68,
+            "triangles": 550900,
+            "geometries": 189,
+            "textures": 12
+          }
+        }
+      },
+      "image": "reviewed-oblique.png"
+    }
+  ],
+  "console": [
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x37c4001bf400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x37c4001bf400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x37c4001bf400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x37c4001bf400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "page_errors": [],
+  "scope": "Temporary copies through normal selectPlace for walks; explicit overview camera for oblique; no owner/source/asset/disk modifications. Root visual review required.",
+  "served_sources": [
+    {
+      "file": "src/map-scene.js",
+      "bytes": 52958,
+      "sha256": "5b9fa5902e1648106d12c3b5c000ef36a1d43bb400fc86db261ef2c12e4710d2"
+    },
+    {
+      "file": "src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    },
+    {
+      "file": "data/landmarks.json",
+      "bytes": 120907,
+      "sha256": "54bc4abc59f2c1c5097aee4a5513666b2e7cbb9070f341e5e33a77360780570c"
+    },
+    {
+      "file": "data/precise-buildings-v6.json",
+      "bytes": 29560,
+      "sha256": "7b148ff3ab33dbb2a0f908a59f3e800a84f80d6354c773315482277c4e880e91"
+    }
+  ],
+  "visual_review": "pending root actual image inspection",
+  "finished_utc": "2026-10-26T11:54:19Z"
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "camera-fix-final-staged-validation-v1",
+  "passed": true,
+  "scope": "Source code and offline regression checks only; original-v1 visual failure preserved; final full A/B browser and root visual recheck still required after controlled install.",
+  "installation_plan": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/final-camera-fix/installation-plan.json",
+    "bytes": 2146,
+    "sha256": "f3cd76f0357fac0dbbd9429bf0acb553bb4ebf3eb08c00c53a0942c30252fc45"
+  },
+  "patch": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/final-camera-fix/camera-fix.patch",
+    "bytes": 20974,
+    "sha256": "7f60c09c325495b720b4d7eee4f27209f63155add604c99992b1254ccea96e6f"
+  },
+  "production_unchanged_at_report": true,
+  "no_browser_started_by_this_agent": true,
+  "no_blender_started": true,
+  "source_changes": [
+    "Actual collision cache revision after rebuild; same850ms throttle",
+    "Stationary controller compares source collision revision",
+    "Identical requested from/to does not resubmit jumpTo; explicit reset still does",
+    "Shared WALK_CAMERA_MAX_ZOOM24 used by Map constructor and setCameraFromTo; generic overview adapter unchanged",
+    "Portable six-case regression suite added to normal npm test chain"
+  ],
+  "targeted_tests": {
+    "candidate_tests": 6,
+    "candidate_pass": 6,
+    "candidate_fail": 0,
+    "unchanged_existing_walk_controller_suite_passed": true,
+    "original_base_negative_control_pass": 2,
+    "original_base_negative_control_fail": 4,
+    "normal_test_staging_dependency": false,
+    "vendor_math": "Actual bundled MapLibre Map.prototype.calculateCameraOptionsFromTo; no Map instance/GPU/browser created"
+  },
+  "real_browser_diagnostic_performed_by_root": {
+    "evidence": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/live-mvt-maxzoom/diagnosis.json",
+      "bytes": 19901,
+      "sha256": "a4631a234ef117f4f7733fd5b88fa62e0b29c09491232b2471e8eeaa4dda8aec"
+    },
+    "requested_zoom": 22.946909370320537,
+    "actual_zoom": 22.946909370320537,
+    "after_source_collision": null,
+    "adapter_restored": true,
+    "screenshot": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v7/camera-diagnosis-ab/live-mvt-maxzoom/after-maxzoom24.png",
+      "bytes": 287070,
+      "sha256": "896853b7c8c338a8df7802d924525b63a57fae8e562ea4a8a2c0203d763b31e8"
+    },
+    "this_agent_visual_review": "Viewed actual after-maxzoom24.png: opposing floating window frames absent; doorway/arches and avatar visible. Roof cropped by close camera; v2 navigation still requires actual recheck.",
+    "not_final_model_acceptance": true
+  },
+  "limitations": [
+    "No swept/radius camera test was added to runtime. The existing building endpoint/midpoint collision behavior is unchanged.",
+    "The bounded maxZoom24 fix was verified at the1040x760 viewport; no arbitrary-resolution or hardware performance claim.",
+    "Source collision remains online loaded footprints plus existing street sidecar; this change does not silently add city-model or full-city collision geometry."
+  ]
+}

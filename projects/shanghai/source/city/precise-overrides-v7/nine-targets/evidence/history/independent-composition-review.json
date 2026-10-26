@@ -1,0 +1,29 @@
+{
+  "schema": "incremental-composition-independent-review-v1",
+  "passed": true,
+  "reviewer": "platform_sources read-only review, followed by parent assertion recheck",
+  "findings": [],
+  "checked": [
+    "Prior five near descriptors and asset bytes unchanged",
+    "Prior seven landmarks and geometry input descriptors unchanged",
+    "B fresh near descriptor and asset hash match actual fresh output",
+    "Registry / geometry / runtime report SHA chain matches",
+    "Current eight target exact owner/local/key collection equals frozen parse_inputs result"
+  ],
+  "hardening": [
+    "Geometry result baseline SHA bound to declared near and comparison input",
+    "Non-OSM mapping-report descriptor bound to frozen parse_inputs result",
+    "All exact owner tuples checked for full equality and duplicates"
+  ],
+  "hardening_validation": {
+    "command": "compose_incremental.py with the same prior/new/inputs into eight-targets-guard-recheck",
+    "registry_identical": true,
+    "geometry_report_identical": true,
+    "large_decode_repeated": false
+  },
+  "composer": {
+    "bytes": 14790,
+    "sha256": "9f0f7ac6eb10db162757b97bcd5582e4a3a9cfea374fce5dff8b024054f5f2a0"
+  },
+  "browser_blender_or_main_writes": false
+}
