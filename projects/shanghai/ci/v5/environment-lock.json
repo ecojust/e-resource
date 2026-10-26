@@ -1,0 +1,226 @@
+{
+  "configuration": {
+    "builder_schema_version": "shanghai-v5-adaptive-physical-v3-constrained-wall",
+    "dimension_policy": "No height/footprint enrichment accepted. Existing source/estimated values frozen; residual and landmark changes exactly follow current baseline.",
+    "enrichment_sha256": null,
+    "expected_city": {
+      "feature_count": 1796419,
+      "macro_count": 1708,
+      "protected_keys": 103,
+      "qualified_roofs": 126,
+      "renderable_exclusions": 98,
+      "residuals": 401
+    },
+    "geometry_dependencies": {
+      "geos": "3.14.1",
+      "mapbox_earcut": "2.1.0",
+      "numpy": "2.3.5",
+      "shapely": "2.2.0"
+    },
+    "geometry_engine_sha256": "dd9124f4e8d57ed0991d82793e0471264d6f3700cb363f86647ffa7505f4535c",
+    "input_hashes": {
+      "assets/city/build-configuration.json": "48c66aec484ece18bfb4e3f183f39133229f197ef1be0bd19c87d2ee290fe403",
+      "assets/city/manifest.json": "7783444283399a37fb12a8cd82b8e3a1cd75d5c955f65a019658e5826fa74f31",
+      "data/fullcity-raw/manifest.json": "ec5928bab4382ac8fa58f2aa57541ec3a3ef7d0d262b679a931b7f7d6753cd7e",
+      "data/heights/height_sources_lock.json": "b80c817ffa1ee7bbd8241cd4fa60374ad5fca7f3bb299cb33225fd3846279d45",
+      "data/landmark-exclusions.json": "37eb2686ebb792e3654a87a588887ae9241a4f8fe46653adc7ef33ad92051832",
+      "data/parent-residual-overrides.json": "c22096f0c05ed29692da4867897ff27e737eb847ee0df3fb6cf5d27c687fd682",
+      "data/roofs/qualified-roofs.json": "25eeaa8e353190e54cbc575cabe0110530540c5dd1a04b3c04e943c5ffd3c0f2"
+    },
+    "mesh_engine_sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906",
+    "microcell_m": 250.0,
+    "near_transport": "deterministic gzip level6 mtime0; Meshopt noq",
+    "roof_engine_sha256": "8454cf909230f2c4bce97f954294be6c375976c98e7fc6378dc878e3b4a6e561",
+    "structural_wall": "GEOS constrained Delaunay of whole facade polygon with genuine openings; shared float32 world-space vertices",
+    "target_triangles": 180000,
+    "version": "shanghai-v5-adaptive-physical-v3-constrained-wall"
+  },
+  "configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "frozen_scripts": {
+    "build_city_v5.py": "a09c858a22fb0522238ecd2a8da21788f89bdccccf4f534a1db8d29c165097f7",
+    "geometry_engine.py": "dd9124f4e8d57ed0991d82793e0471264d6f3700cb363f86647ffa7505f4535c",
+    "gltfpack_server.mjs": "db24f86d96a936a4b0fd2eb9a638918e8d5a956c0ac2cee6e759fb736dab0d05",
+    "pack_client.py": "14e4164fee9960edfffd9fa8ec45940991bb25e16bd34a068b3eb16822e42465"
+  },
+  "gdal": "3.12.2",
+  "geos": "3.14.1",
+  "gltfpack": {
+    "sha256": {
+      "cli.js": "c7f3a81fa93a3609847fb75817e4777c339bd5f94963bdbb9aa224a6fdb038ce",
+      "library.js": "fdeee2ee7b3828939fc6d346b4f6452201e0c9cd0994e0dd743f2a4d86704ee9",
+      "library.wasm": "ddd1658ec64b95916dc2b8d5ecff906501c178b5aa2df2fbf22eb8ae5422a417",
+      "package.json": "c59c45cd8da55d0c03c988cef7a596a4e10739e9a2a49a0278b87ee67b0766a6"
+    },
+    "version": "1.3.0"
+  },
+  "input_hashes": {
+    "assets/city/build-configuration.json": "48c66aec484ece18bfb4e3f183f39133229f197ef1be0bd19c87d2ee290fe403",
+    "assets/city/manifest.json": "7783444283399a37fb12a8cd82b8e3a1cd75d5c955f65a019658e5826fa74f31",
+    "data/fullcity-raw/manifest.json": "ec5928bab4382ac8fa58f2aa57541ec3a3ef7d0d262b679a931b7f7d6753cd7e",
+    "data/heights/height_sources_lock.json": "b80c817ffa1ee7bbd8241cd4fa60374ad5fca7f3bb299cb33225fd3846279d45",
+    "data/landmark-exclusions.json": "37eb2686ebb792e3654a87a588887ae9241a4f8fe46653adc7ef33ad92051832",
+    "data/parent-residual-overrides.json": "c22096f0c05ed29692da4867897ff27e737eb847ee0df3fb6cf5d27c687fd682",
+    "data/roofs/qualified-roofs.json": "25eeaa8e353190e54cbc575cabe0110530540c5dd1a04b3c04e943c5ffd3c0f2"
+  },
+  "libc": [
+    "glibc",
+    "2.41"
+  ],
+  "machine": "x86_64",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "npm_tarball": {
+    "bytes": 2413625,
+    "integrity": "sha512-BBZoU926FCypj4b7V7ElinxsWcy4Kss88UG3ejFYmKyq7Uc5XnT34Me2nEhgCOaL5qY4HvGu5aI92C4OYd7NaA==",
+    "sha256": "5a172e3228e59d44cb9f44d5e83977178323bba3cc506016cae8e40b92ad418f",
+    "url": "https://registry.npmjs.org/npm/-/npm-11.9.0.tgz",
+    "version": "11.9.0"
+  },
+  "numpy_cpu_baseline": [
+    "SSE",
+    "SSE2",
+    "SSE3"
+  ],
+  "numpy_cpu_dispatch": [
+    "SSSE3",
+    "SSE41",
+    "POPCNT",
+    "SSE42",
+    "AVX",
+    "F16C",
+    "FMA3",
+    "AVX2",
+    "AVX512F",
+    "AVX512CD",
+    "AVX512_KNL",
+    "AVX512_KNM",
+    "AVX512_SKX",
+    "AVX512_CLX",
+    "AVX512_CNL",
+    "AVX512_ICL",
+    "AVX512_SPR"
+  ],
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "proj": "9.8.1",
+  "pyarrow_cpp": "26.0.0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_packages": {
+    "affine": {
+      "requires": [
+        "attrs>=21.3.0"
+      ],
+      "version": "3.0.1"
+    },
+    "attrs": {
+      "requires": null,
+      "version": "26.1.0"
+    },
+    "certifi": {
+      "requires": null,
+      "version": "2026.7.22"
+    },
+    "click": {
+      "requires": [
+        "colorama; platform_system == 'Windows'"
+      ],
+      "version": "8.4.2"
+    },
+    "mapbox-earcut": {
+      "requires": [
+        "numpy",
+        "pytest>=8.0; extra == \"dev\"",
+        "mypy; extra == \"dev\""
+      ],
+      "version": "2.1.0"
+    },
+    "numpy": {
+      "requires": null,
+      "version": "2.3.5"
+    },
+    "packaging": {
+      "requires": null,
+      "version": "26.3"
+    },
+    "pyarrow": {
+      "requires": null,
+      "version": "26.0.0"
+    },
+    "pyparsing": {
+      "requires": [
+        "railroad-diagrams ; extra == \"diagrams\"",
+        "jinja2 ; extra == \"diagrams\""
+      ],
+      "version": "3.3.2"
+    },
+    "pyproj": {
+      "requires": [
+        "certifi"
+      ],
+      "version": "3.8.0"
+    },
+    "python-dateutil": {
+      "requires": [
+        "six >=1.5"
+      ],
+      "version": "2.9.0.post0"
+    },
+    "rasterio": {
+      "requires": [
+        "affine",
+        "attrs",
+        "certifi",
+        "click!=8.2.*,>=4.0",
+        "numpy>=2",
+        "pyparsing>=3.0",
+        "rasterio[docs,ipython,plot,s3,test]; extra == \"all\"",
+        "ghp-import; extra == \"docs\"",
+        "numpydoc; extra == \"docs\"",
+        "sphinx; extra == \"docs\"",
+        "sphinx-click; extra == \"docs\"",
+        "sphinx-rtd-theme; extra == \"docs\"",
+        "ipython>=2.0; extra == \"ipython\"",
+        "matplotlib; extra == \"plot\"",
+        "boto3>=1.2.4; extra == \"s3\"",
+        "aiohttp; extra == \"test\"",
+        "boto3>=1.2.4; extra == \"test\"",
+        "fsspec; extra == \"test\"",
+        "hypothesis; extra == \"test\"",
+        "matplotlib; extra == \"test\"",
+        "packaging; extra == \"test\"",
+        "pytest-cov>=2.2.0; extra == \"test\"",
+        "pytest>=2.8.2; extra == \"test\"",
+        "requests; extra == \"test\"",
+        "shapely; extra == \"test\""
+      ],
+      "version": "1.5.2"
+    },
+    "shapely": {
+      "requires": [
+        "numpy>=1.26"
+      ],
+      "version": "2.2.0"
+    },
+    "six": {
+      "requires": null,
+      "version": "1.17.0"
+    }
+  },
+  "required_python_packages": {
+    "affine": "3.0.1",
+    "attrs": "26.1.0",
+    "certifi": "2026.7.22",
+    "click": "8.4.2",
+    "mapbox-earcut": "2.1.0",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0",
+    "pyparsing": "3.3.2",
+    "pyproj": "3.8.0",
+    "rasterio": "1.5.2",
+    "shapely": "2.2.0"
+  },
+  "zlib": {
+    "compile": "1.3.2",
+    "runtime": "1.3.2"
+  }
+}
