@@ -1,0 +1,47 @@
+{
+  "schema": "modern-independent-checker-freeze-v2",
+  "scope": "Reviewer implementation; not an asset acceptance result",
+  "supersedes": {
+    "freeze_sha256": "97388e375ac23fcf907aa02aee8dece2d63028c7b5b71a8ebd919866732e0bc3",
+    "immutable_code_copy": "history/checker-v1",
+    "reason": "Independent read-only review found malformed numeric requests could vacuously pass: zero solid threshold, NaN ray station, empty extent ranges. v2 rejects these; no geometry algorithm thresholds changed."
+  },
+  "synthetic_fixtures": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 test_synthetic.py",
+    "tests": 7,
+    "passed": true,
+    "building_acceptance": false
+  },
+  "files": [
+    {
+      "path": "modern_mesh.py",
+      "bytes": 10516,
+      "sha256": "6b8157d7744595519595710ab5a2e95b5485448bb5220aac02bbeb6d707c9e47"
+    },
+    {
+      "path": "audit_raw_structure.py",
+      "bytes": 6827,
+      "sha256": "775ce3e679b6e35830c54b40347bf9471c3cf23802d1995a9913097ed1060062"
+    },
+    {
+      "path": "finite_checks.py",
+      "bytes": 27904,
+      "sha256": "6b7b41d61e76fc8359ad10481a7534293b52e53b2faf5f6265262e985d96a5ca"
+    },
+    {
+      "path": "run_finite_checks.py",
+      "bytes": 1563,
+      "sha256": "de9c523f50fce1d839ee56cf8bc1717f7c90ebb23565d843c947da38c23d5731"
+    },
+    {
+      "path": "test_synthetic.py",
+      "bytes": 4843,
+      "sha256": "fe5a0194d9d4b1d534ab5c487acdb430e5dfcfb08745f5cfde68c04ef0e3880e"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 6930,
+      "sha256": "bd0048df2d9b9311501607c1acce6123ed33906a3a47e321c2ab2606b4e2339c"
+    }
+  ]
+}

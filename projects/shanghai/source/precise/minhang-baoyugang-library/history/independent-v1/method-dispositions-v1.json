@@ -1,0 +1,101 @@
+{
+  "schema": "library-independent-finite-method-dispositions-v1",
+  "raw": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-v1/raw/minhang-baoyugang-library.glb",
+    "bytes": 23888464,
+    "sha256": "094f7d5a944cfe936c2aceaf8f9b11cddfd7c1af3da622d806ed126a77915051"
+  },
+  "model_accepted": false,
+  "original_failures_preserved": true,
+  "structure": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-raw-structure.json",
+    "bytes": 3849520,
+    "sha256": "76bbae358a818df5743c6ad9dff27aa1b9102dfe301b48a4148f1275f49a87ec"
+  },
+  "first_finite": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-finite-v1.json",
+    "bytes": 4256553,
+    "sha256": "901d0a22b3dc44201e2f07f3850a6ba109e0a66c1c710c841926816e3dc72243"
+  },
+  "supplemental": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-supplemental-v1.json",
+    "bytes": 821412,
+    "sha256": "ad68ce2b3ece5ef30d0dc27a5c279cfe1de8db04972f8ed3f08243f1eb765801"
+  },
+  "dispositions": [
+    {
+      "finding": "253 queried conventional wall-window frames and separate main entrance door-frame have no local wall/sill/surrounding-frame contact.",
+      "status": "ACTUAL_MODEL_REPAIR_REQUIRED",
+      "evidence": [
+        {
+          "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/first-window-frame-gap-diagnostic.json",
+          "bytes": 3151,
+          "sha256": "c920e8606c82f40fb104386e3e15d936ba708de29e52204ac322501e404cf939"
+        }
+      ],
+      "minimum_fix_scope": "257 conventional frame parts, including three entrance curtain frames and one door, may change; 14 slanted frames remain intact. This is scope permission, not new-geometry PASS."
+    },
+    {
+      "finding": "Two outer pergola ribs have 0 projected footprint overlap and about17.5mm plan separation from either longitudinal beam.",
+      "status": "ACTUAL_MODEL_REPAIR_REQUIRED",
+      "evidence": [
+        {
+          "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/pergola-end-rib-gap-diagnostic.json",
+          "bytes": 2130,
+          "sha256": "5e0ea152ed2face68d402423d887817461b2572b2ac8d7a7c35e28c0ccec1de5"
+        }
+      ],
+      "minimum_fix_scope": "Two longitudinal beam ends may extend; rib positions and all posts remain unchanged."
+    },
+    {
+      "finding": "Original post-to-structural-deck query omitted the physical walking-surface layer.",
+      "status": "REQUEST_CHAIN_INCOMPLETE_NOT_A_GEOMETRY_FIX",
+      "actual_resolution": "All14 posts have positive-volume contact to the walking-surface, which has positive-volume contact to the structural deck. Original direct-to-deck FAIL remains true.",
+      "evidence": [
+        {
+          "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-supplemental-v1.json",
+          "bytes": 821412,
+          "sha256": "ad68ce2b3ece5ef30d0dc27a5c279cfe1de8db04972f8ed3f08243f1eb765801"
+        }
+      ],
+      "new_request_requirement": "Both post-to-walking-surface and walking-surface-to-structural-deck must pass on actual repaired raw; do not simply remove support check."
+    },
+    {
+      "finding": "Selected glass-to-frame side-plane exact contact found no witness for9 panes.",
+      "status": "SIDE_ONLY_QUERY_NOT_A_GLOBAL_SUPPORT_CONCLUSION",
+      "actual_resolution": "All788 panes have actual horizontal bottom to frame upward-face seats, each with a finite-area cell >=0.005615166918314599m² and actual interval endpoint separation0. The side-only FAIL is retained; no side-seal certification made.",
+      "evidence": [
+        {
+          "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-horizontal-pane-seating-v1.json",
+          "bytes": 735982,
+          "sha256": "eec0e0cd2abe11e6b402333d9b958689f5105581b631d553070aa1dd1704c650"
+        }
+      ],
+      "numerical_policy": "No widened tolerance: opposite horizontal planes and actual interval endpoint matching use1e-9m. Minimum cell requested1e-5m²."
+    },
+    {
+      "finding": "Generic all-glass local-contact engine returned22 slanted-side numerical cells below1e-8m² before reaching their horizontal seats.",
+      "status": "PASS_SCOPE_REFINED_BY_STRONGER_ACTUAL_FACE_PROOF",
+      "evidence": [
+        {
+          "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-all-glass-bearing-v1.json",
+          "bytes": 2235427,
+          "sha256": "dc7d7a020d256ef9aeeef9f41994ac04ee5d65ad8d41befe2afd0cd2799aba66"
+        },
+        {
+          "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-horizontal-pane-seating-v1.json",
+          "bytes": 735982,
+          "sha256": "eec0e0cd2abe11e6b402333d9b958689f5105581b631d553070aa1dd1704c650"
+        }
+      ],
+      "actual_resolution": "Do not describe those first tiny local witnesses as full bearing. Dedicated horizontal proof excludes side facets and validates meaningful actual area for every pane."
+    }
+  ],
+  "next_geometry_review_requirements": [
+    "New raw gets its own actual closed/oriented/normal structure report.",
+    "Only257 conventional frame parts plus2 longitudinal beams may differ; all2994 other parts retain exact actual triangles/material/normals.",
+    "Repaired actual finite suite includes all original valid questions plus correctly staged paving chain and entrance curtain/door frames.",
+    "All788 pane horizontal seating is rechecked against new frames; old raw SHA is never substituted.",
+    "Native visual/source-neighbor/browser acceptance remain separate."
+  ]
+}

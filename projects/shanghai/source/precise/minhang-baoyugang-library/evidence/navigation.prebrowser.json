@@ -1,0 +1,197 @@
+{
+  "schema": "modern-source-bound-navigation-proposal-v11",
+  "building_id": "minhang-baoyugang-library",
+  "status": "ready",
+  "ready_meaning": "Candidate observation point is ready to be supplied to later browser testing; no ground, access, collision, final navigation or model approval.",
+  "browser_accepted": false,
+  "final_navigation_accepted": false,
+  "registered": false,
+  "source_geometry_sha256": "fe5a199b4b9cdbc97276b203b39f6f94e29ff9dec5625531cafdecb6b201e7e1",
+  "raw_sha256": "abea24f7c9df46d07aa44837c99a5ecc8a631ca5595a0881854f4334c035c982",
+  "anchor": [
+    121.4253085057656,
+    31.023845436533716
+  ],
+  "navigation": {
+    "listed": true,
+    "walkStart": [
+      121.42547622845991,
+      31.023504076114175
+    ],
+    "bearing": 341.67177817284403,
+    "overviewZoom": 18
+  },
+  "scope": "Finite prebrowser candidate only. It combines an unchanged frozen-source/map candidate with independently bound current actual-raw part-envelope screens. This prepares a browser observation point; it does not establish on-site or public access, foot support, navigation safety, settled MVT suppression or full third-person camera behavior.",
+  "limitations": [
+    "Part AABBs are conservative envelopes, not exact triangles; any hit is only a possible collision.",
+    "No hit means clearance from these finite envelopes for these two probes only, not all avatar poses or all camera movement.",
+    "Nominal ground height0m is unverified; foot support, terrain, steps, vegetation and public access remain unverified.",
+    "Entry focus and overviewZoom are provisional. Source60 is close to the library focus ray, and actual browser framing remains pending.",
+    "The two fresh city near geometry comparisons do not constitute actual MVT/source-component visibility or browser evidence.",
+    "status=ready is limited to supplying this candidate to subsequent browser QA. The earlier status=pending record is retained unchanged.",
+    "Historical source-map estimated model rectangles/heights remain evidence of candidate search only; current raw bounds are listed separately and supersede them for model extent.",
+    "Any subsequent geometry/raw change requires a new exact-byte bound screen and proposal; this proposal cannot be carried forward by filename alone.",
+    "OSM source-map labels are local archived evidence, not an observed current MVT source component or a field survey.",
+    "Source201/375 simplified outlines retain their original approximately0.07619m² sliver; no neighbor/source boundary is altered to clear this candidate."
+  ],
+  "provenance": {
+    "historical_pending_screen": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/navigation-current-raw/minhang-baoyugang-library.pending.json",
+      "bytes": 3562,
+      "sha256": "e027fd6cc626d342a8b0fa108749a903eca282b144972be79c170fc91cb3ec56"
+    },
+    "source_geometry": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/review-v3/minhang-baoyugang-library/inputs/geometry-input.json",
+      "bytes": 86616,
+      "sha256": "fe5a199b4b9cdbc97276b203b39f6f94e29ff9dec5625531cafdecb6b201e7e1"
+    },
+    "current_raw": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-geometry-v2/raw/minhang-baoyugang-library.glb",
+      "bytes": 23888596,
+      "sha256": "abea24f7c9df46d07aa44837c99a5ecc8a631ca5595a0881854f4334c035c982"
+    },
+    "current_structure_report": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-geometry-v2/actual-raw-structure.json",
+      "bytes": 3849338,
+      "sha256": "0938ffcdb91bbfe74d84019044b51e757ffb8f2b85b009f0d1c1861ba88503a8"
+    },
+    "current_source_freeze": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library/geometry-v2/source-freeze.json",
+      "bytes": 5307,
+      "sha256": "c92fa3a8559f9f97db8de941b96a3b797731bff1cb5b908102ef46423b033da1"
+    },
+    "source_map_candidates": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/review-v3/minhang-baoyugang-library/navigation-candidates.json",
+      "bytes": 1359747,
+      "sha256": "16071ca2c9470add9aba3a73c9275ba35aa9155e9f4b1f887a7d1703ba7b0404"
+    },
+    "archived_osm_context": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/review-v3/minhang-baoyugang-library/inputs/osm-context.osm",
+      "bytes": 180583,
+      "sha256": "c7561a2b8c5709122a52b31e381d909846f1c0d8e8db512b3538c25d1c69f6a9"
+    },
+    "nominal_walk_controller": {
+      "file": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    },
+    "composer": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/compose_proposals.py",
+      "bytes": 7842,
+      "sha256": "55e4c72ce559d3b9c13c82808af4579a85939ea36c6d24c8ebdcfec6fb0fd5ab"
+    }
+  },
+  "actual_current_bounds_enu_m": [
+    [
+      -50.77543258666992,
+      -20.133718490600586,
+      0.0
+    ],
+    [
+      45.283233642578125,
+      20.07594871520996,
+      27.399999618530273
+    ]
+  ],
+  "source_map_candidate": {
+    "id": "candidate-0520",
+    "basis": {
+      "kind": "mapped_pedestrian_area_interior",
+      "osm_id": "way/279496278",
+      "tags": {
+        "area": "yes",
+        "highway": "pedestrian"
+      }
+    },
+    "position_enu_m": [
+      16.0,
+      -38.0
+    ],
+    "walkStart_candidate": [
+      121.42547622845991,
+      31.023504076114175
+    ],
+    "bearing_candidate": 341.67177817284403,
+    "focus_distance_m": 24.999679600697625,
+    "source_boundary_distance_m": 24.408246927252108,
+    "estimated_envelope_distance_m": 12.0,
+    "nominal_camera_eye_enu_m": [
+      19.47910853636658,
+      -48.502496532005964
+    ],
+    "conservative_camera_boom_length_m": 16.8,
+    "body_neighbor_hits": [],
+    "boom_neighbor_hits": [],
+    "focus_ray_neighbor_hits": [],
+    "mapped_water_hits": [],
+    "mapped_barrier_hits": [],
+    "nominal_road_corridor_hits": [],
+    "mapped_green_area_hits": [],
+    "source_target_body_or_boom_intersection": false,
+    "estimated_model_body_or_boom_intersection": false,
+    "finite_known_source_and_map_clear": true,
+    "finite_preparation_envelope_clear": true,
+    "ranking_score": 1.4487074849249368
+  },
+  "nominal_camera_parameters": {
+    "distance_m": 14,
+    "pitch_degrees": 82,
+    "ahead_m": 2.8,
+    "body_radius_m": 0.35,
+    "boom_radius_m": 0.12,
+    "source": {
+      "file": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    },
+    "follow_lag_and_camera_collision_not_simulated": true
+  },
+  "actual_current_raw_body_probe": {
+    "start_enu_m": [
+      16.0,
+      -38.0,
+      0.35
+    ],
+    "end_enu_m": [
+      16.0,
+      -38.0,
+      1.75
+    ],
+    "radius_m": 0.35,
+    "possible_part_aabb_hits": []
+  },
+  "actual_current_raw_camera_probe": {
+    "eye_enu_m": [
+      19.47910853636658,
+      -48.502496532005964,
+      4.948423413440917
+    ],
+    "target_enu_m": [
+      15.11951180264521,
+      -35.342042036766024,
+      3.0
+    ],
+    "radius_m": 0.12,
+    "possible_part_aabb_hits": []
+  },
+  "preserved_neighbor_local_ids": [
+    35,
+    60,
+    299,
+    333,
+    375,
+    466,
+    947
+  ],
+  "ground_and_foot_support_verified": false,
+  "full_character_motion_verified": false,
+  "camera_sweep_and_framing_verified": false,
+  "on_site_access_verified": false,
+  "actual_MVT_component_observed": false,
+  "separate_root_native_visual_reference": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-geometry-v2/native/root-native-visual-review-v2.json",
+    "bytes": 4101,
+    "sha256": "ac1f874e8607a79de7d0be020cf54bf89adab87f31d40331b07f8d15dbe26e07"
+  },
+  "native_reference_scope": "Root reviewed three native exterior views; this separate native review is not evidence of ground support or third-person navigation."
+}

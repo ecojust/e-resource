@@ -1,0 +1,49 @@
+{
+  "schema": "modern-bounded-diagnostic-v1",
+  "asset_identity": {
+    "raw": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-v1/raw/minhang-baoyugang-library.glb",
+      "bytes": 23888464,
+      "sha256": "094f7d5a944cfe936c2aceaf8f9b11cddfd7c1af3da622d806ed126a77915051"
+    },
+    "part_manifest": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-v1/raw/minhang-baoyugang-library.geometry.json",
+      "bytes": 487568,
+      "sha256": "f32da4eb4066f35b97fc56e2fcafa580b7cff0c58bb3bd98956f84717fb4f09a"
+    },
+    "representation": "actual Float32 raw GLB, expanded without coordinate welding"
+  },
+  "finding": "Two end pergola ribs have no projected footprint overlap with either longitudinal beam. This finite separation is an actual model joint gap.",
+  "records": [
+    {
+      "rib": "[\"pergola/F6/open-roof-rib-0\",\"dark pergola\",0]",
+      "beam": "[\"pergola/F6/primary-long-beam-0\",\"dark pergola\",0]",
+      "actual_plan_gap_m": 0.017499618716087278,
+      "plan_intersection_area_m2": 0.0
+    },
+    {
+      "rib": "[\"pergola/F6/open-roof-rib-0\",\"dark pergola\",0]",
+      "beam": "[\"pergola/F6/primary-long-beam-1\",\"dark pergola\",0]",
+      "actual_plan_gap_m": 0.017500650373998027,
+      "plan_intersection_area_m2": 0.0
+    },
+    {
+      "rib": "[\"pergola/F6/open-roof-rib-56\",\"dark pergola\",0]",
+      "beam": "[\"pergola/F6/primary-long-beam-0\",\"dark pergola\",0]",
+      "actual_plan_gap_m": 0.017499713497103643,
+      "plan_intersection_area_m2": 0.0
+    },
+    {
+      "rib": "[\"pergola/F6/open-roof-rib-56\",\"dark pergola\",0]",
+      "beam": "[\"pergola/F6/primary-long-beam-1\",\"dark pergola\",0]",
+      "actual_plan_gap_m": 0.01749919327519407,
+      "plan_intersection_area_m2": 0.0
+    }
+  ],
+  "first_failure": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-finite-v1.json",
+    "bytes": 4256553,
+    "sha256": "901d0a22b3dc44201e2f07f3850a6ba109e0a66c1c710c841926816e3dc72243"
+  },
+  "acceptance": false
+}

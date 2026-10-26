@@ -1,0 +1,61 @@
+{
+  "schema": "library-geometry-v2-repair-draft-v1",
+  "created_utc": "2026-10-26T20:21:25.883357+00:00",
+  "status": "AUTHOR_SOURCE_REVISION_READY; actual v2 raw/native/decoded review pending",
+  "baseline_source_freeze": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library/source-freeze.json",
+    "bytes": 4106,
+    "sha256": "80210bc5cde27cf80c3e3050ff461395d4b5aa651c7fa6e9b1c0cba026e207bd"
+  },
+  "baseline_raw": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-v1/raw/minhang-baoyugang-library.glb",
+    "sha256": "094f7d5a944cfe936c2aceaf8f9b11cddfd7c1af3da622d806ed126a77915051",
+    "bytes": 23888464
+  },
+  "actual_failure_diagnostic": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/first-window-frame-gap-diagnostic.json",
+    "sha256": "c920e8606c82f40fb104386e3e15d936ba708de29e52204ac322501e404cf939"
+  },
+  "not_yet_changed": [
+    "slanted-frame outer perimeter",
+    "all glass pane geometries",
+    "wall opening contours",
+    "all sill geometries",
+    "all other floors/columns/terraces/roof/pergola/canopy/source identity"
+  ],
+  "not_a_pass": true,
+  "full_raw_generated": false,
+  "old_21_source_files_preserved": true,
+  "new_public_source_freeze_exists": "Created after this record; bind via enclosing source-freeze.json",
+  "copied_validation_is_historical_until_regenerated": true,
+  "complete_v1_finite_failure_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-finite-v1.json",
+    "bytes": 4256553,
+    "sha256": "901d0a22b3dc44201e2f07f3850a6ba109e0a66c1c710c841926816e3dc72243"
+  },
+  "additional_actual_failure": "Two end roof ribs (0 and56) have about17.5mm actual longitudinal gap to both pergola primary beams.",
+  "additional_draft_fix": "Extend both primary-long-beam endpoints fromu0-.15/u1+.15 tou0-.25/u1+.25, keeping centreline/height/cross-section and all ribs/posts/paving unchanged. Nominal end-rib full width then lies within beam end caps.",
+  "confirmed_scope_note": "All14actual slanted frame→wedge checks passed v1; keep them byte-identical. Post→paving→deck bridge is being independently tested before calling the original direct post→deck request a model defect.",
+  "additional_authorized_visual_repair": "Root and author actually saw six regular dark round patches on v1 F6 terrace in full/rear. Actual Float32F5 column caps and paving top are both20.979999542236328m. Lower only these6 column tops to20.70, retaining shaft bases/sections/positions and50mm nominal deck embed.",
+  "expected_allowed_count": 265,
+  "expected_unchanged_count": 2988,
+  "draft_fix": "Regular continuous-frame-grid outer perimeter changes from opening.buffer(-0.018) to opening.buffer(+0.020), retaining frame depth[-.20,-.045] and all inner cells/glass. This provides nominal20mm frame/wall embed and25mm frame/sill height overlap. Actual new raw must be independently rechecked.",
+  "new_source_frozen": true,
+  "allowed_change_scope": {
+    "file": "change-scope.json",
+    "sha256": "a3bb2dcdbe00b5279e524bdf42ef8f82dccc795e4f26ab152f837e94399eff5b"
+  },
+  "v1_actual_horizontal_glass_seating": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-run-v1/actual-horizontal-pane-seating-v1.json",
+    "sha256": "eec0e0cd2abe11e6b402333d9b958689f5105581b631d553070aa1dd1704c650",
+    "meaning": "All271window groups/788panes have actual lower seating; no glass edits."
+  },
+  "v1_actual_cap_diagnostic": {
+    "file": "history/actual-v1-cap-coplanarity.json",
+    "sha256": "92c14cb4e6cb162e05f35192692556c59f4cf3a71c21c1a0b7badd3e82f9e9b0"
+  },
+  "source_of_v1_failures_preserved": true,
+  "new_raw_generated": false,
+  "new_native_generated": false,
+  "actual_v2_checks_passed": false
+}

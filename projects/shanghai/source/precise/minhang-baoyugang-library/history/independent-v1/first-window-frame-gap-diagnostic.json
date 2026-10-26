@@ -1,0 +1,91 @@
+{
+  "schema": "modern-bounded-diagnostic-v1",
+  "asset_identity": {
+    "raw": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-v1/raw/minhang-baoyugang-library.glb",
+      "bytes": 23888464,
+      "sha256": "094f7d5a944cfe936c2aceaf8f9b11cddfd7c1af3da622d806ed126a77915051"
+    },
+    "part_manifest": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library-run-v1/raw/minhang-baoyugang-library.geometry.json",
+      "bytes": 487568,
+      "sha256": "f32da4eb4066f35b97fc56e2fcafa580b7cff0c58bb3bd98956f84717fb4f09a"
+    },
+    "representation": "actual Float32 raw GLB, expanded without coordinate welding"
+  },
+  "finding": "First actual regular window frame is geometrically separated from both surrounding wall and sill in their common fa\u00e7ade plane; this is a visible modeled assembly seam, not a structural safety conclusion.",
+  "tested_labels": [
+    "facade/F1/edge-0/window-0/continuous-frame-grid",
+    "facade/F1/edge-0/window-0/sill",
+    "facade/F1/edge-0/pier-and-spandrel-wall"
+  ],
+  "frame": {
+    "origin_enu_m": [
+      -43.2296962932791,
+      4.474188014696218,
+      0
+    ],
+    "axes_enu": [
+      [
+        0.030159555820907413,
+        -0.9995450971280313,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -0.9995450971280313,
+        -0.030159555820907413,
+        0
+      ]
+    ]
+  },
+  "actual_frame_wall_plan_gap_m": 0.017999130504133376,
+  "actual_frame_sill_plan_gap_m": 0.013000011444091797,
+  "contact_results": [
+    {
+      "left_key": "[\"facade/F1/edge-0/window-0/continuous-frame-grid\",\"charcoal aluminium\",0]",
+      "right_key": "[\"facade/F1/edge-0/window-0/sill\",\"red coping\",0]",
+      "positive_volume_contact_found": false,
+      "positive_area_coincidence_found": false,
+      "contact_found": false,
+      "contact_mode": "volume_or_exact_area",
+      "state": "DISJOINT_OR_TANGENT_AABB",
+      "excluded_parallel_or_tiny_projection_triangles": [
+        56,
+        8
+      ]
+    },
+    {
+      "left_key": "[\"facade/F1/edge-0/window-0/continuous-frame-grid\",\"charcoal aluminium\",0]",
+      "right_key": "[\"facade/F1/edge-0/pier-and-spandrel-wall\",\"terracotta ceramic\",0]",
+      "positive_volume_contact_found": false,
+      "positive_area_coincidence_found": false,
+      "contact_found": false,
+      "contact_mode": "volume_or_exact_area",
+      "state": "NO_WITNESS",
+      "excluded_parallel_or_tiny_projection_triangles": [
+        56,
+        40
+      ],
+      "cells_examined": 740,
+      "rejected_ambiguous_interval_cells": 95
+    }
+  ],
+  "acceptance": false,
+  "checker_files": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/finite_checks.py",
+      "bytes": 27904,
+      "sha256": "6b7b41d61e76fc8359ad10481a7534293b52e53b2faf5f6265262e985d96a5ca"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/modern_mesh.py",
+      "bytes": 10516,
+      "sha256": "6b8157d7744595519595710ab5a2e95b5485448bb5220aac02bbeb6d707c9e47"
+    }
+  ]
+}
