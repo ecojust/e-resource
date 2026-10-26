@@ -1,0 +1,12 @@
+{
+  "schema": "auto-museum-local-source-fixture-attempt",
+  "passed": false,
+  "full_model_generated": false,
+  "part": "repair/fifth-floor-east-pane-seat",
+  "failures": {
+    "nonmanifold_edges": 3,
+    "misoriented_edges": 5,
+    "zero_triangles": 4
+  },
+  "cause": "Convex-hull/buffer outline retained subFloat32 tiny corners. Fix local estimated support polygon by0.1mm simplification before triangulation; do not relax actualsolid checks."
+}

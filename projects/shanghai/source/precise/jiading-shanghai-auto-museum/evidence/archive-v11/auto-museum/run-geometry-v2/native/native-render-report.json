@@ -1,0 +1,175 @@
+{
+  "schema": "auto-museum-native-render-v11",
+  "protected_roles": [
+    "north_curved_glazed_slots",
+    "silver_C_wrapper",
+    "deep_soffit",
+    "stepped_curtain_layers",
+    "yellow_ramp_bands",
+    "open_louvres",
+    "ground_entry",
+    "exterior_stair",
+    "fourth_level_terrace"
+  ],
+  "source_glb": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/run-geometry-v2/raw/jiading-shanghai-auto-museum-raw.glb",
+  "source_glb_sha256": "fcaf6c3ec778a4edc6d4c335aedea02472b8ddff24013d2e555f09e949eebd5f",
+  "builder_sha256": "28170e0812186431ac442d39936e0f5d76fd2016bd69bbe2eebd13ae51cb642e",
+  "calibration_sha256": "4e8764fe4ff4336ebf9c9bdf70377232f6236b8e31fc199e67649977282e18ec",
+  "renderer_sha256": "652d7b7ad927c36abcce05112a73eeb0c1e6d6238d831e1e36f6021f3b3d7019",
+  "blender_version": "4.3.2",
+  "engine": "CYCLES CPU",
+  "samples": 24,
+  "threads": 1,
+  "denoising_enabled": false,
+  "denoising_policy": "Use only when the actual Blender build provides OpenImageDenoise",
+  "native": {
+    "file": "jiading-shanghai-auto-museum.blend",
+    "bytes": 14653789,
+    "sha256": "3bd8e9edfabfd33ef6387a1f117e8773baab3aaa981194ace118eace2dad994c"
+  },
+  "bounds_enu_m": [
+    [
+      -58.61438751220703,
+      -62.60886764526367,
+      0.0
+    ],
+    [
+      50.40548324584961,
+      53.48499298095703,
+      32.45000076293945
+    ]
+  ],
+  "model_meshes": 1,
+  "model_images": 0,
+  "preview_collection_excluded_from_raw": true,
+  "preview_ground_z": -0.025,
+  "ground_base_m": 0,
+  "renders": [
+    {
+      "file": "jiading-shanghai-auto-museum-full.png",
+      "bytes": 1652719,
+      "sha256": "5e7796b235987854c8798f2f9e9295bee3c34c6a7e215055c4896fcdb8db0091",
+      "camera": {
+        "position_enu": [
+          -224.3637519672328,
+          6.981363438587005,
+          1.7
+        ],
+        "target_enu": [
+          -4.104452133178711,
+          -4.56193733215332,
+          14.602500343322754
+        ],
+        "azimuth_degrees": 273,
+        "elevation_degrees": 3.3478963378364117,
+        "eye_height_above_ground_m": 1.7,
+        "ground_z_m": 0.0,
+        "lens_mm": 45.0,
+        "sensor_width_mm": 36.0,
+        "sensor_fit": "HORIZONTAL",
+        "tan_half_x": 0.4,
+        "tan_half_y": 0.25,
+        "horizontal_target_distance_m": 220.56157180268622,
+        "target_vertical_envelope_fraction_estimate": 0.45,
+        "frame_margin_factor": 1.11,
+        "conservative_actual_aabb_projection": {
+          "all_in_front": true,
+          "point_count": 8,
+          "minimum_depth_m": 162.71078595274366,
+          "frame_x": [
+            -0.846817700144922,
+            0.9008997219866013
+          ],
+          "frame_y": [
+            -0.2758570133545083,
+            0.5145235343487548
+          ],
+          "maximum_absolute_frame_coordinate": 0.9008997219866013
+        },
+        "fit_policy": "Eight corners of imported model ENU bounds, bounded backoff and binary refinement; then all actual mesh vertices checked. No photo-derived camera calibration.",
+        "name": "West_forecourt_eye_level_whole_museum",
+        "projection": "perspective",
+        "resolution": [
+          1440,
+          900
+        ],
+        "actual_blender_vertex_projection": {
+          "point_count": 1066098,
+          "minimum_depth_m": 167.1831817626953,
+          "frame_x": [
+            -0.6552080372791855,
+            0.7207679723816547
+          ],
+          "frame_y": [
+            -0.2741675494130228,
+            0.3776673960917682
+          ],
+          "maximum_absolute_frame_coordinate": 0.7207679723816547
+        },
+        "photo_calibrated": false,
+        "scope": "West forecourt at fixed 1.7 m eye height with 45 mm lens. Target at estimated 45% vertical-envelope height. Camera retreats to fit actual model; no measured source-photo camera or photographic match is claimed.",
+        "camera_role": "full"
+      }
+    },
+    {
+      "file": "jiading-shanghai-auto-museum-detail.png",
+      "bytes": 2545966,
+      "sha256": "8e03e7dec0cc37812bf8f12984f7b9b2b3f003b0d11838a5961896ebc10adaa0",
+      "camera": {
+        "name": "North_wrapped_shell_and_deep_entry_soffit",
+        "projection": "orthographic",
+        "azimuth_degrees": 327,
+        "elevation_degrees": 9,
+        "resolution": [
+          1280,
+          1024
+        ],
+        "ortho_scale": 48.75,
+        "position_enu": [
+          -136.45849609375,
+          222.72900390625,
+          54.77492141723633
+        ],
+        "target_enu": [
+          -10.0,
+          28.0,
+          18.0
+        ],
+        "photo_calibrated": false,
+        "camera_role": "detail"
+      }
+    },
+    {
+      "file": "jiading-shanghai-auto-museum-rear.png",
+      "bytes": 2015455,
+      "sha256": "a937f45f09e9f7fef7476d89c20d615ad062a4297b02116977d6377f3d99ec7d",
+      "camera": {
+        "name": "Waterside_curved_end_and_external_stair",
+        "projection": "orthographic",
+        "azimuth_degrees": 111,
+        "elevation_degrees": 12,
+        "resolution": [
+          1440,
+          900
+        ],
+        "ortho_scale": 138.1658477783203,
+        "position_enu": [
+          213.26805114746094,
+          -86.71636962890625,
+          64.69113159179688
+        ],
+        "target_enu": [
+          -4.104452133178711,
+          -4.56193733215332,
+          16.225000381469727
+        ],
+        "photo_calibrated": false,
+        "camera_role": "rear",
+        "scope": "2016 waterside photograph supports this facade and external stair; view is illustrative, not calibrated. Unseen roof and exact detail positions remain estimates."
+      }
+    }
+  ],
+  "human_visual_review_passed": false,
+  "browser_passed": false,
+  "notes": "Generated five-floor modern museum geometry previews; no photo textures. Cameras are illustrative, not calibrated. Exact source image bytes are not embedded. All three cameras are retained in the compressed editable blend."
+}

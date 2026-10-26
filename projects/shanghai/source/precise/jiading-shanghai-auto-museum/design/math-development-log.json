@@ -1,0 +1,27 @@
+{
+  "schema": "museum-bounded-math-development-v1",
+  "not_a_model_audit": true,
+  "attempts": [
+    {
+      "check": "NorthernCwrapper inner5mplanoffset strip",
+      "result": "FAIL",
+      "initial_min_sampled_radius_m": 3.4210194315312163,
+      "initial_knots_count": 12,
+      "failure": "Inner offset self-intersected near redundant short northern knot; no model generated."
+    },
+    {
+      "check": "Same5mstrip after remove(-15,51)knot",
+      "result": "PASS_INPUT_MATH_ONLY",
+      "min_sampled_radius_m": 15.560697739575781,
+      "knots_count": 11,
+      "change": "Explicitly change estimated topcurve; originalsourceowner20points unchanged."
+    },
+    {
+      "check": "Two one-metre Cwrapper/glazedslot fixtures",
+      "result": "PASS_INPUT_MATH_ONLY",
+      "parts": 2,
+      "triangles": 1972,
+      "scope": "FiniteFloat32, per-part2manifoldedgeincidence, opposingedgeorientation andpositivevolume. No museumrawbuilt."
+    }
+  ]
+}

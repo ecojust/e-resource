@@ -1,0 +1,53 @@
+{
+  "schema": "museum-ready-input-handoff-v2",
+  "ready_target": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.ready.json",
+    "bytes": 9113,
+    "sha256": "89e33a425381ce27967059a615baf7e6d5d5f526b13e4e919a3c364914094662"
+  },
+  "package_spec": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.package-input.json",
+    "bytes": 7234,
+    "sha256": "6f1db42474efcfa6e6147a746513e5aeb31a8ca81f37437acd66996e6c38ebf8"
+  },
+  "preflight": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/preflight.json",
+    "bytes": 3613,
+    "sha256": "d60f3eb4f9831993e0cf08c32bced1f34687ae7258b6d1d6d532c7585314b3b2"
+  },
+  "tool_source_freeze": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tool-source-freeze.json",
+    "bytes": 30708,
+    "sha256": "8fc0c7aa90d8b0616ee436517dae9b5839e2ba3db7567c98e72faa6dabc6cfc2"
+  },
+  "root_to_run_package_argv": [
+    "python3",
+    "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/package_modern.py",
+    "--target",
+    "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.ready.json",
+    "--project",
+    "/workspace/shanghai_project",
+    "--gltfpack",
+    "/workspace/shanghai_tools/node_modules/gltfpack/cli.js",
+    "--output",
+    "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-delivery-v2/package"
+  ],
+  "root_to_run_decoder_after_package_argv": [
+    "node",
+    "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/check_decoded_modern.mjs",
+    "/workspace/shanghai_project",
+    "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.ready.json",
+    "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-delivery-v2/package",
+    "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-delivery-v2/actual-decoded-package.json"
+  ],
+  "original_public_source_draft": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-public-delivery-v2-preparation/source-whitelist.pending.json",
+    "bytes": 45926,
+    "sha256": "57f526a0fb7e8d4a67131ccfdd94ad8bbbf95d8f5a15ff1f027b97acaf35133f"
+  },
+  "package_invoked": false,
+  "decoder_invoked": false,
+  "browser_accepted": false,
+  "registration_performed": false,
+  "scope": "New ready INPUTS only, after the separate real Museum proof/tool gates. Root reviews and schedules package/decode/prebrowser/registration; no step is inferred from this preparation."
+}

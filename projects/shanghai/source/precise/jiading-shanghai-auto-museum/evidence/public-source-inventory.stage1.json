@@ -1,0 +1,2372 @@
+{
+  "schema": "museum-public-source-inventory-stage1-v2",
+  "building_id": "jiading-shanghai-auto-museum",
+  "original68_rows_unchanged": true,
+  "author_dependency_count": 59,
+  "historical_selection_note": "Complete118 historical inventory is preserved in staging. Public files list selected unchanged FAIL/old structure records; excluded historical raw/native binaries are reference-only.",
+  "pending_source_whitelist": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-public-delivery-v2-preparation/source-whitelist.pending.json",
+    "bytes": 45926,
+    "sha256": "57f526a0fb7e8d4a67131ccfdd94ad8bbbf95d8f5a15ff1f027b97acaf35133f"
+  },
+  "source_freeze": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/source-freeze.json",
+    "bytes": 12252,
+    "sha256": "5acf7f82a27d7ccfb4b7d4ca0c6e13d98cb381c8409cc3fa0a5697c01fe0a45a"
+  },
+  "tool_source_freeze": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tool-source-freeze.json",
+    "bytes": 30708,
+    "sha256": "8fc0c7aa90d8b0616ee436517dae9b5839e2ba3db7567c98e72faa6dabc6cfc2"
+  },
+  "published_tool_file_count": 85,
+  "reference_only_external_or_unfrozen": [
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/combined-registration.patch",
+        "bytes": 55005,
+        "sha256": "7a82797af9e0d1018932a7879c3d315eb6c35b14fd52acbe67d455497280551c"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/source-layout.patch",
+        "bytes": 32136,
+        "sha256": "a51f244353226e414a1ca0012dda2f126f35eb03717fc8486a4ead6b918dd2ef"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/supplement-evidence.patch",
+        "bytes": 23967,
+        "sha256": "a51bee855c773ae7f02a4c3fe4a444daff0069daabe28d65c143db0b3541b5e1"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/source-allowlist.patch",
+        "bytes": 6769,
+        "sha256": "7841ab8d1ac4d826532b28fe90ed90b9c361080ead45ae3949a3504e00f4b659"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/modern-packager.patch",
+        "bytes": 12113,
+        "sha256": "1bcc9a8c41e9a988a504a96699f17b6b469598c80348ebe9ce9025b5aa7b6577"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/source/bund/photo-rebuild-v6/common/package_building.py",
+        "bytes": 32230,
+        "sha256": "7013cbe6af479f1dfeea37383dfff57658108fcabdaecb4898a89f61e0129fa9"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/source/precise/tooling/package_precise_building.py",
+        "bytes": 16501,
+        "sha256": "aad5e5e31494666eb73620113dd94bb386749d43c734dd2bb600173fdd44c6ba"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/src/model-resources.js",
+        "bytes": 6594,
+        "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/tools/build_bund_lods.py",
+        "bytes": 18911,
+        "sha256": "8462457645497318b5cc0cf42bb503fb200765b7877c527be5088779a2049782"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/tools/qa/compare_model_compression.mjs",
+        "bytes": 7238,
+        "sha256": "a48e4021cecf1f7f3f32a96f2b7f0d495fd994a4737084f090c178779bde6ed2"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/vendor/BufferGeometryUtils.js",
+        "bytes": 35539,
+        "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/vendor/GLTFLoader.js",
+        "bytes": 114732,
+        "sha256": "adbbafe8ce40416525b6be0ee5cac0d3782482bcf0122c8ca8ec1ffa77d3440b"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/vendor/meshopt_decoder.module.js",
+        "bytes": 24848,
+        "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/vendor/three.core.js",
+        "bytes": 1403455,
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_project/vendor/three.module.js",
+        "bytes": 603113,
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_tools/node_modules/gltfpack/LICENSE.md",
+        "bytes": 1079,
+        "sha256": "f03037ca7bad1e3eb7f4a63fa6084a8baabd5ba30d3c239a9a7f35705d873e26"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_tools/node_modules/gltfpack/cli.js",
+        "bytes": 525,
+        "sha256": "c7f3a81fa93a3609847fb75817e4777c339bd5f94963bdbb9aa224a6fdb038ce"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_tools/node_modules/gltfpack/library.js",
+        "bytes": 7962,
+        "sha256": "fdeee2ee7b3828939fc6d346b4f6452201e0c9cd0994e0dd743f2a4d86704ee9"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_tools/node_modules/gltfpack/library.wasm",
+        "bytes": 328612,
+        "sha256": "ddd1658ec64b95916dc2b8d5ecff906501c178b5aa2df2fbf22eb8ae5422a417"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_tools/node_modules/gltfpack/package.json",
+        "bytes": 600,
+        "sha256": "c59c45cd8da55d0c03c988cef7a596a4e10739e9a2a49a0278b87ee67b0766a6"
+      },
+      "reason": "External/vendor dependency or non-source archive format; no executable binary/patch relabelling."
+    },
+    {
+      "descriptor": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/summarize_geometry_v2.py",
+        "bytes": 8204,
+        "sha256": "00a9b7ec5d303f2ed5b70106f403275ecf0a9f846bed1f2d9e3dd7686aba2844"
+      },
+      "reason": "Later metadata-summary generator is not in the112-file tool freeze; referenced only, never disguised as generated executable evidence."
+    }
+  ],
+  "files_before_inventory": [
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/README.md",
+      "bytes": 3086,
+      "sha256": "ceb16fe9d324ebe43c5f624ac195245f021272ba9cfdea512d1bc7ada27338c2",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/DESIGN.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/DESIGN.md",
+      "bytes": 6007,
+      "sha256": "285a17622db46d1862deae444eca814b1b860b0f66e324df48ed32b4472b8718",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/LICENSE-CODE.txt",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/LICENSE-CODE.txt",
+      "bytes": 1062,
+      "sha256": "def2c0f964e5e9a0ba80c19113f1efc4c09fa776595ca4c567e39ba3b6f3fe8f",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Complete MIT notice for authored code; unchanged frozen bytes."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/MODEL-LICENSE.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/MODEL-LICENSE.md",
+      "bytes": 826,
+      "sha256": "8db32bc4d998a23b7fe90badc3dfec0f8682d4f00f5f77fb83496addc635a511",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/requirements.txt",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/requirements.txt",
+      "bytes": 219,
+      "sha256": "64322bf4e0e4dbbe1cd6f27dfff1e26ff352dde72c12d83f2c10ebdce306a47d",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored Python runtime dependency declarations, not a cached page."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/build_model.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/build_model.py",
+      "bytes": 34974,
+      "sha256": "28170e0812186431ac442d39936e0f5d76fd2016bd69bbe2eebd13ae51cb642e",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/curves.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/curves.py",
+      "bytes": 2610,
+      "sha256": "dfc5cb73d5711b3c6eefa28ba30c563d8845b2d192322526ed3e3cb3a7ec51ec",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/solids.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/solids.py",
+      "bytes": 8072,
+      "sha256": "61ce2e480cf6fef70230474bc2d6c6a1b06d400b311f099bb9772117f4032a8c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/render_previews.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/render_previews.py",
+      "bytes": 15931,
+      "sha256": "652d7b7ad927c36abcce05112a73eeb0c1e6d6238d831e1e36f6021f3b3d7019",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/run_root.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/run_root.py",
+      "bytes": 1408,
+      "sha256": "777c0eb85173b2c5cf6f0ec09f31b9ddcc97951c56071bcbba7d93cfc33cab51",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/source_preflight.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/source_preflight.py",
+      "bytes": 6231,
+      "sha256": "5b012c04ca4f54871a6ed7a564efa0a210f9b88247556b31ff2a39bea2d975fa",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/prepare_sign_outlines.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/prepare_sign_outlines.py",
+      "bytes": 2983,
+      "sha256": "c8626b69a0d07c7b044cb9e68468f69ef6f88756097cdfafb8461bcfcdd55bd9",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/prepare_audit_questions.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/prepare_audit_questions.py",
+      "bytes": 3210,
+      "sha256": "fffc867ec1a6c20d7c08d9143784297ca1d85de60fcc025e6cf7b588f335bbbf",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/freeze_author_source.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/freeze_author_source.py",
+      "bytes": 5420,
+      "sha256": "661610e741dba32e5ee26ab765512f1018c4dab5e0e6b069532dc9ba89b2511c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/common/photo_architecture.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/common/photo_architecture.py",
+      "bytes": 22623,
+      "sha256": "4c3b635cb8bd3897a230f0bdd0fc0502b19427db2f340a0de444ebfd866df886",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/geometry-input.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/geometry-input.json",
+      "bytes": 24843,
+      "sha256": "b9ecca5878e0cadf20acd143afd06d05b59689ae634c61d3f052d9d60e83ea92",
+      "kind": "authored-source",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "redistribution_basis": "Frozen OpenStreetMap/Overture owner and original geographic coordinates with authored provenance; © OpenStreetMap contributors / Overture Maps."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/calibration.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/calibration.json",
+      "bytes": 10389,
+      "sha256": "4e8764fe4ff4336ebf9c9bdf70377232f6236b8e31fc199e67649977282e18ec",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/semantic-contract.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/semantic-contract.json",
+      "bytes": 4304,
+      "sha256": "4cea26b31988ca5db3752ded13ce619f4fb33de683239a5fe517aaf77e6b807b",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/photo-register.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/photo-register.json",
+      "bytes": 13139,
+      "sha256": "7fb96211f7f605b2dc03913da70082523ad337aca3bb67d88ed235f32699a88b",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/source-register.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/source-register.json",
+      "bytes": 12643,
+      "sha256": "842423711f84f6d913b85fc3b68a608ecd6585964efd2a631e630082946b0734",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/ATTRIBUTION.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/ATTRIBUTION.md",
+      "bytes": 1754,
+      "sha256": "712efb0dc4792b8fe02798377838b2f7a6cb9bf841cc6d09d32b0ea67bb375f3",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/root-photo-inspection.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/root-photo-inspection.json",
+      "bytes": 2628,
+      "sha256": "7502c9e0ca1d0434db8e01a3c52a484a91b95b20ba15b20be9bca22afeed1a36",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/identity-source-proof.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/identity-source-proof.json",
+      "bytes": 9282,
+      "sha256": "e591de9a8cac90873fde65c950dbb3f283f63c523ccc40e4a2f5a735185aff18",
+      "kind": "authored-source",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "redistribution_basis": "Frozen OpenStreetMap/Overture owner and original geographic coordinates with authored provenance; © OpenStreetMap contributors / Overture Maps."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/mapping-report.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/mapping-report.json",
+      "bytes": 965,
+      "sha256": "1dfd2484bbdee74bc21fe264ce58c4a02d84d090ed3902bfc1c30f916e661c98",
+      "kind": "authored-source",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "redistribution_basis": "Frozen OpenStreetMap/Overture owner and original geographic coordinates with authored provenance; © OpenStreetMap contributors / Overture Maps."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/independent-source-review-record.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/independent-source-review-record.json",
+      "bytes": 2090,
+      "sha256": "0265f5059c210cfa7fdf027086bab4ca4fb96d569e4bb23b2fbe3ce702341da1",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/museum-sign-outlines.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/museum-sign-outlines.json",
+      "bytes": 32646,
+      "sha256": "31c54f077de6e1339e9802218d1b7af34ce5a95e19375cca88ec8cff31f384c2",
+      "kind": "authored-source",
+      "license": "SIL OFL 1.1",
+      "license_url": "https://openfontlicense.org/open-font-license-official-text/",
+      "redistribution_basis": "Subset glyph outlines and complete SIL OFL notice; original Noto CJK font copyright Adobe2014–2021, exact font provenance inside outline JSON."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/SIGN-FONT-LICENSE.txt",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/SIGN-FONT-LICENSE.txt",
+      "bytes": 4330,
+      "sha256": "1e77dcaa11025982ae89ef3696a28d14600df768150d915f954ef058b32754d1",
+      "kind": "authored-source",
+      "license": "SIL OFL 1.1",
+      "license_url": "https://openfontlicense.org/open-font-license-official-text/",
+      "redistribution_basis": "Subset glyph outlines and complete SIL OFL notice; original Noto CJK font copyright Adobe2014–2021, exact font provenance inside outline JSON."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/commons-57659417.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-57659417.jpg",
+      "bytes": 190630,
+      "sha256": "aa239266cfaa98af2a617374bcd7a9bc67e94edcc8b559a41f1d825f4c0132ea",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "redistribution_basis": "Shanghai Auto Museum 2016 January.jpg — Morio; 1 January 2016, Shanghai, China; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_2016_January.jpg. Commons preview, otherwise unchanged. Original frozen image bytes; no model texture."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/commons-57659421.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-57659421.jpg",
+      "bytes": 279618,
+      "sha256": "1217151e21d78421ed2237214fd75cf77dc2f420d44ed09c30dbd3062da8e1e2",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "redistribution_basis": "Shanghai Auto Museum entrance1 2016 January.jpg — Morio; 1 January 2016, Shanghai, China; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_entrance1_2016_January.jpg. Commons preview, otherwise unchanged. Original frozen image bytes; no model texture."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/commons-57659431.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-57659431.jpg",
+      "bytes": 246675,
+      "sha256": "14dd3d6756a36cdce80180f2fb3ea92f8518396d5e9f9249e6d07f4b59907c91",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "redistribution_basis": "Shanghai Auto Museum evening 2016 January.jpg — Morio; 1 January 2016, Shanghai, China; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_evening_2016_January.jpg. Commons preview, otherwise unchanged. Original frozen image bytes; no model texture."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/commons-21052347.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-21052347.jpg",
+      "bytes": 195275,
+      "sha256": "5fdb2debfc76f3b6c4d2e11bb6f23a3f83336088dcdd1320033618aa009150c1",
+      "kind": "authored-source",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "redistribution_basis": "Shanghai Automobile Museum.jpg — Photolar10; 2012-05-06; CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0); https://commons.wikimedia.org/wiki/File:Shanghai_Automobile_Museum.jpg. Commons preview, otherwise unchanged. Original frozen image bytes; no model texture."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/references/commons-20856157.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-20856157.jpg",
+      "bytes": 234788,
+      "sha256": "1dfe5dad78c52e9bd2762ad6bfccd458496daaf6c711ff34befe5be3dfec27c8",
+      "kind": "authored-source",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "redistribution_basis": "Shanghai Auto Museum 2007.JPG — Daveduv; 2007-10-20; CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_2007.JPG. Commons preview, otherwise unchanged. Original frozen image bytes; no model texture."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/orientation-review/orientation-review.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/orientation-review/orientation-review.json",
+      "bytes": 10138,
+      "sha256": "3ed23e70a62528b1a3ce2fcfd3a2d6383e0ac4a5cceff6724a518310b4543c7e",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/orientation-review/osm-orientation-context.png",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/orientation-review/osm-orientation-context.png",
+      "bytes": 142241,
+      "sha256": "28a73ffcc0823b666a009748d316aaedb1470843cf8f07be3f19fc697ec17752",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored orientation diagram drawn from the exact bounded OSM source in this freeze; © OpenStreetMap contributors, ODbL1.0 for underlying data. No third-party photograph pixels."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/orientation-review/osm-water-context-retrieval.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/orientation-review/osm-water-context-retrieval.json",
+      "bytes": 390,
+      "sha256": "f971a1f8e000b4bdbe59f079da19a2cbb0a2233f4c94422ae4f7927ddf94d820",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/orientation-review/osm-water-context.osm",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/orientation-review/osm-water-context.osm",
+      "bytes": 348241,
+      "sha256": "529ef408f20a6705801ab849f4571f9b5aeea65b2ad4e3b19ea5213649a5dfad",
+      "kind": "authored-source",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "redistribution_basis": "Original bounded OpenStreetMap API geographic data; © OpenStreetMap contributors; retrieval metadata and hash preserved."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/orientation-review/research-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/orientation-review/research-lock.json",
+      "bytes": 1159,
+      "sha256": "1f196afd5bda745c1e354f90736ea855a0aef8d5beefcfbe6753fb72657c9bfa",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/plot_design.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/plot_design.py",
+      "bytes": 4802,
+      "sha256": "8fc9ee4023718dccdf863835458f8b1b60125b4d20ed304d46d2ac611710eeb9",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/plan-elevation-v2.png",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/plan-elevation-v2.png",
+      "bytes": 177545,
+      "sha256": "2bd3e2587489ee597640f9e748143e8dcaed38a594e9bea851619fc13fac002f",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Author-generated CPU plan/elevation sketch from this frozen calibration and plot_design.py; no official/manufacturer drawing or photograph pixels."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/curve-input-report-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/curve-input-report-v2.json",
+      "bytes": 7514,
+      "sha256": "e23317a778bdab65d32287be3ff83cccbc5dc2d0cd84f5ac2ed6cf1cc23c1d17",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/audit-question-inputs.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/audit-question-inputs.json",
+      "bytes": 27760,
+      "sha256": "87e9bc8af3e3dd5f661c16d9f21d27f1a6b8b36a7f9a9c049fc2084eb9e2075d",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/math-development-log.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/math-development-log.json",
+      "bytes": 955,
+      "sha256": "3693de237a31effc5e3983a582f798cfff6a0fe2724e6ecf0a7c431f1ade6b9d",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/source-preflight-attempt-1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/source-preflight-attempt-1.json",
+      "bytes": 2860,
+      "sha256": "f00ec2dca81a114695240daccb35f5edadc6f921b36c1ca5731e2b5d15fbd22d",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/source-preflight-attempt-2-error.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/source-preflight-attempt-2-error.json",
+      "bytes": 427,
+      "sha256": "1814a0a4a6781fe7be493ceadcfa6a51dc385ae1e0361c383f5fc374a2cca5ff",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/source-preflight-attempt-3.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/source-preflight-attempt-3.json",
+      "bytes": 2987,
+      "sha256": "644f7fa6c426f62ef39157dc21e4a1411efecb5ae1e225d3490473f3f96334ee",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/source-preflight-final.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/source-preflight-final.json",
+      "bytes": 3399,
+      "sha256": "882c20e0aa67b7b2354552b84001710f8db0e1f616a3e04db6e9156d6bf2d006",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored code/documentation or factual annotations from the frozen author package; quoted source facts retain cited provenance."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/prepare_repairs_from_v1.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/prepare_repairs_from_v1.py",
+      "bytes": 8103,
+      "sha256": "1319c2bbada24a4238de089a35388f9b8237a2a30f5c69c11173cc41387a5ce1",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/check_local_repairs.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/check_local_repairs.py",
+      "bytes": 3681,
+      "sha256": "fa8af7454e958de6999402499685a853b4e6a37d9f867fa92b9c27bfef14327c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/repair-inputs.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/repair-inputs.json",
+      "bytes": 12049,
+      "sha256": "25af6662e85898d7d464231a0a11f8647900087e589ffd73ade89851ce62d550",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/change-scope.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/change-scope.json",
+      "bytes": 2007,
+      "sha256": "403afee650734e9e5ecd6cb9562617fc47497f97eb36ab69c17daa5ecd51d4e8",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/REPAIR-DESIGN.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/REPAIR-DESIGN.md",
+      "bytes": 3053,
+      "sha256": "ba8c613bbb99db236805d9afa821c040a555d5c397cfdd00c1d6af8e47b9a84e",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/source-preflight-geometry-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/source-preflight-geometry-v2.json",
+      "bytes": 3675,
+      "sha256": "eceddc6277bc9f6d49614b7db82e8fcfde376ada3f97bd4c6d4e986683af7ebb",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/local-repair-preflight.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/local-repair-preflight.json",
+      "bytes": 3629,
+      "sha256": "93c0ed6ba7773a51e43b0cf0ee129b27fb468ad9c58605f922095f53e86a3d62",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/history/source-freeze-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/history/source-freeze-v1.json",
+      "bytes": 9883,
+      "sha256": "82e0bb92df2d7ff09bc0554fc5c421546b865a7b8849b6cbbdb131133169db2c",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/history/repair-inputs-attempt-1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/history/repair-inputs-attempt-1.json",
+      "bytes": 13282,
+      "sha256": "41c8de8847ebdbe44d6c93d559121945a698d7a90882cf44ba82e797a8e3f45e",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/history/repair-inputs-attempt-2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/history/repair-inputs-attempt-2.json",
+      "bytes": 12716,
+      "sha256": "ccf4c6ab5aa79ffc91573351c513a3993daeca0b11f624ad2e250f4f3f179c39",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/history/local-repair-preflight-attempt-1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/history/local-repair-preflight-attempt-1.json",
+      "bytes": 448,
+      "sha256": "a3cd0601b31a160b5cc39f1c2909febad2267a8787e151db5cfe92448228f093",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/history/local-repair-preflight-attempt-2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/history/local-repair-preflight-attempt-2.json",
+      "bytes": 368,
+      "sha256": "441d6ac66850edf67123f373f3a9f68418f2923c3b95de5b56d8a35f3a6c39de",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/design/full-camera-source-review.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/design/full-camera-source-review.json",
+      "bytes": 878,
+      "sha256": "f2654f670408ad54e7eda6bbdef0d77da7592e0efe88a142130efa26f7f4d412",
+      "kind": "authored-source",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored bounded repair code or factual source evidence from the exact geometry-v2 freeze. Historical JSON states remain unchanged; no third-party full page, PDF or photo snapshot."
+    },
+    {
+      "file": "assets/references/precise/jiading-shanghai-auto-museum/commons-57659417.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-57659417.jpg",
+      "bytes": 190630,
+      "sha256": "aa239266cfaa98af2a617374bcd7a9bc67e94edcc8b559a41f1d825f4c0132ea",
+      "kind": "licensed-reference",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "redistribution_basis": "Shanghai Auto Museum 2016 January.jpg — Morio; 1 January 2016, Shanghai, China; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_2016_January.jpg. Commons preview, otherwise unchanged. Exact additional catalog alias; original source-relative bytes are also retained."
+    },
+    {
+      "file": "assets/references/precise/jiading-shanghai-auto-museum/commons-57659421.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-57659421.jpg",
+      "bytes": 279618,
+      "sha256": "1217151e21d78421ed2237214fd75cf77dc2f420d44ed09c30dbd3062da8e1e2",
+      "kind": "licensed-reference",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "redistribution_basis": "Shanghai Auto Museum entrance1 2016 January.jpg — Morio; 1 January 2016, Shanghai, China; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_entrance1_2016_January.jpg. Commons preview, otherwise unchanged. Exact additional catalog alias; original source-relative bytes are also retained."
+    },
+    {
+      "file": "assets/references/precise/jiading-shanghai-auto-museum/commons-57659431.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-57659431.jpg",
+      "bytes": 246675,
+      "sha256": "14dd3d6756a36cdce80180f2fb3ea92f8518396d5e9f9249e6d07f4b59907c91",
+      "kind": "licensed-reference",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "redistribution_basis": "Shanghai Auto Museum evening 2016 January.jpg — Morio; 1 January 2016, Shanghai, China; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_evening_2016_January.jpg. Commons preview, otherwise unchanged. Exact additional catalog alias; original source-relative bytes are also retained."
+    },
+    {
+      "file": "assets/references/precise/jiading-shanghai-auto-museum/commons-21052347.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-21052347.jpg",
+      "bytes": 195275,
+      "sha256": "5fdb2debfc76f3b6c4d2e11bb6f23a3f83336088dcdd1320033618aa009150c1",
+      "kind": "licensed-reference",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "redistribution_basis": "Shanghai Automobile Museum.jpg — Photolar10; 2012-05-06; CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0); https://commons.wikimedia.org/wiki/File:Shanghai_Automobile_Museum.jpg. Commons preview, otherwise unchanged. Exact additional catalog alias; original source-relative bytes are also retained."
+    },
+    {
+      "file": "assets/references/precise/jiading-shanghai-auto-museum/commons-20856157.jpg",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/references/commons-20856157.jpg",
+      "bytes": 234788,
+      "sha256": "1dfe5dad78c52e9bd2762ad6bfccd458496daaf6c711ff34befe5be3dfec27c8",
+      "kind": "licensed-reference",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "redistribution_basis": "Shanghai Auto Museum 2007.JPG — Daveduv; 2007-10-20; CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0); https://commons.wikimedia.org/wiki/File:Shanghai_Auto_Museum_2007.JPG. Commons preview, otherwise unchanged. Exact additional catalog alias; original source-relative bytes are also retained."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/source-freeze.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/source-freeze.json",
+      "bytes": 12252,
+      "sha256": "5acf7f82a27d7ccfb4b7d4ca0c6e13d98cb381c8409cc3fa0a5697c01fe0a45a",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Exact author dependency manifest; historical source-only state not rewritten after raw generation."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/delivery/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-public-delivery-v2-preparation/README.md",
+      "bytes": 1878,
+      "sha256": "ad95ad7a674d187e9f95aee86fb3ee3a9c7c4366b7b65d11836887ed7daf859e",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "New authored current-delivery draft, explicitly pending; no executable helper or unlicensed research payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/delivery/BUILD.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-public-delivery-v2-preparation/BUILD.md",
+      "bytes": 2023,
+      "sha256": "eaaa1eb659060140caad82875a2b2d55db3acb8457d8fd60cbc60f7529e44910",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "New authored current-delivery draft, explicitly pending; no executable helper or unlicensed research payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/delivery/ATTRIBUTION.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-public-delivery-v2-preparation/ATTRIBUTION.md",
+      "bytes": 2220,
+      "sha256": "9d5c091295c454ae7763f60b09e693ece599595814ea8797433445c60124ceba",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "New authored current-delivery draft, explicitly pending; no executable helper or unlicensed research payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/CURRENT-DELIVERY.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-registration-inputs-v2/CURRENT-DELIVERY.md",
+      "bytes": 3497,
+      "sha256": "70a498c558fd6ec42743db7c86793bcabe95fa2741eb71b83fe275e52d893a46",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/CURRENT-BUILD.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-registration-inputs-v2/CURRENT-BUILD.md",
+      "bytes": 2747,
+      "sha256": "f6adf80a8c61792bb3a670972253dcb182ae385db62ed21d0e368f07e7e00685",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/CURRENT-ATTRIBUTION.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-registration-inputs-v2/CURRENT-ATTRIBUTION.md",
+      "bytes": 2220,
+      "sha256": "9d5c091295c454ae7763f60b09e693ece599595814ea8797433445c60124ceba",
+      "kind": "generated-evidence",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/actual-handoff.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/actual-handoff.json",
+      "bytes": 9864,
+      "sha256": "7d2b9b050dbc83286ce0e759440e57410811a64dec627b102a46ab3e49b27659",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/independent-source-handoff-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/independent-source-handoff-v2.json",
+      "bytes": 10939,
+      "sha256": "0256f4e1207f9ae7bbc4ee63955b9b2493182e5c89356869f25a2972cdeb5046",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-geometry-v2/actual-all-opaque-slots.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-geometry-v2/actual-all-opaque-slots.json",
+      "bytes": 3030940,
+      "sha256": "7c093762b66437c854c9fa366ca7c5ed76ed9d6b7ad00c4d6466c4aa190c142c",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-geometry-v2/actual-complete-finite.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-geometry-v2/actual-complete-finite.json",
+      "bytes": 17374109,
+      "sha256": "862d9e11009b6642c2ae0f57010b43f3f0a374629a7a4cf8056f96a87ee8f08e",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-geometry-v2/actual-raw-structure.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-geometry-v2/actual-raw-structure.json",
+      "bytes": 14760404,
+      "sha256": "1616750c8ec035f72486fe43b960528a8cf2613203afa53ae5d8ed19065dd568",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-geometry-v2/resources-all-opaque-slots.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-geometry-v2/resources-all-opaque-slots.json",
+      "bytes": 1142,
+      "sha256": "93b912d44060491fe4d7ec5402e71fad7b1b01f3e2a81f9221975bc71f336647",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-geometry-v2/resources-complete-finite.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-geometry-v2/resources-complete-finite.json",
+      "bytes": 1138,
+      "sha256": "417a64b5e8f4ee0b1a73fd4024b4c9a2f149c0f7d0e9eb6404e7d0e519d3c0f4",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-geometry-v2/resources-structure.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-geometry-v2/resources-structure.json",
+      "bytes": 960,
+      "sha256": "63267a85391b0dc85fba9c754dc42a8c2d8d460a1fc5d199989f142bb0f36c4a",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/first-pass-handoff-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/first-pass-handoff-v1.json",
+      "bytes": 40604,
+      "sha256": "e45e4eecb63f2fbe4d483553bca98b42999aa35f701deb57c1d77f4d7ceb1771",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/actual-preservation.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/actual-preservation.json",
+      "bytes": 8841879,
+      "sha256": "953c5ca866e61ff623dff914e40e6df0efc3178d9fe42f2318b5adb4719f1608",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/actual-repair-envelope.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/actual-repair-envelope.json",
+      "bytes": 29745,
+      "sha256": "eb763f4fdd162cc3ea5109e379f74b4e0005b2207df3623af676a23da54b4612",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/approved-change-plan.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/approved-change-plan.json",
+      "bytes": 30197,
+      "sha256": "7a6d393015d6a57f5cb698511436b488660681fa7a6737fae47959b72be1c24d",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/area-bounded-entry-freeze-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/area-bounded-entry-freeze-v1.json",
+      "bytes": 1072,
+      "sha256": "dd7d1ec53400f511d1fe531bc8bf9762c08e5637fbb9360b165b0358c7efc204",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/envelope-checker-freeze-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/envelope-checker-freeze-v1.json",
+      "bytes": 2027,
+      "sha256": "09833e024f8141d4d2e904adb5b3c47356f8f7b58292f71672b9957219545fb9",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/envelope-synthetic-tests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/envelope-synthetic-tests.json",
+      "bytes": 1554,
+      "sha256": "b611039a406756880261023a3513cb4629df82205bd996e63226955d5438fb5d",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/preservation-checker-freeze-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/preservation-checker-freeze-v1.json",
+      "bytes": 1917,
+      "sha256": "1091b0e350e539dda7251d9d252dff042729efe6a7142a39949f09e0e90606aa",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/preservation-synthetic-tests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/preservation-synthetic-tests.json",
+      "bytes": 1669,
+      "sha256": "54854654a0040cee75fe16e5425eff129b47d8da8c899847cb55e37f73df700b",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/resources-area-seating-v3.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/resources-area-seating-v3.json",
+      "bytes": 1363,
+      "sha256": "234eb033b3bb9038de2f022e224a46c4fbcf0a8a73d8b4e1c22c4d117ec1aa52",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/resources-preservation.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/resources-preservation.json",
+      "bytes": 1098,
+      "sha256": "c987b38521529379b7dd0ddf04b913d688bf346570ca5da40243f07602b4842c",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/geometry-v2-review/resources-repair-envelope.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/resources-repair-envelope.json",
+      "bytes": 1259,
+      "sha256": "9ac05d601b88f3385fabbe06aa623a93b25ed0d7f4f120b2e5a05599fc1a2ef1",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/source-freeze.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/source-freeze.json",
+      "bytes": 4931,
+      "sha256": "2e324ecd6a88945549335eb2f48263dda74b9e1ad024d2def42902371c1084a8",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/rebinding-manifest.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/rebinding-manifest.json",
+      "bytes": 5311,
+      "sha256": "aeb1475c84527213394ea0215ab717a8b3b3c237abe5857e39a46c0306731a92",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/actual-results/actual-area-seating-v3.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/actual-results/actual-area-seating-v3.json",
+      "bytes": 13800294,
+      "sha256": "a2c26ee0d945cdf558567ebaab621c6e544361e3e31d722f50e25016cca3a58b",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/01-slots-entry.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/01-slots-entry.requests.json",
+      "bytes": 367912,
+      "sha256": "fcf7e8b1355d329ee4a6d0d340bf4d12633f19b85434d808650e195fea3e8842",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/02-curtain-local-seating.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/02-curtain-local-seating.requests.json",
+      "bytes": 6754026,
+      "sha256": "545abfca00bae1585b94c8879e04381ab2d22e7cf12139e9c5bf15ad367c5202",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/03-roof-finite-joints.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/03-roof-finite-joints.requests.json",
+      "bytes": 25565,
+      "sha256": "1ff6cbd83530bed7ecf35cb1696953ce0d4c46879564ad9d40ceb09157169846",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/04-stair-ramp-rails.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/04-stair-ramp-rails.requests.json",
+      "bytes": 617226,
+      "sha256": "271ad25ee7ffe47d059b8e28aba80d4a2edd0314a049dab375a7436327f94b0d",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/05-louvre-chains.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/05-louvre-chains.requests.json",
+      "bytes": 461014,
+      "sha256": "5deeab5aeb0e0ed4764d9b1bf1d19f655da0b40e7dc1db75e897806085cc7722",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/06-new-support-chains.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/06-new-support-chains.requests.json",
+      "bytes": 8902,
+      "sha256": "a4fc65637b8e38280944e7eca57d375fdb64fd2f36215eb2237742d457549029",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/all-opaque-slots.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/all-opaque-slots.requests.json",
+      "bytes": 4090098,
+      "sha256": "f9d244a6f19c900ac28b6a8ec2ba2884247e6a6cb29b43397fbf5c797359302c",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/complete-6114.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/complete-6114.requests.json",
+      "bytes": 8224640,
+      "sha256": "d72cc7721de987ef2e5dffbe809502ed462b30631279da21cffa8eb00f380cd1",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/question-mapping.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/requests-actual-v2/question-mapping.json",
+      "bytes": 3389130,
+      "sha256": "cf9e4004f369f7f327d393e9e108e7d373035221c6387cc9723d3c2fe9505c76",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/actual-first-pass-review-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/actual-first-pass-review-v1.json",
+      "bytes": 207857,
+      "sha256": "a4373106ab9184ef3d086fe5451da7f27b53150141967677c5ca4a70fef83228",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/actual-raw-structure.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/actual-raw-structure.json",
+      "bytes": 14754363,
+      "sha256": "1bcc949c60717ed6f688d10000d23b70abd7a482d351bc7c43ded5f812b3ee5b",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/actual-03-roof-finite-joints.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/actual-03-roof-finite-joints.json",
+      "bytes": 3229715,
+      "sha256": "c7047ca5e89b92b3bca49caea1771c679ff09164c471fd070a0b8039e1685f61",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/actual-04-stair-ramp-rails.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/actual-04-stair-ramp-rails.json",
+      "bytes": 4906043,
+      "sha256": "a05f1973c2a6a10f829808f2597714e253553d81774481674f53384ab6076ca4",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/actual-contact-diagnostics-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/actual-contact-diagnostics-v2.json",
+      "bytes": 3056152,
+      "sha256": "e6d2386ac41d1f1b9fbbdcddcc4f36b131a7589132ca77f32c708c2d5e7d85bc",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/curtain-batches/actual-regroup-v2-batch-002.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/curtain-batches/actual-regroup-v2-batch-002.json",
+      "bytes": 5093865,
+      "sha256": "e37fad86ff4578fb739b977ad40d98604398838c50d655f25afb441ca8673c2a",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/curtain-batches/actual-regroup-v2-batch-003.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/curtain-batches/actual-regroup-v2-batch-003.json",
+      "bytes": 5284436,
+      "sha256": "b11f53c734541d83d2fb12e905a5145219cd3222f8e638dcfa7e1bf076d1eab1",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/independent-museum-review/checker-v2/run-v1/curtain-batches/actual-regroup-v2-batch-006.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run-v1/curtain-batches/actual-regroup-v2-batch-006.json",
+      "bytes": 5006581,
+      "sha256": "f9f48f2a9e94365ff24bb86955ab5d8dcc9744822b448b4708dbed6116177541",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/auto-museum/run-geometry-v2/raw/asset-metadata.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/run-geometry-v2/raw/asset-metadata.json",
+      "bytes": 821,
+      "sha256": "d8337d4ac339926a183c7f93782adee35352a1e1639d071743a69ad5dc252bdc",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/auto-museum/run-geometry-v2/raw/geometry-report.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/run-geometry-v2/raw/geometry-report.json",
+      "bytes": 5594766,
+      "sha256": "32482b9352239f7d57237dabdd46cfe23250447bb270b7ba3c4ba7dc7f7e9d2a",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/auto-museum/run-geometry-v2/raw/jiading-shanghai-auto-museum-raw.geometry.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/run-geometry-v2/raw/jiading-shanghai-auto-museum-raw.geometry.json",
+      "bytes": 4429930,
+      "sha256": "f9d9dc62eef19fc97851d28e6bcf5078bab125e9e06034c2b167c4129da728d0",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/existing-input-inventory.pending.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/existing-input-inventory.pending.json",
+      "bytes": 21420,
+      "sha256": "c5aef599af32044955a10e87778b8985ecf1d80e8ad68521f56f3f6f251cb3ec",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/final-evidence-inputs.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/final-evidence-inputs.json",
+      "bytes": 2822,
+      "sha256": "009e3ce3446799436f20c106441fb73d2c08fb87481ae0214370d2816fb72db0",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/handoff.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/handoff.json",
+      "bytes": 2805,
+      "sha256": "751d90e54e883f9b0e36921aef82048ffcc321b55cfd43a5137dea4ad40e8d13",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.package-input.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.package-input.json",
+      "bytes": 7234,
+      "sha256": "6f1db42474efcfa6e6147a746513e5aeb31a8ca81f37437acd66996e6c38ebf8",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.ready.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/jiading-shanghai-auto-museum.ready.json",
+      "bytes": 9113,
+      "sha256": "89e33a425381ce27967059a615baf7e6d5d5f526b13e4e919a3c364914094662",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/preflight.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/preflight.json",
+      "bytes": 3613,
+      "sha256": "d60f3eb4f9831993e0cf08c32bced1f34687ae7258b6d1d6d532c7585314b3b2",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/museum-ready-inputs-v2/ready-inputs-freeze.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/museum-ready-inputs-v2/ready-inputs-freeze.json",
+      "bytes": 2554,
+      "sha256": "243c59f1bad0ac804287fa9a5eb2f8feaa9c3ff013a0e5b7910a9d4c34c3e0cf",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/navigation-prebrowser-preparation/museum-geometry-v2/foundation-projection-carryforward.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/museum-geometry-v2/foundation-projection-carryforward.json",
+      "bytes": 4969,
+      "sha256": "b150a4093846a136255d1a14ec00cd7ff36f70e219eca6eb9d93a3eba83444bc",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/navigation-prebrowser-preparation/museum-geometry-v2/handoff.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/museum-geometry-v2/handoff.json",
+      "bytes": 2766,
+      "sha256": "4be9edfc08c6bacd098ee58109e66f9ceecee5e513f5f409bea685a39499b20b",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/navigation-prebrowser-preparation/museum-geometry-v2/independent-readonly-review.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/museum-geometry-v2/independent-readonly-review.json",
+      "bytes": 1501,
+      "sha256": "2b26dae9d8bcf593623e588630a3e268bf9ca9512927f83d618a9089e78ea2c1",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/navigation-prebrowser-preparation/museum-geometry-v2/jiading-shanghai-auto-museum.navigation.prebrowser.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/museum-geometry-v2/jiading-shanghai-auto-museum.navigation.prebrowser.json",
+      "bytes": 12080,
+      "sha256": "7c162933ffeaebeb999da8216aedf269e20b7f3d25618500b4b0120cf48420f2",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/navigation-prebrowser-preparation/museum-geometry-v2/jiading-shanghai-auto-museum.screen.pending.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/museum-geometry-v2/jiading-shanghai-auto-museum.screen.pending.json",
+      "bytes": 7718,
+      "sha256": "c1635df377949757488788127446aa891d7d263e581db55096baa53d46d2d6ae",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/navigation-prebrowser-preparation/museum-geometry-v2/preparation-freeze.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/navigation-prebrowser-preparation/museum-geometry-v2/preparation-freeze.json",
+      "bytes": 2201,
+      "sha256": "a9e7f14f978b4d30f39bf2c688d9bedda25e6b4797edafcb60caff94c6063473",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/auto-museum/run-geometry-v2/native/native-render-report.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/run-geometry-v2/native/native-render-report.json",
+      "bytes": 5899,
+      "sha256": "a82b1d74e377c490f601c5bdb6611f0ff5d93a12aaf61c1bd5ec8e7c7c4e4225",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/auto-museum/run-geometry-v2/native/root-native-visual-review-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/run-geometry-v2/native/root-native-visual-review-v2.json",
+      "bytes": 8124,
+      "sha256": "c2aa9006955f99178b6a12e52968fa49f86a644dafba6fcaa24331d1c45df5cd",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/archive-v11/research-a/root-photo-inspection.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/research-a/root-photo-inspection.json",
+      "bytes": 2628,
+      "sha256": "7502c9e0ca1d0434db8e01a3c52a484a91b95b20ba15b20be9bca22afeed1a36",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/evidence/packaging-record.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum-delivery-v2/package/packaging-record.json",
+      "bytes": 23827,
+      "sha256": "f639adef2a7848c218b94bb4128d36435ef69f50b6f57d51b9bdc5083ee57b61",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/tool-source-freeze.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tool-source-freeze.json",
+      "bytes": 30708,
+      "sha256": "8fc0c7aa90d8b0616ee436517dae9b5839e2ba3db7567c98e72faa6dabc6cfc2",
+      "kind": "generated-evidence",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/PROTOCOL.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/PROTOCOL.md",
+      "bytes": 6930,
+      "sha256": "bd0048df2d9b9311501607c1acce6123ed33906a3a47e321c2ab2606b4e2339c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/audit_glass_horizontal_seating.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/audit_glass_horizontal_seating.py",
+      "bytes": 4619,
+      "sha256": "9f92fc900ee349c6b2deb7a6fe6c6398983e4f3e6224440e2d5ce34c8e7f7cd2",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/audit_library_colonnade_caps.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/audit_library_colonnade_caps.py",
+      "bytes": 3214,
+      "sha256": "45c3c8222289cbeb007c3a439ed772b0e0682b9236c593808c16bd4216dec3f8",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/audit_library_revision_preservation_v2.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/audit_library_revision_preservation_v2.py",
+      "bytes": 4510,
+      "sha256": "4acf74be1128ab47828d37116298bf8bbd8b3965c0b374ac7bfd2ffb1ce4dd6d",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/audit_raw_structure.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/audit_raw_structure.py",
+      "bytes": 6827,
+      "sha256": "775ce3e679b6e35830c54b40347bf9471c3cf23802d1995a9913097ed1060062",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/checker-freeze-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/checker-freeze-v2.json",
+      "bytes": 1620,
+      "sha256": "67db3a68dd84376531ff2bafdf8cf9dc2b6822b492517b33042be2c4f7a1a4ff",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/finite_checks.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/finite_checks.py",
+      "bytes": 27904,
+      "sha256": "6b7b41d61e76fc8359ad10481a7534293b52e53b2faf5f6265262e985d96a5ca",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/library-supplemental-checker-freeze-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/library-supplemental-checker-freeze-v2.json",
+      "bytes": 1571,
+      "sha256": "ea22e7d0db184a0cc4f7aa9f8e6848d5dc1d24600611aaed182019f32e63eaef",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/modern_mesh.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/modern_mesh.py",
+      "bytes": 10516,
+      "sha256": "6b8157d7744595519595710ab5a2e95b5485448bb5220aac02bbeb6d707c9e47",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/run_finite_checks.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/run_finite_checks.py",
+      "bytes": 1563,
+      "sha256": "de9c523f50fce1d839ee56cf8bc1717f7c90ebb23565d843c947da38c23d5731",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-modern-review/test_synthetic.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-modern-review/test_synthetic.py",
+      "bytes": 4843,
+      "sha256": "fe5a0194d9d4b1d534ab5c487acdb430e5dfcfb08745f5cfde68c04ef0e3880e",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/audit_pane_area_seating_v2.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/audit_pane_area_seating_v2.py",
+      "bytes": 16288,
+      "sha256": "d7c713200961ffcc2e39ddda9194b13f526961923bcc68218f5036d7059818b5",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/audit_raw_structure.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/audit_raw_structure.py",
+      "bytes": 6827,
+      "sha256": "775ce3e679b6e35830c54b40347bf9471c3cf23802d1995a9913097ed1060062",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/finite_checks.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/finite_checks.py",
+      "bytes": 27904,
+      "sha256": "6b7b41d61e76fc8359ad10481a7534293b52e53b2faf5f6265262e985d96a5ca",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/geometry-v2-tools/audit_preservation.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/audit_preservation.py",
+      "bytes": 10984,
+      "sha256": "2fb2328dec43703c1706de12c2d774ecaa5725e2366cdcb1f592381512d9fe3d",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/geometry-v2-tools/audit_repair_envelope.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/audit_repair_envelope.py",
+      "bytes": 10485,
+      "sha256": "7cbfa5d33748088cbae245b2a4f94b3457fe98933b5c669ced68ec34050c6abb",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/geometry-v2-tools/prepare_plan.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/prepare_plan.py",
+      "bytes": 7942,
+      "sha256": "db10784e7753544d57b2d2eb0b0b05082c3ed4c45f8ba843e2aabe2da8b95a73",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/geometry-v2-tools/run_frozen_area_adapter.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/run_frozen_area_adapter.py",
+      "bytes": 1231,
+      "sha256": "0f2b3fc02e7fe698227fb4633b19d4a1ae59956dc114f3c57459627b21b93645",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/geometry-v2-tools/test_preservation.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/test_preservation.py",
+      "bytes": 2911,
+      "sha256": "af35e83837ffcf6835ee79259e227ca7f6aace47a181f11cde37a9c5e0ddabba",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/geometry-v2-tools/test_repair_envelope.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/geometry-v2-tools/test_repair_envelope.py",
+      "bytes": 1808,
+      "sha256": "274314e7b0c2a3d9a717407c3d9676871b118608c0a8769466451400f179526b",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/modern_mesh.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/modern_mesh.py",
+      "bytes": 10516,
+      "sha256": "6b8157d7744595519595710ab5a2e95b5485448bb5220aac02bbeb6d707c9e47",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/checker-v2/run_finite_checks.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/run_finite_checks.py",
+      "bytes": 1563,
+      "sha256": "de9c523f50fce1d839ee56cf8bc1717f7c90ebb23565d843c947da38c23d5731",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/pane-area-seating-checker-freeze-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/pane-area-seating-checker-freeze-v2.json",
+      "bytes": 3037,
+      "sha256": "7cf9eff7954f4b4c050f01527d4ea4315397132f5135dfa7ab672636ffe267fe",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/requests-v1/01-slots-entry.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/requests-v1/01-slots-entry.requests.json",
+      "bytes": 367754,
+      "sha256": "fddc95aa2ccc061063004b6a0bbdd3792d6e8dd03a061639a31872b63676d710",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/requests-v1/02-curtain-local-seating.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/requests-v1/02-curtain-local-seating.requests.json",
+      "bytes": 6849522,
+      "sha256": "610a076ddd48afb77be52cdbeb0bb2074fcb74864718d4bedf5374ba95553803",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/requests-v1/03-roof-finite-joints.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/requests-v1/03-roof-finite-joints.requests.json",
+      "bytes": 24379,
+      "sha256": "4faaddc859e499a873c22e80d618b8ba09706d6f1831a4f5f7e80f89ea2a3e38",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/requests-v1/04-stair-ramp-rails.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/requests-v1/04-stair-ramp-rails.requests.json",
+      "bytes": 613834,
+      "sha256": "135518480f16a87c8256d678949aec87524d6159dbc34827ded767c962a33103",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/requests-v1/05-louvre-chains.requests.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/requests-v1/05-louvre-chains.requests.json",
+      "bytes": 460774,
+      "sha256": "9f0d99b270a9564a3c6fc0c995363c6ef1441b7fcaa81593432936aeab6c64e3",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/resource-runner-freeze-v1.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/resource-runner-freeze-v1.json",
+      "bytes": 508,
+      "sha256": "e585e24b65dd63ad71dfc13aba351598743417ebef04863eb21e54242e00f124",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/independent-museum-review/run_bounded.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/run_bounded.py",
+      "bytes": 1799,
+      "sha256": "decc630043a8f92b4330dd15088536609ec3b41f834c07b992c8e7b8e801600c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/README.md",
+      "bytes": 2955,
+      "sha256": "b56fe7302b8c92be7a276c76f64bec2cb5908dd86233b8d1fb96740de29d24ee",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/baseline-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/baseline-lock.json",
+      "bytes": 389,
+      "sha256": "053962a110dcf1c6ff9086e2992e5015d0250ccf4dbf57eaf349352ea766b813",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/freeze_tool_revision.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/freeze_tool_revision.py",
+      "bytes": 3367,
+      "sha256": "fe45587a6cb16636737d3fc7d020129958c7b9c250ff0f65cd60731648c0d21c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/independent-review-record.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/independent-review-record.json",
+      "bytes": 2504,
+      "sha256": "8abc392c23b5153e1e5da38760de86fcf5822db49514fb6530eee1592f2a2474",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/source-layout-input-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/source-layout-input-lock.json",
+      "bytes": 1980,
+      "sha256": "8d3c27669a952363f86b5602fa56a83407e34388a09d1717345934e05216d697",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/tests/integration-control-results.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/tests/integration-control-results.json",
+      "bytes": 1199,
+      "sha256": "82daea165ff2dbc47ca69099d1b757312555ded375590a060f921b675538f5d1",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/tests/supplement-guard-results.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/tests/supplement-guard-results.json",
+      "bytes": 5662,
+      "sha256": "f96783193ba61eac0b45f8c004d5b2b238f0e7c368d03f48231f1b4fbea2176c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-evidence-revision-v2/tests/test_supplement_guards.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/tests/test_supplement_guards.py",
+      "bytes": 10564,
+      "sha256": "aae01ab02ad5332fc42d24b4278baaf85de1d9e12f2060f5f151e6eb5554497e",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/README.md",
+      "bytes": 2798,
+      "sha256": "aead29f6daf7e2c28bf6fd0b335427f2d09fcb97e11d405256122873596bc71a",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/baseline-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/baseline-lock.json",
+      "bytes": 18413,
+      "sha256": "4965b57d4158c986d0a22f607c435835b173290c717dae96c6947d360534fe4b",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/freeze_tool_revision.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/freeze_tool_revision.py",
+      "bytes": 4963,
+      "sha256": "0fd9acd5cb403cf4e33936169253705b2d321907f8f1b6a62c29d4f73e5a8271",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/independent-review-record.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/independent-review-record.json",
+      "bytes": 2591,
+      "sha256": "fd0bbd0cef1b9f188b781bb30e0f4be4844cee36263cded8acb1398d3cd35d0a",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/prepare_source_compat.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/prepare_source_compat.py",
+      "bytes": 5044,
+      "sha256": "571d1efecc79c2c241402f27388970daa05c8cfbad80d57ea323030148f1bfe5",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/actual-binding-preflight.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/actual-binding-preflight.json",
+      "bytes": 2257,
+      "sha256": "cf2749e7111c556f3c51107050d434b3d2dff5cfbc16d3a8b10b9d5a7d3ccc89",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/adaptation-input-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/adaptation-input-lock.json",
+      "bytes": 2785,
+      "sha256": "eade91c077cd224d9e007c2f6be503b42262ec6013b6a41ee7a3162b9624a630",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/check_preparation.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/check_preparation.py",
+      "bytes": 4293,
+      "sha256": "2ddc7f3e269008bee049cd383fc997289997308cd12e9822fc0721b7015ef682",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/independent-reading.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/independent-reading.json",
+      "bytes": 1188,
+      "sha256": "de9852c1463404617437388971bea51a259e491aeff418c490b27a35138eff99",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/preparation-control-results.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/preparation-control-results.json",
+      "bytes": 2365,
+      "sha256": "f293c3687e621c581984e90de378a2b9210a4e3d72ac0565e01f65934d1ea8aa",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/rebind_requests.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/rebind_requests.py",
+      "bytes": 16959,
+      "sha256": "3d23d1a64cba96d8d3966c4558dd721542d0d0fa734bac6e340b6bbf667ca185",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/request-adaptation/run_area_seating_v3.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/request-adaptation/run_area_seating_v3.py",
+      "bytes": 9862,
+      "sha256": "05d7515cd4d38a625dd5f0f63ad19b7e8f7e5eab4d216eded03c77144d60d018",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/tests/check_museum_supplements.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/tests/check_museum_supplements.py",
+      "bytes": 9392,
+      "sha256": "49afdb3e4619f42f7fc6e7bba0c63bb7058a7ce7bdd45e15d4c4ef1b8a2de270",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/tests/check_source_compat.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/tests/check_source_compat.py",
+      "bytes": 5856,
+      "sha256": "11685adfa237295103842e4a247fb7325eead746a99c39b67a12f5f227786723",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/tests/museum-supplement-control-results-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/tests/museum-supplement-control-results-v2.json",
+      "bytes": 5995,
+      "sha256": "df28dce8e0ef6f064c3f0fb787735ca6478fa9aadb64985e4b35f509fc6a5d05",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/tests/source-control-results.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/tests/source-control-results.json",
+      "bytes": 7108,
+      "sha256": "44e0d61813fd8a63cd9d6b122c0d8391a30e90035d83b69279d7ced07916e432",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/README.md",
+      "bytes": 4855,
+      "sha256": "5bdd029ad576af706a54833ab05dca0e24a978f40fa1ad2b921fb10d0621fccc",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/check_decoded_modern.mjs",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/check_decoded_modern.mjs",
+      "bytes": 22045,
+      "sha256": "c1c01d50359a2f620fc0dba3f68b858bd2fdd915a25ed6cb6ab2d7b170179b33",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/decode_core.mjs",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/decode_core.mjs",
+      "bytes": 5012,
+      "sha256": "cb03803bbe5cf2a51279ebdf6cd009ac93e668617d00257f0245aff7c5a4def7",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/PROTOCOL.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/PROTOCOL.md",
+      "bytes": 6930,
+      "sha256": "bd0048df2d9b9311501607c1acce6123ed33906a3a47e321c2ab2606b4e2339c",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/audit_raw_structure.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/audit_raw_structure.py",
+      "bytes": 6827,
+      "sha256": "775ce3e679b6e35830c54b40347bf9471c3cf23802d1995a9913097ed1060062",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/checker-freeze-v2.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/checker-freeze-v2.json",
+      "bytes": 1620,
+      "sha256": "67db3a68dd84376531ff2bafdf8cf9dc2b6822b492517b33042be2c4f7a1a4ff",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/finite_checks.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/finite_checks.py",
+      "bytes": 27904,
+      "sha256": "6b7b41d61e76fc8359ad10481a7534293b52e53b2faf5f6265262e985d96a5ca",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/modern_mesh.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/modern_mesh.py",
+      "bytes": 10516,
+      "sha256": "6b8157d7744595519595710ab5a2e95b5485448bb5220aac02bbeb6d707c9e47",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/run_finite_checks.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/run_finite_checks.py",
+      "bytes": 1563,
+      "sha256": "de9c523f50fce1d839ee56cf8bc1717f7c90ebb23565d843c947da38c23d5731",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/engine/test_synthetic.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/engine/test_synthetic.py",
+      "bytes": 4843,
+      "sha256": "fe5a0194d9d4b1d534ab5c487acdb430e5dfcfb08745f5cfde68c04ef0e3880e",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/external-tool-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/external-tool-lock.json",
+      "bytes": 1272,
+      "sha256": "ea90b6b438725b0308250810a7dd25dd5f1a6be22c6c464ab68da7ce6c3a17e1",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/independent-engine-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/independent-engine-lock.json",
+      "bytes": 2459,
+      "sha256": "2a5d3e809bd191961d641acf293ccfaca7e29f1385dab6a07fd8fabae8e5acac",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/modern_contract.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/modern_contract.py",
+      "bytes": 5347,
+      "sha256": "aa9b34a41e0dc224a1cfd206b6e394fb4b1346e28517626848775a00f2bc0a8b",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/package_modern.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/package_modern.py",
+      "bytes": 18452,
+      "sha256": "ba2a6ea657659296490797c806a0a9f2e60a2cc7830e1a4c677af9fa7d096c1e",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/README.md",
+      "bytes": 11974,
+      "sha256": "28e7d0d369378acc3e216c79aeddf1f7d48cb08f371a0cc4355a03dcb602d0f8",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/contracts.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/contracts.py",
+      "bytes": 29775,
+      "sha256": "4580d11384ec7b281d2ea1872177608687e9a09f602263578a568c137b805677",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/geometry_supplements.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/geometry_supplements.py",
+      "bytes": 19005,
+      "sha256": "8aea4028551757948e685618fc4d3c6483f50f19885025da99b62fb5ba9745db",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/museum_supplements.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/museum_supplements.py",
+      "bytes": 27047,
+      "sha256": "a5dfcb19e3ecfa69215806accf4c8089f24acd2fb67be0d0532da87e938b11b8",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/prepare_registration.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/prepare_registration.py",
+      "bytes": 12720,
+      "sha256": "5d8aa13a98291eb35e75030e17d4996274cb5a35c9fa25eb9c3db48f0fe91817",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/public_dependency_allowlist.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/public_dependency_allowlist.json",
+      "bytes": 25803,
+      "sha256": "7c03b08055736d2107b85ee8c80b71ebdf55cd652a699f1d6d57a1f277311098",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/public_dependency_compat.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/public_dependency_compat.py",
+      "bytes": 4299,
+      "sha256": "ef8372ea53a36799b31f1383850e69ffcd5c5846ceecb4ece58cd604ead44b22",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/report_adapters.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/report_adapters.py",
+      "bytes": 13657,
+      "sha256": "65eb4f71de820b0a3fe7287ee3d154f7346778dd7618a5b99cd9f13948fd57b7",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/registration/supplement_dispatch.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/registration/supplement_dispatch.py",
+      "bytes": 970,
+      "sha256": "3d07ad032479d1bb4eea909247c95a6023230158f17be7097224d26fb6302e5b",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/run_decoded_finite.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/run_decoded_finite.py",
+      "bytes": 7124,
+      "sha256": "475ff71d863e2e29a2013151bb41340d7c088d1320d4eba6da5b0d13e685e2fd",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/tests/test_contract.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tests/test_contract.py",
+      "bytes": 1698,
+      "sha256": "c0d138a778cc92802716ddf48699f89387824e17446dcea703755382eb2ad780",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/tests/test_decode_core.mjs",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tests/test_decode_core.mjs",
+      "bytes": 3954,
+      "sha256": "4baa92d947e5646f5524bbda3c6915599b1b10ac8cf23223132b83ae97c97a7b",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/upstream-lock.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/upstream-lock.json",
+      "bytes": 2100,
+      "sha256": "f5e30d8d9c18edc3486c5591d7d86439dd2da3afb6b4217a9111581da1b78275",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/upstream/build_bund_lods.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/upstream/build_bund_lods.py",
+      "bytes": 18911,
+      "sha256": "8462457645497318b5cc0cf42bb503fb200765b7877c527be5088779a2049782",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/upstream/compare_model_compression.mjs",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/upstream/compare_model_compression.mjs",
+      "bytes": 7238,
+      "sha256": "a48e4021cecf1f7f3f32a96f2b7f0d495fd994a4737084f090c178779bde6ed2",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/upstream/package_building.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/upstream/package_building.py",
+      "bytes": 32230,
+      "sha256": "7013cbe6af479f1dfeea37383dfff57658108fcabdaecb4898a89f61e0129fa9",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    },
+    {
+      "file": "source/precise/jiading-shanghai-auto-museum/tools/v11/registration-museum-v2-preparation/toolchain/upstream/package_precise_building.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/upstream/package_precise_building.py",
+      "bytes": 16501,
+      "sha256": "aad5e5e31494666eb73620113dd94bb386749d43c734dd2bb600173fdd44c6ba",
+      "kind": "authored-source",
+      "license": "MIT",
+      "license_url": "https://opensource.org/license/mit",
+      "redistribution_basis": "Authored audit/documentation or independently generated exact evidence; no third-party research image, HTML or PDF payload."
+    }
+  ],
+  "payload_copied": false,
+  "package_accepted": true,
+  "decoded_accepted": false,
+  "nine_section_review_accepted": false,
+  "browser_accepted": false,
+  "registered": false,
+  "scope": "Exact explicit source/reference/public-evidence mapping after real packaging only. Full current raw proofs retained. No registration, decode or browser acceptance is inferred."
+}

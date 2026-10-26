@@ -1,0 +1,183 @@
+{
+  "schema": "museum-v2-exact-source-compatibility-controls-v11",
+  "source_contract_controls_passed": true,
+  "control_count": 25,
+  "controls": [
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "all frozen source dependencies remain at original relative paths",
+      "expected": "source-only accepted",
+      "observed_expected": true
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "pending remains rejected",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual explicit per-building source publication whitelist required"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject missing calibration.json",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: calibration.json"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject missing references/commons-57659417.jpg",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: references/commons-57659417.jpg"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject relocated binary dependency",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Unlicensed image, HTML/text snapshot or unapproved source kind cannot be published"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject relabeled photograph license",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Special source bytes, hash or individual license differs"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject incorrect photograph author",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Source photo alias must match one independently declared licensed package photo"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject stale dependency SHA",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual source bytes/SHA differ: /workspace/shanghai_expansion/building-by-building-v11/auto-museum/geometry-v2/calibration.json"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject binary evidence bypass",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Special dependency cannot bypass exact author membership"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject unknown source freeze",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual explicit per-building source publication whitelist required"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject missing new bounded-repair dependency repair-inputs.json",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: repair-inputs.json"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject missing new bounded-repair dependency change-scope.json",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: change-scope.json"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject missing new bounded-repair dependency history/source-freeze-v1.json",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: history/source-freeze-v1.json"
+    },
+    {
+      "model": "jiading-shanghai-auto-museum",
+      "control": "reject v1 source freeze under v2 tool selection",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual explicit per-building source publication whitelist required"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "all frozen source dependencies remain at original relative paths",
+      "expected": "source-only accepted",
+      "observed_expected": true
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "pending remains rejected",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual explicit per-building source publication whitelist required"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject missing calibration.json",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: calibration.json"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject missing references/commons-14434416-original.jpg",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Complete frozen author layout required at original relative path: references/commons-14434416-original.jpg"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject relocated binary dependency",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Unlicensed image, HTML/text snapshot or unapproved source kind cannot be published"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject relabeled photograph license",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Special source bytes, hash or individual license differs"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject incorrect photograph author",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Source photo alias must match one independently declared licensed package photo"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject stale dependency SHA",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual source bytes/SHA differ: /workspace/shanghai_expansion/building-by-building-v11/pao-yue-kong-library/geometry-v2/calibration.json"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject binary evidence bypass",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Special dependency cannot bypass exact author membership"
+    },
+    {
+      "model": "minhang-baoyugang-library",
+      "control": "reject unknown source freeze",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Actual explicit per-building source publication whitelist required"
+    },
+    {
+      "control": "Library branch, all10 Museum special-file identities and core checker/decoder/mathematics stay exact",
+      "observed_expected": true
+    }
+  ],
+  "actual_geometry_checked": false,
+  "new_tool_freeze_created": false,
+  "model_ready": false,
+  "actual_registration_performed": false,
+  "native_accepted": false,
+  "browser_accepted": false
+}

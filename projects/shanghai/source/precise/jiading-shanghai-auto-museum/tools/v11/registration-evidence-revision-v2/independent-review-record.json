@@ -1,0 +1,40 @@
+{
+  "schema": "modern-registration-supplement-independent-review-v1",
+  "reviewer": "/root/next_model_research_a",
+  "review_mode": "Actual read-only source review via collaboration messages; no model acceptance",
+  "reviewed_files": [
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/toolchain/registration/geometry_supplements.py",
+      "bytes": 19005,
+      "sha256": "8aea4028551757948e685618fc4d3c6483f50f19885025da99b62fb5ba9745db"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/toolchain/registration/prepare_registration.py",
+      "bytes": 12670,
+      "sha256": "86a5f20a4ba2a2e43490f4da01b7eaf9c4b5ca4311c48498562354fe087fe3a3"
+    }
+  ],
+  "finding": {
+    "classification": "deterministic missing frozen-history binding",
+    "description": "A self-consistent alternate old raw/structure/allowlist could pass internal links without matching the author-frozen unique baseline.",
+    "resolution": "Added identity(change.baseline_raw)==revision.old_asset_identity.raw and source_freeze.baseline_rejected_raw_sha256 equality.",
+    "resolution_verified_by": "current code and new internally coherent wrong-history negative control in test_supplement_guards.py",
+    "original_files_changed": false
+  },
+  "nonblocking_dependency_note": "Raw to authored LOD normal preservation is enforced by the frozen decoder compareProtectedGroups -> compareTriangles(.05) before passed; no first-segment numeric maximum is fabricated. The transfer output now states this dependence explicitly.",
+  "other_review_observations": [
+    "Current raw/source/structure and distinct3proof domains reviewed with no other deterministic blocker found.",
+    "Protected delivery part coverage includes pane/frame/sixcolumns/deck/paving; exact position and material chain retained.",
+    "265/2988 counts explicitly remain historical raw counts, not authored-LOD counts.",
+    "Facet index/qualifying count and positive cap-cell area guards were reviewed as within scope."
+  ],
+  "blocking_findings_remaining": [],
+  "guard_results": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/tests/supplement-guard-results.json",
+    "bytes": 5662,
+    "sha256": "f96783193ba61eac0b45f8c004d5b2b238f0e7c368d03f48231f1b4fbea2176c"
+  },
+  "actual_registration_performed": false,
+  "native_accepted": false,
+  "browser_accepted": false
+}

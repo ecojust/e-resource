@@ -1,0 +1,104 @@
+{
+  "schema": "auto-museum-semantic-export-contract-v11",
+  "id": "jiading-shanghai-auto-museum",
+  "raw_filename": "jiading-shanghai-auto-museum-raw.glb",
+  "raw_companion_geometry_filename": "jiading-shanghai-auto-museum-raw.geometry.json",
+  "geometry_report_schema": "auto-museum-float32-geometry-v11",
+  "asset_metadata_schema": "auto-museum-raw-metadata-v11",
+  "native_report_schema": "auto-museum-native-render-v11",
+  "coordinate_contract": "AuthorENU metres→glTF[east,up,-north]; Blenderimport returnsENU. SourceanchorandoriginalOSMring remainexact.",
+  "part_range_location": "Raw companion.geometry.json actual_serialized_part_ranges",
+  "range_fields": [
+    "label",
+    "material",
+    "primitive_index",
+    "first_triangle",
+    "triangle_count"
+  ],
+  "range_scope": "Per-material primitive index-buffer triangle positions. Labels unique; source-run selfchecks not independent readback.",
+  "expected_design_counts": [
+    {
+      "role": "north_curved_glazed_slots",
+      "label_regex": "^north-spine/glazed-wrap-slot-[1-5]$",
+      "count": 5,
+      "source_scope": "Fivevisible slotfeatures in supplierphotocrossviews; modelcount, not a surveyed allfacadeinventory."
+    },
+    {
+      "role": "entry_glass_door_leaves",
+      "label_regex": "^entry/leaf-[0-5]/glass$",
+      "count": 6,
+      "estimated": true
+    },
+    {
+      "role": "external_stair_treads",
+      "label_regex": "^stair/flight-[1-4]/tread-[0-9]+$",
+      "count": 72,
+      "estimated": true
+    },
+    {
+      "role": "external_stair_landings",
+      "label_regex": "^stair/landing-[1-4]$",
+      "count": 4,
+      "estimated": true
+    },
+    {
+      "role": "lower_and_upper_curtain_layers",
+      "geometry_report_field": "facade_layers",
+      "count": 5,
+      "floor_count_primary_supported": true,
+      "individual_level_heights_estimated": true
+    }
+  ],
+  "protected_prefixes": [
+    "curtain/",
+    "entry/",
+    "roof/",
+    "silver-frame/",
+    "north-spine/",
+    "ribbon/",
+    "ramp/",
+    "balustrade/",
+    "louvre/",
+    "stair/",
+    "terrace/",
+    "sign/",
+    "repair/"
+  ],
+  "required_finite_actual_checks": [
+    "Unique exactserializedpart ranges and positiveoriented per-partFLOAT32solid topology",
+    "Actualslotnegativespace inopaquenorthCwrapper, with realrecessedcurvedglazing and5slotroles",
+    "Entryopening/doorleaves, real glass thickness and distinctcurtainlayer setbacks",
+    "Roof/deck joins and actualCwrapper/roof/soffit/panelcontacts; distinguish positivearea planecontactfrom positivevolumeoverlap",
+    "SilverCverticalcurves and finite selfintersection risk, continuousyellowtransitions",
+    "Louvreblades separatedand connected to actualstandoffs; railgaps and stairtread/landingconnection",
+    "Actual raw/decoded bounds preserve neighboring owners735/797",
+    "Decoded webgeometry preserves tinyglyphandglazing triangles; actualimage/embedflags truthful",
+    "Exact actualv1/v2 per-part triangle/normal/material retention outside declared oneoldpartchange and5newparts; everynew support has finitearea actualtarget contact, north ties avoid5glassslots."
+  ],
+  "no_whole_collision_claim": true,
+  "source_preflight_is_not_model_acceptance": true,
+  "lod": {
+    "first_strategy": "Lossless meshopt with Float32 POSITION retained, gltfpack -cc -noq -km -ke; no whole-model simplification",
+    "position_bits_min_recommended": 24,
+    "raw_max_target_bytes": 45000000,
+    "native_max_target_bytes": 30000000,
+    "web_max_target_bytes": 20000000,
+    "hard_singlefile_bytes_less_than": 100000000,
+    "decoded_actual_recheck_required": true,
+    "selected_pipeline_quantizes_positions": false
+  },
+  "native_roles": [
+    "full",
+    "detail",
+    "rear"
+  ],
+  "native_cameras_photo_calibrated": false,
+  "public_dependencies": "Onlyfileslistedinsource-freeze.json, plus the manifest itself; do not recursivelycopyresearchsiblings.",
+  "geometry_revision": "geometry-v2",
+  "bounded_repair_scope": "change-scope.json andrepair-inputs.json; plannedoneoldpartchange+fivenewparts, actualdiffpending",
+  "native_projection_policy": {
+    "full": "1.7m eyeheight45mm perspective273degrees, actualAABBfit and actualBlenderprojection validation",
+    "detail_and_rear": "Unchanged v1 orthographic logic and parameters",
+    "photo_calibrated": false
+  }
+}

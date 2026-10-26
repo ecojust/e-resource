@@ -1,0 +1,200 @@
+{
+  "schema": "v11-auto-museum-independent-orientation-review-v1",
+  "created_utc": "2026-10-26T19:44:51.580283+00:00",
+  "reviewer": "/root/zhenru_model_author",
+  "scope": "Independent bounded read-only map/photo orientation corroboration; no author mesh, image manipulation, camera solve, browser, Blender, source-geometry edit or current-condition certification.",
+  "id": "jiading-shanghai-auto-museum",
+  "source_input": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/geometry-input.json",
+    "bytes": 24843,
+    "sha256": "b9ecca5878e0cadf20acd143afd06d05b59689ae634c61d3f052d9d60e83ea92"
+  },
+  "existing_context": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/osm-museum-context.osm",
+    "bytes": 76884,
+    "sha256": "a7f98fd12aeb001d7809bfdc02172f3eacd714cf7cd3fc3e33b148582497cc33"
+  },
+  "new_context": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/orientation-review/osm-water-context.osm",
+    "bytes": 348241,
+    "sha256": "529ef408f20a6705801ab849f4571f9b5aeea65b2ad4e3b19ea5213649a5dfad"
+  },
+  "new_context_retrieval": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/orientation-review/osm-water-context-retrieval.json",
+    "bytes": 390,
+    "sha256": "f971a1f8e000b4bdbe59f079da19a2cbb0a2233f4c94422ae4f7927ddf94d820"
+  },
+  "photo_register": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photo-register.json",
+    "bytes": 23282,
+    "sha256": "5c6c23173af546fbd05c8315f2f2b6ff4d1029317c434bd1befc5d0c13bee3fa"
+  },
+  "photo_download_metadata": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photo-downloads.json",
+    "bytes": 41097,
+    "sha256": "284c2949c15a24353ce6de28ae1db2a39486683378a5cb16b2112438f141975c"
+  },
+  "actually_viewed_photos": [
+    {
+      "page_id": 57659417,
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photos/commons-57659417.jpg",
+      "bytes": 190630,
+      "sha256": "aa239266cfaa98af2a617374bcd7a9bc67e94edcc8b559a41f1d825f4c0132ea",
+      "actually_viewed_by": "/root/zhenru_model_author",
+      "view_method": "tools.view_image; unchanged existing downloaded JPEG",
+      "camera_calibrated": false
+    },
+    {
+      "page_id": 57659421,
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photos/commons-57659421.jpg",
+      "bytes": 279618,
+      "sha256": "1217151e21d78421ed2237214fd75cf77dc2f420d44ed09c30dbd3062da8e1e2",
+      "actually_viewed_by": "/root/zhenru_model_author",
+      "view_method": "tools.view_image; unchanged existing downloaded JPEG",
+      "camera_calibrated": false
+    },
+    {
+      "page_id": 57659431,
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photos/commons-57659431.jpg",
+      "bytes": 246675,
+      "sha256": "14dd3d6756a36cdce80180f2fb3ea92f8518396d5e9f9249e6d07f4b59907c91",
+      "actually_viewed_by": "/root/zhenru_model_author",
+      "view_method": "tools.view_image; unchanged existing downloaded JPEG",
+      "camera_calibrated": false
+    },
+    {
+      "page_id": 21052347,
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photos/commons-21052347.jpg",
+      "bytes": 195275,
+      "sha256": "5fdb2debfc76f3b6c4d2e11bb6f23a3f83336088dcdd1320033618aa009150c1",
+      "actually_viewed_by": "/root/zhenru_model_author",
+      "view_method": "tools.view_image; unchanged existing downloaded JPEG",
+      "camera_calibrated": false
+    },
+    {
+      "page_id": 20856157,
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/research-a/photos/commons-20856157.jpg",
+      "bytes": 234788,
+      "sha256": "1dfe5dad78c52e9bd2762ad6bfccd458496daaf6c711ff34befe5be3dfec27c8",
+      "actually_viewed_by": "/root/zhenru_model_author",
+      "view_method": "tools.view_image; unchanged existing downloaded JPEG",
+      "camera_calibrated": false
+    }
+  ],
+  "map_figure": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/orientation-review/osm-orientation-context.png",
+    "bytes": 142241,
+    "sha256": "28a73ffcc0823b666a009748d316aaedb1470843cf8f07be3f19fc697ec17752"
+  },
+  "map_figure_note": "Derived coordinate plot, not an aerial image. Red is exact frozen 20-point local source outline. Other lines use OSM WGS84 nodes projected by local first-order metre conversion. Grey=paths/roads; blue=mapped water boundaries/centreline; brown=buildings. Labels are actual way IDs. Thin mapped paths do not by themselves establish an entrance or camera position.",
+  "observations": [
+    {
+      "evidence": "actual frozen owner outline",
+      "fact": "The concavity between vertices 19,0,1,2 opens west/northwest. Northern lobe is around east -22..51, north -11..56 metres; southwest arm reaches east -60, north -65 metres. The outline is not a surveyed ground-wall or roof boundary."
+    },
+    {
+      "evidence": "actual photos 57659417,57659421,21052347,20856157",
+      "fact": "The frontal concavity has a tall closed upper cantilever on image left and the lower rising wrap/rounded tip on image right. Entrance, flagpoles and gear-shaped museum sign identify the same facade across these views. Photo21052347 is a closer left-side view; 20856157 sees more of the right return. These are not independent opposite facades."
+    },
+    {
+      "evidence": "new actual OSM context",
+      "fact": "OSM current museum way206501415 remains version6. Water relation6184858 outer way414932435 is a narrow north-south waterway east of the museum; near museum its western shore is about east68..76m and its eastern shore95..103m. Lake Qingjiang relation5247929 outer way236803058 has a bay south of the museum, around north -70..-130m. No mapped water occupies the immediate west/northwest concave forecourt."
+    },
+    {
+      "evidence": "actual photo57659431",
+      "fact": "Water occupies foreground; rounded glazed lower projection sits in front of the high closed upper cantilever; external zigzag stair is image left and high cantilever is image right/back. This is a distinct waterside view, consistent with an eastern or southeastern observer and northward upper block on image right. Water and architecture constrain a sector, not exact camera coordinates."
+    }
+  ],
+  "calculated_source_edge_normals": [
+    {
+      "edge_zero_based": [
+        1,
+        2
+      ],
+      "p0_enu": [
+        -20.123793980450376,
+        -0.6127026119642356
+      ],
+      "p1_enu": [
+        -21.654556904332324,
+        52.464561676071476
+      ],
+      "outward_azimuth_degrees_clockwise_from_north": 268.3480318478563,
+      "source_segment_length_m": 53.09933351211786,
+      "not_measured_facade_normal": true
+    },
+    {
+      "edge_zero_based": [
+        19,
+        0
+      ],
+      "p0_enu": [
+        -54.82806365345008,
+        -23.068044970096285
+      ],
+      "p1_enu": [
+        -24.20614556873679,
+        -6.226542704234283
+      ],
+      "outward_azimuth_degrees_clockwise_from_north": 331.1900002015236,
+      "source_segment_length_m": 34.94764749962329,
+      "not_measured_facade_normal": true
+    },
+    {
+      "edge_zero_based": [
+        0,
+        1
+      ],
+      "p0_enu": [
+        -24.20614556873679,
+        -6.226542704234283
+      ],
+      "p1_enu": [
+        -20.123793980450376,
+        -0.6127026119642356
+      ],
+      "outward_azimuth_degrees_clockwise_from_north": 306.0244280550251,
+      "source_segment_length_m": 6.941238727486844,
+      "not_measured_facade_normal": true
+    }
+  ],
+  "decision": {
+    "orientation_status": "corroborated cardinal arrangement with explicitly estimated view direction",
+    "front_outward_sector": "west through northwest; source concavity outer normals span268.35 to331.19 degrees, not a measured photographic camera interval",
+    "high_cantilever_plan_assignment": "northern lobe",
+    "lower_front_photo_right_plan_assignment": "southwestern arm",
+    "mirror_constraint": "With a west/northwest exterior observer looking east/southeast, the northern high block must project image-left and southwest lower arm image-right. Do not reflect east/north coordinates or swap these lobes to match the rear photo.",
+    "waterside_photo_sector": "east to southeast is consistent with mapped water and high-block/stair left-right relations; exact observer position unproved",
+    "illustrative_authoring_pose_only": {
+      "observer_outward_azimuth_deg": 300,
+      "look_azimuth_deg": 120,
+      "observer_horizontal_unit_ENU": [
+        -0.8660254037844386,
+        0.5
+      ],
+      "not_a_solved_camera": true
+    },
+    "geographic_cardinal_arrangement_sufficient_for_nonmirrored_draft": true,
+    "calibrated_photo_camera_or_front_azimuth_verified": false,
+    "frozen_source_facade_frame_flag_must_not_be_rewritten": true
+  },
+  "rejected_control": {
+    "page_id": 21052347,
+    "commons_desc_page_GPS_WGS84": [
+      121.1722,
+      31.2786
+    ],
+    "offset_from_source_centroid_approximately_ENU_m": [
+      619,
+      -219
+    ],
+    "reason": "Only this one of the nine saved Commons records has GPS fields. It is hundreds of metres away from the source and is labelled commons-desc-page, not verified camera EXIF/direction. Do not use it as calibrated camera location; no speculative correction applied."
+  },
+  "limits": [
+    "Water context and owner topology are independent geographic corroboration, not a metric reconstruction of roof curves or unobserved walls.",
+    "No architectural north-arrow plan, camera EXIF direction, measured facade points, or photogrammetric solve was found in this bounded check.",
+    "The northern lobe assignment is an explicit image/topology interpretation to review in author renders, not a surveyed structural floor plan.",
+    "Current OSM supplies context while photos date2011/2012/2016; no current2026 exterior inspection was performed.",
+    "Do not rotate/retrace the frozen source polygon to fit an arbitrary camera. Authoring must preserve east/north world coordinates and put camera outside geometry."
+  ]
+}

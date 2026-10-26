@@ -1,0 +1,174 @@
+{
+  "schema": "museum-supplement-evidence-gate-controls-v1",
+  "controls_passed": true,
+  "control_count": 26,
+  "controls": [
+    {
+      "control": "actual current preservation binding only",
+      "expected": "bounded gate accepted",
+      "observed_expected": true
+    },
+    {
+      "control": "actual current five-part envelope binding only",
+      "expected": "bounded gate accepted",
+      "observed_expected": true
+    },
+    {
+      "control": "reject false geometry_preservation_passed",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum actual preservation failed: geometry_preservation_passed"
+    },
+    {
+      "control": "reject false changed_panel_bounded_bottom_only",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum actual preservation failed: changed_panel_bounded_bottom_only"
+    },
+    {
+      "control": "reject false original_materials_unchanged",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum actual preservation failed: original_materials_unchanged"
+    },
+    {
+      "control": "reject false global_bounds_unchanged",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum actual preservation failed: global_bounds_unchanged"
+    },
+    {
+      "control": "reject alternate historical raw",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Wrong historical Museum baseline"
+    },
+    {
+      "control": "reject mismatched actual per-part position hash",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Repair position coverage differs"
+    },
+    {
+      "control": "reject overextended panel underside",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Panel repair exceeds actual Float32 bound"
+    },
+    {
+      "control": "reject incomplete25 slot slab pairs",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Slot clearance inventory incomplete"
+    },
+    {
+      "control": "reject new neighbor overlap despite summary true",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Incremental neighbor overlap"
+    },
+    {
+      "control": "old actual positive seat as numerical control only",
+      "expected": "bounded gate accepted",
+      "observed_expected": true
+    },
+    {
+      "control": "reject invalid seat actual_joint_cell_xy_area_m2",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Expected numerical rejection"
+    },
+    {
+      "control": "reject invalid seat pane_facing_vertical_cosine",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Expected numerical rejection"
+    },
+    {
+      "control": "reject invalid seat actual_interval_overlap_m",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Expected numerical rejection"
+    },
+    {
+      "control": "reject wrong support side/zero end extension",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Expected support direction rejection"
+    },
+    {
+      "control": "reject absent actual four-facet witness",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Expected missing facet rejection"
+    },
+    {
+      "control": "reject nonfinite actual witness coordinate",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Expected nonfinite witness rejection"
+    },
+    {
+      "control": "current master/area/request/rebinding source dictionaries match exact actual inputs",
+      "expected": "bounded gate accepted",
+      "observed_expected": true
+    },
+    {
+      "control": "reject internally consistent wrong area/request/rebinding with current master/context",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum supplemental source binding differs from actual current master inputs"
+    },
+    {
+      "control": "synthetic complete12378-position three-role transfer guard",
+      "expected": "bounded gate accepted",
+      "observed_expected": true
+    },
+    {
+      "control": "reject web role false even with global decoded pass",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Current role finite proof failed"
+    },
+    {
+      "control": "reject LOD position carryforward false",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Current role finite proof failed"
+    },
+    {
+      "control": "reject any Museum LOD omission",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum compression lost source parts"
+    },
+    {
+      "control": "reject decoded normal drift",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Museum actual normals/triangle count changed"
+    },
+    {
+      "control": "reject changed decoded actual material",
+      "expected": "rejected",
+      "observed_expected": true,
+      "reason": "Current Museum actual materials changed"
+    }
+  ],
+  "current_actual_preservation": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/actual-preservation.json",
+    "bytes": 8841879,
+    "sha256": "953c5ca866e61ff623dff914e40e6df0efc3178d9fe42f2318b5adb4719f1608"
+  },
+  "current_actual_envelope": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/geometry-v2-review/actual-repair-envelope.json",
+    "bytes": 29745,
+    "sha256": "eb763f4fdd162cc3ea5109e379f74b4e0005b2207df3623af676a23da54b4612"
+  },
+  "unchanged_core_math_decoder_bridge_library_bytes": true,
+  "actual_model_registration_performed": false,
+  "actual_current_area_or_decoded_executed": false,
+  "synthetic_decoder_fixture_is_not_actual_evidence": true,
+  "native_accepted": false,
+  "browser_accepted": false
+}

@@ -1,0 +1,812 @@
+{
+  "schema": "modern-finite-requests-v1",
+  "state": "READY_FOR_ACTUAL_AUDIT",
+  "model_id": "jiading-shanghai-auto-museum",
+  "source_binding": {
+    "structure_report_sha256": "1bcc949c60717ed6f688d10000d23b70abd7a482d351bc7c43ded5f812b3ee5b",
+    "raw_sha256": "5c2f93f9b66f75771587ed532928d02dbc3d6960fc1c0804d37e498faa9a969d",
+    "source_freeze_sha256": "82e0bb92df2d7ff09bc0554fc5c421546b865a7b8849b6cbbdb131133169db2c",
+    "geometry_input_sha256": "b9ecca5878e0cadf20acd143afd06d05b59689ae634c61d3f052d9d60e83ea92",
+    "calibration_sha256": "087fc28196d488897f2baab54913b7dd6c732df2320ff0daffa07b936c7af777"
+  },
+  "input_descriptors": {
+    "author_question_locations_not_acceptance": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/auto-museum/design/audit-question-inputs.json",
+      "bytes": 27760,
+      "sha256": "a80dca019b0fc1d2aeca86280db1528a24b351f7e6e7ff9058ff0a762240d0c4"
+    },
+    "generator": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/prepare_requests.py",
+      "bytes": 16621,
+      "sha256": "4e2b78aa2bfd7723c48df512305c545a9d1e9e782c3c23e6622a2e8dea50e3ab"
+    },
+    "checker_freeze": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v11/independent-museum-review/checker-v2/checker-freeze-v2.json",
+      "bytes": 1620,
+      "sha256": "67db3a68dd84376531ff2bafdf8cf9dc2b6822b492517b33042be2c4f7a1a4ff"
+    }
+  },
+  "allowed_omitted_part_keys": [],
+  "scope": "Actual lower components and upper deck/C-core joints; eight evenly distributed actual parts per six cladding/soffit/paver families. These48 panel samples are not an all-panel attachment claim.",
+  "checks": [
+    {
+      "id": "roof/lower-components-to-upper-deck",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer/component-1\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/upper-deep-cantilever-underlayer\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "roof/fourth-floor-finish-to-deck",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"roof/fourth-floor-finish\",\"Museum interior floor\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/upper-deep-cantilever-underlayer\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "roof/lower-silver-top/eight-distributed-panels-to-underlayer",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"roof/lower-silver-top/panel--1--12-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel--12--8-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel--17--11-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel--22--10-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel--6--2-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel--9--5-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel-18-17-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-silver-top/panel-9-21-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer/component-1\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "roof/upper-silver-top/eight-distributed-panels-to-underlayer",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"roof/upper-silver-top/panel--1--1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel--4-16-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel--8-5-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel-10-6-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel-14-9-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel-2-1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel-6--1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-silver-top/panel-9-9-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/upper-top-underlayer\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "roof/upper-deck-rim-finish/eight-distributed-panels-to-underlayer",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel--1--1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel--5--1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel--8-7-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel-0--1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel-15-1-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel-17-4-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel-19-12-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deck-rim-finish/panel-9--2-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/upper-deep-cantilever-underlayer\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "soffit/upper-deep-grid/eight-distributed-panels-to-underlayer",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"soffit/upper-deep-grid/panel--1--1-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel--4-16-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel--8-5-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel-10-6-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel-14-9-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel-2-1-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel-6--1-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/upper-deep-grid/panel-9-9-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/upper-deep-cantilever-underlayer\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "soffit/lower-grid/eight-distributed-panels-to-underlayer",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"soffit/lower-grid/panel--1--10-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel--13--20-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel--19--10-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel--3--5-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel--7--4-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel-10--5-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel-20-7-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"soffit/lower-grid/panel-9-21-0\",\"Museum soffit silver aluminium\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer/component-1\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "terrace/pavers/eight-distributed-panels-to-underlayer",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"terrace/pavers/panel--1--10-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel--2--8-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel--7--5-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel-10--22-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel-15--20-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel-2--21-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel-5--11-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"terrace/pavers/panel-9--9-0\",\"Museum pale terrace paver\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/lower-curved-continuous-underlayer/component-1\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "north-C/core-segments-to-upper-shell",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"north-spine/structural-C-segment-0\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-2\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-4\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-6\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-8\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-10\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"roof/upper-top-underlayer\",\"Museum standing seam underlayer\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"roof/upper-deep-cantilever-underlayer\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    },
+    {
+      "id": "north-C/silver-panels-to-core",
+      "kind": "support_each",
+      "left_selectors": [
+        {
+          "key": "[\"north-spine/silver-wrap-panel-0-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-0-1\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-0-2\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-0-3\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-0-4\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-0-5\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-2-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-2-1\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-2-2\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-4-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-4-1\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-4-2\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-1\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-2\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-3\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-4\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-5\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-6\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-7\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-8\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-6-9\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-8-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-8-1\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-8-2\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-10-0\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-10-1\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-10-2\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-10-3\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-10-4\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/silver-wrap-panel-10-5\",\"Museum silver honeycomb aluminium\",0]",
+          "expected_count": 1
+        }
+      ],
+      "right_selectors": [
+        {
+          "key": "[\"north-spine/structural-C-segment-0\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-2\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-4\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-6\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-8\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        },
+        {
+          "key": "[\"north-spine/structural-C-segment-10\",\"Museum recessed panel joint\",0]",
+          "expected_count": 1
+        }
+      ],
+      "frame": {
+        "origin_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "axes_enu": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "minimum_embed_m": 1e-06,
+      "maximum_cells_per_pair": 20000,
+      "contact_mode": "volume_or_exact_area"
+    }
+  ],
+  "appearance_or_browser_acceptance": false
+}
