@@ -1,0 +1,169 @@
+{
+  "schema": "longhua-photo-form-support-review-v1",
+  "status": "DESIGN_SUPPORTED_WITH_CONCRETE_SHAPE_GUARDS",
+  "scope": "Actual readonly review of four existing licensed previews, official evidence, DESIGN and analytic draft; no assets/render/browser or source edits",
+  "inputs": [
+    {
+      "file": "DESIGN.md",
+      "bytes": 6899,
+      "sha256": "81132f6e904f025c6bc2b6e35176737fbe0140c23b3b24114d3ecb4448ce61b6"
+    },
+    {
+      "file": "construction-plan.json",
+      "bytes": 15471,
+      "sha256": "1730ee761b47e5e27967ddf5d2bf2dcda5fb9e45e0088a1236b68135478a8f75"
+    },
+    {
+      "file": "construction_draft.py",
+      "bytes": 9557,
+      "sha256": "4038b2a386cccd0a35eb21852459c659d871f26c2d7513e87b8d316bccab6337"
+    },
+    {
+      "file": "photo-review-independent.json",
+      "bytes": 11415,
+      "sha256": "9c44b4f62b8dda9164b07838aa7da2beb864f0360444858debc772dcc305bebf"
+    },
+    {
+      "file": "references/official-independent/review.json",
+      "bytes": 11645,
+      "sha256": "1c54cffc552d9ec004f685711728c4d70f7cbd7e15345f1c5fb79f3a2150b3cb"
+    },
+    {
+      "file": "references/39774289-preview.jpg",
+      "bytes": 401093,
+      "sha256": "8d2a5c4d7e184333496baad709167cd0c42a28416ffa9a2ef0fd9e93bf161d14"
+    },
+    {
+      "file": "references/124610746-preview.jpg",
+      "bytes": 367432,
+      "sha256": "fd11285d192287a70067fa06df3d6a69871fa4105f90a6c060cc7b3a4c697891"
+    },
+    {
+      "file": "references/83212925-preview.jpg",
+      "bytes": 217588,
+      "sha256": "0c55372232ec365867455119824663612b2da2e36299d3062ee20517bc9791ee"
+    },
+    {
+      "file": "references/50958259-preview.jpg",
+      "bytes": 160429,
+      "sha256": "d49550dd91f22d174451bdd75f0ccfd775eb247c78cd39ddd2ce16003aa3977c"
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "topic": "seven-level-count",
+      "observed": "Two full views support seven principal eave tiers, with six exposed elevated railing bands. The lowest broad tiled slope belongs to the base/storey1 eave candidate; enclosure coping crosses in front of it.",
+      "action": "Use exactly7level/eave IDs. Count and review both full-photo silhouettes before detail refinement; do not append a separategroundpavilion/eighthroof just because the lowest slope is wide. Keep enclosure wall/gate outside the tower owner.",
+      "design_assessment": "Current DESIGN correctly adopts this interpretation; basal assignment is not a measured survey."
+    },
+    {
+      "priority": "P1",
+      "topic": "per-level-proportion",
+      "observed": "Apparent roof-to-roof spacing decreases toward the top in the2015corner view; the six lower-to-upper intervals do not represent equal image heights. Both views show progressive upper silhouette narrowing.",
+      "action": "Keep per-level wall/platform/eave heights and radii independent parameters, then compare projected silhouettes in both photos. Do not directly use pixel width/gap ratios as physical taper or floor heights. Avoid an unjustified sudden waist or overly tall middle storey.",
+      "image_space_control_reuse": {
+        "source_file": "photo-review-independent.json",
+        "source_sha256": "9c44b4f62b8dda9164b07838aa7da2beb864f0360444858debc772dcc305bebf",
+        "photo_pageid": 39774289,
+        "preview_size": [
+          960,
+          1445
+        ],
+        "eave_front_corner_points_top_to_bottom": [
+          [
+            490,
+            241
+          ],
+          [
+            488,
+            355
+          ],
+          [
+            481,
+            474
+          ],
+          [
+            472,
+            619
+          ],
+          [
+            461,
+            775
+          ],
+          [
+            451,
+            941
+          ],
+          [
+            441,
+            1111
+          ]
+        ],
+        "consecutive_y_gaps_top_to_bottom_px": [
+          114,
+          119,
+          145,
+          156,
+          166,
+          170
+        ],
+        "approximate_reuse_not_new_survey": true,
+        "warning": "Different roof depths, perspective and camera tilt remain; these are future projected-image checks only, not metric constraints."
+      }
+    },
+    {
+      "priority": "P1",
+      "topic": "roof-surface-direction",
+      "observed": "2016and2019closeups show broad sloping tile fields with corner rise; tile-end line, rounded rafter-end line and bracket zone are separate depth layers. A roof is not eight planar triangular fans or a uniformly upturned bowl.",
+      "action": "For the reviewed analytic formula, at face center(s=.5), outer radial derivative is(eave_mid_z-inner_z)+4*sag. If this is positive, the central outer strip rises out of a trough too. Unless deliberately supported by a traced local edge, constrain this derivative<=0 as an initial shape guard; reserve strong lift for corners. Keep sag and corner_lift independent, and make the currentabs(2s-1)^6 concentration adjustable during photograph comparison.",
+      "reviewed_formula": "z=inner_z*(1-t)+eave_mid_z*t-sag*4*t*(1-t)+corner_lift*t*t*abs(2*s-1)**6",
+      "limitation": "No universal physical roof curve or fixed sag value is measured here; the guard detects an unintended shape family, not a new universal acceptance threshold."
+    },
+    {
+      "priority": "P1",
+      "topic": "balcony-is-not-roof",
+      "observed": "Closeup83212925 shows an upper railing, a thick gray platform fascia and small support blocks beneath it; farther down lies a separately curved roof with tile ends/rafters and larger bracketsets.",
+      "action": "Model railing atop a deck edge, with fascia thickness and independent underside supports. Keep air/depth between deck-support and lower roof where visible; do not merge them into a single horizontal painted stripe or use roof surfaces as walkable balcony floors."
+    },
+    {
+      "priority": "P2",
+      "topic": "railings-and-dougong",
+      "observed": "Railing is open rectilinear fretwork between larger posts, with a separate top rail and corner post caps. Bracketsets step out in several layers, along flat faces and in two directions at corners.",
+      "action": "Union overlapping2Drail bars before extrusion; maintain real voids and connect end modules to posts. Do not stretch one fretsymbol across an entire irregular edge or make it a darkopaqueplane. Use repeated face brackets plus distinct corner arms; retain round rafter ends in their own row under tile ends. Avoid identical unprofiled boxpiles for all brackets.",
+      "limitation": "Hidden branch joints, exact bracket taxonomy/dimensions and material grain are not measured from these previews."
+    },
+    {
+      "priority": "P1",
+      "topic": "openings-and-compass",
+      "observed": "2015lower exposed levels alternate the dark cusped opening between adjacent visible faces;2016closeup has an opening onimageleft and solid yellow infill onimageright. That supports alternating through/blank treatment, not a geographic edge.",
+      "action": "Keep4through/4blind per level and alternate phase between levels; no opaque backplate over intended through openings. Keepfirst_level_open_parity and camera/geographic phase unresolved or explicitlyestimated. Existing2016GPS is only a candidatecamera constraint.",
+      "no_new_geographic_control_found": true,
+      "reason": "No alreadyverified gate/wall/source correspondence exists in this review. The white neighboring structures visible in2015mustnot be identified as a particular OSMhall solely by stylistic resemblance."
+    },
+    {
+      "priority": "P1",
+      "topic": "spire",
+      "observed": "Full photographs show a slender dark stacked-ring shaft below the goldupper ornament and diagonals to the top roof; it is not anotheroccupiedstorey or a singlecone.",
+      "action": "Treat published32.3/40.64as nominalbody/total controls with an explicit chosen datum. Build coveredbowl/base/tray, seven substantial phase-rings and bottle as distinct profiles; do not count neckbands as extra phase-rings. Use four guycables distributed aroundthetop, not four adjacent octagoncorners. Document wireanchor parity independently from doorphase if not calibrated.",
+      "additional_document_check": "OfficialXuhuidistrict passage records the1980s replacementbottle as1.9m high. This can guide a nominal bottleportion sanitycheck, but its referenceplanes are not newlymeasured and8.34m remains only total-minus-body arithmetic."
+    },
+    {
+      "priority": "P2",
+      "topic": "material-and-base",
+      "observed": "Sunlit2016closeup is pale/washed out;2019brackets read dark partly because of occlusion. Railing/platform weathering is grayish rather than uniformly freshred. Base and stair geometry remain hidden.",
+      "action": "Prefer the chosen2019epoch for broad material tuning; do not bake shadow darkness or combine exposure differences into randommaterialpatches. Keep plaster/timber/tile/weatheredfascia separate. Use an explicit estimated base and omitted/unconfirmedstairs rather than inventing a detailed stair flight."
+    }
+  ],
+  "acceptance_limits": [
+    "This is a pre-model visual/design review, not a mesh, dimensional, normal, native or browserPASS.",
+    "No new photographs downloaded; no pixel regions modified; no assumed optical calibration or exact floorheights.",
+    "The current seven-level design can proceed with clearlylabelled initial dimensions; the listed shape/ownership guards remain for actualgeometry and two-viewrender review."
+  ],
+  "actions": {
+    "source_or_main_changed": false,
+    "geometry_generated": false,
+    "browser_or_Blender": false,
+    "only_new_review_file": "photo-form-review-support.json"
+  }
+}

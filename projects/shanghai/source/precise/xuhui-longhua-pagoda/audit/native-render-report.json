@@ -1,0 +1,122 @@
+{
+  "schema": "longhua-native-render-v9",
+  "source_glb": "/workspace/shanghai_expansion/building-by-building-v9/longhua-pagoda/v3/run-v3/raw/xuhui-longhua-pagoda-raw.glb",
+  "source_glb_sha256": "cf9882129faf39b38e27bd385c9ec6e266da7c66fd59f8dd3c368bdc69af4183",
+  "builder_sha256": "d66071b180d11cf6509f4fd0b2a836942fadde09b71dbde2758010f1a334fea0",
+  "calibration_sha256": "0d9bce64b13be34c65509eaede478a5dda410ca7690c96985e5fe0ad35a97747",
+  "renderer_sha256": "99c5c99f3e884d7ef8c6f18a10f6085ea7b34ecd3fc29e16fa94f6ad1b321659",
+  "blender_version": "4.3.2",
+  "engine": "CYCLES CPU",
+  "samples": 48,
+  "threads": 2,
+  "denoising_enabled": false,
+  "denoising_policy": "Use only when the actual Blender build provides OpenImageDenoise",
+  "native": {
+    "file": "xuhui-longhua-pagoda.blend",
+    "bytes": 24033748,
+    "sha256": "0b9c0595ce87e84bb320b395ab70b98b78619d14e3f3439c106e80ffc2b680cb"
+  },
+  "bounds_enu_m": [
+    [
+      -9.565848350524902,
+      -9.837447166442871,
+      0.0
+    ],
+    [
+      9.850592613220215,
+      9.578412055969238,
+      40.63999938964844
+    ]
+  ],
+  "model_meshes": 1,
+  "model_images": 0,
+  "preview_collection_excluded_from_raw": true,
+  "preview_ground_z": -0.025,
+  "ground_base_m": 0,
+  "renders": [
+    {
+      "file": "xuhui-longhua-pagoda-full.png",
+      "bytes": 1870241,
+      "sha256": "27490fd056901624bdf541281951c12e5f2607478cd82a2cc84fe612c9bafd75",
+      "camera": {
+        "name": "Full_tower_three_quarter",
+        "projection": "orthographic",
+        "azimuth_degrees": 316,
+        "elevation_degrees": 5,
+        "resolution": [
+          1000,
+          1400
+        ],
+        "ortho_scale": 45.576725006103516,
+        "position_enu": [
+          -56.34235763549805,
+          58.35306167602539,
+          27.128890991210938
+        ],
+        "target_enu": [
+          0.14237213134765625,
+          -0.1295175552368164,
+          20.31999969482422
+        ],
+        "photo_calibrated": false
+      }
+    },
+    {
+      "file": "xuhui-longhua-pagoda-detail.png",
+      "bytes": 1789127,
+      "sha256": "c7fb401afe18f190d325dee02c229ca637428fdf423c8b228f8e0f447446b9e8",
+      "camera": {
+        "name": "Middle_storeys_detail",
+        "projection": "orthographic",
+        "azimuth_degrees": 331,
+        "elevation_degrees": 0,
+        "resolution": [
+          1200,
+          900
+        ],
+        "ortho_scale": 15.333333015441895,
+        "position_enu": [
+          -39.40532684326172,
+          71.0890884399414,
+          16.0
+        ],
+        "target_enu": [
+          0.0,
+          0.0,
+          16.0
+        ],
+        "photo_calibrated": false
+      }
+    },
+    {
+      "file": "xuhui-longhua-pagoda-low.png",
+      "bytes": 1806933,
+      "sha256": "7020b2bc4bd1565c03e65f84b05e8ee54dc02e529d6a6365ceb936f635557523",
+      "camera": {
+        "name": "Low_human_height_perspective",
+        "projection": "perspective",
+        "resolution": [
+          1200,
+          900
+        ],
+        "position_enu": [
+          -18.06111717224121,
+          18.702835083007812,
+          1.649999976158142
+        ],
+        "target_enu": [
+          0.0,
+          0.0,
+          13.5
+        ],
+        "focal_length_mm": 42.0,
+        "sensor_width_mm": 36,
+        "photo_calibrated": false,
+        "purpose": "Human-height upward view of real roof underside/supports; no photo camera solution claimed"
+      }
+    }
+  ],
+  "human_visual_review_passed": false,
+  "browser_passed": false,
+  "notes": "These are generated geometry previews, not human acceptance or calibrated photo matches. All three cameras are retained in the editable compressed blend."
+}

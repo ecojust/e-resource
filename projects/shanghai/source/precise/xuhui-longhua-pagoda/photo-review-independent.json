@@ -1,0 +1,382 @@
+{
+  "schema": "longhua-independent-photo-observation-v1",
+  "status": "DESIGN_OBSERVATIONS_ONLY_NO_MODEL_ACCEPTANCE",
+  "coordinate_convention": "All hand-selected coordinates are x,y in the existing unmodified Commons preview raster, origin upper-left. They are approximate visual pointers, not measured source-image control points, orthorectified coordinates, or metre-scale calibration. Typical indication uncertainty8-20px; lower obscured roofs30px or more.",
+  "photos": [
+    {
+      "pageid": 124610746,
+      "file": "/workspace/shanghai_expansion/building-by-building-v8/research-next/longhua-pagoda/124610746-preview.jpg",
+      "sha256": "fd11285d192287a70067fa06df3d6a69871fa4105f90a6c060cc7b3a4c697891",
+      "dimensions": [
+        960,
+        1440
+      ],
+      "author": "Balon Greyjoy",
+      "license": "CC0",
+      "actual_viewed": true
+    },
+    {
+      "pageid": 39774289,
+      "file": "/workspace/shanghai_expansion/building-by-building-v8/research-next/longhua-pagoda/39774289-preview.jpg",
+      "sha256": "8d2a5c4d7e184333496baad709167cd0c42a28416ffa9a2ef0fd9e93bf161d14",
+      "dimensions": [
+        960,
+        1445
+      ],
+      "author": "Fayhoo",
+      "license": "CC BY-SA 3.0",
+      "actual_viewed": true
+    },
+    {
+      "pageid": 83212925,
+      "file": "/workspace/shanghai_expansion/building-by-building-v8/research-next/longhua-pagoda/83212925-preview.jpg",
+      "sha256": "0c55372232ec365867455119824663612b2da2e36299d3062ee20517bc9791ee",
+      "dimensions": [
+        960,
+        640
+      ],
+      "author": "Siyuwj",
+      "license": "CC BY-SA 4.0",
+      "actual_viewed": true
+    },
+    {
+      "pageid": 50958259,
+      "file": "/workspace/shanghai_expansion/building-by-building-v8/research-next/longhua-pagoda/50958259-preview.jpg",
+      "sha256": "d49550dd91f22d174451bdd75f0ccfd775eb247c78cd39ddd2ce16003aa3977c",
+      "dimensions": [
+        960,
+        640
+      ],
+      "author": "Zhangzhugang",
+      "license": "CC BY-SA 4.0",
+      "actual_viewed": true
+    }
+  ],
+  "independent_findings": [
+    {
+      "id": "seven-roofs-six-visible-balconies",
+      "confidence": "high for visible cycle count, medium for lowest roof assignment",
+      "observation": "The2015corner view and2019face-centered view each show seven principal descending roof/eave cycles. Six clearly exposed elevated balcony/railing bands occur between these roofs. The lowest storey/ground-level arcade is obscured, so do not create an eighth independent pagoda tier because a wide low tiled slope is visible."
+    },
+    {
+      "id": "lowest-wide-roof",
+      "confidence": "medium",
+      "observation": "The broad low tiled roof below the lowest exposed elevated balcony is centred under the tower and appears continuous with its basal arcade/eave. Its outer contour and exact depth are hidden by trees, the gate and boundary wall. It is a candidate first-storey/ground-arcade eave, not independently demonstrated to be a separate pavilion.",
+      "photo_controls": {
+        "39774289": {
+          "approx_polygon": [
+            [
+              253,
+              1109
+            ],
+            [
+              452,
+              1095
+            ],
+            [
+              744,
+              1176
+            ],
+            [
+              650,
+              1207
+            ],
+            [
+              414,
+              1175
+            ]
+          ],
+          "comment": "Sloping gray tiled area under the balcony; outline is partially occluded and these points do not define a complete roof polygon."
+        },
+        "124610746": {
+          "approx_visible_region": [
+            [
+              84,
+              1276
+            ],
+            [
+              260,
+              1218
+            ],
+            [
+              451,
+              1202
+            ],
+            [
+              590,
+              1328
+            ]
+          ],
+          "comment": "Large radial tile courses behind the foreground wall; not a complete edge trace."
+        }
+      }
+    },
+    {
+      "id": "foreground-wall-separated",
+      "confidence": "high",
+      "observation": "The very front continuous low wall with dense horizontal tile-end band is a distinct foreground enclosure. Its coping, gate and lamps must not be silently merged with the single tower owner. In the2019full view it crosses below the broad low roof and occludes the base.",
+      "photo_controls": {
+        "124610746": {
+          "wall_band_bbox": [
+            0,
+            1330,
+            770,
+            1439
+          ]
+        },
+        "83212925": {
+          "foreground_wall_band_bbox": [
+            0,
+            565,
+            959,
+            639
+          ]
+        }
+      }
+    },
+    {
+      "id": "adjacent-opening-parity",
+      "confidence": "high for lower visible storeys",
+      "observation": "The2015corner view alternates the dark cusped opening between the two faces immediately beside the central near corner on successive exposed lower storeys. The face without that opening shows yellow solid/blank infill framed in red. Do not cut all eight faces identically. The upper two visible storeys are less legible at this preview scale and should not receive independent exact shape claims."
+    },
+    {
+      "id": "between-photo-parity-not-compass",
+      "confidence": "high",
+      "observation": "The central face in2019has the same alternating open/blank pattern that can be associated with the right-of-near-corner face in2015for the lower visible storeys. This only constrains opening parity up to octagonal symmetry. It does not establish a unique geographic edge or camera azimuth. No true north/cardinal face is assigned."
+    },
+    {
+      "id": "closeup-adjacent-faces",
+      "confidence": "high",
+      "observation": "2016closeup shows one dark cusped opening on image-left face and broad yellow blank infill on image-right face across a red corner column. This independently supports different adjacent-face treatments. The crop alone does not identify a storey number or orientation."
+    },
+    {
+      "id": "closeup-vertical-alternation",
+      "confidence": "medium-high",
+      "observation": "2019closeup shows a lower central yellow blank panel and a small dark cusped upper opening behind the next higher balcony rail. The balcony and roof are separate depth layers; flat painted rail/roof bands would lose this structure."
+    },
+    {
+      "id": "eave-layering",
+      "confidence": "high",
+      "observation": "Closeups show curved tile surfaces, cylindrical/rounded tile ends, exposed round rafter ends below, several projecting bracket/corbel layers below the roof and beneath balcony platforms, independent red columns, open geometric railing voids and a thicker balcony edge beam. Roof corners turn sharply upward; they are not eight flat triangular plates."
+    },
+    {
+      "id": "occluded-base",
+      "confidence": "high",
+      "observation": "No photo here establishes ground entry position, step count, foundation height or complete plinth outline. Existing source polygon boundary type remains unverified; lowest visible roof cannot by itself prove a brick wall diameter."
+    }
+  ],
+  "approximate_2015_preview_controls": {
+    "photo_pageid": 39774289,
+    "pixels": [
+      960,
+      1445
+    ],
+    "finial_top": [
+      498,
+      48
+    ],
+    "principal_roof_front_corner_axis_top_to_bottom": [
+      [
+        490,
+        241
+      ],
+      [
+        488,
+        355
+      ],
+      [
+        481,
+        474
+      ],
+      [
+        472,
+        619
+      ],
+      [
+        461,
+        775
+      ],
+      [
+        451,
+        941
+      ],
+      [
+        441,
+        1111
+      ]
+    ],
+    "scope": "Seven repeated roof reference points near the image central corner/ridge junction, not equivalent absolute-height landmarks; top and lower roof surfaces have depth and perspective differences.",
+    "exposed_balcony_front_corner_top_to_bottom": [
+      [
+        489,
+        351
+      ],
+      [
+        485,
+        458
+      ],
+      [
+        477,
+        593
+      ],
+      [
+        469,
+        735
+      ],
+      [
+        461,
+        912
+      ],
+      [
+        452,
+        1074
+      ]
+    ],
+    "lower_visible_storey_face_samples": [
+      {
+        "storey_candidate": 2,
+        "left_face": [
+          410,
+          1037
+        ],
+        "left": "yellow blank infill",
+        "right_face": [
+          493,
+          1035
+        ],
+        "right": "dark cusped opening",
+        "confidence": "high"
+      },
+      {
+        "storey_candidate": 3,
+        "left_face": [
+          420,
+          858
+        ],
+        "left": "dark cusped opening",
+        "right_face": [
+          503,
+          859
+        ],
+        "right": "yellow blank infill",
+        "confidence": "high"
+      },
+      {
+        "storey_candidate": 4,
+        "left_face": [
+          427,
+          699
+        ],
+        "left": "yellow blank infill",
+        "right_face": [
+          505,
+          701
+        ],
+        "right": "dark cusped opening",
+        "confidence": "medium-high"
+      },
+      {
+        "storey_candidate": 5,
+        "left_face": [
+          442,
+          563
+        ],
+        "left": "dark cusped opening",
+        "right_face": [
+          510,
+          565
+        ],
+        "right": "yellow blank infill",
+        "confidence": "medium"
+      }
+    ],
+    "storey_number_note": "Numbering assumes the lowest broad tower-associated roof is the first-storey roof; the photograph does not expose the complete first storey."
+  },
+  "approximate_closeup_controls": {
+    "50958259": {
+      "cusped_opening_top": [
+        451,
+        489
+      ],
+      "visible_opening_bbox": [
+        410,
+        487,
+        478,
+        557
+      ],
+      "adjacent_blank_panel_sample": [
+        740,
+        509
+      ],
+      "corner_column_sample": [
+        583,
+        486
+      ],
+      "tile_end_band_sample": [
+        742,
+        246
+      ],
+      "round_rafter_end_sample": [
+        710,
+        303
+      ],
+      "bracket_layers_sample": [
+        720,
+        379
+      ],
+      "balcony_railing_sample": [
+        755,
+        583
+      ]
+    },
+    "83212925": {
+      "lower_blank_panel_sample": [
+        485,
+        395
+      ],
+      "upper_dark_opening_top": [
+        490,
+        119
+      ],
+      "lower_balcony_edge_sample": [
+        466,
+        516
+      ],
+      "round_rafter_row_sample": [
+        470,
+        291
+      ],
+      "roof_tile_end_row_sample": [
+        465,
+        270
+      ],
+      "projecting_bracket_sample": [
+        484,
+        332
+      ]
+    }
+  },
+  "axis_status": {
+    "geographic_front_edge": null,
+    "photo_to_source_edge": null,
+    "2019_bad_GPS_used": false,
+    "2016_GPS_not_independently_validated": true,
+    "reason": "Symmetric tower plus cropped/occluded urban context does not independently tie an image face to a specific preserved source edge."
+  },
+  "metric_claims": {
+    "height_measured": false,
+    "per_floor_height_measured": false,
+    "wall_or_eave_diameter_measured": false,
+    "camera_calibrated": false
+  },
+  "actions": {
+    "files_written": [
+      "photo-review-independent.json"
+    ],
+    "photos_modified": false,
+    "downloads": false,
+    "model_generated": false,
+    "main_modified": false,
+    "browser_or_blender_run": false
+  }
+}

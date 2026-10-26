@@ -1,0 +1,39 @@
+{
+  "schema": "longhua-v3-minimal-ridge-seat-revision",
+  "previous_revision": "v2",
+  "v2_appearance_accepted": false,
+  "actual_v2_raw_sha256": "a96343eef1f9c11a38dce37b113545a8abea720ffed3b58952024e51c76b73af",
+  "scope": "Add only56 continuous narrow grey ridge seats. All previous geometry positions/materials, calibration, tile courses and three cameras remain unchanged.",
+  "confirmed_defect": {
+    "evidence_source": "../v2/independent-review/actual-v2-ridge-contact.json",
+    "sha256": "b251bcc3b939613ec4cf5228ca7af30954028cadd255d5cffc2d63c2f3109759",
+    "ridge_bottom_to_substrate_mm": [
+      141,
+      264
+    ],
+    "ridge_bottom_to_tile_top_mm": [
+      11,
+      204
+    ],
+    "scope": "90 substrate rays and60 tile hits on actual v2 triangles; t<=.95, therefore not merely decorative overhang."
+  },
+  "new_seat_estimates": {
+    "number": 56,
+    "span_t": [
+      0,
+      1
+    ],
+    "per_face_foot_width_m": 0.095,
+    "bottom_embed_below_substrate_top_m": 0.02,
+    "center_crest_below_original_ridge_center_m": 0.015,
+    "shoulders_below_original_ridge_center_m": 0.02,
+    "top_to_foot_width_ratio": 0.3,
+    "material": "existing tile 1 unchanged",
+    "geometry": "Six-point cross sections with left/center/right embedded bottom and tapered top; explicit concave end-cap triangulation; loft continuously follows both adjacent existing slope patches.",
+    "t_greater_than_one": "Original upturned tip may cantilever; not claimed supported by roof outside eave."
+  },
+  "size": "No wholebuild performed by agent; strict each-file<100,000,000B.",
+  "large_asset_generation_by_root_only": true,
+  "native_visual_passed": false,
+  "browser_passed": false
+}
