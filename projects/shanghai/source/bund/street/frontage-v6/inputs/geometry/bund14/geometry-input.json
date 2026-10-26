@@ -1,0 +1,1663 @@
+{
+  "schema": "bund-v6-frozen-geometry-input-v1",
+  "id": "bund14",
+  "name_zh": "交通银行大楼",
+  "name_en": "Bank of Communications Building",
+  "historic_bund_number": "14",
+  "status": "source footprint and identity frozen; architectural dimensions and facade details still require independent source evidence",
+  "anchor": [
+    121.48528114475742,
+    31.239008676604218
+  ],
+  "origin_longitude": 121.48528114475742,
+  "origin_latitude": 31.239008676604218,
+  "anchor_method": "Centroid of the exact closed OSM polygon in EPSG:3857, inverse projected to WGS84; not the tourism label node and not a bbox center.",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          121.4849364,
+          31.2389772
+        ],
+        [
+          121.4849767,
+          31.2388431
+        ],
+        [
+          121.4852961,
+          31.2389113
+        ],
+        [
+          121.4853851,
+          31.2389256
+        ],
+        [
+          121.4853794,
+          31.238963
+        ],
+        [
+          121.4855667,
+          31.2389817
+        ],
+        [
+          121.4855332,
+          31.2391879
+        ],
+        [
+          121.4852754,
+          31.2391649
+        ],
+        [
+          121.485279,
+          31.239125
+        ],
+        [
+          121.4852811,
+          31.2391109
+        ],
+        [
+          121.4853155,
+          31.2391219
+        ],
+        [
+          121.485346,
+          31.2391203
+        ],
+        [
+          121.4853575,
+          31.2390671
+        ],
+        [
+          121.4852798,
+          31.2390578
+        ],
+        [
+          121.4849364,
+          31.2389772
+        ]
+      ]
+    ]
+  },
+  "geographic_bbox": [
+    121.4849364,
+    31.2388431,
+    121.4855667,
+    31.2391879
+  ],
+  "model_geometry_local_east_north_m": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -32.81260976186054,
+          -3.5039589717240336
+        ],
+        [
+          -28.97687870100913,
+          -18.431887115978157
+        ],
+        [
+          1.4234314754779818,
+          -10.83990840915277
+        ],
+        [
+          9.89440081225922,
+          -9.248041211447243
+        ],
+        [
+          9.351878055928253,
+          -5.084695095116147
+        ],
+        [
+          27.178985435596047,
+          -3.003021417435894
+        ],
+        [
+          23.99047450616611,
+          19.951076081900435
+        ],
+        [
+          -0.54678273851152,
+          17.390723249220844
+        ],
+        [
+          -0.2041367887371754,
+          12.94906916076448
+        ],
+        [
+          -0.004259985365717159,
+          11.379462524677034
+        ],
+        [
+          3.269912431905953,
+          12.603978318107092
+        ],
+        [
+          6.172885071715284,
+          12.425866922855862
+        ],
+        [
+          7.26744852322386,
+          6.5036646787770165
+        ],
+        [
+          -0.127993246112413,
+          5.46839282725439
+        ],
+        [
+          -32.81260976186054,
+          -3.5039589717240336
+        ]
+      ]
+    ]
+  },
+  "polygon_local_east_north": [
+    [
+      -32.81260976186054,
+      -3.5039589717240336
+    ],
+    [
+      -28.97687870100913,
+      -18.431887115978157
+    ],
+    [
+      1.4234314754779818,
+      -10.83990840915277
+    ],
+    [
+      9.89440081225922,
+      -9.248041211447243
+    ],
+    [
+      9.351878055928253,
+      -5.084695095116147
+    ],
+    [
+      27.178985435596047,
+      -3.003021417435894
+    ],
+    [
+      23.99047450616611,
+      19.951076081900435
+    ],
+    [
+      -0.54678273851152,
+      17.390723249220844
+    ],
+    [
+      -0.2041367887371754,
+      12.94906916076448
+    ],
+    [
+      -0.004259985365717159,
+      11.379462524677034
+    ],
+    [
+      3.269912431905953,
+      12.603978318107092
+    ],
+    [
+      6.172885071715284,
+      12.425866922855862
+    ],
+    [
+      7.26744852322386,
+      6.5036646787770165
+    ],
+    [
+      -0.127993246112413,
+      5.46839282725439
+    ]
+  ],
+  "coordinate_contract": {
+    "geographic": "WGS84 / EPSG:4326",
+    "earth_radius_m": 6378137.0,
+    "metre_frame": "Web Mercator coordinate differences multiplied by cos(anchor latitude), retaining the current city and Bund source-builder metre convention; not UTM axes.",
+    "east_formula": "(R*longitude_radians - originMercatorX)*cos(originLatitude)",
+    "north_formula": "(R*ln(tan(pi/4+latitude_radians/2)) - originMercatorY)*cos(originLatitude)",
+    "gltf_xyz": "[east_m, elevation_m, -north_m]",
+    "rings_closed": true,
+    "original_osm_vertex_order_preserved": true,
+    "existing_coordinate_source": {
+      "project_relative_path": "source/city/build_district_models.py",
+      "bytes": 12013,
+      "sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906"
+    },
+    "runtime_radius_note": "The source builders use R=6378137; vendored MapLibre meterInMercatorCoordinateUnits uses mean Earth radius 6371008.8. This freeze deliberately retains existing source coordinates and does not silently change model scale or the renderer.",
+    "round_trip_max_degree_error": 1.7763568394002505e-14
+  },
+  "front_edge": {
+    "ring_index": 0,
+    "edge_index": 5,
+    "osm_node_ids": [
+      1887541376,
+      1887541349
+    ],
+    "endpoints_wgs84": [
+      [
+        121.4855667,
+        31.2389817
+      ],
+      [
+        121.4855332,
+        31.2391879
+      ]
+    ],
+    "endpoints_local_east_north_m": [
+      [
+        27.178985435596047,
+        -3.003021417435894
+      ],
+      [
+        23.99047450616611,
+        19.951076081900435
+      ]
+    ],
+    "center_local_east_north_m": [
+      25.584729970881078,
+      8.474027332232271
+    ],
+    "length_m": 23.174494470346758,
+    "tangent_east_north": [
+      -0.13758707589111993,
+      0.9904896751343404
+    ],
+    "outward_normal_east_north": [
+      0.9904896751343404,
+      0.13758707589111993
+    ],
+    "outward_azimuth_deg": 82.09175531284693,
+    "nearest_road_osm_way_id": 1298040469,
+    "road_centerline_distance_m": 17.258181810156003,
+    "outward_to_road_alignment": 0.9998121491338738
+  },
+  "streetfront": {
+    "method": "Use the long outer-ring edge whose outward normal faces the nearest saved Zhongshan East No.1 Road centreline. Keep adjacent steps and return walls; do not straighten the full polygon.",
+    "primary_edge_index": 5,
+    "frontage_edge_indices": [
+      5
+    ],
+    "frontage_continuity_note": "Primary front edge is one original OSM segment; all original returns and setbacks remain in the footprint.",
+    "candidate_edges": [
+      {
+        "ring_index": 0,
+        "edge_index": 0,
+        "osm_node_ids": [
+          1887541362,
+          1887541346
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4849364,
+            31.2389772
+          ],
+          [
+            121.4849767,
+            31.2388431
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -32.81260976186054,
+            -3.5039589717240336
+          ],
+          [
+            -28.97687870100913,
+            -18.431887115978157
+          ]
+        ],
+        "center_local_east_north_m": [
+          -30.894744231434835,
+          -10.967923043851094
+        ],
+        "length_m": 15.412847610068512,
+        "tangent_east_north": [
+          0.2488658266072587,
+          -0.968537970524174
+        ],
+        "outward_normal_east_north": [
+          -0.968537970524174,
+          -0.2488658266072587
+        ],
+        "outward_azimuth_deg": 255.58959219709374,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 75.54448479154924,
+        "outward_to_road_alignment": -0.9880440539120877
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 1,
+        "osm_node_ids": [
+          1887541346,
+          1887541374
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4849767,
+            31.2388431
+          ],
+          [
+            121.4852961,
+            31.2389113
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -28.97687870100913,
+            -18.431887115978157
+          ],
+          [
+            1.4234314754779818,
+            -10.83990840915277
+          ]
+        ],
+        "center_local_east_north_m": [
+          -13.776723612765574,
+          -14.635897762565463
+        ],
+        "length_m": 31.333959205812405,
+        "tangent_east_north": [
+          0.9702032857324937,
+          0.24229235306520364
+        ],
+        "outward_normal_east_north": [
+          0.24229235306520364,
+          -0.9702032857324937
+        ],
+        "outward_azimuth_deg": 165.97812351475048,
+        "nearest_road_osm_way_id": 448931482,
+        "road_centerline_distance_m": 58.860465031825136,
+        "outward_to_road_alignment": 0.16353789900692733
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 2,
+        "osm_node_ids": [
+          1887541374,
+          1887541355
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4852961,
+            31.2389113
+          ],
+          [
+            121.4853851,
+            31.2389256
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            1.4234314754779818,
+            -10.83990840915277
+          ],
+          [
+            9.89440081225922,
+            -9.248041211447243
+          ]
+        ],
+        "center_local_east_north_m": [
+          5.658916143868601,
+          -10.043974810300007
+        ],
+        "length_m": 8.619243741757094,
+        "tangent_east_north": [
+          0.9827972836807574,
+          0.18468757183342094
+        ],
+        "outward_normal_east_north": [
+          0.18468757183342094,
+          -0.9827972836807574
+        ],
+        "outward_azimuth_deg": 169.35708229485812,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 39.07244116586997,
+        "outward_to_road_alignment": 0.08891649855688352
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 3,
+        "osm_node_ids": [
+          1887541355,
+          1887541351
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4853851,
+            31.2389256
+          ],
+          [
+            121.4853794,
+            31.238963
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            9.89440081225922,
+            -9.248041211447243
+          ],
+          [
+            9.351878055928253,
+            -5.084695095116147
+          ]
+        ],
+        "center_local_east_north_m": [
+          9.623139434093737,
+          -7.166368153281695
+        ],
+        "length_m": 4.198545203461095,
+        "tangent_east_north": [
+          -0.12921684298736041,
+          0.9916163610431101
+        ],
+        "outward_normal_east_north": [
+          0.9916163610431101,
+          0.12921684298736041
+        ],
+        "outward_azimuth_deg": 82.5756609762645,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 34.84885753372199,
+        "outward_to_road_alignment": 0.9994601822168047
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 4,
+        "osm_node_ids": [
+          1887541351,
+          1887541376
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4853794,
+            31.238963
+          ],
+          [
+            121.4855667,
+            31.2389817
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            9.351878055928253,
+            -5.084695095116147
+          ],
+          [
+            27.178985435596047,
+            -3.003021417435894
+          ]
+        ],
+        "center_local_east_north_m": [
+          18.26543174576215,
+          -4.04385825627602
+        ],
+        "length_m": 17.94823453230297,
+        "tangent_east_north": [
+          0.9932513054463841,
+          0.11598208581092961
+        ],
+        "outward_normal_east_north": [
+          0.11598208581092961,
+          -0.9932513054463841
+        ],
+        "outward_azimuth_deg": 173.33972651500557,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 25.94541877675963,
+        "outward_to_road_alignment": 0.01952258690707409
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 5,
+        "osm_node_ids": [
+          1887541376,
+          1887541349
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4855667,
+            31.2389817
+          ],
+          [
+            121.4855332,
+            31.2391879
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            27.178985435596047,
+            -3.003021417435894
+          ],
+          [
+            23.99047450616611,
+            19.951076081900435
+          ]
+        ],
+        "center_local_east_north_m": [
+          25.584729970881078,
+          8.474027332232271
+        ],
+        "length_m": 23.174494470346758,
+        "tangent_east_north": [
+          -0.13758707589111993,
+          0.9904896751343404
+        ],
+        "outward_normal_east_north": [
+          0.9904896751343404,
+          0.13758707589111993
+        ],
+        "outward_azimuth_deg": 82.09175531284693,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 17.258181810156003,
+        "outward_to_road_alignment": 0.9998121491338738
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 6,
+        "osm_node_ids": [
+          1887541349,
+          1887541342
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4855332,
+            31.2391879
+          ],
+          [
+            121.4852754,
+            31.2391649
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            23.99047450616611,
+            19.951076081900435
+          ],
+          [
+            -0.54678273851152,
+            17.390723249220844
+          ]
+        ],
+        "center_local_east_north_m": [
+          11.721845883827294,
+          18.67089966556064
+        ],
+        "length_m": 24.670476276701574,
+        "tangent_east_north": [
+          -0.9946000624175321,
+          -0.10378205933128051
+        ],
+        "outward_normal_east_north": [
+          -0.10378205933128051,
+          0.9946000624175321
+        ],
+        "outward_azimuth_deg": 354.0429996694687,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 29.81667760520079,
+        "outward_to_road_alignment": 0.014671781754636638
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 7,
+        "osm_node_ids": [
+          1887541342,
+          1887544309
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4852754,
+            31.2391649
+          ],
+          [
+            121.485279,
+            31.239125
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -0.54678273851152,
+            17.390723249220844
+          ],
+          [
+            -0.2041367887371754,
+            12.94906916076448
+          ]
+        ],
+        "center_local_east_north_m": [
+          -0.37545976362434774,
+          15.169896204992662
+        ],
+        "length_m": 4.454850983859942,
+        "tangent_east_north": [
+          0.076915243857934,
+          -0.9970376348274294
+        ],
+        "outward_normal_east_north": [
+          -0.9970376348274294,
+          -0.076915243857934
+        ],
+        "outward_azimuth_deg": 265.58872434940395,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 42.243334127310085,
+        "outward_to_road_alignment": -0.9991327519213234
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 8,
+        "osm_node_ids": [
+          1887544309,
+          1887541348
+        ],
+        "endpoints_wgs84": [
+          [
+            121.485279,
+            31.239125
+          ],
+          [
+            121.4852811,
+            31.2391109
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -0.2041367887371754,
+            12.94906916076448
+          ],
+          [
+            -0.004259985365717159,
+            11.379462524677034
+          ]
+        ],
+        "center_local_east_north_m": [
+          -0.10419838705144627,
+          12.164265842720758
+        ],
+        "length_m": 1.5822818107327599,
+        "tangent_east_north": [
+          0.12632187390114447,
+          -0.9919893064817298
+        ],
+        "outward_normal_east_north": [
+          -0.9919893064817298,
+          -0.12632187390114447
+        ],
+        "outward_azimuth_deg": 262.7429012654107,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 42.329736386142216,
+        "outward_to_road_alignment": -0.9999678504810757
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 9,
+        "osm_node_ids": [
+          1887541348,
+          11112221359
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4852811,
+            31.2391109
+          ],
+          [
+            121.4853155,
+            31.2391219
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -0.004259985365717159,
+            11.379462524677034
+          ],
+          [
+            3.269912431905953,
+            12.603978318107092
+          ]
+        ],
+        "center_local_east_north_m": [
+          1.6328262232701178,
+          11.991720421392063
+        ],
+        "length_m": 3.495660731018137,
+        "tangent_east_north": [
+          0.9366390703247804,
+          0.35029594907896244
+        ],
+        "outward_normal_east_north": [
+          0.35029594907896244,
+          -0.9366390703247804
+        ],
+        "outward_azimuth_deg": 159.49458225404024,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 40.62534553929719,
+        "outward_to_road_alignment": 0.23696966167119002
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 10,
+        "osm_node_ids": [
+          11112221359,
+          1887541391
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4853155,
+            31.2391219
+          ],
+          [
+            121.485346,
+            31.2391203
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            3.269912431905953,
+            12.603978318107092
+          ],
+          [
+            6.172885071715284,
+            12.425866922855862
+          ]
+        ],
+        "center_local_east_north_m": [
+          4.721398751810619,
+          12.514922620481478
+        ],
+        "length_m": 2.9084315045398434,
+        "tangent_east_north": [
+          0.9981230898090634,
+          -0.06123967333362047
+        ],
+        "outward_normal_east_north": [
+          -0.06123967333362047,
+          -0.9981230898090634
+        ],
+        "outward_azimuth_deg": 183.5109716886005,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 37.49655661292644,
+        "outward_to_road_alignment": -0.17895046532453435
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 11,
+        "osm_node_ids": [
+          1887541391,
+          11112221358
+        ],
+        "endpoints_wgs84": [
+          [
+            121.485346,
+            31.2391203
+          ],
+          [
+            121.4853575,
+            31.2390671
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            6.172885071715284,
+            12.425866922855862
+          ],
+          [
+            7.26744852322386,
+            6.5036646787770165
+          ]
+        ],
+        "center_local_east_north_m": [
+          6.720166797469572,
+          9.464765800816439
+        ],
+        "length_m": 6.022503513419554,
+        "tangent_east_north": [
+          0.18174558953259728,
+          -0.9833455855829367
+        ],
+        "outward_normal_east_north": [
+          -0.9833455855829367,
+          -0.18174558953259728
+        ],
+        "outward_azimuth_deg": 259.5285480068077,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 35.87286629282938,
+        "outward_to_road_alignment": -0.9979450338475931
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 12,
+        "osm_node_ids": [
+          11112221358,
+          1887541381
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4853575,
+            31.2390671
+          ],
+          [
+            121.4852798,
+            31.2390578
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            7.26744852322386,
+            6.5036646787770165
+          ],
+          [
+            -0.127993246112413,
+            5.46839282725439
+          ]
+        ],
+        "center_local_east_north_m": [
+          3.5697276385557233,
+          5.986028753015703
+        ],
+        "length_m": 7.4675529305254145,
+        "tangent_east_north": [
+          -0.9903434013980176,
+          -0.13863602456578572
+        ],
+        "outward_normal_east_north": [
+          -0.13863602456578572,
+          0.9903434013980176
+        ],
+        "outward_azimuth_deg": 352.03107344411364,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 39.412914230703265,
+        "outward_to_road_alignment": -0.02044100499532607
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 13,
+        "osm_node_ids": [
+          1887541381,
+          1887541362
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4852798,
+            31.2390578
+          ],
+          [
+            121.4849364,
+            31.2389772
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -0.127993246112413,
+            5.46839282725439
+          ],
+          [
+            -32.81260976186054,
+            -3.5039589717240336
+          ]
+        ],
+        "center_local_east_north_m": [
+          -16.470301503986477,
+          0.9822169277651782
+        ],
+        "length_m": 33.893764228632776,
+        "tangent_east_north": [
+          -0.9643253636648839,
+          -0.26471983868344606
+        ],
+        "outward_normal_east_north": [
+          -0.26471983868344606,
+          0.9643253636648839
+        ],
+        "outward_azimuth_deg": 344.64969376364627,
+        "nearest_road_osm_way_id": 1298040469,
+        "road_centerline_distance_m": 59.90433717180199,
+        "outward_to_road_alignment": -0.148718077253471
+      }
+    ],
+    "photographic_confirmation_still_required": true
+  },
+  "facade_frame": {
+    "origin_local_east_north_m": [
+      25.584729970881078,
+      8.474027332232271
+    ],
+    "u_east_north": [
+      -0.13758707589111993,
+      0.9904896751343404
+    ],
+    "inward_v_east_north": [
+      -0.9904896751343404,
+      -0.13758707589111993
+    ],
+    "conversion": "localENU = facade_origin + u*s + inward_v*depth; glTF position = [localE, height, -localN]. Front wall is depth=0.",
+    "front_width_m": 23.174494470346758
+  },
+  "osm": {
+    "type": "way",
+    "id": 178405872,
+    "version": 7,
+    "timestamp": "2023-08-13T15:53:01Z",
+    "url": "https://www.openstreetmap.org/way/178405872",
+    "architectural_tags": {
+      "addr:housenumber": "14",
+      "addr:street": "中山东一路",
+      "addr:street:en": "East Zhongshan No. 1 Road",
+      "building": "yes",
+      "building:levels": "7",
+      "heritage": "yes",
+      "heritage:operator": "上海市优秀历史建筑",
+      "heritage:ref": "A-III-02",
+      "name": "上海市总工会",
+      "name:en": "Shanghai Council of Trade Unions",
+      "name:zh": "上海市总工会",
+      "name:zh-Hans": "上海市总工会",
+      "name:zh-Hant": "上海市總工會",
+      "source:name": "Wikipedia",
+      "start_date": "1948"
+    },
+    "frozen_way": {
+      "type": "way",
+      "id": 178405872,
+      "version": 7,
+      "timestamp": "2023-08-13T15:53:01Z",
+      "tags": {
+        "addr:housenumber": "14",
+        "addr:street": "中山东一路",
+        "addr:street:en": "East Zhongshan No. 1 Road",
+        "building": "yes",
+        "building:levels": "7",
+        "heritage": "yes",
+        "heritage:operator": "上海市优秀历史建筑",
+        "heritage:ref": "A-III-02",
+        "name": "上海市总工会",
+        "name:en": "Shanghai Council of Trade Unions",
+        "name:zh": "上海市总工会",
+        "name:zh-Hans": "上海市总工会",
+        "name:zh-Hant": "上海市總工會",
+        "source:name": "Wikipedia",
+        "start_date": "1948"
+      },
+      "nodes": [
+        1887541362,
+        1887541346,
+        1887541374,
+        1887541355,
+        1887541351,
+        1887541376,
+        1887541349,
+        1887541342,
+        1887544309,
+        1887541348,
+        11112221359,
+        1887541391,
+        11112221358,
+        1887541381,
+        1887541362
+      ],
+      "geometry": [
+        {
+          "lat": 31.2389772,
+          "lon": 121.4849364
+        },
+        {
+          "lat": 31.2388431,
+          "lon": 121.4849767
+        },
+        {
+          "lat": 31.2389113,
+          "lon": 121.4852961
+        },
+        {
+          "lat": 31.2389256,
+          "lon": 121.4853851
+        },
+        {
+          "lat": 31.238963,
+          "lon": 121.4853794
+        },
+        {
+          "lat": 31.2389817,
+          "lon": 121.4855667
+        },
+        {
+          "lat": 31.2391879,
+          "lon": 121.4855332
+        },
+        {
+          "lat": 31.2391649,
+          "lon": 121.4852754
+        },
+        {
+          "lat": 31.239125,
+          "lon": 121.485279
+        },
+        {
+          "lat": 31.2391109,
+          "lon": 121.4852811
+        },
+        {
+          "lat": 31.2391219,
+          "lon": 121.4853155
+        },
+        {
+          "lat": 31.2391203,
+          "lon": 121.485346
+        },
+        {
+          "lat": 31.2390671,
+          "lon": 121.4853575
+        },
+        {
+          "lat": 31.2390578,
+          "lon": 121.4852798
+        },
+        {
+          "lat": 31.2389772,
+          "lon": 121.4849364
+        }
+      ],
+      "missing_nodes": []
+    },
+    "member_relations_in_saved_map": [],
+    "identity_poi": {
+      "element": {
+        "type": "node",
+        "id": 476149253,
+        "version": 8,
+        "timestamp": "2022-09-25T03:02:22Z",
+        "tags": {
+          "name": "交通银行大楼",
+          "name:en": "Bank of Communications Building",
+          "name:zh": "交通银行大楼",
+          "name:zh-Hans": "交通银行大楼",
+          "name:zh-Hant": "交通銀行大樓",
+          "tourism": "attraction"
+        },
+        "lat": 31.2390962,
+        "lon": 121.485604
+      },
+      "inside_footprint": false,
+      "distance_to_footprint_m": 5.27012595168315,
+      "used_for_anchor": false,
+      "note": "Tourism label supports historical identity, not surveyed placement."
+    },
+    "saved_map_source": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=121.4842,31.23545,121.4892,31.2419",
+      "fetched_at": "2026-10-26T02:09:43.693593+00:00",
+      "original_bytes": 962804,
+      "original_sha256": "e73f923934cfe07fc98cf8b04b6362ed2e9d982285138537fdcbf9e022624d12",
+      "json_bytes": 1506585,
+      "json_sha256": "69ea47f4a00706a234bc418e9dea29372d7d2724f02d6a00098ead62adbc1802",
+      "elements": 2708,
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "note": "OSM bbox endpoint alternative after Overpass errors. No inference of object absence from failed queries."
+    }
+  },
+  "source": {
+    "release": "2026-10-21.0",
+    "overture_id": "930b1722-187d-4727-ad8b-303698ad37ee",
+    "key": "building:930b1722-187d-4727-ad8b-303698ad37ee",
+    "owner_tile": [
+      14,
+      13720,
+      6694
+    ],
+    "owner_macro_id": "14-13720-6694",
+    "matched_source_record": {
+      "resource": "planet",
+      "version": "2026-09-06T00:00:00.000Z",
+      "license": "ODbL-1.0",
+      "record_id": "w178405872@7",
+      "update_time": "2023-08-15T05:56:29.000Z",
+      "provider": "osm",
+      "property": "",
+      "dataset": "OpenStreetMap"
+    },
+    "properties": {
+      "is_underground": false,
+      "@name": "上海市总工会",
+      "names": "{\"common\":{\"en\":\"Shanghai Council of Trade Unions\",\"zh\":\"上海市总工会\",\"zh-Hans\":\"上海市总工会\",\"zh-Hant\":\"上海市總工會\"},\"primary\":\"上海市总工会\"}",
+      "@geometry_source": "OpenStreetMap",
+      "sources": [
+        {
+          "resource": "planet",
+          "version": "2026-09-06T00:00:00.000Z",
+          "license": "ODbL-1.0",
+          "record_id": "w178405872@7",
+          "update_time": "2023-08-15T05:56:29.000Z",
+          "provider": "osm",
+          "property": "",
+          "dataset": "OpenStreetMap"
+        }
+      ],
+      "num_floors": 7,
+      "has_parts": false,
+      "id": "930b1722-187d-4727-ad8b-303698ad37ee",
+      "version": 1,
+      "source_layer": "building",
+      "district_id": "310101",
+      "district_name": "黄浦区",
+      "renderable": true,
+      "fragment_count": 1
+    },
+    "source_geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            121.48528218,
+            31.23905901
+          ],
+          [
+            121.48535728,
+            31.23906818
+          ],
+          [
+            121.48534656,
+            31.23911864
+          ],
+          [
+            121.48531437,
+            31.23912322
+          ],
+          [
+            121.48528218,
+            31.23910946
+          ],
+          [
+            121.48527682,
+            31.2391645
+          ],
+          [
+            121.48553431,
+            31.23918744
+          ],
+          [
+            121.4855665,
+            31.23898104
+          ],
+          [
+            121.48537874,
+            31.23896269
+          ],
+          [
+            121.48538411,
+            31.238926
+          ],
+          [
+            121.48497641,
+            31.23884344
+          ],
+          [
+            121.48493886,
+            31.23897645
+          ],
+          [
+            121.48528218,
+            31.23905901
+          ]
+        ]
+      ]
+    },
+    "frozen_raw_feature": {
+      "type": "Feature",
+      "id": "930b1722-187d-4727-ad8b-303698ad37ee",
+      "properties": {
+        "is_underground": false,
+        "@name": "上海市总工会",
+        "names": "{\"common\":{\"en\":\"Shanghai Council of Trade Unions\",\"zh\":\"上海市总工会\",\"zh-Hans\":\"上海市总工会\",\"zh-Hant\":\"上海市總工會\"},\"primary\":\"上海市总工会\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w178405872@7",
+            "update_time": "2023-08-15T05:56:29.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "num_floors": 7,
+        "has_parts": false,
+        "id": "930b1722-187d-4727-ad8b-303698ad37ee",
+        "version": 1,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48528218,
+              31.23905901
+            ],
+            [
+              121.48535728,
+              31.23906818
+            ],
+            [
+              121.48534656,
+              31.23911864
+            ],
+            [
+              121.48531437,
+              31.23912322
+            ],
+            [
+              121.48528218,
+              31.23910946
+            ],
+            [
+              121.48527682,
+              31.2391645
+            ],
+            [
+              121.48553431,
+              31.23918744
+            ],
+            [
+              121.4855665,
+              31.23898104
+            ],
+            [
+              121.48537874,
+              31.23896269
+            ],
+            [
+              121.48538411,
+              31.238926
+            ],
+            [
+              121.48497641,
+              31.23884344
+            ],
+            [
+              121.48493886,
+              31.23897645
+            ],
+            [
+              121.48528218,
+              31.23905901
+            ]
+          ]
+        ]
+      }
+    },
+    "raw_feature_canonical_sha256": "5414c1e2ec4d23398e96f6f4f1f896aa01a608dbe2787c3d0c5be8a9eb6f5c12",
+    "raw_macro_source_file": {
+      "project_relative_path": "data/fullcity-raw/tiles/14/13720/6694.geojson.gz",
+      "bytes": 323910,
+      "sha256": "10b570be6c723a74ee70a152b02a8812a1159556a9f166a47e1384aa93619694"
+    },
+    "current_osm_overlap": {
+      "measurement_crs": "viewer-local Mercator metres, scaled by cos(anchor latitude)",
+      "osm_area_m2": 1108.232839539085,
+      "city_source_area_m2": 1111.2053524438463,
+      "intersection_area_m2": 1102.0144824314193,
+      "union_area_m2": 1117.423709551513,
+      "iou": 0.9862100410181217,
+      "fraction_of_osm_covered": 0.9943889434730594,
+      "fraction_of_source_covered": 0.9917289185187834,
+      "symmetric_difference_area_m2": 15.409227120093105,
+      "boundary_hausdorff_distance_m": 0.33820311886344645,
+      "note": "Same OSM way and version. Saved live OSM retains original node coordinates; the city footprint came through Overture MVT and its coordinates differ. Both polygons are retained; no snapping, buffer correction or bounding-box replacement is performed."
+    }
+  },
+  "current_city_detail": {
+    "configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+    "complete_city_feature_count": 1796419,
+    "complete_city_macro_count": 1708,
+    "owner_macro_id": "14-13720-6694",
+    "feature_local_id": 1700,
+    "feature_id_base": 1,
+    "near_owner_id": "14-13720-6694-3_-4-s1-s1",
+    "far_file": "macros/14-13720-6694/far.glb",
+    "near_file": "macros/14-13720-6694/near/3_-4-s1-s1.glb.gz",
+    "near_asset_sha256": "5bc8322f01a89ba7e496c03005eb6d8ed9ce76c4fd3cad90d71ccd0bf0914ac5",
+    "near_asset_size_bytes": 52644,
+    "feature_table_source_file": {
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/feature-table.json.gz",
+      "bytes": 479013,
+      "sha256": "605bcf6278ae2518db7f3128a407a02e644c94b1dd50bfc83e3de331a2275d77"
+    },
+    "ready_source_file": {
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/READY.json",
+      "bytes": 1352332,
+      "sha256": "0c46fd8ec4ca79547de1ca77bc263c301a2d576fc1d131b1f805049604e5ce2d"
+    },
+    "ownership_source_file": {
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/ownership.json.gz",
+      "bytes": 15616,
+      "sha256": "f5882afabeab798643cf862bae74869844941038dff1f3ff4077739b6a0b807a"
+    },
+    "geometry_exactly_equals_raw_source": true,
+    "frozen_effective_feature": {
+      "appearance_accuracy": "inferred module layout; no individual facade photograph",
+      "base": 0,
+      "family": "apartment",
+      "family_basis": "source class/subtype where available, otherwise explicit height/footprint-scale inference",
+      "family_is_inferred": true,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              121.48528218,
+              31.23905901
+            ],
+            [
+              121.48535728,
+              31.23906818
+            ],
+            [
+              121.48534656,
+              31.23911864
+            ],
+            [
+              121.48531437,
+              31.23912322
+            ],
+            [
+              121.48528218,
+              31.23910946
+            ],
+            [
+              121.48527682,
+              31.2391645
+            ],
+            [
+              121.48553431,
+              31.23918744
+            ],
+            [
+              121.4855665,
+              31.23898104
+            ],
+            [
+              121.48537874,
+              31.23896269
+            ],
+            [
+              121.48538411,
+              31.238926
+            ],
+            [
+              121.48497641,
+              31.23884344
+            ],
+            [
+              121.48493886,
+              31.23897645
+            ],
+            [
+              121.48528218,
+              31.23905901
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "height": 22.400000000000002,
+      "height_provenance": {},
+      "height_quality": "floor_estimate",
+      "key": "building:930b1722-187d-4727-ad8b-303698ad37ee",
+      "localId": 1700,
+      "properties": {
+        "@geometry_source": "OpenStreetMap",
+        "@name": "上海市总工会",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "fragment_count": 1,
+        "has_parts": false,
+        "id": "930b1722-187d-4727-ad8b-303698ad37ee",
+        "is_underground": false,
+        "names": "{\"common\":{\"en\":\"Shanghai Council of Trade Unions\",\"zh\":\"上海市总工会\",\"zh-Hans\":\"上海市总工会\",\"zh-Hant\":\"上海市總工會\"},\"primary\":\"上海市总工会\"}",
+        "num_floors": 7,
+        "renderable": true,
+        "source_layer": "building",
+        "sources": [
+          {
+            "dataset": "OpenStreetMap",
+            "license": "ODbL-1.0",
+            "property": "",
+            "provider": "osm",
+            "record_id": "w178405872@7",
+            "resource": "planet",
+            "update_time": "2023-08-15T05:56:29.000Z",
+            "version": "2026-09-06T00:00:00.000Z"
+          }
+        ],
+        "version": 1
+      },
+      "residual": false,
+      "roof": null
+    }
+  },
+  "existing_height": {
+    "base_m": 0,
+    "height_m": 22.400000000000002,
+    "height_quality": "floor_estimate",
+    "height_provenance": {},
+    "height_is_measured": false,
+    "note": "Current source-floor-derived LoD height retained as a documented baseline only; not a measured facade or roof elevation."
+  },
+  "parts": [],
+  "parts_audit": {
+    "source_has_parts": false,
+    "raw_linked_parts": 0,
+    "saved_osm_overlapping_parts": 0,
+    "scanned_raw_macros": [
+      "14-13719-6693",
+      "14-13719-6694",
+      "14-13719-6695",
+      "14-13720-6693",
+      "14-13720-6694",
+      "14-13720-6695",
+      "14-13721-6693",
+      "14-13721-6694",
+      "14-13721-6695"
+    ],
+    "scope": "Saved source parent flag plus linked/overlapping parts in the nine surrounding raw owner tiles and saved OSM extract; no claim of real-world absence of roof subdivisions."
+  },
+  "replacement": {
+    "building_ids": [
+      "930b1722-187d-4727-ad8b-303698ad37ee"
+    ],
+    "building_part_ids": [],
+    "only_exact_ids": true,
+    "do_not_delete_nearby_buildings_by_radius": true,
+    "additional_overlap_candidates": [
+      {
+        "key": "building:1b01c735-2b64-44e4-8495-14382b1de015",
+        "owner_macro_id": "14-13720-6694",
+        "intersection_area_m2": 0.11030324753304555,
+        "fraction_of_target_osm_area": 9.953075165948047e-05,
+        "source_layer": "building",
+        "name": null,
+        "building_id": null,
+        "feature_local_id": 295,
+        "near_owner_id": "14-13720-6694-3_-4-s1-s1",
+        "source_records": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w178406075@3",
+            "update_time": "2023-08-15T05:56:29.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "source_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.48494422,
+                31.23882968
+              ],
+              [
+                121.4848423,
+                31.23881133
+              ],
+              [
+                121.4847672,
+                31.23905442
+              ],
+              [
+                121.48527682,
+                31.2391645
+              ],
+              [
+                121.48527682,
+                31.23912322
+              ],
+              [
+                121.48523927,
+                31.23911864
+              ],
+              [
+                121.48523927,
+                31.23908194
+              ],
+              [
+                121.48489058,
+                31.23899938
+              ],
+              [
+                121.48494422,
+                31.23882968
+              ]
+            ]
+          ]
+        },
+        "eligible_for_automatic_replacement": false
+      }
+    ],
+    "touches_qualified_source_roof": false,
+    "applied": false
+  },
+  "source_road_elements": [
+    {
+      "type": "way",
+      "id": 448931482,
+      "version": 9,
+      "timestamp": "2025-09-01T23:40:02Z",
+      "tags": {
+        "alt_name": "外滩",
+        "alt_name:en": "The Bund",
+        "bicycle": "no",
+        "highway": "secondary",
+        "lanes": "3",
+        "name": "中山东一路",
+        "name:en": "East Zhongshan No. 1 Road",
+        "name:zh": "中山东一路",
+        "name:zh-Hans": "中山东一路",
+        "name:zh-Hant": "中山東一路",
+        "oneway": "yes",
+        "surface": "asphalt"
+      },
+      "nodes": [
+        1883254799,
+        599409774,
+        599409810,
+        477652430,
+        103734983,
+        6975721366,
+        476671870
+      ],
+      "geometry": [
+        {
+          "lat": 31.2389241,
+          "lon": 121.4857524
+        },
+        {
+          "lat": 31.2388785,
+          "lon": 121.4857567
+        },
+        {
+          "lat": 31.2387868,
+          "lon": 121.4857675
+        },
+        {
+          "lat": 31.2383255,
+          "lon": 121.4858258
+        },
+        {
+          "lat": 31.2379565,
+          "lon": 121.4858827
+        },
+        {
+          "lat": 31.2377415,
+          "lon": 121.4859375
+        },
+        {
+          "lat": 31.2376051,
+          "lon": 121.4859802
+        }
+      ],
+      "missing_nodes": []
+    },
+    {
+      "type": "way",
+      "id": 1298040469,
+      "version": 4,
+      "timestamp": "2025-09-01T23:40:02Z",
+      "tags": {
+        "alt_name": "外滩",
+        "alt_name:en": "The Bund",
+        "bicycle": "no",
+        "highway": "secondary",
+        "lanes": "3",
+        "name": "中山东一路",
+        "name:en": "East Zhongshan No. 1 Road",
+        "name:zh": "中山东一路",
+        "name:zh-Hans": "中山东一路",
+        "name:zh-Hant": "中山東一路",
+        "oneway": "yes",
+        "surface": "asphalt"
+      },
+      "nodes": [
+        601097043,
+        6975721344,
+        103734961,
+        267198027,
+        1883254799
+      ],
+      "geometry": [
+        {
+          "lat": 31.2398648,
+          "lon": 121.4856252
+        },
+        {
+          "lat": 31.2397444,
+          "lon": 121.4856403
+        },
+        {
+          "lat": 31.2393922,
+          "lon": 121.4856897
+        },
+        {
+          "lat": 31.2390228,
+          "lon": 121.4857412
+        },
+        {
+          "lat": 31.2389241,
+          "lon": 121.4857524
+        }
+      ],
+      "missing_nodes": []
+    }
+  ],
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors; © Overture Maps Foundation",
+  "limitations": [
+    "Map footprint is a source outline, not a measured facade/laser survey.",
+    "No windows, entrances, cornice heights or roof details are established by this geometry freeze.",
+    "No existing source geometry, height, model or exclusion list has been modified."
+  ]
+}

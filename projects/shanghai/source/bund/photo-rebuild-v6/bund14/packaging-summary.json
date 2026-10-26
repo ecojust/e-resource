@@ -1,0 +1,229 @@
+{
+  "schema": "bund-single-building-packaging-v1",
+  "packaging_passed": true,
+  "registered": false,
+  "candidate_id": "bund14",
+  "generator_sha256": "7013cbe6af479f1dfeea37383dfff57658108fcabdaecb4898a89f61e0129fa9",
+  "gltfpack_version": "gltfpack 1.3",
+  "assets": {
+    "raw": {
+      "file": "assets/models/bund/bund14.glb",
+      "sha256": "dcd09ce14eaa59ac016e66dffd7a672360e2a8cff6c5af6d8ae051142e8c7bdf",
+      "bytes": 9844376,
+      "triangles": 77324,
+      "draw_primitives": 14,
+      "bounds_glb": {
+        "min": [
+          -32.96064758300781,
+          0.0,
+          -20.095508575439453
+        ],
+        "max": [
+          27.292892456054688,
+          33.400001525878906,
+          18.579830169677734
+        ]
+      },
+      "embedded_images": [
+        {
+          "index": 0,
+          "mime_type": "image/jpeg",
+          "bytes": 5095105,
+          "sha256": "b768d0cf0099d3443b8d52b40830f3c983c96be846eea6e4e58a13e0844fe5d9"
+        }
+      ],
+      "self_contained_glb": true,
+      "asset_copyright": "Geometry: MIT; map geometry: OpenStreetMap ODbL-1.0; embedded glass photograph: Suicasmo, CC0-1.0; lettering font: SIL OFL 1.1."
+    },
+    "web": {
+      "file": "assets/models/bund/web/bund14.glb",
+      "sha256": "a838ad7887713c5cd43b2abd6e139b3d52744465c0a4ea82608571e9af7b8801",
+      "bytes": 6725708,
+      "triangles": 77324,
+      "draw_primitives": 14,
+      "bounds_glb": {
+        "min": [
+          -32.9606476,
+          0.0,
+          -20.0955086
+        ],
+        "max": [
+          27.2928925,
+          33.4000015,
+          18.5798302
+        ]
+      },
+      "embedded_images": [
+        {
+          "index": 0,
+          "mime_type": "image/jpeg",
+          "bytes": 5095105,
+          "sha256": "b768d0cf0099d3443b8d52b40830f3c983c96be846eea6e4e58a13e0844fe5d9"
+        }
+      ],
+      "self_contained_glb": true,
+      "asset_copyright": "Geometry: MIT; map geometry: OpenStreetMap ODbL-1.0; embedded glass photograph: Suicasmo, CC0-1.0; lettering font: SIL OFL 1.1.",
+      "maximum_bounds_change_m": 4.394531316620487e-08
+    },
+    "native": {
+      "file": "assets/native/bund/bund14.blend",
+      "sha256": "d935a015f94bf3266b7bfe28c72e4bdd914d2e0ef50b5258c47dd1588a9c76cc",
+      "bytes": 15048712,
+      "triangles": null,
+      "bounds_glb": null,
+      "geometry_evaluated": false,
+      "header_version": "403",
+      "compression": "none",
+      "validation": "Recognized header and byte-identical copy only; Blender was not run."
+    },
+    "lod": {
+      "file": "assets/models/bund/lod-v4/bund14.glb",
+      "sha256": "a4a7fc70ee4e7fd4cdae7d4efbdc933c4ff8ae66d7c3830be3a359af0db423df",
+      "bytes": 1443684,
+      "triangles": 68640,
+      "draw_primitives": 14,
+      "bounds_glb": {
+        "min": [
+          -32.9606476,
+          0.0,
+          -20.0955086
+        ],
+        "max": [
+          27.2928925,
+          33.4000015,
+          18.5798302
+        ]
+      },
+      "embedded_images": [],
+      "self_contained_glb": true,
+      "asset_copyright": "Geometry: MIT; map geometry: OpenStreetMap ODbL-1.0; embedded glass photograph: Suicasmo, CC0-1.0; lettering font: SIL OFL 1.1.",
+      "material_approximation_check": {
+        "passed": true,
+        "names": [
+          "PhotoFacade_Bund14Glass"
+        ],
+        "factor_tolerance": 1e-06
+      },
+      "maximum_bounds_change_m": 4.394531316620487e-08
+    }
+  },
+  "asset_files": [
+    "assets/models/bund/bund14.glb",
+    "assets/models/bund/web/bund14.glb",
+    "assets/native/bund/bund14.blend",
+    "assets/models/bund/lod-v4/bund14.glb"
+  ],
+  "commands_relative_to_output": {
+    "web": [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund14.glb",
+      "-o",
+      "assets/models/bund/web/bund14.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    "lod": [
+      "gltfpack",
+      "-i",
+      "<prepared-lod-input.glb>",
+      "-o",
+      "assets/models/bund/lod-v4/bund14.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke",
+      "-si",
+      "0.35",
+      "-se",
+      "0.002",
+      "-sp"
+    ],
+    "lod_input_preparation": "Call prepare_photo_free_lod on an independent copy of raw first; or rerun this tool with --lod-without-photos.",
+    "postprocess": "Restore raw asset.copyright verbatim in both compressed GLB JSON chunks; keep BIN unchanged."
+  },
+  "verification": {
+    "source_raw_native_sha_unchanged": true,
+    "raw_native_copies_byte_identical": true,
+    "project_registry_sha_unchanged": {
+      "data/bund/manifest.json": "fc826b5e98cac81f02ccc4b8a81b04da260c1abf4ec939bce2f438d76e63d766",
+      "data/bund/lod-v4.json": "512d18f93599bea8633aab3d2431f2d53c4e478b0c7b72b4b1c97194b2aad7b8",
+      "data/landmarks.json": "96fbcd06fe09fa822f4d8f28cd5a8a61c1dcc7032f2125ffbfaa3fb4670cb056"
+    },
+    "self_contained_glbs": true,
+    "copyright_preserved": true,
+    "raw_web_embedded_image_payloads_preserved": true,
+    "lod_images_preserved": false,
+    "lod_embedded_image_count": 0,
+    "photo_free_lod_material_copy_only": true,
+    "exclusive_file_size_limit_bytes": 100000000,
+    "web_triangle_count_preserved": true,
+    "web_bounds_limit_m": 0.0001,
+    "lod_maximum_bounds_change_limit_m": 0.35,
+    "lod_bounds_acceptance": "strictly less than limit, matching project verifier",
+    "source_bounds_method": "Referenced source POSITION vertices transformed through the full node hierarchy",
+    "compressed_bounds_method": "Accessor extrema with validated axis-aligned node transforms"
+  },
+  "lod_texture_policy": {
+    "mode": "PhotoFacade_baseColorTexture_to_tinted_glass",
+    "enabled_explicitly": true,
+    "material_prefix": "PhotoFacade_",
+    "changed_material_count": 1,
+    "changed_materials": [
+      {
+        "index": 4,
+        "name": "PhotoFacade_Bund14Glass",
+        "removed_base_color_texture": {
+          "index": 0
+        },
+        "approximation": {
+          "baseColorFactor": [
+            0.26,
+            0.3,
+            0.31,
+            1.0
+          ],
+          "roughnessFactor": 0.32,
+          "metallicFactor": 0.1
+        }
+      }
+    ],
+    "material_approximation": {
+      "baseColorFactor": [
+        0.26,
+        0.3,
+        0.31,
+        1.0
+      ],
+      "roughnessFactor": 0.32,
+      "metallicFactor": 0.1
+    },
+    "other_material_texture_policy": "Reject any other texture binding; none is silently deleted.",
+    "source_exif_texture_extras_policy": "Preserved under sourceMaterialExtrasBeforeLodFallback as historical provenance; photographicTextureActive=false.",
+    "image_removal_method": "After rejecting all remaining material texture bindings, remove orphan images/textures/samplers tables in the temporary JSON; gltfpack discards their unreferenced bufferViews/BIN bytes. Final LOD must have zero images.",
+    "removed_orphan_resource_tables": {
+      "images": 1,
+      "textures": 1,
+      "samplers": 1
+    },
+    "source_sha256": "dcd09ce14eaa59ac016e66dffd7a672360e2a8cff6c5af6d8ae051142e8c7bdf",
+    "temporary_input_sha256": "8f5dda2bfa14ee66f7a226e0a89288a015b19fe5c44ec997da12fa239d511a8c",
+    "temporary_input_bytes": 9844484,
+    "binary_sha256_unchanged": "099d057b6e41cf2e97bbf80962dfaf4484e46c1c2e32e0862029f1af8371d57c",
+    "geometry_scene_buffer_json_unchanged": true
+  },
+  "limitations": [
+    "No registration JSON, project asset or input file was modified.",
+    "Compressed vertex streams were not decoded for per-triangle comparison; bounds are not a Hausdorff test.",
+    "Native .blend geometry and external packed resources were not inspected with Blender; only header/bytes/SHA were checked.",
+    "No browser, Blender, render, visual-fidelity or photographic calibration check was run.",
+    "Only PhotoFacade_ base-color photos are replaced by an explicitly approximate tinted-glass material; other material textures are rejected by this opt-in policy.",
+    "Registration fields contain asset facts only; preserve or supply independently reviewed navigation, source and height fields."
+  ],
+  "native_report": "native-build-report.json",
+  "native_visual_passed": true,
+  "web_decoded_comparison": "web-decoded-comparison.json",
+  "browser_status": "pending-root-runtime-retest"
+}

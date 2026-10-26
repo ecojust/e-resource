@@ -29,3 +29,22 @@ python bund14/build_model.py --output /path/to/output
 Blender工程、最终材质与EXIF解码检查和预览由统一完成步骤处理。`output/`是构建产物，不应在源码包中重复分发；最终原/优化GLB及blend使用主项目canonical资产路径。
 
 源码与独立生成几何沿用项目MIT约定；地图轮廓来自OpenStreetMap，按ODbL-1.0保留来源。照片各自保留CC0、CC BY或CC BY-SA许可，详情见研究清单。研究中的文章全文HTML、搜索缓存和失败页面不随模型源码发布。
+
+## 玻璃嵌框修订
+
+本轮只把同种窗构造的玻璃前移到现有窗框前脸后20mm，玻璃厚度仍20mm；这是明确的构造估计，不是实测退距。墙洞、窗框前后面和形状、照片、UV、锚点及三角形总数保持。细节和源SHA见[修订依据](glazing-depth-revision.json)，逐材质及玻璃实体差异见[几何比较](glazing-depth-difference.json)。旧源码快照与原生预览另存 [glazing-depth-history](glazing-depth-history/README.md)，附完整输入 SHA 校验和独立恢复命令，仅适用于旧模型。新候选已通过构建、闭合、原图与UV检查；原生预览已由root明确核对，浏览器复验仍单独进行。修订已同步到项目源码与模型；最终浏览器复验仍待完成。
+
+## 修订资产与原生检查
+
+原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（字节），每件均小于100,000,000。
+
+| 文件 | 字节 | 下载 |
+|---|---:|---|
+| 原始GLB | 9,844,376 | [下载](../../../../assets/models/bund/bund14.glb) |
+| 网页GLB | 6,725,708 | [下载](../../../../assets/models/bund/web/bund14.glb) |
+| Blender工程 | 15,048,712 | [下载](../../../../assets/native/bund/bund14.blend) |
+| 远景GLB（无照片） | 1,443,684 | [下载](../../../../assets/models/bund/lod-v4/bund14.glb) |
+
+root已实际查看本修订的原生预览；照片和窗框的核对范围见[记录](native-preview-review.json)。浏览器同视角及场景复验另行完成，不以原生预览替代。完整封装、LOD与来源版权检查见[打包摘要](packaging-summary.json)。
+
+[本修订原生预览](../../../../assets/previews/bund/bund14-v6.png)；[公开玻璃差异审计](../../../../data/audit/precise-buildings-v6/bund14/glass-depth-difference.json)。

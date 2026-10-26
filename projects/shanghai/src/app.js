@@ -196,10 +196,10 @@ async function main(){
   installUi();loadingProgress(18);
   const startWalking=!location.hash || new URLSearchParams(location.hash.slice(1)).get('mode')==='walk';
   try{
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
     $('landmark-count').textContent=landmarks.length;setCategory('landmarks');drawMiniMap();updateLocation(BUND);loadingProgress(35);
-    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:startWalking?20.0:17.3,landmarks:[...landmarks,...responses[3]],
+    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:startWalking?20.0:17.3,landmarks:[...landmarks,...responses[3]],preciseBuildingOverrides:responses[4],
       onStatus:status=>{
         if(status.message)$('loading-message').textContent=status.message;
         if(status.kind==='streaming')$('live-status').textContent=status.loading?'加载附近建筑':status.visible?'附近建筑已加载':'全域地图已连接';

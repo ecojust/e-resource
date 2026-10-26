@@ -119,7 +119,7 @@ class Bank14:
         for i, pane in enumerate(pieces(pane_area)):
             glass = ('dark ground glass' if kind == 'ground' else
                      'pale reflected glass' if (i+round(u*10))%5 in (0,1) else 'blue grey glass')
-            f.prism(pane, -recess-.02, -recess, glass, label+'-pane')
+            f.prism(pane, -recess+.075, -recess+.095, glass, label+'-pane')  #20mm behind unchanged frame front(-recess+.115)
         f.box(u, sill_z, width+.14, .13, .44, -.005, 'ivory cement render' if kind != 'ground' else 'polished black marble', label+'-projecting-sill')
         if kind == 'ground':
             for zz in np.arange(z0+.13, z1-.07, .23):

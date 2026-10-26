@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import * as RealTHREE from '../vendor/three.module.js';
 import {HDRLoader} from '../vendor/HDRLoader.js';
 import {createRealisticLighting} from '../src/realistic-lighting.js';
+import {preparePhotographicGlass} from '../src/photographic-glass.js';
+import {disposeModelResources} from '../src/model-resources.js';
 
 // Exercise asynchronous texture ownership and shared-context preservation
 // without opening a second browser on the software-rendered QA machine.
@@ -66,6 +68,16 @@ try {
   const first = setup(); const fallback = targets.at(-1);
   assert.equal(first.lighting.stats.reflectionSource, 'procedural-fallback');
   assert.deepEqual(framebuffer, before, 'initial PMREM restores map framebuffer and viewport');
+  const photoGroup = new THREE.Group();
+  const photoSource = new THREE.MeshStandardMaterial({map:new THREE.Texture(),color:0x8b9dab});
+  photoSource.name = 'PhotoFacade_Bund06Glass';
+  const photoMesh = new THREE.Mesh(new THREE.PlaneGeometry(4,5),photoSource);
+  photoGroup.add(photoMesh);first.mesh.parent.add(photoGroup);
+  preparePhotographicGlass(THREE,photoGroup);
+  const photoColor = photoMesh.material.color.clone();
+  first.lighting.configureModel(photoGroup,{detailed:true});
+  assert.equal(photoMesh.material.envMap,null,'photo glass does not attach the existing fallback sky');
+  assert.deepEqual(photoMesh.material.color,photoColor,'photo glass does not receive the procedural tint');
   const raw = rawTexture(); loaded.shift().resolve(raw.texture); await Promise.resolve();
   assert.equal(first.ready(), 1);
   assert.equal(targets.at(-1), fallback, 'download continuation does no GL work');
@@ -75,9 +87,13 @@ try {
   assert.equal(fallback.disposed, 1); assert.equal(raw.disposals(), 1);
   assert.deepEqual(framebuffer, before, 'HDR PMREM restores map GL state');
   assert.equal(photographic.texture.userData.shared, true);
+  assert.equal(photoMesh.material.envMap,null,'later photographic HDR is not added over captured reflections');
+  assert.deepEqual(photoMesh.material.color,photoColor);
+  assert.equal(photoMesh.receiveShadow,false);
   first.lighting.dispose(); first.lighting.dispose();
   assert.equal(first.material.envMap, first.originalEnvironment);
   assert.equal(photographic.disposed, 1);
+  disposeModelResources(photoGroup);
 
   const late = setup(); late.lighting.dispose();
   const lateRaw = rawTexture(); loaded.shift().resolve(lateRaw.texture); await Promise.resolve();

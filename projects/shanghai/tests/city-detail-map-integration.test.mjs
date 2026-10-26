@@ -6,6 +6,8 @@ import {CityFeatureMask} from '../src/city-feature-mask.js';
 import {createRealisticLighting} from '../src/realistic-lighting.js';
 import {createArchitecturalMaterials} from '../src/architectural-material.js';
 import {disposeModelResources} from '../src/model-resources.js';
+import {FeatureStateSuppressor,LocalModelStreamer} from '../src/local-model-streamer.js';
+import {detailIsNearby} from '../src/detail-model-cache.js';
 
 // Exercise the current production integration functions, with real Three objects
 // and the real lighting owner. Only renderer/MapLibre services are absent.
@@ -42,4 +44,53 @@ test('map disposal detaches feature ownership before releasing lighting, scene n
  geometry.addEventListener('dispose',()=>{assert.equal(far.parent,null);order.push('geometry');});
  const dispose=new Function('cityDetails','lighting','scene','disposeModelResources',disposeSource+'\nreturn disposeModel;')(details,lighting,scene,disposeModelResources);
  dispose(far);assert.deepEqual(order,['detach','lighting','geometry']);assert.equal(mask.disposed,true);
+});
+
+// Execute the production visibility/manifest functions against the real owner
+// implementation. This checks effects and async restoration, not source strings.
+function preciseMapFixture(t) {
+ const states=new Map(),map={getCenter:()=>({lng:121,lat:31}),getZoom:()=>19,getSource:()=>({}),triggerRepaint(){},
+  setFeatureState(target,value){states.set(target.sourceLayer+':'+target.id,value);},removeFeatureState(target){states.delete(target.sourceLayer+':'+target.id);}};
+ const tileSuppression=new FeatureStateSuppressor(map,'overture'),landmarkSuppression=new FeatureStateSuppressor(map,'overture');
+ const dynamic={id:'bund05',status:'loaded',activeVariant:'full',object:new THREE.Group(),distance:0,maxDistance:100};
+ const staticRecord={id:'old-landmark',status:'loaded',activeVariant:'full',object:new THREE.Group(),distance:0,maxDistance:100};
+ const records=new Map([[dynamic.id,dynamic],[staticRecord.id,staticRecord]]),visible=[];
+ const env={destroyed:false,map,walker:{group:{visible:true}},current:{lng:121,lat:31},landmarkRecords:records,
+  distanceMetres:(_target,record)=>record.distance,detailIsNearby,desiredVariant:()=> 'full',streetInteraction:{},
+  preciseLandmarkIds:new Set(['bund05']),landmarkBoundaries:new Map([['bund05',{building_ids:['new-source-id'],building_part_ids:[]}],['old-landmark',{building_ids:['old-source-id'],building_part_ids:[]}]]),
+  tileSuppression,landmarkSuppression,cityDetails:{setVisibleLandmarks(ids){visible.push(ids);}},
+  updateBuildingExclusions(){},selectHiddenDetailEvictions:()=>[],detailCacheLimits:{},releaseHiddenDetail(){},disposeModel(){},detailCacheStats:{},loadLandmark(){},updateStreetBasemap(){},updateLocalModels(){},
+  moduleURL:'https://example.test/project/src/map-scene.js',localDataKind:'city',onLoadError(error){throw error;}};
+ const visibilitySource=functionBetween('updateLandmarkVisibility','  function updateBuildingExclusions');
+ const execute=body=>new Function('env',`with(env){${body.replaceAll('import.meta.url','moduleURL')}}`)(env);
+ env.updateLandmarkVisibility=execute(visibilitySource+'\nreturn updateLandmarkVisibility;');
+ const scene=new THREE.Scene();env.localStreamer=new LocalModelStreamer({scene,loader:{},suppression:tileSuppression,prepareObject(){},disposeObject(){}});
+ t.after(()=>{env.localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});});
+ const asyncFunction=(name,next)=>{const begin=source.indexOf('  async function '+name+'('),end=source.indexOf(next,begin);assert(begin>=0&&end>begin);return execute(source.slice(begin,end)+`\nreturn ${name};`);};
+ return {env,states,dynamic,staticRecord,visible,tileSuppression,landmarkSuppression,
+  update:env.updateLandmarkVisibility,
+  setCityManifest:asyncFunction('setCityManifest','  async function setNeighborhoods'),
+  setNeighborhoods:asyncFunction('setNeighborhoods','  // Update exclusions only'),
+  async settled(){await Promise.all([tileSuppression.setOwner('fixture-noop',null),landmarkSuppression.setOwner('fixture-noop',null)]);}};
+}
+
+test('precise map visibility shares online source ownership and uses only loaded visible models',async t=>{
+ const h=preciseMapFixture(t);await h.tileSuppression.setOwner('ordinary-tile',{building:['new-source-id'],building_part:[]});
+ h.update();await h.settled();assert(h.states.has('building:new-source-id'));assert(h.states.has('building:old-source-id'));
+ assert(h.tileSuppression.owners.has('precise:bund05'));assert(!h.landmarkSuppression.owners.has('bund05'));
+ assert.deepEqual(h.visible.at(-1),['bund05','old-landmark']);
+ h.dynamic.distance=10000;h.update();await h.settled();assert.equal(h.dynamic.object.visible,false);assert(!h.tileSuppression.owners.has('precise:bund05'));
+ assert(h.states.has('building:new-source-id'),'ordinary tile retains the source mask after the landmark leaves');
+ assert.deepEqual(h.visible.at(-1),['old-landmark']);
+ await h.tileSuppression.removeOwner('ordinary-tile');assert(!h.states.has('building:new-source-id'));
+ h.dynamic.distance=0;h.dynamic.status='loading';h.dynamic.object=null;h.update();await h.settled();assert(!h.states.has('building:new-source-id'));assert.deepEqual(h.visible.at(-1),['old-landmark']);
+ h.dynamic.status='error';h.update();await h.settled();assert(!h.states.has('building:new-source-id'));
+ h.dynamic.status='loaded';h.dynamic.object=new THREE.Group();h.update();await h.settled();assert(h.states.has('building:new-source-id'));
+});
+
+test('precise map city-manifest reset replays live landmark owner after the generic cache is cleared',async t=>{
+ const h=preciseMapFixture(t);h.update();await h.settled();await h.tileSuppression.setOwner('old-city-tile',{building:['new-source-id','neighbor'],building_part:[]});
+ await h.setCityManifest({tiles:[]},{baseURL:'https://example.test/project/assets/city-detail/'});await h.settled();
+ assert(h.tileSuppression.owners.has('precise:bund05'));assert(!h.tileSuppression.owners.has('old-city-tile'));assert(h.states.has('building:new-source-id'));
+ assert(!h.states.has('building:neighbor'));assert(h.states.has('building:old-source-id'));assert.deepEqual(h.visible.at(-1),['bund05','old-landmark']);
 });

@@ -30,7 +30,14 @@ CORE_DATA = (
     'districts.json', 'districts-display.geojson', 'landmarks.json',
     'scene-props.json', 'landmark-exclusions.json', 'map-style.json',
     'buildings-source.json', 'SOURCES.md', 'heights/HEIGHT_SOURCES.md',
+    'precise-buildings-v6.json',
 )
+# Keep the starter archive bounded as photo-rebuilt buildings grow. These
+# original landmarks remain local; every additional building and its reference
+# photograph is streamed from the same immutable application commit.
+CORE_LANDMARK_IDS = frozenset(('bund02','bund03','bund12','customs-house','bund15',
+    'bund17','bund18','bund19','bund20','bund23','shanghai-tower','oriental-pearl','swfc','jin-mao'))
+CORE_BUND_IDS = CORE_LANDMARK_IDS - {'shanghai-tower','oriental-pearl','swfc','jin-mao'}
 OMITTED_PREFIXES = ('assets/native/', 'assets/city/tiles/', 'assets/city/ids/',
                     'assets/city-detail/macros/',
                     'assets/districts/', 'data/fullcity-raw/', 'source/')
@@ -237,7 +244,19 @@ def plan(project, commit):
             or any(feature.get('properties', {}).get('source_mvt_id') not in road_ids
                    for feature in road_geometry['features'])):
         raise ValueError('Runtime road remainder metadata/geometry is inconsistent.')
-    add_tree('assets/references/bund')
+    landmarks = json.loads(payload['data/landmarks.json'])
+    props = json.loads(payload['data/scene-props.json'])
+    if not isinstance(landmarks, list) or len({x['id'] for x in landmarks}) != len(landmarks):
+        raise ValueError('Landmark navigation must contain distinct IDs.')
+    if not CORE_LANDMARK_IDS.issubset({x['id'] for x in landmarks}):
+        raise ValueError('The launcher must retain all original core landmarks.')
+    # Freeze the bundled reference set as the detailed city grows. New photos
+    # stream from the same immutable commit as their registered models.
+    core_photo_paths = {value for item in landmarks if item['id'] in CORE_LANDMARK_IDS
+                        for value in (item.get('reference',{}).get('image'),item.get('photo_texture',{}).get('image')) if value}
+    core_photo_paths.add('assets/references/bund/hsbc-20250501-original.jpg')
+    for name in sorted(core_photo_paths):
+        add(name)
     add_tree(MATERIAL_ROOT.rstrip('/'))
     textures = validate_materials(payload)
     reflection_root = 'assets/materials/realism-v5/'
@@ -248,50 +267,57 @@ def plan(project, commit):
     for name, entry in reflection['files'].items():
         verify_manifest_file(payload, reflection_root + relative_path(name), entry['bytes'], entry['sha256'])
 
-    landmarks = json.loads(payload['data/landmarks.json'])
-    props = json.loads(payload['data/scene-props.json'])
-    if not isinstance(landmarks, list) or len(landmarks) != 14:
-        raise ValueError('The v5 launcher requires all 14 final landmarks.')
     if not isinstance(props, list) or len(props) != 1:
         raise ValueError('The v5 launcher requires the single street scene prop.')
-    models, lod_models = [], []
+    models, lod_models, streamed_models, streamed_lods = [], [], [], []
     for item in landmarks + props:
         name = runtime_model(item)
         if not name.endswith('.glb') or not any(part in PurePosixPath(name).parts for part in ('web', 'optimized')):
             raise ValueError(f'Runtime model must be the web/optimized GLB, not a raw/native model: {name}')
-        add(name)
-        check_self_contained_glb(payload[name], name)
-        if item.get('web_sha256') and sha256(payload[name]) != item['web_sha256']:
+        bundled = item['id'] in CORE_LANDMARK_IDS or item in props
+        _, model_bytes = read_required(project, name)
+        if bundled:payload[name]=model_bytes
+        check_self_contained_glb(model_bytes, name)
+        if item.get('web_sha256') and sha256(model_bytes) != item['web_sha256']:
             raise ValueError(f'Runtime model SHA256 differs from metadata: {name}')
-        models.append({'id': item['id'], 'file': name, 'bytes': len(payload[name]), 'sha256': sha256(payload[name])})
+        (models if bundled else streamed_models).append({'id': item['id'], 'file': name,
+            'bytes': len(model_bytes), 'sha256': sha256(model_bytes),
+            **({} if bundled else {'url':cdn_root+quote(name,safe='/')})})
         if item.get('candidate_id') or item.get('lod_model'):
             lod_name = relative_path(item.get('lod_model') or '')
             if not lod_name.endswith('.glb') or not lod_name.startswith('assets/models/bund/'):
                 raise ValueError(f'Unexpected local Bund LOD path: {lod_name}')
             if lod_name == name:
                 raise ValueError(f'Bund LOD must be separate from the primary model: {lod_name}')
-            add(lod_name)
-            check_self_contained_glb(payload[lod_name], lod_name)
-            verify_manifest_file(payload, lod_name, item.get('lod_bytes'), item.get('lod_sha256'))
-            lod_models.append({'id': item['id'], 'file': lod_name, 'bytes': len(payload[lod_name]),
-                               'sha256': sha256(payload[lod_name]), 'triangles': item.get('lod_triangles')})
+            _, lod_bytes = read_required(project,lod_name)
+            check_self_contained_glb(lod_bytes,lod_name)
+            verify_manifest_file({lod_name:lod_bytes},lod_name,item.get('lod_bytes'),item.get('lod_sha256'))
+            if bundled:payload[lod_name]=lod_bytes
+            (lod_models if bundled else streamed_lods).append({'id':item['id'],'file':lod_name,'bytes':len(lod_bytes),
+                'sha256':sha256(lod_bytes),'triangles':item.get('lod_triangles'),
+                **({} if bundled else {'url':cdn_root+quote(lod_name,safe='/')})})
         reference = item.get('reference')
         if reference and reference.get('image'):
             photo = relative_path(reference['image'])
-            if photo not in payload:
+            if bundled and photo not in payload:
                 raise FileNotFoundError(f'Missing local reference photograph: {photo}')
-            if reference.get('sha256') and sha256(payload[photo]) != reference['sha256']:
+            photo_bytes=payload[photo] if bundled else read_required(project,photo)[1]
+            if reference.get('sha256') and sha256(photo_bytes) != reference['sha256']:
                 raise ValueError(f'Reference photograph SHA256 differs from metadata: {photo}')
     if not any('street' in item['id'] for item in props):
         raise ValueError('No street scene prop was found.')
-    if len(lod_models) != 10 or len({item['file'] for item in lod_models}) != 10:
-        raise ValueError('The v5 launcher requires one separate LOD for each of the ten Bund buildings.')
+    expected_lod_ids={item['id'] for item in landmarks if item.get('candidate_id') or item.get('lod_model')}
+    all_lods=lod_models+streamed_lods
+    if {item['id'] for item in lod_models} != CORE_BUND_IDS or len(all_lods)!=len(expected_lod_ids):
+        raise ValueError('Each registered Bund building requires its own LOD; core LODs must remain local.')
     lod_release = json.loads(payload['data/bund/lod-v4.json'])
     lod_records = lod_release.get('models', [])
     lod_by_model = {item['model']: item for item in lod_records}
-    if len(lod_records) != 10 or len(lod_by_model) != 10:
-        raise ValueError('The LOD release manifest must contain exactly ten distinct models.')
-    for item in lod_models:
+    if len(lod_records)!=len(expected_lod_ids) or len(lod_by_model)!=len(expected_lod_ids):
+        raise ValueError('The LOD release must match every registered architectural building.')
+    if {item['id'] for item in lod_records}!=expected_lod_ids:
+        raise ValueError('LOD release IDs differ from navigation.')
+    for item in all_lods:
         record = lod_by_model.get(item['file'], {})
         if any(record.get(key) != item[value] for key, value in [('sha256', 'sha256'), ('bytes', 'bytes'), ('triangles', 'triangles')]):
             raise ValueError(f'LOD release manifest differs from navigation metadata: {item["id"]}')
@@ -326,6 +352,21 @@ def plan(project, commit):
                     tile[key] = detail_prefix + quote(relative_path(tile[key]), safe='/')
         payload['assets/city-detail/manifest.json'] = encode_json(detail_city)
 
+    overrides=json.loads(payload['data/precise-buildings-v6.json'])
+    if overrides.get('schema')!='city-precise-overrides-v1' or not overrides.get('complete'):
+        raise ValueError('Precise-building replacement registry is incomplete.')
+    precise_ids={item['id'] for item in overrides.get('landmarks',[])}
+    if not precise_ids.issubset({item['id'] for item in landmarks}):
+        raise ValueError('A precise replacement has no published navigation model.')
+    streamed_overrides=[]
+    for macro in overrides.get('macros',[]):
+        for near in macro.get('near',[]):
+            model=near['model'];name=relative_path(model['file'])
+            _,content=read_required(project,name)
+            verify_manifest_file({name:content},name,model.get('size_bytes'),model.get('sha256'))
+            streamed_overrides.append({'file':name,'bytes':len(content),'sha256':sha256(content),
+                                       'url':cdn_root+quote(name,safe='/')})
+
     bundled = set(payload)
     for name in tuple(payload):
         if name.endswith('.json') and name.startswith('data/'):
@@ -338,7 +379,7 @@ def plan(project, commit):
     # Runtime models and city chunks are pinned above. Keep the project-info
     # link on the current documentation, where the latest launcher is published.
 
-    instructions = f'''上海漫游 v5.0 · 本地网页启动包
+    instructions = f'''上海漫游 v6.0 · 本地网页启动包
 
 一、启动
 完整解压后进入 shanghai 目录，在该目录运行：
@@ -348,8 +389,9 @@ macOS/Linux 如使用 python3：
 浏览器打开 http://localhost:8000 。不要用 file:// 直接双击 index.html。
 
 二、包内与联网部分
-本包包含网页程序、本地第三方库、14个网页优化地标、外滩街道模型、
+本包包含网页程序、本地第三方库、14个核心网页地标、外滩街道模型、
 10个外滩建筑远景LOD、12张本地1K表面纹理、上海沿江HDR、外滩参考照片及运行时数据。
+另有{len(streamed_models)}栋逐栋照片复原建筑及其LOD、参考照片按需联网加载。
 原始GLB、Blender源文件和全市分块没有打入本包。
 漫游仍需联网：道路、水系、中文标注和远景地图来自公开地图服务；
 全市 {len(city['tiles']):,} 个远景建筑分块、近景实体立面分块及精确ID索引按需从固定Git提交加载。
@@ -378,7 +420,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
 更多数据说明见 data/SOURCES.md、data/heights/HEIGHT_SOURCES.md 和 data/bund/。
 '''
     payload['使用说明.txt'] = instructions.encode('utf-8')
-    payload['README.md'] = ('# 上海漫游 v5.0 启动包\n\n' + instructions).encode('utf-8')
+    payload['README.md'] = ('# 上海漫游 v6.0 启动包\n\n' + instructions).encode('utf-8')
 
     for name in payload:
         if name.startswith(OMITTED_PREFIXES) or name.endswith(('.blend', '.blend1')):
@@ -387,13 +429,16 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
             raise ValueError(f'Unexpected GLB outside the selected runtime models: {name}')
     references_checked = validate_static_references(payload)
     package_manifest = {
-        'version': 'shanghai-web-launcher-v5.0', 'commit': commit,
+        'version': 'shanghai-web-launcher-v6.0', 'commit': commit,
         'landmark_count': len(landmarks), 'scene_prop_count': len(props),
+        'bundled_landmark_count':len(models)-len(props), 'streamed_landmark_count':len(streamed_models),
         'city_model_count': len(city['tiles']), 'city_feature_count': city.get('feature_count'),
         'city_manifest_source_sha256': sha256(city_data), 'city_cdn_prefix': city_prefix,
         'physical_city_detail_manifest_included': detail_city is not None,
         'requires_network_for_map_and_city_tiles': True,
         'raw_native_models_included': False, 'runtime_models': models, 'lod_models': lod_models,
+        'streamed_models':streamed_models, 'streamed_lod_models':streamed_lods,
+        'streamed_city_overrides':streamed_overrides,
         'local_surface_textures': textures,
         'local_road_remainders': {'file': ROAD_REMAINDER_GEOMETRY,
                                  'bytes': len(payload[ROAD_REMAINDER_GEOMETRY]),
@@ -410,6 +455,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
     report = {
         'version': package_manifest['version'], 'commit': commit,
         'project': str(project), 'landmarks': len(landmarks), 'scene_props': len(props),
+        'bundled_landmarks':len(models)-len(props), 'streamed_landmarks':len(streamed_models),
         'runtime_glbs': len({item['file'] for item in models + lod_models}),
         'primary_runtime_glbs': len({item['file'] for item in models}),
         'bund_lod_glbs': len(lod_models),

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import * as cache from '../src/detail-model-cache.js';
+import {preparePhotographicGlass} from '../src/photographic-glass.js';
 
 // Exercise the actual edited scheduler/load bodies with lightweight geographic
 // and renderer adapters. No WebGL, network or copied reimplementation of logic.
@@ -28,9 +29,14 @@ function harness({maxCount=2,maxBytes=32*cache.MIB}={}) {
     map:{getCenter(){return current;},getZoom(){return 20;},triggerRepaint(){}},walker:{group:{visible:true}},
     distanceMetres(a,b){return Math.abs(a.lng-b.lng);},desiredVariant(){return variant.value;},
     geographicPosition(){return {};},maplibregl:{MercatorCoordinate:{fromLngLat(){return {meterInMercatorCoordinateUnits(){return 1;}};}}},metreScale:1,DEG:Math.PI/180,
-    THREE:{},correctPhotographicTexture(){},surfaces:{apply(){}},lighting:{configureModel(){},invalidate(){}},
+    THREE:{},preparePhotographicGlass,correctPhotographicTexture(){},surfaces:{apply(){}},lighting:{configureModel(){},invalidate(){}},
     reportLandmarks(){},onLoadError(error){events.push({type:'error',error});},
     landmarkBoundaries:boundary,landmarkSuppression:{setOwner(id,ids){events.push({type:'owner',id,ids});return Promise.resolve();}},
+    // These cache fixtures represent the original static landmarks. Dynamic
+    // replacements exercise real shared suppression in city-detail-map tests.
+    preciseLandmarkIds:new Set(),
+    tileSuppression:{setOwner(){throw new Error('Static cache fixture unexpectedly acquired a dynamic source owner');}},
+    cityDetails:{setVisibleLandmarks(ids){events.push({type:'visible-landmarks',ids:[...ids]});}},
     updateBuildingExclusions(){events.push({type:'coverage',visible:[...records.values()].filter(r=>r.object?.visible).map(r=>r.id)});},
     updateStreetBasemap(){},updateLocalModels(){},
   };
@@ -48,12 +54,15 @@ test('far teleport restores exact ownership/OSM coverage before disposing a larg
   const h=harness(),r=h.add();h.update();assert.equal(h.requests.length,1);
   const first=group('first',{photo:true});await h.resolve(0,first);
   assert.equal(r.object,first);assert.equal(first.visible,true);assert.ok(r.resourceEstimate.textureBytes>100*cache.MIB);
+  assert.deepEqual(h.events.filter(e=>e.type==='visible-landmarks').at(-1).ids,[r.id]);
   h.events.length=0;h.move(10000);
   assert.equal(r.object,null);assert.equal(r.status,'idle');assert.equal(h.detailCacheStats.evicted,1);
   const restoration=h.events.findIndex(e=>e.type==='owner' && e.ids===null);
   const coverage=h.events.findIndex(e=>e.type==='coverage' && e.visible.length===0);
   const disposal=h.events.findIndex(e=>e.type==='dispose');
   assert.ok(restoration>=0 && restoration<disposal);assert.ok(coverage>=0 && coverage<disposal);
+  const detailRestoration=h.events.findIndex(e=>e.type==='visible-landmarks' && e.ids.length===0);
+  assert.ok(detailRestoration>=0 && detailRestoration<disposal,'city replacement visibility is restored before hidden GPU disposal');
   h.move(0);h.update();h.update();assert.equal(h.requests.length,2,'one new fetch despite repeated updates');
   await h.resolve(1,group('second',{photo:true}));assert.equal(r.status,'loaded');assert.equal(r.object.visible,true);
 });

@@ -1,14 +1,26 @@
-# 上海漫游 · Shanghai Explorer v5
+# 上海漫游 · Shanghai Explorer v6
 
-上海16区三维地图与第三人称漫游项目，包含外滩10栋历史建筑、4栋陆家嘴地标，以及1,708个分块中的1,796,419个普通建筑及部件要素。v5增加外滩楼前步道、照片参照的树木、灯具与护栏，并为普通楼建立可按需加载的实体门窗、厚框、窗台、基座和檐边。**历史建筑依照逐栋照片复原；普通建筑的窗位与建筑类型细化主要由参数推定，现场准确性不同。** 全市近景已完成生成、独立审计和浏览器场景验收。
+上海16区三维地图与第三人称漫游项目，现有17栋独立地标（13栋外滩历史建筑、4栋陆家嘴地标）。v6首批新增外滩5号日清大楼、6号中国通商银行旧址和14号交通银行旧址，按逐栋照片建立真实窗洞、厚窗框、屋顶与立面构件，并为40扇窗的376片清晰玻璃分别加入实景采样。全市基线仍为1,708个宏块、1,796,419个普通建筑及部件要素、169,320个近景分块。**逐栋照片参照重建与普通楼的参数推定细化精度不同；全市同等精度的逐栋复原仍在继续。**
 
-[在线预览](https://rawcdn.githack.com/ecojust/e-resource/a443691e2bf24dbabcb80ec109563a19715cc4da/projects/shanghai/index.html#mode=walk)（首次出现托管提示时点击 **Open the page**）。
+[打开上海漫游](index.html#mode=walk)（请从HTTP服务或网页托管打开项目页面）。
 
 ![外滩第三人称街景](assets/previews/bund-street.png)
 
-[最新启动包](https://raw.githubusercontent.com/ecojust/e-resource/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（74.94 MB，74,939,824字节；按需联网），包含14栋地标、滨江街景、表面纹理和参考照片；解压后按包内说明启动HTTP服务。全市分块与普通建筑近景按需从固定版本加载，地图仍需联网。完整模型、可编辑文件及重建源码均随项目提供。
+v6启动包尚待生成并核验，暂不提供本版ZIP下载；旧v5启动包不包含本轮更新。当前可使用项目页面和下方分项模型下载。规划中的新版启动包仍只在本地包含原14栋核心地标，新增3栋、远景变体、参考照片与全市分块从固定版本按需联网加载。
 
-## v5 城市近景与外滩环境
+## v6 首批逐栋照片重建
+
+新增三栋保留各自真实地图轮廓和地理锚点。日清大楼重建双山花、三面凸窗、门柱及分组阳台；中国通商银行重建五山墙、四圆尖塔、三拱柱廊和独立附翼；交通银行重建四排八轴窗、黑石入口、实体字牌和阶梯塔冠。照片只用于逐片选中的玻璃，避开黑框与遮挡物；墙体、窗洞、厚框及雕饰仍由几何构件形成。
+
+三栋玻璃现位于对应窗框前脸后约**20mm**的槽内，避免玻璃脱离厚框；该深度是构造估计，不是测量值，墙洞、窗框和照片UV保持原值。HTML对明确标记的照片玻璃直接显示已捕获的光照与反射，取消重复场景受光、阴影及额外HDR；仍保留原材质颜色系数和应用统一色调映射，不把照片假装成去光照的PBR纹理，照片石墙与普通玻璃沿用原路径。
+
+正常设备局部阴影使用4096×4096贴图、48m半范围；低内存设备使用1024×1024，并受硬件贴图上限约束。三栋楼前另新增约**844.50㎡**有界灰石铺装与3个行走支持面，顶面沿用模型0.075m基准；这是依据临街边与既有道路边界的估计范围，保留道路、水体、已有铺装、源孔洞、草床和已知建筑排除边界。[逐栋细化验收标准](data/audit/precise-buildings-v6/DETAIL_STANDARD.md)列明证据和几何要求。
+
+三栋细模加载并可见时，分别替换相应的普通建筑源对象；卸载后恢复原表示，邻楼与全市基线计数保持不变。模型、原生预览、压缩与照片字节检查已通过，完整自动测试已通过。首批三栋已通过15组网页技术记录与10张截图的有限视觉核对；该轮采集早于后续网络／样式补丁，最终启动包另行核验。范围见[本轮网页审计](data/audit/precise-buildings-v6/release/README.md)。
+
+[本轮范围、来源与验证](data/bund/REALISM_V6.md) · [三栋重建源码与下载](source/bund/photo-rebuild-v6/README.md)。原10栋外滩建筑及v5城市近景、街景成果继续保留。07、09及222仍为后续候选，本版未上线。
+
+## v5 城市近景与外滩环境（保留成果）
 
 外滩10栋临街建筑前补齐约3,357.13m²铺装；17、18号对面的两条草床加入按2010年照片定位与估计的7棵树、支撑和近景草叶。滨江灯、道路灯及护栏按公开照片调整实体形态，地面、低路缘与街景设施加入对应的行走及镜头碰撞。沥青在中距离保留更自然的细微变化。
 
@@ -20,7 +32,7 @@
 
 ## 历史更新
 
-以下记录各版本发布时的范围；“本次”“尚未”等表述对应当时状态，当前情况以v5说明为准。
+以下记录各版本发布时的范围；“本次”“尚未”等表述对应当时状态，当前情况以顶部v6说明为准。
 
 ### v4.4 墙面、逐窗与屋顶修正
 
@@ -83,8 +95,11 @@ python -m http.server 8000
 |---|---|---|---|
 | 2号 · 上海总会 | 六柱柱廊、顶层拱窗与双亭 | [网页版](assets/models/bund/web/bund02.glb) · [原始GLB](assets/models/bund/bund02.glb) | [.blend](assets/native/bund/bund02.blend) |
 | 3号 · 有利大楼 · 外滩3号 | 转角塔楼、双街立面与窗套 | [网页版](assets/models/bund/web/bund03.glb) · [原始GLB](assets/models/bund/bund03.glb) | [.blend](assets/native/bund/bund03.blend) |
+| 5号 · 日清大楼 | 双山花、三面凸窗、门柱与112片照片玻璃 | [网页版](assets/models/bund/web/bund05.glb) · [原始GLB](assets/models/bund/bund05.glb) | [.blend](assets/native/bund/bund05.blend) |
+| 6号 · 中国通商银行旧址 | 五山墙、四圆尖塔、三拱柱廊与127片照片玻璃 | [网页版](assets/models/bund/web/bund06.glb) · [原始GLB](assets/models/bund/bund06.glb) | [.blend](assets/native/bund/bund06.blend) |
 | 12号 · 汇丰银行大楼 | 六柱柱廊、鼓座、穹顶与中庭 | [网页版](assets/models/bund/web/bund12.glb) · [原始GLB](assets/models/bund/bund12.glb) | [.blend](assets/native/bund/bund12.blend) |
 | 13号 · 江海关大楼 | 钟塔、凹窗与源轮廓四角亭 | [网页版](assets/models/bund/web/bund13.glb) · [原始GLB](assets/models/bund/bund13.glb) | [.blend](assets/native/bund/bund13.blend) |
+| 14号 · 交通银行旧址 | 八轴窗、黑石入口、阶梯塔冠与137片照片玻璃 | [网页版](assets/models/bund/web/bund14.glb) · [原始GLB](assets/models/bund/bund14.glb) | [.blend](assets/native/bund/bund14.blend) |
 | 15号 · 华俄道胜银行大楼 | 柱廊、拱券与窗洞 | [网页版](assets/models/bund/web/bund15.glb) · [原始GLB](assets/models/bund/bund15.glb) | [.blend](assets/native/bund/bund15.blend) |
 | 17号 · 字林西报大楼 | 窄面深进、照片窗与双侧屋顶石塔 | [网页版](assets/models/bund/web/bund17.glb) · [原始GLB](assets/models/bund/bund17.glb) | [.blend](assets/native/bund/bund17.blend) |
 | 18号 · 麦加利银行 · 外滩18号 | 爱奥尼柱廊、山花与栏杆 | [网页版](assets/models/bund/web/bund18.glb) · [原始GLB](assets/models/bund/bund18.glb) | [.blend](assets/native/bund/bund18.blend) |
@@ -109,7 +124,7 @@ python -m http.server 8000
 
 16区覆盖黄浦、徐汇、长宁、静安、普陀、虹口、杨浦、闵行、宝山、嘉定、浦东新区、金山、松江、青浦、奉贤、崇明。[全域分块清单](assets/city/README.md)与[机器清单](assets/city/manifest.json)提供下载和地理定位信息；每块具有独立经纬度原点与米制坐标。assets/districts/仅保留旧版每区1km²样本，当前HTML使用全域分块。
 
-普通建筑近景的门窗具有实体厚度与退距，窗位、开间和多数材料仍由参数推定；远景保留较轻的建筑表示。道路宽度优先公开width/lanes字段，否则按等级估算。全域公开源仍可能漏楼、错分轮廓或具有年代差异；“全域”指本次来源范围内的处理覆盖。v5近景的最终覆盖状态见上方发布记录。
+普通建筑近景的门窗具有实体厚度与退距，窗位、开间和多数材料仍由参数推定；远景保留较轻的建筑表示。道路宽度优先公开width/lanes字段，否则按等级估算。全域公开源仍可能漏楼、错分轮廓或具有年代差异；“全域”指本次来源范围内的处理覆盖。v5近景覆盖见上方保留记录；v6新增三栋采用动态精确替换，不改变该基线统计。
 
 ## 数据依据与版本变化
 
@@ -117,6 +132,8 @@ python -m http.server 8000
 - **行政边界**：OSM的16区几何有效，45个检查点通过，覆盖崇明、长兴、横沙、机场、临港及外围区域。河海行政水域面积不等于官方6,340.5km²陆域面积。[地理审计](data/audit/ACCURACY.md)保留政府资料对照和边界处理说明。
 - **父体剩余足迹**：v2逐一核验551个父体，恢复402处原先被分部处理遗漏的剩余足迹，约953,690m²；这些是历史核验总量。v3中国银行详细模型接管其中1处，当前普通模型保留**401处**。残差高度单独估算，不把塔楼总高直接用作裙房高度；原始阈值、面积及402处证据仍保留供追溯。
 - **精确替换**：v3按源对象ID及组件关系替换**98个可渲染要素**。普通模型当前计数为 **1,796,116 − 98 + 401 = 1,796,419**，不是独立楼宇数量。外滩细模不按半径粗删邻楼；海关仅替换确认的前楼、钟楼和四角亭，独立后翼继续保留。[v3分块核验](data/bund/validation/city-patches.json)与[构件核验记录](data/bund/validation/)记录替换依据。
+
+v6新增5、6、14号采用独立源对象的动态替换；1,796,419个要素的基线没有减去这三条。只有对应细模加载成功且实际可见时，才隐藏相应普通表示，卸载后恢复。详见[本轮范围](data/bund/REALISM_V6.md)。
 
 高度优先级为：源height → 楼层数×3.2m → CMAB严格轮廓匹配的预测高度 → CNBH 10m栅格估计 → GHSL区域均高 → 明确标注的12m缺省。CMAB在16区抽样1,280个足迹作对齐检查，不采用简单最近邻或无依据的GCJ偏移。
 
@@ -137,7 +154,7 @@ python data/audit/build_audit.py --project .
 python data/heights/verify_release.py
 ```
 
-- [外滩源码说明](source/bund/README.md)：10栋建筑、配套街道及各自输入资料。
+- [外滩源码说明](source/bund/README.md)：13栋建筑、配套街道及各自输入资料。
 - [全域生成说明](source/city/FULLCITY_BUILD.md)：建筑分块、精确替换、父体残差与压缩。
 - [高度重建说明](data/heights/REBUILD.md)：下载、裁剪、匹配与配置锁；超限上游原始下载不纳入仓库。
 - [陆家嘴源码](source/landmarks/)：四地标生成与导出，运行方式见文件头部。

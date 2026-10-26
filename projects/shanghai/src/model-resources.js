@@ -1,3 +1,18 @@
+// A replacement material may stop sampling a source texture while the imported
+// model still owns its ImageBitmap. Keep that ownership until the model unloads;
+// never attach the unused texture to the new shader just to preserve cleanup.
+const retainedModelTextures = new WeakMap();
+
+export function retainModelTextureOwnership(object, textures) {
+  if (!object) return;
+  let retained = retainedModelTextures.get(object);
+  for (const texture of textures || []) {
+    if (!texture?.isTexture) continue;
+    if (!retained) retainedModelTextures.set(object, retained = new Set());
+    retained.add(texture);
+  }
+}
+
 /**
  * Buffer payload estimate shared by city and detailed-model budgets. Count GPU
  * buffer owners, not meshes or ArrayBuffers: Three uploads each BufferAttribute
@@ -88,15 +103,25 @@ export function countExpandedTriangles(object) {
 /** Release resources owned by a glTF scene; shared viewer maps stay alive. */
 export function disposeModelResources(object) {
   if (!object) return;
-  const geometries = new Set(), materials = new Set(), textures = new Set(), images = new Set();
+  const geometries = new Set(), materials = new Set(), textures = new Set(), images = new Set(), sharedImages = new Set();
+  const rememberTexture = texture => {
+    if (!texture?.isTexture) return;
+    if (texture.userData.shared) {
+      if (texture.source?.data?.close) sharedImages.add(texture.source.data);
+    } else textures.add(texture);
+  };
   object.traverse(child => {
+    for (const texture of retainedModelTextures.get(child) || []) {
+      rememberTexture(texture);
+    }
+    retainedModelTextures.delete(child);
     // InstancedMesh owns GPU buffers independently of its shared geometry.
     if (child.isInstancedMesh) child.dispose();
     if (child.geometry) geometries.add(child.geometry);
     for (const material of child.material ? (Array.isArray(child.material) ? child.material : [child.material]) : []) {
       materials.add(material);
       for (const value of Object.values(material)) {
-        if (value?.isTexture && !value.userData.shared) textures.add(value);
+        rememberTexture(value);
       }
     }
   });
@@ -108,5 +133,5 @@ export function disposeModelResources(object) {
     if (image?.close) images.add(image);
   }
   // glTF can use one ImageBitmap in multiple material texture slots.
-  for (const image of images) image.close();
+  for (const image of images) if (!sharedImages.has(image)) image.close();
 }

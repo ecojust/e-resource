@@ -1,0 +1,36 @@
+--- a/src/local-model-streamer.js
++++ b/src/local-model-streamer.js
+@@ -136,9 +136,7 @@
+   }
+ }
+ 
+-async function readIds(response) {
+-  if (!response.ok) throw Object.assign(new Error(`建筑索引读取失败 (${response.status})`), {status: response.status});
+-  let data = await response.arrayBuffer();
++async function decodeIds(data) {
+   const bytes = new Uint8Array(data);
+   if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
+     if (typeof DecompressionStream === 'undefined') throw new Error('浏览器不支持压缩建筑索引');
+@@ -263,12 +261,18 @@
+         return response.arrayBuffer();
+       });
+       const idsRequest=record.inlineIds?Promise.resolve(record.inlineIds):record.idsURL
+-        ?this.fetch(record.idsURL,{signal:controller.signal}).then(readIds)
++        ?this.fetch(record.idsURL,{signal:controller.signal}).then(async response=>{
++          if (!response.ok) throw Object.assign(new Error(`建筑索引读取失败 (${response.status})`),{status:response.status});
++          return response.arrayBuffer();
++        })
+         :Promise.reject(new Error('分块缺少建筑标识索引，继续显示在线建筑'));
+-      const [buffer,ids]=await Promise.all([modelRequest,idsRequest]);
+-      // This deadline bounds transport/ID decoding, not CPU parsing or the
+-      // frame-batched suppression work. Keep the controller for view changes.
++      const [buffer,idsData]=await Promise.all([modelRequest,idsRequest]);
++      // The network deadline ends after BOTH raw response bodies arrive.
++      // Gzip/JSON work can wait behind rendering even after HTTP completed;
++      // do not charge that processing to transport. View aborts remain active.
+       clearTimeout(timeout);
++      if (controller.signal.aborted) throw new DOMException('Aborted','AbortError');
++      const ids=record.inlineIds ? idsData : await decodeIds(idsData);
+       if (controller.signal.aborted) throw new DOMException('Aborted','AbortError');
+       const data=await this.loader.parseAsync(buffer,new URL('.',record.url).href); object=data.scene;
+       if (this.destroyed || generation!==this.generation || controller.signal.aborted || !this.wanted.has(record.id)) {

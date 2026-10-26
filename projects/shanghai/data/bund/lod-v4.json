@@ -1,7 +1,7 @@
 {
-  "version": "bund-distant-lod-v4.4",
+  "version": "bund-distant-lod-v6.0",
   "complete": true,
-  "generator": "Per-building source_package for v4.4; tools/build_bund_lods.py --verify-only validates the complete set",
+  "generator": "Per-building source_package; tools/build_bund_lods.py --verify-only validates all registered buildings",
   "gltfpack_version": "gltfpack 1.3",
   "maximum_bounds_change_limit_m": 0.35,
   "source_bounds_method": "Referenced POSITION vertices transformed through the full node hierarchy",
@@ -909,6 +909,417 @@
       ],
       "photographic_texture_in_lod": false,
       "source_package": "source/bund/art_deco/wall-v4.4/README.md"
+    },
+    {
+      "id": "bund05",
+      "candidate_id": "bund05",
+      "model": "assets/models/bund/lod-v4/bund05.glb",
+      "sha256": "6da511ad35e72659c1112be66ad6bffb4b3d5ba001d4be27810e44f3663298ff",
+      "bytes": 2070252,
+      "triangles": 97972,
+      "full_triangles": 146056,
+      "actual_triangle_ratio": 0.6707838089499918,
+      "draw_primitives": 15,
+      "maximum_bounds_change_m": 4.39941416630063e-08,
+      "source_bounds_glb": {
+        "min": [
+          -32.82546615600586,
+          0.0,
+          -21.699254989624023
+        ],
+        "max": [
+          32.708946228027344,
+          34.5,
+          21.190105438232422
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -32.8254662,
+          0.0,
+          -21.699255
+        ],
+        "max": [
+          32.7089462,
+          34.5,
+          21.1901054
+        ]
+      },
+      "full_model_unchanged_sha256": "a125c8e72bfe8f4eb8abb7c402d9789e01387d2d16f3eee045bf6f7c3aaf5212",
+      "close_up_web_unchanged_sha256": "779cacbfb1ef1fe973c204164f685f2bee5ea33a470118538f1042df7d413d59",
+      "native_unchanged_sha256": "a45fba4947c7cf43dcd8c959b21bcd673c74e26afe321a5980ce1f9dae3dfd5a",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-noq",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 97972,
+        "bytes": 2070252,
+        "maximum_bounds_change_m": 4.39941416630063e-08,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-noq",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 97972,
+          "bytes": 2070252,
+          "maximum_bounds_change_m": 4.39941416630063e-08,
+          "accepted": true
+        }
+      ],
+      "photographic_texture_in_lod": false,
+      "embedded_images_retained": false,
+      "strip_texture_policy": {
+        "mode": "PhotoFacade_baseColorTexture_to_tinted_glass",
+        "enabled_explicitly": true,
+        "material_prefix": "PhotoFacade_",
+        "changed_material_count": 1,
+        "changed_materials": [
+          {
+            "index": 13,
+            "name": "PhotoFacade_Bund05_RegisteredGlass",
+            "removed_base_color_texture": {
+              "index": 0
+            },
+            "approximation": {
+              "baseColorFactor": [
+                0.26,
+                0.3,
+                0.31,
+                1.0
+              ],
+              "roughnessFactor": 0.32,
+              "metallicFactor": 0.1
+            }
+          }
+        ],
+        "material_approximation": {
+          "baseColorFactor": [
+            0.26,
+            0.3,
+            0.31,
+            1.0
+          ],
+          "roughnessFactor": 0.32,
+          "metallicFactor": 0.1
+        },
+        "other_material_texture_policy": "Reject any other texture binding; none is silently deleted.",
+        "source_exif_texture_extras_policy": "Preserved under sourceMaterialExtrasBeforeLodFallback as historical provenance; photographicTextureActive=false.",
+        "image_removal_method": "After rejecting all remaining material texture bindings, remove orphan images/textures/samplers tables in the temporary JSON; gltfpack discards their unreferenced bufferViews/BIN bytes. Final LOD must have zero images.",
+        "removed_orphan_resource_tables": {
+          "images": 1,
+          "textures": 1,
+          "samplers": 1
+        },
+        "source_sha256": "a125c8e72bfe8f4eb8abb7c402d9789e01387d2d16f3eee045bf6f7c3aaf5212",
+        "temporary_input_sha256": "68fdb355b0957c5e6b11b9ddfae65a93686bd7e22303c0265eb83710713bbcac",
+        "temporary_input_bytes": 14906248,
+        "binary_sha256_unchanged": "23a459b3edcee56bffcf6a3abe003302c76a5b251abdcd257d76526f9239896b",
+        "geometry_scene_buffer_json_unchanged": true
+      },
+      "explicit_material_approximation": true,
+      "source_package": "source/bund/photo-rebuild-v6/bund05/README.md"
+    },
+    {
+      "id": "bund14",
+      "candidate_id": "bund14",
+      "model": "assets/models/bund/lod-v4/bund14.glb",
+      "sha256": "a4a7fc70ee4e7fd4cdae7d4efbdc933c4ff8ae66d7c3830be3a359af0db423df",
+      "bytes": 1443684,
+      "triangles": 68640,
+      "full_triangles": 77324,
+      "actual_triangle_ratio": 0.8876933422999328,
+      "draw_primitives": 14,
+      "maximum_bounds_change_m": 4.394531316620487e-08,
+      "source_bounds_glb": {
+        "min": [
+          -32.96064758300781,
+          0.0,
+          -20.095508575439453
+        ],
+        "max": [
+          27.292892456054688,
+          33.400001525878906,
+          18.579830169677734
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -32.9606476,
+          0.0,
+          -20.0955086
+        ],
+        "max": [
+          27.2928925,
+          33.4000015,
+          18.5798302
+        ]
+      },
+      "full_model_unchanged_sha256": "dcd09ce14eaa59ac016e66dffd7a672360e2a8cff6c5af6d8ae051142e8c7bdf",
+      "close_up_web_unchanged_sha256": "a838ad7887713c5cd43b2abd6e139b3d52744465c0a4ea82608571e9af7b8801",
+      "native_unchanged_sha256": "d935a015f94bf3266b7bfe28c72e4bdd914d2e0ef50b5258c47dd1588a9c76cc",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-noq",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 68640,
+        "bytes": 1443684,
+        "maximum_bounds_change_m": 4.394531316620487e-08,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-noq",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 68640,
+          "bytes": 1443684,
+          "maximum_bounds_change_m": 4.394531316620487e-08,
+          "accepted": true
+        }
+      ],
+      "photographic_texture_in_lod": false,
+      "embedded_images_retained": false,
+      "strip_texture_policy": {
+        "mode": "PhotoFacade_baseColorTexture_to_tinted_glass",
+        "enabled_explicitly": true,
+        "material_prefix": "PhotoFacade_",
+        "changed_material_count": 1,
+        "changed_materials": [
+          {
+            "index": 4,
+            "name": "PhotoFacade_Bund14Glass",
+            "removed_base_color_texture": {
+              "index": 0
+            },
+            "approximation": {
+              "baseColorFactor": [
+                0.26,
+                0.3,
+                0.31,
+                1.0
+              ],
+              "roughnessFactor": 0.32,
+              "metallicFactor": 0.1
+            }
+          }
+        ],
+        "material_approximation": {
+          "baseColorFactor": [
+            0.26,
+            0.3,
+            0.31,
+            1.0
+          ],
+          "roughnessFactor": 0.32,
+          "metallicFactor": 0.1
+        },
+        "other_material_texture_policy": "Reject any other texture binding; none is silently deleted.",
+        "source_exif_texture_extras_policy": "Preserved under sourceMaterialExtrasBeforeLodFallback as historical provenance; photographicTextureActive=false.",
+        "image_removal_method": "After rejecting all remaining material texture bindings, remove orphan images/textures/samplers tables in the temporary JSON; gltfpack discards their unreferenced bufferViews/BIN bytes. Final LOD must have zero images.",
+        "removed_orphan_resource_tables": {
+          "images": 1,
+          "textures": 1,
+          "samplers": 1
+        },
+        "source_sha256": "dcd09ce14eaa59ac016e66dffd7a672360e2a8cff6c5af6d8ae051142e8c7bdf",
+        "temporary_input_sha256": "8f5dda2bfa14ee66f7a226e0a89288a015b19fe5c44ec997da12fa239d511a8c",
+        "temporary_input_bytes": 9844484,
+        "binary_sha256_unchanged": "099d057b6e41cf2e97bbf80962dfaf4484e46c1c2e32e0862029f1af8371d57c",
+        "geometry_scene_buffer_json_unchanged": true
+      },
+      "explicit_material_approximation": true,
+      "source_package": "source/bund/photo-rebuild-v6/bund14/README.md"
+    },
+    {
+      "id": "bund06",
+      "candidate_id": "bund06",
+      "model": "assets/models/bund/lod-v4/bund06.glb",
+      "sha256": "433f701a74159017e0df0c76872245d5b56ff8100705bd4ce81a8fdcf65c5996",
+      "bytes": 956784,
+      "triangles": 40467,
+      "full_triangles": 91111,
+      "actual_triangle_ratio": 0.444150541647002,
+      "draw_primitives": 10,
+      "maximum_bounds_change_m": 4.782714668749577e-08,
+      "source_bounds_glb": {
+        "min": [
+          -22.361255645751953,
+          -0.1850000023841858,
+          -24.27703285217285
+        ],
+        "max": [
+          25.78534698486328,
+          22.993600845336914,
+          22.69257164001465
+        ]
+      },
+      "lod_bounds_glb": {
+        "min": [
+          -22.3612556,
+          -0.185000002,
+          -24.2770329
+        ],
+        "max": [
+          25.785347,
+          22.9936008,
+          22.6925716
+        ]
+      },
+      "full_model_unchanged_sha256": "641bc6f0b747df3a7405bda467b65311f9758493f6b32d6d463d18cb94eed0a6",
+      "close_up_web_unchanged_sha256": "bd7e553e55a09efe4f01279cd68650cbfb2fe324aeee0228eabb712d2054a596",
+      "native_unchanged_sha256": "c57b8c8c0f5714cfd08deb7e218fb1876c497cd3c3d528bcf2b12c28c7ce9474",
+      "switch_out_distance_m": 400,
+      "switch_in_distance_m": 300,
+      "generation": {
+        "mode": "simplified",
+        "target_triangle_ratio": 0.35,
+        "relative_error_limit": 0.002,
+        "permissive_attribute_simplification": true,
+        "parameters": [
+          "-cc",
+          "-noq",
+          "-km",
+          "-ke",
+          "-si",
+          "0.35",
+          "-se",
+          "0.002",
+          "-sp"
+        ],
+        "triangles": 40467,
+        "bytes": 956784,
+        "maximum_bounds_change_m": 4.782714668749577e-08,
+        "accepted": true
+      },
+      "attempts": [
+        {
+          "mode": "simplified",
+          "target_triangle_ratio": 0.35,
+          "relative_error_limit": 0.002,
+          "permissive_attribute_simplification": true,
+          "parameters": [
+            "-cc",
+            "-noq",
+            "-km",
+            "-ke",
+            "-si",
+            "0.35",
+            "-se",
+            "0.002",
+            "-sp"
+          ],
+          "triangles": 40467,
+          "bytes": 956784,
+          "maximum_bounds_change_m": 4.782714668749577e-08,
+          "accepted": true
+        }
+      ],
+      "photographic_texture_in_lod": false,
+      "embedded_images_retained": false,
+      "strip_texture_policy": {
+        "mode": "PhotoFacade_baseColorTexture_to_tinted_glass",
+        "enabled_explicitly": true,
+        "material_prefix": "PhotoFacade_",
+        "changed_material_count": 1,
+        "changed_materials": [
+          {
+            "index": 5,
+            "name": "PhotoFacade_Bund06Glass",
+            "removed_base_color_texture": {
+              "index": 0
+            },
+            "approximation": {
+              "baseColorFactor": [
+                0.26,
+                0.3,
+                0.31,
+                1.0
+              ],
+              "roughnessFactor": 0.32,
+              "metallicFactor": 0.1
+            }
+          }
+        ],
+        "material_approximation": {
+          "baseColorFactor": [
+            0.26,
+            0.3,
+            0.31,
+            1.0
+          ],
+          "roughnessFactor": 0.32,
+          "metallicFactor": 0.1
+        },
+        "other_material_texture_policy": "Reject any other texture binding; none is silently deleted.",
+        "source_exif_texture_extras_policy": "Preserved under sourceMaterialExtrasBeforeLodFallback as historical provenance; photographicTextureActive=false.",
+        "image_removal_method": "After rejecting all remaining material texture bindings, remove orphan images/textures/samplers tables in the temporary JSON; gltfpack discards their unreferenced bufferViews/BIN bytes. Final LOD must have zero images.",
+        "removed_orphan_resource_tables": {
+          "images": 1,
+          "textures": 1,
+          "samplers": 1
+        },
+        "source_sha256": "641bc6f0b747df3a7405bda467b65311f9758493f6b32d6d463d18cb94eed0a6",
+        "temporary_input_sha256": "a959e23ecb5dd4791e85a73b52215224c9327860e99a2ac51ec34dec2c8bd55a",
+        "temporary_input_bytes": 13010596,
+        "binary_sha256_unchanged": "469451d37123c73b0c12a68a50db570874b6227c2ee88a3acaeec664247c3e3d",
+        "geometry_scene_buffer_json_unchanged": true
+      },
+      "explicit_material_approximation": true,
+      "source_package": "source/bund/photo-rebuild-v6/bund06/README.md"
     }
   ],
   "modified_buildings": [

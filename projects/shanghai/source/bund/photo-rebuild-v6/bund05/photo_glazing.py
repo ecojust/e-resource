@@ -41,14 +41,14 @@ class RegisteredGlazing:
    l=xs[c]+xb[c];right=xs[c+1]-xb[c+1];top=ys[r]-yb[r];bottom=ys[r+1]+yb[r+1]
    q=box(l,bottom,right,top);polygons.append(q)
    plabel=f'{label}-{side}-pane-{r}-{c}'
-   f.prism(q,-.34,-.32,'recessed glass',plabel)
+   f.prism(q,-.20,-.18,'recessed glass',plabel)
    selected=f.builder.parts[-1];h=pane_homography(pane['source_oriented_quad_px'])
    def uv(p,h=h,l=l,right=right,top=top,bottom=bottom):
     p=np.asarray(p);pu=float(np.dot(p-f.center,f.t));v=(top-p[2])/(top-bottom);s=(pu-l)/(right-l)
     out=h@np.array([s,v,1]);x,y=out[:2]/out[2]
     return [y/5184,(3455-x)/3456]
    result=f.builder.photograph_parts(self.image,uv,lambda p:p is selected,name='PhotoFacade_Bund05_RegisteredGlass',roughness=.48,orientation={'rawSize':[5184,3456],'exifOrientation':6,'uvConvention':'stored-pixels'})
-   self.evidence.append({'part':selected['label'],'window':ctl['id'],'pane':[r,c],'bounds_facade_uz_m':[l,bottom,right,top],'depth_m':[-.34,-.32],'source_oriented_quad_px':pane['source_oriented_quad_px'],'stored_uv_corners':[uv(f.point(a,b,-.32)) for a,b in [(l,top),(right,top),(right,bottom),(l,bottom)]]})
+   self.evidence.append({'part':selected['label'],'window':ctl['id'],'pane':[r,c],'bounds_facade_uz_m':[l,bottom,right,top],'depth_m':[-.20,-.18],'source_oriented_quad_px':pane['source_oriented_quad_px'],'stored_uv_corners':[uv(f.point(a,b,-.18)) for a,b in [(l,top),(right,top),(right,bottom),(l,bottom)]]})
   # One closed, shared-grid frame per window, without intersecting bar boxes.
   f.prism(outer.difference(unary_union(polygons)),-.27,-.16,'bronze window frame',label+'-'+side+'-registered-frame-grid')
   f.prism(shape.buffer(.16,join_style=2).difference(shape),-.025,.105,'carved pale stone',label+'-'+side+'-surround')

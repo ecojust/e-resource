@@ -1,6 +1,6 @@
 # 逐栋照片参照建筑：共享生成工具
 
-普通Python环境需要 `numpy`、`shapely>=2.1`、`Pillow`、`fonttools`；原生工程步骤使用Blender 4.3或更新版本。几何生成使用米制east/north/up坐标，GLB导出为east/up/-north。不要在Blender的独立Python环境里直接运行依赖Shapely的建模步骤。
+普通Python环境需要 `numpy`、`shapely>=2.1`、`Pillow`、`fonttools`；相机校准和采样控制再生另需 `scipy`；原生工程步骤使用Blender 4.3或更新版本。几何生成使用米制east/north/up坐标，GLB导出为east/up/-north。不要在Blender的独立Python环境里直接运行依赖Shapely的建模步骤。
 
 在相邻 `bundNN` 目录运行该栋的 `build_model.py`，具体校准、照片选择和验证入口见各自README。公共几何工具使用带真实开口的连续墙体；玻璃、框、装饰及字牌为独立实体。照片映射只作用于明确选中的玻璃，原JPEG字节嵌入GLB。窗户逐口校准，不能将全立面一个投影当作每块凸窗或凹玻璃的正确位置。
 

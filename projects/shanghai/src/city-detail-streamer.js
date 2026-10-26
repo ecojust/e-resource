@@ -4,6 +4,49 @@ import {countExpandedTriangles} from './model-resources.js';
 import {estimateDetailResources} from './detail-model-cache.js';
 import {cityModelCodecMetadata,decodeCityModelResponse} from './city-model-codec.js';
 
+const SHA256=/^[a-f0-9]{64}$/;
+const sameIDs=(a,b)=>a.length===b.length&&a.every((id,index)=>id===b[index]);
+function replacementRegistry(manifest,baseURL) {
+  if(manifest?.schema!=='city-precise-overrides-v1'||manifest.complete!==true||!Array.isArray(manifest.macros))throw Error('Invalid precise building registry');
+  const macros=new Map(),landmarks=new Set();
+  for(const source of manifest.macros) {
+    if(typeof source.id!=='string'||!source.id||macros.has(source.id)||!Number.isInteger(source.feature_count)||source.feature_count<1
+      ||source.feature_count>16777215||!SHA256.test(source.baseline_configuration_sha256)||!SHA256.test(source.baseline_far_sha256)
+      ||!Array.isArray(source.near)||!source.near.length)throw Error('Invalid precise building macro');
+    const near=new Map(),claimed=new Set(),owners=new Map();
+    for(const item of source.near) {
+      const ids=item.featureLocalIds;
+      if(typeof item.id!=='string'||!item.id||near.has(item.id)||typeof item.baseline_file!=='string'||!item.baseline_file
+        ||!SHA256.test(item.baseline_sha256)||!SHA256.test(item.baseline_decoded_sha256)||!Array.isArray(ids)||!ids.length
+        ||!Array.isArray(item.groups)||!item.groups.length)throw Error('Invalid precise near replacement');
+      for(const id of ids) {
+        if(!Number.isInteger(id)||id<1||id>source.feature_count||claimed.has(id))throw Error('Duplicate precise near ownership');
+        claimed.add(id);
+      }
+      const model=item.model,codec=cityModelCodecMetadata(model||{});
+      if(!model||typeof model.file!=='string'||!model.file||!Number.isInteger(model.expandedTriangles)||model.expandedTriangles<1
+        ||!Number.isFinite(model.geometryBytes)||model.geometryBytes<1||!SHA256.test(model.sha256)
+        ||!Number.isInteger(model.size_bytes)||model.size_bytes<1||model.size_bytes>=100000000)throw Error('Invalid precise near model');
+      const names=new Set();
+      for(const group of item.groups) {
+        if(typeof group.name!=='string'||!group.name||names.has(group.name)||typeof group.landmark_id!=='string'||!group.landmark_id
+          ||!Array.isArray(group.local_ids)||!group.local_ids.length||new Set(group.local_ids).size!==group.local_ids.length
+          ||!Array.isArray(group.feature_keys)||group.feature_keys.length!==group.local_ids.length
+          ||group.feature_keys.some(key=>typeof key!=='string'||!/^building(?:_part)?:[a-f0-9-]{36}$/.test(key))
+          ||!Number.isInteger(group.expandedTriangles)||group.expandedTriangles<1)throw Error('Invalid precise node group');
+        names.add(group.name);landmarks.add(group.landmark_id);
+        for(const id of group.local_ids) {
+          if(!ids.includes(id)||owners.has(id))throw Error('Precise feature has multiple landmark owners');
+          owners.set(id,group.landmark_id);
+        }
+      }
+      near.set(item.id,{...item,codec,url:new URL(model.file,baseURL).href});
+    }
+    macros.set(source.id,{...source,near,owners});
+  }
+  return {macros,landmarks};
+}
+
 /** Bounded physical facade models. A visible far parent owns every replacement. */
 export class CityDetailStreamer {
   constructor({THREE,scene,loader,prepareObject,disposeObject,onChange=()=>{},onError=()=>{},fetchFunction=(...args)=>fetch(...args),
@@ -11,7 +54,70 @@ export class CityDetailStreamer {
     indexTimeoutMs=25000,modelTimeoutMs=35000,retryDelayMs=60000}) {
     Object.assign(this,{THREE,scene,loader,prepareObject,disposeObject,onChange,onError,maxVisible,maxCache,triangleBudget,memoryBudget,radius,indexTimeoutMs,modelTimeoutMs,retryDelayMs});
     this.fetch=fetchFunction;this.parents=new Map();this.records=new Set();this.wanted=new Set();this.inflight=null;this.view=null;this.destroyed=false;
+    this.replacements={macros:new Map(),landmarks:new Set()};this.visibleLandmarks=new Set();this.replacementRegistryInstalled=false;
     this.stats={requests:0,completed:0,failed:0,cancelled:0,evicted:0,discarded:0,metadataMismatches:0};
+  }
+  /** Register audited variants before loading. baseURL is the project root URL. */
+  setReplacementOverrides(manifest,baseURL) {
+    if(this.destroyed||this.parents.size||this.replacementRegistryInstalled)throw Error('Precise registry must be installed before city loading');
+    const prepared=replacementRegistry(manifest,baseURL);
+    this.replacements=prepared;this.replacementRegistryInstalled=true;
+  }
+  /** Called before the far object becomes visible, including late far loads. */
+  prepareFarObject(object,record) {
+    const replacement=this.replacements.macros.get(record.id);
+    if(!replacement)return;
+    if(this.destroyed||this.parents.has(object)||record.sha256!==replacement.baseline_far_sha256
+      ||record.buildingCount!==replacement.feature_count||!record.detailURL)throw Error('Precise replacement far baseline differs');
+    const mask=new CityFeatureMask(this.THREE,replacement.feature_count);
+    try {
+      if(this.maskBytes()+mask.data.byteLength>=this.memoryBudget)throw Error('City feature masks exceed the memory budget');
+      mask.bindObject(object);
+      const parent={id:record.id,object,url:record.detailURL,active:false,records:[],status:'idle',retryAt:0,mask,replacement,preciseOwners:new Map()};
+      this.parents.set(object,parent);this.applyVisibleLandmarks(parent);
+    } catch(error) {mask.dispose();this.parents.delete(object);throw error;}
+  }
+  /** Exact loaded-and-visible landmark IDs only, independent of near owners. */
+  setVisibleLandmarks(ids=[]) {
+    if(this.destroyed)return;
+    const next=new Set([...ids].filter(id=>this.replacements.landmarks.has(id)));
+    if(next.size===this.visibleLandmarks.size&&[...next].every(id=>this.visibleLandmarks.has(id)))return;
+    this.visibleLandmarks=next;
+    for(const parent of this.parents.values())this.applyVisibleLandmarks(parent);
+    this.notify();
+  }
+  applyVisibleLandmarks(parent) {
+    if(!parent.replacement||!parent.mask)return;
+    const wanted=new Map();
+    for(const [id,landmark] of parent.replacement.owners)if(this.visibleLandmarks.has(landmark)) {
+      if(!wanted.has(landmark))wanted.set(landmark,[]);wanted.get(landmark).push(id);
+    }
+    parent.preciseOwners ||= new Map();
+    for(const [landmark,owner] of parent.preciseOwners)if(!wanted.has(landmark)){parent.mask.removeOwner(owner);parent.preciseOwners.delete(landmark);}
+    for(const [landmark,ids] of wanted) {
+      if(!parent.preciseOwners.has(landmark))parent.preciseOwners.set(landmark,Symbol(`landmark:${landmark}`));
+      parent.mask.setOwner(parent.preciseOwners.get(landmark),ids);
+    }
+    for(const record of parent.records)for(const {object,landmark} of record.replacementGroups||[])object.visible=!this.visibleLandmarks.has(landmark);
+  }
+  bindReplacementGroups(object,record) {
+    if(!record.replacement)return;
+    const found=new Map(),expected=new Map(record.replacement.groups.map(group=>[group.name,group]));
+    object.traverse(node=>{
+      const tag=node.userData?.cityReplacement;
+      if(!tag)return;
+      const group=expected.get(node.name);
+      if(!group||found.has(node.name)||tag.macro_id!==record.parent.id||tag.landmark_id!==group.landmark_id
+        ||!Array.isArray(tag.local_ids)||!sameIDs(tag.local_ids,group.local_ids)
+        ||!Array.isArray(tag.feature_keys)||!sameIDs(tag.feature_keys,group.feature_keys))throw Error('Precise near owner tag differs');
+      if(countExpandedTriangles(node)!==group.expandedTriangles)throw Error('Precise near owner geometry is incomplete');
+      for(let parent=node.parent;parent&&parent!==object;parent=parent.parent)if(parent.userData?.cityReplacement)throw Error('Nested precise near owners');
+      found.set(node.name,{object:node,landmark:group.landmark_id});
+    });
+    if(found.size!==expected.size)throw Error('Precise near model is missing a complete owner group');
+    if(countExpandedTriangles(object)!==record.declaredTriangles)throw Error('Precise near model triangle count differs');
+    record.replacementGroups=[...found.values()];
+    for(const {object:node,landmark} of record.replacementGroups)node.visible=!this.visibleLandmarks.has(landmark);
   }
   syncParents(records) {
     if(this.destroyed)return;
@@ -28,6 +134,7 @@ export class CityDetailStreamer {
     for(const far of visible.values()) {
       let parent=this.parents.get(far.object);
       if(!parent) {
+        if(this.replacements.macros.has(far.id))throw Error('Precise far model was not prepared before visibility');
         parent={id:far.id,object:far.object,url:far.detailURL,active:true,records:[],status:'idle',retryAt:0};
         this.parents.set(far.object,parent);
       }
@@ -53,6 +160,9 @@ export class CityDetailStreamer {
       const count=Number(metadata.feature_count??metadata.featureCount);
       if(!Array.isArray(entries)||!Number.isInteger(count)||count<1||count>16777215)throw Error('Invalid city detail index');
       const ownership=new Set(),recordIds=new Set();
+      const replacement=parent.replacement,usedOverrides=new Set();
+      if(replacement&&(count!==replacement.feature_count||metadata.configuration_sha256!==replacement.baseline_configuration_sha256
+        ||metadata.far?.sha256!==replacement.baseline_far_sha256))throw Error('Precise near baseline index differs');
       const prepared=entries.map(item=>{
         const ids=item.featureLocalIds??item.feature_local_ids;
         const bounds=item.geometry_bbox??item.geographic_bbox;
@@ -70,15 +180,26 @@ export class CityDetailStreamer {
         const file=item.file||item.url,id=String(item.id||file||'');
         if(typeof file!=='string'||!file||!id||recordIds.has(id))throw Error('Invalid or duplicate near building resource ID');
         recordIds.add(id);
-        return {id:`${parent.id}/${id}`,owner:Symbol(id),parent,ids,bounds,url:new URL(file,parent.url).href,
-          triangles,declaredTriangles:triangles,fileBytes,codec,geometryBytes,memoryBytes:geometryBytes,object:null,lastUsed:0,retryAt:0,status:'idle'};
+        const override=replacement?.near.get(id);
+        if(override) {
+          if(file!==override.baseline_file||item.sha256!==override.baseline_sha256||item.decoded_sha256!==override.baseline_decoded_sha256
+            ||!sameIDs(ids,override.featureLocalIds)||triangles!==override.model.expandedTriangles)throw Error('Precise near source ownership or checksum differs');
+          usedOverrides.add(id);
+        }
+        return {id:`${parent.id}/${id}`,owner:Symbol(id),parent,ids,bounds,url:override?.url||new URL(file,parent.url).href,
+          triangles,declaredTriangles:triangles,fileBytes:override?.model.size_bytes??fileBytes,codec:override?.codec??codec,
+          geometryBytes:override?.model.geometryBytes??geometryBytes,memoryBytes:override?.model.geometryBytes??geometryBytes,
+          replacement:override,object:null,lastUsed:0,retryAt:0,status:'idle'};
       });
       if(ownership.size!==count)throw Error('Incomplete near building ownership');
+      if(replacement&&usedOverrides.size!==replacement.near.size)throw Error('Precise near source tile is missing');
       if(this.destroyed||this.parents.get(parent.object)!==parent||parent.controller!==controller||!parent.active||controller.signal.aborted)return;
-      mask=new CityFeatureMask(this.THREE,count);
-      if(this.maskBytes()+mask.data.byteLength>=this.memoryBudget)throw Error('City feature masks exceed the memory budget');
-      mask.bindObject(parent.object);
-      parent.mask=mask;parent.records=prepared;parent.status='ready';
+      if(!parent.mask) {
+        mask=new CityFeatureMask(this.THREE,count);
+        if(this.maskBytes()+mask.data.byteLength>=this.memoryBudget)throw Error('City feature masks exceed the memory budget');
+        mask.bindObject(parent.object);parent.mask=mask;
+      }
+      parent.records=prepared;parent.status='ready';this.applyVisibleLandmarks(parent);
       for(const record of prepared)this.records.add(record);
       this.select();this.notify();
     } catch(error) {
@@ -144,6 +265,7 @@ export class CityDetailStreamer {
         this.disposeObject(object);object=null;this.stats.discarded++;record.status='idle';return;
       }
       this.prepareObject(object,record.parent.object,record);
+      this.bindReplacementGroups(object,record);
       const resources=estimateDetailResources(object),triangles=countExpandedTriangles(object);
       if(!Number.isFinite(triangles)||triangles<1)throw Error('City facade model has no valid triangles');
       record.geometryBytes=resources.geometryBytes+resources.instanceBytes+resources.skeletonBytes;
@@ -156,7 +278,7 @@ export class CityDetailStreamer {
       // and therefore immune to the hidden-cache eviction rule.
       this.select();
     } catch(error) {
-      if(object&&record.object!==object)this.disposeObject(object);
+      if(object&&record.object!==object){this.disposeObject(object);record.replacementGroups=[];}
       if(this.destroyed||this.parents.get(record.parent.object)!==record.parent
         ||controller.signal.aborted&&controller.signal.reason!=='timeout'){this.stats.cancelled++;record.status='idle';}
       else {this.stats.failed++;record.status='error';record.retryAt=performance.now()+this.retryDelayMs;this.onError(error);}
@@ -181,6 +303,7 @@ export class CityDetailStreamer {
     let count=loaded.length+reserveCount,bytes=loaded.reduce((sum,r)=>sum+r.memoryBytes,0)+this.maskBytes()+reserveBytes;
     while(hidden.length&&(count>this.maxCache||bytes>this.memoryBudget)) {
       const record=hidden.shift();this.hide(record);this.disposeObject(record.object);record.object=null;record.status='idle';
+      record.replacementGroups=[];
       count--;bytes-=record.memoryBytes;this.stats.evicted++;
     }
   }
@@ -197,6 +320,8 @@ export class CityDetailStreamer {
   getState() {
     const loaded=[...this.records].filter(record=>record.object),visible=loaded.filter(record=>record.object.visible);
     return {...this.stats,parents:this.parents.size,available:this.records.size,visible:visible.length,loaded:loaded.length,loading:this.inflight?1:0,
+      precise:{registered:this.replacements.landmarks.size,visible:[...this.visibleLandmarks],overrideTiles:loaded.filter(r=>r.replacement).length,
+        hiddenGroups:loaded.reduce((sum,r)=>sum+(r.replacementGroups||[]).filter(group=>!group.object.visible).length,0)},
       geometryBytes:loaded.reduce((sum,r)=>sum+r.geometryBytes,0),memoryBytes:loaded.reduce((sum,r)=>sum+r.memoryBytes,0)+this.maskBytes(),maskBytes:this.maskBytes(),triangles:visible.reduce((sum,r)=>sum+r.triangles,0),
       features:visible.reduce((sum,r)=>sum+r.ids.length,0),active:visible.map(r=>({id:r.id,features:r.ids.length,triangles:r.triangles}))};
   }

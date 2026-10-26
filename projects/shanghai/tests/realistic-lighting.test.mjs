@@ -12,7 +12,7 @@ const lighting = createRealisticLighting({THREE, scene, renderer, reflections: f
 assert.equal(scene.background, oldBackground);
 assert.equal(scene.environment, oldEnvironment);
 assert.equal(lighting.getState().groundReceiverPolygons, 0);
-assert.equal(lighting.stats.shadowSize, 2048);
+assert.ok(2 * lighting.stats.shadowHalfExtent / lighting.stats.shadowSize < .025, 'nearby facade shadow texels stay below 2.5cm on normal devices');
 assert.equal(renderer.shadowMap.autoUpdate, false);
 assert.equal(lighting.sun.shadow.autoUpdate, false);
 
@@ -165,7 +165,8 @@ assert.equal(scene.background, oldBackground);
 
 const lowRenderer = {shadowMap: {enabled: false, autoUpdate: true, type: THREE.BasicShadowMap}};
 const low = createRealisticLighting({THREE, scene: new THREE.Scene(), renderer: lowRenderer, reflections: false, lowMemory: true});
-assert.equal(low.getState().shadowSize, 512);
+assert.equal(low.getState().shadowSize, 1024);
+assert.ok(2 * low.getState().shadowHalfExtent / low.getState().shadowSize < .10);
 low.dispose();
 
 // Two loaded LOD groups can share a material: release must restore its shadow

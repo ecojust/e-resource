@@ -18,6 +18,7 @@ import { disposeModelResources, countExpandedTriangles } from './model-resources
 import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictions,
   releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
 import { correctPhotographicTexture } from './photographic-texture.js';
+import { preparePhotographicGlass } from './photographic-glass.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -132,6 +133,13 @@ export async function createShanghaiScene(options = {}) {
   if (!response.ok) throw new Error(`地图样式读取失败 (${response.status})`);
   const landmarkBoundaries = new Map((landmarkExclusions.landmark_sources || [])
     .map(item => [item.landmark_id, item]));
+  const staticLandmarkIds = new Set(landmarkBoundaries.keys());
+  const preciseLandmarkIds = new Set();
+  for (const item of options.preciseBuildingOverrides?.landmarks || []) {
+    if (!item.id || landmarkBoundaries.has(item.id)) throw new Error('逐栋复原目录存在重复建筑');
+    landmarkBoundaries.set(item.id, item);
+    preciseLandmarkIds.add(item.id);
+  }
   const landmarkReplacementIds = {
     building: new Set(landmarkExclusions.building_ids || []),
     building_part: new Set(landmarkExclusions.building_part_ids || [])};
@@ -280,6 +288,9 @@ export async function createShanghaiScene(options = {}) {
     onError(error){
       if(performance.now()-streamErrorTime>12000){streamErrorTime=performance.now();onLoadError(new Error(`近景立面暂不可用，保留原建筑：${error.message}`));}
     }});
+  if (options.preciseBuildingOverrides) {
+    cityDetails.setReplacementOverrides(options.preciseBuildingOverrides, new URL('../', import.meta.url).href);
+  }
   const localStreamer = new LocalModelStreamer({scene, loader, suppression:tileSuppression,
     prepareObject:prepareCityObject, disposeObject:disposeModel,
     prepareFeatureIds(ids) {
@@ -305,7 +316,8 @@ export async function createShanghaiScene(options = {}) {
           .map(record=>({id:record.id,geometry:landmarkBoundaries.get(record.id)?.confirmed_boundary})).filter(item=>item.geometry),
         // Generic GLBs omit these buildings even when their detailed download
         // fails. Reserve their footprints so a generic cell cannot hide them.
-        reserved:[...landmarkBoundaries].map(([id,boundary])=>({id,geometry:boundary.confirmed_boundary})).filter(item=>item.geometry),
+        reserved:[...landmarkBoundaries].filter(([id])=>staticLandmarkIds.has(id))
+          .map(([id,boundary])=>({id,geometry:boundary.confirmed_boundary})).filter(item=>item.geometry),
       };
     },
     onChange(){if(!destroyed)map.triggerRepaint();}});
@@ -417,6 +429,7 @@ export async function createShanghaiScene(options = {}) {
       const latitudeScale = maplibregl.MercatorCoordinate.fromLngLat([record.lng, record.lat]).meterInMercatorCoordinateUnits() / metreScale;
       group.scale.multiplyScalar(latitudeScale * (record.scale || 1));
       group.rotation.y = -(record.heading || 0) * DEG;
+      preparePhotographicGlass(THREE, group);
       group.traverse(obj => {
         if (!obj.isMesh) return;
         obj.frustumCulled = true;
@@ -479,13 +492,20 @@ export async function createShanghaiScene(options = {}) {
       if(record.object?.userData?.streetInteractionOwner)streetInteraction.setOwnerActive(record.id,active);
       const greenery=record.object?.userData?.streetAssembly?.greenery;
       if(greenery)greenery.updateDistance(Math.min(...greenery.locations.map(location=>distanceMetres(target,location))));
-      if(active!==record.exclusionActive) {
+      if(active!==record.exclusionActive || preciseLandmarkIds.has(record.id)) {
         record.exclusionActive=active;
         const exact=landmarkBoundaries.get(record.id);
         const ids=active && exact ? {building:exact.building_ids,building_part:exact.building_part_ids} : null;
-        landmarkSuppression.setOwner(record.id,ids).then(()=>{if(!destroyed)map.triggerRepaint();});
+        // Dynamic replacements still exist in the frozen city. Their online
+        // suppression must share tile owners' reference counts, including
+        // restoration after a city-manifest reset clears those owners.
+        const suppression=preciseLandmarkIds.has(record.id)?tileSuppression:landmarkSuppression;
+        const owner=preciseLandmarkIds.has(record.id)?`precise:${record.id}`:record.id;
+        suppression.setOwner(owner,ids).then(()=>{if(!destroyed)map.triggerRepaint();});
       }
     }
+    cityDetails.setVisibleLandmarks([...landmarkRecords.values()]
+      .filter(record=>record.status==='loaded' && record.object?.visible).map(record=>record.id));
     // Existing source-owner restoration and OSM coverage changes run before
     // disposing hidden models. Visible near-field detail never enters this LRU.
     if (changed) updateBuildingExclusions();
@@ -552,6 +572,7 @@ export async function createShanghaiScene(options = {}) {
         applyBuildingMaterial(material);
       }
     });
+    cityDetails.prepareFarObject(group,record);
   }
   function handleStreamingChange(state) {
     cityDetails.syncParents(localStreamer.getVisible());
@@ -593,6 +614,7 @@ export async function createShanghaiScene(options = {}) {
       }
       baseURL ||= new URL('../assets/city/',import.meta.url).href;
       await localStreamer.setManifest(manifest,{baseURL});
+      updateLandmarkVisibility();
       updateLocalModels(true);
       return localStreamer.getState();
     } catch(error) {
@@ -607,6 +629,7 @@ export async function createShanghaiScene(options = {}) {
     const entries=(Array.isArray(metadata)?metadata:metadata?.models || []).map(item=>({...item,
       id:String(item.district_id || item.id),file:item.url || `assets/districts/${item.file || `${item.district_id}.glb`}`}));
     await localStreamer.setManifest({tiles:entries},{baseURL:new URL('../',import.meta.url).href});
+    updateLandmarkVisibility();
     updateLocalModels(true);
     return localStreamer.getState();
   }
@@ -781,7 +804,7 @@ export async function createShanghaiScene(options = {}) {
           photoMeshes++;if(material.map)maps.add(material.map);
         }
       });
-      return {id,status:record?.status,variant:record?.activeVariant,photoMeshes,triangles,greenery:record?.object?.userData?.streetAssembly?.greenery?.stats||null,
+      return {id,status:record?.status,visible:Boolean(record?.object?.visible),variant:record?.activeVariant,photoMeshes,triangles,greenery:record?.object?.userData?.streetAssembly?.greenery?.stats||null,
         images:[...maps].map(map=>({width:map.image?.width,height:map.image?.height,colorSpace:map.colorSpace,
           orientation:map.userData.photographicOrientation||null}))};
     },

@@ -194,10 +194,11 @@ def verify(root):
     landmarks = json.loads((root / 'data/landmarks.json').read_text())
     buildings = manifest['buildings']
     snapshots = near_assets(root, buildings)
-    if len(result['models']) != len(buildings) or len(buildings) != 10:
-        raise ValueError('The LOD release must contain exactly the 10 Bund buildings')
+    original={'bund02','bund03','bund12','bund13','bund15','bund17','bund18','bund19','bund20','bund23'}
+    if len(result['models'])!=len(buildings) or not original.issubset({b['candidate_id'] for b in buildings}):
+        raise ValueError('The LOD release must match all registered buildings and retain the original ten')
     by_id = {row['candidate_id']: row for row in result['models']}
-    if len(by_id) != 10:
+    if len(by_id)!=len(buildings):
         raise ValueError('Duplicate LOD candidate IDs')
     for item in buildings:
         row = by_id[item['candidate_id']]
@@ -237,7 +238,7 @@ def build(root, gltfpack):
     landmarks = json.loads(landmark_path.read_text())
     buildings = manifest['buildings']
     if len(buildings) != 10 or len({x['candidate_id'] for x in buildings}) != 10:
-        raise ValueError('Expected exactly 10 unique Bund architecture records')
+        raise ValueError('This legacy bulk generator supports the original ten only; rebuild added buildings using their source_package. --verify-only supports the complete registry.')
     original = near_assets(root, buildings)
     native_lod_dir = root / 'assets/models/bund/lod-v4'
     native_lod_dir.mkdir(parents=True, exist_ok=True)
@@ -327,7 +328,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--project', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--gltfpack', default='gltfpack', help='gltfpack executable; used only when building')
-    parser.add_argument('--verify-only', action='store_true', help='Check all ten GLBs, hashes, bounds and metadata without rewriting files')
+    parser.add_argument('--verify-only', action='store_true', help='Check every registered architecture GLB, hash, bound and metadata without rewriting files')
     args = parser.parse_args()
     root = args.project.resolve()
     if args.verify_only:

@@ -42,7 +42,7 @@ class RegisteredGlazing:
                     if p.area<1e-8:continue
                     polygons.append(p);start=len(f.builder.parts);plabel=f'{label}-pane-r{r}-c{c}'
                     if pi:plabel+=f'-piece{pi}'
-                    f.prism(p,-depth-.04,-depth-.02,'recessed glass',plabel)
+                    f.prism(p,-depth+.045,-depth+.065,'recessed glass',plabel)  #20mm behind unchanged frame front(-depth+.085)
                     selected=next((q for q in ctl['panes'] if q['row_from_top']==r and q['column_from_left']==c),None) if ctl else None
                     if selected and selected['selected']:
                         for part in f.builder.parts[start:]:self.jobs.append((f,part,(l,bottom,right,top),selected,depth))
@@ -59,7 +59,7 @@ class RegisteredGlazing:
                 q=h@np.array([s,v,1]);x,y=q[:2]/q[2]
                 return [x/5184,y/3456]
             b.photograph_parts(self.image,uv,lambda p,target=part:p is target,name='PhotoFacade_Bund06Glass',roughness=.48,orientation=self.controls['orientation'])
-            corners=[uv(f.point(u,z,-depth-.02)) for u,z in [(l,top),(right,top),(right,bottom),(l,bottom)]]
+            corners=[uv(f.point(u,z,-depth+.065)) for u,z in [(l,top),(right,top),(right,bottom),(l,bottom)]]
             error=float(np.max(np.abs(np.asarray(corners)*[5184,3456]-ctl['source_stored_quad_px'])))
             assert error<1e-7
             records.append({'part':part['label'],'row_from_top':ctl['row_from_top'],'column_from_left':ctl['column_from_left'],'bounds_facade_u_z_m':bounds,'source_stored_quad_px':ctl['source_stored_quad_px'],'stored_uv_corners':corners,'corner_error_px':error})

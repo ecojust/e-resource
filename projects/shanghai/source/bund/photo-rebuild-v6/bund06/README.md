@@ -17,8 +17,27 @@ python source/bund/photo-rebuild-v6/bund06/check_photo_glazing.py \
   --report /independent/bund06-output/bund06-photo-embedded-check.json
 ```
 
-依赖Python、NumPy和Shapely2.1以上，从相邻 `../common/photo_architecture.py` 导入共用几何。构建输出GLB、构件几何清单、连续墙与全部构件FLOAT32拓扑检查、逐片UV报告；校验脚本再检查原JPEG字节、单一照片材质与合法UV。代码不渲染、不压缩、不发布。当前原始GLB为13,009,384字节、91,111三角形，严格小于100,000,000字节。预览由上层发布流程独立渲染，源码检查不替代视觉验收。
+依赖Python、NumPy和Shapely2.1以上，从相邻 `../common/photo_architecture.py` 导入共用几何。构建输出GLB、构件几何清单、连续墙与全部构件FLOAT32拓扑检查、逐片UV报告；校验脚本再检查原JPEG字节、单一照片材质与合法UV。代码不渲染、不压缩、不发布。当前原始GLB为13,010,488字节、91,111三角形，严格小于100,000,000字节。预览由上层发布流程独立渲染，源码检查不替代视觉验收。
 
 `evidence.json`汇总来源与推定边界；`references/2025-suicasmo-cc0.jpg`是CC0原图，`references/1908-imperial-bank-book-page446.jpg`是已核验的1908公版原书页。机构东立面照片未发现开放再分发许可，临时观察后已删除，未装入模型或源码包。研究缓存、生成输出副本和未确认许可素材均不在 `source-review-manifest.json` 的可发布清单中。
 
 原创生成代码与几何采用MIT；地图足迹©OpenStreetMap contributors，ODbL-1.0。照片保留各自许可与署名；2025玻璃照片作者Suicasmo，CC0-1.0。
+
+## 玻璃嵌框修订
+
+本轮只把同种窗构造的玻璃前移到现有窗框前脸后20mm，玻璃厚度仍20mm；这是明确的构造估计，不是实测退距。墙洞、窗框前后面和形状、照片、UV、锚点及三角形总数保持。细节和源SHA见[修订依据](glazing-depth-revision.json)，逐材质及玻璃实体差异见[几何比较](glazing-depth-difference.json)。旧源码快照与原生预览另存 [glazing-depth-history](glazing-depth-history/README.md)，附完整输入 SHA 校验和独立恢复命令，仅适用于旧模型。新候选已通过构建、闭合、原图与UV检查；原生预览已由root明确核对，浏览器复验仍单独进行。修订已同步到项目源码与模型；最终浏览器复验仍待完成。
+
+## 修订资产与原生检查
+
+原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（字节），每件均小于100,000,000。
+
+| 文件 | 字节 | 下载 |
+|---|---:|---|
+| 原始GLB | 13,010,488 | [下载](../../../../assets/models/bund/bund06.glb) |
+| 网页GLB | 8,438,924 | [下载](../../../../assets/models/bund/web/bund06.glb) |
+| Blender工程 | 18,715,384 | [下载](../../../../assets/native/bund/bund06.blend) |
+| 远景GLB（无照片） | 956,784 | [下载](../../../../assets/models/bund/lod-v4/bund06.glb) |
+
+root已实际查看本修订的原生预览；照片和窗框的核对范围见[记录](native-preview-review.json)。浏览器同视角及场景复验另行完成，不以原生预览替代。完整封装、LOD与来源版权检查见[打包摘要](packaging-summary.json)。
+
+[本修订原生预览](../../../../assets/previews/bund/bund06-v6.png)；[公开玻璃差异审计](../../../../data/audit/precise-buildings-v6/bund06/glass-depth-difference.json)。

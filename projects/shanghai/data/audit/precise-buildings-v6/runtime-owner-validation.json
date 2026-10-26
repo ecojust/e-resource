@@ -1,0 +1,42 @@
+{
+  "schema": "city-precise-runtime-owner-audit-v1",
+  "pass": true,
+  "macro": "14-13720-6694",
+  "feature_count": 3064,
+  "models": [
+    {
+      "id": "14-13720-6694-3_-4-s1-s1",
+      "groups": [
+        {
+          "name": "city_target_bund14",
+          "landmark": "bund14",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "14-13720-6694-3_-3-s1-s1",
+      "groups": [
+        {
+          "name": "city_target_bund06",
+          "landmark": "bund06",
+          "visible": true
+        },
+        {
+          "name": "city_target_bund05",
+          "landmark": "bund05",
+          "visible": false
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "actual immutable far IDs bound before first visible frame",
+    "all owner groups contain every declared expanded triangle",
+    "each of three landmark owners toggles independently",
+    "neighbor groups remain visible",
+    "near unload retains precise far owner and restores unrelated features",
+    "landmark unload clears remaining far masks",
+    "destroy releases the shared far mask"
+  ]
+}

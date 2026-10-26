@@ -1,0 +1,131 @@
+{
+  "schema": "network-style-installation-v1",
+  "installed_utc": "2026-10-26T07:46:54.016564+00:00",
+  "passed": true,
+  "files": [
+    {
+      "file": "src/local-model-streamer.js",
+      "before": {
+        "sha256": "ffb7b590f3c68048b0f88db6fe34661e83c6912ee1fcff65dda18f0a193b7032",
+        "bytes": 19530
+      },
+      "after": {
+        "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291",
+        "bytes": 19788
+      },
+      "new": false
+    },
+    {
+      "file": "data/map-style.json",
+      "before": {
+        "sha256": "6010998863b4876911ac9a2d62c9a28d97c8877f6d20cd158b74808572257b60",
+        "bytes": 43079
+      },
+      "after": {
+        "sha256": "908a5a98844a9de5c0507366b3c013db8a6672d92d9a26efba32a3c675bd950d",
+        "bytes": 43247
+      },
+      "new": false
+    },
+    {
+      "file": "tests/network-id-deadline.test.mjs",
+      "before": null,
+      "after": {
+        "sha256": "ef48813ab5f5a0dbd8b33cf59787c8bfdacff89eeb1fde6becb4545f7a428dd4",
+        "bytes": 7597
+      },
+      "new": true
+    },
+    {
+      "file": "tests/map-style.test.mjs",
+      "before": null,
+      "after": {
+        "sha256": "b62cd8a2bc61b525d9ee694071289d07257f4a7dcedc801fca9f1a3dd86cd0c4",
+        "bytes": 3185
+      },
+      "new": true
+    },
+    {
+      "file": "package.json",
+      "before": {
+        "sha256": "fbf96dca3621e9e47ac4276852bedf710a35f934c6be2330f3ac135d79151694",
+        "bytes": 1272
+      },
+      "after": {
+        "sha256": "43443d7586e1f15215692b7029f127431b7040f05a33c9e247322d2892e10c5d",
+        "bytes": 1347
+      },
+      "new": false
+    }
+  ],
+  "network_deadline_ms": 35000,
+  "network_scope": "Both raw model and source-ID response bodies; clear before gzip/JSON and GLTF parse. Same AbortController remains active for view/generation/destroy cancellation.",
+  "rfc6902_preconditions": {
+    "test_count": 6,
+    "all_tested_before_any_style_mutation": true,
+    "passed": true,
+    "only_three_shield_filters_changed": true
+  },
+  "checks": {
+    "full_npm_test": {
+      "command": "npm test",
+      "exit_code": 0,
+      "log": "installed-npm-test.txt",
+      "log_sha256": "98a41b81eec51790d7331a4fe7a418477e788fc31cd6febaaae1012cef103882",
+      "node_test_runner_cases": 201,
+      "note": "Count covers Node test-runner summaries; separate assertion scripts also completed via the same npm chain."
+    },
+    "new_network_regressions": 10,
+    "new_vendored_style_regressions": 7,
+    "archived_source_style_check": {
+      "command": "node verify-installed-style.mjs",
+      "exit_code": 0,
+      "report": "installed-style-check.json",
+      "sha256": "fc06e6ce215bd567360b885bf2b695b34796647471134a69ac9a8cec782dfcde",
+      "results": [
+        {
+          "layer": "boundary_3",
+          "features": 10,
+          "preserved_evaluable_features": 10,
+          "excluded_old_error_fallback": 0,
+          "installed_warnings": 0
+        },
+        {
+          "layer": "highway-shield-non-us",
+          "features": 746,
+          "preserved_evaluable_features": 1,
+          "excluded_old_error_fallback": 745,
+          "installed_warnings": 0
+        },
+        {
+          "layer": "highway-shield-us-interstate",
+          "features": 746,
+          "preserved_evaluable_features": 1,
+          "excluded_old_error_fallback": 745,
+          "installed_warnings": 0
+        },
+        {
+          "layer": "road_shield_us",
+          "features": 746,
+          "preserved_evaluable_features": 1,
+          "excluded_old_error_fallback": 745,
+          "installed_warnings": 0
+        }
+      ]
+    }
+  },
+  "scope": {
+    "model_geometry_or_asset_bytes_changed": false,
+    "browser_run": false,
+    "blender_run": false,
+    "git_operations": false,
+    "runtime_file_changed_only": "src/local-model-streamer.js"
+  },
+  "limitations": [
+    "No claim that this fixes all software-rendering network timeouts: raw-body JS completion still must occur within 35 seconds.",
+    "Archived MapLibre compiler evidence reproduces the shield warning defect; unlabelled live worker warnings were not uniquely attributed.",
+    "Browser first-three-building technical PASS preceded installation; no post-install browser was run by this agent."
+  ],
+  "source_installation_report_sha256": "506af7ec019620213def83b8cb11b71b5b711fa693f7ac6472acaadcd0eec675",
+  "public_copy_note": "Only log filename adapted from .log to .txt for curated publication; original report SHA is retained."
+}

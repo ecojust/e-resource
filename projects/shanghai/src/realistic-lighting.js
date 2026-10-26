@@ -13,6 +13,7 @@
  */
 
 import {HDRLoader} from '../vendor/HDRLoader.js';
+import {isPhotographicGlass} from './photographic-glass.js';
 
 const clamp = (value, minimum, maximum) => Math.max(minimum, Math.min(maximum, value));
 const smoothstep = (minimum, maximum, value) => {
@@ -24,6 +25,7 @@ const clock = () => globalThis.performance?.now?.() ?? Date.now();
 /** The known model names distinguish real glazing from bronze window frames. */
 export function isArchitecturalGlazing(material) {
   const name = String(material?.name || '');
+  if (material?.isMeshBasicMaterial && isPhotographicGlass(material)) return true;
   return /glass|glaz/i.test(name)
     && !/clock|opal|lamp|frame|mullion|muntin|division|grille|gate|bronze|stone/i.test(name)
     && Boolean(material?.isMeshStandardMaterial || material?.isMeshPhysicalMaterial);
@@ -125,10 +127,12 @@ function horizontalBoxDistance(box, point) {
 export function createRealisticLighting({
   THREE, scene, renderer,
   lowMemory = false,
-  // Same local coverage and cached update policy; 2048 gives an 8.2cm light-space
-  // texel at the normal 84m half extent. Bias remains proportional to that texel.
-  shadowSize = lowMemory ? 512 : 2048,
-  shadowHalfExtent = lowMemory ? 78 : 84,
+  // Close facade shadows need small light-space texels: the previous 8.2cm
+  // sampling produced long serrated edges on grazing-angle window ledges.
+  // Keep a local cached map; 4096 over 96m gives 2.34cm texels. Smaller-memory
+  // devices retain a bounded 1024 map with the same local coverage.
+  shadowSize = lowMemory ? 1024 : 4096,
+  shadowHalfExtent = 48,
   casterRadius = 155,
   maxCasterHeight = 150,
   updateDistance = 12,
@@ -140,6 +144,10 @@ export function createRealisticLighting({
   lights = {},
 } = {}) {
   if (!THREE || !scene || !renderer) throw new Error('Realistic daylight needs THREE, scene and an initialized renderer.');
+  const deviceTextureLimit = renderer.capabilities?.maxTextureSize;
+  if (Number.isFinite(deviceTextureLimit) && deviceTextureLimit > 0) {
+    shadowSize = Math.min(shadowSize, 2 ** Math.floor(Math.log2(deviceTextureLimit)));
+  }
   const previousShadowState = {
     enabled: renderer.shadowMap.enabled,
     autoUpdate: renderer.shadowMap.autoUpdate,
@@ -282,7 +290,8 @@ export function createRealisticLighting({
       meshes.push({mesh, previousCast: mesh.castShadow, previousReceive: mesh.receiveShadow,
         eligible: candidate && !allGlazing && (!casterFilter || casterFilter(mesh))});
       mesh.castShadow = false;
-      mesh.receiveShadow = Boolean(detailed || ground || receiver);
+      mesh.receiveShadow = Boolean(detailed || ground || receiver)
+        && !(materials.length > 0 && materials.every(isPhotographicGlass));
       if (detailed) for (const material of materials) {
         attachGlass(material, group);
         if (candidate && !allGlazing) attachOpaqueCaster(material, group);

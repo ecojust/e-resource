@@ -1,6 +1,6 @@
 # Bund05 · Nissin Building / 日清大楼 · 逐栋照片复原
 
-以2025年Suicasmo CC0原图复原临江正面，以2011年Can Pac Swire CC BY-SA2.0东南斜视核对南立面。已按独立相机尺度复核修正主要正面比例，并通过独立原生模型固定机位预览核对；网页场景验收由主项目继续完成。这仍是照片比例复原，不是实测建筑模型。具体原图、错图排除、年代冲突、可观测/推定对照见[研究记录](research/README.md)与`research/SOURCES.json`。
+以2025年Suicasmo CC0原图复原临江正面，以2011年Can Pac Swire CC BY-SA2.0东南斜视核对南立面。已按独立相机尺度复核修正主要正面比例，原玻璃深度版本已通过独立原生模型固定机位预览核对；网页场景验收由主项目继续完成。这仍是照片比例复原，不是实测建筑模型。具体原图、错图排除、年代冲突、可观测/推定对照见[研究记录](research/README.md)与`research/SOURCES.json`。
 
 当前几何保留冻结OSM原16节点轮廓及临江20.142632898m边，增加四主开间、两组三面折线凸窗（各跨3层）、中部通高壁柱、双三角山花及弧顶阁楼窗、中央双小窗和石栏杆、下部双拱窗、两侧深入口及圆门柱、广东路侧小阳台和连续檐线。窗洞由墙面多边形差集真正开孔；有洞壁、内退玻璃和独立框。不是照片平板，也没有生成街灯、人车贴图。中央六组窗按实际行列分成112片凹入玻璃，逐片对应2025原图；全部玻璃合为一个照片材质，墙/框/石柱未贴图。
 
@@ -26,4 +26,23 @@ Blender原生文件可由相邻公共`blender_finish.py`从原GLB导入生成。
 
 `photo-glass-controls.json`保存6组原始正向像素四角、窗格位置和112片采样区；`register_photo_glass.py`可用Pillow/SciPy重算JSON，生产重建不需要这两个分析依赖。`photo_glazing.py`只读这些控制点，把原始JPEG以bufferView嵌入，不重采样贴图。`research/glazing-controls-review.png`是带控制框的研究图，原JPEG文件保持不变，不能用此研究图作模型纹理。
 
-`check_photo_uv.py --output /path/to/output`直接核验GLB原图SHA/字节、单照片材质、112片玻璃对应448个UV角、EXIF坐标回转和其他构件无照片材质。已查看固定机位原生预览，主要正面轮廓、逐窗照片方向与窗格层次通过核对；网页近景/远景切换和实际灯光仍由主项目单独验收。数值及原生预览通过不等于实测精度。外侧折线凸窗、阁楼、下层门窗保留普通几何材质，不能将六组中央窗的映射描述成全立面照片复原。
+`check_photo_uv.py --output /path/to/output`直接核验GLB原图SHA/字节、单照片材质、112片玻璃对应448个UV角、EXIF坐标回转和其他构件无照片材质。修订前版本已查看固定机位原生预览，主要正面轮廓、逐窗照片方向与窗格层次通过核对；网页近景/远景切换和实际灯光仍由主项目单独验收。数值及原生预览通过不等于实测精度。外侧折线凸窗、阁楼、下层门窗保留普通几何材质，不能将六组中央窗的映射描述成全立面照片复原。
+
+## 玻璃嵌框修订
+
+本轮只把同种窗构造的玻璃前移到现有窗框前脸后20mm，玻璃厚度仍20mm；这是明确的构造估计，不是实测退距。墙洞、窗框前后面和形状、照片、UV、锚点及三角形总数保持。细节和源SHA见[修订依据](glazing-depth-revision.json)，逐材质及玻璃实体差异见[几何比较](glazing-depth-difference.json)。旧源码快照与原生预览另存 [glazing-depth-history](glazing-depth-history/README.md)，附完整输入 SHA 校验和独立恢复命令，仅适用于旧模型。新候选已通过构建、闭合、原图与UV检查；原生预览已由root明确核对，浏览器复验仍单独进行。修订已同步到项目源码与模型；最终浏览器复验仍待完成。
+
+## 修订资产与原生检查
+
+原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（字节），每件均小于100,000,000。
+
+| 文件 | 字节 | 下载 |
+|---|---:|---|
+| 原始GLB | 14,906,152 | [下载](../../../../assets/models/bund/bund05.glb) |
+| 网页GLB | 8,733,620 | [下载](../../../../assets/models/bund/web/bund05.glb) |
+| Blender工程 | 24,069,984 | [下载](../../../../assets/native/bund/bund05.blend) |
+| 远景GLB（无照片） | 2,070,252 | [下载](../../../../assets/models/bund/lod-v4/bund05.glb) |
+
+root已实际查看本修订的原生预览；照片和窗框的核对范围见[记录](native-preview-review.json)。浏览器同视角及场景复验另行完成，不以原生预览替代。完整封装、LOD与来源版权检查见[打包摘要](packaging-summary.json)。
+
+[本修订原生预览](../../../../assets/previews/bund/bund05-v6.png)；[公开玻璃差异审计](../../../../data/audit/precise-buildings-v6/bund05/glass-depth-difference.json)。

@@ -9,11 +9,13 @@ import math
 import argparse
 import re
 import subprocess
+import gzip
 
 ROOT = Path(__file__).resolve().parents[1]
 LIMIT = 100_000_000  # Deliberately below GitHub's 100 MiB limit.
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--allow-partial',action='store_true',help='Allow an in-progress city manifest during generation only')
+parser.add_argument('--skip-city-detail',action='store_true',help='Check project assets without repeating the separate frozen whole-city audit; report this narrower scope explicitly')
 args=parser.parse_args()
 errors = []
 
@@ -248,15 +250,18 @@ if city_path.is_file() and city.get('source_roof_enhancement'):
     except (OSError, KeyError, ValueError, AssertionError) as error:
         errors.append('Source roof validation: ' + str(error))
 
+bund_ids=set()
 bund_path=ROOT/'data/bund/manifest.json'
 if bund_path.is_file():
     bund=json.loads(bund_path.read_text())
-    if not bund.get('complete') or len(bund.get('buildings',[]))!=10:
-        errors.append('Bund architectural release must contain all ten buildings')
+    core_bund_ids={'bund02','bund03','bund12','customs-house','bund15','bund17','bund18','bund19','bund20','bund23'}
+    bund_ids={b['id'] for b in bund.get('buildings',[])}
+    if not bund.get('complete') or not core_bund_ids.issubset(bund_ids) or len(bund_ids)!=len(bund.get('buildings',[])):
+        errors.append('Bund architectural release must retain its original ten and contain distinct registered buildings')
     landmarks=json.loads((ROOT/'data/landmarks.json').read_text())
     public={item['id']:item for item in landmarks}
-    if len(public)!=14 or len(public)!=len(landmarks):
-        errors.append('Expected ten Bund and four Lujiazui navigation models')
+    if set(public)!=bund_ids|{'shanghai-tower','oriental-pearl','swfc','jin-mao'} or len(public)!=len(landmarks):
+        errors.append('Navigation must match all registered Bund buildings and the four Lujiazui models')
     for building in bund['buildings']:
         if public.get(building['id'])!=building:
             errors.append('Bund navigation metadata differs: '+building['id'])
@@ -351,8 +356,8 @@ if bund_path.is_file():
         lod = json.loads(lod_path.read_text())
         entries = lod.get('models', [])
         by_id = {entry.get('id'): entry for entry in entries}
-        if not lod.get('complete') or len(entries) != 10 or len(by_id) != 10:
-            errors.append('LOD release must contain ten complete, distinct buildings')
+        if not lod.get('complete') or len(entries)!=len(bund_ids) or len(by_id)!=len(bund_ids):
+            errors.append('LOD release must contain every registered building exactly once')
         if set(by_id) != {building['id'] for building in bund['buildings']}:
             errors.append('LOD release building IDs differ from the Bund manifest')
         for building in bund['buildings']:
@@ -377,6 +382,65 @@ if bund_path.is_file():
             model_metadata = ROOT/'data/bund/models'/f'{candidate}-web.json'
             if not model_metadata.is_file() or json.loads(model_metadata.read_text()) != building:
                 errors.append('Per-building metadata differs: '+str(candidate))
+
+# Additive precise replacements are independently owned files. Validate their
+# immutable baseline binding without repeating the full-city geometry audit.
+override_path=ROOT/'data/precise-buildings-v6.json'
+if not override_path.is_file():
+    errors.append('Missing precise-building replacement registry')
+else:
+    try:
+        overrides=json.loads(override_path.read_text())
+        if overrides.get('schema')!='city-precise-overrides-v1' or overrides.get('complete') is not True:
+            raise ValueError('Incomplete/unknown precise override schema')
+        targets=[x['id'] for x in overrides['landmarks']]
+        if len(set(targets))!=len(targets) or not set(targets).issubset(bund_ids):
+            raise ValueError('Replacement targets must be distinct registered buildings')
+        baseline=ROOT/'assets/city-detail'
+        city_detail=json.loads((baseline/'manifest.json').read_text())
+        if overrides['baseline_configuration_sha256']!=city_detail['configuration_sha256']:
+            raise ValueError('Precise replacement configuration differs from frozen city')
+        seen=[]
+        for macro in overrides['macros']:
+            directory=baseline/'macros'/macro['id']
+            for name,field in [('far.glb','baseline_far_sha256'),('READY.json','baseline_ready_sha256'),('feature-table.json.gz','baseline_feature_table_sha256')]:
+                with (directory/name).open('rb') as stream:
+                    if hashlib.file_digest(stream,'sha256').hexdigest()!=macro[field]:
+                        raise ValueError('Precise replacement baseline changed: '+name)
+            for near in macro['near']:
+                original=directory/near['baseline_file']
+                if hashlib.sha256(original.read_bytes()).hexdigest()!=near['baseline_sha256']:
+                    raise ValueError('Precise replacement original near changed')
+                model=near['model']
+                if not manifest_file(ROOT,model['file'],model['size_bytes'],model['sha256'],'Precise near override'):
+                    continue
+                if model['content_encoding']!='gzip':raise ValueError('Unexpected override encoding')
+                with gzip.open(ROOT/model['file'],'rb') as stream:decoded=stream.read(LIMIT+1)
+                if not 0<len(decoded)<LIMIT or len(decoded)!=model['decoded_size_bytes'] or hashlib.sha256(decoded).hexdigest()!=model['decoded_sha256']:
+                    raise ValueError('Precise near decoded size/SHA mismatch')
+                if struct.unpack_from('<4sII',decoded)!=(b'glTF',2,len(decoded)):
+                    raise ValueError('Precise near invalid decoded GLB header')
+                ids=[i for group in near['groups'] for i in group['local_ids']]
+                if not set(ids).issubset(near['featureLocalIds']) or len(set(ids))!=len(ids):
+                    raise ValueError('Precise target IDs are not a distinct near subset')
+                # Registry groups describe only the switchable targets; the
+                # GLB also has one intact preserved-neighbor owner group.
+                json_size,json_type=struct.unpack_from('<II',decoded,12)
+                if json_type!=0x4E4F534A:raise ValueError('Missing override GLB JSON')
+                doc=json.loads(decoded[20:20+json_size]);actual_ids=[];actual_targets=[]
+                for node in doc.get('nodes',[]):
+                    extra=node.get('extras',{});replacement=extra.get('cityReplacement')
+                    if replacement:
+                        actual_ids.extend(replacement['local_ids']);actual_targets.extend(replacement['local_ids'])
+                    actual_ids.extend(extra.get('cityPreservedLocalIds',[]))
+                if sorted(actual_ids)!=sorted(near['featureLocalIds']) or len(set(actual_ids))!=len(actual_ids) or sorted(actual_targets)!=sorted(ids):
+                    raise ValueError('Actual target and preserved-neighbor IDs are not a complete partition')
+                if not 0<sum(group['expandedTriangles'] for group in near['groups'])<=model['expandedTriangles']:
+                    raise ValueError('Precise target triangle totals exceed the complete near model')
+                seen.extend(group['landmark_id'] for group in near['groups'] if group.get('landmark_id'))
+        if sorted(seen)!=sorted(targets):raise ValueError('Every precise landmark needs exactly one complete owner group')
+    except (OSError,ValueError,KeyError,TypeError,struct.error) as error:
+        errors.append('Precise replacement validation: '+str(error))
 
 material_root = ROOT/'assets/materials/realism-v4'
 material_manifest = material_root/'manifest.json'
@@ -446,7 +510,7 @@ else:
                        for feature in road_geometry['features'])):
             errors.append('Road remainder metadata/geometry is inconsistent')
 detail_manifest = ROOT/'assets/city-detail/manifest.json'
-if detail_manifest.is_file():
+if detail_manifest.is_file() and not args.skip_city_detail:
     command=[sys.executable,str(ROOT/'tools/check_city_detail.py'),'--project',str(ROOT),
              '--root',str(detail_manifest.parent),'--output',str(ROOT/'tests/city-detail-release.json')]
     if args.allow_partial:command.append('--allow-partial')
@@ -458,5 +522,6 @@ if errors:
     raise SystemExit(1)
 largest = max(files, key=lambda p: p.stat().st_size)
 print(f'PASS: {len(files)} files; 16 district models; {len(list(ROOT.rglob("*.glb")))} GLBs validated.')
-print(f'V4: 10 Bund LOD manifests and {material_count} local surface maps verified.')
+print(f'Architecture: {len(bund_ids)} Bund LOD manifests and {material_count} local surface maps verified.')
+if args.skip_city_detail:print('SCOPE: separate frozen whole-city detail audit explicitly skipped; this run checks project assets only.')
 print(f'Largest: {largest.relative_to(ROOT)} ({largest.stat().st_size:,} bytes < {LIMIT:,}).')

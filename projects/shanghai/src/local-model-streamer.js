@@ -136,9 +136,7 @@ export class FeatureStateSuppressor {
   }
 }
 
-async function readIds(response) {
-  if (!response.ok) throw Object.assign(new Error(`建筑索引读取失败 (${response.status})`), {status: response.status});
-  let data = await response.arrayBuffer();
+async function decodeIds(data) {
   const bytes = new Uint8Array(data);
   if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
     if (typeof DecompressionStream === 'undefined') throw new Error('浏览器不支持压缩建筑索引');
@@ -189,7 +187,7 @@ export class LocalModelStreamer {
         detailURL:item.near_manifest_file?new URL(item.near_manifest_file,base).href:null,
         idsURL:item.feature_ids_file?new URL(item.feature_ids_file,base).href:null,
         inlineIds:inlineIds?normaliseFeatureIds(inlineIds):null,
-        triangles:Number(item.triangles || 0),fileBytes:Number(item.size_bytes || 0),buildingCount:Number(item.building_count || item.represented_features || 0),
+        triangles:Number(item.triangles || 0),fileBytes:Number(item.size_bytes || 0),sha256:item.sha256,buildingCount:Number(item.building_count || item.represented_features || 0),
         status:'idle',object:null,gpuBytes:0,lastUsed:0,retryAt:0,owner:`${generation}:${id}`,visibilityVersion:0});
     }
     this.index=new SpatialTileIndex(this.records.values(), Number(manifest?.tile_size_m || 2000));
@@ -263,12 +261,18 @@ export class LocalModelStreamer {
         return response.arrayBuffer();
       });
       const idsRequest=record.inlineIds?Promise.resolve(record.inlineIds):record.idsURL
-        ?this.fetch(record.idsURL,{signal:controller.signal}).then(readIds)
+        ?this.fetch(record.idsURL,{signal:controller.signal}).then(async response=>{
+          if (!response.ok) throw Object.assign(new Error(`建筑索引读取失败 (${response.status})`),{status:response.status});
+          return response.arrayBuffer();
+        })
         :Promise.reject(new Error('分块缺少建筑标识索引，继续显示在线建筑'));
-      const [buffer,ids]=await Promise.all([modelRequest,idsRequest]);
-      // This deadline bounds transport/ID decoding, not CPU parsing or the
-      // frame-batched suppression work. Keep the controller for view changes.
+      const [buffer,idsData]=await Promise.all([modelRequest,idsRequest]);
+      // The network deadline ends after BOTH raw response bodies arrive.
+      // Gzip/JSON work can wait behind rendering even after HTTP completed;
+      // do not charge that processing to transport. View aborts remain active.
       clearTimeout(timeout);
+      if (controller.signal.aborted) throw new DOMException('Aborted','AbortError');
+      const ids=record.inlineIds ? idsData : await decodeIds(idsData);
       if (controller.signal.aborted) throw new DOMException('Aborted','AbortError');
       const data=await this.loader.parseAsync(buffer,new URL('.',record.url).href); object=data.scene;
       if (this.destroyed || generation!==this.generation || controller.signal.aborted || !this.wanted.has(record.id)) {

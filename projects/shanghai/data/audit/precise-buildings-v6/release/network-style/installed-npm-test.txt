@@ -1,0 +1,289 @@
+
+> shanghai-explorer@6.0.0 test
+> node tests/walk-controller.test.mjs && node tests/local-model-streamer.test.mjs && node --test tests/network-id-deadline.test.mjs tests/map-style.test.mjs && node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs && node tests/geography.test.mjs && node tests/road-width.test.mjs && node tests/realistic-lighting.test.mjs && node source/bund/street/validate_basemap_replacement.mjs && node tests/model-resources.test.mjs && node tests/photographic-reflection.test.mjs && node --test tests/detail-model-cache.test.mjs tests/detail-model-cache-integration.test.mjs && node tests/photographic-texture.test.mjs && node --test tests/photographic-glass.test.mjs && node --test tests/city-feature-mask.test.mjs tests/city-detail-streamer.test.mjs tests/city-precise-replacements.test.mjs tests/city-detail-map-integration.test.mjs tests/street-interaction.test.mjs && node --test tests/street-assets.test.mjs && node --test tests/city-model-codec.test.mjs
+
+PASS: speed, diagonal normalization, camera-relative movement, water/building collision, sliding, mode gestures, camera limits, and cleanup
+PASS {"spatialTiles":1000,"peakFetch":2,"peakConcurrent":2,"peakCache":8,"evicted":72,"cancelled":2,"discarded":2,"disposed":83}
+✔ far CPU parse beyond the network deadline completes once without discard/reload (7.49753ms)
+✔ far pending model body still reaches the unchanged network timeout (7.863679ms)
+✔ far pending ids body still reaches the unchanged network timeout (0.722387ms)
+✔ far view change still disposes a late parse after its network timer was cleared (0.775557ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22.486318
+✔ highway-shield-non-us: missing/non-number lengths are excluded without worker warnings (2.917699ms)
+✔ highway-shield-non-us: valid numeric lengths, network and geometry rules remain effective (0.885182ms)
+✔ highway-shield-us-interstate: missing/non-number lengths are excluded without worker warnings (0.266531ms)
+✔ highway-shield-us-interstate: valid numeric lengths, network and geometry rules remain effective (0.249265ms)
+✔ road_shield_us: missing/non-number lengths are excluded without worker warnings (0.33236ms)
+✔ road_shield_us: valid numeric lengths, network and geometry rules remain effective (0.241474ms)
+✔ negative control: an unguarded numeric comparison reproduces the old warning (0.72477ms)
+✔ pending raw model body still aborts at exactly 35000ms (9.513281ms)
+✔ pending raw ids body still aborts at exactly 35000ms (2.192729ms)
+✔ received raw bytes survive slow actual gzip and subsequent JSON processing beyond network deadline (78.552693ms)
+✔ deadline is already removed before JSON parsing starts (2.135553ms)
+✔ view change during slow ID decode does not publish an obsolete model or owner (3.547887ms)
+✔ generation change during slow ID decode does not publish an obsolete model or owner (6.341991ms)
+✔ bad-gzip remains a clear model failure after transport ends (2.686291ms)
+✔ bad-json remains a clear model failure after transport ends (2.126259ms)
+✔ late GLTF parse after a navigation change still disposes the stale object (3.016127ms)
+✔ missing feature index remains an explicit failure; inline IDs need no decoder (1.939288ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 406.445082
+✔ actual OSM 23809960 keeps 45 exact components while removing Bund18 component 44 (36.134139ms)
+✔ actual detailed component stays online when its detailed owner is unavailable (1.845436ms)
+✔ exact duplicated buffer components deduplicate despite ring start and winding differences (5.47709ms)
+✔ crossing single Polygon, unknown ID, and conflicting source properties remain unmasked (0.549667ms)
+✔ nonidentical intersecting buffer fragments stay in the original source instead of being unioned (0.327152ms)
+✔ uncovered component holes and source minimum/top heights are preserved exactly (0.344117ms)
+✔ original aggregate hides only after residual render acknowledgement; restore precedes residual drop (8.139155ms)
+✔ failed residual readiness keeps original aggregate visible (0.728416ms)
+✔ new original-source fragments immediately restore old ID and invalidate an in-flight snapshot (1.769282ms)
+✔ coverage change during residual upload cannot apply stale masks (2.494593ms)
+✔ failed original restoration retains old residual until removal succeeds (0.812021ms)
+✔ without a residual renderer a partially covered aggregate is never suppressed (0.585351ms)
+✔ loss of an already rendered residual layer restores original IDs immediately (0.955928ms)
+✔ cell coverage includes polygon boundary contact but preserves outside and crossing buildings (2.549545ms)
+✔ active adjacent cells may jointly cover a building; a missing cell or gap must preserve it (3.827638ms)
+✔ coverage union must cover the building interior, not merely every boundary segment (0.84385ms)
+✔ concave landmark does not cover a polygon bridging its notch even when all vertices are inside (0.508996ms)
+✔ landmark holes remain uncovered, including holes wholly enclosed by a candidate building (2.500372ms)
+✔ MultiPolygon requires every component to have coverage (0.208153ms)
+✔ missing, unsupported and empty geometries cannot suppress a building (0.187252ms)
+✔ reserved detailed footprints require their visible owner before generic cells may cover the remainder (0.459581ms)
+✔ a slight OSM footprint overshoot is covered by generic cells only while the matching detailed owner is active (0.772662ms)
+✔ a compound OSM feature can use both active detailed and generic coverage (0.410467ms)
+✔ every intersected reserved owner must be active, including two details inside one generic cell (0.306542ms)
+✔ active reserved owners do not authorize hiding a feature outside the whole generic coverage (0.165118ms)
+✔ ID-less reserved regions require complete reserved geometry coverage by the active landmark union (0.591881ms)
+✔ reserved intersections include edge crossings and contained footprints, not just building vertices (0.567864ms)
+✔ a reserved footprint inside a building courtyard does not intersect the actual building area (0.12653ms)
+✔ inactive suppressor never queries or hides fallback features (1.199164ms)
+✔ numeric and string aliases of one MapLibre ID require every fragment to be covered (8.030612ms)
+✔ different source IDs retain their original API types, including numeric zero; missing IDs are preserved (0.692251ms)
+✔ all loaded fragments sharing an ID must be covered before that ID is hidden (0.426943ms)
+✔ dynamic successful-visible coverage controls suppression, eviction restores OSM (0.411879ms)
+✔ setCoverage removes stale state when a different local model becomes visible (0.351179ms)
+✔ detailed-model failure preserves its reserved OSM building even beside loaded generic cells (3.442239ms)
+✔ query failure restores previously hidden OSM and a later successful refresh recovers (0.529156ms)
+✔ state-write failure is retried on a later refresh, not cached as success (0.371069ms)
+✔ failed state removal stays tracked and retries after coverage is lost (0.742557ms)
+✔ replacement source object receives current suppression despite unchanged features and coverage (0.324368ms)
+✔ source absence does not prevent reapplying current coverage after the source returns (0.280001ms)
+✔ clear, deactivation and destroy restore owned state without removing unrelated feature-state (36.999774ms)
+✔ lazy residual source clones paint and visible layout without source-layer/filter, preserving exact data (14.493463ms)
+✔ worker completion alone is insufficient: require scoped content, loaded source and a later render (2.606861ms)
+✔ each replacement and clear waits a restoration render before changing existing residual data (2.357256ms)
+✔ concurrent replacements are serialized through rendered completion (1.920178ms)
+✔ a residual-source error rejects the update while unrelated source errors do not (2.032547ms)
+✔ timeout rejects rather than treating unresolved source readiness as success (36.436073ms)
+✔ source identity replacement cancels the in-flight transaction (1.084612ms)
+✔ destroy rejects active and queued waits, removes only owned layer/source, and stops future work (0.84424ms)
+✔ ready residual invalidates synchronously and only once after removed layer (36.028472ms)
+✔ ready residual invalidates synchronously and only once after hidden layer (6.364224ms)
+✔ ready residual invalidates synchronously and only once after replaced layer object (0.98426ms)
+✔ ready residual invalidates synchronously and only once after layer targeting a different source (1.925807ms)
+✔ ready residual invalidates synchronously and only once after missing source (2.316534ms)
+✔ setInvalidationHandler replaces the callback and destroy removes persistent watches (5.940156ms)
+✔ persistent source errors invalidate only the residual source after successful readiness (0.816388ms)
+✔ a layer hidden during a replacement cannot become render-ready (0.796198ms)
+ℹ tests 57
+ℹ suites 0
+ℹ pass 57
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 525.467714
+PASS 45 published checkpoints, outside bounds, and holes
+PASS {
+  changedLayers: 46,
+  maximumOverviewDifference: 1.7763568394002505e-15
+}
+Lighting checks passed: cached local shadows, caster filtering, LOD release, land-only receiver holes, shader hook, glazing selector and disposal.
+{"passed":true,"complete_style_cloned":true,"default_inactive_no_filter_mutation":true,"enable_excludes_only_two_ids":true,"disable_restores_exact_filters":true,"repeated_active_calls_do_not_rewrite":true,"dispose_restores_and_removes_only_owned_resources":true,"dispose_idempotent":true,"partial_install_failure_leaves_originals":true,"partial_enable_failure_restores_originals":true,"load_failure_keeps_original_layers":true,"failed_enable_does_not_loop_style_writes":true}
+PASS: glTF textures, shared maps, ImageBitmaps and instance buffers
+✔ shared geometry is resident once while instance capacity and active triangles are independent (1.882111ms)
+✔ interleaved and explicitly shared attributes count once across distinct geometries (0.630809ms)
+✔ distinct GPU attributes are not deduplicated merely because their CPU arrays alias (0.214863ms)
+✔ instance morph weights and shared skeleton texture are counted once with their real float payload (0.860304ms)
+✔ expanded triangle count honors index zero, draw range, and finite instanced-geometry capacity (0.733884ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 46.732032
+Photographic reflection checks passed: deferred GL conversion, exact state restore, fallback retention, late load and disposal.
+✔ far teleport restores exact ownership/OSM coverage before disposing a large hidden photograph; return reloads once (11.126705ms)
+✔ large visible photograph is retained even when it exceeds the hidden budget (2.088422ms)
+✔ small hidden cached model returns without fetching and fringe prevents edge churn (1.411814ms)
+✔ late decode after leaving is disposed without ever acquiring source ownership or immediately reloading (0.8313ms)
+✔ late rejected request outside range does not poison a future retry (0.799393ms)
+✔ evicting an old hidden LOD during its upgrade neither duplicates loads nor keeps the late full model (0.928838ms)
+✔ failed full upgrade keeps valid visible distant object and its source ownership (1.252344ms)
+✔ manual refresh cannot force distant loads; shutdown rejects decoded results (0.66483ms)
+✔ visiting sixteen separated locations never accumulates hidden full photographs (5.399594ms)
+✔ decoded photograph dimensions and mipmaps, not JPEG bytes, dominate the estimate (3.073354ms)
+✔ shared/interleaved geometry, instance buffers, morphs and texture references count once (0.345259ms)
+✔ one shared instance buffer remains resident once even when referenced by multiple instance objects (0.290688ms)
+✔ compressed mip chains and typed float images have explicit estimates (0.27249ms)
+✔ hidden photo/full is evicted before small cached LOD; visible full is protected (1.087155ms)
+✔ count budget evicts the oldest ordinary hidden model and keeps recent entries (0.194222ms)
+✔ two photographs exceeding hidden budget are both evicted, no large first-object exception (9.145138ms)
+✔ unknown-size hidden texture is not retained under a false zero-byte estimate (0.589006ms)
+✔ visibility fringe retains only already-visible models; it never preloads outside the enter range (0.523798ms)
+✔ release resets to reloadable idle and does not unlock an in-flight upgrade (0.590809ms)
+✔ visible or wanted objects cannot be released even if a stale eviction list contains them (0.337658ms)
+✔ late unwanted result is disposed, does not replace an old object or unlock its request (0.227613ms)
+✔ diagnostics distinguish hidden budget from visible memory (0.292921ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 248.272366
+PASS: raw/oriented JPEG detection, shared-map idempotence, existing UV transform, and conservative unknown sizes
+✔ one group shares one converted material, preserves visual/texture state, and is idempotent (4.252638ms)
+✔ only mapped explicit photo glass/glazing converts; photo stone and ordinary glazing retain materials (1.445375ms)
+✔ existing EXIF correction and asset-image inspection still use the same single texture (1.041697ms)
+✔ conversion retains auxiliary texture ownership until unload, with map and Bitmap deduplication (0.6246ms)
+✔ lighting keeps photographic Basic glass out of shadow casting/receiving while stone still participates (5.75642ms)
+✔ an owned texture does not close a Bitmap still owned by a shared viewer texture (32.625193ms)
+✔ separate import groups create independent materials and do not share a global conversion cache (0.657179ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 203.731282
+✔ map integration copies far transform, adds grain without painted windows, and updates near shadow casters (10.139925ms)
+✔ map disposal detaches feature ownership before releasing lighting, scene nodes and GPU buffers (1.902071ms)
+✔ precise map visibility shares online source ownership and uses only loaded visible models (12.714387ms)
+✔ precise map city-manifest reset replays live landmark owner after the generic cache is cleared (7.58498ms)
+✔ far wall stays visible until parse is ready; hide/resume switches ownership synchronously (92.10725ms)
+✔ hidden parent cancels its index immediately; stale old response cannot install over resumed index (6.000017ms)
+✔ index timeout returns to idle with retry; next visible sync can succeed (12.745224ms)
+✔ parent detach during nonabortable parse disposes late near model without acquiring ownership (8.546877ms)
+✔ view cancellation leaves original solid building and disposes late parse (6.277114ms)
+✔ model HTTP failure preserves far wall and retries after backoff (5.004638ms)
+✔ an explicit timeout cancellation during decode still backs off instead of retrying forever (4.751117ms)
+✔ late decoder rejection after destroy cannot report errors or re-add geometry (5.333719ms)
+✔ decoded memory replaces inaccurate estimates before activation; visible plus cached residency stays bounded (26.041175ms)
+✔ actual instance-expanded triangle count enforces target while one indivisible building may exceed it (8.621189ms)
+✔ actual owned texture memory is included and an oversized near model never masks far geometry (17.405986ms)
+✔ invalid index (nonfinite resource) never binds a mask or suppresses source (7.49806ms)
+✔ invalid index (zero explicit resource) never binds a mask or suppresses source (1.981451ms)
+✔ invalid index (zero explicit triangle count) never binds a mask or suppresses source (1.882402ms)
+✔ invalid index (inverted bounds) never binds a mask or suppresses source (2.839482ms)
+✔ invalid index (duplicate local IDs) never binds a mask or suppresses source (2.381162ms)
+✔ invalid index (duplicate model IDs) never binds a mask or suppresses source (3.033684ms)
+✔ invalid index (missing model URL) never binds a mask or suppresses source (2.821094ms)
+✔ invalid index (incomplete ownership) never binds a mask or suppresses source (4.862465ms)
+✔ detaching a ready parent restores shader and removes all near objects, including hidden cache (1.727889ms)
+✔ detail URL replacement creates new ownership and old mask cannot affect the new parent (8.759668ms)
+✔ local manifest detailURL resolves from the pinned manifest directory, preserving absent-detail compatibility (1.359084ms)
+✔ gzip near model reaches parser only as fully verified original GLB bytes (27.709315ms)
+✔ HTTP already-decoded gzip model follows the same verified activation path (30.991237ms)
+✔ bad gzip hash never parses or hides the far wall (12.804684ms)
+✔ truncated gzip preserves far ownership even when its damaged transport hash is declared (13.316413ms)
+✔ late cancellation after verified gzip parsing disposes the decoded scene before any mask ownership (11.415813ms)
+✔ cancellation while gzip body is incomplete cancels its stream without invoking the parser (6.685708ms)
+✔ verified gzip model survives CPU parsing beyond the unchanged network deadline (6.372586ms)
+✔ incomplete gzip network body still times out and preserves the far wall (1.341858ms)
+✔ actual Three texture lookup, reference ownership and invalid transaction rollback (44.09877ms)
+✔ default Three cache key captures the previous hook before wrapping (1.605716ms)
+✔ real standard/depth/distance ShaderLib chains mask and existing generic facade hook (6.905389ms)
+✔ late shadow activation keeps prior custom depth properties and restores originals (1.147866ms)
+✔ cross-parent shared material rejects before attaching any shader, then can bind after release (0.76461ms)
+✔ reject nonfinite IDs before modifying materials (0.335895ms)
+✔ reject fractional IDs before modifying materials (0.293863ms)
+✔ reject mixed triangle IDs before modifying materials (0.271389ms)
+✔ reject outside namespace IDs before modifying materials (0.373152ms)
+✔ invalid later mesh leaves earlier good mesh untouched (4.793241ms)
+✔ indexed triangles use actual index ownership, reject a mixed indexed face (0.508826ms)
+✔ precise far owner is acquired before the first far visibility and survives delayed index (78.611442ms)
+✔ near unload releases only near ownership; visible landmark still hides only its far feature (3.431001ms)
+✔ override fetch failure preserves every far neighbor and can later retry without base opaque near (5.48426ms)
+✔ reject missing owner without acquiring a near mask (6.69391ms)
+✔ reject wrong keys without acquiring a near mask (5.671062ms)
+✔ reject partial target without acquiring a near mask (4.887082ms)
+✔ reject unknown owner without acquiring a near mask (2.708374ms)
+✔ reject nested owner without acquiring a near mask (3.731043ms)
+✔ late parse reflects current landmark state and cannot revive a detached parent (5.73596ms)
+✔ baseline SHA and complete local ownership are checked before replacing near (2.817309ms)
+✔ registry rejects duplicate ownership atomically and far preparation rejects absent/wrong hash (1.326195ms)
+✔ local city record retains the manifest SHA for precise namespace binding (1.081757ms)
+✔ model SHA, explicit activation and removal bound all local ground/collision behavior (4.743386ms)
+✔ exact Polygon holes and separate MultiPolygon components remain unsupported (0.461083ms)
+✔ highest overlapping real surface supports low curbs; a narrow high step cannot be tunneled (0.826633ms)
+✔ swept body radius stops a thin pole crossed within a single sprint frame (0.396706ms)
+✔ bed and mapped-opening exclusions block walking but low fixtures do not shorten a high camera (1.511193ms)
+✔ real line thickness is retained and a polygon obstacle hole remains traversable when clear (0.435185ms)
+✔ same-source local furniture keeps square bases and ignores overhead arms for walkers (1.21592ms)
+✔ invalid geometry or missing physical radius disables the entire owner rather than inventing geometry (0.391779ms)
+ℹ tests 65
+ℹ suites 0
+ℹ pass 65
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1868.614788
+✔ a model byte/SHA mismatch is rejected before any GLB parse or attachment (94.784061ms)
+✔ sidecar JSON must match original bytes, not merely the same parsed object (103.31994ms)
+✔ a correctly hashed sidecar bound to a different model cannot activate ground (37.120268ms)
+✔ a failed sidecar request leaves the base model usable without unverified ground (6.480526ms)
+✔ greenery network failure retains street and terrain but removes exactly seven tree proxies (98.207114ms)
+✔ greenery JSON byte/SHA mismatch retains terrain without invisible tree collision (146.442925ms)
+✔ verified actual fixture attaches real Three instances beneath one street owner (202.477918ms)
+✔ successful optional bodies arriving after 12 seconds still build one complete street assembly (132.960357ms)
+✔ a greenery body still hanging at 35 seconds falls back without invisible tree collision or retries (93.682354ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1153.473673
+✔ real deterministic gzip roundtrip reaches actual GLTFLoader with exact FLOAT32 positions (43.512992ms)
+✔ HTTP Content-Encoding already decoded GLB is not decompressed twice (1.886227ms)
+✔ already decoded GLB still requires decoded SHA and exact declared length (1.274147ms)
+✔ gzip magic is mandatory before starting the decompressor (0.518951ms)
+✔ compressed SHA and length are checked independently from decoded contract (0.988336ms)
+✔ corrupt CRC and truncated gzip fail even when transport hash matches those damaged bytes (3.407685ms)
+✔ valid gzip with incorrect decoded SHA never reaches a model parser (1.380846ms)
+✔ decompression output is bounded by declared size before full output is assembled (3.236368ms)
+✔ exclusive 100 MB declaration limit is validated without allocating a large output (0.607103ms)
+✔ downward test limit rejects over-budget bytes and cannot relax the production ceiling (0.47865ms)
+✔ gzip cannot disguise invalid GLB magic, version or embedded length (28.228225ms)
+✔ missing gzip integrity metadata and unknown content encoding fail before loading (0.556246ms)
+✔ plain legacy GLB remains compatible and optional legacy SHA is honored (1.419675ms)
+✔ abort cancels a pending response stream, rejects promptly and does not decode (0.768025ms)
+✔ already-aborted signal performs no response body read (0.203336ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 377.70944

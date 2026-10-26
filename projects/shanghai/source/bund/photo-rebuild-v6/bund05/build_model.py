@@ -29,7 +29,16 @@ def build(output):
   return surface
  def win(f,q,columns=4,rows=4,trim=True,label='window',glass='recessed glass'):
   if f is front and label in ('central-level-3','central-level-4','central-level-5'):photoglass.window(f,q,label)
-  else:f.window(q,columns,rows,trim=trim,label=label,glass=glass)
+  else:
+   first=len(B.parts)
+   f.window(q,columns,rows,trim=trim,label=label,glass=glass)
+   # The common helper is frozen. Seat its same-frame ordinary glass20mm
+   # behind the -.16m frame front; preserve every wall/frame/UV and triangle.
+   moved=[]
+   for part in B.parts[first:]:
+    if part['material']==glass and part['label'].endswith('/'+label+'-glass'):
+     part['vertices']=[tuple(np.asarray(v)+f.n*.14) for v in part['vertices']];moved.append(part)
+   assert len(moved)==1,(f.label,label,len(moved))
   stats['windows']+=1
  def cornice(f,z,large=False,width=None):
   levels=[(-.22,.13,.18),(-.08,.14,.38),(.09,.18,.66),(.23,.12,.79)] if large else [(-.09,.12,.17),(.035,.13,.28),(.13,.08,.37)]

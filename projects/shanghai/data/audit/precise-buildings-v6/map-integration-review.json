@@ -1,0 +1,41 @@
+{
+  "schema": "precise-map-integration-review-v1",
+  "reviewed_utc": "2026-10-26T05:46:24.310532+00:00",
+  "main_path": "passed_static_and_two_actual_lifecycle_tests",
+  "source_sha256": {
+    "src/map-scene.js": "f4a5f78cefcee4de33c6e499fc5a43c5e4eb8c49fea88780f4cb5db4bf7f77ca",
+    "src/app.js": "08791902aa97b029d45ff422dfc10e0b0cc517c6c01fc859a7c49eeb06b40c1c",
+    "tests/city-detail-map-integration.test.mjs": "40b2b14576327038be4825fae719967f2c090278378446553fe619c723e059aa"
+  },
+  "checks": [
+    "app awaits registry before createShanghaiScene",
+    "registry installed before LocalModelStreamer construction and first manifest load",
+    "prepareFarObject runs after geographic/material setup and before first far visibility",
+    "dynamic boundaries do not join static reserved or immutable filtered source IDs",
+    "dynamic online owner uses same tileSuppression reference counts as generic city tiles",
+    "setCityManifest replays active dynamic source ownership after reset",
+    "local precise masks receive loaded and actually visible landmark IDs only",
+    "ordinary tile mask survives detailed model visibility loss",
+    "failed/loading detailed model never acquires dynamic ownership"
+  ],
+  "diagnostic_note": "getLandmarkExclusionState reports the original static suppressor only. Dynamic ownership is in streaming state and detail.precise.",
+  "tests": {
+    "command": "node --test --test-name-pattern='precise map' tests/city-detail-map-integration.test.mjs",
+    "passed": 2,
+    "failed": 0,
+    "method": "Execute production extracted functions with real FeatureStateSuppressor and LocalModelStreamer, assert actual map states and owner lifecycles; no regex-mirroring assertions"
+  },
+  "browser": false,
+  "main_runtime_modified_by_reviewer": false,
+  "resolved_findings": [
+    {
+      "severity": "compatibility_path",
+      "function": "setNeighborhoods",
+      "issue": "setManifest clears dynamic online owners; compatibility path does not replay them",
+      "minimal_patch": "Call updateLandmarkVisibility() after await localStreamer.setManifest(...) and before updateLocalModels(true).",
+      "resolution": "Parent added updateLandmarkVisibility immediately after awaited compatibility manifest reset; confirmed by final read."
+    }
+  ],
+  "open_findings": [],
+  "installed_registry_and_override_hashes_match": true
+}

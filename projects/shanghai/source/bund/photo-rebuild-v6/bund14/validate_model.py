@@ -73,7 +73,7 @@ def validate(folder):
             uv=accessor(primitive['attributes']['TEXCOORD_0']);assert len(uv)==len(pos) and uv.min()>=0 and uv.max()<=1
             enu=pos[:,[0,2,1]].astype(float)*np.array([1,-1,1]);uz=np.c_[(enu-origin)@tangent,enu[:,2]]
             depth=(enu-origin)@normal
-            assert np.all(np.isclose(depth,-.31,atol=1e-5)|np.isclose(depth,-.33,atol=1e-5))
+            assert np.all(np.isclose(depth,-.215,atol=1e-5)|np.isclose(depth,-.235,atol=1e-5))
             matched=np.zeros(len(pos),int)
             for item in controls:
                 q=np.array(item['model_quad_u_z_m']);lo=q.min(0)-2e-5;hi=q.max(0)+2e-5

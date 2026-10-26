@@ -1,11 +1,11 @@
 {
   "name": "shanghai-explorer",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "private": true,
   "type": "module",
-  "description": "Shanghai Explorer v5: photo-guided Bund streetscape, 16-district city models and source-aware parametric near-building detail",
+  "description": "Shanghai Explorer: incremental photo-guided architectural reconstruction, 16-district city models and third-person walking",
   "scripts": {
-    "test": "node tests/walk-controller.test.mjs && node tests/local-model-streamer.test.mjs && node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs && node tests/geography.test.mjs && node tests/road-width.test.mjs && node tests/realistic-lighting.test.mjs && node source/bund/street/validate_basemap_replacement.mjs && node tests/model-resources.test.mjs && node tests/photographic-reflection.test.mjs && node --test tests/detail-model-cache.test.mjs tests/detail-model-cache-integration.test.mjs && node tests/photographic-texture.test.mjs && node --test tests/city-feature-mask.test.mjs tests/city-detail-streamer.test.mjs tests/city-detail-map-integration.test.mjs tests/street-interaction.test.mjs && node --test tests/street-assets.test.mjs && node --test tests/city-model-codec.test.mjs",
+    "test": "node tests/walk-controller.test.mjs && node tests/local-model-streamer.test.mjs && node --test tests/network-id-deadline.test.mjs tests/map-style.test.mjs && node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs && node tests/geography.test.mjs && node tests/road-width.test.mjs && node tests/realistic-lighting.test.mjs && node source/bund/street/validate_basemap_replacement.mjs && node tests/model-resources.test.mjs && node tests/photographic-reflection.test.mjs && node --test tests/detail-model-cache.test.mjs tests/detail-model-cache-integration.test.mjs && node tests/photographic-texture.test.mjs && node --test tests/photographic-glass.test.mjs && node --test tests/city-feature-mask.test.mjs tests/city-detail-streamer.test.mjs tests/city-precise-replacements.test.mjs tests/city-detail-map-integration.test.mjs tests/street-interaction.test.mjs && node --test tests/street-assets.test.mjs && node --test tests/city-model-codec.test.mjs",
     "check:assets": "python tools/check_assets.py"
   }
 }
