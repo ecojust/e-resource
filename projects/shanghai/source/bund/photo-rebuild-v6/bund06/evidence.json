@@ -1,0 +1,99 @@
+{
+  "schema": "bund06-building-evidence-v1",
+  "identity": {
+    "name_zh": "中国通商银行大楼",
+    "name_en": "Imperial Bank of China Building",
+    "historic_address": "中山东一路6号 / 6 The Bund",
+    "osm_way": 178408827,
+    "source_gers_id": "71ea5a0f-d28f-4638-95fe-b35a8db094d9",
+    "not_equivalent_to": [
+      "9 The Bund: 轮船招商局大楼 / China Merchants Steam Navigation Company",
+      "16 The Bund: current 招商银行 / China Merchants Bank",
+      "Zhengzhou China Merchants Bank Building search results dated20210901"
+    ]
+  },
+  "authoritative_history": {
+    "publisher": "上海城建档案官方澎湃号",
+    "page_url": "https://m.thepaper.cn/newsDetail_forward_25669123",
+    "page_date": "2023-12-16",
+    "facts": "Built in the1880s; design attributed to Morrison洋行; originally3storeys, rebuilt as apparent4storeys;1893 fire and repair;1897 was bank establishment/opening rather than demonstrated original construction date.",
+    "full_source_digest": "evidence/history/facts.json"
+  },
+  "actual_visual_observations": [
+    {
+      "source": "evidence/2025-photo-observations.json",
+      "image_file": "references/2025-suicasmo-cc0.jpg",
+      "use": "Primary contemporary facade topology and visible details",
+      "license": "CC0-1.0",
+      "author": "Suicasmo",
+      "date": "2025-05-01",
+      "sha256": "9c808a3c0442d86c44797567adea4b8457f258b1eb7b22d21df6afb0eb75066b"
+    },
+    {
+      "source": "evidence/official-photo-observations.json",
+      "use": "current-shape east facade topology",
+      "photograph_license": "No open image redistribution licence found; original was viewed temporarily and removed; only URL/hash/observations retained."
+    },
+    {
+      "source": "evidence/1908-photo-source.json",
+      "use": "historical oblique photograph, confirms portico/arch/pinnacle topology; not a contemporary condition survey",
+      "image_file": "references/1908-imperial-bank-book-page446.jpg",
+      "license": "Public domain (1908 volume; Commons corresponding crop labelled public domain)"
+    }
+  ],
+  "topology": {
+    "main_ground_and_second_groups": [
+      2,
+      2,
+      3,
+      2,
+      2
+    ],
+    "main_third_groups": [
+      2,
+      2,
+      4,
+      2,
+      2
+    ],
+    "attic_groups": [
+      2,
+      2,
+      3,
+      2,
+      2
+    ],
+    "main_principal_floors": 3,
+    "roof_gables": 5,
+    "central_high_round_top_slots": 3,
+    "small_gable_rectangular_slots": 4,
+    "round_pinnacle_positions": 4,
+    "south_annex_rectangular_axes_all_floors": 3
+  },
+  "measured_vs_estimated": {
+    "map_derived": "Original OSM polygon and main/annex32.218/6.119m frontage; preserve real2.608m offset connector. Map-derived dimensions are not surveyed facade dimensions.",
+    "photo_observed": "Opening styles/counts, major facade section topology, five triangular gables and porch columns. Central upper window fine grids, clear glass-region boundaries and raised ordinary-ground window sills are directly visible.",
+    "estimated": "All vertical metres, roof pitch/depth, hidden rear envelope, frame thickness/recess, cornice/pinnacle profiles, masonry and roof seam material scales.",
+    "rejected_as_measured": "OSM levels6/current19.2m floor-derived baseline; online4541/1698m2 values have no primary survey; approximately5000m2 is a2005 operating floor-area report, not elevation."
+  },
+  "reference_acquisition": "2025CC0 original downloaded once after the recorded600second rate window and actually inspected. Historic1908original book page also downloaded and inspected. Institutional original deleted after observation, never redistributed.",
+  "model_photo_textures_embedded": true,
+  "model_license": "Original geometry/source:MIT; map-derived footprint:ODbL-1.0 with OpenStreetMap attribution; each redistributed source photo retains its own licence.",
+  "geometry_input_sha256": "71bf109f4198cc27dd6a85df1f395b102ac8478c68d71139c8fb110ec519808f",
+  "inferred_openings": [],
+  "resolved_prior_occlusions": "2025original directly resolves south annex ground3rectangular openings and main south ground pair.",
+  "glazing": {
+    "source": "references/2025-suicasmo-cc0.jpg",
+    "controls": "photo-glass-controls.json",
+    "method": "127 individually selected clear glass panes across6central upper-storey windows. Four columns/seven rows on central third floor; selected2F portions use four columns/six visible row regions. Black frames/stone never receive photographic pixels. Entire ground, annex, peripheral glazing and occluded panes remain procedural.",
+    "geometry": "Each pane is an actual separate closed solid behind a continuous shared-node frame. UV assignment is verified not to change vertices/triangles.",
+    "limits": "Single contemporary source gives fixed glass reflections only. It is not a complete photo-textured facade or multi-view reconstruction."
+  },
+  "metre_calibration": {
+    "main": "calibration-independent.json",
+    "source_controls": "calibration-independent-controls.json",
+    "ground": "ground-opening-photo-check.json",
+    "fine_window_controls": "photo-glass-controls.json",
+    "limits": "Approximate camera fit at known map frontage, EXIF22mm lens, assumed manufacturer sensor;256sensitivity trials, not a survey. Fine manual black-aperture boundaries supersede earlier rough window quadrilaterals that included adjacent white piers."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "bund06-portable-rebuild-v1",
+  "passed": true,
+  "source_layout": "source/bund/photo-rebuild-v6/{common,bund06}/",
+  "method": "Copied only curated source files plus common/photo_architecture.py into independent portable-check/source; ran build_model.py with independent output then check_photo_glazing.py. Original candidate untouched.",
+  "commands": [
+    "python source/bund/photo-rebuild-v6/bund06/build_model.py --output /independent/output",
+    "python source/bund/photo-rebuild-v6/bund06/check_photo_glazing.py /independent/output/bund06-raw.glb --report /independent/output/bund06-photo-embedded-check.json"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "shapely": "2.2.0",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+  },
+  "all_output_byte_identical": true,
+  "calibration_json_byte_identical": true,
+  "outputs": [
+    {
+      "file": "bund06-raw.glb",
+      "bytes": 13009384,
+      "sha256": "2e79827911adc35861cd4603d15204335e334727b10d4c5b8e5288498bfeafc3",
+      "byte_identical": true
+    },
+    {
+      "file": "bund06-raw.geometry.json",
+      "bytes": 204224,
+      "sha256": "4eaddc71d0bde27724e7fff9c442c5dbce620d1cd15fb79ca1a7c79bfaa82307",
+      "byte_identical": true
+    },
+    {
+      "file": "bund06-summary.json",
+      "bytes": 440,
+      "sha256": "f10a231dd565bda65edf8b4ed520e79f244f666d20e3e8260ce7ca83fc5a20cb",
+      "byte_identical": true
+    },
+    {
+      "file": "bund06-photo-glazing-report.json",
+      "bytes": 208436,
+      "sha256": "b17518b3862c1eeb447d312f5d9e82cb4d7fc2173c2b5cb09b36d2a9638143e2",
+      "byte_identical": true
+    },
+    {
+      "file": "bund06-photo-embedded-check.json",
+      "bytes": 1067,
+      "sha256": "1652ee76d57495792b50c873780f80e79c9b0f541cd718ee22402839fac4ddc6",
+      "byte_identical": true
+    },
+    {
+      "file": "bund06-structural-check.json",
+      "bytes": 2681,
+      "sha256": "4a02eeacc53520f6f7b730f201f9e748a8a8e53551ad960b95f2bfae2d1d1962",
+      "byte_identical": true
+    },
+    {
+      "file": "bund06-all-parts-check.json",
+      "bytes": 392483,
+      "sha256": "4ead6df118c505bd4be1aa3cc6e5a2ee477c312899c6159e11428d9d50616f10",
+      "byte_identical": true
+    }
+  ],
+  "scope": "Same environment, independent paths and curated dependencies; not a cross-version byte determinism guarantee."
+}
