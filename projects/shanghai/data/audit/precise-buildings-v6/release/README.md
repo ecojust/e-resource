@@ -18,6 +18,6 @@
 
 报告记录0个page／shader／asset／console／request／外部HTTP错误、0次WebGL context loss；同时保留20条warning（15条样式number/null、4条ReadPixels stall、1条宏块取消后保留建筑）和1条预期near请求取消，未声称warning归零。没有注入网络故障、启用强制OSM fallback或评估真实用户硬件帧率，也不能仅凭画面支持关系宣称已验收实测高程或步行ground sampler。
 
-**本次采集早于随后单独自动测试的网络deadline与可选shield filter补丁。** 它证明采集版本的三栋接入状态，不替代最终应用／新启动包的后续冒烟检查。v6启动包尚待生成和核验；旧v5启动包及其报告不代表本批已打包。
+**本次采集早于随后单独自动测试的网络deadline与可选shield filter补丁。** 它证明采集版本的三栋接入状态；补丁后的实际解压v6启动包现已完成[05号与清单重置冒烟](launcher/README.md)。该项只有2组采集／2张主审截图，没有重跑三栋完整远近循环，不改写上述早期三栋报告。
 
 逐栋早期封装／原生记录中保留的browser pending是生成时状态，后续本目录按相同模型SHA补充网页结果。尺寸、照片许可、推定范围见[REALISM_V6](../../../bund/REALISM_V6.md)；后续工作遵循[逐栋标准](../DETAIL_STANDARD.md)。

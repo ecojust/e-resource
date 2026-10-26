@@ -43,7 +43,7 @@
 
 [资产清单](manifest.json)保存SHA256、锚点、模型高度及来源。原始和网页近景保留照片；约400m外使用无照片轻量变体，返回约300m内恢复近景，切换失败继续保留可见模型。Blender文件包含可编辑建筑网格和独立预览场景，预览地面与灯光不属于建筑GLB。
 
-v6启动包尚待生成及核验；规划仍为本地保存原14栋核心地标，本批新增3栋的模型、远景变体及参考照片从固定版本按需联网加载。17栋是项目地标总数，不表示17栋模型字节全部随ZIP打包；旧v5包不代表本轮更新。
+v6启动包已生成并通过归档校验和实际解压后的05号／清单重置冒烟。本地保存原14栋核心地标，本批新增3栋的模型、远景变体及参考照片从固定提交按需联网加载；17栋是项目地标总数，不表示17栋模型字节全部随ZIP打包。
 
 ## 嵌框玻璃、网页显示与楼前铺装
 
@@ -88,6 +88,6 @@ v6启动包尚待生成及核验；规划仍为本地保存原14栋核心地标�
 - 普通楼替换：[几何守恒](../audit/precise-buildings-v6/geometry-validation.json)、[独立可见状态与退出恢复](../audit/precise-buildings-v6/runtime-owner-validation.json)、[地图接入核对](../audit/precise-buildings-v6/map-integration-review.json)。保留源三角位置与FLOAT32法线，三个对象可分别隐藏，邻楼保留。
 - 完整 `npm test` 已通过；[三栋网页技术报告](../audit/precise-buildings-v6/release/browser.json)包含15组采集记录与6份近／远景资产SHA核验，精确归属、14栋邻楼保留和reset通过。
 - [独立视觉记录](../audit/precise-buildings-v6/release/visual-review.json)实际查看10张完整近景／斜视／远景及reset截图，接受本批三栋与局部铺装的接入表现；另外5组仅技术记录。远景城市背景仍是可见的推定建筑，细微阴影锯齿仍保留。
-- 采集发生在后续网络deadline／可选shield filter补丁之前；最终应用和v6启动包需后续冒烟核验。原报告20条warning、1条预期取消均保留，不把0个错误写成0条warning；详见[本批审计范围](../audit/precise-buildings-v6/release/README.md)。
+- 采集发生在后续网络deadline／可选shield filter补丁之前；补丁后的最终应用另在实际解压启动包中完成05号与清单重置冒烟，范围见[启动包核验](../audit/precise-buildings-v6/release/launcher/README.md)。原报告20条warning、1条预期取消均保留，不把0个错误写成0条warning；详见[本批审计范围](../audit/precise-buildings-v6/release/README.md)。
 
 旧v5全市构建和场景报告继续保留于[原发布审计](../audit/city-detail-v5/release/README.md)，它们不替代本批新增三栋的网页测试。[v5说明](REALISM_V5.md)及更早版本记录保留为历史来源。
