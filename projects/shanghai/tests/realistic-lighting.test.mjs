@@ -12,7 +12,7 @@ const lighting = createRealisticLighting({THREE, scene, renderer, reflections: f
 assert.equal(scene.background, oldBackground);
 assert.equal(scene.environment, oldEnvironment);
 assert.equal(lighting.getState().groundReceiverPolygons, 0);
-assert.equal(lighting.stats.shadowSize, 1024);
+assert.equal(lighting.stats.shadowSize, 2048);
 assert.equal(renderer.shadowMap.autoUpdate, false);
 assert.equal(lighting.sun.shadow.autoUpdate, false);
 

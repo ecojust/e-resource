@@ -1,0 +1,27 @@
+{
+  "observer": "root matched-camera pure Three.js browser A/B",
+  "method": "Same wall-stage model/camera, change only curtain candidate",
+  "candidates": [
+    {
+      "file": "references/ab-no-folds.png",
+      "sha256": "4de50b6c365a2e48023746c0c2b68e2f2f8fe44d5441b6986c6b5df8cf4c4495",
+      "bytes": 470528,
+      "observed_result": "Short vertical marks disappeared in matched-camera root browser A/B."
+    },
+    {
+      "file": "references/ab-flipped.png",
+      "sha256": "1c0694ee22a45618331fd853e2b6babb064c88e91d121b5aaf59a8fe0b95e64b",
+      "bytes": 500838,
+      "observed_result": "Short vertical marks remained; orientation-only candidate B rejected as a remedy for these marks."
+    },
+    {
+      "file": "references/ab-combined.png",
+      "sha256": "4de50b6c365a2e48023746c0c2b68e2f2f8fe44d5441b6986c6b5df8cf4c4495",
+      "bytes": 470528,
+      "observed_result": "Candidate C accepted by root matched-camera WebGL: short marks disappeared; window frames and openings preserved."
+    }
+  ],
+  "decision": "B alone rejected. C combines independently justified prism orientation correction with removal of the internal interpenetrating folds shown to cause the visual marks.",
+  "not_a_zero_area_cleanup": true,
+  "accepted_candidate": "C: reorient ten prisms and remove 120 interpenetrating internal folds"
+}

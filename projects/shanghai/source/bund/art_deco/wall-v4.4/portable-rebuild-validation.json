@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "method": "Ran packaged rebuild.py from frozen baselines through capture, union, native export, independent surface audit, zero-area export cleanup and both gltfpack outputs into a separate work directory. Compared all nine GLBs byte for byte and the native geometry audits.",
+  "command": [
+    "python",
+    "rebuild.py",
+    "--workdir",
+    "<new-output-dir>",
+    "--blender",
+    "blender",
+    "--gltfpack",
+    "<gltfpack>"
+  ],
+  "tools": {
+    "blender": "4.3.2",
+    "gltfpack": "1.3",
+    "python_numpy": true
+  },
+  "frozen_inputs_verified": true,
+  "viewer_decode_repeated_in_this_rebuild": false,
+  "viewer_decode_binding": "The nine rebuilt GLBs are byte-identical to the released GLBs independently decoded and checked in validation/.",
+  "models": [
+    {
+      "id": "bund19",
+      "assets": {
+        "raw": {
+          "bytes": 6446416,
+          "triangles": 159428,
+          "sha256": "2f891866e16220412716a811d25f8c1a9c6edd24d267201706f009abe4b554a1",
+          "byte_identical": true
+        },
+        "web": {
+          "bytes": 2585576,
+          "triangles": 159428,
+          "sha256": "c95eb8e1f84f238a6d6033b7b0687dbfb01c99da6aac6a711f0b9bffb45793f5",
+          "byte_identical": true
+        },
+        "lod": {
+          "bytes": 1434432,
+          "triangles": 65776,
+          "sha256": "b192056180ab5110866c4c2f30b2dc1edc0f0cccb5ca3ab33414d8cce68fe8e1",
+          "byte_identical": true
+        }
+      },
+      "native_geometry_audit_identical": true,
+      "native_bytes_identical": false,
+      "native_note": "Saved .blend session metadata may differ; exact raw GLB hash and independent native preservation/topology/bounds audits match.",
+      "zero_area_triangles_removed": 94
+    },
+    {
+      "id": "bund20",
+      "assets": {
+        "raw": {
+          "bytes": 12347612,
+          "triangles": 251315,
+          "sha256": "980a2c356cdc3674d2fb8b49ece1c8769a0be8f648fb8c146f6b5d5bfbc8e2a5",
+          "byte_identical": true
+        },
+        "web": {
+          "bytes": 4410568,
+          "triangles": 251315,
+          "sha256": "278de3cf59a6304961722ec0fb82cd459f9b9135512897c4182ffe4bb166c1c6",
+          "byte_identical": true
+        },
+        "lod": {
+          "bytes": 2529320,
+          "triangles": 125642,
+          "sha256": "b811446898318ce26ead659d406dc7bfeb4e4d502faa8e8bd928b795d7fa41f9",
+          "byte_identical": true
+        }
+      },
+      "native_geometry_audit_identical": true,
+      "native_bytes_identical": false,
+      "native_note": "Saved .blend session metadata may differ; exact raw GLB hash and independent native preservation/topology/bounds audits match.",
+      "zero_area_triangles_removed": 139
+    },
+    {
+      "id": "bund23",
+      "assets": {
+        "raw": {
+          "bytes": 8180880,
+          "triangles": 193732,
+          "sha256": "94fea92296bc7bb8afbbfe7f505e03429168ccb035a97ef59cc4782628251a89",
+          "byte_identical": true
+        },
+        "web": {
+          "bytes": 2818256,
+          "triangles": 193732,
+          "sha256": "d818e25655dcfdbdaa5619d14b0ea13de318c9c32bcfdc980a0922c0564cc125",
+          "byte_identical": true
+        },
+        "lod": {
+          "bytes": 1499764,
+          "triangles": 79686,
+          "sha256": "51d09c40dcec1e676fa47dff02dc2fb4aa8a691192daead18fa6cb41edc9fe55",
+          "byte_identical": true
+        }
+      },
+      "native_geometry_audit_identical": true,
+      "native_bytes_identical": false,
+      "native_note": "Saved .blend session metadata may differ; exact raw GLB hash and independent native preservation/topology/bounds audits match.",
+      "zero_area_triangles_removed": 1454
+    }
+  ]
+}

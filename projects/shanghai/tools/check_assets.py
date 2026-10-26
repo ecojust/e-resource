@@ -65,6 +65,99 @@ def jpeg_dimensions(path):
     raise ValueError('Missing JPEG frame header')
 
 
+def jpeg_orientation(path):
+    """Read EXIF orientation from the source bytes; no EXIF means orientation 1."""
+    data = path.read_bytes()
+    if data[:2] != b'\xff\xd8':
+        raise ValueError('Not a JPEG image')
+    offset = 2
+    orientations = []
+    while offset + 3 < len(data):
+        if data[offset] != 0xFF:
+            raise ValueError('Invalid JPEG marker')
+        while offset < len(data) and data[offset] == 0xFF:
+            offset += 1
+        if offset >= len(data):
+            raise ValueError('Truncated JPEG marker')
+        marker = data[offset]; offset += 1
+        if marker in (0xD9, 0xDA):
+            break
+        if marker == 0x01 or 0xD0 <= marker <= 0xD8:
+            continue
+        length = int.from_bytes(data[offset:offset + 2], 'big')
+        if length < 2 or offset + length > len(data):
+            raise ValueError('Truncated JPEG marker')
+        payload = data[offset + 2:offset + length]
+        if marker == 0xE1 and payload.startswith(b'Exif\x00\x00'):
+            tiff = payload[6:]
+            if len(tiff) < 8 or tiff[:2] not in (b'II', b'MM'):
+                raise ValueError('Invalid EXIF TIFF header')
+            order = '<' if tiff[:2] == b'II' else '>'
+            if struct.unpack_from(order + 'H', tiff, 2)[0] != 42:
+                raise ValueError('Invalid EXIF TIFF magic')
+            ifd = struct.unpack_from(order + 'I', tiff, 4)[0]
+            if ifd + 2 > len(tiff):
+                raise ValueError('Truncated EXIF IFD')
+            count = struct.unpack_from(order + 'H', tiff, ifd)[0]
+            if ifd + 2 + count * 12 > len(tiff):
+                raise ValueError('Truncated EXIF entries')
+            for index in range(count):
+                entry = ifd + 2 + index * 12
+                tag, value_type, value_count = struct.unpack_from(order + 'HHI', tiff, entry)
+                if tag == 0x0112:
+                    if value_type != 3 or value_count != 1:
+                        raise ValueError('Invalid EXIF orientation type')
+                    orientation = struct.unpack_from(order + 'H', tiff, entry + 8)[0]
+                    if orientation not in range(1, 9):
+                        raise ValueError('Invalid EXIF orientation value')
+                    orientations.append(orientation)
+        offset += length
+    if len(set(orientations)) > 1:
+        raise ValueError('Conflicting EXIF orientations')
+    return orientations[0] if orientations else 1
+
+
+def license_token(value):
+    """Compare ordinary CC labels and SPDX spellings without changing licenses."""
+    token = re.sub(r'[^a-z0-9]', '', str(value).lower())
+    return 'cc0' if token in ('cc0', 'cc010') else token
+
+
+def glb_photo_resources(path):
+    """Read embedded image hashes from a GLB with explicit chunk/buffer bounds."""
+    blob = path.read_bytes()
+    if len(blob) < 20 or struct.unpack_from('<4sII', blob) != (b'glTF', 2, len(blob)):
+        raise ValueError('Invalid GLB header')
+    chunks = []
+    offset = 12
+    while offset < len(blob):
+        if offset + 8 > len(blob):
+            raise ValueError('Truncated GLB chunk header')
+        length, kind = struct.unpack_from('<II', blob, offset)
+        offset += 8
+        if offset + length > len(blob):
+            raise ValueError('Truncated GLB chunk')
+        chunks.append((kind, blob[offset:offset + length]))
+        offset += length
+    if not chunks or chunks[0][0] != 0x4E4F534A:
+        raise ValueError('Missing GLB JSON chunk')
+    doc = json.loads(chunks[0][1])
+    binary_chunks = [chunk for kind, chunk in chunks[1:] if kind == 0x004E4942]
+    if len(binary_chunks) > 1:
+        raise ValueError('Multiple GLB BIN chunks')
+    binary = binary_chunks[0] if binary_chunks else b''
+    image_hashes = []
+    for image in doc.get('images', []):
+        if image.get('uri') or image.get('mimeType') != 'image/jpeg':
+            raise ValueError('Photographic models must embed the documented JPEG source')
+        view = doc['bufferViews'][image['bufferView']]
+        start, length = view.get('byteOffset', 0), view['byteLength']
+        if view.get('buffer', 0) != 0 or start < 0 or length <= 0 or start + length > len(binary):
+            raise ValueError('Invalid embedded photographic image bounds')
+        image_hashes.append(hashlib.sha256(binary[start:start + length]).hexdigest())
+    return doc, image_hashes
+
+
 files = [p for p in ROOT.rglob('*') if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts]
 for path in files:
     size = path.stat().st_size
@@ -194,22 +287,59 @@ if bund_path.is_file():
     for building in bund['buildings']:
         if not building.get('photo_texture'):
             continue
-        raw_metadata=json.loads((ROOT/'data/bund/models'/f'{building["candidate_id"]}.json').read_text())
-        if (raw_metadata.get('historical') or raw_metadata.get('raw_sha256')!=building['raw_sha256']
-                or raw_metadata.get('triangles')!=building['triangles']
-                or not raw_metadata.get('reference_photo',{}).get('used_as_texture')):
-            errors.append('Photographic raw model metadata differs: '+building['id'])
-        for field in ('editable_model','model','lod_model'):
-            blob=(ROOT/building[field]).read_bytes();length=struct.unpack_from('<I',blob,12)[0]
-            doc=json.loads(blob[20:20+length]);start=28+length
-            if 'CC BY-SA 4.0' not in doc['asset'].get('copyright','') or building['reference']['author'] not in doc['asset'].get('copyright',''):
-                errors.append('Missing photographic attribution: '+building[field])
-            image_hashes=[]
-            for image in doc.get('images',[]):
-                view=doc['bufferViews'][image['bufferView']];offset=start+view.get('byteOffset',0)
-                image_hashes.append(hashlib.sha256(blob[offset:offset+view['byteLength']]).hexdigest())
-            if image_hashes!=[building['reference']['sha256']]:
-                errors.append('Photographic source bytes differ: '+building[field])
+        try:
+            photo = building['photo_texture']
+            # The texture can be the full original while `reference` remains a
+            # smaller documentation preview. Validate the explicit texture source.
+            source_valid = manifest_file(ROOT, photo.get('image'), photo.get('bytes'), photo.get('sha256'),
+                                         'Photographic source ' + building['id'])
+            if not all(isinstance(photo.get(key), str) and photo[key].strip()
+                       for key in ('author', 'license', 'source', 'license_url')):
+                raise ValueError('Incomplete photographic attribution')
+            if not all(photo[key].startswith(('http://', 'https://')) for key in ('source', 'license_url')):
+                raise ValueError('Invalid photographic source/license URL')
+            expected = photo.get('expected_images')
+            if (not isinstance(expected, dict) or set(expected) != {'raw', 'web', 'lod'}
+                    or any(type(value) is not int or value < 0 for value in expected.values())
+                    or not expected['raw'] or not expected['web']):
+                raise ValueError('Expected raw/web/lod photographic image counts are missing or invalid')
+            if source_valid:
+                source_path = ROOT / photo['image']
+                dimensions = jpeg_dimensions(source_path)
+                exif_orientation = jpeg_orientation(source_path)
+                oriented = dimensions[::-1] if exif_orientation in (5, 6, 7, 8) else dimensions
+                orientation = photo.get('orientation', {})
+                if (photo.get('dimensions_px') != dimensions
+                        or orientation.get('exifOrientation') != exif_orientation
+                        or orientation.get('rawSize') != dimensions
+                        or orientation.get('orientedSize') != oriented
+                        or orientation.get('uvConvention') != 'stored-pixels'
+                        or orientation.get('sourceSha256') != photo['sha256']):
+                    errors.append('Photographic source dimensions/orientation differ: ' + building['id'])
+            raw_metadata = json.loads((ROOT/'data/bund/models'/f'{building["candidate_id"]}.json').read_text())
+            raw_photo = raw_metadata.get('reference_photo', {})
+            if (raw_metadata.get('historical') or raw_metadata.get('raw_sha256') != building['raw_sha256']
+                    or raw_metadata.get('triangles') != building['triangles']
+                    or not raw_photo.get('used_as_texture')
+                    or raw_photo.get('sha256') != photo['sha256']
+                    or raw_photo.get('author') != photo['author']
+                    or license_token(raw_photo.get('license')) != license_token(photo['license'])
+                    or (raw_photo.get('page') or raw_photo.get('source')) != photo['source']
+                    or raw_photo.get('license_url') != photo['license_url']):
+                errors.append('Photographic raw model metadata differs: ' + building['id'])
+            for field, role in (('editable_model', 'raw'), ('model', 'web'), ('lod_model', 'lod')):
+                doc, image_hashes = glb_photo_resources(ROOT / building[field])
+                copyright_text = doc.get('asset', {}).get('copyright', '')
+                copyright_token = re.sub(r'[^a-z0-9]', '', copyright_text.lower())
+                if (license_token(photo['license']) not in copyright_token
+                        or photo['author'] not in copyright_text):
+                    errors.append('Missing photographic attribution: ' + building[field])
+                if image_hashes != [photo['sha256']] * expected[role]:
+                    errors.append('Photographic source bytes/count differ: ' + building[field])
+                if expected[role] == 0 and doc.get('textures'):
+                    errors.append('Photo-free model still declares textures: ' + building[field])
+        except (OSError, KeyError, ValueError, TypeError, IndexError, struct.error) as error:
+            errors.append('Photographic model validation ' + building['id'] + ': ' + str(error))
 
     # Each of the ten LODs is bound to the same primary building in the runtime
     # navigation list, Bund release, per-building metadata and LOD manifest.

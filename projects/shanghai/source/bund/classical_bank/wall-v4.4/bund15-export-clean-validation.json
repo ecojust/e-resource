@@ -1,0 +1,131 @@
+{
+  "schema_version": "classical-bank-wall-export-v1",
+  "building": "bund15",
+  "status": "passed",
+  "full_raw_web_triangle_count_identical": true,
+  "position_normal_float32": true,
+  "lod_no_photograph": true,
+  "original_photo_bytes_unchanged": false,
+  "lod_maximum_bounds_change_m": 3.1665038591199846e-08,
+  "compression_commands": [
+    {
+      "source": "bund15-clean-raw.glb",
+      "target": "bund15-clean-web.glb",
+      "options": [
+        "-cc",
+        "-noq",
+        "-km",
+        "-ke"
+      ]
+    },
+    {
+      "source": "bund15-clean-raw.glb",
+      "target": "bund15-clean-lod.glb",
+      "options": [
+        "-si",
+        "0.35",
+        "-se",
+        "0.002",
+        "-sp",
+        "-cc",
+        "-noq",
+        "-km",
+        "-ke"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "bund15-clean-raw.glb",
+      "bytes": 3061128,
+      "sha256": "0b6ec1409ca5230da74b63b977a08420e493e75670fdb5047322d97ec001eb29",
+      "triangles": 94288,
+      "rendered_triangles": 94288,
+      "primitives": 11,
+      "bounds_xyz_m": [
+        [
+          -24.97776222229004,
+          0.0,
+          -22.484010696411133
+        ],
+        [
+          23.73923683166504,
+          29.0,
+          22.601665496826172
+        ]
+      ],
+      "images": [],
+      "texture_count": 0,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Reference photograph only (not a texture): Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:Former_Russo-Chinese_Bank_Building,_Shanghai_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . No photographic image is embedded; dimensions are photo-derived estimates.",
+      "asset_extras": {
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4"
+      }
+    },
+    {
+      "file": "bund15-clean-web.glb",
+      "bytes": 1474688,
+      "sha256": "3c3db27bf86e645c3e5d441c78ccc3eac97915b61b59af22aa04bbd9a40c0da6",
+      "triangles": 94288,
+      "rendered_triangles": 94288,
+      "primitives": 11,
+      "bounds_xyz_m": [
+        [
+          -24.9777622,
+          0.0,
+          -22.4840107
+        ],
+        [
+          23.7392368,
+          29.0,
+          22.6016655
+        ]
+      ],
+      "images": [],
+      "texture_count": 0,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Reference photograph only (not a texture): Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:Former_Russo-Chinese_Bank_Building,_Shanghai_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . No photographic image is embedded; dimensions are photo-derived estimates.",
+      "asset_extras": {
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4"
+      }
+    },
+    {
+      "file": "bund15-clean-lod.glb",
+      "bytes": 952520,
+      "sha256": "7a97a52740199f0c1984b833ea2594d1368bb9698a92f33f42d19b814f4c637d",
+      "triangles": 46138,
+      "rendered_triangles": 46138,
+      "primitives": 11,
+      "bounds_xyz_m": [
+        [
+          -24.9777622,
+          0.0,
+          -22.4840107
+        ],
+        [
+          23.7392368,
+          29.0,
+          22.6016655
+        ]
+      ],
+      "images": [],
+      "texture_count": 0,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Reference photograph only (not a texture): Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:Former_Russo-Chinese_Bank_Building,_Shanghai_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . No photographic image is embedded; dimensions are photo-derived estimates.",
+      "asset_extras": {
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4",
+        "lod_has_photo": false
+      }
+    }
+  ],
+  "native": {
+    "file": "bund15-clean.blend",
+    "bytes": 1406909,
+    "sha256": "1ee61ebf1c5c525ded62efee045cd984c63e53ef4f7138a6c38be8e98d59c8d8"
+  },
+  "current_wall_validation": "wall-clean-validation.json",
+  "pre_wall_photo_preservation_is_historical": false,
+  "approved_raw_binary_sha256": "ea506dd6d4df9d56a4d16688df9f9d2fa7795b57238040368fa9af20ab5bf6b5",
+  "copyright_only_raw_update_preserved_binary": true,
+  "browser_validation_performed_by_this_script": false
+}

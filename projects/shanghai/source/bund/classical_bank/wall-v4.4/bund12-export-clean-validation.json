@@ -1,0 +1,181 @@
+{
+  "schema_version": "classical-bank-wall-export-v1",
+  "building": "bund12",
+  "status": "passed",
+  "full_raw_web_triangle_count_identical": true,
+  "position_normal_float32": true,
+  "lod_no_photograph": true,
+  "original_photo_bytes_unchanged": true,
+  "lod_maximum_bounds_change_m": 4.39941416630063e-08,
+  "compression_commands": [
+    {
+      "source": "bund12-clean-raw.glb",
+      "target": "bund12-clean-web.glb",
+      "options": [
+        "-cc",
+        "-noq",
+        "-km",
+        "-ke"
+      ]
+    },
+    {
+      "source": "bund12-clean-lod-source.glb",
+      "target": "bund12-clean-lod.glb",
+      "options": [
+        "-si",
+        "0.35",
+        "-se",
+        "0.002",
+        "-sp",
+        "-cc",
+        "-noq",
+        "-km",
+        "-ke"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "bund12-clean-raw.glb",
+      "bytes": 17277964,
+      "sha256": "78bab21b567121627d7f807b61f509578536070afad2ac81c20c4e4ace451559",
+      "triangles": 218805,
+      "rendered_triangles": 218805,
+      "primitives": 12,
+      "bounds_xyz_m": [
+        [
+          -38.369869232177734,
+          0.0,
+          -47.16672134399414
+        ],
+        [
+          36.886470794677734,
+          55.720001220703125,
+          47.5187873840332
+        ]
+      ],
+      "images": [
+        {
+          "mime_type": "image/jpeg",
+          "bytes": 7580249,
+          "sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684"
+        }
+      ],
+      "texture_count": 1,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Photographic six-window samples: Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Dimensions are photo-derived estimates.",
+      "asset_extras": {
+        "photo_sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684",
+        "photo_original_bytes_embedded": true,
+        "photo_scope": "Six individual recessed windows only",
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4"
+      }
+    },
+    {
+      "file": "bund12-clean-web.glb",
+      "bytes": 11464408,
+      "sha256": "04e2eedbb85fe9bffc2d140624e37af21ddca73e5825f725f64f2cf80a5ad9fd",
+      "triangles": 218805,
+      "rendered_triangles": 218805,
+      "primitives": 12,
+      "bounds_xyz_m": [
+        [
+          -38.3698692,
+          0.0,
+          -47.1667213
+        ],
+        [
+          36.8864708,
+          55.7200012,
+          47.5187874
+        ]
+      ],
+      "images": [
+        {
+          "mime_type": "image/jpeg",
+          "bytes": 7580249,
+          "sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684"
+        }
+      ],
+      "texture_count": 1,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Photographic six-window samples: Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Dimensions are photo-derived estimates.",
+      "asset_extras": {
+        "photo_sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684",
+        "photo_original_bytes_embedded": true,
+        "photo_scope": "Six individual recessed windows only",
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4"
+      }
+    },
+    {
+      "file": "bund12-clean-lod.glb",
+      "bytes": 2888184,
+      "sha256": "54320546b206d546a73ea6885c3eafaa99dd727311baeedea18dc2cbd320ac5c",
+      "triangles": 130375,
+      "rendered_triangles": 130375,
+      "primitives": 12,
+      "bounds_xyz_m": [
+        [
+          -38.3698692,
+          0.0,
+          -47.1667213
+        ],
+        [
+          36.8864708,
+          55.7200012,
+          47.5187874
+        ]
+      ],
+      "images": [],
+      "texture_count": 0,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Photographic six-window samples: Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Dimensions are photo-derived estimates. This distant variant contains no photographic image.",
+      "asset_extras": {
+        "photo_sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684",
+        "photo_scope": "Six individual recessed windows only",
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4",
+        "lod_has_photo": false
+      }
+    },
+    {
+      "file": "bund12-clean-lod-source.glb",
+      "bytes": 9697428,
+      "sha256": "42e1abe209ce196e0679554ec0b591d6f0b5411d152ab8ec8f0bd665b32d4233",
+      "triangles": 218805,
+      "rendered_triangles": 218805,
+      "primitives": 12,
+      "bounds_xyz_m": [
+        [
+          -38.369869232177734,
+          0.0,
+          -47.16672134399414
+        ],
+        [
+          36.886470794677734,
+          55.720001220703125,
+          47.5187873840332
+        ]
+      ],
+      "images": [],
+      "texture_count": 0,
+      "copyright": "Shanghai Explorer architectural reconstruction. Spatial provenance: © OpenStreetMap contributors, ODbL-1.0, https://www.openstreetmap.org/copyright . Photographic six-window samples: Suicasmo, CC0-1.0, https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Dimensions are photo-derived estimates. This distant variant contains no photographic image.",
+      "asset_extras": {
+        "photo_sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684",
+        "photo_scope": "Six individual recessed windows only",
+        "structural_wall_cleanup": "Shared-node same-plane wall union; original projected wall regions and openings preserved.",
+        "wall_cleanup_stage": "classical-bank-wall-v4.4",
+        "lod_has_photo": false
+      }
+    }
+  ],
+  "native": {
+    "file": "bund12-clean.blend",
+    "bytes": 10551890,
+    "sha256": "49c0c43b290561811830303454e2597a07b01f6be780cc1766c758ffcb04a9df"
+  },
+  "current_wall_validation": "wall-clean-validation.json",
+  "pre_wall_photo_preservation_is_historical": true,
+  "approved_raw_binary_sha256": "46e9629cb53021b1a5753826769ba7a4f770d7d28195794b92537065912c40dd",
+  "copyright_only_raw_update_preserved_binary": true,
+  "browser_validation_performed_by_this_script": false
+}

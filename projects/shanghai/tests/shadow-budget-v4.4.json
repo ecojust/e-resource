@@ -1,0 +1,128 @@
+{
+  "method": "Analytical CPU evaluation of the exact candidate module and vendored Three r180. No WebGL render, browser observation or GPU-memory measurement.",
+  "source_hashes": {
+    "baseline_lighting_sha256": "6ab7be449ea6eb39db964dd7a12aab6897e9d3263a35f69cad8bf10c3ad32b42",
+    "candidate_lighting_sha256": "b9cf26bcfc9e4311d0a4d537b1935596ca02d846fd9ba33165b0c9e4c3f4f501",
+    "vendor_three_module_sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+    "vendor_three_core_sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+  },
+  "render_target_defaults": {
+    "format": "RGBAFormat",
+    "rgba8": true,
+    "depthBuffer": true,
+    "depthTexture": null,
+    "stencilBuffer": false,
+    "samples": 0,
+    "generateMipmaps": false
+  },
+  "pcf_texture_comparisons_per_shadowed_fragment": 17,
+  "depth_internal_format_from_vendor": "DEPTH_COMPONENT24 when stencilBuffer=false and depthTexture=null; actual driver allocation/padding is implementation-dependent.",
+  "scenarios": [
+    {
+      "id": "previous-default",
+      "map_size_px": [
+        1024,
+        1024
+      ],
+      "light_plane_width_m": 168,
+      "light_plane_texel_m": 0.1640625,
+      "normal_bias_m": 0.11484375,
+      "depth_bias_normalized": -0.00033346036585365856,
+      "depth_bias_light_axis_m": 0.20507812500000003,
+      "pcf_radius_texels": 0.65,
+      "pcf_sample_center_span_m": 0.21328125,
+      "pixels": 1048576,
+      "rgba8_texture_bytes": 4194304,
+      "depth24_logical_bytes": 3145728,
+      "attachments_logical_mib": 7,
+      "attachments_32bit_depth_budget_mib": 8,
+      "world_feature_coverage_in_texels": {
+        "0.04": 0.2438095238095238,
+        "0.1": 0.6095238095238096,
+        "0.2": 1.2190476190476192,
+        "0.3": 1.8285714285714285,
+        "0.6": 3.657142857142857
+      }
+    },
+    {
+      "id": "candidate-default",
+      "map_size_px": [
+        2048,
+        2048
+      ],
+      "light_plane_width_m": 168,
+      "light_plane_texel_m": 0.08203125,
+      "normal_bias_m": 0.057421875,
+      "depth_bias_normalized": -0.00016673018292682928,
+      "depth_bias_light_axis_m": 0.10253906250000001,
+      "pcf_radius_texels": 0.65,
+      "pcf_sample_center_span_m": 0.106640625,
+      "pixels": 4194304,
+      "rgba8_texture_bytes": 16777216,
+      "depth24_logical_bytes": 12582912,
+      "attachments_logical_mib": 28,
+      "attachments_32bit_depth_budget_mib": 32,
+      "world_feature_coverage_in_texels": {
+        "0.04": 0.4876190476190476,
+        "0.1": 1.2190476190476192,
+        "0.2": 2.4380952380952383,
+        "0.3": 3.657142857142857,
+        "0.6": 7.314285714285714
+      }
+    },
+    {
+      "id": "unchanged-low-memory",
+      "map_size_px": [
+        512,
+        512
+      ],
+      "light_plane_width_m": 156,
+      "light_plane_texel_m": 0.3046875,
+      "normal_bias_m": 0.21328124999999998,
+      "depth_bias_normalized": -0.0006192835365853659,
+      "depth_bias_light_axis_m": 0.380859375,
+      "pcf_radius_texels": 0.65,
+      "pcf_sample_center_span_m": 0.39609375,
+      "pixels": 262144,
+      "rgba8_texture_bytes": 1048576,
+      "depth24_logical_bytes": 786432,
+      "attachments_logical_mib": 1.75,
+      "attachments_32bit_depth_budget_mib": 2,
+      "world_feature_coverage_in_texels": {
+        "0.04": 0.13128205128205128,
+        "0.1": 0.3282051282051282,
+        "0.2": 0.6564102564102564,
+        "0.3": 0.9846153846153846,
+        "0.6": 1.9692307692307691
+      }
+    },
+    {
+      "id": "explicit-low-memory-1024",
+      "map_size_px": [
+        1024,
+        1024
+      ],
+      "light_plane_width_m": 156,
+      "light_plane_texel_m": 0.15234375,
+      "normal_bias_m": 0.10664062499999999,
+      "depth_bias_normalized": -0.00030964176829268293,
+      "depth_bias_light_axis_m": 0.1904296875,
+      "pcf_radius_texels": 0.65,
+      "pcf_sample_center_span_m": 0.198046875,
+      "pixels": 1048576,
+      "rgba8_texture_bytes": 4194304,
+      "depth24_logical_bytes": 3145728,
+      "attachments_logical_mib": 7,
+      "attachments_32bit_depth_budget_mib": 8,
+      "world_feature_coverage_in_texels": {
+        "0.04": 0.26256410256410256,
+        "0.1": 0.6564102564102564,
+        "0.2": 1.3128205128205128,
+        "0.3": 1.9692307692307691,
+        "0.6": 3.9384615384615382
+      }
+    }
+  ],
+  "normal_memory_increase_logical_mib": 21,
+  "normal_memory_increase_32bit_depth_budget_mib": 24
+}

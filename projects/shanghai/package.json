@@ -1,11 +1,11 @@
 {
   "name": "shanghai-explorer",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "private": true,
   "type": "module",
   "description": "Photo-guided Bund architecture, Shanghai 16-district background and third-person walking scene",
   "scripts": {
-    "test": "node tests/walk-controller.test.mjs && node tests/local-model-streamer.test.mjs && node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs && node tests/geography.test.mjs && node tests/road-width.test.mjs && node tests/realistic-lighting.test.mjs && node source/bund/street/validate_basemap_replacement.mjs && node tests/model-resources.test.mjs && node tests/photographic-reflection.test.mjs",
+    "test": "node tests/walk-controller.test.mjs && node tests/local-model-streamer.test.mjs && node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs && node tests/geography.test.mjs && node tests/road-width.test.mjs && node tests/realistic-lighting.test.mjs && node source/bund/street/validate_basemap_replacement.mjs && node tests/model-resources.test.mjs && node tests/photographic-reflection.test.mjs && node --test tests/detail-model-cache.test.mjs tests/detail-model-cache-integration.test.mjs && node tests/photographic-texture.test.mjs",
     "check:assets": "python tools/check_assets.py"
   }
 }

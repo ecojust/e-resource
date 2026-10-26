@@ -4,29 +4,37 @@
 
 发布入口为[外滩资产清单](../../data/bund/manifest.json)，全市网页的建筑清单为[data/landmarks.json](../../data/landmarks.json)。下表原始GLB适合编辑，网页GLB供运行时压缩加载；.blend保留原生网格、材质与相应预览场景。预览地面、相机和灯光不属于建筑GLB。
 
-| 建筑 | 生成入口 | 发布文件 |
+| 建筑 | 当前生成入口 | 发布文件 |
 |---|---|---|
-| 2号 · 上海总会 | [bund_classics/build_classics.py](bund_classics/build_classics.py) | [网页GLB](../../assets/models/bund/web/bund02.glb) · [原始GLB](../../assets/models/bund/bund02.glb) · [.blend](../../assets/native/bund/bund02.blend) |
-| 3号 · 有利大楼 · 外滩3号 | [bund_classics/build_classics.py](bund_classics/build_classics.py) | [网页GLB](../../assets/models/bund/web/bund03.glb) · [原始GLB](../../assets/models/bund/bund03.glb) · [.blend](../../assets/native/bund/bund03.blend) |
-| 12号 · 汇丰银行大楼 | [classical_bank/build_classical_banks.py](classical_bank/build_classical_banks.py) | [网页GLB](../../assets/models/bund/web/bund12.glb) · [原始GLB](../../assets/models/bund/bund12.glb) · [.blend](../../assets/native/bund/bund12.blend) |
+| 2号 · 上海总会 | [bund_classics/wall-v4.4/](bund_classics/wall-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund02.glb) · [原始GLB](../../assets/models/bund/bund02.glb) · [.blend](../../assets/native/bund/bund02.blend) |
+| 3号 · 有利大楼 · 外滩3号 | [bund_classics/wall-v4.4/](bund_classics/wall-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund03.glb) · [原始GLB](../../assets/models/bund/bund03.glb) · [.blend](../../assets/native/bund/bund03.blend) |
+| 12号 · 汇丰银行大楼 | [classical_bank/wall-v4.4/](classical_bank/wall-v4.4/README.md)（包含照片前置基线） | [网页GLB](../../assets/models/bund/web/bund12.glb) · [原始GLB](../../assets/models/bund/bund12.glb) · [.blend](../../assets/native/bund/bund12.blend) |
 | 13号 · 江海关大楼 | [customs_refined/customs_house_v3.py](customs_refined/customs_house_v3.py) | [网页GLB](../../assets/models/bund/web/bund13.glb) · [原始GLB](../../assets/models/bund/bund13.glb) · [.blend](../../assets/native/bund/bund13.blend) |
-| 15号 · 华俄道胜银行大楼 | [classical_bank/build_classical_banks.py](classical_bank/build_classical_banks.py) | [网页GLB](../../assets/models/bund/web/bund15.glb) · [原始GLB](../../assets/models/bund/bund15.glb) · [.blend](../../assets/native/bund/bund15.blend) |
-| 17号 · 字林西报大楼 | [bund_classics/build_news.py](bund_classics/build_news.py) | [网页GLB](../../assets/models/bund/web/bund17.glb) · [原始GLB](../../assets/models/bund/bund17.glb) · [.blend](../../assets/native/bund/bund17.blend) |
-| 18号 · 麦加利银行 · 外滩18号 | [chartered_bank/photo-v4.3/](chartered_bank/photo-v4.3/README.md) | [网页GLB](../../assets/models/bund/web/bund18.glb) · [原始GLB](../../assets/models/bund/bund18.glb) · [.blend](../../assets/native/bund/bund18.blend) |
-| 19号 · 和平饭店南楼 · 汇中饭店 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund19.glb) · [原始GLB](../../assets/models/bund/bund19.glb) · [.blend](../../assets/native/bund/bund19.blend) |
-| 20号 · 和平饭店北楼 · 沙逊大厦 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund20.glb) · [原始GLB](../../assets/models/bund/bund20.glb) · [.blend](../../assets/native/bund/bund20.blend) |
-| 23号 · 中国银行大楼 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund23.glb) · [原始GLB](../../assets/models/bund/bund23.glb) · [.blend](../../assets/native/bund/bund23.blend) |
+| 15号 · 华俄道胜银行大楼 | [classical_bank/curtain-v4.4/](classical_bank/curtain-v4.4/README.md)（墙修复后） | [网页GLB](../../assets/models/bund/web/bund15.glb) · [原始GLB](../../assets/models/bund/bund15.glb) · [.blend](../../assets/native/bund/bund15.blend) |
+| 17号 · 字林西报大楼 | [bund_classics/photo-v4.4/](bund_classics/photo-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund17.glb) · [原始GLB](../../assets/models/bund/bund17.glb) · [.blend](../../assets/native/bund/bund17.blend) |
+| 18号 · 麦加利银行 · 外滩18号 | [chartered_bank/photo-v4.4/](chartered_bank/photo-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund18.glb) · [原始GLB](../../assets/models/bund/bund18.glb) · [.blend](../../assets/native/bund/bund18.blend) |
+| 19号 · 和平饭店南楼 · 汇中饭店 | [art_deco/wall-v4.4/](art_deco/wall-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund19.glb) · [原始GLB](../../assets/models/bund/bund19.glb) · [.blend](../../assets/native/bund/bund19.blend) |
+| 20号 · 和平饭店北楼 · 沙逊大厦 | [art_deco/wall-v4.4/](art_deco/wall-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund20.glb) · [原始GLB](../../assets/models/bund/bund20.glb) · [.blend](../../assets/native/bund/bund20.blend) |
+| 23号 · 中国银行大楼 | [art_deco/wall-v4.4/](art_deco/wall-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund23.glb) · [原始GLB](../../assets/models/bund/bund23.glb) · [.blend](../../assets/native/bund/bund23.blend) |
 
 [网页街景预览](../../assets/previews/bund-street.png) · [汇丰柱廊细部](../../assets/previews/bund/hsbc-column-detail.png) · [麦加利柱廊细部](../../assets/previews/bund/chartered-column-detail.png) · [海关窗洞细部](../../assets/previews/bund/customs-window-detail.png)
 
-## 源码包对应关系
+## v4.4墙体修正与源码链
+
+2、3、12、15、17、19、20、23号整合了相邻结构墙。旧墙块在接触处留下反向重叠内部面，正面边缘也有未共用节点的接缝，近看会出现黑线、虚线或闪烁。当前源码按墙面和厚度清理内部面并连接网格，保留真正窗洞、洞口侧壁、玻璃退距及墙面前后层次。18号补连续墙芯，封住原先贯通的空缝；真实石材接缝、凹槽和已有照片映射保留。13号原有墙体未发现同类问题，继续使用原生成入口。
+
+12号的当前`classical_bank/wall-v4.4`以完成六窗照片采样的基线为输入，再清理结构墙；照片前置阶段保留于`classical_bank/photo-v4.4`。15号先完成`classical_bank/wall-v4.4`，再用`classical_bank/curtain-v4.4`修正窗帘体朝向并去掉内部穿插褶皱。17号当前`bund_classics/photo-v4.4`已包含墙体清理、24窗采样与双侧屋顶石塔修正。18号使用`chartered_bank/photo-v4.4`；其他建筑按上表的`wall-v4.4`入口重建。各包保留必要基线、依赖与检查记录，具体命令以该包README为准。旧基线文件用于追溯和重建前置步骤，不能直接当作当前发布模型。
+
+## 基础源码与资料对应关系
+
+下表保留原始几何生成器及资料位置。除13号和街道入口外，单独运行这些基础生成器只会得到历史v3几何，当前发布版本须继续执行上面的v4.4源码链。
 
 | 目录 | 建筑与必要输入 | 说明 |
 |---|---|---|
 | [bund_classics/](bund_classics/README.md) | 2、3号用build_classics.py；17号用build_news.py；保留mesh_utils.py、footprints.json、news-footprint.json及相互导入的脚本 | architecture-evidence.json、reference-photos.json记录开间与屋顶资料；两类脚本共用几何工具 |
 | [classical_bank/](classical_bank/README.md) | 12、15号；build_classical_banks.py、geometry-input.json、assets/字体子集 | sources.json、references/保留照片与历史图纸；现状照片优先于历史立面图 |
 | [customs_refined/](customs_refined/SOURCES_AND_METHOD.md) | 13号；customs_house_v3.py与facade_geometry.py | 源组件JSON/GeoJSON、照片和覆盖验证一并保留；官方高度与后翼排除范围单独说明 |
-| [chartered_bank/](chartered_bank/SOURCES.md) | 18号；build_chartered_bank.py、building-source.json、photo-source.json | 三个文件即可生成几何；参考照片、来源说明与验证报告应随发布保留 |
+| [chartered_bank/](chartered_bank/SOURCES.md) | 18号；build_chartered_bank.py、building-source.json、photo-source.json | 三个文件生成历史v3基础几何；当前入口为photo-v4.4，参考照片、来源说明与验证报告应随发布保留 |
 | [art_deco/](art_deco/README.md) | 19、20、23号；build_art_deco.py、architecture.py、footprints.json、assets/字体子集 | references.json保留照片证据；中国银行主楼、西翼及其高度解释需按本包资料区分 |
 | [street/](street/) | build_street.py及同目录OSM路径、岸线和照片元数据；还依赖../city/build_district_models.py | 外滩街道环境：铺装、路缘、过街标线、栏杆与灯杆；路径据地图，宽度、构件尺度与间距为推定 |
 
@@ -41,7 +49,7 @@
 | 12号 汇丰银行 | 现状照片结合历史立面/平面图核对六柱柱廊、中庭与穹顶；未取得可核验的完整竖向测量，鼓座、穹顶及分层高度属于推定。 |
 | 13号 江海关 | 官方存档给出主楼约36.2m、钟楼部分约43m、总高约79.2m、钟盘直径5.4m；墙厚、窗退距、角亭分层和未见后立面按照片解释。模型不包含西侧独立后翼。 |
 | 15号 华俄道胜银行 | 真实轮廓与照片支持五开间、柱廊及拱券；约29m包围高度及分层、侧后墙面按照片比例推定。 |
-| 17号 字林西报 | 窄临街面、深进轮廓、顶层双亭据地图和照片；资料层数存在口径差异，采用照片可辨层次，约40m为模型估计。 |
+| 17号 字林西报 | 窄临街面、深进轮廓、双侧屋顶石塔及浅弧顶冠按照片比例推定；资料层数存在口径差异，采用照片可辨层次，约40m为模型估计。 |
 | 18号 麦加利银行 | 正面三开间、爱奥尼柱、山花与栏杆据照片；主檐口约24.65m、山花顶约28.36m、旗杆顶约34.45m均为照片比例估计，侧后细节为同风格推定。 |
 | 19号 和平南楼 | 文字资料的主体约30m结合六层立面照片；角亭、铜顶和屋面附属部分按照片比例推定。 |
 | 20号 和平北楼 | 公开建筑说明给出约77m屋顶、83m旗杆顶；各层高度、雕花、背面与内庭细节含推定，真实地图内庭保持为空洞。 |
@@ -49,26 +57,28 @@
 
 清单中的height_m是模型包围高度，可能含旗杆、亭阁和尖顶；height_estimated及逐栋来源说明用于判断其依据。模型坐标小数、网格与源轮廓吻合度只反映计算与导出一致性，不证明源数据或现场尺寸具有同等精度。
 
-## 本地重建
+## 本地重建与历史v3命令
 
-生成脚本以Blender 4.3系列验证。以下命令在项目根目录运行；若只搬迁单个源码包，应保留上表列出的辅助脚本、JSON与assets/。参考图片不作为贴图嵌入模型，但发布时仍须附带来源和许可。
+生成脚本以Blender 4.3系列验证。当前版本请按首表及“v4.4墙体修正与源码链”选择对应包，并执行该包README中的完整流程；12号先完成照片步骤，再进行墙体修正。若只搬迁单个源码包，应保留其列出的辅助脚本、冻结基线、JSON与assets/。照片模型嵌入局部映射的原照片，许可与采样范围见各包。
+
+以下命令在项目根目录运行，保留为**历史v3基础构建记录**，不包含本轮墙体、照片与屋顶修正，不能直接替代当前发布流程。13号本轮未改，所列命令仍是它的当前入口。
 
 ```sh
-# 2、3号；17号单独生成
+# 历史v3：2、3号；17号单独生成
 BUND_CLASSICS_OUTPUT=exported/bund-classics BUND_CLASSICS_RENDER=0 blender --background --python source/bund/bund_classics/build_classics.py
 BUND_CLASSICS_OUTPUT=exported/bund-classics BUND_CLASSICS_RENDER=0 blender --background --python source/bund/bund_classics/build_news.py
 
-# 12、15号；加 --render 生成预览
+# 历史v3：12、15号；加 --render 生成预览
 blender --background --python source/bund/classical_bank/build_classical_banks.py -- --building hsbc --output exported/classical-bank
 blender --background --python source/bund/classical_bank/build_classical_banks.py -- --building russo --output exported/classical-bank
 
-# 13号
+# 13号：本轮保持，仍为当前入口
 CUSTOMS_OUTPUT_DIR=exported/bund13 CUSTOMS_RENDER=0 blender --background --python source/bund/customs_refined/customs_house_v3.py
 
-# 18号；加 --render 生成预览
+# 历史v3：18号；加 --render 生成预览
 blender --background --python source/bund/chartered_bank/build_chartered_bank.py -- --output exported/bund18
 
-# 19、20、23号；输出在源码包内对应建筑子目录
+# 历史v3：19、20、23号；输出在源码包内对应建筑子目录
 blender --background --python source/bund/art_deco/build_art_deco.py -- peace_south --no-render
 blender --background --python source/bund/art_deco/build_art_deco.py -- peace_north --no-render
 blender --background --python source/bund/art_deco/build_art_deco.py -- bank_china --no-render
@@ -105,8 +115,8 @@ v3全市背景仍为1,708块，包含1,796,419个普通要素：1,796,116个源�
 
 补充照片和历史图纸见各包sources.json、references.json、reference-photos.json、photo-source.json或SOURCES_AND_METHOD.md。其中海关补充正面照片作者Onedesign23，CC BY-SA 4.0；和平北楼补充正面照片作者ScareCriterion12，CC BY-SA 4.0。所有复制的图片都应按其各自记录署名，不能仅用上表一张主图的许可概括整个源码包。
 
-原创生成代码适用项目[MIT许可](../../LICENSE)；OSM及其派生平面数据库按ODbL 1.0署名 **© OpenStreetMap contributors**。照片、历史图纸、字体和外部数据保持各自许可，**不因放入本目录而变成MIT**。v4.3外滩18号部分下部石墙与六块主窗使用原照片纹理，派生GLB及Blender资产按CC BY-SA 4.0署名；其余建筑仍使用照片参照几何。两者均不属于测绘级三维资产。
+原创生成代码适用项目[MIT许可](../../LICENSE)；OSM及其派生平面数据库按ODbL 1.0署名 **© OpenStreetMap contributors**。照片、历史图纸、字体和外部数据保持各自许可，**不因放入本目录而变成MIT**。v4.3外滩18号部分下部石墙与六块主窗使用原照片纹理，派生GLB及Blender资产按CC BY-SA 4.0署名；v4.4的17号24扇主窗与12号右翼六窗使用Suicasmo的CC0原照片，并修正实体主窗框；精细格栅和帘布仍有照片细节。其余建筑使用照片参照几何。两者均不属于测绘级三维资产。
 
 ## 外滩18号当前版本
 
-v4.3主檐口和各层按原照片比例重新调整，整体竖向系数1.037，包含旗杆的模型包围高度35.72465m；这个小数只反映模型输出，不是实测精度。请使用[当前重建流程](chartered_bank/photo-v4.3/README.md)；前文旧生成器/旧尺寸说明保留为v3来源历史。原锚点、地理平面和城市分块排除范围保持原值。
+v4.3主檐口和各层按原照片比例重新调整，整体竖向系数1.037，包含旗杆的模型包围高度35.72465m；这个小数只反映模型输出，不是实测精度。v4.4沿用照片校准，并补连续墙芯封住贯通空缝，保留外层石缝、真窗洞与照片采样。请使用[当前重建流程](chartered_bank/photo-v4.4/README.md)；[v4.3流程](chartered_bank/photo-v4.3/README.md)及前文v3生成器保留为来源历史。原锚点、地理平面和城市分块排除范围保持原值。

@@ -1,0 +1,166 @@
+{
+  "version": "wall-render-v4.4",
+  "purpose": "Actual Three/WebGL comparison with an identical per-building camera, without city meshes, surface-material overrides or shadows; isolates structural-wall rendering from lighting. Not a final street-scene render.",
+  "accepted_buildings": [
+    "bund02",
+    "bund03",
+    "bund12",
+    "bund15",
+    "bund17",
+    "bund18",
+    "bund19",
+    "bund20",
+    "bund23"
+  ],
+  "observed_result": "Long vertical wall artifacts removed; genuine stone joints remain. Bund18 continuous backing fills through-wall empty joints, without removing surface stone boundaries.",
+  "example_images": [
+    "assets/previews/realism-v4.4/bund12-before-wall-isolated.png",
+    "assets/previews/realism-v4.4/bund12-after-wall-isolated.png"
+  ],
+  "buildings": [
+    {
+      "id": "bund02",
+      "captures": {
+        "before-wall": {
+          "sha256": "e888dbba2a29317c357e60dd8e1bbaa88571581177e4513e8edfbff1c1141388",
+          "bytes": 339412,
+          "name": "bund02-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "34003fd2943f1576481bc5296a410ce7be802fc63a9477dc90e3ae6494d2f8d2",
+          "bytes": 328324,
+          "name": "bund02-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund03",
+      "captures": {
+        "before-wall": {
+          "sha256": "b2e27442f90c1ec19f8feb533fe513ccc63fa025a928162a5af1c7e61f9eed00",
+          "bytes": 356906,
+          "name": "bund03-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "ce99598d686d13292da582617c9a68a1265163cff492e4f9495b0672b5db641a",
+          "bytes": 356159,
+          "name": "bund03-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund12",
+      "captures": {
+        "before-wall": {
+          "sha256": "ae2fabf777ae4832cabfed2b869b19a8d59fee6097ed3989ae0d0a97da64d238",
+          "bytes": 501685,
+          "name": "bund12-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "8a07937bd061d668fa085c1ef5c5b29c9318eca922a3303f2e54dfdb43921cec",
+          "bytes": 489453,
+          "name": "bund12-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund15",
+      "captures": {
+        "before-wall": {
+          "sha256": "ab425dd75827040dfbe42e6c32f55c4a35937c350233f3eb4bf7fe3f928f2a50",
+          "bytes": 502945,
+          "name": "bund15-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "1c0694ee22a45618331fd853e2b6babb064c88e91d121b5aaf59a8fe0b95e64b",
+          "bytes": 500838,
+          "name": "bund15-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund17",
+      "captures": {
+        "before-wall": {
+          "sha256": "2be22f2c870a323b8a28412fb6573311b2ca0ef39267bae70f97226a4a44adfd",
+          "bytes": 461738,
+          "name": "pure-same-camera-near0.8.png"
+        },
+        "after-wall": {
+          "sha256": "212b5f88c68b3564130cba60cef7a8fd7727f199d119cd5cd83353bd26c4e2c1",
+          "bytes": 434827,
+          "name": "bund17-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund18",
+      "captures": {
+        "before-wall": {
+          "sha256": "9e89f682cc825b3c753260ce11d3e293ea1e2bd874816881fa458217b6d89120",
+          "bytes": 431823,
+          "name": "bund18-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "b680cd1411454245410361c35b77c59b26276ba5c8d0f8f30c6c8d3d15a71297",
+          "bytes": 428815,
+          "name": "bund18-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund19",
+      "captures": {
+        "before-wall": {
+          "sha256": "f334ad68234ee812510600307eafb758bdcfc8fc229869a1c7d0456eb31e7f09",
+          "bytes": 283161,
+          "name": "bund19-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "65a8c174cc6c87414da1a8dc7a5ecf829997a99e039399bf3c5fb5dd9d81a89c",
+          "bytes": 282117,
+          "name": "bund19-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund20",
+      "captures": {
+        "before-wall": {
+          "sha256": "a67f45219b4135f6db861a6624ed7285f2eea971c893711bc42c063be781eb9f",
+          "bytes": 215532,
+          "name": "bund20-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "c13f8d38d07a013a15ce15795d0c65d0f8b344f585743189791563d04a37c92a",
+          "bytes": 214686,
+          "name": "bund20-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    },
+    {
+      "id": "bund23",
+      "captures": {
+        "before-wall": {
+          "sha256": "bfaf31e99d344f4db09da7ca0bd79a42779b63ea8aa49bd1c613bac22adf54de",
+          "bytes": 546870,
+          "name": "bund23-before-wall.png"
+        },
+        "after-wall": {
+          "sha256": "b59dd62ffbc8f4c619c992f191fc6320bacde47f6c8d2a727499f7e133da0e9e",
+          "bytes": 503344,
+          "name": "bund23-after-wall.png"
+        }
+      },
+      "accepted_wall_repair": true
+    }
+  ]
+}

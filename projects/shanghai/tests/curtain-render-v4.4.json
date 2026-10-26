@@ -1,0 +1,42 @@
+{
+  "version": "bund15-curtain-render-v4.4",
+  "passed": true,
+  "actual_webgl_comparison": true,
+  "same_camera": true,
+  "scope": "Standalone actual Three/WebGL without city, added PBR or shadows; does not measure real-device performance or architectural survey accuracy.",
+  "before": "assets/previews/realism-v4.4/bund15-after-wall-isolated.png",
+  "after": "assets/previews/realism-v4.4/bund15-curtain-combined-isolated.png",
+  "observations": {
+    "remove_120_internal_folds": "Discontinuous vertical artifacts disappear",
+    "reverse_10_prisms_only": "Artifacts persist; this candidate was not accepted",
+    "reverse_10_prisms_and_remove_120_internal_folds": "Artifacts disappear; windows and frames remain; accepted"
+  },
+  "geometry_scope": {
+    "removed_nonzero_area_interpenetrating_triangles": 1440,
+    "reversed_prism_triangles": 580,
+    "remaining_vertex_positions_unchanged": true,
+    "non_curtain_geometry_unchanged": true
+  },
+  "captures": {
+    "after-wall": {
+      "file": "bund15-after-wall.png",
+      "sha256": "1c0694ee22a45618331fd853e2b6babb064c88e91d121b5aaf59a8fe0b95e64b",
+      "bytes": 500838
+    },
+    "curtain-no-folds": {
+      "file": "bund15-curtain-no-folds.png",
+      "sha256": "4de50b6c365a2e48023746c0c2b68e2f2f8fe44d5441b6986c6b5df8cf4c4495",
+      "bytes": 470528
+    },
+    "curtain-flipped": {
+      "file": "bund15-curtain-flipped.png",
+      "sha256": "1c0694ee22a45618331fd853e2b6babb064c88e91d121b5aaf59a8fe0b95e64b",
+      "bytes": 500838
+    },
+    "curtain-combined": {
+      "file": "bund15-curtain-combined.png",
+      "sha256": "4de50b6c365a2e48023746c0c2b68e2f2f8fe44d5441b6986c6b5df8cf4c4495",
+      "bytes": 470528
+    }
+  }
+}

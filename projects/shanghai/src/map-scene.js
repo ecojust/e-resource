@@ -12,6 +12,9 @@ import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-stream
 import { OSMBuildingSuppressor } from './osm-building-suppression.js';
 import { OSMResidualLayer } from './osm-residual-layer.js';
 import { disposeModelResources } from './model-resources.js';
+import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictions,
+  releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
+import { correctPhotographicTexture } from './photographic-texture.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -263,6 +266,8 @@ export async function createShanghaiScene(options = {}) {
   // landmark loading. Replaced landmark IDs are excluded from tile ownership.
   const landmarkSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
   const lowMemory = typeof navigator !== 'undefined' && navigator.deviceMemory && navigator.deviceMemory <= 4;
+  const detailCacheLimits = {maxCount:lowMemory ? 1 : 2, maxBytes:(lowMemory ? 16 : 32)*MIB};
+  const detailCacheStats = {evicted:0, discardedLate:0};
   const localStreamer = new LocalModelStreamer({scene, loader, suppression:tileSuppression,
     prepareObject:prepareCityObject, disposeObject:disposeModel,
     prepareFeatureIds(ids) {
@@ -382,14 +387,16 @@ export async function createShanghaiScene(options = {}) {
     return distance>threshold ? 'distant' : 'full';
   }
   async function loadLandmark(record,variant='full') {
-    if (destroyed || record.loadingModel) return;
+    if (destroyed || record.loadingModel || !record.detailWanted) return;
     record.loadingModel=true;
     if (!record.object) record.status='loading';
     reportLandmarks();
     let pendingGroup=null;
     try {
       const data = await loader.loadAsync(variant==='distant' ? record.lodUrl : record.url);
-      if (destroyed) {disposeModel(data.scene);return;}
+      if (!retainDetailResult(record,data.scene,{destroyed,disposeObject:disposeModel})) {
+        detailCacheStats.discardedLate++; return;
+      }
       const group = data.scene; pendingGroup=group; group.name = record.name || record.id;
       group.position.copy(geographicPosition(record.lng, record.lat, record.altitude || 0));
       const latitudeScale = maplibregl.MercatorCoordinate.fromLngLat([record.lng, record.lat]).meterInMercatorCoordinateUnits() / metreScale;
@@ -399,17 +406,23 @@ export async function createShanghaiScene(options = {}) {
         if (!obj.isMesh) return;
         obj.frustumCulled = true;
         obj.geometry?.computeBoundingSphere();
+        for(const material of Array.isArray(obj.material)?obj.material:[obj.material])
+          correctPhotographicTexture(THREE,material,record.photo_texture?.orientation);
         if (variant==='full') surfaces?.apply(obj,record.id==='bund-streets'?'street':record.candidate_id?'bund':'modern');
       });
       lighting?.configureModel(group,{detailed:Boolean(record.candidate_id),ground:record.id==='bund-streets'});
+      const resourceEstimate=estimateDetailResources(group);
       const old=record.object;
       scene.add(group); record.object = group; record.status = 'loaded'; record.activeVariant=variant;
+      record.resourceEstimate=resourceEstimate; record.lastDetailUsed=performance.now();
       if(old)disposeModel(old);
       lighting?.invalidate();
       updateLandmarkVisibility(); reportLandmarks(); map.triggerRepaint();
     } catch (error) {
       if(pendingGroup && pendingGroup!==record.object)disposeModel(pendingGroup);
-      if(destroyed)return;
+      if(destroyed || !record.detailWanted) {
+        record.status=record.object?'loaded':'idle'; return;
+      }
       record.failedVariants ||= new Set();record.failedVariants.add(variant);
       record.status = record.object ? 'loaded' : variant==='distant' ? 'idle' : 'error';
       reportLandmarks();
@@ -424,14 +437,17 @@ export async function createShanghaiScene(options = {}) {
     streetBasemap?.setActive(Boolean(walker.group.visible && map.getZoom()>=18
       && street?.status==='loaded' && street.object?.visible));
   }
-  function updateLandmarkVisibility(force = false) {
+  function updateLandmarkVisibility() {
     if (destroyed) return;
     let changed = false;
     const center = map.getCenter(), target = walker.group.visible ? current : {lng: center.lng, lat: center.lat};
     const pending=[];
     for (const record of landmarkRecords.values()) {
       const distance = distanceMetres(target, record);
-      const nearby = force || distance < (record.maxDistance || (map.getZoom() < 16 ? 12000 : 3200));
+      const maxDistance=record.maxDistance || (map.getZoom() < 16 ? 12000 : 3200);
+      const nearby=detailIsNearby(distance,maxDistance,Boolean(record.object?.visible),300);
+      record.detailWanted=nearby;
+      if (nearby) record.lastDetailUsed=performance.now();
       const variant=desiredVariant(record);
       if (nearby && !record.loadingModel && (record.status==='idle' || (record.status==='loaded' && record.activeVariant!==variant && !record.failedVariants?.has(variant)))) pending.push({record,distance,variant});
       if (record.object) {
@@ -446,11 +462,16 @@ export async function createShanghaiScene(options = {}) {
         landmarkSuppression.setOwner(record.id,ids).then(()=>{if(!destroyed)map.triggerRepaint();});
       }
     }
+    // Existing source-owner restoration and OSM coverage changes run before
+    // disposing hidden models. Visible near-field detail never enters this LRU.
+    if (changed) updateBuildingExclusions();
+    for (const record of selectHiddenDetailEvictions(landmarkRecords.values(),detailCacheLimits)) {
+      if (releaseHiddenDetail(record,disposeModel)) detailCacheStats.evicted++;
+    }
     // Detailed facades contain substantially more geometry than city blocks.
     // Start the nearest three first and keep decoding/fetch pressure bounded.
     const available=3-[...landmarkRecords.values()].filter(record=>record.loadingModel).length;
     for (const {record,variant} of pending.sort((a,b)=>a.distance-b.distance).slice(0,Math.max(0,available))) loadLandmark(record,variant);
-    if (changed) updateBuildingExclusions();
     updateStreetBasemap();
     updateLocalModels();
   }
@@ -699,7 +720,9 @@ export async function createShanghaiScene(options = {}) {
       }
       setWalkModeLabels(visible);walker.group.visible=visible;updateStreetBasemap();updateLocalModels(true);map.triggerRepaint();
     },
-    loadLandmarks(){updateLandmarkVisibility(true);},
+    // Manual refresh still respects geographic range; never preload the city.
+    loadLandmarks(){updateLandmarkVisibility();},
+    getLandmarkCacheState(){return detailCacheState(landmarkRecords.values(),detailCacheLimits,detailCacheStats);},
     getNeighborhoodState(){return localStreamer.getRecords();},
     getStreamingState(){return {...localStreamer.getState(),renderer:{...renderMetrics}};},
     getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status,activeVariant,loadingModel})=>({id,name,status,activeVariant,loadingModel}));},
@@ -713,7 +736,8 @@ export async function createShanghaiScene(options = {}) {
         }
       });
       return {id,status:record?.status,variant:record?.activeVariant,photoMeshes,triangles,
-        images:[...maps].map(map=>({width:map.image?.width,height:map.image?.height,colorSpace:map.colorSpace}))};
+        images:[...maps].map(map=>({width:map.image?.width,height:map.image?.height,colorSpace:map.colorSpace,
+          orientation:map.userData.photographicOrientation||null}))};
     },
     setVisualQuality({shadows=true,surfaceNormals=true}={}){shadowsEnabled=Boolean(shadows);surfaces?.configure({normalStrength:surfaceNormals?1:0});lighting?.invalidate();map.triggerRepaint();},
     getRealismState(){return {surfaces:surfaces?.stats,lighting:lighting?.getState(),traffic:traffic?.stats,streetBasemap:streetBasemap?.getState(),osmFallback:osmSuppression?.getState()};},

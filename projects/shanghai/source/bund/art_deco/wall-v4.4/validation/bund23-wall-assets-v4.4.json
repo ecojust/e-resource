@@ -1,0 +1,130 @@
+{
+  "id": "bund23",
+  "compression_commands": [
+    [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund23.glb",
+      "-o",
+      "assets/models/bund/web/bund23.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund23.glb",
+      "-o",
+      "assets/models/bund/lod-v4/bund23.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke",
+      "-si",
+      "0.35",
+      "-se",
+      "0.002",
+      "-sp"
+    ]
+  ],
+  "assets": {
+    "raw": {
+      "file": "assets/models/bund/bund23.glb",
+      "bytes": 8180880,
+      "sha256": "94fea92296bc7bb8afbbfe7f505e03429168ccb035a97ef59cc4782628251a89",
+      "triangles": 193732,
+      "meshes": 6,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": []
+    },
+    "web": {
+      "file": "assets/models/bund/web/bund23.glb",
+      "bytes": 2818256,
+      "sha256": "d818e25655dcfdbdaa5619d14b0ea13de318c9c32bcfdc980a0922c0564cc125",
+      "triangles": 193732,
+      "meshes": 1,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": [
+        "EXT_meshopt_compression"
+      ]
+    },
+    "lod": {
+      "file": "assets/models/bund/lod-v4/bund23.glb",
+      "bytes": 1499764,
+      "sha256": "51d09c40dcec1e676fa47dff02dc2fb4aa8a691192daead18fa6cb41edc9fe55",
+      "triangles": 79686,
+      "meshes": 1,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": [
+        "EXT_meshopt_compression"
+      ]
+    },
+    "native": {
+      "file": "assets/native/bund/bund23.blend",
+      "bytes": 3042434,
+      "sha256": "92cc880594983742c559bdc8ec3b04c8fa3d28f5d035c2f223394500553733e8"
+    }
+  },
+  "export_normalization": {
+    "source_sha256": "8f68e9b96ef37030c98b6581c034f1804923353b48b9a0915498ed518b10baf0",
+    "normalized_sha256": "94fea92296bc7bb8afbbfe7f505e03429168ccb035a97ef59cc4782628251a89",
+    "removed": [
+      {
+        "mesh": "bund23 conformal wall union",
+        "material": "Warm granite masonry",
+        "removed_zero_area_triangles": 2
+      },
+      {
+        "mesh": "01 Granite podium, deep bank entrance and carved pilasters sour",
+        "material": "Carved pale stone",
+        "removed_zero_area_triangles": 1280
+      },
+      {
+        "mesh": "01 Granite podium, deep bank entrance and carved pilasters sour",
+        "material": "Dark interior recess",
+        "removed_zero_area_triangles": 144
+      },
+      {
+        "mesh": "02 Tower ashlar, staggered shoulders and fifteen-storey ope",
+        "material": "Fine stone joints",
+        "removed_zero_area_triangles": 4
+      },
+      {
+        "mesh": "Raised upper Bank of China inscription",
+        "material": "Aged bronze frames",
+        "removed_zero_area_triangles": 24
+      }
+    ],
+    "removed_zero_area_triangles": 1454,
+    "original_binary_prefix_preserved": true,
+    "attribute_buffer_bytes_unchanged": true,
+    "native_faces_changed": false,
+    "criterion": "Exactly zero cross product in original FLOAT32-position coordinates evaluated as FLOAT64; no area epsilon.",
+    "released_raw_sha256": "94fea92296bc7bb8afbbfe7f505e03429168ccb035a97ef59cc4782628251a89"
+  },
+  "raw_geometry_changed_by_provenance": false,
+  "web_compression_flags": [
+    "-cc",
+    "-noq",
+    "-km",
+    "-ke"
+  ],
+  "lod_compression_flags": [
+    "-cc",
+    "-noq",
+    "-km",
+    "-ke",
+    "-si",
+    "0.35",
+    "-se",
+    "0.002",
+    "-sp"
+  ],
+  "source_package": "source/bund/art_deco/wall-v4.4/README.md",
+  "note": "Source audit preserves all protected native faces. Released GLB omits exactly zero-area triangles; all other exported triangles and source attribute buffer bytes remain unchanged before compression."
+}

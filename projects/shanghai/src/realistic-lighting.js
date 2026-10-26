@@ -125,7 +125,9 @@ function horizontalBoxDistance(box, point) {
 export function createRealisticLighting({
   THREE, scene, renderer,
   lowMemory = false,
-  shadowSize = lowMemory ? 512 : 1024,
+  // Same local coverage and cached update policy; 2048 gives an 8.2cm light-space
+  // texel at the normal 84m half extent. Bias remains proportional to that texel.
+  shadowSize = lowMemory ? 512 : 2048,
   shadowHalfExtent = lowMemory ? 78 : 84,
   casterRadius = 155,
   maxCasterHeight = 150,

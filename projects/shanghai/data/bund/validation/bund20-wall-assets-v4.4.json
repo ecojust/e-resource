@@ -1,0 +1,125 @@
+{
+  "id": "bund20",
+  "compression_commands": [
+    [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund20.glb",
+      "-o",
+      "assets/models/bund/web/bund20.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund20.glb",
+      "-o",
+      "assets/models/bund/lod-v4/bund20.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke",
+      "-si",
+      "0.35",
+      "-se",
+      "0.002",
+      "-sp"
+    ]
+  ],
+  "assets": {
+    "raw": {
+      "file": "assets/models/bund/bund20.glb",
+      "bytes": 12347612,
+      "sha256": "980a2c356cdc3674d2fb8b49ece1c8769a0be8f648fb8c146f6b5d5bfbc8e2a5",
+      "triangles": 251315,
+      "meshes": 9,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": []
+    },
+    "web": {
+      "file": "assets/models/bund/web/bund20.glb",
+      "bytes": 4410568,
+      "sha256": "278de3cf59a6304961722ec0fb82cd459f9b9135512897c4182ffe4bb166c1c6",
+      "triangles": 251315,
+      "meshes": 1,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": [
+        "EXT_meshopt_compression"
+      ]
+    },
+    "lod": {
+      "file": "assets/models/bund/lod-v4/bund20.glb",
+      "bytes": 2529320,
+      "sha256": "b811446898318ce26ead659d406dc7bfeb4e4d502faa8e8bd928b795d7fa41f9",
+      "triangles": 125642,
+      "meshes": 1,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": [
+        "EXT_meshopt_compression"
+      ]
+    },
+    "native": {
+      "file": "assets/native/bund/bund20.blend",
+      "bytes": 4530334,
+      "sha256": "5a9e7f2e5c1ae079011c33e6039ed6c4320daa1c745ee699407752bd15f668d5"
+    }
+  },
+  "export_normalization": {
+    "source_sha256": "607c0e7fc074bdaa093b5ae642783e40af79af8798e89446e5891cbf8c0474e2",
+    "normalized_sha256": "980a2c356cdc3674d2fb8b49ece1c8769a0be8f648fb8c146f6b5d5bfbc8e2a5",
+    "removed": [
+      {
+        "mesh": "bund20 conformal wall union",
+        "material": "Warm granite masonry",
+        "removed_zero_area_triangles": 3
+      },
+      {
+        "mesh": "01 Ground arches, sandstone piers and bronze doors source-wall-",
+        "material": "Warm granite masonry",
+        "removed_zero_area_triangles": 122
+      },
+      {
+        "mesh": "04 Stepped eastern pavilion and projecting central balcony sour",
+        "material": "Warm granite masonry",
+        "removed_zero_area_triangles": 2
+      },
+      {
+        "mesh": "Raised gold Peace Hotel name",
+        "material": "Warm metal lettering",
+        "removed_zero_area_triangles": 12
+      }
+    ],
+    "removed_zero_area_triangles": 139,
+    "original_binary_prefix_preserved": true,
+    "attribute_buffer_bytes_unchanged": true,
+    "native_faces_changed": false,
+    "criterion": "Exactly zero cross product in original FLOAT32-position coordinates evaluated as FLOAT64; no area epsilon.",
+    "released_raw_sha256": "980a2c356cdc3674d2fb8b49ece1c8769a0be8f648fb8c146f6b5d5bfbc8e2a5"
+  },
+  "raw_geometry_changed_by_provenance": false,
+  "web_compression_flags": [
+    "-cc",
+    "-noq",
+    "-km",
+    "-ke"
+  ],
+  "lod_compression_flags": [
+    "-cc",
+    "-noq",
+    "-km",
+    "-ke",
+    "-si",
+    "0.35",
+    "-se",
+    "0.002",
+    "-sp"
+  ],
+  "source_package": "source/bund/art_deco/wall-v4.4/README.md",
+  "note": "Source audit preserves all protected native faces. Released GLB omits exactly zero-area triangles; all other exported triangles and source attribute buffer bytes remain unchanged before compression."
+}

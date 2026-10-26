@@ -17,8 +17,8 @@
   "height_m": 35.72465133666992,
   "source_num_floors": 7,
   "front_edge_outward_azimuth_deg": 85.447,
-  "triangles": 128046,
-  "mesh_objects": 14,
+  "triangles": 130374,
+  "mesh_objects": 16,
   "textures": 7,
   "geometry_detail": [
     "two profiled round Ionic columns with 3D spiral volutes",
@@ -39,12 +39,12 @@
   "source_footprint": "https://www.openstreetmap.org/way/1196704498",
   "source_footprint_license": "ODbL-1.0; © OpenStreetMap contributors",
   "reference_photo": {
-    "page": "https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E5%A4%96%E6%BB%A9%E9%BA%A6%E5%8A%A0%E5%88%A9%E9%93%B6%E8%A1%8C%E6%97%A7%E5%9D%802021.jpg",
-    "author": "ScareCriterion12",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "used_as_texture": true,
     "sha256": "26a1219fe534659ae78bae9dfc498aef30b50b957172046a5c401906758315ba",
+    "author": "ScareCriterion12",
+    "license": "CC-BY-SA-4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E5%A4%96%E6%BB%A9%E9%BA%A6%E5%8A%A0%E5%88%A9%E9%93%B6%E8%A1%8C%E6%97%A7%E5%9D%802021.jpg",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "scope": "Selected lower front stone faces and six independently mapped main glass rectangles"
   },
   "replacement": {
@@ -57,11 +57,11 @@
     "additional_overlap_candidates": []
   },
   "geometry_authoring": "Original photo-proportioned 3D reconstruction with selective photographic stone/window appearance; not photogrammetry. Frames, columns, roof and side/rear remain geometric materials.",
-  "version": "4.3",
+  "version": "bund18-wall-v4.4",
   "historical": false,
   "native_model": "assets/native/bund/bund18.blend",
-  "raw_sha256": "803b987addf24d6a2eb788c9014770e9fdcd11506a1255f1302bb1ccd34dfd35",
-  "raw_bytes": 10246696,
+  "raw_sha256": "8753e9b91590392c63866659357a93a97bb6e923aa58e12999340a0c514b3093",
+  "raw_bytes": 10315676,
   "bounds_glb": {
     "min": [
       -32.16176223754883,
@@ -75,5 +75,49 @@
     ]
   },
   "asset_license": "CC-BY-SA-4.0",
-  "source_package": "source/bund/chartered_bank/photo-v4.3/README.md"
+  "source_package": "source/bund/chartered_bank/photo-v4.4/README.md",
+  "current_detail_note": "柱距、窗宽和主窗分格按2021照片比例校正；部分下部石墙及六块主窗使用原照片，保留真正窗洞和独立窗框。新增连续墙芯修复石块间贯通空缝，保留石缝边界；18mm灰缝退距、颜色及未见侧后仍含推定。不是摄影测量，贴图保留原照片光照。",
+  "wall_core_repair": {
+    "added_triangles": 2328,
+    "front_recess_m": 0.018,
+    "back_depth_m": 0.525,
+    "parameters_estimated": true,
+    "original_triangle_attributes_preserved": 128046,
+    "opening_definitions_preserved": 30,
+    "method": "Two conforming continuous backing solids; no internal sides between occupied wall cells; original stone/window/photo surfaces unchanged.",
+    "visual_limit": "Stone-joint boundaries remain; the repair removes unintended see-through gaps, not every thin grid line."
+  },
+  "photo_texture": {
+    "image": "assets/references/bund/bund18.jpg",
+    "sha256": "26a1219fe534659ae78bae9dfc498aef30b50b957172046a5c401906758315ba",
+    "license": "CC-BY-SA-4.0",
+    "author": "ScareCriterion12",
+    "source": "https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E5%A4%96%E6%BB%A9%E9%BA%A6%E5%8A%A0%E5%88%A9%E9%93%B6%E8%A1%8C%E6%97%A7%E5%9D%802021.jpg",
+    "embedded": true,
+    "scope": "Selected lower front stone faces and six independently mapped main glass rectangles",
+    "bytes": 798956,
+    "dimensions_px": [
+      1920,
+      1369
+    ],
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "expected_images": {
+      "raw": 1,
+      "web": 1,
+      "lod": 1
+    },
+    "orientation": {
+      "exifOrientation": 1,
+      "rawSize": [
+        1920,
+        1369
+      ],
+      "orientedSize": [
+        1920,
+        1369
+      ],
+      "uvConvention": "stored-pixels",
+      "sourceSha256": "26a1219fe534659ae78bae9dfc498aef30b50b957172046a5c401906758315ba"
+    }
+  }
 }

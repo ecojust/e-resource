@@ -42,8 +42,8 @@
       29.0
     ]
   },
-  "triangles": 96352,
-  "glb_bytes": 4134436,
+  "triangles": 92848,
+  "glb_bytes": 2982540,
   "window_apertures": 96,
   "window_recess_depth_m": 0.57,
   "wall_thickness_m": 0.62,
@@ -64,5 +64,66 @@
       "surveyed rear elevation ornament"
     ]
   },
-  "no_solid_box_behind_windows": true
+  "no_solid_box_behind_windows": true,
+  "version": "bund15-curtain-v4.4",
+  "historical": false,
+  "raw_bytes": 2982540,
+  "raw_sha256": "2fd48066c0dcc5f1f64f832044948a236be84685b272dcd87e37cc431a3071cb",
+  "native_model": "assets/native/bund/bund15.blend",
+  "model": "assets/models/bund/bund15.glb",
+  "source_package": "source/bund/classical_bank/curtain-v4.4/README.md",
+  "bounds_glb": {
+    "min": [
+      -24.97776222229004,
+      0,
+      -22.484010696411133
+    ],
+    "max": [
+      23.73923683166504,
+      29,
+      22.601665496826172
+    ]
+  },
+  "current_detail_note": "先修复结构墙内部重合面与T接缝，保留96洞、拱曲线、中央退进、柱和窗框；随后纠正10个反向窗帘体的580三角朝向，删除120个内部穿插褶皱盒的1440三角，剩余位置与其他几何保持不变。参考照片不作为纹理；高度及未见细节含推定，不是测绘或摄影测量。",
+  "asset_license": "Architectural reconstruction retains project attribution and © OpenStreetMap contributors / ODbL-1.0 spatial provenance; Suicasmo CC0-1.0 reference photograph only, no photographic texture",
+  "wall_topology_cleanup": {
+    "version": "classical-bank-wall-v4.4",
+    "source_window_bays": 96,
+    "source_solid_wall_pieces": 3,
+    "plane_depth_groups": 5,
+    "source_wall_faces_replaced": 3032,
+    "other_native_faces_preserved_exactly": 48025,
+    "reference_geometry_dimensions_unchanged": true,
+    "current_validation": "data/bund/validation/bund15-wall-v4.4.json",
+    "current_preservation": "data/bund/validation/bund15-wall-preservation-v4.4.json",
+    "pre_wall_sha256": {
+      "raw_sha256": "46b4b1f9c35c4afaa15d11f037d3a23651fdb23f47aea3c2a892464b65208027",
+      "web_sha256": "4fb7ca3c71c0d87ed4565021da8b51bae770be33bda4623f349c3f02d9bc1743",
+      "native_sha256": "9b3a576b10d69202666be4bb8e5e4089739a279f9f471afc38e508065121b76b",
+      "lod_sha256": "9643c30cda83ba8ab3006b591290077e27c61408320c283d3838e573d61a95dd"
+    },
+    "historical_photo_stage_only": false
+  },
+  "native_bytes": 1480468,
+  "native_sha256": "42eb3f7a93febe54f187015ab12f49088b551b7ef3b9c3a58f1ed3c068d25512",
+  "curtain_repair": {
+    "version": "bund15-curtain-v4.4",
+    "upstream_source_package": "source/bund/classical_bank/wall-v4.4/README.md",
+    "input_wall_stage_sha256": {
+      "raw": "0b6ec1409ca5230da74b63b977a08420e493e75670fdb5047322d97ec001eb29",
+      "web": "3c3db27bf86e645c3e5d441c78ccc3eac97915b61b59af22aa04bbd9a40c0da6",
+      "lod": "7a97a52740199f0c1984b833ea2594d1368bb9698a92f33f42d19b814f4c637d",
+      "native": "1ee61ebf1c5c525ded62efee045cd984c63e53ef4f7138a6c38be8e98d59c8d8"
+    },
+    "prisms_reoriented": 10,
+    "native_faces_reoriented": 425,
+    "triangles_reoriented": 580,
+    "remaining_vertex_positions_unchanged": true,
+    "interpenetrating_fold_boxes_removed": 120,
+    "interpenetrating_fold_triangles_removed": 1440,
+    "wall_and_opening_geometry_unchanged": true,
+    "current_native_validation": "data/bund/validation/bund15-curtain-native-v4.4.json",
+    "current_preservation": "data/bund/validation/bund15-curtain-preservation-v4.4.json",
+    "prior_report_scope": "wall_topology_cleanup and its preservation report retain their original pre-wall→wall-stage output hashes. This later stage reverses ten curtain prisms and deletes 120 interpenetrating internal fold boxes; it does not extend the old full-preservation claim across these explicit changes."
+  }
 }

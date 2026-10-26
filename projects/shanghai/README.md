@@ -1,4 +1,4 @@
-# 上海漫游 · Shanghai Explorer v4.3
+# 上海漫游 · Shanghai Explorer v4.4
 
 上海16区三维地图与第三人称漫游项目。**外滩10栋历史建筑提供近景建筑细节，另有4栋陆家嘴地标；全市背景由1,708个建筑分块、1,796,419个普通建筑及部件要素组成。** 外滩模型根据公开照片与地图轮廓逐栋制作，包含真实凹窗、门洞、柱廊、檐口和屋顶构件；普通建筑以轮廓与高度体块为主，126处另有已核验来源参数的双坡或单坡屋顶。
 
@@ -7,6 +7,16 @@
 ![外滩第三人称街景](assets/previews/bund-street.png)
 
 [网页启动包](downloads/shanghai-web-launcher.zip)约45.1MB，包含14栋地标、滨江街道、表面纹理、远景变体和参考照片；解压后按包内说明启动HTTP服务。普通建筑分块按需从固定版本联网加载，地图仍需联网。完整模型、可编辑文件及重建源码也在本项目内。
+
+## v4.4 墙面、逐窗与屋顶修正
+
+修正外滩9栋建筑近看时的墙面黑线与虚线。2、3、12、15、17、19、20、23号原先相邻墙块留下了反向重叠的内部面，部分墙面边缘也未共用节点；现将结构墙整合，保留真正的窗洞、洞口侧壁和内退。18号补连续墙芯，封住原先贯通的空缝；石材本身的接缝与凹槽继续保留。13号未发现同类问题，保持原模型。
+
+字林西报大楼24扇主窗、汇丰大楼右翼六窗改用各自的实景玻璃采样，并按照片修正实体主窗框。字林顶部的旧开放亭纠正为厚石塔、深窗、层叠檐帽和浅弧顶冠。照片保留原字节、作者与CC0许可；不是整面墙照片平板，细格栅和帘布仍有照片细节。
+
+华俄道胜银行同时修正十个窗帘体的面朝向，并去掉造成窗内竖向杂纹的穿插构件，保留窗洞和主窗框。
+
+远处12、17号使用无照片的几何变体，离开区域后释放隐藏的大照片模型；正常设备局部阴影提高到2048。详见[本轮修改、来源及限制](data/bund/REALISM_V4_4.md)。本次仍是外滩局部完善，全市普通建筑尚未达到近距离真实复原精度。
 
 ## v4.3 外滩近景修正
 
@@ -62,7 +72,7 @@ python -m http.server 8000
 | 12号 · 汇丰银行大楼 | 六柱柱廊、鼓座、穹顶与中庭 | [网页版](assets/models/bund/web/bund12.glb) · [原始GLB](assets/models/bund/bund12.glb) | [.blend](assets/native/bund/bund12.blend) |
 | 13号 · 江海关大楼 | 钟塔、凹窗与源轮廓四角亭 | [网页版](assets/models/bund/web/bund13.glb) · [原始GLB](assets/models/bund/bund13.glb) | [.blend](assets/native/bund/bund13.blend) |
 | 15号 · 华俄道胜银行大楼 | 柱廊、拱券与窗洞 | [网页版](assets/models/bund/web/bund15.glb) · [原始GLB](assets/models/bund/bund15.glb) | [.blend](assets/native/bund/bund15.blend) |
-| 17号 · 字林西报大楼 | 窄面深进、窗带与双亭 | [网页版](assets/models/bund/web/bund17.glb) · [原始GLB](assets/models/bund/bund17.glb) | [.blend](assets/native/bund/bund17.blend) |
+| 17号 · 字林西报大楼 | 窄面深进、照片窗与双侧屋顶石塔 | [网页版](assets/models/bund/web/bund17.glb) · [原始GLB](assets/models/bund/bund17.glb) | [.blend](assets/native/bund/bund17.blend) |
 | 18号 · 麦加利银行 · 外滩18号 | 爱奥尼柱廊、山花与栏杆 | [网页版](assets/models/bund/web/bund18.glb) · [原始GLB](assets/models/bund/bund18.glb) | [.blend](assets/native/bund/bund18.blend) |
 | 19号 · 和平饭店南楼 · 汇中饭店 | 红砖壁柱、山花与角亭 | [网页版](assets/models/bund/web/bund19.glb) · [原始GLB](assets/models/bund/bund19.glb) | [.blend](assets/native/bund/bund19.blend) |
 | 20号 · 和平饭店北楼 · 沙逊大厦 | 装饰艺术窗带、退台与铜屋顶 | [网页版](assets/models/bund/web/bund20.glb) · [原始GLB](assets/models/bund/bund20.glb) | [.blend](assets/native/bund/bund20.blend) |
@@ -129,6 +139,6 @@ python tools/unpack_model.py assets/city/tiles/14-13720-6694.glb exported/block.
 
 原创界面、控制器和生成代码采用[MIT](LICENSE)。OSM/Overture轮廓及派生建筑数据库遵循ODbL-1.0，署名 **© OpenStreetMap contributors** 及相应来源；East Asian Buildings、CMAB、CNBH、GHSL按各自CC BY 4.0记录署名。Microsoft比较栅格采用CDLA-Permissive 2.0，仅用于验证。第三方库许可位于[licenses/](licenses/)。
 
-外滩参考照片保留原作者和各自的CC0、CC BY或CC BY-SA许可；逐栋署名以[data/bund/manifest.json](data/bund/manifest.json)及[源码照片表](source/bund/README.md#参考照片与许可)为准，补充照片见各源码包的引用文件。除v4.3外滩18号的局部照片纹理外，其余照片用于几何参照；随附照片仍受原许可约束，**代码的MIT许可不覆盖照片、字体和外部数据**。
+外滩参考照片保留原作者和各自的CC0、CC BY或CC BY-SA许可；逐栋署名以[data/bund/manifest.json](data/bund/manifest.json)及[源码照片表](source/bund/README.md#参考照片与许可)为准，补充照片见各源码包的引用文件。外滩18号局部石墙和主窗使用CC BY-SA 4.0照片；v4.4的17号24扇主窗、12号右翼六窗使用Suicasmo的CC0原照片，其余照片用于几何参照；随附照片仍受原许可约束，**代码的MIT许可不覆盖照片、字体和外部数据**。
 
 新增表面贴图及上海沿江HDR采用 Poly Haven CC0-1.0，作者与来源见[表面署名](assets/materials/realism-v4/SOURCES.md)。原创示意车辆与角色代码采用项目 MIT 许可；车辆摆放使用的道路数据仍保留 OSM/ODbL 说明。

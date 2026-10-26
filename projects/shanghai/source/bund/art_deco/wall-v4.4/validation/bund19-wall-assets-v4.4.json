@@ -1,0 +1,115 @@
+{
+  "id": "bund19",
+  "compression_commands": [
+    [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund19.glb",
+      "-o",
+      "assets/models/bund/web/bund19.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    [
+      "gltfpack",
+      "-i",
+      "assets/models/bund/bund19.glb",
+      "-o",
+      "assets/models/bund/lod-v4/bund19.glb",
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke",
+      "-si",
+      "0.35",
+      "-se",
+      "0.002",
+      "-sp"
+    ]
+  ],
+  "assets": {
+    "raw": {
+      "file": "assets/models/bund/bund19.glb",
+      "bytes": 6446416,
+      "sha256": "2f891866e16220412716a811d25f8c1a9c6edd24d267201706f009abe4b554a1",
+      "triangles": 159428,
+      "meshes": 6,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": []
+    },
+    "web": {
+      "file": "assets/models/bund/web/bund19.glb",
+      "bytes": 2585576,
+      "sha256": "c95eb8e1f84f238a6d6033b7b0687dbfb01c99da6aac6a711f0b9bffb45793f5",
+      "triangles": 159428,
+      "meshes": 1,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": [
+        "EXT_meshopt_compression"
+      ]
+    },
+    "lod": {
+      "file": "assets/models/bund/lod-v4/bund19.glb",
+      "bytes": 1434432,
+      "sha256": "b192056180ab5110866c4c2f30b2dc1edc0f0cccb5ca3ab33414d8cce68fe8e1",
+      "triangles": 65776,
+      "meshes": 1,
+      "images": 0,
+      "copyright": "Original architectural reconstruction and wall-union source: MIT. Footprint: © OpenStreetMap contributors, ODbL-1.0. Reference photographs are documented separately and are not embedded. Wall repair preserves the existing geographic anchor, detail and apertures; dimensions remain photo-derived estimates, not a survey.",
+      "extensions_required": [
+        "EXT_meshopt_compression"
+      ]
+    },
+    "native": {
+      "file": "assets/native/bund/bund19.blend",
+      "bytes": 2441810,
+      "sha256": "db8dbf63d6b0cc7b7961f2d0e0d1adfaaebda1547929c32beaa7f8e00e292c6d"
+    }
+  },
+  "export_normalization": {
+    "source_sha256": "52dbf32320e24a78efc082baec01fd795f10b5d4bba3a4d0ccd6422a25479090",
+    "normalized_sha256": "2f891866e16220412716a811d25f8c1a9c6edd24d267201706f009abe4b554a1",
+    "removed": [
+      {
+        "mesh": "01 Rusticated ground-floor stone and deep arched entrances sour",
+        "material": "Warm granite masonry",
+        "removed_zero_area_triangles": 86
+      },
+      {
+        "mesh": "05 Riverfront mansard pavilion, oculi and small lantern source-",
+        "material": "Pale brick infill",
+        "removed_zero_area_triangles": 8
+      }
+    ],
+    "removed_zero_area_triangles": 94,
+    "original_binary_prefix_preserved": true,
+    "attribute_buffer_bytes_unchanged": true,
+    "native_faces_changed": false,
+    "criterion": "Exactly zero cross product in original FLOAT32-position coordinates evaluated as FLOAT64; no area epsilon.",
+    "released_raw_sha256": "2f891866e16220412716a811d25f8c1a9c6edd24d267201706f009abe4b554a1"
+  },
+  "raw_geometry_changed_by_provenance": false,
+  "web_compression_flags": [
+    "-cc",
+    "-noq",
+    "-km",
+    "-ke"
+  ],
+  "lod_compression_flags": [
+    "-cc",
+    "-noq",
+    "-km",
+    "-ke",
+    "-si",
+    "0.35",
+    "-se",
+    "0.002",
+    "-sp"
+  ],
+  "source_package": "source/bund/art_deco/wall-v4.4/README.md",
+  "note": "Source audit preserves all protected native faces. Released GLB omits exactly zero-area triangles; all other exported triangles and source attribute buffer bytes remain unchanged before compression."
+}

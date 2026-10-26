@@ -28,15 +28,15 @@
     "image": "assets/references/bund/bund12.jpg",
     "sha256": "cdf9efa0b06c41cdc77bd713afd06e5f3c0babaf5b6784b41dd91b42e674fdb4"
   },
-  "detail_note": "临街开间、屋顶和立面构件按照片重建；窗洞有实际深度。楼高分段与未拍到的侧后细节含推定，不是测绘或摄影测量。",
+  "detail_note": "右翼六扇窗保持30块原图玻璃采样和39件实体主框；修复结构墙内部重合面与T接缝，保留原窗洞、柱廊、穹顶、石缝和真实退距。细格栅及帘布仍有照片细节；未见侧后与尺寸含推定，不是摄影测量。",
   "source_url": "https://www.openstreetmap.org/relation/2380996",
-  "raw_sha256": "6b60b1d06932d8ddb2a46fafbc62bff50c07dcdfe5bbf401f4a870eb383444d2",
-  "web_sha256": "6992a58d0cb7177112e6d825adaeb8b074f4c18dda0fb09595b655f85a878802",
-  "native_sha256": "0b2b427c25ae49fb18a303718c4ba679f913a3ad8e8721d07f5acb84a13cb9e2",
-  "raw_bytes": 13289092,
-  "web_bytes": 2012820,
-  "native_bytes": 3258640,
-  "triangles": 227925,
+  "raw_sha256": "78bab21b567121627d7f807b61f509578536070afad2ac81c20c4e4ace451559",
+  "web_sha256": "04e2eedbb85fe9bffc2d140624e37af21ddca73e5825f725f64f2cf80a5ad9fd",
+  "native_sha256": "49c0c43b290561811830303454e2597a07b01f6be780cc1766c758ffcb04a9df",
+  "raw_bytes": 17277964,
+  "web_bytes": 11464408,
+  "native_bytes": 10551890,
+  "triangles": 218805,
   "bounds_glb": {
     "min": [
       -38.369869232177734,
@@ -51,9 +51,64 @@
   },
   "maxDistance": 3500,
   "lod_model": "assets/models/bund/lod-v4/bund12.glb",
-  "lod_sha256": "dfcf187f4c6b79c3125469c2223cc484bde41bac58de52f9ded619db38c6ef20",
-  "lod_bytes": 1574532,
-  "lod_triangles": 144184,
+  "lod_sha256": "54320546b206d546a73ea6885c3eafaa99dd727311baeedea18dc2cbd320ac5c",
+  "lod_bytes": 2888184,
+  "lod_triangles": 130375,
   "lod_switch_out_m": 400,
-  "lod_switch_in_m": 300
+  "lod_switch_in_m": 300,
+  "source_package": "source/bund/classical_bank/wall-v4.4/README.md",
+  "asset_license": "Architectural reconstruction retains project attribution and © OpenStreetMap contributors / ODbL-1.0 spatial provenance; Suicasmo CC0-1.0 photographic window samples",
+  "photo_texture": {
+    "image": "assets/references/bund/hsbc-20250501-original.jpg",
+    "sha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684",
+    "bytes": 7580249,
+    "dimensions_px": [
+      5184,
+      3456
+    ],
+    "license": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "author": "Suicasmo",
+    "source": "https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg",
+    "embedded": true,
+    "expected_images": {
+      "raw": 1,
+      "web": 1,
+      "lod": 0
+    },
+    "selected_window_count": 6,
+    "glass_pane_count": 30,
+    "scope": "Six north-wing front windows, 30 individually calibrated glass panes; 39 solid primary frame components; fine grilles remain photographic.",
+    "orientation": {
+      "exifOrientation": 1,
+      "rawSize": [
+        5184,
+        3456
+      ],
+      "orientedSize": [
+        5184,
+        3456
+      ],
+      "uvConvention": "stored-pixels",
+      "sourceSha256": "bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684"
+    }
+  },
+  "wall_topology_cleanup": {
+    "version": "classical-bank-wall-v4.4",
+    "source_window_bays": 530,
+    "source_solid_wall_pieces": 15,
+    "plane_depth_groups": 26,
+    "source_wall_faces_replaced": 13023,
+    "other_native_faces_preserved_exactly": 101083,
+    "reference_geometry_dimensions_unchanged": true,
+    "current_validation": "data/bund/validation/bund12-wall-v4.4.json",
+    "current_preservation": "data/bund/validation/bund12-wall-preservation-v4.4.json",
+    "pre_wall_sha256": {
+      "raw_sha256": "9f2a520fc394f49f9ace64383cc8f94bbf458430cb5ec537dc4f9ed3a5499b4f",
+      "web_sha256": "991232e21d2068d12f9113745d53850020ada8be3dca8b0d3d279c4c6330c9ae",
+      "native_sha256": "d49893ba33d84686776a5f145bc6e7c714ae0646e33f1378c6e5020a7900d5ea",
+      "lod_sha256": "d4aebe8220225567f6a014b18d48d0ecde328c00786761b05789eddccf549adb"
+    },
+    "historical_photo_stage_only": true
+  }
 }

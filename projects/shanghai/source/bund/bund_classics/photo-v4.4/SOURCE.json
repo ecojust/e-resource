@@ -1,0 +1,221 @@
+{
+  "building": "Bund17 / North China Daily News Building",
+  "photograph": {
+    "image": "assets/references/bund/bund17.jpg",
+    "sha256": "0a7efe74f0c8acd24f115123c70f538793a07249a44cc430028c85ced58cd7b7",
+    "bytes": 6935073,
+    "dimensions_px": [
+      5184,
+      3456
+    ],
+    "author": "Suicasmo",
+    "license": "CC0-1.0",
+    "source": "https://commons.wikimedia.org/wiki/File:North_China_Daily_News_Building_20250501.jpg",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "embedded": true,
+    "scope": "24 individually mapped recessed glazing fronts among25 reviewed; lowest centre omitted because a carved stone plaque occludes the photograph. No photo is projected onto a whole facade plane.",
+    "expected_images": {
+      "raw": 1,
+      "web": 1,
+      "lod": 0
+    },
+    "orientation": {
+      "exifOrientation": 6,
+      "rawSize": [
+        5184,
+        3456
+      ],
+      "orientedSize": [
+        3456,
+        5184
+      ],
+      "uvConvention": "stored-pixels",
+      "sourceSha256": "0a7efe74f0c8acd24f115123c70f538793a07249a44cc430028c85ced58cd7b7"
+    }
+  },
+  "baseline": {
+    "file": "bund17-clean-base.blend",
+    "bytes": 4673356,
+    "sha256": "3e362ad065f7905fc73ddf3ad6e9f76aebb373df679fdbac902cfbef5b061b36",
+    "origin": "New conforming structural-wall baseline generated from original_baseline by clean_wall_baseline.py; default input to build_photo_windows.py. This is a new asset and hash."
+  },
+  "mapped_footprint": {
+    "file": "news-footprint.json",
+    "sha256": "7865271f929e86cf06b197888394a3e154fb4e9e91ed5b97346bf102632f3792",
+    "source": "https://www.openstreetmap.org/way/1196704497",
+    "license": "ODbL-1.0"
+  },
+  "roof_reference": "roof-reference.json",
+  "method": "First, replace1,148 default .45m limestone wall boxes in7 equal-plane/depth groups with their conforming union boundary. Shared u/z grid eliminates interior opposing faces and T-junctions while preserving actual window reveals and external areas. Numerical edge clustering moves generated wall boundaries by at most0.0000034m. Per-window projective UVs on existing glass, source photograph pixels unchanged. The25 reviewed windows include24 mapped and1 occluded skipped. Existing internal equal-third grids are replaced by thin bars matching the observed frame lines. Central triplet duplicate stone trim pairs become one shared jamb. Two opaque square roof towers with dark apertures, paired columns, layered caps and low segmental crowns replace transparent pavilions; pediments become visible;3 upper rear window materials become dark interior shade.",
+  "limitations": [
+    "Single-view appearance reconstruction, not photogrammetry or dimensional survey.",
+    "Source contains captured lighting/reflections: runtime must not tint PhotoFacade materials or add a second sky.",
+    "Dimensional values,40m envelope and hidden sides remain photo-proportioned estimates.",
+    "Full original image mip chain can use about95.6MB GPU; far LOD uses the same updated geometry, original blue-grey window colour and no images.",
+    "Supplementary reference photographs keep their own CC BY-SA licenses; they are not embedded in the model."
+  ],
+  "runtime_compatibility": "Browser may honorEXIF6, unlikeBlender raw image pixels. material.extras.photographicSource supports dimension-aware UV compensation; see project src/photographic-texture.js.",
+  "compression": {
+    "web": [
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    "lod": [
+      "-cc",
+      "-si",
+      "0.6",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    "gltfpack": "1.3"
+  },
+  "output_files": {
+    "bund17-photo.glb": {
+      "bytes": 11223824,
+      "sha256": "a2e7573eb56bc70f93ec4ff2bf4c3a2607f58595ddb3497cbdc6ee1858a13449",
+      "triangles": 73808,
+      "images": [
+        {
+          "bytes": 6935073,
+          "sha256": "0a7efe74f0c8acd24f115123c70f538793a07249a44cc430028c85ced58cd7b7"
+        }
+      ],
+      "textures": 1,
+      "copyright": "Photograph/reference: Suicasmo, CC0-1.0; https://commons.wikimedia.org/wiki/File:North_China_Daily_News_Building_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Original geometric model/source: MIT. OSM footprint © OpenStreetMap contributors, ODbL-1.0."
+    },
+    "bund17-photo-web.glb": {
+      "bytes": 8302368,
+      "sha256": "01b894418f7887d5d13094e1960aa13c2896aade3034df0a19559ddd4fd4b68c",
+      "triangles": 73808,
+      "images": [
+        {
+          "bytes": 6935073,
+          "sha256": "0a7efe74f0c8acd24f115123c70f538793a07249a44cc430028c85ced58cd7b7"
+        }
+      ],
+      "textures": 1,
+      "copyright": "Photograph/reference: Suicasmo, CC0-1.0; https://commons.wikimedia.org/wiki/File:North_China_Daily_News_Building_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Original geometric model/source: MIT. OSM footprint © OpenStreetMap contributors, ODbL-1.0."
+    },
+    "bund17-photo-lod.glb": {
+      "bytes": 1085064,
+      "sha256": "6108340233542f08619f1a35bf5aa2ddfa5b9fc69fbc9c3dc6d9d13a4783ac8c",
+      "triangles": 51364,
+      "images": [],
+      "textures": 0,
+      "copyright": "Photograph/reference: Suicasmo, CC0-1.0; https://commons.wikimedia.org/wiki/File:North_China_Daily_News_Building_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Original geometric model/source: MIT. OSM footprint © OpenStreetMap contributors, ODbL-1.0."
+    },
+    "bund17-untextured.glb": {
+      "bytes": 4288060,
+      "sha256": "c78bc3c5ce0ae47ab261b68b8f8e9419421ef17bc766204d19db8bb909aed817",
+      "triangles": 73808,
+      "images": [],
+      "textures": 0,
+      "copyright": "Photograph/reference: Suicasmo, CC0-1.0; https://commons.wikimedia.org/wiki/File:North_China_Daily_News_Building_20250501.jpg ; https://creativecommons.org/publicdomain/zero/1.0/ . Original geometric model/source: MIT. OSM footprint © OpenStreetMap contributors, ODbL-1.0."
+    },
+    "bund17-photo.blend": {
+      "bytes": 13143912,
+      "sha256": "006737662126c23a037f19866ce2ab45f6d37ca6726757e8c764c4a4a455e0c9"
+    }
+  },
+  "source_files": {
+    "README.md": {
+      "bytes": 5570,
+      "sha256": "5359631831bad34c1dfdc480ed7a64de05b1c52c15239acc5b9da7a0486c094b"
+    },
+    "audit_internal_wall.py": {
+      "bytes": 4440,
+      "sha256": "c9c0182f2cf6de9821fb0b613b298f1f623dab5850a7493c568ea6c434c155d7"
+    },
+    "audit_nonwall.py": {
+      "bytes": 1945,
+      "sha256": "ce0ede479e9a87e339f2ef42b12e8750b3adf0d0fcf749bb82d372fec96aa102"
+    },
+    "build_photo_windows.py": {
+      "bytes": 19503,
+      "sha256": "f59dd4e34309a09087cacaaebabcc47ccdc5677ebf45cc165981c0c4a2ff6049"
+    },
+    "bund17-base.blend": {
+      "bytes": 4893976,
+      "sha256": "29e92b2452933fcdf04a94d18e3b206a5842025c46b5cb317714f1f1d346314a"
+    },
+    "bund17-clean-base.blend": {
+      "bytes": 4673356,
+      "sha256": "3e362ad065f7905fc73ddf3ad6e9f76aebb373df679fdbac902cfbef5b061b36"
+    },
+    "clean_wall_baseline.py": {
+      "bytes": 7814,
+      "sha256": "0ef8646ea336470593573520920e850571d94c54cba9b1de605f97753d5e51d2"
+    },
+    "compress_models.py": {
+      "bytes": 789,
+      "sha256": "5e99f8472148500fa4aa1172cb79e867ade1b215e744c09d6f90ebde133fea90"
+    },
+    "glb_provenance.py": {
+      "bytes": 1079,
+      "sha256": "7b36ff4442afe8f5a9f3e2512a1f20ff39e660046a1f541602097793a8f30f84"
+    },
+    "internal-wall-audit.json": {
+      "bytes": 9932,
+      "sha256": "d751d3bb546343a51cfc9ae3204d8924a88c61a50fb74335c36c6c786b8eda10"
+    },
+    "news-footprint.json": {
+      "bytes": 6785,
+      "sha256": "7865271f929e86cf06b197888394a3e154fb4e9e91ed5b97346bf102632f3792"
+    },
+    "nonwall-validation.json": {
+      "bytes": 2793,
+      "sha256": "1ca324caecca8ba65c3e77553183875b3f476fd78e94354f858b4ac3095ae552"
+    },
+    "rebuild-validation.json": {
+      "bytes": 1479,
+      "sha256": "8264325eecf7b57d5faeecab54f648fb2951e85a7c35579cc221826dc201f7cd"
+    },
+    "rebuild_all.py": {
+      "bytes": 1188,
+      "sha256": "390bd78044d73ee6ab8fc9f776692ad17f0cfbf79b3463ecd3f359b16166cc6d"
+    },
+    "references/2012.jpg": {
+      "bytes": 1770744,
+      "sha256": "6d98664da577c65196505ab3c3e4ec93c70bfd9c32888e6775763efe438a5326"
+    },
+    "references/onedesign23.jpg": {
+      "bytes": 218909,
+      "sha256": "e0691b8180737dd0c46a5ee5503212046728f3a6b2655820d852636cbc4044aa"
+    },
+    "roof-reference.json": {
+      "bytes": 3224,
+      "sha256": "31b6719bec84cf1a50991fc750037f7ad7daa62a24c2b2c538c5a2523f0159c8"
+    },
+    "wall-validation.json": {
+      "bytes": 5423,
+      "sha256": "bdf4b10f9e21ae6183fb51e46f73c35d2e679906c1af6090ef19b0fecf3f1876"
+    },
+    "window-controls.json": {
+      "bytes": 59237,
+      "sha256": "6bffe0bc09015293c336e86ac67479c5d9ca364bc381e7ca0d1c9d3f4f5ddb76"
+    }
+  },
+  "rebuild_validation": "rebuild-validation.json",
+  "original_baseline": {
+    "file": "bund17-base.blend",
+    "bytes": 4893976,
+    "sha256": "29e92b2452933fcdf04a94d18e3b206a5842025c46b5cb317714f1f1d346314a",
+    "origin": "Frozen original input before structural-wall topology, photo or roof corrections. Used only by clean_wall_baseline.py in the full rebuild."
+  },
+  "wall_topology": {
+    "method": "Conforming union boundary of original same-plane .45m structural limestone boxes; actual openings and reveals retained.",
+    "original_boxes": 1148,
+    "wall_groups": 7,
+    "middle_front_internal_overlap_before_m2": 40.950051,
+    "middle_front_internal_overlap_after_m2": 0,
+    "unchanged_non_limestone_triangles": 58968,
+    "non_limestone_attributes_exact": true,
+    "report": "wall-validation.json",
+    "independent_glb_audit": "internal-wall-audit.json",
+    "non_wall_attribute_audit": "nonwall-validation.json",
+    "browser_visual_verification": "Parent-controlled same-camera pure Three A/B: vertical dashed wall artifacts removed; window openings/photo/frame/body preserved."
+  }
+}

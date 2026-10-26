@@ -29,9 +29,9 @@
   },
   "geometry_source": "https://www.openstreetmap.org/relation/2376366",
   "geometry_license": "ODbL-1.0; © OpenStreetMap contributors",
-  "triangles": 252308,
-  "meshes": 8,
-  "glb_bytes": 13086820,
+  "triangles": 251315,
+  "meshes": 9,
+  "glb_bytes": 12347612,
   "bounds_enu": {
     "min": [
       -71.51979064941406,
@@ -45,9 +45,11 @@
     ]
   },
   "source_files": [
-    "../build_art_deco.py",
-    "../architecture.py",
-    "../footprints.json"
+    "source/bund/art_deco/wall-v4.4/rebuild.py",
+    "source/bund/art_deco/wall-v4.4/inspect_capture.py",
+    "source/bund/art_deco/wall-v4.4/union_panels.py",
+    "source/bund/art_deco/wall-v4.4/apply_union.py",
+    "source/bund/art_deco/wall-v4.4/finalize_assets.py"
   ],
   "landmark_source_id": "bund20",
   "reference_metadata": "../references.json",
@@ -55,5 +57,49 @@
     "overview": "overview.png",
     "riverfront": "front.png",
     "entrance_detail": "detail.png"
+  },
+  "version": "bund20-wall-v4.4",
+  "historical": false,
+  "source_package": "source/bund/art_deco/wall-v4.4/README.md",
+  "raw_bytes": 12347612,
+  "raw_sha256": "980a2c356cdc3674d2fb8b49ece1c8769a0be8f648fb8c146f6b5d5bfbc8e2a5",
+  "native_model": "assets/native/bund/bund20.blend",
+  "model": "assets/models/bund/bund20.glb",
+  "bounds_glb": {
+    "min": [
+      -71.51979064941406,
+      0,
+      -35.296958923339844
+    ],
+    "max": [
+      79.92460632324219,
+      83,
+      39.37821578979492
+    ]
+  },
+  "current_detail_note": "修复按原生成器识别的结构墙内部重合侧面与T接缝，保留原开孔、弧拱、窗框、石缝、屋顶和铭牌。主墙与内退12厘米的窗间饰板保持真实分层。尺寸及未见侧后细节仍含照片推定，不是测绘或摄影测量。",
+  "asset_license": "Architectural reconstruction retains project attribution and © OpenStreetMap contributors / ODbL-1.0 spatial provenance; reference photographs documented separately, no embedded photographic textures.",
+  "wall_topology_cleanup": {
+    "version": "art-deco-wall-v4.4",
+    "source_panels": 4857,
+    "wall_volume_groups": 28,
+    "source_wall_faces_replaced": 24285,
+    "other_native_faces_preserved_exactly": 99960,
+    "native_triangles": 251454,
+    "export_zero_area_triangles_removed": 139,
+    "reference_geometry_dimensions_unchanged": true,
+    "current_validation": {
+      "preservation": "data/bund/validation/bund20-wall-preservation-v4.4.json",
+      "surface": "data/bund/validation/bund20-wall-surfaces-v4.4.json",
+      "compression": "data/bund/validation/bund20-wall-compression-v4.4.json",
+      "decoded": "data/bund/validation/bund20-wall-decoded-v4.4.json",
+      "assets": "data/bund/validation/bund20-wall-assets-v4.4.json"
+    },
+    "pre_wall_sha256": {
+      "raw_sha256": "24981b8c10c8eb4737d9bdb570b991df6f028b872048229eb41ac83a70773103",
+      "web_sha256": "75601d328442d7445d7ba07d175d3fea336f45584304f6cc797e53193a43f795",
+      "native_sha256": "124faf9cdbd178d6421bf44a09e63232ac237bc996d50fe3e4eb61f7701d9839",
+      "lod_sha256": "c06b32b35df5f4bacce5f04a0febd4a3a3bbbf78051e999052e119fac6c67107"
+    }
   }
 }
