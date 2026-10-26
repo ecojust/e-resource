@@ -1,0 +1,214 @@
+{
+  "schema": "bund05-photo-calibration-v2",
+  "primary_photo": "research/nissin-2025-suicasmo-original.jpg",
+  "secondary_photo": "research/nissin-2011-can-pac-swire-original.jpg",
+  "photo_orientation": {
+    "primary_exif": 6,
+    "upright_pixels": [
+      3456,
+      5184
+    ],
+    "control_coordinates": "Architecture regions: normalized upright x,y; calibrated metric points in calibration-independent.json; original upright pixel per-pane controls in photo-glass-controls.json."
+  },
+  "geographic_input": "geometry-input.json",
+  "front_width_m": 20.142632898147884,
+  "height_m_is_estimated": true,
+  "estimated_height_uncertainty_m": 3.0,
+  "levels_m": [
+    0.65,
+    6.1,
+    10.8,
+    15.0,
+    19.3,
+    23.8,
+    27.4
+  ],
+  "roof_parapet_m": 28.03,
+  "gable_peak_m": 28.9,
+  "flagstaff_peak_m": 34.5,
+  "front_bay_centers_normalized": [
+    0.17978366916506344,
+    0.4170912755822722,
+    0.5829087244177278,
+    0.8202163308349366
+  ],
+  "front_bay_count": 4,
+  "outer_bay_front_width_m": 1.48,
+  "outer_bay_total_width_m": 3.05,
+  "outer_bay_projection_m": 0.7,
+  "control_regions_normalized": {
+    "left_3storey_bay": [
+      0.17,
+      0.425,
+      0.3,
+      0.675
+    ],
+    "central_three_storey_windows": [
+      0.36,
+      0.41,
+      0.56,
+      0.66
+    ],
+    "right_3storey_bay": [
+      0.61,
+      0.38,
+      0.76,
+      0.65
+    ],
+    "left_pediment": [
+      0.15,
+      0.285,
+      0.35,
+      0.397
+    ],
+    "right_pediment": [
+      0.56,
+      0.225,
+      0.8,
+      0.347
+    ],
+    "central_ground_arches": [
+      0.34,
+      0.805,
+      0.58,
+      0.9
+    ],
+    "central_iron_balconies": [
+      0.34,
+      0.745,
+      0.59,
+      0.79
+    ]
+  },
+  "controls_are_provisional": "Manual photo regions to guide comparison, not four-point UV mapping or measured elevations. Floor heights and projection depths are estimates pending visual camera comparison.",
+  "side_geometry_policy": "2011 image confirms a near continuous balcony group of four visible vertical stacks and a further group of at least three; assignments to edge1 indices3,4,5,8,9,10,11 are proportion estimates across uncertain footprint-step boundaries, not measured coordinates. Twelve long-side axes remain provisional. Near-front edge3 has one observed shallow arched attic/gable motif; the southeast chamfer has a blind cross-relief attic.",
+  "gable_back_parapet_top_m": 29.4,
+  "refinement_basis": {
+    "independent_calibration": "calibration-independent.json",
+    "main_cornice_m": {
+      "chosen": 23.8,
+      "photo_fit": 23.81,
+      "sensitivity_range": [
+        23.0,
+        24.5
+      ]
+    },
+    "gable_m": {
+      "chosen_base": 27.4,
+      "chosen_peak": 28.9,
+      "photo_base_range": [
+        26.88,
+        27.59
+      ],
+      "photo_apices": [
+        28.76,
+        29.02
+      ],
+      "highest_fin_is_separate": true,
+      "chosen_width": 6.2,
+      "photo_nominal_plane_widths": [
+        6.4784,
+        6.1452
+      ],
+      "width_note": "Independent base corner controls; moulding projections, depth and mirrored centering remain estimates."
+    },
+    "small_attic_windows": {
+      "width": 1.35,
+      "height": 1.45,
+      "bottom": 24.25,
+      "uncertainty_m": 0.15
+    },
+    "arched_attic_window": {
+      "width": 3.5,
+      "height": 2.0,
+      "arch_rise": 0.77,
+      "bottom": 24.36
+    },
+    "central_main_windows": {
+      "width": 1.45,
+      "height": 2.35,
+      "bottoms": [
+        11.3,
+        15.3,
+        19.55
+      ],
+      "central_axis_spacing": 3.34,
+      "pixel_controls_upright_1280_preview_for_4F_left": [
+        [
+          490,
+          986
+        ],
+        [
+          550,
+          976
+        ],
+        [
+          552,
+          1076
+        ],
+        [
+          489,
+          1088
+        ]
+      ],
+      "pixel_controls_upright_1280_preview_for_4F_right": [
+        [
+          634,
+          966
+        ],
+        [
+          695,
+          956
+        ],
+        [
+          697,
+          1058
+        ],
+        [
+          633,
+          1068
+        ]
+      ],
+      "to_original_upright_pixel_multiplier": 2.7,
+      "uncompensated_homography_center_bias_m": 0.4
+    },
+    "outer_bay_metrics": "Widths inferred from actual2025 outer window4F corners under the front homography; depth .7 remains estimated; no precision claim across noncoplanar surfaces.",
+    "front_pilaster_capital": {
+      "shaft_top_m": 19.84,
+      "pendant_capital_bounds_m": [
+        19.7,
+        22.18
+      ],
+      "abacus_center_m": 22.23,
+      "basis": "Hand-read visible shape and height from 2025 planar rectification; not measured, approx +/-0.35m. These are front capitals only."
+    },
+    "southeast_chamfer": {
+      "second_floor": "Rectangular light, verified in P2011; corrected previous generic arched opening.",
+      "sixth_floor": "Blind stepped-cross relief verified in P2011; projection thickness and exact panel dimensions estimated."
+    },
+    "central_glazing": {
+      "controls": "photo-glass-controls.json",
+      "method": "112 separate true pane solids, 6 independently registered source quadrilaterals; original JPEG unchanged. 3F and4F4columns5rows,5F4columns4rows and heavy central bars are counted from original 2025 pixels.",
+      "source_image_sha256": "3cff1c24a4762a0c099d8b96d663fc704871421853b8904a95327f5352f574b3"
+    },
+    "basement_vents": {
+      "count": 6,
+      "bounds_z_m": [
+        0.1,
+        0.59
+      ],
+      "recess_depth_m": 0.43,
+      "placement": "Two nominally mirrored groups below central lower windows. Each group has .46m/1.20m/.46m lights at offsets -1/0/+1m around the central axis.",
+      "evidence": "P2025 source x~1100–1940,y4845–4937 visibly shows several narrow/wide dark openings; planting boxes obscure lower and left portions. Count/layout symmetry, width and depth estimates are explicitly inferred; individual source map coordinates are not survey measurements.",
+      "geometry": "Actual plinth polygon subtracts recess rectangles through the middle vertical layer; independent dark backing and recessed grille."
+    },
+    "signage": {
+      "source": "P2025",
+      "wording": "HF Bank 恒丰银行",
+      "mode": "Raised closed font meshes, original licensed OFL font subset; font shape not logo-traced. Diamond mark simplified from visible source silhouette.",
+      "letters_height_m": 0.32,
+      "raised_depth_m": 0.02,
+      "source_photo_projected_on_signboard": false
+    }
+  }
+}
