@@ -1,9 +1,11 @@
 # 当前状态
 
-生产运行时仅有明确批准的`src/realistic-lighting.js`阴影修复，使不透明的`Inferred dark glazing`可投射阴影；其余运行时文件保持冻结字节。运行时差异SHA256 `6a415603a7e183f868f57607e58471bbd56649f9ec90cff1f130b93af0a87ea2`，修复后文件SHA256 `6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c`。[实际差异](data/audit/precise-buildings-v10/two-districts/runtime-fix/runtime-delta.json)。
+v11应用提交`d99e8c9f1665f65871cef730e74a86a48a3483b4`。本版精选导航29项、普通精模10栋、目录8个宏块；原27项导航与六个目录保持。全城仍未逐栋按照片完成。
 
-v10应用提交`50b8becaa8d0e3de125c38c64a3de730e89465ea`；精选导航27项、逐栋普通精模8栋、目录6个宏块。[松江方塔](https://rawcdn.githack.com/ecojust/e-resource/50b8becaa8d0e3de125c38c64a3de730e89465ea/projects/shanghai/index.html#landmark=songjiang-fangta-pagoda&mode=walk) · [真如寺大殿](https://rawcdn.githack.com/ecojust/e-resource/50b8becaa8d0e3de125c38c64a3de730e89465ea/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk) · [两栋实际模型与网页证据](data/audit/precise-buildings-v10/two-districts/README.md)。
+本版31件生产运行时文件与已发布v10阴影修复后的冻结字节相同；没有新增运行时修复。[模型、11张共享静态图和两组各5张目录图的实际范围](data/audit/precise-buildings-v11/two-modern-buildings/README.md)。
 
-ZIP为75,129,522字节，SHA256 `1cae35145591aafbec74d0fb3d226461c69d2240d60e3855db33f8a2640557b3`。完成实际归档/解压校验、两栋独立发布模型与应用公开响应字节核对，以及解压后**松江方塔一次完整模型加载和1图**；[ZIP记录](data/audit/launcher-v10/README.md)。包含14项本地导航模型、13项流式模型，需联网。ZIP没有重测另一栋、全部27项导航、LOD或目录生命周期、16区及设备帧率。
+启动包75,160,933字节，SHA256 `f2ff0d34d3ae27df73e2e678070cd600f77f162f9a785198d8761fd1f9594156`，严格小于100,000,000字节。包含14项本地导航模型和15项远程流式模型，底图、全城资源及远程模型需要联网，资源固定到应用提交`d99e8c9f1665f65871cef730e74a86a48a3483b4`。
 
-方塔42.65m采用文献名义总高，层间比例、檐出和隐藏构造仍有估计；真如大殿总高及屋面尺度为模型估计，文献158m²口径未明，不能当作实测墙体尺寸。源建筑轮廓用于身份及精确替换，不证明墙线、檐线或台基范围。两栋每个raw/web/LOD/Blender及ZIP均严格小于100,000,000字节。v9及更早正文保留为历史；全城仍未逐栋达到照片复原精度。
+本次启动包仅从实际解压目录加载**包玉刚图书馆**完整模型并由root查看1张图；不等于29项导航、另一栋新楼、LOD、目录生命周期、所有区或设备帧率均已在ZIP中验证。[实际ZIP记录](data/audit/launcher-v11/README.md) · [下载](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)。
+
+两栋各raw/web/LOD/Blender模型及启动ZIP单件均严格小于100,000,000字节；启动ZIP不内置新增两栋raw、Blender或私有参考照片。全部精度和未核实部分见[来源与限制](data/bund/REALISM_V11.md)。软件渲染功能检查不代表用户设备帧率。

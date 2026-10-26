@@ -1,3 +1,18 @@
+# 街区建筑逐栋复原源码（v11）
+
+新增[上海汽车博物馆](jiading-shanghai-auto-museum/CURRENT_STATE.md)和[包玉刚图书馆](minhang-baoyugang-library/CURRENT_STATE.md)。本版精选导航29项、普通精模10栋、目录8个宏块；原27项导航与六个目录保持。全城仍未逐栋按照片完成。
+
+| 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
+|---|---|---|---|---|
+| 上海汽车博物馆 | [10,347,300字节](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) | [31,951,432字节](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-raw.glb) | [10,347,300字节](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-lod.glb) | [14,653,789字节](../../assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) |
+| 包玉刚图书馆 | [7,843,916字节](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-web.glb) | [23,888,596字节](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-raw.glb) | [1,361,876字节](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-lod.glb) | [12,688,862字节](../../assets/native/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library.blend) |
+
+两栋均保留各自原始冻结源码、独立检查、修正历史和来源许可；具体文件以各自实际交付清单为准。来源轮廓用于身份及替换，不能当作已获得测绘墙线。本版31件生产运行时文件与已发布v10阴影修复后的冻结字节相同；没有新增运行时修复。
+
+[本版实际模型与网页范围](../../data/audit/precise-buildings-v11/two-modern-buildings/README.md) · [来源与限制](../../data/bund/REALISM_V11.md)。
+
+## v10及更早记录（历史保留）
+
 # 街区建筑逐栋复原源码（v10）
 
 新增[松江方塔](songjiang-fangta-pagoda/CURRENT_STATE.md)和[真如寺大殿](putuo-zhenru-main-hall/CURRENT_STATE.md)，普通精模累计8栋。照片用于结构参照，模型未嵌入其像素；每张参考图保留自己的作者、字节与许可。
@@ -68,3 +83,4 @@
 222中央牌匾保留原照片；129、210与茶楼当前候选未嵌入照片纹理。后部、绝对高度、雕饰、材料及部分门窗状态仍为推定或简化，不提供经过核验的真实室内。每栋依各自REBUILD保留冻结本地依赖；历史源码中的候选状态由当前DELIVERY说明补充，不改写历史审计。
 
 全城1,796,419个建筑及部件要素未逐栋完成照片核对。历史v6.1验证见[上一版审计](../../data/audit/precise-buildings-v6/release-next/README.md)；本批范围见[v7审计](../../data/audit/precise-buildings-v7/release/README.md)。
+

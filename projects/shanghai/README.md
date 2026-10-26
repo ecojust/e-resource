@@ -1,3 +1,22 @@
+# 上海漫游 · Shanghai Explorer v11
+
+- **[上海汽车博物馆漫游](https://rawcdn.githack.com/ecojust/e-resource/d99e8c9f1665f65871cef730e74a86a48a3483b4/projects/shanghai/index.html#landmark=jiading-shanghai-auto-museum&mode=walk)** · [网页模型](assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) · [Blender](assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) · [当前交付](source/precise/jiading-shanghai-auto-museum/CURRENT_STATE.md)。
+- **[包玉刚图书馆漫游](https://rawcdn.githack.com/ecojust/e-resource/d99e8c9f1665f65871cef730e74a86a48a3483b4/projects/shanghai/index.html#landmark=minhang-baoyugang-library&mode=walk)** · [网页模型](assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-web.glb) · [Blender](assets/native/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library.blend) · [当前交付](source/precise/minhang-baoyugang-library/CURRENT_STATE.md)。
+
+本版精选导航29项、普通精模10栋、目录8个宏块；原27项导航与六个目录保持。全城仍未逐栋按照片完成。[两栋实际模型与网页范围](data/audit/precise-buildings-v11/two-modern-buildings/README.md)。
+
+本版31件生产运行时文件与已发布v10阴影修复后的冻结字节相同；没有新增运行时修复。
+
+[下载启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)：启动包75,160,933字节，SHA256 `f2ff0d34d3ae27df73e2e678070cd600f77f162f9a785198d8761fd1f9594156`，严格小于100,000,000字节。包含14项本地导航模型和15项远程流式模型，底图、全城资源及远程模型需要联网，资源固定到应用提交`d99e8c9f1665f65871cef730e74a86a48a3483b4`。
+
+本次启动包仅从实际解压目录加载**包玉刚图书馆**完整模型并由root查看1张图；不等于29项导航、另一栋新楼、LOD、目录生命周期、所有区或设备帧率均已在ZIP中验证。[实际解压核对](data/audit/launcher-v11/README.md)。
+
+[来源与限制](data/bund/REALISM_V11.md) · [当前状态](CURRENT_STATE.md)
+
+## v10及更早记录（历史保留）
+
+以下完整保留此前正文，其数量、“当前”和验证范围对应历史版本。
+
 # 上海漫游 · Shanghai Explorer v10
 
 新增**松江方塔**与**普陀真如寺大殿**：方塔按九级四面、八层上部回廊、曲瓦檐、真实门洞和镂空九相轮建模；真如大殿分出三间三进、柱架、歇山瓦顶、鸱吻及门窗，后方塔与前方天王殿仍是独立建筑。
@@ -262,3 +281,4 @@ python tools/unpack_model.py assets/city-detail/macros/14-13719-6695/near/-3_1-s
 外滩参考照片保留原作者和各自的CC0、CC BY或CC BY-SA许可；逐栋署名以[data/bund/manifest.json](data/bund/manifest.json)及[源码照片表](source/bund/README.md#参考照片与许可)为准，补充照片见各源码包的引用文件。外滩18号局部石墙和主窗使用CC BY-SA 4.0照片；v4.4的17号24扇主窗、12号右翼六窗使用Suicasmo的CC0原照片，其余照片用于几何参照；随附照片仍受原许可约束，**代码的MIT许可不覆盖照片、字体和外部数据**。
 
 新增表面贴图及上海沿江HDR采用 Poly Haven CC0-1.0，作者与来源见[表面署名](assets/materials/realism-v4/SOURCES.md)。原创示意车辆与角色代码采用项目 MIT 许可；车辆摆放使用的道路数据仍保留 OSM/ODbL 说明。
+
