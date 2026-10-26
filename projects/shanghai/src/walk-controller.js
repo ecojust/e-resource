@@ -7,6 +7,10 @@ const TO_DEG = 180 / Math.PI;
 const WALK_SPEED = 4.2;
 const RUN_SPEED = 8.5;
 const BODY_RADIUS = 0.38;
+const BODY_HEIGHT = 1.75;
+// The procedural avatar's authored soles are .075 m above its group origin.
+// Unknown streets retain this original datum and camera composition.
+const DEFAULT_GROUND_HEIGHT = .075;
 const MOVEMENT_KEYS = new Set([
   'KeyW', 'KeyA', 'KeyS', 'KeyD',
   'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
@@ -65,6 +69,9 @@ export class WalkController {
     this.zoom = 21.1 - Math.log2(14 / 12);
     this.cameraDistance = 14;
     this.speed = 0;
+    this.groundHeight = DEFAULT_GROUND_HEIGHT;
+    this.groundSurface = null;
+    this._groundRevision = null;
     this.distance = 0;
     this.mode = 'walk';
     this.enabled = false;
@@ -194,7 +201,7 @@ export class WalkController {
     this._previousTime = 0;
     this._lastCamera = null;
     this._applyMapInteraction();
-    if (this.enabled) this.scene.setPlayer(this.position.lng, this.position.lat, this.heading, 0, 0);
+    if (this.enabled) this._sendPlayer(0, 0);
     this._emitUpdate(performance.now(), true);
   }
 
@@ -207,7 +214,7 @@ export class WalkController {
     this._lastCamera = null;
     this._applyMapInteraction();
     this.scene.setAvatarVisible?.(mode === 'walk');
-    if (mode === 'walk' && this.enabled) this._updateCamera(1, true);
+    if (mode === 'walk' && this.enabled) { this._sendPlayer(0, 0); this._updateCamera(1, true); }
     this._emitUpdate(performance.now(), true);
   }
 
@@ -221,7 +228,7 @@ export class WalkController {
     this.heading = this.bearing;
     this._clearInput();
     this._lastCamera = null;
-    this.scene.setPlayer(lng, lat, this.heading, 0, 0);
+    this._sendPlayer(0, 0);
     if (this._walking()) this._updateCamera(1, true);
     this._emitUpdate(performance.now(), true);
     // Building/water tiles may arrive shortly after a district teleport.
@@ -237,11 +244,12 @@ export class WalkController {
             this.position = { lng: result.lng, lat: result.lat };
             this._follow = { ...this.position };
             this._lastCamera = null;
-            this.scene.setPlayer(result.lng, result.lat, this.heading, 0, 0);
+            this._sendPlayer(0, 0);
             if (this._walking()) this._updateCamera(1, true);
             this._emitUpdate(performance.now(), true);
             this.onNotice('已将起点放到附近可行走的道路上。');
           }
+          if (this._localCollision(this.position, this.position)) this._scheduleSpawnCheck(generation, 0);
         })
         .catch(() => {
           if (generation === this._spawnGeneration) this._scheduleSpawnCheck(generation, 0);
@@ -259,16 +267,16 @@ export class WalkController {
         if (attempt < 16) this._scheduleSpawnCheck(generation, attempt + 1);
         return;
       }
-      if (!this._walking() || !this._collision(this.position)) return;
+      if (!this._walking() || !(this._collision(this.position) || this._localCollision(this.position, this.position))) return;
       for (const radius of [3, 6, 10, 16, 25, 40, 65]) {
         for (let i = 0; i < 16; i++) {
           const angle = i * Math.PI / 8;
           const candidate = offsetPosition(this.position, Math.sin(angle) * radius, Math.cos(angle) * radius);
-          if (!this._collision(candidate)) {
+          if (!this._collision(candidate) && !this._localCollision(candidate, candidate)) {
             this.position = candidate;
             this._follow = { ...candidate };
             this._lastCamera = null;
-            this.scene.setPlayer(candidate.lng, candidate.lat, this.heading, 0, 0);
+            this._sendPlayer(0, 0);
             this._updateCamera(1, true);
             this._emitUpdate(performance.now(), true);
             this.onNotice('已将起点放到附近可行走的位置。');
@@ -310,7 +318,44 @@ export class WalkController {
     return blockingType(this.scene.collisionAt?.(position.lng, position.lat));
   }
 
+  _groundAt(position) {
+    const surface = this.scene.groundAt?.(position.lng, position.lat);
+    return surface && Number.isFinite(surface.height) ? surface : null;
+  }
+
+  _syncGround() {
+    const previousRevision = this._groundRevision;
+    this.groundSurface = this._groundAt(this.position);
+    this.groundHeight = this.groundSurface?.height ?? DEFAULT_GROUND_HEIGHT;
+    this._groundRevision = this.scene.streetInteractionRevision?.() ?? 0;
+    // A model can finish loading around an already stationary visitor. Recover
+    // from a newly activated bed/pole instead of trapping the body inside it.
+    if (previousRevision !== null && previousRevision !== this._groundRevision &&
+        this._walking() && this._localCollision(this.position, this.position)) {
+      clearTimeout(this._spawnTimer);
+      this._scheduleSpawnCheck(this._spawnGeneration, 0);
+    }
+  }
+
+  _sendPlayer(speed, dt) {
+    this._syncGround();
+    this.scene.setPlayer(this.position.lng, this.position.lat, this.heading, speed, dt, this.groundHeight);
+  }
+
+  _localCollision(from, to) {
+    return blockingType(this.scene.sweepLocalCollision?.(from, to, {
+      radius: BODY_RADIUS,
+      groundHeight: this._groundAt(from)?.height ?? DEFAULT_GROUND_HEIGHT,
+      height: BODY_HEIGHT,
+      maxStepHeight: .2,
+    }));
+  }
+
   _canOccupy(position, east, north) {
+    // A continuous local sweep catches thin poles/rails even at sprint speed;
+    // the existing online building/water probes still cover the rest of Shanghai.
+    const local = this._localCollision(this.position, position);
+    if (local) return local;
     const center = this._collision(position);
     if (center) return center;
     const length = Math.hypot(east, north);
@@ -332,6 +377,7 @@ export class WalkController {
   }
 
   _move(dt, now) {
+    this._syncGround();
     let right = this.moveVector.x;
     let forward = this.moveVector.y;
     if (this.keys.has('KeyW') || this.keys.has('ArrowUp')) forward += 1;
@@ -368,12 +414,16 @@ export class WalkController {
       }
       if (now - this._lastNotice > 4500 && distanceMetres(before, this.position) < 0.002) {
         this._lastNotice = now;
-        this.onNotice(obstruction === 'water' ? '前方是水面，请沿岸边或桥梁通行。' : '前方有建筑，请沿道路绕行。');
+        this.onNotice(obstruction === 'water' ? '前方是水面，请沿岸边或桥梁通行。'
+          : obstruction === 'street-step' ? '前方高差较大，请沿平缓的通道绕行。'
+          : obstruction === 'street-obstacle' ? '前方有设施或种植区，请沿步道绕行。'
+          : '前方有建筑，请沿道路绕行。');
       }
     }
     const travelled = distanceMetres(before, this.position);
     this.distance += travelled;
     this.speed = dt > 0 ? travelled / dt : 0;
+    this._syncGround();
     if (travelled > 0.0001) {
       const desiredHeading = wrapAngle(Math.atan2(east, north) * TO_DEG);
       this.heading = wrapAngle(this.heading + angleDelta(this.heading, desiredHeading) * (1 - Math.exp(-dt * 14)));
@@ -381,6 +431,8 @@ export class WalkController {
   }
 
   _updateCamera(dt, instant = false) {
+    this._syncGround();
+    const groundOffset = this.groundHeight - DEFAULT_GROUND_HEIGHT;
     const blend = instant ? 1 : 1 - Math.exp(-dt * 14);
     this._follow.lng += (this.position.lng - this._follow.lng) * blend;
     this._follow.lat += (this.position.lat - this._follow.lat) * blend;
@@ -389,6 +441,8 @@ export class WalkController {
         distanceMetres(previous, this._follow) < 0.005 &&
         Math.abs(angleDelta(previous.bearing, this.bearing)) < 0.01 &&
         Math.abs(previous.pitch - this.pitch) < 0.01 &&
+        Math.abs(previous.groundHeight - this.groundHeight) < 0.0001 &&
+        previous.groundRevision === this._groundRevision &&
         Math.abs(previous.distance - this.cameraDistance) < 0.001) return;
     const angle = this.bearing * TO_RAD;
     const targetForDistance = distance => {
@@ -412,7 +466,12 @@ export class WalkController {
         const horizontal = Math.sin(this.pitch * TO_RAD) * effectiveDistance;
         const candidate = offsetPosition(target, -Math.sin(angle) * horizontal, -Math.cos(angle) * horizontal);
         const midpoint = offsetPosition(target, -Math.sin(angle) * horizontal * .6, -Math.cos(angle) * horizontal * .6);
-        if (this._collision(candidate) !== 'building' && this._collision(midpoint) !== 'building') break;
+        const targetHeight = groundOffset + .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);
+        const fixtureHit = blockingType(this.scene.localCameraCollision?.(
+          {...target, alt:targetHeight},
+          {...candidate, alt:targetHeight + Math.cos(this.pitch * TO_RAD) * effectiveDistance},
+          {radius:.12}));
+        if (this._collision(candidate) !== 'building' && this._collision(midpoint) !== 'building' && !fixtureHit) break;
         effectiveDistance = Math.max(3.5, effectiveDistance * .6);
       }
       target = targetForDistance(effectiveDistance);
@@ -421,15 +480,16 @@ export class WalkController {
       // Default composition places the visitor's centre near 70% screen height
       // and gives the street architecture more room. Lower the target for a
       // shortened boom so the same framing does not crop the feet by a wall.
-      const targetHeight = .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);
+      const targetHeight = groundOffset + .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);
       this.scene.setCameraFromTo({
         from: { ...from, alt: targetHeight + Math.cos(this.pitch * TO_RAD) * effectiveDistance },
         to: { ...target, alt: targetHeight },
       });
     } else {
-      this.scene.setCamera({ ...target, bearing: this.bearing, pitch: this.pitch, zoom: this.zoom });
+      this.scene.setCamera({ ...target, bearing: this.bearing, pitch: this.pitch, zoom: this.zoom, altitude: groundOffset });
     }
-    this._lastCamera = { ...this._follow, bearing: this.bearing, pitch: this.pitch, distance: this.cameraDistance };
+    this._lastCamera = { ...this._follow, bearing: this.bearing, pitch: this.pitch, distance: this.cameraDistance,
+      groundHeight:this.groundHeight,groundRevision:this._groundRevision };
   }
 
   _emitUpdate(now, force = false) {
@@ -446,6 +506,8 @@ export class WalkController {
       cameraDistance: this.cameraDistance,
       pitch: this.pitch,
       zoom: this.zoom,
+      groundHeight: this.groundHeight,
+      groundSurfaceId: this.groundSurface?.id ?? null,
     });
   }
 
@@ -455,7 +517,7 @@ export class WalkController {
     this._previousTime = now;
     if (this._walking() && !document.hidden) {
       this._move(dt, now);
-      this.scene.setPlayer(this.position.lng, this.position.lat, this.heading, this.speed, dt);
+      this._sendPlayer(this.speed, dt);
       this._updateCamera(dt);
       this._emitUpdate(now);
     }

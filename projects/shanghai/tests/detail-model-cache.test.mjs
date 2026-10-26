@@ -30,6 +30,15 @@ test('shared/interleaved geometry, instance buffers, morphs and texture referenc
   assert.equal(e.textureBytes,256);
 });
 
+test('one shared instance buffer remains resident once even when referenced by multiple instance objects',()=>{
+  const instanceMatrix={array:new Float32Array(64)},instanceColor={array:new Float32Array(12)};
+  const first={isInstancedMesh:true,instanceMatrix,instanceColor,count:1};
+  const second={isInstancedMesh:true,instanceMatrix,instanceColor,count:0};
+  const e=estimateDetailResources(object([first,second]));
+  assert.equal(e.instanceBytes,instanceMatrix.array.byteLength+instanceColor.array.byteLength);
+  assert.equal(e.totalBytes,e.instanceBytes);
+});
+
 test('compressed mip chains and typed float images have explicit estimates',()=>{
   const compressed={isTexture:true,userData:{},isCompressedTexture:true,mipmaps:[{data:new Uint8Array(64)},{data:new Uint8Array(16)}]};
   const half=texture(8,8,{generateMipmaps:false,source:{data:{width:8,height:8,data:new Uint16Array(256)}}});

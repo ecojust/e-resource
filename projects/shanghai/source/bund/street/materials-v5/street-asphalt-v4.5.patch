@@ -1,0 +1,46 @@
+--- a/src/architectural-material.js
++++ b/src/architectural-material.js
+@@ -79,6 +79,7 @@
+   uniform vec4 archSurface; // source luminance, contrast, normal, roughness mix
+   uniform float archPaving;
+   uniform float archGrass;
++  uniform float archFullAsphalt;
+   uniform vec3 archMeanColor;
+   uniform float archGrainStrength;
+   uniform float archNormalStrength;
+@@ -121,11 +122,15 @@
+   vec2 archWorldPixel = max(abs(dFdx(archPlanePosition)), abs(dFdy(archPlanePosition)));
+   // Stop sampling a cropped source once the mip footprint can include its grout.
+   float archPixelMetres = max(archWorldPixel.x, archWorldPixel.y);
+-  // The full grass scan has no cropped masonry grout to exclude. Keep its
+-  // mip-filtered colour at grazing street-view angles instead of a solid tint.
++  // Complete grass/asphalt scans have no cropped masonry grout to exclude.
++  // Retain mip-filtered asphalt colour into the middle distance; micro normals
++  // still use the original much closer cutoff below. Thresholds are render
++  // sampling estimates, not additional site-scale surface or survey claims.
+   float archCoverage = archGrass > 0.5
+     ? 1.0 - smoothstep(0.5, 2.0, archPixelMetres)
+-    : 1.0 - smoothstep(0.025, 0.14, archPixelMetres);
++    : archFullAsphalt > 0.5
++      ? 1.0 - smoothstep(0.20, 0.90, archPixelMetres)
++      : 1.0 - smoothstep(0.025, 0.14, archPixelMetres);
+   float archNormalCoverage = 1.0 - smoothstep(0.008, 0.055, max(archWorldPixel.x, archWorldPixel.y));
+   if (archCoverage > 0.001) {
+     vec3 archSample = texture2D(archColorMap, archUV).rgb;
+@@ -253,6 +258,7 @@
+         archSurface: { value: new THREE.Vector4(surface.luminance, profile.contrast, profile.normal, profile.roughness) },
+         archPaving: { value: profile.paving },
+         archGrass: { value: profileName === 'grass' ? 1 : 0 },
++        archFullAsphalt: { value: profileName === 'asphalt' ? 1 : 0 },
+         archMeanColor: { value: new THREE.Vector3(...(surface.meanColor || [1, 1, 1])) },
+         ...controls,
+       };
+@@ -268,7 +274,7 @@
+           .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>\n${FRAGMENT_ROUGHNESS}`)
+           .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>\n${FRAGMENT_NORMAL}`);
+       };
+-      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v5-planting1`;
++      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v5-street-asphalt2`;
+       material.userData.architecturalSurface = profileName;
+       material.needsUpdate = true;
+       mapped.add(material);

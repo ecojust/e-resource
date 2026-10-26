@@ -8,6 +8,7 @@ import hashlib
 import math
 import argparse
 import re
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 LIMIT = 100_000_000  # Deliberately below GitHub's 100 MiB limit.
@@ -444,6 +445,14 @@ else:
                 or any(feature.get('properties', {}).get('source_mvt_id') not in road_ids
                        for feature in road_geometry['features'])):
             errors.append('Road remainder metadata/geometry is inconsistent')
+detail_manifest = ROOT/'assets/city-detail/manifest.json'
+if detail_manifest.is_file():
+    command=[sys.executable,str(ROOT/'tools/check_city_detail.py'),'--project',str(ROOT),
+             '--root',str(detail_manifest.parent),'--output',str(ROOT/'tests/city-detail-release.json')]
+    if args.allow_partial:command.append('--allow-partial')
+    detail_check=subprocess.run(command,capture_output=True,text=True)
+    if detail_check.returncode:
+        errors.append('Physical city detail validation failed; see tests/city-detail-release.json: '+detail_check.stderr[-1000:])
 if errors:
     print('\n'.join(errors), file=sys.stderr)
     raise SystemExit(1)

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import {SpatialTileIndex, FeatureStateSuppressor, LocalModelStreamer} from '../src/local-model-streamer.js';
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn,timeout=4000){const end=performance.now()+timeout;while(!fn()){if(performance.now()>end)throw Error('Timed out');await pause(5);}}
@@ -53,3 +54,44 @@ assert.deepEqual(streamer.getRecords().map(r=>r.id),[tiles[2].id]);
 streamer.update({lng:tiles[2].origin_longitude,lat:tiles[2].origin_latitude,zoom:18,mode:'walk'},true);await until(()=>streamer.getState().visible>0&&!streamer.getState().pendingStates);assert.ok(states.size>0);
 const final=streamer.getState();streamer.destroy();assert.equal(invalidRemovals,0);assert.equal(scene.objects.size,0);assert.equal(states.size,0);
 console.log('PASS',JSON.stringify({spatialTiles:1000,peakFetch,peakConcurrent:final.peakConcurrent,peakCache:final.peakCache,evicted:final.evicted,cancelled:final.cancelled,discarded:final.discarded,disposed}));
+
+// Advance only the real production network timer; parser completion is an
+// explicit promise, so these fixtures do not shorten the 35000ms threshold.
+const turn=()=>new Promise(resolve=>setImmediate(resolve));
+async function settleUntil(predicate){for(let i=0;i<1000&&!predicate();i++)await turn();assert(predicate(),'Deadline fixture did not settle');}
+function pendingValue(){let resolve;const promise=new Promise(r=>{resolve=r;});return {promise,resolve};}
+async function deadlineFar(t,{read,parse,sidecar=false}={}){
+ const calls=[],objects=new Set(),removed=[],errors=[],owners=new Set();
+ const model=fakeObject(),parser=parse||(()=>Promise.resolve(model));let parseCalls=0;
+ const stream=new LocalModelStreamer({scene:{add:o=>objects.add(o)},
+  loader:{async parseAsync(){parseCalls++;return {scene:await parser()};}},
+  suppression:{setOwner:async owner=>{owners.add(owner);},removeOwner:async owner=>{owners.delete(owner);},getState:()=>({pendingStates:0}),clear:async()=>{},destroy:()=>owners.clear()},
+  fetchFunction:async(url,{signal})=>{calls.push({url,signal});return {ok:true,arrayBuffer:()=>read?read(url,signal):Promise.resolve(new Uint8Array([1,2,3]).buffer)};},
+  prepareObject(){},disposeObject:o=>{removed.push(o);objects.delete(o);},onError:e=>errors.push(e),maxVisible:1,maxCache:1,concurrency:1});
+ t.after(()=>stream.destroy());
+ await stream.setManifest({tiles:[{id:'deadline',file:'model.glb',origin_longitude:121,origin_latitude:31,geographic_bbox:[121,31,121.001,31.001],triangles:1,size_bytes:100,
+  ...(sidecar?{feature_ids_file:'ids.json'}:{featureIds:['building-a']})}]},{baseURL:'https://example.test/'});
+ return {stream,calls,objects,removed,errors,owners,model,get parseCalls(){return parseCalls;},start(){stream.update({lng:121,lat:31,zoom:18,mode:'walk'},true);}};
+}
+
+test('far CPU parse beyond the network deadline completes once without discard/reload',async t=>{
+ t.mock.timers.enable({apis:['setTimeout']});const delayed=pendingValue(),h=await deadlineFar(t,{parse:()=>delayed.promise});h.start();await settleUntil(()=>h.parseCalls===1);
+ t.mock.timers.tick(35001);assert.equal(h.calls[0].signal.aborted,false);
+ delayed.resolve(h.model);await settleUntil(()=>h.stream.getState().loading===0);h.start();await turn();
+ assert.equal(h.stream.getState().visible,1);assert.equal(h.stream.stats.requests,1);assert.equal(h.stream.stats.discarded,0);assert.equal(h.stream.stats.failed,0);assert.equal(h.removed.length,0);assert.equal(h.owners.size,1);
+});
+
+for(const pendingPart of ['model','ids'])test(`far pending ${pendingPart} body still reaches the unchanged network timeout`,async t=>{
+ t.mock.timers.enable({apis:['setTimeout']});let blockedSignal;
+ const h=await deadlineFar(t,{sidecar:pendingPart==='ids',read:(url,signal)=>{
+  if(url.endsWith(pendingPart==='ids'?'ids.json':'model.glb')){blockedSignal=signal;return new Promise((_resolve,reject)=>signal.addEventListener('abort',()=>reject(new DOMException('Aborted','AbortError')),{once:true}));}
+  return Promise.resolve(new Uint8Array([1,2,3]).buffer);
+ }});h.start();await settleUntil(()=>blockedSignal);t.mock.timers.tick(34999);assert.equal(blockedSignal.aborted,false);t.mock.timers.tick(1);await settleUntil(()=>h.stream.getState().loading===0);
+ assert.equal(blockedSignal.reason,'timeout');assert.equal(h.parseCalls,0);assert.equal(h.stream.stats.failed,1);assert.equal(h.stream.stats.requests,1);assert.equal(h.stream.getState().visible,0);assert.equal(h.owners.size,0);assert.equal(h.errors.length,1);assert(h.stream.records.get('deadline').retryAt>performance.now());
+});
+
+test('far view change still disposes a late parse after its network timer was cleared',async t=>{
+ t.mock.timers.enable({apis:['setTimeout']});const delayed=pendingValue(),h=await deadlineFar(t,{parse:()=>delayed.promise});h.start();await settleUntil(()=>h.parseCalls===1);t.mock.timers.tick(35001);
+ h.stream.update({lng:123,lat:31,zoom:18,mode:'walk'},true);assert.equal(h.calls[0].signal.reason,'view-changed');delayed.resolve(h.model);await settleUntil(()=>h.stream.getState().loading===0);
+ assert.deepEqual(h.removed,[h.model]);assert.equal(h.stream.stats.discarded,1);assert.equal(h.stream.getState().loaded,0);assert.equal(h.objects.size,0);assert.equal(h.owners.size,0);
+});

@@ -268,7 +268,7 @@ export function createRealisticLighting({
   }
 
   /** Call after the group has its final geographic position/scale. */
-  function configureModel(group, {detailed = false, ground = false, receiver = false} = {}) {
+  function configureModel(group, {detailed = false, ground = false, receiver = false, casterFilter = null} = {}) {
     if (!group || disposed) return;
     if (records.has(group)) releaseModel(group);
     group.updateWorldMatrix(true, true);
@@ -280,7 +280,7 @@ export function createRealisticLighting({
       const materials = materialsOf(mesh);
       const allGlazing = materials.length > 0 && materials.every(isArchitecturalGlazing);
       meshes.push({mesh, previousCast: mesh.castShadow, previousReceive: mesh.receiveShadow,
-        eligible: candidate && !allGlazing});
+        eligible: candidate && !allGlazing && (!casterFilter || casterFilter(mesh))});
       mesh.castShadow = false;
       mesh.receiveShadow = Boolean(detailed || ground || receiver);
       if (detailed) for (const material of materials) {

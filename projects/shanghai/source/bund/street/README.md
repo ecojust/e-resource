@@ -1,4 +1,22 @@
-# Bund streetscape v4
+# Bund streetscape · v5
+
+## v5 Ground, greenery and photo-guided fittings
+
+The current street build adds **3,357.13 m²** of bounded west-side frontage paving across the ten verified Bund facades. `frontage_paving.py` interpolates only between selected source facade edges and the existing road edge, subtracting previous paving, carriageway, curbs, buildings, water, source holes and the two planting beds. This repairs exposed basemap strips beside the old four-metre footway; it is an estimated public-sidewalk extent, not a newly surveyed polygon. Source evidence and per-frontage checks are in `bund-streets-frontage-check.json` and `.geojson`.
+
+`street_furniture.py` replaces the old fittings with photo-guided tapered lanterns, curved black road lamps, eight thin railing rods, inclined supports and capped granite piers. The 2011 Bohao Zhao CC BY 3.0 and 2025 Suicasmo CC0 originals support form. Their shape dimensions and retained spacing remain estimates: 24 promenade lamps, eight road lamps and 95 piers are the modeled inventory, not a measured present-day inventory. `furniture.audit()` records assumptions; `furniture.interaction()` records the exact emitted boxes, rod segments, lathe sections and lamp heads used for collision.
+
+The two v4.3 beds retain their exact frozen quadrilaterals. The greenery module adds seven trees, supports and short grass from the located Gary Lee Todd 2010 CC0 photograph: four trees in the southern bed and three in the northern bed. Some roots are obscured and inferred from visible trunks. Source controls retain the uncertainty; no tree species or 2026 survey is claimed. Code/data and downloadable geometry: [greenery source](greenery/README.md). The live instances belong to the same `bund-streets` owner and are not loaded again from the downloadable GLB.
+
+`ground_sidecar.py` exports actual walkable slab polygons with world-Y heights and preserved holes. Road top is 0.020 m, west sidewalk/new frontage 0.075 m, curb 0.140 m (yellow paint to 0.143 m), and current promenade 0.035 m. These are model construction levels, not Shanghai elevation measurements. The two bed borders reach 0.215 m; exact source inner openings remain walk-only exclusions. Final interaction data is `data/bund/street-interaction-v5.json`, bound to the final raw/web model hashes. Furniture and tree obstacles come from their corresponding emitted geometry. Runtime activates this data only with its loaded, visible street owner; unknown ground continues the general map fallback.
+
+The 2008 Shanghai Planning Bureau text describes a widened western sidewalk and multiple riverside levels connected by ramps. The located photos confirm such structures, but this version has not reconstructed the complete floodwall platform section. Underground OSM steps way519819881 (`layer=-1`, `tunnel=yes`) is not used as a surface stair. The newly frozen `street-v5-inputs` extract is kept distinct from previously published street inputs.
+
+The asphalt shader now retains full-surface colour and roughness variation farther into the middle distance, while fine normals still fade nearby. It reuses the existing Poly Haven CC0 scans; no source photo is a paving or foliage texture. `BundFrontagePaving` receives the same restrained stone surface treatment as the adjoining sidewalk.
+
+Rebuild with the existing `build_street.py` entry point, then compress using `gltfpack -cc -noq -km -ke` and restore `asset.copyright`. Regenerate interaction data after the final combined mesh and hashes are available. Current combined street record: 138,478 triangles; raw 7,447,668 B; web 2,450,796 B. Installed files passed the project asset check. Final browser/interaction status: **通过：7棵树、1个街景归属、12块地表和3,489个碰撞体；铺装局部Y=0.035m、实际行走、离开与返回均正确**. Browser evidence is in [the final report](../../../data/audit/city-detail-v5/release/browser.json). Geometry/source validation is in `data/bund/validation/street-v5.json`; source photographs retain their original bytes and licences.
+
+The sections below are historical build records; their unmodeled-recess, no-trees and flat-ground notes describe those versions and are superseded where the v5 section explicitly says so.
 
 This generator models the actual OSM road network around the detailed Bund buildings, together with the already verified four-tile west shoreline. Coordinates use metres: X east, Y up, Z south; WGS84 anchor 121.4862,31.2385.
 
@@ -31,7 +49,7 @@ Outputs: `data/bund/traffic-v4.json` and `data/bund/validation/traffic-v4.json`;
 Run `node source/bund/street/validate_basemap_replacement.mjs` for the small mock test of enable/disable, duplicate calls, style preservation, rollback on load/install/filter failure, and disposal. Both scripts use the project-relative default root and accept an explicit root argument. This is a cartographic rendering correction, not additional physical road modeling.
 
 
-## v4.2 Bund18 connector and paving finish
+## Historical v4.2 Bund18 connector and paving finish
 
 `connector_paving.py` adds 188.917m² between the existing road/shoulder/curb edge and mapped pedestrian exterior, bounded by crossing ways 745201529 and 226657312. This is **estimated construction extent**, not a measured new footprint. `bund18-connector-source.json` freezes three relevant OSM elements and records the upstream query/extract provenance. Both unidentified recesses in exterior way 160033684 are excluded, along with source inner holes, known entrances/steps, existing pavement, roads, water and the ten candidate footprints. The two recesses remain unmodeled; they are not asserted to be staircases.
 
@@ -39,6 +57,6 @@ The slab color is neutral grey; the browser uses estimated 1.20×0.60m slabs/4mm
 
 Run `python source/bund/street/build_street.py` from the project to rebuild; the connector helper and frozen source must accompany it. `bund-streets-connector-check.json` and `.geojson` record bounds and exclusions. The installed-layout rebuild and original-mesh prefix checks are in `data/bund/validation/*v4.2*`. The viewer's actual GLTFLoader/Meshopt comparison verifies decoded vertex positions exactly; exporter processing yields a maximum normal-direction difference of 0.0104°, recorded separately rather than called bit-identical.
 
-## v4.3 Photo-classified planting strips
+## Historical v4.3 Photo-classified planting strips
 
 The two previously unidentified recesses are now interpreted as shallow planting beds from the located 2010 CC0 aerial photograph by Gary Lee Todd, Ph.D.; `planting-evidence.json` records the source, unchanged image hash, building/crossing landmarks and identification limits. `planting_beds.py` uses the exact two frozen source quadrilaterals. Stone edging is estimated at 0.18m above the original pavement; soil/grass surfaces are 0.08/0.09m on the existing datum. No trees or complete raised-promenade topography are added. See `bund-streets-planting-check.json` for the tested overlaps, including small nonzero overlap with preserved quantized MVT paving. This supersedes the earlier unknown-recess classification, while the v4.2 connector geometry stays unchanged.

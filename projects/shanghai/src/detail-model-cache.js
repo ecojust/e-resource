@@ -1,38 +1,23 @@
 /** Hidden detailed-model cache only; visible objects and city tiles are untouched. */
+import {estimateModelBufferResources} from './model-resources.js';
+
 export const MIB = 1024 * 1024;
 
 export function detailIsNearby(distance, maxDistance, wasVisible = false, fringe = 300) {
   return Number.isFinite(distance) && distance < maxDistance + (wasVisible ? fringe : 0);
 }
 
-function addAttribute(arrays, attribute) {
-  const array = attribute?.isInterleavedBufferAttribute ? attribute.data?.array : attribute?.array;
-  if (array) arrays.add(array);
-}
-
 /** Conservative owned GPU estimate, not a measurement of total GPU/CPU memory. */
 export function estimateDetailResources(object) {
-  const geometryArrays = new Set(), instanceArrays = new Set(), textures = new Set();
+  const buffers = estimateModelBufferResources(object), textures = new Set();
   object?.traverse(child => {
-    if (child.geometry) {
-      for (const attribute of Object.values(child.geometry.attributes || {})) addAttribute(geometryArrays, attribute);
-      addAttribute(geometryArrays, child.geometry.index);
-      for (const attributes of Object.values(child.geometry.morphAttributes || {})) {
-        for (const attribute of attributes) addAttribute(geometryArrays, attribute);
-      }
-    }
-    if (child.isInstancedMesh) {
-      addAttribute(instanceArrays, child.instanceMatrix);
-      addAttribute(instanceArrays, child.instanceColor);
-    }
     for (const material of child.material ? (Array.isArray(child.material) ? child.material : [child.material]) : []) {
       for (const value of Object.values(material)) {
-        if (value?.isTexture && !value.userData?.shared) textures.add(value);
+        if (value?.isTexture && !value.userData?.shared && !buffers.dataTextures.has(value)) textures.add(value);
       }
     }
   });
-  const geometryBytes = [...geometryArrays].reduce((sum, a) => sum + a.byteLength, 0);
-  const instanceBytes = [...instanceArrays].reduce((sum, a) => sum + a.byteLength, 0);
+  const {geometryBytes, instanceBytes, skeletonBytes} = buffers;
   let textureBytes = 0, unknownTextures = 0;
   for (const texture of textures) {
     // Compressed uploads already provide their complete authored mip chain.
@@ -53,8 +38,8 @@ export function estimateDetailResources(object) {
     const mipFactor = texture.generateMipmaps !== false || explicitMips ? 4 / 3 : 1;
     textureBytes += Math.ceil(width * height * 4 * bytesPerChannel * mipFactor);
   }
-  return {geometryBytes, instanceBytes, textureBytes, ownedTextures: textures.size,
-    unknownTextures, totalBytes: geometryBytes + instanceBytes + textureBytes};
+  return {geometryBytes, instanceBytes, skeletonBytes, textureBytes, ownedTextures: textures.size,
+    unknownTextures, totalBytes: buffers.totalBytes + textureBytes};
 }
 
 /** Pure choice: unknown-size textures cannot safely remain in a hidden cache. */

@@ -5,8 +5,8 @@
     31.2385
   ],
   "units": "metres, X east / Y up / Z south",
-  "triangles": 73382,
-  "bytes": 3916896,
+  "triangles": 138478,
+  "bytes": 7447668,
   "mapped_sidewalk_way": 178412507,
   "mapped_inner_promenade_way": 909084827,
   "mapped_crossing_ways": [
@@ -26,7 +26,7 @@
   "dimensions_are_estimates": {
     "sidewalk_width_m": 4.0,
     "curb_height_m": 0.14,
-    "handrail_height_m": 1.08,
+    "handrail_height_m": 1.16,
     "lamp_spacing_m": 32,
     "crossing_paint_width_m": 3.5
   },
@@ -64,11 +64,348 @@
     "rail_setback_m": 0.65,
     "centreline_sample_spacing_max_m": 0.25,
     "centreline_samples": 3009,
-    "railing_and_post_vertices_tested": 15657,
+    "railing_and_post_vertices_tested": 27992,
     "max_centreline_distance_to_real_shore_m": 0.6500000000000296,
-    "max_railing_vertex_distance_to_real_shore_m": 0.9463097043358573,
+    "max_railing_vertex_distance_to_real_shore_m": 0.9671619305981803,
     "remaining_tile_edge_segments_rejected_m": 0.0,
     "rail_in_water": false
+  },
+  "photo_guided_furniture": {
+    "version": "5.0-photo-guided-fittings",
+    "counts": {
+      "promenade_lamps": 24,
+      "road_lamps": 8,
+      "granite_piers": 95,
+      "inclined_supports": 752,
+      "thin_horizontal_rods_per_bay": 8,
+      "trash_bins": 0
+    },
+    "sources": [
+      "references/promenade-day.jpg (Bohao Zhao, 2011-08-01, CC BY 3.0)",
+      "references/roadlamp-sassoon-2025-original.jpg (Suicasmo, 2025-05-01, CC0-1.0)"
+    ],
+    "observed_morphology": [
+      "tapered four-rib promenade lantern and shallow dome",
+      "slanted railing supports, dense horizontal round rods, thick rounded top rail",
+      "dark road pole with rising curved branch and thin rounded lamp head"
+    ],
+    "estimated_dimensions": {
+      "handrail_top_m": 1.16,
+      "railing_lean_m": 0.28,
+      "thin_horizontal_rods": 8,
+      "thin_rod_radius_m": 0.013,
+      "top_radius_m": 0.054,
+      "pier_spacing_m": 8,
+      "inclined_support_spacing_m": 0.95,
+      "promenade_lamp_height_m": 4.53,
+      "road_lamp_maximum_height_m": 5.8,
+      "promenade_lamp_nominal_spacing_m": 32
+    },
+    "placements": [
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          -77.79669865733764,
+          -285.0204824464503
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          -79.50041964238238,
+          -241.76063322638478
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          -64.10982281304835,
+          -133.83443068625252
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          -68.09786243650358,
+          -159.8056374201414
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          -52.20281190796663,
+          -54.00648959030778
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          46.67011317232852,
+          252.78720904410278
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          34.144432636123334,
+          231.55906537068597
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "road_lamp",
+        "local_xz": [
+          -34.35657254301761,
+          89.74016291285542
+        ],
+        "height_m": 5.8,
+        "radius_m": 0.22627416997969524,
+        "arm_direction": "local east; retained reconstruction convention"
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          16.89678386231526,
+          -371.21409357428183
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          12.556643125264756,
+          -339.4770257145241
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          9.582900674016123,
+          -307.61549945111915
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          7.923009261519626,
+          -275.62718568973395
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          6.307074148266192,
+          -243.6814162142438
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          5.582279397126658,
+          -211.78800868945862
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          6.220504437416086,
+          -179.75865244234458
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          7.976098159939157,
+          -147.80684669241174
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          9.731691882462224,
+          -115.855040942479
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          12.93874990623802,
+          -83.98140104525318
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          16.832188186479915,
+          -52.21914139078358
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          21.38385151957094,
+          -20.490096003340646
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          28.610182579557684,
+          10.657485054929722
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          36.15802417589563,
+          41.75459243225006
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          46.37678070603783,
+          72.13612178691817
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          57.097090070983626,
+          102.2869918758535
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          68.76162032966455,
+          132.1173477937963
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          81.17944433152144,
+          161.60967979821584
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          93.59726833337832,
+          191.10201180263533
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          107.21000880804908,
+          220.09615725354288
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          120.91948583427218,
+          249.01069061770875
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          136.34622873737624,
+          277.09550702630037
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          152.0133313166636,
+          304.9978706675779
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      },
+      {
+        "kind": "promenade_lamp",
+        "local_xz": [
+          167.68043389595093,
+          332.90023430885543
+        ],
+        "height_m": 4.53,
+        "radius_m": 0.235
+      }
+    ],
+    "position_basis": "Existing OSM-derived shoreline and existing crossing-anchored estimated lamp placement retained. No OSM traffic-signal node is used as a physical pole coordinate.",
+    "not_claimed": "Not a measured count, exact manufacturer product, surveyed height, or date-consistent 2026 inventory. 2011/2025 observations support shapes only.",
+    "not_added": [
+      "Unlocated waste bins",
+      "Temporary crowd-control barriers",
+      "Road signal poles from centerline traffic_signal nodes"
+    ]
   },
   "road_validation": {
     "source_way_count": 25,
@@ -1055,7 +1392,508 @@
       "observed_overlap_m2": 0.0
     }
   },
-  "version": 4.3,
+  "version": 5.0,
+  "frontage_paving": {
+    "version": "bund-frontage-v4.5",
+    "passed": true,
+    "source_candidates": "../bund-candidates.json",
+    "source_candidates_sha256": "be281a209d894eaa3c4a6ef9918503c86db836dfc6136f7d5d6e2e48d2729777",
+    "existing_street_baseline_raw_sha256": "ec298f3be5f8a819cc6aaf1350745d83e3be1a523d42cb794bda72d2931ed931",
+    "official_reference": {
+      "url": "https://ghzyj.sh.gov.cn/ghgs/20191231/0032-174998.html",
+      "title": "外滩滨水区城市设计",
+      "date": "2008-05-27",
+      "observed_text": "适当加宽西侧人行道，增加沿历史建筑的公共活动和观景空间。",
+      "role": "planned function only; extents checked against located 2010 aerial"
+    },
+    "photo_reference": "references/bund17-18-19-aerial-2010-original.jpg (Gary Lee Todd, CC0-1.0), unchanged original and metadata in planting-evidence.json",
+    "recent_photos": "street-reference-evidence.json (2025 CC0 frontage images)",
+    "edge_selection": {
+      "bund02": [
+        0
+      ],
+      "bund03": [
+        0
+      ],
+      "bund12": [
+        0
+      ],
+      "bund13": [
+        0,
+        1,
+        2
+      ],
+      "bund15": [
+        0
+      ],
+      "bund17": [
+        0
+      ],
+      "bund18": [
+        0
+      ],
+      "bund19": [
+        0
+      ],
+      "bund20": [
+        0,
+        1
+      ],
+      "bund23": [
+        0
+      ]
+    },
+    "new_surface_area_m2": 3357.126864257208,
+    "parts": [
+      {
+        "id": "bund02-frontage-0",
+        "building": "bund02",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.486879,
+            31.2356937
+          ],
+          [
+            121.4867689,
+            31.236011099999992
+          ]
+        ],
+        "envelope_area_m2": 518.8042688014326,
+        "new_paving_area_m2": 314.9364889839651,
+        "maximum_distance_to_facade_m": 16.02406421646134,
+        "outside_envelope_m2": 7.119901982155794e-15,
+        "overlap_m2": {
+          "existing_paving": 2.5317421105960494e-14,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund03-frontage-0",
+        "building": "bund03",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.48672310000002,
+            31.23604389999999
+          ],
+          [
+            121.48659450000001,
+            31.236263600000004
+          ]
+        ],
+        "envelope_area_m2": 452.31132278448433,
+        "new_paving_area_m2": 264.17445103276674,
+        "maximum_distance_to_facade_m": 15.3923575038186,
+        "outside_envelope_m2": 1.705111356302185e-14,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 8.196480477615755e-15,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund12-frontage-0",
+        "building": "bund12",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.48573250000001,
+            31.237610500000002
+          ],
+          [
+            121.48562390000001,
+            31.238353699999998
+          ]
+        ],
+        "envelope_area_m2": 1277.0462930381893,
+        "new_paving_area_m2": 814.1013783767108,
+        "maximum_distance_to_facade_m": 18.441116362888295,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund13-frontage-0",
+        "building": "bund13",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.48557940000002,
+            31.238464299999993
+          ],
+          [
+            121.4855703,
+            31.2385319
+          ]
+        ],
+        "envelope_area_m2": 130.1558069042443,
+        "new_paving_area_m2": 88.64195209324504,
+        "maximum_distance_to_facade_m": 17.20889331719794,
+        "outside_envelope_m2": 4.196655777619951e-15,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 1.9230703225242498e-16,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund13-frontage-1",
+        "building": "bund13",
+        "facade_edge_index": 1,
+        "facade_endpoints_wgs84": [
+          [
+            121.4855703,
+            31.2385319
+          ],
+          [
+            121.48554170000001,
+            31.238744899999997
+          ]
+        ],
+        "envelope_area_m2": 412.6203771157786,
+        "new_paving_area_m2": 281.8138801114272,
+        "maximum_distance_to_facade_m": 17.367959069190036,
+        "outside_envelope_m2": 9.990160209881391e-16,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 1.3828961660921254e-20,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund13-frontage-2",
+        "building": "bund13",
+        "facade_edge_index": 2,
+        "facade_endpoints_wgs84": [
+          [
+            121.48554170000001,
+            31.238744899999997
+          ],
+          [
+            121.48553570000001,
+            31.2387898
+          ]
+        ],
+        "envelope_area_m2": 6.132958983739869,
+        "new_paving_area_m2": 4.087767153247373,
+        "maximum_distance_to_facade_m": 9.531876103628928,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund15-frontage-0",
+        "building": "bund15",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.4854743,
+            31.239462799999984
+          ],
+          [
+            121.4854132,
+            31.239769999999996
+          ]
+        ],
+        "envelope_area_m2": 587.9044471628703,
+        "new_paving_area_m2": 379.3433710012317,
+        "maximum_distance_to_facade_m": 17.302145786937864,
+        "outside_envelope_m2": 3.7950118350705744e-15,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund17-frontage-0",
+        "building": "bund17",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.48538690000001,
+            31.2400789
+          ],
+          [
+            121.4853516,
+            31.240232399999996
+          ]
+        ],
+        "envelope_area_m2": 279.05661572713205,
+        "new_paving_area_m2": 183.83582771640675,
+        "maximum_distance_to_facade_m": 16.635374537195265,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund18-frontage-0",
+        "building": "bund18",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.485328,
+            31.240278299999996
+          ],
+          [
+            121.485303,
+            31.240546699999985
+          ]
+        ],
+        "envelope_area_m2": 526.8736626052071,
+        "new_paving_area_m2": 364.0940422644964,
+        "maximum_distance_to_facade_m": 18.267981935221925,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund19-frontage-0",
+        "building": "bund19",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.485296,
+            31.2406294
+          ],
+          [
+            121.48529290000002,
+            31.2407377
+          ]
+        ],
+        "envelope_area_m2": 196.37404590991446,
+        "new_paving_area_m2": 138.62365299554193,
+        "maximum_distance_to_facade_m": 17.206879932541142,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund20-frontage-0",
+        "building": "bund20",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.4853187,
+            31.241035699999998
+          ],
+          [
+            121.4853149,
+            31.241213799999993
+          ]
+        ],
+        "envelope_area_m2": 382.0497862053054,
+        "new_paving_area_m2": 234.80300163046567,
+        "maximum_distance_to_facade_m": 17.97065123291836,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 1.8640319631455446e-14,
+          "road_surface": 0.0,
+          "road_curb": 1.1309109937248425e-26,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund20-frontage-1",
+        "building": "bund20",
+        "facade_edge_index": 1,
+        "facade_endpoints_wgs84": [
+          [
+            121.48529290000002,
+            31.241001399999984
+          ],
+          [
+            121.4853187,
+            31.241035699999998
+          ]
+        ],
+        "envelope_area_m2": 58.673069925023704,
+        "new_paving_area_m2": 39.55494995344042,
+        "maximum_distance_to_facade_m": 14.420747166465258,
+        "outside_envelope_m2": 0.0,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      },
+      {
+        "id": "bund23-frontage-0",
+        "building": "bund23",
+        "facade_edge_index": 0,
+        "facade_endpoints_wgs84": [
+          [
+            121.4853537,
+            31.241361199999993
+          ],
+          [
+            121.48538930000001,
+            31.2416118
+          ]
+        ],
+        "envelope_area_m2": 416.79166285091276,
+        "new_paving_area_m2": 249.11610094426277,
+        "maximum_distance_to_facade_m": 14.894891509994054,
+        "outside_envelope_m2": 2.853759557926451e-15,
+        "overlap_m2": {
+          "existing_paving": 0.0,
+          "road_surface": 0.0,
+          "road_curb": 0.0,
+          "candidate_footprints": 0.0,
+          "water": 0.0,
+          "source_pedestrian_holes": 0.0,
+          "retained_planting_beds": 0.0
+        },
+        "top_height_world_m": 0.075,
+        "base_height_world_m": 0.003,
+        "classification": "source-bounded estimated public sidewalk infill",
+        "surface_observation": "Continuous grey paving between the street facade and curb visible in 2010 located aerial; 2025 frontage photos corroborate stone paving and curb.",
+        "height_basis": "Join existing modeled west sidewalk at 0.075m; estimated construction datum, not surveyed elevation."
+      }
+    ],
+    "two_v4_3_planting_beds_unchanged": true,
+    "original_material_geometry_unchanged": true,
+    "inter_building_gaps_filled": false,
+    "unknown_holes_filled": false,
+    "platform_elevation_claimed": false,
+    "construction_dimensions_estimated": true,
+    "limits": [
+      "Envelopes interpolate between verified facade edges and existing estimated carriageway edges, not surveyed curb polygons.",
+      "Widths depend on existing OSM centerline and lane-based road reconstruction.",
+      "No newly inferred building forecourt, internal courtyard, raised platform or underground stair is filled.",
+      "The 2008 design is corroborating design intent, not an as-built survey."
+    ],
+    "render_precision": {
+      "simplification_tolerance_m": 0.0001,
+      "hausdorff_distance_m": 9.621115767115298e-05,
+      "symmetric_difference_m2": 0.0018094217075211704,
+      "reason": "Remove sub-0.1mm near-collinear vertices before float32 triangulation; prevents microscopic triangle inversion. Original street geometry is untouched."
+    }
+  },
   "photo_classified_planting": {
     "version": "bund17-18-photo-classified-planting-v1",
     "passed": true,
@@ -1217,12 +2055,22 @@
       6694
     ]
   ],
-  "sha256": "ec298f3be5f8a819cc6aaf1350745d83e3be1a523d42cb794bda72d2931ed931",
+  "sha256": "2556aad6e1a3ce4c216ad339a6bb62ecee27bd19f520152c0a4e2726b1ba1804",
   "geometry_validation": {
     "finite_vertices": true,
     "indices_in_range": true,
     "zero_area_triangles_removed": 30,
     "exported_zero_area_triangles": 0,
     "single_file_under_100MB": true
+  },
+  "web_sha256": "6f582912c4f473a9fc3bdfd16ff678540c5338b06fdfcfed11cc7e41b5ee587a",
+  "web_bytes": 2450796,
+  "interaction_file": "data/bund/street-interaction-v5.json",
+  "interaction_sha256": "c0c59f297c4b5ebea7fe8c3d4697e923407a29465555983c4a94764e5c883b74",
+  "greenery": {
+    "trees": 7,
+    "data": "data/bund/greenery-v4.5.json",
+    "reference_date": "2010-09-18",
+    "geometry_is_inferred": true
   }
 }

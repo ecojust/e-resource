@@ -35,6 +35,9 @@ const PROFILES = {
   curb: { surface: 'granite', contrast: 0.28, normal: 0.14, roughness: 0.40, paving: 0 },
   asphalt: { surface: 'asphalt', contrast: 0.65, normal: 0.25, roughness: 0.60, paving: 0 },
   grass: { surface: 'grass', contrast: 0.58, normal: 0.16, roughness: 0.65, paving: 0 },
+  // A restrained grain sample for inferred near facades; it does not claim the
+  // observed finish or weathering of an individual ordinary building.
+  cityPlaster: { surface: 'stone', contrast: 0.12, normal: 0.035, roughness: 0.20, paving: 0 },
 };
 
 function profileFor(material, kind) {
@@ -42,11 +45,12 @@ function profileFor(material, kind) {
   // Applying an unrelated quarry sample would erase the photographic detail.
   if (material.map) return null;
   const name = material.name || '';
-  if (/^BundStonePaving$/i.test(name)) return 'paving';
+  if (/^Bund(?:Stone|Frontage)Paving$/i.test(name)) return 'paving';
   if (/^BundGraniteCurb$/i.test(name)) return 'curb';
   if (/^BundRoadSurface$/i.test(name)) return 'asphalt';
   if (/^BundPlantingGrass$/i.test(name)) return 'grass';
   if (/^BundPlantingGranite$/i.test(name)) return 'curb';
+  if (kind === 'city-detail' && /inferred.*(plaster|reveal|masonry|wall|base)/i.test(name)) return 'cityPlaster';
   // Large city proxies and distant landmarks keep their inexpensive materials.
   if (!/^(bund|street|streets|architecture)$/i.test(kind)) return null;
   if (/glass|glaz|metal|bronze|brass|iron|zinc|copper|gold|letter|flag|joint|shadow|interior|curtain|frame|paint|gravel/i.test(name)) return null;
@@ -79,6 +83,7 @@ const FRAGMENT_COMMON = `
   uniform vec4 archSurface; // source luminance, contrast, normal, roughness mix
   uniform float archPaving;
   uniform float archGrass;
+  uniform float archFullAsphalt;
   uniform vec3 archMeanColor;
   uniform float archGrainStrength;
   uniform float archNormalStrength;
@@ -121,11 +126,15 @@ const FRAGMENT_COLOR = `
   vec2 archWorldPixel = max(abs(dFdx(archPlanePosition)), abs(dFdy(archPlanePosition)));
   // Stop sampling a cropped source once the mip footprint can include its grout.
   float archPixelMetres = max(archWorldPixel.x, archWorldPixel.y);
-  // The full grass scan has no cropped masonry grout to exclude. Keep its
-  // mip-filtered colour at grazing street-view angles instead of a solid tint.
+  // Complete grass/asphalt scans have no cropped masonry grout to exclude.
+  // Retain mip-filtered asphalt colour into the middle distance; micro normals
+  // still use the original much closer cutoff below. Thresholds are render
+  // sampling estimates, not additional site-scale surface or survey claims.
   float archCoverage = archGrass > 0.5
     ? 1.0 - smoothstep(0.5, 2.0, archPixelMetres)
-    : 1.0 - smoothstep(0.025, 0.14, archPixelMetres);
+    : archFullAsphalt > 0.5
+      ? 1.0 - smoothstep(0.20, 0.90, archPixelMetres)
+      : 1.0 - smoothstep(0.025, 0.14, archPixelMetres);
   float archNormalCoverage = 1.0 - smoothstep(0.008, 0.055, max(archWorldPixel.x, archWorldPixel.y));
   if (archCoverage > 0.001) {
     vec3 archSample = texture2D(archColorMap, archUV).rgb;
@@ -253,6 +262,7 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
         archSurface: { value: new THREE.Vector4(surface.luminance, profile.contrast, profile.normal, profile.roughness) },
         archPaving: { value: profile.paving },
         archGrass: { value: profileName === 'grass' ? 1 : 0 },
+        archFullAsphalt: { value: profileName === 'asphalt' ? 1 : 0 },
         archMeanColor: { value: new THREE.Vector3(...(surface.meanColor || [1, 1, 1])) },
         ...controls,
       };
@@ -268,7 +278,7 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
           .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>\n${FRAGMENT_ROUGHNESS}`)
           .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>\n${FRAGMENT_NORMAL}`);
       };
-      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v5-planting1`;
+      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v5-street-asphalt2`;
       material.userData.architecturalSurface = profileName;
       material.needsUpdate = true;
       mapped.add(material);

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build the v4 local web launcher; city tiles remain on a pinned commit CDN.
+"""Build the local web launcher; city tiles remain on a pinned commit CDN.
 
 Example (inspect only, without writing an archive):
   python tools/build_web_launcher.py --commit <40-hex-SHA> --project . \
-      --output shanghai-web-launcher-v4.zip --dry-run
+      --output shanghai-web-launcher.zip --dry-run
 
 Run without --dry-run only after the supplied commit contains the final app and
 its city tiles/ID sidecars. No repository or project files are modified.
@@ -32,6 +32,7 @@ CORE_DATA = (
     'buildings-source.json', 'SOURCES.md', 'heights/HEIGHT_SOURCES.md',
 )
 OMITTED_PREFIXES = ('assets/native/', 'assets/city/tiles/', 'assets/city/ids/',
+                    'assets/city-detail/macros/',
                     'assets/districts/', 'data/fullcity-raw/', 'source/')
 
 
@@ -102,7 +103,7 @@ def validate_materials(payload):
     manifest = json.loads(payload[MATERIAL_ROOT + 'manifest.json'])
     textures, seen = [], set()
     if manifest.get('license') != 'CC0-1.0' or len(manifest.get('assets', [])) != 4:
-        raise ValueError('The v4 launcher requires the four verified CC0 surface sets.')
+        raise ValueError('The v5 launcher requires the four verified CC0 surface sets.')
     for asset in manifest['assets']:
         if asset.get('license') != 'CC0-1.0' or not asset.get('authors') or not asset.get('assetURL'):
             raise ValueError(f'Incomplete material provenance: {asset.get("id")}')
@@ -116,7 +117,7 @@ def validate_materials(payload):
             verify_manifest_file(payload, name, entry.get('size'), entry.get('sha256'))
             textures.append({'file': name, 'bytes': len(payload[name]), 'sha256': sha256(payload[name])})
     if len(textures) != 12:
-        raise ValueError('The v4 launcher requires exactly twelve local surface maps.')
+        raise ValueError('The v5 launcher requires exactly twelve local surface maps.')
     support = {entry['file']: entry for entry in manifest.get('supportFiles', [])}
     for name in ('README.md', 'SOURCES.md', 'LICENSE-CC0.txt'):
         if name not in support:
@@ -250,9 +251,9 @@ def plan(project, commit):
     landmarks = json.loads(payload['data/landmarks.json'])
     props = json.loads(payload['data/scene-props.json'])
     if not isinstance(landmarks, list) or len(landmarks) != 14:
-        raise ValueError('The v4 launcher requires all 14 final landmarks.')
+        raise ValueError('The v5 launcher requires all 14 final landmarks.')
     if not isinstance(props, list) or len(props) != 1:
-        raise ValueError('The v4 launcher requires the single street scene prop.')
+        raise ValueError('The v5 launcher requires the single street scene prop.')
     models, lod_models = [], []
     for item in landmarks + props:
         name = runtime_model(item)
@@ -284,7 +285,7 @@ def plan(project, commit):
     if not any('street' in item['id'] for item in props):
         raise ValueError('No street scene prop was found.')
     if len(lod_models) != 10 or len({item['file'] for item in lod_models}) != 10:
-        raise ValueError('The v4 launcher requires one separate LOD for each of the ten Bund buildings.')
+        raise ValueError('The v5 launcher requires one separate LOD for each of the ten Bund buildings.')
     lod_release = json.loads(payload['data/bund/lod-v4.json'])
     lod_records = lod_release.get('models', [])
     lod_by_model = {item['model']: item for item in lod_records}
@@ -309,15 +310,35 @@ def plan(project, commit):
             tile[key] = city_prefix + quote(relative, safe='/')
     payload['assets/city/manifest.json'] = encode_json(city)
 
+    # Physical near facades and their masked far parents are both streamed from
+    # the same immutable commit. Relative near URLs inside remote READY files
+    # resolve against that remote file, never the user's local HTTP directory.
+    detail_path = project / 'assets/city-detail/manifest.json'
+    detail_city = None
+    if detail_path.is_file():
+        detail_city = deepcopy(json.loads(detail_path.read_bytes()))
+        if not detail_city.get('complete') or len(detail_city.get('tiles', [])) != len(city['tiles']):
+            raise ValueError('Physical city detail build is incomplete.')
+        detail_prefix = cdn_root + 'assets/city-detail/'
+        for tile in detail_city['tiles']:
+            for key in ('file', 'feature_ids_file', 'feature_table_file', 'near_manifest_file'):
+                if tile.get(key):
+                    tile[key] = detail_prefix + quote(relative_path(tile[key]), safe='/')
+        payload['assets/city-detail/manifest.json'] = encode_json(detail_city)
+
     bundled = set(payload)
     for name in tuple(payload):
         if name.endswith('.json') and name.startswith('data/'):
-            value = rewrite_download_links(json.loads(payload[name]), bundled, cdn_root)
-            payload[name] = encode_json(value)
+            original = json.loads(payload[name])
+            value = rewrite_download_links(original, bundled, cdn_root)
+            # Runtime interaction/greenery data are SHA-bound to their owner.
+            # Retain original bytes when only surrounding download links change.
+            if value != original:
+                payload[name] = encode_json(value)
     # Runtime models and city chunks are pinned above. Keep the project-info
     # link on the current documentation, where the latest launcher is published.
 
-    instructions = f'''上海漫游 v4.4 · 本地网页启动包
+    instructions = f'''上海漫游 v5.0 · 本地网页启动包
 
 一、启动
 完整解压后进入 shanghai 目录，在该目录运行：
@@ -331,7 +352,7 @@ macOS/Linux 如使用 python3：
 10个外滩建筑远景LOD、12张本地1K表面纹理、上海沿江HDR、外滩参考照片及运行时数据。
 原始GLB、Blender源文件和全市分块没有打入本包。
 漫游仍需联网：道路、水系、中文标注和远景地图来自公开地图服务；
-全市 {len(city['tiles']):,} 个建筑分块及精确ID索引按需从固定Git提交加载。
+全市 {len(city['tiles']):,} 个远景建筑分块、近景实体立面分块及精确ID索引按需从固定Git提交加载。
 固定提交：{commit}
 这不是完整离线城市地图；断网时地图服务和未缓存的全市分块不可用。
 
@@ -343,7 +364,8 @@ WASD/方向键行走，Shift加速，拖动转向，滚轮调镜头；Q/E转动�
 外滩建筑按公开照片和轮廓复建柱廊、凹窗、檐口及屋顶；未获得实测资料的
 尺寸与侧后细节含推定。近处使用完整建筑、远处切换精简LOD；表面纹理来自
 可再分发的通用石材与沥青素材，不代表对外滩实地材料的扫描。全市普通建筑
-以公开足迹体块背景为主；126处另有已核验参数的斜屋顶。高度以
+按公开足迹生成实体窗门、窗框及窗台；这些外观缺少逐栋照片依据，属于推定。
+126处有已核验参数的斜屋顶。高度以
 公开预测/栅格估计为主。两类模型均不能用作测绘或现实导航。
 
 完整项目、原始模型、Blender文件、重建源码及来源：
@@ -356,7 +378,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
 更多数据说明见 data/SOURCES.md、data/heights/HEIGHT_SOURCES.md 和 data/bund/。
 '''
     payload['使用说明.txt'] = instructions.encode('utf-8')
-    payload['README.md'] = ('# 上海漫游 v4.4 启动包\n\n' + instructions).encode('utf-8')
+    payload['README.md'] = ('# 上海漫游 v5.0 启动包\n\n' + instructions).encode('utf-8')
 
     for name in payload:
         if name.startswith(OMITTED_PREFIXES) or name.endswith(('.blend', '.blend1')):
@@ -365,10 +387,11 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
             raise ValueError(f'Unexpected GLB outside the selected runtime models: {name}')
     references_checked = validate_static_references(payload)
     package_manifest = {
-        'version': 'shanghai-web-launcher-v4.4', 'commit': commit,
+        'version': 'shanghai-web-launcher-v5.0', 'commit': commit,
         'landmark_count': len(landmarks), 'scene_prop_count': len(props),
         'city_model_count': len(city['tiles']), 'city_feature_count': city.get('feature_count'),
         'city_manifest_source_sha256': sha256(city_data), 'city_cdn_prefix': city_prefix,
+        'physical_city_detail_manifest_included': detail_city is not None,
         'requires_network_for_map_and_city_tiles': True,
         'raw_native_models_included': False, 'runtime_models': models, 'lod_models': lod_models,
         'local_surface_textures': textures,
@@ -436,7 +459,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--commit', required=True, help='Final published Git commit, exactly 40 hexadecimal characters')
     parser.add_argument('--project', type=Path, default=HERE.parent, help='Source app directory')
-    parser.add_argument('--output', type=Path, default=HERE.parent / 'downloads/shanghai-web-launcher-v4.zip', help='Destination ZIP')
+    parser.add_argument('--output', type=Path, default=HERE.parent / 'downloads/shanghai-web-launcher.zip', help='Destination ZIP')
     parser.add_argument('--dry-run', action='store_true', help='Validate inputs and report the plan; do not create an archive or output directory')
     args = parser.parse_args()
     if not re.fullmatch(r'[0-9a-fA-F]{40}', args.commit):

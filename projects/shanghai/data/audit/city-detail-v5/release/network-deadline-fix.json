@@ -1,0 +1,88 @@
+{
+  "scope": "Network deadline scope correction; not a claim that the first full-browser failure was caused by discarded CPU parses",
+  "source_files_changed": [
+    "src/local-model-streamer.js",
+    "src/city-detail-streamer.js"
+  ],
+  "test_files_changed": [
+    "tests/local-model-streamer.test.mjs",
+    "tests/city-detail-streamer.test.mjs"
+  ],
+  "changes": [
+    "Clear far deadline only after complete GLB body plus decoded ID sidecar; then CPU parse and suppression may take longer without network-timeout discard",
+    "Clear near deadline only after body, gzip decompression and SHA/size validation; retain signal for view/parent/destroy cancellation",
+    "Leave 35000ms transport deadline, retry policy, budgets, shaders, scheduling and street loader unchanged"
+  ],
+  "regressions": [
+    "Controlled parse at 35001ms survives and requests once",
+    "Pending GLB body and ID sidecar remain alive at34999ms and timeout at35000ms",
+    "Incomplete gzip stream is cancelled at35000ms, does not parse or hide far wall",
+    "View change after timer removal disposes late scene without ownership"
+  ],
+  "targeted_test_runs": [
+    {
+      "log": "deadline-far-tests.log",
+      "tests": 4,
+      "failures": 0,
+      "sha256": "365d630898db918f73665818635d5301f346c42b88393e927f1a49c9dc6b8051"
+    },
+    {
+      "log": "deadline-near-tests.log",
+      "tests": 30,
+      "failures": 0,
+      "sha256": "d93e3d41a3aad7d14f04ef298ca27a5b4122357c1d5d29db7c95475efa1d86b2"
+    },
+    {
+      "log": "deadline-integration-tests.log",
+      "tests": 17,
+      "failures": 0,
+      "sha256": "69ca78a6488b77f54702e9114d9c6f1d5c73de81929db086d516b1670eb210cf"
+    }
+  ],
+  "legacy_far_lifecycle_test_also_passed": true,
+  "npm_test_delegated_to_root": true,
+  "browser_started": false,
+  "first_browser_snapshot_observation_from_root": {
+    "far_discarded": 0,
+    "far_requests": 8,
+    "far_completed": 4,
+    "far_failed": 4,
+    "far_evicted": 0,
+    "far_pending_states": 0,
+    "near_failed": 0,
+    "street_status": "loaded",
+    "street_greenery": null,
+    "street_active_owners": 0,
+    "ground_at_player": null,
+    "fps": 0.163,
+    "interpretation": "The snapshot showed transport-stage timeout failures and absent street interaction activation while software rendering was slow and the full checker shared CPU. It did not demonstrate the post-parse discard loop. The contribution of CPU contention still needs the isolated browser rerun; this correction does not relax street deadlines or claim to resolve that observed failure.",
+    "near_completed": 6
+  },
+  "files": {
+    "src/local-model-streamer.js": {
+      "bytes": 19511,
+      "sha256": "b902c3df6c490a35389f02b41a7808d941afe02a18c22cc1835ac06a94a3fbac",
+      "added_lines": 3,
+      "removed_lines": 0
+    },
+    "src/city-detail-streamer.js": {
+      "bytes": 13458,
+      "sha256": "c928f9c412ba58b7bfbdcf3b81ff10764e7dee844fabd5b78aa9ffccce1a9e2a",
+      "added_lines": 3,
+      "removed_lines": 0
+    },
+    "tests/local-model-streamer.test.mjs": {
+      "bytes": 9960,
+      "sha256": "37175bb185d7ef601e89c125f4ac4f472d93808f19de5a46c3248e7c70e684a7",
+      "added_lines": 42,
+      "removed_lines": 0
+    },
+    "tests/city-detail-streamer.test.mjs": {
+      "bytes": 18558,
+      "sha256": "9a36c93001adb3d55b6c4b74a5d416f73e8bd88fc257b9d0722bbe5fe3188326",
+      "added_lines": 20,
+      "removed_lines": 1
+    }
+  },
+  "patch_sha256": "38fb27e4b9688ddef437594557d147c70d69f360c7951446da91ca6831a2bf4d"
+}

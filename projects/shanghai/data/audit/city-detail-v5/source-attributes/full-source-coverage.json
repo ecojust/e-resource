@@ -1,0 +1,1168 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-26T02:19:36.528763+00:00",
+  "complete": true,
+  "passed": true,
+  "release": "2026-10-21.0",
+  "source": "Official Overture S3 full GeoParquet, not PMTiles",
+  "scope": "Attribute projection from Shanghai-bbox candidate row groups, inner-matched on the exact frozen main raw archive source_layer+UUID. Bbox-only counts are not called city coverage.",
+  "geometry_not_read": true,
+  "geometry_coordinate_comparison_performed": false,
+  "identity_join": {
+    "raw_features": 1796667,
+    "full_bbox_features_before_identity_join": 2433147,
+    "matched_raw_features": 1796667,
+    "unmatched_raw_features": 0,
+    "full_bbox_only_features": 636480,
+    "duplicate_full_source_keys": 0,
+    "missing_raw_examples": []
+  },
+  "file_index": {
+    "global_files": 513,
+    "global_bytes": 277560947087,
+    "candidate_files": 4,
+    "candidate_row_groups": 104,
+    "bbox": [
+      120.8508584,
+      30.6693672,
+      122.25,
+      31.8720185
+    ],
+    "boundary_sha256": "b9abbbec39e73edd1990f3c748b298e377f8c88719b005d86f8ffbe155bf95da"
+  },
+  "transfer": {
+    "file_bbox_tail_bytes": 8404992,
+    "candidate_footer_bytes": 4971321,
+    "selected_column_range_bytes": 95083821,
+    "estimated_selected_column_chunk_bytes": 94703766,
+    "geometry_column_overlap_bytes": 0,
+    "full_parquet_files_downloaded": 0,
+    "caveat": "Tail ranges and footer ranges overlap; byte sums are actual payload categories, not unique source bytes. Initial DuckDB schema probe may have fetched additional metadata. Sparse cache files are incomplete, nonpublishable audit artifacts."
+  },
+  "field_coverage_on_same_identifiers": {
+    "id": {
+      "mvt_nonempty": 1796667,
+      "full_nonempty": 1796667,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 100.0
+    },
+    "class": {
+      "mvt_nonempty": 89761,
+      "full_nonempty": 89761,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 4.9959731
+    },
+    "subtype": {
+      "mvt_nonempty": 90779,
+      "full_nonempty": 90779,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 5.05263357
+    },
+    "facade_material": {
+      "mvt_nonempty": 458,
+      "full_nonempty": 458,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.02549165
+    },
+    "facade_color": {
+      "mvt_nonempty": 1434,
+      "full_nonempty": 1434,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.07981446
+    },
+    "roof_material": {
+      "mvt_nonempty": 250,
+      "full_nonempty": 250,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.01391465
+    },
+    "roof_color": {
+      "mvt_nonempty": 1215,
+      "full_nonempty": 1215,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.06762522
+    },
+    "roof_shape": {
+      "mvt_nonempty": 2603,
+      "full_nonempty": 2603,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.14487938
+    },
+    "roof_orientation": {
+      "mvt_nonempty": 383,
+      "full_nonempty": 383,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.02131725
+    },
+    "building_id": {
+      "mvt_nonempty": 2906,
+      "full_nonempty": 2906,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.16174394
+    },
+    "height": {
+      "mvt_nonempty": 2637,
+      "full_nonempty": 2637,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.14677177
+    },
+    "min_height": {
+      "mvt_nonempty": 717,
+      "full_nonempty": 717,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.03990723
+    },
+    "num_floors": {
+      "mvt_nonempty": 9665,
+      "full_nonempty": 9665,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.53794053
+    },
+    "num_floors_underground": {
+      "mvt_nonempty": 43,
+      "full_nonempty": 43,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.00239332
+    },
+    "min_floor": {
+      "mvt_nonempty": 132,
+      "full_nonempty": 132,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.00734694
+    },
+    "level": {
+      "mvt_nonempty": 1079,
+      "full_nonempty": 1079,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.06005565
+    },
+    "roof_height": {
+      "mvt_nonempty": 313,
+      "full_nonempty": 313,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.01742115
+    },
+    "roof_direction": {
+      "mvt_nonempty": 130,
+      "full_nonempty": 130,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 0.00723562
+    },
+    "has_parts": {
+      "mvt_nonempty": 1793761,
+      "full_nonempty": 1793761,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 99.83825606
+    },
+    "is_underground": {
+      "mvt_nonempty": 1796667,
+      "full_nonempty": 1796667,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 100.0
+    },
+    "version": {
+      "mvt_nonempty": 1796667,
+      "full_nonempty": 1796667,
+      "full_added_where_mvt_empty": 0,
+      "mvt_nonempty_but_full_empty": 0,
+      "value_differences": 0,
+      "full_percent_matched_raw_features": 100.0
+    }
+  },
+  "value_difference_examples": [],
+  "full_schema_roots_per_shanghai_file": {
+    "release/2026-10-21.0/theme=buildings/type=building/part-00483-34e6ccad-9ef2-58a2-89a0-df74482e6a4c-c000.zstd.parquet": [
+      "bbox",
+      "class",
+      "facade_color",
+      "facade_material",
+      "geometry",
+      "has_parts",
+      "height",
+      "id",
+      "is_underground",
+      "level",
+      "min_floor",
+      "min_height",
+      "names",
+      "num_floors",
+      "num_floors_underground",
+      "roof_color",
+      "roof_direction",
+      "roof_height",
+      "roof_material",
+      "roof_orientation",
+      "roof_shape",
+      "sources",
+      "subtype",
+      "version"
+    ],
+    "release/2026-10-21.0/theme=buildings/type=building/part-00486-d625ea5f-cfe2-5347-89ae-254b8c1fdee1-c000.zstd.parquet": [
+      "bbox",
+      "class",
+      "facade_color",
+      "facade_material",
+      "geometry",
+      "has_parts",
+      "height",
+      "id",
+      "is_underground",
+      "level",
+      "min_floor",
+      "min_height",
+      "names",
+      "num_floors",
+      "num_floors_underground",
+      "roof_color",
+      "roof_direction",
+      "roof_height",
+      "roof_material",
+      "roof_orientation",
+      "roof_shape",
+      "sources",
+      "subtype",
+      "version"
+    ],
+    "release/2026-10-21.0/theme=buildings/type=building/part-00496-aeb7e8a9-c9a6-5f56-a56a-f747e662cfdd-c000.zstd.parquet": [
+      "bbox",
+      "class",
+      "facade_color",
+      "facade_material",
+      "geometry",
+      "has_parts",
+      "height",
+      "id",
+      "is_underground",
+      "level",
+      "min_floor",
+      "min_height",
+      "names",
+      "num_floors",
+      "num_floors_underground",
+      "roof_color",
+      "roof_direction",
+      "roof_height",
+      "roof_material",
+      "roof_orientation",
+      "roof_shape",
+      "sources",
+      "subtype",
+      "version"
+    ],
+    "release/2026-10-21.0/theme=buildings/type=building_part/part-00000-bd282a3b-17f8-59d2-be35-2c8995e1f976-c000.zstd.parquet": [
+      "bbox",
+      "building_id",
+      "facade_color",
+      "facade_material",
+      "geometry",
+      "height",
+      "id",
+      "is_underground",
+      "level",
+      "min_floor",
+      "min_height",
+      "names",
+      "num_floors",
+      "num_floors_underground",
+      "roof_color",
+      "roof_direction",
+      "roof_height",
+      "roof_material",
+      "roof_orientation",
+      "roof_shape",
+      "sources",
+      "version"
+    ]
+  },
+  "full_schema_roots_union": [
+    "bbox",
+    "building_id",
+    "class",
+    "facade_color",
+    "facade_material",
+    "geometry",
+    "has_parts",
+    "height",
+    "id",
+    "is_underground",
+    "level",
+    "min_floor",
+    "min_height",
+    "names",
+    "num_floors",
+    "num_floors_underground",
+    "roof_color",
+    "roof_direction",
+    "roof_height",
+    "roof_material",
+    "roof_orientation",
+    "roof_shape",
+    "sources",
+    "subtype",
+    "version"
+  ],
+  "additional_scalar_schema_roots_vs_mvt_property_inventory": [],
+  "window_door_schema_fields": [],
+  "per_district": [
+    {
+      "district_id": "310101",
+      "matched_features": 13854,
+      "positive_height": 68,
+      "positive_floors": 1041,
+      "roof_shape": 102,
+      "facade_material": 9,
+      "facade_color": 8
+    },
+    {
+      "district_id": "310104",
+      "matched_features": 30129,
+      "positive_height": 88,
+      "positive_floors": 515,
+      "roof_shape": 1,
+      "facade_material": 1,
+      "facade_color": 0
+    },
+    {
+      "district_id": "310105",
+      "matched_features": 17954,
+      "positive_height": 364,
+      "positive_floors": 2281,
+      "roof_shape": 755,
+      "facade_material": 54,
+      "facade_color": 423
+    },
+    {
+      "district_id": "310106",
+      "matched_features": 22915,
+      "positive_height": 21,
+      "positive_floors": 250,
+      "roof_shape": 9,
+      "facade_material": 2,
+      "facade_color": 0
+    },
+    {
+      "district_id": "310107",
+      "matched_features": 27403,
+      "positive_height": 1055,
+      "positive_floors": 1289,
+      "roof_shape": 1028,
+      "facade_material": 89,
+      "facade_color": 836
+    },
+    {
+      "district_id": "310109",
+      "matched_features": 15395,
+      "positive_height": 124,
+      "positive_floors": 401,
+      "roof_shape": 0,
+      "facade_material": 1,
+      "facade_color": 0
+    },
+    {
+      "district_id": "310110",
+      "matched_features": 32622,
+      "positive_height": 182,
+      "positive_floors": 907,
+      "roof_shape": 94,
+      "facade_material": 26,
+      "facade_color": 43
+    },
+    {
+      "district_id": "310112",
+      "matched_features": 121728,
+      "positive_height": 74,
+      "positive_floors": 373,
+      "roof_shape": 1,
+      "facade_material": 1,
+      "facade_color": 0
+    },
+    {
+      "district_id": "310113",
+      "matched_features": 106543,
+      "positive_height": 46,
+      "positive_floors": 359,
+      "roof_shape": 106,
+      "facade_material": 12,
+      "facade_color": 65
+    },
+    {
+      "district_id": "310114",
+      "matched_features": 131113,
+      "positive_height": 124,
+      "positive_floors": 353,
+      "roof_shape": 376,
+      "facade_material": 158,
+      "facade_color": 14
+    },
+    {
+      "district_id": "310115",
+      "matched_features": 416516,
+      "positive_height": 358,
+      "positive_floors": 1189,
+      "roof_shape": 59,
+      "facade_material": 103,
+      "facade_color": 39
+    },
+    {
+      "district_id": "310116",
+      "matched_features": 120473,
+      "positive_height": 3,
+      "positive_floors": 250,
+      "roof_shape": 0,
+      "facade_material": 0,
+      "facade_color": 0
+    },
+    {
+      "district_id": "310117",
+      "matched_features": 139361,
+      "positive_height": 24,
+      "positive_floors": 132,
+      "roof_shape": 32,
+      "facade_material": 1,
+      "facade_color": 1
+    },
+    {
+      "district_id": "310118",
+      "matched_features": 151684,
+      "positive_height": 46,
+      "positive_floors": 68,
+      "roof_shape": 38,
+      "facade_material": 1,
+      "facade_color": 5
+    },
+    {
+      "district_id": "310120",
+      "matched_features": 154046,
+      "positive_height": 60,
+      "positive_floors": 101,
+      "roof_shape": 0,
+      "facade_material": 0,
+      "facade_color": 0
+    },
+    {
+      "district_id": "310151",
+      "matched_features": 294931,
+      "positive_height": 0,
+      "positive_floors": 156,
+      "roof_shape": 2,
+      "facade_material": 0,
+      "facade_color": 0
+    }
+  ],
+  "qualified_roof_full_source_checks": [
+    {
+      "key": "building_part:1540ff51-7722-38d3-9b4d-08f6e6b2d31b",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:47708310-d0e0-3a98-b2c4-2a033390bf9c",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:e4e32e28-6ff4-334a-8d27-5d52c5c03ec3",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:00ecf9de-5862-3ffd-8bb6-1db5d5ce65ba",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:02bb53be-683b-34af-ad67-ba0f778b5482",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:0451a691-2570-31c9-99fb-747e9a3381f7",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:09f303b4-51d7-3907-9758-fbbe8189b971",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:1089f523-f9c6-3181-9d61-27179d98c6a2",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:2e683355-f620-3059-a907-e8412886387f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:2fce10c6-383f-33a6-84bd-1c7c106181cf",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:3a5c073c-e21a-3186-a3fa-a4afec0aa0ca",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:4bdca4c5-0609-3a57-99c8-b2d8f5165586",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:4f951ed5-2a85-3923-b0b8-cc839664ed7f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:62a9e869-df31-390c-aa1f-e025e772bf10",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:6973dc6e-c03c-36ef-a5c4-58cac30fa574",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:6b192801-34f1-3d82-9dd3-ec8b0e0cb564",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:7329edb6-11a6-3bba-add5-b3a547b51b5c",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:7ab90d85-0881-335e-809a-169834518efd",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:80ee8961-4831-3e39-80ac-dc68725de5a3",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:830a9b3a-1c6d-349c-9b7e-bb19527eacf1",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:8caf54c6-0b75-3ee8-a34c-fbc113214206",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:8cdaa3e9-7367-3173-94f7-fa419abfa366",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:ac542dc7-e8e3-3b94-bb87-b244ff1ebcae",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:b4c1d87f-a5a9-3809-b580-a489aaff045b",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:b5c134ce-8f61-36b1-84b6-ab7ce91fa99b",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:bc777f24-2b77-3541-baf4-018c519047fd",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:e91607a9-d552-3259-b88e-d8f7806fcb36",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:f7739ec8-ebdc-34d3-88f1-4a5742118dfc",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:f97e5793-3704-3144-ac67-592bfc9c44be",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:2911c352-bad7-4c8c-9d1c-4f09306e4647",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:38320453-f748-4aa7-b851-446f91fd138e",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:ae22778d-25b0-406e-a8bd-29a4c241c03f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:c37b413a-e17b-432c-bd10-e335b483e877",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:c634c685-7195-4006-925f-5a5bddad4d0f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:cd0ce40f-beb1-4522-98bf-611be7abc367",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:d55d0ff6-ecd3-4fce-829d-6eb4979752ad",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:d88dc5f1-1bb7-4770-9dda-66350e65323e",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building:e09e17e0-b676-4f5b-b361-a7bbceb78d06",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:05d8d330-6311-3832-b882-63bf4a447a1a",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:09b2b04c-8192-3898-bc3e-03cc98046c02",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:152f7284-acef-3f9f-817e-6e82a95a8da2",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:18cbeb34-2bfc-32a1-b736-f492c5dc1e28",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:1f23ad17-30da-3a16-9d4c-da8dd8ea63ea",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:2a666131-b6fe-349f-9487-409f4ee31787",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:38564885-2e67-38aa-bda7-68bdf92b76c5",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:3c8ab89d-79c4-39d5-b432-c1d96985afeb",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:3cb5bee1-7280-3d7f-b20a-5b419cf37118",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:3d75f89f-31c7-3ef9-81c3-e09cc5c938ff",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:402c0c06-f01c-3d03-9d0b-8f264376789a",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:45f99ec0-d238-3cff-b479-783079072579",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:46edcb35-d7b6-38c2-9cb3-37d64d835421",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:4e46c8c5-cedb-3039-83dc-148f84854ab5",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:50538642-2b80-358b-84e0-818fe63e3cfc",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:57a0979d-1a4b-3853-9635-84b9ec7e2e47",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:6eb95b9e-2954-39ad-abfa-d07fa73a1bd6",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:73fe2e79-5968-3b58-9294-3a840c265cdb",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:76f1c17c-3962-352e-b46e-596dc08d739a",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:790f8a4c-b2dc-3a4e-93ab-805675bc145f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:7d811804-fb9e-3493-9801-8764c3c42422",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:7db28083-c337-3882-b26a-c7aaa478a2dc",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:8b60e6df-50ee-3782-ae68-9792a27f62cc",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9119ec46-270a-3928-b2d7-8027f34e780e",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9229e501-31d0-3acb-ba12-7e6c00012fcd",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9b2bf02a-ee2e-38ac-acc9-692aac727255",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9b5b260b-82c6-3fca-8554-9019e44882ac",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9bd13763-44f8-358c-8e3b-746d6b3bdee5",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9c5c8bf1-de80-3922-9981-c5a5d7bf6d7c",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9f8b9cc2-172f-3d54-9726-ab42bf4b01b0",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a0b10d5d-4925-347d-86cc-75d74309ee22",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a502dce3-2952-31b1-8cb9-7434f19527c9",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a57b117a-8221-3788-bbc1-544b082defdf",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a71ddee6-8bc7-3d66-8b78-828844886e8f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a855f759-fc7e-3ebd-8a7a-1d4dfee5dc7d",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:af38976e-bda9-3368-a8cc-50d0a69a1949",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:b397125e-bbe1-37a3-8a2d-decc96c92bd5",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:b70eb95d-a37b-3836-b2e9-e2f878489e6d",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:c511b0a3-397a-3abf-bfd9-edcb4c41e356",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:c542e89c-b34f-35dd-8e35-aef888b5ecba",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:cb2a1264-51ff-348e-b685-e4fb8f8cf57e",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:d60aea5a-9974-3fd1-b931-18fce9476b15",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:dc5b0202-f0b1-36de-89f1-b86a212f2ab8",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:dca9298f-572b-3c67-bcaa-3d7c45c96538",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:e0c13af2-4368-30dc-92c4-4cc8f03c0948",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:e378f3da-9c59-3362-bb24-a1abf9edd7c8",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:fd953d33-0405-3747-8235-50667354229d",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:ffe5b507-818f-382a-bb7b-c8e22e259129",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:04ef1715-c041-3448-9d8a-372475e4dd81",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:279aba39-2e73-3a34-81fc-5bb901deef5f",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:2cdf5a2d-5a1e-3de5-a698-d08214102c34",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:2ec370ca-37a3-35d0-a2c9-88a065708301",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:3fcc4c2b-c54a-34d4-bf53-5d5fd714def9",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:40db2a29-bf77-3945-8e60-c84429b77b5a",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:4ddf0d95-ab1f-3a07-a0d8-ec15640eb221",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:55169ea3-9339-3cc1-990d-c5c05e60a9f1",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:5589dac2-aa81-37ac-89dc-a5c7c79680fb",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:58fa9694-d53f-3749-a370-b7d1eb0fad18",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:6b5b3030-be33-326f-9a73-d405e48590d3",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:7c335074-1a94-36b6-ba01-a9aeadc5cfcd",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:827591d7-97aa-3bb5-a659-d9152cadee30",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:87ff65be-49ef-338a-8097-2b61a69c9ad3",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9378d563-2e47-3f7e-857f-b2a35f789b03",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:9383a9f1-9630-360d-8089-4ecebe6afdb3",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a137668c-399c-332a-a4b3-843e04f55d9e",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a951623d-10c9-391d-86bb-858e49d2c10b",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:acdf10ad-2ded-3926-9f0f-da69eaa7df63",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:ae8dcca8-20b0-35b3-8c46-9b150cf86eb0",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:cf511472-adc3-3912-abe8-b72cf780580b",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:e5af395e-6d82-3849-a6b6-c0b8d4c84373",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:f544010d-0bc3-353c-b747-e086451c7917",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:0212c26d-dd68-332e-a69d-9e6bde4e23d6",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:14e45b7c-e874-3c5d-81f7-fd18f73f4173",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:1995f1b5-10e1-3dff-9b5d-9b6e05d412d7",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:2152860e-e86a-3745-ae99-0569f3027459",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:35ea1742-0521-336a-848c-74d200229414",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:38c1bf29-809b-3f66-ae21-5901c7268ed2",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:3f71305f-5e5b-303b-b685-509847e8b6a5",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:5ceb64a9-b4cc-371d-a6a0-30cc04eaa386",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:67ee4850-f702-3ea5-bf36-93050a91fcaf",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:7a798817-8f6b-3ab5-986f-684c71734c7b",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:8fd04c0d-7699-30b9-8717-70e5df421399",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:984e0dd7-bb12-3247-8f8d-71fe18e4b07d",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:a94d7613-fc60-3677-920e-050b3a59541c",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:afd77992-4720-35c7-831d-7a514e744a79",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:ddaed025-6f63-36f8-88b7-8d9cace18cb7",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:e699f6f2-f936-30b4-97f9-b16d2c3b47eb",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    },
+    {
+      "key": "building_part:ece1e0ab-aeed-3ef1-82f3-8be456ff27ad",
+      "matched": true,
+      "roof_fields_match_mvt": true
+    }
+  ],
+  "checks": {
+    "full_file_index_complete": true,
+    "no_file_index_errors": true,
+    "all_raw_ids_matched": true,
+    "no_duplicate_full_source_keys": true,
+    "same_raw_feature_count_as_inventory": true,
+    "all_16_districts_matched": true,
+    "all_126_qualified_roof_fields_match_full_source": true,
+    "zero_geometry_column_bytes_in_requested_ranges": true,
+    "all_downloads_bounded_ranges": true
+  },
+  "evidence": {
+    "sample-schema.json": {
+      "bytes": 3296,
+      "sha256": "ada6c17db8ac936ac0cf8e1a1000eb38c978126b20d43b598b7e9af699146df9"
+    },
+    "parquet-range-plan.json": {
+      "bytes": 1088787,
+      "sha256": "af056f4fbeff80818f076e0c0065cab16d2c0ec56900fc1b26bf0d2a75eb42c5"
+    },
+    "projection-transfer.json": {
+      "bytes": 18097,
+      "sha256": "0b34e8a5823fb39c8e823ff966a1942f2ca14ae53bd164a249d98497f4a066c8"
+    },
+    "raw-projection.json": {
+      "bytes": 310,
+      "sha256": "3425432d4f10f7af98cb2c65f30ed5280149963b66346fb401fc65c64c2fd53f"
+    },
+    "shanghai-bbox-source-attributes.parquet": {
+      "bytes": 80941096,
+      "sha256": "611f93edbfe73cda6a11afd4abab42217afa40d0a8b5d5dcdbded98bd20167a2"
+    },
+    "shanghai-raw-source-attributes.parquet": {
+      "bytes": 44143957,
+      "sha256": "dbf46b54c338dbe173488284c39441aea61d0076dc4f62e60b256ce172aa9361"
+    }
+  },
+  "limits": [
+    "Full geometry was intentionally not downloaded or compared; the earlier footprint audit remains a separate claim.",
+    "This extends the frozen MVT audit using the same release and source IDs; missing fields are unknown, not proof that buildings lack windows or doors.",
+    "Exact source tag availability does not establish current facade dimensions, measured height, legal access or current occupancy.",
+    "Names and per-field source-record structures exist in full schema but were not projected; they are not window/door geometry. The raw archive already retains source records."
+  ],
+  "elapsed_comparison_seconds": 4.799
+}

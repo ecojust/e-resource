@@ -60,4 +60,33 @@ assert.ok(distanceMetres(ctl.position,cameras.at(-1).to)<.71,'close wall uses th
 assert.ok(distanceMetres(cameras.at(-1).from,cameras.at(-1).to)<3.5,'camera boom shortens by a wall');
 scene.collisionAt=()=>null;
 ctl.destroy();assert.equal(map.dragPan.enabled,true);
+// Optional street adapter: supported feet and camera move together, while
+// removing the local owner restores the original all-city .075 m datum.
+let localHeight=.035, revision=1, swept=0;
+scene.groundAt=()=>localHeight===null?null:{height:localHeight,id:'paving',ownerId:'bund-streets'};
+scene.streetInteractionRevision=()=>revision;
+scene.sweepLocalCollision=(from,to,options)=>{
+  swept++;assert.equal(options.radius,.38);assert.equal(options.height,1.75);assert.equal(options.maxStepHeight,.2);
+  return null;
+};
+scene.localCameraCollision=()=>null;
+const grounded=new WalkController(scene);grounded.setEnabled(true);grounded.teleport({...start,bearing:0});
+assert.equal(positions.at(-1)[5],.035,'setPlayer receives actual support height, not a guessed group elevation');
+grounded._updateCamera(.05,true);
+assert.ok(Math.abs(cameras.at(-1).to.alt-2.96)<1e-12,'camera translates by the same -.04 m authored-ground offset');
+const beforeHeightChange=cameras.length;localHeight=.14;revision++;
+grounded._tick(1000);
+assert.equal(positions.at(-1)[5],.14,'idle avatar reacts to loaded ground height changes');
+assert.ok(cameras.length>beforeHeightChange,'height/owner revision invalidates idle camera cache');
+assert.ok(Math.abs(cameras.at(-1).to.alt-3.065)<1e-12);
+grounded.keys.add('KeyW');grounded._move(.05,1100);assert.ok(swept>0);
+const stopped={...grounded.position};
+scene.sweepLocalCollision=()=>({blocked:true,type:'street-obstacle',id:'thin-pole'});
+grounded._move(.05,1200);assert.equal(distanceMetres(stopped,grounded.position),0,'local swept obstruction stops movement');
+const previousRecovery=grounded._spawnTimer;revision++;grounded._syncGround();
+assert.notEqual(grounded._spawnTimer,previousRecovery,'late activation around the visitor schedules safe-position recovery');
+scene.sweepLocalCollision=()=>null;localHeight=null;revision++;
+grounded._sendPlayer(0,0);grounded._updateCamera(.05,true);
+assert.equal(positions.at(-1)[5],.075);assert.equal(cameras.at(-1).to.alt,3.0,'unloaded/outside local streets restore prior framing');
+grounded.destroy();
 console.log('PASS: speed, diagonal normalization, camera-relative movement, water/building collision, sliding, mode gestures, camera limits, and cleanup');

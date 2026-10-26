@@ -9,9 +9,12 @@ import { createStreetTraffic } from './street-traffic.js';
 import { createStreetBasemapReplacement } from './street-basemap.js';
 import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
+import { CityDetailStreamer } from './city-detail-streamer.js';
+import { StreetInteraction, DEFAULT_GROUND_HEIGHT } from './street-interaction.js';
+import { loadStreetAssets } from './street-assets.js';
 import { OSMBuildingSuppressor } from './osm-building-suppression.js';
 import { OSMResidualLayer } from './osm-residual-layer.js';
-import { disposeModelResources } from './model-resources.js';
+import { disposeModelResources, countExpandedTriangles } from './model-resources.js';
 import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictions,
   releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
 import { correctPhotographicTexture } from './photographic-texture.js';
@@ -260,6 +263,7 @@ export async function createShanghaiScene(options = {}) {
   let explicitCamera = null, customLayerReady = false;
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const landmarkRecords = new Map();
+  const streetInteraction = new StreetInteraction();
   let localDataKind = 'city', streamingSignature = '', streamNoticeTime = 0, streamErrorTime = 0;
   const tileSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
   // Separate owners keep local tile replacement independent of successful
@@ -268,6 +272,14 @@ export async function createShanghaiScene(options = {}) {
   const lowMemory = typeof navigator !== 'undefined' && navigator.deviceMemory && navigator.deviceMemory <= 4;
   const detailCacheLimits = {maxCount:lowMemory ? 1 : 2, maxBytes:(lowMemory ? 16 : 32)*MIB};
   const detailCacheStats = {evicted:0, discardedLate:0};
+  const cityDetails = new CityDetailStreamer({THREE,scene,loader,
+    prepareObject:prepareCityDetailObject,disposeObject:disposeModel,
+    maxVisible:lowMemory?3:6,maxCache:lowMemory?4:8,
+    triangleBudget:lowMemory?500000:1100000,memoryBudget:(lowMemory?32:64)*MIB,
+    onChange(){if(!destroyed)map.triggerRepaint();},
+    onError(error){
+      if(performance.now()-streamErrorTime>12000){streamErrorTime=performance.now();onLoadError(new Error(`近景立面暂不可用，保留原建筑：${error.message}`));}
+    }});
   const localStreamer = new LocalModelStreamer({scene, loader, suppression:tileSuppression,
     prepareObject:prepareCityObject, disposeObject:disposeModel,
     prepareFeatureIds(ids) {
@@ -347,6 +359,7 @@ export async function createShanghaiScene(options = {}) {
         osmSuppression?.destroy();
         streetBasemap?.dispose();
         localStreamer.destroy();
+        cityDetails.destroy();
         landmarkSuppression.destroy({clearMap:true});
       }
       for (const record of landmarkRecords.values()) {
@@ -393,7 +406,9 @@ export async function createShanghaiScene(options = {}) {
     reportLandmarks();
     let pendingGroup=null;
     try {
-      const data = await loader.loadAsync(variant==='distant' ? record.lodUrl : record.url);
+      const data = record.id==='bund-streets' && record.interaction_file
+        ? await loadStreetAssets({THREE,loader,record,onWarning:onLoadError})
+        : await loader.loadAsync(variant==='distant' ? record.lodUrl : record.url);
       if (!retainDetailResult(record,data.scene,{destroyed,disposeObject:disposeModel})) {
         detailCacheStats.discardedLate++; return;
       }
@@ -410,12 +425,18 @@ export async function createShanghaiScene(options = {}) {
           correctPhotographicTexture(THREE,material,record.photo_texture?.orientation);
         if (variant==='full') surfaces?.apply(obj,record.id==='bund-streets'?'street':record.candidate_id?'bund':'modern');
       });
-      lighting?.configureModel(group,{detailed:Boolean(record.candidate_id),ground:record.id==='bund-streets'});
+      lighting?.configureModel(group,{detailed:Boolean(record.candidate_id)||record.id==='bund-streets',ground:record.id==='bund-streets',
+        casterFilter:record.id==='bund-streets'?mesh=>!mesh.userData.nearGrass && (Array.isArray(mesh.material)?mesh.material:[mesh.material]).some(material=>/BundTree|BundRailing|BundLamp/i.test(material?.name||'')):undefined});
       const resourceEstimate=estimateDetailResources(group);
       const old=record.object;
       scene.add(group); record.object = group; record.status = 'loaded'; record.activeVariant=variant;
       record.resourceEstimate=resourceEstimate; record.lastDetailUsed=performance.now();
       if(old)disposeModel(old);
+      if(group.userData?.streetAssembly?.interaction) {
+        const assembly=group.userData.streetAssembly;
+        if(streetInteraction.setOwner(record.id,assembly.interaction,{modelSha256:assembly.modelSha256}))group.userData.streetInteractionOwner=record.id;
+        else onLoadError(new Error(`街景地面数据不可用：${streetInteraction.lastError?.message}`));
+      }
       lighting?.invalidate();
       updateLandmarkVisibility(); reportLandmarks(); map.triggerRepaint();
     } catch (error) {
@@ -455,6 +476,9 @@ export async function createShanghaiScene(options = {}) {
         record.object.visible = nearby;
       }
       const active=record.status==='loaded' && Boolean(record.object?.visible);
+      if(record.object?.userData?.streetInteractionOwner)streetInteraction.setOwnerActive(record.id,active);
+      const greenery=record.object?.userData?.streetAssembly?.greenery;
+      if(greenery)greenery.updateDistance(Math.min(...greenery.locations.map(location=>distanceMetres(target,location))));
       if(active!==record.exclusionActive) {
         record.exclusionActive=active;
         const exact=landmarkBoundaries.get(record.id);
@@ -503,6 +527,8 @@ export async function createShanghaiScene(options = {}) {
   }
   function disposeModel(object) {
     if (!object) return;
+    if(object.userData?.streetInteractionOwner)streetInteraction.removeOwner(object.userData.streetInteractionOwner);
+    cityDetails.detach(object);
     lighting?.releaseModel(object);
     scene.remove(object);
     disposeModelResources(object);
@@ -528,6 +554,7 @@ export async function createShanghaiScene(options = {}) {
     });
   }
   function handleStreamingChange(state) {
+    cityDetails.syncParents(localStreamer.getVisible());
     const signature=state.active.filter(record=>record.visible).map(record=>record.id).sort().join('|');
     const changed=signature!==streamingSignature;
     if(changed){streamingSignature=signature;updateBuildingExclusions();map.triggerRepaint();}
@@ -541,6 +568,18 @@ export async function createShanghaiScene(options = {}) {
     const center=map.getCenter(), walking=walker.group.visible;
     const target=walking?current:{lng:center.lng,lat:center.lat};
     localStreamer.update({...target,zoom:map.getZoom(),bearing:map.getBearing(),mode:walking?'walk':'overview'},force);
+    cityDetails.update({...target,zoom:map.getZoom(),bearing:map.getBearing(),mode:walking?'walk':'overview'});
+  }
+  function prepareCityDetailObject(group,far,record) {
+    group.name=`${record.id} · physical inferred facades`;
+    group.position.copy(far.position);group.quaternion.copy(far.quaternion);group.scale.copy(far.scale);
+    group.traverse(object=>{
+      if(!object.isMesh)return;
+      object.frustumCulled=true;
+      if(object.isInstancedMesh)object.computeBoundingSphere();else object.geometry.computeBoundingSphere();
+      surfaces?.apply(object,'city-detail');
+    });
+    lighting?.configureModel(group,{detailed:true});
   }
   async function setCityManifest(input, settings={}) {
     localDataKind='city';
@@ -642,19 +681,21 @@ export async function createShanghaiScene(options = {}) {
   }
   async function findSafePosition({lng,lat,timeout=8000}) {
     const loaded = await waitForData(timeout); rebuildCollisionCache(true);
-    if (!collisionAt(lng,lat)) return {lng,lat,adjusted:false,verified:loaded && polygons.length>0};
+    const blocked=point=>collisionAt(point.lng,point.lat)||streetInteraction.sweep(point,point,{radius:.38,height:1.75});
+    if (!blocked({lng,lat})) return {lng,lat,adjusted:false,verified:loaded && polygons.length>0};
     const candidates = roadLines.map(road => nearestOnLine({lng,lat},road.coordinates))
       .filter(p=>p && p.distance<250).sort((a,b)=>a.distance-b.distance);
-    for (const p of candidates) if (!collisionAt(p.lng,p.lat)) return {...p,adjusted:true,verified:loaded};
+    for (const p of candidates) if (!blocked(p)) return {...p,adjusted:true,verified:loaded};
     for (let radius=3;radius<=120;radius+=3) for(let i=0;i<16;i++) {
       const p=offsetLngLat({lng,lat},Math.sin(i*Math.PI/8)*radius,Math.cos(i*Math.PI/8)*radius);
-      if(!collisionAt(p.lng,p.lat))return {...p,adjusted:true,verified:loaded};
+      if(!blocked(p))return {...p,adjusted:true,verified:loaded};
     }
     return {lng,lat,adjusted:false,verified:false};
   }
-  function setPlayer(lng,lat,heading=0,playerSpeed=0,dt=.016) {
+  function setPlayer(lng,lat,heading=0,playerSpeed=0,dt=.016,groundHeight=DEFAULT_GROUND_HEIGHT) {
     current={lng,lat}; speed=playerSpeed; animationTime+=clamp(dt,0,.1);
-    const position=geographicPosition(lng,lat,0); walker.group.position.copy(position);
+    const height=Number.isFinite(groundHeight)?groundHeight:DEFAULT_GROUND_HEIGHT;
+    const position=geographicPosition(lng,lat,height-(walker.group.userData?.pavingHeightMetres??DEFAULT_GROUND_HEIGHT)); walker.group.position.copy(position);
     walker.group.rotation.y=-heading*DEG; walker.animate(speed,animationTime);
     updateLandmarkVisibility(); map.triggerRepaint();
   }
@@ -710,6 +751,11 @@ export async function createShanghaiScene(options = {}) {
   else if(options.neighborhoods)await setNeighborhoods(options.neighborhoods);
   onStatus({kind:'ready',message:'三维地图已就绪',loaded:1,total:1});
   return {map,ready:loadedStyle,sourceId,setPlayer,setCamera,setCameraFromTo,collisionAt,findSafePosition,waitForData,
+    groundAt:(lng,lat)=>streetInteraction.groundAt(lng,lat),
+    sweepLocalCollision:(from,to,options)=>streetInteraction.sweep(from,to,options),
+    localCameraCollision:(from,to,options)=>streetInteraction.cameraCollision(from,to,options),
+    getStreetInteractionState:()=>streetInteraction.getState(),
+    streetInteractionRevision:()=>streetInteraction.revision,
     setLandmarks,setCityManifest,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
     setAvatarVisible(visible){
       if(!visible){
@@ -724,18 +770,18 @@ export async function createShanghaiScene(options = {}) {
     loadLandmarks(){updateLandmarkVisibility();},
     getLandmarkCacheState(){return detailCacheState(landmarkRecords.values(),detailCacheLimits,detailCacheStats);},
     getNeighborhoodState(){return localStreamer.getRecords();},
-    getStreamingState(){return {...localStreamer.getState(),renderer:{...renderMetrics}};},
+    getStreamingState(){return {...localStreamer.getState(),detail:cityDetails.getState(),renderer:{...renderMetrics}};},
     getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status,activeVariant,loadingModel})=>({id,name,status,activeVariant,loadingModel}));},
     getLandmarkAssetState(id){
-      const record=landmarkRecords.get(id),maps=new Set();let photoMeshes=0,triangles=0;
+      const record=landmarkRecords.get(id),maps=new Set();let photoMeshes=0;
+      const triangles=countExpandedTriangles(record?.object);
       record?.object?.traverse(mesh=>{
         if(!mesh.isMesh)return;
-        triangles+=(mesh.geometry.index?.count||mesh.geometry.getAttribute('position')?.count||0)/3;
         for(const material of Array.isArray(mesh.material)?mesh.material:[mesh.material])if(/^PhotoFacade_/i.test(material?.name||'')){
           photoMeshes++;if(material.map)maps.add(material.map);
         }
       });
-      return {id,status:record?.status,variant:record?.activeVariant,photoMeshes,triangles,
+      return {id,status:record?.status,variant:record?.activeVariant,photoMeshes,triangles,greenery:record?.object?.userData?.streetAssembly?.greenery?.stats||null,
         images:[...maps].map(map=>({width:map.image?.width,height:map.image?.height,colorSpace:map.colorSpace,
           orientation:map.userData.photographicOrientation||null}))};
     },
@@ -744,5 +790,5 @@ export async function createShanghaiScene(options = {}) {
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
+    destroy(){destroyed=true;osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

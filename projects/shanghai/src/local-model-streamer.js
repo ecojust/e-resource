@@ -1,4 +1,6 @@
 /** Spatially bounded, abortable streaming of georeferenced local city GLBs. */
+import {estimateModelBufferResources} from './model-resources.js';
+
 const EARTH = 6378137;
 const DEG = Math.PI / 180;
 const INDEX_LATITUDE = 31.2304 * DEG;
@@ -146,17 +148,7 @@ async function readIds(response) {
 }
 
 export function estimateGeometryBytes(object) {
-  const arrays = new Set();
-  object.traverse(child => {
-    if (!child.geometry) return;
-    const geometry = child.geometry;
-    for (const attribute of Object.values(geometry.attributes || {})) {
-      const array = attribute.isInterleavedBufferAttribute ? attribute.data?.array : attribute.array;
-      if (array) arrays.add(array);
-    }
-    if (geometry.index?.array) arrays.add(geometry.index.array);
-  });
-  return [...arrays].reduce((sum,array) => sum + array.byteLength, 0);
+  return estimateModelBufferResources(object).totalBytes;
 }
 
 /**
@@ -194,6 +186,7 @@ export class LocalModelStreamer {
       const inlineIds=item.featureIds || item.feature_ids || null;
       this.records.set(id,{id,name:item.name || item.district_name || id,lng,lat,bounds,
         geometryBounds:item.geometry_bbox || bounds,url:new URL(file,base).href,
+        detailURL:item.near_manifest_file?new URL(item.near_manifest_file,base).href:null,
         idsURL:item.feature_ids_file?new URL(item.feature_ids_file,base).href:null,
         inlineIds:inlineIds?normaliseFeatureIds(inlineIds):null,
         triangles:Number(item.triangles || 0),fileBytes:Number(item.size_bytes || 0),buildingCount:Number(item.building_count || item.represented_features || 0),
@@ -273,6 +266,9 @@ export class LocalModelStreamer {
         ?this.fetch(record.idsURL,{signal:controller.signal}).then(readIds)
         :Promise.reject(new Error('分块缺少建筑标识索引，继续显示在线建筑'));
       const [buffer,ids]=await Promise.all([modelRequest,idsRequest]);
+      // This deadline bounds transport/ID decoding, not CPU parsing or the
+      // frame-batched suppression work. Keep the controller for view changes.
+      clearTimeout(timeout);
       if (controller.signal.aborted) throw new DOMException('Aborted','AbortError');
       const data=await this.loader.parseAsync(buffer,new URL('.',record.url).href); object=data.scene;
       if (this.destroyed || generation!==this.generation || controller.signal.aborted || !this.wanted.has(record.id)) {

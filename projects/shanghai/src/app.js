@@ -216,7 +216,8 @@ async function main(){
       if(place){selectPlace(place);toast('已选择街区，点击“进入漫游”出发。');}
       else toast('请在上海行政区范围内选择起点。');
     });
-    await scene.setCityManifest('assets/city/manifest.json');
+    const cityState=await scene.setCityManifest('assets/city-detail/manifest.json');
+    if(cityState.fallback)await scene.setCityManifest('assets/city/manifest.json');
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});
     controller.setMode('overview');controller.setEnabled(true);controller.teleport({lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing});
     if(startWalking)syncMode('walk',false);

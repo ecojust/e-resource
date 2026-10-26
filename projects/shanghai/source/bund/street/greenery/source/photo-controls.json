@@ -1,0 +1,170 @@
+{
+  "version": "bund17-18-greenery-photo-controls-v1",
+  "photo": "../references/aerial-2010-original.jpg",
+  "photo_sha256": "fd991d67d41a9bc7ee7eacc34994c70b5f60084bf603533a854e976f845be6f0",
+  "photo_date": "2010-09-18",
+  "pixel_coordinates": "unchanged original 4752x3168, origin upper left",
+  "method": "Separate four-corner ground-plane homography for each narrow mapped bed. Exact corner fit is not independent calibration. Root pixels are manual estimates; uncertain roots are occluded by separate foreground trees.",
+  "corner_order": [
+    "south-west/road",
+    "south-east/promenade",
+    "north-east/promenade",
+    "north-west/road"
+  ],
+  "corner_uncertainty_px": 3,
+  "beds": [
+    {
+      "id": "south",
+      "source_key": "south-unknown-opening",
+      "corners_px": [
+        [
+          2597,
+          2583
+        ],
+        [
+          2589,
+          2606
+        ],
+        [
+          3058,
+          2616
+        ],
+        [
+          3067,
+          2593
+        ]
+      ],
+      "trees": [
+        {
+          "id": "south-1",
+          "root_px": [
+            2622,
+            2595
+          ],
+          "root_uncertainty_px": [
+            3,
+            2
+          ],
+          "visibility": "visible trunk-ground junction",
+          "height_m": 10.2,
+          "crown_width_m": 3.8
+        },
+        {
+          "id": "south-2",
+          "root_px": [
+            2736,
+            2598
+          ],
+          "root_uncertainty_px": [
+            6,
+            4
+          ],
+          "visibility": "ground contact partly hidden behind separate foreground tree; shaft and support line inform root",
+          "height_m": 10.0,
+          "crown_width_m": 3.5
+        },
+        {
+          "id": "south-3",
+          "root_px": [
+            2895,
+            2602
+          ],
+          "root_uncertainty_px": [
+            10,
+            5
+          ],
+          "visibility": "root hidden by foreground canopy; shaft extension estimated",
+          "height_m": 9.5,
+          "crown_width_m": 3.4
+        },
+        {
+          "id": "south-4",
+          "root_px": [
+            3008,
+            2607
+          ],
+          "root_uncertainty_px": [
+            10,
+            5
+          ],
+          "visibility": "root hidden by foreground canopy; separate bed tree inferred from shaft and crown",
+          "height_m": 9.6,
+          "crown_width_m": 3.6
+        }
+      ]
+    },
+    {
+      "id": "north",
+      "source_key": "north-unknown-opening",
+      "corners_px": [
+        [
+          3220,
+          2594
+        ],
+        [
+          3211,
+          2611
+        ],
+        [
+          3575,
+          2620
+        ],
+        [
+          3583,
+          2600
+        ]
+      ],
+      "trees": [
+        {
+          "id": "north-1",
+          "root_px": [
+            3289,
+            2601
+          ],
+          "root_uncertainty_px": [
+            3,
+            2
+          ],
+          "visibility": "visible trunk-ground junction and triangular braces",
+          "height_m": 9.1,
+          "crown_width_m": 3.3
+        },
+        {
+          "id": "north-2",
+          "root_px": [
+            3375,
+            2606
+          ],
+          "root_uncertainty_px": [
+            3,
+            2
+          ],
+          "visibility": "visible trunk-ground junction, lower stem and braces",
+          "height_m": 8.8,
+          "crown_width_m": 3.3
+        },
+        {
+          "id": "north-3",
+          "root_px": [
+            3509,
+            2611
+          ],
+          "root_uncertainty_px": [
+            3,
+            2
+          ],
+          "visibility": "visible trunk-ground junction beside cabinet; branches and braces",
+          "height_m": 9.0,
+          "crown_width_m": 3.6
+        }
+      ]
+    }
+  ],
+  "geometry_inferences": {
+    "species": "unidentified; no species claim",
+    "shrubs": "No separately identifiable shrub hedge in the two narrow beds; none added. Lower green surfaces are treated as maintained grass.",
+    "height_m": "8.8–10.2m is visual scale estimate against bus and street furniture, not surveyed or a camera-calibrated vertical reconstruction.",
+    "crowns": "Sparse, pruned, irregular branching with open spaces from 2010 appearance. Leaf layout is procedural, not individually photo-reconstructed.",
+    "supports": "Three leaning braces and a dark trunk tie per tree, estimated from 2010 visible light diagonal supports; not a claim they remain in 2026."
+  }
+}

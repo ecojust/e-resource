@@ -54,20 +54,9 @@ def solid(name,g,z0,z1):
   mesh.polygon(rings,z0,z1,mesh)
 def vector_at(line,d):
  a=np.array(line.interpolate(max(0,d-.1)).coords[0]);b=np.array(line.interpolate(min(line.length,d+.1)).coords[0]);t=b-a;t/=np.linalg.norm(t);return t,np.array([-t[1],t[0]])
-def lamp(x,z,road=False):
- material='BundRailingSteel' if road else 'BundLampSilver';height=5.6 if road else 4.3
- cuboid('BundGraniteCurb',(x,.15,z),(.35,.30,.35));rod(material,(x,.25,z),(x,height,z),.065,12)
- if road:
-  pts=[(x,height-.55,z),(x+.15,height-.10,z),(x+.6,height+.15,z),(x+1.45,height+.25,z)]
-  for a,b in zip(pts,pts[1:]):rod(material,a,b,.05,10)
-  cuboid(material,(x+1.55,height+.22,z),(1.05,.13,.30));cuboid('BundLampGlass',(x+1.55,height+.145,z),(.84,.025,.23))
- else:
-  rod(material,(x,height-.15,z),(x,height+.57,z),.17,16)
-  rod('BundLampGlass',(x,height-.09,z),(x,height+.48,z),.14,16)
-  # Four visible cage ribs and a shallow mushroom cap, as in the modern photo.
-  for a in [0,math.pi/2,math.pi,math.pi*1.5]:
-   dx,dz=.165*math.cos(a),.165*math.sin(a);rod(material,(x+dx,height-.15,z+dz),(x+dx,height+.55,z+dz),.016,6)
-  rod(material,(x,height+.54,z),(x,height+.62,z),.24,16)
+from street_furniture import install as install_furniture
+furniture=install_furniture(globals())
+lamp=furniture.lamp
 
 osm=json.loads((ROOT/'osm-street.json').read_text())['elements'];by_id={e['id']:e for e in osm}
 ways={e['id']:metric(LineString([(p['lon'],p['lat']) for p in e['geometry']])) for e in osm if 'geometry' in e}
@@ -139,30 +128,7 @@ rail_breaks=[rail.project(Point(point)) for point in rail.coords]
 def waterward(d):
  p=np.array(rail.interpolate(d).coords[0]);q=np.array(shore.interpolate(shore.project(Point(p))).coords[0]);v=q-p
  return v/np.linalg.norm(v)
-TRACK_RAIL=True
-for d0 in np.arange(0,rail.length,8.0):
- d1=min(d0+8.0,rail.length)
- p=np.array(rail.interpolate(d0).coords[0]);t,n=vector_at(rail,d0+.01)
- # Keep the leaning top toward water; OSM geometry determines the side.
- toward_water=waterward(d0)
- cuboid('BundGraniteCurb',(p[0],.51,p[1]),(.43,1.02,.43));post_count+=1
- for h,radius in [(.29,.022),(.52,.022),(.76,.022),(1.08,.055)]:
-  # Follow every mapped bend; a single 8m chord can cut across a curved shore.
-  knots=sorted(set([float(d0),float(d1)]+[d for d in rail_breaks if d0<d<d1]))
-  for da,db in zip(knots,knots[1:]):
-   pa=np.array(rail.interpolate(da).coords[0])+waterward(da)*(h/1.08*.24)
-   pb=np.array(rail.interpolate(db).coords[0])+waterward(db)*(h/1.08*.24)
-   rod('BundRailingSteel',(pa[0],h,pa[1]),(pb[0],h,pb[1]),radius,8)
- for d in np.arange(d0+.9,d1,.95):
-  p=np.array(rail.interpolate(d).coords[0]);top=p+waterward(d)*.24
-  rod('BundRailingSteel',(p[0],.12,p[1]),(top[0],1.08,top[1]),.035,8)
- if round(d0)%32==0:
-  TRACK_RAIL=False
-  p=p-waterward(min(d1,rail.length))*.75;lamp(p[0],p[1]);lamps+=1
-  TRACK_RAIL=True
-end=np.array(rail.interpolate(rail.length).coords[0])
-cuboid('BundGraniteCurb',(end[0],.51,end[1]),(.43,1.02,.43));post_count+=1
-TRACK_RAIL=False
+post_count,lamps=furniture.build_railing(rail,shore,waterward,vector_at)
 # Validate both a densely sampled centreline and every emitted railing/post
 # vertex against the merged real west shoreline, not against a tile rectangle.
 sample_distances=[rail.interpolate(d).distance(shore) for d in np.linspace(0,rail.length,int(math.ceil(rail.length/.25))+1)]
@@ -271,6 +237,10 @@ for bed in planting.values():
 (ROOT/'bund-streets-planting-check.json').write_text(json.dumps(planting_audit,ensure_ascii=False,indent=2)+'\n')
 (ROOT/'bund-streets-planting-check.geojson').write_text(json.dumps(planting_geojson,ensure_ascii=False,separators=(',',':'))+'\n')
 
+# v4.5 source-bounded public frontage paving; append-only geometry.
+from frontage_paving import add_frontage_paving
+frontage,frontage_audit=add_frontage_paving(globals())
+
 # Pack one primitive per material; no external texture or buffer dependency.
 binary=bytearray();views=[];accessors=[];primitives=[];materials=[]
 def append(data,target,component,type_,count,minimum=None,maximum=None):
@@ -290,15 +260,19 @@ for name,mesh in M.items():
  vi=append(v.tobytes(),34962,5126,'VEC3',len(v),v.min(axis=0).tolist(),v.max(axis=0).tolist());ni=append(n.tobytes(),34962,5126,'VEC3',len(n));ii=append(idx.tobytes(),34963,5125,'SCALAR',len(idx))
  mi=len(materials);materials.append({'name':name,'pbrMetallicRoughness':{'baseColorFactor':COLORS[name],'metallicFactor':.45 if 'Steel' in name or 'Silver' in name else .02,'roughnessFactor':.35 if 'Glass' in name else .94 if name=='BundRoadSurface' else .72}})
  primitives.append({'attributes':{'POSITION':vi,'NORMAL':ni},'indices':ii,'material':mi});triangles+=len(idx)//3
-gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v4.3'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
+gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v5.0','copyright':'© OpenStreetMap contributors (ODbL-1.0 derived geometry); original procedural meshes/code MIT; Gary Lee Todd CC0 reference photograph and Bohao Zhao CC BY 3.0 morphology reference (not textures)'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
 j=json.dumps(gltf,separators=(',',':')).encode();j+=b' '*((-len(j))%4);binary+=b'\0'*((-len(binary))%4)
 output=ROOT/'bund-streets.glb';output.write_bytes(struct.pack('<III',0x46546c67,2,12+8+len(j)+8+len(binary))+struct.pack('<II',len(j),0x4e4f534a)+j+struct.pack('<II',len(binary),0x004e4942)+binary)
-metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.08,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
+metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.16,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
 metadata['shoreline_validation']=shoreline_audit
+metadata['photo_guided_furniture']=furniture.audit()
+(ROOT/'bund-streets-furniture-check.json').write_text(json.dumps(furniture.audit(),ensure_ascii=False,indent=2)+'\n')
+(ROOT/'furniture-interaction.json').write_text(json.dumps(furniture.interaction(),ensure_ascii=False,separators=(',',':'))+'\n')
 metadata['road_validation']=roads['audit']
 metadata['paving_validation']=paving_audit
 metadata['estimated_connector_paving']=connector_audit
-metadata['version']=4.3
+metadata['version']=5.0
+metadata['frontage_paving']=frontage_audit
 metadata['photo_classified_planting']=planting_audit
 metadata['source_roads']='osm-roads.json / OpenStreetMap ODbL-1.0'
 metadata['reference_2025']='street-reference-evidence.json: Suicasmo CC0 street-level facade views, 2025-05-01'

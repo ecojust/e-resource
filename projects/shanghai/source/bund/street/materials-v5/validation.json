@@ -1,0 +1,177 @@
+{
+  "schema": "street-material-proposal-validation-v1",
+  "passed": true,
+  "checks_count": 9,
+  "checks": [
+    {
+      "name": "same twelve shared texture loads and no added files",
+      "passed": true
+    },
+    {
+      "name": "material dispatch, prior shader hooks, all old uniforms and vertex transform preserved",
+      "passed": true
+    },
+    {
+      "name": "photo, glass and modern materials still excluded",
+      "passed": true
+    },
+    {
+      "name": "cropped stone and granite coverage, grass coverage and micro-normal cutoff remain literal-identical",
+      "passed": true
+    },
+    {
+      "name": "asphalt contribution retained at mid distance, still zero beyond 0.90 m/pixel",
+      "passed": true
+    },
+    {
+      "name": "configure controls clamp as before",
+      "passed": true
+    },
+    {
+      "name": "idempotent terminal disposal releases each shared texture once",
+      "passed": true
+    },
+    {
+      "name": "failed load releases all eleven other successful texture loads",
+      "passed": true
+    },
+    {
+      "name": "main source still frozen",
+      "passed": true
+    }
+  ],
+  "source_sha256": "866e426810f80a7fcee0154a004d61284034127fce056156625eab4d439073ed",
+  "candidate_sha256": "f5471b81ccb65bf6d554ecec615fd4a43d7cc4c9627f780c40ec0e401ffb52a0",
+  "material_cases": [
+    {
+      "name": "BundRoadSurface",
+      "profile": "asphalt",
+      "new_asphalt_branch_enabled": true,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "BundStonePaving",
+      "profile": "paving",
+      "new_asphalt_branch_enabled": false,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "BundGraniteCurb",
+      "profile": "curb",
+      "new_asphalt_branch_enabled": false,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "BundPlantingGrass",
+      "profile": "grass",
+      "new_asphalt_branch_enabled": false,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "BundPlantingGranite",
+      "profile": "curb",
+      "new_asphalt_branch_enabled": false,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "Limestone",
+      "profile": "stone",
+      "new_asphalt_branch_enabled": false,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "Granite",
+      "profile": "granite",
+      "new_asphalt_branch_enabled": false,
+      "all_previous_uniforms_preserved": true
+    },
+    {
+      "name": "PhotoFacade_Window",
+      "profile": null,
+      "unchanged": true
+    },
+    {
+      "name": "Glass",
+      "profile": null,
+      "unchanged": true
+    },
+    {
+      "name": "ModernWalls",
+      "profile": null,
+      "unchanged": true
+    }
+  ],
+  "asphalt_sampling_footprint_table": [
+    {
+      "metres_per_pixel": 0.008,
+      "old_asphalt_coverage": 1,
+      "new_asphalt_coverage": 1,
+      "normal_coverage": 1
+    },
+    {
+      "metres_per_pixel": 0.025,
+      "old_asphalt_coverage": 1,
+      "new_asphalt_coverage": 1,
+      "normal_coverage": 0.7021565549059456
+    },
+    {
+      "metres_per_pixel": 0.055,
+      "old_asphalt_coverage": 0.8313470863811951,
+      "new_asphalt_coverage": 1,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 0.1,
+      "old_asphalt_coverage": 0.278786882551163,
+      "new_asphalt_coverage": 1,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 0.14,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 1,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 0.2,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 1,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 0.4,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 0.8017492711370262,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 0.6,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 0.39358600583090386,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 0.9,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 0,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 1,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 0,
+      "normal_coverage": 0
+    },
+    {
+      "metres_per_pixel": 2,
+      "old_asphalt_coverage": 0,
+      "new_asphalt_coverage": 0,
+      "normal_coverage": 0
+    }
+  ],
+  "browser_or_gpu_shader_compilation_tested": false,
+  "limitations": [
+    "Mock Three texture/material lifecycle and generated shader source inspected; actual renderer not launched.",
+    "Visual improvement is expected to be subtle: this fixes premature removal of measured surface grain, not paving coverage, planting volume or furniture."
+  ]
+}
