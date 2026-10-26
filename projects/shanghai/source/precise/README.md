@@ -1,4 +1,16 @@
-# 街区建筑逐栋复原源码（v8）
+# 街区建筑逐栋复原源码（v9）
+
+新增第6栋：[龙华塔](xuhui-longhua-pagoda/CURRENT_STATE.md)。七层八面及六道高架回廊按官方文字与四张照片分别构造；40.64m采用官方志书公布的名义总高，并非本项目实测；门洞朝向的地理相位、层间比例和隐蔽处仍有推定。
+
+| 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
+|---|---|---|---|---|
+| 龙华塔 | [19,740,940字节](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-web.glb) | [47,242,988字节](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-raw.glb) | [9,537,048字节](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-lod.glb) | [24,033,748字节](../../assets/native/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda.blend) |
+
+模型不含照片纹理像素。参考图各自保留CC0、CC BY-SA 3.0或CC BY-SA 4.0许可，不因其中一图为CC0而统一改许可。[本版实际验收](../../data/audit/precise-buildings-v9/longhua/README.md) · [来源与限制](../../data/bund/REALISM_V9.md)。
+
+## v8五栋及更早记录（历史保留）
+
+以下原正文保持，“当前”等词对应其历史版本。
 
 新增第5栋：虹口多伦路59号鸿德堂。已完成本版原生、网页及目录生命周期的有限验证；[当前应用范围](../../data/audit/precise-buildings-v8/hongde/README.md)，与下方保留的v7历史记录分开。
 

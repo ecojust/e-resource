@@ -1,7 +1,7 @@
 # 当前状态
 
-本说明对应v8应用提交`d483eba6a4636797f7e461fb834d8d80f20ecf72`。鸿德堂已接入，导航24项；[直接漫游](https://rawcdn.githack.com/ecojust/e-resource/d483eba6a4636797f7e461fb834d8d80f20ecf72/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk)、[模型下载](source/precise/hongkou-hongde-church/DELIVERY.md)。
+本页对应v9应用提交`72f845db12482c0c7a3c1fccca3f2dd4fb4b8336`。[进入龙华塔漫游](https://rawcdn.githack.com/ecojust/e-resource/72f845db12482c0c7a3c1fccca3f2dd4fb4b8336/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk) · [模型下载与源码](source/precise/xuhui-longhua-pagoda/CURRENT_STATE.md)。当前精选导航25项、逐栋街区建筑6栋、目录4个宏块；[模型及应用实际验收](data/audit/precise-buildings-v9/longhua/README.md)。
 
-模型原生外观、本版静态网页与鸿德堂目录生命周期的实际核对范围见[验收记录](data/audit/precise-buildings-v8/hongde/README.md)。启动包已实际解压并完成鸿德堂三阶段、五张截图的核对；包内14项模型，其余10项及全城资源从固定应用提交联网加载。ZIP为75,085,094字节，SHA256`dec586d0da788b16354f967ae637ab14cbaea44720ef9bc8a40efb8213a0c4a2`；[归档与实际运行范围](data/audit/launcher-v8/README.md)。
+启动包75,099,231字节，SHA256 `5200a5e0dca61b709e766b9724f9c89d1757f4763654027a94642ffd88a8bcc0`。本版ZIP完成归档完整性、公开资源字节校验，以及实际解压后龙华塔单点加载和1张截图的核对；[ZIP证据与联网要求](data/audit/launcher-v9/README.md)。ZIP没有重复应用的目录全生命周期测试，也未重测全部25项导航、16区或用户设备帧率。
 
-全城仍有来源推定与未观察区域，不代表16区逐栋照片完成。历史v7及更早正文保留，当前状态以本页和绑定证据为准。
+40.64m采用官方志书公布的名义总高，并非本项目实测；门洞朝向的地理相位、层间比例和隐蔽处仍有推定。全城仍未逐栋照片复原。v8及更早正文保留为历史，不替代本版绑定证据。

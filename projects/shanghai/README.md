@@ -1,4 +1,18 @@
-# 上海漫游 · Shanghai Explorer v8
+# 上海漫游 · Shanghai Explorer v9
+
+新增徐汇**龙华塔**：七层八面、六道高架回廊，分别构造曲檐瓦面、斗栱、真实门洞与盲壁龛、栏杆和塔刹。照片用于结构参照，没有把照片像素贴进模型。
+
+**[进入龙华塔漫游](https://rawcdn.githack.com/ecojust/e-resource/72f845db12482c0c7a3c1fccca3f2dd4fb4b8336/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk)** · [网页GLB](assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-web.glb)（19,740,940字节）· [Blender](assets/native/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda.blend)（24,033,748字节）· [当前状态与源码](source/precise/xuhui-longhua-pagoda/CURRENT_STATE.md)
+
+本版精选导航25项，其中逐栋街区建筑6栋、目录4个宏块。[模型与应用验收范围](data/audit/precise-buildings-v9/longhua/README.md)。40.64m采用官方志书公布的名义总高，并非本项目实测；门洞朝向的地理相位、层间比例和隐蔽处仍有推定。全城1,796,419个建筑及部件要素并未逐栋按照片完成。
+
+[下载启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（75,099,231字节，SHA256 `5200a5e0dca61b709e766b9724f9c89d1757f4763654027a94642ffd88a8bcc0`）；[实际解压与龙华塔运行核对](data/audit/launcher-v9/README.md)。全城及流式资源需联网，固定到应用提交`72f845db12482c0c7a3c1fccca3f2dd4fb4b8336`；下载地址随仓库版本更新。四件模型和启动包均严格小于100,000,000字节。
+
+[来源与限制](data/bund/REALISM_V9.md) · [当前状态](CURRENT_STATE.md)
+
+## v8及更早发布记录（历史）
+
+以下保留原v8正文；其中导航数量、“当前”状态和验证范围均对应当时版本，不是v9证明。
 
 新增虹口多伦路59号**鸿德堂**：砖塔的真实窗洞、双层曲檐、红柱、拱窗与圆窗按照片分别重建。两翼使用连续向后升起的檐面，窗格和2024年蓝色匾牌保留可辨特征。
 
