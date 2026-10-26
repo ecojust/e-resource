@@ -1,0 +1,110 @@
+{
+  "schema": "qingpu222-right-glass-colour-estimate-v3",
+  "source": {
+    "path": "photos/commons-121178626.jpg",
+    "sha256": "a0d7d235b58c3b6c2d1c79d4441921479cea1538439c44362e35116a260bfef3",
+    "author": "钉钉",
+    "license": "CC-BY-SA-4.0",
+    "size": [
+      4000,
+      3000
+    ]
+  },
+  "purpose": "Numerical appearance colour estimate only; these small samples are NOT mapped as textures or stretched onto geometry.",
+  "method": "Decode unchanged original JPEG to sRGB; median over the two independently identified clear interior-glass regions; convert sRGB median to linear RGB for glTF baseColorFactor.",
+  "regions": [
+    {
+      "polygon_px": [
+        [
+          3125,
+          1775
+        ],
+        [
+          3180,
+          1780
+        ],
+        [
+          3206,
+          1870
+        ],
+        [
+          3150,
+          1865
+        ]
+      ],
+      "pixel_count": 4961,
+      "median_srgb": [
+        0.5215686274509804,
+        0.5137254901960784,
+        0.40784313725490196
+      ],
+      "percentile_10_srgb": [
+        0.3764705882352941,
+        0.3843137254901961,
+        0.29411764705882354
+      ],
+      "percentile_90_srgb": [
+        0.5568627450980392,
+        0.5490196078431373,
+        0.44313725490196076
+      ]
+    },
+    {
+      "polygon_px": [
+        [
+          3255,
+          1773
+        ],
+        [
+          3290,
+          1777
+        ],
+        [
+          3313,
+          1864
+        ],
+        [
+          3278,
+          1860
+        ]
+      ],
+      "pixel_count": 3044,
+      "median_srgb": [
+        0.47058823529411764,
+        0.47843137254901963,
+        0.3764705882352941
+      ],
+      "percentile_10_srgb": [
+        0.3843137254901961,
+        0.4,
+        0.2980392156862745
+      ],
+      "percentile_90_srgb": [
+        0.6196078431372549,
+        0.6274509803921569,
+        0.5294117647058824
+      ]
+    }
+  ],
+  "combined_median_srgb": [
+    0.5137254901960784,
+    0.5098039215686274,
+    0.4
+  ],
+  "estimated_linear_base_color": [
+    0.22696587351009836,
+    0.2232279573168085,
+    0.13286832155381798
+  ],
+  "roughness_estimated": 0.38,
+  "metallic_estimated": 0.06,
+  "reflectance_is_not_measured": true,
+  "limitations": [
+    "Photo colour includes source lighting and reflected environment; it does not measure intrinsic glass reflectance.",
+    "Roughness and metallic approximation are modelling choices, not calibrated physical properties.",
+    "No right-door paper labels are retained because physical attachment versus reflection is not reliably established.",
+    "Only the central cursive plaque uses photographic texture in v3."
+  ],
+  "original_jpeg_changed": false,
+  "pixel_colours_reencoded_as_texture": false
+}

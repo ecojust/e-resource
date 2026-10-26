@@ -1,0 +1,86 @@
+{
+  "schema": "photo-depth-hypothesis-check-v1",
+  "calibration_file": "calibration-independent.json",
+  "calibration_sha256": "5511cde4fa0dba6713d46b49a6bb34dae68e033a783b6720df712b3fb20c7df3",
+  "examples": [
+    {
+      "label": "left_metal_roofcap_crown",
+      "oriented_pixel": [
+        1755.0000000000002,
+        97.2
+      ],
+      "front_plane_u_z_m": [
+        -11.838350744166242,
+        22.57432501044028
+      ],
+      "conditional_depths": [
+        {
+          "assumed_outward_depth_m": -3,
+          "conditional_facade_u_z_m": [
+            -10.385687484691916,
+            24.41637191004856
+          ],
+          "reprojection_error_source_px": 1.4336069135935292e-12
+        },
+        {
+          "assumed_outward_depth_m": -2,
+          "conditional_facade_u_z_m": [
+            -10.869908571183357,
+            23.8023562768458
+          ],
+          "reprojection_error_source_px": 1.016150641858346e-12
+        },
+        {
+          "assumed_outward_depth_m": 0,
+          "conditional_facade_u_z_m": [
+            -11.838350744166242,
+            22.57432501044028
+          ],
+          "reprojection_error_source_px": 1.4028496275342423e-12
+        }
+      ]
+    },
+    {
+      "label": "right_metal_roofcap_crown",
+      "oriented_pixel": [
+        3626.1000000000004,
+        683.1
+      ],
+      "front_plane_u_z_m": [
+        6.847385719673501,
+        22.437749248802298
+      ],
+      "conditional_depths": [
+        {
+          "assumed_outward_depth_m": -3,
+          "conditional_facade_u_z_m": [
+            9.909749120316167,
+            24.268030702439837
+          ],
+          "reprojection_error_source_px": 1.4062285205060312e-12
+        },
+        {
+          "assumed_outward_depth_m": -2,
+          "conditional_facade_u_z_m": [
+            8.888961320101945,
+            23.65793688456066
+          ],
+          "reprojection_error_source_px": 9.374856803373542e-13
+        },
+        {
+          "assumed_outward_depth_m": 0,
+          "conditional_facade_u_z_m": [
+            6.847385719673501,
+            22.437749248802298
+          ],
+          "reprojection_error_source_px": 1.4380373887290168e-12
+        }
+      ]
+    }
+  ],
+  "projection_max_error_source_px": 1.4380373887290168e-12,
+  "status": "Depth is assumed, not independently recovered. Conditional elevations must not be labelled measured roof heights.",
+  "gallery_depth_independently_recovered": false,
+  "gallery_model_assumption_m": null,
+  "gallery_note": "07 backset caps and rear blue extension are different depth planes. Urn/flagstaff tops are not included in crown controls."
+}

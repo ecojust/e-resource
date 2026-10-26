@@ -1,0 +1,157 @@
+{
+  "schema": "bund07-visual-refinement-controls-v1",
+  "status": "Source-observed corrections implemented; new native/perspective/browser acceptance pending root",
+  "old_candidate_raw_sha256": "77a72f8737f7e3b9afbffb9adf6e4e199d10cfe7af2d10cf0ab57afeb623ac31",
+  "coordinate_system": "Original stored 2025 JPEG 5184x3456, EXIF1; listed pixel boxes/points are manual visual controls, not surveyed coordinates. Source originals are unchanged.",
+  "primary_source": {
+    "path": "research/bund07-2025-suicasmo-original.jpg",
+    "sha256": "4cce7f5272e949eff1f874a8f10a9c44f0e61085322cc1f2fb5174d802c7cfe9",
+    "author": "Suicasmo",
+    "license": "CC0-1.0",
+    "date": "2025-05-01"
+  },
+  "secondary_source": {
+    "path": "research/bund07-2016-xiquinhosilva-original.jpg",
+    "sha256": "f258c7b6ae1cfeb1d79420126935ede0c6f4d9e88c1e8af8309e3fab2451a08a",
+    "author": "xiquinhosilva",
+    "license": "CC-BY-2.0",
+    "date": "2016-10-11"
+  },
+  "observations": [
+    {
+      "id": "rear-roof-topology",
+      "source_crop_2025_px": [
+        2200,
+        400,
+        3660,
+        1000
+      ],
+      "source_crop_2016_px": [
+        1260,
+        390,
+        2020,
+        520
+      ],
+      "observed": "2016 resolves two arched stone hoods over rectangular lights on either side of a separate central triangular pediment. The 2025 view confirms exposed hood/triangle tops, with lower openings heavily occluded by front parapet and rail.",
+      "correction": "Remove identical fifth arch/light; build four rectangular recessed lights, four opaque stone arch hoods, and separate central triangle; preserve real front parapet and railing as occluders.",
+      "unresolved": "No measured roof plan/depth. Four lower lights are inferred to persist from dated 2016; their 2025 lower geometry is occluded."
+    },
+    {
+      "id": "rear-roof-depth-control",
+      "points_original_px": {
+        "triangle_tip": [
+          2805,
+          618
+        ],
+        "blue_edge_left": [
+          2310,
+          510
+        ],
+        "blue_edge_right": [
+          3260,
+          760
+        ]
+      },
+      "assumed_outward_d_m": -3,
+      "conditional_backprojection_uz_m": {
+        "triangle_tip": [
+          -0.147,
+          22.494
+        ],
+        "blue_edge_left": [
+          -5.251,
+          22.209
+        ],
+        "blue_edge_right": [
+          5.095,
+          22.357
+        ]
+      },
+      "manual_pixel_tolerance_px": 12,
+      "adopted_m": {
+        "roof_front_depth": 3.0,
+        "wall_top": 22.25,
+        "central_triangle_base": 21.62,
+        "central_triangle_tip": 22.5
+      },
+      "assumptions": "Symmetric rear central triangle near u0 suggests about3m setback under the fixed camera; this is a conditional solution, not independent triangulation or measurement. Allow 2–4m depth interpretation; do not imply numeric precision.",
+      "old_rejected_m": {
+        "depth": 10.5,
+        "wall_top": 21.45
+      },
+      "old_rejection": "Would hide the roof face behind the20m front parapet under the calibrated low source camera. Old +8degree downward orthographic preview did not reveal that mismatch."
+    },
+    {
+      "id": "ground-door-and-side-glazing",
+      "source_crop_px": [
+        2380,
+        2450,
+        3780,
+        3320
+      ],
+      "central_gate_observation_box_px": [
+        3010,
+        2780,
+        3220,
+        3280
+      ],
+      "observed": "Central dark metal gate with vertical grating, upper diagonals and lower oval/lozenge; four flanking openings each show3columns and at least5rows. Upper two rows are darker, lower three lighter/curtained. Bottom subdivisions partly hidden by planted boxes.",
+      "correction": "Central gate has independent backing and unioned real metal grating; four side windows have15separate glass panes and continuous unioned frame grids.",
+      "inferred": "Frame widths, exact lower horizontal divisions, tiny gate motifs and hidden bottom are approximate; the geometry does not claim reconstructed interior contents."
+    },
+    {
+      "id": "metal-caps",
+      "source_crop_px": [
+        3250,
+        575,
+        3870,
+        1100
+      ],
+      "observed": "Closed low elongated curved dark metal caps with repeated seam lines; no open columns/pavilion.",
+      "correction": "Dark estimated metal finish; rounded cap perimeter and37profile rings replace coarse five-band faceting;44seams around the full perimeter at estimatedspacing.",
+      "preserved": "24m nominal crown and existing depth/finial hypotheses, approved by independent conditional metric.",
+      "inferred": "Dense seam count/spacing and material roughness/albedo remain estimates. Curvature detail is not additional survey precision."
+    },
+    {
+      "id": "garuda-crest",
+      "source_crop_px": [
+        3030,
+        2140,
+        3310,
+        2530
+      ],
+      "observed": "Red raised arms/torso/head, layered brown-red wings, gold crown/chest/waist strips, bent legs, blue-green hanging drapery and lower curved gold-edged scroll.",
+      "correction": "Layered closed relief with separate feathers, crown, arms, body, bent legs, talons and scroll.",
+      "unresolved": "This remains a simplified sculpture. Fine carving, tiny scroll inscription and exact3Dsurface are not claimed."
+    },
+    {
+      "id": "bank-wording",
+      "source_crop_px": [
+        2380,
+        2450,
+        3780,
+        2780
+      ],
+      "observed": [
+        "盤谷銀行",
+        "ธนาคารกรุงเทพ",
+        "Bangkok Bank"
+      ],
+      "correction": "Readable separate extruded glyphs; licensed Chinese/Latin subset plus NotoSansThaiOFL subset with frozen HarfBuzz mark positioning.",
+      "unresolved": "Fonts and widths approximate photographed letters; not bank-logo tracing."
+    }
+  ],
+  "passed_observed_layout_items": [
+    "Four-storey main facade",
+    "3+5+3upperaxes",
+    "Pairedcentral3Fwindows",
+    "Twofrontellipticaloculi",
+    "Alternating2Ftriangular/curvedpediments"
+  ],
+  "remaining_acceptance": [
+    "Render new candidate from exact calibrated2025camera, preserving roll and upward pitch",
+    "Confirm rear roof partial occlusion and sidecap silhouette; change conditional depth/height if residual is materially visible",
+    "Check door/three-by-five glazing/Thai word and layered crest readability in native and web scenes"
+  ],
+  "source_pixel_editing": "None. Analysis crops were viewed only; the embedded original JPEG remains byte-identical."
+}
