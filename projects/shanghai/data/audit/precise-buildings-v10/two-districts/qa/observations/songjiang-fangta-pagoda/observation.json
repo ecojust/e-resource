@@ -1,0 +1,109 @@
+{
+  "schema": "fangta-actual-osm-observation-run-v1",
+  "completed": true,
+  "model_accepted": false,
+  "browser_model_test": false,
+  "source_geometry": {
+    "bytes": 29109,
+    "sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3"
+  },
+  "script": {
+    "bytes": 9586,
+    "sha256": "a2d8479813ca7b5184ed29e7368fb48641b4d73e512239d1608b6df7a4794fbb"
+  },
+  "url": "http://127.0.0.1:8874/shanghai_project/index.html#mode=overview",
+  "events": [
+    {
+      "at": 1793038772.2146704,
+      "stage": "navigate"
+    },
+    {
+      "at": 1793038803.6785033,
+      "stage": "Fangta source view installed"
+    },
+    {
+      "at": 1793038804.2168229,
+      "stage": "Actual source snapshot saved",
+      "feature_count": 2
+    },
+    {
+      "at": 1793038804.9545715,
+      "stage": "Observation complete; fixture requires actual identity review"
+    }
+  ],
+  "page_errors": [],
+  "requests_failed": [
+    {
+      "url": "https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles",
+      "failure": "inspector"
+    },
+    {
+      "url": "https://stac.overturemaps.org/catalog.json",
+      "failure": "inspector"
+    }
+  ],
+  "blocked": [
+    {
+      "requestId": "178029.61",
+      "timestamp": 95556.363558,
+      "type": "Fetch",
+      "errorText": "",
+      "canceled": false,
+      "blockedReason": "inspector"
+    },
+    {
+      "requestId": "178029.62",
+      "timestamp": 95556.649263,
+      "type": "Fetch",
+      "errorText": "",
+      "canceled": false,
+      "blockedReason": "inspector"
+    }
+  ],
+  "runtime_or_disk_modified": false,
+  "network": {
+    "source_environment": "HTTPS_PROXY",
+    "host": "proxy",
+    "port": 8080,
+    "bypass": "localhost,127.0.0.1",
+    "credentials_supplied": false
+  },
+  "outage_injection": {
+    "method": "Chromium Network.setBlockedURLs",
+    "patterns": [
+      "https://tiles.overturemaps.org/*",
+      "https://stac.overturemaps.org/*"
+    ],
+    "playwright_routes_installed": false,
+    "cache_disabled": false
+  },
+  "probe": {
+    "source": "openmaptiles",
+    "sourceLayer": "building",
+    "prototypes_restored": true,
+    "feature_states_not_modified": true
+  },
+  "analysis": {
+    "positive_component_matches": 1,
+    "matching_aggregate_features": 1,
+    "largest_matches": [
+      {
+        "source_id": 2575804360,
+        "component_original_index": 28,
+        "iou": 0.9999271042007434,
+        "target_fraction": 0.9999718900657547,
+        "component_fraction": 0.9999552116170838
+      }
+    ],
+    "fixture_approved": false
+  },
+  "actual_source_snapshot": {
+    "bytes": 41172,
+    "sha256": "d1632b7d079abcefb076d6697e49376c8771dc8244a89f9aa8ed366f46fa9858"
+  },
+  "component_report": {
+    "bytes": 2743,
+    "sha256": "62a3b62498129c5d4ee63d9eafb102baadd3eb2f9b1aabf72717a7022261d4e9"
+  },
+  "finished_utc": "2026-10-26T18:20:05Z"
+}

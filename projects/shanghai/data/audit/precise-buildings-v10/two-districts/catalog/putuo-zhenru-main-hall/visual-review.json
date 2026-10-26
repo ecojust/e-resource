@@ -1,0 +1,56 @@
+{
+  "schema": "two-district-shadow-catalog-root-visual-v2",
+  "passed": true,
+  "final": true,
+  "reviewer": "root",
+  "target_ids": [
+    "putuo-zhenru-main-hall"
+  ],
+  "macro_id": "14-13716-6693",
+  "browser_report_sha256": "77e7f8a32dda50ed9319d6a011a4e51c4277076b488002e795ccd897ecf48e5c",
+  "inputs_sha256": "552cec86585587c434884ea526fc937f916930f556ad345ccba6f2a906d5e734",
+  "reviewed_runtime_delta_sha256": "6a415603a7e183f868f57607e58471bbd56649f9ec90cff1f130b93af0a87ea2",
+  "runtime_file_sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c",
+  "actually_viewed": [
+    {
+      "file": "static-putuo-zhenru-main-hall-loaded.png",
+      "bytes": 233016,
+      "sha256": "74360393b5fea443fc5031e4bec45677b90a0f63181a3fe27a06bef7fca42581",
+      "actually_viewed": true
+    },
+    {
+      "file": "static-putuo-zhenru-main-hall-returned.png",
+      "bytes": 232912,
+      "sha256": "07d7523e4bab8cc7ad4104e71a2c4278fc11efb89fb8c3a91b1f62ca023823de",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-putuo-zhenru-main-hall-loaded.png",
+      "bytes": 232944,
+      "sha256": "5259e121ebcbd574d91a906ab10b6d84911fa80c02d42db53ec2339d47f4225b",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-putuo-zhenru-main-hall-returned.png",
+      "bytes": 232956,
+      "sha256": "e939a02f0f422662a0a61f301a9023ebb06d80eb4df8483d03d079238c5ea0a4",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-putuo-zhenru-main-hall-index-hash-rejected-baseline-visible.png",
+      "bytes": 191301,
+      "sha256": "2b63d983807ce2918650417ea303649b63a6829897944cd6a17bdcf03ce9d30d",
+      "actually_viewed": true
+    }
+  ],
+  "scope": "Root actually viewed all5 new Zhenru catalog screenshots: static load/return, dynamic-only load/return, and corrupt-index baseline fallback. Four loaded images show the detailed entrance with lattice doors, flame-shaped windows, columns and continuous corrected shadows. The final negative control correctly preserves the original coarse source building rather than loading the rejected precise asset. The completed independent three-phase technical report passed the one-macro owner/neighbor/disposal checks.",
+  "findings": [
+    "Static and dynamic return views preserve the visible entrance and side window detail without false window-grid light patches on facade or stairs.",
+    "The corrupt-index view restores the low generic baseline building; it is an expected negative control, not a precise reconstruction."
+  ],
+  "limitations": [
+    "The close third-person camera is shortened in the narrow source courtyard and crops the roof; full roof/gable visibility and shadow correction were assessed in separate static/native views.",
+    "These5images and technical phases establish this Zhenru macro only. Fangta has its own independent catalog evidence.",
+    "Surrounding source buildings and heights remain approximations; no whole temple complex, public-path access, survey accuracy, all-city completion or hardware performance claim."
+  ]
+}

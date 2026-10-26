@@ -1,0 +1,48 @@
+{
+  "schema": "opaque-inferred-glazing-shadow-cpu-acceptance-v1",
+  "passed": true,
+  "narrow_controls": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/cpu-controls.json",
+    "bytes": 8505,
+    "sha256": "1e3123dcefb409bbf8c199662d4d022cf989a4f580e23c62ecff5a695f1a54ed"
+  },
+  "existing_regressions": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/existing-regressions.json",
+    "bytes": 5321,
+    "sha256": "f1e2958efbb69071a5f3b7faf3b4cda65ac7535ab295e10b7e0e86f1dc98ee3b"
+  },
+  "ray_differential": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/compressed-near-169ray-differential.json",
+    "bytes": 102075,
+    "sha256": "3c785dc2e903034a6b904a7fcb6ec846be0a2959192a306c50726b58fcfaa6cd"
+  },
+  "control_count": 15,
+  "disposal_flag_combinations": 4,
+  "unchanged_existing_suites_passed": 4,
+  "test_sources": [
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/module-resolution.mjs",
+      "bytes": 1103,
+      "sha256": "ad198f8791ff52a40ab866b47d3785d898e9a6a06f6a6b2992120ae534381859"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/tests/opaque-inferred-controls.mjs",
+      "bytes": 5383,
+      "sha256": "9b2d7bc3fc1e105a8e960e89801541baf39b789421120710c98fc2e6ba5ce704"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/tests/replay-compressed-near-rays.mjs",
+      "bytes": 6590,
+      "sha256": "b8caa8e59a8cc77369a363728b9a6daedbfd17dc1a62eb7f126ffd8c2368b635"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/tests/run_existing_regressions.py",
+      "bytes": 2290,
+      "sha256": "5665a36c4eaf907731857e70508fd3d5d0f6c3c8caea55876d08878dccd1f462"
+    }
+  ],
+  "browser_passed": false,
+  "main_written": false,
+  "scope": "Actual narrow CPU comparisons plus four unchanged relevant production suites. No GPU/browser image acceptance.",
+  "development_note": "An initial ray-run static import could not resolve three before hook registration. No geometry ran on that attempt; changing the test loader to a dynamic import fixed test setup. Actual successful recorded replay is bound here."
+}

@@ -1,0 +1,16 @@
+--- a/src/realistic-lighting.js
++++ b/src/realistic-lighting.js
+@@ -287,8 +287,12 @@
+       if (!mesh.isMesh) return;
+       const materials = materialsOf(mesh);
+       const allGlazing = materials.length > 0 && materials.every(isArchitecturalGlazing);
++      // Inferred city windows are opaque facade panels. Omitting their depth
++      // casts a false window-grid light pattern through neighboring buildings.
++      const opaqueCityGlazing = allGlazing && materials.every(material =>
++        material.name === 'Inferred dark glazing' && !material.transparent && material.opacity >= .99);
+       meshes.push({mesh, previousCast: mesh.castShadow, previousReceive: mesh.receiveShadow,
+-        eligible: candidate && !allGlazing && (!casterFilter || casterFilter(mesh))});
++        eligible: candidate && (!allGlazing || opaqueCityGlazing) && (!casterFilter || casterFilter(mesh))});
+       mesh.castShadow = false;
+       mesh.receiveShadow = Boolean(detailed || ground || receiver)
+         && !(materials.length > 0 && materials.every(isPhotographicGlass));

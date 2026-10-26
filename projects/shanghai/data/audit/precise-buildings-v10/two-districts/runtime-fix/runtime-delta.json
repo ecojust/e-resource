@@ -1,0 +1,63 @@
+{
+  "schema": "opaque-inferred-glazing-shadow-reviewed-delta-v1",
+  "scope": "ONLY opaque exact-name Inferred dark glazing becomes shadow eligible; original casterFilter, all other glazing, visible geometry/materials, shadow settings and disposal behavior retained.",
+  "review_authorization": "Parent root explicitly requested this minimal one-runtime-file fix and an explicit old/new guarded integration revision after rejecting the original static roof light leaks.",
+  "original_baseline_lock": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/baseline-lock.json",
+    "bytes": 16336,
+    "sha256": "8d4d47d7e310e3c426974fc3b5fd819998ff6fec95fa73cd951a2783afe34282"
+  },
+  "additional_runtime_baseline": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/runtime-baseline-all-src.json",
+    "bytes": 5136,
+    "sha256": "49a3537035e9a4cbff68fdbdc2d9ba1ef558a4f1bbc68b6bb44ec78050b1f2c4"
+  },
+  "files": [
+    {
+      "file": "src/realistic-lighting.js",
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/payload/src/realistic-lighting.js",
+      "before": {
+        "bytes": 22727,
+        "sha256": "d157ea58952b4bbf018ea75f64058cf988c349d980234a7eec598388973a858d"
+      },
+      "after": {
+        "bytes": 23086,
+        "sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c"
+      }
+    }
+  ],
+  "cpu_checks": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/aggregate-cpu-checks.json",
+    "bytes": 2468,
+    "sha256": "a80ee3588884ac280b15f908ccee0c8236e83eb47a1db3c75eb5a4205a46f7e8"
+  },
+  "ray_evidence": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/compressed-near-169ray-differential.json",
+    "bytes": 102075,
+    "sha256": "3c785dc2e903034a6b904a7fcb6ec846be0a2959192a306c50726b58fcfaa6cd"
+  },
+  "diagnosis": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/diagnosis.json",
+    "bytes": 4645,
+    "sha256": "dd9a94c33a95005ba3ccd7fe7cdfd3a362493d3851cf9bba2fc02ec61ee19341"
+  },
+  "source_patch": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/realistic-lighting.js.patch",
+    "bytes": 1063,
+    "sha256": "7a70950dbd8bf53e0f314de97e89b70559f3b923a2b651f39d97f3323fa10b38"
+  },
+  "rejected_static_browser": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/rejected-static-browser.json",
+    "bytes": 586796,
+    "sha256": "6ad47f0b0d15e8f0a8b2e4996449e898e02be7023bebfb046e5cd7a5e2976abf"
+  },
+  "rejected_static_visual_reason": "False window-grid light leaks from excluded opaque city glazing.",
+  "browser_passed": false,
+  "main_written": false,
+  "original_locks_modified": false,
+  "required_future_validation": [
+    "New complete two-target11-frame browser report and root visual review.",
+    "Both independent catalog5-frame browser runs and root visual reviews.",
+    "Root visual records explicitly bind this delta SHA and patched runtime SHA."
+  ]
+}

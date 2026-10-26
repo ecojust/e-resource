@@ -1,0 +1,163 @@
+{
+  "schema": "zhenru-front-short-arm-source-candidate-v1",
+  "id": "putuo-zhenru-main-hall",
+  "geometry_input": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/inputs/putuo-zhenru-main-hall/geometry-input.json",
+    "bytes": 34969,
+    "sha256": "131180636fd06a897b54721923685d05d05e43e1aee8b77633986142676e1cfd"
+  },
+  "source_search": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/navigation/zhenru-candidates-v2.json",
+    "bytes": 1092974,
+    "sha256": "9157cd32ed9a92cc2fcaf422fca9e4f77f57d2f7c496dab3e76af1733394d230"
+  },
+  "controller": {
+    "source": "/workspace/shanghai_project/src/walk-controller.js",
+    "bytes": 23179,
+    "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+  },
+  "position_enu_m": [
+    0.34942587214541204,
+    -13.995638662093109
+  ],
+  "walkStart": [
+    121.39653424021878,
+    31.251586966813715
+  ],
+  "bearing": 358.56980664605067,
+  "source_body_radius_hits": [],
+  "default_distance_m": 14,
+  "source_replay_distances_m": [
+    14,
+    8.4,
+    5.04,
+    3.5
+  ],
+  "steps": [
+    {
+      "distance_m": 14.0,
+      "to_enu_m": [
+        0.2795406977163296,
+        -11.196510929674487
+      ],
+      "eye_enu_m": [
+        0.6255659812941057,
+        -25.055944998390284
+      ],
+      "midpoint_enu_m": [
+        0.48715586786299525,
+        -19.512171370903964
+      ],
+      "eye_source_hits": [],
+      "midpoint_source_hits": [],
+      "arm_capsule_neighbor_hits": [
+        {
+          "key": "building:04a8b684-a499-4714-89ef-0e52da9d7997",
+          "local_id": 41
+        }
+      ],
+      "source_corner_ray_neighbor_hits": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "minimum_arm_distance_to_neighbor_m": 0.0
+    },
+    {
+      "distance_m": 8.4,
+      "to_enu_m": [
+        0.3074947674879626,
+        -12.316162022641935
+      ],
+      "eye_enu_m": [
+        0.5151099376346282,
+        -20.631822463871416
+      ],
+      "midpoint_enu_m": [
+        0.432063869575962,
+        -17.305558287379622
+      ],
+      "eye_source_hits": [],
+      "midpoint_source_hits": [],
+      "arm_capsule_neighbor_hits": [
+        {
+          "key": "building:04a8b684-a499-4714-89ef-0e52da9d7997",
+          "local_id": 41
+        }
+      ],
+      "source_corner_ray_neighbor_hits": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "minimum_arm_distance_to_neighbor_m": 0.0
+    },
+    {
+      "distance_m": 5.04,
+      "to_enu_m": [
+        0.3242672093509424,
+        -12.987952678422404
+      ],
+      "eye_enu_m": [
+        0.44883631143894176,
+        -17.97734894316009
+      ],
+      "midpoint_enu_m": [
+        0.399008670603742,
+        -15.981590437265016
+      ],
+      "eye_source_hits": [],
+      "midpoint_source_hits": [],
+      "arm_capsule_neighbor_hits": [
+        {
+          "key": "building:04a8b684-a499-4714-89ef-0e52da9d7997",
+          "local_id": 41
+        }
+      ],
+      "source_corner_ray_neighbor_hits": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "minimum_arm_distance_to_neighbor_m": 0.0
+    },
+    {
+      "distance_m": 3.5,
+      "to_enu_m": [
+        0.3319545785381414,
+        -13.295856728988454
+      ],
+      "eye_enu_m": [
+        0.41846089943258546,
+        -16.760715246167404
+      ],
+      "midpoint_enu_m": [
+        0.3838583710748078,
+        -15.374771839295825
+      ],
+      "eye_source_hits": [],
+      "midpoint_source_hits": [],
+      "arm_capsule_neighbor_hits": [],
+      "source_corner_ray_neighbor_hits": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "minimum_arm_distance_to_neighbor_m": 0.5964123283722174
+    }
+  ],
+  "shortest_arm_finite_2d_clear": true,
+  "full_14m_arm_clear": false,
+  "runtime_changed": false,
+  "automatic_shortening_observed_in_browser": false,
+  "model_or_browser_accepted": false,
+  "limitations": [
+    "Controller distance sequence was replayed against original source footprints only. Actual collision caches, visible models, pose and image still require root browser observation.",
+    "The south neighboring Tianwang Hall local41 is retained. It blocks the longer camera arms and is never removed to improve framing.",
+    "A geometric viewing point is not a mapped pedestrian route, confirmed door alignment or public-access certification."
+  ]
+}

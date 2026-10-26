@@ -1,0 +1,97 @@
+{
+  "schema": "two-district-root-visual-rejection-v1",
+  "passed": false,
+  "final": true,
+  "reviewer": "root",
+  "building_ids": [
+    "songjiang-fangta-pagoda",
+    "putuo-zhenru-main-hall"
+  ],
+  "browser_report_sha256": "6ad47f0b0d15e8f0a8b2e4996449e898e02be7023bebfb046e5cd7a5e2976abf",
+  "expectations_sha256": "e89e8f60cb77857aa3766bb45be770b2e57d13fb74ad820c0f3b5b4695ffa69f",
+  "web_sha256_by_id": {
+    "songjiang-fangta-pagoda": "3e7e718d6eb795cebb1e28ab848f021baf482e8a5560a2cbb88ccd8634e864fd",
+    "putuo-zhenru-main-hall": "dd6e7de22bc27a4b5bdff21906d5c90a1afb5583f8c3fcf05725b584390afc2c"
+  },
+  "actually_viewed": [
+    {
+      "file": "songjiang-fangta-pagoda-walk-full.png",
+      "bytes": 230504,
+      "sha256": "2cf61502d23b7270822d622de964b719286e3f8a0b64e523995d6ec24cd697a6",
+      "actually_viewed": true
+    },
+    {
+      "file": "songjiang-fangta-pagoda-windows-oblique.png",
+      "bytes": 427007,
+      "sha256": "a5feaad2e9c94db7b34f79459fe750caff6f96bff241d1c5667e1b15bb3e8b6e",
+      "actually_viewed": true
+    },
+    {
+      "file": "songjiang-fangta-pagoda-distant-lod.png",
+      "bytes": 340837,
+      "sha256": "20ebbce34bc7121b5beb53ca3028634731fe8a15fbaa08f1fd317308057e3e6e",
+      "actually_viewed": true
+    },
+    {
+      "file": "songjiang-fangta-pagoda-returned-full.png",
+      "bytes": 230483,
+      "sha256": "22c9f0da0ef05af416f1d00211ef5f766368c296818da0a2592f2959bcc3ad62",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-walk-full.png",
+      "bytes": 241313,
+      "sha256": "d780c6a79c5e95e487955494225993cecf961d675a373f3c9bd7c3663388d684",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-windows-oblique.png",
+      "bytes": 452089,
+      "sha256": "6e7a0bfdb1b25ebd7a7f1706c11c14c75efd0805f6dbc7d81ba31afa716e2603",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-distant-lod.png",
+      "bytes": 373443,
+      "sha256": "3c4c49aa00f431bfa280c42c63850cce3bf08e758fe82d92637ce566eb18664c",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-returned-full.png",
+      "bytes": 241300,
+      "sha256": "e68246f5cd2c208e8c5a2a8879b9f2a9028b7270fa5bc9d5c1841a383f891490",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-released.png",
+      "bytes": 143006,
+      "sha256": "6d6296f61ebc2233d272b4ed24c146a5f35f1814c1dbc5e23c5b775f64765d33",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-returned.png",
+      "bytes": 241286,
+      "sha256": "2ebeee31eaa2d9801b8812a6a10aa4ba5f895795be7fc6e4dfb3bc8f5254df5a",
+      "actually_viewed": true
+    },
+    {
+      "file": "after-city-manifest-reset.png",
+      "bytes": 241333,
+      "sha256": "095ba20c5451ca080811543e90d5f44a6443428aa9699aa4d7567ad3638790e2",
+      "actually_viewed": true
+    }
+  ],
+  "functional_browser_passed": true,
+  "scope": "All11actual static screenshots reviewed. Actual loading, byte checks, source-owner/neighbor checks and lifecycle run passed, but exterior visual approval is rejected pending the confirmed opaque-inferred-glazing shadow fix.",
+  "findings": [
+    "Fangta lower-storey/porch detail remains visible in near/return views; close framing crops upper tower. Distant LOD shows the whole tower at city scale.",
+    "Zhenru first-person-follow camera shortens in the narrow courtyard and exposes the entrance/side windows without entering a retained neighboring wall. Roof is cropped in this close human-height view. Oblique view shows the full roof and exposed timber gable.",
+    "REJECT: Zhenru oblique roof has meter-scale grid light leaks caused by retained neighbor local1474 opaque Inferred dark glazing being excluded from shadow casters. CPU diagnosis uses real compressed-near geometry and solar direction; shadow map size checks do not approve this visual effect.",
+    "All surrounding generic city buildings remain source-derived approximations; these screenshots do not certify photo-real surrounding streets or courtyards."
+  ],
+  "required_revision": "Apply separately reviewed single-file opaque inferred-glazing caster eligibility delta in candidate only; preserve materials, all neighbors, shadow bias/size and precise glazing behavior. Re-run complete11-frame static sequence and compare identical oblique camera; only then permit accepted catalog stage.",
+  "limitations": [
+    "This is a rejected visual review, not production acceptance.",
+    "Only the two selected models and finite source/lifecycle states were checked; full-city architecture accuracy and hardware frame-rate are not established."
+  ]
+}

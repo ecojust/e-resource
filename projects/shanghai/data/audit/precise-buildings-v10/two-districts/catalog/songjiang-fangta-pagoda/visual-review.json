@@ -1,0 +1,56 @@
+{
+  "schema": "two-district-shadow-catalog-root-visual-v2",
+  "passed": true,
+  "final": true,
+  "reviewer": "root",
+  "target_ids": [
+    "songjiang-fangta-pagoda"
+  ],
+  "macro_id": "14-13709-6706",
+  "browser_report_sha256": "1df8d34eab0740aedc2c715a588e860365f000177665bc169915f0627f9a84e5",
+  "inputs_sha256": "f58e07ac45fcb0abd9430876500507423faf61a8da53ffb4348532a1ff2be4b9",
+  "reviewed_runtime_delta_sha256": "6a415603a7e183f868f57607e58471bbd56649f9ec90cff1f130b93af0a87ea2",
+  "runtime_file_sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c",
+  "actually_viewed": [
+    {
+      "file": "static-songjiang-fangta-pagoda-loaded.png",
+      "bytes": 232775,
+      "sha256": "c6f858c7b8d3c179d091346c588da8f300a5f3d4465e822a2acf51ab42054eda",
+      "actually_viewed": true
+    },
+    {
+      "file": "static-songjiang-fangta-pagoda-returned.png",
+      "bytes": 232785,
+      "sha256": "605ef55edbf8652a92ea7edb9ff5e0db66a0f045f46fa306f79a9da4bbc92788",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-songjiang-fangta-pagoda-loaded.png",
+      "bytes": 232771,
+      "sha256": "033176dbc2bc4f46b0ccc337d12a8f841a8818c551f0771ef5c65c984f06e732",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-songjiang-fangta-pagoda-returned.png",
+      "bytes": 232853,
+      "sha256": "407f557f187558491fa4c14405ce809a38b077b119511b6dfdc20828ddbb3c08",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-songjiang-fangta-pagoda-index-hash-rejected-baseline-visible.png",
+      "bytes": 186537,
+      "sha256": "4599c2b925f92aec66c653edd39b6ae3c3c2a445eef5f17e48a716cd2f8e44cd",
+      "actually_viewed": true
+    }
+  ],
+  "scope": "Root actually viewed all5 new Fangta catalog screenshots: static load/return, dynamic-only load/return, and corrupt-index baseline fallback. Four loaded images retain the detailed lower tower/porch and expected scene; the final negative-control image correctly retains the coarse baseline source building instead of loading the rejected precise asset. The completed independent three-phase technical report passed owner, neighbor and disposal checks.",
+  "findings": [
+    "Four loaded/returned views show the same porch, lower-storey openings, columns and roof detail, with no new visual regression after the approved shadow correction.",
+    "The corrupt-index negative control displays the original generic source building at the target; this is expected fallback behavior, not acceptance of that generic geometry as a precise tower."
+  ],
+  "limitations": [
+    "Close views crop the tower upper storeys; full tower form/detail was checked separately in native/static views within their documented framing limits.",
+    "These5images and technical phases establish this one macro only; they do not cover Zhenru catalog lifecycle.",
+    "Nearby generic buildings and park ground remain source approximations; no survey accuracy, public-access guarantee, full-city completion or hardware performance claim."
+  ]
+}

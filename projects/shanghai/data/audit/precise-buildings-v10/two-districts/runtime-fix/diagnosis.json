@@ -1,0 +1,132 @@
+{
+  "schema": "opaque-inferred-glazing-shadow-diagnosis-v1",
+  "cause": "Opaque inferred city glazing is excluded by allGlazing from castShadow; the retained east neighbor projects regular window-grid light leaks onto Zhenru roof.",
+  "root_direction": "Root explicitly rejected the leak image even if the completed functional report passes and authorized only opaque exact-name Inferred dark glazing caster eligibility.",
+  "original_browser": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/qa-two-districts/browser.json",
+    "bytes": 586796,
+    "sha256": "6ad47f0b0d15e8f0a8b2e4996449e898e02be7023bebfb046e5cd7a5e2976abf"
+  },
+  "rejected_browser_copy": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/rejected-static-browser.json",
+    "bytes": 586796,
+    "sha256": "6ad47f0b0d15e8f0a8b2e4996449e898e02be7023bebfb046e5cd7a5e2976abf"
+  },
+  "original_image": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/qa-two-districts/putuo-zhenru-main-hall-windows-oblique.png",
+    "bytes": 452089,
+    "sha256": "6e7a0bfdb1b25ebd7a7f1706c11c14c75efd0805f6dbc7d81ba31afa716e2603"
+  },
+  "image_copy": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/rejected-zhenru-roof-window-leaks.png",
+    "bytes": 452089,
+    "sha256": "6e7a0bfdb1b25ebd7a7f1706c11c14c75efd0805f6dbc7d81ba31afa716e2603"
+  },
+  "actually_viewed_by_this_agent": true,
+  "capture": {
+    "name": "putuo-zhenru-main-hall-windows-oblique",
+    "requested_camera": {
+      "from": {
+        "lng": 121.3966623935187,
+        "lat": 31.251517814503895,
+        "alt": 8.68639991760254
+      },
+      "to": {
+        "lng": 121.39653056849184,
+        "lat": 31.251712691858646,
+        "alt": 3.686399917602539
+      },
+      "fov": 50
+    },
+    "camera": {
+      "center": [
+        121.39653056849181,
+        31.251712691858643
+      ],
+      "zoom": 21.024992661135293,
+      "pitch": 78.70415005386178,
+      "bearing": -30.0406358319571,
+      "fov": 50,
+      "eye": {
+        "lng": 121.39666239351868,
+        "lat": 31.251517814503885,
+        "alt": 8.686381988359502
+      }
+    },
+    "actualShadow": {
+      "found": true,
+      "deviceMemory": 8,
+      "lowMemory": false,
+      "maxTextureSize": 8192,
+      "requestedSize": 4096,
+      "expectedSize": 4096,
+      "mapSize": [
+        4096,
+        4096
+      ],
+      "camera": {
+        "left": -48,
+        "right": 48,
+        "top": 48,
+        "bottom": -48,
+        "near": 5,
+        "far": 620
+      }
+    },
+    "shadow_check": {
+      "passed": true,
+      "expectedSize": 4096,
+      "halfExtent": 48
+    },
+    "source": {
+      "polygons": 110,
+      "roads": 5095,
+      "updated": 536649.299999997,
+      "revision": 119,
+      "buildingSource": "osm",
+      "release": "2026-10-21.0"
+    }
+  },
+  "actual_lighting": {
+    "enabled": true,
+    "shadowSize": 4096,
+    "shadowHalfExtent": 48,
+    "casterRadius": 155,
+    "registeredModels": 8,
+    "activeCasterModels": 7,
+    "shadowRefreshRequests": 36,
+    "backfaceCasterMaterials": 0,
+    "shadowBias": -4.763719512195122e-05,
+    "shadowNormalBias": 0.016406249999999997,
+    "shadowRadius": 0.65,
+    "glassMaterials": 8,
+    "reflectionReady": true,
+    "reflectionError": null,
+    "reflectionSource": "photographic",
+    "photographicReflectionRequested": true,
+    "photographicReflectionError": null,
+    "groundReceiverPolygons": 0,
+    "defaultGroundPlaneCreated": false,
+    "sceneWideEnvironmentCreated": false
+  },
+  "source_neighbor": {
+    "macro": "14-13716-6693",
+    "local_id": 1474,
+    "key": "building:aed4d177-6e8f-489a-a6ce-34c01d9b2e25",
+    "height_m": 26.854,
+    "distance_from_target_anchor_to_source_boundary_m": 13.116430343564708,
+    "role": "Retained east neighbor intersects target solar direction; no geometry or owner removed."
+  },
+  "shadow_check_limit": "Existing technical check verifies4096map/48mhalfextent, not shadow appearance.2.34375cm map texels do not explain the observed metre-scale window pattern.",
+  "ray_evidence": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/compressed-near-169ray-differential.json",
+    "bytes": 102075,
+    "sha256": "3c785dc2e903034a6b904a7fcb6ec846be0a2959192a306c50726b58fcfaa6cd"
+  },
+  "browser_visual_accepted": false,
+  "patched_browser_run": false,
+  "limitations": [
+    "CPU finite-grid evidence is not a pixel-exact GPU shadow proof.",
+    "Patched full11-frame browser and root image review remain required."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "building_id": "songjiang-fangta-pagoda",
+  "catalog_workflow_tested": false,
+  "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+  "limitations": [
+    "Surrounding generic city buildings, source heights, courtyards and park ground remain approximations; this is not a photographic reconstruction of whole temple/park surroundings.",
+    "Fangta close shots crop upper storeys, and the distant shots do not resolve ornaments. Zhenru close shots crop the roof and distant visibility is partly blocked.",
+    "This finite review does not establish surveyed architectural dimensions, public-path access, structural safety, all-city completion or hardware frame rates.",
+    "Each new macro still requires its own actual catalog load/unload/return/corrupt-index review before final application installation."
+  ],
+  "lod_sha256": "83b912273a084933344b007eda16ac14dcaec8e5bb6ae4b139306d8ea29825ff",
+  "passed": true,
+  "qa_evidence": {
+    "actual_osm_fixture": {
+      "bytes": 2324,
+      "sha256": "2e7609647d0ee35ec0cdb5d73f02278717cbfc0e46676d254db0341bc390eeaf",
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/osm-observation/fangta-osm-target-evidence.json"
+    },
+    "building_id": "songjiang-fangta-pagoda",
+    "osm_evidence_set": {
+      "bytes": 1541,
+      "sha256": "ca36b7dfd0ed8a06bba4d595d29bbb77fe0fcccdcac413e4a0adace7aac7eedf",
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/osm-observation/actual-fixture-set.json"
+    },
+    "qa_tools_lock": {
+      "bytes": 5168,
+      "sha256": "35a293913dc97202538bb33a5d38551d291b9a3fe6365d5e7fd2000ff1506393",
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/browser-review/qa-tools.lock.json"
+    },
+    "runtime_files_unchanged": true,
+    "scope": "Frozen target-parameterized QA with separately byte-bound actual OSM fixtures. Static global return/reset images concern only the last target. No production runtime delta."
+  },
+  "reviewed_runtime_delta": {
+    "additional_runtime_baseline": {
+      "bytes": 5136,
+      "sha256": "49a3537035e9a4cbff68fdbdc2d9ba1ef558a4f1bbc68b6bb44ec78050b1f2c4",
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/evidence/runtime-baseline-all-src.json"
+    },
+    "after": {
+      "bytes": 23086,
+      "sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c"
+    },
+    "before": {
+      "bytes": 22727,
+      "sha256": "d157ea58952b4bbf018ea75f64058cf988c349d980234a7eec598388973a858d"
+    },
+    "file": "src/realistic-lighting.js",
+    "manifest": {
+      "bytes": 3280,
+      "sha256": "6a415603a7e183f868f57607e58471bbd56649f9ec90cff1f130b93af0a87ea2",
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/runtime-delta.json"
+    },
+    "original42_and13_locks_unchanged": true,
+    "scope": "Only the explicitly reviewed opaque city_glazing shadow-caster predicate; no building, source owner, navigation or browser acceptance is inferred."
+  },
+  "root_visual": {
+    "bytes": 5633,
+    "sha256": "155d3113e22d74e1333061254869a2a6cadc7222c62f4dc91bb86788335f1fd0"
+  },
+  "scope": "Root actually viewed all11 newly captured images of the two selected buildings and finite global lifecycle states after the approved one-file shadow correction. Full/LOD/return loading and reported owner/neighbor checks passed; oblique Zhenru roof no longer exhibits the rejected window-grid light leaks. This permits separate new-macro catalog checks, not final production publication.",
+  "shared_static_browser": {
+    "bytes": 588090,
+    "sha256": "2aa5390ae5aaecf0c5afb691cdff2eb330cd7f6786096bb070adfb0ad7ccd86c"
+  },
+  "web_sha256": "3e7e718d6eb795cebb1e28ab848f021baf482e8a5560a2cbb88ccd8634e864fd"
+}

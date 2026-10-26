@@ -1,0 +1,108 @@
+{
+  "schema": "v10-exterior-view-navigation-proposal-v1",
+  "id": "putuo-zhenru-main-hall",
+  "title": "真如寺正殿",
+  "anchor": [
+    121.39653056849184,
+    31.251712691858646
+  ],
+  "navigation": {
+    "listed": true,
+    "walkStart": [
+      121.39653424021878,
+      31.251586966813715
+    ],
+    "bearing": 358.56980664605067,
+    "overviewZoom": 19
+  },
+  "navigation_semantics": "Provisional exterior geometric observation point south of the hall. The preserved Tianwang Hall blocks the long camera boom; the existing controller is expected, but not yet observed, to shorten it. No entrance or public-access certification.",
+  "geometry_input": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/inputs/putuo-zhenru-main-hall/geometry-input.json",
+    "bytes": 34969,
+    "sha256": "131180636fd06a897b54721923685d05d05e43e1aee8b77633986142676e1cfd"
+  },
+  "source_observation_checks": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/navigation/zhenru-front-short-arm-candidate.json",
+    "bytes": 4382,
+    "sha256": "d26375b95ed946ea643215e853260c68cf6347ea1a178b64aa5ccb217e70b438"
+  },
+  "selected_candidate": "south14m_front_short_arm_candidate",
+  "overview_zoom_provisional": true,
+  "navigation_installable": false,
+  "browser_passed": false,
+  "accepted": false,
+  "estimated_model_envelope_used": true,
+  "actual_raw_bounds_pending": true,
+  "pending": [
+    "Actual model exterior bounds and geometry verification",
+    "Actual static browser/root image review of registered default camera and overview",
+    "Ground, steps, physical pedestrian access and vegetation uncertainty"
+  ],
+  "required_actual_browser_check": "Default controller must actually shorten and display the front clearly without changing runtime or removing neighbors.",
+  "fallback_north_mapped_candidate": {
+    "navigation": {
+      "listed": true,
+      "walkStart": [
+        121.39644428432644,
+        31.251824663126722
+      ],
+      "bearing": 146.62407008010177,
+      "overviewZoom": 19
+    },
+    "source": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/navigation/zhenru-candidates.json",
+      "bytes": 502932,
+      "sha256": "18d2c798ad14b817618c4dafeaef06487e9c7cf1679a41b8f4c2a0aa5eaa49d7"
+    },
+    "candidate": {
+      "id": "observation-90",
+      "basis": {
+        "kind": "mapped_surface_footway_candidate",
+        "way_id": "489505067",
+        "tags": {
+          "highway": "footway"
+        }
+      },
+      "position_enu_m": [
+        -8.21137305320353,
+        12.464591936518715
+      ],
+      "walkStart": [
+        121.39644428432644,
+        31.251824663126722
+      ],
+      "bearing": 146.62407008010177,
+      "distance_to_anchor_m": 14.926241977229381,
+      "source_boundary_distance_m": 2.197482697620708,
+      "estimated_model_envelope_distance_m": 2.264591936518716,
+      "nominal_camera_eye_enu_m": [
+        -14.29787514001129,
+        21.70370022465459
+      ],
+      "nominal_camera_to_enu_m": [
+        -6.671009136817549,
+        10.126370602877257
+      ],
+      "body_radius_hits": [],
+      "conservative_boom_radius_hits": [],
+      "source_corner_ray_neighbor_hits": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "mapped_barrier_hits": [],
+      "mapped_water_hits": [],
+      "minimum_conservative_boom_to_neighbor_m": 7.500873381520232,
+      "finite_2d_clear": true,
+      "ranking_score": 12.323865849097764
+    },
+    "scope": "Finite14mboomclear alternative viewing the rear; not selected unless actual front candidate fails."
+  },
+  "model_envelope_estimate": {
+    "estimated": true,
+    "shape": "axis-aligned conservative square in source ENU",
+    "half_width_m": 10.2,
+    "not_actual_raw_geometry": true
+  }
+}

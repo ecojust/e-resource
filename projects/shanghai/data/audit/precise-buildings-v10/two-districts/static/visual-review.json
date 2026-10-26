@@ -1,0 +1,110 @@
+{
+  "schema": "two-district-shadow-root-visual-review-v2",
+  "passed": true,
+  "final": true,
+  "reviewer": "root",
+  "building_ids": [
+    "songjiang-fangta-pagoda",
+    "putuo-zhenru-main-hall"
+  ],
+  "browser_report_sha256": "2aa5390ae5aaecf0c5afb691cdff2eb330cd7f6786096bb070adfb0ad7ccd86c",
+  "expectations_sha256": "67fe2a1a415fe0d9c7e20b17e01ebff2bafb23ffeab3937de24da3f4bb5496bf",
+  "web_sha256_by_id": {
+    "songjiang-fangta-pagoda": "3e7e718d6eb795cebb1e28ab848f021baf482e8a5560a2cbb88ccd8634e864fd",
+    "putuo-zhenru-main-hall": "dd6e7de22bc27a4b5bdff21906d5c90a1afb5583f8c3fcf05725b584390afc2c"
+  },
+  "reviewed_runtime_delta_sha256": "6a415603a7e183f868f57607e58471bbd56649f9ec90cff1f130b93af0a87ea2",
+  "runtime_file_sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c",
+  "actually_viewed": [
+    {
+      "file": "songjiang-fangta-pagoda-walk-full.png",
+      "bytes": 230508,
+      "sha256": "7a9438d5cfeebe97a448a7fcfdceed6a0ae4a410a9975dea45f05a0143f5855c",
+      "actually_viewed": true
+    },
+    {
+      "file": "songjiang-fangta-pagoda-windows-oblique.png",
+      "bytes": 427007,
+      "sha256": "a5feaad2e9c94db7b34f79459fe750caff6f96bff241d1c5667e1b15bb3e8b6e",
+      "actually_viewed": true
+    },
+    {
+      "file": "songjiang-fangta-pagoda-distant-lod.png",
+      "bytes": 340837,
+      "sha256": "20ebbce34bc7121b5beb53ca3028634731fe8a15fbaa08f1fd317308057e3e6e",
+      "actually_viewed": true
+    },
+    {
+      "file": "songjiang-fangta-pagoda-returned-full.png",
+      "bytes": 230484,
+      "sha256": "d0f45a8e47a6592b1f3999f0f745ca150da95b330aee2e4cb7c02de0970b4aa3",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-walk-full.png",
+      "bytes": 229845,
+      "sha256": "03aa667e682cefaa74edd0fddaa4aa998ce20a6e361241d493f87460968fdc83",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-windows-oblique.png",
+      "bytes": 409984,
+      "sha256": "4a7d9cd951698fb01f0d71770c212d4481d953fbb7740314ff158988dc806898",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-distant-lod.png",
+      "bytes": 373443,
+      "sha256": "3c4c49aa00f431bfa280c42c63850cce3bf08e758fe82d92637ce566eb18664c",
+      "actually_viewed": true
+    },
+    {
+      "file": "putuo-zhenru-main-hall-returned-full.png",
+      "bytes": 229855,
+      "sha256": "08ed1726e5135ce4122eb087effa3836785cd151f3816e8d1a7384806653689d",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-released.png",
+      "bytes": 143006,
+      "sha256": "6d6296f61ebc2233d272b4ed24c146a5f35f1814c1dbc5e23c5b775f64765d33",
+      "actually_viewed": true
+    },
+    {
+      "file": "precise-owners-returned.png",
+      "bytes": 229854,
+      "sha256": "1352cd9cf240c2d7ddcded4e75be74b9d8a1c57a8b418b502cbc509bd58653a7",
+      "actually_viewed": true
+    },
+    {
+      "file": "after-city-manifest-reset.png",
+      "bytes": 229819,
+      "sha256": "609d3d68d960e2eaed784ba17ac67d91c784d8f3df0f9b0a0dc11e4dc16e66a2",
+      "actually_viewed": true
+    }
+  ],
+  "scope": "Root actually viewed all11 newly captured images of the two selected buildings and finite global lifecycle states after the approved one-file shadow correction. Full/LOD/return loading and reported owner/neighbor checks passed; oblique Zhenru roof no longer exhibits the rejected window-grid light leaks. This permits separate new-macro catalog checks, not final production publication.",
+  "findings": [
+    "Fangta near and returned images show porch, lower-storey openings and columns; oblique view resolves tile courses, galleries and roof intersections. Close frames crop the tower top, while distant view shows its entire city-scale silhouette.",
+    "Zhenru near and returned images show the entrance, latticed doors, flame-shaped window openings and facade. Shortened third-person follow camera stays within the narrow source courtyard, with roof cropped in that close view.",
+    "Zhenru oblique roof and exposed timber gable are visible; continuous neighbor shadow replaces the old false window-grid light patches. Actual old/new requested_camera, actual camera and viewport are identical.",
+    "Zhenru distant LOD loads at city scale but is partly occluded by baseline neighbors; it is not a close-detail image.",
+    "Global owner-release/return and city-manifest-reset images retain the expected views; these last states observe Zhenru only."
+  ],
+  "same_pose_comparison": {
+    "old_browser_sha256": "6ad47f0b0d15e8f0a8b2e4996449e898e02be7023bebfb046e5cd7a5e2976abf",
+    "old_image_sha256": "6e7a0bfdb1b25ebd7a7f1706c11c14c75efd0805f6dbc7d81ba31afa716e2603",
+    "new_image_sha256": "4a7d9cd951698fb01f0d71770c212d4481d953fbb7740314ff158988dc806898",
+    "both_images_actually_viewed": true,
+    "requested_camera_exact": true,
+    "actual_camera_exact": true,
+    "viewport_exact": true,
+    "grid_light_leak_visually_absent": true
+  },
+  "limitations": [
+    "Surrounding generic city buildings, source heights, courtyards and park ground remain approximations; this is not a photographic reconstruction of whole temple/park surroundings.",
+    "Fangta close shots crop upper storeys, and the distant shots do not resolve ornaments. Zhenru close shots crop the roof and distant visibility is partly blocked.",
+    "This finite review does not establish surveyed architectural dimensions, public-path access, structural safety, all-city completion or hardware frame rates.",
+    "Each new macro still requires its own actual catalog load/unload/return/corrupt-index review before final application installation."
+  ]
+}

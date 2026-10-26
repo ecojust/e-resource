@@ -1,0 +1,97 @@
+{
+  "schema": "staged-lighting-existing-regressions-v1",
+  "passed": true,
+  "checks": [
+    {
+      "test": {
+        "source": "/workspace/shanghai_project/tests/realistic-lighting.test.mjs",
+        "bytes": 10391,
+        "sha256": "95226a12a9becd1c9ff73b82d6b43a824c61fb3581f2ee056248a7b4162459ec"
+      },
+      "command": [
+        "node",
+        "--import",
+        "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/module-resolution.mjs",
+        "/workspace/shanghai_project/tests/realistic-lighting.test.mjs"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "Lighting checks passed: cached local shadows, caster filtering, LOD release, land-only receiver holes, shader hook, glazing selector and disposal.\n",
+      "stderr": ""
+    },
+    {
+      "test": {
+        "source": "/workspace/shanghai_project/tests/photographic-glass.test.mjs",
+        "bytes": 8569,
+        "sha256": "7aee247d833c96f532680e30fa7c36039f86a3996d606bd6a61b27aa102b83ff"
+      },
+      "command": [
+        "node",
+        "--import",
+        "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/module-resolution.mjs",
+        "/workspace/shanghai_project/tests/photographic-glass.test.mjs"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "✔ one group shares one converted material, preserves visual/texture state, and is idempotent (5.038453ms)\n✔ only mapped explicit photo glass/glazing converts; photo stone and ordinary glazing retain materials (1.93216ms)\n✔ existing EXIF correction and asset-image inspection still use the same single texture (1.001183ms)\n✔ conversion retains auxiliary texture ownership until unload, with map and Bitmap deduplication (0.614703ms)\n✔ lighting keeps photographic Basic glass out of shadow casting/receiving while stone still participates (5.840115ms)\n✔ an owned texture does not close a Bitmap still owned by a shared viewer texture (0.474562ms)\n✔ separate import groups create independent materials and do not share a global conversion cache (0.44652ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 24.328445\n",
+      "stderr": ""
+    },
+    {
+      "test": {
+        "source": "/workspace/shanghai_project/tests/photographic-reflection.test.mjs",
+        "bytes": 6820,
+        "sha256": "3496d612d0fb7f5efdd60a9c2804e0c9dc04b807408d8fa44ff5916144c452a4"
+      },
+      "command": [
+        "node",
+        "--import",
+        "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/module-resolution.mjs",
+        "/workspace/shanghai_project/tests/photographic-reflection.test.mjs"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "Photographic reflection checks passed: deferred GL conversion, exact state restore, fallback retention, late load and disposal.\n",
+      "stderr": ""
+    },
+    {
+      "test": {
+        "source": "/workspace/shanghai_project/tests/city-detail-map-integration.test.mjs",
+        "bytes": 9790,
+        "sha256": "40b2b14576327038be4825fae719967f2c090278378446553fe619c723e059aa"
+      },
+      "command": [
+        "node",
+        "--import",
+        "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/module-resolution.mjs",
+        "/workspace/shanghai_project/tests/city-detail-map-integration.test.mjs"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "✔ map integration copies far transform, adds grain without painted windows, and updates near shadow casters (11.009044ms)\n✔ map disposal detaches feature ownership before releasing lighting, scene nodes and GPU buffers (26.785483ms)\n✔ precise map visibility shares online source ownership and uses only loaded visible models (11.53927ms)\n✔ precise map city-manifest reset replays live landmark owner after the generic cache is cleared (7.577002ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 62.877314\n",
+      "stderr": ""
+    }
+  ],
+  "original_runtime": {
+    "source": "/workspace/shanghai_project/src/realistic-lighting.js",
+    "bytes": 22727,
+    "sha256": "d157ea58952b4bbf018ea75f64058cf988c349d980234a7eec598388973a858d"
+  },
+  "patched_runtime": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/payload/src/realistic-lighting.js",
+    "bytes": 23086,
+    "sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c"
+  },
+  "resolver": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/module-resolution.mjs",
+    "bytes": 1103,
+    "sha256": "ad198f8791ff52a40ab866b47d3785d898e9a6a06f6a6b2992120ae534381859"
+  },
+  "runner": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/opaque-city-glazing-shadow-fix/tests/run_existing_regressions.py",
+    "bytes": 2290,
+    "sha256": "5665a36c4eaf907731857e70508fd3d5d0f6c3c8caea55876d08878dccd1f462"
+  },
+  "main_written": false,
+  "browser_run": false,
+  "scope": "Four unchanged relevant production CPU suites; exact lighting import redirects to staged patch, all other dependencies use actual MAIN files."
+}
