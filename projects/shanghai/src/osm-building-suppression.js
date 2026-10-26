@@ -223,16 +223,27 @@ function replacementPlan(features, coverage) {
     // Polygon fragments can be a clipped part of one continuous building. Only
     // a source MultiPolygon authorizes independently replacing its components.
     if (!group.multipart) continue;
-    let ambiguous = false;
-    for (let i = 0; i < components.length && !ambiguous; i++) for (let j = 0; j < i; j++) {
-      // Exact duplicate buffered components were removed above. Any remaining
-      // intersecting fragments are kept in their original vector source; we do
-      // not invent unions, clip geometry, or discard merely contained outlines.
-      if (shapesIntersect(components[i].prepared, components[j].prepared)) { ambiguous = true; break; }
+    // A source ID may aggregate thousands of otherwise independent buildings.
+    // Keep intersecting/touching fragments together, but do not let an unrelated
+    // unresolved fragment prevent replacing an independently covered component.
+    const roots = components.map((_, i) => i);
+    const root = i => { while (roots[i] !== i) { roots[i] = roots[roots[i]]; i = roots[i]; } return i; };
+    let intersecting = false;
+    for (let i = 0; i < components.length; i++) for (let j = 0; j < i; j++) {
+      if (shapesIntersect(components[i].prepared, components[j].prepared)) {
+        intersecting = true; roots[root(i)] = root(j);
+      }
     }
-    if (ambiguous) { ambiguousFragments++; continue; }
-    desired.set(key, {...group, residual: true}); partialIDs++; removedComponents += covered.length;
-    uncovered.forEach((component, index) => residualFeatures.push({
+    if (intersecting) ambiguousFragments++;
+    const retainedRoots = new Set();
+    components.forEach((component, i) => { if (!component.covered) retainedRoots.add(root(i)); });
+    // Any uncovered member preserves its entire connected group, including
+    // covered members. Every retained polygon/hole/property stays unchanged.
+    const removable = [], retained = [];
+    components.forEach((component, i) => (retainedRoots.has(root(i)) ? retained : removable).push(component));
+    if (!removable.length) continue;
+    desired.set(key, {...group, residual: true}); partialIDs++; removedComponents += removable.length;
+    retained.forEach((component, index) => residualFeatures.push({
       type: 'Feature', id: `osm-residual:${encodeURIComponent(key)}:${index}:${hashString(component.key)}`,
       originalSourceId: group.id, properties: group.properties, geometry: component.geometry,
     }));

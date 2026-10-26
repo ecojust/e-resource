@@ -1,0 +1,1074 @@
+{
+  "schema": "bund-v6-frozen-geometry-input-v1",
+  "id": "bund07",
+  "name_zh": "大北电报大楼（现盘谷银行）",
+  "name_en": "Great Northern Telegraph Building / Bangkok Bank",
+  "historic_bund_number": "7",
+  "status": "source footprint and identity frozen; architectural dimensions and facade details still require independent source evidence",
+  "anchor": [
+    121.48595095359696,
+    31.237061351747464
+  ],
+  "origin_longitude": 121.48595095359696,
+  "origin_latitude": 31.237061351747464,
+  "anchor_method": "Centroid of the exact closed OSM polygon in EPSG:3857, inverse projected to WGS84; not the tourism label node and not a bbox center.",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          121.4857722,
+          31.2371366
+        ],
+        [
+          121.4858463,
+          31.2369971
+        ],
+        [
+          121.4858996,
+          31.2368967
+        ],
+        [
+          121.4861297,
+          31.2369861
+        ],
+        [
+          121.4860023,
+          31.237226
+        ],
+        [
+          121.4857722,
+          31.2371366
+        ]
+      ]
+    ]
+  },
+  "geographic_bbox": [
+    121.4857722,
+    31.2368967,
+    121.4861297,
+    31.237226
+  ],
+  "model_geometry_local_east_north_m": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -17.014016329432778,
+          8.376600491482863
+        ],
+        [
+          -9.961075120290703,
+          -7.1524693786543825
+        ],
+        [
+          -4.887906883057918,
+          -18.328932714224123
+        ],
+        [
+          17.01333160345921,
+          -8.376982872520433
+        ],
+        [
+          4.887222157084352,
+          18.328575605607487
+        ],
+        [
+          -17.014016329432778,
+          8.376600491482863
+        ]
+      ]
+    ]
+  },
+  "polygon_local_east_north": [
+    [
+      -17.014016329432778,
+      8.376600491482863
+    ],
+    [
+      -9.961075120290703,
+      -7.1524693786543825
+    ],
+    [
+      -4.887906883057918,
+      -18.328932714224123
+    ],
+    [
+      17.01333160345921,
+      -8.376982872520433
+    ],
+    [
+      4.887222157084352,
+      18.328575605607487
+    ]
+  ],
+  "coordinate_contract": {
+    "geographic": "WGS84 / EPSG:4326",
+    "earth_radius_m": 6378137.0,
+    "metre_frame": "Web Mercator coordinate differences multiplied by cos(anchor latitude), retaining the current city and Bund source-builder metre convention; not UTM axes.",
+    "east_formula": "(R*longitude_radians - originMercatorX)*cos(originLatitude)",
+    "north_formula": "(R*ln(tan(pi/4+latitude_radians/2)) - originMercatorY)*cos(originLatitude)",
+    "gltf_xyz": "[east_m, elevation_m, -north_m]",
+    "rings_closed": true,
+    "original_osm_vertex_order_preserved": true,
+    "existing_coordinate_source": {
+      "bytes": 12013,
+      "sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906",
+      "project_relative_path": "source/city/build_district_models.py"
+    },
+    "runtime_radius_note": "The source builders use R=6378137; vendored MapLibre meterInMercatorCoordinateUnits uses mean Earth radius 6371008.8. This freeze deliberately retains existing source coordinates and does not silently change model scale or the renderer.",
+    "round_trip_max_degree_error": 1.4210854715202004e-14
+  },
+  "front_edge": {
+    "ring_index": 0,
+    "edge_index": 3,
+    "osm_node_ids": [
+      1887566426,
+      1887566477
+    ],
+    "endpoints_wgs84": [
+      [
+        121.4861297,
+        31.2369861
+      ],
+      [
+        121.4860023,
+        31.237226
+      ]
+    ],
+    "endpoints_local_east_north_m": [
+      [
+        17.01333160345921,
+        -8.376982872520433
+      ],
+      [
+        4.887222157084352,
+        18.328575605607487
+      ]
+    ],
+    "center_local_east_north_m": [
+      10.950276880271781,
+      4.975796366543527
+    ],
+    "length_m": 29.32966730009346,
+    "tangent_east_north": [
+      -0.4134417660556354,
+      0.9105305629581015
+    ],
+    "outward_normal_east_north": [
+      0.9105305629581015,
+      0.4134417660556354
+    ],
+    "outward_azimuth_deg": 65.57877466379817,
+    "nearest_road_osm_way_id": 1201643770,
+    "road_centerline_distance_m": 15.115096562191498,
+    "outward_to_road_alignment": 0.9984468130384175
+  },
+  "streetfront": {
+    "method": "Use the long outer-ring edge whose outward normal faces the nearest saved Zhongshan East No.1 Road centreline. Keep adjacent steps and return walls; do not straighten the full polygon.",
+    "primary_edge_index": 3,
+    "frontage_edge_indices": [
+      3
+    ],
+    "frontage_continuity_note": "Primary front edge is one original OSM segment; all original returns and setbacks remain in the footprint.",
+    "candidate_edges": [
+      {
+        "ring_index": 0,
+        "edge_index": 0,
+        "osm_node_ids": [
+          1887566501,
+          10876863904
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4857722,
+            31.2371366
+          ],
+          [
+            121.4858463,
+            31.2369971
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -17.014016329432778,
+            8.376600491482863
+          ],
+          [
+            -9.961075120290703,
+            -7.1524693786543825
+          ]
+        ],
+        "center_local_east_north_m": [
+          -13.48754572486174,
+          0.6120655564142403
+        ],
+        "length_m": 17.055673271120636,
+        "tangent_east_north": [
+          0.41352464350289847,
+          -0.9104929265050886
+        ],
+        "outward_normal_east_north": [
+          -0.9104929265050886,
+          -0.41352464350289847
+        ],
+        "outward_azimuth_deg": 245.57355943404502,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 38.79172774152969,
+        "outward_to_road_alignment": -0.998451880081704
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 1,
+        "osm_node_ids": [
+          10876863904,
+          1887566518
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4858463,
+            31.2369971
+          ],
+          [
+            121.4858996,
+            31.2368967
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -9.961075120290703,
+            -7.1524693786543825
+          ],
+          [
+            -4.887906883057918,
+            -18.328932714224123
+          ]
+        ],
+        "center_local_east_north_m": [
+          -7.42449100167431,
+          -12.740701046439252
+        ],
+        "length_m": 12.273971185178915,
+        "tangent_east_north": [
+          0.4133273706360615,
+          -0.9105824974614215
+        ],
+        "outward_normal_east_north": [
+          -0.9105824974614215,
+          -0.4133273706360615
+        ],
+        "outward_azimuth_deg": 245.58597287117038,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 39.608746810111576,
+        "outward_to_road_alignment": -0.9984398057738696
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 2,
+        "osm_node_ids": [
+          1887566518,
+          1887566426
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4858996,
+            31.2368967
+          ],
+          [
+            121.4861297,
+            31.2369861
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -4.887906883057918,
+            -18.328932714224123
+          ],
+          [
+            17.01333160345921,
+            -8.376982872520433
+          ]
+        ],
+        "center_local_east_north_m": [
+          6.062712360200646,
+          -13.352957793372278
+        ],
+        "length_m": 24.056299650924814,
+        "tangent_east_north": [
+          0.9104159328043274,
+          0.41369412528585214
+        ],
+        "outward_normal_east_north": [
+          0.41369412528585214,
+          -0.9104159328043274
+        ],
+        "outward_azimuth_deg": 155.5628937812421,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 27.941774628197464,
+        "outward_to_road_alignment": -0.05543646256758401
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 3,
+        "osm_node_ids": [
+          1887566426,
+          1887566477
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4861297,
+            31.2369861
+          ],
+          [
+            121.4860023,
+            31.237226
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            17.01333160345921,
+            -8.376982872520433
+          ],
+          [
+            4.887222157084352,
+            18.328575605607487
+          ]
+        ],
+        "center_local_east_north_m": [
+          10.950276880271781,
+          4.975796366543527
+        ],
+        "length_m": 29.32966730009346,
+        "tangent_east_north": [
+          -0.4134417660556354,
+          0.9105305629581015
+        ],
+        "outward_normal_east_north": [
+          0.9105305629581015,
+          0.4134417660556354
+        ],
+        "outward_azimuth_deg": 65.57877466379817,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 15.115096562191498,
+        "outward_to_road_alignment": 0.9984468130384175
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 4,
+        "osm_node_ids": [
+          1887566477,
+          1887566501
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4860023,
+            31.237226
+          ],
+          [
+            121.4857722,
+            31.2371366
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            4.887222157084352,
+            18.328575605607487
+          ],
+          [
+            -17.014016329432778,
+            8.376600491482863
+          ]
+        ],
+        "center_local_east_north_m": [
+          -6.063397086174213,
+          13.352588048545176
+        ],
+        "length_m": 24.056310105987887,
+        "tangent_east_north": [
+          -0.9104155371303458,
+          -0.41369499604378085
+        ],
+        "outward_normal_east_north": [
+          -0.41369499604378085,
+          0.9104155371303458
+        ],
+        "outward_azimuth_deg": 335.5628389812729,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 26.307730633793895,
+        "outward_to_road_alignment": 0.05543550759846223
+      }
+    ],
+    "photographic_confirmation_still_required": true
+  },
+  "facade_frame": {
+    "origin_local_east_north_m": [
+      10.950276880271781,
+      4.975796366543527
+    ],
+    "u_east_north": [
+      -0.4134417660556354,
+      0.9105305629581015
+    ],
+    "inward_v_east_north": [
+      -0.9105305629581015,
+      -0.4134417660556354
+    ],
+    "conversion": "localENU = facade_origin + u*s + inward_v*depth; glTF position = [localE, height, -localN]. Front wall is depth=0.",
+    "front_width_m": 29.32966730009346
+  },
+  "osm": {
+    "type": "way",
+    "id": 178408810,
+    "version": 7,
+    "timestamp": "2023-05-08T02:56:37Z",
+    "url": "https://www.openstreetmap.org/way/178408810",
+    "architectural_tags": {
+      "addr:housenumber": "7",
+      "addr:street": "中山东一路",
+      "addr:street:en": "East Zhongshan No. 1 Road",
+      "building": "yes",
+      "building:levels": "7",
+      "heritage": "yes",
+      "heritage:operator": "上海市优秀历史建筑",
+      "heritage:ref": "A-Ⅲ-004",
+      "name": "盘谷银行",
+      "name:en": "Bangkok Bank",
+      "name:zh": "盘谷银行",
+      "name:zh-Hans": "盘谷银行",
+      "name:zh-Hant": "盤穀銀行",
+      "start_date": "1907"
+    },
+    "frozen_way": {
+      "type": "way",
+      "id": 178408810,
+      "version": 7,
+      "timestamp": "2023-05-08T02:56:37Z",
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:street": "中山东一路",
+        "addr:street:en": "East Zhongshan No. 1 Road",
+        "building": "yes",
+        "building:levels": "7",
+        "heritage": "yes",
+        "heritage:operator": "上海市优秀历史建筑",
+        "heritage:ref": "A-Ⅲ-004",
+        "name": "盘谷银行",
+        "name:en": "Bangkok Bank",
+        "name:zh": "盘谷银行",
+        "name:zh-Hans": "盘谷银行",
+        "name:zh-Hant": "盤穀銀行",
+        "start_date": "1907"
+      },
+      "nodes": [
+        1887566501,
+        10876863904,
+        1887566518,
+        1887566426,
+        1887566477,
+        1887566501
+      ],
+      "geometry": [
+        {
+          "lat": 31.2371366,
+          "lon": 121.4857722
+        },
+        {
+          "lat": 31.2369971,
+          "lon": 121.4858463
+        },
+        {
+          "lat": 31.2368967,
+          "lon": 121.4858996
+        },
+        {
+          "lat": 31.2369861,
+          "lon": 121.4861297
+        },
+        {
+          "lat": 31.237226,
+          "lon": 121.4860023
+        },
+        {
+          "lat": 31.2371366,
+          "lon": 121.4857722
+        }
+      ],
+      "missing_nodes": []
+    },
+    "member_relations_in_saved_map": [],
+    "identity_poi": {
+      "element": {
+        "type": "node",
+        "id": 476151005,
+        "version": 8,
+        "timestamp": "2017-04-29T02:56:26Z",
+        "tags": {
+          "name": "电报大楼",
+          "name:en": "Great Northern Telegraph Corporation Building",
+          "tourism": "attraction"
+        },
+        "lat": 31.2371051,
+        "lon": 121.4860868
+      },
+      "inside_footprint": false,
+      "distance_to_footprint_m": 1.7589173526130109,
+      "used_for_anchor": false,
+      "note": "Tourism label supports historical identity, not surveyed placement."
+    },
+    "saved_map_source": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=121.4842,31.23545,121.4892,31.2419",
+      "fetched_at": "2026-10-26T02:09:43.693593+00:00",
+      "original_bytes": 962804,
+      "original_sha256": "e73f923934cfe07fc98cf8b04b6362ed2e9d982285138537fdcbf9e022624d12",
+      "json_bytes": 1506585,
+      "json_sha256": "69ea47f4a00706a234bc418e9dea29372d7d2724f02d6a00098ead62adbc1802",
+      "elements": 2708,
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "note": "OSM bbox endpoint alternative after Overpass errors. No inference of object absence from failed queries."
+    }
+  },
+  "source": {
+    "release": "2026-10-21.0",
+    "overture_id": "61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+    "key": "building:61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+    "owner_tile": [
+      14,
+      13720,
+      6694
+    ],
+    "owner_macro_id": "14-13720-6694",
+    "matched_source_record": {
+      "resource": "planet",
+      "version": "2026-09-06T00:00:00.000Z",
+      "license": "ODbL-1.0",
+      "record_id": "w178408810@7",
+      "update_time": "2023-05-08T02:56:37.000Z",
+      "provider": "osm",
+      "property": "",
+      "dataset": "OpenStreetMap"
+    },
+    "version_audit": {
+      "same_way_id": true,
+      "saved_osm_version": 7,
+      "city_source_way_version": 7,
+      "versions_equal": true,
+      "same_node_sequence": true,
+      "coordinate_continuity_proven": true
+    },
+    "properties": {
+      "is_underground": false,
+      "@name": "盘谷银行",
+      "names": "{\"common\":{\"en\":\"Bangkok Bank\",\"zh\":\"盘谷银行\",\"zh-Hans\":\"盘谷银行\",\"zh-Hant\":\"盤穀銀行\"},\"primary\":\"盘谷银行\"}",
+      "@geometry_source": "OpenStreetMap",
+      "sources": [
+        {
+          "resource": "planet",
+          "version": "2026-09-06T00:00:00.000Z",
+          "license": "ODbL-1.0",
+          "record_id": "w178408810@7",
+          "update_time": "2023-05-08T02:56:37.000Z",
+          "provider": "osm",
+          "property": "",
+          "dataset": "OpenStreetMap"
+        }
+      ],
+      "num_floors": 7,
+      "has_parts": false,
+      "id": "61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+      "version": 1,
+      "source_layer": "building",
+      "district_id": "310101",
+      "district_name": "黄浦区",
+      "renderable": true,
+      "fragment_count": 1
+    },
+    "source_geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            121.48600101,
+            31.23722434
+          ],
+          [
+            121.48612976,
+            31.23698583
+          ],
+          [
+            121.48589909,
+            31.23689868
+          ],
+          [
+            121.48577034,
+            31.23713719
+          ],
+          [
+            121.48600101,
+            31.23722434
+          ]
+        ]
+      ]
+    },
+    "frozen_raw_feature": {
+      "type": "Feature",
+      "id": "61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+      "properties": {
+        "is_underground": false,
+        "@name": "盘谷银行",
+        "names": "{\"common\":{\"en\":\"Bangkok Bank\",\"zh\":\"盘谷银行\",\"zh-Hans\":\"盘谷银行\",\"zh-Hant\":\"盤穀銀行\"},\"primary\":\"盘谷银行\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w178408810@7",
+            "update_time": "2023-05-08T02:56:37.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "num_floors": 7,
+        "has_parts": false,
+        "id": "61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+        "version": 1,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48600101,
+              31.23722434
+            ],
+            [
+              121.48612976,
+              31.23698583
+            ],
+            [
+              121.48589909,
+              31.23689868
+            ],
+            [
+              121.48577034,
+              31.23713719
+            ],
+            [
+              121.48600101,
+              31.23722434
+            ]
+          ]
+        ]
+      }
+    },
+    "raw_feature_canonical_sha256": "29e2019c9fc29d0798ac45d3826814da6f48be49f9f5208c7f45da0b928d73f6",
+    "raw_macro_source_file": {
+      "bytes": 323910,
+      "sha256": "10b570be6c723a74ee70a152b02a8812a1159556a9f166a47e1384aa93619694",
+      "project_relative_path": "data/fullcity-raw/tiles/14/13720/6694.geojson.gz"
+    },
+    "current_osm_overlap": {
+      "measurement_crs": "viewer-local Mercator metres, scaled by cos(anchor latitude)",
+      "osm_area_m2": 705.5404372033747,
+      "city_source_area_m2": 701.8240986759974,
+      "intersection_area_m2": 699.4810694797676,
+      "union_area_m2": 707.8834663996047,
+      "iou": 0.988130254033799,
+      "fraction_of_osm_covered": 0.9914117357360476,
+      "fraction_of_source_covered": 0.9966615150425157,
+      "symmetric_difference_area_m2": 8.402396919836999,
+      "boundary_hausdorff_distance_m": 0.2256943007388267,
+      "note": "Same OSM way; version agreement or documented coordinate-continuity evidence is in source.version_audit. Saved live OSM retains original node coordinates; the city footprint came through Overture MVT and its coordinates differ. Both polygons are retained; no snapping, buffer correction or bounding-box replacement is performed."
+    }
+  },
+  "current_city_detail": {
+    "configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+    "complete_city_feature_count": 1796419,
+    "complete_city_macro_count": 1708,
+    "owner_macro_id": "14-13720-6694",
+    "feature_local_id": 1087,
+    "feature_id_base": 1,
+    "near_owner_id": "14-13720-6694-3_-3-s0-s1",
+    "far_file": "macros/14-13720-6694/far.glb",
+    "near_file": "macros/14-13720-6694/near/3_-3-s0-s1.glb.gz",
+    "near_asset_sha256": "b2b0d186a7296445b3472d1b56b32a09bee70ea6551462c01a686fb214472164",
+    "near_asset_size_bytes": 68968,
+    "near_geographic_bbox": [
+      121.48468137,
+      31.23689868,
+      121.48612976,
+      31.23811416
+    ],
+    "near_feature_local_ids": [
+      529,
+      2645,
+      1960,
+      2295,
+      1609,
+      1051,
+      1140,
+      2375,
+      1580,
+      1087
+    ],
+    "same_near_neighbors_to_retain": [
+      {
+        "key": "building:31fed208-468a-4653-ac3f-e8f993fbcfc7",
+        "feature_local_id": 529,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48468673,
+          31.2377885,
+          121.48498714,
+          31.23811416
+        ]
+      },
+      {
+        "key": "building:5ee3e1ee-f21e-48ea-862e-b2acbe4e5db2",
+        "feature_local_id": 1051,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48501933,
+          31.23706839,
+          121.48528218,
+          31.23724269
+        ]
+      },
+      {
+        "key": "building:6552a7f5-a7d1-4767-b9f1-8f80a5f329cd",
+        "feature_local_id": 1140,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48522317,
+          31.23709591,
+          121.4857167,
+          31.2374445
+        ]
+      },
+      {
+        "key": "building:8983573a-38e4-4e86-8de3-62445d5305be",
+        "feature_local_id": 1580,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48566842,
+          31.23721516,
+          121.48589909,
+          31.23749954
+        ]
+      },
+      {
+        "key": "building:8c18aaae-4964-4db9-87d4-1562943738f1",
+        "feature_local_id": 1609,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.4850086,
+          31.23722434,
+          121.48525536,
+          31.23738946
+        ]
+      },
+      {
+        "key": "building:a601284f-259c-4286-8611-faec291b6688",
+        "feature_local_id": 1960,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48468673,
+          31.23742615,
+          121.48509443,
+          31.23777933
+        ]
+      },
+      {
+        "key": "building:c3d8289a-9f1e-4f74-9dff-7702ee239e27",
+        "feature_local_id": 2295,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48492813,
+          31.23698124,
+          121.48505151,
+          31.23704087
+        ]
+      },
+      {
+        "key": "building:cac1e74a-1cfe-4202-a2a3-274a8727ade6",
+        "feature_local_id": 2375,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48543775,
+          31.23698124,
+          121.48573279,
+          31.23714178
+        ]
+      },
+      {
+        "key": "building:e0fbcf98-21d0-4942-a5b1-ffeaab516733",
+        "feature_local_id": 2645,
+        "residual": false,
+        "source_roof": false,
+        "geographic_bbox": [
+          121.48468137,
+          31.23704087,
+          121.48505151,
+          31.23733442
+        ]
+      }
+    ],
+    "feature_table_source_file": {
+      "bytes": 479013,
+      "sha256": "605bcf6278ae2518db7f3128a407a02e644c94b1dd50bfc83e3de331a2275d77",
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/feature-table.json.gz"
+    },
+    "ready_source_file": {
+      "bytes": 1352332,
+      "sha256": "0c46fd8ec4ca79547de1ca77bc263c301a2d576fc1d131b1f805049604e5ce2d",
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/READY.json"
+    },
+    "ownership_source_file": {
+      "bytes": 15616,
+      "sha256": "f5882afabeab798643cf862bae74869844941038dff1f3ff4077739b6a0b807a",
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/ownership.json.gz"
+    },
+    "geometry_exactly_equals_raw_source": true,
+    "frozen_effective_feature": {
+      "appearance_accuracy": "inferred module layout; no individual facade photograph",
+      "base": 0,
+      "family": "apartment",
+      "family_basis": "source class/subtype where available, otherwise explicit height/footprint-scale inference",
+      "family_is_inferred": true,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              121.48600101,
+              31.23722434
+            ],
+            [
+              121.48612976,
+              31.23698583
+            ],
+            [
+              121.48589909,
+              31.23689868
+            ],
+            [
+              121.48577034,
+              31.23713719
+            ],
+            [
+              121.48600101,
+              31.23722434
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "height": 22.400000000000002,
+      "height_provenance": {},
+      "height_quality": "floor_estimate",
+      "key": "building:61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+      "localId": 1087,
+      "properties": {
+        "@geometry_source": "OpenStreetMap",
+        "@name": "盘谷银行",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "fragment_count": 1,
+        "has_parts": false,
+        "id": "61b83abc-0a40-45e9-9ae4-0fc9436b6d77",
+        "is_underground": false,
+        "names": "{\"common\":{\"en\":\"Bangkok Bank\",\"zh\":\"盘谷银行\",\"zh-Hans\":\"盘谷银行\",\"zh-Hant\":\"盤穀銀行\"},\"primary\":\"盘谷银行\"}",
+        "num_floors": 7,
+        "renderable": true,
+        "source_layer": "building",
+        "sources": [
+          {
+            "dataset": "OpenStreetMap",
+            "license": "ODbL-1.0",
+            "property": "",
+            "provider": "osm",
+            "record_id": "w178408810@7",
+            "resource": "planet",
+            "update_time": "2023-05-08T02:56:37.000Z",
+            "version": "2026-09-06T00:00:00.000Z"
+          }
+        ],
+        "version": 1
+      },
+      "residual": false,
+      "roof": null
+    }
+  },
+  "existing_height": {
+    "base_m": 0,
+    "height_m": 22.400000000000002,
+    "height_quality": "floor_estimate",
+    "height_provenance": {},
+    "height_is_measured": false,
+    "note": "Current source-floor-derived LoD height retained as a documented baseline only; not a measured facade or roof elevation."
+  },
+  "parts": [],
+  "parts_audit": {
+    "source_has_parts": false,
+    "raw_linked_parts": 0,
+    "saved_osm_overlapping_parts": 0,
+    "scanned_raw_macros": [
+      "14-13719-6693",
+      "14-13719-6694",
+      "14-13719-6695",
+      "14-13720-6693",
+      "14-13720-6694",
+      "14-13720-6695",
+      "14-13721-6693",
+      "14-13721-6694",
+      "14-13721-6695"
+    ],
+    "scope": "Saved source parent flag plus linked/overlapping parts in the surrounding raw owner tiles and saved OSM extract; no claim of real-world absence of roof subdivisions."
+  },
+  "replacement": {
+    "building_ids": [
+      "61b83abc-0a40-45e9-9ae4-0fc9436b6d77"
+    ],
+    "building_part_ids": [],
+    "only_exact_ids": true,
+    "do_not_delete_nearby_buildings_by_radius": true,
+    "additional_overlap_candidates": [],
+    "touches_qualified_source_roof": false,
+    "existing_related_residuals": [],
+    "feature_local_ids": [
+      1087
+    ],
+    "retained_same_near_feature_local_ids": [
+      529,
+      1051,
+      1140,
+      1580,
+      1609,
+      1960,
+      2295,
+      2375,
+      2645
+    ],
+    "macro_source_roof_count_unchanged": 17,
+    "macro_existing_residual_count_unchanged": 14,
+    "mask_contract": "Hide only this exact local feature ID in far geometry and omit only this source key when regenerating its shared near tile. Never hide/delete the entire near microtile: retain every sibling source key listed above.",
+    "applied": false
+  },
+  "source_road_elements": [
+    {
+      "type": "way",
+      "id": 1201643770,
+      "version": 3,
+      "timestamp": "2025-09-01T23:40:02Z",
+      "tags": {
+        "alt_name": "外滩",
+        "alt_name:en": "The Bund",
+        "bicycle": "no",
+        "highway": "secondary",
+        "lanes": "3",
+        "name": "中山东一路",
+        "name:en": "East Zhongshan No. 1 Road",
+        "name:zh": "中山东一路",
+        "name:zh-Hans": "中山东一路",
+        "name:zh-Hant": "中山東一路",
+        "oneway": "yes"
+      },
+      "nodes": [
+        476671870,
+        13113187951,
+        1315785556,
+        1315785483,
+        6975721362,
+        75349972,
+        6975721358,
+        13113187954,
+        78597884,
+        78597885,
+        1315785403,
+        78597886,
+        600142943,
+        1888323015
+      ],
+      "geometry": [
+        {
+          "lat": 31.2376051,
+          "lon": 121.4859802
+        },
+        {
+          "lat": 31.2374146,
+          "lon": 121.4860625
+        },
+        {
+          "lat": 31.2372947,
+          "lon": 121.4861298
+        },
+        {
+          "lat": 31.2370036,
+          "lon": 121.4863079
+        },
+        {
+          "lat": 31.2364906,
+          "lon": 121.4866545
+        },
+        {
+          "lat": 31.2364184,
+          "lon": 121.486706
+        },
+        {
+          "lat": 31.2363062,
+          "lon": 121.4867782
+        },
+        {
+          "lat": 31.2361457,
+          "lon": 121.4868788
+        },
+        {
+          "lat": 31.2360088,
+          "lon": 121.4869565
+        },
+        {
+          "lat": 31.2358467,
+          "lon": 121.4870403
+        },
+        {
+          "lat": 31.2356662,
+          "lon": 121.4871251
+        },
+        {
+          "lat": 31.2354306,
+          "lon": 121.4872448
+        },
+        {
+          "lat": 31.2353577,
+          "lon": 121.487281
+        },
+        {
+          "lat": 31.2352187,
+          "lon": 121.4873467
+        }
+      ],
+      "missing_nodes": []
+    }
+  ],
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors; © Overture Maps Foundation",
+  "limitations": [
+    "Map footprint is a source outline, not a measured facade/laser survey.",
+    "No windows, entrances, cornice heights or roof details are established by this geometry freeze.",
+    "No existing source geometry, height, model or exclusion list has been modified."
+  ]
+}

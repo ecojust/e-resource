@@ -1,0 +1,228 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13720-6692-0_2-s1-s0-s1",
+      "baseline_sha256": "da0a5df03606c427be9e3e4e67f3678cfdf406b0510217483761da8123bce611",
+      "override_sha256": "6aa3a2b18039e4cf73e417fe585a44fa5389779217fdff3970daf3e931a06193",
+      "triangles": 82362,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 4208,
+        "extra": 4208,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 1900,
+        "extra": 1900,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 1245,
+          "key": "building:5dfe3b1f-db6f-4523-8523-3636102be779",
+          "triangles": 4370,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 58,
+          "key": "building:05310cfc-8e56-4e20-a1df-e0403e518965",
+          "triangles": 5988,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 3071,
+          "key": "building:efb04870-bd2c-49c8-8927-a7e7ff99988f",
+          "triangles": 2820,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 2557,
+          "key": "building:c7f84dab-b7a1-4cf2-9e1e-f33bce1860bc",
+          "triangles": 9948,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 139,
+          "key": "building:0c1c194c-a06b-4e49-9500-1beebefeec98",
+          "triangles": 7074,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 670,
+          "key": "building:355c4971-9098-4845-b031-13ce2c4291b0",
+          "triangles": 9552,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1024,
+          "key": "building:4e22d3ea-8611-4589-9edc-b286edbe6a07",
+          "triangles": 7968,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 150,
+          "key": "building:0d445022-7a15-4a43-bc3b-547c2e459dc1",
+          "triangles": 10212,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 784,
+          "key": "building:3e266ae6-7cd6-478f-9448-84fb1ea763aa",
+          "triangles": 6516,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 224,
+          "key": "building:12fe41af-82f6-4c55-9922-e58466f4f75a",
+          "triangles": 9948,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 483,
+          "key": "building:26d81df7-6ed7-4b7a-8003-386573f9bf13",
+          "triangles": 7966,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_hongkou-hongde-church",
+          "triangles": 9948,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 82362,
+        "nonidentical_normal_triangles": 4208,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 7.188148992698373e-9,
+        "max_direction_difference_degrees": 4.19021293905487e-7,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          1245,
+          58,
+          3071,
+          139,
+          670,
+          1024,
+          150,
+          784,
+          224,
+          483
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13720-6692-0_2-s1-s0-s1",
+    "target_group": "city_target_hongkou-hongde-church",
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 82362,
+      "nonidentical_normal_triangles": 4506,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.0029576696300718797,
+      "max_direction_difference_degrees": 0.17035627915517002,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13720-6692-0_2-s1-s0-s1",
+      "target_group": "city_target_hongkou-hongde-church",
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 82362,
+        "nonidentical_normal_triangles": 4506,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.0029576696300718797,
+        "max_direction_difference_degrees": 0.17035627915517002,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

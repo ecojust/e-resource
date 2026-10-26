@@ -65,10 +65,11 @@ test('crossing single Polygon, unknown ID, and conflicting source properties rem
   assert.deepEqual(planOSMBuildingReplacement([multipart,{...multipart,properties:{render_height:40}}],squareCoverage).hideIDs,[]);
 });
 
-test('nonidentical intersecting buffer fragments stay in the original source instead of being unioned', () => {
+test('intersecting uncovered fragments stay exact without blocking an independent covered component', () => {
   const fragment={...multipart,geometry:{type:'MultiPolygon',coordinates:[rect(11.5,1,12.5,2).coordinates]}};
   const plan=planOSMBuildingReplacement([multipart,fragment],squareCoverage);
-  assert.deepEqual(plan.hideIDs,[]); assert.equal(plan.ambiguousFragments,1); assert.equal(plan.residualComponents,0);
+  assert.deepEqual(plan.hideIDs,[7]); assert.equal(plan.ambiguousFragments,1); assert.equal(plan.residualComponents,2);
+  assert.deepEqual(plan.residualData.features.map(f=>JSON.stringify(f.geometry.coordinates)).sort(), [multipart.geometry.coordinates[1],fragment.geometry.coordinates[0]].map(p=>JSON.stringify(p)).sort());
 });
 
 test('uncovered component holes and source minimum/top heights are preserved exactly', () => {
@@ -155,4 +156,67 @@ test('loss of an already rendered residual layer restores original IDs immediate
   assert.equal(map.states.size,0);assert.equal(controller.getState().residualReady,false);
   const retry=controller.refresh();assert.equal(map.states.size,0,'same-signature fast path cannot re-hide after resource loss');
   residual.calls[1].resolve();await retry;assert.equal(map.states.size,0);
+});
+
+const aggregate = polys => ({type:'Feature',id:7,properties:{render_height:5,render_min_height:0},geometry:{type:'MultiPolygon',coordinates:polys}});
+const coordinateSet = features => features.map(f=>JSON.stringify(f.geometry.coordinates)).sort();
+
+test('a covered target is independent of a remote touching mixed-coverage cluster', () => {
+  const polygons=[rect(1,1,2,2).coordinates,rect(7,1,9,2).coordinates,rect(9,1,11,2).coordinates,rect(11,1,12,2).coordinates];
+  const result=planOSMBuildingReplacement([aggregate(polygons)],squareCoverage);
+  assert.deepEqual(result.hideIDs,[7]);assert.equal(result.removedComponents,1);
+  assert.deepEqual(coordinateSet(result.residualData.features),polygons.slice(1).map(p=>JSON.stringify(p)).sort(),
+    'transitive contact retains the covered member along with both crossing/outside members');
+});
+
+test('a wholly covered intersecting cluster can be removed while an outside component remains', () => {
+  const polygons=[rect(1,1,3,3).coordinates,rect(2,2,4,4).coordinates,rect(11,1,13,3).coordinates];
+  const result=planOSMBuildingReplacement([aggregate(polygons)],squareCoverage);
+  assert.deepEqual(result.hideIDs,[7]);assert.equal(result.removedComponents,2);
+  assert.deepEqual(result.residualData.features[0].geometry.coordinates,polygons[2]);
+});
+
+test('retained holes and inside-hole independent covered components keep their original geometry', () => {
+  const donut=[rect(6,1,12,8).coordinates[0],rect(7,2,9,6).coordinates[0].reverse()];
+  const inHole=rect(7.2,3,8.8,5).coordinates;
+  const result=planOSMBuildingReplacement([aggregate([donut,inHole])],squareCoverage);
+  assert.deepEqual(result.hideIDs,[7]);assert.equal(result.removedComponents,1);
+  assert.deepEqual(result.residualData.features[0].geometry.coordinates,donut);
+  assert.deepEqual(result.residualData.features[0].properties,{render_height:5,render_min_height:0});
+});
+
+test('mixed-coverage grouping is independent of component order and exact duplicate fragments', () => {
+  const polys=[rect(1,1,2,2).coordinates,rect(7,1,9,2).coordinates,rect(9,1,11,2).coordinates,rect(11,1,12,2).coordinates];
+  const expected=planOSMBuildingReplacement([aggregate(polys)],squareCoverage);
+  const shuffled=aggregate([polys[3],polys[1],polys[0],polys[2],polys[1]]);
+  const other={...aggregate([polys[0]]),id:'7'};
+  const actual=planOSMBuildingReplacement([shuffled,other],squareCoverage);
+  assert.deepEqual(actual.hideIDs,[7]);assert.equal(actual.duplicateComponents,2);
+  assert.equal(actual.removedComponents,expected.removedComponents);
+  assert.deepEqual(actual.residualData,expected.residualData);
+});
+
+test('a mixed connected cluster without any independent covered component stays entirely online', () => {
+  const value=aggregate([rect(8,1,10,2).coordinates,rect(10,1,12,2).coordinates]);
+  const result=planOSMBuildingReplacement([value],squareCoverage);
+  assert.deepEqual(result.hideIDs,[]);assert.equal(result.removedComponents,0);assert.equal(result.residualComponents,0);
+});
+
+test('actual Hongde MVT aggregate removes component745 and preserves all45 residual components exactly', () => {
+  const file=new URL('./fixtures/osm-hongde-118016460.json',import.meta.url);
+  const actual=JSON.parse(fs.readFileSync(file));const feature=actual.features[0];const e=actual.evidence;
+  assert.equal(feature.id,118016460);assert.equal(feature.geometry.coordinates.length,1398);
+  const plan=planOSMBuildingReplacement(actual.features,actual.coverage);
+  assert.deepEqual(plan.hideIDs,[118016460]);assert.equal(plan.duplicateComponents,1);
+  assert.equal(plan.removedComponents,1352);assert.equal(plan.residualComponents,45);
+  assert.equal(plan.removedComponents+plan.residualComponents,e.unique_components);
+  const expected=actual.expected_retained_original_indices.map(i=>feature.geometry.coordinates[i]);
+  assert.equal(expected.length,45);assert.equal(new Set(expected.map(p=>JSON.stringify(p))).size,45);
+  assert.deepEqual(coordinateSet(plan.residualData.features),expected.map(p=>JSON.stringify(p)).sort());
+  const target=JSON.stringify(feature.geometry.coordinates[e.target_original_component_index]);
+  assert.ok(!coordinateSet(plan.residualData.features).includes(target));
+  for(const i of e.mixed_original_component_indices)assert.ok(coordinateSet(plan.residualData.features).includes(JSON.stringify(feature.geometry.coordinates[i])));
+  for(const f of plan.residualData.features){assert.equal(f.originalSourceId,118016460);assert.deepEqual(f.properties,feature.properties);}
+  const permuted={...feature,geometry:{...feature.geometry,coordinates:[...feature.geometry.coordinates].reverse()}};
+  assert.deepEqual(planOSMBuildingReplacement([permuted],actual.coverage).residualData,plan.residualData);
 });

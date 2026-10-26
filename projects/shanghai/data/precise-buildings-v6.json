@@ -23,6 +23,10 @@
       "file": "bund14/geometry-input.json",
       "sha256": "5ab96ac3a2b648ed896ea3ffe47ad1e7b4e2b82dac5b13c6756e8a74777276b8"
     },
+    "hongkou-hongde-church": {
+      "file": "hongkou-hongde-church/geometry-input.json",
+      "sha256": "aa1d42251a01fc487ee01bc90190e2e561e85d60ee0b61e8cacdc69808fa4179"
+    },
     "qingpu-beidajie-208-212": {
       "file": "qingpu-beidajie-208-212/geometry-input.json",
       "mapping_report": {
@@ -48,7 +52,7 @@
       "sha256": "d34d51ed9be1f28beefe05e4076d892851bd7dacf13843d5d088148e5f204eca"
     }
   },
-  "integration_scope": "Nine exact-source replacements,23curated navigation rows and two complete ordinary macro catalogs. New A/B static browser proof accepted; new catalog lifecycle not yet tested.",
+  "integration_scope": "Accepted24: Hongde static and H1 catalog lifecycle/visual proof complete within their recorded limits. Old23 records and W/Q complete macro/index/replacement bytes are unchanged; citywide photographic completion is not claimed.",
   "landmarks": [
     {
       "building_ids": [
@@ -399,6 +403,40 @@
         "type": "Polygon"
       },
       "id": "bund14"
+    },
+    {
+      "building_ids": [
+        "c7f84dab-b7a1-4cf2-9e1e-f33bce1860bc"
+      ],
+      "building_part_ids": [],
+      "confirmed_boundary": {
+        "coordinates": [
+          [
+            [
+              121.47810459,
+              31.2639474
+            ],
+            [
+              121.4780724,
+              31.26367686
+            ],
+            [
+              121.47785783,
+              31.26369062
+            ],
+            [
+              121.47788465,
+              31.26396575
+            ],
+            [
+              121.47810459,
+              31.2639474
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "hongkou-hongde-church"
     },
     {
       "building_ids": [
@@ -818,6 +856,67 @@
     },
     {
       "baseline_configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+      "baseline_far_sha256": "7dda40061224d5224434fdf94bb059057db93118b18f4edd5dbd5de2a8f4fcdd",
+      "baseline_feature_table_sha256": "5fd3b206d62fabc98579860dc4c1aec227020b2af0903e744146b942851ff7e5",
+      "baseline_ready_sha256": "254f61f792951183f7ec1ab54db6fcf2d30a7f38c07e45132795b9d7c0aecca8",
+      "feature_count": 3295,
+      "id": "14-13720-6692",
+      "near": [
+        {
+          "baseline_decoded_sha256": "e1d0de2e76af645c0aed2fdd166dd3db4363824560a0967d596fa695917226fa",
+          "baseline_file": "near/0_2-s1-s0-s1.glb.gz",
+          "baseline_sha256": "da0a5df03606c427be9e3e4e67f3678cfdf406b0510217483761da8123bce611",
+          "featureLocalIds": [
+            1245,
+            58,
+            3071,
+            2557,
+            139,
+            670,
+            1024,
+            150,
+            784,
+            224,
+            483
+          ],
+          "groups": [
+            {
+              "expandedTriangles": 9948,
+              "feature_keys": [
+                "building:c7f84dab-b7a1-4cf2-9e1e-f33bce1860bc"
+              ],
+              "landmark_id": "hongkou-hongde-church",
+              "local_ids": [
+                2557
+              ],
+              "name": "city_target_hongkou-hongde-church"
+            }
+          ],
+          "id": "14-13720-6692-0_2-s1-s0-s1",
+          "model": {
+            "compression": {
+              "gzip_level": 6,
+              "gzip_mtime": 0,
+              "owner_groups_compressed_separately_then_buffer_relocated": true,
+              "preserve_named_nodes": true,
+              "quantization": false,
+              "type": "EXT_meshopt_compression"
+            },
+            "content_encoding": "gzip",
+            "decoded_sha256": "cfe2566d699a4c5b9327cfe7c8bdd37a21c6cf2afabc757de5bff5e1e8229543",
+            "decoded_size_bytes": 322476,
+            "drawCalls": 16,
+            "expandedTriangles": 82362,
+            "file": "assets/city-overrides-v6/14-13720-6692/0_2-s1-s0-s1.glb.gz",
+            "geometryBytes": 1142456,
+            "sha256": "6aa3a2b18039e4cf73e417fe585a44fa5389779217fdff3970daf3e931a06193",
+            "size_bytes": 74873
+          }
+        }
+      ]
+    },
+    {
+      "baseline_configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
       "baseline_far_sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
       "baseline_feature_table_sha256": "605bcf6278ae2518db7f3128a407a02e644c94b1dd50bfc83e3de331a2275d77",
       "baseline_ready_sha256": "0c46fd8ec4ca79547de1ca77bc263c301a2d576fc1d131b1f805049604e5ce2d",
@@ -997,9 +1096,9 @@
     }
   ],
   "ordinary_catalog": {
-    "bytes": 1105,
+    "bytes": 1528,
     "file": "data/precise-buildings/catalog.json",
-    "sha256": "74e2551f77f512498e14fa45a186b5fa94dfc8041aed43fcd2c7554bc0371472"
+    "sha256": "582a9c7f57eb7d0af1c9043718d0344ad5d24060b561f977a3ac412ee779c257"
   },
   "project_base_url_contract": "model.file is relative to the project root, not the registry directory",
   "reuse_validation": [
@@ -1016,6 +1115,14 @@
       "bytes": 113874,
       "id": "14-13701-6700--3_2-s1-s0",
       "model_sha256": "fb6e5bed1fb7071d2687171ffe7793a6483fcd31469ae2a10ca3990d8450084d",
+      "regenerated": false,
+      "same_decoded_sha256": true
+    },
+    {
+      "byte_identical": true,
+      "bytes": 121154,
+      "id": "14-13718-6695-1_0-s1-s1",
+      "model_sha256": "4cdb05627091cdb9dbdc96046cd6718a860fcd32e968bfa1690c84f9f53f4cbc",
       "regenerated": false,
       "same_decoded_sha256": true
     },
@@ -1055,7 +1162,7 @@
   "schema": "city-precise-overrides-v1",
   "status": "incremental exact-source geometry audit passed; new precise-model/browser acceptance remains separate",
   "validation": {
-    "file": "data/audit/precise-buildings-v7/integration-ab/nine-targets/geometry-validation.json",
-    "sha256": "b100ad2f871573fb414b7ad55a9d64f1d90de4478027e09a649886628dfc3385"
+    "file": "source/city/precise-overrides-v8/ten-targets/evidence/geometry-validation.json",
+    "sha256": "ae84e9d8af120cd9e7b3d8b14f59776ccb63d21f55267854c8a622a0e6a0bbd0"
   }
 }
