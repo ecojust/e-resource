@@ -1,0 +1,61 @@
+{
+  "schema": "bund09-roof-v3-actual-photo-preview-review-v1",
+  "reviewed_utc": "2026-10-26T08:24:32.401982+00:00",
+  "actually_viewed": true,
+  "method": "tools.view_image of root v3 whole preview and enlarged southern roof crop;compared with same-camera v2 preview and actual P01 original/crops. No render execution by this agent.",
+  "raw_sha256": "b26f3634caca1d006f5c327b3b0207b700ab2e64671496120c59e92d0c5deb7f",
+  "native_sha256": "82aa85b5604b1aa364d46bd020ff8c8822e61211248dc8081f11256c1500c866",
+  "preview": {
+    "path": "native-compressed/bund09-raw-preview.png",
+    "bytes": 1460178,
+    "sha256": "c2efb1f57cd305ceb32b2b41b16c220197092e516507ee4cca7cbd432385ae41"
+  },
+  "camera": {
+    "azimuth": 72.05,
+    "elevation": 12,
+    "resolution": [
+      1200,
+      1000
+    ],
+    "same_as_v2": true
+  },
+  "source_photo": "P01 Suicasmo2025-05-01 CC0",
+  "source_photo_sha256": "833ce0d83bf4207af69073104f22f5ad92669eaf43ffbc8fef7acfaa7462bc23",
+  "targeted_visible_repairs_passed": true,
+  "overall_photo_fidelity_passed": null,
+  "full_historical_or_survey_accuracy_asserted": false,
+  "targeted_findings": [
+    {
+      "feature": "Southern wing and rounded-return tile coverage",
+      "passed": true,
+      "observation": "The large smooth triangular/strip patches visible in v2 are now covered continuously by finite tile surfaces. Clipped ends and overlapping courses are visible; no comparable new bare triangular patch is seen in the inspected southern slope."
+    },
+    {
+      "feature": "Ground stone radial joints",
+      "passed": true,
+      "observation": "Retained v2 radial arch partitions are still visible and have not changed geometry; lines remain subtle at whole-building preview resolution."
+    },
+    {
+      "feature": "Central balcony solid posts",
+      "passed": true,
+      "observation": "Retained stronger square stepped posts match the observed feature class. Their geometry is exactly preserved from v2."
+    }
+  ],
+  "remaining_limits": [
+    "Tile profile, colour, exact scale and hip path remain proportional geometric approximations, not a photographic scan.",
+    "Nine front balcony balusters remain estimated; the P01 oblique crop resolves about eight visible shafts and does not establish the total behind the near post.",
+    "Rear gray raised facets are inferred support surfaces beside source edges 0, 1 and 5, not photographically accepted details.",
+    "The broad zinc inset roof cap is byte-identical; its actual hidden plan remains unknown.",
+    "Northern roof details rely mainly on 2013 evidence; leaf relief and lettering remain simplified.",
+    "Dark loggia rear windows also occur in P01; no blanket brightening of shadows was applied."
+  ],
+  "rear_gray_facets": {
+    "proof": "rear-roof-range-check.json",
+    "finding": "Actual serialized triangle and projection checks place the changed rear gray facets outside the inner zinc cap. These are not tiles crossing into the flat cap. Residual intersection areas are consistent with FLOAT32 boundary rounding. The rear shape remains inferred."
+  },
+  "storage_validation": "storage-check.json",
+  "root_blender_reopen": "reopen-check.json",
+  "root_independent_visual_status": "Root confirmed actual v3 PNG review and accepted the repaired southern blank seams. The rear-shape question was addressed by the separate range check; those shapes remain estimated.",
+  "browser_review_performed": false,
+  "main_project_modified": false
+}

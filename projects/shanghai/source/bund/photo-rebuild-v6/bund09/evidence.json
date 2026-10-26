@@ -1,0 +1,74 @@
+{
+  "schema": "bund09-photo-model-evidence-v1",
+  "identity": {
+    "address": "中山东一路9号",
+    "name": "轮船招商总局大楼 / 轮船招商局大楼",
+    "english": "China Merchants Steam Navigation Company Building",
+    "not": [
+      "Bund06 中国通商银行大楼 / China Merchants Bank Building",
+      "Bund16 台湾银行旧址 / modern 招商银行"
+    ]
+  },
+  "geometry": "geometry-input.json",
+  "geometry_sha256": "b6651620915df136f6e63ec92089e5662eabb5cb9f96dfa774658679b7929539",
+  "photo_manifest": "references/manifest.json",
+  "architectural_observations": "photo-observations.json",
+  "history": "history-sources.json",
+  "preferred_photo": "references/bund09-20250501-suicasmo-original.jpg",
+  "photo_license": "CC0-1.0",
+  "photographic_controls": "photo-glass-controls.json",
+  "photographic_scope": "20 individually viewed unobscured rectangular panes, two windows on source edge15. Source JPEG unaltered; no entire-facade photo sheet. Other glass uses explicit procedural material.",
+  "source_polygon_preserved": true,
+  "principal_floors": 3,
+  "osm_floor5_retained_but_not_used": true,
+  "independent_metric": "calibration-independent.json",
+  "calibration": "calibration.json",
+  "model_precision": "Photograph-informed reconstruction with actual source footprint; all facade/roof heights, depths and carving profiles are estimated, not survey values.",
+  "unobserved_or_temporally_limited": [
+    "2013 north dormers and north glazing not separately confirmed2025",
+    "Tree-obscured south ground and complete rear apertures",
+    "Rear roof geometry, interior, exact ornament geometry",
+    "2025 main portal recess partly hidden and changed versus2013"
+  ],
+  "unlicensed_caches_excluded_from_public_source": [
+    "official-archives.html",
+    "official-archives.txt",
+    "cmhk-restoration-2022.html",
+    "cmhk-restoration-2022.txt",
+    "history-search.html"
+  ],
+  "source_code_license": "MIT",
+  "map_license": "ODbL-1.0, © OpenStreetMap contributors; Overture mapping metadata retained",
+  "photograph_rights_separate": true,
+  "current_entrance_sign": {
+    "source": "references/inspection-entry-inscription.jpg",
+    "reading": "輪船招商總局",
+    "model_left_to_right": "局總商招船輪",
+    "font": "fonts/Bund09SignSubset.otf",
+    "license": "SIL OFL1.1",
+    "font_source": "fonts/manifest.json",
+    "fidelity": "Legible approximate font outlines, not a traced calligraphic reconstruction"
+  },
+  "texture_decoded_rgba_bytes": 71663616,
+  "far_lod_policy": "Root should package with --lod-without-photos; keep source/raw/web/native JPEG unchanged.",
+  "candidate_revision": "roof-continuity-v3",
+  "glass_frame_policy": {
+    "front_recess_m": 0.02,
+    "glass_thickness_m": 0.02,
+    "arc_window_panes": 672,
+    "rear_loggia_depth_m_unchanged": 1.85,
+    "all_glass_attributes_and_indices_unchanged_since_glass_inset_v1": true,
+    "all_triangle_corner_uv_float32_unchanged_since_glass_inset_v1": true,
+    "original_jpeg_bytes_exactly_preserved": true,
+    "proof": "output/roof-revision-preservation.json",
+    "prior_candidate_sha256": "7e38b487a82f626e9a43ef7bbf0ba8b33903798dec63c06de7f4bb319b962815"
+  },
+  "visible_detail_review": "VISIBLE_DETAIL_REVIEW.md",
+  "visible_detail_geometric_proof": "Prior revision evidence remains in siblingbund09-visible-detail-v2/output/visible-detail-preservation.json",
+  "roof_revision_review": "ROOF_REVISION_V3.md",
+  "roof_geometry_proof": "output/roof-continuity-v3-check.json",
+  "roof_non_target_preservation": "output/roof-revision-preservation.json",
+  "targeted_native_review": "native-compressed/appearance-review.json",
+  "rear_roof_scope_check": "native-compressed/rear-roof-range-check.json",
+  "rear_roof_note": "New gray rear support facets remain inside the original roof skirt and outside the unchanged inset cap. Their shape remains an unobserved estimate, not a photographically accepted feature."
+}

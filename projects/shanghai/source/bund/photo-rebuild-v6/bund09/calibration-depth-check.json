@@ -1,0 +1,57 @@
+{
+  "schema": "photo-depth-hypothesis-check-v1",
+  "calibration_file": "calibration-independent.json",
+  "calibration_sha256": "79bedcbb34ae6d12b5ff6964c094bb2f4de0e7b0157d385536f4b0a3a54282cc",
+  "examples": [
+    {
+      "label": "rear_roof_coping_left",
+      "oriented_pixel": [
+        1790.1000000000001,
+        531.9000000000001
+      ],
+      "front_plane_u_z_m": [
+        -13.657034220288722,
+        15.10387829601146
+      ],
+      "conditional_depths": [
+        {
+          "assumed_outward_depth_m": -8,
+          "conditional_facade_u_z_m": [
+            -10.506412013306388,
+            18.051582728768782
+          ],
+          "reprojection_error_source_px": 9.374856803373542e-13
+        },
+        {
+          "assumed_outward_depth_m": -5,
+          "conditional_facade_u_z_m": [
+            -11.687895340924763,
+            16.946193566484787
+          ],
+          "reprojection_error_source_px": 9.374856803373542e-13
+        },
+        {
+          "assumed_outward_depth_m": -2,
+          "conditional_facade_u_z_m": [
+            -12.869378668543138,
+            15.84080440420079
+          ],
+          "reprojection_error_source_px": 4.687428401686771e-13
+        },
+        {
+          "assumed_outward_depth_m": 0,
+          "conditional_facade_u_z_m": [
+            -13.657034220288722,
+            15.10387829601146
+          ],
+          "reprojection_error_source_px": 3.2155493553843715e-13
+        }
+      ]
+    }
+  ],
+  "projection_max_error_source_px": 9.374856803373542e-13,
+  "status": "Depth is assumed, not independently recovered. Conditional elevations must not be labelled measured roof heights.",
+  "gallery_depth_independently_recovered": false,
+  "gallery_model_assumption_m": 1.85,
+  "gallery_note": "09 current modeler estimate1.85m has no verified equal-height/front-back tie point in this image. Exterior gallery and rear wall cannot share d=0 UVs."
+}

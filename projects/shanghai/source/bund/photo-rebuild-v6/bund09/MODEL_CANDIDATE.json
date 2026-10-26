@@ -1,0 +1,190 @@
+{
+  "schema": "bund09-review-candidate-freeze-v1",
+  "created_utc": "2026-10-26T08:16:00.646988+00:00",
+  "status": "Final raw/native/web/LOD candidate packaged in isolated stage. Root native reopen and targeted same-camera southern-roof review passed; browser acceptance and main installation are still separate.",
+  "raw": {
+    "path": "output/bund09-raw.glb",
+    "bytes": 76875072,
+    "sha256": "b26f3634caca1d006f5c327b3b0207b700ab2e64671496120c59e92d0c5deb7f"
+  },
+  "geometry_input": {
+    "path": "geometry-input.json",
+    "bytes": 56143,
+    "sha256": "b6651620915df136f6e63ec92089e5662eabb5cb9f96dfa774658679b7929539"
+  },
+  "build_source": {
+    "path": "build_model.py",
+    "bytes": 38142,
+    "sha256": "9611daec6281d9b715a5796ffff2653024d0770b2ff1cffdf373ce0d7d879791"
+  },
+  "model_parameters": {
+    "path": "model-calibration-input.json",
+    "bytes": 439,
+    "sha256": "424e53dbd828df040583ad1233b269cf621ff3ad27f5708efe754a2d5bdc72af"
+  },
+  "independent_metric": {
+    "path": "calibration-independent.json",
+    "bytes": 30179,
+    "sha256": "79bedcbb34ae6d12b5ff6964c094bb2f4de0e7b0157d385536f4b0a3a54282cc"
+  },
+  "metric_controls": {
+    "path": "calibration-independent-controls.json",
+    "bytes": 8453,
+    "sha256": "e9c6827c2dd2f58f8cffeba047301537e73572a69fd16feb980208e2d9e48c63"
+  },
+  "photo_controls": {
+    "path": "photo-glass-controls.json",
+    "bytes": 9814,
+    "sha256": "abf7d3bb632d37a3d41d26ff32de61459948148758970677301a5f33e5de7776"
+  },
+  "shared_helper": {
+    "path": "../common/photo_architecture.py",
+    "bytes": 21332,
+    "sha256": "d464bc7c12ffb49911f702c7495bfbbcf9ab5e8b288641d0dfcb195d6a4043df"
+  },
+  "qa": {
+    "path": "output/photo-uv-check.json",
+    "bytes": 1590,
+    "sha256": "ea211844d50c03a7d55c6632b9e083df793c554a7eb69daead5bc592d2148cf0"
+  },
+  "parts_qa": {
+    "path": "output/bund09-all-parts-check.json",
+    "bytes": 7151873,
+    "sha256": "87f2dc6ea56a6bbc3f89030a87083fd0713a7a043de94d8006520e095fdd8e36"
+  },
+  "triangles": 996983,
+  "material_count": 12,
+  "part_count": 23451,
+  "bounds_glb": {
+    "min": [
+      -12.216238021850586,
+      -0.07000000029802322,
+      -15.516497611999512
+    ],
+    "max": [
+      10.816666603088379,
+      16.579999923706055,
+      16.890031814575195
+    ]
+  },
+  "principal_floors": 3,
+  "original_source_footprint_vertices": 19,
+  "retained_source_floor_tag": 5,
+  "source_floor_tag_used_for_height": false,
+  "primary_architectural_features": [
+    "2 genuinely open upper loggias with separate rear window wall",
+    "12 Tuscan/Corinthian shaft positions per corresponding level",
+    "14 main upper rear arched apertures",
+    "4 ground arches plus central recessed portal",
+    "Source north9arched openings and stepped/rounded south returns",
+    "2 main eastern pediments and3 northern2013 roof structures",
+    "Independent balusters, exact-source-footprint slabs, approximate hipped tile roof, modelled gold inscription",
+    "4 ground stone arch radial partitions with separate recessed joints",
+    "2 central balcony closed stepped solid corner posts,9front balusters",
+    "Continuous clipped corrugated tile field onsourceedges9–18,including original omittedrounded facets12–14;one photographed hip cap,exact dimensions estimated"
+  ],
+  "photographic_scope": {
+    "windows": 2,
+    "panes": 20,
+    "source_jpeg_bytes": 7110582,
+    "original_jpeg_unchanged": true,
+    "decoded_rgba_bytes": 71663616,
+    "lod_policy": "Package with --lod-without-photos; raw/web/native retain original JPEG"
+  },
+  "validation_scope": "Serialized geometry/normal/UV/image, per-part topology,roof coverage and all10non-roof material arrays PASS. Root same-camera native/photo appearance, independent native reopen, browser and integration are separate.",
+  "native_and_render_run_by_this_agent": false,
+  "main_project_modified": false,
+  "git_used": false,
+  "publication_source_allowlist": "PUBLICATION_SOURCE_FILES.json",
+  "candidate_revision": "roof-continuity-v3",
+  "actual_glass_frame_depth": {
+    "path": "output/glass-frame-depth-check.json",
+    "bytes": 215413,
+    "sha256": "0285cac876378bf1515c60c75bb75a978c273c819bbf7eafa0c36b7304a080e5"
+  },
+  "preserved_prior_candidate": {
+    "directory": "../bund09-visible-detail-v2",
+    "raw_sha256": "7e38b487a82f626e9a43ef7bbf0ba8b33903798dec63c06de7f4bb319b962815",
+    "raw_bytes": 69198228,
+    "native_sha256": "5aa8cec2d89fe99251497b73c3442ecd586e0869ab4e14755e9539d3c166a444",
+    "raw_native_source_and_qa_retained": true
+  },
+  "vertex_count": 2407687,
+  "native_storage_strategy": "Root completed compressed native save, full bounded decode and independent Blender reopen. This agent did not run Blender.",
+  "portable_validation_commands": [
+    "python build_model.py --output output",
+    "python check_photo_uv.py --output output",
+    "python check_roof_revision.py --before /retained/bund09-visible-detail-v2/output/bund09-raw.glb --after output/bund09-raw.glb"
+  ],
+  "roof_source": {
+    "path": "roof_surface.py",
+    "bytes": 14992,
+    "sha256": "54f27e4532c8d0433ad431c6e31d2fbf8e6ec1505f3ab4c9e180699c55fdafa6"
+  },
+  "roof_revision_preservation": {
+    "path": "output/roof-revision-preservation.json",
+    "bytes": 3652,
+    "sha256": "c55ab3e96d022a5b56d63df6fa6667d9490135c2f8c8a7a2374db59533b71ffb"
+  },
+  "roof_continuity_qa": {
+    "path": "output/roof-continuity-v3-check.json",
+    "bytes": 4079,
+    "sha256": "26d2c541f7bb883abc461ac2deca1bf96d52548474c84516d14d5594e9a08b84"
+  },
+  "roof_review": {
+    "path": "ROOF_REVISION_V3.md",
+    "bytes": 4604,
+    "sha256": "08cbf2ae90fd805169518f8b73ca05f8a65f5ba99a79f574de1b8de14b993d16"
+  },
+  "native": {
+    "path": "native-compressed/bund09-raw.blend",
+    "bytes": 42678476,
+    "sha256": "82aa85b5604b1aa364d46bd020ff8c8822e61211248dc8081f11256c1500c866"
+  },
+  "native_storage_check": {
+    "path": "native-compressed/storage-check.json",
+    "bytes": 923,
+    "sha256": "0ea4fef8508dfce1b82b5b3779818f36cb6030312d0d17aef2007cda52e24f2e"
+  },
+  "native_reopen_check": {
+    "path": "native-compressed/reopen-check.json",
+    "bytes": 1053,
+    "sha256": "35b3399f221afc97a8b9210aa966d1e08c16e3022d7355ee09d34e3fe64a2512"
+  },
+  "native_targeted_appearance": {
+    "path": "native-compressed/appearance-review.json",
+    "bytes": 3459,
+    "sha256": "d08d2906121608215ccfff06f2780b10171eab4a7598b439268659c459a5fcae"
+  },
+  "rear_roof_range": {
+    "path": "native-compressed/rear-roof-range-check.json",
+    "bytes": 4451,
+    "sha256": "00a9d2df251152e88514ef798658bc74edd52427d5ab8a56190ddad41049b3cd"
+  },
+  "packaging": {
+    "path": "package/packaging-record.json",
+    "bytes": 17086,
+    "sha256": "11414ebdede6de4463b2dfc8c5ee4505b2df91e4177a13437d0a95b7649c4c6a"
+  },
+  "web_decoded_geometry": {
+    "path": "package/compression-geometry-check.json",
+    "bytes": 1904,
+    "sha256": "f64606edca838037aa5686d554abd7540bd4066a343a67442711a152b0ecb502"
+  },
+  "lod_decoded_geometry": {
+    "path": "package/lod-decoded-check.json",
+    "bytes": 1141,
+    "sha256": "fc762104f48ed6030535fb613778da843191c9e49159c7a870504ba288595657"
+  },
+  "asset_sizes_bytes": {
+    "raw": 76875072,
+    "web": 30117188,
+    "native": 42678476,
+    "lod": 8429340
+  },
+  "all_asset_files_strictly_below100000000": true,
+  "actual_lod_bounds_delta_m": 0,
+  "actual_web_oriented_positions_exact": true,
+  "original_jpeg_preserved_in_raw_web_native": true,
+  "lod_images": 0
+}

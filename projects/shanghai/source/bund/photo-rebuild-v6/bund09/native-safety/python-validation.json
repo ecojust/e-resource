@@ -1,0 +1,86 @@
+{
+  "schema": "native-safety-python-validation-v1",
+  "passed": true,
+  "blender_executed": false,
+  "synthetic_fixtures_are_not_real_blender_scenes": true,
+  "checks": [
+    {
+      "case": "plain",
+      "passed": true,
+      "stored_bytes": 1048688,
+      "decoded_bytes": 1048688
+    },
+    {
+      "case": "gzip",
+      "passed": true,
+      "stored_bytes": 4516,
+      "decoded_bytes": 1048688
+    },
+    {
+      "case": "zstd",
+      "passed": true,
+      "stored_bytes": 462,
+      "decoded_bytes": 1048688
+    },
+    {
+      "case": "zstd-multiframe",
+      "passed": true,
+      "stored_bytes": 711,
+      "decoded_bytes": 1048688
+    },
+    {
+      "case": "truncated",
+      "passed": true,
+      "rejected": "ValueError"
+    },
+    {
+      "case": "trailing",
+      "passed": true,
+      "rejected": "ValueError"
+    },
+    {
+      "case": "decoded-limit",
+      "passed": true,
+      "rejected": "ValueError"
+    },
+    {
+      "case": "gzip-crc",
+      "passed": true,
+      "rejected": "BadGzipFile"
+    },
+    {
+      "case": "zstd-window-bound-bytes",
+      "passed": true,
+      "rejected": "ZstdError"
+    },
+    {
+      "case": "compression-bypass-roundtrip",
+      "passed": true
+    },
+    {
+      "case": "actual-bund06-plain-native",
+      "passed": true,
+      "stored_bytes": 18714580,
+      "block_count": 2017,
+      "source_unmodified": true
+    }
+  ],
+  "scripts": [
+    {
+      "file": "validate_native_storage.py",
+      "sha256": "e12bc375f4e5e8c764b70323e8c42e36e4a973380dd35f5b8df8f7f91c38bb23"
+    },
+    {
+      "file": "blender_reopen_verify.py",
+      "sha256": "5f4899479d0fc7dfaf7470bf80cc4c3c3e0d54c7cdd8d468eba7cb5bd5c0379d"
+    },
+    {
+      "file": "compress_existing_blend.py",
+      "sha256": "6493a1280dadc065e9ed2ccb4ca17c41f0054412ef5bea046127c2096d212a17"
+    },
+    {
+      "file": "blender_finish_compressed.py",
+      "sha256": "8b8e040b87808c60f5f28719ac38103d76f9747fdd1c2b46de77c23f6ca942c6"
+    }
+  ]
+}

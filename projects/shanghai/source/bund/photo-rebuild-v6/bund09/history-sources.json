@@ -1,0 +1,89 @@
+{
+  "schema": "bund09-history-sources-v1",
+  "retrieved_date": "2026-10-26",
+  "sources": [
+    {
+      "id": "H01",
+      "title": "《上海外滩建筑群》系列推送第五期·轮船招商总局大楼&汇丰银行大楼",
+      "publisher": "上海城建档案官方澎湃号",
+      "published": "2023-12-20 14:17",
+      "url": "https://m.thepaper.cn/newsDetail_forward_25710672",
+      "status": "Full text read; quoted sentences checked against saved text",
+      "text_cache": "official-archives.txt",
+      "fetch_record": "official-archives-fetch.json",
+      "quotes": [
+        "中山东一路9号 · 轮船招商总局大楼",
+        "建造年代：20世纪初",
+        "建筑结构：砖木结构（现内部已改为钢砼结构）",
+        "建筑设计：〔英〕通和洋行",
+        "轮船招商总局大楼主体原为三层砖木结构建筑，仿欧洲文艺复兴式建筑风格，各层间有明显的腰线。一层为石砌外墙，有四孔券外廊。入口门廊前出，两侧饰科林斯壁柱。二三层正立面为外廊式，二层为塔司干柱式，三层为科林斯柱式。檐部雕饰图案颇为精美，门斗上突出的阳台、木门窗、雕花木扶梯栏杆等均为当时流行的装饰样式。"
+      ],
+      "supports": [
+        "Bund09 identity",
+        "3 principal storeys",
+        "4 ground arches plus projecting portal",
+        "Floor2 Tuscan / floor3 Corinthian external colonnades",
+        "20th-century construction; official attribution to 通和洋行"
+      ],
+      "scope_limits": [
+        "The same article later describes Bund12 HSBC. Its 19m stairs and 3m×6m doors do not describe Bund09.",
+        "No measured overall height, width, depth or published floorplan obtained.",
+        "No image redistribution license found; do not copy page photos into distributable assets."
+      ]
+    },
+    {
+      "id": "H02",
+      "title": "庆祝招商局创立150周年 | “外滩九号”楼重启揭幕",
+      "publisher": "招商局集团 / 招商轮船",
+      "published": "2022-12-24",
+      "url": "https://www.cmhk.com/main/xwzx/jtyw/content/1793243607923818498_1793243607995121666.html",
+      "status": "Full text read",
+      "text_cache": "cmhk-restoration-2022.txt",
+      "fetch_record": "cmhk-restoration-2022-fetch.json",
+      "quotes": [
+        "作为“轮船招商总局”局址的外滩九号楼位于上海中山东一路9号，始建于1901年，是上海外滩万国建筑博览群中历史最悠久、风格最独特的建筑之一。",
+        "（招商轮船 供稿） --延伸阅读-- 外滩九号 1877年，招商局收购旗昌洋行，1901年在原旗昌洋行花园的基础上建造了“轮船招商总局”大楼，并将此楼作为办公楼。",
+        "2002年，在招商局创立130周年之际，招商局对该楼采用“修旧如旧”“修旧如初”的手法，进行了彻底修缮，呈现出现在的模样。",
+        "2022年，为庆祝招商局创立150周年华诞，招商轮船对该楼进行内部优化，并在一楼开设“百年航程”展厅，传承百年商道，开启时代新篇。"
+      ],
+      "supports": [
+        "Address9 and building commenced1901",
+        "Built on former Russell & Co garden after1877 acquisition",
+        "2002 exterior restoration and2022 internal optimization / first-floor exhibition"
+      ],
+      "scope_limits": [
+        "Restoration date does not establish exact as-built dimensions",
+        "No open image redistribution permission established"
+      ]
+    },
+    {
+      "id": "H03",
+      "title": "外滩9号轮船招商总局大楼保护与再生工程",
+      "publisher": "同济大学建筑设计研究院 TJAD",
+      "url": "http://www.tjad.cn/project/651",
+      "attempted_url": "https://www.tjad.cn/project/651",
+      "status": "Search result only; direct page returned503, full text not read",
+      "fetch_record": "tjad-restoration-fetch.json",
+      "search_result_cache": "history-search-results.json",
+      "search_snippet": "2001年开始测绘、安检和建筑方案设计，2002年施工，2004年竣工。",
+      "scope_limits": [
+        "Unverified search snippet, not treated as inspected primary documentation or a measured floorplan"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "field": "building:levels",
+      "raw_osm_value": "5",
+      "photo_and_official": "3 principal street-facing floors",
+      "treatment": "Preserve original OSM tag and record conflict; do not assume unverified extra interior/rear floors or convert street facade to5."
+    },
+    {
+      "field": "designer",
+      "official_H01": "〔英〕通和洋行",
+      "other_search_snippet": "玛礼逊洋行",
+      "treatment": "Official attribution recorded with source; conflicting search snippet is not sufficient to resolve personal architect or reattribute the building."
+    }
+  ],
+  "license_note": "Publicly readable history is factual evidence, not permission to redistribute article photographs or complete cached pages. Short attributed excerpts are used for provenance; Commons photo rights are separately recorded."
+}
