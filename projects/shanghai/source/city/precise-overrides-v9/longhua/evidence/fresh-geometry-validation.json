@@ -1,0 +1,252 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13719-6697--3_-1-s1",
+      "baseline_sha256": "f7893a80a533a540acd00953f7b1b5dd83125911f88bc2820c7796990921b645",
+      "override_sha256": "8d0591f5a5a30a3b494d98caf2ad44449435324321cb4c2a71a36c160afbcaa2",
+      "triangles": 69564,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 3330,
+        "extra": 3330,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 246,
+        "extra": 246,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 1070,
+          "key": "building:9e90ce1c-1841-49b2-b564-51337be2c81a",
+          "triangles": 4668,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1476,
+          "key": "building:deff9a12-1c1e-4d46-ad33-0127d2f0fa67",
+          "triangles": 6648,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 352,
+          "key": "building:34161982-2438-47be-89cf-ebb0c540a727",
+          "triangles": 7968,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1242,
+          "key": "building:b84aeb67-7c3b-4689-8516-d128060eae1c",
+          "triangles": 4272,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1077,
+          "key": "building:9fb55fe8-c70a-4b9e-9d90-ba935f7b5998",
+          "triangles": 7968,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1258,
+          "key": "building:ba69a38d-9bf3-4d53-94e8-8569b3755ef1",
+          "triangles": 6936,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1259,
+          "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82",
+          "triangles": 4272,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 511,
+          "key": "building:4c54ff99-d746-454e-a6c6-3f44bcdcf3df",
+          "triangles": 3216,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 702,
+          "key": "building:66c3a80d-8e53-4603-8a2e-3579a0caa485",
+          "triangles": 4336,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 918,
+          "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68",
+          "triangles": 4272,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1466,
+          "key": "building:ddbf7328-e1b5-4e36-a961-1c3072622291",
+          "triangles": 6944,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 23,
+          "key": "building:032c50ab-38e3-41d8-933a-d12a414a5d09",
+          "triangles": 2688,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 354,
+          "key": "building:341f3854-25b8-4d56-ba1a-db37c6d59bbc",
+          "triangles": 3744,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1221,
+          "key": "building:b5c53131-57c8-4712-894e-071a2a239694",
+          "triangles": 1632,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_xuhui-longhua-pagoda",
+          "triangles": 4336,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 69564,
+        "nonidentical_normal_triangles": 3330,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 1.3076074167894802e-8,
+        "max_direction_difference_degrees": 8.001831127851019e-7,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          1070,
+          1476,
+          352,
+          1242,
+          1077,
+          1258,
+          1259,
+          511,
+          918,
+          1466,
+          23,
+          354,
+          1221
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13719-6697--3_-1-s1",
+    "target_group": null,
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 69564,
+      "nonidentical_normal_triangles": 5054,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.002937187970174171,
+      "max_direction_difference_degrees": 0.17731310231793523,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13719-6697--3_-1-s1",
+      "target_group": null,
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 69564,
+        "nonidentical_normal_triangles": 5054,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.002937187970174171,
+        "max_direction_difference_degrees": 0.17731310231793523,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

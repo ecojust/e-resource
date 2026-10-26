@@ -1,0 +1,200 @@
+{
+  "schema": "longhua-actual-mvt-independent-identity-review-v1",
+  "passed": true,
+  "identity_fixture_supported": true,
+  "model_accepted": false,
+  "browser_model_test_performed_by_review": false,
+  "source_bindings": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v9/longhua-integration/inputs/xuhui-longhua-pagoda/geometry-input.json",
+      "bytes": 32553,
+      "sha256": "4f9a76d03074049132d50a856bdb892e7f8e76bc3e9172e57dff7d3bacb5e47a"
+    },
+    {
+      "path": "/workspace/shanghai_project/data/fullcity-raw/tiles/14/13719/6697.geojson.gz",
+      "bytes": 167123,
+      "sha256": "847c69ad12f94446bb3fb90349be50cd82c1bfa3735184371dce934ebf1ccd6c"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v9/osm-observation/actual-main24/actual-source-snapshot.json",
+      "bytes": 721913,
+      "sha256": "4696be9147d205886437731fb209dfbad6cbc50021524310ef770b8a4e7b38ed"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v9/osm-observation/actual-main24/component-matches.json",
+      "bytes": 5702,
+      "sha256": "08a6ae3a5e93d6996fe305e8175059dc9064c3e6c123a69bff6fe8a4a5362285"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v9/osm-observation/actual-main24/matching-aggregate-features.geojson",
+      "bytes": 717332,
+      "sha256": "42a4d67c6c194b533178d50e4842861966744b742350b43ef9247faba05e8b86"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v9/osm-observation/actual-main24/observation.json",
+      "bytes": 2813,
+      "sha256": "f67d21cc6c9f1dee15c225ef35421c4a49928dfb25b21acca1dbef21e4b95241"
+    }
+  ],
+  "source_identity": {
+    "id": "xuhui-longhua-pagoda",
+    "gers_key": "building:66c3a80d-8e53-4603-8a2e-3579a0caa485",
+    "provider_record": "w47011877@11",
+    "local_id": 702,
+    "owner_macro": "14-13719-6697",
+    "original_raw_geometry_preserved": true,
+    "live_OSM_vertices_not_substituted": true
+  },
+  "snapshot_component_count": 759,
+  "target_bbox_candidates": [
+    [
+      96537940,
+      245
+    ]
+  ],
+  "positive_match_count": 1,
+  "match": {
+    "source_id": 96537940,
+    "component_original_index": 245,
+    "feature_snapshot_index": 0,
+    "component_area_m2": 286.10414902266416,
+    "intersection_area_m2": 286.1010777482023,
+    "iou": 0.9999601436055052,
+    "target_fraction": 0.999970877793008,
+    "component_fraction": 0.999989265187267,
+    "symmetric_difference_m2": 0.011403411918996183,
+    "hausdorff_m": 0.0005114189370910244,
+    "target_area_m2": 286.1094098856593
+  },
+  "aggregate": {
+    "id": 96537940,
+    "properties": {
+      "render_height": 5,
+      "render_min_height": 0
+    },
+    "original_components": 756,
+    "target_original_index": 245,
+    "other_component_bbox_checks": 755,
+    "bbox_epsilon_degrees": 1e-10,
+    "bbox_candidates": [],
+    "actual_intersections_or_touches": [],
+    "target_connected_group_original_indices": [
+      245
+    ],
+    "nearest_other_component": {
+      "component_original_index": 243,
+      "distance_m": 19.38822481555016,
+      "bbox_lower_bound_m": 16.34958671823491
+    },
+    "nearest_geometry_distance_checks": 2,
+    "consequence": "Target is an isolated connected component. Under the existing component policy, unrelated touching/overlapping groups cannot attach to this target. Removing it still requires active detailed-owner coverage; this review does not authorize hiding the whole aggregate or dropping unrelated residual components."
+  },
+  "retained_local_neighbors": [
+    {
+      "local_id": 23,
+      "key": "building:032c50ab-38e3-41d8-933a-d12a414a5d09",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 176.73612596182605
+    },
+    {
+      "local_id": 352,
+      "key": "building:34161982-2438-47be-89cf-ebb0c540a727",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 86.619155606822
+    },
+    {
+      "local_id": 354,
+      "key": "building:341f3854-25b8-4d56-ba1a-db37c6d59bbc",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 117.47382354494526
+    },
+    {
+      "local_id": 511,
+      "key": "building:4c54ff99-d746-454e-a6c6-3f44bcdcf3df",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 75.82513108588854
+    },
+    {
+      "local_id": 918,
+      "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 27.806476159674506
+    },
+    {
+      "local_id": 1070,
+      "key": "building:9e90ce1c-1841-49b2-b564-51337be2c81a",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 71.53680077973505
+    },
+    {
+      "local_id": 1077,
+      "key": "building:9fb55fe8-c70a-4b9e-9d90-ba935f7b5998",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 56.398886607319376
+    },
+    {
+      "local_id": 1221,
+      "key": "building:b5c53131-57c8-4712-894e-071a2a239694",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 108.1099811357214
+    },
+    {
+      "local_id": 1242,
+      "key": "building:b84aeb67-7c3b-4689-8516-d128060eae1c",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 21.066153873089565
+    },
+    {
+      "local_id": 1258,
+      "key": "building:ba69a38d-9bf3-4d53-94e8-8569b3755ef1",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 65.63139797178864
+    },
+    {
+      "local_id": 1259,
+      "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 19.388288919561333
+    },
+    {
+      "local_id": 1466,
+      "key": "building:ddbf7328-e1b5-4e36-a961-1c3072622291",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 41.192080335041226
+    },
+    {
+      "local_id": 1476,
+      "key": "building:deff9a12-1c1e-4d46-ad33-0127d2f0fa67",
+      "bbox_overlap_candidate": false,
+      "intersection_area_m2": 0.0,
+      "distance_m": 31.599272727784385
+    }
+  ],
+  "preserved_neighbors_match_count": 0,
+  "comparison_limits": [
+    "MVT component agrees with the frozen city footprint, not a claim of survey accuracy. The frozen source differs from current same-version OSM by the already documented ~0.278m; those live vertices were not substituted.",
+    "Only target-vs-component bbox candidates and nearest-distance branch bounds were examined; no full all-pairs aggregate connected graph was built. Since target has zero candidates, its singleton connected group is proven without that traversal.",
+    "The source render_height=5m is an OSM fallback display value, not the measured pagoda height.",
+    "This supports the actual-source fixture and neighbor-preservation contract only; new Longhua model native/web acceptance remains separate."
+  ],
+  "software": {
+    "shapely": "2.2.0",
+    "projection": "EPSG3857 relative to frozen anchor, scaled by cos(anchor latitude); R=6378137, same coordinate convention as source audit"
+  },
+  "elapsed_seconds": 0.057572071003960446,
+  "main_modified": false,
+  "network_used": false,
+  "browser_run": false
+}

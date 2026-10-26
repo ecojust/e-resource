@@ -1,0 +1,527 @@
+{
+  "schema": "longhua-observation-candidates-design-only/v1",
+  "created_at_utc": "2026-10-26T16:27:14.866070+00:00",
+  "building_id": "xuhui-longhua-pagoda",
+  "status": "ANALYSIS_ONLY_NOT_NAVIGATION_ACCEPTANCE",
+  "browser_passed": false,
+  "public_access_confirmed": false,
+  "entry_face_confirmed": false,
+  "main_changed": false,
+  "network_requests": 0,
+  "model_decoded": false,
+  "source_geometry_sha256": "4f9a76d03074049132d50a856bdb892e7f8e76bc3e9172e57dff7d3bacb5e47a",
+  "sources": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v9/longhua-integration/inputs/xuhui-longhua-pagoda/geometry-input.json",
+      "bytes": 32553,
+      "sha256": "4f9a76d03074049132d50a856bdb892e7f8e76bc3e9172e57dff7d3bacb5e47a"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v8/research-next/longhua-pagoda/osm-tower-context.json",
+      "bytes": 93642,
+      "sha256": "5135f60cd0153cb2928da175e51996e3a7261d98cc700595580797e291fdf2ed"
+    },
+    {
+      "file": "/workspace/shanghai_project/assets/city-detail/macros/14-13719-6697/feature-table.json.gz",
+      "bytes": 249688,
+      "sha256": "092e2506e28cf0d3b37fb133a1073a5da36624e6436e8e5afa3f83f94ec5722d"
+    },
+    {
+      "file": "/workspace/shanghai_project/data/fullcity-raw/tiles/14/13719/6697.geojson.gz",
+      "bytes": 167123,
+      "sha256": "847c69ad12f94446bb3fb90349be50cd82c1bfa3735184371dce934ebf1ccd6c"
+    }
+  ],
+  "anchor": [
+    121.4473461596329,
+    31.175617219399008
+  ],
+  "coordinate_contract": {
+    "earth_radius_m": 6378137.0,
+    "geographic": "EPSG:4326",
+    "metre_frame": "Source-builder Web Mercator differences times cos(anchor latitude)",
+    "gltf_xyz": "[east_m,elevation_m,-north_m]",
+    "original_source_vertex_order_and_all_rings_preserved": true,
+    "geometry_exactly_equals_existing_source": true,
+    "no_image_retracing_or_bbox_substitution": true
+  },
+  "scan": {
+    "macro": "14-13719-6697",
+    "effective_feature_count": 1690,
+    "target_local_id": 702,
+    "other_feature_count": 1689,
+    "all_other_current_macro_polygons_used": true,
+    "no_radius_neighbor_deletion": true,
+    "scope": "Finite effective source footprint table from one owning macro only; no city-wide or decoded mesh scan."
+  },
+  "osm_context": {
+    "original_bbox": {
+      "minlat": 31.175,
+      "minlon": 121.4467,
+      "maxlat": 31.1762,
+      "maxlon": 121.4479
+    },
+    "mapped_footway": {
+      "way": 1390009426,
+      "version": 1,
+      "tags": {
+        "highway": "footway"
+      }
+    },
+    "mapped_wall": {
+      "way": 1390009425,
+      "version": 1,
+      "tags": {
+        "barrier": "wall"
+      },
+      "height_m": null
+    },
+    "temple_site": {
+      "way": 404694432,
+      "name": "龙华寺",
+      "not_tower_entrance_proof": true
+    },
+    "temple_entrance_node": {
+      "id": 5227934929,
+      "lonlat": [
+        121.4473438,
+        31.1758684
+      ],
+      "tags": {
+        "entrance": "main",
+        "wheelchair": "yes"
+      },
+      "not_used_as_tower_door": true
+    },
+    "gate_node": {
+      "id": 12866269734,
+      "lonlat": [
+        121.4477526,
+        31.1758318
+      ],
+      "tags": {
+        "barrier": "gate"
+      }
+    },
+    "road_identity_limit": "No named 龙华路 highway exists in the supplied context; temple has addr:street=龙华路. Candidate label is mapped footway, not proven public-road curb.",
+    "access_limit": "Neither candidate has proof of unrestricted public passage. Mapped wall is incomplete/open and has unknown height; missing barriers, entrance restrictions, ground height and current construction remain unresolved."
+  },
+  "camera_assumption": {
+    "distance_D_m": 14,
+    "pitch_deg": 82,
+    "target_forward_m": 2.8,
+    "eye_backward_from_player_m": 11.063752962,
+    "target_height_m": 3,
+    "eye_height_m": 4.948423413,
+    "player_radius_m": 0.38,
+    "boom_radius_m": 0.12,
+    "scope": "Nominal formula supplied in earlier runtime work, used only as a conservative source-plan diagnostic; controls must bind actual current camera behavior. No browser accepted."
+  },
+  "candidates": [
+    {
+      "id": "northeast_mapped_footway",
+      "selection_status": "preferred_for_controls_review_only",
+      "description": "Midpoint of mapped footway segment from node at[121.4474042,31.1757365] toward gate12866269734; remains on tower side of mapped gate.",
+      "observation_lonlat": [
+        121.4475784,
+        31.17578415
+      ],
+      "bearing_toward_source_anchor_deg": 229.96607821951238,
+      "local_east_north_m": [
+        22.11932637122079,
+        18.582645880379232
+      ],
+      "source_anchor_distance_m": 28.889086642401118,
+      "source_boundary_distance_m": 18.7566423183871,
+      "mapped_footway_distance_m": 1.2702590128264948e-06,
+      "mapped_wall_distance_m": 14.762211057267796,
+      "point_inside_temple_site_polygon": false,
+      "point_nearest_other_source": {
+        "distance_m": 20.02320687162133,
+        "macro": "14-13719-6697",
+        "local_id": 1259,
+        "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+      },
+      "player_radius_038_clear_of_other_sources": true,
+      "player_radius_038_clear_of_source_tower": true,
+      "nominal_camera": {
+        "eye_lonlat": [
+          121.4476673418929,
+          31.17584807990901
+        ],
+        "target_lonlat": [
+          121.44755589070313,
+          31.175767970696153
+        ],
+        "eye_local_en_m": [
+          30.59044093729551,
+          25.6993057438686
+        ],
+        "target_local_en_m": [
+          19.975467875240643,
+          16.78157099320387
+        ],
+        "nearest_other_source_to_target_eye_segment": {
+          "distance_m": 16.268213447227566,
+          "macro": "14-13719-6697",
+          "local_id": 918,
+          "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68"
+        },
+        "boom_radius_012_clear_of_other_sources": true,
+        "distance_to_mapped_wall_m": 7.105429580022261,
+        "distance_to_tower_source_m": 15.957119296638512,
+        "eye_inside_temple_site_polygon": false
+      },
+      "conservative_back14_forward2p8": {
+        "nearest_other_source": {
+          "distance_m": 15.20897512463381,
+          "macro": "14-13719-6697",
+          "local_id": 918,
+          "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68"
+        },
+        "wall_distance_m": 4.369122075459658,
+        "capsule_radius_012_clear_of_other_sources": true,
+        "capsule_radius_012_clear_of_tower": true
+      },
+      "view_rays": {
+        "player_to_anchor_intersects_wall": false,
+        "player_to_anchor_other_source_ids": [],
+        "nominal_eye_to_anchor_intersects_wall": false,
+        "nominal_eye_to_anchor_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_wall_intersections": 0,
+        "scope": "2D source-plan rays only, no actual GLB, terrain, railings, stairs, vegetation or wall-height test."
+      }
+    },
+    {
+      "id": "north_near_mapped_footway",
+      "selection_status": "secondary_for_controls_review_only",
+      "description": "80% along mapped segment from temple entrance5227934929 to footway junction[121.4474042,31.1757365]; position is not the temple entrance or a tower door.",
+      "observation_lonlat": [
+        121.44739212,
+        31.17576288
+      ],
+      "bearing_toward_source_anchor_deg": 195.10759216713117,
+      "local_east_north_m": [
+        4.377414541589927,
+        16.214876401423677
+      ],
+      "source_anchor_distance_m": 16.79535575039628,
+      "source_boundary_distance_m": 7.435055036956816,
+      "mapped_footway_distance_m": 5.954475664549713e-07,
+      "mapped_wall_distance_m": 31.76579355832713,
+      "point_inside_temple_site_polygon": false,
+      "point_nearest_other_source": {
+        "distance_m": 14.910419592854117,
+        "macro": "14-13719-6697",
+        "local_id": 1259,
+        "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+      },
+      "player_radius_038_clear_of_other_sources": true,
+      "player_radius_038_clear_of_source_tower": true,
+      "nominal_camera": {
+        "eye_lonlat": [
+          121.44742239587836,
+          31.17585883217117
+        ],
+        "target_lonlat": [
+          121.44738445782066,
+          31.175738596535712
+        ],
+        "eye_local_en_m": [
+          7.2609874661631215,
+          26.896245077432955
+        ],
+        "target_local_en_m": [
+          3.6476437109742905,
+          13.51164971193155
+        ],
+        "nearest_other_source_to_target_eye_segment": {
+          "distance_m": 5.68892877028706,
+          "macro": "14-13719-6697",
+          "local_id": 1259,
+          "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+        },
+        "boom_radius_012_clear_of_other_sources": true,
+        "distance_to_mapped_wall_m": 28.80935167757283,
+        "distance_to_tower_source_m": 4.662939382422159,
+        "eye_inside_temple_site_polygon": false
+      },
+      "conservative_back14_forward2p8": {
+        "nearest_other_source": {
+          "distance_m": 3.24160594893476,
+          "macro": "14-13719-6697",
+          "local_id": 1259,
+          "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+        },
+        "wall_distance_m": 27.172717198814187,
+        "capsule_radius_012_clear_of_other_sources": true,
+        "capsule_radius_012_clear_of_tower": true
+      },
+      "view_rays": {
+        "player_to_anchor_intersects_wall": false,
+        "player_to_anchor_other_source_ids": [],
+        "nominal_eye_to_anchor_intersects_wall": false,
+        "nominal_eye_to_anchor_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_wall_intersections": 0,
+        "scope": "2D source-plan rays only, no actual GLB, terrain, railings, stairs, vegetation or wall-height test."
+      }
+    }
+  ],
+  "rejected_sector_checks": [
+    {
+      "id": "north_midpoint_rejected",
+      "selection_status": "reject_low_camera_clearance",
+      "description": "Simple northern footway midpoint was checked but nominal rear camera passes too close to retained source1259.",
+      "observation_lonlat": [
+        121.447374,
+        31.17580245
+      ],
+      "bearing_toward_source_anchor_deg": 187.3277467594052,
+      "local_east_north_m": [
+        2.651606926627801,
+        20.61979634862455
+      ],
+      "source_anchor_distance_m": 20.78958923961921,
+      "source_boundary_distance_m": 11.022232945913785,
+      "mapped_footway_distance_m": 9.325599682332607e-07,
+      "mapped_wall_distance_m": 31.45275259630109,
+      "point_inside_temple_site_polygon": false,
+      "point_nearest_other_source": {
+        "distance_m": 10.185802142498659,
+        "macro": "14-13719-6697",
+        "local_id": 1259,
+        "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+      },
+      "player_radius_038_clear_of_other_sources": true,
+      "player_radius_038_clear_of_source_tower": true,
+      "nominal_camera": {
+        "eye_lonlat": [
+          121.44738881601873,
+          31.17590102542235
+        ],
+        "target_lonlat": [
+          121.44737025038152,
+          31.175777502645918
+        ],
+        "eye_local_en_m": [
+          4.062732642023388,
+          31.593189343478652
+        ],
+        "target_local_en_m": [
+          2.2944810926835304,
+          17.842664529871683
+        ],
+        "nearest_other_source_to_target_eye_segment": {
+          "distance_m": 0.22166976657156767,
+          "macro": "14-13719-6697",
+          "local_id": 1259,
+          "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+        },
+        "boom_radius_012_clear_of_other_sources": true,
+        "distance_to_mapped_wall_m": 30.19661478416737,
+        "distance_to_tower_source_m": 8.233535923149146,
+        "eye_inside_temple_site_polygon": true
+      },
+      "conservative_back14_forward2p8": {
+        "nearest_other_source": {
+          "distance_m": 0.0,
+          "macro": "14-13719-6697",
+          "local_id": 1259,
+          "key": "building:bacfa1f2-8be7-4a13-b577-8e69cfb9ab82"
+        },
+        "wall_distance_m": 29.034812891167263,
+        "capsule_radius_012_clear_of_other_sources": false,
+        "capsule_radius_012_clear_of_tower": true
+      },
+      "view_rays": {
+        "player_to_anchor_intersects_wall": false,
+        "player_to_anchor_other_source_ids": [],
+        "nominal_eye_to_anchor_intersects_wall": false,
+        "nominal_eye_to_anchor_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_wall_intersections": 0,
+        "scope": "2D source-plan rays only, no actual GLB, terrain, railings, stairs, vegetation or wall-height test."
+      }
+    },
+    {
+      "id": "east_outside_wall_rejected",
+      "selection_status": "reject_wall_crossing",
+      "description": "Analytical east exterior test point; not evidence of a mapped pedestrian standing area.",
+      "observation_lonlat": [
+        121.44785013237757,
+        31.175653152003548
+      ],
+      "bearing_toward_source_anchor_deg": 265.23635830927384,
+      "local_east_north_m": [
+        47.9999999987146,
+        3.9999999998928835
+      ],
+      "source_anchor_distance_m": 48.16637831387933,
+      "source_boundary_distance_m": 38.143312194794525,
+      "mapped_footway_distance_m": 21.709797984464075,
+      "mapped_wall_distance_m": 7.393097912705965,
+      "point_inside_temple_site_polygon": false,
+      "point_nearest_other_source": {
+        "distance_m": 42.72939808574498,
+        "macro": "14-13719-6697",
+        "local_id": 918,
+        "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68"
+      },
+      "player_radius_038_clear_of_other_sources": true,
+      "player_radius_038_clear_of_source_tower": true,
+      "nominal_camera": {
+        "eye_lonlat": [
+          121.44796589424593,
+          31.175661405673043
+        ],
+        "target_lonlat": [
+          121.44782083551667,
+          31.17565106317566
+        ],
+        "eye_local_en_m": [
+          59.025536083264925,
+          4.918794673605411
+        ],
+        "target_local_en_m": [
+          45.209671875628935,
+          3.7674726563024117
+        ],
+        "nearest_other_source_to_target_eye_segment": {
+          "distance_m": 41.81451797073871,
+          "macro": "14-13719-6697",
+          "local_id": 918,
+          "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68"
+        },
+        "boom_radius_012_clear_of_other_sources": true,
+        "distance_to_mapped_wall_m": 4.676544715921273,
+        "distance_to_tower_source_m": 35.34487809320802,
+        "eye_inside_temple_site_polygon": false
+      },
+      "conservative_back14_forward2p8": {
+        "nearest_other_source": {
+          "distance_m": 41.81451797073871,
+          "macro": "14-13719-6697",
+          "local_id": 918,
+          "key": "building:84c3f734-06af-432e-b0cb-a1cc1a574c68"
+        },
+        "wall_distance_m": 4.676544715921273,
+        "capsule_radius_012_clear_of_other_sources": true,
+        "capsule_radius_012_clear_of_tower": true
+      },
+      "view_rays": {
+        "player_to_anchor_intersects_wall": true,
+        "player_to_anchor_other_source_ids": [],
+        "nominal_eye_to_anchor_intersects_wall": true,
+        "nominal_eye_to_anchor_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_other_source_ids": [],
+        "nominal_eye_to_8_source_vertices_wall_intersections": 8,
+        "scope": "2D source-plan rays only, no actual GLB, terrain, railings, stairs, vegetation or wall-height test."
+      }
+    },
+    {
+      "id": "south_outside_wall_rejected",
+      "selection_status": "reject_wall_crossing_and_camera_source_collision",
+      "description": "Analytical south exterior test point; not evidence of a mapped pedestrian standing area.",
+      "observation_lonlat": [
+        121.4473461596329,
+        31.17516806069175
+      ],
+      "bearing_toward_source_anchor_deg": 0.0,
+      "local_east_north_m": [
+        0.0,
+        -50.00000000085231
+      ],
+      "source_anchor_distance_m": 50.00000000085231,
+      "source_boundary_distance_m": 39.9082102425523,
+      "mapped_footway_distance_m": 63.51926459546384,
+      "mapped_wall_distance_m": 7.508286944436628,
+      "point_inside_temple_site_polygon": false,
+      "point_nearest_other_source": {
+        "distance_m": 0.6470576572329301,
+        "macro": "14-13719-6697",
+        "local_id": 345,
+        "key": "building:333c2d29-f7a9-4451-a923-8eaf20284310"
+      },
+      "player_radius_038_clear_of_other_sources": true,
+      "player_radius_038_clear_of_source_tower": true,
+      "nominal_camera": {
+        "eye_lonlat": [
+          121.4473461596329,
+          31.175068672784345
+        ],
+        "target_lonlat": [
+          121.4473461596329,
+          31.175193213635666
+        ],
+        "eye_local_en_m": [
+          0.0,
+          -61.06375296285231
+        ],
+        "target_local_en_m": [
+          0.0,
+          -47.20000000085231
+        ],
+        "nearest_other_source_to_target_eye_segment": {
+          "distance_m": 0.0,
+          "macro": "14-13719-6697",
+          "local_id": 345,
+          "key": "building:333c2d29-f7a9-4451-a923-8eaf20284310"
+        },
+        "boom_radius_012_clear_of_other_sources": false,
+        "distance_to_mapped_wall_m": 5.059022286224675,
+        "distance_to_tower_source_m": 37.10857365619488,
+        "eye_inside_temple_site_polygon": false
+      },
+      "conservative_back14_forward2p8": {
+        "nearest_other_source": {
+          "distance_m": 0.0,
+          "macro": "14-13719-6697",
+          "local_id": 345,
+          "key": "building:333c2d29-f7a9-4451-a923-8eaf20284310"
+        },
+        "wall_distance_m": 5.059022286224675,
+        "capsule_radius_012_clear_of_other_sources": false,
+        "capsule_radius_012_clear_of_tower": true
+      },
+      "view_rays": {
+        "player_to_anchor_intersects_wall": true,
+        "player_to_anchor_other_source_ids": [],
+        "nominal_eye_to_anchor_intersects_wall": true,
+        "nominal_eye_to_anchor_other_source_ids": [
+          345
+        ],
+        "nominal_eye_to_8_source_vertices_other_source_ids": [
+          345
+        ],
+        "nominal_eye_to_8_source_vertices_wall_intersections": 8,
+        "scope": "2D source-plan rays only, no actual GLB, terrain, railings, stairs, vegetation or wall-height test."
+      }
+    }
+  ],
+  "limits": [
+    "All bearings aim at the source anchor, not a known entrance.",
+    "No actual photo-to-geographic face assignment or ground-level opening phase is known.",
+    "2D source clearance is not real-world safety/access or rendered-scene visibility.",
+    "Source footprint width is ~20m; tower height >40m requires a separate full-framing camera review.",
+    "Do not remove temple roofs, walls, retained neighbors, or shrubs to clear a view.",
+    "Coordinates are analysis suggestions only; no landmarks/registry/install metadata produced."
+  ],
+  "raw_source_binding": {
+    "file": "/workspace/shanghai_project/data/fullcity-raw/tiles/14/13719/6697.geojson.gz",
+    "bytes": 167123,
+    "sha256": "847c69ad12f94446bb3fb90349be50cd82c1bfa3735184371dce934ebf1ccd6c",
+    "raw_feature_count": 1690,
+    "target_source_key": "building:66c3a80d-8e53-4603-8a2e-3579a0caa485",
+    "matching_target_id_count": 1,
+    "raw_target_geometry_equals_frozen_geometry": true,
+    "scope": "Raw file SHA and target identity/geometry were checked; collision distances use all1690 effective source geometries in current macro feature table as stated."
+  },
+  "delivery": {
+    "canonical_independent_report": "/workspace/shanghai_expansion/building-by-building-v9/longhua-pagoda/independent-review/navigation-notes/observation-candidates.json",
+    "controls_review_copy": "/workspace/shanghai_expansion/building-by-building-v9/longhua-integration/navigation-candidates/observation-candidates.json",
+    "navigation_descriptor_generated": false,
+    "does_not_authorize_app_install": true
+  }
+}

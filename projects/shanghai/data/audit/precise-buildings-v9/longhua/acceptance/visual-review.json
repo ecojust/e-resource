@@ -1,0 +1,80 @@
+{
+  "reviewer": "root",
+  "final": true,
+  "passed": true,
+  "reviewed_at": "2026-10-26T17:46:05.552074+00:00",
+  "building_ids": [
+    "xuhui-longhua-pagoda"
+  ],
+  "browser_report_sha256": "96eddab7a712c1e7be335abaab167e16e0a54fa470a5ff8093d648e4e8911199",
+  "expectations_sha256": "42c8964fff95dd52e800be5f1ecc2e3fddf763db730bb0b2efbcb7d20abe88f8",
+  "web_sha256_by_id": {
+    "xuhui-longhua-pagoda": "f1d6bb04a85cb0c9f63a45d7ad9a49a002553ed3e50fc4a764f1a25d557fa3ef"
+  },
+  "actually_viewed": [
+    {
+      "file": "xuhui-longhua-pagoda-walk-full.png",
+      "bytes": 241848,
+      "sha256": "313e711f647b30dac00016afde4553c76197d5e68d10e296e5cd0578904436a9",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:41:11.892131+00:00",
+      "observation": "Actual third-person near view; physical roof and gallery detail visible, tower top cropped by near camera; generic surrounding building baseline retained, not photo-detailed surroundings."
+    },
+    {
+      "file": "xuhui-longhua-pagoda-windows-oblique.png",
+      "bytes": 416807,
+      "sha256": "587effdf99640469c60ade58428f8fc8f1fbe60b0927880514c1664a4d5514ea",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:41:59.096509+00:00",
+      "observation": "Oblique shows consistent tile/railing/door detail; uppermost tower cropped; no observed duplicate target shell."
+    },
+    {
+      "file": "xuhui-longhua-pagoda-distant-lod.png",
+      "bytes": 394605,
+      "sha256": "d76c98707486f1e8a44418b5bdf64237e58286ba111e7ebee78bbd564cda2ac5",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:41:59.097127+00:00",
+      "observation": "Distant view inspected separately; see final visual scope for visibility limitations."
+    },
+    {
+      "file": "xuhui-longhua-pagoda-returned-full.png",
+      "bytes": 241915,
+      "sha256": "1fc9e033fcb920434fb554e07c62de81485b6b4bb49b0394322219c446f7101f",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:43:28.162262+00:00",
+      "observation": "Full model returns with same near detail and neighboring baseline."
+    },
+    {
+      "file": "precise-owners-released.png",
+      "bytes": 141339,
+      "sha256": "2ba4bd241287a6d7ae1089b760aae8c98ba84c72d5b02f00bc02bd08ce36c4cf",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:43:28.163304+00:00",
+      "observation": "Away view correctly contains no Longhua model; this proves release-state image only."
+    },
+    {
+      "file": "precise-owners-returned.png",
+      "bytes": 241861,
+      "sha256": "76d6dbd7b6139712038c3b98817e658ecac748996c26901743b028ffbfdaac6a",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:44:10.290868+00:00",
+      "observation": "After leaving/releasing owner and returning, full tower and surrounding buildings restored consistently."
+    },
+    {
+      "file": "after-city-manifest-reset.png",
+      "bytes": 241892,
+      "sha256": "11489d905a6a25d670b284acc7c8bb105eee8be2e4cbda164896e14d768db323",
+      "actually_viewed": true,
+      "viewed_at": "2026-10-26T17:46:05.546687+00:00",
+      "observation": "City manifest reset returns identical visible full model without old target block; 13neighbor technical evidence inspected separately."
+    }
+  ],
+  "scope": "Root actually viewed all seven current Longhua captures separately. Near/oblique show physical tile eaves, galleries and openings; distant view shows complete small tower silhouette. Full detail returns after LOD/owner release and manifest reset. Exact old target component removal and 13 local neighbors are bound by actual browser state checks.",
+  "limitations": [
+    "Near/oblique views crop the upper tower; full silhouette is additionally reviewed in the actual native render and distant view.",
+    "The release/away image intentionally has no tower; the distant silhouette is too small to validate facade detail.",
+    "Surrounding city buildings retain their prior generic detailed baseline; this release does not provide all16district photo-level facades.",
+    "Nominal overall height is official-source based; widths/taper/hidden faces/support sizes and first-level absolute door phase remain estimated. No surveyed interior or photogrammetry claim.",
+    "Software rendering and deliberate Overture outage validate functionality only, not hardware frame rate. Non-target navigation cancellation warnings are separately retained in the technical report."
+  ]
+}
