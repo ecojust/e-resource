@@ -1,0 +1,30 @@
+{
+  "schema": "fangta-root-finite-contact-review-v1",
+  "passed": true,
+  "actually_reviewed": true,
+  "reviewer": "root",
+  "reviewed_at": "2026-10-26T18:34:29.717908+00:00",
+  "raw": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/raw/songjiang-fangta-pagoda-raw.glb",
+    "bytes": 47281480,
+    "sha256": "9874c41fff6bcba808a4333511a3de4b634c693770dab433a3ebde355044f19a"
+  },
+  "actual_contacts": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-roles-contacts.json",
+    "bytes": 425445,
+    "sha256": "fcbf2214ac73ffb56e22b98382a7756aa2e83b8817cb556a1f7613c24c41a090"
+  },
+  "actual_support_band": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-hip-support-band.json",
+    "bytes": 855725,
+    "sha256": "2c28f68a71923bdb055c81465a504c67ac36ccb79aa8491865be468e6e48d330"
+  },
+  "support_criterion": "For this visual architectural model, each solid hip seat must contact the underlying roof and the round ridge over a finite central support band in the actual serialized mesh. Full contact under the entire cap width is not required where the cap intentionally overhangs a narrower tapered seat.",
+  "rationale": "Root read the actual exported triangle reports and ridge_seat/tube construction: the 45mm-radius round ridge sits on a tapered crest whose width is narrower than the cap. All36hips×7sections×5offsets(-10,-5,0,+5,+10mm),1260 actual tests, have positive solid interval overlap; the reported minima are19.146mm roof-to-seat and21.845mm seat-to-ridge. Thus the existing centerline evidence is strengthened to sampled finite-width support. The400 gaps at±25mm and72 endpoint rays outside the seat/roof footprint remain recorded; they do not imply that the whole ridge floats. Original full-width criterion/result are not altered. Door,porch and open-hoop tests remain separate actual positive evidence.",
+  "limitations": [
+    "This accepts a finite geometry contact criterion only; native visual and browser acceptance are still pending.",
+    "Original full-width hip_contact report passed=false and hip_full_width_finite_contact_passed=false are retained and must be disclosed in downstream evidence.",
+    "No claim of continuous contact at every point, whole-assembly collision freedom, physically certified load-bearing behavior or surveyed historical support dimensions.",
+    "Free decorative ridge tips beyond t=1 remain modeled cantilevers; finite-width tests do not certify all endpoint or lateral surfaces."
+  ]
+}

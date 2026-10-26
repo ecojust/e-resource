@@ -1,0 +1,99 @@
+{
+  "schema": "fangta-independent-actual-raw-audit-handoff-v1",
+  "raw": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/raw/songjiang-fangta-pagoda-raw.glb",
+    "bytes": 47281480,
+    "sha256": "9874c41fff6bcba808a4333511a3de4b634c693770dab433a3ebde355044f19a"
+  },
+  "frozen_source_manifest": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/raw-source-freeze.json",
+    "bytes": 2806,
+    "sha256": "8b5d640bdf4b83ddeda6463574a2e9a2d4ecf00fe61c8202e32064f6249a9e59"
+  },
+  "files": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-raw-structure.json",
+      "bytes": 1841,
+      "sha256": "01047591fbd3a3a15c96bc65c390a52d75f31fb5019f64b7ea83f16846282619"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-raw-roof-pairs.json",
+      "bytes": 1607207,
+      "sha256": "e42c06383ef593e522e34e1fec8aacbd4a7970a09cbd00541b2c39708e6eb7ce"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-roles-contacts.json",
+      "bytes": 425445,
+      "sha256": "fcbf2214ac73ffb56e22b98382a7756aa2e83b8817cb556a1f7613c24c41a090"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-hip-support-band.json",
+      "bytes": 855725,
+      "sha256": "2c28f68a71923bdb055c81465a504c67ac36ccb79aa8491865be468e6e48d330"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/audit_raw_structure.py",
+      "bytes": 8576,
+      "sha256": "0fac8349b8a936800adff18a7e15af8505ed3f39b5fa94171f40956ac029c927"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/audit_raw_roof_pairs.py",
+      "bytes": 11117,
+      "sha256": "009b5217bbec79360894e94324c3961138f519f1530ba99eef34e2a2b39baaab"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/audit_actual_roles_contacts.py",
+      "bytes": 18380,
+      "sha256": "bb29b7d849e4794251398aee97ac9a8840c69f9156742ae56879a5c3de9effa8"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/probe_actual_hip_support_band.py",
+      "bytes": 5320,
+      "sha256": "a1d025ef88a881485f0e8786592a67756b6ec0c9e62402d65d34ca435ac2b96b"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual_glb.py",
+      "bytes": 3231,
+      "sha256": "300b9a61d774f6f888c0d29adf39faae6d0f33708eea42115763ec36d5fcd65c"
+    }
+  ],
+  "structure_passed": true,
+  "roof_pairs_finite_sample_passed": true,
+  "roof_pair_sample_count": 4212,
+  "central_openings_passed": true,
+  "central_opening_count": 36,
+  "porch_support_chains_passed": true,
+  "porch_column_count": 12,
+  "open_finial_hoops_passed": true,
+  "open_finial_hoop_count": 9,
+  "continuous_hip_seat_count": 36,
+  "original_hip_full_width_test_passed": false,
+  "original_hip_full_width_gap_count": 400,
+  "original_hip_full_width_outside_footprint_count": 72,
+  "original_hip_test_preserved": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-roles-contacts.json",
+    "bytes": 425445,
+    "sha256": "fcbf2214ac73ffb56e22b98382a7756aa2e83b8817cb556a1f7613c24c41a090"
+  },
+  "hip_centerline_contact_passed": true,
+  "additional_finite_support_band_passed": true,
+  "additional_support_band_offsets_mm": [
+    -10,
+    -5,
+    0,
+    5,
+    10
+  ],
+  "additional_support_band_samples": 1260,
+  "support_band_minimum_roof_seat_overlap_m": 0.019145835853400683,
+  "support_band_minimum_seat_ridge_overlap_m": 0.021845001402496678,
+  "disposition": "The original +/-25mm full-width test remains failed and unmodified. Additional +/-10mm measurements establish finite-width central support at every sampled cross-section; lateral overhang acceptance is a separate root decision, not silently waived by this independent audit.",
+  "root_native_visual_review_pending": true,
+  "model_accepted": false,
+  "browser_accepted": false,
+  "whole_model_collision_free_claim": false,
+  "author_model_or_MAIN_or_Git_modified": false,
+  "network_used": false,
+  "browser_or_Blender_run": false,
+  "total_independent_review_bytes_before_handoff": 2945671
+}

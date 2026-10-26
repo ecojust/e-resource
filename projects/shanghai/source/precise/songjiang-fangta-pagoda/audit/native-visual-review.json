@@ -1,0 +1,64 @@
+{
+  "schema": "fangta-root-native-visual-review-v10",
+  "passed": true,
+  "actually_viewed": true,
+  "browser_passed": false,
+  "reviewer": "root",
+  "raw": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/raw/songjiang-fangta-pagoda-raw.glb",
+    "bytes": 47281480,
+    "sha256": "9874c41fff6bcba808a4333511a3de4b634c693770dab433a3ebde355044f19a"
+  },
+  "native": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/native/songjiang-fangta-pagoda.blend",
+    "bytes": 23966595,
+    "sha256": "13dab2feadc5f54068356e0318ed9d9a135d25ee776e78bf37d333eba9ee0cd9"
+  },
+  "renderer_report": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/native/native-render-report.json",
+    "bytes": 3617,
+    "sha256": "bc7ccbe90aaad32a4d56f6c89cbdc608e57e5f35c8d07832fc57aee908d83e6e"
+  },
+  "reference_review": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/root-photo-reviews.json",
+    "bytes": 3677,
+    "sha256": "1a1974e59edb34fbf0b685613fb0f7ddef00a7e320bf8d8311c61b7a4e976d00"
+  },
+  "views": [
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/native/songjiang-fangta-pagoda-full.png",
+      "bytes": 1747104,
+      "sha256": "cc155200712e7de17f054457c0159ff7980d81e8e2eab1abc2d2cec36a7bc900",
+      "actually_viewed": true,
+      "purpose": "Whole-tower silhouette and nine roof levels"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/native/songjiang-fangta-pagoda-detail.png",
+      "bytes": 1645414,
+      "sha256": "cc19f84264f8b1ca20af970bf496f199600b6e8b1afe34b4ae7218fc5e69be44",
+      "actually_viewed": true,
+      "purpose": "Central openings, railings, roof tiles and ridge caps"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/native/songjiang-fangta-pagoda-low.png",
+      "bytes": 1719466,
+      "sha256": "1e15fa1f3ee6c6ae2fc17dfcb2383410b713a3471240d2823dfec74e16e04e43",
+      "actually_viewed": true,
+      "purpose": "Human-height view of rafters, brackets, porch and openings"
+    }
+  ],
+  "findings": [
+    "Full view shows nine distinct square curved roofs, eight upper galleries, a wider bottom porch, white infill and red framing, gray outer posts and open iron finial hoops. No missing-storey or gross floating-layer defect observed.",
+    "Middle-storey close view shows physically modeled overlapping tiles, central cusped door voids, four horizontal railing bars and visible hip caps. Small round-cap lateral overhang is retained under the separate finite central support-band criterion.",
+    "Eye-height upward view reveals rafters, bracket supports, open doorways and porch columns, with no gross unsupported roof or detached gallery observed in this camera.",
+    "Compared with the actually viewed 2017 frontal reference, the main exterior vocabulary is recognizable. Render camera is not photographically calibrated; apparent layer proportions cannot be accepted as a measured alignment."
+  ],
+  "limitations": [
+    "Limited three-camera visual inspection, not a proof of whole-building collision freedom or structural safety.",
+    "Nominal total height, separate finial-height convention, repeated hidden faces, detailed layer dimensions and orientation retain the calibration uncertainties.",
+    "Untextured materials are uniform: stains, peeling plaster, wood aging, small inscriptions, individual damaged tiles and photo-specific weathering are not reproduced.",
+    "Native rendering uses 48-sample CPU Cycles without available OpenImageDenoise; visible sampling grain is a preview limitation.",
+    "Roof-cap full-width contact test remains false; root-finite-contact-review.json accepts the separately measured 20mm central support band only.",
+    "Browser loading, LOD retention, city ownership suppression and third-person framing are pending."
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "schema": "fangta-prebrowser-acceptance-summary-v10",
+  "id": "songjiang-fangta-pagoda",
+  "prebrowser_scope_passed": true,
+  "browser_passed": false,
+  "raw_sha256": "9874c41fff6bcba808a4333511a3de4b634c693770dab433a3ebde355044f19a",
+  "native_sha256": "13dab2feadc5f54068356e0318ed9d9a135d25ee776e78bf37d333eba9ee0cd9",
+  "evidence": {
+    "photo_register": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/references/photo-register.json",
+      "bytes": 9318,
+      "sha256": "a5f0f512a8a4aa6bbb1be78b23e2c669f344a109d5b5507292a9d595d5a72113"
+    },
+    "official_height_and_history": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/references/official-review.json",
+      "bytes": 9484,
+      "sha256": "635c756204a239075ae49fea9e419a0d87db4d2b7a5d20f97993417f2be0871b"
+    },
+    "source_geometry": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/geometry-input.json",
+      "bytes": 29109,
+      "sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3"
+    },
+    "calibration": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/calibration.json",
+      "bytes": 11032,
+      "sha256": "33741401e2059a9fefc943fe055aae3f8c051e37d7dc532fdafc5aae1c3dcd7e"
+    },
+    "source_lock": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/build-source-files.json",
+      "bytes": 5206,
+      "sha256": "6f65a32e491e2abf533b48352747d3aadbd45b7f6c8733871bd0570633c2d3f1"
+    },
+    "provisional_navigation": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/navigation-proposal.json",
+      "bytes": 2693,
+      "sha256": "7672691e0093558d39013a8c6ca322ad14df34f136185f8ea8f413528670f129"
+    },
+    "actual_raw_structure": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-raw-structure.json",
+      "bytes": 1841,
+      "sha256": "01047591fbd3a3a15c96bc65c390a52d75f31fb5019f64b7ea83f16846282619"
+    },
+    "finite_actual_raw_roof_samples": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-raw-roof-pairs.json",
+      "bytes": 1607207,
+      "sha256": "e42c06383ef593e522e34e1fec8aacbd4a7970a09cbd00541b2c39708e6eb7ce"
+    },
+    "actual_roles_contacts": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/actual-roles-contacts.json",
+      "bytes": 425445,
+      "sha256": "fcbf2214ac73ffb56e22b98382a7756aa2e83b8817cb556a1f7613c24c41a090"
+    },
+    "root_finite_contact_review": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/independent-review/root-finite-contact-review.json",
+      "bytes": 2611,
+      "sha256": "1ba66879860a2a8b672ad360a0e72277f5cb147afb0885cd8b0a43a5fbd97d36"
+    },
+    "actual_decoded_package": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/decoded-package-check.json",
+      "bytes": 74349,
+      "sha256": "d93951b8403d1b96ad6c78289fa6d3c732f1d014c895906287ba797b19316541"
+    },
+    "native_visual": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/native/root-native-visual-review.json",
+      "bytes": 4012,
+      "sha256": "19b6284ff6afd362d02c9cd32001288c05a24125bac1e70609aa6b8b656750ee"
+    },
+    "package": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/fangta-pagoda/run-v1/package/packaging-record.json",
+      "bytes": 24961,
+      "sha256": "c13bad75e280c34a6a1adeb40d8209a6f247c2fc216100573e58cf42beef79dd"
+    }
+  },
+  "finite_contact_scope": {
+    "support_criterion": "For this visual architectural model, each solid hip seat must contact the underlying roof and the round ridge over a finite central support band in the actual serialized mesh. Full contact under the entire cap width is not required where the cap intentionally overhangs a narrower tapered seat.",
+    "rationale": "Root read the actual exported triangle reports and ridge_seat/tube construction: the 45mm-radius round ridge sits on a tapered crest whose width is narrower than the cap. All36hips×7sections×5offsets(-10,-5,0,+5,+10mm),1260 actual tests, have positive solid interval overlap; the reported minima are19.146mm roof-to-seat and21.845mm seat-to-ridge. Thus the existing centerline evidence is strengthened to sampled finite-width support. The400 gaps at±25mm and72 endpoint rays outside the seat/roof footprint remain recorded; they do not imply that the whole ridge floats. Original full-width criterion/result are not altered. Door,porch and open-hoop tests remain separate actual positive evidence.",
+    "independent_report_original_passed": false,
+    "root_review_passed": true
+  },
+  "limitations": [
+    "Exact existing source quadrilateral remains owner evidence only; its approximately11by13m outline is not a measured wall,roof orplinth boundary. The nominal6m square core is a separate documented architectural model.",
+    "The orthogonal model axis is the mean direction inferred from source edges, not a photo-solved compass alignment. No surveyed front or verified visitor entrance is claimed.",
+    "Storey heights,taper,overhang,porch dimensions,column offsets,roof curve,tile sizes,wall thickness and bracket details are photo-relative estimates.",
+    "The42.65total and7.85finial come from separate official chapter conventions;34.80roofapex is an explicit derived modelling assumption, not a common-datum measurement.",
+    "The historical177survivingbrackets and exact preservation epochs are not claimed by the simplified visible support construction; rear and obscured form follows stated symmetry.",
+    "Five reference photos remain unchanged licensed source images; color material estimates do not embed or bake photograph pixels, shadows or current weathering.",
+    "Fangta has open annular iron hoops with supports, not a solid Longhua-style drum. Exact small yoke/bell/chain ornament details remain schematic.",
+    "Interior stairs,upper rooms,archaeologicalcrypt and mural details are not reproduced or claimed; exterior doors remain real geometry holes.",
+    "Limited three-camera visual inspection, not a proof of whole-building collision freedom or structural safety.",
+    "Nominal total height, separate finial-height convention, repeated hidden faces, detailed layer dimensions and orientation retain the calibration uncertainties.",
+    "Untextured materials are uniform: stains, peeling plaster, wood aging, small inscriptions, individual damaged tiles and photo-specific weathering are not reproduced.",
+    "Native rendering uses 48-sample CPU Cycles without available OpenImageDenoise; visible sampling grain is a preview limitation.",
+    "Roof-cap full-width contact test remains false; root-finite-contact-review.json accepts the separately measured 20mm central support band only.",
+    "Browser loading, LOD retention, city ownership suppression and third-person framing are pending.",
+    "This accepts a finite geometry contact criterion only; native visual and browser acceptance are still pending.",
+    "Original full-width hip_contact report passed=false and hip_full_width_finite_contact_passed=false are retained and must be disclosed in downstream evidence.",
+    "No claim of continuous contact at every point, whole-assembly collision freedom, physically certified load-bearing behavior or surveyed historical support dimensions.",
+    "Free decorative ridge tips beyond t=1 remain modeled cantilevers; finite-width tests do not certify all endpoint or lateral surfaces."
+  ],
+  "statement": "Passed sections mean evidence and limited checks are complete for independent model delivery, not measured architectural accuracy or HTML acceptance. Original finite-contact findings are retained; any difference between full-width contact and a narrower support criterion must be explained by the root review.",
+  "source_photos": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Five actually viewed licensed Commons reference files retained at exact bytes, with four separate authors; individual BY-SA3/4 licenses and source-native/preview forms are preserved. No photograph pixels embedded.",
+    "photo_sha256": [
+      "ba5491104a9cd22896f824969cd2ef1074e0ed41c8218a0e24a6308887fe3fa7",
+      "fe521f3023d21449a9ebda5bfa6c16baca98a2d94d200aa2b54d8afb7389f32a",
+      "06f0f63ff6759be9aeb376a578049458d1b8749228ca65b0a8d3d83d0415c9f8",
+      "b4cc4e8c753c4f578aea2799c204a7b660f364d5db092e38f8ba59d67c2e1204",
+      "e1bb30ff903557314b990c241a039e41300dc844ecd1a9513e33b68a24592450"
+    ]
+  },
+  "identity_footprint": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Unique OSM w461743815@7 / GERS22db76bc owner and original quadrilateral retained. The model has an independent 6m square lower core and an estimated source-derived orthogonal orientation; owner quad is not asserted as a wall or eave line."
+  },
+  "height_evidence": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "42.65m total and 6m lower brick face follow one official nominal description; 7.85m finial follows two other chapters. The derived34.80m roof split does not prove a shared datum. Official42.5/48.5m alternatives and separate13/8.20m heartwood values remain recorded."
+  },
+  "visible_facade_opening_grid": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Nine levels/four faces have36 actual central through 壸门 in three-bay framing. Decoded wall rays and limited actual native review passed; hidden face symmetry and absolute facade orientation are estimates."
+  },
+  "roof": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Nine curved four-slope roofs, eight upper galleries, continuous hip seats, separate physical tiles/rafters/brackets,12 porch columns and nine open annular finial hoops. Actual finite geometry samples and native image review are limited evidence, not a full collision-free proof or measured roof reconstruction."
+  },
+  "texture_mapping_qa": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Intentional zero images/textures in raw/web/LOD; color materials and geometric details represent2017 exterior appearance without baked photo lighting.",
+    "mode": "none",
+    "raw_sha256": "9874c41fff6bcba808a4333511a3de4b634c693770dab433a3ebde355044f19a",
+    "web_sha256": "3e7e718d6eb795cebb1e28ab848f021baf482e8a5560a2cbb88ccd8634e864fd"
+  },
+  "geometry_proof": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Actual Float32 exported part closure/normals/volume, exact decoded web oriented position/material triangle multiset and <=0.05deg normal policy; finite doorway, roof, porch and finial-hole checks. No hidden interior accuracy claim.",
+    "raw_sha256": "9874c41fff6bcba808a4333511a3de4b634c693770dab433a3ebde355044f19a"
+  },
+  "size_proof": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "All four actual package assets individually strictly less than100,000,000 bytes; native size checked after generation."
+  },
+  "uncertainty": {
+    "building_id": "songjiang-fangta-pagoda",
+    "geometry_input_sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3",
+    "passed": true,
+    "scope": "Nominal height conflicts, estimated layer heights/taper/overhang/construction depths, repeated hidden faces,12-column symmetric porch scenario,2017 material state and geometric exterior-navigation scope remain explicit."
+  }
+}
