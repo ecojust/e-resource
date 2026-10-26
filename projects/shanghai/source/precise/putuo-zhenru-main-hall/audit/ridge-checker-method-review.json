@@ -1,0 +1,55 @@
+{
+  "schema": "zhenru-gable-checker-method-history-v1",
+  "canonical_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/actual-descending-ridge-gable-review.json",
+    "bytes": 617730,
+    "sha256": "f19fa055e005771fa5bdd552f611e767ed675840e123a4f07d3976f1c6737f35"
+  },
+  "canonical_copy_matches_successful_attempt": true,
+  "checker": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/audit_descending_ridges_gables.py",
+    "bytes": 22430,
+    "sha256": "bfe4c8bfd93afaa7ca2038ea38e347f1390d4efb68c9331bcb07a59fe6027ffd"
+  },
+  "preserved_attempts": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/actual-descending-ridge-gable-review-attempt1.json",
+      "bytes": 179,
+      "sha256": "020ec558869e91351a6b36aff15876bf21011082a78c1b6578b1973a3f1dab2d"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/actual-descending-ridge-gable-review-attempt2.json",
+      "bytes": 194,
+      "sha256": "f711816c5fe20ae647d5700bbeef189f13e3e107db8ac2322b099cfe66ef9511"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/actual-descending-ridge-gable-review-attempt3.json",
+      "bytes": 208,
+      "sha256": "18b006f3af22fed87752854e1c5de2e93a8abfe4615b46b6431db87adc4a2018"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/actual-descending-ridge-gable-review-attempt4.json",
+      "bytes": 617617,
+      "sha256": "147d0b37b9acaa0bea521b54b836609c55483cc48972b5a74df03ff8bda834fc"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/geometry-v2/independent-review/actual-descending-ridge-gable-review-attempt5.json",
+      "bytes": 617730,
+      "sha256": "f19fa055e005771fa5bdd552f611e767ed675840e123a4f07d3976f1c6737f35"
+    }
+  ],
+  "attempt_dispositions": {
+    "1": "Checker exception: Shapely Point intersections have no geoms. Corrected to ignore zero-area point/line intersections. No geometry conclusion.",
+    "2": "Global single-heightfield assumption failed on unchanged hip near-vertical Float32 cap sliver (area1.75e-8m2). Revised existence-only contact to report/exclude ambiguous tiny cap cells, with strict actual interval witnesses. No asset change.",
+    "3": "A candidate near a hip cap did not have exactly two crossings. Candidate is now explicitly rejected and never counted; other positive-area cells must independently prove contact.",
+    "4": "Contact, curtain-removal and actual-camera visibility groups passed. Gable face-area classification incorrectly included nearly tangent caps by testing raw normal-x>1e-8. Corrected to classify actual major side faces by normalized cosine>.99999; no source/model change.",
+    "5": "All bounded actual geometry/contact/visibility groups passed; canonical report is an exact byte copy."
+  },
+  "retained_limits": [
+    "No earlier failed result is overwritten.",
+    "Intermediate checker source snapshots were not frozen; the final executable and all emitted attempt reports are retained.",
+    "Ambiguous hip cap witnesses never count as accepted contact; complete collision freedom and global vertical monotonicity are not claimed.",
+    "Actual scene ray measurements use immutable v1 native camera directions. They are not newly rendered or photo-calibrated images."
+  ],
+  "author_geometry_or_MAIN_modified": false
+}

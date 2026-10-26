@@ -1,0 +1,37 @@
+{
+  "schema": "zhenru-geometry-v2-independent-checker-freeze-v2",
+  "files": [
+    {
+      "file": "audit_geometry_v2_brackets.py",
+      "bytes": 11039,
+      "sha256": "6334e40de433ca97c0737fb4eefa6d0b7832398908dd50033b3fdd6d18e4a723"
+    },
+    {
+      "file": "actual_bracket_geometry.py",
+      "bytes": 11848,
+      "sha256": "d6562ffb70b55ba23b9478c92b66db963334f7216ade5d43d54bd063c7fb923c"
+    },
+    {
+      "file": "actual_glb.py",
+      "bytes": 3231,
+      "sha256": "300b9a61d774f6f888c0d29adf39faae6d0f33708eea42115763ec36d5fcd65c"
+    },
+    {
+      "file": "audit_cover_pan_intersection.py",
+      "bytes": 12882,
+      "sha256": "f7308450e7bc769f5ecafe46ad0165663a5e26b1f51fbac1884b349562c6755a"
+    },
+    {
+      "file": "audit_raw_structure_geometry_v2.py",
+      "bytes": 8611,
+      "sha256": "499c25c3f0b460c97ac4626e88b3bdb8d3d9e00cb766ef90a5f35dfad2922d2d"
+    }
+  ],
+  "previous_checker_directory": "geometry-v2-checker-history-v1",
+  "previous_actual_failure": {
+    "file": "actual-geometry-v2-bracket-preservation.json",
+    "sha256": "36824c72bd720e68c0c3a00c6569164e57c9d7f026b72f912d34b838bf7287fa"
+  },
+  "revision_reason": "Actual convex-triangle GEOS intersections may be GeometryCollections containing positive-area polygons plus exactshared zero-area edge LineStrings. Preserve and test every positive-area polygon without buffering. Count discarded zero-area components explicitly. No other criterion changed.",
+  "author_source_freeze_sha256": "02929a28105be0fa9765a9d0e3105279c6e41f67d6aa7667c570cd405ea25056"
+}

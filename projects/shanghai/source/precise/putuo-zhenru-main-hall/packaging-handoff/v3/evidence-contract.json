@@ -1,0 +1,77 @@
+{
+  "schema": "zhenru-geometry-v2-registrar-evidence-contract-v1",
+  "preparation_only": true,
+  "current_source_freeze_sha256": "02929a28105be0fa9765a9d0e3105279c6e41f67d6aa7667c570cd405ea25056",
+  "historical_source_freeze_sha256": "78e935b7c3158bc5c4eb89d721ca24954fefc309480ae4186425940887578ed8",
+  "historical_raw_sha256": "b9d4c8981740c19a22ced43d825e643b04fb42960cb113b13ae605e02e3106f9",
+  "current_structure_schema": "zhenru-independent-actual-raw-structure-v1",
+  "current_B_schema": "zhenru-actual-geometry-v2-bracket-preservation-v1",
+  "current_A_schema": "zhenru-v2-actual-descending-ridge-gable-review-v1",
+  "allowed_changed_parts": 144,
+  "B_bracket_parts": 140,
+  "A_ridge_labels": [
+    "ridge/descending-gable--1--1",
+    "ridge/descending-gable--1-1",
+    "ridge/descending-gable-1--1",
+    "ridge/descending-gable-1-1"
+  ],
+  "required_B_checks": [
+    "geometry_revision_passed",
+    "non_allowlisted_parts_byte_identical",
+    "bracket_no_protrusion_passed",
+    "bracket_support_chains_passed"
+  ],
+  "tile_carryforward_required_fields": [
+    "previous_raw",
+    "current_raw",
+    "historical_report",
+    "actual_all_roof_tile_triangle_normals_materials_unchanged",
+    "original_report_not_modified"
+  ],
+  "A_group_lengths": {
+    "high_pitch_contact_checks": 4,
+    "ridge_connection_checks": 8,
+    "gable_fill_preservation_checks": 2,
+    "ridge_curtain_projection_checks": 4,
+    "actual_camera_gable_visibility_checks": {
+      "minimum": 2,
+      "required_camera_roles": [
+        "full",
+        "rear"
+      ]
+    }
+  },
+  "historical_proofs": {
+    "historical_structure_proof": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-raw-structure-v1.json",
+      "bytes": 1682,
+      "sha256": "874014a62b9652a7f500b1ac1d0e54d77c894c94e0e1522cf592e78044d53c65"
+    },
+    "historical_contact_proof": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-roles-contacts-v1.json",
+      "bytes": 621324,
+      "sha256": "3d92f68f5ef05584df73ab122fb26e72220075c4d0376722b08097b87a4707d8"
+    },
+    "historical_pca_contact_proof": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v1.json",
+      "bytes": 7557340,
+      "sha256": "82f42f7c2d4019643f3db03ff285a703ed6a5c8b54e4d0654f0261abf2bcc481"
+    },
+    "historical_lip_contact_proof": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v2.json",
+      "bytes": 7400140,
+      "sha256": "ca8a5910b7e9e614742b4caa5ac43ecbb34dfe3287d4a7623d6f8dda98c34a0b"
+    },
+    "historical_contact_review": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/root-finite-contact-review.json",
+      "bytes": 5464,
+      "sha256": "17114bf8cc4cf416e630cfe4e1c3f95093d9bea3b0f2391990d79a0b3852f1b5"
+    },
+    "historical_native_report": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/native/native-render-report.json",
+      "bytes": 3826,
+      "sha256": "1de7244e5edd3a4e98d61ced8fb8b70048739d9169a3298d197ea1dba1191d12"
+    }
+  },
+  "current_proofs_not_accepted_by_preparation": true
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "zhenru-independent-actual-checker-freeze-v2",
+  "at": "2026-10-26T18:40:37.440964+00:00",
+  "model_id": "putuo-zhenru-main-hall",
+  "files": [
+    {
+      "file": "actual_glb.py",
+      "bytes": 3231,
+      "sha256": "300b9a61d774f6f888c0d29adf39faae6d0f33708eea42115763ec36d5fcd65c"
+    },
+    {
+      "file": "audit_actual_roles_contacts.py",
+      "bytes": 23176,
+      "sha256": "4c0f7179be6e2fdb35d74e8d8faba19499ef5433c7157d7408fc788b9bf0ef37"
+    },
+    {
+      "file": "audit_raw_structure.py",
+      "bytes": 8571,
+      "sha256": "1c2826e178c91bf78aff593f3db31114eae96aa153bc55b1b87c2f54390377d6"
+    }
+  ],
+  "author_source_freeze": {
+    "file": "../source-freeze.json",
+    "sha256": "78e935b7c3158bc5c4eb89d721ca24954fefc309480ae4186425940887578ed8"
+  },
+  "syntax_parsed": true,
+  "actual_raw_available_at_preparation": true,
+  "actual_raw_test_passed": false,
+  "native_or_browser_passed": false,
+  "commands": [
+    "python audit_raw_structure.py --raw RAW --output ABS_STRUCTURE_REPORT",
+    "python audit_actual_roles_contacts.py --raw RAW --structure-proof ABS_STRUCTURE_REPORT --output ABS_ROLES_REPORT"
+  ],
+  "limits": [
+    "Finite contacts use actual serialized triangles; labels only identify candidate solids.",
+    "Aperture projection snaps analysis coordinates to10micron grid; actual source remains untouched.",
+    "No complete collision/selfintersection proof, interior traversal certification, measured building dimensions or contemporary rear verification."
+  ],
+  "previous_freeze": {
+    "file": "checker-history-v1/checker-freeze.json",
+    "sha256": "1846d96eca111606b319e1175e329d950e0a9bfd7bfa887414645e8c5036f2e2"
+  },
+  "revision_reason": "Read-only peer review: single occurrence and actual two-crossing solid intervals, finite sample locations/counts, column grid bijection, distinct leaf placement/rear spacing, required SHA-bound passing structure proof. Historical checker preserved unchanged."
+}

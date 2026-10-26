@@ -1,0 +1,123 @@
+{
+  "schema": "zhenru-native-render-v10",
+  "source_glb": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-geometry-v2/raw/putuo-zhenru-main-hall-raw.glb",
+  "source_glb_sha256": "c5197dc5cf3e4073c4d3ad0b3b237b4b476ad3e5ff3cc6c65421abb79983b3b9",
+  "builder_sha256": "1017947e28c3dbd913c23ad51dce122cc1a566ef2f0f5c6fd99fea99755c2e55",
+  "calibration_sha256": "ca088b1657e5a16b41c40fc1427e913d7eb2f17656361c9de43837508d80f210",
+  "renderer_sha256": "8c045a4d6ab12d79de953621ddba918a1632653e0442030b83b62ab1f778b502",
+  "blender_version": "4.3.2",
+  "engine": "CYCLES CPU",
+  "samples": 48,
+  "threads": 2,
+  "denoising_enabled": false,
+  "denoising_policy": "Use only when the actual Blender build provides OpenImageDenoise",
+  "native": {
+    "file": "putuo-zhenru-main-hall.blend",
+    "bytes": 14816151,
+    "sha256": "50fcf4a5cc21e5a6c9fc0af995a3de562cd58dca4168c9304354381f89671d35"
+  },
+  "bounds_enu_m": [
+    [
+      -9.878132820129395,
+      -9.775456428527832,
+      0.0
+    ],
+    [
+      9.878132820129395,
+      9.775456428527832,
+      10.239999771118164
+    ]
+  ],
+  "model_meshes": 1,
+  "model_images": 0,
+  "preview_collection_excluded_from_raw": true,
+  "preview_ground_z": -0.025,
+  "ground_base_m": 0,
+  "renders": [
+    {
+      "file": "putuo-zhenru-main-hall-full.png",
+      "bytes": 1516928,
+      "sha256": "297601907b4f05c3d86841b6e3d09d029d44ab2afed373fe681dc0ec55c3e55b",
+      "camera": {
+        "name": "Full_hall_three_quarter",
+        "projection": "orthographic",
+        "azimuth_degrees": 208.5698066460507,
+        "elevation_degrees": 15,
+        "resolution": [
+          1200,
+          950
+        ],
+        "ortho_scale": 28.875045776367188,
+        "position_enu": [
+          -18.994091033935547,
+          -34.881351470947266,
+          14.94219970703125
+        ],
+        "target_enu": [
+          0.0,
+          0.0,
+          5.119999885559082
+        ],
+        "photo_calibrated": false
+      }
+    },
+    {
+      "file": "putuo-zhenru-main-hall-detail.png",
+      "bytes": 1626505,
+      "sha256": "afba05ef6c6a3d9d83107c47fe56ced3af6aa896a4f12278f1cfa1f475504b80",
+      "camera": {
+        "name": "South_doors_and_flame_windows",
+        "projection": "orthographic",
+        "azimuth_degrees": 178.5698066460507,
+        "elevation_degrees": 2,
+        "resolution": [
+          1200,
+          850
+        ],
+        "ortho_scale": 12.282353401184082,
+        "position_enu": [
+          0.9861928820610046,
+          -39.500221252441406,
+          4.379807949066162
+        ],
+        "target_enu": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "photo_calibrated": false
+      }
+    },
+    {
+      "file": "putuo-zhenru-main-hall-rear.png",
+      "bytes": 1436573,
+      "sha256": "b54ebe3b52c159fa7132ce19a5adbed35cacc4ba54dd0706e3002cfbd9308a93",
+      "camera": {
+        "name": "Historical_reference_rear_and_gable",
+        "projection": "orthographic",
+        "azimuth_degrees": 323.56980664605067,
+        "elevation_degrees": 12,
+        "resolution": [
+          1200,
+          950
+        ],
+        "ortho_scale": 29.393882751464844,
+        "position_enu": [
+          -23.540199279785156,
+          31.893936157226562,
+          12.916906356811523
+        ],
+        "target_enu": [
+          0.0,
+          0.0,
+          5.119999885559082
+        ],
+        "photo_calibrated": false,
+        "scope": "Current rear is not photographically verified; official north-six-door description and historical geometry are explicitly limited reconstruction inputs."
+      }
+    }
+  ],
+  "human_visual_review_passed": false,
+  "browser_passed": false,
+  "notes": "These are generated geometry previews, not human acceptance or calibrated photo matches. All three cameras are retained in the editable compressed blend."
+}

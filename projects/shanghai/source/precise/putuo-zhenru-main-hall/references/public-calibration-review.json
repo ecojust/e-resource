@@ -1,0 +1,71 @@
+{
+  "schema": "v10-public-calibration-research-summary-v1",
+  "id": "putuo-zhenru-main-hall",
+  "private_original": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/references/calibration-review.json",
+    "bytes": 5228,
+    "sha256": "d80bf8909460b10d10adbf9e90e8dbf60fd123cfec744f6350453dcfc9bba66c"
+  },
+  "original_retained_unchanged": true,
+  "publication_scope": "Retain the original proposed-parameter assessment and limitations, omit duplicate long facade/couplet quotations. Official fact/URL mapping is in public-official-summary.json. This is historical proposed calibration review, not final model acceptance.",
+  "original_research_metadata": {
+    "reviewer": "next_model_research_b",
+    "reviewed_at": "2026-10-26T18:23:09.389441+00:00",
+    "status": "research review of proposed parameters only; no model or browser acceptance",
+    "geometry_input_sha256": "131180636fd06a897b54721923685d05d05e43e1aee8b77633986142676e1cfd",
+    "actual_images_viewed_for_this_review": [
+      179591117,
+      28576428,
+      20506218
+    ]
+  },
+  "parameter_review": [
+    {
+      "parameter": "12.57m square core",
+      "assessment": "Acceptable bounded modeling estimate, not surveyed wall dimensions. sqrt(158) = 12.569805089976535. Source says only 面积158平方米 and does not define the measured boundary. Owner polygon is not a confirmed wall or eave outline."
+    },
+    {
+      "parameter": "4x4 column grid [-6.285,-2.55,2.55,6.285]",
+      "assessment": "Three bays and 16 columns are source-backed. This grid gives 4 interior and 12 perimeter posts, a coherent reconstruction, but exact spacings/plan positions are not established. Center bay 5.1m and side bays3.735m must remain estimated; photo review should check center-to-side ratio."
+    },
+    {
+      "parameter": "eave shaft4.28m, inner shaft6.45m",
+      "assessment": "Published historical dimensions. Use above estimated column bases, not absolute courtyard elevations. Base inclusions and survey date/datum are not specified by the text."
+    },
+    {
+      "parameter": "floor .45m above courtyard",
+      "assessment": "Plausible photo-calibrated estimate only. Do not derive current level from the1960s foundation raising45cm. Present court and foundation levels have not been surveyed."
+    },
+    {
+      "parameter": "inward lean .08m/.16m",
+      "assessment": "Source explicitly scopes lean to 正间. Do not assert all16 columns have measured radial lean. If extended to side/corner columns, record it as reconstruction. A vector magnitude differs from applying the entire displacement to both axes at corners."
+    },
+    {
+      "parameter": "roof19.1m by18.8m, ridge10.5m, ridgez8.72m, finialapprox1.25m",
+      "assessment": "No retrieved primary source provides these measurements. They are plausible starting estimates for the broad/deep-eave silhouette, bounded within the source owner envelope. Need actual rendered-front/side comparison before acceptance. Ridge beasts/chiwen remain simplified modern-restoration appearance, not1320 originals. NO central spire: background tower is separate."
+    },
+    {
+      "parameter": "hip-gable break y=+-5.10m",
+      "assessment": "Compatible with single-eave hipped-gable topology, exact location is estimated and must be judged in side render; evidence does not establish a metric breakpoint."
+    },
+    {
+      "parameter": "south six door leaves spanning5m, bottom.60/top3.70",
+      "assessment": "Six center leaves supported by explicit primary quote. Width/elevations estimated; separate leaves and lower opaque panels should reflect currentfront photo; door-open state may differ by date."
+    },
+    {
+      "parameter": "flamehead windows centers+-4.4m,width2.1m,bottom1.3/top3.3",
+      "assessment": "One flame-headed straight-lattice window in each outer bay is source and photo backed. These metric values are estimates. 3.3 should mean top elevation, not window height; confirm final height visually because photo perspective/plant occlusion prevent a reliable measurement."
+    },
+    {
+      "parameter": "rear six doors and white infill",
+      "assessment": "Six rear doors are explicitly source-backed, not a generic symmetry assumption. Historical rear/side image supports white infill and timber divisions, but its capture date is uncertain and it does not certify2025rear. Label rear arrangement as historical-text/photo reconstruction with current-state uncertainty."
+    }
+  ],
+  "original_hard_blockers_before_model_acceptance": [
+    "Native front and side roof silhouette not rendered/reviewed yet.",
+    "Rear current-state confirmation absent; avoid any claim of contemporary rear survey.",
+    "No singlehall model may include the separate northern pagoda,圆通殿, southern天王殿, sidecorridors or courtyard urn/plants as owned geometry."
+  ],
+  "model_acceptance_inferred": false,
+  "source_facts": "public-official-summary.json"
+}

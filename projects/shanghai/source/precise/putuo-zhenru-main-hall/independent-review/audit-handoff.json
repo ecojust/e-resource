@@ -1,0 +1,62 @@
+{
+  "schema": "zhenru-independent-actual-audit-handoff-v1",
+  "at": "2026-10-26T18:48:15.468531+00:00",
+  "raw": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/raw/putuo-zhenru-main-hall-raw.glb",
+    "bytes": 28877184,
+    "sha256": "b9d4c8981740c19a22ced43d825e643b04fb42960cb113b13ae605e02e3106f9"
+  },
+  "author_source_freeze": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/source-freeze.json",
+    "bytes": 4119,
+    "sha256": "78e935b7c3158bc5c4eb89d721ca24954fefc309480ae4186425940887578ed8"
+  },
+  "all19_author_source_files_unchanged": true,
+  "actual_audit_process_180753_no_longer_exists": true,
+  "reports": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-raw-structure-v1.json",
+      "bytes": 1682,
+      "sha256": "874014a62b9652a7f500b1ac1d0e54d77c894c94e0e1522cf592e78044d53c65"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-roles-contacts-v1.json",
+      "bytes": 621324,
+      "sha256": "3d92f68f5ef05584df73ab122fb26e72220075c4d0376722b08097b87a4707d8"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v1.json",
+      "bytes": 7557340,
+      "sha256": "82f42f7c2d4019643f3db03ff285a703ed6a5c8b54e4d0654f0261abf2bcc481"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v2.json",
+      "bytes": 7400140,
+      "sha256": "ca8a5910b7e9e614742b4caa5ac43ecbb34dfe3287d4a7623d6f8dda98c34a0b"
+    }
+  ],
+  "structure_passed": true,
+  "original_finite_checks_passed": false,
+  "original_failure_groups": {
+    "cover_to_pan_lip_failed": 8094
+  },
+  "original_pca_section_passed": false,
+  "pca_failing_pairs": 96,
+  "actual_end_plane_sections_passed": true,
+  "all8500_strict_positive_joint_areas_and_both_lip_sections": true,
+  "minimum_contact_projected_area_m2": 0.0009994102716692765,
+  "minimum_five_station_width_m": 0.0020405767052054102,
+  "original_failed_station_recheck": {
+    "stored_failed_pairs_reviewed": 100,
+    "stored_failed_stations": 712,
+    "outside_strict_contact_region": 712,
+    "still_negative_actual_overlap": 712,
+    "unexpected_inside_contact_region": 0
+  },
+  "scope": "All original FAIL reports preserved. Actual serialized cover/pan solids have narrow positive-area joints on both lips; interior cap cavities remain real gaps. End-plane cross sections correct global PCA stations that cut a skewed end corner. Root must disposition these different criteria explicitly; no report is silently promoted.",
+  "root_criterion_approval_recorded": false,
+  "model_appearance_accepted": false,
+  "native_browser_passed": false,
+  "main_modified": false,
+  "author_geometry_modified": false
+}

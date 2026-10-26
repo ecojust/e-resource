@@ -1,0 +1,80 @@
+{
+  "schema": "zhenru-root-finite-contact-review-v1",
+  "passed": true,
+  "actually_reviewed": true,
+  "reviewer": "root",
+  "reviewed_utc": "2026-10-26T18:49:07.866576+00:00",
+  "raw": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/raw/putuo-zhenru-main-hall-raw.glb",
+    "bytes": 28877184,
+    "sha256": "b9d4c8981740c19a22ced43d825e643b04fb42960cb113b13ae605e02e3106f9"
+  },
+  "actual_contacts": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-roles-contacts-v1.json",
+    "bytes": 621324,
+    "sha256": "3d92f68f5ef05584df73ab122fb26e72220075c4d0376722b08097b87a4707d8"
+  },
+  "previous_pca_contacts": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v1.json",
+    "bytes": 7557340,
+    "sha256": "82f42f7c2d4019643f3db03ff285a703ed6a5c8b54e4d0654f0261abf2bcc481"
+  },
+  "cover_lip_intersection": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v2.json",
+    "bytes": 7400140,
+    "sha256": "ca8a5910b7e9e614742b4caa5ac43ecbb34dfe3287d4a7623d6f8dda98c34a0b"
+  },
+  "structure": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-raw-structure-v1.json",
+    "bytes": 1682,
+    "sha256": "874014a62b9652a7f500b1ac1d0e54d77c894c94e0e1522cf592e78044d53c65"
+  },
+  "reviewed_algorithms": [
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/audit_cover_pan_intersection.py",
+      "bytes": 12882,
+      "sha256": "f7308450e7bc769f5ecafe46ad0165663a5e26b1f51fbac1884b349562c6755a"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/audit_cover_pan_intersection_v2.py",
+      "bytes": 16213,
+      "sha256": "de3edb96651734e48b3039c3fd245d2993cf1a57f08666b0e16823d52528c019"
+    }
+  ],
+  "additional_evidence": [
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v1.json",
+      "bytes": 7557340,
+      "sha256": "82f42f7c2d4019643f3db03ff285a703ed6a5c8b54e4d0654f0261abf2bcc481"
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/independent-review/actual-cover-pan-intersection-v2.json",
+      "bytes": 7400140,
+      "sha256": "ca8a5910b7e9e614742b4caa5ac43ecbb34dfe3287d4a7623d6f8dda98c34a0b"
+    }
+  ],
+  "support_criterion": "For this visual roof assembly, each curved cover must have positive-area intersection with each of its two adjacent pan lips, plus a positive-width contact band at five stations between its actual serialized course end planes. Universal contact over the raised cover underside is not required.",
+  "rationale": [
+    "Root read the actual exported geometry audit, both piecewise-intersection reports, original role/contact findings and both clipping algorithms. The intersection algorithm pairs actual Float32 top/bottom facets, clips projected triangle cells by both vertical-solid-overlap inequalities and independently verifies interval witnesses; it does not infer contact from builder expectations.",
+    "All 8500 cover/pan pairs have actual positive-area joints with minimum projected area0.0009994102716692765m². All42500 true course sections have positive bands; minimum width0.0020405767052054102m. The 1micron threshold is strictly positive overlap and does not permit positive clearance to pass.",
+    "The original8094failed cover/pan interior probes remain failed. The stored712failed stations in100pairs were measured again and all remain in actual air gaps outside the contact bands. Curved cap interiors can form cavities while both lateral edges contact their pans.",
+    "The second report retained96failed global-PCA sections despite positive contact areas in every pair. The revised checker discovers each tile actual two end-coordinate planes and uses five fractions between them. This corrects skewed-corner station placement and changes no model bytes; both reports remain independently bound.",
+    "Other wall, door, window, column, roof-patch, support-seat and ridge results are accepted only within their original finite geometric scopes; their individual missed rays and sampled gaps are retained."
+  ],
+  "preserved_findings": {
+    "original_finite_checks_passed": false,
+    "original_cover_pan_failed_pairs": 8094,
+    "previous_pca_section_passed": false,
+    "previous_pca_failed_pairs": 96,
+    "maximum_real_cap_cavity_gap_m": 0.030332183296121862,
+    "reports_overwritten": false
+  },
+  "limitations": [
+    "This is a visual-model contact disposition, not structural engineering, drainage, construction tolerance or historical surveying certification.",
+    "Narrow lateral support bands do not establish full-width underside contact. Actual cap cavities up to30.332mm and all original failed stations remain present.",
+    "Five course sections and other role probes are finite; no whole-building collision-freedom or every-point contact claim is made.",
+    "Native appearance, photo-relative proportions, decoder retention and browser/city integration require separate actual evidence."
+  ],
+  "native_visual_passed": false,
+  "browser_passed": false
+}

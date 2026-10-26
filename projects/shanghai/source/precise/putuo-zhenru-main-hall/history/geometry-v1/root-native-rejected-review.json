@@ -1,0 +1,53 @@
+{
+  "schema": "zhenru-root-native-visual-review-v10",
+  "passed": false,
+  "actually_viewed": true,
+  "browser_passed": false,
+  "reviewer": "root",
+  "raw": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/raw/putuo-zhenru-main-hall-raw.glb",
+    "bytes": 28877184,
+    "sha256": "b9d4c8981740c19a22ced43d825e643b04fb42960cb113b13ae605e02e3106f9"
+  },
+  "native": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/native/putuo-zhenru-main-hall.blend",
+    "bytes": 14632184,
+    "sha256": "cac694d08d2ed7110044c3b93e5fc6ec794f56add4db2e0c91847f203721511c"
+  },
+  "renderer_report": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/native/native-render-report.json",
+    "bytes": 3826,
+    "sha256": "1de7244e5edd3a4e98d61ced8fb8b70048739d9169a3298d197ea1dba1191d12"
+  },
+  "views": [
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/native/putuo-zhenru-main-hall-full.png",
+      "bytes": 1501456,
+      "sha256": "5bc72fd5db68053c03e1660dd57f23b31ccad7052968ffe092801d0a84b0a90f",
+      "actually_viewed": true
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/native/putuo-zhenru-main-hall-detail.png",
+      "bytes": 1627609,
+      "sha256": "6ad13440124a1b092abe0b05eb871f8df3c4181dee80c36a093c3bdf43e2d6a0",
+      "actually_viewed": true
+    },
+    {
+      "source": "/workspace/shanghai_expansion/building-by-building-v10/zhenru-main-hall/run-v1/native/putuo-zhenru-main-hall-rear.png",
+      "bytes": 1427616,
+      "sha256": "46e00fd6ba5dd51620a0630edd18a0f3f79353503c0fbbd6fcfa032f0a1508a8",
+      "actually_viewed": true
+    }
+  ],
+  "findings": [
+    "The single-eave hip-gable silhouette, two ridge chiwen, dark front woodwork, six-leaf door, two flame windows, white side infill and stone steps are visible.",
+    "REJECT: brown rectangular support saddles and smaller likely bracket-arm tips project through the tiled roof, clear in full and front-detail views. The roof-support contact test did not establish no protrusion.",
+    "The exterior revision must retain physical post/bracket/roof support chains while placing every bracket top below the actual outer roof. Roof geometry, columns, doors and references should remain unchanged where possible."
+  ],
+  "release_blocked": true,
+  "required_revision": "Create immutable geometry-v2 with conforming saddles and any necessary bracket-arm adjustment; independent serialized geometry preservation/contact/no-protrusion checks, then new full/detail/rear images.",
+  "limitations": [
+    "Native eye review only. Earlier positive tile-lip contact disposition is retained for those unchanged parts and does not override this exterior defect.",
+    "Photo alignment, roof dimensions, rear present-day appearance, inscriptions and surface aging remain bounded by author calibration."
+  ]
+}
