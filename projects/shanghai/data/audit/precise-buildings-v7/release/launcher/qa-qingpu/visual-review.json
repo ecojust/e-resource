@@ -1,0 +1,110 @@
+{
+  "schema": "root-extracted-launcher-catalog-visual-review-v7",
+  "passed": true,
+  "final": true,
+  "reviewer": "root",
+  "reviewed_at": "2026-10-26T12:50:11.884808+00:00",
+  "browser_report_sha256": "1377a72d2c104d0ca73142bb37049da832db99f7d342e0f1992232bfdc9e1cc0",
+  "inputs_sha256": "92bbbcaa2d8869f812423729fded7bf58e34be6db1804051a1278b8e4e00b415",
+  "macro_id": "14-13701-6700",
+  "target_ids": [
+    "qingpu-beidajie-222",
+    "qingpu-beidajie-208-212"
+  ],
+  "application_commit": "53ee12a60fcd613d82f73cb50cdf0b36436052eb",
+  "archive_sha256": "6ba119780b3e81b9965ab4fa75cd07c9009be51b7137f25558a9ae00f8dcab5c",
+  "archive_bytes": 75069903,
+  "scope": "Root actually viewed all ten images from the actual extracted 23-record launcher, using the published fixed-commit remote resources. Qingpu 222 and the tea house are the representative complete macro. Static and dynamic arrivals/returns preserve the detailed fronts without target proxy-box overlap. Deliberate corrupt-index views preserve ordinary baseline buildings.",
+  "actually_viewed": [
+    {
+      "file": "static-qingpu-beidajie-222-loaded.png",
+      "bytes": 236148,
+      "sha256": "a2903193e2eeb70ed2803f40d50151199a55f065e39ef319bec11019df6ca54e",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "static-qingpu-beidajie-208-212-loaded.png",
+      "bytes": 293236,
+      "sha256": "8661bf8efc45ce7d77b18da63252b77241bfd679e66ac967832f849d0a57f73a",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "static-qingpu-beidajie-222-returned.png",
+      "bytes": 236162,
+      "sha256": "5b8763837e0db711ec6907d0c633c7fc4e1b90a9968f8cb7ca66aaebf1800bf7",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "static-qingpu-beidajie-208-212-returned.png",
+      "bytes": 293214,
+      "sha256": "488d5085d3a4d1859b17beb5928f5f314cf9e1e9aa4a9cdae3ccc576b01803fb",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "dynamic-qingpu-beidajie-222-loaded.png",
+      "bytes": 236146,
+      "sha256": "1e0bb8b00505699fd43e7670745eb4fcb37752f770a717b515c00f539c856e2e",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "dynamic-qingpu-beidajie-208-212-loaded.png",
+      "bytes": 293231,
+      "sha256": "3e998ab62518bc63395a022dfcb8b3d75f0d668d1db111208155818b3513febe",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "dynamic-qingpu-beidajie-222-returned.png",
+      "bytes": 236136,
+      "sha256": "9171555c5ae2955f36fb87cfcca0fb1a7d67ee5a664755019979a204ed1fb60e",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "dynamic-qingpu-beidajie-208-212-returned.png",
+      "bytes": 293258,
+      "sha256": "71bae29738c2d7d9609d2b0f0df4bfe534bebd6a4fc9979f4525a437475b17ed",
+      "actually_viewed": true,
+      "observations": "Precise facade and surrounding buildings remain visible; no target proxy-box overlap, including returned views."
+    },
+    {
+      "file": "dynamic-qingpu-beidajie-222-index-hash-rejected-baseline-visible.png",
+      "bytes": 214066,
+      "sha256": "442964db5eb9b709f7005b86786133cee9dc5f9e76feefec5dfc9485db505888",
+      "actually_viewed": true,
+      "observations": "Expected ordinary baseline remains after the deliberate index hash rejection."
+    },
+    {
+      "file": "dynamic-qingpu-beidajie-208-212-index-hash-rejected-baseline-visible.png",
+      "bytes": 262255,
+      "sha256": "0aa6be2402f29d5fedefdc919a35ab8bb0d33666c1e02ad96ecd9790ceadeeaf",
+      "actually_viewed": true,
+      "observations": "Expected ordinary baseline remains after the deliberate index hash rejection."
+    }
+  ],
+  "extracted_runtime_files": [
+    {
+      "file": "src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 52958,
+      "sha256": "5b9fa5902e1648106d12c3b5c000ef36a1d43bb400fc86db261ef2c12e4710d2"
+    }
+  ],
+  "extracted_runtime_unchanged": true,
+  "runtime_scope_note": "The independent archive checker verified every extracted file before browser launch. A separate startup snapshot and actual after-run hashes bind the two changed runtime JS files included in the launcher. Package/test files are intentionally absent from the archive; this report does not claim five runtime files were loaded from it.",
+  "limitations": [
+    "Only the Qingpu two-building macro was retested in the actual extracted launcher; the two Wukang models were tested earlier in the full candidate application.",
+    "Archive integrity and fixed URL/hash chains cover all 23 navigation records; a separate public stream check verifies the eight new A/B assets and selected application files. These checks do not substitute for an unperformed Wukang ZIP browser run.",
+    "This is an online launcher, not an offline copy of the entire city.",
+    "No hardware frame-rate, every-angle walking, or citywide photographic accuracy claim is made."
+  ]
+}

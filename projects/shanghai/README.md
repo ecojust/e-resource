@@ -1,12 +1,27 @@
-# 上海漫游 · Shanghai Explorer v6.1
+# 上海漫游 · Shanghai Explorer v7
 
-上海16区三维地图与第三人称漫游项目，当前有**20栋独立建筑与地标：15栋外滩历史建筑、4栋陆家嘴地标、青浦北大街222号普通民宅前楼**。本轮将已单独发布的外滩7号、9号和222接入HTML。外滩模型按逐栋照片参照制作；陆家嘴的细化范围不同；全市普通楼仍是来源轮廓与高度支撑的参数推定，不能称20栋或179万要素具有同等照片精度。
+本批接入武康路129号、武康路210号住宅和青浦北大街208–212号茶楼：**新制模型2栋，既有129号模型首次接入HTML，共3处新替换**。连同既有222号，普通小楼增至4栋，导航为**23项：15栋外滩历史建筑、4栋陆家嘴地标、4栋普通小楼**。129号已完成21项静态导航候选中的单栋网页验收；210号与茶楼v3已制成GLB和Blender，修正后的原生斜视图已由root实际查看并接受。两栋已通过23项静态候选中的v3网页检查及root对全部11张截图的实际复核；候选应用的武康与青浦两宏目录分别通过实际浏览器和root图像复核；新ZIP通过归档核对及青浦{222、茶楼}代表宏实际解压运行，不声称武康ZIP浏览器验收。
 
-[本轮20栋在线预览](https://rawcdn.githack.com/ecojust/e-resource/f5ba36ae1eaa4241ab0084841ded78b6ef50d248/projects/shanghai/index.html#mode=walk)（固定应用提交`f5ba36ae1eaa4241ab0084841ded78b6ef50d248`）。新启动包已构建并通过归档校验：75.04 MB／75,039,313字节，本地14栋、联网加载6栋，含1个普通楼目录记录；按需联网，不表示全市模型全部装入ZIP。[下载本轮启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)。下载地址跟随master更新，属于可变入口；包内资源固定到上述应用提交。实际解压ZIP中的222目录已通过静态20项复用、受控19项动态加载／退出／返回及索引SHA拒绝检查，27个邻楼保留、29／29个几何对象释放；root实际查看5张截图，page／shader／HTTP错误为0。此项未重跑07／09全部视角或全部20栋。 见[实际启动包验证范围与报告](data/audit/precise-buildings-v6/release-next/launcher/README.md)。
+直接进入新增地点：[武康路210号漫游](https://rawcdn.githack.com/ecojust/e-resource/53ee12a60fcd613d82f73cb50cdf0b36436052eb/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk) · [江南第一茶楼漫游](https://rawcdn.githack.com/ecojust/e-resource/53ee12a60fcd613d82f73cb50cdf0b36436052eb/projects/shanghai/index.html#landmark=qingpu-beidajie-208-212&mode=walk)。
+
+可见细节按各栋照片分别重建，保留真实开口、独立框架及有据外形；未见后部、构件尺度和绝对高度仍有推定。全城**1,796,419个建筑及部件要素**仍以来源轮廓、高度与参数推定为基础，不代表全市已经逐栋照片复原，也不代表各地标具有同等精度。
+
+前两轮A/B网页均技术通过、实际图像未获整组接受：茶楼镜头进入对街建筑。最终修正晚到碰撞数据的相机更新、近距取景限制，以及普通楼水平投影单位不一致；v3正式11组网页与root实际图像复核通过，邻楼和模型几何保持。该静态结果仅覆盖两栋；候选两宏目录与ZIP青浦代表宏验证分别记录。
+
+新在线预览：[23项在线预览](https://rawcdn.githack.com/ecojust/e-resource/53ee12a60fcd613d82f73cb50cdf0b36436052eb/projects/shanghai/index.html#mode=walk)。新启动包：[下载启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)，75,069,903字节，SHA256 `6ba119780b3e81b9965ab4fa75cd07c9009be51b7137f25558a9ae00f8dcab5c`；实际归档与解压运行结果：[实际ZIP验证](data/audit/precise-buildings-v7/release/launcher/README.md)。该ZIP已通过实际归档及解压运行核对；v6.1的20项预览和ZIP仅为上一版历史。下载地址跟随master更新；包内应用资源固定到第一提交，ZIP与本说明同批发布。
+
+四栋普通小楼的raw、web、LOD、native均已核对小于**100,000,000字节**，具体下载与字节数见[普通小楼索引](source/precise/README.md)。新ZIP也已独立核对低于该上限。[v7范围与限制](data/bund/REALISM_V7.md) · [本批验收范围](data/audit/precise-buildings-v7/release/README.md)。
 
 ![外滩第三人称街景](assets/previews/bund-street.png)
 
-## v6.1 新增接入与普通小楼
+## v6.1 新增接入与普通小楼（历史范围）
+
+以下保留v6.1发布时的范围；其中“当前”“本轮”“尚未”均指该版。20项导航、75,039,313字节ZIP与当轮验证不是v7结果，原master下载地址也可能已指向新版。
+
+上海16区三维地图与第三人称漫游项目，当前有**20栋独立建筑与地标：15栋外滩历史建筑、4栋陆家嘴地标、青浦北大街222号普通民宅前楼**。本轮将已单独发布的外滩7号、9号和222接入HTML。外滩模型按逐栋照片参照制作；陆家嘴的细化范围不同；全市普通楼仍是来源轮廓与高度支撑的参数推定，不能称20栋或179万要素具有同等照片精度。
+
+[v6.1固定预览（历史20项）](https://rawcdn.githack.com/ecojust/e-resource/f5ba36ae1eaa4241ab0084841ded78b6ef50d248/projects/shanghai/index.html#mode=walk)（固定应用提交`f5ba36ae1eaa4241ab0084841ded78b6ef50d248`）。新启动包已构建并通过归档校验：75.04 MB／75,039,313字节，本地14栋、联网加载6栋，含1个普通楼目录记录；按需联网，不表示全市模型全部装入ZIP。[可变启动包入口（现可能为新版）](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)。下载地址跟随master更新，属于可变入口；包内资源固定到上述应用提交。实际解压ZIP中的222目录已通过静态20项复用、受控19项动态加载／退出／返回及索引SHA拒绝检查，27个邻楼保留、29／29个几何对象释放；root实际查看5张截图，page／shader／HTTP错误为0。此项未重跑07／09全部视角或全部20栋。 见[实际启动包验证范围与报告](data/audit/precise-buildings-v6/release-next/launcher/README.md)。
+
 
 7号保留四层3＋5＋3分组立面、真实洞口与独立窗框，修正门窗、金属顶帽及后排屋顶窗；9号保留通透外廊、不同柱式、真实拱洞、石券缝、阳台角柱与南侧连续搭接瓦。222把逐栋工作扩展到青浦普通小楼，保留门牌、三开间木廊、木格与实际门洞，而非用通用盒子替代可见身份细节。未见后部、绝对高度、墙厚及精细雕刻仍有推定，未建立可游览室内。
 
@@ -20,7 +35,7 @@
 
 ## v6 首批逐栋照片重建（历史范围）
 
-以下保留首批05／06／14发布时的模型和验证范围；17栋及首批三栋计数仅描述该轮，当前总数与新增接入见上方v6.1。
+以下保留首批05／06／14发布时的模型和验证范围；17栋及首批三栋计数仅描述该轮，当前范围见本文顶部v7说明。
 
 新增三栋保留各自真实地图轮廓和地理锚点。日清大楼重建双山花、三面凸窗、门柱及分组阳台；中国通商银行重建五山墙、四圆尖塔、三拱柱廊和独立附翼；交通银行重建四排八轴窗、黑石入口、实体字牌和阶梯塔冠。照片只用于逐片选中的玻璃，避开黑框与遮挡物；墙体、窗洞、厚框及雕饰仍由几何构件形成。
 
@@ -44,7 +59,7 @@
 
 ## 历史更新
 
-以下记录各版本发布时的范围；“本次”“尚未”等表述对应当时状态，当前情况以顶部v6.1说明为准。
+以下记录各版本发布时的范围；“本次”“尚未”等表述对应当时状态，当前情况以顶部v7说明为准。
 
 ### v4.4 墙面、逐窗与屋顶修正
 
@@ -130,6 +145,9 @@ python -m http.server 8000
 | 建筑 | 可见结构与范围 | 模型与源码 |
 |---|---|---|
 | 青浦朱家角北大街222号民宅前楼 | 两层三跨、通透木廊、真实门洞、木格、灰瓦搭接与中央草书牌；不含邻铺226号或后进 | [网页版](assets/models/precise/14-13701-6700/qingpu-beidajie-222/web.glb) · [原始GLB](assets/models/precise/14-13701-6700/qingpu-beidajie-222/raw.glb) · [Blender](assets/native/precise/14-13701-6700/qingpu-beidajie-222/model.blend) · [来源及重建](source/precise/qingpu-beidajie-222/README.md) |
+| 徐汇武康路129号住宅 | 左山墙、中央退进、右圆端与弧形阳台；后部和尺度有推定 | [网页版](assets/models/precise/14-13718-6695/xuhui-wukang-129/web.glb) · [原始GLB](assets/models/precise/14-13718-6695/xuhui-wukang-129/raw.glb) · [Blender](assets/native/precise/14-13718-6695/xuhui-wukang-129/model.blend) · [当前交付](source/precise/xuhui-wukang-129/DELIVERY.md) |
+| 徐汇武康路210号住宅 | 南弯栏阳台、中部凹门厅、北三联窗与红檐瓦顶；只替换981主楼 | [网页版](assets/models/precise/14-13718-6695/xuhui-wukang-210/web.glb) · [原始GLB](assets/models/precise/14-13718-6695/xuhui-wukang-210/raw.glb) · [Blender](assets/native/precise/14-13718-6695/xuhui-wukang-210/model.blend) · [当前交付](source/precise/xuhui-wukang-210/DELIVERY.md) |
+| 青浦北大街208–212号茶楼前楼 | 三砖拱、开放木廊、栏杆、灯笼与搭接瓦；按历史照片可见形态 | [网页版](assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-web.glb) · [原始GLB](assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-raw.glb) · [Blender](assets/native/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212.blend) · [当前交付](source/precise/qingpu-beidajie-208-212/DELIVERY.md) |
 
 222的原始轮廓来自Overture所用Zenodo／East Asian Buildings，OSM只辅助核对门牌与街桥。模型保留2022年可见状态，以2016年照片交叉核对；檐高、后坡、局部格数和狮雕仍有明确推定。中央匾为模型唯一照片采样，右门采用统一的估计玻璃材质。模型为CC BY-SA 4.0；2022图为钉钉CC BY-SA 4.0，2016参考为Fayhoo CC BY-SA 3.0。
 
@@ -146,7 +164,7 @@ python -m http.server 8000
 
 16区覆盖黄浦、徐汇、长宁、静安、普陀、虹口、杨浦、闵行、宝山、嘉定、浦东新区、金山、松江、青浦、奉贤、崇明。[全域分块清单](assets/city/README.md)与[机器清单](assets/city/manifest.json)提供下载和地理定位信息；每块具有独立经纬度原点与米制坐标。assets/districts/仅保留旧版每区1km²样本，当前HTML使用全域分块。
 
-普通建筑近景的门窗具有实体厚度与退距，窗位、开间和多数材料仍由参数推定；远景保留较轻的建筑表示。道路宽度优先公开width/lanes字段，否则按等级估算。全域公开源仍可能漏楼、错分轮廓或具有年代差异；“全域”指本次来源范围内的处理覆盖。v5近景覆盖见上方保留记录；v6两批共6栋（05／06／07／09／14及222）采用动态精确替换，不改变该基线统计。
+普通建筑近景的门窗具有实体厚度与退距，窗位、开间和多数材料仍由参数推定；远景保留较轻的建筑表示。道路宽度优先公开width/lanes字段，否则按等级估算。全域公开源仍可能漏楼、错分轮廓或具有年代差异；“全域”指本次来源范围内的处理覆盖。v5近景覆盖见上方保留记录；v7替换清单覆盖9个明确源对象，不改变该基线统计。各栋当前接入和验证范围见顶部及逐栋交付。
 
 ## 数据依据与版本变化
 
@@ -155,7 +173,7 @@ python -m http.server 8000
 - **父体剩余足迹**：v2逐一核验551个父体，恢复402处原先被分部处理遗漏的剩余足迹，约953,690m²；这些是历史核验总量。v3中国银行详细模型接管其中1处，当前普通模型保留**401处**。残差高度单独估算，不把塔楼总高直接用作裙房高度；原始阈值、面积及402处证据仍保留供追溯。
 - **精确替换**：v3按源对象ID及组件关系替换**98个可渲染要素**。普通模型当前计数为 **1,796,116 − 98 + 401 = 1,796,419**，不是独立楼宇数量。外滩细模不按半径粗删邻楼；海关仅替换确认的前楼、钟楼和四角亭，独立后翼继续保留。[v3分块核验](data/bund/validation/city-patches.json)与[构件核验记录](data/bund/validation/)记录替换依据。
 
-v6两批的05／06／07／09／14及222采用6个独立源对象的动态替换；1,796,419要素基线没有减去这6条。只有对应细模加载成功且实际可见时，才隐藏相应普通表示，卸载后恢复。49个同近景分块邻要素保留；不按半径删除邻楼。详见[v6.1增量](data/bund/REALISM_V6_1.md)。
+v7的9个精确源对象来自3个宏块、7个近景块；保留同块其余116个要素，1,796,419要素基线不减去这9条。替换以明确对象ID及细模可见状态管理，卸载后恢复，不按半径删除邻楼。实际运行验收范围见[v7说明](data/bund/REALISM_V7.md)，历史v6.1的6目标/49邻楼记录继续保留。
 
 高度优先级为：源height → 楼层数×3.2m → CMAB严格轮廓匹配的预测高度 → CNBH 10m栅格估计 → GHSL区域均高 → 明确标注的12m缺省。CMAB在16区抽样1,280个足迹作对齐检查，不采用简单最近邻或无依据的GCJ偏移。
 
