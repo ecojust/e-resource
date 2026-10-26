@@ -8,9 +8,13 @@
 | [全部远景实际解码](all-far-ids.json) | 使用项目实际Three GLTFLoader与Meshopt解码全部1,708个远景，核对1,796,419个要素ID完整性及每个三角的ID一致性。通过；此过程没有运行浏览器或GPU。 |
 | [近景实际解码抽样](near-sample-report.json) | 36个宏块中的87份近景，经实际加载器解码；覆盖16区的分层选择、五类建筑、中庭、MultiPolygon和单要素预算例外，以及所有有据屋顶所在近景。核对浮点位置/法线、矩阵有限性、实例展开三角数与内存估算。通过。 |
 | [126处发布屋顶](published-roofs.json) | 全部126处有据屋顶及其48份近景文件，实际解码后的原屋顶三角与源float32三角逐项精确比较，缺失与新增均为0；同时核对远景。通过。 |
-| [项目资产检查](asset-check.json) | `python tools/check_assets.py`完整执行通过，含全量城市细化检查。报告中启动包为检查当时的历史文件；新启动包在生成后另行检查。 |
+| [项目资产检查](asset-check.json) | `python tools/check_assets.py`完整执行通过，含全量城市细化检查。该报告中的启动包为当时的历史文件；本次正式v5启动包另由下方独立归档报告核验。 |
 | [完整运行时测试](runtime-tests.json) | `npm test`通过；网络期限修正与回归范围见[修复记录](network-deadline-fix.json)。街景等待预算回归见[街景修复记录](street-timeout-fix.json)；自动测试与浏览器验收分别记录。 |
 | [浏览器完整场景流程](browser.json) | `local-final-r4`，1024×700真实viewport、单浏览器、生产加载预算与着色器。读取完整1,708宏块清单；验证外滩起点、W移动、普通楼近景及俯瞰、外滩返回及退出。所有阶段通过，页面、着色器、模型请求错误和WebGL上下文丢失均为0。 |
+| [公开固定提交探测](published-probe.json) | 应用提交 `a443691e2bf24dbabcb80ec109563a19715cc4da` 的8个关键公开文件均返回HTTP 200且字节一致；raw.githubusercontent.com与rawcdn.githack.com返回的近景由生产codec实际解码通过。这是公开文件与解码检查。 |
+| [正式启动包构建](launcher-build.json) | v5启动包74,939,824字节，包含14栋地标、街景、LOD、表面纹理和参考照片；全市模型及近景按需读取固定应用提交。 |
+| [启动包独立归档检查](launcher-archive-check.json) | 254个ZIP流CRC、253项文件清单大小与SHA、10,248个固定城市/细化URL，以及街景—地面—绿化摘要链均通过。解压后的实际浏览器另由下方启动包验收报告核验。 |
+| [正式启动包浏览器验收](launcher-browser/report.json) | 从正式ZIP解压目录运行，`zip-production` smoke、800×600 / DPR 1。外滩初始与实际W移动、普通楼141个near要素遮罩及3997号目标、离开街景后的归属清理、俯瞰遮罩和高程复位均通过；从固定应用提交CDN实际加载READY与GLB.GZ。页面、着色器、模型、请求、本地资源及外部HTTP错误均为0。 |
 | [清单大小复核](manifest-size-summary.json) | 读取manifest及全部READY记录，对账数量、字节和最大文件；该项仅为元数据复核。 |
 
 全量near审计覆盖每份文件的结构、摘要、大小、归属与声明三角数量；真实Meshopt顶点解码为上表87份分层样本。该样本通过不表示全市169,320份近景都完成了实际顶点解码或逐栋照片核验。全部1,708份far则已逐个真实解码。位置/法线和资源估计检查不等于真实GPU画面或整机内存测试。
@@ -22,3 +26,5 @@
 浏览器阶段数据随附：[外滩起点](01-bund-initial.json)、[W移动](02-w-movement.json)、[普通楼近景](03-ordinary-near.json)、[普通楼俯瞰恢复](04-ordinary-overview-restored.json)及[外滩返回](05-bund-return.json)。普通楼片区141个近景要素的远景遮罩与实际归属一致，俯瞰时全部恢复；离开外滩后其地面与设施归属清空，返回后恢复1个归属、12块地表、3,489个碰撞体与局部Y=0.035m铺装，树木没有重复添加。实际W移动约0.63m；最终外滩退出也通过遮罩与地图高程复位检查。
 
 这次浏览器流程验证上述实际场景与完整清单接入，不表示逐栋浏览全市，也不是设备性能基准。异常加载、超时、取消和迟到结果处理由运行时回归测试覆盖；本轮浏览器未注入网络故障。报告中的截图名称为本地运行输出，项目预览展示同版生产代码的实际场景。最终浏览器结束于2026-10-26 05:14:21 UTC。
+
+正式启动包浏览器流程结束于2026-10-26 05:23:40 UTC，使用固定应用提交 `a443691e2bf24dbabcb80ec109563a19715cc4da` 的远程模型。阶段记录：[ZIP外滩起点](launcher-browser/01-bund-initial.json)、[ZIP普通楼近景](launcher-browser/03-ordinary-near.json)、[ZIP俯瞰恢复](launcher-browser/04-ordinary-overview-restored.json)。该流程是解压启动包的smoke验证，没有重复第二次外滩返回及退出；完整往返覆盖保留在上面的 `local-final-r4` 报告中。

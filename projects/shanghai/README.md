@@ -2,11 +2,11 @@
 
 上海16区三维地图与第三人称漫游项目，包含外滩10栋历史建筑、4栋陆家嘴地标，以及1,708个分块中的1,796,419个普通建筑及部件要素。v5增加外滩楼前步道、照片参照的树木、灯具与护栏，并为普通楼建立可按需加载的实体门窗、厚框、窗台、基座和檐边。**历史建筑依照逐栋照片复原；普通建筑的窗位与建筑类型细化主要由参数推定，现场准确性不同。** 全市近景已完成生成、独立审计和浏览器场景验收。
 
-[在线预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk)（首次出现托管提示时点击 **Open the page**）。
+[在线预览](https://rawcdn.githack.com/ecojust/e-resource/a443691e2bf24dbabcb80ec109563a19715cc4da/projects/shanghai/index.html#mode=walk)（首次出现托管提示时点击 **Open the page**）。
 
 ![外滩第三人称街景](assets/previews/bund-street.png)
 
-[最新启动包](https://raw.githubusercontent.com/ecojust/e-resource/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（按需联网，发布页显示文件大小），包含14栋地标、滨江街景、表面纹理和参考照片；解压后按包内说明启动HTTP服务。全市分块与普通建筑近景按需从固定版本加载，地图仍需联网。完整模型、可编辑文件及重建源码均随项目提供。
+[最新启动包](https://raw.githubusercontent.com/ecojust/e-resource/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（74.94 MB，74,939,824字节；按需联网），包含14栋地标、滨江街景、表面纹理和参考照片；解压后按包内说明启动HTTP服务。全市分块与普通建筑近景按需从固定版本加载，地图仍需联网。完整模型、可编辑文件及重建源码均随项目提供。
 
 ## v5 城市近景与外滩环境
 
