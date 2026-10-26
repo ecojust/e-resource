@@ -356,7 +356,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
 更多数据说明见 data/SOURCES.md、data/heights/HEIGHT_SOURCES.md 和 data/bund/。
 '''
     payload['使用说明.txt'] = instructions.encode('utf-8')
-    payload['README.md'] = ('# 上海漫游 v4.2 启动包\n\n' + instructions).encode('utf-8')
+    payload['README.md'] = ('# 上海漫游 v4.3 启动包\n\n' + instructions).encode('utf-8')
 
     for name in payload:
         if name.startswith(OMITTED_PREFIXES) or name.endswith(('.blend', '.blend1')):
@@ -365,7 +365,7 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
             raise ValueError(f'Unexpected GLB outside the selected runtime models: {name}')
     references_checked = validate_static_references(payload)
     package_manifest = {
-        'version': 'shanghai-web-launcher-v4.2', 'commit': commit,
+        'version': 'shanghai-web-launcher-v4.3', 'commit': commit,
         'landmark_count': len(landmarks), 'scene_prop_count': len(props),
         'city_model_count': len(city['tiles']), 'city_feature_count': city.get('feature_count'),
         'city_manifest_source_sha256': sha256(city_data), 'city_cdn_prefix': city_prefix,
