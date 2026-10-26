@@ -1,0 +1,1747 @@
+{
+  "schema": "bund-v6-frozen-geometry-input-v1",
+  "id": "bund05",
+  "name_zh": "日清大楼",
+  "name_en": "Nissin Building",
+  "historic_bund_number": "5",
+  "status": "source footprint and identity frozen; architectural dimensions and facade details still require independent source evidence",
+  "anchor": [
+    121.48611653838704,
+    31.236373979797833
+  ],
+  "origin_longitude": 121.48611653838704,
+  "origin_latitude": 31.236373979797833,
+  "anchor_method": "Centroid of the exact closed OSM polygon in EPSG:3857, inverse projected to WGS84; not the tourism label node and not a bbox center.",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          121.4857759,
+          31.2363943
+        ],
+        [
+          121.4858613,
+          31.2361908
+        ],
+        [
+          121.4863442,
+          31.2363379
+        ],
+        [
+          121.4863616,
+          31.2363382
+        ],
+        [
+          121.4864411,
+          31.2363674
+        ],
+        [
+          121.4864367,
+          31.2363823
+        ],
+        [
+          121.486452,
+          31.2364118
+        ],
+        [
+          121.4863333,
+          31.2365616
+        ],
+        [
+          121.4862374,
+          31.236539
+        ],
+        [
+          121.4862524,
+          31.2365057
+        ],
+        [
+          121.4861242,
+          31.2364652
+        ],
+        [
+          121.4861063,
+          31.2365008
+        ],
+        [
+          121.4860191,
+          31.2364725
+        ],
+        [
+          121.4860345,
+          31.2364417
+        ],
+        [
+          121.4858559,
+          31.2363841
+        ],
+        [
+          121.4858421,
+          31.2364148
+        ],
+        [
+          121.4857759,
+          31.2363943
+        ]
+      ]
+    ]
+  },
+  "geographic_bbox": [
+    121.4857759,
+    31.2361908,
+    121.486452,
+    31.2365616
+  ],
+  "model_geometry_local_east_north_m": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -32.42267203268343,
+          2.26203480063666
+        ],
+        [
+          -24.294121943971994,
+          -20.39146204965385
+        ],
+        [
+          21.669307082878973,
+          -4.016383956715537
+        ],
+        [
+          23.3254753668323,
+          -3.9829881202013757
+        ],
+        [
+          30.89245115286758,
+          -0.7324597196063131
+        ],
+        [
+          30.47364997693769,
+          0.9262007093898292
+        ],
+        [
+          31.929935882809186,
+          4.210126489754816
+        ],
+        [
+          20.631822349752113,
+          20.885806106001407
+        ],
+        [
+          11.50386036426102,
+          18.369980919142147
+        ],
+        [
+          12.931591644464739,
+          14.663036054130796
+        ],
+        [
+          0.7292483023107786,
+          10.154591358044161
+        ],
+        [
+          -0.974511025483931,
+          14.117569803197373
+        ],
+        [
+          -9.2743888713873,
+          10.967224455973872
+        ],
+        [
+          -7.808584756429001,
+          7.538581123445919
+        ],
+        [
+          -24.80810520280677,
+          1.126575810495099
+        ],
+        [
+          -26.121617981931998,
+          4.544085099762863
+        ],
+        [
+          -32.42267203268343,
+          2.26203480063666
+        ]
+      ]
+    ]
+  },
+  "polygon_local_east_north": [
+    [
+      -32.42267203268343,
+      2.26203480063666
+    ],
+    [
+      -24.294121943971994,
+      -20.39146204965385
+    ],
+    [
+      21.669307082878973,
+      -4.016383956715537
+    ],
+    [
+      23.3254753668323,
+      -3.9829881202013757
+    ],
+    [
+      30.89245115286758,
+      -0.7324597196063131
+    ],
+    [
+      30.47364997693769,
+      0.9262007093898292
+    ],
+    [
+      31.929935882809186,
+      4.210126489754816
+    ],
+    [
+      20.631822349752113,
+      20.885806106001407
+    ],
+    [
+      11.50386036426102,
+      18.369980919142147
+    ],
+    [
+      12.931591644464739,
+      14.663036054130796
+    ],
+    [
+      0.7292483023107786,
+      10.154591358044161
+    ],
+    [
+      -0.974511025483931,
+      14.117569803197373
+    ],
+    [
+      -9.2743888713873,
+      10.967224455973872
+    ],
+    [
+      -7.808584756429001,
+      7.538581123445919
+    ],
+    [
+      -24.80810520280677,
+      1.126575810495099
+    ],
+    [
+      -26.121617981931998,
+      4.544085099762863
+    ]
+  ],
+  "coordinate_contract": {
+    "geographic": "WGS84 / EPSG:4326",
+    "earth_radius_m": 6378137.0,
+    "metre_frame": "Web Mercator coordinate differences multiplied by cos(anchor latitude), retaining the current city and Bund source-builder metre convention; not UTM axes.",
+    "east_formula": "(R*longitude_radians - originMercatorX)*cos(originLatitude)",
+    "north_formula": "(R*ln(tan(pi/4+latitude_radians/2)) - originMercatorY)*cos(originLatitude)",
+    "gltf_xyz": "[east_m, elevation_m, -north_m]",
+    "rings_closed": true,
+    "original_osm_vertex_order_preserved": true,
+    "existing_coordinate_source": {
+      "project_relative_path": "source/city/build_district_models.py",
+      "bytes": 12013,
+      "sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906"
+    },
+    "runtime_radius_note": "The source builders use R=6378137; vendored MapLibre meterInMercatorCoordinateUnits uses mean Earth radius 6371008.8. This freeze deliberately retains existing source coordinates and does not silently change model scale or the renderer.",
+    "round_trip_max_degree_error": 1.4210854715202004e-14
+  },
+  "front_edge": {
+    "ring_index": 0,
+    "edge_index": 6,
+    "osm_node_ids": [
+      1887566502,
+      1887566523
+    ],
+    "endpoints_wgs84": [
+      [
+        121.486452,
+        31.2364118
+      ],
+      [
+        121.4863333,
+        31.2365616
+      ]
+    ],
+    "endpoints_local_east_north_m": [
+      [
+        31.929935882809186,
+        4.210126489754816
+      ],
+      [
+        20.631822349752113,
+        20.885806106001407
+      ]
+    ],
+    "center_local_east_north_m": [
+      26.28087911628065,
+      12.547966297878112
+    ],
+    "length_m": 20.142632898147884,
+    "tangent_east_north": [
+      -0.560905497815826,
+      0.8278798357974304
+    ],
+    "outward_normal_east_north": [
+      0.8278798357974304,
+      0.560905497815826
+    ],
+    "outward_azimuth_deg": 55.881557894734954,
+    "nearest_road_osm_way_id": 1201643770,
+    "road_centerline_distance_m": 21.79833113879542,
+    "outward_to_road_alignment": 0.9974358845504647
+  },
+  "streetfront": {
+    "method": "Use the long outer-ring edge whose outward normal faces the nearest saved Zhongshan East No.1 Road centreline. Keep adjacent steps and return walls; do not straighten the full polygon.",
+    "primary_edge_index": 6,
+    "frontage_edge_indices": [
+      4,
+      5,
+      6
+    ],
+    "frontage_continuity_note": "Primary front edge is one original OSM segment; all original returns and setbacks remain in the footprint.",
+    "candidate_edges": [
+      {
+        "ring_index": 0,
+        "edge_index": 0,
+        "osm_node_ids": [
+          1887566457,
+          1887566546
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4857759,
+            31.2363943
+          ],
+          [
+            121.4858613,
+            31.2361908
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -32.42267203268343,
+            2.26203480063666
+          ],
+          [
+            -24.294121943971994,
+            -20.39146204965385
+          ]
+        ],
+        "center_local_east_north_m": [
+          -28.358396988327712,
+          -9.064713624508595
+        ],
+        "length_m": 24.06770130466997,
+        "tangent_east_north": [
+          0.33773686925116586,
+          -0.9412405681590764
+        ],
+        "outward_normal_east_north": [
+          -0.9412405681590764,
+          -0.33773686925116586
+        ],
+        "outward_azimuth_deg": 250.26094824015996,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 79.9214905359659,
+        "outward_to_road_alignment": -0.9839615081436376
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 1,
+        "osm_node_ids": [
+          1887566546,
+          11111799985
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4858613,
+            31.2361908
+          ],
+          [
+            121.4863442,
+            31.2363379
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -24.294121943971994,
+            -20.39146204965385
+          ],
+          [
+            21.669307082878973,
+            -4.016383956715537
+          ]
+        ],
+        "center_local_east_north_m": [
+          -1.3124074305465108,
+          -12.203923003184693
+        ],
+        "length_m": 48.79323713852356,
+        "tangent_east_north": [
+          0.9420040915990305,
+          0.3356013876769359
+        ],
+        "outward_normal_east_north": [
+          0.3356013876769359,
+          -0.9420040915990305
+        ],
+        "outward_azimuth_deg": 160.3908878402601,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 58.07269747798679,
+        "outward_to_road_alignment": -0.1806119539668076
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 2,
+        "osm_node_ids": [
+          11111799985,
+          1887566544
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4863442,
+            31.2363379
+          ],
+          [
+            121.4863616,
+            31.2363382
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            21.669307082878973,
+            -4.016383956715537
+          ],
+          [
+            23.3254753668323,
+            -3.9829881202013757
+          ]
+        ],
+        "center_local_east_north_m": [
+          22.497391224855637,
+          -3.9996860384584565
+        ],
+        "length_m": 1.6565049552202946,
+        "tangent_east_north": [
+          0.9997967580683016,
+          0.020160420534160325
+        ],
+        "outward_normal_east_north": [
+          0.020160420534160325,
+          -0.9997967580683016
+        ],
+        "outward_azimuth_deg": 178.84481472842793,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 33.35368737136942,
+        "outward_to_road_alignment": -0.49168778427634574
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 3,
+        "osm_node_ids": [
+          1887566544,
+          1887566527
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4863616,
+            31.2363382
+          ],
+          [
+            121.4864411,
+            31.2363674
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            23.3254753668323,
+            -3.9829881202013757
+          ],
+          [
+            30.89245115286758,
+            -0.7324597196063131
+          ]
+        ],
+        "center_local_east_north_m": [
+          27.10896325984994,
+          -2.3577239199038442
+        ],
+        "length_m": 8.235596968618566,
+        "tangent_east_north": [
+          0.9188132705945855,
+          0.39469250534977357
+        ],
+        "outward_normal_east_north": [
+          0.39469250534977357,
+          -0.9188132705945855
+        ],
+        "outward_azimuth_deg": 156.75320220981195,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 28.558599560218497,
+        "outward_to_road_alignment": -0.14145286477251584
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 4,
+        "osm_node_ids": [
+          1887566527,
+          1887566528
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4864411,
+            31.2363674
+          ],
+          [
+            121.4864367,
+            31.2363823
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            30.89245115286758,
+            -0.7324597196063131
+          ],
+          [
+            30.47364997693769,
+            0.9262007093898292
+          ]
+        ],
+        "center_local_east_north_m": [
+          30.683050564902636,
+          0.09687049489175809
+        ],
+        "length_m": 1.71071588631132,
+        "tangent_east_north": [
+          -0.24481047921576096,
+          0.9695709511253673
+        ],
+        "outward_normal_east_north": [
+          0.9695709511253673,
+          0.24481047921576096
+        ],
+        "outward_azimuth_deg": 75.8293660800747,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 24.229153975035537,
+        "outward_to_road_alignment": 0.9552366001769305
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 5,
+        "osm_node_ids": [
+          1887566528,
+          1887566502
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4864367,
+            31.2363823
+          ],
+          [
+            121.486452,
+            31.2364118
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            30.47364997693769,
+            0.9262007093898292
+          ],
+          [
+            31.929935882809186,
+            4.210126489754816
+          ]
+        ],
+        "center_local_east_north_m": [
+          31.201792929873438,
+          2.5681635995723227
+        ],
+        "length_m": 3.592344244443418,
+        "tangent_east_north": [
+          0.40538595601578453,
+          0.9141456266181928
+        ],
+        "outward_normal_east_north": [
+          0.9141456266181928,
+          -0.40538595601578453
+        ],
+        "outward_azimuth_deg": 113.91531538938946,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 22.529409613558926,
+        "outward_to_road_alignment": 0.5887755564611723
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 6,
+        "osm_node_ids": [
+          1887566502,
+          1887566523
+        ],
+        "endpoints_wgs84": [
+          [
+            121.486452,
+            31.2364118
+          ],
+          [
+            121.4863333,
+            31.2365616
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            31.929935882809186,
+            4.210126489754816
+          ],
+          [
+            20.631822349752113,
+            20.885806106001407
+          ]
+        ],
+        "center_local_east_north_m": [
+          26.28087911628065,
+          12.547966297878112
+        ],
+        "length_m": 20.142632898147884,
+        "tangent_east_north": [
+          -0.560905497815826,
+          0.8278798357974304
+        ],
+        "outward_normal_east_north": [
+          0.8278798357974304,
+          0.560905497815826
+        ],
+        "outward_azimuth_deg": 55.881557894734954,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 21.79833113879542,
+        "outward_to_road_alignment": 0.9974358845504647
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 7,
+        "osm_node_ids": [
+          1887566523,
+          1887566505
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4863333,
+            31.2365616
+          ],
+          [
+            121.4862374,
+            31.236539
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            20.631822349752113,
+            20.885806106001407
+          ],
+          [
+            11.50386036426102,
+            18.369980919142147
+          ]
+        ],
+        "center_local_east_north_m": [
+          16.067841357006568,
+          19.627893512571777
+        ],
+        "length_m": 9.468319089437465,
+        "tangent_east_north": [
+          -0.9640530593940309,
+          -0.265709801612604
+        ],
+        "outward_normal_east_north": [
+          -0.265709801612604,
+          0.9640530593940309
+        ],
+        "outward_azimuth_deg": 344.59086641725605,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 27.100269857499736,
+        "outward_to_road_alignment": 0.25216030805927636
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 8,
+        "osm_node_ids": [
+          1887566505,
+          1887566522
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4862374,
+            31.236539
+          ],
+          [
+            121.4862524,
+            31.2365057
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            11.50386036426102,
+            18.369980919142147
+          ],
+          [
+            12.931591644464739,
+            14.663036054130796
+          ]
+        ],
+        "center_local_east_north_m": [
+          12.21772600436288,
+          16.51650848663647
+        ],
+        "length_m": 3.97238679394469,
+        "tangent_east_north": [
+          0.35941396300583833,
+          -0.9331782269194013
+        ],
+        "outward_normal_east_north": [
+          -0.9331782269194013,
+          -0.35941396300583833
+        ],
+        "outward_azimuth_deg": 248.93579014596173,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 31.99045490041127,
+        "outward_to_road_alignment": -0.9878236410539004
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 9,
+        "osm_node_ids": [
+          1887566522,
+          1887566519
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4862524,
+            31.2365057
+          ],
+          [
+            121.4861242,
+            31.2364652
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            12.931591644464739,
+            14.663036054130796
+          ],
+          [
+            0.7292483023107786,
+            10.154591358044161
+          ]
+        ],
+        "center_local_east_north_m": [
+          6.830419973387759,
+          12.408813706087479
+        ],
+        "length_m": 13.00858395896651,
+        "tangent_east_north": [
+          -0.9380224150948553,
+          -0.34657459338447594
+        ],
+        "outward_normal_east_north": [
+          -0.34657459338447594,
+          0.9380224150948553
+        ],
+        "outward_azimuth_deg": 339.72205553063424,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 38.710064818451,
+        "outward_to_road_alignment": 0.16911855769664738
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 10,
+        "osm_node_ids": [
+          1887566519,
+          1887566517
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4861242,
+            31.2364652
+          ],
+          [
+            121.4861063,
+            31.2365008
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            0.7292483023107786,
+            10.154591358044161
+          ],
+          [
+            -0.974511025483931,
+            14.117569803197373
+          ]
+        ],
+        "center_local_east_north_m": [
+          -0.12263136158657617,
+          12.136080580620767
+        ],
+        "length_m": 4.313698413634922,
+        "tangent_east_north": [
+          -0.39496486875609904,
+          0.9186962242485149
+        ],
+        "outward_normal_east_north": [
+          0.9186962242485149,
+          0.39496486875609904
+        ],
+        "outward_azimuth_deg": 66.73621696581101,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 44.8671291833506,
+        "outward_to_road_alignment": 0.9930669479781498
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 11,
+        "osm_node_ids": [
+          1887566517,
+          1887566541
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4861063,
+            31.2365008
+          ],
+          [
+            121.4860191,
+            31.2364725
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -0.974511025483931,
+            14.117569803197373
+          ],
+          [
+            -9.2743888713873,
+            10.967224455973872
+          ]
+        ],
+        "center_local_east_north_m": [
+          -5.124449948435616,
+          12.542397129585623
+        ],
+        "length_m": 8.877648791413767,
+        "tangent_east_north": [
+          -0.9349184723246539,
+          -0.35486257918542957
+        ],
+        "outward_normal_east_north": [
+          -0.35486257918542957,
+          0.9349184723246539
+        ],
+        "outward_azimuth_deg": 339.21497758629147,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 48.994949849581204,
+        "outward_to_road_alignment": 0.16038934926242396
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 12,
+        "osm_node_ids": [
+          1887566541,
+          1887566526
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4860191,
+            31.2364725
+          ],
+          [
+            121.4860345,
+            31.2364417
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -9.2743888713873,
+            10.967224455973872
+          ],
+          [
+            -7.808584756429001,
+            7.538581123445919
+          ]
+        ],
+        "center_local_east_north_m": [
+          -8.54148681390815,
+          9.252902789709896
+        ],
+        "length_m": 3.7288304875814706,
+        "tangent_east_north": [
+          0.39310022803128913,
+          -0.9194956284408037
+        ],
+        "outward_normal_east_north": [
+          -0.9194956284408037,
+          -0.39310022803128913
+        ],
+        "outward_azimuth_deg": 246.8524572886471,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 53.59922654305452,
+        "outward_to_road_alignment": -0.9928264214866338
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 13,
+        "osm_node_ids": [
+          1887566526,
+          1887566521
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4860345,
+            31.2364417
+          ],
+          [
+            121.4858559,
+            31.2363841
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -7.808584756429001,
+            7.538581123445919
+          ],
+          [
+            -24.80810520280677,
+            1.126575810495099
+          ]
+        ],
+        "center_local_east_north_m": [
+          -16.308344979617885,
+          4.332578466970509
+        ],
+        "length_m": 18.168585733075798,
+        "tangent_east_north": [
+          -0.9356545796203747,
+          -0.35291713990031726
+        ],
+        "outward_normal_east_north": [
+          -0.35291713990031726,
+          0.9356545796203747
+        ],
+        "outward_azimuth_deg": 339.3341554179524,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 62.785780595779556,
+        "outward_to_road_alignment": 0.16244211774004974
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 14,
+        "osm_node_ids": [
+          1887566521,
+          1887566512
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4858559,
+            31.2363841
+          ],
+          [
+            121.4858421,
+            31.2364148
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -24.80810520280677,
+            1.126575810495099
+          ],
+          [
+            -26.121617981931998,
+            4.544085099762863
+          ]
+        ],
+        "center_local_east_north_m": [
+          -25.464861592369385,
+          2.8353304551289806
+        ],
+        "length_m": 3.6612409867634677,
+        "tangent_east_north": [
+          -0.3587616286046141,
+          0.93342921201394
+        ],
+        "outward_normal_east_north": [
+          0.93342921201394,
+          0.3587616286046141
+        ],
+        "outward_azimuth_deg": 68.97583713786818,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 71.46334877175187,
+        "outward_to_road_alignment": 0.987714658371623
+      },
+      {
+        "ring_index": 0,
+        "edge_index": 15,
+        "osm_node_ids": [
+          1887566512,
+          1887566457
+        ],
+        "endpoints_wgs84": [
+          [
+            121.4858421,
+            31.2364148
+          ],
+          [
+            121.4857759,
+            31.2363943
+          ]
+        ],
+        "endpoints_local_east_north_m": [
+          [
+            -26.121617981931998,
+            4.544085099762863
+          ],
+          [
+            -32.42267203268343,
+            2.26203480063666
+          ]
+        ],
+        "center_local_east_north_m": [
+          -29.272145007307714,
+          3.4030599501997614
+        ],
+        "length_m": 6.701569645854098,
+        "tangent_east_north": [
+          -0.9402355543151829,
+          -0.34052474565238383
+        ],
+        "outward_normal_east_north": [
+          -0.34052474565238383,
+          0.9402355543151829
+        ],
+        "outward_azimuth_deg": 340.09115237319855,
+        "nearest_road_osm_way_id": 1201643770,
+        "road_centerline_distance_m": 74.47608112012544,
+        "outward_to_road_alignment": 0.17546416809108112
+      }
+    ],
+    "photographic_confirmation_still_required": true
+  },
+  "facade_frame": {
+    "origin_local_east_north_m": [
+      26.28087911628065,
+      12.547966297878112
+    ],
+    "u_east_north": [
+      -0.560905497815826,
+      0.8278798357974304
+    ],
+    "inward_v_east_north": [
+      -0.8278798357974304,
+      -0.560905497815826
+    ],
+    "conversion": "localENU = facade_origin + u*s + inward_v*depth; glTF position = [localE, height, -localN]. Front wall is depth=0.",
+    "front_width_m": 20.142632898147884
+  },
+  "osm": {
+    "type": "way",
+    "id": 178408821,
+    "version": 10,
+    "timestamp": "2023-08-13T13:20:09Z",
+    "url": "https://www.openstreetmap.org/way/178408821",
+    "architectural_tags": {
+      "addr:housenumber": "5",
+      "addr:street": "中山东一路",
+      "addr:street:en": "East Zhongshan No. 1 Road",
+      "building": "commercial",
+      "building:levels": "7",
+      "heritage": "yes",
+      "heritage:operator": "上海市优秀历史建筑",
+      "heritage:ref": "A-III-03",
+      "name": "外滩五号",
+      "name:en": "Five on the Bund",
+      "name:ko": "파이브 온 더 번드",
+      "name:zh": "外滩五号",
+      "name:zh-Hans": "外滩五号",
+      "name:zh-Hant": "外灘五號",
+      "start_date": "1925"
+    },
+    "frozen_way": {
+      "type": "way",
+      "id": 178408821,
+      "version": 10,
+      "timestamp": "2023-08-13T13:20:09Z",
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:street": "中山东一路",
+        "addr:street:en": "East Zhongshan No. 1 Road",
+        "building": "commercial",
+        "building:levels": "7",
+        "heritage": "yes",
+        "heritage:operator": "上海市优秀历史建筑",
+        "heritage:ref": "A-III-03",
+        "name": "外滩五号",
+        "name:en": "Five on the Bund",
+        "name:ko": "파이브 온 더 번드",
+        "name:zh": "外滩五号",
+        "name:zh-Hans": "外滩五号",
+        "name:zh-Hant": "外灘五號",
+        "start_date": "1925"
+      },
+      "nodes": [
+        1887566457,
+        1887566546,
+        11111799985,
+        1887566544,
+        1887566527,
+        1887566528,
+        1887566502,
+        1887566523,
+        1887566505,
+        1887566522,
+        1887566519,
+        1887566517,
+        1887566541,
+        1887566526,
+        1887566521,
+        1887566512,
+        1887566457
+      ],
+      "geometry": [
+        {
+          "lat": 31.2363943,
+          "lon": 121.4857759
+        },
+        {
+          "lat": 31.2361908,
+          "lon": 121.4858613
+        },
+        {
+          "lat": 31.2363379,
+          "lon": 121.4863442
+        },
+        {
+          "lat": 31.2363382,
+          "lon": 121.4863616
+        },
+        {
+          "lat": 31.2363674,
+          "lon": 121.4864411
+        },
+        {
+          "lat": 31.2363823,
+          "lon": 121.4864367
+        },
+        {
+          "lat": 31.2364118,
+          "lon": 121.486452
+        },
+        {
+          "lat": 31.2365616,
+          "lon": 121.4863333
+        },
+        {
+          "lat": 31.236539,
+          "lon": 121.4862374
+        },
+        {
+          "lat": 31.2365057,
+          "lon": 121.4862524
+        },
+        {
+          "lat": 31.2364652,
+          "lon": 121.4861242
+        },
+        {
+          "lat": 31.2365008,
+          "lon": 121.4861063
+        },
+        {
+          "lat": 31.2364725,
+          "lon": 121.4860191
+        },
+        {
+          "lat": 31.2364417,
+          "lon": 121.4860345
+        },
+        {
+          "lat": 31.2363841,
+          "lon": 121.4858559
+        },
+        {
+          "lat": 31.2364148,
+          "lon": 121.4858421
+        },
+        {
+          "lat": 31.2363943,
+          "lon": 121.4857759
+        }
+      ],
+      "missing_nodes": []
+    },
+    "member_relations_in_saved_map": [],
+    "identity_poi": {
+      "element": {
+        "type": "node",
+        "id": 476151248,
+        "version": 9,
+        "timestamp": "2022-09-27T03:58:16Z",
+        "tags": {
+          "name": "日清大楼",
+          "name:en": "Nissin Building",
+          "name:zh": "日清大楼",
+          "name:zh-Hans": "日清大楼",
+          "name:zh-Hant": "日清大樓",
+          "tourism": "attraction"
+        },
+        "lat": 31.2365093,
+        "lon": 121.4864622
+      },
+      "inside_footprint": false,
+      "distance_to_footprint_m": 6.891630890388328,
+      "used_for_anchor": false,
+      "note": "Tourism label supports historical identity, not surveyed placement."
+    },
+    "saved_map_source": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=121.4842,31.23545,121.4892,31.2419",
+      "fetched_at": "2026-10-26T02:09:43.693593+00:00",
+      "original_bytes": 962804,
+      "original_sha256": "e73f923934cfe07fc98cf8b04b6362ed2e9d982285138537fdcbf9e022624d12",
+      "json_bytes": 1506585,
+      "json_sha256": "69ea47f4a00706a234bc418e9dea29372d7d2724f02d6a00098ead62adbc1802",
+      "elements": 2708,
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "note": "OSM bbox endpoint alternative after Overpass errors. No inference of object absence from failed queries."
+    }
+  },
+  "source": {
+    "release": "2026-10-21.0",
+    "overture_id": "480cfef1-55ad-4830-9cfc-b41459f0c76b",
+    "key": "building:480cfef1-55ad-4830-9cfc-b41459f0c76b",
+    "owner_tile": [
+      14,
+      13720,
+      6694
+    ],
+    "owner_macro_id": "14-13720-6694",
+    "matched_source_record": {
+      "resource": "planet",
+      "version": "2026-09-06T00:00:00.000Z",
+      "license": "ODbL-1.0",
+      "record_id": "w178408821@10",
+      "update_time": "2023-08-13T13:20:09.000Z",
+      "provider": "osm",
+      "property": "",
+      "dataset": "OpenStreetMap"
+    },
+    "properties": {
+      "is_underground": false,
+      "@name": "外滩五号",
+      "names": "{\"common\":{\"ko\":\"파이브 온 더 번드\",\"en\":\"Five on the Bund\",\"zh\":\"外滩五号\",\"zh-Hans\":\"外滩五号\",\"zh-Hant\":\"外灘五號\"},\"primary\":\"外滩五号\"}",
+      "@geometry_source": "OpenStreetMap",
+      "sources": [
+        {
+          "resource": "planet",
+          "version": "2026-09-06T00:00:00.000Z",
+          "license": "ODbL-1.0",
+          "record_id": "w178408821@10",
+          "update_time": "2023-08-13T13:20:09.000Z",
+          "provider": "osm",
+          "property": "",
+          "dataset": "OpenStreetMap"
+        }
+      ],
+      "subtype": "commercial",
+      "num_floors": 7,
+      "has_parts": false,
+      "id": "480cfef1-55ad-4830-9cfc-b41459f0c76b",
+      "class": "commercial",
+      "version": 2,
+      "source_layer": "building",
+      "district_id": "310101",
+      "district_name": "黄浦区",
+      "renderable": true,
+      "fragment_count": 1
+    },
+    "source_geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            121.48584008,
+            31.23641707
+          ],
+          [
+            121.48585618,
+            31.23638496
+          ],
+          [
+            121.4860332,
+            31.23644001
+          ],
+          [
+            121.48601711,
+            31.23647211
+          ],
+          [
+            121.4861083,
+            31.23649963
+          ],
+          [
+            121.4861244,
+            31.23646294
+          ],
+          [
+            121.48625314,
+            31.23650422
+          ],
+          [
+            121.48623705,
+            31.23654091
+          ],
+          [
+            121.48633361,
+            31.23656385
+          ],
+          [
+            121.48645163,
+            31.23641248
+          ],
+          [
+            121.48643553,
+            31.23638038
+          ],
+          [
+            121.4864409,
+            31.23636662
+          ],
+          [
+            121.48636043,
+            31.2363391
+          ],
+          [
+            121.48586154,
+            31.23619232
+          ],
+          [
+            121.48577571,
+            31.23639414
+          ],
+          [
+            121.48584008,
+            31.23641707
+          ]
+        ]
+      ]
+    },
+    "frozen_raw_feature": {
+      "type": "Feature",
+      "id": "480cfef1-55ad-4830-9cfc-b41459f0c76b",
+      "properties": {
+        "is_underground": false,
+        "@name": "外滩五号",
+        "names": "{\"common\":{\"ko\":\"파이브 온 더 번드\",\"en\":\"Five on the Bund\",\"zh\":\"外滩五号\",\"zh-Hans\":\"外滩五号\",\"zh-Hant\":\"外灘五號\"},\"primary\":\"外滩五号\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w178408821@10",
+            "update_time": "2023-08-13T13:20:09.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "subtype": "commercial",
+        "num_floors": 7,
+        "has_parts": false,
+        "id": "480cfef1-55ad-4830-9cfc-b41459f0c76b",
+        "class": "commercial",
+        "version": 2,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48584008,
+              31.23641707
+            ],
+            [
+              121.48585618,
+              31.23638496
+            ],
+            [
+              121.4860332,
+              31.23644001
+            ],
+            [
+              121.48601711,
+              31.23647211
+            ],
+            [
+              121.4861083,
+              31.23649963
+            ],
+            [
+              121.4861244,
+              31.23646294
+            ],
+            [
+              121.48625314,
+              31.23650422
+            ],
+            [
+              121.48623705,
+              31.23654091
+            ],
+            [
+              121.48633361,
+              31.23656385
+            ],
+            [
+              121.48645163,
+              31.23641248
+            ],
+            [
+              121.48643553,
+              31.23638038
+            ],
+            [
+              121.4864409,
+              31.23636662
+            ],
+            [
+              121.48636043,
+              31.2363391
+            ],
+            [
+              121.48586154,
+              31.23619232
+            ],
+            [
+              121.48577571,
+              31.23639414
+            ],
+            [
+              121.48584008,
+              31.23641707
+            ]
+          ]
+        ]
+      }
+    },
+    "raw_feature_canonical_sha256": "2689bd62b1276da28d8e111af2e3e00aa49f0bc93e934fba30bb950d1cfe9b48",
+    "raw_macro_source_file": {
+      "project_relative_path": "data/fullcity-raw/tiles/14/13720/6694.geojson.gz",
+      "bytes": 323910,
+      "sha256": "10b570be6c723a74ee70a152b02a8812a1159556a9f166a47e1384aa93619694"
+    },
+    "current_osm_overlap": {
+      "measurement_crs": "viewer-local Mercator metres, scaled by cos(anchor latitude)",
+      "osm_area_m2": 1314.1824380081796,
+      "city_source_area_m2": 1320.2142895931895,
+      "intersection_area_m2": 1307.2069468034456,
+      "union_area_m2": 1327.1897807979237,
+      "iou": 0.9849434992013997,
+      "fraction_of_osm_covered": 0.9946921439497348,
+      "fraction_of_source_covered": 0.9901475518843597,
+      "symmetric_difference_area_m2": 19.982833994477726,
+      "boundary_hausdorff_distance_m": 0.37632020757860307,
+      "note": "Same OSM way and version. Saved live OSM retains original node coordinates; the city footprint came through Overture MVT and its coordinates differ. Both polygons are retained; no snapping, buffer correction or bounding-box replacement is performed."
+    }
+  },
+  "current_city_detail": {
+    "configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+    "complete_city_feature_count": 1796419,
+    "complete_city_macro_count": 1708,
+    "owner_macro_id": "14-13720-6694",
+    "feature_local_id": 810,
+    "feature_id_base": 1,
+    "near_owner_id": "14-13720-6694-3_-3-s1-s1",
+    "far_file": "macros/14-13720-6694/far.glb",
+    "near_file": "macros/14-13720-6694/near/3_-3-s1-s1.glb.gz",
+    "near_asset_sha256": "83019a631b04516a73f43ba0c036a5dfa209f9f5ae2fd72ccca13d2e79f79a70",
+    "near_asset_size_bytes": 85665,
+    "feature_table_source_file": {
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/feature-table.json.gz",
+      "bytes": 479013,
+      "sha256": "605bcf6278ae2518db7f3128a407a02e644c94b1dd50bfc83e3de331a2275d77"
+    },
+    "ready_source_file": {
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/READY.json",
+      "bytes": 1352332,
+      "sha256": "0c46fd8ec4ca79547de1ca77bc263c301a2d576fc1d131b1f805049604e5ce2d"
+    },
+    "ownership_source_file": {
+      "project_relative_path": "assets/city-detail/macros/14-13720-6694/ownership.json.gz",
+      "bytes": 15616,
+      "sha256": "f5882afabeab798643cf862bae74869844941038dff1f3ff4077739b6a0b807a"
+    },
+    "geometry_exactly_equals_raw_source": true,
+    "frozen_effective_feature": {
+      "appearance_accuracy": "inferred module layout; no individual facade photograph",
+      "base": 0,
+      "family": "office",
+      "family_basis": "source class/subtype where available, otherwise explicit height/footprint-scale inference",
+      "family_is_inferred": true,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              121.48584008,
+              31.23641707
+            ],
+            [
+              121.48585618,
+              31.23638496
+            ],
+            [
+              121.4860332,
+              31.23644001
+            ],
+            [
+              121.48601711,
+              31.23647211
+            ],
+            [
+              121.4861083,
+              31.23649963
+            ],
+            [
+              121.4861244,
+              31.23646294
+            ],
+            [
+              121.48625314,
+              31.23650422
+            ],
+            [
+              121.48623705,
+              31.23654091
+            ],
+            [
+              121.48633361,
+              31.23656385
+            ],
+            [
+              121.48645163,
+              31.23641248
+            ],
+            [
+              121.48643553,
+              31.23638038
+            ],
+            [
+              121.4864409,
+              31.23636662
+            ],
+            [
+              121.48636043,
+              31.2363391
+            ],
+            [
+              121.48586154,
+              31.23619232
+            ],
+            [
+              121.48577571,
+              31.23639414
+            ],
+            [
+              121.48584008,
+              31.23641707
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "height": 22.400000000000002,
+      "height_provenance": {},
+      "height_quality": "floor_estimate",
+      "key": "building:480cfef1-55ad-4830-9cfc-b41459f0c76b",
+      "localId": 810,
+      "properties": {
+        "@geometry_source": "OpenStreetMap",
+        "@name": "外滩五号",
+        "class": "commercial",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "fragment_count": 1,
+        "has_parts": false,
+        "id": "480cfef1-55ad-4830-9cfc-b41459f0c76b",
+        "is_underground": false,
+        "names": "{\"common\":{\"ko\":\"파이브 온 더 번드\",\"en\":\"Five on the Bund\",\"zh\":\"外滩五号\",\"zh-Hans\":\"外滩五号\",\"zh-Hant\":\"外灘五號\"},\"primary\":\"外滩五号\"}",
+        "num_floors": 7,
+        "renderable": true,
+        "source_layer": "building",
+        "sources": [
+          {
+            "dataset": "OpenStreetMap",
+            "license": "ODbL-1.0",
+            "property": "",
+            "provider": "osm",
+            "record_id": "w178408821@10",
+            "resource": "planet",
+            "update_time": "2023-08-13T13:20:09.000Z",
+            "version": "2026-09-06T00:00:00.000Z"
+          }
+        ],
+        "subtype": "commercial",
+        "version": 2
+      },
+      "residual": false,
+      "roof": null
+    }
+  },
+  "existing_height": {
+    "base_m": 0,
+    "height_m": 22.400000000000002,
+    "height_quality": "floor_estimate",
+    "height_provenance": {},
+    "height_is_measured": false,
+    "note": "Current source-floor-derived LoD height retained as a documented baseline only; not a measured facade or roof elevation."
+  },
+  "parts": [],
+  "parts_audit": {
+    "source_has_parts": false,
+    "raw_linked_parts": 0,
+    "saved_osm_overlapping_parts": 0,
+    "scanned_raw_macros": [
+      "14-13719-6693",
+      "14-13719-6694",
+      "14-13719-6695",
+      "14-13720-6693",
+      "14-13720-6694",
+      "14-13720-6695",
+      "14-13721-6693",
+      "14-13721-6694",
+      "14-13721-6695"
+    ],
+    "scope": "Saved source parent flag plus linked/overlapping parts in the nine surrounding raw owner tiles and saved OSM extract; no claim of real-world absence of roof subdivisions."
+  },
+  "replacement": {
+    "building_ids": [
+      "480cfef1-55ad-4830-9cfc-b41459f0c76b"
+    ],
+    "building_part_ids": [],
+    "only_exact_ids": true,
+    "do_not_delete_nearby_buildings_by_radius": true,
+    "additional_overlap_candidates": [],
+    "touches_qualified_source_roof": false,
+    "applied": false
+  },
+  "source_road_elements": [
+    {
+      "type": "way",
+      "id": 1201643770,
+      "version": 3,
+      "timestamp": "2025-09-01T23:40:02Z",
+      "tags": {
+        "alt_name": "外滩",
+        "alt_name:en": "The Bund",
+        "bicycle": "no",
+        "highway": "secondary",
+        "lanes": "3",
+        "name": "中山东一路",
+        "name:en": "East Zhongshan No. 1 Road",
+        "name:zh": "中山东一路",
+        "name:zh-Hans": "中山东一路",
+        "name:zh-Hant": "中山東一路",
+        "oneway": "yes"
+      },
+      "nodes": [
+        476671870,
+        13113187951,
+        1315785556,
+        1315785483,
+        6975721362,
+        75349972,
+        6975721358,
+        13113187954,
+        78597884,
+        78597885,
+        1315785403,
+        78597886,
+        600142943,
+        1888323015
+      ],
+      "geometry": [
+        {
+          "lat": 31.2376051,
+          "lon": 121.4859802
+        },
+        {
+          "lat": 31.2374146,
+          "lon": 121.4860625
+        },
+        {
+          "lat": 31.2372947,
+          "lon": 121.4861298
+        },
+        {
+          "lat": 31.2370036,
+          "lon": 121.4863079
+        },
+        {
+          "lat": 31.2364906,
+          "lon": 121.4866545
+        },
+        {
+          "lat": 31.2364184,
+          "lon": 121.486706
+        },
+        {
+          "lat": 31.2363062,
+          "lon": 121.4867782
+        },
+        {
+          "lat": 31.2361457,
+          "lon": 121.4868788
+        },
+        {
+          "lat": 31.2360088,
+          "lon": 121.4869565
+        },
+        {
+          "lat": 31.2358467,
+          "lon": 121.4870403
+        },
+        {
+          "lat": 31.2356662,
+          "lon": 121.4871251
+        },
+        {
+          "lat": 31.2354306,
+          "lon": 121.4872448
+        },
+        {
+          "lat": 31.2353577,
+          "lon": 121.487281
+        },
+        {
+          "lat": 31.2352187,
+          "lon": 121.4873467
+        }
+      ],
+      "missing_nodes": []
+    }
+  ],
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors; © Overture Maps Foundation",
+  "limitations": [
+    "Map footprint is a source outline, not a measured facade/laser survey.",
+    "No windows, entrances, cornice heights or roof details are established by this geometry freeze.",
+    "No existing source geometry, height, model or exclusion list has been modified."
+  ]
+}

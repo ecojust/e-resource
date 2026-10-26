@@ -1,0 +1,164 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13706-6691--1_3",
+      "baseline_sha256": "4d4b611fb7d13abffa930c9d48bcfc2d50037c377afd83021925b2558f3640d6",
+      "override_sha256": "a93f437de60f7c6f2fbf3f972ffee11d516d41c9eaf6ff83c8af1bd002a40e78",
+      "triangles": 46978,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 424,
+        "extra": 424,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 192,
+        "extra": 192,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 735,
+          "key": "building:ce6ddc72-f2b0-41ba-8a64-d9a19267c53a",
+          "triangles": 2424,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 797,
+          "key": "building:e0204180-2da3-4346-b19a-a1c5fec394de",
+          "triangles": 5046,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 870,
+          "key": "building:f2ea4f7f-e553-411f-8fc0-d3ffe0876331",
+          "triangles": 39508,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_jiading-shanghai-auto-museum",
+          "triangles": 39508,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 46978,
+        "nonidentical_normal_triangles": 424,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 2.0633045827445073e-8,
+        "max_direction_difference_degrees": 0.000001497675545250378,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          735,
+          797
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13706-6691--1_3",
+    "target_group": null,
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 46978,
+      "nonidentical_normal_triangles": 642,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.003176493722113566,
+      "max_direction_difference_degrees": 0.18456426895830247,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13706-6691--1_3",
+      "target_group": null,
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 46978,
+        "nonidentical_normal_triangles": 642,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.003176493722113566,
+        "max_direction_difference_degrees": 0.18456426895830247,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

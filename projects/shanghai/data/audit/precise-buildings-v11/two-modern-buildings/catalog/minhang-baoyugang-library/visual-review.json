@@ -1,0 +1,58 @@
+{
+  "reviewer": "root",
+  "final": true,
+  "passed": true,
+  "actually_viewed": [
+    {
+      "file": "static-minhang-baoyugang-library-loaded.png",
+      "bytes": 312082,
+      "sha256": "f1b4206542ae4cb21fc71e7643f4e1f03985a85797337f118f2f200e63705b42",
+      "actually_viewed": true,
+      "observation": "Detailed Library facade, entrance glazing, columns, upper terrace railing and avatar visible. Preserved generic foreground neighbors obscure portions of the left facade; this is not a full-building view or a claim that neighbors are detailed. Actual catalog source Overture; separate static11 covers forced OSM."
+    },
+    {
+      "file": "static-minhang-baoyugang-library-returned.png",
+      "bytes": 312088,
+      "sha256": "48e904d56f0ccf245e22014396b7041635fadb063fabd00260a32f2aaaf8aa1c",
+      "actually_viewed": true,
+      "observation": "Static catalog re-entry restores the detailed Library entrance and facade, with avatar and retained foreground neighbors. Left facade remains partly occluded by independent coarse neighbors, matching the initial view."
+    },
+    {
+      "file": "dynamic-minhang-baoyugang-library-loaded.png",
+      "bytes": 312088,
+      "sha256": "11b09c2ea45d301fdd8ade801239bfd59fd64b51221ea36333343e7d4d44a69a",
+      "actually_viewed": true,
+      "observation": "Actual dynamic-only catalog load restores the Library detailed facade, tall glazed entrance and column layout, with retained foreground neighbors and avatar. No obvious missing target facade; left side remains partially occluded by preserved neighbors."
+    },
+    {
+      "file": "dynamic-minhang-baoyugang-library-returned.png",
+      "bytes": 312067,
+      "sha256": "69443f8e233175c26655dc308a1478ae9e7415603d7f5d1db5bc1214f3feb262",
+      "actually_viewed": true,
+      "observation": "Dynamic catalog return restores the same detailed Library entrance, windows, columns, terrace railings and avatar after unload; preserved coarse foreground neighbors remain in their prior positions."
+    },
+    {
+      "file": "dynamic-minhang-baoyugang-library-index-hash-rejected-baseline-visible.png",
+      "bytes": 283496,
+      "sha256": "f844b0d323bb802c607b6fef3182157f626099fbba155f4486d10319529ed7ba",
+      "actually_viewed": true,
+      "observation": "Deliberately corrupted catalog index rejects the detailed Library. The generic target baseline and independent neighbors remain visible with the avatar. This is expected failure recovery, not an accepted reconstruction image."
+    }
+  ],
+  "schema": "root-modern-catalog-visual-review-v11",
+  "target_ids": [
+    "minhang-baoyugang-library"
+  ],
+  "macro_id": "14-13718-6705",
+  "browser_report_sha256": "a2f1ddf51b9b12e80dada046bcc6b0a1e6b1f81251cb8c2f4f79e17745deb6c5",
+  "inputs_sha256": "441bddbc81d004b75600ae82927da296d10c1f712b169f146b7fa71c1931bd7a",
+  "runtime_baseline_sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39",
+  "finished_utc": "2026-10-26T23:12:31.069925+00:00",
+  "scope": "Root actually viewed all five images from the completed Library single-browser catalog run. Static adoption/reuse/unload/return, dynamic load/disposal/new-object return, and corrupt-index zero-model-request baseline recovery passed their actual tests. Actual building source is Overture; inactive OSM component-null observations are preserved without claiming active OSM coverage. Separate shared static11 contains the forced-OSM component checks.",
+  "limitations": [
+    "Only the selected Library macro and seven retained neighbors are covered, not every building or ground route.",
+    "Generic foreground neighbors obscure part of the Library left facade; these five views do not establish a full unobstructed exterior reconstruction or detailed neighbors.",
+    "Model dimensions and unseen details remain estimates; no full interior, collision-free route or hardware FPS claim.",
+    "The intentionally rejected-index picture shows the generic baseline, not the accepted detailed model."
+  ]
+}

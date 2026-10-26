@@ -1,0 +1,333 @@
+--- frozen-v1/README.md
++++ per-model-v2/README.md
+@@ -1,10 +1,10 @@
+ # 两栋现代建筑的浏览器 QA 准备
+ 
+-此目录只有工具和 pending 输入。没有运行浏览器、生成实际 expectations、观察 MVT、解码模型或接受建筑。固定静态顺序为 `jiading-shanghai-auto-museum`、`minhang-baoyugang-library`，29 条导航；源 registry 为 15 owners / 9 macros / 13 near。Museum 保留 735、797；Library 保留 35、60、299、333、375、466、947。候选 ordinary catalog 仍为 8 records / 6 macros；共享静态检查后才成为 10 / 8。
++此目录只有冻结工具和 pending 模型输入。没有运行浏览器、生成实际 expectations、观察 MVT、解码模型或接受建筑。固定静态顺序为 `jiading-shanghai-auto-museum`、`minhang-baoyugang-library`，29 条导航；源 registry 为 15 owners / 9 macros / 13 near。Museum 保留 735、797；Library 保留 35、60、299、333、375、466、947。候选 ordinary catalog 仍为 8 records / 6 macros；共享静态检查后才成为 10 / 8。
+ 
+ 每栋完整视图、斜向细节、远处 LOD、返回各一图，最后 owner 退出、返回、城市清单重置三图，总计 11 图。最后三图的全局动作中，两张返回/重置近图仅归属最后的 Library，不能充当 Museum 证据。之后每个新宏独立执行 static adoption、dynamic only、bad index 三阶段和五张图；导航计数依次 29 / 28 / 28。原 owner、邻居、模型字节、卸载释放、对象复用、错误和源组件门槛保留。
+ 
+-`model-inputs.pending.json` 和 `osm-evidence-set.pending.json` 不可用于实际 profile。真实输入必须绑定两栋的现代 registration、input-lock、source delivery、package、decoded、三图 root native review、当前 raw/source 导航和独立实际 MVT fixture。所选工具冻结来自 `reviewed-modern-tools.json`，与已冻 app 工具相同；换成另一模型/工具修订需要新的显式受审 QA 版本。private 参考像素不由此工具打包。
++`model-inputs.pending.json` 和 `osm-evidence-set.pending.json` 不可用于实际 profile。真实输入同时绑定 ready app spec、其真实 dependencies、逐建筑工具选择，再绑定两栋的现代 registration、input-lock、source delivery、package、decoded、三图 root native review、当前 raw/source 导航和独立实际 MVT fixture。本版使用 `reviewed-modern-tools.json` 的逐建筑 `selected_freezes`：Library 保留 f1f714…，Museum 必须给出独立受审的实际工具冻结。旧全局 `selected_freeze` / `modern_tool_source_freeze` dependencies 字段被拒绝；任一选项为 null 或 pending，均不能生成实际 profile。本版与 NEW app 的共享 `reviewed_tool_selection.py` 保持原字节一致。private 参考像素不由此工具打包。
+ 
+ 准备真实输入与 profile（均须新输出路径）：
+ 
+@@ -29,4 +29,8 @@
+ 
+ `capture_journal.py` 使每次已返回的 before/after OSM 原始值先写报告，再执行通过断言；失败值也保留。每张截图返回后立刻记录文件名、bytes/SHA，然后才进行 after 观察。成功记录仍含原 `osm_capture_before` / `osm_capture_after` 字段；未完成条目保留 `capture_completed=false`，不能参与通过。错误图单独保留。只观察有返回值的调用，不制造未完成观测。
+ 
+-`source-copy-baseline.json` 和 `source-reuse.json` 绑定原始及修改后源码，`adaptation.patch` 展示差分。16 个 CPU 小控制只验证 pending 拒绝、固定目标/邻居、原 API、runtime 绑定及失败/截图保存顺序，不是浏览器或模型 PASS。此工具不运行 Node、Blender、Git 或写入 MAIN。实际模型、MVT、浏览器和 root 审核须由协调者依次执行并保留失败记录。所有单文件严格小于 100,000,000 字节。
++`parent-candidate-baseline.json` 保留原 QA 67ad95… / 65c6db… 的冻结身份；新差分记录将单独生成，不改原版本。16 个继承控制、15 个逐模型选择控制和 11 个 Museum transfer 控制只验证 pending/缺省/全局回退/对调工具选择拒绝、实际依赖字节绑定、固定目标/邻居、原 API、runtime 绑定及失败/截图保存顺序，不是浏览器或模型 PASS。此工具不运行 Node、Blender、Git 或写入 MAIN。实际模型、MVT、浏览器和 root 审核须由协调者依次执行并保留失败记录。所有单文件严格小于 100,000,000 字节。
++
++最终工具选择已分别绑定：Museum 8fc0c7aa…cfc2（112依赖），Library f1f71403…cd26（67依赖）。模型输入仍 pending；工具冻结不代表模型或浏览器验收。已取得 `osm-observation/selected-fixture-set-v2/fixture-set.json` 的实际身份（SHA 1d5a58d1…aa871），仅代表观察输入身份，不代表遮蔽、导航或浏览器通过。`tool-selection.pending-template.json` 保留这种待定状态供负控；它永远不能作为正式受审选择。
++
++Museum 专属 transfer gate 与 app 保持原字节一致：四类实际原始补充证明通过真实解码同一套 finite suite 转移到 raw/web/LOD，每类保留 12,378 件、0.05° 法向策略、无省略。它核对现有报告链，不在浏览器准备阶段重做网格计算；Library 原三类补充证明分支保持不变。
+--- frozen-v1/model-inputs.pending.json
++++ per-model-v2/model-inputs.pending.json
+@@ -1,16 +1,20 @@
+ {
+   "schema": "modern-browser-model-inputs-v11",
+-  "status": "PENDING_ACTUAL_TWO_MODEL_AND_MVT_EVIDENCE",
++  "status": "PENDING_ACTUAL_TWO_MODEL_EVIDENCE",
+   "targets": [
+     "jiading-shanghai-auto-museum",
+     "minhang-baoyugang-library"
+   ],
+   "runtime_baseline": {
+-    "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation/runtime-baseline.json",
++    "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation-per-model-v2/runtime-baseline.json",
+     "bytes": 5267,
+     "sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39"
+   },
+-  "osm_evidence_set": null,
++  "osm_evidence_set": {
++    "source": "/workspace/shanghai_expansion/building-by-building-v11/osm-observation/selected-fixture-set-v2/fixture-set.json",
++    "bytes": 1070,
++    "sha256": "1d5a58d1e6cdac9d885b2e001e4397de556caea064587f5d2b7452c8f2caa871"
++  },
+   "models": {
+     "jiading-shanghai-auto-museum": {
+       "registration_input": null,
+@@ -22,9 +26,9 @@
+       "modern_registration_input_lock": null,
+       "prebrowser_summary": null,
+       "modern_tool_source_freeze": {
+-        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/toolchain/tool-source-freeze.json",
+-        "bytes": 18227,
+-        "sha256": "f1f71403e3191c838e71ec0af4c26cab48720d4aaeb8f11d0052f938ccd7cd26"
++        "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tool-source-freeze.json",
++        "bytes": 30708,
++        "sha256": "8fc0c7aa90d8b0616ee436517dae9b5839e2ba3db7567c98e72faa6dabc6cfc2"
+       }
+     },
+     "minhang-baoyugang-library": {
+@@ -45,5 +49,23 @@
+   },
+   "candidate_ready": false,
+   "browser_accepted": false,
+-  "scope": "Template only. Bind actual complete modern outputs, current raw/native/decoded evidence and real MVT fixtures in a NEW ready file; source ID is never inferred."
++  "scope": "Tool selections and actual MVT fixture identity are bound. Standalone current model/package/decoded/registrar inputs remain null; no actual browser profile or acceptance is created.",
++  "modern_tool_source_freezes": {
++    "jiading-shanghai-auto-museum": {
++      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tool-source-freeze.json",
++      "bytes": 30708,
++      "sha256": "8fc0c7aa90d8b0616ee436517dae9b5839e2ba3db7567c98e72faa6dabc6cfc2"
++    },
++    "minhang-baoyugang-library": {
++      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/toolchain/tool-source-freeze.json",
++      "bytes": 18227,
++      "sha256": "f1f71403e3191c838e71ec0af4c26cab48720d4aaeb8f11d0052f938ccd7cd26"
++    }
++  },
++  "reviewed_tool_selection": {
++    "source": "/workspace/shanghai_expansion/building-by-building-v11/browser-review-preparation-per-model-v2/reviewed-modern-tools.json",
++    "bytes": 1024,
++    "sha256": "f35987b81915995450c6e81e2c18a6034ae7b1bcb2bffd882310fde93d77b020"
++  },
++  "integration_dependencies": null
+ }
+--- frozen-v1/modern_inputs.py
++++ per-model-v2/modern_inputs.py
+@@ -3,6 +3,7 @@
+ import hashlib,json
+ from modern_model_gate import actual,read,identity,verify_modern_model
+ from osm_evidence_set import read_fixture_set
++from reviewed_tool_selection import load_selection,check_dependencies,check_model
+ HERE=Path(__file__).resolve().parent
+ IDS=['jiading-shanghai-auto-museum','minhang-baoyugang-library']
+ CONFIG={IDS[0]:{'macro':'14-13706-6691','local':870,'neighbors':[735,797]},IDS[1]:{'macro':'14-13718-6705','local':201,'neighbors':[35,60,299,333,375,466,947]}}
+@@ -14,6 +15,19 @@
+  return {'bytes':path.stat().st_size,'sha256':h}
+ def descriptor(path):return {'source':str(Path(path).resolve()),**meta(path)}
+ def runtime_reference():return json.loads((HERE/'runtime-reference.json').read_text())
++def selected_tools():return load_selection(HERE/'reviewed-modern-tools.json',IDS,actual=actual)
++def selection_descriptor():return descriptor(HERE/'reviewed-modern-tools.json')
++def check_integration_selection(doc,selected):
++ need(doc.get('reviewed_tool_selection')==selection_descriptor(),'QA reviewed per-building selection identity differs')
++ check_dependencies(doc,selected)
++ integration=read(doc.get('integration_spec'));dependencies=read(doc.get('integration_dependencies'))
++ need(integration.get('schema')=='two-modern-app-input-v11' and integration.get('status')=='READY_FOR_CANDIDATE','Actual ready integration spec required')
++ need(dependencies.get('schema')=='two-modern-app-dependencies-v11' and dependencies.get('status')=='READY_ACTUAL_BOUND_TOOLS','Actual ready integration dependencies required')
++ need(integration.get('dependencies')==doc.get('integration_dependencies'),'Integration dependency identity differs')
++ check_dependencies(dependencies,selected)
++ for field in ('models','runtime_baseline','osm_evidence_set'):
++  need(integration.get(field)==doc.get(field),'Model inputs changed integration declaration: '+field)
++ return dependencies
+ def check_runtime_binding(value):
+  need(value==runtime_reference(),'Exact current31-file runtime baseline must be bound')
+  doc=read(value)
+@@ -41,13 +55,12 @@
+  check_runtime_binding(doc.get('runtime_baseline'))
+  if project is not None:check_runtime_tree(project,doc['runtime_baseline'])
+  fixture=actual(doc.get('osm_evidence_set'));evidence,binding=read_fixture_set(fixture,IDS)
+- selected=json.loads((HERE/'reviewed-modern-tools.json').read_text())['selected_freeze']
+- read(selected)
++ selected=selected_tools();check_integration_selection(doc,selected)
+  if records is not None:need(set(IDS).issubset(records),'Actual candidate records missing')
+  outputs={}
+  for ident in IDS:
+   model=doc['models'][ident]
+-  need(model.get('modern_tool_source_freeze')==selected,'Model uses another unreviewed modern toolchain')
++  check_model(model,ident,selected)
+   declarations=read(model.get('registration_input'));need(len(declarations.get('buildings',[]))==1 and declarations['buildings'][0]['id']==ident,'Actual standalone modern registration required')
+   declaration=declarations['buildings'][0]
+   metadata=read(model.get('model_metadata'));package=read(model.get('package'));nav=read(model.get('navigation_input'))
+@@ -86,7 +99,7 @@
+    # actual profile or catalogue that includes selected records.
+    need(False,'Current selected records required for model evidence validation')
+   outputs[ident]={'registration_input':model['registration_input'],'input_lock':model['modern_registration_input_lock'],'package':model['package'],'decoded':request['decoded_report'],'native_report':request['native_report'],'root_native_review':request['root_native_review'],'source_freeze':request['source_freeze'],'summary':model['prebrowser_summary']}
+- return {'model_inputs':descriptor(path),'runtime_baseline':doc['runtime_baseline'],'osm_evidence_set':binding['set'],'osm_evidence_by_target':binding['targets'],'models':outputs,'browser_accepted':False,'model_evidence_only':True}
++ return {'model_inputs':descriptor(path),'reviewed_tool_selection':selection_descriptor(),'modern_tool_source_freezes':selected,'integration_dependencies':doc['integration_dependencies'],'runtime_baseline':doc['runtime_baseline'],'osm_evidence_set':binding['set'],'osm_evidence_by_target':binding['targets'],'models':outputs,'browser_accepted':False,'model_evidence_only':True}
+ def validate_profile_binding(profile,records=None):
+  need(profile.get('modern_contract')=={'id':'modern-app29-v11','target_order':IDS,'navigation_count':29,'registry_counts':[15,9,13]},'Missing modern app29 profile contract')
+  need(profile.get('expected_record_count')==29 and list(profile.get('targets',{}))==IDS,'Modern profile identity/count/order differs')
+--- frozen-v1/modern_model_gate.py
++++ per-model-v2/modern_model_gate.py
+@@ -35,6 +35,56 @@
+         return values
+     need(file_set(delivery) == file_set(public),
+          'Public source publication must exactly match the licensed modern registrar delivery file/bytes/SHA set')
++
++
++def check_museum_supplement_transfer(transfer, summary_transfer, request, target, package, decoded, suite):
++    need(transfer == summary_transfer and isinstance(transfer, dict)
++         and transfer.get('schema') == 'modern-museum-supplement-delivery-transfer-v11',
++         'Actual Museum supplemental transfer must be identical in metadata and summary')
++    for flag in ('bounded_revision_proof_bound_as_raw_history', 'finite_area_pane_seating_preserved',
++                 'repair_envelope_and_slot_clearance_preserved', 'all_current_parts_preserved'):
++        need(transfer.get(flag) is True, 'Actual Museum supplemental geometry missing: ' + flag)
++    names = {'bounded_revision_preservation', 'repair_envelope', 'finite_area_pane_seating', 'all_opaque_slot_rays'}
++    proofs = transfer.get('raw_proofs')
++    need(isinstance(proofs, dict) and set(proofs) == names
++         and proofs == target.get('actual', {}).get('geometry_supplements'),
++         'Exact four current Museum raw supplemental proof descriptors required')
++    need(transfer.get('source_raw') == package['assets']['raw']
++         and transfer.get('source_freeze') == request['source_freeze']
++         and transfer.get('source_structure_report') == target['actual']['source_structure_report']
++         and transfer.get('actual_decoded_package_report') == request['decoded_report']
++         and transfer.get('actual_decoded_finite_suite') == decoded['finite_actual_decoded_report'],
++         'Museum supplemental raw/source/structure/decoded bindings differ')
++    need(target.get('id') == 'jiading-shanghai-auto-museum'
++         and target.get('lod_policy', {}).get('mode') == 'compression-only'
++         and target['actual'].get('authored_lod') is None
++         and decoded.get('authored_lod') is None and decoded.get('passed') is True
++         and suite.get('schema') == 'modern-actual-decoded-finite-suite-v11'
++         and suite.get('passed') is True and suite.get('building_id') == target['id']
++         and suite.get('raw_sha256') == package['assets']['raw']['sha256']
++         and set(suite.get('roles', {})) == {'raw', 'web', 'lod'},
++         'Actual Museum original single-suite compression-only roles required')
++    roles = transfer.get('roles')
++    need(isinstance(roles, dict) and set(roles) == {'raw', 'web', 'lod'},
++         'Museum transfer must cover exactly raw/web/LOD')
++    for role, row in roles.items():
++        finite = suite['roles'][role]
++        need(row.get('current_asset') == package['assets'][role]
++             and row.get('actual_decoded_finite_report') == finite.get('finite_report')
++             and row.get('actual_decoded_array_manifest') == finite.get('array_manifest')
++             and finite.get('passed') is True
++             and identity(finite['current_asset']) == identity(package['assets'][role])
++             and type(row.get('required_retained_part_count')) is int
++             and row['required_retained_part_count'] == 12378
++             and row.get('exact_oriented_positions_preserved') is True
++             and row.get('actual_loaded_materials_preserved') is True
++             and type(row.get('normal_policy_degrees')) in (int, float)
++             and row['normal_policy_degrees'] == .05
++             and row.get('omitted_source_part_keys') == []
++             and row.get('raw_supplement_proofs') == proofs,
++             'Museum actual delivery role lost protected geometry or evidence: ' + role)
++    need(transfer.get('native_accepted') is False and transfer.get('browser_accepted') is False,
++         'Museum geometric proof transfer cannot assert native/browser acceptance')
+ 
+ 
+ def verify_modern_model(model, ident, declaration, row, nav, package, metadata):
+@@ -89,6 +139,12 @@
+          and request.get('package_record') == model['package'], 'Registration request inputs differ')
+     public = read(model.get('model_source_delivery_manifest'))
+     check_public_set(delivery, public)
++    if ident == 'jiading-shanghai-auto-museum':
++        target = read(request.get('target_spec'))
++        decoded = read(request.get('decoded_report'))
++        suite = read(decoded.get('finite_actual_decoded_report'))
++        check_museum_supplement_transfer(metadata.get('geometry_supplement_transfer'),
++            summary.get('geometry_supplement_transfer'), request, target, package, decoded, suite)
+     if ident == 'minhang-baoyugang-library':
+         transfer = metadata.get('geometry_supplement_transfer') or {}
+         need(transfer == summary.get('geometry_supplement_transfer')
+--- frozen-v1/prepare_model_inputs.py
++++ per-model-v2/prepare_model_inputs.py
+@@ -2,16 +2,21 @@
+ """Bind actual ready app inputs for later browser profiles; no browser/network."""
+ from pathlib import Path
+ import argparse,json
+-from modern_inputs import IDS,load_model_inputs,descriptor,validate_registry,need
++from modern_inputs import IDS,load_model_inputs,descriptor,validate_registry,need,selected_tools,selection_descriptor,read
++from reviewed_tool_selection import check_dependencies,check_model
+ 
+ def prepare(spec_path,project,output):
+  spec=json.loads(Path(spec_path).read_bytes())
+  need(spec.get('schema')=='two-modern-app-input-v11' and spec.get('status')=='READY_FOR_CANDIDATE','Integration spec remains pending')
+  need(set(spec.get('models',{}))==set(IDS),'Exact modern model set required')
++ selected=selected_tools();dependencies=read(spec.get('dependencies'))
++ need(dependencies.get('schema')=='two-modern-app-dependencies-v11' and dependencies.get('status')=='READY_ACTUAL_BOUND_TOOLS','Actual ready per-building tool dependencies required')
++ check_dependencies(dependencies,selected)
++ for ident in IDS:check_model(spec['models'][ident],ident,selected)
+  output=Path(output);need(not output.exists() and not output.is_symlink(),'Preserve previous model input declarations')
+  project=Path(project);nav=json.loads((project/'data/landmarks.json').read_bytes());registry=json.loads((project/'data/precise-buildings-v6.json').read_bytes())
+  need(len(nav)==29 and len({r['id'] for r in nav})==29,'Actual candidate29 metadata required');validate_registry(registry)
+- result={'schema':'modern-browser-model-inputs-v11','status':'READY_FOR_PROFILE','targets':IDS,'runtime_baseline':spec['runtime_baseline'],'osm_evidence_set':spec.get('osm_evidence_set'),'models':spec['models'],'integration_spec':descriptor(spec_path),'browser_accepted':False,'scope':'Actual standalone model/package/decoded/native and fixture inputs only. No browser, source visibility, ground or final navigation acceptance.'}
++ result={'schema':'modern-browser-model-inputs-v11','status':'READY_FOR_PROFILE','targets':IDS,'reviewed_tool_selection':selection_descriptor(),'modern_tool_source_freezes':selected,'integration_dependencies':spec['dependencies'],'runtime_baseline':spec['runtime_baseline'],'osm_evidence_set':spec.get('osm_evidence_set'),'models':spec['models'],'integration_spec':descriptor(spec_path),'browser_accepted':False,'scope':'Actual standalone model/package/decoded/native and fixture inputs only. No browser, source visibility, ground or final navigation acceptance.'}
+  output.parent.mkdir(parents=True,exist_ok=True);tmp=output.with_name(output.name+'.checking')
+  need(not tmp.exists(),'Preserve earlier input validation attempt')
+  tmp.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+--- frozen-v1/reviewed-modern-tools.json
++++ per-model-v2/reviewed-modern-tools.json
+@@ -1,9 +1,17 @@
+ {
+-  "schema": "app-selected-modern-registrar-tools-v11",
+-  "selected_freeze": {
+-    "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/toolchain/tool-source-freeze.json",
+-    "bytes": 18227,
+-    "sha256": "f1f71403e3191c838e71ec0af4c26cab48720d4aaeb8f11d0052f938ccd7cd26"
++  "schema": "app-selected-modern-registrar-tools-per-model-v11",
++  "status": "FROZEN_REVIEWED_PER_MODEL",
++  "selected_freezes": {
++    "jiading-shanghai-auto-museum": {
++      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-museum-v2-preparation/toolchain/tool-source-freeze.json",
++      "bytes": 30708,
++      "sha256": "8fc0c7aa90d8b0616ee436517dae9b5839e2ba3db7567c98e72faa6dabc6cfc2"
++    },
++    "minhang-baoyugang-library": {
++      "source": "/workspace/shanghai_expansion/building-by-building-v11/registration-evidence-revision-v2/toolchain/tool-source-freeze.json",
++      "bytes": 18227,
++      "sha256": "f1f71403e3191c838e71ec0af4c26cab48720d4aaeb8f11d0052f938ccd7cd26"
++    }
+   },
+-  "scope": "Current reviewed67-dependency modern source-layout plus Library3-supplement toolchain. Selecting another freeze requires a new explicit app-tool revision; it is not a spec override."
++  "scope": "Exact reviewed per-building tools: published Library f1f67 dependencies; Museum geometry-v2 exact59-source/four-supplement toolchain 8fc0 with112 dependencies. Original single-suite decoder/bridge/math retained. Actual model registration and browser acceptance are separate mandatory gates."
+ }
+--- frozen-v1/runtime-reference.json
++++ per-model-v2/runtime-reference.json
+@@ -1,5 +1,5 @@
+ {
+-  "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation/runtime-baseline.json",
++  "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation-per-model-v2/runtime-baseline.json",
+   "bytes": 5267,
+   "sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39"
+ }
+--- /dev/null
++++ per-model-v2/reviewed_tool_selection.py
+@@ -0,0 +1,53 @@
++"""Exact reviewed per-building selections; no fallback to another building's tools."""
++from pathlib import Path
++import json
++import re
++
++
++def need(value, message):
++    if not value:
++        raise ValueError(message)
++
++
++def validate_selection(document, targets):
++    need(document.get('schema') == 'app-selected-modern-registrar-tools-per-model-v11'
++         and document.get('status') == 'FROZEN_REVIEWED_PER_MODEL',
++         'Reviewed per-building modern tool selection remains pending or uses the old global schema')
++    selected = document.get('selected_freezes')
++    need(isinstance(selected, dict) and set(selected) == set(targets)
++         and len(targets) == len(set(targets)), 'Exact reviewed modern tool target set required')
++    need('selected_freeze' not in document, 'Global modern tool fallback is forbidden')
++    for ident, value in selected.items():
++        need(isinstance(value, dict) and set(value) == {'source', 'bytes', 'sha256'}
++             and isinstance(value['source'], str) and Path(value['source']).is_absolute()
++             and type(value['bytes']) is int and 0 < value['bytes'] < 100_000_000
++             and isinstance(value['sha256'], str) and re.fullmatch('[0-9a-f]{64}', value['sha256']),
++             'Actual reviewed modern tool descriptor required: ' + ident)
++    return selected
++
++
++def load_selection(path, targets, *, actual):
++    selected = validate_selection(json.loads(Path(path).read_bytes()), targets)
++    for ident, value in selected.items():
++        freeze = json.loads(actual(value).read_bytes())
++        need(freeze.get('schema') == 'modern-packaging-tool-source-freeze-v11'
++             and freeze.get('status') == 'frozen', 'Actual modern tool freeze required: ' + ident)
++        rows = freeze.get('files')
++        need(isinstance(rows, list) and rows, 'Frozen modern tool dependencies missing: ' + ident)
++        sources = []
++        for row in rows:
++            sources.append(str(actual(row).resolve()))
++        need(len(sources) == len(set(sources)), 'Duplicate modern tool dependency: ' + ident)
++    return selected
++
++
++def check_dependencies(dependencies, selected):
++    need('modern_tool_source_freeze' not in dependencies,
++         'Global modern dependency selection is forbidden')
++    need(dependencies.get('modern_tool_source_freezes') == selected,
++         'Ready dependencies selected an unreviewed per-building modern tool freeze')
++
++
++def check_model(model, ident, selected):
++    need(ident in selected and model.get('modern_tool_source_freeze') == selected[ident],
++         'Model package/registrar tool freeze differs from reviewed building selection: ' + ident)

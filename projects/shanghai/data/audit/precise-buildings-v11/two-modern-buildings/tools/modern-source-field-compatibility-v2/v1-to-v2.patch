@@ -1,0 +1,27 @@
+--- /workspace/shanghai_expansion/building-by-building-v11/museum-owner-field-compatibility-v1/generalize_precise_registration.py
++++ /workspace/shanghai_expansion/building-by-building-v11/modern-source-field-compatibility-v2/generalize_precise_registration.py
+@@ -146,6 +146,15 @@
+   out[stage]={'status':'passed','evidence_sha256':proof['sha256'],'evidence_bytes':proof['bytes'],'section':item.get('section'),'scope':text(doc.get('scope'),'review scope')}
+  return out,pending
+ 
++def underlying_source_license_id(geo,geometry_identity):
++ licence=geo.get('license')
++ if not isinstance(licence,dict):return None
++ underlying=licence.get('underlying_source',{})
++ if isinstance(underlying,dict):return underlying.get('id')
++ require(geo.get('id')=='minhang-baoyugang-library' and geometry_identity=={'bytes':86616,'sha256':'fe5a199b4b9cdbc97276b203b39f6f94e29ff9dec5625531cafdecb6b201e7e1'},'Unreviewed string source-licence interface')
++ require(underlying=='ODbL-1.0' and licence.get('url')=='https://opendatacommons.org/licenses/odbl/1-0/' and licence.get('attribution')=='© OpenStreetMap contributors','Frozen Library original source licence differs')
++ return underlying
++
+ def normalize(row,base,project,districts):
+  ident=row.get('id');require(isinstance(ident,str) and IDENT.fullmatch(ident),'Unsafe or missing building ID')
+  name=text(row.get('name'),'building name');district=row.get('district');require(isinstance(district,dict) and districts.get(district.get('id'))==district.get('name'),'District ID/name differs from explicit catalog')
+@@ -158,7 +167,7 @@
+  props=g['current_city_detail']['frozen_effective_feature'].get('properties',{})
+  if props.get('district_id'):require(str(props['district_id'])==district['id'],'Frozen feature district differs')
+  provenance={'provider_records':copy.deepcopy(g.get('source',{}).get('provider_records',[])),'frozen_license':copy.deepcopy(g.get('license')),'frozen_attribution':g.get('attribution')}
+- expected=g.get('license',{}).get('underlying_source',{}).get('id') if isinstance(g.get('license'),dict) else None
++ expected=underlying_source_license_id(g,gd)
+  if expected:require(any(v['id']==expected for v in source_lic),'Explicit licences omit the frozen underlying source licence')
+  assets={};copy_plan=[]
+  for role,desc in row.get('assets',{}).items():

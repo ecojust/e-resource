@@ -1,0 +1,204 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13718-6705--3_0",
+      "baseline_sha256": "ebb825d04933f2b6fed896acd7d9cef5c0a6ea0d82e3ba9f229373125f1fffa3",
+      "override_sha256": "eb8dcb6e522182b7aeabfa0d3a22e81ec6351fb1fd424b9093779e1c24283682",
+      "triangles": 111724,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 2062,
+        "extra": 2062,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 162,
+        "extra": 162,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 35,
+          "key": "building:09ad2a4a-c763-4231-a8ee-c9826ae95d63",
+          "triangles": 9352,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 60,
+          "key": "building:0ff11ee1-870d-4828-992a-4c456e450a3e",
+          "triangles": 1698,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 201,
+          "key": "building:346f3f3c-636f-4265-aff0-33d4b3f695b9",
+          "triangles": 35186,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 299,
+          "key": "building:506ef10f-028f-4db9-9af1-baa9218efd71",
+          "triangles": 13908,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 333,
+          "key": "building:5c194746-6e36-43d9-9c67-14043a1014d0",
+          "triangles": 7566,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 375,
+          "key": "building:6661528f-6017-493d-910e-df1187d33312",
+          "triangles": 14398,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 466,
+          "key": "building:7ca56b24-088f-4708-bd03-88bbf09b4f0c",
+          "triangles": 26928,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 947,
+          "key": "building:ff07331c-f576-4df1-b6ec-14d089f19b38",
+          "triangles": 2688,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_minhang-baoyugang-library",
+          "triangles": 35186,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 111724,
+        "nonidentical_normal_triangles": 2062,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 7.19579773544865e-9,
+        "max_direction_difference_degrees": 4.194723267745879e-7,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          35,
+          60,
+          299,
+          333,
+          375,
+          466,
+          947
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13718-6705--3_0",
+    "target_group": null,
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 111724,
+      "nonidentical_normal_triangles": 3532,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.0031071191707191387,
+      "max_direction_difference_degrees": 0.17856781856887027,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13718-6705--3_0",
+      "target_group": null,
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 111724,
+        "nonidentical_normal_triangles": 3532,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.0031071191707191387,
+        "max_direction_difference_degrees": 0.17856781856887027,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

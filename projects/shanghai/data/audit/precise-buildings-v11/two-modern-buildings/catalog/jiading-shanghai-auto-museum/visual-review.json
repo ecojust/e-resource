@@ -1,0 +1,58 @@
+{
+  "reviewer": "root",
+  "final": true,
+  "passed": true,
+  "actually_viewed": [
+    {
+      "file": "static-jiading-shanghai-auto-museum-loaded.png",
+      "bytes": 320003,
+      "sha256": "1a1ed64ce56145f9730bec6964d5231c67dac8ad98f89da35c5fb7dd9009504e",
+      "actually_viewed": true,
+      "observation": "Catalog static adoption shows coherent Museum facade, entry and avatar. Actual source is Overture with OSM inactive, so this view makes no active OSM component claim; forced OSM coverage is the separate static11 run."
+    },
+    {
+      "file": "static-jiading-shanghai-auto-museum-returned.png",
+      "bytes": 319912,
+      "sha256": "fb08ec1f2105caa797cdb7b3046c155372ce8ed789cf16f753c11ea7230e2b4b",
+      "actually_viewed": true,
+      "observation": "Static-adoption catalog return restores the same Museum facade/entry/avatar with no obvious duplicate source building or missing restored model."
+    },
+    {
+      "file": "dynamic-jiading-shanghai-auto-museum-loaded.png",
+      "bytes": 320007,
+      "sha256": "5f0398e8e6db44a5ed99a2ccfbcf2a74bf6d2349d02f218e71472a0d5c9b0dfd",
+      "actually_viewed": true,
+      "observation": "With the static target entry removed only in this test response, actual dynamic catalog load shows the same coherent Museum facade, sign/flags and avatar; no visible doubled target baseline building."
+    },
+    {
+      "file": "dynamic-jiading-shanghai-auto-museum-returned.png",
+      "bytes": 320073,
+      "sha256": "2d88360bf1fa2e58f2e85bd7a2351363c6afeecb9409fdf732f1bdb566003020",
+      "actually_viewed": true,
+      "observation": "Dynamic catalog re-entry restores the visible Museum facade, details and avatar after unload, with no obvious stale baseline overlap or missing model."
+    },
+    {
+      "file": "dynamic-jiading-shanghai-auto-museum-index-hash-rejected-baseline-visible.png",
+      "bytes": 161935,
+      "sha256": "64dbb850daa1f094d96d89b23d155b2e4f4117f109d30806f2d7ab0de6986166",
+      "actually_viewed": true,
+      "observation": "Deliberately corrupted dynamic index leaves the generic Museum baseline and surrounding context visible, with no detailed Museum loaded. This is the expected failure-recovery case, not a claim that the coarse building is the reconstruction."
+    }
+  ],
+  "schema": "root-modern-catalog-visual-review-v11",
+  "target_ids": [
+    "jiading-shanghai-auto-museum"
+  ],
+  "macro_id": "14-13706-6691",
+  "browser_report_sha256": "f9da4ffcac265bd6f9264a66dde02ea4cca50971c26e9ca4e9df037871bff44e",
+  "inputs_sha256": "e35b442db86680dd4e6ed7f95f02b91d2834ffbbd50bc00abb2d78a094de0065",
+  "runtime_baseline_sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39",
+  "finished_utc": "2026-10-26T23:00:39.806196+00:00",
+  "scope": "Root actually viewed all five images from the completed Museum single-browser catalog run. Static adoption/reuse/unload/return, dynamic load/disposal/new-object return, and corrupt-index zero-model-request baseline recovery passed their actual tests. Actual building source is Overture; OSM inactive/component-null states are preserved without claiming active OSM component coverage in this run. Separate shared static11 evidence contains the forced-OSM component checks.",
+  "limitations": [
+    "This catalog run does not retest every building, ground route, interior or hardware FPS.",
+    "Current active-source checks and two retained neighbors apply to the selected Museum macro only.",
+    "Geometry dimensions and photo reconstruction uncertainty remain as documented; Museum LOD is compression-only.",
+    "The intentionally rejected-index picture shows the generic baseline, not the accepted detailed model."
+  ]
+}

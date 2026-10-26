@@ -1,0 +1,141 @@
+{
+  "schema": "v11-owner-integration-preflight-v1",
+  "baseline": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/baseline-lock.json",
+    "bytes": 72611,
+    "sha256": "f3055b4366f9b1bf086a91121f217e859d88dd56798bb347b59ccec5f3a522dc"
+  },
+  "actual_baseline_and_source_checks_passed": true,
+  "existing_counts": {
+    "navigation": 27,
+    "ordinary_records": 8,
+    "catalog_macros": 6,
+    "owners": 13,
+    "owner_macros": 7,
+    "near": 11
+  },
+  "future_parsed_owner_count": 15,
+  "future_parsed_macro_count": 9,
+  "every_old13_boundary_exact": true,
+  "frozen_snapshot_pairs_checked": 108,
+  "prior_audited_registry": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/thirteen-targets/precise-buildings-v6.json",
+    "bytes": 43342,
+    "sha256": "b3bb2838bfb9bd9520b68a330047e69f25560b95483b7598e879fa03e4f8b194"
+  },
+  "prior_geometry_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/thirteen-targets/geometry-validation.json",
+    "bytes": 76062,
+    "sha256": "d85060391443c73ffaecdb9f11d36294cb306cfdb47f903ec07214103b5d452e"
+  },
+  "current_ordinary_catalog_descriptor": {
+    "bytes": 2576,
+    "file": "data/precise-buildings/catalog.json",
+    "sha256": "d05aec1b7ab870f62a276d94dd54550baf8fb662978fb250a98da68394d10f9f"
+  },
+  "prior_ordinary_catalog_descriptor": {
+    "bytes": 1880,
+    "file": "data/precise-buildings/catalog.json",
+    "sha256": "4da18d7f60bfea3448fbe848156dd3f41e99e65a12d7a981c0c284a9942c8651"
+  },
+  "catalog_policy": "Composer must preserve the actual current six-macro/eight-record catalog descriptor, not the historical prior four-macro descriptor.",
+  "gltfpack_entry": {
+    "file": "/workspace/shanghai_tools/node_modules/gltfpack/cli.js",
+    "bytes": 525,
+    "sha256": "c7f3a81fa93a3609847fb75817e4777c339bd5f94963bdbb9aa224a6fdb038ce"
+  },
+  "external_tool_lock": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/external-tool-lock.json",
+    "bytes": 1272,
+    "sha256": "ea90b6b438725b0308250810a7dd25dd5f1a6be22c6c464ab68da7ce6c3a17e1"
+  },
+  "generation_commands": [
+    {
+      "id": "jiading-shanghai-auto-museum",
+      "generate_near_argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/tools/build_precise_overrides.py",
+        "--project",
+        "/workspace/shanghai_project",
+        "--output",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fresh/jiading-shanghai-auto-museum",
+        "--geometry-input-root",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/inputs",
+        "--ids",
+        "jiading-shanghai-auto-museum",
+        "--asset-prefix",
+        "assets/city-overrides-v6/14-13706-6691",
+        "--gltfpack",
+        "/workspace/shanghai_tools/node_modules/.bin/gltfpack"
+      ],
+      "actual_geometry_decoder_argv": [
+        "node",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/tools/verify_override_geometry.mjs",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fresh/jiading-shanghai-auto-museum/geometry-comparison-input.json"
+      ],
+      "output_currently_exists": false,
+      "commands_executed": false
+    },
+    {
+      "id": "minhang-baoyugang-library",
+      "generate_near_argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/tools/build_precise_overrides.py",
+        "--project",
+        "/workspace/shanghai_project",
+        "--output",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fresh/minhang-baoyugang-library",
+        "--geometry-input-root",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/inputs",
+        "--ids",
+        "minhang-baoyugang-library",
+        "--asset-prefix",
+        "assets/city-overrides-v6/14-13718-6705",
+        "--gltfpack",
+        "/workspace/shanghai_tools/node_modules/.bin/gltfpack"
+      ],
+      "actual_geometry_decoder_argv": [
+        "node",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/tools/verify_override_geometry.mjs",
+        "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fresh/minhang-baoyugang-library/geometry-comparison-input.json"
+      ],
+      "output_currently_exists": false,
+      "commands_executed": false
+    }
+  ],
+  "compose_after_both_actual_geometry_pass_argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/compose_incremental.py",
+    "--project",
+    "/workspace/shanghai_project",
+    "--prior-root",
+    "/workspace/shanghai_expansion/building-by-building-v10/two-district-integration/thirteen-targets",
+    "--fresh-root",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fresh/jiading-shanghai-auto-museum",
+    "--fresh-root",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fresh/minhang-baoyugang-library",
+    "--inputs",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/inputs",
+    "--output",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fifteen-targets"
+  ],
+  "runtime_owner_check_after_composition_argv": [
+    "node",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/tools/verify_override_runtime.mjs",
+    "/workspace/shanghai_project",
+    "/workspace/shanghai_expansion/building-by-building-v11/source-integration-preparation/integration-v1/fifteen-targets/precise-buildings-v6.json"
+  ],
+  "heavy_command_execution_allowed_by_this_report": false,
+  "near_generation_executed": false,
+  "actual_geometry_decoder_executed": false,
+  "registry_composed": false,
+  "registration_accepted": false,
+  "models_or_browser_accepted": false,
+  "main_modified": false,
+  "limits": [
+    "This command only reads source/metadata and parses15 source inputs.",
+    "Root schedules any actual generation/decoding after its exclusive Blender/browser workload ends.",
+    "Actual current source components are not claimed inspected by this JSON/hash preflight.",
+    "Final model-bound navigation still requires revised actual raw and browser review."
+  ]
+}

@@ -1,0 +1,67 @@
+--- /workspace/shanghai_project/source/precise/tooling/generalize_precise_registration.py
++++ /workspace/shanghai_expansion/building-by-building-v11/modern-source-field-compatibility-v2/generalize_precise_registration.py
+@@ -74,14 +74,31 @@
+ def checked_under(base,value):
+  p=(base/relative(value)).resolve();require(p.is_relative_to(base.resolve()),'Baseline path escaped its macro');return p
+ 
+-def exact_owner(geo,project):
++def linked_part_counts(geo,project,geometry_identity):
++ parts=geo['parts_audit'];counts=[parts[k] for k in ('raw_linked_parts','linked_source_parts') if k in parts]
++ if geo.get('id')!='jiading-shanghai-auto-museum':return counts
++ require(geometry_identity=={'bytes':24843,'sha256':'b9ecca5878e0cadf20acd143afd06d05b59689ae634c61d3f052d9d60e83ea92'},'Unreviewed Museum geometry identity for parts interface')
++ require(parts.get('source_has_parts') is False and type(parts.get('linked_parts')) is int and parts['linked_parts']==0,'Museum original linked_parts must explicitly be integer zero')
++ for name in ('overlapping_unassociated_parts','related_residuals'):
++  require(type(parts.get(name)) is int and parts[name]==0,'Museum original parts/residual evidence is not clear: '+name)
++ require(type(parts.get('unique_source_owner_occurrences_in_9macro_scan')) is int and parts['unique_source_owner_occurrences_in_9macro_scan']==1,'Museum bounded nine-macro owner uniqueness missing')
++ source_files=parts.get('source_files_scanned');expected={f'data/fullcity-raw/tiles/14/{x}/{y}.geojson.gz' for x in (13705,13706,13707) for y in (6690,6691,6692)}
++ require(isinstance(source_files,list) and len(source_files)==9 and {row.get('project_relative_path') for row in source_files}==expected,'Exact reviewed Museum nine source files required')
++ for row in source_files:
++  path=project/relative(row['project_relative_path'])
++  require(type(row.get('bytes')) is int and 0<row['bytes']<LIMIT and SHA.fullmatch(str(row.get('sha256',''))) is not None and path.is_file() and path.stat().st_size==row['bytes'] and sha(path)==row['sha256'],'Museum nine-macro source evidence changed')
++ # Read the actual modern field; never invent an alias in the frozen geometry.
++ # Existing legacy fields remain in counts, so any conflicting nonzero value fails.
++ return counts+[parts['linked_parts']]
++
++def exact_owner(geo,project,geometry_identity=None):
+  c=geo['current_city_detail'];f=c['frozen_effective_feature'];m=c['owner_macro_id'];match=re.fullmatch(r'(\d+)-(\d+)-(\d+)',m)
+  require(match is not None,'Invalid macro ID');z,x,y=map(int,match.groups());require(0<=z<=24 and 0<=x<2**z and 0<=y<2**z,'Invalid macro coordinates')
+  ident=c['feature_local_id'];key=f['key'];k=KEY.fullmatch(key)
+  require(type(ident)is int and 0<ident<=16777215 and f['localId']==ident and k is not None,'Invalid exact source owner')
+  repl=geo['replacement'];require(repl['building_ids']==[k.group(1)] and repl['building_part_ids']==[],'This minimal registration requires one exact complete building; no partial/multi-owner substitution')
+  require(not f['residual'] and f['roof'] is None,'Residual or source-roof owner requires a separate reviewed interface')
+- parts=geo['parts_audit'];counts=[parts[k] for k in ('raw_linked_parts','linked_source_parts') if k in parts]
++ parts=geo['parts_audit'];counts=linked_part_counts(geo,project,geometry_identity)
+  require(parts.get('source_has_parts') is False and counts and all(type(x)is int and x==0 for x in counts),'Linked building parts are not cleared')
+  d=project/'assets/city-detail/macros'/m;ready=read(d/'READY.json');table=read(d/'feature-table.json.gz')
+  require(ready['configuration_sha256']==c['configuration_sha256'],'Baseline configuration changed')
+@@ -129,19 +146,28 @@
+   out[stage]={'status':'passed','evidence_sha256':proof['sha256'],'evidence_bytes':proof['bytes'],'section':item.get('section'),'scope':text(doc.get('scope'),'review scope')}
+  return out,pending
+ 
++def underlying_source_license_id(geo,geometry_identity):
++ licence=geo.get('license')
++ if not isinstance(licence,dict):return None
++ underlying=licence.get('underlying_source',{})
++ if isinstance(underlying,dict):return underlying.get('id')
++ require(geo.get('id')=='minhang-baoyugang-library' and geometry_identity=={'bytes':86616,'sha256':'fe5a199b4b9cdbc97276b203b39f6f94e29ff9dec5625531cafdecb6b201e7e1'},'Unreviewed string source-licence interface')
++ require(underlying=='ODbL-1.0' and licence.get('url')=='https://opendatacommons.org/licenses/odbl/1-0/' and licence.get('attribution')=='© OpenStreetMap contributors','Frozen Library original source licence differs')
++ return underlying
++
+ def normalize(row,base,project,districts):
+  ident=row.get('id');require(isinstance(ident,str) and IDENT.fullmatch(ident),'Unsafe or missing building ID')
+  name=text(row.get('name'),'building name');district=row.get('district');require(isinstance(district,dict) and districts.get(district.get('id'))==district.get('name'),'District ID/name differs from explicit catalog')
+  provider=text(row.get('source_provider'),'source_provider');url=public_url(row.get('source_url'));source_lic=licenses(row.get('source_license'),'source_license');asset_lic=licenses(row.get('asset_license'),'asset_license')
+  gp,gd=file_record(row['geometry_input'],base,False);g=read(gp);require(g['id']==ident,'Geometry input building ID differs')
+  if 'district_id' in g:require(g['district_id']==district['id'] and g['district_name']==district['name'],'Frozen source district differs')
+- require(point(g['anchor']),'Invalid source anchor');bbox=geometry_bbox(g['geometry']);owner=exact_owner(g,project)
++ require(point(g['anchor']),'Invalid source anchor');bbox=geometry_bbox(g['geometry']);owner=exact_owner(g,project,gd)
+  if g.get('is_osm_building_geometry') is False or g.get('source',{}).get('is_osm_geometry') is False:
+   require('openstreetmap' not in provider.lower() and not re.search(r'\bosm\b',provider,re.I),'Non-OSM frozen geometry cannot be attributed to OSM')
+  props=g['current_city_detail']['frozen_effective_feature'].get('properties',{})
+  if props.get('district_id'):require(str(props['district_id'])==district['id'],'Frozen feature district differs')
+  provenance={'provider_records':copy.deepcopy(g.get('source',{}).get('provider_records',[])),'frozen_license':copy.deepcopy(g.get('license')),'frozen_attribution':g.get('attribution')}
+- expected=g.get('license',{}).get('underlying_source',{}).get('id') if isinstance(g.get('license'),dict) else None
++ expected=underlying_source_license_id(g,gd)
+  if expected:require(any(v['id']==expected for v in source_lic),'Explicit licences omit the frozen underlying source licence')
+  assets={};copy_plan=[]
+  for role,desc in row.get('assets',{}).items():
