@@ -1,4 +1,21 @@
-# 上海漫游 · Shanghai Explorer v9
+# 上海漫游 · Shanghai Explorer v10
+
+新增**松江方塔**与**普陀真如寺大殿**：方塔按九级四面、八层上部回廊、曲瓦檐、真实门洞和镂空九相轮建模；真如大殿分出三间三进、柱架、歇山瓦顶、鸱吻及门窗，后方塔与前方天王殿仍是独立建筑。
+
+- **[松江方塔漫游](https://rawcdn.githack.com/ecojust/e-resource/50b8becaa8d0e3de125c38c64a3de730e89465ea/projects/shanghai/index.html#landmark=songjiang-fangta-pagoda&mode=walk)** · [网页GLB](assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-web.glb)（19,924,564字节）· [Blender](assets/native/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda.blend)（23,966,595字节）· [源码与当前状态](source/precise/songjiang-fangta-pagoda/CURRENT_STATE.md)。
+- **[真如寺大殿漫游](https://rawcdn.githack.com/ecojust/e-resource/50b8becaa8d0e3de125c38c64a3de730e89465ea/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk)** · [网页GLB](assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-web.glb)（11,906,884字节）· [Blender](assets/native/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall.blend)（14,816,151字节）· [源码与当前状态](source/precise/putuo-zhenru-main-hall/CURRENT_STATE.md)。
+
+本版精选导航27项、逐栋普通精模8栋、目录6个宏块。[两栋实际模型与网页范围](data/audit/precise-buildings-v10/two-districts/README.md)。方塔42.65m采用文献名义总高，层间比例、檐出和隐藏构造仍有估计；真如大殿总高及屋面尺度为模型估计，文献158m²口径未明，不能当作实测墙体尺寸。源建筑轮廓用于身份及精确替换，不证明墙线、檐线或台基范围。全城1,796,419个建筑及部件要素尚未逐栋按照片完成。
+
+[下载启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（75,129,522字节，SHA256 `1cae35145591aafbec74d0fb3d226461c69d2240d60e3855db33f8a2640557b3`）；[真实解压与松江方塔单点核对](data/audit/launcher-v10/README.md)。实际包含14项本地导航模型、13项流式导航模型，底图及全城资源需联网，固定到应用提交`50b8becaa8d0e3de125c38c64a3de730e89465ea`。两栋各4件模型和ZIP每个文件均严格小于100,000,000字节。
+
+生产运行时仅有明确批准的`src/realistic-lighting.js`阴影修复，使不透明的`Inferred dark glazing`可投射阴影；其余运行时文件保持冻结字节。运行时差异SHA256 `6a415603a7e183f868f57607e58471bbd56649f9ec90cff1f130b93af0a87ea2`，修复后文件SHA256 `6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c`。[实际差异](data/audit/precise-buildings-v10/two-districts/runtime-fix/runtime-delta.json)。
+
+[来源与限制](data/bund/REALISM_V10.md) · [当前状态](CURRENT_STATE.md)
+
+## v9及更早发布记录（历史）
+
+以下保留原v9正文；数量、“当前”等词和验证范围对应当时版本，不是v10证明。
 
 新增徐汇**龙华塔**：七层八面、六道高架回廊，分别构造曲檐瓦面、斗栱、真实门洞与盲壁龛、栏杆和塔刹。照片用于结构参照，没有把照片像素贴进模型。
 

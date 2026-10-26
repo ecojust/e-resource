@@ -1,4 +1,19 @@
-# 街区建筑逐栋复原源码（v9）
+# 街区建筑逐栋复原源码（v10）
+
+新增[松江方塔](songjiang-fangta-pagoda/CURRENT_STATE.md)和[真如寺大殿](putuo-zhenru-main-hall/CURRENT_STATE.md)，普通精模累计8栋。照片用于结构参照，模型未嵌入其像素；每张参考图保留自己的作者、字节与许可。
+
+| 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
+|---|---|---|---|---|
+| 松江方塔 | [19,924,564字节](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-web.glb) | [47,281,480字节](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-raw.glb) | [9,675,812字节](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-lod.glb) | [23,966,595字节](../../assets/native/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda.blend) |
+| 真如寺大殿 | [11,906,884字节](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-web.glb) | [29,208,608字节](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-raw.glb) | [8,623,932字节](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-lod.glb) | [14,816,151字节](../../assets/native/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall.blend) |
+
+方塔42.65m采用文献名义总高，层间比例、檐出和隐藏构造仍有估计；真如大殿总高及屋面尺度为模型估计，文献158m²口径未明，不能当作实测墙体尺寸。源建筑轮廓用于身份及精确替换，不证明墙线、檐线或台基范围。[本版实际验收](../../data/audit/precise-buildings-v10/two-districts/README.md) · [来源与限制](../../data/bund/REALISM_V10.md)。
+
+运行时仅有明确批准的`src/realistic-lighting.js`阴影修复，其余运行时保持冻结字节；[批准差异](../../data/audit/precise-buildings-v10/two-districts/runtime-fix/runtime-delta.json)和本版实际验收分别保留字节绑定与视觉范围。
+
+## v9六栋及更早记录（历史保留）
+
+以下原正文保持，其“当前”等词对应历史版本。
 
 新增第6栋：[龙华塔](xuhui-longhua-pagoda/CURRENT_STATE.md)。七层八面及六道高架回廊按官方文字与四张照片分别构造；40.64m采用官方志书公布的名义总高，并非本项目实测；门洞朝向的地理相位、层间比例和隐蔽处仍有推定。
 
