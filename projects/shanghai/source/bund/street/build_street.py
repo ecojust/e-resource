@@ -1,4 +1,4 @@
-"""Bund v4 mapped roads, pavement, crossings and photo-proportioned waterside fittings.
+"""Bund v4.2 mapped roads, pavement, crossings and photo-proportioned waterside fittings.
 Public OSM positions; dimensions and fitting spacing are reconstruction estimates.
 No facade imagery is used as a texture. GLB has local metres, X east/Y up/Z south.
 """
@@ -19,7 +19,7 @@ def geographic(g):
  scale=math.cos(math.radians(ORIGIN[1]));origin_y=math.asinh(math.tan(math.radians(ORIGIN[1])))
  def inverse(x,z):return ORIGIN[0]+math.degrees(x/(6378137*scale)),math.degrees(math.atan(math.sinh(origin_y-z/(6378137*scale))))
  return transform(inverse,g)
-COLORS={'BundStonePaving':(.39,.40,.37,1),'BundGraniteCurb':(.48,.49,.46,1),'BundRoadPaint':(.82,.83,.76,1),'BundRoadSurface':(.065,.075,.080,1),'BundRoadYellowPaint':(.62,.43,.055,1),'BundRoadGutter':(.20,.21,.20,1),'BundDrainDark':(.025,.030,.028,1),'BundDrainSteel':(.13,.15,.14,1),'BundRailingSteel':(.12,.14,.14,1),'BundLampSilver':(.34,.36,.35,1),'BundLampGlass':(.80,.84,.76,1)}
+COLORS={'BundStonePaving':(.36,.38,.39,1),'BundGraniteCurb':(.48,.49,.46,1),'BundRoadPaint':(.82,.83,.76,1),'BundRoadSurface':(.065,.075,.080,1),'BundRoadYellowPaint':(.62,.43,.055,1),'BundRoadGutter':(.20,.21,.20,1),'BundDrainDark':(.025,.030,.028,1),'BundDrainSteel':(.13,.15,.14,1),'BundRailingSteel':(.12,.14,.14,1),'BundLampSilver':(.34,.36,.35,1),'BundLampGlass':(.80,.84,.76,1)}
 M={name:Mesh() for name in COLORS}
 TRACK_RAIL=False
 RAIL_VERTICES=[]
@@ -243,6 +243,17 @@ assert roads['audit']['passed'], 'Road/water/building geometric overlap validati
  for role,key in [('asphalt_surface','surface'),('curb','curb'),('gutter','gutter'),('lane_paint','lane_paint'),('central_separation_estimate','median_paint'),('mapped_crossings','zebras'),('sidewalk_infill_estimate','shoulder')]]
  +[{'type':'Feature','properties':{'role':'OSM_centerline','osm_way':r['id'],'tags':r['tags'],'estimated_width_m':r['width']},'geometry':mapping(geographic(r['line']))} for r in roads['records']]},ensure_ascii=False,separators=(',',':')))
 
+# Bounded estimated connector; existing material vertex/index prefixes stay intact.
+# Preserve the two unidentified exterior recesses as unknown openings.
+from connector_paving import assemble_connector
+connector,connector_audit,connector_geojson=assemble_connector(
+ ROOT,metric,geographic,pedestrian_footprint,existing_paving.union(pedestrian_paving),
+ roads['surface'],roads['shoulder'],roads['curb'],water,buildings)
+connector_audit['building_validation_scope']=roads['audit']['building_validation_scope']
+solid('BundStonePaving',connector,.005,.035)
+(ROOT/'bund-streets-connector-check.json').write_text(json.dumps(connector_audit,ensure_ascii=False,indent=2)+'\n')
+(ROOT/'bund-streets-connector-check.geojson').write_text(json.dumps(connector_geojson,ensure_ascii=False,separators=(',',':'))+'\n')
+
 # Pack one primitive per material; no external texture or buffer dependency.
 binary=bytearray();views=[];accessors=[];primitives=[];materials=[]
 def append(data,target,component,type_,count,minimum=None,maximum=None):
@@ -262,14 +273,15 @@ for name,mesh in M.items():
  vi=append(v.tobytes(),34962,5126,'VEC3',len(v),v.min(axis=0).tolist(),v.max(axis=0).tolist());ni=append(n.tobytes(),34962,5126,'VEC3',len(n));ii=append(idx.tobytes(),34963,5125,'SCALAR',len(idx))
  mi=len(materials);materials.append({'name':name,'pbrMetallicRoughness':{'baseColorFactor':COLORS[name],'metallicFactor':.45 if 'Steel' in name or 'Silver' in name else .02,'roughnessFactor':.35 if 'Glass' in name else .94 if name=='BundRoadSurface' else .72}})
  primitives.append({'attributes':{'POSITION':vi,'NORMAL':ni},'indices':ii,'material':mi});triangles+=len(idx)//3
-gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v4'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
+gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v4.2'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
 j=json.dumps(gltf,separators=(',',':')).encode();j+=b' '*((-len(j))%4);binary+=b'\0'*((-len(binary))%4)
 output=ROOT/'bund-streets.glb';output.write_bytes(struct.pack('<III',0x46546c67,2,12+8+len(j)+8+len(binary))+struct.pack('<II',len(j),0x4e4f534a)+j+struct.pack('<II',len(binary),0x004e4942)+binary)
 metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.08,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
 metadata['shoreline_validation']=shoreline_audit
 metadata['road_validation']=roads['audit']
 metadata['paving_validation']=paving_audit
-metadata['version']=4
+metadata['estimated_connector_paving']=connector_audit
+metadata['version']=4.2
 metadata['source_roads']='osm-roads.json / OpenStreetMap ODbL-1.0'
 metadata['reference_2025']='street-reference-evidence.json: Suicasmo CC0 street-level facade views, 2025-05-01'
 metadata['accuracy']+=' Ground road centerlines/lane counts follow OSM; widths and paint/drain dimensions are estimated and itemized in road_validation.'

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "proposal": "v4.2 bounded Bund paving finish",
+  "status": "installed; browser verification recorded separately",
+  "source_baselines": {
+    "src/architectural-material.js": "29c40af27687363f6a7598282c0183c03cee5e03bb8898edcdc92b34fec929ac",
+    "source/bund/street/build_street.py": "c6d77eb35aa842596681c84e84e40dff483a45466c7a28f9141aadb3899a9b05"
+  },
+  "scope": "Only BundStonePaving: granite grain profile, inferred slab joints and generated GLB material base color. Other materials, map background and surface coverage unchanged by this draft.",
+  "parameters": {
+    "gltf_base_color_linear_rgba": {
+      "before": [
+        0.39,
+        0.4,
+        0.37,
+        1
+      ],
+      "after": [
+        0.36,
+        0.38,
+        0.39,
+        1
+      ]
+    },
+    "slab_dimensions_m": {
+      "before": [
+        0.8,
+        0.42
+      ],
+      "after": [
+        1.2,
+        0.6
+      ],
+      "authority": "photo-proportioned estimate, not a surveyed module"
+    },
+    "joint_width_m": {
+      "before": 0.006,
+      "after": 0.004,
+      "authority": "visual reconstruction estimate; shader uses half-width"
+    },
+    "joint_max_darkening": {
+      "before": 0.22,
+      "after": 0.14
+    },
+    "grain_contrast": {
+      "before": 0.28,
+      "after": 0.18
+    },
+    "normal_strength": {
+      "before": 0.16,
+      "after": 0.08
+    },
+    "roughness_mix": {
+      "before": 0.45,
+      "after": 0.45
+    }
+  },
+  "reference": {
+    "file": "source/bund/street/references/promenade-day.jpg",
+    "sha256": "b59c46b541c226e4fda7d8bdcf5bd6f50f19608ec0414903fff4718071fde552",
+    "commons_page": "https://commons.wikimedia.org/wiki/File:外灘步行道_Bund_Promenade_-_panoramio.jpg",
+    "author": "Bohao Zhao",
+    "capture_date": "2011-08-01",
+    "license": "CC BY 3.0",
+    "use": "Visual morphology reference only; no image editing, new textures or redistribution in this proposal.",
+    "supported_observations": [
+      "neutral grey broad rectangular paving",
+      "subdued joints and variation",
+      "dark transverse bands visible but intentionally not newly placed",
+      "road-side stair/opening geometry must not be indiscriminately paved"
+    ]
+  },
+  "retained": {
+    "texture_files": 9,
+    "new_texture_files": 0,
+    "texture_samples_per_surface": 3,
+    "geometry_disposal": "unchanged",
+    "shared_texture_disposal": "unchanged",
+    "distant_grain_normal_joint_fade": "unchanged",
+    "API": "unchanged"
+  },
+  "not_added": [
+    "transverse bands without source-aligned chainage and spacing",
+    "trees or furniture",
+    "new paving geometry",
+    "new photo textures"
+  ],
+  "integration": [
+    "Review and apply shader patch to src/architectural-material.js.",
+    "Apply base-color change to isolated street generator used for connector rebuild, then rebuild raw/web GLB and metadata hashes. Do not only edit a stale GLB.",
+    "Keep connectivity geometry review separate: this finish cannot cover missing polygons.",
+    "Compare same camera and lighting after rebuild; check neutral pavement, slab scale, distant aliasing and source cutouts."
+  ],
+  "installed_module_sha256": "a8a43d3b3af253990a684cb09ff20d7937f1c536cf8e98e638366a1add72da47"
+}

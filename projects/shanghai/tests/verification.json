@@ -1,11 +1,11 @@
 {
-  "version": "shanghai-source-roofs-v4.1",
-  "status": "public-verified",
-  "date_utc": "2026-10-25",
+  "version": "shanghai-paving-v4.2",
+  "status": "local-verified-public-check-pending",
+  "date_utc": "2026-10-26",
   "previous_release": {
-    "report": "verification-v4.json",
-    "app_commit": "863c315bccf80acada4ef1f8477ad488c85a2b6f",
-    "scope": "Bund rendering, controls and 14 landmark meshes remain as validated in v4. Current roof work changes six generic city model tiles."
+    "report": "verification-v4.1.json",
+    "app_commit": "72e344b6e927b1a3130b2ff6e6901875f260eb3e",
+    "scope": "All 1708 city tiles, 14 landmark meshes, roof qualification and OSM component fallback unchanged; current work changes street connector geometry and paving finish."
   },
   "coverage": {
     "districts": 16,
@@ -25,7 +25,9 @@
     "unchanged_city_models": 1702,
     "changed_city_models": 6,
     "bund_detailed_buildings": 10,
-    "lujiazui_landmarks": 4
+    "lujiazui_landmarks": 4,
+    "estimated_connector_paving_m2": 188.91702276744988,
+    "unknown_recesses_preserved": 2
   },
   "validation": {
     "qualification": "../data/roofs/qualified-roofs.json",
@@ -47,7 +49,13 @@
     "launcher_remote": "launcher-roofs-remote.json",
     "osm_fallback_public": "osm-fallback-public.json",
     "fallback_final_ready": true,
-    "fallback_transient_timeouts_recovered": 2
+    "fallback_transient_timeouts_recovered": 2,
+    "connector_geometry": "../data/bund/validation/connector-geometry-v4.2.json",
+    "connector_review": "../data/bund/validation/connector-review-v4.2.json",
+    "street_compression": "../data/bund/validation/street-compression-v4.2.json",
+    "street_rebuild": "../data/bund/validation/street-rebuild-v4.2.json",
+    "paving_material": "../data/bund/validation/paving-material-v4.2.json",
+    "paving_local": "paving-v4.2-local.json"
   },
   "asset_limits": {
     "all_files_below_bytes": 100000000,
@@ -59,7 +67,8 @@
     "126 source-parametric roofs do not constitute citywide LoD2 or photogrammetry.",
     "Source tags and polygons are not independently surveyed roof geometry; centered gabled ridges and single planar skillions remain assumptions.",
     "Browser software rendering checks correctness and loading; they are not a hardware FPS benchmark.",
-    "Conservatively retained crossing/ambiguous OSM components can overlap local geometry at coverage edges."
+    "Conservatively retained crossing/ambiguous OSM components can overlap local geometry at coverage edges.",
+    "The estimated connector uses the existing flat ground datum; two source recesses remain unknown openings. Actual promenade stairs, ramps and height differences are not reconstructed."
   ],
   "app_commit": "72e344b6e927b1a3130b2ff6e6901875f260eb3e",
   "preview": "https://rawcdn.githack.com/ecojust/e-resource/72e344b6e927b1a3130b2ff6e6901875f260eb3e/projects/shanghai/index.html",

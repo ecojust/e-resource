@@ -16,7 +16,7 @@ os.environ['PW_TEST_SCREENSHOT_NO_FONTS_READY'] = '1'
 
 
 async def main(args):
-    views = json.loads(args.views.read_text())
+    views = [] if args.bund_only else json.loads(args.views.read_text())
     args.output.mkdir(parents=True, exist_ok=True)
     report = {'url': args.url, 'views': views, 'forced_osm_fallback': args.force_osm, 'page_errors': [], 'shader_errors': [], 'map_warnings': [],
               'asset_errors': [], 'captures': [], 'hardware_performance_test': False}
@@ -24,7 +24,8 @@ async def main(args):
         browser = await p.chromium.launch(executable_path=os.environ.get('CHROMIUM') or shutil.which('chromium'),
             headless=True, args=['--no-sandbox', '--enable-unsafe-swiftshader', '--disable-dev-shm-usage'])
         try:
-            page = await browser.new_page(viewport={'width': 1280, 'height': 850}, device_scale_factor=1)
+            page = await browser.new_page(viewport={'width': 1280, 'height': 850}, device_scale_factor=args.dpr)
+            report['device_pixel_ratio'] = args.dpr
             if args.force_osm:
                 await page.route('https://tiles.overturemaps.org/**', lambda route: route.abort())
                 await page.route('https://stac.overturemaps.org/**', lambda route: route.abort())
@@ -59,11 +60,16 @@ async def main(args):
                     result={'original_hidden':residual['original'].get('localModel') is True,'residual_components_for_source':len(parts),'bund18_in_residual':any(shape(f['geometry']).covers(target) for f in parts)}
                     report['bund_compound_replacement']=result
                     assert result['original_hidden'] and parts and not result['bund18_in_residual'], result
+                if args.bund_only:
+                    report['street_asset']=await page.evaluate('async()=>{const p=(await(await fetch("data/scene-props.json")).json()).find(x=>x.id==="bund-streets"),b=await(await fetch(p.model)).arrayBuffer(),hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",b))).map(x=>x.toString(16).padStart(2,"0")).join("");return {version:p.version,model:p.model,bytes:b.byteLength,sha256:hash,metadataBytes:p.bytes,metadataSha256:p.sha256};}')
+                    asset=report['street_asset']
+                    assert asset['bytes']==asset['metadataBytes'] and asset['sha256']==asset['metadataSha256'], asset
                 print('BUND_WALK', flush=True)
-            await page.evaluate('()=>{__SHANGHAI_APP__.syncMode("overview",false);}')
-            if await page.locator('#panel-toggle').get_attribute('aria-expanded') == 'true':
+            if not args.bund_only:
+                await page.evaluate('()=>{__SHANGHAI_APP__.syncMode("overview",false);}')
+            if not args.bund_only and await page.locator('#panel-toggle').get_attribute('aria-expanded') == 'true':
                 await page.locator('#panel-toggle').click()
-            for name, manifest in [('before', args.before), ('after', args.after)]:
+            for name, manifest in ([] if args.bund_only else [('before', args.before), ('after', args.after)]):
                 if not manifest:
                     continue
                 result = await page.evaluate('async url=>url==="initial"?__SHANGHAI_APP__.scene.getStreamingState():await __SHANGHAI_APP__.scene.setCityManifest(url)', manifest)
@@ -81,7 +87,7 @@ async def main(args):
                     state = await page.evaluate('()=>{const a=__SHANGHAI_APP__,map=a.scene.map;return {stream:a.scene.getStreamingState(),districts:a.districts.length,mode:a.mode,buildingSource:a.scene.getCollisionState(),osmFallback:a.scene.getRealismState().osmFallback,buildingLayers:map.getStyle().layers.filter(l=>l.type==="fill-extrusion").map(l=>({id:l.id,source:l.source,sourceLayer:l["source-layer"],visibility:l.layout?.visibility||"visible",filter:l.filter})),renderedBuildings:map.queryRenderedFeatures([[innerWidth*.3,innerHeight*.3],[innerWidth*.7,innerHeight*.7]]).filter(f=>f.layer.type==="fill-extrusion").slice(0,20).map(f=>({id:f.id,source:f.source,sourceLayer:f.sourceLayer,state:map.getFeatureState({source:f.source,sourceLayer:f.sourceLayer,id:f.id}),properties:f.properties,geometryType:f.geometry.type})),camera:{center:map.getCenter().toArray(),zoom:map.getZoom(),pitch:map.getPitch(),bearing:map.getBearing()}};}')
                     report['captures'].append({'variant': name, 'view': view['name'], 'image': path.name, **state})
                     print('CAPTURE', name, view['name'], flush=True)
-            report['passed'] = bool(report['captures']) and all(c['districts'] == 16 for c in report['captures']) and not any(report[k] for k in ('page_errors', 'shader_errors', 'asset_errors'))
+            report['passed'] = bool(report['captures'] or report.get('bund_walk')) and all(c['districts'] == 16 for c in report['captures']) and not any(report[k] for k in ('page_errors', 'shader_errors', 'asset_errors'))
             if args.force_osm:
                 report['passed'] = report['passed'] and all(c['buildingSource']['buildingSource'] == 'osm' and c['osmFallback']['active'] and c['osmFallback']['coveredIDs']>0 and c['osmFallback']['pendingRemovals']==0 and c['osmFallback']['failedWrites']==0 for c in report['captures'])
             (args.output / 'browser.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
@@ -105,8 +111,16 @@ if __name__ == '__main__':
     parser.add_argument('--url', required=True)
     parser.add_argument('--before')
     parser.add_argument('--after', required=True, help='Manifest URL, or initial to retain the app default manifest')
-    parser.add_argument('--views', type=Path, required=True)
+    parser.add_argument('--views', type=Path)
+    parser.add_argument('--bund-only', action='store_true', help='Check only the initial third-person Bund scene')
+    parser.add_argument('--dpr', type=float, default=1, help='Rendering pixel ratio; CSS viewport remains 1280 by 850')
     parser.add_argument('--check-bund', action='store_true', help='Capture initial third-person Bund under the same service condition')
     parser.add_argument('--force-osm', action='store_true', help='Block Overture services to test emergency OSM fallback')
     parser.add_argument('--output', type=Path, required=True)
-    asyncio.run(main(parser.parse_args()))
+    args=parser.parse_args()
+    if not args.bund_only and not args.views:
+        parser.error('--views is required unless --bund-only is used')
+    if not 0.5 <= args.dpr <= 2:
+        parser.error('--dpr must be between 0.5 and 2')
+    args.check_bund=args.check_bund or args.bund_only
+    asyncio.run(main(args))

@@ -25,7 +25,7 @@ const SURFACES = {
 const PROFILES = {
   stone: { surface: 'stone', contrast: 0.36, normal: 0.08, roughness: 0.25, paving: 0 },
   granite: { surface: 'granite', contrast: 0.24, normal: 0.12, roughness: 0.32, paving: 0 },
-  paving: { surface: 'granite', contrast: 0.28, normal: 0.16, roughness: 0.45, paving: 1 },
+  paving: { surface: 'granite', contrast: 0.18, normal: 0.08, roughness: 0.45, paving: 1 },
   curb: { surface: 'granite', contrast: 0.28, normal: 0.14, roughness: 0.40, paving: 0 },
   asphalt: { surface: 'asphalt', contrast: 0.65, normal: 0.25, roughness: 0.60, paving: 0 },
 };
@@ -117,14 +117,17 @@ const FRAGMENT_COLOR = `
     diffuseColor.rgb *= mix(1.0, clamp(archGrain, 0.80, 1.18), archCoverage * archGrainStrength);
   }
   if (archPaving > 0.5 && abs(archGeometricNormal.y) > 0.85) {
+    // Broad granite slabs suggested by the promenade reference photograph.
+    // 1.20 x 0.60m slabs / 4mm joints are reconstruction estimates, not a survey.
+    // Retain the existing metre-space mapping; no unlocated transverse bands.
     vec2 archPavingMetres = vArchWorld.xz;
-    vec2 archTile = archPavingMetres / vec2(0.80, 0.42);
+    vec2 archTile = archPavingMetres / vec2(1.20, 0.60);
     archTile.x += mod(floor(archTile.y), 2.0) * 0.5;
-    vec2 archEdgeMetres = min(fract(archTile), 1.0 - fract(archTile)) * vec2(0.80, 0.42);
+    vec2 archEdgeMetres = min(fract(archTile), 1.0 - fract(archTile)) * vec2(1.20, 0.60);
     vec2 archAA = max(fwidth(archPavingMetres) * 0.65, vec2(0.0008));
-    vec2 archJoint = 1.0 - smoothstep(vec2(0.003) - archAA, vec2(0.003) + archAA, archEdgeMetres);
+    vec2 archJoint = 1.0 - smoothstep(vec2(0.002) - archAA, vec2(0.002) + archAA, archEdgeMetres);
     float archJointCoverage = 1.0 - smoothstep(0.025, 0.14, max(archAA.x, archAA.y));
-    diffuseColor.rgb *= 1.0 - max(archJoint.x, archJoint.y) * 0.22 * archJointCoverage;
+    diffuseColor.rgb *= 1.0 - max(archJoint.x, archJoint.y) * 0.14 * archJointCoverage;
   }
 `;
 
@@ -237,7 +240,7 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
           .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>\n${FRAGMENT_ROUGHNESS}`)
           .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>\n${FRAGMENT_NORMAL}`);
       };
-      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v4-2`;
+      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v4-2-paving1`;
       material.userData.architecturalSurface = profileName;
       material.needsUpdate = true;
       mapped.add(material);

@@ -10,7 +10,7 @@ Road widths use OSM width if available, otherwise lane count with an explicit es
 
 Photos are visual references only: Suicasmo, 2025-05-01, CC0; URLs and supported details are in `street-reference-evidence.json`. Reference photographs are not required to rebuild. Original geometry/code MIT; OSM-derived street geometry ODbL-1.0, © OpenStreetMap contributors.
 
-The raw GLB needs no external textures/buffers. Material names `BundStonePaving`, `BundRoadSurface`, `BundGraniteCurb` are stable hooks for the viewer's local PBR detail module. Compress losslessly for the webpage with `gltfpack -i bund-streets.glb -o bund-streets-web.glb -cc -noq -km -ke`. Geometry and shoreline audits are emitted on every rebuild.
+The raw GLB needs no external textures/buffers. Material names `BundStonePaving`, `BundRoadSurface`, `BundGraniteCurb` are stable hooks for the viewer's local PBR detail module. Compress without vertex position quantization or triangle simplification for the webpage with `gltfpack -i bund-streets.glb -o bund-streets-web.glb -cc -noq -km -ke`. Geometry and shoreline audits are emitted on every rebuild.
 
 The extra riverside paving follows OpenFreeMap transportation polygon feature `21420773`, unioned across the same four retained tiles and clipped to the Bund street crop. Water, candidate footprints, road surfaces, existing pavement and curbs are subtracted. Top height is 0.035m; `bund-streets-paving-check.json` records source and overlap tests. The feature number is an MVT ID, not a claimed OSM way ID.
 
@@ -29,3 +29,12 @@ Outputs: `data/bund/traffic-v4.json` and `data/bund/validation/traffic-v4.json`;
 `src/street-basemap.js` exports `async createStreetBasemapReplacement(map)`, returning `setActive(bool)`, `getState()` and `dispose()`. The owner must activate it only when the local street GLB has loaded successfully and is visible, walk mode is active, and zoom is at least 18. While active, only the two numeric IDs are excluded from the original `road_secondary_tertiary` and casing layers; exact clones draw the retained outside fragments. Disable on model unload/failure, overview or lower zoom; original filters are restored. Call `dispose()` before `map.remove()`. Repeated identical activation requests do not rewrite filters.
 
 Run `node source/bund/street/validate_basemap_replacement.mjs` for the small mock test of enable/disable, duplicate calls, style preservation, rollback on load/install/filter failure, and disposal. Both scripts use the project-relative default root and accept an explicit root argument. This is a cartographic rendering correction, not additional physical road modeling.
+
+
+## v4.2 Bund18 connector and paving finish
+
+`connector_paving.py` adds 188.917m² between the existing road/shoulder/curb edge and mapped pedestrian exterior, bounded by crossing ways 745201529 and 226657312. This is **estimated construction extent**, not a measured new footprint. `bund18-connector-source.json` freezes three relevant OSM elements and records the upstream query/extract provenance. Both unidentified recesses in exterior way 160033684 are excluded, along with source inner holes, known entrances/steps, existing pavement, roads, water and the ten candidate footprints. The two recesses remain unmodeled; they are not asserted to be staircases.
+
+The slab color is neutral grey; the browser uses estimated 1.20×0.60m slabs/4mm joints and subdued CC0 granite grain. See `references/README.md` for the 2011 morphology reference. Actual promenade height, stairs and ramps remain outside this change.
+
+Run `python source/bund/street/build_street.py` from the project to rebuild; the connector helper and frozen source must accompany it. `bund-streets-connector-check.json` and `.geojson` record bounds and exclusions. The installed-layout rebuild and original-mesh prefix checks are in `data/bund/validation/*v4.2*`. The viewer's actual GLTFLoader/Meshopt comparison verifies decoded vertex positions exactly; exporter processing yields a maximum normal-direction difference of 0.0104°, recorded separately rather than called bit-identical.

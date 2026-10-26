@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "review": "Independent bounded Bund18 connector geometry and provenance review",
+  "status": "passed within the explicitly limited source footprint scope",
+  "reviewer": "realism_materials",
+  "review_date_utc": "2026-10-26",
+  "scope": "Read-only review of frozen staging source, source evidence, audit polygons, raw GLB and compressed-file identity. No browser/GPU review, no working source/assets edited.",
+  "result": {
+    "new_paving_area_m2": 188.9170227647893,
+    "maximum_width_m": 8.485789515474817,
+    "new_triangles": 112,
+    "source_recesses_preserved": 2,
+    "source_inner_members_preserved": 16,
+    "checkpoint_coverage": [
+      true,
+      false,
+      false
+    ]
+  },
+  "checks": {
+    "valid_single_bounded_connector": true,
+    "source_edges_reused": true,
+    "no_geometry_buffer_growth": true,
+    "independent_exclusion_subtraction_matches": true,
+    "all_forbidden_overlaps_below_roundtrip_tolerance": true,
+    "recesses_are_exact_consecutive_source_vertices": true,
+    "source_holes_are_closed_in_frozen_extract": true,
+    "source_extract_elements_match_full_response": true,
+    "first_checkpoint_only_is_filled": true,
+    "all_original_material_geometry_prefixes_exact": true,
+    "only_paving_material_changed": true,
+    "new_shell_closed_nondegenerate": true,
+    "new_top_matches_plan_with_float32_tolerance": true,
+    "original_road_paving_shoreline_and_sources_unchanged": true,
+    "raw_after_identity_matches": true,
+    "web_after_identity_matches": true,
+    "final_source_hash_matches": true,
+    "full_source_hash_matches": true,
+    "parent_extract_hash_matches": true,
+    "final_extract_count_explicit": true,
+    "parent_extract_count_explicit": true,
+    "geometry_scope_explicit": true,
+    "geometry_not_material_change_claim": true,
+    "street-stage/street/bund-streets.glb_below_100MB": true,
+    "street-stage/web/bund-streets.glb_below_100MB": true,
+    "denser_width_check": true,
+    "generator_label_v4_2": true,
+    "metadata_version_v4_2": true,
+    "web_POSITION_NORMAL_accessors_are_FLOAT32": true,
+    "web_has_no_KHR_mesh_quantization": true
+  },
+  "check_count": 30,
+  "method": [
+    "Independent metric projection and polygon Boolean reconstruction from exported source/audit geometries; 1e-6 m² tolerance for WGS84 roundtrip numerical noise.",
+    "Compared both boundary chains against original pedestrian exterior / road-plus-shoulder-plus-curb exterior. Rebuilt the connector envelope from those chains and independently subtracted all exclusions.",
+    "Matched each unknown-recess corner against exact consecutive vertices of source relation 2142077 outer member 160033684, then verified the mouth chord closes the source notch. These are conservative exclusions, not new surveyed opening classifications.",
+    "Decoded raw GLB accessors independently. Compared original position, normal and index prefixes in all 11 materials; reconstructed added upward-facing triangle union and checked closed welded-edge topology.",
+    "Recomputed 0.1m width samples, source hashes, final model bytes/SHA, source element identity and staging validation identities.",
+    "Follow-up precision audit: verified final web GLB accessor component types and absence of KHR_mesh_quantization. Confirmed raw/helper/generator/geometry-audit hashes unchanged; retained earlier raw geometry checks without repeating them."
+  ],
+  "independent_metrics": {
+    "geometry": {
+      "connector_valid": true,
+      "connector_polygons": 1,
+      "area_m2": 188.9170227647893,
+      "bounds_wgs84": [
+        121.48564283775747,
+        31.240000895268338,
+        121.48581862449646,
+        31.240750391906293
+      ],
+      "recomputed_exclusion_plan_symdiff_m2": 1.3245759832576329e-08,
+      "outside_envelope_m2": 6.530152598908639e-10,
+      "envelope_rebuilt_from_source_edges_symdiff_m2": 0,
+      "pedestrian_edge_outside_actual_boundary_length_m": 0,
+      "road_edge_outside_actual_boundary_length_m": 0,
+      "envelope_outside_12m_width_m2": 0,
+      "recesses": [
+        {
+          "name": "south-unknown-opening",
+          "source_member": 160033684,
+          "source_vertex_indices_zero_based": [
+            144,
+            145,
+            146,
+            147
+          ],
+          "exact_consecutive_source_vertices": true,
+          "closure": "source outer chain plus straight mouth chord; conservative exclusion, not a classified stairwell",
+          "area_m2": 133.7901516880693,
+          "connector_overlap_m2": 8.628795643407837e-10
+        },
+        {
+          "name": "north-unknown-opening",
+          "source_member": 160033684,
+          "source_vertex_indices_zero_based": [
+            148,
+            149,
+            150,
+            151
+          ],
+          "exact_consecutive_source_vertices": true,
+          "closure": "source outer chain plus straight mouth chord; conservative exclusion, not a classified stairwell",
+          "area_m2": 104.65321158556168,
+          "connector_overlap_m2": 5.9886650749819545e-09
+        }
+      ],
+      "exclusion_overlap_m2": {
+        "previous_paving": 0,
+        "mapped_new_paving": 2.0209183504672578e-09,
+        "asphalt": 4.671482391502129e-10,
+        "curb": 4.7676517647309526e-11,
+        "road_shoulder": 0,
+        "water": 0,
+        "candidate_buildings": 0,
+        "all_fresh_and_mvt_holes": 0,
+        "south-unknown-opening": 8.628795643407837e-10,
+        "north-unknown-opening": 5.9886650749819545e-09
+      },
+      "checkpoints": [
+        {
+          "lng": 121.4857,
+          "lat": 31.24045,
+          "covered": true
+        },
+        {
+          "lng": 121.48575,
+          "lat": 31.24045,
+          "covered": false
+        },
+        {
+          "lng": 121.48575,
+          "lat": 31.24055,
+          "covered": false
+        }
+      ]
+    },
+    "mesh": {
+      "materials": [
+        {
+          "material": "BundStonePaving",
+          "old_vertices": 5658,
+          "new_vertices": 5832,
+          "old_triangles": 3664,
+          "new_triangles": 3776,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": false
+        },
+        {
+          "material": "BundGraniteCurb",
+          "old_vertices": 11436,
+          "new_vertices": 11436,
+          "old_triangles": 6972,
+          "new_triangles": 6972,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundRoadPaint",
+          "old_vertices": 11658,
+          "new_vertices": 11658,
+          "old_triangles": 5944,
+          "new_triangles": 5944,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundRoadSurface",
+          "old_vertices": 1764,
+          "new_vertices": 1764,
+          "old_triangles": 1140,
+          "new_triangles": 1140,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundRoadYellowPaint",
+          "old_vertices": 5280,
+          "new_vertices": 5280,
+          "old_triangles": 3370,
+          "new_triangles": 3370,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundRoadGutter",
+          "old_vertices": 4278,
+          "new_vertices": 4278,
+          "old_triangles": 2708,
+          "new_triangles": 2708,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundDrainDark",
+          "old_vertices": 1008,
+          "new_vertices": 1008,
+          "old_triangles": 504,
+          "new_triangles": 504,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundDrainSteel",
+          "old_vertices": 9072,
+          "new_vertices": 9072,
+          "old_triangles": 4536,
+          "new_triangles": 4536,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundRailingSteel",
+          "old_vertices": 63264,
+          "new_vertices": 63264,
+          "old_triangles": 36928,
+          "new_triangles": 36928,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundLampSilver",
+          "old_vertices": 9792,
+          "new_vertices": 9792,
+          "old_triangles": 5856,
+          "new_triangles": 5856,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        },
+        {
+          "material": "BundLampGlass",
+          "old_vertices": 2496,
+          "new_vertices": 2496,
+          "old_triangles": 1536,
+          "new_triangles": 1536,
+          "positions_prefix_exact": true,
+          "normals_prefix_exact": true,
+          "indices_prefix_exact": true,
+          "material_unchanged": true
+        }
+      ],
+      "added_triangles": 112,
+      "new_nondegenerate": true,
+      "new_shell_welded_edges_two_opposite_uses": true,
+      "new_top_area_m2": 188.91699976474047,
+      "new_top_minus_plan_m2": 0.00014974003816122094,
+      "plan_minus_new_top_m2": 0.0001727400869805999,
+      "new_top_checkpoints": [
+        true,
+        false,
+        false
+      ],
+      "new_bounds_y_m": [
+        0.004999999888241291,
+        0.03500000014901161
+      ]
+    },
+    "unchanged_sources_and_geometry_audits": {
+      "road_geometry.py": true,
+      "bund-streets-road-check.geojson": true,
+      "bund-streets-paving-check.geojson": true,
+      "bund-streets-shoreline-check.geojson": true,
+      "osm-street.json": true,
+      "osm-roads.json": true,
+      "bund-map.geojson": true
+    },
+    "source": {
+      "final_extract_elements": 3,
+      "elements_exact_full_response_matches": true,
+      "inner_member_count": 16,
+      "all_frozen_inner_ways_closed": true,
+      "full_query_explicit_steps_entrances_count": 0
+    }
+  },
+  "final_evidence": {
+    "manifest": {
+      "street-stage/street/connector_paving.py": {
+        "bytes": 11370,
+        "sha256": "a6012d977cb694f619c8e3904983ef06fba4f3ec014a77882638da2e71ca4b87"
+      },
+      "street-stage/street/build_street.py": {
+        "bytes": 23132,
+        "sha256": "2c831e8f49b0ffeb306d1f6b71b902420afa9d4622d1a9285af9f3b533a2fb3e"
+      },
+      "street-stage/street/bund18-connector-source.json": {
+        "bytes": 37082,
+        "sha256": "5cf3e4d3e199592834977d90894cb912dae567f003f5168fcf0d72c01f243756"
+      },
+      "street-stage/street/bund-streets-connector-check.json": {
+        "bytes": 6052,
+        "sha256": "34db9c3250334576e784b9ce82a8a44b809e9bf2ece13102ad64d0c5a9ab4ef7"
+      },
+      "street-stage/street/bund-streets-connector-check.geojson": {
+        "bytes": 9775,
+        "sha256": "a7ef482536278c3204c0820ab19de692be210e2a36c010f6eec98c437bdf60c0"
+      },
+      "street-stage/connector-validation.json": {
+        "bytes": 14163,
+        "sha256": "f19f467210a574395fbf767e06ae37736f1dc7e1d04dd6aaaa0dffd254d2a72b"
+      },
+      "street-stage/street/bund-streets.glb": {
+        "bytes": 3908752,
+        "sha256": "65d01b7f9558732ccf62ae447cf2edd3675256714fc9e5b71cc94caf17142306"
+      },
+      "street-stage/web/bund-streets.glb": {
+        "bytes": 1341416,
+        "sha256": "1377cdd16f567adee2555c7090af14cb1bb0212362b2184f92533648b553e7a7"
+      },
+      "bund18-ground-osm.json": {
+        "bytes": 1345180,
+        "sha256": "f97702a340cd645560b1c9694f62264a66aca36d7920f446f8c3c2f6e3ab474f"
+      },
+      "bund18-ground-extract.json": {
+        "bytes": 52180,
+        "sha256": "2907a2752dbc86a2fc7e214a63400a577dfce7cd09258416037921475e804fca"
+      }
+    },
+    "final_checks": {
+      "raw_after_identity_matches": true,
+      "web_after_identity_matches": true,
+      "final_source_hash_matches": true,
+      "full_source_hash_matches": true,
+      "parent_extract_hash_matches": true,
+      "final_extract_count_explicit": true,
+      "parent_extract_count_explicit": true,
+      "geometry_scope_explicit": true,
+      "geometry_not_material_change_claim": true,
+      "street-stage/street/bund-streets.glb_below_100MB": true,
+      "street-stage/web/bund-streets.glb_below_100MB": true,
+      "denser_width_check": true,
+      "generator_label_v4_2": true,
+      "metadata_version_v4_2": true,
+      "web_POSITION_NORMAL_accessors_are_FLOAT32": true,
+      "web_has_no_KHR_mesh_quantization": true
+    },
+    "maximum_envelope_width_m_independently_sampled": 8.485789515474817,
+    "width_sample_spacing_max_m": 0.1,
+    "building_scope": {
+      "source": "../bund-candidates.json",
+      "geometry_field": "candidates[*].geometry",
+      "candidate_count": 10,
+      "candidate_ids": [
+        "bund02",
+        "bund03",
+        "bund12",
+        "bund13",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23"
+      ],
+      "candidates_intersecting_street_crop": [
+        "bund02",
+        "bund03",
+        "bund12",
+        "bund13",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23"
+      ],
+      "geometry_sha256": "654fbc9e118b65babbbfec692fcd20f7e3f975c0bcdc41a5f172033d60db0449",
+      "footprint_buffer_m": 0.08,
+      "scope": "Only the ten listed Bund candidate ground footprints, clipped to this street crop. Not a check against all Shanghai buildings, neighboring generic buildings, detailed mesh projections, linked parts or related_geometries (including the Bank of China western wing).",
+      "street_crop_wgs84": [
+        121.4842,
+        31.23545,
+        121.4892,
+        31.2419
+      ],
+      "observed_overlap_m2": 0
+    },
+    "raw_binary_sha256": "157aa8ef46b9bde1e42c98aa6442191e5749a222bc625bf802a799fc591b35f4",
+    "web_precision_audit": {
+      "primitive_count": 11,
+      "attributes": [
+        {
+          "mesh": 0,
+          "primitive": 0,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 1,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 2,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 3,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 4,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 5,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 6,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 7,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 8,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 9,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        },
+        {
+          "mesh": 0,
+          "primitive": 10,
+          "attributes": {
+            "POSITION": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            },
+            "NORMAL": {
+              "componentType": 5126,
+              "type": "VEC3",
+              "normalized": false
+            }
+          }
+        }
+      ],
+      "extensionsUsed": [
+        "EXT_meshopt_compression"
+      ],
+      "extensionsRequired": [
+        "EXT_meshopt_compression"
+      ],
+      "scope": "Independent GLB JSON/accessor/extension verification. Actual Meshopt decoder output comparison is delegated to root; no decoded-position identity claim is made here."
+    }
+  },
+  "resolved_review_notes": [
+    {
+      "topic": "Building validation scope",
+      "resolution": "Final connector audit explicitly carries the existing ten-candidate ground footprint scope, including exclusions from that claim; it does not claim checking every city building or detailed model projection."
+    },
+    {
+      "topic": "Nested source counts and hashes",
+      "resolution": "Final three-element connector extract is explicitly separated from its nine-element upstream extract, with independent final/source-parent/full-response identities."
+    },
+    {
+      "topic": "Geometry versus material preservation",
+      "resolution": "existing_mesh_geometry_changed=false accurately describes original mesh prefixes. BundStonePaving color intentionally changes; other material definitions remain exact."
+    },
+    {
+      "topic": "Web export precision regression caught after initial review",
+      "finding": "Earlier staged web export used -vp16 -vn12 even though the existing street delivery preserved float32 with -noq. The first review checked compressed-file identity but did not certify its attribute precision.",
+      "resolution": "Controls rebuilt only the staged web export with -cc -noq -km -ke and no simplification. Independently verified all11 primitives have POSITION/NORMAL VEC3 Float32 accessors (5126, not normalized), no KHR_mesh_quantization anywhere in GLB JSON, final1,341,416B file SHA1377cdd16f567adee2555c7090af14cb1bb0212362b2184f92533648b553e7a7, and updated validation identity. Raw GLB and geometry-source audit hashes are unchanged."
+    }
+  ],
+  "limitations": [
+    "Estimated flat paving between source-derived edges; neither the envelope nor the new surface is asserted to be a mapped or surveyed pedestrian area.",
+    "Two unclassified exterior recesses remain open (133.7901517 and104.6532116 m²), so two original white-gap checkpoints intentionally remain uncovered.",
+    "All 16 frozen inner member ways are individually closed. This review does not certify the helper for arbitrary future multipart or unclosed OSM relations.",
+    "No explicit tagged steps/entrances were returned in the queried frozen response. Empty opening-record lists mean no such evidence was available; they do not establish that physical entrances are absent.",
+    "Building non-overlap is limited to the ten documented Bund candidate ground footprints plus0.08m buffer, not all adjacent source buildings, detailed mesh projections or related building parts.",
+    "Original flat game elevation is retained; the patch does not reconstruct real raised promenade elevations, stairs, ramps or accessible routes.",
+    "Actual added GLB top-plan discrepancies total approximately0.00032248m² at float32 edges; source-plane exclusion errors are below1e-6m².",
+    "Compressed web file size/SHA, all11 POSITION/NORMAL Float32 accessor definitions and absence of KHR_mesh_quantization were independently checked. Triangle topology review used raw GLB; actual web decoder position/normal comparison and browser rendering remain for root."
+  ]
+}

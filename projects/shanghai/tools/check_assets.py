@@ -183,6 +183,11 @@ if bund_path.is_file():
     for item in landmarks+props:
         model_path=item.get('url') or item.get('model')
         if not model_path or not (ROOT/model_path).is_file():errors.append('Runtime model missing: '+str(model_path))
+    for item in props:
+        model_path=item.get('url') or item.get('model')
+        manifest_file(ROOT,model_path,item.get('bytes'),item.get('sha256'),'Scene prop runtime')
+        if item.get('editable_model'):
+            manifest_file(ROOT,item['editable_model'],item.get('raw_bytes'),item.get('raw_sha256'),'Scene prop editable')
 
     # Each of the ten LODs is bound to the same primary building in the runtime
     # navigation list, Bund release, per-building metadata and LOD manifest.

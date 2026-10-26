@@ -1,0 +1,179 @@
+{
+  "version": "bund18-estimated-connector-v1",
+  "passed": true,
+  "classification": "estimated connector paving; not a mapped or measured pedestrian footprint",
+  "source_relation": 2142077,
+  "source_exterior_way": 160033684,
+  "existing_mvt_pedestrian_feature_id": 21420773,
+  "source_extract_file": "bund18-connector-source.json",
+  "source_extract_element_count": 3,
+  "source_extract_sha256": "5cf3e4d3e199592834977d90894cb912dae567f003f5168fcf0d72c01f243756",
+  "parent_source_extract": {
+    "file": "bund18-ground-extract.json",
+    "retained_elements": 9,
+    "sha256": "2907a2752dbc86a2fc7e214a63400a577dfce7cd09258416037921475e804fca",
+    "filter": "Keep Bund pedestrian relation, named source footways/carriageways/crossings, and any tagged entrance/steps in the response. Other POIs/routes excluded.",
+    "relationship": "Upstream nine-element extract of the original Overpass response; this connector source contains the three elements listed below."
+  },
+  "full_overpass_response_sha256": "f97702a340cd645560b1c9694f62264a66aca36d7920f446f8c3c2f6e3ab474f",
+  "source_query": {
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "query": "[out:json][timeout:40];nwr(31.2399,121.4851,31.2410,121.48635);out body geom;",
+    "elements": 144,
+    "fetched_utc": "2026-10-25T23:54:10.463842+00:00",
+    "timestamp_osm_base": "2026-10-25T23:53:06Z",
+    "response_sha256": "f97702a340cd645560b1c9694f62264a66aca36d7920f446f8c3c2f6e3ab474f",
+    "response_bytes": 1345180,
+    "use": "Supplemental ground classification check, not surveyed construction boundaries or source mesh replacement.",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors"
+  },
+  "crossings_south_north": [
+    745201529,
+    226657312
+  ],
+  "mapped_river_side_crossing_endpoints_wgs84": [
+    [
+      121.4857722,
+      31.2400007
+    ],
+    [
+      121.4856936,
+      31.2407307
+    ]
+  ],
+  "road_projected_endpoints_wgs84": [
+    [
+      121.48575380474604,
+      31.240020801504862
+    ],
+    [
+      121.48565751121852,
+      31.240750391906293
+    ]
+  ],
+  "pedestrian_projected_endpoints_wgs84": [
+    [
+      121.4857738865234,
+      31.240000895268338
+    ],
+    [
+      121.48569361957632,
+      31.24073070059778
+    ]
+  ],
+  "road_edge_length_m": 84.56652124771637,
+  "pedestrian_edge_length_m": 104.73318621177404,
+  "bounded_envelope_area_m2": 426.61235013219,
+  "new_connector_area_m2": 188.91702276744988,
+  "maximum_envelope_width_m": 8.485789515611177,
+  "maximum_width_check_m": 12,
+  "width_sample_spacing_m": 0.2,
+  "maximum_new_paving_distance_to_road_edge_m": 8.485789515611177,
+  "exact_12m_width_cap_excess_m2": 0.0,
+  "detached_precision_fragments_excluded_m2": 0.0,
+  "new_polygon_count": 1,
+  "base_height_m": 0.005,
+  "top_height_m": 0.035,
+  "construction_height_basis": "existing flat game walk datum; no real step elevations asserted",
+  "overlap_m2": {
+    "existing_paving": 1.0462993094523836e-15,
+    "road_surface": 0.0,
+    "road_shoulder": 0.0,
+    "curbs": 0.0,
+    "water": 0.0,
+    "candidate_buildings": 0.0,
+    "pedestrian_holes": 0.0,
+    "mapped_entrances_steps": 0.0,
+    "south-unknown-opening": 0.0,
+    "north-unknown-opening": 0.0
+  },
+  "outside_bounded_envelope_m2": 1.0462993094523836e-15,
+  "unknown_openings": [
+    {
+      "id": "south-unknown-opening",
+      "area_m2": 133.79015168806933,
+      "new_paving_overlap_m2": 0.0,
+      "reason": "Source exterior recess retained as an unknown opening. Reference photograph shows steps/openings without a matched footprint; this recess is not asserted to be a staircase."
+    },
+    {
+      "id": "north-unknown-opening",
+      "area_m2": 104.65321158556168,
+      "new_paving_overlap_m2": 0.0,
+      "reason": "Source exterior recess retained as an unknown opening. Reference photograph shows steps/openings without a matched footprint; this recess is not asserted to be a staircase."
+    }
+  ],
+  "mapped_entrance_step_exclusions": [],
+  "checkpoints": [
+    {
+      "lng": 121.4857,
+      "lat": 31.24045,
+      "new_paving": true,
+      "preserved_unknown_openings": []
+    },
+    {
+      "lng": 121.48575,
+      "lat": 31.24045,
+      "new_paving": false,
+      "preserved_unknown_openings": [
+        "north-unknown-opening"
+      ]
+    },
+    {
+      "lng": 121.48575,
+      "lat": 31.24055,
+      "new_paving": false,
+      "preserved_unknown_openings": [
+        "north-unknown-opening"
+      ]
+    }
+  ],
+  "known_pedestrian_holes_preserved": true,
+  "existing_mesh_geometry_changed": false,
+  "added_furniture": 0,
+  "added_trees": 0,
+  "limitations": [
+    "Connector plan is an estimate between source-derived edges, not a newly discovered mapped area.",
+    "Two unidentified exterior recesses and all mapped holes remain open; two original white-gap checkpoints are intentionally not filled.",
+    "The unchanged level ground datum does not reconstruct the actual raised promenade, steps, ramps or accessible route."
+  ],
+  "building_validation_scope": {
+    "source": "../bund-candidates.json",
+    "geometry_field": "candidates[*].geometry",
+    "candidate_count": 10,
+    "candidate_ids": [
+      "bund02",
+      "bund03",
+      "bund12",
+      "bund13",
+      "bund15",
+      "bund17",
+      "bund18",
+      "bund19",
+      "bund20",
+      "bund23"
+    ],
+    "candidates_intersecting_street_crop": [
+      "bund02",
+      "bund03",
+      "bund12",
+      "bund13",
+      "bund15",
+      "bund17",
+      "bund18",
+      "bund19",
+      "bund20",
+      "bund23"
+    ],
+    "geometry_sha256": "654fbc9e118b65babbbfec692fcd20f7e3f975c0bcdc41a5f172033d60db0449",
+    "footprint_buffer_m": 0.08,
+    "scope": "Only the ten listed Bund candidate ground footprints, clipped to this street crop. Not a check against all Shanghai buildings, neighboring generic buildings, detailed mesh projections, linked parts or related_geometries (including the Bank of China western wing).",
+    "street_crop_wgs84": [
+      121.4842,
+      31.23545,
+      121.4892,
+      31.2419
+    ],
+    "observed_overlap_m2": 0.0
+  }
+}
