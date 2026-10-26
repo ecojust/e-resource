@@ -1,0 +1,18 @@
+{
+  "positive_model_sha256": "3c98611757dea3b6611f883e9f7e0fc48663e32b0889e824921e5c47f48e6981",
+  "tests": [
+    {
+      "test": "in-range-but-wrong-individual-pane-UV",
+      "rejected": true,
+      "failure_check": "assert error<2e-6",
+      "failure_function": "validate"
+    },
+    {
+      "test": "embedded-photo-byte-change",
+      "rejected": true,
+      "failure_check": "assert image_bytes==source",
+      "failure_function": "validate"
+    }
+  ],
+  "passed": true
+}

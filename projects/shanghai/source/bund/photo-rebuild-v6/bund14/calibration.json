@@ -1,0 +1,249 @@
+{
+  "schema": "photo-rebuild-v6-calibration-v1",
+  "building": "bund14",
+  "appearance_epoch": "2025-05-01 facade; earlier dated views constrain hidden geometry only",
+  "status": "Independent camera/width calibration applied; approximate photo reconstruction, not survey",
+  "metric_anchor": {
+    "source": "geometry-input.json front_edge",
+    "front_width_m": 23.174494470346758,
+    "measured_building_height": false
+  },
+  "heights_m": {
+    "main_roof": 24.6,
+    "highest_masonry": 33.4,
+    "rear_wing_roof": 20.25
+  },
+  "height_basis": "Independent EOS M2/21mm single-plane metric rectification using Canon 22.3 x 14.9mm sensor and frozen mapped frontage. See calibration-independent.json and controls. Rear wing remains proportional inference.",
+  "front_axes_fraction_from_center": [
+    -0.4362554709849826,
+    -0.3318303236275486,
+    -0.2489806199390059,
+    -0.05652766241249527,
+    0.05652766241249527,
+    0.2489806199390059,
+    0.3318303236275486,
+    0.4362554709849826
+  ],
+  "front_window_width_fraction": [
+    0.041424851844271346,
+    0.0668838753735631,
+    0.0668838753735631,
+    0.0668838753735631,
+    0.0668838753735631,
+    0.0668838753735631,
+    0.0668838753735631,
+    0.041424851844271346
+  ],
+  "nominal_vertical_coordinates_m": {
+    "meaning": "The builder retains a 28.8/38.2m drafting frame for decorative silhouette and grooves, then maps it to heights_m. Front windows and entrance instead use photo_rectified_front_m, independently mapped to the 24.6/33.4m reference."
+  },
+  "depths_m": {
+    "main_wall": 0.5,
+    "main_window_recess": 0.31,
+    "hall_window_recess": 0.38,
+    "portal_opening_recess": 0.68,
+    "render_groove": 0.055,
+    "vertical_pier_projection": 0.12,
+    "main_to_rear_step_from_front": 18.5,
+    "tower_depth": 8.4,
+    "tower_width": 6.6
+  },
+  "depth_basis": "Observed order and nonzero thickness are photo constrained; precise depths are proportional modeling estimates.",
+  "observed_controls": [
+    {
+      "id": "front-eight-axes",
+      "sources": [
+        "commons-164811484.jpg",
+        "commons-30618815.jpg"
+      ],
+      "observation": "Four regular upper rows have 8 axes, narrow outer windows, paired wing windows, paired central windows. Do not extend 8-window repetition through the central entrance."
+    },
+    {
+      "id": "six-plus-two",
+      "sources": [
+        "commons-164811484.jpg",
+        "commons-21531117.jpg",
+        "lit-sohu-2022"
+      ],
+      "observation": "Ground strip, tall hall row and four regular window rows; two narrow-window rows in central tower."
+    },
+    {
+      "id": "portal",
+      "sources": [
+        "commons-164811484.jpg"
+      ],
+      "observation": "Wide dark stone portal, lower double doors, large upper glazed grille, seven gold vertical bars, stepped dark transom, gold six-character plaque."
+    },
+    {
+      "id": "tower-depth",
+      "sources": [
+        "commons-21531117.jpg",
+        "commons-54113082.jpg",
+        "aerial-2010-gary-lee-todd-original.jpg"
+      ],
+      "observation": "Tower extends west, side windows and stepped returns visible; central vertical crest is not a flat billboard."
+    },
+    {
+      "id": "roof-ends",
+      "sources": [
+        "commons-164811484.jpg",
+        "commons-30618815.jpg"
+      ],
+      "observation": "Tall narrow blades at outer piers; lower flat wing parapets and small intermediate caps; highest masonry is central stepped crest, excluding flagpole."
+    },
+    {
+      "id": "material",
+      "sources": [
+        "commons-164811484.jpg",
+        "lit-sohu-2022",
+        "lit-tcg-2026"
+      ],
+      "observation": "White cement/render above black marble base/door frame; no whole-building cut-stone texture."
+    }
+  ],
+  "inferred_controls": [
+    "Absolute heights are independently photo-calibrated estimates with documented point/camera/depth sensitivity, not surveyed elevations.",
+    "Rear wing roof level and its window counts are conservative multi-view/footprint reconstructions; west facade is not fully photographed.",
+    "Window recesses, frame widths, groove depths and roof slab thicknesses use photo proportions, not measured dimensions.",
+    "Tower side/rear window distribution beyond visible side windows is inferred and separately labeled in the geometry report."
+  ],
+  "excluded_epoch_details": [
+    "2012/2014 Bank of Shanghai branding",
+    "2012 bus stop furniture",
+    "temporary 2025 banners and planters",
+    "night floodlight color baked into facade"
+  ],
+  "lettering": {
+    "text": "上海市总工会",
+    "method": "Actual closed glyph extrusions from the shared licensed OFL subset; readable approximation, not photo-traced calligraphy. Small14 uses independent vector strokes.",
+    "center_nominal_front_uz_m": [
+      0,
+      9.951219512195122
+    ],
+    "total_width_m": 5.25,
+    "height_nominal_m": 0.7726829268292683,
+    "front_depth_m": 0.324,
+    "completed": true,
+    "font_source": "../common/fonts/BundSignSubset.otf",
+    "font_license": "../common/fonts/FONT-LICENSE.txt"
+  },
+  "independent_calibration": {
+    "file": "calibration-independent.json",
+    "sha256": "bcff18db881b1a49e51899a30ad7215a097f4f1ee5b96cfcee1d291d2e9bff6e",
+    "control_file": "calibration-independent-controls.json",
+    "main_roof_point_estimates_m": [
+      24.6244,
+      24.5533
+    ],
+    "central_stone_projection_m": 33.4086,
+    "central_stone_plus_minus_1m_depth_condition_m": [
+      32.47,
+      34.34
+    ],
+    "combined_stone_sensitivity_envelope_m": [
+      30.9,
+      35.9
+    ],
+    "not_a_statistical_confidence_interval": true
+  },
+  "photo_rectified_front_m": {
+    "reference_main_roof_m": 24.6,
+    "reference_highest_masonry_m": 33.4,
+    "regular_window_extents": [
+      [
+        9.5,
+        11.25
+      ],
+      [
+        12.85,
+        14.55
+      ],
+      [
+        16.05,
+        17.8
+      ],
+      [
+        19.4,
+        21.6
+      ]
+    ],
+    "hall_window_extents": [
+      4.0,
+      6.85
+    ],
+    "ground_window_extents": [
+      0.7,
+      2.43
+    ],
+    "black_plinth_top": 2.55,
+    "tower_front_window_extents": [
+      [
+        24.9,
+        26.6
+      ],
+      [
+        27.3,
+        29.3
+      ]
+    ],
+    "portal_outer_width": 7.94,
+    "portal_opening_width": 4.75,
+    "portal_outer_top": 9.3,
+    "portal_opening_top": 7.75,
+    "upper_portal_glazing_extents": [
+      3.25,
+      7.24
+    ],
+    "gold_grille_extents": [
+      3.5,
+      7.06
+    ],
+    "method": "Approximate manual feature selection and colour-profile checks in original oriented pixels, mapped with independent plane H. Window depths and outer/inner portal offsets checked using the independent 3x4 projection. Symmetric axes average left/right estimates; no claim of sub-centimetre accuracy."
+  },
+  "pixel_width_crosschecks": [
+    {
+      "oriented_y_px": 3850,
+      "oriented_x_pair_px": [
+        959,
+        2208
+      ],
+      "plane_width_m": 7.993,
+      "approx_outward_depth_m": 0.2,
+      "depth_corrected_width_m": 7.943,
+      "chosen_m": 7.94,
+      "label": "outer black portal"
+    },
+    {
+      "oriented_y_px": 3850,
+      "oriented_x_pair_px": [
+        1210,
+        1945
+      ],
+      "plane_width_m": 4.704,
+      "approx_outward_depth_m": -0.3,
+      "depth_corrected_width_m": 4.748,
+      "chosen_m": 4.75,
+      "label": "inner aperture/glazing"
+    },
+    {
+      "oriented_y_px": 2100,
+      "oriented_x_pair_px": [
+        1309,
+        1520
+      ],
+      "plane_width_m": 1.556,
+      "chosen_m": 1.55,
+      "label": "central left regular window"
+    }
+  ],
+  "source_reference_resolution": "Photo filenames are relative to research/. Literature IDs resolve through research/sources.json; full copyrighted article caches are not required or published.",
+  "photographic_glazing": {
+    "controls": "glazing-samples.json",
+    "method": "Individually corrected, guarded per-glass-pane photo sampling; no whole-facade projection",
+    "image": "research/commons-164811484.jpg",
+    "license": "CC0-1.0",
+    "selected_windows": 28,
+    "selected_panes": 137,
+    "geometry_and_axes_unchanged": true
+  }
+}

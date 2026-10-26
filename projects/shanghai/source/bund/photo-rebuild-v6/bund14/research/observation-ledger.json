@@ -1,0 +1,265 @@
+{
+  "schema": "bund14-observation-ledger-v1",
+  "prepared_on": "2026-10-26",
+  "scope": "研究证据；不声称已建模或已通过模型验收",
+  "reviewed_photo_ids": [
+    "commons-164811484",
+    "commons-21531117",
+    "commons-30618815",
+    "commons-57646721",
+    "commons-104694848",
+    "commons-104694807",
+    "commons-54113082",
+    "commons-103667816"
+  ],
+  "evidence_kind_definitions": {
+    "observed": "实际查看源照片后可见的外形事实",
+    "documented": "来源文字明确陈述，可信度随来源说明",
+    "mapped_computation": "对已存地图坐标计算，并非现场实测",
+    "unresolved": "现有来源无法确认；后续只能显式拟合/推定"
+  },
+  "observations": [
+    {
+      "id": "front-eight-axes",
+      "evidence_kind": "observed",
+      "claim_zh": "规则层正面共有8个窗轴：两端各1窄窗、两翼各2宽窗、中央2宽窗，节奏为1+2+2+2+1。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815",
+        "commons-21531117"
+      ],
+      "confidence": "high",
+      "limitations_zh": "该计数针对四排重复的规则层窗带；中央入口占据较低两层，低层不能照抄8窗。",
+      "modeling_rule_zh": "逐窗轴建真实开孔和窗框；保留较宽墙肢与两端窄窗，不做等距均质小窗墙。"
+    },
+    {
+      "id": "six-plus-two",
+      "evidence_kind": "observed_and_documented",
+      "claim_zh": "照片可辨四排规则层窗、一排较高窗带和黑色低层；中央塔另外两排狭长窗。文献称主体6层、中央8层。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815",
+        "lit-sohu-2022",
+        "lit-tcg-2026"
+      ],
+      "confidence": "high",
+      "limitations_zh": "立面窗带不等于已获取结构楼层标高；内部夹层情况未调查。",
+      "modeling_rule_zh": "体量按6层主体+中央2层塔组织；每层具体米高须保留拟合标签，禁止直接7层等高挤出。"
+    },
+    {
+      "id": "wall-material",
+      "evidence_kind": "documented_and_observed",
+      "claim_zh": "文献写其余墙面白水泥粉刷；照片显示平滑浅色表面、局部修补/细缝，非整栋石块砌筑纹理。",
+      "source_ids": [
+        "lit-sohu-2022",
+        "lit-tcg-2026",
+        "commons-164811484",
+        "commons-21531117"
+      ],
+      "confidence": "high",
+      "limitations_zh": "2025照片偏暖、2012照片偏冷，不能把相机色相当实验室材料色。白水泥为文献材质称谓。",
+      "modeling_rule_zh": "使用浅色水泥抹面/粉刷材质；侧后墙同类基础材质，不铺整楼大理石或毛石贴图。"
+    },
+    {
+      "id": "black-entrance",
+      "evidence_kind": "observed_and_documented",
+      "claim_zh": "中央入口外围是高矩形深色石材大框，内缘多重退进，底部黑色基座与门旁侧墙有可见拼缝；门框黑大理石由文献确认。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815",
+        "lit-sohu-2022",
+        "lit-tcg-2026"
+      ],
+      "confidence": "high",
+      "limitations_zh": "照片不能单独判定所有黑色基座板材的岩石类型或完整板材尺寸。",
+      "modeling_rule_zh": "门框建立真实厚度、内退层次和有限石板分缝；不要将照片里的反光复制成固定亮斑。"
+    },
+    {
+      "id": "entry-grille",
+      "evidence_kind": "observed",
+      "claim_zh": "入口上半部有纵向金色金属格栅，带重复方形/短横装饰节点；下部为深色双扇门，二者之间有多道水平凸线。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815",
+        "commons-21531117"
+      ],
+      "confidence": "high",
+      "limitations_zh": "照片遮挡和透视影响格栅厚度；金属成分未化验。",
+      "modeling_rule_zh": "格栅用独立有深度构件，玻璃退在后方；金色外观不自动等于纯金材质。"
+    },
+    {
+      "id": "signage",
+      "evidence_kind": "observed",
+      "claim_zh": "门框上部金色字牌为“上海市总工会”，小门牌14位于水平线脚中部。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815"
+      ],
+      "confidence": "high",
+      "limitations_zh": "书法字体及笔划厚度未获得官方矢量文件。",
+      "modeling_rule_zh": "保留文字内容、位置和比例控制点；后续字形单独核对，不放假乱码。"
+    },
+    {
+      "id": "ribs-and-grooves",
+      "evidence_kind": "observed",
+      "claim_zh": "窗间和较宽墙肢上有连续窄凸脊及两侧浅沟，塔部和端部进一步分层；窗间不是完全平墙。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-21531117",
+        "commons-57646721"
+      ],
+      "confidence": "high",
+      "limitations_zh": "凹槽/凸脊绝对深度没有量测，夜间灯光会放大阴影。",
+      "modeling_rule_zh": "以几何线脚与凹槽表达，深度由斜视照片拟合并标明推定；不能只画暗线。"
+    },
+    {
+      "id": "window-profile",
+      "evidence_kind": "observed",
+      "claim_zh": "规则窗为深色细框矩形窗，通常上部横亮、下部竖梃分格，窗台为薄突出层；塔窗更窄更高。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815",
+        "commons-21531117"
+      ],
+      "confidence": "high",
+      "limitations_zh": "不同照片可见窗扇开闭、百叶/窗帘和反射变化；不可把每个玻璃亮度当永久状态。",
+      "modeling_rule_zh": "真实洞口退距、框和窗台分层；塔窗与主楼宽窗应不同模板。"
+    },
+    {
+      "id": "tower-silhouette",
+      "evidence_kind": "observed",
+      "claim_zh": "中央塔冠逐级收窄，轴心窄竖柱高于两侧；两端也有高起的薄片状构件与台阶收头。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-30618815",
+        "commons-21531117"
+      ],
+      "confidence": "high",
+      "limitations_zh": "正面形状清晰但每一级前后厚度要靠斜视拟合。",
+      "modeling_rule_zh": "保留可对照的阶梯轮廓、中央脊和端部薄片，避免三只普通长方盒。"
+    },
+    {
+      "id": "tower-front-ornaments",
+      "evidence_kind": "observed",
+      "claim_zh": "轴心高处有上下两组带水平环状分节的圆弧凸出饰件，下组明显更长。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-21531117",
+        "commons-30618815"
+      ],
+      "confidence": "high",
+      "limitations_zh": "未确认其技术功能；不能据形状命名成时钟、烟囱或通风器。",
+      "modeling_rule_zh": "按可见轮廓建立带分节的圆弧饰件，功能标为unknown。"
+    },
+    {
+      "id": "tower-depth",
+      "evidence_kind": "observed",
+      "claim_zh": "中央高塔向西有实体进深；2012北斜视和2007南斜视可见高塔侧窗/回墙，2010俯拍可见局部顶面。",
+      "source_ids": [
+        "commons-21531117",
+        "commons-57646721",
+        "commons-103667816"
+      ],
+      "confidence": "high",
+      "limitations_zh": "深度的米值未由测绘证明。",
+      "modeling_rule_zh": "塔部不做单片广告牌；侧墙/窗和顶部闭合体量须按多视角拟合。"
+    },
+    {
+      "id": "south-long-wing",
+      "evidence_kind": "observed",
+      "claim_zh": "2010南斜视显示南侧长翼向西延伸并有重复窗带，体量不是只含临街方盒。",
+      "source_ids": [
+        "commons-54113082",
+        "commons-57646721"
+      ],
+      "confidence": "medium",
+      "limitations_zh": "远端受树木、透视和临近建筑遮挡，无法确认完整窗列数量。",
+      "modeling_rule_zh": "保留冻结地图的后翼轮廓；可见窗位对齐，未见窗位需显式列为推定。"
+    },
+    {
+      "id": "rear-roof",
+      "evidence_kind": "observed_and_mapped",
+      "claim_zh": "2010俯拍提供部分两侧平顶、中央塔顶面/回墙和后翼屋面；地图轮廓包含西伸长翼及北侧凹入。",
+      "source_ids": [
+        "commons-103667816",
+        "map-osm-178405872-v7"
+      ],
+      "confidence": "medium",
+      "limitations_zh": "不能从此全景辨认所有后部屋面分区、设备或西端外墙窗数；2010屋面不等同于2025屋面。",
+      "modeling_rule_zh": "用可见屋顶控制总体关系，保持地图凹口，不擅自填成规则矩形或完整内院；未知后部尺寸在calibration中记录。"
+    },
+    {
+      "id": "separate-north-neighbor",
+      "evidence_kind": "observed_and_mapped",
+      "claim_zh": "14号北邻为现代外滩公共服务中心，立面分格/檐高不同，独立于交通银行大楼。",
+      "source_ids": [
+        "commons-54113082",
+        "commons-104694807",
+        "commons-103667816",
+        "map-osm-178405872-v7"
+      ],
+      "confidence": "high",
+      "limitations_zh": "北邻在正面局部照片中会紧贴14号，容易误合并。",
+      "modeling_rule_zh": "仅替换building:930b1722-187d-4727-ad8b-303698ad37ee；不可将北邻或近距重叠建筑按半径删除。"
+    },
+    {
+      "id": "front-width",
+      "evidence_kind": "mapped_computation",
+      "claim_zh": "冻结OSM正面第5边计算长23.174494470346758m，可作为模型横向尺度约束。",
+      "source_ids": [
+        "map-osm-178405872-v7"
+      ],
+      "confidence": "high_for_computation_only",
+      "limitations_zh": "数值精度是投影计算精度，地图线位并非现场测量；不能宣称毫米级实际准确。",
+      "modeling_rule_zh": "使用../geometry-input.json的原始坐标/米制契约；研究阶段较早的equirectangular近似值只作核对，不替代冻结几何。"
+    },
+    {
+      "id": "height-unresolved",
+      "evidence_kind": "unresolved",
+      "claim_zh": "未找到可核实的实测主体檐高、塔冠总高；OSM7层和旧全市22.4m来自floor_estimate。",
+      "source_ids": [
+        "map-osm-178405872-v7",
+        "lit-sohu-2022",
+        "lit-tcg-2026"
+      ],
+      "confidence": "high_for_limitation",
+      "limitations_zh": "搜索摘要中约30m/局部7层等未核实说法不作为高度证据；照片未完成摄影测量。",
+      "modeling_rule_zh": "绝对标高由照片比例与地图宽度拟合时注明inferred，并存控制点/误差；不能把22.4m复制为实测，也不能只因无字段停止细化。"
+    },
+    {
+      "id": "epoch-differences",
+      "evidence_kind": "observed",
+      "claim_zh": "2012/2014可见上海银行标识、较明显外露泛光灯与线缆，2025正面这些设施/招牌状态不同；2025可见自身照明与监控设备。",
+      "source_ids": [
+        "commons-164811484",
+        "commons-21531117",
+        "commons-30618815",
+        "commons-54113082"
+      ],
+      "confidence": "high",
+      "limitations_zh": "不能证明所有旧设施在某确切年份移除；图片取景会隐藏设备。",
+      "modeling_rule_zh": "默认以2025可见正面为同一年代基准；旧图仅补稳定几何，旧广告/灯具需另立历史变体。"
+    },
+    {
+      "id": "predecessor-exclusion",
+      "evidence_kind": "documented",
+      "claim_zh": "Commons分类中的1908年德华银行旧楼不是1948完成的现存14号大楼。",
+      "source_ids": [
+        "lit-sohu-2022",
+        "lit-mofba-2021"
+      ],
+      "confidence": "high",
+      "limitations_zh": "旧楼插图可讲历史，不能作为现楼外形。",
+      "modeling_rule_zh": "不把旧楼古典拱券、柱式或坡顶套到现存Art Deco大楼。"
+    }
+  ],
+  "required_future_model_checks": [
+    "正面8窗轴和低层中央大门合并关系",
+    "四排规则窗+高窗带+黑色低层与两层塔窗",
+    "塔冠分级、端部薄片、凹槽/凸脊和塔体真实进深",
+    "2025黑门框/金格栅、窗台和窗框退距",
+    "冻结后翼凹口及与北邻完全分离",
+    "逐项列出高度、不可见后窗/屋面与设备的推定值，不能伪装为照片确认",
+    "模型和每份原始图片文件均严格小于100000000字节"
+  ]
+}

@@ -2,15 +2,17 @@
 
 本目录继续扩展全市模型的逐栋近景细节。现有全市分块仍提供16区覆盖；全市普通楼的真实门窗和立面尚未逐栋核验，不能将参数生成结果当作全市照片复原已完成。
 
-首栋独立资产为日清大楼（外滩5号）：
+已完成独立资产检查的两栋：
 
 - [近景GLB](../../../assets/models/bund/web/bund05.glb)：8.73 MB。
 - [原始GLB](../../../assets/models/bund/bund05.glb)：14.91 MB。
 - [Blender工程](../../../assets/native/bund/bund05.blend)：24.07 MB。
 - [来源、推定范围与复建](bund05/README.md)、[原生预览核验](bund05/native-preview-review.json)。
 
+交通银行旧址（外滩14号）：[近景GLB](../../../assets/models/bund/web/bund14.glb) 6.73 MB、[原始GLB](../../../assets/models/bund/bund14.glb) 9.84 MB、[Blender工程](../../../assets/native/bund/bund14.blend) 15.05 MB；[来源与复建](bund14/README.md)、[原生预览核验](bund14/native-preview-review.json)。四排八轴窗、黑石入口、金格栅、实体字牌和阶梯塔冠已重建，28窗的137个清晰分格独立采用实景玻璃。
+
 该栋保留真实源轮廓、连续墙体开口、凸窗、屋顶、檐口、门柱、字牌与通风口；中央六组窗采用112片独立注册的实景玻璃，其他区域保留说明过的几何材质。每个文件都小于100,000,000字节。
 
-本次独立资产先行保存；HTML导航与新增建筑的城市简模替换在本批场景验收后统一发布。06号和14号正在同标准核验，后续逐栋保存，未完成项不计作已验收成果。
+本次独立资产先行保存；HTML导航与新增建筑的城市简模替换在本批场景验收后统一发布。06号正在同标准核验，后续逐栋保存，未完成项不计作已验收成果。
 
 [共享工具](common/README.md)解释几何、校准、字体、原始JPEG和分级模型的复建方式。原始程序几何采用MIT，轮廓保留OpenStreetMap/Overture ODbL署名，各照片及字体按各自许可分发。

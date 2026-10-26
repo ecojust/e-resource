@@ -1,0 +1,91 @@
+{
+  "schema": "bund14-multiview-static-review-v1",
+  "model_sha256": "3c98611757dea3b6611f883e9f7e0fc48663e32b0889e824921e5c47f48e6981",
+  "review_status": "Geometry, original photo selection and individual-pane UVs checked; real Blender/browser orientation and native validation pending root",
+  "views": [
+    {
+      "source": "research/commons-164811484.jpg",
+      "capture": "2025-05-01",
+      "checks": [
+        "8 symmetric window axes on 4 regular rows, narrow ends; ground/hall central axes replaced by portal",
+        "White rendered main face, continuous geometry grooves and projected piers; no full-facade stone tile texture",
+        "Black portal 7.94m / aperture4.75m from metric width check; 7 gold vertical grille members",
+        "Two tower window rows; central stepped stone spine; thin outer roof blades"
+      ],
+      "geometry_controls": "calibration.json; calibration-independent.json",
+      "status": "source controls implemented; field height/depth remain estimates"
+    },
+    {
+      "source": "research/commons-21531117.jpg",
+      "capture": "2012-08-31",
+      "checks": [
+        "Tower has depth, three visible upper side windows, side ribs and roof access ladder",
+        "Stepped longitudinal crest and roof return walls; modern north neighbour excluded"
+      ],
+      "status": "side geometry supported; exact8.4m tower depth and hidden lower/back bays inferred"
+    },
+    {
+      "source": "research/commons-54113082.jpg",
+      "capture": "2010-07-04",
+      "checks": [
+        "Long westward south flank, lower rear wing",
+        "Window bands are rendered cement rather than copied black portal"
+      ],
+      "status": "trees and coaches obscure complete bay count; rear schedule explicitly inferred"
+    },
+    {
+      "source": "research/aerial-2010-gary-lee-todd-original.jpg",
+      "capture": "2010-09-18",
+      "checks": [
+        "Tower roof and long westward mass are modeled in depth",
+        "Saved north-side plan notch retained; no rectangular fill into neighbour"
+      ],
+      "status": "partial roof evidence; no invented certainty about concealed west elevation"
+    },
+    {
+      "source": "research/commons-30618815.jpg",
+      "capture": "2014-01-14",
+      "checks": [
+        "8 regular axes, four regular window rows, taller hall band and separate ground strip",
+        "Stepped return moulding around tall entrance",
+        "Historical Bank of Shanghai sign not copied into2025 epoch"
+      ],
+      "status": "cross-view morphology agreement"
+    }
+  ],
+  "source_geometry": {
+    "front_width_m": 23.174494470346758,
+    "exact_osm_plan_area_m2": 1108.232839539085,
+    "replacement_ids": [
+      "930b1722-187d-4727-ad8b-303698ad37ee"
+    ],
+    "neighbour_e42514b6_excluded": true
+  },
+  "not_completed_here": [
+    "Blender render comparison and native blend",
+    "Real browser GLTFLoader/EXIF decode validation",
+    "Optimized GLB publishing",
+    "Undocumented west facade survey"
+  ],
+  "individual_file_limit_bytes": 100000000,
+  "photographic_glazing": {
+    "source": "research/commons-164811484.jpg",
+    "license": "CC0-1.0",
+    "source_original_sha256": "b768d0cf0099d3443b8d52b40830f3c983c96be846eea6e4e58a13e0844fe5d9",
+    "windows_selected": 28,
+    "panes_selected": 137,
+    "entire_windows_excluded": 4,
+    "additional_pane_fallbacks": 17,
+    "manual_source_contact_sheet": "glazing-evidence/selected-window-contact.png",
+    "quad_mapping_and_embedded_original_sha_checks": "output/bund14.validation.json",
+    "negative_controls": "glazing-evidence/validation-negative-controls.json",
+    "unchanged_geometry_during_mapping": true
+  },
+  "lettering": {
+    "chinese": "上海市总工会",
+    "finished": true,
+    "font_license": "SIL OFL 1.1",
+    "not_photo_traced": true,
+    "number14": "independent readable vector strokes"
+  }
+}
