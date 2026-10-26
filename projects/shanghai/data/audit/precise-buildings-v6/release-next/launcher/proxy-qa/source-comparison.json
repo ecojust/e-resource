@@ -1,0 +1,35 @@
+{
+  "schema": "launcher-proxy-qa-copy-v1",
+  "created_utc": "2026-10-26T09:51:28.609810+00:00",
+  "original_directory": "/workspace/shanghai_expansion/building-by-building-v6/next/ordinary-launcher",
+  "copies": [
+    {
+      "file": "browser-catalog.py",
+      "original_sha256": "c4b9a616d6f75fd4a26e5d25405cf7a72aff170202d6963b71d81da6daeee059",
+      "copy_sha256": "20b456a87b29cd2276b65c3c588571acdbed0b9d8b5162cec5b7ce68b2337dc9",
+      "byte_identical": false
+    },
+    {
+      "file": "catalog-base-probe.js",
+      "original_sha256": "e38b290a8421419298c2b869df1ecb137bdb47b976d0d4267096bb26c9bf997b",
+      "copy_sha256": "e38b290a8421419298c2b869df1ecb137bdb47b976d0d4267096bb26c9bf997b",
+      "byte_identical": true
+    },
+    {
+      "file": "catalog-extension-probe.js",
+      "original_sha256": "12be4012699654b330544fff5bf18390388347b76088d7fa6cec52ff49a108a2",
+      "copy_sha256": "12be4012699654b330544fff5bf18390388347b76088d7fa6cec52ff49a108a2",
+      "byte_identical": true
+    }
+  ],
+  "patch_sha256": "907776554f5cefa62f83ff2d8cf7c8d655a771e5efa8097220a8bfcfb17db6b2",
+  "changes": [
+    "Read HTTPS_PROXY then HTTP_PROXY explicitly; preserve localhost and 127.0.0.1 direct bypass.",
+    "Pass proxy options to BrowserContext so browser, context.request, route.fetch share the environment transport.",
+    "Record proxy environment name, scheme, host, port, bypass and credential-presence boolean only; never record credentials."
+  ],
+  "original_files_modified": false,
+  "launcher_or_application_modified": false,
+  "remote_requests_mocked": false,
+  "browser_started_during_preparation": false
+}

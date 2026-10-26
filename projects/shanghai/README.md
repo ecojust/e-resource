@@ -2,7 +2,7 @@
 
 上海16区三维地图与第三人称漫游项目，当前有**20栋独立建筑与地标：15栋外滩历史建筑、4栋陆家嘴地标、青浦北大街222号普通民宅前楼**。本轮将已单独发布的外滩7号、9号和222接入HTML。外滩模型按逐栋照片参照制作；陆家嘴的细化范围不同；全市普通楼仍是来源轮廓与高度支撑的参数推定，不能称20栋或179万要素具有同等照片精度。
 
-[上一版17栋在线预览](https://rawcdn.githack.com/ecojust/e-resource/ac388a7c598b81af3b6ac9fc79d4b63ee59a3ad4/projects/shanghai/index.html#mode=walk)（固定ac388…应用，尚不是本轮20栋页面）。[上一版v6启动包](downloads/shanghai-web-launcher.zip)为74.99 MB／74,988,136字节、按需联网；它在本地包含原14栋并联网加载首批3栋。**本轮20栋新预览与ZIP尚待发布，旧链接不能当作新增三栋已上线的证据。**
+[本轮20栋在线预览](https://rawcdn.githack.com/ecojust/e-resource/f5ba36ae1eaa4241ab0084841ded78b6ef50d248/projects/shanghai/index.html#mode=walk)（固定应用提交`f5ba36ae1eaa4241ab0084841ded78b6ef50d248`）。新启动包已构建并通过归档校验：75.04 MB／75,039,313字节，本地14栋、联网加载6栋，含1个普通楼目录记录；按需联网，不表示全市模型全部装入ZIP。[下载本轮启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)。下载地址跟随master更新，属于可变入口；包内资源固定到上述应用提交。实际解压ZIP中的222目录已通过静态20项复用、受控19项动态加载／退出／返回及索引SHA拒绝检查，27个邻楼保留、29／29个几何对象释放；root实际查看5张截图，page／shader／HTTP错误为0。此项未重跑07／09全部视角或全部20栋。 见[实际启动包验证范围与报告](data/audit/precise-buildings-v6/release-next/launcher/README.md)。
 
 ![外滩第三人称街景](assets/previews/bund-street.png)
 

@@ -1,0 +1,61 @@
+--- original/browser-catalog.py
++++ proxy-qa/browser-catalog.py
+@@ -10,7 +10,7 @@
+ from __future__ import annotations
+ import argparse,asyncio,copy,hashlib,json,os,time
+ from pathlib import Path
+-from urllib.parse import urljoin,urlsplit
++from urllib.parse import urljoin,urlsplit,unquote
+ HERE=Path(__file__).resolve().parent
+ TARGET='qingpu-beidajie-222'
+ CHECKS=('source_photos','identity_footprint','height_evidence','visible_facade_opening_grid','roof','texture_mapping_qa','geometry_proof','size_proof','browser_proof','uncertainty')
+@@ -47,14 +47,39 @@
+  p.add_argument('--width',type=int,default=1040);p.add_argument('--height',type=int,default=760);p.add_argument('--dpr',type=float,default=1)
+  return p.parse_args()
+ 
++def environment_proxy(environ=None):
++ # Test-environment transport only. BrowserContext.request and route.fetch use
++ # this same explicit context proxy; the launcher bytes/URLs stay unchanged.
++ env=os.environ if environ is None else environ
++ name=next((name for name in ('HTTPS_PROXY','HTTP_PROXY') if env.get(name)),None)
++ require(name is not None,'Proxy QA requires HTTPS_PROXY or HTTP_PROXY')
++ value=urlsplit(env[name])
++ require(value.scheme in ('http','https') and value.hostname and value.path in ('','/')
++   and not value.query and not value.fragment,'Unsupported environment proxy URL')
++ try:port=value.port
++ except ValueError:raise RuntimeError('Invalid environment proxy port') from None
++ host=value.hostname
++ require(not any(c.isspace() or ord(c)<32 for c in host),'Invalid environment proxy host')
++ server=value.scheme+'://'+('['+host+']' if ':' in host else host)+((':'+str(port)) if port else '')
++ bypass='localhost,127.0.0.1'
++ proxy={'server':server,'bypass':bypass}
++ if value.username is not None:proxy['username']=unquote(value.username)
++ if value.password is not None:proxy['password']=unquote(value.password)
++ safe={'enabled':True,'source_environment':name,'scheme':value.scheme,'host':host,'port':port,
++  'bypass':bypass,'credentials_supplied':value.username is not None or value.password is not None,
++  'scope':'Explicit Playwright BrowserContext proxy shared by browser requests, context.request and route.fetch; localhost remains direct.',
++  'remote_urls_or_bytes_rewritten':False}
++ return proxy,safe
++
+ async def run(args):
+  from playwright.async_api import async_playwright
+  require(args.output.resolve()!=HERE,'Output must not overwrite the tool directory');args.output.mkdir(parents=True,exist_ok=True)
+  report_path=args.output/'browser.json';require(not report_path.exists(),'Refuse to overwrite an existing browser report')
+  base=args.url if args.url.endswith('/') else args.url.rsplit('/',1)[0]+'/' if args.url.endswith('index.html') else args.url+'/'
+  require(urlsplit(base).scheme in ('http','https'),'HTTP(S) project URL required')
++ proxy_options,network_config=environment_proxy()
+  report={'schema':'ordinary-catalog-browser-v1','started_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'passed':False,'technical_passed':False,
+-  'target':args.target,'url':base,'single_browser':True,'sequential_pages':True,'disk_models_modified':False,'test_injections':[],
++  'target':args.target,'url':base,'network':network_config,'single_browser':True,'sequential_pages':True,'disk_models_modified':False,'test_injections':[],
+   'phases':[],'captures':[],'events':[],'page_errors':[],'shader_errors':[],'console_warnings':[],'http_errors':[],
+   'asset_requests':[],'visual_review':'not performed by script','script_sha256':sha(Path(__file__).read_bytes()),
+   'probe_sha256':sha((HERE/'catalog-base-probe.js').read_bytes()),'extension_sha256':sha((HERE/'catalog-extension-probe.js').read_bytes())}
+@@ -148,7 +173,7 @@
+  async with async_playwright() as playwright:
+   try:
+    progress('BROWSER BEGIN');browser=await playwright.chromium.launch(executable_path=args.chromium,headless=True,args=['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader'])
+-   context=await browser.new_context(viewport={'width':args.width,'height':args.height},device_scale_factor=args.dpr)
++   context=await browser.new_context(viewport={'width':args.width,'height':args.height},device_scale_factor=args.dpr,proxy=proxy_options)
+    original['registry']=await fetch_json(urljoin(base,'data/precise-buildings-v6.json'));original['navigation']=await fetch_json(urljoin(base,'data/landmarks.json'))
+    rows=[r for r in original['navigation']['data'] if r['id']==args.target];require(len(rows)==1,'Accepted static target must exist once');record=rows[0]
+    require(record.get('accepted') is True and not record.get('candidate_only') and record.get('pending_stages')==[] and all(record.get('acceptance',{}).get(k,{}).get('status')=='passed' for k in CHECKS),'Actual ordinary target is not accepted')

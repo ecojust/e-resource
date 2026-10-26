@@ -1,0 +1,43 @@
+{"at": 1793007932.2372727, "label": "BROWSER BEGIN"}
+{"at": 1793007934.052074, "label": "FAILED", "type": "Error", "message": "APIRequestContext.get: connect ENETUNREACH 2606:4700:20::681a:ab:443 - Local (:::0)\nCall log:\n  - → GET https://rawcdn.githack.com/ecojust/e-resource/f5ba36ae1eaa4241ab0084841ded78b6ef50d248/projects/shanghai/data/precise-buildings/catalog.json\n    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36\n    - accept: */*\n    - accept-encoding: gzip,deflate,br\n"}
+Traceback (most recent call last):
+  File "/workspace/shanghai_expansion/building-by-building-v6/next/ordinary-launcher/browser-catalog.py", line 213, in <module>
+    asyncio.run(run(parse_args()))
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/shanghai_expansion/building-by-building-v6/next/ordinary-launcher/browser-catalog.py", line 158, in run
+    original['catalog']=await fetch_json(catalog_url,descriptor);catalog=original['catalog']['data'];entries=[r for r in catalog['macros'] if r['id']==macro];require(len(entries)==1,'Target macro missing/duplicate')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shanghai_expansion/building-by-building-v6/next/ordinary-launcher/browser-catalog.py", line 67, in fetch_json
+    response=await context.request.get(url,timeout=args.timeout_ms);require(response.ok,f'Metadata HTTP {response.status}: {url}');body=await response.body();require(len(body)<8*1024*1024,'Metadata exceeds runtime limit')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/async_api/_generated.py", line 21108, in get
+    await self._impl_obj.get(
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_fetch.py", line 203, in get
+    return await self.fetch(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_fetch.py", line 329, in fetch
+    return await self._inner_fetch(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_fetch.py", line 435, in _inner_fetch
+    response = await self._channel.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: APIRequestContext.get: connect ENETUNREACH 2606:4700:20::681a:ab:443 - Local (:::0)
+Call log:
+  - → GET https://rawcdn.githack.com/ecojust/e-resource/f5ba36ae1eaa4241ab0084841ded78b6ef50d248/projects/shanghai/data/precise-buildings/catalog.json
+    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+

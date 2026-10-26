@@ -1,0 +1,77 @@
+{
+  "schema": "ordinary-catalog-root-visual-review-v1",
+  "passed": true,
+  "final": true,
+  "reviewer": "root",
+  "utc": "2026-10-26T10:03:20.622629+00:00",
+  "browser_report_sha256": "6820a1f007b07f4e8461f3e01f29da7bd17a7e06fc52d4c5070e98f8bd3cd265",
+  "archive_sha256": "e7c604424c076c373be73dba4f93b564b0d1db0efe8e00cabb93bb99a60743f2",
+  "archive_bytes": 75039313,
+  "app_commit": "f5ba36ae1eaa4241ab0084841ded78b6ef50d248",
+  "application_commit": "f5ba36ae1eaa4241ab0084841ded78b6ef50d248",
+  "archive_check_sha256": "8fc220232d6be0ecfdfd08f1b51b61d772da595a6496e9a9d86b37bb4b8e07ff",
+  "web_sha256": "f8659166ace3894c1ceb436019594f7b60d9a195e269c363c79bb1833dc5cb6f",
+  "scope": "实际解压最终75,039,313字节ZIP，在公开固定提交资源联网条件下，核对222静态加载/返回、动态加载/返回以及故意索引SHA损坏后的基线保留画面。",
+  "actually_viewed": [
+    {
+      "file": "static-catalog-loaded.png",
+      "bytes": 238556,
+      "sha256": "56b0e06983ac43a5bb4b6b6ade3ee15d46d644f13c38b1cae5075b9fcc8468a0",
+      "actually_viewed": true
+    },
+    {
+      "file": "static-catalog-returned.png",
+      "bytes": 238521,
+      "sha256": "d0df79f0046a3f74a25507d4e59f1b0e1179829dfb36ad54f5c4789f1703d1a8",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-catalog-loaded.png",
+      "bytes": 238553,
+      "sha256": "994bffe763dd8cd8d1939ce0705749cec259eeaa979e16ba1ecbaddaaac38a68",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-catalog-returned.png",
+      "bytes": 238576,
+      "sha256": "9ebd6d8823ca7c1a90d8f15d4e8ba3ae95723bccc9d2ebd79ea4af73a0c8b086",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-index-hash-rejected-baseline-visible.png",
+      "bytes": 214918,
+      "sha256": "b74837fe6afd92f15ac8d8340860e85c1465d9ce0e634c67d91652ca03b07f05",
+      "actually_viewed": true
+    }
+  ],
+  "runtime_scope_note": "本轮运行的是最终ZIP真实解压目录，资源指向公开f5ba36ae1eaa4241ab0084841ded78b6ef50d248提交。ZIP及281份清单文件和清单自身在浏览器结束后重新逐SHA核对未变；未改模型或应用代码。只核验222目录静态复用、动态加载/卸载/返回及故意索引损坏回退，实际查看5张截图；不代表07/09全部视角、20栋或全城重新验收。",
+  "archive_and_extracted_bytes_unchanged": true,
+  "extracted_manifest_listed_files_verified_after": 281,
+  "observations": [
+    "静态与动态加载/返回都显示瓦顶、廊栏、门窗和石狮；返回后未出现旧方盒冒出瓦顶或遮挡立面的现象。",
+    "动态离开释放29/29个geometry，返回创建新对象；同一源分块的27个邻楼保持可见。",
+    "最后一图为明确故意等长单字节索引损坏测试，显示普通近景替代建筑；技术记录确认28个原有源ID完整保留、0次精细模型请求。该图不表示正常加载状态。"
+  ],
+  "network_environment": {
+    "enabled": true,
+    "source_environment": "HTTPS_PROXY",
+    "scheme": "http",
+    "host": "proxy",
+    "port": 8080,
+    "bypass": "localhost,127.0.0.1",
+    "credentials_supplied": false,
+    "scope": "Explicit Playwright BrowserContext proxy shared by browser requests, context.request and route.fetch; localhost remains direct.",
+    "remote_urls_or_bytes_rewritten": false
+  },
+  "network_scope": "首次未显式配置环境代理的工具在打开页面前因IPv6 ENETUNREACH失败，记录保留；本轮测试副本只增加同一环境HTTP(S)代理及本地绕过。原ZIP、URL和探针字节未改，非模拟远端成功；受控动态移除和索引损坏仍按browser.json明确记录。",
+  "limitations": [
+    "仅有限场景的实际浏览器画面与生命周期检查；全城普通楼未逐栋达到照片复原精度。",
+    "小楼未见侧后部、绝对尺寸与部分雕饰仍含估计；青浦道路铺装、绿化和街景尚未按照片补齐。",
+    "使用软件渲染，不能据此断言用户设备帧率或内存表现。"
+  ],
+  "nonfatal_event_review": {
+    "warning_count": 5,
+    "scope": "4条ReadPixels软件GPU提示与1条预期SHA拒绝警告；page/shader/http错误列表为空。"
+  },
+  "production_release_accepted": true
+}
