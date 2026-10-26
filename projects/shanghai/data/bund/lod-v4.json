@@ -1,5 +1,5 @@
 {
-  "version": "bund-distant-lod-v4",
+  "version": "bund-distant-lod-v4.3",
   "complete": true,
   "generator": "tools/build_bund_lods.py",
   "gltfpack_version": "gltfpack 1.3",
@@ -7,8 +7,8 @@
   "source_bounds_method": "Referenced POSITION vertices transformed through the full node hierarchy",
   "output_bounds_method": "Accessor extrema with validated axis-aligned node transforms; supports quantized normalized attributes",
   "bounds_check_limit": "Extrema preservation is not a Hausdorff or photographic-accuracy guarantee; distant geometry is simplified.",
-  "close_up_assets_modified": false,
-  "native_assets_modified": false,
+  "close_up_assets_modified": true,
+  "native_assets_modified": true,
   "fallback_policy": [
     {
       "target_triangle_ratio": 0.35,
@@ -582,92 +582,46 @@
       "id": "bund18",
       "candidate_id": "bund18",
       "model": "assets/models/bund/lod-v4/bund18.glb",
-      "sha256": "ba6dcdf7be640b9bd39e3d6c42417554745399cbb876abd99796e5a82a5e360b",
-      "bytes": 915300,
-      "triangles": 71701,
-      "full_triangles": 127290,
-      "actual_triangle_ratio": 0.5632885536962841,
-      "draw_primitives": 14,
-      "maximum_bounds_change_m": 0.0004590934010977321,
+      "sha256": "b3332a979014d132ff3f37bbca6525cb426738bcd86f1b6caac6df60a3aca3af",
+      "bytes": 2642312,
+      "triangles": 73162,
+      "full_triangles": 128046,
+      "actual_triangle_ratio": 0.5713727879043469,
+      "draw_primitives": 21,
       "source_bounds_glb": {
         "min": [
           -32.16176223754883,
-          0.0,
+          0,
           -23.538339614868164
         ],
         "max": [
           29.588212966918945,
-          34.45000076293945,
+          35.72465133666992,
           22.4916934967041
         ]
       },
       "lod_bounds_glb": {
         "min": [
           -32.1617622,
-          0.0,
+          0,
           -23.5383396
         ],
         "max": [
-          29.588214920355007,
-          34.450334378186,
-          22.491234403303004
+          29.588213,
+          35.7246513,
+          22.4916935
         ]
       },
-      "full_model_unchanged_sha256": "7d0b6297ffc1d7f4b01c8eb6add0bb119d6ca15a5e91931e2a2892f1965d2f6d",
-      "close_up_web_unchanged_sha256": "ae7e7c391bb71fa1200a3d88bb0020551396b09021f0bf9889cbc65d47fd5879",
-      "native_unchanged_sha256": "19286a2d2759941650c3883bc1311d3bfb0b906cabb716490506fabc16b85538",
+      "maximum_bounds_change_m": 3.754882982320851e-08,
+      "full_model_unchanged_sha256": "803b987addf24d6a2eb788c9014770e9fdcd11506a1255f1302bb1ccd34dfd35",
+      "close_up_web_unchanged_sha256": "b6e5c973ff397d5da0e39d82b8f1b1e93537fcccd72646c8b493426af7500574",
+      "native_unchanged_sha256": "d1c7f62aecc10720ad2c7355df8372000b9127fa079dd080183005fbacc633e5",
       "switch_out_distance_m": 400,
       "switch_in_distance_m": 300,
-      "generation": {
-        "mode": "simplified",
-        "target_triangle_ratio": 0.35,
-        "relative_error_limit": 0.002,
-        "permissive_attribute_simplification": true,
-        "parameters": [
-          "-cc",
-          "-vp",
-          "16",
-          "-vn",
-          "12",
-          "-km",
-          "-ke",
-          "-si",
-          "0.35",
-          "-se",
-          "0.002",
-          "-sp"
-        ],
-        "triangles": 71701,
-        "bytes": 915300,
-        "maximum_bounds_change_m": 0.0004590934010977321,
-        "accepted": true
-      },
-      "attempts": [
-        {
-          "mode": "simplified",
-          "target_triangle_ratio": 0.35,
-          "relative_error_limit": 0.002,
-          "permissive_attribute_simplification": true,
-          "parameters": [
-            "-cc",
-            "-vp",
-            "16",
-            "-vn",
-            "12",
-            "-km",
-            "-ke",
-            "-si",
-            "0.35",
-            "-se",
-            "0.002",
-            "-sp"
-          ],
-          "triangles": 71701,
-          "bytes": 915300,
-          "maximum_bounds_change_m": 0.0004590934010977321,
-          "accepted": true
-        }
-      ]
+      "source_version": "4.3",
+      "generator": "source/bund/chartered_bank/photo-v4.3/compress_models.py",
+      "compression": "-cc -noq -km -ke -si 0.35 -se 0.002 -sp",
+      "copyright_restored_after_optimization": true
     },
     {
       "id": "bund19",
@@ -942,5 +896,9 @@
         }
       ]
     }
-  ]
+  ],
+  "modified_buildings": [
+    "bund18"
+  ],
+  "update_note": "Bund18 now uses the v4.3 photo-proportioned geometry. Legacy *_unchanged_sha256 keys bind each LOD to its corresponding current main/native assets; they do not assert Bund18 is unchanged from v4."
 }

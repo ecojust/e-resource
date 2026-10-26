@@ -1,4 +1,4 @@
-"""Bund v4.2 mapped roads, pavement, crossings and photo-proportioned waterside fittings.
+"""Bund v4.3 mapped roads, pavement, crossings and photo-proportioned waterside fittings.
 Public OSM positions; dimensions and fitting spacing are reconstruction estimates.
 No facade imagery is used as a texture. GLB has local metres, X east/Y up/Z south.
 """
@@ -254,6 +254,23 @@ solid('BundStonePaving',connector,.005,.035)
 (ROOT/'bund-streets-connector-check.json').write_text(json.dumps(connector_audit,ensure_ascii=False,indent=2)+'\n')
 (ROOT/'bund-streets-connector-check.geojson').write_text(json.dumps(connector_geojson,ensure_ascii=False,separators=(',',':'))+'\n')
 
+# Photo-classified planting on the two frozen exterior recesses. All heights
+# are estimates on the existing flat datum; no platform or new trees are added.
+from planting_beds import assemble_planting_beds
+for name,color in [('BundPlantingGranite',(.46,.47,.44,1)),
+                   ('BundPlantingSoil',(.07,.055,.035,1)),
+                   ('BundPlantingGrass',(.10,.13,.055,1))]:
+ COLORS[name]=color;M[name]=Mesh()
+planting,planting_audit,planting_geojson=assemble_planting_beds(
+ ROOT,metric,geographic,water,buildings,roads,connector,
+ existing_paving.union(pedestrian_paving))
+for bed in planting.values():
+ solid('BundPlantingGranite',bed['border'],.005,.215)
+ solid('BundPlantingSoil',bed['inside'],.005,.080)
+ solid('BundPlantingGrass',bed['inside'],.080,.090)
+(ROOT/'bund-streets-planting-check.json').write_text(json.dumps(planting_audit,ensure_ascii=False,indent=2)+'\n')
+(ROOT/'bund-streets-planting-check.geojson').write_text(json.dumps(planting_geojson,ensure_ascii=False,separators=(',',':'))+'\n')
+
 # Pack one primitive per material; no external texture or buffer dependency.
 binary=bytearray();views=[];accessors=[];primitives=[];materials=[]
 def append(data,target,component,type_,count,minimum=None,maximum=None):
@@ -273,7 +290,7 @@ for name,mesh in M.items():
  vi=append(v.tobytes(),34962,5126,'VEC3',len(v),v.min(axis=0).tolist(),v.max(axis=0).tolist());ni=append(n.tobytes(),34962,5126,'VEC3',len(n));ii=append(idx.tobytes(),34963,5125,'SCALAR',len(idx))
  mi=len(materials);materials.append({'name':name,'pbrMetallicRoughness':{'baseColorFactor':COLORS[name],'metallicFactor':.45 if 'Steel' in name or 'Silver' in name else .02,'roughnessFactor':.35 if 'Glass' in name else .94 if name=='BundRoadSurface' else .72}})
  primitives.append({'attributes':{'POSITION':vi,'NORMAL':ni},'indices':ii,'material':mi});triangles+=len(idx)//3
-gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v4.2'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
+gltf={'asset':{'version':'2.0','generator':'Shanghai Bund street reconstruction v4.3'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'name':'Bund mapped public streetscape','mesh':0}],'meshes':[{'primitives':primitives}],'materials':materials,'buffers':[{'byteLength':len(binary)}],'bufferViews':views,'accessors':accessors}
 j=json.dumps(gltf,separators=(',',':')).encode();j+=b' '*((-len(j))%4);binary+=b'\0'*((-len(binary))%4)
 output=ROOT/'bund-streets.glb';output.write_bytes(struct.pack('<III',0x46546c67,2,12+8+len(j)+8+len(binary))+struct.pack('<II',len(j),0x4e4f534a)+j+struct.pack('<II',len(binary),0x004e4942)+binary)
 metadata={'id':'bund-streets','anchor':list(ORIGIN),'units':'metres, X east / Y up / Z south','triangles':triangles,'bytes':output.stat().st_size,'mapped_sidewalk_way':178412507,'mapped_inner_promenade_way':909084827,'mapped_crossing_ways':[i for i,_ in crossings],'shoreline_source':'bund-map.geojson / OSM water via OpenFreeMap','railing_length_m':round(rail.length,3),'granite_posts':post_count,'promenade_lamps':lamps,'dimensions_are_estimates':{'sidewalk_width_m':4.0,'curb_height_m':.14,'handrail_height_m':1.08,'lamp_spacing_m':32,'crossing_paint_width_m':3.5},'accuracy':'Mapped path/shoreline positions. Pavement width, construction heights, rail/lamp shape and spacing are photo-proportioned reconstruction, not a survey; current game ground level is retained.','reference':'Modern wide-granite promenade photo in promenade-photo-search.json (Bund Promenade panoramio, CC BY 3.0); older Promenade du Bund photograph was inspected only to distinguish former fittings.','license':'ODbL-1.0 derived street database; original fitting meshes/code MIT; reference photograph licensing retained separately.'}
@@ -281,7 +298,8 @@ metadata['shoreline_validation']=shoreline_audit
 metadata['road_validation']=roads['audit']
 metadata['paving_validation']=paving_audit
 metadata['estimated_connector_paving']=connector_audit
-metadata['version']=4.2
+metadata['version']=4.3
+metadata['photo_classified_planting']=planting_audit
 metadata['source_roads']='osm-roads.json / OpenStreetMap ODbL-1.0'
 metadata['reference_2025']='street-reference-evidence.json: Suicasmo CC0 street-level facade views, 2025-05-01'
 metadata['accuracy']+=' Ground road centerlines/lane counts follow OSM; widths and paint/drain dimensions are estimated and itemized in road_validation.'

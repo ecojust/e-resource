@@ -185,9 +185,31 @@ if bund_path.is_file():
         if not model_path or not (ROOT/model_path).is_file():errors.append('Runtime model missing: '+str(model_path))
     for item in props:
         model_path=item.get('url') or item.get('model')
+        prop_metadata=ROOT/'data/bund/models'/f'{item["id"]}-web.json'
+        if not prop_metadata.is_file() or json.loads(prop_metadata.read_text()) != item:
+            errors.append('Scene prop per-model metadata differs: '+item['id'])
         manifest_file(ROOT,model_path,item.get('bytes'),item.get('sha256'),'Scene prop runtime')
         if item.get('editable_model'):
             manifest_file(ROOT,item['editable_model'],item.get('raw_bytes'),item.get('raw_sha256'),'Scene prop editable')
+    for building in bund['buildings']:
+        if not building.get('photo_texture'):
+            continue
+        raw_metadata=json.loads((ROOT/'data/bund/models'/f'{building["candidate_id"]}.json').read_text())
+        if (raw_metadata.get('historical') or raw_metadata.get('raw_sha256')!=building['raw_sha256']
+                or raw_metadata.get('triangles')!=building['triangles']
+                or not raw_metadata.get('reference_photo',{}).get('used_as_texture')):
+            errors.append('Photographic raw model metadata differs: '+building['id'])
+        for field in ('editable_model','model','lod_model'):
+            blob=(ROOT/building[field]).read_bytes();length=struct.unpack_from('<I',blob,12)[0]
+            doc=json.loads(blob[20:20+length]);start=28+length
+            if 'CC BY-SA 4.0' not in doc['asset'].get('copyright','') or building['reference']['author'] not in doc['asset'].get('copyright',''):
+                errors.append('Missing photographic attribution: '+building[field])
+            image_hashes=[]
+            for image in doc.get('images',[]):
+                view=doc['bufferViews'][image['bufferView']];offset=start+view.get('byteOffset',0)
+                image_hashes.append(hashlib.sha256(blob[offset:offset+view['byteLength']]).hexdigest())
+            if image_hashes!=[building['reference']['sha256']]:
+                errors.append('Photographic source bytes differ: '+building[field])
 
     # Each of the ten LODs is bound to the same primary building in the runtime
     # navigation list, Bund release, per-building metadata and LOD manifest.
@@ -234,8 +256,8 @@ else:
     materials = json.loads(material_manifest.read_text())
     assets = materials.get('assets', [])
     recorded = {'manifest.json'}
-    if materials.get('license') != 'CC0-1.0' or len(assets) != 3:
-        errors.append('Expected three documented CC0 surface sets')
+    if materials.get('license') != 'CC0-1.0' or len(assets) != 4:
+        errors.append('Expected four documented CC0 surface sets')
     for asset in assets:
         if asset.get('license') != 'CC0-1.0' or not asset.get('authors') or not asset.get('assetURL'):
             errors.append('Incomplete material attribution: '+str(asset.get('id')))
@@ -263,8 +285,14 @@ else:
     actual = {path.relative_to(material_root).as_posix() for path in material_root.rglob('*') if path.is_file()}
     if actual != recorded:
         errors.append('Surface manifest file list differs from the material directory')
-    if material_count != 9:
-        errors.append('Expected exactly nine local 1K surface maps')
+    if material_count != 12:
+        errors.append('Expected exactly twelve local 1K surface maps')
+
+reflection_root = ROOT/'assets/materials/realism-v5'
+reflection_manifest = json.loads((reflection_root/'manifest.json').read_text())
+assert reflection_manifest['license'] == 'CC0-1.0' and reflection_manifest['author']
+for name, entry in reflection_manifest['files'].items():
+    manifest_file(reflection_root, name, entry['bytes'], entry['sha256'], 'Photographic reflection')
 
 road_metadata_path = ROOT/'data/bund/basemap-road-remainders-v4.json'
 road_geometry_name = 'data/bund/basemap-road-remainders-v4.geojson'

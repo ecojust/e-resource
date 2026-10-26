@@ -1,7 +1,7 @@
-# Bund surface maps, v4
+# Bund surface maps, v4.3
 
-Nine local 1K texture maps provide restrained pale-stone, granite and asphalt
-grain in the Shanghai viewer. Total image download size: 4,898,227 bytes.
+Twelve local 1K texture maps provide restrained pale-stone, granite, asphalt
+and grass/soil grain in the Shanghai viewer. Total image download size: 7,413,517 bytes.
 `src/architectural-material.js` loads these files automatically; no texture CDN
 or API is needed when using the local launcher.
 

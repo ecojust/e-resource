@@ -50,6 +50,23 @@ async def main(args):
                         print('BUND_WAIT', json.dumps(progress), flush=True)
                         if attempt == 7:
                             raise
+                if args.check_photos:
+                    await page.wait_for_function('()=>__SHANGHAI_APP__.scene.getRealismState().lighting.reflectionSource==="photographic"', timeout=120000)
+                    report['photo_model']=await page.evaluate('()=>__SHANGHAI_APP__.scene.getLandmarkAssetState("bund18")')
+                    assert report['photo_model']['variant']=='full' and report['photo_model']['photoMeshes']>0
+                    assert report['photo_model']['images'] and all(i['width']==1920 and i['height']==1369 for i in report['photo_model']['images'])
+                    report['photo_asset']=await page.evaluate('''async()=>{
+                      const record=(await(await fetch("data/landmarks.json")).json()).find(x=>x.id==="bund18");
+                      const buffer=await(await fetch(record.model)).arrayBuffer(),view=new DataView(buffer),jsonLength=view.getUint32(12,true);
+                      const doc=JSON.parse(new TextDecoder().decode(new Uint8Array(buffer,20,jsonLength))),binStart=28+jsonLength;
+                      const hash=async b=>Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",b))).map(x=>x.toString(16).padStart(2,"0")).join("");
+                      const images=await Promise.all(doc.images.map(async image=>{const v=doc.bufferViews[image.bufferView];return {bytes:v.byteLength,sha256:await hash(buffer.slice(binStart+(v.byteOffset||0),binStart+(v.byteOffset||0)+v.byteLength))};}));
+                      return {bytes:buffer.byteLength,sha256:await hash(buffer),expectedBytes:record.web_bytes,expectedSha256:record.web_sha256,images,expectedPhotoSha256:record.reference.sha256,copyright:doc.asset.copyright};
+                    }''')
+                    photo=report['photo_asset']
+                    assert photo['bytes']==photo['expectedBytes'] and photo['sha256']==photo['expectedSha256']
+                    assert len(photo['images'])==1 and photo['images'][0]['sha256']==photo['expectedPhotoSha256']
+                    assert 'ScareCriterion12' in photo['copyright'] and 'CC BY-SA 4.0' in photo['copyright']
                 await page.screenshot(path=str(args.output/'bund-fallback.png'), timeout=90000)
                 report['bund_walk']=await page.evaluate('()=>({mode:__SHANGHAI_APP__.mode,source:__SHANGHAI_APP__.scene.getCollisionState(),realism:__SHANGHAI_APP__.scene.getRealismState(),stream:__SHANGHAI_APP__.scene.getStreamingState()})')
                 if args.force_osm:
@@ -116,6 +133,7 @@ if __name__ == '__main__':
     parser.add_argument('--dpr', type=float, default=1, help='Rendering pixel ratio; CSS viewport remains 1280 by 850')
     parser.add_argument('--check-bund', action='store_true', help='Capture initial third-person Bund under the same service condition')
     parser.add_argument('--force-osm', action='store_true', help='Block Overture services to test emergency OSM fallback')
+    parser.add_argument('--check-photos', action='store_true', help='Verify the loaded Bund18 photo, exact embedded bytes and photographic reflection')
     parser.add_argument('--output', type=Path, required=True)
     args=parser.parse_args()
     if not args.bund_only and not args.views:

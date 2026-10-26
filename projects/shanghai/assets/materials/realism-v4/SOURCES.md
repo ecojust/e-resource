@@ -1,7 +1,7 @@
 # Surface textures for the Bund viewer
 
-These nine 1024 × 1024 JPEG maps are unmodified Poly Haven downloads, totalling
-4,898,227 bytes (4.67 MiB). The largest file is 1,056,664 bytes. Base colour is
+These twelve 1024 × 1024 JPEG maps are unmodified Poly Haven downloads, totalling
+7,413,517 bytes (7.07 MiB). The largest file is 1,310,516 bytes. Base colour is
 sRGB; roughness and OpenGL normals are linear data. No facade photographs,
 window images, baked building shadows or aerial imagery are included.
 
@@ -10,8 +10,9 @@ window images, baked building shadows or aerial imagery are included.
 | Sandstone Blocks 08 | Rob Tuytel | https://polyhaven.com/a/sandstone_blocks_08 | Base colour, OpenGL normal, roughness; 1K JPG |
 | Granite Tile 03 | Charlotte Baglioni | https://polyhaven.com/a/granite_tile_03 | Base colour, OpenGL normal, roughness; 1K JPG |
 | Clean Asphalt | Dimitrios Savva | https://polyhaven.com/a/clean_asphalt | Base colour, OpenGL normal, roughness; 1K JPG |
+| Grass Ground | Charlotte Baglioni | https://polyhaven.com/a/grass_ground | Base colour, OpenGL normal, roughness; 1K JPG |
 
-All three assets are **CC0-1.0**. Author names come from the provider's asset
+All four assets are **CC0-1.0**. Author names come from the provider's asset
 metadata, retrieved on 2026-10-25. Provider licensing statement:
 https://polyhaven.com/license . It explicitly permits redistribution, including
 assets shared within another work. License summary and legal terms:
@@ -44,10 +45,12 @@ and mirrors those regions. It does not alter the source images:
 Colour variation, roughness and normal strength are deliberately reduced. Stone
 grain and normals fade as their footprint gets small on screen. Geometry remains
 responsible for facade courses, openings, columns, moldings and reliefs. Paving
-alone gets an estimated 0.80 × 0.42 metre running-bond layout with 6 mm joints,
+alone gets an estimated 1.20 × 0.60 metre running-bond layout with 4 mm joints,
 faded with screen coverage. Those paving dimensions are a scene approximation,
 not measured Shanghai data.
 
 The implementation uses transformed world positions, including meshopt decode
 node scale, instancing and batching. It requires no mesh UVs and adds no global
 environment reflections. Source textures are shared across buildings and LODs.
+
+The v4.3 planting material was retrieved on 2026-10-26. Its full 2.51 × 2.51 metre source scan adds restrained brown/green variation to the two mapped planting strips. It is a generic surface sample, not evidence for Shanghai plant species or current maintenance. Source JPEGs are unchanged.

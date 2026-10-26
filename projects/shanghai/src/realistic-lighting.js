@@ -3,12 +3,16 @@
  *
  * Coordinates are scene metres: X east, Y up, Z south. This module never sets
  * scene.background or scene.environment. Only registered glazing receives the
- * small procedural sky reflection. Generic city blocks are not shadow casters.
+ * photographic environment (or the small procedural fallback). Generic city
+ * blocks are not shadow casters. The reflection photograph is a lighting asset,
+ * not a geometric panorama of the model's current location.
  *
  * createRealisticLighting({THREE, scene, renderer}) must be called after the
  * shared WebGL renderer exists. Remove the old hemi/sun/fill lights, or supply
  * their references in `lights`, to avoid lighting the scene twice.
  */
+
+import {HDRLoader} from '../vendor/HDRLoader.js';
 
 const clamp = (value, minimum, maximum) => Math.max(minimum, Math.min(maximum, value));
 const smoothstep = (minimum, maximum, value) => {
@@ -98,6 +102,16 @@ function makeSkyReflection(THREE, renderer, sunDirection) {
   }
 }
 
+function makePhotographicReflection(THREE, renderer, texture) {
+  texture.mapping = THREE.EquirectangularReflectionMapping;
+  const generator = new THREE.PMREMGenerator(renderer);
+  try {
+    return preserveSharedFramebuffer(renderer, () => generator.fromEquirectangular(texture));
+  } finally {
+    generator.dispose();
+  }
+}
+
 function materialsOf(mesh) {
   return (Array.isArray(mesh.material) ? mesh.material : [mesh.material]).filter(Boolean);
 }
@@ -119,6 +133,8 @@ export function createRealisticLighting({
   minimumRefreshInterval = 240,
   shadowIntensity = .86,
   reflections = true,
+  reflectionURL = new URL('../assets/materials/realism-v5/shanghai_riverside_1k.hdr', import.meta.url).href,
+  onReflectionReady = () => {},
   lights = {},
 } = {}) {
   if (!THREE || !scene || !renderer) throw new Error('Realistic daylight needs THREE, scene and an initialized renderer.');
@@ -169,6 +185,8 @@ export function createRealisticLighting({
   const backfaceCasterMaterials = new Map();
   const groundReceivers = [];
   let environment = null, reflectionAttempted = false, reflectionError = null;
+  let pendingReflection = null, reflectionRequest = false, photographicReflectionError = null;
+  let reflectionSource = null;
   let disposed = false, enabled = true, dirty = true, lastRefresh = -Infinity;
   let shadowRefreshRequests = 0, activeSignature = '', activeCasterModels = 0;
   const lastFocus = new THREE.Vector3(Infinity, 0, Infinity);
@@ -179,6 +197,33 @@ export function createRealisticLighting({
   const groundUniforms = {center: {value: new THREE.Vector2()}, radius: {value: shadowHalfExtent * .96}};
 
   function invalidate() { dirty = true; }
+
+  function requestPhotographicReflection() {
+    if (!reflectionURL || reflectionRequest || disposed) return;
+    reflectionRequest = true;
+    // Decode CPU data asynchronously. Do not issue GL calls inside this promise:
+    // PMREM conversion belongs to update(), inside the custom map render pass.
+    new HDRLoader().loadAsync(reflectionURL).then(texture => {
+      if (disposed) { texture.dispose(); return; }
+      pendingReflection = texture;
+      onReflectionReady();
+    }).catch(error => {
+      if (!disposed) photographicReflectionError = String(error?.message || error);
+    });
+  }
+
+  function installReflection(next, source) {
+    next.texture.name = source === 'photographic' ? 'Shanghai Riverside photographic glazing reflection' : 'Shared Bund glazing sky';
+    next.texture.userData.shared = true;
+    next.texture.userData.owner = 'realistic-lighting';
+    const previous = environment;
+    environment = next;
+    reflectionSource = source;
+    for (const material of reflectedMaterials.keys()) {
+      material.envMap = environment.texture; material.needsUpdate = true;
+    }
+    previous?.dispose();
+  }
 
   function attachOpaqueCaster(material, group) {
     let entry = backfaceCasterMaterials.get(material);
@@ -199,6 +244,9 @@ export function createRealisticLighting({
 
   function attachGlass(material, group) {
     if (!reflections || !isArchitecturalGlazing(material)) return;
+    // Calibrated photo glazing already contains the captured reflections.
+    // Keep its image colour instead of tinting it and adding a second sky.
+    if (/^PhotoFacade_/i.test(material.name || '')) return;
     let entry = reflectedMaterials.get(material);
     if (!entry) {
       entry = {users: new Set(), original: {
@@ -320,17 +368,22 @@ export function createRealisticLighting({
     if (reflections && !reflectionAttempted && reflectedMaterials.size) {
       reflectionAttempted = true;
       try {
-        environment = makeSkyReflection(THREE, renderer, sunDirection);
-        environment.texture.name = 'Shared Bund glazing sky';
-        environment.texture.userData.shared = true;
-        environment.texture.userData.owner = 'realistic-lighting';
-        for (const material of reflectedMaterials.keys()) {
-          material.envMap = environment.texture; material.needsUpdate = true;
-        }
+        installReflection(makeSkyReflection(THREE, renderer, sunDirection), 'procedural-fallback');
       } catch (error) {
         // A missing reflection must not stop geographic rendering or retry GL
         // creation every frame on a device with limited render-target support.
         reflectionError = String(error?.message || error);
+      }
+      requestPhotographicReflection();
+    }
+    if (pendingReflection) {
+      const source = pendingReflection; pendingReflection = null;
+      try {
+        installReflection(makePhotographicReflection(THREE, renderer, source), 'photographic');
+      } catch (error) {
+        photographicReflectionError = String(error?.message || error);
+      } finally {
+        source.dispose();
       }
     }
     if (enabled !== Boolean(nextEnabled)) { enabled = Boolean(nextEnabled); invalidate(); }
@@ -377,9 +430,11 @@ export function createRealisticLighting({
 
   function dispose() {
     if (disposed) return;
+    disposed = true;
     for (const group of [...records.keys()]) releaseModel(group);
     setGroundFootprints([]);
     environment?.dispose(); environment = null;
+    pendingReflection?.dispose(); pendingReflection = null;
     sun.shadow.map?.dispose(); sun.shadow.map = null;
     sun.shadow.mapPass?.dispose(); sun.shadow.mapPass = null;
     for (const [key, light] of [['hemisphere', hemisphere], ['sun', sun], ['fill', fill]]) {
@@ -387,7 +442,6 @@ export function createRealisticLighting({
     }
     if (!lights.sun) scene.remove(sun.target);
     Object.assign(renderer.shadowMap, previousShadowState, {needsUpdate: true});
-    disposed = true;
   }
 
   const getState = () => ({
@@ -396,6 +450,8 @@ export function createRealisticLighting({
     backfaceCasterMaterials: backfaceCasterMaterials.size,
     shadowBias: sun.shadow.bias, shadowNormalBias: sun.shadow.normalBias, shadowRadius: sun.shadow.radius,
     glassMaterials: reflectedMaterials.size, reflectionReady: Boolean(environment), reflectionError,
+    reflectionSource, photographicReflectionRequested: reflectionRequest,
+    photographicReflectionError,
     groundReceiverPolygons: groundReceivers.length,
     defaultGroundPlaneCreated: false, sceneWideEnvironmentCreated: false,
   });

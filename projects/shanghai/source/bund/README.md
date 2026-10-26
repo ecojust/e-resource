@@ -1,4 +1,4 @@
-# 外滩10栋建筑：v3源码、资料与重建
+# 外滩10栋建筑：源码、资料与重建
 
 此目录对应外滩2、3、12、13、15、17、18、19、20、23号的近景模型。公开照片用于辨识开间、柱廊、屋顶和立面构件，OSM轮廓用于平面与地理定位。模型包含真正开孔的墙面、内退玻璃、洞口侧壁及独立柱、窗套、栏杆等几何；细小雕刻与未见侧后立面含解释和简化。**这些是照片参照下的建筑重建，不是全城测绘、摄影测量或可游览室内模型。**
 
@@ -12,7 +12,7 @@
 | 13号 · 江海关大楼 | [customs_refined/customs_house_v3.py](customs_refined/customs_house_v3.py) | [网页GLB](../../assets/models/bund/web/bund13.glb) · [原始GLB](../../assets/models/bund/bund13.glb) · [.blend](../../assets/native/bund/bund13.blend) |
 | 15号 · 华俄道胜银行大楼 | [classical_bank/build_classical_banks.py](classical_bank/build_classical_banks.py) | [网页GLB](../../assets/models/bund/web/bund15.glb) · [原始GLB](../../assets/models/bund/bund15.glb) · [.blend](../../assets/native/bund/bund15.blend) |
 | 17号 · 字林西报大楼 | [bund_classics/build_news.py](bund_classics/build_news.py) | [网页GLB](../../assets/models/bund/web/bund17.glb) · [原始GLB](../../assets/models/bund/bund17.glb) · [.blend](../../assets/native/bund/bund17.blend) |
-| 18号 · 麦加利银行 · 外滩18号 | [chartered_bank/build_chartered_bank.py](chartered_bank/build_chartered_bank.py) | [网页GLB](../../assets/models/bund/web/bund18.glb) · [原始GLB](../../assets/models/bund/bund18.glb) · [.blend](../../assets/native/bund/bund18.blend) |
+| 18号 · 麦加利银行 · 外滩18号 | [chartered_bank/photo-v4.3/](chartered_bank/photo-v4.3/README.md) | [网页GLB](../../assets/models/bund/web/bund18.glb) · [原始GLB](../../assets/models/bund/bund18.glb) · [.blend](../../assets/native/bund/bund18.blend) |
 | 19号 · 和平饭店南楼 · 汇中饭店 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund19.glb) · [原始GLB](../../assets/models/bund/bund19.glb) · [.blend](../../assets/native/bund/bund19.blend) |
 | 20号 · 和平饭店北楼 · 沙逊大厦 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund20.glb) · [原始GLB](../../assets/models/bund/bund20.glb) · [.blend](../../assets/native/bund/bund20.blend) |
 | 23号 · 中国银行大楼 | [art_deco/build_art_deco.py](art_deco/build_art_deco.py) | [网页GLB](../../assets/models/bund/web/bund23.glb) · [原始GLB](../../assets/models/bund/bund23.glb) · [.blend](../../assets/native/bund/bund23.blend) |
@@ -105,4 +105,8 @@ v3全市背景仍为1,708块，包含1,796,419个普通要素：1,796,116个源�
 
 补充照片和历史图纸见各包sources.json、references.json、reference-photos.json、photo-source.json或SOURCES_AND_METHOD.md。其中海关补充正面照片作者Onedesign23，CC BY-SA 4.0；和平北楼补充正面照片作者ScareCriterion12，CC BY-SA 4.0。所有复制的图片都应按其各自记录署名，不能仅用上表一张主图的许可概括整个源码包。
 
-原创生成代码适用项目[MIT许可](../../LICENSE)；OSM及其派生平面数据库按ODbL 1.0署名 **© OpenStreetMap contributors**。照片、历史图纸、字体和外部数据保持各自许可，**不因放入本目录而变成MIT**。没有把照片贴到建筑网格，也不把这些参考照片称为测绘级三维资产。
+原创生成代码适用项目[MIT许可](../../LICENSE)；OSM及其派生平面数据库按ODbL 1.0署名 **© OpenStreetMap contributors**。照片、历史图纸、字体和外部数据保持各自许可，**不因放入本目录而变成MIT**。v4.3外滩18号部分下部石墙与六块主窗使用原照片纹理，派生GLB及Blender资产按CC BY-SA 4.0署名；其余建筑仍使用照片参照几何。两者均不属于测绘级三维资产。
+
+## 外滩18号当前版本
+
+v4.3主檐口和各层按原照片比例重新调整，整体竖向系数1.037，包含旗杆的模型包围高度35.72465m；这个小数只反映模型输出，不是实测精度。请使用[当前重建流程](chartered_bank/photo-v4.3/README.md)；前文旧生成器/旧尺寸说明保留为v3来源历史。原锚点、地理平面和城市分块排除范围保持原值。

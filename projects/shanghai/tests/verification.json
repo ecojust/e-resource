@@ -1,83 +1,14 @@
 {
-  "version": "shanghai-paving-v4.2",
-  "status": "public-verified",
-  "date_utc": "2026-10-26",
-  "previous_release": {
-    "report": "verification-v4.1.json",
-    "app_commit": "72e344b6e927b1a3130b2ff6e6901875f260eb3e",
-    "scope": "All 1708 city tiles, 14 landmark meshes, roof qualification and OSM component fallback unchanged; current work changes street connector geometry and paving finish."
-  },
-  "coverage": {
-    "districts": 16,
-    "city_glb_tiles": 1708,
-    "generic_features": 1796419,
-    "source_roofs": 126,
-    "source_roofs_by_shape": {
-      "skillion": 97,
-      "gabled": 29
-    },
-    "source_roof_districts": {
-      "310114": 3,
-      "310107": 79,
-      "310105": 27,
-      "310101": 17
-    },
-    "unchanged_city_models": 1702,
-    "changed_city_models": 6,
-    "bund_detailed_buildings": 10,
-    "lujiazui_landmarks": 4,
-    "estimated_connector_paving_m2": 188.91702276744988,
-    "unknown_recesses_preserved": 2
-  },
-  "validation": {
-    "qualification": "../data/roofs/qualified-roofs.json",
-    "geometry": "../data/roofs/geometry-validation.json",
-    "pipeline_fixture": "../data/roofs/pipeline-fixture-validation.json",
-    "production_patch": "../data/roofs/roof-validation.json",
-    "fullcity": "../data/roofs/fullcity-validation.json",
-    "local_browser": "paving-v4.2-local.json",
-    "npm_test_passed": true,
-    "asset_check_passed": true,
-    "published_model_hashes": "../data/roofs/published-models-validation.json",
-    "launcher": "launcher-paving-v4.2.json",
-    "compressed_model_decode": "../data/roofs/compressed-model-validation.json",
-    "public_browser": "paving-v4.2-public.json",
-    "osm_fallback_unit": "../data/roofs/osm-fallback-unit-validation.json",
-    "osm_fallback_test_count": 57,
-    "osm_fallback_review": "../data/roofs/osm-fallback-review.json",
-    "osm_fallback_local": "osm-fallback-local.json",
-    "launcher_remote": "launcher-paving-v4.2-remote.json",
-    "osm_fallback_public": "osm-fallback-public.json",
-    "fallback_final_ready": true,
-    "fallback_transient_timeouts_recovered": 1,
-    "connector_geometry": "../data/bund/validation/connector-geometry-v4.2.json",
-    "connector_review": "../data/bund/validation/connector-review-v4.2.json",
-    "street_compression": "../data/bund/validation/street-compression-v4.2.json",
-    "street_rebuild": "../data/bund/validation/street-rebuild-v4.2.json",
-    "paving_material": "../data/bund/validation/paving-material-v4.2.json",
-    "paving_local": "paving-v4.2-local.json",
-    "source_roofs_local": "source-roofs-local.json",
-    "source_roofs_public": "source-roofs-public.json",
-    "paving_public": "paving-v4.2-public.json"
-  },
-  "asset_limits": {
-    "all_files_below_bytes": 100000000,
-    "maximum_city_glb_bytes": 940388,
-    "total_city_model_bytes": 285776832,
-    "largest_deliverable_bytes": 38785814
-  },
-  "limits": [
-    "126 source-parametric roofs do not constitute citywide LoD2 or photogrammetry.",
-    "Source tags and polygons are not independently surveyed roof geometry; centered gabled ridges and single planar skillions remain assumptions.",
-    "Browser software rendering checks correctness and loading; they are not a hardware FPS benchmark.",
-    "Conservatively retained crossing/ambiguous OSM components can overlap local geometry at coverage edges.",
-    "The estimated connector uses the existing flat ground datum; two source recesses remain unknown openings. Actual promenade stairs, ramps and height differences are not reconstructed."
-  ],
-  "app_commit": "b951bbc0ba2422ef3c3a21625e06fb5ae36b719a",
-  "preview": "https://rawcdn.githack.com/ecojust/e-resource/b951bbc0ba2422ef3c3a21625e06fb5ae36b719a/projects/shanghai/index.html",
-  "download_commit": "214567712ec95053616d11123062c26c8c202106",
-  "download": "https://raw.githubusercontent.com/ecojust/e-resource/214567712ec95053616d11123062c26c8c202106/projects/shanghai/downloads/shanghai-web-launcher.zip",
-  "download_sha256": "1b491ab1d8bf0688f71ea5dd220556553edc4444c1fac16b31765472851af844",
-  "model_commit": "b951bbc0ba2422ef3c3a21625e06fb5ae36b719a",
-  "source_roof_model_commit": "91abba60af13237bbe3cd9650cf907912b69d613"
+  "version": "4.3.0",
+  "date": "2026-10-26",
+  "status": "local-validated-public-pending",
+  "scope": "Bund18 proportions and limited photographic appearance; two mapped planting strips; glass HDR; resource disposal",
+  "all_districts": 16,
+  "generic_city_tiles_unchanged": 1708,
+  "single_file_limit_bytes": 100000000,
+  "local_browser": "realism-v4.3-local.json",
+  "source_compression": "../data/bund/validation/bund18-compression-v4.3.json",
+  "source_photo_sha256": "26a1219fe534659ae78bae9dfc498aef30b50b957172046a5c401906758315ba",
+  "npm_test": "passed",
+  "realism_limit": "Single-view photo reference and inferred geometry, not full-city photogrammetry."
 }

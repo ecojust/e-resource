@@ -11,6 +11,7 @@ import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
 import { OSMBuildingSuppressor } from './osm-building-suppression.js';
 import { OSMResidualLayer } from './osm-residual-layer.js';
+import { disposeModelResources } from './model-resources.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -300,7 +301,8 @@ export async function createShanghaiScene(options = {}) {
       renderer = new THREE.WebGLRenderer({canvas: map.getCanvas(), context: gl, antialias: true, alpha: true});
       renderer.autoClear = false; renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
-      lighting = createRealisticLighting({THREE,scene,renderer,lowMemory});
+      lighting = createRealisticLighting({THREE,scene,renderer,lowMemory,
+        onReflectionReady:()=>{if(!destroyed)map.triggerRepaint();}});
       customLayerReady = true;
     },
     render(_gl, args) {
@@ -334,6 +336,18 @@ export async function createShanghaiScene(options = {}) {
       renderer.resetState();
     },
     onRemove() {
+      // Also guard late downloads when a caller directly removes this layer.
+      if (!destroyed) {
+        destroyed = true;
+        osmSuppression?.destroy();
+        streetBasemap?.dispose();
+        localStreamer.destroy();
+        landmarkSuppression.destroy({clearMap:true});
+      }
+      for (const record of landmarkRecords.values()) {
+        disposeModel(record.object);
+        record.object = null;
+      }
       lighting?.dispose(); traffic?.dispose(); surfaces?.dispose();
       scene.traverse(obj => {
         if (obj.geometry) obj.geometry.dispose();
@@ -368,7 +382,7 @@ export async function createShanghaiScene(options = {}) {
     return distance>threshold ? 'distant' : 'full';
   }
   async function loadLandmark(record,variant='full') {
-    if (record.loadingModel) return;
+    if (destroyed || record.loadingModel) return;
     record.loadingModel=true;
     if (!record.object) record.status='loading';
     reportLandmarks();
@@ -411,6 +425,7 @@ export async function createShanghaiScene(options = {}) {
       && street?.status==='loaded' && street.object?.visible));
   }
   function updateLandmarkVisibility(force = false) {
+    if (destroyed) return;
     let changed = false;
     const center = map.getCenter(), target = walker.group.visible ? current : {lng: center.lng, lat: center.lat};
     const pending=[];
@@ -468,18 +483,8 @@ export async function createShanghaiScene(options = {}) {
   function disposeModel(object) {
     if (!object) return;
     lighting?.releaseModel(object);
-    const geometries=new Set(), materials=new Set(), textures=new Set();
-    object.traverse(child=>{
-      if(child.geometry)geometries.add(child.geometry);
-      for(const material of child.material ? (Array.isArray(child.material)?child.material:[child.material]) : []) {
-        materials.add(material);
-        for(const value of Object.values(material))if(value?.isTexture && !value.userData.shared)textures.add(value);
-      }
-    });
     scene.remove(object);
-    for(const geometry of geometries)geometry.dispose();
-    for(const material of materials)material.dispose();
-    for(const texture of textures){texture.dispose();texture.source?.data?.close?.();}
+    disposeModelResources(object);
   }
   function prepareCityObject(group, record) {
     group.name=`${record.name} · mapped city tile`;
@@ -698,6 +703,18 @@ export async function createShanghaiScene(options = {}) {
     getNeighborhoodState(){return localStreamer.getRecords();},
     getStreamingState(){return {...localStreamer.getState(),renderer:{...renderMetrics}};},
     getLandmarkState(){return [...landmarkRecords.values()].map(({id,name,status,activeVariant,loadingModel})=>({id,name,status,activeVariant,loadingModel}));},
+    getLandmarkAssetState(id){
+      const record=landmarkRecords.get(id),maps=new Set();let photoMeshes=0,triangles=0;
+      record?.object?.traverse(mesh=>{
+        if(!mesh.isMesh)return;
+        triangles+=(mesh.geometry.index?.count||mesh.geometry.getAttribute('position')?.count||0)/3;
+        for(const material of Array.isArray(mesh.material)?mesh.material:[mesh.material])if(/^PhotoFacade_/i.test(material?.name||'')){
+          photoMeshes++;if(material.map)maps.add(material.map);
+        }
+      });
+      return {id,status:record?.status,variant:record?.activeVariant,photoMeshes,triangles,
+        images:[...maps].map(map=>({width:map.image?.width,height:map.image?.height,colorSpace:map.colorSpace}))};
+    },
     setVisualQuality({shadows=true,surfaceNormals=true}={}){shadowsEnabled=Boolean(shadows);surfaces?.configure({normalStrength:surfaceNormals?1:0});lighting?.invalidate();map.triggerRepaint();},
     getRealismState(){return {surfaces:surfaces?.stats,lighting:lighting?.getState(),traffic:traffic?.stats,streetBasemap:streetBasemap?.getState(),osmFallback:osmSuppression?.getState()};},
     getLandmarkExclusionState(){return landmarkSuppression.getState();},

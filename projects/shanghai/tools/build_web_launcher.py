@@ -101,8 +101,8 @@ def verify_manifest_file(payload, name, expected_size, expected_sha256):
 def validate_materials(payload):
     manifest = json.loads(payload[MATERIAL_ROOT + 'manifest.json'])
     textures, seen = [], set()
-    if manifest.get('license') != 'CC0-1.0' or len(manifest.get('assets', [])) != 3:
-        raise ValueError('The v4 launcher requires the three verified CC0 surface sets.')
+    if manifest.get('license') != 'CC0-1.0' or len(manifest.get('assets', [])) != 4:
+        raise ValueError('The v4 launcher requires the four verified CC0 surface sets.')
     for asset in manifest['assets']:
         if asset.get('license') != 'CC0-1.0' or not asset.get('authors') or not asset.get('assetURL'):
             raise ValueError(f'Incomplete material provenance: {asset.get("id")}')
@@ -115,8 +115,8 @@ def validate_materials(payload):
             seen.add(name)
             verify_manifest_file(payload, name, entry.get('size'), entry.get('sha256'))
             textures.append({'file': name, 'bytes': len(payload[name]), 'sha256': sha256(payload[name])})
-    if len(textures) != 9:
-        raise ValueError('The v4 launcher requires exactly nine local surface maps.')
+    if len(textures) != 12:
+        raise ValueError('The v4 launcher requires exactly twelve local surface maps.')
     support = {entry['file']: entry for entry in manifest.get('supportFiles', [])}
     for name in ('README.md', 'SOURCES.md', 'LICENSE-CC0.txt'):
         if name not in support:
@@ -239,6 +239,13 @@ def plan(project, commit):
     add_tree('assets/references/bund')
     add_tree(MATERIAL_ROOT.rstrip('/'))
     textures = validate_materials(payload)
+    reflection_root = 'assets/materials/realism-v5/'
+    add_tree(reflection_root.rstrip('/'))
+    reflection = json.loads(payload[reflection_root + 'manifest.json'])
+    if reflection.get('license') != 'CC0-1.0' or not reflection.get('author'):
+        raise ValueError('Missing photographic reflection attribution.')
+    for name, entry in reflection['files'].items():
+        verify_manifest_file(payload, reflection_root + relative_path(name), entry['bytes'], entry['sha256'])
 
     landmarks = json.loads(payload['data/landmarks.json'])
     props = json.loads(payload['data/scene-props.json'])
@@ -310,7 +317,7 @@ def plan(project, commit):
     # Runtime models and city chunks are pinned above. Keep the project-info
     # link on the current documentation, where the latest launcher is published.
 
-    instructions = f'''上海漫游 v4.2 · 本地网页启动包
+    instructions = f'''上海漫游 v4.3 · 本地网页启动包
 
 一、启动
 完整解压后进入 shanghai 目录，在该目录运行：
@@ -321,7 +328,7 @@ macOS/Linux 如使用 python3：
 
 二、包内与联网部分
 本包包含网页程序、本地第三方库、14个网页优化地标、外滩街道模型、
-10个外滩建筑远景LOD、9张本地1K表面纹理、外滩参考照片及运行时数据。
+10个外滩建筑远景LOD、12张本地1K表面纹理、上海沿江HDR、外滩参考照片及运行时数据。
 原始GLB、Blender源文件和全市分块没有打入本包。
 漫游仍需联网：道路、水系、中文标注和远景地图来自公开地图服务；
 全市 {len(city['tiles']):,} 个建筑分块及精确ID索引按需从固定Git提交加载。

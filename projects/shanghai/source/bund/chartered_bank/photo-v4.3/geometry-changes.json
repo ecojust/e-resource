@@ -1,0 +1,72 @@
+{
+  "status": "photo_proportioned_not_surveyed",
+  "photoCoordinateBasis": [
+    1884,
+    1344
+  ],
+  "facadeSpanPixels": [
+    410,
+    1470
+  ],
+  "approximateMetresPerPhotoPixel": 0.028276415094339622,
+  "changes": {
+    "central=4.42;side=W*.355": "central=5.05;side=11.30",
+    "rect_window(x,6.46,3.78,1.45,1.10,5,2,reveal=False)": "rect_window(x,6.46,3.05,.85,1.10,5,2,reveal=False)",
+    "rect_window(x,9.93,3.78,4.75,1.10,4,4,reveal=False)": "rect_window(x,9.64,3.05,3.94,1.10,4,4,reveal=False)",
+    "rect_window(x,15.27,3.78,3.22,1.10,4,3,reveal=False)": "rect_window(x,14.97,3.05,2.60,1.10,4,3,reveal=False)",
+    "box('bronze',x,1.10,12.87,3.90,.23,.86)": "box('bronze',x,1.10,12.87,3.12,.23,.86)",
+    "for zz in [7.29,12.33,13.45]:box('bronze',x,1.04,zz,3.9,.32,.17)": "for zz in [7.29,12.08,13.45]:box('bronze',x,1.04,zz,3.12,.32,.17)",
+    "balustrade(x,5.35,3.85,y=.08)": "balustrade(x,5.85,3.12,y=.08)",
+    "M.lathe('trim',x,-.05,profile,48)": "M.lathe('trim',x,-.05,[(z,r*1.25) for z,r in profile],48)",
+    "[(zz-.012,.54-(zz-6.58)*.0073),(zz+.012,.541-(zz-6.58)*.0073)]": "[(zz-.012,1.25*(.54-(zz-6.58)*.0073)),(zz+.012,1.25*(.541-(zz-6.58)*.0073))]",
+    "for x in [-7.15,7.15,-W/2+.22,W/2-.22]:": "for x in [-8.10,8.10,-W/2+.22,W/2-.22]:",
+    "for x in [-7.4,7.4]:": "for x in [-8.10,8.10]:",
+    "en=[(C.x+T.x*x+N.x*y,C.y+T.y*x+N.y*y,z) for x,y,z in vertices]": "en=[(C.x+T.x*x+N.x*y,C.y+T.y*x+N.y*y,z*1.037) for x,y,z in vertices]",
+    "obj['detail']='Geometry, not photo facade texture'": "obj['detail']='Photo-proportioned geometry; front photographic material assigned separately'"
+  },
+  "sideWindowChanges": "Upper/lower openings and associated pediments/balconies independently matched; source opening holes adjusted with glass meshes.",
+  "verticalScale": 1.037,
+  "revision_2": {
+    "main_window_columns": {
+      "old": 4,
+      "new": 3,
+      "basis": "Visually identified three principal glazed columns per central bay"
+    },
+    "main_upper_window_rows": 3,
+    "main_lower_window_rows": "Top transom at original generator z10.93m, lower pane tall",
+    "main_lower_window_m": {
+      "centre_z_unscaled": 9.64,
+      "width": 3.05,
+      "height": 3.94
+    },
+    "main_upper_window_m": {
+      "centre_z_unscaled": 14.97,
+      "width": 3.05,
+      "height": 2.6
+    },
+    "attic_wide_width": {
+      "old": 1.72,
+      "new": 1.44
+    },
+    "attic_side_width": {
+      "old": 1.64,
+      "new": 1.5
+    },
+    "attic_narrow_offset": {
+      "old": 1.38,
+      "new": 1.48
+    },
+    "attic_narrow_width": {
+      "old": 0.4,
+      "new": 0.42
+    },
+    "main_columns_radius_multiplier": 1.25,
+    "side_windows_m": {
+      "lower_centre_z_unscaled": 10.55,
+      "lower_height": 3.7,
+      "upper_centre_z_unscaled": 15.75,
+      "upper_height": 2.5
+    },
+    "warning": "Rounded pixel-based reconstruction estimates, not measured dimensions. Reference has perspective and occlusions."
+  }
+}

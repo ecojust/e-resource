@@ -20,6 +20,12 @@ const SURFACES = {
     metres: [2.1, 2.1], luminance: 0.061306991,
     normalBias: [-0.000124920, -0.001134648],
   },
+  grass: {
+    id: 'grass_ground', region: [0, 0, 1, 1],
+    metres: [2.51, 2.51], luminance: 0.122335923,
+    meanColor: [0.158131379, 0.119077053, 0.049214460],
+    normalBias: [-0.000326568, 0.000164488],
+  },
 };
 
 const PROFILES = {
@@ -28,13 +34,19 @@ const PROFILES = {
   paving: { surface: 'granite', contrast: 0.18, normal: 0.08, roughness: 0.45, paving: 1 },
   curb: { surface: 'granite', contrast: 0.28, normal: 0.14, roughness: 0.40, paving: 0 },
   asphalt: { surface: 'asphalt', contrast: 0.65, normal: 0.25, roughness: 0.60, paving: 0 },
+  grass: { surface: 'grass', contrast: 0.58, normal: 0.16, roughness: 0.65, paving: 0 },
 };
 
 function profileFor(material, kind) {
+  // A calibrated facade already carries its own source colour and grain.
+  // Applying an unrelated quarry sample would erase the photographic detail.
+  if (material.map) return null;
   const name = material.name || '';
   if (/^BundStonePaving$/i.test(name)) return 'paving';
   if (/^BundGraniteCurb$/i.test(name)) return 'curb';
   if (/^BundRoadSurface$/i.test(name)) return 'asphalt';
+  if (/^BundPlantingGrass$/i.test(name)) return 'grass';
+  if (/^BundPlantingGranite$/i.test(name)) return 'curb';
   // Large city proxies and distant landmarks keep their inexpensive materials.
   if (!/^(bund|street|streets|architecture)$/i.test(kind)) return null;
   if (/glass|glaz|metal|bronze|brass|iron|zinc|copper|gold|letter|flag|joint|shadow|interior|curtain|frame|paint|gravel/i.test(name)) return null;
@@ -66,6 +78,8 @@ const FRAGMENT_COMMON = `
   uniform vec2 archNormalBias;
   uniform vec4 archSurface; // source luminance, contrast, normal, roughness mix
   uniform float archPaving;
+  uniform float archGrass;
+  uniform vec3 archMeanColor;
   uniform float archGrainStrength;
   uniform float archNormalStrength;
   uniform float archRoughnessStrength;
@@ -106,7 +120,12 @@ const FRAGMENT_COLOR = `
   vec2 archUV = archSampleUV(archPlanePosition);
   vec2 archWorldPixel = max(abs(dFdx(archPlanePosition)), abs(dFdy(archPlanePosition)));
   // Stop sampling a cropped source once the mip footprint can include its grout.
-  float archCoverage = 1.0 - smoothstep(0.025, 0.14, max(archWorldPixel.x, archWorldPixel.y));
+  float archPixelMetres = max(archWorldPixel.x, archWorldPixel.y);
+  // The full grass scan has no cropped masonry grout to exclude. Keep its
+  // mip-filtered colour at grazing street-view angles instead of a solid tint.
+  float archCoverage = archGrass > 0.5
+    ? 1.0 - smoothstep(0.5, 2.0, archPixelMetres)
+    : 1.0 - smoothstep(0.025, 0.14, archPixelMetres);
   float archNormalCoverage = 1.0 - smoothstep(0.008, 0.055, max(archWorldPixel.x, archWorldPixel.y));
   if (archCoverage > 0.001) {
     vec3 archSample = texture2D(archColorMap, archUV).rgb;
@@ -114,7 +133,14 @@ const FRAGMENT_COLOR = `
     float archGrain = pow(max(archLuminance / archSurface.x, 0.01), archSurface.y);
     // Retain each building's established colour rather than recolouring every
     // facade with the colour of an unrelated source quarry.
-    diffuseColor.rgb *= mix(1.0, clamp(archGrain, 0.80, 1.18), archCoverage * archGrainStrength);
+    if (archGrass > 0.5) {
+      // Preserve small brown/green differences in the scanned grass/soil while
+      // keeping the model's chosen mean tint. This does not assert a grass species.
+      vec3 archChromatic = pow(max(archSample / archMeanColor, vec3(0.01)), vec3(archSurface.y));
+      diffuseColor.rgb *= mix(vec3(1.0), clamp(archChromatic, vec3(0.62), vec3(1.45)), archCoverage * archGrainStrength);
+    } else {
+      diffuseColor.rgb *= mix(1.0, clamp(archGrain, 0.80, 1.18), archCoverage * archGrainStrength);
+    }
   }
   if (archPaving > 0.5 && abs(archGeometricNormal.y) > 0.85) {
     // Broad granite slabs suggested by the promenade reference photograph.
@@ -167,7 +193,7 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
     archNormalStrength: { value: 1 },
     archRoughnessStrength: { value: 1 },
   };
-  const stats = { textures: 0, sourceBytes: 4898227, appliedMaterials: 0, byProfile: {}, disposed: false };
+  const stats = { textures: 0, sourceBytes: 7413517, appliedMaterials: 0, byProfile: {}, disposed: false };
   const loaded = {};
 
   const requests = Object.entries(SURFACES).map(async ([key, surface]) => {
@@ -189,7 +215,7 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
     const maps = mapResults.map(result => result.value);
     loaded[key] = { surface, maps };
   });
-  // Wait for all nine downloads even after a failure so cleanup cannot miss a
+  // Wait for all twelve downloads even after a failure so cleanup cannot miss a
   // later successful request. No partially loaded material is applied.
   const results = await Promise.allSettled(requests);
   const failed = results.find(result => result.status === 'rejected');
@@ -226,6 +252,8 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
         archNormalBias: { value: new THREE.Vector2(...surface.normalBias) },
         archSurface: { value: new THREE.Vector4(surface.luminance, profile.contrast, profile.normal, profile.roughness) },
         archPaving: { value: profile.paving },
+        archGrass: { value: profileName === 'grass' ? 1 : 0 },
+        archMeanColor: { value: new THREE.Vector3(...(surface.meanColor || [1, 1, 1])) },
         ...controls,
       };
       material.onBeforeCompile = function (shader, renderer) {
@@ -240,7 +268,7 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
           .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>\n${FRAGMENT_ROUGHNESS}`)
           .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>\n${FRAGMENT_NORMAL}`);
       };
-      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v4-2-paving1`;
+      material.customProgramCacheKey = () => `${previousKey}|bund-architectural-v5-planting1`;
       material.userData.architecturalSurface = profileName;
       material.needsUpdate = true;
       mapped.add(material);
