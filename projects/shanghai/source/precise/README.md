@@ -1,4 +1,16 @@
-# 普通小建筑逐栋复原源码（v7）
+# 街区建筑逐栋复原源码（v8）
+
+新增第5栋：虹口多伦路59号鸿德堂。已完成本版原生、网页及目录生命周期的有限验证；[当前应用范围](../../data/audit/precise-buildings-v8/hongde/README.md)，与下方保留的v7历史记录分开。
+
+| 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
+|---|---|---|---|---|
+| [鸿德堂](hongkou-hongde-church/CURRENT_STATE.md) | [10,619,436字节](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-web.glb) | [27,113,064字节](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-raw.glb) | [5,212,724字节](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-lod.glb) | [39,953,968字节](../../assets/native/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church.blend) |
+
+四件文件均低于100,000,000字节。2024年可见配置结合2014年白天结构参考，原照片均为CC BY-SA 4.0；图像未嵌入模型。保留原OSM/Overture四角轮廓与唯一源对象，10个本地邻楼保留。后部、绝对高度和细小构造仍有推定。[独立交付记录](hongkou-hongde-church/DELIVERY.md)保留制作阶段的历史状态，当前接入状态以上述应用证明为准。
+
+## v7四栋记录（历史保留）
+
+以下“本批”“当前”等词对应v7；各项原模型下载与历史证明保持。
 
 本批将武康路129号、210号和北大街208–212号茶楼接入HTML，与已发布的北大街222号组成4栋普通小楼。129号已有单栋静态候选网页验收；210号与茶楼v3的实际原生斜视图已由root复核接受，两栋v3静态网页及全部11张root图像复核也已通过。候选两宏普通目录均有本批实际验证；新启动包完成归档及青浦代表宏实际解压运行，未重跑武康ZIP浏览器，也未沿用上一版20项报告。
 

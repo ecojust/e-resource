@@ -1,4 +1,20 @@
-# 上海漫游 · Shanghai Explorer v7
+# 上海漫游 · Shanghai Explorer v8
+
+新增虹口多伦路59号**鸿德堂**：砖塔的真实窗洞、双层曲檐、红柱、拱窗与圆窗按照片分别重建。两翼使用连续向后升起的檐面，窗格和2024年蓝色匾牌保留可辨特征。
+
+**[进入鸿德堂漫游](https://rawcdn.githack.com/ecojust/e-resource/d483eba6a4636797f7e461fb834d8d80f20ecf72/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk)** · [网页GLB](assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-web.glb)（10,619,436字节）· [Blender](assets/native/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church.blend)（39,953,968字节）· [当前状态、下载与源码](source/precise/hongkou-hongde-church/CURRENT_STATE.md)
+
+导航现为24项：15栋外滩、4栋陆家嘴、5栋街区建筑。鸿德堂已完成本版静态网页、目录加载/退出/返回及实际图像核对；[验证范围](data/audit/precise-buildings-v8/hongde/README.md)。保留邻楼，修正了旧OSM体块遮挡门窗的问题。
+
+[下载启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（75,085,094字节，SHA256 `dec586d0da788b16354f967ae637ab14cbaea44720ef9bc8a40efb8213a0c4a2`）；[归档与实际运行范围](data/audit/launcher-v8/README.md)。下载地址随仓库版本更新，包内应用版本见该记录。
+
+参考Livelikerw2014年与Windmemories2024年照片，均为CC BY-SA 4.0。采用2024年可见配置，白天图辅助辨认材质，不把夜间泛光当作墙面固有颜色。后部、绝对高度和部分尺寸仍为推定；全城1,796,419个建筑及部件要素尚未逐栋照片复原。新增四件模型及本启动包均严格小于100,000,000字节。
+
+[来源与限制](data/bund/REALISM_V8.md) · [当前状态](CURRENT_STATE.md)
+
+## v7发布记录（历史）
+
+以下保留v7正文，23项导航及其验证仅指当时版本，不是v8证明。历史固定提交链接不会因身份改写自动跳转；master下载入口可能已更新。
 
 本批接入武康路129号、武康路210号住宅和青浦北大街208–212号茶楼：**新制模型2栋，既有129号模型首次接入HTML，共3处新替换**。连同既有222号，普通小楼增至4栋，导航为**23项：15栋外滩历史建筑、4栋陆家嘴地标、4栋普通小楼**。129号已完成21项静态导航候选中的单栋网页验收；210号与茶楼v3已制成GLB和Blender，修正后的原生斜视图已由root实际查看并接受。两栋已通过23项静态候选中的v3网页检查及root对全部11张截图的实际复核；候选应用的武康与青浦两宏目录分别通过实际浏览器和root图像复核；新ZIP通过归档核对及青浦{222、茶楼}代表宏实际解压运行，不声称武康ZIP浏览器验收。
 
