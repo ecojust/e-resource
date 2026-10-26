@@ -1,6 +1,6 @@
 {
   "version": "shanghai-paving-v4.2",
-  "status": "local-verified-public-check-pending",
+  "status": "public-verified",
   "date_utc": "2026-10-26",
   "previous_release": {
     "report": "verification-v4.1.json",
@@ -35,33 +35,36 @@
     "pipeline_fixture": "../data/roofs/pipeline-fixture-validation.json",
     "production_patch": "../data/roofs/roof-validation.json",
     "fullcity": "../data/roofs/fullcity-validation.json",
-    "local_browser": "source-roofs-local.json",
+    "local_browser": "paving-v4.2-local.json",
     "npm_test_passed": true,
     "asset_check_passed": true,
     "published_model_hashes": "../data/roofs/published-models-validation.json",
-    "launcher": "launcher-roofs.json",
+    "launcher": "launcher-paving-v4.2.json",
     "compressed_model_decode": "../data/roofs/compressed-model-validation.json",
-    "public_browser": "source-roofs-public.json",
+    "public_browser": "paving-v4.2-public.json",
     "osm_fallback_unit": "../data/roofs/osm-fallback-unit-validation.json",
     "osm_fallback_test_count": 57,
     "osm_fallback_review": "../data/roofs/osm-fallback-review.json",
     "osm_fallback_local": "osm-fallback-local.json",
-    "launcher_remote": "launcher-roofs-remote.json",
+    "launcher_remote": "launcher-paving-v4.2-remote.json",
     "osm_fallback_public": "osm-fallback-public.json",
     "fallback_final_ready": true,
-    "fallback_transient_timeouts_recovered": 2,
+    "fallback_transient_timeouts_recovered": 1,
     "connector_geometry": "../data/bund/validation/connector-geometry-v4.2.json",
     "connector_review": "../data/bund/validation/connector-review-v4.2.json",
     "street_compression": "../data/bund/validation/street-compression-v4.2.json",
     "street_rebuild": "../data/bund/validation/street-rebuild-v4.2.json",
     "paving_material": "../data/bund/validation/paving-material-v4.2.json",
-    "paving_local": "paving-v4.2-local.json"
+    "paving_local": "paving-v4.2-local.json",
+    "source_roofs_local": "source-roofs-local.json",
+    "source_roofs_public": "source-roofs-public.json",
+    "paving_public": "paving-v4.2-public.json"
   },
   "asset_limits": {
     "all_files_below_bytes": 100000000,
     "maximum_city_glb_bytes": 940388,
     "total_city_model_bytes": 285776832,
-    "largest_deliverable_bytes": 38765634
+    "largest_deliverable_bytes": 38785814
   },
   "limits": [
     "126 source-parametric roofs do not constitute citywide LoD2 or photogrammetry.",
@@ -70,10 +73,11 @@
     "Conservatively retained crossing/ambiguous OSM components can overlap local geometry at coverage edges.",
     "The estimated connector uses the existing flat ground datum; two source recesses remain unknown openings. Actual promenade stairs, ramps and height differences are not reconstructed."
   ],
-  "app_commit": "72e344b6e927b1a3130b2ff6e6901875f260eb3e",
-  "preview": "https://rawcdn.githack.com/ecojust/e-resource/72e344b6e927b1a3130b2ff6e6901875f260eb3e/projects/shanghai/index.html",
-  "download_commit": "4dc07e9ad00fe895a7d1700876c38bed74bfddec",
-  "download": "https://raw.githubusercontent.com/ecojust/e-resource/4dc07e9ad00fe895a7d1700876c38bed74bfddec/projects/shanghai/downloads/shanghai-web-launcher.zip",
-  "download_sha256": "6032488c58efcb7c9cbe171d7b91a37636abc6b489ca446107336407c2b3eab8",
-  "model_commit": "91abba60af13237bbe3cd9650cf907912b69d613"
+  "app_commit": "b951bbc0ba2422ef3c3a21625e06fb5ae36b719a",
+  "preview": "https://rawcdn.githack.com/ecojust/e-resource/b951bbc0ba2422ef3c3a21625e06fb5ae36b719a/projects/shanghai/index.html",
+  "download_commit": "214567712ec95053616d11123062c26c8c202106",
+  "download": "https://raw.githubusercontent.com/ecojust/e-resource/214567712ec95053616d11123062c26c8c202106/projects/shanghai/downloads/shanghai-web-launcher.zip",
+  "download_sha256": "1b491ab1d8bf0688f71ea5dd220556553edc4444c1fac16b31765472851af844",
+  "model_commit": "b951bbc0ba2422ef3c3a21625e06fb5ae36b719a",
+  "source_roof_model_commit": "91abba60af13237bbe3cd9650cf907912b69d613"
 }

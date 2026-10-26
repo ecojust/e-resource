@@ -9,3 +9,5 @@
 原始街道模型的11组材质几何顶点、法线和索引均保留，新增174个顶点、112个三角面；铺装颜色有意调整。网页模型关闭位置量化和简化，实际解码后全部三角面位置与原始模型一致，法线最大方向差0.0104°。不要将原始几何保留与网页法线逐位一致混为一谈。
 
 [交付与大小](validation/streets-v4.2.json) · [几何核验](validation/connector-geometry-v4.2.json) · [独立审查](validation/connector-review-v4.2.json) · [来源及排除范围](validation/connector-plan-v4.2.json) · [实际解码对照](validation/street-compression-v4.2.json) · [可重建检查](validation/street-rebuild-v4.2.json)
+
+[更新前](../../assets/previews/paving-v4.2/before-street.png) · [公开版实测街景](../../assets/previews/paving-v4.2/public-street.png) · [公开浏览器记录](../../tests/paving-v4.2-public.json)。截图保留未确认的两处开口，不表示这些区域已经复原。
