@@ -1,0 +1,108 @@
+{
+  "version": "v4.2",
+  "schema_version": "shanghai-launcher-paving-verification-v1",
+  "generated_at": "2026-10-26T00:12:02.166068+00:00",
+  "commit": "b951bbc0ba2422ef3c3a21625e06fb5ae36b719a",
+  "build": {
+    "version": "shanghai-web-launcher-v4.2",
+    "commit": "b951bbc0ba2422ef3c3a21625e06fb5ae36b719a",
+    "project": "/workspace/shanghai_project",
+    "landmarks": 14,
+    "scene_props": 1,
+    "runtime_glbs": 25,
+    "primary_runtime_glbs": 15,
+    "bund_lod_glbs": 10,
+    "local_runtime_glb_bytes": 24025456,
+    "local_surface_textures": 9,
+    "local_surface_texture_bytes": 4898227,
+    "local_road_remainder_bytes": 385,
+    "reference_photos": 10,
+    "city_models_streamed": 1708,
+    "city_features": 1796419,
+    "file_count": 154,
+    "uncompressed_bytes": 64011600,
+    "conservative_zip_upper_bound_bytes": 65690960,
+    "max_individual_file_bytes": 6935073,
+    "static_references_checked": 35,
+    "source_project_modified": false,
+    "remote_commit_availability_checked": false,
+    "dry_run": false,
+    "output_requested": "/workspace/output/shanghai-web-launcher.zip",
+    "file": "/workspace/output/shanghai-web-launcher.zip",
+    "bytes": 38785814,
+    "sha256": "1b491ab1d8bf0688f71ea5dd220556553edc4444c1fac16b31765472851af844"
+  },
+  "build_log": "/workspace/shanghai_realism_v4/ground-finish/launcher-build.log",
+  "archive": {
+    "file": "/workspace/output/shanghai-web-launcher.zip",
+    "bytes": 38785814,
+    "sha256": "1b491ab1d8bf0688f71ea5dd220556553edc4444c1fac16b31765472851af844",
+    "atomic_replace": true
+  },
+  "validation": {
+    "passed": true,
+    "zip_crc_passed": true,
+    "unique_safe_entry_paths": true,
+    "entry_count": 154,
+    "all_entries_below_100000000_bytes": true,
+    "max_entry_bytes": 6935073,
+    "archive_below_100000000_bytes": true,
+    "embedded_manifest_entry_hashes_verified": 153,
+    "source_city_manifest_matches_working_and_commit": true,
+    "city_manifest_complete": true,
+    "city_model_count": 1708,
+    "city_feature_count": 1796419,
+    "all_city_model_and_id_urls_pinned_to_commit": true,
+    "pinned_model_url_count": 1708,
+    "pinned_id_url_count": 1708,
+    "pinned_url_count": 3416,
+    "city_cdn_prefix": "https://rawcdn.githack.com/ecojust/e-resource/b951bbc0ba2422ef3c3a21625e06fb5ae36b719a/projects/shanghai/assets/city/",
+    "roof_count": 126,
+    "roof_manifest_preserved": true,
+    "required_v4_2_runtime_files": [
+      {
+        "file": "assets/models/bund/web/bund-streets.glb",
+        "bytes": 1341416,
+        "sha256": "1377cdd16f567adee2555c7090af14cb1bb0212362b2184f92533648b553e7a7",
+        "archive_equals_working": true,
+        "archive_equals_commit": true
+      },
+      {
+        "file": "src/architectural-material.js",
+        "bytes": 12205,
+        "sha256": "a8a43d3b3af253990a684cb09ff20d7937f1c536cf8e98e638366a1add72da47",
+        "archive_equals_working": true,
+        "archive_equals_commit": true
+      }
+    ],
+    "all_runtime_source_modules_match_working_and_commit": true,
+    "runtime_source_modules_checked": 15,
+    "runtime_glb_count": 25,
+    "raw_native_and_city_chunks_excluded": true,
+    "http_server_instructions_present": true,
+    "commit_object_verified_locally": true,
+    "remote_network_availability_checked": false,
+    "no_browser_started": true
+  },
+  "copies": [
+    {
+      "file": "/workspace/shanghai_project/downloads/shanghai-web-launcher.zip",
+      "bytes": 38785814,
+      "sha256": "1b491ab1d8bf0688f71ea5dd220556553edc4444c1fac16b31765472851af844",
+      "atomic_replace": true
+    },
+    {
+      "file": "/workspace/e-resource-upload/projects/shanghai/downloads/shanghai-web-launcher.zip",
+      "bytes": 38785814,
+      "sha256": "1b491ab1d8bf0688f71ea5dd220556553edc4444c1fac16b31765472851af844",
+      "atomic_replace": true
+    }
+  ],
+  "historical_v4_1_report": {
+    "file": "/workspace/shanghai_project/tests/launcher-roofs.json",
+    "sha256": "2b1784f4923c5df6f4fcc4060acbab12065376191b72b48075e37621472a417b",
+    "preserved": true
+  },
+  "precision_note": "Street runtime export uses -cc -noq -km -ke. Parent integration audit reports decoded positions exact and maximum normal direction deviation 0.0104 degrees; web normals are not claimed bit-identical. This launcher audit checks archived bytes against working files and the published Git commit.",
+  "git_commit_or_push_performed": false
+}
