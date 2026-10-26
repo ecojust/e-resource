@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import * as cache from '../src/detail-model-cache.js';
 import {preparePhotographicGlass} from '../src/photographic-glass.js';
+import {loadOrdinaryLandmarkAsset,isOrdinaryLandmarkRecord} from '../src/ordinary-scene-adapter.js';
+import {createHash} from 'node:crypto';
+import {modelSurfaceKind,isArchitecturalBuilding} from '../src/precise-registration-ui.js';
 
 // Exercise the actual edited scheduler/load bodies with lightweight geographic
 // and renderer adapters. No WebGL, network or copied reimplementation of logic.
@@ -18,18 +21,21 @@ function group(name,{photo=false}={}) {
   return {name,visible:true,position:{copy(){}},scale:{multiplyScalar(){}},rotation:{},traverse(fn){fn(this);fn(mesh);}};
 }
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
-function harness({maxCount=2,maxBytes=32*cache.MIB}={}) {
+function harness({maxCount=2,maxBytes=32*cache.MIB,fetchFunction}={}) {
   const events=[], requests=[], records=new Map(), current={lng:0,lat:0}, variant={value:'full'};
   const scene={add(object){events.push({type:'add',object});}};
   const disposeModel=object=>{assert.equal(object.disposed,undefined,'object disposed twice');object.disposed=true;events.push({type:'dispose',object});};
   const boundary=new Map();
   const env={...cache,events,current,landmarkRecords:records,scene,disposeModel,
-    loader:{loadAsync(url){return new Promise((resolve,reject)=>requests.push({url,resolve,reject}));}},
+    loader:{loadAsync(url){return new Promise((resolve,reject)=>requests.push({url,resolve,reject}));},
+      parseAsync(buffer,url){return new Promise((resolve,reject)=>requests.push({buffer,url,resolve,reject}));}},
     detailCacheLimits:{maxCount,maxBytes},detailCacheStats:{evicted:0,discardedLate:0},
     map:{getCenter(){return current;},getZoom(){return 20;},triggerRepaint(){}},walker:{group:{visible:true}},
-    distanceMetres(a,b){return Math.abs(a.lng-b.lng);},desiredVariant(){return variant.value;},
+    distanceMetres(a,b){return Math.abs(a.lng-b.lng);},desiredVariant(record){return variant.value==='distant' && record.failedVariants?.has('distant') ? 'full' : variant.value;},
     geographicPosition(){return {};},maplibregl:{MercatorCoordinate:{fromLngLat(){return {meterInMercatorCoordinateUnits(){return 1;}};}}},metreScale:1,DEG:Math.PI/180,
-    THREE:{},preparePhotographicGlass,correctPhotographicTexture(){},surfaces:{apply(){}},lighting:{configureModel(){},invalidate(){}},
+    THREE:{},preparePhotographicGlass,modelSurfaceKind,isArchitecturalBuilding,isOrdinaryLandmarkRecord,
+    loadOrdinaryLandmarkAsset(args){return loadOrdinaryLandmarkAsset({...args,fetchFunction});},
+    correctPhotographicTexture(){},surfaces:{apply(){}},lighting:{configureModel(){},invalidate(){}},
     reportLandmarks(){},onLoadError(error){events.push({type:'error',error});},
     landmarkBoundaries:boundary,landmarkSuppression:{setOwner(id,ids){events.push({type:'owner',id,ids});return Promise.resolve();}},
     // These cache fixtures represent the original static landmarks. Dynamic
@@ -125,4 +131,77 @@ test('visiting sixteen separated locations never accumulates hidden full photogr
   }
   h.move(1000000);const state=cache.detailCacheState(h.records.values(),h.detailCacheLimits,h.detailCacheStats);
   assert.equal(state.resident,0);assert.equal(state.evicted,16);assert.equal(h.requests.length,16);
+});
+
+// The production scheduler body above now also honors the catalog selection gate.
+test('catalog selection gate does not start every nearby ordinary photo and preserves static models',async()=>{
+ const h=harness(),ordinary=h.add('ordinary',{catalogOwner:'macro',catalogWanted:false}),old=h.add('bund17');
+ h.update();assert.equal(h.requests.length,1);assert.equal(h.requests[0].url,'bund17-full');
+ await h.resolve(0,group('static'));ordinary.catalogWanted=true;h.update();assert.equal(h.requests.length,2);
+ await h.resolve(1,group('ordinary',{photo:true}));assert(ordinary.object.visible);
+ ordinary.catalogWanted=false;h.update();assert.equal(ordinary.object,null);assert(old.object.visible);
+ assert(!h.events.filter(e=>e.type==='visible-landmarks').at(-1).ids.includes('ordinary'));
+});
+test('actual load body disposes a late ordinary parse after catalog unload and never reacquires owners',async()=>{
+ const h=harness(),r=h.add('ordinary',{catalogOwner:'macro',catalogWanted:true});h.update();
+ r.catalogWanted=false;r.catalogDisposed=true;h.update();const late=group('ordinary-late',{photo:true});await h.resolve(0,late);
+ assert(late.disposed);assert.equal(r.loadingModel,false);assert.equal(r.object,undefined);
+ assert.equal(h.events.some(e=>e.type==='owner'&&e.ids),false);assert.equal(h.requests.length,1);
+});
+
+const hash=data=>createHash('sha256').update(data).digest('hex');
+function ordinaryAsset() {
+  const json=Buffer.from('{"asset":{"version":"2.0"}} '.padEnd(32,' '));
+  const data=Buffer.alloc(20+json.length);data.writeUInt32LE(0x46546c67,0);data.writeUInt32LE(2,4);
+  data.writeUInt32LE(data.length,8);data.writeUInt32LE(json.length,12);data.writeUInt32LE(0x4e4f534a,16);json.copy(data,20);
+  const asset={file:'assets/models/precise/synthetic/web.glb',bytes:data.length,sha256:hash(data)};
+  return {data,record:{kind:'building',assets:{web:asset,lod:{...asset,file:'assets/models/precise/synthetic/lod.glb'}},ordinaryBaseURL:'https://fixture.invalid/project/'}};
+}
+async function until(test) {const deadline=performance.now()+2500;while(!test()){assert(performance.now()<deadline,'fixture timed out');await settle();}}
+
+test('static ordinary full and LOD both verify bytes before parse, without gaining catalog ownership',async()=>{
+  for(const variant of ['full','distant']) {
+    const f=ordinaryAsset(),calls=[];
+    const h=harness({fetchFunction:async url=>{calls.push(url);return new Response(f.data);}}),r=h.add('ordinary-static',f.record);
+    h.variant.value=variant;h.update();await until(()=>h.requests.length===1);
+    assert(h.requests[0].buffer instanceof ArrayBuffer,'must use verified parseAsync, never loadAsync');
+    assert.equal(calls[0],`https://fixture.invalid/project/${f.record.assets[variant==='full'?'web':'lod'].file}`);
+    await h.resolve(0,group(variant));assert.equal(r.status,'loaded');assert.equal(r.catalogOwner,undefined);
+    assert.equal(r.activeVariant,variant);assert.equal(r.object.visible,true);
+    const corrupt=f.data.slice();corrupt[corrupt.length-1]^=1;
+    const bad=harness({fetchFunction:async()=>new Response(corrupt)}),badRecord=bad.add('static-bad',f.record);
+    bad.variant.value=variant;bad.update();await until(()=>!badRecord.loadingModel);
+    // A failed LOD correctly falls back to full, whose same corrupt fixture also fails.
+    await until(()=>badRecord.failedVariants?.has('full'));
+    assert.equal(bad.requests.length,0,'SHA mismatch must not enter any parser');
+    assert.equal(badRecord.object,undefined);assert.equal(bad.events.some(e=>e.type==='owner'&&e.ids),false);
+  }
+});
+
+test('same-macro leave/return retries an intentionally aborted fetch once and acquires only the final visible owner',async()=>{
+  const f=ordinaryAsset(),network=[];
+  const h=harness({fetchFunction:(url,{signal})=>new Promise((resolve,reject)=>network.push({url,signal,resolve,reject}))});
+  const r=h.add('ordinary-retry',{...f.record,catalogOwner:'macro',catalogWanted:true});h.update();
+  await until(()=>network.length===1);
+  r.catalogWanted=false;h.update();assert(network[0].signal.aborted);
+  r.catalogWanted=true;h.update();assert.equal(network.length,1,'wait for cancelled request to settle');
+  network[0].reject(new DOMException('cancelled request settled later','AbortError'));
+  await until(()=>network.length===2);assert.equal(r.failedVariants,undefined);
+  assert.equal(h.events.some(e=>e.type==='error'),false);assert.equal(h.events.some(e=>e.type==='owner'&&e.ids),false);
+  network[1].resolve(new Response(f.data));await until(()=>h.requests.length===1);
+  await h.resolve(0,group('final-visible'));h.update();
+  assert.equal(network.length,2);assert.equal(r.status,'loaded');assert.equal(r.object.name,r.name);
+  assert.deepEqual(h.events.filter(e=>e.type==='visible-landmarks').at(-1).ids,[r.id]);
+  assert.equal(h.events.filter(e=>e.type==='add').length,1);assert.equal(r.failedVariants,undefined);
+});
+
+test('cancelled ordinary CPU parse stays obsolete after a rapid return; its object is disposed before retry ownership',async()=>{
+  const f=ordinaryAsset();let fetches=0;
+  const h=harness({fetchFunction:async()=>{fetches++;return new Response(f.data);}});
+  const r=h.add('ordinary-parse-retry',{...f.record,catalogOwner:'macro',catalogWanted:true});h.update();await until(()=>h.requests.length===1);
+  r.catalogWanted=false;h.update();r.catalogWanted=true;h.update();
+  const obsolete=group('obsolete');await h.resolve(0,obsolete);await until(()=>h.requests.length===2);
+  assert(obsolete.disposed);assert.equal(h.events.some(e=>e.type==='add'),false);
+  assert.equal(h.events.some(e=>e.type==='owner'&&e.ids),false);assert.equal(r.failedVariants,undefined);
+  await h.resolve(1,group('fresh'));assert.equal(fetches,2);assert.equal(r.status,'loaded');assert(r.object.visible);
 });

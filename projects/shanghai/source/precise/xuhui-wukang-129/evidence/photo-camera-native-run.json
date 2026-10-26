@@ -1,0 +1,117 @@
+{
+  "schema": "wukang129-photo-camera-entry-check-v1",
+  "passed": true,
+  "bindings": {
+    "schema": "wukang129-photo-camera-input-lock-v1",
+    "id": "xuhui-wukang-129",
+    "camera": {
+      "file": "camera-2026.json",
+      "sha256": "b42b6f44c2166a9580b04450d6dea0f103b684553b07e332e8dfe5fe1e3e93a0",
+      "bytes": 1982
+    },
+    "calibration": {
+      "file": "calibration/calibration-independent.json",
+      "sha256": "a2aa2e0096cf22c7aa989b5350b72c700ac3ad74eeb65914886b5bae4443eca5",
+      "bytes": 27447
+    },
+    "geometry": {
+      "file": "geometry-input.json",
+      "sha256": "e33aff11810895fe9399622429a348bba29952d18cb075d7574f6edbd1114f80",
+      "bytes": 53248
+    },
+    "source_photo": {
+      "file": "references/2026-windmemories-cc-by-sa4-original.jpg",
+      "sha256": "43722c05f8bed1cc9108a5b4671add6eb3d1f07db6c6deb371cc0d14e1c7506a",
+      "bytes": 2447727
+    },
+    "raw": {
+      "file": "output/xuhui-wukang-129-raw.glb",
+      "sha256": "c0915a9d76761865b4020d31397b8ef66ddb6efc4112bbee150264119754afa9",
+      "bytes": 15002212
+    },
+    "native_orthographic_review": {
+      "view_azimuth_degrees": 307.69525847124856,
+      "view_elevation_degrees": 12,
+      "width": 1500,
+      "height": 1000,
+      "convention": "Blender ENU camera location uses east=sin(azimuth),north=cos(azimuth). This ortho uses the mapped source-front outward normal only, not the calibrated photo pose."
+    },
+    "candidate_revision": "visible-shape-v2"
+  },
+  "point_count": 34,
+  "maximum_source_projection_error_px": 1.3379351794287481e-12,
+  "maximum_resized_projection_error_px": 1.1872656713311143e-12,
+  "wrong_gltf_basis_negative_control_error_px": 1590.5559091061743,
+  "render_settings": {
+    "width": 1500,
+    "height": 1000,
+    "pixel_aspect_x": 1.00139470013947,
+    "pixel_aspect_y": 1.0,
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "K_pixel_center": [
+      [
+        1002.7855153203343,
+        0.0,
+        749.5
+      ],
+      [
+        0.0,
+        1004.18410041841,
+        499.5
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_render_scale_xy": [
+      0.8333333333333334,
+      0.8333333333333334
+    ],
+    "maximum_K_error": 1.1368683772161603e-13,
+    "coordinate_note": "Render pixel center = source pixel center transformed as (p+0.5)*scale-0.5. No extra half-pixel camera shift."
+  },
+  "camera_matrix_world_blender_enu": [
+    [
+      -0.5995811938928959,
+      -0.06333526008312831,
+      -0.7978038836457055,
+      -12.623763224193421
+    ],
+    [
+      -0.8001375679887376,
+      0.02651238871833005,
+      0.5992303109302091,
+      11.09201528646178
+    ],
+    [
+      -0.01680072090825035,
+      0.9976400844365917,
+      -0.06657325065153741,
+      2.348193155289808
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "photo_camera_script_sha256": "76c17628f44e0135d731dee6c208a4f8f8e55f4be03ee47ba0a500e0f365d806",
+  "no_blender_executed_by_check": true,
+  "scope": "Numerical camera and exact source/raw binding only. It does not certify visible model accuracy, unknown facade depth, or surveyed dimensions.",
+  "native_binding_report": "xuhui-wukang-129-raw-blender.json",
+  "native_input_sha256": "2f15f05014888f59d3a7a800efb00ca2857272964a4cbc0f6e27355572569f38",
+  "actual_blender_projection_errors_px": [
+    5.800363225169308e-05,
+    0.00014819505813497828,
+    6.044261591361377e-05,
+    2.3985143406252356e-05
+  ],
+  "applied_inside_blender": true,
+  "geometry_changed": false,
+  "blender_version": "4.3.2",
+  "rendered": true
+}

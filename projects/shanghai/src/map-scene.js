@@ -9,7 +9,10 @@ import { createStreetTraffic } from './street-traffic.js';
 import { createStreetBasemapReplacement } from './street-basemap.js';
 import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
-import { CityDetailStreamer } from './city-detail-streamer.js';
+import { OrdinaryCityDetailStreamer as CityDetailStreamer } from './ordinary-city-detail-streamer.js';
+import { OrdinaryBuildingCatalog } from './ordinary-building-catalog.js';
+import { createOrdinaryMacroRegistrar, loadOrdinaryLandmarkAsset, isOrdinaryLandmarkRecord } from './ordinary-scene-adapter.js';
+import { modelSurfaceKind, isArchitecturalBuilding } from './precise-registration-ui.js';
 import { StreetInteraction, DEFAULT_GROUND_HEIGHT } from './street-interaction.js';
 import { loadStreetAssets } from './street-assets.js';
 import { OSMBuildingSuppressor } from './osm-building-suppression.js';
@@ -271,6 +274,7 @@ export async function createShanghaiScene(options = {}) {
   let explicitCamera = null, customLayerReady = false;
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const landmarkRecords = new Map();
+  let ordinaryCatalog=null, updatingOrdinaryCatalog=false, nearbyOrdinaryRecords=[];
   const streetInteraction = new StreetInteraction();
   let localDataKind = 'city', streamingSignature = '', streamNoticeTime = 0, streamErrorTime = 0;
   const tileSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
@@ -368,6 +372,7 @@ export async function createShanghaiScene(options = {}) {
       // Also guard late downloads when a caller directly removes this layer.
       if (!destroyed) {
         destroyed = true;
+        ordinaryCatalog?.destroy();
         osmSuppression?.destroy();
         streetBasemap?.dispose();
         localStreamer.destroy();
@@ -417,10 +422,19 @@ export async function createShanghaiScene(options = {}) {
     if (!record.object) record.status='loading';
     reportLandmarks();
     let pendingGroup=null;
+    // Keep this request's signal after the verified loader clears its record
+    // handle. A rapid leave/return must not turn an intentional abort into a
+    // permanent failure, or accept a late parse from that cancelled request.
+    const ordinaryRequest=isOrdinaryLandmarkRecord(record)?new AbortController():null;
     try {
       const data = record.id==='bund-streets' && record.interaction_file
         ? await loadStreetAssets({THREE,loader,record,onWarning:onLoadError})
+        : ordinaryRequest ? await loadOrdinaryLandmarkAsset({record,variant,loader,request:ordinaryRequest})
         : await loader.loadAsync(variant==='distant' ? record.lodUrl : record.url);
+      if (ordinaryRequest?.signal.aborted) {
+        disposeModel(data.scene); record.status=record.object?'loaded':'idle';
+        detailCacheStats.discardedLate++; return;
+      }
       if (!retainDetailResult(record,data.scene,{destroyed,disposeObject:disposeModel})) {
         detailCacheStats.discardedLate++; return;
       }
@@ -436,9 +450,9 @@ export async function createShanghaiScene(options = {}) {
         obj.geometry?.computeBoundingSphere();
         for(const material of Array.isArray(obj.material)?obj.material:[obj.material])
           correctPhotographicTexture(THREE,material,record.photo_texture?.orientation);
-        if (variant==='full') surfaces?.apply(obj,record.id==='bund-streets'?'street':record.candidate_id?'bund':'modern');
+        if (variant==='full') surfaces?.apply(obj,modelSurfaceKind(record));
       });
-      lighting?.configureModel(group,{detailed:Boolean(record.candidate_id)||record.id==='bund-streets',ground:record.id==='bund-streets',
+      lighting?.configureModel(group,{detailed:isArchitecturalBuilding(record)||record.id==='bund-streets',ground:record.id==='bund-streets',
         casterFilter:record.id==='bund-streets'?mesh=>!mesh.userData.nearGrass && (Array.isArray(mesh.material)?mesh.material:[mesh.material]).some(material=>/BundTree|BundRailing|BundLamp/i.test(material?.name||'')):undefined});
       const resourceEstimate=estimateDetailResources(group);
       const old=record.object;
@@ -454,7 +468,7 @@ export async function createShanghaiScene(options = {}) {
       updateLandmarkVisibility(); reportLandmarks(); map.triggerRepaint();
     } catch (error) {
       if(pendingGroup && pendingGroup!==record.object)disposeModel(pendingGroup);
-      if(destroyed || !record.detailWanted) {
+      if(destroyed || !record.detailWanted || ordinaryRequest?.signal.aborted) {
         record.status=record.object?'loaded':'idle'; return;
       }
       record.failedVariants ||= new Set();record.failedVariants.add(variant);
@@ -479,8 +493,10 @@ export async function createShanghaiScene(options = {}) {
     for (const record of landmarkRecords.values()) {
       const distance = distanceMetres(target, record);
       const maxDistance=record.maxDistance || (map.getZoom() < 16 ? 12000 : 3200);
-      const nearby=detailIsNearby(distance,maxDistance,Boolean(record.object?.visible),300);
+      const nearby=(!record.catalogOwner || (record.catalogWanted && !record.catalogDisposed))
+        && detailIsNearby(distance,maxDistance,Boolean(record.object?.visible),300);
       record.detailWanted=nearby;
+      if(!nearby)record.catalogController?.abort('ordinary-view-changed');
       if (nearby) record.lastDetailUsed=performance.now();
       const variant=desiredVariant(record);
       if (nearby && !record.loadingModel && (record.status==='idle' || (record.status==='loaded' && record.activeVariant!==variant && !record.failedVariants?.has(variant)))) pending.push({record,distance,variant});
@@ -541,7 +557,7 @@ export async function createShanghaiScene(options = {}) {
       const path = p.url || p.model || `../assets/models/${p.id}.glb`;
       const url = /^(https?:|data:)/.test(path) ? path : new URL(path.startsWith('../') ? path : `../${path}`, import.meta.url).href;
       const lodUrl=p.lod_model ? (/^(https?:|data:)/.test(p.lod_model) ? p.lod_model : new URL(p.lod_model.startsWith('../')?p.lod_model:`../${p.lod_model}`,import.meta.url).href) : null;
-      landmarkRecords.set(p.id, {...p, lng, lat, url, lodUrl, status: 'idle'});
+      landmarkRecords.set(p.id, {...p, lng, lat, url, lodUrl, ordinaryBaseURL: new URL('../',import.meta.url).href, status: 'idle'});
     }
     updateLandmarkVisibility(); reportLandmarks();
   }
@@ -585,11 +601,29 @@ export async function createShanghaiScene(options = {}) {
       onStatus({kind:localDataKind==='legacy'?'neighborhoods':'streaming',message:'附近建筑分块',...state});
     }
   }
+  function setOrdinaryCatalog(catalog,{districts=options.districts||[],baseURL=new URL('../',import.meta.url).href}={}) {
+    if (!ordinaryCatalog) {
+      const registerMacro=createOrdinaryMacroRegistrar({cityDetails,landmarkRecords,landmarkBoundaries,preciseLandmarkIds,
+        tileSuppression,disposeModel,updateLandmarkVisibility,updateBuildingExclusions,reportLandmarks,onError:onLoadError,
+        onNearbyRecords(records){nearbyOrdinaryRecords=records;options.onNearbyOrdinaryRecords?.(records);}});
+      ordinaryCatalog=new OrdinaryBuildingCatalog({baseURL,districts,registerMacro,
+        maxMacros:lowMemory?2:4,maxRecords:lowMemory?128:256,maxModels:lowMemory?1:2,
+        onError(error){onLoadError(new Error(`附近逐栋模型暂不可用，保留城市基线：${error.message}`));}});
+    }
+    if(ordinaryCatalog.baseURL!==baseURL)throw new Error('普通建筑目录来源根路径变化，需重新创建场景');
+    ordinaryCatalog.setCatalog(catalog); updateLocalModels(true);
+    return ordinaryCatalog.getState();
+  }
   function updateLocalModels(force=false) {
     const center=map.getCenter(), walking=walker.group.visible;
     const target=walking?current:{lng:center.lng,lat:center.lat};
     localStreamer.update({...target,zoom:map.getZoom(),bearing:map.getBearing(),mode:walking?'walk':'overview'},force);
     cityDetails.update({...target,zoom:map.getZoom(),bearing:map.getBearing(),mode:walking?'walk':'overview'});
+    if(ordinaryCatalog && !updatingOrdinaryCatalog) {
+      updatingOrdinaryCatalog=true;
+      try {ordinaryCatalog.update({...target,zoom:map.getZoom(),mode:walking?'walk':'overview'});}
+      finally {updatingOrdinaryCatalog=false;}
+    }
   }
   function prepareCityDetailObject(group,far,record) {
     group.name=`${record.id} · physical inferred facades`;
@@ -780,6 +814,9 @@ export async function createShanghaiScene(options = {}) {
     getStreetInteractionState:()=>streetInteraction.getState(),
     streetInteractionRevision:()=>streetInteraction.revision,
     setLandmarks,setCityManifest,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
+    setOrdinaryCatalog,
+    getOrdinaryCatalogState:()=>ordinaryCatalog?.getState()||null,
+    getNearbyOrdinaryRecords:()=>nearbyOrdinaryRecords.map(record=>({...record})),
     setAvatarVisible(visible){
       if(!visible){
         explicitCamera=null;
@@ -813,5 +850,5 @@ export async function createShanghaiScene(options = {}) {
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
+    destroy(){destroyed=true;ordinaryCatalog?.destroy();osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

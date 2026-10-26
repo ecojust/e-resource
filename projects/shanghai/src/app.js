@@ -1,11 +1,13 @@
 import { createShanghaiScene } from './map-scene.js';
 import { WalkController } from './walk-controller.js';
 import { districtAt } from './geography.js';
+import { placeDescription, walkingPose } from './precise-registration-ui.js';
+import { readVerifiedBytes } from './ordinary-building-catalog.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const BUND = {id:'bund', name:'外滩历史建筑群', districtId:'310101', walkStart:[121.48582997998342,31.2404532310156], bearing:265.447};
-let scene, controller, districts=[], landmarks=[], boundaries, activePlace=BUND;
+let scene, controller, districts=[], landmarks=[], nearbyOrdinary=[], boundaries, activePlace=BUND;
 let mode='overview', category='landmarks', activeDistrict='310101', toastTimer, navigation=0;
 let districtPaths = new Map();
 let panelOpen=!mobile();
@@ -26,7 +28,7 @@ function togglePanel(force) {
 function updateLocation(place) {
   const district=districts.find(d=>d.id===(place.districtId||place.id));
   $('location-name').textContent=place.name;
-  $('location-district').textContent=(district?.name||'上海市')+(place.height_m?' · 城市地标':' · 城市探索');
+  $('location-district').textContent=(district?.name||'上海市')+(place.kind==='building'?' · 逐栋复原':place.height_m?' · 城市地标':' · 城市探索');
   $('start-walk').innerHTML=mode==='walk'?'正在漫游 <span>↗</span>':'进入漫游 <span>↗</span>';
   activeDistrict=district?.id||activeDistrict;
   $('reference-button').hidden=!place.reference;
@@ -66,8 +68,11 @@ async function selectPlace(place) {
   const ticket=++navigation;
   activePlace=place;
   updateLocation(place);
-  const [lng,lat]=place.walkStart||place.center||[place.lng,place.lat];
-  controller.teleport({lng,lat,bearing:place.bearing??45});
+  // Central guard also covers reset-place and programmatic selections.
+  const pose=walkingPose(place);
+  if(!pose){showOverview({...place,overviewZoom:place.overviewZoom??18.2});return;}
+  const {lng,lat}=pose;
+  controller.teleport(pose);
   if(mode==='overview') showOverview(place);
   if(mobile()) togglePanel(false);
   const hash=place.custom?`lng=${lng.toFixed(6)}&lat=${lat.toFixed(6)}`:`${place.height_m?'landmark':'district'}=${encodeURIComponent(place.id)}`;
@@ -86,7 +91,8 @@ function mapPlace(lng,lat) {
 function renderPlaces() {
   const query=$('place-search').value.trim().toLowerCase();
   const list=$('place-list'); list.replaceChildren();
-  const items=(query?[...districts,...landmarks]:category==='districts'?districts:landmarks)
+  const nearby=nearbyOrdinary.filter(p=>!landmarks.some(existing=>existing.id===p.id));
+  const items=(query?[...districts,...landmarks,...nearby]:category==='districts'?districts:[...landmarks,...nearby])
     .filter(p=>p.name.toLowerCase().includes(query));
   list.classList.toggle('districts',category==='districts'&&!query);
   if(!items.length) {const empty=document.createElement('div');empty.className='empty-list';empty.textContent='没有找到匹配的区域或地标';list.append(empty);return;}
@@ -98,7 +104,7 @@ function renderPlaces() {
     const icon=document.createElement('span');icon.className=p.height_m?'landmark-icon':'place-number';icon.textContent=p.height_m?'▥':String(districts.findIndex(d=>d.id===p.id)+1).padStart(2,'0');
     const words=document.createElement('span');
     const label=document.createElement('span');label.className='place-name';label.textContent=p.name;words.append(label);
-    if(p.height_m){const small=document.createElement('small');small.className='landmark-description';small.textContent=p.bund_number?`外滩 ${p.bund_number} 号 · ${p.architecture_style||'历史建筑'}`:`${p.height_m} m · 陆家嘴`;words.append(small);}
+    if(p.height_m){const small=document.createElement('small');small.className='landmark-description';small.textContent=placeDescription(p,districts);words.append(small);}
     const arrow=document.createElement('span');arrow.className='place-arrow';arrow.textContent='↗';
     button.append(icon,words,arrow);button.addEventListener('click',()=>selectPlace(p));list.append(button);
   });
@@ -200,6 +206,7 @@ async function main(){
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
     $('landmark-count').textContent=landmarks.length;setCategory('landmarks');drawMiniMap();updateLocation(BUND);loadingProgress(35);
     scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:startWalking?20.0:17.3,landmarks:[...landmarks,...responses[3]],preciseBuildingOverrides:responses[4],
+      onNearbyOrdinaryRecords:records=>{nearbyOrdinary=records;renderPlaces();},
       onStatus:status=>{
         if(status.message)$('loading-message').textContent=status.message;
         if(status.kind==='streaming')$('live-status').textContent=status.loading?'加载附近建筑':status.visible?'附近建筑已加载':'全域地图已连接';
@@ -216,6 +223,14 @@ async function main(){
       if(place){selectPlace(place);toast('已选择街区，点击“进入漫游”出发。');}
       else toast('请在上海行政区范围内选择起点。');
     });
+    // Explicit optional enablement: absent catalog metadata issues no request.
+    if(responses[4].ordinary_catalog) {
+      try {
+        const raw=await readVerifiedBytes(responses[4].ordinary_catalog,new URL('../',import.meta.url).href,{limit:8*1024*1024});
+        scene.setOrdinaryCatalog(JSON.parse(new TextDecoder().decode(raw)),{districts,
+          baseURL:responses[4].ordinary_catalog.project_base_url||new URL('../',import.meta.url).href});
+      } catch(error) {console.warn('[Shanghai ordinary catalog]',error);}
+    }
     const cityState=await scene.setCityManifest('assets/city-detail/manifest.json');
     if(cityState.fallback)await scene.setCityManifest('assets/city/manifest.json');
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});

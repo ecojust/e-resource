@@ -328,3 +328,6 @@ export class CityDetailStreamer {
   notify(){if(!this.destroyed)this.onChange(this.getState());}
   destroy(){this.destroyed=true;this.inflight?.controller.abort('destroyed');for(const object of [...this.parents.keys()])this.detach(object);}
 }
+
+// Staged public validator for incremental macro registries.
+export {replacementRegistry as prepareReplacementRegistry};

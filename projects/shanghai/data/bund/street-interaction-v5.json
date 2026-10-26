@@ -7,8 +7,8 @@
     31.2385
   ],
   "coordinate_system": "WGS84 geometry; world Y in metres, asset origin at ground datum 0",
-  "raw_model_sha256": "534569f00e98e47d3eed1929c323f1883dd26cb3568ab7aaa9e8e93612bf74b9",
-  "web_model_sha256": "6482dd12068fbc894b490da71a3a507d57967dd889c83a8cff21632383426d20",
+  "raw_model_sha256": "36f5329d0baa1f5b2122edee0522d4158838cd0ccc6b756aeec7e913e73aaab9",
+  "web_model_sha256": "f89a77bc83b9c0aa1c04e46e7dfa5bbfe73beb20612ec9a2f9a58a3319a7e312",
   "activation": "Exact asset owner must be loaded and visible; verify configured owner model SHA. Unknown space returns null.",
   "height_status": "Construction heights are model estimates; no absolute Shanghai floodwall/road elevation is asserted.",
   "protected_openings": "Exact frozen inner rings are walk-only exclusion zones, not invented walls. Two 2010 photo-classified exterior recesses remain planting beds.",
@@ -32088,6 +32088,196 @@
               [
                 121.48553483010271,
                 31.239188004536743
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "v6-frontage-bund07",
+        "role": "walk-surface",
+        "base_world_m": 0.003,
+        "top_world_m": 0.075,
+        "height_world_m": 0.075,
+        "blocks_walk": false,
+        "blocks_camera": false,
+        "source": "street-frontage-audit.json / frozen bund07 primary front edge and existing rendered road outer edge",
+        "evidence_class": "source-bounded estimated public sidewalk; photograph-corroborated continuity, construction datum inferred"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                121.48608873703168,
+                31.237247473091664
+              ],
+              [
+                121.4860767705973,
+                31.237243317365394
+              ],
+              [
+                121.48605436576561,
+                31.237235536521514
+              ],
+              [
+                121.48619727536723,
+                31.237012335501106
+              ],
+              [
+                121.48622581836177,
+                31.237023417048242
+              ],
+              [
+                121.48608873703168,
+                31.237247473091664
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                121.48615890282365,
+                31.236997437722653
+              ],
+              [
+                121.48609644607913,
+                31.23709498483537
+              ],
+              [
+                121.48601506063699,
+                31.237222095235335
+              ],
+              [
+                121.48600676749454,
+                31.23721932575701
+              ],
+              [
+                121.48613046531298,
+                31.236986397125605
+              ],
+              [
+                121.48615890282365,
+                31.236997437722653
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "v6-frontage-bund09",
+        "role": "walk-surface",
+        "base_world_m": 0.003,
+        "top_world_m": 0.075,
+        "height_world_m": 0.075,
+        "blocks_walk": false,
+        "blocks_camera": false,
+        "source": "street-frontage-audit.json / frozen bund09 primary front edge and existing rendered road outer edge",
+        "evidence_class": "source-bounded estimated public sidewalk; photograph-corroborated continuity, construction datum inferred"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                121.48600460600362,
+                31.237395687573013
+              ],
+              [
+                121.4860044224022,
+                31.237396083785452
+              ],
+              [
+                121.48600435240198,
+                31.237396234841523
+              ],
+              [
+                121.48599416694822,
+                31.23741981116025
+              ],
+              [
+                121.4859459105093,
+                31.237531510467022
+              ],
+              [
+                121.48589718682074,
+                31.237518012637963
+              ],
+              [
+                121.48589943419006,
+                31.23751202269228
+              ],
+              [
+                121.48592129597962,
+                31.237453754140866
+              ],
+              [
+                121.48598890800668,
+                31.23733988547
+              ],
+              [
+                121.48602938608403,
+                31.237351099054635
+              ],
+              [
+                121.48601632515165,
+                31.23737436808371
+              ],
+              [
+                121.48600661493309,
+                31.23739166754585
+              ],
+              [
+                121.48600633165618,
+                31.23739220405209
+              ],
+              [
+                121.48600460600362,
+                31.237395687573013
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                121.48583079959141,
+                31.23749962150933
+              ],
+              [
+                121.4859005995914,
+                31.23731542150974
+              ],
+              [
+                121.48594843404503,
+                31.23732867302421
+              ],
+              [
+                121.48591135515585,
+                31.237391119447643
+              ],
+              [
+                121.48588230401586,
+                31.237440045880152
+              ],
+              [
+                121.48585720708205,
+                31.23750693712696
+              ],
+              [
+                121.48583079959141,
+                31.23749962150933
+              ],
+              [
+                121.48583079959141,
+                31.23749962150933
               ]
             ]
           ]
@@ -85690,9 +85880,30 @@
     "targets": [
       "bund05",
       "bund06",
+      "bund07",
+      "bund09",
       "bund14"
     ],
-    "audit": "street-frontage-audit.json",
+    "latest_batch_targets": [
+      "bund07",
+      "bund09"
+    ],
+    "preserved_previous_append": {
+      "version": 6,
+      "targets": [
+        "bund05",
+        "bund06",
+        "bund14"
+      ],
+      "audit": "street-frontage-audit.json",
+      "base_world_m": 0.003,
+      "top_world_m": 0.075,
+      "estimated_not_surveyed": true
+    },
+    "preserved_previous_new_area_m2": 844.5004115153133,
+    "latest_batch_new_area_m2": 317.96177523780676,
+    "cumulative_new_area_m2": 1162.46218675312,
+    "audit": "street-frontage-0709-v6.json",
     "base_world_m": 0.003,
     "top_world_m": 0.075,
     "estimated_not_surveyed": true

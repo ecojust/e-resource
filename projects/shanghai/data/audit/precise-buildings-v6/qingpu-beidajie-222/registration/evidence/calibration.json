@@ -1,0 +1,220 @@
+{
+  "schema": "qingpu222-photo-model-calibration-v1",
+  "visual_epoch": "2022-07-23;2016-02-07structuralcross-check",
+  "front_width_m": 11.97953334861052,
+  "front_frame": {
+    "helper_endpoints": "reverse source edge3 endpoints only for CCW/outward helper; source polygon unchanged",
+    "photographic_left_to_right": "SW→NE",
+    "native_source_u_sign": -1
+  },
+  "heights_m": {
+    "floor_step": 0.24,
+    "ground_clear_door_head": 2.65,
+    "balcony_floor_top": 3.24,
+    "frieze_bottom": 2.9,
+    "frieze_top": 3.22,
+    "railing_bottom": 3.29,
+    "railing_top": 4.14,
+    "upper_eave": 7.54,
+    "ridge": 9.2,
+    "end_wall_front_tip": 8.18
+  },
+  "height_basis": {
+    "is_measured": false,
+    "method": "explicit conditional photographic estimate: Nikon independent relative analysis gives upper column≈4.3m at source11.98m width; floor3.24+upper4.30=>eave7.54m; not measured, different depth planes unresolved",
+    "door_height_reference_m": 2.4,
+    "door_reference_assumed_not_surveyed": true,
+    "baseline_GHSL_height_not_used": 8.579,
+    "estimated_uncertainty_m": 1.0,
+    "roof_rise_basis": "1.66m rise inferred from a restrained pitched roof over8.7–9.1m source depth; concealed rear pitch not surveyed"
+  },
+  "front_bay_boundaries_normalized": [
+    -0.5,
+    -0.1632,
+    0.1814,
+    0.5
+  ],
+  "gallery_setback_m": 1.1,
+  "wall_thickness_m": 0.3,
+  "upper_column_width_m": 0.22,
+  "ground_pier_width_m": 0.34,
+  "glazing": {
+    "mapping_mode": "right door uses one coherent untextured estimated glass material; only central cursive sign retains original photographic UVs",
+    "photo": "photos/commons-121178626.jpg",
+    "original_size": [
+      4000,
+      3000
+    ],
+    "exif_orientation": 1,
+    "assembly_depths_relative_to_each_facade_m": {
+      "upper": {
+        "frame": [
+          -0.08,
+          0.01
+        ],
+        "glass": [
+          -0.03,
+          -0.01
+        ]
+      },
+      "right_door": {
+        "frame": [
+          -0.25,
+          -0.16
+        ],
+        "glass": [
+          -0.2,
+          -0.18
+        ]
+      },
+      "open_left_leaf": {
+        "frame": [
+          -0.04,
+          0.05
+        ],
+        "glass": [
+          0.01,
+          0.03
+        ]
+      },
+      "glass_thickness": 0.02,
+      "glass_setback_from_frame_front": 0.02
+    },
+    "right_door_material": {
+      "name": "right door estimated glass",
+      "color": [
+        0.22696587351009836,
+        0.2232279573168085,
+        0.13286832155381798
+      ],
+      "roughness": 0.38,
+      "metallic": 0.06,
+      "estimate_file": "glass-material-estimate.json",
+      "intrinsic_reflectance_measured": false
+    },
+    "right_door_photographic_texture": false,
+    "physical_paper_labels_added": false,
+    "paper_label_limitation": "Cannot reliably separate a physically adhered external label from a reflected/interior paper object in the available view."
+  },
+  "center_sign": {
+    "reading": "untranscribed cursive; preserve photographic original instead of inventing words",
+    "photo_face_quad_px": [
+      [
+        2644,
+        1460
+      ],
+      [
+        3019,
+        1516
+      ],
+      [
+        2916,
+        1663
+      ],
+      [
+        2538,
+        1631
+      ]
+    ],
+    "u_m": 0.114,
+    "z_m": 2.68,
+    "width_m": 2.1,
+    "height_m": 0.53,
+    "tilt_deg": 12
+  },
+  "clear_main_sign": {
+    "reading": "上海市鶴龍美術館",
+    "direction": "right-to-left in photograph",
+    "typeface": "readable NotoSerif subset approximation, not traced calligraphy",
+    "board_center_depth_m": 0.09,
+    "board_front_depth_m": 0.155,
+    "letter_depth_range_m": [
+      0.165,
+      0.185
+    ],
+    "position_basis": "2022 sign hangs forward of wooden door lintel; 0.21m forward correction removes actual burial in d=0 wall; exact projection inferred"
+  },
+  "limitations": [
+    "Satellite-derived original roof footprint is retained without survey-accuracy claim.",
+    "Rear walls and unseen roof slope details are restrained inference; no invented rear annex or whole-street merger.",
+    "Three structural front bays are photograph-confirmed; member dimensions and metric height are approximated pending independent calibration.",
+    "Stone guardians and carved frieze are simplified from visible silhouette, not sculpture scans.",
+    "Left entrance follows2022open state;2016closed opaque panels do not prove a dated permanent door replacement.",
+    "2022image adaptations and textured model useCC-BY-SA4.0, with originals/credits retained."
+  ],
+  "independent_relative_calibration": {
+    "file": "calibration-independent.json",
+    "sha256": "314b70badf196e921b84972848050fd17fc659290845e9acad1d6faa75fec3c7",
+    "absolute_height_calibrated": false,
+    "adopted_bay_ratios": [
+      0.3368,
+      0.3446,
+      0.3186
+    ]
+  },
+  "upper_windows": {
+    "source_visible_left_leaf_count": 4,
+    "middle_dense_lattice": true,
+    "right_leaf_count_approximation": 3,
+    "opening_bottom_m": 3.74,
+    "opening_top_m": 6.6,
+    "same_three_widths_m": [
+      2.66,
+      2.48,
+      2.12
+    ],
+    "left_top_opaque_panels": 4,
+    "panel_material": "dark timber with warmer inset wood, not green glass",
+    "hidden_lower_region": "restrained repeated square-return lattice; lower extents are partly occluded by railing and not claimed photo-traced",
+    "source_control_regions_px": {
+      "left": [
+        [
+          1445,
+          370
+        ],
+        [
+          2050,
+          620
+        ],
+        [
+          2050,
+          735
+        ],
+        [
+          1435,
+          510
+        ]
+      ],
+      "middle": [
+        [
+          2255,
+          710
+        ],
+        [
+          2770,
+          920
+        ],
+        [
+          2805,
+          1045
+        ],
+        [
+          2280,
+          850
+        ]
+      ],
+      "right": "partially occluded by front post; reduced-confidence extension of dark timber lattice"
+    },
+    "metric_dimensions_inferred": true
+  },
+  "roof_tile_laps": {
+    "course_count_per_slope": 15,
+    "column_count": 60,
+    "overlap_fraction": 0.15,
+    "normal_low_end_lip_m": 0.02,
+    "normal_high_end_offset_m": 0.002,
+    "body_thickness_m": 0.012,
+    "colour_formula": "(col//5+row+half)%3",
+    "palette_note": "small deterministic slate variation only; physical laps establish course joints, no random dirt"
+  }
+}

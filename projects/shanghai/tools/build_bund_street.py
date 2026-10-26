@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the single v6 street prop from the SHA-frozen v5 mesh plus bounded frontage additions.
+"""Rebuild the single v6 street prop from the SHA-frozen published first3 mesh plus bounded 07/09 additions.
 
 The immutable baseline is an explicit source dependency, not an inferred Blender
 file. --output builds without installation; otherwise validate all outputs before
@@ -24,11 +24,11 @@ MAPPING = {
     'bund-streets-metadata.candidate.json': ['data/bund/models/bund-streets.json', 'source/bund/street/bund-streets.json'],
     'bund-streets-web-metadata.candidate.json': ['data/bund/models/bund-streets-web.json'],
     'scene-props.candidate.json': ['data/scene-props.json'],
-    'street-frontage-audit.json': ['data/bund/validation/street-frontage-v6.json'],
-    'raw-prefix-validation.json': ['data/bund/validation/street-frontage-v6-raw-prefix.json'],
-    'street-frontage-check.geojson': ['source/bund/street/frontage-v6/street-frontage-check.geojson'],
-    'exclusions.geojson': ['source/bund/street/frontage-v6/exclusions.geojson'],
-    'support-probes.json': ['source/bund/street/frontage-v6/support-probes.json'],
+    'street-frontage-audit.json': ['data/bund/validation/street-frontage-0709-v6.json'],
+    'raw-prefix-validation.json': ['data/bund/validation/street-frontage-0709-v6-raw-prefix.json'],
+    'street-frontage-check.geojson': ['source/bund/street/frontage-0709-v6/street-frontage-check.geojson'],
+    'exclusions.geojson': ['source/bund/street/frontage-0709-v6/exclusions.geojson'],
+    'support-probes.json': ['source/bund/street/frontage-0709-v6/support-probes.json'],
 }
 
 
@@ -52,7 +52,7 @@ def raw_bin(path):
 
 
 def validate(output, project):
-    source=project/'source/bund/street/frontage-v6/inputs'
+    source=project/'source/bund/street/frontage-0709-v6/inputs'
     for entry in read(source/'source-manifest.json')['files']:
         path=(source/entry['file']).resolve()
         assert path.is_relative_to(source.resolve()) and path.stat().st_size==entry['bytes'] and sha(path)==entry['sha256'], entry['file']
@@ -74,7 +74,7 @@ def validate(output, project):
     assert after['meshes'][0]['primitives'][:len(primitives)]==primitives
     old=read(source/'data/bund/street-interaction-v5.json');new=read(output/'street-interaction-v5.json')
     assert new['features'][:len(old['features'])]==old['features'] and new['local_obstacles']==old['local_obstacles']
-    assert len(new['features'])==len(old['features'])+3
+    assert len(new['features'])==len(old['features'])+2
     assert new['raw_model_sha256']==record['raw_sha256'] and new['web_model_sha256']==record['web_sha256']
     audit=read(output/'street-frontage-audit.json')
     assert audit['passed'] and audit['raw_after_sha256']==record['raw_sha256'] and audit['web_after_sha256']==record['web_sha256']
@@ -115,9 +115,9 @@ def install(output, project):
 
 
 def build(project, output, gltfpack):
-    source=project/'source/bund/street/frontage-v6'
+    source=project/'source/bund/street/frontage-0709-v6'
     subprocess.run([sys.executable,str(source/'append_frontage.py'),'--inputs',str(source/'inputs'),
-        '--output',str(output),'--ids','bund05','bund06','bund14','--gltfpack',gltfpack],check=True)
+        '--output',str(output),'--ids','bund07','bund09','--gltfpack',gltfpack],check=True)
     return validate(output,project)
 
 

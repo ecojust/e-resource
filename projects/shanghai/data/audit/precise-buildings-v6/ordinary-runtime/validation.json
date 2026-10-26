@@ -1,0 +1,183 @@
+{
+  "schema": "ordinary-runtime-stage-validation-v3",
+  "created_utc": "2026-10-26T09:19:52.366401+00:00",
+  "passed": true,
+  "candidate_only": true,
+  "production_modified": false,
+  "browser_run": false,
+  "blender_run": false,
+  "models_generated": false,
+  "tests": {
+    "passed": 65,
+    "failed": 0,
+    "command": "node --test tests/city-feature-mask.test.mjs tests/city-feature-mask-rebind.test.mjs tests/ordinary-runtime.test.mjs tests/ordinary-curated-regression.test.mjs tests/ordinary-navigation.test.mjs tests/detail-model-cache-integration.test.mjs",
+    "log": "mask-rebind-review/targeted-tests.log",
+    "log_sha256": "f4855cbf8bca74b51dd1d6bc6fe621d0b537f8110ac8eb3db43045ee00e0aafd",
+    "new_regressions": 7,
+    "previous_ordinary_tests": 47,
+    "unchanged_city_feature_mask_tests": 11,
+    "scope": "Actual vendored Three getProgram/material-disposal cache control flow with controlled compiler backend; actual Three material/texture/object ownership. No GL driver compilation or browser visual claim."
+  },
+  "fixes": [
+    "Curated ordinary full/LOD verifies declared bytes/SHA before parse without acquiring dynamic catalog ownership.",
+    "An intentionally cancelled fetch or parse remains obsolete after a rapid same-macro return; retry is single-flight and only final visible object acquires owners.",
+    "Every selection entry point, including reset, prevents unlisted ordinary footprint-center teleport; listed records use reviewed navigation.walkStart/bearing.",
+    "Stable per-material texture/width holders are updated on mask rebind; only the current mask owner may detach them.",
+    "Mask detach releases Three material program references and restores original hooks. This also handles an unmasked compile between masks without leaking generation-key programs.",
+    "Far geometry/source maps/prior shadow materials remain reusable; private mask depth/distance materials dispose exactly once."
+  ],
+  "syntax_checked_files": [
+    "src/city-detail-streamer.js",
+    "src/map-scene.js",
+    "src/app.js",
+    "src/ordinary-contracts.js",
+    "src/ordinary-building-catalog.js",
+    "src/ordinary-city-detail-streamer.js",
+    "src/ordinary-scene-adapter.js",
+    "src/precise-registration-ui.js",
+    "tests/ordinary-fixtures.mjs",
+    "tests/ordinary-runtime.test.mjs",
+    "tests/ordinary-curated-regression.test.mjs",
+    "tests/ordinary-navigation.test.mjs",
+    "tests/detail-model-cache-integration.test.mjs",
+    "src/city-feature-mask.js",
+    "tests/city-feature-mask-rebind.test.mjs"
+  ],
+  "integration_patch_sha256": "f122a6e50da8f552cfd08e9abc0da1745ce6843e55f29bdb85511b700d5fc6fd",
+  "isolated_patch_apply_files_exact": 16,
+  "source_files": [
+    {
+      "file": "src/city-detail-streamer.js",
+      "base_sha256": "4da9d6f00adb5bffda17194025bdf3825c1d453b6dd6becedafd13606b33a262",
+      "candidate_sha256": "9240359a3c7cfa538e789e1fbbc67b8aca58ee622d6dedf9bcb6db7c46e661da",
+      "candidate_bytes": 22487,
+      "new": false
+    },
+    {
+      "file": "src/map-scene.js",
+      "base_sha256": "083e9db20ba84ab8b699cae149820601e03c6d084386ac977c5a08c5d43b7fd6",
+      "candidate_sha256": "205d2fac21a1428628063e0aa62c3d0836bbac2b6fe0c49da311a0131a9b475f",
+      "candidate_bytes": 52294,
+      "new": false
+    },
+    {
+      "file": "src/app.js",
+      "base_sha256": "08791902aa97b029d45ff422dfc10e0b0cc517c6c01fc859a7c49eeb06b40c1c",
+      "candidate_sha256": "de968738bc8e8dd060eb69cdb655902d78beb65b3100e799723f09792c8ea8c4",
+      "candidate_bytes": 17662,
+      "new": false
+    },
+    {
+      "file": "src/ordinary-contracts.js",
+      "base_sha256": null,
+      "candidate_sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58",
+      "candidate_bytes": 504,
+      "new": true
+    },
+    {
+      "file": "src/ordinary-building-catalog.js",
+      "base_sha256": null,
+      "candidate_sha256": "de509b00d50310bf75de58a684e285d238a8c67646e66c74388e34dbbc181363",
+      "candidate_bytes": 16498,
+      "new": true
+    },
+    {
+      "file": "src/ordinary-city-detail-streamer.js",
+      "base_sha256": null,
+      "candidate_sha256": "195a27cbc698f11afe7b1eb20fd2261387b9203969aeae8fac65c7888aef1a5c",
+      "candidate_bytes": 6528,
+      "new": true
+    },
+    {
+      "file": "src/ordinary-scene-adapter.js",
+      "base_sha256": null,
+      "candidate_sha256": "63c89ef7079a135b075a2aa3877b9675c7ab3ff869c5de06906025b24176bf19",
+      "candidate_bytes": 7843,
+      "new": true
+    },
+    {
+      "file": "src/precise-registration-ui.js",
+      "base_sha256": null,
+      "candidate_sha256": "3ea35af1984e7a5a8bb8eed81dab365e20e1ab7a5166ae9fb60169a208578972",
+      "candidate_bytes": 1577,
+      "new": true
+    },
+    {
+      "file": "package.json",
+      "base_sha256": "43443d7586e1f15215692b7029f127431b7040f05a33c9e247322d2892e10c5d",
+      "candidate_sha256": "d93635dc3f20e2d2f792bfc56d3d4683bf2793f04e22adc3df55e9be0b2c113b",
+      "candidate_bytes": 1744,
+      "new": false
+    },
+    {
+      "file": "tests/ordinary-fixtures.mjs",
+      "base_sha256": null,
+      "candidate_sha256": "8699f6286e7e5054bb40ddef43574e69f32d5ef2dd28981591529061d3b4f3c1",
+      "candidate_bytes": 5310,
+      "new": true
+    },
+    {
+      "file": "tests/ordinary-runtime.test.mjs",
+      "base_sha256": null,
+      "candidate_sha256": "9536272ac52b91087bb090c5a52c3f6ee842d1880f24a179263de0717df39922",
+      "candidate_bytes": 17373,
+      "new": true
+    },
+    {
+      "file": "tests/ordinary-curated-regression.test.mjs",
+      "base_sha256": null,
+      "candidate_sha256": "a729232cd9f5dc6eb0712dd0e3975e7f338273b8940408ca4bfdde1c1102d949",
+      "candidate_bytes": 9370,
+      "new": true
+    },
+    {
+      "file": "tests/ordinary-navigation.test.mjs",
+      "base_sha256": null,
+      "candidate_sha256": "627c79c894b91bd64a0c3bcc42df0dd48e1b6bc172a0b0e8a74e87201e2b83ef",
+      "candidate_bytes": 2359,
+      "new": true
+    },
+    {
+      "file": "tests/detail-model-cache-integration.test.mjs",
+      "base_sha256": "11601d8061e2a82f1e12fe422a4e78a602586a0f30f5a3eb635a80d312bbc697",
+      "candidate_sha256": "2386a979c9425e79c74fad1f309f4cba9985229e1cff3d68b6d99559ef1efca0",
+      "candidate_bytes": 16093,
+      "new": false
+    },
+    {
+      "file": "src/city-feature-mask.js",
+      "base_sha256": "f4540b209c9e1c1f37ac5c2936c781eacddf8c84aef5f9d98ccc68ef6ef08390",
+      "candidate_sha256": "c6289ce6f570efca07d0bc362b1a5d561c543447163697cd7b4905f2faf18edf",
+      "candidate_bytes": 8912,
+      "new": false
+    },
+    {
+      "file": "tests/city-feature-mask-rebind.test.mjs",
+      "base_sha256": null,
+      "candidate_sha256": "5960e1159acb2f03a0debfc376b5fc084ffa333c0754a81f2e79e5f483ae2ef5",
+      "candidate_bytes": 10136,
+      "new": true
+    }
+  ],
+  "production_full_npm_still_required": true,
+  "release_ready": false,
+  "browser_acceptance": {
+    "passed": false,
+    "reason": "Prior actual dynamic catalog return exposed a far box; this isolated fix has not yet run in a browser.",
+    "historical_browser_report": "/workspace/shanghai_expansion/building-by-building-v6/next/qa-catalog/browser.json",
+    "historical_browser_sha256": "6fe234c7c90c94e6089d45e15d7e3a5e2048185c44d773fb324d7f91ad11020b",
+    "historical_visual_review": "/workspace/shanghai_expansion/building-by-building-v6/next/qa-catalog/visual-review.json",
+    "historical_visual_sha256": "49266f5fd466052da3b6092f57fecaa761b22c196734743120244539c79d0699",
+    "required_new_output": "next/qa-catalog-fixed"
+  },
+  "negative_control": {
+    "baseline_mask_sha256": "f4540b209c9e1c1f37ac5c2936c781eacddf8c84aef5f9d98ccc68ef6ef08390",
+    "same_final_test_sha256": "5960e1159acb2f03a0debfc376b5fc084ffa333c0754a81f2e79e5f483ae2ef5",
+    "tests": 7,
+    "failed_as_expected": 7,
+    "log": "mask-rebind-review/baseline-negative.log",
+    "log_sha256": "afa2cb6959a85fd698f6d2b66f4ef19fe68371b28b61b023617a72d3ed7ee6e9"
+  },
+  "integration_files_sha256": "0daf2055c21f9ecb464ad3717d2a8217c5d59b2e48b86acb818e8d99ffb92d5b",
+  "prior_revision_validation_sha256": "24a43922a8d2256d62fed687ba158cf57bcfe761257eb085a9a8296e1697ebe5"
+}

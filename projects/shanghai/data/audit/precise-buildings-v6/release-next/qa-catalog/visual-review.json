@@ -1,0 +1,51 @@
+{
+  "schema": "ordinary-catalog-root-visual-review-v1",
+  "passed": false,
+  "final": true,
+  "reviewer": "root",
+  "utc": "2026-10-26T09:11:43.365929+00:00",
+  "browser_report_sha256": "6fe234c7c90c94e6089d45e15d7e3a5e2048185c44d773fb324d7f91ad11020b",
+  "technical_report_passed": true,
+  "scope": "Actual four-image review of static adoption, dynamic initial load/return, and deliberate corrupted-index fallback.",
+  "actually_viewed": [
+    {
+      "file": "static-catalog-loaded.png",
+      "bytes": 238750,
+      "sha256": "1df68668adae05161fef57f369085d55d7a63706f65273992951c367a97be96a",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-catalog-loaded.png",
+      "bytes": 238531,
+      "sha256": "fae359d2f7041329f60dcc771b9902325ccf99895e608f32ce435f1a5b4256f1",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-catalog-returned.png",
+      "bytes": 193753,
+      "sha256": "c3736d419793b4b569ff29651325569ff8dd1641a303b765d505222555f580fa",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-index-hash-rejected-baseline-visible.png",
+      "bytes": 215136,
+      "sha256": "701bfd6c73ca6367e49914e4cf7a2826e6d6ee49869bc666c4306ccd6e9eb593",
+      "actually_viewed": true
+    }
+  ],
+  "findings": [
+    {
+      "severity": "blocking",
+      "image": "dynamic-catalog-returned.png",
+      "observation": "On return, a rectangular baseline building appears through/above the detailed tile roof and occludes both storeys of doors/windows. Projecting rails, columns and lions remain in front. The initial dynamic load did not show this overlap.",
+      "technical_audit_limitation": "CPU owner counts, mask data and near-group visibility passed; these alone did not prove the final GPU-rendered far building was suppressed."
+    },
+    {
+      "severity": "expected-test-behavior",
+      "image": "dynamic-index-hash-rejected-baseline-visible.png",
+      "observation": "With the deliberately corrupted macro index, the baseline three-storey inferred building remains and no detailed target is loaded."
+    }
+  ],
+  "production_release_accepted": false,
+  "next_action": "Diagnose and fix rebind/disposal shader uniform lifecycle, then rerun actual catalog load/unload/return and inspect returned-frame output. Preserve this first-run evidence."
+}

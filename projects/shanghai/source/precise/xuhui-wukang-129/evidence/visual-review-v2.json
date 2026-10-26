@@ -1,0 +1,100 @@
+{
+  "schema": "wukang129-v2-bounded-actual-visual-review-v1",
+  "passed": true,
+  "status": "PASS_BOUNDED_V2_VISIBLE_SHAPE_CORRECTIONS",
+  "reviewer": "street_furniture_v5 independent actual-view review",
+  "model_stage": "/workspace/shanghai_expansion/building-by-building-v6/next/ordinary-next/xuhui-wukang-129-v2",
+  "actually_viewed": [
+    "2026 original full photograph",
+    "2017 original full photograph",
+    "v1 photo-perspective render",
+    "v2 photo-perspective render"
+  ],
+  "inputs": {
+    "references/2026-windmemories-cc-by-sa4-original.jpg": {
+      "bytes": 2447727,
+      "sha256": "43722c05f8bed1cc9108a5b4671add6eb3d1f07db6c6deb371cc0d14e1c7506a"
+    },
+    "references/2017-antigng-cc-by-sa4-original.jpg": {
+      "bytes": 4965065,
+      "sha256": "89e59d2e55cd33b16636b004f09aa8d00994a6a93ffd654e8daf714ac51922b5"
+    },
+    "native/photo-perspective.png": {
+      "bytes": 1407876,
+      "sha256": "f45aed225874c4dbd3cd62672b742abed53dd90964ebe007b2d7efc1b90a87e6"
+    },
+    "native/xuhui-wukang-129-raw.blend": {
+      "bytes": 21341124,
+      "sha256": "2f15f05014888f59d3a7a800efb00ca2857272964a4cbc0f6e27355572569f38"
+    },
+    "native/xuhui-wukang-129-raw-blender.json": {
+      "bytes": 767,
+      "sha256": "d4a1d8e032f733c1e52fdd5c4d6083b3647b91ed3ca9e0fa9217f3fbf196adff"
+    },
+    "native/preview-ground-wrapper.json": {
+      "bytes": 2197,
+      "sha256": "5789967958d5f2d9f155fdebdf55b969dcf16d57ce64a0617703d4cc048ecebf"
+    },
+    "native/photo-camera-run.json": {
+      "bytes": 3555,
+      "sha256": "d89c5a2fa04950028fadbf5bcad76bdadc483cb168527d4c1df43cba4a01d25f"
+    },
+    "output/xuhui-wukang-129-raw.glb": {
+      "bytes": 15002212,
+      "sha256": "c0915a9d76761865b4020d31397b8ef66ddb6efc4112bbee150264119754afa9"
+    },
+    "output/revision-invariance.json": {
+      "bytes": 3133,
+      "sha256": "5cb22b12fd5701ffe50cff6556341b9cdad75e1dfa56da56196b9f70e8572cf8"
+    },
+    "output/independent-model-check.json": {
+      "bytes": 10562,
+      "sha256": "7fda861df1ab8b78e80c5c65d99eddd2f5c0ca62652c6ebdabcc2df421fe55c4"
+    }
+  },
+  "v1_comparison": {
+    "file": "../xuhui-wukang-129/native/photo-perspective.png",
+    "sha256": "73fdf47d7aeaa0c19e64f139c74736dec2faceeeef4b3e1e5226aeebcb77b4f5"
+  },
+  "findings": [
+    {
+      "part": "D upper recessed wall roof",
+      "result": "PASS",
+      "observation": "A distinct red-tile slope now rises behind the middle upper wall, consistent with the visible roof plane in the 2026 photo and partly tree-covered 2017 view. The v1 bare horizontal rim is gone. Exact hidden rear run and slope remain inferred."
+    },
+    {
+      "part": "E curved right end",
+      "result": "PASS",
+      "observation": "The former tall unsupported straight white blade beyond the rounded end is absent. The rounded crown, arched balcony opening and projecting curved railing remain visible; no new front wall blocks the arch. Side/rear joining surfaces are not verified from these front photographs."
+    },
+    {
+      "part": "A/C/F shared front wall",
+      "result": "PASS",
+      "observation": "The street-facing cream wall reads as a continuous surface around unchanged narrow/wide windows, without the v1 divided wall edge. Shading is not treated as proof of all hidden contacts; exact revision audit separately records zero opposing vertical wall contact area."
+    },
+    {
+      "part": "retained openings and front silhouette",
+      "result": "PASS_WITH_LIMITS",
+      "observation": "Left gable and its narrow/wide upper windows, angled return, recessed middle upper windows, low arched entrance, and rounded upper arch/bow balcony remain identifiable. No new visible sealed opening or displaced facade module was found in this viewpoint."
+    },
+    {
+      "part": "preview ground and bindings",
+      "result": "PASS",
+      "observation": "The independent wrapper records Preview_only ground at -0.01m; current render no longer presents the v1 broad floating plinth gap. Native input and render report bind the exact v2 raw and native SHA. Building geometry was not moved to match the preview plane."
+    }
+  ],
+  "limits": [
+    "Limited visual approval of the three v2 corrections and visible adjacent geometry; not an optical-material or photographic pixel match.",
+    "Roof rear extents, rear openings, rounded radius and absolute scale remain conditionally inferred, not surveyed.",
+    "Uniform opaque/tinted glass, simplified roof-tile detail, balcony railing, entrance carving and service equipment do not reproduce all photograph detail.",
+    "The modeled upper balcony leaves are closed/simplified whereas both references show open leaf states; this unchanged simplification is not claimed as exact contemporary door state.",
+    "Tree/people/seasonal illumination are absent from the standalone model; their shadows and occluded details are not baked into textures.",
+    "Reference photographs are not embedded. Zero image tables are intentional, not an incomplete photo package.",
+    "No Blender, browser, rendering, production installation or navigation registration was performed for this review."
+  ],
+  "raw_native_photo_hash_bindings_passed": true,
+  "preview_ground_m": -0.01,
+  "blender_executed_by_this_review": false,
+  "browser_executed": false,
+  "main_candidate_modified": false
+}

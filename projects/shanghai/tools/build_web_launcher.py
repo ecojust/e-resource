@@ -10,6 +10,7 @@ its city tiles/ID sidecars. No repository or project files are modified.
 Python standard library only; no network request is made by this builder.
 """
 import argparse
+from ordinary_assets import inspect as inspect_ordinary
 from copy import deepcopy
 import hashlib
 from html.parser import HTMLParser
@@ -195,7 +196,7 @@ def validate_static_references(payload):
     return checked
 
 
-def plan(project, commit):
+def plan(project, commit, candidate_only=False):
     project = project.resolve()
     cdn_root = f'https://rawcdn.githack.com/ecojust/e-resource/{commit}/projects/shanghai/'
     city_prefix = cdn_root + 'assets/city/'
@@ -250,6 +251,12 @@ def plan(project, commit):
         raise ValueError('Landmark navigation must contain distinct IDs.')
     if not CORE_LANDMARK_IDS.issubset({x['id'] for x in landmarks}):
         raise ValueError('The launcher must retain all original core landmarks.')
+    registry_input=json.loads(payload['data/precise-buildings-v6.json'])
+    ordinary=inspect_ordinary(project,landmarks,registry_input,candidate_only=candidate_only)
+    ordinary_ids=set(ordinary['records'])
+    # Audit copies preserve the exact original JSON hash chain. Runtime reads
+    # the immutable remote catalog, resolving relative children at that commit.
+    payload.update(ordinary['immutable'])
     # Freeze the bundled reference set as the detailed city grows. New photos
     # stream from the same immutable commit as their registered models.
     core_photo_paths = {value for item in landmarks if item['id'] in CORE_LANDMARK_IDS
@@ -272,7 +279,7 @@ def plan(project, commit):
     models, lod_models, streamed_models, streamed_lods = [], [], [], []
     for item in landmarks + props:
         name = runtime_model(item)
-        if not name.endswith('.glb') or not any(part in PurePosixPath(name).parts for part in ('web', 'optimized')):
+        if not name.endswith('.glb') or not (any(part in PurePosixPath(name).parts for part in ('web', 'optimized')) or item['id'] in ordinary_ids and name==item['assets']['web']['file']):
             raise ValueError(f'Runtime model must be the web/optimized GLB, not a raw/native model: {name}')
         bundled = item['id'] in CORE_LANDMARK_IDS or item in props
         _, model_bytes = read_required(project, name)
@@ -285,7 +292,7 @@ def plan(project, commit):
             **({} if bundled else {'url':cdn_root+quote(name,safe='/')})})
         if item.get('candidate_id') or item.get('lod_model'):
             lod_name = relative_path(item.get('lod_model') or '')
-            if not lod_name.endswith('.glb') or not lod_name.startswith('assets/models/bund/'):
+            if not lod_name.endswith('.glb') or not (lod_name.startswith('assets/models/bund/') or item['id'] in ordinary_ids and lod_name==item['assets']['lod']['file']):
                 raise ValueError(f'Unexpected local Bund LOD path: {lod_name}')
             if lod_name == name:
                 raise ValueError(f'Bund LOD must be separate from the primary model: {lod_name}')
@@ -306,8 +313,8 @@ def plan(project, commit):
                 raise ValueError(f'Reference photograph SHA256 differs from metadata: {photo}')
     if not any('street' in item['id'] for item in props):
         raise ValueError('No street scene prop was found.')
-    expected_lod_ids={item['id'] for item in landmarks if item.get('candidate_id') or item.get('lod_model')}
-    all_lods=lod_models+streamed_lods
+    expected_lod_ids={item['id'] for item in landmarks if item['id'] not in ordinary_ids and (item.get('candidate_id') or item.get('lod_model'))}
+    all_lods=[item for item in lod_models+streamed_lods if item['id'] not in ordinary_ids]
     if {item['id'] for item in lod_models} != CORE_BUND_IDS or len(all_lods)!=len(expected_lod_ids):
         raise ValueError('Each registered Bund building requires its own LOD; core LODs must remain local.')
     lod_release = json.loads(payload['data/bund/lod-v4.json'])
@@ -356,7 +363,7 @@ def plan(project, commit):
     if overrides.get('schema')!='city-precise-overrides-v1' or not overrides.get('complete'):
         raise ValueError('Precise-building replacement registry is incomplete.')
     precise_ids={item['id'] for item in overrides.get('landmarks',[])}
-    if not precise_ids.issubset({item['id'] for item in landmarks}):
+    if not precise_ids.issubset({item['id'] for item in landmarks}|ordinary_ids):
         raise ValueError('A precise replacement has no published navigation model.')
     streamed_overrides=[]
     for macro in overrides.get('macros',[]):
@@ -367,9 +374,33 @@ def plan(project, commit):
             streamed_overrides.append({'file':name,'bytes':len(content),'sha256':sha256(content),
                                        'url':cdn_root+quote(name,safe='/')})
 
+    catalog_package=None
+    if ordinary['catalog'] is not None:
+        ref=registry_input['ordinary_catalog']
+        overrides['ordinary_catalog']={**ref,'file':cdn_root+quote(ref['file'],safe='/'),'project_base_url':cdn_root}
+        payload['data/precise-buildings-v6.json']=encode_json(overrides)
+        static_ids={row['id'] for row in landmarks}
+        dynamic=[row for ident,row in ordinary['records'].items() if ident not in static_ids]
+        catalog_models=[];catalog_lods=[];catalog_variants={}
+        for row in dynamic:
+            for role,output in [('web',catalog_models),('lod',catalog_lods)]:
+                a=row['assets'][role];output.append({'id':row['id'],**a,'url':cdn_root+quote(a['file'],safe='/')})
+        for registry in ordinary['registries'][1:]:
+            for macro in registry['macros']:
+                for near in macro['near']:
+                    a=near['model'];name=relative_path(a['file']);_,data=read_required(project,name)
+                    verify_manifest_file({name:data},name,a['size_bytes'],a['sha256'])
+                    record={'file':name,'bytes':len(data),'sha256':sha256(data),'url':cdn_root+quote(name,safe='/')}
+                    if name in catalog_variants and catalog_variants[name]!=record:raise ValueError('Conflicting catalog override')
+                    catalog_variants[name]=record
+        catalog_package={'root':{**ref,'url':cdn_root+quote(ref['file'],safe='/')},'project_base_url':cdn_root,
+            'json_files':[{'file':name,'bytes':len(data),'sha256':sha256(data),'url':cdn_root+quote(name,safe='/')} for name,data in sorted(ordinary['immutable'].items())],
+            'record_ids':sorted(ordinary['records']),'models':catalog_models,'lod_models':catalog_lods,'city_overrides':list(catalog_variants.values()),
+            'audit_copies_are_original_bytes':True,'runtime_metadata_streamed':True}
+
     bundled = set(payload)
     for name in tuple(payload):
-        if name.endswith('.json') and name.startswith('data/'):
+        if name.endswith('.json') and name.startswith('data/') and name not in ordinary['immutable']:
             original = json.loads(payload[name])
             value = rewrite_download_links(original, bundled, cdn_root)
             # Runtime interaction/greenery data are SHA-bound to their owner.
@@ -430,6 +461,8 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
     references_checked = validate_static_references(payload)
     package_manifest = {
         'version': 'shanghai-web-launcher-v6.0', 'commit': commit,
+        **({'candidate_only':True,'publishable':False} if candidate_only else {}),
+        **({'ordinary_catalog':catalog_package} if catalog_package is not None else {}),
         'landmark_count': len(landmarks), 'scene_prop_count': len(props),
         'bundled_landmark_count':len(models)-len(props), 'streamed_landmark_count':len(streamed_models),
         'city_model_count': len(city['tiles']), 'city_feature_count': city.get('feature_count'),
@@ -470,6 +503,9 @@ assets/materials/realism-v4/；不需要联网下载这些纹理。
         'max_individual_file_bytes': max(map(len, payload.values())),
         'static_references_checked': references_checked,
         'source_project_modified': False, 'remote_commit_availability_checked': False,
+        'candidate_only':candidate_only,'publishable':not candidate_only,
+        'ordinary_static_count':sum(row.get('kind')=='building' for row in landmarks),
+        'ordinary_catalog_records':ordinary['catalog']['record_count'] if ordinary['catalog'] else 0,
     }
     return payload, report
 
@@ -506,11 +542,12 @@ def main():
     parser.add_argument('--commit', required=True, help='Final published Git commit, exactly 40 hexadecimal characters')
     parser.add_argument('--project', type=Path, default=HERE.parent, help='Source app directory')
     parser.add_argument('--output', type=Path, default=HERE.parent / 'downloads/shanghai-web-launcher.zip', help='Destination ZIP')
+    parser.add_argument('--candidate-only',action='store_true',help='ISOLATED QA ONLY: allow explicitly unaccepted static candidates; archive is marked non-publishable. Catalog acceptance remains mandatory')
     parser.add_argument('--dry-run', action='store_true', help='Validate inputs and report the plan; do not create an archive or output directory')
     args = parser.parse_args()
     if not re.fullmatch(r'[0-9a-fA-F]{40}', args.commit):
         parser.error('--commit must be a complete 40-character Git SHA.')
-    payload, report = plan(args.project, args.commit.lower())
+    payload, report = plan(args.project, args.commit.lower(),candidate_only=args.candidate_only)
     report['dry_run'] = args.dry_run
     report['output_requested'] = str(args.output.resolve())
     if not args.dry_run:

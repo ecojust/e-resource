@@ -1,6 +1,6 @@
-# 外滩13栋建筑：源码、资料与重建
+# 外滩15栋建筑：源码、资料与重建
 
-此目录对应外滩2、3、5、6、12、13、14、15、17、18、19、20、23号的近景模型。公开照片用于辨识开间、柱廊、屋顶和立面构件，OSM轮廓用于平面与地理定位。模型包含真正开孔的墙面、内退玻璃、洞口侧壁及独立柱、窗套、栏杆等几何；细小雕刻与未见侧后立面含解释和简化。**这些是照片参照下的建筑重建，不是全城测绘、摄影测量或可游览室内模型。**
+此目录对应外滩2、3、5、6、7、9、12、13、14、15、17、18、19、20、23号的近景模型。公开照片用于辨识开间、柱廊、屋顶和立面构件，OSM轮廓用于平面与地理定位。模型包含真正开孔的墙面、内退玻璃、洞口侧壁及独立柱、窗套、栏杆等几何；细小雕刻与未见侧后立面含解释和简化。**这些是照片参照下的建筑重建，不是全城测绘、摄影测量或可游览室内模型。**
 
 发布入口为[外滩资产清单](../../data/bund/manifest.json)，全市网页的建筑清单为[data/landmarks.json](../../data/landmarks.json)。下表原始GLB适合编辑，网页GLB供运行时压缩加载；.blend保留原生网格、材质与相应预览场景。预览地面、相机和灯光不属于建筑GLB。
 
@@ -10,6 +10,8 @@
 | 3号 · 有利大楼 · 外滩3号 | [bund_classics/wall-v4.4/](bund_classics/wall-v4.4/README.md) | [网页GLB](../../assets/models/bund/web/bund03.glb) · [原始GLB](../../assets/models/bund/bund03.glb) · [.blend](../../assets/native/bund/bund03.blend) |
 | 5号 · 日清大楼 | [photo-rebuild-v6/bund05/](photo-rebuild-v6/bund05/README.md) | [网页GLB](../../assets/models/bund/web/bund05.glb) · [原始GLB](../../assets/models/bund/bund05.glb) · [.blend](../../assets/native/bund/bund05.blend) |
 | 6号 · 中国通商银行旧址 | [photo-rebuild-v6/bund06/](photo-rebuild-v6/bund06/README.md) | [网页GLB](../../assets/models/bund/web/bund06.glb) · [原始GLB](../../assets/models/bund/bund06.glb) · [.blend](../../assets/native/bund/bund06.blend) |
+| 7号 · 大北电报公司大楼 | [photo-rebuild-v6/bund07/](photo-rebuild-v6/bund07/DELIVERY.md) | [网页GLB](../../assets/models/bund/web/bund07.glb) · [原始GLB](../../assets/models/bund/bund07.glb) · [.blend](../../assets/native/bund/bund07.blend) |
+| 9号 · 轮船招商局大楼 | [photo-rebuild-v6/bund09/](photo-rebuild-v6/bund09/DELIVERY.md) | [网页GLB](../../assets/models/bund/web/bund09.glb) · [原始GLB](../../assets/models/bund/bund09.glb) · [.blend](../../assets/native/bund/bund09.blend) |
 | 12号 · 汇丰银行大楼 | [classical_bank/wall-v4.4/](classical_bank/wall-v4.4/README.md)（包含照片前置基线） | [网页GLB](../../assets/models/bund/web/bund12.glb) · [原始GLB](../../assets/models/bund/bund12.glb) · [.blend](../../assets/native/bund/bund12.blend) |
 | 13号 · 江海关大楼 | [customs_refined/customs_house_v3.py](customs_refined/customs_house_v3.py) | [网页GLB](../../assets/models/bund/web/bund13.glb) · [原始GLB](../../assets/models/bund/bund13.glb) · [.blend](../../assets/native/bund/bund13.blend) |
 | 14号 · 交通银行旧址 | [photo-rebuild-v6/bund14/](photo-rebuild-v6/bund14/README.md) | [网页GLB](../../assets/models/bund/web/bund14.glb) · [原始GLB](../../assets/models/bund/bund14.glb) · [.blend](../../assets/native/bund/bund14.blend) |
@@ -22,7 +24,17 @@
 
 [网页街景预览](../../assets/previews/bund-street.png) · [汇丰柱廊细部](../../assets/previews/bund/hsbc-column-detail.png) · [麦加利柱廊细部](../../assets/previews/bund/chartered-column-detail.png) · [海关窗洞细部](../../assets/previews/bund/customs-window-detail.png)
 
-## v6逐栋照片重建与源码链
+## v6.1 当前接入范围
+
+本目录现有15栋外滩建筑；全项目另有4栋陆家嘴地标及[北大街222号普通小楼](../precise/README.md)，合计20栋，不代表细化或照片依据完全相同。07与09使用相邻common及各自冻结照片、地图与校准资料；当前交付状态见[07](photo-rebuild-v6/bund07/DELIVERY.md)、[09](photo-rebuild-v6/bund09/DELIVERY.md)。两栋的主参考为Suicasmo2025年CC0照片，分别仅采样18片与20片玻璃，远景无图；其他参考图仍保留各自许可。
+
+本轮三栋HTML技术检查通过，共15组采集、6份近／远景资产核验；root实际查看10张截图并接受有限接入表现。另有独立目录检查：生产20项静态记录复用，以及仅测试响应移除222后的19项动态加入／退出／返回和索引SHA失败保留基线。目录另经root实际图像复核，包含动态退出后返回的叠楼回归视图。三栋静态采集与运行时修复后的回归范围分别记录，不把旧图冒充全部修复后重跑；这不重跑全部20栋或全城逐栋核验。 见[本轮审计](../../data/audit/precise-buildings-v6/release-next/README.md)。
+
+两批v6累计6个精确源对象动态替换，55个受影响近景要素中6个目标、49个邻要素保留。普通基线1,796,419／1,708宏块／169,320近景块不变；222来自Zenodo轮廓分支，不冒称OSM建筑足迹。07／09追加317.9618㎡铺装，v6累计1,162.4622㎡；尺寸和地面构造仍是估计。[武康路129号](../precise/xuhui-wukang-129/DELIVERY.md)另有独立GLB／Blender下载，未接入HTML或通过网页场景验收，不计入20栋。
+
+## v6首批逐栋照片重建与源码链（历史范围）
+
+以下三栋、17栋总数及旧启动包验证描述首批发布时状态；当前接入数与证据以上节和v6.1为准。
 
 5、6、14号使用[photo-rebuild-v6](photo-rebuild-v6/README.md)的独立构建器和相邻common工具：冻结真实轮廓、照片控制点与逐栋推定说明，先建立连续开孔墙、深窗洞和独立框，再为明确可见的玻璃逐片映射原JPEG。三栋分别为6窗112片、6窗127片、28窗137片；其余窗、被遮挡分格和未见侧后部分按各包说明保留几何材质或推定。原始与网页GLB保留照片；远景轻量变体不携带照片。
 
@@ -32,7 +44,7 @@
 
 新增源码不依赖旧版墙体基线。原10栋仍按下列v4.4及v3入口重建，旧源码和来源记录继续保留。三栋数值几何、照片字节、原生预览与压缩检查已完成；本批三栋网页技术检查通过，主审实际查看10张截图后接受本轮接入表现；采集早于后续网络／样式补丁；补丁后的v6解压启动包另通过05号与清单重置冒烟，具体范围见[REALISM_V6](../../data/bund/REALISM_V6.md)。
 
-v6启动包已生成并通过归档校验和实际解压后的05号／清单重置冒烟。本地保存原14栋核心地标，本批新增3栋的模型、远景变体及参考照片从固定提交按需联网加载；17栋是项目地标总数，不表示17栋模型字节全部随ZIP打包。07、09及222仍为未上线候选。
+v6启动包已生成并通过归档校验和实际解压后的05号／清单重置冒烟。本地保存原14栋核心地标，本批新增3栋的模型、远景变体及参考照片从固定提交按需联网加载；17栋是项目地标总数，不表示17栋模型字节全部随ZIP打包。07、09及222在该首批阶段尚未接入，现已由v6.1接入。
 
 ## v4.4墙体修正与源码链
 
@@ -51,7 +63,7 @@ v6启动包已生成并通过归档校验和实际解压后的05号／清单重�
 | [customs_refined/](customs_refined/SOURCES_AND_METHOD.md) | 13号；customs_house_v3.py与facade_geometry.py | 源组件JSON/GeoJSON、照片和覆盖验证一并保留；官方高度与后翼排除范围单独说明 |
 | [chartered_bank/](chartered_bank/SOURCES.md) | 18号；build_chartered_bank.py、building-source.json、photo-source.json | 三个文件生成历史v3基础几何；当前入口为photo-v4.4，参考照片、来源说明与验证报告应随发布保留 |
 | [art_deco/](art_deco/README.md) | 19、20、23号；build_art_deco.py、architecture.py、footprints.json、assets/字体子集 | references.json保留照片证据；中国银行主楼、西翼及其高度解释需按本包资料区分 |
-| [photo-rebuild-v6/](photo-rebuild-v6/README.md) | 5、6、14号；各build_model.py、geometry-input.json、控制点与照片，保留相邻common/ | 当前逐栋照片构建入口；具体可见范围、尺寸推定和依赖以各包说明为准 |
+| [photo-rebuild-v6/](photo-rebuild-v6/README.md) | 5、6、7、9、14号；各build_model.py、geometry-input.json、控制点与照片，保留相邻common/ | 当前逐栋照片构建入口；具体可见范围、尺寸推定和依赖以各包说明为准 |
 | [street/](street/) | 当前入口[tools/build_bund_street.py](../../tools/build_bund_street.py)；保留frontage-v6冻结基线、追加工具及原v5源 | 单街景道具：原道路／设施与新增三栋楼前有界铺装；位置有源，铺装宽度、地面构造量和设施尺度仍含推定 |
 
 [bund-candidates.json](bund-candidates.json)保存所选建筑的地图轮廓、锚点与临街边线。每个源码包保留自身冻结输入，重建不应重新以名称搜索或用包围盒代替实际足迹。
@@ -64,6 +76,8 @@ v6启动包已生成并通过归档校验和实际解压后的05号／清单重�
 | 3号 有利大楼 | 层数、转角塔楼及双街立面参考照片与建筑资料；高度取公开二手资料和比例解释，各层分配、塔冠细节非实测。 |
 | 5号 日清大楼 | 地图主立面约20.14m，主檐约23.8m、山花约28.9m按照片标定；34.5m模型包围高度包括推定旗杆。凸窗深度、侧后开间与构件尺寸仍为推定。 |
 | 6号 中国通商银行 | 地图主立面约32.22m，主檐约13.95m、山墙石尖约22.03m、最高花饰约22.99m按近似相机尺度核对；并非实测。南附翼及隐蔽部分单独说明。 |
+| 7号 大北电报公司大楼 | 主立面约29.33m、主檐约19m、含推定旗杆包围高度26m；四层与3＋5＋3分组按照片核对，屋顶后退、后立面与细雕仍含推定。 |
+| 9号 轮船招商局大楼 | 主立面约21.55m、主檐约14.29m、几何最高约16.58m；照片支持三层与开放外廊，廊深1.85m、后屋顶及构件小尺寸未实测。 |
 | 12号 汇丰银行 | 现状照片结合历史立面/平面图核对六柱柱廊、中庭与穹顶；未取得可核验的完整竖向测量，鼓座、穹顶及分层高度属于推定。 |
 | 13号 江海关 | 官方存档给出主楼约36.2m、钟楼部分约43m、总高约79.2m、钟盘直径5.4m；墙厚、窗退距、角亭分层和未见后立面按照片解释。模型不包含西侧独立后翼。 |
 | 14号 交通银行 | 地图主立面约23.17m，主体平檐约24.6m、塔冠约33.4m按照片与地图面宽推定；后翼高程、侧后窗数及槽深未实测。 |
@@ -113,7 +127,7 @@ GLB采用米制 **X向东、Y向上、Z向南**，地面为0，地理朝向已�
 
 v3全市背景仍为1,708块，包含1,796,419个普通要素：1,796,116个源可渲染要素，按精确ID替换98个，再加401处父体剩余足迹。v2历史核验的402处残差中有1处已由中国银行细模接管；原始402处报告是可追溯证据，当前普通残差数量为401。只替换已经确认覆盖的对象或组件，不能按半径删去周围建筑。
 
-v6的5、6、14号由独立可见状态控制三个精确源对象的替换，普通基线仍保持1,796,419要素、1,708宏块和169,320近景分块。只有细模成功加载并实际可见时，才隐藏对应普通楼；模型退出后恢复，不按半径删除邻楼。
+v6两批05／06／07／09／14与222由独立可见状态控制六个精确源对象的替换，普通基线仍保持1,796,419要素、1,708宏块和169,320近景分块。只有细模成功加载并实际可见时，才隐藏对应普通楼；模型退出后恢复，不按半径删除邻楼。
 
 [坐标验证](../../data/bund/geometry-frame-validation.json)、[分块替换验证](../../data/bund/validation/city-patches.json)和[各建筑几何验证](../../data/bund/validation/)记录检查方法。凹窗检查包含从洞外向内的射线首命中验证；海关另有源组件与最终GLB底面覆盖比对。这些验证确认几何实现和定位过程，不证明未拍到的立面、室内或估计高度与现场一致。
 
@@ -127,6 +141,8 @@ v6的5、6、14号由独立可见状态控制三个精确源对象的替换，�
 | 3号 · 有利大楼 · 外滩3号 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:Union_Building,_Shanghai_20250501.jpg) · [随附参考图](../../assets/references/bund/bund03.jpg) |
 | 5号 · 日清大楼 | Suicasmo | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [原图页面](https://commons.wikimedia.org/wiki/File:Nissin_Building_20250501.jpg) · [随附参考图](../../assets/references/bund/bund05.jpg) |
 | 6号 · 中国通商银行旧址 | Suicasmo | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [原图页面](https://commons.wikimedia.org/wiki/File:China_Merchants_Bank_Building,_Shanghai_20250501.jpg) · [随附参考图](../../assets/references/bund/bund06.jpg) |
+| 7号 · 大北电报公司大楼 | Suicasmo | [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) | [原图页面](https://commons.wikimedia.org/wiki/File:Great_Northern_Telegraph_Building_20250501.jpg) · [随附参考](../../assets/references/bund/bund07.jpg) |
+| 9号 · 轮船招商局大楼 | Suicasmo | [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) | [原图页面](https://commons.wikimedia.org/wiki/File:China_Merchants_Building,_Shanghai_20250501.jpg) · [随附参考](../../assets/references/bund/bund09.jpg) |
 | 12号 · 汇丰银行大楼 | Suicasmo | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [原图页面](https://commons.wikimedia.org/wiki/File:HSBC_Building,_Shanghai_20250501-1.jpg) · [随附参考图](../../assets/references/bund/bund12.jpg) |
 | 13号 · 江海关大楼 | Diomidis Spinellis | [CC BY 2.5](https://creativecommons.org/licenses/by/2.5/) | [原图页面](https://commons.wikimedia.org/wiki/File:ShanghaiBundCustomsHouse.jpg) · [随附参考图](../../assets/references/bund/bund13.jpg) |
 | 14号 · 交通银行旧址 | Suicasmo | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [原图页面](https://commons.wikimedia.org/wiki/File:Bank_of_Communications_Building,_Shanghai_20250501.jpg) · [随附参考图](../../assets/references/bund/bund14.jpg) |

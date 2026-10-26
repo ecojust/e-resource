@@ -1,0 +1,313 @@
+✖ standard: cached compiled uniforms point to replacement mask after disposal and rebind (4.862669ms)
+✖ depth: cached compiled uniforms point to replacement mask after disposal and rebind (1.63458ms)
+✖ distanceRGBA: cached compiled uniforms point to replacement mask after disposal and rebind (1.210936ms)
+✖ 100 rebind cycles keep one holder pair and one program key, with current ownership only (5.141426ms)
+✖ distinct materials never share mask uniform holders even with the same shader key (1.780169ms)
+✖ rebind after an intervening unmasked compile still exposes current mask uniforms (2.290163ms)
+✖ mask release invalidates programs without disposing source maps, geometry or prior shadow materials (3.149651ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.906052
+
+✖ failing tests:
+
+test at tests/city-feature-mask-rebind.test.mjs:54:3
+✖ standard: cached compiled uniforms point to replacement mask after disposal and rebind (4.862669ms)
+  AssertionError [ERR_ASSERTION]: Disposal releases old renderer properties, so the restored hook can compile safely
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:68:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { diffuse: { value: [Object] }, opacity: { value: 1 }, map: { value: null }, mapTransform: { value: [Object] }, alphaMap: { value: null }, alphaMapTransform: { value: [Object] }, alphaTest: { value: 0 }, envMap: { value: null }, envMapRotation: { value: [Object] }, flipEnvMap: { value: -1 }, reflectivity: { value: 1 }, ior: { value: 1.5 }, refractionRatio: { value: 0.98 }, aoMap: { value: null }, aoMapIntensity: { value: 1 }, aoMapTransform: { value: [Object] }, lightMap: { value: null }, lightMapIntensity: { value: 1 }, lightMapTransform: { value: [Object] }, emissiveMap: { value: null }, emissiveMapTransform: { value: [Object] }, bumpMap: { value: null }, bumpMapTransform: { value: [Object] }, bumpScale: { value: 1 }, normalMap: { value: null }, normalMapTransform: { value: [Object] }, normalScale: { value: [Object] }, displacementMap: { value: null }, displacementMapTransform: { value: [Object] }, displacementScale: { value: 1 }, displacementBias: { value: 0 }, roughnessMap: { value: null }, roughnessMapTransform: { value: [Object] }, metalnessMap: { value: null }, metalnessMapTransform: { value: [Object] }, fogDensity: { value: 0.00025 }, fogNear: { value: 1 }, fogFar: { value: 2000 }, fogColor: { value: [Object] }, ambientLightColor: { value: [] }, lightProbe: { value: [] }, directionalLights: { value: [], properties: [Object] }, directionalLightShadows: { value: [], properties: [Object] }, directionalShadowMap: { value: [] }, directionalShadowMatrix: { value: [] }, spotLights: { value: [], properties: [Object] }, spotLightShadows: { value: [], properties: [Object] }, spotLightMap: { value: [] }, spotShadowMap: { value: [] }, spotLightMatrix: { value: [] }, pointLights: { value: [], properties: [Object] }, pointLightShadows: { value: [], properties: [Object] }, pointShadowMap: { value: [] }, pointShadowMatrix: { value: [] }, hemisphereLights: { value: [], properties: [Object] }, rectAreaLights: { value: [], properties: [Object] }, ltc_1: { value: null }, ltc_2: { value: null }, emissive: { value: [Object] }, roughness: { value: 1 }, metalness: { value: 0 }, envMapIntensity: { value: 1 }, cityFeatureMask: { value: [Object] }, cityFeatureMaskWidth: { value: 4 }, clippingPlanes: { value: [] } },
+    expected: { diffuse: { value: [Object] }, opacity: { value: 1 }, map: { value: null }, mapTransform: { value: [Object] }, alphaMap: { value: null }, alphaMapTransform: { value: [Object] }, alphaTest: { value: 0 }, envMap: { value: null }, envMapRotation: { value: [Object] }, flipEnvMap: { value: -1 }, reflectivity: { value: 1 }, ior: { value: 1.5 }, refractionRatio: { value: 0.98 }, aoMap: { value: null }, aoMapIntensity: { value: 1 }, aoMapTransform: { value: [Object] }, lightMap: { value: null }, lightMapIntensity: { value: 1 }, lightMapTransform: { value: [Object] }, emissiveMap: { value: null }, emissiveMapTransform: { value: [Object] }, bumpMap: { value: null }, bumpMapTransform: { value: [Object] }, bumpScale: { value: 1 }, normalMap: { value: null }, normalMapTransform: { value: [Object] }, normalScale: { value: [Object] }, displacementMap: { value: null }, displacementMapTransform: { value: [Object] }, displacementScale: { value: 1 }, displacementBias: { value: 0 }, roughnessMap: { value: null }, roughnessMapTransform: { value: [Object] }, metalnessMap: { value: null }, metalnessMapTransform: { value: [Object] }, fogDensity: { value: 0.00025 }, fogNear: { value: 1 }, fogFar: { value: 2000 }, fogColor: { value: [Object] }, ambientLightColor: { value: [] }, lightProbe: { value: [] }, directionalLights: { value: [], properties: [Object] }, directionalLightShadows: { value: [], properties: [Object] }, directionalShadowMap: { value: [] }, directionalShadowMatrix: { value: [] }, spotLights: { value: [], properties: [Object] }, spotLightShadows: { value: [], properties: [Object] }, spotLightMap: { value: [] }, spotShadowMap: { value: [] }, spotLightMatrix: { value: [] }, pointLights: { value: [], properties: [Object] }, pointLightShadows: { value: [], properties: [Object] }, pointShadowMap: { value: [] }, pointShadowMatrix: { value: [] }, hemisphereLights: { value: [], properties: [Object] }, rectAreaLights: { value: [], properties: [Object] }, ltc_1: { value: null }, ltc_2: { value: null }, emissive: { value: [Object] }, roughness: { value: 1 }, metalness: { value: 0 }, envMapIntensity: { value: 1 }, cityFeatureMask: { value: [Object] }, cityFeatureMaskWidth: { value: 4 }, clippingPlanes: { value: [] } },
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/city-feature-mask-rebind.test.mjs:54:3
+✖ depth: cached compiled uniforms point to replacement mask after disposal and rebind (1.63458ms)
+  AssertionError [ERR_ASSERTION]: Disposal releases old renderer properties, so the restored hook can compile safely
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:68:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { diffuse: { value: [Object] }, opacity: { value: 1 }, map: { value: null }, mapTransform: { value: [Object] }, alphaMap: { value: null }, alphaMapTransform: { value: [Object] }, alphaTest: { value: 0 }, displacementMap: { value: null }, displacementMapTransform: { value: [Object] }, displacementScale: { value: 1 }, displacementBias: { value: 0 }, cityFeatureMask: { value: [Object] }, cityFeatureMaskWidth: { value: 4 }, clippingPlanes: { value: [] } },
+    expected: { diffuse: { value: [Object] }, opacity: { value: 1 }, map: { value: null }, mapTransform: { value: [Object] }, alphaMap: { value: null }, alphaMapTransform: { value: [Object] }, alphaTest: { value: 0 }, displacementMap: { value: null }, displacementMapTransform: { value: [Object] }, displacementScale: { value: 1 }, displacementBias: { value: 0 }, cityFeatureMask: { value: [Object] }, cityFeatureMaskWidth: { value: 4 }, clippingPlanes: { value: [] } },
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/city-feature-mask-rebind.test.mjs:54:3
+✖ distanceRGBA: cached compiled uniforms point to replacement mask after disposal and rebind (1.210936ms)
+  AssertionError [ERR_ASSERTION]: Disposal releases old renderer properties, so the restored hook can compile safely
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:68:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { diffuse: { value: [Object] }, opacity: { value: 1 }, map: { value: null }, mapTransform: { value: [Object] }, alphaMap: { value: null }, alphaMapTransform: { value: [Object] }, alphaTest: { value: 0 }, displacementMap: { value: null }, displacementMapTransform: { value: [Object] }, displacementScale: { value: 1 }, displacementBias: { value: 0 }, referencePosition: { value: [Object] }, nearDistance: { value: 1 }, farDistance: { value: 1000 }, cityFeatureMask: { value: [Object] }, cityFeatureMaskWidth: { value: 4 }, clippingPlanes: { value: [] } },
+    expected: { diffuse: { value: [Object] }, opacity: { value: 1 }, map: { value: null }, mapTransform: { value: [Object] }, alphaMap: { value: null }, alphaMapTransform: { value: [Object] }, alphaTest: { value: 0 }, displacementMap: { value: null }, displacementMapTransform: { value: [Object] }, displacementScale: { value: 1 }, displacementBias: { value: 0 }, referencePosition: { value: [Object] }, nearDistance: { value: 1 }, farDistance: { value: 1000 }, cityFeatureMask: { value: [Object] }, cityFeatureMaskWidth: { value: 4 }, clippingPlanes: { value: [] } },
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/city-feature-mask-rebind.test.mjs:79:1
+✖ 100 rebind cycles keep one holder pair and one program key, with current ownership only (5.141426ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + DataTexture {
+  +   anisotropy: 1,
+  +   center: Vector2 {
+  +     x: 0,
+  +     y: 0
+  +   },
+  +   channel: 0,
+  +   colorSpace: '',
+  +   flipY: false,
+  +   format: 1028,
+  +   generateMipmaps: false,
+  +   internalFormat: null,
+  +   isArrayTexture: false,
+  +   isDataTexture: true,
+  +   isRenderTargetTexture: false,
+  +   isTexture: true,
+  +   magFilter: 1003,
+  +   mapping: 300,
+  +   matrix: Matrix3 {
+  +     elements: [
+  +       1,
+  +       0,
+  +       0,
+  +       0,
+  +       1,
+  +       0,
+  +       0,
+  +       0,
+  +       1
+  +     ]
+  +   },
+  +   matrixAutoUpdate: true,
+  +   minFilter: 1003,
+  +   mipmaps: [],
+  +   name: '',
+  +   offset: Vector2 {
+  +     x: 0,
+  +     y: 0
+  +   },
+  +   onUpdate: null,
+  +   pmremVersion: 0,
+  +   premultiplyAlpha: false,
+  +   renderTarget: null,
+  +   repeat: Vector2 {
+  +     x: 1,
+  +     y: 1
+  +   },
+  +   rotation: 0,
+  +   source: Source {
+  +     data: {
+  +       data: Uint8Array(16) [
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0,
+  +         0
+  +       ],
+  +       height: 4,
+  +       width: 4
+  +     },
+  +     dataReady: true,
+  +     isSource: true,
+  +     uuid: 'e9418c2a-9c15-489c-92cc-f7dfe0c9afb3',
+  +     version: 2
+  +   },
+  +   type: 1009,
+  +   unpackAlignment: 1,
+  +   updateRanges: [],
+  +   userData: {},
+  +   uuid: '6036c1ff-bc85-4a20-b144-14a6fcc57778',
+  +   version: 2,
+  +   wrapS: 1001,
+  +   wrapT: 1001
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:89:73)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { isTexture: true, uuid: '6036c1ff-bc85-4a20-b144-14a6fcc57778', name: '', source: { isSource: true, uuid: 'e9418c2a-9c15-489c-92cc-f7dfe0c9afb3', data: [Object], dataReady: true, version: 2 }, mipmaps: [], mapping: 300, channel: 0, wrapS: 1001, wrapT: 1001, magFilter: 1003, minFilter: 1003, anisotropy: 1, format: 1028, internalFormat: null, type: 1009, offset: { x: 0, y: 0 }, repeat: { x: 1, y: 1 }, center: { x: 0, y: 0 }, rotation: 0, matrixAutoUpdate: true, matrix: { elements: [Array] }, generateMipmaps: false, premultiplyAlpha: false, flipY: false, unpackAlignment: 1, colorSpace: '', userData: {}, updateRanges: [], version: 2, onUpdate: null, renderTarget: null, isRenderTargetTexture: false, isArrayTexture: false, pmremVersion: 0, isDataTexture: true },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/city-feature-mask-rebind.test.mjs:94:1
+✖ distinct materials never share mask uniform holders even with the same shader key (1.780169ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:103:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/city-feature-mask-rebind.test.mjs:108:1
+✖ rebind after an intervening unmasked compile still exposes current mask uniforms (2.290163ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - DataTexture {
+  -   anisotropy: 1,
+  -   center: Vector2 {
+  -     x: 0,
+  -     y: 0
+  -   },
+  -   channel: 0,
+  -   colorSpace: '',
+  -   flipY: false,
+  -   format: 1028,
+  -   generateMipmaps: false,
+  -   internalFormat: null,
+  -   isArrayTexture: false,
+  -   isDataTexture: true,
+  -   isRenderTargetTexture: false,
+  -   isTexture: true,
+  -   magFilter: 1003,
+  -   mapping: 300,
+  -   matrix: Matrix3 {
+  -     elements: [
+  -       1,
+  -       0,
+  -       0,
+  -       0,
+  -       1,
+  -       0,
+  -       0,
+  -       0,
+  -       1
+  -     ]
+  -   },
+  -   matrixAutoUpdate: true,
+  -   minFilter: 1003,
+  -   mipmaps: [],
+  -   name: '',
+  -   offset: Vector2 {
+  -     x: 0,
+  -     y: 0
+  -   },
+  -   onUpdate: null,
+  -   pmremVersion: 0,
+  -   premultiplyAlpha: false,
+  -   renderTarget: null,
+  -   repeat: Vector2 {
+  -     x: 1,
+  -     y: 1
+  -   },
+  -   rotation: 0,
+  -   source: Source {
+  -     data: {
+  -       data: Uint8Array(4) [
+  -         0,
+  -         0,
+  -         255,
+  -         0
+  -       ],
+  -       height: 2,
+  -       width: 2
+  -     },
+  -     dataReady: true,
+  -     isSource: true,
+  -     uuid: '00307f54-b7ae-40a0-8520-d4f70a14d752',
+  -     version: 2
+  -   },
+  -   type: 1009,
+  -   unpackAlignment: 1,
+  -   updateRanges: [],
+  -   userData: {},
+  -   uuid: '55329a1c-d6b8-47fe-b150-12fb54db0caf',
+  -   version: 2,
+  -   wrapS: 1001,
+  -   wrapT: 1001
+  - }
+  
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:115:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { isTexture: true, uuid: '55329a1c-d6b8-47fe-b150-12fb54db0caf', name: '', source: { isSource: true, uuid: '00307f54-b7ae-40a0-8520-d4f70a14d752', data: [Object], dataReady: true, version: 2 }, mipmaps: [], mapping: 300, channel: 0, wrapS: 1001, wrapT: 1001, magFilter: 1003, minFilter: 1003, anisotropy: 1, format: 1028, internalFormat: null, type: 1009, offset: { x: 0, y: 0 }, repeat: { x: 1, y: 1 }, center: { x: 0, y: 0 }, rotation: 0, matrixAutoUpdate: true, matrix: { elements: [Array] }, generateMipmaps: false, premultiplyAlpha: false, flipY: false, unpackAlignment: 1, colorSpace: '', userData: {}, updateRanges: [], version: 2, onUpdate: null, renderTarget: null, isRenderTargetTexture: false, isArrayTexture: false, pmremVersion: 0, isDataTexture: true },
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/city-feature-mask-rebind.test.mjs:122:1
+✖ mask release invalidates programs without disposing source maps, geometry or prior shadow materials (3.149651ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/shanghai_expansion/building-by-building-v6/next/ordinary-runtime/mask-rebind-review/baseline-negative/tests/city-feature-mask-rebind.test.mjs:136:42)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

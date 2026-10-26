@@ -1,0 +1,88 @@
+{
+  "schema": "ordinary-mask-rebind-review-v1",
+  "created_utc": "2026-10-26T09:19:52.366401+00:00",
+  "status": "stage_tests_passed_browser_visual_pending",
+  "production_modified": false,
+  "candidate_modified": false,
+  "root_cause": {
+    "renderer": "vendored Three r180",
+    "three_sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+    "getProgram_lines": [
+      16908,
+      16931
+    ],
+    "material_disposal_lines": [
+      15890,
+      15930
+    ],
+    "explanation": "Same-key material program cache hits skip onBeforeCompile; cleared/disposed former mask can remain in cached uniforms. An intervening original unmasked compilation may also replace the material single uniforms object, so holder-only rebinding is insufficient."
+  },
+  "changes": [
+    {
+      "file": "src/city-feature-mask.js",
+      "base_sha256": "f4540b209c9e1c1f37ac5c2936c781eacddf8c84aef5f9d98ccc68ef6ef08390",
+      "candidate_sha256": "c6289ce6f570efca07d0bc362b1a5d561c543447163697cd7b4905f2faf18edf",
+      "candidate_bytes": 8912,
+      "new": false
+    },
+    {
+      "file": "tests/city-feature-mask-rebind.test.mjs",
+      "base_sha256": null,
+      "candidate_sha256": "5960e1159acb2f03a0debfc376b5fc084ffa333c0754a81f2e79e5f483ae2ef5",
+      "candidate_bytes": 10136,
+      "new": true
+    },
+    {
+      "file": "package.json",
+      "base_sha256": "48e9c69d3c95a63978b993a4c4e75e3172d24055089f140845e74f0c447c45a3",
+      "candidate_sha256": "d93635dc3f20e2d2f792bfc56d3d4683bf2793f04e22adc3df55e9be0b2c113b",
+      "candidate_bytes": 1744,
+      "new": false
+    }
+  ],
+  "retained_prior_candidate_sha_count": 13,
+  "main_integration_files": 16,
+  "test_result": {
+    "passed": 65,
+    "failed": 0,
+    "command": "node --test tests/city-feature-mask.test.mjs tests/city-feature-mask-rebind.test.mjs tests/ordinary-runtime.test.mjs tests/ordinary-curated-regression.test.mjs tests/ordinary-navigation.test.mjs tests/detail-model-cache-integration.test.mjs",
+    "log": "mask-rebind-review/targeted-tests.log",
+    "log_sha256": "f4855cbf8bca74b51dd1d6bc6fe621d0b537f8110ac8eb3db43045ee00e0aafd",
+    "new_regressions": 7,
+    "previous_ordinary_tests": 47,
+    "unchanged_city_feature_mask_tests": 11,
+    "scope": "Actual vendored Three getProgram/material-disposal cache control flow with controlled compiler backend; actual Three material/texture/object ownership. No GL driver compilation or browser visual claim."
+  },
+  "negative_control": {
+    "baseline_mask_sha256": "f4540b209c9e1c1f37ac5c2936c781eacddf8c84aef5f9d98ccc68ef6ef08390",
+    "same_final_test_sha256": "5960e1159acb2f03a0debfc376b5fc084ffa333c0754a81f2e79e5f483ae2ef5",
+    "tests": 7,
+    "failed_as_expected": 7,
+    "log": "mask-rebind-review/baseline-negative.log",
+    "log_sha256": "afa2cb6959a85fd698f6d2b66f4ef19fe68371b28b61b023617a72d3ed7ee6e9"
+  },
+  "resource_contract": {
+    "unique_program_keys_per_mask_variant": 1,
+    "rebind_cycles": 100,
+    "program_refs_after_each_dispose": 0,
+    "source_texture_disposals": 0,
+    "source_geometry_disposals": 0,
+    "original_shadow_material_disposals": 0,
+    "mask_private_depth_disposals": 1,
+    "mask_private_distance_disposals": 1
+  },
+  "candidate_incremental_patch_sha256": "5d3c67aac95356f70a0bba1542428e9d839038946a1bfd7ba355f56f0f962e64",
+  "candidate_incremental_files_sha256": "f154fd8f3231c9e65e141c4bbd4fc8407f308450161f444f89b632e8618c761d",
+  "integration_patch_sha256": "f122a6e50da8f552cfd08e9abc0da1745ce6843e55f29bdb85511b700d5fc6fd",
+  "integration_files_sha256": "0daf2055c21f9ecb464ad3717d2a8217c5d59b2e48b86acb818e8d99ffb92d5b",
+  "validation_sha256": "3ed2ff858c6167a9aa1aed44928c0071c5041a77f6573d586f6cb48da14c01fc",
+  "browser_evidence": {
+    "passed": false,
+    "reason": "Prior actual dynamic catalog return exposed a far box; this isolated fix has not yet run in a browser.",
+    "historical_browser_report": "/workspace/shanghai_expansion/building-by-building-v6/next/qa-catalog/browser.json",
+    "historical_browser_sha256": "6fe234c7c90c94e6089d45e15d7e3a5e2048185c44d773fb324d7f91ad11020b",
+    "historical_visual_review": "/workspace/shanghai_expansion/building-by-building-v6/next/qa-catalog/visual-review.json",
+    "historical_visual_sha256": "49266f5fd466052da3b6092f57fecaa761b22c196734743120244539c79d0699",
+    "required_new_output": "next/qa-catalog-fixed"
+  }
+}

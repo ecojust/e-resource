@@ -1,0 +1,148 @@
+{
+  "schema": "ordinary-catalog-root-visual-review-v1",
+  "passed": true,
+  "final": true,
+  "reviewer": "root",
+  "utc": "2026-10-26T09:30:00.879619+00:00",
+  "browser_report_sha256": "6d34938ad91b46bae92befb96a67cf7f247efd371638a4d773175ab03a5c6885",
+  "web_sha256": "f8659166ace3894c1ceb436019594f7b60d9a195e269c363c79bb1833dc5cb6f",
+  "scope": "实际查看静态加载和返回、纯目录加载和返回、故意损坏索引后的回退画面；确认上轮动态返回时遮挡窗门和瓦顶的普通方盒在修复后不再出现。",
+  "actually_viewed": [
+    {
+      "file": "static-catalog-loaded.png",
+      "bytes": 238742,
+      "sha256": "0e7551557c1c34bb6edbecfecb70f5800b1e420e315c33dca2595c0250dec39a",
+      "actually_viewed": true
+    },
+    {
+      "file": "static-catalog-returned.png",
+      "bytes": 238518,
+      "sha256": "f0be62fb950d26d65d6193ba2acd42a28a2fca55dea91a89a6c2de96f1e0e748",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-catalog-loaded.png",
+      "bytes": 238776,
+      "sha256": "0433db802c4315685962b0169b238a5bf246add773476e2226017f4d812f2c52",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-catalog-returned.png",
+      "bytes": 238510,
+      "sha256": "a45fc08fd355e88afc12d4a83917c2a49407c36c7c81d248dc3564a3cb269c93",
+      "actually_viewed": true
+    },
+    {
+      "file": "dynamic-index-hash-rejected-baseline-visible.png",
+      "bytes": 215091,
+      "sha256": "54ecf38c3b20d50f6fb59bb5537c0b21eaf810b91b8725790a70f634dd3191bf",
+      "actually_viewed": true
+    }
+  ],
+  "runtime_scope_note": "三栋静态采集（07、09、222的15组记录／10张实际核图）发生于遮罩缓存修复之前。之后只修改了src/city-feature-mask.js的渲染缓存与uniform生命周期，package.json增加7项回归入口；16项候选源码在本轮实际浏览器运行前后逐SHA一致。模型几何、纹理、导航与accepted目录未改。本轮补验静态222复用、纯目录加载／卸载／返回及错误索引回退，并实际核对5张截图，未重新采集全部07／09近景LOD循环，不声称全城或硬件性能验收。",
+  "runtime_manifest_sha256": "0daf2055c21f9ecb464ad3717d2a8217c5d59b2e48b86acb818e8d99ffb92d5b",
+  "runtime_files": [
+    {
+      "file": "src/city-detail-streamer.js",
+      "bytes": 22487,
+      "sha256": "9240359a3c7cfa538e789e1fbbc67b8aca58ee622d6dedf9bcb6db7c46e661da"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 52294,
+      "sha256": "205d2fac21a1428628063e0aa62c3d0836bbac2b6fe0c49da311a0131a9b475f"
+    },
+    {
+      "file": "src/app.js",
+      "bytes": 17662,
+      "sha256": "de968738bc8e8dd060eb69cdb655902d78beb65b3100e799723f09792c8ea8c4"
+    },
+    {
+      "file": "src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    {
+      "file": "src/ordinary-building-catalog.js",
+      "bytes": 16498,
+      "sha256": "de509b00d50310bf75de58a684e285d238a8c67646e66c74388e34dbbc181363"
+    },
+    {
+      "file": "src/ordinary-city-detail-streamer.js",
+      "bytes": 6528,
+      "sha256": "195a27cbc698f11afe7b1eb20fd2261387b9203969aeae8fac65c7888aef1a5c"
+    },
+    {
+      "file": "src/ordinary-scene-adapter.js",
+      "bytes": 7843,
+      "sha256": "63c89ef7079a135b075a2aa3877b9675c7ab3ff869c5de06906025b24176bf19"
+    },
+    {
+      "file": "src/precise-registration-ui.js",
+      "bytes": 1577,
+      "sha256": "3ea35af1984e7a5a8bb8eed81dab365e20e1ab7a5166ae9fb60169a208578972"
+    },
+    {
+      "file": "package.json",
+      "bytes": 1744,
+      "sha256": "d93635dc3f20e2d2f792bfc56d3d4683bf2793f04e22adc3df55e9be0b2c113b"
+    },
+    {
+      "file": "tests/ordinary-fixtures.mjs",
+      "bytes": 5310,
+      "sha256": "8699f6286e7e5054bb40ddef43574e69f32d5ef2dd28981591529061d3b4f3c1"
+    },
+    {
+      "file": "tests/ordinary-runtime.test.mjs",
+      "bytes": 17373,
+      "sha256": "9536272ac52b91087bb090c5a52c3f6ee842d1880f24a179263de0717df39922"
+    },
+    {
+      "file": "tests/ordinary-curated-regression.test.mjs",
+      "bytes": 9370,
+      "sha256": "a729232cd9f5dc6eb0712dd0e3975e7f338273b8940408ca4bfdde1c1102d949"
+    },
+    {
+      "file": "tests/ordinary-navigation.test.mjs",
+      "bytes": 2359,
+      "sha256": "627c79c894b91bd64a0c3bcc42df0dd48e1b6bc172a0b0e8a74e87201e2b83ef"
+    },
+    {
+      "file": "tests/detail-model-cache-integration.test.mjs",
+      "bytes": 16093,
+      "sha256": "2386a979c9425e79c74fad1f309f4cba9985229e1cff3d68b6d99559ef1efca0"
+    },
+    {
+      "file": "src/city-feature-mask.js",
+      "bytes": 8912,
+      "sha256": "c6289ce6f570efca07d0bc362b1a5d561c543447163697cd7b4905f2faf18edf"
+    },
+    {
+      "file": "tests/city-feature-mask-rebind.test.mjs",
+      "bytes": 10136,
+      "sha256": "5960e1159acb2f03a0debfc376b5fc084ffa333c0754a81f2e79e5f483ae2ef5"
+    }
+  ],
+  "runtime_before_after_unchanged": true,
+  "observations": [
+    "静态和纯目录初次加载均显示同一细模，门窗、瓦顶、廊栏及石狮完整可见。",
+    "纯目录卸载再返回的实际截图没有上轮方盒冒出瓦顶或遮住立面的现象；技术记录同时证明29个geometry释放后重新加载、27个邻楼保留。",
+    "等长单字节索引损坏测试保留完整28要素的普通近景表示，未加载精细模型。该场景是明确的测试注入。"
+  ],
+  "limitations": [
+    "这是有限场景的实际画面与生命周期验证，不是全市逐栋照片复原或测绘精度验收。",
+    "普通楼背景、青浦道路／铺装／绿化仍有推定或缺失；小楼侧后立面和雕饰仍有声明的简化。",
+    "浏览器使用软件渲染；四条ReadPixels提示不用于推断用户设备帧率或内存表现。"
+  ],
+  "nonfatal_event_review": {
+    "scope": "四条软件GPU ReadPixels提示及一条预期索引SHA拒绝警告已核对。page_errors、shader_errors、http_errors为空。",
+    "warning_count": 5,
+    "intentional_sha_failure_count": 1
+  },
+  "previous_failed_visual_review": {
+    "file": "../qa-catalog/visual-review.json",
+    "sha256": "49266f5fd466052da3b6092f57fecaa761b22c196734743120244539c79d0699",
+    "retained": true
+  },
+  "production_release_accepted": true
+}

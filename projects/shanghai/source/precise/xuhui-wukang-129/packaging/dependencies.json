@@ -1,0 +1,40 @@
+{
+  "geometry_and_camera_environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "shapely": "2.2.0",
+    "GEOS": "3.14.1",
+    "scipy": "1.17.0",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.8"
+  },
+  "additional_packaging_dependencies": {
+    "zstandard": "0.25.0"
+  },
+  "gltfpack": {
+    "npm_package": "gltfpack",
+    "version": "1.3.0",
+    "library_wasm_sha256": "ddd1658ec64b95916dc2b8d5ecff906501c178b5aa2df2fbf22eb8ae5422a417",
+    "web_flags": [
+      "-cc",
+      "-noq",
+      "-km",
+      "-ke"
+    ],
+    "lod_first_attempt_extra_flags": [
+      "-si",
+      "0.35",
+      "-se",
+      "0.002",
+      "-sp"
+    ]
+  },
+  "native_generator": {
+    "blender": "4.3.2",
+    "wrapper": "native-wrapper/finish_native.py",
+    "preview_only_ground_z_m": -0.01,
+    "requires_explicit_candidate_root": true
+  },
+  "third_party_runtime_bundled": false,
+  "network_access_during_reconstruction": false
+}

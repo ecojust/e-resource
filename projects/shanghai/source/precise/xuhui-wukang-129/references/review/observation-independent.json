@@ -1,0 +1,360 @@
+{
+  "schema": "wukang129-independent-photo-observation-v1",
+  "reviewer": "facade_photo_mapping",
+  "actually_viewed": [
+    "2017-antigng-cc-by-sa4-original.jpg",
+    "2026-windmemories-cc-by-sa4-original.jpg"
+  ],
+  "scope": "Read-only source observation; no metric height fit, no geometry/model/main/common edits, no downloading or browser/Blender.",
+  "sources": [
+    {
+      "file": "2017-antigng-cc-by-sa4-original.jpg",
+      "author": "Antigng",
+      "date": "2017-08-19",
+      "license": "CC-BY-SA-4.0",
+      "pixels": [
+        5312,
+        2988
+      ],
+      "EXIF_orientation": 1,
+      "sha256": "89e59d2e55cd33b16636b004f09aa8d00994a6a93ffd654e8daf714ac51922b5"
+    },
+    {
+      "file": "2026-windmemories-cc-by-sa4-original.jpg",
+      "author": "Windmemories",
+      "date": "2026-02-09",
+      "license": "CC-BY-SA-4.0",
+      "pixels": [
+        1800,
+        1200
+      ],
+      "EXIF_orientation": 1,
+      "sha256": "43722c05f8bed1cc9108a5b4671add6eb3d1f07db6c6deb371cc0d14e1c7506a"
+    }
+  ],
+  "controls_convention": "Original stored image pixels, origin top-left, x right/y down. Manual shape controls, not registered texture quads or surveyed corners; visible points about±4–8px in2026. Camera EXIF original capture6000x4000 is not the actual1800x1200 stored2026JPEG and must not be used as its pixel dimensions.",
+  "zones": [
+    {
+      "plane": "A",
+      "name": "left upper gable front",
+      "observed": "Two-storey cream plaster gable body, triangular red-tile roof edge; upper narrow rectangular lattice window at left and much wider rectangular opening at right. No third upper front window is demonstrated.",
+      "2026_controls": {
+        "roof_peak": [
+          354,
+          245
+        ],
+        "left_roof_edge": [
+          43,
+          386
+        ],
+        "right_roof_edge": [
+          649,
+          365
+        ],
+        "narrow_window_outer_quad_TL_TR_BR_BL": [
+          [
+            178,
+            430
+          ],
+          [
+            218,
+            429
+          ],
+          [
+            218,
+            534
+          ],
+          [
+            176,
+            535
+          ]
+        ],
+        "wide_window_outer_quad": [
+          [
+            385,
+            425
+          ],
+          [
+            519,
+            424
+          ],
+          [
+            520,
+            529
+          ],
+          [
+            382,
+            530
+          ]
+        ]
+      },
+      "uncertainty": "Front right wall corner around(594,390..595) and roof overhang are distinct; do not force both to same point."
+    },
+    {
+      "plane": "B",
+      "name": "left body upper right return",
+      "observed": "Receding side plane contains one larger red-lattice rectangular window and a farther narrow opening, with outdoor AC units/covers. Its eave runs toward right and down in the image; it is not the same front plane asA.",
+      "2026_controls": {
+        "upper_eave_segment": [
+          [
+            624,
+            389
+          ],
+          [
+            839,
+            451
+          ]
+        ],
+        "large_window_outer_quad": [
+          [
+            679,
+            455
+          ],
+          [
+            728,
+            467
+          ],
+          [
+            727,
+            556
+          ],
+          [
+            676,
+            545
+          ]
+        ],
+        "far_narrow_window_visible_quad": [
+          [
+            824,
+            492
+          ],
+          [
+            843,
+            498
+          ],
+          [
+            843,
+            558
+          ],
+          [
+            823,
+            554
+          ]
+        ]
+      },
+      "uncertainty": "Far corner hidden by tree/units. Window dimensions cannot be calibrated with full14.2m front width."
+    },
+    {
+      "plane": "C",
+      "name": "left lower body and extra low end outline",
+      "observed": "Lower wide3-column rectangular window sits belowA; low white body continues to a stepped gray coping/edge extending beyond the upper gable corner. Gray inclined edge(594,594)→(778,650) runs in a similar image direction toB side eave, notA front horizontal.",
+      "2026_controls": {
+        "lower_window_outer_quad": [
+          [
+            384,
+            702
+          ],
+          [
+            525,
+            700
+          ],
+          [
+            526,
+            790
+          ],
+          [
+            383,
+            791
+          ]
+        ],
+        "gray_inclined_edge": [
+          [
+            594,
+            594
+          ],
+          [
+            778,
+            650
+          ]
+        ],
+        "low_far_outline_upper": [
+          766,
+          681
+        ],
+        "low_far_outline_ground": [
+          767,
+          940
+        ]
+      },
+      "uncertainty": "Two street photos establish the extra low visible outline, but do not uniquely resolve whether the lower mainfront continues in one plane, an attached return projects forward, or their exact footprint. Keep end return and lower-front plane hypotheses explicit; do not convert the image corner difference directly into metres."
+    },
+    {
+      "plane": "D",
+      "name": "recessed center upper wall and separate low entrance roof",
+      "observed": "Upper central wall is behind the low entrance roof. A narrow window near tree and wider rectangular lattice window at right are visible. Long upper tile eave and lower pitched tile canopy are physically separate. Lower arched red door has thick gray moulded surround and green129number; narrow side windows appear on both sides in2017, partly tree/person/AC-obscured in2026.",
+      "2026_controls": {
+        "wide_upper_window_outer_quad": [
+          [
+            1056,
+            497
+          ],
+          [
+            1163,
+            488
+          ],
+          [
+            1166,
+            562
+          ],
+          [
+            1059,
+            570
+          ]
+        ],
+        "near_tree_narrow_window_visible_quad": [
+          [
+            980,
+            514
+          ],
+          [
+            997,
+            511
+          ],
+          [
+            998,
+            574
+          ],
+          [
+            980,
+            577
+          ]
+        ],
+        "upper_eave_visible_segment": [
+          [
+            1090,
+            418
+          ],
+          [
+            1245,
+            389
+          ]
+        ],
+        "door_stone_arch_peak": [
+          1043,
+          700
+        ],
+        "door_outer_spring_left": [
+          982,
+          754
+        ],
+        "door_outer_spring_right": [
+          1103,
+          750
+        ],
+        "threshold_visible_segment": [
+          [
+            988,
+            932
+          ],
+          [
+            1100,
+            932
+          ]
+        ],
+        "low_canopy_edge_segment": [
+          [
+            1097,
+            665
+          ],
+          [
+            1157,
+            643
+          ]
+        ]
+      },
+      "uncertainty": "Tree prevents fullplane reconstruction. Do not poolD sill/eave slopes withA to fit one planar homography. Lower door window geometry remains occluded in latest photograph."
+    },
+    {
+      "plane": "E",
+      "name": "right rounded projecting end",
+      "observed": "Rounded cream wall face, curved gray upper cornice, red radial/hipped tile cap with small peak. Upper arched opening has radial/semicircular fanlight and opening casements; projecting shallow bowed wrought-iron Juliet balcony has outward-bellied balusters and layered curved gray base. Ground curved wall below is blank where visible, not another invented door/window.",
+      "2026_controls": {
+        "roof_cap_peak": [
+          1410,
+          232
+        ],
+        "curved_roof_left_extreme": [
+          1254,
+          335
+        ],
+        "curved_roof_right_extreme": [
+          1578,
+          306
+        ],
+        "arched_opening_peak": [
+          1430,
+          423
+        ],
+        "arched_spring_left": [
+          1379,
+          477
+        ],
+        "arched_spring_right": [
+          1482,
+          475
+        ],
+        "balcony_rail_box": [
+          1363,
+          585,
+          1517,
+          681
+        ],
+        "balcony_base_box": [
+          1369,
+          680,
+          1511,
+          721
+        ]
+      },
+      "uncertainty": "Curved front cannot be a flat façadeH. Semi-circle/elliptical plan radius, curve center/depth and cap backside unseen. Street-photo superstructure correction must remain separate from frozen4-point map footprint."
+    }
+  ],
+  "temporal_differences": [
+    "2026 leafless season reveals full left triangular gable and right radial tile cap;2017 summer tree cover must not be read as roof absence.",
+    "2017 front utility pole and laundry/rack partially obscure left frontage;2026 does not show the same pole/laundry. Treat as dated street props, not permanent building geometry.",
+    "2017 louver covers at entrance-side AC locations differ from2026 visible outdoor unit/covers; do not mix fixtures into an undocumented timeless state.",
+    "Upper left widewindow leaf state, lower door paint wear and balcony sunflower decoration differ. Flowers/people/chair/clothes are temporary, not structural evidence."
+  ],
+  "material_observations": [
+    "Cream plaster rather than brick/stoneblock façade; visible age/cracks and gray plinth/trim.",
+    "Red-brown slim window/door frames, red clay-like curved roof tiles, black wrought balcony railing.",
+    "Roof tiles are individual overlapping curved units, not a continuous ribbed sheet; full hidden roofs are unobserved."
+  ],
+  "height_and_metric_limits": [
+    "No height value is asserted by this review.",
+    "Use separate plane and depth parameters; full14.2006m baseline may only constrain the map-front frame, not every visible recessedwall.",
+    "2026 processed/resized photo and2017 widephone photo have different intrinsics/pose; cannot compare raw pixel heights across dates.",
+    "A roofcap peak, a gable ridge and a frontcornice lie in different depth planes."
+  ],
+  "2017_corresponding_regions_original_px": {
+    "central_entrance_and_lowroof": [
+      2800,
+      1260,
+      3510,
+      2500
+    ],
+    "rounded_end_upper_arch_and_balcony": [
+      4400,
+      380,
+      5130,
+      1610
+    ],
+    "upper_center_wide_window": [
+      3240,
+      780,
+      3710,
+      1180
+    ]
+  },
+  "2017_region_note": "Coarse lookup boxes only, not metric control quads; dimensions/sha verified, original kept unchanged."
+}
