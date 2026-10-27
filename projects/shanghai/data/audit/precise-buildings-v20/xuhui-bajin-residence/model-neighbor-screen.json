@@ -1,0 +1,3733 @@
+{
+  "schema": "bajin-v20-release-raw-actual-triangle-height-aware-neighbor-screen",
+  "created_epoch": 1793136572.7623153,
+  "scope": "Actual root-bound v2 raw geometry versus all frozen 80 source neighbors, retaining KEEP17 and all five previous same-macro precise assets. Source footprints and source roof heights are estimates; this does not replace screening the existing precise meshes.",
+  "passed_source_estimated_height_prism_screen": true,
+  "any_planar_overlap": false,
+  "actual_model_identity": "xuhui-bajin-residence",
+  "raw_asset": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-detailed.glb",
+    "bytes": 5069420,
+    "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71"
+  },
+  "model_handoff": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/HANDOFF.json",
+    "bytes": 7602,
+    "sha256": "de5a04d2c4008581186d54996b4d68f83e333a1fda817efe8140e0b2bf3775ac"
+  },
+  "root_source_owner_authorization": {
+    "root_model_review": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-source-owner-mesh-review-v1.json",
+      "bytes": 5123,
+      "sha256": "dcbc5859d6d08d172d58220bdf849046ae4d3859634972de565e0627213b93bf"
+    },
+    "source_geometry_input": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+      "bytes": 30553,
+      "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+    },
+    "root_source_review": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-source-context-v3.json",
+      "bytes": 4121,
+      "sha256": "750337eac7b7adaefa6a787874b75b15f25cb9813d9008ba66b501733acc040d"
+    },
+    "frozen_baseline": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/freeze-v1/baseline.json",
+      "bytes": 46551,
+      "sha256": "e7e0ea7530311c844564b1b8a8babfe16eb53c5fc89629544ab60429ca143a3f"
+    },
+    "frozen_helper": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/owner-tools-v1/run_owner.py",
+      "bytes": 8216,
+      "sha256": "f98dc4b83575134f1bbefa682f6427723a79db6d9e17d6d2591c87835b305352"
+    },
+    "assets": {
+      "raw": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-detailed.glb",
+        "bytes": 5069420,
+        "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71"
+      },
+      "lod_raw": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-lod.glb",
+        "bytes": 1827660,
+        "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d"
+      },
+      "native": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/review/native/bajin-main-house.blend",
+        "bytes": 3215562,
+        "sha256": "7ba806ac838d1f1d483cc41d31267d831d4c42d6ed0d78bced63e53f09512c9d"
+      }
+    },
+    "scope": "source_owner_generation",
+    "publication_accepted": false
+  },
+  "geometry_input": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+    "bytes": 30553,
+    "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+  },
+  "source_neighborhood": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-neighborhood-v1.json",
+    "bytes": 151432,
+    "sha256": "ff8577de1dd14218d5a4bd03a117ed3a04b15bce704baaa9f18bf30396414a3e"
+  },
+  "tools": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/neighbor-screen-tools/screen_neighbors.py",
+      "bytes": 24070,
+      "sha256": "3cc3404a662ab09039b989dd2444f3069390974fab1b936b8165335b20804f6b"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/owner-tools-v1/screen_draft_neighborhood.py",
+      "bytes": 15962,
+      "sha256": "c118699ac9fe0305fa45be92ce86fb56ddb656e1523343e16b3904851b6edd15"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/integration_contract.py",
+      "bytes": 6919,
+      "sha256": "b88f849c8ad6cb0f2a4d5d72dae31f7e668a797943d7398dd5152c5ab63a739f"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-finish-v1/review_gate.py",
+      "bytes": 10284,
+      "sha256": "720f04042a81e8fe12cb1fcfe2567238ea788d94d7aab9b11ae21d5c7bd64184"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6695/feature-table.json.gz",
+      "bytes": 611815,
+      "sha256": "ae08831809b5d7651774e04ea3a6d11e8ad59cfc156c92d3ee1b95c7e5659512"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13717-6694/feature-table.json.gz",
+      "bytes": 635084,
+      "sha256": "e56ba4dd5e010d4d72d25f089a59c0b4e31285acfa6f69ea80d849de78aeade4"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13717-6695/feature-table.json.gz",
+      "bytes": 500411,
+      "sha256": "97ad047c6aacb794f5fea54c388b5523076347e9459172f46c4ea56d26361a8d"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13717-6696/feature-table.json.gz",
+      "bytes": 366159,
+      "sha256": "36274d8f9521c6a6f8f8167dae8039de07624bb6c5a0808b704ec9b93dc0c358"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6694/feature-table.json.gz",
+      "bytes": 523354,
+      "sha256": "e0a2017a96c36168f5cd7c92576ff904f2978db5a287c29e6043fc350f65c00d"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6696/feature-table.json.gz",
+      "bytes": 344854,
+      "sha256": "569470522f9d8f33822db9c3232a9ac523e1cc709f63cdceb8abd900bf350736"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13719-6694/feature-table.json.gz",
+      "bytes": 484079,
+      "sha256": "2d85e7268d04b6d9cdcf43ed6ab906a61b53ef4a489e88f9fa698211c49b43df"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13719-6695/feature-table.json.gz",
+      "bytes": 829364,
+      "sha256": "d5239bdd08a99fb606ec0e553c91c2801400ee957378b4c05701b72c884b5786"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13719-6696/feature-table.json.gz",
+      "bytes": 369341,
+      "sha256": "30aa06611705bf6814729d0f38a8fd476d1b4ab205cb45deb399e000a01dbd6e"
+    }
+  ],
+  "actual_triangle_count": 50668,
+  "actual_primitive_count": 14,
+  "author_declared_semantic_part_count": 3786,
+  "bounds_enu_m": {
+    "min": [
+      -8.996381759643555,
+      -8.885534286499023,
+      0.0
+    ],
+    "max": [
+      8.996381759643555,
+      8.885534286499023,
+      12.331730842590332
+    ]
+  },
+  "projection_method": "Decode indexed static triangles and active node transforms; map glTF [east,up,-north] to source [east,north,up]. An STRtree queries every actual polygon/line/point projection. Union only the actual clipped intersections per neighbor. A convex hull is diagnostic only.",
+  "height_annotation_note": "Nearly degenerate projected triangles whose affine height interpolation is unstable use conservative full actual triangle z bounds, explicitly flagged per triangle. Actual height-prism intersection uses independent 3D clipping and does not depend on this annotation.",
+  "conservative_height_annotation_count": 0,
+  "height_method": "Clip every actual intersecting 3D triangle to each source [base,base+height] slab by horizontal-plane edge interpolation, then intersect projected clipped surfaces with original and 10-micrometre-inset neighbor polygons. Count zero-area vertical face intersections too; never waive a wall merely because its planar overlap area is zero.",
+  "numeric_policy": {
+    "neighbor_boundary_epsilon_m": 1e-05,
+    "area_reporting_threshold_m2": 1e-08,
+    "acceptance_rule": "No actual triangle projection clipped to the estimated source height slab may intersect the polygon after the 10-micrometre boundary inset; even line/point intersections are retained. No height uncertainty allowance is applied. Raw overlaps are always disclosed."
+  },
+  "source_neighbor_count": 80,
+  "required_frozen_context_count": 27,
+  "previous_same_macro_precise_models_preserved": [
+    "xuhui-wukang-129",
+    "xuhui-wukang-210",
+    "columbia-country-club",
+    "xuhui-wukang-mansion",
+    "changning-hudec-residence"
+  ],
+  "previous_same_macro_precise_mesh_collision_tested": false,
+  "same_near_neighbors_preserved_count": 17,
+  "all_same_near_actual_projection_clear": true,
+  "neighbor_checks": [
+    {
+      "key": "building:3c991a62-b7af-4549-a2ff-e1e0097f9c63",
+      "macro": "14-13718-6695",
+      "local_id": 938,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 2.5099625485828057,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:fbd94c86-5134-44b9-b95a-5f62945fe3a2",
+      "macro": "14-13718-6695",
+      "local_id": 4090,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 6.8892106498966825,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:331929d8-3eb0-4fc6-93bb-216ecca02fb3",
+      "macro": "14-13718-6695",
+      "local_id": 782,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 14.04314852686031,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:b745888a-ba73-4409-9ca4-bd1a64bbb227",
+      "macro": "14-13718-6695",
+      "local_id": 2974,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.728,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.728,
+      "actual_surface_projection_distance_m": 17.150974177944697,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:0fad9849-ea38-422c-82d9-1de2d463d4e6",
+      "macro": "14-13718-6695",
+      "local_id": 235,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 19.732278809299803,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:40ffb49e-b406-4fff-85d9-ff3d27687849",
+      "macro": "14-13718-6695",
+      "local_id": 999,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 21.6,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 21.6,
+      "actual_surface_projection_distance_m": 25.848907690757287,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:1caec31c-0010-4eeb-90fb-e08c2a7c0ec4",
+      "macro": "14-13718-6695",
+      "local_id": 442,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.45,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.45,
+      "actual_surface_projection_distance_m": 26.185872435975174,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:a5a0f782-c7ea-4d1c-bfb3-4fe912a07297",
+      "macro": "14-13718-6695",
+      "local_id": 2673,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 26.799187845776938,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:f632ea8e-fc7f-401c-af09-ac01c42620f6",
+      "macro": "14-13718-6695",
+      "local_id": 3991,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 21.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 21.0,
+      "actual_surface_projection_distance_m": 27.259131470870642,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:239ee254-3511-4df1-83c3-64d09e707e35",
+      "macro": "14-13718-6695",
+      "local_id": 563,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 28.369918603990286,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:2b781e27-e85e-4966-91e9-9e2d5cbe97af",
+      "macro": "14-13718-6695",
+      "local_id": 678,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.9,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.9,
+      "actual_surface_projection_distance_m": 29.614086040314554,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:0a72d1e4-fa95-4f96-aef4-ffec38e66d0b",
+      "macro": "14-13718-6695",
+      "local_id": 157,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.848,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.848,
+      "actual_surface_projection_distance_m": 34.38716201696912,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:12883744-edca-4a00-89b4-3bed9b7f662a",
+      "macro": "14-13718-6695",
+      "local_id": 276,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.728,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.728,
+      "actual_surface_projection_distance_m": 34.713131087837645,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:73efa396-9adf-4b3a-bb22-38517ebfafdd",
+      "macro": "14-13718-6695",
+      "local_id": 1828,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 24.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 24.4,
+      "actual_surface_projection_distance_m": 37.0023038643594,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:1460f9e0-edd8-47ea-b579-828fb7dda143",
+      "macro": "14-13718-6695",
+      "local_id": 305,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 21.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 21.4,
+      "actual_surface_projection_distance_m": 39.2735872315671,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:e39e6d9d-22f5-43b8-952a-cca208390daf",
+      "macro": "14-13718-6695",
+      "local_id": 3671,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 25.7,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 25.7,
+      "actual_surface_projection_distance_m": 40.60330037296518,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:56a0f4b6-1c3f-4156-b048-0da96f2904e4",
+      "macro": "14-13718-6695",
+      "local_id": 1364,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.6,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.6,
+      "actual_surface_projection_distance_m": 50.830549236795235,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:1760d32e-2cc0-4c66-a635-60838caff317",
+      "macro": "14-13718-6695",
+      "local_id": 354,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.7,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.7,
+      "actual_surface_projection_distance_m": 54.15645433622344,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:a1a7ce5b-1376-48c6-9bbb-ca7347dfa28b",
+      "macro": "14-13718-6695",
+      "local_id": 2602,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 24.6,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 24.6,
+      "actual_surface_projection_distance_m": 56.737120842914166,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:2481408d-c227-446a-9e29-f673d548db52",
+      "macro": "14-13718-6695",
+      "local_id": 575,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 21.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 21.4,
+      "actual_surface_projection_distance_m": 57.10451327813185,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:42812c07-cfd8-4b3b-b32c-49e620e5d176",
+      "macro": "14-13718-6695",
+      "local_id": 1035,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.0,
+      "actual_surface_projection_distance_m": 59.79142665068265,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:fd8db5fe-af69-4fbc-9dcc-22107bbb9f51",
+      "macro": "14-13718-6695",
+      "local_id": 4118,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.781,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.781,
+      "actual_surface_projection_distance_m": 59.86692446542084,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:0e52f5e6-337c-4c79-b224-fd2ba4c71c84",
+      "macro": "14-13718-6695",
+      "local_id": 214,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.15,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.15,
+      "actual_surface_projection_distance_m": 60.25158990734125,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:89850dab-e2f0-4a5e-861b-4065a0c189d0",
+      "macro": "14-13718-6695",
+      "local_id": 2189,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.4,
+      "actual_surface_projection_distance_m": 62.589810783671616,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:d1930cf4-d485-4634-beb6-9488eb532176",
+      "macro": "14-13718-6695",
+      "local_id": 3378,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 21.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 21.0,
+      "actual_surface_projection_distance_m": 63.06297583443256,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:5b52ba5e-12ba-41b7-a519-5decc043458d",
+      "macro": "14-13718-6695",
+      "local_id": 1448,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.697,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.697,
+      "actual_surface_projection_distance_m": 63.23958709282928,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:5436a4a7-95b2-4bc6-99ad-bdbda41b95f9",
+      "macro": "14-13718-6695",
+      "local_id": 1327,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 23.5,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 23.5,
+      "actual_surface_projection_distance_m": 67.52201067565655,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:8ead3447-103d-4474-9560-0579c3464a51",
+      "macro": "14-13718-6695",
+      "local_id": 2279,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.1,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.1,
+      "actual_surface_projection_distance_m": 68.86706914348447,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:7ab12ea9-94a1-4c53-8f0c-54df4d2fc8b4",
+      "macro": "14-13718-6695",
+      "local_id": 1944,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.3,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.3,
+      "actual_surface_projection_distance_m": 70.2876352824291,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:1975d09a-ac19-42d6-8a0b-d4503b1062de",
+      "macro": "14-13718-6695",
+      "local_id": 388,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.728,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.728,
+      "actual_surface_projection_distance_m": 71.47313550579285,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:dc1f9c47-f5af-441a-b2a7-9c01a7bfc41a",
+      "macro": "14-13718-6695",
+      "local_id": 3558,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 23.5,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 23.5,
+      "actual_surface_projection_distance_m": 71.55326465883256,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:9d13f62a-8c83-42d7-80f7-fed3304f1895",
+      "macro": "14-13718-6695",
+      "local_id": 2515,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.2,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.2,
+      "actual_surface_projection_distance_m": 71.86500964348986,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:39f06bb5-7dfd-495e-a1bd-93d8f43ea549",
+      "macro": "14-13718-6695",
+      "local_id": 902,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.6,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.6,
+      "actual_surface_projection_distance_m": 76.42305780334472,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:af29e6d5-0021-42a1-98cf-825fd98055c9",
+      "macro": "14-13718-6695",
+      "local_id": 2841,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.8,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.8,
+      "actual_surface_projection_distance_m": 77.49786004121967,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:d984a12d-e10c-475c-a8cf-d234b1f50e20",
+      "macro": "14-13718-6695",
+      "local_id": 3508,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.7,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.7,
+      "actual_surface_projection_distance_m": 78.14991684192303,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:9bc5f114-c344-4dac-a004-5079e5d0bfb1",
+      "macro": "14-13718-6695",
+      "local_id": 2493,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.7,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.7,
+      "actual_surface_projection_distance_m": 79.87514156038625,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:672df0d7-6863-46b6-a055-0a32691e6a94",
+      "macro": "14-13718-6695",
+      "local_id": 1642,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.511,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.511,
+      "actual_surface_projection_distance_m": 79.94793410801208,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:beb5d419-60ad-4a5a-a1ed-886742860d34",
+      "macro": "14-13718-6695",
+      "local_id": 3084,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.4,
+      "actual_surface_projection_distance_m": 83.6394912852717,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:057d8aeb-f509-40de-9a68-3b93cb53b4f6",
+      "macro": "14-13718-6695",
+      "local_id": 88,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 20.6,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 20.6,
+      "actual_surface_projection_distance_m": 84.69581883082053,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:976180ec-e8a2-4b92-abc4-5126307490ae",
+      "macro": "14-13718-6695",
+      "local_id": 2425,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.6,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.6,
+      "actual_surface_projection_distance_m": 85.20400081227943,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:ff7cdc60-5038-4701-887d-6baaf1a97a78",
+      "macro": "14-13718-6695",
+      "local_id": 4141,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.2,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.2,
+      "actual_surface_projection_distance_m": 86.64606078577681,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:df91afd8-e8df-45c2-b895-cbdf0a507756",
+      "macro": "14-13718-6695",
+      "local_id": 3606,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.5,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.5,
+      "actual_surface_projection_distance_m": 88.05629952861104,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:7f9485f1-19e9-4450-8e8a-2ab748ebbb02",
+      "macro": "14-13718-6695",
+      "local_id": 2023,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.0,
+      "actual_surface_projection_distance_m": 88.96356007468839,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:cf753a0c-9cc8-47ba-82f2-a00a606e29b7",
+      "macro": "14-13718-6695",
+      "local_id": 3350,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.223,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.223,
+      "actual_surface_projection_distance_m": 89.37474865418908,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:3cffc895-8a1a-410a-a99a-8a8d3a57e469",
+      "macro": "14-13718-6695",
+      "local_id": 947,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.3,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.3,
+      "actual_surface_projection_distance_m": 90.20583220854861,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:a658a8f0-8e0e-4d36-905d-3655143caad5",
+      "macro": "14-13718-6695",
+      "local_id": 2684,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.0,
+      "actual_surface_projection_distance_m": 90.24203377502887,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:366b2559-7370-401f-8985-5252ba012919",
+      "macro": "14-13718-6695",
+      "local_id": 844,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.35,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.35,
+      "actual_surface_projection_distance_m": 90.26825904278225,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:ec257991-3c05-4e34-9ad9-8ebf3d13a0c0",
+      "macro": "14-13718-6695",
+      "local_id": 3828,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.0,
+      "actual_surface_projection_distance_m": 90.38179264050109,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:bb7075b2-11b7-4d73-8895-d0959f840a1f",
+      "macro": "14-13718-6695",
+      "local_id": 3033,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.8,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.8,
+      "actual_surface_projection_distance_m": 91.03231365341553,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:087e8766-5409-4461-a3c9-5cb75789cabd",
+      "macro": "14-13718-6695",
+      "local_id": 130,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 21.129,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 21.129,
+      "actual_surface_projection_distance_m": 92.09791704040086,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:ecf18107-09c2-4554-b612-14721a072842",
+      "macro": "14-13718-6695",
+      "local_id": 3844,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.4,
+      "actual_surface_projection_distance_m": 92.1433320575926,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:26b05200-5963-4e71-acf0-fe9df00f8b73",
+      "macro": "14-13718-6695",
+      "local_id": 606,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.0,
+      "actual_surface_projection_distance_m": 93.96230808610501,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:46924f26-4ba5-460f-b53a-8a9117d84af0",
+      "macro": "14-13718-6695",
+      "local_id": 1097,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.4,
+      "actual_surface_projection_distance_m": 94.64701040526494,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:1e0b1db8-2fde-491a-9994-3aed7f5e9c4d",
+      "macro": "14-13718-6695",
+      "local_id": 469,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 33.37,
+      "source_height_quality": "cmab_estimate_matched_rooftop",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 33.37,
+      "actual_surface_projection_distance_m": 95.21876660630875,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:42b9d05f-3e2f-4022-ad92-f8a70b698511",
+      "macro": "14-13718-6695",
+      "local_id": 1040,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.726,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.726,
+      "actual_surface_projection_distance_m": 96.28136312406728,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:e59c563d-39c3-47cc-b361-f921eed5241f",
+      "macro": "14-13718-6695",
+      "local_id": 3701,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.35,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.35,
+      "actual_surface_projection_distance_m": 96.3518002092188,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:d93ddabc-7ca3-49e8-b5aa-e3b5ceba815e",
+      "macro": "14-13718-6695",
+      "local_id": 3504,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.9,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.9,
+      "actual_surface_projection_distance_m": 98.35679540267282,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:3a6a3509-479e-4aca-8d05-b0d48c544c2e",
+      "macro": "14-13718-6695",
+      "local_id": 912,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.3,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.3,
+      "actual_surface_projection_distance_m": 101.252268285327,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:5a9eebe3-aeaf-41ba-b1f2-5555445e4c6c",
+      "macro": "14-13718-6695",
+      "local_id": 1434,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.8,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.8,
+      "actual_surface_projection_distance_m": 101.99732010945694,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:e8317f81-c3e8-4458-a263-01d73c7ffaac",
+      "macro": "14-13718-6695",
+      "local_id": 3754,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.2,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.2,
+      "actual_surface_projection_distance_m": 102.71827908281509,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:b5a7253f-d522-4fa1-bf0a-7ddd79f26e10",
+      "macro": "14-13718-6695",
+      "local_id": 2957,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 25.481,
+      "source_height_quality": "cmab_estimate_matched_rooftop",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 25.481,
+      "actual_surface_projection_distance_m": 102.77445315213406,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:219cd0af-6f65-4794-a0f1-53c2e3a7af45",
+      "macro": "14-13718-6695",
+      "local_id": 526,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.5,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.5,
+      "actual_surface_projection_distance_m": 104.7847486754039,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:8214ddd8-1102-4631-9c7c-33d07476feb9",
+      "macro": "14-13718-6695",
+      "local_id": 2064,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.575,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.575,
+      "actual_surface_projection_distance_m": 104.80284191989371,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:0f9af67b-213c-40c7-8fd3-9eb0eca85850",
+      "macro": "14-13718-6695",
+      "local_id": 234,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.8,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.8,
+      "actual_surface_projection_distance_m": 105.28824013043415,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:bcce72e2-8ea0-4990-a8f8-eb945a0f3dc3",
+      "macro": "14-13718-6695",
+      "local_id": 3057,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.4,
+      "actual_surface_projection_distance_m": 107.49397411407799,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:f82c8564-67a5-4b1b-855f-30e4efa9e32d",
+      "macro": "14-13718-6695",
+      "local_id": 4028,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.9,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.9,
+      "actual_surface_projection_distance_m": 108.76548845219043,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:42381947-fac1-4afc-b375-3dc0e27f5f7b",
+      "macro": "14-13718-6695",
+      "local_id": 1030,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.5,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.5,
+      "actual_surface_projection_distance_m": 108.96374186854989,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:106f44d0-9de0-4c22-9981-6db654a30480",
+      "macro": "14-13718-6695",
+      "local_id": 245,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.4,
+      "actual_surface_projection_distance_m": 109.98453772284509,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:49527d52-17a9-40e6-ba0b-dd9d58255ba6",
+      "macro": "14-13718-6695",
+      "local_id": 1136,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.5,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.5,
+      "actual_surface_projection_distance_m": 111.7411878906446,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:668df205-e004-42be-bad3-f1d4768bccde",
+      "macro": "14-13718-6695",
+      "local_id": 1629,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.223,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.223,
+      "actual_surface_projection_distance_m": 111.76339274902962,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:a7e37b0e-c2cc-4242-8af3-d1681783dbb9",
+      "macro": "14-13718-6695",
+      "local_id": 2704,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.1,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.1,
+      "actual_surface_projection_distance_m": 113.2523649116981,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:791e5cf2-7037-40f1-98fd-f0ac4f6dd28a",
+      "macro": "14-13718-6695",
+      "local_id": 1922,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 27.746,
+      "source_height_quality": "cmab_estimate_matched_rooftop",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 27.746,
+      "actual_surface_projection_distance_m": 113.45061268883472,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:306e019d-c0df-4c75-8c23-5b0411447eb5",
+      "macro": "14-13718-6695",
+      "local_id": 748,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.2,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.2,
+      "actual_surface_projection_distance_m": 114.3107736097271,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:47ee2bcd-ab2b-4037-b6bd-9f20f6fd3882",
+      "macro": "14-13718-6695",
+      "local_id": 1116,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 31.429,
+      "source_height_quality": "cmab_estimate_matched_rooftop",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 31.429,
+      "actual_surface_projection_distance_m": 114.44390286205528,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:7c6f7334-d79e-4816-bc2c-612f811e4f8c",
+      "macro": "14-13718-6695",
+      "local_id": 1971,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.223,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.223,
+      "actual_surface_projection_distance_m": 114.67494472973796,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:49e5302b-e3f8-4f08-98cc-b210d626112c",
+      "macro": "14-13718-6695",
+      "local_id": 1147,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.511,
+      "source_height_quality": "raster_estimate_2018",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.511,
+      "actual_surface_projection_distance_m": 115.29647259034626,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:2e14f68f-4129-444e-9f47-d3fb2cc7dfe1",
+      "macro": "14-13718-6695",
+      "local_id": 716,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 18.0,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 18.0,
+      "actual_surface_projection_distance_m": 115.79648527752873,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:d5124951-2276-4aba-9e37-fb1615c7343d",
+      "macro": "14-13718-6695",
+      "local_id": 3443,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 40.815,
+      "source_height_quality": "cmab_estimate_matched_rooftop",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 40.815,
+      "actual_surface_projection_distance_m": 116.16543157201157,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:6b3b290d-2d5f-48c6-8f25-13ab1dd6521c",
+      "macro": "14-13718-6695",
+      "local_id": 1689,
+      "name": null,
+      "same_near_neighbor": true,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 17.2,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 17.2,
+      "actual_surface_projection_distance_m": 116.2141688700903,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    },
+    {
+      "key": "building:afc787a9-aa9d-47fa-a5b3-fbaa2cd777e4",
+      "macro": "14-13718-6695",
+      "local_id": 2852,
+      "name": null,
+      "same_near_neighbor": false,
+      "source_base_estimate_m": 0,
+      "source_height_estimate_m": 19.4,
+      "source_height_quality": "cnbh_estimate_10m",
+      "source_height_not_independently_surveyed": true,
+      "source_roof_estimate_m": 19.4,
+      "actual_surface_projection_distance_m": 118.56800586410125,
+      "projected_intersecting_triangle_count": 0,
+      "raw_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "deep_projection_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "overlap_height_range_m": null,
+      "minimum_overlap_clearance_above_estimated_roof_m": null,
+      "estimated_height_prism_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_overlap": {
+        "area_m2": 0.0,
+        "length_m": 0.0,
+        "geometry_type": "GeometryCollection",
+        "empty": true
+      },
+      "estimated_height_prism_deep_triangle_count": 0,
+      "no_actual_surface_in_estimated_neighbor_interior": true,
+      "convex_hull_overlap_area_m2_diagnostic_only": 0.0,
+      "intersecting_material_groups": []
+    }
+  ],
+  "intersecting_triangles": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/actual-raw-neighbor-screen-v1/intersecting-triangles.json",
+    "bytes": 209,
+    "sha256": "a30d4585e6890f796c61f3bd0ee20f4f59e5f8e9c044557d78a2f94dd476c6f8"
+  },
+  "numeric_self_checks": {
+    "above_roof_triangle_rejected_from_prism": true,
+    "zero_area_vertical_wall_detected": true,
+    "crossing_triangle_clipped_at_both_heights": true
+  },
+  "numeric_self_checks_reused_unchanged_from_v18": true,
+  "input_and_main_preservation": {
+    "all_exact": true,
+    "protected_main_and_source_paths": 163,
+    "input_preimages": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/actual-raw-neighbor-screen-v1/input-preimages.json",
+      "bytes": 41265,
+      "sha256": "a7a4f311edae877a42fc517474a2662e770641f2c74160c0ca5a22cb9033378f"
+    }
+  },
+  "elapsed_seconds": 1.1015551090240479,
+  "final_model_accepted": false,
+  "source_owner_polygon_is_architectural_wall": false,
+  "navigation_or_camera_tested": false,
+  "browser_passed": false,
+  "main_written": false,
+  "limitations": [
+    "This is a mapped-source estimated-height prism screen, not a survey of adjacent building roofs or legally surveyed parcel boundaries.",
+    "An overhang above an estimated neighbor roof is explicitly reported and requires human interpretation; the height source does not establish real-world separation.",
+    "No navigation, camera, source-ground support, runtime collision, rendering, material, interior, or complete model acceptance is performed.",
+    "The screen checks actual triangle surfaces and projections; it is not a watertight-solid collision or structural analysis."
+  ]
+}

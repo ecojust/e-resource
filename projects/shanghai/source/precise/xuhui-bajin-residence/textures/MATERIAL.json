@@ -1,0 +1,118 @@
+{
+  "schema": "bajin-original-pebbledash-pbr-v1",
+  "author": "agent",
+  "license": "MIT",
+  "random_generator": "NumPy PCG64",
+  "random_seed": 1131923,
+  "source_photograph_pixels_read": false,
+  "surface_scan": false,
+  "scope": "Original generic fine pebble-dash material, visually informed by a reference photograph. Colour, grain size and relief are estimates, not measurements of Ba Jin house.",
+  "dimensions_px": [
+    512,
+    512
+  ],
+  "repeat_metres": [
+    0.4,
+    0.4
+  ],
+  "pixel_pitch_m": 0.00078125,
+  "periodic_method": "Jittered pebble centres on a torus; every ellipse deposit wraps modulo512; matrix smoothing and height derivatives use wrapped neighbours. Pixel-centre rows0and511 need not be identical: their adjacency is an ordinary one-pixel toroidal step, not a duplicated gutter.",
+  "sampler": {
+    "magFilter": 9729,
+    "minFilter": 9987,
+    "wrapS": 10497,
+    "wrapT": 10497
+  },
+  "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "roughnessFactor": 1,
+  "metallicFactor": 1,
+  "normalScale": 0.35,
+  "occlusionStrength": 0.35,
+  "normal_height_scope": "The encoded height gradients are attenuated by normalScale0.35 at render time. This is a conservative shading choice, not displacement geometry or a measured surface relief.",
+  "color_spaces": {
+    "basecolor": "sRGB",
+    "normal": "Non-Color",
+    "orm": "Non-Color"
+  },
+  "channels": {
+    "orm": {
+      "R": "ambient occlusion",
+      "G": "roughness",
+      "B": "metallic, exactly0"
+    }
+  },
+  "uv_contract": {
+    "raw_gltf": "For a vertical facade: U=local horizontal metres/0.40; V=-height metres/0.40. Keep unbounded UVs and REPEAT, with no per-part normalization, modulo or atlas-cell clamping.",
+    "png_rows": "Top-to-bottom row index increases with stored PNG V.",
+    "encoded_normal": "Normalize(-dH/dU_metres, +dH/dPNG_row_metres, 1), then encode from[-1,1]to[0,255].",
+    "current_no_tangent_web_frame": "Three derivative frame follows raw+U right, raw+V down, outward normal. Frozen GLTFLoader negates normalScale.y when TANGENT is absent; effective scale is[+0.35,-0.35].",
+    "standard_blender_import": "Importer converts V to1-V and keeps the green channel; its upward bitangent gives the same physical bump. Do not manually invert G or add another V flip.",
+    "physical_interpretation": "On the left flank of a raised pebble the normal leans left; on the upper flank it leans up. These signs must be checked on the final renderer, not inferred merely from a normal map thumbnail.",
+    "if_explicit_tangents_added": "Re-audit the actual tangent frame and loader behavior. The current tested contract is for primitives without TANGENT."
+  },
+  "statistics": {
+    "generated_grain_count": 8100,
+    "visible_grain_count": 8084,
+    "aggregate_pixel_coverage": 0.7358283996582031,
+    "input_grain_major_diameter_m": {
+      "min": 0.0030300999247167746,
+      "max": 0.007962219298640863,
+      "mean": 0.005200818678768413
+    },
+    "height_field_m": {
+      "min": -2.5619039479169293e-05,
+      "max": 0.0010484895468265872,
+      "mean": 0.00037683514928067935
+    },
+    "albedo_channel_mean_srgb": [
+      0.5676752742802937,
+      0.5330296978032432,
+      0.47232247200367444
+    ],
+    "roughness_min_max": [
+      0.8107881698629514,
+      0.9722081799820047
+    ],
+    "ao_min_max": [
+      0.72,
+      1.0
+    ],
+    "normal_z_min": 0.7604314652529975,
+    "normal_length_max_error_before_encoding": 2.220446049250313e-16
+  },
+  "generator_checks": {
+    "finite_height": true,
+    "normal_positive_hemisphere": true,
+    "metallic_channel_entirely_zero": true,
+    "all_images_rgb_uint8_512": true,
+    "height_periodic_derivative_uses_wrapped_neighbors": true
+  },
+  "files": [
+    {
+      "file": "bajin-original-pebbledash-basecolor.png",
+      "bytes": 442583,
+      "sha256": "2480aeaf179746babf36fded9cc7e30446adb718cef3278cde387148e6dd16e7"
+    },
+    {
+      "file": "bajin-original-pebbledash-normal.png",
+      "bytes": 533654,
+      "sha256": "d6128f5b4d534ece5d26c0ec6e2ea9941b20db910400596e2f6b98e123c62a51"
+    },
+    {
+      "file": "bajin-original-pebbledash-orm.png",
+      "bytes": 361134,
+      "sha256": "3312465e2fc6bce740553d9656ec477b577c8f2141537b9a5d2fb559c8afabf6"
+    }
+  ],
+  "generator_sha256": "ff244bb5bd5941515fcaaa789439772332d19ccd586033e48485b02f73843915",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0"
+  }
+}

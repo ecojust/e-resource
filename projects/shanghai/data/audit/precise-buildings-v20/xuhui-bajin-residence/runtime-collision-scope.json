@@ -1,0 +1,403 @@
+{
+  "schema": "bajin-v20-runtime-collision-scope-review-v1",
+  "created_at_utc": "2026-10-27T21:37:51.730238+00:00",
+  "reviewer": "/root/v20_integration_finish/review_gate_requirements",
+  "status": "STATIC_RUNTIME_CODE_REVIEW_ONLY_NO_ROUTE_OR_BROWSER_ACCEPTANCE",
+  "building_id": "xuhui-bajin-residence",
+  "source_geometry_sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52",
+  "source_geometry_input": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+    "bytes": 30553,
+    "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+  },
+  "review_scope": "Root-selected south-center: nominal virtual fallback plane, supplied outdoor spawn and first5m only. Runtime code semantics; no physical garden survey, paving reconstruction or lawful/public access determination.",
+  "candidate_id": "south-center",
+  "candidate_navigation": {
+    "walkStart": [
+      121.43612500956901,
+      31.21035579248866
+    ],
+    "bearing": 342.5724890272513
+  },
+  "candidate_reference": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-candidates-v1/CANDIDATES.json",
+    "bytes": 32511,
+    "sha256": "57a44be1fb111b5e7fb7b3986caf6d208f59ce03713c0c2b6f43439deba9cce6"
+  },
+  "candidate_reference_status": "Provisional file remains unmodified. South-center selection is parent instruction; this runtime review does not change its acceptance status.",
+  "controller_parameters": {
+    "pitch_degrees": 82,
+    "camera_distance_m": 14,
+    "ahead_m": 2.8,
+    "target_altitude_above_ground_m": 3,
+    "ground_fallback_m": 0.075
+  },
+  "runtime_files": [
+    {
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    }
+  ],
+  "screen_consumers": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-source-v1/screen_source_ground.py",
+      "bytes": 20116,
+      "sha256": "59d75f0656050d2986b6cff238f112b9546c323786a94cb8c604501c35e74ea5"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/screen_frozen_model.py",
+      "bytes": 21223,
+      "sha256": "5b53d1b5f3a9ef9b0c66c7a0fd09a09fb834a509ad40d6ac4c1b395b8f979a0c"
+    }
+  ],
+  "semantic_corrections": [
+    {
+      "legacy_field": "controller_parameters.target_altitude_above_ground_m",
+      "retained_legacy_value_m": 3,
+      "literal_above_ground_interpretation_is_correct": false,
+      "actual_meaning": "At fallback support height .075,3.0 is the default target WORLD altitude relative to the model world-zero datum. The target is2.925 m above that fallback support plane.",
+      "runtime_formula": "groundOffset = groundHeight - DEFAULT_GROUND_HEIGHT; targetWorld = groundOffset + .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1)",
+      "source_file": "/workspace/shanghai_project/src/walk-controller.js",
+      "formula_line_numbers": [
+        436,
+        474,
+        488
+      ],
+      "default_ground_world_m": 0.075,
+      "default_target_world_m": 3.0,
+      "default_target_above_ground_m": 2.925,
+      "default_eye_world_m": 4.948423413440917,
+      "default_eye_above_ground_m": 4.873423413440917,
+      "mesh_screen_matches_default_world_datum": true,
+      "source_ground_uses_xy_only": true,
+      "consumer_legacy_label_changed": false,
+      "resolution": "Parent directed preserving the frozen consumer field while recording this explicit correction. No claim of3m actual clearance above the support plane."
+    }
+  ],
+  "nominal_conditions": [
+    "Default/reset pitch82 and requested distance14; no user drag/zoom/reset variation after selecting the route.",
+    "Settled camera follow anchor, or instant teleport update. Motion smoothing and collision-shortened camera positions are not an exact endpoint replay of this static screen.",
+    "No active street sidecar walk-surface changes the support height from .075 along the finite route. Static code review does not assert the loaded browser state.",
+    "No runtime building/sidecar obstruction shortens the boom or relocates the spawn. Actual browser checks remain required to observe those behaviors."
+  ],
+  "derived_defaults": {
+    "body_radius_m": 0.38,
+    "body_height_m": 1.75,
+    "nominal_body_world_band_m": [
+      0.075,
+      1.825
+    ],
+    "mesh_screen_avatar_world_band_m": [
+      -0.1,
+      2.3
+    ],
+    "maximum_sidecar_step_m": 0.2,
+    "camera_proxy_radius_m": 0.12,
+    "nominal_ahead_m": 2.8,
+    "nominal_horizontal_boom_m": 13.863752962381986,
+    "nominal_target_world_altitude_m": 3.0,
+    "nominal_eye_world_altitude_m": 4.948423413440917
+  },
+  "coordinate_approximation": {
+    "runtime_method": "offsetPosition uses per-position cos(latitude) for longitude and linear latitude increments.",
+    "screen_method": "Fixed-anchor WebMercator differences times cos(anchor latitude), then a straight5m ENU segment.",
+    "methods_are_bitwise_identical": false,
+    "single_5m_formula_comparison_only": {
+      "runtime_endpoint_enu_m": [
+        4.192987780451908,
+        -13.357359981370697
+      ],
+      "screen_nominal_endpoint_enu_m": [
+        4.192985201377574,
+        -13.357352848142444
+      ],
+      "difference_m": 7.58515456228381e-06,
+      "no_clearance_or_keyboard_execution": true
+    },
+    "interpretation": "The local coordinate approximation differs by about7.6 micrometres in this one nominal5m formula comparison; it is not a simulation of framewise key movement or a mesh/source-ground screen."
+  },
+  "collision_scope": {
+    "online_map": "Loaded provider building and water Polygon/MultiPolygon records; no general precise-mesh collision or roof-height waiver.",
+    "local_support": "Only active SHA-bound flat walk-surface sidecars; otherwise controller fallback .075.",
+    "local_obstacles": "Only explicit active sidecar obstacle proxies with body/camera flags and vertical intervals.",
+    "ordinary_model_geometry_automatically_becomes_walk_surface": false,
+    "ordinary_model_apertures_automatically_enable_passage": false,
+    "source_ground_snapshot_equals_live_browser_cache_claimed": false,
+    "nominal_virtual_plane_is_measured_physical_ground": false,
+    "public_access_verified": false,
+    "whole_garden_measured": false
+  },
+  "evidence": [
+    {
+      "id": "walk_body_and_ground_constants",
+      "finding": "Body radius .38 m, body height 1.75 m; fallback support datum .075 world metres; walk/run speeds4.2/8.5 m/s.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 7,
+      "line_end": 13,
+      "excerpt": "const WALK_SPEED = 4.2;\nconst RUN_SPEED = 8.5;\nconst BODY_RADIUS = 0.38;\nconst BODY_HEIGHT = 1.75;\n// The procedural avatar's authored soles are .075 m above its group origin.\n// Unknown streets retain this original datum and camera composition.\nconst DEFAULT_GROUND_HEIGHT = .075;"
+    },
+    {
+      "id": "default_camera",
+      "finding": "Constructor uses pitch82 degrees and cameraDistance14 m; resetCamera restores the same values.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 65,
+      "line_end": 73,
+      "excerpt": "    this.position = { lng: 121.4869, lat: 31.2403 };\n    this.heading = 45;\n    this.bearing = 45;\n    this.pitch = 82;\n    this.zoom = 21.1 - Math.log2(14 / 12);\n    this.cameraDistance = 14;\n    this.speed = 0;\n    this.groundHeight = DEFAULT_GROUND_HEIGHT;\n    this.groundSurface = null;"
+    },
+    {
+      "id": "camera_reset",
+      "finding": "Reset restores pitch82 and distance14.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 310,
+      "line_end": 315,
+      "excerpt": "  resetCamera() {\n    this.bearing = this.heading;\n    this.pitch = 82;\n    this.cameraDistance = 14;\n    this.zoom = 21.1 - Math.log2(14 / 12);\n    this._lastCamera = null;"
+    },
+    {
+      "id": "nominal_ground_selection",
+      "finding": "Only scene groundAt sidecar support overrides fallback .075; no architectural-triangle ground query here.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 322,
+      "line_end": 343,
+      "excerpt": "  _groundAt(position) {\n    const surface = this.scene.groundAt?.(position.lng, position.lat);\n    return surface && Number.isFinite(surface.height) ? surface : null;\n  }\n\n  _syncGround() {\n    const previousRevision = this._groundRevision;\n    this.groundSurface = this._groundAt(this.position);\n    this.groundHeight = this.groundSurface?.height ?? DEFAULT_GROUND_HEIGHT;\n    this._groundRevision = this.scene.streetInteractionRevision?.() ?? 0;\n    // A model can finish loading around an already stationary visitor. Recover\n    // from a newly activated bed/pole instead of trapping the body inside it.\n    if (previousRevision !== null && previousRevision !== this._groundRevision &&\n        this._walking() && this._localCollision(this.position, this.position)) {\n      clearTimeout(this._spawnTimer);\n      this._scheduleSpawnCheck(this._spawnGeneration, 0);\n    }\n  }\n\n  _sendPlayer(speed, dt) {\n    this._syncGround();\n    this.scene.setPlayer(this.position.lng, this.position.lat, this.heading, speed, dt, this.groundHeight);"
+    },
+    {
+      "id": "local_sweep_and_body",
+      "finding": "Local collision requests .38 m body radius,1.75 m height and .2 m maximum step.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 346,
+      "line_end": 352,
+      "excerpt": "  _localCollision(from, to) {\n    return blockingType(this.scene.sweepLocalCollision?.(from, to, {\n      radius: BODY_RADIUS,\n      groundHeight: this._groundAt(from)?.height ?? DEFAULT_GROUND_HEIGHT,\n      height: BODY_HEIGHT,\n      maxStepHeight: .2,\n    }));"
+    },
+    {
+      "id": "online_body_probes",
+      "finding": "Online collision uses destination centre, forward and shoulder probes; local sidecars use a continuous sweep.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 355,
+      "line_end": 377,
+      "excerpt": "  _canOccupy(position, east, north) {\n    // A continuous local sweep catches thin poles/rails even at sprint speed;\n    // the existing online building/water probes still cover the rest of Shanghai.\n    const local = this._localCollision(this.position, position);\n    if (local) return local;\n    const center = this._collision(position);\n    if (center) return center;\n    const length = Math.hypot(east, north);\n    if (!length) return null;\n    const forwardEast = east / length;\n    const forwardNorth = north / length;\n    const front = offsetPosition(position, forwardEast * BODY_RADIUS, forwardNorth * BODY_RADIUS);\n    const frontHit = this._collision(front);\n    if (frontHit) return frontHit;\n    // One shoulder on each side keeps the avatar from grazing wall corners.\n    for (const side of [-1, 1]) {\n      const shoulder = offsetPosition(position,\n        forwardNorth * BODY_RADIUS * side,\n        -forwardEast * BODY_RADIUS * side);\n      const hit = this._collision(shoulder);\n      if (hit) return hit;\n    }\n    return null;"
+    },
+    {
+      "id": "forward_heading",
+      "finding": "Forward movement follows east=sin(bearing), north=cos(bearing); obstruction can cause axis sliding.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 395,
+      "line_end": 414,
+      "excerpt": "    if (magnitude > 1) { right /= magnitude; forward /= magnitude; }\n    const running = this.manualRun || this.keys.has('ShiftLeft') || this.keys.has('ShiftRight');\n    const requestedSpeed = running ? RUN_SPEED : WALK_SPEED;\n    const angle = this.bearing * TO_RAD;\n    const east = (Math.sin(angle) * forward + Math.cos(angle) * right) * requestedSpeed * dt;\n    const north = (Math.cos(angle) * forward - Math.sin(angle) * right) * requestedSpeed * dt;\n    const before = this.position;\n    const target = offsetPosition(before, east, north);\n    const obstruction = this._canOccupy(target, east, north);\n    if (!obstruction) {\n      this.position = target;\n    } else {\n      // Axis sliding keeps movement useful alongside long building facades.\n      if (Math.abs(east) > 0.0001) {\n        const alongEast = offsetPosition(this.position, east, 0);\n        if (!this._canOccupy(alongEast, east, 0)) this.position = alongEast;\n      }\n      if (Math.abs(north) > 0.0001) {\n        const alongNorth = offsetPosition(this.position, 0, north);\n        if (!this._canOccupy(alongNorth, 0, north)) this.position = alongNorth;"
+    },
+    {
+      "id": "camera_ground_offset",
+      "finding": "Camera groundOffset is actual support height minus .075, not the absolute support height.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 434,
+      "line_end": 439,
+      "excerpt": "  _updateCamera(dt, instant = false) {\n    this._syncGround();\n    const groundOffset = this.groundHeight - DEFAULT_GROUND_HEIGHT;\n    const blend = instant ? 1 : 1 - Math.exp(-dt * 14);\n    this._follow.lng += (this.position.lng - this._follow.lng) * blend;\n    this._follow.lat += (this.position.lat - this._follow.lat) * blend;"
+    },
+    {
+      "id": "default_camera_ahead",
+      "finding": "Settled14 m distance implies min(3,14*.20)=2.8 m ahead along bearing; moving follow-anchor lag is separate.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 452,
+      "line_end": 463,
+      "excerpt": "    const angle = this.bearing * TO_RAD;\n    const targetForDistance = distance => {\n      // A close camera follows the actual player to avoid backward movement\n      // clipping the shoes while the ordinary follow anchor catches up.\n      const lag = clamp((distance - 3.5) / 4.5, 0, 1);\n      const anchor = {\n        lng: this.position.lng + (this._follow.lng - this.position.lng) * lag,\n        lat: this.position.lat + (this._follow.lat - this.position.lat) * lag,\n      };\n      const ahead = Math.min(3, distance * .20);\n      return offsetPosition(anchor, Math.sin(angle) * ahead, Math.cos(angle) * ahead);\n    };"
+    },
+    {
+      "id": "camera_shorten",
+      "finding": "Loaded building-footprint/sidecar obstruction can shorten distance by .6 up to three iterations; water alone does not shorten this camera.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 464,
+      "line_end": 480,
+      "excerpt": "    let target = targetForDistance(this.cameraDistance);\n    if (typeof this.scene.setCameraFromTo === 'function') {\n      let effectiveDistance = this.cameraDistance;\n      // Shorten the boom when a wall would cover the avatar. Water does not\n      // obstruct the camera, and only nearby loaded building footprints count.\n      for (let attempt = 0; attempt < 3; attempt++) {\n        target = targetForDistance(effectiveDistance);\n        const horizontal = Math.sin(this.pitch * TO_RAD) * effectiveDistance;\n        const candidate = offsetPosition(target, -Math.sin(angle) * horizontal, -Math.cos(angle) * horizontal);\n        const midpoint = offsetPosition(target, -Math.sin(angle) * horizontal * .6, -Math.cos(angle) * horizontal * .6);\n        const targetHeight = groundOffset + .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);\n        const fixtureHit = blockingType(this.scene.localCameraCollision?.(\n          {...target, alt:targetHeight},\n          {...candidate, alt:targetHeight + Math.cos(this.pitch * TO_RAD) * effectiveDistance},\n          {radius:.12}));\n        if (this._collision(candidate) !== 'building' && this._collision(midpoint) !== 'building' && !fixtureHit) break;\n        effectiveDistance = Math.max(3.5, effectiveDistance * .6);"
+    },
+    {
+      "id": "camera_world_altitude",
+      "finding": "For unshortened14 m camera, target world altitude is groundHeight-.075+3, eye is target+14*cos82.",
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "line_start": 482,
+      "line_end": 491,
+      "excerpt": "      target = targetForDistance(effectiveDistance);\n      const horizontal = Math.sin(this.pitch * TO_RAD) * effectiveDistance;\n      const from = offsetPosition(target, -Math.sin(angle) * horizontal, -Math.cos(angle) * horizontal);\n      // Default composition places the visitor's centre near 70% screen height\n      // and gives the street architecture more room. Lower the target for a\n      // shortened boom so the same framing does not crop the feet by a wall.\n      const targetHeight = groundOffset + .90 + 2.10 * clamp((effectiveDistance - 3.5) / 10.5, 0, 1);\n      const request = {\n        from: { ...from, alt: targetHeight + Math.cos(this.pitch * TO_RAD) * effectiveDistance },\n        to: { ...target, alt: targetHeight },"
+    },
+    {
+      "id": "support_owner_binding",
+      "finding": "Street support/obstacles require a matching model SHA and an active owner; no unbound precise building mesh automatically creates support.",
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742",
+      "line_start": 174,
+      "line_end": 195,
+      "excerpt": "  /** modelSha256 is the loaded asset's verified/configured SHA, not a URL. */\n  setOwner(ownerId,geojson,{modelSha256,active=false}={}) {\n    try {\n      const metadata=geojson?.metadata||geojson;\n      if(geojson?.type!=='FeatureCollection'||metadata.schema_version!==1||metadata.owner!==ownerId)throw Error('Sidecar schema/owner mismatch');\n      if(!/^[a-f0-9]{64}$/i.test(modelSha256||'')||![metadata.web_model_sha256,metadata.raw_model_sha256].includes(modelSha256))throw Error('Sidecar/model SHA mismatch');\n      const origin=metadata.origin;\n      if(!Array.isArray(origin)||!validPoint({lng:origin[0],lat:origin[1]}))throw Error('Invalid sidecar origin');\n      if(!Array.isArray(geojson.features))throw Error('Missing sidecar features');\n      const ids=new Set(),features=geojson.features.map(feature=>prepareFeature(feature,origin,ids));\n      if(geojson.local_obstacles!==undefined&&!Array.isArray(geojson.local_obstacles))throw Error('Invalid local obstacles');\n      for(const primitive of geojson.local_obstacles||[])features.push(prepareLocalObstacle(primitive,ids));\n      this.owners.set(ownerId,{id:ownerId,origin,features,query:makeIndex(features),active:Boolean(active),modelSha256});\n      this.lastError=null;this.revision++;return true;\n    } catch(error) {\n      this.owners.delete(ownerId);this.lastError={ownerId,message:error.message};this.revision++;return false;\n    }\n  }\n  setOwnerActive(ownerId,active) {\n    const owner=this.owners.get(ownerId);\n    if(!owner)return false;\n    if(owner.active!==Boolean(active)){owner.active=Boolean(active);this.revision++;}"
+    },
+    {
+      "id": "flat_support_query",
+      "finding": "groundAt returns the highest active flat walk-surface containing the point, or null.",
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742",
+      "line_start": 200,
+      "line_end": 211,
+      "excerpt": "  groundAt(lng,lat) {\n    const geographic={lng,lat};if(!validPoint(geographic))return null;\n    let found=null;\n    for(const owner of this.owners.values())if(owner.active) {\n      const point=project(geographic,owner.origin);\n      for(const feature of owner.query(pathBounds(point,point))) {\n        if(feature.surface&&inArea(point,feature.polygons)&&(!found||feature.properties.height_world_m>found.height)) {\n          found={height:feature.properties.height_world_m,id:feature.id,ownerId:owner.id};\n        }\n      }\n    }\n    return found;"
+    },
+    {
+      "id": "sidecar_step_and_camera_collision",
+      "finding": "Step checks use fallback .075 when no surface; camera collision is .12 m sweep through explicit obstacle proxies.",
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742",
+      "line_start": 223,
+      "line_end": 249,
+      "excerpt": "    samples.push(1);let previous=groundHeight;\n    for(const t of samples) {\n      const p=interpolate(from,to,t),sample=this.groundAt(p.lng,p.lat),height=sample?.height??this.fallbackHeight;\n      if(Math.abs(height-previous)>maxStepHeight+1e-7)return {blocked:true,type:'street-step',id:sample?.id??null,ownerId:sample?.ownerId??null,fromHeight:previous,toHeight:height};\n      previous=height;\n    }\n    return null;\n  }\n  sweep(from,to,{radius=.38,groundHeight,height=1.75,maxStepHeight=this.maxStepHeight}={}) {\n    if(!validPoint(from)||!validPoint(to)||!finite(radius)||radius<0)return null;\n    const startHeight=finite(groundHeight)?groundHeight:(this.groundAt(from.lng,from.lat)?.height??this.fallbackHeight);\n    const endHeight=this.groundAt(to.lng,to.lat)?.height??this.fallbackHeight;\n    const step=this._stepHit(from,to,startHeight,maxStepHeight);\n    if(step)return step;\n    return this._obstacleHit(from,to,radius,startHeight,endHeight,height,false);\n  }\n  cameraCollision(from,to,{radius=.12}={}) {\n    if(!validPoint(from)||!validPoint(to)||!finite(from.alt)||!finite(to.alt)||!finite(radius)||radius<0)return null;\n    return this._obstacleHit(from,to,radius,from.alt,to.alt,0,true);\n  }\n  _obstacleHit(from,to,radius,fromHeight,toHeight,bodyHeight,camera) {\n    for(const owner of this.owners.values())if(owner.active) {\n      const a=project(from,owner.origin),b=project(to,owner.origin);\n      for(const feature of owner.query(pathBounds(a,b,radius))) {\n        const p=feature.properties;\n        if(feature.surface||!(camera?p.blocks_camera:p.blocks_walk))continue;\n        const interval=verticalInterval(fromHeight,toHeight,p.base_world_m-bodyHeight-(camera?radius:0),p.top_world_m+(camera?radius:0));"
+    },
+    {
+      "id": "precise_model_visual_transform",
+      "finding": "Ordinary models load as scene geometry; placement uses altitude/scale/heading and does not derive ground collision from triangles.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 430,
+      "line_end": 447,
+      "excerpt": "    const ordinaryRequest=isOrdinaryLandmarkRecord(record)?new AbortController():null;\n    try {\n      const data = record.id==='bund-streets' && record.interaction_file\n        ? await loadStreetAssets({THREE,loader,record,onWarning:onLoadError})\n        : ordinaryRequest ? await loadOrdinaryLandmarkAsset({record,variant,loader,request:ordinaryRequest})\n        : await loader.loadAsync(variant==='distant' ? record.lodUrl : record.url);\n      if (ordinaryRequest?.signal.aborted) {\n        disposeModel(data.scene); record.status=record.object?'loaded':'idle';\n        detailCacheStats.discardedLate++; return;\n      }\n      if (!retainDetailResult(record,data.scene,{destroyed,disposeObject:disposeModel})) {\n        detailCacheStats.discardedLate++; return;\n      }\n      const group = data.scene; pendingGroup=group; group.name = record.name || record.id;\n      group.position.copy(geographicPosition(record.lng, record.lat, record.altitude || 0));\n      const latitudeScale = maplibregl.MercatorCoordinate.fromLngLat([record.lng, record.lat]).meterInMercatorCoordinateUnits() / metreScale;\n      group.scale.multiplyScalar(latitudeScale * (record.scale || 1));\n      group.rotation.y = -(record.heading || 0) * DEG;"
+    },
+    {
+      "id": "street_sidecar_registration",
+      "finding": "Only streetAssembly interaction metadata enters StreetInteraction; visual mesh loading by itself does not register collider triangles.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 464,
+      "line_end": 467,
+      "excerpt": "      if(group.userData?.streetAssembly?.interaction) {\n        const assembly=group.userData.streetAssembly;\n        if(streetInteraction.setOwner(record.id,assembly.interaction,{modelSha256:assembly.modelSha256}))group.userData.streetInteractionOwner=record.id;\n        else onLoadError(new Error(`街景地面数据不可用：${streetInteraction.lastError?.message}`));"
+    },
+    {
+      "id": "online_collision_inputs",
+      "finding": "Online building/building-part and water polygon source features populate a 2D collision cache; underground and nonpolygon records are skipped.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 688,
+      "line_end": 705,
+      "excerpt": "    try { return map.querySourceFeatures(source, {sourceLayer: layer}); } catch { return []; }\n  }\n  function rebuildCollisionCache(force = false) {\n    const now = performance.now();\n    if (!force && (!collisionDirty || now - collisionUpdated < 850)) return;\n    if (map.getZoom() < 14) return;\n    collisionUpdated = now; collisionDirty = false; polygons = []; largePolygons = []; grid = new Map(); roadLines = [];\n    const seen = new Set();\n    const inputs = buildingMode === 'overture'\n      ? [['building', 'building', buildingSourceId], ['building_part', 'building', buildingSourceId], ['water', 'water', sourceId]]\n      : [['building', 'building', sourceId], ['water', 'water', sourceId]];\n    for (const [layer, kind, source] of inputs) {\n      for (const f of sourceFeatures(layer, source)) {\n        if (f.properties?.is_underground === true) continue;\n        if (!['Polygon', 'MultiPolygon'].includes(f.geometry.type)) continue;\n        const box = boundsOf(f.geometry), key = `${kind}:${box.join(',')}:${f.id || ''}`;\n        if (seen.has(key)) continue; seen.add(key);\n        const record = {box, geometry: f.geometry, kind}; polygons.push(record);"
+    },
+    {
+      "id": "online_collision_semantics",
+      "finding": "Building polygons block without a vertical roof test; mapped water blocks unless near a mapped bridge.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 724,
+      "line_end": 737,
+      "excerpt": "  function onBridge(lng, lat) {\n    return roadLines.some(road => road.bridge && (nearestOnLine({lng, lat}, road.coordinates)?.distance ?? Infinity) < road.width);\n  }\n  function collisionAt(lng, lat) {\n    rebuildCollisionCache();\n    const candidates = [...(grid.get(`${Math.floor(lng*1000)}:${Math.floor(lat*1000)}`) || []), ...largePolygons];\n    let water = false;\n    for (const record of candidates) {\n      const [x0,y0,x1,y1] = record.box;\n      if (lng < x0 || lng > x1 || lat < y0 || lat > y1 || !geometryContains(record.geometry,lng,lat)) continue;\n      if (record.kind === 'building') return 'building';\n      water = true;\n    }\n    return water && !onBridge(lng,lat) ? 'water' : null;"
+    },
+    {
+      "id": "spawn_adjustment",
+      "finding": "Tile loading and actual collision may cause findSafePosition to adjust the supplied spawn; code review cannot prove the requested spawn remains unchanged.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 739,
+      "line_end": 760,
+      "excerpt": "  async function waitForData(timeout = 8000) {\n    // Let a preceding camera teleport schedule its new vector tile requests.\n    await sleep(180);\n    const end = performance.now()+timeout;\n    while (!destroyed && performance.now()<end) {\n      if (map.areTilesLoaded()) {rebuildCollisionCache(true); return true;}\n      await sleep(150);\n    }\n    rebuildCollisionCache(true); return false;\n  }\n  async function findSafePosition({lng,lat,timeout=8000}) {\n    const loaded = await waitForData(timeout); rebuildCollisionCache(true);\n    const blocked=point=>collisionAt(point.lng,point.lat)||streetInteraction.sweep(point,point,{radius:.38,height:1.75});\n    if (!blocked({lng,lat})) return {lng,lat,adjusted:false,verified:loaded && polygons.length>0};\n    const candidates = roadLines.map(road => nearestOnLine({lng,lat},road.coordinates))\n      .filter(p=>p && p.distance<250).sort((a,b)=>a.distance-b.distance);\n    for (const p of candidates) if (!blocked(p)) return {...p,adjusted:true,verified:loaded};\n    for (let radius=3;radius<=120;radius+=3) for(let i=0;i<16;i++) {\n      const p=offsetLngLat({lng,lat},Math.sin(i*Math.PI/8)*radius,Math.cos(i*Math.PI/8)*radius);\n      if(!blocked(p))return {...p,adjusted:true,verified:loaded};\n    }\n    return {lng,lat,adjusted:false,verified:false};"
+    },
+    {
+      "id": "world_player_camera_adapter",
+      "finding": "Avatar positioning offsets the authored sole datum; MapLibre explicit from/to camera preserves world altitudes by disabling centre-ground clamping.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 762,
+      "line_end": 779,
+      "excerpt": "  function setPlayer(lng,lat,heading=0,playerSpeed=0,dt=.016,groundHeight=DEFAULT_GROUND_HEIGHT) {\n    current={lng,lat}; speed=playerSpeed; animationTime+=clamp(dt,0,.1);\n    const height=Number.isFinite(groundHeight)?groundHeight:DEFAULT_GROUND_HEIGHT;\n    const position=geographicPosition(lng,lat,height-(walker.group.userData?.pavingHeightMetres??DEFAULT_GROUND_HEIGHT)); walker.group.position.copy(position);\n    walker.group.rotation.y=-heading*DEG; walker.animate(speed,animationTime);\n    updateLandmarkVisibility(); map.triggerRepaint();\n  }\n  function setCamera({lng,lat,bearing,pitch=72,zoom=20.5,altitude=0}) {\n    explicitCamera=null;\n    map.jumpTo({center:[lng,lat],bearing,pitch:clamp(pitch,0,85),zoom:clamp(zoom,8,22.5),elevation:altitude});\n  }\n  function setCameraFromTo({from,to}) {\n    explicitCamera={...from,alt:from.alt??from.altitude??8};\n    // MapLibre otherwise resets centre elevation to ground on every render,\n    // even with no terrain, silently discarding the elevated walk look target.\n    map.setCenterClampedToGround(false);\n    const opts=map.calculateCameraOptionsFromTo([from.lng,from.lat],explicitCamera.alt,[to.lng,to.lat],to.alt??to.altitude??1.2);\n    map.jumpTo({...opts,pitch:clamp(opts.pitch,0,85),zoom:clamp(opts.zoom,8,WALK_CAMERA_MAX_ZOOM)});"
+    },
+    {
+      "id": "scene_ground_collision_api",
+      "finding": "Scene exposes StreetInteraction support/sweep/camera APIs; no precise-mesh raycast is attached by these APIs.",
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+      "line_start": 820,
+      "line_end": 826,
+      "excerpt": "  return {map,ready:loadedStyle,sourceId,setPlayer,setCamera,setCameraFromTo,collisionAt,findSafePosition,waitForData,\n    collisionRevision:()=>{rebuildCollisionCache();return collisionRevision;},\n    groundAt:(lng,lat)=>streetInteraction.groundAt(lng,lat),\n    sweepLocalCollision:(from,to,options)=>streetInteraction.sweep(from,to,options),\n    localCameraCollision:(from,to,options)=>streetInteraction.cameraCollision(from,to,options),\n    getStreetInteractionState:()=>streetInteraction.getState(),\n    streetInteractionRevision:()=>streetInteraction.revision,"
+    },
+    {
+      "id": "ground_screen_legacy_contract",
+      "finding": "Frozen consumer compares this exact legacy controller dictionary; the altitude field is corrected semantically below.",
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-source-v1/screen_source_ground.py",
+      "bytes": 20116,
+      "sha256": "59d75f0656050d2986b6cff238f112b9546c323786a94cb8c604501c35e74ea5",
+      "line_start": 24,
+      "line_end": 26,
+      "excerpt": "ID = 'xuhui-bajin-residence'\nCONTROLLER = {'pitch_degrees':82,'camera_distance_m':14,'ahead_m':2.8,\n              'target_altitude_above_ground_m':3,'ground_fallback_m':.075}"
+    },
+    {
+      "id": "mesh_screen_default_world_values",
+      "finding": "Mesh screen uses world target3 m and world eye3+14*cos82 m, matching runtime fallback .075 plane; avatar band[-.1,2.3] encloses nominal[.075,1.825].",
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/screen_frozen_model.py",
+      "bytes": 21223,
+      "sha256": "5b53d1b5f3a9ef9b0c66c7a0fd09a09fb834a509ad40d6ac4c1b395b8f979a0c",
+      "line_start": 155,
+      "line_end": 157,
+      "excerpt": "    lon0,lat0=g['anchor'];R=6378137;c=math.cos(math.radians(lat0));m0=math.asinh(math.tan(math.radians(lat0)))\n    lon,lat=nav['walkStart'];start=np.array([R*math.radians(lon-lon0)*c,R*(math.asinh(math.tan(math.radians(lat)))-m0)*c]);b=math.radians(nav['bearing']);u=np.array([math.sin(b),math.cos(b)]);target=start+2.8*u;eye=target-14*math.sin(math.radians(82))*u;eye_alt=3+14*math.cos(math.radians(82))\n    probes={'avatar_disc':(Point(start),.38,[-.10,2.30]),'first_5m_forward_swept_body':(LineString([start,start+5*u]),.38,[-.10,2.30]),'settled_camera_disc':(Point(eye),.12,[eye_alt-.12,eye_alt+.12]),'settled_camera_boom_projection':(LineString([target,eye]),.12,[3-.12,eye_alt+.12])}"
+    },
+    {
+      "id": "source_ground_xy_probes",
+      "finding": "This source-ground stage uses only XY avatar/first5m/camera/boom buffers; its legacy above_ground labels do not enter clearance arithmetic.",
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-source-v1/screen_source_ground.py",
+      "bytes": 20116,
+      "sha256": "59d75f0656050d2986b6cff238f112b9546c323786a94cb8c604501c35e74ea5",
+      "line_start": 119,
+      "line_end": 126,
+      "excerpt": "    def probes_for(start, bearing):\n        radians = math.radians(bearing)\n        u = math.sin(radians), math.cos(radians)\n        at = lambda distance: [start[i] + u[i] * distance for i in (0,1)]\n        end, target, eye = at(5), at(2.8), at(2.8-math.sin(math.radians(82))*14)\n        probes = {'avatar': (Point(start), .38), 'forward_5m': (LineString([start,end]), .38), 'camera': (Point(eye), .12), 'camera_boom': (LineString([target,eye]), .12)}\n        controller = {'pitch_degrees':82,'camera_distance_m':14,'ahead_m':2.8,'target_ground_projection_local_enu_m':target,'camera_ground_projection_local_enu_m':eye,'target_altitude_above_ground_m':3,'camera_altitude_above_ground_m':3+math.cos(math.radians(82))*14,'ground_fallback_m':.075}\n        return probes, controller, end"
+    }
+  ],
+  "validation": {
+    "three_runtime_files_match_frozen_runtime35_rows": true,
+    "all_runtime35_files_reverified_by_this_review": false,
+    "controller_dictionary_matches_consumer_ast_literal": true,
+    "runtime_sources_read_only": true,
+    "screen_consumer_sources_read_only": true,
+    "screen_executed": false,
+    "browser_executed": false,
+    "candidate_executed": false,
+    "ground_images_viewed_by_this_reviewer": false,
+    "root_ground_image_review_claimed": false,
+    "route_accepted": false,
+    "publication_accepted": false
+  },
+  "limitations": [
+    "This record proves the inspected source behavior and its exact file hashes; it does not execute the application or prove runtime cache contents.",
+    "A visually modeled stair, sill, wall, garden surface or opening has no automatic surveyed or traversable ground semantics.",
+    "Finite source-ground and raw-model screens remain separate. Dynamic movement, camera shortening, spawn adjustment and return/full/LOD behavior require actual browser evidence.",
+    "The virtual plane scope does not require a determination of real-world legal access or a complete courtyard survey; neither is claimed."
+  ]
+}

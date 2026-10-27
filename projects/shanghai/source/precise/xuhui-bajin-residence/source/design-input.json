@@ -1,0 +1,215 @@
+{
+  "schema": "bajin-detailed-design-v2",
+  "scope": "Photo-informed main-house exterior; metrics and hidden roof remain estimated. Not yet accepted.",
+  "model_id": "xuhui-bajin-residence",
+  "source_owner": {
+    "uuid": "7b106e12-e86d-48ad-9d07-888fcebe7f25",
+    "macro": "14-13718-6695",
+    "localId": 1950,
+    "osm": "w582302404@1"
+  },
+  "frame": {
+    "asset_coordinates": "Rotation baked: anchor-local East/North/Up, serialized GLB East/Up/-North; no runtime rotation.",
+    "source_quad_EN": [
+      [
+        4.445198668721966,
+        8.461648319245118
+      ],
+      [
+        8.530579336233643,
+        -4.306699794300792
+      ],
+      [
+        -4.7480979384022675,
+        -8.393235836670666
+      ],
+      [
+        -8.323163055157018,
+        4.375107321653024
+      ]
+    ],
+    "source_quad_architectureXY": [
+      [
+        6.775403804308326,
+        6.741897861252093
+      ],
+      [
+        6.84914497886833,
+        -6.663907261393248
+      ],
+      [
+        -7.04390951115578,
+        -6.585907731002746
+      ],
+      [
+        -6.630761821542313,
+        6.667053695950669
+      ]
+    ],
+    "width_m": 13.649823994421077,
+    "depth_m": 13.33270376446859,
+    "footprint_is_coarse_source_reference_not_surveyed_walls": true,
+    "architecture_coordinates": "Construction X right from south garden; Y toward north entrance; Z Up.",
+    "anchor": [
+      121.43606524072175,
+      31.21051863775041
+    ],
+    "architecture_X_EN": [
+      0.9540966320448333,
+      0.299498942770598
+    ],
+    "architecture_Y_EN": [
+      -0.299498942770598,
+      0.9540966320448333
+    ],
+    "heading_after_baking_degrees": 0
+  },
+  "observations": {
+    "garden": "4groundbays,4upperbays,widearchedatticwindow,bent/slightlymansard-likegable. Whitewindowcills andgreenframes.",
+    "entry": "Northarchentry supported by institutional2024/2021texts. Semicircularportal,true recess,centralupperwindow,3smallatticwindows,nearlystraightcroppedupper eave,forwardcentralbay andsmallreturns.",
+    "excluded": "Lowannex,plot1400sqm,streetgate/garden/neighbors/interiors.",
+    "hidden_sides": "No repetitiveopenings inferred. Sidewallshape androofjunctions estimated."
+  },
+  "source_texts": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/research/residence-location-v2/architecture2024.json",
+      "url": "https://www.thepaper.cn/newsDetail_forward_29452863",
+      "fact": "ShanghaiUrbanConstructionArchives: southgroundloggia/steppedeavegable; northsemicirculararch."
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/research/residence-location-v2/architecture2021.json",
+      "url": "https://m.thepaper.cn/baijiahao_14655116",
+      "fact": "ShanghaiHistoricBuildingProtectionCenter: gentledoublepitchedroofwithslightmansardfeatures; quoted2008textalsosaysxie-shan/flattiles. Exacthiddenjunctionnotresolved."
+    }
+  ],
+  "photo_pixel_notes": {
+    "garden_35823448": {
+      "source_wh": [
+        960,
+        720
+      ],
+      "approx_leaf_top_y": 470,
+      "approx_leaf_bottom_y": 554,
+      "full_aperture_top_y": 442,
+      "roof_ridge_y": 85,
+      "right_roof_knee_xy": [
+        720,
+        252
+      ],
+      "right_eave_xy": [
+        758,
+        323
+      ],
+      "limitations": "Perspective,canopy,frontedgeendpointuncertain; noimagehomographyorsurveycalibration. Doorleafheightisdistinctfromtransomapertureheight."
+    },
+    "entry_35823445": {
+      "source_wh": [
+        960,
+        1280
+      ],
+      "approximately_parallel": "eave,windowheads,andstoreyband; topoutlinecropped",
+      "limitations": "Perspective/croppedroofdoNOTproveflatentirerooforwestentrance."
+    }
+  },
+  "metric_policy": {
+    "source_height16_416m_used": false,
+    "site1400sqm_used_to_scale": false,
+    "total641sqm_used_to_scale": false,
+    "assumed_garden_door_leaf_height_C_m": 2.2,
+    "full_garden_opening_C_m": 2.85,
+    "all_heights_estimated": true,
+    "pressure_cases_are_not_confidence_intervals": true
+  },
+  "dimensions_C": {
+    "plinth_top": 0.3,
+    "garden_eave": 6.6,
+    "garden_roof_knee": 8.4,
+    "garden_ridge": 12.3,
+    "roof_knee_x": 5.65,
+    "entry_bay_width": 7.6,
+    "entry_bay_projection": 0.18,
+    "entry_eave": 9.6,
+    "porch_recess": 1.05,
+    "porch_arch_width": 4.25,
+    "porch_arch_top": 3.75,
+    "roof_overhang": 0.38
+  },
+  "height_cases": {
+    "L": {
+      "door_leaf_m": 2.1,
+      "z_scale": 0.9545454545454545
+    },
+    "C": {
+      "door_leaf_m": 2.2,
+      "z_scale": 1.0
+    },
+    "H": {
+      "door_leaf_m": 2.3,
+      "z_scale": 1.0454545454545452
+    }
+  },
+  "roof_cases": {
+    "A": {
+      "north_transition_depth_m": 2.0,
+      "meaning": "Shortestimatedrearhip/raisedbayjunction. SameobservedN/Sfacades."
+    },
+    "B": {
+      "north_transition_depth_m": 4.5,
+      "meaning": "Longestimatedrearhip/raisedbayjunction. SameobservedN/Sfacades."
+    }
+  },
+  "source_images_republished": false,
+  "geometry_original_author": "agent",
+  "MAIN_modified": false,
+  "remote_modified": false,
+  "accepted": false,
+  "correction_v2": {
+    "rejected_first": "rejected-first",
+    "north_eave_old_m": 10.2,
+    "north_eave_new_m": 9.6,
+    "reason": "Firstdraft northcap escaped observed southgable silhouette atbaycorners. Loweredestimatedcapandatticwindows; mainSouthprofile remainsunchanged. Wall/portal coplanar endcaps corrected."
+  },
+  "selected_roof_case": "B_PLANAR",
+  "selected_height_case": "C",
+  "root_spatial_review": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-spatial-review-v1.json",
+  "planar_roof": {
+    "formula": "min(piecewise south gambrel planes, north hip plane)",
+    "north_hip_decline_m": 2.7,
+    "north_hip_run_m": 4.5,
+    "north_cap_reference": "Projected north bay face, y=depth/2+0.18; height9.6m",
+    "no_bilinear_blending": true
+  },
+  "revision_scope": [
+    "North arch legs stop on low-wall coping; coping extends to arch outer edge without crossing opening.",
+    "North three steps retain heights/front edges and taper in width toward the door; dimensions explicitly estimated.",
+    "One canonical copyright string for generated GLB, native and HANDOFF metadata."
+  ],
+  "north_entry_revision": {
+    "coping_inner_u_m": 0.885,
+    "coping_outer_u_m": 2.345,
+    "coping_bottom_m": 1.2,
+    "coping_top_m": 1.34,
+    "arch_leg_bottom_m": 1.34,
+    "step_widths_bottom_to_top_m": [
+      2.25,
+      2.04,
+      1.84
+    ],
+    "step_riser_heights_m": [
+      0.1,
+      0.1,
+      0.1
+    ],
+    "step_fronts_from_facade_m": [
+      0.91,
+      0.68,
+      0.45
+    ],
+    "metric_status": "Unmeasured estimates; photo-informed tier taper. Existing total height0.30m and run0.91m retained.",
+    "central_clear_gap_m": 1.77,
+    "low_wall_inner_u_m": 0.92,
+    "low_wall_outer_u_m": 2.125,
+    "low_wall_front_projection_m": 0.03,
+    "low_wall_front_projection_status": "Existing unmeasured v1 estimate retained; only outer edge closes original5mm seam."
+  }
+}

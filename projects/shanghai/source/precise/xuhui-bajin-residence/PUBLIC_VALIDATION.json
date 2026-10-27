@@ -1,0 +1,128 @@
+{
+  "schema": "bajin-public-layout-actual-validation-v1",
+  "actual_execution": true,
+  "staged_input_files": [
+    "source/asset-metadata.json",
+    "source/author_buffer_check.py",
+    "source/bajin_base.py",
+    "source/build_model.py",
+    "source/build_palette.py",
+    "source/check_native_metadata.py",
+    "source/check_revision.py",
+    "source/common/LICENSE",
+    "source/common/photo_architecture.py",
+    "source/design-input.json",
+    "source/facade_details.py",
+    "source/generate_material.py",
+    "source/geometry-input.json",
+    "source/north_steps.py",
+    "source/parent-binding.json",
+    "source/render_native.py",
+    "source/roof_planar.py",
+    "source/write_handoff.py",
+    "LICENSE",
+    "provenance/PORTABLE-v2.json",
+    "README.md",
+    "source/encode_web.py",
+    "source/requirements.txt",
+    "PUBLIC_REPRODUCTION.json"
+  ],
+  "generated_outputs_absent_initially": true,
+  "commands": [
+    {
+      "stage": "material",
+      "arguments_from_package_root": [
+        "source/generate_material.py",
+        "--output",
+        "textures"
+      ],
+      "exit_code": 0
+    },
+    {
+      "stage": "model",
+      "arguments_from_package_root": [
+        "source/build_model.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "stage": "web",
+      "arguments_from_package_root": [
+        "source/encode_web.py",
+        "--raw",
+        "exports/bajin-main-detailed.glb",
+        "--lod",
+        "exports/bajin-main-lod.glb",
+        "--out",
+        "web",
+        "--gltfpack",
+        "/workspace/shanghai_tools/node_modules/.bin/gltfpack"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "outputs": [
+    {
+      "file": "exports/bajin-main-detailed.glb",
+      "bytes": 5069420,
+      "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "exports/bajin-main-lod.glb",
+      "bytes": 1827660,
+      "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "textures/MATERIAL.json",
+      "bytes": 4431,
+      "sha256": "63c678c23396d988f97bda094537e86d87b69f4542c0e51678bc75570fadd894",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "textures/bajin-original-pebbledash-basecolor.png",
+      "bytes": 442583,
+      "sha256": "2480aeaf179746babf36fded9cc7e30446adb718cef3278cde387148e6dd16e7",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "textures/bajin-original-pebbledash-normal.png",
+      "bytes": 533654,
+      "sha256": "d6128f5b4d534ece5d26c0ec6e2ea9941b20db910400596e2f6b98e123c62a51",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "textures/bajin-original-pebbledash-orm.png",
+      "bytes": 361134,
+      "sha256": "3312465e2fc6bce740553d9656ec477b577c8f2141537b9a5d2fb559c8afabf6",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "web/xuhui-bajin-residence-lod.glb",
+      "bytes": 1506616,
+      "sha256": "84fa2298706be03422083303fb92eafcbbd8233e5cc76c817ec934c2c692ebeb",
+      "matches_frozen_expected_bytes": true
+    },
+    {
+      "file": "web/xuhui-bajin-residence-web.glb",
+      "bytes": 2868520,
+      "sha256": "09f01bbe0511b170eacde85a55fc05da2f4b22eba8b2143349a76c771f8dce84",
+      "matches_frozen_expected_bytes": true
+    }
+  ],
+  "all_eight_outputs_byte_identical": true,
+  "python": "3.12.14",
+  "gltfpack_version": "gltfpack 1.3",
+  "python_isolation": "-B -I with explicit installed Shapely site-packages; reads restricted to temporary tree/system dependencies, writes restricted to temporary tree, socket operations denied. Only explicitly selected gltfpack child allowed.",
+  "external_encoder_scope": "External trusted gltfpack installation invoked with only temporary input/output paths. Python audit restrictions do not instrument the encoder process itself.",
+  "root_review_or_adjacent_model_read_required": false,
+  "native_render_repeated": false,
+  "temporary_peak_logical_bytes": 14050541,
+  "temporary_peak_allocated_bytes": 14159872,
+  "temporary_budget_bytes": 15000000,
+  "minimum_free_disk_bytes": 462020608,
+  "temporary_directory_cleaned": true,
+  "temporary_directory_path": "/tmp/bajin-public-repro-qpdvjgo0",
+  "does_not_assert_browser_or_publication_acceptance": true
+}

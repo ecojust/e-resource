@@ -1,3 +1,29 @@
+# V20 巴金旧居主楼
+
+**[直接进入巴金旧居室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+
+当前目录37处建筑入口，分布在14个区；全市16区底图的1,796,419个建筑及部件要素尚未全部逐栋精细复原。金山、崇明的逐栋精模仍待补充。
+
+本轮新增徐汇区**巴金旧居主楼**。依据建筑文献及照片复原武康路113号主楼外观。
+
+包含南侧折线山墙、拱形阁楼窗、绿色分格门窗、北侧拱廊入口、三层台阶与屋面瓦片细节。墙面使用原创卵石抹灰材质，提供可编辑Blender文件及可复现建模源码。
+
+仅替换1950号主楼源要素，保留同近景其他17个要素和既有36处导航。南侧室外起点、首段5米和默认镜头经过实际网格及80个邻域源轮廓筛查。浏览器已验证有限键盘行走；地面仍使用虚拟平面，楼内行走与楼梯碰撞不在本次范围。最终目录数据和地块替换检查通过，动态目录的完整加载卸载流程尚未单独验证。
+
+实际raw/web/LOD面数分别为50,668/50,668/7,396。四件模型合计12,660,118字节，单文件最大5,069,420字节，均严格小于100,000,000字节。35个运行时代码文件和v13下载ZIP保持原字节；旧ZIP不含本轮模型。
+
+原始模型、远景源模型、三张纹理及两份网页模型已从公开源码布局重新生成并核对一致。实际浏览器14项检查通过，包括目录直达、链接重载、近景与远景切换、贴图加载、第三人称移动和松键停止；五张实际截图已人工核对。
+
+[模型审查](data/audit/precise-buildings-v20/xuhui-bajin-residence/model-review.json) · [浏览器记录](data/audit/precise-buildings-v20/xuhui-bajin-residence/browser.json) · [截图审查](data/audit/precise-buildings-v20/xuhui-bajin-residence/visual-review.json) · [网格与导航筛查](data/audit/precise-buildings-v20/xuhui-bajin-residence/model-clearance.json) · [邻楼检查](data/audit/precise-buildings-v20/xuhui-bajin-residence/model-neighbor-screen.json)
+
+尺寸以2.20米门扇高度先验推估，约12.33米模型高度、隐藏北屋面及侧墙均非测绘结果；花园、附楼、围墙和室内未纳入本轮模型。全市建筑尚未全部逐栋精细复原。
+
+[网页GLB](assets/models/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence-web.glb) · [原始GLB](assets/models/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence-raw.glb) · [远景GLB](assets/models/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence-lod.glb) · [Blender](assets/native/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence.blend) · [来源与许可](source/precise/xuhui-bajin-residence/README.md)
+
+旧36处模型的时间与资产提交依据保持；本楼版本时间以实际模型提交的committer date为准。以下完整保留已发布V19状态和此前历史。
+
+---
+
 # V19 邬达克旧居
 
 **[直接进入邬达克旧居室外漫游](https://rawcdn.githack.com/ecojust/e-resource/7e178aaed36b6fc2361861b3101e48d155dbc2b2/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)

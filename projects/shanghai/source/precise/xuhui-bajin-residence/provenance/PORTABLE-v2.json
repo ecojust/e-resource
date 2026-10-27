@@ -1,0 +1,159 @@
+{
+  "schema": "bajin-portable-source-v2",
+  "author": "agent",
+  "copyright": "Original geometry and procedural materials: agent, MIT. Source footprint: ODbL-1.0, OpenStreetMap contributors / CMAB. Photographs are references only and are not embedded.",
+  "frozen_source_files": [
+    {
+      "file": "LICENSE",
+      "bytes": 1062,
+      "sha256": "04da979aa090babca2a5a490ad081f521703f20a7749398c5475cc9771b854cc"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3097,
+      "sha256": "f055accd3d6164495ea27cbab0135af731b1e7a1e1608c0ac5ae48823ab0cfcf"
+    },
+    {
+      "file": "source/asset-metadata.json",
+      "bytes": 215,
+      "sha256": "814273cb3f1b4752bd40cfecd7dbd1a799dd5b344069017e366348a118f0dfd2"
+    },
+    {
+      "file": "source/author_buffer_check.py",
+      "bytes": 2672,
+      "sha256": "6e22c59bab0715e760844745a7d00bd3d504a5bec25443181680696ec7e71028"
+    },
+    {
+      "file": "source/bajin_base.py",
+      "bytes": 9223,
+      "sha256": "a5e426b30690197fa6626c5f623d5a781c1e1e0a26dfd9ba8a53063cff59b0c1"
+    },
+    {
+      "file": "source/build_model.py",
+      "bytes": 5280,
+      "sha256": "375ef224bfe41268f1046db8bf4e6b0755de50372553227825c66d2dcb6c4afa"
+    },
+    {
+      "file": "source/build_palette.py",
+      "bytes": 1254,
+      "sha256": "9f2da036f800fe32461b837dc94bcecfad1c032d214c6088ce05cc987d33aacc"
+    },
+    {
+      "file": "source/check_native_metadata.py",
+      "bytes": 1199,
+      "sha256": "5e9b4d5f5ab88d6f18c0f67b67c9ef40c0bdb3fc2637a0872514f3d28d43be4d"
+    },
+    {
+      "file": "source/check_revision.py",
+      "bytes": 6204,
+      "sha256": "962910e76f02a49343d7e012d34f2e2e8dcebb1c221be781df0679b826db5800"
+    },
+    {
+      "file": "source/common/LICENSE",
+      "bytes": 1066,
+      "sha256": "1877e621fd1f3208fe8412093f6a608066ad260c0d060113af0c70cb85d26089"
+    },
+    {
+      "file": "source/common/photo_architecture.py",
+      "bytes": 21897,
+      "sha256": "572669f2f4f61347eb8b50f19ef35563550a614f2941ac3a96ebb8d24f7b0c49"
+    },
+    {
+      "file": "source/design-input.json",
+      "bytes": 6980,
+      "sha256": "802b1f9c04ac171cea24363b03d9df6cb07cc3b199aa3667abdc55844fdf247e"
+    },
+    {
+      "file": "source/facade_details.py",
+      "bytes": 7102,
+      "sha256": "32cc81ebafb04bc4a3184ae894186b935cd91f2890bfef5eafd511214f6c78b6"
+    },
+    {
+      "file": "source/generate_material.py",
+      "bytes": 9739,
+      "sha256": "ff244bb5bd5941515fcaaa789439772332d19ccd586033e48485b02f73843915"
+    },
+    {
+      "file": "source/geometry-input.json",
+      "bytes": 30553,
+      "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+    },
+    {
+      "file": "source/north_steps.py",
+      "bytes": 1860,
+      "sha256": "716214405f2144c4ec7063afa30852297d56c1d75a5e6308f65a2f497781fd54"
+    },
+    {
+      "file": "source/parent-binding.json",
+      "bytes": 288,
+      "sha256": "d84bf9b694480850154e8ae1b120b2152964b6d373b5ba6579ab335cef304fdb"
+    },
+    {
+      "file": "source/render_native.py",
+      "bytes": 5617,
+      "sha256": "9f480db3efe935cd71c8efe7944d4a8a4bb211eea7aa33215de38953e2f575cc"
+    },
+    {
+      "file": "source/roof_planar.py",
+      "bytes": 5165,
+      "sha256": "78690ae227cbaeaa05eb74fe91b7fdeaf86124bb60a025f97bcbade60a09aa92"
+    },
+    {
+      "file": "source/write_handoff.py",
+      "bytes": 6689,
+      "sha256": "b33ec97861bec8db3c6989c08b3bb129579b42ffa3bf2b52c0e8a0d62b890371"
+    }
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "shapely": "2.2.0",
+    "Pillow": "12.3.0",
+    "Blender": "4.3.2"
+  },
+  "reviewed_commands_from_package_root": [
+    "python source/generate_material.py --output textures",
+    "python source/build_model.py",
+    "python source/author_buffer_check.py",
+    "blender --background --threads 2 --python source/render_native.py",
+    "blender --background review/native/bajin-main-house.blend --python source/check_native_metadata.py"
+  ],
+  "network_required": false,
+  "private_reference_reads_required": false,
+  "optional_parent_comparison": "source/check_revision.py reads adjacent frozen bajin-detailed-v1; it is not required for isolated model reproduction.",
+  "expected_deterministic_outputs": [
+    {
+      "file": "exports/bajin-main-detailed.glb",
+      "bytes": 5069420,
+      "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71"
+    },
+    {
+      "file": "exports/bajin-main-lod.glb",
+      "bytes": 1827660,
+      "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d"
+    },
+    {
+      "file": "textures/MATERIAL.json",
+      "bytes": 4431,
+      "sha256": "63c678c23396d988f97bda094537e86d87b69f4542c0e51678bc75570fadd894"
+    },
+    {
+      "file": "textures/bajin-original-pebbledash-basecolor.png",
+      "bytes": 442583,
+      "sha256": "2480aeaf179746babf36fded9cc7e30446adb718cef3278cde387148e6dd16e7"
+    },
+    {
+      "file": "textures/bajin-original-pebbledash-normal.png",
+      "bytes": 533654,
+      "sha256": "d6128f5b4d534ece5d26c0ec6e2ea9941b20db910400596e2f6b98e123c62a51"
+    },
+    {
+      "file": "textures/bajin-original-pebbledash-orm.png",
+      "bytes": 361134,
+      "sha256": "3312465e2fc6bce740553d9656ec477b577c8f2141537b9a5d2fb559c8afabf6"
+    }
+  ],
+  "native_and_preview_hashes_not_cross_environment_deterministic": true,
+  "LOD_part_selection_rule": "omit labels starting flat-tiles/, ending /door-handle, or containing /panel-bead-; keep all other full parts",
+  "isolated_independent_reproduction_status": "pending v2 review"
+}

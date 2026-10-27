@@ -1,0 +1,675 @@
+{
+  "schema": "bajin-v20-bounded-source-ground-review",
+  "created_at_utc": "2026-10-27T21:38:27.085047+00:00",
+  "building_id": "xuhui-bajin-residence",
+  "root_source_owner_authorization": {
+    "root_model_review": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-source-owner-mesh-review-v1.json",
+      "bytes": 5123,
+      "sha256": "dcbc5859d6d08d172d58220bdf849046ae4d3859634972de565e0627213b93bf"
+    },
+    "source_geometry_input": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+      "bytes": 30553,
+      "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+    },
+    "root_source_review": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-source-context-v3.json",
+      "bytes": 4121,
+      "sha256": "750337eac7b7adaefa6a787874b75b15f25cb9813d9008ba66b501733acc040d"
+    },
+    "frozen_baseline": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/freeze-v1/baseline.json",
+      "bytes": 46551,
+      "sha256": "e7e0ea7530311c844564b1b8a8babfe16eb53c5fc89629544ab60429ca143a3f"
+    },
+    "frozen_helper": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/owner-tools-v1/run_owner.py",
+      "bytes": 8216,
+      "sha256": "f98dc4b83575134f1bbefa682f6427723a79db6d9e17d6d2591c87835b305352"
+    },
+    "assets": {
+      "raw": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-detailed.glb",
+        "bytes": 5069420,
+        "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71"
+      },
+      "lod_raw": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-lod.glb",
+        "bytes": 1827660,
+        "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d"
+      },
+      "native": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/review/native/bajin-main-house.blend",
+        "bytes": 3215562,
+        "sha256": "7ba806ac838d1f1d483cc41d31267d831d4c42d6ed0d78bced63e53f09512c9d"
+      }
+    },
+    "scope": "source_owner_generation",
+    "publication_accepted": false
+  },
+  "passed_source_screen_only": true,
+  "scope_of_pass": "Only complete bounded mapped building/water and all 80 frozen-neighbor finite-probe nonintersection. No measured paving, public-sidewalk/access, final mesh or browser acceptance.",
+  "final_model_accepted": false,
+  "browser_passed": false,
+  "main_written": false,
+  "precise_public_sidewalk_membership_verified": false,
+  "current_clear_pedestrian_width_verified": false,
+  "candidate_binding": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/actual-source-ground-v1/navigation-proposal.json",
+    "bytes": 5787,
+    "sha256": "97229b53cabe6ec30d94aeffb70431d0ec378b0943618f5b5d7843060959841a"
+  },
+  "candidate_id": "south-center",
+  "candidate_navigation": {
+    "walkStart": [
+      121.43612500956901,
+      31.21035579248866
+    ],
+    "bearing": 342.5724890272513
+  },
+  "coordinate_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+    "bytes": 30553,
+    "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+  },
+  "effective_neighborhood": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-neighborhood-v1.json",
+    "bytes": 151432,
+    "sha256": "ff8577de1dd14218d5a4bd03a117ed3a04b15bce704baaa9f18bf30396414a3e"
+  },
+  "effective_neighbors_checked": 80,
+  "osm_input": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/osm-navigation-context.osm",
+    "bytes": 42424,
+    "sha256": "98e71e8edc247f5b43471413f68dd0a3237fb9e821a987ba7d5c89f808577e33"
+  },
+  "fetch": {
+    "schema": "bajin-v20-bounded-osm-fetch-receipt-v1",
+    "created_at_utc": "2026-10-27T21:36:42.099055+00:00",
+    "completed_at_utc": "2026-10-27T21:36:42.913678+00:00",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=121.4354350424%2C31.2099796470%2C121.4366954390%2C31.2110576254",
+    "method": "GET",
+    "requests": 1,
+    "status": 200,
+    "scope": "One bounded approximately120x120m public source-context read for the root-selected finite virtual-plane exterior route; not a measured garden, ground, access or public-sidewalk survey.",
+    "max_response_bytes": 500000,
+    "anchor": [
+      121.43606524072175,
+      31.21051863775041
+    ],
+    "local_bbox_east_north_m": [
+      -60,
+      -60,
+      60,
+      60
+    ],
+    "query_bbox": [
+      121.43543504241006,
+      31.20997964704395,
+      121.43669543903343,
+      31.211057625384882
+    ],
+    "actual_response_bbox": [
+      121.435435,
+      31.2099796,
+      121.4366954,
+      31.2110576
+    ],
+    "content_type": "application/xml; charset=utf-8",
+    "response_headers": {
+      "Date": "Tue, 27 Oct 2026 21:36:42 GMT"
+    },
+    "bytes": 42424,
+    "truncated": false,
+    "file": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/osm-navigation-context.osm",
+    "sha256": "98e71e8edc247f5b43471413f68dd0a3237fb9e821a987ba7d5c89f808577e33",
+    "osm_counts": {
+      "node": 155,
+      "way": 21,
+      "relation": 3
+    },
+    "missing_way_node_refs": [],
+    "root_provisional_route_selection": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-provisional-navigation-selection-v1.json",
+      "bytes": 1539,
+      "sha256": "8bda576b1a2f9f9e0794e39ae5cd12aacf881616497969015521aad2d708bf20"
+    },
+    "frozen_source_geometry": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+      "bytes": 30553,
+      "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+    },
+    "fetch_tool": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/fetch_osm.py",
+      "bytes": 5351,
+      "sha256": "d4aa6b87a25c3585fd7471f5b6e7b88e7f60bfd108a553cd80dc9af2715808e6"
+    },
+    "ground_review_passed": false,
+    "real_world_access_confirmed": false,
+    "candidate_or_browser_accepted": false,
+    "MAIN_written": false,
+    "remote_written": false
+  },
+  "fetch_receipt": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/fetch.json",
+    "bytes": 2424,
+    "sha256": "c6373f169940797108604180d45bcc005437897b61b58e519ce90df5b5cb9f03"
+  },
+  "navigation_request": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/navigation-request.json",
+    "bytes": 1906,
+    "sha256": "429e935a25b316153dc72353506819f17e9f3e96c1139b03e28be8fbcf784815"
+  },
+  "osm_counts": {
+    "node": 155,
+    "way": 21,
+    "relation": 3
+  },
+  "query_bbox": {
+    "minlat": "31.2099796",
+    "minlon": "121.4354350",
+    "maxlat": "31.2110576",
+    "maxlon": "121.4366954"
+  },
+  "all_probe_buffers_inside_requested_bbox": true,
+  "all_probe_buffers_inside_frozen_neighborhood_radius": true,
+  "incomplete_way_node_refs": [],
+  "invalid_way_geometries": [],
+  "mapped_water_or_fountain_ways": [],
+  "water_relations_pending": [],
+  "water_nodes_pending": [],
+  "nonpolygon_water_areas_pending": [],
+  "building_relations_pending": [],
+  "live_osm_building_checks": {
+    "avatar": {
+      "nearest": [
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 11.059708930332413
+        },
+        {
+          "osm_way": "582302404",
+          "version": "1",
+          "name": null,
+          "clearance_m": 12.072885463741192
+        },
+        {
+          "osm_way": "582302423",
+          "version": "1",
+          "name": null,
+          "clearance_m": 24.21163986334562
+        }
+      ],
+      "intersections": []
+    },
+    "forward_5m": {
+      "nearest": [
+        {
+          "osm_way": "582302404",
+          "version": "1",
+          "name": null,
+          "clearance_m": 7.073243923294348
+        },
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 10.396501029948682
+        },
+        {
+          "osm_way": "582302423",
+          "version": "1",
+          "name": null,
+          "clearance_m": 24.18005115257705
+        }
+      ],
+      "intersections": []
+    },
+    "camera": {
+      "nearest": [
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 18.050517755570937
+        },
+        {
+          "osm_way": "582310945",
+          "version": "1",
+          "name": null,
+          "clearance_m": 18.216648476281694
+        },
+        {
+          "osm_way": "582310944",
+          "version": "1",
+          "name": null,
+          "clearance_m": 19.20451398561001
+        }
+      ],
+      "intersections": []
+    },
+    "camera_boom": {
+      "nearest": [
+        {
+          "osm_way": "582302404",
+          "version": "1",
+          "name": null,
+          "clearance_m": 9.53308620109096
+        },
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 10.799949567102784
+        },
+        {
+          "osm_way": "582310945",
+          "version": "1",
+          "name": null,
+          "clearance_m": 18.216648476281694
+        }
+      ],
+      "intersections": []
+    }
+  },
+  "frozen_source_and_effective_neighbor_checks": {
+    "avatar": {
+      "radius_m": 0.38,
+      "frozen_source_owner_clearance_m": 11.994350753431865,
+      "live_osm_building_nearest": [
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 11.059708930332413
+        },
+        {
+          "osm_way": "582302404",
+          "version": "1",
+          "name": null,
+          "clearance_m": 12.072885463741192
+        },
+        {
+          "osm_way": "582302423",
+          "version": "1",
+          "name": null,
+          "clearance_m": 24.21163986334562
+        }
+      ],
+      "live_osm_building_intersections": [],
+      "effective_neighbor_nearest": [
+        {
+          "macro": "14-13718-6695",
+          "key": "building:3c991a62-b7af-4549-a2ff-e1e0097f9c63",
+          "local_id": 938,
+          "clearance_m": 11.211262695598442
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:b745888a-ba73-4409-9ca4-bd1a64bbb227",
+          "local_id": 2974,
+          "clearance_m": 23.840369065982973
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:73efa396-9adf-4b3a-bb22-38517ebfafdd",
+          "local_id": 1828,
+          "clearance_m": 27.27472384005118
+        }
+      ],
+      "effective_neighbor_intersections": []
+    },
+    "forward_5m": {
+      "radius_m": 0.38,
+      "frozen_source_owner_clearance_m": 6.9944295519906206,
+      "live_osm_building_nearest": [
+        {
+          "osm_way": "582302404",
+          "version": "1",
+          "name": null,
+          "clearance_m": 7.073243923294348
+        },
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 10.396501029948682
+        },
+        {
+          "osm_way": "582302423",
+          "version": "1",
+          "name": null,
+          "clearance_m": 24.18005115257705
+        }
+      ],
+      "live_osm_building_intersections": [],
+      "effective_neighbor_nearest": [
+        {
+          "macro": "14-13718-6695",
+          "key": "building:3c991a62-b7af-4549-a2ff-e1e0097f9c63",
+          "local_id": 938,
+          "clearance_m": 10.539484731845686
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:b745888a-ba73-4409-9ca4-bd1a64bbb227",
+          "local_id": 2974,
+          "clearance_m": 23.840369065982973
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:73efa396-9adf-4b3a-bb22-38517ebfafdd",
+          "local_id": 1828,
+          "clearance_m": 27.27472384005118
+        }
+      ],
+      "effective_neighbor_intersections": []
+    },
+    "camera": {
+      "radius_m": 0.12,
+      "frozen_source_owner_clearance_m": 23.317929354256282,
+      "live_osm_building_nearest": [
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 18.050517755570937
+        },
+        {
+          "osm_way": "582310945",
+          "version": "1",
+          "name": null,
+          "clearance_m": 18.216648476281694
+        },
+        {
+          "osm_way": "582310944",
+          "version": "1",
+          "name": null,
+          "clearance_m": 19.20451398561001
+        }
+      ],
+      "live_osm_building_intersections": [],
+      "effective_neighbor_nearest": [
+        {
+          "macro": "14-13718-6695",
+          "key": "building:73efa396-9adf-4b3a-bb22-38517ebfafdd",
+          "local_id": 1828,
+          "clearance_m": 18.12262342311521
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:3c991a62-b7af-4549-a2ff-e1e0097f9c63",
+          "local_id": 938,
+          "clearance_m": 18.176287565716724
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:e39e6d9d-22f5-43b8-952a-cca208390daf",
+          "local_id": 3671,
+          "clearance_m": 19.013006507001226
+        }
+      ],
+      "effective_neighbor_intersections": []
+    },
+    "camera_boom": {
+      "radius_m": 0.12,
+      "frozen_source_owner_clearance_m": 9.454394880624768,
+      "live_osm_building_nearest": [
+        {
+          "osm_way": "582302404",
+          "version": "1",
+          "name": null,
+          "clearance_m": 9.53308620109096
+        },
+        {
+          "osm_way": "582302407",
+          "version": "1",
+          "name": null,
+          "clearance_m": 10.799949567102784
+        },
+        {
+          "osm_way": "582310945",
+          "version": "1",
+          "name": null,
+          "clearance_m": 18.216648476281694
+        }
+      ],
+      "live_osm_building_intersections": [],
+      "effective_neighbor_nearest": [
+        {
+          "macro": "14-13718-6695",
+          "key": "building:3c991a62-b7af-4549-a2ff-e1e0097f9c63",
+          "local_id": 938,
+          "clearance_m": 10.946144606525726
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:73efa396-9adf-4b3a-bb22-38517ebfafdd",
+          "local_id": 1828,
+          "clearance_m": 18.12262342311521
+        },
+        {
+          "macro": "14-13718-6695",
+          "key": "building:e39e6d9d-22f5-43b8-952a-cca208390daf",
+          "local_id": 3671,
+          "clearance_m": 19.013006507001226
+        }
+      ],
+      "effective_neighbor_intersections": []
+    }
+  },
+  "nearest_highways": [
+    {
+      "osm_way": "144504787",
+      "version": "11",
+      "tags": {
+        "highway": "residential",
+        "lanes": "2",
+        "name": "湖南路",
+        "name:en": "Hunan Road",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 18.09811526601786,
+      "distance_to_first5m_centerline_m": 18.09811526601786,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "1272480707",
+      "version": "2",
+      "tags": {
+        "cycleway:both": "no",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "武康路",
+        "name:en": "Wukang Road",
+        "old_name": "Route Ferguson",
+        "oneway": "yes",
+        "oneway:bicycle": "no",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 30.53705169286032,
+      "distance_to_first5m_centerline_m": 27.980232400676115,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "47451483",
+      "version": "27",
+      "tags": {
+        "cycleway:both": "no",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "武康路",
+        "name:en": "Wukang Road",
+        "old_name": "Route Ferguson",
+        "oneway": "yes",
+        "oneway:bicycle": "no",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 41.64699633232152,
+      "distance_to_first5m_centerline_m": 41.64699633232152,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "232920699",
+      "version": "11",
+      "tags": {
+        "cycleway:both": "no",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "湖南路",
+        "name:en": "Hunan Road",
+        "oneway": "yes",
+        "oneway:bicycle": "no",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 41.64699633232152,
+      "distance_to_first5m_centerline_m": 41.64699633232152,
+      "distance_is_not_curb_or_lane_edge": true
+    }
+  ],
+  "nearest_explicit_footway": null,
+  "tagged_nodes_within40m": [
+    {
+      "osm_node": "6366812757",
+      "tags": {
+        "amenity": "cafe",
+        "name": "Modi Cafe",
+        "outdoor_seating": "no",
+        "takeaway": "yes",
+        "was:amenity": "restaurant",
+        "was:name:en": "SmoothieBowl"
+      },
+      "local_east_north_m": [
+        -22.768139867836872,
+        -32.38699240848284
+      ],
+      "distance_to_start_m": 31.83106315021803
+    }
+  ],
+  "source_land_at_start": [],
+  "visual_ground_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-actual-ground-visual-notes-v1.json",
+    "bytes": 3121,
+    "sha256": "c565ddd1d6303554f35629682c8c1b34464b417f891b9d0e890aa87a62d87267"
+  },
+  "runtime_source_inputs": [
+    {
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    }
+  ],
+  "runtime_scope_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/runtime-scope-review.json",
+    "bytes": 38153,
+    "sha256": "e6cad2b2478f1c6148ad97737d72ee85be154b7ea530aa5cd2937182b1815c26"
+  },
+  "tool": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-source-v1/screen_source_ground.py",
+    "bytes": 20116,
+    "sha256": "59d75f0656050d2986b6cff238f112b9546c323786a94cb8c604501c35e74ea5"
+  },
+  "input_preservation": {
+    "all_watched_exact": true,
+    "files": [
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+        "bytes": 30553,
+        "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-neighborhood-v1.json",
+        "bytes": 151432,
+        "sha256": "ff8577de1dd14218d5a4bd03a117ed3a04b15bce704baaa9f18bf30396414a3e"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/osm-navigation-context.osm",
+        "bytes": 42424,
+        "sha256": "98e71e8edc247f5b43471413f68dd0a3237fb9e821a987ba7d5c89f808577e33"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/fetch.json",
+        "bytes": 2424,
+        "sha256": "c6373f169940797108604180d45bcc005437897b61b58e519ce90df5b5cb9f03"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-actual-ground-visual-notes-v1.json",
+        "bytes": 3121,
+        "sha256": "c565ddd1d6303554f35629682c8c1b34464b417f891b9d0e890aa87a62d87267"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/runtime-scope-review.json",
+        "bytes": 38153,
+        "sha256": "e6cad2b2478f1c6148ad97737d72ee85be154b7ea530aa5cd2937182b1815c26"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/ground-evidence-v1/navigation-request.json",
+        "bytes": 1906,
+        "sha256": "429e935a25b316153dc72353506819f17e9f3e96c1139b03e28be8fbcf784815"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-source-v1/screen_source_ground.py",
+        "bytes": 20116,
+        "sha256": "59d75f0656050d2986b6cff238f112b9546c323786a94cb8c604501c35e74ea5"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/screen_frozen_model.py",
+        "bytes": 21223,
+        "sha256": "5b53d1b5f3a9ef9b0c66c7a0fd09a09fb834a509ad40d6ac4c1b395b8f979a0c"
+      },
+      {
+        "path": "/workspace/shanghai_project/src/map-scene.js",
+        "bytes": 53169,
+        "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+      },
+      {
+        "path": "/workspace/shanghai_project/src/street-interaction.js",
+        "bytes": 15970,
+        "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742"
+      },
+      {
+        "path": "/workspace/shanghai_project/src/walk-controller.js",
+        "bytes": 23179,
+        "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/research/residence-v1/35823448.jpg",
+        "bytes": 248553,
+        "sha256": "86bcc6886fb2a37cf14643844b58a58275e9a4d263e56de511c3e3a3ae5eeedd"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/research/residence-v1/42026933.jpg",
+        "bytes": 281186,
+        "sha256": "a316d5e797d2409fea6f1902a73106cb57736c60639bb24014f309dd58b13806"
+      },
+      {
+        "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-integration-v1/navigation-candidates-v1/candidate-plan.png",
+        "bytes": 194508,
+        "sha256": "4162eabe6347cd5ab6a75d860277608a02d577f7e2fa05c3988c7d4c1695d509"
+      }
+    ]
+  },
+  "limitations": [
+    "Only the supplied actual outdoor route is screened. Detailed raw mesh, camera poses and browser movement require separate checks.",
+    "The frozen source-owner polygon is mapped replacement context, not a surveyed architectural wall.",
+    "Ground observations are explicitly route-bound notes; no historical photograph, garden context or road centerline proves a current paved/public route.",
+    "Current bounded OSM building/water features and all 80 frozen neighbors are screened for finite probe nonintersection; furniture, trees, gates and access restrictions are not a complete obstacle inventory.",
+    "The default 14 m camera boom is airborne. Its projected clearance is not pedestrian ground support.",
+    "Runtime collision uses loaded map polygons and explicit proxies; ordinary model walls, windows, doors and stairs do not automatically create collision or ground surfaces.",
+    "Default ground 0.075 m is not measured ground elevation. Interiors, annexes, garden reconstruction, stair climbing and arbitrary routes are outside the authored model scope.",
+    "No mapped water in the bounded response does not physically establish water absence; incomplete or invalid geometry prevents this screen passing."
+  ]
+}

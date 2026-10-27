@@ -1,0 +1,105 @@
+{
+  "model_id": "xuhui-bajin-residence",
+  "source_uuid": "7b106e12-e86d-48ad-9d07-888fcebe7f25",
+  "source_key": "building:7b106e12-e86d-48ad-9d07-888fcebe7f25",
+  "source_osm_record": "w582302404@1",
+  "macro": "14-13718-6695",
+  "local_id": 1950,
+  "near": "14-13718-6695-1_1-s0-s1",
+  "schema": "bajin-root-source-owner-mesh-review-v1",
+  "reviewer": "/root",
+  "scope": "source_owner_generation",
+  "model_revision": "bajin-detailed-v2",
+  "mesh_accepted_for_integration": true,
+  "can_run_source_owner_generation": true,
+  "publication_accepted": false,
+  "source_pose_changed": false,
+  "source_translation_m": [
+    0,
+    0,
+    0
+  ],
+  "architectural_scope": "main_house_exterior_only",
+  "preserve_same_near_local_ids": [
+    234,
+    276,
+    388,
+    575,
+    938,
+    1040,
+    1327,
+    1448,
+    1689,
+    1828,
+    2602,
+    2974,
+    3558,
+    3671,
+    3828,
+    3991,
+    4118
+  ],
+  "source_geometry_input": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/integration/bajin-preparation-v1/source-owner-input-v1/xuhui-bajin-residence/geometry-input.json",
+    "bytes": 30553,
+    "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+  },
+  "root_source_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-source-context-v3.json",
+    "bytes": 4121,
+    "sha256": "750337eac7b7adaefa6a787874b75b15f25cb9813d9008ba66b501733acc040d"
+  },
+  "reviewed_at_utc": "2026-10-27T21:23:53.168428+00:00",
+  "decision": "ACCEPT_BOUNDED_MAIN_HOUSE_V2_MESH_FOR_SOURCE_OWNER_GENERATION",
+  "assets": {
+    "raw": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-detailed.glb",
+      "bytes": 5069420,
+      "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71"
+    },
+    "lod_raw": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-lod.glb",
+      "bytes": 1827660,
+      "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d"
+    },
+    "native": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/review/native/bajin-main-house.blend",
+      "bytes": 3215562,
+      "sha256": "7ba806ac838d1f1d483cc41d31267d831d4c42d6ed0d78bced63e53f09512c9d"
+    }
+  },
+  "independent_actual_qa": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/review/bajin-asset-qa-v2/HANDOFF-ACTUAL-v2.json",
+    "bytes": 15480,
+    "sha256": "6f705de6b622dbd0af9a8226326f95b972f75c482e22f5830805efc25d31497f"
+  },
+  "root_actual_visual_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-v2-appearance-review-v1.json",
+    "bytes": 3805,
+    "sha256": "b6cbe6832fb5049c39a94c308cc855159e06992e1caa42d5a1f917a68e1ad378"
+  },
+  "frozen_author_handoff": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/HANDOFF.json",
+    "bytes": 7602,
+    "sha256": "de5a04d2c4008581186d54996b4d68f83e333a1fda817efe8140e0b2bf3775ac"
+  },
+  "basis": [
+    "Root actually viewed all three final v2 native previews and compared the north portal/coping/steps against previously viewed Commons and close-entry photographs.",
+    "Independent actual v2 raw/native geometry, finite attributes, exact PNG/material routes, metre UV mapping, normals, embedded attribution and isolated byte-identical source regeneration passed.",
+    "The six corrected parts and unchanged 3780 parts are bound to actual GLB triangles. Stair boundary, arch support, 5mm side gaps and LOD retained triangle set passed independent checks.",
+    "Frozen source association and N/S orientation remain qualified by source-v3; the original source frame and geometry contract have not shifted."
+  ],
+  "limitations": [
+    "Door height2.20m is an adopted prior; structural ridge/roof height and hidden north hip transition, step metrics and3cm low-wall projection remain estimated, not measured.",
+    "Side surfaces lack verified opening grids; no annex, garden, gates, neighbors or interiors are accepted.",
+    "Roof structural planes and thirty opening sample sets passed; not a proof of complete building watertightness or full portal volume/navigation. Individual unchanged tile topology is not exhaustively audited.",
+    "Original generic pebble-dash PBR is not a building surface scan. Native AO export route is retained without claiming pixel-equivalent AO shading.",
+    "This decision permits isolated source-owner generation and continuation of integration. It does not accept navigation, WEB codecs, browser behavior, MAIN installation or publication."
+  ],
+  "next_required": [
+    "Run isolated source-owner generation with KEEP17 and complete baseline/runtime preservation.",
+    "Actual mesh-neighbor and exterior route/camera screening, web/LOD packaging and independent checks.",
+    "Candidate browser validation and root review before installation, release and any37th completed-building/date claim."
+  ],
+  "published_building_count_unchanged": 36
+}

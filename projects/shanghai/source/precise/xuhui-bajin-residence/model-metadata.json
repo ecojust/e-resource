@@ -1,0 +1,257 @@
+{
+  "schema": "bajin-release-model-metadata-v1",
+  "id": "xuhui-bajin-residence",
+  "name": "巴金旧居主楼",
+  "author": "agent",
+  "copyright": "Original geometry and procedural materials: agent, MIT. Source footprint: ODbL-1.0, OpenStreetMap contributors / CMAB. Photographs are references only and are not embedded.",
+  "anchor": [
+    121.43606524072175,
+    31.21051863775041
+  ],
+  "ground_base_m": 0,
+  "rotation_y": 0,
+  "height_estimate_m": 12.331730842590332,
+  "height_note": "Envelope12.331730842590332m includes estimated roof/tile geometry. The2.20m garden door-leaf prior is an adopted modelling estimate, not a measured height. Source16.416m prediction and site1400m²/unspecified641m² were not used for scaling.",
+  "bounds_glb": {
+    "min": [
+      -8.996381759643555,
+      0.0,
+      -8.885534286499023
+    ],
+    "max": [
+      8.996381759643555,
+      12.331730842590332,
+      8.885534286499023
+    ]
+  },
+  "assets": {
+    "raw": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-detailed.glb",
+      "bytes": 5069420,
+      "sha256": "f72cede09c191dc93e483648749c9466b29dcdf279d111f255b06186fe438c71",
+      "triangles": 50668,
+      "counts": {
+        "triangles": 50668,
+        "vertices": 128801,
+        "primitives": 14,
+        "materials": 14,
+        "images": 3,
+        "TANGENT_present": false,
+        "extensions_used": [],
+        "extensions_required": []
+      }
+    },
+    "native": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/review/native/bajin-main-house.blend",
+      "bytes": 3215562,
+      "sha256": "7ba806ac838d1f1d483cc41d31267d831d4c42d6ed0d78bced63e53f09512c9d"
+    },
+    "web": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/exports/xuhui-bajin-residence-web.glb",
+      "bytes": 2868520,
+      "sha256": "09f01bbe0511b170eacde85a55fc05da2f4b22eba8b2143349a76c771f8dce84",
+      "triangles": 50668,
+      "counts": {
+        "triangles": 50668,
+        "vertices": 96974,
+        "primitives": 14,
+        "materials": 14,
+        "images": 3,
+        "TANGENT_present": false,
+        "extensions_used": [
+          "EXT_meshopt_compression"
+        ],
+        "extensions_required": [
+          "EXT_meshopt_compression"
+        ]
+      }
+    },
+    "lod": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/exports/xuhui-bajin-residence-lod.glb",
+      "bytes": 1506616,
+      "sha256": "84fa2298706be03422083303fb92eafcbbd8233e5cc76c817ec934c2c692ebeb",
+      "triangles": 7396,
+      "counts": {
+        "triangles": 7396,
+        "vertices": 10682,
+        "primitives": 9,
+        "materials": 9,
+        "images": 3,
+        "TANGENT_present": false,
+        "extensions_used": [
+          "EXT_meshopt_compression"
+        ],
+        "extensions_required": [
+          "EXT_meshopt_compression"
+        ]
+      }
+    }
+  },
+  "all_four_asset_bytes": 12660118,
+  "packing": [
+    "-cc",
+    "-noq",
+    "-vtf",
+    "-vnf",
+    "-km",
+    "-ke"
+  ],
+  "commands": [
+    [
+      "/workspace/shanghai_tools/node_modules/.bin/gltfpack",
+      "-i",
+      "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-detailed.glb",
+      "-o",
+      "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/exports/xuhui-bajin-residence-web.glb",
+      "-cc",
+      "-noq",
+      "-vtf",
+      "-vnf",
+      "-km",
+      "-ke",
+      "-r",
+      "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/exports/web-gltfpack.json"
+    ],
+    [
+      "/workspace/shanghai_tools/node_modules/.bin/gltfpack",
+      "-i",
+      "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-lod.glb",
+      "-o",
+      "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/exports/xuhui-bajin-residence-lod.glb",
+      "-cc",
+      "-noq",
+      "-vtf",
+      "-vnf",
+      "-km",
+      "-ke",
+      "-r",
+      "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/exports/lod-gltfpack.json"
+    ]
+  ],
+  "gltfpack_version": "gltfpack 1.3",
+  "web_geometry_policy": "Same full geometry, no position/UV quantization or simplification, no TANGENT. Actual decoded parity requires independent codec QA.",
+  "lod_source": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-lod.glb",
+    "bytes": 1827660,
+    "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d",
+    "triangles": 7396,
+    "counts": {
+      "triangles": 7396,
+      "vertices": 15543,
+      "primitives": 9,
+      "materials": 9,
+      "images": 3,
+      "TANGENT_present": false,
+      "extensions_used": [],
+      "extensions_required": []
+    }
+  },
+  "lod_policy": "Separately authored aperture-preserving LOD: omits individual overlapping flat tiles, small door handles and lower-panel fine beads. Retains structural roof planes, all main wall apertures, north arch recess, tapered steps, shutters and ten attic vents.",
+  "expected_images": {
+    "raw": 3,
+    "web": 3,
+    "lod": 3
+  },
+  "expected_original_pngs": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/textures/bajin-original-pebbledash-basecolor.png",
+      "bytes": 442583,
+      "sha256": "2480aeaf179746babf36fded9cc7e30446adb718cef3278cde387148e6dd16e7",
+      "role": "basecolor"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/textures/bajin-original-pebbledash-normal.png",
+      "bytes": 533654,
+      "sha256": "d6128f5b4d534ece5d26c0ec6e2ea9941b20db910400596e2f6b98e123c62a51",
+      "role": "normal"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/textures/bajin-original-pebbledash-orm.png",
+      "bytes": 361134,
+      "sha256": "3312465e2fc6bce740553d9656ec477b577c8f2141537b9a5d2fb559c8afabf6",
+      "role": "orm"
+    }
+  ],
+  "material_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/textures/MATERIAL.json",
+    "bytes": 4431,
+    "sha256": "63c678c23396d988f97bda094537e86d87b69f4542c0e51678bc75570fadd894"
+  },
+  "architecture_style": "卵石抹灰外墙、南侧折线山墙及拱形阁楼窗、北侧拱廊入口。",
+  "detail_note": "依据可见照片与方向文献制作的主楼外观；包括真实开口、窗框、门廊、拱券压顶、三级台阶、百叶及平瓦课程。高度、隐藏屋面、侧墙和台阶尺寸均为推估，不是测绘模型。",
+  "uncertainty": [
+    "The2.20m garden door-leaf height is an adopted prior, distinct from the2.85m complete aperture including fanlight.",
+    "Hidden northern roof hip/cap geometry, side-wall surfaces without verified window grids, north step dimensions and0.03m low-wall projection remain estimates.",
+    "Source footprint and anchor constrain a bounded association, not surveyed wall corners or roof dimensions. Source frame remains unchanged.",
+    "Main-house exterior only: annexes, garden, garden/street gates, neighboring buildings and interiors are excluded.",
+    "Three original generic pebble-dash PBR maps are not a building scan or photo texture. No photograph pixels were used to generate them.",
+    "Normal/UV contract is0.40m REPEAT, no TANGENT, normalScale0.35 and AOstrength0.35. Native Occlusion export route does not imply identical AO shading.",
+    "Not a structural or navigation certification; full portal walkability, exact collision and public access are not asserted."
+  ],
+  "asset_license": [
+    {
+      "id": "MIT",
+      "url": "https://opensource.org/license/mit/",
+      "attribution": "Original geometry, code and procedural material images by agent",
+      "role": "authored_geometry_code_and_embedded_materials"
+    },
+    {
+      "id": "ODbL-1.0",
+      "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "OpenStreetMap contributors / CMAB; source footprint context",
+      "role": "source_location_context"
+    },
+    {
+      "id": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Jpbowen, Ba Jin house, Shanghai.JPG and Ba Jin house front door, Shanghai.JPG",
+      "role": "two_public_reference_photographs_not_textures"
+    }
+  ],
+  "source_photos_register": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-packaged-v1/photo-register.json",
+  "source_model_directory": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2",
+  "source_build_script": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/source/build_model.py",
+    "bytes": 5280,
+    "sha256": "375ef224bfe41268f1046db8bf4e6b0755de50372553227825c66d2dcb6c4afa"
+  },
+  "source_native_script": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/source/render_native.py",
+    "bytes": 5617,
+    "sha256": "9f480db3efe935cd71c8efe7944d4a8a4bb211eea7aa33215de38953e2f575cc"
+  },
+  "source_portable_manifest": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/PORTABLE.json",
+    "bytes": 5541,
+    "sha256": "fed96cd53c23ae182efb3e89f6fc0699888891d6ba37d7cbe1397e360d9447cc"
+  },
+  "source_owner_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/source/geometry-input.json",
+    "bytes": 30553,
+    "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+  },
+  "source_handoff": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/HANDOFF.json",
+    "bytes": 7602,
+    "sha256": "de5a04d2c4008581186d54996b4d68f83e333a1fda817efe8140e0b2bf3775ac"
+  },
+  "root_mesh_acceptance_for_isolated_integration": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/review/root-bajin-source-owner-mesh-review-v1.json",
+    "bytes": 5123,
+    "sha256": "dcbc5859d6d08d172d58220bdf849046ae4d3859634972de565e0627213b93bf"
+  },
+  "raw_native_reused_in_place": true,
+  "mesh_accepted_for_isolated_integration": true,
+  "public_photo_register_accepted": false,
+  "independent_codec_and_texture_qa_pending": true,
+  "browser_verified": false,
+  "publication_accepted": false,
+  "main_modified": false,
+  "remote_modified": false,
+  "lod_raw": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v20/model/bajin-detailed-v2/exports/bajin-main-lod.glb",
+    "bytes": 1827660,
+    "sha256": "a8844c7d60f897e49310ebb36f074874d3d100c92865708bfeed2a7a39dc442d",
+    "triangles": 7396
+  }
+}

@@ -79,6 +79,10 @@
       "file": "songjiang-fangta-pagoda/geometry-input.json",
       "sha256": "49cf0c350a845fbce511e3a6eb61c79af4a52363fda23dd3b59d62cd7cdf80c3"
     },
+    "xuhui-bajin-residence": {
+      "file": "xuhui-bajin-residence/geometry-input.json",
+      "sha256": "8fd1d49b6ad3adb29ac0216676883bcd5399286abc990b0eb039508e72393f52"
+    },
     "xuhui-longhua-pagoda": {
       "file": "xuhui-longhua-pagoda/geometry-input.json",
       "sha256": "4f9a76d03074049132d50a856bdb892e7f8e76bc3e9172e57dff7d3bacb5e47a"
@@ -100,7 +104,7 @@
       "sha256": "e49ad7b07b0f8694401f692c0dd28ccdf3dffaa672b23b80bb55206c8c91ad8f"
     }
   },
-  "integration_scope": "Accepted36 static navigation. Previous35 records, all prior source owners and near groups remain exact. Only the existing shared macro index/replacement is extended; eleven other catalog macros stay unchanged. Dynamic-only catalog lifecycle is not claimed by this static proof.",
+  "integration_scope": "Accepted37 static navigation. Previous36 records, all prior source owners and near groups remain exact. Only the existing shared macro index/replacement is extended; eleven other catalog macros stay unchanged. Dynamic-only catalog lifecycle is not claimed by this static proof.",
   "landmarks": [
     {
       "building_ids": [
@@ -1646,6 +1650,43 @@
       },
       "id": "changning-hudec-residence",
       "source_owner_boundary_is_model_wall": false
+    },
+    {
+      "architectural_wall_boundary_surveyed": false,
+      "boundary_role": "frozen_source_owner_context_not_architectural_wall",
+      "building_ids": [
+        "7b106e12-e86d-48ad-9d07-888fcebe7f25"
+      ],
+      "building_part_ids": [],
+      "confirmed_boundary": {
+        "coordinates": [
+          [
+            [
+              121.43611193,
+              31.21059465
+            ],
+            [
+              121.43615484,
+              31.21047995
+            ],
+            [
+              121.43601537,
+              31.21044324
+            ],
+            [
+              121.43597782,
+              31.21055794
+            ],
+            [
+              121.43611193,
+              31.21059465
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "xuhui-bajin-residence",
+      "source_owner_boundary_is_model_wall": false
     }
   ],
   "macros": [
@@ -2247,6 +2288,64 @@
             "sha256": "4a2bae6f5510c36d773b7f58c5c43562fa3a06f9f9ab8dc6fc106bd6a5add839",
             "size_bytes": 50785
           }
+        },
+        {
+          "baseline_decoded_sha256": "8826e43da30d76e5259b52d15e2694b6511591fdc20ad7870ab13c5e3f7013e8",
+          "baseline_file": "near/1_1-s0-s1.glb.gz",
+          "baseline_sha256": "8509f0116b3c2efc2031f78f49dd1b08af3db83bfb100ccaa9d0e43b4fb2757e",
+          "featureLocalIds": [
+            575,
+            3828,
+            388,
+            276,
+            3558,
+            2974,
+            3671,
+            1950,
+            2602,
+            1327,
+            1040,
+            938,
+            1828,
+            1448,
+            234,
+            3991,
+            4118,
+            1689
+          ],
+          "groups": [
+            {
+              "expandedTriangles": 5328,
+              "feature_keys": [
+                "building:7b106e12-e86d-48ad-9d07-888fcebe7f25"
+              ],
+              "landmark_id": "xuhui-bajin-residence",
+              "local_ids": [
+                1950
+              ],
+              "name": "city_target_xuhui-bajin-residence"
+            }
+          ],
+          "id": "14-13718-6695-1_1-s0-s1",
+          "model": {
+            "compression": {
+              "gzip_level": 6,
+              "gzip_mtime": 0,
+              "owner_groups_compressed_separately_then_buffer_relocated": true,
+              "preserve_named_nodes": true,
+              "quantization": false,
+              "type": "EXT_meshopt_compression"
+            },
+            "content_encoding": "gzip",
+            "decoded_sha256": "f9fd4f7e81f95383286a8e5db71bbc2f7d39ef50f324637f8be08e455dc5b0e6",
+            "decoded_size_bytes": 495492,
+            "drawCalls": 16,
+            "expandedTriangles": 129478,
+            "file": "assets/city-overrides-v6/14-13718-6695/1_1-s0-s1.glb.gz",
+            "geometryBytes": 1802608,
+            "sha256": "48ab5117e67c55c6662c0399246c28759c02474cf5c691fdeb196bf8065c0977",
+            "size_bytes": 117282
+          }
         }
       ]
     },
@@ -2843,7 +2942,7 @@
   "ordinary_catalog": {
     "bytes": 4704,
     "file": "data/precise-buildings/catalog.json",
-    "sha256": "53cb19ef711f0f71a31fd662c2051b2f7e274ca2c4e594c074502dc3cc8299f5"
+    "sha256": "30572dd5a2f7def506bea9b74c2a942b6371ff9f064252fd51d888107f607d09"
   },
   "project_base_url_contract": "model.file is relative to the project root, not the registry directory",
   "reuse_validation": [
@@ -2953,9 +3052,9 @@
     }
   ],
   "schema": "city-precise-overrides-v1",
-  "status": "All22 owner variants preserve source geometry. The current building model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
+  "status": "All23 owner variants preserve source geometry. The current building model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
   "validation": {
-    "file": "source/city/precise-overrides-v19/changning-hudec-residence/composition-proof.json",
-    "sha256": "9fdde512e93f6ac1a30edea59fe4041af54df97ba5b462002896e6b33abf324f"
+    "file": "source/city/precise-overrides-v20/xuhui-bajin-residence/composition-proof.json",
+    "sha256": "7b2cbb22c8b278fe08234076927fb0bec90bf7fff1f5ccdffec171b4966a9652"
   }
 }
