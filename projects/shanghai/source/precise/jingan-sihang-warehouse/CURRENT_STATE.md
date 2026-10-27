@@ -13,9 +13,9 @@
 
 ![西墙模型预览](delivery/previews/jingan-sihang-warehouse-detail.png)
 
-建筑几何和三张原生视图已经核对，模型先单独备份；第三人称场景接入另行验证，不能把本页当作网页漫游通过的证明。见[独立建筑审阅](delivery/evidence/FINAL_BUILDING_REVIEW_V6.md)与[原生视图审阅](delivery/evidence/root_native_review.json)。
+建筑几何和三张原生视图已经核对，模型已单独发布于 `20e45cb3b33234e73bcef1a12528c249d98f3cac`。第三人称网页状态：已接入并发布；[进入四行仓库漫游](https://rawcdn.githack.com/ecojust/e-resource/893156002b860400f2c1c0442d83f1c346331d47/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk)。实际浏览器结果：7项静态场景检查、3阶段目录检查及一次真实W行走通过，相关截图已逐张核对；[网页范围](../../../data/audit/precise-buildings-v12/sihang/README.md)。应用和启动包的通过结论须以各自真实记录为准。见[独立建筑审阅](delivery/evidence/FINAL_BUILDING_REVIEW_V6.md)与[原生视图审阅](delivery/evidence/root_native_review.json)。
 
-主要依据：[上海建筑设计研究院项目资料](https://www.siadr.com/projectdetails/5c3d7dd0e4d1cc0728c7c61d/)、[设计者改造文章](https://www.sohu.com/a/416719455_170361)、[九张许可参考照片清单](photo-reference-register.json)。参考照片用于辨认构件，未作为模型贴图；未获再分发许可的设计研究图片不随模型发布。[署名与许可](ATTRIBUTION.md)。
+主要依据：[上海建筑设计研究院项目资料](https://www.siadr.com/projectdetails/5c3d7dd0e4d1cc0728c7c61d/)、[设计者改造文章](https://www.sohu.com/a/416719455_170361)、[九份许可参考图片清单](photo-reference-register.json)。参考照片用于辨认构件，未作为模型贴图；未获再分发许可的设计研究图片不随模型发布。[署名与许可](ATTRIBUTION.md)。
 
 27.7米采用项目公布的名义总高。局部尺寸、北侧窗格、字形、表面风化和屋顶设备仍有估计；西墙记录七处玻璃背衬洞口、一处砖背深凹及65个选取的小损伤点，不代表逐一复原全部历史弹痕。这是依据照片和图纸的建筑复原，不是测绘或摄影测量模型。
 

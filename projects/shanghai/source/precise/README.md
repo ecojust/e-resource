@@ -1,3 +1,21 @@
+# 街区建筑逐栋复原源码（v12）
+
+新增[四行仓库与毗邻大陆银行仓库](jingan-sihang-warehouse/CURRENT_STATE.md)完整双库模型。模型已单独发布于 `20e45cb3b33234e73bcef1a12528c249d98f3cac`；网页接入状态：已接入并发布。
+
+本版为精选导航30项、普通精模11栋、目录9个宏块；源建筑替换登记16项、涉及10个宏块和14个近景分块。全市16区地图保留；1,796,419个建筑及部件要素仍以公开轮廓、高度和参数推定为基础，尚未逐栋完成照片复原。
+
+| 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
+|---|---|---|---|---|
+| 四行仓库及毗邻大陆银行仓库 | [9,109,892字节](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-web.glb) | [25,721,072字节](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-raw.glb) | [5,513,608字节](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-lod.glb) | [12,868,230字节](../../assets/native/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse.blend) |
+
+四件文件均严格低于100,000,000字节。源码、参数、许可照片及原生预览见[独立目录](jingan-sihang-warehouse/README.md)；照片用于结构参照，没有嵌入模型。27.7米为文献名义总高，局部构造仍有估计。
+
+本版 `map-scene.js` 增加空过滤器重复调用保护，其余30件运行时文件保持。[网页验证范围](../../data/audit/precise-buildings-v12/sihang/README.md) · [来源与限制](../../data/bund/REALISM_V12.md)。
+
+## v11及更早记录（历史保留）
+
+以下保留原有下载与历史说明，数量和验证结论对应其当时版本。
+
 # 街区建筑逐栋复原源码（v11）
 
 新增[上海汽车博物馆](jiading-shanghai-auto-museum/CURRENT_STATE.md)和[包玉刚图书馆](minhang-baoyugang-library/CURRENT_STATE.md)。本版精选导航29项、普通精模10栋、目录8个宏块；原27项导航与六个目录保持。全城仍未逐栋按照片完成。

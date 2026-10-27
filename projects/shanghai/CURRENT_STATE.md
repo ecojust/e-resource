@@ -1,11 +1,16 @@
-# 当前状态
+# 当前状态 · v12
 
-v11应用提交`d99e8c9f1665f65871cef730e74a86a48a3483b4`。本版精选导航29项、普通精模10栋、目录8个宏块；原27项导航与六个目录保持。全城仍未逐栋按照片完成。
+本轮新增静安区**四行仓库与毗邻大陆银行仓库**完整双库模型。模型已发布，提交 `20e45cb3b33234e73bcef1a12528c249d98f3cac`；网页接入状态：已接入并发布，实际应用提交：`893156002b860400f2c1c0442d83f1c346331d47`。
 
-本版31件生产运行时文件与已发布v10阴影修复后的冻结字节相同；没有新增运行时修复。[模型、11张共享静态图和两组各5张目录图的实际范围](data/audit/precise-buildings-v11/two-modern-buildings/README.md)。
+本版为精选导航30项、普通精模11栋、目录9个宏块；源建筑替换登记16项、涉及10个宏块和14个近景分块。全市16区地图保留；1,796,419个建筑及部件要素仍以公开轮廓、高度和参数推定为基础，尚未逐栋完成照片复原。
 
-启动包75,160,933字节，SHA256 `f2ff0d34d3ae27df73e2e678070cd600f77f162f9a785198d8761fd1f9594156`，严格小于100,000,000字节。包含14项本地导航模型和15项远程流式模型，底图、全城资源及远程模型需要联网，资源固定到应用提交`d99e8c9f1665f65871cef730e74a86a48a3483b4`。
+四件模型分别为：原始GLB 25,721,072字节、网页GLB 9,109,892字节、远景GLB 5,513,608字节、Blender 12,868,230字节，均严格低于100,000,000字节。[模型与预览](source/precise/jingan-sihang-warehouse/CURRENT_STATE.md)。
 
-本次启动包仅从实际解压目录加载**包玉刚图书馆**完整模型并由root查看1张图；不等于29项导航、另一栋新楼、LOD、目录生命周期、所有区或设备帧率均已在ZIP中验证。[实际ZIP记录](data/audit/launcher-v11/README.md) · [下载](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)。
+运行时只修改 `src/map-scene.js`，避免重复设置空过滤器；其余30个文件保持原字节。完整网页、目录及键盘操作的实际结果：7项静态场景检查、3阶段目录检查及一次真实W行走通过，相关截图已逐张核对。[实际范围](data/audit/precise-buildings-v12/sihang/README.md)。
 
-两栋各raw/web/LOD/Blender模型及启动ZIP单件均严格小于100,000,000字节；启动ZIP不内置新增两栋raw、Blender或私有参考照片。全部精度和未核实部分见[来源与限制](data/bund/REALISM_V11.md)。软件渲染功能检查不代表用户设备帧率。
+启动包：75,180,111字节，SHA256 `d08b38eda5f42b0c34ab174c298ecede6db6eeb94e95250a3340b5cbccdf1c4b`；实际检查结果：303件文件的归档和解压校验、31件运行时字节核对通过；从实际解压目录加载四行仓库完整模型并核对1张截图。包含14项本地模型、16项联网模型，数量已通过实际归档验证；包内资源固定到 `893156002b860400f2c1c0442d83f1c346331d47`。[下载](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip) · [实际启动包范围](data/audit/launcher-v12/README.md)。
+
+模型参考公开照片和图纸，未进行现场测绘或摄影测量；局部尺寸、北侧窗格、风化和屋顶设备仍有估计。软件渲染检查不代表用户设备帧率。[来源与限制](data/bund/REALISM_V12.md)。
+
+使用时需要联网。若完整模型读取超时，请刷新页面重新加载；当前没有自动重试。
+

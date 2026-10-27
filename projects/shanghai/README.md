@@ -1,3 +1,28 @@
+# 上海漫游 · Shanghai Explorer v12
+
+新增**四行仓库与毗邻大陆银行仓库**完整双库模型：分别构造南侧两套立面、376处玻璃窗洞、两个凹入口、退台第六层、天窗、雨篷和西墙破损细部。
+
+[四行仓库漫游](https://rawcdn.githack.com/ecojust/e-resource/893156002b860400f2c1c0442d83f1c346331d47/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk)（应用状态：已接入并发布） · [网页GLB](assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-web.glb) · [Blender](assets/native/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse.blend) · [当前交付](source/precise/jingan-sihang-warehouse/CURRENT_STATE.md)。模型已单独发布于提交 `20e45cb3b33234e73bcef1a12528c249d98f3cac`。
+
+![四行仓库模型预览](source/precise/jingan-sihang-warehouse/delivery/previews/jingan-sihang-warehouse-full.png)
+
+本版为精选导航30项、普通精模11栋、目录9个宏块；源建筑替换登记16项、涉及10个宏块和14个近景分块。全市16区地图保留；1,796,419个建筑及部件要素仍以公开轮廓、高度和参数推定为基础，尚未逐栋完成照片复原。
+
+新增原始GLB 25.72 MB、网页GLB 9.11 MB、远景GLB 5.51 MB、Blender 12.87 MB，四件文件均严格低于100,000,000字节。远景版省去细砖缝，保留主要门窗、字牌、破损墙体和屋顶构件。
+
+网页增加一处 `map-scene.js` 修正：避免重复设置空建筑过滤器引起无效底图重载；其余30件运行时文件保持。实际网页验证：7项静态场景检查、3阶段目录检查及一次真实W行走通过，相关截图已逐张核对。[本轮范围](data/audit/precise-buildings-v12/sihang/README.md)。
+
+[下载启动包](https://github.com/ecojust/e-resource/raw/refs/heads/master/projects/shanghai/downloads/shanghai-web-launcher.zip)：75,180,111字节，SHA256 `d08b38eda5f42b0c34ab174c298ecede6db6eeb94e95250a3340b5cbccdf1c4b`，验证状态：303件文件的归档和解压校验、31件运行时字节核对通过；从实际解压目录加载四行仓库完整模型并核对1张截图。包含14项本地导航模型和16项远程流式模型；数量已通过实际归档检查，底图、全城资源和远程模型需要联网。资源固定到应用提交 `893156002b860400f2c1c0442d83f1c346331d47`。[启动包范围](data/audit/launcher-v12/README.md)。
+
+27.7米采用项目公布的名义总高，局部尺寸和隐藏构造仍有估计；照片用于形态参照，模型没有照片贴图。这是基于照片与图纸的建筑复原，不是测绘或摄影测量模型。[来源与限制](data/bund/REALISM_V12.md) · [当前状态](CURRENT_STATE.md)
+
+
+使用时需要联网。若完整模型读取超时，请刷新页面重新加载；当前没有自动重试。
+
+## v11及更早记录（历史保留）
+
+以下保留既有正文；数量、应用版本及验证范围对应各自历史发布。
+
 # 上海漫游 · Shanghai Explorer v11
 
 - **[上海汽车博物馆漫游](https://rawcdn.githack.com/ecojust/e-resource/d99e8c9f1665f65871cef730e74a86a48a3483b4/projects/shanghai/index.html#landmark=jiading-shanghai-auto-museum&mode=walk)** · [网页模型](assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) · [Blender](assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) · [当前交付](source/precise/jiading-shanghai-auto-museum/CURRENT_STATE.md)。
