@@ -1,6 +1,6 @@
 # 当前交付状态 · 宝山孔庙大成殿 v15
 
-[全部32处地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html) · [最新第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [宝山大成殿直达](index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk)
+[全部32处地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html) · [最新第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/8cea0605a2d056bda107266357e11413eb9589e1/projects/shanghai/index.html#mode=walk) · [宝山大成殿直达](https://rawcdn.githack.com/ecojust/e-resource/8cea0605a2d056bda107266357e11413eb9589e1/projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk)
 
 本轮新增宝山孔庙大成殿，已接入第三人称漫游并通过模型与本地网页验收。目录现有32处独立直达链接：15栋外滩、4栋陆家嘴和13栋逐栋复原建筑。建筑普通精模目录涉及11个宏块；源替换登记18项，涉及12个宏块和16个近景分块。
 

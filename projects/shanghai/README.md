@@ -1,10 +1,10 @@
 # 上海漫游 · 宝山孔庙大成殿 v15
 
-**[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [最新第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前交付状态](CURRENT_STATE.md)
+**[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)** · [最新第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/8cea0605a2d056bda107266357e11413eb9589e1/projects/shanghai/index.html#mode=walk) · [当前交付状态](CURRENT_STATE.md)
 
 新增**宝山孔庙大成殿**：分别构造重檐歇山灰瓦、瓦垄与斗栱、暗红木柱和环廊、透空格扇、后侧白墙、石栏与御路石。已接入第三人称漫游；目录提供32处独立直达链接，包括外滩15栋、陆家嘴4栋和13栋逐栋复原建筑。
 
-[直接到达宝山大成殿](index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk) · [网页GLB](assets/models/precise/14-13721-6684/baoshan-confucian-dacheng-hall/baoshan-confucian-dacheng-hall-web.glb) · [Blender](assets/native/precise/14-13721-6684/baoshan-confucian-dacheng-hall/baoshan-confucian-dacheng-hall.blend) · [建模源码与限制](source/precise/baoshan-confucian-dacheng-hall/README.md)
+[直接到达宝山大成殿](https://rawcdn.githack.com/ecojust/e-resource/8cea0605a2d056bda107266357e11413eb9589e1/projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk) · [网页GLB](assets/models/precise/14-13721-6684/baoshan-confucian-dacheng-hall/baoshan-confucian-dacheng-hall-web.glb) · [Blender](assets/native/precise/14-13721-6684/baoshan-confucian-dacheng-hall/baoshan-confucian-dacheng-hall.blend) · [建模源码与限制](source/precise/baoshan-confucian-dacheng-hall/README.md)
 
 本栋原始GLB 29,752,792字节、网页GLB 11,876,292字节、远景GLB 2,939,940字节、Blender 14,479,200字节，均严格小于100,000,000字节。模型与本地浏览器验收通过，实际核对完整模型、远景、离开后返回、8栋邻楼保留和W键行走；32处目录链接检查通过，35件运行时文件保持不变。[实际验证范围](data/audit/precise-buildings-v15/baoshan-confucian-dacheng-hall/README.md)
 
