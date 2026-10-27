@@ -4,7 +4,7 @@
 
 ## 独立项目
 
-- [上海漫游 · Shanghai Explorer](projects/shanghai/)：覆盖上海16区的1,796,419条普通建筑及部件渲染要素，普通建筑近景具有实体门窗、窗框、窗台和檐口；外滩保留10栋历史建筑的照片参照复原，并加强楼前铺地、绿化、灯具和护栏。附4栋陆家嘴地标、重建源码和第三人称漫游HTML；普通建筑立面按公开轮廓与参数推定，模型按单文件小于100MB组织。全市近景模型与覆盖、文件、屋顶审计及浏览器场景验收已通过。[在线预览](https://rawcdn.githack.com/ecojust/e-resource/a443691e2bf24dbabcb80ec109563a19715cc4da/projects/shanghai/index.html#mode=walk)（首次点击 Open the page）。[最新启动包](https://raw.githubusercontent.com/ecojust/e-resource/master/projects/shanghai/downloads/shanghai-web-launcher.zip)（74.94 MB，74,939,824字节；按需联网）。
+- [上海漫游 · Shanghai Explorer](projects/shanghai/)：上海16区地图与第三人称漫游，现有31处可直接到达的已建模地标，包括外滩15栋、陆家嘴4栋及12栋逐栋复原建筑，最新加入杨浦区图书馆。[全部地标直达／最新网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html) · [直接进入漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前版本与模型下载](projects/shanghai/CURRENT_STATE.md)。全市1,796,419个建筑及部件要素并未全部按照片逐栋复原，单个资源文件均控制在100MB以下。
 
 ## 三维模型
 

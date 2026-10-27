@@ -1,4 +1,17 @@
-# 当前状态 · v13
+# 当前网页状态 · 地标直达更新
+
+[全部31处已建模地标直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html) · [最新第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk)
+
+本次更新导航：增加完整地标目录和显式入口；点击建筑直接进入漫游；支持当前页面内更换地标链接；打开某栋建筑的链接时直接从该建筑的已有漫游起点初始化。仓库首页的旧版固定预览链接已替换为跟随master的最新入口。
+
+覆盖31处已建模目的地：15栋外滩建筑、4栋陆家嘴地标、12栋逐栋复原建筑。全市16区地图保留。模型与此前v13相同，最新建筑为杨浦区图书馆；此次没有新增或修改模型及已核验的漫游起点。
+
+[验证记录](data/audit/navigation-v14/README.md)。提交署名为agent；本次每个文件严格小于100,000,000字节。网上历史固定提交链接不会自动升级，请收藏上方最新入口。
+
+下载ZIP仍为v13（75,198,283字节），需要联网，不包含本次导航改进；使用本次功能请打开最新网页。以下为模型及ZIP上一版交付信息。
+
+## 模型与ZIP交付 · v13
+
 
 本轮新增杨浦区图书馆整馆模型，覆盖历史旧体、扩建长翼、现代角部和两处内院。已接入上海第三人称漫游，应用提交 `387561d8a7297eb7fc2a42907f0819fa1d61e958`。[模型、预览与来源](source/precise/yangpu-library/CURRENT_STATE.md)。
 

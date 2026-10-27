@@ -3,6 +3,7 @@ import { WalkController } from './walk-controller.js';
 import { districtAt } from './geography.js';
 import { placeDescription, walkingPose } from './precise-registration-ui.js';
 import { readVerifiedBytes } from './ordinary-building-catalog.js';
+import { resolveNavigationRoute } from './landmark-navigation.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
@@ -63,7 +64,7 @@ function showOverview(place=activePlace) {
   const center=place.lng?[place.lng,place.lat]:(place.walkStart||place.center);
   scene.map.flyTo({center,zoom:place.overviewZoom??(place.custom?16.4:place.id==='bund'?17.3:place.height_m?16.4:14.8),pitch:60,bearing:place.bearing??35,duration:1000,essential:true});
 }
-async function selectPlace(place) {
+async function selectPlace(place, {mode: requestedMode} = {}) {
   if(!controller) return;
   const ticket=++navigation;
   activePlace=place;
@@ -72,10 +73,12 @@ async function selectPlace(place) {
   const pose=walkingPose(place);
   if(!pose){showOverview({...place,overviewZoom:place.overviewZoom??18.2});return;}
   const {lng,lat}=pose;
+  scene.map?.stop();
   controller.teleport(pose);
+  if(requestedMode) syncMode(requestedMode,false);
   if(mode==='overview') showOverview(place);
   if(mobile()) togglePanel(false);
-  const hash=place.custom?`lng=${lng.toFixed(6)}&lat=${lat.toFixed(6)}`:`${place.height_m?'landmark':'district'}=${encodeURIComponent(place.id)}`;
+  const hash=place.custom?`lng=${lng.toFixed(6)}&lat=${lat.toFixed(6)}`:`${place.height_m||place.kind==='building'||place.id==='bund'?'landmark':'district'}=${encodeURIComponent(place.id)}`;
   history.replaceState(null,'',`#${hash}&mode=${mode}`);
   $('live-status').textContent='加载当前区域';
   try {
@@ -86,7 +89,18 @@ async function selectPlace(place) {
 function mapPlace(lng,lat) {
   const district=districtAt(boundaries,lng,lat);
   if(!district)return null;
-  return {id:'selected-location',name:'自选街区',districtId:String(district.id),walkStart:[lng,lat],bearing:scene.map.getBearing(),custom:true};
+  return {id:'selected-location',name:'自选街区',districtId:String(district.id),walkStart:[lng,lat],bearing:scene?.map.getBearing()??45,custom:true};
+}
+function currentRoute() {
+  return resolveNavigationRoute(location.hash,{districts,landmarks,bund:BUND,activePlace,coordinatePlace:mapPlace});
+}
+function navigateHash() {
+  if(!controller) return;
+  const route=currentRoute();
+  if(route.error){toast(route.error,5000);return;}
+  // selectPlace applies the mode before awaiting map data; an older selection
+  // cannot switch the mode or destination after a newer link has been followed.
+  void selectPlace(route.place,{mode:route.mode});
 }
 function renderPlaces() {
   const query=$('place-search').value.trim().toLowerCase();
@@ -106,7 +120,7 @@ function renderPlaces() {
     const label=document.createElement('span');label.className='place-name';label.textContent=p.name;words.append(label);
     if(p.height_m){const small=document.createElement('small');small.className='landmark-description';small.textContent=placeDescription(p,districts);words.append(small);}
     const arrow=document.createElement('span');arrow.className='place-arrow';arrow.textContent='↗';
-    button.append(icon,words,arrow);button.addEventListener('click',()=>selectPlace(p));list.append(button);
+    button.append(icon,words,arrow);button.addEventListener('click',()=>selectPlace(p,{mode:p.height_m||p.kind==='building'?'walk':undefined}));list.append(button);
   });
 }
 function setCategory(value){
@@ -200,12 +214,16 @@ function installUi() {
 async function main(){
   if(location.protocol==='file:') return;
   installUi();loadingProgress(18);
-  const startWalking=!location.hash || new URLSearchParams(location.hash.slice(1)).get('mode')==='walk';
   try{
     const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
-    $('landmark-count').textContent=landmarks.length;setCategory('landmarks');drawMiniMap();updateLocation(BUND);loadingProgress(35);
-    scene=await createShanghaiScene({container:$('map'),start:{lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing},zoom:startWalking?20.0:17.3,landmarks:[...landmarks,...responses[3]],preciseBuildingOverrides:responses[4],
+    const initialRoute=currentRoute();
+    activePlace=initialRoute.place||BUND;
+    const initialPose=walkingPose(activePlace);
+    const start=initialPose||{lng:activePlace.lng,lat:activePlace.lat,bearing:activePlace.bearing??45};
+    const startWalking=Boolean(initialPose)&&initialRoute.mode==='walk';
+    $('landmark-count').textContent=landmarks.length;setCategory('landmarks');drawMiniMap();updateLocation(activePlace);loadingProgress(35);
+    scene=await createShanghaiScene({container:$('map'),start,zoom:startWalking?20.0:(activePlace.overviewZoom??17.3),landmarks:[...landmarks,...responses[3]],preciseBuildingOverrides:responses[4],
       onNearbyOrdinaryRecords:records=>{nearbyOrdinary=records;renderPlaces();},
       onStatus:status=>{
         if(status.message)$('loading-message').textContent=status.message;
@@ -234,20 +252,25 @@ async function main(){
     const cityState=await scene.setCityManifest('assets/city-detail/manifest.json');
     if(cityState.fallback)await scene.setCityManifest('assets/city/manifest.json');
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});
-    controller.setMode('overview');controller.setEnabled(true);controller.teleport({lng:BUND.walkStart[0],lat:BUND.walkStart[1],bearing:BUND.bearing});
-    if(startWalking)syncMode('walk',false);
-    else scene.map.jumpTo({center:[121.48552,31.23845],zoom:17.3,pitch:60,bearing:285});
+    controller.setMode('overview');
+    // Read again after asynchronous scene setup so the newest address wins.
+    const readyRoute=currentRoute();
+    if(readyRoute.error){
+      controller.teleport(start);
+      scene.map.jumpTo({center:[start.lng,start.lat],zoom:activePlace.overviewZoom??17.3,pitch:60,bearing:start.bearing});
+    }
+    else void selectPlace(readyRoute.place,{mode:readyRoute.mode});
+    controller.setEnabled(true);
+    window.addEventListener('hashchange',navigateHash);
     loadingProgress(78);$('loading-message').textContent='正在铺开道路、建筑与城市地标…';
     const tilesReady=await scene.waitForData(16000);loadingProgress(100);
     if(!tilesReady)toast('部分地图数据仍在加载，请保持网络连接。',5000);
     $('live-status').textContent='全域地图已连接';$('loading').classList.add('loaded');
     scene.map.on('rotate',()=>$('compass-needle').style.transform=`rotate(${-scene.map.getBearing()}deg)`);
     window.__SHANGHAI_APP__={scene,controller,districts,landmarks,get mode(){return mode;},selectPlace,syncMode};
-    const hash=new URLSearchParams(location.hash.slice(1));
-    const destination=districts.find(d=>d.id===hash.get('district'))||landmarks.find(p=>p.id===hash.get('landmark'))
-      ||(hash.has('lng')&&hash.has('lat')?mapPlace(Number(hash.get('lng')),Number(hash.get('lat'))):null);
-    if(destination)await selectPlace(destination);
-    if(hash.get('mode')==='walk' || !location.hash)syncMode('walk',false);
+    // Invalid incoming links remain visible until the scene is usable.
+    const finalRoute=currentRoute();
+    if(finalRoute.error) toast(finalRoute.error,5000);
   }catch(error){
     console.error(error);$('loading-message').textContent=`场景暂时未能加载：${error.message}`;$('retry-button').hidden=false;
     $('live-status').textContent='连接需要重试';loadingProgress(0);

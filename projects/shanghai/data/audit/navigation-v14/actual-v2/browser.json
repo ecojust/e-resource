@@ -1,0 +1,48 @@
+{
+  "schema": "actual-landmark-navigation-remaining-v14",
+  "started_at": "2026-10-27T12:27:01.740348+00:00",
+  "passed": false,
+  "prior_verified_ids": [
+    "bund02"
+  ],
+  "checks": [],
+  "actions": [
+    {
+      "selector": "#panel-toggle",
+      "hit": {
+        "x": 999,
+        "y": 57,
+        "width": 42,
+        "height": 42,
+        "hit": true,
+        "viewport": [
+          1040,
+          760
+        ]
+      },
+      "seconds": 24.311
+    }
+  ],
+  "page_errors": [],
+  "http_errors": [],
+  "network_failures": [],
+  "console_errors": [],
+  "captures": [
+    {
+      "file": "/workspace/shanghai_expansion/navigation-v14/qa/actual-v2/failure.png",
+      "bytes": 572611
+    }
+  ],
+  "runner_sha256": "05b6a71bd910e1ea265b240a1ea50b5d12ea9a610ca12747f7652293e2e34549",
+  "stage": "SEARCH bund03",
+  "error": "Locator.evaluate: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator(\"#landmark-tab\")\n    - locator resolved to visible <button role=\"tab\" class=\"active\" id=\"landmark-tab\" aria-selected=\"true\">…</button>\n",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/shanghai_expansion/navigation-v14/qa/browser_navigation_remaining.py\", line 35, in <module>\n    stage('SEARCH '+ident);click(page,'#landmark-tab');page.locator('#place-search').fill(row['name'],timeout=20000)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/shanghai_expansion/navigation-v14/qa/browser_navigation_remaining.py\", line 18, in click\n    hit=page.locator(selector).evaluate('''e=>{e.scrollIntoView({block:'nearest'});const b=e.getBoundingClientRect(),x=b.x+b.width/2,y=b.y+b.height/2;return {x,y,width:b.width,height:b.height,hit:e.contains(document.elementFromPoint(x,y)),viewport:[innerWidth,innerHeight]}}''',timeout=20000)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/sync_api/_generated.py\", line 18092, in evaluate\n    self._sync(\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_sync_base.py\", line 115, in _sync\n    return task.result()\n           ^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_locator.py\", line 195, in evaluate\n    return await self._with_element(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_locator.py\", line 114, in _with_element\n    handle = await self.element_handle(timeout=timeout)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_locator.py\", line 325, in element_handle\n    handle = await self._frame.wait_for_selector(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_frame.py\", line 394, in wait_for_selector\n    await self._channel.send(\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py\", line 76, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py\", line 632, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.TimeoutError: Locator.evaluate: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator(\"#landmark-tab\")\n    - locator resolved to visible <button role=\"tab\" class=\"active\" id=\"landmark-tab\" aria-selected=\"true\">…</button>\n\n",
+  "finished_at": "2026-10-27T12:28:31.442953+00:00",
+  "failure_state": {
+    "hash": "#landmark=bund03&mode=walk",
+    "mode": "walk",
+    "panel": "true",
+    "name": "有利大楼 · 外滩3号",
+    "toast": "部分地图数据仍在加载，请保持网络连接。"
+  }
+}
