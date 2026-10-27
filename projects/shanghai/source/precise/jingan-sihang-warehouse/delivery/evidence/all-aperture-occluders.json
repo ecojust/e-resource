@@ -1,0 +1,122 @@
+{
+  "schema": "sihang-independent-all-part-aperture-foreground-review-v1",
+  "created_utc": "2026-10-27T01:51:25.671954+00:00",
+  "reviewer": "/root/next_building_scope",
+  "inputs": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/jingan-sihang-warehouse.glb",
+      "bytes": 25721072,
+      "sha256": "65059b803b6970837323404b3d6cef2cc028ff2ce38b6e73eff4025319778fc5"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/jingan-sihang-warehouse.geometry.json",
+      "bytes": 6693701,
+      "sha256": "87db27bf710bc762e6a00bac7ae440d131dc998b41b891e2bfeb8a70ac62becf"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/feature-manifest.json",
+      "bytes": 11005212,
+      "sha256": "7f17fbf661cb25b7cf5f45060b379b1426583baee09ed843c48076eae56c80cf"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/source-v6/source-freeze.json",
+      "bytes": 4601,
+      "sha256": "f17cc452d08bf11d0acff60d9dbde5ffc778510baa0017987bd75d9447acb411"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/source-v6/calibration.json",
+      "bytes": 15057,
+      "sha256": "383fc90835cddc241156f13e4b8515875b117b3d6a4d0fedb20d6dc625ce4439"
+    }
+  ],
+  "source_freeze_sha256": "f17cc452d08bf11d0acff60d9dbde5ffc778510baa0017987bd75d9447acb411",
+  "calibration_sha256": "383fc90835cddc241156f13e4b8515875b117b3d6a4d0fedb20d6dc625ce4439",
+  "actual_triangles_read": 419884,
+  "actual_part_labels_read": 20740,
+  "actual_fine_masonry_parts_included": 13361,
+  "method": "AllactualFLOAT32 triangles in the complete model are bounded only for conservative candidate selection, then clipped againstD>=actualglassfront+2mm and intersected inwallUZ with the aperture interior. No restriction towallskins, floorlabels or selected materials. The targetglass itself is excluded.",
+  "aperture_edge_exclusion_m": 0.025,
+  "edge_exclusion_reason": "Known reveal-seat frame extends15mm inside registered silhouette;10mm additional margin avoids confusing its intended edge with an interior occluder. Whole original silhouettes are not asserted completely empty.",
+  "view_scope": "Normal-to-wall foreground projection; complementary finite rays and native oblique views remain necessary.",
+  "checks": [
+    {
+      "feature": "west-memorial/H1-upper-left",
+      "actual_glass_front_depth_m": -0.6619987408106196,
+      "foreground_test_starts_at_depth_m": -0.6599987408106196,
+      "tested_aperture_area_m2": 15.104618349485985,
+      "candidate_triangles": 218,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    },
+    {
+      "feature": "west-memorial/H2-lower-left",
+      "actual_glass_front_depth_m": -0.6619982158996073,
+      "foreground_test_starts_at_depth_m": -0.6599982158996073,
+      "tested_aperture_area_m2": 5.3175929644331585,
+      "candidate_triangles": 232,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    },
+    {
+      "feature": "west-memorial/H3-centre-small-upper",
+      "actual_glass_front_depth_m": -0.6619982571425941,
+      "foreground_test_starts_at_depth_m": -0.6599982571425941,
+      "tested_aperture_area_m2": 1.4040716667413593,
+      "candidate_triangles": 99,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    },
+    {
+      "feature": "west-memorial/H4-centre-small-left",
+      "actual_glass_front_depth_m": -0.6619992582812406,
+      "foreground_test_starts_at_depth_m": -0.6599992582812406,
+      "tested_aperture_area_m2": 0.8853834365722905,
+      "candidate_triangles": 122,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    },
+    {
+      "feature": "west-memorial/H5-centre-large",
+      "actual_glass_front_depth_m": -0.6619981795334271,
+      "foreground_test_starts_at_depth_m": -0.6599981795334271,
+      "tested_aperture_area_m2": 6.624552255989402,
+      "candidate_triangles": 319,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    },
+    {
+      "feature": "west-memorial/H7-right-large",
+      "actual_glass_front_depth_m": -0.6619982833261119,
+      "foreground_test_starts_at_depth_m": -0.6599982833261119,
+      "tested_aperture_area_m2": 7.144825341506153,
+      "candidate_triangles": 267,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    },
+    {
+      "feature": "west-memorial/H8-right-low",
+      "actual_glass_front_depth_m": -0.6619992933671456,
+      "foreground_test_starts_at_depth_m": -0.6599992933671456,
+      "tested_aperture_area_m2": 2.3876901135931217,
+      "candidate_triangles": 136,
+      "intersecting_triangles": 0,
+      "actual_foreground_occluder_parts": [],
+      "union_obstruction_area_m2": 0.0,
+      "clear_within_stated_edge_exclusion": true
+    }
+  ],
+  "all_seven_eroded_apertures_clear": true,
+  "native_appearance_accepted_by_this_numeric_check": false
+}

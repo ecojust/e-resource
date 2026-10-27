@@ -1,0 +1,74 @@
+{
+  "schema": "sihang-v6-independent-local-notch-delta-v1",
+  "created_utc": "2026-10-27T01:52:32.654945+00:00",
+  "reviewer": "/root/next_building_scope",
+  "inputs": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v5/raw/jingan-sihang-warehouse.glb",
+      "bytes": 25717232,
+      "sha256": "f48a95748cbf48ac9137fec35007dfbe630cd6788955230dd2234f8045b7037f"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/jingan-sihang-warehouse.glb",
+      "bytes": 25721072,
+      "sha256": "65059b803b6970837323404b3d6cef2cc028ff2ce38b6e73eff4025319778fc5"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/source-v6/source-freeze.json",
+      "bytes": 4601,
+      "sha256": "f17cc452d08bf11d0acff60d9dbde5ffc778510baa0017987bd75d9447acb411"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/source-v6/calibration.json",
+      "bytes": 15057,
+      "sha256": "383fc90835cddc241156f13e4b8515875b117b3d6a4d0fedb20d6dc625ce4439"
+    }
+  ],
+  "common_parts": 20740,
+  "actual_changed_parts": [
+    "structural-floor-slab-3",
+    "structural-floor-slab-4"
+  ],
+  "new_parts": [],
+  "removed_parts": [],
+  "only_floor3_and_floor4_changed": true,
+  "all_other20738_parts_actual_triangle_identical": true,
+  "photo_exposed_frame_exactly_unchanged": true,
+  "H6_closed_recess_exactly_unchanged": true,
+  "actual_floor_notch_checks": [
+    {
+      "floor": "structural-floor-slab-3",
+      "notches": [
+        "H2-lower-left",
+        "H5-centre-large"
+      ],
+      "actual_old_area_m2": 3837.536363836869,
+      "actual_new_area_m2": 3835.8866610757486,
+      "actual_removed_area_m2": 1.6497036531734466,
+      "actual_geometry_outside_expected_notch_removal_m2": 3.2001167385380405e-05,
+      "actual_safety_wall_overlap_volume_m3": 2.222437139381512
+    },
+    {
+      "floor": "structural-floor-slab-4",
+      "notches": [
+        "H1-upper-left",
+        "H3-centre-small-upper",
+        "H4-centre-small-left"
+      ],
+      "actual_old_area_m2": 3837.536363836869,
+      "actual_new_area_m2": 3835.2873575585954,
+      "actual_removed_area_m2": 2.2490079752489947,
+      "actual_geometry_outside_expected_notch_removal_m2": 1.656973855647352e-05,
+      "actual_safety_wall_overlap_volume_m3": 2.2224259841925615
+    }
+  ],
+  "notch_count": 5,
+  "all_actual_new_floors_match_only_declared_notches": true,
+  "continuous_safety_wall_floor_connections_preserved": true,
+  "all_part_foreground_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v12/model-review-preparation/all-aperture-occluders-v6-raw.json",
+    "bytes": 5624,
+    "sha256": "81d66eca4cb1c31b15733758a9086308d47bebe6856712f96e5e86ffe89e470d"
+  },
+  "no_native_acceptance_from_numeric_check": true
+}

@@ -1,0 +1,514 @@
+{
+  "schema": "sihang-independent-serialized-architecture-review-v1",
+  "created_utc": "2026-10-27T01:51:26.160605+00:00",
+  "reviewer": "/root/next_building_scope",
+  "review_scope": "Read actual GLB float32 triangles via independently parsed buffers and bound companion ranges. No author builder, Blender or browser executed.",
+  "inputs": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/jingan-sihang-warehouse.glb",
+      "bytes": 25721072,
+      "sha256": "65059b803b6970837323404b3d6cef2cc028ff2ce38b6e73eff4025319778fc5"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/jingan-sihang-warehouse.geometry.json",
+      "bytes": 6693701,
+      "sha256": "87db27bf710bc762e6a00bac7ae440d131dc998b41b891e2bfeb8a70ac62becf"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/feature-manifest.json",
+      "bytes": 11005212,
+      "sha256": "7f17fbf661cb25b7cf5f45060b379b1426583baee09ed843c48076eae56c80cf"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/source-v6/source-freeze.json",
+      "bytes": 4601,
+      "sha256": "f17cc452d08bf11d0acff60d9dbde5ffc778510baa0017987bd75d9447acb411"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/source-v6/calibration.json",
+      "bytes": 15057,
+      "sha256": "383fc90835cddc241156f13e4b8515875b117b3d6a4d0fedb20d6dc625ce4439"
+    }
+  ],
+  "source_freeze_failures": [],
+  "triangle_range_partition_valid": true,
+  "triangles": 419884,
+  "parts": 20740,
+  "positions_normals_finite": true,
+  "degenerate_float32_triangles": 0,
+  "bounds_enu": {
+    "min": [
+      -47.08192825317383,
+      -46.731773376464844,
+      0.0
+    ],
+    "max": [
+      60.12290954589844,
+      37.39597702026367,
+      27.700000762939453
+    ]
+  },
+  "actual_nominal_height_27_7_with_float32_tolerance": true,
+  "embedded_images": 0,
+  "actual_glb_under_100000000_bytes": true,
+  "whole_compound_and_floor_voids": {
+    "ground_actual_area_m2": 4204.33321054653,
+    "ground_expected_area_m2": 4204.333103302682,
+    "ground_plan_symmetric_difference_m2": 0.00016420182377792608,
+    "independently_requested_upper_floor_inset_m": 0.42,
+    "independently_requested_atrium_floor_clearance_m": 0.18,
+    "upper_floor_expected_area_m2": 3837.5364043769505,
+    "upper_floor_symmetric_difference_m2": 0.0001590936073488029,
+    "atrium_voids_opaque_floor_overlap_m2": 0.0,
+    "south_west_windows": 50,
+    "south_east_windows": 40,
+    "south_entry_count": 2,
+    "east_end_windows_by_floor_u": {
+      "floor-1": [
+        -8.82980384060566,
+        2.7266670921122227e-07,
+        8.829804156149386
+      ],
+      "floor-2": [
+        -8.82980384060566,
+        2.7266670921122227e-07,
+        8.829804156149386
+      ],
+      "floor-3": [
+        -8.82980384060566,
+        2.7266670921122227e-07,
+        8.829804156149386
+      ],
+      "floor-4": [
+        -8.82980384060566,
+        2.7266670921122227e-07,
+        8.829804156149386
+      ],
+      "floor-5": [
+        -8.82980384060566,
+        2.7266670921122227e-07,
+        8.829804156149386
+      ]
+    }
+  },
+  "window_feature_count": 376,
+  "window_feature_groups": {
+    "south/west": 50,
+    "west-entry-back": 5,
+    "south/east": 40,
+    "east-entry-back": 5,
+    "east-end": 15,
+    "north-curved-0": 10,
+    "north-curved-1": 10,
+    "north-curved-2": 10,
+    "north-curved-3": 10,
+    "north-curved-4": 10,
+    "north-curved-5": 10,
+    "north-curved-6": 5,
+    "north-curved-7": 5,
+    "north-curved-8": 5,
+    "north-curved-9": 5,
+    "north-curved-10": 5,
+    "north-curved-11": 5,
+    "north-curved-12": 5,
+    "sixth-floor-0": 1,
+    "sixth-floor-1": 12,
+    "sixth-floor-2": 4,
+    "sixth-floor-4": 1,
+    "sixth-floor-6": 9,
+    "sixth-floor-8": 1,
+    "sixth-floor-10": 4,
+    "sixth-floor-11": 5,
+    "sixth-floor-12": 1,
+    "sixth-floor-13": 2,
+    "sixth-floor-14": 2,
+    "sixth-floor-15": 2,
+    "sixth-floor-16": 2,
+    "sixth-floor-17": 2,
+    "sixth-floor-18": 2,
+    "sixth-floor-19": 1,
+    "sixth-floor-20": 1,
+    "sixth-floor-21": 1,
+    "sixth-floor-22": 1,
+    "sixth-floor-23": 1,
+    "sixth-floor-24": 1,
+    "atrium-0-wall-0": 10,
+    "atrium-0-wall-1": 10,
+    "atrium-0-wall-2": 10,
+    "atrium-0-wall-3": 10,
+    "atrium-1-wall-0": 10,
+    "atrium-1-wall-1": 25,
+    "atrium-1-wall-2": 10,
+    "atrium-1-wall-3": 25
+  },
+  "window_geometry_failures": [],
+  "window_max_depth_error_m": 2.408424174038526e-06,
+  "window_max_continuous_wall_obstruction_m2": 0.0,
+  "damage_actual_geometry": [
+    {
+      "id": "west-memorial/H1-upper-left",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.6800012238310358,
+        -0.6619987408106196
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.7200014384027913,
+        -0.4299981582817057
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.460000802693287,
+        -1.279998701181427
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H2-lower-left",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.6800019540633077,
+        -0.6619982158996073
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.7200016544071351,
+        -0.42999843051222747
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.4600016564726106,
+        -1.2799986003247847
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H3-centre-small-upper",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.680000576623968,
+        -0.6619982571425941
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.720001045572526,
+        -0.429999275483905
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.4600015337219612,
+        -1.2799987170410854
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H4-centre-small-left",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.6800017179064265,
+        -0.6619992582812406
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.7200016137038908,
+        -0.4299982114814622
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.460001278309011,
+        -1.2799984616281355
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H5-centre-large",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.6800017813013461,
+        -0.6619981795334271
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.7200018009412469,
+        -0.4299980173013852
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.460001736879218,
+        -1.2799981436056533
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H6-right-small-left",
+      "kind": "large_brick_backed_recess",
+      "front_masonry_obstruction_m2": 0.0,
+      "uncovered_recess_back_m2": 0.0,
+      "actual_recess_front_depth_m": -0.29999816990592165,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H7-right-large",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.6800015363690372,
+        -0.6619982833261119
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.7200020540197818,
+        -0.42999823246552826
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.4600012330403178,
+        -1.279998806656981
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    },
+    {
+      "id": "west-memorial/H8-right-low",
+      "kind": "large_glass_backed_damage",
+      "front_masonry_obstruction_m2": 0.0,
+      "glass_depth_bounds_m": [
+        -0.6800019853560538,
+        -0.6619992933671456
+      ],
+      "glass_material": "restoration dark glass",
+      "seat_depth_bounds_m": [
+        -0.7200019760290458,
+        -0.4299984398496472
+      ],
+      "seat_material": "stone reveal",
+      "backing_depth_bounds_m": [
+        -1.4600020719732218,
+        -1.2799982974245456
+      ],
+      "backing_material": "safety backing masonry",
+      "uncovered_glass_region_m2": 0.0,
+      "pass": true
+    }
+  ],
+  "actual_skylights_and_lower_rain_canopies": [
+    {
+      "label": "west/transparent-entry-rain-canopy",
+      "z_bounds_m": [
+        3.7200000286102295,
+        3.744999885559082
+      ],
+      "actual_plan_area_m2": 30.5775012103295,
+      "plan_symmetric_difference_m2": 8.134034161671966e-06,
+      "alpha": 0.42,
+      "alpha_mode": "BLEND",
+      "pass": true
+    },
+    {
+      "label": "east/transparent-entry-rain-canopy",
+      "z_bounds_m": [
+        3.4000000953674316,
+        3.424999952316284
+      ],
+      "actual_plan_area_m2": 22.75499796549957,
+      "plan_symmetric_difference_m2": 8.441220108963319e-06,
+      "alpha": 0.42,
+      "alpha_mode": "BLEND",
+      "pass": true
+    },
+    {
+      "label": "atrium-0/glazed-roof",
+      "z_bounds_m": [
+        26.399999618530273,
+        26.424999237060547
+      ],
+      "actual_plan_area_m2": 65.25614706663032,
+      "plan_symmetric_difference_m2": 5.235743812548239e-06,
+      "alpha": 0.42,
+      "alpha_mode": "BLEND",
+      "pass": true
+    },
+    {
+      "label": "atrium-1/glazed-roof",
+      "z_bounds_m": [
+        26.399999618530273,
+        26.424999237060547
+      ],
+      "actual_plan_area_m2": 153.96886582821233,
+      "plan_symmetric_difference_m2": 1.8810609765783176e-05,
+      "alpha": 0.42,
+      "alpha_mode": "BLEND",
+      "pass": true
+    }
+  ],
+  "all_declared_upper_canopy_parts": [
+    "east/upper-canopy-cross-rib--1-0",
+    "east/upper-canopy-cross-rib--1-1",
+    "east/upper-canopy-cross-rib--1-2",
+    "east/upper-canopy-cross-rib--1-3",
+    "east/upper-canopy-slope-rib--1-0",
+    "east/upper-canopy-slope-rib--1-1",
+    "east/upper-canopy-slope-rib--1-2",
+    "east/upper-canopy-cross-rib-1-0",
+    "east/upper-canopy-cross-rib-1-1",
+    "east/upper-canopy-cross-rib-1-2",
+    "east/upper-canopy-cross-rib-1-3",
+    "east/upper-canopy-slope-rib-1-0",
+    "east/upper-canopy-slope-rib-1-1",
+    "east/upper-canopy-slope-rib-1-2",
+    "east/upper-canopy-glass-pitch--1",
+    "east/upper-canopy-glass-pitch-1"
+  ],
+  "signage_part_labels": [
+    "west-entry-sign/english-name/glyph-0",
+    "west-entry-sign/english-name/glyph-1",
+    "west-entry-sign/english-name/glyph-2",
+    "west-entry-sign/english-name/glyph-3",
+    "west-entry-sign/english-name/glyph-4",
+    "west-entry-sign/english-name/glyph-5",
+    "west-entry-sign/english-name/glyph-6",
+    "west-entry-sign/english-name/glyph-7",
+    "west-entry-sign/english-name/glyph-8",
+    "west-entry-sign/english-name/glyph-9",
+    "west-entry-sign/english-name/glyph-10",
+    "west-entry-sign/english-name/glyph-11",
+    "west-entry-sign/english-name/glyph-12",
+    "west-entry-sign/english-name/glyph-13",
+    "west-entry-sign/english-name/glyph-14",
+    "west-entry-sign/english-name/glyph-15",
+    "west-entry-sign/english-name/glyph-16",
+    "west-entry-sign/english-name/glyph-17",
+    "west-entry-sign/english-name/glyph-18",
+    "west-entry-sign/english-name/glyph-19",
+    "west-entry-sign/english-name/glyph-20",
+    "west-entry-sign/english-name/glyph-21",
+    "west-entry-sign/historic-right-to-left-name/glyph-0",
+    "west-entry-sign/historic-right-to-left-name/glyph-0/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-2/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-2/repeat-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-3",
+    "west-entry-sign/historic-right-to-left-name/glyph-4",
+    "west-entry-sign/historic-right-to-left-name/glyph-4/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-4/repeat-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-4/repeat-3",
+    "west-entry-sign/historic-right-to-left-name/glyph-5",
+    "west-entry-sign/historic-right-to-left-name/glyph-6",
+    "west-entry-sign/historic-right-to-left-name/glyph-6/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-6/repeat-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-7",
+    "west-entry-sign/historic-right-to-left-name/glyph-7/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-7/repeat-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-7/repeat-3",
+    "west-entry-sign/historic-right-to-left-name/glyph-8",
+    "west-entry-sign/historic-right-to-left-name/glyph-8/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-8/repeat-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-8/repeat-3",
+    "west-entry-sign/historic-right-to-left-name/glyph-8/repeat-4",
+    "west-entry-sign/historic-right-to-left-name/glyph-9",
+    "west-entry-sign/historic-right-to-left-name/glyph-9/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-9/repeat-2",
+    "west-entry-sign/historic-right-to-left-name/glyph-9/repeat-3",
+    "west-entry-sign/historic-right-to-left-name/glyph-10",
+    "west-entry-sign/historic-right-to-left-name/glyph-10/repeat-1",
+    "west-entry-sign/historic-right-to-left-name/glyph-10/repeat-2",
+    "west-entry-sign/bank-names-upper/glyph-0",
+    "west-entry-sign/bank-names-upper/glyph-1",
+    "west-entry-sign/bank-names-upper/glyph-2",
+    "west-entry-sign/bank-names-upper/glyph-3",
+    "west-entry-sign/bank-names-upper/glyph-3/repeat-1",
+    "west-entry-sign/bank-names-upper/glyph-3/repeat-2",
+    "west-entry-sign/bank-names-lower/glyph-0",
+    "west-entry-sign/bank-names-lower/glyph-0/repeat-1",
+    "west-entry-sign/bank-names-lower/glyph-1",
+    "west-entry-sign/bank-names-lower/glyph-2",
+    "west-entry-sign/bank-names-lower/glyph-3",
+    "west-entry-sign/bank-names-lower/glyph-3/repeat-1",
+    "west-entry-sign/bank-names-lower/glyph-3/repeat-2",
+    "east-entry-sign/english-name/glyph-0",
+    "east-entry-sign/english-name/glyph-1",
+    "east-entry-sign/english-name/glyph-2",
+    "east-entry-sign/english-name/glyph-3",
+    "east-entry-sign/english-name/glyph-4",
+    "east-entry-sign/english-name/glyph-5",
+    "east-entry-sign/english-name/glyph-6",
+    "east-entry-sign/english-name/glyph-7",
+    "east-entry-sign/english-name/glyph-8",
+    "east-entry-sign/english-name/glyph-9",
+    "east-entry-sign/english-name/glyph-10",
+    "east-entry-sign/english-name/glyph-11",
+    "east-entry-sign/english-name/glyph-12",
+    "east-entry-sign/english-name/glyph-13",
+    "east-entry-sign/english-name/glyph-14",
+    "east-entry-sign/english-name/glyph-15",
+    "east-entry-sign/english-name/glyph-16",
+    "east-entry-sign/english-name/glyph-17",
+    "east-entry-sign/english-name/glyph-18",
+    "east-entry-sign/english-name/glyph-19",
+    "east-entry-sign/english-name/glyph-20",
+    "east-entry-sign/english-name/glyph-21",
+    "east-entry-sign/english-name/glyph-22",
+    "east-entry-sign/english-name/glyph-23",
+    "east-entry-sign/english-name/glyph-24",
+    "east-entry-sign/english-name/glyph-25",
+    "east-entry-sign/english-name/glyph-26",
+    "east-entry-sign/historic-right-to-left-name/glyph-0",
+    "east-entry-sign/historic-right-to-left-name/glyph-0/repeat-1",
+    "east-entry-sign/historic-right-to-left-name/glyph-1",
+    "east-entry-sign/historic-right-to-left-name/glyph-2",
+    "east-entry-sign/historic-right-to-left-name/glyph-2/repeat-1",
+    "east-entry-sign/historic-right-to-left-name/glyph-2/repeat-2",
+    "east-entry-sign/historic-right-to-left-name/glyph-2/repeat-3",
+    "east-entry-sign/historic-right-to-left-name/glyph-3",
+    "east-entry-sign/historic-right-to-left-name/glyph-3/repeat-1",
+    "east-entry-sign/historic-right-to-left-name/glyph-3/repeat-2",
+    "east-entry-sign/historic-right-to-left-name/glyph-4",
+    "east-entry-sign/historic-right-to-left-name/glyph-4/repeat-1",
+    "east-entry-sign/historic-right-to-left-name/glyph-5",
+    "east-entry-sign/historic-right-to-left-name/glyph-6",
+    "east-entry-sign/historic-right-to-left-name/glyph-6/repeat-1",
+    "east-entry-sign/historic-right-to-left-name/glyph-6/repeat-2",
+    "east-entry-sign/historic-right-to-left-name/glyph-6/repeat-3",
+    "east-entry-sign/historic-right-to-left-name/glyph-7",
+    "west-memorial/historic-inscription-0-0",
+    "west-memorial/historic-inscription-0-0/repeat-1",
+    "west-memorial/historic-inscription-1-0",
+    "west-memorial/historic-inscription-2-0",
+    "west-memorial/historic-inscription-2-0/repeat-1",
+    "west-memorial/historic-inscription-2-0/repeat-2",
+    "west-memorial/historic-inscription-3-0",
+    "west-memorial/historic-inscription-3-0/repeat-1",
+    "west-memorial/historic-inscription-3-0/repeat-2",
+    "west-memorial/historic-inscription-3-0/repeat-3",
+    "west-memorial/historic-inscription-4-0",
+    "west-memorial/historic-inscription-4-0/repeat-1",
+    "west-memorial/historic-inscription-4-0/repeat-2"
+  ],
+  "model_appearance_accepted": false,
+  "native_render_accepted": false,
+  "browser_accepted": false,
+  "limitations": [
+    "The author semantic manifest identifies intended features; this review verifies their actual serialized triangle positions rather than accepting their declarations alone.",
+    "Opening obstruction check covers the corresponding continuous wall skins; it does not certify every possible intersection with floor slab, beam, ornament or neighbouring mesh.",
+    "Photo likeness, typography, visual glass reflections and weathering require actual native/browser images; these numerical checks are not appearance acceptance.",
+    "East-end five-storey window repetition remains a model assumption where street/bridge/photos obscure base conditions; three columns are independently photo-supported."
+  ]
+}
