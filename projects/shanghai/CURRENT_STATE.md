@@ -1,6 +1,6 @@
 # V17 奉贤博物馆
 
-**[直接进入博物馆室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+**[直接进入博物馆室外漫游](https://rawcdn.githack.com/ecojust/e-resource/3d33c9f85c9daf7d0488bfd8fcf25b8c5168e0fa/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
 
 本轮增加奉贤区2019年新馆，当前为34处导航、20个精细 owner、13个 owner 宏、18组 near、15条 ordinary 记录、12个 catalog 宏；全市16区底图包含1,796,419个建筑及部件要素，尚未全部逐栋精细复原。
 
