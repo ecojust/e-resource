@@ -1,6 +1,6 @@
 # 当前交付状态 · 哥伦比亚乡村俱乐部主楼 v16
 
-[按16区查看全部33处地标](README.md) · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html) · [第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [哥伦比亚主楼直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk)
+[按16区查看全部33处地标](README.md) · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html) · [第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746/projects/shanghai/index.html#mode=walk) · [哥伦比亚主楼直达](https://rawcdn.githack.com/ecojust/e-resource/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk)
 
 新增长宁区哥伦比亚乡村俱乐部主楼，已接入第三人称漫游，通过模型检查与本地浏览器验收。当前33处导航包含外滩15项、陆家嘴4项和14项逐栋复原模型，分布在13个区；金山、奉贤、崇明的逐栋精模待补充。普通精模目录涉及11个宏块；源替换登记19项，涉及12个宏块和17个近景分块。
 
