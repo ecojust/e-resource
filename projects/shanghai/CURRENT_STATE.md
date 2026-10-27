@@ -1,6 +1,6 @@
 # V20 巴金旧居主楼
 
-**[直接进入巴金旧居室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+**[直接进入巴金旧居室外漫游](https://rawcdn.githack.com/ecojust/e-resource/3c9efa6ac948e5298029245ae2bc04a35476de55/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
 
 当前目录37处建筑入口，分布在14个区；全市16区底图的1,796,419个建筑及部件要素尚未全部逐栋精细复原。金山、崇明的逐栋精模仍待补充。
 
