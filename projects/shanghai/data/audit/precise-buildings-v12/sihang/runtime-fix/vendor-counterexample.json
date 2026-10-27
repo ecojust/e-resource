@@ -1,0 +1,708 @@
+{
+  "schema": "sihang-empty-filter-tiny-counterexample-v1",
+  "passed": true,
+  "main_changed": false,
+  "full_page_acceptance": false,
+  "budget_seconds": 120,
+  "preparation": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/preparation.json",
+    "bytes": 2003,
+    "sha256": "a7438b52d5c1d30e26b7ce5efb25d0b41df0eb41022876f4a65c1eded3f0dfed"
+  },
+  "script": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/check_tiny_map.py",
+    "bytes": 4774,
+    "sha256": "da64d5b5c62399adc4e2d6d663618da723e0322960a41e9b9afdca0e634756f0"
+  },
+  "browser_check": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/check-tiny-map.js",
+    "bytes": 5103,
+    "sha256": "77bdb4108765833f9672550a735711bda7ce22bb24ad90e4dd790c480e8e2720"
+  },
+  "actual_served_vendor": [
+    {
+      "url": "http://127.0.0.1:8874/shanghai_project/vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "url": "http://127.0.0.1:8874/shanghai_project/vendor/maplibre-gl.css",
+      "bytes": 70024,
+      "sha256": "ab1e70d59ec40465bae7e7030da2f3ccf28133fd502e62bd598eefbadfd7a732"
+    }
+  ],
+  "check": {
+    "passed": true,
+    "scope": "Real vendored MapLibre, real GeoJSON worker and actual captured OSM polygons. Tests only empty-filter idempotence and real filter changes; no full-page or vector-source acceptance.",
+    "results": [
+      {
+        "name": "before",
+        "stages": [
+          {
+            "label": "empty-1",
+            "reloads": 1,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "empty-2",
+            "reloads": 1,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "empty-3",
+            "reloads": 1,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "filter-first",
+            "reloads": 1,
+            "synchronous": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "repeat-real-filter",
+            "reloads": 0,
+            "synchronous": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "final": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "sourceEvents": []
+          },
+          {
+            "label": "change-real-filter",
+            "reloads": 1,
+            "synchronous": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6221592372
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "final": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6221592372
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "clear-real-filter",
+            "reloads": 1,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "empty-after-clear",
+            "reloads": 1,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "actualSourceType": "geojson",
+        "passed": true
+      },
+      {
+        "name": "candidate",
+        "stages": [
+          {
+            "label": "empty-1",
+            "reloads": 0,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": null,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": null,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": []
+          },
+          {
+            "label": "empty-2",
+            "reloads": 0,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": null,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": null,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": []
+          },
+          {
+            "label": "empty-3",
+            "reloads": 0,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": null,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": null,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": []
+          },
+          {
+            "label": "filter-first",
+            "reloads": 1,
+            "synchronous": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "repeat-real-filter",
+            "reloads": 0,
+            "synchronous": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "final": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6154045272
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "sourceEvents": []
+          },
+          {
+            "label": "change-real-filter",
+            "reloads": 1,
+            "synchronous": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6221592372
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272
+              ]
+            },
+            "final": {
+              "filter": [
+                "all",
+                [
+                  "==",
+                  [
+                    "id"
+                  ],
+                  6221592372
+                ]
+              ],
+              "filterIsUndefined": false,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "clear-real-filter",
+            "reloads": 1,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": "reload",
+              "paused": true,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": [
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": false
+              },
+              {
+                "sourceDataType": null,
+                "isSourceLoaded": true
+              }
+            ]
+          },
+          {
+            "label": "empty-after-clear",
+            "reloads": 0,
+            "synchronous": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "final": {
+              "filter": null,
+              "filterIsUndefined": true,
+              "queuedSourceUpdate": null,
+              "paused": false,
+              "sourceLoaded": true,
+              "tilesLoaded": true,
+              "visibleIds": [
+                6154045272,
+                6221592372
+              ]
+            },
+            "sourceEvents": []
+          }
+        ],
+        "errors": [],
+        "actualSourceType": "geojson",
+        "passed": true
+      }
+    ]
+  },
+  "page_errors": [],
+  "elapsed_seconds": 5.318631985006505
+}

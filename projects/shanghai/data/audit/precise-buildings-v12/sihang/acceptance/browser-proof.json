@@ -1,0 +1,81 @@
+{
+  "browser": {
+    "bytes": 569460,
+    "sha256": "39affd34ad5978882c17e0694700892c783212373e12420df9551f5fe2e671e7"
+  },
+  "building_id": "jingan-sihang-warehouse",
+  "catalog_workflow_tested": false,
+  "geometry_input_sha256": "c62077a2eb0f60d781998d427fcd5306dec54c94b96a2e376efc9cf53b1dc8b4",
+  "limitations": [
+    "Photo and plan informed geometry, not measured survey, photographic textures or full-city detailed completion.",
+    "West-wall scene shading is dark; the close walking views do not show the entire compound. Materials and hidden dimensions remain approximations.",
+    "Scripted camera/source lifecycle screenshots cover these finite states, not complete user-interface navigation or all walking routes.",
+    "Software SwiftShader rendering is slow; this is functional evidence, not a user hardware performance benchmark. Keyboard and catalog acceptance are separate."
+  ],
+  "lod_sha256": "db10e84fdcb57e91c58c8d1ba1f645ec6a0a7779d15f651211a8e527bf9fc0be",
+  "passed": true,
+  "qa_evidence": {
+    "actual_osm_fixture": {
+      "bytes": 2882,
+      "sha256": "3d649ed7ffb88cb59752ee7acc8082752eaecc414bdf6dda1dd526a5c04a2dec",
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/osm-observation-v1/fixture-v1/sihang-osm-target-evidence.json"
+    },
+    "building_id": "jingan-sihang-warehouse",
+    "osm_evidence_set": {
+      "bytes": 438,
+      "sha256": "221d556f64025a86c19313ceac427c39d113b229bfbf50148f54b0c516b14056",
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/osm-observation-v1/fixture-v1/sihang-osm-fixture-set.json"
+    },
+    "qa_tools_lock": {
+      "bytes": 8081,
+      "sha256": "7cc630cebc17f019f749218d1c9a8a080b895c568848a10d1be846a3acc466c5",
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/app/qa-tools.lock.json"
+    },
+    "runtime_delta": {
+      "after": {
+        "bytes": 53169,
+        "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+      },
+      "before": {
+        "bytes": 52958,
+        "sha256": "5b9fa5902e1648106d12c3b5c000ef36a1d43bb400fc86db261ef2c12e4710d2"
+      },
+      "effective_runtime_baseline": {
+        "bytes": 5821,
+        "sha256": "4c10056024d33543ea624087bcd8ed5ff13f7e40b41fd3c96e6ed51e7934bd9b",
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/effective-runtime31.json"
+      },
+      "file": "src/map-scene.js",
+      "manifest": {
+        "bytes": 1786,
+        "sha256": "3ad8cc5cd647435f547dece9cccfcc7762b907f6faa16a0d697b9e23abf9bf74",
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/runtime-delta.proposal.json"
+      },
+      "original_runtime_baseline": {
+        "bytes": 5267,
+        "sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39",
+        "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation-per-model-v2/runtime-baseline.json"
+      },
+      "root_review": {
+        "bytes": 1693,
+        "sha256": "7389647f98f6aecd24819565f64bb9ce90c13be3c0405d7db4f80b0048b193f3",
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/root-runtime-review.actual.json"
+      },
+      "scope": "Only skip redundant setFilter(null) when desired and actual layer filter are absent. Real filter changes, clearing nonempty filters, original sourceChanged protection, suppression refresh, geometry, runtime deadlines, rendering settings and all readiness/capture checks remain unchanged.",
+      "vendor_evidence": {
+        "bytes": 19630,
+        "sha256": "8aab46e3229471ce578adbdac9787571d525f5b5483f8df7a00afb6a6267cf4c",
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/actual-tiny-v1/report.json"
+      }
+    },
+    "runtime_files_unchanged": false,
+    "scope": "Frozen target-parameterized QA with separately byte-bound actual OSM fixtures and one reviewed map-scene runtime delta. Static global return/reset images concern only the last target; the other30 runtime files retain original bytes.",
+    "unchanged_runtime_file_count": 30
+  },
+  "root_visual": {
+    "bytes": 4839,
+    "sha256": "c4939f57516397337e97425242062df99abb5ec943d71ac97c2a2ecf3753805e"
+  },
+  "scope": "Root actually viewed all seven1040x760 captures. Accept bounded full/oblique/LOD/return/release/return/reset rendering and visible third-person placement, with actual source-owner audits and five neighbors preserved. Native full/detail/rear geometry was reviewed separately.",
+  "web_sha256": "e395e52da04d0412fb986b0480db60f3a0a29f639bd7d4dfb4ba1d87bd914657"
+}

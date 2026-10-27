@@ -1,0 +1,38 @@
+{
+  "schema": "sihang-one-file-runtime-delta-v12",
+  "scope": "Only skip redundant setFilter(null) when desired and actual layer filter are absent. Real filter changes, clearing nonempty filters, original sourceChanged protection, suppression refresh, geometry, runtime deadlines, rendering settings and all readiness/capture checks remain unchanged.",
+  "original_runtime_baseline": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation-per-model-v2/runtime-baseline.json",
+    "bytes": 5267,
+    "sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39"
+  },
+  "files": [
+    {
+      "file": "src/map-scene.js",
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/candidate/src/map-scene.js",
+      "before": {
+        "bytes": 52958,
+        "sha256": "5b9fa5902e1648106d12c3b5c000ef36a1d43bb400fc86db261ef2c12e4710d2"
+      },
+      "after": {
+        "bytes": 53169,
+        "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+      }
+    }
+  ],
+  "source_patch": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/map-scene-empty-filter.patch",
+    "bytes": 790,
+    "sha256": "e151fa1ee0c9dda2eca1ce1e0ac87813df425741a6bee73ee57338d33094a137"
+  },
+  "candidate_preparation": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/preparation.json",
+    "bytes": 2003,
+    "sha256": "a7438b52d5c1d30e26b7ce5efb25d0b41df0eb41022876f4a65c1eded3f0dfed"
+  },
+  "original_locks_modified": false,
+  "main_written": false,
+  "browser_accepted": false,
+  "root_acceptance_required_separately": true,
+  "actual_vendor_counterexample_required_separately": true
+}

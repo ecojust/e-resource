@@ -1,0 +1,14 @@
+--- a/src/map-scene.js
++++ b/src/map-scene.js
+@@ -543,7 +543,10 @@
+       const base = buildingBaseFilters.get(id), filter = base ? ['all', base] : ['all'];
+       // Both providers now use their own real feature IDs. MapLibre `within`
+       // cannot test polygon features, so it cannot suppress OSM extrusions.
+-      map.setFilter(id, filter.length > 1 ? filter : null);
++      const desiredFilter = filter.length > 1 ? filter : null;
++      // MapLibre stores an absent filter as undefined; setting null again reloads its source.
++      if (desiredFilter === null && map.getFilter(id) == null) continue;
++      map.setFilter(id, desiredFilter);
+     }
+     osmSuppression?.setActive(buildingMode==='osm');
+     // Visibility loss restores online buildings within the same update; only

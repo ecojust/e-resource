@@ -1,0 +1,105 @@
+{
+  "schema": "sihang-browser-model-inputs-v12",
+  "status": "READY_FOR_PROFILE",
+  "targets": [
+    "jingan-sihang-warehouse"
+  ],
+  "runtime_baseline": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/effective-runtime31.json",
+    "bytes": 5821,
+    "sha256": "4c10056024d33543ea624087bcd8ed5ff13f7e40b41fd3c96e6ed51e7934bd9b"
+  },
+  "osm_evidence_set": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/osm-observation-v1/fixture-v1/sihang-osm-fixture-set.json",
+    "bytes": 438,
+    "sha256": "221d556f64025a86c19313ceac427c39d113b229bfbf50148f54b0c516b14056"
+  },
+  "model_evidence_gate": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/qa-v1/sihang_model_gate.py",
+    "bytes": 7030,
+    "sha256": "ad61ba20701a8df8d6c23f1bd8e2655ea06d0b4c12303ac6511d36ee24218044"
+  },
+  "models": {
+    "jingan-sihang-warehouse": {
+      "registration_input": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/registration-v1/actual-v6/registration.draft.json",
+        "bytes": 18946,
+        "sha256": "fbbf25f455fb86e7379550cc0506e6095c5128db22c63c9993bf3d489e5526f7"
+      },
+      "package": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/packaging/package-v6/packaging-record.json",
+        "bytes": 20474,
+        "sha256": "0bda0f65ca94ef1dbb33cf59d6c5565f5417c7698ef656262bf588fefc0e2e78"
+      },
+      "model_metadata": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/raw/metadata.json",
+        "bytes": 1292,
+        "sha256": "6677fb4a16ea14e83b439904572b9092deaf38526880cefc118a7b94d7ca45de"
+      },
+      "navigation_input": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/navigation-v1/jingan-sihang-warehouse.navigation.v6.prebrowser.json",
+        "bytes": 4885,
+        "sha256": "2f25864f9ed8667190a1c66617ac4526167e729bbf0b8aa3df3a30307608dcfb"
+      },
+      "prebrowser_summary": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/registration-v1/actual-v6/prebrowser-acceptance-summary.json",
+        "bytes": 28174,
+        "sha256": "b743829692466efc828043e20c0ca8d28161b7c8eded45c01591104a889cc151"
+      },
+      "actual_decoded": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/packaging/actual-decoded-v6.json",
+        "bytes": 1690847,
+        "sha256": "c2ca5cc100c5b13ab6b9353d4181d168c638ae10e0f6645c3862d78c204cfa52"
+      },
+      "native_render": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/native/native-render-report.json",
+        "bytes": 4178,
+        "sha256": "93cdb43364b7e74bddddba458cf5a94a7cc185a13255cc545a82b6d49dd93100"
+      },
+      "root_native_review": {
+        "source": "/workspace/shanghai_expansion/building-by-building-v12/sihang-model/run-v6/native/root-native-visual-review.json",
+        "bytes": 4432,
+        "sha256": "5b175a84f54449c9aaf1330c4d616cc4a659f988bf6d0346fe4d6ee84af6895d"
+      }
+    }
+  },
+  "model_accepted": false,
+  "browser_accepted": false,
+  "reviewed_runtime_delta": {
+    "manifest": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/runtime-delta.proposal.json",
+      "bytes": 1786,
+      "sha256": "3ad8cc5cd647435f547dece9cccfcc7762b907f6faa16a0d697b9e23abf9bf74"
+    },
+    "root_review": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/root-runtime-review.actual.json",
+      "bytes": 1693,
+      "sha256": "7389647f98f6aecd24819565f64bb9ce90c13be3c0405d7db4f80b0048b193f3"
+    },
+    "vendor_evidence": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/runtime-fix-preparation/actual-tiny-v1/report.json",
+      "bytes": 19630,
+      "sha256": "8aab46e3229471ce578adbdac9787571d525f5b5483f8df7a00afb6a6267cf4c"
+    },
+    "effective_runtime_baseline": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/runtime-delta-v1/effective-runtime31.json",
+      "bytes": 5821,
+      "sha256": "4c10056024d33543ea624087bcd8ed5ff13f7e40b41fd3c96e6ed51e7934bd9b"
+    },
+    "file": "src/map-scene.js",
+    "before": {
+      "bytes": 52958,
+      "sha256": "5b9fa5902e1648106d12c3b5c000ef36a1d43bb400fc86db261ef2c12e4710d2"
+    },
+    "after": {
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+    },
+    "original_runtime_baseline": {
+      "source": "/workspace/shanghai_expansion/building-by-building-v11/integration-modern-app-preparation-per-model-v2/runtime-baseline.json",
+      "bytes": 5267,
+      "sha256": "139c5291e476029c2a11ef3523985140722a87a210fabc69b327d77a7e223b39"
+    },
+    "scope": "Only skip redundant setFilter(null) when desired and actual layer filter are absent. Real filter changes, clearing nonempty filters, original sourceChanged protection, suppression refresh, geometry, runtime deadlines, rendering settings and all readiness/capture checks remain unchanged."
+  }
+}

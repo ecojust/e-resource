@@ -1,0 +1,110 @@
+{
+  "schema": "modern-source-bound-navigation-proposal-v11",
+  "building_id": "jingan-sihang-warehouse",
+  "status": "ready",
+  "ready_meaning": "This exact source/raw exterior observation point is ready for later browser testing only.",
+  "source_geometry_sha256": "c62077a2eb0f60d781998d427fcd5306dec54c94b96a2e376efc9cf53b1dc8b4",
+  "raw_sha256": "65059b803b6970837323404b3d6cef2cc028ff2ce38b6e73eff4025319778fc5",
+  "anchor": [
+    121.46656544892939,
+    31.242267936775207
+  ],
+  "navigation": {
+    "listed": true,
+    "walkStart": [
+      121.46600036283354,
+      31.24210603364052
+    ],
+    "bearing": 75.45742756518604,
+    "overviewZoom": 18
+  },
+  "scope": "One fixed exterior start, a conservative torso/camera envelope and three finite actual-raw rays. No physical ground, access, full avatar motion or camera-sweep claim.",
+  "browser_accepted": false,
+  "final_navigation_accepted": false,
+  "registered": false,
+  "ground_and_foot_support_verified": false,
+  "on_site_access_verified": false,
+  "full_character_motion_verified": false,
+  "camera_sweep_and_framing_verified": false,
+  "complete_collision_checked": false,
+  "actual_source_raw_navigation_check": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/navigation-v1/actual-v6-check-1/navigation-check.json",
+    "bytes": 6016,
+    "sha256": "92c971296ede5b781d0d70434f591ad475746bfc513cb6f41c6aa441453b983d"
+  },
+  "actual_inputs": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/navigation-v1/actual-inputs-v6.json",
+    "bytes": 3608,
+    "sha256": "7baaefd0006a1e431ef0611afdd6bff604937ca86c9498cc296506f8c78a56c5"
+  },
+  "actual_finite_report": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/navigation-v1/actual-v6-check-1/actual-finite-rays.json",
+    "bytes": 4704579,
+    "sha256": "5f1827baa2f5f18c547a8bc1fb2fcd15fa5a6fec709c0f700fbee791dd71a047"
+  },
+  "source_map_candidates": {
+    "source": "/workspace/shanghai_expansion/building-by-building-v12/integration/navigation-v1/source-v6-candidates.pending.json",
+    "bytes": 19883,
+    "sha256": "20a2fbb4d034be2a19361a03af5cdfda017c61613b2b591901c4f829e3185b78"
+  },
+  "actual_body_and_camera_envelopes": {
+    "parts_checked": 20740,
+    "triangles": 419884,
+    "body_probe": {
+      "start_enu_m": [
+        -53.78271707479165,
+        -18.022959063108676,
+        0.38
+      ],
+      "end_enu_m": [
+        -53.78271707479165,
+        -18.022959063108676,
+        1.75
+      ],
+      "radius_m": 0.38,
+      "vertical_covered_range_m": [
+        0,
+        2.13
+      ]
+    },
+    "camera_probe": {
+      "eye_enu_m": [
+        -64.49200214575335,
+        -20.801059651909068,
+        4.948423413440917
+      ],
+      "target_enu_m": [
+        -51.072425340996745,
+        -17.319881032074406,
+        3
+      ],
+      "radius_m": 0.12
+    },
+    "body_possible_hits": [],
+    "camera_possible_hits": [],
+    "envelopes_clear": true,
+    "method": "Each envelope is computed afresh from loaded actual Float32 triangles; segment_hit tests its radius-expanded AABB. Possible hits are never discarded."
+  },
+  "source_map_observations": {
+    "body_or_boom_source_intersection": false,
+    "bounded_neighbor_hits": {
+      "body": [],
+      "boom": [],
+      "focus_ray": []
+    },
+    "mapped_obstacle_hits": [],
+    "closed_square_contains_body_and_boom": true
+  },
+  "limitations": [
+    "Source map boundary is replacement geometry; the independently interpreted design wall is recorded separately.",
+    "The design may be a working model revision. Re-run against the finally confirmed calibration and actual raw before a ready proposal.",
+    "Current-source neighbor screening is bounded to this macro and150m around the compound, not the entire city.",
+    "OSM labels, closed-ring containment and estimated5m road corridors do not establish surveyed ground, safe public access, stairs or furniture.",
+    "Nominal default ground offset is zero; controller defaults, two finite probes and a sightline are not full avatar motion or camera-sweep simulation.",
+    "Ready applies only to this exact current raw, calibration, source and controller. Changed source/model bytes require new checks.",
+    "Actual closed-solid rays test one boom line and one facade line with two depth intervals. They do not certify rendering, opacity, whole-facade framing or all camera motion.",
+    "Body radius0.38m around axis z=.38..1.75 conservatively spans z=0..2.13m. Ground height, steps, foot support and public access remain unverified.",
+    "The source table49-building screen and closed mapped square ring are bounded map evidence. They are not live MVT visibility or measured terrain.",
+    "Roof/canopy structural support, native visual review and whole-model acceptance are independent; this result does not change their state."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "sihang-root-keyboard-visual-review-v12",
+  "reviewer": "root",
+  "passed": true,
+  "final": true,
+  "actually_viewed": true,
+  "reviewed_at": "2026-10-27T03:17:11.817727+00:00",
+  "browser_report": {
+    "file": "keyboard-smoke.json",
+    "bytes": 259302,
+    "sha256": "fe47bb7751b2a52919e7ee34ce1f8645bb39d82976c2e91020038cc908b74246"
+  },
+  "image": {
+    "file": "jingan-sihang-warehouse-after-W.png",
+    "bytes": 131416,
+    "sha256": "1933b73368c4a4143abc559fca3dc75d4b0f9e0de839765b641401fe26e5ed92",
+    "actually_viewed": true
+  },
+  "building_id": "jingan-sihang-warehouse",
+  "movement": {
+    "displacement_m": 0.20999999943344874,
+    "controller_distance_delta_m": 0.20999999992684698,
+    "actual_keyboard_events": [
+      {
+        "type": "keydown",
+        "code": "KeyW",
+        "key": "w",
+        "isTrusted": true,
+        "at": 309791.200000003
+      },
+      {
+        "type": "keyup",
+        "code": "KeyW",
+        "key": "w",
+        "isTrusted": true,
+        "at": 313752.8000000119
+      }
+    ],
+    "actual_camera_player_horizontal_distance_m": 11.06375382939489,
+    "minimum_visible_motion_m": 0.1,
+    "no_qa_position_mutation_during_input": true
+  },
+  "post_keyup_stationary": {
+    "exact_position_and_distance": true,
+    "snapshot_count": 27,
+    "comparison": "Exact numeric position and controller.distance equality for every post-keyup snapshot"
+  },
+  "scope": "Root actually viewed the real after-W screenshot: avatar remains visible on exterior plaza with full west-wall model, and place card does not occlude avatar. Trusted W keydown/keyup produced0.21m movement; all27 post-keyup snapshots preserved exact position/distance. Actual source readiness settled and full model remained visible.",
+  "limitations": [
+    "Single short movement at one exterior start; not all-route collision or ground validation.",
+    "Software rendering test;3961.6ms actual trusted key hold is not a user-device speed benchmark.",
+    "West wall is shaded and model uses nonphotographic materials."
+  ]
+}

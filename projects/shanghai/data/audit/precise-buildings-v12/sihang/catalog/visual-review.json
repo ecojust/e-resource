@@ -1,0 +1,60 @@
+{
+  "status": "FINAL_ACTUAL_FIVE_IMAGES_REVIEWED",
+  "reviewer": "root",
+  "passed": true,
+  "final": true,
+  "actually_viewed": [
+    {
+      "file": "static-jingan-sihang-warehouse-loaded.png",
+      "bytes": 133526,
+      "sha256": "e3148026cf7593c686f5fccfdd05c715b35b21abab13a6a2fabc7aa5cb760e8c",
+      "actually_viewed": true,
+      "observation": "Static catalog adoption: shaded west-wall geometry and avatar visible; the wider place card stays just below the avatar feet. No duplicate simplified shell visible in this bounded view."
+    },
+    {
+      "file": "static-jingan-sihang-warehouse-returned.png",
+      "bytes": 133554,
+      "sha256": "7f3b3a5c55c7eaf6609cdb5f3c5a4542423583b24caf4b4e81997694469207d3",
+      "actually_viewed": true,
+      "observation": "After static catalog unload/return, target west-wall geometry and visible avatar return without duplicate shell. The card remains below the avatar; bounded view appearance matches the loaded state."
+    },
+    {
+      "file": "dynamic-jingan-sihang-warehouse-loaded.png",
+      "bytes": 133535,
+      "sha256": "712462b490c55b6c34c60cc765ca213cafc8ec4595e0e93a97a3e9fa0f205f05",
+      "actually_viewed": true,
+      "observation": "Dynamic-only catalog loading produces the same full target west-wall geometry and visible avatar, with no duplicate base shell in this bounded view."
+    },
+    {
+      "file": "dynamic-jingan-sihang-warehouse-returned.png",
+      "bytes": 133554,
+      "sha256": "b33d10c0d720d78ff3a8f9c30a698ac1d17301b02cad7336bccd6c3f541ea1d9",
+      "actually_viewed": true,
+      "observation": "Following dynamic unload and actual new-object return, the target wall and avatar remain visible in the same framing, with no duplicate source shell visible. Technical lifecycle report separately verifies geometry disposal."
+    },
+    {
+      "file": "dynamic-jingan-sihang-warehouse-index-hash-rejected-baseline-visible.png",
+      "bytes": 180649,
+      "sha256": "4d83337b528f8b97515e88a1bd70ea38b94523d652e6e10ee00c2650a0ef55e8",
+      "actually_viewed": true,
+      "observation": "Corrupt index is rejected and the generalized baseline facade returns instead of a missing building; the detailed damage wall is absent as intended. Avatar remains visible outside. The baseline is generic geometry and does not claim Sihang architectural fidelity."
+    }
+  ],
+  "schema": "sihang-root-catalog-visual-review-v12",
+  "reviewed_at": "2026-10-27T03:36:02.513065+00:00",
+  "macro_id": "14-13720-6693",
+  "target_ids": [
+    "jingan-sihang-warehouse"
+  ],
+  "browser_report_sha256": "520fe18596d08b66fe2c8037ae1252f71396e4f10012d9c94bf1a64a16579280",
+  "inputs_sha256": "e8d6118b8d48be2003de72f486e4bde24b4ed27c18825e30bc6912f1312e8fd2",
+  "reviewed_runtime_delta_sha256": "3ad8cc5cd647435f547dece9cccfcc7762b907f6faa16a0d697b9e23abf9bf74",
+  "runtime_file_sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+  "scope": "Root actually viewed all five1040x760 catalog screenshots. Static adoption and dynamic-only loaded/returned views retain the full target and unobstructed avatar; corrupt-index view restores generalized baseline building. Actual three-phase report verifies static reuse,21/21 dynamic geometries disposed, new objects on return, zero precise requests on corrupt index, and five neighbors preserved.",
+  "limitations": [
+    "Finite views and one macro only, not whole-city architectural completion or all walking routes.",
+    "Photo/plan informed geometry with nonphotographic materials; west-wall scene shade is dark.",
+    "First catalog run hit a real full-model network timeout and was interrupted; it remains preserved and unaccepted. This fresh unchanged retry passed. It does not repair the existing lack of automatic retry after full asset timeout.",
+    "Software rendering is not a user-device performance benchmark."
+  ]
+}

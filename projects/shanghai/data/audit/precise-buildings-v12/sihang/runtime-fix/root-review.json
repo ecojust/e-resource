@@ -1,0 +1,27 @@
+{
+  "schema": "sihang-root-one-file-runtime-review-v12",
+  "reviewer": "root",
+  "passed": true,
+  "final": true,
+  "actually_reviewed": true,
+  "reviewed_at": "2026-10-27T02:50:21.337491+00:00",
+  "file": "src/map-scene.js",
+  "before": {
+    "bytes": 52958,
+    "sha256": "5b9fa5902e1648106d12c3b5c000ef36a1d43bb400fc86db261ef2c12e4710d2"
+  },
+  "after": {
+    "bytes": 53169,
+    "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+  },
+  "runtime_delta_sha256": "3ad8cc5cd647435f547dece9cccfcc7762b907f6faa16a0d697b9e23abf9bf74",
+  "vendor_report_sha256": "8aab46e3229471ce578adbdac9787571d525f5b5483f8df7a00afb6a6267cf4c",
+  "runtime_file_sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7",
+  "browser_accepted": false,
+  "scope": "Root read the complete one-file patch, delta proposal/helper and actual tiny vendor report. The change skips only redundant setFilter(null) when the actual filter is absent. Actual vendored MapLibre showed all four empty calls reload before and zero afterward, while first/change/clear real filters still reload and render the expected feature IDs. Source-change handling and suppression refresh remain unchanged. This accepts the exact candidate for full-page testing.",
+  "limitations": [
+    "The tiny test uses captured OSM polygons in a real GeoJSON worker; it is not full vector scene or full-page acceptance.",
+    "The fix removes one demonstrated redundant reload trigger; it does not prove all earlier slow-rendering or residual timeouts have the same cause.",
+    "Fresh normal desktop static, catalog, keyboard and launcher checks remain required before claiming application acceptance."
+  ]
+}
