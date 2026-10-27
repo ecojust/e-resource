@@ -1,0 +1,113 @@
+{
+  "schema": "fengxian-v17-complete-source-lake-context",
+  "source_extraction_passed": true,
+  "model_geometry_evaluated": false,
+  "model_accepted": false,
+  "navigation_accepted": false,
+  "source": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v17/integration/fengxian/water-source-v1/osm-jinhai-lake-full.json",
+    "bytes": 108368,
+    "sha256": "1a1a8feb7836e0c5f8e7fb1feacfd06fa37f743d9c40d69beba6ff48cba6ad87"
+  },
+  "source_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v17/integration/fengxian/freeze-v1/fengxian-museum/geometry-input.json",
+    "bytes": 33179,
+    "sha256": "25be1752309536429fdcb81816af73ebd49ef0bd47867be21447c97128c57cdd"
+  },
+  "relation": {
+    "id": 7617592,
+    "version": 3,
+    "timestamp": "2026-02-26T02:07:26Z",
+    "tags": {
+      "name": "金海湖",
+      "name:en": "Jinhai Lake",
+      "name:zh": "金海湖",
+      "natural": "water",
+      "type": "multipolygon",
+      "water": "lake",
+      "wikidata": "Q66737968"
+    }
+  },
+  "members": [
+    {
+      "way_id": 528982791,
+      "role": "outer",
+      "node_count": 120,
+      "closed_in_source": false
+    },
+    {
+      "way_id": 1483127169,
+      "role": "outer",
+      "node_count": 74,
+      "closed_in_source": false
+    },
+    {
+      "way_id": 528982793,
+      "role": "inner",
+      "node_count": 79,
+      "closed_in_source": true
+    },
+    {
+      "way_id": 1483127170,
+      "role": "inner",
+      "node_count": 54,
+      "closed_in_source": true
+    },
+    {
+      "way_id": 528982792,
+      "role": "inner",
+      "node_count": 126,
+      "closed_in_source": true
+    },
+    {
+      "way_id": 1483127166,
+      "role": "inner",
+      "node_count": 126,
+      "closed_in_source": true
+    },
+    {
+      "way_id": 1483127165,
+      "role": "inner",
+      "node_count": 26,
+      "closed_in_source": true
+    }
+  ],
+  "stitched_outer_way_order": [
+    528982791,
+    1483127169
+  ],
+  "outer_ring_node_count": 193,
+  "inner_island_count": 5,
+  "all_relation_way_nodes_present": true,
+  "water_geometry_valid": true,
+  "coordinate_contract": {
+    "earth_radius_m": 6378137.0,
+    "geographic": "EPSG:4326",
+    "geometry_exactly_equals_existing_source": true,
+    "gltf_xyz": "[east_m,elevation_m,-north_m]",
+    "metre_frame": "Exact source-builder WebMercator differences times cos(anchor latitude)",
+    "no_photo_retrace_or_bbox_substitution": true,
+    "original_vertex_order_and_all_rings_preserved": true,
+    "source_formula": "x=R*radians(lon-lon0)*cos(lat0), north=R*(asinh(tan(lat))-asinh(tan(lat0)))*cos(lat0)"
+  },
+  "museum_island_inner_way_id": 528982792,
+  "source_owner_water_intersection_area_m2": 0.0,
+  "source_owner_minimum_water_distance_m": 7.689976621954222,
+  "water_geometry": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v17/integration/fengxian/water-source-v1/water-local-enu.geojson",
+    "bytes": 58709,
+    "sha256": "41ce264b80119b4359a0169e309ab4adb2d4d4e62650fa5ee51599cc9a8a3b11"
+  },
+  "limits": [
+    "Mapped lake geometry, including museum island, is reconstructed from the complete actual relation response; this is not a survey of current shore or all small pools.",
+    "Distance applies only to the original source owner polygon, not to corrected architectural geometry, stairs, roof openings, a walking spawn or any camera.",
+    "The rejected spatial-v2 roof/courtyard topology was not used or accepted by this source report.",
+    "Final external walkStart, finite keyboard sweep and default14m camera arm require the corrected final mesh plus actual source buildings/water/roads and browser verification.",
+    "No roof-route, stair climbing or interior collision/support guarantee; unchanged runtime uses mapped building polygons and explicit existing support proxies."
+  ],
+  "script": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v17/integration/fengxian/water-source-v1/build_water_context.py",
+    "bytes": 4767,
+    "sha256": "160fe0cb8401ab43a0bad0b552760558e4ecac0948558497190d9ef352fd759e"
+  }
+}

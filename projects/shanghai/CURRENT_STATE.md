@@ -1,3 +1,25 @@
+# V17 奉贤博物馆
+
+**[直接进入博物馆室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+
+本轮增加奉贤区2019年新馆，当前为34处导航、20个精细 owner、13个 owner 宏、18组 near、15条 ordinary 记录、12个 catalog 宏；全市16区底图包含1,796,419个建筑及部件要素，尚未全部逐栋精细复原。
+
+三个地面展馆、上层桥廊和屋顶开放空间分别构造；源地图单个带孔轮廓只用于身份与替换范围，不等同每层真实墙体。仅替换该馆143号源要素，同组95号邻楼原几何保留，旧33个导航和所有原有宏/目录记录保持不变。
+
+实际 raw/web/LOD 面数分别为248,184/248,184/171,820。四件模型最大15,859,680字节，均严格低于100,000,000字节。35个运行时代码文件和v13下载ZIP保持原字节；该旧ZIP不包含本轮模型。
+
+独立模型检查、全量/LOD及18公里释放回返、源 owner/保留邻楼、目录直达和有限键盘行走已通过实际验收。网页截图经 root 实际查看。[模型检查](data/audit/precise-buildings-v17/fengxian-museum/model-review.json) · [实际浏览器记录](data/audit/precise-buildings-v17/fengxian-museum/browser.json) · [相机与网格筛查](data/audit/precise-buildings-v17/fengxian-museum/model-clearance.json) · [水岸与地面源检查](data/audit/precise-buildings-v17/fengxian-museum/source-ground-review.json)
+
+使用范围：室外观赏漫游。尺寸、高度和隐藏构件含推估；完整地图水体为来源快照，不是岸线测量。验收只覆盖登记出生点、前方5米几何筛查、有限真实W输入、默认相机臂和两张指定视角；高于水面的相机可以位于水面上方。运行时碰撞来自已加载地图轮廓和显式地面代理，不自动来自本馆精细网格。台阶、环道、连廊及室内不保证可精确登高或自由通行，也未声称所有任意移动和动态目录生命周期已验证。
+
+分层几何检查与导航范围分开：屋顶垂直探针、白色平台表面和二层连通属于限定外观几何验收；首层水平射线仅作诊断。资料不足以精确定位首层柱与玻璃形成的完整穿越通路，ground_corridor_source_verified=false，不据此宣称桥下或馆内通行已核实。
+
+README保留16区34条直达目录与旧33条真实模型时间。新馆时间由随后实际模型提交的committer date填写，latest入口在该不可变提交与HTTP文件验证完成后更新；不把本次文档编辑时间当成模型时间。
+
+以下保留既有V16状态全文，记录各轮当时的范围。
+
+---
+
 # 当前交付状态 · 哥伦比亚乡村俱乐部主楼 v16
 
 [按16区查看全部33处地标](README.md) · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html) · [第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746/projects/shanghai/index.html#mode=walk) · [哥伦比亚主楼直达](https://rawcdn.githack.com/ecojust/e-resource/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk)
