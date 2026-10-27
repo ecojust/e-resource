@@ -1,0 +1,39 @@
+--- runtime-key-v2/browser_acceptance.py
++++ safe-views-v3/browser_acceptance.py
+@@ -159,8 +159,8 @@
+         })""",min(args.timeout_ms,90000))
+     def near_view():
+         page.evaluate("""async id=>{const a=__SHANGHAI_APP__,r=a.landmarks.find(r=>r.id===id);a.syncMode('walk',false);a.controller.resetCamera();await a.selectPlace(r);a.scene.map.stop();a.scene.loadLandmarks();}""",IDENTITY)
+-    def camera(east,north,alt,to_alt,fov=48):
+-        request={'from':offset(record,east,north,alt),'to':offset(record,0,0,to_alt),'fov':fov}
++    def camera(east,north,alt,to_alt,fov=48,to_east=0,to_north=0):
++        request={'from':offset(record,east,north,alt),'to':offset(record,to_east,to_north,to_alt),'fov':fov}
+         page.evaluate("""v=>{const a=__SHANGHAI_APP__;a.syncMode('overview',false);a.scene.map.stop();a.scene.map.setVerticalFieldOfView(v.fov);a.scene.setCameraFromTo({from:v.from,to:v.to});a.scene.loadLandmarks();}""",request)
+         return request
+     page=None;browser=None
+@@ -247,7 +247,7 @@
+                     span=max(width,length);height=record['height_m']
+                     request=camera(width*1.2,length*.9,max(height*2.7,span*.75),height*.28,50)
+                     row=capture('east-north-courtyards','full');row['requested_camera']=request;save()
+-                    request=camera(width*.18,-length*.88,max(height*.55,12),height*.23,52)
++                    request=camera(0,-85,12,5,52,to_east=.8,to_north=-40.91)
+                     row=capture('south-entry','full');row['requested_camera']=request;save()
+                     stage('LOD')
+                     far=max(600,record.get('lod_switch_out_m',400)+180)
+@@ -258,7 +258,15 @@
+                     need(audit['bytes']==record['lod_bytes'] and audit['sha256']==record['lod_sha256'] and audit['triangles']==record['lod_triangles'],'Actual LOD GLB differs')
+                     report['asset_audits'].append(audit);report['checks']['lod_loaded']=True;save()
+                     stage('OWNER_RELEASE')
+-                    page.evaluate("""v=>{const a=__SHANGHAI_APP__;a.syncMode('overview',false);a.scene.map.stop();a.scene.map.jumpTo({center:[v.lng+.06,v.lat],zoom:15,pitch:50,bearing:20});a.scene.loadLandmarks()}""",record)
++                    release_request={'center':offset(record,18000,0,0),'zoom':15,'pitch':50,'bearing':20}
++                    release_distance=metres(release_request['center'],record)
++                    report['release_navigation']={'requested':release_request,'requested_distance_m':release_distance,'required_distance_above_m':12300}
++                    need(release_distance>12300,'Release request does not exceed the 12000m overview range plus 300m hysteresis')
++                    page.evaluate("""v=>{const a=__SHANGHAI_APP__;a.syncMode('overview',false);a.scene.map.stop();a.scene.map.jumpTo({center:[v.center.lng,v.center.lat],zoom:v.zoom,pitch:v.pitch,bearing:v.bearing});a.scene.loadLandmarks()}""",release_request)
++                    actual_release=page.evaluate("()=>{const a=__SHANGHAI_APP__,m=a.scene.map,c=m.getCenter();return {mode:a.mode,center:{lng:c.lng,lat:c.lat},zoom:m.getZoom()}}")
++                    report['release_navigation']['actual']=actual_release
++                    report['release_navigation']['actual_distance_m']=metres(actual_release['center'],record);save()
++                    need(actual_release['mode']=='overview' and actual_release['zoom']==15 and report['release_navigation']['actual_distance_m']>12300,'Actual release view did not exceed the overview hysteresis range')
+                     page.wait_for_function("""()=>{const p=__YANGPU_PROBE__,v=p.targetAudit();return !v.active&&v.passed&&!p.local.suppression.pending.size&&!v.online.keys.length&&(!v.parent||!v.parent.preciseOwners.some(([id])=>id==='yangpu-library'))}""",timeout=args.timeout_ms)
+                     report['release_state']=page.evaluate('()=>__YANGPU_PROBE__.snapshot()');report['release_target']=page.evaluate('()=>__YANGPU_PROBE__.targetAudit()');save()
+                     near_view();capture('return-full','full',True)

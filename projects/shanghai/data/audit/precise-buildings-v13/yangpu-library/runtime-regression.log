@@ -1,0 +1,66 @@
+
+> shanghai-explorer@6.0.0 test:ordinary
+> node --test tests/ordinary-runtime.test.mjs tests/ordinary-curated-regression.test.mjs tests/ordinary-navigation.test.mjs tests/detail-model-cache-integration.test.mjs tests/city-feature-mask-rebind.test.mjs
+
+✔ standard: cached compiled uniforms point to replacement mask after disposal and rebind (4.387619ms)
+✔ depth: cached compiled uniforms point to replacement mask after disposal and rebind (1.56756ms)
+✔ distanceRGBA: cached compiled uniforms point to replacement mask after disposal and rebind (1.047852ms)
+✔ 100 rebind cycles keep one holder pair and one program key, with current ownership only (11.034728ms)
+✔ distinct materials never share mask uniform holders even with the same shader key (1.181252ms)
+✔ rebind after an intervening unmasked compile still exposes current mask uniforms (1.056084ms)
+✔ mask release invalidates programs without disposing source maps, geometry or prior shadow materials (2.175432ms)
+✔ far teleport restores exact ownership/OSM coverage before disposing a large hidden photograph; return reloads once (6.729632ms)
+✔ large visible photograph is retained even when it exceeds the hidden budget (1.168432ms)
+✔ small hidden cached model returns without fetching and fringe prevents edge churn (0.680861ms)
+✔ late decode after leaving is disposed without ever acquiring source ownership or immediately reloading (0.601582ms)
+✔ late rejected request outside range does not poison a future retry (0.723004ms)
+✔ evicting an old hidden LOD during its upgrade neither duplicates loads nor keeps the late full model (0.587951ms)
+✔ failed full upgrade keeps valid visible distant object and its source ownership (0.765958ms)
+✔ manual refresh cannot force distant loads; shutdown rejects decoded results (0.799219ms)
+✔ visiting sixteen separated locations never accumulates hidden full photographs (2.659328ms)
+✔ catalog selection gate does not start every nearby ordinary photo and preserves static models (0.885358ms)
+✔ actual load body disposes a late ordinary parse after catalog unload and never reacquires owners (0.547591ms)
+✔ static ordinary full and LOD both verify bytes before parse, without gaining catalog ownership (23.749164ms)
+✔ same-macro leave/return retries an intentionally aborted fetch once and acquires only the final visible owner (1.70087ms)
+✔ cancelled ordinary CPU parse stays obsolete after a rapid return; its object is disposed before retry ownership (2.561632ms)
+✔ precise far owner is acquired before the first far visibility and survives delayed index (34.669851ms)
+✔ near unload releases only near ownership; visible landmark still hides only its far feature (2.496855ms)
+✔ override fetch failure preserves every far neighbor and can later retry without base opaque near (5.782301ms)
+✔ reject missing owner without acquiring a near mask (3.177566ms)
+✔ reject wrong keys without acquiring a near mask (2.766048ms)
+✔ reject partial target without acquiring a near mask (2.659207ms)
+✔ reject unknown owner without acquiring a near mask (2.309122ms)
+✔ reject nested owner without acquiring a near mask (3.182763ms)
+✔ late parse reflects current landmark state and cannot revive a detached parent (5.358226ms)
+✔ baseline SHA and complete local ownership are checked before replacing near (2.294962ms)
+✔ registry rejects duplicate ownership atomically and far preparation rejects absent/wrong hash (1.03324ms)
+✔ local city record retains the manifest SHA for precise namespace binding (0.792438ms)
+✔ all selection entry points including reset keep an unlisted ordinary building in overview (1.194451ms)
+✔ listed ordinary navigation uses its reviewed nested pose, never the building center or obsolete top-level pose (1.223184ms)
+✔ legacy Bund and district navigation retain their existing poses (0.276224ms)
+✔ live macro adds exact target ownership, preserves neighbor, and restores baseline on unload (41.002567ms)
+✔ wrong loaded far SHA or duplicate macro registration cannot mutate an existing scene (2.923925ms)
+✔ late baseline parse is disposed after registry transition and never acquires new ownership (5.084294ms)
+✔ macro candidate may not erase a pre-existing curated owner (0.835342ms)
+✔ catalog fetches only nearby macro/index variants and releases metadata when leaving (6.092085ms)
+✔ changed original index bytes fail SHA and never register an owner (3.511356ms)
+✔ missing audited registry, pending acceptance or removed neighbor fails before scene registration (7.901089ms)
+✔ generation change cancels delayed metadata, prevents a stale session and permits a fresh retry (4.097675ms)
+✔ metadata record and visible-model budgets are independent of distant catalog size (3.490024ms)
+✔ strict provider/district/owner fields survive; no guessed Bund or Lujiazui UI text (0.677666ms)
+✔ verified byte reader still times out a pending response body without publishing partial data (1.363575ms)
+✔ ordinary photo GLB bytes are checked before parse; external dependency cannot bypass ownership review (3.044806ms)
+✔ scene session restores source/far owners before disposal and keeps unrelated curated models (5.350723ms)
+✔ accepted curated ordinary navigation reuses its exact record; catalog release leaves its owner intact (1.364406ms)
+✔ catalog may reuse an audited predeclared static boundary without removing it when its own model leaves (0.583315ms)
+✔ synchronous visibility callback cannot recursively unload/reset the same catalog session (4.367149ms)
+✔ canonical registration JSON key order does not change geometry or curated owner equality (1.046179ms)
+✔ launcher commit root resolves unchanged hashed catalog children without rewriting their JSON (2.455513ms)
+ℹ tests 54
+ℹ suites 0
+ℹ pass 54
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 586.859466

@@ -1,0 +1,11 @@
+--- parallel-runtime-candidate/target-probe.js
++++ runtime-key-v2/target-probe.js
+@@ -59,7 +59,7 @@
+   p.targetAudit=()=>{
+     const audit=p.audit(),owner=record.owner;
+     const parent=audit.parents.find(r=>r.id===owner.macro_id);
+-    const near=parent?.near.find(r=>r.id===owner.near_owner_id);
++    const near=parent?.near.find(r=>r.id===owner.macro_id+'/'+owner.near_owner_id);
+     const active=audit.activePrecise.includes(record.id);
+     const errors=[];
+     if(!audit.passed)errors.push(...audit.errors);

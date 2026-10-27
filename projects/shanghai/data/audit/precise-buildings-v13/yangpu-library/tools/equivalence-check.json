@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "scope": "Synthetic isolated QA-expression equivalence only; no browser, production asset or performance acceptance.",
+  "unchanged_exact_rows_and_sha": true,
+  "baseline_order_preserved": true,
+  "out_of_order_completion_exercised": true,
+  "all_independent_reads_started": true,
+  "non_ok_http_rejected": true,
+  "body_read_failure_rejected": true,
+  "rows": [
+    {
+      "file": "src/first.js",
+      "bytes": 9,
+      "sha256": "c29f3334baad3c080c7ed7c6854ce6c218c6a77bc08c57fde64124b9ff4c5a19"
+    },
+    {
+      "file": "src/second.js",
+      "bytes": 10,
+      "sha256": "b13429f1887a11ec4d307d352f887a0aeec187f6a097029b6da08f33f42beaa7"
+    },
+    {
+      "file": "src/third.js",
+      "bytes": 9,
+      "sha256": "0cc6b629343039e4c8dd1e60298ef4e9a18256c027836c0f15ea1a3d14ed544d"
+    }
+  ],
+  "parallel_starts": [
+    "first.js",
+    "second.js",
+    "third.js"
+  ],
+  "parallel_completion_order": [
+    "second.js",
+    "third.js",
+    "first.js"
+  ]
+}

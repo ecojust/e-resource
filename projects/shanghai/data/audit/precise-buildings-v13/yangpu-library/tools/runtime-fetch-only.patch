@@ -1,0 +1,11 @@
+--- original/browser_acceptance.py
++++ parallel-runtime-candidate/browser_acceptance.py
+@@ -210,7 +210,7 @@
+                 report['actual_metadata']={k:{x:y for x,y in v.items() if x!='data'} for k,v in fetched.items()}
+                 need(fetched['registry']['sha256']==report['expected_registry']['sha256'],'Served registry is not pinned candidate')
+                 need(fetched['landmarks']['sha256']==report['expected_landmarks']['sha256'],'Served navigation is not pinned candidate')
+-                runtime=page.evaluate("""async files=>{const out=[];for(const f of files){const r=await fetch(new URL(f.file,document.baseURI));if(!r.ok)throw Error(f.file+': '+r.status);const b=await r.arrayBuffer();out.push({file:f.file,bytes:b.byteLength,sha256:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b))).map(x=>x.toString(16).padStart(2,'0')).join('')})}return out}""",baseline['files'])
++                runtime=page.evaluate("""async files=>Promise.all(files.map(async f=>{const r=await fetch(new URL(f.file,document.baseURI));if(!r.ok)throw Error(f.file+': '+r.status);const b=await r.arrayBuffer();return {file:f.file,bytes:b.byteLength,sha256:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b))).map(x=>x.toString(16).padStart(2,'0')).join('')}}))""",baseline['files'])
+                 report['actual_runtime']=runtime;need(runtime==baseline['files'],'Actual 31 runtime files differ from completed V12')
+                 report['checks']['runtime_unchanged']=True;save()
+                 report['streaming_probe']=page.evaluate((HERE/'streaming-probe.js').read_text(),fetched['registry']['data'])

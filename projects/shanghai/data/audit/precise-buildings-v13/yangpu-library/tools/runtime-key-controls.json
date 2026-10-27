@@ -1,0 +1,99 @@
+{
+  "schema": "runtime-near-key-saved-snapshot-check-v2",
+  "passed": true,
+  "original_probe_sha256": "d41206dd68c82e8474ea70648121625ca07f42f06235c6826da6dd98a221f580",
+  "fixed_probe_sha256": "88f31b53ce34263afb8b553a9b609cbe303b6aa9398dcd0b15969e7698db6b93",
+  "failed_browser_report": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/actual-static-v6/browser.json",
+    "bytes": 46870,
+    "sha256": "397397b52a32987d8056b5227c701c4a2560b73961369e1a496dae5f57d0322a"
+  },
+  "actual_asset": {
+    "id": "yangpu-library",
+    "status": "loaded",
+    "visible": true,
+    "variant": "full",
+    "photoMeshes": 0,
+    "triangles": 365524,
+    "greenery": null,
+    "images": [],
+    "actualPhotographicMaterials": {
+      "rootFound": true,
+      "traverseRestored": true,
+      "glass": [],
+      "otherPhoto": []
+    }
+  },
+  "actual_runtime_near_id": "14-13722-6690/14-13722-6690--1_-2-s0-s1",
+  "original_lookup": {
+    "passed": true,
+    "hiddenNear": false,
+    "full_near_accepted": false
+  },
+  "fixed_lookup": {
+    "passed": true,
+    "hiddenNear": true,
+    "neighborsExact": true,
+    "neighbor_count": 9,
+    "full_near_accepted": true
+  },
+  "negative_controls": [
+    {
+      "name": "wrong_metadata_macro",
+      "rejected": true,
+      "passed": false,
+      "hiddenNear": false,
+      "neighborsExact": false,
+      "errors": [
+        "Target has no visible far precise owner"
+      ]
+    },
+    {
+      "name": "wrong_runtime_near_prefix",
+      "rejected": true,
+      "passed": true,
+      "hiddenNear": false,
+      "neighborsExact": false,
+      "errors": []
+    },
+    {
+      "name": "wrong_near_owner",
+      "rejected": true,
+      "passed": true,
+      "hiddenNear": false,
+      "neighborsExact": false,
+      "errors": []
+    },
+    {
+      "name": "missing_neighbor",
+      "rejected": true,
+      "passed": false,
+      "hiddenNear": false,
+      "neighborsExact": false,
+      "errors": [
+        "Near target or preserved neighbors differ"
+      ]
+    },
+    {
+      "name": "substituted_neighbor",
+      "rejected": true,
+      "passed": false,
+      "hiddenNear": false,
+      "neighborsExact": false,
+      "errors": [
+        "Near target or preserved neighbors differ"
+      ]
+    },
+    {
+      "name": "visible_old_target",
+      "rejected": true,
+      "passed": false,
+      "hiddenNear": false,
+      "neighborsExact": true,
+      "errors": [
+        "Near target or preserved neighbors differ"
+      ]
+    }
+  ],
+  "scope": "Existing actual failed snapshot proves the QA lookup mismatch. Pure mutated copies exercise six negative controls. No live runtime is changed, no browser is run, and this does not replace a fresh complete browser acceptance."
+}

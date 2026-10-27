@@ -1,3 +1,23 @@
+# 上海漫游 · Shanghai Explorer v13
+
+新增**杨浦区图书馆整馆**：旧馆与扩建翼部、两处内院、重檐琉璃瓦、斗拱彩画、石栏与真实门窗，已接入第三人称漫游。
+
+[杨浦图书馆入口](index.html#landmark=yangpu-library&mode=walk) · [网页模型](assets/models/precise/14-13722-6690/yangpu-library/yangpu-library-web.glb) · [Blender](assets/native/precise/14-13722-6690/yangpu-library/yangpu-library.blend) · [模型与预览](source/precise/yangpu-library/CURRENT_STATE.md)
+
+![杨浦图书馆模型预览](source/precise/yangpu-library/previews/east-full.png)
+
+本版精选导航31项、普通精模12项、目录10个宏块；源替换17项，覆盖11个宏块和15个近景分块。全市16区底图保留，1,796,419个建筑及部件尚未逐栋完成照片复原。
+
+原始GLB 20.56MB、网页GLB 6.62MB、LOD 2.22MB、Blender 10.09MB，均严格小于100,000,000字节。实际检查包括原始/压缩几何、重新打开Blender、完整/LOD/返回、源与近远景替换、9邻居、W行走及最终目录采用；6张静态图和1张目录图已实际查看。[检查范围](data/audit/precise-buildings-v13/yangpu-library/README.md)
+
+本轮31件生产运行时保持V12字节不变。模型没有照片纹理；背面和内院部分细节、尺寸和彩画仍是推估，非测绘或摄影测量。[来源与限制](data/bund/REALISM_V13.md) · [当前启动包状态](CURRENT_STATE.md)
+
+使用时需要联网。完整模型读取超时后请刷新页面，当前没有自动重试。
+
+## v12及更早记录（历史保留）
+
+以下原文完整保留；其数量、链接、启动包及验证范围对应各自历史版本。
+
 # 上海漫游 · Shanghai Explorer v12
 
 新增**四行仓库与毗邻大陆银行仓库**完整双库模型：分别构造南侧两套立面、376处玻璃窗洞、两个凹入口、退台第六层、天窗、雨篷和西墙破损细部。

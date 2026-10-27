@@ -1,0 +1,3167 @@
+{
+  "schema": "yangpu-safe-south-review-camera-v3",
+  "passed": true,
+  "scope": "Finite camera/extruded mapped neighbors and one actual final RAW center sightline. QA view proposal only, no product/nav/model changes or browser acceptance.",
+  "requested_enu": {
+    "from_enu_m": [
+      0,
+      -85,
+      12
+    ],
+    "to_enu_m": [
+      0.8,
+      -40.91,
+      5
+    ],
+    "fov_degrees": 52
+  },
+  "requested_geographic_as_actual_qa_offset_helper": {
+    "from": {
+      "lng": 121.51878770435401,
+      "lat": 31.3100773893999,
+      "alt": 12
+    },
+    "to": {
+      "lng": 121.51879611593452,
+      "lat": 31.31047345660867,
+      "alt": 5
+    },
+    "fov": 52
+  },
+  "actual_source_builder_enu": {
+    "from": [
+      0.0,
+      -84.99965548915186,
+      12
+    ],
+    "to": [
+      0.7999999997207806,
+      -40.909920195977456,
+      5
+    ]
+  },
+  "input_files": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v13/integration/frozen-main-v12/yangpu-library/geometry-input.json",
+      "bytes": 45597,
+      "sha256": "e49ad7b07b0f8694401f692c0dd28ccdf3dffaa672b23b80bb55206c8c91ad8f"
+    },
+    {
+      "path": "/workspace/shanghai_project/assets/city-detail/macros/14-13722-6690/feature-table.json.gz",
+      "bytes": 315210,
+      "sha256": "b43ee85d29c18b87cb4f38c2eca547781e50abfd9d19d7fc8081455956457ef8"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v13/model/package-v6/yangpu-library-raw.glb",
+      "bytes": 20564732,
+      "sha256": "659b2badc0a9fd75c8ed1c6674ffa6870c0a90fea1a3e79003401ee9c3d3d3fa"
+    }
+  ],
+  "same64_source_features_screen": {
+    "center_enu": [
+      55,
+      0
+    ],
+    "radius_m": 150,
+    "count": 64,
+    "new_segment_and_half_metre_ball_inside_screen": true
+  },
+  "camera_ball_radius_m": 0.5,
+  "all64_eye_balls_clear": true,
+  "other63_sightline_extrusion_hits": 0,
+  "nearest_non_target": [
+    {
+      "localId": 2245,
+      "key": "building:f82958e5-ffea-42a2-9b40-19374b7c6af2",
+      "base_m": 0.0,
+      "height_m": 17.9,
+      "eye_planar_distance_m": 16.116626044062016,
+      "eye_extruded_volume_distance_m": 16.116626044062016
+    },
+    {
+      "localId": 1141,
+      "key": "building:7b8513bf-5a1e-4966-a2a3-32b994c571f1",
+      "base_m": 0.0,
+      "height_m": 17.6,
+      "eye_planar_distance_m": 22.692193264985296,
+      "eye_extruded_volume_distance_m": 22.692193264985296
+    },
+    {
+      "localId": 569,
+      "key": "building:3f56d445-eea2-478d-8c30-bcc61ce3377d",
+      "base_m": 0.0,
+      "height_m": 17.95,
+      "eye_planar_distance_m": 30.747860344243712,
+      "eye_extruded_volume_distance_m": 30.747860344243712
+    },
+    {
+      "localId": 1927,
+      "key": "building:d4c4e4e0-98f3-4199-ae33-c8e421954c63",
+      "base_m": 0.0,
+      "height_m": 17.2,
+      "eye_planar_distance_m": 39.61211651800348,
+      "eye_extruded_volume_distance_m": 39.61211651800348
+    },
+    {
+      "localId": 1236,
+      "key": "building:8810c850-520b-4ca0-a19b-113c27204e74",
+      "base_m": 0.0,
+      "height_m": 18.95,
+      "eye_planar_distance_m": 40.43584000135812,
+      "eye_extruded_volume_distance_m": 40.43584000135812
+    }
+  ],
+  "previous_actual_requested_camera": {
+    "from": {
+      "lng": 121.51890357575401,
+      "lat": 31.309848792591403,
+      "alt": 12.380500000000001
+    },
+    "to": {
+      "lng": 121.51878770435401,
+      "lat": 31.310840957391402,
+      "alt": 5.177300000000001
+    },
+    "fov": 52
+  },
+  "previous_eye_actual_enu": [
+    11.020178649728594,
+    -110.44669865395818,
+    12.380500000000001
+  ],
+  "previous_eye_inside_source_buildings": [
+    {
+      "localId": 1141,
+      "key": "building:7b8513bf-5a1e-4966-a2a3-32b994c571f1",
+      "base_m": 0.0,
+      "height_m": 17.6
+    }
+  ],
+  "actual_raw_sightline": {
+    "triangles_tested": 365524,
+    "segment_length_m": 44.64912942288732,
+    "end_exclusion_at_intended_facade_m": 0.5,
+    "hits_before_exclusion": 0,
+    "all_hit_distances_m": [
+      44.26642296424024,
+      44.64904876086495
+    ],
+    "passed": true
+  },
+  "source_features": [
+    {
+      "localId": 50,
+      "key": "building:04b862fe-f469-4417-af56-485f80bacf5a",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              68.42620310595304,
+              10.615722403565504
+            ],
+            [
+              51.07964145539584,
+              10.615722403565504
+            ],
+            [
+              51.07964145539584,
+              18.26894793548149
+            ],
+            [
+              63.324664824783625,
+              18.26894793548149
+            ],
+            [
+              63.324664824783625,
+              33.06445767204998
+            ],
+            [
+              52.609912724984696,
+              33.57430256137007
+            ],
+            [
+              52.609912724984696,
+              41.227544851610645
+            ],
+            [
+              54.650908465385015,
+              41.227544851610645
+            ],
+            [
+              54.650908465385015,
+              47.35014270424146
+            ],
+            [
+              69.4467009761532,
+              47.35014270424146
+            ],
+            [
+              68.42620310595304,
+              10.615722403565504
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 14.1,
+      "eye_planar_distance_m": 108.40401404366416,
+      "eye_extruded_volume_distance_m": 108.40401404366416,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 71.99259816263803,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 71,
+      "key": "building:076b981a-a315-4c00-b84a-17b8b8038734",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -14.225564743820565,
+              115.2054642871715
+            ],
+            [
+              -12.694342402808944,
+              124.89927653192254
+            ],
+            [
+              -3.5108126408388944,
+              123.36861541436318
+            ],
+            [
+              -4.531310512630425,
+              114.18576659703302
+            ],
+            [
+              -14.225564743820565,
+              115.2054642871715
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.6,
+      "eye_planar_distance_m": 199.23695728105642,
+      "eye_extruded_volume_distance_m": 199.23695728105642,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 155.18728985833445,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 81,
+      "key": "building:08b4e261-e0ab-433e-8570-723d87b3329e",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              165.3630389988661,
+              50.4114429712865
+            ],
+            [
+              168.9343060088553,
+              60.615041518258025
+            ],
+            [
+              171.48507515023567,
+              59.594235936287205
+            ],
+            [
+              168.42453260787522,
+              49.90159726559336
+            ],
+            [
+              165.3630389988661,
+              50.4114429712865
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 25.7,
+      "eye_planar_distance_m": 213.7313740497708,
+      "eye_extruded_volume_distance_m": 213.7313740497708,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 188.20357375820882,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 146,
+      "key": "building:0f345170-9173-4bc3-942e-1abc0d5d21f6",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              105.1603221506505,
+              -55.70940079295189
+            ],
+            [
+              105.1603221506505,
+              -54.17876581444822
+            ],
+            [
+              116.89462105240956,
+              -55.19844703191309
+            ],
+            [
+              116.89462105240956,
+              -56.72908186202147
+            ],
+            [
+              105.1603221506505,
+              -55.70940079295189
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.1,
+      "eye_planar_distance_m": 109.16323728708699,
+      "eye_extruded_volume_distance_m": 109.16323728708699,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 104.58386799451546,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 216,
+      "key": "building:16835123-bfd9-40a4-9c5c-805049918fd9",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              153.62874009710703,
+              54.49243592002927
+            ],
+            [
+              153.62874009710703,
+              49.90159726559336
+            ],
+            [
+              141.89444119693934,
+              50.4114429712865
+            ],
+            [
+              142.40421459473666,
+              61.1248877443293
+            ],
+            [
+              146.48620607394594,
+              60.615041518258025
+            ],
+            [
+              145.9754816063172,
+              54.49243592002927
+            ],
+            [
+              153.62874009710703,
+              54.49243592002927
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 20.6,
+      "eye_planar_distance_m": 196.13821154699613,
+      "eye_extruded_volume_distance_m": 196.13821154699613,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 168.06913073935584,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 226,
+      "key": "building:17a80f0a-f967-4c47-82ed-d5e1058c551d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              295.9725003242848,
+              48.37094709666285
+            ],
+            [
+              185.26036979080368,
+              47.85998828899044
+            ],
+            [
+              184.7505963898236,
+              70.30880329388809
+            ],
+            [
+              295.46272692330473,
+              70.81864999418777
+            ],
+            [
+              295.9725003242848,
+              48.37094709666285
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 27.75,
+      "eye_planar_distance_m": 227.97607234067394,
+      "eye_extruded_volume_distance_m": 227.97607234067394,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 204.70887786291203,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 287,
+      "key": "building:1ed52ef0-6d8f-43bd-ae0b-944f678203ec",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              97.50706365986068,
+              65.71684451674422
+            ],
+            [
+              93.4260232504828,
+              65.20699806469833
+            ],
+            [
+              92.9152987812627,
+              70.30880329388809
+            ],
+            [
+              97.50706365986068,
+              70.81864999418777
+            ],
+            [
+              97.50706365986068,
+              65.71684451674422
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.9,
+      "eye_planar_distance_m": 176.89109811476135,
+      "eye_extruded_volume_distance_m": 176.89109811476135,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 140.85588565762401,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 295,
+      "key": "building:1f917197-937d-4189-97a6-536ffd7519ec",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.46737870500634,
+              144.2869279100158
+            ],
+            [
+              53.63041059359349,
+              144.2869279100158
+            ],
+            [
+              53.63041059359349,
+              137.1445735299039
+            ],
+            [
+              45.46737870500634,
+              136.63361039768225
+            ],
+            [
+              45.46737870500634,
+              144.2869279100158
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.6,
+      "eye_planar_distance_m": 226.24894933229763,
+      "eye_extruded_volume_distance_m": 226.24894933229763,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 183.07615895048482,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 314,
+      "key": "building:21409e99-eaa9-4fae-b8cf-aabf7b0c36ea",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.060454369150285556,
+              54.49243592002927
+            ],
+            [
+              -7.082079652419445,
+              54.49243592002927
+            ],
+            [
+              -7.082079652419445,
+              67.24749721834083
+            ],
+            [
+              0.060454369150285556,
+              67.24749721834083
+            ],
+            [
+              0.060454369150285556,
+              54.49243592002927
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 14.6,
+      "eye_planar_distance_m": 139.49209140918114,
+      "eye_extruded_volume_distance_m": 139.49209140918114,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 95.40522249974087,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 432,
+      "key": "building:2ef3634e-bfdd-4263-a626-6282d2a6f71e",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              108.73158916063967,
+              48.88079272716373
+            ],
+            [
+              108.73158916063967,
+              55.003395051545574
+            ],
+            [
+              123.52738167299923,
+              54.49243592002927
+            ],
+            [
+              123.01665720377913,
+              47.85998828899044
+            ],
+            [
+              108.73158916063967,
+              48.88079272716373
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.4,
+      "eye_planar_distance_m": 172.471832181373,
+      "eye_extruded_volume_distance_m": 172.471832181373,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 140.39800591905617,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 482,
+      "key": "building:344f81e2-26f0-401e-833d-535107356953",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -66.26524969867491,
+              69.79895662183523
+            ],
+            [
+              -107.08040915275025,
+              69.28799676863242
+            ],
+            [
+              -107.59018255373032,
+              79.49272688742676
+            ],
+            [
+              -66.77502309965497,
+              80.00257403490154
+            ],
+            [
+              -66.26524969867491,
+              69.79895662183523
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 18.25,
+      "eye_planar_distance_m": 168.3855505354173,
+      "eye_extruded_volume_distance_m": 168.3855505354173,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 129.43802811913423,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 503,
+      "key": "building:3637ebd7-8809-46eb-b9ce-0e33f6bdcf9f",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.449139173176803,
+              -18.465370488441778
+            ],
+            [
+              -33.61217106494669,
+              -17.444572505662805
+            ],
+            [
+              -35.65316680693839,
+              -14.38329115285151
+            ],
+            [
+              -35.65316680693839,
+              16.228458314148114
+            ],
+            [
+              -25.449139173176803,
+              16.228458314148114
+            ],
+            [
+              -25.449139173176803,
+              -18.465370488441778
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.9,
+      "eye_planar_distance_m": 71.23531262801784,
+      "eye_extruded_volume_distance_m": 71.23531262801784,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 34.53657653694394,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 522,
+      "key": "building:38b3a17d-c96c-4e17-b444-b36d60db98aa",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              140.3632188559277,
+              32.55461281097673
+            ],
+            [
+              139.85344545494763,
+              44.28884333114879
+            ],
+            [
+              169.44407940983535,
+              45.30964742280116
+            ],
+            [
+              169.95480387746406,
+              33.57430256137007
+            ],
+            [
+              140.3632188559277,
+              32.55461281097673
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 22.5,
+      "eye_planar_distance_m": 183.08697169153157,
+      "eye_extruded_volume_distance_m": 183.08697169153157,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 157.71787998649796,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 537,
+      "key": "building:3b721a02-9926-48fe-86c9-3fd5433e3ba9",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              89.85475623890224,
+              36.125753768113015
+            ],
+            [
+              90.87430303927101,
+              47.85998828899044
+            ],
+            [
+              102.60955301245285,
+              46.840297147739314
+            ],
+            [
+              101.58905514225269,
+              34.59510561027694
+            ],
+            [
+              89.85475623890224,
+              36.125753768113015
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.7,
+      "eye_planar_distance_m": 150.81525780401813,
+      "eye_extruded_volume_distance_m": 150.81525780401813,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 117.75077355126663,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 569,
+      "key": "building:3f56d445-eea2-478d-8c30-bcc61ce3377d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.202988389128645,
+              -114.89192663095695
+            ],
+            [
+              26.079821310866077,
+              -113.87113803567239
+            ],
+            [
+              27.100319182657607,
+              -124.07456679176929
+            ],
+            [
+              8.223486260920176,
+              -125.60519156759902
+            ],
+            [
+              7.202988389128645,
+              -114.89192663095695
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.95,
+      "eye_planar_distance_m": 30.747860344243712,
+      "eye_extruded_volume_distance_m": 30.747860344243712,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 30.747860344243712,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 748,
+      "key": "building:525beaa0-1c0a-415b-9bbe-c1efde81e40e",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              54.141135065996316,
+              69.28799676863242
+            ],
+            [
+              46.487876573615125,
+              70.30880329388809
+            ],
+            [
+              46.9976499745952,
+              77.96207239633405
+            ],
+            [
+              54.650908465385015,
+              77.45111214807352
+            ],
+            [
+              54.141135065996316,
+              69.28799676863242
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 14.4,
+      "eye_planar_distance_m": 162.11674817207165,
+      "eye_extruded_volume_distance_m": 162.11674817207165,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 120.23720938439386,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 783,
+      "key": "building:570f32d0-331a-48ac-bca7-7491cc0214e4",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -66.77502309965497,
+              51.94209344098602
+            ],
+            [
+              -66.26524969867491,
+              45.30964742280116
+            ],
+            [
+              -96.8763815221714,
+              44.7986887659111
+            ],
+            [
+              -96.8763815221714,
+              51.43113446184344
+            ],
+            [
+              -66.77502309965497,
+              51.94209344098602
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.7,
+      "eye_planar_distance_m": 146.19027923575104,
+      "eye_extruded_volume_distance_m": 146.19027923575104,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 109.23168751547009,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 804,
+      "key": "building:58c68024-f749-4fe6-b6cb-6c75e745a20e",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              131.17968909395765,
+              -127.13581612063689
+            ],
+            [
+              131.17968909395765,
+              -137.8501817290635
+            ],
+            [
+              76.58923499613155,
+              -137.34034514868648
+            ],
+            [
+              76.58923499613155,
+              -126.62597902027959
+            ],
+            [
+              131.17968909395765,
+              -127.13581612063689
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.35,
+      "eye_planar_distance_m": 87.1703030166282,
+      "eye_extruded_volume_distance_m": 87.1703030166282,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 87.1703030166282,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 826,
+      "key": "building:5b1a6525-46be-4306-a010-a18a76e20784",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              146.995979474926,
+              -26.628411194017023
+            ],
+            [
+              144.44521033513698,
+              -11.831851612843336
+            ],
+            [
+              172.50557302043583,
+              -7.241039989426255
+            ],
+            [
+              174.5465687592448,
+              -22.03649285359684
+            ],
+            [
+              146.995979474926,
+              -26.628411194017023
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 18.75,
+      "eye_planar_distance_m": 158.16137373693735,
+      "eye_extruded_volume_distance_m": 158.16137373693735,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 146.49708963143084,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 878,
+      "key": "building:5f150da5-1740-4554-9558-7e85be879f0b",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.120996909919376,
+              70.30880329388809
+            ],
+            [
+              3.120996909919376,
+              80.51242120385983
+            ],
+            [
+              42.91660956203457,
+              81.02338160330055
+            ],
+            [
+              42.91660956203457,
+              70.81864999418777
+            ],
+            [
+              3.120996909919376,
+              70.30880329388809
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 14.75,
+      "eye_planar_distance_m": 155.33981457203734,
+      "eye_extruded_volume_distance_m": 155.33981457203734,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 111.2429390180443,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 911,
+      "key": "building:63a92f62-25b4-48de-b66a-d41ee682bbb2",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -66.26524969867491,
+              -71.01462509872765
+            ],
+            [
+              -66.26524969867491,
+              -27.64809509055408
+            ],
+            [
+              -56.06122206968744,
+              -27.64809509055408
+            ],
+            [
+              -56.06122206968744,
+              -64.89209278032422
+            ],
+            [
+              -66.26524969867491,
+              -71.01462509872765
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.45,
+      "eye_planar_distance_m": 59.55816231245089,
+      "eye_extruded_volume_distance_m": 59.55816231245089,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 56.41678362976948,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 931,
+      "key": "building:65aa0414-4f9d-49d5-853e-e1131601407e",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.5907256387391455,
+              116.22627528218896
+            ],
+            [
+              1.5907256387391455,
+              122.34891693132438
+            ],
+            [
+              10.774255400709196,
+              122.34891693132438
+            ],
+            [
+              10.774255400709196,
+              116.22627528218896
+            ],
+            [
+              1.5907256387391455,
+              116.22627528218896
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.4,
+      "eye_planar_distance_m": 201.23221815318288,
+      "eye_extruded_volume_distance_m": 201.23221815318288,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 157.13818497229988,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1027,
+      "key": "building:6f782a36-79dd-4ce3-9f20-30524de24a4b",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.11932641025018,
+              -30.199530782628457
+            ],
+            [
+              92.40552538028264,
+              -30.199530782628457
+            ],
+            [
+              92.40552538028264,
+              -24.07697463623711
+            ],
+            [
+              103.11932641025018,
+              -23.567132525449875
+            ],
+            [
+              103.11932641025018,
+              -30.199530782628457
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.6,
+      "eye_planar_distance_m": 107.43293158364699,
+      "eye_extruded_volume_distance_m": 107.43293158364699,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 92.2295219636009,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1058,
+      "key": "building:72ed112e-4afe-42ce-ba09-17354c3cd097",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              58.732899946185654,
+              -107.23879270111021
+            ],
+            [
+              42.40588509440585,
+              -108.76941993202674
+            ],
+            [
+              41.38633829403709,
+              -100.60644317089978
+            ],
+            [
+              58.22217547537419,
+              -99.07581474526187
+            ],
+            [
+              58.732899946185654,
+              -107.23879270111021
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.05,
+      "eye_planar_distance_m": 44.23121995979355,
+      "eye_extruded_volume_distance_m": 44.23121995979355,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 44.23121995979355,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1141,
+      "key": "building:7b8513bf-5a1e-4966-a2a3-32b994c571f1",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.753757528917665,
+              -110.80988483380689
+            ],
+            [
+              11.284028798506526,
+              -104.68737575458431
+            ],
+            [
+              16.896291548896027,
+              -106.72784145006048
+            ],
+            [
+              15.366020280898535,
+              -112.34051154673233
+            ],
+            [
+              9.753757528917665,
+              -110.80988483380689
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.6,
+      "eye_planar_distance_m": 22.692193264985296,
+      "eye_extruded_volume_distance_m": 22.692193264985296,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 22.692193264985296,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1164,
+      "key": "building:7f36c894-f0ad-468f-a115-fcfee0fd61cf",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              102.60955301245285,
+              18.778792103512902
+            ],
+            [
+              100.56855727046116,
+              18.778792103512902
+            ],
+            [
+              100.05783280124106,
+              14.187969088270302
+            ],
+            [
+              95.97679239027181,
+              14.187969088270302
+            ],
+            [
+              94.95629452007165,
+              24.391532383203142
+            ],
+            [
+              98.01778813067213,
+              24.391532383203142
+            ],
+            [
+              98.01778813067213,
+              26.432023593917773
+            ],
+            [
+              102.60955301245285,
+              26.432023593917773
+            ],
+            [
+              102.60955301245285,
+              18.778792103512902
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.6,
+      "eye_planar_distance_m": 138.0207576665082,
+      "eye_extruded_volume_distance_m": 138.0207576665082,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 109.97453893212409,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1196,
+      "key": "building:8333728c-f8bb-4d9f-9d40-de06b0d4804d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -19.836876422787306,
+              22.860885938079534
+            ],
+            [
+              -27.490134913577126,
+              22.860885938079534
+            ],
+            [
+              -27.490134913577126,
+              33.57430256137007
+            ],
+            [
+              -23.918867903587945,
+              33.57430256137007
+            ],
+            [
+              -23.918867903587945,
+              37.14655706805857
+            ],
+            [
+              -26.980361514188424,
+              37.14655706805857
+            ],
+            [
+              -26.980361514188424,
+              62.145693477878154
+            ],
+            [
+              -12.184569001828875,
+              62.145693477878154
+            ],
+            [
+              -12.184569001828875,
+              58.57454365561482
+            ],
+            [
+              -9.123075392819764,
+              58.57454365561482
+            ],
+            [
+              -9.123075392819764,
+              43.268039338559234
+            ],
+            [
+              7.712761790108716,
+              43.268039338559234
+            ],
+            [
+              7.712761790108716,
+              58.063584349843445
+            ],
+            [
+              10.264481999729126,
+              58.063584349843445
+            ],
+            [
+              10.264481999729126,
+              63.166499307704925
+            ],
+            [
+              26.590545781677537,
+              63.166499307704925
+            ],
+            [
+              26.079821310866077,
+              35.61590875784877
+            ],
+            [
+              32.712581933047105,
+              35.61590875784877
+            ],
+            [
+              32.712581933047105,
+              21.840084028991765
+            ],
+            [
+              18.937287290887717,
+              21.840084028991765
+            ],
+            [
+              18.937287290887717,
+              -21.525537454639977
+            ],
+            [
+              30.671586192646785,
+              -21.525537454639977
+            ],
+            [
+              30.671586192646785,
+              -32.74985265978958
+            ],
+            [
+              25.059323442257288,
+              -32.74985265978958
+            ],
+            [
+              25.059323442257288,
+              -61.32098500684286
+            ],
+            [
+              10.264481999729126,
+              -61.32098500684286
+            ],
+            [
+              10.264481999729126,
+              -55.70940079295189
+            ],
+            [
+              7.202988389128645,
+              -55.70940079295189
+            ],
+            [
+              7.202988389128645,
+              -40.912882248448554
+            ],
+            [
+              -5.551808381239215,
+              -40.912882248448554
+            ],
+            [
+              -5.551808381239215,
+              -59.79035084948635
+            ],
+            [
+              -10.143573263019924,
+              -59.79035084948635
+            ],
+            [
+              -10.143573263019924,
+              -62.3417787175878
+            ],
+            [
+              -26.980361514188424,
+              -62.3417787175878
+            ],
+            [
+              -26.980361514188424,
+              -34.79144554763703
+            ],
+            [
+              -23.918867903587945,
+              -34.79144554763703
+            ],
+            [
+              -23.918867903587945,
+              -32.74985265978958
+            ],
+            [
+              -28.510632783777286,
+              -32.74985265978958
+            ],
+            [
+              -28.510632783777286,
+              -21.015695219328
+            ],
+            [
+              -19.836876422787306,
+              -21.015695219328
+            ],
+            [
+              -19.836876422787306,
+              22.860885938079534
+            ]
+          ],
+          [
+            [
+              -8.613301991839695,
+              -21.015695219328
+            ],
+            [
+              1.5907256387391455,
+              -21.015695219328
+            ],
+            [
+              1.5907256387391455,
+              -28.159050194709565
+            ],
+            [
+              4.652219249339626,
+              -28.159050194709565
+            ],
+            [
+              4.652219249339626,
+              -21.525537454639977
+            ],
+            [
+              11.284028798506526,
+              -21.525537454639977
+            ],
+            [
+              11.284028798506526,
+              -11.831851612843336
+            ],
+            [
+              5.1619926503196965,
+              -11.831851612843336
+            ],
+            [
+              5.1619926503196965,
+              -9.791367453491263
+            ],
+            [
+              -8.613301991839695,
+              -9.791367453491263
+            ],
+            [
+              -8.613301991839695,
+              -21.015695219328
+            ]
+          ],
+          [
+            [
+              -8.613301991839695,
+              16.228458314148114
+            ],
+            [
+              -8.613301991839695,
+              7.554433751933544
+            ],
+            [
+              4.652219249339626,
+              7.554433751933544
+            ],
+            [
+              4.652219249339626,
+              10.105878630193967
+            ],
+            [
+              11.284028798506526,
+              10.105878630193967
+            ],
+            [
+              11.284028798506526,
+              23.881687943047375
+            ],
+            [
+              5.1619926503196965,
+              23.881687943047375
+            ],
+            [
+              5.1619926503196965,
+              30.00316246993932
+            ],
+            [
+              1.080952237759075,
+              30.00316246993932
+            ],
+            [
+              1.080952237759075,
+              22.860885938079534
+            ],
+            [
+              -8.613301991839695,
+              22.860885938079534
+            ],
+            [
+              -8.613301991839695,
+              16.228458314148114
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.0,
+      "eye_planar_distance_m": 24.824815373686768,
+      "eye_extruded_volume_distance_m": 24.824815373686768,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 0.0,
+      "sightline_source_extrusion_hits": [
+        {
+          "t_interval": [
+            0.9999328176399472,
+            1.0
+          ],
+          "ray_alt_interval": [
+            5.000470276520369,
+            5.0
+          ],
+          "building_z": [
+            0,
+            16.0
+          ]
+        }
+      ]
+    },
+    {
+      "localId": 1232,
+      "key": "building:8772fc78-3e16-41c3-acab-6a6f6a11fd3d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              204.64792718335258,
+              -41.93367794562169
+            ],
+            [
+              198.01516656117155,
+              -41.93367794562169
+            ],
+            [
+              198.01516656117155,
+              -44.99495125286172
+            ],
+            [
+              186.79064106039255,
+              -44.99495125286172
+            ],
+            [
+              186.79064106039255,
+              -35.81112865047807
+            ],
+            [
+              250.56557598842872,
+              -36.32208335400603
+            ],
+            [
+              250.56557598842872,
+              -50.09670038465098
+            ],
+            [
+              204.13720271254113,
+              -49.58685953940111
+            ],
+            [
+              204.64792718335258,
+              -41.93367794562169
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 23.729,
+      "eye_planar_distance_m": 191.0264901755394,
+      "eye_extruded_volume_distance_m": 191.0264901755394,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 185.9906410606718,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1236,
+      "key": "building:8810c850-520b-4ca0-a19b-113c27204e74",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.449139173176803,
+              -116.42255274512925
+            ],
+            [
+              -24.939365775379475,
+              -155.19685558516343
+            ],
+            [
+              -33.61217106494669,
+              -155.19685558516343
+            ],
+            [
+              -33.61217106494669,
+              -116.42255274512925
+            ],
+            [
+              -25.449139173176803,
+              -116.42255274512925
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 18.95,
+      "eye_planar_distance_m": 40.43584000135812,
+      "eye_extruded_volume_distance_m": 40.43584000135812,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 40.43584000135812,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1253,
+      "key": "building:89b42f75-8fc0-46c3-850a-ebd1a382d23c",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              62.81394035556354,
+              52.45193924892471
+            ],
+            [
+              58.22217547537419,
+              52.96178507794905
+            ],
+            [
+              58.22217547537419,
+              60.105195316852985
+            ],
+            [
+              62.81394035556354,
+              59.594235936287205
+            ],
+            [
+              62.81394035556354,
+              52.45193924892471
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 13.208,
+      "eye_planar_distance_m": 149.743717064974,
+      "eye_extruded_volume_distance_m": 149.743717064974,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 110.04182517293893,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1290,
+      "key": "building:8d9a8a84-fc71-4af4-8dd5-a7d2e6a1ad9f",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              132.2001869657492,
+              -121.01331657093853
+            ],
+            [
+              76.58923499613155,
+              -120.50347917577984
+            ],
+            [
+              76.58923499613155,
+              -110.80988483380689
+            ],
+            [
+              109.24136256161975,
+              -111.31972270279614
+            ],
+            [
+              109.24136256161975,
+              -108.25846875616926
+            ],
+            [
+              76.58923499613155,
+              -107.74863074077393
+            ],
+            [
+              76.58923499613155,
+              -99.58565318515527
+            ],
+            [
+              133.22068483594936,
+              -100.0954915971997
+            ],
+            [
+              133.22068483594936,
+              -107.23879270111021
+            ],
+            [
+              123.52738167299923,
+              -107.23879270111021
+            ],
+            [
+              123.52738167299923,
+              -110.30004694253846
+            ],
+            [
+              133.22068483594936,
+              -110.30004694253846
+            ],
+            [
+              133.22068483594936,
+              -111.31972270279614
+            ],
+            [
+              126.07815081437961,
+              -111.31972270279614
+            ],
+            [
+              126.07815081437961,
+              -112.34051154673233
+            ],
+            [
+              132.2001869657492,
+              -112.34051154673233
+            ],
+            [
+              132.2001869657492,
+              -121.01331657093853
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.15,
+      "eye_planar_distance_m": 77.96577612055484,
+      "eye_extruded_volume_distance_m": 77.96577612055484,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 77.96577612055484,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1305,
+      "key": "building:8fc48f91-df36-41da-ad9b-c528e3400c25",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              89.85475623890224,
+              50.4114429712865
+            ],
+            [
+              89.85475623890224,
+              59.0843897846125
+            ],
+            [
+              98.01778813067213,
+              58.57454365561482
+            ],
+            [
+              98.01778813067213,
+              50.4114429712865
+            ],
+            [
+              89.85475623890224,
+              50.4114429712865
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.5,
+      "eye_planar_distance_m": 162.5116697502523,
+      "eye_extruded_volume_distance_m": 162.5116697502523,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 127.55524677388752,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1318,
+      "key": "building:91565a3e-244b-479a-ad6f-eda8fe4fcc21",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              96.99729025888061,
+              -142.95188568065154
+            ],
+            [
+              131.17968909395765,
+              -141.42126343947712
+            ],
+            [
+              131.69041356476913,
+              -145.50329331726235
+            ],
+            [
+              96.99729025888061,
+              -147.03391496366206
+            ],
+            [
+              96.99729025888061,
+              -142.95188568065154
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.7,
+      "eye_planar_distance_m": 112.99086379762791,
+      "eye_extruded_volume_distance_m": 112.99086379762791,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 112.99086379762791,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1391,
+      "key": "building:9964bf9c-6d91-4c31-b06e-a3ebcebb954c",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -131.5695048280599,
+              -22.54633503957633
+            ],
+            [
+              -131.5695048280599,
+              -11.831851612843336
+            ],
+            [
+              -62.69398268868573,
+              -11.322008908872755
+            ],
+            [
+              -62.69398268868573,
+              -22.03649285359684
+            ],
+            [
+              -131.5695048280599,
+              -22.54633503957633
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 24.752,
+      "eye_planar_distance_m": 88.85322343303352,
+      "eye_extruded_volume_distance_m": 88.85322343303352,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 66.23965653053907,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1409,
+      "key": "building:9c8c03aa-e950-43b0-9ce1-88ad2e68896b",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              137.3026763151586,
+              63.166499307704925
+            ],
+            [
+              136.79195184434715,
+              55.513241004696816
+            ],
+            [
+              126.58792421535969,
+              56.53404618922286
+            ],
+            [
+              127.09864868457977,
+              64.18619203555241
+            ],
+            [
+              137.3026763151586,
+              63.166499307704925
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 18.5,
+      "eye_planar_distance_m": 189.88494218325164,
+      "eye_extruded_volume_distance_m": 189.88494218325164,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 159.11608486686495,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1447,
+      "key": "building:a1a4ab5d-ff66-4036-b3c6-f5ee04634a55",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              160.2605496478653,
+              144.7967782044257
+            ],
+            [
+              160.2605496478653,
+              111.63429639608998
+            ],
+            [
+              104.64959767983903,
+              111.63429639608998
+            ],
+            [
+              100.56855727046116,
+              113.16495580093687
+            ],
+            [
+              96.48656578966052,
+              116.22627528218896
+            ],
+            [
+              93.93579665146287,
+              120.81825618296297
+            ],
+            [
+              91.89480090947117,
+              125.92008847380544
+            ],
+            [
+              92.40552538028264,
+              143.77707763669156
+            ],
+            [
+              160.2605496478653,
+              144.7967782044257
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.0,
+      "eye_planar_distance_m": 222.22341883612083,
+      "eye_extruded_volume_distance_m": 222.22341883612083,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 183.55607435699187,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1527,
+      "key": "building:aa545994-d827-46e1-a4bc-0029c06ca622",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              115.87412318061804,
+              -21.525537454639977
+            ],
+            [
+              114.34385191262055,
+              -27.64809509055408
+            ],
+            [
+              92.9152987812627,
+              -21.015695219328
+            ],
+            [
+              96.99729025888061,
+              -6.730083865997986
+            ],
+            [
+              111.28235830202007,
+              -10.812166181031616
+            ],
+            [
+              112.8126295732003,
+              -6.730083865997986
+            ],
+            [
+              133.73140930357806,
+              -12.85265014424728
+            ],
+            [
+              130.1591912237575,
+              -26.11745601546497
+            ],
+            [
+              115.87412318061804,
+              -21.525537454639977
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.05,
+      "eye_planar_distance_m": 112.81489227678108,
+      "eye_extruded_volume_distance_m": 112.81489227678108,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 94.23910259034878,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1566,
+      "key": "building:af62c6e1-9547-4db4-a158-4783e7ea5816",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              143.42471246652818,
+              -35.301287110197144
+            ],
+            [
+              171.99579961945577,
+              -34.79144554763703
+            ],
+            [
+              171.99579961945577,
+              -47.54638272422376
+            ],
+            [
+              143.93448586432552,
+              -48.056223666149386
+            ],
+            [
+              143.42471246652818,
+              -35.301287110197144
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 18.1,
+      "eye_planar_distance_m": 148.59997771160184,
+      "eye_extruded_volume_distance_m": 148.59997771160184,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 142.73494796765928,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1593,
+      "key": "building:b256060e-fc51-47f9-a988-4fdb72f058fc",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              98.52756152846946,
+              -97.03423437593023
+            ],
+            [
+              98.52756152846946,
+              -90.40187839191685
+            ],
+            [
+              143.42471246652818,
+              -90.40187839191685
+            ],
+            [
+              143.42471246652818,
+              -96.52439581270562
+            ],
+            [
+              98.52756152846946,
+              -97.03423437593023
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.15,
+      "eye_planar_distance_m": 98.67555114129078,
+      "eye_extruded_volume_distance_m": 98.67555114129078,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 98.67555114129078,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1619,
+      "key": "building:b502ec5e-feff-4dea-898b-c702fc1edc0d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.52981987002283,
+              -55.70940079295189
+            ],
+            [
+              -79.52981987002283,
+              -54.17876581444822
+            ],
+            [
+              -70.34629010805278,
+              -55.19844703191309
+            ],
+            [
+              -70.85701458045561,
+              -56.72908186202147
+            ],
+            [
+              -79.52981987002283,
+              -55.70940079295189
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.8,
+      "eye_planar_distance_m": 76.28854336308893,
+      "eye_extruded_volume_distance_m": 76.28854336308893,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 70.87536112351114,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1622,
+      "key": "building:b534a156-ebee-4555-8d82-baeb84a7408d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.64959767983903,
+              -78.66778546680773
+            ],
+            [
+              104.64959767983903,
+              -77.13715383853673
+            ],
+            [
+              90.87430303927101,
+              -77.13715383853673
+            ],
+            [
+              90.87430303927101,
+              -64.38225265676087
+            ],
+            [
+              132.7109114349693,
+              -64.89209278032422
+            ],
+            [
+              132.7109114349693,
+              -90.40187839191685
+            ],
+            [
+              89.85475623890224,
+              -89.89203950564404
+            ],
+            [
+              89.85475623890224,
+              -78.15794601002858
+            ],
+            [
+              104.64959767983903,
+              -78.66778546680773
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.05,
+      "eye_planar_distance_m": 89.85475623890224,
+      "eye_extruded_volume_distance_m": 89.85475623890224,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 89.71584715133582,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1692,
+      "key": "building:bbda346a-05c7-4a30-8433-68bdbaf361a4",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              172.50557302043583,
+              -2.6491131586467613
+            ],
+            [
+              141.3837167245365,
+              -2.6491131586467613
+            ],
+            [
+              140.3632188559277,
+              9.596034884671413
+            ],
+            [
+              148.01647734512616,
+              8.065390596252639
+            ],
+            [
+              148.01647734512616,
+              9.596034884671413
+            ],
+            [
+              165.3630389988661,
+              9.596034884671413
+            ],
+            [
+              165.3630389988661,
+              8.065390596252639
+            ],
+            [
+              173.01629748806454,
+              9.596034884671413
+            ],
+            [
+              172.50557302043583,
+              -2.6491131586467613
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 20.3,
+      "eye_planar_distance_m": 163.61835831278927,
+      "eye_extruded_volume_distance_m": 163.61835831278927,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 145.69718859096454,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1698,
+      "key": "building:bc8b6df3-be9b-4cc8-b3da-555535890378",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              51.07964145539584,
+              -39.38335830194902
+            ],
+            [
+              53.12063719579616,
+              -39.38335830194902
+            ],
+            [
+              52.609912724984696,
+              -47.03542856414881
+            ],
+            [
+              50.569868054415764,
+              -46.5255875728907
+            ],
+            [
+              51.07964145539584,
+              -39.38335830194902
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.1,
+      "eye_planar_distance_m": 63.54184020837055,
+      "eye_extruded_volume_distance_m": 63.54184020837055,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 49.86355556949249,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1704,
+      "key": "building:bcf0cdc6-857f-42c9-aeb4-60e1f8024d4c",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              186.28086765941248,
+              -130.1970645515737
+            ],
+            [
+              181.17932938142582,
+              -130.1970645515737
+            ],
+            [
+              181.17932938142582,
+              -67.95335938471183
+            ],
+            [
+              186.28086765941248,
+              -67.95335938471183
+            ],
+            [
+              186.28086765941248,
+              -130.1970645515737
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.7,
+      "eye_planar_distance_m": 181.17932938142582,
+      "eye_extruded_volume_distance_m": 181.17932938142582,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 180.84026057447718,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1750,
+      "key": "building:c1d710a7-07b1-4885-b920-79921108a13c",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              167.40403473767506,
+              -96.52439581270562
+            ],
+            [
+              167.91380813865513,
+              -107.23879270111021
+            ],
+            [
+              141.89444119693934,
+              -108.25846875616926
+            ],
+            [
+              141.3837167245365,
+              -97.54518609643425
+            ],
+            [
+              167.40403473767506,
+              -96.52439581270562
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.9,
+      "eye_planar_distance_m": 141.93923239563557,
+      "eye_extruded_volume_distance_m": 141.93923239563557,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 141.93923239563557,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1780,
+      "key": "building:c4e496bd-2469-416c-9283-265debc1b986",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -27.490134913577126,
+              57.55373827256531
+            ],
+            [
+              -36.673664673955805,
+              57.55373827256531
+            ],
+            [
+              -36.163891274567106,
+              71.3296099186044
+            ],
+            [
+              -33.61217106494669,
+              75.92045795496493
+            ],
+            [
+              -30.551628522586235,
+              78.98176656278045
+            ],
+            [
+              -24.939365775379475,
+              80.51242120385983
+            ],
+            [
+              -10.654297733831385,
+              80.51242120385983
+            ],
+            [
+              -10.654297733831385,
+              74.38980398425036
+            ],
+            [
+              -17.796831752218374,
+              74.38980398425036
+            ],
+            [
+              -17.796831752218374,
+              70.81864999418777
+            ],
+            [
+              -24.939365775379475,
+              70.81864999418777
+            ],
+            [
+              -27.490134913577126,
+              69.28799676863242
+            ],
+            [
+              -27.490134913577126,
+              57.55373827256531
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.2,
+      "eye_planar_distance_m": 145.17981123610082,
+      "eye_extruded_volume_distance_m": 145.17981123610082,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 102.44717552193633,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1800,
+      "key": "building:c6f6e364-fd68-4ac0-a5ff-ffa187a7b462",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -83.61181135082347,
+              2.4526590551755025
+            ],
+            [
+              -80.55031774181437,
+              2.963615650445117
+            ],
+            [
+              -80.0405443408343,
+              -0.6086272105942785
+            ],
+            [
+              -83.61181135082347,
+              -0.09767076371995993
+            ],
+            [
+              -84.12158475180355,
+              2.4526590551755025
+            ],
+            [
+              -83.61181135082347,
+              2.4526590551755025
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.6,
+      "eye_planar_distance_m": 116.31136828483005,
+      "eye_extruded_volume_distance_m": 116.31136828483005,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 90.3293298191177,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1821,
+      "key": "building:c9544ac2-6672-4fc5-9731-c20a4b372838",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.856246881509836,
+              115.71642637744334
+            ],
+            [
+              15.366020280898535,
+              120.81825618296297
+            ],
+            [
+              48.52887231560682,
+              119.2875956617697
+            ],
+            [
+              48.52887231560682,
+              114.18576659703302
+            ],
+            [
+              14.856246881509836,
+              115.71642637744334
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.75,
+      "eye_planar_distance_m": 201.26513257711113,
+      "eye_extruded_volume_distance_m": 201.26513257711113,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 157.2558123483489,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1830,
+      "key": "building:ca01db61-3c81-4bfb-af3c-b0a49c172a21",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              51.07964145539584,
+              123.36861541436318
+            ],
+            [
+              51.07964145539584,
+              129.49126123010433
+            ],
+            [
+              60.26317121577452,
+              129.49126123010433
+            ],
+            [
+              60.26317121577452,
+              123.36861541436318
+            ],
+            [
+              51.07964145539584,
+              123.36861541436318
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.3,
+      "eye_planar_distance_m": 214.53779641483325,
+      "eye_extruded_volume_distance_m": 214.53779641483325,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 171.80069734197588,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1839,
+      "key": "building:cb53d8f4-07fb-4d61-bf1a-e46eefd89882",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              211.7904612049223,
+              -15.40408943281892
+            ],
+            [
+              220.4642175659123,
+              -16.934730072623044
+            ],
+            [
+              218.93299522490068,
+              -25.6076140061276
+            ],
+            [
+              192.9136282815935,
+              -22.03649285359684
+            ],
+            [
+              194.44389955277373,
+              -9.791367453491263
+            ],
+            [
+              217.91249735470052,
+              -13.362492773423448
+            ],
+            [
+              217.91249735470052,
+              -14.89313371041601
+            ],
+            [
+              211.7904612049223,
+              -13.873448573803513
+            ],
+            [
+              211.7904612049223,
+              -15.40408943281892
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 21.5,
+      "eye_planar_distance_m": 202.92862741821367,
+      "eye_extruded_volume_distance_m": 202.92862741821367,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 193.03847396639276,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1892,
+      "key": "building:d14f3d74-cb6b-4384-b8d4-f488b90986d2",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.18082002085066,
+              -48.56606458659151
+            ],
+            [
+              105.67009555163057,
+              -35.81112865047807
+            ],
+            [
+              133.22068483594936,
+              -35.301287110197144
+            ],
+            [
+              133.22068483594936,
+              -48.056223666149386
+            ],
+            [
+              106.18082002085066,
+              -48.56606458659151
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.3,
+      "eye_planar_distance_m": 112.25761927974158,
+      "eye_extruded_volume_distance_m": 112.25761927974158,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 104.99012588648705,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1905,
+      "key": "building:d26c2843-87b4-45b4-92cf-568a8c7f92ff",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              192.40290381078205,
+              5.513946217284701
+            ],
+            [
+              192.40290381078205,
+              31.0239651707339
+            ],
+            [
+              202.60693144295226,
+              31.0239651707339
+            ],
+            [
+              202.60693144295226,
+              5.513946217284701
+            ],
+            [
+              192.40290381078205,
+              5.513946217284701
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 23.3,
+      "eye_planar_distance_m": 212.63017069243134,
+      "eye_extruded_volume_distance_m": 212.63017069243134,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 197.14676797144614,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1919,
+      "key": "building:d440aaa9-6703-4bb7-8340-62d4cf2ad4f4",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              90.87430303927101,
+              -34.28049076732544
+            ],
+            [
+              103.62909981123025,
+              -34.79144554763703
+            ],
+            [
+              103.11932641025018,
+              -47.54638272422376
+            ],
+            [
+              90.36452963988232,
+              -47.03542856414881
+            ],
+            [
+              90.87430303927101,
+              -34.28049076732544
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 15.6,
+      "eye_planar_distance_m": 98.0154617550226,
+      "eye_extruded_volume_distance_m": 98.0154617550226,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 89.66091733650431,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1927,
+      "key": "building:d4c4e4e0-98f3-4199-ae33-c8e421954c63",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              63.324664824783625,
+              -109.27925790047664
+            ],
+            [
+              64.34421162674377,
+              -119.99364175317001
+            ],
+            [
+              29.651088322446626,
+              -122.03410447079419
+            ],
+            [
+              29.141314921466556,
+              -111.83067372707558
+            ],
+            [
+              63.324664824783625,
+              -109.27925790047664
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.2,
+      "eye_planar_distance_m": 39.61211651800348,
+      "eye_extruded_volume_distance_m": 39.61211651800348,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 39.61211651800348,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 1962,
+      "key": "building:d934dd87-f407-4806-8802-d68372215117",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              63.8344382257637,
+              -147.54375107140203
+            ],
+            [
+              53.12063719579616,
+              -148.05358715089517
+            ],
+            [
+              53.12063719579616,
+              -139.38080449141174
+            ],
+            [
+              63.324664824783625,
+              -138.87096798980758
+            ],
+            [
+              63.8344382257637,
+              -147.54375107140203
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.8,
+      "eye_planar_distance_m": 76.02046739459968,
+      "eye_extruded_volume_distance_m": 76.02046739459968,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 76.02046739459968,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2043,
+      "key": "building:e15f3855-26a2-46df-bd35-89032a29da09",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.079821310866077,
+              -150.60499354583916
+            ],
+            [
+              8.733259661900247,
+              -152.64545030775935
+            ],
+            [
+              7.712761790108716,
+              -143.97267144488802
+            ],
+            [
+              20.467558560476576,
+              -142.95188568065154
+            ],
+            [
+              19.957785159496506,
+              -140.91142703375303
+            ],
+            [
+              9.753757528917665,
+              -141.932212996513
+            ],
+            [
+              8.733259661900247,
+              -131.21785156026192
+            ],
+            [
+              64.85493609437249,
+              -126.11614189565388
+            ],
+            [
+              65.87543396616401,
+              -135.29877222975355
+            ],
+            [
+              37.81412021262515,
+              -137.8501817290635
+            ],
+            [
+              37.81412021262515,
+              -139.89064097113456
+            ],
+            [
+              50.569868054415764,
+              -138.87096798980758
+            ],
+            [
+              51.07964145539584,
+              -147.54375107140203
+            ],
+            [
+              28.120817051266396,
+              -149.58420842769908
+            ],
+            [
+              27.611043651877697,
+              -139.89064097113456
+            ],
+            [
+              25.059323442257288,
+              -140.40159060296483
+            ],
+            [
+              26.079821310866077,
+              -150.60499354583916
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.85,
+      "eye_planar_distance_m": 47.03606565593839,
+      "eye_extruded_volume_distance_m": 47.03606565593839,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 47.03606565593839,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2060,
+      "key": "building:e32850ab-d9c6-42b8-8986-6237b13ec84c",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -20.857374294578836,
+              -131.21785156026192
+            ],
+            [
+              2.6112235105306763,
+              -131.72768843384893
+            ],
+            [
+              2.1014501095506057,
+              -148.56453638806556
+            ],
+            [
+              -20.857374294578836,
+              -148.05358715089517
+            ],
+            [
+              -20.857374294578836,
+              -131.21785156026192
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 18.6,
+      "eye_planar_distance_m": 46.66029699541778,
+      "eye_extruded_volume_distance_m": 46.66029699541778,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 46.66029699541778,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2096,
+      "key": "building:e633e0a7-3b00-40d3-8261-3de4e2088d4d",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              164.34254112707458,
+              -77.6469933450462
+            ],
+            [
+              164.34254112707458,
+              -75.60652198747388
+            ],
+            [
+              141.3837167245365,
+              -75.60652198747388
+            ],
+            [
+              141.3837167245365,
+              -62.8516189441924
+            ],
+            [
+              171.48507515023567,
+              -62.8516189441924
+            ],
+            [
+              171.48507515023567,
+              -79.6885774883129
+            ],
+            [
+              154.13851349649573,
+              -79.6885774883129
+            ],
+            [
+              154.13851349649573,
+              -86.32094024917744
+            ],
+            [
+              142.40421459473666,
+              -86.32094024917744
+            ],
+            [
+              142.40421459473666,
+              -77.6469933450462
+            ],
+            [
+              164.34254112707458,
+              -77.6469933450462
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.5,
+      "eye_planar_distance_m": 141.69539975533547,
+      "eye_extruded_volume_distance_m": 141.69539975533547,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 140.9586424483678,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2109,
+      "key": "building:e74c466c-9b45-4b2c-a80d-4d8cd9a48e47",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.733079803247264,
+              45.8194929072938
+            ],
+            [
+              33.733079803247264,
+              61.1248877443293
+            ],
+            [
+              49.038645713404144,
+              61.1248877443293
+            ],
+            [
+              49.038645713404144,
+              45.8194929072938
+            ],
+            [
+              33.733079803247264,
+              45.8194929072938
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 13.208,
+      "eye_planar_distance_m": 135.0983725297367,
+      "eye_extruded_volume_distance_m": 135.0983725297367,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 92.77164891594481,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2138,
+      "key": "building:eacb585f-985f-4781-8920-86f045075cc0",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.13982427885897,
+              46.840297147739314
+            ],
+            [
+              133.22068483594936,
+              45.30964742280116
+            ],
+            [
+              132.7109114349693,
+              32.55461281097673
+            ],
+            [
+              103.62909981123025,
+              34.08526067401142
+            ],
+            [
+              104.13982427885897,
+              46.840297147739314
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.5,
+      "eye_planar_distance_m": 157.86135557910794,
+      "eye_extruded_volume_distance_m": 157.86135557910794,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 127.27176011106204,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2189,
+      "key": "building:f0ddb7d2-47a8-4100-a458-685947585566",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -108.10090702454178,
+              12.146367064762812
+            ],
+            [
+              -108.10090702454178,
+              22.860885938079534
+            ],
+            [
+              -64.22425395986596,
+              23.37073032770929
+            ],
+            [
+              -64.22425395986596,
+              12.657324129486716
+            ],
+            [
+              -108.10090702454178,
+              12.146367064762812
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.4,
+      "eye_planar_distance_m": 116.88302043041388,
+      "eye_extruded_volume_distance_m": 116.88302043041388,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 84.24727454122659,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2245,
+      "key": "building:f82958e5-ffea-42a2-9b40-19374b7c6af2",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -12.694342402808944,
+              -117.95317863889674
+            ],
+            [
+              3.120996909919376,
+              -117.95317863889674
+            ],
+            [
+              3.120996909919376,
+              -126.62597902027959
+            ],
+            [
+              -20.857374294578836,
+              -126.62597902027959
+            ],
+            [
+              -21.368098763798926,
+              -101.11628153321388
+            ],
+            [
+              3.120996909919376,
+              -101.11628153321388
+            ],
+            [
+              3.120996909919376,
+              -115.91160194443736
+            ],
+            [
+              -12.694342402808944,
+              -115.91160194443736
+            ],
+            [
+              -12.694342402808944,
+              -117.95317863889674
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 17.9,
+      "eye_planar_distance_m": 16.116626044062016,
+      "eye_extruded_volume_distance_m": 16.116626044062016,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 16.116626044062016,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2281,
+      "key": "building:fbfde902-a2b7-4134-b9bf-d11b1a4eb444",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.080952237759075,
+              73.87995711287836
+            ],
+            [
+              -7.592804123230905,
+              73.87995711287836
+            ],
+            [
+              -7.592804123230905,
+              80.51242120385983
+            ],
+            [
+              1.080952237759075,
+              80.51242120385983
+            ],
+            [
+              1.080952237759075,
+              73.87995711287836
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 14.7,
+      "eye_planar_distance_m": 158.87961260203022,
+      "eye_extruded_volume_distance_m": 158.87961260203022,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 114.7898773088558,
+      "sightline_source_extrusion_hits": []
+    },
+    {
+      "localId": 2292,
+      "key": "building:fca098c1-02f1-433a-97db-79534cf751ba",
+      "source_footprint_local_enu": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -29.020406184757356,
+              17.24814647675156
+            ],
+            [
+              -36.673664673955805,
+              17.24814647675156
+            ],
+            [
+              -36.673664673955805,
+              25.41122134069614
+            ],
+            [
+              -29.020406184757356,
+              25.41122134069614
+            ],
+            [
+              -29.020406184757356,
+              17.24814647675156
+            ]
+          ]
+        ]
+      },
+      "base_m": 0.0,
+      "height_m": 16.1,
+      "eye_planar_distance_m": 106.28639133015527,
+      "eye_extruded_volume_distance_m": 106.28639133015527,
+      "camera_half_metre_ball_clear": true,
+      "sightline_planar_clearance_m": 65.35761121795116,
+      "sightline_source_extrusion_hits": []
+    }
+  ],
+  "limitations": [
+    "Finite eye sphere and central sightline only; not every pixel, FOV ray, vegetation or street furniture.",
+    "Source-building heights are original city estimates; not measured architectural facade elevations.",
+    "Actual RAW center ray intentionally permits the final0.5m to hit the intended south facade.",
+    "No claimed walkable terrain/public-access proof; this is an overview review camera only.",
+    "Final browser screenshot remains required to judge framing and nearby context."
+  ]
+}

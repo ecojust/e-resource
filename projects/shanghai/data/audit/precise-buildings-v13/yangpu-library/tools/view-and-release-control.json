@@ -1,0 +1,130 @@
+{
+  "schema": "south-camera-release-driver-control-v3",
+  "passed": true,
+  "base_script": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/runtime-key-v2/browser_acceptance.py",
+    "bytes": 26463,
+    "sha256": "8f784d5a5c2f1bb105bdb16686defd64517d200f67ad2d3b45b29690e2a727e1"
+  },
+  "candidate_script": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/safe-views-v3/browser_acceptance.py",
+    "bytes": 27575,
+    "sha256": "0fb20a18d32ba6bc0f73bc3b756399557d3a2f6fef24dab1622b5d41ac5840a1"
+  },
+  "navigation": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/integration/candidate-v6/payload/data/landmarks.json",
+    "bytes": 279618,
+    "sha256": "e10102c02a45ac0f45f5c8a37e529ddb186a73834cadd1bf6936e7f38764d9b3"
+  },
+  "only_camera_and_release_driver_changed": true,
+  "unchanged_controls": [
+    {
+      "name": "unchanged_helper_defaults",
+      "exact_request_and_camera_JS_unchanged": true,
+      "request": {
+        "from": {
+          "lng": 121.51879821882966,
+          "lat": 31.310858923697086,
+          "alt": 3
+        },
+        "to": {
+          "lng": 121.51878770435401,
+          "lat": 31.310840957391402,
+          "alt": 4
+        },
+        "fov": 48
+      }
+    },
+    {
+      "name": "unchanged_oblique",
+      "exact_request_and_camera_JS_unchanged": true,
+      "request": {
+        "from": {
+          "lng": 121.519560180354,
+          "lat": 31.311855671391402,
+          "alt": 94.13120481727996
+        },
+        "to": {
+          "lng": 121.51878770435401,
+          "lat": 31.310840957391402,
+          "alt": 6.302800000000001
+        },
+        "fov": 50
+      }
+    },
+    {
+      "name": "unchanged_lod",
+      "exact_request_and_camera_JS_unchanged": true,
+      "request": {
+        "from": {
+          "lng": 121.52509638974048,
+          "lat": 31.310840957391402,
+          "alt": 132.51
+        },
+        "to": {
+          "lng": 121.51878770435401,
+          "lat": 31.310840957391402,
+          "alt": 6.753
+        },
+        "fov": 36.87
+      }
+    }
+  ],
+  "old_south_request": {
+    "from": {
+      "lng": 121.51890357575401,
+      "lat": 31.309848792591403,
+      "alt": 12.380500000000001
+    },
+    "to": {
+      "lng": 121.51878770435401,
+      "lat": 31.310840957391402,
+      "alt": 5.177300000000001
+    },
+    "fov": 52
+  },
+  "new_south_request": {
+    "from": {
+      "lng": 121.51878770435401,
+      "lat": 31.3100773893999,
+      "alt": 12
+    },
+    "to": {
+      "lng": 121.51879611593452,
+      "lat": 31.31047345660867,
+      "alt": 5
+    },
+    "fov": 52
+  },
+  "new_south_enu": {
+    "from": [
+      0,
+      -85,
+      12
+    ],
+    "to": [
+      0.8,
+      -40.91,
+      5
+    ],
+    "fov": 52
+  },
+  "release_driver": {
+    "old_request": {
+      "lng": 121.57878770435401,
+      "lat": 31.310840957391402
+    },
+    "old_distance_m": 5706.418658499255,
+    "old_below_required_threshold": true,
+    "new_request": {
+      "lng": 121.70804826594836,
+      "lat": 31.310840957391402,
+      "alt": 0
+    },
+    "new_distance_m": 18000.000000000313,
+    "required_distance_above_m": 12300,
+    "threshold_equality_rejected": true,
+    "strictly_greater_threshold_accepted": true
+  },
+  "scope": "Pure request-generation and strict release-distance controls against actual candidate navigation. Existing ownership assertions remain byte-identical. No browser, screenshot, source/asset acceptance or actual camera clipping/release claim."
+}

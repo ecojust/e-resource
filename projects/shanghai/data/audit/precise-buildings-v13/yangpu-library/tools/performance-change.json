@@ -1,0 +1,44 @@
+{
+  "schema": "qa-parallel-runtime-performance-candidate-v13",
+  "original_script": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/browser_acceptance.py",
+    "bytes": 26479,
+    "sha256": "332be2706918fcd6532a3c76b953c135ed4d1710bb4b28a40501382cf0b7a0d9"
+  },
+  "candidate_script": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/parallel-runtime-candidate/browser_acceptance.py",
+    "bytes": 26463,
+    "sha256": "8f784d5a5c2f1bb105bdb16686defd64517d200f67ad2d3b45b29690e2a727e1"
+  },
+  "unchanged_helpers": [
+    {
+      "file": "audit-asset.js",
+      "bytes": 1681,
+      "sha256": "9e9ad33b80dfcddb0e99ac952821dd05961b50b15e467ba446cf42dd4a962731"
+    },
+    {
+      "file": "fetch-json.js",
+      "bytes": 453,
+      "sha256": "7d2f0982d9ec64252639a3488fbc5fa19de517e01286de6d4fd42a4b2b187aa2"
+    },
+    {
+      "file": "keyboard-snapshot.js",
+      "bytes": 2204,
+      "sha256": "793f4620a418ee08c48a7f07a969ac066b5b387b47bdba3069db58dbeae7388b"
+    },
+    {
+      "file": "streaming-probe.js",
+      "bytes": 11165,
+      "sha256": "c707aba04a93b937b2104bf35470e2c4d2d5d7f34337ddd0ce7895db59a9975e"
+    },
+    {
+      "file": "target-probe.js",
+      "bytes": 5761,
+      "sha256": "d41206dd68c82e8474ea70648121625ca07f42f06235c6826da6dd98a221f580"
+    }
+  ],
+  "changed_line_count": 1,
+  "product_runtime_changed": false,
+  "actual_browser_run": false,
+  "scope": "Only the 31 independent runtime HTTP-byte/SHA reads change from sequential await to Promise.all. Promise.all returns rows in baseline input order. HTTP status, bytes, SHA, exact list comparison, model loader, deadlines, owner checks, screenshots and assertions are unchanged. No active script or report is edited. Performance gain remains unmeasured until a later actual browser run."
+}

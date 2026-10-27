@@ -1,0 +1,88 @@
+{
+  "schema": "safe-review-views-and-release-driver-v3",
+  "base_script": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/runtime-key-v2/browser_acceptance.py",
+    "bytes": 26463,
+    "sha256": "8f784d5a5c2f1bb105bdb16686defd64517d200f67ad2d3b45b29690e2a727e1"
+  },
+  "candidate_script": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/safe-views-v3/browser_acceptance.py",
+    "bytes": 27575,
+    "sha256": "0fb20a18d32ba6bc0f73bc3b756399557d3a2f6fef24dab1622b5d41ac5840a1"
+  },
+  "helpers_unchanged": true,
+  "actual_browser_run": false,
+  "south_camera_clearance_evidence": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/safe-views-v3/safe-south-view.json",
+    "bytes": 82785,
+    "sha256": "a7337979eea1f0eb2c26cad3b3c63b0f70a50e302db2a28e0d13f0cc8522373e"
+  },
+  "south_camera_evidence_code": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/safe-views-v3/check_view.py",
+    "bytes": 7647,
+    "sha256": "7e8d6f8fce84cf8b0fa1ed8d202aecacd81ab655aed100fcc1334f0bdd2b3b35"
+  },
+  "source_runtime": {
+    "file": "/workspace/shanghai_project/src/map-scene.js",
+    "bytes": 53169,
+    "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+  },
+  "observed_failed_run": {
+    "report": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v13/qa/actual-static-v6-runtime-key-v2/browser.json",
+      "bytes": 295211,
+      "sha256": "aa998ba0504e706a58a558f92ad8245f65a082e0f709e06a901eec98ec09e066"
+    },
+    "finished_at": "2026-10-27T04:46:16.048211+00:00",
+    "error": "Page.wait_for_function: Timeout 180000ms exceeded.",
+    "actual_checks": {
+      "runtime_unchanged": true,
+      "full_loaded": true,
+      "candidate_static_only": true,
+      "source_owner": true,
+      "lod_loaded": true
+    },
+    "actual_release_camera": {
+      "center": [
+        121.57878770435401,
+        31.310840957391402
+      ],
+      "zoom": 15,
+      "pitch": 50,
+      "bearing": 20,
+      "fov": 36.87,
+      "eye": {
+        "lng": 121.5723786815874,
+        "lat": 31.295795624810296,
+        "alt": 1500.511542688826
+      }
+    },
+    "actual_target_asset": {
+      "id": "yangpu-library",
+      "status": "loaded",
+      "visible": true,
+      "variant": "distant",
+      "photoMeshes": 0,
+      "triangles": 122688,
+      "greenery": null,
+      "images": [],
+      "actualPhotographicMaterials": {
+        "rootFound": true,
+        "traverseRestored": true,
+        "glass": [],
+        "otherPhoto": []
+      }
+    }
+  },
+  "release_rule": {
+    "source_line": 497,
+    "zoom_below": 16,
+    "default_radius_m": 12000,
+    "visible_hysteresis_m": 300,
+    "required_distance_above_m": 12300,
+    "new_requested_east_offset_m": 18000,
+    "old_actual_center_distance_m": 5706.418658499255,
+    "new_requested_center_distance_m": 18000.000000000313
+  },
+  "scope": "Only south review-camera request/optional target offset and owner-release navigation driver change. Actual requested/observed release center/distance are now recorded and must exceed 12300m. All existing assertions, other views, six captures, keyboard measurements and product deadlines remain unchanged. Existing failed runs stay failed."
+}

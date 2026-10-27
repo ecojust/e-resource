@@ -1,0 +1,4 @@
+{
+  "original": "async files=>{const out=[];for(const f of files){const r=await fetch(new URL(f.file,document.baseURI));if(!r.ok)throw Error(f.file+': '+r.status);const b=await r.arrayBuffer();out.push({file:f.file,bytes:b.byteLength,sha256:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b))).map(x=>x.toString(16).padStart(2,'0')).join('')})}return out}",
+  "candidate": "async files=>Promise.all(files.map(async f=>{const r=await fetch(new URL(f.file,document.baseURI));if(!r.ok)throw Error(f.file+': '+r.status);const b=await r.arrayBuffer();return {file:f.file,bytes:b.byteLength,sha256:Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b))).map(x=>x.toString(16).padStart(2,'0')).join('')}}))"
+}
