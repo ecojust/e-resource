@@ -1,0 +1,220 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13718-6695--4_1-s0-s1",
+      "baseline_sha256": "6fb77f6f24ccd485619c44287e879c8f2152405daa09f3e852e101588a0a28fb",
+      "override_sha256": "6a5320984fdc4ca055bdd2f640d54429cb59ae804a508d72d1a56e40d8526a88",
+      "triangles": 121126,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 5634,
+        "extra": 5634,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 3228,
+        "extra": 3228,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 2967,
+          "key": "building:b68eb87e-e8d3-408d-bb79-9f5ea9af6438",
+          "triangles": 18528,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 206,
+          "key": "building:0de25dc4-9c3d-452d-bab3-d3309235ba8e",
+          "triangles": 11564,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 3728,
+          "key": "building:e6e9fc3e-8a0c-468e-b0f8-9fa857f6c5ad",
+          "triangles": 18528,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 3387,
+          "key": "building:d1d89b57-e653-48e2-979f-be76568b0453",
+          "triangles": 6054,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 680,
+          "key": "building:2b8cc4c0-1df4-46ec-9ac4-a1ecfebe3b05",
+          "triangles": 13940,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 726,
+          "key": "building:2ebb2a98-3bbe-49df-a163-10c737f48416",
+          "triangles": 19452,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1557,
+          "key": "building:627cda35-023b-4b02-9fbb-9d461f0132bd",
+          "triangles": 5988,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1117,
+          "key": "building:47f8d6d9-7880-4e07-adef-7129e4aa5068",
+          "triangles": 17472,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 3115,
+          "key": "building:c09b4eca-a453-4f0a-b3fc-29e286df70ac",
+          "triangles": 5592,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 4030,
+          "key": "building:f84bfbc0-51a3-4432-a405-2c22d8d2b10c",
+          "triangles": 4008,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_columbia-country-club",
+          "triangles": 18528,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 121126,
+        "nonidentical_normal_triangles": 5634,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 6.558128845535194e-9,
+        "max_direction_difference_degrees": 3.819143635616869e-7,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          206,
+          3728,
+          3387,
+          680,
+          726,
+          1557,
+          1117,
+          3115,
+          4030
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13718-6695--4_1-s0-s1",
+    "target_group": null,
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 121126,
+      "nonidentical_normal_triangles": 8710,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.00326437801973384,
+      "max_direction_difference_degrees": 0.18703540936845378,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13718-6695--4_1-s0-s1",
+      "target_group": null,
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 121126,
+        "nonidentical_normal_triangles": 8710,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.00326437801973384,
+        "max_direction_difference_degrees": 0.18703540936845378,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

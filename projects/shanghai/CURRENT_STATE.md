@@ -1,3 +1,50 @@
+# 当前交付状态 · 哥伦比亚乡村俱乐部主楼 v16
+
+[按16区查看全部33处地标](README.md) · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html) · [第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [哥伦比亚主楼直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk)
+
+新增长宁区哥伦比亚乡村俱乐部主楼，已接入第三人称漫游，通过模型检查与本地浏览器验收。当前33处导航包含外滩15项、陆家嘴4项和14项逐栋复原模型，分布在13个区；金山、奉贤、崇明的逐栋精模待补充。普通精模目录涉及11个宏块；源替换登记19项，涉及12个宏块和17个近景分块。
+
+模型包含2018修缮后保留的东侧增建、北门厅成对石柱与侧通道、圆端楼梯间、南拱廊、后退山花和露台、实体筒瓦、细格木窗、扭柱、阳台及“蔦屋書店 / TSUTAYA BOOKS”字牌。不包含独立泳池、体育馆或孙科别墅。本栋只替换其独立地图来源，已检查保留9栋邻楼；同块武康路129号、210号精模记录保持。
+
+## 模型文件
+
+| 文件 | 字节 |
+|---|---:|
+| [原始GLB](assets/models/precise/14-13718-6695/columbia-country-club/columbia-country-club-raw.glb) | 24,519,920 |
+| [网页GLB](assets/models/precise/14-13718-6695/columbia-country-club/columbia-country-club-web.glb) | 10,425,888 |
+| [远景GLB](assets/models/precise/14-13718-6695/columbia-country-club/columbia-country-club-lod.glb) | 4,315,552 |
+| [Blender](assets/native/precise/14-13718-6695/columbia-country-club/columbia-country-club.blend) | 13,759,514 |
+
+四件文件均严格小于100,000,000字节，实际字节与SHA256已核对。完整模型282,092三角形，远景155,552三角形。[模型元数据](source/precise/columbia-country-club/model-metadata.json) · [可编辑源码](source/precise/columbia-country-club/README.md)
+
+## 实际验收范围
+
+原始模型与生产解码后的网页模型通过几何、材质、贴图原字节和UV对应检查；Blender实际重新打开，网格与原始模型一致。完整模型嵌入3张1024×1024通用抹灰贴图，远景保留颜色图；实际浏览器完成完整模型3图、远景1图、返回完整模型3图的解码核对。[模型检查](data/audit/precise-buildings-v16/columbia-country-club/model-review.json)
+
+本地真实浏览器13项检查通过：33处目录直达链接、新建筑登记起点、完整模型与远景切换、离开18km后释放及返回、精确来源替换与9栋邻楼保留、真实W键前进约0.42m和松键后停止。35件运行时文件保持原字节，未记录页面、着色器、HTTP或网络错误。[浏览器证据](data/audit/precise-buildings-v16/columbia-country-club/browser.json)
+
+审核者实际查看北面、南面、远景和返回行走后4张网页截图。远景模型部分被邻楼遮挡，周边普通建筑与庭院地面仍未完成同等精度的测绘复原。[图像复核](data/audit/precise-buildings-v16/columbia-country-club/visual-review.json) · [北面](data/audit/precise-buildings-v16/columbia-country-club/front.png) · [南面](data/audit/precise-buildings-v16/columbia-country-club/rear.png)
+
+本轮检查当前静态模型的来源替换和释放回返，未验证仅通过动态目录加载时的全部生命周期；也未重新遍历其余32项所有视角或评测手机GPU帧率。本节记录本地浏览器结果，不把它等同于发布后公共网页HTTP验证。
+
+## 漫游与精度限制
+
+本栋目前供室外观赏与漫游。门廊、露台和台阶的外观并不表示已经支持精确登阶或室内游览；部分建筑边缘的行走阻挡可能与模型不完全贴合。当前阻挡仍依据在线建筑轮廓，精模网格不会自动生成精确碰撞或台阶支持；本轮只核验经过筛选的外部起点、相机与有限前进。[实际行走范围](data/audit/precise-buildings-v16/columbia-country-club/runtime-collision-scope.json)
+
+模型包络高14m，主体宽度和分层高度由建筑师图示比例尺、平剖面与照片推估，存在至少约0.5–1m的不确定性，不是实测高度。来源地图约49×18.7m的四边形是覆盖代理，不等于准确墙线；建筑师公布的2012㎡是建筑面积，不能用作占地面积。[图纸标定](source/precise/columbia-country-club/DRAWING_CALIBRATION.md)
+
+这是有资料参照的外观模型，尚非照片级真实复原，也不是测绘或摄影测量成果。北门厅正面开口、被遮挡细部、瓦尺度、雕饰与风化仍有推估或简化；室内仅保留主要墙板、楼面和入口台阶，没有完整复原书店内装，字牌字体亦为近似。
+
+8张WQL建筑参考照片采用CC BY-SA 4.0，拍摄于2018年，早于现代书店；它们没有作为模型照片贴图。实际嵌入的ambientCG Plaster001采用CC0，只是通用抹灰表面，不是本楼扫描，颗粒形态仍与实楼有差异。无开放许可的建筑师图纸和现代照片只供研究，不加入公开包。[来源与边界](source/precise/columbia-country-club/PUBLIC_SOURCES.md) · [照片与材质登记](source/precise/columbia-country-club/public-photo-register.json)
+
+全市16区底图仍在，1,796,419个建筑及部件要素尚未全部逐栋照片复原，本轮新增一项不能代表全市精细建模完成。地图和远程模型需要联网，模型加载超时可刷新页面。
+
+下载ZIP仍为v13，75,198,283字节，SHA256 `409cf1070eb6625c9d2d5cb6c4929739bc2e0b925916de42a5463378274c8976`；不含v14导航改进及v15、v16模型更新。[旧启动包](downloads/shanghai-web-launcher.zip) · [旧包实际验证](data/audit/launcher-v13/README.md)
+
+## v15及更早交付（历史保留）
+
+以下完整保留原状态文档；其“当前”、数量和验证范围对应各历史版本。更早README记录已移至[历史交付记录](DELIVERY_HISTORY.md)。
+
 # 当前交付状态 · 宝山孔庙大成殿 v15
 
 [全部32处地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html) · [最新第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/8cea0605a2d056bda107266357e11413eb9589e1/projects/shanghai/index.html#mode=walk) · [宝山大成殿直达](https://rawcdn.githack.com/ecojust/e-resource/8cea0605a2d056bda107266357e11413eb9589e1/projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk)

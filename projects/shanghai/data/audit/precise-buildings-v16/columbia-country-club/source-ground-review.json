@@ -1,0 +1,273 @@
+{
+  "schema": "columbia-v16-bounded-osm-water-ground-support-review",
+  "passed_source_screen_only": true,
+  "final_model_accepted": false,
+  "browser_passed": false,
+  "main_written": false,
+  "candidate_binding": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v16/qa/navigation-v1/plan-candidate-screen-v2.json",
+    "bytes": 16879,
+    "sha256": "8eda162a9140e112b200f009bc00c612b24b487896fb1885f420225a727526f7"
+  },
+  "candidate_id": "north-east-court-building-view",
+  "candidate_navigation": {
+    "walkStart": [
+      121.42315846740684,
+      31.21059322174945
+    ],
+    "bearing": 233.9726266148964
+  },
+  "fetch": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=121.4210,31.2088,121.4252,31.2120",
+    "retrieved_at": "2026-10-27T14:19:26.815292+00:00",
+    "scope": "Bounded public OpenStreetMap API map response; no credentials, no source modifications.",
+    "status": 200,
+    "bytes": 211132,
+    "sha256": "ded6f9719182f39e1a6ec28761622d34b4945d325bbf8e407b46c420de9b3d18",
+    "content_type": "application/xml; charset=utf-8"
+  },
+  "osm_input": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v16/qa/navigation-v1/source-ground-v1/osm-ground-context.osm",
+    "bytes": 211132,
+    "sha256": "ded6f9719182f39e1a6ec28761622d34b4945d325bbf8e407b46c420de9b3d18"
+  },
+  "osm_counts": {
+    "node": 482,
+    "way": 79,
+    "relation": 26
+  },
+  "query_bbox": {
+    "minlat": "31.2088000",
+    "minlon": "121.4210000",
+    "maxlat": "31.2120000",
+    "maxlon": "121.4252000"
+  },
+  "all_probe_buffers_inside_requested_bbox": true,
+  "incomplete_way_node_refs": [],
+  "invalid_way_geometries": [],
+  "mapped_water_or_fountain_ways": [
+    {
+      "osm_way": "1364679202",
+      "version": "1",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "geometry_type": "Polygon",
+      "probe_clearance_m": {
+        "avatar": 54.01223220929486,
+        "forward_5m": 51.534682318290464,
+        "camera": 60.86390020989503,
+        "camera_boom": 52.840945435192026
+      }
+    },
+    {
+      "osm_way": "1364679203",
+      "version": "1",
+      "tags": {
+        "amenity": "fountain"
+      },
+      "geometry_type": "Polygon",
+      "probe_clearance_m": {
+        "avatar": 72.40132861497975,
+        "forward_5m": 69.37374576580333,
+        "camera": 80.06559958685632,
+        "camera_boom": 70.93843522668449
+      }
+    }
+  ],
+  "water_relations_pending": [],
+  "live_osm_building_checks": {
+    "avatar": {
+      "nearest": [
+        {
+          "osm_way": "864847881",
+          "name": "哥伦比亚乡村俱乐部",
+          "clearance_m": 12.504016087739988
+        },
+        {
+          "osm_way": "1364679201",
+          "name": null,
+          "clearance_m": 12.56943059067505
+        },
+        {
+          "osm_way": "1368808689",
+          "name": null,
+          "clearance_m": 16.16269707918124
+        }
+      ],
+      "intersections": []
+    },
+    "forward_5m": {
+      "nearest": [
+        {
+          "osm_way": "864847881",
+          "name": "哥伦比亚乡村俱乐部",
+          "clearance_m": 9.944145658740455
+        },
+        {
+          "osm_way": "1364679201",
+          "name": null,
+          "clearance_m": 12.56943059067505
+        },
+        {
+          "osm_way": "1368808689",
+          "name": null,
+          "clearance_m": 16.16269707918124
+        }
+      ],
+      "intersections": []
+    },
+    "camera": {
+      "nearest": [
+        {
+          "osm_way": "1364679201",
+          "name": null,
+          "clearance_m": 7.351987966068042
+        },
+        {
+          "osm_way": "1368808689",
+          "name": null,
+          "clearance_m": 9.344212918827274
+        },
+        {
+          "osm_way": "864847881",
+          "name": "哥伦比亚乡村俱乐部",
+          "clearance_m": 19.075980181560922
+        }
+      ],
+      "intersections": []
+    },
+    "camera_boom": {
+      "nearest": [
+        {
+          "osm_way": "1364679201",
+          "name": null,
+          "clearance_m": 7.351987966068042
+        },
+        {
+          "osm_way": "1368808689",
+          "name": null,
+          "clearance_m": 9.344212918827274
+        },
+        {
+          "osm_way": "864847881",
+          "name": "哥伦比亚乡村俱乐部",
+          "clearance_m": 11.330488647500252
+        }
+      ],
+      "intersections": []
+    }
+  },
+  "source_land_at_start": [
+    {
+      "osm_way": "765939973",
+      "tags": {
+        "landuse": "retail",
+        "name": "上生·新所",
+        "name:en": "Colombia circle",
+        "tourism": "attraction"
+      },
+      "covers_all_probes": true
+    }
+  ],
+  "nearest_highways": [
+    {
+      "osm_way": "577463645",
+      "tags": {
+        "access": "private",
+        "highway": "service",
+        "surface": "concrete"
+      },
+      "distance_to_start_m": 93.36351036995099
+    },
+    {
+      "osm_way": "577463646",
+      "tags": {
+        "access": "private",
+        "highway": "service",
+        "surface": "concrete"
+      },
+      "distance_to_start_m": 96.35865189332316
+    },
+    {
+      "osm_way": "1361620479",
+      "tags": {
+        "highway": "footway"
+      },
+      "distance_to_start_m": 123.86616303253952
+    },
+    {
+      "osm_way": "577463644",
+      "tags": {
+        "access": "private",
+        "highway": "service",
+        "surface": "concrete"
+      },
+      "distance_to_start_m": 124.17700595103972
+    },
+    {
+      "osm_way": "227973998",
+      "tags": {
+        "highway": "unclassified",
+        "name": "安西路"
+      },
+      "distance_to_start_m": 124.30393780199802
+    }
+  ],
+  "nearest_explicit_footway": {
+    "osm_way": "1361620479",
+    "tags": {
+      "highway": "footway"
+    },
+    "distance_to_start_m": 123.86616303253952
+  },
+  "photo_observation": {
+    "actually_viewed": [
+      "licensed-reference/69886774.jpg",
+      "private-reference/paper-01.jpg"
+    ],
+    "licensed_source": "https://commons.wikimedia.org/wiki/File:Columbia_Circle_07.jpg",
+    "licensed_photo_date": "2018-06-10",
+    "observation": "North-side photograph shows broad paved exterior circulation and local raised planting beds. Aerial view shows the separate western pool. These images support the existence of exterior courts but do not georegister this exact northeast spawn.",
+    "current_survey_or_height_measurement": false,
+    "private_pixels_published": false
+  },
+  "runtime_source_inputs": [
+    {
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    }
+  ],
+  "runtime_ground_findings": {
+    "map_collision_sources": "Loaded building/building_part and water map polygon layers; not automatically authored detailed mesh geometry.",
+    "surface_registration": "StreetInteraction.groundAt returns only registered active surface-owner heights; ordinary Club mesh by itself does not register such surfaces.",
+    "fallback_player_height_m": 0.075,
+    "fallback_is_surveyed_elevation": false,
+    "local_stair_platform_support_or_interior_access_verified": false,
+    "actual_runtime_groundAt_observed": false
+  },
+  "limitations": [
+    "OSM map response is a bounded current snapshot, not exhaustive physical obstacle or hydrology data.",
+    "Two mapped fountain polygons are checked. No separate mapped swimming-pool water polygon was returned, although the aerial reference visibly shows the western pool; absence of water tags does not imply no water.",
+    "Retail landuse coverage is not a pavement, public-access or elevation measurement. No mapped path runs through the chosen point.",
+    "Photo pavement observation is dated 2018 and does not precisely locate the spawn or prove current planter/street-furniture clearance.",
+    "Final authored full/LOD geometry, actual online vector-source behavior, ground state and finite keyboard movement still require final model and browser checks.",
+    "No statement about accurate collision/support on every detailed wall, doorway, step, terrace or interior is made."
+  ],
+  "tool": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v16/qa/navigation-v1/source-ground-v1/review_source_ground.py",
+    "bytes": 9128,
+    "sha256": "119f0abbff2aee341bfad673ebb0257e52a9c9c3779d06d9cc3694f9a40ba369"
+  }
+}

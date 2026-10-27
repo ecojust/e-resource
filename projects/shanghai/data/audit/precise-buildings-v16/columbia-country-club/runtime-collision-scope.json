@@ -1,0 +1,71 @@
+{
+  "schema": "columbia-v16-runtime-collision-scope-review",
+  "read_only": true,
+  "runtime_changed": false,
+  "reviewer": "next_integration_plan",
+  "sources": [
+    {
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742"
+    }
+  ],
+  "findings": [
+    {
+      "source": "src/map-scene.js",
+      "lines": [
+        688,
+        737
+      ],
+      "finding": "collisionAt rebuilds building/building_part/water polygons from currently loaded online vector sourceFeatures; bbox is a broad phase, geometryContains exact mapped polygon is the narrow phase. It does not derive collisions from a precise GLB or the frozen registry owner boundary."
+    },
+    {
+      "source": "src/map-scene.js",
+      "lines": [
+        432,
+        467
+      ],
+      "finding": "Ordinary precise models load as render assets. Local ground/obstacle proxies register only when group.userData.streetAssembly.interaction is supplied. This branch does not auto-generate proxies from triangles."
+    },
+    {
+      "source": "src/walk-controller.js",
+      "lines": [
+        318,
+        377
+      ],
+      "finding": "Avatar probes online building/water map collision and explicit local proxy sweeps. maxStepHeight0.2 only applies to supplied walk-surface data, not visual stair geometry."
+    },
+    {
+      "source": "src/walk-controller.js",
+      "lines": [
+        463,
+        493
+      ],
+      "finding": "Follow-camera boom shortening tests online building points plus explicit local-camera proxies, not arbitrary precise GLB triangle hits."
+    },
+    {
+      "source": "src/street-interaction.js",
+      "lines": [
+        200,
+        269
+      ],
+      "finding": "groundAt/sweep use explicitly registered owner walk-surface/obstacle proxies; empty/absent local owner uses default ground0.075m. No mesh raycast is involved."
+    }
+  ],
+  "implications": [
+    "Exact expanded model outline may exceed online mapped collision geometry, so portico, terrace, stairs and walls are not guaranteed solid under arbitrary walking/camera motion.",
+    "Accepted external spawn, first5m geometry screen, finite camera poses and actual browser W check do not prove all-motion collision accuracy, interior access or stair-climbing.",
+    "Final Club record/docs must explicitly retain this scope; no runtime mutation requested."
+  ],
+  "draft_or_final_model_collision_proxy_present": "Final asset pending; current plain ordinary model contract provides no street interaction sidecar and no such automatic proxy registration is claimed."
+}
