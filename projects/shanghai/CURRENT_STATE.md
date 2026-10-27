@@ -1,6 +1,6 @@
 # V19 邬达克旧居
 
-**[直接进入邬达克旧居室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+**[直接进入邬达克旧居室外漫游](https://rawcdn.githack.com/ecojust/e-resource/7e178aaed36b6fc2361861b3101e48d155dbc2b2/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
 
 本轮增加长宁区邬达克旧居，当前为36处导航、22个精细owner、13个owner宏、20组near、17条ordinary记录、12个catalog宏，单体分布14区。全市16区底图包含1,796,419个建筑及部件要素，尚未全部逐栋精细复原；金山、崇明逐栋精模仍待补充。
 
