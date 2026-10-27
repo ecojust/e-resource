@@ -1,0 +1,92 @@
+{
+  "schema": "hudec-v19-working-exterior-navigation-seed",
+  "building_id": "changning-hudec-residence",
+  "status": "ACTUAL_RAW_GEOMETRY_SCREENED_MODEL_AND_BROWSER_PENDING",
+  "navigation": {
+    "listed": true,
+    "overviewZoom": 18,
+    "walkStart": [
+      121.42522770760407,
+      31.20969371949168
+    ],
+    "bearing": 35.0
+  },
+  "candidate_id": "southwest-outdoor-approach",
+  "spawn_local_enu_m": [
+    -18.0,
+    -20.0
+  ],
+  "first_5m_endpoint_local_enu_m": [
+    -15.132117818244769,
+    -15.904239778555041
+  ],
+  "controller_default": {
+    "pitch_degrees": 82,
+    "camera_distance_m": 14,
+    "ahead_m": 2.8,
+    "target_ground_projection_local_enu_m": [
+      -16.39398597821707,
+      -17.70637427599082
+    ],
+    "camera_ground_projection_local_enu_m": [
+      -24.34590799683139,
+      -29.062895856643593
+    ],
+    "target_altitude_above_ground_m": 3,
+    "camera_altitude_above_ground_m": 4.948423413440917,
+    "ground_fallback_m": 0.075
+  },
+  "final_model_accepted": false,
+  "browser_passed": false,
+  "precise_public_sidewalk_membership_verified": false,
+  "current_clear_pedestrian_width_verified": false,
+  "coordinate_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v19/integration/hudec-residence/source-owner-input-v1/changning-hudec-residence/geometry-input.json",
+    "bytes": 17673,
+    "sha256": "3304b88742474b2c796b8f8246ae4d5d4c1de30850d08b6aee2a9977fc49a22b"
+  },
+  "limitations": [
+    "Working outdoor approach only. Actual detailed raw geometry, final camera poses and browser movement remain separate pending checks.",
+    "The source-owner five-sided polygon is a mapped collision/replacement context, not a verified architectural wall boundary.",
+    "At the selected southwest coordinate raw aerial imagery appears green/court-like; this is not a verified paved path, an OSM landuse classification, a surveyed ground elevation or proof of current access.",
+    "The2018 north-entry photograph shows paving, a raised circular tree planter and a porch step, but is not georegistered and does not establish paving at this southwest coordinate.",
+    "Panyu Road is tagged sidewalk=both, but that street centerline is about37m from the selected point. No separate sidewalk geometry or measured width at this point is available.",
+    "A mapped footway lies west of Panyu Road, not at the selected outdoor approach. Road centerline distances are not curb, lane-edge or sidewalk-clearance measurements.",
+    "Current OSM building/water polygons and frozen44-neighbor polygons were checked for finite probe nonintersection; no full furniture, tree, gate, overhead-wire or access-obstacle inventory is claimed.",
+    "The14m default camera boom is an airborne probe; its projected clearance is not pedestrian ground support.",
+    "Runtime collision comes from loaded map polygons and explicit proxies. Ordinary GLB windows, stairs, walls and doors do not automatically create collision or ground surfaces.",
+    "Default ground0.075m is not measured courtyard/grass/sidewalk elevation. No indoor access, stair climbing or arbitrary route is accepted.",
+    "No mapped water in this bounded response is not physical proof of water absence. Returned full road ways extend beyond the query bbox; only in-bbox probes are accepted."
+  ],
+  "source_preliminary_proposal": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v19/integration/hudec-residence/navigation-source-v1/navigation-proposal.json",
+    "bytes": 3299,
+    "sha256": "ecb02ab05c8d5fe7ac9df3bd12d8c278cbbf7da4b2bb1bd52e1963321ceffe7e"
+  },
+  "raw_model": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/final-review/hudec-C-full.glb",
+    "bytes": 7254628,
+    "sha256": "0ccd906149afa7d0cae8af24879e46be39f308162002ccdc208782b86a026828"
+  },
+  "source_ground_screen": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v19/integration/hudec-residence/navigation-source-v1/source-ground-review.json",
+    "bytes": 18228,
+    "sha256": "a168285b0bc2b523450599b4e7bcbdbb86d60559c348e3317acbe600c7e7418b"
+  },
+  "actual_model_screen": {
+    "report": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/integration/hudec-residence/final-raw-navigation-screen-v1/model-clearance.json",
+      "bytes": 27929,
+      "sha256": "f863df0b216326409c46ac0627b01af3b74c0fc295a1ea35314f3a71cf2e5942"
+    },
+    "camera_views": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/integration/hudec-residence/final-raw-navigation-screen-v1/camera-views.json",
+      "bytes": 437,
+      "sha256": "0aa03fc4be19519e7ab7a37400b7213695d216019eef7eb558cc6a510a610a3f"
+    },
+    "raw_asset_sha256": "0ccd906149afa7d0cae8af24879e46be39f308162002ccdc208782b86a026828",
+    "geometry_screen_passed": true,
+    "browser_passed": false,
+    "root_visual_accepted": false
+  }
+}

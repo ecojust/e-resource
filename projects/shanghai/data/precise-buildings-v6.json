@@ -27,6 +27,10 @@
       "file": "bund14/geometry-input.json",
       "sha256": "5ab96ac3a2b648ed896ea3ffe47ad1e7b4e2b82dac5b13c6756e8a74777276b8"
     },
+    "changning-hudec-residence": {
+      "file": "changning-hudec-residence/geometry-input.json",
+      "sha256": "3304b88742474b2c796b8f8246ae4d5d4c1de30850d08b6aee2a9977fc49a22b"
+    },
     "columbia-country-club": {
       "file": "columbia-country-club/geometry-input.json",
       "sha256": "68cc8c4fe6fe2b10c88903d3e618457ab49779d631a62800172a41f1a7e81e42"
@@ -96,7 +100,7 @@
       "sha256": "e49ad7b07b0f8694401f692c0dd28ccdf3dffaa672b23b80bb55206c8c91ad8f"
     }
   },
-  "integration_scope": "Accepted35 static navigation. Previous34 records, all prior source owners and near groups remain exact. Only the existing shared macro index/replacement is extended; eleven other catalog macros stay unchanged. Dynamic-only catalog lifecycle is not claimed by this static proof.",
+  "integration_scope": "Accepted36 static navigation. Previous35 records, all prior source owners and near groups remain exact. Only the existing shared macro index/replacement is extended; eleven other catalog macros stay unchanged. Dynamic-only catalog lifecycle is not claimed by this static proof.",
   "landmarks": [
     {
       "building_ids": [
@@ -1601,6 +1605,47 @@
         "type": "Polygon"
       },
       "id": "xuhui-wukang-mansion"
+    },
+    {
+      "architectural_wall_boundary_surveyed": false,
+      "boundary_role": "frozen_source_owner_context_not_architectural_wall",
+      "building_ids": [
+        "dc1b810d-bc89-4c1b-8248-c88683be81e0"
+      ],
+      "building_part_ids": [],
+      "confirmed_boundary": {
+        "coordinates": [
+          [
+            [
+              121.42524362,
+              31.20986515
+            ],
+            [
+              121.42532945,
+              31.20998444
+            ],
+            [
+              121.42555475,
+              31.21000279
+            ],
+            [
+              121.42558694,
+              31.20979174
+            ],
+            [
+              121.42525971,
+              31.20974586
+            ],
+            [
+              121.42524362,
+              31.20986515
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "changning-hudec-residence",
+      "source_owner_boundary_is_model_wall": false
     }
   ],
   "macros": [
@@ -2156,6 +2201,51 @@
             "geometryBytes": 1623600,
             "sha256": "a79e149581c09cdfd02a065dafef847488f1c455aa62f45677cc60b1b64ee861",
             "size_bytes": 94259
+          }
+        },
+        {
+          "baseline_decoded_sha256": "d9673b0cba2b5dc759644d83d573ad279d318aa83610a92b1efa18822fdb8d32",
+          "baseline_file": "near/-3_1-s0-s1-s0.glb.gz",
+          "baseline_sha256": "892723d2ea0eb1b993ed3b4bebfdcaaee9531ca138b582f3ea72ebe85f9b38bb",
+          "featureLocalIds": [
+            3819,
+            2697,
+            2774,
+            873,
+            3557
+          ],
+          "groups": [
+            {
+              "expandedTriangles": 5608,
+              "feature_keys": [
+                "building:dc1b810d-bc89-4c1b-8248-c88683be81e0"
+              ],
+              "landmark_id": "changning-hudec-residence",
+              "local_ids": [
+                3557
+              ],
+              "name": "city_target_changning-hudec-residence"
+            }
+          ],
+          "id": "14-13718-6695--3_1-s0-s1-s0",
+          "model": {
+            "compression": {
+              "gzip_level": 6,
+              "gzip_mtime": 0,
+              "owner_groups_compressed_separately_then_buffer_relocated": true,
+              "preserve_named_nodes": true,
+              "quantization": false,
+              "type": "EXT_meshopt_compression"
+            },
+            "content_encoding": "gzip",
+            "decoded_sha256": "71ce37107c4d7015deef7ef82b28916364680199b01c5900ee3bd359cd009edc",
+            "decoded_size_bytes": 289880,
+            "drawCalls": 16,
+            "expandedTriangles": 77588,
+            "file": "assets/city-overrides-v6/14-13718-6695/-3_1-s0-s1-s0.glb.gz",
+            "geometryBytes": 1061560,
+            "sha256": "4a2bae6f5510c36d773b7f58c5c43562fa3a06f9f9ab8dc6fc106bd6a5add839",
+            "size_bytes": 50785
           }
         }
       ]
@@ -2751,9 +2841,9 @@
     }
   ],
   "ordinary_catalog": {
-    "bytes": 4717,
+    "bytes": 4704,
     "file": "data/precise-buildings/catalog.json",
-    "sha256": "c95455998425d57d30751fb65035e1a31c7412fc5973765f014acc809b947e65"
+    "sha256": "53cb19ef711f0f71a31fd662c2051b2f7e274ca2c4e594c074502dc3cc8299f5"
   },
   "project_base_url_contract": "model.file is relative to the project root, not the registry directory",
   "reuse_validation": [
@@ -2863,9 +2953,9 @@
     }
   ],
   "schema": "city-precise-overrides-v1",
-  "status": "All21 owner variants preserve source geometry. The current building model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
+  "status": "All22 owner variants preserve source geometry. The current building model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
   "validation": {
-    "file": "source/city/precise-overrides-v18/xuhui-wukang-mansion/composition-proof.json",
-    "sha256": "633a303105eff0b1eddf44de3967ce0d8c0853e99920b13f198c26fab329f5fc"
+    "file": "source/city/precise-overrides-v19/changning-hudec-residence/composition-proof.json",
+    "sha256": "9fdde512e93f6ac1a30edea59fe4041af54df97ba5b462002896e6b33abf324f"
   }
 }

@@ -1,0 +1,118 @@
+{
+  "schema": "hudec-release-model-metadata-v1",
+  "id": "changning-hudec-residence",
+  "name": "邬达克旧居",
+  "anchor": [
+    121.4254167658076,
+    31.209873382719156
+  ],
+  "ground_base_m": 0,
+  "rotation_y": 0,
+  "height_estimate_m": 14.082900047302246,
+  "height_note": "Model envelope14.083m includes estimated chimney tops. The2.30m door-height prior is an explicitly selected modelling estimate;2.15/2.45m spatial pressure cases are not measurement or confidence intervals.",
+  "bounds_glb": {
+    "min": [
+      -14.962930679321289,
+      0.0,
+      -12.248370170593262
+    ],
+    "max": [
+      14.616339683532715,
+      14.082900047302246,
+      11.900853157043457
+    ]
+  },
+  "assets": {
+    "raw": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/final-review/hudec-C-full.glb",
+      "bytes": 7254628,
+      "sha256": "0ccd906149afa7d0cae8af24879e46be39f308162002ccdc208782b86a026828",
+      "triangles": 85101
+    },
+    "native": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/native-final/changning-hudec-residence.blend",
+      "bytes": 3306236,
+      "sha256": "05e736a0d04e077446248fef6f0fd478f6149036b098e207ec4795d96e7f2c57"
+    },
+    "web": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/package-v1/changning-hudec-residence-web.glb",
+      "bytes": 3117544,
+      "sha256": "6e6af93f5860574a888c0b4e38d1c31224a068a4f73a053a38ad54617e304bb3",
+      "triangles": 85101
+    },
+    "lod": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/package-v1/changning-hudec-residence-lod.glb",
+      "bytes": 622564,
+      "sha256": "f7e9dff929579284ac6a231da19eb3d83696a6d13f246d8e4746078a1abd084c",
+      "triangles": 8945
+    }
+  },
+  "all_four_asset_bytes": 14300972,
+  "packing": [
+    "-cc",
+    "-noq",
+    "-vtf",
+    "-vnf",
+    "-km",
+    "-ke"
+  ],
+  "web_geometry_policy": "Same full geometry, no position quantization or simplification; exact decoded parity requires independent QA.",
+  "lod_source": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/lod-source/hudec-C-lod.glb",
+    "bytes": 1113180,
+    "sha256": "133cdf58ceaa15036d1cceec13d4529d9185448e39cfc9242b4bc5da30d82654",
+    "triangles": 8945
+  },
+  "lod_policy": "Separately authored from the same input: omit individual slate/brick relief, reduce curve sampling25→13 and brace samples13→5, simplify fine glazing subdivisions. Keep roof shape, gables, actual main openings/reveals, north porch, chimneys and3birds.",
+  "expected_images": {
+    "raw": 3,
+    "web": 3,
+    "lod": 3
+  },
+  "architecture_style": "都铎复兴住宅，曲面坡屋顶、双南山墙、木构装饰、砖烟囱和北侧门廊。",
+  "detail_note": "复原2017/2018照片所见修缮后外观，含可见窗洞、门廊、木撑和屋面细部。东北服务体按历史总平面拓扑近似定位，未见墙面刻意省略窗洞；非1930逐寸测绘复原。",
+  "uncertainty": [
+    "C scale uses a2.30m estimated door-height prior; ±0.15m are stress-test cases, not a confidence interval or surveyed dimension.",
+    "The713.9m² source owner polygon is context only, not house walls or a target building area. Main/connector/service topology follows a low-resolution historical plan and restored photographs.",
+    "Exact exterior bearing, wall dimensions, bay depths, hidden service joins and roof heights remain approximations. No relocation toward an unidentified neighboring aerial red roof was made.",
+    "Modest south bay/gable differences are photo-informed hypotheses. Perspective can account for the apparent small peak-height difference; false-three/false-two text is not assigned to the two south gables.",
+    "Current restoration era is based on2017-published and2018 photographs, not a2026 site survey or a literal1930 reconstruction. Northern service chimney follows documented restoration intent; unseen details are simplified.",
+    "Unobserved service openings and interiors are deliberately omitted. The detached brick garden gate, garden, surrounding roads and neighboring buildings are not included in this authored building.",
+    "Original generic material atlases are illustrative, not building scans or photo textures. Source-private photograph pixels are not embedded or distributed.",
+    "This delivery is an exterior visual model. It does not certify walkable interiors, structural construction, exact stair collision or public access."
+  ],
+  "asset_license": [
+    {
+      "id": "MIT",
+      "url": "https://opensource.org/license/mit/",
+      "attribution": "Original geometry, code and procedural material atlas images by agent",
+      "role": "authored_geometry_code_and_embedded_materials"
+    },
+    {
+      "id": "ODbL-1.0",
+      "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "©OpenStreetMap contributors / Overture Maps; source owner context",
+      "role": "source_location_context"
+    },
+    {
+      "id": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Szalai.laci, Hudec_House.jpeg; unedited complete Commons1280 reference",
+      "role": "public_reference_photograph_not_texture"
+    }
+  ],
+  "source_photos_register": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/photo-register.json",
+  "raw_native_reused_in_place": true,
+  "appearance_review_passed": true,
+  "appearance_review": "Root actually viewed preserved review-v2 southwest-full and west-facade-close plus final-review north-entry-full. Independent delta QA proves85,053 triangles unchanged and12 old dark-timber triangles replaced by48 new triangles (+36), with unchanged bounds. Final north image confirms the3spandrel panels and porch middle crossbeam.",
+  "independent_asset_qa_pending": true,
+  "browser_verified": false,
+  "main_modified": false,
+  "remote_modified": false,
+  "root_visual_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v19/review/root-hudec-native-visual-review-final.json",
+    "bytes": 3844,
+    "sha256": "75ec667c7e76e444ac43bd1c51077074bcc661d613e94bb85b0adec1910544a7"
+  },
+  "qa_state_note": "Pending flags describe authoring-time state. Final independent QA/browser/navigation acceptance is attached by the root release workflow; use those exact final reports."
+}

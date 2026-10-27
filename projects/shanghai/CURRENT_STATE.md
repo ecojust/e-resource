@@ -1,3 +1,27 @@
+# V19 邬达克旧居
+
+**[直接进入邬达克旧居室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+
+本轮增加长宁区邬达克旧居，当前为36处导航、22个精细owner、13个owner宏、20组near、17条ordinary记录、12个catalog宏，单体分布14区。全市16区底图包含1,796,419个建筑及部件要素，尚未全部逐栋精细复原；金山、崇明逐栋精模仍待补充。
+
+本轮新增长宁区**邬达克旧居**，参照历史总平面、历史照片和修缮后照片构造双山墙、弧形侧屋面、木构装饰、窗格与砖齿窗套、二层外挑及石托、退进门廊、烟囱砖饰和三只屋脊鸟饰。范围为主宅外观及北侧连接服务体量，不含花园门房、整个原宅花园、相邻建筑或室内。
+
+仅替换3557号主宅源要素，保留同近景873、2697、2774、3819号邻楼和既有35处导航。已检查冻结周边源要素、室外出生点、首段有限行走和登记相机；源轮廓与地面代理不是实测墙线或精确人行道边界。
+
+实际raw/web/LOD面数分别为85,101/85,101/8,945。四件模型合计14,300,972字节，最大7,254,628字节，均严格小于100,000,000字节。35个运行时代码文件和v13下载ZIP保持原字节；旧ZIP不包含本轮模型。
+
+独立资产与本地网页检查通过：全量、远景、远距离释放及回返加载、原楼替换与邻楼保留、目录直达和片段重载、真实W键输入与抬键停止、三张嵌入材质解码。主代理实际查看五张浏览器截图。[模型审查](data/audit/precise-buildings-v19/changning-hudec-residence/model-review.json) · [浏览器记录](data/audit/precise-buildings-v19/changning-hudec-residence/browser.json) · [截图审查](data/audit/precise-buildings-v19/changning-hudec-residence/visual-review.json) · [网格与导航筛查](data/audit/precise-buildings-v19/changning-hudec-residence/model-clearance.json) · [周边建筑检查](data/audit/precise-buildings-v19/changning-hudec-residence/model-neighbor-screen.json)
+
+比例采用2.30米门高先验，尚无可核验的现场尺寸；北侧服务体量和被遮挡部位含推估，未见墙面不补造规则窗列。粗源轮廓仅用于身份与替换范围，不能视为实测墙线。模型表现修缮后的外观，不宣称逐寸复原1930年原貌或2026年现场测绘。三张材质图为原创MIT通用材质，并非建筑表面扫描；私有研究照片未作为贴图。
+
+使用范围为登记室外落点及有限路线。碰撞仍来自加载地图轮廓与显式地面代理，不自动来自精细GLB。门廊、台阶、室内和屋顶不保证自由通行，也未宣称所有移动方式或任意行走路线已覆盖。
+
+[网页GLB](assets/models/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence-web.glb) · [原始GLB](assets/models/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence-raw.glb) · [远景GLB](assets/models/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence-lod.glb) · [Blender](assets/native/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence.blend) · [来源、源码与许可](source/precise/changning-hudec-residence/README.md)
+
+旧35处模型时间与提交依据保持；邬达克旧居版本时间以实际模型提交的committer date为准。以下完整保留已发布V18状态及此前历史。
+
+---
+
 # V18 武康大楼主楼
 
 **[直接进入武康大楼室外漫游](https://rawcdn.githack.com/ecojust/e-resource/8b56c1c7d8834d8f0a53b1481e60c028338efee8/projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)

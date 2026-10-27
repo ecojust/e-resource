@@ -1,0 +1,165 @@
+{
+  "schema": "hudec-portable-source-manifest-v1",
+  "id": "changning-hudec-residence",
+  "author": "agent",
+  "license": "MIT; reused common helper retains its separate MIT copyright",
+  "files": [
+    {
+      "relative_file": "LICENSE",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/LICENSE",
+      "bytes": 1062,
+      "sha256": "04da979aa090babca2a5a490ad081f521703f20a7749398c5475cc9771b854cc"
+    },
+    {
+      "relative_file": "PRIVATE_REFERENCE_URLS.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/PRIVATE_REFERENCE_URLS.md",
+      "bytes": 1097,
+      "sha256": "b57bd57fc9f4618bc0c5edf242e06c94a721ee798e2518a074a6bbc3e7a8be22"
+    },
+    {
+      "relative_file": "source/README.md",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/README.md",
+      "bytes": 3248,
+      "sha256": "1e09281bf72ff1a123d6e56cf6d698a087d776d5d340b119c026724520897e21"
+    },
+    {
+      "relative_file": "source/requirements.txt",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/requirements.txt",
+      "bytes": 43,
+      "sha256": "73daa2fad3cf797e0f7e984d500201865750016ee400a8e02c00676495618606"
+    },
+    {
+      "relative_file": "source/ENVIRONMENT.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/ENVIRONMENT.json",
+      "bytes": 132,
+      "sha256": "59b58651f504264194f0b1232aa4289fa0bd8bf93c48fb86d52f72a0bfd02384"
+    },
+    {
+      "relative_file": "source/build_model.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/build_model.py",
+      "bytes": 17628,
+      "sha256": "f1ea88c91428586a0cfc6b87f06bb58c2991d8b4cda0af22225ca5b99c7f556f"
+    },
+    {
+      "relative_file": "source/hudec_detail.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/hudec_detail.py",
+      "bytes": 23193,
+      "sha256": "944ea6424da94512b34ee7c24212e22c2d964aa06067805c7240a70b8d9b3961"
+    },
+    {
+      "relative_file": "source/make_materials.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/make_materials.py",
+      "bytes": 4029,
+      "sha256": "c7b488c676b3c54a415526b3d01b0c2c71b59cda6bf994b70f49b109edd7b634"
+    },
+    {
+      "relative_file": "source/model-input.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/model-input.json",
+      "bytes": 8289,
+      "sha256": "4888ade3a2a09fcd5619499285e8fcfe2b0174c2a903b26986bc128580d094a8"
+    },
+    {
+      "relative_file": "source/render_final_north.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/render_final_north.py",
+      "bytes": 6315,
+      "sha256": "9e435c711a58ef0b1c609a02344b83600e0f6f2fc9f79823fc5eb65b6fd53ff2"
+    },
+    {
+      "relative_file": "source/package_assets.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/package_assets.py",
+      "bytes": 7304,
+      "sha256": "0c20a56488354e31bb9112720a63c61b6f40b74bf8632c5f1086300d77de3146"
+    },
+    {
+      "relative_file": "source/common/photo_architecture.py",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/common/photo_architecture.py",
+      "bytes": 21897,
+      "sha256": "f172bac50421478e3ca4170b561a4c32605992d5c2298da2fdf3e118bd16930f"
+    },
+    {
+      "relative_file": "source/common/LICENSE",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/source/common/LICENSE",
+      "bytes": 1066,
+      "sha256": "1877e621fd1f3208fe8412093f6a608066ad260c0d060113af0c70cb85d26089"
+    },
+    {
+      "relative_file": "textures/ATLAS.json",
+      "source": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/textures/ATLAS.json",
+      "bytes": 5339,
+      "sha256": "bfc7f483fd15ead115516985ba453a663af385de434d0cc1b83a566da8807c73"
+    }
+  ],
+  "raw_geometry_dependencies": [
+    "source/build_model.py",
+    "source/hudec_detail.py",
+    "source/model-input.json",
+    "source/common/photo_architecture.py"
+  ],
+  "texture_dependencies": [
+    "source/make_materials.py"
+  ],
+  "input_reference_paths_are_metadata_only": true,
+  "reference_photo_pixels_read_by_generators": false,
+  "network_access_required_for_generation": false,
+  "commands_from_fresh_package_root": [
+    [
+      "python",
+      "source/make_materials.py"
+    ],
+    [
+      "python",
+      "source/build_model.py",
+      "full",
+      "repro-full"
+    ],
+    [
+      "python",
+      "source/build_model.py",
+      "lod",
+      "repro-lod"
+    ]
+  ],
+  "expected_outputs": {
+    "full": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/final-review/hudec-C-full.glb",
+      "bytes": 7254628,
+      "sha256": "0ccd906149afa7d0cae8af24879e46be39f308162002ccdc208782b86a026828",
+      "triangles": 85101
+    },
+    "lod_source": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v19/model/hudec-residence-detailed-v1/lod-source/hudec-C-lod.glb",
+      "bytes": 1113180,
+      "sha256": "133cdf58ceaa15036d1cceec13d4529d9185448e39cfc9242b4bc5da30d82654",
+      "triangles": 8945
+    },
+    "atlas": [
+      {
+        "file": "hudec-original-basecolor.png",
+        "bytes": 141186,
+        "sha256": "22e4487015191ad22844f01a62faae99f516b3672eec3a0393c7a9a1d10a303c"
+      },
+      {
+        "file": "hudec-original-normal.png",
+        "bytes": 117108,
+        "sha256": "895c91589635c897d76afba025ac7e089d23190699a9ad9a0850480abfe9fdca"
+      },
+      {
+        "file": "hudec-original-orm.png",
+        "bytes": 72560,
+        "sha256": "e64c571cc65f71ee42c35a2493d42283920960ac4a1f988db688224b25731db1"
+      }
+    ]
+  },
+  "native_reproduction_command": [
+    "blender",
+    "-b",
+    "-t",
+    "4",
+    "--python",
+    "source/render_final_north.py"
+  ],
+  "native_input_layout": "Generate full into final-review first; native source command creates native-final and one north preview. Native byte-for-byte equality is not asserted; geometry/material parity is independently checked.",
+  "fresh_directories_required": true,
+  "generation_uses_no_private_image_pixels": true,
+  "repro_scratch_policy": "Full and LOD may be verified sequentially, deleting owned scratch output after each verification to bound temporary disk."
+}
