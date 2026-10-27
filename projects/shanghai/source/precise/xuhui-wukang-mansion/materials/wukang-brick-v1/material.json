@@ -1,0 +1,72 @@
+{
+  "schema": "original-procedural-material-v1",
+  "name": "Inferred warm red-brown running-bond brick",
+  "creator": "agent",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source_photographs_used_as_pixels": false,
+  "accuracy": "Generic original illustration material, not a scan, measured brick size or exact building color.",
+  "pixels": [
+    1024,
+    608
+  ],
+  "tile_metres": [
+    1.984,
+    1.184
+  ],
+  "brick_pitch_metres": [
+    0.248,
+    0.074
+  ],
+  "tile_bricks": [
+    8,
+    16
+  ],
+  "uv": "U=horizontal facade distance/1.984; V=height/1.184. REPEAT on both axes. Keep direction consistent on curved faces.",
+  "normal_convention": "Tangent normal XYZ is (-dh/dU,-dh/dV,1) normalized, RGB encoded0..1; green is positive tangentV, not a DirectX Y flip.",
+  "material_factors": {
+    "baseColorFactor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "roughnessFactor": 1,
+    "metallicFactor": 1,
+    "normalTextureScale": 0.65
+  },
+  "note": "metallicFactor1 is intentional: ORM blue is0 everywhere, yielding nonmetal. Do not tint baseColor twice.",
+  "periodicity": "Noise uses circular convolution, brick pattern wraps modulo8 columns/16 rows; derivatives use circular differences.",
+  "outputs": [
+    {
+      "path": "maps/brick-basecolor.png",
+      "file": "brick-basecolor.png",
+      "bytes": 560819,
+      "sha256": "18a6ee0d431dcbff03e94211c17805255f39a1ea00194b924d4e2e3ae9868053",
+      "role": "baseColorTexture",
+      "colorspace": "sRGB"
+    },
+    {
+      "path": "maps/brick-normal.png",
+      "file": "brick-normal.png",
+      "bytes": 479107,
+      "sha256": "43e769d4763f28fa877315c6cee1922668a1c3c182d7ecfd91b855682f8c9dfe",
+      "role": "normalTexture",
+      "colorspace": "linear"
+    },
+    {
+      "path": "maps/brick-orm.png",
+      "file": "brick-orm.png",
+      "bytes": 166118,
+      "sha256": "29fe2cd1c08c6d486176bcd7346115e3b163d7675374482008ef0a22e78c2500",
+      "role": "metallicRoughnessTexture",
+      "colorspace": "linear; R=1,G=roughness,B=0"
+    }
+  ],
+  "generator": {
+    "file": "generate_material.py",
+    "sha256": "5c9f39bc7ae019891ae00323dfd3ddabca7152e2485fcdaed2c4ae0c263f940b"
+  },
+  "original_workspace_manifest_sha256": "3fffb88633946c0152969b567f794f22b5ea11727dbdd87caa3d52b7d8d471d1",
+  "portability_note": "Only file locations normalized; image bytes, factors, creator and license unchanged."
+}

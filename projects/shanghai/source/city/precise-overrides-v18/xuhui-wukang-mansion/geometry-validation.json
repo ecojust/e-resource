@@ -1,0 +1,220 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13718-6695-0_2-s1-s1-s0",
+      "baseline_sha256": "fd6269309a0d907c16cc27c1460bf9da7a49c4d1436f49b32c872f71a677f69b",
+      "override_sha256": "a79e149581c09cdfd02a065dafef847488f1c455aa62f45677cc60b1b64ee861",
+      "triangles": 117460,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 4230,
+        "extra": 4230,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 246,
+        "extra": 246,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 593,
+          "key": "building:25e8225c-abc2-4271-967e-5c51693c9b33",
+          "triangles": 8412,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1834,
+          "key": "building:744ec1f7-9281-42c7-ab38-d933c30b4f58",
+          "triangles": 9600,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1776,
+          "key": "building:70d77bb8-8a3e-4ac2-813b-4d2a2901ed3f",
+          "triangles": 8412,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 3220,
+          "key": "building:c6f3bdae-36ed-489d-975d-a2fada42bd56",
+          "triangles": 12438,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 4033,
+          "key": "building:f86d8201-81f5-470c-9d00-da5d14e5a938",
+          "triangles": 6054,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1151,
+          "key": "building:4a22b75a-223e-4c80-bc59-c593d3f7a9c0",
+          "triangles": 9072,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 3299,
+          "key": "building:cc4b8d42-60a5-4521-84ca-42ea52d68fc1",
+          "triangles": 6448,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 4146,
+          "key": "building:ffa5c11a-defa-4329-b6ce-9f1c1e146da9",
+          "triangles": 9416,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1235,
+          "key": "building:4ed2f738-1166-4aae-b210-ef732121ef23",
+          "triangles": 33700,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 1545,
+          "key": "building:61d01571-a7eb-4e9b-96f1-8295d3f46ea9",
+          "triangles": 13908,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_xuhui-wukang-mansion",
+          "triangles": 33700,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 117460,
+        "nonidentical_normal_triangles": 4230,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 1.808489513699385e-8,
+        "max_direction_difference_degrees": 0.000001284914865194293,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          593,
+          1834,
+          1776,
+          3220,
+          4033,
+          1151,
+          3299,
+          4146,
+          1545
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13718-6695-0_2-s1-s1-s0",
+    "target_group": "city_target_xuhui-wukang-mansion",
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 117460,
+      "nonidentical_normal_triangles": 5240,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.004526276843833665,
+      "max_direction_difference_degrees": 0.3111451149473038,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13718-6695-0_2-s1-s1-s0",
+      "target_group": "city_target_xuhui-wukang-mansion",
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 117460,
+        "nonidentical_normal_triangles": 5240,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.004526276843833665,
+        "max_direction_difference_degrees": 0.3111451149473038,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

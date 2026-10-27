@@ -1,0 +1,412 @@
+{
+  "schema": "wukang-mansion-v18-bounded-source-ground-review",
+  "passed_source_screen_only": true,
+  "scope_of_pass": "Only complete bounded mapped building/water context and finite probe nonintersection; not precise sidewalk, traffic, final mesh or browser acceptance.",
+  "final_model_accepted": false,
+  "browser_passed": false,
+  "main_written": false,
+  "precise_public_sidewalk_membership_verified": false,
+  "current_clear_pedestrian_width_verified": false,
+  "candidate_binding": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/navigation-source-v1/navigation-proposal.json",
+    "bytes": 3108,
+    "sha256": "dc5c5ed4bcf5e00417e74ab2a2cd20c7a09ca046ec92e80ea844dddbecb8029e"
+  },
+  "candidate_id": "sw-tip-wukang-side",
+  "candidate_navigation": {
+    "walkStart": [
+      121.43340090727989,
+      31.20602326263594
+    ],
+    "bearing": 25
+  },
+  "coordinate_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/freeze-v1/xuhui-wukang-mansion/geometry-input.json",
+    "bytes": 29533,
+    "sha256": "dbb3f66e86ed2dee3da571435bcae5837886fc0bd9ededcb237aaf1def79e935"
+  },
+  "effective_neighborhood": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/source-neighborhood-v1.json",
+    "bytes": 323527,
+    "sha256": "b457cba1d9b0c0296668cb5a314739504af6a390790fef68dbad6e4d0ffae041"
+  },
+  "osm_input": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/navigation-source-v1/osm-navigation-context.osm",
+    "bytes": 301077,
+    "sha256": "3f6ee254fdf8cd8d97a2fb421711b6c96c3ad72cfe07ac997f3db90d2e392a4d"
+  },
+  "fetch": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=121.4320,31.2049,121.4352,31.2076",
+    "retrieved_at": "2026-10-27T17:55:51.979466+00:00",
+    "scope": "Bounded public map request for Wukang Mansion exterior navigation; no account or credentials.",
+    "status": 200,
+    "bytes": 301077,
+    "sha256": "3f6ee254fdf8cd8d97a2fb421711b6c96c3ad72cfe07ac997f3db90d2e392a4d",
+    "content_type": "application/xml; charset=utf-8"
+  },
+  "osm_counts": {
+    "node": 823,
+    "way": 73,
+    "relation": 55
+  },
+  "query_bbox": {
+    "minlat": "31.2049000",
+    "minlon": "121.4320000",
+    "maxlat": "31.2076000",
+    "maxlon": "121.4352000"
+  },
+  "all_probe_buffers_inside_requested_bbox": true,
+  "incomplete_way_node_refs": [],
+  "invalid_way_geometries": [],
+  "mapped_water_or_fountain_ways": [],
+  "water_relations_pending": [],
+  "live_osm_building_checks": {
+    "avatar": {
+      "nearest": [
+        {
+          "osm_way": "293434151",
+          "version": "6",
+          "name": "武康大楼",
+          "clearance_m": 0.9611501723014487
+        },
+        {
+          "osm_way": "1117538713",
+          "version": "1",
+          "name": null,
+          "clearance_m": 25.23704625994525
+        },
+        {
+          "osm_way": "1117538714",
+          "version": "1",
+          "name": null,
+          "clearance_m": 32.075082927608825
+        }
+      ],
+      "intersections": []
+    },
+    "forward_5m": {
+      "nearest": [
+        {
+          "osm_way": "293434151",
+          "version": "6",
+          "name": "武康大楼",
+          "clearance_m": 0.9611501723014487
+        },
+        {
+          "osm_way": "1117538713",
+          "version": "1",
+          "name": null,
+          "clearance_m": 25.23704625994525
+        },
+        {
+          "osm_way": "1117538714",
+          "version": "1",
+          "name": null,
+          "clearance_m": 32.075082927608825
+        }
+      ],
+      "intersections": []
+    },
+    "camera": {
+      "nearest": [
+        {
+          "osm_way": "293434151",
+          "version": "6",
+          "name": "武康大楼",
+          "clearance_m": 9.024084108155678
+        },
+        {
+          "osm_way": "1117538713",
+          "version": "1",
+          "name": null,
+          "clearance_m": 19.916990544024348
+        },
+        {
+          "osm_way": "1117538714",
+          "version": "1",
+          "name": null,
+          "clearance_m": 32.46163270234809
+        }
+      ],
+      "intersections": []
+    },
+    "camera_boom": {
+      "nearest": [
+        {
+          "osm_way": "293434151",
+          "version": "6",
+          "name": "武康大楼",
+          "clearance_m": 1.2204958298618385
+        },
+        {
+          "osm_way": "1117538713",
+          "version": "1",
+          "name": null,
+          "clearance_m": 19.916990544024348
+        },
+        {
+          "osm_way": "1117538714",
+          "version": "1",
+          "name": null,
+          "clearance_m": 31.922278205675827
+        }
+      ],
+      "intersections": []
+    }
+  },
+  "nearest_highways": [
+    {
+      "osm_way": "47451483",
+      "version": "27",
+      "tags": {
+        "cycleway:both": "no",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "武康路",
+        "name:en": "Wukang Road",
+        "old_name": "Route Ferguson",
+        "oneway": "yes",
+        "oneway:bicycle": "no",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 5.388222115572006,
+      "distance_to_first5m_centerline_m": 5.354957032288249,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "1235082261",
+      "version": "3",
+      "tags": {
+        "bicycle": "no",
+        "foot": "yes",
+        "highway": "secondary",
+        "lanes": "4",
+        "name": "淮海中路",
+        "name:en": "Middle Huaihai Road",
+        "name:zh": "淮海中路",
+        "name:zh-Hans": "淮海中路",
+        "name:zh-Hant": "淮海中路",
+        "name:zh-Latn-pinyin": "Huáihǎi Zhōnglù",
+        "source": "interpolation",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 10.356585691665822,
+      "distance_to_first5m_centerline_m": 10.356585691665822,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "11761212",
+      "version": "26",
+      "tags": {
+        "cycleway": "opposite_lane",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "兴国路",
+        "name:en": "Xingguo Road",
+        "oneway": "yes",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 18.418746739523183,
+      "distance_to_first5m_centerline_m": 18.418746739523183,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "50410905",
+      "version": "15",
+      "tags": {
+        "cycleway": "opposite_lane",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "余庆路",
+        "name:en": "Yuqing Road",
+        "oneway": "yes",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 25.05075482252162,
+      "distance_to_first5m_centerline_m": 25.05075482252162,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "85711357",
+      "version": "14",
+      "tags": {
+        "bicycle": "no",
+        "foot": "yes",
+        "highway": "secondary",
+        "lanes": "4",
+        "name": "淮海中路",
+        "name:en": "Middle Huaihai Road",
+        "name:zh": "淮海中路",
+        "name:zh-Hans": "淮海中路",
+        "name:zh-Hant": "淮海中路",
+        "name:zh-Latn-pinyin": "Huáihǎi Zhōnglù",
+        "source": "interpolation",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 25.05075482252162,
+      "distance_to_first5m_centerline_m": 25.05075482252162,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "657297357",
+      "version": "6",
+      "tags": {
+        "cycleway": "opposite_lane",
+        "cycleway:right": "lane",
+        "highway": "residential",
+        "lanes": "2",
+        "name": "天平路",
+        "name:en": "Tianping Road",
+        "oneway": "yes",
+        "surface": "asphalt"
+      },
+      "distance_to_start_centerline_m": 25.05075482252162,
+      "distance_to_first5m_centerline_m": 25.05075482252162,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "1240377860",
+      "version": "1",
+      "tags": {
+        "highway": "footway"
+      },
+      "distance_to_start_centerline_m": 43.19023466640388,
+      "distance_to_first5m_centerline_m": 41.27471845388786,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "1240377863",
+      "version": "1",
+      "tags": {
+        "highway": "footway"
+      },
+      "distance_to_start_centerline_m": 60.898045934838784,
+      "distance_to_first5m_centerline_m": 58.60342066504484,
+      "distance_is_not_curb_or_lane_edge": true
+    },
+    {
+      "osm_way": "577512480",
+      "version": "1",
+      "tags": {
+        "access": "private",
+        "highway": "service",
+        "service": "alley"
+      },
+      "distance_to_start_centerline_m": 65.0149386227949,
+      "distance_to_first5m_centerline_m": 63.184194279583735,
+      "distance_is_not_curb_or_lane_edge": true
+    }
+  ],
+  "nearest_explicit_footway": {
+    "osm_way": "1240377860",
+    "version": "1",
+    "tags": {
+      "highway": "footway"
+    },
+    "distance_to_start_centerline_m": 43.19023466640388,
+    "distance_to_first5m_centerline_m": 41.27471845388786,
+    "distance_is_not_curb_or_lane_edge": true
+  },
+  "tagged_nodes_within40m": [
+    {
+      "osm_node": "5552656821",
+      "tags": {
+        "addr:city": "上海市",
+        "addr:housenumber": "378",
+        "addr:street": "武康路",
+        "amenity": "restaurant",
+        "name:en": "Pistachio",
+        "wheelchair": "limited"
+      },
+      "local_east_north_m": [
+        -49.771146871687726,
+        -20.685912722143122
+      ],
+      "distance_to_start_m": 21.92489938023869
+    },
+    {
+      "osm_node": "5858762355",
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:street": "余庆路",
+        "name": "克莉絲汀",
+        "name:en": "Christine",
+        "shop": "bakery"
+      },
+      "local_east_north_m": [
+        -22.349971061785073,
+        -54.181828414050365
+      ],
+      "distance_to_start_m": 28.84507425367211
+    },
+    {
+      "osm_node": "7018356286",
+      "tags": {
+        "amenity": "bank",
+        "name:en": "ICBC",
+        "wheelchair": "yes"
+      },
+      "local_east_north_m": [
+        -52.084808579967515,
+        -47.458163623121116
+      ],
+      "distance_to_start_m": 31.885670477980348
+    },
+    {
+      "osm_node": "9768681083",
+      "tags": {
+        "highway": "traffic_signals",
+        "traffic_signals": "traffic_lights"
+      },
+      "local_east_north_m": [
+        -41.04968956496955,
+        -47.012887656839695
+      ],
+      "distance_to_start_m": 24.47521513400999
+    }
+  ],
+  "source_land_at_start": [],
+  "visual_ground_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/navigation-source-v1/visual-ground-notes.json",
+    "bytes": 13700,
+    "sha256": "d13bf9911f1794c5f634582fdffba5707b2c827879fd298cf76f2330e4b135eb"
+  },
+  "runtime_source_inputs": [
+    {
+      "path": "/workspace/shanghai_project/src/map-scene.js",
+      "bytes": 53169,
+      "sha256": "aa1b37016754bbe288f17447db20401e077de6f2e05efccbcce18c8fe886c0d7"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/street-interaction.js",
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/walk-controller.js",
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611"
+    }
+  ],
+  "runtime_scope_review": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/runtime-collision-scope-v1.json",
+    "bytes": 3629,
+    "sha256": "91f1f1c5c62c78b28347f8d9dc8fb696539058115c4c978f35323caffd25ac5d"
+  },
+  "tool": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/navigation-source-v1/prepare_navigation_source.py",
+    "bytes": 15216,
+    "sha256": "70c2f6b59fba729528b701b47103105718b8764acae12d15368588216bfab046"
+  },
+  "limitations": [
+    "This is an unaccepted outdoor navigation candidate checked against a spatial preview; final detailed raw geometry, final navigation/camera tests and actual browser movement remain pending.",
+    "OSM only maps road centerlines here. It contains no sidewalk polygon or explicit footway at the candidate; line clearance is not carriageway-edge or curb clearance.",
+    "2022 photographs support a narrow paved strip around the southwest rounded tip, not an open forecourt. They are not georegistered to this coordinate and do not prove current clear width.",
+    "The candidate is along the Wukang Road side away from the intersection, with finite first 5 m tangent movement. Its exact curb-side membership and traffic separation remain unverified.",
+    "Signal posts are visible in photographs but lack reliable local coordinates; no full furniture, tree-pit or pedestrian obstacle inventory is claimed.",
+    "The default camera extends in air toward the intersection. Its projection is checked for mapped buildings, not road-surface pedestrian support or a surveyed overhead-wire inventory.",
+    "Online building/building_part/water polygons provide runtime collision. An ordinary detailed GLB does not automatically register accurate interior, arcade-column, wall, curb, stair or local ground collisions.",
+    "The runtime 0.075 m fallback ground elevation is not a surveyed curb/pavement height. No accessible interior or free navigation through arcades is claimed.",
+    "No water tags in this bounded response means no mapped water was found, not physical proof of absence."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "wukang-mansion-v18-preliminary-exterior-navigation-v1",
+  "building_id": "xuhui-wukang-mansion",
+  "status": "ACTUAL_RAW_GEOMETRY_SCREENED_MODEL_AND_BROWSER_PENDING",
+  "navigation": {
+    "listed": true,
+    "overviewZoom": 18,
+    "walkStart": [
+      121.43340090727989,
+      31.20602326263594
+    ],
+    "bearing": 25
+  },
+  "candidate_id": "sw-tip-wukang-side",
+  "spawn_local_enu_m": [
+    -28.5,
+    -26
+  ],
+  "controller_default": {
+    "pitch_degrees": 82,
+    "camera_distance_m": 14,
+    "ahead_m": 2.8,
+    "target_ground_projection_local_enu_m": [
+      -27.31666886712604,
+      -23.46233819629738
+    ],
+    "camera_ground_projection_local_enu_m": [
+      -33.17574404529039,
+      -36.0271654636566
+    ],
+    "target_altitude_above_ground_m": 3,
+    "camera_altitude_above_ground_m": 4.948423413440917,
+    "ground_fallback_m": 0.075
+  },
+  "final_model_accepted": false,
+  "browser_passed": false,
+  "precise_public_sidewalk_membership_verified": false,
+  "coordinate_contract": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/freeze-v1/xuhui-wukang-mansion/geometry-input.json",
+    "bytes": 29533,
+    "sha256": "dbb3f66e86ed2dee3da571435bcae5837886fc0bd9ededcb237aaf1def79e935"
+  },
+  "limitations": [
+    "This is an unaccepted outdoor navigation candidate checked against a spatial preview; final detailed raw geometry, final navigation/camera tests and actual browser movement remain pending.",
+    "OSM only maps road centerlines here. It contains no sidewalk polygon or explicit footway at the candidate; line clearance is not carriageway-edge or curb clearance.",
+    "2022 photographs support a narrow paved strip around the southwest rounded tip, not an open forecourt. They are not georegistered to this coordinate and do not prove current clear width.",
+    "The candidate is along the Wukang Road side away from the intersection, with finite first 5 m tangent movement. Its exact curb-side membership and traffic separation remain unverified.",
+    "Signal posts are visible in photographs but lack reliable local coordinates; no full furniture, tree-pit or pedestrian obstacle inventory is claimed.",
+    "The default camera extends in air toward the intersection. Its projection is checked for mapped buildings, not road-surface pedestrian support or a surveyed overhead-wire inventory.",
+    "Online building/building_part/water polygons provide runtime collision. An ordinary detailed GLB does not automatically register accurate interior, arcade-column, wall, curb, stair or local ground collisions.",
+    "The runtime 0.075 m fallback ground elevation is not a surveyed curb/pavement height. No accessible interior or free navigation through arcades is claimed.",
+    "No water tags in this bounded response means no mapped water was found, not physical proof of absence."
+  ],
+  "source_preliminary_proposal": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/navigation-source-v1/navigation-proposal.json",
+    "bytes": 3108,
+    "sha256": "dc5c5ed4bcf5e00417e74ab2a2cd20c7a09ca046ec92e80ea844dddbecb8029e"
+  },
+  "raw_model": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/model/wukang-mansion/full-v5/wukang-mansion-raw.glb",
+    "bytes": 29474764,
+    "sha256": "6d4dc1aaad00ae5cfa69753604363459e2d1cedfe55ead338d7c2f1bb191eeda"
+  },
+  "source_ground_screen": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/navigation-source-v1/source-ground-review.json",
+    "bytes": 13756,
+    "sha256": "22d5a3ea66bcb17024bb7831327876997fb27be607b134d5d9ceab5c248e3175"
+  },
+  "actual_model_screen": {
+    "report": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/final-model-screen-v5/model-clearance.json",
+      "bytes": 29901,
+      "sha256": "3bb9fc79dcbf931f6164201f4fef8fd9d2b0e4593dda6092926878fc104d2e59"
+    },
+    "camera_views": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/final-model-screen-v5/camera-views.json",
+      "bytes": 424,
+      "sha256": "6f1dfd1d61578fe27897294c0993dd8a7b610f431ecd2fbc27ad970bac679a0b"
+    },
+    "raw_asset_sha256": "6d4dc1aaad00ae5cfa69753604363459e2d1cedfe55ead338d7c2f1bb191eeda",
+    "geometry_screen_passed": true,
+    "browser_passed": false,
+    "root_visual_accepted": false
+  }
+}

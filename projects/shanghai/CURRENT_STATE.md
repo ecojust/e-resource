@@ -1,3 +1,25 @@
+# V18 武康大楼主楼
+
+**[直接进入武康大楼室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+
+本轮增加徐汇区武康大楼历史主楼，当前为35处导航、21个精细owner、13个owner宏、19组near、16条ordinary记录、12个catalog宏，单体分布14区。全市16区底图包含1,796,419个建筑及部件要素，尚未全部逐栋精细复原；金山、崇明逐栋精模仍待补充。
+
+按修缮图与多角度照片分别构造东南临街拱廊、西北拱窗、三个翼部与两个深凹口、弧形转角、钢窗、石质及金属阳台栏杆、空调罩与屋顶烟囱。仅替换1235号主楼源要素，保留同近景9栋邻楼及既有34处导航；东北独立附楼和新楼不在范围内。173个周边源要素的实际网格投影筛查通过；这不等于实测建筑边界或人行道测量。
+
+实际raw/web/LOD面数分别为416,668/416,668/283,394。四件模型合计63,225,490字节，最大29,474,764字节，均严格小于100,000,000字节。35个运行时代码文件和v13下载ZIP保持原字节；旧ZIP不包含本轮模型。
+
+独立资产与本地网页检查通过：全量、远景、18公里外释放及回返加载、原楼替换与邻楼保留、目录直达和片段重载、真实W键输入与抬键停止、三张嵌入材质解码。主代理实际查看五张浏览器截图。[模型审查](data/audit/precise-buildings-v18/xuhui-wukang-mansion/model-review.json) · [浏览器记录](data/audit/precise-buildings-v18/xuhui-wukang-mansion/browser.json) · [截图审查](data/audit/precise-buildings-v18/xuhui-wukang-mansion/visual-review.json) · [网格与导航筛查](data/audit/precise-buildings-v18/xuhui-wukang-mansion/model-clearance.json) · [周边建筑检查](data/audit/precise-buildings-v18/xuhui-wukang-mansion/model-neighbor-screen.json)
+
+模型是资料参照的外观复原，尚非测绘、摄影测量或照片级成果。文献约30米高度的端点未定义；模型女儿墙顶约30.10米、屋顶构件最高约31.37米为推估。隐藏东北连接处、屋面服务构件和部分装饰有简化。三张原创通用砖材质不是本楼扫描，参考照片像素未作为贴图。远景压缩有15处已审核的微小UV合并，最大0.0383像素，不称无损UV。
+
+使用范围为登记室外落点及有限路线。源资料未给出可验证的精确人行道边界；碰撞仍来自加载地图轮廓与显式地面代理，不自动来自精细GLB。拱廊、楼梯、室内和屋顶不保证自由通行，也未宣称所有移动方式或动态目录生命周期已覆盖。V4整体预览保留原版本标识，V5接缝近照与实际网页截图分别列出，不混称同批渲染。
+
+[网页GLB](assets/models/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion-web.glb) · [原始GLB](assets/models/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion-raw.glb) · [远景GLB](assets/models/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion-lod.glb) · [Blender](assets/native/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion.blend) · [来源、源码与许可](source/precise/xuhui-wukang-mansion/README.md)
+
+旧34处模型时间与提交依据保持；武康大楼版本时间以实际模型提交的committer date为准。以下完整保留已发布V17状态及此前历史。
+
+---
+
 # V17 奉贤博物馆
 
 **[直接进入博物馆室外漫游](https://rawcdn.githack.com/ecojust/e-resource/3d33c9f85c9daf7d0488bfd8fcf25b8c5168e0fa/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)

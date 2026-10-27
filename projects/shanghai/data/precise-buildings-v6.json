@@ -87,12 +87,16 @@
       "file": "xuhui-wukang-210/geometry-input.json",
       "sha256": "d34d51ed9be1f28beefe05e4076d892851bd7dacf13843d5d088148e5f204eca"
     },
+    "xuhui-wukang-mansion": {
+      "file": "xuhui-wukang-mansion/geometry-input.json",
+      "sha256": "dbb3f66e86ed2dee3da571435bcae5837886fc0bd9ededcb237aaf1def79e935"
+    },
     "yangpu-library": {
       "file": "yangpu-library/geometry-input.json",
       "sha256": "e49ad7b07b0f8694401f692c0dd28ccdf3dffaa672b23b80bb55206c8c91ad8f"
     }
   },
-  "integration_scope": "Accepted34 static navigation; previous33 navigation records and all old owner/macro/near/source-input records remain exact. One new catalog macro is added. Museum dynamic catalog lifecycle is not claimed by this static proof.",
+  "integration_scope": "Accepted35 static navigation. Previous34 records, all prior source owners and near groups remain exact. Only the existing shared macro index/replacement is extended; eleven other catalog macros stay unchanged. Dynamic-only catalog lifecycle is not claimed by this static proof.",
   "landmarks": [
     {
       "building_ids": [
@@ -1499,6 +1503,104 @@
         "type": "Polygon"
       },
       "id": "fengxian-museum"
+    },
+    {
+      "building_ids": [
+        "4ed2f738-1166-4aae-b210-ef732121ef23"
+      ],
+      "building_part_ids": [],
+      "confirmed_boundary": {
+        "coordinates": [
+          [
+            [
+              121.43349409,
+              31.20616252
+            ],
+            [
+              121.43350482,
+              31.20614875
+            ],
+            [
+              121.43359065,
+              31.20619922
+            ],
+            [
+              121.43353701,
+              31.20623134
+            ],
+            [
+              121.43360674,
+              31.20635522
+            ],
+            [
+              121.43371403,
+              31.20628181
+            ],
+            [
+              121.43381059,
+              31.20634146
+            ],
+            [
+              121.43376768,
+              31.20638275
+            ],
+            [
+              121.43375158,
+              31.20635981
+            ],
+            [
+              121.43366039,
+              31.20641487
+            ],
+            [
+              121.43375695,
+              31.20657087
+            ],
+            [
+              121.43382132,
+              31.20651581
+            ],
+            [
+              121.43381059,
+              31.20648828
+            ],
+            [
+              121.43391252,
+              31.20636899
+            ],
+            [
+              121.43392861,
+              31.20637817
+            ],
+            [
+              121.43398762,
+              31.20630934
+            ],
+            [
+              121.43346727,
+              31.2059744
+            ],
+            [
+              121.43344045,
+              31.20597899
+            ],
+            [
+              121.43341899,
+              31.20599275
+            ],
+            [
+              121.43341362,
+              31.2060157
+            ],
+            [
+              121.43349409,
+              31.20616252
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "xuhui-wukang-mansion"
     }
   ],
   "macros": [
@@ -2004,6 +2106,56 @@
             "geometryBytes": 1652720,
             "sha256": "6a5320984fdc4ca055bdd2f640d54429cb59ae804a508d72d1a56e40d8526a88",
             "size_bytes": 75388
+          }
+        },
+        {
+          "baseline_decoded_sha256": "147acb8a25cc489ac60b5bd5f9eaec19d340ce0d9c10602312501d18c69c3151",
+          "baseline_file": "near/0_2-s1-s1-s0.glb.gz",
+          "baseline_sha256": "fd6269309a0d907c16cc27c1460bf9da7a49c4d1436f49b32c872f71a677f69b",
+          "featureLocalIds": [
+            593,
+            1834,
+            1776,
+            3220,
+            4033,
+            1151,
+            3299,
+            4146,
+            1235,
+            1545
+          ],
+          "groups": [
+            {
+              "expandedTriangles": 33700,
+              "feature_keys": [
+                "building:4ed2f738-1166-4aae-b210-ef732121ef23"
+              ],
+              "landmark_id": "xuhui-wukang-mansion",
+              "local_ids": [
+                1235
+              ],
+              "name": "city_target_xuhui-wukang-mansion"
+            }
+          ],
+          "id": "14-13718-6695-0_2-s1-s1-s0",
+          "model": {
+            "compression": {
+              "gzip_level": 6,
+              "gzip_mtime": 0,
+              "owner_groups_compressed_separately_then_buffer_relocated": true,
+              "preserve_named_nodes": true,
+              "quantization": false,
+              "type": "EXT_meshopt_compression"
+            },
+            "content_encoding": "gzip",
+            "decoded_sha256": "5cb717b7b167cabd3b7a44844b5b7a16c0e0c5acd26f334c8a58477fc0aa7f6c",
+            "decoded_size_bytes": 453180,
+            "drawCalls": 16,
+            "expandedTriangles": 117460,
+            "file": "assets/city-overrides-v6/14-13718-6695/0_2-s1-s1-s0.glb.gz",
+            "geometryBytes": 1623600,
+            "sha256": "a79e149581c09cdfd02a065dafef847488f1c455aa62f45677cc60b1b64ee861",
+            "size_bytes": 94259
           }
         }
       ]
@@ -2599,9 +2751,9 @@
     }
   ],
   "ordinary_catalog": {
-    "bytes": 4684,
+    "bytes": 4717,
     "file": "data/precise-buildings/catalog.json",
-    "sha256": "dc6e22952cf59cf52cf333a283171888b5879afbb310b7edf356ba6aebeb6a20"
+    "sha256": "c95455998425d57d30751fb65035e1a31c7412fc5973765f014acc809b947e65"
   },
   "project_base_url_contract": "model.file is relative to the project root, not the registry directory",
   "reuse_validation": [
@@ -2711,9 +2863,9 @@
     }
   ],
   "schema": "city-precise-overrides-v1",
-  "status": "All20 owner variants preserve source geometry. The current museum model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
+  "status": "All21 owner variants preserve source geometry. The current building model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
   "validation": {
-    "file": "source/city/precise-overrides-v17/fengxian-museum/composition-proof.json",
-    "sha256": "378c553df95a11d899a9d831935d5fda6433b4cd5db20e594f873caa7953f2a6"
+    "file": "source/city/precise-overrides-v18/xuhui-wukang-mansion/composition-proof.json",
+    "sha256": "633a303105eff0b1eddf44de3967ce0d8c0853e99920b13f198c26fab329f5fc"
   }
 }

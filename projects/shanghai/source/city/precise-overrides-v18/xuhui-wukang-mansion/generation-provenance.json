@@ -1,0 +1,168 @@
+{
+  "schema": "wukang-v18-source-owner-generation-provenance",
+  "passed": true,
+  "source_geometry": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/freeze-v1/xuhui-wukang-mansion/geometry-input.json",
+    "bytes": 29533,
+    "sha256": "dbb3f66e86ed2dee3da571435bcae5837886fc0bd9ededcb237aaf1def79e935"
+  },
+  "commands": [
+    [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/build_precise_overrides.py",
+      "--project",
+      "/workspace/shanghai_project",
+      "--output",
+      "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/owner-v1",
+      "--geometry-input-root",
+      "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/freeze-v1",
+      "--ids",
+      "xuhui-wukang-mansion",
+      "--gltfpack",
+      "/workspace/shanghai_tools/node_modules/gltfpack/cli.js",
+      "--asset-prefix",
+      "assets/city-overrides-v6/14-13718-6695"
+    ],
+    [
+      "node",
+      "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/verify_override_geometry.mjs",
+      "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/owner-v1/geometry-comparison-targeted-input.json"
+    ]
+  ],
+  "tools": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/owner-tools-v1/run_owner.py",
+      "bytes": 6895,
+      "sha256": "9b51b8ecd718042aa2362207ce74301b64fe79cbf9426454c6251bdcbcce35c2"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/build_precise_overrides.py",
+      "bytes": 20509,
+      "sha256": "e120830d5fae608a4458e0cc2776e240b7127b430e28c6209538a619e3fa0023"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/verify_override_geometry.mjs",
+      "bytes": 12465,
+      "sha256": "ce4dda92a5128690d9563dab56f7279c1be307613cdae286f1f6b14556e64af9"
+    }
+  ],
+  "main_watched_before_after_equal": true,
+  "main_read_only_beforeimages": [
+    {
+      "path": "/workspace/shanghai_project/data/landmarks.json",
+      "bytes": 346480,
+      "sha256": "c9daf72d75cea8730d0fd65d0e5cbe994248534d23258d4c50ccbf80701b9a3b"
+    },
+    {
+      "path": "/workspace/shanghai_project/data/precise-buildings-v6.json",
+      "bytes": 76760,
+      "sha256": "81529897f15b217e17273d0eee13cb67299f83a2ab07cc279ad4d60e83f886f7"
+    },
+    {
+      "path": "/workspace/shanghai_project/data/precise-buildings/catalog.json",
+      "bytes": 4684,
+      "sha256": "dc6e22952cf59cf52cf333a283171888b5879afbb310b7edf356ba6aebeb6a20"
+    },
+    {
+      "path": "/workspace/shanghai_project/data/precise-buildings/macros/14-13718-6695/index.json",
+      "bytes": 63628,
+      "sha256": "6653096cf630ffbe2f690a03b2aed39cbf21530ef124cb4f120f157f1b182f08"
+    },
+    {
+      "path": "/workspace/shanghai_project/data/precise-buildings/macros/14-13718-6695/replacement.json",
+      "bytes": 12938,
+      "sha256": "e9c220e02f707754da75e02cc20bd9178cb91a0ac8abd36559264a309f14be80"
+    },
+    {
+      "path": "/workspace/shanghai_project/assets/city-overrides-v6/14-13718-6695/1_0-s1-s1.glb.gz",
+      "bytes": 121154,
+      "sha256": "4cdb05627091cdb9dbdc96046cd6718a860fcd32e968bfa1690c84f9f53f4cbc"
+    },
+    {
+      "path": "/workspace/shanghai_project/assets/city-overrides-v6/14-13718-6695/1_1-s1-s0.glb.gz",
+      "bytes": 89795,
+      "sha256": "e5434e442a253877a0e7d82ef13abe77d5c754ed95499fe0de3a71d87ece5046"
+    },
+    {
+      "path": "/workspace/shanghai_project/assets/city-overrides-v6/14-13718-6695/-4_1-s0-s1.glb.gz",
+      "bytes": 75388,
+      "sha256": "6a5320984fdc4ca055bdd2f640d54429cb59ae804a508d72d1a56e40d8526a88"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6695/feature-table.json.gz",
+      "bytes": 611815,
+      "sha256": "ae08831809b5d7651774e04ea3a6d11e8ad59cfc156c92d3ee1b95c7e5659512"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6695/READY.json",
+      "bytes": 1173775,
+      "sha256": "dfe77772d7d77cb8096a9a01e3f4379ad990865978e519a4250987e900029d87"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6695/ownership.json.gz",
+      "bytes": 20931,
+      "sha256": "c7538c5265487b8fc0ee325798d8e729f61b16e1bdfa8e77b5342320d739eab1"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/allcity-v5/ci-allcity-v6/macros/14-13718-6695/near/0_2-s1-s1-s0.glb.gz",
+      "bytes": 89063,
+      "sha256": "fd6269309a0d907c16cc27c1460bf9da7a49c4d1436f49b32c872f71a677f69b"
+    },
+    {
+      "path": "/workspace/shanghai_project/data/fullcity-raw/tiles/14/13718/6695.geojson.gz",
+      "bytes": 401459,
+      "sha256": "f2ec3eaf0c6ba39006a92316b49299a50187b51515de1ebe23c0fa92100bcb64"
+    },
+    {
+      "path": "/workspace/shanghai_project/source/city/detail/geometry_engine.py",
+      "bytes": 20711,
+      "sha256": "dd9124f4e8d57ed0991d82793e0471264d6f3700cb363f86647ffa7505f4535c"
+    },
+    {
+      "path": "/workspace/shanghai_project/source/city/build_district_models.py",
+      "bytes": 12013,
+      "sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906"
+    },
+    {
+      "path": "/workspace/shanghai_project/source/city/roof_geometry.py",
+      "bytes": 14082,
+      "sha256": "8454cf909230f2c4bce97f954294be6c375976c98e7fc6378dc878e3b4a6e561"
+    },
+    {
+      "path": "/workspace/shanghai_project/vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    {
+      "path": "/workspace/shanghai_project/vendor/GLTFLoader.js",
+      "bytes": 114732,
+      "sha256": "adbbafe8ce40416525b6be0ee5cac0d3782482bcf0122c8ca8ec1ffa77d3440b"
+    },
+    {
+      "path": "/workspace/shanghai_project/vendor/meshopt_decoder.module.js",
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+    },
+    {
+      "path": "/workspace/shanghai_project/src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    }
+  ],
+  "source_owner_only": true,
+  "model_or_navigation_accepted": false,
+  "remote_changed": false,
+  "workset_bytes_before_this_report": 5572547,
+  "generated_registry": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/owner-v1/precise-buildings-v6.json",
+    "bytes": 5151,
+    "sha256": "ccb3451101dcff81f32f584348e66ef50be3c4cf0b0e68a05b710fe12c498323"
+  },
+  "geometry_validation": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v18/integration/wukang-mansion/owner-v1/geometry-validation.json",
+    "bytes": 6534,
+    "sha256": "2471792426f3d38e14ff95620a0008b98abad898331f5bb7b61369627218f2eb"
+  },
+  "scope": "One new owner-near layer rebuilt from frozen procedural source geometry. All nine neighbors preserved exactly by Float64 positions/material/winding; existing precise macro assets untouched. Architectural mesh/model, integration and browser acceptance remain separate."
+}
