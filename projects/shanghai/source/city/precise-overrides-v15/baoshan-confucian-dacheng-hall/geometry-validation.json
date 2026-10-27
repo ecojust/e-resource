@@ -1,0 +1,212 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13721-6684--4_3",
+      "baseline_sha256": "bdee4a0f9f18de2334c21134c80caa618c6341dfa34be038089e3937a00cb88a",
+      "override_sha256": "bee353b28ea9445d1ed46210cf9d099bba93bf60080565e8e4d67183e4c90bfb",
+      "triangles": 36952,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 470,
+        "extra": 470,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "features": [
+        {
+          "localId": 2,
+          "key": "building:088dd7a0-0e3a-4d36-9abc-d38c890114b2",
+          "triangles": 1510,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 12,
+          "key": "building:1d606e97-3bd4-4e8e-9e59-a9e1a5d4322e",
+          "triangles": 2424,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 33,
+          "key": "building:3b05626b-372a-473b-b2ce-b7556e888081",
+          "triangles": 7176,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 68,
+          "key": "building:8b3a79ad-0ddc-4b6f-8e7a-e4394669c1c1",
+          "triangles": 2456,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 72,
+          "key": "building:9381babf-db6b-404c-a064-432dc6d3845c",
+          "triangles": 362,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 85,
+          "key": "building:b2c81be6-1c8e-4ae0-9dda-74f1dc1805a4",
+          "triangles": 11200,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 101,
+          "key": "building:e7e3779e-9465-41c8-9f6d-03426ad7b8df",
+          "triangles": 3050,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 102,
+          "key": "building:ee31d2f0-f54f-478e-8748-7c34dc4acf8e",
+          "triangles": 7176,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 106,
+          "key": "building:f7570e30-3a57-46bf-9d1c-13b8b7296f76",
+          "triangles": 1598,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_baoshan-confucian-dacheng-hall",
+          "triangles": 7176,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 36952,
+        "nonidentical_normal_triangles": 470,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 1.0106453673941473e-8,
+        "max_direction_difference_degrees": 6.125235865528456e-7,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          2,
+          12,
+          68,
+          72,
+          85,
+          101,
+          102,
+          106
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13721-6684--4_3",
+    "target_group": null,
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 36952,
+      "nonidentical_normal_triangles": 510,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.00462132553919406,
+      "max_direction_difference_degrees": 0.2727430088576818,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13721-6684--4_3",
+      "target_group": null,
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 36952,
+        "nonidentical_normal_triangles": 510,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.00462132553919406,
+        "max_direction_difference_degrees": 0.2727430088576818,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

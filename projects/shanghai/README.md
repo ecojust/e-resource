@@ -1,3 +1,21 @@
+# 上海漫游 · 宝山孔庙大成殿 v15
+
+**[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [最新第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前交付状态](CURRENT_STATE.md)
+
+新增**宝山孔庙大成殿**：分别构造重檐歇山灰瓦、瓦垄与斗栱、暗红木柱和环廊、透空格扇、后侧白墙、石栏与御路石。已接入第三人称漫游；目录提供32处独立直达链接，包括外滩15栋、陆家嘴4栋和13栋逐栋复原建筑。
+
+[直接到达宝山大成殿](index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk) · [网页GLB](assets/models/precise/14-13721-6684/baoshan-confucian-dacheng-hall/baoshan-confucian-dacheng-hall-web.glb) · [Blender](assets/native/precise/14-13721-6684/baoshan-confucian-dacheng-hall/baoshan-confucian-dacheng-hall.blend) · [建模源码与限制](source/precise/baoshan-confucian-dacheng-hall/README.md)
+
+本栋原始GLB 29,752,792字节、网页GLB 11,876,292字节、远景GLB 2,939,940字节、Blender 14,479,200字节，均严格小于100,000,000字节。模型与本地浏览器验收通过，实际核对完整模型、远景、离开后返回、8栋邻楼保留和W键行走；32处目录链接检查通过，35件运行时文件保持不变。[实际验证范围](data/audit/precise-buildings-v15/baoshan-confucian-dacheng-hall/README.md)
+
+这是按照片与公开资料制作的外观模型，尚非照片级真实复原，也不是测绘或摄影测量成果。13m名义高度来自《上海辞典》的二手公开节录；侧山墙、隐蔽木构、雕饰和材质风化仍有推估。建筑名称保持“宝山孔庙大成殿”，不混同相邻的现陈化成纪念馆；模型没有照片纹理。
+
+全市16区底图继续保留，1,796,419个建筑及部件要素尚未全部完成逐栋照片复原，现有地标也不代表同等精度。下载ZIP仍为v13启动包，不包含v14导航改进和本轮宝山模型；体验更新请使用最新网页。地图和远程模型需要联网。
+
+## v14导航与更早版本（历史保留）
+
+以下原文完整保留，其数量、发布状态、固定提交链接和验证范围对应各自历史版本。
+
 # 上海漫游 · 全部地标直达
 
 **[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [最新漫游网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前交付状态](CURRENT_STATE.md)

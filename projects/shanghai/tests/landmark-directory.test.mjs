@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile, stat} from 'node:fs/promises';
+import {readFile, stat, mkdtemp, mkdir, writeFile, rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {walkingPose} from '../src/precise-registration-ui.js';
 
@@ -41,4 +43,28 @@ test('all directory resource links exist and map entry remains available while l
   assert.match(index, /class="loading-directory-link" href="landmarks\.html"/);
   assert.match(index, /href="src\/landmark-entry\.css"/);
   assert.doesNotMatch(directory, /(?:three\.module|maplibre-gl|app\.js)/);
+});
+
+
+test('a newly accepted building appears as the latest direct destination without editing the generator', async () => {
+  const temporary = await mkdtemp(join(tmpdir(), 'shanghai-directory-latest-'));
+  try {
+    await mkdir(join(temporary, 'data'));
+    const next = {...landmarks.findLast(item => item.kind === 'building'), id: 'next-accepted-building', name: '下一栋已验收建筑'};
+    await writeFile(join(temporary, 'data/landmarks.json'), JSON.stringify([...landmarks, next]));
+    await writeFile(join(temporary, 'data/districts.json'), await readFile(new URL('data/districts.json', root)));
+    const rendered = execFileSync('python', ['-c', `import importlib.util, sys
+from pathlib import Path
+spec = importlib.util.spec_from_file_location('directory', sys.argv[1])
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+print(module.render(Path(sys.argv[2])))`, new URL('tools/build_landmark_directory.py', root).pathname, temporary], {encoding: 'utf8'});
+    assert.match(rendered, /href="#building-next-accepted-building">本轮新增：下一栋已验收建筑/);
+    assert.match(rendered, /class="landmark-card featured" id="building-next-accepted-building"/);
+    assert.equal((rendered.match(/class="new-tag"/g) || []).length, 1);
+    assert.equal((rendered.match(/data-landmark="/g) || []).length, landmarks.length + 1);
+    assert.ok(rendered.includes('index.html#landmark=next-accepted-building&amp;mode=walk'));
+  } finally {
+    await rm(temporary, {recursive: true, force: true});
+  }
 });

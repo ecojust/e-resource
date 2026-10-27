@@ -3,6 +3,10 @@
   "complete": true,
   "engine_sha256": "dd9124f4e8d57ed0991d82793e0471264d6f3700cb363f86647ffa7505f4535c",
   "geometry_inputs": {
+    "baoshan-confucian-dacheng-hall": {
+      "file": "baoshan-confucian-dacheng-hall/geometry-input.json",
+      "sha256": "acebab974966a8b3772b2d7b724e75e6a10412237888750ac13d735012cf0eec"
+    },
     "bund05": {
       "file": "bund05/geometry-input.json",
       "sha256": "a899e5cd42566321d41f5c270c98db39f775ab9b4fc99ea29bc675df358a0245"
@@ -80,7 +84,7 @@
       "sha256": "e49ad7b07b0f8694401f692c0dd28ccdf3dffaa672b23b80bb55206c8c91ad8f"
     }
   },
-  "integration_scope": "Accepted31 static navigation; previous30 records and prior catalog index/replacement bytes remain exact. Yangpu dynamic catalog lifecycle is not claimed by this static proof.",
+  "integration_scope": "Accepted32 static navigation; previous31 records and prior catalog index/replacement bytes remain exact. Baoshan dynamic catalog lifecycle is not claimed by this static proof.",
   "landmarks": [
     {
       "building_ids": [
@@ -1219,6 +1223,40 @@
         "type": "Polygon"
       },
       "id": "yangpu-library"
+    },
+    {
+      "building_ids": [
+        "3b05626b-372a-473b-b2ce-b7556e888081"
+      ],
+      "building_part_ids": [],
+      "confirmed_boundary": {
+        "coordinates": [
+          [
+            [
+              121.48855984,
+              31.41167941
+            ],
+            [
+              121.48874223,
+              31.41173435
+            ],
+            [
+              121.48879588,
+              31.41160158
+            ],
+            [
+              121.48861349,
+              31.41154664
+            ],
+            [
+              121.48855984,
+              31.41167941
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "baoshan-confucian-dacheng-hall"
     }
   ],
   "macros": [
@@ -2155,12 +2193,71 @@
           }
         }
       ]
+    },
+    {
+      "baseline_configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+      "baseline_far_sha256": "ce6a27f85079fb20084ffa669b112a159c3134d1c7c902df280697828262bc4f",
+      "baseline_feature_table_sha256": "1281e8fa19ca3d8ed2620262500b8507104251938129ba28bf46f722e8841146",
+      "baseline_ready_sha256": "184fd0586c3853fa17cef2b377b4abe2cced1b8fee1f21c43106364f38d51868",
+      "feature_count": 109,
+      "id": "14-13721-6684",
+      "near": [
+        {
+          "baseline_decoded_sha256": "a42bd9768a27e1ae65460d65c76e052ba82462770afbf159e87e22bc83362b81",
+          "baseline_file": "near/-4_3.glb.gz",
+          "baseline_sha256": "bdee4a0f9f18de2334c21134c80caa618c6341dfa34be038089e3937a00cb88a",
+          "featureLocalIds": [
+            2,
+            12,
+            33,
+            68,
+            72,
+            85,
+            101,
+            102,
+            106
+          ],
+          "groups": [
+            {
+              "expandedTriangles": 7176,
+              "feature_keys": [
+                "building:3b05626b-372a-473b-b2ce-b7556e888081"
+              ],
+              "landmark_id": "baoshan-confucian-dacheng-hall",
+              "local_ids": [
+                33
+              ],
+              "name": "city_target_baoshan-confucian-dacheng-hall"
+            }
+          ],
+          "id": "14-13721-6684--4_3",
+          "model": {
+            "compression": {
+              "gzip_level": 6,
+              "gzip_mtime": 0,
+              "owner_groups_compressed_separately_then_buffer_relocated": true,
+              "preserve_named_nodes": true,
+              "quantization": false,
+              "type": "EXT_meshopt_compression"
+            },
+            "content_encoding": "gzip",
+            "decoded_sha256": "a9de2567323edbc2d63e6df592646e583c303a53fe4e1ddeb972b4f3ceaffe88",
+            "decoded_size_bytes": 166904,
+            "drawCalls": 27,
+            "expandedTriangles": 36952,
+            "file": "assets/city-overrides-v6/14-13721-6684/-4_3.glb.gz",
+            "geometryBytes": 538112,
+            "sha256": "bee353b28ea9445d1ed46210cf9d099bba93bf60080565e8e4d67183e4c90bfb",
+            "size_bytes": 46561
+          }
+        }
+      ]
     }
   ],
   "ordinary_catalog": {
-    "bytes": 3920,
+    "bytes": 4280,
     "file": "data/precise-buildings/catalog.json",
-    "sha256": "bfa2a3d5be44c7473c352ef2f9cc4e13bf942d206560c4a285928447a5eaa9cc"
+    "sha256": "cd4085cc9f27920a7a69a4edbe52ad723846a1dc9f0f8cb48128082be1ee7e4e"
   },
   "project_base_url_contract": "model.file is relative to the project root, not the registry directory",
   "reuse_validation": [
@@ -2270,9 +2367,9 @@
     }
   ],
   "schema": "city-precise-overrides-v1",
-  "status": "All17owner variants preserve source geometry. The current Yangpu model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
+  "status": "All18owner variants preserve source geometry. The current Baoshan model and actual static browser checks passed; dynamic catalog lifecycle is not claimed.",
   "validation": {
-    "file": "source/city/precise-overrides-v13/yangpu-library/composition-proof.json",
-    "sha256": "02304be1e107d2d4a5fcf4a82702d3de3435dfd18af72d6745c20b0b23e231b2"
+    "file": "source/city/precise-overrides-v15/baoshan-confucian-dacheng-hall/composition-proof.json",
+    "sha256": "57bb2c064660ae9909ea58497befc7864d2348e6b833dff045e74ec4712b4bbf"
   }
 }
