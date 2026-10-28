@@ -216,3 +216,5 @@
 ## 独立候选模型
 
 [崇明学宫尊经阁预览](zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
+
+[崇明学宫泮池与登云桥预览](pan-pool.html)：文献尺寸与历史照片参照的池体、石拱桥和栏杆构件，待地理接入。[来源与估计范围](source/precise/chongming-pan-pool-bridge/README.md)。

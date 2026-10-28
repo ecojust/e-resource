@@ -1,3 +1,9 @@
+# 崇明学宫独立候选构件
+
+[尊经阁](zunjing-pavilion.html)已随PR #2合入。新增[泮池与登云桥](pan-pool.html)候选模型，包含池体、水面、真实拱洞、两端各12级台阶及石栏；[来源与限制](source/precise/chongming-pan-pool-bridge/README.md)。两者尚未地理配准或接入城市，不计入现有38处已接入建筑目录。泮池水位、拱线、雕刻与基础厚度含估计，不是实测河床或地形。
+
+---
+
 # 地面与水系第一批：16区平面模型
 
 [打开独立查看页](surfaces.html) · [模型清单与下载](assets/surfaces/manifest.json) · [建模来源与范围](source/surfaces/README.md) · [本批验收](data/audit/surfaces-v1/README.md)
