@@ -216,3 +216,7 @@
 ## 独立候选模型
 
 [崇明学宫尊经阁预览](zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
+
+## 全市复原进度口径
+
+[可重建的进度清单](data/restoration-progress/README.md)核对全市基线、导航目录、普通精模、独立候选及地面水系。1,796,419是建筑与部件渲染要素数；当前缺少完整逐要素验收台账，因此不计算误导性的完成百分比。
