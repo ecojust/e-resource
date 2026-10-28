@@ -1,6 +1,6 @@
 # V21 金山卫瓮城城楼
 
-**[直接进入金山卫瓮城城楼室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+**[直接进入金山卫瓮城城楼室外漫游](https://rawcdn.githack.com/ecojust/e-resource/8a7ea09acffa7222da6199150f2f0cd749bcf197/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
 
 当前目录38处建筑入口，分布在15个区；全市16区底图的1,796,419个建筑及部件要素尚未全部逐栋精细复原。崇明区的逐栋精模仍待补充。
 
