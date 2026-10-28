@@ -220,3 +220,5 @@
 ## 全市复原进度口径
 
 [可重建的进度清单](data/restoration-progress/README.md)核对全市基线、导航目录、普通精模、独立候选及地面水系。1,796,419是建筑与部件渲染要素数；当前缺少完整逐要素验收台账，因此不计算误导性的完成百分比。
+
+[崇明学宫泮池与登云桥预览](pan-pool.html)：文献尺寸与历史照片参照的池体、石拱桥和栏杆构件，待地理接入。[来源与估计范围](source/precise/chongming-pan-pool-bridge/README.md)。
