@@ -212,3 +212,7 @@
 下载ZIP仍为v13启动包，不含v14导航改进以及v15至v21新增模型。体验更新请使用上方最新网页。[旧启动包](downloads/shanghai-web-launcher.zip) · [旧包实际范围](data/audit/launcher-v13/README.md)
 
 [模型与网页当前验收](CURRENT_STATE.md) · [历史交付记录](DELIVERY_HISTORY.md) · [项目许可](LICENSE)
+
+## 独立候选模型
+
+[崇明学宫尊经阁预览](zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
