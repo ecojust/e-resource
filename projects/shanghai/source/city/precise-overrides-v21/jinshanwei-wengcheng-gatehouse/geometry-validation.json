@@ -1,0 +1,188 @@
+{
+  "schema": "city-precise-geometry-comparison-v2",
+  "pass": true,
+  "normal_policy": "Positions, target groups and neighbors must match Float64 exactly. Normal directions may differ only by <=1e-7 per component AND <=1e-5 degree; strict Float32/Float64 difference counts remain reported.",
+  "codec": "Vendored Three GLTFLoader + MeshoptDecoder; actual instance matrices and material names",
+  "checks": [
+    {
+      "id": "14-13713-6721--2_1-s0-s0",
+      "baseline_sha256": "07fcb04739fc2221ac69cfad4034b38af31cfd0f7597051e236be199911a99cd",
+      "override_sha256": "c6c9942f4df7c9fc7b65f0cc0830c7d14bdd95e68a9561b79633d5b942ecc2ff",
+      "triangles": 75604,
+      "baseline_vs_override_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "baseline_vs_override_position_normal_f64": {
+        "missing": 920,
+        "extra": 920,
+        "pass": false
+      },
+      "baseline_vs_override_position_normal_f32": {
+        "missing": 106,
+        "extra": 106,
+        "pass": false
+      },
+      "features": [
+        {
+          "localId": 531,
+          "key": "building:38cf1309-6ce3-4fc2-b02e-9ad5255ad993",
+          "triangles": 10420,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 68,
+          "key": "building:07f614aa-8e23-484f-b56a-b131e9c00f00",
+          "triangles": 5988,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 2169,
+          "key": "building:e86581d8-f47f-4409-bbaf-8d5ebbfbd311",
+          "triangles": 47172,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 991,
+          "key": "building:68e0ed21-1492-4099-8382-96840274560d",
+          "triangles": 1368,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 484,
+          "key": "building:349bbb2a-d287-49e8-9a3b-0a3afb0a4870",
+          "triangles": 4008,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        },
+        {
+          "localId": 161,
+          "key": "building:1182281f-6434-4380-ac24-30138d8871dc",
+          "triangles": 6648,
+          "comparison": "position Float64, material and winding",
+          "missing": 0
+        }
+      ],
+      "groups": [
+        {
+          "name": "city_target_jinshanwei-wengcheng-gatehouse",
+          "triangles": 10420,
+          "position_f32": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          },
+          "position_f64": {
+            "missing": 0,
+            "extra": 0,
+            "pass": true
+          }
+        }
+      ],
+      "normal_directions": {
+        "compared_triangles": 75604,
+        "nonidentical_normal_triangles": 920,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 8.99375923735235e-9,
+        "max_direction_difference_degrees": 5.572795367768905e-7,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "frozen_reference_vs_baseline_position_f32": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "unassigned_triangles": 0,
+      "neighbors": {
+        "ids": [
+          68,
+          2169,
+          991,
+          484,
+          161
+        ],
+        "position_f32": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        },
+        "position_f64": {
+          "missing": 0,
+          "extra": 0,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ],
+  "negative_control": {
+    "model": "14-13713-6721--2_1-s0-s0",
+    "target_group": "city_target_jinshanwei-wengcheng-gatehouse",
+    "actual_decoded_normal_modified": true,
+    "attribute_vertex": 0,
+    "component": 0,
+    "delta": 0.01,
+    "position_f64": {
+      "missing": 0,
+      "extra": 0,
+      "pass": true
+    },
+    "normal_directions": {
+      "compared_triangles": 75604,
+      "nonidentical_normal_triangles": 1170,
+      "missing_geometry": 0,
+      "remaining_geometry": 0,
+      "max_component_difference": 0.0017846457190612008,
+      "max_direction_difference_degrees": 0.10368615488985387,
+      "component_limit": 1e-7,
+      "direction_limit_degrees": 0.00001,
+      "pass": false
+    },
+    "rejected": true
+  },
+  "negative_controls": [
+    {
+      "model": "14-13713-6721--2_1-s0-s0",
+      "target_group": "city_target_jinshanwei-wengcheng-gatehouse",
+      "actual_decoded_normal_modified": true,
+      "attribute_vertex": 0,
+      "component": 0,
+      "delta": 0.01,
+      "position_f64": {
+        "missing": 0,
+        "extra": 0,
+        "pass": true
+      },
+      "normal_directions": {
+        "compared_triangles": 75604,
+        "nonidentical_normal_triangles": 1170,
+        "missing_geometry": 0,
+        "remaining_geometry": 0,
+        "max_component_difference": 0.0017846457190612008,
+        "max_direction_difference_degrees": 0.10368615488985387,
+        "component_limit": 1e-7,
+        "direction_limit_degrees": 0.00001,
+        "pass": false
+      },
+      "rejected": true
+    }
+  ]
+}

@@ -15,6 +15,13 @@ const source=fs.readFileSync(new URL('../src/map-scene.js',import.meta.url),'utf
 function functionBetween(start,next){const a=source.indexOf('  function '+start+'('),b=source.indexOf(next,a);assert(a>=0&&b>a);return source.slice(a,b);}
 const prepareSource=functionBetween('prepareCityDetailObject','  async function setCityManifest');
 const disposeSource=functionBetween('disposeModel','  function prepareCityObject');
+// These legacy fixtures have no source_geometry_correction configuration.
+// Execute the real production helpers with an explicitly empty correction
+// manager; source-correction tests exercise verified asset activation separately.
+const correctionStart=source.indexOf('  function syncSourceGeometryCorrections('),correctionEnd=source.indexOf('  let ordinaryCatalog=',correctionStart);
+assert(correctionStart>=0&&correctionEnd>correctionStart);
+const noSourceCorrectionHelpers=new Function('sourceGeometryCorrections',source.slice(correctionStart,correctionEnd)+
+ '\nreturn {syncSourceGeometryCorrections,isLandmarkSourceActive};')({sync:()=>false,isConfigured:()=>false});
 
 test('map integration copies far transform, adds grain without painted windows, and updates near shadow casters',async()=>{
  const scene=new THREE.Scene(),renderer={shadowMap:{enabled:false,autoUpdate:true,type:THREE.BasicShadowMap,needsUpdate:false}};
@@ -42,7 +49,7 @@ test('map disposal detaches feature ownership before releasing lighting, scene n
  const order=[],details={detach(object){assert.equal(object,far);mask.removeOwner('ready-near');mask.dispose();order.push('detach');}};
  const lighting={releaseModel(object){assert.equal(object,far);assert.equal(mask.data[1],0);assert.equal(material.onBeforeCompile,original);order.push('lighting');}};
  geometry.addEventListener('dispose',()=>{assert.equal(far.parent,null);order.push('geometry');});
- const dispose=new Function('cityDetails','lighting','scene','disposeModelResources',disposeSource+'\nreturn disposeModel;')(details,lighting,scene,disposeModelResources);
+ const dispose=new Function('cityDetails','lighting','scene','disposeModelResources','syncSourceGeometryCorrections',disposeSource+'\nreturn disposeModel;')(details,lighting,scene,disposeModelResources,noSourceCorrectionHelpers.syncSourceGeometryCorrections);
  dispose(far);assert.deepEqual(order,['detach','lighting','geometry']);assert.equal(mask.disposed,true);
 });
 
@@ -55,7 +62,7 @@ function preciseMapFixture(t) {
  const dynamic={id:'bund05',status:'loaded',activeVariant:'full',object:new THREE.Group(),distance:0,maxDistance:100};
  const staticRecord={id:'old-landmark',status:'loaded',activeVariant:'full',object:new THREE.Group(),distance:0,maxDistance:100};
  const records=new Map([[dynamic.id,dynamic],[staticRecord.id,staticRecord]]),visible=[];
- const env={destroyed:false,map,walker:{group:{visible:true}},current:{lng:121,lat:31},landmarkRecords:records,
+ const env={...noSourceCorrectionHelpers,destroyed:false,map,walker:{group:{visible:true}},current:{lng:121,lat:31},landmarkRecords:records,
   distanceMetres:(_target,record)=>record.distance,detailIsNearby,desiredVariant:()=> 'full',streetInteraction:{},
   preciseLandmarkIds:new Set(['bund05']),landmarkBoundaries:new Map([['bund05',{building_ids:['new-source-id'],building_part_ids:[]}],['old-landmark',{building_ids:['old-source-id'],building_part_ids:[]}]]),
   tileSuppression,landmarkSuppression,cityDetails:{setVisibleLandmarks(ids){visible.push(ids);}},

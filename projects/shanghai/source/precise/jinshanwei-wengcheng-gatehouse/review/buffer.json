@@ -1,0 +1,6086 @@
+{
+  "schema": "jinshan-gatehouse-independent-buffer-review-v4",
+  "checker": {
+    "file": "/workspace/shanghai_expansion/building-by-building-v21/review/gatehouse-buffer-v1/check_buffers_v4.py",
+    "bytes": 41127,
+    "sha256": "4972bfe8ab723ac24677d66c3e2a14f3bbd7564445a5746309c4bb46f4b04157"
+  },
+  "oracle_revision": "V2 original failure preserved; lower-panel origins moved outside authored surface, four exact reviewed bracket-partial occlusions measured separately, ground-facing z0 contact classified explicitly. V4 adds12 camera visibility rays to each normal-blocked sample and independently proven local FLOAT32 boundary exception.",
+  "inputs": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/source/design-input.json",
+      "bytes": 7926,
+      "sha256": "ca68ccaee0d9427fe0054a8551cfd9c5927dfc2f90ba8d2e65b3eaf815309ec9"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/jinshanwei-gatehouse-raw.glb",
+      "bytes": 4507912,
+      "sha256": "f63b992eb45d16e732c66ccca0c40102212f845651aa13e2d89197e7a924c19e"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/jinshanwei-gatehouse-lod-source.glb",
+      "bytes": 2140072,
+      "sha256": "7ef571aa74a4251a06ff6652fd4e8ad62d9b946b85538268d1ba852bb8c0444d"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/textures/MATERIAL.json",
+      "bytes": 3918,
+      "sha256": "18db45ed2973aed6b04d151bd78aa8b57860a4654979e99b13af4cbd75e621db"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/source/generate_material.py",
+      "bytes": 8893,
+      "sha256": "3f502c31b799ca29b4dd6898ddb82330113901efb918f1d14ee1db81271be26c"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/source/architecture.py",
+      "bytes": 23064,
+      "sha256": "76102198bbab3ea3f470384e8c6bb6aeaa529158d306965ca5fb11bc946c7dc0"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/source/build_model.py",
+      "bytes": 5815,
+      "sha256": "762e161bc20dae95b4d9fcb00a776f9c0b20d82a67564c23e7131a3d887d97ee"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/source/brick_material.py",
+      "bytes": 2869,
+      "sha256": "9e9da6140a94e5420b65b8632dace8b0b1d7257efb56b66967a3bdf0c78028a8"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/LICENSE",
+      "bytes": 1062,
+      "sha256": "04da979aa090babca2a5a490ad081f521703f20a7749398c5475cc9771b854cc"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/textures/jinshan-original-grey-brick-basecolor.png",
+      "bytes": 179430,
+      "sha256": "9e2272ba3e6dcda2da14138a8de84727d365862372169b7db44565fed20af98f"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/textures/jinshan-original-grey-brick-normal.png",
+      "bytes": 244107,
+      "sha256": "83f55c9ede93b40b17807f5b60ca618f9ce6ff64d85c2c25a0b0ad3e7c221f67"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/textures/jinshan-original-grey-brick-orm.png",
+      "bytes": 135837,
+      "sha256": "44ae1ce5f8064ea81e95828d40accb66af158a90f0c1518524ea1ef9faaddef6"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/full-construction-parts.json.gz",
+      "bytes": 658775,
+      "sha256": "5fab4a247581be6668350edc52314a52414a460deca244102f5c0dbe4036cdef"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/lod-construction-parts.json.gz",
+      "bytes": 267296,
+      "sha256": "8997e12fc686b697b90ef57b2f50afc591b5c7afe3119f31c82bd8cb3f385ec3"
+    }
+  ],
+  "passed": true,
+  "MAIN_modified": false,
+  "author_files_modified": false,
+  "scope": "Static authored buffer and original material verification. No final visual, native, browser, codec, source-owner, collision or navigation acceptance.",
+  "material_source_proof": {
+    "descriptor": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/textures/MATERIAL.json",
+      "bytes": 3918,
+      "sha256": "18db45ed2973aed6b04d151bd78aa8b57860a4654979e99b13af4cbd75e621db"
+    },
+    "generator": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/source/generate_material.py",
+      "bytes": 8893,
+      "sha256": "3f502c31b799ca29b4dd6898ddb82330113901efb918f1d14ee1db81271be26c"
+    },
+    "license": {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/LICENSE",
+      "bytes": 1062,
+      "sha256": "04da979aa090babca2a5a490ad081f521703f20a7749398c5475cc9771b854cc"
+    },
+    "source_images": [
+      {
+        "file": "jinshan-original-grey-brick-basecolor.png",
+        "bytes": 179430,
+        "sha256": "9e2272ba3e6dcda2da14138a8de84727d365862372169b7db44565fed20af98f",
+        "role": "basecolor",
+        "actual_pixels_and_reproduced_png_equal": true
+      },
+      {
+        "file": "jinshan-original-grey-brick-normal.png",
+        "bytes": 244107,
+        "sha256": "83f55c9ede93b40b17807f5b60ca618f9ce6ff64d85c2c25a0b0ad3e7c221f67",
+        "role": "normal",
+        "actual_pixels_and_reproduced_png_equal": true
+      },
+      {
+        "file": "jinshan-original-grey-brick-orm.png",
+        "bytes": 135837,
+        "sha256": "44ae1ce5f8064ea81e95828d40accb66af158a90f0c1518524ea1ef9faaddef6",
+        "role": "orm",
+        "actual_pixels_and_reproduced_png_equal": true
+      }
+    ],
+    "generation_scope": "Pure generate_fields plus in-memory PNG encode; no output files or author file writes."
+  },
+  "assets": [
+    {
+      "input": {
+        "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/jinshanwei-gatehouse-raw.glb",
+        "bytes": 4507912,
+        "sha256": "f63b992eb45d16e732c66ccca0c40102212f845651aa13e2d89197e7a924c19e"
+      },
+      "passed": true,
+      "triangles": 52312,
+      "actual_architecture_bounds": [
+        [
+          -21.225001041525452,
+          -21.249999809100295,
+          0.0
+        ],
+        [
+          17.850000393383592,
+          18.70000022799837,
+          18.894277572631836
+        ]
+      ],
+      "primitive_buffers": [
+        {
+          "node": 0,
+          "primitive": 0,
+          "material": "original grey brick",
+          "material_index": 0,
+          "triangles": 930,
+          "vertices": 1930,
+          "normal_unit_max_error": 3.1336026884432044e-08,
+          "minimum_area_m2": 0.01639213549846,
+          "minimum_normal_winding_dot": 0.9999999999999994
+        },
+        {
+          "node": 0,
+          "primitive": 1,
+          "material": "worn paving",
+          "material_index": 1,
+          "triangles": 148,
+          "vertices": 245,
+          "normal_unit_max_error": 2.5682014515027163e-08,
+          "minimum_area_m2": 0.00826059601417731,
+          "minimum_normal_winding_dot": 0.9999999999999997
+        },
+        {
+          "node": 0,
+          "primitive": 2,
+          "material": "worn coping",
+          "material_index": 2,
+          "triangles": 982,
+          "vertices": 1734,
+          "normal_unit_max_error": 3.107206891783676e-08,
+          "minimum_area_m2": 0.003999960577857435,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 3,
+          "material": "arch stone 0",
+          "material_index": 3,
+          "triangles": 320,
+          "vertices": 832,
+          "normal_unit_max_error": 3.3943560184823696e-08,
+          "minimum_area_m2": 0.005989072110253968,
+          "minimum_normal_winding_dot": 0.9999999999999992
+        },
+        {
+          "node": 0,
+          "primitive": 4,
+          "material": "arch stone 1",
+          "material_index": 4,
+          "triangles": 320,
+          "vertices": 794,
+          "normal_unit_max_error": 3.894908073842629e-08,
+          "minimum_area_m2": 0.005989060398931643,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 5,
+          "material": "arch stone 2",
+          "material_index": 5,
+          "triangles": 320,
+          "vertices": 806,
+          "normal_unit_max_error": 3.1681422818508054e-08,
+          "minimum_area_m2": 0.005989081864568581,
+          "minimum_normal_winding_dot": 0.9999999999999994
+        },
+        {
+          "node": 0,
+          "primitive": 6,
+          "material": "door boards",
+          "material_index": 6,
+          "triangles": 200,
+          "vertices": 538,
+          "normal_unit_max_error": 3.3434999213710626e-08,
+          "minimum_area_m2": 0.0007347877817546303,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 7,
+          "material": "dark timber",
+          "material_index": 7,
+          "triangles": 5200,
+          "vertices": 14782,
+          "normal_unit_max_error": 4.146317289510648e-08,
+          "minimum_area_m2": 4.718655457063301e-06,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        },
+        {
+          "node": 0,
+          "primitive": 8,
+          "material": "iron fittings",
+          "material_index": 8,
+          "triangles": 2712,
+          "vertices": 6340,
+          "normal_unit_max_error": 3.804314585575952e-08,
+          "minimum_area_m2": 0.00019094312279491915,
+          "minimum_normal_winding_dot": 0.9999999999999991
+        },
+        {
+          "node": 0,
+          "primitive": 9,
+          "material": "pale plaque stone",
+          "material_index": 9,
+          "triangles": 12,
+          "vertices": 28,
+          "normal_unit_max_error": 9.351008301017316e-09,
+          "minimum_area_m2": 0.06874965340148732,
+          "minimum_normal_winding_dot": 0.9999999999999998
+        },
+        {
+          "node": 0,
+          "primitive": 10,
+          "material": "incised plaque dark",
+          "material_index": 10,
+          "triangles": 2288,
+          "vertices": 6510,
+          "normal_unit_max_error": 3.838270434819435e-08,
+          "minimum_area_m2": 1.0458926139037285e-07,
+          "minimum_normal_winding_dot": 0.9999999999999991
+        },
+        {
+          "node": 0,
+          "primitive": 11,
+          "material": "red timber",
+          "material_index": 11,
+          "triangles": 7324,
+          "vertices": 12504,
+          "normal_unit_max_error": 3.113828572764987e-08,
+          "minimum_area_m2": 0.0006119875291879947,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 12,
+          "material": "light wall infill",
+          "material_index": 12,
+          "triangles": 36,
+          "vertices": 72,
+          "normal_unit_max_error": 2.642195651159085e-08,
+          "minimum_area_m2": 0.28619968355190845,
+          "minimum_normal_winding_dot": 0.9999999999999998
+        },
+        {
+          "node": 0,
+          "primitive": 13,
+          "material": "recessed glazing",
+          "material_index": 13,
+          "triangles": 120,
+          "vertices": 240,
+          "normal_unit_max_error": 2.731950698997565e-08,
+          "minimum_area_m2": 0.0056994087137240265,
+          "minimum_normal_winding_dot": 0.9999999999999997
+        },
+        {
+          "node": 0,
+          "primitive": 14,
+          "material": "timber edges",
+          "material_index": 14,
+          "triangles": 584,
+          "vertices": 1248,
+          "normal_unit_max_error": 3.017453975573403e-08,
+          "minimum_area_m2": 0.004479792214306472,
+          "minimum_normal_winding_dot": 0.9999999999999997
+        },
+        {
+          "node": 0,
+          "primitive": 15,
+          "material": "roof underlay",
+          "material_index": 15,
+          "triangles": 4176,
+          "vertices": 11778,
+          "normal_unit_max_error": 3.995943043122452e-08,
+          "minimum_area_m2": 0.022054233727685037,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        },
+        {
+          "node": 0,
+          "primitive": 16,
+          "material": "roof tile 1",
+          "material_index": 16,
+          "triangles": 6204,
+          "vertices": 18236,
+          "normal_unit_max_error": 4.194941372048788e-08,
+          "minimum_area_m2": 0.0010735897783041898,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        },
+        {
+          "node": 0,
+          "primitive": 17,
+          "material": "ridge ceramic",
+          "material_index": 17,
+          "triangles": 7884,
+          "vertices": 21429,
+          "normal_unit_max_error": 4.131537867380075e-08,
+          "minimum_area_m2": 0.0011314991763869476,
+          "minimum_normal_winding_dot": 0.999999999999999
+        },
+        {
+          "node": 0,
+          "primitive": 18,
+          "material": "roof tile 2",
+          "material_index": 18,
+          "triangles": 5940,
+          "vertices": 17476,
+          "normal_unit_max_error": 4.067633962989703e-08,
+          "minimum_area_m2": 0.001073593233017249,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        },
+        {
+          "node": 0,
+          "primitive": 19,
+          "material": "roof tile 0",
+          "material_index": 19,
+          "triangles": 6612,
+          "vertices": 19370,
+          "normal_unit_max_error": 4.105397000131461e-08,
+          "minimum_area_m2": 4.7979706556552194e-05,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        }
+      ],
+      "finite_indices_normals_winding_nondegenerate": true,
+      "textures": {
+        "passed": true,
+        "images": [
+          {
+            "image": 0,
+            "role": "basecolor",
+            "bytes": 179430,
+            "sha256": "9e2272ba3e6dcda2da14138a8de84727d365862372169b7db44565fed20af98f"
+          },
+          {
+            "image": 1,
+            "role": "normal",
+            "bytes": 244107,
+            "sha256": "83f55c9ede93b40b17807f5b60ca618f9ce6ff64d85c2c25a0b0ad3e7c221f67"
+          },
+          {
+            "image": 2,
+            "role": "orm",
+            "bytes": 135837,
+            "sha256": "44ae1ce5f8064ea81e95828d40accb66af158a90f0c1518524ea1ef9faaddef6"
+          }
+        ],
+        "textured_material_count": 1,
+        "uvs": [
+          {
+            "primitive": 0,
+            "triangles": 930,
+            "range": [
+              [
+                -16.5625,
+                -30.078125
+              ],
+              [
+                16.5625,
+                30.038408279418945
+              ]
+            ],
+            "dP_dU_metres": [
+              1.2799963026698291,
+              1.2800056741869499
+            ],
+            "dP_dV_metres": [
+              0.6399911471919126,
+              0.6400072872752663
+            ],
+            "maximum_absolute_cosine_U_V": 1.5403804712936347e-05,
+            "U_cross_V_opposes_outward_normal": true,
+            "absolute_architecture_projection_max_error_uv": 0.00032346862498222606
+          }
+        ],
+        "uv_scope": "Actual triangle Jacobians; repeat is unbounded. No [0,1] UV restriction. Runtime derivative normal signs remain separate browser checks."
+      },
+      "exterior_rays": {
+        "passed": true,
+        "gate_measurements": [
+          {
+            "z_m": 1.12,
+            "door": {
+              "triangle": 3070,
+              "material": "door boards",
+              "distance_m": 6.493798682972793,
+              "point_architecture_xyz": [
+                0.13,
+                -18.506201317027205,
+                1.12
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 32,
+              "material": "original grey brick",
+              "distance_m": 5.793798527984256,
+              "point_architecture_xyz": [
+                3.25,
+                -19.206201472015742,
+                1.12
+              ]
+            },
+            "actual_recess_m": 0.7000001549885368
+          },
+          {
+            "z_m": 2.0,
+            "door": {
+              "triangle": 3070,
+              "material": "door boards",
+              "distance_m": 6.528211977994863,
+              "point_architecture_xyz": [
+                0.13,
+                -18.471788022005136,
+                2.0
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 32,
+              "material": "original grey brick",
+              "distance_m": 5.828212090723579,
+              "point_architecture_xyz": [
+                3.25,
+                -19.17178790927642,
+                2.0
+              ]
+            },
+            "actual_recess_m": 0.6999998872712858
+          },
+          {
+            "z_m": 3.03,
+            "door": {
+              "triangle": 3068,
+              "material": "door boards",
+              "distance_m": 6.568491704384003,
+              "point_architecture_xyz": [
+                0.13,
+                -18.431508295616,
+                3.03
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 32,
+              "material": "original grey brick",
+              "distance_m": 5.868491601657103,
+              "point_architecture_xyz": [
+                3.25,
+                -19.131508398342895,
+                3.03
+              ]
+            },
+            "actual_recess_m": 0.7000001027268965
+          },
+          {
+            "z_m": 4.35,
+            "door": {
+              "triangle": 3096,
+              "material": "door boards",
+              "distance_m": 6.620111767751568,
+              "point_architecture_xyz": [
+                0.13,
+                -18.379888232248433,
+                4.35
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 44,
+              "material": "original grey brick",
+              "distance_m": 5.920111434309538,
+              "point_architecture_xyz": [
+                3.25,
+                -19.07988856569046,
+                4.35
+              ]
+            },
+            "actual_recess_m": 0.7000003334420271
+          },
+          {
+            "z_m": 5.61,
+            "door": {
+              "triangle": 3112,
+              "material": "door boards",
+              "distance_m": 6.669385201167157,
+              "point_architecture_xyz": [
+                0.13,
+                -18.330614798832844,
+                5.61
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 68,
+              "material": "original grey brick",
+              "distance_m": 5.969385998543831,
+              "point_architecture_xyz": [
+                3.25,
+                -19.03061400145617,
+                5.61
+              ]
+            },
+            "actual_recess_m": 0.6999992026233244
+          }
+        ],
+        "pane_probe_count": 336,
+        "actual_pane_hits": 336,
+        "unoccluded_cell_centres": 332,
+        "partially_occluded_cell_centres": [
+          {
+            "probe": "window-1-1-10",
+            "centre_first_hit": {
+              "triangle": 3620,
+              "material": "dark timber",
+              "distance_m": 0.0951319202101165,
+              "point_architecture_xyz": [
+                -1.585416666666667,
+                -17.28486807978988,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 20806,
+              "material": "recessed glazing",
+              "distance_m": 0.26999952305718516,
+              "point_architecture_xyz": [
+                -1.585416666666667,
+                -17.110000476942815,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              -1.520416666666667,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 20806,
+              "material": "recessed glazing",
+              "distance_m": 0.269999550969219,
+              "point_architecture_xyz": [
+                -1.520416666666667,
+                -17.110000449030778,
+                12.02875
+              ]
+            }
+          },
+          {
+            "probe": "window-4-2-10",
+            "centre_first_hit": {
+              "triangle": 3687,
+              "material": "dark timber",
+              "distance_m": 0.09513155130488528,
+              "point_architecture_xyz": [
+                1.5854166666666663,
+                -17.284868448695114,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 20842,
+              "material": "recessed glazing",
+              "distance_m": 0.2699995241531642,
+              "point_architecture_xyz": [
+                1.5854166666666663,
+                -17.110000475846835,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              1.5204166666666663,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 20842,
+              "material": "recessed glazing",
+              "distance_m": 0.2699994962411304,
+              "point_architecture_xyz": [
+                1.5204166666666663,
+                -17.11000050375887,
+                12.02875
+              ]
+            }
+          },
+          {
+            "probe": "window-6-0-3",
+            "centre_first_hit": {
+              "triangle": 3556,
+              "material": "dark timber",
+              "distance_m": 0.09513161946876098,
+              "point_architecture_xyz": [
+                -4.905,
+                -17.28486838053124,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 20866,
+              "material": "recessed glazing",
+              "distance_m": 0.26999998383510637,
+              "point_architecture_xyz": [
+                -4.905,
+                -17.110000016164893,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              -4.84,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 20866,
+              "material": "recessed glazing",
+              "distance_m": 0.2700000594570455,
+              "point_architecture_xyz": [
+                -4.84,
+                -17.109999940542952,
+                12.02875
+              ]
+            }
+          },
+          {
+            "probe": "window-9-2-3",
+            "centre_first_hit": {
+              "triangle": 3751,
+              "material": "dark timber",
+              "distance_m": 0.09513146457098638,
+              "point_architecture_xyz": [
+                4.904999999999999,
+                -17.284868535429013,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 20902,
+              "material": "recessed glazing",
+              "distance_m": 0.2700001852119736,
+              "point_architecture_xyz": [
+                4.904999999999999,
+                -17.109999814788026,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              4.839999999999999,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 20902,
+              "material": "recessed glazing",
+              "distance_m": 0.2700001741481469,
+              "point_architecture_xyz": [
+                4.839999999999999,
+                -17.10999982585185,
+                12.02875
+              ]
+            }
+          }
+        ],
+        "same_aperture_alternate_clear_count": 4,
+        "actual_timber_stile_hits": 10,
+        "actual_glazing_retreat_m": 0.20999866791778388,
+        "window_probe_origin_y_m": -17.38,
+        "failure_count": 0,
+        "failures": [],
+        "scope": "Exterior front arch/closed-door setback, all 336 authored front grid-cell centres, ten actual timber stiles/lower panels, three side/rear infill rays. Window probes start0.080m ahead of pavilion facade, outside the0.056m leaf bead and0.035m lower solid panel, inside foreground parapet: local aperture geometry, not street visibility. Four specified upper cell centres may intersect reviewed curved eave arms only if real glazing exists behind and an alternate same-aperture ray is unobstructed. Glazing recession uses glazing hits only. These sample actual triangles; they do not prove watertightness, interiors or walk-through access."
+      },
+      "coplanar_overlap": {
+        "passed": true,
+        "counts": {
+          "positive_area_pairs": 1991,
+          "opposite_facing_overlap_contact_candidate": 1697,
+          "same_facing_normal_probe_blocked": 268,
+          "same_facing_downward_virtual_ground_contact": 25,
+          "proven_local_FLOAT32_shared_boundary_residue": 1,
+          "same_facing_exposed_along_normal": 0,
+          "same_facing_exposed_from_external_camera": 0
+        },
+        "pair_area_sum_m2_not_union": {
+          "opposite_facing_overlap_contact_candidate": 671.5338619941352,
+          "same_facing_normal_probe_blocked": 2.4847359315002024,
+          "same_facing_downward_virtual_ground_contact": 32.35180705621565,
+          "proven_local_FLOAT32_shared_boundary_residue": 2.2737978082333566e-06
+        },
+        "examples": {
+          "opposite_facing_overlap_contact_candidate": [
+            {
+              "triangles": [
+                4,
+                135
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865273195222,
+              "plane_error_m": 4.44620545562399e-07,
+              "sample_architecture_xyz": [
+                -8.149999928605709,
+                -17.196458596023867,
+                7.122708065538244
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.9539394684616723e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                4,
+                134
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476862527670737,
+              "plane_error_m": 4.446205455623991e-07,
+              "sample_architecture_xyz": [
+                -8.149999844969896,
+                -16.277708587101486,
+                7.122708065538244
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.9539394684616723e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                5,
+                135
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476868018721386,
+              "plane_error_m": 4.44620545562399e-07,
+              "sample_architecture_xyz": [
+                -8.150000018110724,
+                -18.25812552465019,
+                3.4681234574616595
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.953939468461671e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                5,
+                134
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 8.496906167304743,
+              "plane_error_m": 4.446205455623991e-07,
+              "sample_architecture_xyz": [
+                -8.149999934474856,
+                -17.33937486463997,
+                3.4681256987065754
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.953939468461671e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                132,
+                254
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865127645647,
+              "plane_error_m": 9.212219460550022e-07,
+              "sample_architecture_xyz": [
+                8.149999905203837,
+                -16.484791772493132,
+                1.827291790627941
+              ],
+              "outward_normal": [
+                0.9999999999999861,
+                -1.605041570663948e-07,
+                -4.6720590984730945e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                132,
+                255
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 8.496905665777994,
+              "plane_error_m": 7.525729043188698e-07,
+              "sample_architecture_xyz": [
+                8.149999951423643,
+                -17.26062520032147,
+                5.481875218673722
+              ],
+              "outward_normal": [
+                0.9999999999999861,
+                -1.605041570663948e-07,
+                -4.6720590984730945e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                133,
+                254
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865503010423,
+              "plane_error_m": 9.21221946055004e-07,
+              "sample_architecture_xyz": [
+                8.14999994555446,
+                -17.403541886065124,
+                1.827291790627941
+              ],
+              "outward_normal": [
+                0.9999999999999885,
+                1.461306380784808e-07,
+                4.407072295426537e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                133,
+                255
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865127645621,
+              "plane_error_m": 9.21221946055004e-07,
+              "sample_architecture_xyz": [
+                8.150000079812001,
+                -18.322291999637116,
+                1.827291790627941
+              ],
+              "outward_normal": [
+                0.9999999999999885,
+                1.461306380784808e-07,
+                4.407072295426537e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                288,
+                925
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.023987151922677866,
+              "plane_error_m": 9.65051984093103e-06,
+              "sample_architecture_xyz": [
+                -17.50000015147455,
+                3.7193303658853143,
+                8.954999923706055
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                288,
+                924
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 1.339346797843717e-05,
+              "plane_error_m": 9.65051984093103e-06,
+              "sample_architecture_xyz": [
+                -17.500000158524223,
+                4.9193301696023095,
+                8.954999923706055
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                288,
+                1073
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.013646102724729738,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.50000014563857,
+                2.725926592615104,
+                8.975444544786244
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                288,
+                1072
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.05802672777433078,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.500000152520027,
+                3.8972924780355505,
+                8.97329699692174
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                289,
+                1073
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.09435406271523869,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.50000014925131,
+                3.3408893845957244,
+                9.021566839925539
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                289,
+                1072
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.04997343766563753,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.500000156213083,
+                4.525926298190597,
+                9.02044462108019
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                314,
+                393
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.026845333414369094,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000295350278,
+                -15.782142602260723,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                314,
+                392
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.0006547681894333928,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000242176876,
+                -15.412202296840487,
+                8.957142713118625
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                315,
+                393
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.023571504955866598,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000258646509,
+                -15.526785543572252,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                315,
+                392
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.0039285966479358355,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000236059562,
+                -15.369642651766124,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                318,
+                389
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.02684528774677176,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.150000167528756,
+                -15.467857724917405,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                318,
+                388
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.000654767075582816,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.149999983838825,
+                -15.837797401018356,
+                8.957142713118625
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                319,
+                389
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.023571464857500897,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.15000004073392,
+                -15.723214349208433,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                -0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                319,
+                388
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.003928589964853655,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.149999962706286,
+                -15.880356973692914,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                -0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                336,
+                354
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.11000011029405783,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.14999984718578,
+                -18.089999905799594,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                336,
+                355
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.050000076143001414,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.149999785873785,
+                -18.300000168379647,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                337,
+                354
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.13727286727689866,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.149999926015475,
+                -17.819999609068486,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                337,
+                355
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.022727319160160967,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.149999821705483,
+                -18.177272696933485,
+                9.471875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                342,
+                367
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.050000076143001414,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.149999864928073,
+                -17.759999907304774,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                342,
+                366
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.11000011029405783,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.149999926240069,
+                -17.970000169884827,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                343,
+                367
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.022727319160160967,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.149999900759772,
+                -17.882727378750932,
+                9.471875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                343,
+                366
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.13727286727689864,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.150000005069764,
+                -18.240000466615932,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            }
+          ],
+          "same_facing_normal_probe_blocked": [
+            {
+              "triangles": [
+                3136,
+                3386
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 2.4999385305095117e-06,
+              "plane_error_m": 1.738846830892206e-06,
+              "sample_architecture_xyz": [
+                1.9837706982893868,
+                -18.356141288273772,
+                4.918888708413971
+              ],
+              "outward_normal": [
+                0.8819212330720141,
+                -1.3732605445202034e-06,
+                0.4713967953379111
+              ],
+              "outward_blocker": {
+                "triangle": 221,
+                "material": "original grey brick",
+                "distance_m": 0.034800172069080794,
+                "point_architecture_xyz": [
+                  2.0146380931982835,
+                  -18.35614133633813,
+                  4.935387677363611
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3137,
+                3387
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.5706068046986785e-06,
+              "plane_error_m": 1.7388468320975513e-06,
+              "sample_architecture_xyz": [
+                2.003308313874044,
+                -18.35857118358552,
+                4.882336399329573
+              ],
+              "outward_normal": [
+                0.8819212330720148,
+                -1.3732605461643094e-06,
+                0.47139679533791
+              ],
+              "outward_blocker": {
+                "triangle": 221,
+                "material": "original grey brick",
+                "distance_m": 0.034800272383040835,
+                "point_architecture_xyz": [
+                  2.034175797251952,
+                  -18.358571231650014,
+                  4.898835415566892
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3137,
+                3386
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 8.291843368270197e-05,
+              "plane_error_m": 1.738846830892206e-06,
+              "sample_architecture_xyz": [
+                1.9930597250557018,
+                -18.357321206039313,
+                4.901510160996718
+              ],
+              "outward_normal": [
+                0.8819212330720148,
+                -1.3732605461643094e-06,
+                0.47139679533791
+              ],
+              "outward_blocker": {
+                "triangle": 221,
+                "material": "original grey brick",
+                "distance_m": 0.03480021979453177,
+                "point_architecture_xyz": [
+                  2.023927162054687,
+                  -18.357321254103734,
+                  4.918009152443982
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3139,
+                3378
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 8.178620250409585e-06,
+              "plane_error_m": 5.2842671033423675e-06,
+              "sample_architecture_xyz": [
+                1.9818531227166076,
+                -18.3565151089227,
+                4.922127162667243
+              ],
+              "outward_normal": [
+                0.8492028497641527,
+                -1.3223139710827087e-06,
+                0.528066776033764
+              ],
+              "outward_blocker": {
+                "triangle": 218,
+                "material": "original grey brick",
+                "distance_m": 0.03480015723445601,
+                "point_architecture_xyz": [
+                  2.011575355982301,
+                  -18.356515155203898,
+                  4.940609582858717
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3145,
+                3365
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 5.013452564795485e-06,
+              "plane_error_m": 7.264317880306154e-07,
+              "sample_architecture_xyz": [
+                1.6710002817931426,
+                -18.340711546952093,
+                5.339020098906056
+              ],
+              "outward_normal": [
+                0.7298651043263937,
+                -1.136490327045614e-06,
+                0.6835912005616595
+              ],
+              "outward_blocker": {
+                "triangle": 213,
+                "material": "original grey brick",
+                "distance_m": 0.03480003492788039,
+                "point_architecture_xyz": [
+                  1.6965455859372074,
+                  -18.340711586729295,
+                  5.362945814802106
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3145,
+                3364
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.518743626287875e-05,
+              "plane_error_m": 7.264317883663646e-07,
+              "sample_architecture_xyz": [
+                1.6590004432794618,
+                -18.339710546167062,
+                5.351832236509816
+              ],
+              "outward_normal": [
+                0.7298651043263937,
+                -1.136490327045614e-06,
+                0.6835912005616595
+              ],
+              "outward_blocker": {
+                "triangle": 213,
+                "material": "original grey brick",
+                "distance_m": 0.03479995625149839,
+                "point_architecture_xyz": [
+                  1.684545690000381,
+                  -18.339710585944175,
+                  5.375757898623383
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3195,
+                3241
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 5.016923273136398e-06,
+              "plane_error_m": 1.2112936063217472e-06,
+              "sample_architecture_xyz": [
+                -1.6504291634844408,
+                -18.339852702012358,
+                5.360983902740515
+              ],
+              "outward_normal": [
+                -0.7298650529616463,
+                1.1364902484148594e-06,
+                0.683591255403404
+              ],
+              "outward_blocker": {
+                "triangle": 163,
+                "material": "original grey brick",
+                "distance_m": 0.03479964498517509,
+                "point_architecture_xyz": [
+                  -1.6759741812251845,
+                  -18.3398526622356,
+                  5.384909353994604
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3195,
+                3240
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.519398295196209e-05,
+              "plane_error_m": 1.3456535242117981e-06,
+              "sample_architecture_xyz": [
+                -1.6624290053657604,
+                -18.339853833015464,
+                5.3481717651367555
+              ],
+              "outward_normal": [
+                -0.7298650529616463,
+                1.1364902484148594e-06,
+                0.683591255403404
+              ],
+              "outward_blocker": {
+                "triangle": 163,
+                "material": "original grey brick",
+                "distance_m": 0.034799692154019124,
+                "point_architecture_xyz": [
+                  -1.687974057533395,
+                  -18.339853793238653,
+                  5.372097248635054
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3200,
+                3234
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 2.4994116979093637e-06,
+              "plane_error_m": 1.1569035639640442e-05,
+              "sample_architecture_xyz": [
+                -1.9825226501890774,
+                -18.356056895513632,
+                4.921051268732381
+              ],
+              "outward_normal": [
+                -0.8492016057562726,
+                1.3223120372012516e-06,
+                0.5280687765615572
+              ],
+              "outward_blocker": {
+                "triangle": 157,
+                "material": "original grey brick",
+                "distance_m": 0.03479983522199498,
+                "point_architecture_xyz": [
+                  -2.0122445664608004,
+                  -18.356056849232928,
+                  4.939533588897915
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3201,
+                3234
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 5.679631817929108e-06,
+              "plane_error_m": 1.1569035639640442e-05,
+              "sample_architecture_xyz": [
+                -1.9825226517467873,
+                -18.35705727186135,
+                4.921051268732381
+              ],
+              "outward_normal": [
+                -0.8492016057562726,
+                1.3223120371510922e-06,
+                0.5280687765615572
+              ],
+              "outward_blocker": {
+                "triangle": 157,
+                "material": "original grey brick",
+                "distance_m": 0.0347998338340605,
+                "point_architecture_xyz": [
+                  -2.012244566839874,
+                  -18.357057225580647,
+                  4.93953358816499
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3203,
+                3227
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.5746204248317805e-06,
+              "plane_error_m": 1.1463928461720862e-06,
+              "sample_architecture_xyz": [
+                -1.9847311211284224,
+                -18.35721196451081,
+                4.917092819687843
+              ],
+              "outward_normal": [
+                -0.8819212378450699,
+                1.3732605552284232e-06,
+                0.4713967864081529
+              ],
+              "outward_blocker": {
+                "triangle": 154,
+                "material": "original grey brick",
+                "distance_m": 0.03479981563838101,
+                "point_architecture_xyz": [
+                  -2.0155982018605725,
+                  -18.357211916446943,
+                  4.933591620304655
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3203,
+                3226
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 8.544471762911804e-05,
+              "plane_error_m": 3.0745593704606724e-06,
+              "sample_architecture_xyz": [
+                -1.995568653191182,
+                -18.35750445787731,
+                4.896817226883888
+              ],
+              "outward_normal": [
+                -0.8819212378450699,
+                1.3732605552284232e-06,
+                0.4713967864081529
+              ],
+              "outward_blocker": {
+                "triangle": 154,
+                "material": "original grey brick",
+                "distance_m": 0.03479980421413752,
+                "point_architecture_xyz": [
+                  -2.0264357238480493,
+                  -18.35750440981346,
+                  4.913316022115348
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                13605
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.00261390792039087,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.317078862074393,
+                -17.372590619395957,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.317078862074393,
+                  -17.372590619395957,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                13604
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.04363603267255774,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.24829625932993,
+                -17.385229438635527,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.24829625932993,
+                  -17.385229438635527,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                13592
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.006943754560568458,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.268011287888752,
+                -17.361000546035815,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.268011287888752,
+                  -17.361000546035815,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                13593
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.013012889033489562,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.19963052347886,
+                -17.261000182695156,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.19963052347886,
+                  -17.261000182695156,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                3389
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.03657978804869274,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.173804209072933,
+                -17.252499657444822,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.173804209072933,
+                  -17.252499657444822,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                3424
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.006631907315101903,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.189054069945987,
+                -17.236708032937553,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.189054069945987,
+                  -17.236708032937553,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                3425
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.00038270174511237403,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.161429253124345,
+                -17.236708170435854,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.161429253124345,
+                  -17.236708170435854,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1196,
+                3388
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.00042792589681739547,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.164999975934515,
+                -17.4376231014013,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.164999975934515,
+                  -17.4376231014013,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                13605
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.04113610043552362,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.373296307676249,
+                -17.372590619395957,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.373296307676249,
+                  -17.372590619395957,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                13604
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.00011397568335664177,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.197535307582548,
+                -17.212868615044854,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.197535307582548,
+                  -17.212868615044854,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                13592
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.023056363167695357,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.4192500840745,
+                -17.261000114196413,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.4192500840745,
+                  -17.261000114196413,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                13593
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.016987228694774245,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.303880508725547,
+                -17.26100017778114,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.303880508725547,
+                  -17.26100017778114,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                3389
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.01339248385148671,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.263804163088805,
+                -17.252499656156225,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.263804163088805,
+                  -17.252499656156225,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                3424
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.04439511701725941,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.327624689894902,
+                -17.23670780301309,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.327624689894902,
+                  -17.23670780301309,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1197,
+                3425
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.00039012010016308083,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.16360043475899,
+                -17.14055588508156,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.16360043475899,
+                  -17.14055588508156,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1208,
+                3389
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.026663093724474694,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -2.980091069326366,
+                -17.26856598242007,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -2.980091069326366,
+                  -17.26856598242007,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1208,
+                13616
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.04363603418860572,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.048296112060566,
+                -17.38522903100923,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.048296112060566,
+                  -17.38522903100923,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1208,
+                13617
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.0026139119784414633,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.117078647254469,
+                -17.372590208363274,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 131,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.117078647254469,
+                  -17.372590208363274,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            }
+          ],
+          "same_facing_downward_virtual_ground_contact": [
+            {
+              "triangles": [
+                8,
+                19
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.10284777990319015,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -8.325000029545894,
+                -18.468850610223154,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                8,
+                286
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 1.1266047932949592,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -15.512500144523703,
+                -16.12513417341256,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                9,
+                19
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.01965241351512868,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -8.412500143724206,
+                -18.643850847314653,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                9,
+                286
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 5.895893799984714,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -16.174999999238103,
+                -17.450133615612145,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                18,
+                131
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.8137721105378155,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -6.162499971830988,
+                -18.59291681035392,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                19,
+                131
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.6437300462838802,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -7.487500575263455,
+                -18.592917031750844,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                130,
+                247
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.6180127663747105,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                7.581223389010589,
+                -18.622717647665034,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                130,
+                246
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.787952636659346,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                6.3503124454372415,
+                -18.588218286401055,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                131,
+                1037
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 1.5730254040281264e-06,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -4.224905528901103,
+                -19.24999940070927,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                131,
+                1047
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.13089720548096326,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -2.5751694911408025,
+                -19.237290490544275,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                131,
+                1049
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.1309080783471141,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                2.574941093683502,
+                -19.23729103621833,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                131,
+                247
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.025716443916044832,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                5.874528406090391,
+                -18.865634094473116,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                131,
+                246
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.025816827780493157,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                5.593723181778021,
+                -18.796769576257994,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                246,
+                257
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.011229131157404726,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                8.237500041033972,
+                -18.382083103828087,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                247,
+                257
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.11127098568683887,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                8.325000076484255,
+                -18.557083375795226,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                256,
+                267
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 6.355444988645612,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                16.23911683532178,
+                -16.78125915312195,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                256,
+                266
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.2770556688568761,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                14.914378003013471,
+                -16.774866324522055,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                257,
+                267
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.38003260192087096,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                15.259715145704329,
+                -18.106259136092756,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                257,
+                266
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.00996748894859015,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                14.859961369493517,
+                -18.106259184649232,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                266,
+                276
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.30096435218234524,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                15.512500136409177,
+                15.81357187317812,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                266,
+                277
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 6.721533950740699,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                16.175000031006793,
+                17.138571315377703,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                276,
+                286
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.2870231602745334,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -14.904154548647726,
+                17.025000029382674,
+                0.0
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                276,
+                287
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 6.735477603843431,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -16.229154692798232,
+                17.024999945342486,
+                0.0
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                287,
+                921
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.8002707234905955,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -17.67500006954923,
+                3.6064862484718354,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                287,
+                920
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.03972992536409244,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -17.762500003074198,
+                4.806486052188831,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            }
+          ],
+          "proven_local_FLOAT32_shared_boundary_residue": [
+            {
+              "triangles": [
+                937,
+                1069
+              ],
+              "materials": [
+                "worn paving",
+                "worn paving"
+              ],
+              "area_m2": 2.2737978082333566e-06,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -17.500000356737225,
+                3.719999534514408,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            }
+          ]
+        },
+        "scope": "All active triangles queried through three dominant-axis projection trees, without rounded plane bins; candidates rechecked at <=2e-5m plane distance, 1e-8 normal dot tolerance and >1e-6m2 overlap. One interior point per positive-area intersection has an outward normal ray up to100m. Clear outward ray confirms exposed duplicate above the virtual ground. Strict downward z0 contacts are counted separately because the declared flat scene ground covers them; no positive-height face gets that exemption. Normal-blocked samples are additionally tested toward 12 explicit exterior ground/overview cameras; a clear front-facing sightline fails. Remaining blocked samples are not a global internalness proof. One reviewed platform shared-edge FLOAT32 residue may be classified only after actual all-triangle source matching and bounded width proof. Opposite-facing overlaps are possible component contacts, not a solid-volume/internalness proof. No exhaustive near-coplanar/slanted visibility guarantee."
+      },
+      "local_numeric_boundary_proof": {
+        "source_parts": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/full-construction-parts.json.gz",
+          "bytes": 658775,
+          "sha256": "5fab4a247581be6668350edc52314a52414a460deca244102f5c0dbe4036cdef"
+        },
+        "all_source_FLOAT32_triangles_and_materials_equal_GLB": true,
+        "exception_scope": "Only the reviewed upward platform/wall-walk shared edge; exact pre-quantization source intersection has zero area. No general area tolerance increase, no hidden-surface exemption.",
+        "proven_pairs": [
+          {
+            "triangles": [
+              937,
+              1069
+            ],
+            "labels": [
+              "enclosure/single-owned-wall-walk-top",
+              "east-stair/estimated-top-link-platform"
+            ],
+            "area_m2": 2.2737978082333566e-06,
+            "minimum_rectangle_width_m": 1.5091144227598424e-06,
+            "pre_quantization_overlap_area_m2": 0.0,
+            "shared_source_edge_length_m": 2.4,
+            "source_shared_edge_x_m": -17.5,
+            "maximum_distance_from_source_edge_m": 8.598749516863791e-07,
+            "actual_maximum_vertex_displacement_each_triangle_m": [
+              9.143375662171948e-07,
+              6.982753812946262e-07
+            ],
+            "propagated_half_ulp_vertex_displacement_bound_each_triangle_m": [
+              1.1255105246060393e-06,
+              1.1255105246060393e-06
+            ],
+            "sum_actual_vertex_displacement_bound_m": 1.612612947511821e-06
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/jinshanwei-gatehouse-lod-source.glb",
+        "bytes": 2140072,
+        "sha256": "7ef571aa74a4251a06ff6652fd4e8ad62d9b946b85538268d1ba852bb8c0444d"
+      },
+      "passed": true,
+      "triangles": 23020,
+      "actual_architecture_bounds": [
+        [
+          -21.225001041525452,
+          -21.249999809100295,
+          0.0
+        ],
+        [
+          17.850000393383592,
+          18.70000022799837,
+          18.884326934814453
+        ]
+      ],
+      "primitive_buffers": [
+        {
+          "node": 0,
+          "primitive": 0,
+          "material": "original grey brick",
+          "material_index": 0,
+          "triangles": 866,
+          "vertices": 1760,
+          "normal_unit_max_error": 3.343880683459588e-08,
+          "minimum_area_m2": 0.01639213549846,
+          "minimum_normal_winding_dot": 0.9999999999999994
+        },
+        {
+          "node": 0,
+          "primitive": 1,
+          "material": "worn paving",
+          "material_index": 1,
+          "triangles": 148,
+          "vertices": 245,
+          "normal_unit_max_error": 2.5682014515027163e-08,
+          "minimum_area_m2": 0.00826059601417731,
+          "minimum_normal_winding_dot": 0.9999999999999997
+        },
+        {
+          "node": 0,
+          "primitive": 2,
+          "material": "worn coping",
+          "material_index": 2,
+          "triangles": 982,
+          "vertices": 1734,
+          "normal_unit_max_error": 3.107206891783676e-08,
+          "minimum_area_m2": 0.003999960577857435,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 3,
+          "material": "arch stone 0",
+          "material_index": 3,
+          "triangles": 320,
+          "vertices": 832,
+          "normal_unit_max_error": 3.3943560184823696e-08,
+          "minimum_area_m2": 0.005989072110253968,
+          "minimum_normal_winding_dot": 0.9999999999999992
+        },
+        {
+          "node": 0,
+          "primitive": 4,
+          "material": "arch stone 1",
+          "material_index": 4,
+          "triangles": 320,
+          "vertices": 794,
+          "normal_unit_max_error": 3.894908073842629e-08,
+          "minimum_area_m2": 0.005989060398931643,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 5,
+          "material": "arch stone 2",
+          "material_index": 5,
+          "triangles": 320,
+          "vertices": 806,
+          "normal_unit_max_error": 3.1681422818508054e-08,
+          "minimum_area_m2": 0.005989081864568581,
+          "minimum_normal_winding_dot": 0.9999999999999994
+        },
+        {
+          "node": 0,
+          "primitive": 6,
+          "material": "door boards",
+          "material_index": 6,
+          "triangles": 136,
+          "vertices": 370,
+          "normal_unit_max_error": 3.42365491512453e-08,
+          "minimum_area_m2": 0.0024768604112582688,
+          "minimum_normal_winding_dot": 0.9999999999999991
+        },
+        {
+          "node": 0,
+          "primitive": 7,
+          "material": "dark timber",
+          "material_index": 7,
+          "triangles": 2432,
+          "vertices": 6816,
+          "normal_unit_max_error": 4.742210291119875e-08,
+          "minimum_area_m2": 7.077682392358628e-06,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        },
+        {
+          "node": 0,
+          "primitive": 8,
+          "material": "iron fittings",
+          "material_index": 8,
+          "triangles": 2312,
+          "vertices": 5164,
+          "normal_unit_max_error": 3.673107973334311e-08,
+          "minimum_area_m2": 0.00044337381041256843,
+          "minimum_normal_winding_dot": 0.9999999999999993
+        },
+        {
+          "node": 0,
+          "primitive": 9,
+          "material": "pale plaque stone",
+          "material_index": 9,
+          "triangles": 12,
+          "vertices": 28,
+          "normal_unit_max_error": 9.351008301017316e-09,
+          "minimum_area_m2": 0.06874965340148732,
+          "minimum_normal_winding_dot": 0.9999999999999998
+        },
+        {
+          "node": 0,
+          "primitive": 10,
+          "material": "incised plaque dark",
+          "material_index": 10,
+          "triangles": 2288,
+          "vertices": 6510,
+          "normal_unit_max_error": 3.838270434819435e-08,
+          "minimum_area_m2": 1.0458926139037285e-07,
+          "minimum_normal_winding_dot": 0.9999999999999991
+        },
+        {
+          "node": 0,
+          "primitive": 11,
+          "material": "red timber",
+          "material_index": 11,
+          "triangles": 7324,
+          "vertices": 12504,
+          "normal_unit_max_error": 3.113828572764987e-08,
+          "minimum_area_m2": 0.0006119875291879947,
+          "minimum_normal_winding_dot": 0.9999999999999996
+        },
+        {
+          "node": 0,
+          "primitive": 12,
+          "material": "light wall infill",
+          "material_index": 12,
+          "triangles": 36,
+          "vertices": 72,
+          "normal_unit_max_error": 2.642195651159085e-08,
+          "minimum_area_m2": 0.28619968355190845,
+          "minimum_normal_winding_dot": 0.9999999999999998
+        },
+        {
+          "node": 0,
+          "primitive": 13,
+          "material": "recessed glazing",
+          "material_index": 13,
+          "triangles": 120,
+          "vertices": 240,
+          "normal_unit_max_error": 2.731950698997565e-08,
+          "minimum_area_m2": 0.0056994087137240265,
+          "minimum_normal_winding_dot": 0.9999999999999997
+        },
+        {
+          "node": 0,
+          "primitive": 14,
+          "material": "roof underlay",
+          "material_index": 14,
+          "triangles": 1056,
+          "vertices": 2814,
+          "normal_unit_max_error": 3.8080947506458074e-08,
+          "minimum_area_m2": 0.03859492907449181,
+          "minimum_normal_winding_dot": 0.9999999999999991
+        },
+        {
+          "node": 0,
+          "primitive": 15,
+          "material": "roof tile 0",
+          "material_index": 15,
+          "triangles": 1064,
+          "vertices": 3014,
+          "normal_unit_max_error": 4.036957468311897e-08,
+          "minimum_area_m2": 0.0029115266172674505,
+          "minimum_normal_winding_dot": 0.9999999999999989
+        },
+        {
+          "node": 0,
+          "primitive": 16,
+          "material": "roof tile 1",
+          "material_index": 16,
+          "triangles": 1008,
+          "vertices": 2836,
+          "normal_unit_max_error": 3.652489399819103e-08,
+          "minimum_area_m2": 0.0029115280151076253,
+          "minimum_normal_winding_dot": 0.999999999999999
+        },
+        {
+          "node": 0,
+          "primitive": 17,
+          "material": "roof tile 2",
+          "material_index": 17,
+          "triangles": 1008,
+          "vertices": 2802,
+          "normal_unit_max_error": 4.0492203146058614e-08,
+          "minimum_area_m2": 0.0029114913528034826,
+          "minimum_normal_winding_dot": 0.999999999999999
+        },
+        {
+          "node": 0,
+          "primitive": 18,
+          "material": "ridge ceramic",
+          "material_index": 18,
+          "triangles": 1268,
+          "vertices": 3626,
+          "normal_unit_max_error": 4.10689602325931e-08,
+          "minimum_area_m2": 0.0015820347802274503,
+          "minimum_normal_winding_dot": 0.9999999999999991
+        }
+      ],
+      "finite_indices_normals_winding_nondegenerate": true,
+      "textures": {
+        "passed": true,
+        "images": [
+          {
+            "image": 0,
+            "role": "basecolor",
+            "bytes": 179430,
+            "sha256": "9e2272ba3e6dcda2da14138a8de84727d365862372169b7db44565fed20af98f"
+          },
+          {
+            "image": 1,
+            "role": "normal",
+            "bytes": 244107,
+            "sha256": "83f55c9ede93b40b17807f5b60ca618f9ce6ff64d85c2c25a0b0ad3e7c221f67"
+          },
+          {
+            "image": 2,
+            "role": "orm",
+            "bytes": 135837,
+            "sha256": "44ae1ce5f8064ea81e95828d40accb66af158a90f0c1518524ea1ef9faaddef6"
+          }
+        ],
+        "textured_material_count": 1,
+        "uvs": [
+          {
+            "primitive": 0,
+            "triangles": 866,
+            "range": [
+              [
+                -16.5625,
+                -30.078125
+              ],
+              [
+                16.5625,
+                30.038408279418945
+              ]
+            ],
+            "dP_dU_metres": [
+              1.2799963026698291,
+              1.2800056741869499
+            ],
+            "dP_dV_metres": [
+              0.6399965769340111,
+              0.6400028370934749
+            ],
+            "maximum_absolute_cosine_U_V": 8.826402182568385e-06,
+            "U_cross_V_opposes_outward_normal": true,
+            "absolute_architecture_projection_max_error_uv": 0.00026222283070787
+          }
+        ],
+        "uv_scope": "Actual triangle Jacobians; repeat is unbounded. No [0,1] UV restriction. Runtime derivative normal signs remain separate browser checks."
+      },
+      "exterior_rays": {
+        "passed": true,
+        "gate_measurements": [
+          {
+            "z_m": 1.12,
+            "door": {
+              "triangle": 2990,
+              "material": "door boards",
+              "distance_m": 6.493798599072244,
+              "point_architecture_xyz": [
+                0.13,
+                -18.506201400927758,
+                1.12
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 32,
+              "material": "original grey brick",
+              "distance_m": 5.793798527984256,
+              "point_architecture_xyz": [
+                3.25,
+                -19.206201472015742,
+                1.12
+              ]
+            },
+            "actual_recess_m": 0.7000000710879846
+          },
+          {
+            "z_m": 2.0,
+            "door": {
+              "triangle": 2990,
+              "material": "door boards",
+              "distance_m": 6.5282117243644695,
+              "point_architecture_xyz": [
+                0.13,
+                -18.471788275635532,
+                2.0
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 32,
+              "material": "original grey brick",
+              "distance_m": 5.828212090723579,
+              "point_architecture_xyz": [
+                3.25,
+                -19.17178790927642,
+                2.0
+              ]
+            },
+            "actual_recess_m": 0.6999996336408891
+          },
+          {
+            "z_m": 3.03,
+            "door": {
+              "triangle": 2988,
+              "material": "door boards",
+              "distance_m": 6.568491252222064,
+              "point_architecture_xyz": [
+                0.13,
+                -18.431508747777936,
+                3.03
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 32,
+              "material": "original grey brick",
+              "distance_m": 5.868491601657103,
+              "point_architecture_xyz": [
+                3.25,
+                -19.131508398342895,
+                3.03
+              ]
+            },
+            "actual_recess_m": 0.6999996505649584
+          },
+          {
+            "z_m": 4.35,
+            "door": {
+              "triangle": 2958,
+              "material": "door boards",
+              "distance_m": 6.620111849894814,
+              "point_architecture_xyz": [
+                0.13,
+                -18.379888150105188,
+                4.35
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 40,
+              "material": "original grey brick",
+              "distance_m": 5.920112110924518,
+              "point_architecture_xyz": [
+                3.25,
+                -19.079887889075483,
+                4.35
+              ]
+            },
+            "actual_recess_m": 0.6999997389702948
+          },
+          {
+            "z_m": 5.61,
+            "door": {
+              "triangle": 3018,
+              "material": "door boards",
+              "distance_m": 6.669384965097557,
+              "point_architecture_xyz": [
+                0.13,
+                -18.330615034902443,
+                5.61
+              ]
+            },
+            "reference_actual_brick_skin": {
+              "triangle": 56,
+              "material": "original grey brick",
+              "distance_m": 5.969385589319825,
+              "point_architecture_xyz": [
+                3.25,
+                -19.030614410680176,
+                5.61
+              ]
+            },
+            "actual_recess_m": 0.6999993757777325
+          }
+        ],
+        "pane_probe_count": 336,
+        "actual_pane_hits": 336,
+        "unoccluded_cell_centres": 332,
+        "partially_occluded_cell_centres": [
+          {
+            "probe": "window-1-1-10",
+            "centre_first_hit": {
+              "triangle": 3492,
+              "material": "dark timber",
+              "distance_m": 0.0951319202101165,
+              "point_architecture_xyz": [
+                -1.585416666666667,
+                -17.28486807978988,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 17510,
+              "material": "recessed glazing",
+              "distance_m": 0.26999952305718516,
+              "point_architecture_xyz": [
+                -1.585416666666667,
+                -17.110000476942815,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              -1.520416666666667,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 17510,
+              "material": "recessed glazing",
+              "distance_m": 0.269999550969219,
+              "point_architecture_xyz": [
+                -1.520416666666667,
+                -17.110000449030778,
+                12.02875
+              ]
+            }
+          },
+          {
+            "probe": "window-4-2-10",
+            "centre_first_hit": {
+              "triangle": 3559,
+              "material": "dark timber",
+              "distance_m": 0.09513155130488528,
+              "point_architecture_xyz": [
+                1.5854166666666663,
+                -17.284868448695114,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 17546,
+              "material": "recessed glazing",
+              "distance_m": 0.2699995241531642,
+              "point_architecture_xyz": [
+                1.5854166666666663,
+                -17.110000475846835,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              1.5204166666666663,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 17546,
+              "material": "recessed glazing",
+              "distance_m": 0.2699994962411304,
+              "point_architecture_xyz": [
+                1.5204166666666663,
+                -17.11000050375887,
+                12.02875
+              ]
+            }
+          },
+          {
+            "probe": "window-6-0-3",
+            "centre_first_hit": {
+              "triangle": 3428,
+              "material": "dark timber",
+              "distance_m": 0.09513161946876098,
+              "point_architecture_xyz": [
+                -4.905,
+                -17.28486838053124,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 17570,
+              "material": "recessed glazing",
+              "distance_m": 0.26999998383510637,
+              "point_architecture_xyz": [
+                -4.905,
+                -17.110000016164893,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              -4.84,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 17570,
+              "material": "recessed glazing",
+              "distance_m": 0.2700000594570455,
+              "point_architecture_xyz": [
+                -4.84,
+                -17.109999940542952,
+                12.02875
+              ]
+            }
+          },
+          {
+            "probe": "window-9-2-3",
+            "centre_first_hit": {
+              "triangle": 3623,
+              "material": "dark timber",
+              "distance_m": 0.09513146457098638,
+              "point_architecture_xyz": [
+                4.904999999999999,
+                -17.284868535429013,
+                12.02875
+              ]
+            },
+            "actual_glazing_behind_arm": {
+              "triangle": 17606,
+              "material": "recessed glazing",
+              "distance_m": 0.2700001852119736,
+              "point_architecture_xyz": [
+                4.904999999999999,
+                -17.109999814788026,
+                12.02875
+              ]
+            },
+            "same_aperture_alternate_origin": [
+              4.839999999999999,
+              -17.38,
+              12.02875
+            ],
+            "alternate_first_hit": {
+              "triangle": 17606,
+              "material": "recessed glazing",
+              "distance_m": 0.2700001741481469,
+              "point_architecture_xyz": [
+                4.839999999999999,
+                -17.10999982585185,
+                12.02875
+              ]
+            }
+          }
+        ],
+        "same_aperture_alternate_clear_count": 4,
+        "actual_timber_stile_hits": 10,
+        "actual_glazing_retreat_m": 0.20999866791778388,
+        "window_probe_origin_y_m": -17.38,
+        "failure_count": 0,
+        "failures": [],
+        "scope": "Exterior front arch/closed-door setback, all 336 authored front grid-cell centres, ten actual timber stiles/lower panels, three side/rear infill rays. Window probes start0.080m ahead of pavilion facade, outside the0.056m leaf bead and0.035m lower solid panel, inside foreground parapet: local aperture geometry, not street visibility. Four specified upper cell centres may intersect reviewed curved eave arms only if real glazing exists behind and an alternate same-aperture ray is unobstructed. Glazing recession uses glazing hits only. These sample actual triangles; they do not prove watertightness, interiors or walk-through access."
+      },
+      "coplanar_overlap": {
+        "passed": true,
+        "counts": {
+          "positive_area_pairs": 1590,
+          "opposite_facing_overlap_contact_candidate": 1294,
+          "same_facing_normal_probe_blocked": 270,
+          "same_facing_downward_virtual_ground_contact": 25,
+          "proven_local_FLOAT32_shared_boundary_residue": 1,
+          "same_facing_exposed_along_normal": 0,
+          "same_facing_exposed_from_external_camera": 0
+        },
+        "pair_area_sum_m2_not_union": {
+          "opposite_facing_overlap_contact_candidate": 671.5110415516707,
+          "same_facing_normal_probe_blocked": 2.4847268683287256,
+          "same_facing_downward_virtual_ground_contact": 32.35180705621565,
+          "proven_local_FLOAT32_shared_boundary_residue": 2.2737978082333566e-06
+        },
+        "examples": {
+          "opposite_facing_overlap_contact_candidate": [
+            {
+              "triangles": [
+                4,
+                103
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865273195222,
+              "plane_error_m": 4.44620545562399e-07,
+              "sample_architecture_xyz": [
+                -8.149999928605709,
+                -17.196458596023867,
+                7.122708065538244
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.9539394684616723e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                4,
+                102
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476862527670737,
+              "plane_error_m": 4.446205455623991e-07,
+              "sample_architecture_xyz": [
+                -8.149999844969896,
+                -16.277708587101486,
+                7.122708065538244
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.9539394684616723e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                5,
+                103
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476868018721386,
+              "plane_error_m": 4.44620545562399e-07,
+              "sample_architecture_xyz": [
+                -8.150000018110724,
+                -18.25812552465019,
+                3.4681234574616595
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.953939468461671e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                5,
+                102
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 8.496906167304743,
+              "plane_error_m": 4.446205455623991e-07,
+              "sample_architecture_xyz": [
+                -8.149999934474856,
+                -17.33937486463997,
+                3.4681256987065754
+              ],
+              "outward_normal": [
+                0.9999999999999958,
+                -9.103217700292034e-08,
+                1.953939468461671e-09
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                100,
+                190
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865127645647,
+              "plane_error_m": 9.212219460550022e-07,
+              "sample_architecture_xyz": [
+                8.149999905203837,
+                -16.484791772493132,
+                1.827291790627941
+              ],
+              "outward_normal": [
+                0.9999999999999861,
+                -1.605041570663948e-07,
+                -4.6720590984730945e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                100,
+                191
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 8.496905665777994,
+              "plane_error_m": 7.525729043188698e-07,
+              "sample_architecture_xyz": [
+                8.149999951423643,
+                -17.26062520032147,
+                5.481875218673722
+              ],
+              "outward_normal": [
+                0.9999999999999861,
+                -1.605041570663948e-07,
+                -4.6720590984730945e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                101,
+                190
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865503010423,
+              "plane_error_m": 9.21221946055004e-07,
+              "sample_architecture_xyz": [
+                8.14999994555446,
+                -17.403541886065124,
+                1.827291790627941
+              ],
+              "outward_normal": [
+                0.9999999999999885,
+                1.461306380784808e-07,
+                4.407072295426537e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                101,
+                191
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 4.476865127645621,
+              "plane_error_m": 9.21221946055004e-07,
+              "sample_architecture_xyz": [
+                8.150000079812001,
+                -18.322291999637116,
+                1.827291790627941
+              ],
+              "outward_normal": [
+                0.9999999999999885,
+                1.461306380784808e-07,
+                4.407072295426537e-08
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                224,
+                860
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 1.339346797843717e-05,
+              "plane_error_m": 9.65051984093103e-06,
+              "sample_architecture_xyz": [
+                -17.500000158524223,
+                4.9193301696023095,
+                8.954999923706055
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                224,
+                861
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.023987151922677866,
+              "plane_error_m": 9.65051984093103e-06,
+              "sample_architecture_xyz": [
+                -17.50000015147455,
+                3.7193303658853143,
+                8.954999923706055
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                224,
+                1008
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.05802672777433078,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.500000152520027,
+                3.8972924780355505,
+                8.97329699692174
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                224,
+                1009
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.013646102724729738,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.50000014563857,
+                2.725926592615104,
+                8.975444544786244
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                225,
+                1008
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.04997343766563753,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.500000156213083,
+                4.525926298190597,
+                9.02044462108019
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                225,
+                1009
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.09435406271523869,
+              "plane_error_m": 9.650519840931033e-06,
+              "sample_architecture_xyz": [
+                -17.50000014925131,
+                3.3408893845957244,
+                9.021566839925539
+              ],
+              "outward_normal": [
+                -1.0,
+                -5.874730268957402e-09,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                250,
+                329
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.026845333414369094,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000295350278,
+                -15.782142602260723,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                250,
+                328
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.0006547681894333928,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000242176876,
+                -15.412202296840487,
+                8.957142713118625
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                251,
+                329
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.023571504955866598,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000258646509,
+                -15.526785543572252,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                251,
+                328
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.0039285966479358355,
+              "plane_error_m": 4.321788372926768e-24,
+              "sample_architecture_xyz": [
+                5.150000236059562,
+                -15.369642651766124,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                -0.9999999999999897,
+                -1.4373508554210747e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                254,
+                325
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.02684528774677176,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.150000167528756,
+                -15.467857724917405,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                254,
+                324
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.000654767075582816,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.149999983838825,
+                -15.837797401018356,
+                8.957142713118625
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                255,
+                325
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.023571464857500897,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.15000004073392,
+                -15.723214349208433,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                -0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                255,
+                324
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.003928589964853655,
+              "plane_error_m": 1.4563522272364464e-23,
+              "sample_architecture_xyz": [
+                -5.149999962706286,
+                -15.880356973692914,
+                9.007142903853488
+              ],
+              "outward_normal": [
+                0.9999999999998768,
+                4.965402262566666e-07,
+                -0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                272,
+                290
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.11000011029405783,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.14999984718578,
+                -18.089999905799594,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                272,
+                291
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.050000076143001414,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.149999785873785,
+                -18.300000168379647,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                273,
+                290
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.13727286727689866,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.149999926015475,
+                -17.819999609068486,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                273,
+                291
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.022727319160160967,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                8.149999821705483,
+                -18.177272696933485,
+                9.471875162795175
+              ],
+              "outward_normal": [
+                -0.9999999999999574,
+                2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                278,
+                302
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.11000011029405783,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.149999926240069,
+                -17.970000169884827,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                278,
+                303
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.050000076143001414,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.149999864928073,
+                -17.759999907304774,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                279,
+                302
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.13727286727689864,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.150000005069764,
+                -18.240000466615932,
+                9.221875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                279,
+                303
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.022727319160160967,
+              "plane_error_m": 1.2708612291982918e-24,
+              "sample_architecture_xyz": [
+                -8.149999900759772,
+                -17.882727378750932,
+                9.471875162795175
+              ],
+              "outward_normal": [
+                0.9999999999999574,
+                -2.919615144898128e-07,
+                0.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            }
+          ],
+          "same_facing_normal_probe_blocked": [
+            {
+              "triangles": [
+                3037,
+                3252
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 8.667923886915357e-05,
+              "plane_error_m": 8.673104990709921e-07,
+              "sample_architecture_xyz": [
+                1.9911434026339805,
+                -18.357305337352052,
+                4.9018933935955005
+              ],
+              "outward_normal": [
+                0.8577277490206645,
+                2.2602610034934715e-06,
+                0.5141041806432188
+              ],
+              "outward_blocker": {
+                "triangle": 161,
+                "material": "original grey brick",
+                "distance_m": 0.03479979256640315,
+                "point_architecture_xyz": [
+                  2.0211636959281516,
+                  -18.357305258243386,
+                  4.919886933275534
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3037,
+                3253
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.666702201642408e-06,
+              "plane_error_m": 8.673104998549593e-07,
+              "sample_architecture_xyz": [
+                2.0031434113562927,
+                -18.358588168569092,
+                4.881872670252605
+              ],
+              "outward_normal": [
+                0.8577277490206645,
+                2.2602610034934715e-06,
+                0.5141041806432188
+              ],
+              "outward_blocker": {
+                "triangle": 160,
+                "material": "original grey brick",
+                "distance_m": 0.03479976731124192,
+                "point_architecture_xyz": [
+                  2.033163682988411,
+                  -18.358588089460483,
+                  4.899866196948855
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3041,
+                3240
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.639551463915526e-05,
+              "plane_error_m": 1.5564737339089688e-06,
+              "sample_architecture_xyz": [
+                1.6589992489057768,
+                -18.339767161504472,
+                5.350382192745066
+              ],
+              "outward_normal": [
+                0.7409515587345602,
+                1.6862530679114976e-06,
+                0.6715584766838865
+              ],
+              "outward_blocker": {
+                "triangle": 157,
+                "material": "original grey brick",
+                "distance_m": 0.03479991538693417,
+                "point_architecture_xyz": [
+                  1.6849324907673033,
+                  -18.339767102485755,
+                  5.373886682606381
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3041,
+                3241
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 5.109378876359681e-06,
+              "plane_error_m": 1.5564737339244943e-06,
+              "sample_architecture_xyz": [
+                1.670999361863251,
+                -18.340785184702206,
+                5.337142093791819
+              ],
+              "outward_normal": [
+                0.7409515587345602,
+                1.6862530679114976e-06,
+                0.6715584766838865
+              ],
+              "outward_blocker": {
+                "triangle": 157,
+                "material": "original grey brick",
+                "distance_m": 0.034799936951518916,
+                "point_architecture_xyz": [
+                  1.6969326197030903,
+                  -18.340785125683453,
+                  5.3606465981350135
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3075,
+                3108
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.636600770639307e-05,
+              "plane_error_m": 1.6319688405347552e-06,
+              "sample_architecture_xyz": [
+                -1.6624282676823183,
+                -18.339915429760076,
+                5.346598990141731
+              ],
+              "outward_normal": [
+                -0.7409521212383398,
+                1.1537541863563217e-06,
+                0.671557856056404
+              ],
+              "outward_blocker": {
+                "triangle": 123,
+                "material": "original grey brick",
+                "distance_m": 0.03479975883471695,
+                "point_architecture_xyz": [
+                  -1.6883614132337323,
+                  -18.339915389378955,
+                  5.370103353147265
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3075,
+                3109
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 5.102708871740233e-06,
+              "plane_error_m": 1.2379562989240332e-06,
+              "sample_architecture_xyz": [
+                -1.6504281772142464,
+                -18.339897789636364,
+                5.359839089094978
+              ],
+              "outward_normal": [
+                -0.7409521212383398,
+                1.1537541863563217e-06,
+                0.671557856056404
+              ],
+              "outward_blocker": {
+                "triangle": 122,
+                "material": "original grey brick",
+                "distance_m": 0.03479971898154374,
+                "point_architecture_xyz": [
+                  -1.6763612932363672,
+                  -18.33989774925529,
+                  5.3833434253368
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3079,
+                3096
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 8.669834784996551e-05,
+              "plane_error_m": 1.0565919364019556e-06,
+              "sample_architecture_xyz": [
+                -1.9945717914311756,
+                -18.357529596970075,
+                4.896173165815714
+              ],
+              "outward_normal": [
+                -0.8577284099697517,
+                1.3355893254012676e-06,
+                0.514103077922101
+              ],
+              "outward_blocker": {
+                "triangle": 119,
+                "material": "original grey brick",
+                "distance_m": 0.03479989156416362,
+                "point_architecture_xyz": [
+                  -2.0245921927716193,
+                  -18.357529550224594,
+                  4.914166717795791
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                3079,
+                3097
+              ],
+              "materials": [
+                "door boards",
+                "dark timber"
+              ],
+              "area_m2": 6.671620608881738e-06,
+              "plane_error_m": 1.031113150731382e-06,
+              "sample_architecture_xyz": [
+                -1.982571820634931,
+                -18.3572466227168,
+                4.91619388915861
+              ],
+              "outward_normal": [
+                -0.8577284099697517,
+                1.3355893254012676e-06,
+                0.514103077922101
+              ],
+              "outward_blocker": {
+                "triangle": 119,
+                "material": "original grey brick",
+                "distance_m": 0.034799914213198495,
+                "point_architecture_xyz": [
+                  -2.0125922414020954,
+                  -18.35724657597129,
+                  4.934187452782624
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                3260
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.00042792589681739547,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.164999975934515,
+                -17.4376231014013,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.164999975934515,
+                  -17.4376231014013,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                3261
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.03657978804869274,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.173804209072933,
+                -17.252499657444822,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.173804209072933,
+                  -17.252499657444822,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                10308
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.04363603267255774,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.24829625932993,
+                -17.385229438635527,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.24829625932993,
+                  -17.385229438635527,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                10309
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.00261390792039087,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.317078862074393,
+                -17.372590619395957,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.317078862074393,
+                  -17.372590619395957,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                10297
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.013012889033489562,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.19963052347886,
+                -17.261000182695156,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.19963052347886,
+                  -17.261000182695156,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                10296
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.006943754560568458,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.268011287888752,
+                -17.361000546035815,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.268011287888752,
+                  -17.361000546035815,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                3296
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.006631907315101903,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.189054069945987,
+                -17.236708032937553,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.189054069945987,
+                  -17.236708032937553,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1132,
+                3297
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.00038270174511237403,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.161429253124345,
+                -17.236708170435854,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.161429253124345,
+                  -17.236708170435854,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                3261
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.01339248385148671,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.263804163088805,
+                -17.252499656156225,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.263804163088805,
+                  -17.252499656156225,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                10308
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.00011397568335664177,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.197535307582548,
+                -17.212868615044854,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.197535307582548,
+                  -17.212868615044854,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                10309
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.04113610043552362,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.373296307676249,
+                -17.372590619395957,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.373296307676249,
+                  -17.372590619395957,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                10297
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.016987228694774245,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.303880508725547,
+                -17.26100017778114,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.303880508725547,
+                  -17.26100017778114,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                10296
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.023056363167695357,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.4192500840745,
+                -17.261000114196413,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.4192500840745,
+                  -17.261000114196413,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                3296
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.04439511701725941,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.327624689894902,
+                -17.23670780301309,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.327624689894902,
+                  -17.23670780301309,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1133,
+                3297
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.00039012010016308083,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -5.16360043475899,
+                -17.14055588508156,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -5.16360043475899,
+                  -17.14055588508156,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1144,
+                3260
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.013876215289809075,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.0359565238877453,
+                -17.41133314304291,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.0359565238877453,
+                  -17.41133314304291,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1144,
+                3261
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.026663093724474694,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -2.980091069326366,
+                -17.26856598242007,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -2.980091069326366,
+                  -17.26856598242007,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1144,
+                10320
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.04363603418860572,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.048296112060566,
+                -17.38522903100923,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.048296112060566,
+                  -17.38522903100923,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1144,
+                10321
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.0026139119784414633,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.117078647254469,
+                -17.372590208363274,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.117078647254469,
+                  -17.372590208363274,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1145,
+                3260
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.007044556469673701,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.2167344054677107,
+                -17.413321173048747,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.2167344054677107,
+                  -17.413321173048747,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1145,
+                3261
+              ],
+              "materials": [
+                "worn coping",
+                "dark timber"
+              ],
+              "area_m2": 0.05321645199564113,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -3.1611736448603724,
+                -17.271332674141256,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -3.1611736448603724,
+                  -17.271332674141256,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                1145,
+                10320
+              ],
+              "materials": [
+                "worn coping",
+                "red timber"
+              ],
+              "area_m2": 0.00011397416730879418,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -2.997535087232766,
+                -17.21286818852856,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": {
+                "triangle": 99,
+                "material": "original grey brick",
+                "distance_m": 9.049800190734864,
+                "point_architecture_xyz": [
+                  -2.997535087232766,
+                  -17.21286818852856,
+                  0.0
+                ]
+              },
+              "clear_external_camera_architecture_xyz": null
+            }
+          ],
+          "same_facing_downward_virtual_ground_contact": [
+            {
+              "triangles": [
+                8,
+                19
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.10284777990319015,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -8.325000029545894,
+                -18.468850610223154,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                8,
+                222
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 1.1266047932949592,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -15.512500144523703,
+                -16.12513417341256,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                9,
+                19
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.01965241351512868,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -8.412500143724206,
+                -18.643850847314653,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                9,
+                222
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 5.895893799984714,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -16.174999999238103,
+                -17.450133615612145,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                18,
+                99
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.8137721105378155,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -6.162499971830988,
+                -18.59291681035392,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                19,
+                99
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.6437300462838802,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -7.487500575263455,
+                -18.592917031750844,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                98,
+                183
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.6180127663747105,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                7.581223389010589,
+                -18.622717647665034,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                98,
+                182
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.787952636659346,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                6.3503124454372415,
+                -18.588218286401055,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                99,
+                983
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.13089720548096326,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -2.5751694911408025,
+                -19.237290490544275,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                99,
+                973
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 1.5730254040281264e-06,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -4.224905528901103,
+                -19.24999940070927,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                99,
+                985
+              ],
+              "materials": [
+                "original grey brick",
+                "worn paving"
+              ],
+              "area_m2": 0.1309080783471141,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                2.574941093683502,
+                -19.23729103621833,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                99,
+                183
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.025716443916044832,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                5.874528406090391,
+                -18.865634094473116,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                99,
+                182
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.025816827780493157,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                5.593723181778021,
+                -18.796769576257994,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                182,
+                193
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.011229131157404726,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                8.237500041033972,
+                -18.382083103828087,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                183,
+                193
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.11127098568683887,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                8.325000076484255,
+                -18.557083375795226,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                192,
+                203
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 6.355444988645612,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                16.23911683532178,
+                -16.78125915312195,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                192,
+                202
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.2770556688568761,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                14.914378003013471,
+                -16.774866324522055,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                193,
+                203
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.38003260192087096,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                15.259715145704329,
+                -18.106259136092756,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                193,
+                202
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.00996748894859015,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                14.859961369493517,
+                -18.106259184649232,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                202,
+                212
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.30096435218234524,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                15.512500136409177,
+                15.81357187317812,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                202,
+                213
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 6.721533950740699,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                16.175000031006793,
+                17.138571315377703,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                212,
+                222
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.2870231602745334,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -14.904154548647726,
+                17.025000029382674,
+                0.0
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                212,
+                223
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 6.735477603843431,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -16.229154692798232,
+                17.024999945342486,
+                0.0
+              ],
+              "outward_normal": [
+                -0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                223,
+                857
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.8002707234905955,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -17.67500006954923,
+                3.6064862484718354,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            },
+            {
+              "triangles": [
+                223,
+                856
+              ],
+              "materials": [
+                "original grey brick",
+                "original grey brick"
+              ],
+              "area_m2": 0.03972992536409244,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -17.762500003074198,
+                4.806486052188831,
+                0.0
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            }
+          ],
+          "proven_local_FLOAT32_shared_boundary_residue": [
+            {
+              "triangles": [
+                873,
+                1005
+              ],
+              "materials": [
+                "worn paving",
+                "worn paving"
+              ],
+              "area_m2": 2.2737978082333566e-06,
+              "plane_error_m": 0.0,
+              "sample_architecture_xyz": [
+                -17.500000356737225,
+                3.719999534514408,
+                9.050000190734863
+              ],
+              "outward_normal": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "outward_blocker": null,
+              "clear_external_camera_architecture_xyz": null
+            }
+          ]
+        },
+        "scope": "All active triangles queried through three dominant-axis projection trees, without rounded plane bins; candidates rechecked at <=2e-5m plane distance, 1e-8 normal dot tolerance and >1e-6m2 overlap. One interior point per positive-area intersection has an outward normal ray up to100m. Clear outward ray confirms exposed duplicate above the virtual ground. Strict downward z0 contacts are counted separately because the declared flat scene ground covers them; no positive-height face gets that exemption. Normal-blocked samples are additionally tested toward 12 explicit exterior ground/overview cameras; a clear front-facing sightline fails. Remaining blocked samples are not a global internalness proof. One reviewed platform shared-edge FLOAT32 residue may be classified only after actual all-triangle source matching and bounded width proof. Opposite-facing overlaps are possible component contacts, not a solid-volume/internalness proof. No exhaustive near-coplanar/slanted visibility guarantee."
+      },
+      "local_numeric_boundary_proof": {
+        "source_parts": {
+          "file": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/lod-construction-parts.json.gz",
+          "bytes": 267296,
+          "sha256": "8997e12fc686b697b90ef57b2f50afc591b5c7afe3119f31c82bd8cb3f385ec3"
+        },
+        "all_source_FLOAT32_triangles_and_materials_equal_GLB": true,
+        "exception_scope": "Only the reviewed upward platform/wall-walk shared edge; exact pre-quantization source intersection has zero area. No general area tolerance increase, no hidden-surface exemption.",
+        "proven_pairs": [
+          {
+            "triangles": [
+              873,
+              1005
+            ],
+            "labels": [
+              "enclosure/single-owned-wall-walk-top",
+              "east-stair/estimated-top-link-platform"
+            ],
+            "area_m2": 2.2737978082333566e-06,
+            "minimum_rectangle_width_m": 1.5091144227598424e-06,
+            "pre_quantization_overlap_area_m2": 0.0,
+            "shared_source_edge_length_m": 2.4,
+            "source_shared_edge_x_m": -17.5,
+            "maximum_distance_from_source_edge_m": 8.598749516863791e-07,
+            "actual_maximum_vertex_displacement_each_triangle_m": [
+              9.143375662171948e-07,
+              6.982753812946262e-07
+            ],
+            "propagated_half_ulp_vertex_displacement_bound_each_triangle_m": [
+              1.1255105246060393e-06,
+              1.1255105246060393e-06
+            ],
+            "sum_actual_vertex_displacement_bound_m": 1.612612947511821e-06
+          }
+        ]
+      }
+    }
+  ],
+  "inputs_unchanged_after": true
+}

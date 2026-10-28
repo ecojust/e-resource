@@ -1,0 +1,194 @@
+{
+  "schema": "jinshanwei-gatehouse-root-authoring-design-v2",
+  "status": "ACCEPTED_FOR_DRAFT_AUTHORING_AND_VISUAL_REVIEW_ONLY",
+  "created_utc": "2026-10-27T22:13:43.915410+00:00",
+  "model_id": "jinshanwei-wengcheng-gatehouse",
+  "name": "金山卫瓮城城楼",
+  "district": "金山区",
+  "author": "agent",
+  "scope": "Upper gatehouse pavilion, enclosing masonry exterior, front entry arch and low steps, east exterior stair. Exclude separate memorial wall, sculptures, garden, river and other buildings. No interior reconstruction or walkable upper-deck claim.",
+  "frame": {
+    "anchor": [
+      121.31844475865365,
+      30.720547351191197
+    ],
+    "anchor_role": "Estimated enclosure centre from mean four hand-selected satellite parapet corners; not surveyed roof point or source centroid",
+    "architecture_X_EN": [
+      -0.9645897061200785,
+      -0.263754997767209
+    ],
+    "architecture_Y_EN": [
+      0.263754997767209,
+      -0.9645897061200785
+    ],
+    "front_direction": "negative architecture Y, approximately344.7deg clockwise from north",
+    "coordinates": "Build local architecture XYZ metres, then bake EN rotation; GLB east/up/-north, heading0",
+    "ground_altitude_m": 0,
+    "ground_role": "Virtual scene ground, not measured terrain elevation"
+  },
+  "enclosure": {
+    "upper_width_m": 35.0,
+    "upper_depth_m": 36.7,
+    "approximate_upper_outline_wgs84": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            121.31857057554153,
+            30.720747818424833
+          ],
+          [
+            121.31821779215382,
+            30.720664891260558
+          ],
+          [
+            121.31831894176578,
+            30.720346883540753
+          ],
+          [
+            121.3186717251535,
+            30.72042981097851
+          ],
+          [
+            121.31857057554153,
+            30.720747818424833
+          ]
+        ]
+      ]
+    },
+    "metric_basis": "Esri visible parapet outline ~34-36 by37m; hand-picked corners, unknown image date/parallax, estimate only",
+    "wing_top_m": 9.65,
+    "central_gate_top_m": 10.25,
+    "central_gate_bay_width_m": 16.3,
+    "central_gate_projection_m": 0.55,
+    "bottom_wall_outset_m": 0.35,
+    "wall_walk_top_m": 9.05,
+    "inner_surface_m": 8.45,
+    "inner_surface_role": "Simplified unobserved inward horizontal surface below parapet; unknown absolute level. No invented ground-depth pit or tiled pavilion roof over whole enclosure.",
+    "upper_wall_walk_width_m": 3.0
+  },
+  "entry": {
+    "threshold_m": 0.65,
+    "opening_width_m": 4.65,
+    "opening_height_m": 5.45,
+    "semicircle_rise_m": 2.325,
+    "arch_ring_m": 0.42,
+    "dark_closed_door_recess_m": 0.7,
+    "plaque_text": "瓮城",
+    "plaque_width_m": 2.95,
+    "plaque_height_m": 1.1,
+    "plaque_center_height_m": 7.65,
+    "front_low_steps": 5,
+    "step_total_rise_m": 0.65,
+    "step_depth_m": 0.4,
+    "step_width_m": 10.3
+  },
+  "pavilion": {
+    "center_architecture_xy": [
+      0,
+      -14.2
+    ],
+    "body_width_m": 10.6,
+    "body_depth_m": 6.2,
+    "body_floor_m": 9.05,
+    "body_eave_m": 12.75,
+    "lower_eave_width_m": 14.2,
+    "lower_eave_depth_m": 9.3,
+    "lower_eave_center_height_m": 12.75,
+    "lower_eave_corner_lift_m": 1.15,
+    "lower_roof_inner_height_m": 14.0,
+    "upper_eave_width_m": 11.8,
+    "upper_eave_depth_m": 8.0,
+    "upper_eave_center_height_m": 14.6,
+    "upper_eave_corner_lift_m": 1.1,
+    "upper_main_ridge_height_m": 17.8,
+    "highest_ridge_ornament_target_m": 18.9,
+    "roof_type_role": "Double-eaved curved silhouette evidenced; exact hidden hip/gable intersections estimated. Separate tiers and ridge/corner ornaments required.",
+    "front_layout": "Red-brown posts and beams; broad central fine lattice group and two side groups with coarser panes. Detailed leaf/bar count approximate.",
+    "side_back": "Observed east side light infill with timber frame; hidden other side/rear simplified independently, do not clone front window grid."
+  },
+  "exterior_stair": {
+    "side": "negative architecture X, approximately east",
+    "width_m": 2.4,
+    "lower_run_axis": "from front towards rear, positive architecture Y",
+    "lower_run_start_xy": [
+      -20.0,
+      -15.0
+    ],
+    "visible_lower_steps_estimate": 36,
+    "hidden_upper_steps_estimate": 15,
+    "total_rise_m": 9.05,
+    "tread_m": 0.32,
+    "landing_depth_m": 1.2,
+    "upper_turn": "Continue positive architecture Y outside wall until wall-walk height, then short positive-X landing into wall walk.",
+    "status": "Visible stair location/run established only; exact count, landing and concealed upper connection are estimates, not calibrated observations. No walking/stair collision acceptance.",
+    "connection": "Provide estimated gap only in upper parapet at arrival, no opening through main wall below deck. Final step/wall-walk heights must match exactly and stair foundation/support remain continuous.",
+    "adjustment_reason": "Original estimated15-step upper +X turn intersects the solid wall before reaching wall-walk height. Hidden connection revised to avoid this geometric contradiction; not a new observed fact."
+  },
+  "height_basis": "Initial image-plane ratios to independently estimated35m facade width, with approximate projection/setback; NOT CNBH14.8m source height, not measured. Must compare front and oblique rendered views before accepting model.",
+  "estimated_details": [
+    "heights and wall batter",
+    "wall thickness and inward-surface elevation",
+    "roof depth and hidden slope intersections",
+    "lattice counts and ridge ornaments",
+    "stair count and concealed upper landing"
+  ],
+  "source_relationship": {
+    "source_uuid": "38cf1309-6ce3-4fc2-b02e-9ad5255ad993",
+    "macro": "14-13713-6721",
+    "localId": 531,
+    "record_id": "w1074070665@1",
+    "meaning": "Candidate correction of erroneous whole-park building extrusion; not identical to the independent35x37m building outline",
+    "owner_installation_accepted": false,
+    "collision_replacement_accepted": false,
+    "source_geometry_must_remain_unchanged": true
+  },
+  "materials": "Original procedural brick PBR and geometry tiles; no source photograph or satellite pixels redistributed",
+  "budget": {
+    "single_public_file_exclusive_bytes": 100000000,
+    "author_directory_cap_bytes": 35000000,
+    "raw_glb_target_max_bytes": 8000000,
+    "lod_source_target_max_bytes": 2500000,
+    "native_target_max_bytes": 5000000
+  },
+  "evidence": [
+    {
+      "file": "research/jinshan-v1/architectural-reading.json",
+      "bytes": 12632,
+      "sha256": "5e233e5a853bfb1040f512b54f82d3bc363ee6242ae61974fda6d46a72741c53"
+    },
+    {
+      "file": "research/jinshan-satellite-v1/LOCALIZATION.json",
+      "bytes": 8921,
+      "sha256": "4438eb1c9c2d7e80367ae6f192b6bed6ab4d1279c8d7baaa4a91c14146a74dd9"
+    },
+    {
+      "file": "research/jinshan-satellite-v1/detail-context.json",
+      "bytes": 873,
+      "sha256": "97189b5af9dcb65e44537374b6467f59162ebbc3bed2724e41fab09786fb5c3c"
+    },
+    {
+      "file": "research/jinshan-satellite-v1/detail-context.jpg",
+      "bytes": 165483,
+      "sha256": "56d40ed0caddafd0ea0c40d15612d9451bab979ddac4e0a5fe48dc58d8ab77e1"
+    },
+    {
+      "file": "research/jinshan-v1/memorial-reference/front.jpg",
+      "bytes": 103322,
+      "sha256": "03bf158afad4e211b8f9dfeda4d2b88ab13150608ca46c49bec1e77ae73b4f23"
+    },
+    {
+      "file": "research/jinshan-v1/memorial-reference/aerial-oblique.jpg",
+      "bytes": 125881,
+      "sha256": "5adb0d1c1dc4039cf229f3a2d76c483633e9b7e5bb36930c757eaa5a45572cde"
+    },
+    {
+      "file": "integration/jinshan-candidate-v1/SOURCE_QUERY.json",
+      "bytes": 114238,
+      "sha256": "4b5513dcf358be769979f1adc1c1705ebe7bc9ca59ea5f54a923721b7931f2ba"
+    }
+  ],
+  "published": false,
+  "MAIN_modified": false,
+  "previous_design_sha256": "942bbff1b4b55c2f7ac407f248b80bb27b388a56ee8670ab8c2989b7d9b2e761"
+}

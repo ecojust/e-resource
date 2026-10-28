@@ -95,7 +95,8 @@ function cacheFixture() {
   const functions=sceneCode.slice(sceneCode.indexOf('  function sourceFeatures('),sceneCode.indexOf('  async function waitForData('));
   const getter=sceneCode.match(/collisionRevision:\(\)=>\{([^}]+)\}/)?.[1] || 'return 0;';
   const cache=new Function('map','performance','boundsOf','geometryContains','nearestOnLine',
-    `${declaration}\nconst buildingMode='overture',buildingSourceId='buildings',sourceId='basemap';\n${functions}\n`+
+    `${declaration}\nconst buildingMode='overture',buildingSourceId='buildings',sourceId='basemap';
+const syncSourceGeometryCorrections=()=>false,sourceGeometryCorrections={beginCollisionPass(){},filterFeature:f=>f.geometry,getCollisionGeometries:()=>[]};\n${functions}\n`+
     `return {revision(){${getter}},collisionAt,dirty(){collisionDirty=true},`+
     `state(){return {dirty:collisionDirty,updated:collisionUpdated,polygons:polygons.length}}};`)(
       map,{now:()=>now},bounds,contains,()=>null);

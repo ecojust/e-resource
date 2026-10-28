@@ -1,5 +1,6 @@
 import {assetURL, readVerifiedBytes} from './ordinary-building-catalog.js';
 import {sameJSON as equal} from './ordinary-contracts.js';
+import {markVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 const assert = (condition, message) => { if (!condition) throw Error(message); };
 
 // Explicit ordinary records always use the declared byte/SHA contract, even
@@ -24,7 +25,11 @@ export async function loadOrdinaryLandmarkAsset({record, variant, loader, fetchF
     assert(!controller.signal.aborted && !record.catalogDisposed, 'Obsolete ordinary model');
     // The caller retains/disposes late parsed results using the existing
     // request signal and detailWanted checks; no source or feature owner is acquired by this loader.
-    return await loader.parseAsync(buffer, new URL('.', assetURL(asset.file, baseURL)).href);
+    const parsed = await loader.parseAsync(buffer, new URL('.', assetURL(asset.file, baseURL)).href);
+    if (!controller.signal.aborted && !record.catalogDisposed) {
+      markVerifiedOrdinaryAsset(parsed.scene, {modelId: record.id, variant: variant === 'distant' ? 'lod' : 'web', asset});
+    }
+    return parsed;
   } finally {
     if (record.catalogController === controller) record.catalogController = null;
   }
@@ -33,7 +38,8 @@ export async function loadOrdinaryLandmarkAsset({record, variant, loader, fetchF
 /** Parameters are existing map-scene closures. This module owns no global scene. */
 export function createOrdinaryMacroRegistrar({cityDetails, landmarkRecords, landmarkBoundaries, preciseLandmarkIds,
   tileSuppression, disposeModel, updateLandmarkVisibility, updateBuildingExclusions, reportLandmarks = () => {},
-  onError = () => {}, onNearbyRecords = () => {}}) {
+  onError = () => {}, onNearbyRecords = () => {},
+  isSourceVisible = record => record.status === 'loaded' && Boolean(record.object?.visible)}) {
   const nearbyByOwner = new Map();
   const publishNearby = () => onNearbyRecords([...nearbyByOwner.values()].flat());
   return ({owner, macroId, models, registry, baseURL}) => {
@@ -83,7 +89,7 @@ export function createOrdinaryMacroRegistrar({cityDetails, landmarkRecords, land
         if (!borrowedBoundaries.has(record.id)) { landmarkBoundaries.delete(record.id); preciseLandmarkIds.delete(record.id); }
         releaseSource(record.id);
       }
-      cityDetails.setVisibleLandmarks([...landmarkRecords.values()].filter(r=>r.status==='loaded'&&r.object?.visible).map(r=>r.id));
+      cityDetails.setVisibleLandmarks([...landmarkRecords.values()].filter(isSourceVisible).map(r=>r.id));
       cityDetails.removeMacroReplacements(owner);
       for (const record of planned) if (record.object) disposeModel(record.object);
       throw error;
@@ -113,7 +119,7 @@ export function createOrdinaryMacroRegistrar({cityDetails, landmarkRecords, land
           releaseSource(record.id);
         }
         // Existing static/curated and other macro models remain in the full set.
-        cityDetails.setVisibleLandmarks([...landmarkRecords.values()].filter(record=>record.status==='loaded'&&record.object?.visible).map(record=>record.id));
+        cityDetails.setVisibleLandmarks([...landmarkRecords.values()].filter(isSourceVisible).map(record=>record.id));
         cityDetails.removeMacroReplacements(owner);
         for (const record of planned) {
           landmarkRecords.delete(record.id);

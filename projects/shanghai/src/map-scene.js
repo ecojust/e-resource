@@ -12,6 +12,7 @@ import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-stream
 import { OrdinaryCityDetailStreamer as CityDetailStreamer } from './ordinary-city-detail-streamer.js';
 import { OrdinaryBuildingCatalog } from './ordinary-building-catalog.js';
 import { createOrdinaryMacroRegistrar, loadOrdinaryLandmarkAsset, isOrdinaryLandmarkRecord } from './ordinary-scene-adapter.js';
+import { SourceGeometryCorrectionState } from './source-geometry-correction.js';
 import { modelSurfaceKind, isArchitecturalBuilding } from './precise-registration-ui.js';
 import { StreetInteraction, DEFAULT_GROUND_HEIGHT } from './street-interaction.js';
 import { loadStreetAssets } from './street-assets.js';
@@ -276,6 +277,17 @@ export async function createShanghaiScene(options = {}) {
   let explicitCamera = null, customLayerReady = false;
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const landmarkRecords = new Map();
+  const sourceGeometryCorrections = new SourceGeometryCorrectionState({
+    getRecords:()=>landmarkRecords, getBoundaries:()=>landmarkBoundaries, getScene:()=>scene, getMode:()=>buildingMode,
+    onChange(){
+      collisionDirty=true; collisionUpdated=-Infinity; collisionRevision+=1;
+      if(!destroyed){osmSuppression?.schedule();map.triggerRepaint();}
+    }});
+  function syncSourceGeometryCorrections() { return sourceGeometryCorrections.sync(); }
+  function isLandmarkSourceActive(record) {
+    const visible=record.status==='loaded' && Boolean(record.object?.visible);
+    return visible && (!sourceGeometryCorrections.isConfigured(record.id) || sourceGeometryCorrections.isActive(record.id));
+  }
   let ordinaryCatalog=null, updatingOrdinaryCatalog=false, nearbyOrdinaryRecords=[];
   const streetInteraction = new StreetInteraction();
   let localDataKind = 'city', streamingSignature = '', streamNoticeTime = 0, streamErrorTime = 0;
@@ -319,11 +331,14 @@ export async function createShanghaiScene(options = {}) {
         // include buildings owned by an adjacent, not-yet-loaded cell.
         cells:localStreamer.getVisible().map(record=>({id:record.id,bounds:record.bounds})),
         landmarks:[...landmarkRecords.values()].filter(record=>record.status==='loaded' && record.object?.visible)
+          .filter(record=>!sourceGeometryCorrections.isConfigured(record.id))
           .map(record=>({id:record.id,geometry:landmarkBoundaries.get(record.id)?.confirmed_boundary})).filter(item=>item.geometry),
         // Generic GLBs omit these buildings even when their detailed download
         // fails. Reserve their footprints so a generic cell cannot hide them.
-        reserved:[...landmarkBoundaries].filter(([id])=>staticLandmarkIds.has(id))
+        reserved:[...landmarkBoundaries].filter(([id,boundary])=>staticLandmarkIds.has(id)
+          && !Object.hasOwn(boundary,'source_geometry_correction'))
           .map(([id,boundary])=>({id,geometry:boundary.confirmed_boundary})).filter(item=>item.geometry),
+        sourceGeometryCorrections:sourceGeometryCorrections.getOSMCorrections(sourceId,'building'),
       };
     },
     onChange(){if(!destroyed)map.triggerRepaint();}});
@@ -506,8 +521,9 @@ export async function createShanghaiScene(options = {}) {
         if (record.object.visible !== nearby) changed = true;
         record.object.visible = nearby;
       }
-      const active=record.status==='loaded' && Boolean(record.object?.visible);
-      if(record.object?.userData?.streetInteractionOwner)streetInteraction.setOwnerActive(record.id,active);
+      const visible=record.status==='loaded' && Boolean(record.object?.visible);
+      const active=isLandmarkSourceActive(record);
+      if(record.object?.userData?.streetInteractionOwner)streetInteraction.setOwnerActive(record.id,visible);
       const greenery=record.object?.userData?.streetAssembly?.greenery;
       if(greenery)greenery.updateDistance(Math.min(...greenery.locations.map(location=>distanceMetres(target,location))));
       if(active!==record.exclusionActive || preciseLandmarkIds.has(record.id)) {
@@ -522,11 +538,11 @@ export async function createShanghaiScene(options = {}) {
         suppression.setOwner(owner,ids).then(()=>{if(!destroyed)map.triggerRepaint();});
       }
     }
-    cityDetails.setVisibleLandmarks([...landmarkRecords.values()]
-      .filter(record=>record.status==='loaded' && record.object?.visible).map(record=>record.id));
+    const correctionChanged=syncSourceGeometryCorrections();
+    cityDetails.setVisibleLandmarks([...landmarkRecords.values()].filter(isLandmarkSourceActive).map(record=>record.id));
     // Existing source-owner restoration and OSM coverage changes run before
     // disposing hidden models. Visible near-field detail never enters this LRU.
-    if (changed) updateBuildingExclusions();
+    if (changed || correctionChanged) updateBuildingExclusions();
     for (const record of selectHiddenDetailEvictions(landmarkRecords.values(),detailCacheLimits)) {
       if (releaseHiddenDetail(record,disposeModel)) detailCacheStats.evicted++;
     }
@@ -538,6 +554,7 @@ export async function createShanghaiScene(options = {}) {
     updateLocalModels();
   }
   function updateBuildingExclusions() {
+    syncSourceGeometryCorrections();
     for (const id of [BUILDINGS, BUILDING_PARTS, OSM_BUILDINGS]) {
       if (!map.getLayer(id)) continue;
       const base = buildingBaseFilters.get(id), filter = base ? ['all', base] : ['all'];
@@ -572,6 +589,7 @@ export async function createShanghaiScene(options = {}) {
     cityDetails.detach(object);
     lighting?.releaseModel(object);
     scene.remove(object);
+    syncSourceGeometryCorrections();
     disposeModelResources(object);
   }
   function prepareCityObject(group, record) {
@@ -613,6 +631,7 @@ export async function createShanghaiScene(options = {}) {
   function setOrdinaryCatalog(catalog,{districts=options.districts||[],baseURL=new URL('../',import.meta.url).href}={}) {
     if (!ordinaryCatalog) {
       const registerMacro=createOrdinaryMacroRegistrar({cityDetails,landmarkRecords,landmarkBoundaries,preciseLandmarkIds,
+        isSourceVisible:isLandmarkSourceActive,
         tileSuppression,disposeModel,updateLandmarkVisibility,updateBuildingExclusions,reportLandmarks,onError:onLoadError,
         onNearbyRecords(records){nearbyOrdinaryRecords=records;options.onNearbyOrdinaryRecords?.(records);}});
       ordinaryCatalog=new OrdinaryBuildingCatalog({baseURL,districts,registerMacro,
@@ -688,11 +707,24 @@ export async function createShanghaiScene(options = {}) {
     try { return map.querySourceFeatures(source, {sourceLayer: layer}); } catch { return []; }
   }
   function rebuildCollisionCache(force = false) {
+    syncSourceGeometryCorrections();
     const now = performance.now();
     if (!force && (!collisionDirty || now - collisionUpdated < 850)) return;
     if (map.getZoom() < 14) return;
     collisionUpdated = now; collisionDirty = false; polygons = []; largePolygons = []; grid = new Map(); roadLines = [];
+    sourceGeometryCorrections.beginCollisionPass();
     const seen = new Set();
+    function addCollisionGeometry(geometry, kind, id) {
+      const box=boundsOf(geometry), key=`${kind}:${box.join(',')}:${id}`;
+      if(seen.has(key))return;seen.add(key);
+      const record={box,geometry,kind};polygons.push(record);
+      const x0=Math.floor(box[0]*1000),x1=Math.floor(box[2]*1000);
+      const y0=Math.floor(box[1]*1000),y1=Math.floor(box[3]*1000);
+      if((x1-x0+1)*(y1-y0+1)>120){largePolygons.push(record);return;}
+      for(let x=x0;x<=x1;x++)for(let y=y0;y<=y1;y++){
+        const key=`${x}:${y}`;if(!grid.has(key))grid.set(key,[]);grid.get(key).push(record);
+      }
+    }
     const inputs = buildingMode === 'overture'
       ? [['building', 'building', buildingSourceId], ['building_part', 'building', buildingSourceId], ['water', 'water', sourceId]]
       : [['building', 'building', sourceId], ['water', 'water', sourceId]];
@@ -700,17 +732,11 @@ export async function createShanghaiScene(options = {}) {
       for (const f of sourceFeatures(layer, source)) {
         if (f.properties?.is_underground === true) continue;
         if (!['Polygon', 'MultiPolygon'].includes(f.geometry.type)) continue;
-        const box = boundsOf(f.geometry), key = `${kind}:${box.join(',')}:${f.id || ''}`;
-        if (seen.has(key)) continue; seen.add(key);
-        const record = {box, geometry: f.geometry, kind}; polygons.push(record);
-        const x0 = Math.floor(box[0] * 1000), x1 = Math.floor(box[2] * 1000);
-        const y0 = Math.floor(box[1] * 1000), y1 = Math.floor(box[3] * 1000);
-        if ((x1-x0+1)*(y1-y0+1) > 120) {largePolygons.push(record); continue;}
-        for (let x=x0; x<=x1; x++) for (let y=y0; y<=y1; y++) {
-          const key = `${x}:${y}`; if (!grid.has(key)) grid.set(key, []); grid.get(key).push(record);
-        }
+        const geometry=kind==='building' ? sourceGeometryCorrections.filterFeature(f,{source,sourceLayer:layer,kind,snapshot:true}) : f.geometry;
+        if(geometry)addCollisionGeometry(geometry,kind,f.id || '');
       }
     }
+    for(const {id,geometry} of sourceGeometryCorrections.getCollisionGeometries())addCollisionGeometry(geometry,'building',`correction:${id}`);
     for (const f of sourceFeatures('transportation')) {
       const properties = f.properties || {}, type = properties.class || '';
       if (['rail', 'aerialway', 'ferry'].includes(type)) continue;
@@ -747,7 +773,15 @@ export async function createShanghaiScene(options = {}) {
     rebuildCollisionCache(true); return false;
   }
   async function findSafePosition({lng,lat,timeout=8000}) {
-    const loaded = await waitForData(timeout); rebuildCollisionCache(true);
+    const correctionDeadline=performance.now()+Math.max(0,Number.isFinite(timeout)?timeout:0);
+    const loaded = await waitForData(timeout);
+    // Data can finish before the requested ordinary GLB has verified/parsed.
+    // Only a configured, exact live component may consume remaining time;
+    // original collision remains in force until normal activation succeeds.
+    while(!destroyed && performance.now()<correctionDeadline && pendingSourceCorrectionAt(lng,lat)) {
+      await sleep(Math.min(100,Math.max(0,correctionDeadline-performance.now())));
+    }
+    rebuildCollisionCache(true);
     const blocked=point=>collisionAt(point.lng,point.lat)||streetInteraction.sweep(point,point,{radius:.38,height:1.75});
     if (!blocked({lng,lat})) return {lng,lat,adjusted:false,verified:loaded && polygons.length>0};
     const candidates = roadLines.map(road => nearestOnLine({lng,lat},road.coordinates))
@@ -758,6 +792,11 @@ export async function createShanghaiScene(options = {}) {
       if(!blocked(p))return {...p,adjusted:true,verified:loaded};
     }
     return {lng,lat,adjusted:false,verified:false};
+  }
+  function pendingSourceCorrectionAt(lng,lat) {
+    const source=buildingMode==='overture'?buildingSourceId:sourceId;
+    return sourceGeometryCorrections.pendingAt({lng,lat},{source,sourceLayer:'building',
+      getFeatures:()=>sourceFeatures('building',source),getDesiredVariant:desiredVariant});
   }
   function setPlayer(lng,lat,heading=0,playerSpeed=0,dt=.016,groundHeight=DEFAULT_GROUND_HEIGHT) {
     current={lng,lat}; speed=playerSpeed; animationTime+=clamp(dt,0,.1);
@@ -827,6 +866,7 @@ export async function createShanghaiScene(options = {}) {
     setLandmarks,setCityManifest,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
     setOrdinaryCatalog,
     getOrdinaryCatalogState:()=>ordinaryCatalog?.getState()||null,
+    getSourceGeometryCorrectionState:()=>sourceGeometryCorrections.getState(),
     getNearbyOrdinaryRecords:()=>nearbyOrdinaryRecords.map(record=>({...record})),
     setAvatarVisible(visible){
       if(!visible){

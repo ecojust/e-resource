@@ -1,8 +1,10 @@
+import {correctionIdentityMatches, componentMatches} from './source-geometry-correction.js';
+
 // MapLibre `within` supports points/lines, not polygon features. OSM fallback
 // replacement therefore uses real source feature IDs and conservative geometry
 // containment, independently of the GERS identifiers in the local GLB sidecars.
 const EPS = 1e-10;
-const emptyCoverage = () => ({cells: [], landmarks: [], reserved: []});
+const emptyCoverage = () => ({cells: [], landmarks: [], reserved: [], sourceGeometryCorrections: []});
 const cross = (a, b) => a[0] * b[1] - a[1] * b[0];
 const sub = (a, b) => [a[0] - b[0], a[1] - b[1]];
 const lerp = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
@@ -82,6 +84,7 @@ function prepareCoverage(coverage = {}) {
     }).filter(Boolean),
     landmarks: (coverage.landmarks || []).map(namedGeometry).filter(Boolean),
     reserved: (coverage.reserved || []).map(namedGeometry).filter(Boolean),
+    sourceGeometryCorrections: Array.isArray(coverage.sourceGeometryCorrections) ? coverage.sourceGeometryCorrections : [],
   };
 }
 
@@ -192,7 +195,7 @@ function hashString(value) {
   for (let i = 0; i < value.length; i++) { hash ^= value.charCodeAt(i); hash = Math.imul(hash, 16777619); }
   return (hash >>> 0).toString(16);
 }
-function replacementPlan(features, coverage) {
+function replacementPlan(features, coverage, sourceContext = null) {
   const groups = new Map(); let unknownIDs = 0, duplicateComponents = 0;
   for (const feature of features) {
     const id = feature.id;
@@ -200,7 +203,12 @@ function replacementPlan(features, coverage) {
     const key = String(id), properties = feature.properties || {}, propertyKey = JSON.stringify(stableValue(properties));
     let group = groups.get(key);
     if (!group) { group = {id, key, properties, propertyKey, components: new Map(), multipart: false, invalid: false}; groups.set(key, group); }
-    if (propertyKey !== group.propertyKey) group.invalid = true;
+    const exactGuards = coverage.sourceGeometryCorrections.filter(item => item.match
+      && sourceContext?.source === item.match.source && sourceContext.sourceLayer === item.match.source_layer
+      && String(id) === String(item.match.native_id));
+    // Preserve existing MapLibre numeric/string alias handling for ordinary
+    // coverage. A configured correction never authorizes an alias by coercion.
+    if (propertyKey !== group.propertyKey || (exactGuards.length && typeof id !== typeof group.id)) group.invalid = true;
     const geometry = feature.geometry;
     const components = geometry?.type === 'MultiPolygon' ? geometry.coordinates : geometry?.type === 'Polygon' ? [geometry.coordinates] : null;
     if (!components?.length) { group.invalid = true; continue; }
@@ -210,7 +218,12 @@ function replacementPlan(features, coverage) {
       if (!prepared) { group.invalid = true; continue; }
       const componentID = componentKey(coordinates);
       if (group.components.has(componentID)) { duplicateComponents++; continue; }
-      group.components.set(componentID, {key: componentID, geometry: polygon, prepared, covered: coveredPrepared(prepared, coverage)});
+      // A confirmed aggregate ID is not generic-cell coverage. Even while the
+      // special model is hidden/unsupported, retain its other components and
+      // never upgrade a failed exact match to broad geometric containment.
+      const covered = exactGuards.length ? exactGuards.some(item => item.active === true
+        && componentMatches({...feature, geometry: polygon}, sourceContext, item.match)) : coveredPrepared(prepared, coverage);
+      group.components.set(componentID, {key: componentID, geometry: polygon, prepared, covered});
     }
   }
   const desired = new Map(), residualFeatures = []; let partialIDs = 0, removedComponents = 0, ambiguousFragments = 0;
@@ -255,8 +268,8 @@ function replacementPlan(features, coverage) {
     ambiguousFragments, retainedCrossingIDs: groups.size - desired.size}};
 }
 /** Pure, exact-component plan. Source Polygon crossing a boundary stays whole. */
-export function planOSMBuildingReplacement(features, coverage = {}) {
-  const plan = replacementPlan(features, prepareCoverage(coverage));
+export function planOSMBuildingReplacement(features, coverage = {}, sourceContext = null) {
+  const plan = replacementPlan(features, prepareCoverage(coverage), sourceContext);
   return {hideIDs: [...plan.desired.values()].map(item => item.id), residualData: plan.residualData, ...plan.stats};
 }
 
@@ -323,11 +336,11 @@ export class OSMBuildingSuppressor {
       this.applied.clear(); this.pendingRemovals.clear(); this.sourceObject = sourceObject;
     }
     const coverage = prepareCoverage(this.getCoverage ? this.getCoverage() : this.coverage);
-    if (!coverage.cells.length && !coverage.landmarks.length) { this.clear(); return this.getState(); }
+    if (!coverage.cells.length && !coverage.landmarks.length && !coverage.sourceGeometryCorrections.length) { this.clear(); return this.getState(); }
     let features;
     try { features = this.map.querySourceFeatures(this.source, {sourceLayer: this.sourceLayer}); }
     catch { this.stats.queryErrors++; this.clear(); return this.getState(); }
-    const plan = replacementPlan(features, coverage);
+    const plan = replacementPlan(features, coverage, {source: this.source, sourceLayer: this.sourceLayer});
     plan.sourceEpoch = this.sourceEpoch;
     Object.assign(this.stats, plan.stats);
     if (!this.residualLayer) {

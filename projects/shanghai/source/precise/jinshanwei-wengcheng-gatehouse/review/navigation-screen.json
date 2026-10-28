@@ -1,0 +1,305 @@
+{
+  "schema": "jinshan-actual-mesh-navigation-screen-v1",
+  "created_utc": "2026-10-28T09:27:38.554859+00:00",
+  "model_id": "jinshanwei-wengcheng-gatehouse",
+  "passed": true,
+  "model_acceptance": false,
+  "browser_acceptance": false,
+  "MAIN_written": false,
+  "raw_asset": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/model/gatehouse-v4/exports/jinshanwei-gatehouse-raw.glb",
+    "bytes": 4507912,
+    "sha256": "f63b992eb45d16e732c66ccca0c40102212f845651aa13e2d89197e7a924c19e"
+  },
+  "inputs": {
+    "design": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/model/design-v2/design-input.json",
+      "bytes": 7926,
+      "sha256": "ca68ccaee0d9427fe0054a8551cfd9c5927dfc2f90ba8d2e65b3eaf815309ec9"
+    },
+    "source_query": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-candidate-v1/SOURCE_QUERY.json",
+      "bytes": 114238,
+      "sha256": "4b5513dcf358be769979f1adc1c1705ebe7bc9ca59ea5f54a923721b7931f2ba"
+    },
+    "online": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/qa/jinshan-online-source-v1/report.json",
+      "bytes": 23845,
+      "sha256": "84b821f7228953ead0c55866e6fa257d88c654e8760da5a7055d933d9e48a213"
+    },
+    "osm_context": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/research/jinshan-v1/memorial-location/osm-context.geojson",
+      "bytes": 25018,
+      "sha256": "508eb763747b649c1c12a5c917ccefee3c3cbfdf18f273e1c24d586fef881111"
+    },
+    "satellite_metadata": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/research/jinshan-satellite-v1/detail-context.json",
+      "bytes": 873,
+      "sha256": "97189b5af9dcb65e44537374b6467f59162ebbc3bed2724e41fab09786fb5c3c"
+    },
+    "navigation_preparation": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/qa/jinshan-navigation-preparation-v1/navigation-preparation.json",
+      "bytes": 27569,
+      "sha256": "f741f5bf9093d18b5577b6c230795b648a8f65587cfddcbd63c9c87e10674022"
+    }
+  },
+  "calculation": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/qa/jinshan-collision-navigation-v1/screen-final-v2.py",
+    "bytes": 20613,
+    "sha256": "55570f9ecc93ee7f9b796567fff0ccb1915b406c78127729e4e116dc9c04e933"
+  },
+  "collision_geometry": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/qa/jinshan-collision-navigation-v1/final-frozen-v4/collision-geometry.json",
+    "bytes": 14223,
+    "sha256": "e94eb050305bd7df7ee552f966ae8cd0f58c51a4a6181713ee5aa5614ee5c370"
+  },
+  "browser_probe_preparation": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/qa/jinshan-collision-navigation-v1/final-frozen-v4/browser-probes.json",
+    "bytes": 8516,
+    "sha256": "f019b85a26f5333c4d0ea0a647cffa4a746a0bcd0e5dcde280d364d156b83483"
+  },
+  "new_obstacle_preserved_geometry_intersections": {
+    "local_other_buildings_17": [],
+    "online_other_buildings_12": [],
+    "OSM_other_components_5": [],
+    "saved_water": [],
+    "historic_relic": []
+  },
+  "new_obstacle_to_wrong_park_source_area_ratio": 0.05503384659586259,
+  "new_obstacle_area_outside_wrong_source_component_m2": 0.0,
+  "method": {
+    "coordinates": "Actual GLB E/U/-N decoded to ENU; unit metre; heading0; exact shared anchor.",
+    "upper_clip_height_m": 9.05,
+    "input_triangles": 52312,
+    "projected_nondegenerate_polygons": 6306,
+    "triangles_entirely_above_clip": 44626,
+    "degenerate_projection_or_clip_count": 1380,
+    "selected_by_material": {
+      "original grey brick": 400,
+      "worn paving": 38,
+      "worn coping": 406,
+      "arch stone 0": 320,
+      "arch stone 1": 320,
+      "arch stone 2": 320,
+      "door boards": 200,
+      "dark timber": 168,
+      "iron fittings": 1834,
+      "pale plaque stone": 12,
+      "incised plaque dark": 2288
+    },
+    "roof_or_ridge_material_selected": false,
+    "precision_grid_m": 0.0001,
+    "additional_buffer_m": 0,
+    "simplify_tolerance_m": 0,
+    "unrounded_union_area_m2": 1412.0364917773313,
+    "precision_union_area_m2": 1412.0322734100005,
+    "precision_area_delta_m2": -0.004218367330850015,
+    "precision_symmetric_difference_area_m2": 0.006299169498553884,
+    "mesh_union_interior_void_count": 4,
+    "mesh_union_interior_void_areas_m2": [
+      1.0264999999976045e-05,
+      1.6502495199999985,
+      1.6499421499999996,
+      0.00029507499999925635
+    ],
+    "conservative_closed_interior_area_added_m2": 3.3004970099998445,
+    "closed_collision_before_geographic_grid_area_m2": 1415.3327704200003,
+    "interior_fill_scope": "Only holes already enclosed by projected structure; closedfort interior, steps and stair are not walkable. No park exterior or neighboring building added.",
+    "collision_after_geographic_roundtrip_area_m2": 1415.3480281898017,
+    "runtime_geographic_grid_deg": 1e-08,
+    "runtime_grid_area_delta_m2": 0.015257769801337417,
+    "runtime_grid_symmetric_difference_area_m2": 0.04477594534256434,
+    "runtime_grid_exterior_boundary_hausdorff_m": 0.0006949353940792985,
+    "bounds_local_EN_m": [
+      -22.0578,
+      -22.6535,
+      22.0578,
+      22.6535
+    ],
+    "parts": 1,
+    "rings": 1,
+    "ring_vertices_including_closure": [
+      241
+    ]
+  },
+  "scope": "Conservative planar non-walkable closed fortified structure, inward deck, front low steps and whole exterior stair. No interior or upstairs walking; no roof projection, park-wide obstacle, or claim of surveyed ground/height.",
+  "probes": {
+    "fortified_enclosure_interior": {
+      "architecture_xy_m": [
+        0,
+        0
+      ],
+      "collision_contains": true,
+      "expected": true
+    },
+    "front_entry_steps": {
+      "architecture_xy_m": [
+        0,
+        -20.5
+      ],
+      "collision_contains": true,
+      "expected": true
+    },
+    "front_wall": {
+      "architecture_xy_m": [
+        12,
+        -18.5
+      ],
+      "collision_contains": true,
+      "expected": true
+    },
+    "external_stair": {
+      "architecture_xy_m": [
+        -20,
+        -10
+      ],
+      "collision_contains": true,
+      "expected": true
+    },
+    "navigation_start": {
+      "architecture_xy_m": [
+        0,
+        -60
+      ],
+      "collision_contains": false,
+      "expected": false
+    }
+  },
+  "original_wrong_component_covers_whole_first5m_capsule": [
+    true,
+    true,
+    true
+  ],
+  "exact_source_exclusion": {
+    "uuid": "38cf1309-6ce3-4fc2-b02e-9ad5255ad993",
+    "localId": 531,
+    "OSM_native_id": 5607522290,
+    "geometry_matched_component": 0,
+    "other_components": [
+      {
+        "original_component_index": 0,
+        "preserved": false,
+        "original_coordinates_sha256": "2520aa949a6d446ed5eae492cce34ba52f3e3857efcc5dfc0b3c6f25e02b136c"
+      },
+      {
+        "original_component_index": 1,
+        "preserved": true,
+        "original_coordinates_sha256": "9841adec9382fd956ab6c9add5570b066201d8e69160449aa445475ecabd76d7"
+      },
+      {
+        "original_component_index": 2,
+        "preserved": true,
+        "original_coordinates_sha256": "94534609030e9b58307ab4a339eef6abc21493fe004757268b293915ff0ae089"
+      },
+      {
+        "original_component_index": 3,
+        "preserved": true,
+        "original_coordinates_sha256": "e3bf61da3db1fc3b1111932d5e82861388844add106c964037e92f1f7110bc28"
+      },
+      {
+        "original_component_index": 4,
+        "preserved": true,
+        "original_coordinates_sha256": "63a281d174a3fa2d3424b050233bb2dc1bf386963efc345f07b0164c0d7d8b07"
+      },
+      {
+        "original_component_index": 5,
+        "preserved": true,
+        "original_coordinates_sha256": "bca747a537dd73eff4e703a5be2b5bca802743432bbc7d1f95589ddedf2d363b"
+      }
+    ],
+    "runtime_activation_not_inferred": true
+  },
+  "candidate": {
+    "id": "front-distant-central",
+    "walkStart": [
+      121.318279391,
+      30.721067253
+    ],
+    "end_after5m": [
+      121.318293172,
+      30.721023928
+    ],
+    "bearing": 164.707012,
+    "first_path_length_m": 4.999999999999999,
+    "capsule_radius_m": 0.6,
+    "body_z_m": 0,
+    "source_screens": {
+      "actual_model_collision": {
+        "count": 1,
+        "capsule_intersections": [],
+        "nearest_centerline_m": 33.749807990625925,
+        "nearest_after_capsule_m": 33.14980799161851
+      },
+      "local_other_buildings_17": {
+        "count": 17,
+        "capsule_intersections": [],
+        "nearest_centerline_m": 61.63268255087034,
+        "nearest_after_capsule_m": 61.03269834625387
+      },
+      "online_other_buildings_12": {
+        "count": 12,
+        "capsule_intersections": [],
+        "nearest_centerline_m": 61.63263101369121,
+        "nearest_after_capsule_m": 61.0326467955693
+      },
+      "OSM_other_components_5": {
+        "count": 5,
+        "capsule_intersections": [],
+        "nearest_centerline_m": 826.2678921899071,
+        "nearest_after_capsule_m": 825.6679726056261
+      },
+      "saved_water": {
+        "count": 1,
+        "capsule_intersections": [],
+        "nearest_centerline_m": 85.20530680574453,
+        "nearest_after_capsule_m": 84.60530707835751
+      },
+      "historic_relic": {
+        "count": 1,
+        "capsule_intersections": [],
+        "nearest_centerline_m": 65.0410307050619,
+        "nearest_after_capsule_m": 64.44105246760917
+      }
+    },
+    "image_screens": [
+      {
+        "id": "circle_statues_fence",
+        "bbox_pixels": [
+          418,
+          357,
+          459,
+          400
+        ],
+        "uncertainty_buffer_m": 2.0,
+        "nearest_after_capsule_and_uncertainty_m": 7.092526692061831,
+        "intersects": false
+      },
+      {
+        "id": "independent_memorial_wall",
+        "bbox_pixels": [
+          490,
+          258,
+          587,
+          472
+        ],
+        "uncertainty_buffer_m": 2.0,
+        "nearest_after_capsule_and_uncertainty_m": 19.992231816857693,
+        "intersects": false
+      }
+    ],
+    "image_interpretation_evidence": {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/qa/jinshan-navigation-preparation-v1/navigation-preparation.json",
+      "bytes": 27569,
+      "sha256": "f741f5bf9093d18b5577b6c230795b648a8f65587cfddcbd63c9c87e10674022"
+    },
+    "all_first5m_screens_clear": true,
+    "beyond5m_route_screened": false,
+    "full_straight_to_gate_crosses_circle": true
+  },
+  "limitations": [
+    "Finite saved source samples, not exhaustive current live source completeness.",
+    "Image evidence is uncalibrated and capture date/geolocation/elevation uncertain; positions are reproducible estimates.",
+    "Candidate-specific first5m paving screen only; park, circle, trees, memorial wall and further routes are not accepted walkable areas.",
+    "Actual runtime model verification, source restoration, keyboard movement and camera framing remain mandatory browser checks."
+  ]
+}

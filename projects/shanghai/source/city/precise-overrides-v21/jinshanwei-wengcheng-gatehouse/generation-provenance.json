@@ -1,0 +1,142 @@
+{
+  "schema": "jinshan-source-owner-generation-actual-v1",
+  "passed": true,
+  "source_owner_only": true,
+  "main_written": false,
+  "remote_written": false,
+  "source_geometry": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/source-owner-input-v2/jinshanwei-wengcheng-gatehouse/geometry-input.json",
+    "bytes": 18948,
+    "sha256": "0bc3ef90e9befe986a3b61d34f8030c8afe64c92c6887112838f0a168769ba6b"
+  },
+  "root_source_correction": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-candidate-v1/ROOT_SOURCE_CORRECTION_DECISION.json",
+    "bytes": 3625,
+    "sha256": "d30756d1a68d91fbbbb28c248e98afcc41cadf49aaf73e1f84a63abab754664c"
+  },
+  "estimated_model_design": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/model/design-v1/design-input.json",
+    "bytes": 7366,
+    "sha256": "942bbff1b4b55c2f7ac407f248b80bb27b388a56ee8670ab8c2989b7d9b2e761"
+  },
+  "source_study": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/source-study.json",
+    "bytes": 149010,
+    "sha256": "f780952f77d9ae554ea14ca04e4facd6bd186d0ed836448c874f6493d137a772"
+  },
+  "baseline": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/freeze-v1/baseline.json",
+    "bytes": 115198,
+    "sha256": "1bc3029e18842c57f56120936c32d5743cb64dacff4bd6c8e4d256e36c44f6ca"
+  },
+  "protected_main_file_count": 366,
+  "all_protected_main_before_after_equal": true,
+  "runtime35_unchanged": true,
+  "all_previous37_navigation_and23_owners_and21_near_preserved": true,
+  "commands": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/build_precise_overrides.py",
+        "--project",
+        "/workspace/shanghai_project",
+        "--output",
+        "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/owner-v1",
+        "--geometry-input-root",
+        "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/source-owner-input-v2",
+        "--ids",
+        "jinshanwei-wengcheng-gatehouse",
+        "--gltfpack",
+        "/workspace/shanghai_tools/node_modules/gltfpack/cli.js",
+        "--asset-prefix",
+        "assets/city-overrides-v6/14-13713-6721"
+      ],
+      "started_utc": "2026-10-27T22:17:14.357517+00:00",
+      "finished_utc": "2026-10-27T22:17:16.166292+00:00",
+      "exit_code": 0,
+      "log": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/build-owner.log",
+        "bytes": 43,
+        "sha256": "3d43fad9fd4d3ec4817ee37676a74cbfaa61e16c21ca1547552d5c85d5983cff"
+      },
+      "workset_bytes": 3844162
+    },
+    {
+      "command": [
+        "node",
+        "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/verify_override_geometry.mjs",
+        "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/owner-v1/geometry-comparison-targeted-input.json"
+      ],
+      "started_utc": "2026-10-27T22:17:16.167645+00:00",
+      "finished_utc": "2026-10-27T22:17:26.300858+00:00",
+      "exit_code": 0,
+      "log": {
+        "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/verify-owner.log",
+        "bytes": 173,
+        "sha256": "ef6b3cf1e61ee29e59fed7798315a00646feed2940e2459c775161543c87226c"
+      },
+      "workset_bytes": 3858616
+    }
+  ],
+  "tools": [
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/run_owner_v2.py",
+      "bytes": 9948,
+      "sha256": "c0f3d1e0a9958437034647f689e884e5f6a8074304422e3be76e1fccc8e1b4f1"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/freeze_baseline.py",
+      "bytes": 5902,
+      "sha256": "5f96ae8ea0625d112b772a3b13aab8f61eb0bd13d5671063ea38a9ae21cfec21"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/prepare_geometry_v2.py",
+      "bytes": 8570,
+      "sha256": "7bbae8a173d2352c31fba8807c1d95b883a38c63fdf57c9e96f0c81beddbca3c"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/build_precise_overrides.py",
+      "bytes": 20509,
+      "sha256": "e120830d5fae608a4458e0cc2776e240b7127b430e28c6209538a619e3fa0023"
+    },
+    {
+      "path": "/workspace/shanghai_expansion/building-by-building-v12/integration/minimal-tools-v1/owner/tools/verify_override_geometry.mjs",
+      "bytes": 12465,
+      "sha256": "ce4dda92a5128690d9563dab56f7279c1be307613cdae286f1f6b14556e64af9"
+    },
+    {
+      "path": "/workspace/shanghai_tools/node_modules/gltfpack/cli.js",
+      "bytes": 525,
+      "sha256": "c7f3a81fa93a3609847fb75817e4777c339bd5f94963bdbb9aa224a6fdb038ce"
+    }
+  ],
+  "registry": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/owner-v1/precise-buildings-v6.json",
+    "bytes": 3790,
+    "sha256": "fde8676ca0e451d58cc1b38d185def859485c6b60aba36921ae1f355b852a2b3"
+  },
+  "geometry_validation": {
+    "path": "/workspace/shanghai_expansion/building-by-building-v21/integration/jinshan-owner-v1/owner-v1/geometry-validation.json",
+    "bytes": 5549,
+    "sha256": "dc7cc4d1e4d4ae685ab47264ceb308c24bf22d520bfb43a8f853c14c2e511ca9"
+  },
+  "exact_source_target": 531,
+  "keep": [
+    68,
+    161,
+    484,
+    991,
+    2169
+  ],
+  "source_group_and_neighbors_float64_position_material_winding_preserved": true,
+  "actual_normal_direction_negative_control_rejected": true,
+  "source_geometry_is_model_geometry": false,
+  "architectural_model_accepted": false,
+  "navigation_accepted": false,
+  "runtime_correction_implemented": false,
+  "installation_performed": false,
+  "publication_performed": false,
+  "scope": "Only original procedural source geometry was grouped. The whole-park source remains coordinate-exact; independent estimated gatehouse outline/anchor are provenance and do not change current runtime collision or OSM fallback.",
+  "directory_bytes_before_provenance": 3859306
+}

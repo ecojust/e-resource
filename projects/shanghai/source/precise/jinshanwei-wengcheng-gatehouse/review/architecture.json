@@ -1,0 +1,272 @@
+{
+  "schema": "jinshan-gatehouse-two-photo-architectural-reading-v1",
+  "created_utc": "2026-10-27T22:07:41.749184+00:00",
+  "candidate": "金山卫抗战遗址纪念园东侧瓮城城楼",
+  "scope": "仅依据已存两图的实际视觉阅读。未新增资料下载、未建模、未改MAIN/V20或remote。此文件追加研究，不改既有HANDOFF。",
+  "inputs": [
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/research/jinshan-v1/memorial-reference/front.jpg",
+      "bytes": 103322,
+      "sha256": "03bf158afad4e211b8f9dfeda4d2b88ab13150608ca46c49bec1e77ae73b4f23",
+      "image_id": "front",
+      "dimensions_px": [
+        1080,
+        762
+      ],
+      "actually_viewed": true,
+      "view_method": "tools.view_image original"
+    },
+    {
+      "file": "/workspace/shanghai_expansion/building-by-building-v21/research/jinshan-v1/memorial-reference/aerial-oblique.jpg",
+      "bytes": 125881,
+      "sha256": "5adb0d1c1dc4039cf229f3a2d76c483633e9b7e5bb36930c757eaa5a45572cde",
+      "image_id": "aerial",
+      "dimensions_px": [
+        1080,
+        712
+      ],
+      "actually_viewed": true,
+      "view_method": "tools.view_image original"
+    }
+  ],
+  "independent_visual_peer_review": {
+    "performed": true,
+    "images_only": true,
+    "new_downloads": false,
+    "agreement": "同意内侧平面高程/是否全深庭院未知、楼梯上段遮挡、准确屋顶类型未定、门洞不证明贯通、群雕不能作为标准人物尺度。"
+  },
+  "decision": {
+    "can_split_observed_architectural_masses": true,
+    "can_study_projection_proportions": true,
+    "can_establish_absolute_metres_from_these_images_alone": false,
+    "can_establish_complete_rear_or_internal_geometry": false,
+    "can_start_final_detailed_model_from_only_these_inputs": false,
+    "conditional_next_step": "若root确认独立单体源轮廓与朝向，可将照片中的门楼、两层檐线和墙体比例作为受约束估计；先区分可核验量与估计量，再决定未见部位的简化范围。",
+    "not_a_scale_reference": [
+      "整个公园边界",
+      "公园/遗址复合polygon",
+      "改扩建项目372m²统计",
+      "史料馆500多m²陈展面积",
+      "前景群雕的假定人高",
+      "未经核准的标准砖尺寸或汽车尺寸"
+    ]
+  },
+  "local_reference_frame": {
+    "front": "有中央拱门和瓮城门额、面向圆形群雕/前阶的墙面。这里只是相对面名，不给东西南北。",
+    "left_right": "以front.jpg观看方向为准；aerial中可见外楼梯在画面左侧，不能未经地理校准自动称为建筑西侧。",
+    "absolute_bearing_degrees": null,
+    "absolute_orientation_confirmed": false
+  },
+  "components": [
+    {
+      "id": "enclosing_masonry_mass",
+      "name": "瓮城高墙/台基外包络",
+      "evidence": [
+        "front",
+        "aerial"
+      ],
+      "confidence": "外包络和墙面分段高；墙厚/内部结构低",
+      "observed": [
+        "立面是高大的灰青色砌体，不是仅承托小阁楼的一块低矮台座。",
+        "斜俯视可辨四边围合的外缘、内向边缘与水平面，楼阁位于设门一侧的墙体上方，未位于整个围合区平面中心。",
+        "正面中央门楼段的墙顶比两翼略高，顶部是平直压顶/女墙式边缘；两图未证明一圈规则雉堞。",
+        "主入口两侧及转角存在分段和局部轮廓外展，植物与透视使墙体收分、扶壁具体断面不够清楚。"
+      ],
+      "visible": [
+        "正面大部砖墙、门洞附近棱线和墙顶高差",
+        "斜视中一侧较大外墙及若干内缘/顶面"
+      ],
+      "unknown": [
+        "真实墙厚、结构是否实心、内部房间",
+        "内侧水平面究竟为地面内庭、屋面平台还是其他高度的内向空间",
+        "围合内侧是否贯通到地面，以及其真实深度",
+        "墙体精确收分角、转角连接、后侧下部"
+      ],
+      "modeling_implication": "应将外墙、门楼段、可见墙顶边缘和内向空间分别处理。两图不能支持直接把内侧全部挖成通地面深井，也不能确定高台内部为全实心。"
+    },
+    {
+      "id": "gate_opening",
+      "name": "中央砖拱门与门额",
+      "evidence": [
+        "front",
+        "aerial"
+      ],
+      "confidence": "外拱轮廓高；深度和贯通状态低",
+      "observed": [
+        "主门居于前墙中部，开口为直立侧边加圆弧拱顶，可见拱券边界。",
+        "门洞内有显著内退的暗色门面/阴影，近正面图能见部分横向暗构件。",
+        "拱上有矩形浅色门额，文字为瓮城。",
+        "入口前有铺装台阶/平台，与圆形群雕区域衔接。"
+      ],
+      "unknown": [
+        "拱券准确厚度和半径",
+        "内退深度、门扇数量及完整构造",
+        "是否贯通到内部及是否允许实际行走穿过",
+        "门槛、门洞后端和内部地面"
+      ],
+      "modeling_implication": "有依据做真实拱形外口和门额。暗区只能作为未确认的内退门面，不能据此声称已有可漫游贯通通道。"
+    },
+    {
+      "id": "pavilion_body",
+      "name": "墙上主体楼阁的柱框/窗扇/侧墙",
+      "evidence": [
+        "front",
+        "aerial"
+      ],
+      "confidence": "前立面构成较高；精确开间/背面低",
+      "observed": [
+        "楼阁明显窄于下方整面瓮城前墙，并在中央拱门轴线上方。",
+        "前立面可分出红褐色竖向柱框、横枋与多组木格门窗；中央和左右开口的格栅样式可见。",
+        "斜视可见一侧局部浅色实体墙面与红褐框架；各侧并非都已证明为整面木格窗。",
+        "主体位于两层檐线下方，局部被下层檐口和高台女墙遮住。"
+      ],
+      "unknown": [
+        "准确开间数、每扇尺寸与全体格栅计数",
+        "柱截面、额枋断面、斗拱和榫卯构造",
+        "背面门窗与侧面完整分隔",
+        "室内楼层、楼板和内部房间"
+      ],
+      "modeling_implication": "前面有足够特征区分柱、枋和窗扇，不宜做单一无细节盒子；未见侧/背面应单独标估计，不把正面复制为全部立面。"
+    },
+    {
+      "id": "double_eaved_roof",
+      "name": "双重檐屋面与脊饰",
+      "evidence": [
+        "front",
+        "aerial"
+      ],
+      "confidence": "层级、轮廓、局部瓦列高；准确传统屋顶类型和背坡低",
+      "observed": [
+        "清晰可见上下两个檐层，下檐向外挑出，上层主屋面之上有近水平正脊。",
+        "两个檐层均有上翘角部和弯曲檐线，不能用两块平直斜板表达所见轮廓。",
+        "正脊两端及若干角部有可辨饰件轮廓；细小走兽/饰件数量和造型不够清。",
+        "近正面能见连续瓦列和檐口重复细节，斜俯视补充屋面进深与侧坡的存在。",
+        "照片中的瓦呈深灰、蓝绿等不同受光色，不能直接把晚光像素当校准材质RGB。"
+      ],
+      "unknown": [
+        "准确属于何种庑殿/歇山组合；两图不足完整展示上层山面和全部后坡交线",
+        "精确坡度、曲率、脊高、屋面进深和出檐长度",
+        "瓦当尺寸、全部瓦列数、角梁断面、隐藏檐下承托",
+        "屋面背侧与内部构架"
+      ],
+      "modeling_implication": "可建立两个独立檐层、主脊、翘角和可见瓦列/檐缘的形体约束；具体屋顶分类、未见交线和饰件应先保留不确定性。"
+    },
+    {
+      "id": "external_stair",
+      "name": "侧墙外的登高楼梯",
+      "evidence": [
+        "aerial"
+      ],
+      "confidence": "位置关系和至少一段直跑较高；总跑数/连接低",
+      "observed": [
+        "aerial画面左侧可见贴近侧墙的外楼梯，从低处铺装上行至高墙/台面方向。",
+        "至少一段较长直跑能辨认踏步重复关系，两侧有深色护边/栏杆状构件。",
+        "上部有局部平台或转折关系，但被树冠和高墙边缘遮住。"
+      ],
+      "unknown": [
+        "全程究竟有几跑、全部平台的平面形状",
+        "楼梯最终与墙顶/楼阁入口如何接通",
+        "踏步总数、单步宽高、楼梯净宽",
+        "对侧护栏及背部支撑结构"
+      ],
+      "modeling_implication": "有依据保留外楼梯这一独立附属体。仅用可见段定位和建立坡向，不凭图数出完整台阶序列或自动设置对称另一部楼梯。"
+    },
+    {
+      "id": "entry_steps",
+      "name": "主门前阶及铺装连接",
+      "evidence": [
+        "front",
+        "aerial"
+      ],
+      "confidence": "可见外形中高；每级尺寸低",
+      "observed": [
+        "主门前有数级低台阶及顶端小平台，左右铺装/矮墙围合出较宽前场。",
+        "台阶与外侧登城楼梯是不同设施，不应合成一段高坡。"
+      ],
+      "unknown": [
+        "每一级精确高度/踏面深度",
+        "无障碍路径与局部被树木遮挡的接合面",
+        "全部铺装标高"
+      ],
+      "modeling_implication": "可单独表现门前低阶与平台；可行走/碰撞支撑须另有实际地面和有限走行验证，图像本身不提供物理验收。"
+    }
+  ],
+  "visibility_coverage": {
+    "front_lower_wall": "大部可见；两翼下部被植被/设施遮挡。",
+    "front_pavilion": "柱窗与檐线可读；檐下暗部、女墙后下段被遮挡。",
+    "one_oblique_outer_side": "墙面与楼梯部分可见；树冠遮挡上部连接。",
+    "enclosed_inward_area": "可见内缘与部分水平面，绝对标高和深度未知。",
+    "roof": "正面和一个高处斜角可见；后坡全貌、全部屋面交线未知。",
+    "rear_and_hidden_side": "没有足够直接证据。",
+    "interior": "没有足够直接证据。"
+  },
+  "approximate_projection_cues": {
+    "status": "手工视觉读数，只是front.jpg像平面中的宽高比例，不是3D量测或模型已接受尺寸。",
+    "image_coordinate_system": "原图1080x762，左上原点；像素范围是粗读区间。",
+    "reference": "前墙外侧平直墙顶可见跨度约x95到990，约895px；该跨度不是公园宽度。",
+    "ratios_to_that_front_wall_projection_width": [
+      {
+        "feature": "下层檐口最大可见宽度",
+        "range": [
+          0.37,
+          0.41
+        ],
+        "approx_pixels": "约x372到720"
+      },
+      {
+        "feature": "楼阁柱窗主体可见宽度",
+        "range": [
+          0.27,
+          0.31
+        ],
+        "approx_pixels": "约x412到675"
+      },
+      {
+        "feature": "主门内拱口可见宽度",
+        "range": [
+          0.12,
+          0.15
+        ],
+        "approx_pixels": "约x489到608"
+      },
+      {
+        "feature": "门前地坪到中央墙顶的投影高度",
+        "range": [
+          0.27,
+          0.32
+        ],
+        "approx_pixels": "约y470到209"
+      },
+      {
+        "feature": "门前地坪到最高脊饰的投影高度",
+        "range": [
+          0.48,
+          0.55
+        ],
+        "approx_pixels": "约y470到10"
+      }
+    ],
+    "must_not_do": "不能将这些数直接乘公园/复合源边界宽度。屋顶后退、不同平面深度、镜头和透视会改变比例。",
+    "conditional_use": "只有当root独立锁定真实前墙跨度、主体轮廓、摄影方向或可接受透视近似后，才可用作估计初始区间，并以两图同时复核；当前不输出米制值。"
+  },
+  "separate_surroundings_not_in_main_body": [
+    "前景圆形群雕与栏杆",
+    "长条独立纪念墙",
+    "其他塑像、碑石、凉亭",
+    "园区栅栏、灯具、绿化、汽车和道路"
+  ],
+  "special_scale_caution": "正面图中的三个人形为群雕，尺寸未知；不能套标准成人身高作标尺。",
+  "required_before_final_geometry": [
+    "独立单体source轮廓及真实对应关系，不能用整园building=ruins范围",
+    "绝对朝向与楼阁相对高台的偏置",
+    "米制尺度或明确接受且带误差的尺度估计",
+    "内侧空间底面高程/处理范围决定",
+    "背面/楼梯隐蔽接合与装饰细节的未知范围记录"
+  ],
+  "copyright_scope": "两张已存照片只作观察参考，不新增/重分发图片，不把照片像素打包为原创材质。",
+  "new_downloads": false,
+  "model_created": false,
+  "MAIN_written": false,
+  "V20_written": false,
+  "remote_written": false
+}

@@ -27,6 +27,9 @@ function harness({maxCount=2,maxBytes=32*cache.MIB,fetchFunction}={}) {
   const disposeModel=object=>{assert.equal(object.disposed,undefined,'object disposed twice');object.disposed=true;events.push({type:'dispose',object});};
   const boundary=new Map();
   const env={...cache,events,current,landmarkRecords:records,scene,disposeModel,
+    // No correction fields in these unchanged legacy fixtures. New tests cover the real correction state.
+    syncSourceGeometryCorrections:()=>false,
+    isLandmarkSourceActive:r=>r.status==='loaded' && Boolean(r.object?.visible),
     loader:{loadAsync(url){return new Promise((resolve,reject)=>requests.push({url,resolve,reject}));},
       parseAsync(buffer,url){return new Promise((resolve,reject)=>requests.push({buffer,url,resolve,reject}));}},
     detailCacheLimits:{maxCount,maxBytes},detailCacheStats:{evicted:0,discardedLate:0},

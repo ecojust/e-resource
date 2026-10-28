@@ -1,0 +1,120 @@
+{
+  "schema": "jinshan-original-grey-brick-pbr-v1",
+  "author": "agent",
+  "license": "MIT",
+  "source_photograph_pixels_read": false,
+  "surface_scan": false,
+  "scope": "Original generic grey brick with running bond, mortar and small pores. Colour, bond, dimensions and relief are design estimates; not recovered measurements or exact masonry layout of Jinshanwei.",
+  "dimensions_px": [
+    512,
+    512
+  ],
+  "repeat_metres": [
+    1.28,
+    0.64
+  ],
+  "nominal_generic_brick_cell_metres": [
+    0.32,
+    0.08
+  ],
+  "sampler": {
+    "magFilter": 9729,
+    "minFilter": 9987,
+    "wrapS": 10497,
+    "wrapT": 10497
+  },
+  "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "roughnessFactor": 1,
+  "metallicFactor": 1,
+  "normalScale": 0.35,
+  "occlusionStrength": 0.35,
+  "color_spaces": {
+    "basecolor": "sRGB",
+    "normal": "Non-Color",
+    "orm": "Non-Color"
+  },
+  "channels": {
+    "orm": {
+      "R": "ambient occlusion",
+      "G": "roughness",
+      "B": "metallic, exactly zero"
+    }
+  },
+  "uv_contract": {
+    "vertical_faces": "U=continuous horizontal metres/1.28; V=-height metres/0.64. Keep UVs unbounded with REPEAT. Do not normalize individual wall parts.",
+    "horizontal_faces": "Apply the same 1.28m by0.64m metric repeat in a consistent architectural plane frame; this is a generic bond, not surveyed paving.",
+    "normal_encoding": "normalize(-dH/dU_metres, +dH/dPNG_row_metres, 1); PNG row index increases downwards.",
+    "current_web_contract": "No TANGENT. Three GLTFLoader negates normalScale.y for the derivative frame. Effective scale is [+0.35,-0.35]; verify on final runtime.",
+    "blender_contract": "Standard importer changes V to1-V without inverting the normal green channel. Do not add another flip.",
+    "if_tangents_added": "Re-audit tangent basis and loader; this contract is for absent TANGENT."
+  },
+  "periodicity": "All row/cell indices close on the8-by4 brick grid. Fourier phases, smoothing, pore deposits and derivatives wrap on a torus; opposite pixel-centre edges need not be duplicate pixels.",
+  "height_not_geometry": "Encoded relief is normal shading attenuated by0.35, not physical displaced bricks or collision geometry.",
+  "generator": {
+    "file": "source/generate_material.py",
+    "sha256": "3f502c31b799ca29b4dd6898ddb82330113901efb918f1d14ee1db81271be26c",
+    "seed": 20261027021,
+    "random_generator": "NumPy PCG64"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0"
+  },
+  "statistics": {
+    "brick_cells_per_tile": 32,
+    "brick_course_count": 8,
+    "pore_deposits": 880,
+    "height_range_m": [
+      -0.0001125587537001104,
+      0.00438144179117966
+    ],
+    "albedo_mean_srgb": [
+      0.36488433668063364,
+      0.3870941831201683,
+      0.3801459988476133
+    ],
+    "roughness_range": [
+      0.8225906125358405,
+      0.9591222741115732
+    ],
+    "ao_range": [
+      0.69,
+      1.0
+    ],
+    "normal_z_min": 0.5253413323024125,
+    "normal_length_max_error_unencoded": 2.220446049250313e-16,
+    "mortar_and_edge_pixel_fraction": 0.19395828247070312
+  },
+  "generator_checks": {
+    "finite_height": true,
+    "all_images_rgb_uint8_512": true,
+    "metallic_channel_exactly_zero": true,
+    "normal_positive_hemisphere": true,
+    "no_photo_pixels_read": true
+  },
+  "files": [
+    {
+      "file": "jinshan-original-grey-brick-basecolor.png",
+      "bytes": 179430,
+      "sha256": "9e2272ba3e6dcda2da14138a8de84727d365862372169b7db44565fed20af98f"
+    },
+    {
+      "file": "jinshan-original-grey-brick-normal.png",
+      "bytes": 244107,
+      "sha256": "83f55c9ede93b40b17807f5b60ca618f9ce6ff64d85c2c25a0b0ad3e7c221f67"
+    },
+    {
+      "file": "jinshan-original-grey-brick-orm.png",
+      "bytes": 135837,
+      "sha256": "44ae1ce5f8064ea81e95828d40accb66af158a90f0c1518524ea1ef9faaddef6"
+    }
+  ],
+  "model_generated": false,
+  "model_dimensions_accepted": false
+}

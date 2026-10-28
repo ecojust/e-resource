@@ -1,3 +1,31 @@
+# V21 金山卫瓮城城楼
+
+**[直接进入金山卫瓮城城楼室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
+
+当前目录38处建筑入口，分布在15个区；全市16区底图的1,796,419个建筑及部件要素尚未全部逐栋精细复原。崇明区的逐栋精模仍待补充。
+
+本轮新增金山区**金山卫瓮城城楼**。金山区金山卫瓮城城楼的室外外观，包括上层城楼、围墙、拱门及内凹闭合门扇、门前低台阶与东侧外楼梯。
+
+重檐曲面屋顶、瓦垄与脊饰、336处格窗开口、拱门券边、瓮城题字、垛口栏墙及楼梯转接平台；原创砖面颜色、法线与粗糙度等PBR纹理。
+
+仅拆分531号原始整园源要素，保留同近景5个其他要素（68、161、484、991、2169）和既有37处导航；原源轮廓不是城楼实测墙线。直达入口采用审核过的室外起点；实际键盘前进约0.42米并验证松键停止。仅校正被错误拉伸成整座园区的源要素，保留同组5个邻近要素；模型隐藏、校验失败或加载超时会恢复源碰撞，迟到加载不会传送角色。未验证园内任意路径或楼梯通行。
+
+实际raw/web/LOD面数分别为52,312/52,312/23,020。四件模型合计10,221,417字节，单文件最大4,507,912字节，均严格小于100,000,000字节。本轮更新3个既有运行时文件并新增2个模块，修正明确源组件与可见精模的碰撞关系及加载等待；其余既有运行时保持原字节。v13下载ZIP保持原字节，旧ZIP不含本轮模型。
+
+实际几何、Blender原生文件与网页压缩版本核验通过；公开源码可独立重建。浏览器14项常规检查与另一上下文的7项延迟/故障检查通过，5张实际截图经人工查看；已验证完整模型与远景模型的纹理解码和切换。四个模型交付文件分别约4.51、2.07、1.14、2.51MB，均小于100MB。
+
+[模型审查](data/audit/precise-buildings-v21/jinshanwei-wengcheng-gatehouse/model-review.json) · [浏览器记录](data/audit/precise-buildings-v21/jinshanwei-wengcheng-gatehouse/browser.json) · [截图审查](data/audit/precise-buildings-v21/jinshanwei-wengcheng-gatehouse/root-browser-visual.json) · [网格与导航筛查](data/audit/precise-buildings-v21/jinshanwei-wengcheng-gatehouse/navigation.json) · [精确源组件纠正](data/audit/precise-buildings-v21/jinshanwei-wengcheng-gatehouse/source-geometry-correction.json)
+
+围合尺度约35×36.7米、模型最高点约18.89米，尺寸及背面、屋顶交接和楼梯隐蔽构造为公开资料引导估计，并非实测复原。未建模园内纪念墙、雕塑、花园、河道及其他建筑，不提供室内或登楼漫游；正面在网页固定晨光下偏暗。
+
+参考新闻照片与卫星影像仅用于私下观察核对，未取得再分发许可，不随项目发布，也不嵌入模型。三张砖墙PBR贴图由公开源码原创生成，采用MIT许可。
+
+[网页GLB](assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-web.glb) · [原始GLB](assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-raw.glb) · [远景GLB](assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-lod.glb) · [Blender](assets/native/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse.blend) · [来源与许可](source/precise/jinshanwei-wengcheng-gatehouse/README.md)
+
+旧37处模型的时间与资产提交依据保持；本楼版本时间以实际模型提交的committer date为准。以下完整保留已发布V20状态和此前历史。
+
+---
+
 # V20 巴金旧居主楼
 
 **[直接进入巴金旧居室外漫游](https://rawcdn.githack.com/ecojust/e-resource/3c9efa6ac948e5298029245ae2bc04a35476de55/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)
