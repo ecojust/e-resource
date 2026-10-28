@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10242d">
+  <title>上海地面与水系 · 16区模型</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/surfaces.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="surface-view" aria-label="可旋转和缩放的地面与水系三维模型"></main>
+  <header>
+    <a href="index.html" class="back">← 建筑漫游</a>
+    <h1>上海地面与水系</h1>
+    <p>江河、岛屿与海岸的地图轮廓</p>
+  </header>
+  <section class="panel" aria-label="模型控制">
+    <label for="district">查看范围</label>
+    <select id="district" disabled><option>正在读取16区目录…</option></select>
+    <div class="layers">
+      <label><input id="show-ground" type="checkbox" checked><i class="land"></i>非水域底面</label>
+      <label><input id="show-water" type="checkbox" checked><i class="water"></i>地图水面</label>
+    </div>
+    <div class="buttons"><button id="fit" type="button">适合窗口</button><button id="top" type="button">正北俯视</button><button id="retry" type="button" hidden>重试加载</button></div>
+    <p id="status" role="status" aria-live="polite">正在加载…</p>
+    <p id="details"></p>
+    <div id="downloads" class="downloads"></div>
+    <p class="scope">平面模型，未包含实测高程、河床深度、堤岸或铺装细节。水面来自2026-10-25版地图；细小或未收录水道仍可能缺失。行政范围包含海域与飞地。</p>
+    <a class="source" href="source/surfaces/README.md">数据来源、建模范围与重建说明 ↗</a>
+  </section>
+  <footer><span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span><span>© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a><br><a href="https://openfreemap.org">OpenFreeMap</a> / <a href="https://openmaptiles.org">OpenMapTiles</a> · <a href="licenses/ODbL-1.0.txt">ODbL</a></span></footer>
+  <script type="module" src="src/surfaces-viewer.js"></script>
+</body>
+</html>
