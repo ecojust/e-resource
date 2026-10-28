@@ -1,0 +1,940 @@
+{
+  "schema": "restoration-progress-v1",
+  "scope": "Tracked metadata inventory; not a new geometry, photo or browser acceptance audit",
+  "inputs": {
+    "assets/city-detail/manifest.json": {
+      "bytes": 1097700,
+      "sha256": "c67d3d95335551386620f13077a7a8190a9bb777a7844655e166c389a7fa8e54"
+    },
+    "assets/city/manifest.json": {
+      "bytes": 4005757,
+      "sha256": "7783444283399a37fb12a8cd82b8e3a1cd75d5c955f65a019658e5826fa74f31"
+    },
+    "assets/models/candidates/chongming-pan-pool-bridge/manifest.json": {
+      "bytes": 1405,
+      "sha256": "15137fad05259406f2f1cf3e6428b43d0e6075a5f814a35dbab60471916852b8"
+    },
+    "assets/models/candidates/chongming-zunjing-pavilion/manifest.json": {
+      "bytes": 1440,
+      "sha256": "ed9a71bc076dee24c62dc4fdebbd8f68f87504d595076d88d8daa5a580fffbd2"
+    },
+    "assets/surfaces/manifest.json": {
+      "bytes": 16940,
+      "sha256": "589782058b63eadb929eacddf6aaafc7a7179f3bfb94a525df74409937c66477"
+    },
+    "data/fullcity-raw/manifest.json": {
+      "bytes": 894230,
+      "sha256": "ec5928bab4382ac8fa58f2aa57541ec3a3ef7d0d262b679a931b7f7d6753cd7e"
+    },
+    "data/precise-buildings/catalog.json": {
+      "bytes": 5003,
+      "sha256": "8ae2f0ac31e3adf39fb5d9ff9635e8154f397cb0b7fbba4d232711f15a29583a"
+    },
+    "data/precise-buildings/macros/14-13701-6700/index.json": {
+      "bytes": 36775,
+      "sha256": "5813a8532ef788bbecb0a9e0c1b3af1f855087b7457ade745b5afa7f576bee8d"
+    },
+    "data/precise-buildings/macros/14-13706-6691/index.json": {
+      "bytes": 22378,
+      "sha256": "b020da8674ae43dc4a07c5f80b94060b4441221d19e935d70532d13f99008226"
+    },
+    "data/precise-buildings/macros/14-13709-6706/index.json": {
+      "bytes": 20733,
+      "sha256": "3e50b4e1fd2f0933001ee41c0bc22560a12316b474d686215ca8f836b581e57f"
+    },
+    "data/precise-buildings/macros/14-13713-6721/index.json": {
+      "bytes": 17519,
+      "sha256": "6c72d1b6f10c6d2532393d8051c5bee66ee9ac66bfffcbc2c7f7591d55c1d343"
+    },
+    "data/precise-buildings/macros/14-13716-6693/index.json": {
+      "bytes": 22155,
+      "sha256": "ceddd6b67a3fe8478654c8bdd1dc625a2536d978f3c8442ccdd636c4c556932a"
+    },
+    "data/precise-buildings/macros/14-13718-6695/index.json": {
+      "bytes": 147511,
+      "sha256": "e6297cf674e64515280bde7bbd7440d3325b8b470eaa4a87764c3b60bf21fd38"
+    },
+    "data/precise-buildings/macros/14-13718-6705/index.json": {
+      "bytes": 19060,
+      "sha256": "9d26f408e00a0591bd5cc0323c8dc5e55065c6acac7d8f19b694962cd551ede5"
+    },
+    "data/precise-buildings/macros/14-13719-6697/index.json": {
+      "bytes": 18727,
+      "sha256": "576702e96d624ecdede30a8d161c391353166f4043bf5e345159f7451244c85b"
+    },
+    "data/precise-buildings/macros/14-13720-6692/index.json": {
+      "bytes": 16579,
+      "sha256": "225403ba268b226f0943b13bd8e7477b250f248e8d85fcc84f8466618d5b5608"
+    },
+    "data/precise-buildings/macros/14-13720-6693/index.json": {
+      "bytes": 24703,
+      "sha256": "074cc6cc077bafc716363e3476dcef2eb1d0770dd405b36600ead8aa08badfee"
+    },
+    "data/precise-buildings/macros/14-13721-6684/index.json": {
+      "bytes": 16537,
+      "sha256": "40b7cf1147d1981e15be2c7a2964117eff619e9c213ff1364480337ccf585a79"
+    },
+    "data/precise-buildings/macros/14-13721-6710/index.json": {
+      "bytes": 22411,
+      "sha256": "7808f5fae03bac4c1920981f21d17b1ec67d593f6e07238a30a32208344730d8"
+    },
+    "data/precise-buildings/macros/14-13722-6690/index.json": {
+      "bytes": 22386,
+      "sha256": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638"
+    },
+    "data/restoration-progress/chongming-source-gap.json": {
+      "bytes": 1152,
+      "sha256": "b3f5a30460f3eadcfbbb7b7bd6f938317000f6424e6a5eff1bcf5cdb51288311"
+    },
+    "landmarks.html": {
+      "bytes": 21779,
+      "sha256": "98d00a981a125bbd93c3183d4e218a6d6ac4f7ef30d479bcb7c5dfcda9261755"
+    }
+  },
+  "count_reconciliation": {
+    "source_unique_above_ground": 1796667,
+    "nonrenderable_parent_records": 551,
+    "source_renderable": 1796116,
+    "baseline_replaced_features": 98,
+    "baseline_parent_residuals": 401,
+    "baseline_render_features": 1796419,
+    "building_footprints": 1793596,
+    "building_parts": 2823,
+    "macro_count": 1708
+  },
+  "inventory": {
+    "navigation_entries": 38,
+    "ordinary_catalog_records": 19,
+    "ordinary_records_are_subset_of_navigation": true,
+    "standalone_candidate_records": 2,
+    "flat_surface_districts": 16,
+    "flat_surface_triangles": 410447
+  },
+  "accepted_source_feature_count": null,
+  "completion_percentage": null,
+  "remaining_feature_count": null,
+  "unknown_count_reason": "No single feature-level acceptance ledger joins all baseline buildings, parts, residuals and authored models. Navigation entries and catalog records are different units, so subtraction or a completion percentage would be misleading. Existing per-model proofs retain their own scope; this report does not revalidate them.",
+  "source_gap_checks": [
+    {
+      "query_url": "https://www.openstreetmap.org/api/0.6/map.json?bbox=121.3962,31.6202,121.3983,31.6217",
+      "retrieved_utc_date": "2026-10-28",
+      "response_storage": "Decoded JSON saved in private research cache; hash binds that JSON serialization, not HTTP wire bytes; full response not redistributed",
+      "compound_way_id": 413345693,
+      "compound_tags": {
+        "building": "yes",
+        "name": "崇明区博物馆",
+        "tourism": "museum"
+      },
+      "ways_in_response": 35,
+      "other_relevant_ways_with_complete_geometry": 29,
+      "internal_relevant_ways": [],
+      "method": "For complete ways tagged building/building:part/bridge/water/waterway/natural, test entire geometry covered by museum compound polygon using Shapely. Relation geometries and independent imagery were not reviewed by this check.",
+      "finding": "No separately mapped pool, bridge or building entirely inside the compound was found by this bounded OSM query; this is not proof that no other survey sources exist.",
+      "license": "OpenStreetMap data ODbL-1.0; © OpenStreetMap contributors",
+      "saved_decoded_json_sha256": "cd40d032236249de643584708c2cdb3fe91fd647ba99a33baf851fe41d9bfd20"
+    }
+  ],
+  "districts": [
+    {
+      "id": "310101",
+      "name": "黄浦区",
+      "baseline_render_features": 13830,
+      "navigation_entries": 15,
+      "ordinary_catalog_records": 0,
+      "flat_surface_triangles": 1899
+    },
+    {
+      "id": "310104",
+      "name": "徐汇区",
+      "baseline_render_features": 30128,
+      "navigation_entries": 5,
+      "ordinary_catalog_records": 5,
+      "flat_surface_triangles": 3578
+    },
+    {
+      "id": "310105",
+      "name": "长宁区",
+      "baseline_render_features": 17936,
+      "navigation_entries": 2,
+      "ordinary_catalog_records": 2,
+      "flat_surface_triangles": 2988
+    },
+    {
+      "id": "310106",
+      "name": "静安区",
+      "baseline_render_features": 22912,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 5155
+    },
+    {
+      "id": "310107",
+      "name": "普陀区",
+      "baseline_render_features": 27349,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 5726
+    },
+    {
+      "id": "310109",
+      "name": "虹口区",
+      "baseline_render_features": 15393,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 4645
+    },
+    {
+      "id": "310110",
+      "name": "杨浦区",
+      "baseline_render_features": 32613,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 6497
+    },
+    {
+      "id": "310112",
+      "name": "闵行区",
+      "baseline_render_features": 121727,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 20442
+    },
+    {
+      "id": "310113",
+      "name": "宝山区",
+      "baseline_render_features": 106534,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 16867
+    },
+    {
+      "id": "310114",
+      "name": "嘉定区",
+      "baseline_render_features": 131086,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 22435
+    },
+    {
+      "id": "310115",
+      "name": "浦东新区",
+      "baseline_render_features": 416423,
+      "navigation_entries": 4,
+      "ordinary_catalog_records": 0,
+      "flat_surface_triangles": 92302
+    },
+    {
+      "id": "310116",
+      "name": "金山区",
+      "baseline_render_features": 120473,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 15726
+    },
+    {
+      "id": "310117",
+      "name": "松江区",
+      "baseline_render_features": 139356,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 37928
+    },
+    {
+      "id": "310118",
+      "name": "青浦区",
+      "baseline_render_features": 151682,
+      "navigation_entries": 2,
+      "ordinary_catalog_records": 2,
+      "flat_surface_triangles": 61661
+    },
+    {
+      "id": "310120",
+      "name": "奉贤区",
+      "baseline_render_features": 154046,
+      "navigation_entries": 1,
+      "ordinary_catalog_records": 1,
+      "flat_surface_triangles": 16736
+    },
+    {
+      "id": "310151",
+      "name": "崇明区",
+      "baseline_render_features": 294931,
+      "navigation_entries": 0,
+      "ordinary_catalog_records": 0,
+      "flat_surface_triangles": 95862
+    }
+  ],
+  "navigation": [
+    {
+      "id": "jinshanwei-wengcheng-gatehouse",
+      "name": "金山卫瓮城城楼",
+      "href": "index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk",
+      "district_id": "310116"
+    },
+    {
+      "id": "xuhui-bajin-residence",
+      "name": "巴金旧居主楼",
+      "href": "index.html#landmark=xuhui-bajin-residence&mode=walk",
+      "district_id": "310104"
+    },
+    {
+      "id": "changning-hudec-residence",
+      "name": "邬达克旧居（番禺路129号）",
+      "href": "index.html#landmark=changning-hudec-residence&mode=walk",
+      "district_id": "310105"
+    },
+    {
+      "id": "xuhui-wukang-mansion",
+      "name": "武康大楼主楼",
+      "href": "index.html#landmark=xuhui-wukang-mansion&mode=walk",
+      "district_id": "310104"
+    },
+    {
+      "id": "fengxian-museum",
+      "name": "奉贤博物馆",
+      "href": "index.html#landmark=fengxian-museum&mode=walk",
+      "district_id": "310120"
+    },
+    {
+      "id": "columbia-country-club",
+      "name": "哥伦比亚乡村俱乐部主楼",
+      "href": "index.html#landmark=columbia-country-club&mode=walk",
+      "district_id": "310105"
+    },
+    {
+      "id": "baoshan-confucian-dacheng-hall",
+      "name": "宝山孔庙大成殿",
+      "href": "index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk",
+      "district_id": "310113"
+    },
+    {
+      "id": "yangpu-library",
+      "name": "杨浦区图书馆总馆（原上海市图书馆）",
+      "href": "index.html#landmark=yangpu-library&mode=walk",
+      "district_id": "310110"
+    },
+    {
+      "id": "jingan-sihang-warehouse",
+      "name": "四行仓库（含毗邻大陆银行仓库）",
+      "href": "index.html#landmark=jingan-sihang-warehouse&mode=walk",
+      "district_id": "310106"
+    },
+    {
+      "id": "minhang-baoyugang-library",
+      "name": "包玉刚图书馆",
+      "href": "index.html#landmark=minhang-baoyugang-library&mode=walk",
+      "district_id": "310112"
+    },
+    {
+      "id": "jiading-shanghai-auto-museum",
+      "name": "上海汽车博物馆",
+      "href": "index.html#landmark=jiading-shanghai-auto-museum&mode=walk",
+      "district_id": "310114"
+    },
+    {
+      "id": "putuo-zhenru-main-hall",
+      "name": "真如寺大殿（正殿）",
+      "href": "index.html#landmark=putuo-zhenru-main-hall&mode=walk",
+      "district_id": "310107"
+    },
+    {
+      "id": "songjiang-fangta-pagoda",
+      "name": "兴圣教寺塔（松江方塔）",
+      "href": "index.html#landmark=songjiang-fangta-pagoda&mode=walk",
+      "district_id": "310117"
+    },
+    {
+      "id": "xuhui-longhua-pagoda",
+      "name": "龙华塔",
+      "href": "index.html#landmark=xuhui-longhua-pagoda&mode=walk",
+      "district_id": "310104"
+    },
+    {
+      "id": "hongkou-hongde-church",
+      "name": "鸿德堂 · 多伦路59号",
+      "href": "index.html#landmark=hongkou-hongde-church&mode=walk",
+      "district_id": "310109"
+    },
+    {
+      "id": "qingpu-beidajie-208-212",
+      "name": "江南第一茶楼 · 北大街208–212号",
+      "href": "index.html#landmark=qingpu-beidajie-208-212&mode=walk",
+      "district_id": "310118"
+    },
+    {
+      "id": "xuhui-wukang-210",
+      "name": "徐汇武康路210号二层住宅",
+      "href": "index.html#landmark=xuhui-wukang-210&mode=walk",
+      "district_id": "310104"
+    },
+    {
+      "id": "xuhui-wukang-129",
+      "name": "徐汇武康路129号二层住宅",
+      "href": "index.html#landmark=xuhui-wukang-129&mode=walk",
+      "district_id": "310104"
+    },
+    {
+      "id": "qingpu-beidajie-222",
+      "name": "北大街222号民居（2022年鹤龙美术馆使用状态）",
+      "href": "index.html#landmark=qingpu-beidajie-222&mode=walk",
+      "district_id": "310118"
+    },
+    {
+      "id": "bund02",
+      "name": "上海总会",
+      "href": "index.html#landmark=bund02&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund03",
+      "name": "有利大楼 · 外滩3号",
+      "href": "index.html#landmark=bund03&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund05",
+      "name": "日清大楼 · 外滩5号",
+      "href": "index.html#landmark=bund05&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund06",
+      "name": "中国通商银行旧址 · 外滩6号",
+      "href": "index.html#landmark=bund06&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund07",
+      "name": "大北电报公司大楼 · 外滩7号",
+      "href": "index.html#landmark=bund07&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund09",
+      "name": "轮船招商局大楼 · 外滩9号",
+      "href": "index.html#landmark=bund09&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund12",
+      "name": "汇丰银行大楼",
+      "href": "index.html#landmark=bund12&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "customs-house",
+      "name": "江海关大楼",
+      "href": "index.html#landmark=customs-house&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund14",
+      "name": "交通银行旧址 · 外滩14号",
+      "href": "index.html#landmark=bund14&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund15",
+      "name": "华俄道胜银行大楼",
+      "href": "index.html#landmark=bund15&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund17",
+      "name": "字林西报大楼",
+      "href": "index.html#landmark=bund17&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund18",
+      "name": "麦加利银行 · 外滩18号",
+      "href": "index.html#landmark=bund18&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund19",
+      "name": "和平饭店南楼 · 汇中饭店",
+      "href": "index.html#landmark=bund19&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund20",
+      "name": "和平饭店北楼 · 沙逊大厦",
+      "href": "index.html#landmark=bund20&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "bund23",
+      "name": "中国银行大楼",
+      "href": "index.html#landmark=bund23&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "jin-mao",
+      "name": "金茂大厦",
+      "href": "index.html#landmark=jin-mao&mode=walk",
+      "district_id": "310115"
+    },
+    {
+      "id": "oriental-pearl",
+      "name": "东方明珠电视塔",
+      "href": "index.html#landmark=oriental-pearl&mode=walk",
+      "district_id": "310115"
+    },
+    {
+      "id": "shanghai-tower",
+      "name": "上海中心大厦",
+      "href": "index.html#landmark=shanghai-tower&mode=walk",
+      "district_id": "310115"
+    },
+    {
+      "id": "swfc",
+      "name": "上海环球金融中心",
+      "href": "index.html#landmark=swfc&mode=walk",
+      "district_id": "310115"
+    }
+  ],
+  "ordinary_catalog": [
+    {
+      "id": "qingpu-beidajie-222",
+      "name": "北大街222号民居（2022年鹤龙美术馆使用状态）",
+      "district_id": "310118",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13701-6700/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "qingpu-beidajie-208-212",
+      "name": "江南第一茶楼 · 北大街208–212号",
+      "district_id": "310118",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13701-6700/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "xuhui-wukang-129",
+      "name": "徐汇武康路129号二层住宅",
+      "district_id": "310104",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6695/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "xuhui-wukang-210",
+      "name": "徐汇武康路210号二层住宅",
+      "district_id": "310104",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6695/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "columbia-country-club",
+      "name": "哥伦比亚乡村俱乐部主楼",
+      "district_id": "310105",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6695/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "xuhui-wukang-mansion",
+      "name": "武康大楼主楼",
+      "district_id": "310104",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6695/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "changning-hudec-residence",
+      "name": "邬达克旧居（番禺路129号）",
+      "district_id": "310105",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6695/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "xuhui-bajin-residence",
+      "name": "巴金旧居主楼",
+      "district_id": "310104",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6695/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "hongkou-hongde-church",
+      "name": "鸿德堂 · 多伦路59号",
+      "district_id": "310109",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13720-6692/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "xuhui-longhua-pagoda",
+      "name": "龙华塔",
+      "district_id": "310104",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13719-6697/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "songjiang-fangta-pagoda",
+      "name": "兴圣教寺塔（松江方塔）",
+      "district_id": "310117",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13709-6706/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "putuo-zhenru-main-hall",
+      "name": "真如寺大殿（正殿）",
+      "district_id": "310107",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13716-6693/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "jiading-shanghai-auto-museum",
+      "name": "上海汽车博物馆",
+      "district_id": "310114",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13706-6691/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "minhang-baoyugang-library",
+      "name": "包玉刚图书馆",
+      "district_id": "310112",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6705/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "jingan-sihang-warehouse",
+      "name": "四行仓库（含毗邻大陆银行仓库）",
+      "district_id": "310106",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13720-6693/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "yangpu-library",
+      "name": "杨浦区图书馆总馆（原上海市图书馆）",
+      "district_id": "310110",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13722-6690/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "baoshan-confucian-dacheng-hall",
+      "name": "宝山孔庙大成殿",
+      "district_id": "310113",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13721-6684/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "fengxian-museum",
+      "name": "奉贤博物馆",
+      "district_id": "310120",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13721-6710/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "jinshanwei-wengcheng-gatehouse",
+      "name": "金山卫瓮城城楼",
+      "district_id": "310116",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13713-6721/index.json",
+      "evidence_status": {
+        "browser_proof": "passed",
+        "geometry_proof": "passed",
+        "height_evidence": "passed",
+        "identity_footprint": "passed",
+        "roof": "passed",
+        "size_proof": "passed",
+        "source_photos": "passed",
+        "texture_mapping_qa": "passed",
+        "uncertainty": "passed",
+        "visible_facade_opening_grid": "passed"
+      },
+      "evidence_revalidated": false
+    }
+  ],
+  "standalone_candidates": [
+    {
+      "id": "chongming-pan-pool-bridge",
+      "name": "崇明学宫泮池与登云桥",
+      "status": "standalone-candidate-not-geographically-registered",
+      "manifest": "assets/models/candidates/chongming-pan-pool-bridge/manifest.json",
+      "assets_revalidated": false
+    },
+    {
+      "id": "chongming-zunjing-pavilion",
+      "name": "崇明学宫尊经阁",
+      "status": "standalone-candidate-not-geographically-registered",
+      "manifest": "assets/models/candidates/chongming-zunjing-pavilion/manifest.json",
+      "assets_revalidated": false
+    }
+  ],
+  "limits": [
+    "Baseline complete flags mean extraction/generation coverage, not photo reconstruction acceptance.",
+    "Source-feature counts cannot be inferred from navigation counts.",
+    "Surface meshes are flat; they do not prove measured terrain or riverbeds.",
+    "Unmerged branches and pull requests are outside this checkout inventory.",
+    "Model assets, evidence files and all macro meshes are not reread by this metadata-only audit."
+  ]
+}
