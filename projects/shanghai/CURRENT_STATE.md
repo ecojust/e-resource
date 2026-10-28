@@ -1,3 +1,15 @@
+# 地面与水系第一批：16区平面模型
+
+[打开独立查看页](surfaces.html) · [模型清单与下载](assets/surfaces/manifest.json) · [建模来源与范围](source/surfaces/README.md) · [本批验收](data/audit/surfaces-v1/README.md)
+
+新增16区地面／水面GLB、Blender和GIS边界，共410,447个三角面。GLB合计约9.90MB，最大约2.30MB；Blender最大约2.75MB，全部单文件小于100,000,000字节。来源为4,062个已冻结的z14地图瓦片，保留地图水面与岛屿孔洞，按行政区分块。
+
+这批资产是零高程平面模型：尚无实测地形、河床、堤岸及铺装，未接入建筑漫游的地面或碰撞。采用数值容差核验，仍有极窄重叠与岸线归并差异，具体实值与判据见验收记录；不宣称测绘级无缝复原。
+
+全部16件GLB实际几何检查、16件Blender保存重开、32件GLB/GIS确定性重建、5项拓扑回归和9组真实浏览器检查通过；主代理实际查看5张最终截图。现有38处建筑目录不变，1,796,419个建筑及部件要素尚未全部逐栋复原。以下保留此前建筑交付记录。
+
+---
+
 # V21 金山卫瓮城城楼
 
 **[直接进入金山卫瓮城城楼室外漫游](https://rawcdn.githack.com/ecojust/e-resource/8a7ea09acffa7222da6199150f2f0cd749bcf197/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk)** · [最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)

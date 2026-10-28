@@ -1,0 +1,76 @@
+{
+  "browser": "154.0.8037.57",
+  "checks": [
+    {
+      "check": "initial district hash, actual render",
+      "state": {
+        "status": "ready",
+        "selection": "310101",
+        "visibleDistricts": [
+          "310101"
+        ],
+        "loadedBytes": 47992,
+        "error": null,
+        "geometries": 2,
+        "triangles": 1899
+      }
+    },
+    {
+      "check": "16 districts plus all, three working asset downloads",
+      "links": [
+        "assets/surfaces/310101.glb",
+        "assets/surfaces/310101.blend",
+        "assets/surfaces/310101.geojson.gz"
+      ]
+    },
+    {
+      "check": "ground and water independently hidden, both hidden draws zero triangles"
+    },
+    {
+      "check": "all 16 GLBs actually rendered, triangle counts match; old GPU geometries disposed"
+    },
+    {
+      "check": "rapid selection cancels old load without late replacement"
+    },
+    {
+      "check": "all-district assembly actual render",
+      "state": {
+        "status": "ready",
+        "selection": "all",
+        "visibleDistricts": [
+          "310101",
+          "310104",
+          "310105",
+          "310106",
+          "310107",
+          "310109",
+          "310110",
+          "310112",
+          "310113",
+          "310114",
+          "310115",
+          "310116",
+          "310117",
+          "310118",
+          "310120",
+          "310151"
+        ],
+        "loadedBytes": 9900684,
+        "error": null,
+        "geometries": 32,
+        "triangles": 410447
+      }
+    },
+    {
+      "check": "damaged asset rejected, last model retained, retry recovers"
+    },
+    {
+      "check": "hash survives reload"
+    },
+    {
+      "check": "mobile viewport has no horizontal overflow; screenshot captured"
+    }
+  ],
+  "pageErrors": [],
+  "httpErrors": []
+}
