@@ -1,5 +1,7 @@
 # 上海全景建模
 
+[孙中山故居主楼外观候选](sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象，尚未接入城市漫游。
+
 **[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/latest.html)** · [进入第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/8a7ea09acffa7222da6199150f2f0cd749bcf197/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
 全市16区底图可浏览；目录提供38处已建模地标的独立入口，分布在15个区。崇明区的逐栋精模待补充。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
