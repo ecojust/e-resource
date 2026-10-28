@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172a30"><title>崇明学宫尊经阁 · 独立模型</title>
+<link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="src/zunjing-pavilion.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main id="model-view" aria-label="尊经阁三维外观模型"></main>
+<header><a href="index.html">← 上海建筑漫游</a><p class="eyebrow">崇明 · 学宫建筑</p><h1>尊经阁</h1><p>2005年照片参照的独立外观模型</p></header>
+<aside class="panel" aria-label="模型操作与资料">
+<span class="badge">待地理接入</span>
+<p class="scope">南立面依据历史照片；侧后面和隐藏构造为推定。尚未接入全市漫游，不提供室内或楼梯通行。</p>
+<label for="detail">模型细节</label><select id="detail"><option value="auto">自动随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div class="buttons"><button id="front" type="button">正面</button><button id="oblique" type="button">斜侧</button><button id="rear" type="button">背面</button><button id="fit" type="button">适合窗口</button><button id="retry" type="button" hidden>重试加载</button></div>
+<p id="status" role="status" aria-live="polite">正在读取模型…</p><p id="metrics"></p>
+<div id="downloads" class="downloads"></div>
+<a class="photo-link" href="source/precise/chongming-zunjing-pavilion/references/zunjing-2005.jpg" target="_blank" rel="noopener"><img src="source/precise/chongming-zunjing-pavilion/references/zunjing-2005.jpg" alt="2005年尊经阁南立面参考照片"><span>打开原始参考照片 ↗</span></a>
+<p class="credit">照片：Joshua Wickerham · CC BY-SA 2.0。模型未嵌入照片像素。</p>
+<p class="scope">平面尺寸参考博物馆旧官网。高度端点、细部和照片外区域未获测绘确认；不代表2026年现场状态。</p>
+<a href="source/precise/chongming-zunjing-pavilion/README.md">来源、估算与建模范围 ↗</a>
+</aside>
+<footer><span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span><span>预览地面仅用于展示<br>原创几何 MIT · 字形 SIL OFL 1.1</span></footer>
+<script type="module" src="src/zunjing-pavilion.js"></script>
+</body></html>
