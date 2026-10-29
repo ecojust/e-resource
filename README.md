@@ -33,10 +33,10 @@
 | 10 | 崇明学宫西官厅 | 崇明区／鳌山路696号／崇明学宫院内 | 制作中 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [官厅资料审查](<projects/shanghai/data/model-todo/chongming-guanting-reference-review.json>)；按东西7.4米、南北10.2米、高6.5米独立制作；朝院长边、门窗和屋顶明确为假设 |
 | 11 | 崇明学宫西牌坊（题名配对待核） | 崇明区／鳌山路696号／崇明学宫院内 | 待查资料 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [题名、尺寸与高清照片审查](<projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>)；已有高清结构参考；按物理方位界定候选，题名面归属及背面仍待核；三丈与石柱尺寸不直接作精确测量值 |
 | 12 | 崇明学宫东牌坊（题名配对待核） | 崇明区／鳌山路696号／崇明学宫院内 | 待查资料 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [题名、尺寸与高清照片审查](<projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>)；已有高清结构参考；按物理方位界定候选，题名面归属及背面仍待核；三丈与石柱尺寸不直接作精确测量值 |
-| 13 | 崇明学宫儒学大门 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>)；2004年修复；核对现状屋面及门扇，面积与长宽乘积分别保留 |
-| 14 | 崇明学宫仪门 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>)；2001年修复；核对与儒学大门的身份及外观差异 |
-| 15 | 崇明学宫明伦堂 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>)；2001年修复；“原共有五楹”不能直接作为现代开间已核实证据；旧官网高10.37米与2021文高10.5米并存，待核尺寸版本 |
-| 16 | 崇明学宫碑廊 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>)；核对南北两段合计还是各长15.7米；拆分四向廊段，碑刻逐块查证 |
+| 13 | 崇明学宫儒学大门 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；2004年修复文字尺寸候选待制；未找到明确绑定的完整单体照片，长宽方向、屋顶和门窗须标估计 |
+| 14 | 崇明学宫仪门 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；已找到题注及匾额相符的高清正面；制作曲线端墙、瓦坡与格窗，帘后门扇、背侧面仍待核 |
+| 15 | 崇明学宫明伦堂 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；文献尺寸与树木遮挡的庭院照片参照待制；历史五楹与现状分开，高10.37/10.5米两版本保留 |
+| 16 | 崇明学宫碑廊 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；总量算术支持东西各30.5米、南北合计15.7米；先核分段，不能均分南北或虚构闭合矩形；碑刻逐块查证 |
 
 ### 已有模型的后续核验
 
