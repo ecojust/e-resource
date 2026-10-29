@@ -1,0 +1,118 @@
+{
+  "schema": "zikawei-original-pebbledash-pbr-v1",
+  "author": "agent",
+  "license": "MIT",
+  "random_generator": "NumPy PCG64",
+  "random_seed": 801867,
+  "source_photograph_pixels_read": false,
+  "surface_scan": false,
+  "scope": "Original generic fine pebble-dash material, visually informed by a reference photograph. Colour, grain size and relief are estimates, not measurements of Zikawei south building.",
+  "dimensions_px": [
+    512,
+    512
+  ],
+  "repeat_metres": [
+    0.4,
+    0.4
+  ],
+  "pixel_pitch_m": 0.00078125,
+  "periodic_method": "Jittered pebble centres on a torus; every ellipse deposit wraps modulo512; matrix smoothing and height derivatives use wrapped neighbours. Pixel-centre rows0and511 need not be identical: their adjacency is an ordinary one-pixel toroidal step, not a duplicated gutter.",
+  "sampler": {
+    "magFilter": 9729,
+    "minFilter": 9987,
+    "wrapS": 10497,
+    "wrapT": 10497
+  },
+  "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "roughnessFactor": 1,
+  "metallicFactor": 1,
+  "normalScale": 0.35,
+  "occlusionStrength": 0.35,
+  "normal_height_scope": "The encoded height gradients are attenuated by normalScale0.35 at render time. This is a conservative shading choice, not displacement geometry or a measured surface relief.",
+  "color_spaces": {
+    "basecolor": "sRGB",
+    "normal": "Non-Color",
+    "orm": "Non-Color"
+  },
+  "channels": {
+    "orm": {
+      "R": "ambient occlusion",
+      "G": "roughness",
+      "B": "metallic, exactly0"
+    }
+  },
+  "uv_contract": {
+    "raw_gltf": "For a vertical facade: U=local horizontal metres/0.40; V=-height metres/0.40. Keep unbounded UVs and REPEAT, with no per-part normalization, modulo or atlas-cell clamping.",
+    "png_rows": "Top-to-bottom row index increases with stored PNG V.",
+    "encoded_normal": "Normalize(-dH/dU_metres, +dH/dPNG_row_metres, 1), then encode from[-1,1]to[0,255].",
+    "current_no_tangent_web_frame": "Three derivative frame follows raw+U right, raw+V down, outward normal. Frozen GLTFLoader negates normalScale.y when TANGENT is absent; effective scale is[+0.35,-0.35].",
+    "standard_blender_import": "Importer converts V to1-V and keeps the green channel; its upward bitangent gives the same physical bump. Do not manually invert G or add another V flip.",
+    "physical_interpretation": "On the left flank of a raised pebble the normal leans left; on the upper flank it leans up. These signs must be checked on the final renderer, not inferred merely from a normal map thumbnail.",
+    "if_explicit_tangents_added": "Re-audit the actual tangent frame and loader behavior. The current tested contract is for primitives without TANGENT."
+  },
+  "statistics": {
+    "generated_grain_count": 8100,
+    "visible_grain_count": 8093,
+    "aggregate_pixel_coverage": 0.7327232360839844,
+    "input_grain_major_diameter_m": {
+      "min": 0.003030695826099153,
+      "max": 0.007952372298641533,
+      "mean": 0.00518402378019305
+    },
+    "height_field_m": {
+      "min": -2.455907204548838e-05,
+      "max": 0.0010482901071819054,
+      "mean": 0.00037504127955732965
+    },
+    "albedo_channel_mean_srgb": [
+      0.6545289589072023,
+      0.6389288566733217,
+      0.5895911224509144
+    ],
+    "roughness_min_max": [
+      0.8112292528587558,
+      0.9683350059631861
+    ],
+    "ao_min_max": [
+      0.72,
+      1.0
+    ],
+    "normal_z_min": 0.7615928048200624,
+    "normal_length_max_error_before_encoding": 2.220446049250313e-16
+  },
+  "generator_checks": {
+    "finite_height": true,
+    "normal_positive_hemisphere": true,
+    "metallic_channel_entirely_zero": true,
+    "all_images_rgb_uint8_512": true,
+    "height_periodic_derivative_uses_wrapped_neighbors": true
+  },
+  "files": [
+    {
+      "file": "zikawei-original-pebbledash-basecolor.png",
+      "bytes": 381990,
+      "sha256": "fa63252935bae7e3e23b8f87ca688926298dd9fff9a6f676c8400d3f087001d8"
+    },
+    {
+      "file": "zikawei-original-pebbledash-normal.png",
+      "bytes": 534048,
+      "sha256": "560b57babc7b7647ff5053fd29ee732ad59b50fc4462cdc3797a6408430129ef"
+    },
+    {
+      "file": "zikawei-original-pebbledash-orm.png",
+      "bytes": 361384,
+      "sha256": "002530d317ce9375b2bea71288b2eff4bcb03f01f5e7626b6bf4b9863ab0f656"
+    }
+  ],
+  "generator_sha256": "e8a3feae9751168063aacc19708eef603c99d756e14c3e5b3b4e5d8589385c36",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0"
+  }
+}
