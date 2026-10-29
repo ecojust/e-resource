@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile, stat, mkdtemp, mkdir, writeFile, rm} from 'node:fs/promises';
+import {readFile, stat, mkdtemp, mkdir, writeFile, rm, readdir} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
@@ -34,6 +34,23 @@ test('directory is reproducible from current navigation metadata', () => {
   execFileSync('python', [new URL('tools/build_landmark_directory.py', root).pathname, '--check']);
 });
 
+test('every delivered candidate has a real independent viewer link and is not advertised as a walking destination', async () => {
+  const viewers = JSON.parse(await readFile(new URL('data/model-viewers.json', root), 'utf8'));
+  const candidates = await readdir(new URL('assets/models/candidates/', root), {withFileTypes:true});
+  assert.deepEqual(viewers.filter(v=>v.kind==='candidate').map(v=>v.id).sort(), candidates.filter(v=>v.isDirectory()).map(v=>v.name).sort());
+  for (const viewer of viewers) {
+    assert.ok((await stat(new URL(viewer.page, root))).size > 0);
+    const manifest = JSON.parse(await readFile(new URL(viewer.manifest,root),'utf8'));
+    assert.ok(directory.includes(`data-viewer="${viewer.id}" href="${viewer.page}"`));
+    assert.ok(!directory.includes(`data-landmark="${viewer.id}"`));
+    if(viewer.kind==='candidate') {
+      assert.equal(manifest.id,viewer.id);
+      assert.equal(manifest.map_replacement,false);
+      assert.equal(manifest.walk_integration,false);
+    }
+  }
+});
+
 test('all directory resource links exist and map entry remains available while loading', async () => {
   for (const path of ['src/landmark-directory.css', 'src/landmark-directory.js', 'src/landmark-entry.css']) {
     assert.ok((await stat(new URL(path, root))).size > 0, path);
@@ -53,6 +70,7 @@ test('a newly accepted building appears as the latest direct destination without
     const next = {...landmarks.findLast(item => item.kind === 'building'), id: 'next-accepted-building', name: '下一栋已验收建筑'};
     await writeFile(join(temporary, 'data/landmarks.json'), JSON.stringify([...landmarks, next]));
     await writeFile(join(temporary, 'data/districts.json'), await readFile(new URL('data/districts.json', root)));
+    await writeFile(join(temporary, 'data/model-viewers.json'), await readFile(new URL('data/model-viewers.json', root)));
     const rendered = execFileSync('python', ['-c', `import importlib.util, sys
 from pathlib import Path
 spec = importlib.util.spec_from_file_location('directory', sys.argv[1])
