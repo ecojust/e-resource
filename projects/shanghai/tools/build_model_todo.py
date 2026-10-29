@@ -4,6 +4,7 @@ Discovery records are leads, never claims of survey coverage or model acceptance
 import argparse
 from collections import Counter
 import json
+import subprocess
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[3]
@@ -15,6 +16,16 @@ def cell(value):
  return str(value or '—').replace('|','／').replace('\n',' ').replace('\r',' ')
 def link(title,url):
  return f'[{cell(title)}](<{url}>)' if url else cell(title)
+def model_sizes(job):
+ if not job.get('manifest'):return '—'
+ p=ROOT/job['manifest']
+ raw=p.read_bytes() if p.exists() else subprocess.check_output(['git','show','HEAD:'+job['manifest']],cwd=ROOT)
+ assets=json.loads(raw)['assets'];parts=[]
+ for role,label in [('full','网页'),('native','Blender')]:
+  size=assets[role]['bytes'];assert isinstance(size,int) and size>0
+  parts.append(f"{label} {size/1_000_000:.2f} MB")
+ return '／'.join(parts)
+
 def build():
  queue=json.loads((DATA/'queue.json').read_text())
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
@@ -34,11 +45,11 @@ def build():
  '执行顺序：按下表序号逐项核对参考 → 制作近景、远景与可编辑模型 → 几何和网页检查 → 提交主分支 → 更新状态。遇到来源缺口，记录缺口后推进下一项。照片链接只代表发现线索，逐栋制作前还须打开核对身份、视角、年代和使用条件。','',
  '每次仅提交当前新增和修改；允许清理已提交且不再修改的本地模型，提交前核对暂存区没有删除。候选交付与照片核验、城市配准分别记录，已有模型不自动视作全部细节完成。','',
  '维基百科来源表格的署名与CC BY-SA 4.0许可见下方说明；地图身份线索保留OSM／ODbL来源。\n\n[机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)','',
- '### 按顺序执行的模型','', '| 顺序 | 模型 | 区域／街道 | 状态 | 参考与下一步 |','|---:|---|---|---|---|']
+ '### 按顺序执行的模型','', '| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |','|---:|---|---|---|---|---|']
  for j in sorted(jobs,key=lambda r:r['order']):
   refs=' · '.join(link(r['label'],r['url']) for r in j['references'])
   name=link(j['name'],j.get('preview'))
-  lines.append(f"| {j['order']} | {name} | {cell(j['district'])}／{cell(j['street'])} | {LABELS[j['status']]} | {refs}；{cell(j['next_action'])} |")
+  lines.append(f"| {j['order']} | {name} | {cell(j['district'])}／{cell(j['street'])} | {LABELS[j['status']]} | {model_sizes(j)} | {refs}；{cell(j['next_action'])} |")
  lines+=['','### 已有模型的后续核验','', '以下为当前模型身份清单，供新线索去重和细化时查对；不把历史交付自动改写为本轮验收。','', '<details><summary>展开已有模型及待办</summary>','', '| 模型 | 当前登记 | 后续 TODO |','|---|---|---|']
  for m in queue['existing_models']:
   lines.append(f"| {link(m['name'],m.get('url'))} | {cell(m['status'])} | {cell(m['next_action'])} |")
