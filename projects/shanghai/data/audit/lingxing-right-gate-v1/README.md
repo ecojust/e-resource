@@ -10,3 +10,5 @@
 模型文件均小于100 MB；大小与哈希见[资产清单](../../../assets/models/candidates/chongming-lingxing-photo-right-gate/manifest.json)。源图不再分发或贴图，出处、图注和年代限制见[来源说明](../../../source/precise/chongming-lingxing-photo-right-gate/README.md)。
 
 复测网页：在`projects/shanghai`运行`python -m http.server 8769`，仓库根目录运行`node projects/shanghai/data/audit/lingxing-right-gate-v1/qa-browser.cjs`。需Playwright和`/usr/bin/chromium`，输出位于`/tmp/lingxing-right-gate-browser.*`。
+
+公开预览检查：[固定提交页面](https://rawcdn.githack.com/ecojust/e-resource/dafaba0ba493d0633bbfe9c13789a1fd4a951f28/projects/shanghai/lingxing-right-gate.html) 已通过加载及模型 SHA256 校验，948 三角面，无页面或资源请求错误；首次访问需点击托管方的 **Open the page** 提示。记录见 [public-browser.json](public-browser.json)。复测：仓库根目录运行 `node projects/shanghai/data/audit/lingxing-right-gate-v1/qa-public.cjs`。此项验证公开链接可用性，几何范围仍以上述本地检查为准。

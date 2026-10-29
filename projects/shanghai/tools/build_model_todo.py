@@ -23,7 +23,8 @@ def model_sizes(job):
  assets=json.loads(raw)['assets'];parts=[]
  for role,label in [('full','网页'),('native','Blender')]:
   size=assets[role]['bytes'];assert isinstance(size,int) and size>0
-  parts.append(f"{label} {size/1_000_000:.2f} MB")
+  mb=size/1_000_000
+  parts.append(f"{label} {mb:.3f} MB" if mb<.1 else f"{label} {mb:.2f} MB")
  return '／'.join(parts)
 
 def build():
