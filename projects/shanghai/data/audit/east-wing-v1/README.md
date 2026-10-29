@@ -22,3 +22,5 @@
 网页复测：在`projects/shanghai`运行`python -m http.server 8772`，仓库根目录执行`node projects/shanghai/data/audit/east-wing-v1/qa-browser.cjs`，需Playwright和`/usr/bin/chromium`。结果输出到`/tmp/east-wing-browser.*`。
 
 [最终视觉复核](root-visual-review.json)：已查看正面、斜侧、背面和网页截图，长屋体与七个立面分区显示正常；只确认基础候选的显示质量，不确认估计门窗和屋顶型制符合实物。
+
+公开预览检查：[固定提交页面](https://rawcdn.githack.com/ecojust/e-resource/ba2901f26128f3959694ea541a847797c6957764/projects/shanghai/east-wing.html) 已加载完整模型并通过SHA256及东庑身份校验，无页面或资源请求错误；同版本来源登记的七楹记载和旧馆URL核对通过。首次访问如遇托管提示，请点击 **Open the page**。记录见 [public-browser.json](public-browser.json)，复测：`node projects/shanghai/data/audit/east-wing-v1/qa-public.cjs`。
