@@ -22,3 +22,5 @@
 网页复测：在`projects/shanghai`运行`python -m http.server 8774`，仓库根目录执行`node projects/shanghai/data/audit/east-guanting-v1/qa-browser.cjs`，需Playwright和`/usr/bin/chromium`。结果位于`/tmp/east-guanting-browser.*`。
 
 主代理实际查看最终斜侧、背面原生渲染及网页截图，并复核四件资产大小与SHA256；见[视觉复核](root-visual-review.json)。网页细竖线保留为已知显示限制。
+
+[固定版本在线预览](https://rawcdn.githack.com/ecojust/e-resource/e84905881d151975e60cc9a0f334af186042629e/projects/shanghai/east-guanting.html)已实际加载，东官厅身份、28,916三角面、GLB哈希及同版本官厅来源尺寸核对通过，网页错误数为0。见[公开网页记录](public-browser.json)；仓库根目录可运行`node projects/shanghai/data/audit/east-guanting-v1/qa-public.cjs`复验。
