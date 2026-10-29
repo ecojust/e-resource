@@ -34,7 +34,7 @@ test('directory is reproducible from current navigation metadata', () => {
   execFileSync('python', [new URL('tools/build_landmark_directory.py', root).pathname, '--check']);
 });
 
-test('every delivered candidate has a real independent viewer link and is not advertised as a walking destination', async () => {
+test('every delivered model has a real viewer and walking availability matches accepted registration', async () => {
   const viewers = JSON.parse(await readFile(new URL('data/model-viewers.json', root), 'utf8'));
   const candidates = await readdir(new URL('assets/models/candidates/', root), {withFileTypes:true});
   assert.deepEqual(viewers.filter(v=>v.kind==='candidate').map(v=>v.id).sort(), candidates.filter(v=>v.isDirectory()).map(v=>v.name).sort());
@@ -42,11 +42,12 @@ test('every delivered candidate has a real independent viewer link and is not ad
     assert.ok((await stat(new URL(viewer.page, root))).size > 0);
     const manifest = JSON.parse(await readFile(new URL(viewer.manifest,root),'utf8'));
     assert.ok(directory.includes(`data-viewer="${viewer.id}" href="${viewer.page}"`));
-    assert.ok(!directory.includes(`data-landmark="${viewer.id}"`));
+    assert.equal(directory.includes(`data-landmark="${viewer.id}"`),Boolean(viewer.walk_landmark_id));
+    if(viewer.walk_landmark_id)assert.ok(landmarks.some(r=>r.id===viewer.walk_landmark_id&&r.accepted&&r.navigation?.listed));
     if(viewer.kind==='candidate') {
       assert.equal(manifest.id,viewer.id);
-      assert.equal(manifest.map_replacement,false);
-      assert.equal(manifest.walk_integration,false);
+      assert.equal(manifest.map_replacement,Boolean(viewer.walk_landmark_id));
+      assert.equal(manifest.walk_integration,Boolean(viewer.walk_landmark_id));
     }
   }
 });

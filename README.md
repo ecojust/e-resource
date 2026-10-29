@@ -6,22 +6,22 @@
 
 **[打开全部模型与地标](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；目录提供38处已建模地标的独立入口，分布在15个区。崇明区的逐栋精模待补充。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
+全市16区底图可浏览；目录提供40处已建模地标的独立入口，分布在15个区。崇明区的逐栋精模待补充。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
 新增[16区地面与水系模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/surfaces.html)：提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
-## 独立候选模型与地面水系
+## 建筑模型预览与地面水系
 
-以下七个候选已接入上方统一目录，可直接打开旋转、缩放查看；尚未放入城市原址漫游，不计入38处漫游导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
+以下七个建筑模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个仍为独立候选。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
-| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zikawei-library.html) | [查看说明](projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md) |
+| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zikawei-library.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md) |
 | 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/soong-residence.html) | [查看说明](projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/README.md) |
 | 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/luxun-residence.html) | [查看说明](projects/shanghai/source/precise/hongkou-luxun-residence-facade/README.md) |
-| 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/sun-yatsen-residence.html) | [查看说明](projects/shanghai/source/precise/huangpu-sun-yatsen-residence/README.md) |
+| 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/sun-yatsen-residence.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](projects/shanghai/source/precise/huangpu-sun-yatsen-residence/README.md) |
 | 崇明 | 学宫尊经阁 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zunjing-pavilion.html) | [查看说明](projects/shanghai/source/precise/chongming-zunjing-pavilion/README.md) |
 | 崇明 | 学宫泮池与登云桥 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/pan-pool.html) | [查看说明](projects/shanghai/source/precise/chongming-pan-pool-bridge/README.md) |
 | 崇明 | 学宫大成殿 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/dacheng-hall.html) | [查看说明](projects/shanghai/source/precise/chongming-dacheng-hall/README.md) |
@@ -37,6 +37,7 @@
 
 | 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
 |---|---|---|
+| 孙中山故居主楼 | <!-- walk-v22-time:huangpu-sun-yatsen-residence -->接入版本待填写<!-- /walk-v22-time --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) |
 | 上海总会 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=bund02&mode=walk) |
 | 有利大楼 · 外滩3号 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=bund03&mode=walk) |
 | 日清大楼 · 外滩5号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=bund05&mode=walk) |
@@ -59,6 +60,7 @@
 
 | 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
 |---|---|---|
+| 徐家汇藏书楼南楼 | <!-- walk-v22-time:xuhui-zikawei-south-building -->接入版本待填写<!-- /walk-v22-time --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) |
 | 巴金旧居主楼 | <!-- bajin-residence-publication-time:start -->[2026-10-28 05:51:01](https://github.com/ecojust/e-resource/commit/3c9efa6ac948e5298029245ae2bc04a35476de55)<!-- bajin-residence-publication-time:end --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk) |
 | 武康大楼主楼 | <!-- wukang-mansion-publication-time:start -->[2026-10-28 02:55:16](https://github.com/ecojust/e-resource/commit/8b56c1c7d8834d8f0a53b1481e60c028338efee8)<!-- wukang-mansion-publication-time:end --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk) |
 | 徐汇武康路129号二层住宅 | [2026-10-26 17:42:00](https://github.com/ecojust/e-resource/commit/b296b5ac4f68b4e6743f02fb2bb3c01091cab841) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk) |

@@ -1,5 +1,7 @@
 # 上海孙中山故居主楼外观候选
 
+**漫游接入更新：**已开放[原址室外第三人称漫游](../../../index.html#landmark=huangpu-sun-yatsen-residence&mode=walk)，起点、保守建筑碰撞与近远景切换记录见[接入核验](../../../data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/README.md)。下列初次建模记录中的“未接入”描述属于交付时状态；尺寸和未见构造仍为估计，不代表整栋历史复原完成。
+
 [独立预览](../../../sun-yatsen-residence.html) · [模型下载](../../../assets/models/candidates/huangpu-sun-yatsen-residence/manifest.json) · [验收记录](../../../data/audit/sun-yatsen-residence-v1/README.md)
 
 主楼四孔拱廊为真实开口，后方有退进门窗；上层包含两扇拱窗与西侧长窗、百叶通风口、交接屋面、逐片瓦、烟囱和六级入口台阶。原生Blender文件含可编辑网格、嵌入的原创卵石墙PBR和独立预览舞台。完整模型81,088面，远景8,084面。

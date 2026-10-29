@@ -108,10 +108,17 @@ def build(project, output):
     tracked = subprocess.check_output(['git', 'ls-files', '--', prefix + 'assets/models/candidates/*/manifest.json'],
                                       cwd=repo, text=True).splitlines()
     candidates = []
+    integrated_previews = []
     candidate_keys = defaultdict(list)
     for file in tracked:
         name = file[len(prefix):]
         candidate = read(name)
+        if candidate.get('map_replacement') or candidate.get('walk_integration'):
+            require(candidate.get('map_replacement') is True and candidate.get('walk_integration') is True, 'Partial candidate integration declaration')
+            owner = joined.get(candidate.get('source_owner'))
+            require(owner and owner['model_id']==candidate['id'] and owner['local_id']==candidate.get('source_local_id') and any(r['id']==candidate['id'] and r.get('accepted') and r.get('navigation',{}).get('listed') for r in landmarks), 'Integrated preview lacks matching source owner and navigation')
+            integrated_previews.append({'id':candidate['id'],'manifest':name,'source_key':candidate['source_owner']})
+            continue
         require(candidate.get('map_replacement') is False and candidate.get('walk_integration') is False,
                 'Candidate integration changed; reassess ledger')
         record = {'id': candidate['id'], 'manifest': name, 'status': candidate['status'],
@@ -247,6 +254,7 @@ def build(project, output):
                                  'catalog_accepted_declaration': row.get('accepted'),
                                  'acceptance_revalidated': False} for row in sorted(landmarks, key=lambda row: row['id'])],
         'candidates': candidates,
+        'integrated_model_previews': integrated_previews,
         'surfaces': {'scope': surface['scope'], 'districts': len(surface['districts']),
                      'triangles': sum(d['triangles'] for d in surface['districts']),
                      'measured_elevation_accepted': False, 'riverbed_accepted': False},

@@ -1,3 +1,15 @@
+# 本轮：两栋建筑已接入室外漫游
+
+[徐家汇藏书楼南楼](index.html#landmark=xuhui-zikawei-south-building&mode=walk)和[孙中山故居主楼](index.html#landmark=huangpu-sun-yatsen-residence&mode=walk)已接入城市原址。现有40个漫游入口、21个普通精模目录记录，另有5个尚未接入的独立候选。
+
+已核对实际源身份、原楼体替换、邻楼保留、出生点、保守建筑碰撞、键盘行走及近远景切换。漫游使用虚拟平地，仅限建筑外部；不支持进入室内、登楼或走上外廊。尺寸、后部与未见构造仍为估计，不计为全市逐栋历史复原完成。
+
+[南楼接入核验](data/audit/precise-buildings-v22/xuhui-zikawei-south-building/README.md) · [孙中山故居接入核验](data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/README.md)
+
+以下保留此前交付记录及当时的数量、接入状态。
+
+---
+
 # 上海孙中山故居主楼外观候选
 
 新增[独立模型预览](sun-yatsen-residence.html)，包含四孔拱廊、分格窗、交接屋顶、烟囱、六级台阶及原创卵石墙PBR。[来源与估计](source/precise/huangpu-sun-yatsen-residence/README.md)。完整81,088面、远景8,084面；已识别3433号独立主楼源对象，尚未替换城市或接入漫游。尺寸、侧后墙与隐蔽构造含估计，不计入逐栋复原完成量。

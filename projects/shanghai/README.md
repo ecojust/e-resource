@@ -1,29 +1,29 @@
 # 上海全景建模
 
-[徐家汇藏书楼南楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zikawei-library.html)：150,176面，远景23,140面；五开间三层外廊、百叶门窗、栏杆与老虎窗。南楼源身份已核实，尺寸和后部构造为估计，未接入城市漫游。
+[徐家汇藏书楼南楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zikawei-library.html)：150,176面，远景23,140面；五开间三层外廊、百叶门窗、栏杆与老虎窗。已接入原址室外漫游，尺寸和后部构造仍为估计。
 
 [宋庆龄故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，未接入城市漫游。
 
 [鲁迅故居正立面与院门候选](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，地图归属待核验，未计入整栋复原完成量。
 
-[孙中山故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象，尚未接入城市漫游。
+[孙中山故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象并接入室外漫游。
 
 **[打开最新地标目录](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
-全市16区底图可浏览；目录提供38处已建模地标的独立入口，分布在15个区。崇明区的逐栋精模待补充。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
+全市16区底图可浏览；目录提供40处已建模地标的独立入口，分布在15个区。崇明区的逐栋精模待补充。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
 
 新增[16区地面与水系模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/surfaces.html)：提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
-## 独立候选模型与地面水系
+## 建筑模型预览与地面水系
 
-以下七个候选尚未接入城市漫游，不计入上方38处导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
+以下七个建筑模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个仍为独立候选。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
-| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zikawei-library.html) | [查看说明](source/precise/xuhui-zikawei-south-building/README.md) |
+| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zikawei-library.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](source/precise/xuhui-zikawei-south-building/README.md) |
 | 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/soong-residence.html) | [查看说明](source/precise/xuhui-soong-ching-ling-residence/README.md) |
 | 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/luxun-residence.html) | [查看说明](source/precise/hongkou-luxun-residence-facade/README.md) |
-| 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/sun-yatsen-residence.html) | [查看说明](source/precise/huangpu-sun-yatsen-residence/README.md) |
+| 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/sun-yatsen-residence.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](source/precise/huangpu-sun-yatsen-residence/README.md) |
 | 崇明 | 学宫尊经阁 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zunjing-pavilion.html) | [查看说明](source/precise/chongming-zunjing-pavilion/README.md) |
 | 崇明 | 学宫泮池与登云桥 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/pan-pool.html) | [查看说明](source/precise/chongming-pan-pool-bridge/README.md) |
 | 崇明 | 学宫大成殿 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/dacheng-hall.html) | [查看说明](source/precise/chongming-dacheng-hall/README.md) |
@@ -39,6 +39,7 @@
 
 | 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
 |---|---|---|
+| 孙中山故居主楼 | <!-- walk-v22-time:huangpu-sun-yatsen-residence -->接入版本待填写<!-- /walk-v22-time --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) |
 | 上海总会 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=bund02&mode=walk) |
 | 有利大楼 · 外滩3号 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=bund03&mode=walk) |
 | 日清大楼 · 外滩5号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=bund05&mode=walk) |
@@ -61,6 +62,7 @@
 
 | 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
 |---|---|---|
+| 徐家汇藏书楼南楼 | <!-- walk-v22-time:xuhui-zikawei-south-building -->接入版本待填写<!-- /walk-v22-time --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) |
 | 巴金旧居主楼 | <!-- bajin-residence-publication-time:start -->[2026-10-28 05:51:01](https://github.com/ecojust/e-resource/commit/3c9efa6ac948e5298029245ae2bc04a35476de55)<!-- bajin-residence-publication-time:end --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk) |
 | 武康大楼主楼 | <!-- wukang-mansion-publication-time:start -->[2026-10-28 02:55:16](https://github.com/ecojust/e-resource/commit/8b56c1c7d8834d8f0a53b1481e60c028338efee8)<!-- wukang-mansion-publication-time:end --> | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk) |
 | 徐汇武康路129号二层住宅 | [2026-10-26 17:42:00](https://github.com/ecojust/e-resource/commit/b296b5ac4f68b4e6743f02fb2bb3c01091cab841) | [查看网页](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk) |
@@ -238,13 +240,13 @@
 
 ## 独立候选模型
 
-七个候选均已接入[统一模型目录](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；城市原址接入仍待各模型完成定位与行走验证。
+七个模型均已接入[统一模型目录](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；南楼和孙中山故居主楼已开放室外漫游，其余五个候选继续核对定位与行走范围。
 
 [崇明学宫尊经阁预览](https://rawcdn.githack.com/ecojust/e-resource/019b3dce0437d2abfe6403d26fb6fb5177f4b157/projects/shanghai/zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 
 ## 全市复原进度口径
 
-[可重建的进度清单](data/restoration-progress/README.md)核对全市基线、导航目录、普通精模、独立候选及地面水系。1,796,419是建筑与部件渲染要素数；当前缺少完整逐要素验收台账，因此不计算误导性的完成百分比。
+[可重建的进度清单](data/restoration-progress/README.md)核对全市基线、导航目录、普通精模、独立候选及地面水系。1,796,419是建筑与部件渲染要素数；身份台账已覆盖全市要素，但逐要素复原验收尚未完成，因此不计算完成百分比。
 
 [逐要素身份与模型关联台账](data/feature-restoration/README.md)覆盖全部1,708个宏块、1,796,419个渲染要素，支持按源 ID 查询。登记精模、独立候选、基线生成模型及父体剩余部分分别记录；本次只验证身份与清单，不新增模型验收或完成百分比。
 
