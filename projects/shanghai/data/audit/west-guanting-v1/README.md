@@ -23,3 +23,5 @@
 
 
 主代理实际查看最终斜侧、背面原生渲染及网页截图，复核四件资产大小、SHA256、GLB身份和西侧来源尺寸；见[视觉复核](root-visual-review.json)。
+
+[固定版本在线预览](https://rawcdn.githack.com/ecojust/e-resource/ffc4510616e628d505b710b8e834f4bb3571eb8a/projects/shanghai/west-guanting.html)已实际加载，西官厅身份、28,916三角面、GLB哈希及同版本官厅来源尺寸核对通过，网页错误数为0。见[公开网页记录](public-browser.json)；仓库根目录可运行`node projects/shanghai/data/audit/west-guanting-v1/qa-public.cjs`复验。
