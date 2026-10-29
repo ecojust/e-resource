@@ -67,3 +67,5 @@ python projects/shanghai/tools/extract_bund_road_labels.py --repo . --output /tm
 崇明学宫追加资料见[chongming-archival-discovery.json](chongming-archival-discovery.json)：保存旧官网三页与2021区政府文字的哈希、已述尺寸、地址与方位，以及牌坊题名、明伦堂高度等冲突。中央棂星门与两侧门分开记录，照片未覆盖的范围不随中央候选自动完成。
 
 局部道路标签的OSM派生数据：© OpenStreetMap contributors，OpenFreeMap / OpenMapTiles，ODbL-1.0；来源版次、原瓦片URL、边界及响应哈希见`bund-map-road-label-leads.json`。这部分数据不套用维基百科表格的CC BY-SA许可。提取代码采用项目MIT许可，未再分发参考照片，未使用建筑地址字段生成道路列表。
+
+[上海大厦与俄罗斯领事馆地图轮廓复核](heritage-next-footprint-review.json)保留4个OSM源要素、原始身份与米制计算。大厦两个具名要素共享外包，另一个无名内凹部件明确关联同一主楼；部件所在层级和历史墙线未确认。领事馆的碎片数不是楼栋数，地图楼层与文献冲突继续保留。目标[GeoJSON](heritage-next-source-features.geojson)按ODbL标注；邻域混合来源几何及图只留本地研究。离线复验用[提取脚本](../../tools/extract_heritage_footprints.py)，依赖和固定提交见报告。
