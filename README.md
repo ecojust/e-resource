@@ -14,17 +14,17 @@
 
 ## 建筑模型预览与地面水系
 
-以下七个建筑模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个仍为独立候选。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
+以下七个建筑模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个现已支持**独立模型室外漫游**，城市原址仍待配准，未计入40处城市入口。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
 | 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/zikawei-library.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md) |
-| 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/soong-residence.html) | [查看说明](projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/README.md) |
-| 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/luxun-residence.html) | [查看说明](projects/shanghai/source/precise/hongkou-luxun-residence-facade/README.md) |
+| 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/soong-residence.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/soong-residence.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/README.md) |
+| 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/luxun-residence.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/luxun-residence.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/hongkou-luxun-residence-facade/README.md) |
 | 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/sun-yatsen-residence.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](projects/shanghai/source/precise/huangpu-sun-yatsen-residence/README.md) |
-| 崇明 | 学宫尊经阁 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/zunjing-pavilion.html) | [查看说明](projects/shanghai/source/precise/chongming-zunjing-pavilion/README.md) |
-| 崇明 | 学宫泮池与登云桥 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/pan-pool.html) | [查看说明](projects/shanghai/source/precise/chongming-pan-pool-bridge/README.md) |
-| 崇明 | 学宫大成殿 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/dacheng-hall.html) | [查看说明](projects/shanghai/source/precise/chongming-dacheng-hall/README.md) |
+| 崇明 | 学宫尊经阁 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/zunjing-pavilion.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/zunjing-pavilion.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-zunjing-pavilion/README.md) |
+| 崇明 | 学宫泮池与登云桥 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/pan-pool.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/pan-pool.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-pan-pool-bridge/README.md) |
+| 崇明 | 学宫大成殿 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/dacheng-hall.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/dacheng-hall.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-dacheng-hall/README.md) |
 | 全市16区 | 地面与江河水面（零高程平面） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/518d92d468c1891a798a0ec7251fb74b41a125a9/projects/shanghai/surfaces.html) | [查看说明](projects/shanghai/source/surfaces/README.md) |
 
 ## 按区查看主要建筑

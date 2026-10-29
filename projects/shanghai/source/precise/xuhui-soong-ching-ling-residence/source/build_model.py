@@ -41,6 +41,20 @@ class House:
    if self.lod:f.prism(inner,.032,.06,'green wood',label+' LOD shutter panel')
    else:
     for zz in np.arange(z+.065,z+h-.06,.085):f.box(sx,zz,sw-.11,.045,.085,.061,'green wood',label+' shutter louvre')
+ def entrance_door(self,f,p):
+  # The licensed entrance reference shows a pale solid door with small upper
+  # lights, not full-height glazing. Panel dimensions remain photo estimates.
+  leaf=p.buffer(-.07,join_style=2)
+  lights=unary_union([box(x0,z0,x1,z1) for x0,x1 in [(-.53,-.025),(.025,.53)] for z0,z1 in [(2.17,2.40),(2.45,2.68)]])
+  f.prism(p.difference(leaf),-.17,-.025,'cream wood','north entrance door surround')
+  f.prism(leaf.difference(lights),-.19,-.105,'cream wood','north entrance solid door leaf')
+  f.prism(lights,-.235,-.22,'glass','north entrance upper inset lights')
+  for x in [-.36,.36]:
+   panel=box(x-.25,.61,x+.25,1.89)
+   f.prism(panel,-.108,-.085,'cream wood','north entrance lower panel')
+  f.box(0,1.48,.035,2.18,.025,-.08,'cream wood','north entrance meeting stile')
+  f.box(.60,1.43,.035,.17,.055,-.045,'metal','north entrance handle')
+  self.features.append({'id':'north entrance door','solid_lower_leaf':True,'upper_lights':4,'all_dimensions_estimated':True,'glass_inset_m':.22})
  def walls(self):
   b=self.b
   footprint=Polygon([(-11,-7),(-8,-7),(-8,-5.4),(8,-5.4),(8,-7),(11,-7),(11,7),(-11,7)])
@@ -72,7 +86,7 @@ class House:
   back=Facade(b,(11,7),(-11,7),'north entrance')
   door=opening(0,.35,1.65,2.65);upper=opening(0,4.2,1.6,2.25)
   back.wall(.35,7.62,[door,upper],.28,'pebbledash')
-  self.window(back,door,'north entrance door',2,3,wood='cream wood');self.window(back,upper,'north balcony door',2,4)
+  self.entrance_door(back,door);self.window(back,upper,'north balcony door',2,4)
   self.shutters(back,0,4.2,1.6,2.25,'north balcony')
   # Eave soffit follows the actual roof rectangle, not the recessed wall line.
   ring=box(-11.6,-7.6,11.6,7.6).difference(footprint)

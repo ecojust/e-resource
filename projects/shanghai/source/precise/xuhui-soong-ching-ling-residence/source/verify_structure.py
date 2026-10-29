@@ -18,7 +18,8 @@ for x in [-3.5,0,3.5]:check('dormer glass; roof cut away',[x+.2,-6,base+.33],2.1
 check('open south veranda to inset glazing',[1,-10,2.0],4.80,4.84,['glass'])
 check('upper south glass',[-4.95,-10,4.60],4.80,4.84,['glass'])
 check('east wing glass',[9.7,-9,1.2],2.20,2.24,['glass'])
-check('north porch to inset door',[.3,11,1.4],4.20,4.24,['glass'],(0,-1,0))
+check('north porch to solid lower door',[.3,11,1.4],4.07,4.11,['cream wood'],(0,-1,0))
+check('north door small upper light',[.3,11,2.3],4.20,4.24,['glass'],(0,-1,0))
 check('curved balcony slab',[1.2,-7.8,4.1],.23,.25,['grey trim'],(0,0,-1))
 for x,y in [(6,-6),(4.8,-3),(-6,3),(7,4)]:
  distance,material=ray(x,y,15,(0,0,-1));height=15-distance;t=min(1,(11.6-abs(x))/7.6,(7.6-abs(y))/7.6);expected=7.7+3.3*(t+.12*math.sin(math.pi*t))
