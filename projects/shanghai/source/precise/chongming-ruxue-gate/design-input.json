@@ -1,0 +1,132 @@
+{
+  "identity": "崇明学宫儒学大门",
+  "asset_id": "chongming-ruxue-gate",
+  "status": "Text-dimension-guided exterior candidate; actual exports, native reopen and browser checked",
+  "scope": "Independent Ruxue Gate candidate based on its own documented dimensions; all facade divisions, doors, windows, roof form, colours and hidden elevations are estimates",
+  "source_register": "source-register.json",
+  "documented": {
+    "length_m": 10.7,
+    "width_m": 8.8,
+    "height_m": 8,
+    "reported_area_m2": 94,
+    "repair_year": 2004,
+    "relative_position": "East of Lingxing Gate and directly south of Yimen, per the historical museum page",
+    "bays": null,
+    "central_entrance": null,
+    "window_count": null,
+    "roof_type": null,
+    "geographic_direction_of_length_and_width": null,
+    "actual_entrance_direction": null,
+    "measurement_endpoints": null
+  },
+  "historical_records": [
+    {
+      "year": 1760,
+      "event": "Repair recorded under county magistrate Zhao Tingjian",
+      "scope": "Historical record; not a constraint on the modern facade"
+    },
+    {
+      "year": 1915,
+      "event": "Used as the gate of Chongming County Junior Middle School",
+      "scope": "Historical use only; no inference of modern plaques, openings or 2026 function"
+    }
+  ],
+  "reference_period_limit": "The 2004 repair is a documentary date, not a unique construction year or verification of the complete 2004 state or 2026 condition.",
+  "interpretations": {
+    "measurement_endpoints": "Assign documentary length and width to the base envelope. Actual wall, column, base and eave measurement limits are unspecified.",
+    "local_axes": "Local X uses 10.7 m and local Y uses 8.8 m. This is a modeling coordinate choice; the document does not identify these as east-west/north-south extents or verify entrance direction.",
+    "base_plan_m": [
+      10.7,
+      8.8
+    ],
+    "base_height_m": 0.2,
+    "wall_outer_lines_m": [
+      10.3,
+      8.4
+    ],
+    "wall_thickness_m": 0.2,
+    "roof_main_sheet_m": [
+      11.5,
+      9.6
+    ],
+    "height_constraint_m": 8,
+    "roof_surface_ridge_z_m": 7.75,
+    "plain_ridge_cap_top_z_m": 8,
+    "eave_roof_top_m": 5.5,
+    "roof_type": "Estimated simple single-tier, two-slope gable roof with a plain ridge cap; no individually bound photograph or documentary roof classification.",
+    "facade_partition": "Three equal local divisions are an estimate. No documentary three-bay count, equal bay widths or structural column grid is claimed.",
+    "openings": {
+      "central_door_count": 1,
+      "door_pose": "Closed double leaves, estimated",
+      "central_door_width_m": 2.6,
+      "central_door_bottom_top_m": [
+        0.2,
+        4.4
+      ],
+      "lattice_window_count": 2,
+      "window_width_height_m": [
+        2.0,
+        2.1
+      ],
+      "window_bottom_top_m": [
+        1.6,
+        3.7
+      ],
+      "window_grid": [
+        3,
+        4
+      ],
+      "status": "All counts, central-door positioning, dimensions, leaf subdivisions and lattice pattern are estimates; neither a central entrance nor these windows are documented."
+    },
+    "colors": "Original grey roof, light wall and red-brown timber approximations; unverified material colours and roughness, with no photographic texture sampling.",
+    "rear_and_sides": "Plain closure walls and assumed roof-end infills; rear openings and hidden details unverified.",
+    "front": "Local -Y facade for independent viewing only; actual entrance orientation unverified.",
+    "interior": "Not modeled",
+    "actual_export_envelope": {
+      "width_depth_height_m": [
+        11.649999618530273,
+        9.741761207580566,
+        8.0
+      ],
+      "bounds_glb": [
+        [
+          -5.824999809265137,
+          0.0,
+          -4.870880603790283
+        ],
+        [
+          5.824999809265137,
+          8.0,
+          4.870880603790283
+        ]
+      ],
+      "interpreted_base_width_depth_m": [
+        10.699999809265137,
+        8.800000190734863
+      ],
+      "limit": "Computed from final Ruxue raw and source LOD GLBs, including ridge/gable caps and tile ends. These are model bounds, not measured documentary endpoints or a geographic survey."
+    }
+  },
+  "area_arithmetic_check": {
+    "expression": "10.7 x 8.8",
+    "calculated_m2": 94.16,
+    "documented_m2": 94,
+    "limit": "The product is close to the rounded documented area. This arithmetic does not identify measurement endpoints or establish the physical plan or orientation."
+  },
+  "implementation_reuse": {
+    "identity": "崇明学宫西官厅",
+    "source_script": "../chongming-west-guanting/source/build_model.py",
+    "source_commit": "ffc4510616e628d505b710b8e834f4bb3571eb8a",
+    "scope": "Reuse the basic modeling logic and supporting construction/export workflow, with independent Ruxue Gate base, wall, roof, height and parameterized opening dimensions. This is code reuse, not evidence that Ruxue Gate and West Guanting share real roof types, facade layouts, dimensions or details. No Guanting or Yimen photograph is used as Ruxue Gate facade evidence."
+  },
+  "identity_limits": "No individually bound Ruxue Gate photograph is used. Do not substitute Yimen imagery or assign an entire panorama background building to this gate. Shared code does not establish matching physical appearance.",
+  "omitted": [
+    "Yimen, Lingxing Gate, Minglun Hall and other neighbouring buildings",
+    "Courtyard paving and measured ground",
+    "Unsupported front corridor columns, brackets, plaques and decorative carvings",
+    "Interior spaces, furnishings and school or exhibition displays"
+  ],
+  "geographic_registration": false,
+  "photos_redistributed": false,
+  "photo_textures_sampled": false
+}
