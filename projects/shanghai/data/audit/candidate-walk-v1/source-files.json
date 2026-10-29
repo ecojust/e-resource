@@ -1,5 +1,5 @@
 {
-  "base_commit": "559e40c52f9d6353e6abb31226fab3fc683ae707",
+  "base_commit": "4b6efce10ea732cc179a6b33f19c274bae26f605",
   "files": [
     {
       "path": "assets/models/candidates/chongming-dacheng-hall/chongming-dacheng-hall-lod.glb",
@@ -140,6 +140,11 @@
       "path": "data/audit/candidate-walk-v1/qa-failure.cjs",
       "bytes": 1921,
       "sha256": "6413f35852cc544b8ee9b232dface9767b7e0b10f819c91c78b1918d8326d04b"
+    },
+    {
+      "path": "data/audit/candidate-walk-v1/qa-quality-state.cjs",
+      "bytes": 2215,
+      "sha256": "5154814cd0650f06d57ec854b9063c38687c11887b6fe7c348f0f638551389e2"
     },
     {
       "path": "data/audit/candidate-walk-v1/qa-soong-viewer.cjs",
@@ -748,8 +753,8 @@
     },
     {
       "path": "src/candidate-walk.js",
-      "bytes": 9166,
-      "sha256": "f61a226a25b2c27415c3fcbc2f1da063229290ec0deebe5ecf72cef3e1719da8"
+      "bytes": 9428,
+      "sha256": "5ae7df6a946b6a76e10857e6344ece7e7b4e1156b76b58ed984e0ec1156caa00"
     },
     {
       "path": "src/dacheng-hall.js",
@@ -858,5 +863,16 @@
       "bytes": 4435,
       "sha256": "cdeb690006516cf0969274f4b6ba5b9d4764830e748b83e3dd25fa0f86d40dca"
     }
-  ]
+  ],
+  "full_behavior_verified_commit": "4b6efce10ea732cc179a6b33f19c274bae26f605",
+  "full_behavior_source_bindings": "source-files-full-verification.json",
+  "only_changed_previously_verified_input": [
+    "src/candidate-walk.js"
+  ],
+  "incremental_change": "Synchronize an explicit LOD dropdown choice to full when walking requests full geometry; preserve automatic selection. No movement/collision/model changes.",
+  "incremental_validation": {
+    "path": "data/audit/candidate-walk-v1/quality-state-local.json",
+    "bytes": 995,
+    "sha256": "51a820309af8ad8175bf81ab551f2cd6f3c41827dd3492ab85041d2e4fcef6e4"
+  }
 }

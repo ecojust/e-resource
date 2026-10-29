@@ -63,6 +63,10 @@ export function installCandidateWalk({scene, camera, renderer, controls, stage, 
     if (ground) ground.visible = true;
     history.replaceState(null, '', '#mode=model-walk'); home(); resize(); canvas.focus();
     frame = requestAnimationFrame(tick);
+    // Walking requests full geometry. Keep an explicit quality choice in sync
+    // when returning to the inspector; automatic mode remains automatic.
+    const detail = document.getElementById('detail');
+    if (detail.value === 'lod') detail.value = 'full';
     onEnter?.();
   }
   function leave() {
