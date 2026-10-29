@@ -3550,9 +3550,9 @@
 
 重檐曲面屋顶、瓦垄与脊饰、336处格窗开口、拱门券边、瓮城题字、垛口栏墙及楼梯转接平台；原创砖面颜色、法线与粗糙度等PBR纹理。
 
-[网页模型](projects/shanghai/assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-web.glb)（2,069,180字节）· [Blender模型](projects/shanghai/assets/native/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse.blend)（2,506,201字节）· [来源与验收](projects/shanghai/CURRENT_STATE.md)。
+[网页模型](projects/shanghai/assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-web.glb)（2.07 MB）· [Blender模型](projects/shanghai/assets/native/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse.blend)（2.51 MB）· [来源与验收](projects/shanghai/CURRENT_STATE.md)。
 
-四件模型单文件最大4,507,912字节，均严格小于100,000,000字节。围合尺度约35×36.7米、模型最高点约18.89米，尺寸及背面、屋顶交接和楼梯隐蔽构造为公开资料引导估计，并非实测复原。未建模园内纪念墙、雕塑、花园、河道及其他建筑，不提供室内或登楼漫游；正面在网页固定晨光下偏暗。下载ZIP仍为v13旧启动包；更新请使用上方网页。
+四件模型单文件最大约4.51 MB，均严格小于100 MB。围合尺度约35×36.7米、模型最高点约18.89米，尺寸及背面、屋顶交接和楼梯隐蔽构造为公开资料引导估计，并非实测复原。未建模园内纪念墙、雕塑、花园、河道及其他建筑，不提供室内或登楼漫游；正面在网页固定晨光下偏暗。下载ZIP仍为v13旧启动包；更新请使用上方网页。
 
 ## 三维模型
 
