@@ -19,4 +19,4 @@ node tests/opaque-inferred-controls.mjs
 node tests/replay-compressed-near-rays.mjs
 ```
 
-The freeze scripts deliberately refuse to overwrite existing evidence. Original failed visual evidence and original tools remain available. Each published file remains strictly below100,000,000 bytes.
+The freeze scripts deliberately refuse to overwrite existing evidence. Original failed visual evidence and original tools remain available. Each published file remains strictly below100 MB.

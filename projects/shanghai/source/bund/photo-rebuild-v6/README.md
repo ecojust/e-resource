@@ -12,7 +12,7 @@
 | 9号轮船招商局 | [30.12 MB](../../../assets/models/bund/web/bund09.glb) | [76.88 MB](../../../assets/models/bund/bund09.glb) | [42.68 MB](../../../assets/native/bund/bund09.blend) | [8.43 MB](../../../assets/models/bund/lod-v4/bund09.glb) |
 | 14号交通银行 | [6.73 MB](../../../assets/models/bund/web/bund14.glb) | [9.84 MB](../../../assets/models/bund/bund14.glb) | [15.05 MB](../../../assets/native/bund/bund14.blend) | [1.44 MB](../../../assets/models/bund/lod-v4/bund14.glb) |
 
-表中单位为十进制MB，全部文件小于100,000,000字节。精确字节和本轮证据见[REALISM_V6_1](../../../data/bund/REALISM_V6_1.md)及各栋封装记录。07／09当前状态见各自DELIVERY，生成阶段README中的“待验”属于历史记录。
+表中单位为十进制MB，全部文件小于100 MB。精确字节和本轮证据见[REALISM_V6_1](../../../data/bund/REALISM_V6_1.md)及各栋封装记录。07／09当前状态见各自DELIVERY，生成阶段README中的“待验”属于历史记录。
 
 5号双山花与三面凸窗、6号五山墙四圆尖塔与三拱入口、14号八轴窗与阶梯塔冠保留首批成果；7号新增四层分组立面、金属顶帽与屋顶窗，9号新增通透外廊、不同柱式、石券缝和连续搭接瓦。所有楼体均有真实洞口、侧壁、独立框和构件；未见侧后、绝对高度与雕饰含推定。
 

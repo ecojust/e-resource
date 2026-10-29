@@ -30,6 +30,6 @@ python source/precise/chongming-pan-pool-bridge/source/verify_structure.py --mod
 
 原生文件可用 source/check_native_geometry.py 在 Blender 中重新打开，并逐三角形对照原始GLB。
 
-四件模型分别为原始GLB、压缩网页GLB、远景GLB、Blender原生文件，均小于100,000,000字节。远景保留24级台阶与真实拱洞，仅降低曲线采样和雕刻近似细节。Blender展示地面、相机与灯光单独成组，不属于建筑构件或实测场地。预览将地面降低到池底以下，剖露池壁和桥台基础，不能理解为现场池体高出地面。
+四件模型分别为原始GLB、压缩网页GLB、远景GLB、Blender原生文件，均小于100 MB。远景保留24级台阶与真实拱洞，仅降低曲线采样和雕刻近似细节。Blender展示地面、相机与灯光单独成组，不属于建筑构件或实测场地。预览将地面降低到池底以下，剖露池壁和桥台基础，不能理解为现场池体高出地面。
 
 原创代码与几何 MIT，参考照片独立采用 CC BY-SA 2.0；公用代码来源见 source/HELPER_PROVENANCE.json。[验证与截图](../../../data/audit/pan-pool-v1/README.md)。

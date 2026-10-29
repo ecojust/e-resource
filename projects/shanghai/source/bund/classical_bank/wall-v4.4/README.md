@@ -30,7 +30,7 @@
 
 `../photo-v4.4/model-validation.json`、`export-validation.json`、`geometry-uv-validation.json` 是**墙修复前的六窗阶段历史证据**。其中“未选中三角形全部不变”、230,205三角形和旧GLB/native SHA只适用于该中间阶段，不能继续作为当前最终模型的保留声明。照片像素坐标与30块pane UV仍有效，本阶段没有修改原JPEG、照片UV或主窗框。
 
-汇丰近景仍只嵌入Suicasmo的5184×3456 CC0原JPEG，SHA `bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684`；完整来源与EXIF见前置照片包。原图位于 `assets/references/bund/hsbc-20250501-original.jpg`，源码不重复复制。汇丰远景不嵌照片，玻璃明确为蓝灰底色；15号所有变体都没有图像纹理。full web采用 `-cc -noq -km -ke`，远景另加 `-si 0.35 -se 0.002 -sp`；压缩后恢复GLB归属元数据。所有文件低于100,000,000B。
+汇丰近景仍只嵌入Suicasmo的5184×3456 CC0原JPEG，SHA `bbb15e71ba67f99daab1aa2827494db9c6af6f9b349a2f4ccea6f6609c9ec684`；完整来源与EXIF见前置照片包。原图位于 `assets/references/bund/hsbc-20250501-original.jpg`，源码不重复复制。汇丰远景不嵌照片，玻璃明确为蓝灰底色；15号所有变体都没有图像纹理。full web采用 `-cc -noq -km -ke`，远景另加 `-si 0.35 -se 0.002 -sp`；压缩后恢复GLB归属元数据。所有文件低于100 MB。
 
 ## 重建
 

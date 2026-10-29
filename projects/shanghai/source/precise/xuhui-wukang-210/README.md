@@ -40,7 +40,7 @@ blender -b --python-exit-code 1 --python common/blender_finish.py -- \
 
 ## 审计和文件范围
 
-构建输出含每个实体的FLOAT32闭合边配对/正体积检查、实际GLB窗洞射线与邻墙负控、实际玻璃嵌框深度、有限值/法线和单文件100,000,000B门槛。发布白名单见 `SOURCE_FILES.json`，原图字节不变。目录外 `research/`、`reference-only/`、历史输出和缓存不属于可公开源码包；尤其不发布私有航拍，也没有据它描线或制贴图。
+构建输出含每个实体的FLOAT32闭合边配对/正体积检查、实际GLB窗洞射线与邻墙负控、实际玻璃嵌框深度、有限值/法线和单文件100 MB门槛。发布白名单见 `SOURCE_FILES.json`，原图字节不变。目录外 `research/`、`reference-only/`、历史输出和缓存不属于可公开源码包；尤其不发布私有航拍，也没有据它描线或制贴图。
 
 ## v3屋面交接修正
 

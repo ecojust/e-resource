@@ -36,7 +36,7 @@
 
 输出位于独立目录，发布安装目标为 `assets/city-detail/`。原 `assets/city/` 保留作原版本与回退。顶层manifest的远景记录包含 `file`、`feature_ids_file`、`feature_table_file`、`near_manifest_file`。各宏块的 `READY.json` 记录近景文件、1起始的 `featureLocalIds`、三角数、展开三角数、几何缓冲大小和包围范围；完整归属记录在 `feature-table.gz` 与 `ownership.gz`。
 
-near文件为 `near/<id>.glb.gz`：先以Meshopt `-cc -noq -mi -kv -km -ke` 压缩GLB，保留float32位置、不做坐标量化，再以gzip等级6、`mtime=0` 确定性封装。`size_bytes`、`bytes`、`sha256`对应存储的gzip；`content_encoding:gzip`、`decoded_size_bytes`、`decoded_sha256`对应解压后的GLB。两种大小均须小于100,000,000字节。far仍为普通Meshopt `.glb`，各顶点保留精确源要素ID；`published_files`只校验存储文件，解码元数据留在near记录中。
+near文件为 `near/<id>.glb.gz`：先以Meshopt `-cc -noq -mi -kv -km -ke` 压缩GLB，保留float32位置、不做坐标量化，再以gzip等级6、`mtime=0` 确定性封装。`size_bytes`、`bytes`、`sha256`对应存储的gzip；`content_encoding:gzip`、`decoded_size_bytes`、`decoded_sha256`对应解压后的GLB。两种大小均须小于100 MB。far仍为普通Meshopt `.glb`，各顶点保留精确源要素ID；`published_files`只校验存储文件，解码元数据留在near记录中。
 
 运行时先校验、解压，再送入GLTFLoader；完整near可显示后才隐藏其对应far要素，退出近景或加载失败时恢复原表示。运行时同时约束请求、展开三角、几何缓冲和缓存；单文件小于100MB不等于可同时加载全部近景。
 
@@ -51,7 +51,7 @@ python tools/unpack_model.py assets/city-detail/macros/14-13719-6695/near/-3_1-s
 
 `unpack_model.py`自动寻找上级 `READY.json`，验证stored和decoded两份大小/SHA，解开gzip并转换为普通GLB；原发布文件保持不变。单独保存某个near文件时，可导出对应near记录并通过 `--metadata record.json` 显式提供它。之后在Blender的“文件 → 导入 → glTF 2.0”中选择输出文件即可，无需重新生成建筑。
 
-[实际导入证据](../../../data/audit/city-detail-v5/blender-import.json)记录了这个9要素普通near样本：gzip为62,550B，解码Meshopt GLB为313,544B，转换后的普通GLB为963,416B。Blender 4.3.2实际导入4,144个网格实例，展开三角91,936，与源清单一致；坐标有限。检查范围是单一样本，不是全城模型的Blender审计。
+[实际导入证据](../../../data/audit/city-detail-v5/blender-import.json)记录了这个9要素普通near样本：gzip为0.063 MB，解码Meshopt GLB为0.31 MB，转换后的普通GLB为0.96 MB。Blender 4.3.2实际导入4,144个网格实例，展开三角91,936，与源清单一致；坐标有限。检查范围是单一样本，不是全城模型的Blender审计。
 
 ## 重建
 
@@ -92,14 +92,14 @@ npm ci --prefix source/city/detail/tooling --ignore-scripts
 | CI开始 / 最后任务结束 / 用时 | 2026-10-26 03:36:47 UTC / 2026-10-26 04:12:13 UTC / 35分26秒（16分片并行CI全流程，含安装、校验与上传；不含本地检索和发布核验） |
 | far宏块 / near分块 | 1,708 / 169,320 |
 | 普通要素总量及16区覆盖 | 通过：16区、1,708宏块、1,796,419个唯一要素，逐要素近景归属完整 |
-| near存储合计 / 最大gzip文件字节 | 9,329,009,466 / 194,270 |
-| near最大解码GLB字节 | 1,875,772 |
-| far合计字节 | 551,247,720 |
+| near存储合计 / 最大gzip文件（MB） | 9329.01 / 0.19 |
+| near最大解码GLB（MB） | 1.88 |
+| far合计（MB） | 551.25 |
 | 稳定ID、排除、残差及126屋顶 | 通过：98处地标排除、401个父体残差与126处有据屋顶；屋顶实际解码三角精确保留 |
-| 文件上限、SHA、几何与清单 | 通过：169,320个near与1,708个far的结构、SHA及存储/解码大小检查，单文件均小于100,000,000字节 |
+| 文件上限、SHA、几何与清单 | 通过：169,320个near与1,708个far的结构、SHA及存储/解码大小检查，单文件均小于100 MB |
 | 实际网页加载、切换与失败恢复 | 通过：外滩与普通楼片区切换、近景要素遮罩及俯瞰恢复正确；异常加载恢复另由完整自动测试覆盖 |
 
-清单与全部1,708份READY记录已对账，计169,320个near文件、1,796,419个要素；最大far为1,875,412字节。见[清单大小核对](../../../data/audit/city-detail-v5/release/manifest-size-summary.json)。此核对仅读取元数据，文件内容、SHA、几何与网页验收以上表最终审计为准。
+清单与全部1,708份READY记录已对账，计169,320个near文件、1,796,419个要素；最大far为1.88 MB。见[清单大小核对](../../../data/audit/city-detail-v5/release/manifest-size-summary.json)。此核对仅读取元数据，文件内容、SHA、几何与网页验收以上表最终审计为准。
 
 [完整运行时测试](../../../data/audit/city-detail-v5/release/runtime-tests.json)已通过，覆盖加载取消、迟到结果释放、资源计数和近远归属；网络期限回归见[修复记录](../../../data/audit/city-detail-v5/release/network-deadline-fix.json)。[实际浏览器验收](../../../data/audit/city-detail-v5/release/browser.json)已通过外滩及普通楼片区的加载、移动、遮罩切换与俯瞰恢复；该流程并未逐栋浏览全市模型。街景超时预算回归见[修复记录](../../../data/audit/city-detail-v5/release/street-timeout-fix.json)。
 

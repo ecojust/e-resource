@@ -31,4 +31,4 @@ python verify_features.py /path/to/new-full/columbia-country-club.glb /path/to/n
 
 预览地面、灯光和摄像机放在独立集合；原始 GLB 与 native 建筑集合只有模型本体。124 条有限射线检查实际 GLB 中墙洞和邻接实体，以及花格孔和实角。这是局部建筑几何验证，不表示 HTML 漫游引擎已实现楼梯或三角网格碰撞。网页导航与视角由集成阶段独立核验。
 
-完整和 LOD 分别压缩，保留原始位置、UV、法线精度及原图字节；使用 `-cc -noq -vtf -vnf -km -ke`，再由网页同源 Three/Meshopt 解码器比较真实三角面和 UV。单文件硬限制为 100,000,000 字节；原始 GLB 与 native 目标均低于 40 MB。
+完整和 LOD 分别压缩，保留原始位置、UV、法线精度及原图字节；使用 `-cc -noq -vtf -vnf -km -ke`，再由网页同源 Three/Meshopt 解码器比较真实三角面和 UV。单文件硬限制为 100 MB；原始 GLB 与 native 目标均低于 40 MB。

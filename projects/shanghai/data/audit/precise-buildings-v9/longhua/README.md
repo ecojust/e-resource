@@ -6,7 +6,7 @@
 
 目录三阶段及5张实际截图完成：复用静态模型；仅由目录加载、卸载并实际释放14个几何对象、返回；故意损坏索引后拒绝精细模型，保留14个原建筑要素（目标及13邻楼），没有请求被拒绝的精细模型。既有24条导航和武康、青浦、鸿德堂三个目录宏块原字节保持。[目录浏览器记录](catalog/browser.json) · [5图视觉记录](catalog/visual-review.json) · [最终状态证明](catalog/lifecycle-proof.json)。
 
-模型网页GLB、原始GLB、远景LOD、Blender分别为19,740,940、47,242,988、9,537,048、24,033,748字节，每件严格小于100,000,000字节。[本页实际输入绑定](release-binding.json) · [模型交付、来源和许可](../../../../source/precise/xuhui-longhua-pagoda/README.md)。
+模型网页GLB、原始GLB、远景LOD、Blender分别为19.74、47.24、9.54、24.03 MB，每件严格小于100 MB。[本页实际输入绑定](release-binding.json) · [模型交付、来源和许可](../../../../source/precise/xuhui-longhua-pagoda/README.md)。
 
 七层八面、六道高架回廊、曲檐瓦面、斗栱、贯通门洞及盲壁龛、栏杆与塔刹分别构造。四张参考照片各自保留CC0、CC BY-SA 3.0或CC BY-SA 4.0许可，模型未嵌入其像素。40.64m是官方公布的名义总高，非本项目实测；地理门向相位、层间比例、不可见处和被遮挡底部仍有推定，没有经过核验的室内。
 

@@ -7,8 +7,8 @@ This isolated candidate adds the missing public sidewalk between ten source-veri
 - `stage/source/bund/street/frontage_paving.py`: composable geometry module. After the existing planting build, before GLB packing, call `frontage, frontage_audit = add_frontage_paving(globals())`. It adds material `BundFrontagePaving`, suitable for the same pavement shader as the western sidewalk. Existing materials are untouched.
 - `stage/source/bund/street/ground_sidecar.py`: call `export_ground_sidecar(ns, output, raw_path, web_path)` **after the final combined asset is written and copyright restored**. The source namespace must contain current street geometry and `frontage`. Final raw/web hashes are bound in the sidecar, so regenerate it after combining furniture/greenery. `extra_features` supports externally generated trees. Furniture uses the sibling `furniture.interaction()` exact primitive export and is deliberately not duplicated by approximate ground obstacles.
 - `stage/source/bund/street/build_street.py`: working isolated integration example.
-- `stage/source/bund/street/bund-streets.glb`: frontage-only candidate raw, 3,953,720 bytes / 74,066 triangles.
-- `web/bund-streets.glb`: compressed candidate, 1,358,452 bytes. `-cc -noq -km -ke`, then preserve raw `asset.copyright`.
+- `stage/source/bund/street/bund-streets.glb`: frontage-only candidate raw, 3.95 MB / 74,066 triangles.
+- `web/bund-streets.glb`: compressed candidate, 1.36 MB. `-cc -noq -km -ke`, then preserve raw `asset.copyright`.
 - `bund-streets-ground.geojson`: candidate sidecar fixture, 12 walkable surface features, two preserved planting-bed obstacles and eight exact frozen inner-ring exclusions.
 - `frontage-plan-v4.5.png`: plan diagram. Brown shows added ground; grey shows previous ground. This is an explanatory geometry diagram, not a new aerial photograph.
 

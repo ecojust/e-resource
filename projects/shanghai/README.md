@@ -192,7 +192,7 @@
 
 重檐曲面屋顶、瓦垄与脊饰、336处格窗开口、拱门券边、瓮城题字、垛口栏墙及楼梯转接平台；原创砖面颜色、法线与粗糙度等PBR纹理。
 
-[网页GLB](assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-web.glb)（2,069,180字节）· [Blender](assets/native/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse.blend)（2,506,201字节）· [建模来源与许可](source/precise/jinshanwei-wengcheng-gatehouse/README.md)。原始GLB 4,507,912字节、远景GLB 1,138,124字节，四件均严格小于100,000,000字节。
+[网页GLB](assets/models/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse-web.glb)（2.07 MB）· [Blender](assets/native/precise/14-13713-6721/jinshanwei-wengcheng-gatehouse/jinshanwei-wengcheng-gatehouse.blend)（2.51 MB）· [建模来源与许可](source/precise/jinshanwei-wengcheng-gatehouse/README.md)。原始GLB 4.51 MB、远景GLB 1.14 MB，四件均严格小于100 MB。
 
 实际几何、Blender原生文件与网页压缩版本核验通过；公开源码可独立重建。浏览器14项常规检查与另一上下文的7项延迟/故障检查通过，5张实际截图经人工查看；已验证完整模型与远景模型的纹理解码和切换。四个模型交付文件分别约4.51、2.07、1.14、2.51MB，均小于100MB。
 
@@ -202,7 +202,7 @@
 
 包含南侧折线山墙、拱形阁楼窗、绿色分格门窗、北侧拱廊入口、三层台阶与屋面瓦片细节。墙面使用原创卵石抹灰材质，提供可编辑Blender文件及可复现建模源码。
 
-[网页GLB](assets/models/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence-web.glb)（2,868,520字节）· [Blender](assets/native/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence.blend)（3,215,562字节）· [建模来源与许可](source/precise/xuhui-bajin-residence/README.md)。原始GLB 5,069,420字节、远景GLB 1,506,616字节，四件均严格小于100,000,000字节。
+[网页GLB](assets/models/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence-web.glb)（2.87 MB）· [Blender](assets/native/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence.blend)（3.22 MB）· [建模来源与许可](source/precise/xuhui-bajin-residence/README.md)。原始GLB 5.07 MB、远景GLB 1.51 MB，四件均严格小于100 MB。
 
 原始模型、远景源模型、三张纹理及两份网页模型已从公开源码布局重新生成并核对一致。实际浏览器14项检查通过，包括目录直达、链接重载、近景与远景切换、贴图加载、第三人称移动和松键停止；五张实际截图已人工核对。
 
@@ -210,7 +210,7 @@
 
 已完成长宁区**邬达克旧居**，参照历史总平面、历史照片和修缮后照片构造双山墙、弧形侧屋面、木构装饰、窗格与砖齿窗套、二层外挑及石托、退进门廊、烟囱砖饰和三只屋脊鸟饰。范围为主宅外观及北侧连接服务体量，不含花园门房、整个原宅花园、相邻建筑或室内。
 
-[网页GLB](assets/models/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence-web.glb)（3,117,544字节）· [Blender](assets/native/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence.blend)（3,306,236字节）· [建模来源与许可](source/precise/changning-hudec-residence/source/README.md)。原始GLB 7,254,628字节、远景GLB 622,564字节，四件均严格小于100,000,000字节。
+[网页GLB](assets/models/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence-web.glb)（3.12 MB）· [Blender](assets/native/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence.blend)（3.31 MB）· [建模来源与许可](source/precise/changning-hudec-residence/source/README.md)。原始GLB 7.25 MB、远景GLB 0.62 MB，四件均严格小于100 MB。
 
 已通过独立资产、冻结邻楼筛查及本地网页的全量/远景/回返加载、目录直达和有限键盘行走检查。仅验证登记室外起点与有限路线；门廊、台阶、室内和屋顶未作为自由通行范围。
 
@@ -218,19 +218,19 @@
 
 已完成徐汇区**武康大楼主楼**，按修缮图与多角度照片分别构造东南拱廊、西北拱窗、弧形转角、深凹口、钢窗、石质与金属阳台栏杆及屋顶构件。东北附楼、新楼和整条武康路不在本次范围内。
 
-[网页GLB](assets/models/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion-web.glb)（11,441,668字节）· [Blender](assets/native/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion.blend)（15,402,130字节）· [建模来源与许可](source/precise/xuhui-wukang-mansion/README.md)。原始GLB29,474,764字节、远景GLB6,906,928字节，四件均严格小于100,000,000字节。
+[网页GLB](assets/models/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion-web.glb)（11.44 MB）· [Blender](assets/native/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion.blend)（15.40 MB）· [建模来源与许可](source/precise/xuhui-wukang-mansion/README.md)。原始GLB 29.47 MB、远景GLB 6.91 MB，四件均严格小于100 MB。
 
 已通过独立资产、邻楼筛查及本地网页的全量/远景/回返加载、目录直达和有限键盘行走检查。层高、隐藏屋面与连接部位含推估；砖材质为原创通用材质，不是本楼表面扫描。约30米的文献高度未明确端点，模型女儿墙顶约30.10米、屋顶构件最高约31.37米，均不作实测值。仅验证登记室外起点与有限路线，不保证室内、楼梯、屋顶或任意行走路线可通行。
 
 已完成奉贤区**奉贤博物馆（2019年新馆）**，按公开分层图与照片构造三个展馆、上层连廊、金属百叶和屋顶开放空间。模型已通过独立资产检查、外部出生点与有限行走路径检查，以及实际浏览器全量、远景和回返加载验收。
 
-[网页GLB](assets/models/precise/14-13721-6710/fengxian-museum/fengxian-museum-web.glb)（6,422,176字节）· [Blender](assets/native/precise/14-13721-6710/fengxian-museum/fengxian-museum.blend)（7,829,669字节）· [公开参考与许可](source/precise/fengxian-museum/public-photo-register.json)。原始GLB 15,859,680字节、远景GLB 4,252,732字节，四件均严格小于100,000,000字节。
+[网页GLB](assets/models/precise/14-13721-6710/fengxian-museum/fengxian-museum-web.glb)（6.42 MB）· [Blender](assets/native/precise/14-13721-6710/fengxian-museum/fengxian-museum.blend)（7.83 MB）· [公开参考与许可](source/precise/fengxian-museum/public-photo-register.json)。原始GLB 15.86 MB、远景GLB 4.25 MB，四件均严格小于100 MB。
 
 该馆为有资料参照的外观复原，比例和高度含推估，未达到测绘或摄影测量精度；周边仍为普通城市背景。临水起点与相机仅验证指定位置和有限路径，模型的台阶、屋顶环道、连廊与室内不表示可以精确登高或自由通行。
 
 已完成长宁区**哥伦比亚乡村俱乐部主楼**，已接入第三人称漫游并通过模型与本地浏览器验收。按建筑师平剖面和照片分别构造北门厅、圆端楼梯间、南拱廊和后退山花、露台、红瓦屋顶及保留的东侧增建。
 
-[网页GLB](assets/models/precise/14-13718-6695/columbia-country-club/columbia-country-club-web.glb)（10,425,888字节）· [Blender](assets/native/precise/14-13718-6695/columbia-country-club/columbia-country-club.blend)（13,759,514字节）· [建模来源与许可](source/precise/columbia-country-club/README.md)。原始GLB 24,519,920字节、远景GLB 4,315,552字节，四件均严格小于100,000,000字节。[实际验收与完整下载](CURRENT_STATE.md)
+[网页GLB](assets/models/precise/14-13718-6695/columbia-country-club/columbia-country-club-web.glb)（10.43 MB）· [Blender](assets/native/precise/14-13718-6695/columbia-country-club/columbia-country-club.blend)（13.76 MB）· [建模来源与许可](source/precise/columbia-country-club/README.md)。原始GLB 24.52 MB、远景GLB 4.32 MB，四件均严格小于100 MB。[实际验收与完整下载](CURRENT_STATE.md)
 
 模型是有资料参照的外观复原，不是测绘或摄影测量成果，也尚非照片级真实复原。图尺推定高度、被遮挡部位和局部装饰仍有误差或简化；通用抹灰材质不是本楼扫描，私有参考图片不进入公开包。
 

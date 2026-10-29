@@ -6,9 +6,9 @@
 
 | 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
 |---|---|---|---|---|
-| 四行仓库及毗邻大陆银行仓库 | [9,109,892字节](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-web.glb) | [25,721,072字节](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-raw.glb) | [5,513,608字节](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-lod.glb) | [12,868,230字节](../../assets/native/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse.blend) |
+| 四行仓库及毗邻大陆银行仓库 | [9.11 MB](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-web.glb) | [25.72 MB](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-raw.glb) | [5.51 MB](../../assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-lod.glb) | [12.87 MB](../../assets/native/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse.blend) |
 
-四件文件均严格低于100,000,000字节。源码、参数、许可照片及原生预览见[独立目录](jingan-sihang-warehouse/README.md)；照片用于结构参照，没有嵌入模型。27.7米为文献名义总高，局部构造仍有估计。
+四件文件均严格低于100 MB。源码、参数、许可照片及原生预览见[独立目录](jingan-sihang-warehouse/README.md)；照片用于结构参照，没有嵌入模型。27.7米为文献名义总高，局部构造仍有估计。
 
 本版 `map-scene.js` 增加空过滤器重复调用保护，其余30件运行时文件保持。[网页验证范围](../../data/audit/precise-buildings-v12/sihang/README.md) · [来源与限制](../../data/bund/REALISM_V12.md)。
 
@@ -22,8 +22,8 @@
 
 | 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
 |---|---|---|---|---|
-| 上海汽车博物馆 | [10,347,300字节](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) | [31,951,432字节](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-raw.glb) | [10,347,300字节](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-lod.glb) | [14,653,789字节](../../assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) |
-| 包玉刚图书馆 | [7,843,916字节](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-web.glb) | [23,888,596字节](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-raw.glb) | [1,361,876字节](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-lod.glb) | [12,688,862字节](../../assets/native/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library.blend) |
+| 上海汽车博物馆 | [10.35 MB](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) | [31.95 MB](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-raw.glb) | [10.35 MB](../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-lod.glb) | [14.65 MB](../../assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) |
+| 包玉刚图书馆 | [7.84 MB](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-web.glb) | [23.89 MB](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-raw.glb) | [1.36 MB](../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-lod.glb) | [12.69 MB](../../assets/native/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library.blend) |
 
 两栋均保留各自原始冻结源码、独立检查、修正历史和来源许可；具体文件以各自实际交付清单为准。来源轮廓用于身份及替换，不能当作已获得测绘墙线。本版31件生产运行时文件与已发布v10阴影修复后的冻结字节相同；没有新增运行时修复。
 
@@ -37,8 +37,8 @@
 
 | 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
 |---|---|---|---|---|
-| 松江方塔 | [19,924,564字节](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-web.glb) | [47,281,480字节](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-raw.glb) | [9,675,812字节](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-lod.glb) | [23,966,595字节](../../assets/native/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda.blend) |
-| 真如寺大殿 | [11,906,884字节](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-web.glb) | [29,208,608字节](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-raw.glb) | [8,623,932字节](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-lod.glb) | [14,816,151字节](../../assets/native/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall.blend) |
+| 松江方塔 | [19.92 MB](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-web.glb) | [47.28 MB](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-raw.glb) | [9.68 MB](../../assets/models/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda-lod.glb) | [23.97 MB](../../assets/native/precise/14-13709-6706/songjiang-fangta-pagoda/songjiang-fangta-pagoda.blend) |
+| 真如寺大殿 | [11.91 MB](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-web.glb) | [29.21 MB](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-raw.glb) | [8.62 MB](../../assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-lod.glb) | [14.82 MB](../../assets/native/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall.blend) |
 
 方塔42.65m采用文献名义总高，层间比例、檐出和隐藏构造仍有估计；真如大殿总高及屋面尺度为模型估计，文献158m²口径未明，不能当作实测墙体尺寸。源建筑轮廓用于身份及精确替换，不证明墙线、檐线或台基范围。[本版实际验收](../../data/audit/precise-buildings-v10/two-districts/README.md) · [来源与限制](../../data/bund/REALISM_V10.md)。
 
@@ -52,7 +52,7 @@
 
 | 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
 |---|---|---|---|---|
-| 龙华塔 | [19,740,940字节](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-web.glb) | [47,242,988字节](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-raw.glb) | [9,537,048字节](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-lod.glb) | [24,033,748字节](../../assets/native/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda.blend) |
+| 龙华塔 | [19.74 MB](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-web.glb) | [47.24 MB](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-raw.glb) | [9.54 MB](../../assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-lod.glb) | [24.03 MB](../../assets/native/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda.blend) |
 
 模型不含照片纹理像素。参考图各自保留CC0、CC BY-SA 3.0或CC BY-SA 4.0许可，不因其中一图为CC0而统一改许可。[本版实际验收](../../data/audit/precise-buildings-v9/longhua/README.md) · [来源与限制](../../data/bund/REALISM_V9.md)。
 
@@ -64,9 +64,9 @@
 
 | 建筑 | 网页GLB | 原始GLB | 远景LOD | Blender |
 |---|---|---|---|---|
-| [鸿德堂](hongkou-hongde-church/CURRENT_STATE.md) | [10,619,436字节](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-web.glb) | [27,113,064字节](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-raw.glb) | [5,212,724字节](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-lod.glb) | [39,953,968字节](../../assets/native/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church.blend) |
+| [鸿德堂](hongkou-hongde-church/CURRENT_STATE.md) | [10.62 MB](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-web.glb) | [27.11 MB](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-raw.glb) | [5.21 MB](../../assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-lod.glb) | [39.95 MB](../../assets/native/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church.blend) |
 
-四件文件均低于100,000,000字节。2024年可见配置结合2014年白天结构参考，原照片均为CC BY-SA 4.0；图像未嵌入模型。保留原OSM/Overture四角轮廓与唯一源对象，10个本地邻楼保留。后部、绝对高度和细小构造仍有推定。[独立交付记录](hongkou-hongde-church/DELIVERY.md)保留制作阶段的历史状态，当前接入状态以上述应用证明为准。
+四件文件均低于100 MB。2024年可见配置结合2014年白天结构参考，原照片均为CC BY-SA 4.0；图像未嵌入模型。保留原OSM/Overture四角轮廓与唯一源对象，10个本地邻楼保留。后部、绝对高度和细小构造仍有推定。[独立交付记录](hongkou-hongde-church/DELIVERY.md)保留制作阶段的历史状态，当前接入状态以上述应用证明为准。
 
 ## v7四栋记录（历史保留）
 
@@ -81,14 +81,14 @@
 | 徐汇武康路210号住宅 | v3原生、静态网页及所属整宏目录生命周期通过 | [DELIVERY](xuhui-wukang-210/DELIVERY.md) |
 | 青浦北大街208–212号茶楼前楼 | v3原生、静态网页及所属整宏目录生命周期通过 | [DELIVERY](qingpu-beidajie-208-212/DELIVERY.md) |
 
-下表为实际封装文件，链接采用最终项目相对位置；资产已随第一应用提交发布。16件模型文件均严格小于100,000,000字节。
+下表为实际封装文件，链接采用最终项目相对位置；资产已随第一应用提交发布。16件模型文件均严格小于100 MB。
 
-| 建筑 | 网页GLB（字节） | 原始GLB（字节） | 远景LOD（字节） | Blender（字节） |
+| 建筑 | 网页GLB（MB） | 原始GLB（MB） | 远景LOD（MB） | Blender（MB） |
 |---|---:|---:|---:|---:|
-| 北大街222号 | [8,560,920](../../assets/models/precise/14-13701-6700/qingpu-beidajie-222/web.glb) | [18,154,244](../../assets/models/precise/14-13701-6700/qingpu-beidajie-222/raw.glb) | [6,466,884](../../assets/models/precise/14-13701-6700/qingpu-beidajie-222/lod.glb) | [29,405,268](../../assets/native/precise/14-13701-6700/qingpu-beidajie-222/model.blend) |
-| 武康路129号 | [4,759,104](../../assets/models/precise/14-13718-6695/xuhui-wukang-129/web.glb) | [15,002,212](../../assets/models/precise/14-13718-6695/xuhui-wukang-129/raw.glb) | [2,751,684](../../assets/models/precise/14-13718-6695/xuhui-wukang-129/lod.glb) | [21,341,124](../../assets/native/precise/14-13718-6695/xuhui-wukang-129/model.blend) |
-| 武康路210号 | [2,393,848](../../assets/models/precise/14-13718-6695/xuhui-wukang-210/web.glb) | [5,785,688](../../assets/models/precise/14-13718-6695/xuhui-wukang-210/raw.glb) | [1,462,268](../../assets/models/precise/14-13718-6695/xuhui-wukang-210/lod.glb) | [9,272,752](../../assets/native/precise/14-13718-6695/xuhui-wukang-210/model.blend) |
-| 北大街208–212号茶楼 | [4,593,804](../../assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-web.glb) | [13,863,092](../../assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-raw.glb) | [2,669,664](../../assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-lod.glb) | [21,180,492](../../assets/native/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212.blend) |
+| 北大街222号 | [8.56](../../assets/models/precise/14-13701-6700/qingpu-beidajie-222/web.glb) | [18.15](../../assets/models/precise/14-13701-6700/qingpu-beidajie-222/raw.glb) | [6.47](../../assets/models/precise/14-13701-6700/qingpu-beidajie-222/lod.glb) | [29.41](../../assets/native/precise/14-13701-6700/qingpu-beidajie-222/model.blend) |
+| 武康路129号 | [4.76](../../assets/models/precise/14-13718-6695/xuhui-wukang-129/web.glb) | [15.00](../../assets/models/precise/14-13718-6695/xuhui-wukang-129/raw.glb) | [2.75](../../assets/models/precise/14-13718-6695/xuhui-wukang-129/lod.glb) | [21.34](../../assets/native/precise/14-13718-6695/xuhui-wukang-129/model.blend) |
+| 武康路210号 | [2.39](../../assets/models/precise/14-13718-6695/xuhui-wukang-210/web.glb) | [5.79](../../assets/models/precise/14-13718-6695/xuhui-wukang-210/raw.glb) | [1.46](../../assets/models/precise/14-13718-6695/xuhui-wukang-210/lod.glb) | [9.27](../../assets/native/precise/14-13718-6695/xuhui-wukang-210/model.blend) |
+| 北大街208–212号茶楼 | [4.59](../../assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-web.glb) | [13.86](../../assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-raw.glb) | [2.67](../../assets/models/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212-lod.glb) | [21.18](../../assets/native/precise/14-13701-6700/qingpu-beidajie-208-212/qingpu-beidajie-208-212.blend) |
 
 210保留南侧弯曲铁栏阳台、中部凹门厅、北侧三联窗和红檐瓦顶，v3补闭高低屋面交接；茶楼保留三砖拱、开放木廊、实体栏杆与灯笼，v3修正竖牌位置、字形比例和屋面搭接。两栋各完成一张原生斜视图复核；后续v3网页覆盖近景、斜视、LOD、返回及替换状态，共11张root实际核图。它不是全方向外观或全城逐栋验收。
 

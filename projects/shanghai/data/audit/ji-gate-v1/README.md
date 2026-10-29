@@ -9,4 +9,4 @@
 
 网页复测：在`projects/shanghai`运行`python -m http.server 8766`，仓库根目录运行`node projects/shanghai/data/audit/ji-gate-v1/qa-browser.cjs`，需Playwright与`/usr/bin/chromium`。输出到`/tmp/ji-gate-browser.*`。其余构建/验证命令见[来源目录](../../../source/precise/chongming-ji-gate/README.md)。
 
-原始、近景、远景GLB及Blender均严格小于100,000,000字节；字节/哈希记录于[资产清单](../../../assets/models/candidates/chongming-ji-gate/manifest.json)。照片未再分发或嵌入模型，来源URL、作者、许可、下载哈希与尺寸解释一并保留。
+原始、近景、远景GLB及Blender均严格小于100 MB；字节/哈希记录于[资产清单](../../../assets/models/candidates/chongming-ji-gate/manifest.json)。照片未再分发或嵌入模型，来源URL、作者、许可、下载哈希与尺寸解释一并保留。

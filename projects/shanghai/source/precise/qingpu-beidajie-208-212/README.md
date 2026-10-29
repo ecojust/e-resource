@@ -31,7 +31,7 @@ blender -b --python common/blender_finish.py -- \
 
 ## 资源及许可证
 
-raw 13,863,092字节、199,228三角；每文件均须严格小于100,000,000字节。源照片 CC BY-SA3.0／Fayhoo；本照片引导的几何资产按 CC BY-SA3.0 提供，保留底图及字体署名。生成代码沿用项目MIT，字体子集为SIL OFL1.1。详见 `COPYRIGHT.md`、`evidence/photo-source.json` 和 `fonts/`。未把车辆、行人、商品或相邻店面烘焙到建筑上。
+raw 13.86 MB、199,228三角；每文件均须严格小于100 MB。源照片 CC BY-SA3.0／Fayhoo；本照片引导的几何资产按 CC BY-SA3.0 提供，保留底图及字体署名。生成代码沿用项目MIT，字体子集为SIL OFL1.1。详见 `COPYRIGHT.md`、`evidence/photo-source.json` 和 `fonts/`。未把车辆、行人、商品或相邻店面烘焙到建筑上。
 
 ## v2结构更正
 

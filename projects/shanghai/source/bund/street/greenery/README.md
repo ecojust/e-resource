@@ -11,7 +11,7 @@
 
 网页生成器 `source/street-greenery.js` 只有8个 InstancedMesh 批次，7,135个实例，329,862个渲染三角，几何与实例缓冲合计744,708字节。叶片是弯折几何轮廓，树冠由分枝和不规则疏密叶簇组成；无下载树模型、无透明贴片、无外部贴图、无额外光源或独立动画循环。6,575组短草叶在原有草面上补充近景轮廓，约2.5–7.5cm高，不替换已有草坪材质。
 
-`output/bund17-18-greenery-candidate.glb` 是同一生成器烘焙出的独立自包含下载模型（35.63MB）；`output/bund17-18-greenery-web.glb` 为保留全部三角和位置的 Meshopt 版本（约13.56MB）。两个文件均严格低于100,000,000字节。网页优先采用实例模块，不再额外加载这两个下载模型。最终字节和SHA见 `output/asset-files.json`。
+`output/bund17-18-greenery-candidate.glb` 是同一生成器烘焙出的独立自包含下载模型（35.63MB）；`output/bund17-18-greenery-web.glb` 为保留全部三角和位置的 Meshopt 版本（约13.56MB）。两个文件均严格低于100 MB。网页优先采用实例模块，不再额外加载这两个下载模型。最终字节和SHA见 `output/asset-files.json`。
 
 运行 `source/render_preview.py` 可生成 `output/greenery-overview.png` 和 `output/north-near.png` 的 Blender 形态预览；它们为重建产物，不随当前模型包提供。预览地面、石边是简单参照物，不在 GLB 内。主项目集成状态与浏览器验收记录见 [`data/bund/REALISM_V5.md`](../../../../data/bund/REALISM_V5.md)。
 

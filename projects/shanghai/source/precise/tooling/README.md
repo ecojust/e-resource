@@ -17,7 +17,7 @@ python -B source/precise/tooling/package_precise_building.py \
 The explicit shared-helper argument is required in this published layout; the
 original default refers to its old work directory. Its project dependency is
 `tools/build_bund_lods.py`. Packaging preserves original photographs and licenses,
-keeps each asset below 100,000,000 bytes, and produces an isolated package. It does
+keeps each asset below 100 MB, and produces an isolated package. It does
 not inspect native Blender geometry, prove photo accuracy, install or publish.
 
 The frozen registration tool restricts output to a new child of its own directory

@@ -42,18 +42,18 @@
 
 ## 模型文件与来源
 
-以下 bytes 和 SHA-256 来自最终实际交付文件；每个文件均严格小于 100,000,000 B。几何按公开参考资料制作，建筑高度、层间尺寸及照片推断部分属于建模估计，不是测绘实测。
+以下文件大小以 MB 显示，大小与 SHA-256 来自最终实际交付文件；每个文件均严格小于 100 MB。几何按公开参考资料制作，建筑高度、层间尺寸及照片推断部分属于建模估计，不是测绘实测。
 
-| 建筑 | 用途 | 文件 | bytes | SHA-256 |
+| 建筑 | 用途 | 文件 | 大小（MB） | SHA-256 |
 | --- | --- | --- | ---: | --- |
-| 上海汽车博物馆 | raw | [jiading-shanghai-auto-museum-raw.glb](../../../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-raw.glb) | 31951432 | `fcaf6c3ec778a4edc6d4c335aedea02472b8ddff24013d2e555f09e949eebd5f` |
-| 上海汽车博物馆 | web | [jiading-shanghai-auto-museum-web.glb](../../../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) | 10347300 | `ef7480db922f0e40dde0d5ad34332e41c63c24033bbc147a6d76067318c91cf9` |
-| 上海汽车博物馆 | lod | [jiading-shanghai-auto-museum-lod.glb](../../../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-lod.glb) | 10347300 | `ef7480db922f0e40dde0d5ad34332e41c63c24033bbc147a6d76067318c91cf9` |
-| 上海汽车博物馆 | native | [jiading-shanghai-auto-museum.blend](../../../../assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) | 14653789 | `3bd8e9edfabfd33ef6387a1f117e8773baab3aaa981194ace118eace2dad994c` |
-| 包玉刚图书馆 | raw | [minhang-baoyugang-library-raw.glb](../../../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-raw.glb) | 23888596 | `abea24f7c9df46d07aa44837c99a5ecc8a631ca5595a0881854f4334c035c982` |
-| 包玉刚图书馆 | web | [minhang-baoyugang-library-web.glb](../../../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-web.glb) | 7843916 | `e78ae366679a2c9d4b1894bb401c72f96027176c947a8a019ba0eeace506d5fa` |
-| 包玉刚图书馆 | lod | [minhang-baoyugang-library-lod.glb](../../../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-lod.glb) | 1361876 | `617b8f15ba391702245f16f2d1b2207ad875405c9e1174fbbd0acb971244b2f4` |
-| 包玉刚图书馆 | native | [minhang-baoyugang-library.blend](../../../../assets/native/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library.blend) | 12688862 | `a4870d73e61e8c83fe4326f3f1508a601ba2aceb0046e5ecb49f59456942ecb1` |
+| 上海汽车博物馆 | raw | [jiading-shanghai-auto-museum-raw.glb](../../../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-raw.glb) | 31.95 | `fcaf6c3ec778a4edc6d4c335aedea02472b8ddff24013d2e555f09e949eebd5f` |
+| 上海汽车博物馆 | web | [jiading-shanghai-auto-museum-web.glb](../../../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-web.glb) | 10.35 | `ef7480db922f0e40dde0d5ad34332e41c63c24033bbc147a6d76067318c91cf9` |
+| 上海汽车博物馆 | lod | [jiading-shanghai-auto-museum-lod.glb](../../../../assets/models/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum-lod.glb) | 10.35 | `ef7480db922f0e40dde0d5ad34332e41c63c24033bbc147a6d76067318c91cf9` |
+| 上海汽车博物馆 | native | [jiading-shanghai-auto-museum.blend](../../../../assets/native/precise/14-13706-6691/jiading-shanghai-auto-museum/jiading-shanghai-auto-museum.blend) | 14.65 | `3bd8e9edfabfd33ef6387a1f117e8773baab3aaa981194ace118eace2dad994c` |
+| 包玉刚图书馆 | raw | [minhang-baoyugang-library-raw.glb](../../../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-raw.glb) | 23.89 | `abea24f7c9df46d07aa44837c99a5ecc8a631ca5595a0881854f4334c035c982` |
+| 包玉刚图书馆 | web | [minhang-baoyugang-library-web.glb](../../../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-web.glb) | 7.84 | `e78ae366679a2c9d4b1894bb401c72f96027176c947a8a019ba0eeace506d5fa` |
+| 包玉刚图书馆 | lod | [minhang-baoyugang-library-lod.glb](../../../../assets/models/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library-lod.glb) | 1.36 | `617b8f15ba391702245f16f2d1b2207ad875405c9e1174fbbd0acb971244b2f4` |
+| 包玉刚图书馆 | native | [minhang-baoyugang-library.blend](../../../../assets/native/precise/14-13718-6705/minhang-baoyugang-library/minhang-baoyugang-library.blend) | 12.69 | `a4870d73e61e8c83fe4326f3f1508a601ba2aceb0046e5ecb49f59456942ecb1` |
 
 汽车博物馆 web 与 LOD 都保留 528,396 个三角形；LOD 使用相同几何的压缩交付，没有声称几何减面。包玉刚图书馆 web 为 442,088 个三角形，作者指定 LOD 为 52,864 个三角形；减去细小接缝并保留受检结构与开口，实际解码和补充证据记录在交付元数据中。
 

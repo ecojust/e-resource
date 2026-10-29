@@ -8,8 +8,8 @@
 
 每个新宏另外完成独立的3阶段/5图检查：静态模型收养；只由目录加载、卸载、返回；故意损坏索引后拒绝精模并保留完整源建筑。每次只移除该宏一栋，因此计数27→26；方塔保留15个原要素，真如保留10个。不能把其中一栋结果代作另一栋验收。
 
-- **松江方塔**：保留14个同近景块邻楼；目录卸载实际释放15个几何对象。网页GLB、原始GLB、LOD、Blender依次为19,924,564、47,281,480、9,675,812、23,966,595字节。每件严格低于100,000,000字节。[源码与来源](../../../../source/precise/songjiang-fangta-pagoda/README.md) · [目录实际报告](catalog/songjiang-fangta-pagoda/browser.json) · [5图视觉记录](catalog/songjiang-fangta-pagoda/visual-review.json)。
-- **真如寺大殿**：保留9个同近景块邻楼；目录卸载实际释放19个几何对象。网页GLB、原始GLB、LOD、Blender依次为11,906,884、29,208,608、8,623,932、14,816,151字节。每件严格低于100,000,000字节。[源码与来源](../../../../source/precise/putuo-zhenru-main-hall/README.md) · [目录实际报告](catalog/putuo-zhenru-main-hall/browser.json) · [5图视觉记录](catalog/putuo-zhenru-main-hall/visual-review.json)。
+- **松江方塔**：保留14个同近景块邻楼；目录卸载实际释放15个几何对象。网页GLB、原始GLB、LOD、Blender依次为19.92、47.28、9.68、23.97 MB。每件严格低于100 MB。[源码与来源](../../../../source/precise/songjiang-fangta-pagoda/README.md) · [目录实际报告](catalog/songjiang-fangta-pagoda/browser.json) · [5图视觉记录](catalog/songjiang-fangta-pagoda/visual-review.json)。
+- **真如寺大殿**：保留9个同近景块邻楼；目录卸载实际释放19个几何对象。网页GLB、原始GLB、LOD、Blender依次为11.91、29.21、8.62、14.82 MB。每件严格低于100 MB。[源码与来源](../../../../source/precise/putuo-zhenru-main-hall/README.md) · [目录实际报告](catalog/putuo-zhenru-main-hall/browser.json) · [5图视觉记录](catalog/putuo-zhenru-main-hall/visual-review.json)。
 
 照片保留各自作者、原字节及许可，模型没有嵌入其像素。方塔名义高度与真如柱尺寸来自各自文献；比例、不可见处、来源轮廓与墙/檐线关系、部分构造仍有估计，不是测绘或摄影测量模型。真如大殿与其后塔、天王殿分别保留，未把后塔尖建在大殿屋脊上。完整限制见各栋原始源码说明和实际视觉记录。
 

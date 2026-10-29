@@ -26,4 +26,4 @@ python check_roof_revision.py --before /path/to/retained-visible-detail-v2/outpu
 
 所有原始照片及检查裁图见 `references/manifest.json`。P01为Suicasmo CC0；P02/P03为Legolas1024 CC BY-SA4.0，只作有日期的形制观察，不嵌入模型。官方网页HTML/TXT只作内部研究缓存，不应随公开资产包整目录复制。程序几何MIT，地图保留OSM/Overture ODbL署名。
 
-候选冻结、实际字节数与三角形数见 `MODEL_CANDIDATE.json`、`output/photo-uv-check.json`，生成及打包均要求每个文件低于100,000,000字节。公开源码按`PUBLICATION_SOURCE_FILES.json`复制，避免把完整官方新闻缓存混入。近景原图解码约71.7MB，远景打包使用`--lod-without-photos`保留几何、以说明过的近似玻璃材质替换照片；原始、网页近景与原生工程保留原图。`native-safety/README.md`提供压缩保存、完整有界解压与独立Blender重开核验方案；实际入仓文件需低于100MB，解压后的内存布局另受512MiB安全限额约束。公共helper保持冻结。
+候选冻结、实际字节数与三角形数见 `MODEL_CANDIDATE.json`、`output/photo-uv-check.json`，生成及打包均要求每个文件低于100 MB。公开源码按`PUBLICATION_SOURCE_FILES.json`复制，避免把完整官方新闻缓存混入。近景原图解码约71.7MB，远景打包使用`--lod-without-photos`保留几何、以说明过的近似玻璃材质替换照片；原始、网页近景与原生工程保留原图。`native-safety/README.md`提供压缩保存、完整有界解压与独立Blender重开核验方案；实际入仓文件需低于100MB，解压后的内存布局另受512MiB安全限额约束。公共helper保持冻结。

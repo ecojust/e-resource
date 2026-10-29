@@ -6,7 +6,7 @@
 
 替换只涉及 `14-13719-6697` / local702 / near `14-13719-6697--3_-1-s1`。13个邻居ID为1070、1476、352、1242、1077、1258、1259、511、918、1466、23、354、1221。没有范围删除、邻楼合并、庭院填平或新增源parts；所有相关数据保持原城市基线。
 
-`eleven-targets/precise-buildings-v6.json` 是完整的候选owner registry：11目标、5宏、9near、150个源feature，其中139个邻居保持。新增variant只有78,877B；其14个feature共69,564展开三角，目标组4,336三角。当前MAIN的原8variant完全复用，原10个目标和4宏记录逐值相同。现有24导航与W/Q/H三宏5条accepted目录没有改写，Longhua尚不在任何accepted目录中。
+`eleven-targets/precise-buildings-v6.json` 是完整的候选owner registry：11目标、5宏、9near、150个源feature，其中139个邻居保持。新增variant只有0.079 MB；其14个feature共69,564展开三角，目标组4,336三角。当前MAIN的原8variant完全复用，原10个目标和4宏记录逐值相同。现有24导航与W/Q/H三宏5条accepted目录没有改写，Longhua尚不在任何accepted目录中。
 
 实际vendored Three GLTFLoader/Meshopt解码证明新variant与原near逐面位置Float64、材质、绕序相同，13邻居与目标组各自完整。3,330个三角的法线有浮点位差，最大分量差1.3076074e-8，最大方向差8.0018312e-7度，低于既有1e-7/1e-5度门槛；报告没有将法线称为逐位相同。实际解码法线加0.01的负控被拒绝。随后以真实far及全部9variant运行11目标独立/全/空owner、near退出、恢复和destroy检查，均通过。以上只说明替换几何/生命周期，不代表精模外观已通过。
 

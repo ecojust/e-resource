@@ -14,7 +14,7 @@
 python -B build_model.py --output /path/to/isolated-output
 ```
 
-生成`bund05.glb`、逐构件`bund05.geometry.json`和`geometry-report.json`。单GLB严格小于100,000,000B。`check_geometry.py`在本包output重建并核对每个实际构件的闭合、绕序、正体积和FLOAT32数值；它不替代照片形状验收，也不证明不同装饰构件之间无有意相交。
+生成`bund05.glb`、逐构件`bund05.geometry.json`和`geometry-report.json`。单GLB严格小于100 MB。`check_geometry.py`在本包output重建并核对每个实际构件的闭合、绕序、正体积和FLOAT32数值；它不替代照片形状验收，也不证明不同装饰构件之间无有意相交。
 
 Blender原生文件可由相邻公共`blender_finish.py`从原GLB导入生成。预览地面/相机归入独立Preview_only集合，不属于模型源。渲染由主任务统一调度，不在本脚本中自动执行。
 
@@ -34,14 +34,14 @@ Blender原生文件可由相邻公共`blender_finish.py`从原GLB导入生成。
 
 ## 修订资产与原生检查
 
-原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（字节），每件均小于100,000,000。
+原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（MB），每件均小于100 MB。
 
-| 文件 | 字节 | 下载 |
+| 文件 | 大小（MB） | 下载 |
 |---|---:|---|
-| 原始GLB | 14,906,152 | [下载](../../../../assets/models/bund/bund05.glb) |
-| 网页GLB | 8,733,620 | [下载](../../../../assets/models/bund/web/bund05.glb) |
-| Blender工程 | 24,069,984 | [下载](../../../../assets/native/bund/bund05.blend) |
-| 远景GLB（无照片） | 2,070,252 | [下载](../../../../assets/models/bund/lod-v4/bund05.glb) |
+| 原始GLB | 14.91 | [下载](../../../../assets/models/bund/bund05.glb) |
+| 网页GLB | 8.73 | [下载](../../../../assets/models/bund/web/bund05.glb) |
+| Blender工程 | 24.07 | [下载](../../../../assets/native/bund/bund05.blend) |
+| 远景GLB（无照片） | 2.07 | [下载](../../../../assets/models/bund/lod-v4/bund05.glb) |
 
 root已实际查看本修订的原生预览；照片和窗框的核对范围见[记录](native-preview-review.json)。浏览器同视角及场景复验另行完成，不以原生预览替代。完整封装、LOD与来源版权检查见[打包摘要](packaging-summary.json)。
 

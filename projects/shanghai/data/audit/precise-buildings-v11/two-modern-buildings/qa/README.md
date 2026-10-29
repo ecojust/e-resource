@@ -29,7 +29,7 @@ Museum 完成后，再对 Library 使用另一份输入、其真实 fixture 和�
 
 `capture_journal.py` 使每次已返回的 before/after OSM 原始值先写报告，再执行通过断言；失败值也保留。每张截图返回后立刻记录文件名、bytes/SHA，然后才进行 after 观察。成功记录仍含原 `osm_capture_before` / `osm_capture_after` 字段；未完成条目保留 `capture_completed=false`，不能参与通过。错误图单独保留。只观察有返回值的调用，不制造未完成观测。
 
-`parent-candidate-baseline.json` 保留原 QA 67ad95… / 65c6db… 的冻结身份；新差分记录将单独生成，不改原版本。16 个继承控制、15 个逐模型选择控制和 11 个 Museum transfer 控制只验证 pending/缺省/全局回退/对调工具选择拒绝、实际依赖字节绑定、固定目标/邻居、原 API、runtime 绑定及失败/截图保存顺序，不是浏览器或模型 PASS。此工具不运行 Node、Blender、Git 或写入 MAIN。实际模型、MVT、浏览器和 root 审核须由协调者依次执行并保留失败记录。所有单文件严格小于 100,000,000 字节。
+`parent-candidate-baseline.json` 保留原 QA 67ad95… / 65c6db… 的冻结身份；新差分记录将单独生成，不改原版本。16 个继承控制、15 个逐模型选择控制和 11 个 Museum transfer 控制只验证 pending/缺省/全局回退/对调工具选择拒绝、实际依赖字节绑定、固定目标/邻居、原 API、runtime 绑定及失败/截图保存顺序，不是浏览器或模型 PASS。此工具不运行 Node、Blender、Git 或写入 MAIN。实际模型、MVT、浏览器和 root 审核须由协调者依次执行并保留失败记录。所有单文件严格小于 100 MB。
 
 最终工具选择已分别绑定：Museum 8fc0c7aa…cfc2（112依赖），Library f1f71403…cd26（67依赖）。模型输入仍 pending；工具冻结不代表模型或浏览器验收。已取得 `osm-observation/selected-fixture-set-v2/fixture-set.json` 的实际身份（SHA 1d5a58d1…aa871），仅代表观察输入身份，不代表遮蔽、导航或浏览器通过。`tool-selection.pending-template.json` 保留这种待定状态供负控；它永远不能作为正式受审选择。
 

@@ -1,6 +1,6 @@
 # 主项目验证范围与原始记录
 
-root确认`main20-npm-test.txt`对应session71812退出码0，`main20-asset-check.txt`对应session25351退出码0后才归档。日志保留原字节。资产检查当时统计3876文件、91个GLB（含完整source副本）、15个Bund LOD、12个表面贴图；最大76,875,072 B，严格小于100,000,000 B。不要套用候选应用55个GLB的统计。本次明确跳过另行冻结的全城detail审计；新增本审计/文档文件后，目录文件总数自然可能增加。
+root确认`main20-npm-test.txt`对应session71812退出码0，`main20-asset-check.txt`对应session25351退出码0后才归档。日志保留原字节。资产检查当时统计3876文件、91个GLB（含完整source副本）、15个Bund LOD、12个表面贴图；最大76.88 MB，严格小于100 MB。不要套用候选应用55个GLB的统计。本次明确跳过另行冻结的全城detail审计；新增本审计/文档文件后，目录文件总数自然可能增加。
 
 `mask-rebind-review.json`是修复阶段的原始报告，当时浏览器视觉仍pending。`mask-targeted-tests.txt`原名`targeted-tests.log`，65项通过；`mask-baseline-negative.txt`原名`baseline-negative.log`，同一7项回归在旧实现上按预期失败。这不是发布失败；它证明测试能够发现旧bug。两个`.txt`只改归档文件名，字节与原log SHA均未改变。最终实际浏览器和root视觉结论在[目录验收](../catalog/README.md)。
 

@@ -2,7 +2,7 @@
 
 本目录只准备脚本与普通Python验证，**尚未运行Blender，也没有生成09原生工程**。公共helper未修改。
 
-09旧候选raw（SHA `bc95e772312de70f289ad170bf1d6814a469ac9650ac3834e7dcb591c1fa77a3`）含1,792,010顶点、735,922三角、1,999,948条唯一索引边。按当前实际4.3.2、source SHA匹配的06/14未压缩native块布局估计，09未压缩文件约100.63–100.72MB，略超过100,000,000字节。此为估计，不是已经测得的09native大小；玻璃嵌框调整后应重新确认顶点数，三角数不变。
+09旧候选raw（SHA `bc95e772312de70f289ad170bf1d6814a469ac9650ac3834e7dcb591c1fa77a3`）含1,792,010顶点、735,922三角、1,999,948条唯一索引边。按当前实际4.3.2、source SHA匹配的06/14未压缩native块布局估计，09未压缩文件约100.63–100.72MB，略超过100 MB。此为估计，不是已经测得的09native大小；玻璃嵌框调整后应重新确认顶点数，三角数不变。
 
 估算方法是`13V + 9E + 70T + packedJPEG + 固定开销`。06/14实际DATA块分别支持位置12V、布尔V、边8E与布尔E、每三角3个corner共60T、面索引／材料／布尔共10T；非网格开销约0.70–0.80MB。05现raw与旧native报告source SHA不匹配，因此未用于估算。
 
@@ -31,7 +31,7 @@ python native-safety/compress_existing_blend.py \
   --report native-compressed/compression-check.json
 ```
 
-该脚本使用带校验和的Zstandard，把原文件字节完整压缩；流式解压SHA必须等于原native SHA，源文件SHA必须未变，最终物理文件必须小于100,000,000字节，才原子落到新路径。随后仍需root用Blender重开检查，不能把压缩往返等同于场景已验收。
+该脚本使用带校验和的Zstandard，把原文件字节完整压缩；流式解压SHA必须等于原native SHA，源文件SHA必须未变，最终物理文件必须小于100 MB，才原子落到新路径。随后仍需root用Blender重开检查，不能把压缩往返等同于场景已验收。
 
 存储校验识别`BLENDER`原始头、gzip `1f8b`、Zstandard `28b52ffd`，完整流式遍历BHead到SDNA/ENDB、检查流结束/CRC、统计解码SHA，拒绝截断、负长度和尾随数据。默认解压总量上限512MiB，Zstandard窗口上限128MiB；不把解码内容写出第二份文件。已通过plain/gzip/zstd/多frame、超限、CRC与截断fixture，并只读验证现有06真native，见`python-validation.json`。fixture只验证文件读取逻辑，不是假装真实Blender场景。
 

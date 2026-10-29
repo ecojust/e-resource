@@ -24,14 +24,14 @@
 
 ## 样本与验证
 
-- `sample/source/bund/street/bund-streets.glb`：完整街景，仅替换家具后的样本，7,410,856 字节，137,794 三角。
-- `bund-streets-furniture-web.glb`：压缩样本，2,437,628 字节；不是最终合并铺装/树木后的街景。
-- `fitting-specimen.glb`：8m 护栏、滨江灯、道路灯独立实物样本，155,340 字节，2,716 三角。
+- `sample/source/bund/street/bund-streets.glb`：完整街景，仅替换家具后的样本，7.41 MB，137,794 三角。
+- `bund-streets-furniture-web.glb`：压缩样本，2.44 MB；不是最终合并铺装/树木后的街景。
+- `fitting-specimen.glb`：8m 护栏、滨江灯、道路灯独立实物样本，0.16 MB，2,716 三角。
 - `fitting-specimen-render.png`：Blender 从上述真实 GLB 渲染的检视图，非生成式效果图；中性检视场景，不代表主项目光照。
 - `fitting-specimen-check.json`：新增旋转体与椭球每个三角均朝外，无退化面。
 - `furniture-decode-check.json`：使用项目实际 Three r180 GLTFLoader 和 MeshoptDecoder 解码。压缩前后 137,794 三角、零退化；68,690 个唯一位置逐点完全一致。
 - 样本 `bund-streets-shoreline-check.json`：3009 岸线采样和 27,992 家具/石柱顶点通过；中心线距真实岸线最大 0.65m，顶点最大 0.967162m，未入水。
-- 原道路、铺装、连接铺装和种植带检查仍全部通过。所有单文件低于 100,000,000 字节。
+- 原道路、铺装、连接铺装和种植带检查仍全部通过。所有单文件低于 100 MB。
 
 本交付没有运行浏览器，也没有改动主项目 runtime 或发布到 GitHub。`decode_furniture.mjs` 可用 Node 重跑实际解码检查；`build_fixture.py` 可重建独立样本，`render_fixture.py` 可用 Blender 重渲染。
 

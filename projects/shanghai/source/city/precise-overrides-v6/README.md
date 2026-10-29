@@ -17,6 +17,6 @@ node verify_override_geometry.mjs /path/to/new-output/geometry-comparison-input.
 node verify_override_runtime.mjs /path/to/shanghai /path/to/new-output/precise-buildings-v6.json
 ```
 
-依赖已发布的城市生成器、原宏分块 feature-table/READY/near 文件及 gltfpack。每个owner独立压缩，再合并buffer与节点，不能对合并结果再次整体运行gltfpack，否则实例可能移出所属节点。原始和解压后文件均须小于100,000,000字节；SHA和几何核验在清单及 `data/audit/precise-buildings-v6/`。
+依赖已发布的城市生成器、原宏分块 feature-table/READY/near 文件及 gltfpack。每个owner独立压缩，再合并buffer与节点，不能对合并结果再次整体运行gltfpack，否则实例可能移出所属节点。原始和解压后文件均须小于100 MB；SHA和几何核验在清单及 `data/audit/precise-buildings-v6/`。
 
 这些检查证明替换和邻楼保留正确；各栋外观的照片核验另见建筑源码包，不能用三角形一致性代替外观准确性。

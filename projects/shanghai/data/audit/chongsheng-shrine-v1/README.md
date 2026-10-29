@@ -9,4 +9,4 @@
 
 网页复测：在`projects/shanghai`运行`python -m http.server 8765`，另在仓库根目录执行`node projects/shanghai/data/audit/chongsheng-shrine-v1/qa-browser.cjs`，需Playwright及`/usr/bin/chromium`，输出在`/tmp/chongsheng-browser.*`。几何复测与构建命令见[来源目录](../../../source/precise/chongming-chongsheng-shrine/README.md)。网页源码复用既有大成殿查看器及共享候选漫游模块。
 
-原始GLB、网页GLB、远景GLB及Blender各自小于100,000,000字节；字节、SHA256和面数见[资产清单](../../../assets/models/candidates/chongming-chongsheng-shrine/manifest.json)。建筑源码、公开来源URL、响应哈希、尺寸矛盾及估计范围一并保存；未再分发原网页或引用他人照片。
+原始GLB、网页GLB、远景GLB及Blender各自小于100 MB；字节、SHA256和面数见[资产清单](../../../assets/models/candidates/chongming-chongsheng-shrine/manifest.json)。建筑源码、公开来源URL、响应哈希、尺寸矛盾及估计范围一并保存；未再分发原网页或引用他人照片。

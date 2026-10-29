@@ -16,7 +16,7 @@ python source/rebuild.py --input source/geometry-input.json --out rebuilt-lod --
 blender -b -t 2 --python source/render_detailed_v1.py -- --glb rebuilt-full/wukang-mansion-raw.glb --out rebuilt-previews --samples 24
 ```
 
-`build_detailed_v1.py` 文件名沿用初版名称，最终来源以交付清单的 SHA256 为准。`package_assets.py` 对 web/LOD 使用 gltfpack；原始几何、原生文件不重复复制。每个输出须严格小于 100,000,000 bytes。独立验收与网页导航由集成记录提供。
+`build_detailed_v1.py` 文件名沿用初版名称，最终来源以交付清单的 SHA256 为准。`package_assets.py` 对 web/LOD 使用 gltfpack；原始几何、原生文件不重复复制。每个输出须严格小于 100 MB。独立验收与网页导航由集成记录提供。
 
 源码与手工几何 MIT；地图数据 © OpenStreetMap contributors / Overture，ODbL-1.0；原创材质 CC0。许可照片另按各自 register 署名。私有参考图不属于本源码交付。
 

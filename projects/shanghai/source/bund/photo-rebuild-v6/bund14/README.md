@@ -22,7 +22,7 @@
 python bund14/build_model.py --output /path/to/output
 ```
 
-需要Python、numpy、fontTools及支持约束三角剖分的Shapely（本机2.2.0）。模型输出自包含GLB、逐部件几何/证据检查报告和字牌坐标。构建器强制GLB小于100,000,000字节；逐个部件检查边配对、正有向体积和float32零面积三角形。建筑层叠构件允许接触/相交，没有冒称已进行全建筑布尔并集。
+需要Python、numpy、fontTools及支持约束三角剖分的Shapely（本机2.2.0）。模型输出自包含GLB、逐部件几何/证据检查报告和字牌坐标。构建器强制GLB小于100 MB；逐个部件检查边配对、正有向体积和float32零面积三角形。建筑层叠构件允许接触/相交，没有冒称已进行全建筑布尔并集。
 
 玻璃控制见 [glazing-samples.json](glazing-samples.json)，选择依据和逐窗图见 [glazing-evidence/README.md](glazing-evidence/README.md)。先以独立3×4投影寻找窗口，再逐窗校正范围、逐分格拟合四角，向内留边排除黑框。遮挡或边界不可靠的4整窗和17个分格保留原材质。`prepare_glazing_samples.py` 可用Pillow/SciPy再生成采样控制；它不修改原JPEG。`validate_model.py --output /path/to/output` 检查嵌入原图SHA、每个纹理顶点与其独立映射、UV范围和真实玻璃深度。
 
@@ -36,14 +36,14 @@ Blender工程、最终材质与EXIF解码检查和预览由统一完成步骤处
 
 ## 修订资产与原生检查
 
-原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（字节），每件均小于100,000,000。
+原始、网页、Blender及无照片远景变体已独立打包。原始与原生副本保留原字节，网页经实际解码核对三角位置、法线与UV；原JPEG保留。当前文件大小如下（MB），每件均小于100 MB。
 
-| 文件 | 字节 | 下载 |
+| 文件 | 大小（MB） | 下载 |
 |---|---:|---|
-| 原始GLB | 9,844,376 | [下载](../../../../assets/models/bund/bund14.glb) |
-| 网页GLB | 6,725,708 | [下载](../../../../assets/models/bund/web/bund14.glb) |
-| Blender工程 | 15,048,712 | [下载](../../../../assets/native/bund/bund14.blend) |
-| 远景GLB（无照片） | 1,443,684 | [下载](../../../../assets/models/bund/lod-v4/bund14.glb) |
+| 原始GLB | 9.84 | [下载](../../../../assets/models/bund/bund14.glb) |
+| 网页GLB | 6.73 | [下载](../../../../assets/models/bund/web/bund14.glb) |
+| Blender工程 | 15.05 | [下载](../../../../assets/native/bund/bund14.blend) |
+| 远景GLB（无照片） | 1.44 | [下载](../../../../assets/models/bund/lod-v4/bund14.glb) |
 
 root已实际查看本修订的原生预览；照片和窗框的核对范围见[记录](native-preview-review.json)。浏览器同视角及场景复验另行完成，不以原生预览替代。完整封装、LOD与来源版权检查见[打包摘要](packaging-summary.json)。
 

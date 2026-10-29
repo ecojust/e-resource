@@ -21,4 +21,4 @@ python common/package_building.py --id bundNN --raw bundNN/output/bundNN.glb \
 
 高度和开间以已记录来源及照片比例为依据，未见侧后、墙厚、雕饰和部分深度仍有推定，不是测绘成果。数学、几何、JPEG字节、浏览器方向和实景对照是不同检查，各自的报告说明其范围。
 
-原始代码和程序几何采用项目MIT许可；源轮廓保留OpenStreetMap/Overture ODbL署名，照片按各栋列出的原始许可分发。新模型均须单文件小于100,000,000字节，按栋打包，不依赖Git LFS。
+原始代码和程序几何采用项目MIT许可；源轮廓保留OpenStreetMap/Overture ODbL署名，照片按各栋列出的原始许可分发。新模型均须单文件小于100 MB，按栋打包，不依赖Git LFS。

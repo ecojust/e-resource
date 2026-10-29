@@ -55,7 +55,7 @@ builder. Public reference-image licenses and view records are recorded in
 photo-reference-register.json. The font is a small Noto CJK TC Bold subset;
 its SIL OFL license travels in fonts/.
 
-Every deliverable file must remain strictly below 100,000,000 bytes. Target
+Every deliverable file must remain strictly below 100 MB. Target
 budgets are raw 40 MB, web 15 MB, authored LOD 5 MB and native 30 MB; these are
 engineering targets, not substitutes for actual exported size checks.
 Geometry previews and author metadata do not constitute root visual or
