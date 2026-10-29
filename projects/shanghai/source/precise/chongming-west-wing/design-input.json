@@ -1,0 +1,100 @@
+{
+  "identity": "崇明学宫西庑",
+  "status": "Text-dimension-guided exterior candidate",
+  "scope": "Independent seven-bay West Wing candidate; facade openings and roof-end shape are explicit modeling assumptions",
+  "source_register": "source-register.json",
+  "documented": {
+    "bays": 7,
+    "length_m": 26.74,
+    "width_m": 7.7,
+    "height_m": 8,
+    "structure": "Brick and timber",
+    "repair_year": 1997,
+    "relative_position": "West Wing beside the west side of the approach path in front of Dacheng Hall; the East Wing occupies the east side",
+    "both_wings_combined_floor_area_m2": 412,
+    "period": "Historical museum description following the 1997 repair; not verified as the 2026 condition"
+  },
+  "historical_evidence_excluded_from_modern_form": {
+    "nine_bays_each": "Applies only to the period before the Qing Shunzhi era",
+    "front_corridor": "Documented only for the period before the Qing Shunzhi era; no modern front corridor or colonnade is inferred",
+    "destruction_year": 1654
+  },
+  "interpretations": {
+    "status": "Final candidate parameters, still requiring stronger photographic or survey evidence",
+    "measurement_endpoints": "The source leaves wall, column, eave and base limits unspecified. The model assigns the documented length and width to the base envelope.",
+    "base_plan_m": [
+      26.74,
+      7.7
+    ],
+    "wall_outer_lines_m": [
+      26.34,
+      7.3
+    ],
+    "wall_thickness_m": 0.2,
+    "roof_main_sheet_m": [
+      27.54,
+      8.5
+    ],
+    "height_constraint_m": 8,
+    "roof_type": "Assumed single-ridge, simple two-slope gable roof. The museum text does not specify a roof type, and the contextual aerial does not establish the roof ends.",
+    "facade_partition": "Seven equal divisions are a modeling estimate. Only the total count of seven bays is documented; actual bay widths and structural positions are unknown.",
+    "openings": {
+      "central_door_count": 1,
+      "lattice_window_count": 6,
+      "status": "Entire opening scheme is an estimate. The text does not document a central entrance, window count, opening dimensions, leaf layout or lattice pattern.",
+      "central_door_width_m": 2.7,
+      "central_door_bottom_top_m": [
+        0.2,
+        4.35
+      ],
+      "window_width_height_m": [
+        2.35,
+        2.45
+      ],
+      "window_bottom_top_m": [
+        1.55,
+        4.0
+      ],
+      "window_grid": [
+        4,
+        5
+      ]
+    },
+    "colors": "Original grey roof, light wall and red-brown timber approximations. Detailed colours and material values are unverified; no photograph-derived PBR.",
+    "rear_and_sides": "Plain closure walls and assumed roof-end infills; rear openings and details remain unknown",
+    "front": "Local -Y facade; actual entrance direction unverified",
+    "interior": "Not modeled",
+    "actual_export_envelope": "See audit geometry.json; full roof cap and tile ends extend beyond main roof sheets; not documentary measurement limits",
+    "base_height_m": 0.2,
+    "ridge_under_cap_m": 7.75,
+    "eave_roof_top_m": 5.6,
+    "actual_export_envelope_width_depth_height_m_approx": [
+      27.69,
+      8.644408,
+      8
+    ]
+  },
+  "area_arithmetic_check": {
+    "expression": "26.74 x 7.7 x 2",
+    "calculated_m2": 411.796,
+    "documented_rounded_m2": 412,
+    "limit": "Numerical consistency only; it does not prove that the source dimensions refer to base, wall, column or eave limits",
+    "calculated_single_wing_m2": 205.898
+  },
+  "omitted": [
+    "East Wing and Dacheng Hall",
+    "Courtyard paving and measured ground",
+    "Front corridor and corridor columns",
+    "Interior shrines, spirit tablets, statues and exhibition displays",
+    "Unsupported inscriptions, brackets and exact carved decoration"
+  ],
+  "identity_limits": "Independent West Wing identity and relative position come from museum text, with coarse aerial context for both courtyard-side long roofs. No East Wing pixel localization is transferred to the West Wing. This candidate is not an individually verified photographic reconstruction or a verification of the actual openings, roof ends, colours or equal bay widths.",
+  "geographic_registration": false,
+  "photos_redistributed": false,
+  "shared_assumption_model": {
+    "identity": "崇明学宫东庑",
+    "design_input": "../chongming-east-wing/design-input.json",
+    "source_commit": "ba2901f26128f3959694ea541a847797c6957764",
+    "scope": "The independent West Wing candidate shares the final East Wing basic geometry parameters, including the assumed base, walls, roof, equal bay divisions, openings, colours and rear closure. Shared documentary dimensions support this explicit modeling assumption; they do not establish that the actual wings have identical roofs, doors, windows, colours or equal bay widths. No unsupported details are added to distinguish the candidates."
+  }
+}
