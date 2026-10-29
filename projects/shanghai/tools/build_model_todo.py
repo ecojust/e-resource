@@ -27,6 +27,20 @@ def model_sizes(job):
   parts.append(f"{label} {mb:.3f} MB" if mb<.1 else f"{label} {mb:.2f} MB")
  return '／'.join(parts)
 
+def official_road_lines(prefix):
+ d=json.loads((DATA/'official-road-leads.json').read_text());rows=d['records']
+ assert len({r['id'] for r in rows})==len(rows), 'Duplicate official road row ID'
+ states={'existing_name':'已有名称匹配／仍待核对','new_name_candidate':'新名称候选／待核别名','composite_review':'组合条目／待拆分'}
+ counts=Counter(r['match_status'] for r in rows)
+ assert set(counts).issubset(states), 'Unknown official road match state'
+ lines=['### 官方专题道路清单补充 TODO','',f"另收录 **{len(rows)} 条官方原表记录**：2022年主要道路范围及2023年绿化特色道路名录。包含 {counts['existing_name']} 条已有名称初步匹配、{counts['new_name_candidate']} 条新名称候选、{counts['composite_review']} 条组合名称待拆分；均不等于新增独立道路数，不能与上方名称数量直接相加。两份专题清单均不是全市道路底册，文件年代也不代表2026年现状已核验。",'',
+ '以下仅整理道路名称、原表范围和明确区属，继续查沿街建筑及照片／文字资料。区属缺项保留待核，不从道路名推断。'+link('来源、匹配依据及机器可读记录',prefix+'official-road-leads.json'),'','<details><summary>展开全部官方道路／路段资料待办</summary>','','| ID | 原表道路名称 | 明确区属 | 原表范围 | 来源 | TODO |','|---|---|---|---|---|---|']
+ for r in rows:
+  todo=states[r['match_status']]+'；'+r['todo']
+  lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell('、'.join(r['districts']))} | {cell(r['extent'])} | {link('官方原表',r['source_url'])} | {cell(todo)} |")
+ lines+=['','</details>','']
+ return lines
+
 def build():
  queue=json.loads((DATA/'queue.json').read_text())
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
@@ -71,6 +85,7 @@ def build():
  for road in roads:
   lines.append(f"| {cell(road.get('name_simplified',road['name']))} | {cell('、'.join(road['districts_indexed']))} | 查沿街建筑／照片与文字 |")
  lines+=['','</details>','']
+ lines+=official_road_lines('projects/shanghai/data/model-todo/')
  lines+=['### 既有地图中的具名建筑待查线索','',f'另有{len(maps)}条具名地图要素，尚需查找具体照片或建筑文字资料。可能与上方名录或已有模型重叠，不能相加当作独立建筑总数。[来源和原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。','','<details><summary>展开全部具名地图线索</summary>','','| 源ID | 名称 | 区 | TODO |','|---|---|---|---|']
  for m in maps:
   lines.append(f"| {cell(m['id'])} | {cell(m['name'])} | {cell(m['district'])} | 核身份／去重／查建筑参考 |")
@@ -95,7 +110,8 @@ def street_index():
   refs=link('道路资料',urls[0]) if urls else '待查'
   matches='、'.join(r.get('address_match_building_ids',[])) or '尚未匹配；继续搜集'
   lines.append(f"| {cell(r.get('name_simplified',r['name']))} | {cell('、'.join(r['districts_indexed']))} | {refs} | {cell(matches)} |")
- lines+=['','数据来源、署名与CC BY-SA 4.0许可见[说明](README.md)。来源响应哈希保存在JSON；不再分发第三方照片或完整网页。','']
+ lines+=['']+official_road_lines('')
+ lines+=['','维基百科派生表格的CC BY-SA 4.0许可，以及官方事实索引的机关署名与出处见[说明](README.md)。来源响应哈希保存在JSON；不再分发第三方照片或完整网页。','']
  return '\n'.join(lines)
 
 def main():
