@@ -10,3 +10,7 @@
 所有模型文件各自小于100 MB；大小与SHA256见[资产清单](../../../assets/models/candidates/chongming-lingxing-photo-left-gate/manifest.json)。照片不再分发或贴图。来源差异与估计范围见[来源README](../../../source/precise/chongming-lingxing-photo-left-gate/README.md)。
 
 复测网页：在`projects/shanghai`运行`python -m http.server 8768`，仓库根目录运行`node projects/shanghai/data/audit/lingxing-left-gate-v1/qa-browser.cjs`；需Playwright及`/usr/bin/chromium`，输出位于`/tmp/lingxing-left-gate-browser.*`。
+
+## 已发布页面
+
+[公开页面检查](public-browser.json)针对固定提交`122db27da5981e493dd3f2b12f088eb2a00bc29e`。接受托管服务首次访问提示“Open the page”后，网页加载5,900个三角面的近景模型并通过SHA256校验，未记录页面错误。在仓库根运行`node projects/shanghai/data/audit/lingxing-left-gate-v1/qa-public.cjs`可复验。该检查不扩大照片或地理配准验收范围。
