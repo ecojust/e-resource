@@ -64,3 +64,5 @@ python projects/shanghai/source/precise/chongming-ruxue-gate/source/verify_packa
 ```
 
 主代理独立核对四资产大小／SHA、文献原文及原生记录，并实看斜侧、背侧及网页图；结果见[root-visual-review.json](root-visual-review.json)。
+
+固定提交的[公开预览](https://rawcdn.githack.com/ecojust/e-resource/17b34c264db43fa93fb0ca5bfd55237a1579aa89/projects/shanghai/ruxue-gate.html)已通过真实浏览器加载，身份、面数、GLB校验与文字来源均匹配，异常为0；见[public-browser.json](public-browser.json)及[qa-public.cjs](qa-public.cjs)。

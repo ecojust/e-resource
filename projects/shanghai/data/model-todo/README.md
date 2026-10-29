@@ -8,6 +8,10 @@
 
 [第一批前20条库存复核](heritage-first20-model-reconciliation.json)将6条名录与既有模型关联，包括名称匹配漏掉的中国银行大楼。海关后翼未建、中国银行西翼高度冲突等范围缺口仍保留；老永安与新永安需拆成两栋，峻岭／茂名公寓先核实体。该报告按所列仓库提交核对源码、清单和资产路径，没有重新验收照片或几何，也不把任何整处名录判为全部完成。
 
+[局部地图标签资料](bund-map-road-label-leads.json)来自仓库已冻结的4个外滩及周边完整PBF，源版本`20261018_080001_pt`。实际核对输入哈希并提取`transportation_name`：746个标签要素中排除6个渡轮和1个没有选定名称字段的要素，739次出现按精确名称字符串组成411组；221组与既有名称索引匹配，190组未匹配。README与街道索引只逐行展示这190组待核标签，JSON保留全部411组及所有原feature ID、class/subclass、语言字段、瓦片来源和出现次数。它们包含桥隧、出入口、服务通道、步道、广场等，**不是190条新道路**，不增加已确认道路实体数、不改动1,038条名称快照。
+
+瓦片覆盖约东经121.46484–121.50879、北纬31.22220–31.25977，仅为中心城区局部。跨瓦片和同名分段尚未按实体去重；缓冲区标签可能超出名义瓦片边界，几何尚未裁切或配准到区属。MVT feature ID没有被认定为OSM way ID。标签与官方原名及52个待查名称的交叉匹配仅提示文字相同，不证明道路实体相同或沿街建筑已获得可建模资料。全市水面冻结包仅保留`water`层，不能据其覆盖范围推称全市路名已经取得。
+
 ## 来源与口径
 
 - 建筑登记覆盖现今16区，前四批632处采用维基百科《上海市优秀历史建筑》固定版本95304946，第五批426处直接解析上海市规划和国土资源管理局名单的互联网存档正文。前四批官方存档的访问失败／挑战页状态保留在数据中，不称已核验官方原文。
@@ -41,6 +45,17 @@ python projects/shanghai/data/model-todo/tooling/discover_heritage.py --cache /t
 python projects/shanghai/data/model-todo/tooling/discover_streets.py --cache /tmp/shanghai-streets --output /tmp/new-streets.json
 ```
 
+局部地图标签的复验脚本位于[../../tools/extract_bund_road_labels.py](../../tools/extract_bund_road_labels.py)，依赖Python标准库及`opencc-python-reimplemented==0.1.7`；提取时Python版本和全部输入SHA256见JSON。脚本不请求网络：先读工作文件，否则读取已有Git对象，并禁用Git延迟抓取。所需原始瓦片不在本地对象库时会报错，不会在线补取。仅输出新提案快照，不覆盖道路基线或执行队列。
+
+从仓库根目录复验，先确保8项冻结输入已在本地：
+
+```sh
+python -m pip install -r projects/shanghai/data/model-todo/tooling/requirements.txt
+python projects/shanghai/tools/extract_bund_road_labels.py --repo . --output /tmp/bund-label-recheck.json
+```
+
+`/tmp/bund-label-recheck.json`是复验输出位置；正式记录仍为本目录的`bund-map-road-label-leads.json`。复验后应比较输入哈希、411组稳定ID和逐次出现记录；生成时间、依赖环境和输入读取方式可能不同。JSON内标记待核，不把重跑结果直接合并为新街道实体。
+
 ## 署名与许可
 
 维基百科编者，《上海市优秀历史建筑》（版本95304946）及道路列表／分类；具体原文、取得日期、响应SHA256与字节数见各JSON的`sources`。基于维基百科整理的名录及其生成表格采用CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0/），属于本目录与根README待办表格的许可说明；不改变其他原创代码和模型的MIT许可。官方名单保留机关署名和原始出处。本库不再分发整篇网页或第三方照片；照片许可须在制作前逐文件核验。
@@ -50,3 +65,5 @@ python projects/shanghai/data/model-todo/tooling/discover_streets.py --cache /tm
 地图身份线索独立保存在`named-map-leads.json`，从已有`data/audit/landmark-candidate-features.geojson`的22,270条搜索要素提取1,036条具名记录，保留原UUID和逐条来源，不复制几何。OSM派生名称／元数据：© OpenStreetMap contributors，ODbL-1.0；其他来源按逐条元数据与项目来源声明处理。该索引只是地图身份，须补建筑照片／文字后才能进入制作队列。
 
 崇明学宫追加资料见[chongming-archival-discovery.json](chongming-archival-discovery.json)：保存旧官网三页与2021区政府文字的哈希、已述尺寸、地址与方位，以及牌坊题名、明伦堂高度等冲突。中央棂星门与两侧门分开记录，照片未覆盖的范围不随中央候选自动完成。
+
+局部道路标签的OSM派生数据：© OpenStreetMap contributors，OpenFreeMap / OpenMapTiles，ODbL-1.0；来源版次、原瓦片URL、边界及响应哈希见`bund-map-road-label-leads.json`。这部分数据不套用维基百科表格的CC BY-SA许可。提取代码采用项目MIT许可，未再分发参考照片，未使用建筑地址字段生成道路列表。

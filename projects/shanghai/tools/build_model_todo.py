@@ -58,6 +58,41 @@ def official_road_lines(prefix):
  lines+=['','</details>','']
  return lines
 
+def map_road_label_lines(prefix):
+ d=json.loads((DATA/'bund-map-road-label-leads.json').read_text());rows=d['records'];counts=d['counts']
+ assert len({r['id'] for r in rows})==len(rows), 'Duplicate map label group ID'
+ for path in (d['baseline_path'],d['official_path'],d['reconciliation_path']):
+  record=next(x for x in d['input_files'] if x['path']==path)
+  assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==record['sha256'], 'Map label reference input changed; rerun extraction for review'
+ unmatched=[r for r in rows if r['baseline_name_match']=='not_in_baseline_name_strings']
+ matched=[r for r in rows if r['baseline_name_match']=='existing_name_string']
+ assert len(unmatched)+len(matched)==len(rows)==counts['exact_name_string_groups']
+ assert len(unmatched)==counts['not_matching_baseline_groups'] and len(matched)==counts['matching_baseline_groups']
+ assert all(not r['matched_existing_road_ids'] for r in unmatched)
+ assert all(r['matched_existing_road_ids'] for r in matched)
+ assert sum(r['occurrence_count'] for r in rows)==counts['grouped_occurrences']
+ tiles={t['id']:t for t in d['tiles']}
+ flags={'nonstandard_street_name_suffix_review':'名称类型待核','path_or_pedestrian_label_review':'步道／人行',
+        'plaza_area_or_greenway_name_review':'广场／场所／绿道','road_shaped_name_identity_unverified':'路名形态／实体待核',
+        'service_or_access_label_review':'服务／通行','tunnel_or_underpass_name_review':'隧道／地道','bridge_name_review':'桥',
+        'access_or_parking_or_hub_name_review':'出入口／停车／枢纽','construction_label_review':'施工状态'}
+ west,south,east,north=d['coverage_bounds_wgs84']
+ lines=['### 局部冻结地图标签资料 TODO','',
+  f"从外滩及周边 **{len(tiles)} 个z14冻结瓦片**提取 `{d['source_version']}` 版道路名称层，按精确名称字符串保留 **{len(rows)} 组**：{len(matched)} 组与既有名称索引匹配，以下列出其余 **{len(unmatched)} 组待核标签**。这不是{len(unmatched)}条新道路，也不是全市道路底册；未改变1,038条快照或已确认道路实体数。",'',
+  f"瓦片范围约东经{west:.5f}–{east:.5f}、北纬{south:.5f}–{north:.5f}。同名分段、重复标签及瓦片边界尚未进行实体去重；桥隧、出入口、服务通道、步道、广场等需先核对类别。MVT feature ID尚未核实为OSM ID，区属不从标签推断。",'',
+  link('全部标签组、语言字段、feature ID及来源哈希',prefix+'bund-map-road-label-leads.json')+' · '+link('依赖、离线复验与许可说明',prefix+'README.md')+'。数据：© OpenStreetMap contributors；OpenFreeMap / OpenMapTiles，ODbL-1.0。','',
+  '<details><summary>展开全部未匹配的局部地图标签待办</summary>','','| 标签组ID | 名称 | 类别复核标记 | 标签次数 | 来源瓦片 | TODO |','|---|---|---|---:|---|---|']
+ for r in unmatched:
+  assert set(r['label_review_flags']).issubset(flags), 'Unknown map label review flag'
+  review_flags='、'.join(flags[f] for f in r['label_review_flags'])+'；class：'+'／'.join(r['classes'])
+  refs=' · '.join(link(tile_id,tiles[tile_id]['source_url']) for tile_id in r['tile_ids'])
+  todo=r['todo']
+  if r['reconciliation_proposed_name_matches']:
+   todo+='；官方待查名称同名：'+'、'.join(x['name'] for x in r['reconciliation_proposed_name_matches'])+'（实体仍待核）'
+  lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(review_flags)} | {r['occurrence_count']} | {refs} | {cell(todo)} |")
+ lines+=['','</details>','']
+ return lines
+
 def build():
  queue=json.loads((DATA/'queue.json').read_text())
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
@@ -113,6 +148,7 @@ def build():
   lines.append(f"| {cell(road.get('name_simplified',road['name']))} | {cell('、'.join(road['districts_indexed']))} | 查沿街建筑／照片与文字 |")
  lines+=['','</details>','']
  lines+=official_road_lines('projects/shanghai/data/model-todo/')
+ lines+=map_road_label_lines('projects/shanghai/data/model-todo/')
  lines+=['### 既有地图中的具名建筑待查线索','',f'另有{len(maps)}条具名地图要素，尚需查找具体照片或建筑文字资料。可能与上方名录或已有模型重叠，不能相加当作独立建筑总数。[来源和原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。','','<details><summary>展开全部具名地图线索</summary>','','| 源ID | 名称 | 区 | TODO |','|---|---|---|---|']
  for m in maps:
   lines.append(f"| {cell(m['id'])} | {cell(m['name'])} | {cell(m['district'])} | 核身份／去重／查建筑参考 |")
@@ -138,6 +174,7 @@ def street_index():
   matches='、'.join(r.get('address_match_building_ids',[])) or '尚未匹配；继续搜集'
   lines.append(f"| {cell(r.get('name_simplified',r['name']))} | {cell('、'.join(r['districts_indexed']))} | {refs} | {cell(matches)} |")
  lines+=['']+official_road_lines('')
+ lines+=map_road_label_lines('')
  lines+=['','维基百科派生表格的CC BY-SA 4.0许可，以及官方事实索引的机关署名与出处见[说明](README.md)。来源响应哈希保存在JSON；不再分发第三方照片或完整网页。','']
  return '\n'.join(lines)
 
