@@ -27,16 +27,16 @@
       "sha256": "5129fcb1f8a8522ac1768270a16da94586fb8dc8716fdca9553118d319dc9da6"
     },
     "assets/models/candidates/huangpu-sun-yatsen-residence/manifest.json": {
-      "bytes": 1607,
-      "sha256": "9cbd3fe5e99b7ef478613b418ff7e5228f18262958760366cd736cf51e7f01b6"
+      "bytes": 1697,
+      "sha256": "807b30c4e7777ca51b2667a67b458b85db734b48fb8d3543c65fd0f1ea83f777"
     },
     "assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json": {
       "bytes": 1708,
       "sha256": "cdef4db8bca7f57b32d6462fe1910c582776d8a58878a5ac4f80fe90242b14ed"
     },
     "assets/models/candidates/xuhui-zikawei-south-building/manifest.json": {
-      "bytes": 1702,
-      "sha256": "b73bd7247b26ca33d7ec88250394606f0219b53c568b4105a58096b644faf5d7"
+      "bytes": 1792,
+      "sha256": "577142bde89b1f2cbb9feda8e64a1e9db3329d1eef42846e5982eabc9934ebdf"
     },
     "assets/surfaces/manifest.json": {
       "bytes": 16940,
@@ -47,8 +47,8 @@
       "sha256": "ec5928bab4382ac8fa58f2aa57541ec3a3ef7d0d262b679a931b7f7d6753cd7e"
     },
     "data/precise-buildings/catalog.json": {
-      "bytes": 5003,
-      "sha256": "8ae2f0ac31e3adf39fb5d9ff9635e8154f397cb0b7fbba4d232711f15a29583a"
+      "bytes": 5710,
+      "sha256": "3ff61a8d83d8ae2c46a2ceb208282529289f95a93246bf731575b5c91db623a3"
     },
     "data/precise-buildings/macros/14-13701-6700/index.json": {
       "bytes": 36775,
@@ -74,9 +74,17 @@
       "bytes": 147511,
       "sha256": "e6297cf674e64515280bde7bbd7440d3325b8b470eaa4a87764c3b60bf21fd38"
     },
+    "data/precise-buildings/macros/14-13718-6696/index.json": {
+      "bytes": 17619,
+      "sha256": "7eb7e77c77cfca211aea6130d629907f5c58ea9fe1aac08dadf4a5b036f32528"
+    },
     "data/precise-buildings/macros/14-13718-6705/index.json": {
       "bytes": 19060,
       "sha256": "9d26f408e00a0591bd5cc0323c8dc5e55065c6acac7d8f19b694962cd551ede5"
+    },
+    "data/precise-buildings/macros/14-13719-6695/index.json": {
+      "bytes": 16801,
+      "sha256": "dcee34434de061612a9bc33e9c01e88e087df7b0f7239e4b9a2c212c554496ff"
     },
     "data/precise-buildings/macros/14-13719-6697/index.json": {
       "bytes": 18727,
@@ -107,8 +115,8 @@
       "sha256": "b3f5a30460f3eadcfbbb7b7bd6f938317000f6424e6a5eff1bcf5cdb51288311"
     },
     "landmarks.html": {
-      "bytes": 27313,
-      "sha256": "9040054754b291084730f34fe24715f53481d354b136fee08831d02d0b6bf331"
+      "bytes": 28402,
+      "sha256": "bffcd02084209f833dab355584f5f5873bcfc56403805ab64fd53fe4b488fe94"
     }
   },
   "count_reconciliation": {
@@ -123,17 +131,17 @@
     "macro_count": 1708
   },
   "inventory": {
-    "navigation_entries": 38,
-    "ordinary_catalog_records": 19,
+    "navigation_entries": 40,
+    "ordinary_catalog_records": 21,
     "ordinary_records_are_subset_of_navigation": true,
-    "standalone_candidate_records": 7,
+    "standalone_candidate_records": 5,
     "flat_surface_districts": 16,
     "flat_surface_triangles": 410447
   },
   "accepted_source_feature_count": null,
   "completion_percentage": null,
   "remaining_feature_count": null,
-  "unknown_count_reason": "No single feature-level acceptance ledger joins all baseline buildings, parts, residuals and authored models. Navigation entries and catalog records are different units, so subtraction or a completion percentage would be misleading. Existing per-model proofs retain their own scope; this report does not revalidate them.",
+  "unknown_count_reason": "The feature identity ledger links baseline representations and model registrations, but does not provide complete per-feature acceptance. Navigation entries and catalog records are different units, so subtraction or a completion percentage would be misleading. Existing per-model proofs retain their own scope; this report does not revalidate them.",
   "source_gap_checks": [
     {
       "query_url": "https://www.openstreetmap.org/api/0.6/map.json?bbox=121.3962,31.6202,121.3983,31.6217",
@@ -159,16 +167,16 @@
       "id": "310101",
       "name": "黄浦区",
       "baseline_render_features": 13830,
-      "navigation_entries": 15,
-      "ordinary_catalog_records": 0,
+      "navigation_entries": 16,
+      "ordinary_catalog_records": 1,
       "flat_surface_triangles": 1899
     },
     {
       "id": "310104",
       "name": "徐汇区",
       "baseline_render_features": 30128,
-      "navigation_entries": 5,
-      "ordinary_catalog_records": 5,
+      "navigation_entries": 6,
+      "ordinary_catalog_records": 6,
       "flat_surface_triangles": 3578
     },
     {
@@ -285,6 +293,18 @@
     }
   ],
   "navigation": [
+    {
+      "id": "huangpu-sun-yatsen-residence",
+      "name": "上海孙中山故居主楼",
+      "href": "index.html#landmark=huangpu-sun-yatsen-residence&mode=walk",
+      "district_id": "310101"
+    },
+    {
+      "id": "xuhui-zikawei-south-building",
+      "name": "徐家汇藏书楼南楼（原神父楼）",
+      "href": "index.html#landmark=xuhui-zikawei-south-building&mode=walk",
+      "district_id": "310104"
+    },
     {
       "id": "jinshanwei-wengcheng-gatehouse",
       "name": "金山卫瓮城城楼",
@@ -932,6 +952,50 @@
         "visible_facade_opening_grid": "passed"
       },
       "evidence_revalidated": false
+    },
+    {
+      "id": "xuhui-zikawei-south-building",
+      "name": "徐家汇藏书楼南楼（原神父楼）",
+      "district_id": "310104",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13718-6696/index.json",
+      "evidence_status": {
+        "source_photos": "passed",
+        "identity_footprint": "passed",
+        "height_evidence": "passed",
+        "visible_facade_opening_grid": "passed",
+        "roof": "passed",
+        "texture_mapping_qa": "passed",
+        "geometry_proof": "passed",
+        "size_proof": "passed",
+        "browser_proof": "passed",
+        "uncertainty": "passed"
+      },
+      "evidence_revalidated": false
+    },
+    {
+      "id": "huangpu-sun-yatsen-residence",
+      "name": "上海孙中山故居主楼",
+      "district_id": "310101",
+      "catalog_accepted": true,
+      "candidate_only": false,
+      "pending_stages": [],
+      "source_index": "data/precise-buildings/macros/14-13719-6695/index.json",
+      "evidence_status": {
+        "source_photos": "passed",
+        "identity_footprint": "passed",
+        "height_evidence": "passed",
+        "visible_facade_opening_grid": "passed",
+        "roof": "passed",
+        "texture_mapping_qa": "passed",
+        "geometry_proof": "passed",
+        "size_proof": "passed",
+        "browser_proof": "passed",
+        "uncertainty": "passed"
+      },
+      "evidence_revalidated": false
     }
   ],
   "standalone_candidates": [
@@ -964,25 +1028,21 @@
       "assets_revalidated": false
     },
     {
-      "id": "huangpu-sun-yatsen-residence",
-      "name": "上海孙中山故居主楼",
-      "status": "source-anchored-exterior-candidate-not-installed",
-      "manifest": "assets/models/candidates/huangpu-sun-yatsen-residence/manifest.json",
-      "assets_revalidated": false
-    },
-    {
       "id": "xuhui-soong-ching-ling-residence",
       "name": "上海宋庆龄故居主楼",
       "status": "unregistered-main-house-exterior-candidate-not-installed",
       "manifest": "assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json",
       "assets_revalidated": false
+    }
+  ],
+  "integrated_model_previews": [
+    {
+      "id": "huangpu-sun-yatsen-residence",
+      "manifest": "assets/models/candidates/huangpu-sun-yatsen-residence/manifest.json"
     },
     {
       "id": "xuhui-zikawei-south-building",
-      "name": "徐家汇藏书楼南楼（原神父楼）",
-      "status": "source-anchored-exterior-candidate-not-installed",
-      "manifest": "assets/models/candidates/xuhui-zikawei-south-building/manifest.json",
-      "assets_revalidated": false
+      "manifest": "assets/models/candidates/xuhui-zikawei-south-building/manifest.json"
     }
   ],
   "limits": [

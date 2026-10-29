@@ -1,0 +1,390 @@
+{
+  "schema": "precise-building-macro-v1",
+  "macro_id": "14-13719-6695",
+  "url_base": "project-root",
+  "record_count": 1,
+  "models": [
+    {
+      "id": "huangpu-sun-yatsen-residence",
+      "name": "上海孙中山故居主楼",
+      "kind": "building",
+      "detail_level": "architectural",
+      "architecture_style": "红瓦屋面、四孔拱廊、门窗与台阶",
+      "accepted": true,
+      "browser_passed": true,
+      "pending_stages": [],
+      "acceptance": {
+        "source_photos": {
+          "status": "passed",
+          "evidence_file": "source/precise/huangpu-sun-yatsen-residence/public-photo-register.json",
+          "evidence_bytes": 11183,
+          "evidence_sha256": "828477e42f4f2532f955dbc524e1e7e80831d10d414bdb4c0233edba6ad728b9",
+          "scope": "Licensed original reference images, individually credited; not embedded."
+        },
+        "identity_footprint": {
+          "status": "passed",
+          "evidence_file": "data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/placement.json",
+          "evidence_bytes": 20770,
+          "evidence_sha256": "5d5729a495241fc210ef1bda0e505858ae6ae2dc105d7c220b5b35ee5d8ec3e6",
+          "scope": "Exact source identity, separate neighboring building, conservative obstacle and 9-macro neighborhood screen."
+        },
+        "height_evidence": {
+          "status": "passed",
+          "evidence_file": "source/precise/huangpu-sun-yatsen-residence/design-input.json",
+          "evidence_bytes": 1817,
+          "evidence_sha256": "67fa3d2faf4b9834e2cbb8fc9ed2b5310f240347c3badd56983c1c4419f2fa2b",
+          "scope": "Metric height and hidden dimensions remain explicit estimates, not survey measurements."
+        },
+        "visible_facade_opening_grid": {
+          "status": "passed",
+          "evidence_file": "data/audit/sun-yatsen-residence-v1/structure-full.json",
+          "evidence_bytes": 2936,
+          "evidence_sha256": "fe122363a88f44afe915b3c6e5fc508a9c0a5d6fc28fc50c38babdbd0d50ba16",
+          "scope": "Independent model opening and roof probes, with documented estimated hidden elevations."
+        },
+        "roof": {
+          "status": "passed",
+          "evidence_file": "data/audit/sun-yatsen-residence-v1/geometry.json",
+          "evidence_bytes": 1291,
+          "evidence_sha256": "c868bba64b9a31c36c0c028e9d6ce4a94719fb3873dfd8e3723ad4c561251441",
+          "scope": "Original full/LOD geometry verified; roof form follows published photo evidence, hidden intersections estimated."
+        },
+        "texture_mapping_qa": {
+          "status": "passed",
+          "evidence_file": "data/audit/sun-yatsen-residence-v1/pbr.json",
+          "evidence_bytes": 1785,
+          "evidence_sha256": "aa7b3a7d885a3821ffbe836d26891b57b834a6cb77dc4d110eefc62577f0bb52",
+          "scope": "Original PBR images and UVs preserved through compression."
+        },
+        "geometry_proof": {
+          "status": "passed",
+          "evidence_file": "data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/baseline-preservation.json",
+          "evidence_bytes": 3384,
+          "evidence_sha256": "fd21e18f71e9a964578360ecae8f59777df508ff0229169bcdd41fa45a0bd0db",
+          "scope": "Actual Three/Meshopt decoded baseline positions, normals, materials and winding exactly preserved while partitioning owner groups; model geometry retains its separate original audit."
+        },
+        "size_proof": {
+          "status": "passed",
+          "evidence_file": "data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/installed-assets.json",
+          "evidence_bytes": 2808,
+          "evidence_sha256": "785bd9b65039f8b0bbb88ac9182e728136594e7bd3373fd61140ddcbb11178bf",
+          "scope": "Four assets byte/SHA-bound, each strictly below 100000000 bytes."
+        },
+        "browser_proof": {
+          "status": "passed",
+          "evidence_file": "data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/walk-final.json",
+          "evidence_bytes": 40244,
+          "evidence_sha256": "e781c2a10dd7295ccec72d1cb0c6dcd0d5690f6f8067270a40197295f95a86e5",
+          "scope": "Actual third-person start, keyboard movement/key release, conservative wall collision and full/LOD/full on virtual outdoor ground; separate failure/fallback report."
+        },
+        "uncertainty": {
+          "status": "passed",
+          "evidence_file": "source/precise/huangpu-sun-yatsen-residence/design-input.json",
+          "evidence_bytes": 1817,
+          "evidence_sha256": "67fa3d2faf4b9834e2cbb8fc9ed2b5310f240347c3badd56983c1c4419f2fa2b",
+          "scope": "Estimated exterior only, without measured terrain, indoor, stair or veranda walking."
+        }
+      },
+      "anchor": [
+        121.46318773475569,
+        31.217987658537314
+      ],
+      "lng": 121.46318773475569,
+      "lat": 31.217987658537314,
+      "heading": 0,
+      "altitude": 0,
+      "bbox": [
+        121.46306276,
+        31.21788473,
+        121.46331489,
+        31.21809117
+      ],
+      "confirmed_boundary": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46325588,
+              31.21809117
+            ],
+            [
+              121.46331489,
+              31.21793519
+            ],
+            [
+              121.46311641,
+              31.21788473
+            ],
+            [
+              121.46306276,
+              31.21804071
+            ],
+            [
+              121.46325588,
+              31.21809117
+            ]
+          ]
+        ]
+      },
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "district": {
+        "id": "310101",
+        "name": "黄浦区"
+      },
+      "height_m": 12.975,
+      "height_estimated": true,
+      "height_note": "Estimated from exterior photographs and source footprint; not measured. Source 20.45m not used.",
+      "navigation": {
+        "listed": true,
+        "walkStart": [
+          121.46326256426727,
+          31.21777239014725
+        ],
+        "bearing": 343.44398523239363,
+        "overviewZoom": 18
+      },
+      "walkStart": [
+        121.46326256426727,
+        31.21777239014725
+      ],
+      "bearing": 343.44398523239363,
+      "overviewZoom": 18,
+      "owner": {
+        "macro_id": "14-13719-6695",
+        "feature_local_id": 3433,
+        "feature_key": "building:9bbed57b-ae4b-4abc-be77-0b5444bf0a9a",
+        "near_owner_id": "14-13719-6695-3_-3-s1-s1",
+        "baseline_configuration_sha256": "bc00ae98308d26661b45dd7dab7b5098cab3ca4c7c7f9c1490122212af5e9956",
+        "baseline_feature_table_sha256": "d5239bdd08a99fb606ec0e553c91c2801400ee957378b4c05701b72c884b5786",
+        "baseline_ready_sha256": "2bd489e7c99ce03151fc15e1ced5688f5c4a85306152996f6e77b6a2f133b59d",
+        "baseline_near_sha256": "36d594252736601b016c083b10a15c1b0d7b978687baf21dce7fed8687867b09",
+        "baseline_near_feature_local_ids": [
+          2301,
+          613,
+          1656,
+          800,
+          2348,
+          4505,
+          1589,
+          3433,
+          116,
+          3252,
+          534,
+          982,
+          3088,
+          1237
+        ],
+        "replace_only_local_ids": [
+          3433
+        ],
+        "preserve_neighbor_local_ids": [
+          2301,
+          613,
+          1656,
+          800,
+          2348,
+          4505,
+          1589,
+          116,
+          3252,
+          534,
+          982,
+          3088,
+          1237
+        ]
+      },
+      "assets": {
+        "raw": {
+          "file": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-raw.glb",
+          "bytes": 7554076,
+          "sha256": "68b78414ede2db97e145e46130567c5dbfcd2d602d978b18829a3c37e1f0ac7d"
+        },
+        "web": {
+          "file": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-web.glb",
+          "bytes": 3763068,
+          "sha256": "dec6a3dec9d9eda6176107dbac5934ddb435b020bea9cc89806b3f8b7b351aad"
+        },
+        "lod": {
+          "file": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-lod.glb",
+          "bytes": 1507092,
+          "sha256": "cae218028abe08158b6c68b15061a3e529cc6ad790cc54443932e7b34f384c20"
+        },
+        "native": {
+          "file": "assets/native/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence.blend",
+          "bytes": 4450688,
+          "sha256": "2052f284058fed76264bba5f5f799322eebfb738381afc988d9dddbf2e955230"
+        }
+      },
+      "model": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-web.glb",
+      "lod_model": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-lod.glb",
+      "lod_switch_in_m": 300,
+      "lod_switch_out_m": 400,
+      "triangles": 81088,
+      "lod_triangles": 8084,
+      "source_package": "source/precise/huangpu-sun-yatsen-residence",
+      "source_provider": "OpenStreetMap via Overture Maps",
+      "source_url": "https://www.openstreetmap.org/way/206603275/history",
+      "source_license": [
+        {
+          "id": "ODbL-1.0",
+          "attribution": "© OpenStreetMap contributors / Overture Maps",
+          "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+          "role": "Source identity and estimated footprint context"
+        }
+      ],
+      "asset_license": [
+        {
+          "id": "MIT",
+          "attribution": "Original geometry and procedural materials",
+          "url": "https://opensource.org/license/mit",
+          "role": "Original authored geometry, code and procedural materials"
+        }
+      ],
+      "accuracy_scope": "Photo-based estimated exterior, adjacent museum excluded; virtual flat exterior walking only.",
+      "uncertainty": [
+        "尺寸、后翼和未见立面为估计；相邻纪念馆不在此模型内。",
+        "仅室外虚拟平面漫游，不支持外廊、室内或登楼。"
+      ],
+      "raw_bytes": 7554076,
+      "raw_sha256": "68b78414ede2db97e145e46130567c5dbfcd2d602d978b18829a3c37e1f0ac7d",
+      "web_bytes": 3763068,
+      "web_sha256": "dec6a3dec9d9eda6176107dbac5934ddb435b020bea9cc89806b3f8b7b351aad",
+      "lod_bytes": 1507092,
+      "lod_sha256": "cae218028abe08158b6c68b15061a3e529cc6ad790cc54443932e7b34f384c20",
+      "native_bytes": 4450688,
+      "native_sha256": "2052f284058fed76264bba5f5f799322eebfb738381afc988d9dddbf2e955230",
+      "native_model": "assets/native/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence.blend",
+      "model_geometry": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-raw.glb",
+      "raw_triangles": 81088,
+      "editable_model": "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-raw.glb",
+      "candidate_only": false,
+      "catalog_lifecycle_browser_passed": false,
+      "source_photos": [
+        {
+          "file": "assets/references/precise/huangpu-sun-yatsen-residence/65029966.jpg",
+          "bytes": 7755043,
+          "sha256": "aef791480c412d19ac7bc9288f2fab779b38413bb08d948d73d99f30c7bd7439",
+          "author": "ScareCriterion12",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Shanghai_Sun_Yet-sen_House,_Dec_2017.jpg",
+          "embedded_as_texture": false
+        },
+        {
+          "file": "assets/references/precise/huangpu-sun-yatsen-residence/41106153.jpg",
+          "bytes": 1751525,
+          "sha256": "25c57c1c22449cd278d7188a79134c62e50dfa4ca31a80e16cd3b69e3d7bc55b",
+          "author": "Fayhoo",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "source": "https://commons.wikimedia.org/wiki/File:Shanghai_Zhongshan_Guju.JPG",
+          "embedded_as_texture": false
+        },
+        {
+          "file": "assets/references/precise/huangpu-sun-yatsen-residence/86610688.jpg",
+          "bytes": 8121163,
+          "sha256": "d5e027703a09bdf9c0107ef8b696bb40715ca2331fae116fc10a488a136fe232",
+          "author": "Legolas1024",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "https://commons.wikimedia.org/wiki/File:%E5%AD%99%E4%B8%AD%E5%B1%B1%E5%AE%8B%E5%BA%86%E9%BE%84%E6%95%85%E5%B1%85%C2%B7%E4%B8%8A%E6%B5%B7.jpg",
+          "embedded_as_texture": false
+        }
+      ],
+      "reference": {
+        "file": "assets/references/precise/huangpu-sun-yatsen-residence/65029966.jpg",
+        "bytes": 7755043,
+        "sha256": "aef791480c412d19ac7bc9288f2fab779b38413bb08d948d73d99f30c7bd7439",
+        "author": "ScareCriterion12",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Shanghai_Sun_Yet-sen_House,_Dec_2017.jpg",
+        "embedded_as_texture": false,
+        "image": "assets/references/precise/huangpu-sun-yatsen-residence/65029966.jpg"
+      },
+      "reference_policy": "licensed-reference-procedural-pbr-v1",
+      "material_images": [
+        {
+          "file": "source/precise/huangpu-sun-yatsen-residence/textures/sun-yatsen-original-pebbledash-basecolor.png",
+          "bytes": 408086,
+          "sha256": "9fe883bc7807f529eac71e311438bd38ec4c6915095c20719954fc7b52af214f",
+          "role": "basecolor",
+          "kind": "procedural_material",
+          "embedded_as_texture": true,
+          "license": "MIT",
+          "author": "agent",
+          "license_url": "https://opensource.org/license/mit",
+          "source": "https://github.com/ecojust/e-resource/tree/master/projects/shanghai/source/precise/huangpu-sun-yatsen-residence",
+          "limitations": "Original estimated material, not a surface scan or reference-photo pixels.",
+          "pixels": [
+            512,
+            512
+          ],
+          "generator": {
+            "file": "source/precise/huangpu-sun-yatsen-residence/source/generate_material.py",
+            "bytes": 9775,
+            "sha256": "48a5dce02aead4ea596b77486c551157c6011d7a74f8bc11eba400068fc1fe59"
+          }
+        },
+        {
+          "file": "source/precise/huangpu-sun-yatsen-residence/textures/sun-yatsen-original-pebbledash-normal.png",
+          "bytes": 533675,
+          "sha256": "9e3d2c0a3178e50237e52e58826a860f5eba3984bc9d06f09e6ae06095af21cb",
+          "role": "normal",
+          "kind": "procedural_material",
+          "embedded_as_texture": true,
+          "license": "MIT",
+          "author": "agent",
+          "license_url": "https://opensource.org/license/mit",
+          "source": "https://github.com/ecojust/e-resource/tree/master/projects/shanghai/source/precise/huangpu-sun-yatsen-residence",
+          "limitations": "Original estimated material, not a surface scan or reference-photo pixels.",
+          "pixels": [
+            512,
+            512
+          ],
+          "generator": {
+            "file": "source/precise/huangpu-sun-yatsen-residence/source/generate_material.py",
+            "bytes": 9775,
+            "sha256": "48a5dce02aead4ea596b77486c551157c6011d7a74f8bc11eba400068fc1fe59"
+          }
+        },
+        {
+          "file": "source/precise/huangpu-sun-yatsen-residence/textures/sun-yatsen-original-pebbledash-orm.png",
+          "bytes": 361618,
+          "sha256": "768513df208359da47bd823e1332f7bc0a4adbc80e4884eae6330712c1063290",
+          "role": "orm",
+          "kind": "procedural_material",
+          "embedded_as_texture": true,
+          "license": "MIT",
+          "author": "agent",
+          "license_url": "https://opensource.org/license/mit",
+          "source": "https://github.com/ecojust/e-resource/tree/master/projects/shanghai/source/precise/huangpu-sun-yatsen-residence",
+          "limitations": "Original estimated material, not a surface scan or reference-photo pixels.",
+          "pixels": [
+            512,
+            512
+          ],
+          "generator": {
+            "file": "source/precise/huangpu-sun-yatsen-residence/source/generate_material.py",
+            "bytes": 9775,
+            "sha256": "48a5dce02aead4ea596b77486c551157c6011d7a74f8bc11eba400068fc1fe59"
+          }
+        }
+      ],
+      "material_texture": {
+        "mode": "original-procedural-pbr",
+        "expected_images": {
+          "raw": 3,
+          "web": 3,
+          "lod": 3
+        }
+      }
+    }
+  ],
+  "replacement_registry": {
+    "file": "data/precise-buildings/macros/14-13719-6695/replacement.json",
+    "bytes": 11435,
+    "sha256": "707a9f6c11e169417627646d158849f2652033588bcd1934c67a30d0f5305c47"
+  }
+}

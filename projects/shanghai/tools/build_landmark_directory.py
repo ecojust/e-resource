@@ -16,6 +16,9 @@ def render(root: Path = ROOT) -> str:
     viewers = json.loads((root / 'data/model-viewers.json').read_text())
     assert len({p['id'] for p in viewers}) == len(viewers), 'Duplicate viewer IDs'
     assert all(p['page'].endswith('.html') and '/' not in p['page'] for p in viewers), 'Viewer must be a project page'
+    for viewer in viewers:
+        if viewer.get('walk_landmark_id'):
+            assert any(r['id']==viewer['walk_landmark_id'] and r.get('accepted') and r.get('navigation',{}).get('listed') for r in records), 'Viewer walking link lacks accepted navigation'
     districts = {str(p['id']): p['name'] for p in json.loads((root / 'data/districts.json').read_text())['districts']}
     assert records, 'Navigation directory must not be empty'
     assert len({p['id'] for p in records}) == len(records), 'Duplicate navigation IDs'
@@ -47,7 +50,7 @@ def render(root: Path = ROOT) -> str:
 <div class="landmark-grid">{''.join(cards)}</div></section>''')
     viewer_sections = []
     for key, kind, title, note in [
-        ('models', 'candidate', '独立建筑模型', '旋转、缩放并查看细节。这些候选尚未接入城市原址漫游，尺寸及隐蔽部分含估计。'),
+        ('models', 'candidate', '独立建筑模型', '旋转、缩放并查看细节。标注已接入的模型也可从下方漫游列表进入；尺寸及隐蔽部分含估计。'),
         ('surfaces', 'surface', '地面与水系', '按行政区查看和下载；当前为地图平面，尚无实测地形与河床。'),
     ]:
         items = [p for p in viewers if p['kind'] == kind]
@@ -55,8 +58,8 @@ def render(root: Path = ROOT) -> str:
         for item in items:
             esc = html.escape
             cards.append(f'''<a class="landmark-card" id="viewer-{esc(item['id'], quote=True)}" data-viewer="{esc(item['id'], quote=True)}" href="{esc(item['page'], quote=True)}" data-search="{esc(item['name'] + ' ' + item['district'] + ' ' + item['description'], quote=True)}">
-  <div class="card-meta"><span>{esc(item['district'])}</span><span>{'独立候选' if kind == 'candidate' else '平面模型'}</span></div><h3>{esc(item['name'])}</h3><p>{esc(item['description'])}</p>
-  <div class="card-foot"><span>{'待城市定位与接入' if kind == 'candidate' else '16区分区查看'}</span><strong>打开模型 <span aria-hidden="true">↗</span></strong></div>
+  <div class="card-meta"><span>{esc(item['district'])}</span><span>{'已接入漫游' if item.get('walk_landmark_id') else '独立候选' if kind == 'candidate' else '平面模型'}</span></div><h3>{esc(item['name'])}</h3><p>{esc(item['description'])}</p>
+  <div class="card-foot"><span>{'室外地面漫游已开放' if item.get('walk_landmark_id') else '待城市定位与接入' if kind == 'candidate' else '16区分区查看'}</span><strong>打开模型 <span aria-hidden="true">↗</span></strong></div>
 </a>''')
         viewer_sections.append(f'''<section class="landmark-group" id="{key}" aria-labelledby="heading-{key}">
 <div class="group-heading"><div><h2 id="heading-{key}">{title} <span>{len(items)}</span></h2><p>{note}</p></div><a href="#top">回到顶部 ↑</a></div>

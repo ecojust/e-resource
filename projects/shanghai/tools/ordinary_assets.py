@@ -15,6 +15,7 @@ LIMIT=100_000_000
 CHECKS=('source_photos','identity_footprint','height_evidence','visible_facade_opening_grid','roof','texture_mapping_qa','geometry_proof','size_proof','browser_proof','uncertainty')
 SHA=re.compile(r'^[a-f0-9]{64}$')
 REMOTE_POLICY='remote-research-only-v1'
+LICENSED_PBR_POLICY='licensed-reference-procedural-pbr-v1'
 MATERIAL_ROLES={'basecolor','normal','orm'}
 def require(value,message):
     if not value:raise ValueError(message)
@@ -42,6 +43,10 @@ def remote_reference_contract(row):
             'Remote research must not declare a local reference photograph')
     register=row.get('source_reference_register',{})
     require(descriptor(register)==prefix+'source-reference-register.json','Remote reference register must be model-local')
+    procedural_material_contract(row)
+
+def procedural_material_contract(row):
+    prefix='source/precise/'+row['id']+'/'
     images=row.get('material_images')
     require(isinstance(images,list) and len(images)==3,'Original PBR requires three material images')
     require({p.get('role') for p in images}==MATERIAL_ROLES,'Original PBR material roles differ')
@@ -62,7 +67,7 @@ def remote_reference_contract(row):
     texture=row.get('material_texture',{})
     require(texture.get('mode')=='original-procedural-pbr'
             and texture.get('expected_images')=={'raw':3,'web':3,'lod':3},'Original material image-count contract differs')
-    require('photo_texture' not in row,'Remote research must not be represented as photographic texture')
+    require('photo_texture' not in row,'Original procedural PBR must not be represented as photographic texture')
 
 def verify_reference_register(project,row):
     register=json.loads(read(project,row['source_reference_register']))
@@ -115,12 +120,15 @@ def record_contract(row,districts,*,candidate_only=False):
     if row.get('reference_policy')==REMOTE_POLICY:
         remote_reference_contract(row)
     else:
-        require(row.get('reference_policy') in (None,'local-licensed-reference-v1'),'Unknown ordinary reference policy')
+        require(row.get('reference_policy') in (None,'local-licensed-reference-v1',LICENSED_PBR_POLICY),'Unknown ordinary reference policy')
         photos=row.get('source_photos');require(isinstance(photos,list) and photos,'Ordinary source photos missing')
         for photo in photos:
             require(descriptor(photo).startswith('assets/references/precise/') and type(photo.get('embedded_as_texture')) is bool,'Invalid ordinary source photograph')
             require(all(photo.get(k) for k in ('author','license','license_url','source')),'Incomplete ordinary photograph provenance');url(photo['license_url']);url(photo['source'])
         reference=row.get('reference',{});require(any(p['file']==reference.get('image') and all(p.get(k)==reference.get(k) for k in ('author','license','license_url','source','sha256')) for p in photos),'Ordinary reference does not match a declared original photograph')
+    if row.get('reference_policy')==LICENSED_PBR_POLICY:
+        procedural_material_contract(row)
+        require(all(p['embedded_as_texture'] is False for p in row['source_photos']),'Licensed references must remain separate from original PBR')
     return accepted
 
 def bind(row,registry):
@@ -153,8 +161,11 @@ def glb_images(data):
 
 def verify_assets(project,row):
     remote=row.get('reference_policy')==REMOTE_POLICY
-    if remote:
-        verify_reference_register(project,row)
+    procedural=remote or row.get('reference_policy')==LICENSED_PBR_POLICY
+    if remote:verify_reference_register(project,row)
+    else:
+        for p in row['source_photos']:read(project,p)
+    if procedural:
         for p in row['material_images']:
             data=read(project,p);read(project,p['generator'])
             require(data[:8]==b'\x89PNG\r\n\x1a\n' and len(data)>=29 and data[12:16]==b'IHDR'
@@ -162,15 +173,14 @@ def verify_assets(project,row):
                     'Original material PNG dimensions/format differ')
         embedded={p['sha256']:p for p in row['material_images']}
     else:
-        for p in row['source_photos']:read(project,p)
         embedded={p['sha256']:p for p in row['source_photos'] if p['embedded_as_texture']}
     for role,a in row['assets'].items():
         data=read(project,a)
         if role=='native':continue # Native bytes are exact; Blender geometry was reviewed separately.
         doc,images=glb_images(data)
-        expected=row.get('material_texture' if remote else 'photo_texture',{}).get('expected_images',{}).get(role)
+        expected=row.get('material_texture' if procedural else 'photo_texture',{}).get('expected_images',{}).get(role)
         require(type(expected)is int and len(images)==expected and set(images)<=set(embedded),'Ordinary embedded image count/original bytes differ: '+role)
-        if remote:
+        if procedural:
             require(set(images)==set(embedded),'Original PBR must embed each of its three declared images')
             used_slots=set()
             for material in doc.get('materials',[]):
@@ -187,7 +197,8 @@ def verify_assets(project,row):
                     'Original PBR images must be used in all declared material slots')
         copyright=doc.get('asset',{}).get('copyright','');token=re.sub('[^a-z0-9]','',copyright.lower())
         for image in images:
-            photo=embedded[image];require(photo['author'] in copyright and re.sub('[^a-z0-9]','',photo['license'].lower()) in token,'Ordinary GLB attribution differs')
+            photo=embedded[image];require(re.sub('[^a-z0-9]','',photo['license'].lower()) in token,'Ordinary GLB attribution differs')
+            require(photo['author'] in copyright or (row.get('reference_policy')==LICENSED_PBR_POLICY and 'procedural' in copyright.lower()),'Ordinary GLB attribution differs')
 
 def inspect(project,landmarks,registry,*,candidate_only=False,verify_files=True):
     districts={str(d['id']):d['name'] for d in json.loads((project/'data/districts.json').read_bytes())['districts']}
