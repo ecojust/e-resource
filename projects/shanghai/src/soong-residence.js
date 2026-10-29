@@ -3,6 +3,7 @@ import {GLTFLoader} from '../vendor/GLTFLoader.js';
 import {MeshoptDecoder} from '../vendor/meshopt_decoder.module.js';
 import {OrbitControls} from '../vendor/OrbitControls.js';
 import {disposeModelResources} from './model-resources.js';
+import {installCandidateWalk} from './candidate-walk.js';
 const $=id=>document.getElementById(id);
 const viewport=()=>({width:$('model-view').clientWidth,height:Math.max(1,$('model-view').clientHeight)});
 const scene=new THREE.Scene();scene.background=new THREE.Color('#172a30');
@@ -21,14 +22,16 @@ let manifest,current=null,generation=0,pending=null,pendingVariant=null,currentV
 const state={status:'initializing',variant:null,error:null,triangles:0};
 window.soongViewer={getState:()=>({...state,geometries:renderer.info.memory.geometries,renderedTriangles:renderer.info.render.triangles,distance:camera.position.distanceTo(controls.target)})};
 const render=()=>renderer.render(scene,camera);
+const modelWalk=installCandidateWalk({scene,camera,renderer,controls,stage,render,onEnter:()=>loadVariant('full')});
 const setView=kind=>{
+ if(modelWalk.active)modelWalk.leave();
  const distance=kind==='fit'?Math.max(55,29/camera.aspect):55;
  const direction=kind==='front'?new THREE.Vector3(0,.22,1):kind==='rear'?new THREE.Vector3(-.6,.34,-1):new THREE.Vector3(.60,.36,1);
  // Unregistered main house: local orientation only.
  camera.position.copy(controls.target).addScaledVector(direction.normalize(),distance);controls.update();render();
 };
 function chooseAuto(){
- if($('detail').value!=='auto'||!manifest)return;
+ if(modelWalk.active||$('detail').value!=='auto'||!manifest)return;
  const distance=camera.position.distanceTo(controls.target);
  const desired=distance>150?'lod':distance<110?'full':currentVariant||'full';
  if(desired!==(pendingVariant||currentVariant))loadVariant(desired);
@@ -74,7 +77,7 @@ async function loadVariant(variant){
   state.status='ready';state.variant=variant;state.triangles=record.triangles;state.assetSha256=digest;
   $('status').textContent=(variant==='full'?'完整近景':'简化远景')+'已加载';
   $('metrics').textContent=`${record.triangles.toLocaleString()} 个三角面 · ${(record.bytes/1000000).toFixed(2)} MB · 主楼外观候选；尺寸与隐蔽构造为估计`;
-  render();
+  modelWalk.attachModel(current);render();
  }catch(error){
   if(candidate)disposeModelResources(candidate);
   if(version!==generation)return;
@@ -85,7 +88,7 @@ async function loadVariant(variant){
 for(const name of ['front','oblique','rear','fit'])$(name).addEventListener('click',()=>setView(name));
 $('detail').addEventListener('change',()=>{$('detail').value==='auto'?chooseAuto():loadVariant($('detail').value);});
 $('retry').addEventListener('click',()=>loadVariant(requestedVariant));
-addEventListener('resize',()=>{const {width,height}=viewport();renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();setView('fit');});
+addEventListener('resize',()=>{const {width,height}=viewport();renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();if(modelWalk.active)modelWalk.resize();else setView('fit');});
 setView('fit');
 try{
  const response=await fetch('assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json');if(!response.ok)throw Error('模型目录无法读取');

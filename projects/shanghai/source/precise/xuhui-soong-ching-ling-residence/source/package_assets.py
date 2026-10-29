@@ -29,6 +29,7 @@ def main():
         dest=a.out/(ID+suffix);subprocess.run([a.gltfpack,'-i',str(source),'-o',str(dest),'-cc','-noq','-vtf','-vnf','-km','-ke'],check=True)
         assets[role]=record(dest);assert assets[role]['triangles']==record(source)['triangles']
     manifest={'id':ID,'name':'上海宋庆龄故居主楼','status':'unregistered-main-house-exterior-candidate-not-installed','reference_period':'2013/2016/2019 photographs; not a claim about2026 condition','assets':assets,'estimated_dimensions_m':{'body':[22,14],'eaves':7.7,'main_ridge':11.0,'maximum_pipe':13.28},'height_status':'Two storeys documented; ALL metric geometry, roof curvature, hidden surfaces and details estimated. Baseline heights not used.','source_owner':None,'source_local_id':None,'map_replacement':False,'walk_integration':False,'photos_embedded':False,'textures':'Original procedural pebbledash basecolor, normal and ORM; MIT','scope':'Main house only; hidden sides/rear simplified; no annex, garden, interior or exact historic insignia'}
+    manifest['model_inspection_walk']={'scope':'local-model-outdoor-only','page':'soong-residence.html#mode=model-walk','geographically_registered':False,'ground':'virtual flat inspection stage','collision':'conservative closed model projection; no interior, stairs or bridge access'}
     (a.out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(manifest,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
