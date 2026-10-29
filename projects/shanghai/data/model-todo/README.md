@@ -73,3 +73,5 @@ python projects/shanghai/tools/extract_bund_road_labels.py --repo . --output /tm
 [第一批第21–40条库存复核](heritage-next20-model-reconciliation.json)按固定提交核对49项元数据；20条均未在已登记精模中找到确切对应，仍待身份、拆栋与来源核对。徐家汇天主堂与藏书楼南楼、沙逊别墅与沙逊大厦、旧海关官邸与江海关楼等同名近名对象分别记录，未新增几何验收。
 
 [国际饭店、跑马总会与大光明参考](heritage-following-building-references.json)已按原名录顺序加入队列19–21，保存官方／地方志及署名转刊的事实、照片与历史平面来源、拍摄时点和使用条件。国际饭店83.8／83.6米、跑马钟塔次级53米、大光明16／30.5米与楼层口径均保留未解，历史面积与现状加建范围分别列出；照片和图纸仅供参考，不随库再分发。
+
+[后续三栋的冻结地图轮廓](heritage-following-footprint-review.json)保留国际饭店、跑马总会和大光明的3个OSM源要素与[原始目标几何](heritage-following-source-features.geojson)。三者均无可用高度、层数或子部件分段；外框不是已确认历史墙线。跑马总会地图长轴约98.45米与次级文字“长逾100米”未调和，不能缩放凑值。来源ODbL及离线[复验脚本](../../tools/extract_following_footprints.py)见报告；混合来源邻域图不随库发布。

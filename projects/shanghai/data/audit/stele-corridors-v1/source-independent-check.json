@@ -1,0 +1,77 @@
+{
+  "schema": "stele-source-independent-check-v1",
+  "checked_utc": "2026-10-29",
+  "review_input": {
+    "path": "projects/shanghai/data/model-todo/chongming-stele-visible-features.json",
+    "bytes": 10436,
+    "sha256": "b119587c63022fbf9795a1c58a5804c2318cec6786560373ca7ed77bf0c0baa5"
+  },
+  "documentary_source": {
+    "url": "https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm",
+    "response_bytes": 5209,
+    "sha256": "5bc6dc3f4ab0d86addd468705ff9b46bd22ffe9d1d5f80c56520a4ebde7f9e7f",
+    "decoding": "GB18030; source declares GB2312",
+    "exact_short_quotes": [
+      "位于仪门与明伦堂之间的东西两侧，包括南北两端各有一部分，2001年由上海市文物管理委员会投资修复。",
+      "碑廊全长     76.7米，其中，东西两侧宽皆为2.5米，长30.5米；南北长15.7米，宽2.5米，面积为191.75平方米。",
+      "分墓志类、记事类、告示类、艺术类等类别，共计53通，大部分是由崇明县博物馆自民间收集而来"
+    ]
+  },
+  "number_checks": {
+    "total_length_m": 76.7,
+    "width_m": 2.5,
+    "east_west_each_length_m_interpretation": 30.5,
+    "north_south_combined_length_m_interpretation": 15.7,
+    "reported_area_m2": 191.75,
+    "historical_collection_stones": 53,
+    "arithmetic": [
+      "2×30.5+15.7=76.7",
+      "76.7×2.5=191.75"
+    ],
+    "rejected_each_north_south_15_7": [
+      "2×30.5+2×15.7=92.4, inconsistent with reported76.7",
+      "92.4×2.5=231, inconsistent with reported191.75"
+    ],
+    "why_not_equal_7_85": "7.85+7.85=15.7 satisfies arithmetic but the source only says the north/south ends each have a portion. It supplies no equal-length statement, segment count, corner-overlap rule or entrance interruption. Equal division is not established."
+  },
+  "limits": [
+    "30.5m each east/west and15.7m combined north/south is an interpretation supported jointly by wording and total arithmetic, not independently surveyed endpoints.",
+    "Do not use53 historical collected stones as current per-segment layout, fixed panel count or invented inscriptions.",
+    "No height, complete column grid, courtyard width or complete closed-rectangle footprint supplied.",
+    "Shared structure may be a labeled candidate assumption; photos do not independently establish real east/west equality."
+  ],
+  "photo_references": [
+    {
+      "id": "stele-sohu",
+      "url": "https://p4.itc.cn/q_70/images01/20230424/a6a598e72d254c188e4ed6dcb2b14d6c.jpeg",
+      "source_url": "https://www.sohu.com/a/669412809_121124600",
+      "sha256": "0c78d4fec76aebec33672be36b0d2a3fce4ae9c7b235e4d2a5f89472688dc0b2",
+      "bytes": 1151222,
+      "pixels_as_published_review": [
+        2599,
+        3898
+      ],
+      "cache_hash_checked": true,
+      "side_identity": null,
+      "capture_date": null,
+      "rights": "未找到开放许可；只作参考，不再分发或贴入模型"
+    },
+    {
+      "id": "stele-paper",
+      "url": "https://imagepphcloud.thepaper.cn/pph/image/117/259/34.jpg",
+      "source_url": "https://m.thepaper.cn/newsDetail_forward_11469862",
+      "sha256": "962d3566d0d21c98f87f4ecea4487f04f6b20a100e4113e71b5154b6fb89a9af",
+      "bytes": 41321,
+      "pixels_as_published_review": [
+        677,
+        451
+      ],
+      "cache_hash_checked": true,
+      "side_identity": null,
+      "capture_date": null,
+      "rights": "未找到开放许可；只作参考，不再分发或贴入模型"
+    }
+  ],
+  "network_used": false,
+  "repository_modified": false
+}
