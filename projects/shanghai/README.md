@@ -1,5 +1,7 @@
 # 上海全景建模
 
+[徐家汇藏书楼南楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/zikawei-library.html)：150,176面，远景23,140面；五开间三层外廊、百叶门窗、栏杆与老虎窗。南楼源身份已核实，尺寸和后部构造为估计，未接入城市漫游。
+
 [宋庆龄故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，未接入城市漫游。
 
 [鲁迅故居正立面与院门候选](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，地图归属待核验，未计入整栋复原完成量。
@@ -14,10 +16,11 @@
 
 ## 独立候选模型与地面水系
 
-以下六个候选尚未接入城市漫游，不计入上方38处导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
+以下七个候选尚未接入城市漫游，不计入上方38处导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
+| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/zikawei-library.html) | [查看说明](source/precise/xuhui-zikawei-south-building/README.md) |
 | 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/soong-residence.html) | [查看说明](source/precise/xuhui-soong-ching-ling-residence/README.md) |
 | 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/luxun-residence.html) | [查看说明](source/precise/hongkou-luxun-residence-facade/README.md) |
 | 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/sun-yatsen-residence.html) | [查看说明](source/precise/huangpu-sun-yatsen-residence/README.md) |
@@ -235,7 +238,7 @@
 
 ## 独立候选模型
 
-六个候选均已接入[统一模型目录](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；城市原址接入仍待各模型完成定位与行走验证。
+七个候选均已接入[统一模型目录](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；城市原址接入仍待各模型完成定位与行走验证。
 
 [崇明学宫尊经阁预览](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 

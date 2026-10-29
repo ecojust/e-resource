@@ -14,10 +14,11 @@
 
 ## 独立候选模型与地面水系
 
-以下六个候选已接入上方统一目录，可直接打开旋转、缩放查看；尚未放入城市原址漫游，不计入38处漫游导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
+以下七个候选已接入上方统一目录，可直接打开旋转、缩放查看；尚未放入城市原址漫游，不计入38处漫游导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
+| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/zikawei-library.html) | [查看说明](projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md) |
 | 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/soong-residence.html) | [查看说明](projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/README.md) |
 | 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/luxun-residence.html) | [查看说明](projects/shanghai/source/precise/hongkou-luxun-residence-facade/README.md) |
 | 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/da9d3f3561ce3b77dd378aa96c6de1a2140d9056/projects/shanghai/sun-yatsen-residence.html) | [查看说明](projects/shanghai/source/precise/huangpu-sun-yatsen-residence/README.md) |

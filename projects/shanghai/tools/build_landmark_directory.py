@@ -47,7 +47,7 @@ def render(root: Path = ROOT) -> str:
 <div class="landmark-grid">{''.join(cards)}</div></section>''')
     viewer_sections = []
     for key, kind, title, note in [
-        ('models', 'candidate', '独立建筑模型', '旋转、缩放并查看细节。六个候选尚未接入城市原址漫游，尺寸及隐蔽部分含估计。'),
+        ('models', 'candidate', '独立建筑模型', '旋转、缩放并查看细节。这些候选尚未接入城市原址漫游，尺寸及隐蔽部分含估计。'),
         ('surfaces', 'surface', '地面与水系', '按行政区查看和下载；当前为地图平面，尚无实测地形与河床。'),
     ]:
         items = [p for p in viewers if p['kind'] == kind]
@@ -76,7 +76,7 @@ def render(root: Path = ROOT) -> str:
   <a class="skip-link" href="#destinations">跳到地标目录</a>
   <header class="directory-header"><a class="wordmark" href="index.html#mode=overview">上海漫游 <small>SHANGHAI EXPLORER</small></a><a class="overview-link" href="index.html#mode=overview">打开全市地图 ↗</a></header>
   <main>
-    <section class="hero"><div><span class="eyebrow">SHANGHAI MODEL COLLECTION</span><h1>看建筑，<br>也走进城市。</h1><p><strong>{len(records)} 处地标漫游 · {len(viewers)} 个独立模型入口。</strong>查看新交付的建筑候选与地面水系，或选择已接入的地标进入第三人称漫游。</p><a class="latest-link" href="#models">查看宋庆龄故居、鲁迅故居等新模型 ↓</a><br><a class="latest-link" href="#building-{html.escape(latest['id'], quote=True)}">本轮新增：{html.escape(latest['name'])} ↓</a></div><div class="hero-count" aria-hidden="true">{len(records) + len(viewers)}<span>模型与漫游入口 · 上海</span></div></section>
+    <section class="hero"><div><span class="eyebrow">SHANGHAI MODEL COLLECTION</span><h1>看建筑，<br>也走进城市。</h1><p><strong>{len(records)} 处地标漫游 · {len(viewers)} 个独立模型入口。</strong>查看新交付的建筑候选与地面水系，或选择已接入的地标进入第三人称漫游。</p><a class="latest-link" href="#models">查看{html.escape(viewers[0]['name'])}等新模型 ↓</a><br><a class="latest-link" href="#building-{html.escape(latest['id'], quote=True)}">本轮新增：{html.escape(latest['name'])} ↓</a></div><div class="hero-count" aria-hidden="true">{len(records) + len(viewers)}<span>模型与漫游入口 · 上海</span></div></section>
     <nav class="group-nav" aria-label="模型分组"><a href="#models">独立建筑模型</a><a href="#surfaces">地面与水系</a><a href="#architecture">逐栋建筑漫游</a><a href="#bund">外滩历史建筑群</a><a href="#skyline">陆家嘴天际线</a></nav>
     <div class="directory-search" hidden><label for="landmark-search">寻找模型与目的地</label><input id="landmark-search" type="search" placeholder="输入建筑名称或行政区，如：宋庆龄、崇明" autocomplete="off"><span id="result-count" role="status" aria-live="polite">共 {len(records) + len(viewers)} 个入口</span></div>
     <div id="destinations">{''.join(viewer_sections)}{''.join(sections)}</div>
