@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');const fs=require('fs');const crypto=require('crypto');
+const project=require('path').resolve(__dirname,'../../..');
+const source=fs.readFileSync(project+'/src/architectural-material.js','utf8');
+const base='https://rawcdn.githack.com/ecojust/e-resource/a09337c54740b12149ba0f2e878a1ad02297a38d/projects/shanghai/';
+(async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});const results=[];
+for(const failure of [true,false]){const p=await b.newPage({viewport:failure?{width:390,height:844}:{width:1440,height:1000}});const errors=[];let held=0;p.on('pageerror',e=>errors.push(e.message));await p.route('**/src/architectural-material.js',r=>r.fulfill({status:200,contentType:'application/javascript',body:source}));if(failure){await p.route('**/*overturemaps.org/**',r=>r.abort('failed'));await p.route('**/assets/materials/realism-v4/*',r=>{held++});}
+await p.goto(base+'index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk');const n=p.getByText('Open the page',{exact:true});if(await n.count())await n.click();await p.waitForFunction(()=>!!window.__SHANGHAI_APP__,null,{timeout:120000});await p.waitForFunction(()=>{const s=window.__SHANGHAI_APP__.scene;return s.getLandmarkAssetState('jinshanwei-wengcheng-gatehouse').visible&&s.getStreamingState().loaded>0&&s.getStreamingState().detail.loaded>0},null,{timeout:120000});
+await p.waitForTimeout(1200);
+const state=await p.evaluate(()=>{const a=window.__SHANGHAI_APP__;return {mode:a.mode,loadingVisible:!document.querySelector('#loading').classList.contains('loaded'),model:a.scene.getLandmarkAssetState('jinshanwei-wengcheng-gatehouse'),stream:a.scene.getStreamingState(),realism:a.scene.getRealismState()}});
+if(errors.length||state.loadingVisible||state.model.triangles!==52312)throw Error(JSON.stringify({errors,state}));if(failure&&(!held||state.realism.surfaces))throw Error('Failure condition missing');if(!failure&&state.realism.surfaces.textures!==12)throw Error('Normal textures missing');
+const name=failure?'stalled-mobile':'normal-desktop';await p.screenshot({path:__dirname+'/'+name+'.png'});results.push({name,held,errors,state});console.log('PASS',name);await p.close();}
+await b.close();fs.writeFileSync(__dirname+'/after.json',JSON.stringify({sourceSha256:crypto.createHash('sha256').update(source).digest('hex'),base,sourceIntercepted:true,results},null,2));})().catch(e=>{console.error(e);process.exit(1)});
