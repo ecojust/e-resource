@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172a30"><title>崇明学宫仪门 · 照片形态参照候选</title>
+<link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="src/dacheng-hall.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<link rel="stylesheet" href="src/candidate-walk.css">
+</head>
+<body>
+<main id="model-view" aria-label="仪门照片形态参照候选"></main>
+<header><a href="index.html">← 上海建筑漫游</a><p class="eyebrow">崇明 · 学宫建筑</p><h1>仪门</h1><p>曲线端墙 · 格窗与帘幕 · 隐蔽构造估计</p></header>
+<aside class="panel" aria-label="模型操作与资料">
+<span class="badge">照片形态参照候选</span>
+<p class="scope">仪门位于棂星门东、儒学大门北。参考2023年发布的正面照片，保留曲线白端墙、灰瓦前坡、两根内柱、格窗分区和中央帘幕；照片拍摄日期待核。</p>
+<label for="detail">模型细节</label><select id="detail"><option value="auto">自动随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div class="buttons"><button id="front" type="button">正面</button><button id="oblique" type="button">斜侧</button><button id="rear" type="button">背面</button><button id="fit" type="button">适合窗口</button><button id="retry" type="button" hidden>重试加载</button></div>
+<p id="status" role="status" aria-live="polite">正在读取模型…</p><p id="metrics"></p>
+<div id="downloads" class="downloads"></div>
+<p class="scope">文献面阔10.6米、进深9.7米、高9.07米。模型把10.6×9.7米解释为基座，最高点7米是形态设计估计；与文献高度尚未调和，不能作为测绘或照片比例验收。</p>
+<p class="scope">两侧各6格窗分区、帘两侧各2分区参照可见构件；细格数、曲率、配色、两级短阶及背面为估计。帘后门扇未知，未虚构；竖匾保留色块，文字留空。</p>
+<p class="scope">独立场景提供建筑外围漫游，无室内或穿帘通行，尚未城市配准。2001修复记录与2001–2002工程阶段分列在来源说明中。</p>
+<a href="https://www.sohu.com/a/669412809_121124600" target="_blank" rel="noopener">正面照片出处 ↗</a><br>
+<a href="https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm" target="_blank" rel="noopener">旧馆文字来源 ↗</a><br>
+<a href="source/precise/chongming-yimen/README.md">来源、尺寸解释与估计范围 ↗</a>
+</aside>
+<footer><span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span><span>照片形态候选 · 非测绘<br>原创代码与几何 MIT · 未使用照片贴图</span></footer>
+<script type="module" src="src/yimen.js"></script>
+</body></html>
