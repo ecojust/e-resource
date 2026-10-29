@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172a30"><title>宋庆龄故居主楼 · 独立模型</title>
+<link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="src/soong-residence.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main id="model-view" aria-label="宋庆龄故居主楼三维外观模型"></main>
+<header><a href="landmarks.html">← 上海建筑目录</a><p class="eyebrow">徐汇 · 淮海中路1843号</p><h1>宋庆龄故居主楼</h1><p>公开照片参照的主楼外观候选</p></header>
+<aside class="panel" aria-label="模型操作与资料">
+<span class="badge">外观候选 · 待核验</span>
+<p class="scope">弧形瓦屋面、三扇半圆老虎窗、曲线阳台、百叶窗和入口门廊。尺寸、曲率及隐蔽构造为估计；地图主楼轮廓尚待核验，未接入城市漫游。</p>
+<label for="detail">模型细节</label><select id="detail"><option value="auto">自动随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div class="buttons"><button id="front" type="button">花园侧</button><button id="oblique" type="button">斜侧</button><button id="rear" type="button">入口侧（估计）</button><button id="fit" type="button">适合窗口</button><button id="retry" type="button" hidden>重试加载</button></div>
+<p id="status" role="status" aria-live="polite">正在读取模型…</p><p id="metrics"></p>
+<div id="downloads" class="downloads"></div>
+<a class="photo-link" href="source/precise/xuhui-soong-ching-ling-residence/references/144856261.jpg" target="_blank" rel="noopener"><img src="source/precise/xuhui-soong-ching-ling-residence/references/144856261.jpg" alt="Windmemories拍摄的2019年宋庆龄故居主楼参考照片"><span>打开原始参考照片 ↗</span></a>
+<p class="credit">照片：Windmemories · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>。模型未嵌入照片像素。</p>
+<p class="scope">区志记载为两层白墙住宅、褐红色弧形瓦屋面。本模型参照2013、2016、2019年照片；入口门廊位置及侧后未见部分为估计，附楼、花园和室内未制作，不代表2026年现场状态。</p>
+<a href="source/precise/xuhui-soong-ching-ling-residence/README.md">来源、估算与建模范围 ↗</a>
+</aside>
+<footer><span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span><span>历史外观候选 · 非实测<br>原创几何 MIT · 参考照片 CC BY-SA 4.0</span></footer>
+<script type="module" src="src/soong-residence.js"></script>
+</body></html>

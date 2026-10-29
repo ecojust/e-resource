@@ -1,0 +1,118 @@
+{
+  "schema": "soong-original-pebbledash-pbr-v1",
+  "author": "agent",
+  "license": "MIT",
+  "random_generator": "NumPy PCG64",
+  "random_seed": 18431920,
+  "source_photograph_pixels_read": false,
+  "surface_scan": false,
+  "scope": "Original generic fine pebble-dash material, visually informed by a reference photograph. Colour, grain size and relief are estimates, not measurements of Soong Ching-ling main house.",
+  "dimensions_px": [
+    512,
+    512
+  ],
+  "repeat_metres": [
+    0.4,
+    0.4
+  ],
+  "pixel_pitch_m": 0.00078125,
+  "periodic_method": "Jittered pebble centres on a torus; every ellipse deposit wraps modulo512; matrix smoothing and height derivatives use wrapped neighbours. Pixel-centre rows0and511 need not be identical: their adjacency is an ordinary one-pixel toroidal step, not a duplicated gutter.",
+  "sampler": {
+    "magFilter": 9729,
+    "minFilter": 9987,
+    "wrapS": 10497,
+    "wrapT": 10497
+  },
+  "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "roughnessFactor": 1,
+  "metallicFactor": 1,
+  "normalScale": 0.35,
+  "occlusionStrength": 0.35,
+  "normal_height_scope": "The encoded height gradients are attenuated by normalScale0.35 at render time. This is a conservative shading choice, not displacement geometry or a measured surface relief.",
+  "color_spaces": {
+    "basecolor": "sRGB",
+    "normal": "Non-Color",
+    "orm": "Non-Color"
+  },
+  "channels": {
+    "orm": {
+      "R": "ambient occlusion",
+      "G": "roughness",
+      "B": "metallic, exactly0"
+    }
+  },
+  "uv_contract": {
+    "raw_gltf": "For a vertical facade: U=local horizontal metres/0.40; V=-height metres/0.40. Keep unbounded UVs and REPEAT, with no per-part normalization, modulo or atlas-cell clamping.",
+    "png_rows": "Top-to-bottom row index increases with stored PNG V.",
+    "encoded_normal": "Normalize(-dH/dU_metres, +dH/dPNG_row_metres, 1), then encode from[-1,1]to[0,255].",
+    "current_no_tangent_web_frame": "Three derivative frame follows raw+U right, raw+V down, outward normal. Frozen GLTFLoader negates normalScale.y when TANGENT is absent; effective scale is[+0.35,-0.35].",
+    "standard_blender_import": "Importer converts V to1-V and keeps the green channel; its upward bitangent gives the same physical bump. Do not manually invert G or add another V flip.",
+    "physical_interpretation": "On the left flank of a raised pebble the normal leans left; on the upper flank it leans up. These signs must be checked on the final renderer, not inferred merely from a normal map thumbnail.",
+    "if_explicit_tangents_added": "Re-audit the actual tangent frame and loader behavior. The current tested contract is for primitives without TANGENT."
+  },
+  "statistics": {
+    "generated_grain_count": 8100,
+    "visible_grain_count": 8089,
+    "aggregate_pixel_coverage": 0.7389640808105469,
+    "input_grain_major_diameter_m": {
+      "min": 0.0030197602931402593,
+      "max": 0.007915886265257417,
+      "mean": 0.005210451324075858
+    },
+    "height_field_m": {
+      "min": -2.9160446477337745e-05,
+      "max": 0.0010484928190174613,
+      "mean": 0.00037887128822705623
+    },
+    "albedo_channel_mean_srgb": [
+      0.6379401521607568,
+      0.6218349866791884,
+      0.5870732660218346
+    ],
+    "roughness_min_max": [
+      0.8108303381949948,
+      0.9708930029542542
+    ],
+    "ao_min_max": [
+      0.72,
+      1.0
+    ],
+    "normal_z_min": 0.7642274683026674,
+    "normal_length_max_error_before_encoding": 2.220446049250313e-16
+  },
+  "generator_checks": {
+    "finite_height": true,
+    "normal_positive_hemisphere": true,
+    "metallic_channel_entirely_zero": true,
+    "all_images_rgb_uint8_512": true,
+    "height_periodic_derivative_uses_wrapped_neighbors": true
+  },
+  "files": [
+    {
+      "file": "soong-original-pebbledash-basecolor.png",
+      "bytes": 420026,
+      "sha256": "d48276dc3ec4a5ffe094f30efc0f4523e987821bd07ab203e12d24693b4ea8e1"
+    },
+    {
+      "file": "soong-original-pebbledash-normal.png",
+      "bytes": 533340,
+      "sha256": "de9e5822f19826b7b30f1b2d25e5a86ceba4b9358960cae7eb9b2d03a82c2907"
+    },
+    {
+      "file": "soong-original-pebbledash-orm.png",
+      "bytes": 361082,
+      "sha256": "88edaa70ac539dbf5b22dde035c1105cb7bb904bec97f3d284f02955fd2daa4c"
+    }
+  ],
+  "generator_sha256": "85be06a146a1868e45ee3358d7e89907356a63684e6c7b197823ec24c25587e8",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0"
+  }
+}
