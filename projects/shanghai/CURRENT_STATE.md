@@ -1,3 +1,5 @@
+> 2026-10-29待办更新：根[README](../../README.md)列出1,058处历史建筑登记、1,038条道路名称线索及1,036条具名地图要素（集合可能重叠），并记录覆盖缺口。新增[学宫戟门候选](ji-gate.html)已通过模型与网页检查，未地理配准；详见[制作队列](data/model-todo/queue.json)。
+
 > 2026-10-29增量：新增[崇明学宫崇圣祠正殿文献参照候选](chongsheng-shrine.html)，含近景／远景GLB与可编辑Blender。仅文字参考，未照片核验或地理配准，不增加40处原址漫游。详见[来源限制](source/precise/chongming-chongsheng-shrine/README.md)及[检查记录](data/audit/chongsheng-shrine-v1/README.md)。
 
 # 本轮：五个候选模型可独立室外漫游
