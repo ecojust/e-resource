@@ -196,6 +196,11 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
   const directory = baseURL.endsWith('/') ? baseURL : `${baseURL}/`;
   const loader = new THREE.TextureLoader(options.manager);
   const textures = [];
+  // These shared detail maps are optional; a stalled image must not prevent
+  // createShanghaiScene from returning and starting the building streamers.
+  const timeoutMs = options.timeoutMs ?? 10000;
+  if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new TypeError('Invalid surface texture timeout');
+  let abandoned = false, timer;
   const mapped = new WeakSet();
   const controls = {
     archGrainStrength: { value: 1 },
@@ -208,6 +213,10 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
   const requests = Object.entries(SURFACES).map(async ([key, surface]) => {
     const mapResults = await Promise.allSettled(['diff', 'nor_gl', 'rough'].map(async (role) => {
       const texture = await loader.loadAsync(`${directory}${surface.id}_${role}_1k.jpg`);
+      if (abandoned) {
+        texture.dispose();
+        throw new Error('Surface texture arrived after loading was abandoned');
+      }
       texture.colorSpace = role === 'diff' ? THREE.SRGBColorSpace : THREE.NoColorSpace;
       texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
       texture.minFilter = THREE.LinearMipmapLinearFilter;
@@ -224,13 +233,23 @@ export async function createArchitecturalMaterials(THREE, options = {}) {
     const maps = mapResults.map(result => result.value);
     loaded[key] = { surface, maps };
   });
-  // Wait for all twelve downloads even after a failure so cleanup cannot miss a
-  // later successful request. No partially loaded material is applied.
-  const results = await Promise.allSettled(requests);
-  const failed = results.find(result => result.status === 'rejected');
-  if (failed) {
-    textures.forEach(texture => texture.dispose());
-    throw new Error(`Architectural surface textures failed to load: ${failed.reason?.message || failed.reason}`);
+  // Apply only a complete set. On timeout, release completed maps immediately;
+  // callbacks above dispose later arrivals without mutating the live scene.
+  try {
+    const results = await Promise.race([
+      Promise.allSettled(requests),
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error('Optional surface textures timed out; retaining base materials')), timeoutMs);
+      }),
+    ]);
+    const failed = results.find(result => result.status === 'rejected');
+    if (failed) throw new Error(`Architectural surface textures failed to load: ${failed.reason?.message || failed.reason}`);
+  } catch (error) {
+    abandoned = true;
+    textures.splice(0).forEach(texture => texture.dispose());
+    throw error;
+  } finally {
+    clearTimeout(timer);
   }
   stats.textures = textures.length;
 
