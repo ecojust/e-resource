@@ -59,3 +59,5 @@ python projects/shanghai/source/precise/chongming-xuehai-paifang/source/verify_p
 ```
 
 主代理实际查看最终正面、斜侧、背面及网页四张图，复核四件资产的大小/SHA256、三档GLB来源说明以及原生/几何报告的资产对应；见[视觉复核](root-visual-review.json)。
+
+[固定版本在线预览](https://rawcdn.githack.com/ecojust/e-resource/6673d31dee681d219078b58bc658d77a0aa4e1e5/projects/shanghai/west-paifang.html)已实际加载，西牌坊身份、92,848三角面、GLB哈希与同版本来源中的空匾／题名未验收状态核对通过，网页错误数为0。见[公开网页记录](public-browser.json)；仓库根目录可运行`node projects/shanghai/data/audit/west-paifang-v1/qa-public.cjs`复验。
