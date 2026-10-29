@@ -69,3 +69,7 @@ python projects/shanghai/tools/extract_bund_road_labels.py --repo . --output /tm
 局部道路标签的OSM派生数据：© OpenStreetMap contributors，OpenFreeMap / OpenMapTiles，ODbL-1.0；来源版次、原瓦片URL、边界及响应哈希见`bund-map-road-label-leads.json`。这部分数据不套用维基百科表格的CC BY-SA许可。提取代码采用项目MIT许可，未再分发参考照片，未使用建筑地址字段生成道路列表。
 
 [上海大厦与俄罗斯领事馆地图轮廓复核](heritage-next-footprint-review.json)保留4个OSM源要素、原始身份与米制计算。大厦两个具名要素共享外包，另一个无名内凹部件明确关联同一主楼；部件所在层级和历史墙线未确认。领事馆的碎片数不是楼栋数，地图楼层与文献冲突继续保留。目标[GeoJSON](heritage-next-source-features.geojson)按ODbL标注；邻域混合来源几何及图只留本地研究。离线复验用[提取脚本](../../tools/extract_heritage_footprints.py)，依赖和固定提交见报告。
+
+[第一批第21–40条库存复核](heritage-next20-model-reconciliation.json)按固定提交核对49项元数据；20条均未在已登记精模中找到确切对应，仍待身份、拆栋与来源核对。徐家汇天主堂与藏书楼南楼、沙逊别墅与沙逊大厦、旧海关官邸与江海关楼等同名近名对象分别记录，未新增几何验收。
+
+[国际饭店、跑马总会与大光明参考](heritage-following-building-references.json)已按原名录顺序加入队列19–21，保存官方／地方志及署名转刊的事实、照片与历史平面来源、拍摄时点和使用条件。国际饭店83.8／83.6米、跑马钟塔次级53米、大光明16／30.5米与楼层口径均保留未解，历史面积与现状加建范围分别列出；照片和图纸仅供参考，不随库再分发。

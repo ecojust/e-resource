@@ -534,9 +534,11 @@
         "published": "2021-04-23",
         "scope": "文献地址；不代替单栋配准或2026现场核实"
       },
-      "preview": "projects/shanghai/minglun-hall.html",
+      "preview": "https://rawcdn.githack.com/ecojust/e-resource/0edf42c76ba0ffaabeaf8047d71f01297c0f9161/projects/shanghai/minglun-hall.html",
       "manifest": "projects/shanghai/assets/models/candidates/chongming-minglun-hall/manifest.json",
-      "evidence": "projects/shanghai/data/audit/minglun-hall-v1/README.md"
+      "evidence": "projects/shanghai/data/audit/minglun-hall-v1/README.md",
+      "preview_source": "projects/shanghai/minglun-hall.html",
+      "published_commit": "0edf42c76ba0ffaabeaf8047d71f01297c0f9161"
     },
     {
       "order": 16,
@@ -544,7 +546,7 @@
       "name": "崇明学宫碑廊",
       "district": "崇明区",
       "street": "鳌山路696号／崇明学宫院内",
-      "status": "todo",
+      "status": "in_progress",
       "references": [
         {
           "label": "博物馆文字",
@@ -559,7 +561,7 @@
           "url": "projects/shanghai/data/model-todo/chongming-stele-visible-features.json"
         }
       ],
-      "next_action": "总量算术支持东西各30.5米、南北合计15.7米；先核分段，不能均分南北或虚构闭合矩形；碑刻逐块查证",
+      "next_action": "制作两条独立长边结构候选，白碑墙与弧椽参照照片；南北合计15.7米不均分或拼闭环，碑数位置和铭文待核",
       "documented": {
         "total_length_m": 76.7,
         "east_and_west_each_length_m": 30.5,
@@ -567,12 +569,25 @@
         "north_south_length_text_m": 15.7,
         "reported_area_m2": 191.75
       },
-      "scope": "文字参照待建单体；制作前补照片或明确估计范围",
+      "scope": "先制东西两条各30.5米长边组件；宽2.5米的端点为解释，展示间距不作为实测院宽；南北短段尚待资料",
       "address_source": {
         "url": "https://www.shcm.gov.cn/zjcm/006008/20210423/8c183cc2-f5a9-4d52-b152-9d72ec7eb5a7.html",
         "published": "2021-04-23",
         "scope": "文献地址；不代替单栋配准或2026现场核实"
-      }
+      },
+      "remaining_subtasks": [
+        {
+          "id": "north-south-segments",
+          "status": "reference_pending",
+          "combined_documented_length_m": 15.7,
+          "next_action": "核分段长度、转角、入口与接头后制作；不均分7.85米"
+        },
+        {
+          "id": "inscription-inventory",
+          "status": "reference_pending",
+          "next_action": "逐块核碑面身份、尺寸、位置与文字；不套用旧藏53通总数"
+        }
+      ]
     },
     {
       "order": 17,
@@ -635,6 +650,81 @@
       ],
       "next_action": "按四层文字与2010外观制作候选；总体宽深高缺失，1916/1917并列，塔部与园内小亭分别核对",
       "scope": "公开历史照片中的主楼外观；坡屋面、窗与高塔可参考，未见面及尺度估计，1700余平方米用地与3264平方米建面不当底面积"
+    },
+    {
+      "order": 19,
+      "id": "huangpu-park-hotel",
+      "name": "国际饭店历史主楼外观",
+      "district": "黄浦区",
+      "street": "南京西路170号",
+      "status": "todo",
+      "heritage_record_id": "sh-historic-b1-009",
+      "references": [
+        {
+          "label": "文字与尺寸参考",
+          "url": "https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html"
+        },
+        {
+          "label": "已核外观照片",
+          "url": "https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg"
+        },
+        {
+          "label": "来源与冲突审查",
+          "url": "projects/shanghai/data/model-todo/heritage-following-building-references.json"
+        }
+      ],
+      "scope": "Park Hotel / 四行储蓄会大楼 / 国际大饭店；历史塔楼及其主楼，不含未经绑定的新后楼和同框邻楼",
+      "next_action": "按历史22层主楼与2007照片制作退台外观；83.8/83.6米保留，后楼加建和邻楼另核，宽深与退台估计"
+    },
+    {
+      "order": 20,
+      "id": "huangpu-shanghai-race-club-east-building",
+      "name": "上海跑马总会历史东楼与主钟塔",
+      "district": "黄浦区",
+      "street": "南京西路325号",
+      "status": "todo",
+      "heritage_record_id": "sh-historic-b1-010",
+      "references": [
+        {
+          "label": "文字与尺寸参考",
+          "url": "https://m.thepaper.cn/newsDetail_forward_2042037"
+        },
+        {
+          "label": "已核外观照片",
+          "url": "https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg"
+        },
+        {
+          "label": "来源与冲突审查",
+          "url": "projects/shanghai/data/model-todo/heritage-following-building-references.json"
+        }
+      ],
+      "scope": "Independent historic east-main-building exterior plus its tall principal clock tower; western building, later courtyard links, racecourse site and neighboring structures excluded until separately identified.",
+      "next_action": "先制东楼和主钟塔候选；53米塔高仅次级记载，主体长大于100米非精确值，西楼和副塔另核"
+    },
+    {
+      "order": 21,
+      "id": "huangpu-grand-theatre",
+      "name": "大光明大戏院／大光明电影院",
+      "district": "黄浦区",
+      "street": "南京西路216号",
+      "status": "todo",
+      "heritage_record_id": "sh-historic-b1-011",
+      "references": [
+        {
+          "label": "文字与尺寸参考",
+          "url": "https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html"
+        },
+        {
+          "label": "已核外观照片",
+          "url": "https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg"
+        },
+        {
+          "label": "来源与冲突审查",
+          "url": "projects/shanghai/data/model-todo/heritage-following-building-references.json"
+        }
+      ],
+      "scope": "Historic Grand Theatre street entrance/light-tower exterior plus separately interpreted auditorium body; neither facade alone nor same-frame adjacent shops/tower prove complete historic-building acceptance",
+      "next_action": "先制临街入口及灯塔候选；16/30.5米与2/3/4层来源口径未解，后厅轴向与历史平面另核"
     }
   ],
   "existing_models": [

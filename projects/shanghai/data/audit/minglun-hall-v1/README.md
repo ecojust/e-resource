@@ -52,3 +52,5 @@ Chromium真实加载身份与SHA校验一致；近景→远景→近景切换、
 重跑命令与依赖见[来源README](../../../source/precise/chongming-minglun-hall/README.md)。
 
 主代理独立核对四资产大小／SHA及两版高度原文，实看最终三原生图和网页图；见[root-visual-review.json](root-visual-review.json)。
+
+固定提交的[公开预览](https://rawcdn.githack.com/ecojust/e-resource/0edf42c76ba0ffaabeaf8047d71f01297c0f9161/projects/shanghai/minglun-hall.html)已通过真实浏览器加载，身份、52,884面、模型校验和两版高度来源匹配，异常为0；见[public-browser.json](public-browser.json)与[qa-public.cjs](qa-public.cjs)。

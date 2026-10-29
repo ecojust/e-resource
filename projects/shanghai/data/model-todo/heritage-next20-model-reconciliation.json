@@ -1,0 +1,1820 @@
+{
+  "schema": "heritage-next20-model-reconciliation-v1",
+  "reviewed_utc": "2026-10-29T18:20:39.334516+00:00",
+  "repository_head": "41ecb97d08fed5a6603905aaa47b2fa38fcf00d9",
+  "scope": "Identity and model-coverage reconciliation of historic batch1 records021–040 at repository_head; registered inventory only. No photo/geometry reacceptance, no original source/task states changed.",
+  "method": [
+    "Read20 full registry records, current names, addresses, subentries and article links.",
+    "Read actual navigation HTML, Bund manifest, ordinary catalog and all15 hash-bound macro indices, plus all22 tracked candidate manifests; compare model IDs/names and address/alias distinctions.",
+    "Read scope documents for Zikawei library south building, Hongde Church and Bund Art Deco group to reject misleading name matches.",
+    "Treat1036 named-map records only as bounded identity hints, not independent refined models.",
+    "Reads use existing local Git objects at pinned commit with GIT_NO_LAZY_FETCH=1. No network or binary decoding."
+  ],
+  "counts": {
+    "listed_records_reviewed": 20,
+    "records_with_existing_model": 0,
+    "records_without_registered_model": 20,
+    "new_identity_links_missed_by_name_hint": 0,
+    "records_with_bounded_map_identity_hint": 3,
+    "completed_listed_places_asserted": 0
+  },
+  "inspected_inventory": {
+    "navigation_entries": [
+      {
+        "id": "huangpu-sun-yatsen-residence",
+        "name": "上海孙中山故居主楼",
+        "href": "index.html#landmark=huangpu-sun-yatsen-residence&mode=walk"
+      },
+      {
+        "id": "xuhui-zikawei-south-building",
+        "name": "徐家汇藏书楼南楼（原神父楼）",
+        "href": "index.html#landmark=xuhui-zikawei-south-building&mode=walk"
+      },
+      {
+        "id": "jinshanwei-wengcheng-gatehouse",
+        "name": "金山卫瓮城城楼",
+        "href": "index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk"
+      },
+      {
+        "id": "xuhui-bajin-residence",
+        "name": "巴金旧居主楼",
+        "href": "index.html#landmark=xuhui-bajin-residence&mode=walk"
+      },
+      {
+        "id": "changning-hudec-residence",
+        "name": "邬达克旧居（番禺路129号）",
+        "href": "index.html#landmark=changning-hudec-residence&mode=walk"
+      },
+      {
+        "id": "xuhui-wukang-mansion",
+        "name": "武康大楼主楼",
+        "href": "index.html#landmark=xuhui-wukang-mansion&mode=walk"
+      },
+      {
+        "id": "fengxian-museum",
+        "name": "奉贤博物馆",
+        "href": "index.html#landmark=fengxian-museum&mode=walk"
+      },
+      {
+        "id": "columbia-country-club",
+        "name": "哥伦比亚乡村俱乐部主楼",
+        "href": "index.html#landmark=columbia-country-club&mode=walk"
+      },
+      {
+        "id": "baoshan-confucian-dacheng-hall",
+        "name": "宝山孔庙大成殿",
+        "href": "index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk"
+      },
+      {
+        "id": "yangpu-library",
+        "name": "杨浦区图书馆总馆（原上海市图书馆）",
+        "href": "index.html#landmark=yangpu-library&mode=walk"
+      },
+      {
+        "id": "jingan-sihang-warehouse",
+        "name": "四行仓库（含毗邻大陆银行仓库）",
+        "href": "index.html#landmark=jingan-sihang-warehouse&mode=walk"
+      },
+      {
+        "id": "minhang-baoyugang-library",
+        "name": "包玉刚图书馆",
+        "href": "index.html#landmark=minhang-baoyugang-library&mode=walk"
+      },
+      {
+        "id": "jiading-shanghai-auto-museum",
+        "name": "上海汽车博物馆",
+        "href": "index.html#landmark=jiading-shanghai-auto-museum&mode=walk"
+      },
+      {
+        "id": "putuo-zhenru-main-hall",
+        "name": "真如寺大殿（正殿）",
+        "href": "index.html#landmark=putuo-zhenru-main-hall&mode=walk"
+      },
+      {
+        "id": "songjiang-fangta-pagoda",
+        "name": "兴圣教寺塔（松江方塔）",
+        "href": "index.html#landmark=songjiang-fangta-pagoda&mode=walk"
+      },
+      {
+        "id": "xuhui-longhua-pagoda",
+        "name": "龙华塔",
+        "href": "index.html#landmark=xuhui-longhua-pagoda&mode=walk"
+      },
+      {
+        "id": "hongkou-hongde-church",
+        "name": "鸿德堂 · 多伦路59号",
+        "href": "index.html#landmark=hongkou-hongde-church&mode=walk"
+      },
+      {
+        "id": "qingpu-beidajie-208-212",
+        "name": "江南第一茶楼 · 北大街208–212号",
+        "href": "index.html#landmark=qingpu-beidajie-208-212&mode=walk"
+      },
+      {
+        "id": "xuhui-wukang-210",
+        "name": "徐汇武康路210号二层住宅",
+        "href": "index.html#landmark=xuhui-wukang-210&mode=walk"
+      },
+      {
+        "id": "xuhui-wukang-129",
+        "name": "徐汇武康路129号二层住宅",
+        "href": "index.html#landmark=xuhui-wukang-129&mode=walk"
+      },
+      {
+        "id": "qingpu-beidajie-222",
+        "name": "北大街222号民居（2022年鹤龙美术馆使用状态）",
+        "href": "index.html#landmark=qingpu-beidajie-222&mode=walk"
+      },
+      {
+        "id": "bund02",
+        "name": "上海总会",
+        "href": "index.html#landmark=bund02&mode=walk"
+      },
+      {
+        "id": "bund03",
+        "name": "有利大楼 · 外滩3号",
+        "href": "index.html#landmark=bund03&mode=walk"
+      },
+      {
+        "id": "bund05",
+        "name": "日清大楼 · 外滩5号",
+        "href": "index.html#landmark=bund05&mode=walk"
+      },
+      {
+        "id": "bund06",
+        "name": "中国通商银行旧址 · 外滩6号",
+        "href": "index.html#landmark=bund06&mode=walk"
+      },
+      {
+        "id": "bund07",
+        "name": "大北电报公司大楼 · 外滩7号",
+        "href": "index.html#landmark=bund07&mode=walk"
+      },
+      {
+        "id": "bund09",
+        "name": "轮船招商局大楼 · 外滩9号",
+        "href": "index.html#landmark=bund09&mode=walk"
+      },
+      {
+        "id": "bund12",
+        "name": "汇丰银行大楼",
+        "href": "index.html#landmark=bund12&mode=walk"
+      },
+      {
+        "id": "customs-house",
+        "name": "江海关大楼",
+        "href": "index.html#landmark=customs-house&mode=walk"
+      },
+      {
+        "id": "bund14",
+        "name": "交通银行旧址 · 外滩14号",
+        "href": "index.html#landmark=bund14&mode=walk"
+      },
+      {
+        "id": "bund15",
+        "name": "华俄道胜银行大楼",
+        "href": "index.html#landmark=bund15&mode=walk"
+      },
+      {
+        "id": "bund17",
+        "name": "字林西报大楼",
+        "href": "index.html#landmark=bund17&mode=walk"
+      },
+      {
+        "id": "bund18",
+        "name": "麦加利银行 · 外滩18号",
+        "href": "index.html#landmark=bund18&mode=walk"
+      },
+      {
+        "id": "bund19",
+        "name": "和平饭店南楼 · 汇中饭店",
+        "href": "index.html#landmark=bund19&mode=walk"
+      },
+      {
+        "id": "bund20",
+        "name": "和平饭店北楼 · 沙逊大厦",
+        "href": "index.html#landmark=bund20&mode=walk"
+      },
+      {
+        "id": "bund23",
+        "name": "中国银行大楼",
+        "href": "index.html#landmark=bund23&mode=walk"
+      },
+      {
+        "id": "jin-mao",
+        "name": "金茂大厦",
+        "href": "index.html#landmark=jin-mao&mode=walk"
+      },
+      {
+        "id": "oriental-pearl",
+        "name": "东方明珠电视塔",
+        "href": "index.html#landmark=oriental-pearl&mode=walk"
+      },
+      {
+        "id": "shanghai-tower",
+        "name": "上海中心大厦",
+        "href": "index.html#landmark=shanghai-tower&mode=walk"
+      },
+      {
+        "id": "swfc",
+        "name": "上海环球金融中心",
+        "href": "index.html#landmark=swfc&mode=walk"
+      }
+    ],
+    "ordinary_catalog_records": [
+      {
+        "id": "qingpu-beidajie-222",
+        "name": "北大街222号民居（2022年鹤龙美术馆使用状态）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13701-6700/index.json"
+      },
+      {
+        "id": "qingpu-beidajie-208-212",
+        "name": "江南第一茶楼 · 北大街208–212号",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13701-6700/index.json"
+      },
+      {
+        "id": "xuhui-wukang-129",
+        "name": "徐汇武康路129号二层住宅",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json"
+      },
+      {
+        "id": "xuhui-wukang-210",
+        "name": "徐汇武康路210号二层住宅",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json"
+      },
+      {
+        "id": "columbia-country-club",
+        "name": "哥伦比亚乡村俱乐部主楼",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json"
+      },
+      {
+        "id": "xuhui-wukang-mansion",
+        "name": "武康大楼主楼",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json"
+      },
+      {
+        "id": "changning-hudec-residence",
+        "name": "邬达克旧居（番禺路129号）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json"
+      },
+      {
+        "id": "xuhui-bajin-residence",
+        "name": "巴金旧居主楼",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json"
+      },
+      {
+        "id": "hongkou-hongde-church",
+        "name": "鸿德堂 · 多伦路59号",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13720-6692/index.json"
+      },
+      {
+        "id": "xuhui-longhua-pagoda",
+        "name": "龙华塔",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13719-6697/index.json"
+      },
+      {
+        "id": "songjiang-fangta-pagoda",
+        "name": "兴圣教寺塔（松江方塔）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13709-6706/index.json"
+      },
+      {
+        "id": "putuo-zhenru-main-hall",
+        "name": "真如寺大殿（正殿）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13716-6693/index.json"
+      },
+      {
+        "id": "jiading-shanghai-auto-museum",
+        "name": "上海汽车博物馆",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13706-6691/index.json"
+      },
+      {
+        "id": "minhang-baoyugang-library",
+        "name": "包玉刚图书馆",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6705/index.json"
+      },
+      {
+        "id": "jingan-sihang-warehouse",
+        "name": "四行仓库（含毗邻大陆银行仓库）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13720-6693/index.json"
+      },
+      {
+        "id": "yangpu-library",
+        "name": "杨浦区图书馆总馆（原上海市图书馆）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13722-6690/index.json"
+      },
+      {
+        "id": "baoshan-confucian-dacheng-hall",
+        "name": "宝山孔庙大成殿",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13721-6684/index.json"
+      },
+      {
+        "id": "fengxian-museum",
+        "name": "奉贤博物馆",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13721-6710/index.json"
+      },
+      {
+        "id": "jinshanwei-wengcheng-gatehouse",
+        "name": "金山卫瓮城城楼",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13713-6721/index.json"
+      },
+      {
+        "id": "xuhui-zikawei-south-building",
+        "name": "徐家汇藏书楼南楼（原神父楼）",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13718-6696/index.json"
+      },
+      {
+        "id": "huangpu-sun-yatsen-residence",
+        "name": "上海孙中山故居主楼",
+        "source_index": "projects/shanghai/data/precise-buildings/macros/14-13719-6695/index.json"
+      }
+    ],
+    "bund_model_records": [
+      {
+        "id": "bund02",
+        "name": "上海总会",
+        "model": "assets/models/bund/web/bund02.glb"
+      },
+      {
+        "id": "bund03",
+        "name": "有利大楼 · 外滩3号",
+        "model": "assets/models/bund/web/bund03.glb"
+      },
+      {
+        "id": "bund05",
+        "name": "日清大楼 · 外滩5号",
+        "model": "assets/models/bund/web/bund05.glb"
+      },
+      {
+        "id": "bund06",
+        "name": "中国通商银行旧址 · 外滩6号",
+        "model": "assets/models/bund/web/bund06.glb"
+      },
+      {
+        "id": "bund07",
+        "name": "大北电报公司大楼 · 外滩7号",
+        "model": "assets/models/bund/web/bund07.glb"
+      },
+      {
+        "id": "bund09",
+        "name": "轮船招商局大楼 · 外滩9号",
+        "model": "assets/models/bund/web/bund09.glb"
+      },
+      {
+        "id": "bund12",
+        "name": "汇丰银行大楼",
+        "model": "assets/models/bund/web/bund12.glb"
+      },
+      {
+        "id": "customs-house",
+        "name": "江海关大楼",
+        "model": "assets/models/bund/web/bund13.glb"
+      },
+      {
+        "id": "bund14",
+        "name": "交通银行旧址 · 外滩14号",
+        "model": "assets/models/bund/web/bund14.glb"
+      },
+      {
+        "id": "bund15",
+        "name": "华俄道胜银行大楼",
+        "model": "assets/models/bund/web/bund15.glb"
+      },
+      {
+        "id": "bund17",
+        "name": "字林西报大楼",
+        "model": "assets/models/bund/web/bund17.glb"
+      },
+      {
+        "id": "bund18",
+        "name": "麦加利银行 · 外滩18号",
+        "model": "assets/models/bund/web/bund18.glb"
+      },
+      {
+        "id": "bund19",
+        "name": "和平饭店南楼 · 汇中饭店",
+        "model": "assets/models/bund/web/bund19.glb"
+      },
+      {
+        "id": "bund20",
+        "name": "和平饭店北楼 · 沙逊大厦",
+        "model": "assets/models/bund/web/bund20.glb"
+      },
+      {
+        "id": "bund23",
+        "name": "中国银行大楼",
+        "model": "assets/models/bund/web/bund23.glb"
+      }
+    ],
+    "standalone_candidates": [
+      {
+        "id": "chongming-chaozong-paifang",
+        "name": "崇明学宫东牌坊（题名面待核）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-chaozong-paifang/manifest.json"
+      },
+      {
+        "id": "chongming-chongsheng-shrine",
+        "name": "崇明学宫崇圣祠正殿",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-chongsheng-shrine/manifest.json"
+      },
+      {
+        "id": "chongming-dacheng-hall",
+        "name": "崇明学宫大成殿",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-dacheng-hall/manifest.json"
+      },
+      {
+        "id": "chongming-east-guanting",
+        "name": "崇明学宫东官厅（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-east-guanting/manifest.json"
+      },
+      {
+        "id": "chongming-east-wing",
+        "name": "崇明学宫东庑（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-east-wing/manifest.json"
+      },
+      {
+        "id": "chongming-ji-gate",
+        "name": "崇明学宫戟门",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-ji-gate/manifest.json"
+      },
+      {
+        "id": "chongming-lingxing-gate",
+        "name": "崇明学宫棂星门中央门框与门扇",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-lingxing-gate/manifest.json"
+      },
+      {
+        "id": "chongming-lingxing-photo-left-gate",
+        "name": "崇明学宫棂星门照片左侧门（历史石框参照）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-lingxing-photo-left-gate/manifest.json"
+      },
+      {
+        "id": "chongming-lingxing-photo-right-gate",
+        "name": "崇明学宫棂星门照片右侧门（1990年代参照）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-lingxing-photo-right-gate/manifest.json"
+      },
+      {
+        "id": "chongming-minghuan-shrine",
+        "name": "崇明学宫名宦祠（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-minghuan-shrine/manifest.json"
+      },
+      {
+        "id": "chongming-pan-pool-bridge",
+        "name": "崇明学宫泮池与登云桥",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-pan-pool-bridge/manifest.json"
+      },
+      {
+        "id": "chongming-ruxue-gate",
+        "name": "崇明学宫儒学大门（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-ruxue-gate/manifest.json"
+      },
+      {
+        "id": "chongming-west-guanting",
+        "name": "崇明学宫西官厅（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-west-guanting/manifest.json"
+      },
+      {
+        "id": "chongming-west-wing",
+        "name": "崇明学宫西庑（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-west-wing/manifest.json"
+      },
+      {
+        "id": "chongming-xiangxian-shrine",
+        "name": "崇明学宫乡贤祠（文字尺寸参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-xiangxian-shrine/manifest.json"
+      },
+      {
+        "id": "chongming-xuehai-paifang",
+        "name": "崇明学宫西牌坊（题名面待核）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-xuehai-paifang/manifest.json"
+      },
+      {
+        "id": "chongming-yimen",
+        "name": "崇明学宫仪门（照片形态参照候选）",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-yimen/manifest.json"
+      },
+      {
+        "id": "chongming-zunjing-pavilion",
+        "name": "崇明学宫尊经阁",
+        "manifest": "projects/shanghai/assets/models/candidates/chongming-zunjing-pavilion/manifest.json"
+      },
+      {
+        "id": "hongkou-luxun-residence-facade",
+        "name": "上海鲁迅故居正立面与院门",
+        "manifest": "projects/shanghai/assets/models/candidates/hongkou-luxun-residence-facade/manifest.json"
+      },
+      {
+        "id": "xuhui-soong-ching-ling-residence",
+        "name": "上海宋庆龄故居主楼",
+        "manifest": "projects/shanghai/assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json"
+      }
+    ],
+    "integrated_model_previews": [
+      {
+        "id": "huangpu-sun-yatsen-residence",
+        "name": "上海孙中山故居主楼",
+        "manifest": "projects/shanghai/assets/models/candidates/huangpu-sun-yatsen-residence/manifest.json"
+      },
+      {
+        "id": "xuhui-zikawei-south-building",
+        "name": "徐家汇藏书楼南楼（原神父楼）",
+        "manifest": "projects/shanghai/assets/models/candidates/xuhui-zikawei-south-building/manifest.json"
+      }
+    ],
+    "registered_navigation_and_standalone_unique_id_count": 60,
+    "source_precise_packages_seen_in_git_tree": [
+      "baoshan-confucian-dacheng-hall",
+      "changning-hudec-residence",
+      "chongming-chaozong-paifang",
+      "chongming-chongsheng-shrine",
+      "chongming-dacheng-hall",
+      "chongming-east-guanting",
+      "chongming-east-wing",
+      "chongming-ji-gate",
+      "chongming-lingxing-gate",
+      "chongming-lingxing-photo-left-gate",
+      "chongming-lingxing-photo-right-gate",
+      "chongming-minghuan-shrine",
+      "chongming-pan-pool-bridge",
+      "chongming-ruxue-gate",
+      "chongming-west-guanting",
+      "chongming-west-wing",
+      "chongming-xiangxian-shrine",
+      "chongming-xuehai-paifang",
+      "chongming-yimen",
+      "chongming-zunjing-pavilion",
+      "columbia-country-club",
+      "common",
+      "fengxian-museum",
+      "hongkou-hongde-church",
+      "hongkou-luxun-residence-facade",
+      "huangpu-sun-yatsen-residence",
+      "jiading-shanghai-auto-museum",
+      "jingan-sihang-warehouse",
+      "jinshanwei-wengcheng-gatehouse",
+      "minhang-baoyugang-library",
+      "putuo-zhenru-main-hall",
+      "qingpu-beidajie-208-212",
+      "qingpu-beidajie-222",
+      "songjiang-fangta-pagoda",
+      "tooling",
+      "xuhui-bajin-residence",
+      "xuhui-longhua-pagoda",
+      "xuhui-soong-ching-ling-residence",
+      "xuhui-wukang-129",
+      "xuhui-wukang-210",
+      "xuhui-wukang-mansion",
+      "xuhui-zikawei-south-building",
+      "yangpu-library"
+    ]
+  },
+  "important_findings": [
+    "No corresponding model found in the inspected registered inventories for these20; no exhaustive absence claim.",
+    "026 church differs from Zikawei library south;028 International Church differs from Hongde;030 Sassoon villa differs from Bund20 Sassoon House.",
+    "023 postal headquarters differs from Bund07 telegraph building and Huangpu postal savings-bank map label.",
+    "031 Fenyang79 differs from035 Fenyang45;035 customs official residence is not the Bund Customs House.",
+    "029 and034 are different residences with different youth-palace uses/addresses.",
+    "021 stadium,024 hospital,025 waterworks,037 lane and038 garden housing need explicit building scopes; no exact building counts inferred.",
+    "040 reference period and new/old location relationship require review; no unverified relocation year added."
+  ],
+  "recommended_next_order": [
+    {
+      "rank_within_reviewed_subset": 1,
+      "record_id": "sh-historic-b1-021",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。"
+    },
+    {
+      "rank_within_reviewed_subset": 2,
+      "record_id": "sh-historic-b1-022",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "先确认历史主楼、塔部及附属体边界；大世界名称不足以确认全部保护范围是一个楼体。"
+    },
+    {
+      "rank_within_reviewed_subset": 3,
+      "record_id": "sh-historic-b1-023",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "北苏州路276号历史邮政总局楼；不与既有大北电报公司或黄浦邮政储蓄银行楼混同。"
+    },
+    {
+      "rank_within_reviewed_subset": 4,
+      "record_id": "sh-historic-b1-024",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "名录指华东医院干部病房楼；先确认历史楼栋，不用整个华东医院院区替代。"
+    },
+    {
+      "rank_within_reviewed_subset": 5,
+      "record_id": "sh-historic-b1-025",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。"
+    },
+    {
+      "rank_within_reviewed_subset": 6,
+      "record_id": "sh-historic-b1-026",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "蒲西路158号教堂；不是既有徐家汇藏书楼南楼／原神父楼，主堂与附属体边界待核。"
+    },
+    {
+      "rank_within_reviewed_subset": 7,
+      "record_id": "sh-historic-b1-027",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "确认西佘山主堂范围；山体、道路和其他宗教附属物单独登记，不以整山作为一栋。"
+    },
+    {
+      "rank_within_reviewed_subset": 8,
+      "record_id": "sh-historic-b1-028",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "衡山路58号国际礼拜堂，不是多伦路59号鸿德堂。"
+    },
+    {
+      "rank_within_reviewed_subset": 9,
+      "record_id": "sh-historic-b1-029",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "名录现名中国福利会少年宫；与第34条长宁区少年宫不同，先确认历史住宅主体。"
+    },
+    {
+      "rank_within_reviewed_subset": 10,
+      "record_id": "sh-historic-b1-030",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "名录限定龙柏饭店1号楼；不是外滩20号沙逊大厦／和平饭店北楼，不扩大为全部饭店。"
+    },
+    {
+      "rank_within_reviewed_subset": 11,
+      "record_id": "sh-historic-b1-031",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "汾阳路79号住宅／上海工艺美术博物馆，与第35条汾阳路45号不同；园地和附属体另核。"
+    },
+    {
+      "rank_within_reviewed_subset": 12,
+      "record_id": "sh-historic-b1-032",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "陕西南路30号历史住宅；现酒店名称不能自动把全部附属设施纳入。"
+    },
+    {
+      "rank_within_reviewed_subset": 13,
+      "record_id": "sh-historic-b1-033",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "淮海中路1517号历史住宅；日本领事馆为名录所列用途，不据此确认2026运营状态或完整外交设施范围。"
+    },
+    {
+      "rank_within_reviewed_subset": 14,
+      "record_id": "sh-historic-b1-034",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "愚园路1136弄31号，现名长宁区少年宫；与第29条中国福利会少年宫分别登记。"
+    },
+    {
+      "rank_within_reviewed_subset": 15,
+      "record_id": "sh-historic-b1-035",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "汾阳路45号，文章入口为海关副总税务司官邸；不是江海关大楼，亦不同汾阳路79号住宅。"
+    },
+    {
+      "rank_within_reviewed_subset": 16,
+      "record_id": "sh-historic-b1-036",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "名录限定西郊宾馆4号楼；不能扩大为全部西郊宾馆，先核这一历史住宅单体。"
+    },
+    {
+      "rank_within_reviewed_subset": 17,
+      "record_id": "sh-historic-b1-037",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "里弄整体名称，先按入口、里弄房屋及具体门牌拆分；不能以一栋完成整处，原索引未给可用逐栋数。"
+    },
+    {
+      "rank_within_reviewed_subset": 18,
+      "record_id": "sh-historic-b1-038",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "花园住宅组名称，先核楼栋、门牌和保护边界；原索引没有栋数，不预先指定数量。"
+    },
+    {
+      "rank_within_reviewed_subset": 19,
+      "record_id": "sh-historic-b1-039",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "复兴西路62号历史公寓；湖南街道办事处为名录用途名称，主体和附属物边界另核。"
+    },
+    {
+      "rank_within_reviewed_subset": 20,
+      "record_id": "sh-historic-b1-040",
+      "action": "source_review_and_scope_split_before_model",
+      "reason": "南京大戏院／上海音乐厅，名录地址延安东路523号；先核照片时期和新旧位置关系，索引未给迁建年份，不填未经核查的年代。"
+    }
+  ],
+  "existing_model_revision_followups": [],
+  "records": [
+    {
+      "id": "sh-historic-b1-021",
+      "list_number": 21,
+      "name": "上海市体育场",
+      "listed_current_name": "上海市江湾体育场",
+      "district": "杨浦区",
+      "addresses": [
+        "国和路346号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "split_scope_required",
+        "note": "名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-021",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%B1%9F%E6%B9%BE%E4%BD%93%E8%82%B2%E4%B8%AD%E5%BF%83"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E6%B1%9F%E6%B9%BE%E4%BD%93%E8%82%B2%E5%9C%BA%E5%85%A8%E8%B2%8C.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-022",
+      "list_number": 22,
+      "name": "大世界游乐场",
+      "listed_current_name": "大世界",
+      "district": "黄浦区",
+      "addresses": [
+        "西藏南路1号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "先确认历史主楼、塔部及附属体边界；大世界名称不足以确认全部保护范围是一个楼体。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-022",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%A4%A7%E4%B8%96%E7%95%8C"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:The_Great_World_(Shanghai).jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [
+        {
+          "id": "840c1210-5f21-4969-88eb-ec0e04ab18db",
+          "name": "大世界",
+          "district": "黄浦区",
+          "names": {
+            "rules": [
+              {
+                "variant": "alternate",
+                "value": "大世界游乐场"
+              },
+              {
+                "variant": "short",
+                "language": "en",
+                "value": "Great World"
+              }
+            ],
+            "common": {
+              "en": "The Great World",
+              "zh": "大世界",
+              "zh-Hans": "大世界",
+              "zh-Hant": "大世界"
+            },
+            "primary": "大世界"
+          },
+          "status": "identity-only-needs-photo-or-text",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369238007@12",
+              "update_time": "2024-04-08T16:17:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "source_layer": "building",
+          "geometry_included": false,
+          "association_status": "name_or_alias_and_district_lead_only_not_model_or_boundary_acceptance"
+        }
+      ],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-023",
+      "list_number": 23,
+      "name": "上海邮政总局",
+      "listed_current_name": "邮电管理局",
+      "district": "虹口区",
+      "addresses": [
+        "北苏州路276号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "北苏州路276号历史邮政总局楼；不与既有大北电报公司或黄浦邮政储蓄银行楼混同。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [
+        {
+          "id": "bund07",
+          "reason": "外滩电报公司楼与北苏州路276号邮政总局不是同一对象。"
+        }
+      ],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-023",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%82%AE%E6%94%BF%E6%80%BB%E5%B1%80"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:%E7%9C%BA%E6%9C%9B%E4%B8%8A%E6%B5%B7%E5%B8%82%E9%82%AE%E6%94%BF%E5%B1%80.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [
+        {
+          "id": "99edb5ad-b642-4040-a923-4f4375eeeac8",
+          "name": "上海邮政总局大楼",
+          "district": "虹口区",
+          "names": {
+            "common": {
+              "en": "General Post Office Building"
+            },
+            "primary": "上海邮政总局大楼"
+          },
+          "status": "identity-only-needs-photo-or-text",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w11629370@10",
+              "update_time": "2023-11-05T22:06:02.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "source_layer": "building",
+          "geometry_included": false,
+          "association_status": "name_or_alias_and_district_lead_only_not_model_or_boundary_acceptance"
+        }
+      ],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。",
+      "excluded_map_associations": [
+        {
+          "id": "a8f5aeb4-b578-4aab-96d8-06ba08971a06",
+          "name": "中国邮政储蓄银行上海分行",
+          "district": "黄浦区",
+          "reason": "另有中华邮政储金汇业局别名；不因邮政关键词归并为本条虹口总局楼。"
+        }
+      ]
+    },
+    {
+      "id": "sh-historic-b1-024",
+      "list_number": 24,
+      "name": "宏恩医院",
+      "listed_current_name": "华东医院干部病房楼",
+      "district": "静安区",
+      "addresses": [
+        "延安西路221号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "split_scope_required",
+        "note": "名录指华东医院干部病房楼；先确认历史楼栋，不用整个华东医院院区替代。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-024",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E5%8D%8E%E4%B8%9C%E5%8C%BB%E9%99%A2"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Country_Hospital.JPG"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-025",
+      "list_number": 25,
+      "name": "杨树浦水厂",
+      "listed_current_name": "杨树浦水厂",
+      "district": "杨浦区",
+      "addresses": [
+        "杨树浦路830号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "split_scope_required",
+        "note": "水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-025",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%9D%A8%E6%A0%91%E6%B5%A6%E6%B0%B4%E5%8E%82"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:%E6%9D%A8%E6%A0%91%E6%B5%A6%E6%B0%B4%E5%8E%82.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-026",
+      "list_number": 26,
+      "name": "徐家汇天主堂",
+      "listed_current_name": "徐家汇天主堂",
+      "district": "徐汇区",
+      "addresses": [
+        "蒲西路158号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "蒲西路158号教堂；不是既有徐家汇藏书楼南楼／原神父楼，主堂与附属体边界待核。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [
+        {
+          "id": "xuhui-zikawei-south-building",
+          "reason": "源码明确为藏书楼南楼／原神父楼，不是天主堂。"
+        }
+      ],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-026",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E5%BE%90%E5%AE%B6%E6%B1%87%E5%9C%A3%E4%BE%9D%E7%BA%B3%E7%88%B5%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:St._Ignatius_Church,_Zikawei.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-027",
+      "list_number": 27,
+      "name": "佘山天主教堂",
+      "listed_current_name": "佘山天主教堂",
+      "district": "松江区",
+      "addresses": [
+        "西佘山"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "确认西佘山主堂范围；山体、道路和其他宗教附属物单独登记，不以整山作为一栋。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-027",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%BD%98%E5%B1%B1%E8%BF%9B%E6%95%99%E4%B9%8B%E4%BD%91%E5%9C%A3%E6%AF%8D%E5%A4%A7%E6%AE%BF"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:She_Shan_Basilica_1.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-028",
+      "list_number": 28,
+      "name": "国际礼拜堂",
+      "listed_current_name": "国际礼拜堂",
+      "district": "徐汇区",
+      "addresses": [
+        "衡山路58号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "衡山路58号国际礼拜堂，不是多伦路59号鸿德堂。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [
+        {
+          "id": "hongkou-hongde-church",
+          "reason": "源码明确虹口多伦路59号，不是徐汇衡山路58号。"
+        }
+      ],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-028",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%9B%BD%E9%99%85%E7%A4%BC%E6%8B%9C%E5%A0%82"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Community_Church,_Shanghai.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-029",
+      "list_number": 29,
+      "name": "嘉道理爵士住宅",
+      "listed_current_name": "中国福利会 少年宫",
+      "district": "静安区",
+      "addresses": [
+        "延安西路64号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "名录现名中国福利会少年宫；与第34条长宁区少年宫不同，先确认历史住宅主体。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-029",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E5%98%89%E9%81%93%E7%90%86%E7%88%B5%E5%A3%AB%E5%85%AC%E9%A6%86",
+          "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%A6%8F%E5%88%A9%E4%BC%9A"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Kadoorie%27s_House.JPG"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-030",
+      "list_number": 30,
+      "name": "沙逊别墅",
+      "listed_current_name": "龙柏饭店1号楼",
+      "district": "长宁区",
+      "addresses": [
+        "虹桥路2409号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "名录限定龙柏饭店1号楼；不是外滩20号沙逊大厦／和平饭店北楼，不扩大为全部饭店。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [
+        {
+          "id": "bund20",
+          "reason": "Bund清单和源码明确和平饭店北楼／沙逊大厦，不是虹桥路2409号别墅。"
+        }
+      ],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-030",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%B2%99%E9%80%8A%E5%88%AB%E5%A2%85"
+        ],
+        "photo_page_links": [],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-031",
+      "list_number": 31,
+      "name": "汾阳路79号住宅",
+      "listed_current_name": "上海工艺美术博物馆",
+      "district": "徐汇区",
+      "addresses": [
+        "汾阳路79号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "汾阳路79号住宅／上海工艺美术博物馆，与第35条汾阳路45号不同；园地和附属体另核。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-031",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%B7%A5%E8%89%BA%E7%BE%8E%E6%9C%AF%E5%8D%9A%E7%89%A9%E9%A6%86"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E5%B7%A5%E8%89%BA%E7%BE%8E%E6%9C%AF%E5%8D%9A%E7%89%A9%E9%A6%86.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-032",
+      "list_number": 32,
+      "name": "马勒住宅",
+      "listed_current_name": "上海衡山马勒别墅饭店",
+      "district": "静安区",
+      "addresses": [
+        "陕西南路30号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "陕西南路30号历史住宅；现酒店名称不能自动把全部附属设施纳入。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-032",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%8B%92%E4%BD%8F%E5%AE%85"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Moller_Villa,_Shanghai.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-033",
+      "list_number": 33,
+      "name": "盛宣怀住宅",
+      "listed_current_name": "日本领事馆",
+      "district": "徐汇区",
+      "addresses": [
+        "淮海中路1517号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "淮海中路1517号历史住宅；日本领事馆为名录所列用途，不据此确认2026运营状态或完整外交设施范围。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-033",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E7%9B%9B%E5%AE%A3%E6%80%80%E4%BD%8F%E5%AE%85"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:1517_Middle_Huaihai_Rd._Shanghai.JPG"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-034",
+      "list_number": 34,
+      "name": "王伯群住宅",
+      "listed_current_name": "长宁区少年宫",
+      "district": "长宁区",
+      "addresses": [
+        "愚园路1136弄31号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "愚园路1136弄31号，现名长宁区少年宫；与第29条中国福利会少年宫分别登记。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-034",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E7%8E%8B%E4%BC%AF%E7%BE%A4%E4%BD%8F%E5%AE%85"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Shanghai_Changing_Children%27s_Palace_01.JPG"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-035",
+      "list_number": 35,
+      "name": "汾阳路45号住宅",
+      "listed_current_name": "汾阳花园酒店",
+      "district": "徐汇区",
+      "addresses": [
+        "汾阳路45号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "汾阳路45号，文章入口为海关副总税务司官邸；不是江海关大楼，亦不同汾阳路79号住宅。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [
+        {
+          "id": "customs-house",
+          "reason": "第一批004已对应外滩江海关；汾阳路45号住宅／官邸是另一对象。"
+        }
+      ],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-035",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%B5%B7%E5%85%B3%E5%89%AF%E6%80%BB%E7%A8%8E%E5%8A%A1%E5%8F%B8%E5%AE%98%E9%82%B8"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Residence_on_No._45,_Route_Pichon.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-036",
+      "list_number": 36,
+      "name": "淮阴路姚氏住宅",
+      "listed_current_name": "西郊宾馆4号楼",
+      "district": "长宁区",
+      "addresses": [
+        "淮阴路200号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "名录限定西郊宾馆4号楼；不能扩大为全部西郊宾馆，先核这一历史住宅单体。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-036",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%B7%AE%E9%98%B4%E8%B7%AF%E5%A7%9A%E6%B0%8F%E4%BD%8F%E5%AE%85"
+        ],
+        "photo_page_links": [],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-037",
+      "list_number": 37,
+      "name": "步高里",
+      "listed_current_name": "步高里",
+      "district": "黄浦区",
+      "addresses": [
+        "陕西南路387号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "split_scope_required",
+        "note": "里弄整体名称，先按入口、里弄房屋及具体门牌拆分；不能以一栋完成整处，原索引未给可用逐栋数。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-037",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%AD%A5%E9%AB%98%E9%87%8C"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Shanghai_-_Cit%C3%A9_Bourgogne_-_3.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-038",
+      "list_number": 38,
+      "name": "新康花园",
+      "listed_current_name": "新康花园",
+      "district": "徐汇区",
+      "addresses": [
+        "淮海中路1273号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "split_scope_required",
+        "note": "花园住宅组名称，先核楼栋、门牌和保护边界；原索引没有栋数，不预先指定数量。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-038",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E6%96%B0%E5%BA%B7%E8%8A%B1%E5%9B%AD"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:%E6%96%B0%E5%BA%B7%E8%8A%B1%E5%9B%AD.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-039",
+      "list_number": 39,
+      "name": "修道院公寓",
+      "listed_current_name": "湖南街道办事处",
+      "district": "徐汇区",
+      "addresses": [
+        "复兴西路62号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "复兴西路62号历史公寓；湖南街道办事处为名录用途名称，主体和附属物边界另核。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-039",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%BF%AE%E9%81%93%E9%99%A2%E5%85%AC%E5%AF%93"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:The_Cloister_Shanghai.JPG"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    },
+    {
+      "id": "sh-historic-b1-040",
+      "list_number": 40,
+      "name": "南京大戏院",
+      "listed_current_name": "上海音乐厅",
+      "district": "黄浦区",
+      "addresses": [
+        "延安东路523号"
+      ],
+      "classification": "not-found-in-registered-refined-model-inventory",
+      "identity_review": "按名录原名、所列现名、地址与已登记模型清单核对，固定提交下未发现本条对应独立精模；不覆盖未登记资产、未合并分支或全部城市体块。",
+      "modeled_scope_or_gap": "当前已登记精模库存中未发现对应单体；先核资料及范围，再制作候选。",
+      "split_review": {
+        "status": "identity_and_scope_review_required",
+        "note": "南京大戏院／上海音乐厅，名录地址延安东路523号；先核照片时期和新旧位置关系，索引未给迁建年份，不填未经核查的年代。"
+      },
+      "existing_models": [],
+      "excluded_model_associations": [],
+      "source_index_evidence": {
+        "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+        "record_id": "sh-historic-b1-040",
+        "source_url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批",
+        "official_source_fetch_status": "unavailable: archive challenge (202)",
+        "article_links": [
+          "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%9F%B3%E4%B9%90%E5%8E%85"
+        ],
+        "photo_page_links": [
+          "https://zh.wikipedia.org/wiki/File:Concert_hall_shanghai.jpg"
+        ],
+        "photos_reviewed_in_this_task": false
+      },
+      "map_identity_hints": [
+        {
+          "id": "d49e6b9c-1cbb-47f7-a73f-bb8c59295130",
+          "name": "上海音乐厅",
+          "district": "黄浦区",
+          "names": {
+            "rules": [
+              {
+                "variant": "alternate",
+                "value": "南京大戏院"
+              }
+            ],
+            "common": {
+              "en": "Shanghai Concert Hall",
+              "zh": "上海音乐厅",
+              "zh-Hans": "上海音乐厅",
+              "zh-Hant": "上海音樂廳"
+            },
+            "primary": "上海音乐厅"
+          },
+          "status": "identity-only-needs-photo-or-text",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w133465370@12",
+              "update_time": "2025-09-16T06:09:52.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "source_layer": "building",
+          "geometry_included": false,
+          "association_status": "name_or_alias_and_district_lead_only_not_model_or_boundary_acceptance"
+        }
+      ],
+      "evidence_revalidated_geometry": false,
+      "mark_listed_place_complete": false,
+      "next_action": "按名录顺序核照片／文字身份和范围；需要拆栋时先拆，再追加可启动模型任务。"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+      "bytes": 1610937,
+      "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 46947,
+      "sha256": "39a83b5abf7a16a5f7f5f773f996ed9fbb839c5dc5d2fddf85085bf5ccb4a4ef"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/named-map-leads.json",
+      "bytes": 766656,
+      "sha256": "92094697a326761fd1c80b7e19d34a3813b173be69e64e05161b3d4483ab394f"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json",
+      "bytes": 66908,
+      "sha256": "7b261a91686195a24ba7402ea97076b9939e55cbf067c51aae7de2d9014f9f94"
+    },
+    {
+      "path": "projects/shanghai/data/restoration-progress/progress.json",
+      "bytes": 43386,
+      "sha256": "552c78afd56416a00a71b9dd9afa8a4c869a75b628f0f77ea887efc7f52f5682"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/catalog.json",
+      "bytes": 5710,
+      "sha256": "3ff61a8d83d8ae2c46a2ceb208282529289f95a93246bf731575b5c91db623a3"
+    },
+    {
+      "path": "projects/shanghai/data/bund/manifest.json",
+      "bytes": 56939,
+      "sha256": "e18689381ecc309b203c23adc6bc36d568f16d4e58d9127cd461e953f44f27cd"
+    },
+    {
+      "path": "projects/shanghai/landmarks.html",
+      "bytes": 28655,
+      "sha256": "0b850cafa56865c9000330ed996455c01be2efcb6b0f97b8e96291040cccddd3"
+    },
+    {
+      "path": "projects/shanghai/src/landmark-navigation.js",
+      "bytes": 1958,
+      "sha256": "480e7c80a6aac623756eccca28fc2a9f11b6bf8c1f31232e0fd10e06694cfd3b"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13701-6700/index.json",
+      "bytes": 36775,
+      "sha256": "5813a8532ef788bbecb0a9e0c1b3af1f855087b7457ade745b5afa7f576bee8d"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13718-6695/index.json",
+      "bytes": 147511,
+      "sha256": "e6297cf674e64515280bde7bbd7440d3325b8b470eaa4a87764c3b60bf21fd38"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13720-6692/index.json",
+      "bytes": 16579,
+      "sha256": "225403ba268b226f0943b13bd8e7477b250f248e8d85fcc84f8466618d5b5608"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13719-6697/index.json",
+      "bytes": 18727,
+      "sha256": "576702e96d624ecdede30a8d161c391353166f4043bf5e345159f7451244c85b"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13709-6706/index.json",
+      "bytes": 20733,
+      "sha256": "3e50b4e1fd2f0933001ee41c0bc22560a12316b474d686215ca8f836b581e57f"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13716-6693/index.json",
+      "bytes": 22155,
+      "sha256": "ceddd6b67a3fe8478654c8bdd1dc625a2536d978f3c8442ccdd636c4c556932a"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13706-6691/index.json",
+      "bytes": 22378,
+      "sha256": "b020da8674ae43dc4a07c5f80b94060b4441221d19e935d70532d13f99008226"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13718-6705/index.json",
+      "bytes": 19060,
+      "sha256": "9d26f408e00a0591bd5cc0323c8dc5e55065c6acac7d8f19b694962cd551ede5"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13720-6693/index.json",
+      "bytes": 24703,
+      "sha256": "074cc6cc077bafc716363e3476dcef2eb1d0770dd405b36600ead8aa08badfee"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13722-6690/index.json",
+      "bytes": 22386,
+      "sha256": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13721-6684/index.json",
+      "bytes": 16537,
+      "sha256": "40b7cf1147d1981e15be2c7a2964117eff619e9c213ff1364480337ccf585a79"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13721-6710/index.json",
+      "bytes": 22411,
+      "sha256": "7808f5fae03bac4c1920981f21d17b1ec67d593f6e07238a30a32208344730d8"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13713-6721/index.json",
+      "bytes": 17519,
+      "sha256": "6c72d1b6f10c6d2532393d8051c5bee66ee9ac66bfffcbc2c7f7591d55c1d343"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13718-6696/index.json",
+      "bytes": 17619,
+      "sha256": "7eb7e77c77cfca211aea6130d629907f5c58ea9fe1aac08dadf4a5b036f32528"
+    },
+    {
+      "path": "projects/shanghai/data/precise-buildings/macros/14-13719-6695/index.json",
+      "bytes": 16801,
+      "sha256": "dcee34434de061612a9bc33e9c01e88e087df7b0f7239e4b9a2c212c554496ff"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-chaozong-paifang/manifest.json",
+      "bytes": 3185,
+      "sha256": "02c8d9a1315f7577505d840d4e3c068fcd64dc97b8b6d6068a6304856e9bb3de"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-chongsheng-shrine/manifest.json",
+      "bytes": 1392,
+      "sha256": "1d68f108003ae3bbb7615293268e89df42372b9fe07a30163785a40e1ba21715"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-dacheng-hall/manifest.json",
+      "bytes": 1684,
+      "sha256": "6da59e97ac57ac392cee7f2073de20d7d5c645682f53975189289bc2afef270c"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-east-guanting/manifest.json",
+      "bytes": 2430,
+      "sha256": "687a79a4b26c1dd4fddc97db464fc97fb7f641f2a5bb0d9fe10fdf9131854000"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-east-wing/manifest.json",
+      "bytes": 1999,
+      "sha256": "687a131d83334c2571bce1af73f993aa9e1fc829c5f6dc5a396dd13785086ca2"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-ji-gate/manifest.json",
+      "bytes": 1414,
+      "sha256": "070b116523840aeac8c728999211c43b650f1022b8d2e45e9d9c1c21e750ccf2"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-lingxing-gate/manifest.json",
+      "bytes": 1514,
+      "sha256": "f2454aa949dc4d322de35b131a07e7943de80b1e2341c2353d4c8f36f59c1ae5"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-lingxing-photo-left-gate/manifest.json",
+      "bytes": 1642,
+      "sha256": "ea8f99b3ddbf3e1c58f56e7d8ac552b25d4e8dd134c77ebdabf50e50160dca09"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-lingxing-photo-right-gate/manifest.json",
+      "bytes": 1577,
+      "sha256": "ef7d8eb6a092a1aed13d601ca16a5c8590a04fd7765ae6d68d77bfc50e92087e"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-minghuan-shrine/manifest.json",
+      "bytes": 1577,
+      "sha256": "08a5d153e0a9a3e8d1179b6bc35d478fd22c82f16c7ca8d4d00ee285ae209ea3"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-pan-pool-bridge/manifest.json",
+      "bytes": 1706,
+      "sha256": "3876a80a7274a10ddfaa8788ec6aa53255d5f9e1195dc95627ddf9edd80a748e"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-ruxue-gate/manifest.json",
+      "bytes": 2798,
+      "sha256": "14d382443f4ae5ebf05d6269a7ada531f3bd87f38093f9725c5d2dbdc7f07ead"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-west-guanting/manifest.json",
+      "bytes": 2636,
+      "sha256": "d5f0e18d6ff7fb54df5b5f8b8f2355b1c51a4226d2ed0a053a08cbb95da74fcf"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-west-wing/manifest.json",
+      "bytes": 2162,
+      "sha256": "94073e4e10c1673be5f33610ed6195e0d6e419194f06933a29abd7927f1d061b"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-xiangxian-shrine/manifest.json",
+      "bytes": 1823,
+      "sha256": "3f3dc0eb78303b0ccee79333105d8febc6f577b5b1df353f1bedb04286aa099e"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-xuehai-paifang/manifest.json",
+      "bytes": 2798,
+      "sha256": "c4dac28296b95c080714d263933f494d07a7ce49270f7a2104a5146df62f7b1b"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-yimen/manifest.json",
+      "bytes": 2481,
+      "sha256": "16c0911c9c05d3c4d49f6f4c8db2c4f0487ffd921cb7703eea0284d53306995a"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/chongming-zunjing-pavilion/manifest.json",
+      "bytes": 1749,
+      "sha256": "de9b710a852075b895ec652b614c5d1cc9105081506459ffe7b76ee309bfffe2"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/hongkou-luxun-residence-facade/manifest.json",
+      "bytes": 1929,
+      "sha256": "6be3c938201233f5d1e9366dd535a47438d51a486ddec8d341f76b13f15a3831"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/huangpu-sun-yatsen-residence/manifest.json",
+      "bytes": 1697,
+      "sha256": "807b30c4e7777ca51b2667a67b458b85db734b48fb8d3543c65fd0f1ea83f777"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json",
+      "bytes": 2016,
+      "sha256": "0ec849b9df9f326f97cd852b9d8f1f73f308b195de5c1823975b6d01a8a6fffe"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/xuhui-zikawei-south-building/manifest.json",
+      "bytes": 1792,
+      "sha256": "577142bde89b1f2cbb9feda8e64a1e9db3329d1eef42846e5982eabc9934ebdf"
+    },
+    {
+      "path": "projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md",
+      "bytes": 5626,
+      "sha256": "782a8f454bb709fd12e73a48303fd3bcc6b91724c20cc23e9f10f9dcc709bafe"
+    },
+    {
+      "path": "projects/shanghai/source/precise/hongkou-hongde-church/README.md",
+      "bytes": 1895,
+      "sha256": "4b79d29511fb99d40955c3e3d05f0bdc49e8513d266126b25fa75cbf8802fd77"
+    },
+    {
+      "path": "projects/shanghai/source/bund/art_deco/README.md",
+      "bytes": 4323,
+      "sha256": "8a3dc91d3f9aba0f32a855ad8e409fbe4038a86243e60c1ec0f096f8e0a7d88d"
+    }
+  ],
+  "limits": [
+    "No new photos viewed or downloaded; all indexed photo pages remain unreviewed.",
+    "No GLB/Blend read, decoded or reaccepted, and no browser evidence reaccepted.",
+    "No exhaustive negative claim covering undeclared assets, unmerged branches or all source buildings.",
+    "data/landmarks.json is absent in the local partial-clone object store; actual tracked navigation HTML and registered catalog metadata were used. No network fetch attempted.",
+    "Map hints are not footprint, registration, current-use or completion acceptance.",
+    "Later model deliveries require a new review; snapshot tied to repository_head."
+  ],
+  "root_review": {
+    "date": "2026-10-29",
+    "all49_pinned_metadata_sizes_and_hashes_independently_checked": true,
+    "scope": "Inventory metadata only; no new geometric, photographic or whole-place acceptance"
+  }
+}

@@ -101,9 +101,12 @@ def build():
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
  maps=json.loads((DATA/'named-map-leads.json').read_text())['records']
  records=discovery['records']
- identity_review=json.loads((DATA/'heritage-first20-model-reconciliation.json').read_text())
- identity_by_id={r['id']:r for r in identity_review['records']}
- assert len(identity_by_id)==len(identity_review['records'])
+ identity_by_id={};identity_report_by_id={}
+ for filename in ('heritage-first20-model-reconciliation.json','heritage-next20-model-reconciliation.json'):
+  identity_review=json.loads((DATA/filename).read_text())
+  for r in identity_review['records']:
+   assert r['id'] not in identity_by_id, 'Duplicate inventory review ID'
+   identity_by_id[r['id']]=r;identity_report_by_id[r['id']]=filename
  roads=json.loads((DATA/'discovered-streets.json').read_text())['roads']
  ids=[r['id'] for r in records];assert len(ids)==len(set(ids)), 'Duplicate discovery ID'
  assert set(identity_by_id).issubset(ids), 'Unknown building identity review ID'
@@ -139,7 +142,7 @@ def build():
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
    if r['id'] in identity_by_id:
     review=identity_by_id[r['id']]
-    refs+=' · '+link('库存范围复核','projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json')
+    refs+=' · '+link('库存范围复核','projects/shanghai/data/model-todo/'+identity_report_by_id[r['id']])
     if review['existing_models']:
      todo='已关联单体：'+'、'.join(m['id'] for m in review['existing_models'])+'；'+review['modeled_scope_or_gap']+'；未将整处名录判为完成'
     else:todo+='；'+review['split_review']['note']
