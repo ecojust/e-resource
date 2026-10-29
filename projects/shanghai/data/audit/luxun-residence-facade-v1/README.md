@@ -9,6 +9,7 @@
 - `rebuild.json`：第二次独立生成的原始/远景GLB及三张PNG与交付源文件字节相同。
 - `native.json`、`native-geometry.json`：Blender保存重开前后几何哈希一致；保存文件的三角形与GLB完全一致，UV及打包PNG也通过检查；展示舞台排除在建筑几何统计外。
 - `browser.json`：实际Chromium验证完整/远景加载及PBR、手动/自动远近切换、损坏文件保留前一模型、重试恢复、390×844手机布局；无页面异常或横向溢出。
+- `public.json`、`public.png`：公开固定提交页面实际加载完整/远景及PBR，无脚本或资产拦截，无页面异常；`node qa-public.cjs`可复现，包含githack首次访问确认处理。
 - `visual-review.json`：实际查看原生和网页截图后的有限外观检查。未做测绘精度或当前现场一致性认证。
 - `source-files.json`：代码、输入、网页和最终资产清单的SHA-256绑定。
 
