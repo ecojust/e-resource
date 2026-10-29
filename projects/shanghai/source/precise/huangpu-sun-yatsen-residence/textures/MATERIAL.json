@@ -1,0 +1,118 @@
+{
+  "schema": "sun-yatsen-original-pebbledash-pbr-v1",
+  "author": "agent",
+  "license": "MIT",
+  "random_generator": "NumPy PCG64",
+  "random_seed": 71918,
+  "source_photograph_pixels_read": false,
+  "surface_scan": false,
+  "scope": "Original generic fine pebble-dash material, visually informed by a reference photograph. Colour, grain size and relief are estimates, not measurements of Sun Yat-sen residence.",
+  "dimensions_px": [
+    512,
+    512
+  ],
+  "repeat_metres": [
+    0.4,
+    0.4
+  ],
+  "pixel_pitch_m": 0.00078125,
+  "periodic_method": "Jittered pebble centres on a torus; every ellipse deposit wraps modulo512; matrix smoothing and height derivatives use wrapped neighbours. Pixel-centre rows0and511 need not be identical: their adjacency is an ordinary one-pixel toroidal step, not a duplicated gutter.",
+  "sampler": {
+    "magFilter": 9729,
+    "minFilter": 9987,
+    "wrapS": 10497,
+    "wrapT": 10497
+  },
+  "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "roughnessFactor": 1,
+  "metallicFactor": 1,
+  "normalScale": 0.35,
+  "occlusionStrength": 0.35,
+  "normal_height_scope": "The encoded height gradients are attenuated by normalScale0.35 at render time. This is a conservative shading choice, not displacement geometry or a measured surface relief.",
+  "color_spaces": {
+    "basecolor": "sRGB",
+    "normal": "Non-Color",
+    "orm": "Non-Color"
+  },
+  "channels": {
+    "orm": {
+      "R": "ambient occlusion",
+      "G": "roughness",
+      "B": "metallic, exactly0"
+    }
+  },
+  "uv_contract": {
+    "raw_gltf": "For a vertical facade: U=local horizontal metres/0.40; V=-height metres/0.40. Keep unbounded UVs and REPEAT, with no per-part normalization, modulo or atlas-cell clamping.",
+    "png_rows": "Top-to-bottom row index increases with stored PNG V.",
+    "encoded_normal": "Normalize(-dH/dU_metres, +dH/dPNG_row_metres, 1), then encode from[-1,1]to[0,255].",
+    "current_no_tangent_web_frame": "Three derivative frame follows raw+U right, raw+V down, outward normal. Frozen GLTFLoader negates normalScale.y when TANGENT is absent; effective scale is[+0.35,-0.35].",
+    "standard_blender_import": "Importer converts V to1-V and keeps the green channel; its upward bitangent gives the same physical bump. Do not manually invert G or add another V flip.",
+    "physical_interpretation": "On the left flank of a raised pebble the normal leans left; on the upper flank it leans up. These signs must be checked on the final renderer, not inferred merely from a normal map thumbnail.",
+    "if_explicit_tangents_added": "Re-audit the actual tangent frame and loader behavior. The current tested contract is for primitives without TANGENT."
+  },
+  "statistics": {
+    "generated_grain_count": 8100,
+    "visible_grain_count": 8085,
+    "aggregate_pixel_coverage": 0.7368392944335938,
+    "input_grain_major_diameter_m": {
+      "min": 0.0030151084506394987,
+      "max": 0.007972007285848024,
+      "mean": 0.005206955438437551
+    },
+    "height_field_m": {
+      "min": -2.5014799262864905e-05,
+      "max": 0.0010479471879534898,
+      "mean": 0.00037844634216348055
+    },
+    "albedo_channel_mean_srgb": [
+      0.43300619038233756,
+      0.4106121413100788,
+      0.3670786894668115
+    ],
+    "roughness_min_max": [
+      0.8103700359402953,
+      0.969553633912047
+    ],
+    "ao_min_max": [
+      0.72,
+      1.0
+    ],
+    "normal_z_min": 0.7615057784461562,
+    "normal_length_max_error_before_encoding": 2.220446049250313e-16
+  },
+  "generator_checks": {
+    "finite_height": true,
+    "normal_positive_hemisphere": true,
+    "metallic_channel_entirely_zero": true,
+    "all_images_rgb_uint8_512": true,
+    "height_periodic_derivative_uses_wrapped_neighbors": true
+  },
+  "files": [
+    {
+      "file": "sun-yatsen-original-pebbledash-basecolor.png",
+      "bytes": 408086,
+      "sha256": "9fe883bc7807f529eac71e311438bd38ec4c6915095c20719954fc7b52af214f"
+    },
+    {
+      "file": "sun-yatsen-original-pebbledash-normal.png",
+      "bytes": 533675,
+      "sha256": "9e3d2c0a3178e50237e52e58826a860f5eba3984bc9d06f09e6ae06095af21cb"
+    },
+    {
+      "file": "sun-yatsen-original-pebbledash-orm.png",
+      "bytes": 361618,
+      "sha256": "768513df208359da47bd823e1332f7bc0a4adbc80e4884eae6330712c1063290"
+    }
+  ],
+  "generator_sha256": "48a5dce02aead4ea596b77486c551157c6011d7a74f8bc11eba400068fc1fe59",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0"
+  }
+}
