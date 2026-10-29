@@ -40,6 +40,7 @@ def official_road_lines(prefix):
  states={'existing_name':'已有名称匹配／仍待核对','new_name_candidate':'新名称候选／待核别名','composite_review':'组合条目／待拆分'}
  counts=Counter(r['match_status'] for r in rows)
  assert set(counts).issubset(states), 'Unknown official road match state'
+ source_refs={url:'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8] for url in sorted({r['source_url'] for r in rows})}
  lines=['### 官方专题道路清单补充 TODO','',f"另收录 **{len(rows)} 条官方原表记录**：2022年主要道路范围及2023年绿化特色道路名录。包含 {counts['existing_name']} 条已有名称初步匹配、{counts['new_name_candidate']} 条新名称候选、{counts['composite_review']} 条组合名称待拆分；均不等于新增独立道路数，不能与上方名称数量直接相加。两份专题清单均不是全市道路底册，文件年代也不代表2026年现状已核验。",'',
  '以下仅整理道路名称、原表范围和明确区属，继续查沿街建筑及照片／文字资料。区属缺项保留待核，不从道路名推断。'+link('来源、匹配依据及机器可读记录',prefix+'official-road-leads.json'),'','<details><summary>展开全部官方道路／路段资料待办</summary>','','| ID | 原表道路名称 | 明确区属 | 原表范围 | 来源 | TODO |','|---|---|---|---|---|---|']
  lines[4:4]=[f"名称复核已覆盖其余 {len(reviewed)} 个源行，提出 {review['summary']['proposed_new_name_leads_distinct_strings']} 个待查名称；仅为名称关联及拆分建议，不增加已确认道路数。组合范围仍属于原表整组，不能赋给每个拆分名称。"+link('逐行复核与未解项',prefix+'official-road-reconciliation.json'),'']
@@ -54,8 +55,9 @@ def official_road_lines(prefix):
     targets.append(t['road_name']+'（'+label+('：'+names if label=='别名待核' else '')+'）')
    todo+='；名称复核：'+('、'.join(targets) if targets else rr['unresolved_reason'])
    if rr['review_type']=='optional_parenthesis_interpretation':todo+='；单项括号展开仍待确认'
-  lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell('、'.join(r['districts']))} | {cell(r['extent'])} | {link('官方原表',r['source_url'])} | {cell(todo)} |")
+  lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell('、'.join(r['districts']))} | {cell(r['extent'])} | [官方原表][{source_refs[r['source_url']]}] | {cell(todo)} |")
  lines+=['','</details>','']
+ lines += [f'[{ref}]: <{url}>' for url,ref in source_refs.items()]+['']
  return lines
 
 def map_road_label_lines(prefix):
@@ -85,12 +87,13 @@ def map_road_label_lines(prefix):
  for r in unmatched:
   assert set(r['label_review_flags']).issubset(flags), 'Unknown map label review flag'
   review_flags='、'.join(flags[f] for f in r['label_review_flags'])+'；class：'+'／'.join(r['classes'])
-  refs=' · '.join(link(tile_id,tiles[tile_id]['source_url']) for tile_id in r['tile_ids'])
+  refs=' · '.join(f"[{tile_id}][MR-{tile_id.replace('/','-')}]" for tile_id in r['tile_ids'])
   todo=r['todo']
   if r['reconciliation_proposed_name_matches']:
    todo+='；官方待查名称同名：'+'、'.join(x['name'] for x in r['reconciliation_proposed_name_matches'])+'（实体仍待核）'
   lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(review_flags)} | {r['occurrence_count']} | {refs} | {cell(todo)} |")
  lines+=['','</details>','']
+ lines += [f"[MR-{tile_id.replace('/','-')}]: <{t['source_url']}>" for tile_id,t in tiles.items()]+['']
  return lines
 
 def build():
