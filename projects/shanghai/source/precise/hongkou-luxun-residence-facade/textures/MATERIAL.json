@@ -1,0 +1,118 @@
+{
+  "schema": "luxun-original-stone-pbr-v1",
+  "author": "agent",
+  "license": "MIT",
+  "random_generator": "NumPy PCG64",
+  "random_seed": 13209,
+  "source_photograph_pixels_read": false,
+  "surface_scan": false,
+  "scope": "Original generic fine pebble-dash material, visually informed by a reference photograph. Colour, grain size and relief are estimates, not measurements of Lu Xun facade stone.",
+  "dimensions_px": [
+    512,
+    512
+  ],
+  "repeat_metres": [
+    0.4,
+    0.4
+  ],
+  "pixel_pitch_m": 0.00078125,
+  "periodic_method": "Jittered pebble centres on a torus; every ellipse deposit wraps modulo512; matrix smoothing and height derivatives use wrapped neighbours. Pixel-centre rows0and511 need not be identical: their adjacency is an ordinary one-pixel toroidal step, not a duplicated gutter.",
+  "sampler": {
+    "magFilter": 9729,
+    "minFilter": 9987,
+    "wrapS": 10497,
+    "wrapT": 10497
+  },
+  "baseColorFactor": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "roughnessFactor": 1,
+  "metallicFactor": 1,
+  "normalScale": 0.35,
+  "occlusionStrength": 0.35,
+  "normal_height_scope": "The encoded height gradients are attenuated by normalScale0.35 at render time. This is a conservative shading choice, not displacement geometry or a measured surface relief.",
+  "color_spaces": {
+    "basecolor": "sRGB",
+    "normal": "Non-Color",
+    "orm": "Non-Color"
+  },
+  "channels": {
+    "orm": {
+      "R": "ambient occlusion",
+      "G": "roughness",
+      "B": "metallic, exactly0"
+    }
+  },
+  "uv_contract": {
+    "raw_gltf": "For a vertical facade: U=local horizontal metres/0.40; V=-height metres/0.40. Keep unbounded UVs and REPEAT, with no per-part normalization, modulo or atlas-cell clamping.",
+    "png_rows": "Top-to-bottom row index increases with stored PNG V.",
+    "encoded_normal": "Normalize(-dH/dU_metres, +dH/dPNG_row_metres, 1), then encode from[-1,1]to[0,255].",
+    "current_no_tangent_web_frame": "Three derivative frame follows raw+U right, raw+V down, outward normal. Frozen GLTFLoader negates normalScale.y when TANGENT is absent; effective scale is[+0.35,-0.35].",
+    "standard_blender_import": "Importer converts V to1-V and keeps the green channel; its upward bitangent gives the same physical bump. Do not manually invert G or add another V flip.",
+    "physical_interpretation": "On the left flank of a raised pebble the normal leans left; on the upper flank it leans up. These signs must be checked on the final renderer, not inferred merely from a normal map thumbnail.",
+    "if_explicit_tangents_added": "Re-audit the actual tangent frame and loader behavior. The current tested contract is for primitives without TANGENT."
+  },
+  "statistics": {
+    "generated_grain_count": 8100,
+    "visible_grain_count": 8090,
+    "aggregate_pixel_coverage": 0.7399940490722656,
+    "input_grain_major_diameter_m": {
+      "min": 0.0030416570766295704,
+      "max": 0.007943378280879859,
+      "mean": 0.005219008678826378
+    },
+    "height_field_m": {
+      "min": -2.6757678500427942e-05,
+      "max": 0.0010488643505174025,
+      "mean": 0.00037689676618298077
+    },
+    "albedo_channel_mean_srgb": [
+      0.4329264556105114,
+      0.4106922522718896,
+      0.3673064582045093
+    ],
+    "roughness_min_max": [
+      0.8104603070217761,
+      0.9676176300566713
+    ],
+    "ao_min_max": [
+      0.72,
+      1.0
+    ],
+    "normal_z_min": 0.7614974651519129,
+    "normal_length_max_error_before_encoding": 2.220446049250313e-16
+  },
+  "generator_checks": {
+    "finite_height": true,
+    "normal_positive_hemisphere": true,
+    "metallic_channel_entirely_zero": true,
+    "all_images_rgb_uint8_512": true,
+    "height_periodic_derivative_uses_wrapped_neighbors": true
+  },
+  "files": [
+    {
+      "file": "luxun-original-stone-basecolor.png",
+      "bytes": 407905,
+      "sha256": "16816807aba93b92b10f6420c6b63178f5374246ca32a8628c1618894fc7a482"
+    },
+    {
+      "file": "luxun-original-stone-normal.png",
+      "bytes": 532436,
+      "sha256": "da51ba0a018d563a7af1f9cf376eeb6847c2f08ac4bc74e293341cc850089f11"
+    },
+    {
+      "file": "luxun-original-stone-orm.png",
+      "bytes": 361218,
+      "sha256": "027e371788f8bab006798611655a832f17b563a2355946584c0c43c5d1650b09"
+    }
+  ],
+  "generator_sha256": "f3af88ab0fbd249feca69d961ebfc73127f6765eb1d7fb01507487b26466e83a",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "Pillow": "12.3.0"
+  }
+}
