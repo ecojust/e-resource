@@ -1,0 +1,489 @@
+{
+  "schema": "chongming-yimen-visible-features.v1",
+  "reviewed_utc": "2026-10-29T17:36:24.072479+00:00",
+  "queue_number": 14,
+  "name": "仪门",
+  "scope": "现有仪门正面照片的可见构件和遮挡审查；像素范围不是测绘控制点，文献尺寸及未见部分分别保留。",
+  "basis": {
+    "committed_reference_report": "projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json",
+    "reference_report_sha256": "9961e30d0f25977c75d5ee9b7d32a36b188c096a9001a861ee12d5bbd81a8c9a",
+    "image_sha256": "5df50470b57599bf86df1c02c003a5f021600ef747e118f580f052f0b028a5cc",
+    "image_bytes": 473576,
+    "image_dimensions_px": [
+      1920,
+      1280
+    ],
+    "image_url": "https://p8.itc.cn/q_70/images01/20230423/446708a3cce94c47aed73bac1e777b14.jpeg",
+    "source_article_url": "https://www.sohu.com/a/669412809_121124600",
+    "source_article_publication_date": "2023-04-24",
+    "image_capture_date": "未标明，不能把文章日期或图片URL目录日期当作拍摄日，也不能声称2026现状",
+    "identity_evidence": [
+      "相邻题注仪门",
+      "图中竖匾可读仪门"
+    ],
+    "license": "未找到明确开放许可；仅参考，不再分发或贴入模型",
+    "image_edited_or_redistributed": false
+  },
+  "pixel_coordinate_convention": {
+    "origin": "原图左上角",
+    "axes": "x向右，y向下",
+    "boxes": "[x_min,y_min,x_max,y_max]，人工观察的大约范围，不是测绘控制点",
+    "typical_boundary_uncertainty_px": "约±5–20，弯曲边界和遮挡处更大",
+    "metric_conversion": "不将像素比例换算为真实米制尺寸，不用本照片否定或修改文献数值"
+  },
+  "documented_dimensions_preserved": {
+    "source_url": "https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm",
+    "short_excerpt": "位于棂星门东、儒学署大门北。……2001年崇明县人民政府投资修复，面阔10.6米，进深9.7米，高9.07米，建筑面积102.8平方米。",
+    "facade_width_m": 10.6,
+    "depth_m": 9.7,
+    "height_m": 9.07,
+    "reported_area_m2": 102.8,
+    "repair_year_as_stated": 2001,
+    "boundary_limit": "文献未说明面阔／进深是柱线、墙线或外包尺寸；高度起终点未说明。",
+    "bays_in_document": null,
+    "period_limit": "旧馆按2001年记修复；2021文另述第三期工程2001年4月至2002年6月，保留工程范围／起止差别。"
+  },
+  "visible_segmentation_vs_bays": {
+    "visible_three_regions": {
+      "left_window_zone": [
+        533,
+        633,
+        789,
+        821
+      ],
+      "middle_curtained_door_zone": [
+        817,
+        628,
+        1155,
+        917
+      ],
+      "right_window_zone": [
+        1184,
+        633,
+        1435,
+        821
+      ]
+    },
+    "interpretation": "两处内柱／立向构件把照片正面分成左、中、右三个视觉区。",
+    "not_established": "文献没有明确仪门开间数量；本图未给完整柱网及后部支承，不能把三视觉区无说明地写成已测绘三开间，也不由中央露出的四块字段推定总门扇数。"
+  },
+  "features": [
+    {
+      "id": "white-curved-end-walls",
+      "name": "两端白色曲线端墙",
+      "visible_count": 2,
+      "count_scope": "画面左右各一组白色墙体外露轮廓，非确认全墙构造或进深",
+      "regions_px": {
+        "photo_left": [
+          433,
+          296,
+          649,
+          926
+        ],
+        "photo_right": [
+          1321,
+          295,
+          1538,
+          927
+        ]
+      },
+      "observations": [
+        "左右均高出可见瓦坡，靠近横向脊部有高起端头；向画面外侧沿弧线降低，在外端短檐口附近略上扬。",
+        "上缘为深灰压顶／覆瓦状细带，主体白色，可见灰黑风化痕。",
+        "每端墙前向窄面可见一条深色长条装饰区，下方另有一处小方形装饰区。"
+      ],
+      "subregions_px": {
+        "left_high_tip": [
+          583,
+          296,
+          650,
+          392
+        ],
+        "right_high_tip": [
+          1322,
+          295,
+          1390,
+          391
+        ],
+        "left_outer_end": [
+          432,
+          437,
+          486,
+          555
+        ],
+        "right_outer_end": [
+          1482,
+          438,
+          1538,
+          555
+        ],
+        "left_dark_inset": [
+          449,
+          555,
+          492,
+          620
+        ],
+        "right_dark_inset": [
+          1470,
+          555,
+          1510,
+          619
+        ],
+        "left_small_square_inset": [
+          473,
+          627,
+          500,
+          652
+        ],
+        "right_small_square_inset": [
+          1469,
+          627,
+          1496,
+          652
+        ]
+      },
+      "uncertainties": [
+        "不由单正面图确定墙体深度、隐藏背面、压顶截面或准确曲率。",
+        "曲线端墙是可见形态描述；本轮不据形似给出已证实的地域型制或结构名称。"
+      ],
+      "confidence": "high for two visible wall outlines; approximate pixel bounds"
+    },
+    {
+      "id": "visible-roof-plane",
+      "name": "可见正向瓦坡及檐口",
+      "visible_count": 1,
+      "count_scope": "一大片面向相机的连续瓦坡；不代表屋顶只有一坡",
+      "regions_px": {
+        "roof_tiles": [
+          482,
+          386,
+          1492,
+          529
+        ],
+        "front_eave_edge": [
+          482,
+          500,
+          1492,
+          533
+        ],
+        "upper_horizontal_ridge_band": [
+          632,
+          340,
+          1341,
+          389
+        ]
+      },
+      "observations": [
+        "深灰瓦垄顺坡由上部落向近前檐口，横向紧密重复。",
+        "瓦坡近檐处呈缓曲面，前沿可见重复的弧形瓦端。",
+        "顶部横向脊带中有一列重复小孔／瓦片状装饰；两端接高起端墙。",
+        "檐下可见连续深褐色木构带及零散短构件。"
+      ],
+      "uncertainties": [
+        "没有给瓦垄、瓦片、小孔或椽头精确总数：现分辨率、曲面透视及边缘汇合不足以可靠逐项辨识。",
+        "脊顶、后坡、后檐、完整侧向坡度及支承关系不在本图核验范围。",
+        "不由这一可见瓦坡直接判定完整屋顶型式或重建隐藏后坡。"
+      ],
+      "confidence": "high for one visible tiled surface and repeated courses; hidden topology unresolved"
+    },
+    {
+      "id": "inner-uprights",
+      "name": "两处内柱／立向构件位置",
+      "visible_count": 2,
+      "count_scope": "正立面内侧可辨的两处立向支承／柱位，不是建筑总柱数",
+      "regions_px": {
+        "photo_left": [
+          789,
+          593,
+          816,
+          919
+        ],
+        "photo_right": [
+          1158,
+          593,
+          1184,
+          919
+        ]
+      },
+      "observations": [
+        "两处均呈红褐色竖向面，附绿色竖向联字。",
+        "它们在视觉上把正面木构分成左窗区、中门区、右窗区。",
+        "上接檐下木构带，下部靠近门前平台。"
+      ],
+      "uncertainties": [
+        "表面联板和柱身的边界并非处处可分，不能从本图确定柱身圆方截面。",
+        "下端及柱脚局部被植物、低墙或平台界面遮挡；不能补出完整石础。",
+        "外端窗框／端墙边的细竖线不能自动计为同样独立承重柱。"
+      ],
+      "confidence": "high for two visible inner upright positions"
+    },
+    {
+      "id": "side-lattice-fields",
+      "name": "左右侧窗竖向格窗字段",
+      "visible_count": 12,
+      "count_scope": "左6、右6，按较粗竖框间的上部格窗字段计数；不保证每块是独立可开合窗扇",
+      "regions_px": {
+        "photo_left_upper_lattice": [
+          550,
+          650,
+          781,
+          795
+        ],
+        "photo_right_upper_lattice": [
+          1190,
+          650,
+          1421,
+          796
+        ],
+        "left_window_assembly": [
+          540,
+          633,
+          790,
+          820
+        ],
+        "right_window_assembly": [
+          1184,
+          633,
+          1435,
+          821
+        ]
+      },
+      "observations": [
+        "两侧各能辨出6块窄长竖向格窗字段。",
+        "字段内为密集、近规则的小矩形格眼，上方有横向实木带，周边深褐框。",
+        "左右窗区下方可见部分白色墙面。"
+      ],
+      "uncertainties": [
+        "植物从约y744起遮住窗下缘和低墙，不能把12块字段都称作完整露出的窗扇。",
+        "没有逐数小格眼／榫口／开启五金，也不恢复植物背后的窗下构件。"
+      ],
+      "confidence": "high; independent second visual review agreed on 6 per side"
+    },
+    {
+      "id": "central-uncovered-lattice-fields",
+      "name": "门帘两侧未遮格扇字段",
+      "visible_count": 4,
+      "count_scope": "中央区域左2、右2的上部格扇字段；不是中央门总扇数",
+      "regions_px": {
+        "left_field_1": [
+          834,
+          651,
+          875,
+          794
+        ],
+        "left_field_2": [
+          884,
+          651,
+          921,
+          794
+        ],
+        "right_field_1": [
+          1050,
+          651,
+          1087,
+          794
+        ],
+        "right_field_2": [
+          1097,
+          651,
+          1136,
+          794
+        ],
+        "central_assembly": [
+          817,
+          633,
+          1155,
+          917
+        ]
+      },
+      "observations": [
+        "门帘两边各能辨出两块上部格扇字段，下方有深褐色实心／框板区。",
+        "左侧下板被窄展示牌局部遮挡，右侧下板露出较多。"
+      ],
+      "uncertainties": [
+        "格扇是外观字段称呼，不能据静态正面照片证明每块的开合方式。",
+        "门帘后可有门洞或门扇，具体数量、边界、门槛与门内情况均不可见，不推算为两扇或其他确定数量。"
+      ],
+      "confidence": "high for four uncovered upper fields; covered center unknown"
+    },
+    {
+      "id": "central-curtain",
+      "name": "中央浅褐色门帘",
+      "visible_count": 1,
+      "regions_px": {
+        "curtain": [
+          923,
+          628,
+          1049,
+          907
+        ],
+        "top_support": [
+          920,
+          624,
+          1053,
+          635
+        ]
+      },
+      "observations": [
+        "一道浅褐／米色垂帘由上方横杆悬下，纵向褶皱明显。",
+        "帘下部接近深褐平台／门槛区域，遮住中央开口。"
+      ],
+      "uncertainties": [
+        "不计帘条或褶皱总数，不补造后方门扇、门洞深度或室内。"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "sign-and-upper-wood-band",
+      "name": "仪门匾与檐下木构带",
+      "visible_count": 1,
+      "count_scope": "一块竖向匾额；横梁／枋的结构根数不由此字段给出",
+      "regions_px": {
+        "plaque": [
+          958,
+          528,
+          1011,
+          615
+        ],
+        "dark_eave_band": [
+          510,
+          528,
+          1462,
+          594
+        ],
+        "horizontal_front_wood_band": [
+          527,
+          589,
+          1448,
+          643
+        ]
+      },
+      "observations": [
+        "竖匾两字可读仪门，与来源文章相邻题注相互支持身份。",
+        "匾底及周边边框呈褐金色，底色蓝绿色；文字竖排。",
+        "檐下为深色横向木构，门窗上方还有较亮褐色横带。"
+      ],
+      "uncertainties": [
+        "阴影下的梁枋、装饰构件和接头未逐件分清，不能凭黑暗区域补齐斗栱或复杂支承。"
+      ],
+      "confidence": "high for plaque and visible horizontal bands"
+    },
+    {
+      "id": "front-platform-and-steps",
+      "name": "门前石台阶／平台",
+      "visible_count": null,
+      "count_scope": "可见短平台及数道水平前缘；不报告完整踏步总数",
+      "regions_px": {
+        "visible_front_steps": [
+          788,
+          914,
+          1181,
+          978
+        ]
+      },
+      "observations": [
+        "中央门区前方有浅灰／浅褐石质外观的短平台与阶面，左右边缘局部可见。",
+        "至少可分辨上下不同高度的水平前缘，但中前方大盆和两侧植物遮挡界面。"
+      ],
+      "uncertainties": [
+        "不能确认完整级数、两侧端部做法、踏步进深、各级高度或全部石材接缝。"
+      ],
+      "confidence": "medium for exposed outline; count withheld"
+    }
+  ],
+  "occlusions": [
+    {
+      "object": "中央门帘",
+      "approximate_region_px": [
+        923,
+        628,
+        1049,
+        907
+      ],
+      "hides": "中央开口、门扇数量与后方细部"
+    },
+    {
+      "object": "左侧盆景／苏铁状植物",
+      "approximate_region_px": [
+        548,
+        752,
+        812,
+        979
+      ],
+      "hides": "左侧窗下缘、白色低墙、靠内柱下端与台阶侧部"
+    },
+    {
+      "object": "右侧盆景／苏铁状植物",
+      "approximate_region_px": [
+        1150,
+        739,
+        1434,
+        981
+      ],
+      "hides": "右侧窗下缘、低墙、内柱下端与台阶侧部"
+    },
+    {
+      "object": "中央左下展示牌",
+      "approximate_region_px": [
+        859,
+        816,
+        892,
+        921
+      ],
+      "hides": "左侧中央格扇下部板面"
+    },
+    {
+      "object": "前景大盆",
+      "approximate_region_px": [
+        877,
+        948,
+        1094,
+        1233
+      ],
+      "hides": "中央前方石阶下缘与地坪部分；不属于建筑固定构件"
+    },
+    {
+      "object": "左右树冠及灌木",
+      "approximate_region_px": [
+        [
+          1,
+          175,
+          553,
+          1015
+        ],
+        [
+          1385,
+          244,
+          1919,
+          995
+        ]
+      ],
+      "hides": "两侧邻接关系、院墙与局部外侧墙身；不据此补足侧面或后坡"
+    }
+  ],
+  "independent_visual_crosscheck": {
+    "performed": true,
+    "scope": "另一个只读审查者独立看同一原图，核对窗板、帘两侧字段、内柱和遮挡",
+    "agreed_counts": [
+      "左侧6块上部格窗字段",
+      "右侧6块上部格窗字段",
+      "中央帘两侧各2块未遮上部字段",
+      "2处可见内柱位置"
+    ],
+    "not_an_independent_source": "是同一照片的第二次人工观察，不增加照片外的证据。"
+  },
+  "unresolved": [
+    "完整屋顶型式、后坡和后檐",
+    "后立面与侧立面",
+    "完整柱网、柱总数及柱身截面",
+    "中央遮帘后的门扇数量与分格",
+    "精确瓦垄/格眼总数、各层材料截面",
+    "完整台阶级数与尺度",
+    "图像对应的准确拍摄年份及其与文献修复期关系"
+  ],
+  "supported_candidate_detail": [
+    "照片可见的两曲线白色端墙轮廓、一个正向瓦坡、重复瓦垄外观和横向脊带",
+    "两内柱位置、左右各6上部格窗字段、中央帘两侧各2未遮字段、仪门竖匾",
+    "门帘、植被遮挡区域继续保留未知，不为复原完整性补造隐蔽构件"
+  ]
+}

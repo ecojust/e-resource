@@ -61,3 +61,5 @@ python projects/shanghai/source/precise/chongming-chaozong-paifang/source/verify
 ```
 
 主代理实际查看斜侧、背面及最终网页图，独立复核四件资产大小/SHA256、三档GLB东座身份与共用假设，以及几何/原生报告的资产对应；见[视觉复核](root-visual-review.json)。网页题名说明采用直接描述，资料中的旧资产ID解释保留在来源文档。
+
+[固定版本在线预览](https://rawcdn.githack.com/ecojust/e-resource/75557ce32a40e4757eaca0cce49d896a53917731/projects/shanghai/east-paifang.html)已实际加载，东座身份、92,848三角面、GLB哈希以及同版本来源中的空匾、共用假设来源核对通过，网页错误数为0。见[公开网页记录](public-browser.json)；仓库根目录可运行`node projects/shanghai/data/audit/east-paifang-v1/qa-public.cjs`复验。
