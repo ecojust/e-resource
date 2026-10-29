@@ -1,0 +1,28 @@
+const {chromium}=require('playwright');
+const fs=require('node:fs');
+(async()=>{
+const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];
+page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url())});
+await page.goto('http://127.0.0.1:8777/east-paifang.html');
+await page.waitForFunction(()=>window.eastPaifangViewer?.getState().status==='ready',null,{timeout:60000});
+const full=await page.evaluate(()=>window.eastPaifangViewer.getState());
+if(full.modelId!=='chongming-chaozong-paifang'||!(await page.locator('h1').innerText()).includes('东牌坊'))throw Error('East Paifang identity mismatch');
+await page.screenshot({path:'/tmp/east-paifang-browser.png'});
+await page.selectOption('#detail','lod');await page.waitForFunction(()=>window.eastPaifangViewer.getState().variant==='lod');
+const lod=await page.evaluate(()=>window.eastPaifangViewer.getState());
+await page.selectOption('#detail','full');await page.waitForFunction(()=>window.eastPaifangViewer.getState().variant==='full');
+for(const id of ['front','rear','oblique','fit'])await page.click('#'+id);
+await page.click('#enter-model-walk');
+await page.waitForFunction(()=>window.candidateWalk.getState().active);
+const start=await page.evaluate(()=>window.candidateWalk.getState());
+const expectedBounds={minX:-4.594454574584961,maxX:4.594454574584961,minZ:-1.7944543838500977,maxZ:1.7944543838500977};
+if(!start.bounds||Object.entries(expectedBounds).some(([k,v])=>Math.abs(start.bounds[k]-v)>.0001)||Math.abs(full.distance-23)>.001)throw Error('East Paifang camera or walk bounds mismatch');
+await page.keyboard.down('w');await page.waitForFunction(()=>window.candidateWalk.getState().distance>.2,null,{timeout:30000});await page.keyboard.up('w');
+const moved=await page.evaluate(()=>window.candidateWalk.getState());
+if(Math.hypot(moved.position.x-start.position.x,moved.position.z-start.position.z)<.05)throw Error('Walk did not move');
+await page.keyboard.press('Escape');await page.waitForFunction(()=>!window.candidateWalk.getState().active);
+if(errors.length||full.triangles<=lod.triangles)throw Error(JSON.stringify({errors,full,lod}));
+const result={full,lod,walkBounds:start.bounds,errors,checked:['East Paifang identity and SHA256-checked GLB loading','full/lod/full switching','four camera controls and expected fit distance','model-derived outdoor bounds, walk entry, forward motion and Escape exit']};
+fs.writeFileSync('/tmp/east-paifang-browser.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});
