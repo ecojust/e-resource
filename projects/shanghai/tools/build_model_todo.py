@@ -190,6 +190,7 @@ def main():
  if START in s:
   before,rest=s.split(START,1);_,after=rest.split(END,1);updated=before+block+after
  else:updated=s.replace('## 上海全景建模',block+'\n\n## 上海全景建模',1)
+ assert len(updated.encode('utf-8'))<=500_000, 'README risks GitHub preview truncation; shorten repeated text/links while retaining all TODO rows'
  street=DATA/'STREETS.md';street_text=street_index()
  if a.check:
   assert updated==s,'README TODO is stale; run build_model_todo.py'

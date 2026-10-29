@@ -55,3 +55,5 @@ gltfpack解码后的网页与远景保持两命名组件、放置后面数、有
 南北合计15.7米仍待分段、入口和转角资料；没有均分7.85米或制作虚构完整矩形。文献面积191.75平方米是全部范围，模型两基座合计152.5平方米另记。两图拍摄时点与侧别未知，不能据结构共性声称真实两侧一致；碑文、原53通逐块库存、所有准确柱距/高度及原址配准均未完成。色材、瓦数、铺装、背面为估计，红毯、灯笼、人物、院树等未建模。
 
 主代理独立核对四资产大小／SHA、两独立原生mesh与文献原文，实看最终斜侧、廊下近景及网页图；见[root-visual-review.json](root-visual-review.json)。
+
+固定提交的[公开预览](https://rawcdn.githack.com/ecojust/e-resource/9c2ae34985b47c260fd230b602c855d11ec46176/projects/shanghai/stele-corridors.html)已通过真实浏览器加载，232,696面、模型校验、两长边范围和展示间距说明均匹配，异常为0；见[public-browser.json](public-browser.json)和[qa-public.cjs](qa-public.cjs)。
