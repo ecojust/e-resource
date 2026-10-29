@@ -12,3 +12,5 @@
 网页复测：在`projects/shanghai`运行`python -m http.server 8770`，仓库根目录执行`node projects/shanghai/data/audit/minghuan-shrine-v1/qa-browser.cjs`，需Playwright及`/usr/bin/chromium`，输出位于`/tmp/minghuan-shrine-browser.*`。
 
 [最终视觉复核](root-visual-review.json)：已查看最终斜侧、背面和网页截图，确认踢脚条两端黑块已消失；此项仅验收候选显示质量，不证明估计屋顶或门窗符合实物。
+
+公开预览检查：[固定提交页面](https://rawcdn.githack.com/ecojust/e-resource/82f2d21330915b6a1b96c0bbc6b87ea6db48adc0/projects/shanghai/minghuan-shrine.html) 已成功加载25,324三角面的完整模型，查看器SHA256校验通过，无页面或资源请求错误。首次访问如出现托管方提示，点击 **Open the page**。记录见 [public-browser.json](public-browser.json)，复测命令为 `node projects/shanghai/data/audit/minghuan-shrine-v1/qa-public.cjs`。
