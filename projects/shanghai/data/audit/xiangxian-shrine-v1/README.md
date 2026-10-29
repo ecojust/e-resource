@@ -25,3 +25,5 @@
 公开预览检查：[固定提交页面](https://rawcdn.githack.com/ecojust/e-resource/82f2d21330915b6a1b96c0bbc6b87ea6db48adc0/projects/shanghai/xiangxian-shrine.html) 已成功加载25,324三角面的完整模型，查看器SHA256校验通过，无页面或资源请求错误。首次访问如出现托管方提示，点击 **Open the page**。记录见 [public-browser.json](public-browser.json)，复测命令为 `node projects/shanghai/data/audit/xiangxian-shrine-v1/qa-public.cjs`。
 
 [最终视觉复核](root-visual-review.json)：已查看最终斜侧、背面与网页截图，接缝显示正常且乡贤祠名称、共用假设范围明确；不把两件候选外形相同当作实物一致的证据。
+
+公开预览检查：[固定提交页面](https://rawcdn.githack.com/ecojust/e-resource/67d54f87a457fe82678c7b98fdb0b3cad4f83b6d/projects/shanghai/xiangxian-shrine.html) 已成功加载完整模型并通过SHA256及乡贤祠身份校验，无页面或资源请求错误；同版本来源登记指向区政府2021年方位原文。首次访问如遇托管提示，请点击 **Open the page**。记录见 [public-browser.json](public-browser.json)，复测命令为 `node projects/shanghai/data/audit/xiangxian-shrine-v1/qa-public.cjs`。
