@@ -48,3 +48,5 @@ Chromium核对仪门身份、按manifest大小和SHA校验GLB，完成近景→�
 复验命令见[来源与构建](../../../source/precise/chongming-yimen/README.md)。
 
 主代理独立核对最终四资产大小／SHA、文献原文与原生／网页记录，并实看最终正面、背面和网页图；见[root-visual-review.json](root-visual-review.json)。
+
+固定提交的[公开预览](https://rawcdn.githack.com/ecojust/e-resource/9eb58f131439840c0a9aa01e8c6d3c7f6bafcd1c/projects/shanghai/yimen.html)已通过真实浏览器加载；模型身份、57,896面、GLB校验与尺寸／照片来源均匹配，异常为0。见[public-browser.json](public-browser.json)和[qa-public.cjs](qa-public.cjs)。
