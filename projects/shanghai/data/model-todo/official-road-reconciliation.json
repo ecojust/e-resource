@@ -1,0 +1,3856 @@
+{
+  "schema": "official-road-reconciliation-proposal-v1",
+  "reviewed_utc": "2026-10-29T17:09:53.907057+00:00",
+  "scope": "Review of 42 new-name candidates and 43 composite source rows against the recorded 1,038 road-name baseline. Associations remain proposals, not verified physical road identities, full-road coverage or merged task statuses.",
+  "baseline": {
+    "file": "projects/shanghai/data/model-todo/discovered-streets.json",
+    "sha256": "13b0dc8cfb1758af21f8da58311c599e45d60e9379dc73e50eae3d73f19e2c4d",
+    "road_count": 1038
+  },
+  "source": {
+    "file": "projects/shanghai/data/model-todo/official-road-leads.json",
+    "sha256": "afde085f6bdb02bae313d0cc17027104b43f14512cb3622f60bbf17f4f15eb98",
+    "source_row_count": 186
+  },
+  "method": [
+    "OpenCC simplified names and removal of trailing page-title disambiguation only for exact name matching.",
+    "Enumerated parenthetical groups expanded literally; single-item parentheses interpreted as optional text but flagged for confirmation.",
+    "No fuzzy edit-distance matches automatically accepted; close names alone are insufficient alias evidence.",
+    "Ground-road ranges under elevated or ring-system names retained separately; no equivalence with elevated/highway records.",
+    "Districts copied only from the official row; missing districts remain empty.",
+    "Group extents remain attached to original source rows; not assigned as full extent of every split target."
+  ],
+  "summary": {
+    "reviewed_source_rows": 85,
+    "original_classes": {
+      "new_name_candidate": 42,
+      "composite_review": 43
+    },
+    "review_types": {
+      "literal_new_name_lead": 36,
+      "optional_parenthesis_interpretation": 17,
+      "explicit_enumerated_parentheses": 19,
+      "character_variant_alias_candidate": 1,
+      "elevated_name_vs_ground_scope": 3,
+      "ring_system_ground_scope": 3,
+      "national_route_segment_unresolved": 4,
+      "district_qualified_alias_candidate": 1,
+      "segment_qualifier_removed_for_name_lead": 1
+    },
+    "rows_with_exact_existing_name_target": 32,
+    "proposed_new_name_leads_distinct_strings": 52,
+    "proposed_new_name_target_occurrences": 52,
+    "physical_new_road_count": null,
+    "rows_unresolved_for_splitting": 10
+  },
+  "new_name_intake_proposals": [
+    {
+      "name": "东方美谷大道",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-133",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "沪杭公路-林海公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "丰和路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-017",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "滨江大道-陆家嘴西路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "人民北路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-013",
+          "districts": [
+            "松江区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "新松江路-思贤路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "仙霞西路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-079",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "延安西路-环西一大道"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "凌河路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-008",
+          "districts": [
+            "浦东新区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "利津路-杨高路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "古羊路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-003",
+          "districts": [
+            "长宁区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "伊犁南路-姚虹路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "周家渡路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-030",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "世博大道-耀华路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "嘉戬公路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-130",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "博乐南路-澄浏中路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "嘉松中路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-138",
+          "districts": [],
+          "basis": "explicit_enumerated_parentheses",
+          "extent": "南期昌路-沪宜公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "嘉松北路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-138",
+          "districts": [],
+          "basis": "explicit_enumerated_parentheses",
+          "extent": "南期昌路-沪宜公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "嘉松南路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-138",
+          "districts": [],
+          "basis": "explicit_enumerated_parentheses",
+          "extent": "南期昌路-沪宜公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "塔城东路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-129",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "澄浏中路-沪宜公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "富城路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-018",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "国际会议中心-陆家嘴西路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "富民沙路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-016",
+          "districts": [
+            "崇明区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "新盟路-东江路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "尚北路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-009",
+          "districts": [
+            "宝山区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "潘广路-福双路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "崇明大道",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-147",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "蟠龙公路-鼓浪屿路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "崧泽大道",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-143",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "嘉闵高架-青赵公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "广中西路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-105",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "沪太路-中山北一路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "广富林路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-136",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "沪松公路-辰塔路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "新开河北路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-048",
+          "districts": [],
+          "basis": "explicit_enumerated_parentheses",
+          "extent": "人民路-中山东二路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "新开河南路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-048",
+          "districts": [],
+          "basis": "explicit_enumerated_parentheses",
+          "extent": "人民路-中山东二路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "新成路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-128",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "嘉戬公路-胜竹路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "明珠塔路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-023",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "滨江大道-丰和路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "望园路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-134",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "奉浦大道-南港路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "杭州湾大道",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-141",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "G15高速出口-沪杭公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "桃浦路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-098",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "曹杨路-定边路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "武威东路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-099",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "真北路-真南路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "武威路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-099",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "真北路-真南路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "沈砖公路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-137",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "千新公路-沪松公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "浦明路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-024",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "东昌路-龙阳路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "漕廊公路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-142",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "新卫高速-朱平公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "漕盈路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-012",
+          "districts": [
+            "青浦区"
+          ],
+          "basis": "remove explicit segment qualifier 延长段; preserve raw name",
+          "extent": "盈绿路-淀山湖大道"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "瑞宁路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-068",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "龙华东路-龙腾大道"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "申港大道",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-009",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "环湖西一路-护城环路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "盈港路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-144",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "涞港路-青赵公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "盛夏路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-007",
+          "districts": [
+            "浦东新区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "金秋路-银冬路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "耀龙路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-027",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "世博大道-中环"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "联航路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-010",
+          "districts": [
+            "闵行区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "浦星公路-恒南路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "花博大道",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-149",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "全线"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "蟠龙公路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-148",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "崇明大道-花博大道"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "解放东路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-135",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "环城东路-金海公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "解放路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-135",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "环城东路-金海公路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "诸光路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-145",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "沪青平公路-崧泽大道"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "迎宾三路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-080",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "外环-七莘路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "通耀路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-026",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "耀龙路-长清北路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "金科路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-020",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "龙东大道-锦绣东路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "锦绣东路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-011",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "金科路-川杨河"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "长清北路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-029",
+          "districts": [],
+          "basis": "optional_parenthesis_interpretation",
+          "extent": "世博大道-成山路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "陆家嘴环路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-021",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "东园路-花园石桥路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "陆家嘴西路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-022",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "滨江大道-陆家嘴环路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "青溪路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-main2022-078",
+          "districts": [],
+          "basis": "literal_official_road_name",
+          "extent": "哈密路-仙霞路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    },
+    {
+      "name": "龙航路",
+      "status": "proposal_only_pending_alias_and_duplicate_review",
+      "source_rows": [
+        {
+          "source_row_id": "official-green2023-015",
+          "districts": [
+            "金山区"
+          ],
+          "basis": "literal_official_road_name",
+          "extent": "海丰路-海盛路"
+        }
+      ],
+      "may_increment_physical_road_count": false
+    }
+  ],
+  "records": [
+    {
+      "source_row_id": "official-main2022-009",
+      "original_name": "申港大道",
+      "original_extent": "环湖西一路-护城环路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "申港大道",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-011",
+      "original_name": "锦绣（东）路",
+      "original_extent": "金科路-川杨河",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "锦绣路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-35837624effe",
+              "name": "锦绣路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%94%A6%E7%BB%A3%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "锦绣东路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-013",
+      "original_name": "杨高（北、中、南）路",
+      "original_extent": "港城路-外环线",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "杨高北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-9bb072be79b2",
+              "name": "楊高北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%A5%8A%E9%AB%98%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "杨高中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-4589c1fdb9ac",
+              "name": "杨高中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%9D%A8%E9%AB%98%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "杨高南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-b83ff68f2633",
+              "name": "杨高南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%9D%A8%E9%AB%98%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-017",
+      "original_name": "丰和路",
+      "original_extent": "滨江大道-陆家嘴西路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "丰和路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-018",
+      "original_name": "富城路",
+      "original_extent": "国际会议中心-陆家嘴西路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "富城路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-020",
+      "original_name": "金科路",
+      "original_extent": "龙东大道-锦绣东路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "金科路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-021",
+      "original_name": "陆家嘴环路",
+      "original_extent": "东园路-花园石桥路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "陆家嘴环路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-022",
+      "original_name": "陆家嘴西路",
+      "original_extent": "滨江大道-陆家嘴环路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "陆家嘴西路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-023",
+      "original_name": "明珠塔路",
+      "original_extent": "滨江大道-丰和路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "明珠塔路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-024",
+      "original_name": "浦明路",
+      "original_extent": "东昌路-龙阳路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "浦明路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-026",
+      "original_name": "通耀路",
+      "original_extent": "耀龙路-长清北路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "通耀路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-027",
+      "original_name": "耀龙路",
+      "original_extent": "世博大道-中环",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "耀龙路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-029",
+      "original_name": "长清（北）路",
+      "original_extent": "世博大道-成山路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "长清路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-adf91ad0d28d",
+              "name": "长清路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%95%BF%E6%B8%85%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "长清北路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-030",
+      "original_name": "周家渡路",
+      "original_extent": "世博大道-耀华路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "周家渡路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-034",
+      "original_name": "北京（东、西）路",
+      "original_extent": "中山东一路-万航渡路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "北京东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-78742144bcf0",
+              "name": "北京东路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E4%B8%9C%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "北京西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-d0f905a86247",
+              "name": "北京西路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E8%A5%BF%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-037",
+      "original_name": "复兴（东、中、西）路",
+      "original_extent": "外马路-华山路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "复兴东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-c1cbb957e7a9",
+              "name": "复兴东路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%85%B4%E4%B8%9C%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "复兴中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-11f44f496f77",
+              "name": "复兴中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%85%B4%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "复兴西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-3c4157bea699",
+              "name": "复兴西路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%85%B4%E8%A5%BF%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-038",
+      "original_name": "河南（南、中、北）路",
+      "original_extent": "天目东路-陆家浜路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "河南南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-dfc886adb623",
+              "name": "河南南路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8D%97%E5%8D%97%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "河南中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-0f14e1974fe6",
+              "name": "河南中路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8D%97%E4%B8%AD%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "河南北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-29bd8c6cea55",
+              "name": "河南北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8D%97%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-039",
+      "original_name": "黄陂（南、北）路",
+      "original_extent": "南京西路-自忠路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "黄陂南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-d0634af4817d",
+              "name": "黄陂南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%BB%84%E9%99%82%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "黄陂北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-23435bb00c2d",
+              "name": "黄陂北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%BB%84%E9%99%82%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-040",
+      "original_name": "金陵（东、中、西）路",
+      "original_extent": "中山东一路-成都北路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "金陵东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-a5fdeaad7295",
+              "name": "金陵东路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%87%91%E9%99%B5%E4%B8%9C%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "金陵中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-f5057cab216c",
+              "name": "金陵中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%87%91%E9%99%B5%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "金陵西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-f462c9ce22d0",
+              "name": "金陵西路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%87%91%E9%99%B5%E8%A5%BF%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-044",
+      "original_name": "南京（东、西）路",
+      "original_extent": "中山东一路-延安西路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "南京东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-d0f422c16b95",
+              "name": "南京东路 (上海市)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E4%BA%AC%E4%B8%9C%E8%B7%AF_(%E4%B8%8A%E6%B5%B7%E5%B8%82)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "南京西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-56b3bcad2087",
+              "name": "南京西路 (上海市)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E4%BA%AC%E8%A5%BF%E8%B7%AF_(%E4%B8%8A%E6%B5%B7%E5%B8%82)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-046",
+      "original_name": "瑞金（南、一、二）路",
+      "original_extent": "中山南一路-延安中路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "瑞金南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-1c4be86c89c1",
+              "name": "瑞金南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E7%91%9E%E9%87%91%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "瑞金一路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-4a698c7ef07f",
+              "name": "瑞金一路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E7%91%9E%E9%87%91%E4%B8%80%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "瑞金二路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-4eac77b2d415",
+              "name": "瑞金二路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E7%91%9E%E9%87%91%E4%BA%8C%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-047",
+      "original_name": "西藏（南、中、北）路",
+      "original_extent": "高雄路-柳营路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "西藏南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-7e076e7922f4",
+              "name": "西藏南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E8%97%8F%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "西藏中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-2bf208c7e00e",
+              "name": "西藏中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E8%97%8F%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "西藏北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-7836fe318df8",
+              "name": "西藏北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E8%97%8F%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-048",
+      "original_name": "新开河（南、北）路",
+      "original_extent": "人民路-中山东二路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "新开河南路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "新开河北路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-050",
+      "original_name": "中山东（一、二）路",
+      "original_extent": "外白渡桥-东门路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "中山东一路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-02afdf48f423",
+              "name": "中山东一路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E4%B8%9C%E4%B8%80%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "中山东二路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-279f24f5f305",
+              "name": "中山东二路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E4%B8%9C%E4%BA%8C%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-053",
+      "original_name": "淮海（东、中、西）路",
+      "original_extent": "人民路-虹桥路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "淮海东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-9844a3b47bc6",
+              "name": "淮海东路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B7%AE%E6%B5%B7%E4%B8%9C%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "淮海中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-51bee295fb9e",
+              "name": "淮海中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B7%AE%E6%B5%B7%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "淮海西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-f12cf6543270",
+              "name": "淮海西路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B7%AE%E6%B5%B7%E8%A5%BF%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-056",
+      "original_name": "延安（东、中、西）路",
+      "original_extent": "中山东一路-外环线",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "延安东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-95990afc8334",
+              "name": "延安东路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%BB%B6%E5%AE%89%E4%B8%9C%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "延安中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-f309b627c680",
+              "name": "延安中路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%BB%B6%E5%AE%89%E4%B8%AD%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "延安西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-1b8a25db7067",
+              "name": "延安西路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%BB%B6%E5%AE%89%E8%A5%BF%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-058",
+      "original_name": "漕溪（北）路",
+      "original_extent": "沪闵路1号桥-肇嘉浜路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "漕溪路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-3e290595494e",
+              "name": "漕溪路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%BC%95%E6%BA%AA%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "漕溪北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-1f78b93715ea",
+              "name": "漕溪北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%BC%95%E6%BA%AA%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-068",
+      "original_name": "瑞宁路",
+      "original_extent": "龙华东路-龙腾大道",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "瑞宁路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-069",
+      "original_name": "乌鲁木齐（北、中、南）路",
+      "original_extent": "南京西路-肇嘉浜路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "乌鲁木齐北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-b14c646a65d9",
+              "name": "乌鲁木齐北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "乌鲁木齐中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-6a855eb02e48",
+              "name": "乌鲁木齐中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "乌鲁木齐南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-7c2b6f6fcf67",
+              "name": "乌鲁木齐南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-072",
+      "original_name": "江苏（北）路",
+      "original_extent": "华山路-曹杨路桥",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "江苏路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-e517bd4931dd",
+              "name": "江苏路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B1%9F%E8%8B%8F%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "江苏北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-c883f5a518d9",
+              "name": "江苏北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%B1%9F%E8%8B%8F%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-073",
+      "original_name": "天山（西）路",
+      "original_extent": "延安西路-中环线",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "天山路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-5cbaa417da54",
+              "name": "天山路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%B1%B1%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "天山西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-35bebc67ac19",
+              "name": "天山西路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%B1%B1%E8%A5%BF%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-078",
+      "original_name": "青溪路",
+      "original_extent": "哈密路-仙霞路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "青溪路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-079",
+      "original_name": "仙霞（西）路",
+      "original_extent": "延安西路-环西一大道",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "仙霞路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-f12da4db904f",
+              "name": "仙霞路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%BB%99%E9%9C%9E%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "仙霞西路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-080",
+      "original_name": "迎宾三路",
+      "original_extent": "外环-七莘路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "迎宾三路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-084",
+      "original_name": "恒丰（北）路",
+      "original_extent": "新闸路-沪太路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "恒丰路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-3a5f5360f515",
+              "name": "恒丰路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%81%92%E4%B8%B0%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "恒丰北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-3fe1a62f9f71",
+              "name": "恒丰北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%81%92%E4%B8%B0%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-086",
+      "original_name": "石门（一、二）路",
+      "original_extent": "延安中路-新闸路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "石门一路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-b33b27d8fb25",
+              "name": "石门一路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E9%97%A8%E4%B8%80%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "石门二路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-3e7929b29b97",
+              "name": "石门二路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E9%97%A8%E4%BA%8C%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-087",
+      "original_name": "天目（东、中、西）路",
+      "original_extent": "河南北路-长寿路桥",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "天目东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-ec58f336e16d",
+              "name": "天目东路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%9B%AE%E4%B8%9C%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "天目中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-d776025f1946",
+              "name": "天目中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%9B%AE%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "天目西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-8ec0cacbc0dd",
+              "name": "天目西路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%9B%AE%E8%A5%BF%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-090",
+      "original_name": "陕西（南、北）路",
+      "original_extent": "新闸路-肇嘉浜路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "陕西南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-21b879aad2d5",
+              "name": "陕西南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%99%95%E8%A5%BF%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "陕西北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-9a5883730c4f",
+              "name": "陕西北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%99%95%E8%A5%BF%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-094",
+      "original_name": "武宁（南）路",
+      "original_extent": "万航渡路-真北路立交桥",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "武宁路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-b10a88d7bf3e",
+              "name": "武寧路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%AD%A6%E5%AF%A7%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "武宁南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-8064b0267aff",
+              "name": "武宁南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E6%AD%A6%E5%AE%81%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-098",
+      "original_name": "桃浦路",
+      "original_extent": "曹杨路-定边路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "桃浦路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-099",
+      "original_name": "武威（东）路",
+      "original_extent": "真北路-真南路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "武威路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "武威东路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-102",
+      "original_name": "（东）大名路",
+      "original_extent": "外白渡桥-惠民路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "大名路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-6cff0cf90306",
+              "name": "大名路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%90%8D%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "东大名路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-2a5852a3feee",
+              "name": "东大名路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B8%9C%E5%A4%A7%E5%90%8D%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-104",
+      "original_name": "大连（西）路",
+      "original_extent": "杨树浦路-西体育会路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "大连路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-f57601ae09f8",
+              "name": "大连路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%BF%9E%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "大连西路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-b5bd4b8b307d",
+              "name": "大连西路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%BF%9E%E8%A5%BF%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-105",
+      "original_name": "广中（西）路",
+      "original_extent": "沪太路-中山北一路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "广中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-afc48075facd",
+              "name": "广中路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B8%AD%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "广中西路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-108",
+      "original_name": "四川（中、北）路",
+      "original_extent": "延安东路-江湾路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "四川中路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-30a1636cdb66",
+              "name": "四川中路 (上海)",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E4%B8%AD%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "四川北路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-7fb83c2d6846",
+              "name": "四川北路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E5%8C%97%E8%B7%AF"
+            }
+          ],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-110",
+      "original_name": "（东）长治路",
+      "original_extent": "外白渡桥-海门路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "长治路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-8d63366c7a29",
+              "name": "长治路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E9%95%BF%E6%B2%BB%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "东长治路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-efca6ef8ac5a",
+              "name": "东长治路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E4%B8%9C%E9%95%BF%E6%B2%BB%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-122",
+      "original_name": "虹梅（南）路",
+      "original_extent": "漕宝路-东川路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "虹梅路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-3d15dc765362",
+              "name": "虹梅路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E8%99%B9%E6%A2%85%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "虹梅南路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-dab141bdd156",
+              "name": "虹梅南路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E8%99%B9%E6%A2%85%E5%8D%97%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-127",
+      "original_name": "蕴川公路",
+      "original_extent": "外环-郊环",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "蕴川公路",
+          "proposed_action": "verify_alias_then_associate_existing",
+          "existing_matches": [
+            {
+              "id": "road-d2d1a23fa8ef",
+              "name": "蕰川公路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E8%95%B0%E5%B7%9D%E5%85%AC%E8%B7%AF"
+            }
+          ],
+          "basis": "one-character variant, needs authoritative or geographic confirmation",
+          "physical_identity_verified": false,
+          "extent_policy": "source covers 外环-郊环 only",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [
+        {
+          "id": "road-d2d1a23fa8ef",
+          "name": "蕰川公路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E8%95%B0%E5%B7%9D%E5%85%AC%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表未附别名说明，不能仅凭一字相近确认同一实体。",
+      "proposal_only": true,
+      "review_type": "character_variant_alias_candidate",
+      "decision": "既有“蕰川公路”与源文“蕴川公路”仅一字不同；提出别名/用字差异复核，不自动纠正官方原文或直接新增同路线索。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-128",
+      "original_name": "新成路",
+      "original_extent": "嘉戬公路-胜竹路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "新成路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-129",
+      "original_name": "塔城（东）路",
+      "original_extent": "澄浏中路-沪宜公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "塔城路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-2f6bc998a4d2",
+              "name": "塔城路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%A1%94%E5%9F%8E%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "塔城东路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-130",
+      "original_name": "嘉戬公路",
+      "original_extent": "博乐南路-澄浏中路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "嘉戬公路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-133",
+      "original_name": "东方美谷大道",
+      "original_extent": "沪杭公路-林海公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "东方美谷大道",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-134",
+      "original_name": "望园路",
+      "original_extent": "奉浦大道-南港路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "望园路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-135",
+      "original_name": "解放（东）路",
+      "original_extent": "环城东路-金海公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "解放路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "解放东路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-136",
+      "original_name": "广富林路",
+      "original_extent": "沪松公路-辰塔路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "广富林路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-137",
+      "original_name": "沈砖公路",
+      "original_extent": "千新公路-沪松公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "沈砖公路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-138",
+      "original_name": "嘉松（南、中、北）路",
+      "original_extent": "南期昌路-沪宜公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "嘉松南路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "嘉松中路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "嘉松北路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "explicit_enumerated_parentheses",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [
+        {
+          "id": "road-237abe40fbe4",
+          "name": "嘉松公路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E5%98%89%E6%9D%BE%E5%85%AC%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "explicit_enumerated_parentheses",
+      "decision": "原文括号明确列举变体，可按字面展开为道路名称；各名称对应的具体路段及分界仍待核验。 既有“嘉松公路”为可能的上位道路组线索，不把南、中、北三项直接合并成同一道路实体。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-141",
+      "original_name": "杭州湾大道",
+      "original_extent": "G15高速出口-沪杭公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "杭州湾大道",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-142",
+      "original_name": "漕廊公路",
+      "original_extent": "新卫高速-朱平公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "漕廊公路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-143",
+      "original_name": "崧泽大道",
+      "original_extent": "嘉闵高架-青赵公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "崧泽大道",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-144",
+      "original_name": "盈港（东）路",
+      "original_extent": "涞港路-青赵公路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [
+        {
+          "road_name": "盈港路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        },
+        {
+          "road_name": "盈港东路",
+          "proposed_action": "associate_existing_name_reference",
+          "existing_matches": [
+            {
+              "id": "road-e2ffdbb19e08",
+              "name": "盈港东路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E7%9B%88%E6%B8%AF%E4%B8%9C%E8%B7%AF"
+            }
+          ],
+          "basis": "optional_parenthesis_interpretation",
+          "physical_identity_verified": false,
+          "extent_policy": "original extent belongs to the entire source group; no individual target extent can be assigned from this table",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只有组合整体范围，未列分拆道路各自的起讫或区属；不得把相同整体范围复制成每条完整道路。",
+      "proposal_only": true,
+      "review_type": "optional_parenthesis_interpretation",
+      "decision": "原文单项括号可解释为含、去括号内容两个名称；这是待确认的编辑解释，不证明原文覆盖两条完整道路。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-145",
+      "original_name": "诸光路",
+      "original_extent": "沪青平公路-崧泽大道",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "诸光路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-147",
+      "original_name": "崇明大道",
+      "original_extent": "蟠龙公路-鼓浪屿路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "崇明大道",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-148",
+      "original_name": "蟠龙公路",
+      "original_extent": "崇明大道-花博大道",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "蟠龙公路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-149",
+      "original_name": "花博大道",
+      "original_extent": "全线",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "花博大道",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-150",
+      "original_name": "华夏高架",
+      "original_extent": "全线地面道路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [],
+      "related_existing_records": [
+        {
+          "id": "road-e65e5c91fec5",
+          "name": "华夏高架路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E5%A4%8F%E9%AB%98%E6%9E%B6%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表没有给出高架下地面道路的独立名称或分段起讫，不能从高架名称反推出地面道路模型。",
+      "proposal_only": true,
+      "review_type": "elevated_name_vs_ground_scope",
+      "decision": "名称补“路”能找到既有高架名称线索，但官方范围明确为地面道路；只建立相关系统关系，不把地面路段并入高架实体。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-151",
+      "original_name": "嘉闵高架",
+      "original_extent": "地面道路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [],
+      "related_existing_records": [
+        {
+          "id": "road-90949836caef",
+          "name": "嘉闵高架路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E5%98%89%E9%97%B5%E9%AB%98%E6%9E%B6%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表没有给出高架下地面道路的独立名称或分段起讫，不能从高架名称反推出地面道路模型。",
+      "proposal_only": true,
+      "review_type": "elevated_name_vs_ground_scope",
+      "decision": "名称补“路”能找到既有高架名称线索，但官方范围明确为地面道路；只建立相关系统关系，不把地面路段并入高架实体。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-152",
+      "original_name": "沪闵高架",
+      "original_extent": "地面道路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [],
+      "related_existing_records": [
+        {
+          "id": "road-c79f2c0b2d0c",
+          "name": "沪闵高架路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E6%B2%AA%E9%97%B5%E9%AB%98%E6%9E%B6%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表没有给出高架下地面道路的独立名称或分段起讫，不能从高架名称反推出地面道路模型。",
+      "proposal_only": true,
+      "review_type": "elevated_name_vs_ground_scope",
+      "decision": "名称补“路”能找到既有高架名称线索，但官方范围明确为地面道路；只建立相关系统关系，不把地面路段并入高架实体。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-153",
+      "original_name": "内环全线",
+      "original_extent": "地面道路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [
+        {
+          "id": "road-aff4aa23a2e7",
+          "name": "内环高架路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E5%86%85%E7%8E%AF%E9%AB%98%E6%9E%B6%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表范围为“地面道路”，没有组成地面道路名单或分界；不能凭环线名拆成若干道路。",
+      "proposal_only": true,
+      "review_type": "ring_system_ground_scope",
+      "decision": "保留环线系统参考，与既有环线名称建立相关关系；不视作独立新街道，也不等同于高架或高速模型。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-154",
+      "original_name": "中环全线",
+      "original_extent": "地面道路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [
+        {
+          "id": "road-45381bfa06cf",
+          "name": "中环路 (上海)",
+          "article_url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E7%8E%AF%E8%B7%AF_(%E4%B8%8A%E6%B5%B7)"
+        }
+      ],
+      "unresolved_reason": "原表范围为“地面道路”，没有组成地面道路名单或分界；不能凭环线名拆成若干道路。",
+      "proposal_only": true,
+      "review_type": "ring_system_ground_scope",
+      "decision": "保留环线系统参考，与既有环线名称建立相关关系；不视作独立新街道，也不等同于高架或高速模型。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-155",
+      "original_name": "外环全线",
+      "original_extent": "地面道路",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [
+        {
+          "id": "road-761e68db2f86",
+          "name": "外环高速",
+          "article_url": "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%A4%96%E7%8E%AF%E9%AB%98%E9%80%9F%E5%85%AC%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "原表范围为“地面道路”，没有组成地面道路名单或分界；不能凭环线名拆成若干道路。",
+      "proposal_only": true,
+      "review_type": "ring_system_ground_scope",
+      "decision": "保留环线系统参考，与既有环线名称建立相关关系；不视作独立新街道，也不等同于高架或高速模型。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-156",
+      "original_name": "312国道上海段",
+      "original_extent": "上海段",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只写国道上海段，未列组成城市道路及具体起讫；本次资料不足以映射既有道路或安全拆分。",
+      "proposal_only": true,
+      "review_type": "national_route_segment_unresolved",
+      "decision": "保留国道编号上海段的路线级资料，暂不创建独立道路名称任务。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-157",
+      "original_name": "204国道上海段",
+      "original_extent": "上海段",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只写国道上海段，未列组成城市道路及具体起讫；本次资料不足以映射既有道路或安全拆分。",
+      "proposal_only": true,
+      "review_type": "national_route_segment_unresolved",
+      "decision": "保留国道编号上海段的路线级资料，暂不创建独立道路名称任务。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-158",
+      "original_name": "320国道上海段",
+      "original_extent": "上海段",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只写国道上海段，未列组成城市道路及具体起讫；本次资料不足以映射既有道路或安全拆分。",
+      "proposal_only": true,
+      "review_type": "national_route_segment_unresolved",
+      "decision": "保留国道编号上海段的路线级资料，暂不创建独立道路名称任务。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-main2022-159",
+      "original_name": "318国道上海段",
+      "original_extent": "上海段",
+      "districts": [],
+      "source_id": "official-main2022",
+      "source_url": "https://lhsr.sh.gov.cn/srgl/20220617/cf46474f-4259-4087-ada5-105e2ec94971.html",
+      "original_match_status": "composite_review",
+      "suggested_targets": [],
+      "related_existing_records": [],
+      "unresolved_reason": "原表只写国道上海段，未列组成城市道路及具体起讫；本次资料不足以映射既有道路或安全拆分。",
+      "proposal_only": true,
+      "review_type": "national_route_segment_unresolved",
+      "decision": "保留国道编号上海段的路线级资料，暂不创建独立道路名称任务。",
+      "document_date": "2022-06-14",
+      "publication_date": "2022-06-17"
+    },
+    {
+      "source_row_id": "official-green2023-003",
+      "original_name": "古羊路",
+      "original_extent": "伊犁南路-姚虹路",
+      "districts": [
+        "长宁区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "古羊路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-007",
+      "original_name": "盛夏路",
+      "original_extent": "金秋路-银冬路",
+      "districts": [
+        "浦东新区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "盛夏路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-008",
+      "original_name": "凌河路",
+      "original_extent": "利津路-杨高路",
+      "districts": [
+        "浦东新区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "凌河路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-009",
+      "original_name": "尚北路",
+      "original_extent": "潘广路-福双路",
+      "districts": [
+        "宝山区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "尚北路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-010",
+      "original_name": "联航路",
+      "original_extent": "浦星公路-恒南路",
+      "districts": [
+        "闵行区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "联航路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-011",
+      "original_name": "环城路",
+      "original_extent": "嘉罗公路-横沥河",
+      "districts": [
+        "嘉定区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "环城路",
+          "proposed_action": "verify_district_qualified_alias_then_associate_existing",
+          "existing_matches": [
+            {
+              "id": "road-a2463b3345c4",
+              "name": "嘉定环城路",
+              "article_url": "https://zh.wikipedia.org/wiki/%E5%98%89%E5%AE%9A%E7%8E%AF%E5%9F%8E%E8%B7%AF"
+            }
+          ],
+          "basis": "district explicitly 嘉定区; existing title prefixes same district",
+          "physical_identity_verified": false,
+          "extent_policy": "source covers 嘉罗公路-横沥河 only",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [
+        {
+          "id": "road-a2463b3345c4",
+          "name": "嘉定环城路",
+          "article_url": "https://zh.wikipedia.org/wiki/%E5%98%89%E5%AE%9A%E7%8E%AF%E5%9F%8E%E8%B7%AF"
+        }
+      ],
+      "unresolved_reason": "既有名称快照未保存起讫范围，本次不能核验嘉罗公路-横沥河是否同一路段。",
+      "proposal_only": true,
+      "review_type": "district_qualified_alias_candidate",
+      "decision": "官方明确区属嘉定，既有“嘉定环城路”带区名限定；建议先复核路段吻合后关联既有ID，不单凭标题新增道路。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-012",
+      "original_name": "漕盈路延长段",
+      "original_extent": "盈绿路-淀山湖大道",
+      "districts": [
+        "青浦区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "漕盈路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "remove explicit segment qualifier 延长段; preserve raw name",
+          "physical_identity_verified": false,
+          "extent_policy": "only 盈绿路-淀山湖大道; not whole road",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "只确认官方命名片段，尚不能据此判断整条漕盈路的覆盖或新增道路实体数量。",
+      "proposal_only": true,
+      "review_type": "segment_qualifier_removed_for_name_lead",
+      "decision": "将“延长段”保留为范围限定，以“漕盈路”作为道路名称研究线索；不另建名为“漕盈路延长段”的独立道路。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-013",
+      "original_name": "人民北路",
+      "original_extent": "新松江路-思贤路",
+      "districts": [
+        "松江区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "人民北路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-015",
+      "original_name": "龙航路",
+      "original_extent": "海丰路-海盛路",
+      "districts": [
+        "金山区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "龙航路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    },
+    {
+      "source_row_id": "official-green2023-016",
+      "original_name": "富民沙路",
+      "original_extent": "新盟路-东江路",
+      "districts": [
+        "崇明区"
+      ],
+      "source_id": "official-green2023",
+      "source_url": "https://lhsr.sh.gov.cn/lhgl/20240103/038c7559-0e60-4003-bc4d-edad8b85261e.html",
+      "original_match_status": "new_name_candidate",
+      "suggested_targets": [
+        {
+          "road_name": "富民沙路",
+          "proposed_action": "create_name_research_lead_after_duplicate_review",
+          "existing_matches": [],
+          "basis": "literal_official_road_name",
+          "physical_identity_verified": false,
+          "extent_policy": "source lists a segment; do not assume full-road coverage",
+          "may_increment_physical_road_count": false
+        }
+      ],
+      "related_existing_records": [],
+      "unresolved_reason": "没有独立地图或地名登记核验，当前仅新增名称研究线索，不确认完整道路实体或沿街建筑。",
+      "proposal_only": true,
+      "review_type": "literal_new_name_lead",
+      "decision": "原文为独立道路名称，当前快照没有规范化同名项；可列为新增道路资料待办，仍需核对别名和实体重复。",
+      "document_date": "2023-12-19",
+      "publication_date": "2024-01-03"
+    }
+  ]
+}
