@@ -1,0 +1,25 @@
+const {chromium}=require('playwright');
+const fs=require('node:fs');
+(async()=>{
+const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];
+page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url())});
+await page.goto('http://127.0.0.1:8765/chongsheng-shrine.html');
+await page.waitForFunction(()=>window.chongshengShrineViewer?.getState().status==='ready',{timeout:60000});
+const full=await page.evaluate(()=>window.chongshengShrineViewer.getState());
+await page.screenshot({path:'/tmp/chongsheng-browser.png'});
+await page.selectOption('#detail','lod');await page.waitForFunction(()=>window.chongshengShrineViewer.getState().variant==='lod');
+const lod=await page.evaluate(()=>window.chongshengShrineViewer.getState());
+await page.selectOption('#detail','full');await page.waitForFunction(()=>window.chongshengShrineViewer.getState().variant==='full');
+for(const id of ['front','rear','oblique','fit'])await page.click('#'+id);
+await page.click('#enter-model-walk');
+await page.waitForFunction(()=>window.candidateWalk.getState().active);
+const start=await page.evaluate(()=>window.candidateWalk.getState());
+await page.keyboard.down('w');await page.waitForFunction(()=>window.candidateWalk.getState().distance>.2,{timeout:30000});await page.keyboard.up('w');
+const moved=await page.evaluate(()=>window.candidateWalk.getState());
+if(Math.hypot(moved.position.x-start.position.x,moved.position.z-start.position.z)<.05)throw Error('Walk did not move');
+await page.keyboard.press('Escape');await page.waitForFunction(()=>!window.candidateWalk.getState().active);
+if(errors.length||full.triangles<=lod.triangles)throw Error(JSON.stringify({errors,full,lod}));
+const result={full,lod,errors,checked:['SHA256-checked GLB loading','full/lod/full switching','four camera controls','outdoor walk entry, forward motion and Escape exit']};
+fs.writeFileSync('/tmp/chongsheng-browser.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

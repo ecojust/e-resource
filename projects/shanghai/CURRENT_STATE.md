@@ -1,3 +1,5 @@
+> 2026-10-29增量：新增[崇明学宫崇圣祠正殿文献参照候选](chongsheng-shrine.html)，含近景／远景GLB与可编辑Blender。仅文字参考，未照片核验或地理配准，不增加40处原址漫游。详见[来源限制](source/precise/chongming-chongsheng-shrine/README.md)及[检查记录](data/audit/chongsheng-shrine-v1/README.md)。
+
 # 本轮：五个候选模型可独立室外漫游
 
 宋庆龄故居主楼、鲁迅故居正立面与院门、崇明学宫尊经阁、大成殿、泮池与登云桥新增独立场景外围漫游。支持键盘和触屏、转向、碰撞、回到起点及返回旋转查看。局部展示地面不代表实测现场，不能进室内、登楼或上桥。

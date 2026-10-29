@@ -27,6 +27,10 @@
 | 崇明 | 学宫大成殿 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/dacheng-hall.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/dacheng-hall.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-dacheng-hall/README.md) |
 | 全市16区 | 地面与江河水面（零高程平面） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/surfaces.html) | [查看说明](projects/shanghai/source/surfaces/README.md) |
 
+## 新增文献参照候选
+
+[崇明学宫崇圣祠正殿](projects/shanghai/chongsheng-shrine.html)：三开间单檐歇山式外观，提供独立预览、室外模型漫游及Blender下载。依据博物馆旧官网文字；未获单体照片，门窗、曲线、色彩等为估计，未地理配准，不计入40处原址漫游。[来源与限制](projects/shanghai/source/precise/chongming-chongsheng-shrine/README.md)。
+
 ## 按区查看主要建筑
 
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。点击时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
