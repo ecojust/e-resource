@@ -24,3 +24,5 @@
 [最终视觉复核](root-visual-review.json)：已查看正面、斜侧、背面和网页截图，长屋体与七个立面分区显示正常；只确认基础候选的显示质量，不确认估计门窗和屋顶型制符合实物。
 
 [最终视觉复核](root-visual-review.json)：已查看斜侧、背面和网页截图，西庑标识、共用假设说明及接缝显示正常；不将候选外形相同视为实物细节一致。
+
+公开预览检查：[固定提交页面](https://rawcdn.githack.com/ecojust/e-resource/3418a4b1c3add94408868e221e4b542b6a1fb21f/projects/shanghai/west-wing.html) 已加载完整模型并通过SHA256及西庑身份校验，无页面或资源请求错误；同版本来源登记的七楹记载和旧馆URL核对通过。首次访问如遇托管提示，请点击 **Open the page**。记录见 [public-browser.json](public-browser.json)，复测：`node projects/shanghai/data/audit/west-wing-v1/qa-public.cjs`。
