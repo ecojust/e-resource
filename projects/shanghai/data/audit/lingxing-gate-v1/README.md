@@ -10,3 +10,7 @@
 各模型文件均小于100 MB；大小与哈希见[资产清单](../../../assets/models/candidates/chongming-lingxing-gate/manifest.json)。照片不再分发或嵌入；链接、许可、哈希及各参考日期见[来源说明](../../../source/precise/chongming-lingxing-gate/README.md)。
 
 复测网页：在`projects/shanghai`运行`python -m http.server 8767`，仓库根目录运行`node projects/shanghai/data/audit/lingxing-gate-v1/qa-browser.cjs`，需Playwright和`/usr/bin/chromium`。输出到`/tmp/lingxing-gate-browser.*`。构建与几何验证命令见来源说明。
+
+## 已发布页面
+
+[公开页面检查](public-browser.json)针对固定提交`bee34f08d2b7c8b6e545f16691d2b8b06d81b0d9`：点击托管服务首次访问提示“Open the page”后，模型通过SHA256校验并加载近景，未记录页面错误。可在仓库根运行`node projects/shanghai/data/audit/lingxing-gate-v1/qa-public.cjs`复验；该记录不扩大几何或照片验收范围。
