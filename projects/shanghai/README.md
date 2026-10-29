@@ -1,5 +1,7 @@
 # 上海全景建模
 
+[宋庆龄故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/7b4797a467512419387797e0cf28ad3f8a934a8b/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，未接入城市漫游。
+
 [鲁迅故居正立面与院门候选](https://rawcdn.githack.com/ecojust/e-resource/0158751e11b422ee608558916626f8eaad095e71/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，地图归属待核验，未计入整栋复原完成量。
 
 [孙中山故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/a09337c54740b12149ba0f2e878a1ad02297a38d/projects/shanghai/sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象，尚未接入城市漫游。
@@ -12,10 +14,11 @@
 
 ## 独立候选模型与地面水系
 
-以下五个候选尚未接入城市漫游，不计入上方38处导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
+以下六个候选尚未接入城市漫游，不计入上方38处导航或逐栋复原完成量。预览链接固定到模型提交版本；首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
+| 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/7b4797a467512419387797e0cf28ad3f8a934a8b/projects/shanghai/soong-residence.html) | [查看说明](source/precise/xuhui-soong-ching-ling-residence/README.md) |
 | 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/0158751e11b422ee608558916626f8eaad095e71/projects/shanghai/luxun-residence.html) | [查看说明](source/precise/hongkou-luxun-residence-facade/README.md) |
 | 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/a09337c54740b12149ba0f2e878a1ad02297a38d/projects/shanghai/sun-yatsen-residence.html) | [查看说明](source/precise/huangpu-sun-yatsen-residence/README.md) |
 | 崇明 | 学宫尊经阁 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/a09337c54740b12149ba0f2e878a1ad02297a38d/projects/shanghai/zunjing-pavilion.html) | [查看说明](source/precise/chongming-zunjing-pavilion/README.md) |
