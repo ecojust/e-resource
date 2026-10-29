@@ -63,8 +63,12 @@ def build():
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
  maps=json.loads((DATA/'named-map-leads.json').read_text())['records']
  records=discovery['records']
+ identity_review=json.loads((DATA/'heritage-first20-model-reconciliation.json').read_text())
+ identity_by_id={r['id']:r for r in identity_review['records']}
+ assert len(identity_by_id)==len(identity_review['records'])
  roads=json.loads((DATA/'discovered-streets.json').read_text())['roads']
  ids=[r['id'] for r in records];assert len(ids)==len(set(ids)), 'Duplicate discovery ID'
+ assert set(identity_by_id).issubset(ids), 'Unknown building identity review ID'
  jobs=queue['production_queue'];assert len({j['id'] for j in jobs})==len(jobs)
  assert sum(j['status']=='in_progress' for j in jobs)<=1, 'Work sequentially through the queue'
  for j in jobs:
@@ -95,6 +99,12 @@ def build():
    if r.get('photo_url'):refs+=' · 照片待核'
    todo='待核外观／拆栋'
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
+   if r['id'] in identity_by_id:
+    review=identity_by_id[r['id']]
+    refs+=' · '+link('库存范围复核','projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json')
+    if review['existing_models']:
+     todo='已关联单体：'+'、'.join(m['id'] for m in review['existing_models'])+'；'+review['modeled_scope_or_gap']+'；未将整处名录判为完成'
+    else:todo+='；'+review['split_review']['note']
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']
    lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(r['address'])} | {refs} | {cell(todo)} |")
   lines+=['','</details>','']

@@ -1,0 +1,378 @@
+{
+  "schema": "heritage-next-building-reference-review.v1",
+  "reviewed_utc": "2026-10-29T17:19:08.298648+00:00",
+  "scope": "第一批#5上海大厦与#8俄罗斯领事馆历史主楼外观的有限来源审查；记录文字尺寸、照片年代、许可与未见范围，不代表实测或完整立面验收。",
+  "source_register": {
+    "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+    "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a",
+    "records": [
+      "sh-historic-b1-005",
+      "sh-historic-b1-008"
+    ],
+    "source_note": "发现清单的原始官方保护名录此前遇202归档挑战；本次以已索引article_links/photo_page_links进入并核验可取的一手／二手资料，不将清单二手文字提升为现场实测。"
+  },
+  "summary": [
+    "百老汇大厦：2014年已查看的Commons外观图CC BY-SA 3.0；地方志76.7m、22层与百科77m、地上21层并列；北苏州路2／20号未解。适合外观候选，主楼宽深／背面／完整四翼尺度缺失。",
+    "俄罗斯领事馆：2010年5月已查看的Commons外观图CC BY-SA 2.5；官方旧资料记4层、1700／1700余平方米占地、3264平方米建筑面积，但无总体宽深高。1916／1917两官方记载并列，百科精确竣工／开馆日期仅是可能解释。",
+    "库存报告未发现两者独立已登记模型；上海大厦两个地图UUID是同一个OSM记录的building与building_part，不应创建重复单体。"
+  ],
+  "records": [
+    {
+      "register_id": "sh-historic-b1-005",
+      "batch": 1,
+      "list_number": 5,
+      "names": [
+        "百老汇大厦",
+        "上海大厦",
+        "Broadway Mansions"
+      ],
+      "identity": {
+        "register_address": "北苏州路2号",
+        "article_and_gazetteer_address": "北苏州路20号",
+        "address_status": "两种门牌并存；未在本次有限审查中核实更正原因，保留原登记地址，不擅自改成20号。",
+        "scope": "可独立区分的历史高层主楼；本轮仅该主楼外观。旁邻白色高层、周边建筑、附属设施不纳入。"
+      },
+      "sources": [
+        {
+          "id": "broadway-wiki",
+          "url": "https://zh.wikipedia.org/wiki/上海大厦",
+          "stable_url": "https://zh.wikipedia.org/w/index.php?title=上海大厦&oldid=94585055",
+          "source_type": "secondary encyclopedia",
+          "revision_id": 94585055,
+          "license": "文章文本 CC BY-SA 4.0；图片逐图另算",
+          "file": {
+            "sha256": "56697127f05ab9d9043c5d40b15ac2092829bdbe45b895f900a574f9111c324a",
+            "bytes": 144621
+          },
+          "relevant_short_quotes": [
+            "大厦地上21层，高77米",
+            "1930年开工，1934年竣工"
+          ],
+          "limitations": [
+            "未提供实测图纸或各立面尺寸。",
+            "地址与发现清单冲突；层数与地方志22层口径不同。"
+          ]
+        },
+        {
+          "id": "broadway-gazetteer",
+          "title": "浦西最佳观景台：百老汇大厦（上海大厦）",
+          "publisher": "上海市地方志办公室，《上海名建筑志》",
+          "url": "http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html",
+          "accessed_url": "https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html",
+          "page_timestamp": "2009-10-22 14:02:21",
+          "archive_capture_utc": "2020-09-27T09:59:30Z",
+          "license": "页面声明 All Rights Reserved；仅短引事实，不再分发全文或图片",
+          "file": {
+            "sha256": "6788018e8d8711b5488e6f797fffcd93ab36668c215995f350b8a6f37d4d3647",
+            "bytes": 9377
+          },
+          "encoding": "GB18030",
+          "relevant_short_quotes": [
+            "具体门牌北苏州路20号",
+            "高76.7米，22层，外形呈＞＜状",
+            "占地面积6600平方米，建筑面积24596平方米",
+            "从11层起逐层收进",
+            "大厦底层外墙为暗红色高级花岗石，其它层皆为咖啡色泰山砖贴面"
+          ],
+          "facts": [
+            "1930动工，1934竣工；公和洋行佛兰赛设计，新仁记营造厂承建。",
+            "四翼体量，中央及高层呈退台轮廓；文字的＞＜是概括形状，不是完整比例平面。"
+          ],
+          "limitations": [
+            "76.7米为史料载值，未交代计高起终点。",
+            "22层与维基地上21层可能统计范围不同，但本次没有找到足以定论的口径解释。",
+            "6600平方米不能直接作为主楼底面面积；24596平方米是建筑面积，不能用来反推平面边长。",
+            "历史底层饰面文字与2014照片可见浅色基座区不能据此强行视为同一期完整饰面。"
+          ]
+        },
+        {
+          "id": "broadway-official-cultural-post",
+          "title": "这座上海滩C位建筑，还有3件“传世”宝贝……",
+          "publisher": "文化虹口／上海市虹口区文化和旅游局官方澎湃号",
+          "url": "https://m.thepaper.cn/newsDetail_forward_20057228",
+          "publication_time": "2022-09-25 11:07",
+          "license": "未见开放许可，仅公开文章参考",
+          "file": {
+            "sha256": "971c6cda811e3281f9a8412651a255d00ca662f1d00ecdac1902b5d51e5d9725",
+            "bytes": 63548
+          },
+          "relevant_short_quotes": [
+            "外白渡桥旁就有一座已经88岁的",
+            "远看，上海大厦呈褐色山岳状"
+          ],
+          "use": "仅作为外观身份与1934建成的旁证；不采集文中室内、设施或运营内容。"
+        }
+      ],
+      "photos": [
+        {
+          "id": "broadway-commons-2014",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG",
+          "indexed_photo_page": "https://zh.wikipedia.org/wiki/File:Shanghai_Mansion.JPG",
+          "original_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Shanghai_Mansion.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "file": {
+            "sha256": "f37a1a6066b6fdd40cd7cf9bfd3849da3f6b254ec50f4237c5f126ea03e3f58d",
+            "bytes": 4653056
+          },
+          "metadata_file": {
+            "sha256": "d995bd4b9226a4d08882dca0ab49f1bc530b82e062bd72a05c77c65520c67e9c",
+            "bytes": 2091
+          },
+          "dimensions_px": [
+            4912,
+            3264
+          ],
+          "date_time_original": "2014-01-14 16:16:09",
+          "date_note": "按Commons描述页DateTimeOriginal；未声称独立核验拍摄日期或时区。",
+          "author": "Livelikerw",
+          "credit": "Own work",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reuse_conditions": "署名、链接许可、注明修改；若再分发照片或其改作须遵守相同方式共享条款。本次仍只保存在/tmp，没有放入仓库。",
+          "visual_inspection_performed": true,
+          "observations": [
+            "斜向仰视中可见褐色砖饰面主体、多层矩形窗横向重复排列、竖向窄窗及柱间带。",
+            "上部中央更高，两侧高层逐级退台；屋面大致为平台与女儿墙体系，可见装饰性檐口。",
+            "画面近侧折转立面有突出／退进关系；并非可据一幅照片确认完整四翼尺寸或严格对称。",
+            "底层若干区域呈浅色石材外观，局部入口和低层窗带可见；材质种类及后续改造不能单凭图像定论。",
+            "右方浅色邻楼是不同建筑，不属于本次主楼。"
+          ],
+          "blind_spots": [
+            "背立面、完整四翼平面、屋顶后侧和所有退台深度不可见。",
+            "高低层开口有透视压缩／遮挡，未由本图建立所有层及所有立面的逐窗清单。",
+            "照片不是实测影像；可支持比例候选和材料颜色参考，不能直接导出建筑宽深、准确层高。"
+          ]
+        }
+      ],
+      "dimensional_constraints": {
+        "height_m": {
+          "preferred_historical_text": 76.7,
+          "secondary_rounded_value": 77,
+          "use": "以76.7m文献高度作候选比例约束可行，明确非实测且顶部口径未知"
+        },
+        "floor_count": {
+          "gazetteer": 22,
+          "wikipedia_above_ground": 21,
+          "resolution": "未定；不得宣称已核实所有楼层外立面对应关系"
+        },
+        "site_area_m2": 6600,
+        "gross_floor_area_m2": 24596,
+        "setbacks": "地方志称从11层起逐层收进；具体层的退距未提供",
+        "unavailable": [
+          "主楼精确宽度",
+          "主楼精确进深",
+          "四翼长度及夹角",
+          "全部层高",
+          "各层精确退台深度"
+        ]
+      },
+      "duplicate_review": {
+        "method": "只读文件名检索 git ls-tree HEAD 及 named-map-leads.json 匹配",
+        "tracked_named_model_search": "无文件名匹配 broadway / shanghai.mansion / russian / consulate；这不是不存在其他别名模型的充分证明。",
+        "map_leads": [
+          {
+            "id": "8dff7d94-53d9-406e-b208-dd8562bbdafe",
+            "source_layer": "building",
+            "source_record": "w488961017@7"
+          },
+          {
+            "id": "59962d89-0a7a-3c8b-823f-8f12a3d2c3fa",
+            "source_layer": "building_part",
+            "source_record": "w488961017@7"
+          }
+        ],
+        "deduplication_note": "两个同名线索引用相同OSM源记录，应作为同一楼体／层级线索核验，不能自动排成两座独立建筑。",
+        "status": "已有通用地图身份线索；未在本次检索发现以该名交付的精模",
+        "cross_checked_inventory_report": {
+          "path": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json",
+          "sha256": "7b261a91686195a24ba7402ea97076b9939e55cbf067c51aae7de2d9014f9f94",
+          "classification": "no_registered_model",
+          "scope": "当前已发布模型清单、候选manifest、源码模型目录；不覆盖所有历史归档及普通城市底图。"
+        }
+      },
+      "modeling_readiness": {
+        "verdict": "适合主楼外观比例候选；不够支持完整、逐面精准复原",
+        "can_support": [
+          "1934历史主楼身份",
+          "文献76.7m高度（并记77m次级取整值）",
+          "褐色饰面、矩形窗、上部退台和可见立面体量",
+          "四翼／＞＜形的文字概括，须保留未定尺度"
+        ],
+        "must_remain_uncertain": [
+          "地址2／20号",
+          "21地上层／22层统计口径",
+          "所有不可见立面和屋顶退台深度",
+          "完整主楼底面尺寸与精确翼长"
+        ]
+      },
+      "record_id": "sh-historic-b1-005"
+    },
+    {
+      "record_id": "sh-historic-b1-008",
+      "name": "俄罗斯领事馆（历史主楼外观）",
+      "address": "上海市虹口区黄浦路20号",
+      "reviewed_on": "2026-10-29",
+      "scope": "黄浦路20号历史主楼外观参考，主体与邻近现代楼体、园内小亭分别看待；未见面及实际尺度待核。",
+      "sources": [
+        {
+          "id": "hongkou-housing-archive",
+          "type": "区房地部门历史保护建筑资料归档",
+          "url": "https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm",
+          "original_url": "http://www.shhkfd.gov.cn/bhjz/elslg.htm",
+          "archive_capture_utc": "2012-09-14T23:38:55Z",
+          "publication_date": "未标明；归档日期不是建成日期或拍摄日期",
+          "title": "俄罗斯驻上海总领事馆(苏联驻沪总领事馆) 黄浦路20号",
+          "encoding": "GB18030/GB2312",
+          "short_excerpts": [
+            "俄罗斯驻沪总领事馆建于1916年",
+            "占地1700平方米，建筑面积3264平方米",
+            "设计者为汉斯·艾米尔·里埃勃（Hans Emil Lieb），由周瑞记营造厂施工"
+          ],
+          "rights": "本次未确认明确开放许可；仅短摘和事实参考，不再分发全文或页面图片",
+          "bytes": 1352,
+          "sha256": "d5c375d416cd976186a89bc5972ac007bf988b2d2000c03cdb9213ba1bdf5c93"
+        },
+        {
+          "id": "shanghai-gazetteer-archive",
+          "type": "上海市地方志办公室归档页面",
+          "url": "https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html",
+          "original_url": "http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html",
+          "archive_capture_utc": "2012-07-16T13:01:19Z",
+          "publication_date": "未从本页确认",
+          "relevant_section": "2.苏联领事馆(今俄罗斯驻上海总领事馆)",
+          "short_excerpts": [
+            "位于外白渡桥北堍，黄浦路20号。建于民国6年",
+            "占地面积1700余平方米，建筑面积3264平方米",
+            "高4层，为德国文艺复兴式风格建筑，坐南朝北",
+            "1～3层为长方形建筑，每层都有约2米宽,10米长的阳台",
+            "西侧有较狭小的阳台和六角形凉亭"
+          ],
+          "rights": "本次未确认明确开放许可；仅短摘和事实参考",
+          "caution": "页面包含多栋其他建筑；已仅抽取第2节，其他建筑的尺寸绝不可转用。",
+          "bytes": 10826,
+          "sha256": "5c4c82414064f0191e2c0c6355597ac15f1cf56ccc86e4d7db2e91e2a39e2f7b"
+        },
+        {
+          "id": "zh-wikipedia",
+          "type": "二手百科汇总；用于发现出处与保留日期解释线索",
+          "url": "https://zh.wikipedia.org/wiki/%E4%BF%84%E7%BD%97%E6%96%AF%E9%A9%BB%E4%B8%8A%E6%B5%B7%E6%80%BB%E9%A2%86%E4%BA%8B%E9%A6%86",
+          "revision_id": 94853127,
+          "relevant_claims": [
+            "1914年开工；1916年12月竣工；1917年1月14日验收开馆",
+            "四层；建筑面积3264平方米",
+            "兼具巴洛克式和德国文艺复兴式元素"
+          ],
+          "caution": "具体竣工/开馆日期未在本次所取得的两份官方归档原文中独立证实。它可解释1916/1917不同口径，但不作为已经消解差异的定论。",
+          "bytes": 394080,
+          "sha256": "71e090c53c6eb3688cdaaeab1758fd2c2036affa2e6c668d3ed04875623d54be"
+        }
+      ],
+      "chronology_assessment": {
+        "official_source_1": "虹口房地历史保护建筑资料：建于1916年。",
+        "official_source_2": "上海地方志：建于民国6年，即1917年。",
+        "conclusion": "1916与1917保留为两份官方资料并列口径。百科的1916年12月竣工、1917年1月14日开馆提供可能解释，本次不强行确定哪个年份等于唯一建成年份。"
+      },
+      "architectural_constraints": {
+        "confirmed_text": [
+          "黄浦路20号，位于外白渡桥北堍、苏州河与黄浦江汇合处",
+          "高4层（地方志）",
+          "1～3层为长方形建筑（地方志）",
+          "坐南朝北、正中为大门（地方志描述，不据此强行给照片所有立面定向）",
+          "1～3层每层约2米宽、10米长阳台，西侧较狭阳台和六角形凉亭（地方志；本次没有逐个测图校核）",
+          "Hans Emil Lieb设计、周瑞记营造厂施工（虹口房地）"
+        ],
+        "area_values": {
+          "site_area_m2": {
+            "hongkou": 1700,
+            "gazetteer": "1700余"
+          },
+          "gross_building_area_m2": 3264
+        },
+        "dimension_limits": [
+          "占地1700/1700余平方米不可直接当作历史主楼墙体轮廓面积。",
+          "建筑面积3264平方米是建筑总面积，不能当底面面积，也不能按四层简单平均恢复实际平面。",
+          "未取得可靠总体长、宽、总高度、塔顶高度、精确屋面坡度或楼层标高。",
+          "约2×10米的文字数值仅属于所述阳台，不适用于整个主楼。"
+        ],
+        "style": "地方志称德国文艺复兴式；百科另述巴洛克因素。造型优先依据可见照片与明确构件，不以风格标签补造缺失立面。"
+      },
+      "photographs": [
+        {
+          "id": "commons-baycrest-2010-05",
+          "commons_page": "https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Russian_Consulate_General_in_Shanghai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "metadata_api_url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Russian_Consulate_General_in_Shanghai.jpg&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata&format=json",
+          "creator": "Baycrest",
+          "credit": "Own work",
+          "capture_date_as_declared": "2010-05",
+          "upload_date": "2010-10-02",
+          "license": "CC BY-SA 2.5",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+          "width_px": 1600,
+          "height_px": 1200,
+          "visually_inspected": true,
+          "reference_period": "2010年5月的可见外观；不能表述为2026现状实测。",
+          "observations": [
+            "浅色外墙，立面有水平线脚和竖向壁柱式分格。",
+            "红色坡屋面，坡面可见拱形老虎窗；不能仅凭颜色确定屋面材料。",
+            "正向可见部分有曲线装饰山花。",
+            "高于主体屋面的塔状构件，下段浅色，上部小柱环绕的亭状/灯笼状结构及绿色曲线顶；具体几何边数不可仅凭本图精确恢复。",
+            "较低层有成列拱形开口，上部有矩形窗；可见阳台、栏杆。",
+            "照片可见一个主要立面和局部侧面，下部部分被植物遮挡；周围现代高楼不属于该历史主楼。"
+          ],
+          "unresolved": [
+            "不可从单张视角恢复全平面、背面、全部侧面、各层所有开口数量、未露出的支承关系。",
+            "地方志六角形凉亭与照片中亭/塔形构件的逐项身份未充分核定，不能只因外观相似自动合并。",
+            "没有相机标定或可验证控制尺寸，照片比例只能作为候选近似。"
+          ],
+          "reuse": "照片目前仅保留/tmp参考，未进入仓库或再次分发；如后续分发原图，应保留作者/来源/CC BY-SA 2.5许可信息。",
+          "bytes": 524523,
+          "sha256": "2904a694663af08a23c943c6b14f8de5efc88c85e0e14e5490166aa45cfb75b3",
+          "metadata_file": {
+            "bytes": 2441,
+            "sha256": "02a197f548d5b578badc13c05ec087ddea3669fbb33f42349e8c4f7da39bc53d"
+          }
+        }
+      ],
+      "identity_and_duplicate_check": {
+        "target": "黄浦路20号的历史主楼外观；邻楼及后来附属建筑不自动属于同一模型。",
+        "tracked_filename_check": "git ls-tree -r --name-only HEAD | rg -i russian|consulate 未命中；仅是文件名检查，不证明不存在中文别名或其他资产。",
+        "parent_supplied_existing_map_lead": {
+          "id": "49f3a80d-d5c3-421a-904a-e17974063f73",
+          "osm": "w24476069@17",
+          "status": "identity-only",
+          "interpretation": "已有身份/地图线索，不等于已有经参考验证的精细主楼模型。"
+        },
+        "cross_checked_inventory_report": {
+          "path": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json",
+          "sha256": "7b261a91686195a24ba7402ea97076b9939e55cbf067c51aae7de2d9014f9f94",
+          "classification": "no_registered_model",
+          "scope": "当前已发布模型清单、候选manifest、源码模型目录；馆区与主楼边界仍待单独核验。"
+        }
+      },
+      "model_readiness": {
+        "allowed_candidate_scope": "可做公开历史主楼的四层体量及照片可见装饰、坡屋面、塔部轮廓候选，并标明未量测与未见立面。",
+        "not_supported": "现有资料不足以制作尺度已校准、四立面完整或构件级精确的复原。",
+        "next_needed_if_precision_required": "总平面/可靠主楼长宽高及另外公开历史外观视角；本次有限审查到此收束。"
+      }
+    }
+  ],
+  "rights_policy": "下载照片均仅留/tmp。两张Commons照片各有明确CC BY-SA许可，后续如再分发须逐图署名、链接许可、注明改动，并遵守适用共享条款；官方／新闻页面无明确开放许可部分仅作短摘及事实参考，不再分发全文或图片。",
+  "limits": [
+    "史料网页日期、归档日期和照片日期分别记录，不相互替代。",
+    "本轮没有现场测量、可靠完整总平面或逐立面标定；不据站地面积、建筑总面积反推出主楼边长。",
+    "复建／修改年代与现状一致性未建立。有限审查已收束，没有扩大为新建筑搜索。"
+  ],
+  "root_review": {
+    "date": "2026-10-29",
+    "cache_files_hashes_checked": 10,
+    "images_viewed": [
+      "broadway-commons-2014",
+      "commons-baycrest-2010-05"
+    ],
+    "observations": [
+      "Broadway image shows the tall brown-brick body and stepped upper massing; the pale Jahwa tower at the right is a separate building. No full four-wing footprint or rear facade is recoverable from this view.",
+      "The consulate image shows an arched lower facade, rectangular upper openings, red sloping roof with dormers and a tall green-roof lantern. A separate low green-roof pavilion appears in the foreground to the right; do not merge this small pavilion with the high roof tower solely from the gazetteer wording."
+    ],
+    "photo_period_acceptance": "Reference photographs only; no measured dimensions or 2026 condition verified"
+  }
+}

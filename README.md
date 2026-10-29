@@ -37,6 +37,8 @@
 | 14 | 崇明学宫仪门 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；已找到题注及匾额相符的高清正面；制作曲线端墙、瓦坡与格窗，帘后门扇、背侧面仍待核 |
 | 15 | 崇明学宫明伦堂 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；文献尺寸与树木遮挡的庭院照片参照待制；历史五楹与现状分开，高10.37/10.5米两版本保留 |
 | 16 | 崇明学宫碑廊 | 崇明区／鳌山路696号／崇明学宫院内 | 待制作 | — | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；总量算术支持东西各30.5米、南北合计15.7米；先核分段，不能均分南北或虚构闭合矩形；碑刻逐块查证 |
+| 17 | 上海大厦／百老汇大厦历史主楼 | 虹口区／北苏州路（2号／20号门牌记载待核） | 待制作 | — | [地方志文字](<https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html>) · [2014年外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>)；按名录顺序制作主楼退台外观候选；76.7/77米、21/22层与2/20号差异保留，宽深、翼长和背面估计 |
+| 18 | 俄罗斯领事馆历史主楼外观 | 虹口区／黄浦路20号 | 待制作 | — | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>)；按四层文字与2010外观制作候选；总体宽深高缺失，1916/1917并列，塔部与园内小亭分别核对 |
 
 ### 已有模型的后续核验
 
@@ -103,23 +105,23 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-001 | 汇丰银行大楼 | 中山东一路12号 | [名录][H1] · 照片待核 | 已有模型可能关联：bund12；待核对范围 |
-| sh-historic-b1-002 | 沙逊大厦、华懋饭店 | 中山东一路20号 | [名录][H1] · 照片待核 | 已有模型可能关联：bund20；待核对范围 |
-| sh-historic-b1-003 | 中国银行 | 中山东一路23号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-004 | 江海关 | 中山东一路13号 | [名录][H1] · 照片待核 | 已有模型可能关联：customs-house；待核对范围 |
-| sh-historic-b1-006 | 上海总会 | 中山东一路2号 | [名录][H1] · 照片待核 | 已有模型可能关联：bund02；待核对范围 |
-| sh-historic-b1-007 | 汇中饭店 | 中山东一路19号 | [名录][H1] · 照片待核 | 已有模型可能关联：bund19；待核对范围 |
-| sh-historic-b1-009 | 国际饭店 | 南京西路170号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-010 | 跑马总会 | 南京西路325号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-011 | 大光明大戏院 | 南京西路216号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-012 | 华安人寿保险公司、金门饭店 | 南京西路104号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-013 | 先施公司 | 南京东路690号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-014 | 老永安公司 / 新永安公司 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-015 | 新新公司 | 南京东路720号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-016 | 大新公司 | 南京东路830号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-017 | 华懋公寓 | 长乐路109号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-018 | 峻林公寓、茂名公寓 | 茂名南路65－125号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-019 | 公共租界工部局 | 汉口路153号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b1-001 | 汇丰银行大楼 | 中山东一路12号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund12；已有柱廊、穹顶、530带窗墙单元，右翼六窗照片采样；侧后细节、垂直尺寸含推定，室内及完整历史装饰未测绘。；未将整处名录判为完成 |
+| sh-historic-b1-002 | 沙逊大厦、华懋饭店 | 中山东一路20号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund20；已建北楼、退台、铜皮金字塔及三个内庭空洞；背面、内庭窗列和设备围护证据较弱。；未将整处名录判为完成 |
+| sh-historic-b1-003 | 中国银行 | 中山东一路23号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund23；模型含真实东塔及独立轮廓的西翼；西翼按文献四层解释，与OSM九层冲突，低置信度；不能因主楼已建而判全部翼部完成。；未将整处名录判为完成 |
+| sh-historic-b1-004 | 江海关 | 中山东一路13号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：customs-house；仅主前楼、中央钟塔及四角亭，明确排除西侧独立后翼OSM380340023和380339914；厚度、背立面和细部仍为推定。；未将整处名录判为完成 |
+| sh-historic-b1-006 | 上海总会 | 中山东一路2号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund02；已有上海总会历史楼外观，柱廊、阁楼拱窗、两座风亭；不代表现华尔道夫酒店后方现代建筑也已制作。；未将整处名录判为完成 |
+| sh-historic-b1-007 | 汇中饭店 | 中山东一路19号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund19；六层主楼、砖石立面、深拱口、角部八角灯亭及铜顶已建；屋顶附属高度和未见侧后细节推定。；未将整处名录判为完成 |
+| sh-historic-b1-009 | 国际饭店 | 南京西路170号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；确认历史塔楼/裙房边界及现状版本后建模。 |
+| sh-historic-b1-010 | 跑马总会 | 南京西路325号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先厘清会所主楼、钟塔及相接附属部分；若已有分离轮廓需按构件建条目。 |
+| sh-historic-b1-011 | 大光明大戏院 | 南京西路216号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；不是只做招牌或门面就判整栋完成。 |
+| sh-historic-b1-012 | 华安人寿保险公司、金门饭店 | 南京西路104号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定建筑本体及时代，只有实证多栋才拆。 |
+| sh-historic-b1-013 | 先施公司 | 南京东路690号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先确定百货、旅馆和屋顶塔楼是否同一连体建筑、不同体量或后建增建。 |
+| sh-historic-b1-014 | 老永安公司 / 新永安公司 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；拆sh-historic-b1-014-old：老永安公司/南京东路635号；sh-historic-b1-014-new：新永安公司/南京东路627号。 |
+| sh-historic-b1-015 | 新新公司 | 南京东路720号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先确认百货主体、屋顶突出构件及后期附加体。 |
+| sh-historic-b1-016 | 大新公司 | 南京东路830号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先锁定1934年历史大楼，再决定是否单列相接新体。 |
+| sh-historic-b1-017 | 华懋公寓 | 长乐路109号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；只制作锦北楼历史单体；不能代表整个锦江饭店，也不能与018合并为一栋。 |
+| sh-historic-b1-018 | 峻林公寓、茂名公寓 | 茂名南路65－125号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；至少把每个独立建筑实体及门牌拆清；不要预先断言两种旧名必然等于两栋，也不能凭一张峻岭图覆盖全部。 |
+| sh-historic-b1-019 | 公共租界工部局 | 汉口路153号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定街区围合、历史分期、内部/后建体，再拆单栋或明确连体范围。 |
 | sh-historic-b1-022 | 大世界游乐场 | 西藏南路1号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-037 | 步高里 | 陕西南路387号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-040 | 南京大戏院 | 延安东路523号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -973,8 +975,8 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-005 | 百老汇大厦 | 北苏州路2号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b1-008 | 苏联领事馆 | 黄浦路20号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b1-005 | 百老汇大厦 | 北苏州路2号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；两个地图UUID不能算两栋；先核照片年代、主楼与裙房关系，再形成一个主楼及必要部件范围。 |
+| sh-historic-b1-008 | 苏联领事馆 | 黄浦路20号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；确定历史主楼边界，馆区附属楼、院落及边界另核。 |
 | sh-historic-b1-023 | 上海邮政总局 | 北苏州路276号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-054 | 多伦路250号住宅 | 多伦路250号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-003 | 上海新亚大酒店 | 天潼路422号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -1078,7 +1080,7 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
 | sh-historic-b1-021 | 上海市体育场 | 国和路346号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-025 | 杨树浦水厂 | 杨树浦路830号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-012 | 旧市博物馆 | 长海路174号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
