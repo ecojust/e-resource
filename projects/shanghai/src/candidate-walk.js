@@ -1,12 +1,13 @@
 import * as THREE from '../vendor/three.module.js';
 import {makeWalker} from './walker-model.js';
-import {moveOutside, blockedAt, cameraFraction} from './candidate-walk-motion.js';
+import {BODY_RADIUS, WALK_LIMIT, validateWalkLimits, moveOutside, blockedAt, cameraFraction} from './candidate-walk-motion.js';
 
 /** A separate, explicitly unregistered outdoor inspection scene. The full
  * model's projected bounds stay closed: no implied interiors or bridge access.
  * A model is attached only after its viewer has verified its byte/SHA contract.
  */
-export function installCandidateWalk({scene, camera, renderer, controls, stage, render, onEnter, modelExtentLimit = 35}) {
+export function installCandidateWalk({scene, camera, renderer, controls, stage, render, onEnter, modelExtentLimit = 35, walkLimit = WALK_LIMIT}) {
+  validateWalkLimits({modelExtentLimit, walkLimit});
   const viewport = document.getElementById('model-view');
   const button = document.createElement('button');
   button.id = 'enter-model-walk'; button.type = 'button'; button.disabled = true;
@@ -29,7 +30,7 @@ export function installCandidateWalk({scene, camera, renderer, controls, stage, 
     if (active) updateView(); else render();
   }
   function home() {
-    position = {x: (bounds.minX + bounds.maxX) / 2, z: bounds.maxZ + 6};
+    position = {x: (bounds.minX + bounds.maxX) / 2, z: Math.min(bounds.maxZ + 6, walkLimit - BODY_RADIUS)};
     yaw = 0; pitch = .1; distance = 0; lastBlocked = false; resetInput(); updateView();
   }
   function updateView() {
@@ -49,7 +50,7 @@ export function installCandidateWalk({scene, camera, renderer, controls, stage, 
     if (length) { forward /= length; right /= length; }
     const dx = (right * Math.cos(yaw) - forward * Math.sin(yaw)) * speed * dt;
     const dz = (-forward * Math.cos(yaw) - right * Math.sin(yaw)) * speed * dt;
-    const next = moveOutside(position, dx, dz, bounds), travel = Math.hypot(next.x - position.x, next.z - position.z);
+    const next = moveOutside(position, dx, dz, bounds, walkLimit), travel = Math.hypot(next.x - position.x, next.z - position.z);
     lastBlocked = !!length && travel + 1e-6 < Math.hypot(dx, dz);
     position = next; distance += travel; visitor.animate(dt ? travel / dt : 0, time / 1000);
     updateView(); frame = requestAnimationFrame(tick);
@@ -115,8 +116,7 @@ export function installCandidateWalk({scene, camera, renderer, controls, stage, 
   function attachModel(model) {
     model.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(model);
-    if (!Number.isFinite(modelExtentLimit) || modelExtentLimit < 1 || modelExtentLimit > 40) throw Error('室外模型范围参数无效');
-    if (!Number.isFinite(box.min.x + box.max.z) || Math.max(Math.abs(box.min.x), Math.abs(box.max.x), Math.abs(box.min.z), Math.abs(box.max.z)) > modelExtentLimit) throw Error('模型超出室外漫游场地范围');
+    if (![box.min.x, box.max.x, box.min.z, box.max.z].every(Number.isFinite) || Math.max(Math.abs(box.min.x), Math.abs(box.max.x), Math.abs(box.min.z), Math.abs(box.max.z)) > modelExtentLimit) throw Error('模型超出室外漫游场地范围');
     const next = {minX: box.min.x - .05, maxX: box.max.x + .05, minZ: box.min.z - .05, maxZ: box.max.z + .05};
     bounds = bounds ? {minX: Math.min(bounds.minX, next.minX), maxX: Math.max(bounds.maxX, next.maxX), minZ: Math.min(bounds.minZ, next.minZ), maxZ: Math.max(bounds.maxZ, next.maxZ)} : next;
     // The pool viewer's original stage is below its basin. Add only surrounding
@@ -124,17 +124,18 @@ export function installCandidateWalk({scene, camera, renderer, controls, stage, 
     if (!ground && stage.position.y < -1) {
       ground = new THREE.Group();
       const {minX, maxX, minZ, maxZ} = bounds;
-      for (const [x0, x1, z0, z1] of [[-50, minX, -50, 50], [maxX, 50, -50, 50], [minX, maxX, -50, minZ], [minX, maxX, maxZ, 50]]) {
+      const groundLimit = walkLimit + 4;
+      for (const [x0, x1, z0, z1] of [[-groundLimit, minX, -groundLimit, groundLimit], [maxX, groundLimit, -groundLimit, groundLimit], [minX, maxX, -groundLimit, minZ], [minX, maxX, maxZ, groundLimit]]) {
         const mesh = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0, z1 - z0), stage.material);
         mesh.rotation.x = -Math.PI / 2; mesh.position.set((x0 + x1) / 2, -.02, (z0 + z1) / 2); mesh.receiveShadow = true; ground.add(mesh);
       }
       ground.visible = active; scene.add(ground);
     }
     button.disabled = false;
-    if (active && blockedAt(position.x, position.z, bounds)) home();
+    if (active && blockedAt(position.x, position.z, bounds, BODY_RADIUS, walkLimit)) home();
     if (desired) { desired = false; enter(); }
   }
-  const api = {enter, leave, resize, attachModel, get active() { return active; }, getState: () => ({active, position: {...position}, yaw, pitch, bounds: bounds && {...bounds}, distance, blocked: lastBlocked, keys: [...keys], scope: 'local-model-outdoor-only', geographicRegistration: false})};
+  const api = {enter, leave, resize, attachModel, get active() { return active; }, getState: () => ({active, position: {...position}, yaw, pitch, bounds: bounds && {...bounds}, modelExtentLimit, walkLimit, distance, blocked: lastBlocked, keys: [...keys], scope: 'local-model-outdoor-only', geographicRegistration: false})};
   window.candidateWalk = api;
   return api;
 }

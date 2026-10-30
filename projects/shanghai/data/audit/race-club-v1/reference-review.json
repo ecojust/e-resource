@@ -1,0 +1,177 @@
+{
+  "schema": "race-club-east-building-source-photo-review-v1",
+  "reviewed_utc": "2026-10-30T11:28:49.010605+00:00",
+  "record_id": "sh-historic-b1-010",
+  "asset_id": "huangpu-shanghai-race-club-east-building",
+  "scope": "Conservative exterior candidate for the historic east main building and tall principal clock tower. No whole-site, precise restoration, photo-scale or geographic acceptance.",
+  "inputs": [
+    {
+      "path": "projects/shanghai/data/model-todo/heritage-following-building-references.json",
+      "bytes": 47337,
+      "sha256": "572fbe6fad15b83c1bc8f8420b2b8da9f8e06dda26d778c9e20b329910cedc66"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/heritage-following-footprint-review.json",
+      "bytes": 59241,
+      "sha256": "f61bd04ebb24015d8e8f9329b766de6a7147b236f05b751ba524d99b7d965295"
+    }
+  ],
+  "photo": {
+    "local_path": "/workspace/race-research/race-photo.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Whole_View_of_Shanghai_Race_Club.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "file_page_url": "https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg",
+    "fixed_file_page_url": "https://commons.wikimedia.org/w/index.php?title=File:Whole_View_of_Shanghai_Race_Club.jpg&oldid=1213538508",
+    "bytes": 1846605,
+    "sha256": "4f20cd79134e93e95ed51ef5e7423f0360882b7a195936e2ead6d61c9bf1872a",
+    "matches_catalog_hash": true,
+    "pixels": [
+      3264,
+      2448
+    ],
+    "author": "Livelikerw",
+    "date_per_catalog_file_page": "2013-12-22 15:51:40",
+    "license": "CC BY-SA 3.0 Unported",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "actually_viewed": true,
+    "view_method": "tools.view_image, including original resolution",
+    "redistributed": false,
+    "texture_sampling": false
+  },
+  "documentary_source_fetches": [
+    {
+      "id": "paper2018",
+      "url": "https://m.thepaper.cn/newsDetail_forward_2042037",
+      "local_path": "/workspace/race-research/race-club-paper2018.html",
+      "bytes": 97449,
+      "sha256": "bb5140a313ab8f01d148bbe215f7c7628cba9fbf1b847763a004e496fc4efb30",
+      "matches_catalog_sha256": true
+    },
+    {
+      "id": "paper2017",
+      "url": "https://m.thepaper.cn/newsDetail_forward_1844575",
+      "local_path": "/workspace/race-research/race-club-paper2017.html",
+      "bytes": 65344,
+      "sha256": "6107b78c8a086f25960a38aeb8aa1099093c19cf482f052d0423e0ed738171bb",
+      "matches_catalog_sha256": true
+    },
+    {
+      "id": "wiki",
+      "url": "https://zh.wikipedia.org/wiki/上海跑马总会",
+      "local_path": "/workspace/race-research/race-club-wiki.html",
+      "bytes": 217452,
+      "sha256": "8150f604fca7f4ec326c915051ce473920827cdc556e1f6ed3af1a0081b0ee93",
+      "matches_catalog_sha256": false
+    }
+  ],
+  "source_review": [
+    {
+      "source_id": "paper2018",
+      "actually_read_relevant_text": true,
+      "facts": [
+        "南京西路325号; began 1933 and completed 1934.",
+        "East building has four floors, locally five; west building three; courtyard basement one.",
+        "Text names a principal clock tower and another side clock tower."
+      ],
+      "limit": "2018 complex description does not allocate every visible 2013 facade bay, establish uniform storey heights or provide surveyed dimensions."
+    },
+    {
+      "source_id": "paper2017",
+      "actually_read_relevant_text": true,
+      "facts": [
+        "East-building repair and initial exhibition had reached a trial-opening phase.",
+        "West building by 黄陂北路 and intermediate courtyard remained under construction."
+      ],
+      "limit": "Alteration-period evidence; 2013 roof terrace fixtures are not established as 2018 or 2026 condition."
+    },
+    {
+      "source_id": "wiki",
+      "actually_read_relevant_text": true,
+      "facts": [
+        "Secondary narrative describes a body more than 100 m long, four floors, reinforced-concrete structure.",
+        "Describes red-brown brick and stone exterior with a colonnade.",
+        "Describes an eight-storey principal tower at the northwest corner, 53 m high."
+      ],
+      "limit": "Current response differs from catalog hash by 30 bytes; the relevant dimensional prose is present. Retain fetched response hash separately. The 53 m datum and endpoint, exact length, and tower floor subdivisions are not surveyed or independently verified."
+    }
+  ],
+  "observations_after_actual_photo_view": [
+    {
+      "id": "long_body",
+      "confidence": "high visible-form confidence",
+      "observation": "A long substantially lower main block extends from the tall tower toward the right of the photo. It has pale stone-like vertical frames and horizontal floor/cornice bands against darker reddish/brown infill. Projecting solid vertical pavilions divide the longer recessed facade stretches.",
+      "modeling_consequence": "Retain the elongated body, stronger pavilion divisions and a pale/darker material contrast. Author all dimensions as estimates unless separately anchored."
+    },
+    {
+      "id": "principal_tower",
+      "confidence": "high visible-form confidence",
+      "observation": "A single tall square principal clock tower rises at the near left end. The two visible faces each carry a round light dial inside heavy arched stone-like framing, above long narrow vertical recessed bays. The tower has a projecting lower shoulder with balustrade/cornice bands.",
+      "modeling_consequence": "One tall principal tower; do not duplicate it at the opposite body end. Two dial faces are observed; other faces are an explicitly estimated continuation if modeled."
+    },
+    {
+      "id": "lantern_cap",
+      "confidence": "high visible-form confidence",
+      "observation": "Above the clocks is a narrower open pavilion/lantern, with tall dark gaps between pale columns and a short balustrade. A red tiled pyramidal/hipped roof with pronounced eaves caps it. A fine finial/pole is visible but its height-datum relation is unknown.",
+      "modeling_consequence": "Use actual open space in the lantern and an overhanging hipped cap. Do not use a glazed closed cube, generic flat top or the flagpole as a height control."
+    },
+    {
+      "id": "galleries",
+      "confidence": "high overall form; exact grid unverified",
+      "observation": "The long facade contains deep dark open colonnade/loggia space behind visible pale columns, with long pale floor and railing/parapet bands. A slimmer upper gallery or terrace-front band with reddish vertical members sits above. Trees conceal much of the lowest facade.",
+      "modeling_consequence": "Provide recess depth, columns and continuous horizontal gallery bands rather than treating the long front as one coplanar punched-window wall. Exact column count, clear opening widths and floor-to-floor mapping remain authored estimates."
+    },
+    {
+      "id": "pavilions",
+      "confidence": "visible form; identity interpretation limited",
+      "observation": "Solid projecting pale vertical blocks interrupt the long galleries, including a taller central/right pavilion with narrow openings and a low red hipped cap, and a solid capped end block at the far right. A small circular dial-like detail is visible on the central/right pavilion.",
+      "modeling_consequence": "The lower solid pavilion rhythm can be represented. This photo alone does not bind the small circular detail to the text-described secondary clock tower or justify a separate tall tower asset."
+    },
+    {
+      "id": "roof",
+      "confidence": "high visible form; hidden intersections unknown",
+      "observation": "A long pitched red-tile roof lies toward the rear of the main body. Smaller roofed projecting portions and an open/partly covered terrace sit in front of it. Pergola-like framing, translucent-looking terrace coverings and rooftop equipment are visible in the 2013 view.",
+      "modeling_consequence": "Keep the main pitched red roof distinct from the flat open terrace/gallery zone. Simplify or omit period-specific pergola, coverings, restaurant fixtures, rooftop equipment and vegetation. Do not infer the full roof intersection behind occlusions."
+    }
+  ],
+  "exclusions": [
+    "The curved ICBC block in the immediate foreground is a separate neighbor.",
+    "The huge white curved Shanghai Grand Theatre behind the main building is separate.",
+    "The lower red-roof block on the right is not independently bound as an included east-building component; exclude it with western buildings/courtyard links until researched separately.",
+    "Trees, people, traffic, modern advertising, roof restaurant furniture, temporary canopies and other streetscape features are not required permanent architectural geometry.",
+    "Do not assign surrounding high-rises or the whole former racecourse to this asset."
+  ],
+  "footprint_review": {
+    "source": "projects/shanghai/data/model-todo/heritage-following-footprint-review.json",
+    "osm_record": "w39764333@11",
+    "map_name": "ROOF 325",
+    "polygon_vertices": 8,
+    "minimum_rotated_rectangle_m": [
+      98.4545509670091,
+      32.57909979320074
+    ],
+    "area_m2": 2888.2053124638073,
+    "adopted_as_historic_model_outline": false,
+    "reason": "Eight-corner stepped map outline has no separate tower/east/west/courtyard parts, height or floor fields. The approx. 98.45 m map long extent conflicts in scope/endpoints with the secondary more-than-100 m body statement; neither may be silently rescaled or substituted for the other."
+  },
+  "limitations": [
+    "Elevated oblique single photo has no calibrated image-to-metre control; do not derive exact dimensions, angle, column count, clock diameter or precise roof pitch from pixels.",
+    "Documentary 53 m is an explicit secondary anchor only. Its endpoint is unspecified; any candidate base-to-cap treatment must be labeled an interpretation.",
+    "Four/local-five floors describes the east building in 2018, while eight tower storeys comes from a different secondary narrative. Neither requires equally spaced windows or uniform heights.",
+    "Photo metadata dates the view to 2013-12-22, before 2017-2018 museum alterations. It is not a verified 1934 restoration or 2026 condition.",
+    "Full rear/side elevations, hidden lower openings, full footprint, secondary tower boundary and roof/terrace intersections remain unverified.",
+    "No geographic registration, historical outside-wall boundary acceptance, city replacement or full listed-place completion follows from this review."
+  ],
+  "recommended_model_priority": [
+    "Overall elongated mass and one principal clock tower",
+    "Deep open galleries with continuous pale bands",
+    "Tall recessed tower bays and two observed clock faces",
+    "Open lantern under red hipped cap",
+    "Rear pitched red roof and lower roofed pavilion divisions"
+  ],
+  "acceptance": {
+    "source_photo_actually_viewed": true,
+    "geometry_reviewed": false,
+    "photo_scale_accepted": false,
+    "geographic_registration": false,
+    "whole_listed_place_complete": false
+  }
+}

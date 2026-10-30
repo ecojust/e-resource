@@ -2,22 +2,29 @@
 export const BODY_RADIUS = .35;
 export const WALK_LIMIT = 46;
 
-export function blockedAt(x, z, box, radius = BODY_RADIUS) {
-  return Math.abs(x) > WALK_LIMIT || Math.abs(z) > WALK_LIMIT ||
+export function validateWalkLimits({modelExtentLimit = 35, walkLimit = WALK_LIMIT} = {}) {
+  if (!Number.isFinite(walkLimit) || walkLimit < 1 || walkLimit > 120 ||
+      !Number.isFinite(modelExtentLimit) || modelExtentLimit < 1 || modelExtentLimit > 80 ||
+      modelExtentLimit > walkLimit - 1) throw Error('室外模型范围参数无效');
+  return {modelExtentLimit, walkLimit};
+}
+
+export function blockedAt(x, z, box, radius = BODY_RADIUS, walkLimit = WALK_LIMIT) {
+  return Math.abs(x) > walkLimit || Math.abs(z) > walkLimit ||
     (x > box.minX - radius && x < box.maxX + radius &&
      z > box.minZ - radius && z < box.maxZ + radius);
 }
 
-export function moveOutside(position, dx, dz, box) {
+export function moveOutside(position, dx, dz, box, walkLimit = WALK_LIMIT) {
   // Substeps prevent crossing thin facade components even after a slow frame.
   const steps = Math.max(1, Math.ceil(Math.hypot(dx, dz) / .12));
   let {x, z} = position;
   for (let i = 0; i < steps; i++) {
     const nx = x + dx / steps, nz = z + dz / steps;
-    if (!blockedAt(nx, nz, box)) { x = nx; z = nz; }
+    if (!blockedAt(nx, nz, box, BODY_RADIUS, walkLimit)) { x = nx; z = nz; }
     else {
-      if (!blockedAt(nx, z, box)) x = nx;
-      if (!blockedAt(x, nz, box)) z = nz;
+      if (!blockedAt(nx, z, box, BODY_RADIUS, walkLimit)) x = nx;
+      if (!blockedAt(x, nz, box, BODY_RADIUS, walkLimit)) z = nz;
     }
   }
   return {x, z};
