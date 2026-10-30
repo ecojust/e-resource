@@ -5,6 +5,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -17,6 +18,19 @@ def cell(value):
  return str(value or '—').replace('|','／').replace('\n',' ').replace('\r',' ')
 def link(title,url):
  return f'[{cell(title)}](<{url}>)' if url else cell(title)
+def compact_repeated_links(text):
+ # Only rewrite the angle-bracket links emitted by link(); labels and URLs stay exact.
+ pattern=re.compile(r'(?<!!)\[([^\[\]\n]+)\]\(<([^<>\n]+)>\)')
+ counts=Counter(m.group(2) for m in pattern.finditer(text));refs={}
+ for url,count in sorted(counts.items()):
+  if count<3:continue
+  ref='MTD-'+hashlib.sha256(url.encode()).hexdigest()[:8]
+  saving=count*(len(url.encode())+2-len(ref))
+  if saving>len(f'[{ref}]: <{url}>\n'.encode())+1:refs[url]=ref
+ if not refs:return text
+ assert len(set(refs.values()))==len(refs), 'Shared TODO link reference hash collision'
+ compact=pattern.sub(lambda m:f'[{m.group(1)}][{refs[m.group(2)]}]' if m.group(2) in refs else m.group(0),text)
+ return compact+'\n'+'\n'.join(f'[{ref}]: <{url}>' for url,ref in refs.items())+'\n'
 def model_sizes(job):
  if not job.get('manifest'):return '—'
  p=ROOT/job['manifest']
@@ -163,7 +177,7 @@ def build():
   url=next(r['source_url'] for r in records if r['batch']==batch)
   lines.append(f'[H{batch}]: <{url}>')
  assert sum(counts.values())==sum(1 for r in records if r['district'] in queue['district_order'])
- return '\n'.join(lines).rstrip()+'\n'
+ return compact_repeated_links('\n'.join(lines).rstrip()+'\n')
 def street_index():
  d=json.loads((DATA/'discovered-buildings.json').read_text());roads=json.loads((DATA/'discovered-streets.json').read_text());q=json.loads((DATA/'queue.json').read_text())
  b={r['id']:r for r in d['records']}
@@ -190,6 +204,8 @@ def main():
  if START in s:
   before,rest=s.split(START,1);_,after=rest.split(END,1);updated=before+block+after
  else:updated=s.replace('## 上海全景建模',block+'\n\n## 上海全景建模',1)
+ reference_counts=Counter(' '.join(label.split()).casefold() for label in re.findall(r'^ {0,3}\[([^\[\]]{1,999})\]:',updated,re.M))
+ assert all(reference_counts[label.casefold()]==1 for label in re.findall(r'^\[(MTD-[0-9a-f]{8})\]:',block,re.M)), 'Shared TODO link reference conflicts with an existing README reference'
  assert len(updated.encode('utf-8'))<=500_000, 'README risks GitHub preview truncation; shorten repeated text/links while retaining all TODO rows'
  street=DATA/'STREETS.md';street_text=street_index()
  if a.check:

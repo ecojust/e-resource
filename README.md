@@ -21,27 +21,28 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 1 | [崇明学宫戟门](<https://rawcdn.githack.com/ecojust/e-resource/c1eb2641f2f6730cd1045bf7a94936a74e834140/projects/shanghai/ji-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 3.95 MB／Blender 5.14 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [2005年照片](<https://commons.wikimedia.org/wiki/File:Pan_pool_and_Ji_Gate_of_the_Chongming_Confucian_Temple.jpg>)；候选资产与检查已交付；背面与截面估计，待单体配准及进一步照片核验 |
-| 2 | [崇明学宫棂星门中央石门](<https://rawcdn.githack.com/ecojust/e-resource/bee34f08d2b7c8b6e545f16691d2b8b06d81b0d9/projects/shanghai/lingxing-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.65 MB／Blender 0.54 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [2005年照片](<https://commons.wikimedia.org/wiki/File:Lingxing_Gate_of_the_Chongming_Confucian_Temple.jpg>)；中央候选已交付；2005开启姿态与2021下部参照的组合，石柱总高／截面／云纹为估计；侧门另列，待原字刻和单体配准 |
+| 1 | [崇明学宫戟门](<https://rawcdn.githack.com/ecojust/e-resource/c1eb2641f2f6730cd1045bf7a94936a74e834140/projects/shanghai/ji-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 3.95 MB／Blender 5.14 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Pan_pool_and_Ji_Gate_of_the_Chongming_Confucian_Temple.jpg>)；候选资产与检查已交付；背面与截面估计，待单体配准及进一步照片核验 |
+| 2 | [崇明学宫棂星门中央石门](<https://rawcdn.githack.com/ecojust/e-resource/bee34f08d2b7c8b6e545f16691d2b8b06d81b0d9/projects/shanghai/lingxing-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.65 MB／Blender 0.54 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Lingxing_Gate_of_the_Chongming_Confucian_Temple.jpg>)；中央候选已交付；2005开启姿态与2021下部参照的组合，石柱总高／截面／云纹为估计；侧门另列，待原字刻和单体配准 |
 | 3 | [崇明学宫照片左侧门（历史石框参照）](<https://rawcdn.githack.com/ecojust/e-resource/122db27da5981e493dd3f2b12f088eb2a00bc29e/projects/shanghai/lingxing-left-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.23 MB／Blender 0.26 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm#2>) · [2021图文／棂星门照片](<https://m.thepaper.cn/newsDetail_forward_11469862>)；候选已交付；1990年代双高柱石框与较新开门姿态组合，右柱雕纹未复原；方位、截面、精细构造及配准待核 |
 | 4 | [崇明学宫照片右侧门（1990年代参照）](<https://rawcdn.githack.com/ecojust/e-resource/dafaba0ba493d0633bbfe9c13789a1fd4a951f28/projects/shanghai/lingxing-right-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.023 MB／Blender 0.11 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm#2>) · [1990年代照片（2021文章）](<https://imagepphcloud.thepaper.cn/pph/image/117/259/19.jpg>)；历史基础候选已交付；旧图低分辨率，关闭姿态、门面细分与柱截面仍估计；雕饰、准确年份与配准待核 |
-| 5 | [崇明学宫名宦祠](<https://rawcdn.githack.com/ecojust/e-resource/0727e5441bcbab99979ea05dfce753a07edbfba2/projects/shanghai/minghuan-shrine.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_2.htm>) · [区政府方位依据](<https://www.shcm.gov.cn/zjcm/006008/20210423/8c183cc2-f5a9-4d52-b152-9d72ec7eb5a7.html>) · [单体身份审查](<projects/shanghai/data/model-todo/chongming-shrines-reference-review.json>)；文字尺寸候选已交付；屋顶、窗门式样、配色与背面估计，待单体照片及原址配准 |
-| 6 | [崇明学宫乡贤祠](<https://rawcdn.githack.com/ecojust/e-resource/67d54f87a457fe82678c7b98fdb0b3cad4f83b6d/projects/shanghai/xiangxian-shrine.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_2.htm>) · [区政府方位依据](<https://www.shcm.gov.cn/zjcm/006008/20210423/8c183cc2-f5a9-4d52-b152-9d72ec7eb5a7.html>) · [单体身份审查](<projects/shanghai/data/model-todo/chongming-shrines-reference-review.json>)；文字尺寸候选已交付；独立登记戟门西侧身份，屋顶门窗共用明确假设，实物差异、单体照片与配准待核 |
-| 7 | [崇明学宫东庑](<https://rawcdn.githack.com/ecojust/e-resource/ba2901f26128f3959694ea541a847797c6957764/projects/shanghai/east-wing.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_2.htm>) · [现代两庑资料审查](<projects/shanghai/data/model-todo/chongming-wings-reference-review.json>)；现存七楹文字候选已交付；屋顶端部、等分立面及六窗一门为估计，现代廊道、完整立面与单体配准待核 |
-| 8 | [崇明学宫西庑](<https://rawcdn.githack.com/ecojust/e-resource/3418a4b1c3add94408868e221e4b542b6a1fb21f/projects/shanghai/west-wing.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_2.htm>) · [现代两庑资料审查](<projects/shanghai/data/model-todo/chongming-wings-reference-review.json>)；西庑身份独立登记，文字尺寸候选已交付；共用外观是假设，实物差异、现代廊道与单体配准待核 |
-| 9 | [崇明学宫东官厅](<https://rawcdn.githack.com/ecojust/e-resource/e84905881d151975e60cc9a0f334af186042629e/projects/shanghai/east-guanting.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.75 MB／Blender 1.06 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [官厅资料审查](<projects/shanghai/data/model-todo/chongming-guanting-reference-review.json>)；文字尺寸候选已交付；门窗、屋顶及朝院长边是假设，网页窗边细竖线成因未定；单体照片与原址配准待核 |
-| 10 | [崇明学宫西官厅](<https://rawcdn.githack.com/ecojust/e-resource/ffc4510616e628d505b710b8e834f4bb3571eb8a/projects/shanghai/west-guanting.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.73 MB／Blender 0.91 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [官厅资料审查](<projects/shanghai/data/model-todo/chongming-guanting-reference-review.json>)；西侧身份及不同尺寸候选已交付；共用门窗屋顶是假设，网页细竖线仍在，单体照片与配准待核 |
-| 11 | [崇明学宫西牌坊（题名面待核）](<https://rawcdn.githack.com/ecojust/e-resource/6673d31dee681d219078b58bc658d77a0aa4e1e5/projects/shanghai/west-paifang.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [题名、尺寸与高清照片审查](<projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>)；三屋顶、两石柱及开放通道结构候选已交付，两面空匾；题名面归属、精确尺度、后坡与雕饰仍待核 |
-| 12 | [崇明学宫东牌坊（题名面待核）](<https://rawcdn.githack.com/ecojust/e-resource/75557ce32a40e4757eaca0cce49d896a53917731/projects/shanghai/east-paifang.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>) · [题名、尺寸与高清照片审查](<projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>)；东座结构候选已交付，两面空匾；共用造型是假设，题名面、两座实物差异及原址配准仍待核 |
-| 13 | [崇明学宫儒学大门](<https://rawcdn.githack.com/ecojust/e-resource/17b34c264db43fa93fb0ca5bfd55237a1579aa89/projects/shanghai/ruxue-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.74 MB／Blender 1.05 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>)；文字尺寸候选已交付；单体照片、门窗屋顶与朝向仍待核，窗旁细竖线保留为显示限制，待原址配准 |
-| 14 | [崇明学宫仪门](<https://rawcdn.githack.com/ecojust/e-resource/9eb58f131439840c0a9aa01e8c6d3c7f6bafcd1c/projects/shanghai/yimen.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.31 MB／Blender 1.90 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>) · [可见构件与遮挡审查](<projects/shanghai/data/model-todo/chongming-yimen-visible-features.json>)；曲线端墙、格窗及帘幕候选已交付；模型高7米为估计，文献9.07米仍待核，背侧面、台阶与原址配准未验收 |
-| 15 | [崇明学宫明伦堂](<https://rawcdn.githack.com/ecojust/e-resource/0edf42c76ba0ffaabeaf8047d71f01297c0f9161/projects/shanghai/minglun-hall.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.29 MB／Blender 1.79 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>) · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-minglun-visible-features.json>)；文字尺寸候选已交付；10.37/10.5米高度版本保留，现代柱网、门窗、屋顶和前阶仍为估计，待完整照片及配准 |
-| 16 | [崇明学宫碑廊](<https://rawcdn.githack.com/ecojust/e-resource/9c2ae34985b47c260fd230b602c855d11ec46176/projects/shanghai/stele-corridors.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 3.45 MB／Blender 8.59 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>) · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-stele-visible-features.json>)；两条共61米长边候选已交付；南北合计15.7米的分段、完整院落布局、碑面身份与原址配准继续待核 |
+| 5 | [崇明学宫名宦祠](<https://rawcdn.githack.com/ecojust/e-resource/0727e5441bcbab99979ea05dfce753a07edbfba2/projects/shanghai/minghuan-shrine.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据](<https://www.shcm.gov.cn/zjcm/006008/20210423/8c183cc2-f5a9-4d52-b152-9d72ec7eb5a7.html>) · [单体身份审查](<projects/shanghai/data/model-todo/chongming-shrines-reference-review.json>)；文字尺寸候选已交付；屋顶、窗门式样、配色与背面估计，待单体照片及原址配准 |
+| 6 | [崇明学宫乡贤祠](<https://rawcdn.githack.com/ecojust/e-resource/67d54f87a457fe82678c7b98fdb0b3cad4f83b6d/projects/shanghai/xiangxian-shrine.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据](<https://www.shcm.gov.cn/zjcm/006008/20210423/8c183cc2-f5a9-4d52-b152-9d72ec7eb5a7.html>) · [单体身份审查](<projects/shanghai/data/model-todo/chongming-shrines-reference-review.json>)；文字尺寸候选已交付；独立登记戟门西侧身份，屋顶门窗共用明确假设，实物差异、单体照片与配准待核 |
+| 7 | [崇明学宫东庑](<https://rawcdn.githack.com/ecojust/e-resource/ba2901f26128f3959694ea541a847797c6957764/projects/shanghai/east-wing.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查](<projects/shanghai/data/model-todo/chongming-wings-reference-review.json>)；现存七楹文字候选已交付；屋顶端部、等分立面及六窗一门为估计，现代廊道、完整立面与单体配准待核 |
+| 8 | [崇明学宫西庑](<https://rawcdn.githack.com/ecojust/e-resource/3418a4b1c3add94408868e221e4b542b6a1fb21f/projects/shanghai/west-wing.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查](<projects/shanghai/data/model-todo/chongming-wings-reference-review.json>)；西庑身份独立登记，文字尺寸候选已交付；共用外观是假设，实物差异、现代廊道与单体配准待核 |
+| 9 | [崇明学宫东官厅](<https://rawcdn.githack.com/ecojust/e-resource/e84905881d151975e60cc9a0f334af186042629e/projects/shanghai/east-guanting.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.75 MB／Blender 1.06 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查](<projects/shanghai/data/model-todo/chongming-guanting-reference-review.json>)；文字尺寸候选已交付；门窗、屋顶及朝院长边是假设，网页窗边细竖线成因未定；单体照片与原址配准待核 |
+| 10 | [崇明学宫西官厅](<https://rawcdn.githack.com/ecojust/e-resource/ffc4510616e628d505b710b8e834f4bb3571eb8a/projects/shanghai/west-guanting.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.73 MB／Blender 0.91 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查](<projects/shanghai/data/model-todo/chongming-guanting-reference-review.json>)；西侧身份及不同尺寸候选已交付；共用门窗屋顶是假设，网页细竖线仍在，单体照片与配准待核 |
+| 11 | [崇明学宫西牌坊（题名面待核）](<https://rawcdn.githack.com/ecojust/e-resource/6673d31dee681d219078b58bc658d77a0aa4e1e5/projects/shanghai/west-paifang.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查](<projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>)；三屋顶、两石柱及开放通道结构候选已交付，两面空匾；题名面归属、精确尺度、后坡与雕饰仍待核 |
+| 12 | [崇明学宫东牌坊（题名面待核）](<https://rawcdn.githack.com/ecojust/e-resource/75557ce32a40e4757eaca0cce49d896a53917731/projects/shanghai/east-paifang.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查](<projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>)；东座结构候选已交付，两面空匾；共用造型是假设，题名面、两座实物差异及原址配准仍待核 |
+| 13 | [崇明学宫儒学大门](<https://rawcdn.githack.com/ecojust/e-resource/17b34c264db43fa93fb0ca5bfd55237a1579aa89/projects/shanghai/ruxue-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 0.74 MB／Blender 1.05 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439]；文字尺寸候选已交付；单体照片、门窗屋顶与朝向仍待核，窗旁细竖线保留为显示限制，待原址配准 |
+| 14 | [崇明学宫仪门](<https://rawcdn.githack.com/ecojust/e-resource/9eb58f131439840c0a9aa01e8c6d3c7f6bafcd1c/projects/shanghai/yimen.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.31 MB／Blender 1.90 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与遮挡审查](<projects/shanghai/data/model-todo/chongming-yimen-visible-features.json>)；曲线端墙、格窗及帘幕候选已交付；模型高7米为估计，文献9.07米仍待核，背侧面、台阶与原址配准未验收 |
+| 15 | [崇明学宫明伦堂](<https://rawcdn.githack.com/ecojust/e-resource/0edf42c76ba0ffaabeaf8047d71f01297c0f9161/projects/shanghai/minglun-hall.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 1.29 MB／Blender 1.79 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-minglun-visible-features.json>)；文字尺寸候选已交付；10.37/10.5米高度版本保留，现代柱网、门窗、屋顶和前阶仍为估计，待完整照片及配准 |
+| 16 | [崇明学宫碑廊](<https://rawcdn.githack.com/ecojust/e-resource/9c2ae34985b47c260fd230b602c855d11ec46176/projects/shanghai/stele-corridors.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 3.45 MB／Blender 8.59 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-stele-visible-features.json>)；两条共61米长边候选已交付；南北合计15.7米的分段、完整院落布局、碑面身份与原址配准继续待核 |
 | 17 | [上海大厦／百老汇大厦历史主楼](<https://rawcdn.githack.com/ecojust/e-resource/5f6c128013ab0b8fb32e1e0a7198a1ba970bedc0/projects/shanghai/broadway-mansions.html>) | 虹口区／北苏州路（2号／20号门牌记载待核） | 候选已交付／待核验 | 网页 3.26 MB／Blender 5.03 MB | [地方志文字](<https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html>) · [2014年外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>) · [地图轮廓与部件关系](<projects/shanghai/data/model-todo/heritage-next-footprint-review.json>)；主楼外观候选已交付；近远景、原生重开与网页外围漫游通过。宽深、成组退台、窗网与隐蔽面含估计；层数、门牌与原址配准待核 |
 | 18 | [俄罗斯领事馆历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/6f24cb05bda5b5659ac77998dbae39bc4c411a18/projects/shanghai/russian-consulate.html>) | 虹口区／黄浦路20号 | 候选已交付／待核验 | 网页 1.00 MB／Blender 1.69 MB | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>) · [地图轮廓与部件关系](<projects/shanghai/data/model-todo/heritage-next-footprint-review.json>)；2010外观主楼候选已交付，近远景、压缩解码、原生重开与网页检查通过；整体尺度、侧背面、塔部及右侧凸窗仍待细核，园内凉亭未建，1916/1917并列，未配准 |
-| 19 | [国际饭店历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/cc2b2f4873ed3ac01d84e6b9d50b7b3739e8cb52/projects/shanghai/park-hotel.html>) | 黄浦区／南京西路170号 | 候选已交付／待核验 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；外观候选已交付；近远景、原生及网页检查通过。83.8/83.6米并列，规则化退台、中央窗组、低翼后界与未见面待细核，未原址配准 |
-| 20 | [上海跑马总会历史东楼与主钟塔](<https://rawcdn.githack.com/ecojust/e-resource/3f88ffc426f6eba3ec8930101c1914e4df0ac309/projects/shanghai/race-club.html>) | 黄浦区／南京西路325号 | 候选已交付／待核验 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；东楼与主钟塔候选已交付；近远景、开放廊道、原生及网页检查通过。53米仅次级记载，主体尺度、窗网、隐蔽面及细部为估计；西楼／副塔未建，未原址配准 |
-| 21 | [大光明大戏院临街入口与灯塔局部](<https://rawcdn.githack.com/ecojust/e-resource/6e75351b9fecbb3dfc3bae00442731db42d77124/projects/shanghai/grand-theatre.html>) | 黄浦区／南京西路216号 | 候选已交付／待核验 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；入口、灯塔与圆角墙带局部候选已交付；近远景、原生及网页检查通过。30.5/16米端点未解，尺寸和字形含估计；影厅及完整商铺带未建，未原址配准 |
+| 19 | [国际饭店历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/cc2b2f4873ed3ac01d84e6b9d50b7b3739e8cb52/projects/shanghai/park-hotel.html>) | 黄浦区／南京西路170号 | 候选已交付／待核验 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；外观候选已交付；近远景、原生及网页检查通过。83.8/83.6米并列，规则化退台、中央窗组、低翼后界与未见面待细核，未原址配准 |
+| 20 | [上海跑马总会历史东楼与主钟塔](<https://rawcdn.githack.com/ecojust/e-resource/3f88ffc426f6eba3ec8930101c1914e4df0ac309/projects/shanghai/race-club.html>) | 黄浦区／南京西路325号 | 候选已交付／待核验 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；东楼与主钟塔候选已交付；近远景、开放廊道、原生及网页检查通过。53米仅次级记载，主体尺度、窗网、隐蔽面及细部为估计；西楼／副塔未建，未原址配准 |
+| 21 | [大光明大戏院临街入口与灯塔局部](<https://rawcdn.githack.com/ecojust/e-resource/6e75351b9fecbb3dfc3bae00442731db42d77124/projects/shanghai/grand-theatre.html>) | 黄浦区／南京西路216号 | 候选已交付／待核验 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；入口、灯塔与圆角墙带局部候选已交付；近远景、原生及网页检查通过。30.5/16米端点未解，尺寸和字形含估计；影厅及完整商铺带未建，未原址配准 |
+| 22 | [金门饭店／华安大楼历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html>) | 黄浦区／南京西路104号 | 候选已交付／待核验 | 网页 1.64 MB／Blender 2.71 MB | [官方文字与尺寸](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html>) · [已核2013外观照片](<https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG>) · [来源与冲突审查](<projects/shanghai/data/audit/pacific-hotel-v1/documentary-review.json>) · [地图外包与北楼限制](<projects/shanghai/data/audit/pacific-hotel-v1/footprint-review.json>)；主楼与钟塔候选已交付；作者构件、压缩表面等价、原生重开及网页检查通过。38.16/36.16米与9米塔高端点未解，42×36米主体、隐面及细部为估计；底座构件未整体布尔并集，北楼未建，未原址配准 |
 
 ### 已有模型的后续核验
 
@@ -108,26 +109,26 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-001 | 汇丰银行大楼 | 中山东一路12号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund12；已有柱廊、穹顶、530带窗墙单元，右翼六窗照片采样；侧后细节、垂直尺寸含推定，室内及完整历史装饰未测绘。；未将整处名录判为完成 |
-| sh-historic-b1-002 | 沙逊大厦、华懋饭店 | 中山东一路20号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund20；已建北楼、退台、铜皮金字塔及三个内庭空洞；背面、内庭窗列和设备围护证据较弱。；未将整处名录判为完成 |
-| sh-historic-b1-003 | 中国银行 | 中山东一路23号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund23；模型含真实东塔及独立轮廓的西翼；西翼按文献四层解释，与OSM九层冲突，低置信度；不能因主楼已建而判全部翼部完成。；未将整处名录判为完成 |
-| sh-historic-b1-004 | 江海关 | 中山东一路13号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：customs-house；仅主前楼、中央钟塔及四角亭，明确排除西侧独立后翼OSM380340023和380339914；厚度、背立面和细部仍为推定。；未将整处名录判为完成 |
-| sh-historic-b1-006 | 上海总会 | 中山东一路2号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund02；已有上海总会历史楼外观，柱廊、阁楼拱窗、两座风亭；不代表现华尔道夫酒店后方现代建筑也已制作。；未将整处名录判为完成 |
-| sh-historic-b1-007 | 汇中饭店 | 中山东一路19号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 已关联单体：bund19；六层主楼、砖石立面、深拱口、角部八角灯亭及铜顶已建；屋顶附属高度和未见侧后细节推定。；未将整处名录判为完成 |
-| sh-historic-b1-009 | 国际饭店 | 南京西路170号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；确认历史塔楼/裙房边界及现状版本后建模。 |
-| sh-historic-b1-010 | 跑马总会 | 南京西路325号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先厘清会所主楼、钟塔及相接附属部分；若已有分离轮廓需按构件建条目。 |
-| sh-historic-b1-011 | 大光明大戏院 | 南京西路216号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；不是只做招牌或门面就判整栋完成。 |
-| sh-historic-b1-012 | 华安人寿保险公司、金门饭店 | 南京西路104号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定建筑本体及时代，只有实证多栋才拆。 |
-| sh-historic-b1-013 | 先施公司 | 南京东路690号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先确定百货、旅馆和屋顶塔楼是否同一连体建筑、不同体量或后建增建。 |
-| sh-historic-b1-014 | 老永安公司 / 新永安公司 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；拆sh-historic-b1-014-old：老永安公司/南京东路635号；sh-historic-b1-014-new：新永安公司/南京东路627号。 |
-| sh-historic-b1-015 | 新新公司 | 南京东路720号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先确认百货主体、屋顶突出构件及后期附加体。 |
-| sh-historic-b1-016 | 大新公司 | 南京东路830号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；先锁定1934年历史大楼，再决定是否单列相接新体。 |
-| sh-historic-b1-017 | 华懋公寓 | 长乐路109号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；只制作锦北楼历史单体；不能代表整个锦江饭店，也不能与018合并为一栋。 |
-| sh-historic-b1-018 | 峻林公寓、茂名公寓 | 茂名南路65－125号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；至少把每个独立建筑实体及门牌拆清；不要预先断言两种旧名必然等于两栋，也不能凭一张峻岭图覆盖全部。 |
-| sh-historic-b1-019 | 公共租界工部局 | 汉口路153号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定街区围合、历史分期、内部/后建体，再拆单栋或明确连体范围。 |
-| sh-historic-b1-022 | 大世界游乐场 | 西藏南路1号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；先确认历史主楼、塔部及附属体边界；大世界名称不足以确认全部保护范围是一个楼体。 |
-| sh-historic-b1-037 | 步高里 | 陕西南路387号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；里弄整体名称，先按入口、里弄房屋及具体门牌拆分；不能以一栋完成整处，原索引未给可用逐栋数。 |
-| sh-historic-b1-040 | 南京大戏院 | 延安东路523号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；南京大戏院／上海音乐厅，名录地址延安东路523号；先核照片时期和新旧位置关系，索引未给迁建年份，不填未经核查的年代。 |
+| sh-historic-b1-001 | 汇丰银行大楼 | 中山东一路12号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund12；已有柱廊、穹顶、530带窗墙单元，右翼六窗照片采样；侧后细节、垂直尺寸含推定，室内及完整历史装饰未测绘。；未将整处名录判为完成 |
+| sh-historic-b1-002 | 沙逊大厦、华懋饭店 | 中山东一路20号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund20；已建北楼、退台、铜皮金字塔及三个内庭空洞；背面、内庭窗列和设备围护证据较弱。；未将整处名录判为完成 |
+| sh-historic-b1-003 | 中国银行 | 中山东一路23号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund23；模型含真实东塔及独立轮廓的西翼；西翼按文献四层解释，与OSM九层冲突，低置信度；不能因主楼已建而判全部翼部完成。；未将整处名录判为完成 |
+| sh-historic-b1-004 | 江海关 | 中山东一路13号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：customs-house；仅主前楼、中央钟塔及四角亭，明确排除西侧独立后翼OSM380340023和380339914；厚度、背立面和细部仍为推定。；未将整处名录判为完成 |
+| sh-historic-b1-006 | 上海总会 | 中山东一路2号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund02；已有上海总会历史楼外观，柱廊、阁楼拱窗、两座风亭；不代表现华尔道夫酒店后方现代建筑也已制作。；未将整处名录判为完成 |
+| sh-historic-b1-007 | 汇中饭店 | 中山东一路19号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund19；六层主楼、砖石立面、深拱口、角部八角灯亭及铜顶已建；屋顶附属高度和未见侧后细节推定。；未将整处名录判为完成 |
+| sh-historic-b1-009 | 国际饭店 | 南京西路170号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；确认历史塔楼/裙房边界及现状版本后建模。 |
+| sh-historic-b1-010 | 跑马总会 | 南京西路325号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先厘清会所主楼、钟塔及相接附属部分；若已有分离轮廓需按构件建条目。 |
+| sh-historic-b1-011 | 大光明大戏院 | 南京西路216号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；不是只做招牌或门面就判整栋完成。 |
+| sh-historic-b1-012 | 华安人寿保险公司、金门饭店 | 南京西路104号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定建筑本体及时代，只有实证多栋才拆。 |
+| sh-historic-b1-013 | 先施公司 | 南京东路690号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先确定百货、旅馆和屋顶塔楼是否同一连体建筑、不同体量或后建增建。 |
+| sh-historic-b1-014 | 老永安公司 / 新永安公司 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；拆sh-historic-b1-014-old：老永安公司/南京东路635号；sh-historic-b1-014-new：新永安公司/南京东路627号。 |
+| sh-historic-b1-015 | 新新公司 | 南京东路720号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先确认百货主体、屋顶突出构件及后期附加体。 |
+| sh-historic-b1-016 | 大新公司 | 南京东路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先锁定1934年历史大楼，再决定是否单列相接新体。 |
+| sh-historic-b1-017 | 华懋公寓 | 长乐路109号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；只制作锦北楼历史单体；不能代表整个锦江饭店，也不能与018合并为一栋。 |
+| sh-historic-b1-018 | 峻林公寓、茂名公寓 | 茂名南路65－125号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；至少把每个独立建筑实体及门牌拆清；不要预先断言两种旧名必然等于两栋，也不能凭一张峻岭图覆盖全部。 |
+| sh-historic-b1-019 | 公共租界工部局 | 汉口路153号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定街区围合、历史分期、内部/后建体，再拆单栋或明确连体范围。 |
+| sh-historic-b1-022 | 大世界游乐场 | 西藏南路1号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；先确认历史主楼、塔部及附属体边界；大世界名称不足以确认全部保护范围是一个楼体。 |
+| sh-historic-b1-037 | 步高里 | 陕西南路387号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；里弄整体名称，先按入口、里弄房屋及具体门牌拆分；不能以一栋完成整处，原索引未给可用逐栋数。 |
+| sh-historic-b1-040 | 南京大戏院 | 延安东路523号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；南京大戏院／上海音乐厅，名录地址延安东路523号；先核照片时期和新旧位置关系，索引未给迁建年份，不填未经核查的年代。 |
 | sh-historic-b1-041 | 金城银行 | 江西中路200号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-043 | 大上海大戏院 | 西藏中路520号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-044 | 八仙桥基督教青年会 | 西藏南路123号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -405,13 +406,13 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-026 | 徐家汇天主堂 | 蒲西路158号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；蒲西路158号教堂；不是既有徐家汇藏书楼南楼／原神父楼，主堂与附属体边界待核。 |
-| sh-historic-b1-028 | 国际礼拜堂 | 衡山路58号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；衡山路58号国际礼拜堂，不是多伦路59号鸿德堂。 |
-| sh-historic-b1-031 | 汾阳路79号住宅 | 汾阳路79号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；汾阳路79号住宅／上海工艺美术博物馆，与第35条汾阳路45号不同；园地和附属体另核。 |
-| sh-historic-b1-033 | 盛宣怀住宅 | 淮海中路1517号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；淮海中路1517号历史住宅；日本领事馆为名录所列用途，不据此确认2026运营状态或完整外交设施范围。 |
-| sh-historic-b1-035 | 汾阳路45号住宅 | 汾阳路45号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；汾阳路45号，文章入口为海关副总税务司官邸；不是江海关大楼，亦不同汾阳路79号住宅。 |
-| sh-historic-b1-038 | 新康花园 | 淮海中路1273号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；花园住宅组名称，先核楼栋、门牌和保护边界；原索引没有栋数，不预先指定数量。 |
-| sh-historic-b1-039 | 修道院公寓 | 复兴西路62号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；复兴西路62号历史公寓；湖南街道办事处为名录用途名称，主体和附属物边界另核。 |
+| sh-historic-b1-026 | 徐家汇天主堂 | 蒲西路158号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；蒲西路158号教堂；不是既有徐家汇藏书楼南楼／原神父楼，主堂与附属体边界待核。 |
+| sh-historic-b1-028 | 国际礼拜堂 | 衡山路58号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；衡山路58号国际礼拜堂，不是多伦路59号鸿德堂。 |
+| sh-historic-b1-031 | 汾阳路79号住宅 | 汾阳路79号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；汾阳路79号住宅／上海工艺美术博物馆，与第35条汾阳路45号不同；园地和附属体另核。 |
+| sh-historic-b1-033 | 盛宣怀住宅 | 淮海中路1517号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；淮海中路1517号历史住宅；日本领事馆为名录所列用途，不据此确认2026运营状态或完整外交设施范围。 |
+| sh-historic-b1-035 | 汾阳路45号住宅 | 汾阳路45号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；汾阳路45号，文章入口为海关副总税务司官邸；不是江海关大楼，亦不同汾阳路79号住宅。 |
+| sh-historic-b1-038 | 新康花园 | 淮海中路1273号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；花园住宅组名称，先核楼栋、门牌和保护边界；原索引没有栋数，不预先指定数量。 |
+| sh-historic-b1-039 | 修道院公寓 | 复兴西路62号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；复兴西路62号历史公寓；湖南街道办事处为名录用途名称，主体和附属物边界另核。 |
 | sh-historic-b2-015 | 藏书楼 | 漕溪北路80号 | [名录][H2] · 照片待核 | 已有模型可能关联：xuhui-zikawei-south-building；待核对范围 |
 | sh-historic-b2-017 | 中山医院 | 医学院路136号（主楼） | [名录][H2] | 待核外观／拆栋 |
 | sh-historic-b2-059 | 徐汇公学 | 虹桥路50号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -665,9 +666,9 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-030 | 沙逊别墅 | 虹桥路2409号 | [名录][H1] · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；名录限定龙柏饭店1号楼；不是外滩20号沙逊大厦／和平饭店北楼，不扩大为全部饭店。 |
-| sh-historic-b1-034 | 王伯群住宅 | 愚园路1136弄31号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；愚园路1136弄31号，现名长宁区少年宫；与第29条中国福利会少年宫分别登记。 |
-| sh-historic-b1-036 | 淮阴路姚氏住宅 | 淮阴路200号 | [名录][H1] · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；名录限定西郊宾馆4号楼；不能扩大为全部西郊宾馆，先核这一历史住宅单体。 |
+| sh-historic-b1-030 | 沙逊别墅 | 虹桥路2409号 | [名录][H1] · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录限定龙柏饭店1号楼；不是外滩20号沙逊大厦／和平饭店北楼，不扩大为全部饭店。 |
+| sh-historic-b1-034 | 王伯群住宅 | 愚园路1136弄31号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；愚园路1136弄31号，现名长宁区少年宫；与第29条中国福利会少年宫分别登记。 |
+| sh-historic-b1-036 | 淮阴路姚氏住宅 | 淮阴路200号 | [名录][H1] · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录限定西郊宾馆4号楼；不能扩大为全部西郊宾馆，先核这一历史住宅单体。 |
 | sh-historic-b1-047 | 孙科住宅 | 延安西路1262号 | [名录][H1] | 待核外观／拆栋 |
 | sh-historic-b1-048 | 虹桥路2310号住宅 | 虹桥路2310号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-049 | 泰安路115弄花园里弄住宅 | 泰安路115弄 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -793,9 +794,9 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-024 | 宏恩医院 | 延安西路221号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；名录指华东医院干部病房楼；先确认历史楼栋，不用整个华东医院院区替代。 |
-| sh-historic-b1-029 | 嘉道理爵士住宅 | 延安西路64号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；名录现名中国福利会少年宫；与第34条长宁区少年宫不同，先确认历史住宅主体。 |
-| sh-historic-b1-032 | 马勒住宅 | 陕西南路30号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；陕西南路30号历史住宅；现酒店名称不能自动把全部附属设施纳入。 |
+| sh-historic-b1-024 | 宏恩医院 | 延安西路221号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录指华东医院干部病房楼；先确认历史楼栋，不用整个华东医院院区替代。 |
+| sh-historic-b1-029 | 嘉道理爵士住宅 | 延安西路64号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录现名中国福利会少年宫；与第34条长宁区少年宫不同，先确认历史住宅主体。 |
+| sh-historic-b1-032 | 马勒住宅 | 陕西南路30号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；陕西南路30号历史住宅；现酒店名称不能自动把全部附属设施纳入。 |
 | sh-historic-b1-042 | 美琪大戏院 | 江宁路99号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-045 | 华业公寓 | 陕西北路175号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-055 | 涌泉坊 | 愚园路395号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -978,9 +979,9 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-005 | 百老汇大厦 | 北苏州路2号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；两个地图UUID不能算两栋；先核照片年代、主楼与裙房关系，再形成一个主楼及必要部件范围。 |
-| sh-historic-b1-008 | 苏联领事馆 | 黄浦路20号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；确定历史主楼边界，馆区附属楼、院落及边界另核。 |
-| sh-historic-b1-023 | 上海邮政总局 | 北苏州路276号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；北苏州路276号历史邮政总局楼；不与既有大北电报公司或黄浦邮政储蓄银行楼混同。 |
+| sh-historic-b1-005 | 百老汇大厦 | 北苏州路2号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；两个地图UUID不能算两栋；先核照片年代、主楼与裙房关系，再形成一个主楼及必要部件范围。 |
+| sh-historic-b1-008 | 苏联领事馆 | 黄浦路20号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；确定历史主楼边界，馆区附属楼、院落及边界另核。 |
+| sh-historic-b1-023 | 上海邮政总局 | 北苏州路276号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；北苏州路276号历史邮政总局楼；不与既有大北电报公司或黄浦邮政储蓄银行楼混同。 |
 | sh-historic-b1-054 | 多伦路250号住宅 | 多伦路250号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-003 | 上海新亚大酒店 | 天潼路422号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-013 | 虹口救火会 | 吴淞路560号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -1083,9 +1084,9 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
-| sh-historic-b1-021 | 上海市体育场 | 国和路346号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。 |
-| sh-historic-b1-025 | 杨树浦水厂 | 杨树浦路830号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。 |
+| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
+| sh-historic-b1-021 | 上海市体育场 | 国和路346号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。 |
+| sh-historic-b1-025 | 杨树浦水厂 | 杨树浦路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。 |
 | sh-historic-b2-012 | 旧市博物馆 | 长海路174号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-014 | 旧市图书馆 | 黑山路181号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-072 | 沪江大学 | 军工路516号礼堂/实验楼 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -1229,7 +1230,7 @@
 
 | ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-027 | 佘山天主教堂 | 西佘山 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>) | 待核外观／拆栋；确认西佘山主堂范围；山体、道路和其他宗教附属物单独登记，不以整山作为一栋。 |
+| sh-historic-b1-027 | 佘山天主教堂 | 西佘山 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；确认西佘山主堂范围；山体、道路和其他宗教附属物单独登记，不以整山作为一栋。 |
 | sh-historic-b5-sj-j-001-v | 杜氏宅 | 仓城秀南街8号 | [名录][H5] | 待核外观／拆栋 |
 | sh-historic-b5-sj-j-002-v | 住宅 | 仓城秀南街102号-112号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-sj-j-003-v | 陆氏宅 | 仓城中山西路317号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
@@ -3789,6 +3790,15 @@
 [H3]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第三批>
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
+
+[MTD-affe1af2]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>
+[MTD-c421d8ae]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_2.htm>
+[MTD-e9926259]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>
+[MTD-3e72f439]: <projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>
+[MTD-fc8ac09b]: <projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>
+[MTD-0e2503d2]: <projects/shanghai/data/model-todo/heritage-following-building-references.json>
+[MTD-ae734ade]: <projects/shanghai/data/model-todo/heritage-following-footprint-review.json>
+[MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
 
 ## 上海全景建模
@@ -3825,7 +3835,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。点击时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-当前入口随master更新。以下另收录27件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](projects/shanghai/data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
+当前入口随master更新。以下另收录28件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](projects/shanghai/data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区
@@ -3858,6 +3868,7 @@
 | [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 2026-10-30 19:25:12 |
 | [上海跑马总会历史东楼与主钟塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) | 2026-10-30 19:40:09 |
 | [大光明大戏院临街入口与灯塔局部](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) | 2026-10-30 20:28:32 |
+| [金门饭店／华安大楼历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) | 未记录 |
 
 <!-- district-candidates:黄浦区:end -->
 

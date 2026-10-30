@@ -1,0 +1,185 @@
+{
+  "schema": "pacific-hotel-independent-native-visual-review-v1",
+  "reviewed_utc": "2026-10-30T12:49:34.291154+00:00",
+  "asset_id": "huangpu-pacific-hotel",
+  "reviewer": "independent documentary/photo reference agent",
+  "scope": "Visual review of three final native renders against the actually viewed Commons front photograph. Report only; no model edits.",
+  "decision": {
+    "status": "deliverable_as_recognition_morphology_candidate",
+    "blocking_issues": [],
+    "summary_zh": "未发现阻断建筑识别的重大可见形态错误；可作为识别形态外观候选交付，不构成完整照片复原、实测精度或全立面验收。",
+    "summary_en": "No blocking visible morphology defect found for a recognition-oriented exterior candidate. This is not acceptance as a complete photographic reconstruction, surveyed model or fully evidenced all-elevation replica.",
+    "conditions": [
+      "Preserve source-specific dimension and floor-count conflicts in the published notes.",
+      "State material front-ornament simplifications explicitly.",
+      "Keep unseen side/rear geometry and all plan dimensions labeled estimated.",
+      "Keep modern northern hotel estate block excluded from this bounded historic-building candidate."
+    ]
+  },
+  "bound_artifacts": {
+    "raw_glb": {
+      "path": "/workspace/pacific-build/huangpu-pacific-hotel-raw.glb",
+      "bytes": 5362228,
+      "sha256": "3c7631a6f1a59137564e00f31f533b0bc2f99dbeea9177037d23d2d8ed3d4770"
+    },
+    "build_model_py": {
+      "path": "/workspace/e-resource/projects/shanghai/source/precise/huangpu-pacific-hotel/source/build_model.py",
+      "bytes": 22015,
+      "sha256": "c8ea726738f210edc586b377ba086ede7288faec23bd907412ddf387acc2dbef"
+    },
+    "native_blend": {
+      "path": "/workspace/pacific-build/huangpu-pacific-hotel.blend",
+      "bytes": 2707751,
+      "sha256": "66c366f1a29a375c1b13bfa67d43461dd76d2dd7e37cab8758025cef38c21a0d"
+    },
+    "native_receipt": {
+      "path": "/workspace/pacific-previews/native.json",
+      "bytes": 641,
+      "sha256": "2cbf9ce96bd39d03782d2b39215a74daae77a5a8f27c3c94da8da1a916e09cf1"
+    },
+    "receipt_matches_raw_sha256": true,
+    "receipt_reported_reopen_geometry_hash": "ce2297fd3aaeaddd28da455d011dc36344a0554b22f61d8aa010ae4cf37450d1",
+    "receipt_limit": "Reopen geometry/metadata facts are read from native.json produced by packaging; this reviewer independently inspected images and hashes, not the Blender reopen operation."
+  },
+  "reference_photo": {
+    "file": {
+      "path": "/workspace/pacific-research/pacific-photo.jpg",
+      "bytes": 5734400,
+      "sha256": "759adee2a6c7d2d2fd4d8a66d6e14815b19f71bcc1571aa5f7842bbaa17091ba"
+    },
+    "page_url": "https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG",
+    "author": "Livelikerw",
+    "date_taken": "2013-12-05 14:23:46",
+    "license": "CC BY-SA3.0 Unported",
+    "actually_viewed": true,
+    "coverage": "Low street-level front view; perspective convergence and trees limit dimensional and entry comparison."
+  },
+  "views": [
+    {
+      "name": "native-front",
+      "image": {
+        "path": "/workspace/pacific-previews/native-front.png",
+        "bytes": 918561,
+        "sha256": "87440687beded81a55b3b29f04aed3ecb992979e1eeab34b39676c905aea4a9c"
+      },
+      "actually_viewed": true,
+      "inspection": "Opened directly with view_image(detail=original); visually inspected image rather than relying on file existence or renderer status.",
+      "visible": [
+        "Symmetrical front with two taller projecting side pavilions and recessed middle",
+        "Three main window bays on each wing; repeated dark glazing separated by stone-colored vertical strips",
+        "Three small balustraded balconies",
+        "Central two-stage columned tower with one front clock, gold dome and small finial",
+        "Entrance colonnade, heavy horizontal cornices and rusticated corner piers"
+      ],
+      "assessment": "Main recognition hierarchy is present. The central upper raised window pavilion/arched motif and compound cornices in the photo are noticeably simplified to a regular flat band and roof. No visible front-mesh failure or missing dominant identifying element.",
+      "reference_coverage": "Strong photo coverage of front upper/middle facade; bottom entry/stairs partially obscured by trees in source."
+    },
+    {
+      "name": "native-oblique",
+      "image": {
+        "path": "/workspace/pacific-previews/native-oblique.png",
+        "bytes": 938399,
+        "sha256": "bbcf91aa2cfd12b2bd84c2efa0b8543c1a28a2b50f077600cbe1450417e142e1"
+      },
+      "actually_viewed": true,
+      "inspection": "Opened directly with view_image(detail=original); visually inspected image rather than relying on file existence or renderer status.",
+      "visible": [
+        "Side-pavilion projection and lower central body clearly legible",
+        "Two-stage tower, gold crown and balconies remain readable at an angle",
+        "Long side face completed with regular window rhythm; parapets and roof planes close the mass",
+        "No obvious detached floating wall, gross surface hole or inverted block visible in this view"
+      ],
+      "assessment": "Geometry reads coherently as a schematic historic building candidate. Repeated side bays, depth and roof junctions cannot be checked against the one front photograph and remain estimated. Raised central window-pavilion simplification is clear from this angle.",
+      "reference_coverage": "Photo supports front-wing projection qualitatively; long side facade, depth and roof planes not directly evidenced."
+    },
+    {
+      "name": "native-rear",
+      "image": {
+        "path": "/workspace/pacific-previews/native-rear.png",
+        "bytes": 926278,
+        "sha256": "82b7b7548682fb4e31c3097f4c006689908930740a91863696bb9dea15198341"
+      },
+      "actually_viewed": true,
+      "inspection": "Opened directly with view_image(detail=original); visually inspected image rather than relying on file existence or renderer status.",
+      "visible": [
+        "Rear center recessed between two full-depth side wings",
+        "Regular rear windows, cornices and stepped roof hierarchy",
+        "No gross opening in intended wall mass or disconnected component evident at this image scale"
+      ],
+      "assessment": "Rear completion is visually coherent but not source-validated. This view cannot establish actual rear fenestration, 工-plan dimensions, adjoining fabric or northern property boundary.",
+      "reference_coverage": "No rear-elevation photo supplied; entire detailed rear treatment is inferred."
+    }
+  ],
+  "material_simplifications": [
+    {
+      "id": "central-upper-window-pavilion",
+      "severity": "material_known_simplification_nonblocking_for_candidate",
+      "reference": "The photo has a raised central roof/front window pavilion beneath the clock tower, including a central arched motif, flanking column treatment and small decorative finials.",
+      "model": "Central upper facade becomes a regular window band with a largely flat roof transition; this intermediate architectural composition is substantially reduced.",
+      "claim_limit": "Do not describe this area as a faithful photograph reconstruction."
+    },
+    {
+      "id": "central-small-window-level-and-cornices",
+      "severity": "material_known_simplification_nonblocking_for_candidate",
+      "reference": "Central top small windows, multiple recessed/protruding cornice layers and ornamental friezes create a richer stepped facade.",
+      "model": "Regularized top openings, flatter bands and simplified profiles stand in for those features.",
+      "claim_limit": "Source floor counts and visible rows remain unresolved; a model layer count is not independent evidence."
+    },
+    {
+      "id": "tower-curved-relief",
+      "severity": "known_simplification",
+      "reference": "Lower clock-tower body and its supporting architecture have curved surfaces, ornate capitals, sculptural panels, detailed transitions, flanking ornaments and a more elaborate clock surround.",
+      "model": "Columned cylindrical stages, simple clock disc/surround and simplified rings preserve the motif; curved relief and sculptural detail are reduced.",
+      "claim_limit": "No claim of exact tower-profile or carved-ornament reproduction."
+    },
+    {
+      "id": "dome-lantern-and-front-ornament",
+      "severity": "known_simplification",
+      "reference": "Gold dome supports a red-brown enclosed-looking lantern and needle; facade contains decorative shields, fine spandrel patterns and extensive carved/cornice detail.",
+      "model": "Gold dome and small finial/lantern indicate the crown; fine glazing, shields, floral relief, signage and detailed masonry profiles are simplified or omitted.",
+      "claim_limit": "Recognition detail only."
+    },
+    {
+      "id": "entrance-and-unseen-elevations",
+      "severity": "evidence_limit",
+      "reference": "Front source is partly tree-obscured at ground level and does not show rear/long-side elevations.",
+      "model": "Entry colonnade and regularized side/rear fenestration complete a coherent model.",
+      "claim_limit": "Full stairs, base-opening arrangement, side/rear bay counts and roof/rear junctions are not photo-verified."
+    }
+  ],
+  "dimension_review": {
+    "model_design_values_m": {
+      "central_body_roof": 29.16,
+      "side_pavilion_roof": 33.16,
+      "overall_tower_endpoint": 38.16,
+      "tower_design_height": 9
+    },
+    "validation_status": "Interpretive model datums, not independently measured or image-calibrated coordinates.",
+    "observed_qualitative_support": "Photo supports taller outer pavilions, lower central body and a clock tower above both.",
+    "unresolved": [
+      "The actual central-to-wing roof step is not measured.",
+      "38.16m overall with a9m tower, implemented as29.16+9, is a modeling interpretation; source text does not identify compatible endpoint datums.",
+      "The alternate36.16m historic source and40.1m renovation-project south height remain in documentary review.",
+      "Original8, described9, current10 and model9layer concepts are not forcibly reconciled.",
+      "Photograph and elevated native render cameras differ; apparent height ratios are not a dimensional acceptance test."
+    ]
+  },
+  "plan_and_scope_review": {
+    "plan_width_depth": "42m by36m model footprint dimensions are estimated, not established by site1973m² or this image review.",
+    "historic_form": "工/H-form interpretation is supported by texts at a general level; exact plan offsets and depth are unverified.",
+    "northern_hotel_estate": "Modern north building excluded.2026 tender north/south distinction remains an estate-scope lead, not proof of separate heritage registrations.",
+    "rear_status": "Coherent inferred completion; no all-around photo validation claimed."
+  },
+  "out_of_scope": [
+    "Construction safety, structural design or physical restoration suitability",
+    "Exact architectural survey or photogrammetric fit",
+    "Proof that every current hotel-property component is modeled",
+    "Verification of2026 site changes against a2013 photograph",
+    "Geometry topology/numeric validation beyond image inspection and artifact hash binding"
+  ],
+  "source_review_links": {
+    "documentary_review": "/workspace/pacific-research/documentary-review.json",
+    "photo_review": "/workspace/pacific-research/photo-review.json"
+  },
+  "recheck_trigger": "Any change to raw GLB, build_model.py or rendered native views invalidates these artifact bindings and requires review of the changed final views."
+}

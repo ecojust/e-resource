@@ -1,0 +1,389 @@
+{
+  "schema": "pacific-hotel-documentary-review-v1",
+  "reviewed_utc": "2026-10-30T12:41:00.394512+00:00",
+  "record_id": "sh-historic-b1-012",
+  "asset_id": "huangpu-pacific-hotel",
+  "repository_changes_made": false,
+  "scope_conclusion": {
+    "historic_identity": "华安合群人寿保险公司大楼/华安大楼/华侨饭店/金门饭店/金门大酒店 are successive names/uses of the historic building; do not split solely by alias.",
+    "historic_address": "南京西路104号",
+    "operating_estate_address": "南京西路108号 also documented by official Jinjiang gazetteer; address variant alone does not identify a separate listed heritage building.",
+    "geometry_scope": "Historic south-facing building has 工-shaped plan and central tower.2026 hotel renovation notice separately names south and north buildings; explicitly reconcile rear/north footprint rather than automatically extending facade details or declaring all estate parts fully verified.",
+    "recommended_modeling_boundaries": [
+      "Prioritize documented historic street-front building and central tower.",
+      "If rear/north block included, keep its distinct mass and lower-confidence scope/geometry evidence visible.",
+      "Separate model coverage from registry completion and preserve unexplained dimensional differences."
+    ]
+  },
+  "best_documented_dimensions": {
+    "occupied_site_m2": 1973,
+    "historic_height_m_values": [
+      38.16,
+      36.16
+    ],
+    "current_project_south_height_m": 40.1,
+    "current_project_north_height_m": 24,
+    "clock_tower_height_m": 9,
+    "height_policy": "38.16m has strongest repeated official historic support;36.16m and40.1m are preserved as conflicting source-specific values. None specifies compatible datums; no arithmetic addition of9m is justified.",
+    "footprint_width_depth_m": "No measured width/depth found;1973m² is site area, not sufficient to derive either.",
+    "gross_floor_area_m2_values": [
+      12526,
+      2526,
+      14000,
+      14628
+    ],
+    "floor_policy": "Record original/current/source-state floor counts separately. Avoid equating number of visible facade rows, usable floors and pavilion stages."
+  },
+  "contradictions": [
+    {
+      "topic": "height",
+      "values": "38.16m (famous-buildings/Jinjiang/SASAC);36.16m (tourism/museum);40.1m south block (2026 tender mirror)",
+      "resolution": "Unresolved different source states/datum; preserve values."
+    },
+    {
+      "topic": "floor count/addition",
+      "values": "9 (famous-buildings);8→9→10 (Jinjiang/SASAC);8 (tourism);permission to add8 above rented3–7 (museum)",
+      "resolution": "No unified historic floor sequence asserted; visible massing must be reviewed independently."
+    },
+    {
+      "topic": "gross floor area",
+      "values": "12526m² historic chapter;2526m² tourism/museum;14000m² Wikipedia;14628m² south+north project",
+      "resolution": "2526 likely error but uncorrected; others may have different scope/date."
+    },
+    {
+      "topic": "column order",
+      "values": "Ionic base colonnade + Doric doorway (famous-buildings), Roman Doric colonnade (tourism)",
+      "resolution": "Keep source attribution; photographs decide modeled profile."
+    },
+    {
+      "topic": "opening date",
+      "values": "1939 lease/renaming (famous-buildings/tourism);1940-12-30 opening (Jinjiang/SASAC)",
+      "resolution": "Compatible if lease and opening are separate events; do not call1939 completion."
+    },
+    {
+      "topic": "heritage era",
+      "values": "Wikipedia infobox1933 vs official1926 completion",
+      "resolution": "Prefer actual official construction chronology; keep infobox discrepancy as rejected lead."
+    }
+  ],
+  "sources": [
+    {
+      "id": "shtong-famous-buildings",
+      "title": "上海名建筑志 / 华商保险业翘楚：华安大楼（金门酒店大楼、华侨饭店大楼）",
+      "authority": "Shanghai Local Gazetteers Office (上海市地方志办公室), official public digital gazetteer reader",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284484",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:39:12.110444+00:00",
+        "url": "https://www.shtong.gov.cn/api/shizhi-public/read/wordPreview",
+        "method": "POST",
+        "request_json": {
+          "objectId": 5401,
+          "catalogueId": 284484
+        },
+        "http_status": 200,
+        "response_bytes": 50776,
+        "sha256": "d71d82a98f365327dbb7898d570c8acf04369fefbbb903e2b87d1deaf3c50e7d",
+        "private_cache_path": "/workspace/pacific-research/chapter-284484.json",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "No open reuse license observed. Source facts paraphrased; complete copyrighted chapter/API response retained only in private cache. API copyPermission/downloadPermission null does not grant reuse.",
+      "facts": {
+        "identity": [
+          "南京西路104号; previously 静安寺路, opposite former racecourse",
+          "华安大楼, 华侨饭店 and 金门大酒店 refer to this same historic building; east of 国际饭店 and 体育大厦"
+        ],
+        "dates": [
+          "1924 construction described; completed1926-05",
+          "1939 lease and renaming as hotel;1958华侨饭店;1992金门大酒店 restored"
+        ],
+        "dimensions": {
+          "occupied_site_m2": 1973,
+          "gross_floor_area_m2": 12526,
+          "stated_storeys": 9,
+          "stated_height_m": 38.16,
+          "clock_tower_height_m": 9,
+          "foundation_pine_pile_length_m": 25
+        },
+        "morphology": [
+          "South-facing; 工-shaped plan; Italian palace/neoclassical composition with mixed ornament",
+          "Vertical and horizontal tripartite facade; projecting side wings",
+          "First and second storeys described as Ionic colonnade; doorway divided into three bays with Doric columns",
+          "Arched windows; projecting cornice between seventh/eighth levels",
+          "Central rooftop tower: lower Corinthian ring columns, upper Tuscan columns; clock tower on columns with gilded round dome",
+          "Granite ground-level exterior, upper cement faux-stone finish"
+        ],
+        "limitations": [
+          "Column-order terminology conflicts with tourism gazetteer; photo review should decide visible profiles.",
+          "Clock tower inclusion in38.16m not specified.",
+          "Building area/date describes a historic source state, not a measured current hotel estate."
+        ]
+      }
+    },
+    {
+      "id": "shtong-jinjiang",
+      "title": "上海市级专志·锦江国际（集团）有限公司志 / 第三篇酒店选介 第一章 第七节金门大酒店",
+      "authority": "Shanghai Local Gazetteers Office (上海市地方志办公室), official public digital gazetteer reader",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=6123&type=2&catalogueId=539739",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:39:11.810016+00:00",
+        "url": "https://www.shtong.gov.cn/api/shizhi-public/read/wordPreview",
+        "method": "POST",
+        "request_json": {
+          "objectId": 6123,
+          "catalogueId": 539739
+        },
+        "http_status": 200,
+        "response_bytes": 44969,
+        "sha256": "6df92ff6cbe9d0f3aacb0ead3ad6f05ea68835a5c4ff6aa958f3b78abb340eb0",
+        "private_cache_path": "/workspace/pacific-research/chapter-539739.json",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "No open reuse license observed. Source facts paraphrased; complete copyrighted chapter/API response retained only in private cache. API copyPermission/downloadPermission null does not grant reuse.",
+      "facts": {
+        "identity": [
+          "南京西路108号; same hotel whose building was formerly华安大楼"
+        ],
+        "dates": [
+          "1924-08-01 construction began;1926-05 completion;1926-06-01 company occupation",
+          "Hotel opening1940-12-30;1958华侨饭店;1992-06-16金门大酒店 restored"
+        ],
+        "dimensions": {
+          "occupied_site_m2": 1973,
+          "stated_height_m": 38.16,
+          "original_storeys": 8,
+          "storeys_after_preopening_addition": 9,
+          "described_current_storeys": 10,
+          "clock_tower_height_m": 9
+        },
+        "morphology": [
+          "Italian palace/Renaissance style; 工-shaped form",
+          "Granite columns, beams, stairs and walls at first/second levels",
+          "Roof clock tower and gilded round dome"
+        ],
+        "limitations": [
+          "Period of described current10floors not an as-built survey; source includes2018 hotel information.",
+          "Height inclusion of rooftop tower not specified.",
+          "SASAC2024 text closely matches this chapter; treat as shared textual lineage, not two independent measurements."
+        ]
+      }
+    },
+    {
+      "id": "shtong-tourism",
+      "title": "上海市志·旅游业分志（1978—2010） / 第四篇设施及服务 第一章旅游饭店 第一节老饭店",
+      "authority": "Shanghai Local Gazetteers Office (上海市地方志办公室), official public digital gazetteer reader",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=6178&type=2&catalogueId=552428",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:39:11.687805+00:00",
+        "url": "https://www.shtong.gov.cn/api/shizhi-public/read/wordPreview",
+        "method": "POST",
+        "request_json": {
+          "objectId": 6178,
+          "catalogueId": 552428
+        },
+        "http_status": 200,
+        "response_bytes": 49475,
+        "sha256": "bdd16e930772ec33812eb910c824bd111e16f060c9ca242369ba233ada7afacc",
+        "private_cache_path": "/workspace/pacific-research/chapter-552428.json",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "No open reuse license observed. Source facts paraphrased; complete copyrighted chapter/API response retained only in private cache. API copyPermission/downloadPermission null does not grant reuse.",
+      "facts": {
+        "identity": [
+          "金门大酒店 at南京西路104号, formerly华侨饭店/华安合群人寿保险公司大楼"
+        ],
+        "dates": [
+          "1924-08-01 start,1926-05 completion",
+          "1939 lease/金门饭店;1958华侨饭店;1992 restored name",
+          "1997 and2007 renovations described"
+        ],
+        "dimensions": {
+          "occupied_site_m2": 1973,
+          "gross_floor_area_m2_as_printed": 2526,
+          "stated_height_m": 36.16,
+          "stated_storeys": 8
+        },
+        "structure": "Reinforced concrete frame",
+        "morphology": [
+          "Tripartite horizontally and vertically; projecting wings and two belt cornices",
+          "Two-storey base with Roman Doric colonnade; central ground entrance and stairs on both sides leading directly to second floor",
+          "Round-arched windows flanking colonnade; simple rectangular windows on floors3–7",
+          "Two-storey central tower pavilion on round-column colonnades, clock between stages, gilded dome; Baroque tower ornament",
+          "Granite base facing and upper cement finish ruled to imitate masonry"
+        ],
+        "limitations": [
+          "36.16m differs from38.16m in other official gazetteers.",
+          "2526m² is a likely missing leading digit or scope error but retained exactly; do not silently correct it."
+        ]
+      }
+    },
+    {
+      "id": "sasac-2024",
+      "title": "锦江国际集团旗下金门大酒店彰显海派风情",
+      "publication_date": "2024-01-17",
+      "authority": "Shanghai State-owned Assets Supervision and Administration Commission (市国资委), official government page",
+      "url": "https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:37:56.401956+00:00",
+        "url": "https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html",
+        "method": "GET",
+        "request_json": null,
+        "http_status": 200,
+        "response_bytes": 16087,
+        "sha256": "6ade00005b0dadff931546cea17010fe324f1b730661c60e56c16081d033a108",
+        "private_cache_path": "/workspace/pacific-research/secondary/sasac.html",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "No open reuse license observed. Facts paraphrased only; full page and embedded photos not licensed for repository redistribution.",
+      "facts": {
+        "identity": "Hotel building formerly华安大楼; names indicate successive uses of same historic building.",
+        "dimensions": {
+          "occupied_site_m2": 1973,
+          "stated_height_m": 38.16,
+          "original_storeys": 8,
+          "preopening_addition_storey": 9,
+          "described_current_storeys": 10,
+          "clock_tower_height_m": 9
+        },
+        "dates": [
+          "1924-08-01 construction;1926-05 completion",
+          "1940-12-30 hotel opening;1958华侨饭店;1992-06-16 restored金门大酒店"
+        ],
+        "morphology": [
+          "工-shaped Italian palace form",
+          "Granite lower two floors; rooftop clock tower and gilded dome"
+        ],
+        "limitations": [
+          "Shared wording with Jinjiang gazetteer; not an independent measured survey.",
+          "Overall height/tower inclusion remains unspecified."
+        ]
+      }
+    },
+    {
+      "id": "banking-museum-2023",
+      "title": "阅建筑 · 越金融 ⑭丨华安大厦：罕见的“保险大楼”，昔日跑马地天际线",
+      "publication_date": "2023-12-12",
+      "authority": "Shanghai Banking Museum (上海市银行博物馆) named NetEase publisher account; article credited 马田, not a government-hosted primary measurement",
+      "url": "https://www.163.com/dy/article/ILODDRUL0519O1MP.html",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:38:35.251354+00:00",
+        "url": "https://www.163.com/dy/article/ILODDRUL0519O1MP.html",
+        "method": "GET",
+        "request_json": null,
+        "http_status": 200,
+        "response_bytes": 161570,
+        "sha256": "fbb8f0758807a6b1c8af43f08800f78c706abff53655b66ecb467fcd5d679bef",
+        "private_cache_path": "/workspace/pacific-research/secondary/163-finance.html",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "No open reuse license observed. Paraphrase only; text/photos not redistributed.",
+      "facts": {
+        "dimensions": {
+          "stated_height_m": 36.16,
+          "occupied_site_m2": 1973,
+          "gross_floor_area_m2_as_printed": 2526
+        },
+        "morphology": [
+          "South facade toward南京西路 is symmetric around central axis; 工-shaped plan",
+          "Wide ground shop openings; paired curved stairs beside central entrance up to second-floor insurance hall",
+          "Central multi-column tiered tower pavilion with gilded dome"
+        ],
+        "chronology_conflict": "1939 lease of floors3–7 reportedly permitted addition of floor8, differing from Jinjiang/SASAC8→9 account.",
+        "limitations": [
+          "Same36.16/2526 values as tourism gazetteer; likely shared lineage, not independent measurement.",
+          "Sohu duplicate credits黄浦文博; do not count these as separate corroboration."
+        ]
+      }
+    },
+    {
+      "id": "renovation-tender-mirror-2026",
+      "title": "上海金门大酒店品牌焕新修缮工程燃气工程比选公告",
+      "publication_date": "2026-09-18",
+      "authority": "Commercial tender mirror (chinabiding.cn), attributed to Shanghai Education Construction Management Consulting Co.; primary procurement notice not recovered",
+      "url": "https://www.chinabiding.cn/bid/detail?id=482192",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:38:35.609018+00:00",
+        "url": "https://www.chinabiding.cn/bid/detail?id=482192",
+        "method": "GET",
+        "request_json": null,
+        "http_status": 200,
+        "response_bytes": 140692,
+        "sha256": "b23ea0294728d1b8368a9d2e5cda0f9f39f4f501cd6c92326c44d16225630529",
+        "private_cache_path": "/workspace/pacific-research/secondary/chinabiding.html",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "No open reuse license observed. Facts paraphrased only; no whole notice redistribution.",
+      "facts": {
+        "project_number": "2026-0645-rw",
+        "address": "南京西路108号",
+        "project_gross_floor_area_m2": 14628,
+        "south_building": {
+          "gross_floor_area_m2": 9675,
+          "height_m": 40.1,
+          "guestroom_levels": "3–9"
+        },
+        "north_building": {
+          "gross_floor_area_m2": 4953,
+          "height_m": 24,
+          "guestroom_levels": "3–7"
+        },
+        "levels_1_2": "Lobby, restaurants, public/back-office areas",
+        "spatial_scope": [
+          "Southern edge南京西路, opposite人民公园",
+          "Eastern lane separates hotel from上海新世界丽笙大酒店 and links南京西路 to凤阳路",
+          "Notice explicitly refers to a passage between south/north buildings"
+        ],
+        "limitations": [
+          "Engineering/renovation-project quantities; may describe design/current project scope, not historical built state.",
+          "Does not establish two separately listed heritage entities.",
+          "40.1m versus historical38.16m has no explained datum or rooftop inclusion; do not add9m to either.",
+          "North block is a material scope lead requiring footprint/photo review."
+        ]
+      }
+    },
+    {
+      "id": "wikipedia-lead",
+      "title": "华安大楼",
+      "authority": "Crowdsourced encyclopedia; discovery/secondary cross-check only",
+      "url": "https://zh.wikipedia.org/zh-cn/华安大楼",
+      "fetch": {
+        "retrieved_utc": "2026-10-30T12:35:56.161406+00:00",
+        "url": "https://zh.wikipedia.org/w/index.php?title=%E5%8D%8E%E5%AE%89%E5%A4%A7%E6%A5%BC&action=raw",
+        "method": "GET",
+        "request_json": null,
+        "http_status": 200,
+        "response_bytes": 6179,
+        "sha256": "c22a5c70fdcac94b722c90b6f92d18335875c7a98d8119356cd74eeaaf9fe690",
+        "private_cache_path": "/workspace/pacific-research/page-2.html",
+        "read_status": "Fetched and read relevant source text; raw content remains outside repository."
+      },
+      "rights": "Wikimedia text CC BY-SA4.0; only factual summaries used. Linked photos have separate licensing.",
+      "facts": {
+        "stated_height_m": 38.16,
+        "stated_storeys": 9,
+        "gross_floor_area_m2": 14000,
+        "completion": "1926-05",
+        "heritage_infobox_era": "1933",
+        "limitations": [
+          "Old cited building URL now serves SPA and its linked archived snapshot is actually美琪大戏院; original footnote destination was not accepted as evidence.",
+          "1933 infobox era conflicts with independently fetched official1926 completion.",
+          "14,000m² is a rounded estate value, not enough to derive footprint dimensions."
+        ]
+      }
+    }
+  ],
+  "rejected_or_noncontent_fetches": [
+    {
+      "url": "https://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108970.html",
+      "result": "3538-byte replacement SPA shell; no building text."
+    },
+    {
+      "url": "https://web.archive.org/web/20190415081538id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108970.html",
+      "result": "Fetched archive text is美琪大戏院; identity mismatch, rejected."
+    },
+    {
+      "url": "https://share.shkp.org.cn/content.html?type=wx&id=458537&tag=36337",
+      "result": "18-byte welcome-to-interface response, no article text."
+    }
+  ],
+  "reuse_policy": "This review JSON contains facts, short paraphrases, source identifiers, response fingerprints and caveats. All full fetched pages/chapters remain private caches outside the repository; no source-page/photo redistribution rights inferred."
+}

@@ -34,7 +34,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。点击时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-当前入口随master更新。以下另收录27件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
+当前入口随master更新。以下另收录28件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区
@@ -67,6 +67,7 @@
 | [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 2026-10-30 19:25:12 |
 | [上海跑马总会历史东楼与主钟塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) | 2026-10-30 19:40:09 |
 | [大光明大戏院临街入口与灯塔局部](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) | 2026-10-30 20:28:32 |
+| [金门饭店／华安大楼历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) | 未记录 |
 
 <!-- district-candidates:黄浦区:end -->
 

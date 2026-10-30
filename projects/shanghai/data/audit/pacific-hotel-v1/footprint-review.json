@@ -1,0 +1,561 @@
+{
+  "schema": "pacific-hotel-footprint-review-v1",
+  "reviewed_utc": "2026-10-30",
+  "repository_commit": "b2a799952f8cb42f46bc7e7957bf7fbe759999b4",
+  "scope": "Read-only frozen derived map geometry and identity review for proposed huangpu-pacific-hotel / heritage sh-historic-b1-012. No historical footprint, floor-level, survey, façade-direction or model/geographic acceptance.",
+  "source": {
+    "path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+    "git_commit": "b2a799952f8cb42f46bc7e7957bf7fbe759999b4",
+    "bytes": 17325794,
+    "sha256": "4b640f9ce0bb9ab61f01e98ae003da2f326abfc93ef001ed526730922327df97",
+    "feature_count": 22270,
+    "read_method": "git show of existing object with GIT_NO_LAZY_FETCH=1; no network or original OSM query",
+    "status": "Locally frozen derived candidate audit GeoJSON, not original OSM geometry response"
+  },
+  "reference_inputs": [
+    {
+      "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+      "git_commit": "b2a799952f8cb42f46bc7e7957bf7fbe759999b4",
+      "bytes": 1610937,
+      "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/named-map-leads.json",
+      "git_commit": "b2a799952f8cb42f46bc7e7957bf7fbe759999b4",
+      "bytes": 766656,
+      "sha256": "92094697a326761fd1c80b7e19d34a3813b173be69e64e05161b3d4483ab394f"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json",
+      "git_commit": "b2a799952f8cb42f46bc7e7957bf7fbe759999b4",
+      "bytes": 66908,
+      "sha256": "7b261a91686195a24ba7402ea97076b9939e55cbf067c51aae7de2d9014f9f94"
+    },
+    {
+      "path": "projects/shanghai/tools/extract_heritage_footprints.py",
+      "git_commit": "b2a799952f8cb42f46bc7e7957bf7fbe759999b4",
+      "bytes": 15557,
+      "sha256": "3a8d79e024ed5049e6bae03f8fa345db3685a4c71e764e8cf64a6920802df03e"
+    }
+  ],
+  "identity": {
+    "proposed_asset_id": "huangpu-pacific-hotel",
+    "heritage_id": "sh-historic-b1-012",
+    "address": "南京西路104号",
+    "listed_names": [
+      "华安人寿保险公司",
+      "金门饭店"
+    ],
+    "listed_current_name": "金门大酒店",
+    "article_alias": "华安大楼",
+    "map_common_names": {
+      "en": "Pacific Hotel",
+      "zh": "金门大酒店"
+    },
+    "map_id": "ac43e95f-78ed-4252-b0d5-4f6c48669226",
+    "osm_record_id": "w369342492@7",
+    "status": "One listed place and one named map identity lead; current map source and secondary register do not independently establish historical boundary",
+    "single_building_alias_evidence": [
+      "Frozen discovered-buildings.json groups 华安人寿保险公司、金门饭店 and current 金门大酒店 under one heritage id sh-historic-b1-012 and address 南京西路104号, with one subentry dated 1933 and linked article 华安大楼.",
+      "heritage-first20-model-reconciliation.json explicitly treats historical/use names as aliases to resolve before splitting; two labels are not evidence of two buildings.",
+      "The single frozen map feature has Pacific Hotel and 金门大酒店 within one names object and is the only audit feature citing OSM w369342492@7."
+    ],
+    "qualification": "The listed-place identity alone is not a survey proving every associated structure belongs to one main body; historical rear wings and annex scope need documentary/photo confirmation."
+  },
+  "method": {
+    "python": "3.12.14",
+    "shapely": "2.1.2",
+    "basis": "Same WGS84 ECEF-to-local-ENU method as projects/shanghai/tools/extract_heritage_footprints.py, adapted to the recovered Pacific Hotel feature without invoking its unrelated hard-coded target list.",
+    "coordinate_transform": "WGS84 longitude/latitude at ellipsoid height zero to ECEF, then tangent-plane east and north at target polygon centroid",
+    "wgs84_a_m": 6378137.0,
+    "wgs84_inverse_flattening": 298.257223563,
+    "axes": "x east, y north, metres; approximate small-footprint map measurements, not surveyed precision",
+    "neighbors": "Features in limited audit index with centroid within 0.002 degree in both axes and polygon distance under 65 m; not comprehensive neighborhood inventory",
+    "dimension_rule": "Axis-aligned east/north bounds and GEOS minimum rotated rectangle; rectangle bearing is not an accepted façade/front direction",
+    "independent_arithmetic_check": "Shoelace exterior area equals GEOS area within 1e-7 m²"
+  },
+  "records": [
+    {
+      "id": "ac43e95f-78ed-4252-b0d5-4f6c48669226",
+      "name": "金门大酒店",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "金门大酒店",
+        "names": "{\"common\":{\"en\":\"Pacific Hotel\",\"zh\":\"金门大酒店\"},\"primary\":\"金门大酒店\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w369342492@7",
+            "update_time": "2023-11-05T22:06:03.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "has_parts": false,
+        "id": "ac43e95f-78ed-4252-b0d5-4f6c48669226",
+        "version": 1,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "original_geometry_path": "source-feature.geojson",
+      "coordinate_status": "Coordinates exactly as frozen derived audit feature; original OSM response and its preprocessing have not been independently recovered or validated.",
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 4,
+      "bbox_wgs84": [
+        121.46768689,
+        31.23598133,
+        121.46832526,
+        31.23652715
+      ],
+      "local_origin_wgs84": [
+        121.468005153988,
+        31.2362541230328
+      ],
+      "local_exterior_enu_m": [
+        [
+          5.4536971406533805,
+          30.271466709329793
+        ],
+        [
+          30.495872140740396,
+          -4.817747104918439
+        ],
+        [
+          -5.789832664442914,
+          -30.245525285230116
+        ],
+        [
+          -30.320358292725334,
+          4.8448808519323645
+        ],
+        [
+          5.4536971406533805,
+          30.271466709329793
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -30.320358292725334,
+        -30.245525285230116,
+        30.495872140740396,
+        30.271466709329793
+      ],
+      "local_aabb_east_north_m": [
+        60.81623043346573,
+        60.51699199455991
+      ],
+      "local_area_m2": 1894.5286878548825,
+      "local_perimeter_m": 174.12111811154608,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            30.495872140740396,
+            -4.817747104918439
+          ],
+          [
+            -5.789832664442914,
+            -30.245525285230116
+          ],
+          [
+            -30.528295628692064,
+            5.056519513546
+          ],
+          [
+            5.757409176491224,
+            30.484297693857688
+          ]
+        ],
+        "long_axis_m": 44.30828676891082,
+        "short_axis_m": 43.10714461441772,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 54.97854561101663,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 1894.5286878548825,
+      "convex_hull_area_difference_m2": 0.0,
+      "height_or_floor_fields_present": false,
+      "height_m": null,
+      "num_floors": null,
+      "nearby_index_records_within_65m": [
+        {
+          "id": "214e8ca0-7640-48d4-ba0a-78d10d512e3c",
+          "name": "上海新世界丽笙大酒店",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "r17096526@2",
+              "update_time": "2026-03-09T07:22:06.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 2.496998384320034,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2564.520629523962,
+          "centroid_enu_m": [
+            33.530380986749186,
+            43.24190095809253
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "ca2aea97-ceb5-470b-bec7-8719e95226ed",
+          "name": "永新广场",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342502@4",
+              "update_time": "2023-05-07T05:57:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 3.7457390064042433,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1510.8149622884528,
+          "centroid_enu_m": [
+            -34.15358272087298,
+            -32.279988707142124
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "a475c094-a26a-47a8-8b70-65f87584653f",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342446@1",
+              "update_time": "2016-07-18T04:33:42.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 7.60674592555101,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1043.5985704459854,
+          "centroid_enu_m": [
+            -24.564041321169274,
+            31.58038110435742
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "f2867bbd-6ef8-46f8-aeb8-89243c9a5088",
+          "name": "上海体育大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342565@5",
+              "update_time": "2023-05-07T04:16:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 46.83132204961459,
+          "intersection_area_m2": 0.0,
+          "area_m2": 901.8597730846427,
+          "centroid_enu_m": [
+            -60.983820613291044,
+            -58.47044621124815
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "984a885e-0e2a-4aa0-90dc-4eb270096eda",
+          "name": "新世界城",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317339@13",
+              "update_time": "2022-09-26T02:09:42.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 47.50440019795461,
+          "intersection_area_m2": 0.0,
+          "area_m2": 11911.88832415119,
+          "centroid_enu_m": [
+            105.88077553052155,
+            84.41903845053037
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "e0263218-bac4-47bf-bf63-24cb9a952656",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342541@1",
+              "update_time": "2015-09-06T09:03:12.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 48.1487527143373,
+          "intersection_area_m2": 0.0,
+          "area_m2": 115.78819634538249,
+          "centroid_enu_m": [
+            -84.65635790164751,
+            19.854056970444024
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "1fe0a780-9855-4962-a4cc-c1dc2644cfcd",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1331250273@1",
+              "update_time": "2024-11-06T06:15:39.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 50.866403363925855,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1180.0267828678498,
+          "centroid_enu_m": [
+            -8.843012948768257,
+            98.68084994627428
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "238483a3-30a5-4bde-b011-ab749b41d093",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833576@1",
+              "update_time": "2015-10-04T21:47:21.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 52.58345318201988,
+          "intersection_area_m2": 0.0,
+          "area_m2": 505.496976544351,
+          "centroid_enu_m": [
+            -63.37675440794319,
+            60.26470679861854
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "8be961fa-8113-45d7-8349-37125c285f3a",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342554@1",
+              "update_time": "2015-09-06T09:03:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 56.41833472010577,
+          "intersection_area_m2": 0.0,
+          "area_m2": 351.2546887364871,
+          "centroid_enu_m": [
+            -98.7277530888138,
+            26.956931677513587
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "8b191cbc-0033-4690-8519-086caee28bf9",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342571@1",
+              "update_time": "2015-09-06T09:03:14.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 59.81343260989146,
+          "intersection_area_m2": 0.0,
+          "area_m2": 220.90522706935283,
+          "centroid_enu_m": [
+            -100.3351172221358,
+            9.167722244620771
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "07e6c0b7-a1c3-4d48-9ede-8bf50b9968f7",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342589@1",
+              "update_time": "2015-09-06T09:03:18.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 60.13123538575016,
+          "intersection_area_m2": 0.0,
+          "area_m2": 356.5688676293292,
+          "centroid_enu_m": [
+            -106.97942431718444,
+            -9.394502687646606
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        },
+        {
+          "id": "d79c916e-881c-439c-b4d9-2c35cd8ca152",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w369342480@1",
+              "update_time": "2015-09-06T09:03:08.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "renderable": true,
+          "distance_m": 64.83121960790476,
+          "intersection_area_m2": 0.0,
+          "area_m2": 469.8844362810001,
+          "centroid_enu_m": [
+            -102.8901254710569,
+            40.443132626793414
+          ],
+          "scope": "Separate indexed context feature, not unioned into the target; architectural identity of unnamed records remains unresolved."
+        }
+      ]
+    }
+  ],
+  "parts_review": {
+    "map_has_parts": false,
+    "fragment_count": 1,
+    "all_explicit_linked_part_ids_found_in_audit": [],
+    "all_feature_ids_citing_same_osm_record": [
+      "ac43e95f-78ed-4252-b0d5-4f6c48669226"
+    ],
+    "conclusion": "One renderable four-corner envelope with no explicit linked parts, height, floors or holes. Absence of source parts/holes is not proof that the building has no courtyard, setbacks, roof structures or attached historical/rear wings."
+  },
+  "scope_review": {
+    "historical_footprint_verified": false,
+    "usable_measurements": "Provisional present-day map envelope: approximately 44.3 × 43.1 m rotated rectangle, or 60.8 × 60.5 m east/north AABB; none are documentary façade dimensions.",
+    "neighbor_findings": [
+      "All 12 nearby candidate-index polygons are separate from target, with zero intersection area. None was unioned into target.",
+      "Nearest named separate buildings are Radisson Blu Hotel Shanghai New World, 2.497 m northeast by polygon distance, and 永新广场 / Verdant Place, 3.746 m southwest.",
+      "An unnamed OSM w369342446@1 polygon lies 7.607 m away to northwest; identity and any functional relationship remain unverified. It is not a linked map part.",
+      "上海体育大厦 / YMCA Building is a separately named record 46.831 m to southwest; it is not an alias or part of Pacific Hotel in this index.",
+      "新世界城 / New World City is a separately named record 47.504 m northeast; its site/podium geometry is not merged."
+    ],
+    "ambiguities": [
+      "The coarse convex four-corner envelope does not locate an inner courtyard, roof tiers, rear service volumes, or historical wall lines.",
+      "No independently aligned aerial, plan, property line or original OSM response has been reviewed here.",
+      "Adjacent geometry and photos need separate identity checks; proximity alone does not establish an annex or a shared historical building."
+    ],
+    "dimension_limits": [
+      "No map height or floor-count attribute exists; do not derive a model height from this source.",
+      "Do not infer horizontal dimensions, footprint or floor heights by dividing documentary gross floor area or site area.",
+      "Do not call the 1894.5 m² mapped polygon a historical or documentary ground-floor area."
+    ]
+  },
+  "rights": {
+    "target_geometry_license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "derived_coordinate_data": true,
+    "neighbor_sources": "All 12 nearby indexed feature references inspected here identify OSM and ODbL-1.0. Only target geometry is included in exported source-feature.geojson.",
+    "photo_pixels_redistributed": false
+  },
+  "artifacts": [
+    {
+      "file": "source-feature.geojson",
+      "bytes": 1571,
+      "sha256": "fa9ec952b0e6fa2b1c250b04839974fb9127687a48ef55eeaea56ebfc159f2df",
+      "scope": "One exact frozen target feature with source metadata"
+    }
+  ],
+  "next_action": "Keep documentary measurements, photo interpretation, and derived map envelope separately labeled. Review complete historical/main-building boundaries before acceptance or registration; do not infer missing plan details from the four-corner envelope."
+}
