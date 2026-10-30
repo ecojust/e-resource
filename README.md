@@ -41,7 +41,7 @@
 | 18 | [俄罗斯领事馆历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/6f24cb05bda5b5659ac77998dbae39bc4c411a18/projects/shanghai/russian-consulate.html>) | 虹口区／黄浦路20号 | 候选已交付／待核验 | 网页 1.00 MB／Blender 1.69 MB | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>) · [地图轮廓与部件关系](<projects/shanghai/data/model-todo/heritage-next-footprint-review.json>)；2010外观主楼候选已交付，近远景、压缩解码、原生重开与网页检查通过；整体尺度、侧背面、塔部及右侧凸窗仍待细核，园内凉亭未建，1916/1917并列，未配准 |
 | 19 | [国际饭店历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/cc2b2f4873ed3ac01d84e6b9d50b7b3739e8cb52/projects/shanghai/park-hotel.html>) | 黄浦区／南京西路170号 | 候选已交付／待核验 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；外观候选已交付；近远景、原生及网页检查通过。83.8/83.6米并列，规则化退台、中央窗组、低翼后界与未见面待细核，未原址配准 |
 | 20 | [上海跑马总会历史东楼与主钟塔](<https://rawcdn.githack.com/ecojust/e-resource/3f88ffc426f6eba3ec8930101c1914e4df0ac309/projects/shanghai/race-club.html>) | 黄浦区／南京西路325号 | 候选已交付／待核验 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；东楼与主钟塔候选已交付；近远景、开放廊道、原生及网页检查通过。53米仅次级记载，主体尺度、窗网、隐蔽面及细部为估计；西楼／副塔未建，未原址配准 |
-| 21 | 大光明大戏院／大光明电影院 | 黄浦区／南京西路216号 | 制作中 | — | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；先制临街入口及灯塔候选；16/30.5米与2/3/4层来源口径未解，后厅轴向与历史平面另核 |
+| 21 | [大光明大戏院临街入口与灯塔局部](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html>) | 黄浦区／南京西路216号 | 候选已交付／待核验 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；入口、灯塔与圆角墙带局部候选已交付；近远景、原生及网页检查通过。30.5/16米端点未解，尺寸和字形含估计；影厅及完整商铺带未建，未原址配准 |
 
 ### 已有模型的后续核验
 
@@ -3825,7 +3825,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。点击时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-当前入口随master更新。以下另收录26件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](projects/shanghai/data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
+当前入口随master更新。以下另收录27件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](projects/shanghai/data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区
@@ -3857,6 +3857,7 @@
 |---|---|
 | [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 2026-10-30 19:25:12 |
 | [上海跑马总会历史东楼与主钟塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) | 2026-10-30 19:40:09 |
+| [大光明大戏院临街入口与灯塔局部](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) | 未记录 |
 
 <!-- district-candidates:黄浦区:end -->
 

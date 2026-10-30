@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>大光明大戏院 · 临街入口、灯塔与弧形墙带局部候选</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <link rel="stylesheet" href="src/candidate-walk.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="大光明大戏院临街入口、灯塔与相邻弧形墙带局部外观候选"></main>
+  <header>
+    <a href="landmarks.html">← 上海建筑目录</a>
+    <p class="eyebrow">黄浦 · 南京西路</p>
+    <h1>大光明大戏院</h1>
+    <p>临街入口、灯塔与弧形墙带 · 局部候选</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与资料">
+    <span class="badge">建筑局部 · 有照片参照 · 尺度含估计</span>
+    <p class="scope">参照2010年外观照片，并以未定年的历史照片和修缮后夜景照片辅助辨认，表现临街入口、灯塔及相邻弧形墙带。仅为建筑局部，观众厅、完整商铺带、邻楼与室内均未建模。</p>
+    <label for="detail">局部模型细节</label>
+    <select id="detail">
+      <option value="auto">自动随距离切换</option>
+      <option value="full">局部近景</option>
+      <option value="lod">局部远景</option>
+    </select>
+    <div class="buttons">
+      <button id="front" type="button">正面</button>
+      <button id="oblique" type="button">斜侧</button>
+      <button id="rear" type="button">背面</button>
+      <button id="fit" type="button">适合窗口</button>
+      <button id="retry" type="button" hidden>重试加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取局部模型…</p>
+    <p id="metrics"></p>
+    <div id="downloads" class="downloads"></div>
+    <p class="scope">灯塔按30.5米这一资料解释建模；另有16米说法，其计高对象与端点尚未核实。平面、墙带曲率、入口比例、隐蔽面及其他尺寸均为建模估计。招牌字形为原创简化表达，未经历史字体考证；参考照片不证明完整历史原貌或2026实测现状。</p>
+    <p class="scope">独立场景仅支持整个局部模型外包以外的平地漫游，不支持进入门厅、室内、登楼或屋顶行走。尚未完成城市原址配准。</p>
+    <a href="https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg" target="_blank" rel="noopener">2010年参考照片 · Pyzhou · GFDL 1.2或后续版本 ↗</a><br>
+    <a href="source/precise/huangpu-grand-theatre/README.md">来源、尺寸解释与复跑 ↗</a>
+  </aside>
+  <footer>
+    <span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span>
+    <span>局部外观候选 · 非测绘<br>原创几何 MIT · 无照片贴图</span>
+  </footer>
+  <script type="module" src="src/grand-theatre.js"></script>
+</body>
+</html>

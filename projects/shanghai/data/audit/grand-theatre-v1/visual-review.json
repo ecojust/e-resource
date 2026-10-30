@@ -1,0 +1,127 @@
+{
+  "schema": "grand-theatre-independent-native-visual-review-v1",
+  "reviewed_utc": "2026-10-30T12:25:28.251081+00:00",
+  "reviewer": "independent visual-review subagent",
+  "asset_id": "huangpu-grand-theatre",
+  "status": "pass-for-bounded-interpreted-frontage-candidate",
+  "blocking_visual_defects": [],
+  "scope": "Street entrance/light tower and bounded immediately adjacent left curved return only; no auditorium or whole shop strip.",
+  "final_model": {
+    "path": "/workspace/grand-build/huangpu-grand-theatre-raw.glb",
+    "bytes": 593688,
+    "sha256": "62a1c089a0ef27ed305c512774067a79ede4d50794273b36e03bebeece2d94c1",
+    "triangle_count_from_gltf_indices": 10832
+  },
+  "build_model_source": {
+    "path": "/workspace/e-resource/projects/shanghai/source/precise/huangpu-grand-theatre/source/build_model.py",
+    "bytes": 8624,
+    "sha256": "f66157f4ad477d3502c580f15d44041ddae045a126deff74a6e36a34dff7d604"
+  },
+  "preview_images": [
+    {
+      "path": "/workspace/grand-previews/native-front.png",
+      "bytes": 855045,
+      "sha256": "8eff27d899b86eaf4433f3e481f414e8dc2a4e3c0e7e6a3edb1b31b46f2bdc5f",
+      "actually_viewed": true
+    },
+    {
+      "path": "/workspace/grand-previews/native-oblique.png",
+      "bytes": 819878,
+      "sha256": "4470a0f1d9cd53cb75aeb9b264876b48d656c2b75322aaf7009e54c1c9d24844",
+      "actually_viewed": true
+    },
+    {
+      "path": "/workspace/grand-previews/native-rear.png",
+      "bytes": 812592,
+      "sha256": "84178e65435883ff26e0c7f72cc4c13cfb1f3582f4e2f60f6a72cdb68e77ca6e",
+      "actually_viewed": true
+    }
+  ],
+  "reference_images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Grand_theatre_shanghai.jpg",
+      "sha256": "5f1a0161eacccba727c34615b3428a549d73cdef93a71bac24bcb2673e7c7710",
+      "actually_viewed": true,
+      "private_path": "/workspace/grand-research/grand-photo.jpg"
+    },
+    {
+      "url": "https://imagepphcloud.thepaper.cn/pph/image/180/459/268.jpg",
+      "sha256": "b4227beb42abd2f82ea3bb7aef60fd42527f569948d3698e65996f2cbf72ed39",
+      "actually_viewed": true,
+      "private_path": "/workspace/grand-research/grand-entrance-historic.jpg"
+    },
+    {
+      "url": "https://imagepphcloud.thepaper.cn/pph/image/180/459/290.jpg",
+      "sha256": "2106827c0d9fd2a6b545948f1ef0afe24a3f8bfdf99da9fda636de911e43fa72",
+      "actually_viewed": true,
+      "private_path": "/workspace/grand-research/grand-restored-night.jpg"
+    }
+  ],
+  "native_views_actually_viewed": true,
+  "comparison_findings": [
+    {
+      "feature": "Light tower and vertical sign",
+      "result": "visually consistent at candidate level",
+      "evidence": "Final front and oblique views show a pale rectangular panelled tower at the left of the entrance with dark stacked GRAND THEATRE letters, matching the characteristic arrangement in daylight and restored-night references.",
+      "limits": "Panel spacing, tower width/depth and original symbolic letter strokes are authored approximations. This does not authenticate historic typography or glass construction."
+    },
+    {
+      "feature": "Tall entrance glazing and projecting fins",
+      "result": "initial visible proportion issue resolved in final previews",
+      "evidence": "The first previews placed fin tops too far below the tower top. Revised fin tips now rise to roughly three-quarters of the authored tower height, and a bounded recessed upper screen adds the layered wall relationship visible behind the fins in the daylight and restored-night references.",
+      "limits": "Fin tops at 22.5 m, rear fin tops at 21.5 m and screen top at 21.0 m are design estimates based on qualitative visual comparison. They are not pixel-derived metric measurements or surveyed heights. Exact fin/bay counts and hidden screen details are not verified."
+    },
+    {
+      "feature": "Projecting marquee and ground-floor entrance",
+      "result": "visually consistent simplified interpretation",
+      "evidence": "Final front and oblique previews show a broad low canopy over recessed dark framed door glazing. The historical photograph supports this arrangement and a gridded canopy soffit. Source inspection confirms authored underside grid geometry.",
+      "limits": "The elevated native camera views do not directly expose the entire canopy underside. Door counts, sizes and miniature canopy lettering are simplified estimates; temporary advertising is omitted."
+    },
+    {
+      "feature": "Bounded left curved return",
+      "result": "visually consistent within limited scope",
+      "evidence": "The adjacent left return reads as rounded cream horizontal bands with a small inset window. Its rounded end remains visible beside the tower in both final street-facing previews.",
+      "limits": "The crop boundary and return depth are authored, and do not establish parcel boundaries or ownership of the longer street shop strip."
+    },
+    {
+      "feature": "Rear and roof interpretation",
+      "result": "acceptable only as explicit partial-frontage closure",
+      "evidence": "The rear preview shows a plain cut closure and bounded roof/screen. No auditorium, complete commercial strip or unrelated taller rear building has been added.",
+      "limits": "The reviewed references do not verify these rear surfaces or roof depths. This is not a reconstruction of the theatre rear elevation or a complete freestanding building."
+    },
+    {
+      "feature": "Materials",
+      "result": "acceptable as documented authored stand-ins",
+      "evidence": "Cream bands, pale tower and dark door framing broadly agree with the daylight image. Upper glazing is represented by opaque warm amber panes in the native renders.",
+      "limits": "Opaque warm glass appearance is not a physically calibrated or verified daytime material. Night illumination cannot establish daylight color, translucency, emission or reflectance."
+    }
+  ],
+  "revision_history": [
+    {
+      "reviewed_raw_sha256": "6a1bfc9922cc1d103ba31d919b596d960e1a4008ea082be7619575534b9066d0",
+      "issue": "Upper entrance fins visibly too low relative to tower.",
+      "requested_change": "Increase fin height qualitatively while retaining explicit estimated dimensions; add only the bounded visible upper screen relationship.",
+      "resolution": "Final raw model 62a1c089a0ef27ed305c512774067a79ede4d50794273b36e03bebeece2d94c1 and all three regenerated native previews were actually re-viewed; principal silhouette issue resolved."
+    }
+  ],
+  "acceptance_limits": {
+    "bounded_exterior_candidate_visual_review_passed": true,
+    "metric_scale_accepted": false,
+    "source_height_conflict_resolved": false,
+    "unresolved_source_height_claims_m": [
+      16,
+      30.5
+    ],
+    "authored_tower_design_height_m": 30.5,
+    "height_endpoints_verified": false,
+    "all_plan_dimensions_estimated": true,
+    "current_condition_accepted": false,
+    "day_materials_calibrated": false,
+    "complete_listed_building_accepted": false,
+    "auditorium_accepted": false,
+    "geographic_registration_accepted": false,
+    "original_city_replacement_accepted": false,
+    "third_party_images_redistributed": false,
+    "source_photo_pixels_used_as_textures": false
+  }
+}
