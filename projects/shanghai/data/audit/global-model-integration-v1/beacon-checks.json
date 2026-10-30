@@ -1,0 +1,324 @@
+{
+  "schema": "building-beacon-contract-checks-v1",
+  "passed": 10,
+  "checks": [
+    "the real shared catalogue supplies exactly 70 unique identities across all 16 known districts",
+    "all actual IDs remain in both sprite sources regardless of model loading, visibility, disposal or LOD",
+    "zoom 8 through 24 and resized viewports retain fixed pixel sizes and all 70 IDs without clustering",
+    "viewport offsets keep all true anchors above the ground horizon without unprojecting sky label positions",
+    "the actual 20 Chongming identities retain separate cards and complete names on a 390 by 844 viewport",
+    "all 70 actual identities fit separate 24 by 20 numbered cards clear of phone legend, location card and right-side tools",
+    "edge and offscreen layout inputs clamp cards without dropping IDs; dense overflow is explicit",
+    "140 actual card-center clicks resolve exact IDs even when native rendered-feature hits deliberately name another building",
+    "screen-card picking wins over an underlying lamp, hover shares the result, and native fallback only queries anchors",
+    "disposal releases owned sprite resources and a later click cannot navigate"
+  ],
+  "catalogue_count": 70,
+  "district_count": 16,
+  "district_counts": {
+    "310101": 22,
+    "310104": 7,
+    "310105": 2,
+    "310106": 1,
+    "310107": 1,
+    "310109": 4,
+    "310110": 1,
+    "310112": 1,
+    "310113": 1,
+    "310114": 1,
+    "310115": 4,
+    "310116": 1,
+    "310117": 1,
+    "310118": 2,
+    "310120": 1,
+    "310151": 20
+  },
+  "scenarios": [
+    {
+      "width": 1280,
+      "height": 800,
+      "zoom": 8,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "zoom": 11,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "zoom": 15,
+      "identities": 70,
+      "viewport_layout_labels": 2,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "zoom": 19,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "zoom": 24,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 8,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 11,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 15,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 19,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 24,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "zoom": 8,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "zoom": 11,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "zoom": 15,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "zoom": 19,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "zoom": 24,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 240,
+      "height": 320,
+      "zoom": 8,
+      "identities": 70,
+      "viewport_layout_labels": 70,
+      "overlap_fallback_labels": 64,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 240,
+      "height": 320,
+      "zoom": 11,
+      "identities": 70,
+      "viewport_layout_labels": 66,
+      "overlap_fallback_labels": 60,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "numbers"
+    },
+    {
+      "width": 240,
+      "height": 320,
+      "zoom": 15,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 240,
+      "height": 320,
+      "zoom": 19,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    },
+    {
+      "width": 240,
+      "height": 320,
+      "zoom": 24,
+      "identities": 70,
+      "viewport_layout_labels": 0,
+      "overlap_fallback_labels": 0,
+      "anchor_pixels": 20,
+      "label_font_pixels": 12,
+      "label_mode": "names"
+    }
+  ],
+  "compactScenarios": [
+    {
+      "width": 320,
+      "height": 568,
+      "insets": {
+        "top": 182,
+        "bottom": 190,
+        "left": 12,
+        "right": 65
+      },
+      "identities": 70,
+      "card_pixels": [
+        24,
+        20
+      ],
+      "overlap_fallback_labels": 0,
+      "pairwise_overlap_count": 0,
+      "runtime_ui_rectangles_checked": true
+    },
+    {
+      "width": 390,
+      "height": 568,
+      "insets": {
+        "top": 182,
+        "bottom": 190,
+        "left": 12,
+        "right": 65
+      },
+      "identities": 70,
+      "card_pixels": [
+        24,
+        20
+      ],
+      "overlap_fallback_labels": 0,
+      "pairwise_overlap_count": 0,
+      "runtime_ui_rectangles_checked": true
+    }
+  ],
+  "bindings": [
+    {
+      "path": "./beacon-checks.mjs",
+      "bytes": 23235,
+      "sha256": "55b291fadbd72bd21a15d8088aabc031dfe51ac11c737ac51ff47d7b65880f82"
+    },
+    {
+      "path": "../../../src/building-beacons.js",
+      "bytes": 14065,
+      "sha256": "ed9fac594eb3776489d4fe5ba4189d91e06b639f6d6d01e3f653f9bb74374d94"
+    },
+    {
+      "path": "../../landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "path": "../../candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    },
+    {
+      "path": "../../districts.json",
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a"
+    }
+  ],
+  "scope": "Independent real-catalogue identity, pure layout, in-viewport full-name/number filters with all 70 source anchors retained, literal style-vector offsets, horizon handling, fixed-pixel contracts, card-center picking against deliberately stale native hits and click dispatch using a map/canvas facade. This is not SDK style validation or actual WebGL/glyph visibility; those require separate vendor and browser checks."
+}

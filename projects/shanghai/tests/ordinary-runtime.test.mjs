@@ -5,6 +5,7 @@ import {createOrdinaryMacroRegistrar,loadOrdinaryLandmarkAsset} from '../src/ord
 import {OrdinaryBuildingCatalog,readVerifiedBytes,validateMacroIndex} from '../src/ordinary-building-catalog.js';
 import {disposeModelResources} from '../src/model-resources.js';
 import {placeDescription,modelSurfaceKind} from '../src/precise-registration-ui.js';
+import {CandidateCityClipper} from '../src/candidate-city-clipping.js';
 import {THREE,FAR,BASE,OVERRIDE,view,fixture,farObject,nearObject,until,deferred,sha,json,bytes} from './ordinary-fixtures.mjs';
 
 function city(t,{parse}={}) {
@@ -31,6 +32,30 @@ test('live macro adds exact target ownership, preserves neighbor, and restores b
   assert.equal(h.streamer.getState().ordinaryRegistries,0);h.streamer.syncParents([h.record]);
   await until(()=>h.streamer.getState().visible===1);assert.equal([...h.streamer.records][0].replacement,undefined);
   assert.equal(h.streamer.getState().precise.registered,0);assert.equal(h.errors.length,0);
+});
+
+test('candidate clipping survives late far masks and ordinary macro rebind without duplicated shader hooks',async t=>{
+  const h=city(t),clipper=new CandidateCityClipper({THREE,geographicPosition:(x,y)=>new THREE.Vector3(x,0,y)});
+  h.streamer.beforeFarRebind=object=>clipper.releaseObject(object);
+  h.streamer.afterFarRebind=(object,record)=>clipper.bindObject(object,record);
+  clipper.bindObject(h.object,h.record);
+  const check=()=>{
+    const mesh=h.object.children[0];
+    for(const [material,kind] of [[mesh.material,'standard'],[mesh.customDepthMaterial,'depth'],[mesh.customDistanceMaterial,'distanceRGBA']]){
+      const lib=THREE.ShaderLib[kind],shader={vertexShader:lib.vertexShader,fragmentShader:lib.fragmentShader,uniforms:{}};
+      material.onBeforeCompile(shader,{});
+      assert.equal(shader.vertexShader.split('varying vec3 vCandidatePosition;').length-1,1);
+      assert.equal(shader.vertexShader.split('attribute float _feature_id_0;').length-1,1);
+      assert.equal(shader.uniforms.cityFeatureMask.value,h.parent.mask.texture);
+      assert.equal(shader.uniforms.candidateClipTexture.value,clipper.texture);
+    }
+  };
+  h.start();await until(()=>h.streamer.getState().visible===1);check();
+  h.streamer.installMacroReplacements('catalog',h.f.registry,'https://example.test/');
+  await until(()=>h.streamer.getState().precise.overrideTiles===1);check();
+  h.streamer.removeMacroReplacements('catalog');
+  await until(()=>h.streamer.getState().visible===1);check();
+  h.streamer.destroy();assert.equal(clipper.getState().boundMaterials,0);clipper.dispose();
 });
 
 test('wrong loaded far SHA or duplicate macro registration cannot mutate an existing scene',async t=>{

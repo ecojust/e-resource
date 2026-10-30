@@ -8,6 +8,7 @@ import {createArchitecturalMaterials} from '../src/architectural-material.js';
 import {disposeModelResources} from '../src/model-resources.js';
 import {FeatureStateSuppressor,LocalModelStreamer} from '../src/local-model-streamer.js';
 import {detailIsNearby} from '../src/detail-model-cache.js';
+import {CandidateCityClipper} from '../src/candidate-city-clipping.js';
 
 // Exercise the current production integration functions, with real Three objects
 // and the real lighting owner. Only renderer/MapLibre services are absent.
@@ -27,7 +28,8 @@ test('map integration copies far transform, adds grain without painted windows, 
  const scene=new THREE.Scene(),renderer={shadowMap:{enabled:false,autoUpdate:true,type:THREE.BasicShadowMap,needsUpdate:false}};
  const lighting=createRealisticLighting({THREE,scene,renderer,reflections:false,minimumRefreshInterval:0});
  const surfaces=await createArchitecturalMaterials({...THREE,TextureLoader:class {async loadAsync(){return new THREE.Texture({width:1024,height:1024});}}},{baseURL:'https://fixture.invalid/'});
- const prepare=new Function('THREE','lighting','surfaces',prepareSource+'\nreturn prepareCityDetailObject;')(THREE,lighting,surfaces);
+ const candidateClipper=new CandidateCityClipper({THREE,geographicPosition:(x,y)=>new THREE.Vector3(x,0,y)});
+ const prepare=new Function('THREE','lighting','surfaces','candidateClipper',prepareSource+'\nreturn prepareCityDetailObject;')(THREE,lighting,surfaces,candidateClipper);
  const far=new THREE.Group();far.position.set(20,3,30);far.scale.setScalar(1.001);far.quaternion.setFromAxisAngle(new THREE.Vector3(0,1,0),.3);
  const near=new THREE.Group(),stone=new THREE.MeshStandardMaterial({color:'#999999'});stone.name='InferredPlaster';
  const instance=new THREE.InstancedMesh(new THREE.BoxGeometry(3,8,3),stone,2);instance.setMatrixAt(0,new THREE.Matrix4());instance.setMatrixAt(1,new THREE.Matrix4().makeTranslation(5,0,0));near.add(instance);
@@ -38,7 +40,7 @@ test('map integration copies far transform, adds grain without painted windows, 
  lighting.update({position:new THREE.Vector3(20,0,30),now:1000});assert.equal(instance.castShadow,true);assert.equal(instance.receiveShadow,true);
  near.visible=false;lighting.update({position:new THREE.Vector3(20,0,30),now:2000});assert.equal(instance.castShadow,false);
  near.visible=true;lighting.update({position:new THREE.Vector3(20,0,30),now:3000});assert.equal(instance.castShadow,true);
- lighting.releaseModel(near);assert.equal(instance.castShadow,false);assert.equal(instance.receiveShadow,false);lighting.dispose();surfaces.dispose();disposeModelResources(near);
+ assert(candidateClipper.getState().boundMaterials>=3);candidateClipper.dispose();lighting.releaseModel(near);assert.equal(instance.castShadow,false);assert.equal(instance.receiveShadow,false);lighting.dispose();surfaces.dispose();disposeModelResources(near);
 });
 
 test('map disposal detaches feature ownership before releasing lighting, scene nodes and GPU buffers',()=>{
@@ -46,11 +48,12 @@ test('map disposal detaches feature ownership before releasing lighting, scene n
  geometry.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,1,0,0,0,1,0],3));geometry.setAttribute('_feature_id_0',new THREE.Float32BufferAttribute([1,1,1],1));
  const material=new THREE.MeshStandardMaterial(),mesh=new THREE.Mesh(geometry,material);far.add(mesh);scene.add(far);
  const original=material.onBeforeCompile,mask=new CityFeatureMask(THREE,1);mask.bindObject(far);mask.setOwner('ready-near',[1]);
+ const candidateClipper=new CandidateCityClipper({THREE,geographicPosition:(x,y)=>new THREE.Vector3(x,0,y)});candidateClipper.bindObject(far,{id:'fixture'});
  const order=[],details={detach(object){assert.equal(object,far);mask.removeOwner('ready-near');mask.dispose();order.push('detach');}};
  const lighting={releaseModel(object){assert.equal(object,far);assert.equal(mask.data[1],0);assert.equal(material.onBeforeCompile,original);order.push('lighting');}};
  geometry.addEventListener('dispose',()=>{assert.equal(far.parent,null);order.push('geometry');});
- const dispose=new Function('cityDetails','lighting','scene','disposeModelResources','syncSourceGeometryCorrections',disposeSource+'\nreturn disposeModel;')(details,lighting,scene,disposeModelResources,noSourceCorrectionHelpers.syncSourceGeometryCorrections);
- dispose(far);assert.deepEqual(order,['detach','lighting','geometry']);assert.equal(mask.disposed,true);
+ const dispose=new Function('cityDetails','lighting','scene','disposeModelResources','syncSourceGeometryCorrections','candidateClipper',disposeSource+'\nreturn disposeModel;')(details,lighting,scene,disposeModelResources,noSourceCorrectionHelpers.syncSourceGeometryCorrections,candidateClipper);
+ dispose(far);assert.deepEqual(order,['detach','lighting','geometry']);assert.equal(mask.disposed,true);assert.equal(candidateClipper.getState().boundMaterials,0);candidateClipper.dispose();
 });
 
 // Execute the production visibility/manifest functions against the real owner
@@ -62,7 +65,7 @@ function preciseMapFixture(t) {
  const dynamic={id:'bund05',status:'loaded',activeVariant:'full',object:new THREE.Group(),distance:0,maxDistance:100};
  const staticRecord={id:'old-landmark',status:'loaded',activeVariant:'full',object:new THREE.Group(),distance:0,maxDistance:100};
  const records=new Map([[dynamic.id,dynamic],[staticRecord.id,staticRecord]]),visible=[];
- const env={...noSourceCorrectionHelpers,destroyed:false,map,walker:{group:{visible:true}},current:{lng:121,lat:31},landmarkRecords:records,
+ const env={...noSourceCorrectionHelpers,candidateState:{sync:()=>false},destroyed:false,map,walker:{group:{visible:true}},current:{lng:121,lat:31},landmarkRecords:records,
   distanceMetres:(_target,record)=>record.distance,detailIsNearby,desiredVariant:()=> 'full',streetInteraction:{},
   preciseLandmarkIds:new Set(['bund05']),landmarkBoundaries:new Map([['bund05',{building_ids:['new-source-id'],building_part_ids:[]}],['old-landmark',{building_ids:['old-source-id'],building_part_ids:[]}]]),
   tileSuppression,landmarkSuppression,cityDetails:{setVisibleLandmarks(ids){visible.push(ids);}},

@@ -85,6 +85,7 @@ function prepareCoverage(coverage = {}) {
     landmarks: (coverage.landmarks || []).map(namedGeometry).filter(Boolean),
     reserved: (coverage.reserved || []).map(namedGeometry).filter(Boolean),
     sourceGeometryCorrections: Array.isArray(coverage.sourceGeometryCorrections) ? coverage.sourceGeometryCorrections : [],
+    candidateClips: coverage.candidateClips || [], alreadyCovered: coverage.alreadyCovered,
   };
 }
 
@@ -275,9 +276,9 @@ export function planOSMBuildingReplacement(features, coverage = {}, sourceContex
 
 /** Actual OSM feature-state ownership for visible, successfully loaded models. */
 export class OSMBuildingSuppressor {
-  constructor({map, source, sourceLayer = 'building', getCoverage = null, residualLayer = null, onChange = () => {}}) {
+  constructor({map, source, sourceLayer = 'building', getCoverage = null, residualLayer = null, onChange = () => {}, planFunction = replacementPlan, featureStateKey = 'localModel'}) {
     this.map = map; this.source = source; this.sourceLayer = sourceLayer;
-    this.getCoverage = getCoverage; this.onChange = onChange;
+    this.getCoverage = getCoverage; this.onChange = onChange; this.planFunction=planFunction; this.featureStateKey=featureStateKey;
     this.residualLayer = residualLayer; this.residualGeneration = 0; this.nextPlan = null;
     this.sourceEpoch = 0; this.inflightSignature = null;
     this.applying = null; this.lastSignature = ''; this.currentResidualCount = 0; this.residualReady = false;
@@ -315,7 +316,7 @@ export class OSMBuildingSuppressor {
     try {
       if (this.map.getSource(this.source)) {
         const target = {source: this.source, sourceLayer: this.sourceLayer, id: item.id};
-        if (!this.map.getFeatureState || this.map.getFeatureState(target)?.localModel === true) this.map.removeFeatureState(target, 'localModel');
+        if (!this.map.getFeatureState || this.map.getFeatureState(target)?.[this.featureStateKey] === true) this.map.removeFeatureState(target, this.featureStateKey);
       }
       this.applied.delete(key); this.pendingRemovals.delete(key);
     } catch {
@@ -336,11 +337,11 @@ export class OSMBuildingSuppressor {
       this.applied.clear(); this.pendingRemovals.clear(); this.sourceObject = sourceObject;
     }
     const coverage = prepareCoverage(this.getCoverage ? this.getCoverage() : this.coverage);
-    if (!coverage.cells.length && !coverage.landmarks.length && !coverage.sourceGeometryCorrections.length) { this.clear(); return this.getState(); }
+    if (!coverage.cells.length && !coverage.landmarks.length && !coverage.sourceGeometryCorrections.length && !coverage.candidateClips.length) { this.clear(); return this.getState(); }
     let features;
     try { features = this.map.querySourceFeatures(this.source, {sourceLayer: this.sourceLayer}); }
     catch { this.stats.queryErrors++; this.clear(); return this.getState(); }
-    const plan = replacementPlan(features, coverage, {source: this.source, sourceLayer: this.sourceLayer});
+    const plan = this.planFunction(features, coverage, {source: this.source, sourceLayer: this.sourceLayer});
     plan.sourceEpoch = this.sourceEpoch;
     Object.assign(this.stats, plan.stats);
     if (!this.residualLayer) {
@@ -369,8 +370,8 @@ export class OSMBuildingSuppressor {
       // Recheck actual state, rather than reporting references as proof that a
       // prior write succeeded. Failed writes retry on the next source event.
       try {
-        if (this.applied.has(key) && (!this.map.getFeatureState || this.map.getFeatureState(target)?.localModel === true)) continue;
-        this.map.setFeatureState(target, {localModel: true}); this.applied.set(key, item);
+        if (this.applied.has(key) && (!this.map.getFeatureState || this.map.getFeatureState(target)?.[this.featureStateKey] === true)) continue;
+        this.map.setFeatureState(target, {[this.featureStateKey]: true}); this.applied.set(key, item);
       }
       catch { this.stats.failedWrites++; this.applied.delete(key); }
     }

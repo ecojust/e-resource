@@ -1,0 +1,411 @@
+{
+  "schema": "candidate-city-independent-review-v1",
+  "generated_utc": "2026-10-30T18:15:18.712857+00:00",
+  "reviewer": "global_urban_mapping; separate from runtime implementation and browser QA",
+  "review_baseline_commit": "65af6bea52780f274d2ee005bbbd513317b559fc",
+  "status": "passed-read-only-code-and-cpu-review; separate visual QA remains required",
+  "scope": [
+    "Read-only review of candidate merge, verified visibility guard, far and near source clipping, vector residual restoration, source-provider changes, late model results and existing 40-entry compatibility.",
+    "Read-only review of 70-record beacon identity, fixed screen size, supported zoom range, non-culling layers, viewport layout, UI avoidance, exact click dispatch, disposal and high-pitch projection.",
+    "No WebGL browser was launched for this independent review. No runtime or catalogue source was edited by the reviewer.",
+    "Final read-only review of candidate overview camera fit, heading-to-ENU conversion, bearing precedence, midpoint elevation, actual UI padding and explicit reset when returning to legacy overview, city overview or walking.",
+    "Final delta only: current screen-rectangle beacon picking, anchor-only native-query fallback, offscreen label filtering, persisted elevated candidate camera targets, legacy ground-clamp restoration and Grand Theatre 25-degree display pitch. No clipping code changed in this delta.",
+    "Post-browser error-path-only delta: read-only review of CityDetailStreamer.loadIndex catch cleanup and restoration plus the seven authored Three.js fault-injection cases and their recorded passing result. Normal-path browser checks were not repeated for this delta."
+  ],
+  "bindings": [
+    {
+      "file": "src/candidate-city-integrations.js",
+      "bytes": 5669,
+      "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 7051,
+      "sha256": "3bc0c5d3812e4853ad7808488ae3fc83ac0f2556c23052dc20e1752bd49f90b8"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "file": "src/app.js",
+      "bytes": 22009,
+      "sha256": "87e737e10fd7fd90713ae372e7147b60150c4a356e3784d574018a4148d3b37e"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 14283,
+      "sha256": "15dd8ef8b7f4f84385216b3d2792e9ffd48ce361b80a734abc6c632b7a9b46cb"
+    },
+    {
+      "file": "src/city-detail-streamer.js",
+      "bytes": 23934,
+      "sha256": "fa9d24b448622cc33b9e9733e671c09721fa3db2d0fbcf5ad00fb2a638822dd7"
+    },
+    {
+      "file": "src/ordinary-city-detail-streamer.js",
+      "bytes": 6654,
+      "sha256": "b0f057deeab2f08fbfc7d4a8f8b717ebd0b74375853e4c1a696cf2cea3f4fef5"
+    },
+    {
+      "file": "src/osm-building-suppression.js",
+      "bytes": 25077,
+      "sha256": "33551fc5277479e360664cc22249c9596a646e8756e3ed09032de15dfe00ce4b"
+    },
+    {
+      "file": "src/osm-residual-layer.js",
+      "bytes": 13572,
+      "sha256": "07e44d867d68cd5a6a4954fae8ee57c88f2acb3c6603009a2d3176f90448a684"
+    },
+    {
+      "file": "src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "file": "src/ordinary-scene-adapter.js",
+      "bytes": 8167,
+      "sha256": "4c49dadb132ace69132b7cff27f646fbcabba89ad6e473fca813d913852bb74a"
+    },
+    {
+      "file": "src/detail-model-cache.js",
+      "bytes": 5275,
+      "sha256": "7d0e482f30e6c92f91420024d6fee36061f1ad3fd2ef2e88fb58ad4e0064fb2e"
+    },
+    {
+      "file": "src/precise-registration-ui.js",
+      "bytes": 1749,
+      "sha256": "cd01fd32d56efaecfe005c9460a2293f29f8120d1ac428f06ceeb0dd01c28c82"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "471213200dde6224b2a7932551ec621de1e139d981e0f9c87adb2c384f30d2fd"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    },
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 33465,
+      "sha256": "4eaf47bd7d9235a76956f91742f397e3d533ba9f913a9813f8177f65a0de81b1"
+    },
+    {
+      "file": "vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11183,
+      "sha256": "33e7fa4bfad13a49c5b4b85034ca59980f17684f0e184ac07a8ffba982e7e0f1"
+    },
+    {
+      "file": "tests/city-detail-candidate-failure.test.mjs",
+      "bytes": 8898,
+      "sha256": "a4c580de4eeca864db971895ccfa9474a58daec5b1994ee9f6afdceb2942d5eb"
+    }
+  ],
+  "source_and_lifecycle_findings": [
+    {
+      "topic": "asset activation",
+      "result": "pass",
+      "evidence": "candidateAssetVisible requires loaded status, visible ancestors through the exact scene, non-disposed record and WeakMap verification receipt matching model ID, active web/lod variant, file, SHA256 and byte count. GLB extras alone cannot activate clipping."
+    },
+    {
+      "topic": "failure, leave and late completion",
+      "result": "pass",
+      "evidence": "View changes abort ordinary fetches, retainDetailResult rejects obsolete results, load finally resynchronizes visibility, and hidden candidates clear clips/collisions. Failed upgrades retain only the previously verified visible variant."
+    },
+    {
+      "topic": "far source identity",
+      "result": "pass",
+      "evidence": "Each clip triangle carries macro hash and feature_local_id. Broadway has both confirmed render parts, 3245 and 3246. Candidate hooks are released before CityFeatureMask rebind and reapplied afterward; original hooks are restored on disposal."
+    },
+    {
+      "topic": "near source boundary",
+      "result": "pass-with-geographic-limit",
+      "evidence": "Near GLBs lack per-feature IDs, so masking is bounded by registered source-intersection polygons and source macro. The eight identified urban buildings use source intersections; unresolved Song and Lu Xun owners have null replacement geometry. This is a display correction, not survey accuracy."
+    },
+    {
+      "topic": "vector partial replacement",
+      "result": "pass",
+      "evidence": "Overture clipping requires exact source IDs; remaining geometry is polygon difference with original properties retained. OSM corrections remain limited to the same bounded geographic polygons. Unrelated IDs, geometry errors and conflicting property groups retain source geometry."
+    },
+    {
+      "topic": "residual lifecycle",
+      "result": "pass",
+      "evidence": "OSMBuildingSuppressor restores original IDs before replacement, waits for residual readiness, uses source epochs/generations to reject late plans, and retains originals on query/upload failure. Failed removal retains the previous residual until restoration succeeds."
+    },
+    {
+      "topic": "legacy compatibility",
+      "result": "pass",
+      "evidence": "Actual merge keeps all original 40 records deeply equal and produces 70 unique IDs. All 30 additions are overview-only. Candidate catalogue fetch/validation errors fall back to existing records. Provider fallback synchronously refreshes candidate vector controllers."
+    }
+  ],
+  "independent_cpu_probe": {
+    "test_scope": "CPU production-module state and polygon probes; no WebGL/browser rendering or network asset-fetch proof",
+    "passed": true,
+    "catalog_models": 70,
+    "preserved_existing": 40,
+    "active_verified_candidates": 30,
+    "max_simultaneous_clip_triangles": 56,
+    "cases": [
+      "70 unique IDs with exact existing 40 rows retained",
+      "missing/foreign receipt cannot authorize clipping",
+      "hidden ancestor/detached object restore baseline state",
+      "variant mismatch disables clipping until new matching receipt",
+      "20-site shared correction deduplicates",
+      "Shanghai Broadway both renderable source parts encoded",
+      "hiding every object clears all mask triangles",
+      "Overture identity gate excludes overlapping foreign ID",
+      "partial residual retains exact uncovered 60 percent",
+      "already-covered source suppressor skips duplicate residual",
+      "no active clip restores no-hide plan"
+    ]
+  },
+  "beacon_checks": {
+    "observations": [
+      "Anchor and label GeoJSON retain all 70 IDs and full names without model fetch/LOD dependency or clustering.",
+      "Layer minzoom is zero and maxzoom is omitted; actual vendored style validation accepts the layers and zoom 24.",
+      "Dense cards use stable model numbers and 24 by 20 pixel sprites; full-name and compact layers have complementary filters.",
+      "Layout reserves actual sidebar, tool strip, legend and location-card rectangles; tested at desktop, 390 by 844 and 320 by 568.",
+      "Current screen-card rectangles resolve the topmost model first; only a miss queries the unchanged original-lamp layer. Click and hover share this path, stale label query boxes are ignored, and duplicate original events are suppressed. All owned listeners, layers, sources and DOM elements are released on destroy.",
+      "Labels keep their true geographic coordinates and use viewport text/icon offsets. A sky slot never unprojects into a false geographic label; its optional leader becomes zero length.",
+      "GeoJSON properties contain scalars only. Pixel vectors now live in match-by-ID style expressions with literal vec2 outputs, preventing GeoJSON-vt array-to-string conversion. Unknown IDs fall back to [0,0]; the actual vendor style validator accepts the generated layers.",
+      "Both label layers require inViewport and retain complementary compact filters. Their GeoJSON still carries every model ID; the original 70 anchor layer has no viewport filter or zoom-dependent visibility change. Labels return when their anchor returns to the viewport.",
+      "On the shortest phone layout, compact grids retry with zero inter-card gap only when the 2px-gap grid is insufficient. The sprite transparent border remains; card size, text size and hit rectangles are unchanged. The 243x158 available area now fits 10x7 cards."
+    ],
+    "real_maplibre_cpu_projection": {
+      "method": "The shipped MapLibre MercatorTransform constructor was exposed only in an in-memory VM copy. Camera 1200 by 800, FOV36.87, pitch85; actual merged catalogue points were projected, filtered with isPointOnMapSurface, and round-tripped. This is a CPU transform probe, not a rendering assertion.",
+      "cases": [
+        {
+          "view": "Bund",
+          "center": [
+            121.4858,
+            31.24045
+          ],
+          "zoom": 17,
+          "xy_inside_before_surface_filter": 43,
+          "surface_visible_after_filter": 18,
+          "roundtrip_errors_above_1e_7_degrees": 0
+        },
+        {
+          "view": "Chongming",
+          "center": [
+            121.3971,
+            31.621
+          ],
+          "zoom": 19,
+          "xy_inside_before_surface_filter": 67,
+          "surface_visible_after_filter": 20,
+          "roundtrip_errors_above_1e_7_degrees": 0
+        },
+        {
+          "view": "all city",
+          "center": [
+            121.4737,
+            31.2304
+          ],
+          "zoom": 8,
+          "xy_inside_before_surface_filter": 70,
+          "surface_visible_after_filter": 70,
+          "roundtrip_errors_above_1e_7_degrees": 0
+        }
+      ]
+    },
+    "baseline_validation": {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs",
+      "passed": 16,
+      "failed": 0,
+      "reviewed_source_sha256": "b5e32f1daf3e426cad810ad9277bcd8e083877d6257406b70d9c36b99de94ad4",
+      "note": "Historical 16-case independent run before the final interaction/filter delta; current delta is recorded below."
+    }
+  },
+  "resolved_findings": [
+    {
+      "id": "provider-fallback-stale-clipping",
+      "reported_by": "independent reviewer",
+      "fix": "useOSMFallback synchronously calls refreshCandidateVectors, including when the camera is stationary."
+    },
+    {
+      "id": "candidate-catalog-failure-blocked-existing-models",
+      "reported_by": "independent reviewer",
+      "fix": "Only the new catalogue failure is caught and explained; existing 40 entries continue to load and receive beacons."
+    },
+    {
+      "id": "mobile-controls-covered-signs",
+      "reported_by": "independent reviewer",
+      "fix": "Read real control/card/legend rectangles and reserve their screen area; compact cards fit narrow phone viewports."
+    },
+    {
+      "id": "high-pitch-label-unprojection",
+      "reported_by": "independent reviewer",
+      "fix": "Keep label GeoJSON anchored to its model, apply viewport pixel offsets, filter projected anchors with isPointOnMapSurface and omit sky leader targets."
+    },
+    {
+      "id": "far-hook-rebind-order",
+      "reported_by": "runtime implementation review",
+      "fix": "Release candidate material hooks before source-owner rebind; reapply after successful rebind."
+    },
+    {
+      "id": "invalid-maxzoom25-rejected-symbol-layers",
+      "reported_by": "browser QA/runtime",
+      "fix": "Remove invalid maxzoom25; the actual shipped style validator now accepts every production beacon layer."
+    },
+    {
+      "id": "geojson-vt-array-offset-properties",
+      "reported_by": "browser QA/runtime",
+      "fix": "Keep only scalar source properties and express all offsets as match-by-ID literal vectors in the symbol style."
+    },
+    {
+      "id": "numeric-padding-zero-does-not-reset-maplibre",
+      "reported_by": "independent reviewer",
+      "fix": "Export OVERVIEW_CAMERA_RESET with elevation0 and explicit top/bottom/left/right zeros; use it in walk, legacy overview and city overview. Actual shipped transform regression includes the previously failing numeric-zero negative control."
+    },
+    {
+      "id": "native-symbol-query-offset-staleness",
+      "reported_by": "browser QA/runtime",
+      "fix": "Use the current screen-layout rectangles in reverse draw order for cards; query only unshifted anchor sprites on a miss. Click and hover use identical picking."
+    },
+    {
+      "id": "offscreen-label-cards-with-zero-offset",
+      "reported_by": "browser QA/runtime",
+      "fix": "Gate the two label layers on inViewport while retaining all source IDs and every geographic anchor."
+    },
+    {
+      "id": "candidate-camera-elevation-reset-on-render",
+      "reported_by": "browser QA/runtime",
+      "fix": "Disable center ground-clamping immediately before applying a candidate fit, then explicitly restore it on legacy overview and fit-city. This changes display camera state only."
+    },
+    {
+      "id": "tall-mobile-title-card-reduced-grid-capacity",
+      "reported_by": "browser QA/runtime",
+      "fix": "Retry insufficient compact grids with zero gap; the 320x568 tall-card viewport gains capacity from 63 to 70 without reducing the 24x20 sprites or 12px text."
+    },
+    {
+      "id": "index-error-dropped-candidate-wrapper-or-retained-disposed-mask",
+      "reported_by": "static review and runtime follow-up",
+      "fix": "Track whether rebinding began; unwind and clear the failed mask; restore candidate hooks only to the same live attached far object; roll back prepared records and cancel its pending near request."
+    }
+  ],
+  "limitations": [
+    "Source and model geographic placement remains estimated; this review does not upgrade any candidate to accepted or surveyed.",
+    "Retaining all 70 source IDs and disabling zoom/collision culling does not imply off-viewport buildings should appear on screen. Model geometry itself still uses existing distance/LOD scheduling.",
+    "CPU receipts in the independent state probe are synthetic. Actual asset download hashes, GPU shader behavior and screenshots belong to the separate inventory/browser QA reports.",
+    "The Lu Xun facade keeps all unidentified baseline buildings. Its earlier oblique screenshot was obstructed by the foreground row; its new 16-degree default camera is validated separately by browser QA. This code review does not certify its visual acceptance.",
+    "After any reviewed file changes, these bindings must be regenerated following review of that change.",
+    "Earlier pending-residual screenshots of Pan Pool/Stele do not establish shader failure. Parent/runtime report that steady-state browser views show the bridge and both corridors; this independent CPU review neither reran nor replaced that visual evidence."
+  ],
+  "overview_camera_checks": {
+    "actual_vendor_projection_cases": {
+      "candidates": 30,
+      "viewports": 3,
+      "corners_per_model": 8,
+      "projected_corners": 720
+    },
+    "observations": [
+      "GLB coordinates transform as east=cos(h)*x-sin(h)*z and north=-sin(h)*x-cos(h)*z, matching the scene group rotationY=-heading and latitude scaling.",
+      "The fit uses all eight inventory bounds corners, model scale and altitude, and targets their 3D midpoint. The elevation field moves only the camera target; model placement, asset transforms, collision boundaries and replacement geometry remain unchanged.",
+      "Camera bearing precedence is explicit overviewBearing, navigation.bearing, legacy bearing, then 35 degrees. Unreviewed navigation bearings are display directions, not walking acceptance.",
+      "Default pitch is 50 degrees, with Lu Xun 16, Pan Pool Bridge 20 and Grand Theatre 25. The caller resets FOV to 36.87 before applying the fitted camera.",
+      "Actual shipped MercatorTransform projects all 720 corners inside the available UI rectangles at desktop, 390 by 844 and 320 by 568. This checks framing, not obstruction by other city geometry.",
+      "All 40 legacy records return null from candidateOverviewCamera and continue through their existing overview route.",
+      "Walk, legacy overview and whole-city overview explicitly restore elevation0 and four-sided zero padding. Actual vendor regression confirms numeric padding0 was a no-op and the explicit object recenters the transform.",
+      "Candidate showOverview disables center-to-ground clamping before jumpTo so MapLibre retains the fitted midpoint elevation on later frames. Legacy showOverview and fit-city explicitly restore clamping and zero elevation/padding even when controller.setMode returns early for an unchanged mode. Walking continues to use its existing explicit camera path, which already disables clamping for the elevated look target."
+    ],
+    "baseline_validation": {
+      "command": "node --test projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "passed": 7,
+      "failed": 0,
+      "reviewed_source_sha256": "cb9b6a0768a44e10033d57b7fb9f2b2f9d726dea4299b4d086f61313cb1262f7",
+      "note": "Historical seven-case independent run before the Grand/clamp delta; current delta is recorded below."
+    }
+  },
+  "final_delta_validation": {
+    "command": "node --test --test-name-pattern='screen hit testing|current card centers|blank space ignores|offscreen name cards|production overview navigation' projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+    "passed": 6,
+    "failed": 0,
+    "cases": [
+      "Screen hit tests use current card bounds and reverse draw order.",
+      "Every 40-card desktop center selects its own ID despite a deliberately stale foreign native query hit, before and after relayout.",
+      "Every 70-card mobile center selects its own ID despite a deliberately stale foreign native query hit, before and after relayout.",
+      "Blank areas ignore stale label hits; fallback queries only the original anchor layer; hover uses the same current geometry.",
+      "Only offscreen name cards are filtered; all seventy anchors and source records remain, and zooming back restores all cards.",
+      "Production overview navigation retains candidate target elevation across simulated ground-update frames using actual vendor transform matrices, then restores legacy ground clamping and centered zero padding."
+    ],
+    "scope": "Only changed interaction/camera behavior was rerun here. The unchanged baseline and the runtime author's 149 distinct tests are documented separately in runtime-regressions.json; this review does not claim a new independent full-suite or WebGL run.",
+    "reviewed_beacon_sha256": "ed9fac594eb3776489d4fe5ba4189d91e06b639f6d6d01e3f653f9bb74374d94"
+  },
+  "small_screen_gap_followup": {
+    "reviewed_beacon_sha256": "15dd8ef8b7f4f84385216b3d2792e9ffd48ce361b80a734abc6c632b7a9b46cb",
+    "change": "If full-name cards do not fit, retain existing compact grid with 2px gaps; only if that grid is still short, retry compact grid with zero gap. Sprite dimensions remain 24 by 20 pixels and text remains 12 pixels.",
+    "scope": "Read-only review of this branch and one targeted CPU test; no unrelated suite or WebGL run was repeated. The earlier 16-case baseline and six-case interaction/camera delta remain historical runs at their stated source revisions.",
+    "capacity_evidence": {
+      "viewport": [
+        320,
+        568
+      ],
+      "insets": {
+        "left": 12,
+        "right": 65,
+        "top": 182,
+        "bottom": 228
+      },
+      "available_pixels": [
+        243,
+        158
+      ],
+      "gap2_capacity": 63,
+      "gap0_capacity": 70,
+      "gap0_columns": 10,
+      "gap0_rows": 7,
+      "card_size_pixels": [
+        24,
+        20
+      ]
+    },
+    "command": "node --test --test-name-pattern='all seventy delivered models remain separate and clickable above a tall title card' projects/shanghai/tests/building-beacons.test.mjs",
+    "passed": 1,
+    "failed": 0,
+    "test_evidence": "Uses all 70 real catalogue records, a 320 by 568 canvas, actual tall-card top348 and controls/legend rectangles; verifies no rectangle overlap or overflow, zero overlapFallback, unchanged 24x20 cards, every ID retained and all 70 distinct center-click selections."
+  },
+  "post_browser_failure_recovery_review": {
+    "reviewed_source_sha256": "fa9d24b448622cc33b9e9733e671c09721fa3db2d0fbcf5ad00fb2a638822dd7",
+    "review_method": "Read the changed loadIndex error path and prepareFarObject cleanup, the complete fault-injection test file and the seven-pass entry in runtime-regressions.json. The independent reviewer did not rerun the unchanged suite or open a browser.",
+    "test_evidence": {
+      "command": "node --test tests/city-detail-candidate-failure.test.mjs",
+      "passed": 7,
+      "failed": 0,
+      "executed_by": "runtime implementation agent; result and test assertions inspected by independent reviewer"
+    },
+    "observations": [
+      "A memory-budget failure before far rebinding disposes only the newly allocated mask, preserving the existing candidate material hook and shadow materials.",
+      "Once rebinding begins, catch first releases the candidate wrapper, disposes the failed CityFeatureMask, and clears parent.mask only when it refers to that failed mask. Retry therefore allocates a fresh live mask.",
+      "Candidate hooks are restored only when the streamer is not destroyed, the same parent remains registered for the object, the same index controller is current, and the far object remains attached through its ancestor chain to this scene.",
+      "Failure after prepared records are registered removes precisely those records from wanted and global records, clears the parent record list only when still identical, and aborts a partially started matching near request. Existing loader abort/wanted/parent checks discard a late parse result.",
+      "Objects removed from the scene, detached from the parent registry or belonging to a destroyed streamer do not regain hooks. CityFeatureMask disposal is idempotent in those paths.",
+      "prepareFarObject still releases candidate hooks, disposes its mask, removes its parent record and throws. It does not restore clipping on a failed object the upstream loader discards.",
+      "Tests use actual Three.js materials and invoke production shader hooks for standard, depth and distanceRGBA passes, checking current clip uniforms, absence of disposed-mask uniforms, nonduplicated wrappers and clean retry."
+    ],
+    "conclusion": "No remaining blocking issue found in this bounded post-browser error-path delta."
+  }
+}

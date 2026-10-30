@@ -1,0 +1,114 @@
+{
+  "schema": "building-beacon-ground-perspective-delta-review-v1",
+  "review_type": "independent read-only code and evidence review; no new browser or regression run",
+  "reviewed_source": {
+    "file": "src/building-beacons.js",
+    "bytes": 16602,
+    "sha256": "2f4f38bcaaa829aa26457ce701d630e2dde8411b245e3f48f23234004464e631"
+  },
+  "comparison_baseline_source_sha256": "15dd8ef8b7f4f84385216b3d2792e9ffd48ce361b80a734abc6c632b7a9b46cb",
+  "verdict": "No blocking issue found within the reviewed fixed-sprite, ground-projection and perspective-compensation delta. Actual final GPU pixels and input remain a separate browser acceptance.",
+  "review_points": [
+    {
+      "topic": "Fixed name backgrounds and hit rectangles",
+      "finding": "The same NAME_SIGNS entry supplies the uploaded canvas size, GeoJSON sign identifier and layout width/height. Five original-size canvases at pixelRatio=2 produce 84x34, 120x34, 176x34, 176x48 and 176x62 CSS-pixel cards. Both name and numbered layers use icon-text-fit:none, so native text fitting no longer changes the background bounds after layout. hitTestBeaconLabels still uses those layout bounds in reverse draw order.",
+      "status": "consistent"
+    },
+    {
+      "topic": "Names and wrapping",
+      "finding": "All 70 catalogue names keep their original text. The current longest weighted title is 21.85 units and selects the two-line 176x48 background; no current name reaches the three-line maximum. Text remains max-width12 em and line-height1.17 for full names. This bounds review does not certify exact glyph appearance; final browser images are required.",
+      "longest_current_title": {
+        "weighted_units": 21.849999999999998,
+        "id": "qingpu-beidajie-222",
+        "name": "北大街222号民居（2022年鹤龙美术馆使用状态）"
+      },
+      "status": "bounded; visual appearance separate"
+    },
+    {
+      "topic": "Ground-plane projection",
+      "finding": "projectBeaconAnchor calls the actual transform.locationToScreenPoint with an elevation provider returning zero. This matches the GeoJSON ground anchor rather than Map.project’s elevated centre plane. Records retain original geographic point geometry; only layout offsets are moved in CSS pixels. The helper falls back to map.project when a transform implementation is absent.",
+      "status": "consistent"
+    },
+    {
+      "topic": "Leader inverse",
+      "finding": "For an elevated transform, ground-valid label slots use screenPointToMercatorCoordinateAtZ(slot,-elevation); at zero elevation the former map.unproject branch remains. Slots above the ground horizon are not unprojected. This keeps visible leader endpoints on the same zero-altitude plane as symbol anchors.",
+      "status": "consistent with reviewed actual-vendor round-trip test"
+    },
+    {
+      "topic": "Perspective compensation and screen offsets",
+      "finding": "For native positive anchor depth W, the shader factor r=clamp(0.5+0.5*C/W,0,4) is inverted. Uploaded icon-size becomes 1/r and text-size12/r for each on-screen ID. Icon offsets retain desired CSS displacement d, and text offsets d/12 em. Consequently icon displacement d*(1/r)*r=d, text displacement (d/12)*(12/r)*r=d, and both drawn bounds equal the original layout rectangles. The formula uses ground-relative world displacement, bearing, pitch and centre elevation; reviewed vendor evidence compares against homogeneous W from _pixelMatrix3D independently.",
+      "status": "algebraically consistent for the reviewed visible/front-of-camera anchors"
+    },
+    {
+      "topic": "Flat numbered view compatibility",
+      "finding": "With pitch0 and elevation0, W=C, so r=1; sizeExpression emits the former constants icon-size1 and text-size12. Number canvas remains48x40 at pixelRatio2, yielding24x20. Existing two-pixel then zero-pixel compact-grid fallback and screen-rectangle hit logic are retained. No new candidate IDs, coordinate records, or catalogue assets are changed.",
+      "status": "former flat numbering contract retained by inspection"
+    },
+    {
+      "topic": "Identity, filtering and lifecycle",
+      "finding": "There remain four layers (leader, original lamp, full-name card, numbered card) and the same70 model IDs. Viewport filters remain on cards only. Seven sprite images replace the former three, and destroy explicitly removes all seven. Click and hover still share rectangle-first picking with native queries limited to unshifted lamp anchors.",
+      "status": "consistent"
+    }
+  ],
+  "evidence_reviewed_not_rerun": {
+    "runtime_report": "data/audit/global-model-integration-v1/runtime-regressions.json",
+    "latest_beacon_followup": {
+      "command": "node --test tests/building-beacons.test.mjs",
+      "passed": 24,
+      "failed": 0,
+      "source_sha256": "2f4f38bcaaa829aa26457ce701d630e2dde8411b245e3f48f23234004464e631",
+      "test_source": {
+        "file": "tests/building-beacons.test.mjs",
+        "bytes": 42452,
+        "sha256": "9d7cdbb4353e547c9bc191c907a229071f221276fddd823e5e51b71886b88b44"
+      },
+      "independent_vendor_depth_cases_in_reproducible_test": 135,
+      "coverage_read": "Actual vendored style validation; five sprite classes, ground/leader round trips at pitch50 elevation2.3, pitch50 elevation0 and pitch0 elevation0; matrix-W comparison across3 bearings x3 pitches x3 elevations x5 offsets; prior dense-phone numbering and picking.",
+      "log_read": {
+        "private_path": "/workspace/global-qa-cache/beacon-final-tests.tap",
+        "bytes": 2782,
+        "sha256": "f3559dfdee4a313126609c175c69864237a46b10318ada31db4e4e89fa78556c"
+      }
+    },
+    "earlier_independent_baselines": [
+      {
+        "file": "data/audit/global-model-integration-v1/beacon-checks.json",
+        "bytes": 8649,
+        "sha256": "c48faa10108db5743dc5e6062cff10f7c34843969dfd30489d3587d95443738d",
+        "passed": 10,
+        "source_sha256": "ed9fac594eb3776489d4fe5ba4189d91e06b639f6d6d01e3f653f9bb74374d94",
+        "rerun": false
+      },
+      {
+        "file": "data/audit/global-model-integration-v1/beacon-compact-delta-checks.json",
+        "bytes": 2255,
+        "sha256": "fe6efa0c23fbfe9c98860e021e0f721e5f782db8c964e073892b0932cb7867f2",
+        "passed": 2,
+        "source_sha256": "15dd8ef8b7f4f84385216b3d2792e9ffd48ce361b80a734abc6c632b7a9b46cb",
+        "rerun": false
+      }
+    ]
+  },
+  "scope_limits": [
+    "Earlier ten-group and compact-capacity reports keep their original source bindings; they are not relabeled as full reruns on this source.",
+    "This review did not open Chrome, run WebGL, repeat the24 beacon tests, or rerun unrelated city/clipping/shader suites.",
+    "Perspective and inverse conclusions concern the shipped Mercator, zero-ground, visible/front-of-camera path exercised by the cited tests. Final glyph legibility, pixel alignment and mouse/touch behavior are verified by the separate final browser QA."
+  ],
+  "additional_bindings": [
+    {
+      "file": "vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    },
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    }
+  ]
+}

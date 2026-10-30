@@ -1,0 +1,72 @@
+{
+  "schema": "building-beacon-compact-capacity-delta-v1",
+  "passed": 2,
+  "checks": [
+    "70 real IDs fit ten columns by seven rows inside the measured available area without overlap or fallback",
+    "Runtime UI rectangle handling retains 70 numbered signs and all 70 card-center clicks resolve correctly"
+  ],
+  "viewport": {
+    "width": 320,
+    "height": 568
+  },
+  "replayed_browser_measurements": {
+    "location_card_top": 348,
+    "legend_bottom": 174,
+    "map_tools_left": 263,
+    "clearance_pixels": 8,
+    "source": "Browser measurements reported by the root agent; replayed here using map/canvas facades"
+  },
+  "insets": {
+    "left": 12,
+    "right": 65,
+    "top": 182,
+    "bottom": 228
+  },
+  "available_pixels": [
+    243,
+    158
+  ],
+  "card_pixels": [
+    24,
+    20
+  ],
+  "font_pixels": 12,
+  "grid_columns": 10,
+  "grid_rows": 7,
+  "identities": 70,
+  "overlap_fallback_count": 0,
+  "pairwise_overlap_count": 0,
+  "correct_center_clicks": 70,
+  "earlier_baseline": {
+    "path": "beacon-checks.json",
+    "bytes": 8649,
+    "sha256": "c48faa10108db5743dc5e6062cff10f7c34843969dfd30489d3587d95443738d",
+    "passed": 10,
+    "source_sha256": "ed9fac594eb3776489d4fe5ba4189d91e06b639f6d6d01e3f653f9bb74374d94",
+    "rerun": false,
+    "scope": "Earlier identity, filtering, offset and interaction contracts remain bound to their earlier source version; this delta does not relabel them as a full rerun."
+  },
+  "bindings": [
+    {
+      "path": "./beacon-compact-delta-checks.mjs",
+      "bytes": 7275,
+      "sha256": "3cc20f56fa24b06c3d2e44ba6defea8e4733ec880f2c3d4757cf976a913528d0"
+    },
+    {
+      "path": "../../../src/building-beacons.js",
+      "bytes": 14283,
+      "sha256": "15dd8ef8b7f4f84385216b3d2792e9ffd48ce361b80a734abc6c632b7a9b46cb"
+    },
+    {
+      "path": "../../landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "path": "../../candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    }
+  ],
+  "scope": "Targeted zero-gap compact-capacity and center-hit delta only; no shader, unrelated regression, SDK or WebGL rerun."
+}

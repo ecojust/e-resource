@@ -1,0 +1,248 @@
+{
+  "schema": "candidate-city-regressions-v1",
+  "generated_utc": "2026-10-30T18:41:51.183789+00:00",
+  "passed": 159,
+  "failed": 0,
+  "command": "node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs tests/ordinary-navigation.test.mjs tests/landmark-navigation.test.mjs tests/city-projection.test.mjs tests/city-detail-map-integration.test.mjs tests/city-feature-mask-rebind.test.mjs tests/ordinary-runtime.test.mjs tests/ordinary-curated-regression.test.mjs tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs; node --test tests/candidate-overview-camera.test.mjs tests/ordinary-navigation.test.mjs tests/landmark-navigation.test.mjs; node --test tests/building-beacons.test.mjs tests/city-detail-map-integration.test.mjs; node --test tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs tests/ordinary-navigation.test.mjs tests/landmark-navigation.test.mjs; node --test tests/building-beacons.test.mjs; node --test tests/building-beacons.test.mjs; node --test tests/city-detail-candidate-failure.test.mjs; node --test tests/building-beacons.test.mjs",
+  "scope": "159 distinct tests passed across the 141-test baseline and targeted follow-ups listed below. Covers source ownership/residual lifecycle, navigation/projection, actual vendored MapLibre style validation, 720 3D camera corner projections, camera-ground lifecycle, and current sprite-rectangle interactions. The final viewport-label filter was tested separately without repeating the unchanged baseline. Browser/GPU pixel and touch checks are reported separately. The final small-phone capacity fallback was tested against the live-observed 228px bottom inset, preserving sprite and font sizes. A final error-path-only city-detail cleanup delta was verified by seven injected failures after the browser rendering checks; existing browser reports retain the exact successful-rendering runtime hashes they exercised. The final name-sprite/ground-projection correction adds two distinct tests and was validated by a targeted 24-test beacon run; earlier test runs and browser evidence retain their original source bindings.",
+  "bindings": [
+    {
+      "file": "src/app.js",
+      "bytes": 22009,
+      "sha256": "87e737e10fd7fd90713ae372e7147b60150c4a356e3784d574018a4148d3b37e"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "file": "src/osm-building-suppression.js",
+      "bytes": 25077,
+      "sha256": "33551fc5277479e360664cc22249c9596a646e8756e3ed09032de15dfe00ce4b"
+    },
+    {
+      "file": "src/precise-registration-ui.js",
+      "bytes": 1749,
+      "sha256": "cd01fd32d56efaecfe005c9460a2293f29f8120d1ac428f06ceeb0dd01c28c82"
+    },
+    {
+      "file": "src/city-detail-streamer.js",
+      "bytes": 23934,
+      "sha256": "fa9d24b448622cc33b9e9733e671c09721fa3db2d0fbcf5ad00fb2a638822dd7"
+    },
+    {
+      "file": "src/ordinary-city-detail-streamer.js",
+      "bytes": 6654,
+      "sha256": "b0f057deeab2f08fbfc7d4a8f8b717ebd0b74375853e4c1a696cf2cea3f4fef5"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 7051,
+      "sha256": "3bc0c5d3812e4853ad7808488ae3fc83ac0f2556c23052dc20e1752bd49f90b8"
+    },
+    {
+      "file": "src/candidate-city-integrations.js",
+      "bytes": 5669,
+      "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 16602,
+      "sha256": "2f4f38bcaaa829aa26457ce701d630e2dde8411b245e3f48f23234004464e631"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/city-projection.test.mjs",
+      "bytes": 7430,
+      "sha256": "2d9740aa24eb324823b5d85cc5b4b7fd6f4b103ea24cb5adfeb6ca259e407ebc"
+    },
+    {
+      "file": "tests/city-detail-map-integration.test.mjs",
+      "bytes": 11193,
+      "sha256": "0b3b63145cf5266b40a99fe230123b60e3269a670d411b00ff8091c0a70c4876"
+    },
+    {
+      "file": "tests/ordinary-runtime.test.mjs",
+      "bytes": 19034,
+      "sha256": "ac929c6bf4889560b254f74b3fe338efe41649dc9a8786d06059c8bd0cdfeb77"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 42452,
+      "sha256": "9d7cdbb4353e547c9bc191c907a229071f221276fddd823e5e51b71886b88b44"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11183,
+      "sha256": "33e7fa4bfad13a49c5b4b85034ca59980f17684f0e184ac07a8ffba982e7e0f1"
+    },
+    {
+      "file": "package.json",
+      "bytes": 2643,
+      "sha256": "185ac153b09b6cc95fa14f93aeefbf0f7f2d90560c43bffdcf2096465bce2133"
+    },
+    {
+      "file": "tests/city-detail-candidate-failure.test.mjs",
+      "bytes": 8898,
+      "sha256": "a4c580de4eeca864db971895ccfa9474a58daec5b1994ee9f6afdceb2942d5eb"
+    }
+  ],
+  "validation_runs": [
+    {
+      "command": "node --test tests/osm-building-suppression.test.mjs tests/osm-building-residual-plans.test.mjs tests/osm-residual-layer.test.mjs tests/ordinary-navigation.test.mjs tests/landmark-navigation.test.mjs tests/city-projection.test.mjs tests/city-detail-map-integration.test.mjs tests/city-feature-mask-rebind.test.mjs tests/ordinary-runtime.test.mjs tests/ordinary-curated-regression.test.mjs tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs",
+      "passed": 141,
+      "failed": 0,
+      "bindings": [
+        {
+          "file": "src/app.js",
+          "bytes": 21681,
+          "sha256": "2abf938b9d10f9a0344689a5715541a6da2b419ff355e34d8227a8b11ed721aa"
+        },
+        {
+          "file": "src/map-scene.js",
+          "bytes": 60169,
+          "sha256": "1f3a608d58135a06d7c22196fd693ccfa23e60de560b19ecad70c0d089be192f"
+        },
+        {
+          "file": "src/osm-building-suppression.js",
+          "bytes": 25077,
+          "sha256": "33551fc5277479e360664cc22249c9596a646e8756e3ed09032de15dfe00ce4b"
+        },
+        {
+          "file": "src/precise-registration-ui.js",
+          "bytes": 1749,
+          "sha256": "cd01fd32d56efaecfe005c9460a2293f29f8120d1ac428f06ceeb0dd01c28c82"
+        },
+        {
+          "file": "src/city-detail-streamer.js",
+          "bytes": 22830,
+          "sha256": "698fa5e55cebdfe3bef27a0193169a2e718adcb0907f7dc6ea599d969fb4632e"
+        },
+        {
+          "file": "src/ordinary-city-detail-streamer.js",
+          "bytes": 6654,
+          "sha256": "b0f057deeab2f08fbfc7d4a8f8b717ebd0b74375853e4c1a696cf2cea3f4fef5"
+        },
+        {
+          "file": "src/candidate-city-clipping.js",
+          "bytes": 7051,
+          "sha256": "3bc0c5d3812e4853ad7808488ae3fc83ac0f2556c23052dc20e1752bd49f90b8"
+        },
+        {
+          "file": "src/candidate-city-integrations.js",
+          "bytes": 5669,
+          "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605"
+        },
+        {
+          "file": "src/candidate-vector-clipping.js",
+          "bytes": 2525,
+          "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+        },
+        {
+          "file": "src/building-beacons.js",
+          "bytes": 13233,
+          "sha256": "b5e32f1daf3e426cad810ad9277bcd8e083877d6257406b70d9c36b99de94ad4"
+        },
+        {
+          "file": "src/candidate-overview-camera.js",
+          "bytes": 2443,
+          "sha256": "a072b8124174bab3e142ff5361466b15fe7f4754d081776ed789ef29fc77dc17"
+        },
+        {
+          "file": "tests/city-projection.test.mjs",
+          "bytes": 7430,
+          "sha256": "2d9740aa24eb324823b5d85cc5b4b7fd6f4b103ea24cb5adfeb6ca259e407ebc"
+        },
+        {
+          "file": "tests/city-detail-map-integration.test.mjs",
+          "bytes": 11193,
+          "sha256": "0b3b63145cf5266b40a99fe230123b60e3269a670d411b00ff8091c0a70c4876"
+        },
+        {
+          "file": "tests/ordinary-runtime.test.mjs",
+          "bytes": 19034,
+          "sha256": "ac929c6bf4889560b254f74b3fe338efe41649dc9a8786d06059c8bd0cdfeb77"
+        },
+        {
+          "file": "tests/building-beacons.test.mjs",
+          "bytes": 24103,
+          "sha256": "bf61f1aef5d8c6ceb41315988f1bfade12d29723fd47ded48a8a37197713b85c"
+        },
+        {
+          "file": "tests/candidate-overview-camera.test.mjs",
+          "bytes": 4980,
+          "sha256": "19d725e412ba45cc95f3dd9693582ed2d2e8ccf8e42ea57577266f8de5d6ff56"
+        },
+        {
+          "file": "package.json",
+          "bytes": 2598,
+          "sha256": "382afc6c0a776f5be75cb210de2a1bf060eea5dd490e952cdaf623337528e2f2"
+        }
+      ]
+    },
+    {
+      "command": "node --test tests/candidate-overview-camera.test.mjs tests/ordinary-navigation.test.mjs tests/landmark-navigation.test.mjs",
+      "passed": 17,
+      "failed": 0,
+      "reason": "Explicit four-sided camera-padding reset and legacy navigation after candidate overview."
+    },
+    {
+      "command": "node --test tests/building-beacons.test.mjs tests/city-detail-map-integration.test.mjs",
+      "passed": 24,
+      "failed": 0,
+      "reason": "Current sprite-rectangle picking and hover; native query fallback restricted to unshifted original lamp layer."
+    },
+    {
+      "command": "node --test tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs tests/ordinary-navigation.test.mjs tests/landmark-navigation.test.mjs",
+      "passed": 38,
+      "failed": 0,
+      "reason": "Candidate camera height remains after ground-clamping updates; Grand pitch25; legacy overview restores ground mode; current rectangle interactions."
+    },
+    {
+      "command": "node --test tests/building-beacons.test.mjs",
+      "passed": 21,
+      "failed": 0,
+      "reason": "Only label cards outside the viewport are filtered; all seventy source IDs and original lamp sprites remain, with exact restore on zoom-out."
+    },
+    {
+      "command": "node --test tests/building-beacons.test.mjs",
+      "passed": 22,
+      "failed": 0,
+      "reason": "320×568 live-observed long-title card top348/bottom228; zero-gap fallback retains 24×20 sprites/font12 and fits all70 with exact center picks."
+    },
+    {
+      "command": "node --test tests/city-detail-candidate-failure.test.mjs",
+      "passed": 7,
+      "failed": 0,
+      "reason": "Post-browser fault-recovery delta only: budget failure preserves existing clip hooks; bound-mask/select failure cleans records and restores only a living far object; detach/destroy/discard do not revive hooks."
+    },
+    {
+      "command": "node --test tests/building-beacons.test.mjs",
+      "passed": 24,
+      "failed": 0,
+      "scope": "Beacon-only follow-up: five fixed-size name sprites with explicit icon/text offsets; ground-plane projection and inverse leader endpoints when center elevation is nonzero; compensation for the actual vendored symbol shader perspective scale. Includes actual vendored-transform round trips and matrix-depth comparisons. Retains the 70-item dense phone, fixed-size numbering and screen-rectangle interaction checks. Browser pixels and input are validated separately; no unchanged model, clipping or camera baseline was repeated.",
+      "bindings": [
+        {
+          "file": "src/building-beacons.js",
+          "bytes": 16602,
+          "sha256": "2f4f38bcaaa829aa26457ce701d630e2dde8411b245e3f48f23234004464e631"
+        },
+        {
+          "file": "tests/building-beacons.test.mjs",
+          "bytes": 42452,
+          "sha256": "9d7cdbb4353e547c9bc191c907a229071f221276fddd823e5e51b71886b88b44"
+        }
+      ]
+    }
+  ]
+}

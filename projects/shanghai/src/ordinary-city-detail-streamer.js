@@ -105,13 +105,14 @@ export class OrdinaryCityDetailStreamer extends CityDetailStreamer {
           active: false, records: [], status: 'idle', retryAt: 0});
         const parent = this.parents.get(item.object);
         parent.active = item.active;
+        this.afterFarRebind(item.object,item.record);
       }
     };
     try {
-      for (const item of saved) super.detach(item.object);
+      for (const item of saved) {this.beforeFarRebind(item.object);super.detach(item.object);}
       bind(next);
     } catch (error) {
-      for (const item of saved) super.detach(item.object);
+      for (const item of saved) {this.beforeFarRebind(item.object);super.detach(item.object);}
       bind(prior); // Restore the audited previous registry; no new model owner exists.
       throw error;
     } finally {

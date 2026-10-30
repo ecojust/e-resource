@@ -1,0 +1,103 @@
+{
+  "schema": "global-model-directory-browser-v1",
+  "passed": true,
+  "base_url": "http://127.0.0.1:8782/",
+  "scope": "Local directory links, grouping, search, keyboard focus and mobile layout; does not assert city model WebGL rendering or CDN performance.",
+  "counts": {
+    "global_model_cards": 70,
+    "district_groups": 16,
+    "new_overview_cards": 30,
+    "standalone_preview_links": 32,
+    "surface_cards": 1
+  },
+  "checks": {
+    "all_ids_exact": true,
+    "all_new_primary_links_overview": true,
+    "unlisted_candidates_have_no_walk_link": true,
+    "chongming_search_visible": 20,
+    "old_wing_on_search_visible": 1,
+    "unknown_search_empty": true,
+    "group_link_resets_search": true,
+    "keyboard_skip_link": true,
+    "no_javascript_links_present": true,
+    "mobile_no_horizontal_overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390
+    }
+  },
+  "errors": [],
+  "bindings": [
+    {
+      "file": "data/audit/global-model-integration-v1/qa-directory-layout.cjs",
+      "bytes": 5676,
+      "sha256": "5e9904c2516e7e7dc533112803b9061e71b47f872dfc431a60acf9e41dc789db"
+    },
+    {
+      "file": "landmarks.html",
+      "bytes": 51660,
+      "sha256": "e92b3b6e94123d8667916bd0e128c276f451b609ca7e832386a3594fa67c5b61"
+    },
+    {
+      "file": "src/landmark-directory.js",
+      "bytes": 1281,
+      "sha256": "955d0e389d0066dcd25acb38e2e145b178678829f7279c6c1eabe04fb0df36e0"
+    },
+    {
+      "file": "src/landmark-directory.css",
+      "bytes": 6035,
+      "sha256": "09edc876930e38433c373a1239155a11eefd61732b910f0f78c157e16c5370dd"
+    },
+    {
+      "file": "tools/build_landmark_directory.py",
+      "bytes": 8852,
+      "sha256": "304d6581c2a92a596e9da078b66e9d3b7af577c9bc4e2dfc4238f34769cd64fe"
+    },
+    {
+      "file": "tools/sync_readme_districts.py",
+      "bytes": 10380,
+      "sha256": "e1d6d3d07ba9a69f2564fbc8944467b91eeff4ed2207f73e25a0765118be8b1d"
+    },
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "directory-desktop.png",
+      "bytes": 102726,
+      "sha256": "32606559a452657b04d575cb7f8ac999bfc404515c8203ebfe163f02a7a849ab"
+    },
+    {
+      "file": "directory-global-links.png",
+      "bytes": 116948,
+      "sha256": "794ad2a23bee2e0eda30604e569fbca40c97fa3d7020606a1118e1a7b9c95ea8"
+    },
+    {
+      "file": "directory-mobile.png",
+      "bytes": 46138,
+      "sha256": "3cb47f31ffaaeaede7d924ccb9654bec0471288340a060dacebb5e53de7b0096"
+    }
+  ],
+  "readme_generator_revalidation": {
+    "previous_binding": {
+      "file": "tools/sync_readme_districts.py",
+      "bytes": 10251,
+      "sha256": "b9bd60af385bb9ae5188b3e7eff6aefb1efd0095e4cd24c4a24bb88e8b9c2c01"
+    },
+    "current_binding": {
+      "file": "tools/sync_readme_districts.py",
+      "bytes": 10380,
+      "sha256": "e1d6d3d07ba9a69f2564fbc8944467b91eeff4ed2207f73e25a0765118be8b1d"
+    },
+    "unchanged_tested_html_sha256": "e92b3b6e94123d8667916bd0e128c276f451b609ca7e832386a3594fa67c5b61",
+    "current_generator_produces_same_html": true,
+    "method": "Read-only generation check after adding README light-sign and dense-number instructions; directory HTML and screenshots remain unchanged. No new browser run."
+  }
+}

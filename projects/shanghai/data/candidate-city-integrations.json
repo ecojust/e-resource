@@ -1,0 +1,6686 @@
+{
+  "schema": "candidate-city-integrations-v1",
+  "asset_baseline_commit": "65af6bea52780f274d2ee005bbbd513317b559fc",
+  "scope": "30 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
+  "existing_city_count": 40,
+  "new_city_model_count": 30,
+  "resulting_city_count": 70,
+  "new_walk_entry_count": 0,
+  "input_files": [
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    }
+  ],
+  "inventory_sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470",
+  "models": [
+    {
+      "id": "chongming-chaozong-paifang",
+      "name": "崇明学宫东牌坊（题名面待核）",
+      "kind": "building",
+      "candidate_id": "chongming-chaozong-paifang",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39712401831842,
+      "lat": 31.620304859208673,
+      "heading": 95.0,
+      "scale": 1,
+      "height_m": 9.600000381469727,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -4.544454574584961,
+          0.0,
+          -1.7444543838500977
+        ],
+        "max": [
+          4.544454574584961,
+          9.600000381469727,
+          1.7444543838500977
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-chaozong-paifang/chongming-chaozong-paifang-web.glb",
+          "bytes": 2844624,
+          "sha256": "2a13806e447dec28b963c3facfbdee1066dbc86d1c25673109a4d2c259c1a6dc",
+          "triangles": 92848
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-chaozong-paifang/chongming-chaozong-paifang-lod.glb",
+          "bytes": 631828,
+          "sha256": "d2fd15c663747db9da284acb7074b8e81c80082bc004a7606c31b9f052dce5a2",
+          "triangles": 20996
+        }
+      },
+      "model": "assets/models/candidates/chongming-chaozong-paifang/chongming-chaozong-paifang-web.glb",
+      "lod_model": "assets/models/candidates/chongming-chaozong-paifang/chongming-chaozong-paifang-lod.glb",
+      "web_bytes": 2844624,
+      "web_sha256": "2a13806e447dec28b963c3facfbdee1066dbc86d1c25673109a4d2c259c1a6dc",
+      "lod_bytes": 631828,
+      "lod_sha256": "d2fd15c663747db9da284acb7074b8e81c80082bc004a7606c31b9f052dce5a2",
+      "triangles": 92848,
+      "lod_triangles": 20996,
+      "individual_page": "east-paifang.html",
+      "candidate_manifest": "assets/models/candidates/chongming-chaozong-paifang/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39712401831842,
+          31.620304859208673
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39710986380113,
+              31.62034689318437
+            ],
+            [
+              121.39710150711335,
+              31.620265556816033
+            ],
+            [
+              121.39713817283571,
+              31.620262825232977
+            ],
+            [
+              121.3971465295235,
+              31.62034416160131
+            ],
+            [
+              121.39710986380113,
+              31.62034689318437
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          16.5,
+          -77
+        ],
+        "heading_relative_to_site_deg": 90,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；以2021文字物理方位区分，保留旧馆1998题名配对差异；照片可支持结构候选，不能声明同座正反面或题字方位已照片核验",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-chongsheng-shrine",
+      "name": "崇明学宫崇圣祠正殿",
+      "kind": "building",
+      "candidate_id": "chongming-chongsheng-shrine",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39718995106793,
+      "lat": 31.621255798747395,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 11.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -7.299955368041992,
+          0.0,
+          -6.925005912780762
+        ],
+        "max": [
+          7.299955368041992,
+          11.0,
+          6.925005912780762
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-chongsheng-shrine/chongming-chongsheng-shrine-web.glb",
+          "bytes": 3983824,
+          "sha256": "a158d0fce878f2b4f55d1e7c9f8fcdf5ae71b4f544d6056de8cace9bba55ddd0",
+          "triangles": 141776
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-chongsheng-shrine/chongming-chongsheng-shrine-lod.glb",
+          "bytes": 656176,
+          "sha256": "9431991d26fd24c4486fb1364da1758037d05bf773a354e3e2fbc028c5325f9e",
+          "triangles": 23768
+        }
+      },
+      "model": "assets/models/candidates/chongming-chongsheng-shrine/chongming-chongsheng-shrine-web.glb",
+      "lod_model": "assets/models/candidates/chongming-chongsheng-shrine/chongming-chongsheng-shrine-lod.glb",
+      "web_bytes": 3983824,
+      "web_sha256": "a158d0fce878f2b4f55d1e7c9f8fcdf5ae71b4f544d6056de8cace9bba55ddd0",
+      "lod_bytes": 656176,
+      "lod_sha256": "9431991d26fd24c4486fb1364da1758037d05bf773a354e3e2fbc028c5325f9e",
+      "triangles": 141776,
+      "lod_triangles": 23768,
+      "individual_page": "chongsheng-shrine.html",
+      "candidate_manifest": "assets/models/candidates/chongming-chongsheng-shrine/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39718995106793,
+          31.621255798747395
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39710686709161,
+              31.621199542461117
+            ],
+            [
+              121.39726030081809,
+              31.621188111703976
+            ],
+            [
+              121.39727303504426,
+              31.621312055033673
+            ],
+            [
+              121.39711960131778,
+              31.621323485790814
+            ],
+            [
+              121.39710686709161,
+              31.621199542461117
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          13.5,
+          29
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-dacheng-hall",
+      "name": "崇明学宫大成殿",
+      "kind": "building",
+      "candidate_id": "chongming-dacheng-hall",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39702141284943,
+      "lat": 31.621006848239986,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 15.25042724609375,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -12.149955749511719,
+          -0.07999999821186066,
+          -10.050005912780762
+        ],
+        "max": [
+          12.149955749511719,
+          15.25042724609375,
+          20.31999969482422
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-dacheng-hall/chongming-dacheng-hall-web.glb",
+          "bytes": 11386532,
+          "sha256": "6f9131bc0675ac7bdbc3f839a6521d252ce5aeb591f8fe2653f64f5496954566",
+          "triangles": 411500
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-dacheng-hall/chongming-dacheng-hall-lod.glb",
+          "bytes": 1601668,
+          "sha256": "e01fd44814c09a6c36adc40e7c066ea76e0a57bf8d36015ac7a8f16f7ecde015",
+          "triangles": 58252
+        }
+      },
+      "model": "assets/models/candidates/chongming-dacheng-hall/chongming-dacheng-hall-web.glb",
+      "lod_model": "assets/models/candidates/chongming-dacheng-hall/chongming-dacheng-hall-lod.glb",
+      "web_bytes": 11386532,
+      "web_sha256": "6f9131bc0675ac7bdbc3f839a6521d252ce5aeb591f8fe2653f64f5496954566",
+      "lod_bytes": 1601668,
+      "lod_sha256": "e01fd44814c09a6c36adc40e7c066ea76e0a57bf8d36015ac7a8f16f7ecde015",
+      "triangles": 411500,
+      "lod_triangles": 58252,
+      "individual_page": "dacheng-hall.html",
+      "candidate_manifest": "assets/models/candidates/chongming-dacheng-hall/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39702141284943,
+          31.621006848239986
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.3968750432693,
+              31.62083451779357
+            ],
+            [
+              121.39713041647273,
+              31.620815492582256
+            ],
+            [
+              121.39715833980775,
+              31.62108727282803
+            ],
+            [
+              121.39690296660432,
+              31.621106298039344
+            ],
+            [
+              121.3968750432693,
+              31.62083451779357
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          0,
+          0
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；重檐屋面、前廊、分格门窗和月台。",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-east-guanting",
+      "name": "崇明学宫东官厅",
+      "kind": "building",
+      "candidate_id": "chongming-east-guanting",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39714240707697,
+      "lat": 31.620483838593323,
+      "heading": 95.0,
+      "scale": 1,
+      "height_m": 6.5,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -5.525000095367432,
+          0.0,
+          -3.7212727069854736
+        ],
+        "max": [
+          5.525000095367432,
+          6.5,
+          3.7212727069854736
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-east-guanting/chongming-east-guanting-web.glb",
+          "bytes": 745404,
+          "sha256": "10a1c0316db2853cd18d36f67fa0ecce2f398b5a744a19764ee929e7e6b47852",
+          "triangles": 28916
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-east-guanting/chongming-east-guanting-lod.glb",
+          "bytes": 91572,
+          "sha256": "8b60f8d84a21670b0f673572ffb9eb3a300652216ffe6a31f53e0f9c1c92c98d",
+          "triangles": 3684
+        }
+      },
+      "model": "assets/models/candidates/chongming-east-guanting/chongming-east-guanting-web.glb",
+      "lod_model": "assets/models/candidates/chongming-east-guanting/chongming-east-guanting-lod.glb",
+      "web_bytes": 745404,
+      "web_sha256": "10a1c0316db2853cd18d36f67fa0ecce2f398b5a744a19764ee929e7e6b47852",
+      "lod_bytes": 91572,
+      "lod_sha256": "8b60f8d84a21670b0f673572ffb9eb3a300652216ffe6a31f53e0f9c1c92c98d",
+      "triangles": 28916,
+      "lod_triangles": 3684,
+      "individual_page": "east-guanting.html",
+      "candidate_manifest": "assets/models/candidates/chongming-east-guanting/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39714240707697,
+          31.620483838593323
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39710837928465,
+              31.620536195157722
+            ],
+            [
+              121.39709821949538,
+              31.620437309045997
+            ],
+            [
+              121.3971764348693,
+              31.620431482028923
+            ],
+            [
+              121.39718659465856,
+              31.62053036814065
+            ],
+            [
+              121.39710837928465,
+              31.620536195157722
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          16.5,
+          -57
+        ],
+        "heading_relative_to_site_deg": 90,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；泮池与登云桥两侧，分别记录东西宽与南北长；屋顶、开间、门窗、朝院立面及量测端点未核实，1991/1998/1998–1999维修记载保留各自范围",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-east-wing",
+      "name": "崇明学宫东庑",
+      "kind": "building",
+      "candidate_id": "chongming-east-wing",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39717708370246,
+      "lat": 31.620769814142086,
+      "heading": 95.0,
+      "scale": 1,
+      "height_m": 8.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -13.845000267028809,
+          0.0,
+          -4.322204113006592
+        ],
+        "max": [
+          13.845000267028809,
+          8.0,
+          4.322204113006592
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-east-wing/chongming-east-wing-web.glb",
+          "bytes": 1822512,
+          "sha256": "12b6156000b19a8724efdea98e8af1105e25e57a54414690d1391e6b7273d501",
+          "triangles": 72820
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-east-wing/chongming-east-wing-lod.glb",
+          "bytes": 212456,
+          "sha256": "8f68195ffd7f061d4e35cf5824f413d69024b1740de6cb39aeac4f77a2e92466",
+          "triangles": 9428
+        }
+      },
+      "model": "assets/models/candidates/chongming-east-wing/chongming-east-wing-web.glb",
+      "lod_model": "assets/models/candidates/chongming-east-wing/chongming-east-wing-lod.glb",
+      "web_bytes": 1822512,
+      "web_sha256": "12b6156000b19a8724efdea98e8af1105e25e57a54414690d1391e6b7273d501",
+      "lod_bytes": 212456,
+      "lod_sha256": "8f68195ffd7f061d4e35cf5824f413d69024b1740de6cb39aeac4f77a2e92466",
+      "triangles": 72820,
+      "lod_triangles": 9428,
+      "individual_page": "east-wing.html",
+      "candidate_manifest": "assets/models/candidates/chongming-east-wing/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39717708370246,
+          31.620769814142086
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39714439031134,
+              31.62089709662128
+            ],
+            [
+              121.39711893107463,
+              31.620649299658453
+            ],
+            [
+              121.39720977709358,
+              31.62064253166289
+            ],
+            [
+              121.39723523633027,
+              31.62089032862572
+            ],
+            [
+              121.39714439031134,
+              31.62089709662128
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          17,
+          -25
+        ],
+        "heading_relative_to_site_deg": 90,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；1997年修复后现存七楹与26.74×7.7×8米文字尺寸候选；历史九楹长廊不直接作现代构造依据，412平方米为两庑总面积",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-ji-gate",
+      "name": "崇明学宫戟门",
+      "kind": "building",
+      "candidate_id": "chongming-ji-gate",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39698187701855,
+      "lat": 31.620622042562985,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 8.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -9.350000381469727,
+          0.0,
+          -4.130000114440918
+        ],
+        "max": [
+          9.350000381469727,
+          8.0,
+          4.130000114440918
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-ji-gate/chongming-ji-gate-web.glb",
+          "bytes": 3954804,
+          "sha256": "60edf61a6471237bd40863a4ea60dcbbe84d7b3c7012b897b7edcd62ea4bbc61",
+          "triangles": 143632
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-ji-gate/chongming-ji-gate-lod.glb",
+          "bytes": 669916,
+          "sha256": "4dcdf8819ad3573972a257bd5ce689c15bb4342912583285a49452b6d27e1e54",
+          "triangles": 25520
+        }
+      },
+      "model": "assets/models/candidates/chongming-ji-gate/chongming-ji-gate-web.glb",
+      "lod_model": "assets/models/candidates/chongming-ji-gate/chongming-ji-gate-lod.glb",
+      "web_bytes": 3954804,
+      "web_sha256": "60edf61a6471237bd40863a4ea60dcbbe84d7b3c7012b897b7edcd62ea4bbc61",
+      "lod_bytes": 669916,
+      "lod_sha256": "4dcdf8819ad3573972a257bd5ce689c15bb4342912583285a49452b6d27e1e54",
+      "triangles": 143632,
+      "lod_triangles": 25520,
+      "individual_page": "ji-gate.html",
+      "candidate_manifest": "assets/models/candidates/chongming-ji-gate/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39698187701855,
+          31.620622042562985
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39687981849512,
+              31.62059240374623
+            ],
+            [
+              121.39707634098447,
+              31.620577762891834
+            ],
+            [
+              121.39708393554197,
+              31.620651681379744
+            ],
+            [
+              121.39688741305261,
+              31.62066632223414
+            ],
+            [
+              121.39687981849512,
+              31.62059240374623
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          0,
+          -43
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；独立单体外观候选；坐标、估计构造和核验另记",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-lingxing-gate",
+      "name": "崇明学宫棂星门中央石门",
+      "kind": "building",
+      "candidate_id": "chongming-lingxing-gate",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39695797163243,
+      "lat": 31.62038936936294,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 5.849999904632568,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -2.2040185928344727,
+          0.0,
+          -1.5105901956558228
+        ],
+        "max": [
+          2.2040185928344727,
+          5.849999904632568,
+          0.29649999737739563
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-lingxing-gate/chongming-lingxing-gate-web.glb",
+          "bytes": 649436,
+          "sha256": "43d3d1238244a497e056d6a1b10734338e1ab3adfb9f6cda838f09eb0480a65c",
+          "triangles": 15692
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-lingxing-gate/chongming-lingxing-gate-lod.glb",
+          "bytes": 73380,
+          "sha256": "d2abc7629dcdaee08d29d31de0746883eb2d927edeb0be8838dd99439f523ee0",
+          "triangles": 2076
+        }
+      },
+      "model": "assets/models/candidates/chongming-lingxing-gate/chongming-lingxing-gate-web.glb",
+      "lod_model": "assets/models/candidates/chongming-lingxing-gate/chongming-lingxing-gate-lod.glb",
+      "web_bytes": 649436,
+      "web_sha256": "43d3d1238244a497e056d6a1b10734338e1ab3adfb9f6cda838f09eb0480a65c",
+      "lod_bytes": 73380,
+      "lod_sha256": "d2abc7629dcdaee08d29d31de0746883eb2d927edeb0be8838dd99439f523ee0",
+      "triangles": 15692,
+      "lod_triangles": 2076,
+      "individual_page": "lingxing-gate.html",
+      "candidate_manifest": "assets/models/candidates/chongming-lingxing-gate/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39695797163243,
+          31.62038936936294
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 20.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39693453649487,
+              31.620388441593263
+            ],
+            [
+              121.3969808615433,
+              31.62038499039391
+            ],
+            [
+              121.39698252305055,
+              31.620401161988447
+            ],
+            [
+              121.39693619800214,
+              31.6204046131878
+            ],
+            [
+              121.39693453649487,
+              31.620388441593263
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          0,
+          -69
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；照片覆盖的中央石门、红色栅门与局部墙端；侧门另列待核任务",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-lingxing-photo-left-gate",
+      "name": "崇明学宫照片左侧门（历史石框参照）",
+      "kind": "building",
+      "candidate_id": "chongming-lingxing-photo-left-gate",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39689176352374,
+      "lat": 31.620394301843096,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 5.039999961853027,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -1.5449999570846558,
+          0.0,
+          -1.1048874855041504
+        ],
+        "max": [
+          1.4900000095367432,
+          5.039999961853027,
+          0.2209998518228531
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-lingxing-photo-left-gate/chongming-lingxing-photo-left-gate-web.glb",
+          "bytes": 233520,
+          "sha256": "4ff5bee45380071f0484722fec3947c67684ef70613b19d49b54db7ebc2ea68c",
+          "triangles": 5900
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-lingxing-photo-left-gate/chongming-lingxing-photo-left-gate-lod.glb",
+          "bytes": 47244,
+          "sha256": "0be3df8d0334edeab1d769369fc0d4ed7649ab658be338db0e7429ef220d36c0",
+          "triangles": 1420
+        }
+      },
+      "model": "assets/models/candidates/chongming-lingxing-photo-left-gate/chongming-lingxing-photo-left-gate-web.glb",
+      "lod_model": "assets/models/candidates/chongming-lingxing-photo-left-gate/chongming-lingxing-photo-left-gate-lod.glb",
+      "web_bytes": 233520,
+      "web_sha256": "4ff5bee45380071f0484722fec3947c67684ef70613b19d49b54db7ebc2ea68c",
+      "lod_bytes": 47244,
+      "lod_sha256": "0be3df8d0334edeab1d769369fc0d4ed7649ab658be338db0e7429ef220d36c0",
+      "triangles": 5900,
+      "lod_triangles": 1420,
+      "individual_page": "lingxing-left-gate.html",
+      "candidate_manifest": "assets/models/candidates/chongming-lingxing-photo-left-gate/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39689176352374,
+          31.620394301843096
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 20.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39687532357809,
+              31.62039353375423
+            ],
+            [
+              121.39690721907137,
+              31.62039115755151
+            ],
+            [
+              121.39690843814246,
+              31.6204030228765
+            ],
+            [
+              121.3968765426492,
+              31.620405399079214
+            ],
+            [
+              121.39687532357809,
+              31.62039353375423
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          -6.3,
+          -69
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；照片左侧门，历史石框与较新开门姿态组合；绝对方位及配准待核",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-lingxing-photo-right-gate",
+      "name": "崇明学宫照片右侧门（1990年代参照）",
+      "kind": "building",
+      "candidate_id": "chongming-lingxing-photo-right-gate",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39702417974111,
+      "lat": 31.620384436882784,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 4.880000114440918,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -1.524999976158142,
+          0.0,
+          -0.19499999284744263
+        ],
+        "max": [
+          1.524999976158142,
+          4.880000114440918,
+          0.21199999749660492
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-lingxing-photo-right-gate/chongming-lingxing-photo-right-gate-web.glb",
+          "bytes": 23416,
+          "sha256": "6947f031b7527e4c6a4fb680d3e158d7af6e533ced96092d63cf6e5299df4895",
+          "triangles": 948
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-lingxing-photo-right-gate/chongming-lingxing-photo-right-gate-lod.glb",
+          "bytes": 18392,
+          "sha256": "b83bf4c9aa8e507ae348548556da443395d38948939e10e7f9546501b351b343",
+          "triangles": 684
+        }
+      },
+      "model": "assets/models/candidates/chongming-lingxing-photo-right-gate/chongming-lingxing-photo-right-gate-web.glb",
+      "lod_model": "assets/models/candidates/chongming-lingxing-photo-right-gate/chongming-lingxing-photo-right-gate-lod.glb",
+      "web_bytes": 23416,
+      "web_sha256": "6947f031b7527e4c6a4fb680d3e158d7af6e533ced96092d63cf6e5299df4895",
+      "lod_bytes": 18392,
+      "lod_sha256": "b83bf4c9aa8e507ae348548556da443395d38948939e10e7f9546501b351b343",
+      "triangles": 948,
+      "lod_triangles": 684,
+      "individual_page": "lingxing-right-gate.html",
+      "candidate_manifest": "assets/models/candidates/chongming-lingxing-photo-right-gate/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39702417974111,
+          31.620384436882784
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 20.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39700795825453,
+              31.620383733674682
+            ],
+            [
+              121.39704001138601,
+              31.620381345727978
+            ],
+            [
+              121.39704038559724,
+              31.620384987958367
+            ],
+            [
+              121.39700833246576,
+              31.62038737590507
+            ],
+            [
+              121.39700795825453,
+              31.620383733674682
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          6.3,
+          -69
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；年代题注为1990年代的照片右端门洞；下部遮挡，不能据此称当代完整状态",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-minghuan-shrine",
+      "name": "崇明学宫名宦祠",
+      "kind": "building",
+      "candidate_id": "chongming-minghuan-shrine",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39713951537256,
+      "lat": 31.620610298562614,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 6.5,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -4.775000095367432,
+          0.0,
+          -3.771036148071289
+        ],
+        "max": [
+          4.775000095367432,
+          6.5,
+          3.771036148071289
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-minghuan-shrine/chongming-minghuan-shrine-web.glb",
+          "bytes": 635132,
+          "sha256": "4c52f38fd7c818cb095aef31e8d49d3bece5dfba9cffca49f22ec7e605bcbb40",
+          "triangles": 25324
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-minghuan-shrine/chongming-minghuan-shrine-lod.glb",
+          "bytes": 86120,
+          "sha256": "67e6eb63421f8fa7bd4d4fdf0becffb773adba50d917e0fdf3469c2a1e1d1049",
+          "triangles": 3436
+        }
+      },
+      "model": "assets/models/candidates/chongming-minghuan-shrine/chongming-minghuan-shrine-web.glb",
+      "lod_model": "assets/models/candidates/chongming-minghuan-shrine/chongming-minghuan-shrine-lod.glb",
+      "web_bytes": 635132,
+      "web_sha256": "4c52f38fd7c818cb095aef31e8d49d3bece5dfba9cffca49f22ec7e605bcbb40",
+      "lod_bytes": 86120,
+      "lod_sha256": "67e6eb63421f8fa7bd4d4fdf0becffb773adba50d917e0fdf3469c2a1e1d1049",
+      "triangles": 25324,
+      "lod_triangles": 3436,
+      "individual_page": "minghuan-shrine.html",
+      "candidate_manifest": "assets/models/candidates/chongming-minghuan-shrine/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39713951537256,
+          31.620610298562614
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.3970858665952,
+              31.62058029018301
+            ],
+            [
+              121.39718622968259,
+              31.620572813169293
+            ],
+            [
+              121.39719316414991,
+              31.62064030694222
+            ],
+            [
+              121.39709280106251,
+              31.62064778395594
+            ],
+            [
+              121.3970858665952,
+              31.62058029018301
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          15,
+          -43
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；戟门东侧单体的三开间／中门基础候选；8.8×6.6米解释为基座，含檐外伸总外包约9.55×7.542×6.5米，测量端点与外观假设待核",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-minglun-hall",
+      "name": "崇明学宫明伦堂",
+      "kind": "building",
+      "candidate_id": "chongming-minglun-hall",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39739974489906,
+      "lat": 31.620978662639097,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 10.369999885559082,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -10.824999809265137,
+          0.0,
+          -7.070553302764893
+        ],
+        "max": [
+          10.824999809265137,
+          10.369999885559082,
+          8.149999618530273
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-minglun-hall/chongming-minglun-hall-web.glb",
+          "bytes": 1292168,
+          "sha256": "bf3c12e5358dc1b6b97c0add6c589ef88b6398e2c4050a29e9ec5368715b6148",
+          "triangles": 52884
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-minglun-hall/chongming-minglun-hall-lod.glb",
+          "bytes": 167132,
+          "sha256": "e86e1ed7e63d9b31035dba958ac5852d2ecd96603e9fc6ad619b35679d058fc6",
+          "triangles": 7748
+        }
+      },
+      "model": "assets/models/candidates/chongming-minglun-hall/chongming-minglun-hall-web.glb",
+      "lod_model": "assets/models/candidates/chongming-minglun-hall/chongming-minglun-hall-lod.glb",
+      "web_bytes": 1292168,
+      "web_sha256": "bf3c12e5358dc1b6b97c0add6c589ef88b6398e2c4050a29e9ec5368715b6148",
+      "lod_bytes": 167132,
+      "lod_sha256": "e86e1ed7e63d9b31035dba958ac5852d2ecd96603e9fc6ad619b35679d058fc6",
+      "triangles": 52884,
+      "lod_triangles": 7748,
+      "individual_page": "minglun-hall.html",
+      "candidate_manifest": "assets/models/candidates/chongming-minglun-hall/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39739974489906,
+          31.620978662639097
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39727848913682,
+              31.620914203796715
+            ],
+            [
+              121.39750601382377,
+              31.62089725328981
+            ],
+            [
+              121.39752000817741,
+              31.621033461549608
+            ],
+            [
+              121.39729248349046,
+              31.621050412056512
+            ],
+            [
+              121.39727848913682,
+              31.620914203796715
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          36,
+          0
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；20.6×12.7米解释为基座，选旧馆高10.37米；实际含檐前阶外包约21.65×15.221×10.37米，未据历史五楹认定现代分区",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-pan-pool-bridge",
+      "name": "崇明学宫泮池与登云桥",
+      "kind": "building",
+      "candidate_id": "chongming-pan-pool-bridge",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39696900488755,
+      "lat": 31.62049675699373,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 3.1545262336730957,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -6.172317981719971,
+          -2.1600000858306885,
+          -5.349999904632568
+        ],
+        "max": [
+          6.172317981719971,
+          3.1545262336730957,
+          5.349999904632568
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-pan-pool-bridge/chongming-pan-pool-bridge-web.glb",
+          "bytes": 893020,
+          "sha256": "75a86aff801a547a3ccfe4ffe045988973cc2533871fca65c001c57b5ee3da1c",
+          "triangles": 35024
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-pan-pool-bridge/chongming-pan-pool-bridge-lod.glb",
+          "bytes": 164096,
+          "sha256": "a02f3c86b1217fe5cf8d50efc83f2bd16086064ae07ef0d4c6f0ba79f416e076",
+          "triangles": 7632
+        }
+      },
+      "model": "assets/models/candidates/chongming-pan-pool-bridge/chongming-pan-pool-bridge-web.glb",
+      "lod_model": "assets/models/candidates/chongming-pan-pool-bridge/chongming-pan-pool-bridge-lod.glb",
+      "web_bytes": 893020,
+      "web_sha256": "75a86aff801a547a3ccfe4ffe045988973cc2533871fca65c001c57b5ee3da1c",
+      "lod_bytes": 164096,
+      "lod_sha256": "a02f3c86b1217fe5cf8d50efc83f2bd16086064ae07ef0d4c6f0ba79f416e076",
+      "triangles": 35024,
+      "lod_triangles": 7632,
+      "individual_page": "pan-pool.html",
+      "candidate_manifest": "assets/models/candidates/chongming-pan-pool-bridge/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39696900488755,
+          31.62049675699373
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39689921962493,
+              31.620453712522835
+            ],
+            [
+              121.39702895216453,
+              31.620444047495546
+            ],
+            [
+              121.39703879015019,
+              31.620539801464627
+            ],
+            [
+              121.39690905761057,
+              31.620549466491916
+            ],
+            [
+              121.39689921962493,
+              31.620453712522835
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。 为零高程底图显示采用0.85米抬升，非实测高程；原模型未改，池底仍低于地面，上桥通行未验收。",
+        "local_site_east_north_m": [
+          0,
+          -57
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。 为零高程底图显示采用0.85米抬升，非实测高程；原模型未改，池底仍低于地面，上桥通行未验收。；池体、石拱桥和栏杆构件。",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      },
+      "altitude": 0.85
+    },
+    {
+      "id": "chongming-ruxue-gate",
+      "name": "崇明学宫儒学大门",
+      "kind": "building",
+      "candidate_id": "chongming-ruxue-gate",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.3973409008717,
+      "lat": 31.62040592860821,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 8.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -5.824999809265137,
+          0.0,
+          -4.870880603790283
+        ],
+        "max": [
+          5.824999809265137,
+          8.0,
+          4.870880603790283
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-ruxue-gate/chongming-ruxue-gate-web.glb",
+          "bytes": 738172,
+          "sha256": "c7d53cd8ed130c690f74c4597571a3e1f8e7759369f7dd21808b2e731b416e50",
+          "triangles": 28916
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-ruxue-gate/chongming-ruxue-gate-lod.glb",
+          "bytes": 92552,
+          "sha256": "9d57af2e7f0056f3f38fc87685ffce8b04d0b971d3019de8f160cdc7795bcb90",
+          "triangles": 3684
+        }
+      },
+      "model": "assets/models/candidates/chongming-ruxue-gate/chongming-ruxue-gate-web.glb",
+      "lod_model": "assets/models/candidates/chongming-ruxue-gate/chongming-ruxue-gate-lod.glb",
+      "web_bytes": 738172,
+      "web_sha256": "c7d53cd8ed130c690f74c4597571a3e1f8e7759369f7dd21808b2e731b416e50",
+      "lod_bytes": 92552,
+      "lod_sha256": "9d57af2e7f0056f3f38fc87685ffce8b04d0b971d3019de8f160cdc7795bcb90",
+      "triangles": 28916,
+      "lod_triangles": 3684,
+      "individual_page": "ruxue-gate.html",
+      "candidate_manifest": "assets/models/candidates/chongming-ruxue-gate/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.3973409008717,
+          31.62040592860821
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39727520617386,
+              31.620366899834213
+            ],
+            [
+              121.3973976386248,
+              31.620357778660892
+            ],
+            [
+              121.39740659556954,
+              31.620444957382208
+            ],
+            [
+              121.3972841631186,
+              31.620454078555532
+            ],
+            [
+              121.39727520617386,
+              31.620366899834213
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          36,
+          -64
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；10.7×8.8×8米文献解释为局部基座与总高；实际含檐外包约11.65×9.742×8米，三分区、双门、格窗及双坡均为估计",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-stele-corridors",
+      "name": "崇明学宫碑廊",
+      "kind": "building",
+      "candidate_id": "chongming-stele-corridors",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39737731061362,
+      "lat": 31.62076030778982,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 4.6,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -10.545,
+          0,
+          -15.55
+        ],
+        "max": [
+          10.545,
+          4.6,
+          15.55
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/global/chongming-stele-corridors/chongming-stele-corridors-web.glb",
+          "bytes": 3455296,
+          "sha256": "c0af3b6f53aa401686577f5c49cbcde33c6957d38c503b45f36f0718f2cf50dd",
+          "triangles": 232696
+        },
+        "lod": {
+          "file": "assets/models/global/chongming-stele-corridors/chongming-stele-corridors-lod.glb",
+          "bytes": 643908,
+          "sha256": "bd803a6e2e4c030a9e17fb514b687ab5a4658671c8859115fc4af15637d247e5",
+          "triangles": 42200
+        }
+      },
+      "model": "assets/models/global/chongming-stele-corridors/chongming-stele-corridors-web.glb",
+      "lod_model": "assets/models/global/chongming-stele-corridors/chongming-stele-corridors-lod.glb",
+      "web_bytes": 3455296,
+      "web_sha256": "c0af3b6f53aa401686577f5c49cbcde33c6957d38c503b45f36f0718f2cf50dd",
+      "lod_bytes": 643908,
+      "lod_sha256": "bd803a6e2e4c030a9e17fb514b687ab5a4658671c8859115fc4af15637d247e5",
+      "triangles": 232696,
+      "lod_triangles": 42200,
+      "individual_page": "stele-corridors.html",
+      "candidate_manifest": "assets/models/candidates/chongming-stele-corridors/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39737731061362,
+          31.62076030778982
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                121.3974413596158,
+                31.62061531455007
+              ],
+              [
+                121.39747383311672,
+                31.620612895285994
+              ],
+              [
+                121.39750242763627,
+                31.620891208229125
+              ],
+              [
+                121.39746995413535,
+                31.620893627493203
+              ],
+              [
+                121.3974413596158,
+                31.62061531455007
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                121.39725219359099,
+                31.620629407350517
+              ],
+              [
+                121.39728466709191,
+                31.62062698808644
+              ],
+              [
+                121.39731326161146,
+                31.62090530102957
+              ],
+              [
+                121.39728078811052,
+                31.620907720293648
+              ],
+              [
+                121.39725219359099,
+                31.620629407350517
+              ]
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          36,
+          -24.4
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；两条独立可编辑30.5×2.5米长边组件；高4.6米与7米中心间距为设计展示估计，不证明实测院宽或完整廊总量",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      },
+      "derived_asset_note": "原近/远景GLB压缩几何、索引和材质完全不变，仅两个scene节点分别旋转±90°并移到中心东西±9米，形成朝院的两条长廊。18米间距及场址位置为近似配准；不补造未建南北短段。原Blender仍是独立展示布局。"
+    },
+    {
+      "id": "chongming-west-guanting",
+      "name": "崇明学宫西官厅",
+      "kind": "building",
+      "candidate_id": "chongming-west-guanting",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39679560269815,
+      "lat": 31.62050967539414,
+      "heading": -85.0,
+      "scale": 1,
+      "height_m": 6.5,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -5.574999809265137,
+          0.0,
+          -4.169259548187256
+        ],
+        "max": [
+          5.574999809265137,
+          6.5,
+          4.169259548187256
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-west-guanting/chongming-west-guanting-web.glb",
+          "bytes": 729632,
+          "sha256": "f29cc2941768cc4317c9adebd9c75c30076e9d0f7298453316c48c878f303335",
+          "triangles": 28916
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-west-guanting/chongming-west-guanting-lod.glb",
+          "bytes": 92456,
+          "sha256": "3f451ce175bf4b366f17ab6724bbebf6d2460ba48cfdc1790b815423ad96f4ec",
+          "triangles": 3684
+        }
+      },
+      "model": "assets/models/candidates/chongming-west-guanting/chongming-west-guanting-web.glb",
+      "lod_model": "assets/models/candidates/chongming-west-guanting/chongming-west-guanting-lod.glb",
+      "web_bytes": 729632,
+      "web_sha256": "f29cc2941768cc4317c9adebd9c75c30076e9d0f7298453316c48c878f303335",
+      "lod_bytes": 92456,
+      "lod_sha256": "3f451ce175bf4b366f17ab6724bbebf6d2460ba48cfdc1790b815423ad96f4ec",
+      "triangles": 28916,
+      "lod_triangles": 3684,
+      "individual_page": "west-guanting.html",
+      "candidate_manifest": "assets/models/candidates/chongming-west-guanting/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39679560269815,
+          31.62050967539414
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39683429251271,
+              31.620456520639998
+            ],
+            [
+              121.39684454424525,
+              31.620556301643525
+            ],
+            [
+              121.39675691288357,
+              31.620562830148284
+            ],
+            [
+              121.39674666115103,
+              31.620463049144753
+            ],
+            [
+              121.39683429251271,
+              31.620456520639998
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          -16.5,
+          -57
+        ],
+        "heading_relative_to_site_deg": -90,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；泮池与登云桥两侧，分别记录东西宽与南北长；屋顶、开间、门窗、朝院立面及量测端点未核实，1991/1998/1998–1999维修记载保留各自范围",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-west-wing",
+      "name": "崇明学宫西庑",
+      "kind": "building",
+      "candidate_id": "chongming-west-wing",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39681977010002,
+      "lat": 31.62079643387626,
+      "heading": -85.0,
+      "scale": 1,
+      "height_m": 8.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -13.845000267028809,
+          0.0,
+          -4.322204113006592
+        ],
+        "max": [
+          13.845000267028809,
+          8.0,
+          4.322204113006592
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-west-wing/chongming-west-wing-web.glb",
+          "bytes": 1822600,
+          "sha256": "489973cbd2681cc97e4c4a08fee50e544595bca7f0cbb5c8c51f533b4421579b",
+          "triangles": 72820
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-west-wing/chongming-west-wing-lod.glb",
+          "bytes": 212544,
+          "sha256": "1c700e296ce3ced436d346f50f381dfd167d3202573b94abb3fb0b0e91ad85fd",
+          "triangles": 9428
+        }
+      },
+      "model": "assets/models/candidates/chongming-west-wing/chongming-west-wing-web.glb",
+      "lod_model": "assets/models/candidates/chongming-west-wing/chongming-west-wing-lod.glb",
+      "web_bytes": 1822600,
+      "web_sha256": "489973cbd2681cc97e4c4a08fee50e544595bca7f0cbb5c8c51f533b4421579b",
+      "lod_bytes": 212544,
+      "lod_sha256": "1c700e296ce3ced436d346f50f381dfd167d3202573b94abb3fb0b0e91ad85fd",
+      "triangles": 72820,
+      "lod_triangles": 9428,
+      "individual_page": "west-wing.html",
+      "candidate_manifest": "assets/models/candidates/chongming-west-wing/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39681977010002,
+          31.62079643387626
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39685246349114,
+              31.620669151397067
+            ],
+            [
+              121.39687792272785,
+              31.620916948359895
+            ],
+            [
+              121.3967870767089,
+              31.620923716355456
+            ],
+            [
+              121.3967616174722,
+              31.620675919392628
+            ],
+            [
+              121.39685246349114,
+              31.620669151397067
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          -17,
+          -25
+        ],
+        "heading_relative_to_site_deg": -90,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；1997年修复后现存七楹与26.74×7.7×8米文字尺寸候选；历史九楹长廊不直接作现代构造依据，412平方米为两庑总面积",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-xiangxian-shrine",
+      "name": "崇明学宫乡贤祠",
+      "kind": "building",
+      "candidate_id": "chongming-xiangxian-shrine",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39682423866454,
+      "lat": 31.620633786563356,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 6.5,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -4.775000095367432,
+          0.0,
+          -3.771036148071289
+        ],
+        "max": [
+          4.775000095367432,
+          6.5,
+          3.771036148071289
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-xiangxian-shrine/chongming-xiangxian-shrine-web.glb",
+          "bytes": 635864,
+          "sha256": "aff39c0765b3ffd7fcb83f0e45aa33aa8442db4d3f3aee057debd2ee44e97c42",
+          "triangles": 25324
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-xiangxian-shrine/chongming-xiangxian-shrine-lod.glb",
+          "bytes": 86856,
+          "sha256": "a5ddd4d0cca3fb607d5759f974a79e2483360c734e28f036c19ab93e9f2c7b4f",
+          "triangles": 3436
+        }
+      },
+      "model": "assets/models/candidates/chongming-xiangxian-shrine/chongming-xiangxian-shrine-web.glb",
+      "lod_model": "assets/models/candidates/chongming-xiangxian-shrine/chongming-xiangxian-shrine-lod.glb",
+      "web_bytes": 635864,
+      "web_sha256": "aff39c0765b3ffd7fcb83f0e45aa33aa8442db4d3f3aee057debd2ee44e97c42",
+      "lod_bytes": 86856,
+      "lod_sha256": "a5ddd4d0cca3fb607d5759f974a79e2483360c734e28f036c19ab93e9f2c7b4f",
+      "triangles": 25324,
+      "lod_triangles": 3436,
+      "individual_page": "xiangxian-shrine.html",
+      "candidate_manifest": "assets/models/candidates/chongming-xiangxian-shrine/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39682423866454,
+          31.620633786563356
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39677058988717,
+              31.620603778183753
+            ],
+            [
+              121.39687095297457,
+              31.620596301170036
+            ],
+            [
+              121.39687788744189,
+              31.620663794942963
+            ],
+            [
+              121.39677752435449,
+              31.62067127195668
+            ],
+            [
+              121.39677058988717,
+              31.620603778183753
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          -15,
+          -43
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；三楹、中门及8.8×6.6×6.5米文字有据；基础几何与名宦祠候选共用假设，不据左右对称宣称两祠实物细部一致",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-xuehai-paifang",
+      "name": "崇明学宫西牌坊（题名面待核）",
+      "kind": "building",
+      "candidate_id": "chongming-xuehai-paifang",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39677721393959,
+      "lat": 31.62033069600949,
+      "heading": 95.0,
+      "scale": 1,
+      "height_m": 9.600000381469727,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -4.544454574584961,
+          0.0,
+          -1.7444543838500977
+        ],
+        "max": [
+          4.544454574584961,
+          9.600000381469727,
+          1.7444543838500977
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-xuehai-paifang/chongming-xuehai-paifang-web.glb",
+          "bytes": 2844364,
+          "sha256": "e0430c11c8a778206f2f5767b7c1feff29376b82026b0c4db91845d850355462",
+          "triangles": 92848
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-xuehai-paifang/chongming-xuehai-paifang-lod.glb",
+          "bytes": 631572,
+          "sha256": "7480e9688b7e639b1ef3f6926907b729a728c5953d035c2ad5b6c0d6b29dc745",
+          "triangles": 20996
+        }
+      },
+      "model": "assets/models/candidates/chongming-xuehai-paifang/chongming-xuehai-paifang-web.glb",
+      "lod_model": "assets/models/candidates/chongming-xuehai-paifang/chongming-xuehai-paifang-lod.glb",
+      "web_bytes": 2844364,
+      "web_sha256": "e0430c11c8a778206f2f5767b7c1feff29376b82026b0c4db91845d850355462",
+      "lod_bytes": 631572,
+      "lod_sha256": "7480e9688b7e639b1ef3f6926907b729a728c5953d035c2ad5b6c0d6b29dc745",
+      "triangles": 92848,
+      "lod_triangles": 20996,
+      "individual_page": "west-paifang.html",
+      "candidate_manifest": "assets/models/candidates/chongming-xuehai-paifang/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39677721393959,
+          31.62033069600949
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39676305942231,
+              31.620372729985185
+            ],
+            [
+              121.39675470273451,
+              31.62029139361685
+            ],
+            [
+              121.39679136845687,
+              31.620288662033794
+            ],
+            [
+              121.39679972514467,
+              31.620369998402126
+            ],
+            [
+              121.39676305942231,
+              31.620372729985185
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          -16.5,
+          -77
+        ],
+        "heading_relative_to_site_deg": 90,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；以2021文字物理方位区分，保留旧馆1998题名配对差异；照片可支持结构候选，不能声明同座正反面或题字方位已照片核验",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-yimen",
+      "name": "崇明学宫仪门",
+      "kind": "building",
+      "candidate_id": "chongming-yimen",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39735837019232,
+      "lat": 31.62057595902363,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 7.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -5.300000190734863,
+          0.0,
+          -5.045000076293945
+        ],
+        "max": [
+          5.300000190734863,
+          7.0,
+          5.699999809265137
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-yimen/chongming-yimen-web.glb",
+          "bytes": 1305336,
+          "sha256": "de9cdf2f2f41f92b97aaf3d851e2fb9cfb1fe52c27a57be16f8a08abbd88220a",
+          "triangles": 57896
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-yimen/chongming-yimen-lod.glb",
+          "bytes": 297392,
+          "sha256": "2fe4176c7f62d5a260b2e9fbe3c191c20951ee43aadcece9e7bedd00171cc2b7",
+          "triangles": 13768
+        }
+      },
+      "model": "assets/models/candidates/chongming-yimen/chongming-yimen-web.glb",
+      "lod_model": "assets/models/candidates/chongming-yimen/chongming-yimen-lod.glb",
+      "web_bytes": 1305336,
+      "web_sha256": "de9cdf2f2f41f92b97aaf3d851e2fb9cfb1fe52c27a57be16f8a08abbd88220a",
+      "lod_bytes": 297392,
+      "lod_sha256": "2fe4176c7f62d5a260b2e9fbe3c191c20951ee43aadcece9e7bedd00171cc2b7",
+      "triangles": 57896,
+      "lod_triangles": 13768,
+      "individual_page": "yimen.html",
+      "candidate_manifest": "assets/models/candidates/chongming-yimen/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39735837019232,
+          31.62057595902363
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39729743050921,
+              31.62052909944766
+            ],
+            [
+              121.39740882828339,
+              31.620520800353763
+            ],
+            [
+              121.39741870764382,
+              31.620616957027146
+            ],
+            [
+              121.39730730986965,
+              31.620625256121038
+            ],
+            [
+              121.39729743050921,
+              31.62052909944766
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          36,
+          -45
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；正面照片形态参照；文献10.6×9.7米解释为基座，模型实际外包约10.6×10.745×7米（含估计前阶）；未调和文献高度9.07米",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "chongming-zunjing-pavilion",
+      "name": "崇明学宫尊经阁",
+      "kind": "building",
+      "candidate_id": "chongming-zunjing-pavilion",
+      "detail_level": "architectural",
+      "districtId": "310151",
+      "district_name": "崇明区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.39700078504312,
+      "lat": 31.62126989154784,
+      "heading": 5.0,
+      "scale": 1,
+      "height_m": 7.9301018714904785,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -10.049955368041992,
+          0.0,
+          -7.550005912780762
+        ],
+        "max": [
+          10.049955368041992,
+          7.9301018714904785,
+          8.039999961853027
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/chongming-zunjing-pavilion/chongming-zunjing-pavilion-web.glb",
+          "bytes": 9435184,
+          "sha256": "0da6da53b3b134127f82a9d476a4b8dfaec046f24abd01387d68d85152a839a9",
+          "triangles": 342946
+        },
+        "lod": {
+          "file": "assets/models/candidates/chongming-zunjing-pavilion/chongming-zunjing-pavilion-lod.glb",
+          "bytes": 1660184,
+          "sha256": "ca7aa315202087e9dc56d3181e13ad88345f21f0cc034a91950e4a00697966f7",
+          "triangles": 62148
+        }
+      },
+      "model": "assets/models/candidates/chongming-zunjing-pavilion/chongming-zunjing-pavilion-web.glb",
+      "lod_model": "assets/models/candidates/chongming-zunjing-pavilion/chongming-zunjing-pavilion-lod.glb",
+      "web_bytes": 9435184,
+      "web_sha256": "0da6da53b3b134127f82a9d476a4b8dfaec046f24abd01387d68d85152a839a9",
+      "lod_bytes": 1660184,
+      "lod_sha256": "ca7aa315202087e9dc56d3181e13ad88345f21f0cc034a91950e4a00697966f7",
+      "triangles": 342946,
+      "lod_triangles": 62148,
+      "individual_page": "zunjing-pavilion.html",
+      "candidate_manifest": "assets/models/candidates/chongming-zunjing-pavilion/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.39700078504312,
+          31.62126989154784
+        ],
+        "bearing": 5.0,
+        "note": "本轮只提供全局俯瞰直达；院内出生点、桥面、门洞、台阶通行未验收，不开放自动漫游。"
+      },
+      "overviewZoom": 19.0,
+      "maxDistance": 450,
+      "lod_switch_in_m": 75,
+      "lod_switch_out_m": 115,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.39688777553408,
+              31.62120581028086
+            ],
+            [
+              121.39709900999036,
+              31.62119007339025
+            ],
+            [
+              121.39711334403304,
+              31.621329587873156
+            ],
+            [
+              121.39690210957677,
+              31.621345324763766
+            ],
+            [
+              121.39688777553408,
+              31.62120581028086
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [
+          "128f4cb0-fcdf-4948-8729-d812245dc745"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。",
+        "local_site_east_north_m": [
+          -4.5,
+          29
+        ],
+        "heading_relative_to_site_deg": 0,
+        "references": [
+          "satellite-reference-v1",
+          "sohu-2023-aerial-and-layout",
+          "archived-museum-text",
+          "frozen-source-14-13716-6673-192"
+        ]
+      },
+      "detail_note": "基于场址地图、北向上卫星参考与建筑相对次序的近似配准；位置、5°轴向、院落间距非测绘，原单体尺寸与形态估计继续适用。；双层楼阁、屋顶与檐下构件。",
+      "complete_photo_reconstruction_accepted": false,
+      "site_replacement": {
+        "id": "chongming-confucian-temple-main-east-courtyards",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39757395,
+                31.62097259
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ]
+            ]
+          ]
+        },
+        "source_feature_ids": {
+          "building": [
+            "128f4cb0-fcdf-4948-8729-d812245dc745"
+          ],
+          "building_part": []
+        },
+        "note": "有界纠正整园误拉高15.3米板块，仅主轴与东轴已建单体及其庭院；西轴、东北两合院及其余园址源几何保留。场址范围与建筑位置是影像/文字引导的近似配准，非测绘。",
+        "source_macro": "14-13716-6673",
+        "source_local_id": 192,
+        "residual_geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                121.3980031,
+                31.62137914
+              ],
+              [
+                121.39784753,
+                31.62103654
+              ],
+              [
+                121.39784217,
+                31.62092691
+              ],
+              [
+                121.39757905592724,
+                31.620971720419966
+              ],
+              [
+                121.39758759607955,
+                31.621054842464332
+              ],
+              [
+                121.39731435626592,
+                31.621075198731642
+              ],
+              [
+                121.39734193940374,
+                31.62134366780862
+              ],
+              [
+                121.39687953356531,
+                31.621378116876375
+              ],
+              [
+                121.3968556281792,
+                31.62114544367633
+              ],
+              [
+                121.3967925728376,
+                31.621150141276477
+              ],
+              [
+                121.39671756929673,
+                31.620420125296754
+              ],
+              [
+                121.39750421,
+                31.62038332
+              ],
+              [
+                121.39652789,
+                31.620429
+              ],
+              [
+                121.39647961,
+                31.62047468
+              ],
+              [
+                121.39673173,
+                31.62157556
+              ],
+              [
+                121.3980031,
+                31.62137914
+              ]
+            ]
+          ]
+        },
+        "owner": {
+          "macro_id": "14-13716-6673",
+          "feature_local_id": 192
+        }
+      }
+    },
+    {
+      "id": "hongkou-broadway-mansions",
+      "name": "上海大厦／百老汇大厦历史主楼",
+      "kind": "building",
+      "candidate_id": "hongkou-broadway-mansions",
+      "detail_level": "architectural",
+      "districtId": "310109",
+      "district_name": "虹口区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.48549038354703,
+      "lat": 31.24632053248606,
+      "heading": 0.0,
+      "scale": 1,
+      "height_m": 76.69999694824219,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -36.3116455078125,
+          0.0,
+          -20.339073181152344
+        ],
+        "max": [
+          36.505218505859375,
+          76.69999694824219,
+          20.08793830871582
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/hongkou-broadway-mansions/hongkou-broadway-mansions-web.glb",
+          "bytes": 3262208,
+          "sha256": "37d29b61995531b874e174d5d60329aad0b5a62908b4ef763aea637cb930aacb",
+          "triangles": 173852
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-broadway-mansions/hongkou-broadway-mansions-lod.glb",
+          "bytes": 974392,
+          "sha256": "0057d1ddac5f5a394f225e092a9516b2ef52d37124e27afeba6a80517abfe50c",
+          "triangles": 46180
+        }
+      },
+      "model": "assets/models/candidates/hongkou-broadway-mansions/hongkou-broadway-mansions-web.glb",
+      "lod_model": "assets/models/candidates/hongkou-broadway-mansions/hongkou-broadway-mansions-lod.glb",
+      "web_bytes": 3262208,
+      "web_sha256": "37d29b61995531b874e174d5d60329aad0b5a62908b4ef763aea637cb930aacb",
+      "lod_bytes": 974392,
+      "lod_sha256": "0057d1ddac5f5a394f225e092a9516b2ef52d37124e27afeba6a80517abfe50c",
+      "triangles": 173852,
+      "lod_triangles": 46180,
+      "individual_page": "broadway-mansions.html",
+      "candidate_manifest": "assets/models/candidates/hongkou-broadway-mansions/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.48549038354703,
+          31.246032281631873
+        ],
+        "bearing": 0.0,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48587584559893,
+              31.246138462498457
+            ],
+            [
+              121.48510695542183,
+              31.246138462498457
+            ],
+            [
+              121.48510695542183,
+              31.246504858456607
+            ],
+            [
+              121.48587584559893,
+              31.246504858456607
+            ],
+            [
+              121.48587584559893,
+              31.246138462498457
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48524463,
+              31.24650283
+            ],
+            [
+              121.4858079,
+              31.2464111
+            ],
+            [
+              121.48587227,
+              31.24632855
+            ],
+            [
+              121.48584545,
+              31.24619555
+            ],
+            [
+              121.48574352,
+              31.24614051
+            ],
+            [
+              121.48519099,
+              31.24622306
+            ],
+            [
+              121.48511052,
+              31.24631938
+            ],
+            [
+              121.48513734,
+              31.24643862
+            ],
+            [
+              121.48524463,
+              31.24650283
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "8dff7d94-53d9-406e-b208-dd8562bbdafe"
+        ],
+        "building_part": [
+          "59962d89-0a7a-3c8b-823f-8f12a3d2c3fa",
+          "582fd5f8-2a90-3eba-9fce-81b358492d0b"
+        ]
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "模型底层直接采用该显式关联凹形部件的局部ENU轮廓，因此不追加旋转；各层退台和历史墙线仍含估计。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "8dff7d94-53d9-406e-b208-dd8562bbdafe",
+          "59962d89-0a7a-3c8b-823f-8f12a3d2c3fa",
+          "582fd5f8-2a90-3eba-9fce-81b358492d0b"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "模型底层直接采用该显式关联凹形部件的局部ENU轮廓，因此不追加旋转；各层退台和历史墙线仍含估计。；褐砖四翼与高层退台、分格窗和女儿墙；宽深、退距与隐蔽面含估计。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6693",
+        "feature_local_id": 3245,
+        "key": "building_part:582fd5f8-2a90-3eba-9fce-81b358492d0b"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6693",
+          "feature_local_id": 3245,
+          "key": "building_part:582fd5f8-2a90-3eba-9fce-81b358492d0b"
+        },
+        {
+          "macro_id": "14-13720-6693",
+          "feature_local_id": 3246,
+          "key": "building_part:59962d89-0a7a-3c8b-823f-8f12a3d2c3fa"
+        }
+      ]
+    },
+    {
+      "id": "hongkou-luxun-residence-facade",
+      "name": "上海鲁迅故居正立面与院门",
+      "kind": "building",
+      "candidate_id": "hongkou-luxun-residence-facade",
+      "detail_level": "architectural",
+      "districtId": "310109",
+      "district_name": "虹口区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.4799293,
+      "lat": 31.2682312,
+      "heading": 0,
+      "scale": 1,
+      "height_m": 10.270000457763672,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -2.8499999046325684,
+          0.0,
+          -0.6200000047683716
+        ],
+        "max": [
+          2.8499999046325684,
+          10.270000457763672,
+          2.7720000743865967
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/hongkou-luxun-residence-facade/hongkou-luxun-residence-facade-web.glb",
+          "bytes": 2011412,
+          "sha256": "d9070e85e67832999ffa74baf79ad0e1e25d1632d6c1352efa4aa324096ab724",
+          "triangles": 33880
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-luxun-residence-facade/hongkou-luxun-residence-facade-lod.glb",
+          "bytes": 1463144,
+          "sha256": "39f6e74a92671537ad74cd9127f83346430702bd5da245e4badbdcb807c06cfa",
+          "triangles": 7348
+        }
+      },
+      "model": "assets/models/candidates/hongkou-luxun-residence-facade/hongkou-luxun-residence-facade-web.glb",
+      "lod_model": "assets/models/candidates/hongkou-luxun-residence-facade/hongkou-luxun-residence-facade-lod.glb",
+      "web_bytes": 2011412,
+      "web_sha256": "d9070e85e67832999ffa74baf79ad0e1e25d1632d6c1352efa4aa324096ab724",
+      "lod_bytes": 1463144,
+      "lod_sha256": "39f6e74a92671537ad74cd9127f83346430702bd5da245e4badbdcb807c06cfa",
+      "triangles": 33880,
+      "lod_triangles": 7348,
+      "individual_page": "luxun-residence.html",
+      "candidate_manifest": "assets/models/candidates/hongkou-luxun-residence-facade/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.4799293,
+          31.26819
+        ],
+        "bearing": 0,
+        "overviewZoom": 19.5,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.47996114446391,
+              31.268204681732144
+            ],
+            [
+              121.47989745553608,
+              31.268204681732144
+            ],
+            [
+              121.47989745553608,
+              31.268238386522313
+            ],
+            [
+              121.47996114446391,
+              31.268238386522313
+            ],
+            [
+              121.47996114446391,
+              31.268204681732144
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-site-display",
+        "note": "山阴路132弄9号鲁迅故居POI附近的正立面与院门位置示意；POI不是单栋轮廓，朝向仍为估计。旧维基坐标落34—36号已排除，所有底图楼体保留。",
+        "surveyed": false,
+        "source_identity": "unconfirmed-no-source-removal",
+        "source_path": "source/precise/hongkou-luxun-residence-facade/map-context.json"
+      },
+      "detail_note": "山阴路132弄9号鲁迅故居POI附近的正立面与院门位置示意；POI不是单栋轮廓，朝向仍为估计。旧维基坐标落34—36号已排除，所有底图楼体保留。；砖墙、窗扇、阳台与院门；仅为正立面和围栏构件。",
+      "complete_photo_reconstruction_accepted": false
+    },
+    {
+      "id": "hongkou-russian-consulate",
+      "name": "俄罗斯领事馆历史主楼外观",
+      "kind": "building",
+      "candidate_id": "hongkou-russian-consulate",
+      "detail_level": "architectural",
+      "districtId": "310109",
+      "district_name": "虹口区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.48640633408363,
+      "lat": 31.24575545198187,
+      "heading": 4.917,
+      "scale": 1,
+      "height_m": 30.799999237060547,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -22.489999771118164,
+          0.0,
+          -12.489999771118164
+        ],
+        "max": [
+          22.489999771118164,
+          30.799999237060547,
+          13.979999542236328
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/hongkou-russian-consulate/hongkou-russian-consulate-web.glb",
+          "bytes": 998396,
+          "sha256": "ae455cf468ee8560b22872267a13e87e0ec5dbe54a417e687ce0a1b990fa4b0d",
+          "triangles": 61316
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-russian-consulate/hongkou-russian-consulate-lod.glb",
+          "bytes": 288648,
+          "sha256": "7e6b8d412ce3019f369068b32d0c6ec15b41a0d5b76bd8ae1b1b0492071893bf",
+          "triangles": 15824
+        }
+      },
+      "model": "assets/models/candidates/hongkou-russian-consulate/hongkou-russian-consulate-web.glb",
+      "lod_model": "assets/models/candidates/hongkou-russian-consulate/hongkou-russian-consulate-lod.glb",
+      "web_bytes": 998396,
+      "web_sha256": "ae455cf468ee8560b22872267a13e87e0ec5dbe54a417e687ce0a1b990fa4b0d",
+      "lod_bytes": 288648,
+      "lod_sha256": "7e6b8d412ce3019f369068b32d0c6ec15b41a0d5b76bd8ae1b1b0492071893bf",
+      "triangles": 61316,
+      "lod_triangles": 15824,
+      "individual_page": "russian-consulate.html",
+      "candidate_manifest": "assets/models/candidates/hongkou-russian-consulate/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.48638293647731,
+          31.245522928543384
+        ],
+        "bearing": 4.917,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48663090371153,
+              31.245611263460887
+            ],
+            [
+              121.48615625944414,
+              31.245646173848463
+            ],
+            [
+              121.48618042256085,
+              31.24588630486482
+            ],
+            [
+              121.48665506682825,
+              31.245851394477242
+            ],
+            [
+              121.48663090371153,
+              31.245611263460887
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.48648381,
+              31.24564519
+            ],
+            [
+              121.48648381,
+              31.24566812
+            ],
+            [
+              121.48647308,
+              31.24566812
+            ],
+            [
+              121.48647308,
+              31.245670018114033
+            ],
+            [
+              121.48632824,
+              31.24569564
+            ],
+            [
+              121.48624241,
+              31.24569105
+            ],
+            [
+              121.48618877,
+              31.24571857
+            ],
+            [
+              121.48621023,
+              31.24587909
+            ],
+            [
+              121.48664474,
+              31.24584699
+            ],
+            [
+              121.48662865,
+              31.24563143
+            ],
+            [
+              121.48648381,
+              31.24564519
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "49f3a80d-d5c3-421a-904a-e17974063f73"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "长边与冻结主楼轮廓对齐，作者前立面朝苏州河侧；尺寸、背面及塔部为估计，园内亭子未并入。 在估计尺度内向西微调1米，以避开东侧独立源2877；该邻楼未遮蔽。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "49f3a80d-d5c3-421a-904a-e17974063f73"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "长边与冻结主楼轮廓对齐，作者前立面朝苏州河侧；尺寸、背面及塔部为估计，园内亭子未并入。 在估计尺度内向西微调1米，以避开东侧独立源2877；该邻楼未遮蔽。；红色折坡屋顶、拱窗、山花及绿色曲顶塔；整体尺度、侧背面与细部含估计。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6693",
+        "feature_local_id": 935,
+        "key": "building:49f3a80d-d5c3-421a-904a-e17974063f73"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6693",
+          "feature_local_id": 935,
+          "key": "building:49f3a80d-d5c3-421a-904a-e17974063f73"
+        }
+      ]
+    },
+    {
+      "id": "huangpu-grand-theatre",
+      "name": "大光明大戏院临街入口与灯塔局部",
+      "kind": "building",
+      "candidate_id": "huangpu-grand-theatre",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.46668021097844,
+      "lat": 31.235075833332072,
+      "heading": 216.91,
+      "scale": 1,
+      "height_m": 30.5,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -11.199999809265137,
+          0.0,
+          -7.0
+        ],
+        "max": [
+          12.649999618530273,
+          30.5,
+          2.312150001525879
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-grand-theatre/huangpu-grand-theatre-web.glb",
+          "bytes": 208192,
+          "sha256": "8f57aeb58bb481e41dd125899e4957079aeb72ebad5d401e90a66919e252683d",
+          "triangles": 10832
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-grand-theatre/huangpu-grand-theatre-lod.glb",
+          "bytes": 126728,
+          "sha256": "471933801dca5610af3c2ac8e06f0831dc9c007987ad3656ec25a7da751c985e",
+          "triangles": 5080
+        }
+      },
+      "model": "assets/models/candidates/huangpu-grand-theatre/huangpu-grand-theatre-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-grand-theatre/huangpu-grand-theatre-lod.glb",
+      "web_bytes": 208192,
+      "web_sha256": "8f57aeb58bb481e41dd125899e4957079aeb72ebad5d401e90a66919e252683d",
+      "lod_bytes": 126728,
+      "lod_sha256": "471933801dca5610af3c2ac8e06f0831dc9c007987ad3656ec25a7da751c985e",
+      "triangles": 10832,
+      "lod_triangles": 5080,
+      "individual_page": "grand-theatre.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-grand-theatre/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.46677051351409,
+          31.235178633899302
+        ],
+        "bearing": 216.91,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46658815790241,
+              31.235162950643762
+            ],
+            [
+              121.46679153190628,
+              31.235032339624905
+            ],
+            [
+              121.4667305054588,
+              31.234962867008534
+            ],
+            [
+              121.46652713145492,
+              31.23509347802739
+            ],
+            [
+              121.46658815790241,
+              31.235162950643762
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46673065182262,
+              31.234961986571747
+            ],
+            [
+              121.46652610176086,
+              31.235093352879456
+            ],
+            [
+              121.46656822090037,
+              31.2351413013828
+            ],
+            [
+              121.46677244907212,
+              31.235009568634936
+            ],
+            [
+              121.46673065182262,
+              31.234961986571747
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "入口和灯塔仅沿东北侧南京西路街边局部落位；未建影厅、商铺带及底图余体保留，位置和尺寸为估计。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "入口和灯塔仅沿东北侧南京西路街边局部落位；未建影厅、商铺带及底图余体保留，位置和尺寸为估计。；大幅玻璃、挑篷、竖肋、灯塔字牌与圆角墙带；尺度含估计，后部影厅未建。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 2155,
+        "key": "building:b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 2155,
+          "key": "building:b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d"
+        }
+      ]
+    },
+    {
+      "id": "huangpu-old-wing-on-company",
+      "name": "老永安公司主楼与屋顶塔楼外观",
+      "kind": "building",
+      "candidate_id": "huangpu-old-wing-on-company",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.47374199655522,
+      "lat": 31.2369351867911,
+      "heading": -14.43,
+      "scale": 1,
+      "height_m": 54.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -33.720001220703125,
+          0.0,
+          -48.849998474121094
+        ],
+        "max": [
+          34.49464797973633,
+          54.0,
+          47.720001220703125
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-old-wing-on-company/huangpu-old-wing-on-company-web.glb",
+          "bytes": 4907868,
+          "sha256": "d0e755b1197eb9cb0491c61d0213b6fb9ce40768b3e7d1efcd103e6151982d31",
+          "triangles": 296412
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-old-wing-on-company/huangpu-old-wing-on-company-lod.glb",
+          "bytes": 1869448,
+          "sha256": "724965c04dfa61bd3901dc37fa7cb9d0e35fb2df8de3291234e19cbeb23490a8",
+          "triangles": 103692
+        }
+      },
+      "model": "assets/models/candidates/huangpu-old-wing-on-company/huangpu-old-wing-on-company-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-old-wing-on-company/huangpu-old-wing-on-company-lod.glb",
+      "web_bytes": 4907868,
+      "web_sha256": "d0e755b1197eb9cb0491c61d0213b6fb9ce40768b3e7d1efcd103e6151982d31",
+      "lod_bytes": 1869448,
+      "lod_sha256": "724965c04dfa61bd3901dc37fa7cb9d0e35fb2df8de3291234e19cbeb23490a8",
+      "triangles": 296412,
+      "lod_triangles": 103692,
+      "individual_page": "old-wing-on-company.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-old-wing-on-company/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.47359053809778,
+          31.237438467873776
+        ],
+        "bearing": 165.57,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.47422021225472,
+              31.236596090084745
+            ],
+            [
+              121.47352247899641,
+              31.2364425806061
+            ],
+            [
+              121.47326870425795,
+              31.23728584830665
+            ],
+            [
+              121.47396643751624,
+              31.237439357785295
+            ],
+            [
+              121.47422021225472,
+              31.236596090084745
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.473576755519,
+              31.23645387277155
+            ],
+            [
+              121.47351801,
+              31.2364767
+            ],
+            [
+              121.47329271,
+              31.23722893
+            ],
+            [
+              121.47332489,
+              31.23727938
+            ],
+            [
+              121.47381842,
+              31.2373757
+            ],
+            [
+              121.4738667,
+              31.23737111
+            ],
+            [
+              121.47393644,
+              31.23734359
+            ],
+            [
+              121.47399008,
+              31.23725645
+            ],
+            [
+              121.47419393,
+              31.23663265
+            ],
+            [
+              121.47416711,
+              31.23658678
+            ],
+            [
+              121.4736068573504,
+              31.23646049552658
+            ],
+            [
+              121.473576755519,
+              31.23645387277155
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "5d94b317-649b-4e66-8805-639274d488c7"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "北立面临南京东路，东北弧角及北面中西段塔分别保留；新永安与跨街桥不并入，平面及塔高为估计。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "5d94b317-649b-4e66-8805-639274d488c7"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "北立面临南京东路，东北弧角及北面中西段塔分别保留；新永安与跨街桥不并入，平面及塔高为估计。；东北弧角入口、二楼／六楼铁栏长廊、圆气窗带及北立面中西段双层塔；尺寸与隐面含估计，窗网和雕饰简化，新永安另列。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 1039,
+        "key": "building:5d94b317-649b-4e66-8805-639274d488c7"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1039,
+          "key": "building:5d94b317-649b-4e66-8805-639274d488c7"
+        }
+      ]
+    },
+    {
+      "id": "huangpu-pacific-hotel",
+      "name": "金门饭店／华安大楼历史主楼外观",
+      "kind": "building",
+      "candidate_id": "huangpu-pacific-hotel",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.46802617428656,
+      "lat": 31.236227780420435,
+      "heading": -35.02,
+      "scale": 1,
+      "height_m": 38.15999984741211,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -21.81999969482422,
+          0.0,
+          -18.81999969482422
+        ],
+        "max": [
+          21.81999969482422,
+          38.15999984741211,
+          19.3700008392334
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-pacific-hotel/huangpu-pacific-hotel-web.glb",
+          "bytes": 1639532,
+          "sha256": "32151de25be02305e9f8e46a35054491fc6430dc6822f9637dbcc986a8a60dad",
+          "triangles": 93184
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-pacific-hotel/huangpu-pacific-hotel-lod.glb",
+          "bytes": 814792,
+          "sha256": "ba36b7e92f57412d4f209c31846f96dfe13c4f96cef261fb643f28c41d9f536e",
+          "triangles": 42984
+        }
+      },
+      "model": "assets/models/candidates/huangpu-pacific-hotel/huangpu-pacific-hotel-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-pacific-hotel/huangpu-pacific-hotel-lod.glb",
+      "web_bytes": 1639532,
+      "web_sha256": "32151de25be02305e9f8e46a35054491fc6430dc6822f9637dbcc986a8a60dad",
+      "lod_bytes": 814792,
+      "lod_sha256": "ba36b7e92f57412d4f209c31846f96dfe13c4f96cef261fb643f28c41d9f536e",
+      "triangles": 93184,
+      "lod_triangles": 42984,
+      "individual_page": "pacific-hotel.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-pacific-hotel/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.46821530687534,
+          31.23599699857088
+        ],
+        "bearing": 324.98,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46833333190699,
+              31.236197367627135
+            ],
+            [
+              121.46795475413316,
+              31.23597054353367
+            ],
+            [
+              121.46772233267306,
+              31.236254146982372
+            ],
+            [
+              121.4681009104469,
+              31.23648097107583
+            ],
+            [
+              121.46833333190699,
+              31.236197367627135
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46785736958331,
+              31.23608827755826
+            ],
+            [
+              121.46772197241575,
+              31.23625469897099
+            ],
+            [
+              121.46810038082153,
+              31.236481421587925
+            ],
+            [
+              121.46817998066764,
+              31.236385584414908
+            ],
+            [
+              121.46832396651962,
+              31.236209891154193
+            ],
+            [
+              121.46794480604798,
+              31.23598158653708
+            ],
+            [
+              121.46785736958331,
+              31.23608827755826
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "ac43e95f-78ed-4252-b0d5-4f6c48669226"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "主楼前立面朝南京西路，沿冻结临街边对齐；保留估计模型未覆盖的后侧底图，北楼不并入。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "ac43e95f-78ed-4252-b0d5-4f6c48669226"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "主楼前立面朝南京西路，沿冻结临街边对齐；保留估计模型未覆盖的后侧底图，北楼不并入。；两侧高翼、退进中央、通高窗带、石栏阳台及双层柱廊圆顶钟塔；尺寸与隐面含估计，北楼未建。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 2028,
+        "key": "building:ac43e95f-78ed-4252-b0d5-4f6c48669226"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 2028,
+          "key": "building:ac43e95f-78ed-4252-b0d5-4f6c48669226"
+        }
+      ]
+    },
+    {
+      "id": "huangpu-park-hotel",
+      "name": "国际饭店历史主楼外观",
+      "kind": "building",
+      "candidate_id": "huangpu-park-hotel",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.46705378359249,
+      "lat": 31.23553481608449,
+      "heading": -40.7,
+      "scale": 1,
+      "height_m": 83.80000305175781,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -15.399999618530273,
+          0.0,
+          -23.399999618530273
+        ],
+        "max": [
+          15.399999618530273,
+          83.80000305175781,
+          24.5
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-park-hotel/huangpu-park-hotel-web.glb",
+          "bytes": 2080276,
+          "sha256": "ea89f54fe20f8a6f416b450bff742550988b199819f6e8647d7cc61c8046ae64",
+          "triangles": 158248
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-park-hotel/huangpu-park-hotel-lod.glb",
+          "bytes": 949364,
+          "sha256": "f0238a2058e58eb5fd0551a4a080989ea7d356e504dd39e283edd4a14bf0d991",
+          "triangles": 66432
+        }
+      },
+      "model": "assets/models/candidates/huangpu-park-hotel/huangpu-park-hotel-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-park-hotel/huangpu-park-hotel-lod.glb",
+      "web_bytes": 2080276,
+      "web_sha256": "ea89f54fe20f8a6f416b450bff742550988b199819f6e8647d7cc61c8046ae64",
+      "lod_bytes": 949364,
+      "lod_sha256": "f0238a2058e58eb5fd0551a4a080989ea7d356e504dd39e283edd4a14bf0d991",
+      "triangles": 158248,
+      "lod_triangles": 66432,
+      "individual_page": "park-hotel.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-park-hotel/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.46730384514797,
+          31.235286235147996
+        ],
+        "bearing": 319.3,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46734696138215,
+              31.23545800058279
+            ],
+            [
+              121.46709877123786,
+              31.235275468434814
+            ],
+            [
+              121.46676814190712,
+              31.235604140103312
+            ],
+            [
+              121.4670163320514,
+              31.235786672251287
+            ],
+            [
+              121.46734696138215,
+              31.23545800058279
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46701007485554,
+              31.235782899810545
+            ],
+            [
+              121.46732211,
+              31.23547219
+            ],
+            [
+              121.46708608,
+              31.23529789
+            ],
+            [
+              121.46677591935999,
+              31.23561068948493
+            ],
+            [
+              121.46701007485554,
+              31.235782899810545
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "64ff37d4-ed69-464b-af4c-3ba55de36d38"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "短边前立面对南京西路，沿南侧街墙落位；模型后部较冻结轮廓短，后侧余体保留。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "64ff37d4-ed69-464b-af4c-3ba55de36d38"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "短边前立面对南京西路，沿南侧街墙落位；模型后部较冻结轮廓短，后侧余体保留。；棕褐高塔与低翼、竖肋、弧角玻璃带及退台塔冠；平面和细部含估计。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 1138,
+        "key": "building:64ff37d4-ed69-464b-af4c-3ba55de36d38"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1138,
+          "key": "building:64ff37d4-ed69-464b-af4c-3ba55de36d38"
+        }
+      ]
+    },
+    {
+      "id": "huangpu-shanghai-race-club-east-building",
+      "name": "上海跑马总会历史东楼与主钟塔",
+      "kind": "building",
+      "candidate_id": "huangpu-shanghai-race-club-east-building",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.466622055,
+      "lat": 31.232632915,
+      "heading": 79.11,
+      "scale": 1,
+      "height_m": 53.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -52.400001525878906,
+          0.0,
+          -13.5
+        ],
+        "max": [
+          52.45000076293945,
+          53.0,
+          13.449999809265137
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-shanghai-race-club-east-building/huangpu-shanghai-race-club-east-building-web.glb",
+          "bytes": 2846200,
+          "sha256": "2231ca80a23aaa7f7fa5b0161e8be6c11ff89e1489a349180f264d7ab8ca0e4a",
+          "triangles": 159396
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-shanghai-race-club-east-building/huangpu-shanghai-race-club-east-building-lod.glb",
+          "bytes": 1042128,
+          "sha256": "7044b30c2c6fa2fca6f6510d760d18829ae406f21f408964a8477267763507a2",
+          "triangles": 50670
+        }
+      },
+      "model": "assets/models/candidates/huangpu-shanghai-race-club-east-building/huangpu-shanghai-race-club-east-building-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-shanghai-race-club-east-building/huangpu-shanghai-race-club-east-building-lod.glb",
+      "web_bytes": 2846200,
+      "web_sha256": "2231ca80a23aaa7f7fa5b0161e8be6c11ff89e1489a349180f264d7ab8ca0e4a",
+      "lod_bytes": 1042128,
+      "lod_sha256": "7044b30c2c6fa2fca6f6510d760d18829ae406f21f408964a8477267763507a2",
+      "triangles": 159396,
+      "lod_triangles": 50670,
+      "individual_page": "race-club.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-shanghai-race-club-east-building/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.46640076453684,
+          31.232596511483095
+        ],
+        "bearing": 79.11,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46658589969614,
+              31.23214551375122
+            ],
+            [
+              121.46637707979856,
+              31.233073611323228
+            ],
+            [
+              121.46665882537248,
+              31.233119960043442
+            ],
+            [
+              121.46686764527004,
+              31.23219186247143
+            ],
+            [
+              121.46658589969614,
+              31.23214551375122
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.46638270163838,
+              31.23304529669141
+            ],
+            [
+              121.46650136,
+              31.23306409
+            ],
+            [
+              121.46651745,
+              31.23296776
+            ],
+            [
+              121.46659791,
+              31.23297694
+            ],
+            [
+              121.46661401,
+              31.23291731
+            ],
+            [
+              121.46670273172617,
+              31.232928147203303
+            ],
+            [
+              121.4668617979287,
+              31.2322211793422
+            ],
+            [
+              121.46657682863045,
+              31.23218250156462
+            ],
+            [
+              121.46638270163838,
+              31.23304529669141
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "9402a15a-c2dc-478e-87b5-3236bc4c0b8b"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "长轴对齐冻结东楼轮廓，主塔置于西北端，柱廊朝西侧院落；西楼及庭院连接体不并入，主体尺度仍为估计。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "9402a15a-c2dc-478e-87b5-3236bc4c0b8b"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "长轴对齐冻结东楼轮廓，主塔置于西北端，柱廊朝西侧院落；西楼及庭院连接体不并入，主体尺度仍为估计。；通高柱廊、矮上廊、红瓦后屋顶与双面钟塔；主体尺度、背面及细部含估计。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 1713,
+        "key": "building:9402a15a-c2dc-478e-87b5-3236bc4c0b8b"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1713,
+          "key": "building:9402a15a-c2dc-478e-87b5-3236bc4c0b8b"
+        }
+      ]
+    },
+    {
+      "id": "huangpu-sincere-company",
+      "name": "先施公司历史主楼与摩星塔外观",
+      "kind": "building",
+      "candidate_id": "huangpu-sincere-company",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.47303927023768,
+      "lat": 31.237694736534294,
+      "heading": -15.11,
+      "scale": 1,
+      "height_m": 51.29999923706055,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -51.04999923706055,
+          0.0,
+          -35.0
+        ],
+        "max": [
+          51.04999923706055,
+          51.29999923706055,
+          35.04999923706055
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-sincere-company/huangpu-sincere-company-web.glb",
+          "bytes": 3647560,
+          "sha256": "f3245a533e16578f9c23e94794b97f4ed19ffa0ddd1a31c408d084f6681dcfd2",
+          "triangles": 216912
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-sincere-company/huangpu-sincere-company-lod.glb",
+          "bytes": 1759244,
+          "sha256": "47b13ac2a75c74ae235979c4a3cf2af3c519b65869c02effff55697392288cc5",
+          "triangles": 96128
+        }
+      },
+      "model": "assets/models/candidates/huangpu-sincere-company/huangpu-sincere-company-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-sincere-company/huangpu-sincere-company-lod.glb",
+      "web_bytes": 3647560,
+      "web_sha256": "f3245a533e16578f9c23e94794b97f4ed19ffa0ddd1a31c408d084f6681dcfd2",
+      "lod_bytes": 1759244,
+      "lod_sha256": "47b13ac2a75c74ae235979c4a3cf2af3c519b65869c02effff55697392288cc5",
+      "triangles": 216912,
+      "lod_triangles": 96128,
+      "individual_page": "sincere-company.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-sincere-company/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.47316812680154,
+          31.237286691668775
+        ],
+        "bearing": 344.89,
+        "overviewZoom": 18.2,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.47365538577856,
+              31.237509165082088
+            ],
+            [
+              121.47261612458927,
+              31.23726923803819
+            ],
+            [
+              121.47242329163049,
+              31.237879874364136
+            ],
+            [
+              121.47346255281978,
+              31.238119801408033
+            ],
+            [
+              121.47365538577856,
+              31.237509165082088
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.47242238990395,
+              31.237880317528127
+            ],
+            [
+              121.4733244498389,
+              31.238088569867223
+            ],
+            [
+              121.47361198068845,
+              31.23764902652108
+            ],
+            [
+              121.4736357987284,
+              31.23757360289796
+            ],
+            [
+              121.47360384,
+              31.23750871
+            ],
+            [
+              121.47262752,
+              31.23729314
+            ],
+            [
+              121.47260559452565,
+              31.237300170867563
+            ],
+            [
+              121.47242238990395,
+              31.237880317528127
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "6312d66f-e7fa-43b1-a1cc-63f920d1f53d"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-map-aligned",
+        "note": "南立面临南京东路、摩星塔在东南角；长轴按冻结同名单体近似对齐，尺度及后部边界未实测。",
+        "surveyed": false,
+        "source_identity": "frozen-name-or-explicit-parent-part",
+        "source_path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+        "source_ids": [
+          "6312d66f-e7fa-43b1-a1cc-63f920d1f53d"
+        ],
+        "heading_convention": "clockwise in ENU; runtime GLTF Y rotation is negative heading",
+        "clip_envelope_tolerance_m": 0.25
+      },
+      "detail_note": "南立面临南京东路、摩星塔在东南角；长轴按冻结同名单体近似对齐，尺度及后部边界未实测。；南侧外廊、两街削角、跨层柱与断山花、铁石阳台及三段摩星塔；尺寸和隐面为估计，东侧北段单独退台。",
+      "complete_photo_reconstruction_accepted": false,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 1115,
+        "key": "building:6312d66f-e7fa-43b1-a1cc-63f920d1f53d"
+      },
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1115,
+          "key": "building:6312d66f-e7fa-43b1-a1cc-63f920d1f53d"
+        }
+      ]
+    },
+    {
+      "id": "xuhui-soong-ching-ling-residence",
+      "name": "上海宋庆龄故居主楼",
+      "kind": "building",
+      "candidate_id": "xuhui-soong-ching-ling-residence",
+      "detail_level": "architectural",
+      "districtId": "310104",
+      "district_name": "徐汇区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.43432,
+      "lat": 31.20602,
+      "heading": 0,
+      "scale": 1,
+      "height_m": 13.279999732971191,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -11.654999732971191,
+          0.0,
+          -9.529999732971191
+        ],
+        "max": [
+          11.654999732971191,
+          13.279999732971191,
+          8.204999923706055
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/xuhui-soong-ching-ling-residence/xuhui-soong-ching-ling-residence-web.glb",
+          "bytes": 5620584,
+          "sha256": "1e11afc7b295466a04c48abe25ee4f5921a81aae8978e6f7128b45cb6583f604",
+          "triangles": 198536
+        },
+        "lod": {
+          "file": "assets/models/candidates/xuhui-soong-ching-ling-residence/xuhui-soong-ching-ling-residence-lod.glb",
+          "bytes": 1686892,
+          "sha256": "246e8bce04b01f45cca87261dec3371170786614b28de1261b89b50bda79ae58",
+          "triangles": 17332
+        }
+      },
+      "model": "assets/models/candidates/xuhui-soong-ching-ling-residence/xuhui-soong-ching-ling-residence-web.glb",
+      "lod_model": "assets/models/candidates/xuhui-soong-ching-ling-residence/xuhui-soong-ching-ling-residence-lod.glb",
+      "web_bytes": 5620584,
+      "web_sha256": "1e11afc7b295466a04c48abe25ee4f5921a81aae8978e6f7128b45cb6583f604",
+      "lod_bytes": 1686892,
+      "lod_sha256": "246e8bce04b01f45cca87261dec3371170786614b28de1261b89b50bda79ae58",
+      "triangles": 198536,
+      "lod_triangles": 17332,
+      "individual_page": "soong-residence.html",
+      "candidate_manifest": "assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json",
+      "navigation": {
+        "listed": false,
+        "walkStart": [
+          121.43432,
+          31.205915
+        ],
+        "bearing": 0,
+        "overviewZoom": 19.5,
+        "walk_status": "suggested-pose-only-not-reviewed-for-city-walking"
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.43444430070149,
+              31.20594467626411
+            ],
+            [
+              121.43419569929851,
+              31.20594467626411
+            ],
+            [
+              121.43419569929851,
+              31.20610722641169
+            ],
+            [
+              121.43444430070149,
+              31.20610722641169
+            ],
+            [
+              121.43444430070149,
+              31.20594467626411
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "approximate-site-display",
+        "note": "淮海中路1843号已核院落内的主楼位置示意；北部院内落位及尺度为估计，南阳台朝向依据方志。主楼源身份尚未确认，游客中心和其余底图全部保留。",
+        "surveyed": false,
+        "source_identity": "unconfirmed-no-source-removal",
+        "source_path": "source/precise/xuhui-soong-ching-ling-residence/map-context.json"
+      },
+      "detail_note": "淮海中路1843号已核院落内的主楼位置示意；北部院内落位及尺度为估计，南阳台朝向依据方志。主楼源身份尚未确认，游客中心和其余底图全部保留。；曲面瓦屋顶、老虎窗、曲线阳台与入口门廊。",
+      "complete_photo_reconstruction_accepted": false
+    }
+  ]
+}

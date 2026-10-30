@@ -1,0 +1,823 @@
+{
+  "schema": "urban-site-placement-review-v1",
+  "reviewed_utc": "2026-10-30T16:46:48.455648+00:00",
+  "scope": "Approximate global display of two previously authored house assets; no owner identification or measured facade alignment.",
+  "source_contexts": [
+    {
+      "path": "projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/map-context.json",
+      "bytes": 13690,
+      "sha256": "3cd2327efcd7ae92a50632d1a1a7900fdc128546519b45cb2150095974373361"
+    },
+    {
+      "path": "projects/shanghai/source/precise/hongkou-luxun-residence-facade/map-context.json",
+      "bytes": 2349,
+      "sha256": "512b9a772ee3367fb1dd19e8fd6c4f2cc8102ee70d440ceb1e1cb7b1f4ab6655"
+    }
+  ],
+  "current_luxun_osm_check": {
+    "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=121.4793,31.2679,121.4804,31.2686",
+    "bytes": 17479,
+    "sha256": "93644fa46eb2cb4d9a3835cea0d7ee50f34a1020b7a5b5b597d3701c177eadcd",
+    "license": "© OpenStreetMap contributors, ODbL-1.0",
+    "node": {
+      "type": "node",
+      "id": 9907365281,
+      "version": 2,
+      "lon": 121.4799293,
+      "lat": 31.2682312,
+      "tags": {
+        "name": "鲁迅故居",
+        "name:ru": "Бывшая резиденция Лу Синя",
+        "tourism": "attraction",
+        "wikidata": "Q10868112",
+        "wikipedia": "zh:上海鲁迅故居"
+      }
+    },
+    "previously_rejected_way": {
+      "id": 1349147490,
+      "address": "34-36",
+      "reason": "The earlier Wikipedia coordinate lies in a differently numbered row-house polygon; not accepted as No9 owner."
+    },
+    "conclusion": "The named POI independently agrees with the prior map-context point. It does not prove a facade line or individual building ownership."
+  },
+  "soong": {
+    "anchor": [
+      121.43432,
+      31.20602
+    ],
+    "site_way": 490214455,
+    "site_address": "1843",
+    "whole_authored_envelope_within_documented_site_polygon": true,
+    "source_owner_confirmed": false,
+    "all_baseline_sources_preserved": true,
+    "placement_method": "院内北部近似位置；南阳台朝向依据既存方志，坐标非主楼测绘定位。",
+    "neighbor_intersections": []
+  },
+  "luxun": {
+    "anchor": [
+      121.4799293,
+      31.2682312
+    ],
+    "source_owner_confirmed": false,
+    "all_baseline_sources_preserved": true,
+    "placement_method": "保持已命名POI附近示意位置，不以底图空白为理由任意挪入街道。朝向与实物门址线尚未测绘。",
+    "neighbor_intersections": [
+      {
+        "key": "building:101cc9a4-0eda-450b-9b46-25f184f971e0",
+        "local_id": 184,
+        "named_owner": false,
+        "model_intersection_m2": 1.3519100131974917,
+        "remaining_intersection_m2": 1.3519100131974917,
+        "walk_clearance_m": 3.2503674720398927
+      },
+      {
+        "key": "building:567c4696-6b24-4eb6-a0fd-0c6e2d5f52d9",
+        "local_id": 1143,
+        "named_owner": false,
+        "model_intersection_m2": 4.1597477323710175,
+        "remaining_intersection_m2": 4.1597477323710175,
+        "walk_clearance_m": 2.0193281914220775
+      }
+    ],
+    "visual_followup_required": "部分外包与两栋未确认源重叠；实际全局页面必须核查立面可见性，不能称原址精确替换。"
+  },
+  "all_ten_context_checks": [
+    {
+      "id": "hongkou-broadway-mansions",
+      "owners": [
+        {
+          "macro_id": "14-13720-6693",
+          "feature_local_id": 3245,
+          "key": "building_part:582fd5f8-2a90-3eba-9fce-81b358492d0b",
+          "height": 30.1
+        },
+        {
+          "macro_id": "14-13720-6693",
+          "feature_local_id": 3246,
+          "key": "building_part:59962d89-0a7a-3c8b-823f-8f12a3d2c3fa",
+          "height": 60.800000000000004
+        }
+      ],
+      "walk_min_clearance_m": 5.135367944398626,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:066e5bd0-7e58-4487-a13b-04150d789b33",
+          "local_id": 76,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 44.142842260703745
+        },
+        {
+          "key": "building:0d9e6667-bbab-4271-a350-984748d1c812",
+          "local_id": 177,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 61.641528858460134
+        },
+        {
+          "key": "building:10b75016-c407-4aa4-8fd3-d4fef5b349b3",
+          "local_id": 220,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 62.11204265406543
+        },
+        {
+          "key": "building:5154f5a0-6b56-46bd-b988-9990f538d096",
+          "local_id": 1036,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 55.80580784364365
+        },
+        {
+          "key": "building:b83de9f2-2818-4d9f-9f40-7afe907611a5",
+          "local_id": 2357,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 68.9296246620908
+        },
+        {
+          "key": "building:c9942bce-3773-4003-9bed-70b57b3f13d9",
+          "local_id": 2555,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 69.00380916129393
+        },
+        {
+          "key": "building:f8404d77-e4e7-46b7-a9a5-027822d634fa",
+          "local_id": 3150,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 5.135367944398626
+        },
+        {
+          "key": "building_part:582fd5f8-2a90-3eba-9fce-81b358492d0b",
+          "local_id": 3245,
+          "named_owner": true,
+          "model_intersection_m2": 1327.6629492975019,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": null
+        },
+        {
+          "key": "building_part:59962d89-0a7a-3c8b-823f-8f12a3d2c3fa",
+          "local_id": 3246,
+          "named_owner": true,
+          "model_intersection_m2": 2070.6638758373915,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": null
+        }
+      ]
+    },
+    {
+      "id": "hongkou-russian-consulate",
+      "owners": [
+        {
+          "macro_id": "14-13720-6693",
+          "feature_local_id": 935,
+          "key": "building:49f3a80d-d5c3-421a-904a-e17974063f73",
+          "height": 16.0
+        }
+      ],
+      "walk_min_clearance_m": 27.009669372815818,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:49f3a80d-d5c3-421a-904a-e17974063f73",
+          "local_id": 935,
+          "named_owner": true,
+          "model_intersection_m2": 894.2875100250477,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": null
+        },
+        {
+          "key": "building:5154f5a0-6b56-46bd-b988-9990f538d096",
+          "local_id": 1036,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 58.370861273763786
+        },
+        {
+          "key": "building:e3ed7f6e-aff7-4cb2-b022-fd292ec0a204",
+          "local_id": 2877,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 27.009669372815818
+        }
+      ]
+    },
+    {
+      "id": "huangpu-park-hotel",
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1138,
+          "key": "building:64ff37d4-ed69-464b-af4c-3ba55de36d38",
+          "height": 33.1
+        }
+      ],
+      "walk_min_clearance_m": 20.773274332861973,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:3f67da59-78dd-4b9e-aab9-a6eda04ca9b1",
+          "local_id": 691,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 30.729477208488763
+        },
+        {
+          "key": "building:546dff0e-ef30-480f-ae72-eaa8cc001839",
+          "local_id": 936,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 88.45666952762106
+        },
+        {
+          "key": "building:64ff37d4-ed69-464b-af4c-3ba55de36d38",
+          "local_id": 1138,
+          "named_owner": true,
+          "model_intersection_m2": 1340.3254217935087,
+          "remaining_intersection_m2": 4.1808334572124295e-10,
+          "walk_clearance_m": 20.773274332861973
+        },
+        {
+          "key": "building:f2867bbd-6ef8-46f8-aeb8-89243c9a5088",
+          "local_id": 2846,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 28.062533354376942
+        },
+        {
+          "key": "building:f5f7e9db-7bb2-4289-8b9e-d56171fe9bee",
+          "local_id": 2893,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 47.216335839293784
+        }
+      ]
+    },
+    {
+      "id": "huangpu-shanghai-race-club-east-building",
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1713,
+          "key": "building:9402a15a-c2dc-478e-87b5-3236bc4c0b8b",
+          "height": 23.6
+        }
+      ],
+      "walk_min_clearance_m": 5.172337390239592,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:55010d6f-5088-4b71-9596-88c06348a03d",
+          "local_id": 943,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 59.31006214612026
+        },
+        {
+          "key": "building:9402a15a-c2dc-478e-87b5-3236bc4c0b8b",
+          "local_id": 1713,
+          "named_owner": true,
+          "model_intersection_m2": 2409.1438989688186,
+          "remaining_intersection_m2": 4.4158898759860676e-10,
+          "walk_clearance_m": 5.172337390239592
+        },
+        {
+          "key": "building:d1c2cffc-3c79-434d-a040-3ead9c10ebe2",
+          "local_id": 2457,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 87.73585542555917
+        },
+        {
+          "key": "building:dbc0b887-65cf-48e9-b5f1-1b147a5d92c4",
+          "local_id": 2572,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 40.672644123003714
+        },
+        {
+          "key": "building:e2d53cdc-3b40-4670-a9a4-bcc1d7d2c0ea",
+          "local_id": 2672,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 26.963338782455335
+        }
+      ]
+    },
+    {
+      "id": "huangpu-grand-theatre",
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 2155,
+          "key": "building:b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d",
+          "height": 27.5
+        }
+      ],
+      "walk_min_clearance_m": 0.0,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:3f67da59-78dd-4b9e-aab9-a6eda04ca9b1",
+          "local_id": 691,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 0.0
+        },
+        {
+          "key": "building:b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d",
+          "local_id": 2155,
+          "named_owner": true,
+          "model_intersection_m2": 152.6400257757207,
+          "remaining_intersection_m2": 2.2624675466431654e-09,
+          "walk_clearance_m": 14.913635012146743
+        },
+        {
+          "key": "building:f5f7e9db-7bb2-4289-8b9e-d56171fe9bee",
+          "local_id": 2893,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 11.169592262086619
+        }
+      ]
+    },
+    {
+      "id": "huangpu-pacific-hotel",
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 2028,
+          "key": "building:ac43e95f-78ed-4252-b0d5-4f6c48669226",
+          "height": 35.15
+        }
+      ],
+      "walk_min_clearance_m": 23.47003406479615,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:214e8ca0-7640-48d4-ba0a-78d10d512e3c",
+          "local_id": 369,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 26.92099012235833
+        },
+        {
+          "key": "building:a475c094-a26a-47a8-8b70-65f87584653f",
+          "local_id": 1936,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 64.31852713069203
+        },
+        {
+          "key": "building:ac43e95f-78ed-4252-b0d5-4f6c48669226",
+          "local_id": 2028,
+          "named_owner": true,
+          "model_intersection_m2": 1604.5690379783919,
+          "remaining_intersection_m2": 1.021094320208249e-11,
+          "walk_clearance_m": 23.47003406479615
+        },
+        {
+          "key": "building:ca2aea97-ceb5-470b-bec7-8719e95226ed",
+          "local_id": 2365,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 27.54808702394423
+        }
+      ]
+    },
+    {
+      "id": "huangpu-sincere-company",
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1115,
+          "key": "building:6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+          "height": 18.392
+        }
+      ],
+      "walk_min_clearance_m": 9.98359600515176,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:43a5f52d-bd8b-4cdd-acaa-ff392fb218d5",
+          "local_id": 751,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 63.08477278125931
+        },
+        {
+          "key": "building:4aa0448c-fc0f-4be5-9ba6-63b894f4aeb4",
+          "local_id": 831,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 114.92718348271968
+        },
+        {
+          "key": "building:5d94b317-649b-4e66-8805-639274d488c7",
+          "local_id": 1039,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 13.48907811836331
+        },
+        {
+          "key": "building:6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+          "local_id": 1115,
+          "named_owner": true,
+          "model_intersection_m2": 6623.588857798056,
+          "remaining_intersection_m2": 2.8453958078600294e-09,
+          "walk_clearance_m": 48.277488026896464
+        },
+        {
+          "key": "building:7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+          "local_id": 1453,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 62.201778563042424
+        },
+        {
+          "key": "building:99144b03-115b-4673-884d-d1284d185031",
+          "local_id": 1775,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 68.33265137229104
+        },
+        {
+          "key": "building:9b7d539c-a54e-4276-829c-f631049f778a",
+          "local_id": 1807,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 9.98359600515176
+        },
+        {
+          "key": "building:a52f9f58-c444-42c5-9139-9bd8b4c4e83d",
+          "local_id": 1948,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 90.00999006678383
+        },
+        {
+          "key": "building:d56eb4ac-8ed7-4a03-9938-fe53aea31281",
+          "local_id": 2505,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 120.53483635355114
+        },
+        {
+          "key": "building:df8fa497-1232-4612-a85d-81cffbbcb81f",
+          "local_id": 2627,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 98.81871368917012
+        }
+      ]
+    },
+    {
+      "id": "huangpu-old-wing-on-company",
+      "owners": [
+        {
+          "macro_id": "14-13720-6694",
+          "feature_local_id": 1039,
+          "key": "building:5d94b317-649b-4e66-8805-639274d488c7",
+          "height": 31.45
+        }
+      ],
+      "walk_min_clearance_m": 7.2543910283595885,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:2f5f21d5-756c-44fa-accb-d5579f25f53b",
+          "local_id": 498,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 128.5385646913779
+        },
+        {
+          "key": "building:3bf13caf-c350-4f5c-92fd-a7e5b45d60a4",
+          "local_id": 641,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 72.97001588001973
+        },
+        {
+          "key": "building:5d94b317-649b-4e66-8805-639274d488c7",
+          "local_id": 1039,
+          "named_owner": true,
+          "model_intersection_m2": 6095.1931311724475,
+          "remaining_intersection_m2": 1.375646263568342e-10,
+          "walk_clearance_m": 105.66675042864155
+        },
+        {
+          "key": "building:6219da86-be80-449f-af83-4ea6d17d1ff9",
+          "local_id": 1094,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 72.97001588001973
+        },
+        {
+          "key": "building:62a1bf1d-66ef-404e-ac1b-5d92d22fe43c",
+          "local_id": 1105,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 125.69974528871357
+        },
+        {
+          "key": "building:6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+          "local_id": 1115,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 7.2543910283595885
+        },
+        {
+          "key": "building:708d0e95-d551-414d-a3be-897a9fe2fb6b",
+          "local_id": 1275,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 66.88776496869725
+        },
+        {
+          "key": "building:99144b03-115b-4673-884d-d1284d185031",
+          "local_id": 1775,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 28.05756324796344
+        },
+        {
+          "key": "building:9b7d539c-a54e-4276-829c-f631049f778a",
+          "local_id": 1807,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 45.4702160962542
+        },
+        {
+          "key": "building:a3f29d7e-0b6f-47e6-b401-28aa8be7d811",
+          "local_id": 1929,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 51.71763760993299
+        },
+        {
+          "key": "building:a814da5a-aa27-4e84-8a08-c772c404a893",
+          "local_id": 1985,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 131.72989759165796
+        }
+      ]
+    },
+    {
+      "id": "xuhui-soong-ching-ling-residence",
+      "owners": [],
+      "walk_min_clearance_m": 6.011302452860277,
+      "overlapping_unconfirmed_sources": [],
+      "near_sources": [
+        {
+          "key": "building:04bce39b-f451-42de-b1d1-76a9d52bc68d",
+          "local_id": 75,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 44.00598902223422
+        },
+        {
+          "key": "building:0c6d22c2-7629-42e7-8240-8a4b4208987e",
+          "local_id": 182,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 6.011302452860277
+        },
+        {
+          "key": "building:56327332-d844-479f-8247-173f768d963b",
+          "local_id": 1356,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 16.323837312515206
+        },
+        {
+          "key": "building:5b31fb5d-9331-42d5-94e0-3e138e6ddd25",
+          "local_id": 1446,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 23.55778880551629
+        },
+        {
+          "key": "building:665cfb60-871e-43da-8fe2-dc6a5f4d9766",
+          "local_id": 1625,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 27.838275637211115
+        },
+        {
+          "key": "building:cbd4ed28-19f3-422b-a83f-86951afceb1f",
+          "local_id": 3290,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 32.434021582313434
+        }
+      ]
+    },
+    {
+      "id": "hongkou-luxun-residence-facade",
+      "owners": [],
+      "walk_min_clearance_m": 2.0193281914220775,
+      "overlapping_unconfirmed_sources": [
+        {
+          "key": "building:101cc9a4-0eda-450b-9b46-25f184f971e0",
+          "local_id": 184,
+          "named_owner": false,
+          "model_intersection_m2": 1.3519100131974917,
+          "remaining_intersection_m2": 1.3519100131974917,
+          "walk_clearance_m": 3.2503674720398927
+        },
+        {
+          "key": "building:567c4696-6b24-4eb6-a0fd-0c6e2d5f52d9",
+          "local_id": 1143,
+          "named_owner": false,
+          "model_intersection_m2": 4.1597477323710175,
+          "remaining_intersection_m2": 4.1597477323710175,
+          "walk_clearance_m": 2.0193281914220775
+        }
+      ],
+      "near_sources": [
+        {
+          "key": "building:101cc9a4-0eda-450b-9b46-25f184f971e0",
+          "local_id": 184,
+          "named_owner": false,
+          "model_intersection_m2": 1.3519100131974917,
+          "remaining_intersection_m2": 1.3519100131974917,
+          "walk_clearance_m": 3.2503674720398927
+        },
+        {
+          "key": "building:3a29812a-7c1d-4b1b-8d6b-b7d75b0a922a",
+          "local_id": 728,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 26.21157560888737
+        },
+        {
+          "key": "building:3f623698-0dab-4b54-a8a1-eb9b50b3eea0",
+          "local_id": 810,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 3.7561978965423406
+        },
+        {
+          "key": "building:49715485-7334-4544-962f-12b23fd5e491",
+          "local_id": 958,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 20.308810282988173
+        },
+        {
+          "key": "building:532b5732-e4eb-4f2f-bd09-5face464edb6",
+          "local_id": 1097,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 24.703676685045043
+        },
+        {
+          "key": "building:55d0f41a-d5e6-4324-91ad-2496991c9374",
+          "local_id": 1135,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 15.300586431949702
+        },
+        {
+          "key": "building:567c4696-6b24-4eb6-a0fd-0c6e2d5f52d9",
+          "local_id": 1143,
+          "named_owner": false,
+          "model_intersection_m2": 4.1597477323710175,
+          "remaining_intersection_m2": 4.1597477323710175,
+          "walk_clearance_m": 2.0193281914220775
+        },
+        {
+          "key": "building:6b3109a9-473b-46d6-aab3-48d13ce58246",
+          "local_id": 1419,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 27.33311484937404
+        },
+        {
+          "key": "building:a9afeaa5-947a-469f-b843-a11f783e8daf",
+          "local_id": 2175,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 21.869057337051988
+        },
+        {
+          "key": "building:b06c09c0-2ce2-4164-83bd-b5ab03715952",
+          "local_id": 2257,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 12.11192956587147
+        },
+        {
+          "key": "building:d59a846b-3cd6-4ab0-9ad4-7b5a492d7a3a",
+          "local_id": 2730,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 26.202700980177383
+        },
+        {
+          "key": "building:d8749a5f-4c95-424e-9611-0c6726a607b1",
+          "local_id": 2768,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 24.90525599198275
+        },
+        {
+          "key": "building:db8719ac-56a6-48ee-9724-1ce0c7dce371",
+          "local_id": 2808,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 28.244107743884268
+        },
+        {
+          "key": "building:dc0442fe-22ff-4a20-b4b1-e5c54f6cc370",
+          "local_id": 2814,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 25.218168005942967
+        },
+        {
+          "key": "building:e3c3973f-30c4-484b-969a-a486a65a5162",
+          "local_id": 2919,
+          "named_owner": false,
+          "model_intersection_m2": 0.0,
+          "remaining_intersection_m2": 0.0,
+          "walk_clearance_m": 3.039093443572631
+        }
+      ]
+    }
+  ],
+  "browser_validation_included": false,
+  "navigation_walk_enabled": false,
+  "private_context_plot": {
+    "file": "context.png",
+    "bytes": 601901,
+    "sha256": "b469f13542790cfd5da6ad9ef782bd53d100954d5d4977c4441e75b62c7199e4",
+    "actually_viewed_by_agent": true,
+    "scope": "Generated plan plot only; not a site photograph or aerial survey",
+    "redistributed": false
+  }
+}

@@ -1,0 +1,72 @@
+/* Actual directory DOM, links, search, keyboard and mobile checks. MIT. */
+const {chromium}=require('playwright');
+const fs=require('fs');
+const path=require('path');
+const assert=require('node:assert/strict');
+const {createHash}=require('crypto');
+const root=path.resolve(__dirname,'../../..');
+const out=process.env.QA_OUTPUT_DIR||__dirname;
+const base=process.env.QA_BASE_URL||'http://127.0.0.1:8782/';
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const binding=relative=>{const b=fs.readFileSync(path.join(root,relative));return {file:relative,bytes:b.length,sha256:sha(b)};};
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+ try{
+  fs.mkdirSync(out,{recursive:true});
+  const integrations=JSON.parse(fs.readFileSync(path.join(root,'data/candidate-city-integrations.json'))).models;
+  const old=JSON.parse(fs.readFileSync(path.join(root,'data/landmarks.json')));
+  const expectedIds=[...old,...integrations].map(x=>x.id).sort();
+  const errors=[];
+  const page=await browser.newPage({viewport:{width:1440,height:1000}});
+  page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+  await page.goto(base+'landmarks.html',{waitUntil:'networkidle'});
+  const ids=await page.locator('[data-landmark]').evaluateAll(els=>els.map(e=>e.dataset.landmark).sort());
+  assert.deepEqual(ids,expectedIds);
+  assert.equal(ids.length,70);
+  assert.equal(await page.locator('section[id^="district-"]').count(),16);
+  assert.equal(await page.locator('[data-landmark] a[href$="&mode=overview"]').count(),60);
+  for(const item of integrations){
+   const card=page.locator(`[data-landmark="${item.id}"]`);
+   assert.equal(await card.locator('h3 a').getAttribute('href'),`index.html#landmark=${item.id}&mode=overview`);
+   if(!item.navigation?.listed)assert.equal(await card.locator('a[href$="&mode=walk"]').count(),0);
+  }
+  assert.equal(await page.locator('[data-landmark] .card-foot a').filter({hasText:'单体预览'}).count(),32);
+  const field=page.locator('#landmark-search');
+  await field.fill('崇明');
+  assert.equal(await page.locator('[data-landmark]:visible').count(),20);
+  assert.equal(await page.locator('.landmark-group:visible').count(),1);
+  await field.fill('老永安');
+  assert.equal(await page.locator('[data-landmark]:visible').count(),1);
+  await field.fill('没有对应的建筑98765');
+  assert.equal(await page.locator('[data-landmark]:visible').count(),0);
+  assert.equal(await page.locator('.no-results').isVisible(),true);
+  await page.locator('nav a[href="#district-310101"]').click();
+  assert.equal(await field.inputValue(),'');
+  assert.equal(await page.locator('[data-landmark]:visible').count(),70);
+  await page.goto(base+'landmarks.html',{waitUntil:'networkidle'});
+  await page.keyboard.press('Tab');
+  assert.equal(await page.evaluate(()=>document.activeElement.className),'skip-link');
+  await page.screenshot({path:path.join(out,'directory-desktop.png')});
+  await page.locator('#building-huangpu-old-wing-on-company').scrollIntoViewIfNeeded();
+  await page.screenshot({path:path.join(out,'directory-global-links.png')});
+  const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  mobile.on('pageerror',e=>errors.push(e.message));
+  await mobile.goto(base+'landmarks.html',{waitUntil:'networkidle'});
+  const overflow=await mobile.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth}));
+  assert.equal(overflow.scrollWidth,overflow.clientWidth);
+  await mobile.locator('#landmark-search').fill('崇明');
+  assert.equal(await mobile.locator('[data-landmark]:visible').count(),20);
+  await mobile.locator('#district-310151').scrollIntoViewIfNeeded();
+  await mobile.screenshot({path:path.join(out,'directory-mobile.png')});
+  const nojs=await browser.newPage({javaScriptEnabled:false});
+  await nojs.goto(base+'landmarks.html',{waitUntil:'networkidle'});
+  assert.equal(await nojs.locator('[data-landmark] h3 a').count(),70);
+  assert.equal(await nojs.locator('.directory-search').isVisible(),false);
+  assert.deepEqual(errors,[]);
+  const screenshots=['directory-desktop.png','directory-global-links.png','directory-mobile.png'].map(file=>{const b=fs.readFileSync(path.join(out,file));return {file,bytes:b.length,sha256:sha(b)};});
+  const report={schema:'global-model-directory-browser-v1',passed:true,base_url:base,scope:'Local directory links, grouping, search, keyboard focus and mobile layout; does not assert city model WebGL rendering or CDN performance.',counts:{global_model_cards:70,district_groups:16,new_overview_cards:integrations.length,standalone_preview_links:32,surface_cards:1},checks:{all_ids_exact:true,all_new_primary_links_overview:true,unlisted_candidates_have_no_walk_link:true,chongming_search_visible:20,old_wing_on_search_visible:1,unknown_search_empty:true,group_link_resets_search:true,keyboard_skip_link:true,no_javascript_links_present:true,mobile_no_horizontal_overflow:overflow},errors,bindings:['data/audit/global-model-integration-v1/qa-directory-layout.cjs','landmarks.html','src/landmark-directory.js','src/landmark-directory.css','tools/build_landmark_directory.py','tools/sync_readme_districts.py','data/landmarks.json','data/candidate-city-integrations.json'].map(binding),screenshots};
+  fs.writeFileSync(path.join(out,'directory.json'),JSON.stringify(report,null,2)+'\n');
+  process.stdout.write(JSON.stringify({passed:true,counts:report.counts,errors})+'\n');
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

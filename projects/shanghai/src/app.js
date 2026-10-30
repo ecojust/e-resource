@@ -4,6 +4,8 @@ import { districtAt } from './geography.js';
 import { placeDescription, walkingPose } from './precise-registration-ui.js';
 import { readVerifiedBytes } from './ordinary-building-catalog.js';
 import { resolveNavigationRoute } from './landmark-navigation.js';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js';
+import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
@@ -25,18 +27,24 @@ function togglePanel(force) {
   document.body.classList.toggle('panel-collapsed',!panelOpen);
   $('explore-panel').inert=!panelOpen;
   $('panel-toggle').setAttribute('aria-expanded',String(panelOpen));
+  scene?.refreshBuildingBeacons?.();
 }
 function updateLocation(place) {
   const district=districts.find(d=>d.id===(place.districtId||place.id));
   $('location-name').textContent=place.name;
-  $('location-district').textContent=(district?.name||'上海市')+(place.kind==='building'?' · 逐栋复原':place.height_m?' · 城市地标':' · 城市探索');
-  $('start-walk').innerHTML=mode==='walk'?'正在漫游 <span>↗</span>':'进入漫游 <span>↗</span>';
+  $('location-district').textContent=(district?.name||'上海市')+(place.city_integration?' · 近似定位 · 外观模型':place.kind==='building'?' · 逐栋复原':place.height_m?' · 城市地标':' · 城市探索');
+  const overviewOnly=place.kind==='building'&&!walkingPose(place);
+  $('start-walk').disabled=overviewOnly;$('walk-mode').disabled=overviewOnly;
+  $('start-walk').innerHTML=overviewOnly?'当前建筑仅支持俯瞰':mode==='walk'?'正在漫游 <span>↗</span>':'进入漫游 <span>↗</span>';
   activeDistrict=district?.id||activeDistrict;
-  $('reference-button').hidden=!place.reference;
+  $('reference-button').hidden=!place.reference&&!place.city_integration;
+  $('reference-button').textContent=place.city_integration?'查看模型范围说明 ↗':'查看实景参考 ↗';
   districtPaths.forEach((p,id)=>p.classList.toggle('active',id===activeDistrict));
   renderPlaces();
 }
 function syncMode(next, announce=true) {
+  if(next==='walk'&&activePlace.kind==='building'&&!walkingPose(activePlace))next='overview';
+  if(next==='walk')scene?.map.jumpTo(OVERVIEW_CAMERA_RESET);
   mode=next;
   if(location.hash){const hash=new URLSearchParams(location.hash.slice(1));hash.set('mode',next);history.replaceState(null,'',`#${hash}`);}
   if(scene?.map.setVerticalFieldOfView)scene.map.setVerticalFieldOfView(next==='walk'?64:36.87);
@@ -61,6 +69,21 @@ function syncMode(next, announce=true) {
 function showOverview(place=activePlace) {
   if(!scene) return;
   syncMode('overview',false);
+  if(place.city_integration){
+    const canvas=scene.map.getCanvas(),width=canvas.clientWidth,height=canvas.clientHeight;
+    const panel=$('explore-panel').getBoundingClientRect(),card=$('location-card').getBoundingClientRect();
+    const legend=$('building-beacon-legend')?.getBoundingClientRect(),tools=document.querySelector('.map-tools')?.getBoundingClientRect();
+    const camera=candidateOverviewCamera(place,{width,height,insets:{left:!mobile()&&panelOpen?panel.right+16:16,
+      right:Math.max(64,tools?width-tools.left+8:0),top:Math.max(mobile()?182:154,(legend?.bottom||0)+8),bottom:Math.max(mobile()?174:152,height-card.top+8)}});
+    if(camera){
+      // Keep the fitted half-height target: MapLibre otherwise resets elevation
+      // to ground on its next render even when the map has no terrain source.
+      scene.map.setCenterClampedToGround(false);
+      scene.map.jumpTo(camera);scene.refreshBuildingBeacons();return;
+    }
+  }
+  scene.map.setCenterClampedToGround(true);
+  scene.map.jumpTo(OVERVIEW_CAMERA_RESET);
   const center=place.lng?[place.lng,place.lat]:(place.walkStart||place.center);
   scene.map.flyTo({center,zoom:place.overviewZoom??(place.custom?16.4:place.id==='bund'?17.3:place.height_m?16.4:14.8),pitch:60,bearing:place.bearing??35,duration:1000,essential:true});
 }
@@ -71,7 +94,12 @@ async function selectPlace(place, {mode: requestedMode} = {}) {
   updateLocation(place);
   // Central guard also covers reset-place and programmatic selections.
   const pose=walkingPose(place);
-  if(!pose){showOverview({...place,overviewZoom:place.overviewZoom??18.2});return;}
+  if(!pose){
+    // A selected approximate placement is still a shareable global destination.
+    if(place.city_integration)history.replaceState(null,'',`#landmark=${encodeURIComponent(place.id)}&mode=overview`);
+    if(mobile())togglePanel(false);
+    showOverview({...place,overviewZoom:place.overviewZoom??18.2});return;
+  }
   const {lng,lat}=pose;
   scene.map?.stop();
   controller.teleport(pose);
@@ -157,15 +185,20 @@ function drawMiniMap() {
   const point=document.createElementNS('http://www.w3.org/2000/svg','circle');point.id='mini-player';point.setAttribute('r','2.6');point.setAttribute('class','mini-position');svg.append(point);
 }
 function updateHud(state) {
-  $('coordinate-readout').textContent=`${state.lat.toFixed(5)}° N · ${state.lng.toFixed(5)}° E`;
+  const position=mode==='overview'&&scene?scene.map.getCenter():state;
+  $('coordinate-readout').textContent=`${position.lat.toFixed(5)}° N · ${position.lng.toFixed(5)}° E`;
   $('distance-readout').textContent=Math.round(state.distance).toLocaleString('zh-CN');
-  const point=$('mini-player');if(point){const[x,y]=miniProject(state.lng,state.lat);point.setAttribute('cx',x);point.setAttribute('cy',y);}
+  const point=$('mini-player');if(point){const[x,y]=miniProject(position.lng,position.lat);point.setAttribute('cx',x);point.setAttribute('cy',y);}
   $('compass-needle').style.transform=`rotate(${-(scene?.map.getBearing()||0)}deg)`;
 }
 function installUi() {
   $('panel-toggle').addEventListener('click',()=>togglePanel());
   const showInfo=()=>{
     const reference=activePlace.reference;
+    let placementNote=$('candidate-placement-note');
+    if(!placementNote){placementNote=document.createElement('p');placementNote.id='candidate-placement-note';$('building-reference').before(placementNote);}
+    placementNote.hidden=!activePlace.city_integration;
+    placementNote.textContent=activePlace.city_integration?`${activePlace.name}：近似定位的外观模型。${activePlace.placement.note||'尺寸、朝向及未见细节含估计。'} ${activePlace.accuracy_scope||''}`:'';
     $('building-reference').hidden=!reference;
     if(reference){
       $('reference-title').textContent=activePlace.name;
@@ -194,6 +227,8 @@ function installUi() {
   $('zoom-out').addEventListener('click',()=>{if(mode==='walk')controller?._wheel({deltaY:160,preventDefault(){}});else scene?.map.zoomOut({duration:300});});
   $('fit-city').addEventListener('click',()=>{
     syncMode('overview',false);
+    scene?.map.setCenterClampedToGround(true);
+    scene?.map.jumpTo(OVERVIEW_CAMERA_RESET);
     scene?.map.fitBounds([[120.85,30.65],[122.05,31.90]],{padding:mobile()?60:{left:360,right:90,top:120,bottom:100},bearing:0,pitch:0,duration:1400});
     toast('上海全市 16 个区，选择区域即可继续探索');
   });
@@ -215,8 +250,13 @@ async function main(){
   if(location.protocol==='file:') return;
   installUi();loadingProgress(18);
   try{
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();})));
+    let candidateCatalogError=null;
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+      if(name!=='data/candidate-city-integrations.json')throw error;
+      candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
+    })));
     districts=responses[0].districts.map(d=>({...d,id:String(d.id)}));boundaries=responses[1];landmarks=responses[2];
+    try{landmarks=mergeCandidateCityModels(landmarks,responses[5]);}catch(error){candidateCatalogError=error;}
     const initialRoute=currentRoute();
     activePlace=initialRoute.place||BUND;
     const initialPose=walkingPose(activePlace);
@@ -233,6 +273,8 @@ async function main(){
       },
       onLoadError:error=>{console.warn('[Shanghai map]',error);$('live-status').textContent='地图连接稍慢';}});
     scene.map.dragRotate.enable();scene.setDistricts(boundaries);scene.setDistrictVisibility(true);
+    scene.setBuildingBeacons(landmarks,{onSelect:place=>selectPlace(place,{mode:'overview'})});
+    scene.map.on('move',()=>{if(mode==='overview')updateHud({distance:controller?.distance||0});});
     scene.map.doubleClickZoom.disable();
     scene.map.on('dblclick',event=>{
       if(mode!=='overview')return;
@@ -271,6 +313,7 @@ async function main(){
     // Invalid incoming links remain visible until the scene is usable.
     const finalRoute=currentRoute();
     if(finalRoute.error) toast(finalRoute.error,5000);
+    if(candidateCatalogError){console.warn('[Shanghai candidate catalogue]',candidateCatalogError);toast('新增模型目录暂不可用，现有建筑及灯牌仍可浏览。',6000);}
   }catch(error){
     console.error(error);$('loading-message').textContent=`场景暂时未能加载：${error.message}`;$('retry-button').hidden=false;
     $('live-status').textContent='连接需要重试';loadingProgress(0);

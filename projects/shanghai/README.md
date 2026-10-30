@@ -2,21 +2,21 @@
 
 [徐家汇藏书楼南楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zikawei-library.html)：150,176面，远景23,140面；五开间三层外廊、百叶门窗、栏杆与老虎窗。已接入原址室外漫游，尺寸和后部构造仍为估计。
 
-[宋庆龄故居主楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，未接入城市漫游。
+[宋庆龄故居主楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，已近似定位并接入全局场景。
 
-[鲁迅故居正立面与院门候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，地图归属待核验，未计入整栋复原完成量。
+[鲁迅故居正立面与院门候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，已接入全局场景；位置含估计，未计入整栋复原完成量。
 
 [孙中山故居主楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象并接入室外漫游。
 
 **[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
-全市16区底图可浏览；目录提供40处已建模地标的独立入口，分布在15个区。崇明区已有独立候选，原址精模接入仍待完成。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
+全市16区底图可浏览；70处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中30件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/surfaces.html)：提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
 ## 建筑模型预览与地面水系
 
-下列早期模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个现已支持**独立模型室外漫游**，城市原址仍待配准，未计入40处城市入口。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
+下列早期模型保留独立预览及模型外围漫游；全局场景直达链接统一列于下方“按区查看主要建筑”。尺寸、隐蔽构造及新增接入的位置含估计。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
@@ -31,17 +31,17 @@
 
 ## 按区查看主要建筑
 
-时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。点击时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
+时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-当前入口随master更新。以下另收录30件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
+**汇总：16区，70处建筑与构件模型入口（40处既有＋30处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增30处按资料近似定位并提供全局查看，尺寸与细节限制保留；“全局查看”直接打开城市场景，“单体”保留独立预览。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区
+### 黄浦区（22处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 孙中山故居主楼 | [2026-10-29 12:42:25 UTC+8](https://github.com/ecojust/e-resource/commit/518d92d468c1891a798a0ec7251fb74b41a125a9) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) |
 | 上海总会 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund02&mode=walk) |
@@ -59,25 +59,18 @@
 | 和平饭店南楼 · 汇中饭店 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk) |
 | 和平饭店北楼 · 沙逊大厦 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk) |
 | 中国银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk) |
+| 国际饭店历史主楼外观 | 2026-10-30 19:25:12 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) |
+| 上海跑马总会历史东楼与主钟塔 | 2026-10-30 19:40:09 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) |
+| 大光明大戏院临街入口与灯塔局部 | 2026-10-30 20:28:32 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) |
+| 金门饭店／华安大楼历史主楼外观 | 2026-10-30 20:53:59 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) |
+| 先施公司历史主楼与摩星塔外观 | 2026-10-30 21:46:35 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sincere-company.html) |
+| 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/old-wing-on-company.html) |
 
-<!-- district-candidates:黄浦区:start -->
-
-| 独立候选（未配准） | 版本提交（UTC+8） |
-|---|---|
-| [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 2026-10-30 19:25:12 |
-| [上海跑马总会历史东楼与主钟塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) | 2026-10-30 19:40:09 |
-| [大光明大戏院临街入口与灯塔局部](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) | 2026-10-30 20:28:32 |
-| [金门饭店／华安大楼历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) | 2026-10-30 20:53:59 |
-| [先施公司历史主楼与摩星塔外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sincere-company.html) | 2026-10-30 21:46:35 |
-| [老永安公司主楼与屋顶塔楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/old-wing-on-company.html) | 2026-10-30 22:30:33 |
-
-<!-- district-candidates:黄浦区:end -->
-
-### 徐汇区
+### 徐汇区（7处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310104&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 徐家汇藏书楼南楼 | [2026-10-29 12:42:25 UTC+8](https://github.com/ecojust/e-resource/commit/518d92d468c1891a798a0ec7251fb74b41a125a9) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) |
 | 巴金旧居主楼 | <!-- bajin-residence-publication-time:start -->[2026-10-28 05:51:01](https://github.com/ecojust/e-resource/commit/3c9efa6ac948e5298029245ae2bc04a35476de55)<!-- bajin-residence-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk) |
@@ -85,166 +78,146 @@
 | 徐汇武康路129号二层住宅 | [2026-10-26 17:42:00](https://github.com/ecojust/e-resource/commit/b296b5ac4f68b4e6743f02fb2bb3c01091cab841) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk) |
 | 徐汇武康路210号二层住宅 | [2026-10-26 20:39:46](https://github.com/ecojust/e-resource/commit/682b72b3913eee2568305799783ca64c0e51bfbc) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk) |
 | 龙华塔 | [2026-10-27 01:37:07](https://github.com/ecojust/e-resource/commit/e501cc11f6c45bdd069d6ff88e870ea18c1bf93f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk) |
+| 上海宋庆龄故居主楼 | 2026-10-29 21:05:09 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html) |
 
-<!-- district-candidates:徐汇区:start -->
-
-| 独立候选（未配准） | 版本提交（UTC+8） |
-|---|---|
-| [上海宋庆龄故居主楼](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html) | 2026-10-29 21:05:09 |
-
-<!-- district-candidates:徐汇区:end -->
-
-### 长宁区
+### 长宁区（2处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310105&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 邬达克旧居 | <!-- hudec-residence-publication-time:start -->[2026-10-28 04:10:42](https://github.com/ecojust/e-resource/commit/7e178aaed36b6fc2361861b3101e48d155dbc2b2)<!-- hudec-residence-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk) |
 | 哥伦比亚乡村俱乐部主楼 | <!-- columbia-publication-time:start -->[2026-10-27 22:57:05](https://github.com/ecojust/e-resource/commit/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746)<!-- columbia-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk) |
 
-### 静安区
+### 静安区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 四行仓库（含毗邻大陆银行仓库） | [2026-10-27 10:11:58](https://github.com/ecojust/e-resource/commit/20e45cb3b33234e73bcef1a12528c249d98f3cac) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk) |
 
-### 普陀区
+### 普陀区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310107&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 真如寺大殿（正殿） | [2026-10-27 03:12:03](https://github.com/ecojust/e-resource/commit/c381493024bfecec236687d5fda6c217daffd2a8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk) |
 
-### 虹口区
+### 虹口区（4处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310109&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 鸿德堂 · 多伦路59号 | [2026-10-26 21:36:33](https://github.com/ecojust/e-resource/commit/0c0868954b943c46928d69f15dc6d9af7477424f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) |
+| 上海鲁迅故居正立面与院门 | 2026-10-29 10:24:42 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html) |
+| 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/broadway-mansions.html) |
+| 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/russian-consulate.html) |
 
-<!-- district-candidates:虹口区:start -->
-
-| 独立候选（未配准） | 版本提交（UTC+8） |
-|---|---|
-| [上海鲁迅故居正立面与院门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html) | 2026-10-29 10:24:42 |
-| [上海大厦／百老汇大厦历史主楼](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/broadway-mansions.html) | 2026-10-30 19:03:16 |
-| [俄罗斯领事馆历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/russian-consulate.html) | 2026-10-30 19:14:16 |
-
-<!-- district-candidates:虹口区:end -->
-
-### 杨浦区
+### 杨浦区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310110&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 杨浦区图书馆总馆（原上海市图书馆） | [2026-10-27 13:01:40](https://github.com/ecojust/e-resource/commit/387561d8a7297eb7fc2a42907f0819fa1d61e958) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) |
 
-### 闵行区
+### 闵行区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310112&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 包玉刚图书馆 | [2026-10-27 05:10:17](https://github.com/ecojust/e-resource/commit/4e423072b5b66155ec8e9e7ecac576bb68c0c310) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=minhang-baoyugang-library&mode=walk) |
 
-### 宝山区
+### 宝山区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310113&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 宝山孔庙大成殿 | [2026-10-27 21:26:14](https://github.com/ecojust/e-resource/commit/8cea0605a2d056bda107266357e11413eb9589e1) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk) |
 
-### 嘉定区
+### 嘉定区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310114&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 上海汽车博物馆 | [2026-10-27 05:51:54](https://github.com/ecojust/e-resource/commit/4d2103693e97f0da7d11926332d0b95e2d3755ab) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jiading-shanghai-auto-museum&mode=walk) |
 
-### 浦东新区
+### 浦东新区（4处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310115&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 金茂大厦 | [2026-10-26 01:49:04](https://github.com/ecojust/e-resource/commit/b36ab343101ee49be69c7ff20beed0e2bcb7b005) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jin-mao&mode=walk) |
 | 东方明珠电视塔 | [2026-10-26 01:49:04](https://github.com/ecojust/e-resource/commit/b36ab343101ee49be69c7ff20beed0e2bcb7b005) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=oriental-pearl&mode=walk) |
 | 上海中心大厦 | [2026-10-26 01:49:04](https://github.com/ecojust/e-resource/commit/b36ab343101ee49be69c7ff20beed0e2bcb7b005) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=shanghai-tower&mode=walk) |
 | 上海环球金融中心 | [2026-10-26 01:49:04](https://github.com/ecojust/e-resource/commit/b36ab343101ee49be69c7ff20beed0e2bcb7b005) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=swfc&mode=walk) |
 
-### 金山区
+### 金山区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310116&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 金山卫瓮城城楼 | <!-- jinshanwei-gatehouse-publication-time:start -->[2026-10-28 18:22:52](https://github.com/ecojust/e-resource/commit/8a7ea09acffa7222da6199150f2f0cd749bcf197)<!-- jinshanwei-gatehouse-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk) |
 
-### 松江区
+### 松江区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310117&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 兴圣教寺塔（松江方塔） | [2026-10-27 02:41:28](https://github.com/ecojust/e-resource/commit/9f7d07cc5363b55e6198161e43c5024125edc5a0) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=songjiang-fangta-pagoda&mode=walk) |
 
-### 青浦区
+### 青浦区（2处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310118&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 北大街222号民居（2022年鹤龙美术馆使用状态） | [2026-10-26 16:20:09](https://github.com/ecojust/e-resource/commit/fb07d1739ea75948de463d23e09225bca62122d8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=qingpu-beidajie-222&mode=walk) |
 | 江南第一茶楼 · 北大街208–212号 | [2026-10-26 20:39:46](https://github.com/ecojust/e-resource/commit/682b72b3913eee2568305799783ca64c0e51bfbc) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=qingpu-beidajie-208-212&mode=walk) |
 
-### 奉贤区
+### 奉贤区（1处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310120&mode=walk)
 
-| 主要建筑 | 模型版本上线时间（UTC+8） | 直接查看 |
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 奉贤博物馆 | <!-- fengxian-publication-time:start -->[2026-10-28 00:24:50](https://github.com/ecojust/e-resource/commit/3d33c9f85c9daf7d0488bfd8fcf25b8c5168e0fa)<!-- fengxian-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk) |
 
-### 崇明区
+### 崇明区（20处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310151&mode=walk)
 
-本区已有独立候选，原址配准仍待完成。全市底图不表示已完成逐栋复原。
-
-<!-- district-candidates:崇明区:start -->
-
-| 独立候选（未配准） | 版本提交（UTC+8） |
-|---|---|
-| [崇明学宫大成殿](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html) | 2026-10-29 04:55:46 |
-| [崇明学宫泮池与登云桥](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html) | 2026-10-29 01:09:05 |
-| [崇明学宫尊经阁](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html) | 2026-10-29 00:52:39 |
-| [崇明学宫崇圣祠正殿](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/chongsheng-shrine.html) | 2026-10-29 22:57:21 |
-| [崇明学宫戟门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/ji-gate.html) | 2026-10-29 23:14:16 |
-| [崇明学宫棂星门中央石门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-gate.html) | 2026-10-29 23:26:15 |
-| [崇明学宫照片左侧门（历史石框参照）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-left-gate.html) | 2026-10-29 23:34:33 |
-| [崇明学宫照片右侧门（1990年代参照）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-right-gate.html) | 2026-10-29 23:45:50 |
-| [崇明学宫名宦祠](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/minghuan-shrine.html) | 2026-10-30 00:14:09 |
-| [崇明学宫乡贤祠](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/xiangxian-shrine.html) | 2026-10-30 00:19:21 |
-| [崇明学宫东庑](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-wing.html) | 2026-10-30 00:32:00 |
-| [崇明学宫西庑](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-wing.html) | 2026-10-30 00:37:59 |
-| [崇明学宫东官厅](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-guanting.html) | 2026-10-30 00:58:27 |
-| [崇明学宫西官厅](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-guanting.html) | 2026-10-30 01:04:36 |
-| [崇明学宫西牌坊（题名面待核）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-paifang.html) | 2026-10-30 01:30:02 |
-| [崇明学宫东牌坊（题名面待核）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-paifang.html) | 2026-10-30 01:40:24 |
-| [崇明学宫儒学大门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/ruxue-gate.html) | 2026-10-30 01:49:23 |
-| [崇明学宫仪门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/yimen.html) | 2026-10-30 02:07:29 |
-| [崇明学宫明伦堂](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/minglun-hall.html) | 2026-10-30 02:21:31 |
-| [崇明学宫碑廊](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/stele-corridors.html) | 2026-10-30 02:37:41 |
-
-<!-- district-candidates:崇明区:end -->
+| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
+|---|---|---|
+| 崇明学宫大成殿 | 2026-10-29 04:55:46 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html) |
+| 崇明学宫泮池与登云桥 | 2026-10-29 01:09:05 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-pan-pool-bridge&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html) |
+| 崇明学宫尊经阁 | 2026-10-29 00:52:39 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html) |
+| 崇明学宫崇圣祠正殿 | 2026-10-29 22:57:21 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/chongsheng-shrine.html) |
+| 崇明学宫戟门 | 2026-10-29 23:14:16 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/ji-gate.html) |
+| 崇明学宫棂星门中央石门 | 2026-10-29 23:26:15 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-gate.html) |
+| 崇明学宫照片左侧门（历史石框参照） | 2026-10-29 23:34:33 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-left-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-left-gate.html) |
+| 崇明学宫照片右侧门（1990年代参照） | 2026-10-29 23:45:50 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-right-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-right-gate.html) |
+| 崇明学宫名宦祠 | 2026-10-30 00:14:09 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minghuan-shrine&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/minghuan-shrine.html) |
+| 崇明学宫乡贤祠 | 2026-10-30 00:19:21 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xiangxian-shrine&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/xiangxian-shrine.html) |
+| 崇明学宫东庑 | 2026-10-30 00:32:00 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-wing&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-wing.html) |
+| 崇明学宫西庑 | 2026-10-30 00:37:59 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-wing&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-wing.html) |
+| 崇明学宫东官厅 | 2026-10-30 00:58:27 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-guanting&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-guanting.html) |
+| 崇明学宫西官厅 | 2026-10-30 01:04:36 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-guanting&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-guanting.html) |
+| 崇明学宫西牌坊（题名面待核） | 2026-10-30 01:30:02 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xuehai-paifang&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-paifang.html) |
+| 崇明学宫东牌坊（题名面待核） | 2026-10-30 01:40:24 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-paifang.html) |
+| 崇明学宫儒学大门 | 2026-10-30 01:49:23 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/ruxue-gate.html) |
+| 崇明学宫仪门 | 2026-10-30 02:07:29 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/yimen.html) |
+| 崇明学宫明伦堂 | 2026-10-30 02:21:31 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/minglun-hall.html) |
+| 崇明学宫碑廊 | 2026-10-30 02:37:41 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-stele-corridors&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/stele-corridors.html) |
 
 ## 漫游与模型使用
 
@@ -300,11 +273,11 @@
 
 [模型与网页当前验收](CURRENT_STATE.md) · [历史交付记录](DELIVERY_HISTORY.md) · [项目许可](LICENSE)
 
-## 独立候选模型
+## 独立模型预览
 
-下列早期模型均已接入[统一模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；南楼和孙中山故居主楼已开放室外漫游，其余五个候选继续核对定位与行走范围。
+所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。单体页面继续提供旋转、缩放、外围漫游与下载；独立预览不重复计为另一栋建筑。
 
-[崇明学宫尊经阁预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
+[崇明学宫尊经阁预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html)：依据历史照片制作，已按院落资料近似定位并接入全局场景。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 
 ## 全市复原进度口径
 
@@ -312,6 +285,6 @@
 
 [逐要素身份与模型关联台账](data/feature-restoration/README.md)覆盖全部1,708个宏块、1,796,419个渲染要素，支持按源 ID 查询。登记精模、独立候选、基线生成模型及父体剩余部分分别记录；本次只验证身份与清单，不新增模型验收或完成百分比。
 
-[崇明学宫泮池与登云桥预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html)：文献尺寸与历史照片参照的池体、石拱桥和栏杆构件，待地理接入。[来源与估计范围](source/precise/chongming-pan-pool-bridge/README.md)。
+[崇明学宫泮池与登云桥预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html)：文献尺寸与历史照片参照的池体、石拱桥和栏杆构件，已近似定位并接入全局场景。[来源与估计范围](source/precise/chongming-pan-pool-bridge/README.md)。
 
-[崇明学宫大成殿外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html)：重檐屋面、前廊、分格门窗和月台，文献尺寸与2005年照片参照；隐蔽构造仍为估计，未地理接入。[来源与限制](source/precise/chongming-dacheng-hall/README.md)。
+[崇明学宫大成殿外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html)：重檐屋面、前廊、分格门窗和月台，文献尺寸与2005年照片参照；隐蔽构造仍为估计，已近似定位并接入全局场景。[来源与限制](source/precise/chongming-dacheng-hall/README.md)。

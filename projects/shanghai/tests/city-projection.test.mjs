@@ -29,7 +29,7 @@ function production() {
   const value=new Function('THREE','maplibregl','calls',`
     const ORIGIN=${JSON.stringify(ORIGIN)},EARTH=6378137,DEG=Math.PI/180;
     const cityDetails={prepareFarObject:(object,record)=>calls.push({object,record})};
-    const surfaces={apply(){}},lighting={configureModel(){}};
+    const surfaces={apply(){}},lighting={configureModel(){}},candidateClipper={bindObject(){}};
     function applyBuildingMaterial(){}
     ${coordinates}\n${far}\n${near}
     return {prepareCityObject,prepareCityDetailObject,geographicPosition,worldToMercator,metreScale};

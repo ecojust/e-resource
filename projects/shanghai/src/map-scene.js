@@ -23,6 +23,11 @@ import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictio
   releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
 import { correctPhotographicTexture } from './photographic-texture.js';
 import { preparePhotographicGlass } from './photographic-glass.js';
+import {CandidateCityState} from './candidate-city-integrations.js';
+import {CandidateCityClipper} from './candidate-city-clipping.js';
+import {planCandidateVectorClipping} from './candidate-vector-clipping.js';
+import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
+import {createBuildingBeacons} from './building-beacons.js';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -161,6 +166,7 @@ export async function createShanghaiScene(options = {}) {
   let destroyed = false, mapErrorTime = 0, loadedStyle = false;
   // Source errors may arrive while asynchronous scene setup is still running.
   let osmSuppression = null;
+  const candidateVectorSuppressors=[];
   let collisionDirty = true, collisionUpdated = 0, collisionRevision = 0, polygons = [], largePolygons = [], grid = new Map(), roadLines = [];
   map.on('error', event => {
     if (event.sourceId === OVERTURE_SOURCE) recoverBuildingSource(event.error);
@@ -195,8 +201,8 @@ export async function createShanghaiScene(options = {}) {
       ...(filter ? {filter} : {}), layout: {visibility: visible ? 'visible' : 'none'},
       paint: {'fill-extrusion-color': ['interpolate', ['linear'], height,
         0, '#d7d9d3', 25, '#d3d8d4', 80, '#b7cbd0', 200, '#8baebc'],
-      'fill-extrusion-height': ['case', ['boolean', ['feature-state', 'localModel'], false], 0, ['max', ['+', baseHeight, 3], height]],
-      'fill-extrusion-base': ['case', ['boolean', ['feature-state', 'localModel'], false], 0, baseHeight],
+      'fill-extrusion-height': ['case', ['any', ['boolean', ['feature-state', 'localModel'], false], ['boolean', ['feature-state', 'candidateModel'], false]], 0, ['max', ['+', baseHeight, 3], height]],
+      'fill-extrusion-base': ['case', ['any', ['boolean', ['feature-state', 'localModel'], false], ['boolean', ['feature-state', 'candidateModel'], false]], 0, baseHeight],
       'fill-extrusion-opacity': 1, 'fill-extrusion-vertical-gradient': true}}, firstSymbol);
   }
   try {
@@ -233,6 +239,8 @@ export async function createShanghaiScene(options = {}) {
     if (map.getLayer(OSM_BUILDINGS)) map.setLayoutProperty(OSM_BUILDINGS, 'visibility', 'visible');
     osmSuppression?.setActive(true);
     osmSuppression?.refresh();
+    // The controllers may still be empty if the provider failed during setup.
+    refreshCandidateVectors();
     collisionDirty = true;
     onStatus({kind: 'building-source', message: '建筑服务暂不可用，已切换 OSM', source: 'osm', fallback: true});
     if (error) onLoadError(error);
@@ -272,11 +280,19 @@ export async function createShanghaiScene(options = {}) {
   walker.group.traverse(object=>{if(object.isMesh)object.castShadow=false;});
   scene.add(walker.group);
   const camera = new THREE.Camera(); camera.matrixAutoUpdate = false;
-  let lighting, surfaces, traffic, streetBasemap, shadowsEnabled=true;
+  let lighting, surfaces, traffic, streetBasemap, buildingBeacons=null, shadowsEnabled=true;
   let renderer, animationTime = 0, speed = 0, current = {lng: start.lng, lat: start.lat};
   let explicitCamera = null, customLayerReady = false;
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const landmarkRecords = new Map();
+  const candidateClipper=new CandidateCityClipper({THREE,geographicPosition});
+  const candidateState=new CandidateCityState({getRecords:()=>landmarkRecords,getScene:()=>scene,onChange(state){
+    candidateClipper.update(state.clips); collisionDirty=true; collisionUpdated=-Infinity; collisionRevision++;
+    refreshCandidateVectors(); lighting?.invalidate(); if(!destroyed)map.triggerRepaint();
+  }});
+  function refreshCandidateVectors(){
+    for(const controller of candidateVectorSuppressors){controller.setActive(controller.source===OVERTURE_SOURCE?buildingMode==='overture':buildingMode==='osm');controller.refresh();}
+  }
   const sourceGeometryCorrections = new SourceGeometryCorrectionState({
     getRecords:()=>landmarkRecords, getBoundaries:()=>landmarkBoundaries, getScene:()=>scene, getMode:()=>buildingMode,
     onChange(){
@@ -300,6 +316,8 @@ export async function createShanghaiScene(options = {}) {
   const detailCacheStats = {evicted:0, discardedLate:0};
   const cityDetails = new CityDetailStreamer({THREE,scene,loader,
     prepareObject:prepareCityDetailObject,disposeObject:disposeModel,
+    beforeFarRebind:object=>candidateClipper.releaseObject(object),
+    afterFarRebind:(object,record)=>candidateClipper.bindObject(object,record),
     maxVisible:lowMemory?3:6,maxCache:lowMemory?4:8,
     triangleBudget:lowMemory?500000:1100000,memoryBudget:(lowMemory?32:64)*MIB,
     onChange(){if(!destroyed)map.triggerRepaint();},
@@ -343,6 +361,18 @@ export async function createShanghaiScene(options = {}) {
     },
     onChange(){if(!destroyed)map.triggerRepaint();}});
   osmSuppression.setActive(buildingMode==='osm');
+  for(const [source,sourceLayer,template] of [[OVERTURE_SOURCE,'building',BUILDINGS],[OVERTURE_SOURCE,'building_part',BUILDING_PARTS],[sourceId,'building',map.getLayer(OSM_BUILDINGS)?OSM_BUILDINGS:BUILDINGS]]){
+    if(!map.getSource(source)||!map.getLayer(template))continue;
+    const key=`candidate-${source===OVERTURE_SOURCE?'overture':'osm'}-${sourceLayer}`;
+    let controller;
+    const residual=new OSMResidualLayer({map,sourceId:`${key}-residuals`,layerId:`${key}-residuals-3d`,templateLayerId:template,beforeId:firstSymbol,
+      onInvalidated(){controller?.residualInvalidated();}});
+    controller=new OSMBuildingSuppressor({map,source,sourceLayer,residualLayer:residual,featureStateKey:'candidateModel',planFunction:planCandidateVectorClipping,
+      getCoverage:()=>({candidateClips:candidateState.clips,alreadyCovered:id=>map.getFeatureState({source,sourceLayer,id})?.localModel===true}),
+      onChange(){if(!destroyed)map.triggerRepaint();}});
+    candidateVectorSuppressors.push(controller);
+  }
+  refreshCandidateVectors();
   const renderMetrics = {fps:0,drawCalls:0,triangles:0,geometries:0,textures:0};
   let renderFrameCount=0, renderPeriodStart=performance.now();
 
@@ -389,8 +419,9 @@ export async function createShanghaiScene(options = {}) {
       // Also guard late downloads when a caller directly removes this layer.
       if (!destroyed) {
         destroyed = true;
+        buildingBeacons?.destroy();buildingBeacons=null;
         ordinaryCatalog?.destroy();
-        osmSuppression?.destroy();
+        osmSuppression?.destroy();for(const c of candidateVectorSuppressors)c.destroy({mapWillBeRemoved:true});
         streetBasemap?.dispose();
         localStreamer.destroy();
         cityDetails.destroy();
@@ -400,7 +431,7 @@ export async function createShanghaiScene(options = {}) {
         disposeModel(record.object);
         record.object = null;
       }
-      lighting?.dispose(); traffic?.dispose(); surfaces?.dispose();
+      candidateClipper.dispose();lighting?.dispose(); traffic?.dispose(); surfaces?.dispose();
       scene.traverse(obj => {
         if (obj.geometry) obj.geometry.dispose();
         if (obj.material) for (const m of Array.isArray(obj.material) ? obj.material : [obj.material]) m.dispose();
@@ -539,10 +570,11 @@ export async function createShanghaiScene(options = {}) {
       }
     }
     const correctionChanged=syncSourceGeometryCorrections();
+    const candidateChanged=candidateState.sync();
     cityDetails.setVisibleLandmarks([...landmarkRecords.values()].filter(isLandmarkSourceActive).map(record=>record.id));
     // Existing source-owner restoration and OSM coverage changes run before
     // disposing hidden models. Visible near-field detail never enters this LRU.
-    if (changed || correctionChanged) updateBuildingExclusions();
+    if (changed || correctionChanged || candidateChanged) updateBuildingExclusions();
     for (const record of selectHiddenDetailEvictions(landmarkRecords.values(),detailCacheLimits)) {
       if (releaseHiddenDetail(record,disposeModel)) detailCacheStats.evicted++;
     }
@@ -569,6 +601,7 @@ export async function createShanghaiScene(options = {}) {
     // Visibility loss restores online buildings within the same update; only
     // source/move bursts are debounced by the fallback controller.
     osmSuppression?.refresh();
+    refreshCandidateVectors();
   }
   function setLandmarks(items) {
     const array = Array.isArray(items) ? items : items?.landmarks || items?.features || [];
@@ -586,6 +619,7 @@ export async function createShanghaiScene(options = {}) {
   function disposeModel(object) {
     if (!object) return;
     if(object.userData?.streetInteractionOwner)streetInteraction.removeOwner(object.userData.streetInteractionOwner);
+    candidateClipper.releaseObject(object);
     cityDetails.detach(object);
     lighting?.releaseModel(object);
     scene.remove(object);
@@ -616,6 +650,7 @@ export async function createShanghaiScene(options = {}) {
       }
     });
     cityDetails.prepareFarObject(group,record);
+    candidateClipper.bindObject(group,record);
   }
   function handleStreamingChange(state) {
     cityDetails.syncParents(localStreamer.getVisible());
@@ -663,6 +698,7 @@ export async function createShanghaiScene(options = {}) {
       surfaces?.apply(object,'city-detail');
     });
     lighting?.configureModel(group,{detailed:true});
+    candidateClipper.bindObject(group,record);
   }
   async function setCityManifest(input, settings={}) {
     localDataKind='city';
@@ -699,8 +735,8 @@ export async function createShanghaiScene(options = {}) {
   const originalReport = reportLandmarks;
   reportLandmarks = function () { originalReport(); updateBuildingExclusions(); };
 
-  map.on('sourcedata', event => { collisionDirty = true; if(event.sourceId===sourceId)osmSuppression?.sourceChanged(); });
-  map.on('move', () => { osmSuppression?.schedule(); });
+  map.on('sourcedata', event => { collisionDirty = true; if(event.sourceId===sourceId)osmSuppression?.sourceChanged();for(const c of candidateVectorSuppressors)if(event.sourceId===c.source)c.sourceChanged(); });
+  map.on('move', () => { osmSuppression?.schedule();for(const c of candidateVectorSuppressors)c.schedule(); });
   map.on('moveend', () => { collisionDirty = true; updateLandmarkVisibility(); updateLocalModels(true); osmSuppression?.schedule(); });
   map.on('move', () => updateLocalModels());
   function sourceFeatures(layer, source = sourceId) {
@@ -714,10 +750,10 @@ export async function createShanghaiScene(options = {}) {
     collisionUpdated = now; collisionDirty = false; polygons = []; largePolygons = []; grid = new Map(); roadLines = [];
     sourceGeometryCorrections.beginCollisionPass();
     const seen = new Set();
-    function addCollisionGeometry(geometry, kind, id) {
+    function addCollisionGeometry(geometry, kind, id, candidate=false, source=null) {
       const box=boundsOf(geometry), key=`${kind}:${box.join(',')}:${id}`;
       if(seen.has(key))return;seen.add(key);
-      const record={box,geometry,kind};polygons.push(record);
+      const record={box,geometry,kind,candidate,source};polygons.push(record);
       const x0=Math.floor(box[0]*1000),x1=Math.floor(box[2]*1000);
       const y0=Math.floor(box[1]*1000),y1=Math.floor(box[3]*1000);
       if((x1-x0+1)*(y1-y0+1)>120){largePolygons.push(record);return;}
@@ -733,10 +769,11 @@ export async function createShanghaiScene(options = {}) {
         if (f.properties?.is_underground === true) continue;
         if (!['Polygon', 'MultiPolygon'].includes(f.geometry.type)) continue;
         const geometry=kind==='building' ? sourceGeometryCorrections.filterFeature(f,{source,sourceLayer:layer,kind,snapshot:true}) : f.geometry;
-        if(geometry)addCollisionGeometry(geometry,kind,f.id || '');
+        if(geometry)addCollisionGeometry(geometry,kind,f.id || '',false,{name:source,layer,id:f.id,propertyId:f.properties?.id});
       }
     }
     for(const {id,geometry} of sourceGeometryCorrections.getCollisionGeometries())addCollisionGeometry(geometry,'building',`correction:${id}`);
+    for(const {id,geometry} of candidateState.collisions())addCollisionGeometry(geometry,'building',`candidate:${id}`,true);
     for (const f of sourceFeatures('transportation')) {
       const properties = f.properties || {}, type = properties.class || '';
       if (['rail', 'aerialway', 'ferry'].includes(type)) continue;
@@ -757,7 +794,7 @@ export async function createShanghaiScene(options = {}) {
     for (const record of candidates) {
       const [x0,y0,x1,y1] = record.box;
       if (lng < x0 || lng > x1 || lat < y0 || lat > y1 || !geometryContains(record.geometry,lng,lat)) continue;
-      if (record.kind === 'building') return 'building';
+      if (record.kind === 'building') {if(!record.candidate&&candidateState.clipsPoint(lng,lat,record.source))continue;return 'building';}
       water = true;
     }
     return water && !onBridge(lng,lat) ? 'water' : null;
@@ -865,8 +902,13 @@ export async function createShanghaiScene(options = {}) {
     streetInteractionRevision:()=>streetInteraction.revision,
     setLandmarks,setCityManifest,setNeighborhoods,setDistricts,setDistrictVisibility,setWalkModeLabels,showDistricts:setDistrictVisibility,
     setOrdinaryCatalog,
+    setBuildingBeacons(records,settings={}){buildingBeacons?.destroy();buildingBeacons=createBuildingBeacons({map,records,...settings});return buildingBeacons.getState();},
+    getBuildingBeaconState:()=>buildingBeacons?.getState()||null,
+    pickBuildingBeacon:point=>buildingBeacons?.hitTest(point)||null,
+    refreshBuildingBeacons:()=>buildingBeacons?.refresh(),
     getOrdinaryCatalogState:()=>ordinaryCatalog?.getState()||null,
     getSourceGeometryCorrectionState:()=>sourceGeometryCorrections.getState(),
+    getCandidateIntegrationState:()=>({...candidateState.getState(),shader:candidateClipper.getState(),vector:candidateVectorSuppressors.map(c=>({source:c.source,sourceLayer:c.sourceLayer,...c.getState()}))}),
     getNearbyOrdinaryRecords:()=>nearbyOrdinaryRecords.map(record=>({...record})),
     setAvatarVisible(visible){
       if(!visible){
@@ -892,7 +934,11 @@ export async function createShanghaiScene(options = {}) {
           photoMeshes++;if(material.map)maps.add(material.map);
         }
       });
-      return {id,status:record?.status,visible:Boolean(record?.object?.visible),variant:record?.activeVariant,photoMeshes,triangles,greenery:record?.object?.userData?.streetAssembly?.greenery?.stats||null,
+      const box=record?.object?new THREE.Box3().setFromObject(record.object):null;
+      return {id,anchor:record?[record.lng,record.lat]:null,heading:record?.heading,scale:record?.scale??1,
+        position:record?.object?.position.toArray(),rotation:record?.object?.rotation.toArray(),worldBounds:box?{min:box.min.toArray(),max:box.max.toArray()}:null,
+        verifiedAsset:getVerifiedOrdinaryAsset(record?.object)||null,cityIntegration:Boolean(record?.city_integration),
+        status:record?.status,visible:Boolean(record?.object?.visible),variant:record?.activeVariant,photoMeshes,triangles,greenery:record?.object?.userData?.streetAssembly?.greenery?.stats||null,
         images:[...maps].map(map=>({width:map.image?.width,height:map.image?.height,colorSpace:map.colorSpace,
           orientation:map.userData.photographicOrientation||null}))};
     },
@@ -901,5 +947,5 @@ export async function createShanghaiScene(options = {}) {
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,revision:collisionRevision,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;ordinaryCatalog?.destroy();osmSuppression?.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
+    destroy(){destroyed=true;buildingBeacons?.destroy();buildingBeacons=null;ordinaryCatalog?.destroy();osmSuppression?.destroy({mapWillBeRemoved:true});for(const c of candidateVectorSuppressors)c.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

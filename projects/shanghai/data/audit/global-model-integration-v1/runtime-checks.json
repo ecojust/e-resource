@@ -1,0 +1,70 @@
+{
+  "schema": "candidate-city-runtime-checks-v1",
+  "passed": 12,
+  "checks": [
+    "catalogue rejects duplicate IDs, unsafe asset paths, mismatched hashes and invalid walking poses",
+    "unverified model and forged GLB extras never enable clipping or collisions",
+    "correct byte-verification receipt enables one source clip and one collision",
+    "hidden model, hidden ancestor, detached object, disposal and receipt mismatch restore source state",
+    "verified LOD remains active and triggers a variant-bound revision",
+    "shared-site clipping is deduplicated and removed only after its last visible verified model",
+    "polygon holes and MultiPolygon membership remain open",
+    "partial vector replacement retains the other half of its source geometry and properties",
+    "unrelated Overture IDs, empty source IDs and already-rendered city coverage are not clipped",
+    "vector hole preservation and source-provider fallback retain source fragments",
+    "shader clipping triangulates a polygon hole without filling it and returns to zero",
+    "the actual 30-model catalogue merges with all 40 original entries and fits the clipping budget"
+  ],
+  "catalogueChecks": {
+    "existing": 40,
+    "new": 30,
+    "merged": 70,
+    "new_walk_entries": 0,
+    "distinct_source_corrections": 9,
+    "simultaneous_clip_triangles": 56,
+    "runtime_clip_triangle_capacity": 128
+  },
+  "bindings": [
+    {
+      "path": "./runtime-checks.mjs",
+      "bytes": 12075,
+      "sha256": "c1b04b4703115decd155b3e43b6f03b9f5b817a36a4b7c4bfaec7f5b36c89ad5"
+    },
+    {
+      "path": "../../../src/candidate-city-integrations.js",
+      "bytes": 5669,
+      "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605"
+    },
+    {
+      "path": "../../../src/candidate-city-clipping.js",
+      "bytes": 7051,
+      "sha256": "3bc0c5d3812e4853ad7808488ae3fc83ac0f2556c23052dc20e1752bd49f90b8"
+    },
+    {
+      "path": "../../../src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "path": "../../../src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "path": "../../../vendor/polygon-clipping.umd.min.js",
+      "bytes": 29106,
+      "sha256": "7f8619e84a86ce8dd400c9b50430e9c8cf8f26027b19eeb479f109f5c1a9d688"
+    },
+    {
+      "path": "../../candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    },
+    {
+      "path": "../../landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    }
+  ],
+  "scope": "Synthetic contract and source-preservation cases; actual city GLB rendering, network failure and browser interaction are checked separately."
+}

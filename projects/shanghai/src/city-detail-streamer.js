@@ -51,8 +51,8 @@ function replacementRegistry(manifest,baseURL) {
 export class CityDetailStreamer {
   constructor({THREE,scene,loader,prepareObject,disposeObject,onChange=()=>{},onError=()=>{},fetchFunction=(...args)=>fetch(...args),
     maxVisible=6,maxCache=8,triangleBudget=1100000,memoryBudget=64*1024*1024,radius=160,
-    indexTimeoutMs=25000,modelTimeoutMs=35000,retryDelayMs=60000}) {
-    Object.assign(this,{THREE,scene,loader,prepareObject,disposeObject,onChange,onError,maxVisible,maxCache,triangleBudget,memoryBudget,radius,indexTimeoutMs,modelTimeoutMs,retryDelayMs});
+    indexTimeoutMs=25000,modelTimeoutMs=35000,retryDelayMs=60000,beforeFarRebind=()=>{},afterFarRebind=()=>{}}) {
+    Object.assign(this,{THREE,scene,loader,prepareObject,disposeObject,onChange,onError,maxVisible,maxCache,triangleBudget,memoryBudget,radius,indexTimeoutMs,modelTimeoutMs,retryDelayMs,beforeFarRebind,afterFarRebind});
     this.fetch=fetchFunction;this.parents=new Map();this.records=new Set();this.wanted=new Set();this.inflight=null;this.view=null;this.destroyed=false;
     this.replacements={macros:new Map(),landmarks:new Set()};this.visibleLandmarks=new Set();this.replacementRegistryInstalled=false;
     this.stats={requests:0,completed:0,failed:0,cancelled:0,evicted:0,discarded:0,metadataMismatches:0};
@@ -72,10 +72,10 @@ export class CityDetailStreamer {
     const mask=new CityFeatureMask(this.THREE,replacement.feature_count);
     try {
       if(this.maskBytes()+mask.data.byteLength>=this.memoryBudget)throw Error('City feature masks exceed the memory budget');
-      mask.bindObject(object);
+      this.beforeFarRebind(object);mask.bindObject(object);
       const parent={id:record.id,object,url:record.detailURL,active:false,records:[],status:'idle',retryAt:0,mask,replacement,preciseOwners:new Map()};
-      this.parents.set(object,parent);this.applyVisibleLandmarks(parent);
-    } catch(error) {mask.dispose();this.parents.delete(object);throw error;}
+      this.parents.set(object,parent);this.applyVisibleLandmarks(parent);this.afterFarRebind(object,record);
+    } catch(error) {this.beforeFarRebind(object);mask.dispose();this.parents.delete(object);throw error;}
   }
   /** Exact loaded-and-visible landmark IDs only, independent of near owners. */
   setVisibleLandmarks(ids=[]) {
@@ -152,7 +152,7 @@ export class CityDetailStreamer {
     if(this.destroyed||!parent.active||parent.status==='loading'||this.parents.get(parent.object)!==parent)return;
     parent.status='loading';const controller=parent.controller=new AbortController();
     const timeout=setTimeout(()=>controller.abort('timeout'),this.indexTimeoutMs);
-    let mask;
+    let mask,preparedRecords,farRebindStarted=false;
     try {
       const response=await this.fetch(parent.url,{signal:controller.signal});
       if(!response.ok)throw Error(`City detail index: ${response.status}`);
@@ -197,13 +197,33 @@ export class CityDetailStreamer {
       if(!parent.mask) {
         mask=new CityFeatureMask(this.THREE,count);
         if(this.maskBytes()+mask.data.byteLength>=this.memoryBudget)throw Error('City feature masks exceed the memory budget');
-        mask.bindObject(parent.object);parent.mask=mask;
+        farRebindStarted=true;
+        this.beforeFarRebind(parent.object);mask.bindObject(parent.object);parent.mask=mask;
+        this.afterFarRebind(parent.object,{id:parent.id});
       }
-      parent.records=prepared;parent.status='ready';this.applyVisibleLandmarks(parent);
+      preparedRecords=prepared;parent.records=prepared;parent.status='ready';this.applyVisibleLandmarks(parent);
       for(const record of prepared)this.records.add(record);
       this.select();this.notify();
     } catch(error) {
-      mask?.dispose();
+      if(preparedRecords){
+        for(const record of preparedRecords){
+          if(this.inflight?.record===record)this.inflight.controller.abort('index-failed');
+          this.wanted.delete(record);this.records.delete(record);
+        }
+        if(parent.records===preparedRecords)parent.records=[];
+      }
+      if(mask){
+        // A budget rejection before binding must leave the existing outer
+        // hooks intact. Once rebinding starts, unwind the mask before restoring
+        // those hooks, and never retain a disposed mask for the next retry.
+        if(farRebindStarted)this.beforeFarRebind(parent.object);
+        mask.dispose();if(parent.mask===mask)parent.mask=null;
+        if(farRebindStarted&&!this.destroyed&&this.parents.get(parent.object)===parent&&parent.controller===controller){
+          let attached=false;
+          for(let node=parent.object;node;node=node.parent)if(node===this.scene){attached=true;break;}
+          if(attached)try{this.afterFarRebind(parent.object,{id:parent.id});}catch(rebindError){error=rebindError;}
+        }
+      }
       if(!this.destroyed&&this.parents.get(parent.object)===parent&&parent.controller===controller) {
         parent.status='idle';
         if(!controller.signal.aborted||controller.signal.reason==='timeout') {
@@ -309,6 +329,7 @@ export class CityDetailStreamer {
   }
   detach(object) {
     const parent=this.parents.get(object);if(!parent)return;
+    this.beforeFarRebind(object);
     parent.active=false;this.cancelIndex(parent,'parent-disposed');
     for(const record of parent.records) {
       if(this.inflight?.record===record)this.inflight.controller.abort('parent-disposed');

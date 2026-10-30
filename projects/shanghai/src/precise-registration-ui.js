@@ -1,5 +1,6 @@
 /** Display only explicitly declared district/provider metadata. */
 export function placeDescription(place, districts = []) {
+  if(place.city_integration)return `${place.district_name||districts.find(d=>String(d.id)===String(place.districtId))?.name||'上海市'} · 近似定位 · 外观模型`;
   if (Number.isInteger(place.bund_number) && place.bund_number > 0) {
     return `外滩 ${place.bund_number} 号 · ${place.architecture_style || '历史建筑'}`;
   }

@@ -1,0 +1,70 @@
+/* Actual city controls, mobile navigation and conditional source fallback. MIT. */
+const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),assert=require('node:assert/strict'),{createHash}=require('crypto');
+const base=process.env.MODEL_BASE_URL||'http://127.0.0.1:8782/';
+const output=process.env.QA_OUTPUT_DIR||__dirname,project=path.resolve(__dirname,'../../..');
+const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const dist=(a,b)=>Math.hypot((a.lng-b.lng)*111319.49079327358*Math.cos(b.lat*Math.PI/180),(a.lat-b.lat)*111319.49079327358);
+(async()=>{
+ const catalogPath=path.join(project,'data/candidate-city-integrations.json'),catalog=JSON.parse(fs.readFileSync(catalogPath));
+ const id=process.env.QA_MODEL_ID||'huangpu-old-wing-on-company',row=catalog.models.find(r=>r.id===id);assert.ok(row);
+ const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+ const report={generatedAt:new Date().toISOString(),browserVersion:browser.version(),base,catalog_sha256:sha(catalogPath),id,tests:[]};
+ const save=()=>fs.writeFileSync(path.join(output,'browser-interactions.json'),JSON.stringify(report,null,2)+'\n');
+ try{
+  const page=await browser.newPage({viewport:{width:1280,height:900},hasTouch:true}),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(base+'index.html#landmark='+id+'&mode=walk',{waitUntil:'domcontentloaded',timeout:90000});
+  await page.waitForFunction(()=>window.__SHANGHAI_APP__,null,{timeout:240000});
+  await page.waitForFunction(id=>window.__SHANGHAI_APP__.scene.getLandmarkAssetState(id).visible,id,{timeout:180000});
+  const state=(target=id)=>page.evaluate(id=>{const a=window.__SHANGHAI_APP__;return {hash:location.hash,mode:a.mode,asset:a.scene.getLandmarkAssetState(id),position:{...a.controller.position},keys:[...a.controller.keys],candidate:a.scene.getCandidateIntegrationState(),collision:a.scene.getCollisionState(),atPlayer:a.scene.collisionAt(a.controller.position.lng,a.controller.position.lat)};},target);
+  const candidateStart=await state(),guard=await page.evaluate(()=>({startDisabled:document.querySelector('#start-walk').disabled,modeDisabled:document.querySelector('#walk-mode').disabled,mode:window.__SHANGHAI_APP__.mode,hash:location.hash}));
+  assert.equal(candidateStart.mode,'overview');assert.ok(guard.startDisabled&&guard.modeDisabled);assert.equal(new URLSearchParams(guard.hash.slice(1)).get('mode'),'overview');
+  report.tests.push({name:'candidate-walk-link-safely-resolves-to-global-overview',candidateStart,guard});save();
+  const walkId='huangpu-sun-yatsen-residence';
+  const walkRow=await page.evaluate(async id=>{const a=window.__SHANGHAI_APP__,r=a.landmarks.find(r=>r.id===id);await a.selectPlace(r,{mode:'walk'});return r;},walkId);
+  await page.waitForFunction(id=>window.__SHANGHAI_APP__.scene.getLandmarkAssetState(id).visible,walkId,{timeout:180000});
+  const start=await state(walkId);assert.equal(start.mode,'walk');assert.equal(start.atPlayer,null);assert.ok(dist(start.position,{lng:walkRow.navigation.walkStart[0],lat:walkRow.navigation.walkStart[1]})<1);
+  await page.bringToFront();await page.locator('#map canvas').focus();await page.keyboard.down('w');
+  await page.waitForFunction(start=>{const p=window.__SHANGHAI_APP__.controller.position;return Math.hypot((p.lng-start.lng)*95300,(p.lat-start.lat)*111320)>.05},start.position,{timeout:45000});
+  await page.keyboard.up('w');await page.waitForFunction(()=>window.__SHANGHAI_APP__.controller.keys.size===0);
+  const walked=await state(walkId);await page.waitForTimeout(600);const released=await state(walkId);assert.ok(dist(start.position,walked.position)>.05);assert.ok(dist(walked.position,released.position)<.03);
+  await page.screenshot({path:path.join(output,'browser-desktop-walk.png')});
+  report.tests.push({name:'existing-city-desktop-keyboard-walk-and-release',id:walkId,start,walked,released,distance:dist(start.position,walked.position),errors});save();
+  await page.setViewportSize({width:390,height:844});
+  await page.evaluate(id=>{const a=window.__SHANGHAI_APP__;void a.selectPlace(a.landmarks.find(r=>r.id===id),{mode:'walk'});},walkId);
+  await page.waitForFunction(()=>!document.querySelector('#mobile-controls').hidden);
+  const mobileStart=await state(walkId),box=await page.locator('#joystick').boundingBox(),touch=await page.context().newCDPSession(page);
+  await touch.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:box.x+box.width/2,y:box.y+box.height/2-25}]});
+  await page.waitForFunction(start=>{const p=window.__SHANGHAI_APP__.controller.position;return Math.hypot((p.lng-start.lng)*95300,(p.lat-start.lat)*111320)>.05},mobileStart.position,{timeout:45000});
+  await touch.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await page.waitForTimeout(200);const mobileWalked=await state(walkId);await page.waitForTimeout(600);const mobileReleased=await state(walkId);
+  assert.ok(dist(mobileStart.position,mobileWalked.position)>.05);assert.ok(dist(mobileWalked.position,mobileReleased.position)<.03);
+  const layout=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,height:innerHeight,controlsVisible:!document.querySelector('#mobile-controls').hidden}));assert.ok(layout.scrollWidth<=layout.width);
+  await page.screenshot({path:path.join(output,'browser-mobile-walk.png')});report.tests.push({name:'existing-city-mobile-real-touch-walk-and-release',id:walkId,viewport:[390,844],mobileStart,mobileWalked,mobileReleased,layout});save();
+  await page.click('#overview-mode');await page.waitForFunction(()=>window.__SHANGHAI_APP__.mode==='overview');
+  assert.equal(new URLSearchParams((await page.evaluate(()=>location.hash)).slice(1)).get('mode'),'overview');
+  await page.close();
+  const mobile=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
+  await mobile.goto(base+'index.html#landmark='+id+'&mode=overview',{waitUntil:'domcontentloaded',timeout:90000});
+  await mobile.waitForFunction(()=>window.__SHANGHAI_APP__,null,{timeout:240000});
+  await mobile.waitForFunction(id=>window.__SHANGHAI_APP__.scene.getLandmarkAssetState(id).visible,id,{timeout:180000});
+  const mobileGlobal=await mobile.evaluate(id=>{const a=window.__SHANGHAI_APP__;return {hash:location.hash,mode:a.mode,asset:a.scene.getLandmarkAssetState(id),width:innerWidth,scrollWidth:document.documentElement.scrollWidth,canvasWidth:document.querySelector('#map canvas').getBoundingClientRect().width,panelClosed:document.querySelector('#explore-panel').classList.contains('closed'),walkDisabled:document.querySelector('#walk-mode').disabled};},id);
+  assert.equal(mobileGlobal.mode,'overview');assert.ok(mobileGlobal.panelClosed&&mobileGlobal.walkDisabled);assert.ok(mobileGlobal.scrollWidth<=390);assert.equal(mobileGlobal.canvasWidth,390);
+  await mobile.screenshot({path:path.join(output,'browser-mobile-global.png')});
+  await mobile.click('#reference-button');await mobile.waitForFunction(()=>document.querySelector('#candidate-placement-note')?.textContent.length>20);
+  const placementNote=await mobile.locator('#candidate-placement-note').textContent();
+  report.tests.push({name:'mobile-global-direct-link-and-placement-disclosure',viewport:[390,844],mobileGlobal,placementNote});save();await mobile.close();
+  for(const test of ['asset-failure','osm-fallback']){
+   const p=await browser.newPage({viewport:{width:1100,height:800}}),pageErrors=[];p.on('pageerror',e=>pageErrors.push(e.message));
+   if(test==='asset-failure')for(const variant of ['web','lod'])await p.route('**/'+row.assets[variant].file,r=>r.abort('failed'));
+   else await p.route('**/*overturemaps.org/**',r=>r.abort('failed'));
+   await p.goto(base+'index.html#landmark='+id+'&mode=walk',{waitUntil:'domcontentloaded',timeout:90000});
+   await p.waitForFunction(()=>window.__SHANGHAI_APP__,null,{timeout:240000});
+   await p.waitForFunction(({id,test})=>{const a=window.__SHANGHAI_APP__,s=a.scene.getLandmarkAssetState(id);return test==='asset-failure'?s.status==='error':s.visible&&a.scene.getCollisionState().buildingSource==='osm';},{id,test},{timeout:180000});
+   const result=await p.evaluate(id=>{const a=window.__SHANGHAI_APP__,r=a.landmarks.find(r=>r.id===id);return {asset:a.scene.getLandmarkAssetState(id),candidate:a.scene.getCandidateIntegrationState(),collision:a.scene.getCollisionState(),inside:a.scene.collisionAt(r.lng,r.lat),mode:a.mode,position:a.controller.position};},id);
+   assert.equal(result.candidate.active.some(r=>r.id===id),test==='osm-fallback');assert.equal(result.asset.visible,test==='osm-fallback');assert.equal(result.inside,'building');
+   assert.deepEqual(pageErrors,[]);await p.screenshot({path:path.join(output,'browser-'+test+'.png')});report.tests.push({name:test,result,pageErrors});save();await p.close();
+  }
+  assert.deepEqual(errors,[]);save();
+ }catch(error){report.failure=error.stack;save();throw error;}finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

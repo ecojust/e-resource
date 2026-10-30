@@ -12,84 +12,86 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def render(root: Path = ROOT) -> str:
-    records = json.loads((root / 'data/landmarks.json').read_text())
-    viewers = json.loads((root / 'data/model-viewers.json').read_text())
-    assert len({p['id'] for p in viewers}) == len(viewers), 'Duplicate viewer IDs'
-    assert all(p['page'].endswith('.html') and '/' not in p['page'] for p in viewers), 'Viewer must be a project page'
-    for viewer in viewers:
-        if viewer.get('model_walk'):
-            assert viewer['kind']=='candidate' and not viewer.get('walk_landmark_id'), 'Local model walking must stay distinct from city registration'
-        if viewer.get('walk_landmark_id'):
-            assert any(r['id']==viewer['walk_landmark_id'] and r.get('accepted') and r.get('navigation',{}).get('listed') for r in records), 'Viewer walking link lacks accepted navigation'
-    districts = {str(p['id']): p['name'] for p in json.loads((root / 'data/districts.json').read_text())['districts']}
-    assert records, 'Navigation directory must not be empty'
-    assert len({p['id'] for p in records}) == len(records), 'Duplicate navigation IDs'
-    # Precise models are appended after acceptance; feature the latest published record.
-    latest = next((p for p in reversed(records) if p.get('kind') == 'building'), records[-1])
-    groups = [
-        ('architecture', '逐栋建筑复原', '从屋顶与门窗，到扩建翼部与庭院。', list(reversed([p for p in records if p.get('kind') == 'building']))),
-        ('bund', '外滩历史建筑群', '沿江展开的柱廊、钟塔、石砌立面与铜屋顶。', [p for p in records if p.get('bund_number')]),
-        ('skyline', '陆家嘴天际线', '走到上海的高层地标脚下，仰望城市轮廓。', [p for p in records if p.get('kind') != 'building' and not p.get('bund_number')]),
-    ]
-    assert sum(len(group[3]) for group in groups) == len(records)
+    from sync_readme_districts import candidates
+
+    base = json.loads((root / 'data/landmarks.json').read_text())
+    integration = json.loads((root / 'data/candidate-city-integrations.json').read_text())
+    assert integration['schema'] == 'candidate-city-integrations-v1'
+    additions = integration['models']
+    records = base + additions
+    integrated_ids = {item['id'] for item in additions}
+    assert len({p['id'] for p in records}) == len(records), 'Duplicate global destination IDs'
+    assert len(base) == 40
+    viewers = {p['id']: p for p in json.loads((root / 'data/model-viewers.json').read_text())}
+    candidates_by_id = {p['id']: p for p in candidates()}
+    assert integrated_ids == set(candidates_by_id), 'Every delivered candidate must appear in the global directory'
+    districts = json.loads((root / 'data/districts.json').read_text())['districts']
+    district_names = {str(p['id']): p['name'] for p in districts}
+    latest = additions[-1] if additions else base[-1]
+    esc = html.escape
     sections = []
-    for key, title, subtitle, items in groups:
+    navigation = []
+    for district in districts:
+        district_id = str(district['id'])
+        items = [p for p in records if str(p['districtId']) == district_id]
+        if not items:
+            continue
+        key = 'district-' + district_id
+        navigation.append(f'<a href="#{key}">{esc(district["name"])}</a>')
         cards = []
         for item in items:
-            name = html.escape(item['name'])
-            district = html.escape(item.get('district', {}).get('name') or districts[str(item['districtId'])])
-            ident = html.escape(item['id'], quote=True)
-            href = html.escape('index.html#landmark=' + quote(item['id'], safe='') + '&mode=walk', quote=True)
-            description = html.escape(item.get('architecture_style') or ('逐栋建筑复原' if item.get('kind') == 'building' else f"建筑高度 {item['height_m']:g} 米"))
-            tag = '<span class="new-tag">最近接入原址</span>' if item['id'] == latest['id'] else ''
-            number = f"外滩 {item['bund_number']} 号" if item.get('bund_number') else district
-            cards.append(f'''<a class="landmark-card{' featured' if tag else ''}" id="building-{ident}" data-landmark="{ident}" href="{href}" data-search="{html.escape(item['name'] + ' ' + district + ' ' + number, quote=True)}">
-  <div class="card-meta"><span>{number}</span>{tag}</div><h3>{name}</h3><p>{description}</p>
-  <div class="card-foot"><span>{district}</span><strong>进入漫游 <span aria-hidden="true">↗</span></strong></div>
-</a>''')
-        sections.append(f'''<section class="landmark-group" id="{key}" aria-labelledby="heading-{key}">
-<div class="group-heading"><div><h2 id="heading-{key}">{title} <span>{len(items)}</span></h2><p>{subtitle}</p></div><a href="#top">回到顶部 ↑</a></div>
+            ident = item['id']
+            integrated = ident in integrated_ids
+            viewer = viewers.get(ident, candidates_by_id.get(ident, {}))
+            href = 'index.html#landmark=' + quote(ident, safe='') + ('&mode=overview' if integrated else '&mode=walk')
+            description = (viewer.get('description') or item.get('architecture_style') or ('近似定位的建筑外观模型；尺寸与未见细节含估计。' if integrated else '逐栋建筑外观模型。'))
+            location_note = '近似定位' if integrated else '城市地标'
+            actions = [f'<a href="{esc(href, quote=True)}">{"全局查看" if integrated else "进入漫游"} ↗</a>']
+            if integrated and item.get('navigation', {}).get('listed'):
+                walk = 'index.html#landmark=' + quote(ident, safe='') + '&mode=walk'
+                actions.append(f'<a href="{esc(walk, quote=True)}">室外漫游 ↗</a>')
+            if viewer.get('page'):
+                assert viewer['page'].endswith('.html') and '/' not in viewer['page'], 'Viewer must be a project page'
+                actions.append(f'<a href="{esc(viewer["page"], quote=True)}">单体预览 ↗</a>')
+            tag = '<span class="new-tag">最近接入</span>' if ident == latest['id'] else ''
+            cards.append(f'''<article class="landmark-card{' featured' if tag else ''}" id="building-{esc(ident, quote=True)}" data-landmark="{esc(ident, quote=True)}" data-search="{esc(item['name'] + ' ' + district['name'] + ' ' + description, quote=True)}">
+  <div class="card-meta"><span>{esc(district['name'])} · {location_note}</span>{tag}</div><h3><a href="{esc(href, quote=True)}">{esc(item['name'])}</a></h3><p>{esc(description)}</p>
+  <div class="card-foot">{' · '.join(actions)}</div>
+</article>''')
+        aliases = '<span id="bund"></span>' if district_id == '310101' else '<span id="skyline"></span>' if district_id == '310115' else ''
+        sections.append(f'''{aliases}<section class="landmark-group" id="{key}" aria-labelledby="heading-{key}">
+<div class="group-heading"><div><h2 id="heading-{key}">{esc(district['name'])} <span>{len(items)}</span></h2><p>按建筑名称选择，直接打开全局场景。</p></div><a href="#top">回到顶部 ↑</a></div>
 <div class="landmark-grid">{''.join(cards)}</div></section>''')
-    viewer_sections = []
-    for key, kind, title, note in [
-        ('models', 'candidate', '独立建筑模型', '旋转、缩放并查看细节。标注已接入的模型也可从下方漫游列表进入；尺寸及隐蔽部分含估计。'),
-        ('surfaces', 'surface', '地面与水系', '按行政区查看和下载；当前为地图平面，尚无实测地形与河床。'),
-    ]:
-        items = [p for p in viewers if p['kind'] == kind]
-        cards = []
-        for item in items:
-            esc = html.escape
-            page = item['page'] + ('#mode=model-walk' if item.get('model_walk') else '')
-            cards.append(f'''<a class="landmark-card" id="viewer-{esc(item['id'], quote=True)}" data-viewer="{esc(item['id'], quote=True)}" href="{esc(page, quote=True)}" data-search="{esc(item['name'] + ' ' + item['district'] + ' ' + item['description'], quote=True)}">
-  <div class="card-meta"><span>{esc(item['district'])}</span><span>{'已接入漫游' if item.get('walk_landmark_id') else '模型外围漫游' if item.get('model_walk') else '独立候选' if kind == 'candidate' else '平面模型'}</span></div><h3>{esc(item['name'])}</h3><p>{esc(item['description'])}</p>
-  <div class="card-foot"><span>{'室外地面漫游已开放' if item.get('walk_landmark_id') else '独立场景 · 原址待配准' if item.get('model_walk') else '待城市定位与接入' if kind == 'candidate' else '16区分区查看'}</span><strong>{'进入模型漫游' if item.get('model_walk') else '打开模型'} <span aria-hidden="true">↗</span></strong></div>
-</a>''')
-        viewer_sections.append(f'''<section class="landmark-group" id="{key}" aria-labelledby="heading-{key}">
-<div class="group-heading"><div><h2 id="heading-{key}">{title} <span>{len(items)}</span></h2><p>{note}</p></div><a href="#top">回到顶部 ↑</a></div>
-<div class="landmark-grid">{''.join(cards)}</div></section>''')
+    assert sum(1 for record in records if str(record['districtId']) in district_names) == len(records)
+    surfaces = [viewer for viewer in viewers.values() if viewer['kind'] == 'surface']
+    surface_cards = []
+    for item in surfaces:
+        surface_cards.append(f'''<a class="landmark-card" id="viewer-{esc(item['id'], quote=True)}" data-viewer="{esc(item['id'], quote=True)}" href="{esc(item['page'], quote=True)}" data-search="{esc(item['name'] + ' ' + item['district'], quote=True)}"><div class="card-meta">全市16区 · 平面模型</div><h3>{esc(item['name'])}</h3><p>{esc(item['description'])}</p><div class="card-foot"><strong>分区查看与下载 ↗</strong></div></a>''')
+    surface_section = f'''<section class="landmark-group" id="surfaces" aria-labelledby="heading-surfaces"><div class="group-heading"><div><h2 id="heading-surfaces">地面与水系</h2><p>地图水面与非水域底面的零高程平面；尚无实测地形。</p></div><a href="#top">回到顶部 ↑</a></div><div class="landmark-grid">{''.join(surface_cards)}</div></section>'''
+    count = len(records) + len(surfaces)
     return f'''<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#174e50">
-  <meta name="description" content="上海模型统一入口：{len(records)}处地标漫游、独立建筑候选及16区地面水系模型。">
-  <title>全部模型与地标 · 上海漫游</title>
+  <meta name="description" content="按上海16区查看{len(records)}处建筑与构件模型，直接进入全局场景，并保留单体预览与下载。">
+  <title>按区查看主要建筑 · 上海漫游</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="src/landmark-directory.css">
   <script src="src/landmark-directory.js" defer></script>
 </head>
 <body id="top">
-  <a class="skip-link" href="#destinations">跳到地标目录</a>
+  <a class="skip-link" href="#destinations">跳到建筑目录</a>
   <header class="directory-header"><a class="wordmark" href="index.html#mode=overview">上海漫游 <small>SHANGHAI EXPLORER</small></a><a class="overview-link" href="index.html#mode=overview">打开全市地图 ↗</a></header>
   <main>
-    <section class="hero"><div><span class="eyebrow">SHANGHAI MODEL COLLECTION</span><h1>看建筑，<br>也走进城市。</h1><p><strong>{len(records)} 处地标漫游 · {len(viewers)} 个独立模型入口。</strong>查看新交付的建筑候选与地面水系，或选择已接入的地标进入第三人称漫游。</p><a class="latest-link" href="#models">查看{html.escape(viewers[0]['name'])}等新模型 ↓</a><br><a class="latest-link" href="#building-{html.escape(latest['id'], quote=True)}">最近接入原址：{html.escape(latest['name'])} ↓</a></div><div class="hero-count" aria-hidden="true">{len(records) + len(viewers)}<span>模型与漫游入口 · 上海</span></div></section>
-    <nav class="group-nav" aria-label="模型分组"><a href="#models">独立建筑模型</a><a href="#surfaces">地面与水系</a><a href="#architecture">逐栋建筑漫游</a><a href="#bund">外滩历史建筑群</a><a href="#skyline">陆家嘴天际线</a></nav>
-    <div class="directory-search" hidden><label for="landmark-search">寻找模型与目的地</label><input id="landmark-search" type="search" placeholder="输入建筑名称或行政区，如：宋庆龄、崇明" autocomplete="off"><span id="result-count" role="status" aria-live="polite">共 {len(records) + len(viewers)} 个入口</span></div>
-    <div id="destinations">{''.join(viewer_sections)}{''.join(sections)}</div>
+    <section class="hero"><div><span class="eyebrow">SHANGHAI MODEL COLLECTION</span><h1>按区找建筑，<br>在城市中查看。</h1><p><strong>{len(records)} 处建筑与构件 · {len(sections)} 个行政区。</strong>已完成模型统一接入全局场景；选择建筑可直接定位，单体预览保留旋转查看和下载。</p><a class="latest-link" href="#building-{esc(latest['id'], quote=True)}">最近接入：{esc(latest['name'])} ↓</a></div><div class="hero-count" aria-hidden="true">{len(records)}<span>全局建筑入口 · 上海</span></div></section>
+    <nav class="group-nav" aria-label="按行政区查看">{''.join(navigation)}<a href="#surfaces">地面与水系</a></nav>
+    <div class="directory-search" hidden><label for="landmark-search">寻找建筑</label><input id="landmark-search" type="search" placeholder="输入建筑名称或行政区，如：永安、崇明" autocomplete="off"><span id="result-count" role="status" aria-live="polite">共 {count} 个入口</span></div>
+    <div id="destinations"><span id="models"></span><span id="architecture"></span>{''.join(sections)}{surface_section}</div>
     <p class="no-results" hidden>没有找到匹配的建筑，试试其他名称或行政区。</p>
-    <aside class="directory-note"><strong>查看模型，或从建筑旁开始探索</strong><p>“打开模型”进入可旋转、缩放的独立展示；“进入漫游”前往城市原址，WASD / 方向键行走，手机使用摇杆。模型和地图需要联网加载。</p><p>全市 16 区地图可探索，但并非每栋建筑都已完成精细复原；部分尺寸与背面细节仍含推估。{sum(bool(v.get('model_walk')) for v in viewers)}个独立候选可在局部场景外围行走，原址配准仍待核验，不计入{len(records)}处城市漫游。</p></aside>
+    <aside class="directory-note"><strong>全局查看与单体预览</strong><p>“全局查看”在城市地图中定位模型；“单体预览”提供独立旋转、缩放和下载。“进入漫游”从已有室外起点开始，WASD / 方向键行走，手机使用摇杆。模型和地图需要联网加载。</p><p>本次接入{len(additions)}件模型按资料近似定位；尺寸、未见细节和部分院落布局仍含估计。局部构件不代表整栋复原，地图接入也不表示测绘精度验收。<a href="data/candidate-city-integrations.json">查看定位记录</a>。</p></aside>
   </main>
-  <footer><span>上海漫游 · 地标直达</span><a href="https://github.com/ecojust/e-resource/tree/master/projects/shanghai">模型、来源与项目说明 ↗</a></footer>
+  <footer><span>上海漫游 · 按区直达</span><a href="https://github.com/ecojust/e-resource/tree/master/projects/shanghai">模型、来源与项目说明 ↗</a></footer>
 </body>
 </html>
 '''

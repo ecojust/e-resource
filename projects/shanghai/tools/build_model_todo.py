@@ -23,7 +23,7 @@ def compact_repeated_links(text):
  pattern=re.compile(r'(?<!!)\[([^\[\]\n]+)\]\(<([^<>\n]+)>\)')
  counts=Counter(m.group(2) for m in pattern.finditer(text));refs={}
  for url,count in sorted(counts.items()):
-  if count<3:continue
+  if count<2:continue
   ref='MTD-'+hashlib.sha256(url.encode()).hexdigest()[:8]
   saving=count*(len(url.encode())+2-len(ref))
   if saving>len(f'[{ref}]: <{url}>\n'.encode())+1:refs[url]=ref
@@ -140,10 +140,12 @@ def build():
  for j in sorted(jobs,key=lambda r:r['order']):
   refs=' · '.join(link(r['label'],r['url']) for r in j['references'])
   name=link(j['name'],j.get('preview'))
-  lines.append(f"| {j['order']} | {name} | {cell(j['district'])}／{cell(j['street'])} | {LABELS[j['status']]} | {model_sizes(j)} | {refs}；{cell(j['next_action'])} |")
+  status = '全局已接入／近似定位' if j.get('city_integration') else LABELS[j['status']]
+  lines.append(f"| {j['order']} | {name} | {cell(j['district'])}／{cell(j['street'])} | {status} | {model_sizes(j)} | {refs}；{cell(j['next_action'])} |")
  lines+=['','### 已有模型的后续核验','', '以下为当前模型身份清单，供新线索去重和细化时查对；不把历史交付自动改写为本轮验收。','', '<details><summary>展开已有模型及待办</summary>','', '| 模型 | 当前登记 | 后续 TODO |','|---|---|---|']
  for m in queue['existing_models']:
-  lines.append(f"| {link(m['name'],m.get('url'))} | {cell(m['status'])} | {cell(m['next_action'])} |")
+  status = '已接入全局场景（近似定位）' if m.get('city_integration') else m['status']
+  lines.append(f"| {link(m['name'],m.get('url'))} | {cell(status)} | {cell(m['next_action'])} |")
  lines+=['','</details>','','### 按区列出的全部已发现建筑 TODO','',
  '以下每行是一条待核对线索；已有模型关联仅作为查重提示。成组地址须先拆分到具体楼栋，名录中的建成年代、地址或照片链接本身不足以完成外观建模。新发现的街道资料继续追加，源条目ID保持稳定。','']
  for district in queue['district_order']:
@@ -163,9 +165,9 @@ def build():
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']
    lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(r['address'])} | {refs} | {cell(todo)} |")
   lines+=['','</details>','']
- lines+=['### 道路资料搜集 TODO','','每行均待逐页读取、查找沿街建筑、核对照片并拆为模型任务。道路名可能含历史名称、跨区道路或同名路，尚不是完整市政道路清单。各条原文入口见[街道索引](projects/shanghai/data/model-todo/STREETS.md)。','','<details><summary>展开全部道路名称线索</summary>','','| 道路 | 分类索引给出的区（待核） | TODO |','|---|---|---|']
+ lines+=['### 道路资料搜集 TODO','','表中“查资料”指逐页读取、查沿街建筑／照片与文字、核对照片并拆为模型任务。道路名可能含历史名称、跨区道路或同名路，尚不是完整市政道路清单。各条原文入口见[街道索引](projects/shanghai/data/model-todo/STREETS.md)。','','<details><summary>展开全部道路名称线索</summary>','','| 道路 | 分类索引给出的区（待核） | TODO |','|---|---|---|']
  for road in roads:
-  lines.append(f"| {cell(road.get('name_simplified',road['name']))} | {cell('、'.join(road['districts_indexed']))} | 查沿街建筑／照片与文字 |")
+  lines.append(f"| {cell(road.get('name_simplified',road['name']))} | {cell('、'.join(road['districts_indexed']))} | 查资料 |")
  lines+=['','</details>','']
  lines+=official_road_lines('projects/shanghai/data/model-todo/')
  lines+=map_road_label_lines('projects/shanghai/data/model-todo/')
