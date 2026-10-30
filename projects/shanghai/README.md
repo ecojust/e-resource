@@ -64,7 +64,7 @@
 
 | 独立候选（未配准） | 版本提交（UTC+8） |
 |---|---|
-| [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 未记录 |
+| [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 2026-10-30 19:25:12 |
 
 <!-- district-candidates:黄浦区:end -->
 
