@@ -42,7 +42,7 @@
 | 19 | [国际饭店历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/cc2b2f4873ed3ac01d84e6b9d50b7b3739e8cb52/projects/shanghai/park-hotel.html>) | 黄浦区／南京西路170号 | 候选已交付／待核验 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；外观候选已交付；近远景、原生及网页检查通过。83.8/83.6米并列，规则化退台、中央窗组、低翼后界与未见面待细核，未原址配准 |
 | 20 | [上海跑马总会历史东楼与主钟塔](<https://rawcdn.githack.com/ecojust/e-resource/3f88ffc426f6eba3ec8930101c1914e4df0ac309/projects/shanghai/race-club.html>) | 黄浦区／南京西路325号 | 候选已交付／待核验 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；东楼与主钟塔候选已交付；近远景、开放廊道、原生及网页检查通过。53米仅次级记载，主体尺度、窗网、隐蔽面及细部为估计；西楼／副塔未建，未原址配准 |
 | 21 | [大光明大戏院临街入口与灯塔局部](<https://rawcdn.githack.com/ecojust/e-resource/6e75351b9fecbb3dfc3bae00442731db42d77124/projects/shanghai/grand-theatre.html>) | 黄浦区／南京西路216号 | 候选已交付／待核验 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；入口、灯塔与圆角墙带局部候选已交付；近远景、原生及网页检查通过。30.5/16米端点未解，尺寸和字形含估计；影厅及完整商铺带未建，未原址配准 |
-| 22 | [金门饭店／华安大楼历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html>) | 黄浦区／南京西路104号 | 候选已交付／待核验 | 网页 1.64 MB／Blender 2.71 MB | [官方文字与尺寸](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html>) · [已核2013外观照片](<https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG>) · [来源与冲突审查](<projects/shanghai/data/audit/pacific-hotel-v1/documentary-review.json>) · [地图外包与北楼限制](<projects/shanghai/data/audit/pacific-hotel-v1/footprint-review.json>)；主楼与钟塔候选已交付；作者构件、压缩表面等价、原生重开及网页检查通过。38.16/36.16米与9米塔高端点未解，42×36米主体、隐面及细部为估计；底座构件未整体布尔并集，北楼未建，未原址配准 |
+| 22 | [金门饭店／华安大楼历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/fb2833485b4716a89637c6f8e57db03dafc063ec/projects/shanghai/pacific-hotel.html>) | 黄浦区／南京西路104号 | 候选已交付／待核验 | 网页 1.64 MB／Blender 2.71 MB | [官方文字与尺寸](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html>) · [已核2013外观照片](<https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG>) · [来源与冲突审查](<projects/shanghai/data/audit/pacific-hotel-v1/documentary-review.json>) · [地图外包与北楼限制](<projects/shanghai/data/audit/pacific-hotel-v1/footprint-review.json>)；主楼与钟塔候选已交付；作者构件、压缩表面等价、原生重开及网页检查通过。38.16/36.16米与9米塔高端点未解，42×36米主体、隐面及细部为估计；底座构件未整体布尔并集，北楼未建，未原址配准 |
 
 ### 已有模型的后续核验
 
@@ -3868,7 +3868,7 @@
 | [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 2026-10-30 19:25:12 |
 | [上海跑马总会历史东楼与主钟塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) | 2026-10-30 19:40:09 |
 | [大光明大戏院临街入口与灯塔局部](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) | 2026-10-30 20:28:32 |
-| [金门饭店／华安大楼历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) | 未记录 |
+| [金门饭店／华安大楼历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) | 2026-10-30 20:53:59 |
 
 <!-- district-candidates:黄浦区:end -->
 

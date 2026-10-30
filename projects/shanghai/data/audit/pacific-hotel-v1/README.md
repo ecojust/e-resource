@@ -26,3 +26,5 @@
 [原生正面](native-front.png) · [原生斜侧](native-oblique.png) · [原生背面](native-rear.png) · [网页斜侧](browser-oblique.png) · [远景](browser-lod.png) · [手机](browser-mobile.png) · [手机漫游](browser-mobile-walk.png)
 
 仅支持整楼外包以外的平地漫游，不支持室内、进入门厅或登楼。沿用35米模型范围、46米场地边界，本次没有修改共享漫游运行代码。未替换城市源对象，40处城市入口保留。本次软件渲染不能代表用户设备帧率，未重新遍历所有既有模型；公开文件发布字节检查另记。
+
+[固定提交公开文件核对](public-bytes.json)：模型版本`fb2833485b4716a89637c6f8e57db03dafc063ec`的四件资产、清单、页面与脚本、总目录及两份README共10件，实际从GitHub读取11,104,022字节，逐件与提交内容相同。该README快照早于随后固定预览版本和发布日期补记；本项不代替公共CDN页面性能检查。
