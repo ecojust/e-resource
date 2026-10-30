@@ -6,7 +6,7 @@ import {moveOutside, blockedAt, cameraFraction} from './candidate-walk-motion.js
  * model's projected bounds stay closed: no implied interiors or bridge access.
  * A model is attached only after its viewer has verified its byte/SHA contract.
  */
-export function installCandidateWalk({scene, camera, renderer, controls, stage, render, onEnter}) {
+export function installCandidateWalk({scene, camera, renderer, controls, stage, render, onEnter, modelExtentLimit = 35}) {
   const viewport = document.getElementById('model-view');
   const button = document.createElement('button');
   button.id = 'enter-model-walk'; button.type = 'button'; button.disabled = true;
@@ -115,7 +115,8 @@ export function installCandidateWalk({scene, camera, renderer, controls, stage, 
   function attachModel(model) {
     model.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(model);
-    if (!Number.isFinite(box.min.x + box.max.z) || Math.max(Math.abs(box.min.x), Math.abs(box.max.x), Math.abs(box.min.z), Math.abs(box.max.z)) > 35) throw Error('模型超出室外漫游场地范围');
+    if (!Number.isFinite(modelExtentLimit) || modelExtentLimit < 1 || modelExtentLimit > 40) throw Error('室外模型范围参数无效');
+    if (!Number.isFinite(box.min.x + box.max.z) || Math.max(Math.abs(box.min.x), Math.abs(box.max.x), Math.abs(box.min.z), Math.abs(box.max.z)) > modelExtentLimit) throw Error('模型超出室外漫游场地范围');
     const next = {minX: box.min.x - .05, maxX: box.max.x + .05, minZ: box.min.z - .05, maxZ: box.max.z + .05};
     bounds = bounds ? {minX: Math.min(bounds.minX, next.minX), maxX: Math.max(bounds.maxX, next.maxX), minZ: Math.min(bounds.minZ, next.minZ), maxZ: Math.max(bounds.maxZ, next.maxZ)} : next;
     // The pool viewer's original stage is below its basin. Add only surrounding
