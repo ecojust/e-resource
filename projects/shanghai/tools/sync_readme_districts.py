@@ -18,6 +18,9 @@ DATA = ROOT / 'projects/shanghai/data/model-todo'
 TIME_FILE = DATA / 'candidate-publication-times.json'
 HEADING = '## 按区查看主要建筑\n'
 CURRENT = 'https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/'
+# This former snapshot was used by current-view buttons and early-model tables.
+# Other pinned candidate versions and historical links must retain their hashes.
+LEGACY_CURRENT = 'https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/'
 PREFIX_DISTRICT = {'chongming':'崇明区', 'hongkou':'虹口区', 'xuhui':'徐汇区'}
 MARKER = r'\n?<!-- district-candidates:[^>]+:start -->.*?<!-- district-candidates:[^>]+:end -->\n?'
 
@@ -72,6 +75,9 @@ def publication_times(items, check):
 
 
 def render(text, items, times, project=False):
+    text = text.replace(LEGACY_CURRENT, CURRENT)
+    text = text.replace('以下七个建筑模型均可独立预览', '下列早期模型均可独立预览')
+    text = text.replace('七个模型均已接入', '下列早期模型均已接入')
     before, rest = text.split(HEADING, 1)
     section, after = rest.split('\n## ', 1)
     old_city_ids = re.findall(r'#landmark=([^&]+)&mode=walk', section)

@@ -1,33 +1,33 @@
 # 上海全景建模
 
-[徐家汇藏书楼南楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/zikawei-library.html)：150,176面，远景23,140面；五开间三层外廊、百叶门窗、栏杆与老虎窗。已接入原址室外漫游，尺寸和后部构造仍为估计。
+[徐家汇藏书楼南楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zikawei-library.html)：150,176面，远景23,140面；五开间三层外廊、百叶门窗、栏杆与老虎窗。已接入原址室外漫游，尺寸和后部构造仍为估计。
 
-[宋庆龄故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，未接入城市漫游。
+[宋庆龄故居主楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html)：198,532面，远景17,328面；弧形瓦屋面、半圆老虎窗与曲线阳台，尺寸和隐藏构造为估计，未接入城市漫游。
 
-[鲁迅故居正立面与院门候选](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，地图归属待核验，未计入整栋复原完成量。
+[鲁迅故居正立面与院门候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html)：33,880面，远景7,348面；仅制作正立面与院门，地图归属待核验，未计入整栋复原完成量。
 
-[孙中山故居主楼外观候选](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象并接入室外漫游。
+[孙中山故居主楼外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sun-yatsen-residence.html) · [来源、估算与限制](source/precise/huangpu-sun-yatsen-residence/README.md)；已识别地图主楼源对象并接入室外漫游。
 
-**[打开最新地标目录](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
+**[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
 全市16区底图可浏览；目录提供40处已建模地标的独立入口，分布在15个区。崇明区已有独立候选，原址精模接入仍待完成。1,796,419个建筑及部件要素尚未全部按照片逐栋复原，现有模型的精细程度也不完全相同。
 
-新增[16区地面与水系模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/surfaces.html)：提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
+新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/surfaces.html)：提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
 ## 建筑模型预览与地面水系
 
-以下七个建筑模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个现已支持**独立模型室外漫游**，城市原址仍待配准，未计入40处城市入口。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
+下列早期模型均可独立预览；其中徐家汇藏书楼南楼、孙中山故居主楼已接入原址室外漫游，其余五个现已支持**独立模型室外漫游**，城市原址仍待配准，未计入40处城市入口。尺寸及隐蔽构造含估计。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 在线预览 | 来源与限制 |
 |---|---|---|---|
-| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/zikawei-library.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](source/precise/xuhui-zikawei-south-building/README.md) |
-| 徐汇 | 宋庆龄故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/soong-residence.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/soong-residence.html#mode=model-walk) | [查看说明](source/precise/xuhui-soong-ching-ling-residence/README.md) |
-| 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/luxun-residence.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/luxun-residence.html#mode=model-walk) | [查看说明](source/precise/hongkou-luxun-residence-facade/README.md) |
-| 黄浦 | 孙中山故居主楼 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/sun-yatsen-residence.html) · [进入漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](source/precise/huangpu-sun-yatsen-residence/README.md) |
-| 崇明 | 学宫尊经阁 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/zunjing-pavilion.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/zunjing-pavilion.html#mode=model-walk) | [查看说明](source/precise/chongming-zunjing-pavilion/README.md) |
-| 崇明 | 学宫泮池与登云桥 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/pan-pool.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/pan-pool.html#mode=model-walk) | [查看说明](source/precise/chongming-pan-pool-bridge/README.md) |
-| 崇明 | 学宫大成殿 | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/dacheng-hall.html) · [模型室外漫游](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/dacheng-hall.html#mode=model-walk) | [查看说明](source/precise/chongming-dacheng-hall/README.md) |
-| 全市16区 | 地面与江河水面（零高程平面） | [打开模型](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/surfaces.html) | [查看说明](source/surfaces/README.md) |
+| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zikawei-library.html) · [进入漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](source/precise/xuhui-zikawei-south-building/README.md) |
+| 徐汇 | 宋庆龄故居主楼 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html#mode=model-walk) | [查看说明](source/precise/xuhui-soong-ching-ling-residence/README.md) |
+| 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html#mode=model-walk) | [查看说明](source/precise/hongkou-luxun-residence-facade/README.md) |
+| 黄浦 | 孙中山故居主楼 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sun-yatsen-residence.html) · [进入漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](source/precise/huangpu-sun-yatsen-residence/README.md) |
+| 崇明 | 学宫尊经阁 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html#mode=model-walk) | [查看说明](source/precise/chongming-zunjing-pavilion/README.md) |
+| 崇明 | 学宫泮池与登云桥 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html#mode=model-walk) | [查看说明](source/precise/chongming-pan-pool-bridge/README.md) |
+| 崇明 | 学宫大成殿 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html#mode=model-walk) | [查看说明](source/precise/chongming-dacheng-hall/README.md) |
+| 全市16区 | 地面与江河水面（零高程平面） | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/surfaces.html) | [查看说明](source/surfaces/README.md) |
 
 ## 按区查看主要建筑
 
@@ -297,9 +297,9 @@
 
 ## 独立候选模型
 
-七个模型均已接入[统一模型目录](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；南楼和孙中山故居主楼已开放室外漫游，其余五个候选继续核对定位与行走范围。
+下列早期模型均已接入[统一模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html#models)，支持按名称或行政区搜索，点击即可旋转、缩放查看；南楼和孙中山故居主楼已开放室外漫游，其余五个候选继续核对定位与行走范围。
 
-[崇明学宫尊经阁预览](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
+[崇明学宫尊经阁预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html)：依据历史照片制作，待地理配准，尚未计入城市精细建筑目录。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 
 ## 全市复原进度口径
 
@@ -307,6 +307,6 @@
 
 [逐要素身份与模型关联台账](data/feature-restoration/README.md)覆盖全部1,708个宏块、1,796,419个渲染要素，支持按源 ID 查询。登记精模、独立候选、基线生成模型及父体剩余部分分别记录；本次只验证身份与清单，不新增模型验收或完成百分比。
 
-[崇明学宫泮池与登云桥预览](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/pan-pool.html)：文献尺寸与历史照片参照的池体、石拱桥和栏杆构件，待地理接入。[来源与估计范围](source/precise/chongming-pan-pool-bridge/README.md)。
+[崇明学宫泮池与登云桥预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html)：文献尺寸与历史照片参照的池体、石拱桥和栏杆构件，待地理接入。[来源与估计范围](source/precise/chongming-pan-pool-bridge/README.md)。
 
-[崇明学宫大成殿外观候选](https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/dacheng-hall.html)：重檐屋面、前廊、分格门窗和月台，文献尺寸与2005年照片参照；隐蔽构造仍为估计，未地理接入。[来源与限制](source/precise/chongming-dacheng-hall/README.md)。
+[崇明学宫大成殿外观候选](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html)：重檐屋面、前廊、分格门窗和月台，文献尺寸与2005年照片参照；隐蔽构造仍为估计，未地理接入。[来源与限制](source/precise/chongming-dacheng-hall/README.md)。
