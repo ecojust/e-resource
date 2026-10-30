@@ -197,5 +197,7 @@ def main():
   assert street.read_text()==street_text,'Street index is stale'
  else:
   readme.write_text(updated);street.write_text(street_text)
+ from sync_readme_districts import sync as sync_district_readmes
+ sync_district_readmes(check=a.check)
  print('README TODO matches structured records' if a.check else 'README TODO updated')
 if __name__=='__main__':main()
