@@ -1,0 +1,125 @@
+{
+  "model_id": "huangpu-old-wing-on-company",
+  "reviewed_at_utc": "2026-10-30T14:29:35.893285+00:00",
+  "reviewer": "wing_viewer agent, direct image inspection",
+  "scope": "Actual local Chromium/SwiftShader screenshots and UI framing after final packaged assets; no physical-phone performance or photographic accuracy acceptance.",
+  "result": "pass-for-local-viewer-framing-ui-and-outdoor-controls",
+  "inputs": {
+    "html": {
+      "path": "old-wing-on-company.html",
+      "bytes": 2979,
+      "sha256": "da2751a98db43085997769fe4606265885f006466129b0a3e4292c95aefcc78a"
+    },
+    "javascript": {
+      "path": "src/old-wing-on-company.js",
+      "bytes": 8009,
+      "sha256": "06349b3bb24c5af83a76e52992f684359b1b2b9946fab8d191f6078e3b7d50cc"
+    },
+    "qa_script": {
+      "path": "data/audit/old-wing-on-company-v1/qa-browser.cjs",
+      "bytes": 9911,
+      "sha256": "9a4c117da7b18cd90748d42181c8be40419732c1c259f4948d127b616dce7f09"
+    },
+    "browser_report": {
+      "path": "data/audit/old-wing-on-company-v1/browser.json",
+      "bytes": 6683,
+      "sha256": "dd93d1d3b239a87259a2119f1d700ce271d3c8dcbdbe935b15be69aa66e7d416"
+    },
+    "manifest": {
+      "path": "assets/models/candidates/huangpu-old-wing-on-company/manifest.json",
+      "bytes": 7229,
+      "sha256": "e3709767f3b9c29935f89dc957411049e53f96ad905e289d2ff9b7f6c28e9d3f"
+    },
+    "assets": {
+      "raw": {
+        "file": "huangpu-old-wing-on-company-raw.glb",
+        "bytes": 16114420,
+        "sha256": "24783a7ea50c315bba3bec630d6dca20c347fa4e9bcb67da07761affc12cd2e3",
+        "triangles": 296412
+      },
+      "native": {
+        "file": "huangpu-old-wing-on-company.blend",
+        "bytes": 8683894,
+        "sha256": "2192221b3faae812d55795575a51540c488e9946414098b858c1865258fe1993"
+      },
+      "full": {
+        "file": "huangpu-old-wing-on-company-web.glb",
+        "bytes": 4907868,
+        "sha256": "d0e755b1197eb9cb0491c61d0213b6fb9ce40768b3e7d1efcd103e6151982d31",
+        "triangles": 296412
+      },
+      "lod": {
+        "file": "huangpu-old-wing-on-company-lod.glb",
+        "bytes": 1869448,
+        "sha256": "724965c04dfa61bd3901dc37fa7cb9d0e35fb2df8de3291234e19cbeb23490a8",
+        "triangles": 103692
+      }
+    }
+  },
+  "viewed_images": [
+    {
+      "path": "data/audit/old-wing-on-company-v1/browser-front.png",
+      "bytes": 287106,
+      "sha256": "c5f3b72135b9d5ca800f14e921cd70902a92a668d4bd54040ff6ec0e53940380",
+      "actually_viewed": true,
+      "observation": "北向正面：完整主体、东北弧角、偏西屋顶塔楼及细杆均在画面内；门窗与栏杆可见，没有缺面或整块黑色着色异常。"
+    },
+    {
+      "path": "data/audit/old-wing-on-company-v1/browser-oblique.png",
+      "bytes": 382028,
+      "sha256": "0efa2ab8c4daf350b2076d4b75a13c0debe83cdd38e7940ada9c31baefbd05d4",
+      "actually_viewed": true,
+      "observation": "东北斜侧：北面与东面、弧角入口、东北低冠、偏西屋顶塔楼和东南局部七层分开可见；屋顶大面属于建模估计，图中不表示已实测。"
+    },
+    {
+      "path": "data/audit/old-wing-on-company-v1/browser-rear.png",
+      "bytes": 244463,
+      "sha256": "e6aec18a6ec891e5cc0472bc33721341814a8675ee374fccfa9423b9ba70588f",
+      "actually_viewed": true,
+      "observation": "西南背面：估计背墙、局部七层及屋顶均正常显示，杆顶和基脚未截断；不将规则化背面窗网认定为照片复原。"
+    },
+    {
+      "path": "data/audit/old-wing-on-company-v1/browser-lod.png",
+      "bytes": 212296,
+      "sha256": "377b177593d19039eb01fe4c2f4ace62590d9787b28a2708c483572f7c14dba3",
+      "actually_viewed": true,
+      "observation": "简化远景在背面视角保留主体、局部七层和塔楼外形，窗框等细部减少；实际切换到103692面，随后返回完整模型。"
+    },
+    {
+      "path": "data/audit/old-wing-on-company-v1/browser-mobile.png",
+      "bytes": 98384,
+      "sha256": "e6fef97cc14a71be8eb92891218eb84b34eef88a96f09975407076299782d588",
+      "actually_viewed": true,
+      "observation": "390×844手机视口：完整模型及细杆容纳于查看区，标题、细节选择与视角按钮可读；操作面板滚动范围独立，文档无横向溢出。"
+    },
+    {
+      "path": "data/audit/old-wing-on-company-v1/browser-mobile-walk.png",
+      "bytes": 37247,
+      "sha256": "b23d42610fdc977a07e64984da30dd663a71926997f81cc2bfbcf129637cdaaf",
+      "actually_viewed": true,
+      "observation": "手机外围漫游：显示南侧／背面地面起点附近、人物、触屏方向键和返回按钮；此图不是北面入口，也不宣称支持进入屋内或屋顶。"
+    }
+  ],
+  "checks": {
+    "desktop_north_front_northeast_oblique_southwest_rear_all_bounds_fit": true,
+    "mobile_model_fit_and_no_horizontal_document_overflow": true,
+    "tower_mast_top_and_building_base_not_cropped_in_inspector_views": true,
+    "full_and_lod_loaded_then_returned_to_full": true,
+    "all_four_download_roles_fetched_and_verified_against_manifest": true,
+    "keyboard_and_touch_inputs_move_and_stop_after_release": true,
+    "each_release_observed_for_additional_animation_frames": 8,
+    "walk_start_side": "south/rear",
+    "walk_start_clearance_from_blocked_model_bounds_m": 6,
+    "model_extent_limit_m": 60,
+    "walk_limit_m": 80,
+    "no_console_page_or_http_errors": true,
+    "shared_runtime_modified": false
+  },
+  "limitations": [
+    "观察器中的屋面、背面、重复窗网及雕饰仍有作者估计和简化；本记录只验收浏览器呈现，不替代照片形态与文献核验。",
+    "细杆在缩小视图中较细、对比有限；投影数据确认整根处于画框内。",
+    "漫游使用整栋模型外包阻挡，起点在南侧背面；未开放室内、登阶或屋面。",
+    "测试使用本机无头Chromium与SwiftShader，390×844为模拟手机视口；未测量真实手机GPU帧率或公网CDN性能。",
+    "尚未城市原址配准或替换源地图对象；未回归验收其他候选模型。"
+  ]
+}

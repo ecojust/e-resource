@@ -1,0 +1,314 @@
+{
+  "schema": "old-wing-on-company-independent-native-visual-review-v1",
+  "reviewed_utc": "2026-10-30T14:28:00.311146+00:00",
+  "asset_id": "huangpu-old-wing-on-company",
+  "reviewer": "独立文献／照片参考审阅者 wing_reference",
+  "scope": "实际查看最终四张native渲染，与此前实际查看的六张核心原始照片比较。本审阅者没有修改模型几何。",
+  "decision": {
+    "status": "deliverable_as_recognition_morphology_exterior_candidate",
+    "blocking_visible_issues": [],
+    "summary_zh": "未见阻断建筑识别的重大可见形态错误，可作为老永安主楼与屋顶塔楼外观候选交付。五段圆角、规整窗网、柱式和雕饰仍有明显简化；尺寸、背面和屋顶布局未经测绘，不属于全部立面照片复原验收。",
+    "conditions": [
+      "保留模型尺寸和塔位均为估计的说明。",
+      "明确六层局部七层、东北弧角与独立北侧两层亭，不移用先施摩星塔形态或新永安高度。",
+      "保留五段曲面、重复窗格和简化雕饰的局限。",
+      "后部与屋面为估计补全，不能以封闭屋面推断实楼没有天井。",
+      "多期现代照片并非1918年原貌或2026年实测现状。"
+    ]
+  },
+  "bound_artifacts": {
+    "raw_glb": {
+      "path": "/workspace/wing-build/huangpu-old-wing-on-company-raw.glb",
+      "bytes": 16114420,
+      "sha256": "24783a7ea50c315bba3bec630d6dca20c347fa4e9bcb67da07761affc12cd2e3",
+      "repository_path": "projects/shanghai/assets/models/candidates/huangpu-old-wing-on-company/huangpu-old-wing-on-company-raw.glb"
+    },
+    "build_model_py": {
+      "path": "/workspace/e-resource/projects/shanghai/source/precise/huangpu-old-wing-on-company/source/build_model.py",
+      "bytes": 29416,
+      "sha256": "a9c3950cf271f5dd93b4622157c601cdb2d8616ae723b95149d37a1769b6e7eb",
+      "repository_path": "projects/shanghai/source/precise/huangpu-old-wing-on-company/source/build_model.py"
+    },
+    "native_blend": {
+      "path": "/workspace/wing-build/huangpu-old-wing-on-company.blend",
+      "bytes": 8683894,
+      "sha256": "2192221b3faae812d55795575a51540c488e9946414098b858c1865258fe1993",
+      "repository_path": "projects/shanghai/assets/models/candidates/huangpu-old-wing-on-company/huangpu-old-wing-on-company.blend"
+    },
+    "native_receipt": {
+      "path": "/workspace/wing-previews/native.json",
+      "bytes": 4721,
+      "sha256": "cbc3d2e095cf022114628b8a10ab99ae53632a58d2faae3f14543135aabadb57",
+      "repository_path": "projects/shanghai/data/audit/old-wing-on-company-v1/native.json"
+    },
+    "receipt_matches_raw_sha256": true,
+    "receipt_reported_reopen_geometry_hash": "86a00f40a973b6236b7ff1b13d3be523d319f815576ec8484afd177ef9030035",
+    "receipt_limit": "本审阅者独立查看渲染和核对文件哈希；Blender保存／重开结果及网格数量取自native.json，没有由视觉审阅者重复执行。"
+  },
+  "images": [
+    {
+      "path": "/workspace/wing-previews/native-front.png",
+      "bytes": 821123,
+      "sha256": "4abb0540c99b9b5579ff5f0349591389c097d31e390c813d556b82033161a556",
+      "view": "front",
+      "actually_opened_and_viewed": true,
+      "camera_location_enu_m": [
+        0.0,
+        200.0,
+        46.0
+      ],
+      "camera_target_enu_m": [
+        0.0,
+        0.0,
+        24.0
+      ],
+      "camera_type": "PERSP",
+      "ortho_scale_m": null,
+      "observations": [
+        "较低北向相机能同时看清街面、塔位和屋顶；东北弧角低冠与北面中西段屋顶塔明确分开。",
+        "二楼与六楼的连续长廊、圆气窗带及塔轴线下的独立阳台组可辨认。窗网仍较真实照片规整重复，柱头与托座层次较弱。",
+        "塔后的开阔封闭屋面是估计补全，不能据此认定实楼不存在天井或设备。"
+      ],
+      "inspected_sha_named_copy": "/workspace/wing-on-research/native-front-4abb0540c99b9b5579ff5f0349591389c097d31e390c813d556b82033161a556.png",
+      "receipt_mast_tip_ndc": [
+        0.6070566773414612,
+        0.8079944252967834,
+        155.68096923828125
+      ],
+      "receipt_vertical_frame_margin_at_least_3_percent": true,
+      "long_side_horizontal_crop_allowed": false,
+      "repository_path": "projects/shanghai/data/audit/old-wing-on-company-v1/native-front.png"
+    },
+    {
+      "path": "/workspace/wing-previews/native-oblique.png",
+      "bytes": 818507,
+      "sha256": "8b507a4b93cafd9a8943fc23038ece16bbb3410240ab8ca9b8def018d23591d7",
+      "view": "oblique",
+      "actually_opened_and_viewed": true,
+      "camera_location_enu_m": [
+        150.0,
+        185.0,
+        64.0
+      ],
+      "camera_target_enu_m": [
+        0.0,
+        0.0,
+        24.0
+      ],
+      "camera_type": "PERSP",
+      "ortho_scale_m": null,
+      "observations": [
+        "东北弧角由五段面构成，分层弧形阳台、连续长廊与较低弧冠对应已审照片的主要轮廓。",
+        "东南局部七层体量独立升出主屋面，北侧塔与此加层分开。新永安和跨街连廊均未被误并入。",
+        "全楼可见范围内未发现明显浮空、颠倒立面或主要屋面缺失；此为图像观察，不替代几何封闭性或碰撞检查。"
+      ],
+      "inspected_sha_named_copy": "/workspace/wing-on-research/native-oblique-8b507a4b93cafd9a8943fc23038ece16bbb3410240ab8ca9b8def018d23591d7.png",
+      "receipt_mast_tip_ndc": [
+        0.72968590259552,
+        0.7286837697029114,
+        211.7445068359375
+      ],
+      "receipt_vertical_frame_margin_at_least_3_percent": true,
+      "long_side_horizontal_crop_allowed": false,
+      "repository_path": "projects/shanghai/data/audit/old-wing-on-company-v1/native-oblique.png"
+    },
+    {
+      "path": "/workspace/wing-previews/native-rear.png",
+      "bytes": 826992,
+      "sha256": "af5a305219f394c281700f953466b47ddad1fe02fc90223feff2a9207bc6aff3",
+      "view": "rear",
+      "actually_opened_and_viewed": true,
+      "camera_location_enu_m": [
+        -150.0,
+        -185.0,
+        105.0
+      ],
+      "camera_target_enu_m": [
+        0.0,
+        0.0,
+        24.0
+      ],
+      "camera_type": "PERSP",
+      "ortho_scale_m": null,
+      "observations": [
+        "背面、南西立面和屋面清楚显示为规则简化补全；这些区域没有完整参考照片，不能进行照片精度验收。",
+        "局部七层体量与屋顶相接、塔与主体相接，未见明显脱离屋顶的悬浮体量。"
+      ],
+      "inspected_sha_named_copy": "/workspace/wing-on-research/native-rear-af5a305219f394c281700f953466b47ddad1fe02fc90223feff2a9207bc6aff3.png",
+      "receipt_mast_tip_ndc": [
+        0.3169620633125305,
+        0.7616320252418518,
+        265.70843505859375
+      ],
+      "receipt_vertical_frame_margin_at_least_3_percent": true,
+      "long_side_horizontal_crop_allowed": false,
+      "repository_path": "projects/shanghai/data/audit/old-wing-on-company-v1/native-rear.png"
+    },
+    {
+      "path": "/workspace/wing-previews/native-corner.png",
+      "bytes": 923531,
+      "sha256": "16c7b949883abce6234e4fde4db4298f78b551ce024b244dd3a4b38bdabd621c",
+      "view": "corner",
+      "actually_opened_and_viewed": true,
+      "camera_location_enu_m": [
+        100.0,
+        135.0,
+        48.0
+      ],
+      "camera_target_enu_m": [
+        8.0,
+        42.0,
+        30.0
+      ],
+      "camera_type": "ORTHO",
+      "ortho_scale_m": 113.4000015258789,
+      "observations": [
+        "近景同时容纳东北弧角、北面两层亭和杆顶；两层亭可以看到开口内的背景，没有被整片玻璃或实墙填死。",
+        "塔上层弧山花较首轮更高，东北低冠的弧线也更明确，削弱了首轮平顶盒状观感；阶梯帽及简化杆仍明显不同于先施圆形灯亭。",
+        "窗楣、层间阳台和门廊没有在此画幅显现成排压穿窗面的明显错误。更细微的净距由独立几何／立面检查报告验证。",
+        "雕饰、双柱细节、铁栏花纹、檐下托座仍采用简化形体，尚未达到照片中精细古典装饰的程度。"
+      ],
+      "inspected_sha_named_copy": "/workspace/wing-on-research/native-corner-16c7b949883abce6234e4fde4db4298f78b551ce024b244dd3a4b38bdabd621c.png",
+      "receipt_mast_tip_ndc": [
+        0.6316176652908325,
+        0.8236679434776306,
+        142.70811462402344
+      ],
+      "receipt_vertical_frame_margin_at_least_3_percent": true,
+      "long_side_horizontal_crop_allowed": true,
+      "repository_path": "projects/shanghai/data/audit/old-wing-on-company-v1/native-corner.png"
+    }
+  ],
+  "reference_images": [
+    {
+      "file_id": "old",
+      "page": "https://commons.wikimedia.org/wiki/File:Old_Wing_On_in_Shanghai.jpg",
+      "author": "Legolas1024",
+      "capture_date": "2011-05-06",
+      "license": "CC BY-SA 4.0",
+      "bytes": 1258255,
+      "sha256": "55deabfd7b21af39db5f2236023566576572f435f433e386ee4454db58cc8d37",
+      "actually_viewed_by_this_reviewer": true
+    },
+    {
+      "file_id": "general",
+      "page": "https://commons.wikimedia.org/wiki/File:Old_Wing_On_Company_Shanghai.JPG",
+      "author": "Livelikerw",
+      "capture_date": "2013-12-19",
+      "license": "CC BY-SA 3.0",
+      "bytes": 5341184,
+      "sha256": "3fcc4ad710040515257fde083643d48f0f459be83c177b7ccd733c5391c54085",
+      "actually_viewed_by_this_reviewer": true
+    },
+    {
+      "file_id": "corner",
+      "page": "https://commons.wikimedia.org/wiki/File:Wing_On_Department_Store_%28Shanghai%29_20250501-2.jpg",
+      "author": "Suicasmo",
+      "capture_date": "2025-05-01",
+      "license": "CC0 1.0",
+      "bytes": 8033928,
+      "sha256": "f8a4c0c2d6badc0a27426bff9f814d97f1cc582e06b991d2e1c24b6942bbf1ae",
+      "actually_viewed_by_this_reviewer": true
+    },
+    {
+      "file_id": "side",
+      "page": "https://commons.wikimedia.org/wiki/File:Wing_On_Department_Store_20251126_%28III%29.jpg",
+      "author": "Supanut Arunoprayote",
+      "capture_date": "2025-11-26",
+      "license": "CC BY 4.0",
+      "bytes": 19429195,
+      "sha256": "7dd7780fe45b3e1293e085ed998abc43b579bdc4c078e4a173d68253790b52c4",
+      "actually_viewed_by_this_reviewer": true
+    },
+    {
+      "file_id": "modern",
+      "page": "https://commons.wikimedia.org/wiki/File:Wing_On_Department_Store_20251126.jpg",
+      "author": "Supanut Arunoprayote",
+      "capture_date": "2025-11-26",
+      "license": "CC BY 4.0",
+      "bytes": 19878751,
+      "sha256": "27b70ede4539b50514e4e51c4b8f2eec92b0c3e707d9850d45a83e1c340c5978",
+      "actually_viewed_by_this_reviewer": true
+    },
+    {
+      "file_id": "north",
+      "page": "https://commons.wikimedia.org/wiki/File:Wing_On_Department_Store_20251126_%28II%29.jpg",
+      "author": "Supanut Arunoprayote",
+      "capture_date": "2025-11-26",
+      "license": "CC BY 4.0",
+      "bytes": 21028462,
+      "sha256": "8e44a3343b82b73f8b61052b12aa40af053b7c668b5328996ba8d2593375d28a",
+      "actually_viewed_by_this_reviewer": true
+    }
+  ],
+  "observed_refinements_from_preliminary": [
+    "普通窗山花上移，处理首轮几何审查发现的压窗问题。",
+    "塔顶弧山花专用升高至1.4米，东北冠弧升高至1.7米，最终近景显示其弧形轮廓更明确。",
+    "主要视图降低相机以突出街面；近景扩大画幅并提高目标，容纳简化天线顶。"
+  ],
+  "material_limits": [
+    {
+      "topic": "弧形入口",
+      "limit": "圆角采用五段平面近似，阳台随之分段；实物连续曲率和精确半径未校准。"
+    },
+    {
+      "topic": "街面窗格与柱式",
+      "limit": "窗口及开间规整重复；巨壁柱分组、花饰柱头、爱奥尼克双柱、山花和檐下托座比照片明显简化。"
+    },
+    {
+      "topic": "铁栏与灯具",
+      "limit": "长廊和塔亭栏杆为简化重复构件，非实测铸铁花饰或灯具复制。"
+    },
+    {
+      "topic": "塔楼与天线",
+      "limit": "北立面中西段位置由照片引导，精确坐标仍为估计。现代照片有天线，但没有高度和安装年代证据，54米杆顶不是已核历史总高。"
+    },
+    {
+      "topic": "背面与屋面",
+      "limit": "后立面、天井、屋顶花园及设备未有完整照片核验，当前规则墙面和封闭屋顶为估计补全。"
+    },
+    {
+      "topic": "尺度",
+      "limit": "66×94米主体、12.4米圆角、30米主屋面、34.4米局部七层屋面、45.8米塔帽及54米天线顶均为作者估计。文献只支持6层局部7层等概略描述，不能从视觉相似反推实测。"
+    },
+    {
+      "topic": "时期与外观材质",
+      "limit": "核心图拍于2011、2013和2025年；夜景金色照明不代表白天材料颜色。模型省略商业招牌、广告、节庆布置和风化，摄影棚光照不是现场照明研究。"
+    }
+  ],
+  "photos_embedded": false,
+  "complete_photo_reconstruction_accepted": false,
+  "geographic_registration_accepted": false,
+  "all_elevations_accepted": false,
+  "surveyed_dimensions_accepted": false,
+  "model_geometry_edits_by_this_reviewer": false,
+  "framing_review": {
+    "method": "四幅SHA命名副本逐张实际查看，核对副本与最终PNG/native.json的SHA一致；oblique整图展示曾产生杆顶延伸至画幅上缘的错觉，追加实际PNG局部裁切放大检查，确认杆尖周围有留白。",
+    "oblique_crop": {
+      "path": "/workspace/wing-on-research/inspect-crop-native-oblique.png",
+      "bytes": 118499,
+      "sha256": "298c6fcee98ae72901c0f97e6f7135854fa7cda1f73169010cec39710ac39f10"
+    },
+    "crop_source_png_sha256": "8b507a4b93cafd9a8943fc23038ece16bbb3410240ab8ca9b8def018d23591d7",
+    "crop_region_original_pixels": [
+      620,
+      80,
+      850,
+      330
+    ],
+    "crop_display_size_pixels": [
+      690,
+      750
+    ],
+    "crop_actually_viewed": true,
+    "mast_tip_pixel_y_from_receipt": {
+      "front": 134.404,
+      "oblique": 189.921,
+      "rear": 166.858,
+      "corner": 123.432
+    },
+    "scope": "投影数值来自native.json，审阅者检查其与实际PNG的对应；corner允许较长侧立面水平出框，地面至杆尖竖向均在画幅内。"
+  },
+  "supersedes_visual_review_raw_sha256": "a384df8a34955d0e92df90b6e56483f769d7e13b20778076ae587ea4b977be7d",
+  "final_geometry_change_scope": "东北弧角额外女儿墙底由30米改为30.65米，与较低女儿墙衔接，移除重复的30–30.65米下段。本审阅重看四幅最终图核对轮廓和可见连接；不以图像观察证明精确重叠已经消除，该项另见几何／立面检查。"
+}
