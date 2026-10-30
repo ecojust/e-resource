@@ -66,3 +66,9 @@ python projects/shanghai/tools/restoration_progress.py
 名称牌采用五种固定尺寸的原创精灵背景，文字与背景共享偏移；地面锚点投影和透视补偿使实际屏幕尺寸、排布矩形及点击区域一致。[最终灯牌代码复核](beacon-ground-perspective-review.json)单独记录这次修正，保留先前缩放、编号和窄屏报告所检查的原版本。
 
 [名称牌最终浏览器检查](browser-nameplates.json)实际重载最终脚本，核验960×720碑廊视角中的12块完整名称牌，以及390×844手机视图中的7块名称牌；实际鼠标点击明伦堂、触控大光明均切换至不同目的地，名称、地址片段和地图中心同步更新。[图像复核](browser-visual-review.json)记录最终五处全局几何视图，包含完整泮池水面、桥体和两条碑廊；旧场景证据保留各自运行时指纹，没有重写成最终脚本测试结果。
+
+## 已发布版本
+
+应用提交为 `961148cdb24f882dbffe91b96ee0646eb0d76e5a`。[全局地图](https://raw.githack.com/ecojust/e-resource/961148cdb24f882dbffe91b96ee0646eb0d76e5a/projects/shanghai/index.html#mode=overview)与[按区目录](https://raw.githack.com/ecojust/e-resource/961148cdb24f882dbffe91b96ee0646eb0d76e5a/projects/shanghai/landmarks.html)固定到同一版本。
+
+[发布字节检查](publication-bytes.json)实际读取85个公开HTTP文件，共97,330,571字节，包含30件新增模型的全部60个近远景文件、两份README、目录、清单及本轮运行时／依赖文件；均逐字节匹配该提交。[预览地址检查](publication-preview.json)确认地图、目录与灯牌模块的固定版本地址返回HTTP 200、正确内容类型及相同字节。此项是发布内容核对，真实浏览器渲染和交互范围见前述本地浏览器证据。
