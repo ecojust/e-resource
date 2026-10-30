@@ -17,3 +17,5 @@
 [原生正面](native-front.png) · [原生斜侧](native-oblique.png) · [原生背面](native-rear.png) · [网页斜侧](browser-oblique.png) · [远景](browser-lod.png) · [手机](browser-mobile.png)
 
 当前仅支持整个楼体外包外的平地漫游，不支持廊道穿行、室内或登楼。未原址配准、未替换城市源对象，40处城市入口不变。发布后的GitHub固定提交字节核对另记，不能替代公共CDN性能检查；本次未重跑全部既有模型。
+
+[固定提交公开文件核对](public-bytes.json)：模型版本`3f88ffc426f6eba3ec8930101c1914e4df0ac309`的四件资产、清单、页面／运行脚本、模型目录及两份README共12件实际从GitHub读取，18,158,237字节逐件与本地一致。该README快照在后续固定版本／日期补记之前；不将CDN浏览体验与原始文件字节核验混同。
