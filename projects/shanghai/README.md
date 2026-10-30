@@ -68,7 +68,7 @@
 | [上海跑马总会历史东楼与主钟塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) | 2026-10-30 19:40:09 |
 | [大光明大戏院临街入口与灯塔局部](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) | 2026-10-30 20:28:32 |
 | [金门饭店／华安大楼历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) | 2026-10-30 20:53:59 |
-| [先施公司历史主楼与摩星塔外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sincere-company.html) | 未记录 |
+| [先施公司历史主楼与摩星塔外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sincere-company.html) | 2026-10-30 21:46:35 |
 
 <!-- district-candidates:黄浦区:end -->
 

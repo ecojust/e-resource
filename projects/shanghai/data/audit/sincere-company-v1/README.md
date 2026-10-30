@@ -27,3 +27,5 @@
 [原生正面](native-front.png) · [原生斜侧](native-oblique.png) · [原生背面](native-rear.png) · [东南街角细节](native-corner.png) · [网页斜侧](browser-oblique.png) · [远景](browser-lod.png) · [手机](browser-mobile.png) · [手机漫游](browser-mobile-walk.png)
 
 仅支持整栋外包以外的地面漫游，真实几何外廊开口不代表可以进入外廊、室内或登阶。本轮只调整本页范围配置，没有修改共享漫游代码，40处原址入口保留。软件渲染截图不代表用户设备帧率，未重跑全部旧模型；公开文件发布字节检查另记。
+
+[固定提交公开文件核对](public-bytes.json)：模型版本`8869b664fcf2ed17ac2b96315ae2b706d4370108`的四件资产、清单、页面与脚本、总目录及两份README共10件，实际从GitHub读取24,028,518字节，逐件与提交内容相同。该README快照早于随后固定预览版本和发布日期补记；此项不代替公共CDN页面性能检查。
