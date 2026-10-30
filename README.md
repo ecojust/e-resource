@@ -39,8 +39,8 @@
 | 16 | [崇明学宫碑廊](<https://rawcdn.githack.com/ecojust/e-resource/9c2ae34985b47c260fd230b602c855d11ec46176/projects/shanghai/stele-corridors.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 候选已交付／待核验 | 网页 3.45 MB／Blender 8.59 MB | [博物馆文字](<https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>) · [尺寸、身份与照片审查](<projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>) · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-stele-visible-features.json>)；两条共61米长边候选已交付；南北合计15.7米的分段、完整院落布局、碑面身份与原址配准继续待核 |
 | 17 | [上海大厦／百老汇大厦历史主楼](<https://rawcdn.githack.com/ecojust/e-resource/5f6c128013ab0b8fb32e1e0a7198a1ba970bedc0/projects/shanghai/broadway-mansions.html>) | 虹口区／北苏州路（2号／20号门牌记载待核） | 候选已交付／待核验 | 网页 3.26 MB／Blender 5.03 MB | [地方志文字](<https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html>) · [2014年外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>) · [地图轮廓与部件关系](<projects/shanghai/data/model-todo/heritage-next-footprint-review.json>)；主楼外观候选已交付；近远景、原生重开与网页外围漫游通过。宽深、成组退台、窗网与隐蔽面含估计；层数、门牌与原址配准待核 |
 | 18 | [俄罗斯领事馆历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/6f24cb05bda5b5659ac77998dbae39bc4c411a18/projects/shanghai/russian-consulate.html>) | 虹口区／黄浦路20号 | 候选已交付／待核验 | 网页 1.00 MB／Blender 1.69 MB | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-next-building-references.json>) · [地图轮廓与部件关系](<projects/shanghai/data/model-todo/heritage-next-footprint-review.json>)；2010外观主楼候选已交付，近远景、压缩解码、原生重开与网页检查通过；整体尺度、侧背面、塔部及右侧凸窗仍待细核，园内凉亭未建，1916/1917并列，未配准 |
-| 19 | 国际饭店历史主楼外观 | 黄浦区／南京西路170号 | 制作中 | — | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；按历史22层主楼与2007照片制作退台外观；83.8/83.6米保留，后楼加建和邻楼另核，宽深与退台估计 |
-| 20 | 上海跑马总会历史东楼与主钟塔 | 黄浦区／南京西路325号 | 待制作 | — | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；先制东楼和主钟塔候选；53米塔高仅次级记载，主体长大于100米非精确值，西楼和副塔另核 |
+| 19 | [国际饭店历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html>) | 黄浦区／南京西路170号 | 候选已交付／待核验 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；外观候选已交付；近远景、原生及网页检查通过。83.8/83.6米并列，规则化退台、中央窗组、低翼后界与未见面待细核，未原址配准 |
+| 20 | 上海跑马总会历史东楼与主钟塔 | 黄浦区／南京西路325号 | 制作中 | — | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；先制东楼和主钟塔候选；53米塔高仅次级记载，主体长大于100米非精确值，西楼和副塔另核 |
 | 21 | 大光明大戏院／大光明电影院 | 黄浦区／南京西路216号 | 待制作 | — | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查](<projects/shanghai/data/model-todo/heritage-following-building-references.json>) · [地图外包与栋别限制](<projects/shanghai/data/model-todo/heritage-following-footprint-review.json>)；先制临街入口及灯塔候选；16/30.5米与2/3/4层来源口径未解，后厅轴向与历史平面另核 |
 
 ### 已有模型的后续核验
@@ -3825,7 +3825,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。点击时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-当前入口随master更新。以下另收录24件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](projects/shanghai/data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
+当前入口随master更新。以下另收录25件独立候选，均未原址配准，不计入40处城市入口；尺寸与未见细节含估计。候选日期为资产版本提交时间，逐件提交与来源见[时间依据](projects/shanghai/data/model-todo/candidate-publication-times.json)，不是实际托管上线时间。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区
@@ -3850,6 +3850,14 @@
 | 和平饭店南楼 · 汇中饭店 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk) |
 | 和平饭店北楼 · 沙逊大厦 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk) |
 | 中国银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk) |
+
+<!-- district-candidates:黄浦区:start -->
+
+| 独立候选（未配准） | 版本提交（UTC+8） |
+|---|---|
+| [国际饭店历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) | 未记录 |
+
+<!-- district-candidates:黄浦区:end -->
 
 ### 徐汇区
 
