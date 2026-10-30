@@ -1,0 +1,207 @@
+{
+  "schema": "sincere-company-documentary-review-v1",
+  "reviewed_utc": "2026-10-30T13:23:52.879270+00:00",
+  "record_id": "sh-historic-b1-013",
+  "repository_changes_made": false,
+  "scope_conclusion": {
+    "historic_identity": "Shanghai Sincere Company building; Shanghai Fashion Store and East Asia Hotel are later/coexisting uses of the same historic building, not automatically distinct buildings.",
+    "historic_registry_address": "南京东路690号",
+    "documented_address_range": "南京东路650/660/690（名建筑志）；648～700（建筑施工志）",
+    "boundary": "Building lies northwest of Nanjing East Road / Zhejiang Road junction; south-facing Nanjing frontage and southeast corner main entrance / Moxing Tower. Western Guizhou Road edge should be checked against map geometry separately.",
+    "exclusions": [
+      "Brand premises in Hong Kong or Guangzhou",
+      "1993 later Shanghai branch at南京东路479号",
+      "Yongan buildings across Nanjing Road",
+      "Any nearby north blocks not separately tied to the historic range"
+    ],
+    "hotel_boundary_limit": "Official construction chapter places hotel at rear; secondary article calls it west portion. Both place it within the same building. Neither gives a surveyed internal block boundary."
+  },
+  "best_documented_dimensions": {
+    "nanjing_road_frontage_approx_m": 66,
+    "zhejiang_road_frontage_approx_m": 61,
+    "frontage_not_verified_complete_rectangular_bounds": true,
+    "height_text": "高30余米",
+    "height_endpoint_policy": "Text describes seven-storey building then later-added three-stage tower. No exact tower top datum or component height supplied. Treat body scale and candidate top separately as interpretation; do not label a precise modeled top as measured.",
+    "storey_account": "Originally5, plus2, total7 in two official chapters; visible exterior rows and roof stages do not prove these datums.",
+    "tower_stages": 3,
+    "tower_plan_transition": "square-to-round, reducing upwards",
+    "tower_clock": "round clock on first stage, according to official name-buildings chapter",
+    "site_area_m2": "7000余（官方）；7025（secondary）",
+    "gross_floor_area_m2_values": [
+      30184,
+      34115
+    ],
+    "no_surveyed_courtyard_or_rear_geometry_found": true,
+    "no_exact_total_height_found": true,
+    "candidate_dimensions_policy": "A100×68m body,30.6m main cornice and51.3m total including rod are authored scale choices, not dimensions confirmed by these sources."
+  },
+  "contradictions": [
+    {
+      "topic": "site and frontage scope",
+      "values": "7000余m² vs approximately66m×61m street lengths",
+      "resolution": "Do not multiply street lengths into a verified footprint; lengths may describe only certain street faces or composite scope."
+    },
+    {
+      "topic": "gross floor area",
+      "values": "30184 official;34115 secondary",
+      "resolution": "Preserve source scope and do not average."
+    },
+    {
+      "topic": "contractor",
+      "values": "顾兰记 official;魏清记 secondary",
+      "resolution": "Official text prioritized for attribution but original building contract not examined."
+    },
+    {
+      "topic": "construction and floor sequence",
+      "values": "1914 formation/secondarygroundbreaking;1915–1917 registry/secondary construction;1918 local additions;5+2=7 official",
+      "resolution": "Do not claim current photographed facade exactly matches1917 original or equate facade rows with seven uniform floors."
+    },
+    {
+      "topic": "tower period",
+      "values": "Official tower later addition; secondary says original triangular pediments removed and tower upper part rebuilt",
+      "resolution": "Use the actually viewed photo period; do not combine old pediments with modern cap without explicit multi-period scope."
+    },
+    {
+      "topic": "hotel sublocation",
+      "values": "rear official;west secondary",
+      "resolution": "Same building uses, unverified subblock boundary; no alias-based split."
+    },
+    {
+      "topic": "company closure",
+      "values": "1952 architectural article;1954 brand article",
+      "resolution": "Unreconciled; not a modeling dimension."
+    }
+  ],
+  "sources": [
+    {
+      "title": "《上海名建筑志》中华百货第一楼：先施公司大楼（东亚饭店）",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284500",
+      "authority": "Official Shanghai local-gazetteer publication, current public API",
+      "actually_read": true,
+      "private_cache": "/workspace/sincere-research/official-chapter284500.json",
+      "bytes": 52256,
+      "sha256": "bcfaa8ba3afdced6540085b60b59cab8b512cf4dbc509185ba2ee0aaa7b14556",
+      "claims": [
+        "南京东路650、660、690号同一经营活动大楼内有东亚饭店、上海时装有限公司、影院、娱乐城、黄浦区文化馆等；与南京路南侧永安公司相对。",
+        "先施1917年10月20日正式开业，东亚饭店同年同日与先施开业；东亚饭店是该大楼内的旅馆用途，不凭名称自动拆成独立建筑。",
+        "德和洋行设计，顾兰记营造厂承建；占地7000余平方米、建筑面积30184平方米。",
+        "沿南京路约66米、沿浙江路约61米；原5层后加2层共7层，高30余米。没有实测宽深、计高端点或塔顶总高。",
+        "二至三层爱奥尼克柱支托弧形断檐山花；二层石栏阳台、四层以上镂花铁栏；后来浙江路口屋顶加建嵌圆钟的3层空塔，由方转圆、塔什干式柱，第一层圆面自鸣钟。",
+        "主入口在南京路浙江路口；50年代沿南京路橱窗改骑楼式外廊，弧形或平券洞接街。",
+        "屋顶为先施乐园；旅馆、餐饮、娱乐、百货是大楼内不同用途。"
+      ],
+      "rights": "Reference facts and brief extracts only; no permission inferred to redistribute full documentary page.",
+      "request": {
+        "url": "https://www.shtong.gov.cn/api/shizhi-public/read/wordPreview",
+        "method": "POST",
+        "json": {
+          "objectId": 5401,
+          "catalogueId": 284500
+        }
+      },
+      "short_quote": "沿南京路约66米立面为三段式，沿浙江路约61米，原为5层，后加2层，共7层，高30余米。"
+    },
+    {
+      "title": "《上海建筑施工志》工程篇／第四章商业金融建筑／第一节商场（2004-01-15）",
+      "url": "https://web.archive.org/web/20200625053843id_/http://www.shtong.gov.cn/dfz_web/DFZ/Info?idnode=69594&tableName=userobject1a&id=68215",
+      "authority": "Archived official Shanghai local-gazetteer chapter; archive actually returned matching article",
+      "actually_read": true,
+      "private_cache": "/workspace/sincere-research/wiki-archive-building.html",
+      "bytes": 32110,
+      "sha256": "15788850eb99b85713013fd32c632abb0cfdd116535fc49d186f1d1c231d6670",
+      "claims": [
+        "先施公司段实际包含于商场章；不是错误归档页面。",
+        "1914年发起组建，南京东路648～700号大楼1917年落成，10月20日开张。",
+        "德和洋行设计、顾兰记承建，占地7000余平方米，沿南京路约66米、浙江路约61米，原5后加2共7层，高30余米。",
+        "后来浙江路口屋顶加3层空塔摩星塔，嵌圆钟、塔什干式柱；未给塔高或塔顶总高。",
+        "南京路1至5楼商场，6和7楼先施乐园；大楼后部为100多间客房旅馆，集商场、旅馆、娱乐于一幢建筑。",
+        "二至三层爱奥尼式柱、弧形断檐山花；水泥挑阳台大量铸铁花饰，底层骑楼弧券/平券外廊。"
+      ],
+      "rights": "Reference facts and brief extracts only; no permission inferred to redistribute full documentary page.",
+      "publication_date": "2004-01-15",
+      "archive_capture": "2020-06-25T05:38:43Z",
+      "short_quote": "先施公司集商场、旅馆和娱乐场所于一幢建筑之内。"
+    },
+    {
+      "title": "上海先施公司大楼（固定修订93530297）",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%85%88%E6%96%BD%E5%85%AC%E5%8F%B8%E5%A4%A7%E6%A5%BC&oldid=93530297",
+      "authority": "Secondary encyclopedia, architectural pointers and disagreements only",
+      "actually_read": true,
+      "private_cache": "/workspace/sincere-research/building-wiki.html",
+      "bytes": 180360,
+      "sha256": "6474eada582a00e48482a2f82a556163b38df6d26b6c17860571c6d9f9ce97c3",
+      "claims": [
+        "南京路浙江路西北转角；因此该楼临南京路的主街面朝南，摩星塔/入口在楼的东南角。",
+        "列建造1915–1917；历史段又说1914筹建/破土，1918加第五楼及游艺场开业，楼层阶段不可简单合并。",
+        "占地7025平方米、总建筑面积34115平方米，与官方名建筑志30184平方米不一致，未解释边界。",
+        "其施工人名写魏清记，与两份官方章顾兰记不同；本次不自行裁定。",
+        "称东亚饭店开设于大楼西部，而建筑施工志称旅馆在后部；可能指不同部分/用途边界，不能只据此划独立栋。",
+        "文字称七层钟面层原塔基四面均有三角山墙，今已不存；当前基座以上改建，摩星塔三层由方收圆。该描述引用薛理勇《老上海高楼广厦》，本次未直接读取原书。",
+        "1952先施歇业、1956时装商店开业；品牌条目另说1954结束，时间保留冲突。"
+      ],
+      "rights": "Reference facts and brief extracts only; no permission inferred to redistribute full documentary page.",
+      "text_license": "CC BY-SA 4.0 as shown by page footer; underlying linked books/pages have separate rights."
+    },
+    {
+      "title": "先施（品牌条目，原先施公司链接重定向）",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E5%85%88%E6%96%BD&oldid=94055215",
+      "authority": "Secondary encyclopedia, disambiguation only",
+      "actually_read": true,
+      "private_cache": "/workspace/sincere-research/wiki.html",
+      "bytes": 161546,
+      "sha256": "aaa254e9c8a9e9fc835f8f5e3b3475098a5735d320783f7a72b2cf2ff4e6aca5",
+      "claims": [
+        "此页主要为香港先施品牌及全球分公司，不能把广州/香港建筑事实混用到上海。",
+        "上海原店后来由时装公司、黄浦区文化馆及东亚饭店使用；1993重返南京东路479号为后来另一营业地点，排除本件690号历史楼范围。",
+        "此品牌页将上海公司结束写1954，与建筑专页1952不同；不影响本件外观年代，但时间未统一核实。"
+      ],
+      "rights": "Reference facts and brief extracts only; no permission inferred to redistribute full documentary page."
+    },
+    {
+      "title": "Shanghai sincere building.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Shanghai_sincere_building.jpg",
+      "authority": "Wikimedia Commons file metadata / photographer declaration",
+      "actually_read": true,
+      "private_cache": "/workspace/sincere-research/commons.html",
+      "bytes": 114471,
+      "sha256": "4a88b56a9c5f99cbf147f46020139239a179b3f0662f72439b674efadd15bc26",
+      "claims": [
+        "Pyzhou，2010-05-07（EXIF15:17），4256×2832。",
+        "页面展示GFDL1.2或更高版本，无不变部分/封面文字；未见本图CC BY-SA许可。",
+        "原图已由root下载且本研究者也实际看过：由无塔西南切角沿南街面看向东南塔，巨柱/石纹/两种阳台/重檐可见，屋顶与后部不可见。"
+      ],
+      "rights": "Reference facts and brief extracts only; no permission inferred to redistribute full documentary page.",
+      "license": "GFDL 1.2 or later",
+      "license_url": "https://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Shanghai_sincere_building.jpg",
+      "original_bytes": 5893889,
+      "original_sha256": "535217251b9339fc277d00af5beb874c6de4d40697f8d60b38f9d741c337f49b",
+      "author": "Pyzhou",
+      "capture_date": "2010-05-07",
+      "permanent_revision_id": 1116151204
+    }
+  ],
+  "additional_photo_leads": [
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Sincere_Department_Store.JPG",
+      "role": "Tower and facade close view actually reviewed in photo-review.json;2013LivelikerwCC BY-SA3.0.",
+      "actually_viewed_by_this_reviewer": true
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/Category:Sincere_Department_Stores_(Shanghai)",
+      "role": "Additional reference discovery only"
+    }
+  ],
+  "rejected_or_noncontent_fetches": [
+    {
+      "url": "https://www.bing.com/search?q=先施公司+大楼+高度+site%3Ashanghai.gov.cn",
+      "reason": "Results returned unrelated Egyptian temple pages; not used as architectural evidence."
+    },
+    {
+      "url": "https://www.google.com/search?q=先施公司+摩星塔+高度+米+上海",
+      "reason": "Returned script-heavy search interstitial; no sourced architectural facts taken."
+    }
+  ],
+  "reuse_policy": "Keep full downloaded pages private. Publish source metadata, short factual summaries and original geometry only. Do not embed photograph pixels; GFDL is not interchangeable with CC BY-SA. Official/secondary documentary agreement is not a field survey.",
+  "photo_review": "photo-review.json"
+}

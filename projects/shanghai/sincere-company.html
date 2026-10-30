@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>先施公司 · 历史主楼与摩星塔外观候选</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <link rel="stylesheet" href="src/candidate-walk.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="先施公司历史主楼与摩星塔外观候选"></main>
+  <header>
+    <a href="landmarks.html">← 上海建筑目录</a>
+    <p class="eyebrow">黄浦 · 南京东路</p>
+    <h1>先施公司</h1>
+    <p>历史主楼与摩星塔 · 独立外观候选</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与资料">
+    <span class="badge">有照片参照 · 尺度含估计</span>
+    <p class="scope">结合2010、2013与2024年照片，表现历史先施公司长条主楼的临街立面、窗组、阳台、檐口、东南角摩星塔及浙江路北段低翼。多期参照不代表1917年开业原貌或2026实测现状；周边建筑与室内不在本件内。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">自动随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button id="front" type="button">正面</button>
+      <button id="oblique" type="button">斜侧</button>
+      <button id="rear" type="button">背面</button>
+      <button id="fit" type="button">适合窗口</button>
+      <button id="retry" type="button" hidden>重试加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <p id="metrics"></p>
+    <div id="downloads" class="downloads"></div>
+    <p class="scope">官方资料载主楼7层、高30余米。本件主屋面30.6米、摩星塔屋帽47.3米及杆顶51.3米均为作者设计量，未测绘核实。平面、窗网、背面及屋面含估计；沿街长度与整体外包的口径差异详见来源。</p>
+    <p class="scope">照片仅用于观察，不嵌入模型，不重绘广告。时装商店、东亚饭店的使用范围与历史建筑边界依据详见来源说明。</p>
+    <p class="scope">独立场景仅支持整个楼体外包以外的平地漫游，不支持进入骑楼、室内、登楼或屋顶行走。尚未完成城市原址配准。</p>
+    <a href="https://commons.wikimedia.org/wiki/File:Shanghai_sincere_building.jpg" target="_blank" rel="noopener">2010-05-07参考照片 · Pyzhou · GFDL 1.2或后续版本 ↗</a><br>
+    <a href="source/precise/huangpu-sincere-company/README.md">来源、尺寸解释与复跑 ↗</a>
+  </aside>
+  <footer>
+    <span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span>
+    <span>历史主楼外观候选 · 非测绘<br>原创几何 MIT · 无照片贴图</span>
+  </footer>
+  <script type="module" src="src/sincere-company.js"></script>
+</body>
+</html>

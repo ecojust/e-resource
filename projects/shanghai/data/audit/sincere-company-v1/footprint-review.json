@@ -1,0 +1,3715 @@
+{
+  "schema": "sincere-building-footprint-review-v1",
+  "reviewed_utc": "2026-10-30",
+  "repository_commit": "dfb8d2c485352389f0c20a3a8ce477d90685618f",
+  "scope": "Read-only frozen derived map geometry review for Sincere / 先施公司 at 南京东路690号 (sh-historic-b1-013), including identity exclusion of Old/New Wing On, Sun Sun, The Sun, and the unrelated former East Asia Bank. No historical-boundary, façade-orientation, survey or model/geographic acceptance.",
+  "source": {
+    "path": "projects/shanghai/data/audit/landmark-candidate-features.geojson",
+    "git_commit": "dfb8d2c485352389f0c20a3a8ce477d90685618f",
+    "bytes": 17325794,
+    "sha256": "4b640f9ce0bb9ab61f01e98ae003da2f326abfc93ef001ed526730922327df97",
+    "feature_count": 22270,
+    "read_method": "git show of existing object with GIT_NO_LAZY_FETCH=1; no network or original OSM query",
+    "status": "Locally frozen derived candidate audit GeoJSON, not original OSM geometry response"
+  },
+  "reference_inputs": [
+    {
+      "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+      "git_commit": "dfb8d2c485352389f0c20a3a8ce477d90685618f",
+      "bytes": 1610937,
+      "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/named-map-leads.json",
+      "git_commit": "dfb8d2c485352389f0c20a3a8ce477d90685618f",
+      "bytes": 766656,
+      "sha256": "92094697a326761fd1c80b7e19d34a3813b173be69e64e05161b3d4483ab394f"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json",
+      "git_commit": "dfb8d2c485352389f0c20a3a8ce477d90685618f",
+      "bytes": 66908,
+      "sha256": "7b261a91686195a24ba7402ea97076b9939e55cbf067c51aae7de2d9014f9f94"
+    },
+    {
+      "path": "projects/shanghai/tools/extract_heritage_footprints.py",
+      "git_commit": "dfb8d2c485352389f0c20a3a8ce477d90685618f",
+      "bytes": 15557,
+      "sha256": "3a8d79e024ed5049e6bae03f8fa345db3685a4c71e764e8cf64a6920802df03e"
+    }
+  ],
+  "identity": {
+    "heritage_id": "sh-historic-b1-013",
+    "address": "南京东路690号",
+    "listed_historical_name": "先施公司",
+    "listed_current_name": "时装公司、东亚饭店",
+    "single_listed_subentry_year": "1917",
+    "map_id": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+    "map_source_record": "w490267531@5",
+    "map_primary_name": "时装公司",
+    "map_english_name": "Shanghai Sincere Building",
+    "map_explicit_alternate_names": [
+      "东亚饭店",
+      "先施公司"
+    ],
+    "map_has_parts": false,
+    "all_explicit_linked_part_ids": [],
+    "conclusion": "One listed place and one frozen named map feature bind these historical/use names. These names are not evidence of three independent buildings. No explicit map subdivision assigns hotel, department store, tower, annex or floor level.",
+    "qualification": "One named coarse envelope is not proof that all historical accommodation, retail and later wings form one indivisible historical structure. Detailed boundaries still require documentary/photo evidence.",
+    "shanghai_fashion_store_wording": "The requested 上海时装商店 wording is not a literal alias in these frozen indexed records, which say 时装公司. Treat its exact historical/current naming as a documentary crosscheck rather than inventing a second mapped building.",
+    "wrong_east_asia_name_exclusion": "东亚大楼 / Former East Asia Bank is a separate named building at 四川中路299号, sh-historic-b3-018, year1926, map999713d3-cd98-4f6a-a77e-59ec850952c0 / OSMw493784118@4. It is not the 东亚饭店 alias attached to Sincere."
+  },
+  "method": {
+    "python": "3.12.14",
+    "shapely": "2.1.2",
+    "basis": "Same WGS84 ECEF-to-local-ENU metric method as extract_heritage_footprints.py, adapted to six reviewed feature identities.",
+    "coordinate_transform": "WGS84 longitude/latitude at ellipsoid height zero to ECEF, then tangent-plane east and north at each polygon centroid",
+    "wgs84_a_m": 6378137.0,
+    "wgs84_inverse_flattening": 298.257223563,
+    "axes": "x east, y north, metres; local tangent-plane map measurements, not survey precision",
+    "dimensions": "ENU axis-aligned bounds and GEOS minimum rotated rectangle. Bearing clockwise from north modulo180 is not verified front/façade orientation.",
+    "neighbors": "Only existing audit-index features with polygon distance under65m. Conservative coordinate-bbox prefilter expands each reviewed polygon bbox by0.001degree in each direction; it retains large polygons whose centroids fall outside the neighborhood. No indexed feature is unioned into another. The candidate index is not a complete city inventory.",
+    "cross_subject_distances": "Pairwise and target-relative distances use Sincere centroid ENU plane; minor area differences from per-feature measurements reflect different tangent-plane origins.",
+    "independent_check": "Shoelace exterior area agrees with GEOS area within1e-7m² for each reviewed polygon."
+  },
+  "records": [
+    {
+      "id": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+      "heritage_id": "sh-historic-b1-013",
+      "address": "南京东路690号",
+      "role": "target",
+      "listed_historical_name": "先施公司",
+      "listed_current_name": "时装公司、东亚饭店",
+      "record_year": "1917",
+      "name": "时装公司",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "时装公司",
+        "names": "{\"rules\":[{\"variant\":\"alternate\",\"value\":\"东亚饭店\"},{\"variant\":\"alternate\",\"value\":\"先施公司\"}],\"common\":{\"en\":\"Shanghai Sincere Building\",\"zh\":\"时装公司\",\"zh-Hans\":\"时装公司\",\"zh-Hant\":\"時裝公司\"},\"primary\":\"时装公司\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w490267531@5",
+            "update_time": "2026-01-19T18:59:59.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "subtype": "commercial",
+        "has_parts": false,
+        "id": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+        "class": "retail",
+        "version": 1,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 6,
+      "bbox_wgs84": [
+        121.47239149,
+        31.23729314,
+        121.47364676,
+        31.23813709
+      ],
+      "local_origin_wgs84": [
+        121.47299569160478,
+        31.237709622313776
+      ],
+      "local_exterior_enu_m": [
+        [
+          -39.16248627390432,
+          -44.651181895683116
+        ],
+        [
+          -57.560064919050404,
+          23.49400835859655
+        ],
+        [
+          28.295785965277503,
+          47.3949032728043
+        ],
+        [
+          62.02510446645691,
+          -12.613049725280328
+        ],
+        [
+          57.93631306539868,
+          -22.275703442021264
+        ],
+        [
+          -35.07458699365819,
+          -46.1768163843575
+        ],
+        [
+          -39.16248627390432,
+          -44.651181895683116
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -57.560064919050404,
+        -46.1768163843575,
+        62.02510446645691,
+        47.3949032728043
+      ],
+      "local_aabb_east_north_m": [
+        119.58516938550731,
+        93.5717196571618
+      ],
+      "local_area_m2": 7264.707914951211,
+      "local_perimeter_m": 339.43141957036266,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            -38.19648757385621,
+            -48.22927042949866
+          ],
+          [
+            -57.741710224789244,
+            24.166828089775542
+          ],
+          [
+            44.63357161318814,
+            51.805716350343495
+          ],
+          [
+            64.17879426412118,
+            -20.590382168930713
+          ]
+        ],
+        "long_axis_m": 106.04058881242344,
+        "short_axis_m": 74.98807111325776,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 74.8916965502462,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 7264.707914951211,
+      "convex_hull_area_difference_m2": 0.0,
+      "convex_polygon": true,
+      "map_height_m": null,
+      "map_num_floors": null,
+      "explicit_linked_part_ids": [],
+      "all_feature_ids_citing_same_source_records": [
+        "6312d66f-e7fa-43b1-a1cc-63f920d1f53d"
+      ],
+      "nearby_index_records_within_65m": [
+        {
+          "id": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+          "name": "第一食品商店",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w490266387@6",
+              "update_time": "2023-08-11T03:06:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 6.090291737438513,
+          "intersection_area_m2": 0.0,
+          "area_m2": 3961.672370693149,
+          "centroid_enu_m": [
+            -79.47990334829979,
+            -18.7354661399642
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "df8fa497-1232-4612-a85d-81cffbbcb81f",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799577@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 10.659253384176218,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2985.031412200434,
+          "centroid_enu_m": [
+            -20.917427283539443,
+            80.34412407651851
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "99144b03-115b-4673-884d-d1284d185031",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661446@1",
+              "update_time": "2023-08-11T02:51:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 11.062697505414963,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1284.890675704186,
+          "centroid_enu_m": [
+            81.46851119028959,
+            9.713926310363574
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "4aa0448c-fc0f-4be5-9ba6-63b894f4aeb4",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799582@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 12.669041371040349,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2055.4863055527994,
+          "centroid_enu_m": [
+            -98.43646426063549,
+            64.42950470628388
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "5d94b317-649b-4e66-8805-639274d488c7",
+          "name": "永安百货",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317420@14",
+              "update_time": "2025-08-22T07:32:36.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 18.01262807346405,
+          "intersection_area_m2": 0.0,
+          "area_m2": 6082.3211321053095,
+          "centroid_enu_m": [
+            70.68786137373803,
+            -87.34147342646503
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a52f9f58-c444-42c5-9139-9bd8b4c4e83d",
+          "name": "春申江大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756801863@3",
+              "update_time": "2023-08-10T02:55:44.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 19.25418709156035,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1036.3088707546833,
+          "centroid_enu_m": [
+            68.17659222091947,
+            53.95201588340804
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "d56eb4ac-8ed7-4a03-9938-fe53aea31281",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799583@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 20.209546905236433,
+          "intersection_area_m2": 0.0,
+          "area_m2": 263.79247179982764,
+          "centroid_enu_m": [
+            -91.03391242571408,
+            30.35952965202904
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "9b7d539c-a54e-4276-829c-f631049f778a",
+          "name": "宝龙大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317518@6",
+              "update_time": "2023-08-11T03:06:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 23.19081054073782,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1945.4431007649125,
+          "centroid_enu_m": [
+            -0.3319861020286209,
+            -80.44705171765906
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "7c7c13c8-32bd-4651-8b3e-73bcf378eab2",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799566@3",
+              "update_time": "2023-08-16T15:44:05.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 27.537160521851842,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1051.1021651288534,
+          "centroid_enu_m": [
+            24.033906824898104,
+            104.12852381439902
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "55e205f6-15a7-4a3b-95a1-42e150480299",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833597@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 29.318972101406526,
+          "intersection_area_m2": 0.0,
+          "area_m2": 626.0559667707234,
+          "centroid_enu_m": [
+            -59.223676324650775,
+            72.7058224708616
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "7576d03f-040a-479e-a1a1-78a173670581",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799579@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 29.643020723790855,
+          "intersection_area_m2": 0.0,
+          "area_m2": 598.6513804994895,
+          "centroid_enu_m": [
+            -25.438983937772534,
+            70.84379910542788
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "43a5f52d-bd8b-4cdd-acaa-ff392fb218d5",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w761632795@1",
+              "update_time": "2023-08-11T03:06:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 30.785022583629367,
+          "intersection_area_m2": 0.0,
+          "area_m2": 3592.335163837007,
+          "centroid_enu_m": [
+            -51.31382158697253,
+            -120.28535589289372
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "c5cb8f63-6090-4433-b225-13ff45f85f5f",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833555@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 31.85104162231093,
+          "intersection_area_m2": 0.0,
+          "area_m2": 219.0828451040798,
+          "centroid_enu_m": [
+            -94.61133349004825,
+            44.34460784029454
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a3f29d7e-0b6f-47e6-b401-28aa8be7d811",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661447@2",
+              "update_time": "2023-08-11T08:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 41.423480832994095,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1204.4690128205789,
+          "centroid_enu_m": [
+            113.67609260047391,
+            12.581286035222977
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "c2a5787d-0dbd-4717-abb3-6d3f2dba9f2e",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833547@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 43.27448533082899,
+          "intersection_area_m2": 0.0,
+          "area_m2": 254.164910509027,
+          "centroid_enu_m": [
+            -98.44395163320252,
+            58.32908922393931
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "fa7a4abc-b763-419c-b5a2-5cc6ae7a1ea2",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1198847856@1",
+              "update_time": "2023-08-17T02:58:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 44.98153477060122,
+          "intersection_area_m2": 0.0,
+          "area_m2": 152.0378486249477,
+          "centroid_enu_m": [
+            50.67645785067463,
+            97.13383402319572
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "fbbdc5b8-f532-40cc-8a89-4e437dc8da10",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799578@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 48.41428714014678,
+          "intersection_area_m2": 0.0,
+          "area_m2": 556.0287665181845,
+          "centroid_enu_m": [
+            -33.11497861137066,
+            88.36738244048504
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "e5257299-aee3-4568-9719-f46c634fd6d2",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661461@1",
+              "update_time": "2023-08-10T01:45:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 49.08035014230638,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1161.6988302112188,
+          "centroid_enu_m": [
+            96.39487544500767,
+            63.21059354036142
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a1537c0a-2536-48ca-bf6f-9401f050d23c",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1198847858@1",
+              "update_time": "2023-08-17T02:58:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 52.43469185108778,
+          "intersection_area_m2": 0.0,
+          "area_m2": 61.72853029708851,
+          "centroid_enu_m": [
+            40.901175837417014,
+            104.68216743436102
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "f5929ba0-7f1d-415b-a21b-2520cde5ecf0",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833574@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 57.265313683292085,
+          "intersection_area_m2": 0.0,
+          "area_m2": 245.06786250029614,
+          "centroid_enu_m": [
+            -102.47277505535328,
+            73.22911109748614
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "3df09c31-4285-4aab-aa5c-dbfd86ea7c09",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1198847855@1",
+              "update_time": "2023-08-17T02:58:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 59.75995698613409,
+          "intersection_area_m2": 0.0,
+          "area_m2": 122.93015767049692,
+          "centroid_enu_m": [
+            63.81302246404562,
+            105.11473113259646
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "0fc99aa4-13e0-4d48-89ea-578fc23bd5b7",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1198847862@1",
+              "update_time": "2023-08-17T02:58:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 61.690500309657786,
+          "intersection_area_m2": 0.0,
+          "area_m2": 73.8057843920025,
+          "centroid_enu_m": [
+            44.08400685553257,
+            113.93354924496843
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "49b1a5fe-308b-4f7e-ab79-445bea928974",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1198847857@1",
+              "update_time": "2023-08-17T02:58:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 62.00929501902044,
+          "intersection_area_m2": 0.0,
+          "area_m2": 57.69375963931969,
+          "centroid_enu_m": [
+            36.47205874197485,
+            114.7767527700993
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        }
+      ],
+      "nearby_positive_overlap_records": [],
+      "distance_from_sincere_target_m": 0.0,
+      "intersection_with_sincere_target_m2": 7264.70791495121,
+      "centroid_in_sincere_enu_m": [
+        -8.129974112194485e-06,
+        6.672335782806953e-05
+      ],
+      "coordinate_status": "Exact frozen derived audit feature; original OSM response and preprocessing not independently recovered or validated."
+    },
+    {
+      "id": "5d94b317-649b-4e66-8805-639274d488c7",
+      "heritage_id": "sh-historic-b1-014",
+      "reconciliation_suggested_split_id": "sh-historic-b1-014-old",
+      "address": "南京东路635号",
+      "role": "excluded_distinct_neighbor",
+      "listed_historical_name": "老永安公司",
+      "listed_current_name": "永安百货",
+      "name": "永安百货",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "永安百货",
+        "names": "{\"rules\":[{\"variant\":\"alternate\",\"value\":\"老永安公司\"}],\"common\":{\"en\":\"Yong'an Department Store\",\"zh\":\"永安百货\",\"zh-Hans\":\"永安百货\",\"zh-Hant\":\"永安百貨\"},\"primary\":\"永安百货\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w51317420@14",
+            "update_time": "2025-08-22T07:32:36.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "subtype": "commercial",
+        "has_parts": false,
+        "id": "5d94b317-649b-4e66-8805-639274d488c7",
+        "class": "retail",
+        "version": 2,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 10,
+      "bbox_wgs84": [
+        121.47329271,
+        31.23645377,
+        121.47419393,
+        31.2373757
+      ],
+      "local_origin_wgs84": [
+        121.47373768604416,
+        31.236921862868677
+      ],
+      "local_exterior_enu_m": [
+        [
+          -39.32582706634418,
+          39.63926640205387
+        ],
+        [
+          7.691271294706815,
+          50.318536299843174
+        ],
+        [
+          12.290756382814498,
+          49.80963105696317
+        ],
+        [
+          18.934673722970604,
+          46.75840073950135
+        ],
+        [
+          24.044812437715898,
+          37.09688987282694
+        ],
+        [
+          43.46527393071632,
+          -32.06596561498756
+        ],
+        [
+          40.91021624019777,
+          -37.151745128104615
+        ],
+        [
+          -15.3062998209004,
+          -51.899102831007596
+        ],
+        [
+          -20.928047369770532,
+          -49.35676294398389
+        ],
+        [
+          -42.39154058898548,
+          34.04570765562495
+        ],
+        [
+          -39.32582706634418,
+          39.63926640205387
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -42.39154058898548,
+        -51.899102831007596,
+        43.46527393071632,
+        50.318536299843174
+      ],
+      "local_aabb_east_north_m": [
+        85.8568145197018,
+        102.21763913085077
+      ],
+      "local_area_m2": 6082.321133043794,
+      "local_perimeter_m": 305.39937338471066,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            -19.96522780725565,
+            -53.098070541736554
+          ],
+          [
+            -43.551195477779174,
+            38.551874558676545
+          ],
+          [
+            21.015733281203783,
+            55.16807102912597
+          ],
+          [
+            44.60170095172731,
+            -36.48187407128713
+          ]
+        ],
+        "long_axis_m": 94.63619977505287,
+        "short_axis_m": 66.67073026832806,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 165.56818054179303,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 6082.3211330437925,
+      "convex_hull_area_difference_m2": -1.8189894035458565e-12,
+      "convex_polygon": true,
+      "map_height_m": null,
+      "map_num_floors": null,
+      "explicit_linked_part_ids": [],
+      "all_feature_ids_citing_same_source_records": [
+        "5d94b317-649b-4e66-8805-639274d488c7"
+      ],
+      "nearby_index_records_within_65m": [
+        {
+          "id": "9b7d539c-a54e-4276-829c-f631049f778a",
+          "name": "宝龙大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317518@6",
+              "update_time": "2023-08-11T03:06:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 7.031653726282405,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1945.4431008009954,
+          "centroid_enu_m": [
+            -71.019765684542,
+            6.894875700346157
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "3bf13caf-c350-4f5c-92fd-a7e5b45d60a4",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196980501@3",
+              "update_time": "2023-08-12T13:32:35.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 7.399471885455652,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1890.3642761046406,
+          "centroid_enu_m": [
+            -59.77785365368617,
+            -34.5732798255713
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "6219da86-be80-449f-af83-4ea6d17d1ff9",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196980500@2",
+              "update_time": "2023-08-11T08:02:07.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 8.600655875311674,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1421.1186710592444,
+          "centroid_enu_m": [
+            -60.06840968081521,
+            -31.582639560672945
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+          "name": "七重天大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w160895636@5",
+              "update_time": "2026-05-03T11:17:04.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 10.028728466098276,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2016.2819773767042,
+          "centroid_enu_m": [
+            66.16394451017244,
+            -3.875786214444968
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+          "name": "时装公司",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w490267531@5",
+              "update_time": "2026-01-19T18:59:59.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 18.01262807060392,
+          "intersection_area_m2": 0.0,
+          "area_m2": 7264.707913835136,
+          "centroid_enu_m": [
+            -70.68724744368124,
+            87.34199190680383
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "2f5f21d5-756c-44fa-accb-d5579f25f53b",
+          "name": "人民大舞台",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1156063014@4",
+              "update_time": "2023-08-13T02:28:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 19.255493362114137,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1155.5178262645268,
+          "centroid_enu_m": [
+            -26.038313157080925,
+            -90.04067513940753
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "62a1bf1d-66ef-404e-ac1b-5d92d22fe43c",
+          "name": "中福大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w378107240@6",
+              "update_time": "2023-08-13T02:28:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 19.80114924669017,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2512.081362217603,
+          "centroid_enu_m": [
+            22.7958650490213,
+            -89.64088158754923
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "99144b03-115b-4673-884d-d1284d185031",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661446@1",
+              "update_time": "2023-08-11T02:51:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 23.989394727315137,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1284.8906756413744,
+          "centroid_enu_m": [
+            10.78133710984365,
+            97.05530436898631
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a814da5a-aa27-4e84-8a08-c772c404a893",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 24.34564233949892,
+          "intersection_area_m2": 0.0,
+          "area_m2": 164.77639760097912,
+          "centroid_enu_m": [
+            68.4999628121396,
+            -58.16353421417438
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a3f29d7e-0b6f-47e6-b401-28aa8be7d811",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661447@2",
+              "update_time": "2023-08-11T08:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 34.62484709701972,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1204.4690128454924,
+          "centroid_enu_m": [
+            42.98893777956316,
+            99.92244779002183
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "9c71b186-539e-4ff9-a13b-02da635334e7",
+          "name": "长江新能源大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1156063016@5",
+              "update_time": "2023-08-13T02:28:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 41.51957142648068,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1411.3930977063364,
+          "centroid_enu_m": [
+            -53.209565546922896,
+            -111.35655255379427
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "93f76d8f-f409-49b5-ada7-897d6c35d995",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 45.04257941202946,
+          "intersection_area_m2": 0.0,
+          "area_m2": 159.31673882324057,
+          "centroid_enu_m": [
+            73.99420851779165,
+            -80.81187468491139
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "b4f83220-9cd4-49aa-908c-20f4b3d94716",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661445@1",
+              "update_time": "2023-08-10T01:45:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 45.894085400757305,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1241.133128325071,
+          "centroid_enu_m": [
+            119.7863366426245,
+            -62.59278513671334
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "f7ed6be4-a1b7-42d3-9ea1-89d05816f61f",
+          "name": "亚洲大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1156063015@4",
+              "update_time": "2023-08-13T02:28:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 49.22809269376929,
+          "intersection_area_m2": 0.0,
+          "area_m2": 813.3508269412447,
+          "centroid_enu_m": [
+            -17.663721101119382,
+            -115.36371567371117
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "012901e3-7057-4757-863b-3758473d2edb",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661448@1",
+              "update_time": "2023-08-11T08:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 58.566058984574454,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1470.0982490862516,
+          "centroid_enu_m": [
+            72.84686422102966,
+            109.33938756129814
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        }
+      ],
+      "nearby_positive_overlap_records": [],
+      "distance_from_sincere_target_m": 18.01262807346405,
+      "intersection_with_sincere_target_m2": 0.0,
+      "centroid_in_sincere_enu_m": [
+        70.68786137373803,
+        -87.34147342646503
+      ],
+      "coordinate_status": "Exact frozen derived audit feature; original OSM response and preprocessing not independently recovered or validated."
+    },
+    {
+      "id": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+      "heritage_id": "sh-historic-b1-014",
+      "reconciliation_suggested_split_id": "sh-historic-b1-014-new",
+      "address": "南京东路627号",
+      "role": "excluded_distinct_neighbor",
+      "listed_historical_name": "新永安公司",
+      "listed_current_name": "七重天宾馆／七重天大厦",
+      "name": "七重天大厦",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "七重天大厦",
+        "names": "{\"rules\":[{\"variant\":\"alternate\",\"value\":\"新永安公司\"}],\"common\":{\"en\":\"Qizhongtian Building\",\"zh\":\"七重天大厦\",\"zh-Hans\":\"七重天大厦\"},\"primary\":\"七重天大厦\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w160895636@5",
+            "update_time": "2026-05-03T11:17:04.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "has_parts": false,
+        "id": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+        "version": 2,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 8,
+      "bbox_wgs84": [
+        121.47415638,
+        31.23664182,
+        121.47475183,
+        31.23718306
+      ],
+      "local_origin_wgs84": [
+        121.47443219384867,
+        31.236886904148918
+      ],
+      "local_exterior_enu_m": [
+        [
+          23.806936940146144,
+          4.356897235387931
+        ],
+        [
+          30.450906409170056,
+          -4.796805483200945
+        ],
+        [
+          29.940294820228416,
+          -12.424906727466986
+        ],
+        [
+          23.296355874521097,
+          -19.036312849349013
+        ],
+        [
+          -5.833602210109551,
+          -27.173346190589744
+        ],
+        [
+          -13.499781951464172,
+          -23.61318975922869
+        ],
+        [
+          -26.27600337494488,
+          21.647632712110678
+        ],
+        [
+          -15.032556606804533,
+          32.8358604663275
+        ],
+        [
+          23.806936940146144,
+          4.356897235387931
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -26.27600337494488,
+        -27.173346190589744,
+        30.450906409170056,
+        32.8358604663275
+      ],
+      "local_aabb_east_north_m": [
+        56.72690978411494,
+        60.00920665691724
+      ],
+      "local_area_m2": 2016.2819774813065,
+      "local_perimeter_m": 178.079408084453,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            -11.9807904496209,
+            -28.99434295167801
+          ],
+          [
+            -28.371353987479793,
+            29.070585786081345
+          ],
+          [
+            17.255208213840035,
+            41.95004819190504
+          ],
+          [
+            33.64577175169893,
+            -16.114880545854316
+          ]
+        ],
+        "long_axis_m": 60.333958285609455,
+        "short_axis_m": 47.40953206027173,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 164.23669232797852,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 2016.2819774813065,
+      "convex_hull_area_difference_m2": 0.0,
+      "convex_polygon": true,
+      "map_height_m": null,
+      "map_num_floors": null,
+      "explicit_linked_part_ids": [],
+      "all_feature_ids_citing_same_source_records": [
+        "708d0e95-d551-414d-a3be-897a9fe2fb6b"
+      ],
+      "nearby_index_records_within_65m": [
+        {
+          "id": "5d94b317-649b-4e66-8805-639274d488c7",
+          "name": "永安百货",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317420@14",
+              "update_time": "2025-08-22T07:32:36.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 10.028728465339453,
+          "intersection_area_m2": 0.0,
+          "area_m2": 6082.321132685073,
+          "centroid_enu_m": [
+            -66.1638656853744,
+            3.8761821701760053
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a814da5a-aa27-4e84-8a08-c772c404a893",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 18.637952772050046,
+          "intersection_area_m2": 0.0,
+          "area_m2": 164.77639761128083,
+          "centroid_enu_m": [
+            2.3356960249762184,
+            -54.28775966207332
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "b4f83220-9cd4-49aa-908c-20f4b3d94716",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661445@1",
+              "update_time": "2023-08-10T01:45:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 20.12634057861696,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1241.1331285072097,
+          "centroid_enu_m": [
+            53.622042018967136,
+            -58.71733296676061
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "62a1bf1d-66ef-404e-ac1b-5d92d22fe43c",
+          "name": "中福大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w378107240@6",
+              "update_time": "2023-08-13T02:28:49.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 38.38450977747068,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2512.081362185468,
+          "centroid_enu_m": [
+            -43.368599597567496,
+            -85.76481974298856
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "3224055b-068e-4141-b8cc-cf46eaabc0ea",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 40.234229995083766,
+          "intersection_area_m2": 0.0,
+          "area_m2": 46.12836473546332,
+          "centroid_enu_m": [
+            68.66272175861336,
+            16.149994300171493
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "93f76d8f-f409-49b5-ada7-897d6c35d995",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 42.49475862275256,
+          "intersection_area_m2": 0.0,
+          "area_m2": 159.31673883502577,
+          "centroid_enu_m": [
+            7.829799367815564,
+            -76.93613466888775
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "5cd045f9-2f48-459c-884f-b695eefc13b6",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 45.7106005760129,
+          "intersection_area_m2": 0.0,
+          "area_m2": 547.2056240051018,
+          "centroid_enu_m": [
+            78.39859036055664,
+            24.723703067642283
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a3f29d7e-0b6f-47e6-b401-28aa8be7d811",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661447@2",
+              "update_time": "2023-08-11T08:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 49.57704268481308,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1204.4690128633192,
+          "centroid_enu_m": [
+            -23.174335286820238,
+            103.79838269881925
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "99144b03-115b-4673-884d-d1284d185031",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661446@1",
+              "update_time": "2023-08-11T02:51:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 52.471720153568356,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1284.8906755762164,
+          "centroid_enu_m": [
+            -55.38195397866798,
+            100.93144173195634
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "012901e3-7057-4757-863b-3758473d2edb",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196661448@1",
+              "update_time": "2023-08-11T08:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 55.28071657920703,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1470.0982491682876,
+          "centroid_enu_m": [
+            6.683650351148691,
+            113.21513478534449
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        }
+      ],
+      "nearby_positive_overlap_records": [],
+      "distance_from_sincere_target_m": 70.76430471596858,
+      "intersection_with_sincere_target_m2": 0.0,
+      "centroid_in_sincere_enu_m": [
+        136.85179641448687,
+        -91.21679232452021
+      ],
+      "coordinate_status": "Exact frozen derived audit feature; original OSM response and preprocessing not independently recovered or validated."
+    },
+    {
+      "id": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "heritage_id": "sh-historic-b1-015",
+      "address": "南京东路720号",
+      "role": "excluded_distinct_neighbor",
+      "listed_historical_name": "新新公司",
+      "listed_current_name": "第一食品商店",
+      "name": "第一食品商店",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "第一食品商店",
+        "names": "{\"rules\":[{\"variant\":\"alternate\",\"value\":\"新新公司\"}],\"common\":{\"ko\":\"상하이제일식품상점 펑리수\",\"en\":\"Shanghai First Foodmall\",\"zh\":\"第一食品商店\",\"zh-Hans\":\"第一食品商店\",\"zh-Hant\":\"第一食品商店\"},\"primary\":\"第一食品商店\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w490266387@6",
+            "update_time": "2023-08-11T03:06:10.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "subtype": "commercial",
+        "has_parts": false,
+        "id": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+        "class": "retail",
+        "version": 2,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 8,
+      "bbox_wgs84": [
+        121.47180676,
+        31.23715554,
+        121.47251487,
+        31.2379261
+      ],
+      "local_origin_wgs84": [
+        121.47216140297178,
+        31.2375406392732
+      ],
+      "local_exterior_enu_m": [
+        [
+          33.6737235363109,
+          -26.424359644339386
+        ],
+        [
+          31.118680638798203,
+          -32.01793817570985
+        ],
+        [
+          -11.298960123679487,
+          -42.697318458045565
+        ],
+        [
+          -16.41003480653564,
+          -39.646071647615386
+        ],
+        [
+          -33.785579054386616,
+          27.48125490809712
+        ],
+        [
+          -31.229566459040324,
+          32.05810759418589
+        ],
+        [
+          11.698420725039785,
+          42.737409233421076
+        ],
+        [
+          16.297883278202935,
+          39.68617491401628
+        ],
+        [
+          33.6737235363109,
+          -26.424359644339386
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -33.785579054386616,
+        -42.697318458045565,
+        33.6737235363109,
+        42.737409233421076
+      ],
+      "local_aabb_east_north_m": [
+        67.45930259069752,
+        85.43472769146663
+      ],
+      "local_area_m2": 3961.672371019725,
+      "local_perimeter_m": 248.53706801848466,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            -15.276064047844555,
+            -44.026966101191995
+          ],
+          [
+            -34.73538115352275,
+            31.150646482976754
+          ],
+          [
+            15.410917819263231,
+            44.13074387959292
+          ],
+          [
+            34.870234924941435,
+            -31.046868704575825
+          ]
+        ],
+        "long_axis_m": 77.65525388584282,
+        "short_axis_m": 51.7989790352443,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 165.4878104406173,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 3961.6723710197252,
+      "convex_hull_area_difference_m2": 4.547473508864641e-13,
+      "convex_polygon": true,
+      "map_height_m": null,
+      "map_num_floors": null,
+      "explicit_linked_part_ids": [],
+      "all_feature_ids_citing_same_source_records": [
+        "7e69180c-6b22-4417-a40b-f5dcd2235bb9"
+      ],
+      "nearby_index_records_within_65m": [
+        {
+          "id": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+          "name": "时装公司",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w490267531@5",
+              "update_time": "2026-01-19T18:59:59.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 6.090291737511214,
+          "intersection_area_m2": 0.0,
+          "area_m2": 7264.70791436465,
+          "centroid_enu_m": [
+            79.47977922092586,
+            18.73611765211928
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "4aa0448c-fc0f-4be5-9ba6-63b894f4aeb4",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799582@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 6.292917189094921,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2055.4863057136126,
+          "centroid_enu_m": [
+            -18.95716343281997,
+            83.16481231725996
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "d56eb4ac-8ed7-4a03-9938-fe53aea31281",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799583@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 6.292917189094921,
+          "intersection_area_m2": 0.0,
+          "area_m2": 263.7924718213507,
+          "centroid_enu_m": [
+            -11.554354322050262,
+            49.09489316375037
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "6f40ec78-78af-4220-b6e4-a632de64d9b7",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196779069@1",
+              "update_time": "2023-08-10T12:33:45.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 8.185692429464057,
+          "intersection_area_m2": 0.0,
+          "area_m2": 476.1212894826868,
+          "centroid_enu_m": [
+            -44.41538862827464,
+            3.142839388001768
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "b15e78fd-61f3-472a-a17f-bcdc67b3dec3",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196827506@1",
+              "update_time": "2023-08-10T16:10:37.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 8.46975020631012,
+          "intersection_area_m2": 0.0,
+          "area_m2": 155.422565668241,
+          "centroid_enu_m": [
+            -49.54245923933335,
+            21.972597798078077
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "08514d67-4888-4ab8-861c-092a8cf2acbd",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w414733199@3",
+              "update_time": "2023-08-10T16:13:02.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 8.557247059211482,
+          "intersection_area_m2": 0.0,
+          "area_m2": 401.0049492324111,
+          "centroid_enu_m": [
+            -35.26458836674991,
+            -30.753509112673445
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "df8fa497-1232-4612-a85d-81cffbbcb81f",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799577@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 13.985346130310639,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2985.0314119468017,
+          "centroid_enu_m": [
+            58.561753367094134,
+            99.08001704976199
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "6307e3d4-80a9-4cbb-a629-0dae57d2def8",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196981386@1",
+              "update_time": "2024-04-23T15:37:03.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 14.725306850370753,
+          "intersection_area_m2": 0.0,
+          "area_m2": 140.21249802795728,
+          "centroid_enu_m": [
+            -53.40899810885703,
+            40.088930310344026
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "c5cb8f63-6090-4433-b225-13ff45f85f5f",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833555@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 20.234501568570973,
+          "intersection_area_m2": 0.0,
+          "area_m2": 219.0828451220611,
+          "centroid_enu_m": [
+            -15.131880992156953,
+            63.079944337376304
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "22955d59-465f-4de3-addf-9da87ec604f5",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196827503@1",
+              "update_time": "2023-08-10T16:10:37.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 22.7881071585861,
+          "intersection_area_m2": 0.0,
+          "area_m2": 338.63452123031044,
+          "centroid_enu_m": [
+            -51.31244421001395,
+            -38.29874951644591
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "9b7d539c-a54e-4276-829c-f631049f778a",
+          "name": "宝龙大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317518@6",
+              "update_time": "2023-08-11T03:06:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 25.240433648666865,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1945.4431006796037,
+          "centroid_enu_m": [
+            79.14840871985196,
+            -61.711003294052176
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "43a5f52d-bd8b-4cdd-acaa-ff392fb218d5",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w761632795@1",
+              "update_time": "2023-08-11T03:06:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 27.023430571422143,
+          "intersection_area_m2": 0.0,
+          "area_m2": 3592.3351641054605,
+          "centroid_enu_m": [
+            28.16687405710605,
+            -101.54969244439799
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "b205b88b-1a1b-4fa9-8a33-04afc5515f34",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196827505@1",
+              "update_time": "2023-08-10T16:10:37.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 27.840463104933754,
+          "intersection_area_m2": 0.0,
+          "area_m2": 760.4397180167792,
+          "centroid_enu_m": [
+            -71.09206163186735,
+            -20.06719737895051
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "41b3e481-4c6c-47fa-8e6d-d2344a0ce92a",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "east_asian_buildings",
+              "version": "2024-11-01",
+              "update_time": "2024-11-01T00:00:00.000Z",
+              "provider": "zenodo",
+              "property": "",
+              "dataset": "doi:10.5281/zenodo.8174931"
+            }
+          ],
+          "distance_m": 29.41208001759908,
+          "intersection_area_m2": 0.0,
+          "area_m2": 90.17732932518324,
+          "centroid_enu_m": [
+            -66.34631508561698,
+            17.50253785655178
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "55e205f6-15a7-4a3b-95a1-42e150480299",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833597@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 29.434858088656195,
+          "intersection_area_m2": 0.0,
+          "area_m2": 626.055966770132,
+          "centroid_enu_m": [
+            20.255562009210493,
+            91.44142618648267
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "c2a5787d-0dbd-4717-abb3-6d3f2dba9f2e",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833547@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 34.05220773095479,
+          "intersection_area_m2": 0.0,
+          "area_m2": 254.16491053013715,
+          "centroid_enu_m": [
+            -18.96460473708604,
+            77.06439677921193
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "d71667a8-8666-4d89-b990-4efc43be5af1",
+          "name": "上海世茂广场",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317372@15",
+              "update_time": "2026-06-27T16:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 35.820208060816306,
+          "intersection_area_m2": 0.0,
+          "area_m2": 10747.202918090501,
+          "centroid_enu_m": [
+            -88.16463920125051,
+            -131.15005281921364
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "c8b546fa-10e5-480d-96a8-42724542ae1e",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1197283888@1",
+              "update_time": "2024-05-01T14:02:14.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 38.47397603037399,
+          "intersection_area_m2": 0.0,
+          "area_m2": 180.88476686479208,
+          "centroid_enu_m": [
+            -73.39124221707421,
+            56.21483879092791
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "7576d03f-040a-479e-a1a1-78a173670581",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799579@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 42.09518430680812,
+          "intersection_area_m2": 0.0,
+          "area_m2": 598.6513804604524,
+          "centroid_enu_m": [
+            54.040268456047606,
+            89.57965793657252
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a3ebb29e-510f-443b-bbc9-a8fb1926cba5",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833556@1",
+              "update_time": "2023-08-12T09:24:04.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 42.23295818024997,
+          "intersection_area_m2": 0.0,
+          "area_m2": 489.6374723516144,
+          "centroid_enu_m": [
+            -86.5748331961114,
+            8.179028358729003
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "6ea882af-1a32-46fe-8010-51fc738bfe02",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196827504@2",
+              "update_time": "2023-08-10T16:12:22.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 43.357180171093425,
+          "intersection_area_m2": 0.0,
+          "area_m2": 368.01553757623867,
+          "centroid_enu_m": [
+            -73.350318587847,
+            -44.32825096750826
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "f92a2d68-2d5f-483f-adb5-00cc761ba21c",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1156314696@2",
+              "update_time": "2024-05-01T14:02:14.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 45.05892182471435,
+          "intersection_area_m2": 0.0,
+          "area_m2": 492.36808152484895,
+          "centroid_enu_m": [
+            -93.46227734425966,
+            48.49923197806488
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "f5929ba0-7f1d-415b-a21b-2520cde5ecf0",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w373833574@1",
+              "update_time": "2023-08-12T04:38:19.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 49.720760925708625,
+          "intersection_area_m2": 0.0,
+          "area_m2": 245.06786252087548,
+          "centroid_enu_m": [
+            -22.993540675010927,
+            91.96438822920423
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "a0496b96-2858-4d54-a3d4-cbd766392234",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1197283889@1",
+              "update_time": "2024-05-01T14:02:14.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 53.49116117744741,
+          "intersection_area_m2": 0.0,
+          "area_m2": 108.76505919943042,
+          "centroid_enu_m": [
+            -77.40031489213577,
+            71.62668518768106
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "fbbdc5b8-f532-40cc-8a89-4e437dc8da10",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w756799578@1",
+              "update_time": "2019-12-19T03:18:40.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 55.51704978855732,
+          "intersection_area_m2": 0.0,
+          "area_m2": 556.0287664857066,
+          "centroid_enu_m": [
+            46.36414145555521,
+            107.10318330739878
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "051acc13-0c34-4fb8-a133-550432841729",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1197283890@1",
+              "update_time": "2024-05-01T14:02:14.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 63.97754763549609,
+          "intersection_area_m2": 0.0,
+          "area_m2": 64.97908801243004,
+          "centroid_enu_m": [
+            -88.56660053783554,
+            72.22318453815008
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        }
+      ],
+      "nearby_positive_overlap_records": [],
+      "distance_from_sincere_target_m": 6.090291737438513,
+      "intersection_with_sincere_target_m2": 0.0,
+      "centroid_in_sincere_enu_m": [
+        -79.47990334829979,
+        -18.7354661399642
+      ],
+      "coordinate_status": "Exact frozen derived audit feature; original OSM response and preprocessing not independently recovered or validated."
+    },
+    {
+      "id": "ca6dccd6-0c72-4376-8978-e6e660629037",
+      "heritage_id": "sh-historic-b1-016",
+      "address": "南京东路830号",
+      "role": "excluded_distinct_neighbor",
+      "listed_historical_name": "大新公司",
+      "listed_current_name": "上海市第一百货商店",
+      "name": "上海市第一百货商店",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "上海市第一百货商店",
+        "names": "{\"rules\":[{\"variant\":\"alternate\",\"value\":\"大新公司;The Sun\"}],\"common\":{\"en\":\"Shanghai No. 1 Department Store\",\"zh\":\"上海市第一百货商店\",\"zh-Hans\":\"上海市第一百货商店\",\"zh-Hant\":\"上海市第一百貨商店\"},\"primary\":\"上海市第一百货商店\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w490270437@9",
+            "update_time": "2026-03-09T07:21:25.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "subtype": "commercial",
+        "has_parts": false,
+        "id": "ca6dccd6-0c72-4376-8978-e6e660629037",
+        "class": "retail",
+        "version": 1,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 9,
+      "bbox_wgs84": [
+        121.46991849,
+        31.23673356,
+        121.47062123,
+        31.23733442
+      ],
+      "local_origin_wgs84": [
+        121.47027547958102,
+        31.237025440662855
+      ],
+      "local_exterior_enu_m": [
+        [
+          -34.00934088334211,
+          20.018200648390348
+        ],
+        [
+          18.11790117239224,
+          34.25765148531711
+        ],
+        [
+          32.938730577838854,
+          -15.579972613379798
+        ],
+        [
+          32.42715110571494,
+          -17.614503742057114
+        ],
+        [
+          28.339238734401647,
+          -21.682465870064995
+        ],
+        [
+          -5.901782330708675,
+          -31.854041186613753
+        ],
+        [
+          -13.056372961788288,
+          -32.36183556687623
+        ],
+        [
+          -18.166518938422087,
+          -30.328407225052423
+        ],
+        [
+          -20.210955499548938,
+          -28.293873993689196
+        ],
+        [
+          -34.00934088334211,
+          20.018200648390348
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -34.00934088334211,
+        -32.36183556687623,
+        32.938730577838854,
+        34.25765148531711
+      ],
+      "local_aabb_east_north_m": [
+        66.94807146118097,
+        66.61948705219334
+      ],
+      "local_area_m2": 3065.336544161632,
+      "local_perimeter_m": 215.4172608517377,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            -18.191621925972026,
+            -35.36413559462207
+          ],
+          [
+            -34.00934088334211,
+            20.018200648390348
+          ],
+          [
+            18.489111882210192,
+            35.012255212981735
+          ],
+          [
+            34.30683083958027,
+            -20.370081030030708
+          ]
+        ],
+        "long_axis_m": 57.596904437204216,
+        "short_axis_m": 54.59770338634098,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 164.06015721770552,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 3065.3365441616315,
+      "convex_hull_area_difference_m2": -4.547473508864641e-13,
+      "convex_polygon": true,
+      "map_height_m": null,
+      "map_num_floors": null,
+      "explicit_linked_part_ids": [],
+      "all_feature_ids_citing_same_source_records": [
+        "ca6dccd6-0c72-4376-8978-e6e660629037"
+      ],
+      "nearby_index_records_within_65m": [
+        {
+          "id": "def925ff-7abd-4797-a310-a37a9e11e2d0",
+          "name": "第一百货B馆",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1155985243@3",
+              "update_time": "2025-08-22T07:32:46.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 0.0,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2301.599463134339,
+          "centroid_enu_m": [
+            -13.984001952589013,
+            47.5262844309764
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "0fb32d1c-deb4-48b9-a0fe-53f5f1c0d137",
+          "name": "第一百货C馆",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w490270436@6",
+              "update_time": "2023-08-12T09:24:04.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 14.764993328719834,
+          "intersection_area_m2": 0.0,
+          "area_m2": 6883.637727140096,
+          "centroid_enu_m": [
+            50.26581153019141,
+            65.35877771389126
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "81b0864b-2a2f-4532-a9fb-db49dbec11db",
+          "name": "新一百大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1156310623@2",
+              "update_time": "2023-08-12T09:24:04.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 27.67974409944178,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2106.160496300699,
+          "centroid_enu_m": [
+            44.436679014441886,
+            87.90922322941249
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "984a885e-0e2a-4aa0-90dc-4eb270096eda",
+          "name": "新世界城",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317339@13",
+              "update_time": "2022-09-26T02:09:42.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 28.077629028441947,
+          "intersection_area_m2": 0.0,
+          "area_m2": 11911.88832513962,
+          "centroid_enu_m": [
+            -110.40685867394926,
+            -1.0996314224769306
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "d71667a8-8666-4d89-b990-4efc43be5af1",
+          "name": "上海世茂广场",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w51317372@15",
+              "update_time": "2026-06-27T16:15:13.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 31.981235033559308,
+          "intersection_area_m2": 0.0,
+          "area_m2": 10747.202919594554,
+          "centroid_enu_m": [
+            91.50330617875028,
+            -74.02812469736533
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "ea4752f3-3c5d-4d9f-a216-6ac08cf582f6",
+          "name": "大上海电影院",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w490348728@4",
+              "update_time": "2023-03-21T09:06:25.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 42.00287178223203,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2598.6761191016244,
+          "centroid_enu_m": [
+            -26.535872242607176,
+            90.84201490211866
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "2b093b2c-272a-3a10-90f7-391e971e755c",
+          "name": null,
+          "source_layer": "building_part",
+          "building_id": "d71667a8-8666-4d89-b990-4efc43be5af1",
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w524255217@2",
+              "update_time": "2017-09-13T07:26:59.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 63.187587089814386,
+          "intersection_area_m2": 0.0,
+          "area_m2": 613.3542886840966,
+          "centroid_enu_m": [
+            102.53001588084639,
+            -73.72052996521019
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "6ea882af-1a32-46fe-8010-51fc738bfe02",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196827504@2",
+              "update_time": "2023-08-10T16:12:22.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 64.6155476570114,
+          "intersection_area_m2": 0.0,
+          "area_m2": 368.01553755643465,
+          "centroid_enu_m": [
+            106.31614482256457,
+            12.793930025610914
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        }
+      ],
+      "nearby_positive_overlap_records": [],
+      "distance_from_sincere_target_m": 192.77493661297024,
+      "intersection_with_sincere_target_m2": 0.0,
+      "centroid_in_sincere_enu_m": [
+        -259.14703471357194,
+        -75.85445554644792
+      ],
+      "coordinate_status": "Exact frozen derived audit feature; original OSM response and preprocessing not independently recovered or validated."
+    },
+    {
+      "id": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+      "heritage_id": "sh-historic-b3-018",
+      "official_code": "A-III-18",
+      "address": "四川中路299号",
+      "role": "excluded_name_collision_not_target_hotel",
+      "listed_historical_name": "东亚大楼",
+      "listed_current_name": "东亚银行",
+      "record_year": "1926",
+      "name": "东亚大楼",
+      "original_properties": {
+        "is_underground": false,
+        "@name": "东亚大楼",
+        "names": "{\"common\":{\"en\":\"Former East Asia Bank\",\"zh\":\"东亚大楼\",\"zh-Hans\":\"东亚大楼\",\"zh-Hant\":\"東亞大樓\"},\"primary\":\"东亚大楼\"}",
+        "@geometry_source": "OpenStreetMap",
+        "sources": [
+          {
+            "resource": "planet",
+            "version": "2026-09-06T00:00:00.000Z",
+            "license": "ODbL-1.0",
+            "record_id": "w493784118@4",
+            "update_time": "2023-08-13T16:04:23.000Z",
+            "provider": "osm",
+            "property": "",
+            "dataset": "OpenStreetMap"
+          }
+        ],
+        "num_floors": 7,
+        "has_parts": false,
+        "id": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+        "version": 1,
+        "source_layer": "building",
+        "district_id": "310101",
+        "district_name": "黄浦区",
+        "renderable": true,
+        "fragment_count": 1
+      },
+      "geometry_type": "Polygon",
+      "polygon_valid": true,
+      "polygon_simple": true,
+      "interior_ring_count": 0,
+      "unique_exterior_vertices": 12,
+      "bbox_wgs84": [
+        121.48349583,
+        31.23890306,
+        121.48380697,
+        31.23927458
+      ],
+      "local_origin_wgs84": [
+        121.48366217008869,
+        31.23910128632092
+      ],
+      "local_exterior_enu_m": [
+        [
+          -4.092591327833607,
+          19.21369214266589
+        ],
+        [
+          -1.026012166479286,
+          18.705890374544623
+        ],
+        [
+          3.5733814090538853,
+          16.16245087751604
+        ],
+        [
+          13.794409081550377,
+          -19.434613122938668
+        ],
+        [
+          2.040575080123908,
+          -21.978061881725107
+        ],
+        [
+          -1.0260149429387084,
+          -9.773098299188113
+        ],
+        [
+          -6.136042310786487,
+          -10.789807301112159
+        ],
+        [
+          -9.202619591739051,
+          1.41515885585644
+        ],
+        [
+          -4.603218879043089,
+          2.4318665954506633
+        ],
+        [
+          -6.647604744280465,
+          8.026548720687604
+        ],
+        [
+          -13.29139300841629,
+          5.992024748814993
+        ],
+        [
+          -15.846388020192471,
+          15.654661179794026
+        ],
+        [
+          -4.092591327833607,
+          19.21369214266589
+        ]
+      ],
+      "local_bounds_enu_m": [
+        -15.846388020192471,
+        -21.978061881725107,
+        13.794409081550377,
+        19.21369214266589
+      ],
+      "local_aabb_east_north_m": [
+        29.640797101742848,
+        41.191754024391
+      ],
+      "local_area_m2": 609.4336304955397,
+      "local_perimeter_m": 127.69505314620665,
+      "minimum_rotated_rectangle": {
+        "corners_enu_m": [
+          [
+            2.180124980477478,
+            21.014784698168462
+          ],
+          [
+            13.794409081550377,
+            -19.434613122938668
+          ],
+          [
+            -4.483686706951636,
+            -24.682824684780797
+          ],
+          [
+            -16.097970808024513,
+            15.766573136326349
+          ]
+        ],
+        "long_axis_m": 42.0837899822559,
+        "short_axis_m": 19.016637722045072,
+        "long_axis_bearing_clockwise_from_north_deg_mod180": 163.97957609477058,
+        "axis_is_not_verified_front_direction": true
+      },
+      "convex_hull_area_m2": 693.3789900679026,
+      "convex_hull_area_difference_m2": 83.94535957236292,
+      "convex_polygon": false,
+      "map_height_m": null,
+      "map_num_floors": 7,
+      "explicit_linked_part_ids": [],
+      "all_feature_ids_citing_same_source_records": [
+        "999713d3-cd98-4f6a-a77e-59ec850952c0"
+      ],
+      "nearby_index_records_within_65m": [
+        {
+          "id": "943bfadf-d6df-48aa-9801-4d2c1ba64393",
+          "name": "上投大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w446966514@4",
+              "update_time": "2023-08-13T16:04:23.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 0.0,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1026.4249588288678,
+          "centroid_enu_m": [
+            -25.949169255008446,
+            -5.466598120800996
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "de8fd17a-3482-4a73-ad18-a8e0e436e424",
+          "name": "联合大楼",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339893@5",
+              "update_time": "2023-08-13T16:04:23.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 0.0,
+          "intersection_area_m2": 0.0,
+          "area_m2": 572.2461520629911,
+          "centroid_enu_m": [
+            10.118209620135318,
+            -38.65993267548235
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "0547f379-67e3-4ebf-8f31-55f967e839ce",
+          "name": "爱建金融大楼",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w446966513@4",
+              "update_time": "2023-08-13T16:04:23.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 9.020361340980635,
+          "intersection_area_m2": 0.0,
+          "area_m2": 840.2111797057598,
+          "centroid_enu_m": [
+            -16.117390459640813,
+            -45.04982434112343
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "5f835061-821c-4cc9-8115-9ed12dc37b73",
+          "name": "上海医药工业有限公司",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339953@5",
+              "update_time": "2023-08-13T15:53:01.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 17.171495415535684,
+          "intersection_area_m2": 0.0,
+          "area_m2": 565.2354510378456,
+          "centroid_enu_m": [
+            31.6634160059035,
+            21.292559236161576
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "05e89df8-6aa0-4a3c-8560-0ec38473c0a2",
+          "name": "汉口路50号大楼",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339903@7",
+              "update_time": "2023-08-13T15:53:01.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 21.970427017921367,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1583.6872968929024,
+          "centroid_enu_m": [
+            70.11974404714059,
+            -31.632433482339668
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "30d7dc61-8f8f-471b-95a8-e82f9f60d17f",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196709515@1",
+              "update_time": "2023-08-10T07:53:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 22.641633563857695,
+          "intersection_area_m2": 0.0,
+          "area_m2": 850.3230787085993,
+          "centroid_enu_m": [
+            -29.20596955452679,
+            59.506748489651784
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "27e80f45-121c-4d21-9e99-71d72cd5d591",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339863@2",
+              "update_time": "2023-08-13T15:53:01.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 24.19820270710858,
+          "intersection_area_m2": 0.0,
+          "area_m2": 535.8719636182442,
+          "centroid_enu_m": [
+            53.65553896955927,
+            -6.2128195180615435
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "e1eb4ff2-ace6-4475-b967-c8102189d7bd",
+          "name": "华侨大楼",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1156620263@1",
+              "update_time": "2023-08-10T07:53:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 24.294801019823407,
+          "intersection_area_m2": 0.0,
+          "area_m2": 832.781399902268,
+          "centroid_enu_m": [
+            -51.06486707387514,
+            46.380016017542985
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "f38b9183-8f44-4b95-bf4b-c4a1d2a48658",
+          "name": "安利大楼",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339946@5",
+              "update_time": "2023-08-10T07:35:51.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 30.11452082009358,
+          "intersection_area_m2": 0.0,
+          "area_m2": 784.5852208542094,
+          "centroid_enu_m": [
+            27.176454606410527,
+            58.464847956173
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "ba40dd17-2ab7-4088-ac2e-29a4517d3d93",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339960@3",
+              "update_time": "2023-08-13T16:04:23.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 32.685121442646626,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1155.043405171165,
+          "centroid_enu_m": [
+            -61.277198073016656,
+            -17.038422529946327
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "e30d07e7-3f9d-44d5-af2f-c75cea6ff6b6",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339956@4",
+              "update_time": "2023-09-06T06:43:10.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 39.16791326319084,
+          "intersection_area_m2": 0.0,
+          "area_m2": 624.4939720137082,
+          "centroid_enu_m": [
+            54.52492399404105,
+            26.368608034790018
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "32d3cca5-19c0-44fc-b754-2b5b0437e025",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w446966512@2",
+              "update_time": "2023-08-13T16:04:23.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 43.17538305002194,
+          "intersection_area_m2": 0.0,
+          "area_m2": 713.5124586607768,
+          "centroid_enu_m": [
+            -45.55225371324023,
+            -57.240660725839376
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "1759edf7-5666-4d8a-bc76-cf88e2705fdb",
+          "name": "新康大楼",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w320908499@4",
+              "update_time": "2023-08-10T07:53:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 51.81709066093301,
+          "intersection_area_m2": 0.0,
+          "area_m2": 2301.2587299133475,
+          "centroid_enu_m": [
+            -99.79418512771701,
+            33.85806884662559
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "3df05c5a-1983-4fde-9364-413e5ee6c0f7",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w1196704499@1",
+              "update_time": "2023-08-10T07:35:51.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 53.26155878628876,
+          "intersection_area_m2": 0.0,
+          "area_m2": 827.066523826854,
+          "centroid_enu_m": [
+            15.684680396428382,
+            86.88099691804597
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "4c115057-eefb-4ec6-a7a1-43c776c62702",
+          "name": "久事商务大厦",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339829@6",
+              "update_time": "2025-08-22T12:16:57.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 56.63392172645005,
+          "intersection_area_m2": 0.0,
+          "area_m2": 5001.841882646797,
+          "centroid_enu_m": [
+            -5.103542380377722,
+            -117.1964286389914
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "77d17b0a-0f84-497c-92e8-9ad60ee7f173",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380340023@4",
+              "update_time": "2023-08-13T15:35:41.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 58.32957025258471,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1625.7611449981573,
+          "centroid_enu_m": [
+            91.26692719978472,
+            -64.20067238016617
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "5f15a8e4-efab-4ec2-b6aa-68d189e7d379",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339874@2",
+              "update_time": "2023-08-13T15:53:01.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 62.66249593443297,
+          "intersection_area_m2": 0.0,
+          "area_m2": 328.4995704578989,
+          "centroid_enu_m": [
+            82.37662520341057,
+            9.573380015852052
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "0969f18e-beca-4bb1-8a61-9d289b50ee7c",
+          "name": "上海医药工业有限公司",
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "w380339822@3",
+              "update_time": "2023-08-10T07:35:51.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 62.844676542752936,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1264.8032232835794,
+          "centroid_enu_m": [
+            62.053449293379465,
+            80.57299290359768
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        },
+        {
+          "id": "c4875ca2-89e3-40d5-84e7-1cfde7a1ee8a",
+          "name": null,
+          "source_layer": "building",
+          "building_id": null,
+          "sources": [
+            {
+              "resource": "planet",
+              "version": "2026-09-06T00:00:00.000Z",
+              "license": "ODbL-1.0",
+              "record_id": "r5664042@2",
+              "update_time": "2023-08-10T07:35:51.000Z",
+              "provider": "osm",
+              "property": "",
+              "dataset": "OpenStreetMap"
+            }
+          ],
+          "distance_m": 62.844676542752936,
+          "intersection_area_m2": 0.0,
+          "area_m2": 1088.7532322676611,
+          "centroid_enu_m": [
+            62.11693867401001,
+            80.47675380887772
+          ],
+          "scope": "Candidate-index context only; not unioned into the reviewed feature. Unnamed architectural identities remain unresolved."
+        }
+      ],
+      "nearby_positive_overlap_records": [],
+      "distance_from_sincere_target_m": 955.8762874916421,
+      "intersection_with_sincere_target_m2": 0.0,
+      "centroid_in_sincere_enu_m": [
+        1016.1435555598728,
+        154.34780002516283
+      ],
+      "coordinate_status": "Exact frozen derived audit feature; original OSM response and preprocessing not independently recovered or validated."
+    }
+  ],
+  "pairwise_reviewed_feature_distances": [
+    {
+      "first": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+      "second": "5d94b317-649b-4e66-8805-639274d488c7",
+      "distance_m": 18.01262807346405,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+      "second": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+      "distance_m": 70.76430471596858,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+      "second": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "distance_m": 6.090291737438513,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+      "second": "ca6dccd6-0c72-4376-8978-e6e660629037",
+      "distance_m": 192.77493661297024,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "6312d66f-e7fa-43b1-a1cc-63f920d1f53d",
+      "second": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+      "distance_m": 955.8762874916421,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "5d94b317-649b-4e66-8805-639274d488c7",
+      "second": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+      "distance_m": 10.028728466051756,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "5d94b317-649b-4e66-8805-639274d488c7",
+      "second": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "distance_m": 74.5477611332892,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "5d94b317-649b-4e66-8805-639274d488c7",
+      "second": "ca6dccd6-0c72-4376-8978-e6e660629037",
+      "distance_m": 257.3465919602434,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "5d94b317-649b-4e66-8805-639274d488c7",
+      "second": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+      "distance_m": 931.2340853872433,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+      "second": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "distance_m": 158.2754516461231,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+      "second": "ca6dccd6-0c72-4376-8978-e6e660629037",
+      "distance_m": 337.4932585102952,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "708d0e95-d551-414d-a3be-897a9fe2fb6b",
+      "second": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+      "distance_m": 873.9897394112418,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "second": "ca6dccd6-0c72-4376-8978-e6e660629037",
+      "distance_m": 134.4433725573895,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "second": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+      "distance_m": 1067.9998863176759,
+      "intersection_area_m2": 0.0
+    },
+    {
+      "first": "ca6dccd6-0c72-4376-8978-e6e660629037",
+      "second": "999713d3-cd98-4f6a-a77e-59ec850952c0",
+      "distance_m": 1254.058122544475,
+      "intersection_area_m2": 0.0
+    }
+  ],
+  "target_scope_review": {
+    "usable_measurement": "Provisional frozen map envelope MRR106.04×74.99m (long axis74.89° clockwise from north modulo180), area7264.71m²; not historical wall lengths, surveyed frontage or accepted footprint.",
+    "target_geometry": "One valid simple convex six-corner polygon, no inner rings, one source fragment, one source-record occurrence, no linked parts.",
+    "target_height_or_floors_present": false,
+    "historical_footprint_verified": false,
+    "nearby_index_record_count_under65m": 23,
+    "nearby_target_overlap_count": 0,
+    "neighbor_separation": [
+      "新新公司／第一食品商店 has its own name and polygon to west,6.090m from target; not a wing of Sincere.",
+      "老永安公司／永安百货 is a separate polygon to southeast,18.013m from target.",
+      "新永安公司／七重天大厦 is a separate polygon70.764m away; it is reviewed explicitly despite lying outside the65m target neighbor window.",
+      "大新公司／上海市第一百货商店 is a distinct polygon192.775m away to west; not part of Sincere.",
+      "Nearest unnamed northern record w756799577@1 is10.659m away and not an explicitly linked part. No historic or functional relationship was inferred from proximity."
+    ],
+    "ambiguities": [
+      "The coarse convex envelope supplies no courtyard, inner lightwell, roof-tower base, bay grid, floor-level assignment or historical annex boundary.",
+      "No historical cadastral plan, registered aerial alignment or original OSM response was checked here.",
+      "No height/floor attribute exists in target record. The unrelated former East Asia Bank has num_floors7; never transfer that value to Sincere.",
+      "Map absence of parts or holes is not evidence that the historical building lacks multiple masses or lightwells."
+    ],
+    "dimension_limits": [
+      "Do not divide site area or gross floor area to infer frontage, footprint dimensions, floor heights or number of floors.",
+      "Do not call map polygon area a documentary footprint, and do not accept its six edges as complete historical wall lines.",
+      "Use article/photo evidence to resolve retail/hotel/tower/annex scope before accepting a single detailed historical exterior."
+    ]
+  },
+  "rights": {
+    "target_and_six_reviewed_geometries_license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "coordinate_data_derived": true,
+    "export_scope": "Only the exact Sincere target feature is exported in source-feature.geojson; all other metrics and identity/source references are research context.",
+    "photo_pixels_redistributed": false
+  },
+  "artifacts": [
+    {
+      "file": "source-feature.geojson",
+      "bytes": 1980,
+      "sha256": "f8f85c489d6ddee11993fb357bc89e43705e905e40dbb6a3dcd2b461216189b4",
+      "scope": "Private exact single target feature with original source metadata"
+    }
+  ],
+  "next_action": "Use the coarse target map extent only as separately labeled reference. Resolve actual historical plan, hotel/retail scope, tower position and any later extensions with documentary and visual evidence before modeling or registration."
+}
