@@ -3764,7 +3764,7 @@
 | 先施公司历史主楼与摩星塔外观 | 2026-10-30 21:46:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) |
 | 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) |
 | 新永安大楼主楼与后部外观 | 2026-10-31 11:14:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) |
-| 新新公司南侧商店主楼临街外观 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) |
+| 新新公司南侧商店主楼临街外观 | 2026-10-31 11:59:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) |
 
 ### 徐汇区（7处）
 

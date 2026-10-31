@@ -36,7 +36,7 @@
       "result": "passed"
     }
   ],
-  "scope": "Generator consistency and affected directory/navigation checks after frozen 72-entry integration. After the camera-only correction, metadata/TODO/directory/restoration and README generators were checked again; restoration input bindings were regenerated for the new catalog. Documentation commit timestamps will be checked separately after publication.",
+  "scope": "Generator consistency and affected directory/navigation checks after the 72-entry integration. Camera-only metadata changes were rechecked without rerunning unchanged geometry. Publication timestamp and queue updates passed the final metadata checks below.",
   "bindings": [
     {
       "path": "tools/build_candidate_city_integrations.py",
@@ -103,5 +103,20 @@
       "bytes": 2647,
       "sha256": "0408e406850327d693461c2e3f76a48eb432225cf5ba1ca4a667e05d3ee8c1b5"
     }
-  ]
+  ],
+  "publication_metadata_checks": {
+    "model_commit": "0f17ddce09c6afc14e124b40d1b9a1ccc542d8c8",
+    "passed": true,
+    "commands": [
+      "python tools/build_candidate_city_integrations.py --catalog-only --check",
+      "python tools/update_global_model_metadata.py --check",
+      "python tools/restoration_progress.py --check",
+      "python tools/build_model_todo.py --check",
+      "python tools/build_landmark_directory.py --check",
+      "python tools/sync_readme_districts.py --check",
+      "python data/audit/xinxin-company-v1/todo-directory-checks.py",
+      "git diff --check"
+    ],
+    "scope": "Metadata and version dates only; no repeat of the frozen browser or asset checks."
+  }
 }

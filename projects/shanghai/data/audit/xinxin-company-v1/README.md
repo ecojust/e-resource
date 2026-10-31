@@ -2,6 +2,8 @@
 
 [主地图直接查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) · [来源与范围](../../../source/precise/huangpu-xinxin-company/README.md) · [四资产清单](../../../assets/models/candidates/huangpu-xinxin-company/manifest.json)
 
+模型版本已发布为 [`0f17ddc`](https://github.com/ecojust/e-resource/commit/0f17ddce09c6afc14e124b40d1b9a1ccc542d8c8)。[固定版本主图](https://raw.githack.com/ecojust/e-resource/0f17ddce09c6afc14e124b40d1b9a1ccc542d8c8/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview)及[线上核对](publication.json)记录14个实际HTTP响应，包括两份README、主页面、目录、运行脚本、清单和四资产；全部与提交中的字节一致。README版本时间另按该提交的真实Git时间补入，不等同于托管部署耗时。
+
 本件为南京东路720号新新公司／第一食品商店的南面与两侧前段，包含浅色柱带、凹窗、双矩形墙板、挑廊与托臂、栏杆、两级中空方塔和两南角亭。**北旅馆、未知天井、室内及真实南北分界未建。** 后切面为展示封口，不是已核对的后立面；原底图北体与后续任务保留。
 
 ## 来源与估计
