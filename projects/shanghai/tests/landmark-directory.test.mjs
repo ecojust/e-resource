@@ -124,7 +124,7 @@ test('lightweight directory resources and loading-screen entry remain available 
   assert.doesNotMatch(directory,/(?:three\.module|maplibre-gl|src\/app\.js)/);
 });
 
-test('a new delivered candidate appears as the latest overview destination from a complete metadata fixture',async()=>{
+test('a new delivered candidate updates the latest overview destination and README counts',async()=>{
   const temporary=await mkdtemp(join(tmpdir(),'shanghai-directory-next-')),project=join(temporary,'projects/shanghai');
   try{
     await mkdir(join(project,'data/model-todo'),{recursive:true});
@@ -140,8 +140,9 @@ test('a new delivered candidate appears as the latest overview destination from 
       writeFile(join(project,'data/districts.json'),await metadata('data/districts.json')),
       writeFile(join(project,'data/model-viewers.json'),JSON.stringify(fixtureViewers)),
       writeFile(join(project,'data/model-todo/queue.json'),JSON.stringify(queue)),
+      writeFile(join(project,'README.md'),await metadata('README.md')),
     ]);
-    const rendered=execFileSync('python',['-c',`import sys
+    const result=JSON.parse(execFileSync('python',['-c',`import sys, json
 from pathlib import Path
 sys.path.insert(0, sys.argv[1])
 import build_landmark_directory as directory
@@ -149,7 +150,13 @@ import sync_readme_districts as metadata
 metadata.ROOT = Path(sys.argv[2])
 metadata.DATA = metadata.ROOT / 'projects/shanghai/data/model-todo'
 metadata.INTEGRATIONS = metadata.ROOT / 'projects/shanghai/data/candidate-city-integrations.json'
-print(directory.render(metadata.ROOT / 'projects/shanghai'))`,new URL('tools/',root).pathname,temporary],{encoding:'utf8'});
+readme = metadata.render((metadata.ROOT / 'projects/shanghai/README.md').read_text(), metadata.candidates(), {}, True)
+print(json.dumps({'directory': directory.render(metadata.ROOT / 'projects/shanghai'), 'readme': readme}))`,new URL('tools/',root).pathname,temporary],{encoding:'utf8'}));
+    const rendered=result.directory;
+    assert(result.readme.includes(`全市16区底图可浏览；${records.length+1}处建筑与构件模型已归入按区目录`));
+    assert(result.readme.includes(`其中${candidates.length+1}件新增接入采用近似定位`));
+    assert(result.readme.includes(`原${legacy.length}处入口保留室外漫游，新增${candidates.length+1}处打开俯瞰定位`));
+    assert(result.readme.includes(`原${legacy.length}处开放室外漫游，新增${candidates.length+1}处提供俯瞰定位`));
     assert(rendered.includes(`href="#building-${next.id}">最近接入：${next.name}`));
     const nextCard=cardsIn(rendered).find(card=>card.id===next.id);assert(nextCard);
     assert.match(nextCard.html,/class="landmark-card featured"/);assert.doesNotMatch(nextCard.body,/mode=walk/);

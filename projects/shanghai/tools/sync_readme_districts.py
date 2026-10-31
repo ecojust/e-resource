@@ -239,6 +239,12 @@ def render(text, items, times, project=False):
     updated_section = ''.join(parts).rstrip()
     assert set(re.findall(r'#landmark=([^&]+)&mode=overview', updated_section)) == set(city)
     result = before + HEADING + updated_section + '\n\n## ' + after
+    # Keep the current overview prose in step with the generated district table.
+    # Match these specific current-summary sentences, not historical model data.
+    result = re.sub(r'全市\d+区底图可浏览；\d+处建筑与构件模型已归入按区目录', f'全市{len(counts)}区底图可浏览；{len(base_ids) + len(city)}处建筑与构件模型已归入按区目录', result)
+    result = re.sub(r'其中\d+件新增接入采用近似定位', f'其中{len(city)}件新增接入采用近似定位', result)
+    result = re.sub(r'原\d+处入口保留室外漫游，新增\d+处打开俯瞰定位', f'原{len(base_ids)}处入口保留室外漫游，新增{len(city)}处打开俯瞰定位', result)
+    result = re.sub(r'原\d+处开放室外漫游，新增\d+处提供俯瞰定位', f'原{len(base_ids)}处开放室外漫游，新增{len(city)}处提供俯瞰定位', result)
     return normalize_model_view_links(result, project)
 
 

@@ -36,7 +36,7 @@
       "result": "passed"
     }
   ],
-  "scope": "Generator consistency and affected directory/navigation metadata after the frozen 73-entry integration. Current delivery assets were checked by the dedicated asset/runtime audits; historical assets were not replayed. Publication date updates will be checked separately.",
+  "scope": "Generator consistency and affected directory/navigation metadata after the 73-entry integration. Final publication dates and current README prose counts were checked separately after model publication; model and browser code remained frozen.",
   "resolved_initial_failure": "The first directory run found a missing manifest path in the new model-viewers row. The path was added and all 12 tests passed; production catalog, HTML, model assets and rendered viewer code were unchanged.",
   "bindings": [
     {
@@ -66,8 +66,8 @@
     },
     {
       "path": "tools/sync_readme_districts.py",
-      "bytes": 15721,
-      "sha256": "6d902c2eaad5c49fdc2dadcaf045d640e4594df6e5b61fc8dab08f46ea6533b6"
+      "bytes": 16609,
+      "sha256": "72ea91588fd3331d7b88f45ff5d60321d106b8e9dc1f74de1bbb5526b3057c41"
     },
     {
       "path": "tests/landmark-navigation.test.mjs",
@@ -76,8 +76,8 @@
     },
     {
       "path": "tests/landmark-directory.test.mjs",
-      "bytes": 10997,
-      "sha256": "796c3d1406eae39b45b5e1f2f92e8ed33d78dc38ca85a5bff4578d3f3923453c"
+      "bytes": 11772,
+      "sha256": "bafb8de95898e0670a2bf94e35a389433701fa445654df1723da281fd4059997"
     },
     {
       "path": "data/candidate-city-integrations.json",
@@ -104,5 +104,25 @@
       "bytes": 2568,
       "sha256": "26f3f5bb9788a155f421d0d9e85a246ebe4ad0faf17fb6279cc4d0cc6ce44cb7"
     }
-  ]
+  ],
+  "readme_count_regression": {
+    "passed": true,
+    "change": "Current overview prose now derives total/candidate counts from the same catalog as district tables.",
+    "validation": "The existing next-delivery fixture adds a distinct delivered building and asserts all four overview prose counts update as well as the latest directory card; all 12 navigation/directory tests passed.",
+    "model_commit": "9b0d1afb8bb21b992ef91b11161273c5e40cae2b"
+  },
+  "publication_metadata_checks": {
+    "passed": true,
+    "commands": [
+      "python tools/build_candidate_city_integrations.py --catalog-only --check",
+      "python tools/update_global_model_metadata.py --check",
+      "python tools/restoration_progress.py --check",
+      "python tools/build_model_todo.py --check",
+      "python tools/build_landmark_directory.py --check",
+      "python tools/sync_readme_districts.py --check",
+      "python data/audit/daxin-company-v1/todo-directory-checks.py",
+      "git diff --check"
+    ],
+    "scope": "Final metadata, README prose counts and Git version dates; no repeat of the frozen model/browser tests."
+  }
 }

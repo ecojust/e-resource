@@ -2,6 +2,8 @@
 
 [主地图直接查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) · [来源与范围](../../../source/precise/huangpu-daxin-company/README.md) · [四资产清单](../../../assets/models/candidates/huangpu-daxin-company/manifest.json)
 
+模型版本已发布为 [`9b0d1af`](https://github.com/ecojust/e-resource/commit/9b0d1afb8bb21b992ef91b11161273c5e40cae2b)。[固定版本主图](https://raw.githack.com/ecojust/e-resource/9b0d1afb8bb21b992ef91b11161273c5e40cae2b/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview)及[线上核对](publication.json)记录14个实际HTTP响应，包括主页面、目录、脚本、清单和四资产，全部与该提交字节一致。随后补入真实Git版本时间，并将两份README正文中的旧汇总数字纳入自动同步；按区表、模型和浏览器代码不变。扩展的下一栋模型增量用例已验证正文与目录一起更新，最终文档检查见[root-checks.json](root-checks.json)。
+
 本件为南京东路830号的大新公司历史主楼外观，包括西南圆弧高转角、南西街面、竖向窗带、顶层敞廊与花格、檐齿、圆片冠饰及雨篷。北侧B馆、东侧C馆、跨街连接、室内和商业广告不并入本件。北东隐面与内部屋顶采用简化估计；单体交付不表示整个商业中心完成。
 
 ## 来源与估计

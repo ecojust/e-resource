@@ -16,13 +16,13 @@
 
 **[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
-全市16区底图可浏览；72处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中32件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；73处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中33件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=overview)：主图可查看地面与水系；分区GLB、可编辑Blender与GIS边界的下载见[资产说明](source/surfaces/README.md)。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增32处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增33处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -73,7 +73,7 @@
 | 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) |
 | 新永安大楼主楼与后部外观 | 2026-10-31 11:14:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) |
 | 新新公司南侧商店主楼临街外观 | 2026-10-31 11:59:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) |
-| 大新公司历史主楼外观 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
+| 大新公司历史主楼外观 | 2026-10-31 13:55:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
 
 ### 徐汇区（7处）
 
@@ -284,7 +284,7 @@
 
 ## 已建模型查看
 
-所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。所有模型查看入口统一进入主图；原40处开放室外漫游，新增32处提供俯瞰定位。模型资产与下载保留在各自来源说明中。
+所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。所有模型查看入口统一进入主图；原40处开放室外漫游，新增33处提供俯瞰定位。模型资产与下载保留在各自来源说明中。
 
 [崇明学宫尊经阁预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview)：依据历史照片制作，已按院落资料近似定位并接入全局场景。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 
