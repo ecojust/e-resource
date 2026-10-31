@@ -1,0 +1,102 @@
+{
+  "schema": "xinxin-runtime-checks-v1",
+  "passed": true,
+  "candidate_count": 32,
+  "global_destination_count": 72,
+  "huangpu_count": 24,
+  "tests": [
+    {
+      "command": "node --test tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs",
+      "passed": 33,
+      "failed": 0,
+      "scope": "Includes real current 72-entry shared catalogue layout and every one of the 32 delivered candidate bounds at desktop, 390px and 320px sizes."
+    },
+    {
+      "command": "python tests/candidate-catalog-increment.test.py",
+      "passed": 8,
+      "failed": 0,
+      "scope": "Includes cross-delivery frozen history, rejection of old audit reuse, prior audit SHA tampering, missing old assets and current inventory reproducibility."
+    },
+    {
+      "command": "python tools/build_candidate_city_integrations.py --check",
+      "result": "passed",
+      "inventory_asset_files_read": 4,
+      "note": "The catalogue also retains its original check of two previously delivered derived corridor assets. Other historical model assets are inherited from frozen inventory evidence."
+    },
+    {
+      "command": "node data/audit/xinxin-company-v1/global-integration-checks.mjs",
+      "passed": 5,
+      "failed": 0
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "index.html",
+      "bytes": 9032,
+      "sha256": "c3160640342d94bba9c71179b9f97ec017f2a1eb3d937125bea42396106855a9"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 221075,
+      "sha256": "e489e2bbee471eb58061818a0d186eb3a2925f260780b522b539f921a5b48c3a"
+    },
+    {
+      "path": "data/global-models/additional-placement.json",
+      "bytes": 21877,
+      "sha256": "98038b0e86dc1166251df2c4ed025b6de21caaef0d48d746a96f217652ce3a77"
+    },
+    {
+      "path": "data/global-models/candidate-inventory.json",
+      "bytes": 90902,
+      "sha256": "785927c83c3f4a6fb73297292d9ee4e90194679108e33c814d2d41742ca1bbb5"
+    },
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "src/building-beacons.js",
+      "bytes": 17205,
+      "sha256": "294944436730aca7f5e6c757785faa02c3de50b07b9387f923b8491f883cb260"
+    },
+    {
+      "path": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "path": "tests/building-beacons.test.mjs",
+      "bytes": 44586,
+      "sha256": "50e1a6c7800727b35b1b725f2dfd6ac8f8ea0fd6b31dda7bf37ff9d6a212aa50"
+    },
+    {
+      "path": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "path": "tests/candidate-catalog-increment.test.py",
+      "bytes": 13783,
+      "sha256": "e99477c993e2f8851e80bbaa4706acca4e83ee8664535a6b5aa7bfd7c585f4e9"
+    },
+    {
+      "path": "data/audit/xinxin-company-v1/footprint-review.json",
+      "bytes": 124428,
+      "sha256": "9305e57f500cb12f068134d2760c80ed2c8bc6303f1943dbc59ddc1b34cdc7fa"
+    }
+  ],
+  "limits": "Metadata and production-function tests do not substitute for actual browser loading, pixel review or real touch. Browser evidence is separate.",
+  "camera_metadata_update": {
+    "overviewBearing": -59.44415747267618,
+    "overviewPitch": 35,
+    "reason": "The initially proposed southwest view was blocked by a neighboring tower after city streaming completed. The reviewed southeast view changes only display camera metadata.",
+    "geometry_and_assets_unchanged": true,
+    "previous_31_catalogue_records_unchanged": true,
+    "targeted_33_camera_and_beacon_tests_rerun_after_change": true
+  }
+}

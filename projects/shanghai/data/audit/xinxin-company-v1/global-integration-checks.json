@@ -1,0 +1,123 @@
+{
+  "schema": "xinxin-global-integration-delta-v1",
+  "passed": 5,
+  "failed": 0,
+  "checks": [
+    "the southern store exterior adds one overview destination to the existing 71-entry shared map",
+    "all 31 earlier candidate rows and the earlier delivery audit remain unchanged",
+    "existing placements, base entries, sprites, cameras and clipping implementations retain their previous bytes",
+    "the production shader triangulator adds only the new bounded southern correction within its 128-triangle budget",
+    "the production vector plan retains the northern source remainder and ignores a geometrically overlapping foreign ID"
+  ],
+  "baseline_commit": "7b85c03efc436527efeb803b0743e4b2580e78d7",
+  "entry_id": "huangpu-xinxin-company",
+  "total_destinations": 72,
+  "candidate_models": 32,
+  "route": "index.html#landmark=huangpu-xinxin-company&mode=overview",
+  "walking_enabled": false,
+  "clipping_triangles": {
+    "before": 62,
+    "addition": 4,
+    "after": 66,
+    "limit": 128
+  },
+  "northern_source_remainder_ratio": 0.60389664556328,
+  "scope": "Static production merge, navigation, shader triangulation and vector plan checks. The foreign-ID duplicate is an ownership fixture. The actual northern source difference must also remain visible in browser QA. When an existing city GLB covers the owner, the vector plan correctly defers to its shader correction instead of adding a duplicate residual.",
+  "bindings": [
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/audit/global-model-integration-v1/inventory.json",
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+      "bytes": 3754,
+      "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 7051,
+      "sha256": "3bc0c5d3812e4853ad7808488ae3fc83ac0f2556c23052dc20e1752bd49f90b8"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 17205,
+      "sha256": "294944436730aca7f5e6c757785faa02c3de50b07b9387f923b8491f883cb260"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "c3160640342d94bba9c71179b9f97ec017f2a1eb3d937125bea42396106855a9"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 221075,
+      "sha256": "e489e2bbee471eb58061818a0d186eb3a2925f260780b522b539f921a5b48c3a"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 21877,
+      "sha256": "98038b0e86dc1166251df2c4ed025b6de21caaef0d48d746a96f217652ce3a77"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 90902,
+      "sha256": "785927c83c3f4a6fb73297292d9ee4e90194679108e33c814d2d41742ca1bbb5"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/footprint-review.json",
+      "bytes": 124428,
+      "sha256": "9305e57f500cb12f068134d2760c80ed2c8bc6303f1943dbc59ddc1b34cdc7fa"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 44586,
+      "sha256": "50e1a6c7800727b35b1b725f2dfd6ac8f8ea0fd6b31dda7bf37ff9d6a212aa50"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "tests/candidate-catalog-increment.test.py",
+      "bytes": 13783,
+      "sha256": "e99477c993e2f8851e80bbaa4706acca4e83ee8664535a6b5aa7bfd7c585f4e9"
+    }
+  ]
+}

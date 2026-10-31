@@ -1,0 +1,561 @@
+{
+  "schema": "xinxin-independent-model-review-v1",
+  "reviewed_utc": "2026-10-31T03:31:20.687701+00:00",
+  "reviewer": "xinxin_review",
+  "building_id": "huangpu-xinxin-company",
+  "geometry_revision": "v2",
+  "result": "pass_with_documented_partial_scope_and_estimates",
+  "verdict": "独立读取最终四资产，实际解码近远景、检查五高度截面与塔通孔/柱体/凹窗，并实看三张参考照片和四张v2原生图后，未发现模型资产或南侧范围阻塞。只验收本件南侧商店临街外观候选；北旅馆、未知中庭、真实分界与测绘精度不在通过结论内。",
+  "manifest": {
+    "file": "assets/models/candidates/huangpu-xinxin-company/manifest.json",
+    "bytes": 6677,
+    "sha256": "3fd6a330f67ba374e512e60289b70972600dfdabc3736cd4ee565ddfd17689be"
+  },
+  "assets": {
+    "raw": {
+      "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-raw.glb",
+      "bytes": 4546352,
+      "sha256": "3c5df8ccc24e6094809589a1d478198c1833f43aa4771b21204b184b4dc17bfd",
+      "triangles": 79884
+    },
+    "native": {
+      "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company.blend",
+      "bytes": 2393681,
+      "sha256": "a93efbe9b452e3b4a9f9b6fc5363a583eb86ae521bcb0ee4db51e0dde620091d"
+    },
+    "full": {
+      "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-web.glb",
+      "bytes": 1422636,
+      "sha256": "f6877967e35bda3d26757eb939ac0779b1695bab3837680d7ca3add88f4e844b",
+      "triangles": 79884
+    },
+    "lod": {
+      "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-lod.glb",
+      "bytes": 715384,
+      "sha256": "30c7e8e4d8b75a8a76268338f9e37aa3b379af0cdef89f4a9762559f6db06b86",
+      "triangles": 37960
+    }
+  },
+  "independence": {
+    "performed_here": [
+      "四件真实文件字节数及SHA与冻结manifest逐项比对",
+      "直接解析GLB有效场景、FLOAT32 POSITION和三角索引，生产MeshoptDecoder实际解码web/LOD；未从作者源码重建几何",
+      "在五个高度对实际三角形求交并比较整条截面凸包环",
+      "双层塔中间开口穿透射线及两列实体柱正控，南/东窗与中央入口的真实深度射线",
+      "三份GLB无images/textures/外部buffer URI，源及资产目录未发现照片文件",
+      "实际查看三张参考照片与四张最终原生图，核对原生/压缩报告的文件与代码SHA引用"
+    ],
+    "not_repeated": [
+      "完整构件闭合/法向/体积测试",
+      "逐材料有向三角面全表面multiset等价",
+      "Blender再次重开及原生图像节点枚举",
+      "Chrome/WebGL地图替换、北源实际可见性及交互"
+    ],
+    "dependency_note": "闭合、完整表面等价及Blender重开依赖制作者packaged.json/native.json的实际结果；本报告独立核对这些证据与当前文件的SHA绑定，未假称再次执行。"
+  },
+  "geometry": {
+    "method": "读取实际活动mesh的顶点与索引；本交付场景节点没有额外变换。截面由实际三角边与水平面求交，非accessor声明min/max。凸包检验主要体量，不等于闭合内部或完整表面等价。",
+    "coordinate_convention": "GLB[x,up,-local_y]；下列ENU为最终南部质心原点，方位与位置另行记录。",
+    "actual_bounds_glb": {
+      "min": [
+        -25.877513885498047,
+        0,
+        -15.219429969787598
+      ],
+      "max": [
+        25.87283706665039,
+        37.5,
+        15.642927169799805
+      ]
+    },
+    "actual_bounds_model_enu_m": {
+      "min": [
+        -25.877513885498047,
+        -15.642927169799805,
+        0
+      ],
+      "max": [
+        25.87283706665039,
+        15.219429969787598,
+        37.5
+      ]
+    },
+    "outer_envelope_m": {
+      "width": 51.75035095214844,
+      "depth": 30.862357139587402,
+      "height": 37.5
+    },
+    "raw_web_lod_bounds_equal": true,
+    "north_cut_check": {
+      "cap_model_y_m": 15.219429812778612,
+      "actual_max_model_y_m": 15.219429969787598,
+      "float32_rounding_difference_m": 1.5700898536863406e-07,
+      "numeric_tolerance_m": 1e-05,
+      "passed": true,
+      "not_surveyed_boundary": true
+    },
+    "sections": [
+      {
+        "height_m": 7.0,
+        "actual_triangle_section_convex_hull_area_m2": 1512.0042487391283,
+        "raw_web_lod_complete_hull_rings_equal": true,
+        "hull_vertices": 17
+      },
+      {
+        "height_m": 23.0,
+        "actual_triangle_section_convex_hull_area_m2": 1512.0042487391283,
+        "raw_web_lod_complete_hull_rings_equal": true,
+        "hull_vertices": 17
+      },
+      {
+        "height_m": 27.0,
+        "actual_triangle_section_convex_hull_area_m2": 1524.2201310027344,
+        "raw_web_lod_complete_hull_rings_equal": true,
+        "hull_vertices": 18
+      },
+      {
+        "height_m": 31.6,
+        "actual_triangle_section_convex_hull_area_m2": 332.788943685666,
+        "raw_web_lod_complete_hull_rings_equal": true,
+        "hull_vertices": 10
+      },
+      {
+        "height_m": 35.575,
+        "actual_triangle_section_convex_hull_area_m2": 47.20019741078977,
+        "raw_web_lod_complete_hull_rings_equal": true,
+        "hull_vertices": 4
+      }
+    ],
+    "tower_probe_results": [
+      {
+        "name": "lower-through-middle",
+        "originGLB": [
+          -0.08040859965335928,
+          31.6,
+          26.780660012335595
+        ],
+        "directionGLB": [
+          0,
+          0,
+          -1
+        ],
+        "maxDistanceM": 50,
+        "expectedOpen": true,
+        "hits": []
+      },
+      {
+        "name": "upper-through-middle",
+        "originGLB": [
+          -0.08040859965335928,
+          35.575,
+          26.780660012335595
+        ],
+        "directionGLB": [
+          0,
+          0,
+          -1
+        ],
+        "maxDistanceM": 50,
+        "expectedOpen": true,
+        "hits": []
+      },
+      {
+        "name": "lower-left-column-control",
+        "originGLB": [
+          -4.780418651511377,
+          31.6,
+          26.780660012335595
+        ],
+        "directionGLB": [
+          0,
+          0,
+          -1
+        ],
+        "maxDistanceM": 50,
+        "expectedOpen": false,
+        "hits": [
+          {
+            "distance": 13.900029519171532,
+            "material": "warm cream plaster"
+          },
+          {
+            "distance": 14.380030968756493,
+            "material": "warm cream plaster"
+          },
+          {
+            "distance": 21.22004542645913,
+            "material": "warm cream plaster"
+          },
+          {
+            "distance": 21.700046399206933,
+            "material": "warm cream plaster"
+          }
+        ]
+      },
+      {
+        "name": "upper-left-column-control",
+        "originGLB": [
+          -3.5304159781448834,
+          35.575,
+          26.780660012335595
+        ],
+        "directionGLB": [
+          0,
+          0,
+          -1
+        ],
+        "maxDistanceM": 50,
+        "expectedOpen": false,
+        "hits": [
+          {
+            "distance": 14.850032189459617,
+            "material": "warm cream plaster"
+          },
+          {
+            "distance": 15.330032685370263,
+            "material": "warm cream plaster"
+          },
+          {
+            "distance": 20.270043233008206,
+            "material": "warm cream plaster"
+          },
+          {
+            "distance": 20.750044205756005,
+            "material": "warm cream plaster"
+          }
+        ]
+      }
+    ],
+    "window_probe_results": [
+      {
+        "label": "south-scope-1-window",
+        "pointGLB": [
+          25.15331149429076,
+          5.51,
+          -2.5106900648514183
+        ],
+        "outwardNormalGLB": [
+          0.9999931144445879,
+          0,
+          -0.00371093834674288
+        ],
+        "expectedRecessM": 0.32000068438182255,
+        "actualRecessM": 0.32000104603389135,
+        "hitMaterial": "recessed glass"
+      },
+      {
+        "label": "south-scope-1-window",
+        "pointGLB": [
+          25.15331149429076,
+          18.71,
+          -2.5106900648514183
+        ],
+        "outwardNormalGLB": [
+          0.9999931144445879,
+          0,
+          -0.00371093834674288
+        ],
+        "expectedRecessM": 0.32000068438182255,
+        "actualRecessM": 0.32000104603389223,
+        "hitMaterial": "recessed glass"
+      },
+      {
+        "label": "main-entry",
+        "pointGLB": [
+          0.353142793749332,
+          2,
+          14.880049475005473
+        ],
+        "outwardNormalGLB": [
+          -0.0042914195430514964,
+          0,
+          0.9999907918167574
+        ],
+        "expectedRecessM": 1.4500031011051333,
+        "actualRecessM": 1.4500034241091568,
+        "hitMaterial": "recessed glass"
+      },
+      {
+        "label": "south-scope-5-window",
+        "pointGLB": [
+          0.3331429351395268,
+          5.51,
+          14.879963646431053
+        ],
+        "outwardNormalGLB": [
+          -0.0042914195430514964,
+          0,
+          0.9999907918167574
+        ],
+        "expectedRecessM": 0.32000068438182255,
+        "actualRecessM": 0.32000053316738564,
+        "hitMaterial": "recessed glass"
+      },
+      {
+        "label": "south-scope-5-window",
+        "pointGLB": [
+          0.3331429351395268,
+          18.71,
+          14.879963646431053
+        ],
+        "outwardNormalGLB": [
+          -0.0042914195430514964,
+          0,
+          0.9999907918167574
+        ],
+        "expectedRecessM": 0.32000068438182255,
+        "actualRecessM": 0.32000053316738564,
+        "hitMaterial": "recessed glass"
+      }
+    ],
+    "probes_recomputed_and_passed_for": [
+      "raw",
+      "full",
+      "lod"
+    ],
+    "probe_origin_policy": "塔中心通孔与柱正控根据明示设计平面另选独立射线；窗/入口射线使用作者给定表面候选点，直接测实际导出三角形，不仅检查元数据标志。",
+    "lod_triangle_fraction_of_full": 0.47518902408492314,
+    "decoder": {
+      "file": "vendor/meshopt_decoder.module.js",
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+    },
+    "executed_probe_program": {
+      "file": "/workspace/xinxin-independent-geometry.mjs",
+      "bytes": 7542,
+      "sha256": "652eeeeda1553f74cd1c27bb43a976e09d9b479d859d7680b3f1f487538485c2"
+    },
+    "published_reproduction_program": {
+      "file": "data/audit/xinxin-company-v1/independent-geometry-check.mjs",
+      "bytes": 7511,
+      "sha256": "bd0964ba8c019792fc0c6382ccf4d6018c369fb981e3735a549f81a497a13f84"
+    },
+    "published_program_note": "发布副本仅将decoder绝对导入改为仓库相对导入；已逐字验证其余算法与实际执行版本相同，并单独通过node --check。",
+    "reproduce_from_repository_root": "node projects/shanghai/data/audit/xinxin-company-v1/independent-geometry-check.mjs projects/shanghai/assets/models/candidates/huangpu-xinxin-company projects/shanghai/source/precise/huangpu-xinxin-company/design-input.json /tmp/xinxin-independent-geometry.json"
+  },
+  "scope_review": {
+    "subject": "南京东路720号南侧商店主楼临街外观与两侧前段；独立于先施、老永安、新永安与大新公司。",
+    "original_source_frame_scope_cut_y_m": -8,
+    "scope_depth_is_author_estimate": true,
+    "final_model_origin_wgs84": [
+      121.47222314008322,
+      31.237338603109322
+    ],
+    "height_m": 37.5,
+    "height_is_author_selected_not_documented_endpoint": true,
+    "layers": "底层+五排大窗+上廊为七个作者分配层段，不能据此消除文献六楼阳台与七层描述的层号差异。",
+    "historical_limit": "1925竣工/1926开业是不同事件；文献1949拆中塔与现代照片现存中塔并列，未认定为原塔或已查明复建年份。",
+    "excluded": [
+      "北部旅馆",
+      "未知内天井及其屋顶",
+      "真实前后连接与历史分界",
+      "邻楼",
+      "室内和地下",
+      "未见历史东北/西北尖塔",
+      "临时广告/标语/商标和现代天线"
+    ],
+    "map_contract_snapshot": {
+      "source_id": "7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+      "partial_replacement": true,
+      "minimum_north_source_area_m2_in_final_frame": 2394.5519958379173,
+      "northern_source_not_part_of_this_model": true,
+      "limit": "此处仅核模型切界与当前mapper合同一致；北源在实际GPU上保留需浏览器证据，本报告不替代它。"
+    }
+  },
+  "visual_review": {
+    "reference_photos": [
+      {
+        "id": "xinxin-main",
+        "private_file": "/workspace/xinxin-reference/photos/xinxin-main.jpg",
+        "bytes": 4980736,
+        "sha256": "b449959a2de3bc7984079b72ad269717783fcd4c445a802daa726077170272a1",
+        "page": "https://commons.wikimedia.org/w/index.php?title=File%3A%E6%96%B0%E6%96%B0%E7%99%BE%E8%B4%A7.JPG&oldid=1175819099",
+        "actually_viewed": true,
+        "pixels_published": false
+      },
+      {
+        "id": "foodhall2025",
+        "private_file": "/workspace/xinxin-reference/photos/foodhall2025.jpg",
+        "bytes": 7026294,
+        "sha256": "7fb6900d285073af78c7c56f9529f3fd15b574a1622aea3b6b189ee8fd8a20c4",
+        "page": "https://commons.wikimedia.org/w/index.php?title=File%3AShanghai_First_Foodhall_20250501.jpg&oldid=1141573547",
+        "actually_viewed": true,
+        "pixels_published": false
+      },
+      {
+        "id": "foodhall2024",
+        "private_file": "/workspace/xinxin-reference/photos/foodhall2024.jpg",
+        "bytes": 2945622,
+        "sha256": "f83f3187d980fab8d729178c03188926c75f1b3a3bd6e6ecdd69156241f3dcc8",
+        "page": "https://commons.wikimedia.org/w/index.php?title=File%3AShanghai_First_Food_Hall_%282024%29.jpg&oldid=1261237797",
+        "actually_viewed": true,
+        "pixels_published": false
+      }
+    ],
+    "final_native_images": [
+      {
+        "file": "data/audit/xinxin-company-v1/native-front-v2.png",
+        "bytes": 1093664,
+        "sha256": "9cad8837e52f0698055e1ab48b7f8e452d2921e8fb6f71965cdcd8c3acb16e12",
+        "actually_viewed": true,
+        "observation": "南面13个设计窗轴、五排大窗、上部环廊、两级真正中空方塔与两个低角亭可辨；相对体量与所见三张参考图相容。"
+      },
+      {
+        "file": "data/audit/xinxin-company-v1/native-oblique-v2.png",
+        "bytes": 1113662,
+        "sha256": "65d33c63a3d164cc4453641059abadc8ebf9baf8423a50893259bb410a3459eb",
+        "actually_viewed": true,
+        "observation": "南面及一侧短段在倒角连接处连续，环廊退入形成空间；双层方塔、低角亭和局部平屋顶可辨。局部屋顶布置仍为作者估计。"
+      },
+      {
+        "file": "data/audit/xinxin-company-v1/native-rear-v2.png",
+        "bytes": 1013878,
+        "sha256": "fa950da660e19d247413e734b8e8232d93f74f71e1325f1c46259d37039903c9",
+        "actually_viewed": true,
+        "observation": "北端是平整无窗的中性截断封口，未伪造北旅馆后立面；切面不是实际南北建筑分界，不宣称整个源楼块已建。"
+      },
+      {
+        "file": "data/audit/xinxin-company-v1/native-south-detail-v2.png",
+        "bytes": 1912233,
+        "sha256": "1da67b6f73c29b26831c247c447968780f599c3119baa9939d8813beceec000b",
+        "actually_viewed": true,
+        "observation": "凹窗、双矩形墙板、挑台斜撑、开敞廊柱及黑栏杆均由几何构成，双层中央方塔可透视，不能用实心玻璃塔替代。"
+      }
+    ],
+    "blocking_mismatches_found": [],
+    "limits": [
+      "透视照片不提供准确总高、开间宽、进深或真实南北分界。",
+      "侧段末端与局部平屋顶为估计；灰色后封口是模型范围说明，不是实际后立面。",
+      "花饰栏杆、线脚及窗格按照片特征简化，不能称逐寸复原。"
+    ]
+  },
+  "no_photo_payload": {
+    "raw_web_lod_images": 0,
+    "raw_web_lod_textures": 0,
+    "external_buffer_uris": 0,
+    "reference_images_in_asset_or_source_tree": 0,
+    "native_image_datablocks_from_packaged": [],
+    "native_image_texture_nodes_from_packaged": [],
+    "native_photo_check_independently_repeated": false,
+    "generated_native_previews_are_not_reference_photographs": true
+  },
+  "native_binding": {
+    "actual_reopen_passed_from_author_report": true,
+    "source_raw_sha256": "3c5df8ccc24e6094809589a1d478198c1833f43aa4771b21204b184b4dc17bfd",
+    "native_sha256": "a93efbe9b452e3b4a9f9b6fc5363a583eb86ae521bcb0ee4db51e0dde620091d",
+    "model_meshes": 1,
+    "model_triangles": 79884,
+    "before_after_reopen_geometry_hash": "09f3925f8b3503ff17d1a8e8df4c31756b5886cf21a9bb7f3bd2b594eb2aab91",
+    "preview_stage_excluded": true,
+    "four_preview_files_match_final_reports": true
+  },
+  "source_bindings": [
+    {
+      "file": "source/precise/huangpu-xinxin-company/source-register.json",
+      "bytes": 22118,
+      "sha256": "9addd3e52a35d5d09b8e1bb9677ba31da80b85f2966a9dac61e2dcfb361ba0dc"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/design-input.json",
+      "bytes": 10147,
+      "sha256": "47c910d0b8849bd2222d054442e2fff8beb949d6b2f86314da5e78c5ace689a3"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/lod-features.json",
+      "bytes": 10147,
+      "sha256": "fdc4156ae7f7a71bc4fc0128e6a2aea8ecfd07b8ab83eddc9365a47029afd73b"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/build_model.py",
+      "bytes": 19308,
+      "sha256": "a8314fae373eb94725adc434fb45e874fd01071f98700c723897706770606922"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/build_native.py",
+      "bytes": 5642,
+      "sha256": "f0883fa1014b6469713e244c9f3429d54f4c11e102e2ef67b46080c6fb814f3f"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/package_assets.py",
+      "bytes": 5908,
+      "sha256": "514547b197aa4e9b7d14956ba3b5f9e3b8048b2b93dec527f2e095244cd93711"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/verify_geometry.py",
+      "bytes": 25576,
+      "sha256": "4404bb0fd751c3c85e972c7ecb57fa3dbf0841b6b2953e1db1c1dece6816c6be"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/render_detail.py",
+      "bytes": 1816,
+      "sha256": "5975e769ff56cf437b1ddbae905fa28354f0209b72c885a69df86e33107c019f"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/common/photo_architecture.py",
+      "bytes": 21367,
+      "sha256": "6a62484a9e416f1c2ef2c2d2ec065dd9c7c184eb758b214ae4217f6f8782d15f"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/source/HELPER_PROVENANCE.json",
+      "bytes": 2303,
+      "sha256": "5675c3f8a6517027b82fdfb611f409c779c2b588d311a92f3b7a6c4a176fcb28"
+    }
+  ],
+  "evidence_bindings": [
+    {
+      "file": "data/audit/xinxin-company-v1/documentary-review.json",
+      "bytes": 7903,
+      "sha256": "1c0f9fdbda3a79e8b55e31cec5eed780f91e9efb7d75e7b1f3fd2df9d6eb1e18"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/photo-review.json",
+      "bytes": 18492,
+      "sha256": "5faa3a8d4b5cf2941228e4b8fff293e5af82cc429417ae8e19e192bb6c56d6a0"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/footprint-review.json",
+      "bytes": 124428,
+      "sha256": "9305e57f500cb12f068134d2760c80ed2c8bc6303f1943dbc59ddc1b34cdc7fa"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/geometry.json",
+      "bytes": 253625,
+      "sha256": "42a21c56f3da8e25371df5d2c6c5c8839b8c3ea427b031f8f7c3bd817ace600b"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/packaged.json",
+      "bytes": 382112,
+      "sha256": "5bc1d99113a1e202c6576c3fb95703baeb851da4f22f66c8db905e3f166cf3f4"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/native.json",
+      "bytes": 2184,
+      "sha256": "fe3f12634368b5672d2c693e7bd75f7f3ef3864d5b6cdbfc6b94747208f84daa"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/native-south-detail-v2.json",
+      "bytes": 737,
+      "sha256": "eb126a26f14fec5e5b7c2f0ae0c8be29f445b5fd79349ff8074d4fc2dbb15187"
+    }
+  ],
+  "acceptance_boundary": "南侧外观资产/范围审查通过，附估计限制。主地图位置、部分源裁剪、北源保留、灯牌、浏览器加载及触控由各自实际合同与QA报告覆盖。",
+  "camera_only_amendment": {
+    "reviewed_utc": "2026-10-31T03:47:09.296329+00:00",
+    "reason": "实际浏览器完整城市加载后，原西南向默认视角被远处世茂高楼遮挡；只调整新楼默认镜头到东南方向并降低俯仰。",
+    "old_mapping_report_sha256": "bdca85d946b4694c0f0245c5d64907935ac67d9731d2f0c16d2adf84eaeb36fa",
+    "new_mapping_report_sha256": "9305e57f500cb12f068134d2760c80ed2c8bc6303f1943dbc59ddc1b34cdc7fa",
+    "new_mapping_report_bytes": 124428,
+    "actual_recursive_change_scope": [
+      "proposed_placement_contract.overviewBearing: 30.55584252732382 → -59.44415747267618",
+      "proposed_placement_contract.overviewPitch: 50 → 35",
+      "photographic_direction_check.recommended_main_map_camera_bearing",
+      "photographic_direction_check.recommendation_scope",
+      "camera_obstruction_review（新增实际遮挡诊断与推荐依据）"
+    ],
+    "noncamera_report_content_equal": true,
+    "noncamera_normalized_json_sha256": "b9fe7685030dacb359ae46f81aa3f749f6a020250c90ae68b20c83b91ce320e9",
+    "geometry_anchor_heading_scale_collision_replacement_and_asset_hashes_unchanged": true,
+    "model_asset_tests_repeated": false,
+    "acceptance_boundary": "本次只独立比对完整新旧定位报告并刷新证据绑定；没有重跑模型检查，也不以此替代最终浏览器镜头截图验收。原模型/照片/原生审查结论保持。"
+  }
+}

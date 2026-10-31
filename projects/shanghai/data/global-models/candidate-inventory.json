@@ -44,29 +44,31 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 33,
+  "candidate_manifest_count": 34,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 31,
-  "resulting_city_count": 71,
+  "new_city_model_count": 32,
+  "resulting_city_count": 72,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "虹口区": 3,
-    "黄浦区": 7
+    "黄浦区": 8
   },
   "verification": {
-    "all_manifest_assets_read": true,
-    "files": 132,
-    "bytes": 484076729,
+    "all_manifest_assets_read": false,
+    "files": 136,
+    "bytes": 493154782,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 14931171,
-    "scope": "Original records retain their immutable baseline verification; only the explicitly listed incremental manifests/assets are read in this run."
+    "current_run_added_bytes": 9078053,
+    "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
+    "all_current_delivery_assets_read": true,
+    "inherited_incremental_files": 4
   },
   "records": [
     {
@@ -2279,6 +2281,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
       "description": "北端高塔、分组竖窗、宽檐退台、阶梯顶冠及相连低楔形后部；层段、平面和隐藏面含估计，老永安与跨街桥另列。"
+    },
+    {
+      "id": "huangpu-xinxin-company",
+      "name": "新新公司南侧商店主楼临街外观",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "xinxin-company.html",
+      "manifest": "assets/models/candidates/huangpu-xinxin-company/manifest.json",
+      "manifest_sha256": "3fd6a330f67ba374e512e60289b70972600dfdabc3736cd4ee565ddfd17689be",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-raw.glb",
+          "bytes": 4546352,
+          "sha256": "3c5df8ccc24e6094809589a1d478198c1833f43aa4771b21204b184b4dc17bfd",
+          "triangles": 79884
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company.blend",
+          "bytes": 2393681,
+          "sha256": "a93efbe9b452e3b4a9f9b6fc5363a583eb86ae521bcb0ee4db51e0dde620091d"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-web.glb",
+          "bytes": 1422636,
+          "sha256": "f6877967e35bda3d26757eb939ac0779b1695bab3837680d7ca3add88f4e844b",
+          "triangles": 79884
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-lod.glb",
+          "bytes": 715384,
+          "sha256": "30c7e8e4d8b75a8a76268338f9e37aa3b379af0cdef89f4a9762559f6db06b86",
+          "triangles": 37960
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -25.877513885498047,
+            0.0,
+            -15.219429969787598
+          ],
+          "max": [
+            25.87283706665039,
+            37.5,
+            15.642927169799805
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -25.877513885498047,
+            -15.642927169799805,
+            0.0
+          ],
+          "max": [
+            25.87283706665039,
+            15.219429969787598,
+            37.5
+          ]
+        },
+        "triangles": 79884,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "partial-exterior-candidate-with-estimated-geographic-placement",
+      "description": "南京东路720号南侧商店临街外观：浅色柱带、凹窗、环廊、两级中空方塔及南角小亭；北旅馆、天井、室内与实际南北分界未建，尺寸及截断深度含估计。"
     }
   ],
   "baseline_inventory": {
@@ -2287,8 +2356,17 @@
     "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
   },
   "incremental_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json"
   ],
-  "incremental_asset_revision": "b1d8a4b9926367c68f87e25dfdcda4c22e2c199c",
-  "incremental_audit_directory": "data/audit/new-wing-on-company-v1"
+  "incremental_asset_revision": "7b85c03efc436527efeb803b0743e4b2580e78d7",
+  "incremental_audit_directory": "data/audit/xinxin-company-v1",
+  "prior_incremental_inventory": {
+    "file": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+    "bytes": 3754,
+    "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+  },
+  "current_delivery_manifests": [
+    "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json"
+  ]
 }

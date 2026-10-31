@@ -4,6 +4,7 @@ import importlib.util
 import json
 import math
 from pathlib import Path
+import shutil
 import struct
 import tempfile
 import unittest
@@ -57,7 +58,7 @@ class IncrementalCatalogTests(unittest.TestCase):
             assets[variant] = {"file": filename, "bytes": len(blob), "sha256": hashlib.sha256(blob).hexdigest(), "triangles": 1}
         self.manifest = directory / "manifest.json"
         self.manifest.write_text(json.dumps({"id": NEW_ID, "name": "新永安公司", "viewer_page": "new-wing-on-company.html", "assets": assets}))
-        self.globals = patch.multiple(builder, ROOT=self.root, PROJECT=self.project, INVENTORY=self.baseline)
+        self.globals = patch.multiple(builder, ROOT=self.root, PROJECT=self.project, INVENTORY=self.baseline, AUDIT=self.baseline.parent)
         self.globals.start()
         # Any attempt to fetch a historical asset fails this test immediately.
         self.git = patch.object(builder, "git", side_effect=AssertionError("unexpected historical asset read"))
@@ -70,6 +71,27 @@ class IncrementalCatalogTests(unittest.TestCase):
 
     def increment(self):
         return builder.build_incremental_inventory([str(self.manifest)], "fixture-revision", "data/audit/new-wing-on-company-v1")
+
+    def freeze(self, inventory):
+        path = self.project / inventory["incremental_audit_directory"] / "inventory-increment.json"
+        historical = {row["id"] for row in BASELINE["records"]}
+        delta = {"schema": "candidate-city-inventory-increment-v1", "baseline_inventory": inventory["baseline_inventory"],
+                 "incremental_manifests": inventory["incremental_manifests"], "verification": inventory["verification"],
+                 "records": [row for row in inventory["records"] if row["id"] not in historical]}
+        if "prior_incremental_inventory" in inventory:
+            delta["prior_incremental_inventory"] = inventory["prior_incremental_inventory"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(delta))
+        return path
+
+    def next_manifest(self):
+        directory = self.manifest.parent.with_name("huangpu-xinxin-company")
+        shutil.copytree(self.manifest.parent, directory)
+        path = directory / "manifest.json"
+        data = json.loads(path.read_text())
+        data.update(id=directory.name, name="新新公司", viewer_page="xinxin-company.html")
+        path.write_text(json.dumps(data))
+        return path
 
     def test_only_new_assets_are_verified_and_old_evidence_is_preserved(self):
         result = self.increment()
@@ -93,6 +115,58 @@ class IncrementalCatalogTests(unittest.TestCase):
         existing = BASELINE["records"][0]["id"]
         with self.assertRaisesRegex(AssertionError, "historical inventory"):
             builder.build_incremental_inventory([f"assets/models/candidates/{existing}/manifest.json"], "fixture", "data/audit/new")
+
+    def test_next_delivery_reads_only_its_assets_and_preserves_all_prior_records(self):
+        previous = self.increment()
+        frozen_path = self.freeze(previous)
+        frozen_bytes = frozen_path.read_bytes()
+        next_manifest = self.next_manifest()
+        manifests = previous["incremental_manifests"] + [builder.normalized_manifest_path(next_manifest).as_posix()]
+        directory, prior = builder.incremental_delivery_context(previous, manifests, "data/audit/xinxin-company-v1")
+        # Previous files are unavailable, and mutable viewer metadata has changed.
+        # Frozen history must retain the old name/description without reading GLBs.
+        shutil.rmtree(self.manifest.parent)
+        (self.project / "data/model-viewers.json").write_text(json.dumps([{"id": NEW_ID, "description": "changed old description"}]))
+        with patch.object(builder, "verify_manifest", wraps=builder.verify_manifest) as verify:
+            current = builder.build_incremental_inventory(manifests, "next-revision", directory, prior)
+        self.assertEqual(verify.call_count, 1)
+        self.assertEqual(Path(verify.call_args.args[0]).parent.name, "huangpu-xinxin-company")
+        self.assertEqual(current["records"][:len(previous["records"])], previous["records"])
+        self.assertEqual(current["resulting_city_count"], 72)
+        self.assertEqual(current["verification"]["current_run_added_files"], 4)
+        self.assertEqual(current["verification"]["inherited_incremental_files"], 4)
+        self.assertFalse(current["verification"]["all_manifest_assets_read"])
+        self.assertTrue(current["verification"]["all_current_delivery_assets_read"])
+        self.assertEqual(current["verification"]["files"], previous["verification"]["files"] + 4)
+        self.assertEqual(current["current_delivery_manifests"], [builder.normalized_manifest_path(next_manifest).as_posix()])
+        self.assertEqual(frozen_path.read_bytes(), frozen_bytes)
+        check_directory, check_prior = builder.incremental_delivery_context(current, manifests, None)
+        self.assertEqual(builder.build_incremental_inventory(manifests, "next-revision", check_directory, check_prior), current)
+
+    def test_a_new_delivery_requires_a_fresh_explicit_audit_directory(self):
+        previous = self.increment()
+        self.freeze(previous)
+        manifests = previous["incremental_manifests"] + [builder.normalized_manifest_path(self.next_manifest()).as_posix()]
+        with self.assertRaisesRegex(AssertionError, "explicit fresh"):
+            builder.incremental_delivery_context(previous, manifests, None)
+        with self.assertRaisesRegex(AssertionError, "preceding delivery"):
+            builder.incremental_delivery_context(previous, manifests, previous["incremental_audit_directory"])
+        directory, prior = builder.incremental_delivery_context(previous, manifests, "data/audit/xinxin-company-v1")
+        current = builder.build_incremental_inventory(manifests, "next-revision", directory, prior)
+        self.freeze(current)
+        with self.assertRaisesRegex(AssertionError, "earlier delivery"):
+            builder.incremental_delivery_context(current, manifests + ["projects/shanghai/assets/models/candidates/huangpu-next/manifest.json"], previous["incremental_audit_directory"])
+        with self.assertRaisesRegex(AssertionError, "retain its audit"):
+            builder.incremental_delivery_context(current, manifests, previous["incremental_audit_directory"])
+
+    def test_tampering_with_the_frozen_prior_increment_is_rejected(self):
+        previous = self.increment()
+        path = self.freeze(previous)
+        manifests = previous["incremental_manifests"] + [builder.normalized_manifest_path(self.next_manifest()).as_posix()]
+        directory, prior = builder.incremental_delivery_context(previous, manifests, "data/audit/xinxin-company-v1")
+        path.write_bytes(path.read_bytes() + b"\n")
+        with self.assertRaisesRegex(AssertionError, "Frozen previous inventory audit changed"):
+            builder.build_incremental_inventory(manifests, "next-revision", directory, prior)
 
     def test_polygon_rejected_before_it_can_make_the_runtime_drop_all_candidates(self):
         ring = [[121.47 + .0001 * math.cos(i * math.tau / 65), 31.23 + .0001 * math.sin(i * math.tau / 65)] for i in range(65)]

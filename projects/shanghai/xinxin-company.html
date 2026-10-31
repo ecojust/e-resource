@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>新新公司外观模型 · 资产查看</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="新新公司南侧商店主楼临街外观"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-xinxin-company&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦 · 南京东路720号</p>
+    <h1>新新公司</h1>
+    <p>第一食品商店 · 南侧商店临街外观</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与资料">
+    <span class="badge">照片与文字参照 · 尺度含估计</span>
+    <p class="scope">表现南面与两侧前段的浅色柱带、凹窗、环廊、中央方塔和南角小亭。北侧旅馆及天井仍待核对，后切面不代表真实后立面。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">自动随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button id="front" type="button">正面</button>
+      <button id="oblique" type="button">斜侧</button>
+      <button id="rear" type="button">背面</button>
+      <button id="fit" type="button">适合窗口</button>
+      <button id="retry" type="button" hidden>重试加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <p id="metrics"></p>
+    <div id="downloads" class="downloads"></div>
+    <p class="scope">按公开照片中的现存外观制作。文献记前楼七层、高三十余米；层段、平面、退距及隐藏面含估计。现存塔楼与历史拆除记载并列保留，不宣称复原1925年原貌。</p>
+    <p class="scope">照片只供观察，不作贴图。本页提供旋转查看和四项资产下载；城市位置请使用上方主地图入口，建筑室内与登楼尚未开放。</p>
+    <a href="source/precise/huangpu-xinxin-company/README.md">来源、尺寸解释与重建说明 ↗</a>
+  </aside>
+  <footer>
+    <span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span>
+    <span>建筑外观模型 · 非测绘<br>原创几何 MIT · 无照片贴图</span>
+  </footer>
+  <script type="module" src="src/xinxin-company.js"></script>
+</body>
+</html>

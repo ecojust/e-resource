@@ -1,0 +1,215 @@
+{
+  "schema": "xinxin-baseline-north-cpu-diagnostic-v1",
+  "frozen_mapping_sha256": "9305e57f500cb12f068134d2760c80ed2c8bc6303f1943dbc59ddc1b34cdc7fa",
+  "scope": "Independent actual GLTFLoader/Meshopt CPU examination of only two existing source files. No browser, renderer/scene mutation, model edit or placement-report edit.",
+  "coordinate_method": "All scene-node matrices and GPU instance matrices expanded. Convert city authored local horizontal metres using origin121.475830078125,31.231591205062237 and EPSG3857 R6378137, exactly as prepareCityObject; then project into rebased Xinxin mean-Earth physical-metre frame. Native Up retained for source height.",
+  "records": [
+    {
+      "variant": "far",
+      "asset": {
+        "variant": "far",
+        "path": "/workspace/global-qa-cache/objects/assets/city-detail/macros/14-13720-6694/far.glb",
+        "sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+        "bytes": 1046956,
+        "decoded_sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+        "decoded_bytes": 1046956,
+        "expanded_triangles_total": 53852,
+        "preselected_triangles": 28,
+        "source_id_attribute_values": {
+          "min": 1,
+          "max": 3064,
+          "contains1453": true
+        },
+        "coordinates": "Each output vertex is [Xinxin final model local x, final local y, native baseline up-m]. World anchor and complete mesh/instance matrices applied, production EPSG3857 horizontal map scaling inverted.",
+        "repository_path": "projects/shanghai/assets/city-detail/macros/14-13720-6694/far.glb",
+        "source_record_commit": "7b85c03efc436527efeb803b0743e4b2580e78d7"
+      },
+      "owner_id": 1453,
+      "feature_id_base": 1,
+      "ownership_method": "Exact _feature_id_0 scalar1453 on all three indexed vertices",
+      "selected_owner_triangles": 28,
+      "source_bounds_in_final_model_frame": [
+        -25.857511752997716,
+        -15.622892595203197,
+        25.85281083273735,
+        62.128457170282715
+      ],
+      "up_min_max_m": [
+        0.0,
+        24.72599983215332
+      ],
+      "north_vertices_above_zero": 22,
+      "north_up_min_max_m": [
+        0.0,
+        24.72599983215332
+      ],
+      "triangles_having_north_geometry": 22,
+      "triangles_completely_north": 8,
+      "roof_triangles_above24_72m": 6,
+      "actual_roof_union_area_m2": 3965.163860911709,
+      "north_target_area_m2": 2394.5519958379173,
+      "north_actual_roof_coverage_m2": 2394.5518798069056,
+      "north_actual_roof_coverage_fraction": 0.9999999515437493,
+      "north_roof_gap_m2": 0.00011603101162549478,
+      "north_roof_boundaries_local_xy": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.857511752997716,
+              58.3196565670292
+            ],
+            [
+              -25.19887776201056,
+              59.01356571085599
+            ],
+            [
+              -22.242336394815876,
+              62.12844674594855
+            ],
+            [
+              21.916675093491573,
+              61.814019186016814
+            ],
+            [
+              25.59849076827053,
+              57.70567370504175
+            ],
+            [
+              25.756155685549928,
+              15.219429812778612
+            ],
+            [
+              -25.857510170971832,
+              15.219429812778612
+            ],
+            [
+              -25.857511752997716,
+              58.3196565670292
+            ]
+          ]
+        ]
+      },
+      "findings": "Actual baseline asset includes elevated northern roof and walls. A flat/missing north in a screenshot cannot be explained by source asset absence."
+    },
+    {
+      "variant": "near",
+      "asset": {
+        "variant": "near",
+        "path": "/workspace/global-qa-cache/objects/assets/city-detail/macros/14-13720-6694/near/-2_-3-s1-s1-s0.glb.gz",
+        "sha256": "8051485499ddc252632fdc6c61311572798cac05348339ba2f6454b6c2f457c3",
+        "bytes": 42542,
+        "decoded_sha256": "99192346ae625170118debd03ea2f01e1b5bf6fec979ddae0168e4e0a9e286c2",
+        "decoded_bytes": 267352,
+        "expanded_triangles_total": 80294,
+        "preselected_triangles": 46672,
+        "source_id_attribute_values": null,
+        "coordinates": "Each output vertex is [Xinxin final model local x, final local y, native baseline up-m]. World anchor and complete mesh/instance matrices applied, production EPSG3857 horizontal map scaling inverted.",
+        "repository_path": "projects/shanghai/assets/city-detail/macros/14-13720-6694/near/-2_-3-s1-s1-s0.glb.gz",
+        "source_record_commit": "7b85c03efc436527efeb803b0743e4b2580e78d7"
+      },
+      "owner_id": 1453,
+      "feature_id_base": 1,
+      "ownership_method": "Near tile has no _feature_id_0. Expanded mesh/instance triangles are spatially assigned to the unique source footprint +0.5m, separated by>6m from all other tile owners; READY identifies1453 among4 source owners. No scalar-ID assertion is made for near geometry.",
+      "selected_owner_triangles": 46672,
+      "source_bounds_in_final_model_frame": [
+        -25.935964816778522,
+        -15.692920443336064,
+        25.922810828649588,
+        62.198593244202684
+      ],
+      "up_min_max_m": [
+        0.0,
+        24.72599983215332
+      ],
+      "north_vertices_above_zero": 79364,
+      "north_up_min_max_m": [
+        0.0,
+        24.72599983215332
+      ],
+      "triangles_having_north_geometry": 26731,
+      "triangles_completely_north": 26339,
+      "roof_triangles_above24_72m": 22,
+      "actual_roof_union_area_m2": 3982.570874557659,
+      "north_target_area_m2": 2394.5519958379173,
+      "north_actual_roof_coverage_m2": 2394.5519958379173,
+      "north_actual_roof_coverage_fraction": 1.0,
+      "north_roof_gap_m2": 0.0,
+      "north_roof_boundaries_local_xy": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.242336394815876,
+              62.12844674594855
+            ],
+            [
+              21.916675093491573,
+              61.814019186016814
+            ],
+            [
+              25.59849076827053,
+              57.70567370504175
+            ],
+            [
+              25.756155685549928,
+              15.219429812778612
+            ],
+            [
+              -25.85751364231769,
+              15.219429812778612
+            ],
+            [
+              -25.8575136423177,
+              58.319656119275734
+            ],
+            [
+              -22.242336394815876,
+              62.12844674594855
+            ]
+          ]
+        ]
+      },
+      "findings": "Actual baseline asset includes elevated northern roof and walls. A flat/missing north in a screenshot cannot be explained by source asset absence."
+    }
+  ],
+  "conclusion": "Both current far and near assets carry the unmodeled northern source at24.726m. Far uses 1-based local scalar1453; near is tiled aggregate geometry without per-vertex IDs. Live visibility, feature-mask state and asynchronous suppression/scene attachment must be investigated separately.",
+  "owner_consistency": {
+    "source_feature_key": "building:7e69180c-6b22-4417-a40b-f5dcd2235bb9",
+    "macro_id": "14-13720-6694",
+    "source_table_local_id": 1453,
+    "feature_id_base": 1,
+    "placement_contract_owner": {
+      "macro_id": "14-13720-6694",
+      "feature_local_id": 1453,
+      "key": "building:7e69180c-6b22-4417-a40b-f5dcd2235bb9"
+    },
+    "installed_candidate_owner": {
+      "macro_id": "14-13720-6694",
+      "feature_local_id": 1453,
+      "key": "building:7e69180c-6b22-4417-a40b-f5dcd2235bb9"
+    },
+    "candidate_collision_equals_frozen_contract": true,
+    "candidate_partial_replacement_equals_frozen_contract": true,
+    "interpretation": "The candidate collision is only the modeled south portion; the baseline owner polygon spans north and south. They refer to one source ID, not a 0/1-based index mismatch."
+  },
+  "diagnostic_boundary": "This CPU report proves source geometry exists; it does not itself prove current rendering. The separate browser QA must wait for visible city scene objects, near tiles and source-suppression work to settle, then actually inspect retained northern geometry.",
+  "decoder_source_bindings": [
+    {
+      "file": "vendor/GLTFLoader.js",
+      "bytes": 114732,
+      "sha256": "adbbafe8ce40416525b6be0ee5cac0d3782482bcf0122c8ca8ec1ffa77d3440b"
+    },
+    {
+      "file": "vendor/meshopt_decoder.module.js",
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+    },
+    {
+      "file": "vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    }
+  ],
+  "mapping_binding_update": "Mapping report changed only overview camera and its occlusion explanation; source/asset/owner/clip/collision geometry remains identical. CPU geometry evidence is unchanged."
+}

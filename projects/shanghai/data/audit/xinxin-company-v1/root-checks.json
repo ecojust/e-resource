@@ -1,0 +1,107 @@
+{
+  "schema": "xinxin-root-checks-v1",
+  "cwd": "projects/shanghai",
+  "passed": true,
+  "commands": [
+    {
+      "command": "python tools/build_candidate_city_integrations.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/update_global_model_metadata.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_model_todo.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_landmark_directory.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/restoration_progress.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "node --test tests/landmark-navigation.test.mjs tests/landmark-directory.test.mjs",
+      "result": "passed; 12 actual tests"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/sync_readme_districts.py --check",
+      "result": "passed"
+    }
+  ],
+  "scope": "Generator consistency and affected directory/navigation checks after frozen 72-entry integration. After the camera-only correction, metadata/TODO/directory/restoration and README generators were checked again; restoration input bindings were regenerated for the new catalog. Documentation commit timestamps will be checked separately after publication.",
+  "bindings": [
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "tools/update_global_model_metadata.py",
+      "bytes": 2051,
+      "sha256": "75426d1971833b3a3c2f06dde037de701292727e542e3d76910c5629c0a0a190"
+    },
+    {
+      "path": "tools/build_model_todo.py",
+      "bytes": 26325,
+      "sha256": "ead722ccfc992f1190043deafae3ef457db36a123569ac40cb066691d5913ffb"
+    },
+    {
+      "path": "tools/build_landmark_directory.py",
+      "bytes": 8852,
+      "sha256": "304d6581c2a92a596e9da078b66e9d3b7af577c9bc4e2dfc4238f34769cd64fe"
+    },
+    {
+      "path": "tools/restoration_progress.py",
+      "bytes": 12465,
+      "sha256": "1e787dc59a412b0840624574887458f560a9a1a1db40719157f0b0e7dc7098ca"
+    },
+    {
+      "path": "tools/sync_readme_districts.py",
+      "bytes": 15721,
+      "sha256": "6d902c2eaad5c49fdc2dadcaf045d640e4594df6e5b61fc8dab08f46ea6533b6"
+    },
+    {
+      "path": "tests/landmark-navigation.test.mjs",
+      "bytes": 6357,
+      "sha256": "52eb937d3ca7d23fe682ae9058d178e5fccc5b4084073a3ce3a8e0488737f126"
+    },
+    {
+      "path": "tests/landmark-directory.test.mjs",
+      "bytes": 10997,
+      "sha256": "796c3d1406eae39b45b5e1f2f92e8ed33d78dc38ca85a5bff4578d3f3923453c"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 221075,
+      "sha256": "e489e2bbee471eb58061818a0d186eb3a2925f260780b522b539f921a5b48c3a"
+    },
+    {
+      "path": "data/model-viewers.json",
+      "bytes": 7529,
+      "sha256": "2398cfbe87340ef87332a354fcee3ce2fdd7abe427d937359da42db80e88a792"
+    },
+    {
+      "path": "data/model-todo/README.md",
+      "bytes": 12731,
+      "sha256": "66fe8330a01f0025f2ee34fca6b4157d7d905298335423606dfb62d581eaeda8"
+    },
+    {
+      "path": "src/xinxin-company.js",
+      "bytes": 7562,
+      "sha256": "b8b5f6a46867a3784ca18b1282fc950123787c3783425e9be9e02ff0f44bd347"
+    },
+    {
+      "path": "xinxin-company.html",
+      "bytes": 2647,
+      "sha256": "0408e406850327d693461c2e3f76a48eb432225cf5ba1ca4a667e05d3ee8c1b5"
+    }
+  ]
+}

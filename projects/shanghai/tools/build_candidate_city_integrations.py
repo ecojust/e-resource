@@ -198,7 +198,46 @@ def normalized_manifest_path(value):
     return path
 
 
-def build_incremental_inventory(manifests, revision, audit_directory):
+def incremental_delivery_context(previous, manifests, requested_directory):
+    """Freeze the preceding delivery before appending to the current inventory."""
+    old_paths = set((previous or {}).get("incremental_manifests", []))
+    appended = set(manifests) - old_paths
+    directory = requested_directory or (previous or {}).get("incremental_audit_directory")
+    assert directory, "An incremental delivery needs --audit-directory for its separate evidence"
+    audit = (PROJECT / directory).resolve()
+    directory = audit.relative_to(PROJECT).as_posix()
+    assert audit != AUDIT and AUDIT not in audit.parents, "Do not rewrite the original integration audit"
+    prior = (previous or {}).get("prior_incremental_inventory")
+    if previous and appended:
+        assert requested_directory, "A new delivery requires an explicit fresh --audit-directory"
+        old_audit = (PROJECT / previous["incremental_audit_directory"]).resolve()
+        assert audit != old_audit and old_audit not in audit.parents, "Do not rewrite the preceding delivery's audit"
+        history, seen = prior, set()
+        while history:
+            history_path = (PROJECT / history["file"]).resolve()
+            assert history_path not in seen, "Cyclic incremental audit history"
+            seen.add(history_path)
+            assert audit != history_path.parent and history_path.parent not in audit.parents, "Do not rewrite an earlier delivery's audit"
+            history_blob = read_file(history_path.relative_to(ROOT), "HEAD")
+            assert len(history_blob) == history["bytes"] and hashlib.sha256(history_blob).hexdigest() == history["sha256"], "Frozen previous inventory audit changed"
+            history = json.loads(history_blob).get("prior_incremental_inventory")
+        assert not (audit / "inventory-increment.json").exists(), "A new delivery must not reuse an earlier inventory audit"
+        path = old_audit / "inventory-increment.json"
+        blob = read_file(path.relative_to(ROOT), "HEAD")
+        frozen = json.loads(blob)
+        baseline_ids = set(previous["existing_city_ids"])
+        baseline_ids.update(row["id"] for row in json.loads(INVENTORY.read_text())["records"])
+        assert frozen["incremental_manifests"] == previous["incremental_manifests"], "Previous manifest history differs from its frozen audit"
+        assert frozen["records"] == [row for row in previous["records"] if row["id"] not in baseline_ids], "Previous records differ from their frozen audit"
+        assert frozen["verification"] == previous["verification"], "Previous verification differs from its frozen audit"
+        prior = {"file": path.relative_to(PROJECT).as_posix(), "bytes": len(blob),
+                 "sha256": hashlib.sha256(blob).hexdigest()}
+    elif previous and requested_directory:
+        assert directory == previous["incremental_audit_directory"], "An existing delivery must retain its audit directory"
+    return directory, prior
+
+
+def build_incremental_inventory(manifests, revision, audit_directory, prior_increment=None):
     """Retain the original 32-record evidence and verify only explicit additions.
 
     The current inventory records its baseline digest and the complete appended
@@ -209,6 +248,24 @@ def build_incremental_inventory(manifests, revision, audit_directory):
     baseline = json.loads(baseline_blob)
     records = list(baseline["records"])
     baseline_ids = {row["id"] for row in records}
+    baseline_binding = {"file": INVENTORY.relative_to(PROJECT).as_posix(), "bytes": len(baseline_blob), "sha256": hashlib.sha256(baseline_blob).hexdigest()}
+    frozen_paths = set()
+    frozen_files, frozen_bytes = 0, 0
+    if prior_increment:
+        path = Path(prior_increment["file"])
+        assert not path.is_absolute() and ".." not in path.parts and path.name == "inventory-increment.json"
+        blob = read_file(Path("projects/shanghai") / path, revision)
+        assert len(blob) == prior_increment["bytes"] and hashlib.sha256(blob).hexdigest() == prior_increment["sha256"], "Frozen previous inventory audit changed"
+        frozen = json.loads(blob)
+        assert frozen["schema"] == "candidate-city-inventory-increment-v1" and frozen["baseline_inventory"] == baseline_binding
+        frozen_paths = set(frozen["incremental_manifests"])
+        assert len(frozen_paths) == len(frozen["records"])
+        assert {"projects/shanghai/" + row["manifest"] for row in frozen["records"]} == frozen_paths
+        assert frozen_paths.issubset(normalized_manifest_path(value).as_posix() for value in manifests), "Cannot remove a previously delivered manifest"
+        assert not baseline_ids.intersection(row["id"] for row in frozen["records"])
+        records.extend(frozen["records"])
+        frozen_files = sum(len(row["assets"]) for row in frozen["records"])
+        frozen_bytes = sum(asset["bytes"] for row in frozen["records"] for asset in row["assets"].values())
     existing_ids = set(baseline["existing_city_ids"])
     viewers = {row["id"]: row for row in json.loads((PROJECT / "data/model-viewers.json").read_text())}
     queue = json.loads((PROJECT / "data/model-todo/queue.json").read_text())
@@ -220,7 +277,7 @@ def build_incremental_inventory(manifests, revision, audit_directory):
         paths.append(path.as_posix())
     assert len(paths) == len(set(paths)), "Duplicate incremental manifest"
     added_files, added_bytes = 0, 0
-    for path in sorted(paths):
+    for path in sorted(set(paths) - frozen_paths):
         record, files, size = verify_manifest(path, revision, existing_ids, viewers, jobs)
         records.append(record)
         added_files += files
@@ -229,18 +286,25 @@ def build_incremental_inventory(manifests, revision, audit_directory):
     assert len({row["id"] for row in records}) == len(records)
     new = [row for row in records if not row["already_in_city"]]
     result = {**baseline,
-              "baseline_inventory": {"file": INVENTORY.relative_to(PROJECT).as_posix(), "bytes": len(baseline_blob), "sha256": hashlib.sha256(baseline_blob).hexdigest()},
+              "baseline_inventory": baseline_binding,
               "incremental_manifests": sorted(paths), "incremental_asset_revision": revision,
               "incremental_audit_directory": audit_directory,
               "candidate_manifest_count": len(records), "new_city_model_count": len(new),
               "resulting_city_count": len(existing_ids) + len(new),
               "new_models_by_district": dict(sorted(Counter(row["district"] for row in new).items())),
               "verification": {**baseline["verification"],
-                               "files": baseline["verification"]["files"] + added_files,
-                               "bytes": baseline["verification"]["bytes"] + added_bytes,
+                               "files": baseline["verification"]["files"] + frozen_files + added_files,
+                               "bytes": baseline["verification"]["bytes"] + frozen_bytes + added_bytes,
                                "current_run_added_files": added_files, "current_run_added_bytes": added_bytes,
                                "scope": "Original records retain their immutable baseline verification; only the explicitly listed incremental manifests/assets are read in this run."},
               "records": records}
+    if prior_increment:
+        result["prior_incremental_inventory"] = prior_increment
+        result["current_delivery_manifests"] = sorted(set(paths) - frozen_paths)
+        result["verification"].update(
+            all_manifest_assets_read=False, all_current_delivery_assets_read=True,
+            inherited_incremental_files=frozen_files,
+            scope="Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.")
     return result
 
 
@@ -407,13 +471,11 @@ def main():
     inventory_path, audit = INVENTORY, AUDIT
     if manifests:
         inventory_path = CURRENT_INVENTORY
-        revision = args.asset_revision or (previous or {}).get("incremental_asset_revision") or git("rev-parse", "HEAD").decode().strip()
-        directory = args.audit_directory or (previous or {}).get("incremental_audit_directory")
-        assert directory, "An incremental delivery needs --audit-directory for its separate evidence"
-        audit = (PROJECT / directory).resolve()
-        directory = audit.relative_to(PROJECT).as_posix()
-        assert audit != AUDIT and AUDIT not in audit.parents, "Do not rewrite the original integration audit"
-        inventory = previous if args.catalog_only else build_incremental_inventory(manifests, revision, directory)
+        appended = set(manifests) - set((previous or {}).get("incremental_manifests", []))
+        revision = args.asset_revision or (None if appended else (previous or {}).get("incremental_asset_revision")) or git("rev-parse", "HEAD").decode().strip()
+        directory, prior = incremental_delivery_context(previous, manifests, args.audit_directory)
+        audit = PROJECT / directory
+        inventory = previous if args.catalog_only else build_incremental_inventory(manifests, revision, directory, prior)
         assert inventory is not None
     else:
         revision = args.asset_revision or (json.loads(INVENTORY.read_text())["asset_baseline_commit"] if INVENTORY.exists() else git("rev-parse", "HEAD").decode().strip())
@@ -427,6 +489,9 @@ def main():
                      "current_inventory": inventory_path.relative_to(PROJECT).as_posix(),
                      "verification": inventory["verification"],
                      "records": [row for row in inventory["records"] if row["id"] not in baseline_ids]}
+            for key in ("prior_incremental_inventory", "current_delivery_manifests"):
+                if key in inventory:
+                    delta[key] = inventory[key]
             write_json(audit / "inventory-increment.json", delta, args.check)
     if not args.inventory_only:
         catalog, checks = build_catalog(inventory, inventory_path)

@@ -1,0 +1,117 @@
+{
+  "schema": "xinxin-browser-visual-review-v1",
+  "accepted": true,
+  "reviewer": "root agent; actual view_image inspection of all seven final PNG files",
+  "captures": [
+    {
+      "file": "browser-auxiliary-desktop-full-b8b5f6a4-93a2383d.png",
+      "sha256": "b19737c8f47b0a874027a9f637b1ba2e7131ed676ceeced5899ef9e9cc07f582",
+      "viewport": [
+        1200,
+        900
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/qa-browser.cjs",
+        "sha256": "addc1fef7d8d392aaee0c0132e1feac3f3131c6d004a027e5be91ee9127f8f4a"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Complete southern exterior fits above the stage: recessed upper windows, railing/gallery, both corner pavilions and the hollow central tower are visible; auxiliary page links back to the shared main map."
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-b8b5f6a4-93a2383d.png",
+      "sha256": "351d369a115ba4006ad36faf63ffa1fc8bd07ed04320526ff1afc795733794a3",
+      "viewport": [
+        1200,
+        900
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/qa-browser.cjs",
+        "sha256": "addc1fef7d8d392aaee0c0132e1feac3f3131c6d004a027e5be91ee9127f8f4a"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Reduced-detail asset preserves the southern mass, recessed gallery, central open tower and both corner pavilions; no clipping at the viewer edges."
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-b8b5f6a4-93a2383d.png",
+      "sha256": "bfdc92509591732ae39991eb4b3c045a1607572f511da73c3fd8b9c817659067",
+      "viewport": [
+        390,
+        844
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/qa-browser.cjs",
+        "sha256": "addc1fef7d8d392aaee0c0132e1feac3f3131c6d004a027e5be91ee9127f8f4a"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "390px page displays the entire southern model above the scrollable control panel; download controls and main-map return remain available."
+    },
+    {
+      "file": "browser-global-default-desktop-29494443-93a2383d.png",
+      "sha256": "44c23df14760cfb40c1fc3c91045f0378aca315d83ea2e17734d0982e81210c9",
+      "viewport": [
+        960,
+        720
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/qa-browser.cjs",
+        "sha256": "addc1fef7d8d392aaee0c0132e1feac3f3131c6d004a027e5be91ee9127f8f4a"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Final SE35 default shared map shows the southern modeled block, roof pavilions and the large retained gray northern source body with the surrounding city loaded. The neighboring tall wall no longer blocks the model; the Xinxin and Sincere name lamps and 72-entry count are visible."
+    },
+    {
+      "file": "browser-global-retained-north-29494443-93a2383d.png",
+      "sha256": "e62b69131ff04d866856ff9d5aae9caeed9c824cb4d80824f6ab5f892b1aee8d",
+      "viewport": [
+        960,
+        720
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/qa-browser.cjs",
+        "sha256": "addc1fef7d8d392aaee0c0132e1feac3f3131c6d004a027e5be91ee9127f8f4a"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Dedicated north-facing capture visibly retains the broad gray northern roof and its windowed north wall. Behind it, the authored southern roof and neutral rear cutoff are visible. This image verifies retained northern pixels; the default and auxiliary views show the southern facade and rooftop detail."
+    },
+    {
+      "file": "browser-global-default-mobile-29494443-resume-6e75ffb1.png",
+      "sha256": "7d115190e93337dffa21dc829a3faf51a759fae208c839bc93caa2c1c2ada233",
+      "viewport": [
+        390,
+        844
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/resume-browser.cjs",
+        "sha256": "abe88d189c8f2832b625d451994f5dedbe510c25a13dcc4b62cf06e6b657ac5c"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "At 390×844 the default SE35 camera shows the full modeled southern block above the location card and below the top controls. The Xinxin lamp, roof pavilions, northern source body and surrounding buildings are visible, with no tall-building obstruction."
+    },
+    {
+      "file": "browser-beacons-320-city-72-29494443-resume-6e75ffb1.png",
+      "sha256": "37361cc4462906181422ca03770169375cb8148d5ec14d68919fbde8ff97f84c",
+      "viewport": [
+        320,
+        568
+      ],
+      "captureScript": {
+        "file": "data/audit/xinxin-company-v1/resume-browser.cjs",
+        "sha256": "abe88d189c8f2832b625d451994f5dedbe510c25a13dcc4b62cf06e6b657ac5c"
+      },
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "At 320×568, all numbered lamp cards form separate visible cells above the location card, with the 72-entry/16-district legend visible. Number 72 is identifiable in the grid and map controls do not cover the cells."
+    }
+  ],
+  "scope": "Actual screenshot pixels reviewed independently of loaded/visible flags. The northern screenshot verifies retained source geometry; southern details are visible in the default and auxiliary views. Pixel acceptance does not establish surveyed dimensions.",
+  "execution_note": "The initial run produced five accepted captures, then rejected a mobile camera fitted before canvas resize completed. The same Chrome page continued after canvas, transform and UI dimensions stabilized, producing the remaining two captures and touch evidence. Original failure and both exact scripts are retained in browser.json and browser-initial-run.json.",
+  "touch_evidence": "browser.json: native touchStart/touchEnd at [111.5,261] changed destination from New Wing On to Xinxin, including hash/title/center and target asset visibility.",
+  "binding_browser_sha256": "3fe6af5792d9309fb4024f1d35dd3c1ab2c17057fb897e4d2d96dd9d29b24e8b",
+  "documentation_binding_note": "Browser run uses pre-publication README timestamps. Subsequent timestamp-only README changes are checked by the TODO/directory script without rerunning the renderer."
+}
