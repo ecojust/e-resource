@@ -82,7 +82,7 @@
 | 大新公司历史主楼外观 | 2026-10-31 13:55:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
 | 华懋公寓历史主楼（锦江饭店锦北楼） | 2026-10-31 15:03:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview) |
 | 峻岭公寓高层主体（锦江饭店中楼） | 2026-10-31 15:27:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grosvenor-house&mode=overview) |
-| 上海公共租界工部局历史主楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview) |
+| 上海公共租界工部局历史主楼 | 2026-11-01 00:59:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview) |
 
 ### 徐汇区（7处）
 
