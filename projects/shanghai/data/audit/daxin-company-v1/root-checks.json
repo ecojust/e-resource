@@ -1,0 +1,108 @@
+{
+  "schema": "daxin-root-checks-v1",
+  "cwd": "projects/shanghai",
+  "passed": true,
+  "commands": [
+    {
+      "command": "python tools/build_candidate_city_integrations.py --catalog-only --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/update_global_model_metadata.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_model_todo.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_landmark_directory.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/restoration_progress.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/sync_readme_districts.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "node --test tests/landmark-navigation.test.mjs tests/landmark-directory.test.mjs",
+      "result": "passed; 12 actual tests"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "scope": "Generator consistency and affected directory/navigation metadata after the frozen 73-entry integration. Current delivery assets were checked by the dedicated asset/runtime audits; historical assets were not replayed. Publication date updates will be checked separately.",
+  "resolved_initial_failure": "The first directory run found a missing manifest path in the new model-viewers row. The path was added and all 12 tests passed; production catalog, HTML, model assets and rendered viewer code were unchanged.",
+  "bindings": [
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "tools/update_global_model_metadata.py",
+      "bytes": 2051,
+      "sha256": "75426d1971833b3a3c2f06dde037de701292727e542e3d76910c5629c0a0a190"
+    },
+    {
+      "path": "tools/build_model_todo.py",
+      "bytes": 26325,
+      "sha256": "ead722ccfc992f1190043deafae3ef457db36a123569ac40cb066691d5913ffb"
+    },
+    {
+      "path": "tools/build_landmark_directory.py",
+      "bytes": 8852,
+      "sha256": "304d6581c2a92a596e9da078b66e9d3b7af577c9bc4e2dfc4238f34769cd64fe"
+    },
+    {
+      "path": "tools/restoration_progress.py",
+      "bytes": 12465,
+      "sha256": "1e787dc59a412b0840624574887458f560a9a1a1db40719157f0b0e7dc7098ca"
+    },
+    {
+      "path": "tools/sync_readme_districts.py",
+      "bytes": 15721,
+      "sha256": "6d902c2eaad5c49fdc2dadcaf045d640e4594df6e5b61fc8dab08f46ea6533b6"
+    },
+    {
+      "path": "tests/landmark-navigation.test.mjs",
+      "bytes": 6357,
+      "sha256": "52eb937d3ca7d23fe682ae9058d178e5fccc5b4084073a3ce3a8e0488737f126"
+    },
+    {
+      "path": "tests/landmark-directory.test.mjs",
+      "bytes": 10997,
+      "sha256": "796c3d1406eae39b45b5e1f2f92e8ed33d78dc38ca85a5bff4578d3f3923453c"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 229205,
+      "sha256": "e8c4a592b498541d850ac2987d4fbbaeff6a86a12681a5846f8822dfea0f08b4"
+    },
+    {
+      "path": "data/model-viewers.json",
+      "bytes": 8026,
+      "sha256": "d7395d5186708faffc5157b849456078a9c177298418fc28ac09f73006f5035b"
+    },
+    {
+      "path": "data/model-todo/README.md",
+      "bytes": 12721,
+      "sha256": "7ebfb7d245b3fa840e140f160dfe92fd78e6c2acc5f5a8e9d6174a2233b51162"
+    },
+    {
+      "path": "src/daxin-company.js",
+      "bytes": 7563,
+      "sha256": "59457ce2c5cb40926e082605c7a041418c3c5e8f923e8142484f8733ab01a645"
+    },
+    {
+      "path": "daxin-company.html",
+      "bytes": 2568,
+      "sha256": "26f3f5bb9788a155f421d0d9e85a246ebe4ad0faf17fb6279cc4d0cc6ce44cb7"
+    }
+  ]
+}

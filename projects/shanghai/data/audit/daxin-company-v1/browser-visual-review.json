@@ -1,0 +1,82 @@
+{
+  "schema": "daxin-browser-visual-review-v1",
+  "accepted": true,
+  "reviewer": "root agent; actual view_image inspection of all six final PNG files",
+  "captures": [
+    {
+      "file": "browser-auxiliary-desktop-full-59457ce2-8e3f8c1c.png",
+      "sha256": "e48818cacced5b8ce2d1a0447997010f23823b61de189873969c077f7c5f004e",
+      "viewport": [
+        1200,
+        900
+      ],
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Complete historic main-block model fits the viewer. The high rounded southwest corner, broad pale bands, upper open galleries, street canopy and crown are visible; the auxiliary page links back to the main city map."
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-59457ce2-8e3f8c1c.png",
+      "sha256": "1cacfec7b9be4b4cd6cd17150e650f18c3a64a86a5f3e57a34c514265b1fb56f",
+      "viewport": [
+        1200,
+        900
+      ],
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Reduced-detail asset retains the same main silhouette, stepped bands, high corner, upper galleries and canopy while simplifying the small window subdivisions."
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-59457ce2-8e3f8c1c.png",
+      "sha256": "825ac91ed1109dbddf622432246fb7d41e67d983cf5e1b6292ed6737c94b96af",
+      "viewport": [
+        390,
+        844
+      ],
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "At 390×844 the whole model remains above the scrollable controls; asset download links, main-map return and scope explanation are available without horizontal overflow."
+    },
+    {
+      "file": "browser-global-default-desktop-29494443-8e3f8c1c.png",
+      "sha256": "664b091859c3ab99445ef5f96de7a0ca909da23c22e365e33b7e1dc98f008712",
+      "viewport": [
+        960,
+        720
+      ],
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "Stable shared city map shows the whole Daxin historic block at its street corner, with the rounded facade, canopy and pale detail model visible. Its lamp and 73-entry count are readable. The separate north B and east C source blocks remain visible behind it; no neighboring tower blocks the target."
+    },
+    {
+      "file": "browser-global-default-mobile-29494443-8e3f8c1c.png",
+      "sha256": "c176c4c46c8f2955dee334a25a26c63454132c6c06210fb2478318573f5d8246",
+      "viewport": [
+        390,
+        844
+      ],
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "390×844 main-map view contains the entire Daxin model above the location card. The target lamp and 73-entry legend are readable; the adjoining source buildings remain rendered without obscuring the historic block."
+    },
+    {
+      "file": "browser-beacons-320-city-73-29494443-8e3f8c1c.png",
+      "sha256": "f112d3b88026ede269cbb824c23420271bf014fbad072002144a085ced6d5ea7",
+      "viewport": [
+        320,
+        568
+      ],
+      "root_actually_viewed": true,
+      "accepted": true,
+      "observations": "At 320×568 the 73 numbered lamp cards occupy separate visible cells above the location card. Number 73 is identifiable in the bottom row; map controls and the card do not cover the cells."
+    }
+  ],
+  "scope": "Actual screenshot pixels reviewed independently of loaded/visible flags. Default map views retain the separate B/C buildings. Pixel acceptance does not establish surveyed dimensions or fill the missing photographic coverage of hidden real-building elevations.",
+  "touch_evidence": "browser.json: native touchStart/touchEnd at [133.5,321] changed destination from Xinxin to Daxin, including hash/title/center and visible target asset.",
+  "execution_note": "Single browser/page run completed all six captures and assertions without a failed stage or continuation. Responsive dimensions and city streaming state stabilized before screenshots.",
+  "qaScript": {
+    "file": "data/audit/daxin-company-v1/qa-browser.cjs",
+    "sha256": "4d49023e4d0e42eda820e07967d8aee00487843cbb77326c3e44aba741d7be8b"
+  },
+  "binding_browser_sha256": "bd46fbda57ca07460df03368e85242acf5fa4206a843a73747e14885085b9e6b",
+  "documentation_binding_note": "Browser run uses pre-publication README timestamps. Subsequent timestamp-only README changes are checked by the TODO/directory script without rerunning the renderer."
+}

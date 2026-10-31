@@ -1,0 +1,328 @@
+{
+  "schema": "daxin-independent-model-review-v1",
+  "reviewed_utc": "2026-10-31T05:47:16.313946+00:00",
+  "reviewer": "daxin_review",
+  "building_id": "huangpu-daxin-company",
+  "geometry_revision": "v2",
+  "result": "pass_with_documented_exterior_estimates",
+  "verdict": "独立实际解码最终三档GLB，核验四资产、15项表面射线及五高度截面，实看三张参考和四张最终原生图后，未发现阻碍本件历史主楼外观候选交付的问题。南／西侧为照片引导；北／东、屋顶、层段及尺寸仍为作者估计。接入只属于旧主楼源，不包括相接B／C楼体。",
+  "manifest": {
+    "file": "assets/models/candidates/huangpu-daxin-company/manifest.json",
+    "bytes": 5745,
+    "sha256": "2d736bff933b7befd76d3785ec36771c5ab4d5be70ac83316559d332b41b398a"
+  },
+  "assets": {
+    "raw": {
+      "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company-raw.glb",
+      "bytes": 9961448,
+      "sha256": "5569c686feaa75dcef4d8b47f2c798473391ecc3b1df40d99609c4b8a1e0acac",
+      "triangles": 183288
+    },
+    "native": {
+      "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company.blend",
+      "bytes": 5324631,
+      "sha256": "55a80d9209354fe125e1074607e9d9912f7871614ec37432e3bf558277b5cb22"
+    },
+    "full": {
+      "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company-web.glb",
+      "bytes": 3158656,
+      "sha256": "4582fd98befb8db581e55f3c850be7aadb8ae462016550a23e652be204dda4dd",
+      "triangles": 183288
+    },
+    "lod": {
+      "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company-lod.glb",
+      "bytes": 1062040,
+      "sha256": "37edca1eafc477df28296b2c4ed1435fd7b88c5f88c039310ef03cd5abd16a0d",
+      "triangles": 53372
+    }
+  },
+  "independence": {
+    "performed_here": [
+      "四资产实际字节数和SHA与冻结manifest比对",
+      "独立GLB/生产MeshoptDecoder解码实际POSITION与index，只用引用顶点计算bounds与水平hull",
+      "raw/web按材质有向三角位置multiset核对，坐标归一到1e-6米；未声称比对全部GLTF属性",
+      "五水平面与实际三角形求交，raw/web整条截面凸包环一致，并记录LOD简化差异",
+      "三档各15项真实三角射线：普通窗、弧角深入口、南西退廊墙和后窗、四弧顶窗曲部/实体曲肩、高角窗、冠孔及旁边实体正控",
+      "独立重建MapLibre物理米坐标，检查模型/替换/碰撞与相接B/C源无面积交集",
+      "实际查看三张2016/2022/2025参考和四张v2原生图"
+    ],
+    "not_repeated": [
+      "作者构件闭合／正体积及逐面法线完整矩阵",
+      "Blender再次重开或重新拍原生图",
+      "Chrome/WebGL全局地图像素与触控"
+    ],
+    "dependency_note": "完整构件闭合及Blender重开依赖packaged.json/native.json的实测结果；此处核对它们与最终资产/代码SHA绑定，不声称重复执行。实际地图显示由另行浏览器检查负责。"
+  },
+  "geometry": {
+    "decoder": {
+      "file": "data/audit/daxin-company-v1/independent-geometry-check.mjs",
+      "bytes": 7543,
+      "sha256": "fb7bc91eeb348f6d3251d5c0c45aa4958e06faf2044fe3cfe71e5c624fd8cfda"
+    },
+    "probe_config": {
+      "file": "data/audit/daxin-company-v1/independent-probes.json",
+      "bytes": 6658,
+      "sha256": "3b92b52b4c97e1b493f263443753e312991fbfd51ed57c2b33f39cfc7b68d9bd"
+    },
+    "actual_geometry_evidence": {
+      "file": "data/audit/daxin-company-v1/independent-geometry.json",
+      "bytes": 92308,
+      "sha256": "0d3c45e72772a9a6338c4811e6e57da7e7757097afe99bc22ee420bc5e2ee42e"
+    },
+    "actual_bounds_model_enu_m": {
+      "min": [
+        -28.299720764160156,
+        -30.029329299926758,
+        0
+      ],
+      "max": [
+        27.03749656677246,
+        27.829999923706055,
+        42.29999923706055
+      ]
+    },
+    "actual_envelope_width_depth_height_m": [
+      55.33721733093262,
+      57.85932922363281,
+      42.29999923706055
+    ],
+    "raw_web_lod_bounds_equal": true,
+    "raw_web_oriented_position_material_signature": {
+      "coordinateRoundM": 1e-06,
+      "sha256": "b5b2c19a4c88bcf8c692a4d9fa1b482514c90232726ac0994897ab81dadc8a96",
+      "triangleCount": 183288
+    },
+    "ray_tests_per_glb": 15,
+    "ray_probe_location_note": "Ordinary window and entry locations independently selected from documented facade endpoints/bay counts at alternate heights. Gallery, arch and crown locations use the model design-feature reference positions but different heights, plus independent curve-shoulder and between-hole solid controls. Decoded triangle hits verify designed geometry, not surveyed depths.",
+    "sections": [
+      {
+        "height_m": 12.5,
+        "raw_web_convex_hull_area_m2": 2949.1123314317665,
+        "lod_convex_hull_area_m2": 2949.1123314317665,
+        "raw_web_complete_hull_ring_equal": true,
+        "lod_delta_m2": 0.0
+      },
+      {
+        "height_m": 30.2,
+        "raw_web_convex_hull_area_m2": 2949.112315044609,
+        "lod_convex_hull_area_m2": 2949.112315044609,
+        "raw_web_complete_hull_ring_equal": true,
+        "lod_delta_m2": 0.0
+      },
+      {
+        "height_m": 34.5,
+        "raw_web_convex_hull_area_m2": 2721.5719409432413,
+        "lod_convex_hull_area_m2": 2719.8210726683274,
+        "raw_web_complete_hull_ring_equal": true,
+        "lod_delta_m2": -1.7508682749139552
+      },
+      {
+        "height_m": 38.2,
+        "raw_web_convex_hull_area_m2": 360.3968261659843,
+        "lod_convex_hull_area_m2": 358.57611544772,
+        "raw_web_complete_hull_ring_equal": true,
+        "lod_delta_m2": -1.8207107182643085
+      },
+      {
+        "height_m": 41.2,
+        "raw_web_convex_hull_area_m2": 371.39803668187346,
+        "lod_convex_hull_area_m2": 371.39803668187346,
+        "raw_web_complete_hull_ring_equal": true,
+        "lod_delta_m2": 0.0
+      }
+    ],
+    "section_limits": "截面凸包只检验外部体量变化，不证明内部房间或天井。34.5/38.2米处LOD因减少细线脚略小，整体外包和主要退台层次相同。",
+    "all_three_glbs_without_images_textures_or_external_buffers": true
+  },
+  "map_scope": {
+    "method": "由独立GLB引用顶点凸包重新投影到固定主楼原点；坐标算法与映射源局部环的最大数值差4.75e-9米。平面交集不替代浏览器实际像素检查。",
+    "source_id": "ca6dccd6-0c72-4376-8978-e6e660629037",
+    "owner": {
+      "macro_id": "14-13720-6694",
+      "feature_local_id": 2372
+    },
+    "source_area_m2": 3068.0239746456205,
+    "model_actual_plan_convex_hull_area_m2": 3100.9638778001035,
+    "source_outside_actual_model_hull_m2": 56.20618492714009,
+    "registration_allowance_m": 0.86,
+    "replacement_symmetric_difference_from_only_own_source_m2": 0.0,
+    "model_hull_outside_collision_m2": 0.0,
+    "north_shared_boundary_local_y_m": 28.344832463643172,
+    "actual_north_local_y_m": 27.829999923706055,
+    "north_clearance_m": 0.5148325399371174,
+    "neighbor_intersections": [
+      {
+        "source_id": "def925ff-7abd-4797-a310-a37a9e11e2d0",
+        "name": "第一百货B馆",
+        "actual_model_convex_hull_intersection_m2": 0.0,
+        "replacement_intersection_m2": 0.0,
+        "collision_intersection_m2": 0.0,
+        "actual_hull_clearance_m": 0.5148325374378294
+      },
+      {
+        "source_id": "0fb32d1c-deb4-48b9-a0fe-53f5f1c0d137",
+        "name": "第一百货C馆",
+        "actual_model_convex_hull_intersection_m2": 0.0,
+        "replacement_intersection_m2": 0.0,
+        "collision_intersection_m2": 0.0,
+        "actual_hull_clearance_m": 15.250435303296094
+      }
+    ],
+    "north_B_and_east_C_construction_dates_verified": false,
+    "near_tile_policy": "同近景GLB含主楼2372及另一对象2614，不能移除整近景块；唯一源合同与浏览器需保持邻楼。"
+  },
+  "scope_review": {
+    "identity": "南京东路830号历史大新主楼；现第一百货商业中心的其他相接楼体不并入。",
+    "documented_opening_date": "1936-01-10",
+    "completion_year_1934_accepted": false,
+    "documented_height_m": 42.3,
+    "documented_height_endpoint_verified": false,
+    "documented_storeys": 10,
+    "model_height_and_floor_allocation_are_author_interpretations": true,
+    "documented_site_area_m2": 3667,
+    "source_area_is_not_rescaled_to_documented_site_area": true,
+    "photo_coverage": "实际查看三图均属西南视角族；主南、西立面不同斜角可见，不构成三面独立覆盖。",
+    "unverified": [
+      "北／东立面",
+      "内部天井、内院及隐藏屋顶布置",
+      "精确退距、层段和窗格尺度",
+      "1949年前原貌",
+      "相接B/C楼体建造年代"
+    ],
+    "interiors_and_commercial_signs_excluded": true,
+    "modern_metadata_key_note": "manifest中legacy modern_*键只用于标记排除对象，不是建筑年代证据。"
+  },
+  "visual_review": {
+    "reference_images": [
+      {
+        "source_file": "The_Sun_Co.,LTD._Shanghai.jpg",
+        "private_reference_cache": "/workspace/daxin-reference/photos/main2016.jpg",
+        "sha256": "a041f2b64b6caeebabc9d83bcef0a039c96d4485ef1cbb5a6487595eb0976a38",
+        "actually_viewed": true,
+        "observation": "西南角偏西视角：高弧角、中央叠环冠饰、下部挑檐、较低两翼与邻接楼的立面处理可辨。"
+      },
+      {
+        "source_file": "The_Sun_Co.,_Ltd.,_Shanghai_20250501.jpg",
+        "private_reference_cache": "/workspace/daxin-reference/photos/front2025.jpg",
+        "sha256": "a25167e31158189caf7c4d7e145c0818e7f542e5b0215f2501314c8e185e8165",
+        "actually_viewed": true,
+        "observation": "当前西南角偏南视角：南翼三段敞廊、白色花格、宽竖带及弧顶窗清楚，商业招牌为后期外观变量。"
+      },
+      {
+        "source_file": "No.1_Shopping_Center-20220828.jpg",
+        "private_reference_cache": "/workspace/daxin-reference/photos/front2022.jpg",
+        "sha256": "bc179339a9db7549ceea3d68c7bb9356807ff5569e5a0774f7d76bed1f75c20d",
+        "actually_viewed": true,
+        "observation": "同属西南视角族；用于复核南翼敞廊和阶梯竖带，不能算作北／东面覆盖。"
+      }
+    ],
+    "native_images": [
+      {
+        "file": "data/audit/daxin-company-v1/native-front-v2.png",
+        "bytes": 1082745,
+        "sha256": "54cb9b9be03c1c6b21896a4fcf95178c73e4dd6c0a0af3840379f8817ac100c6",
+        "actually_viewed": true,
+        "accepted": true,
+        "observations": "南翼宽竖带、弧顶窗与阶梯顶、三段深敞廊可见，整体模型在画面内。"
+      },
+      {
+        "file": "data/audit/daxin-company-v1/native-oblique-v2.png",
+        "bytes": 1107382,
+        "sha256": "349f8b2ec2fdc3465a5e7a3f41a6eadc61731b8d734413a1848e5bf8efd5b87b",
+        "actually_viewed": true,
+        "accepted": true,
+        "observations": "西南弧角高部和叠环饰件可辨，两翼廊段、雨篷与凹窗形成实际体积层次；无照片贴面。"
+      },
+      {
+        "file": "data/audit/daxin-company-v1/native-rear-v2.png",
+        "bytes": 1082597,
+        "sha256": "995834e8e7fec1da149431b4ee339ff3c00a22771538dd4b4d4a6f8825778a12",
+        "actually_viewed": true,
+        "accepted": true,
+        "observations": "北、东侧及内侧屋面为明确估计的闭合体，未把它们误称照片核准；未发现可见漏面或重叠闪线。"
+      },
+      {
+        "file": "data/audit/daxin-company-v1/native-crown-gallery-detail-v2.png",
+        "bytes": 1566404,
+        "sha256": "ecf77beceea7ff228f60f04f54c9d4e5ee6ada97e7f84368e19ebb00b3b35802",
+        "actually_viewed": true,
+        "accepted": true,
+        "observations": "冠部小孔、叠环凸饰、窗格、弧顶和廊口细部清晰；宽带保留窗洞，退廊后方玻璃没有被实墙遮盖。"
+      }
+    ],
+    "pre_freeze_corrections": "在v1预检中指出退廊后玻璃被实墙挡住，以及清楚可见的宽竖带/阶梯端部不足；v2已实做后墙开口及宽带/弧顶窗，并以实际新GLB和图像复核。v1私有试作不作为最终通过图。"
+  },
+  "native_binding": {
+    "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company.blend",
+    "sha256": "55a80d9209354fe125e1074607e9d9912f7871614ec37432e3bf558277b5cb22",
+    "source_raw_sha256": "5569c686feaa75dcef4d8b47f2c798473391ecc3b1df40d99609c4b8a1e0acac",
+    "model_meshes": 1,
+    "model_triangles": 183288,
+    "actual_reopen_evidence_passed": true,
+    "reopened_again_by_this_reviewer": false
+  },
+  "source_bindings": [
+    {
+      "file": "source/precise/huangpu-daxin-company/source-register.json",
+      "bytes": 17676,
+      "sha256": "34deafeacc52323865dd0746083eb8dc9379b8ae53b33e40352ed5e46cda3809"
+    },
+    {
+      "file": "source/precise/huangpu-daxin-company/design-input.json",
+      "bytes": 20138,
+      "sha256": "f494a42a5de43881848f9731d5e524236ac27257eb2693da6fa419fc49198deb"
+    },
+    {
+      "file": "source/precise/huangpu-daxin-company/lod-features.json",
+      "bytes": 20138,
+      "sha256": "90b2c5a9f79e07c22cfb4ec2719ec61a13a4573ac4c7a826ad3c471cf68b386c"
+    },
+    {
+      "file": "source/precise/huangpu-daxin-company/source/build_model.py",
+      "bytes": 16930,
+      "sha256": "cdfe967bdab15ae8ec73b5c61caf16288264a67845dfae312c1026a7d5156c2b"
+    }
+  ],
+  "evidence_bindings": [
+    {
+      "file": "data/audit/daxin-company-v1/documentary-review.json",
+      "bytes": 5408,
+      "sha256": "4c08f8c4add77cf86602c52d43bf8ea4b56bfbf350e5ed99089c16c169424450"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/photo-review.json",
+      "bytes": 14711,
+      "sha256": "200569d6f58c86f9bf92fc278e660e1bcd64ed69a165c9baeb705296dbc87834"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/footprint-review.json",
+      "bytes": 126062,
+      "sha256": "f4614b93d85ae82afca74ece55bfe47ff96e9ef46a9fdf889a532f33c629108b"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/geometry.json",
+      "bytes": 149330,
+      "sha256": "ed3a7be10604b6a31556deeec43245ba4b901357c2c3daebab56e642aae1e6bc"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/packaged.json",
+      "bytes": 227427,
+      "sha256": "247c853b1c08341bd9ce0b8f6f6b15560d82a42203c427de1abc6aee4e0d74e9"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/native.json",
+      "bytes": 2190,
+      "sha256": "9ae1d6a7b5cb137dc62e30b2f2ad72408d1a1d091c59268a8748ed3e4ae95539"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/native-crown-gallery-detail-v2.json",
+      "bytes": 813,
+      "sha256": "1095df21ea2c952fa5c2c341a84c3e336a8de472e3840237fc34a84a320293d9"
+    }
+  ],
+  "acceptance_boundary": "通过的是明确范围与估计条件下的历史主楼外观资产和其唯一源放置合同核对。不是测绘验收、逐照片精确复原、整商业中心完成、室内开放或浏览器通过证明。",
+  "no_photo_payload": {
+    "glb_check": "Actual decoded documents have zero images/textures and no external buffers.",
+    "source_asset_tree_image_files": []
+  }
+}

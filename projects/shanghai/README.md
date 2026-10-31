@@ -1,5 +1,7 @@
 # 上海全景建模
 
+[大新公司历史主楼外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview)：南京东路830号独立旧主楼，圆弧高转角、竖向窗带、顶层敞廊与雨篷；北东隐面、屋顶和尺寸含估计，相接独立B/C馆保留。[范围、估计与来源](source/precise/huangpu-daxin-company/README.md)。
+
 [新新公司南侧商店主楼临街外观](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview)：南京东路720号南面与两侧前段，近景79,884面、远景37,960面；中央两级方塔通透，北旅馆约六成源足迹继续保留。[范围、估计与来源](source/precise/huangpu-xinxin-company/README.md)。
 
 [新永安大楼／七重天大厦](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview)：南京东路627号主楼与后部外观，近景137,148面、远景38,500面；已接入全局主图与精灵灯牌。平面、层段及隐蔽面仍为估计。[来源与范围](source/precise/huangpu-new-wing-on-company/README.md)。
@@ -38,10 +40,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，72处建筑与构件模型入口（40处既有＋32处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增32处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
+**汇总：16区，73处建筑与构件模型入口（40处既有＋33处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增33处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（24处）
+### 黄浦区（25处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -71,6 +73,7 @@
 | 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) |
 | 新永安大楼主楼与后部外观 | 2026-10-31 11:14:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) |
 | 新新公司南侧商店主楼临街外观 | 2026-10-31 11:59:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) |
+| 大新公司历史主楼外观 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
 
 ### 徐汇区（7处）
 

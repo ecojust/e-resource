@@ -1,0 +1,95 @@
+{
+  "schema": "daxin-documentary-review-v1",
+  "building_id": "huangpu-daxin-company",
+  "reviewed_utc": "2026-10-31T05:37:28.021919Z",
+  "reviewer": "daxin_reference",
+  "result": "documentary-facts-reviewed-with-height-endpoint-and-construction-date-limits",
+  "source_register": {
+    "file": "source/precise/huangpu-daxin-company/source-register.json",
+    "bytes": 17676,
+    "sha256": "34deafeacc52323865dd0746083eb8dc9379b8ae53b33e40352ed5e46cda3809"
+  },
+  "actual_reads": [
+    {
+      "id": "official-gazetteer",
+      "title": "《上海名建筑志》繁荣的大新公司大楼（“中百一店”大楼）",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284503",
+      "authority": "上海市地方志办公室公开地方志章节",
+      "actually_read": true,
+      "private_cache": "/workspace/daxin-reference/official-chapter284503.json",
+      "bytes": 50078,
+      "sha256": "8590f6e2e3fb8596c8f129d55951c936f5a7e2a745d21029d9bd467447e5b453",
+      "request": {
+        "method": "POST",
+        "url": "https://www.shtong.gov.cn/api/shizhi-public/read/wordPreview",
+        "json": {
+          "objectId": 5401,
+          "catalogueId": 284503
+        },
+        "fresh_request_this_delivery": true
+      },
+      "claims": [
+        "南京东路830号，南京东路步行街西入口路北，上海市第一百货商店前身大新公司，上海市文物保护单位。",
+        "1932年前来筹建，1936年1月10日开业；本章没有给出独立的竣工年份。",
+        "国人基泰建筑事务所设计，关颂声、朱彬、杨廷宝、杨宽麟参加设计，馥记营造厂承建。",
+        "10层钢筋混凝土建筑，坐北朝南，占地3667平方米，建筑面积28000平方米，高42.3米。",
+        "外墙奶油色釉磁面砖，门面青岛黑色花岗石，大遮篷下方为橱窗，钢窗由大东钢窗公司承制。",
+        "文字记四层以上有公众娱乐用途、六至十层为游乐场，并分别描述地下商场、电梯和扶梯；这些是历史用途描述，不等同于当前立面可逐层精确定位。"
+      ],
+      "not_provided": [
+        "42.3米的测量端点，是否包含女儿墙或最高装饰件。",
+        "各层标高、转角半径、面宽进深、窗柱间距、退台深度及完整测绘图。",
+        "旧主楼北/东隐藏面、天井、现代改造部分与屋顶设备的精确位置。",
+        "现有独立B/C馆的源对象边界、建造年代与逐面关联。",
+        "竣工年或1934的具体含义。"
+      ],
+      "cautions": [
+        "正文先称南京东路西藏路转角，后叙选址时写今南京路六合路口；方位文字不代替实际地图源边界核验。",
+        "正文每层面积文字不用于按比例推算本模型平面；占地面积、建筑面积和实际地图足迹是不同口径。"
+      ],
+      "rights": "仅事实摘要与链接随原创模型说明发布；全文与完整JSON响应保留私人研究缓存。"
+    },
+    {
+      "id": "wikipedia-context",
+      "title": "上海大新公司",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%A4%A7%E6%96%B0%E5%85%AC%E5%8F%B8&oldid=83713957",
+      "retrieved_url": "https://zh.wikipedia.org/wiki/上海大新公司",
+      "revision_from_retrieved_page": 83713957,
+      "actually_read": true,
+      "private_cache": "/workspace/daxin-reference/wiki.html",
+      "bytes": 217423,
+      "sha256": "22f2942895fc258598907fbe66a6c618fd3456f0b883d21d522926b2e5d44a1e",
+      "claims": [
+        "1936年1月10日开办上海大新、十层；地下室至三楼为商场，采用自动扶梯。",
+        "1989年所在建筑入选上海市文物保护单位。"
+      ],
+      "rights": "Wikipedia text CC BY-SA 4.0; only attributed factual summaries and response hashes published.",
+      "scope": "Secondary context, not measured architecture or proof of hidden faces."
+    }
+  ],
+  "accepted_constraints": {
+    "identity": "旧大新主楼，南京东路830号；现代百货商业中心并非一个全部可并入的旧楼。",
+    "opening_date": "1936-01-10",
+    "construction_year": "unresolved; 1934 is a caption/map datum, not established as completion here",
+    "storeys": 10,
+    "documented_height_m": 42.3,
+    "height_endpoint": "unspecified",
+    "historic_materials": [
+      "奶油色釉磁面砖",
+      "青岛黑色花岗石门面",
+      "钢窗",
+      "大遮篷与橱窗"
+    ]
+  },
+  "unresolved": [
+    "42.3米的测量端点，是否包含女儿墙或最高装饰件。",
+    "各层标高、转角半径、面宽进深、窗柱间距、退台深度及完整测绘图。",
+    "旧主楼北/东隐藏面、天井、现代改造部分与屋顶设备的精确位置。",
+    "现有独立B/C馆的源对象边界、建造年代与逐面关联。",
+    "竣工年或1934的具体含义。",
+    "隐面和屋顶的作者闭合面不能表述为已经逐面照片核准。",
+    "现代街面与历史叙述有改造时差，本模型应说明采用现代可见外观，而非1934/1936原貌复原。",
+    "现有独立B/C馆建造年代未核；楼体外观差异及OSM名称不能证明年代。"
+  ],
+  "decision": "足以支持旧主楼身份、文字高度及南西可见外观制作。其余平面、分层、退距和隐面需在模型说明中显式保持估计。"
+}

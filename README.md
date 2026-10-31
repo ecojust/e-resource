@@ -15,9 +15,9 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的26项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的27项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
-另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除7条已完成主楼的重复新建任务，当前按区列出 **1,051 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
+另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除8条已完成主楼的重复新建任务，当前按区列出 **1,050 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
@@ -25,13 +25,13 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 27 | 大新公司历史主楼（第一百货商店） | 黄浦区／南京东路830号 | 待查资料 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [建筑资料线索（待核）](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%A4%A7%E6%96%B0%E5%85%AC%E5%8F%B8>) · [照片线索（待核）](<https://zh.wikipedia.org/wiki/File:The_Sun_Co.,LTD._Shanghai.jpg>)；按名录顺序核对实际照片、主楼和附楼范围及高度文字，再制作模型并接入index主地图。 |
+| 28 | 华懋公寓历史主楼（锦江饭店锦北楼） | 黄浦区／长乐路109号 | 待查资料 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [建筑资料线索（待核）](<https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%87%8B%E5%85%AC%E5%AF%93>) · [照片线索（待核）](<https://zh.wikipedia.org/wiki/File:Shanghai0612_Jinjiang2.JPG>)；按名录顺序核对华懋公寓／锦北楼身份、照片与范围；与峻岭公寓及锦江饭店其他楼栋区分后制作并接入主地图。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
 当前范围复核确认已完成的主楼不再重复安排制作；有遗漏构件的条目沿用源ID，只列剩余任务。其余成组地址仍须拆分到具体楼栋，名录年代、地址或照片链接本身不足以完成外观建模，已有模型的可能关联仅作查重提示。
 
-<details><summary>黄浦区：284条未完成范围／调查线索</summary>
+<details><summary>黄浦区：283条未完成范围／调查线索</summary>
 
 | ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
@@ -42,7 +42,6 @@
 | sh-historic-b1-012 | 金门饭店北楼 | 南京西路104号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核酒店北楼的身份、边界和资料口径后制作；不按历史主楼别名重复建楼，也不直接套用未绑定的招标尺寸。 |
 | sh-historic-b1-014 | 新老永安之间的跨街桥 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核两座封闭跨街桥的范围与外观后制作；跨街桥不并入两栋主楼，新楼交付后仅保留此项。 |
 | sh-historic-b1-015 | 新新公司北侧旅馆、天井与南北连接 | 南京东路720号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对延至天津路、从贵州路进入的北部旅馆层数与外观，取得天井和真实南北分界依据后制作；现模型北切面不是实际后立面，不重复已建南侧临街外观。 |
-| sh-historic-b1-016 | 大新公司 | 南京东路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先锁定1934年历史大楼，再决定是否单列相接新体。 |
 | sh-historic-b1-017 | 华懋公寓 | 长乐路109号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；只制作锦北楼历史单体；不能代表整个锦江饭店，也不能与018合并为一栋。 |
 | sh-historic-b1-018 | 峻林公寓、茂名公寓 | 茂名南路65－125号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；至少把每个独立建筑实体及门牌拆清；不要预先断言两种旧名必然等于两栋，也不能凭一张峻岭图覆盖全部。 |
 | sh-historic-b1-019 | 公共租界工部局 | 汉口路153号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定街区围合、历史分期、内部/后建体，再拆单栋或明确连体范围。 |
@@ -2657,9 +2656,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余1019条／已关联17条）
+### 既有地图中的具名建筑待查线索（剩余1018条／已关联18条）
 
-原始1,036条具名地图要素中，17条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1019条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，18条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1018条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2981,7 +2980,6 @@
 | c9f24d9b-21de-478c-b245-6e08548ffcfd | 申达大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | ca2aea97-ceb5-470b-bec7-8719e95226ed | 永新广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | ca39d11e-7ac8-4f82-90f8-173bc2ffe967 | 共舞台 | 黄浦区 | 核身份／去重／查建筑参考 |
-| ca6dccd6-0c72-4376-8978-e6e660629037 | 上海市第一百货商店 | 黄浦区 | 核身份／去重／查建筑参考 |
 | cad0fd83-346c-4a85-a178-529a0098f815 | 中国民生银行大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | cd607dfe-a5ba-4dc7-86b2-3cfb98f65786 | 上海广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | cdc48e9e-46fe-4381-a865-6ea823832aec | 上海铁道宾馆 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3732,10 +3730,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，72处建筑与构件模型入口（40处既有＋32处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增32处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，73处建筑与构件模型入口（40处既有＋33处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增33处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（24处）
+### 黄浦区（25处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3765,6 +3763,7 @@
 | 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) |
 | 新永安大楼主楼与后部外观 | 2026-10-31 11:14:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) |
 | 新新公司南侧商店主楼临街外观 | 2026-10-31 11:59:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) |
+| 大新公司历史主楼外观 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
 
 ### 徐汇区（7处）
 
