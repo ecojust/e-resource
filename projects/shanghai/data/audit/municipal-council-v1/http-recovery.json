@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-31T16:34:30.636183+00:00",
+  "cause": "The existing audit HTTP service on 127.0.0.1:8782 had exited before the first auxiliary navigation. page.goto returned net::ERR_CONNECTION_REFUSED.",
+  "failure": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8782/municipal-council.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8782/municipal-council.html\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at run (/workspace/e-resource/projects/shanghai/data/audit/municipal-council-v1/qa-browser.cjs:131:14)",
+  "failedScript": {
+    "file": "data/audit/municipal-council-v1/qa-browser-before-http-recovery.cjs",
+    "sha256": "25bc8d57810995b8be1fa51787eb11f9683fc467d391c1f39511a3104a9efbcc"
+  },
+  "failedReport": {
+    "file": "data/audit/municipal-council-v1/browser-before-http-recovery.json",
+    "sha256": "5d8e6d697831de9304d58cd4bc2879a165487832950c69eb8a6088f9e366a2eb"
+  },
+  "priorAcceptedCaptures": 0,
+  "priorModelLoads": 0,
+  "priorWebGLProductDocuments": 0,
+  "blankBrowserClosure": {
+    "method": "Issued raw CDP Browser.close to the sole blank Chrome; its transport closed during shutdown. Then confirmed debugger 9223 refused connections and both the Chrome PID and original QA host PID were absent. Original exec session completed.",
+    "confirmedClosed": true,
+    "parallelBrowsers": false,
+    "secondPlaywrightController": false
+  },
+  "serverRestoration": "Root restarted the original read-only audit server on 8782 and verified auxiliary HTML, catalog and manifest response hashes.",
+  "correction": "Added mandatory actual HTTP body/status/hash health checks for auxiliary HTML, catalog and manifest before creating Chrome. The full formal run starts with one fresh browser because the failed attempt produced no loaded model, successful WebGL document or screenshot.",
+  "productionInputsChanged": false,
+  "formalScript": {
+    "file": "data/audit/municipal-council-v1/qa-browser.cjs",
+    "sha256": "7c246f1438357f337f8bfd5e39624e871f509ac819b3fd0963591050f35963b5"
+  },
+  "status": "Recovery prepared; service restored. Formal run records its own HTTP health results and completion separately."
+}

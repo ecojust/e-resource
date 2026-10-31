@@ -2,7 +2,7 @@
  * are never clipped. Source geometry is retained unchanged in its GLB assets.
  */
 // Keep the all-city correction within a bounded shader loop.
-const MAX_TRIANGLES=128;
+const MAX_TRIANGLES=192;
 const materialUniforms=new WeakMap();
 const hash=value=>{let n=2166136261;for(const c of value||''){n^=c.charCodeAt(0);n=Math.imul(n,16777619);}return (n>>>0)%16777215;};
 const polygons=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g.coordinates:[];
@@ -89,7 +89,7 @@ bool candidateInside(){
   return false;
 }`).replace(/void\s+main\s*\(\s*\)\s*\{/,'void main(){\nif(candidateInside())discard;');
     };
-    material.onBeforeCompile=hook;material.customProgramCacheKey=()=>`${previousKey}|candidate-city-clip-v2|${featureIds?1:0}|${scope?1:0}`;
+    material.onBeforeCompile=hook;material.customProgramCacheKey=()=>`${previousKey}|candidate-city-clip-v2|${MAX_TRIANGLES}|${featureIds?1:0}|${scope?1:0}`;
     material.needsUpdate=true;this.bindings.set(material,{previous,cacheKey,hook,uniforms,scope});
   }
   bindObject(group,record){
@@ -129,7 +129,10 @@ bool candidateInside(){
     for(const {mesh,property,material} of binding.created){if(mesh[property]===material)mesh[property]=undefined;material.dispose();}
     binding.scope?.texture.dispose();this.objects.delete(group);
   }
-  getState(){return {triangles:this.triangleCount,sourceObjects:this.objects.size,boundMaterials:this.bindings.size,revision:this.revision,
+  getState(){return {triangles:this.triangleCount,triangleLimit:MAX_TRIANGLES,clippingTexture:{width:this.texture.image.width,height:this.texture.image.height,bytes:this.data.byteLength,
+    type:this.texture.type===this.THREE.FloatType?'FloatType':this.texture.type,format:this.texture.format===this.THREE.RGBAFormat?'RGBAFormat':this.texture.format,
+    minFilter:this.texture.minFilter===this.THREE.NearestFilter?'NearestFilter':this.texture.minFilter,
+    magFilter:this.texture.magFilter===this.THREE.NearestFilter?'NearestFilter':this.texture.magFilter,generateMipmaps:this.texture.generateMipmaps},sourceObjects:this.objects.size,boundMaterials:this.bindings.size,revision:this.revision,
     ownerScopedSources:[...this.objects.values()].filter(({scope})=>scope).map(({scope})=>({id:scope.id,macro_id:scope.macroId,
       feature_local_ids:[...scope.ids],triangles:scope.triangles,clip_feature_local_ids:[...scope.clipIds]}))};}
   dispose(){for(const object of [...this.objects.keys()])this.releaseObject(object);this.texture.dispose();}

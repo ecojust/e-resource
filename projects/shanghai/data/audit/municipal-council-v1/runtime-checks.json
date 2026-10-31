@@ -1,0 +1,268 @@
+{
+  "schema": "municipal-runtime-checks-v1",
+  "passed": true,
+  "candidate_count": 36,
+  "global_destination_count": 76,
+  "huangpu_count": 28,
+  "baseline_commit": "1a0185ec31a9cf665f80fc6bc2c530d3e273c5b8",
+  "tests": [
+    {
+      "command": "node --test --test-reporter=tap tests/candidate-city-clipping.test.mjs tests/city-detail-candidate-failure.test.mjs tests/city-detail-map-integration.test.mjs tests/ordinary-runtime.test.mjs",
+      "passed": 40,
+      "failed": 0,
+      "scope": "Ten scope/clipping checks and thirty existing failure-recovery, map integration and ordinary-runtime checks. New cases verify geometrically distinct rows129/192, scoped rows beyond the old128 limit, macro/owner values, nearest/clamped non-mipmapped texture settings, and193-row rejection preserving live texture objects, payloads, counts and revision. These Node tests do not compile GPU programs."
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs",
+      "passed": 34,
+      "failed": 0,
+      "scope": "The real76-entry catalogue remains separately clickable at320×568 with long-title card.top328,22×18 signs and12px text. Cathay, Grosvenor and Municipal selections are exercised at zoom8/12/18/24; returning card.top348 restores22×20. All36 candidate bounds fit desktop/390px/320px cameras. DOM rectangles are fixtures; actual rendered pixels are checked by browser QA."
+    },
+    {
+      "command": "node data/audit/municipal-council-v1/global-integration-checks.mjs",
+      "passed": 8,
+      "failed": 0,
+      "scope": "Prior35 catalogue/inventory records and historical audits remain immutable; exact new source-contract binding; old113 packed triangle rows equal byte for byte under the shipped MapLibre Mercator projection; new24 triangles bring the catalogue to137/192; reviewed own and six foreign near-group arrays on fixtures; source-specific vector clipping preserves the modern western remainder and all66 independent context sources."
+    },
+    {
+      "command": "python tools/build_candidate_city_integrations.py --check",
+      "result": "passed",
+      "inventory_asset_files_read": 4,
+      "note": "Only this delivery four inventory asset files are read. Previous records inherit the SHA-bound Grosvenor inventory increment. The catalogue additionally retains existing checks of two derived corridor assets."
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "inventory": {
+    "candidate_manifests": 38,
+    "city_candidates": 36,
+    "cumulative_frozen_files": 152,
+    "cumulative_frozen_bytes": 592653011,
+    "current_delivery_files_read": 4,
+    "current_delivery_bytes": 37328295,
+    "prior_incremental_audit": "data/audit/grosvenor-house-v1/inventory-increment.json"
+  },
+  "clipping_capacity": {
+    "file": "src/candidate-city-clipping.js",
+    "previous_limit": 128,
+    "limit": 192,
+    "catalogue_triangles": {
+      "before": 113,
+      "addition": 24,
+      "after": 137,
+      "limit": 192
+    },
+    "previous_texture_payload_bytes": 8192,
+    "texture_payload_bytes": 12288,
+    "texture_dimensions": [
+      4,
+      192
+    ],
+    "format": "RGBA Float32",
+    "filter": "nearest",
+    "mipmaps": false,
+    "texture_payload_growth_bytes_per_copy": 4096,
+    "samplers_per_material_unchanged": 1,
+    "scalar_uniforms_per_material_unchanged": 3,
+    "shader_loop_control": "A fixed192-iteration upper bound retains its count comparison and break before the first texture read. Scoped near textures continue to contain only matching source-group rows.",
+    "historical_rows_verified": 113,
+    "historical_payload_bytes_verified": 7232,
+    "historical_payload_equal": true,
+    "change_scope": "Only capacity, the capacity-specific program cache key and runtime texture introspection changed. No historical footprint or source-owner rule was reduced to fit the old budget.",
+    "gpu_limits_and_compilation": "Actual WebGL limits, float-nearest support, compilation and rendered output belong to the separate browser.json evidence. This report records CPU-side payload size, not measured VRAM allocation or a GPU performance benchmark."
+  },
+  "partial_source_replacement": {
+    "partial_model": true,
+    "reviewed_retained_source_area_runtime_m2": 2158.60709866522,
+    "production_vector_retained_area_runtime_m2": 2158.60756085946,
+    "reviewed_retained_native_projection_area_m2": 2174.1351644799115,
+    "retained_regions": 1,
+    "symmetric_difference_area_runtime_m2": 0.0009067698614622672,
+    "symmetric_difference_tolerance_m2": 0.002,
+    "scope": "Historical north/east and part of the south C-shaped wings only; the modern western L and uncertain joins remain. The retained native source height is an inferred baseline. Overview only; C-shaped collision and an authored passage do not certify indoor walking."
+  },
+  "coordinate_area_check": {
+    "method": "Actual shipped MapLibre MercatorCoordinate at the model anchor; rotation preserves area. Production vector Boolean geometry is computed in WGS84 before physical-area measurement.",
+    "source_area_runtime_m2": 7214.689295257643,
+    "reviewed_source_area_runtime_m2": 7214.689295401211,
+    "reviewed_retained_area_runtime_m2": 2158.60709866522,
+    "rejected_degree_plane_ratio": 0.29919705522704126,
+    "reviewed_metric_ratio": 0.29919612755065694,
+    "degree_plane_ratio_error": 9.276763843213409e-07,
+    "unchanged_metric_ratio_tolerance": 1e-07,
+    "retained_area_tolerance_m2": 0.001,
+    "symmetric_difference_tolerance_basis": "The independent review intersects in physical Mercator coordinates while production vector Boolean operations intersect WGS84 straight segments. The resulting conversion difference is bounded explicitly in square metres:0.002m² is less than2.8e-7 of this source. The metric ratio and retained-area checks retain their existing tolerances; the previous degree-plane ratio check remains recorded as rejected. This numeric tolerance is separate from authored placement uncertainty.",
+    "production_metric_ratio": 0.2991961916195553,
+    "production_retained_area_runtime_m2": 2158.60756085946,
+    "symmetric_difference_area_runtime_m2": 0.0009067698614622672,
+    "correction": "The earlier degree-plane ratio check failed. It was replaced with physical areas from the actual vendored MapLibre MercatorCoordinate conversion, not accepted by widening that ratio threshold. Physical source area, retained area, retained component count and shape difference are checked independently."
+  },
+  "near_owner_filter": {
+    "unchanged_from_baseline": true,
+    "own_group_ids": [
+      1898,
+      1086,
+      2652,
+      211,
+      1554
+    ],
+    "foreign_groups": [
+      {
+        "representative_owner": 1754,
+        "group_owner_ids": [
+          2884,
+          2747,
+          2383,
+          1555,
+          1754
+        ]
+      },
+      {
+        "representative_owner": 2551,
+        "group_owner_ids": [
+          2551,
+          1908,
+          2642,
+          1415,
+          1844
+        ]
+      },
+      {
+        "representative_owner": 358,
+        "group_owner_ids": [
+          1120,
+          1708,
+          2311,
+          358,
+          724
+        ]
+      },
+      {
+        "representative_owner": 1477,
+        "group_owner_ids": [
+          847,
+          2598,
+          1477,
+          2145,
+          2077
+        ]
+      },
+      {
+        "representative_owner": 2805,
+        "group_owner_ids": [
+          1281,
+          1877,
+          2805,
+          1488,
+          303,
+          2622,
+          1124,
+          2167,
+          68,
+          2647
+        ]
+      },
+      {
+        "representative_owner": 587,
+        "group_owner_ids": [
+          251,
+          2366,
+          1251,
+          2617,
+          409,
+          616,
+          1810,
+          587,
+          692
+        ]
+      }
+    ],
+    "fixture_result": "Own group receives24 Municipal triangles; all six separate foreign groups receive zero. Inside the own group, spatial clipping retains the modern western part of1554 and the four independent neighbors. No whole-owner or whole-tile hiding is used.",
+    "limits": "Fixtures verify actual reviewed owner arrays; actual native geometry preservation and rendered pixels require the bound mapping review and separate browser evidence."
+  },
+  "bindings": [
+    {
+      "path": "index.html",
+      "bytes": 9032,
+      "sha256": "62909cbe1df8754ca62b40c375ee199e8d24db291fcaed3de56b27fc29092849"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 261295,
+      "sha256": "233993a85483df4c80cf3952cfcc037c091eb7ff1e4432ca437289621288824d"
+    },
+    {
+      "path": "data/global-models/additional-placement.json",
+      "bytes": 135865,
+      "sha256": "810f790f70468a7fa76a67619671faabd5fc497194e1198840467bddcf39b14a"
+    },
+    {
+      "path": "data/global-models/candidate-inventory.json",
+      "bytes": 102007,
+      "sha256": "dff8559acd6e6f488bd720fe31e282e65e0d000c2b7020aea227bd39842f273b"
+    },
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "57556ec096ae74523b906e3a9699351391192d2e75c677288e69d4e48fbbb6bd"
+    },
+    {
+      "path": "src/building-beacons.js",
+      "bytes": 17791,
+      "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+    },
+    {
+      "path": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "path": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9705,
+      "sha256": "4d93465685dddb747a983e1e3ce99e613e8f0effda5f8ce412e85a2897a30de4"
+    },
+    {
+      "path": "tests/building-beacons.test.mjs",
+      "bytes": 47912,
+      "sha256": "21ff046e437cbfd3b3d06fe7b4157049c8fde9bb6fef9d25b74b0879cb724a03"
+    },
+    {
+      "path": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "path": "vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "path": "data/audit/municipal-council-v1/global-integration-checks.mjs",
+      "bytes": 18493,
+      "sha256": "aca2a4dc3e7d0efd14fc366569c1c7b51bcd6c59bd0cab9a1a69bb0f23aa4a8a"
+    },
+    {
+      "path": "data/audit/municipal-council-v1/global-integration-checks.json",
+      "bytes": 8107,
+      "sha256": "31803af47f572d12aac320b632e71bf5413b724a6fb9902131e49d392b56233d"
+    },
+    {
+      "path": "data/audit/municipal-council-v1/footprint-review.json",
+      "bytes": 922314,
+      "sha256": "6e0ba9d46da1236022063fcef3d622f50af0e6687b16c13f86bc7a9d398d3ed5"
+    },
+    {
+      "path": "assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
+      "bytes": 7023,
+      "sha256": "982784cb5053f8672747a9d71af79b4d3cc6b24a18317b9bbc92352e4f3b13d8"
+    }
+  ],
+  "limits": "This report accepts the listed metadata and production-function checks only. Prior35 records and all historical audits are unchanged. The only production code change is the bounded clipping-capacity update. No historical model asset matrix was replayed; actual GPU and browser acceptance is separate."
+}

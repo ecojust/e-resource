@@ -1,0 +1,248 @@
+{
+  "schema": "municipal-council-prepublication-review-v1",
+  "reviewed_utc": "2026-10-31T16:58:59.514797+00:00",
+  "baseline_commit": "1a0185ec31a9cf665f80fc6bc2c530d3e273c5b8",
+  "passed": true,
+  "blocking_findings": [],
+  "scope": "Read-only prepublication metadata/diff/documentation review. No browser connection, asset rebuild, historical binary matrix replay or QA-input mutation.",
+  "historical_preservation": {
+    "earlier_catalog_rows_exactly_equal": 35,
+    "earlier_inventory_records_exactly_equal": 37,
+    "earlier_placement_records_and_source_contracts_equal": true,
+    "tracked_historical_audit_changes": [],
+    "old_model_asset_changes": [],
+    "existing_base_entries_unchanged": 40
+  },
+  "directory": [
+    {
+      "file": "README.md",
+      "bytes": 446550,
+      "sha256": "8e5867295c77eef5fad9109e3cdc99dd32e5418a854c6acd4b54e52a65c57494",
+      "entries": 76,
+      "districts": 16,
+      "huangpu": 28,
+      "walk": 40,
+      "overview": 36,
+      "all_primary_model_links_to_index": true
+    },
+    {
+      "file": "projects/shanghai/README.md",
+      "bytes": 40699,
+      "sha256": "201ece61b4046eadfe9592cdbc9e5b6b6293afb240a42b6a91e8441a78a2acae",
+      "entries": 76,
+      "districts": 16,
+      "huangpu": 28,
+      "walk": 40,
+      "overview": 36,
+      "all_primary_model_links_to_index": true
+    }
+  ],
+  "counts": {
+    "building_destinations": 76,
+    "base_walk": 40,
+    "city_candidate_overview": 36,
+    "huangpu": 28,
+    "candidate_manifests": 38,
+    "cumulative_verified_assets": 152,
+    "current_delivery_asset_files": 4,
+    "current_delivery_bytes": 37328295,
+    "cumulative_inventory_bytes": 592653011,
+    "surface_card_is_additional_not_a_building": true
+  },
+  "rebuild_instructions": {
+    "source_readme": {
+      "file": "projects/shanghai/source/precise/huangpu-shanghai-municipal-council/README.md",
+      "bytes": 5269,
+      "sha256": "6dee72af05260793f589149a3088cd7e5b22dedaf232d2c7053292a44d0a4b01"
+    },
+    "commands": [
+      "python projects/shanghai/source/precise/huangpu-shanghai-municipal-council/source/build_model.py --out /tmp/municipal-build",
+      "python projects/shanghai/source/precise/huangpu-shanghai-municipal-council/source/build_model.py --out /tmp/municipal-build --lod",
+      "blender -b -t 4 --python projects/shanghai/source/precise/huangpu-shanghai-municipal-council/source/build_native.py -- --raw /tmp/municipal-build/huangpu-shanghai-municipal-council-raw.glb --out /tmp/municipal-build/huangpu-shanghai-municipal-council.blend --previews /tmp/municipal-native --samples 16 --suffix=-v2",
+      "python projects/shanghai/source/precise/huangpu-shanghai-municipal-council/source/package_assets.py --raw /tmp/municipal-build/huangpu-shanghai-municipal-council-raw.glb --lod /tmp/municipal-build/huangpu-shanghai-municipal-council-lod.glb --native /tmp/municipal-build/huangpu-shanghai-municipal-council.blend --out /tmp/municipal-assets --gltfpack /path/to/gltfpack",
+      "python projects/shanghai/source/precise/huangpu-shanghai-municipal-council/source/verify_geometry.py --assets /tmp/municipal-assets --out /tmp/municipal-packaged.json --gltfpack /path/to/gltfpack --blender /path/to/blender"
+    ],
+    "actual_parser_options": {
+      "build_model": [
+        "--out",
+        "--lod"
+      ],
+      "build_native": [
+        "--raw",
+        "--out",
+        "--previews",
+        "--samples",
+        "--suffix"
+      ],
+      "package_assets": [
+        "--raw",
+        "--lod",
+        "--native",
+        "--out",
+        "--gltfpack"
+      ],
+      "verify_geometry": [
+        "--assets",
+        "--out",
+        "--gltfpack",
+        "--blender"
+      ]
+    },
+    "output_names_and_dependency_flow_checked": true,
+    "executed_rebuild": false,
+    "notes": "Five documented commands match actual parser flags and output filenames; --suffix=-v2 is valid argparse syntax. Tool placeholders require local installed Blender/gltfpack. No model was rebuilt during this read-only review."
+  },
+  "scope_retention": {
+    "b1_019_not_closed": true,
+    "remaining_tasks": [
+      {
+        "id": "municipal-council-west-junctions",
+        "title": "工部局西端接缝与保留带",
+        "todo": "继续核实北西短回翼、南翼西端的实际年代界线与接缝坐标；保留两条3米未核带约120.34平方米，可能仍含历史墙体，不按当前作者切面宣称历史范围全部完成。"
+      },
+      {
+        "id": "municipal-council-courtyard-listed-scope",
+        "title": "工部局庭院独立楼及名录范围",
+        "todo": "核对独立红色B楼的平移后位置、源对应和名录归属，再按独栋制作；新多功能厅、现代西侧和屋顶亭台与旧主楼分开，不因项目同名自动并入历史名录完成量。"
+      }
+    ],
+    "current_production_job": "candidate_delivered",
+    "next_yangpu_identity_job_separate": true
+  },
+  "added_modified_file_review": {
+    "tracked_changes": [
+      "M\tREADME.md",
+      "M\tprojects/shanghai/CURRENT_STATE.md",
+      "M\tprojects/shanghai/README.md",
+      "A\tprojects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
+      "M\tprojects/shanghai/data/candidate-city-integrations.json",
+      "M\tprojects/shanghai/data/global-models/additional-placement.json",
+      "M\tprojects/shanghai/data/global-models/candidate-inventory.json",
+      "M\tprojects/shanghai/data/model-todo/README.md",
+      "M\tprojects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "M\tprojects/shanghai/data/model-todo/queue.json",
+      "M\tprojects/shanghai/data/model-viewers.json",
+      "M\tprojects/shanghai/data/restoration-progress/README.md",
+      "M\tprojects/shanghai/data/restoration-progress/progress.json",
+      "M\tprojects/shanghai/index.html",
+      "M\tprojects/shanghai/landmarks.html",
+      "M\tprojects/shanghai/src/candidate-city-clipping.js",
+      "M\tprojects/shanghai/tests/building-beacons.test.mjs",
+      "M\tprojects/shanghai/tests/candidate-city-clipping.test.mjs"
+    ],
+    "candidate_file_count_at_snapshot": 114,
+    "untracked_file_count_at_snapshot": 96,
+    "suspicious_reference_or_temp_files": [],
+    "files_at_or_above_100MB": [],
+    "ignored_python_cache_rule": "projects/shanghai/.gitignore:1:__pycache__/\tprojects/shanghai/source/precise/huangpu-shanghai-municipal-council/source/__pycache__/build_model.cpython-312.pyc",
+    "new_images": "Only new Municipal audit PNGs: original model renders, generated source diagram and QA captures as produced. No third-party reference photo pixels are in the new-file set.",
+    "asset_records": [
+      {
+        "role": "raw",
+        "file": "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-raw.glb",
+        "bytes": 18643808,
+        "sha256": "54f7b3ef2b98b3fadafb4ca6d3d046e344dfe8b760d6574db484efc830a851af"
+      },
+      {
+        "role": "native",
+        "file": "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council.blend",
+        "bytes": 9387163,
+        "sha256": "b18d86670d07d4557ffda58afcf71f1c401cc7157cb3000c7e2d28790648ccb4"
+      },
+      {
+        "role": "full",
+        "file": "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-web.glb",
+        "bytes": 5964180,
+        "sha256": "e8f8be45bab07dc892307d5f098c0391daf0d48be1884c6f21ecb498b9bc5591"
+      },
+      {
+        "role": "lod",
+        "file": "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-lod.glb",
+        "bytes": 3333144,
+        "sha256": "c1df275cbe0d7545ffcccc2972b06495b0e79cfb1846080b88877d4fd5f96ef3"
+      }
+    ]
+  },
+  "runtime_evidence_review": {
+    "prior113_rows_and7232bytes_equal": true,
+    "triangle_budget": "113+24=137/192",
+    "coordinate_area": "Production WGS84 Boolean residual and independent physical-Mercator residual differ by0.00090677m2; tolerance0.002m2 is explicitly separate from model placement uncertainty, with existing ratio1e-7 and retained area0.001m2 checks retained.",
+    "gpu_acceptance": "Separate pending browser QA; CPU/static evidence is not a GPU claim."
+  },
+  "nonblocking_corrections": [
+    {
+      "file": "projects/shanghai/data/audit/municipal-council-v1/README.md",
+      "change": "Clarified seven native groups are the own group plus six external groups.",
+      "authorized_by": "Root follow-up message",
+      "qa_input_changed": false,
+      "source_readme_same_issue": false
+    }
+  ],
+  "bindings": [
+    {
+      "file": "projects/shanghai/data/audit/municipal-council-v1/README.md",
+      "bytes": 9335,
+      "sha256": "59d228ded75dc1e183c8c23f830cfc7d6509d20338817aeaef999f200a977b75"
+    },
+    {
+      "file": "projects/shanghai/data/audit/municipal-council-v1/root-checks.json",
+      "bytes": 6755,
+      "sha256": "4fc61666fb6bab74214c3fccdec91e6539c072374da87d0618b5dc5a5e61a450"
+    },
+    {
+      "file": "projects/shanghai/data/audit/municipal-council-v1/runtime-checks.json",
+      "bytes": 11539,
+      "sha256": "caffa55053ac4758cdffc7e3cd93630605b305acc03072a047ebd41a92ae862f"
+    },
+    {
+      "file": "projects/shanghai/data/audit/municipal-council-v1/global-integration-checks.json",
+      "bytes": 8107,
+      "sha256": "31803af47f572d12aac320b632e71bf5413b724a6fb9902131e49d392b56233d"
+    },
+    {
+      "file": "projects/shanghai/data/audit/municipal-council-v1/independent-model-review.json",
+      "bytes": 26324,
+      "sha256": "8a82baf1834e083adc233358bcb9c363d121664193e50855c6a4e72c340ed6ae"
+    },
+    {
+      "file": "projects/shanghai/data/candidate-city-integrations.json",
+      "bytes": 261295,
+      "sha256": "233993a85483df4c80cf3952cfcc037c091eb7ff1e4432ca437289621288824d"
+    },
+    {
+      "file": "projects/shanghai/data/global-models/candidate-inventory.json",
+      "bytes": 102007,
+      "sha256": "dff8559acd6e6f488bd720fe31e282e65e0d000c2b7020aea227bd39842f273b"
+    },
+    {
+      "file": "projects/shanghai/data/global-models/additional-placement.json",
+      "bytes": 135865,
+      "sha256": "810f790f70468a7fa76a67619671faabd5fc497194e1198840467bddcf39b14a"
+    },
+    {
+      "file": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 98812,
+      "sha256": "d955efa5576d75310517363443ba11812563eb0873360ca261fc3004ffc7fcda"
+    },
+    {
+      "file": "projects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "bytes": 19975,
+      "sha256": "4e339a4cc4843aba0ab32ef695646f60729fec9d5d8257a9517fdc11bb921065"
+    },
+    {
+      "file": "projects/shanghai/landmarks.html",
+      "bytes": 57377,
+      "sha256": "33e1e9f40ab32d2035c410209d46e5d083224bd983f1217cdb223bd2c2f9aeae"
+    },
+    {
+      "file": "projects/shanghai/index.html",
+      "bytes": 9032,
+      "sha256": "62909cbe1df8754ca62b40c375ee199e8d24db291fcaed3de56b27fc29092849"
+    }
+  ],
+  "limits": [
+    "Snapshot precedes the final QA captures, final Git staging and public HTTP verification.",
+    "The new README publication time remains unrecorded until an actual asset commit exists; no fabricated publication time is asserted.",
+    "Final browser.json completion/pixel acceptance and publication.json are intentionally not required by this prepublication check."
+  ]
+}

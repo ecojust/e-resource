@@ -103,3 +103,47 @@ test('release disposes the scoped texture and rebind updates cached shader holde
   clipper.releaseObject(group);clipper.releaseObject(group);assert.equal(disposed,1);
   assert.deepEqual(clipper.getState().ownerScopedSources,[]);
 });
+
+// Municipal Council needs additional rows beyond the original128-row allocation.
+const triangleClip=(id,macro=MACRO)=>({geometry:{type:'Polygon',coordinates:[[[id*3,0],[id*3+2,0],[id*3,2],[id*3,0]]]},owner:{macro_id:macro,feature_local_id:id}});
+
+const rowContains=(texture,row,x,z)=>{const d=texture.image.data,o=row*16;return new THREE.Triangle(new THREE.Vector3(d[o],0,d[o+1]),new THREE.Vector3(d[o+2],0,d[o+3]),new THREE.Vector3(d[o+4],0,d[o+5])).containsPoint(new THREE.Vector3(x,0,z));};
+
+test('clipping rows beyond128 remain addressable in global and owner-filtered material passes',t=>{
+  const {clipper,group,mesh,record}=harness(t,{ids:[139],initial:Array.from({length:139},(_,i)=>triangleClip(i+1))});
+  assert.equal(clipper.getState().triangles,139);
+  assert.equal(clipper.texture.image.width,4);assert.equal(clipper.texture.image.height,192);
+  assert.equal(clipper.data.byteLength,12288);
+  assert.equal(clipper.texture.minFilter,THREE.NearestFilter);assert.equal(clipper.texture.magFilter,THREE.NearestFilter);
+  assert.equal(clipper.texture.generateMipmaps,false);
+  assert.equal(clipper.texture.wrapS,THREE.ClampToEdgeWrapping);assert.equal(clipper.texture.wrapT,THREE.ClampToEdgeWrapping);
+  assert.equal(clipper.data[138*16+12],139);
+  assert(rowContains(clipper.texture,128,129*3+.25,.25));assert.equal(clipper.data[128*16+12],129);
+  assert(!rowContains(clipper.texture,128,139*3+.25,.25));
+  for(const shader of shaders(mesh)){
+    assert.equal(shader.uniforms.candidateClipCount.value,1);
+    assert.deepEqual(ownerIds(shader),[139]);
+    assert.equal(shader.uniforms.candidateClipTexture.value.image.height,192);
+    assert(rowContains(shader.uniforms.candidateClipTexture.value,0,139*3+.25,.25));
+    assert.equal(shader.uniforms.candidateClipTexture.value.image.data[13],shader.uniforms.candidateMacro.value);
+    assert.match(shader.fragmentShader,/for\(int i=0;i<192;i\+\+\)/);
+    assert.match(shader.fragmentShader,/float row=\(float\(i\)\+0\.5\)\/192\.0/);
+    assert(shader.fragmentShader.indexOf('if(float(i)>=candidateClipCount)break;')<shader.fragmentShader.indexOf('vec4 box=texture2D(candidateClipTexture'));
+  }
+  clipper.releaseObject(group);clipper.bindObject(group,{...record,ids:[140]});
+  assert(shaders(mesh).every(shader=>shader.uniforms.candidateClipCount.value===0));
+});
+
+test('the192-row limit accepts its last triangle and rejects193 without corrupting live clipping state',t=>{
+  const {clipper,mesh}=harness(t,{ids:[192],initial:Array.from({length:192},(_,i)=>triangleClip(i+1))}),compiled=shaders(mesh);
+  assert.equal(clipper.getState().triangles,192);assert.equal(clipper.data[191*16+12],192);
+  assert(compiled.every(shader=>shader.uniforms.candidateClipCount.value===1));
+  assert(rowContains(clipper.texture,191,192*3+.25,.25));assert(!rowContains(clipper.texture,191,191*3+.25,.25));
+  const texture=clipper.texture,scopedTexture=compiled[0].uniforms.candidateClipTexture.value;
+  const scopedBefore=new Float32Array(scopedTexture.image.data),before=new Float32Array(clipper.data),revision=clipper.getState().revision;
+  assert.throws(()=>clipper.update(Array.from({length:193},(_,i)=>triangleClip(i+1))),/候选模型局部边界过于复杂/);
+  assert.equal(clipper.getState().triangles,192);assert.equal(clipper.getState().revision,revision);assert.deepEqual(clipper.data,before);
+  assert.equal(clipper.texture,texture);assert.equal(compiled[0].uniforms.candidateClipTexture.value,scopedTexture);assert.deepEqual(scopedTexture.image.data,scopedBefore);
+  assert(rowContains(scopedTexture,0,192*3+.25,.25));assert.equal(scopedTexture.image.data[13],compiled[0].uniforms.candidateMacro.value);
+  assert(compiled.every(shader=>ownerIds(shader).length===1&&ownerIds(shader)[0]===192));
+});

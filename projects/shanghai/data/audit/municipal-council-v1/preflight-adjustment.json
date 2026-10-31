@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-10-31T16:33:02.951840+00:00",
+  "stage": "read-only --preflight; before any browser launch",
+  "browserStarted": false,
+  "screenshotsBeforeCorrection": 0,
+  "failedAssertion": "catalog row.source_limit_geometry deepEqual contract.source_limit_geometry; actual undefined",
+  "incorrectAssumption": "The compact runtime catalog was incorrectly assumed to export source_limit_geometry and remaining_source_geometry. These are authored placement fields, intentionally omitted by the established catalog builder.",
+  "originalScript": {
+    "file": "data/audit/municipal-council-v1/qa-browser-before-placement-preflight.cjs",
+    "sha256": "ab6c9b2166f53fb5863f124d735c61a88085c7acebddb3771319f1cde16f1b28"
+  },
+  "correction": "Compare the complete additional-placement record to the independent placement contract; compare source limit/retained geometry to independently reviewed source/retained regions. Compare the actually exported catalog replacement/collision/bounds/source IDs/partial/placement fields directly. Production inputs stay unchanged.",
+  "implementationEvidence": "tools/build_candidate_city_integrations.py explicitly constructs a compact catalog; src/candidate-vector-clipping.js derives residual geometry with clipping.difference(original,...cuts).",
+  "bindings": [
+    {
+      "file": "data/candidate-city-integrations.json",
+      "sha256": "233993a85483df4c80cf3952cfcc037c091eb7ff1e4432ca437289621288824d"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "sha256": "810f790f70468a7fa76a67619671faabd5fc497194e1198840467bddcf39b14a"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    }
+  ],
+  "correctedScript": {
+    "file": "data/audit/municipal-council-v1/qa-browser-before-http-recovery.cjs",
+    "sha256": "25bc8d57810995b8be1fa51787eb11f9683fc467d391c1f39511a3104a9efbcc"
+  },
+  "status": "corrected preflight passed with final 76-entry catalog, manifest, footprint and both READMEs; no production input changed"
+}

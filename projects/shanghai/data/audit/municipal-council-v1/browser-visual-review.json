@@ -1,0 +1,105 @@
+{
+  "schema": "municipal-council-root-browser-visual-review-v1",
+  "model_id": "huangpu-shanghai-municipal-council",
+  "reviewer": "/root",
+  "passed": true,
+  "method": "All nine final PNG files actually opened with view_image, then compared with the completed browser report. Actual scene state and HTTP checks complement the pixel review.",
+  "browser_report": {
+    "file": "browser.json",
+    "sha256": "0b4e4ef4624d3a5244b0394c2bee6ac1483011a6a0b56e93b701e433e701a4d4"
+  },
+  "manifest_sha256": "982784cb5053f8672747a9d71af79b4d3cc6b24a18317b9bbc92352e4f3b13d8",
+  "catalog_sha256": "233993a85483df4c80cf3952cfcc037c091eb7ff1e4432ca437289621288824d",
+  "images": [
+    {
+      "file": "browser-auxiliary-desktop-full-d935ffde-4734151a.png",
+      "bytes": 184999,
+      "sha256": "8c397a2a28b56422e59dcfb46e0c56c5b439a0e855a6f4f3444bce083f5e55cc",
+      "actually_viewed_by_root": true,
+      "observation": "完整C形历史翼楼居中可见，东北门廊和三处凹角可辨；状态为完整近景，下载与主图入口可见。"
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-d935ffde-4734151a.png",
+      "bytes": 179517,
+      "sha256": "f2557272e683f8d0a9f1af440235c667a33061ea84a06352987d38c391dff6ec",
+      "actually_viewed_by_root": true,
+      "observation": "真实远景档已载入，翼楼/庭院空区形态与全量一致。"
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-d935ffde-4734151a.png",
+      "bytes": 76038,
+      "sha256": "7bc7e5b5fe57b0aa987c502f4cf916c7637a9ab42d8d93f25945957e1c0e8eaa",
+      "actually_viewed_by_root": true,
+      "observation": "窄屏模型完整处于上半画布，无裁边；控制、四下载和顶部主图返回入口可见，下方说明面板可滚动。"
+    },
+    {
+      "file": "browser-global-default-desktop-465028c9-4734151a.png",
+      "bytes": 371298,
+      "sha256": "de31163849df41cd5a994b726155cc3aae62483ae30a8e5cb6d96c275908dcf6",
+      "actually_viewed_by_root": true,
+      "observation": "主图中历史翼楼已落在街坊，东北凹门廊在名称卡上方可见；入口、灯牌名称及76总数正确，周边仍有既有建筑。"
+    },
+    {
+      "file": "browser-global-courtyard-retained-context-465028c9-4734151a.png",
+      "bytes": 399601,
+      "sha256": "2216f7476409a1cade12693d802f073ace9fc2d0af06c553bd15debd1c6965ef",
+      "actually_viewed_by_root": true,
+      "observation": "俯视清楚显示未填满的庭院、独立粗模楼与西侧保留体；北东南历史细模和朴素接缝区分，未整块擦除。"
+    },
+    {
+      "file": "browser-global-default-mobile-465028c9-4734151a.png",
+      "bytes": 196870,
+      "sha256": "88f207f45d9662c2d22a28d1e64260f5fe8c595142eb5349183d7475f46ec650",
+      "actually_viewed_by_root": true,
+      "observation": "手机主图显示完整历史街面，东北门廊在下方名称卡之上，保留粗模和邻楼可见；76总数、灯牌与俯瞰卡一致，无页面溢出。"
+    },
+    {
+      "file": "browser-global-near-courtyard-retained-context-465028c9-5eed9ca2.png",
+      "bytes": 527596,
+      "sha256": "190768dc5fb7a3c6e7f32a90187a3345466ec0702ed8af84b0b16515df20b2cc",
+      "actually_viewed_by_root": true,
+      "observation": "真实近景图中可辨庭院两座独立大楼和小楼、四处保留翼部屋面及西侧接缝，历史细模与院空地分开；该图另由QA绑定own1554的24片裁剪与1754零裁剪两组同时active及HTTP证据。"
+    },
+    {
+      "file": "browser-beacons-320-city-76-465028c9-5d6328f3.png",
+      "bytes": 181777,
+      "sha256": "4e4dc674c36afdd94824412518c32d2d6ccba5513f00f57b9eec624e0c381fee",
+      "actually_viewed_by_root": true,
+      "observation": "320宽全城视图可见完整编号灯牌网格，标签没有侵入顶部工具或底部峻岭名称卡；已建76与当前目录一致，数量和逐点命中另由实际DOM/地图数据检查。"
+    },
+    {
+      "file": "browser-beacons-320x548-worst-title-76-465028c9-5d6328f3.png",
+      "bytes": 177557,
+      "sha256": "3e0d240fa182fe30216a0c814b2a9f8e0b09c456515ca40e5c0c52227da1971a",
+      "actually_viewed_by_root": true,
+      "observation": "实际缩短为320×548的画布复现最坏长标题占用，76枚紧凑灯牌仍分开，底部卡和工具未遮住网格；这是最坏可用空间的实际画面证据。"
+    }
+  ],
+  "touch": {
+    "method": "native CDP touchStart/touchEnd",
+    "id": "huangpu-shanghai-municipal-council",
+    "point": [
+      221.5,
+      301
+    ],
+    "before": {
+      "hash": "#landmark=huangpu-grosvenor-house&mode=overview",
+      "title": "峻岭公寓高层主体（锦江饭店中楼）",
+      "center": {
+        "lng": 121.45,
+        "lat": 31.2
+      }
+    },
+    "after": {
+      "hash": "#landmark=huangpu-shanghai-municipal-council&mode=overview",
+      "title": "上海公共租界工部局历史主楼",
+      "center": {
+        "lng": 121.48196704936078,
+        "lat": 31.237415315120607
+      }
+    },
+    "changedDestination": true,
+    "targetAssetVisibleAfterTouch": true
+  },
+  "limits": "Default fit views below zoom17.3 establish far-layer pixels. The dedicated17.5 near view establishes actual simultaneous retained near groups. The southern narrow courtyard probe can be covered by the title beacon and is not claimed as a visible pixel proof; its negative occupancy is independently tested. Scope and dimensions remain estimated; walking and interior access are not enabled."
+}

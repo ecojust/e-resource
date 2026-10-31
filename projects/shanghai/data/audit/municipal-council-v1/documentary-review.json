@@ -1,0 +1,134 @@
+{
+  "schema": "municipal-council-documentary-review-v1",
+  "building_id": "huangpu-shanghai-municipal-council",
+  "reviewed_utc": "2026-10-31T16:13:35.801548Z",
+  "reviewer": "cathay_reference",
+  "result": "actual-documentary-review-complete; historic-street-wings-distinguished-from-modern-project",
+  "source_register": {
+    "file": "source/precise/huangpu-shanghai-municipal-council/source-register.json",
+    "bytes": 39271,
+    "sha256": "aba2c739ebcaa8ef192b3874fd590ec60f0c28383e6a2072ae71bebf394cdb79"
+  },
+  "actual_reads": [
+    {
+      "id": "official-gazetteer",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284538",
+      "actually_read": true,
+      "sha256": "c767b8dcd3570ea434c3c63fba4cb8b66e2b06ab411df2883bec6dcebb9e65d6"
+    },
+    {
+      "id": "wikipedia-context",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%85%AC%E5%85%B1%E7%A7%9F%E7%95%8C%E5%B7%A5%E9%83%A8%E5%B1%80%E5%A4%A7%E6%A5%BC&oldid=93770808",
+      "actually_read": true,
+      "sha256": "4a85add30cc56fe06b9c99e8df9f1e46a414933e1e3d5081cc0283dba42f8b77"
+    },
+    {
+      "id": "renewal-government-syndication",
+      "url": "https://sh.people.com.cn/n2/2024/0112/c176737-40712423.html",
+      "actually_read": true,
+      "sha256": "24d5d9c71a26a95742ead5555061938d587cda70b0168430f3ebfc46562ad83e"
+    },
+    {
+      "id": "renewal-news",
+      "url": "https://www.chinanews.com/sh/2024/05-17/10218828.shtml",
+      "actually_read": true,
+      "sha256": "79c6f8ddc30ebd76958850890110c28130f8a7d8aab54a9c06c8ff4ed21b66d1"
+    },
+    {
+      "id": "architect-project",
+      "url": "https://davidchipperfield.com/projects/shanghai-municipal-council-building",
+      "actually_read": true,
+      "sha256": "524243f5af42b7f13d9354f38a300ba0a46201e6c6b37e76e9b9b79cdfa4b5e3"
+    }
+  ],
+  "accepted_constraints": {
+    "identity": "上海公共租界工部局历史主楼 / 工部局大楼 / 老市府大楼; historical north and east wings plus part of the southern wing, with the preserved northwest corner and short west return.",
+    "address_policy": {
+      "inventory": "汉口路153号",
+      "gazetteer": "汉口路193–223号",
+      "secondary_article": "江西中路215号、209号及汉口路193号",
+      "resolution": "Retain the inventory field and disclose differing entrances/door-number accounts; exact historic-current correspondence not independently established."
+    },
+    "date_policy": {
+      "inventory": "1919年",
+      "gazetteer": "1913年开始；1924年（一说1922年）竣工；另一段称1915年开工。",
+      "renewal_news": "1914年动工、1922年完工。",
+      "architect_project_page": "Original completion 1922; contemporary project competition2015, project start2016, construction2019, completion2024, opening2025.",
+      "resolution": "Keep source/event distinctions; do not silently publish1919 as a proved single completion year."
+    },
+    "material_and_structure": "Gazetteer: reinforced-concrete foundation/frame and brick wall faced in granite, imported steel windows; classical/Baroque decorative treatment.",
+    "historic_designer_and_builder": "Gazetteer names 工务处建筑师特纳 and 华商裕昌泰营造厂; modern designer is David Chipperfield Architects. Initials differ across secondary/designer wording and are not normalized into a new full identity.",
+    "area_policy": "Gazetteer4832m² footprint and22705.6m² gross floor area are historical source values; renewed project67000m² or4.2万m²above/2.6万m²below are complex-wide scope, not historic-wing footprint scaling targets.",
+    "height_policy": {
+      "documented_existing_metre_height": null,
+      "documented_levels": "Official gazetteer: original three storeys, partly four; later generally raised to four.",
+      "cancelled_tower_m": 50,
+      "cancelled_tower_policy": "50 m belongs to a proposed tower explicitly cancelled after settlement, never to an existing building-height input.",
+      "drawing_scale_estimate": {
+        "image_id": "1053-dca-Shanghai-Municipal-Council-building-dca-08",
+        "original_pixels": [
+          4963,
+          3508
+        ],
+        "method": "Visual reading of the published section plus grayscale pixel checks of its graphic scale and principal horizontal lines; not a measured/surveyed elevation.",
+        "scale_line": {
+          "y_px": 2546,
+          "x_endpoints_px": [
+            3878,
+            4114
+          ],
+          "label_m": 10,
+          "approx_px_per_m": 23.6
+        },
+        "right_historic_wing_street_grade_y_px": [
+          1944,
+          1952
+        ],
+        "old_upper_wall_or_roof_edge_y_px": [
+          1496,
+          1528
+        ],
+        "old_upper_wall_or_roof_edge_estimate_m": [
+          17.6,
+          19.3
+        ],
+        "old_outer_parapet_or_guard_line_estimate_m": [
+          19,
+          21
+        ],
+        "main_projecting_cornice_below_top_storey_estimate_m": [
+          14,
+          15.5
+        ],
+        "new_setback_pavilion_roof_y_px_approx": 1390,
+        "new_setback_pavilion_roof_estimate_m": [
+          23,
+          24.5
+        ],
+        "new_pavilion_highest_end_panel_or_guard_estimate_m": [
+          24,
+          26
+        ],
+        "limits": [
+          "Parapet/guard line identity, exact grade and drawing stage have uncertainty.",
+          "A typical section does not prove every corner height, facade variation or roof detail.",
+          "The new pavilion and courtyard hall must not be reclassified as the historic principal roof."
+        ]
+      },
+      "model_policy": "Use declared author dimensions with approximate drawing-scale support; preserve the absence of a textual measured metre height. Historical upper walls are broadly around 19–20 m in the section, local corner/parapet treatments may differ; no uniform historical 23–25 m height is proved by the new roof pavilion."
+    },
+    "renewal_scope": "New west/southwest perimeter completion, set-back roof pavilion, independent red villa, new events hall and underground works are separate interventions/components. The historical-wing model does not certify the entire 外滩·老市府 project.",
+    "original_completion_fraction_conflict": "DCA says three quarters originally complete;2024Chinanews quotes two thirds. Both describe an incomplete perimeter; neither fraction determines the historic mask or seam coordinates.",
+    "seam_policy": "Design-office pre-renewal high view, published plan and current northwest seam photograph corroborate qualitative historic extent. Old OSM location/width differences are not a construction-demolition map. Final source split and conservative unresolved strips remain an explicitly estimated mapping decision.",
+    "courtyard_policy": "Keep courtyard and both detached buildings separate. A project diagram and current photos strongly support their independent identities but exact OSM-to-object assignment/post-move location is reviewed separately."
+  },
+  "unresolved": [
+    "Surveyed metre height, floor elevations, every corner height and exact original/current grade.",
+    "Georeferenced construction seam coordinates and exact wall thicknesses/inner-court boundaries.",
+    "Precise south new/old seam from a close-range current street photo; the plan and pre-renewal high view support its vicinity only.",
+    "Every current roof surface/equipment position and whether a given small rooftop element dates from a specific period.",
+    "Door-number correspondence and conflicting early construction/completion dates.",
+    "Exact source membership and post-move position of red B building; separate events hall is excluded regardless."
+  ],
+  "decision": "Historical principal street-wing identity and differentiated facades are sufficiently supported for an explicitly approximate exterior model. Use a partial source replacement contract, retain the modern remainder/independent courtyard buildings, and never use the cancelled50m tower as existing height."
+}

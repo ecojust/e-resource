@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-31T16:51:24.167809+00:00",
+  "cause": "The per-render 60 second guard in the original layout helper expired while resizing the actual near scene to320x568. This was a QA wait failure, not a reported application/WebGL/network error.",
+  "observations": "All four live samples show visible/focused document, viewport/canvas/drawingbuffer/MapLibre transform320x568, closed panel, no context loss, glError0 and all loading/queues/pendingStates0. Actual render and rAF timestamps progress; consecutive measured render intervals are about15.0005s and4.5627s. No resize or visibility correction is needed.",
+  "resourceCoordination": {
+    "privateBlenderPID": 6593,
+    "ownerPausedWith": "SIGSTOP, preserving render process and state",
+    "observedProcess": "6593 Tl   blender -b -t 4 --python-exit-code 1 --python build_native.py -- --raw formal-v3/yangpu-former-shanghai-city-hall-raw.glb --out formal-v3/yangpu-former-shanghai-city-hall.blend --previews native-v3 --samples 16 --views front,oblique,rear,roof,bridge,side,porch",
+    "reason": "Root asked the next private model renderer to yield CPU while the single SwiftShader browser finishes. Resource competition was observed; no claim that it was the sole cause of the earlier timeout.",
+    "productionInputsChanged": false
+  },
+  "correction": "Use one900s total layout budget, record actual map render events and DOM/canvas/transform/UI fingerprints, require two consecutive stable comparisons across actual frames, and print actual frame/count progress every30s. Queue-zero checks remain unchanged. Continue only the two320px captures and native touch; preserve seven accepted captures and all asset/source proofs.",
+  "inspectionScript": {
+    "file": "data/audit/municipal-council-v1/qa-layout-live-inspection.cjs",
+    "sha256": "39b399dfadc3021779fa41012f3ea3d593f888ef77e7fd3b1b1fda95b4ab7969"
+  },
+  "inspectionData": {
+    "file": "data/audit/municipal-council-v1/layout-runtime-inspection.json",
+    "sha256": "6ed0310b299fd7f0c254cf9b68b518c29549cedd09dfc97676712ba01cc5ae3e"
+  },
+  "controllerHandoff": {
+    "originalPlaywrightHost": 4947,
+    "originalHostAction": "SIGSTOP before new continuation, so old callbacks cannot overwrite browser.json",
+    "oldRawCdpHost": 6442,
+    "oldRawHostAction": "SIGTERM after preserving its script and failure report; it owns no Chrome process",
+    "chromePID": 4962,
+    "chromeRetained": true,
+    "viewportPolicy": "Closing the old metrics-owning CDP connection may restore the Playwright viewport; new continuation explicitly sets320x568 and proves actual canvas/transform/UI across real renders before action.",
+    "cleanupPolicy": "After the sole Chrome is confirmed closed, terminate the paused, fingerprint-checked old Playwright QA host before writing final completion."
+  }
+}

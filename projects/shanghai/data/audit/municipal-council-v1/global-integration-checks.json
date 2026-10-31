@@ -1,0 +1,176 @@
+{
+  "schema": "municipal-global-integration-delta-v1",
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    "Municipal Council adds one overview destination to the existing 75-entry shared map",
+    "all 35 earlier candidate rows, additional placements and historical audits remain unchanged",
+    "existing base entries, placement evidence and unaffected production integrations retain their previous bytes",
+    "new placement matches the exact reviewed source contract and unique old-building owner",
+    "raising texture capacity preserves all113 historical triangle rows byte for byte",
+    "the production shader triangulator stays within its 192-triangle budget after this one addition",
+    "the reviewed near owner groups retain the Municipal clip only for its own partial source group",
+    "the production vector correction affects only the identified old-building source and defers when its city GLB is active"
+  ],
+  "baseline_commit": "1a0185ec31a9cf665f80fc6bc2c530d3e273c5b8",
+  "entry_id": "huangpu-shanghai-municipal-council",
+  "total_destinations": 76,
+  "candidate_models": 36,
+  "huangpu_count": 28,
+  "route": "index.html#landmark=huangpu-shanghai-municipal-council&mode=overview",
+  "walking_enabled": false,
+  "clipping_triangles": {
+    "before": 113,
+    "addition": 24,
+    "after": 137,
+    "limit": 192
+  },
+  "historical_texture_rows_equal": true,
+  "historical_texture_payload_bytes_compared": 7232,
+  "source_remainder_ratio": 0.2991961916195553,
+  "source_remainder_area_runtime_m2": 2158.60756085946,
+  "source_remainder_regions": 1,
+  "source_remainder_symmetric_difference_ratio": 1.256838408908759e-7,
+  "source_remainder_symmetric_difference_area_runtime_m2": 0.0009067698614622672,
+  "source_remainder_symmetric_difference_tolerance_m2": 0.002,
+  "area_measurement": {
+    "method": "Actual shipped MapLibre MercatorCoordinate at the model anchor; rotation preserves area. Production vector Boolean geometry is computed in WGS84 before physical-area measurement.",
+    "source_area_runtime_m2": 7214.689295257643,
+    "reviewed_source_area_runtime_m2": 7214.689295401211,
+    "reviewed_retained_area_runtime_m2": 2158.60709866522,
+    "rejected_degree_plane_ratio": 0.29919705522704126,
+    "reviewed_metric_ratio": 0.29919612755065694,
+    "degree_plane_ratio_error": 9.276763843213409e-7,
+    "unchanged_metric_ratio_tolerance": 1e-7,
+    "retained_area_tolerance_m2": 0.001,
+    "symmetric_difference_tolerance_basis": "The independent review intersects in physical Mercator coordinates while production vector Boolean operations intersect WGS84 straight segments. The resulting conversion difference is bounded explicitly in square metres:0.002m² is less than2.8e-7 of this source. The metric ratio and retained-area checks retain their existing tolerances; the previous degree-plane ratio check remains recorded as rejected. This numeric tolerance is separate from authored placement uncertainty."
+  },
+  "scope": "Static production merge/navigation, exact placement evidence binding, shipped MapLibre Mercator projection and shader triangulation, reviewed near-group ownership filtering on synthetic untagged meshes, and vector ownership checks for the new old-building source only. The foreign-ID duplicate and height=1 are identity fixtures; actual neighboring source geometry is also checked without mutation. Near-group fixtures use the actual reviewed tile owner arrays but do not claim loaded native geometry or rendered pixels. Actual model visibility and the retained modern western wing and independent neighboring source preservation require the separate browser check. Existing city GLB owners defer to shader correction instead of vector duplication.",
+  "bindings": [
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "file": "data/audit/global-model-integration-v1/inventory.json",
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+      "bytes": 3754,
+      "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/inventory-increment.json",
+      "bytes": 6957,
+      "sha256": "9b63707a87b1f9a02ea11b6197a08b6ef3950c8938030d0f939671e89eeb7633"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/inventory-increment.json",
+      "bytes": 9679,
+      "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
+    },
+    {
+      "file": "data/audit/cathay-mansions-v1/inventory-increment.json",
+      "bytes": 12446,
+      "sha256": "fe68b611c941d9b744d879f3096fff233dd6be1868341d3d07935d05b2e0a036"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/inventory-increment.json",
+      "bytes": 15182,
+      "sha256": "493b90c69a22e31948630818c6209d78bcb208f4d928c31ce280f315f93bbddc"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 17791,
+      "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "62909cbe1df8754ca62b40c375ee199e8d24db291fcaed3de56b27fc29092849"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 261295,
+      "sha256": "233993a85483df4c80cf3952cfcc037c091eb7ff1e4432ca437289621288824d"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 135865,
+      "sha256": "810f790f70468a7fa76a67619671faabd5fc497194e1198840467bddcf39b14a"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 102007,
+      "sha256": "dff8559acd6e6f488bd720fe31e282e65e0d000c2b7020aea227bd39842f273b"
+    },
+    {
+      "file": "data/audit/municipal-council-v1/footprint-review.json",
+      "bytes": 922314,
+      "sha256": "6e0ba9d46da1236022063fcef3d622f50af0e6687b16c13f86bc7a9d398d3ed5"
+    },
+    {
+      "file": "data/audit/municipal-council-v1/global-integration-checks.mjs",
+      "bytes": 18493,
+      "sha256": "aca2a4dc3e7d0efd14fc366569c1c7b51bcd6c59bd0cab9a1a69bb0f23aa4a8a"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "57556ec096ae74523b906e3a9699351391192d2e75c677288e69d4e48fbbb6bd"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9705,
+      "sha256": "4d93465685dddb747a983e1e3ce99e613e8f0effda5f8ce412e85a2897a30de4"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 47912,
+      "sha256": "21ff046e437cbfd3b3d06fe7b4157049c8fde9bb6fef9d25b74b0879cb724a03"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    }
+  ]
+}

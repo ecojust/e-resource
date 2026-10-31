@@ -15,7 +15,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的29项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的30项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除9条已完成主楼的重复新建任务，当前按区列出 **1,049 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -25,7 +25,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 30 | 上海公共租界工部局历史主楼 | 黄浦区／汉口路153号（名录；文献主楼记193－223号） | 待核对身份与外观 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [已实际读取的上海名建筑志工部局章节](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284538>) · [2024外滩老市府更新范围（已实际读取）](<https://www.chinanews.com/sh/2024/05-17/10218828.shtml>) · [庭院与补建范围资料（已实际读取）](<https://sh.people.com.cn/n2/2024/0112/c176737-40712423.html>) · [历史街面照片（已实际查看，并补充现状与庭院图）](<https://zh.wikipedia.org/wiki/File:The_Building_of_Shanghai_Municipal_Council.JPG>)；已自主完成文献和五幅图像预研；继续核对地图独立源，将历史临街翼楼与2024补建段、庭院独立楼分开后制作。取消的50米塔楼不采用，现存四层米高仍待依据。 |
+| 31 | 旧上海特别市政府大楼（绿瓦大楼） | 杨浦区／清源环路650号（上海体育大学内；资料另记长海路399号） | 待核对身份与外观 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [已实际读取的旧上海特别市政府大楼条目（94194159）](<https://zh.wikipedia.org/w/index.php?title=旧上海特别市政府大楼&oldid=94194159>) · [中华遗产2010年第05期公开导读（已实际读取）](<https://www.dili360.com/ch/article/p5350c3d9b966835.htm>) · [2018修缮与四立面资料转载（已实际读取并查看图像）](<https://www.sohu.com/a/218602199_741845>) · [2019年东南俯视照片（已实际查看）](<https://commons.wikimedia.org/wiki/File:上海市政府大楼·上海体育学院·俯视（东南）.jpg>)；已自主读取三份文字资料并实际查看六张照片；继续核对大学或修缮一手资料、独立地图源、屋面与台阶范围，再制作单栋主楼。不得与黄浦老市府混同。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -43,7 +43,7 @@
 | sh-historic-b1-014 | 新老永安之间的跨街桥 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核两座封闭跨街桥的范围与外观后制作；跨街桥不并入两栋主楼，新楼交付后仅保留此项。 |
 | sh-historic-b1-015 | 新新公司北侧旅馆、天井与南北连接 | 南京东路720号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对延至天津路、从贵州路进入的北部旅馆层数与外观，取得天井和真实南北分界依据后制作；现模型北切面不是实际后立面，不重复已建南侧临街外观。 |
 | sh-historic-b1-018 | 峻岭公寓前庭两片未核源区域；峻岭公寓西侧低层住宅与名录范围 | 茂名南路65－125号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查明入口雨棚左右两片原地图源的实际构造、年代和高度；当前保留约35.04平方米原源范围，24.7米粗略屋顶不等于实测高度。不得为清空源范围扩大雨棚或重复已建高层；逐栋核对文献所提西侧六幢三层公寓的现存实体及与茂名南路65－125号名录范围的关系，再按独栋制作；茂名公寓别称不另当第二座高层。 |
-| sh-historic-b1-019 | 公共租界工部局 | 汉口路153号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定街区围合、历史分期、内部/后建体，再拆单栋或明确连体范围。 |
+| sh-historic-b1-019 | 工部局西端接缝与保留带；工部局庭院独立楼及名录范围 | 汉口路153号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核实北西短回翼、南翼西端的实际年代界线与接缝坐标；保留两条3米未核带约120.34平方米，可能仍含历史墙体，不按当前作者切面宣称历史范围全部完成；核对独立红色B楼的平移后位置、源对应和名录归属，再按独栋制作；新多功能厅、现代西侧和屋顶亭台与旧主楼分开，不因项目同名自动并入历史名录完成量。 |
 | sh-historic-b1-022 | 大世界游乐场 | 西藏南路1号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；先确认历史主楼、塔部及附属体边界；大世界名称不足以确认全部保护范围是一个楼体。 |
 | sh-historic-b1-037 | 步高里 | 陕西南路387号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；里弄整体名称，先按入口、里弄房屋及具体门牌拆分；不能以一栋完成整处，原索引未给可用逐栋数。 |
 | sh-historic-b1-040 | 南京大戏院 | 延安东路523号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；南京大戏院／上海音乐厅，名录地址延安东路523号；先核照片时期和新旧位置关系，索引未给迁建年份，不填未经核查的年代。 |
@@ -1001,7 +1001,7 @@
 
 | ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
+| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
 | sh-historic-b1-021 | 上海市体育场 | 国和路346号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。 |
 | sh-historic-b1-025 | 杨树浦水厂 | 杨树浦路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。 |
 | sh-historic-b2-012 | 旧市博物馆 | 长海路174号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2655,9 +2655,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余1018条／已关联18条）
+### 既有地图中的具名建筑待查线索（剩余1017条／已关联19条）
 
-原始1,036条具名地图要素中，18条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1018条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，19条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1017条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2914,7 +2914,6 @@
 | 847e3b66-ed6f-4cef-a0e1-672cdfd96f66 | 中悦大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 84cb5149-611f-4985-b284-d4579d593c69 | 外滩中心 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 86977d6f-bfcf-4472-8b61-2c42c887159d | 小桃园清真寺 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 86e8b002-5e0e-4912-9807-086c2afeb27c | 原上海市政府大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 87013949-0d13-40b8-b37d-7feba3ab4bc1 | 外滩花园酒店 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 873da1cc-7533-4722-8395-50f90ceaa88c | 世纪出版大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 87849220-596a-4114-b1a3-2ae475afb594 | 美伦大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3691,7 +3690,6 @@
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
-[MTD-fc8ac09b]: <projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
 
@@ -3699,7 +3697,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；75处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中35件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；76处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中36件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3707,7 +3705,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增35处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增36处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3729,10 +3727,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，75处建筑与构件模型入口（40处既有＋35处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增35处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，76处建筑与构件模型入口（40处既有＋36处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增36处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（27处）
+### 黄浦区（28处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3765,6 +3763,7 @@
 | 大新公司历史主楼外观 | 2026-10-31 13:55:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
 | 华懋公寓历史主楼（锦江饭店锦北楼） | 2026-10-31 15:03:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview) |
 | 峻岭公寓高层主体（锦江饭店中楼） | 2026-10-31 15:27:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grosvenor-house&mode=overview) |
+| 上海公共租界工部局历史主楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview) |
 
 ### 徐汇区（7处）
 

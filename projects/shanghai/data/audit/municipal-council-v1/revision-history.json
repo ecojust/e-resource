@@ -1,0 +1,117 @@
+{
+  "id": "huangpu-shanghai-municipal-council",
+  "v1": {
+    "raw_sha256": "77db413713f57a492ed6c331f6238758c1b0dff5f094d7c426fce0699aabab50",
+    "source_snapshot": "build_model-v1.py",
+    "source_sha256": "ab1434f7d8f9f21332913e7043c00f5a55092b57f3404faa7193c960d5471b70",
+    "technical_geometry_passed": true,
+    "historical_feature_review_accepted": false,
+    "previews_preserved": true
+  },
+  "v2_bounded_corrections": [
+    {
+      "feature": "SE ground arch",
+      "reason": "Source photo and architect ground plan show an actual street-to-court passage. V1 glass and unperforated court exit misrepresented it.",
+      "change": "Remove arch glazing/frame, cut corresponding inner court wall, plain estimated passage side/ceiling closures, two-way22mclear rays."
+    },
+    {
+      "feature": "Street ground openings",
+      "reason": "Actual street photographs show arched ground windows/doors.",
+      "change": "True arched holes in ground-level street walls, retaining recessed ordinary glazing."
+    },
+    {
+      "feature": "Middle-level Ionic order",
+      "reason": "Long-wing two-level Ionic columns are a recognizable photographed/documented feature.",
+      "change": "Increase author shaft radius.23 to.36m, outward center.30m, simple solid Ionic caps; carving remains approximate."
+    },
+    {
+      "feature": "Material names",
+      "reason": "Limestone was an unsupported inherited material label; sources describe stone/granite facing.",
+      "change": "Use neutral warm stone/cut stone without changing observed color assumptions."
+    }
+  ],
+  "geographic_scope_changed": false,
+  "modern_additions_or_roof_pavilions_added": false,
+  "v2": {
+    "source_sha256": "b109312be4ba177ac7681950b2e289f21cec1df0065c291082e35b9771b92a15",
+    "manifest_sha256": "982784cb5053f8672747a9d71af79b4d3cc6b24a18317b9bbc92352e4f3b13d8",
+    "assets": {
+      "raw": {
+        "file": "huangpu-shanghai-municipal-council-raw.glb",
+        "bytes": 18643808,
+        "sha256": "54f7b3ef2b98b3fadafb4ca6d3d046e344dfe8b760d6574db484efc830a851af",
+        "triangles": 302192
+      },
+      "native": {
+        "file": "huangpu-shanghai-municipal-council.blend",
+        "bytes": 9387163,
+        "sha256": "b18d86670d07d4557ffda58afcf71f1c401cc7157cb3000c7e2d28790648ccb4"
+      },
+      "full": {
+        "file": "huangpu-shanghai-municipal-council-web.glb",
+        "bytes": 5964180,
+        "sha256": "e8f8be45bab07dc892307d5f098c0391daf0d48be1884c6f21ecb498b9bc5591",
+        "triangles": 302192
+      },
+      "lod": {
+        "file": "huangpu-shanghai-municipal-council-lod.glb",
+        "bytes": 3333144,
+        "sha256": "c1df275cbe0d7545ffcccc2972b06495b0e79cfb1846080b88877d4fd5f96ef3",
+        "triangles": 152708
+      }
+    },
+    "geometry_report": "geometry.json",
+    "actual_packed_decode_report": "packaged.json",
+    "all_author_parts_closed_positive": true,
+    "strict_float32_oriented_surfaces_exact": true,
+    "rays_per_glb": 35,
+    "three_main_final_previews": "native-{front,oblique,rear}-v2.png",
+    "SE_passage_detail": "native-passage-v2.png",
+    "final_author_native_image_inspection": [
+      {
+        "file": "native-front-v2.png",
+        "bytes": 973871,
+        "sha256": "5bb8b0c081096491262b34eeb3889668362dcd333be86e89651514a70ca979cd",
+        "actually_viewed_by_model_author": true,
+        "observation": "C形历史翼楼范围、NE主凹角/柱廊/小挑窗、两翼上下拱窗完整可见。"
+      },
+      {
+        "file": "native-oblique-v2.png",
+        "bytes": 947790,
+        "sha256": "366254b79f8079656274d11aaeb76a40aa4ef6fd37eddd876da001c6d30db5a0",
+        "actually_viewed_by_model_author": true,
+        "observation": "长翼底层拱窗、四主层、加强的中层柱式和NE门廊可辨。"
+      },
+      {
+        "file": "native-rear-v2.png",
+        "bytes": 972321,
+        "sha256": "17b5bc17311cc59e08b774eeaad08d2828883a92fbd7af8588e4241390ba2667",
+        "actually_viewed_by_model_author": true,
+        "observation": "庭院大部开敞、朴素矩形窗和两处人为平直收口可见，未复制街面重柱式。"
+      },
+      {
+        "file": "native-entrance-v2.png",
+        "bytes": 1655073,
+        "sha256": "2f0bad202ea6419d9738f0790cdaba9fc2b606d69039279ef8b029f64fb8984b",
+        "actually_viewed_by_model_author": true,
+        "observation": "NE真实凹弧墙、折线开柱廊、配对圆柱、小玻璃挑窗及透空栏杆清楚。"
+      },
+      {
+        "file": "native-arch-v2.png",
+        "bytes": 1765835,
+        "sha256": "5ffa76f382b08590b2890b443e9f3c6585928a8141602147e065502169881483",
+        "actually_viewed_by_model_author": true,
+        "observation": "NW两层高拱窗、双Ionic柱、较小地面方门和顶层拱窗清楚；两侧地拱及加强柱式清楚。"
+      },
+      {
+        "file": "native-passage-v2.png",
+        "bytes": 1766982,
+        "sha256": "af76e9f20bfb53c6dc62bbce599a3d87ec35104168802d1012de7031cad7f5c9",
+        "actually_viewed_by_model_author": true,
+        "observation": "SE通院拱内可见另一端院内亮区、侧壁和地面，无玻璃挡洞；局部图顶部有意裁出。"
+      }
+    ],
+    "native_file_unchanged_after_all_detail_renders": true,
+    "geometry_and_assets_frozen": true
+  }
+}
