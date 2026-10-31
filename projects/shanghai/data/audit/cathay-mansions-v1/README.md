@@ -2,6 +2,8 @@
 
 [主地图直接查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview) · [来源与范围](../../../source/precise/huangpu-cathay-mansions/README.md) · [四资产清单](../../../assets/models/candidates/huangpu-cathay-mansions/manifest.json)
 
+模型已发布为 [`4d4d537`](https://github.com/ecojust/e-resource/commit/4d4d53752950b6d8814b7e6d8a8ec03156858160)。[固定版本主图](https://raw.githack.com/ecojust/e-resource/4d4d53752950b6d8814b7e6d8a8ec03156858160/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview)与[线上核对](publication.json)记录15个实际HTTP文件，包括主页面、目录、修正后的裁剪脚本和四资产，全部与该提交字节一致。随后补入实际Git版本时间；模型、生产代码和定位数据保持不变，最终元数据检查见[root-checks.json](root-checks.json)。
+
 对象为锦江饭店北楼／锦北楼的独立历史主楼。包含褐砖长立面、浅色窗框、两列多边凸窗、北侧双凸翼及开敞凹部、小中央顶层与低层外观。峻岭公寓、礼堂、其他锦江楼栋、花园和室内不并入。
 
 ## 来源与估计

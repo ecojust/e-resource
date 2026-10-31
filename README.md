@@ -3763,7 +3763,7 @@
 | 新永安大楼主楼与后部外观 | 2026-10-31 11:14:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) |
 | 新新公司南侧商店主楼临街外观 | 2026-10-31 11:59:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) |
 | 大新公司历史主楼外观 | 2026-10-31 13:55:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) |
-| 华懋公寓历史主楼（锦江饭店锦北楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview) |
+| 华懋公寓历史主楼（锦江饭店锦北楼） | 2026-10-31 15:03:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview) |
 
 ### 徐汇区（7处）
 

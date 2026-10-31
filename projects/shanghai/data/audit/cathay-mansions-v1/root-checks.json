@@ -107,5 +107,19 @@
       "bytes": 2672,
       "sha256": "5ea8b7d4e810355df6c6be29e4c9e15d8315d63b085b7bde0ee15102f8f98c76"
     }
-  ]
+  ],
+  "publication_metadata_checks": {
+    "passed": true,
+    "commands": [
+      "python tools/build_candidate_city_integrations.py --catalog-only --check",
+      "python tools/update_global_model_metadata.py --check",
+      "python tools/build_model_todo.py --check",
+      "python tools/build_landmark_directory.py --check",
+      "python tools/restoration_progress.py --check",
+      "python tools/sync_readme_districts.py --check",
+      "python data/audit/cathay-mansions-v1/todo-directory-checks.py",
+      "git diff --check"
+    ],
+    "scope": "Final actual Git dates, directory links/counts and publication metadata; frozen model, placement and production code were not changed or retested."
+  }
 }
