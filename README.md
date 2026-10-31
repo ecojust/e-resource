@@ -3821,7 +3821,7 @@
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 杨浦区图书馆总馆（原上海市图书馆） | [2026-10-27 13:01:40](https://github.com/ecojust/e-resource/commit/387561d8a7297eb7fc2a42907f0819fa1d61e958) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) |
-| 旧上海特别市政府大楼（绿瓦大楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview) |
+| 旧上海特别市政府大楼（绿瓦大楼） | 2026-11-01 01:23:04 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview) |
 
 ### 闵行区（1处）
 

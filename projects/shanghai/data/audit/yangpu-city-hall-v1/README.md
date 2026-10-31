@@ -71,3 +71,9 @@ python projects/shanghai/data/audit/yangpu-city-hall-v1/todo-directory-checks.py
 原生、独立几何与源范围检查各自绑定输入，不用目录数量代替几何或实际网页验收。
 
 [根检查](root-checks.json)记录12项导航／目录测试以及各生成器和TODO复核。[发布前独审](prepublication-review.json)实际数出两份README各77条唯一按区入口，所有模型“查看网页”均指向主图；旧目录、定位、库存和已完成范围记录逐条保留，无第三方图片或临时文件混入。
+
+## 发布核对
+
+模型及验收记录已在`f1f445b97c6c3a4ffb457be26a6b1f5823fc499a`提交并推送。[该版全局地图直达](https://raw.githack.com/ecojust/e-resource/f1f445b97c6c3a4ffb457be26a6b1f5823fc499a/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview)。[公开HTTP记录](publication.json)实际下载15项文件，与该不可变提交逐字节一致，包括主图、目录、共享灯牌与裁剪脚本、辅助查看器、来源说明及四个资产；本项不替代前述本地真实浏览器验收。
+
+发布元数据随后补入制作队列和README日期；`root-checks.json`保留模型提交前检查，另附发布元数据检查，旧绑定不回写为新文件。最终元数据提交及远端一致性在工作区外另行核验，避免自引用提交哈希。

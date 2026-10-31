@@ -154,5 +154,148 @@
       "sha256": "dc240b18a512a3ce43b65e8e0ad756bc2b71467ca4ddaa23236e69b86684a7b2"
     }
   ],
-  "passed": true
+  "passed": true,
+  "publication_metadata_checks": {
+    "model_commit": "f1f445b97c6c3a4ffb457be26a6b1f5823fc499a",
+    "scope": "Checks after exact model commit publication; original checks and bindings above describe the model delivery and remain unchanged.",
+    "passed": true,
+    "checks": [
+      {
+        "command": "python projects/shanghai/tools/build_candidate_city_integrations.py --catalog-only --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "a536e3",
+          "wall_time_seconds": 0.851659469,
+          "exit_code": 0,
+          "original_token_count": 38,
+          "output": "{\"candidates\": 39, \"new_city_models\": 37, \"cumulative_verified_files\": 156, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 623518100}\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/update_global_model_metadata.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "6b5aec",
+          "wall_time_seconds": 0.08787876,
+          "exit_code": 0,
+          "original_token_count": 9,
+          "output": "{\"city_integrated_candidates\": 37}\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/build_model_todo.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "5fca72",
+          "wall_time_seconds": 1.019974172,
+          "exit_code": 0,
+          "original_token_count": 26,
+          "output": "README district candidates verified: 37; global destinations: 77\nREADME TODO matches structured records\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/build_landmark_directory.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "850961",
+          "wall_time_seconds": 0.157894451,
+          "exit_code": 0,
+          "original_token_count": 11,
+          "output": "Landmark directory matches navigation data\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/restoration_progress.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "9457d6",
+          "wall_time_seconds": 1.081853757,
+          "exit_code": 0,
+          "original_token_count": 60,
+          "output": "{\"navigation_entries\": 77, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 37, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/sync_readme_districts.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "d58e49",
+          "wall_time_seconds": 0.252679896,
+          "exit_code": 0,
+          "original_token_count": 17,
+          "output": "README district candidates verified: 37; global destinations: 77\n"
+        }
+      },
+      {
+        "command": "node --test projects/shanghai/tests/landmark-navigation.test.mjs projects/shanghai/tests/landmark-directory.test.mjs",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "2a8253",
+          "wall_time_seconds": 1.43296776,
+          "exit_code": 0,
+          "original_token_count": 368,
+          "output": "✔ current model articles, district totals and primary routes match the complete shared catalogue (29.203947ms)\n✔ the published directory is reproducible from the current base and candidate metadata (208.463035ms)\n✔ global model cards retain auxiliary previews, source documentation and asset download metadata (210.222299ms)\nℹ 39 building previews retain source/download metadata; no GLB or Blender bytes were read\n✔ lightweight directory resources and loading-screen entry remain available without starting WebGL (3.102867ms)\n✔ a new delivered candidate updates the latest overview destination and README counts (118.740239ms)\n✔ every published landmark deep link resolves to its exact reviewed walking pose (3.569887ms)\n✔ landmark links default to walking, while explicit overview and district links retain their modes (0.54193ms)\n✔ unknown destinations and malformed coordinates never silently fall back to Bund (0.396895ms)\n✔ direct list selection enters walking from overview and uses the reviewed position (1.121814ms)\n✔ requesting walking still cannot bypass an unreviewed ordinary building guard (0.56027ms)\n✔ same-page links navigate immediately and a slower previous destination cannot overwrite the new state (0.525539ms)\n✔ an unknown same-page landmark shows a notice and preserves the current position (0.269488ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1086.163363\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/data/audit/yangpu-city-hall-v1/todo-directory-checks.py",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "3830cf",
+          "wall_time_seconds": 0.890587573,
+          "exit_code": 0,
+          "original_token_count": 20,
+          "output": "{\"passed\": true, \"models\": 77, \"heritage_active\": 1048, \"named_active\": 1017}\n"
+        }
+      },
+      {
+        "command": "git diff --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "fe4645",
+          "wall_time_seconds": 0.753498669,
+          "exit_code": 0,
+          "original_token_count": 0,
+          "output": ""
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "path": "README.md",
+        "bytes": 446730,
+        "sha256": "736d19b576ec8d24af7ba9c305b0d5a92b0563a2daa8ef2a551c3656091835e9"
+      },
+      {
+        "path": "projects/shanghai/README.md",
+        "bytes": 41345,
+        "sha256": "7817909a3f7844ba244c15ad7258eee9234c1be6b39a9fe449552d7d59c23ee4"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/queue.json",
+        "bytes": 102865,
+        "sha256": "17c870557b2e014670c84d17763b7ecd4f03534f545d39135bda94f503f2469a"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/candidate-publication-times.json",
+        "bytes": 15230,
+        "sha256": "ccf6d38c76c4bdacbf6306cda4aa5bebcc47d307599a6994d1daf6d8be1057c8"
+      },
+      {
+        "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/README.md",
+        "bytes": 9467,
+        "sha256": "f901dce24c2ff3160adcf53f7e4ab2c03bf1049ef283ba1016e088a44c586131"
+      },
+      {
+        "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/publication.json",
+        "bytes": 9292,
+        "sha256": "631a6c1ccf6269e2fd7bc9ca998581a398efc59907dc58b638bb79d9bda5b5c0"
+      },
+      {
+        "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/todo-directory-checks.json",
+        "bytes": 3368,
+        "sha256": "675ce2f435f7d4c567186129c49908c2bb76d35d172a869e09fd601d4ec15f04"
+      }
+    ]
+  }
 }
