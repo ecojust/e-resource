@@ -1,6 +1,6 @@
 {
   "schema": "shanghai-model-production-queue-v1",
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "baseline_commit": "49df6270be491dee5237348c675e2d55eff9786f",
   "scope": "Expandable source-discovery backlog, not an exhaustive census or blanket acceptance",
   "district_order": [
@@ -920,7 +920,7 @@
           "url": "projects/shanghai/data/model-todo/heritage-following-footprint-review.json"
         }
       ],
-      "scope": "Historic Grand Theatre street entrance/light-tower exterior plus separately interpreted auditorium body; neither facade alone nor same-frame adjacent shops/tower prove complete historic-building acceptance",
+      "scope": "Historic street-front entrance, projecting canopy, light tower and rounded wall-band fragment only. Rear auditorium, rear foyer/lounge and complete shopfront range are not modeled; their identity and extent remain separate tasks.",
       "next_action": "已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留",
       "listed_place_name": "大光明大戏院／大光明电影院",
       "preview": "https://rawcdn.githack.com/ecojust/e-resource/6e75351b9fecbb3dfc3bae00442731db42d77124/projects/shanghai/grand-theatre.html",
@@ -1058,6 +1058,65 @@
         "walk_enabled": false,
         "note": "近似定位；尺寸与未见构造仍含估计"
       }
+    },
+    {
+      "order": 25,
+      "id": "huangpu-new-wing-on-company",
+      "name": "新永安大楼主楼与后部外观",
+      "district": "黄浦区",
+      "street": "南京东路627号（资料另记727号，保留差异）",
+      "status": "candidate_delivered",
+      "heritage_record_id": "sh-historic-b1-014",
+      "heritage_subentry": "新永安公司／七重天大厦，独立于老永安635号",
+      "references": [
+        {
+          "label": "官方建筑志",
+          "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284501"
+        },
+        {
+          "label": "原名录与拆栋依据",
+          "url": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json"
+        }
+      ],
+      "scope": "New Wing On Mansion / Qizhongtian Building at the listed 627 Nanjing East Road: north-front high-rise and connected lower rear exterior. The old company at 635, neighboring buildings, connecting bridges and interiors are excluded. Unseen faces, footprint adjustments and dimensions remain estimates.",
+      "next_action": "已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留",
+      "preview_source": "projects/shanghai/new-wing-on-company.html",
+      "preview": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview",
+      "manifest": "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+      "evidence": "projects/shanghai/data/audit/new-wing-on-company-v1/README.md",
+      "next_action_before_city_integration": "前塔与低楔形后部模型已生成并完成几何、压缩解码及原生检查；接入主图并完成网页验收，跨街桥另列，近似尺寸及隐面继续按来源说明。",
+      "city_integration": {
+        "catalog": "projects/shanghai/data/candidate-city-integrations.json",
+        "preview": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview",
+        "status": "approximate-placement",
+        "walk_enabled": false,
+        "note": "近似定位；尺寸与未见构造仍含估计"
+      }
+    },
+    {
+      "order": 26,
+      "id": "huangpu-xinxin-company",
+      "name": "新新公司历史主楼（第一食品商店）",
+      "district": "黄浦区",
+      "street": "南京东路720号",
+      "status": "reference_pending",
+      "heritage_record_id": "sh-historic-b1-015",
+      "references": [
+        {
+          "label": "名录原条目",
+          "url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批"
+        },
+        {
+          "label": "建筑资料线索（待核）",
+          "url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E6%96%B0%E7%99%BE%E8%B2%A8%E5%85%AC%E5%8F%B8"
+        },
+        {
+          "label": "照片线索（待核）",
+          "url": "https://zh.wikipedia.org/wiki/File:%E6%96%B0%E6%96%B0%E7%99%BE%E8%B4%A7.JPG"
+        }
+      ],
+      "scope": "Verify the distinct historic Xinxin Company building at the listed 720 Nanjing East Road before deciding model footprint, period, height and visible components. Do not confuse it with Sincere, Wing On or Daxin Company.",
+      "next_action": "按名录顺序接续：先实际核验照片、楼栋范围与尺寸文字，再制作近远景及可编辑模型并接入index主地图。"
     }
   ],
   "existing_models": [

@@ -1,0 +1,408 @@
+{
+  "schema": "new-wing-on-independent-model-review-v1",
+  "reviewed_utc": "2026-10-31T03:08:50.183250+00:00",
+  "reviewer": "global_inventory",
+  "building_id": "huangpu-new-wing-on-company",
+  "frozen_geometry_revision": "v3",
+  "result": "pass_with_documented_estimates",
+  "verdict": "最终v3四件模型资产与冻结清单一致；实际外包、分级体量、近远景主要截面和原生证据绑定通过独立核查。实看参考与四张v3原生图后未发现新增范围错配。此结论只覆盖外观候选资产，不等同测绘准确性、完整历史复原或全局浏览器验收。",
+  "final_manifest": {
+    "file": "assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+    "bytes": 5287,
+    "sha256": "dc3ea4f7d9192f8d761cdd17fc1fbcda153ca6b648dd15788d5abaca10a2b44c"
+  },
+  "independence": {
+    "performed_here": [
+      "读取四件实际交付文件，独立计算字节数和SHA256并与最终manifest逐件比较",
+      "使用仓库MeshoptDecoder读取实际raw/web/LOD GLB的POSITION及索引，计算外包与六高度截面凸包；未调用build_model来生成比较对象",
+      "直接检查三份GLB无images、textures或外部buffer URI；扫描该资产和source目录无参考图文件",
+      "比对三份GLB身份/估计元数据与manifest，核对最终native及打包报告对资产与源码的引用",
+      "实际查看三张参考照片和最终v3四张原生图，核对公开归档图片与所见私有缓存逐字节一致"
+    ],
+    "not_repeated": [
+      "作者构件闭合/体积/法向测试",
+      "精确有向三角面全表面等价检查",
+      "Blender重开与图片数据块检测",
+      "Chrome、WebGL、主地图定位、遮挡替换及交互验收"
+    ],
+    "relied_on_package_evidence": "闭合、完整有向面等价和Blender重开不在本轮重复执行；下列packaged.json/native.json为制作者实际执行证据，独立核对其资产、源码和图像SHA绑定。",
+    "superseded_evidence": "v1与v2仅用于制作过程诊断，不用于最终通过结论；最终资产和四张接受图均为v3。"
+  },
+  "assets": {
+    "raw": {
+      "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-raw.glb",
+      "bytes": 7669016,
+      "sha256": "f039a13feba3daa42ebb74a1548060b29881add3c0ac19145ff80fba0a7672c8",
+      "triangles": 137148
+    },
+    "native": {
+      "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company.blend",
+      "bytes": 4046931,
+      "sha256": "ae8d90d2ba35dd5328aa99b735dc934ba4d36745208d70f5156d091b09bb8916"
+    },
+    "full": {
+      "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-web.glb",
+      "bytes": 2433676,
+      "sha256": "13afc0767261a4f6aaf01e4bf3404dfdbb2dd27e9475aef26d04ca5e4952caf9",
+      "triangles": 137148
+    },
+    "lod": {
+      "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-lod.glb",
+      "bytes": 781548,
+      "sha256": "fcddf4f11cc29e61d527d228a110fda137d754874f10decb7e29ca139b17aec0",
+      "triangles": 38500
+    }
+  },
+  "actual_geometry": {
+    "coordinate_convention": "GLB[x,up,-author_y]，单位米；author x约ENE、author y约NNW，地图旋转另行记录。以下为本地作者坐标外包，非已测量地理墙线。",
+    "method": "解析有效GLB场景节点（本交付无节点变换）；直接读取实际FLOAT32 POSITION及三角索引；web/LOD的EXT_meshopt_compression用仓库vendor decoder解码。没有使用accessor声明min/max作测量，也没有从build_model重建几何。",
+    "decoder": {
+      "file": "vendor/meshopt_decoder.module.js",
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+    },
+    "probe_program_private_cache": {
+      "file": "/workspace/new-wing-independent-envelope.mjs",
+      "bytes": 5291,
+      "sha256": "98b0c8281cd685d9819c21b94563f565ba0a37b9a22f6ad00916bcabbd3bee6c"
+    },
+    "bounds_glb": {
+      "min": [
+        -18.975860595703125,
+        0,
+        -35.12357711791992
+      ],
+      "max": [
+        27.091312408447266,
+        72,
+        24.049999237060547
+      ]
+    },
+    "bounds_author_xy_up_m": {
+      "min": [
+        -18.975860595703125,
+        -24.049999237060547,
+        0
+      ],
+      "max": [
+        27.091312408447266,
+        35.12357711791992,
+        72
+      ]
+    },
+    "envelope_m": {
+      "width": 46.06717300415039,
+      "depth": 59.17357635498047,
+      "height": 72.0
+    },
+    "bounds_equal_for_raw_web_lod": true,
+    "matches_manifest_authored_bounds": true,
+    "section_method": "在10/25/35/55/67/70米高度与实际三角边求交，取二维截面点凸包。比较整条凸包环，三个版本六截面均完全一致。凸包只检验主要外包和层级，不代表闭合体积、室内、窗洞细节或全表面等价。",
+    "sections": [
+      {
+        "height_m": 10.0,
+        "actual_triangle_section_convex_hull_area_m2": 1915.9183609718687,
+        "min_author_xy_m": [
+          -18.709999084472656,
+          -23.90999984741211
+        ],
+        "max_author_xy_m": [
+          26.840740203857422,
+          34.79999923706055
+        ],
+        "raw_web_lod_convex_hull_rings_equal": true
+      },
+      {
+        "height_m": 25.0,
+        "actual_triangle_section_convex_hull_area_m2": 1920.327921670809,
+        "min_author_xy_m": [
+          -18.709999084472656,
+          -23.90999984741211
+        ],
+        "max_author_xy_m": [
+          26.840740203857422,
+          34.79999923706055
+        ],
+        "raw_web_lod_convex_hull_rings_equal": true
+      },
+      {
+        "height_m": 35.0,
+        "actual_triangle_section_convex_hull_area_m2": 361.55628878014693,
+        "min_author_xy_m": [
+          -18.600000381469727,
+          8.602018356323242
+        ],
+        "max_author_xy_m": [
+          9.094130516052246,
+          34.79999923706055
+        ],
+        "raw_web_lod_convex_hull_rings_equal": true
+      },
+      {
+        "height_m": 55.0,
+        "actual_triangle_section_convex_hull_area_m2": 221.26112154895603,
+        "min_author_xy_m": [
+          -15.329922676086426,
+          11.595902442932129
+        ],
+        "max_author_xy_m": [
+          3.584333896636963,
+          33.39198303222656
+        ],
+        "raw_web_lod_convex_hull_rings_equal": true
+      },
+      {
+        "height_m": 67.0,
+        "actual_triangle_section_convex_hull_area_m2": 143.8199939771746,
+        "min_author_xy_m": [
+          -14.11258602142334,
+          14.195794105529785
+        ],
+        "max_author_xy_m": [
+          1.60361909866333,
+          32.141075134277344
+        ],
+        "raw_web_lod_convex_hull_rings_equal": true
+      },
+      {
+        "height_m": 70.0,
+        "actual_triangle_section_convex_hull_area_m2": 79.07500467398802,
+        "min_author_xy_m": [
+          -12.244114875793457,
+          17.66860580444336
+        ],
+        "max_author_xy_m": [
+          -1.1513551473617554,
+          30.23482322692871
+        ],
+        "raw_web_lod_convex_hull_rings_equal": true
+      }
+    ],
+    "lod_triangle_fraction_of_full": 0.28071863971767724,
+    "interpretation": "宽低翼保留至约26.6米，上方缩为约42.6米高基座，再退为65.7米上塔和68.3/72米两级顶冠；LOD简化细框线而保留主要体量。"
+  },
+  "scope_and_claims": {
+    "source_register_matches_glb_and_manifest": true,
+    "subject": "南京东路627号新永安公司／七重天大厦，北端高塔、高基座与相连低楔形楼体；南京东路635号老永安为另件。",
+    "excluded": [
+      "老永安",
+      "两栋之间的跨街桥",
+      "邻楼",
+      "室内",
+      "现代高天线",
+      "广告及商业文字",
+      "温度计数字与温度读数"
+    ],
+    "documented_constraints": {
+      "front_storeys": 22,
+      "rear_storeys": 8,
+      "reported_total_height_m": 72,
+      "height_measurement_endpoint_defined": false,
+      "site_area_m2": 1400
+    },
+    "author_estimates": {
+      "plan_area_m2": 1899.9028660300926,
+      "front_floor_allocation": "13 lower + 7 upper + 2 crown/service stages",
+      "datums_m": [
+        23.4,
+        26.6,
+        42.6,
+        65.7,
+        68.3,
+        72.0
+      ],
+      "72m_is_selected_solid_top": true,
+      "plan_width_depth_setbacks_window_counts_hidden_faces_and_roofs_estimated": true
+    },
+    "unresolved_evidence_limits": [
+      "文献1400平方米、地图约2016平方米与模型约1899.9平方米不是同口径测量，模型没有缩放凑成文献面积。",
+      "前塔平面四边形与文字矩形描述未由测绘统一。",
+      "627/727门牌差异和1932/1933/1936年份记载未裁定。",
+      "背面及完整屋面缺实看照片，不宣称逐面核准；窗列数量和逐层标高仍为估计。",
+      "本件取多期照片共通外观；商业装置不逐项复原，不宣称1930年代开业状态或精确2026现状。"
+    ],
+    "map_scope_note": "GLB本身map_replacement:false不执行地物纠正；manifest.city_integration另指向有界主图接入合同。该独立模型审查不验收实际地图纠正。"
+  },
+  "photo_and_native_review": {
+    "reference_images": [
+      {
+        "id": "mansion",
+        "private_reference_file": "/workspace/new-wing-reference/photos/mansion.jpg",
+        "bytes": 1163192,
+        "sha256": "94eb4a87a1e757a0c78fed53ae227c937e7187ece0263aab0294ae3166c65f93",
+        "page": "https://commons.wikimedia.org/w/index.php?title=File%3ANew_Wing_On_Mansion_%28Shanghai%29.jpg&oldid=1248640453",
+        "actually_viewed": true,
+        "copied_into_repository": false
+      },
+      {
+        "id": "may2025a",
+        "private_reference_file": "/workspace/new-wing-reference/photos/may2025a.jpg",
+        "bytes": 7646991,
+        "sha256": "05427640d088f4288e0c97fc0ce5af9f9224c58fa89144294c4685f66ce3e339",
+        "page": "https://commons.wikimedia.org/w/index.php?title=File%3AWing_On_Department_Store_%28Shanghai%29_20250501-1.jpg&oldid=1248640459",
+        "actually_viewed": true,
+        "copied_into_repository": false
+      },
+      {
+        "id": "may2025b",
+        "private_reference_file": "/workspace/new-wing-reference/photos/may2025b.jpg",
+        "bytes": 6048538,
+        "sha256": "b1caa0f1e8bc9e7f5e45959543194ff04606f2ad76e6e6fef800bd23680fa29d",
+        "page": "https://commons.wikimedia.org/w/index.php?title=File%3AWing_On_Department_Store_%28Shanghai%29_20250501-3.jpg&oldid=1248640460",
+        "actually_viewed": true,
+        "copied_into_repository": false
+      }
+    ],
+    "final_native_images": [
+      {
+        "file": "data/audit/new-wing-on-company-v1/native-front-v3.png",
+        "bytes": 882408,
+        "sha256": "5e53e4fd9ae9c07951f19d4befbf7f54feb1f04e4ef52b159c622739330d7058",
+        "actually_viewed": true,
+        "observation": "北端窄切角面保留三窗轴、高基座、退台上塔和浅色顶冠；低翼处于独立低层级，没有23.4米白檐横切高基座正面。"
+      },
+      {
+        "file": "data/audit/new-wing-on-company-v1/native-oblique-v3.png",
+        "bytes": 956595,
+        "sha256": "4b3fa0cb6b7f8ef87d99a7f4e3a78ebd10ee1e70cd1781cb1eda897aac189db3",
+        "actually_viewed": true,
+        "observation": "东北长面与高基座连续，竖向窗列在高低体衔接处对齐；低翼楔形和圆弧远端可辨，主体不是把整个基地拉伸到72米。"
+      },
+      {
+        "file": "data/audit/new-wing-on-company-v1/native-rear-v3.png",
+        "bytes": 904072,
+        "sha256": "380e6378d7d43c2fe778d7a9b925a73f96ed1dd68552625e8195ddf55adf52d3",
+        "actually_viewed": true,
+        "observation": "低翼、前部高基座、上塔和两级冠部层次保留；此图只证明模型背面/屋面存在，不使缺少参考照片的部分成为实景核准。"
+      },
+      {
+        "file": "data/audit/new-wing-on-company-v1/native-ne-detail-v3.png",
+        "bytes": 1406550,
+        "sha256": "d6cb8739673a888e8b95d6af96ec08e4692626880f958de8db0ecfb89396d713",
+        "actually_viewed": true,
+        "observation": "温度计主杆位于实墙肋外，球部、无字横向刻度可辨；主杆未穿过整列窗，未绘制数字或虚构温度读数。"
+      }
+    ],
+    "findings": [
+      "相对于所见参考图，北端窄切角三窗轴、高基座与低翼高差、竖向上塔分组、浅色宽檐、退台顶冠和圆弧低翼端部具有相容的相对形态。",
+      "v1已发现的NE高低体不连续和23.4米白檐穿过高基座正面，在最终v3图中均未重现。",
+      "v3的NE高低段窗轴连续；近视图能辨认温度计主杆、球部和横向刻度，避免主杆沿窗轴穿过整列窗，也未编造数值。",
+      "未见老永安古典转角/屋顶亭或跨街桥被并入模型。",
+      "灰色摄影棚地面及灯光是预览环境，与模型分离；原生绑定按单个建筑mesh核对。"
+    ],
+    "blocking_scope_mismatches_found": []
+  },
+  "no_photograph_payload": {
+    "raw_web_lod_images_count": 0,
+    "raw_web_lod_textures_count": 0,
+    "raw_web_lod_external_buffer_uris_count": 0,
+    "asset_and_source_tree_reference_image_files_count": 0,
+    "native_evidence_source": "packaged.json/native：制作者重开实际交付blend后得到空image_datablocks和image_texture_nodes；verify_geometry.py同时assert无外部library。此处核对结果和文件SHA，未重复启动Blender。",
+    "native_image_datablocks": [],
+    "native_image_texture_nodes": [],
+    "native_photos_embedded": false,
+    "audit_previews_are_generated_model_renders": true,
+    "reference_photo_pixels_copied_into_repository": false
+  },
+  "native_evidence_binding": {
+    "source_raw_sha256": "f039a13feba3daa42ebb74a1548060b29881add3c0ac19145ff80fba0a7672c8",
+    "native_sha256": "ae8d90d2ba35dd5328aa99b735dc934ba4d36745208d70f5156d091b09bb8916",
+    "native_bytes": 4046931,
+    "model_meshes": 1,
+    "model_triangles": 137148,
+    "actual_reopen_passed_from_package": true,
+    "before_after_geometry_hash_from_package": "6af0e8d2a6d0e76bdb90a3b04bd4feeb4eca77f19ce645470642f524fee24269",
+    "preview_stage_excluded_from_geometry_hash": true,
+    "three_general_preview_hashes_and_detail_raw_hash_match_final_assets": true
+  },
+  "source_bindings": [
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source-register.json",
+      "bytes": 14885,
+      "sha256": "9b05bb975adfb15eaee7374aee8c3c0ba33965fbf45b86941f28221d5c01dce7"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/design-input.json",
+      "bytes": 48484,
+      "sha256": "026b3d6f4a59c4dcfefbd9f37de7428ea6be4830a4bfc10d34583770958db804"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/lod-features.json",
+      "bytes": 48484,
+      "sha256": "a1515ce66af78bd3c8d6c2e7f28c8e7135280fd7632245a18e6cd8ba690b1ff3"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/build_model.py",
+      "bytes": 17280,
+      "sha256": "53294df8d98443359338d22ee000d1be2e93960955e09cfc8634b2b8e1ef0495"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/build_native.py",
+      "bytes": 5557,
+      "sha256": "c3a420fdc50d3668b946eb8ac14462f994c3755b73c6b35f16fd0ada88e79557"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/render_detail.py",
+      "bytes": 1280,
+      "sha256": "c813c5cfa7be2ab789010e7c81e1ce3804957e85d4cede1fa72c076c690314c8"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/package_assets.py",
+      "bytes": 5252,
+      "sha256": "2e6274edb6ecfe468f9ca07e03534c6bec35732bff198b40195a7f1c288cdca7"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/verify_geometry.py",
+      "bytes": 24279,
+      "sha256": "69f3a98baf98c64b9c457a61bd0306976491d3a2698f80a707d5402807344fed"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/common/photo_architecture.py",
+      "bytes": 21367,
+      "sha256": "6a62484a9e416f1c2ef2c2d2ec065dd9c7c184eb758b214ae4217f6f8782d15f"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/source/HELPER_PROVENANCE.json",
+      "bytes": 2091,
+      "sha256": "6cfd5b71ca55b90dc545d513cab6a3b07da50f6be3b08b28f39fe6a83720dd5b"
+    }
+  ],
+  "evidence_bindings": [
+    {
+      "file": "data/audit/new-wing-on-company-v1/documentary-review.json",
+      "bytes": 7503,
+      "sha256": "db9a2db6aff5127942f7838e65cc36bdd23be0f292e7318866438943b93ed5e8"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/photo-review.json",
+      "bytes": 13772,
+      "sha256": "3c652fa762a4aacc1dc4a83c2b1896a4b81ddd565f35deff8e675fdec41c3897"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/footprint-review.json",
+      "bytes": 57124,
+      "sha256": "3bf3cdb0fe86f0ed6ccee7c5e59b2f57f8196e19e385c37ff970a0a218b2db55"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/geometry.json",
+      "bytes": 27435,
+      "sha256": "1fac90761a217592bb40adf4088f774eca72c580ce0c275738e5ef3bc31bdd77"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/packaged.json",
+      "bytes": 42977,
+      "sha256": "799363d6c9a772f0f2f26d8b6f0678db574d829534ee12e06676eada2bc48cc8"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/native.json",
+      "bytes": 2235,
+      "sha256": "c5870899782a5efea17633cba52ece3654ff5779b8deb332e91ee1d26071e5cf"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/native-ne-detail-v3.json",
+      "bytes": 547,
+      "sha256": "4736ebd8b593d840234882a2e98564602bb78594a91c1eb27bf077f0e752cee2"
+    }
+  ],
+  "acceptance_boundary": "独立模型资产/范围审查通过，附上述估计限制。主图摆放、旧源裁剪、灯牌、浏览器加载及触控由各自冻结合同和QA报告覆盖；未把本报告当作其替代。"
+}

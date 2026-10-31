@@ -1,0 +1,133 @@
+{
+  "schema": "new-wing-on-documentary-review-v1",
+  "reviewed_utc": "2026-10-31T02:54:09.286802+00:00",
+  "record_id": "sh-historic-b1-014",
+  "building_id": "huangpu-new-wing-on-company",
+  "scope_conclusion": {
+    "identity": "南京东路627号新永安公司／新永安大楼／七重天大厦，老永安635号东侧的另一栋高层建筑。",
+    "combined_registry_policy": "名录b1-014合列老、新永安，两个建模入口分别计数；本模型不吞并老楼或跨街桥。",
+    "orientation": "北部细端为高塔；北尖短切角面为三窗轴窄立面，外法线约315.14°；东北长斜面带温度计，外法线约36.25°。此为照片与地图对应估计，不是摄影测量。",
+    "modeled_period": "以2011、2013、2024及2025实看照片中共通外观为参照，主参照为2025-05-01两张；不宣称复原1932/1933/1936开业状态或精确2026现状。",
+    "exclusions": [
+      "老永安635号主楼及倚云阁／绮云阁。",
+      "跨浙江路两座封闭桥，邻近其他建筑。",
+      "完整室内、地下室、历史电视设备、现代高细天线。",
+      "变化的商业广告、临时活动布置及精确商铺招牌。"
+    ]
+  },
+  "best_documented_dimensions": {
+    "front_storeys_as_text": 22,
+    "rear_storeys_as_text": 8,
+    "height_m_as_text": 72,
+    "height_endpoint_defined": false,
+    "site_area_m2_as_text": 1400,
+    "gross_floor_area_m2_as_text": 14438,
+    "surveyed_width_depth_m": null,
+    "surveyed_storey_heights_m": null,
+    "design_policy": "72米选为模型建筑实体顶部的设计约束；分层、塔肩退距、宽深和背面均为估计。模型采用地图支持的楔形范围，不从文献面积反推实测边长。"
+  },
+  "contradictions": [
+    {
+      "topic": "门牌",
+      "values": [
+        "地方志新楼段727号。",
+        "当前OSM、二手百科及既有历史名录列627号。"
+      ],
+      "resolution": "主身份采用现627号；保留地方志727原文，不声称已查明门牌沿革。"
+    },
+    {
+      "topic": "建成年代",
+      "values": [
+        "地方志1932年建成。",
+        "现状OSM start_date1933与既有名录1933。",
+        "百科固定修订正文1936年竣工，引用1936-05-04申报；原报未取得。"
+      ],
+      "resolution": "并列1932／1933／1936，不推定它们分别对应开工/竣工/营业阶段。候选几何不绑定开业年份。"
+    },
+    {
+      "topic": "用地范围",
+      "values": [
+        "地方志三角基地1400平方米。",
+        "冻结现状地图polygon约2016.282平方米。"
+      ],
+      "resolution": "时期、边界和统计口径未统一；不均匀缩放强制相等。"
+    },
+    {
+      "topic": "层数与塔高端点",
+      "values": [
+        "前22层72米是文献总述。",
+        "照片可见多级塔肩、上部约7排窗及屋顶设备体，无法完整逐层标定。"
+      ],
+      "resolution": "建模13层基座＋7层上塔＋2设备体分段为自主解释，72米实体顶是选用端点；不等同实测22层复原。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "official-gazetteer",
+      "title": "《上海名建筑志》古典式的永安大楼与现代摩天楼式的“七重天”",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284501",
+      "authority": "上海市地方志办公室公开地方志章节",
+      "actually_read": true,
+      "private_cache": "/workspace/new-wing-reference/official.json",
+      "bytes": 53772,
+      "sha256": "6f53139c11047a31d963b1b41684c6c0ffa86705774124da05d7b549dca43b06",
+      "request": {
+        "method": "POST",
+        "url": "https://www.shtong.gov.cn/api/shizhi-public/read/wordPreview",
+        "json": {
+          "objectId": 5401,
+          "catalogueId": 284501
+        }
+      },
+      "claims": [
+        "老楼门牌635号；新楼购旁邻老天蟾舞台旧址兴建，两楼隔浙江路且有两座封闭式天桥。",
+        "新楼由哈沙德洋行设计（另记与飞力帕斯联合设计之说），钢框架结构，前楼22层、72米，后部8层且有地下室。",
+        "地基因地形呈三角形，占地1400平方米，建筑面积14438平方米；七层以下梯形状、以上长方形。",
+        "底部大面积沿街橱窗、绿色花岗石，上部浅黄色面砖；顶部设置灯光设施。",
+        "新楼段落写南京东路727号、1932年建成；此处门牌及日期与其他记录不同，保留原文。",
+        "文献没有提供逐层层高、塔肩退距、实体72米的端点定义、现代天线高度或实测平面图。"
+      ],
+      "rights": "仅发布事实摘要与来源，完整文献响应私人保存；未复制文献全文或照片。"
+    },
+    {
+      "id": "wikipedia-fixed",
+      "title": "新永安大楼（固定修订93563312）",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E6%96%B0%E6%B0%B8%E5%AE%89%E5%A4%A7%E6%A5%BC&oldid=93563312",
+      "authority": "二手百科，作为身份和冲突线索；不替代原始史料",
+      "actually_read": true,
+      "private_cache": "/workspace/new-wing-reference/wiki-fixed.html",
+      "bytes": 169650,
+      "sha256": "ea3f044b34e8845d9d439f3e63e61d0aef0fc0c3b99d7d3cc8b411d7ba888927",
+      "returned_revision": 93563312,
+      "claims": [
+        "地址为南京东路627号，位于南京东路、浙江中路、九江路和湖北路所围三角地带；西侧为另一栋老永安。",
+        "文中描述前22层、后8层，72米、1400平方米及14438平方米，主要引用上述地方志。",
+        "信息框列起造1932，正文另列1936年竣工，并引1936-05-04《申报》“永安公司新厦將於八月落成”；本轮未取得该报原件，不据此裁定年份。",
+        "1958年上海电视台曾在塔楼内设台并安装发射天线；照片现代细杆不能自动解释为原建72米建筑实体的一部分。"
+      ],
+      "text_license": "CC BY-SA 4.0；仅事实摘要、链接，外链内容各有权利。"
+    },
+    {
+      "id": "current-osm-way",
+      "title": "OpenStreetMap way160895636 version5 / Qizhongtian",
+      "url": "https://api.openstreetmap.org/api/0.6/way/160895636/full.json",
+      "authority": "现状开放地图标签与覆盖代理；不是实测建筑图",
+      "actually_read": true,
+      "private_cache": "/workspace/new-wing-on-research/osm-way160895636-full.json",
+      "bytes": 2216,
+      "sha256": "3254cf9949dd4fdfb56c22b8f189a75f7b1520c9a61804e37dc3ad4ea80932d3",
+      "claims": [
+        "同一源对象登记南京东路627号、现名七重天大厦、old_name新永安公司、start_date1933。",
+        "覆盖面为楔形而非矩形，冻结派生图的ENU面积约2016.282平方米，最小外接矩形约60.334×47.410米。",
+        "标签未提供新楼实际层数或高度；地图远景32.9米来自旧栅格估计，不应用作新楼塔高。"
+      ],
+      "rights": "© OpenStreetMap contributors, ODbL 1.0；地图几何和身份复核另见footprint-review.json。"
+    }
+  ],
+  "photo_review": "photo-review.json",
+  "footprint_review": "footprint-review.json",
+  "search_limitations": [
+    "DuckDuckGo返回人工验证页，Bing RSS返回无关结果，Baidu返回安全验证页；未把这些搜索页作为事实来源。"
+  ],
+  "acceptance_scope": "仅资料与外观参考核验，不代表完成几何、压缩、原生文件重开或浏览器验收。"
+}

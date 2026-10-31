@@ -1,0 +1,33 @@
+{
+  "schema": "candidate-city-catalog-checks-v1",
+  "existing_city_count": 40,
+  "new_city_models": 31,
+  "unique_city_destinations": 71,
+  "inputs": [
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 11213,
+      "sha256": "4b9e5bace5082b12ec3f4b5653deb7c98d310d00924b3766971fdb538847eef8"
+    }
+  ],
+  "all_asset_contracts_match_inventory_or_checked_derivation": true,
+  "all_placement_polygons_valid": true,
+  "identified_source_required_for_replacement": true,
+  "listed_spawn_count": 0,
+  "spawn_clearance_radius_m": 0.38,
+  "spawn_checks": [],
+  "limitation": "Static candidate geometry checks; source-map roads, vector clipping and loading/fallback behavior require separate runtime/browser checks.",
+  "inventory_file": "data/global-models/candidate-inventory.json",
+  "inventory_sha256": "c61d6c144e1b7938510fefdd0d440e5002776ebba45788025413963a081135a6",
+  "asset_verification_scope": "Original records retain their immutable baseline verification; only the explicitly listed incremental manifests/assets are read in this run."
+}

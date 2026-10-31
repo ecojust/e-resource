@@ -1,0 +1,102 @@
+{
+  "schema": "new-wing-on-root-checks-v1",
+  "cwd": "projects/shanghai",
+  "result": "passed; 7 navigation tests and 5 actual directory tests",
+  "commands": [
+    {
+      "command": "python tools/build_candidate_city_integrations.py --check",
+      "result": "pass; four new asset files reverified"
+    },
+    {
+      "command": "python tools/update_global_model_metadata.py --check",
+      "result": "pass;31"
+    },
+    {
+      "command": "python tools/build_model_todo.py --check",
+      "result": "pass"
+    },
+    {
+      "command": "python tools/build_landmark_directory.py --check",
+      "result": "pass;71"
+    },
+    {
+      "command": "python tools/restoration_progress.py --check",
+      "result": "pass;71 navigation,31 city candidates"
+    },
+    {
+      "command": "node --test tests/landmark-navigation.test.mjs tests/landmark-directory.test.mjs",
+      "result": "7 navigation tests passed; directory test was absent from sparse checkout and Node did not run it. Separate restored-directory check required."
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass"
+    },
+    {
+      "command": "node --test tests/landmark-directory.test.mjs",
+      "result": "5 directory tests passed after restoring the sparse file and updating its article/shared-catalog expectations; metadata only, no model asset bytes read."
+    }
+  ],
+  "scope": "Generator consistency and affected navigation checks. Counts and presentation do not imply measured restoration accuracy. Publication timestamps may subsequently update documentation only.",
+  "bindings": [
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "sha256": "0986974854be2f7491a9f1a1763590470b6780f3c77235c24888dc29836b7b25",
+      "bytes": 28062
+    },
+    {
+      "path": "tools/update_global_model_metadata.py",
+      "sha256": "75426d1971833b3a3c2f06dde037de701292727e542e3d76910c5629c0a0a190",
+      "bytes": 2051
+    },
+    {
+      "path": "tools/build_model_todo.py",
+      "sha256": "ead722ccfc992f1190043deafae3ef457db36a123569ac40cb066691d5913ffb",
+      "bytes": 26325
+    },
+    {
+      "path": "tools/build_landmark_directory.py",
+      "sha256": "304d6581c2a92a596e9da078b66e9d3b7af577c9bc4e2dfc4238f34769cd64fe",
+      "bytes": 8852
+    },
+    {
+      "path": "tools/restoration_progress.py",
+      "sha256": "1e787dc59a412b0840624574887458f560a9a1a1db40719157f0b0e7dc7098ca",
+      "bytes": 12465
+    },
+    {
+      "path": "tools/sync_readme_districts.py",
+      "sha256": "6d902c2eaad5c49fdc2dadcaf045d640e4594df6e5b61fc8dab08f46ea6533b6",
+      "bytes": 15721
+    },
+    {
+      "path": "tests/landmark-navigation.test.mjs",
+      "sha256": "52eb937d3ca7d23fe682ae9058d178e5fccc5b4084073a3ce3a8e0488737f126",
+      "bytes": 6357
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "sha256": "f6a47b68a463f0f94f9bbdb958d72b4d7b4bbfcafd999d2f9a8d11cab3d52cd7",
+      "bytes": 214868
+    },
+    {
+      "path": "data/model-viewers.json",
+      "sha256": "1540b0ee2d997b0a154b340171d49e36e4449309dff1fae9a23227462b48b9ea",
+      "bytes": 7005
+    },
+    {
+      "path": "src/new-wing-on-company.js",
+      "sha256": "4518a9edd2cc2d2b85734c9b42c5102465b062ffa46e9112d99102648fde2b0d",
+      "bytes": 7593
+    },
+    {
+      "path": "new-wing-on-company.html",
+      "sha256": "eaf9c206e4031e36bfbe862314402335ccda9d57292ea0d93d6d797ccf6c316b",
+      "bytes": 2591
+    },
+    {
+      "path": "tests/landmark-directory.test.mjs",
+      "bytes": 10997,
+      "sha256": "796c3d1406eae39b45b5e1f2f92e8ed33d78dc38ca85a5bff4578d3f3923453c"
+    }
+  ]
+}

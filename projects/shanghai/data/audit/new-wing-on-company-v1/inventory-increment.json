@@ -1,0 +1,93 @@
+{
+  "schema": "candidate-city-inventory-increment-v1",
+  "baseline_inventory": {
+    "file": "data/audit/global-model-integration-v1/inventory.json",
+    "bytes": 84353,
+    "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+  },
+  "incremental_manifests": [
+    "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json"
+  ],
+  "asset_revision_fallback": "b1d8a4b9926367c68f87e25dfdcda4c22e2c199c",
+  "current_inventory": "data/global-models/candidate-inventory.json",
+  "verification": {
+    "all_manifest_assets_read": true,
+    "files": 132,
+    "bytes": 484076729,
+    "byte_lengths_and_sha256_match": true,
+    "single_file_limit_bytes_exclusive": 100000000,
+    "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
+    "current_run_added_files": 4,
+    "current_run_added_bytes": 14931171,
+    "scope": "Original records retain their immutable baseline verification; only the explicitly listed incremental manifests/assets are read in this run."
+  },
+  "records": [
+    {
+      "id": "huangpu-new-wing-on-company",
+      "name": "新永安大楼主楼与后部外观",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "new-wing-on-company.html",
+      "manifest": "assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+      "manifest_sha256": "dc3ea4f7d9192f8d761cdd17fc1fbcda153ca6b648dd15788d5abaca10a2b44c",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-raw.glb",
+          "bytes": 7669016,
+          "sha256": "f039a13feba3daa42ebb74a1548060b29881add3c0ac19145ff80fba0a7672c8",
+          "triangles": 137148
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company.blend",
+          "bytes": 4046931,
+          "sha256": "ae8d90d2ba35dd5328aa99b735dc934ba4d36745208d70f5156d091b09bb8916"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-web.glb",
+          "bytes": 2433676,
+          "sha256": "13afc0767261a4f6aaf01e4bf3404dfdbb2dd27e9475aef26d04ca5e4952caf9",
+          "triangles": 137148
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-lod.glb",
+          "bytes": 781548,
+          "sha256": "fcddf4f11cc29e61d527d228a110fda137d754874f10decb7e29ca139b17aec0",
+          "triangles": 38500
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -18.975860595703125,
+            0.0,
+            -35.12357711791992
+          ],
+          "max": [
+            27.091312408447266,
+            72.0,
+            24.049999237060547
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -18.975860595703125,
+            -24.049999237060547,
+            0.0
+          ],
+          "max": [
+            27.091312408447266,
+            35.12357711791992,
+            72.0
+          ]
+        },
+        "triangles": 137148,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "北端高塔、分组竖窗、宽檐退台、阶梯顶冠及相连低楔形后部；层段、平面和隐藏面含估计，老永安与跨街桥另列。"
+    }
+  ]
+}

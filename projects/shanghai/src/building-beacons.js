@@ -1,6 +1,6 @@
 const PREFIX='shanghai-building-beacons';
 const ANCHORS=`${PREFIX}-anchors`,LABELS=`${PREFIX}-labels`,LINES=`${PREFIX}-leaders`;
-const LAMP=`${PREFIX}-lamp`,SIGN=`${PREFIX}-sign`,NUMBER=`${PREFIX}-number`;
+const LAMP=`${PREFIX}-lamp`,SIGN=`${PREFIX}-sign`,NUMBER=`${PREFIX}-number`,TIGHT_NUMBER=`${PREFIX}-number-tight`;
 const NAME_SIGNS=[[84,34],[120,34],[176,34],[176,48],[176,62]].map(([width,height],i)=>({id:`${SIGN}-${i}`,width,height}));
 const GROUND={getElevationForLngLat:()=>0};
 const collection=features=>({type:'FeatureCollection',features});
@@ -15,18 +15,21 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
   const margin=8,x0=Math.max(margin,insets.left||0),x1=Math.min(width-margin,width-(insets.right||0));
   const y0=Math.max(margin,insets.top||0),y1=Math.min(height-margin,height-(insets.bottom||0));
   const availableWidth=Math.max(24,x1-x0),availableHeight=Math.max(20,y1-y0);
-  const makeGrid=(compact,gap=compact?2:7)=>{
-    const maxW=compact?24:Math.min(availableWidth,Math.max(...items.map(p=>p.width))),maxH=compact?20:Math.max(...items.map(p=>p.height));
+  const makeGrid=(compact,gap=compact?2:7,compactWidth=24)=>{
+    const maxW=compact?compactWidth:Math.min(availableWidth,Math.max(...items.map(p=>p.width))),maxH=compact?20:Math.max(...items.map(p=>p.height));
     const columns=Math.max(1,Math.floor((availableWidth+gap)/(maxW+gap))),rows=Math.max(1,Math.floor((availableHeight+gap)/(maxH+gap))),slots=[];
     const left=x0+(availableWidth-(columns*maxW+(columns-1)*gap))/2,top=y0+(availableHeight-(rows*maxH+(rows-1)*gap))/2;
     for(let y=0;y<rows;y++)for(let x=0;x<columns;x++)slots.push({x:left+maxW/2+x*(maxW+gap),y:top+maxH/2+y*(maxH+gap)});
     return slots;
   };
-  let compact=false,slots=makeGrid(false);
+  let compact=false,compactWidth=24,slots=makeGrid(false);
   if(slots.length<items.length){compact=true;slots=makeGrid(true);}
   // A tall location card on a 320×568 phone leaves only seven rows. The
   // sprite's transparent border still separates cards when grid gap is zero.
   if(compact&&slots.length<items.length)slots=makeGrid(true,0);
+  // The 71st entry exceeds the old ten-by-seven phone grid. Only then use
+  // the narrower two-digit sprite; keep the 20 px height and 12 px lettering.
+  if(compact&&slots.length<items.length){compactWidth=22;slots=makeGrid(true,0,compactWidth);}
   const used=new Set();
   const placed=new Map();
   for(const item of [...items].sort((a,b)=>a.y-b.y||a.x-b.x||a.id.localeCompare(b.id))){
@@ -35,7 +38,7 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
       const slot=slots[i],distance=(slot.x-item.x)**2+(slot.y-item.y)**2;
       if(distance<cost){cost=distance;best=i;}
     }
-    const cardWidth=compact?24:item.width,cardHeight=compact?20:item.height;
+    const cardWidth=compact?compactWidth:item.width,cardHeight=compact?20:item.height;
     const slot=best>=0?slots[best]:{x:clamp(item.x,x0+cardWidth/2,x1-cardWidth/2),y:clamp(item.y,y0+cardHeight/2,y1-cardHeight/2)};
     if(best>=0)used.add(best);
     placed.set(item.id,{...item,width:cardWidth,height:cardHeight,labelX:slot.x,labelY:slot.y,compact,overlapFallback:best<0});
@@ -82,14 +85,15 @@ function unprojectBeaconSlot(map,point){
 }
 
 function sprite(documentObject,kind,spec){
-  const canvas=documentObject.createElement('canvas');canvas.width=kind==='lamp'?40:kind==='number'?48:spec.width*2;canvas.height=kind==='lamp'?40:kind==='number'?40:spec.height*2;
+  const canvas=documentObject.createElement('canvas'),number=kind==='number'||kind==='number-tight';
+  canvas.width=kind==='lamp'?40:number?(kind==='number-tight'?44:48):spec.width*2;canvas.height=kind==='lamp'||number?40:spec.height*2;
   const ctx=canvas.getContext('2d');if(!ctx)throw Error('灯牌绘图不可用');
   if(kind==='lamp'){
     const glow=ctx.createRadialGradient(20,20,2,20,20,19);glow.addColorStop(0,'#fff4bd');glow.addColorStop(.35,'#ffce6fea');glow.addColorStop(1,'#ffb33900');
     ctx.fillStyle=glow;ctx.fillRect(0,0,40,40);ctx.beginPath();ctx.arc(20,20,6,0,Math.PI*2);ctx.fillStyle='#fff5cf';ctx.fill();
-  }else if(kind==='number'){
+  }else if(number){
     ctx.shadowColor='#ffc776bb';ctx.shadowBlur=3;ctx.fillStyle='#173e42f5';ctx.strokeStyle='#ffd58b';ctx.lineWidth=2;
-    ctx.beginPath();ctx.roundRect(2,2,44,36,8);ctx.fill();ctx.stroke();
+    ctx.beginPath();ctx.roundRect(2,2,canvas.width-4,36,8);ctx.fill();ctx.stroke();
   }else{
     ctx.shadowColor='#ffc776bb';ctx.shadowBlur=6;ctx.fillStyle='#173e42f5';ctx.strokeStyle='#ffd58b';ctx.lineWidth=2;
     ctx.beginPath();ctx.roundRect(2,2,canvas.width-4,canvas.height-4,10);ctx.fill();ctx.stroke();
@@ -114,11 +118,12 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   }
   let destroyed=false,timer=null,layout=[],revision=0;
   const listeners=[],clickEvents=new WeakSet(),sources=[LINES,ANCHORS,LABELS],layers=[`${LINES}-line`,`${ANCHORS}-symbol`,`${LABELS}-symbol`,`${LABELS}-numbers`];
-  const feature=(row,index,compact=false,inViewport=true)=>({type:'Feature',id:row.id,properties:{id:row.id,name:row.name,label:compact?String(index+1):row.name,sign:labelSize(row.name).sign,compact,inViewport,districtId:row.districtId,order:index,number:index+1},geometry:{type:'Point',coordinates:[row.lng,row.lat]}});
+  const feature=(row,index,compact=false,inViewport=true,compactWidth=24)=>({type:'Feature',id:row.id,properties:{id:row.id,name:row.name,label:compact?String(index+1):row.name,sign:labelSize(row.name).sign,numberSprite:compactWidth===22?TIGHT_NUMBER:NUMBER,compact,inViewport,districtId:row.districtId,order:index,number:index+1},geometry:{type:'Point',coordinates:[row.lng,row.lat]}});
   const anchorData=collection(records.map((r,i)=>feature(r,i)));
   map.addImage(LAMP,sprite(documentObject,'lamp'),{pixelRatio:2});
   for(const spec of NAME_SIGNS)map.addImage(spec.id,sprite(documentObject,'sign',spec),{pixelRatio:2});
   map.addImage(NUMBER,sprite(documentObject,'number'),{pixelRatio:2});
+  map.addImage(TIGHT_NUMBER,sprite(documentObject,'number-tight'),{pixelRatio:2});
   map.addSource(LINES,{type:'geojson',data:collection([])});
   map.addSource(ANCHORS,{type:'geojson',data:anchorData});
   map.addSource(LABELS,{type:'geojson',data:anchorData});
@@ -129,7 +134,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
     'text-field':['get','label'],'text-font':['Noto Sans Regular'],'text-size':12,'text-max-width':12,'text-line-height':1.17,'text-offset':[0,0],
     'text-allow-overlap':true,'text-ignore-placement':true,'text-pitch-alignment':'viewport','text-rotation-alignment':'viewport','symbol-sort-key':['get','order']},
     paint:{'text-color':'#fff1cd','text-halo-color':'#173e42','text-halo-width':.5}});
-  map.addLayer({id:layers[3],type:'symbol',source:LABELS,minzoom:0,filter:['all',['get','inViewport'],['get','compact']],layout:{...common,'icon-image':NUMBER,'icon-text-fit':'none',
+  map.addLayer({id:layers[3],type:'symbol',source:LABELS,minzoom:0,filter:['all',['get','inViewport'],['get','compact']],layout:{...common,'icon-image':['get','numberSprite'],'icon-text-fit':'none',
     'text-field':['get','label'],'text-font':['Noto Sans Regular'],'text-size':12,'text-line-height':1,'text-offset':[0,0],'icon-offset':[0,0],
     'text-allow-overlap':true,'text-ignore-placement':true,'text-pitch-alignment':'viewport','text-rotation-alignment':'viewport','symbol-sort-key':['get','order']},
     paint:{'text-color':'#fff1cd','text-halo-color':'#173e42','text-halo-width':.5}});
@@ -171,7 +176,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
       const target=coordinate?[coordinate.lng,coordinate.lat]:[row.lng,row.lat];
       // Keep label geometry at its real anchor. Pixel offsets work above the
       // ground-plane horizon, where unproject would jump behind the camera.
-      labelData.push(feature(row,index,Boolean(point?.compact),Boolean(point)));
+      labelData.push(feature(row,index,Boolean(point?.compact),Boolean(point),point?.width));
       leaders.push({type:'Feature',id:row.id,properties:{id:row.id},geometry:{type:'LineString',coordinates:[[row.lng,row.lat],target]}});
     });
     map.getSource(LABELS)?.setData(collection(labelData));map.getSource(LINES)?.setData(collection(leaders));revision++;map.triggerRepaint();
@@ -197,9 +202,9 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   for(const event of ['moveend','zoomend','resize']){map.on(event,refresh);listeners.push([event,refresh]);}
   refresh();
   return {refresh,hitTest,getState:()=>({count:records.length,ids:[...ids],districtCount:new Set(records.map(r=>r.districtId)).size,zoom:map.getZoom(),revision,
-    labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER],viewportLabelCount:layout.length,
+    labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER,TIGHT_NUMBER],viewportLabelCount:layout.length,
     labelMode:layout.some(p=>p.compact)?'numbers':'names',overlapFallbackCount:layout.filter(p=>p.overlapFallback).length,labelPositions:layout.map(p=>({id:p.id,number:records.findIndex(r=>r.id===p.id)+1,x:p.labelX,y:p.labelY,width:p.width,height:p.height,compact:p.compact}))}),
     destroy(){if(destroyed)return;destroyed=true;if(timer!==null)clearTimeout(timer);for(const args of listeners)map.off(...args);
       for(const id of [...layers].reverse())if(map.getLayer(id))map.removeLayer(id);for(const id of sources)if(map.getSource(id))map.removeSource(id);
-      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
+      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER,TIGHT_NUMBER])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
 }

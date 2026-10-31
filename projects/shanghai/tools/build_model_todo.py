@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[3]
 DATA=ROOT/'projects/shanghai/data/model-todo'
 START='<!-- model-todo:start -->'
 END='<!-- model-todo:end -->'
+DELIVERED_STATUSES={'candidate_delivered','accepted'}
 LABELS={'todo':'待制作','in_progress':'制作中','candidate_delivered':'候选已交付／待核验','accepted':'本条范围已验收','reference_pending':'待查资料','identity_review':'待核对身份与外观','existing_review':'已有模型／待复核'}
 def cell(value):
  return str(value or '—').replace('|','／').replace('\n',' ').replace('\r',' ')
@@ -110,6 +111,64 @@ def map_road_label_lines(prefix):
  lines += [f"[MR-{tile_id.replace('/','-')}]: <{t['source_url']}>" for tile_id,t in tiles.items()]+['']
  return lines
 
+def delivered_model_ids(queue):
+ # A model ID is a delivered exterior/component scope, not a completed heritage
+ # place. Never use names or possible_existing_models to remove discovery leads.
+ jobs={job['id']:job for job in queue['production_queue']}
+ delivered={model_id for model_id,job in jobs.items() if job['status'] in DELIVERED_STATUSES}
+ registered={row['id'] for row in json.loads((ROOT/'projects/shanghai/data/landmarks.json').read_text())}
+ registered.update(row['id'] for row in json.loads((ROOT/'projects/shanghai/data/candidate-city-integrations.json').read_text())['models'])
+ # Preparing a city registration must not complete a production job early.
+ return delivered | (registered-set(jobs))
+
+def completed_scope_reviews(queue,records,delivered_ids):
+ review=json.loads((DATA/'completed-model-scope-review.json').read_text())
+ assert review['schema']=='completed-model-scope-review-v1', 'Unknown completed scope schema'
+ source=review['source_inventory']
+ assert source['path']=='projects/shanghai/data/model-todo/discovered-buildings.json'
+ assert hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest()==source['sha256'], 'Building inventory changed; review completed scope associations'
+ assert source['records']==len(records)
+ known={r['id']:r for r in records};jobs={j['id']:j for j in queue['production_queue']};result={}
+ for entry in review['records']:
+  heritage_id=entry['heritage_id']
+  assert heritage_id in known and heritage_id not in result, 'Unknown or duplicate completed scope heritage ID'
+  assert entry['source_name']==known[heritage_id]['name'], 'Completed scope identity changed'
+  models=entry['completed_models'];model_ids=[m['id'] for m in models]
+  assert models and len(set(model_ids))==len(model_ids)
+  assert set(model_ids).issubset(delivered_ids), 'Completed scope refers to an undelivered model'
+  assert all(m['scope'] for m in models) and entry['evidence']
+  tasks=entry['remaining_tasks'];task_ids=[t['id'] for t in tasks]
+  assert len(set(task_ids))==len(task_ids), 'Duplicate remaining task ID'
+  for task in tasks:
+   assert task['title'] and task['todo']
+   completing_id=task.get('completed_by_model_id')
+   if completing_id:
+    assert completing_id in jobs and jobs[completing_id].get('heritage_record_id')==heritage_id, 'Remaining task model must belong to this heritage record'
+    assert completing_id not in model_ids and task['completed_scope']
+  result[heritage_id]={**entry,'active_tasks':[t for t in tasks if t.get('completed_by_model_id') not in delivered_ids]}
+ return result
+
+def repository_json(relative_path):
+ path=ROOT/relative_path
+ raw=path.read_bytes() if path.exists() else subprocess.check_output(['git','show','HEAD:'+relative_path],cwd=ROOT)
+ return json.loads(raw)
+
+def delivered_source_object_models(delivered_ids):
+ # These are identity associations, not assertions of full source coverage.
+ # Keep building and building_part IDs separate even if their strings coincide.
+ candidates=repository_json('projects/shanghai/data/candidate-city-integrations.json')['models']
+ precise=repository_json('projects/shanghai/data/precise-buildings-v6.json')['landmarks']
+ associations={}
+ sources=[(m['id'],m.get('source_feature_ids',{})) for m in candidates]
+ sources += [(m['id'],{'building':m.get('building_ids',[]),'building_part':m.get('building_part_ids',[])}) for m in precise]
+ for model_id,layers in sources:
+  if model_id not in delivered_ids:continue
+  assert set(layers).issubset({'building','building_part'}), 'Unknown registered source layer'
+  for layer,source_ids in layers.items():
+   assert isinstance(source_ids,list) and all(isinstance(source_id,str) and source_id for source_id in source_ids)
+   for source_id in source_ids:associations.setdefault((layer,source_id),set()).add(model_id)
+ return associations
+
 def build():
  queue=json.loads((DATA/'queue.json').read_text())
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
@@ -129,41 +188,66 @@ def build():
  for j in jobs:
   assert j['status'] in LABELS
   assert j['references'] and j['next_action']
-  if j['status'] in ('candidate_delivered','accepted'):
+  if j['status'] in DELIVERED_STATUSES:
    assert j.get('manifest') and j.get('evidence'), 'Delivery requires assets and checks'
+ delivered_ids=delivered_model_ids(queue)
+ source_models=delivered_source_object_models(delivered_ids)
+ map_keys=[(m['source_layer'],m['id']) for m in maps]
+ assert len(set(map_keys))==len(map_keys), 'Duplicate named source object'
+ active_maps=[m for m in maps if (m['source_layer'],m['id']) not in source_models]
+ associated_map_count=len(maps)-len(active_maps)
+ scope_reviews=completed_scope_reviews(queue,records,delivered_ids)
+ active_records=[r for r in records if r['id'] not in scope_reviews or scope_reviews[r['id']]['active_tasks']]
+ hidden_record_count=len(records)-len(active_records)
+ active_jobs=[job for job in jobs if job['status'] not in DELIVERED_STATUSES]
+ active_existing=[model for model in queue['existing_models'] if model['id'] not in delivered_ids]
+ completed_job_count=len(jobs)-len(active_jobs)
+ archived_existing_count=len(queue['existing_models'])-len(active_existing)
  counts=Counter(r['district'] for r in records)
- lines=['## 模型 TODO：逐条制作与街道资料搜集','',f"更新：{queue['updated']}。以下列出当前已发现的 **{len(records):,} 处建筑／建筑组线索**、**{len(roads):,} 条道路名称线索**、已核实可启动的制作队列及已有模型复核项。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。",'',
+ lines=['## 模型 TODO：逐条制作与街道资料搜集','',f"更新：{queue['updated']}。原始名录收录已发现的 **{len(records):,} 处建筑／建筑组线索**、**{len(roads):,} 条道路名称线索**；下文列出尚未完成的制作任务及调查线索。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。",'',
  '执行顺序：按下表序号逐项核对参考 → 制作近景、远景与可编辑模型 → 几何和网页检查 → 提交主分支 → 更新状态。遇到来源缺口，记录缺口后推进下一项。照片链接只代表发现线索，逐栋制作前还须打开核对身份、视角、年代和使用条件。','',
  '每次仅提交当前新增和修改；允许清理已提交且不再修改的本地模型，提交前核对暂存区没有删除。候选交付与照片核验、城市配准分别记录，已有模型不自动视作全部细节完成。','',
  '维基百科来源表格的署名与CC BY-SA 4.0许可见下方说明；地图身份线索保留OSM／ODbL来源。\n\n[机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)','',
- '### 按顺序执行的模型','','在线预览首次访问若出现托管服务提示，请点击 **Open the page**。','', '| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |','|---:|---|---|---|---|---|']
- for j in sorted(jobs,key=lambda r:r['order']):
+ f'已交付的{completed_job_count}项制作任务与已登记的{archived_existing_count}项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。','',
+ f'另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除{hidden_record_count}条已完成主楼的重复新建任务，当前按区列出 **{len(active_records):,} 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始{len(records):,}条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。','',
+ '### 按顺序执行的模型','']
+ if active_jobs:
+  lines += ['在线查看首次访问若出现托管服务提示，请点击 **Open the page**。','', '| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |','|---:|---|---|---|---|---|']
+ else:
+  lines += ['当前没有尚未交付的制作任务；已完成条目不再占用活动列表。']
+ for j in sorted(active_jobs,key=lambda r:r['order']):
   refs=' · '.join(link(r['label'],r['url']) for r in j['references'])
   name=link(j['name'],j.get('preview'))
   status = '全局已接入／近似定位' if j.get('city_integration') else LABELS[j['status']]
   lines.append(f"| {j['order']} | {name} | {cell(j['district'])}／{cell(j['street'])} | {status} | {model_sizes(j)} | {refs}；{cell(j['next_action'])} |")
- lines+=['','### 已有模型的后续核验','', '以下为当前模型身份清单，供新线索去重和细化时查对；不把历史交付自动改写为本轮验收。','', '<details><summary>展开已有模型及待办</summary>','', '| 模型 | 当前登记 | 后续 TODO |','|---|---|---|']
- for m in queue['existing_models']:
-  status = '已接入全局场景（近似定位）' if m.get('city_integration') else m['status']
-  lines.append(f"| {link(m['name'],m.get('url'))} | {cell(status)} | {cell(m['next_action'])} |")
- lines+=['','</details>','','### 按区列出的全部已发现建筑 TODO','',
- '以下每行是一条待核对线索；已有模型关联仅作为查重提示。成组地址须先拆分到具体楼栋，名录中的建成年代、地址或照片链接本身不足以完成外观建模。新发现的街道资料继续追加，源条目ID保持稳定。','']
+ if active_existing:
+  lines+=['','### 尚待完成的已有模型事项','', '| 模型 | 当前登记 | 后续 TODO |','|---|---|---|']
+  for m in active_existing:
+   lines.append(f"| {link(m['name'],m.get('url'))} | {cell(m['status'])} | {cell(m['next_action'])} |")
+ lines+=['','### 按区列出的未完成建筑与构件 TODO','',
+ '当前范围复核确认已完成的主楼不再重复安排制作；有遗漏构件的条目沿用源ID，只列剩余任务。其余成组地址仍须拆分到具体楼栋，名录年代、地址或照片链接本身不足以完成外观建模，已有模型的可能关联仅作查重提示。','']
  for district in queue['district_order']:
-  group=[r for r in records if r['district']==district]
-  lines += [f'<details><summary>{district}：{len(group)}处线索</summary>','','| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |','|---|---|---|---|---|']
+  group=[r for r in active_records if r['district']==district]
+  lines += [f'<details><summary>{district}：{len(group)}条未完成范围／调查线索</summary>','','| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |','|---|---|---|---|---|']
   for r in group:
+   title=r['name']
    refs=f"[名录][H{r['batch']}]"
    if r.get('photo_url'):refs+=' · 照片待核'
    todo='待核外观／拆栋'
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
-   if r['id'] in identity_by_id:
+   if r['id'] in scope_reviews:
+    tasks=scope_reviews[r['id']]['active_tasks']
+    title='；'.join(t['title'] for t in tasks)
+    todo='；'.join(t['todo'].rstrip('。；') for t in tasks)+'。'
+    refs+=' · '+link('当前完成范围','projects/shanghai/data/model-todo/completed-model-scope-review.json')
+   elif r['id'] in identity_by_id:
     review=identity_by_id[r['id']]
     refs+=' · '+link('库存范围复核','projects/shanghai/data/model-todo/'+identity_report_by_id[r['id']])
     if review['existing_models']:
      todo='已关联单体：'+'、'.join(m['id'] for m in review['existing_models'])+'；'+review['modeled_scope_or_gap']+'；未将整处名录判为完成'
     else:todo+='；'+review['split_review']['note']
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']
-   lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(r['address'])} | {refs} | {cell(todo)} |")
+   lines.append(f"| {cell(r['id'])} | {cell(title)} | {cell(r['address'])} | {refs} | {cell(todo)} |")
   lines+=['','</details>','']
  lines+=['### 道路资料搜集 TODO','','表中“查资料”指逐页读取、查沿街建筑／照片与文字、核对照片并拆为模型任务。道路名可能含历史名称、跨区道路或同名路，尚不是完整市政道路清单。各条原文入口见[街道索引](projects/shanghai/data/model-todo/STREETS.md)。','','<details><summary>展开全部道路名称线索</summary>','','| 道路 | 分类索引给出的区（待核） | TODO |','|---|---|---|']
  for road in roads:
@@ -171,8 +255,10 @@ def build():
  lines+=['','</details>','']
  lines+=official_road_lines('projects/shanghai/data/model-todo/')
  lines+=map_road_label_lines('projects/shanghai/data/model-todo/')
- lines+=['### 既有地图中的具名建筑待查线索','',f'另有{len(maps)}条具名地图要素，尚需查找具体照片或建筑文字资料。可能与上方名录或已有模型重叠，不能相加当作独立建筑总数。[来源和原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。','','<details><summary>展开全部具名地图线索</summary>','','| 源ID | 名称 | 区 | TODO |','|---|---|---|---|']
- for m in maps:
+ lines += [f'### 既有地图中的具名建筑待查线索（剩余{len(active_maps)}条／已关联{associated_map_count}条）','',
+  f'原始{len(maps):,}条具名地图要素中，{associated_map_count}条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余{len(active_maps)}条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。','',
+  '<details><summary>展开剩余具名地图线索</summary>','','| 源ID | 名称 | 区 | TODO |','|---|---|---|---|']
+ for m in active_maps:
   lines.append(f"| {cell(m['id'])} | {cell(m['name'])} | {cell(m['district'])} | 核身份／去重／查建筑参考 |")
  lines+=['','</details>','']
  for batch in sorted({r['batch'] for r in records}):

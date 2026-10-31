@@ -5,7 +5,7 @@
 <!-- model-todo:start -->
 ## 模型 TODO：逐条制作与街道资料搜集
 
-更新：2026-10-30。以下列出当前已发现的 **1,058 处建筑／建筑组线索**、**1,038 条道路名称线索**、已核实可启动的制作队列及已有模型复核项。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。
+更新：2026-10-31。原始名录收录已发现的 **1,058 处建筑／建筑组线索**、**1,038 条道路名称线索**；下文列出尚未完成的制作任务及调查线索。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。
 
 执行顺序：按下表序号逐项核对参考 → 制作近景、远景与可编辑模型 → 几何和网页检查 → 提交主分支 → 更新状态。遇到来源缺口，记录缺口后推进下一项。照片链接只代表发现线索，逐栋制作前还须打开核对身份、视角、年代和使用条件。
 
@@ -15,114 +15,32 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
+已交付的25项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+
+另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除7条已完成主楼的重复新建任务，当前按区列出 **1,051 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
+
 ### 按顺序执行的模型
 
-在线预览首次访问若出现托管服务提示，请点击 **Open the page**。
+在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 1 | [崇明学宫戟门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 3.95 MB／Blender 5.14 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Pan_pool_and_Ji_Gate_of_the_Chongming_Confucian_Temple.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 2 | [崇明学宫棂星门中央石门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.65 MB／Blender 0.54 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Lingxing_Gate_of_the_Chongming_Confucian_Temple.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 3 | [崇明学宫照片左侧门（历史石框参照）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-left-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.23 MB／Blender 0.26 MB | [博物馆文字][MTD-f7f0c208] · [2021图文／棂星门照片](<https://m.thepaper.cn/newsDetail_forward_11469862>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 4 | [崇明学宫照片右侧门（1990年代参照）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-right-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.023 MB／Blender 0.11 MB | [博物馆文字][MTD-f7f0c208] · [1990年代照片（2021文章）](<https://imagepphcloud.thepaper.cn/pph/image/117/259/19.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 5 | [崇明学宫名宦祠](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minghuan-shrine&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据][MTD-955a0115] · [单体身份审查][MTD-e31078ff]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 6 | [崇明学宫乡贤祠](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xiangxian-shrine&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据][MTD-955a0115] · [单体身份审查][MTD-e31078ff]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 7 | [崇明学宫东庑](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-wing&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查][MTD-613cf4e7]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 8 | [崇明学宫西庑](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-wing&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查][MTD-613cf4e7]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 9 | [崇明学宫东官厅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-guanting&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.75 MB／Blender 1.06 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查][MTD-86cf0168]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 10 | [崇明学宫西官厅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-guanting&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.73 MB／Blender 0.91 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查][MTD-86cf0168]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 11 | [崇明学宫西牌坊（题名面待核）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xuehai-paifang&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查][MTD-7d653de3]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 12 | [崇明学宫东牌坊（题名面待核）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查][MTD-7d653de3]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 13 | [崇明学宫儒学大门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.74 MB／Blender 1.05 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 14 | [崇明学宫仪门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.31 MB／Blender 1.90 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与遮挡审查](<projects/shanghai/data/model-todo/chongming-yimen-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 15 | [崇明学宫明伦堂](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.29 MB／Blender 1.79 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-minglun-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 16 | [崇明学宫碑廊](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-stele-corridors&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 3.45 MB／Blender 8.59 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-stele-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 17 | [上海大厦／百老汇大厦历史主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview>) | 虹口区／北苏州路（2号／20号门牌记载待核） | 全局已接入／近似定位 | 网页 3.26 MB／Blender 5.03 MB | [地方志文字](<https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html>) · [2014年外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG>) · [来源与冲突审查][MTD-3e64e2dd] · [地图轮廓与部件关系][MTD-784b2fe4]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 18 | [俄罗斯领事馆历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview>) | 虹口区／黄浦路20号 | 全局已接入／近似定位 | 网页 1.00 MB／Blender 1.69 MB | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查][MTD-3e64e2dd] · [地图轮廓与部件关系][MTD-784b2fe4]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 19 | [国际饭店历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview>) | 黄浦区／南京西路170号 | 全局已接入／近似定位 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 20 | [上海跑马总会历史东楼与主钟塔](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview>) | 黄浦区／南京西路325号 | 全局已接入／近似定位 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 21 | [大光明大戏院临街入口与灯塔局部](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview>) | 黄浦区／南京西路216号 | 全局已接入／近似定位 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 22 | [金门饭店／华安大楼历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview>) | 黄浦区／南京西路104号 | 全局已接入／近似定位 | 网页 1.64 MB／Blender 2.71 MB | [官方文字与尺寸](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html>) · [已核2013外观照片](<https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG>) · [来源与冲突审查](<projects/shanghai/data/audit/pacific-hotel-v1/documentary-review.json>) · [地图外包与北楼限制](<projects/shanghai/data/audit/pacific-hotel-v1/footprint-review.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 23 | [先施公司历史主楼与摩星塔外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview>) | 黄浦区／南京东路690号 | 全局已接入／近似定位 | 网页 3.65 MB／Blender 6.30 MB | [官方建筑志](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284500>) · [已核2010外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_sincere_building.jpg>) · [已核2013摩星塔照片](<https://commons.wikimedia.org/wiki/File:Sincere_Department_Store.JPG>) · [来源与照片审查](<projects/shanghai/source/precise/huangpu-sincere-company/source-register.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 24 | [老永安公司主楼与屋顶塔楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview>) | 黄浦区／南京东路635号 | 全局已接入／近似定位 | 网页 4.91 MB／Blender 8.68 MB | [官方建筑志](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284501>) · [已核2025外观照片](<https://commons.wikimedia.org/w/index.php?title=File:Wing_On_Department_Store_20251126_%28II%29.jpg&oldid=1248639623>) · [来源与照片审查](<projects/shanghai/source/precise/huangpu-old-wing-on-company/source-register.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 26 | 新新公司历史主楼（第一食品商店） | 黄浦区／南京东路720号 | 待查资料 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [建筑资料线索（待核）](<https://zh.wikipedia.org/wiki/%E6%96%B0%E6%96%B0%E7%99%BE%E8%B2%A8%E5%85%AC%E5%8F%B8>) · [照片线索（待核）](<https://zh.wikipedia.org/wiki/File:%E6%96%B0%E6%96%B0%E7%99%BE%E8%B4%A7.JPG>)；按名录顺序接续：先实际核验照片、楼栋范围与尺寸文字，再制作近远景及可编辑模型并接入index主地图。 |
 
-### 已有模型的后续核验
+### 按区列出的未完成建筑与构件 TODO
 
-以下为当前模型身份清单，供新线索去重和细化时查对；不把历史交付自动改写为本轮验收。
+当前范围复核确认已完成的主楼不再重复安排制作；有遗漏构件的条目沿用源ID，只列剩余任务。其余成组地址仍须拆分到具体楼栋，名录年代、地址或照片链接本身不足以完成外观建模，已有模型的可能关联仅作查重提示。
 
-<details><summary>展开已有模型及待办</summary>
+<details><summary>黄浦区：284条未完成范围／调查线索</summary>
 
-| 模型 | 当前登记 | 后续 TODO |
-|---|---|---|
-| [上海孙中山故居主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [徐家汇藏书楼南楼（原神父楼）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [金山卫瓮城城楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [巴金旧居主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [邬达克旧居（番禺路129号）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [武康大楼主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [奉贤博物馆](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [哥伦比亚乡村俱乐部主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [宝山孔庙大成殿](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [杨浦区图书馆总馆（原上海市图书馆）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [四行仓库（含毗邻大陆银行仓库）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [包玉刚图书馆](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=minhang-baoyugang-library&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海汽车博物馆](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jiading-shanghai-auto-museum&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [真如寺大殿（正殿）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [兴圣教寺塔（松江方塔）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=songjiang-fangta-pagoda&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [龙华塔](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [鸿德堂 · 多伦路59号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [江南第一茶楼 · 北大街208–212号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=qingpu-beidajie-208-212&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [徐汇武康路210号二层住宅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [徐汇武康路129号二层住宅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [北大街222号民居（2022年鹤龙美术馆使用状态）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=qingpu-beidajie-222&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海总会](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund02&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [有利大楼 · 外滩3号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [日清大楼 · 外滩5号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [中国通商银行旧址 · 外滩6号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [大北电报公司大楼 · 外滩7号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [轮船招商局大楼 · 外滩9号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund09&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [汇丰银行大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund12&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [江海关大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=customs-house&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [交通银行旧址 · 外滩14号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund14&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [华俄道胜银行大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund15&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [字林西报大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund17&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [麦加利银行 · 外滩18号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [和平饭店南楼 · 汇中饭店](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [和平饭店北楼 · 沙逊大厦](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [中国银行大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [金茂大厦](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jin-mao&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [东方明珠电视塔](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=oriental-pearl&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海中心大厦](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=shanghai-tower&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海环球金融中心](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=swfc&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [崇明学宫大成殿](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [崇明学宫泮池与登云桥](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-pan-pool-bridge&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [崇明学宫尊经阁](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [上海鲁迅故居正立面与院门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [上海宋庆龄故居主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [崇明学宫崇圣祠正殿](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-
-</details>
-
-### 按区列出的全部已发现建筑 TODO
-
-以下每行是一条待核对线索；已有模型关联仅作为查重提示。成组地址须先拆分到具体楼栋，名录中的建成年代、地址或照片链接本身不足以完成外观建模。新发现的街道资料继续追加，源条目ID保持稳定。
-
-<details><summary>黄浦区：290处线索</summary>
-
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-001 | 汇丰银行大楼 | 中山东一路12号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund12；已有柱廊、穹顶、530带窗墙单元，右翼六窗照片采样；侧后细节、垂直尺寸含推定，室内及完整历史装饰未测绘。；未将整处名录判为完成 |
-| sh-historic-b1-002 | 沙逊大厦、华懋饭店 | 中山东一路20号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund20；已建北楼、退台、铜皮金字塔及三个内庭空洞；背面、内庭窗列和设备围护证据较弱。；未将整处名录判为完成 |
-| sh-historic-b1-003 | 中国银行 | 中山东一路23号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund23；模型含真实东塔及独立轮廓的西翼；西翼按文献四层解释，与OSM九层冲突，低置信度；不能因主楼已建而判全部翼部完成。；未将整处名录判为完成 |
-| sh-historic-b1-004 | 江海关 | 中山东一路13号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：customs-house；仅主前楼、中央钟塔及四角亭，明确排除西侧独立后翼OSM380340023和380339914；厚度、背立面和细部仍为推定。；未将整处名录判为完成 |
-| sh-historic-b1-006 | 上海总会 | 中山东一路2号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund02；已有上海总会历史楼外观，柱廊、阁楼拱窗、两座风亭；不代表现华尔道夫酒店后方现代建筑也已制作。；未将整处名录判为完成 |
-| sh-historic-b1-007 | 汇中饭店 | 中山东一路19号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 已关联单体：bund19；六层主楼、砖石立面、深拱口、角部八角灯亭及铜顶已建；屋顶附属高度和未见侧后细节推定。；未将整处名录判为完成 |
-| sh-historic-b1-009 | 国际饭店 | 南京西路170号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；确认历史塔楼/裙房边界及现状版本后建模。 |
-| sh-historic-b1-010 | 跑马总会 | 南京西路325号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先厘清会所主楼、钟塔及相接附属部分；若已有分离轮廓需按构件建条目。 |
-| sh-historic-b1-011 | 大光明大戏院 | 南京西路216号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；不是只做招牌或门面就判整栋完成。 |
-| sh-historic-b1-012 | 华安人寿保险公司、金门饭店 | 南京西路104号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定建筑本体及时代，只有实证多栋才拆。 |
-| sh-historic-b1-013 | 先施公司 | 南京东路690号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先确定百货、旅馆和屋顶塔楼是否同一连体建筑、不同体量或后建增建。 |
-| sh-historic-b1-014 | 老永安公司 / 新永安公司 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；拆sh-historic-b1-014-old：老永安公司/南京东路635号；sh-historic-b1-014-new：新永安公司/南京东路627号。 |
+| sh-historic-b1-004 | 海关西侧独立后翼 | 中山东一路13号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待制作西侧后翼OSM380340023、380339914，先核外观与栋别；主前楼、钟塔及四角亭已完成，不重列。 |
+| sh-historic-b1-009 | 国际饭店后期后楼 | 南京西路170号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核后期3–9层后楼的独立范围、时期与外观后制作；不重复历史前塔与相连主体。 |
+| sh-historic-b1-010 | 跑马总会西楼；跑马总会副钟塔与庭院连接体 | 南京西路325号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核并制作西楼，保留文献三层的范围口径；待绑定副钟塔和庭院连接体的照片及位置后制作；不重复东楼及已建主钟塔。 |
+| sh-historic-b1-011 | 大光明后部观众厅与休息厅；大光明完整商铺带 | 南京西路216号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待制作后部观众厅、转向的门厅／影厅关系及腰果形休息厅；先核平面与外观资料；待核完整商铺带归属后制作；不将同框咖啡店楼或后方高楼自动并入。 |
+| sh-historic-b1-012 | 金门饭店北楼 | 南京西路104号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核酒店北楼的身份、边界和资料口径后制作；不按历史主楼别名重复建楼，也不直接套用未绑定的招标尺寸。 |
+| sh-historic-b1-014 | 新老永安之间的跨街桥 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核两座封闭跨街桥的范围与外观后制作；跨街桥不并入两栋主楼，新楼交付后仅保留此项。 |
 | sh-historic-b1-015 | 新新公司 | 南京东路720号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先确认百货主体、屋顶突出构件及后期附加体。 |
 | sh-historic-b1-016 | 大新公司 | 南京东路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；先锁定1934年历史大楼，再决定是否单列相接新体。 |
 | sh-historic-b1-017 | 华懋公寓 | 长乐路109号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；只制作锦北楼历史单体；不能代表整个锦江饭店，也不能与018合并为一栋。 |
@@ -404,9 +322,9 @@
 
 </details>
 
-<details><summary>徐汇区：253处线索</summary>
+<details><summary>徐汇区：253条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b1-026 | 徐家汇天主堂 | 蒲西路158号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；蒲西路158号教堂；不是既有徐家汇藏书楼南楼／原神父楼，主堂与附属体边界待核。 |
 | sh-historic-b1-028 | 国际礼拜堂 | 衡山路58号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；衡山路58号国际礼拜堂，不是多伦路59号鸿德堂。 |
@@ -664,9 +582,9 @@
 
 </details>
 
-<details><summary>长宁区：121处线索</summary>
+<details><summary>长宁区：121条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b1-030 | 沙逊别墅 | 虹桥路2409号 | [名录][H1] · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录限定龙柏饭店1号楼；不是外滩20号沙逊大厦／和平饭店北楼，不扩大为全部饭店。 |
 | sh-historic-b1-034 | 王伯群住宅 | 愚园路1136弄31号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；愚园路1136弄31号，现名长宁区少年宫；与第29条中国福利会少年宫分别登记。 |
@@ -792,9 +710,9 @@
 
 </details>
 
-<details><summary>静安区：159处线索</summary>
+<details><summary>静安区：159条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b1-024 | 宏恩医院 | 延安西路221号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录指华东医院干部病房楼；先确认历史楼栋，不用整个华东医院院区替代。 |
 | sh-historic-b1-029 | 嘉道理爵士住宅 | 延安西路64号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录现名中国福利会少年宫；与第34条长宁区少年宫不同，先确认历史住宅主体。 |
@@ -958,9 +876,9 @@
 
 </details>
 
-<details><summary>普陀区：12处线索</summary>
+<details><summary>普陀区：12条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b2-080 | 玉佛寺 | 安远路170号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-166 | 中央造币厂 | 光复西路17号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -977,12 +895,11 @@
 
 </details>
 
-<details><summary>虹口区：98处线索</summary>
+<details><summary>虹口区：97条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-005 | 百老汇大厦 | 北苏州路2号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；两个地图UUID不能算两栋；先核照片年代、主楼与裙房关系，再形成一个主楼及必要部件范围。 |
-| sh-historic-b1-008 | 苏联领事馆 | 黄浦路20号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；确定历史主楼边界，馆区附属楼、院落及边界另核。 |
+| sh-historic-b1-008 | 领事馆右侧封闭凸窗；领事馆园内六角亭 | 黄浦路20号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待细化照片右侧封闭凸窗／阳台的独立体量，替换现有简化墙面；待核园内六角凉亭的身份、位置及外观后制作；主楼塔部不代替凉亭。 |
 | sh-historic-b1-023 | 上海邮政总局 | 北苏州路276号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；北苏州路276号历史邮政总局楼；不与既有大北电报公司或黄浦邮政储蓄银行楼混同。 |
 | sh-historic-b1-054 | 多伦路250号住宅 | 多伦路250号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-003 | 上海新亚大酒店 | 天潼路422号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -1082,9 +999,9 @@
 
 </details>
 
-<details><summary>杨浦区：45处线索</summary>
+<details><summary>杨浦区：45条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-fc8ac09b] | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
 | sh-historic-b1-021 | 上海市体育场 | 国和路346号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。 |
@@ -1134,26 +1051,26 @@
 
 </details>
 
-<details><summary>闵行区：1处线索</summary>
+<details><summary>闵行区：1条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b3-160 | 天主堂 | 秀文路485弄50号 | [名录][H3] · 照片待核 | 待核外观／拆栋 |
 
 </details>
 
-<details><summary>宝山区：2处线索</summary>
+<details><summary>宝山区：2条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b3-161 | 海底电缆登陆局房 | 逸仙路3901号 | [名录][H3] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-bs-j-001-v | 花神堂 | 罗店赵巷街136号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
 
 </details>
 
-<details><summary>嘉定区：4处线索</summary>
+<details><summary>嘉定区：4条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b5-jd-j-001-v | 汇龙潭公园 | 州桥沙霞路68号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-jd-j-002-v | 天主堂 | 西门中下塘街99号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
@@ -1162,9 +1079,9 @@
 
 </details>
 
-<details><summary>浦东新区：49处线索</summary>
+<details><summary>浦东新区：49条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b3-158 | 露德圣母堂 | 浦东唐墓桥唐镇街40号 | [名录][H3] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b3-159 | 住宅 | 钱仓路316号 | [名录][H3] · 照片待核 | 待核外观／拆栋 |
@@ -1218,9 +1135,9 @@
 
 </details>
 
-<details><summary>金山区：3处线索</summary>
+<details><summary>金山区：3条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b5-js-j-001-v | 住宅 | 枫泾生产街70号、2油车弄2号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-js-j-002-v | 三百园 | 枫泾和平街49号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
@@ -1228,9 +1145,9 @@
 
 </details>
 
-<details><summary>松江区：4处线索</summary>
+<details><summary>松江区：4条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b1-027 | 佘山天主教堂 | 西佘山 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；确认西佘山主堂范围；山体、道路和其他宗教附属物单独登记，不以整山作为一栋。 |
 | sh-historic-b5-sj-j-001-v | 杜氏宅 | 仓城秀南街8号 | [名录][H5] | 待核外观／拆栋 |
@@ -1239,9 +1156,9 @@
 
 </details>
 
-<details><summary>青浦区：13处线索</summary>
+<details><summary>青浦区：13条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b5-qp-j-001-v | 仲宅 | 朱家角古镇胜利街239弄7号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-qp-j-002-v | 朱家角天主堂 | 朱家角古镇漕河街27号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
@@ -1259,18 +1176,18 @@
 
 </details>
 
-<details><summary>奉贤区：2处线索</summary>
+<details><summary>奉贤区：2条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b5-fx-j-001-v | 沿街商铺民宅 | 庄行东街8-22、26-34、38-50、17-43号 | [名录][H5] | 待核外观／拆栋 |
 | sh-historic-b5-fx-j-002-v | 住宅 | 青村镇中街18弄2-3号、10弄9-12号 | [名录][H5] | 待核外观／拆栋 |
 
 </details>
 
-<details><summary>崇明区：2处线索</summary>
+<details><summary>崇明区：2条未完成范围／调查线索</summary>
 
-| ID | 模型／建筑组 | 地址／街道线索 | 参考 | TODO |
+| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
 | sh-historic-b3-162 | 黄家花园 | 崇明区城桥镇南门港街26号 | [名录][H3] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-cm-j-001-v | 倪葆生住宅 | 财贸村石桥834号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
@@ -2740,11 +2657,11 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索
+### 既有地图中的具名建筑待查线索（剩余1020条／已关联16条）
 
-另有1036条具名地图要素，尚需查找具体照片或建筑文字资料。可能与上方名录或已有模型重叠，不能相加当作独立建筑总数。[来源和原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，16条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1020条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
-<details><summary>展开全部具名地图线索</summary>
+<details><summary>展开剩余具名地图线索</summary>
 
 | 源ID | 名称 | 区 | TODO |
 |---|---|---|---|
@@ -2773,7 +2690,6 @@
 | 2ee698ea-5ee1-4038-922b-6826a8ec12dd | THE LOUNGE | 静安区 | 核身份／去重／查建筑参考 |
 | 30d9ee95-94ca-4e73-be00-b5d7e2bc719c | 河滨豪园 | 静安区 | 核身份／去重／查建筑参考 |
 | 310e0610-e91e-4018-87de-b3ad69507909 | 哈密大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 352b1f46-ab36-4649-9caf-9358ad6abdfc | 四行仓库 | 静安区 | 核身份／去重／查建筑参考 |
 | 36202e77-26e3-4ce2-9b1f-138cfd1b078b | Fotografiska影像艺术中心 | 静安区 | 核身份／去重／查建筑参考 |
 | 37b96681-565d-4d3d-9c00-729d804789f2 | 滇北大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 3a0080f4-3920-4f96-98f7-a571a3c038f4 | 上海长江电气集团等 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -2785,7 +2701,6 @@
 | 461b717b-6418-4f8b-a70d-eba8612d18ee | 上海电气输配电集团有限公司 | 静安区 | 核身份／去重／查建筑参考 |
 | 4621cb59-fd06-4b17-85b4-07457e63a4f1 | 协进大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 4973d67d-e8ce-4ff8-8981-fd60d2940d55 | 上海文学馆 | 虹口区 | 核身份／去重／查建筑参考 |
-| 49f3a80d-d5c3-421a-904a-e17974063f73 | 俄罗斯领事馆 | 虹口区 | 核身份／去重／查建筑参考 |
 | 4afd69cf-1965-4462-bef3-6524dbc1bdf1 | 上海联富服饰市场 | 静安区 | 核身份／去重／查建筑参考 |
 | 4e86d8d8-616b-49ae-bf4f-09313f2dfc81 | 上海医疗器械九厂 | 静安区 | 核身份／去重／查建筑参考 |
 | 4fd02c63-6486-42fc-bc72-b7c0f3ac845b | 3幢 | 静安区 | 核身份／去重／查建筑参考 |
@@ -2814,7 +2729,6 @@
 | 8a681f8d-bf8a-4327-916f-87af87f8795d | 自来大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 8a9135f1-9dec-4ed3-8849-b52fe05f5a31 | 中国银行大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 8b8a2f03-d61a-41c5-ac83-6c5d9b99cd34 | 宝矿国际大厦 | 虹口区 | 核身份／去重／查建筑参考 |
-| 8dff7d94-53d9-406e-b208-dd8562bbdafe | 上海大厦 | 虹口区 | 核身份／去重／查建筑参考 |
 | 8eb321c8-1d13-4aa0-8c21-eef3f1931506 | 瑞康公寓 | 虹口区 | 核身份／去重／查建筑参考 |
 | 93f0f1eb-d4e9-4014-82de-94bdf50e442b | 女青年会大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 95d18627-09ba-4cd0-aba0-353fd548b60b | 利通广场 | 虹口区 | 核身份／去重／查建筑参考 |
@@ -2878,7 +2792,6 @@
 | fcc2def2-cd54-4398-a9a7-935c19618845 | 上海建筑材料集团总公司 | 黄浦区 | 核身份／去重／查建筑参考 |
 | fd512c78-d878-496e-9f3e-ff3e03a4a155 | 新亚大酒店 | 虹口区 | 核身份／去重／查建筑参考 |
 | ff43ab85-6d00-498c-89b3-5e12b95cdf14 | 胜利电影院 | 虹口区 | 核身份／去重／查建筑参考 |
-| 59962d89-0a7a-3c8b-823f-8f12a3d2c3fa | 上海大厦 | 虹口区 | 核身份／去重／查建筑参考 |
 | fe059296-0a9a-378b-b347-5bb336741e38 | Sassoon House | 黄浦区 | 核身份／去重／查建筑参考 |
 | 016935a4-7a72-483c-9bb2-b164b858ba51 | 世界贸易大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 0547f379-67e3-4ebf-8f31-55f967e839ce | 爱建金融大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -2946,7 +2859,6 @@
 | 4635adb8-8df4-449e-9def-06a57c1c89cd | 上海城市运动中心 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 46618ebd-527a-4470-99dc-2474107cf3d3 | 应氏大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 468b51d2-4449-4927-9b61-b7e724062a09 | 申远大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 480cfef1-55ad-4830-9cfc-b41459f0c76b | 外滩五号 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 49738723-d541-4619-a348-c3fbc36ca498 | 南京大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 49d450cc-dba8-4b24-b42d-b93cb18e69ac | 懿德大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 4a964f2f-7ab7-46ec-a0b8-9b5f6db3e115 | 中汇大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -2962,16 +2874,12 @@
 | 58f8543a-edc2-488f-8d17-394477bf048d | 海洋大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 5b2a13f4-45ad-4e25-9539-49c28dca2d6d | 353广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 5c45fe01-6159-44a9-9093-397171209910 | Wulixiang Shikumen Museum | 黄浦区 | 核身份／去重／查建筑参考 |
-| 5d94b317-649b-4e66-8805-639274d488c7 | 永安百货 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 5ea5260a-6dba-401d-a64a-cacff960e385 | 中国农业银行 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 5f42377a-a32c-4733-90c5-f505ae881c62 | 来福士广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 5f5c0416-5a99-4b30-90c0-1914b2f1ac41 | 浙江电影院南配楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 5f835061-821c-4cc9-8115-9ed12dc37b73 | 上海医药工业有限公司 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 604f501f-6287-4431-a87b-d7573507bb1c | 华东电力大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 61b83abc-0a40-45e9-9ae4-0fc9436b6d77 | 盘谷银行 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 62a1bf1d-66ef-404e-ac1b-5d92d22fe43c | 中福大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 6312d66f-e7fa-43b1-a1cc-63f920d1f53d | 时装公司 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 64ff37d4-ed69-464b-af4c-3ba55de36d38 | 国际饭店 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 6552a7f5-a7d1-4767-b9f1-8f80a5f329cd | 上海市生产服务合作联社等 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 662037e2-ff2c-4bc6-98bb-65f37dda7aea | 福建中路195弄 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 68c9bc88-dcc6-4585-89b6-10ab884703f2 | 培文公寓 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -2982,9 +2890,7 @@
 | 6ee4ebd0-5b0f-48a6-b9ea-c2fcc81b6844 | 华鑫海欣大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 6f106e6e-ed46-4921-9927-8c38ac1e896d | 大生大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 6f4fdeec-6dff-49a9-be52-a4a324392f6e | 华尔道夫酒店 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 708d0e95-d551-414d-a3be-897a9fe2fb6b | 七重天大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 71a589d2-9c69-4d9f-bdb4-2034b86e2d60 | 中国民生银行外滩支行 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 71ea5a0f-d28f-4638-95fe-b35a8db094d9 | 外滩六号 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 71facd53-ef17-498c-96e8-f65e0b6ad7e0 | 天安中心 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 723f10e8-20a0-490f-99ad-31b0904442a6 | 上海豫园万丽酒店 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 74aae51e-65bf-4083-8bff-da7f7e4d2ce0 | 悦宾楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3016,7 +2922,6 @@
 | 873da1cc-7533-4722-8395-50f90ceaa88c | 世纪出版大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 87849220-596a-4114-b1a3-2ae475afb594 | 美伦大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 878ed461-b518-461a-b739-7ff5f59147bd | 和平饭店南楼 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 8983573a-38e4-4e86-8de3-62445d5305be | 轮船招商局大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 8a05af63-8e2f-4664-bdd5-99c9e5c2f189 | 新黄浦金融大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 8acdc85f-0a56-40c5-b076-6dc99646e13c | 中国工商银行 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 8b66489d-f255-46ba-858b-714bad993239 | 上海市仓储行业协会 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3028,9 +2933,7 @@
 | 907ae0e6-cdee-4004-a43b-34817152424c | 黄浦体育馆 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 90d69264-e9f4-4458-a876-d912d1b28b22 | 明天广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 90e353fe-0433-456f-b077-33ab2159f2b4 | 元芳弄 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 930b1722-187d-4727-ad8b-303698ad37ee | 上海市总工会 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 93519dcb-da30-406f-b22b-9e0a0b4b702e | 无限极荟 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 9402a15a-c2dc-478e-87b5-3236bc4c0b8b | ROOF 325 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 943bfadf-d6df-48aa-9801-4d2c1ba64393 | 上投大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 94f6099d-f768-48f9-8e1b-8b2d3ac764ad | 港泰广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 95b1ebaf-7393-4955-9f2b-0caf467f5d5e | 港陆黄浦中心 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3055,14 +2958,12 @@
 | a601284f-259c-4286-8611-faec291b6688 | 上海市机要通信局 | 黄浦区 | 核身份／去重／查建筑参考 |
 | a8f5aeb4-b578-4aab-96d8-06ba08971a06 | 中国邮政储蓄银行上海分行 | 黄浦区 | 核身份／去重／查建筑参考 |
 | aa1ea8eb-a9ca-4c86-a8e0-111777a5e4d9 | 巴卡拉西苑 | 黄浦区 | 核身份／去重／查建筑参考 |
-| ac43e95f-78ed-4252-b0d5-4f6c48669226 | 金门大酒店 | 黄浦区 | 核身份／去重／查建筑参考 |
 | af2c5877-9530-4a28-93dd-c72d34435fa1 | 圣德娜商厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b0075379-d993-43c1-85a7-2e0087caad17 | 维拉斯酒店 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b057bd05-e445-4d1b-9412-d50ae9944b9d | 小世界会所 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b0e2ef3a-a4e6-423c-b992-821c8d73840b | 手表七厂办公楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b45f6864-df86-4c81-a02a-0c51ee514b31 | 新黄浦酒店公寓 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b538126a-4c24-4580-bb40-c1413c5ae04b | 中国太平洋保险公司 | 黄浦区 | 核身份／去重／查建筑参考 |
-| b6b8b7dd-5999-4d4d-b1d1-29e282f7a73d | 大光明电影院 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b81a9772-e859-45fa-9fcf-5e58b8a42229 | 康绥公寓 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b91c5db4-2119-41bc-b39d-4ab885ee44df | 中国电信 | 黄浦区 | 核身份／去重／查建筑参考 |
 | bad5eea5-4f12-4b5d-8174-fbc92d9882be | Modu Club | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3793,21 +3694,8 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-affe1af2]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm>
-[MTD-f7f0c208]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_1.htm#2>
-[MTD-c421d8ae]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_2.htm>
-[MTD-e9926259]: <https://web.archive.org/web/20100102053154id_/http://www.cmbwg.com/page3_3.htm>
-[MTD-955a0115]: <https://www.shcm.gov.cn/zjcm/006008/20210423/8c183cc2-f5a9-4d52-b152-9d72ec7eb5a7.html>
-[MTD-86cf0168]: <projects/shanghai/data/model-todo/chongming-guanting-reference-review.json>
-[MTD-3e72f439]: <projects/shanghai/data/model-todo/chongming-later-buildings-reference-review.json>
-[MTD-7d653de3]: <projects/shanghai/data/model-todo/chongming-paifang-reference-review.json>
-[MTD-e31078ff]: <projects/shanghai/data/model-todo/chongming-shrines-reference-review.json>
-[MTD-613cf4e7]: <projects/shanghai/data/model-todo/chongming-wings-reference-review.json>
+[MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-fc8ac09b]: <projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>
-[MTD-0e2503d2]: <projects/shanghai/data/model-todo/heritage-following-building-references.json>
-[MTD-ae734ade]: <projects/shanghai/data/model-todo/heritage-following-footprint-review.json>
-[MTD-3e64e2dd]: <projects/shanghai/data/model-todo/heritage-next-building-references.json>
-[MTD-784b2fe4]: <projects/shanghai/data/model-todo/heritage-next-footprint-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
 
@@ -3815,7 +3703,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；70处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中30件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；71处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中31件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3823,7 +3711,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增30处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增31处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3845,10 +3733,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，70处建筑与构件模型入口（40处既有＋30处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增30处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，71处建筑与构件模型入口（40处既有＋31处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增31处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（22处）
+### 黄浦区（23处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3876,6 +3764,7 @@
 | 金门饭店／华安大楼历史主楼外观 | 2026-10-30 20:53:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview) |
 | 先施公司历史主楼与摩星塔外观 | 2026-10-30 21:46:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) |
 | 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) |
+| 新永安大楼主楼与后部外观 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) |
 
 ### 徐汇区（7处）
 

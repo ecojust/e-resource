@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[3]
 PROJECT = ROOT / "projects/shanghai"
 AUDIT = PROJECT / "data/audit/global-model-integration-v1"
 INVENTORY = AUDIT / "inventory.json"
+CURRENT_INVENTORY = PROJECT / "data/global-models/candidate-inventory.json"
 CATALOG = PROJECT / "data/candidate-city-integrations.json"
 DISTRICTS = {"chongming": ("310151", "崇明区"), "hongkou": ("310109", "虹口区"),
              "huangpu": ("310101", "黄浦区"), "xuhui": ("310104", "徐汇区")}
@@ -37,7 +38,17 @@ def git(*args):
 def read_file(path, revision):
     path = Path(path)
     local = ROOT / path
-    return local.read_bytes() if local.is_file() else git("show", f"{revision}:{path.as_posix()}")
+    if local.is_file():
+        return local.read_bytes()
+    # Incremental deliveries are checked before commit. Once published, sparse
+    # checkouts can recover their bytes from HEAD even though the immutable
+    # historical inventory's revision predates the new building.
+    for ref in dict.fromkeys((revision, "HEAD")):
+        try:
+            return git("show", f"{ref}:{path.as_posix()}")
+        except subprocess.CalledProcessError:
+            pass
+    raise FileNotFoundError(path)
 
 
 def checked_asset(path, expected, revision):
@@ -108,6 +119,46 @@ def raw_geometry(blob):
             "scene_meshes": len(active), "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"}
 
 
+def verify_manifest(path, revision, existing_ids, viewers, jobs, manifest_blob=None):
+    path = Path(path)
+    manifest_blob = read_file(path, revision) if manifest_blob is None else manifest_blob
+    manifest = json.loads(manifest_blob)
+    ident = manifest["id"]
+    assert ident == path.parent.name
+    assets, geometry = {}, None
+    verified_files, verified_bytes = 0, 0
+    assert all(not Path(asset["file"]).is_absolute() and ".." not in Path(asset["file"]).parts
+               for asset in manifest["assets"].values()), "Asset file must remain inside its delivery directory"
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        blobs = {variant: pool.submit(checked_asset, path.parent / asset["file"], asset, revision)
+                 for variant, asset in manifest["assets"].items()}
+    for variant, asset in manifest["assets"].items():
+        file = path.parent / asset["file"]
+        blob = blobs[variant].result()
+        verified_files += 1
+        verified_bytes += len(blob)
+        assets["web" if variant == "full" else variant] = {**asset, "file": file.relative_to("projects/shanghai").as_posix()}
+        if variant == "raw":
+            geometry = raw_geometry(blob)
+            assert geometry["triangles"] == asset["triangles"]
+    assert geometry and set(assets) == {"raw", "native", "web", "lod"}
+    viewer, job = viewers.get(ident, {}), jobs.get(ident, {})
+    page = viewer.get("page") or job.get("preview_source") or manifest.get("viewer_page") or job.get("url")
+    assert page, f"No individual page metadata for {ident}"
+    page = page.rsplit("/", 1)[-1].split("#")[0]
+    assert page.endswith(".html") and page != "index.html", f"Independent page metadata must not alias the shared map: {ident}"
+    district_id, district = DISTRICTS[ident.split("-", 1)[0]]
+    record = {"id": ident, "name": job.get("name", manifest["name"]), "districtId": district_id,
+              "district": district, "already_in_city": ident in existing_ids,
+              "individual_page": page, "manifest": path.relative_to("projects/shanghai").as_posix(),
+              "manifest_sha256": hashlib.sha256(manifest_blob).hexdigest(), "assets": assets,
+              "geometry": geometry,
+              "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+              "original_delivery_status": manifest.get("status"),
+              "description": viewer.get("description") or job.get("scope") or manifest.get("estimated", "")}
+    return record, verified_files, verified_bytes
+
+
 def build_inventory(revision):
     baseline = json.loads(git("show", f"{revision}:projects/shanghai/data/landmarks.json"))
     existing_ids = {row["id"] for row in baseline}
@@ -120,41 +171,13 @@ def build_inventory(revision):
     records = []
     verified_files, verified_bytes = 0, 0
     for path in sorted(paths):
-        manifest_blob = git("show", f"{revision}:{path}")
-        manifest = json.loads(manifest_blob)
-        ident = manifest["id"]
-        assert ident == Path(path).parent.name
-        assets = {}
-        geometry = None
-        with ThreadPoolExecutor(max_workers=4) as pool:
-            blobs = {variant: pool.submit(checked_asset, Path(path).parent / asset["file"], asset, revision)
-                     for variant, asset in manifest["assets"].items()}
-        for variant, asset in manifest["assets"].items():
-            file = Path(path).parent / asset["file"]
-            blob = blobs[variant].result()
-            verified_files += 1
-            verified_bytes += len(blob)
-            assets["web" if variant == "full" else variant] = {**asset, "file": file.relative_to("projects/shanghai").as_posix()}
-            if variant == "raw":
-                geometry = raw_geometry(blob)
-                assert geometry["triangles"] == asset["triangles"]
-        assert geometry and set(assets) == {"raw", "native", "web", "lod"}
-        viewer, job = viewers.get(ident, {}), jobs.get(ident, {})
-        page = viewer.get("page") or job.get("preview_source") or job.get("url")
-        assert page, f"No individual page for {ident}"
-        page = page.rsplit("/", 1)[-1].split("#")[0]
-        district_id, district = DISTRICTS[ident.split("-", 1)[0]]
-        records.append({"id": ident, "name": job.get("name", manifest["name"]), "districtId": district_id,
-                        "district": district, "already_in_city": ident in existing_ids,
-                        "individual_page": page, "manifest": Path(path).relative_to("projects/shanghai").as_posix(),
-                        "manifest_sha256": hashlib.sha256(manifest_blob).hexdigest(), "assets": assets,
-                        "geometry": geometry,
-                        "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
-                        "original_delivery_status": manifest.get("status"),
-                        "description": viewer.get("description") or job.get("scope") or manifest.get("estimated", "")})
-        print(f"Verified {len(records)}/{len(paths)}: {ident}", flush=True)
+        record, files, size = verify_manifest(path, revision, existing_ids, viewers, jobs, git("show", f"{revision}:{path}"))
+        records.append(record)
+        verified_files += files
+        verified_bytes += size
+        print(f"Verified {len(records)}/{len(paths)}: {record['id']}", flush=True)
     new = [row for row in records if not row["already_in_city"]]
-    assert len(records) == 32 and len(new) == 30
+    assert len({row["id"] for row in records}) == len(records)
     return {"schema": "candidate-city-inventory-v1", "asset_baseline_commit": revision,
             "existing_city_count": 40, "existing_city_ids": sorted(existing_ids),
             "candidate_manifest_count": len(records), "already_integrated_candidate_ids": [row["id"] for row in records if row["already_in_city"]],
@@ -164,6 +187,61 @@ def build_inventory(revision):
                              "byte_lengths_and_sha256_match": True, "single_file_limit_bytes_exclusive": 100_000_000,
                              "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance"},
             "records": records}
+
+
+def normalized_manifest_path(value):
+    path = Path(value)
+    if not path.is_absolute():
+        path = ROOT / path if path.parts[0] == "projects" else PROJECT / path
+    path = path.resolve().relative_to(ROOT)
+    assert len(path.parts) == 7 and path.parts[:5] == ("projects", "shanghai", "assets", "models", "candidates") and path.name == "manifest.json"
+    return path
+
+
+def build_incremental_inventory(manifests, revision, audit_directory):
+    """Retain the original 32-record evidence and verify only explicit additions.
+
+    The current inventory records its baseline digest and the complete appended
+    manifest list, so the ordinary --check command can reproduce this result.
+    It does not reinterpret the original integration audit as a fresh acceptance.
+    """
+    baseline_blob = INVENTORY.read_bytes()
+    baseline = json.loads(baseline_blob)
+    records = list(baseline["records"])
+    baseline_ids = {row["id"] for row in records}
+    existing_ids = set(baseline["existing_city_ids"])
+    viewers = {row["id"]: row for row in json.loads((PROJECT / "data/model-viewers.json").read_text())}
+    queue = json.loads((PROJECT / "data/model-todo/queue.json").read_text())
+    jobs = {row["id"]: row for row in queue["existing_models"] + queue["production_queue"]}
+    paths = []
+    for value in manifests:
+        path = normalized_manifest_path(value)
+        assert path.parent.name not in baseline_ids, "Incremental delivery must not replace historical inventory records"
+        paths.append(path.as_posix())
+    assert len(paths) == len(set(paths)), "Duplicate incremental manifest"
+    added_files, added_bytes = 0, 0
+    for path in sorted(paths):
+        record, files, size = verify_manifest(path, revision, existing_ids, viewers, jobs)
+        records.append(record)
+        added_files += files
+        added_bytes += size
+        print(f"Verified incremental asset: {record['id']}", flush=True)
+    assert len({row["id"] for row in records}) == len(records)
+    new = [row for row in records if not row["already_in_city"]]
+    result = {**baseline,
+              "baseline_inventory": {"file": INVENTORY.relative_to(PROJECT).as_posix(), "bytes": len(baseline_blob), "sha256": hashlib.sha256(baseline_blob).hexdigest()},
+              "incremental_manifests": sorted(paths), "incremental_asset_revision": revision,
+              "incremental_audit_directory": audit_directory,
+              "candidate_manifest_count": len(records), "new_city_model_count": len(new),
+              "resulting_city_count": len(existing_ids) + len(new),
+              "new_models_by_district": dict(sorted(Counter(row["district"] for row in new).items())),
+              "verification": {**baseline["verification"],
+                               "files": baseline["verification"]["files"] + added_files,
+                               "bytes": baseline["verification"]["bytes"] + added_bytes,
+                               "current_run_added_files": added_files, "current_run_added_bytes": added_bytes,
+                               "scope": "Original records retain their immutable baseline verification; only the explicitly listed incremental manifests/assets are read in this run."},
+              "records": records}
+    return result
 
 
 def write_json(path, data, check=False):
@@ -179,6 +257,11 @@ def checked_geometry(geometry, label, nullable=False):
     if nullable and geometry is None:
         return None
     assert isinstance(geometry, dict) and geometry.get("type") in ("Polygon", "MultiPolygon"), label
+    polygons = [geometry["coordinates"]] if geometry["type"] == "Polygon" else geometry["coordinates"]
+    assert 0 < len(polygons) <= 32 and all(0 < len(polygon) <= 8 for polygon in polygons), f"Runtime polygon budget exceeded: {label}"
+    assert all(4 <= len(ring) <= 65 and ring[0] == ring[-1]
+               and all(len(point) == 2 and all(isinstance(v, (int, float)) and math.isfinite(v) for v in point) for point in ring)
+               for polygon in polygons for ring in polygon), f"Runtime ring contract violated: {label}"
     result = shape(geometry)
     assert not result.is_empty and result.is_valid and result.area > 0, f"Invalid {label}"
     west, south, east, north = result.bounds
@@ -186,9 +269,12 @@ def checked_geometry(geometry, label, nullable=False):
     return result
 
 
-def build_catalog(inventory):
+def build_catalog(inventory, inventory_path=INVENTORY):
     inputs, placements = [], {}
-    for filename in ("urban-placement.json", "chongming-placement.json"):
+    filenames = ["urban-placement.json", "chongming-placement.json"]
+    if (PROJECT / "data/global-models/additional-placement.json").exists():
+        filenames.append("additional-placement.json")
+    for filename in filenames:
         path = PROJECT / "data/global-models" / filename
         blob = path.read_bytes()
         document = json.loads(blob)
@@ -199,12 +285,16 @@ def build_catalog(inventory):
         inputs.append({"file": path.relative_to(PROJECT).as_posix(), "bytes": len(blob),
                        "sha256": hashlib.sha256(blob).hexdigest()})
     new = [row for row in inventory["records"] if not row["already_in_city"]]
-    assert set(placements) == {row["id"] for row in new}, "Placement IDs must cover exactly the 30 previously unintegrated candidates"
+    assert set(placements) == {row["id"] for row in new}, "Placement IDs must cover exactly the candidate inventory additions"
     models = []
     for item in new:
         ident = item["id"]
         placement = placements[ident]
         assert placement["id"] == ident
+        geometry_sources = placement.get("model_geometry_sha256", {})
+        assert set(geometry_sources).issubset({"raw", "web", "lod"}), f"Unknown {ident} placement geometry variant"
+        for variant, digest in geometry_sources.items():
+            assert digest == item["assets"][variant]["sha256"], f"Stale placement geometry: {ident}/{variant}"
         lng, lat = placement["lng"], placement["lat"]
         assert 120.65 < lng < 122.3 and 30.55 < lat < 32
         heading, scale = placement["heading"], placement.get("scale", 1)
@@ -254,14 +344,20 @@ def build_catalog(inventory):
                  "source_feature_ids": source_ids, "placement": note,
                  "detail_note": note["note"] + "；" + item["description"],
                  "complete_photo_reconstruction_accepted": False}
-        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "derived_asset_note", "partial_model", "model_scope", "altitude"):
+        for key in ("overviewBearing", "overviewPitch"):
+            if key in placement:
+                assert isinstance(placement[key], (float, int)) and math.isfinite(placement[key]), f"Invalid {ident} {key}"
+                if key == "overviewPitch":
+                    assert 0 <= placement[key] <= 85
+                model[key] = placement[key]
+        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256"):
             if key in placement:
                 model[key] = json.loads(json.dumps(placement[key]))
         site = model.get("site_replacement")
         if site and "owner" not in site and site.get("source_macro") and site.get("source_local_id"):
             site["owner"] = {"macro_id": site["source_macro"], "feature_local_id": site["source_local_id"]}
         models.append(model)
-    assert len({model["id"] for model in models}) == len(models) == 30
+    assert len({model["id"] for model in models}) == len(models) == len(new)
     assert not set(inventory["existing_city_ids"]).intersection(model["id"] for model in models)
     # Test every reviewed spawn against all new candidate obstacles in metres,
     # including neighboring buildings. This does not certify source-map streets.
@@ -276,15 +372,17 @@ def build_catalog(inventory):
         nearest, distance = min(distances, key=lambda item: item[1])
         assert distance >= .38, f"Spawn intersects candidate body: {model['id']} -> {nearest}, {distance:.3f} m"
         spawn_checks.append({"id": model["id"], "nearest_candidate": nearest, "clearance_m": round(distance, 6)})
-    inventory_blob = INVENTORY.read_bytes()
+    inventory_blob = inventory_path.read_bytes()
+    existing_count = len(inventory["existing_city_ids"])
+    total = existing_count + len(models)
     catalog = {"schema": "candidate-city-integrations-v1", "asset_baseline_commit": inventory["asset_baseline_commit"],
-               "scope": "30 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
-               "existing_city_count": 40, "new_city_model_count": 30, "resulting_city_count": 70,
+               "scope": f"{len(models)} completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
+               "existing_city_count": existing_count, "new_city_model_count": len(models), "resulting_city_count": total,
                "new_walk_entry_count": len(spawn_checks),
                "input_files": inputs, "inventory_sha256": hashlib.sha256(inventory_blob).hexdigest(),
                "models": models}
-    checks = {"schema": "candidate-city-catalog-checks-v1", "existing_city_count": 40, "new_city_models": 30,
-              "unique_city_destinations": 70, "inputs": inputs, "all_asset_contracts_match_inventory_or_checked_derivation": True,
+    checks = {"schema": "candidate-city-catalog-checks-v1", "existing_city_count": existing_count, "new_city_models": len(models),
+              "unique_city_destinations": total, "inputs": inputs, "all_asset_contracts_match_inventory_or_checked_derivation": True,
               "all_placement_polygons_valid": True, "identified_source_required_for_replacement": True,
               "listed_spawn_count": len(spawn_checks), "spawn_clearance_radius_m": .38, "spawn_checks": spawn_checks,
               "limitation": "Static candidate geometry checks; source-map roads, vector clipping and loading/fallback behavior require separate runtime/browser checks."}
@@ -294,21 +392,54 @@ def build_catalog(inventory):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--asset-revision")
+    parser.add_argument("--append-manifest", action="append", default=[],
+                        help="Explicit local candidate manifest to add to the immutable original inventory; repeat for additional deliveries")
+    parser.add_argument("--audit-directory", help="Project-relative directory for the new delivery's checks; never overwrites the original integration audit")
     parser.add_argument("--inventory-only", action="store_true")
     parser.add_argument("--catalog-only", action="store_true", help="Reuse previously verified inventory; still validate placements and derived assets")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    revision = args.asset_revision or (json.loads(INVENTORY.read_text())["asset_baseline_commit"] if INVENTORY.exists() else git("rev-parse", "HEAD").decode().strip())
     assert not (args.inventory_only and args.catalog_only)
-    inventory = json.loads(INVENTORY.read_text()) if args.catalog_only else build_inventory(revision)
+    previous = json.loads(CURRENT_INVENTORY.read_text()) if CURRENT_INVENTORY.exists() else None
+    manifests = sorted({normalized_manifest_path(path).as_posix()
+                        for path in (previous or {}).get("incremental_manifests", []) + args.append_manifest})
+    assert not (args.catalog_only and args.append_manifest), "Verify a new manifest before --catalog-only reuse"
+    inventory_path, audit = INVENTORY, AUDIT
+    if manifests:
+        inventory_path = CURRENT_INVENTORY
+        revision = args.asset_revision or (previous or {}).get("incremental_asset_revision") or git("rev-parse", "HEAD").decode().strip()
+        directory = args.audit_directory or (previous or {}).get("incremental_audit_directory")
+        assert directory, "An incremental delivery needs --audit-directory for its separate evidence"
+        audit = (PROJECT / directory).resolve()
+        directory = audit.relative_to(PROJECT).as_posix()
+        assert audit != AUDIT and AUDIT not in audit.parents, "Do not rewrite the original integration audit"
+        inventory = previous if args.catalog_only else build_incremental_inventory(manifests, revision, directory)
+        assert inventory is not None
+    else:
+        revision = args.asset_revision or (json.loads(INVENTORY.read_text())["asset_baseline_commit"] if INVENTORY.exists() else git("rev-parse", "HEAD").decode().strip())
+        inventory = json.loads(INVENTORY.read_text()) if args.catalog_only else build_inventory(revision)
     if not args.catalog_only:
-        write_json(INVENTORY, inventory, args.check)
+        write_json(inventory_path, inventory, args.check)
+        if manifests:
+            baseline_ids = {row["id"] for row in json.loads(INVENTORY.read_text())["records"]}
+            delta = {"schema": "candidate-city-inventory-increment-v1", "baseline_inventory": inventory["baseline_inventory"],
+                     "incremental_manifests": inventory["incremental_manifests"], "asset_revision_fallback": revision,
+                     "current_inventory": inventory_path.relative_to(PROJECT).as_posix(),
+                     "verification": inventory["verification"],
+                     "records": [row for row in inventory["records"] if row["id"] not in baseline_ids]}
+            write_json(audit / "inventory-increment.json", delta, args.check)
     if not args.inventory_only:
-        catalog, checks = build_catalog(inventory)
+        catalog, checks = build_catalog(inventory, inventory_path)
+        if manifests:
+            checks["inventory_file"] = inventory_path.relative_to(PROJECT).as_posix()
+            checks["inventory_sha256"] = hashlib.sha256(inventory_path.read_bytes()).hexdigest()
+            checks["asset_verification_scope"] = inventory["verification"]["scope"]
         write_json(CATALOG, catalog, args.check)
-        write_json(AUDIT / "catalog-checks.json", checks, args.check)
+        write_json(audit / "catalog-checks.json", checks, args.check)
     print(json.dumps({"candidates": inventory["candidate_manifest_count"], "new_city_models": inventory["new_city_model_count"],
-                      "files_verified": inventory["verification"]["files"], "bytes_verified": inventory["verification"]["bytes"]}))
+                      "cumulative_verified_files": inventory["verification"]["files"],
+                      "current_run_inventory_files": 0 if args.catalog_only else inventory["verification"].get("current_run_added_files", inventory["verification"]["files"]),
+                      "cumulative_verified_bytes": inventory["verification"]["bytes"]}))
 
 
 if __name__ == "__main__":

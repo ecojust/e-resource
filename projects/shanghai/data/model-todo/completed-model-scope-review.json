@@ -1,0 +1,326 @@
+{
+  "schema": "completed-model-scope-review-v1",
+  "reviewed_on": "2026-10-31",
+  "source_inventory": {
+    "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
+    "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a",
+    "records": 1058
+  },
+  "policy": [
+    "仅认定已交付的有界外观模型范围，按源ID和模型ID关联，不按相似名称自动移除条目。",
+    "已完成主楼退出重复新建TODO；尺寸未测绘、背面估计及装饰简化保留在模型说明中，不使整个主楼重新变成待制作。",
+    "明确尚未建模的附楼、翼部和构件继续以具体任务显示；不据此宣称整处保护建筑或室内全部完成。",
+    "completed_models中的模型必须已交付；remaining_tasks仅在指定completed_by_model_id确实交付后隐藏，队列中的未交付状态优先于城市登记。",
+    "原始1058条名录、生产记录及旧审计保持不变；当前任务范围以最终source README优先，旧复核用于身份追溯。"
+  ],
+  "identity_reference": "projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json",
+  "records": [
+    {
+      "heritage_id": "sh-historic-b1-001",
+      "source_name": "汇丰银行大楼",
+      "completed_models": [
+        {
+          "id": "bund12",
+          "scope": "汇丰银行历史主楼、翼楼、柱廊与穹顶外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/bund/classical_bank/README.md",
+          "supports": "已交付主体、翼部、柱廊、穹顶及带窗墙；未精确复原铜狮雕塑和室内不构成重做主楼的任务。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-002",
+      "source_name": "沙逊大厦、华懋饭店",
+      "completed_models": [
+        {
+          "id": "bund20",
+          "scope": "沙逊大厦／华懋饭店北楼、退台、金字塔与三个内庭外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/bund/art_deco/README.md",
+          "supports": "北楼主体和内庭体量均已建，背面细节的估计保留在来源说明。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-003",
+      "source_name": "中国银行",
+      "completed_models": [
+        {
+          "id": "bund23",
+          "scope": "中国银行东塔及独立轮廓西翼外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/bund/art_deco/README.md",
+          "supports": "西翼已经建模；文献四层与OSM九层的分歧保留为既有文档中的证据限制，不另造整楼或西翼新建TODO。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-004",
+      "source_name": "江海关",
+      "completed_models": [
+        {
+          "id": "customs-house",
+          "scope": "海关主前楼、中央钟塔与四个角亭外观"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "customs-west-rear-wings",
+          "title": "海关西侧独立后翼",
+          "todo": "待制作西侧后翼OSM380340023、380339914，先核外观与栋别；主前楼、钟塔及四角亭已完成，不重列。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/bund/customs_refined/SOURCES_AND_METHOD.md",
+          "supports": "六个具体源对象已建；文档明确西侧独立后翼OSM380340023、380339914不属于本件。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-005",
+      "source_name": "百老汇大厦",
+      "completed_models": [
+        {
+          "id": "hongkou-broadway-mansions",
+          "scope": "百老汇大厦历史主楼、内凹四翼、退台与屋顶外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/hongkou-broadway-mansions/README.md",
+          "supports": "模型覆盖历史主楼；右侧浅色邻楼明确不属于本件，两张地图UUID不能当作两座主楼。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-006",
+      "source_name": "上海总会",
+      "completed_models": [
+        {
+          "id": "bund02",
+          "scope": "上海总会历史主楼、两翼、阁楼与双风亭外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/bund/bund_classics/README.md",
+          "supports": "历史主楼已交付；后方现代酒店不是本条主楼的未完成部分。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-007",
+      "source_name": "汇中饭店",
+      "completed_models": [
+        {
+          "id": "bund19",
+          "scope": "汇中饭店六层主楼、角部灯亭与铜顶外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/bund/art_deco/README.md",
+          "supports": "六层主体、砖石立面、角部八角灯亭及铜顶已建，隐面推定不要求重复新建主楼。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-008",
+      "source_name": "苏联领事馆",
+      "completed_models": [
+        {
+          "id": "hongkou-russian-consulate",
+          "scope": "领事馆历史主楼、坡屋顶、阳台、山花与塔顶外观；不含右侧封闭凸窗独特体量及园内凉亭"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "consulate-right-enclosed-bay",
+          "title": "领事馆右侧封闭凸窗",
+          "todo": "待细化照片右侧封闭凸窗／阳台的独立体量，替换现有简化墙面。"
+        },
+        {
+          "id": "consulate-garden-pavilion",
+          "title": "领事馆园内六角亭",
+          "todo": "待核园内六角凉亭的身份、位置及外观后制作；主楼塔部不代替凉亭。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/hongkou-russian-consulate/README.md",
+          "supports": "右侧封闭凸窗尚以简化墙面表达；园内六角凉亭明确未建，不能与主楼塔部混同。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-009",
+      "source_name": "国际饭店",
+      "completed_models": [
+        {
+          "id": "huangpu-park-hotel",
+          "scope": "国际饭店前部高塔与相连较低历史主体外观"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "park-hotel-later-rear-block",
+          "title": "国际饭店后期后楼",
+          "todo": "待核后期3–9层后楼的独立范围、时期与外观后制作；不重复历史前塔与相连主体。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/huangpu-park-hotel/README.md",
+          "supports": "最终说明明确未纳入后期3–9层后楼；历史前塔与连接主体已交付。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-010",
+      "source_name": "跑马总会",
+      "completed_models": [
+        {
+          "id": "huangpu-shanghai-race-club-east-building",
+          "scope": "跑马总会东楼长主体与主钟塔外观"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "race-club-west-building",
+          "title": "跑马总会西楼",
+          "todo": "待核并制作西楼，保留文献三层的范围口径。"
+        },
+        {
+          "id": "race-club-secondary-tower-and-links",
+          "title": "跑马总会副钟塔与庭院连接体",
+          "todo": "待绑定副钟塔和庭院连接体的照片及位置后制作；不重复东楼及已建主钟塔。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/huangpu-shanghai-race-club-east-building/README.md",
+          "supports": "最终说明明确排除西楼、庭院连接体与另记副钟塔；主副钟塔不能混为同一构件。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-011",
+      "source_name": "大光明大戏院",
+      "completed_models": [
+        {
+          "id": "huangpu-grand-theatre",
+          "scope": "大光明南京西路入口、玻璃立面、灯塔与紧邻圆角墙带片段"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "grand-theatre-auditorium-rest-hall",
+          "title": "大光明后部观众厅与休息厅",
+          "todo": "待制作后部观众厅、转向的门厅／影厅关系及腰果形休息厅；先核平面与外观资料。"
+        },
+        {
+          "id": "grand-theatre-shop-frontage",
+          "title": "大光明完整商铺带",
+          "todo": "待核完整商铺带归属后制作；不将同框咖啡店楼或后方高楼自动并入。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/huangpu-grand-theatre/README.md",
+          "supports": "最终说明明确后部观众厅、休息厅及整排商铺未建；现有局部封闭截面不是影院后立面。"
+        }
+      ],
+      "note": "队列旧scope称含auditorium，与最终README及next_action_before_city_integration冲突；本次以最终README确认影厅未建，旧记录原字节保留。"
+    },
+    {
+      "heritage_id": "sh-historic-b1-012",
+      "source_name": "华安人寿保险公司、金门饭店",
+      "completed_models": [
+        {
+          "id": "huangpu-pacific-hotel",
+          "scope": "金门饭店／华安大楼历史临街主楼与屋顶钟塔外观"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "pacific-hotel-north-block",
+          "title": "金门饭店北楼",
+          "todo": "待核酒店北楼的身份、边界和资料口径后制作；不按历史主楼别名重复建楼，也不直接套用未绑定的招标尺寸。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/huangpu-pacific-hotel/README.md",
+          "supports": "历史别名对应同一主楼；现代酒店北楼明确未建，项目南北楼尺寸尚未与历史范围绑定。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-013",
+      "source_name": "先施公司",
+      "completed_models": [
+        {
+          "id": "huangpu-sincere-company",
+          "scope": "先施公司历史主楼、摩星塔、北段低翼与骑楼外廊外观"
+        }
+      ],
+      "remaining_tasks": [],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/huangpu-sincere-company/README.md",
+          "supports": "主楼、摩星塔与东北低翼已交付；百货／旅馆别名不是新楼，外廊不可通行属于交互限制。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-014",
+      "source_name": "老永安公司 / 新永安公司",
+      "completed_models": [
+        {
+          "id": "huangpu-old-wing-on-company",
+          "scope": "南京东路635号老永安主楼、东北圆弧入口与北侧屋顶塔楼外观"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "wing-on-new-building",
+          "title": "新永安大楼主楼与后部",
+          "todo": "待完成南京东路627号新永安前塔和相连后部外观；按制作队列推进，不重复635号老永安。",
+          "completed_by_model_id": "huangpu-new-wing-on-company",
+          "completed_scope": "南京东路627号新永安前塔与相连后部外观；跨街桥另计"
+        },
+        {
+          "id": "wing-on-cross-street-bridges",
+          "title": "新老永安之间的跨街桥",
+          "todo": "待核两座封闭跨街桥的范围与外观后制作；跨街桥不并入两栋主楼，新楼交付后仅保留此项。"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/huangpu-old-wing-on-company/README.md",
+          "supports": "明确老楼已建，627号新永安与跨街天桥不在老楼模型范围。"
+        },
+        {
+          "path": "projects/shanghai/source/precise/huangpu-new-wing-on-company/source-register.json",
+          "supports": "2013照片复核记录右侧两座不同标高的封闭跨街桥；本轮新楼scope明确排除桥。此证据不表示新楼已交付。"
+        }
+      ]
+    }
+  ]
+}

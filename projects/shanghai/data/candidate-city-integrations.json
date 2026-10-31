@@ -1,10 +1,10 @@
 {
   "schema": "candidate-city-integrations-v1",
   "asset_baseline_commit": "65af6bea52780f274d2ee005bbbd513317b559fc",
-  "scope": "30 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
+  "scope": "31 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
   "existing_city_count": 40,
-  "new_city_model_count": 30,
-  "resulting_city_count": 70,
+  "new_city_model_count": 31,
+  "resulting_city_count": 71,
   "new_walk_entry_count": 0,
   "input_files": [
     {
@@ -16,9 +16,14 @@
       "file": "data/global-models/chongming-placement.json",
       "bytes": 117477,
       "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 11213,
+      "sha256": "4b9e5bace5082b12ec3f4b5653deb7c98d310d00924b3766971fdb538847eef8"
     }
   ],
-  "inventory_sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470",
+  "inventory_sha256": "c61d6c144e1b7938510fefdd0d440e5002776ebba45788025413963a081135a6",
   "models": [
     {
       "id": "chongming-chaozong-paifang",
@@ -6681,6 +6686,232 @@
       },
       "detail_note": "淮海中路1843号已核院落内的主楼位置示意；北部院内落位及尺度为估计，南阳台朝向依据方志。主楼源身份尚未确认，游客中心和其余底图全部保留。；曲面瓦屋顶、老虎窗、曲线阳台与入口门廊。",
       "complete_photo_reconstruction_accepted": false
+    },
+    {
+      "id": "huangpu-new-wing-on-company",
+      "name": "新永安大楼主楼与后部外观",
+      "kind": "building",
+      "candidate_id": "huangpu-new-wing-on-company",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.47443219384867,
+      "lat": 31.236886904148918,
+      "heading": -15.763307672021483,
+      "scale": 1,
+      "height_m": 72.0,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -18.975860595703125,
+          0.0,
+          -35.12357711791992
+        ],
+        "max": [
+          27.091312408447266,
+          72.0,
+          24.049999237060547
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-web.glb",
+          "bytes": 2433676,
+          "sha256": "13afc0767261a4f6aaf01e4bf3404dfdbb2dd27e9475aef26d04ca5e4952caf9",
+          "triangles": 137148
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-lod.glb",
+          "bytes": 781548,
+          "sha256": "fcddf4f11cc29e61d527d228a110fda137d754874f10decb7e29ca139b17aec0",
+          "triangles": 38500
+        }
+      },
+      "model": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-lod.glb",
+      "web_bytes": 2433676,
+      "web_sha256": "13afc0767261a4f6aaf01e4bf3404dfdbb2dd27e9475aef26d04ca5e4952caf9",
+      "lod_bytes": 781548,
+      "lod_sha256": "fcddf4f11cc29e61d527d228a110fda137d754874f10decb7e29ca139b17aec0",
+      "triangles": 137148,
+      "lod_triangles": 38500,
+      "individual_page": "new-wing-on-company.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+      "navigation": {
+        "listed": false,
+        "status": "overview-only proposal; no reviewed walk start",
+        "recommended_overview_bearing": 180,
+        "bearing": 216.250641176026,
+        "overview_direction_note": "Default bearing180 places the camera north of the building, between the outward NW315.14 and NE36.25 facade normals, to show both northern narrow and thermometer wide faces. Bearings135.14/216.25 emphasize each face respectively; browser validation remains required."
+      },
+      "overviewZoom": 19,
+      "maxDistance": 650,
+      "lod_switch_in_m": 70,
+      "lod_switch_out_m": 110,
+      "collision_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.47437024336858,
+              31.23664553109661
+            ],
+            [
+              121.47429384812769,
+              31.23667599092097
+            ],
+            [
+              121.47415944983231,
+              31.237078910185403
+            ],
+            [
+              121.4741587993842,
+              31.237085710154265
+            ],
+            [
+              121.474274625359,
+              31.237179226352197
+            ],
+            [
+              121.47437953423689,
+              31.237114269140754
+            ],
+            [
+              121.4743803880526,
+              31.237113735203355
+            ],
+            [
+              121.47468026167647,
+              31.23692556523779
+            ],
+            [
+              121.47470333531945,
+              31.23690369180083
+            ],
+            [
+              121.47472186737146,
+              31.23688192486881
+            ],
+            [
+              121.47473607276024,
+              31.23686035085563
+            ],
+            [
+              121.47474599146672,
+              31.236839212989135
+            ],
+            [
+              121.4747516514744,
+              31.23681875645603
+            ],
+            [
+              121.47475306592472,
+              31.236799236618314
+            ],
+            [
+              121.47475023772786,
+              31.23678093248508
+            ],
+            [
+              121.47474318001221,
+              31.236764158719495
+            ],
+            [
+              121.47473194941263,
+              31.236749258866602
+            ],
+            [
+              121.47471666375161,
+              31.236736570744824
+            ],
+            [
+              121.47469747781707,
+              31.236726389271315
+            ],
+            [
+              121.47467471050238,
+              31.236719016823525
+            ],
+            [
+              121.47437024336858,
+              31.23664553109661
+            ]
+          ]
+        ]
+      },
+      "replacement_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.47468209,
+              31.2369262
+            ],
+            [
+              121.47475183,
+              31.23684364
+            ],
+            [
+              121.47474647,
+              31.23677484
+            ],
+            [
+              121.47467673,
+              31.23671521
+            ],
+            [
+              121.47437096,
+              31.23664182
+            ],
+            [
+              121.47429049,
+              31.23667393
+            ],
+            [
+              121.47415638,
+              31.23708215
+            ],
+            [
+              121.4742744,
+              31.23718306
+            ],
+            [
+              121.47468209,
+              31.2369262
+            ]
+          ]
+        ]
+      },
+      "source_feature_ids": {
+        "building": [
+          "708d0e95-d551-414d-a3be-897a9fe2fb6b"
+        ],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "method": "frozen-map-envelope and photo-informed tower/low-wing orientation; actual final GLB geometry bound",
+        "surveyed": false,
+        "note": "按当前地图轮廓近似定位；历史1400㎡占地与现地图约2016㎡范围不等同。仅含627号新永安高塔及低翼，不含跨街桥，不与635号老永安合并。",
+        "source_identity": "confirmed-same-version-OSM627-and-frozen-render-owner1275"
+      },
+      "detail_note": "按当前地图轮廓近似定位；历史1400㎡占地与现地图约2016㎡范围不等同。仅含627号新永安高塔及低翼，不含跨街桥，不与635号老永安合并。；北端高塔、分组竖窗、宽檐退台、阶梯顶冠及相连低楔形后部；层段、平面和隐藏面含估计，老永安与跨街桥另列。",
+      "complete_photo_reconstruction_accepted": false,
+      "overviewBearing": 180,
+      "owner": {
+        "macro_id": "14-13720-6694",
+        "feature_local_id": 1275,
+        "key": "building:708d0e95-d551-414d-a3be-897a9fe2fb6b"
+      },
+      "partial_model": false,
+      "model_scope": "627号新永安的前部高塔与低翼外观，不含跨街桥、635号老永安、邻楼和室内。",
+      "altitude": 0,
+      "model_geometry_sha256": {
+        "raw": "f039a13feba3daa42ebb74a1548060b29881add3c0ac19145ff80fba0a7672c8",
+        "web": "13afc0767261a4f6aaf01e4bf3404dfdbb2dd27e9475aef26d04ca5e4952caf9",
+        "lod": "fcddf4f11cc29e61d527d228a110fda137d754874f10decb7e29ca139b17aec0"
+      }
     }
   ]
 }

@@ -302,7 +302,7 @@ test('full names and compact numbers have complementary layers, with a fixed 24 
   const numbers=textLayers.find(layer=>evaluate(layer.filter,{compact:true,inViewport:true})),names=textLayers.find(layer=>evaluate(layer.filter,{compact:false,inViewport:true}));
   assert.equal(numbers.layout['icon-text-fit'],'none');assert.equal(numbers.layout['text-size'],12);
   assert.equal(numbers.layout['icon-size'],1);assert.equal(names.layout['icon-text-fit'],'none');
-  const sprite=map.images.get(numbers.layout['icon-image']);assert(sprite);
+  const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],map.getSource(numbers.source).data.features[0].properties));assert(sprite);
   assert.equal(sprite.image.width/sprite.options.pixelRatio,24);assert.equal(sprite.image.height/sprite.options.pixelRatio,20);
   assert.equal(sprite.options.stretchX,undefined);assert.equal(sprite.options.stretchY,undefined);
   beacons.destroy();
@@ -364,10 +364,10 @@ test('narrow-phone signs avoid actual tool, legend and location-card rectangles 
   check();toolLeft=260;cardTop=378;legendBottom=180;beacons.refresh();check();beacons.destroy();
 });
 
-test('all seventy delivered models remain separate and clickable above a tall title card on a 320 by 568 phone',()=>{
+test('all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone',()=>{
   const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
     ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
-  assert.equal(delivered.length,70);
+  const count=delivered.length;assert(count>=70);
   assert(delivered.some(row=>[...row.name].length>12),'use the real long model titles');
   const map=new BeaconMap({width:320,height:568}),selected=[],tools=new Element(),card=new Element();
   // Citywide density keeps every geographic anchor on screen; the real title
@@ -383,8 +383,8 @@ test('all seventy delivered models remain separate and clickable above a tall ti
   };
   const beacons=createBuildingBeacons({map,records:delivered,onSelect:row=>selected.push(row.id),documentObject:doc});
   const state=beacons.getState();
-  assert.equal(state.viewportLabelCount,70);assert.equal(state.overlapFallbackCount,0);assert.equal(state.labelMode,'numbers');
-  assert(state.labelPositions.every(row=>row.compact&&row.width===24&&row.height===20));
+  assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);assert.equal(state.labelMode,'numbers');
+  assert(state.labelPositions.every(row=>row.compact&&row.width===(count>70?22:24)&&row.height===20));
   assertSeparated(state.labelPositions);
   assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:340});
   assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
@@ -394,8 +394,31 @@ test('all seventy delivered models remain separate and clickable above a tall ti
     assert.equal(hitTestBeaconLabels(state.labelPositions,point),row.id);
     map.emit('click',{point});assert.equal(selected.at(-1),row.id);
   }
-  assert.equal(selected.length,70);assert.equal(new Set(selected).size,70);
+  assert.equal(selected.length,count);assert.equal(new Set(selected).size,count);
   beacons.destroy();
+});
+
+test('the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable',()=>{
+  const seventyOne=[...records,{id:'huangpu-new-wing-on-company',name:'新永安公司／七重天大楼',lng:121,lat:31,districtId:'310101'}];
+  const map=new BeaconMap({width:320,height:568}),selected=[],tools=new Element(),card=new Element();
+  map.project=()=>({x:160,y:260});
+  tools.getBoundingClientRect=()=>({left:263,right:308,top:190,bottom:370});
+  card.getBoundingClientRect=()=>({left:12,right:308,top:348,bottom:556});
+  const doc={createElement:tag=>new Element(tag),getElementById:id=>id==='location-card'?card:null,
+    querySelector:selector=>selector==='.map-tools'?tools:null};
+  const beacons=createBuildingBeacons({map,records:seventyOne,onSelect:row=>selected.push(row.id),documentObject:doc});
+  const state=beacons.getState(),numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));
+  assert.equal(state.count,71);assert.equal(state.viewportLabelCount,71);assert.equal(state.overlapFallbackCount,0);
+  assert.equal(numbers.layout['text-size'],12);assert.equal(numbers.layout['icon-size'],1);assert.equal(numbers.layout['icon-text-fit'],'none');
+  assert(state.labelPositions.every(row=>row.compact&&row.width===22&&row.height===20));
+  assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:340});
+  for(const feature of map.getSource(numbers.source).data.features){
+    const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
+    assert.equal(sprite.image.width/sprite.options.pixelRatio,22);assert.equal(sprite.image.height/sprite.options.pixelRatio,20);
+    assert.equal(feature.properties.label,String(feature.properties.number));
+  }
+  for(const point of state.labelPositions){assert.equal(beacons.hitTest(point),point.id);map.emit('click',{point});assert.equal(selected.at(-1),point.id);}
+  assert.equal(new Set(selected).size,71);beacons.destroy();
 });
 
 test('vendored MapLibre accepts every production beacon layer and keeps it visible at zoom 24',()=>{
@@ -446,7 +469,7 @@ test('fixed name backgrounds, text and leaders agree with the actual ground proj
   assert.deepEqual([ground.x,ground.y],[actual.x,actual.y]);
   assert(ground.y-original.y>20,'the fixture must expose the previous centre-height projection error');
   const beacons=createBuildingBeacons({map,records:rows,onSelect(){},documentObject:mockDocument()});
-  assert.equal(map.images.size,7,'five fixed name sprites, one number sprite and one anchor lamp');
+  assert.equal(map.images.size,8,'five fixed name sprites, two number widths and one anchor lamp');
   const nameLayer=[...map.layers.values()].find(layer=>layer.id.endsWith('-labels-symbol'));
   assert(nameLayer);assert.equal(nameLayer.layout['icon-text-fit'],'none');
   const anchorLayer=[...map.layers.values()].find(layer=>layer.type==='symbol'&&!layer.layout['text-field']);

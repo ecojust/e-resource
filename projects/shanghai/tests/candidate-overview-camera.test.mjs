@@ -47,8 +47,8 @@ const viewports=[
   {width:320,height:568,insets:{left:16,right:65,top:182,bottom:190}},
 ];
 
-for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: all thirty delivered candidate bounds fit the real MapLibre camera outside the interface`,()=>{
-  assert.equal(candidates.length,30);
+for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: all delivered candidate bounds fit the real MapLibre camera outside the interface`,()=>{
+  assert(candidates.length>=30);
   for(const place of candidates){
     const camera=candidateOverviewCamera(place,viewport);assert(camera,place.id);
     assert(camera.zoom>=8&&camera.zoom<=24);assert(Number.isFinite(camera.elevation));

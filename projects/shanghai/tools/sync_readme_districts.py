@@ -194,7 +194,7 @@ def render(text, items, times, project=False):
     assert not base_ids.intersection(city), 'Global model duplicates an existing destination'
     district_names = {str(item['id']): item['name'] for item in json.loads((ROOT / 'projects/shanghai/data/districts.json').read_text())['districts']}
     counts = Counter(district_names[str(item['districtId'])] for item in [*base, *city.values()])
-    assert len(counts) == 16 and sum(counts.values()) == 70
+    assert len(counts) == 16 and sum(counts.values()) == len(base_ids) + len(city)
     parts = re.split(r'(?=^### )', section, flags=re.M)
     evidence = 'data/model-todo/candidate-publication-times.json' if project else 'projects/shanghai/data/model-todo/candidate-publication-times.json'
     placement = 'data/candidate-city-integrations.json' if project else 'projects/shanghai/data/candidate-city-integrations.json'
