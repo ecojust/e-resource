@@ -44,31 +44,31 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 36,
+  "candidate_manifest_count": 37,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 34,
-  "resulting_city_count": 74,
+  "new_city_model_count": 35,
+  "resulting_city_count": 75,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "虹口区": 3,
-    "黄浦区": 10
+    "黄浦区": 11
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 144,
-    "bytes": 534573876,
+    "files": 148,
+    "bytes": 555324716,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 21912319,
+    "current_run_added_bytes": 20750840,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 12
+    "inherited_incremental_files": 16
   },
   "records": [
     {
@@ -2482,6 +2482,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
       "description": "锦江饭店北楼独立历史外观：褐砖长立面、浅色窗框、多边凸窗、北侧双凸翼与顶部退台；尺寸、局部隐面和屋顶含估计，相邻峻岭公寓及其他锦江楼栋不并入。"
+    },
+    {
+      "id": "huangpu-grosvenor-house",
+      "name": "峻岭公寓高层主体（锦江饭店中楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "grosvenor-house.html",
+      "manifest": "assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+      "manifest_sha256": "276f1c505a90f08425f9b87f720e3908804c5bbf293a09207ad0faf27f816a3f",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-raw.glb",
+          "bytes": 10430628,
+          "sha256": "8273ee99e895ab453f3467536691cc80ccf1b96ccf6ede97630115dda2b9a3fb",
+          "triangles": 193620
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house.blend",
+          "bytes": 5668340,
+          "sha256": "6d2071e3243e58ae02efc62b20a0dda456c3bfa19af4e6e11ab68f6833f6c7db"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-web.glb",
+          "bytes": 3310388,
+          "sha256": "d01d88a669aaef8b94b1c3c8ccaab07d19884c609e53206dcaa6460ed29ee360",
+          "triangles": 193620
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-lod.glb",
+          "bytes": 1341484,
+          "sha256": "e82a2de8f5261a7e85f9166398357b1073a46a58fa121613fd184c9db7d9f915",
+          "triangles": 64540
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -44.76152420043945,
+            0.0,
+            -11.094259262084961
+          ],
+          "max": [
+            46.22146987915039,
+            78.0,
+            16.696369171142578
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -44.76152420043945,
+            -16.696369171142578,
+            0.0
+          ],
+          "max": [
+            46.22146987915039,
+            11.094259262084961,
+            78.0
+          ]
+        },
+        "triangles": 193620,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "五折高层、阶梯露台、竖向饰线与有限入口雨棚；前庭两片未核区域及相邻低楼保留。层段、尺寸和隐面含估计，不将整处名录判为完成。"
     }
   ],
   "baseline_inventory": {
@@ -2492,17 +2559,18 @@
   "incremental_manifests": [
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json"
   ],
-  "incremental_asset_revision": "9909f1758ebb939d55d3d2bc56be29003836752f",
-  "incremental_audit_directory": "data/audit/cathay-mansions-v1",
+  "incremental_asset_revision": "653cb8386d667774c5624b0684aab5dad1cdd68a",
+  "incremental_audit_directory": "data/audit/grosvenor-house-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/daxin-company-v1/inventory-increment.json",
-    "bytes": 9679,
-    "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
+    "file": "data/audit/cathay-mansions-v1/inventory-increment.json",
+    "bytes": 12446,
+    "sha256": "fe68b611c941d9b744d879f3096fff233dd6be1868341d3d07935d05b2e0a036"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json"
   ]
 }

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>峻岭公寓外观模型 · 资产查看</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="峻岭公寓高层主体与雨棚外观"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-grosvenor-house&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦 · 茂名南路 · 锦江饭店中楼</p>
+    <h1>峻岭公寓</h1>
+    <p>锦江饭店中楼 · 高层主体与入口雨棚</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与资料">
+    <span class="badge">照片与文字参照 · 尺度含估计</span>
+    <p class="scope">表现略弧折线主体、中央竖向高部、两翼阶梯退台与浅色饰线。尺寸、隐面与屋顶局部含估计；入口雨棚两侧未核地图余块、华懋公寓及西侧低层住宅保留。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">自动随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button id="front" type="button">正面</button>
+      <button id="oblique" type="button">斜侧</button>
+      <button id="rear" type="button">背面</button>
+      <button id="fit" type="button">适合窗口</button>
+      <button id="retry" type="button" hidden>重试加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <p id="metrics"></p>
+    <div id="downloads" class="downloads"></div>
+    <p class="scope">按公开照片中的现存外观制作。文献记18层（包括地下1层）、高78米；其他资料层数口径不同，高度端点未明。模型只表现地上外观，层段及隐藏面包含估计。名录地址为65－125号范围，文献主楼记59号，保留不同口径。</p>
+    <p class="scope">照片只供观察，不作贴图。本页提供旋转查看和四项资产下载；城市位置请使用上方主地图入口，建筑室内与登楼尚未开放。</p>
+    <a href="source/precise/huangpu-grosvenor-house/README.md">来源、尺寸解释与重建说明 ↗</a>
+  </aside>
+  <footer>
+    <span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span>
+    <span>建筑外观模型 · 非测绘<br>原创几何 MIT · 无照片贴图</span>
+  </footer>
+  <script type="module" src="src/grosvenor-house.js"></script>
+</body>
+</html>

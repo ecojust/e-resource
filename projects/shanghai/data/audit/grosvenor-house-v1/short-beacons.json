@@ -1,0 +1,3634 @@
+{
+  "generatedAt": "2026-10-31T07:23:59.949Z",
+  "completed": true,
+  "driverPid": 63657,
+  "script": {
+    "file": "data/audit/grosvenor-house-v1/qa-short-beacons.cjs",
+    "sha256": "445e42926dee290a73375eb2c33f393f367215dc5743045d6a5fef261d268d7c"
+  },
+  "catalog": {
+    "file": "data/candidate-city-integrations.json",
+    "sha256": "6adc0166c24e4976c3cb9e49996708e00582d951baccb9277f42cac88aa1f2be",
+    "models": 35,
+    "http": {
+      "url": "http://127.0.0.1:8782/data/candidate-city-integrations.json",
+      "status": 200,
+      "sha256": "6adc0166c24e4976c3cb9e49996708e00582d951baccb9277f42cac88aa1f2be",
+      "origin": "working-tree"
+    }
+  },
+  "manifest": {
+    "file": "assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+    "sha256": "276f1c505a90f08425f9b87f720e3908804c5bbf293a09207ad0faf27f816a3f"
+  },
+  "sourceBindings": [
+    {
+      "file": "src/candidate-city-clipping.js",
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+    },
+    {
+      "file": "src/grosvenor-house.js",
+      "sha256": "05aa1b5a1e9c6036c4c14b9ac00fcbae76135d42575dd2c75d34da741a4b985b"
+    }
+  ],
+  "scope": "Actual 320x548 viewport keeps Cathay selected at zoom8. Its normal 143px card top becomes328px, matching the measured worst-title free region at320x568. This is not a claim that Beidajie222 was selected; no old model is selected or loaded for this check.",
+  "errors": [],
+  "before": {
+    "hash": "#landmark=huangpu-cathay-mansions&mode=overview",
+    "title": "华懋公寓历史主楼（锦江饭店锦北楼）",
+    "viewport": [
+      320,
+      568
+    ],
+    "canvas": [
+      320,
+      568
+    ],
+    "transform": [
+      320,
+      568
+    ],
+    "map": {
+      "center": {
+        "lng": 121.45,
+        "lat": 31.2
+      },
+      "zoom": 8,
+      "pitch": 0,
+      "bearing": 0,
+      "padding": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      },
+      "elevation": 0
+    },
+    "beacons": {
+      "count": 75,
+      "ids": [
+        "bund02",
+        "bund03",
+        "bund05",
+        "bund06",
+        "bund07",
+        "bund09",
+        "bund12",
+        "customs-house",
+        "bund14",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23",
+        "jin-mao",
+        "oriental-pearl",
+        "qingpu-beidajie-222",
+        "shanghai-tower",
+        "swfc",
+        "xuhui-wukang-129",
+        "xuhui-wukang-210",
+        "qingpu-beidajie-208-212",
+        "hongkou-hongde-church",
+        "xuhui-longhua-pagoda",
+        "songjiang-fangta-pagoda",
+        "putuo-zhenru-main-hall",
+        "jiading-shanghai-auto-museum",
+        "minhang-baoyugang-library",
+        "jingan-sihang-warehouse",
+        "yangpu-library",
+        "baoshan-confucian-dacheng-hall",
+        "columbia-country-club",
+        "fengxian-museum",
+        "xuhui-wukang-mansion",
+        "changning-hudec-residence",
+        "xuhui-bajin-residence",
+        "jinshanwei-wengcheng-gatehouse",
+        "xuhui-zikawei-south-building",
+        "huangpu-sun-yatsen-residence",
+        "chongming-chaozong-paifang",
+        "chongming-chongsheng-shrine",
+        "chongming-dacheng-hall",
+        "chongming-east-guanting",
+        "chongming-east-wing",
+        "chongming-ji-gate",
+        "chongming-lingxing-gate",
+        "chongming-lingxing-photo-left-gate",
+        "chongming-lingxing-photo-right-gate",
+        "chongming-minghuan-shrine",
+        "chongming-minglun-hall",
+        "chongming-pan-pool-bridge",
+        "chongming-ruxue-gate",
+        "chongming-stele-corridors",
+        "chongming-west-guanting",
+        "chongming-west-wing",
+        "chongming-xiangxian-shrine",
+        "chongming-xuehai-paifang",
+        "chongming-yimen",
+        "chongming-zunjing-pavilion",
+        "hongkou-broadway-mansions",
+        "hongkou-luxun-residence-facade",
+        "hongkou-russian-consulate",
+        "huangpu-grand-theatre",
+        "huangpu-old-wing-on-company",
+        "huangpu-pacific-hotel",
+        "huangpu-park-hotel",
+        "huangpu-shanghai-race-club-east-building",
+        "huangpu-sincere-company",
+        "xuhui-soong-ching-ling-residence",
+        "huangpu-new-wing-on-company",
+        "huangpu-xinxin-company",
+        "huangpu-daxin-company",
+        "huangpu-cathay-mansions",
+        "huangpu-grosvenor-house"
+      ],
+      "districtCount": 16,
+      "zoom": 8,
+      "revision": 47,
+      "labelPixelSize": 12,
+      "anchorPixelSize": 20,
+      "sourceIds": [
+        "shanghai-building-beacons-leaders",
+        "shanghai-building-beacons-anchors",
+        "shanghai-building-beacons-labels"
+      ],
+      "layerIds": [
+        "shanghai-building-beacons-leaders-line",
+        "shanghai-building-beacons-anchors-symbol",
+        "shanghai-building-beacons-labels-symbol",
+        "shanghai-building-beacons-labels-numbers"
+      ],
+      "spriteIds": [
+        "shanghai-building-beacons-lamp",
+        "shanghai-building-beacons-sign-0",
+        "shanghai-building-beacons-sign-1",
+        "shanghai-building-beacons-sign-2",
+        "shanghai-building-beacons-sign-3",
+        "shanghai-building-beacons-sign-4",
+        "shanghai-building-beacons-number",
+        "shanghai-building-beacons-number-tight",
+        "shanghai-building-beacons-number-short"
+      ],
+      "viewportLabelCount": 75,
+      "labelMode": "numbers",
+      "overlapFallbackCount": 0,
+      "labelPositions": [
+        {
+          "id": "bund02",
+          "number": 1,
+          "x": 243.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund03",
+          "number": 2,
+          "x": 243.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund05",
+          "number": 3,
+          "x": 221.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund06",
+          "number": 4,
+          "x": 243.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund07",
+          "number": 5,
+          "x": 111.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund09",
+          "number": 6,
+          "x": 221.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund12",
+          "number": 7,
+          "x": 221.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "customs-house",
+          "number": 8,
+          "x": 177.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund14",
+          "number": 9,
+          "x": 133.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund15",
+          "number": 10,
+          "x": 221.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund17",
+          "number": 11,
+          "x": 221.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund18",
+          "number": 12,
+          "x": 199.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund19",
+          "number": 13,
+          "x": 133.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund20",
+          "number": 14,
+          "x": 155.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund23",
+          "number": 15,
+          "x": 177.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jin-mao",
+          "number": 16,
+          "x": 199.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "oriental-pearl",
+          "number": 17,
+          "x": 199.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "qingpu-beidajie-222",
+          "number": 18,
+          "x": 23.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "shanghai-tower",
+          "number": 19,
+          "x": 243.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "swfc",
+          "number": 20,
+          "x": 243.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-129",
+          "number": 21,
+          "x": 67.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-210",
+          "number": 22,
+          "x": 67.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "qingpu-beidajie-208-212",
+          "number": 23,
+          "x": 23.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-hongde-church",
+          "number": 24,
+          "x": 155.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-longhua-pagoda",
+          "number": 25,
+          "x": 45.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "songjiang-fangta-pagoda",
+          "number": 26,
+          "x": 23.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "putuo-zhenru-main-hall",
+          "number": 27,
+          "x": 133.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jiading-shanghai-auto-museum",
+          "number": 28,
+          "x": 45.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "minhang-baoyugang-library",
+          "number": 29,
+          "x": 23.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jingan-sihang-warehouse",
+          "number": 30,
+          "x": 199.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "yangpu-library",
+          "number": 31,
+          "x": 199.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "baoshan-confucian-dacheng-hall",
+          "number": 32,
+          "x": 177.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "columbia-country-club",
+          "number": 33,
+          "x": 67.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "fengxian-museum",
+          "number": 34,
+          "x": 23.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-mansion",
+          "number": 35,
+          "x": 45.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "changning-hudec-residence",
+          "number": 36,
+          "x": 67.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-bajin-residence",
+          "number": 37,
+          "x": 67.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jinshanwei-wengcheng-gatehouse",
+          "number": 38,
+          "x": 45.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-zikawei-south-building",
+          "number": 39,
+          "x": 45.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-sun-yatsen-residence",
+          "number": 40,
+          "x": 243.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-chaozong-paifang",
+          "number": 41,
+          "x": 243.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-chongsheng-shrine",
+          "number": 42,
+          "x": 155.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-dacheng-hall",
+          "number": 43,
+          "x": 111.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-east-guanting",
+          "number": 44,
+          "x": 199.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-east-wing",
+          "number": 45,
+          "x": 199.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-ji-gate",
+          "number": 46,
+          "x": 111.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-gate",
+          "number": 47,
+          "x": 155.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-photo-left-gate",
+          "number": 48,
+          "x": 133.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-photo-right-gate",
+          "number": 49,
+          "x": 67.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-minghuan-shrine",
+          "number": 50,
+          "x": 67.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-minglun-hall",
+          "number": 51,
+          "x": 177.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-pan-pool-bridge",
+          "number": 52,
+          "x": 89.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-ruxue-gate",
+          "number": 53,
+          "x": 45.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-stele-corridors",
+          "number": 54,
+          "x": 133.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-west-guanting",
+          "number": 55,
+          "x": 221.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-west-wing",
+          "number": 56,
+          "x": 89.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-xiangxian-shrine",
+          "number": 57,
+          "x": 155.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-xuehai-paifang",
+          "number": 58,
+          "x": 111.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-yimen",
+          "number": 59,
+          "x": 177.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-zunjing-pavilion",
+          "number": 60,
+          "x": 133.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-broadway-mansions",
+          "number": 61,
+          "x": 177.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-luxun-residence-facade",
+          "number": 62,
+          "x": 177.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-russian-consulate",
+          "number": 63,
+          "x": 155.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-grand-theatre",
+          "number": 64,
+          "x": 89.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-old-wing-on-company",
+          "number": 65,
+          "x": 111.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-pacific-hotel",
+          "number": 66,
+          "x": 111.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-park-hotel",
+          "number": 67,
+          "x": 89.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-shanghai-race-club-east-building",
+          "number": 68,
+          "x": 89.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-sincere-company",
+          "number": 69,
+          "x": 155.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-soong-ching-ling-residence",
+          "number": 70,
+          "x": 45.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-new-wing-on-company",
+          "number": 71,
+          "x": 221.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-xinxin-company",
+          "number": 72,
+          "x": 111.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-daxin-company",
+          "number": 73,
+          "x": 133.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-cathay-mansions",
+          "number": 74,
+          "x": 89.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-grosvenor-house",
+          "number": 75,
+          "x": 89.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        }
+      ]
+    },
+    "ui": {
+      "card": {
+        "x": 14,
+        "y": 348,
+        "width": 292,
+        "height": 143,
+        "top": 348,
+        "right": 306,
+        "bottom": 491,
+        "left": 14
+      },
+      "tools": {
+        "x": 263,
+        "y": 208,
+        "width": 42,
+        "height": 187,
+        "top": 208,
+        "right": 305,
+        "bottom": 395,
+        "left": 263
+      },
+      "legend": {
+        "x": 65.421875,
+        "y": 126,
+        "width": 189.15625,
+        "height": 47.6875,
+        "top": 126,
+        "right": 254.578125,
+        "bottom": 173.6875,
+        "left": 65.421875
+      }
+    },
+    "allSpritesPresent": true,
+    "picks": [
+      {
+        "id": "bund02",
+        "hit": "bund02"
+      },
+      {
+        "id": "bund03",
+        "hit": "bund03"
+      },
+      {
+        "id": "bund05",
+        "hit": "bund05"
+      },
+      {
+        "id": "bund06",
+        "hit": "bund06"
+      },
+      {
+        "id": "bund07",
+        "hit": "bund07"
+      },
+      {
+        "id": "bund09",
+        "hit": "bund09"
+      },
+      {
+        "id": "bund12",
+        "hit": "bund12"
+      },
+      {
+        "id": "customs-house",
+        "hit": "customs-house"
+      },
+      {
+        "id": "bund14",
+        "hit": "bund14"
+      },
+      {
+        "id": "bund15",
+        "hit": "bund15"
+      },
+      {
+        "id": "bund17",
+        "hit": "bund17"
+      },
+      {
+        "id": "bund18",
+        "hit": "bund18"
+      },
+      {
+        "id": "bund19",
+        "hit": "bund19"
+      },
+      {
+        "id": "bund20",
+        "hit": "bund20"
+      },
+      {
+        "id": "bund23",
+        "hit": "bund23"
+      },
+      {
+        "id": "jin-mao",
+        "hit": "jin-mao"
+      },
+      {
+        "id": "oriental-pearl",
+        "hit": "oriental-pearl"
+      },
+      {
+        "id": "qingpu-beidajie-222",
+        "hit": "qingpu-beidajie-222"
+      },
+      {
+        "id": "shanghai-tower",
+        "hit": "shanghai-tower"
+      },
+      {
+        "id": "swfc",
+        "hit": "swfc"
+      },
+      {
+        "id": "xuhui-wukang-129",
+        "hit": "xuhui-wukang-129"
+      },
+      {
+        "id": "xuhui-wukang-210",
+        "hit": "xuhui-wukang-210"
+      },
+      {
+        "id": "qingpu-beidajie-208-212",
+        "hit": "qingpu-beidajie-208-212"
+      },
+      {
+        "id": "hongkou-hongde-church",
+        "hit": "hongkou-hongde-church"
+      },
+      {
+        "id": "xuhui-longhua-pagoda",
+        "hit": "xuhui-longhua-pagoda"
+      },
+      {
+        "id": "songjiang-fangta-pagoda",
+        "hit": "songjiang-fangta-pagoda"
+      },
+      {
+        "id": "putuo-zhenru-main-hall",
+        "hit": "putuo-zhenru-main-hall"
+      },
+      {
+        "id": "jiading-shanghai-auto-museum",
+        "hit": "jiading-shanghai-auto-museum"
+      },
+      {
+        "id": "minhang-baoyugang-library",
+        "hit": "minhang-baoyugang-library"
+      },
+      {
+        "id": "jingan-sihang-warehouse",
+        "hit": "jingan-sihang-warehouse"
+      },
+      {
+        "id": "yangpu-library",
+        "hit": "yangpu-library"
+      },
+      {
+        "id": "baoshan-confucian-dacheng-hall",
+        "hit": "baoshan-confucian-dacheng-hall"
+      },
+      {
+        "id": "columbia-country-club",
+        "hit": "columbia-country-club"
+      },
+      {
+        "id": "fengxian-museum",
+        "hit": "fengxian-museum"
+      },
+      {
+        "id": "xuhui-wukang-mansion",
+        "hit": "xuhui-wukang-mansion"
+      },
+      {
+        "id": "changning-hudec-residence",
+        "hit": "changning-hudec-residence"
+      },
+      {
+        "id": "xuhui-bajin-residence",
+        "hit": "xuhui-bajin-residence"
+      },
+      {
+        "id": "jinshanwei-wengcheng-gatehouse",
+        "hit": "jinshanwei-wengcheng-gatehouse"
+      },
+      {
+        "id": "xuhui-zikawei-south-building",
+        "hit": "xuhui-zikawei-south-building"
+      },
+      {
+        "id": "huangpu-sun-yatsen-residence",
+        "hit": "huangpu-sun-yatsen-residence"
+      },
+      {
+        "id": "chongming-chaozong-paifang",
+        "hit": "chongming-chaozong-paifang"
+      },
+      {
+        "id": "chongming-chongsheng-shrine",
+        "hit": "chongming-chongsheng-shrine"
+      },
+      {
+        "id": "chongming-dacheng-hall",
+        "hit": "chongming-dacheng-hall"
+      },
+      {
+        "id": "chongming-east-guanting",
+        "hit": "chongming-east-guanting"
+      },
+      {
+        "id": "chongming-east-wing",
+        "hit": "chongming-east-wing"
+      },
+      {
+        "id": "chongming-ji-gate",
+        "hit": "chongming-ji-gate"
+      },
+      {
+        "id": "chongming-lingxing-gate",
+        "hit": "chongming-lingxing-gate"
+      },
+      {
+        "id": "chongming-lingxing-photo-left-gate",
+        "hit": "chongming-lingxing-photo-left-gate"
+      },
+      {
+        "id": "chongming-lingxing-photo-right-gate",
+        "hit": "chongming-lingxing-photo-right-gate"
+      },
+      {
+        "id": "chongming-minghuan-shrine",
+        "hit": "chongming-minghuan-shrine"
+      },
+      {
+        "id": "chongming-minglun-hall",
+        "hit": "chongming-minglun-hall"
+      },
+      {
+        "id": "chongming-pan-pool-bridge",
+        "hit": "chongming-pan-pool-bridge"
+      },
+      {
+        "id": "chongming-ruxue-gate",
+        "hit": "chongming-ruxue-gate"
+      },
+      {
+        "id": "chongming-stele-corridors",
+        "hit": "chongming-stele-corridors"
+      },
+      {
+        "id": "chongming-west-guanting",
+        "hit": "chongming-west-guanting"
+      },
+      {
+        "id": "chongming-west-wing",
+        "hit": "chongming-west-wing"
+      },
+      {
+        "id": "chongming-xiangxian-shrine",
+        "hit": "chongming-xiangxian-shrine"
+      },
+      {
+        "id": "chongming-xuehai-paifang",
+        "hit": "chongming-xuehai-paifang"
+      },
+      {
+        "id": "chongming-yimen",
+        "hit": "chongming-yimen"
+      },
+      {
+        "id": "chongming-zunjing-pavilion",
+        "hit": "chongming-zunjing-pavilion"
+      },
+      {
+        "id": "hongkou-broadway-mansions",
+        "hit": "hongkou-broadway-mansions"
+      },
+      {
+        "id": "hongkou-luxun-residence-facade",
+        "hit": "hongkou-luxun-residence-facade"
+      },
+      {
+        "id": "hongkou-russian-consulate",
+        "hit": "hongkou-russian-consulate"
+      },
+      {
+        "id": "huangpu-grand-theatre",
+        "hit": "huangpu-grand-theatre"
+      },
+      {
+        "id": "huangpu-old-wing-on-company",
+        "hit": "huangpu-old-wing-on-company"
+      },
+      {
+        "id": "huangpu-pacific-hotel",
+        "hit": "huangpu-pacific-hotel"
+      },
+      {
+        "id": "huangpu-park-hotel",
+        "hit": "huangpu-park-hotel"
+      },
+      {
+        "id": "huangpu-shanghai-race-club-east-building",
+        "hit": "huangpu-shanghai-race-club-east-building"
+      },
+      {
+        "id": "huangpu-sincere-company",
+        "hit": "huangpu-sincere-company"
+      },
+      {
+        "id": "xuhui-soong-ching-ling-residence",
+        "hit": "xuhui-soong-ching-ling-residence"
+      },
+      {
+        "id": "huangpu-new-wing-on-company",
+        "hit": "huangpu-new-wing-on-company"
+      },
+      {
+        "id": "huangpu-xinxin-company",
+        "hit": "huangpu-xinxin-company"
+      },
+      {
+        "id": "huangpu-daxin-company",
+        "hit": "huangpu-daxin-company"
+      },
+      {
+        "id": "huangpu-cathay-mansions",
+        "hit": "huangpu-cathay-mansions"
+      },
+      {
+        "id": "huangpu-grosvenor-house",
+        "hit": "huangpu-grosvenor-house"
+      }
+    ],
+    "steady": {
+      "ready": true,
+      "owner": {},
+      "city": {
+        "loading": 0,
+        "queued": 0,
+        "pendingStates": 0,
+        "detailLoading": 0,
+        "ownerMacroVisible": false,
+        "active": [
+          [
+            "14-13719-6694",
+            false
+          ],
+          [
+            "14-13719-6695",
+            false
+          ],
+          [
+            "14-13720-6695",
+            false
+          ],
+          [
+            "14-13720-6694",
+            false
+          ]
+        ],
+        "detailActive": []
+      },
+      "fingerprint": "{\"city\":{\"loading\":0,\"queued\":0,\"pendingStates\":0,\"detailLoading\":0,\"ownerMacroVisible\":false,\"active\":[[\"14-13719-6694\",false],[\"14-13719-6695\",false],[\"14-13720-6695\",false],[\"14-13720-6694\",false]],\"detailActive\":[]},\"beacons\":47,\"shader\":null,\"vector\":null}"
+    }
+  },
+  "scene": {
+    "hash": "#landmark=huangpu-cathay-mansions&mode=overview",
+    "title": "华懋公寓历史主楼（锦江饭店锦北楼）",
+    "viewport": [
+      320,
+      548
+    ],
+    "canvas": [
+      320,
+      548
+    ],
+    "transform": [
+      320,
+      548
+    ],
+    "map": {
+      "center": {
+        "lng": 121.45,
+        "lat": 31.2
+      },
+      "zoom": 8,
+      "pitch": 0,
+      "bearing": 0,
+      "padding": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      },
+      "elevation": 0
+    },
+    "beacons": {
+      "count": 75,
+      "ids": [
+        "bund02",
+        "bund03",
+        "bund05",
+        "bund06",
+        "bund07",
+        "bund09",
+        "bund12",
+        "customs-house",
+        "bund14",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23",
+        "jin-mao",
+        "oriental-pearl",
+        "qingpu-beidajie-222",
+        "shanghai-tower",
+        "swfc",
+        "xuhui-wukang-129",
+        "xuhui-wukang-210",
+        "qingpu-beidajie-208-212",
+        "hongkou-hongde-church",
+        "xuhui-longhua-pagoda",
+        "songjiang-fangta-pagoda",
+        "putuo-zhenru-main-hall",
+        "jiading-shanghai-auto-museum",
+        "minhang-baoyugang-library",
+        "jingan-sihang-warehouse",
+        "yangpu-library",
+        "baoshan-confucian-dacheng-hall",
+        "columbia-country-club",
+        "fengxian-museum",
+        "xuhui-wukang-mansion",
+        "changning-hudec-residence",
+        "xuhui-bajin-residence",
+        "jinshanwei-wengcheng-gatehouse",
+        "xuhui-zikawei-south-building",
+        "huangpu-sun-yatsen-residence",
+        "chongming-chaozong-paifang",
+        "chongming-chongsheng-shrine",
+        "chongming-dacheng-hall",
+        "chongming-east-guanting",
+        "chongming-east-wing",
+        "chongming-ji-gate",
+        "chongming-lingxing-gate",
+        "chongming-lingxing-photo-left-gate",
+        "chongming-lingxing-photo-right-gate",
+        "chongming-minghuan-shrine",
+        "chongming-minglun-hall",
+        "chongming-pan-pool-bridge",
+        "chongming-ruxue-gate",
+        "chongming-stele-corridors",
+        "chongming-west-guanting",
+        "chongming-west-wing",
+        "chongming-xiangxian-shrine",
+        "chongming-xuehai-paifang",
+        "chongming-yimen",
+        "chongming-zunjing-pavilion",
+        "hongkou-broadway-mansions",
+        "hongkou-luxun-residence-facade",
+        "hongkou-russian-consulate",
+        "huangpu-grand-theatre",
+        "huangpu-old-wing-on-company",
+        "huangpu-pacific-hotel",
+        "huangpu-park-hotel",
+        "huangpu-shanghai-race-club-east-building",
+        "huangpu-sincere-company",
+        "xuhui-soong-ching-ling-residence",
+        "huangpu-new-wing-on-company",
+        "huangpu-xinxin-company",
+        "huangpu-daxin-company",
+        "huangpu-cathay-mansions",
+        "huangpu-grosvenor-house"
+      ],
+      "districtCount": 16,
+      "zoom": 8,
+      "revision": 49,
+      "labelPixelSize": 12,
+      "anchorPixelSize": 20,
+      "sourceIds": [
+        "shanghai-building-beacons-leaders",
+        "shanghai-building-beacons-anchors",
+        "shanghai-building-beacons-labels"
+      ],
+      "layerIds": [
+        "shanghai-building-beacons-leaders-line",
+        "shanghai-building-beacons-anchors-symbol",
+        "shanghai-building-beacons-labels-symbol",
+        "shanghai-building-beacons-labels-numbers"
+      ],
+      "spriteIds": [
+        "shanghai-building-beacons-lamp",
+        "shanghai-building-beacons-sign-0",
+        "shanghai-building-beacons-sign-1",
+        "shanghai-building-beacons-sign-2",
+        "shanghai-building-beacons-sign-3",
+        "shanghai-building-beacons-sign-4",
+        "shanghai-building-beacons-number",
+        "shanghai-building-beacons-number-tight",
+        "shanghai-building-beacons-number-short"
+      ],
+      "viewportLabelCount": 75,
+      "labelMode": "numbers",
+      "overlapFallbackCount": 0,
+      "labelPositions": [
+        {
+          "id": "bund02",
+          "number": 1,
+          "x": 243.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund03",
+          "number": 2,
+          "x": 243.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund05",
+          "number": 3,
+          "x": 243.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund06",
+          "number": 4,
+          "x": 243.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund07",
+          "number": 5,
+          "x": 133.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund09",
+          "number": 6,
+          "x": 221.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund12",
+          "number": 7,
+          "x": 199.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "customs-house",
+          "number": 8,
+          "x": 155.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund14",
+          "number": 9,
+          "x": 221.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund15",
+          "number": 10,
+          "x": 133.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund17",
+          "number": 11,
+          "x": 221.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund18",
+          "number": 12,
+          "x": 177.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund19",
+          "number": 13,
+          "x": 133.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund20",
+          "number": 14,
+          "x": 199.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "bund23",
+          "number": 15,
+          "x": 177.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "jin-mao",
+          "number": 16,
+          "x": 221.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "oriental-pearl",
+          "number": 17,
+          "x": 199.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "qingpu-beidajie-222",
+          "number": 18,
+          "x": 23.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "shanghai-tower",
+          "number": 19,
+          "x": 243.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "swfc",
+          "number": 20,
+          "x": 243.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-129",
+          "number": 21,
+          "x": 45.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-210",
+          "number": 22,
+          "x": 67.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "qingpu-beidajie-208-212",
+          "number": 23,
+          "x": 23.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "hongkou-hongde-church",
+          "number": 24,
+          "x": 177.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-longhua-pagoda",
+          "number": 25,
+          "x": 243.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "songjiang-fangta-pagoda",
+          "number": 26,
+          "x": 23.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "putuo-zhenru-main-hall",
+          "number": 27,
+          "x": 133.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "jiading-shanghai-auto-museum",
+          "number": 28,
+          "x": 45.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "minhang-baoyugang-library",
+          "number": 29,
+          "x": 23.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "jingan-sihang-warehouse",
+          "number": 30,
+          "x": 155.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "yangpu-library",
+          "number": 31,
+          "x": 177.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "baoshan-confucian-dacheng-hall",
+          "number": 32,
+          "x": 199.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "columbia-country-club",
+          "number": 33,
+          "x": 67.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "fengxian-museum",
+          "number": 34,
+          "x": 45.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-mansion",
+          "number": 35,
+          "x": 45.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "changning-hudec-residence",
+          "number": 36,
+          "x": 67.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-bajin-residence",
+          "number": 37,
+          "x": 67.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "jinshanwei-wengcheng-gatehouse",
+          "number": 38,
+          "x": 23.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-zikawei-south-building",
+          "number": 39,
+          "x": 45.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-sun-yatsen-residence",
+          "number": 40,
+          "x": 67.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-chaozong-paifang",
+          "number": 41,
+          "x": 177.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-chongsheng-shrine",
+          "number": 42,
+          "x": 155.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-dacheng-hall",
+          "number": 43,
+          "x": 111.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-east-guanting",
+          "number": 44,
+          "x": 199.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-east-wing",
+          "number": 45,
+          "x": 199.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-ji-gate",
+          "number": 46,
+          "x": 111.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-gate",
+          "number": 47,
+          "x": 45.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-photo-left-gate",
+          "number": 48,
+          "x": 155.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-photo-right-gate",
+          "number": 49,
+          "x": 67.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-minghuan-shrine",
+          "number": 50,
+          "x": 177.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-minglun-hall",
+          "number": 51,
+          "x": 177.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-pan-pool-bridge",
+          "number": 52,
+          "x": 89.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-ruxue-gate",
+          "number": 53,
+          "x": 133.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-stele-corridors",
+          "number": 54,
+          "x": 133.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-west-guanting",
+          "number": 55,
+          "x": 221.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-west-wing",
+          "number": 56,
+          "x": 89.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-xiangxian-shrine",
+          "number": 57,
+          "x": 155.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-xuehai-paifang",
+          "number": 58,
+          "x": 111.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-yimen",
+          "number": 59,
+          "x": 67.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "chongming-zunjing-pavilion",
+          "number": 60,
+          "x": 133.5,
+          "y": 197,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "hongkou-broadway-mansions",
+          "number": 61,
+          "x": 155.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "hongkou-luxun-residence-facade",
+          "number": 62,
+          "x": 155.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "hongkou-russian-consulate",
+          "number": 63,
+          "x": 199.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-grand-theatre",
+          "number": 64,
+          "x": 89.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-old-wing-on-company",
+          "number": 65,
+          "x": 221.5,
+          "y": 215,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-pacific-hotel",
+          "number": 66,
+          "x": 111.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-park-hotel",
+          "number": 67,
+          "x": 89.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-shanghai-race-club-east-building",
+          "number": 68,
+          "x": 89.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-sincere-company",
+          "number": 69,
+          "x": 111.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "xuhui-soong-ching-ling-residence",
+          "number": 70,
+          "x": 45.5,
+          "y": 251,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-new-wing-on-company",
+          "number": 71,
+          "x": 221.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-xinxin-company",
+          "number": 72,
+          "x": 111.5,
+          "y": 269,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-daxin-company",
+          "number": 73,
+          "x": 111.5,
+          "y": 287,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-cathay-mansions",
+          "number": 74,
+          "x": 89.5,
+          "y": 233,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        },
+        {
+          "id": "huangpu-grosvenor-house",
+          "number": 75,
+          "x": 89.5,
+          "y": 305,
+          "width": 22,
+          "height": 18,
+          "compact": true
+        }
+      ]
+    },
+    "ui": {
+      "card": {
+        "x": 14,
+        "y": 328,
+        "width": 292,
+        "height": 143,
+        "top": 328,
+        "right": 306,
+        "bottom": 471,
+        "left": 14
+      },
+      "tools": {
+        "x": 263,
+        "y": 188,
+        "width": 42,
+        "height": 187,
+        "top": 188,
+        "right": 305,
+        "bottom": 375,
+        "left": 263
+      },
+      "legend": {
+        "x": 65.421875,
+        "y": 126,
+        "width": 189.15625,
+        "height": 47.6875,
+        "top": 126,
+        "right": 254.578125,
+        "bottom": 173.6875,
+        "left": 65.421875
+      }
+    },
+    "allSpritesPresent": true,
+    "picks": [
+      {
+        "id": "bund02",
+        "hit": "bund02"
+      },
+      {
+        "id": "bund03",
+        "hit": "bund03"
+      },
+      {
+        "id": "bund05",
+        "hit": "bund05"
+      },
+      {
+        "id": "bund06",
+        "hit": "bund06"
+      },
+      {
+        "id": "bund07",
+        "hit": "bund07"
+      },
+      {
+        "id": "bund09",
+        "hit": "bund09"
+      },
+      {
+        "id": "bund12",
+        "hit": "bund12"
+      },
+      {
+        "id": "customs-house",
+        "hit": "customs-house"
+      },
+      {
+        "id": "bund14",
+        "hit": "bund14"
+      },
+      {
+        "id": "bund15",
+        "hit": "bund15"
+      },
+      {
+        "id": "bund17",
+        "hit": "bund17"
+      },
+      {
+        "id": "bund18",
+        "hit": "bund18"
+      },
+      {
+        "id": "bund19",
+        "hit": "bund19"
+      },
+      {
+        "id": "bund20",
+        "hit": "bund20"
+      },
+      {
+        "id": "bund23",
+        "hit": "bund23"
+      },
+      {
+        "id": "jin-mao",
+        "hit": "jin-mao"
+      },
+      {
+        "id": "oriental-pearl",
+        "hit": "oriental-pearl"
+      },
+      {
+        "id": "qingpu-beidajie-222",
+        "hit": "qingpu-beidajie-222"
+      },
+      {
+        "id": "shanghai-tower",
+        "hit": "shanghai-tower"
+      },
+      {
+        "id": "swfc",
+        "hit": "swfc"
+      },
+      {
+        "id": "xuhui-wukang-129",
+        "hit": "xuhui-wukang-129"
+      },
+      {
+        "id": "xuhui-wukang-210",
+        "hit": "xuhui-wukang-210"
+      },
+      {
+        "id": "qingpu-beidajie-208-212",
+        "hit": "qingpu-beidajie-208-212"
+      },
+      {
+        "id": "hongkou-hongde-church",
+        "hit": "hongkou-hongde-church"
+      },
+      {
+        "id": "xuhui-longhua-pagoda",
+        "hit": "xuhui-longhua-pagoda"
+      },
+      {
+        "id": "songjiang-fangta-pagoda",
+        "hit": "songjiang-fangta-pagoda"
+      },
+      {
+        "id": "putuo-zhenru-main-hall",
+        "hit": "putuo-zhenru-main-hall"
+      },
+      {
+        "id": "jiading-shanghai-auto-museum",
+        "hit": "jiading-shanghai-auto-museum"
+      },
+      {
+        "id": "minhang-baoyugang-library",
+        "hit": "minhang-baoyugang-library"
+      },
+      {
+        "id": "jingan-sihang-warehouse",
+        "hit": "jingan-sihang-warehouse"
+      },
+      {
+        "id": "yangpu-library",
+        "hit": "yangpu-library"
+      },
+      {
+        "id": "baoshan-confucian-dacheng-hall",
+        "hit": "baoshan-confucian-dacheng-hall"
+      },
+      {
+        "id": "columbia-country-club",
+        "hit": "columbia-country-club"
+      },
+      {
+        "id": "fengxian-museum",
+        "hit": "fengxian-museum"
+      },
+      {
+        "id": "xuhui-wukang-mansion",
+        "hit": "xuhui-wukang-mansion"
+      },
+      {
+        "id": "changning-hudec-residence",
+        "hit": "changning-hudec-residence"
+      },
+      {
+        "id": "xuhui-bajin-residence",
+        "hit": "xuhui-bajin-residence"
+      },
+      {
+        "id": "jinshanwei-wengcheng-gatehouse",
+        "hit": "jinshanwei-wengcheng-gatehouse"
+      },
+      {
+        "id": "xuhui-zikawei-south-building",
+        "hit": "xuhui-zikawei-south-building"
+      },
+      {
+        "id": "huangpu-sun-yatsen-residence",
+        "hit": "huangpu-sun-yatsen-residence"
+      },
+      {
+        "id": "chongming-chaozong-paifang",
+        "hit": "chongming-chaozong-paifang"
+      },
+      {
+        "id": "chongming-chongsheng-shrine",
+        "hit": "chongming-chongsheng-shrine"
+      },
+      {
+        "id": "chongming-dacheng-hall",
+        "hit": "chongming-dacheng-hall"
+      },
+      {
+        "id": "chongming-east-guanting",
+        "hit": "chongming-east-guanting"
+      },
+      {
+        "id": "chongming-east-wing",
+        "hit": "chongming-east-wing"
+      },
+      {
+        "id": "chongming-ji-gate",
+        "hit": "chongming-ji-gate"
+      },
+      {
+        "id": "chongming-lingxing-gate",
+        "hit": "chongming-lingxing-gate"
+      },
+      {
+        "id": "chongming-lingxing-photo-left-gate",
+        "hit": "chongming-lingxing-photo-left-gate"
+      },
+      {
+        "id": "chongming-lingxing-photo-right-gate",
+        "hit": "chongming-lingxing-photo-right-gate"
+      },
+      {
+        "id": "chongming-minghuan-shrine",
+        "hit": "chongming-minghuan-shrine"
+      },
+      {
+        "id": "chongming-minglun-hall",
+        "hit": "chongming-minglun-hall"
+      },
+      {
+        "id": "chongming-pan-pool-bridge",
+        "hit": "chongming-pan-pool-bridge"
+      },
+      {
+        "id": "chongming-ruxue-gate",
+        "hit": "chongming-ruxue-gate"
+      },
+      {
+        "id": "chongming-stele-corridors",
+        "hit": "chongming-stele-corridors"
+      },
+      {
+        "id": "chongming-west-guanting",
+        "hit": "chongming-west-guanting"
+      },
+      {
+        "id": "chongming-west-wing",
+        "hit": "chongming-west-wing"
+      },
+      {
+        "id": "chongming-xiangxian-shrine",
+        "hit": "chongming-xiangxian-shrine"
+      },
+      {
+        "id": "chongming-xuehai-paifang",
+        "hit": "chongming-xuehai-paifang"
+      },
+      {
+        "id": "chongming-yimen",
+        "hit": "chongming-yimen"
+      },
+      {
+        "id": "chongming-zunjing-pavilion",
+        "hit": "chongming-zunjing-pavilion"
+      },
+      {
+        "id": "hongkou-broadway-mansions",
+        "hit": "hongkou-broadway-mansions"
+      },
+      {
+        "id": "hongkou-luxun-residence-facade",
+        "hit": "hongkou-luxun-residence-facade"
+      },
+      {
+        "id": "hongkou-russian-consulate",
+        "hit": "hongkou-russian-consulate"
+      },
+      {
+        "id": "huangpu-grand-theatre",
+        "hit": "huangpu-grand-theatre"
+      },
+      {
+        "id": "huangpu-old-wing-on-company",
+        "hit": "huangpu-old-wing-on-company"
+      },
+      {
+        "id": "huangpu-pacific-hotel",
+        "hit": "huangpu-pacific-hotel"
+      },
+      {
+        "id": "huangpu-park-hotel",
+        "hit": "huangpu-park-hotel"
+      },
+      {
+        "id": "huangpu-shanghai-race-club-east-building",
+        "hit": "huangpu-shanghai-race-club-east-building"
+      },
+      {
+        "id": "huangpu-sincere-company",
+        "hit": "huangpu-sincere-company"
+      },
+      {
+        "id": "xuhui-soong-ching-ling-residence",
+        "hit": "xuhui-soong-ching-ling-residence"
+      },
+      {
+        "id": "huangpu-new-wing-on-company",
+        "hit": "huangpu-new-wing-on-company"
+      },
+      {
+        "id": "huangpu-xinxin-company",
+        "hit": "huangpu-xinxin-company"
+      },
+      {
+        "id": "huangpu-daxin-company",
+        "hit": "huangpu-daxin-company"
+      },
+      {
+        "id": "huangpu-cathay-mansions",
+        "hit": "huangpu-cathay-mansions"
+      },
+      {
+        "id": "huangpu-grosvenor-house",
+        "hit": "huangpu-grosvenor-house"
+      }
+    ],
+    "steady": {
+      "ready": true,
+      "owner": {},
+      "city": {
+        "loading": 0,
+        "queued": 0,
+        "pendingStates": 0,
+        "detailLoading": 0,
+        "ownerMacroVisible": false,
+        "active": [
+          [
+            "14-13719-6694",
+            false
+          ],
+          [
+            "14-13719-6695",
+            false
+          ],
+          [
+            "14-13720-6695",
+            false
+          ],
+          [
+            "14-13720-6694",
+            false
+          ]
+        ],
+        "detailActive": []
+      },
+      "fingerprint": "{\"city\":{\"loading\":0,\"queued\":0,\"pendingStates\":0,\"detailLoading\":0,\"ownerMacroVisible\":false,\"active\":[[\"14-13719-6694\",false],[\"14-13719-6695\",false],[\"14-13720-6695\",false],[\"14-13720-6694\",false]],\"detailActive\":[]},\"beacons\":49,\"shader\":null,\"vector\":null}"
+    }
+  },
+  "capture": {
+    "file": "browser-beacons-320x548-short-465028c9-a6e9980f.png",
+    "bytes": 177938,
+    "sha256": "21c34a3a4f93866efc1e1971939a606a7d1b593aa850470a7237f00fbb8bc63f",
+    "viewport": [
+      320,
+      548
+    ],
+    "captureScript": {
+      "file": "data/audit/grosvenor-house-v1/qa-short-beacons.cjs",
+      "sha256": "445e42926dee290a73375eb2c33f393f367215dc5743045d6a5fef261d268d7c"
+    },
+    "sourceBindings": [
+      {
+        "file": "src/candidate-city-clipping.js",
+        "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+      },
+      {
+        "file": "src/building-beacons.js",
+        "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+      },
+      {
+        "file": "src/grosvenor-house.js",
+        "sha256": "05aa1b5a1e9c6036c4c14b9ac00fcbae76135d42575dd2c75d34da741a4b985b"
+      }
+    ],
+    "visualAcceptance": {
+      "status": "accepted",
+      "reviewers": [
+        "QA agent: actual view_image",
+        "root agent: independently viewed; confirmed in task messages"
+      ],
+      "observation": "All75 22x18 cells with12px text are legible without clipped digits or UI overlap at320x548. Cathay remains selected; the328px card top simulates the worst current title free area measured at320x568. This is not a selected Beidajie scene."
+    }
+  },
+  "restored": {
+    "hash": "#landmark=huangpu-cathay-mansions&mode=overview",
+    "title": "华懋公寓历史主楼（锦江饭店锦北楼）",
+    "viewport": [
+      320,
+      568
+    ],
+    "canvas": [
+      320,
+      568
+    ],
+    "transform": [
+      320,
+      568
+    ],
+    "map": {
+      "center": {
+        "lng": 121.45,
+        "lat": 31.2
+      },
+      "zoom": 8,
+      "pitch": 0,
+      "bearing": 0,
+      "padding": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      },
+      "elevation": 0
+    },
+    "beacons": {
+      "count": 75,
+      "ids": [
+        "bund02",
+        "bund03",
+        "bund05",
+        "bund06",
+        "bund07",
+        "bund09",
+        "bund12",
+        "customs-house",
+        "bund14",
+        "bund15",
+        "bund17",
+        "bund18",
+        "bund19",
+        "bund20",
+        "bund23",
+        "jin-mao",
+        "oriental-pearl",
+        "qingpu-beidajie-222",
+        "shanghai-tower",
+        "swfc",
+        "xuhui-wukang-129",
+        "xuhui-wukang-210",
+        "qingpu-beidajie-208-212",
+        "hongkou-hongde-church",
+        "xuhui-longhua-pagoda",
+        "songjiang-fangta-pagoda",
+        "putuo-zhenru-main-hall",
+        "jiading-shanghai-auto-museum",
+        "minhang-baoyugang-library",
+        "jingan-sihang-warehouse",
+        "yangpu-library",
+        "baoshan-confucian-dacheng-hall",
+        "columbia-country-club",
+        "fengxian-museum",
+        "xuhui-wukang-mansion",
+        "changning-hudec-residence",
+        "xuhui-bajin-residence",
+        "jinshanwei-wengcheng-gatehouse",
+        "xuhui-zikawei-south-building",
+        "huangpu-sun-yatsen-residence",
+        "chongming-chaozong-paifang",
+        "chongming-chongsheng-shrine",
+        "chongming-dacheng-hall",
+        "chongming-east-guanting",
+        "chongming-east-wing",
+        "chongming-ji-gate",
+        "chongming-lingxing-gate",
+        "chongming-lingxing-photo-left-gate",
+        "chongming-lingxing-photo-right-gate",
+        "chongming-minghuan-shrine",
+        "chongming-minglun-hall",
+        "chongming-pan-pool-bridge",
+        "chongming-ruxue-gate",
+        "chongming-stele-corridors",
+        "chongming-west-guanting",
+        "chongming-west-wing",
+        "chongming-xiangxian-shrine",
+        "chongming-xuehai-paifang",
+        "chongming-yimen",
+        "chongming-zunjing-pavilion",
+        "hongkou-broadway-mansions",
+        "hongkou-luxun-residence-facade",
+        "hongkou-russian-consulate",
+        "huangpu-grand-theatre",
+        "huangpu-old-wing-on-company",
+        "huangpu-pacific-hotel",
+        "huangpu-park-hotel",
+        "huangpu-shanghai-race-club-east-building",
+        "huangpu-sincere-company",
+        "xuhui-soong-ching-ling-residence",
+        "huangpu-new-wing-on-company",
+        "huangpu-xinxin-company",
+        "huangpu-daxin-company",
+        "huangpu-cathay-mansions",
+        "huangpu-grosvenor-house"
+      ],
+      "districtCount": 16,
+      "zoom": 8,
+      "revision": 51,
+      "labelPixelSize": 12,
+      "anchorPixelSize": 20,
+      "sourceIds": [
+        "shanghai-building-beacons-leaders",
+        "shanghai-building-beacons-anchors",
+        "shanghai-building-beacons-labels"
+      ],
+      "layerIds": [
+        "shanghai-building-beacons-leaders-line",
+        "shanghai-building-beacons-anchors-symbol",
+        "shanghai-building-beacons-labels-symbol",
+        "shanghai-building-beacons-labels-numbers"
+      ],
+      "spriteIds": [
+        "shanghai-building-beacons-lamp",
+        "shanghai-building-beacons-sign-0",
+        "shanghai-building-beacons-sign-1",
+        "shanghai-building-beacons-sign-2",
+        "shanghai-building-beacons-sign-3",
+        "shanghai-building-beacons-sign-4",
+        "shanghai-building-beacons-number",
+        "shanghai-building-beacons-number-tight",
+        "shanghai-building-beacons-number-short"
+      ],
+      "viewportLabelCount": 75,
+      "labelMode": "numbers",
+      "overlapFallbackCount": 0,
+      "labelPositions": [
+        {
+          "id": "bund02",
+          "number": 1,
+          "x": 243.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund03",
+          "number": 2,
+          "x": 243.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund05",
+          "number": 3,
+          "x": 221.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund06",
+          "number": 4,
+          "x": 243.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund07",
+          "number": 5,
+          "x": 111.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund09",
+          "number": 6,
+          "x": 221.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund12",
+          "number": 7,
+          "x": 221.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "customs-house",
+          "number": 8,
+          "x": 177.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund14",
+          "number": 9,
+          "x": 133.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund15",
+          "number": 10,
+          "x": 221.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund17",
+          "number": 11,
+          "x": 221.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund18",
+          "number": 12,
+          "x": 199.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund19",
+          "number": 13,
+          "x": 133.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund20",
+          "number": 14,
+          "x": 155.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "bund23",
+          "number": 15,
+          "x": 177.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jin-mao",
+          "number": 16,
+          "x": 199.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "oriental-pearl",
+          "number": 17,
+          "x": 199.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "qingpu-beidajie-222",
+          "number": 18,
+          "x": 23.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "shanghai-tower",
+          "number": 19,
+          "x": 243.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "swfc",
+          "number": 20,
+          "x": 243.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-129",
+          "number": 21,
+          "x": 67.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-210",
+          "number": 22,
+          "x": 67.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "qingpu-beidajie-208-212",
+          "number": 23,
+          "x": 23.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-hongde-church",
+          "number": 24,
+          "x": 155.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-longhua-pagoda",
+          "number": 25,
+          "x": 45.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "songjiang-fangta-pagoda",
+          "number": 26,
+          "x": 23.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "putuo-zhenru-main-hall",
+          "number": 27,
+          "x": 133.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jiading-shanghai-auto-museum",
+          "number": 28,
+          "x": 45.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "minhang-baoyugang-library",
+          "number": 29,
+          "x": 23.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jingan-sihang-warehouse",
+          "number": 30,
+          "x": 199.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "yangpu-library",
+          "number": 31,
+          "x": 199.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "baoshan-confucian-dacheng-hall",
+          "number": 32,
+          "x": 177.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "columbia-country-club",
+          "number": 33,
+          "x": 67.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "fengxian-museum",
+          "number": 34,
+          "x": 23.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-wukang-mansion",
+          "number": 35,
+          "x": 45.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "changning-hudec-residence",
+          "number": 36,
+          "x": 67.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-bajin-residence",
+          "number": 37,
+          "x": 67.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "jinshanwei-wengcheng-gatehouse",
+          "number": 38,
+          "x": 45.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-zikawei-south-building",
+          "number": 39,
+          "x": 45.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-sun-yatsen-residence",
+          "number": 40,
+          "x": 243.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-chaozong-paifang",
+          "number": 41,
+          "x": 243.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-chongsheng-shrine",
+          "number": 42,
+          "x": 155.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-dacheng-hall",
+          "number": 43,
+          "x": 111.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-east-guanting",
+          "number": 44,
+          "x": 199.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-east-wing",
+          "number": 45,
+          "x": 199.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-ji-gate",
+          "number": 46,
+          "x": 111.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-gate",
+          "number": 47,
+          "x": 155.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-photo-left-gate",
+          "number": 48,
+          "x": 133.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-lingxing-photo-right-gate",
+          "number": 49,
+          "x": 67.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-minghuan-shrine",
+          "number": 50,
+          "x": 67.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-minglun-hall",
+          "number": 51,
+          "x": 177.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-pan-pool-bridge",
+          "number": 52,
+          "x": 89.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-ruxue-gate",
+          "number": 53,
+          "x": 45.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-stele-corridors",
+          "number": 54,
+          "x": 133.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-west-guanting",
+          "number": 55,
+          "x": 221.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-west-wing",
+          "number": 56,
+          "x": 89.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-xiangxian-shrine",
+          "number": 57,
+          "x": 155.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-xuehai-paifang",
+          "number": 58,
+          "x": 111.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-yimen",
+          "number": 59,
+          "x": 177.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "chongming-zunjing-pavilion",
+          "number": 60,
+          "x": 133.5,
+          "y": 201,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-broadway-mansions",
+          "number": 61,
+          "x": 177.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-luxun-residence-facade",
+          "number": 62,
+          "x": 177.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "hongkou-russian-consulate",
+          "number": 63,
+          "x": 155.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-grand-theatre",
+          "number": 64,
+          "x": 89.5,
+          "y": 281,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-old-wing-on-company",
+          "number": 65,
+          "x": 111.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-pacific-hotel",
+          "number": 66,
+          "x": 111.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-park-hotel",
+          "number": 67,
+          "x": 89.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-shanghai-race-club-east-building",
+          "number": 68,
+          "x": 89.5,
+          "y": 241,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-sincere-company",
+          "number": 69,
+          "x": 155.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "xuhui-soong-ching-ling-residence",
+          "number": 70,
+          "x": 45.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-new-wing-on-company",
+          "number": 71,
+          "x": 221.5,
+          "y": 221,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-xinxin-company",
+          "number": 72,
+          "x": 111.5,
+          "y": 261,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-daxin-company",
+          "number": 73,
+          "x": 133.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-cathay-mansions",
+          "number": 74,
+          "x": 89.5,
+          "y": 301,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        },
+        {
+          "id": "huangpu-grosvenor-house",
+          "number": 75,
+          "x": 89.5,
+          "y": 321,
+          "width": 22,
+          "height": 20,
+          "compact": true
+        }
+      ]
+    },
+    "ui": {
+      "card": {
+        "x": 14,
+        "y": 348,
+        "width": 292,
+        "height": 143,
+        "top": 348,
+        "right": 306,
+        "bottom": 491,
+        "left": 14
+      },
+      "tools": {
+        "x": 263,
+        "y": 208,
+        "width": 42,
+        "height": 187,
+        "top": 208,
+        "right": 305,
+        "bottom": 395,
+        "left": 263
+      },
+      "legend": {
+        "x": 65.421875,
+        "y": 126,
+        "width": 189.15625,
+        "height": 47.6875,
+        "top": 126,
+        "right": 254.578125,
+        "bottom": 173.6875,
+        "left": 65.421875
+      }
+    },
+    "allSpritesPresent": true,
+    "picks": [
+      {
+        "id": "bund02",
+        "hit": "bund02"
+      },
+      {
+        "id": "bund03",
+        "hit": "bund03"
+      },
+      {
+        "id": "bund05",
+        "hit": "bund05"
+      },
+      {
+        "id": "bund06",
+        "hit": "bund06"
+      },
+      {
+        "id": "bund07",
+        "hit": "bund07"
+      },
+      {
+        "id": "bund09",
+        "hit": "bund09"
+      },
+      {
+        "id": "bund12",
+        "hit": "bund12"
+      },
+      {
+        "id": "customs-house",
+        "hit": "customs-house"
+      },
+      {
+        "id": "bund14",
+        "hit": "bund14"
+      },
+      {
+        "id": "bund15",
+        "hit": "bund15"
+      },
+      {
+        "id": "bund17",
+        "hit": "bund17"
+      },
+      {
+        "id": "bund18",
+        "hit": "bund18"
+      },
+      {
+        "id": "bund19",
+        "hit": "bund19"
+      },
+      {
+        "id": "bund20",
+        "hit": "bund20"
+      },
+      {
+        "id": "bund23",
+        "hit": "bund23"
+      },
+      {
+        "id": "jin-mao",
+        "hit": "jin-mao"
+      },
+      {
+        "id": "oriental-pearl",
+        "hit": "oriental-pearl"
+      },
+      {
+        "id": "qingpu-beidajie-222",
+        "hit": "qingpu-beidajie-222"
+      },
+      {
+        "id": "shanghai-tower",
+        "hit": "shanghai-tower"
+      },
+      {
+        "id": "swfc",
+        "hit": "swfc"
+      },
+      {
+        "id": "xuhui-wukang-129",
+        "hit": "xuhui-wukang-129"
+      },
+      {
+        "id": "xuhui-wukang-210",
+        "hit": "xuhui-wukang-210"
+      },
+      {
+        "id": "qingpu-beidajie-208-212",
+        "hit": "qingpu-beidajie-208-212"
+      },
+      {
+        "id": "hongkou-hongde-church",
+        "hit": "hongkou-hongde-church"
+      },
+      {
+        "id": "xuhui-longhua-pagoda",
+        "hit": "xuhui-longhua-pagoda"
+      },
+      {
+        "id": "songjiang-fangta-pagoda",
+        "hit": "songjiang-fangta-pagoda"
+      },
+      {
+        "id": "putuo-zhenru-main-hall",
+        "hit": "putuo-zhenru-main-hall"
+      },
+      {
+        "id": "jiading-shanghai-auto-museum",
+        "hit": "jiading-shanghai-auto-museum"
+      },
+      {
+        "id": "minhang-baoyugang-library",
+        "hit": "minhang-baoyugang-library"
+      },
+      {
+        "id": "jingan-sihang-warehouse",
+        "hit": "jingan-sihang-warehouse"
+      },
+      {
+        "id": "yangpu-library",
+        "hit": "yangpu-library"
+      },
+      {
+        "id": "baoshan-confucian-dacheng-hall",
+        "hit": "baoshan-confucian-dacheng-hall"
+      },
+      {
+        "id": "columbia-country-club",
+        "hit": "columbia-country-club"
+      },
+      {
+        "id": "fengxian-museum",
+        "hit": "fengxian-museum"
+      },
+      {
+        "id": "xuhui-wukang-mansion",
+        "hit": "xuhui-wukang-mansion"
+      },
+      {
+        "id": "changning-hudec-residence",
+        "hit": "changning-hudec-residence"
+      },
+      {
+        "id": "xuhui-bajin-residence",
+        "hit": "xuhui-bajin-residence"
+      },
+      {
+        "id": "jinshanwei-wengcheng-gatehouse",
+        "hit": "jinshanwei-wengcheng-gatehouse"
+      },
+      {
+        "id": "xuhui-zikawei-south-building",
+        "hit": "xuhui-zikawei-south-building"
+      },
+      {
+        "id": "huangpu-sun-yatsen-residence",
+        "hit": "huangpu-sun-yatsen-residence"
+      },
+      {
+        "id": "chongming-chaozong-paifang",
+        "hit": "chongming-chaozong-paifang"
+      },
+      {
+        "id": "chongming-chongsheng-shrine",
+        "hit": "chongming-chongsheng-shrine"
+      },
+      {
+        "id": "chongming-dacheng-hall",
+        "hit": "chongming-dacheng-hall"
+      },
+      {
+        "id": "chongming-east-guanting",
+        "hit": "chongming-east-guanting"
+      },
+      {
+        "id": "chongming-east-wing",
+        "hit": "chongming-east-wing"
+      },
+      {
+        "id": "chongming-ji-gate",
+        "hit": "chongming-ji-gate"
+      },
+      {
+        "id": "chongming-lingxing-gate",
+        "hit": "chongming-lingxing-gate"
+      },
+      {
+        "id": "chongming-lingxing-photo-left-gate",
+        "hit": "chongming-lingxing-photo-left-gate"
+      },
+      {
+        "id": "chongming-lingxing-photo-right-gate",
+        "hit": "chongming-lingxing-photo-right-gate"
+      },
+      {
+        "id": "chongming-minghuan-shrine",
+        "hit": "chongming-minghuan-shrine"
+      },
+      {
+        "id": "chongming-minglun-hall",
+        "hit": "chongming-minglun-hall"
+      },
+      {
+        "id": "chongming-pan-pool-bridge",
+        "hit": "chongming-pan-pool-bridge"
+      },
+      {
+        "id": "chongming-ruxue-gate",
+        "hit": "chongming-ruxue-gate"
+      },
+      {
+        "id": "chongming-stele-corridors",
+        "hit": "chongming-stele-corridors"
+      },
+      {
+        "id": "chongming-west-guanting",
+        "hit": "chongming-west-guanting"
+      },
+      {
+        "id": "chongming-west-wing",
+        "hit": "chongming-west-wing"
+      },
+      {
+        "id": "chongming-xiangxian-shrine",
+        "hit": "chongming-xiangxian-shrine"
+      },
+      {
+        "id": "chongming-xuehai-paifang",
+        "hit": "chongming-xuehai-paifang"
+      },
+      {
+        "id": "chongming-yimen",
+        "hit": "chongming-yimen"
+      },
+      {
+        "id": "chongming-zunjing-pavilion",
+        "hit": "chongming-zunjing-pavilion"
+      },
+      {
+        "id": "hongkou-broadway-mansions",
+        "hit": "hongkou-broadway-mansions"
+      },
+      {
+        "id": "hongkou-luxun-residence-facade",
+        "hit": "hongkou-luxun-residence-facade"
+      },
+      {
+        "id": "hongkou-russian-consulate",
+        "hit": "hongkou-russian-consulate"
+      },
+      {
+        "id": "huangpu-grand-theatre",
+        "hit": "huangpu-grand-theatre"
+      },
+      {
+        "id": "huangpu-old-wing-on-company",
+        "hit": "huangpu-old-wing-on-company"
+      },
+      {
+        "id": "huangpu-pacific-hotel",
+        "hit": "huangpu-pacific-hotel"
+      },
+      {
+        "id": "huangpu-park-hotel",
+        "hit": "huangpu-park-hotel"
+      },
+      {
+        "id": "huangpu-shanghai-race-club-east-building",
+        "hit": "huangpu-shanghai-race-club-east-building"
+      },
+      {
+        "id": "huangpu-sincere-company",
+        "hit": "huangpu-sincere-company"
+      },
+      {
+        "id": "xuhui-soong-ching-ling-residence",
+        "hit": "xuhui-soong-ching-ling-residence"
+      },
+      {
+        "id": "huangpu-new-wing-on-company",
+        "hit": "huangpu-new-wing-on-company"
+      },
+      {
+        "id": "huangpu-xinxin-company",
+        "hit": "huangpu-xinxin-company"
+      },
+      {
+        "id": "huangpu-daxin-company",
+        "hit": "huangpu-daxin-company"
+      },
+      {
+        "id": "huangpu-cathay-mansions",
+        "hit": "huangpu-cathay-mansions"
+      },
+      {
+        "id": "huangpu-grosvenor-house",
+        "hit": "huangpu-grosvenor-house"
+      }
+    ],
+    "steady": {
+      "ready": true,
+      "owner": {},
+      "city": {
+        "loading": 0,
+        "queued": 0,
+        "pendingStates": 0,
+        "detailLoading": 0,
+        "ownerMacroVisible": false,
+        "active": [
+          [
+            "14-13719-6694",
+            false
+          ],
+          [
+            "14-13719-6695",
+            false
+          ],
+          [
+            "14-13720-6695",
+            false
+          ],
+          [
+            "14-13720-6694",
+            false
+          ]
+        ],
+        "detailActive": []
+      },
+      "fingerprint": "{\"city\":{\"loading\":0,\"queued\":0,\"pendingStates\":0,\"detailLoading\":0,\"ownerMacroVisible\":false,\"active\":[[\"14-13719-6694\",false],[\"14-13719-6695\",false],[\"14-13720-6695\",false],[\"14-13720-6694\",false]],\"detailActive\":[]},\"beacons\":51,\"shader\":null,\"vector\":null}"
+    }
+  },
+  "restoredMainViewport": true,
+  "completedAt": "2026-10-31T07:24:32.066Z",
+  "browserClosedWithMain": true,
+  "visualReviewCompleted": true
+}

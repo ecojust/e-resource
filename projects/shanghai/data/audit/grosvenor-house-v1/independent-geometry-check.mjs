@@ -1,0 +1,45 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {MeshoptDecoder} from '../../../vendor/meshopt_decoder.module.js';
+await MeshoptDecoder.ready;
+const [base,configFile,outFile,projectionDirectory]=process.argv.slice(2);
+assert(base&&configFile&&outFile,'Usage: assets-directory review-probes.json output.json');
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const manifestBytes=fs.readFileSync(base+'/manifest.json'),manifest=JSON.parse(manifestBytes),configBytes=fs.readFileSync(configFile),config=JSON.parse(configBytes);
+assert.equal(manifest.id,'huangpu-grosvenor-house');
+const levels=config.section_heights_m;
+const cross2=(a,b,c)=>(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+function hull(points){const q=[...new Map(points.map(p=>[p.join(','),p])).values()].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);const chain=a=>{const out=[];for(const p of a){while(out.length>1&&cross2(out.at(-2),out.at(-1),p)<=1e-10)out.pop();out.push(p);}return out;};return [...chain(q).slice(0,-1),...chain([...q].reverse()).slice(0,-1)];}
+const sub=(a,b)=>a.map((x,i)=>x-b[i]),dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+function raytri(o,d,a,b,c){const e1=sub(b,a),e2=sub(c,a),p=cross(d,e2),det=dot(e1,p);if(Math.abs(det)<1e-9)return null;const inv=1/det,tv=sub(o,a),u=dot(tv,p)*inv;if(u < -1e-7||u>1+1e-7)return null;const q=cross(tv,e1),v=dot(d,q)*inv;if(v < -1e-7||u+v>1+1e-7)return null;const t=dot(e2,q)*inv;return t>1e-7?t:null;}
+const report={schema:'grosvenor-independent-geometry-v1',modelId:manifest.id,method:'Direct indexed-triangle GLB and Meshopt decoding; no author geometry rebuild. Convex sections describe external bulk, not interior completeness.',manifest:{bytes:manifestBytes.length,sha256:sha(manifestBytes)},reviewProbeConfig:{file:configFile,sha256:sha(configBytes)},assets:{}};
+let fullSignature=null,exactFullSignature=null;
+for(const [role,expected] of Object.entries(manifest.assets)){
+ const bytes=fs.readFileSync(base+'/'+expected.file),row={file:expected.file,bytes:bytes.length,sha256:sha(bytes)};report.assets[role]=row;
+ assert(bytes.length>0&&bytes.length<100000000);assert.equal(bytes.length,expected.bytes);assert.equal(row.sha256,expected.sha256);if(role==='native')continue;
+ assert.equal(bytes.toString('ascii',0,4),'glTF');assert.equal(bytes.readUInt32LE(4),2);assert.equal(bytes.readUInt32LE(8),bytes.length);
+ const len=bytes.readUInt32LE(12);assert.equal(bytes.readUInt32LE(16),0x4e4f534a);const doc=JSON.parse(bytes.toString('utf8',20,20+len)),start=28+len;assert.equal(bytes.readUInt32LE(24+len),0x004e4942);assert.equal(start+bytes.readUInt32LE(20+len),bytes.length);
+ const bin=bytes.subarray(start),views=new Map();assert.equal((doc.images||[]).length,0);assert.equal((doc.textures||[]).length,0);assert(doc.buffers.every(b=>!b.uri));row.noImagesTexturesOrExternalBuffers=true;
+ function view(i){if(views.has(i))return views.get(i);const v=doc.bufferViews[i],e=v.extensions?.EXT_meshopt_compression;let result;if(e){assert.equal(e.buffer,0);result=new Uint8Array(e.count*e.byteStride);MeshoptDecoder.decodeGltfBuffer(result,e.count,e.byteStride,bin.subarray(e.byteOffset||0,(e.byteOffset||0)+e.byteLength),e.mode,e.filter);}else{assert.equal(v.buffer,0);result=bin.subarray(v.byteOffset||0,(v.byteOffset||0)+v.byteLength);}views.set(i,result);return result;}
+ function accessor(i){const a=doc.accessors[i],v=doc.bufferViews[a.bufferView],data=view(a.bufferView);assert(!a.sparse&&!a.normalized);const size={5121:1,5123:2,5125:4,5126:4}[a.componentType],num={SCALAR:1,VEC3:3}[a.type];assert(size&&num);const stride=v.byteStride||size*num,dv=new DataView(data.buffer,data.byteOffset,data.byteLength),method={5121:'getUint8',5123:'getUint16',5125:'getUint32',5126:'getFloat32'}[a.componentType],result=[];for(let j=0;j<a.count;j++){const p=[];for(let k=0;k<num;k++){const value=dv[method]((a.byteOffset||0)+j*stride+k*size,true);assert(Number.isFinite(value));p.push(value);}result.push(num===1?p[0]:p);}return result;}
+ const lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity],sections=new Map(levels.map(h=>[h,[]])),tris=[],planPoints=[];let vertices=0;
+ const visit=id=>{const n=doc.nodes[id];assert(!n.matrix&&!n.translation&&!n.rotation&&!n.scale,'Review decoder expects identity model node transforms');if(n.mesh!==undefined)for(const p of doc.meshes[n.mesh].primitives){assert.equal(p.mode??4,4);const ps=accessor(p.attributes.POSITION),is=accessor(p.indices);assert.equal(is.length%3,0);vertices+=ps.length;for(const index of new Set(is)){assert(index<ps.length);const pt=ps[index];planPoints.push([pt[0],-pt[2]]);for(let i=0;i<3;i++){lo[i]=Math.min(lo[i],pt[i]);hi[i]=Math.max(hi[i],pt[i]);}}for(let k=0;k<is.length;k+=3){const t=is.slice(k,k+3).map(i=>{assert(i<ps.length);return ps[i];});tris.push({points:t,material:doc.materials[p.material]?.name});const mn=Math.min(...t.map(p=>p[1])),mx=Math.max(...t.map(p=>p[1]));for(const h of levels){if(h<=mn||h>=mx)continue;for(let j=0;j<3;j++){const a=t[j],b=t[(j+1)%3];if((a[1]<h&&b[1]>=h)||(b[1]<h&&a[1]>=h)){const s=(h-a[1])/(b[1]-a[1]);sections.get(h).push([a[0]+s*(b[0]-a[0]),-(a[2]+s*(b[2]-a[2]))]);}}}}}for(const child of n.children||[])visit(child);};for(const id of doc.scenes[doc.scene??0].nodes)visit(id);
+ assert.equal(tris.length,expected.triangles);row.triangles=tris.length;row.positionRecords=vertices;row.actualBoundsGLB={min:lo,max:hi};row.actualBoundsModelENU={min:[lo[0],-hi[2],lo[1]],max:[hi[0],-lo[2],hi[1]]};row.actualPlanConvexHull=hull(planPoints);
+ row.sections=Object.fromEntries([...sections].map(([h,ps])=>{assert(ps.length);const ring=hull(ps);let area=0;for(let i=0;i<ring.length;i++)area+=ring[i][0]*ring[(i+1)%ring.length][1]-ring[(i+1)%ring.length][0]*ring[i][1];return [h,{convexHullAreaM2:Math.abs(area)/2,ring}];}));
+ const ray=(o,d,max)=>{const hits=tris.map(t=>({distance:raytri(o,d,...t.points),material:t.material})).filter(h=>h.distance!==null&&h.distance<=max).sort((a,b)=>a.distance-b.distance);return hits.filter((h,i)=>i===0||Math.abs(h.distance-hits[i-1].distance)>1e-5);};
+ row.surfaceProbes=[];
+ for(const test of config.rays){const hits=ray(test.origin_glb,test.direction_glb,test.max_distance_m);if(test.expected_open)assert.equal(hits.length,0,JSON.stringify({role,test,hits}));else{assert(hits.length,JSON.stringify({role,test,hits}));if(test.first_material)assert.equal(hits[0].material,test.first_material,JSON.stringify({role,test,hits}));assert(Math.abs(hits[0].distance-test.first_distance_m)<test.tolerance_m,JSON.stringify({role,test,hits}));}row.surfaceProbes.push({...test,hits});}
+ const signatures=tris.map(t=>{const vertices=t.points.map(p=>p.map(x=>x.toFixed(6)).join(','));const cycles=[vertices,vertices.slice(1).concat(vertices[0]),vertices.slice(2).concat(vertices.slice(0,2))].map(x=>x.join(';'));return t.material+'|'+cycles.sort()[0];}).sort();row.orientedPositionMaterialSignature={coordinateRoundM:1e-6,sha256:sha(signatures.join('\n')),triangleCount:signatures.length};
+ const exactSignatures=tris.map(t=>{const vertices=t.points.map(p=>p.map(x=>String(x)).join(','));const cycles=[vertices,vertices.slice(1).concat(vertices[0]),vertices.slice(2).concat(vertices.slice(0,2))].map(x=>x.join(';'));return t.material+'|'+cycles.sort()[0];}).sort();row.exactFloat32PositionMaterialSignature={coordinateRounding:false,negativeZeroNormalized:true,sha256:sha(exactSignatures.join('\n')),triangleCount:exactSignatures.length};
+ if(projectionDirectory){
+  // This retains the actual concave occupied plan, unlike the external convex
+  // hull. Deduplication changes no area; union is performed independently in
+  // Python from these decoded triangles, never from the author's footprint.
+  const projected=new Map();
+  for(const triangle of tris){const pts=triangle.points.map(p=>[p[0],-p[2]]);if(Math.abs(cross2(...pts))<1e-10)continue;const key=pts.map(p=>p.map(x=>x.toFixed(6)).join(',')).sort().join(';');projected.set(key,pts);}
+  fs.mkdirSync(projectionDirectory,{recursive:true});const payload=JSON.stringify([...projected.values()]);fs.writeFileSync(projectionDirectory+'/'+role+'-plan-triangles.json',payload);row.actualPlanProjection={nondegenerateUniqueTriangleCount:projected.size,trianglePayloadSHA256:sha(payload)};
+ }
+ if(role==='raw'){fullSignature=row.orientedPositionMaterialSignature;exactFullSignature=row.exactFloat32PositionMaterialSignature;}else if(role==='full'){assert.deepEqual(row.orientedPositionMaterialSignature,fullSignature);assert.deepEqual(row.exactFloat32PositionMaterialSignature,exactFullSignature);row.fullMatchesRawOrientedPositionMaterialMultiset=true;row.fullMatchesRawExactFloat32PositionMaterialMultiset=true;}
+}
+fs.writeFileSync(outFile,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(Object.fromEntries(Object.entries(report.assets).map(([k,v])=>[k,{bytes:v.bytes,sha256:v.sha256,triangles:v.triangles,bounds:v.actualBoundsModelENU,probes:v.surfaceProbes?.length}]))));

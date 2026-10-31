@@ -1,0 +1,130 @@
+{
+  "schema": "grosvenor-root-checks-v1",
+  "cwd": "projects/shanghai",
+  "passed": true,
+  "commands": [
+    {
+      "command": "python tools/build_candidate_city_integrations.py --catalog-only --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/update_global_model_metadata.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_model_todo.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_landmark_directory.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/restoration_progress.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/sync_readme_districts.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "node --test tests/landmark-navigation.test.mjs tests/landmark-directory.test.mjs",
+      "result": "passed; 12 actual tests"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "python data/audit/grosvenor-house-v1/todo-directory-checks.py",
+      "result": "passed"
+    }
+  ],
+  "scope": "Generator consistency, navigation and directory metadata after the75-entry integration. Source clipping, dense lamp layout and actual rendered pixels have separate reports.",
+  "bindings": [
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "tools/update_global_model_metadata.py",
+      "bytes": 2051,
+      "sha256": "75426d1971833b3a3c2f06dde037de701292727e542e3d76910c5629c0a0a190"
+    },
+    {
+      "path": "tools/build_model_todo.py",
+      "bytes": 26325,
+      "sha256": "ead722ccfc992f1190043deafae3ef457db36a123569ac40cb066691d5913ffb"
+    },
+    {
+      "path": "tools/build_landmark_directory.py",
+      "bytes": 8852,
+      "sha256": "304d6581c2a92a596e9da078b66e9d3b7af577c9bc4e2dfc4238f34769cd64fe"
+    },
+    {
+      "path": "tools/restoration_progress.py",
+      "bytes": 12465,
+      "sha256": "1e787dc59a412b0840624574887458f560a9a1a1db40719157f0b0e7dc7098ca"
+    },
+    {
+      "path": "tools/sync_readme_districts.py",
+      "bytes": 16609,
+      "sha256": "72ea91588fd3331d7b88f45ff5d60321d106b8e9dc1f74de1bbb5526b3057c41"
+    },
+    {
+      "path": "tests/landmark-navigation.test.mjs",
+      "bytes": 6357,
+      "sha256": "52eb937d3ca7d23fe682ae9058d178e5fccc5b4084073a3ce3a8e0488737f126"
+    },
+    {
+      "path": "tests/landmark-directory.test.mjs",
+      "bytes": 11772,
+      "sha256": "bafb8de95898e0670a2bf94e35a389433701fa445654df1723da281fd4059997"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 248118,
+      "sha256": "6adc0166c24e4976c3cb9e49996708e00582d951baccb9277f42cac88aa1f2be"
+    },
+    {
+      "path": "data/model-viewers.json",
+      "bytes": 9083,
+      "sha256": "c669afe56a01f61553f45669ff6af407de9894e851f31958e672767e2c6907b2"
+    },
+    {
+      "path": "src/building-beacons.js",
+      "bytes": 17791,
+      "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+    },
+    {
+      "path": "src/candidate-city-clipping.js",
+      "bytes": 9474,
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    {
+      "path": "src/grosvenor-house.js",
+      "bytes": 7579,
+      "sha256": "05aa1b5a1e9c6036c4c14b9ac00fcbae76135d42575dd2c75d34da741a4b985b"
+    },
+    {
+      "path": "grosvenor-house.html",
+      "bytes": 2785,
+      "sha256": "a30c9b0877cebf34c88af41b0bd46f32caf4aa1da2c40bf1bd54dcd43810e94a"
+    }
+  ],
+  "independent_prepublication_review": {
+    "reviewer": "cathay_review",
+    "read_only": true,
+    "passed": true,
+    "scope": [
+      "75 main-map directory links and district counts",
+      "b1-018 unfinished forecourt and western apartments retained in active TODO",
+      "34 previous city records, 36 previous inventory records, 4 placement records and 20 viewer entries retain original values",
+      "304 materialized historical audit files byte-identical to HEAD, including all 45 Cathay files; skipped sparse paths not materialized",
+      "new four assets and cited audit hashes match",
+      "no private reference photos or temporary large files among untracked publishable paths"
+    ],
+    "browser_scope": "Final browser completion is checked separately; no additional browser was started or attached."
+  }
+}

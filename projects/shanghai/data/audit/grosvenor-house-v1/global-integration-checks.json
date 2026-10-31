@@ -1,0 +1,149 @@
+{
+  "schema": "grosvenor-global-integration-delta-v1",
+  "passed": 7,
+  "failed": 0,
+  "checks": [
+    "Grosvenor House adds one overview destination to the existing 74-entry shared map",
+    "all 34 earlier candidate rows, additional placements and historical audits remain unchanged",
+    "existing base entries, placement evidence and unaffected production integrations retain their previous bytes",
+    "new placement matches the exact reviewed source contract and unique old-building owner",
+    "the production shader triangulator stays within its 128-triangle budget after this one addition",
+    "the reviewed near owner groups include the partial Grosvenor clip only in its own untagged tile",
+    "the production vector correction affects only the identified old-building source and defers when its city GLB is active"
+  ],
+  "baseline_commit": "653cb8386d667774c5624b0684aab5dad1cdd68a",
+  "entry_id": "huangpu-grosvenor-house",
+  "total_destinations": 75,
+  "candidate_models": 35,
+  "huangpu_count": 27,
+  "route": "index.html#landmark=huangpu-grosvenor-house&mode=overview",
+  "walking_enabled": false,
+  "clipping_triangles": {
+    "before": 87,
+    "addition": 26,
+    "after": 113,
+    "limit": 128
+  },
+  "source_remainder_ratio": 0.024638393458105107,
+  "source_remainder_area_runtime_m2": 35.03680786964792,
+  "source_remainder_regions": 2,
+  "source_remainder_symmetric_difference_ratio": 0,
+  "scope": "Static production merge/navigation, exact placement evidence binding, shader triangulation, reviewed near-group ownership filtering on synthetic untagged meshes, and vector ownership checks for the new old-building source only. The foreign-ID duplicate and height=1 are identity fixtures; actual neighboring source geometry is also checked without mutation. Near-group fixtures use the actual reviewed tile owner arrays but do not claim loaded native geometry or rendered pixels. Actual model visibility and two unresolved front-source regions, neighboring western source, auditorium and Cathay Mansions preservation require the separate browser check. Existing city GLB owners defer to shader correction instead of vector duplication.",
+  "bindings": [
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/audit/global-model-integration-v1/inventory.json",
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+      "bytes": 3754,
+      "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/inventory-increment.json",
+      "bytes": 6957,
+      "sha256": "9b63707a87b1f9a02ea11b6197a08b6ef3950c8938030d0f939671e89eeb7633"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/inventory-increment.json",
+      "bytes": 9679,
+      "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
+    },
+    {
+      "file": "data/audit/cathay-mansions-v1/inventory-increment.json",
+      "bytes": 12446,
+      "sha256": "fe68b611c941d9b744d879f3096fff233dd6be1868341d3d07935d05b2e0a036"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 9474,
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 5952,
+      "sha256": "b96ab96e615a9c431bf84adcf5b14fa3808bb7a60ccd346dcf56d5641d037e57"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "37643e54b979702e72cb2867e600ec26b5af9e0b5638c74f1d1f385438c1b403"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 248118,
+      "sha256": "6adc0166c24e4976c3cb9e49996708e00582d951baccb9277f42cac88aa1f2be"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 68976,
+      "sha256": "125160aa84cef821009f851638de9e8bbcbd6b3055eaff8f1efd2301ba6ea16f"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 99129,
+      "sha256": "8782da3fb0ed7b936e883d009b5701a9a79119daf8d607a1e899024d7ca22e37"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/footprint-review.json",
+      "bytes": 467897,
+      "sha256": "c774904a81e6510a0c68601b993ca64833df22d28b8d0cf4f392fdfc485538a2"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/global-integration-checks.mjs",
+      "bytes": 14303,
+      "sha256": "a64831393956013a222532a4c1bdc9e6c9f4e93f119948fdd05626bfa01f4082"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 17791,
+      "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 47881,
+      "sha256": "ffb42a7cee8687621dc93075919a9da933340ca3206fea46680f43a6af701e0f"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    }
+  ]
+}

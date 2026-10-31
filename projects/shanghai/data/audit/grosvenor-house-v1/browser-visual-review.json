@@ -1,0 +1,73 @@
+{
+  "schema": "grosvenor-root-browser-visual-review-v1",
+  "reviewer": "root",
+  "method": "Actual view_image inspection of all eight unique final PNG files; no additional browser controller attached.",
+  "passed": true,
+  "report_bindings": {
+    "browser.json": "aa916ffc1bc338cf315470239d0933b474824542b5f1ea6f98ddf56af496ce19",
+    "short-beacons.json": "95b314a714a6b3824c42d4e3328bb625e946570c0992683373a45509db5fc787",
+    "western-source-http-receipt.json": "1ce1f4f8c85b9da53e8fc0908c6039388dc6264f1d0282425e23eca776da0429"
+  },
+  "manifest_sha256": "276f1c505a90f08425f9b87f720e3908804c5bbf293a09207ad0faf27f816a3f",
+  "images": [
+    {
+      "file": "browser-auxiliary-desktop-full-05aa1b5a-607a0465.png",
+      "bytes": 192167,
+      "sha256": "56b7f3f7c9ac7618c7deacd653ebec624a0e6578336765b472154551c4f1e856",
+      "actually_viewed_by_root": true,
+      "observation": "近景五折体量、阶梯露台、冠槽与有限雨棚清楚，模型未被侧栏遮挡。"
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-05aa1b5a-607a0465.png",
+      "bytes": 171383,
+      "sha256": "bdae0dc6c85760f034bebd8d624349c1715b396ce0be99208f6abe4b46aa6fff",
+      "actually_viewed_by_root": true,
+      "observation": "远景简化窗格但保持五折主体、退台、冠部与雨棚。"
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-05aa1b5a-607a0465.png",
+      "bytes": 78633,
+      "sha256": "3546fb245d2a6bae08e80f409dfe539960b621b278f3d30da1132ee441586af5",
+      "actually_viewed_by_root": true,
+      "observation": "手机页模型完整，模式选择及下载区域可用，无横向溢出。"
+    },
+    {
+      "file": "browser-global-default-desktop-465028c9-88e0c5d8.png",
+      "bytes": 456694,
+      "sha256": "91a57911a27b114f00b3ebc12f989da52fb0ac4b93e2425bae9fbdcba129a162",
+      "actually_viewed_by_root": true,
+      "observation": "主体与阶梯退台完整，前庭西/东两保留源屋顶在灯牌上方可见，独立3049块仍在；华懋独立模型也可辨。"
+    },
+    {
+      "file": "browser-global-forecourt-retained-context-465028c9-88e0c5d8.png",
+      "bytes": 369894,
+      "sha256": "5a90ed9d2756a828aa4c54246568558f78591e1c0f5b9962624b4997e5e0fd89",
+      "actually_viewed_by_root": true,
+      "observation": "俯视显示前庭开敞与低雨棚，西侧保留小源块可辨；东余块被灯牌遮挡，其像素保留由默认桌面图核对。"
+    },
+    {
+      "file": "browser-global-default-mobile-465028c9-88e0c5d8.png",
+      "bytes": 237528,
+      "sha256": "933fcb78a406cfcdf68a362b9ef34db0b2e586a3c270cf0af64408c8e68f22d8",
+      "actually_viewed_by_root": true,
+      "observation": "390像素主图中高层和退台完整，当前名与全局75入口计数正确，前庭原粗略源块继续显示。"
+    },
+    {
+      "file": "browser-beacons-320-city-75-465028c9-88e0c5d8.png",
+      "bytes": 181968,
+      "sha256": "36601fc17f4ca04b5096dd7632c07ff1f0f4732438c7c46aa6aca5c8908da0f7",
+      "actually_viewed_by_root": true,
+      "observation": "320×568全城视图中75个编号灯牌可见，避开底部华懋卡片与控件；此图采用22×20编号牌。"
+    },
+    {
+      "file": "browser-beacons-320x548-short-465028c9-a6e9980f.png",
+      "bytes": 177938,
+      "sha256": "21c34a3a4f93866efc1e1971939a606a7d1b593aa850470a7237f00fbb8bc63f",
+      "actually_viewed_by_root": true,
+      "observation": "320×548全城视图中75个编号牌可见，22×18背景的12像素文字未裁切，避开卡片及控件；仍选择华懋，用减小视口复现最长标题卡片可用区域，不声称选中了北大街222号。"
+    }
+  ],
+  "recovery_scope": "Three original auxiliary captures plus four main-page captures from the same Chrome through raw CDP recovery. A separate 320x548 capture temporarily paused the QA driver only, retained the same Chrome and production scene, then restored320x568 before native touch. Search-expectation and initial adapter-serialization failures are preserved; production input bytes and queue/layout/two-frame stabilization gates were unchanged.",
+  "limitations": "The declared exterior remains an estimated reconstruction. Default desktop pixels show both retained forecourt source roofs; the eastern roof is occluded by the beacon in the overhead image. Western near-source HTTP evidence distinguishes original ResourceTiming from a later readonly identical-byte response. The320x548 supplemental image uses the Cathay card to reproduce the measured longest-title free area; it is not a claim that Beidajie222 was selected or its model loaded.",
+  "completion": "Browser and supplemental records passed; original Chrome closed; native touch changed Cathay to Grosvenor with the target asset visible."
+}

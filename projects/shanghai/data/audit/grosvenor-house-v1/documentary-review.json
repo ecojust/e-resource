@@ -1,0 +1,59 @@
+{
+  "schema": "grosvenor-documentary-review-v1",
+  "building_id": "huangpu-grosvenor-house",
+  "reviewed_utc": "2026-10-31T06:38:20.600365Z",
+  "reviewer": "cathay_reference continuing to grosvenor",
+  "result": "actual-documentary-review-complete; main-high-rise-identity-supported; whole-listed-place-unresolved",
+  "source_register": {
+    "file": "source/precise/huangpu-grosvenor-house/source-register.json",
+    "bytes": 21017,
+    "sha256": "c7e4dd9bd7f41402d23d21a38a8c8e427bec69fe1439a94f48376462da9a25fb"
+  },
+  "actual_reads": [
+    {
+      "id": "official-gazetteer",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284518",
+      "actually_read": true,
+      "sha256": "27a3397916546ffff5909ac2f0a0908b348304259a1aa8831c6eb7fe85cdacca"
+    },
+    {
+      "id": "wikipedia-context",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E5%B3%BB%E5%B2%AD%E5%AF%84%E5%BA%90&oldid=89407640",
+      "actually_read": true,
+      "sha256": "254176210d9e06199e32bd60ec43bb445306306de9d4381a3b6bf60a3ec19156"
+    }
+  ],
+  "accepted_constraints": {
+    "identity": "The Grosvenor House / 峻岭寄庐 / 峻岭公寓 / 格罗斯凡纳公寓 / 高纳公寓; official gazetteer explicitly says renamed 茂名公寓 in1956, then 锦江饭店中楼. The modeled object is its historic high-rise principal building.",
+    "inventory_spelling": "Fixed inventory says 峻林公寓、茂名公寓; retain that raw record spelling, while the read chapter and visual building use 峻岭. Do not create a second high-rise merely for the 茂名 alias.",
+    "address_policy": {
+      "inventory_address": "茂名南路65－125号",
+      "official_chapter_address": "茂名南路59号",
+      "resolution": "Preserve the indexed listed-place range and disclose the chapter’s59號. Exact correspondence between current/historical doors and the listed area remains unresolved."
+    },
+    "construction": "Official chapter says1934 completed and1935 rented. The raw listed record gives1935; keep these distinct completion/letting/listed-year statements.",
+    "height_and_storeys": {
+      "official_height_m": 78,
+      "official_storeys": "Central18 including one basement; symmetric wing steps16,15,14,13.",
+      "secondary_conflict": "Retrieved Wikipedia says18 above ground and3 underground, differing from the official chapter. This is recorded rather than silently added together.",
+      "measurement_endpoint": "78m endpoint and grade are unspecified; neither crown top nor equipment/antenna endpoint is established.",
+      "model_policy": "A declared78m author envelope may be based on the documented height, but no derived level spacing, highest cap or roof-equipment height is a surveyed value. Preserve the basement/storey-count disagreement.",
+      "underground_scope": "No underground geometry reconstructed or certified in this exterior model."
+    },
+    "plan_and_finish": "Official: 拱桥样，五折环形，略带弧状; middle and east/west three-part facade with vertical divisions, brown brick and marble at entrance. The main image shows the folded/curved-looking wall and stepped terraces.",
+    "documented_gross_floor_area_m2": 23985,
+    "design_and_builder": "Official: 公和洋行和爱尔德打样行设计；友联建造公司承造（一说卢松华的鹤记营造厂施工）. Preserve the alternative contractor attribution.",
+    "scope": "Only the distinct stepped historic high-rise. Exclude independent low west/frontage blocks, links, gardens, auditorium, Cathay Mansions, New Jinjiang Hotel and other complex buildings.",
+    "listed_place_remainder": "Official chapter separately describes6 three-storey apartments west of the high-rise, about10000m² total. It does not settle each current footprint or their exact inclusion in b1-018. Keep this part of the listed place visible as remaining identity/scope review; high-rise completion alone does not close b1-018."
+  },
+  "unresolved": [
+    "Full legal/listed-place boundary for b1-018 and exact identity/extent of the six western low apartments.",
+    "Current/historic door-number correspondence between59 and65–125.",
+    "Official18 including1 basement versus secondary18 above ground plus3 underground.",
+    "78m measurement endpoint, original/current grade, exact terrace depths, setbacks and floor elevations.",
+    "Complete opposite rear wall, covered passages, rooftop equipment positions, east/west boundary intersections and exact measured footprint.",
+    "Which separate low frontage/compound buildings carry the current name峻岭楼; this cannot be inferred just by two aliases in the raw record.",
+    "The figure23985m² is gross floor area, not a footprint test."
+  ],
+  "decision": "The Grosvenor historic high-rise is a distinct buildable object; 茂名公寓 is a documented renamed identity, not automatic proof of a second high-rise. Keep western low buildings and whole-listed-place completeness unresolved."
+}

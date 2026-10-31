@@ -1,0 +1,696 @@
+{
+  "schema": "grosvenor-independent-model-review-v1",
+  "reviewed_utc": "2026-10-31T07:03:41.234236+00:00",
+  "reviewer": "cathay_review continuing as Grosvenor independent reviewer",
+  "building_id": "huangpu-grosvenor-house",
+  "geometry_revision": "v2",
+  "result": "pass_with_documented_exterior_estimates_and_partial_source_scope",
+  "verdict": "独立实际解码三档GLB，66项表面/空区射线通过，raw/full精确有向Float32面及材质对应一致；实看四参考图和五张最终原生图后，本栋高层主体及有限入口棚外观资产通过。前庭左右未核源余块、独立低公寓和其他楼体保留，不把本件作为全部名录b1-018完成。全局图像及源余块实际显示另由浏览器检查验收。",
+  "manifest": {
+    "file": "assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+    "bytes": 7507,
+    "sha256": "276f1c505a90f08425f9b87f720e3908804c5bbf293a09207ad0faf27f816a3f"
+  },
+  "assets": {
+    "raw": {
+      "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-raw.glb",
+      "bytes": 10430628,
+      "sha256": "8273ee99e895ab453f3467536691cc80ccf1b96ccf6ede97630115dda2b9a3fb",
+      "triangles": 193620
+    },
+    "native": {
+      "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house.blend",
+      "bytes": 5668340,
+      "sha256": "6d2071e3243e58ae02efc62b20a0dda456c3bfa19af4e6e11ab68f6833f6c7db"
+    },
+    "full": {
+      "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-web.glb",
+      "bytes": 3310388,
+      "sha256": "d01d88a669aaef8b94b1c3c8ccaab07d19884c609e53206dcaa6460ed29ee360",
+      "triangles": 193620
+    },
+    "lod": {
+      "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-lod.glb",
+      "bytes": 1341484,
+      "sha256": "e82a2de8f5261a7e85f9166398357b1073a46a58fa121613fd184c9db7d9f915",
+      "triangles": 64540
+    }
+  },
+  "independence": {
+    "performed_here": [
+      "实际读取四资产字节/SHA并比对最终manifest",
+      "独立GLB及生产MeshoptDecoder解码实际索引三角，只使用被引用POSITION计算bounds和plan hull",
+      "raw/full按材质有向三角Float32位置multiset精确比对；只规范化负零，不舍入坐标",
+      "三档各22项真实三角射线，覆盖宽窗/窄窗/实体竖饰、冠深槽/肋/头、五个不同高度的外露露台、四前庭空区及棚玻璃/金属上下双向",
+      "六高度面与实际三角求交，核raw/full六截面凸包相同",
+      "从实际投影三角独立union，再按MapLibre Mercator物理米和heading独立重建部分显示裁剪、保留源差集、碰撞与邻源交集",
+      "实际查看四参考图、五张最终v2原生图；读实际取得的官方章节284518有关别名、层数、形态与西侧六低公寓原文"
+    ],
+    "not_repeated": [
+      "作者每个构件闭合/正体积、完整逐面法线矩阵与每档48作者射线",
+      "Blender重新打开及再次拍摄原生图",
+      "城市原near全部实例110368三角与11源组件的展开/分类",
+      "Chrome/WebGL地图显示、部分源余块像素、手机触控和灯牌检查"
+    ],
+    "dependency_note": "作者几何和原生重开证据以packaged/native SHA绑定；城市原near与剩余旧体量数值归属于footprint-review。这里没有把它们包装成重复独立执行。地图接入和实际像素由另行运行时/浏览器证据负责。"
+  },
+  "geometry": {
+    "decoder": {
+      "file": "data/audit/grosvenor-house-v1/independent-geometry-check.mjs",
+      "bytes": 9049,
+      "sha256": "28f9b4716488f2f279fa1e48266dcfee0019992563e7d659c928171fff9a4184"
+    },
+    "probe_config": {
+      "file": "data/audit/grosvenor-house-v1/independent-probes.json",
+      "bytes": 11276,
+      "sha256": "6e44e189f05198eaced087b313819dfe4bbb0dc760dca81ebf971e9022ea9681"
+    },
+    "actual_geometry_evidence": {
+      "file": "data/audit/grosvenor-house-v1/independent-geometry.json",
+      "bytes": 78744,
+      "sha256": "ce85788221881f51c1bc3d9bb3fa0ef9ac6aaf51ec0ecced4a5c182bd324f344"
+    },
+    "actual_bounds_model_enu_m": {
+      "min": [
+        -44.76152420043945,
+        -16.696369171142578,
+        0
+      ],
+      "max": [
+        46.22146987915039,
+        11.094259262084961,
+        78
+      ]
+    },
+    "actual_envelope_width_depth_height_m": [
+      90.98299407958984,
+      27.79062843322754,
+      78
+    ],
+    "raw_web_lod_bounds_and_plan_convex_hulls_equal": true,
+    "raw_web_exact_six_section_convex_hulls_equal": true,
+    "raw_web_exact_float32_oriented_position_material_signature": {
+      "coordinateRounding": false,
+      "negativeZeroNormalized": true,
+      "sha256": "0538f664a23559e47c2a24bf55e9c269e250c108d81d90e565605f9f71147306",
+      "triangleCount": 193620
+    },
+    "equivalence_limit": "Exact decoded Float32 coordinate values and oriented triangle material assignments, with +0/-0 normalized. This does not claim equality of every GLTF attribute or indexed topology.",
+    "ray_tests_per_glb": 22,
+    "actual_triangle_rays_total": 66,
+    "probe_location_note": "Reviewer selected alternate pane offsets/heights and terrace points from estimated documented planes. Crown blind-groove backing is tested separately from solid ribs/head. Shelter cells are tested from above and below with paired metal-strip controls. These prove authored geometry, not surveyed real dimensions.",
+    "section_heights_m": [
+      20.0,
+      59.0,
+      74.0,
+      54.8,
+      63.8,
+      67.5
+    ],
+    "independently_hit_exposed_terrace_tops_m": [
+      53.265,
+      57.365,
+      61.465,
+      65.565,
+      69.665
+    ],
+    "blind_crown_groove_depth_design_m": 0.58,
+    "unproven_through_hole_claimed": false,
+    "shelter_glass_top_and_bottom_m": [
+      4.085,
+      4.005
+    ],
+    "shelter_metal_frame_top_and_bottom_m": [
+      4.08,
+      3.93
+    ],
+    "glass_hides_continuous_metal_backplate": false,
+    "glass_material_is_transparent": false,
+    "actual_occupied_plan_area_m2": 1392.1037057213982,
+    "actual_plan_convex_hull_area_m2": 2081.5283144926398,
+    "convex_hull_is_not_filled_footprint": true,
+    "forecourt_test_box_local_xy": [
+      -18.0,
+      -25.0,
+      18.0,
+      -18.0
+    ],
+    "forecourt_actual_occupied_area_m2": 0.0,
+    "raw_full_plan_symmetric_difference_m2": 2.851364925525074e-16,
+    "raw_lod_plan_symmetric_difference_m2": 4.688108300728965e-14,
+    "component_topology": {
+      "individual_author_solids_closed_positive": true,
+      "full_author_parts": 2813,
+      "lod_author_parts": 2768,
+      "individual_solids_rebuilt_again_here": false,
+      "packaged_material_batch_adjacency_consistent": true,
+      "material_batch_adjacency_exceptions": [],
+      "global_boolean_union_manifold_claimed": false,
+      "note": "Mitered closed wall components and other separately closed parts remain separate author solids. A consistent material-batch adjacency check is not a certificate that the full building has been Boolean-unioned into one solid."
+    }
+  },
+  "placement": {
+    "independent_script": {
+      "file": "data/audit/grosvenor-house-v1/independent-placement-check.py",
+      "bytes": 7806,
+      "sha256": "2c9fc3e528cc473b105b5418fa33b6ea6de05ade8e8dcdf522efe411d72a39b1"
+    },
+    "independent_evidence": {
+      "file": "data/audit/grosvenor-house-v1/independent-placement.json",
+      "bytes": 90053,
+      "sha256": "addcb3bd697b745bac7737b734ddbed2450711e64787b56d99f8deaff762f9f9"
+    },
+    "footprint_contract": {
+      "file": "data/audit/grosvenor-house-v1/footprint-review.json",
+      "bytes": 467897,
+      "sha256": "c774904a81e6510a0c68601b993ca64833df22d28b8d0cf4f392fdfc485538a2"
+    },
+    "owner": {
+      "macro_id": "14-13719-6695",
+      "feature_local_id": 2398,
+      "key": "building:6fa0e0aa-bfd0-4d9e-a4bb-16e9088d530e"
+    },
+    "source_area_m2": 1422.0410892140424,
+    "actual_model_plan_area_m2": 1392.1037057213982,
+    "partial_model": true,
+    "display_clip_area_m2": 1412.3348290329204,
+    "display_clip_extra_area_outside_original_source_m2": 25.33053672785435,
+    "exact_display_rule": "source.buffer(0.12m, mitre) intersect actual decoded model plan union.buffer(0.5m, mitre)",
+    "display_clip_difference_from_independently_reconstructed_rule_m2": 1.0842688811472527e-07,
+    "retained_original_source_area_m2": 35.03680022223127,
+    "retained_original_source_fraction": 0.024638388080330365,
+    "retained_component_areas_m2": [
+      16.43164668871198,
+      18.605153533519292
+    ],
+    "retained_geometry_matches_exact_source_minus_clip_m2": 3.407170095718424e-06,
+    "stored_wgs84_roundtrip_area_tolerance_m2": 1e-05,
+    "display_clip_outside_actual_model_round_buffer_0_55m_m2": 0.0,
+    "maximum_clip_vertex_distance_to_actual_plan_m": 0.5399952717408978,
+    "model_outside_collision_m2": 0.0,
+    "forecourt_display_clip_overlap_m2": 0.0,
+    "forecourt_collision_overlap_m2": 0.0,
+    "neighbor_intersections": [
+      {
+        "source_id": "c10c66d9-f8f6-43b7-a46b-74cd0996e4f6",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 0.09999902676620356,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 1.380902975687545,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "8b2fe902-dcda-42f6-9af5-d6a40b61ed33",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 0.5849807213631781,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "2a994da1-76ad-46a7-84f2-5fcf996dae45",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 5.078235729048193,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "7ece248c-e0cd-41d4-993b-56e1fa8cfaf6",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 11.951018044172256,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "7b8d4b78-99c1-45a4-b8fd-9a2faf27efbf",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 14.809856847333247,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "9200908c-0544-4de2-8c62-81e94b7f4483",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 16.998035895835514,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "3c9254ac-a316-4e0e-82b4-860ee33a9770",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 17.36190570069896,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "dc7c01d6-8b28-4795-9f24-f7d7676dafd7",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 21.642281978016857,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "02608492-7a97-475c-9404-fa077d42394f",
+        "name": "花园住宅",
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 21.93470208998053,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "c45d3ef2-d032-4793-ac1d-3e31747a0d42",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 23.58986849931993,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "69f173b5-38e2-40ec-a222-51caa0da12ca",
+        "name": "Jinjiang Auditorium",
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 30.67405276453345,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "e1875bf7-42ef-40c8-b377-66f7385d70b2",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 32.95694122611729,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "94554bcf-2531-40e8-84cd-276b66654303",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 35.77248731123127,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "e8685d88-b463-4ae5-927f-a0d283475d63",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 37.91545570074419,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "d6ad26bc-c8c0-464a-9df6-a6b5abf3dddc",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 39.33931127497601,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "64c49054-322d-4d81-83d7-373931d2e043",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 40.09261313449237,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "37600259-1115-43e3-9935-33c0c54f5b49",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 40.340037953960696,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "865ebd23-c398-4608-954c-be7d1cae9648",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 45.61202275727709,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "628a50e8-2ef3-462f-b519-0ddb74c0d491",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 47.86838715209694,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "e92e6b18-f6ee-48d8-b2dc-bcb842276a38",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 47.74419591895604,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "99eb8d43-284d-4720-8066-788f2452ee51",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 48.85782189009258,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "3a5d3b6a-a5b7-475a-a2d0-12f8e6389229",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 49.55945975237867,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "977b7e69-ff72-4821-9f73-8d57e9c8ee4a",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 53.79930869109684,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "e3d0d824-9ac1-463c-b7bd-3c6f0d0ab26a",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 54.614713281936176,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "390629b1-3284-4fd0-98f5-68ee67ffaa8a",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 59.77922855592371,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "6ebde8b7-4727-4983-a694-f111015043d9",
+        "name": null,
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 64.96667108782191,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "f6e4b883-ed86-4c90-aa96-2c717ff043c5",
+        "name": "华懋公寓",
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 112.15385296302323,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      },
+      {
+        "source_id": "2c3abc85-9115-4908-9e19-d24da1ea657c",
+        "name": "新锦江大酒店",
+        "actual_plan_overlap_m2": 0.0,
+        "actual_plan_gap_m": 131.42126218233693,
+        "collision_overlap_m2": 0.0,
+        "display_clip_spatial_overlap_m2": 0.0,
+        "neighbor_named_by_candidate_mask": false
+      }
+    ],
+    "partial_scope_reason": "主楼高部与有限雨棚没有充分覆盖南中两处原源折入区域，不能把未知差额统称雨棚。两块原始源差集保留，其旧24.7m高度仅为栅格估计；完整西侧低公寓群也不是本高层模型的一部分。",
+    "old_native_dependency": {
+      "owner_source_id": 2398,
+      "same_near_group_owner_ids": [
+        3049,
+        3218,
+        4899,
+        2398,
+        2175,
+        4340,
+        1276,
+        1235,
+        906,
+        5019,
+        2749
+      ],
+      "actual_old_owner_projected_area_m2": 1438.158690667989,
+      "retained_actual_old_native_projection_area_m2": 36.276027521936875,
+      "source": "footprint-review.json baseline_native_group_geometry_check and native_rendering_clearance_review",
+      "not_redecoded_here": true,
+      "policy": "Same-group neighbors, especially foreground3049, need actual spatial separation; the group filter cannot distinguish them internally. A separate western4270 group remains excluded by source membership. Final visible residuals and preserved neighbors require browser inspection."
+    }
+  },
+  "scope_review": {
+    "identity": "峻岭寄庐／峻岭公寓／Grosvenor House，1956改名茂名公寓，后为锦江饭店中楼。茂名不是第二栋重复高层。",
+    "raw_listed_name": "峻林公寓、茂名公寓",
+    "listed_address": "茂名南路65－125号",
+    "official_chapter_address": "茂名南路59号",
+    "address_correspondence_resolved": false,
+    "official_completion_year": 1934,
+    "official_letting_year": 1935,
+    "raw_listed_year": 1935,
+    "official_storeys_including_basement": 18,
+    "official_basements": 1,
+    "secondary_conflicting_account": {
+      "above_ground": 18,
+      "below_ground": 3,
+      "conflict_resolved": false
+    },
+    "model_above_ground_layers": 17,
+    "model_below_ground_layers": 0,
+    "documented_height_m": 78,
+    "model_height_m": 78,
+    "height_endpoint_verified": false,
+    "floor_and_roof_allocation_are_author_interpretations": true,
+    "documented_gross_floor_area_m2": 23985,
+    "gross_floor_area_used_as_footprint_scale": false,
+    "model_canopy_design_width_depth_m": [
+      18,
+      4.6
+    ],
+    "canopy_depth_is_surveyed": false,
+    "canopy_depth_reason": "Conservative author placement chosen to avoid the separately identified foreground source3049, not a claim of measured real shelter depth.",
+    "listed_place_scope_is_partial": true,
+    "western_low_apartments": {
+      "officially_described_count": 6,
+      "officially_described_storeys": 3,
+      "individual_current_footprints_and_heritage_scope_verified": false,
+      "modeled_here": false
+    },
+    "photo_coverage": "清楚的2020西南花园高视角、2013街侧局部、方位未确证的2013斜视和未知年代区域旧图。后侧与完整屋顶没有完整独立照片覆盖。",
+    "unverified_or_excluded": [
+      "后侧、完整屋顶布置、隐藏连接和准确窗轴/退距",
+      "西侧六低公寓的逐栋身份与名录范围",
+      "前庭左右两块未解释的原源区域",
+      "新锦江圆顶高塔、华懋、礼堂及其他独立源楼",
+      "室内与全部地下层、1934年原貌、商业文字和临时设施"
+    ],
+    "whole_b1_018_complete": false
+  },
+  "visual_review": {
+    "reference_images": [
+      {
+        "source_file": "锦江饭店·峻岭公寓·上海.jpg",
+        "private_reference_cache": "/workspace/grosvenor-reference/photos/main.jpg",
+        "sha256": "a9ea354a0af7cf0562cafaef6382f31a2dc88c868ca15a58031edcf61dc3c0cb",
+        "actually_viewed": true,
+        "observation": "实际看2020年西南花园侧高视角：五折略弧内凹前庭、阶梯露台、中央与两端浅色长竖线、宽横窗节奏及低玻璃入口棚清楚。背景圆顶玻璃高塔为新锦江独立对象。"
+      },
+      {
+        "source_file": "The_Grosvenor_House.jpg",
+        "private_reference_cache": "/workspace/grosvenor-reference/photos/street.jpg",
+        "sha256": "bc30ba3f8f5c60c91495ee9ffbf9d52742d641fd227f1c411e0d43f4e81ef3ff",
+        "actually_viewed": true,
+        "observation": "实际看入口/街侧：高层翼部在低砖楼后，显示独立屋顶与连接。不能只凭相接就认定所有低楼都在主楼模型范围或均属同一历史名录对象。"
+      },
+      {
+        "source_file": "The_Times_They_Are_A-Changin'.jpg",
+        "private_reference_cache": "/workspace/grosvenor-reference/photos/context.jpg",
+        "sha256": "17cd848feabab321b4417b3249948811a67ed710c0a42a49b6c474f8227703a3",
+        "actually_viewed": true,
+        "observation": "实际看较远斜视的阶梯冠和翼部轮廓；方位未独立确证，不把它登记为完整背面覆盖。"
+      },
+      {
+        "source_file": "Jinjiang_Hotel_Shanghai_Old_View.jpg",
+        "private_reference_cache": "/workspace/grosvenor-reference/photos/old.jpg",
+        "sha256": "c428c0a6a1528d974160d1b6a406112ef9a0e732bb1a158f1a7c37169abad9f1",
+        "actually_viewed": true,
+        "observation": "实际看历史区域广景：中央阶梯高楼为峻岭，左后较平顶为华懋。只辅助身份与轮廓，不用旧图测高或复制整片建筑。"
+      }
+    ],
+    "native_images": [
+      {
+        "file": "data/audit/grosvenor-house-v1/native-front-v2.png",
+        "bytes": 1093361,
+        "sha256": "5fb1461efc37eb21e021087530c47ce0fadc25b08173e763e4709272e7675805",
+        "actually_viewed": true,
+        "accepted": true,
+        "observation": "内凹五折立面、中央与端部竖饰、较宽横窗和阶梯冠可辨，整个模型入画；缩浅的有限入口棚仍清楚。"
+      },
+      {
+        "file": "data/audit/grosvenor-house-v1/native-oblique-v2.png",
+        "bytes": 1014299,
+        "sha256": "92a2bfeb652765d9184406fc033dc2409b8e1801cd95300165b971d0a4ac340b",
+        "actually_viewed": true,
+        "accepted": true,
+        "observation": "侧斜实际看五级外露台面及矮女儿墙，中央竖饰连续，翼部平面折转与前庭深度清楚；没有同高实体屋顶遮掉露台。"
+      },
+      {
+        "file": "data/audit/grosvenor-house-v1/native-rear-v2.png",
+        "bytes": 982535,
+        "sha256": "998b9628fb5f0f7cb597749bbdf50bb9650e82ba2cb9038c7180dc76b3c0c1e4",
+        "actually_viewed": true,
+        "accepted": true,
+        "observation": "背侧和屋面是明确标注的作者闭合估计；阶梯高度与屋顶轮廓一致，未发现明显漏面。不能将规整背侧窗列误称照片核准。"
+      },
+      {
+        "file": "data/audit/grosvenor-house-v1/native-detail-v2.png",
+        "bytes": 1463047,
+        "sha256": "9575ec059917a423243a5b4f7ec0b07443a81e19bbb32edab01529d4ad442233",
+        "actually_viewed": true,
+        "accepted": true,
+        "observation": "冠部8道深槽具有后退褐色背板，浅色竖肋和上部短墩可见；露台、矮女儿墙及中央窄窗/长条细部清楚。"
+      },
+      {
+        "file": "data/audit/grosvenor-house-v1/native-canopy-detail-v2.png",
+        "bytes": 1843496,
+        "sha256": "a74a4d7ff807300307fedc5bc2e78de24c197f357a279b347d3ab17453db63b7",
+        "actually_viewed": true,
+        "accepted": true,
+        "observation": "实际看18格薄玻璃与金属框条、独立支柱及基座。玻璃材质仍不透明；真实扣孔框格同时由上下双向射线核验，不能仅由这张上视图推断下方无挡板。"
+      }
+    ],
+    "pre_freeze_corrections": "v1三主视图的主要体量已经可辨。本轮仅两项有依据的v2门廊修正：金属屋顶从整板改为18个真实开孔框格，玻璃嵌格；深度从6.8m缩为4.6m以避免与独立前景源3049交叠。最终上下玻璃/金属实际射线与棚细部图均已复核，没有无依据扩大外形细修。v1图保留为过程，不作为最终通过证据。"
+  },
+  "native_binding": {
+    "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house.blend",
+    "bytes": 5668340,
+    "sha256": "6d2071e3243e58ae02efc62b20a0dda456c3bfa19af4e6e11ab68f6833f6c7db",
+    "source_raw_sha256": "8273ee99e895ab453f3467536691cc80ccf1b96ccf6ede97630115dda2b9a3fb",
+    "model_meshes": 1,
+    "model_triangles": 193620,
+    "actual_reopen_evidence_passed": true,
+    "two_detail_renders_left_native_unchanged": true,
+    "reopened_again_by_this_reviewer": false
+  },
+  "source_bindings": [
+    {
+      "file": "source/precise/huangpu-grosvenor-house/source-register.json",
+      "bytes": 21017,
+      "sha256": "c7e4dd9bd7f41402d23d21a38a8c8e427bec69fe1439a94f48376462da9a25fb"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/design-input.json",
+      "bytes": 53806,
+      "sha256": "c42d59a64d7777a66268f161ba09f1c2d0d7e3a7e75974b26e2d34831729531a"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/lod-features.json",
+      "bytes": 53806,
+      "sha256": "aa7383e443348bd0f4ddb49c0fd1053e0146827a5949d5858934c06b3f5eb6b1"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/source/build_model.py",
+      "bytes": 17322,
+      "sha256": "af907f80ec6946a70132388debbb683394a4511ac2d6049edcab4ab365cd2b8c"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/source/verify_geometry.py",
+      "bytes": 32201,
+      "sha256": "95af784af02233942a6ee2936a1fa510fe8b583ccb4cf286c1703d163766067f"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/source/render_detail.py",
+      "bytes": 1829,
+      "sha256": "6ca47de31d1206eff9223b805a1564140d91dac5b97aa3215b12e0c2182655bc"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/source/render_canopy.py",
+      "bytes": 1899,
+      "sha256": "218bcf775435b920b008160b9768040706713626067d60666c701d90cfd3e33c"
+    }
+  ],
+  "evidence_bindings": [
+    {
+      "file": "data/audit/grosvenor-house-v1/documentary-review.json",
+      "bytes": 4979,
+      "sha256": "3a247ff6beb620cc6711195c1b0851f8d7b9332633509598943cf16ee7024c64"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/photo-review.json",
+      "bytes": 15823,
+      "sha256": "f9c8b03bb29bbcfa3d7a687dd3f5aaab04732809571da8f8c5f43b0a090dd131"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/footprint-review.json",
+      "bytes": 467897,
+      "sha256": "c774904a81e6510a0c68601b993ca64833df22d28b8d0cf4f392fdfc485538a2"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/geometry.json",
+      "bytes": 1756975,
+      "sha256": "7c581576c569ca0362d94b8c44b5ef4b47cf66413030f6d4bda62df81d631c25"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/packaged.json",
+      "bytes": 2642854,
+      "sha256": "3bac0cd4519dce19764c0202827e7ccf2fcb423c79e774ec08b4707c0db511c8"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/native.json",
+      "bytes": 2190,
+      "sha256": "d1dcaf18f48fe1e4a80a85ebb88be9d5b7e665a548eac55eca7f3c178435b35d"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/native-detail-v2.json",
+      "bytes": 811,
+      "sha256": "e452b1970e0f9f8150d48f9fdebfb0496e2d8aed12f7eba9a94a9f69bf3ffdde"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/native-canopy-detail-v2.json",
+      "bytes": 933,
+      "sha256": "eadc405703ec75f0ac33c327e936d767e2a39a876ca5a68aa2731c07db02550a"
+    }
+  ],
+  "integration_boundary": {
+    "production_clipping_source": {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 9474,
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    "browser_review_claimed": false,
+    "note": "Group-scoped near clipping was statically reviewed during the preceding Cathay delivery. This report certifies neither new runtime registration nor visible preserved partial-source remnants. The new integration/browser audit must bind this final asset/contract and demonstrate those outcomes."
+  },
+  "acceptance_boundary": "通过本栋高层主体与有限入口棚的外观候选资产、已声明估计和部分源放置合同。不是测绘或完整历史复原、整栋单一实体、地下/室内开放、全部b1-018完成或地图像素验收。",
+  "no_photo_payload": {
+    "actual_glb_documents_have_zero_images_and_textures": true,
+    "source_asset_tree_image_files": []
+  }
+}

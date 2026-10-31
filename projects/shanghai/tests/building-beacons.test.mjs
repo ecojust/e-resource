@@ -398,6 +398,48 @@ test('all delivered models remain separate and clickable above a tall title card
   beacons.destroy();
 });
 
+test('long Cathay and Grosvenor cards retain every delivered sign in the smaller phone area at all zooms',()=>{
+  const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
+    ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
+  assert(delivered.length>=75);
+  const targets=['huangpu-cathay-mansions','huangpu-grosvenor-house'];
+  assert(targets.every(id=>delivered.some(row=>row.id===id&&[...row.name].length>12)));
+  const map=new BeaconMap({width:320,height:568}),tools=new Element(),card=new Element(),selected=[];
+  let cardTop=348,selectedTitle='',beacons;
+  map.project=()=>({x:160,y:260});
+  tools.getBoundingClientRect=()=>({left:263,right:308,top:190,bottom:395});
+  card.getBoundingClientRect=()=>({left:14,right:306,top:cardTop,bottom:491});
+  const doc={createElement(tag){const element=new Element(tag),original=element.getBoundingClientRect.bind(element);
+      element.getBoundingClientRect=()=>element.id==='building-beacon-legend'?{left:12,right:308,top:126,bottom:174}:original();return element;},
+    getElementById:id=>id==='location-card'?card:null,querySelector:selector=>selector==='.map-tools'?tools:null};
+  beacons=createBuildingBeacons({map,records:delivered,documentObject:doc,onSelect(row){
+    selected.push(row.id);selectedTitle=row.name;if(targets.includes(row.id))cardTop=328;beacons.refresh();
+  }});
+  assert(beacons.getState().labelPositions.every(row=>row.height===20),'the existing roomy layout keeps its original height');
+  for(const id of targets){
+    const target=beacons.getState().labelPositions.find(row=>row.id===id);map.emit('click',{point:{x:target.x,y:target.y}});
+    assert.equal(selected.at(-1),id);assert.equal(selectedTitle,delivered.find(row=>row.id===id).name);
+    for(const zoom of [8,12,18,24]){
+      map.zoom=zoom;beacons.refresh();const state=beacons.getState();
+      assert.equal(state.viewportLabelCount,delivered.length);assert.equal(state.overlapFallbackCount,0);
+      assert(state.labelPositions.every(row=>row.width===22&&row.height===18));
+      assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
+      assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
+      for(const row of state.labelPositions)assert.equal(beacons.hitTest({x:row.x,y:row.y}),row.id);
+      const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));assert.equal(numbers.layout['text-size'],12);
+      for(const feature of map.getSource(numbers.source).data.features){
+        const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
+        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[22,18]);
+      }
+    }
+  }
+  selected.length=0;
+  for(const row of beacons.getState().labelPositions)map.emit('click',{point:{x:row.x,y:row.y}});
+  assert.equal(selected.length,delivered.length);assert.equal(new Set(selected).size,delivered.length);
+  cardTop=348;beacons.refresh();assert(beacons.getState().labelPositions.every(row=>row.height===20));
+  beacons.destroy();assert.equal(map.images.size,0);
+});
+
 test('the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable',()=>{
   const seventyOne=[...records,{id:'huangpu-new-wing-on-company',name:'新永安公司／七重天大楼',lng:121,lat:31,districtId:'310101'}];
   const map=new BeaconMap({width:320,height:568}),selected=[],tools=new Element(),card=new Element();
@@ -469,7 +511,7 @@ test('fixed name backgrounds, text and leaders agree with the actual ground proj
   assert.deepEqual([ground.x,ground.y],[actual.x,actual.y]);
   assert(ground.y-original.y>20,'the fixture must expose the previous centre-height projection error');
   const beacons=createBuildingBeacons({map,records:rows,onSelect(){},documentObject:mockDocument()});
-  assert.equal(map.images.size,8,'five fixed name sprites, two number widths and one anchor lamp');
+  assert.equal(map.images.size,9,'five fixed name sprites, three number sizes and one anchor lamp');
   const nameLayer=[...map.layers.values()].find(layer=>layer.id.endsWith('-labels-symbol'));
   assert(nameLayer);assert.equal(nameLayer.layout['icon-text-fit'],'none');
   const anchorLayer=[...map.layers.values()].find(layer=>layer.type==='symbol'&&!layer.layout['text-field']);
