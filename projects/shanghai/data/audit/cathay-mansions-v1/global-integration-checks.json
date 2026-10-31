@@ -1,0 +1,141 @@
+{
+  "schema": "cathay-global-integration-delta-v1",
+  "passed": 7,
+  "failed": 0,
+  "checks": [
+    "Cathay Mansions adds one overview destination to the existing 73-entry shared map",
+    "all 33 earlier candidate rows, additional placements and historical audits remain unchanged",
+    "existing base entries, placement evidence and unaffected production integrations retain their previous bytes",
+    "new placement matches the exact reviewed source contract and unique old-building owner",
+    "the production shader triangulator stays within its 128-triangle budget after this one addition",
+    "the reviewed near owner groups include the full Cathay clip only in its own untagged tile",
+    "the production vector correction affects only the identified old-building source and defers when its city GLB is active"
+  ],
+  "baseline_commit": "9909f1758ebb939d55d3d2bc56be29003836752f",
+  "entry_id": "huangpu-cathay-mansions",
+  "total_destinations": 74,
+  "candidate_models": 34,
+  "huangpu_count": 26,
+  "route": "index.html#landmark=huangpu-cathay-mansions&mode=overview",
+  "walking_enabled": false,
+  "clipping_triangles": {
+    "before": 73,
+    "addition": 14,
+    "after": 87,
+    "limit": 128
+  },
+  "source_remainder_ratio": 0,
+  "scope": "Static production merge/navigation, exact placement evidence binding, shader triangulation, reviewed near-group ownership filtering on synthetic untagged meshes, and vector ownership checks for the new old-building source only. The foreign-ID duplicate and height=1 are identity fixtures; actual neighboring source geometry is also checked without mutation. Near-group fixtures use the actual reviewed tile owner arrays but do not claim loaded native geometry or rendered pixels. Actual model visibility and neighboring east source, auditorium and Grosvenor House preservation require the separate browser check. Existing city GLB owners defer to shader correction instead of vector duplication.",
+  "bindings": [
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/audit/global-model-integration-v1/inventory.json",
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+      "bytes": 3754,
+      "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/inventory-increment.json",
+      "bytes": 6957,
+      "sha256": "9b63707a87b1f9a02ea11b6197a08b6ef3950c8938030d0f939671e89eeb7633"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/inventory-increment.json",
+      "bytes": 9679,
+      "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 17205,
+      "sha256": "294944436730aca7f5e6c757785faa02c3de50b07b9387f923b8491f883cb260"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "a2f1a6b814569297aebc8cd8b238df49fde49068dc6ddf538782ff0a9eb17146"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 237817,
+      "sha256": "62de37c000fce3a9ae816e9999865e2e358608426524ba0432befc68ecc87419"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 49603,
+      "sha256": "84e0924ac54d5739e7236cbaccdc0a2ba2435b2168159bdaa5df683be522438e"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 96393,
+      "sha256": "5f8831015df91da03688e34c3a6c750d46747a5c1c0bc8bde708a621b6189e23"
+    },
+    {
+      "file": "data/audit/cathay-mansions-v1/footprint-review.json",
+      "bytes": 366887,
+      "sha256": "cd381d7bf11e35b04f913fc0e42f8c2a38c9a5fbbe37550b57470cd04f3d45c2"
+    },
+    {
+      "file": "data/audit/cathay-mansions-v1/global-integration-checks.mjs",
+      "bytes": 12858,
+      "sha256": "40579d653a72c30969d0ed5045f435c0f3f87de9d32c5d24d37e28b00b9068bf"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 9474,
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 5952,
+      "sha256": "b96ab96e615a9c431bf84adcf5b14fa3808bb7a60ccd346dcf56d5641d037e57"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 44586,
+      "sha256": "50e1a6c7800727b35b1b725f2dfd6ac8f8ea0fd6b31dda7bf37ff9d6a212aa50"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    }
+  ]
+}

@@ -44,31 +44,31 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 35,
+  "candidate_manifest_count": 36,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 33,
-  "resulting_city_count": 73,
+  "new_city_model_count": 34,
+  "resulting_city_count": 74,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "虹口区": 3,
-    "黄浦区": 9
+    "黄浦区": 10
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 140,
-    "bytes": 512661557,
+    "files": 144,
+    "bytes": 534573876,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 19506775,
+    "current_run_added_bytes": 21912319,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 8
+    "inherited_incremental_files": 12
   },
   "records": [
     {
@@ -2415,6 +2415,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
       "description": "南京东路830号历史主楼外观：圆弧高转角、竖向窗带、顶层敞廊和雨篷；北东隐面、屋顶和尺寸含估计，相接独立B/C馆、室内与商业广告不并入。"
+    },
+    {
+      "id": "huangpu-cathay-mansions",
+      "name": "华懋公寓历史主楼（锦江饭店锦北楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "cathay-mansions.html",
+      "manifest": "assets/models/candidates/huangpu-cathay-mansions/manifest.json",
+      "manifest_sha256": "ddad5ae238228e407f10a4ba9ee8a7ee0691c972d7a1a004bc2c6af3f85813b3",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions-raw.glb",
+          "bytes": 11172688,
+          "sha256": "b7439c67f4f3ead2580f6461aafa1c94b5583497a25e1b8e8ce25c757e89905e",
+          "triangles": 241940
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions.blend",
+          "bytes": 6251495,
+          "sha256": "49a154c579716b1b81652018928e99f09a7e081fdc1a63c8f104dd941582f868"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions-web.glb",
+          "bytes": 3046720,
+          "sha256": "3d4581c59755f025dd9842ce132aa1fe52d244030299d9dd30f69c838c0ee12f",
+          "triangles": 241940
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions-lod.glb",
+          "bytes": 1441416,
+          "sha256": "2aee0c6075aa21067a1a85d477b1d204a320e88022a9f6887d4bb0d815889c49",
+          "triangles": 101436
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -32.849998474121094,
+            0.0,
+            -15.8100004196167
+          ],
+          "max": [
+            32.20000076293945,
+            57.0,
+            12.475000381469727
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -32.849998474121094,
+            -12.475000381469727,
+            0.0
+          ],
+          "max": [
+            32.20000076293945,
+            15.8100004196167,
+            57.0
+          ]
+        },
+        "triangles": 241940,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "锦江饭店北楼独立历史外观：褐砖长立面、浅色窗框、多边凸窗、北侧双凸翼与顶部退台；尺寸、局部隐面和屋顶含估计，相邻峻岭公寓及其他锦江楼栋不并入。"
     }
   ],
   "baseline_inventory": {
@@ -2423,18 +2490,19 @@
     "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
   },
   "incremental_manifests": [
+    "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json"
   ],
-  "incremental_asset_revision": "248df5c15988bba05f073485cacc93083fb581e8",
-  "incremental_audit_directory": "data/audit/daxin-company-v1",
+  "incremental_asset_revision": "9909f1758ebb939d55d3d2bc56be29003836752f",
+  "incremental_audit_directory": "data/audit/cathay-mansions-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/xinxin-company-v1/inventory-increment.json",
-    "bytes": 6957,
-    "sha256": "9b63707a87b1f9a02ea11b6197a08b6ef3950c8938030d0f939671e89eeb7633"
+    "file": "data/audit/daxin-company-v1/inventory-increment.json",
+    "bytes": 9679,
+    "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json"
   ]
 }

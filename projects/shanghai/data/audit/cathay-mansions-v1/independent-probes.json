@@ -1,0 +1,297 @@
+{
+  "schema": "cathay-independent-surface-probes-v1",
+  "building_id": "huangpu-cathay-mansions",
+  "coordinates": "GLB x=author x, y=height, z=-author y, metres",
+  "section_heights_m": [
+    2.0,
+    17.1,
+    40.0,
+    50.0,
+    54.0
+  ],
+  "selection_policy": "Independent reviewer selects ray positions from design facade endpoints/window grouping and directly inspected source photos. Actual indexed triangle intersections alone determine results. Numerical depths are authored geometry, not measurements of the physical building.",
+  "rays": [
+    {
+      "label": "south-flat-recessed-window",
+      "origin_glb": [
+        -24.65,
+        17.1,
+        13.95
+      ],
+      "direction_glb": [
+        0,
+        0,
+        -1
+      ],
+      "max_distance_m": 3.4499999999999997,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Independently chosen pane point in the -25m bay, not an author probe position."
+    },
+    {
+      "label": "south-solid-wall-positive-control",
+      "origin_glb": [
+        -27.1,
+        17.1,
+        13.95
+      ],
+      "direction_glb": [
+        0,
+        0,
+        -1
+      ],
+      "max_distance_m": 3.15,
+      "first_distance_m": 3.0,
+      "tolerance_m": 0.0001,
+      "first_material": "brown brick",
+      "selection_note": "Adjacent wall between south windows; checks the hole test has meaningful solid context."
+    },
+    {
+      "label": "south-polygonal-bay-front-glass",
+      "origin_glb": [
+        -19.79,
+        17.1,
+        15.26
+      ],
+      "direction_glb": [
+        0,
+        0,
+        -1
+      ],
+      "max_distance_m": 3.4499999999999997,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Front glazing on true protruding bay, about 1.31m forward of main facade."
+    },
+    {
+      "label": "south-polygonal-bay-oblique-glass",
+      "origin_glb": [
+        -23.964223261434476,
+        17.1,
+        13.645819388492983
+      ],
+      "direction_glb": [
+        0.8061322667206139,
+        0,
+        -0.5917353872736405
+      ],
+      "max_distance_m": 3.4499999999999997,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Independently reconstruct slanted bay plane from documented endpoints; test a different floor and pane location from author."
+    },
+    {
+      "label": "north-central-recess-back-window",
+      "origin_glb": [
+        2.65,
+        17.1,
+        -17.65
+      ],
+      "direction_glb": [
+        0,
+        0,
+        1
+      ],
+      "max_distance_m": 11.450000000000001,
+      "first_distance_m": 11.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Ray traverses the north central gap before reaching its genuinely recessed back-wall pane."
+    },
+    {
+      "label": "north-right-wing-window",
+      "origin_glb": [
+        17.65,
+        17.1,
+        -18.56
+      ],
+      "direction_glb": [
+        0,
+        0,
+        1
+      ],
+      "max_distance_m": 3.4499999999999997,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Narrow/central wing facade pane; matches north projection distinct from the back wall."
+    },
+    {
+      "label": "north-right-wing-wall-positive-control",
+      "origin_glb": [
+        19.4,
+        17.1,
+        -18.56
+      ],
+      "direction_glb": [
+        0,
+        0,
+        1
+      ],
+      "max_distance_m": 3.15,
+      "first_distance_m": 3.0,
+      "tolerance_m": 0.0001,
+      "first_material": "brown brick",
+      "selection_note": "Solid masonry between central and outer windows."
+    },
+    {
+      "label": "west-broad-window",
+      "origin_glb": [
+        -35.6,
+        29.12,
+        -3.22
+      ],
+      "direction_glb": [
+        1,
+        0,
+        0
+      ],
+      "max_distance_m": 3.4499999999999997,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Broad window at a separately selected height on the photo-guided west return."
+    },
+    {
+      "label": "central-crown-window",
+      "origin_glb": [
+        0.23,
+        53.4,
+        11.5
+      ],
+      "direction_glb": [
+        0,
+        0,
+        -1
+      ],
+      "max_distance_m": 3.4499999999999997,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "Upper central rooftop opening, distinct from ordinary storeys."
+    },
+    {
+      "label": "north-central-gap",
+      "origin_glb": [
+        0,
+        65,
+        -12
+      ],
+      "direction_glb": [
+        0,
+        -1,
+        0
+      ],
+      "max_distance_m": 70,
+      "expected_open": true,
+      "selection_note": "Vertical ray through the visibly open northern setback. No source footprint or author mesh metadata used as a ray result."
+    },
+    {
+      "label": "north-west-recess",
+      "origin_glb": [
+        -27,
+        65,
+        -12
+      ],
+      "direction_glb": [
+        0,
+        -1,
+        0
+      ],
+      "max_distance_m": 70,
+      "expected_open": true,
+      "selection_note": "Vertical ray through the visibly open northern setback. No source footprint or author mesh metadata used as a ray result."
+    },
+    {
+      "label": "north-east-recess",
+      "origin_glb": [
+        28,
+        65,
+        -12
+      ],
+      "direction_glb": [
+        0,
+        -1,
+        0
+      ],
+      "max_distance_m": 70,
+      "expected_open": true,
+      "selection_note": "Vertical ray through the visibly open northern setback. No source footprint or author mesh metadata used as a ray result."
+    },
+    {
+      "label": "north-west-wing-roof-positive-control",
+      "origin_glb": [
+        -16,
+        65,
+        -12
+      ],
+      "direction_glb": [
+        0,
+        -1,
+        0
+      ],
+      "max_distance_m": 13.05,
+      "first_distance_m": 12.9,
+      "tolerance_m": 0.0001,
+      "first_material": "roof closure estimate",
+      "selection_note": "Neighboring roof positive control for the corresponding north empty-space test; selected away from flue caps."
+    },
+    {
+      "label": "north-east-wing-roof-positive-control",
+      "origin_glb": [
+        14,
+        65,
+        -12
+      ],
+      "direction_glb": [
+        0,
+        -1,
+        0
+      ],
+      "max_distance_m": 13.05,
+      "first_distance_m": 12.9,
+      "tolerance_m": 0.0001,
+      "first_material": "roof closure estimate",
+      "selection_note": "Neighboring roof positive control for the corresponding north empty-space test; selected away from flue caps."
+    },
+    {
+      "label": "south-central-upper-window-preserved",
+      "origin_glb": [
+        0.35,
+        45.1,
+        13.95
+      ],
+      "direction_glb": [
+        0,
+        0,
+        -1
+      ],
+      "max_distance_m": 3.45,
+      "first_distance_m": 3.3,
+      "tolerance_m": 0.0001,
+      "first_material": "recessed glass",
+      "selection_note": "New upper central relief remains outside a genuinely open window; different height from ordinary pane probe."
+    },
+    {
+      "label": "south-central-upper-descender-positive-control",
+      "origin_glb": [
+        2.5,
+        45.1,
+        13.95
+      ],
+      "direction_glb": [
+        0,
+        0,
+        -1
+      ],
+      "max_distance_m": 3.45,
+      "first_distance_m": 2.855,
+      "tolerance_m": 0.0001,
+      "first_material": "pale dressed stone",
+      "selection_note": "Positive control through the new pale strip itself, away from its two slender raised edge lines."
+    }
+  ]
+}

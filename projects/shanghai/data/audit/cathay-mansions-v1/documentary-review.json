@@ -1,0 +1,61 @@
+{
+  "schema": "cathay-documentary-review-v1",
+  "building_id": "huangpu-cathay-mansions",
+  "reviewed_utc": "2026-10-31T06:34:59.096912Z",
+  "reviewer": "cathay_reference",
+  "result": "actual-documentary-reading-completed-with-address-height-and-date-caveats",
+  "source_register": {
+    "file": "source/precise/huangpu-cathay-mansions/source-register.json",
+    "bytes": 20537,
+    "sha256": "8eb9b6e01692ea4f604ca1656aa2ef196c64b57f38a40c81a824569350dab410"
+  },
+  "actual_reads": [
+    {
+      "id": "official-gazetteer",
+      "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284517",
+      "actually_read": true,
+      "sha256": "886863290cea170d80969774703a6414582d66e127bcc456a286acce06539835"
+    },
+    {
+      "id": "wikipedia-context",
+      "url": "https://zh.wikipedia.org/w/index.php?title=%E5%8D%8E%E6%87%8B%E5%85%AC%E5%AF%93&oldid=93781101",
+      "actually_read": true,
+      "sha256": "a930e9275ad87254ba813b7f9e846a08d993761f7acdb3f4920275dff8638803"
+    }
+  ],
+  "accepted_constraints": {
+    "identity": "Cathay Mansions / 华懋公寓 = 锦江饭店北楼 / 锦北楼; it is a separate historic building from Cathay Hotel / 华懋饭店 / 和平饭店北楼 and from Grosvenor House / 峻岭公寓 / 锦江饭店中楼.",
+    "address_policy": {
+      "inventory_address": "长乐路109号",
+      "official_chapter_and_current_wikipedia_address": "长乐路189号",
+      "resolution": "Retain the fixed inventory address as provenance; publish the discrepancy instead of silently replacing the source. Identity is resolved by names, road junction, photos and separately reviewed map footprint; exact current/historic door-number correspondence remains unverified."
+    },
+    "construction": "Official text says work began in 1925 and completed in 1929. An earlier paragraph separately says an investment was made in 1928; these are retained as different narrative statements, not forced into one start year.",
+    "design_and_structure": "公和洋行设计、王荪记营造厂承建、钢筋混凝土框架结构。",
+    "height_and_storeys": {
+      "primary_text": {
+        "storeys": 14,
+        "height_m": 57
+      },
+      "alternative_in_same_chapter": {
+        "storeys": 13,
+        "height_m": 65
+      },
+      "measurement_endpoint": "Not specified for either value. No evidence here determines parapet, principal roof, top equipment or original/current grade endpoint.",
+      "model_policy": "A model may adopt 57 m as a declared author envelope convention based on the chapter’s primary value; it must retain the 65 m / 13-storey alternative and may not call any derived level elevations or highest roof point measured.",
+      "visible_floor_allocation": "Not certified from photos; substantial lower garden-side occlusion and contradictory text counts prevent claiming a complete measured floor schedule."
+    },
+    "plan_and_skin": "Official text: 一字形平面，北面凸出两部分；褐色面砖、白浆勾线、石料窗框与垂直线条、白框方格钢窗。 Photos confirm facade treatment and street recess, not a surveyed footprint.",
+    "documented_gross_floor_area_m2": 21202,
+    "scope": "Only the Cathay historic principal building. Separately mapped garden buildings, small auditorium, Grosvenor House, other Jinjiang hotel blocks, New Jinjiang Hotel and Peace Hotel are excluded."
+  },
+  "unresolved": [
+    "109 versus 189 door-number correspondence.",
+    "57 m / 14 storeys versus 65 m / 13 storeys, and the endpoint/original grade of both heights.",
+    "1925 start and 1928 investment occur in separate official paragraphs; this review does not invent an explanation.",
+    "Complete roof plan, east boundary elevation, both northern projections in plan, roof equipment dimensions, exact windows/bay spacing, floor heights, settlement amount and hidden passages.",
+    "No measured drawings were retrieved. Documentary floor area is not a footprint area and cannot validate a source polygon.",
+    "Dates and historical ownership of neighboring buildings are not inferred from this delivery."
+  ],
+  "decision": "Identity and principal visible architectural treatment supported. Exact global footprint remains a separate map review; hidden sides and derived dimensions must remain explicitly estimated, with the reported height/address alternatives retained."
+}

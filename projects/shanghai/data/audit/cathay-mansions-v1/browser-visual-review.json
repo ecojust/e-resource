@@ -1,0 +1,60 @@
+{
+  "schema": "cathay-root-browser-visual-review-v1",
+  "reviewer": "root",
+  "method": "Actual view_image inspection of all seven unique final PNG files; no additional browser controller attached.",
+  "passed": true,
+  "browser_report_sha256": "926a3684ebdeeea714612295646158bcdc88051f1d42ab5f6dd6fd4426773912",
+  "images": [
+    {
+      "file": "browser-auxiliary-desktop-full-3958d7f5-0fee5124.png",
+      "bytes": 195344,
+      "sha256": "146222433f0a0966be7be29390779376636a83331f66ea4d6a392213ef1a06db",
+      "actually_viewed_by_root": true,
+      "observation": "完整近景、凸窗和退台可见，模型在操作栏之外，未裁边。"
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-3958d7f5-0fee5124.png",
+      "bytes": 165829,
+      "sha256": "8d34074e6a7db6e760c1036db2f8e5d91ee1d4c7bb914c7aa3940fc4a7d31347",
+      "actually_viewed_by_root": true,
+      "observation": "远景简化框格但保持体量、凸窗与顶部退台。"
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-3958d7f5-0fee5124.png",
+      "bytes": 86330,
+      "sha256": "38727723d2fa1fa3c25de8cb3a0e2d2e155f6d34254dd4647ef37b6e07e3ddaa",
+      "actually_viewed_by_root": true,
+      "observation": "390像素手机页显示完整模型，控制与下载区域可用，无横向溢出。"
+    },
+    {
+      "file": "browser-global-default-desktop-29494443-0fee5124.png",
+      "bytes": 417543,
+      "sha256": "c0d0801499651c484db86b622b1957c90d9a2eb9ee7a9a9eb146a3bc58221f64",
+      "actually_viewed_by_root": true,
+      "observation": "主图选中华懋，主楼完整落在界面空区，东侧独立灰楼可见，未见旧41.6米水平细框。"
+    },
+    {
+      "file": "browser-global-north-recess-context-29494443-0fee5124.png",
+      "bytes": 285041,
+      "sha256": "c1022f1bcdcc4d85a17ac9291f3907589b567066c9914bfe83d6bd5cbb94097b",
+      "actually_viewed_by_root": true,
+      "observation": "北侧双翼、中间及两侧凹部明确，中央凹口可见地面，无旧高屋顶填入；东侧独立低楼在画面左侧完整保留。峻岭在画外，不作为该图像素声明。"
+    },
+    {
+      "file": "browser-global-default-mobile-29494443-a5febd33.png",
+      "bytes": 208846,
+      "sha256": "7aa8a5f2d8b409efbc075f15d960b4723cdbba958df27da80ab0729450adb306",
+      "actually_viewed_by_root": true,
+      "observation": "390像素主图中模型、顶部退台和灯牌完整显示；名称自动换行，卡片与导航避开主体，东侧灰楼仍可见。"
+    },
+    {
+      "file": "browser-beacons-320-city-74-29494443-74487685.png",
+      "bytes": 180296,
+      "sha256": "9fd9944ca3f175fe0ade7238960096bd277ffa93043fdce38bf3c4e7610fdadd",
+      "actually_viewed_by_root": true,
+      "observation": "320像素全城场景74个编号灯牌全部可辨，标签无相互遮挡并避开底部卡片与控件；截图为点选前的大新控制对象，随后原生触控切至华懋见browser.json。"
+    }
+  ],
+  "recovery_scope": "Original five captures plus one mobile and one beacon continuation in the same Chrome. Two actual QA waiting-budget failures are retained in browser.json; production input bytes were unchanged, and source/queue/layout stabilization was never waived.",
+  "limitations": "These images show the declared exterior and retained eastern neighboring geometry, not a surveyed reconstruction. Grosvenor is outside the northern context image; its preservation is supported by source identity and geometry checks, not claimed as a visible pixel in that image. Roof and hidden-side details remain estimated."
+}

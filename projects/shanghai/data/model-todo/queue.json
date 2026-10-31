@@ -1180,7 +1180,7 @@
       "name": "华懋公寓历史主楼（锦江饭店锦北楼）",
       "district": "黄浦区",
       "street": "长乐路109号",
-      "status": "reference_pending",
+      "status": "candidate_delivered",
       "heritage_record_id": "sh-historic-b1-017",
       "references": [
         {
@@ -1188,16 +1188,57 @@
           "url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批"
         },
         {
-          "label": "建筑资料线索（待核）",
+          "label": "建筑身份资料（本轮已实际读取）",
           "url": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%87%8B%E5%85%AC%E5%AF%93"
         },
         {
-          "label": "照片线索（待核）",
+          "label": "照片线索（本轮已实际查看，并补充互补视角）",
           "url": "https://zh.wikipedia.org/wiki/File:Shanghai0612_Jinjiang2.JPG"
+        },
+        {
+          "label": "本轮来源及四张照片复核",
+          "url": "projects/shanghai/source/precise/huangpu-cathay-mansions/README.md"
         }
       ],
-      "scope": "Verify the distinct Cathay Mansions / Jinjiang Hotel north historic building at 109 Changle Road. Do not substitute the Peace Hotel/Cathay Hotel, Grosvenor House or the entire Jinjiang complex. Establish period, source identity, exterior scope and dimensions from actual references before modeling.",
-      "next_action": "按名录顺序核对华懋公寓／锦北楼身份、照片与范围；与峻岭公寓及锦江饭店其他楼栋区分后制作并接入主地图。"
+      "scope": "Distinct Cathay Mansions / Jinjiang north historic main-building exterior, with brown brick and pale surrounds, south polygonal projecting bays, two north wings and open recesses, and a small central rooftop tier. Author envelope 57m follows one documentary value; 14-storey/57m versus 13-storey/65m and list109 versus chapter189 address alternatives remain unresolved. East/roof hidden areas, floor allocation and dimensions include estimates. Grosvenor House, low hall, other Jinjiang blocks, gardens and interiors are excluded.",
+      "next_action": "已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留",
+      "preview_source": "projects/shanghai/cathay-mansions.html",
+      "preview": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview",
+      "manifest": "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
+      "evidence": "projects/shanghai/data/audit/cathay-mansions-v1/README.md",
+      "next_action_before_city_integration": "四件外观资产已制作；核验主图唯一北楼替换、相邻楼体保留、精灵灯牌及手机查看。",
+      "city_integration": {
+        "catalog": "projects/shanghai/data/candidate-city-integrations.json",
+        "preview": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview",
+        "status": "approximate-placement",
+        "walk_enabled": false,
+        "note": "近似定位；尺寸与未见构造仍含估计"
+      }
+    },
+    {
+      "order": 29,
+      "id": "huangpu-grosvenor-house",
+      "name": "峻岭公寓历史高层主楼（锦江饭店中楼）",
+      "district": "黄浦区",
+      "street": "茂名南路65－125号（名录范围；文献主楼记59号）",
+      "status": "todo",
+      "heritage_record_id": "sh-historic-b1-018",
+      "references": [
+        {
+          "label": "名录原条目",
+          "url": "https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批"
+        },
+        {
+          "label": "已实际读取的上海名建筑志峻岭公寓章节",
+          "url": "https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284518"
+        },
+        {
+          "label": "照片线索（本轮已实际查看四图）",
+          "url": "https://zh.wikipedia.org/wiki/File:%E9%94%A6%E6%B1%9F%E9%A5%AD%E5%BA%97%C2%B7%E5%B3%BB%E5%B2%AD%E5%85%AC%E5%AF%93%C2%B7%E4%B8%8A%E6%B5%B7.jpg"
+        }
+      ],
+      "scope": "Distinct Grosvenor House / 峻岭公寓 historic high-rise principal building, later renamed 茂名公寓 in 1956 according to the actual gazetteer chapter. Do not duplicate these aliases as two high-rises. Exclude Cathay Mansions, New Jinjiang Hotel and six low-rise apartment houses mentioned to its west; their relation to the full heritage row remains under review. Official chapter 59 Maoming Road versus inventory 65–125 range retained; 18 floors include one basement, reported 78 m endpoint unconfirmed.",
+      "next_action": "主楼身份、官方文献与四张照片已核；继续独立地图源核对并制作高层外观，随后接入主图与灯牌。西侧六幢三层公寓及名录完整范围仍单独调查。"
     }
   ],
   "existing_models": [
@@ -1585,5 +1626,18 @@
     "逐条读取discovered-streets，抽取具体建筑及可用照片／文字；新发现追加，不声称已查遍",
     "每栋保存来源、明确估计、制作资产、检查、提交并更新README",
     "仅暂存新增修改；不得提交本地清理删除"
-  ]
+  ],
+  "execution_policy": {
+    "instruction_source": "2026-10-31 user instruction: autonomously complete models in sequence without requiring repeated per-model prompts",
+    "progression": "After each bounded model delivery is validated and published, retire its completed task and continue the next unfinished item in production order.",
+    "required_delivery": [
+      "actual source and scope review",
+      "raw/web/LOD/editable assets",
+      "projects/shanghai/index.html integration",
+      "map sprite beacon",
+      "district README links and counts",
+      "geometry, browser and public-file verification"
+    ],
+    "unresolved_scope": "Retain unmodeled components and source gaps explicitly; do not invent measured dimensions or completed unseen structures."
+  }
 }

@@ -1,0 +1,111 @@
+{
+  "schema": "cathay-root-checks-v1",
+  "cwd": "projects/shanghai",
+  "passed": true,
+  "commands": [
+    {
+      "command": "python tools/build_candidate_city_integrations.py --catalog-only --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/update_global_model_metadata.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_model_todo.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/build_landmark_directory.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/restoration_progress.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python tools/sync_readme_districts.py --check",
+      "result": "passed"
+    },
+    {
+      "command": "python data/audit/cathay-mansions-v1/todo-directory-checks.py",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "node --test tests/landmark-navigation.test.mjs tests/landmark-directory.test.mjs",
+      "result": "passed; 12 actual tests"
+    }
+  ],
+  "scope": "Generator consistency and directory/navigation checks after the 74-entry integration. Model geometry, source clipping and actual browser evidence are recorded separately.",
+  "bindings": [
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "tools/update_global_model_metadata.py",
+      "bytes": 2051,
+      "sha256": "75426d1971833b3a3c2f06dde037de701292727e542e3d76910c5629c0a0a190"
+    },
+    {
+      "path": "tools/build_model_todo.py",
+      "bytes": 26325,
+      "sha256": "ead722ccfc992f1190043deafae3ef457db36a123569ac40cb066691d5913ffb"
+    },
+    {
+      "path": "tools/build_landmark_directory.py",
+      "bytes": 8852,
+      "sha256": "304d6581c2a92a596e9da078b66e9d3b7af577c9bc4e2dfc4238f34769cd64fe"
+    },
+    {
+      "path": "tools/restoration_progress.py",
+      "bytes": 12465,
+      "sha256": "1e787dc59a412b0840624574887458f560a9a1a1db40719157f0b0e7dc7098ca"
+    },
+    {
+      "path": "tools/sync_readme_districts.py",
+      "bytes": 16609,
+      "sha256": "72ea91588fd3331d7b88f45ff5d60321d106b8e9dc1f74de1bbb5526b3057c41"
+    },
+    {
+      "path": "tests/landmark-navigation.test.mjs",
+      "bytes": 6357,
+      "sha256": "52eb937d3ca7d23fe682ae9058d178e5fccc5b4084073a3ce3a8e0488737f126"
+    },
+    {
+      "path": "tests/landmark-directory.test.mjs",
+      "bytes": 11772,
+      "sha256": "bafb8de95898e0670a2bf94e35a389433701fa445654df1723da281fd4059997"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 237817,
+      "sha256": "62de37c000fce3a9ae816e9999865e2e358608426524ba0432befc68ecc87419"
+    },
+    {
+      "path": "data/model-viewers.json",
+      "bytes": 8571,
+      "sha256": "0d47609912566f57a7857b31b4b6a4ceae427ca49a6f6370a83d0cef6f930782"
+    },
+    {
+      "path": "src/candidate-city-clipping.js",
+      "bytes": 9474,
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    {
+      "path": "src/cathay-mansions.js",
+      "bytes": 7572,
+      "sha256": "3958d7f53b16cb820dbe7ad38170a0ad80f191be9caaff4245e12f63e2aea099"
+    },
+    {
+      "path": "cathay-mansions.html",
+      "bytes": 2672,
+      "sha256": "5ea8b7d4e810355df6c6be29e4c9e15d8315d63b085b7bde0ee15102f8f98c76"
+    }
+  ]
+}

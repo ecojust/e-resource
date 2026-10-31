@@ -1,0 +1,139 @@
+{
+  "schema": "cathay-runtime-checks-v1",
+  "passed": true,
+  "candidate_count": 34,
+  "global_destination_count": 74,
+  "huangpu_count": 26,
+  "tests": [
+    {
+      "command": "node --test --test-reporter=tap tests/candidate-city-clipping.test.mjs tests/city-detail-candidate-failure.test.mjs tests/city-detail-map-integration.test.mjs tests/ordinary-runtime.test.mjs",
+      "passed": 38,
+      "failed": 0,
+      "scope": "Eight focused near-owner regressions plus thirty existing failure-recovery, map integration and ordinary-runtime tests; untagged eastern/Cathay groups, macro and wildcard compatibility, late activation, all three material passes, disposal and cached-program rebind."
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs",
+      "passed": 33,
+      "failed": 0,
+      "scope": "Real current 74-entry shared catalogue is used for separate clickable narrow-screen lamps and all 34 candidate bounds are fitted at desktop, 390px and 320px sizes."
+    },
+    {
+      "command": "node data/audit/cathay-mansions-v1/global-integration-checks.mjs",
+      "passed": 7,
+      "failed": 0,
+      "scope": "Append-only records, exact source contract SHA/JSON binding, reviewed source owners, shader budget 73 to 87 of 128, source-specific vector coverage and foreign-ID control."
+    },
+    {
+      "command": "python tools/build_candidate_city_integrations.py --check",
+      "result": "passed",
+      "inventory_asset_files_read": 4,
+      "note": "Only this delivery four inventory asset files are read; previous incremental records are inherited from the SHA-bound Daxin inventory increment. The catalogue additionally retains its existing checks of two derived corridor assets."
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "inventory": {
+    "candidate_manifests": 36,
+    "city_candidates": 34,
+    "cumulative_frozen_files": 144,
+    "cumulative_frozen_bytes": 534573876,
+    "current_delivery_files_read": 4,
+    "current_delivery_bytes": 21912319,
+    "prior_incremental_audit": "data/audit/daxin-company-v1/inventory-increment.json"
+  },
+  "production_fix": {
+    "file": "src/candidate-city-clipping.js",
+    "reason": "The actual eastern near mesh has no per-vertex feature IDs. Its projection already overlapped the unexpanded Cathay mapped-source outline by 0.748888283799559 square metres. Global clipping previously used only macro and position for that near mesh.",
+    "behavior": "Untagged near objects with explicit record.ids receive a texture filtered to that macro and owner group. The Cathay group receives 14 triangles and the eastern group receives zero Cathay triangles. Per-vertex-ID, missing-ID and ownerless wildcard behavior is retained.",
+    "own_group_ids": [
+      2101,
+      3146,
+      3170
+    ],
+    "east_group_ids": [
+      2122,
+      895,
+      848,
+      2805
+    ],
+    "scope_limit": "Within an untagged shared tile, remaining eligible clips still use spatial boundaries; group filtering does not manufacture per-vertex ownership. Production near objects are parsed independently and retain their macro when rebound; moving a cached material between different macros is not a supported or tested delivery path.",
+    "final_expanded_clip_east_native_plan_overlap_m2": 1.8387496666142678,
+    "native_source_normal_expansion_m": 0.13,
+    "native_clearance_scope": "The reviewed 0.13 m normal expansion covers the complete original near Cathay envelope with at least 0.034796591885202816 m boundary clearance. East near pixels require group filtering; the two western owners sharing the Cathay tile have zero geometric intersection with the expanded clip. Native geometry measurements belong to the SHA-bound footprint review, and actual browser rendering is checked separately."
+  },
+  "bindings": [
+    {
+      "path": "index.html",
+      "bytes": 9032,
+      "sha256": "a2f1a6b814569297aebc8cd8b238df49fde49068dc6ddf538782ff0a9eb17146"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 237817,
+      "sha256": "62de37c000fce3a9ae816e9999865e2e358608426524ba0432befc68ecc87419"
+    },
+    {
+      "path": "data/global-models/additional-placement.json",
+      "bytes": 49603,
+      "sha256": "84e0924ac54d5739e7236cbaccdc0a2ba2435b2168159bdaa5df683be522438e"
+    },
+    {
+      "path": "data/global-models/candidate-inventory.json",
+      "bytes": 96393,
+      "sha256": "5f8831015df91da03688e34c3a6c750d46747a5c1c0bc8bde708a621b6189e23"
+    },
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 32998,
+      "sha256": "0196990a6571e4388a746d42976504a3393767d2021502b600256e44ab60496e"
+    },
+    {
+      "path": "src/building-beacons.js",
+      "bytes": 17205,
+      "sha256": "294944436730aca7f5e6c757785faa02c3de50b07b9387f923b8491f883cb260"
+    },
+    {
+      "path": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "path": "src/candidate-city-clipping.js",
+      "bytes": 9474,
+      "sha256": "d5f5e8233955ad49759fff9ab7fc91d92d6ed867c455abc705e30969ea75001c"
+    },
+    {
+      "path": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 5952,
+      "sha256": "b96ab96e615a9c431bf84adcf5b14fa3808bb7a60ccd346dcf56d5641d037e57"
+    },
+    {
+      "path": "tests/building-beacons.test.mjs",
+      "bytes": 44586,
+      "sha256": "50e1a6c7800727b35b1b725f2dfd6ac8f8ea0fd6b31dda7bf37ff9d6a212aa50"
+    },
+    {
+      "path": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "path": "data/audit/cathay-mansions-v1/global-integration-checks.mjs",
+      "bytes": 12858,
+      "sha256": "40579d653a72c30969d0ed5045f435c0f3f87de9d32c5d24d37e28b00b9068bf"
+    },
+    {
+      "path": "data/audit/cathay-mansions-v1/footprint-review.json",
+      "bytes": 366887,
+      "sha256": "cd381d7bf11e35b04f913fc0e42f8c2a38c9a5fbbe37550b57470cd04f3d45c2"
+    },
+    {
+      "path": "assets/models/candidates/huangpu-cathay-mansions/manifest.json",
+      "bytes": 6554,
+      "sha256": "ddad5ae238228e407f10a4ba9ee8a7ee0691c972d7a1a004bc2c6af3f85813b3"
+    }
+  ],
+  "limits": "Production-function metadata tests do not substitute for actual browser loading, screenshot review or native touch. Prior 33 candidate records and all historical audits remain unchanged. The only production script change is the measured near-owner clipping fix, covered separately above. No historical model asset matrix was replayed."
+}
