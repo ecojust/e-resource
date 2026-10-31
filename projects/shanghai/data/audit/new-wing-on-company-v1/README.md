@@ -55,3 +55,7 @@ python projects/shanghai/tools/build_landmark_directory.py --check
 ```
 
 真实浏览器检查：[qa-browser.cjs](qa-browser.cjs)，需要Playwright、Chromium与提供本项目及稀疏资产的HTTP服务。设置 `NODE_PATH`、`MODEL_BASE_URL`、`CHROMIUM_PATH` 后执行 `node projects/shanghai/data/audit/new-wing-on-company-v1/qa-browser.cjs --run`。检查使用一个浏览器页面依次加载资产检查页、目录和主图，不重跑旧30个模型矩阵。原生文件和渲染像素可能受Blender、硬件和压缩工具版本影响，更新资产必须同步新哈希及有界配准合同。
+
+## 发布核对
+
+资产提交 [`e14221f7e`](https://github.com/ecojust/e-resource/commit/e14221f7e896eba6fef6ffa42d47d92ac9eee46f) 已推送master。[公开HTTP检查](publication.json)逐字节比对14个文件，包括主图、目录、两份README、脚本、清单及四件模型资产，全部返回200并与该固定提交一致。[固定版本主图直达](https://raw.githack.com/ecojust/e-resource/e14221f7e896eba6fef6ffa42d47d92ac9eee46f/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview)。模型版本时间取自该Git提交的实际时间，README后续补录时间不重写资产。
