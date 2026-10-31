@@ -44,31 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 38,
+  "candidate_manifest_count": 39,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 36,
-  "resulting_city_count": 76,
+  "new_city_model_count": 37,
+  "resulting_city_count": 77,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
+    "杨浦区": 1,
     "虹口区": 3,
     "黄浦区": 12
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 152,
-    "bytes": 592653011,
+    "files": 156,
+    "bytes": 623518100,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 37328295,
+    "current_run_added_bytes": 30865089,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 20
+    "inherited_incremental_files": 24
   },
   "records": [
     {
@@ -2616,6 +2617,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
       "description": "北、东及部分南侧历史翼楼：三种凹弧转角、柱廊、拱窗与通院拱道；现代西侧、未核接缝及庭院独立楼保留，尺寸和屋顶含估计。"
+    },
+    {
+      "id": "yangpu-former-shanghai-city-hall",
+      "name": "旧上海特别市政府大楼（绿瓦大楼）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "yangpu-city-hall.html",
+      "manifest": "assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+      "manifest_sha256": "de5cdfad962bbf0ae3a6ee329f3a3f5f1e780223dcbe1d80dab557373ae2847d",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-raw.glb",
+          "bytes": 15024020,
+          "sha256": "3bf557b44db18b986b60e9bfbf7417692f6a65f41ffa295c01bceb44c1b561cd",
+          "triangles": 221980
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall.blend",
+          "bytes": 7560381,
+          "sha256": "ef7d8e84980058656999f784b4ea995873df55d2a9b43361479e7dbb1bebb3e9"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-web.glb",
+          "bytes": 6621884,
+          "sha256": "bd0c536cf4f756dba96130c53858c1b5576fa7f98cba10358507273b62261e9a",
+          "triangles": 221980
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-lod.glb",
+          "bytes": 1658804,
+          "sha256": "e6173e4388062cfcd4b6154f5b3a5f052998551604dd6eca58e33d983db4fdfc",
+          "triangles": 60940
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -52.7461051940918,
+            0.0,
+            -17.363773345947266
+          ],
+          "max": [
+            52.707759857177734,
+            28.362430572509766,
+            51.470001220703125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -52.7461051940918,
+            -51.470001220703125,
+            0.0
+          ],
+          "max": [
+            52.707759857177734,
+            17.363773345947266,
+            28.362430572509766
+          ]
+        },
+        "triangles": 221980,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "三段绿瓦歇山顶、红柱窗格、浅色基座及南侧阶桥；桥下道路留空，校园邻楼分开。米高、桥阶尺度与隐蔽细节含估计。"
     }
   ],
   "baseline_inventory": {
@@ -2629,16 +2697,17 @@
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
-    "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json"
   ],
-  "incremental_asset_revision": "1a0185ec31a9cf665f80fc6bc2c530d3e273c5b8",
-  "incremental_audit_directory": "data/audit/municipal-council-v1",
+  "incremental_asset_revision": "c5eadbea297bb9d23d0658b2244d1e17034bbcb6",
+  "incremental_audit_directory": "data/audit/yangpu-city-hall-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/grosvenor-house-v1/inventory-increment.json",
-    "bytes": 15182,
-    "sha256": "493b90c69a22e31948630818c6209d78bcb208f4d928c31ce280f315f93bbddc"
+    "file": "data/audit/municipal-council-v1/inventory-increment.json",
+    "bytes": 18058,
+    "sha256": "75ba418d159584bfd9355fb7d10fff3725a0a3bb7004a98ea7af11e794f576b8"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json"
   ]
 }

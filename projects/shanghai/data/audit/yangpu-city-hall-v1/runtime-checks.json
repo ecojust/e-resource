@@ -1,0 +1,291 @@
+{
+  "schema": "yangpu-city-hall-runtime-checks-v1",
+  "passed": true,
+  "baseline_commit": "c5eadbea297bb9d23d0658b2244d1e17034bbcb6",
+  "candidate_count": 37,
+  "global_destination_count": 77,
+  "yangpu_count": 2,
+  "huangpu_count": 28,
+  "tests": [
+    {
+      "command": "node --test --test-reporter=tap tests/building-beacons.test.mjs tests/candidate-overview-camera.test.mjs",
+      "passed": 34,
+      "failed": 0,
+      "scope": "The real77-entry catalogue remains independently clickable at320×568 with card.top328,22×18 signs and12px text. Cathay, Grosvenor, Municipal Council and City Hall selections are tested at zoom8/12/18/24; returning card.top348 restores22×20. All37 candidate bounds fit desktop/390px/320px cameras. DOM rectangles are fixtures; actual rendered pixels and touch belong to browser QA."
+    },
+    {
+      "command": "node data/audit/yangpu-city-hall-v1/global-integration-checks.mjs",
+      "passed": 8,
+      "failed": 0,
+      "scope": "All36 previous catalogue/inventory records, historical placements and audits remain frozen. Exact new contract/source binding; old137 packed texture rows remain byte-identical using the shipped MapLibre projection;10 new rows produce147/192. Production vector correction removes only525, nine independent source contexts remain unchanged; ground collision has two valid hole-free polygons and preserves the full road rectangle plus843 centre/shoulder samples and four positive obstacle controls."
+    },
+    {
+      "command": "python tools/build_candidate_city_integrations.py --check",
+      "result": "passed",
+      "inventory_asset_files_read": 4,
+      "note": "Only the current delivery four inventory assets are read; all previous records inherit the SHA-bound Municipal Council increment. Catalogue validation additionally retains the existing checks of two derived corridor assets."
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "inventory": {
+    "candidate_manifests": 39,
+    "city_candidates": 37,
+    "cumulative_frozen_files": 156,
+    "cumulative_frozen_bytes": 623518100,
+    "current_delivery_files_read": 4,
+    "current_delivery_bytes": 30865089,
+    "prior_incremental_inventory": {
+      "file": "data/audit/municipal-council-v1/inventory-increment.json",
+      "bytes": 18058,
+      "sha256": "75ba418d159584bfd9355fb7d10fff3725a0a3bb7004a98ea7af11e794f576b8"
+    }
+  },
+  "builder_district_fix": {
+    "initial_result": "The first real incremental build failed with KeyError: yangpu because DISTRICTS contained no Yangpu mapping. No inventory or catalogue was written by that failed build.",
+    "correction": "Add only yangpu: (310110, 杨浦区) to the existing district dictionary. The integration check compares all other builder bytes with baseline and verifies Yangpu2, Huangpu28 and all36 historical catalogue/inventory records unchanged.",
+    "path": "tools/build_candidate_city_integrations.py",
+    "sha256": "589da0e26a89c29d89caea3864ff0e1f9b76db000fa00e1e20aed5644abc1690"
+  },
+  "production_code": {
+    "changed": false,
+    "scope": "All production runtime JS listed in the integration bindings remains byte-identical to baseline. The existing192-row clip texture, owner-group filtering and22×18 dense beacon implementation are reused."
+  },
+  "clipping": {
+    "catalogue_triangles": {
+      "before": 137,
+      "addition": 10,
+      "after": 147,
+      "limit": 192
+    },
+    "historical_rows_verified": 137,
+    "historical_payload_bytes_verified": 8768,
+    "historical_payload_equal": true,
+    "texture_dimensions": [
+      4,
+      192
+    ],
+    "texture_payload_bytes": 12288,
+    "scope": "No capacity or shader change this round. Actual WebGL compilation, loaded native groups and rendered source preservation require separate browser evidence."
+  },
+  "main_source_replacement": {
+    "partial_model": false,
+    "source_id": "3904106e-f668-46d4-a302-a13ccd00866a",
+    "owner": {
+      "macro_id": "14-13722-6690",
+      "feature_local_id": 525,
+      "key": "building:3904106e-f668-46d4-a302-a13ccd00866a"
+    },
+    "source_area_runtime_m2": 2446.7653121250555,
+    "reviewed_source_area_m2": 2446.765312111933,
+    "source_remainder_area_runtime_m2": 0,
+    "reviewed_retained_native_projection_area_m2": 0.0,
+    "independent_vector_contexts": 9,
+    "scope": "Only main building525 is replaced, including its actual old eaves through the reviewed0.12m margin. The separately authored bridge and steps do not claim additional building source IDs."
+  },
+  "near_owner_filter": {
+    "unchanged_from_baseline": true,
+    "reviewed_group_owner_ids": [
+      239,
+      525,
+      534,
+      1005,
+      1047,
+      1850,
+      2006
+    ],
+    "feature_id_attribute_present": false,
+    "fixture_result": "The reviewed seven-owner array receives ten525 rows in visible/depth/distance passes. An explicitly synthetic copy omitting525 receives zero. Same-group foreign preservation depends on the independent mapping measurements, not on whole-tile hiding.",
+    "scope": "The test uses actual owner metadata but fixture meshes; native geometry measurements are in footprint-review.json and actual loading/rendering is separate browser evidence."
+  },
+  "ground_collision": {
+    "standing_slab_m": [
+      0,
+      2
+    ],
+    "collision_parts": 2,
+    "closed_ring_lengths": [
+      58,
+      25
+    ],
+    "road_intersection_area_m2": 0,
+    "complete_X_path_sample_points": 843,
+    "positive_ground_probes": 4,
+    "main_source_uncovered_area_m2": 0,
+    "bridge_deck_not_treated_as_ground": true,
+    "player_body_height_m": 1.75,
+    "player_body_radius_m": 0.38,
+    "ground_m": 0.075,
+    "reviewed_collision_area_m2": 2955.801436209926,
+    "reviewed_main_interior_fill_area_m2": 173.18964327466063,
+    "method": "Final raw actual triangles are exactly clipped against z=0 and z=2m, projected and unioned. Main source525 is then unioned as conservative closed interior collision; finally buffer0.12m with mitre joins and topology-preserving simplify0.05m. The immutable main source fill never extends to the external bridge/stairs. All variants are checked against this one final raw-derived runtime collision after WGS84 roundtrip.",
+    "scope": "Overview-only. Main building interior is deliberately blocked. This 2D ground collision preserves the ground-level X road arch but does not implement bridge-deck/stair navigation or certify an indoor walk.",
+    "verification": "Production candidateGeometryContains checks843 road centre/shoulder points and four positive main-building/pier/stair controls. Polygon Boolean intersection proves the complete reviewed road rectangle remains free. Main-source minus collision is zero. Deck and underpass probes both lie outside the two-dimensional ground collision; this does not add deck or indoor walking."
+  },
+  "coordinate_area_check": {
+    "method": "Actual shipped MapLibre MercatorCoordinate conversion at the reviewed model anchor, with heading-aware author local XY transformation. No degree-plane area approximation.",
+    "source_area_difference_m2": 1.3122644304530695e-08,
+    "source_area_tolerance_m2": 0.001,
+    "road_intersection_area_tolerance_m2": 1e-08,
+    "main_source_uncovered_area_tolerance_m2": 1e-06
+  },
+  "bindings": [
+    {
+      "path": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "path": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "path": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "path": "vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "path": "data/audit/global-model-integration-v1/inventory.json",
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+    },
+    {
+      "path": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+      "bytes": 3754,
+      "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+    },
+    {
+      "path": "data/audit/xinxin-company-v1/inventory-increment.json",
+      "bytes": 6957,
+      "sha256": "9b63707a87b1f9a02ea11b6197a08b6ef3950c8938030d0f939671e89eeb7633"
+    },
+    {
+      "path": "data/audit/daxin-company-v1/inventory-increment.json",
+      "bytes": 9679,
+      "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
+    },
+    {
+      "path": "data/audit/cathay-mansions-v1/inventory-increment.json",
+      "bytes": 12446,
+      "sha256": "fe68b611c941d9b744d879f3096fff233dd6be1868341d3d07935d05b2e0a036"
+    },
+    {
+      "path": "data/audit/grosvenor-house-v1/inventory-increment.json",
+      "bytes": 15182,
+      "sha256": "493b90c69a22e31948630818c6209d78bcb208f4d928c31ce280f315f93bbddc"
+    },
+    {
+      "path": "data/audit/municipal-council-v1/inventory-increment.json",
+      "bytes": 18058,
+      "sha256": "75ba418d159584bfd9355fb7d10fff3725a0a3bb7004a98ea7af11e794f576b8"
+    },
+    {
+      "path": "src/candidate-city-integrations.js",
+      "bytes": 5669,
+      "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605"
+    },
+    {
+      "path": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "57556ec096ae74523b906e3a9699351391192d2e75c677288e69d4e48fbbb6bd"
+    },
+    {
+      "path": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "path": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "path": "src/building-beacons.js",
+      "bytes": 17791,
+      "sha256": "465028c91c2ef67fb1f61865295d74e726abcfc073fcfa4cec6fab5a8b027e1a"
+    },
+    {
+      "path": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "path": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9705,
+      "sha256": "4d93465685dddb747a983e1e3ce99e613e8f0effda5f8ce412e85a2897a30de4"
+    },
+    {
+      "path": "tools/build_candidate_city_integrations.py",
+      "bytes": 33046,
+      "sha256": "589da0e26a89c29d89caea3864ff0e1f9b76db000fa00e1e20aed5644abc1690"
+    },
+    {
+      "path": "index.html",
+      "bytes": 9032,
+      "sha256": "8c4c5109238867f454ac98f6abc663bf124fc237365e71835925563805db69b8"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 275552,
+      "sha256": "1ea873d20c0452ebf226feeb4b6912175bd84533296a29cde8f885ac37990cd8"
+    },
+    {
+      "path": "data/global-models/additional-placement.json",
+      "bytes": 208827,
+      "sha256": "46cbbe0b525626b68b29db842d1a2124c5bba4d10f89c5dd3d0db3821c426bc4"
+    },
+    {
+      "path": "data/global-models/candidate-inventory.json",
+      "bytes": 104863,
+      "sha256": "d99b0492d4d7c26fc43d8d4c4ead1c4725916ee260c943bd25952912f9a5037f"
+    },
+    {
+      "path": "data/audit/yangpu-city-hall-v1/footprint-review.json",
+      "bytes": 1328483,
+      "sha256": "efd6b834a9d94a3c5b7198b5f36a3a8508f26a105b87c038579e2447a36b1baa"
+    },
+    {
+      "path": "data/audit/yangpu-city-hall-v1/global-integration-checks.mjs",
+      "bytes": 16258,
+      "sha256": "1f8357d49977fcf17ada683b66fcfb31c628084025c43da6261e73dc9b4b37b7"
+    },
+    {
+      "path": "tests/building-beacons.test.mjs",
+      "bytes": 47947,
+      "sha256": "ae22648c5301f0148bd2527542d5ca31678f0744b790c3e8ecd6d4683ce4b5ac"
+    },
+    {
+      "path": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "path": "data/audit/yangpu-city-hall-v1/global-integration-checks.json",
+      "bytes": 7235,
+      "sha256": "fa8cfd9a0f9d6047c0142393c4fe4e71e0a1a314a7dc40f605d5eb99dfb65190"
+    },
+    {
+      "path": "data/audit/yangpu-city-hall-v1/catalog-checks.json",
+      "bytes": 1469,
+      "sha256": "366e216345a98d88d6b81ac94cf76dab16d4259aa3748b29696c479b72235296"
+    },
+    {
+      "path": "data/audit/yangpu-city-hall-v1/inventory-increment.json",
+      "bytes": 20895,
+      "sha256": "7946d0f816366c6425e5447c6548dcf57badf9fead74084e69b7b7a3639618b1"
+    },
+    {
+      "path": "assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+      "bytes": 5625,
+      "sha256": "de5cdfad962bbf0ae3a6ee329f3a3f5f1e780223dcbe1d80dab557373ae2847d"
+    }
+  ]
+}

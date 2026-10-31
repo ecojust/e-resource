@@ -15,9 +15,9 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的30项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的31项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
-另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除9条已完成主楼的重复新建任务，当前按区列出 **1,049 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
+另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除10条已完成主楼的重复新建任务，当前按区列出 **1,048 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
@@ -25,7 +25,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 31 | 旧上海特别市政府大楼（绿瓦大楼） | 杨浦区／清源环路650号（上海体育大学内；资料另记长海路399号） | 待核对身份与外观 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [已实际读取的旧上海特别市政府大楼条目（94194159）](<https://zh.wikipedia.org/w/index.php?title=旧上海特别市政府大楼&oldid=94194159>) · [中华遗产2010年第05期公开导读（已实际读取）](<https://www.dili360.com/ch/article/p5350c3d9b966835.htm>) · [2018修缮与四立面资料转载（已实际读取并查看图像）](<https://www.sohu.com/a/218602199_741845>) · [2019年东南俯视照片（已实际查看）](<https://commons.wikimedia.org/wiki/File:上海市政府大楼·上海体育学院·俯视（东南）.jpg>)；已自主读取三份文字资料并实际查看六张照片；继续核对大学或修缮一手资料、独立地图源、屋面与台阶范围，再制作单栋主楼。不得与黄浦老市府混同。 |
+| 32 | 江湾体育场历史主场（看台与入口） | 杨浦区／国和路346号（历史主场；体育中心另记淞沪路245号，入口待核） | 待核对身份与外观 | — | [名录原条目](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第一批>) · [已实际读取的杨浦官方场馆介绍（2021）](<https://www.shyp.gov.cn/shypq/yqyw-jd-wjcjd-sqzc-xwdt/20210514/380906.html>) · [董大酉1934主场设计概况原扫描（已实际阅读相关页）](<https://upload.wikimedia.org/wikipedia/commons/e/e1/NLC404-01J000135-6330_%E4%B8%AD%E5%9C%8B%E5%BB%BA%E7%AF%89_1934%E5%B9%B42%E5%8D%B78%E6%9C%9F.pdf>) · [江湾体育中心条目（已读94750796）](<https://zh.wikipedia.org/w/index.php?title=江湾体育中心&oldid=94750796>) · [2013年主场全景（已实际查看）](<https://commons.wikimedia.org/wiki/File:%E4%B8%8A%E6%B5%B7%E6%B1%9F%E6%B9%BE%E4%BD%93%E8%82%B2%E5%9C%BA%E5%85%A8%E8%B2%8C.jpg>) · [2021年一侧三拱入口（已实际查看）](<https://commons.wikimedia.org/wiki/File:Main_Entrance_of_Jiangwan_Stadium.jpg>)；已实际读取三份文字资料、查看两张现代照片及两张旧设计图；下一步核对主场看台环、门楼与地图源，保留开放内场，体育馆及游泳馆分别列项。现状米高待依据。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -997,11 +997,10 @@
 
 </details>
 
-<details><summary>杨浦区：45条未完成范围／调查线索</summary>
+<details><summary>杨浦区：44条未完成范围／调查线索</summary>
 
 | ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-020 | 上海市政府大楼 | 清源环路650号 | [名录][H1] · 照片待核 · [库存范围复核](<projects/shanghai/data/model-todo/heritage-first20-model-reconciliation.json>) | 待核外观／拆栋；核定杨浦历史市政楼主体与校园附属楼；排除黄浦区同名误配。 |
 | sh-historic-b1-021 | 上海市体育场 | 国和路346号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录为江湾体育场，文章入口为江湾体育中心；先核历史体育场主体、看台和入口，不能把整个体育中心当单栋。 |
 | sh-historic-b1-025 | 杨树浦水厂 | 杨树浦路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。 |
 | sh-historic-b2-012 | 旧市博物馆 | 长海路174号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3697,7 +3696,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；76处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中36件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；77处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中37件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3705,7 +3704,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增36处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增37处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3727,7 +3726,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，76处建筑与构件模型入口（40处既有＋36处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增36处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，77处建筑与构件模型入口（40处既有＋37处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增37处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（28处）
@@ -3815,13 +3814,14 @@
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
 
-### 杨浦区（1处）
+### 杨浦区（2处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310110&mode=walk)
 
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 杨浦区图书馆总馆（原上海市图书馆） | [2026-10-27 13:01:40](https://github.com/ecojust/e-resource/commit/387561d8a7297eb7fc2a42907f0819fa1d61e958) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) |
+| 旧上海特别市政府大楼（绿瓦大楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview) |
 
 ### 闵行区（1处）
 

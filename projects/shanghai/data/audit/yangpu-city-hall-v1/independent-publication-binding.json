@@ -1,0 +1,290 @@
+{
+  "schema": "yangpu-city-hall-independent-publication-binding-v1",
+  "passed": true,
+  "original_independent_review_sha256": "6f58973274b86a49b5aaa848e9001e2c9dc7f4485897dacbf5a09131c4384fa4",
+  "private_mapping_sha256": "9b1a1c20a429edffedf7bb17d700039cfe97384da91c83eb7be5d4325dbcadd8",
+  "public_mapping_binding": {
+    "file": "data/audit/yangpu-city-hall-v1/footprint-review.json",
+    "bytes": 1328483,
+    "sha256": "efd6b834a9d94a3c5b7198b5f36a3a8508f26a105b87c038579e2447a36b1baa"
+  },
+  "final_manifest_binding": {
+    "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+    "bytes": 5625,
+    "sha256": "de5cdfad962bbf0ae3a6ee329f3a3f5f1e780223dcbe1d80dab557373ae2847d"
+  },
+  "final_asset_bindings": [
+    {
+      "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-raw.glb",
+      "bytes": 15024020,
+      "sha256": "3bf557b44db18b986b60e9bfbf7417692f6a65f41ffa295c01bceb44c1b561cd"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall.blend",
+      "bytes": 7560381,
+      "sha256": "ef7d8e84980058656999f784b4ea995873df55d2a9b43361479e7dbb1bebb3e9"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-web.glb",
+      "bytes": 6621884,
+      "sha256": "bd0c536cf4f756dba96130c53858c1b5576fa7f98cba10358507273b62261e9a"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-lod.glb",
+      "bytes": 1658804,
+      "sha256": "e6173e4388062cfcd4b6154f5b3a5f052998551604dd6eca58e33d983db4fdfc"
+    }
+  ],
+  "mapping_metadata_changed_paths": [
+    "/actual_model_envelope_review/actual_asset_bindings/0/published_asset_binding",
+    "/actual_model_envelope_review/actual_asset_bindings/1/published_asset_binding",
+    "/actual_model_envelope_review/actual_asset_bindings/2/published_asset_binding",
+    "/actual_model_envelope_review/manifest_binding",
+    "/actual_model_envelope_review/model_input_binding/path",
+    "/actual_model_envelope_review/published_asset_bindings",
+    "/actual_model_envelope_review/records/0/asset_binding/published_asset_binding",
+    "/actual_model_envelope_review/records/1/asset_binding/published_asset_binding",
+    "/actual_model_envelope_review/records/2/asset_binding/published_asset_binding",
+    "/actual_model_envelope_review/status",
+    "/bridge_and_steps_review/author_model_input_binding/path",
+    "/delivery_baseline_commit",
+    "/delivery_baseline_source_identity",
+    "/original_private_reference_preflight_binding",
+    "/private_mapping_contract_binding",
+    "/proposed_placement_contract/contract_status",
+    "/proposed_placement_contract/model_input_binding/path",
+    "/proposed_placement_contract/model_manifest_sha256",
+    "/publication_metadata_only_review",
+    "/published_asset_bindings",
+    "/published_manifest_binding",
+    "/reference_context_bindings",
+    "/scope_visualization/path",
+    "/status"
+  ],
+  "all_other_mapping_content_deep_equal": true,
+  "decoded_geometry_assets_deep_equal": true,
+  "all_three_exact_occupancy_and_standing_slab_bodies_deep_equal": true,
+  "placement_proof_numeric_values_and_variants_deep_equal": true,
+  "native_material_triangle_proof_and_world_matrices_deep_equal": true,
+  "all177rays_or_native_reopen_rerun": false,
+  "whole_original_city_matrix_rerun": false,
+  "script_changes_scope": "Portable vendor import, scratch/source/output arguments, and publication metadata only. All actual decoder/plane-clipping/ray/comparison calculations preserved; full unified changes below.",
+  "script_changes": [
+    {
+      "private_script": "independent-geometry-check.mjs",
+      "private_sha256": "6f95dbb8e3d3913b1ce9252f94a2d628bc63f7cd9b8600b8a7e0615c2ffaaa9c",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-geometry-check.mjs",
+      "public_sha256": "c905e132a8e74d5727b6cb6043b3297f4fb5c110fef9c0054a7db251c8b41072",
+      "changes": [
+        "--- independent-geometry-check.mjs",
+        "+++ independent-geometry-check.mjs",
+        "@@ -2,7 +2,7 @@",
+        " import fs from 'node:fs';",
+        " import assert from 'node:assert/strict';",
+        " import crypto from 'node:crypto';",
+        "-import {MeshoptDecoder} from '/workspace/e-resource/projects/shanghai/vendor/meshopt_decoder.module.js';",
+        "+import {MeshoptDecoder} from '../../../vendor/meshopt_decoder.module.js';",
+        " await MeshoptDecoder.ready;",
+        " const [base,configFile,outFile,projectionDirectory]=process.argv.slice(2);",
+        " assert(base&&configFile&&outFile,'Usage: assets-directory review-probes.json output.json');"
+      ]
+    },
+    {
+      "private_script": "independent-city-source-check.mjs",
+      "private_sha256": "363c4f58f5afeb527018ede80b88d31bcb84885d6ed599438647b4c0666e5008",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-city-source-check.mjs",
+      "public_sha256": "f3761fa0c088daab759e354c9c4be3defe5ab959072b475b34679eae32ea1267",
+      "changes": [
+        "--- independent-city-source-check.mjs",
+        "+++ independent-city-source-check.mjs",
+        "@@ -4,7 +4,7 @@",
+        " import zlib from 'node:zlib';",
+        " import assert from 'node:assert/strict';",
+        " import crypto from 'node:crypto';",
+        "-import {MeshoptDecoder} from '/workspace/e-resource/projects/shanghai/vendor/meshopt_decoder.module.js';",
+        "+import {MeshoptDecoder} from '../../../vendor/meshopt_decoder.module.js';",
+        " await MeshoptDecoder.ready;",
+        " const [inputDirectory, outputDirectory] = process.argv.slice(2);",
+        " assert(inputDirectory && outputDirectory, 'Usage: cached-source-directory private-output-directory');"
+      ]
+    },
+    {
+      "private_script": "derive-actual-occupancy.py",
+      "private_sha256": "6bbd7f10d4fb2ce535e1f9a853056d90c98e5892ec870c9512f25bc8b6f44472",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-derive-occupancy.py",
+      "public_sha256": "d78c3cf62cfba18fa748442e52318ba6baf2dc86fcdf617979fd9d5f4bafc267",
+      "changes": [
+        "--- derive-actual-occupancy.py",
+        "+++ independent-derive-occupancy.py",
+        "@@ -74,7 +74,7 @@",
+        "     assert full.is_valid",
+        "     output = {",
+        "         'schema': 'yangpu-city-hall-independent-actual-occupancy-v1',",
+        "-        'private_only': True,",
+        "+        'private_only': False,",
+        "         'asset_sha256': asset['sha256'],",
+        "         'role': role,",
+        "         'triangles': len(triangles),"
+      ]
+    },
+    {
+      "private_script": "check-placement.py",
+      "private_sha256": "75165b996872a6bd95f948ed3fdb208a14fe61f479458bd845318939d2830833",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-check-placement.py",
+      "public_sha256": "c00ceb66abf65b35a96354ddd6fa3d935de78df7d9f4e9a2876dfa1ad2b55d67",
+      "changes": [
+        "--- check-placement.py",
+        "+++ independent-check-placement.py",
+        "@@ -1,6 +1,6 @@",
+        " \"\"\"Independent placement/collision checks using reviewer-decoded city and model triangles.",
+        " ",
+        "-Usage: geometry-report.json actual-occupancy-directory footprint-review.json output.json",
+        "+Usage: geometry-report.json actual-occupancy-directory footprint-review.json output.json source-cache-directory [original-city-report.json]",
+        " The mapper's ordered rings are used only to replay topology-preserving simplification",
+        " after proving equality with independently derived actual occupied geometry.",
+        " \"\"\"",
+        "@@ -15,8 +15,8 @@",
+        " from shapely.ops import transform, unary_union",
+        " ",
+        " G, C, M, O = map(Path, sys.argv[1:5])",
+        "-R = Path('/workspace/yangpu-city-hall-review')",
+        "-P = Path('/workspace/yangpu-city-hall-mapping')",
+        "+R = Path(__file__).resolve().parent",
+        "+P = Path(sys.argv[5])  # verified source cache prepared by independent-prepare-source-cache.py",
+        " g = json.loads(G.read_bytes())",
+        " mr = json.loads(M.read_bytes())",
+        " c = mr['proposed_placement_contract']",
+        "@@ -49,7 +49,7 @@",
+        " assert source.symmetric_difference(shape(mr['geometry']['source_geometry_local_xy'])).area < tol",
+        " assert source.symmetric_difference(transform(local, shape(c['source_limit_geometry']))).area < tol",
+        " foreign_source = unary_union([poly for owner, poly in sources.items() if owner != 525])",
+        "-original_path = R / 'original-city-projection.json'",
+        "+original_path = Path(sys.argv[6]) if len(sys.argv) > 6 else R / 'independent-original-city-projection.json'",
+        " original = json.loads(original_path.read_bytes())",
+        " assert original['passed'] is True",
+        " native_rows = {row['variant']: row for row in original['rows']}",
+        "@@ -152,7 +152,7 @@",
+        " assert .5 < records[2]['raw_full_symmetric_difference_m2'] < .7",
+        " report = {",
+        "     'schema': 'yangpu-city-hall-independent-placement-review-v1',",
+        "-    'passed': True, 'private_only': True, 'browser_started_or_connected': False,",
+        "+    'passed': True, 'private_only': False, 'browser_started_or_connected': False,",
+        "     'method': 'Reviewer independent indexed/instanced city decoder and actual model triangle decoder; exact standing-slab plane intersections. All actual model/source/foreign safety tests use reviewer-derived geometry. Ordered mapper rings are reused only after occupied-set equivalence for deterministic DP replay.',",
+        "     'bindings': bindings + [{'file': str(p), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in [G, M, table_path, original_path, Path(__file__)]],",
+        "     'source_owner': c['owner'], 'source_area_m2': source.area,"
+      ]
+    },
+    {
+      "private_script": "check-native.py",
+      "private_sha256": "f41f3c716c1e505a00637cc38b9279f1dd3c0209d3889ed443b4c72d6574fde7",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-check-native.py",
+      "public_sha256": "6336d4c774d7fb8b2205c741843a8ae46466431118d3616d5e6822d1a8a2b398",
+      "changes": [
+        "--- check-native.py",
+        "+++ independent-check-native.py",
+        "@@ -103,7 +103,7 @@",
+        " assert hashlib.sha256(native_path.read_bytes()).hexdigest() == hashlib.sha256(native_before).hexdigest()",
+        " report = {",
+        "     'schema': 'yangpu-city-hall-independent-native-reopen-v1',",
+        "-    'passed': True, 'private_only': True,",
+        "+    'passed': True, 'private_only': False,",
+        "     'method': 'Reviewer independently reads raw GLB accessors and reopened Blender model mesh polygons, converts native world coordinates back to GLB axes, and compares oriented FLOAT32 triangle multisets by material without coordinate rounding. Preview ground/camera/lights excluded by explicit model mesh names.',",
+        "     'native': {'file': str(native_path), 'bytes': len(native_before),",
+        "                'sha256': hashlib.sha256(native_before).hexdigest()},"
+      ]
+    },
+    {
+      "private_script": "check-original-city.py",
+      "private_sha256": "026b1df7a531a2a2ea70b276d4eed2a97005f2dc4ee38c2084bf31d65f736d33",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-check-original-city.py",
+      "public_sha256": "fb2b30924bcaf2ece77710fd5eb0f532d7a7c60e047044045b38c727b83f5e2e",
+      "changes": [
+        "--- check-original-city.py",
+        "+++ independent-check-original-city.py",
+        "@@ -1,10 +1,10 @@",
+        "-import json,hashlib,gzip,math",
+        "+import json,hashlib,gzip,math,sys",
+        " from pathlib import Path",
+        " import numpy as np",
+        " from shapely import polygons",
+        " from shapely.geometry import shape,box,mapping",
+        " from shapely.ops import unary_union,transform",
+        "-R=Path('/workspace/yangpu-city-hall-review');M=Path('/workspace/yangpu-city-hall-mapping');j=json.loads((M/'preflight.json').read_text());d=json.loads((R/'city-source/city-source-decode.json').read_text())",
+        "+M=Path(sys.argv[1]);R=Path(sys.argv[2]);j=json.loads((M/'preflight.json').read_text());d=json.loads((R/'city-source-decode.json').read_text())",
+        " source=shape(j['source_geometry_local_xy']);sources={525:source,**{r['local_id']:shape(r['source_geometry_local_xy']) for r in j['context_sources']}}",
+        " table=json.loads(gzip.decompress((M/'macro-feature-table.json.gz').read_bytes()))",
+        " frame=j['provisional_frame'];ang=math.radians(frame['heading']);co,si=math.cos(ang),math.sin(ang);scale=6371008.8*math.cos(math.radians(frame['lat']));psi=math.asinh(math.tan(math.radians(frame['lat'])))",
+        "@@ -16,7 +16,7 @@",
+        " rows=[];road=box(-70,-19.5,70,-15.7)",
+        " assert all(s.intersection(road).area<1e-7 for s in all_sources.values())",
+        " for variant in ['near','far']:",
+        "- binding=next(r for r in d['variants'] if r['variant']==variant);file=R/'city-source'/binding['output']['file'];assert hashlib.sha256(file.read_bytes()).hexdigest()==binding['output']['sha256']",
+        "+ binding=next(r for r in d['variants'] if r['variant']==variant);file=R/binding['output']['file'];assert hashlib.sha256(file.read_bytes()).hexdigest()==binding['output']['sha256']",
+        "  ts=np.fromfile(file,dtype='<f8').reshape(-1,3,3);xy=ts[:,:,:2];a=xy[:,1]-xy[:,0];b=xy[:,2]-xy[:,0];mask=np.abs(a[:,0]*b[:,1]-a[:,1]*b[:,0])>1e-10;occupied=unary_union(polygons(xy[mask]));cs=list(occupied.geoms);assert len(cs)==7",
+        "  result=[]",
+        "  for p in cs:",
+        "@@ -28,5 +28,5 @@",
+        "    own=p",
+        "  assert {r['owner'] for r in result}=={239,525,534,1005,1047,1850,2006}",
+        "  rows.append({'variant':variant,'input':binding['input'],'expanded_triangles':binding['expandedTriangles'],'selected_triangles':len(ts),'projection_components':result,'own_area_m2':own.area,'own_outside_source_m2':own.difference(source).area,'own_outside_provisional_0_12m_buffer_m2':own.difference(source.buffer(.12,join_style=2)).area})",
+        "-report={'schema':'yangpu-city-hall-independent-source-preflight-v1','status':'private original-source preflight; final authored geometry/clip/collision not accepted','passed':True,'method':'Reviewer direct indexed/instanced GLB decode and actual triangle union; no GLTFLoader or mapper triangle payload reuse','source_area_m2':source.area,'provisional_road_corridor':list(road.bounds),'all_macro_sources_checked_for_road_void':len(all_sources),'rows':rows}",
+        "-(R/'original-city-projection.json').write_text(json.dumps(report,indent=2)+'\\n');print(json.dumps({'passed':True,'source_area':source.area,'rows':[{k:r[k] for k in ['variant','selected_triangles','own_area_m2','own_outside_source_m2']} for r in rows]}))",
+        "+report={'schema':'yangpu-city-hall-independent-source-preflight-v1','status':'Original city source proof; authored geometry and final placement are certified separately','passed':True,'method':'Reviewer direct indexed/instanced GLB decode and actual triangle union; no GLTFLoader or mapper triangle payload reuse','source_area_m2':source.area,'provisional_road_corridor':list(road.bounds),'all_macro_sources_checked_for_road_void':len(all_sources),'rows':rows}",
+        "+Path(sys.argv[3]).write_text(json.dumps(report,indent=2)+'\\n');print(json.dumps({'passed':True,'source_area':source.area,'rows':[{k:r[k] for k in ['variant','selected_triangles','own_area_m2','own_outside_source_m2']} for r in rows]}))"
+      ]
+    },
+    {
+      "private_script": "make-probes.py",
+      "private_sha256": "68925c041e781776eaef8c11da53780d7b6bfb95ebf214c0c866b9a7dc4f2b64",
+      "public_script": "data/audit/yangpu-city-hall-v1/independent-make-probes.py",
+      "public_sha256": "724428bc633a3193fc0ed37043c0d325be83c61d2337f608da55f2e315ffba1b",
+      "changes": [
+        "--- make-probes.py",
+        "+++ independent-make-probes.py",
+        "@@ -1,8 +1,8 @@",
+        " from pathlib import Path",
+        "-import numpy as np,json",
+        "+import numpy as np,json,sys",
+        " from shapely.geometry import Polygon",
+        " from shapely.geometry.polygon import orient",
+        "-R=Path('/workspace/yangpu-city-hall-review');p=json.loads(Path('/workspace/yangpu-city-hall-model/model-parameters.json').read_text());rays=[]",
+        "+R=Path(sys.argv[2]);p=json.loads(Path(sys.argv[1]).read_text());rays=[]",
+        " def glb(v):return [float(v[0]),float(v[2]),float(-v[1])]",
+        " def add(name,point,normal,depth=None,mat=None,clear=None,offset=2,distance_range=None,materials=None,intent=''):",
+        "  q=np.asarray(point,float);n=np.asarray(normal,float);r={'id':name,'origin_glb':glb(q+n*offset),'direction_glb':glb(-n),'max_distance_m':clear if clear is not None else max(8,offset+abs(depth or 0)+1,max(distance_range or [0])+1),'intent':intent}",
+        "@@ -49,4 +49,4 @@",
+        "  add(name,[x,y,0],[0,0,1],offset=35,distance_range=[35-zhi,35-zlo],materials=['glazed green tile','green tile roll','golden glazed crest'],intent='Independent broad geometric height range for connected roof volume, not a surveyed dimension')",
+        " for sign in [-1,1]:",
+        "  add('central-gable-decor-'+str(sign),[-.53+sign*20.3,.11,23.45],[sign,0,0],offset=6,distance_range=[5.84,6.06],materials=['painted gable ground','green painted bracket','ochre painted line'],intent='Distinct pale/gold/green vertical gable face; cannot be undifferentiated green roof skin')",
+        "-(R/'review-probes.json').write_text(json.dumps({'schema':'yangpu-city-hall-independent-probes-v1','section_heights_m':[1.5,5.5,11,17,22,26],'rays':rays},indent=2)+'\\n');print(len(rays),'independent probes')",
+        "+R.write_text(json.dumps({'schema':'yangpu-city-hall-independent-probes-v1','section_heights_m':[1.5,5.5,11,17,22,26],'rays':rays},indent=2)+'\\n');print(len(rays),'independent probes')"
+      ]
+    }
+  ],
+  "third_party_photo_or_text_pixels_copied": false,
+  "large_intermediate_triangles_copied": false,
+  "browser_acceptance_claimed": false,
+  "notes": [
+    "Actual calculations and native reopening already passed on the same bytes. This publication step checks identity and unchanged numeric proof bodies rather than repeating them.",
+    "Private reference cache filenames in the historical reading log identify nonredistributed sources; public source-register/documentary/photo reviews carry the usable provenance."
+  ],
+  "lightweight_public_replay_checks": {
+    "python_scripts_ast_valid": true,
+    "both_javascript_decoders_node_check_passed": true,
+    "all59_generated_probe_definitions_byte_identical": true,
+    "public_summary_bound_files_verified": 26,
+    "heavy_geometry_or_native_or_source_matrix_rerun": false
+  },
+  "added_portable_io_and_documentation_files": [
+    {
+      "file": "data/audit/yangpu-city-hall-v1/independent-prepare-source-cache.py",
+      "bytes": 1361,
+      "sha256": "547af8c34ab148c2a23747b37499dc98c2264a65758fb7ccc99753c20f076a66"
+    },
+    {
+      "file": "data/audit/yangpu-city-hall-v1/INDEPENDENT_REVIEW.md",
+      "bytes": 3631,
+      "sha256": "e2356c1df880d36eb0350ada778eeb416d07effd99f06c4e1fc156c858547291"
+    }
+  ]
+}

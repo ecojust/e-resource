@@ -1,0 +1,521 @@
+{
+  "generatedAt": "2026-10-31T17:22:00.492255+00:00",
+  "reviewer": "cathay_qa",
+  "status": "passed",
+  "method": "Actual full-PNG tools.view_image calls during the single original host run; no image synthesis, editing or state-only substitute.",
+  "browserReport": {
+    "file": "browser.json",
+    "sha256": "cc19bdc7f1f4533d0eb2d98144776b3b88446937dab215f55e56233237c031b3",
+    "runGeneratedAt": "2026-10-31T17:16:11.516Z"
+  },
+  "script": {
+    "file": "data/audit/yangpu-city-hall-v1/qa-browser.cjs",
+    "sha256": "bcb4b9e6418e13e646dd4242136df5d1f74f5cd47bdcef14b64b19ae92620047"
+  },
+  "catalog": {
+    "file": "data/candidate-city-integrations.json",
+    "sha256": "1ea873d20c0452ebf226feeb4b6912175bd84533296a29cde8f885ac37990cd8",
+    "models": 37,
+    "http": {
+      "url": "http://127.0.0.1:8782/data/candidate-city-integrations.json",
+      "status": 200,
+      "sha256": "1ea873d20c0452ebf226feeb4b6912175bd84533296a29cde8f885ac37990cd8",
+      "origin": "working-tree"
+    }
+  },
+  "manifest": {
+    "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+    "sha256": "de5cdfad962bbf0ae3a6ee329f3a3f5f1e780223dcbe1d80dab557373ae2847d"
+  },
+  "footprint": {
+    "file": "data/audit/yangpu-city-hall-v1/footprint-review.json",
+    "sha256": "efd6b834a9d94a3c5b7198b5f36a3a8508f26a105b87c038579e2447a36b1baa"
+  },
+  "images": [
+    {
+      "file": "browser-auxiliary-desktop-full-0346ddf9-6c254db3.png",
+      "sha256": "2853cb1b743c5595017d84598d789786941c2875bcd92fd93cf85bc56414b240",
+      "viewport": [
+        1200,
+        900
+      ],
+      "accepted": true,
+      "observation": "Full building and south bridge fit the viewport. Three stepped green hip-and-gable roofs, roof ridges, red columns/window lattice and pale base are visibly distinct."
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-0346ddf9-6c254db3.png",
+      "sha256": "9bb18422b2f0e127656e96b77fe04b2dffb88759657b7bdc6cba477c3c4e0a88",
+      "viewport": [
+        1200,
+        900
+      ],
+      "accepted": true,
+      "observation": "Simplified LOD preserves the three roof sections, red facade divisions, pale base and bridge silhouette; fewer roof/window details match the deliberate distant variant."
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-0346ddf9-6c254db3.png",
+      "sha256": "b75cf844cf04fdc9165773137fbe52da32248ed43aba7ccf183105685cc43285",
+      "viewport": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "observation": "390px auxiliary layout fits without horizontal overflow. The entire building/bridge remains visible and model controls/download links stay readable."
+    },
+    {
+      "file": "browser-global-default-desktop-465028c9-6c254db3.png",
+      "sha256": "33a620198a9cfc862760539ce180af2bf0100f3704fa0add5d2eac025d6487cc",
+      "viewport": [
+        960,
+        720
+      ],
+      "accepted": true,
+      "observation": "Whole south-facing main building and bridge/stair extent appear within the map safe area, with mapped campus neighbors retained. The selected beacon covers part of the central roof/window band; the ground-floor entrance and stairs remain discernible."
+    },
+    {
+      "file": "browser-global-native-near-context-465028c9-6c254db3.png",
+      "sha256": "18351d39994b126fc4b32f70c891cc060a22dbdd93d1cba9233832c97c31eeda",
+      "viewport": [
+        1200,
+        900
+      ],
+      "accepted": true,
+      "observation": "1200x900 explicit zoom17.5 shows the entire building and surrounding retained campus sources while the real seven-owner native group is active. Roof probes for all nine documented neighbors lie on visible gray roof/body pixels, with no UI/beacon occlusion at those probe positions; source heights are map estimates, not new surveyed heights."
+    },
+    {
+      "file": "browser-global-bridge-underpass-closeup-465028c9-6c254db3.png",
+      "sha256": "1bc0bf6461d538d2856275a2853d0cd2e45e74a38c8c5a7f7d8edbcace9ad0e6",
+      "viewport": [
+        1200,
+        900
+      ],
+      "accepted": true,
+      "observation": "Actually viewed open arch at approximately x535-667/y482-550: visible pale ground through the opening, separate piers, raised bridge deck and railings. No ground-level panel spans the road aperture. This intended detail crop does not claim full-building framing."
+    },
+    {
+      "file": "browser-global-default-mobile-465028c9-6c254db3.png",
+      "sha256": "14c46be1adc5c9dddf571861622653132c83bfc7f80be86829bbbf2d4b528fa6",
+      "viewport": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "observation": "390px main view contains the complete building and bridge/stair extent above the location card. Selected beacon covers central roof details while preserving a usable destination label; no horizontal overflow."
+    },
+    {
+      "file": "browser-beacons-320-city-77-465028c9-6c254db3.png",
+      "sha256": "64c97bdc0e38d2f9dfe35f31000f9302bb3ab24733a55d71510ee91c13280599",
+      "viewport": [
+        320,
+        568
+      ],
+      "accepted": true,
+      "observation": "320x568 actual city view: all77 numbered beacons are visibly distinct and readable, with12px lettering and22x20 compact boxes, separated from the live Municipal Council card and controls."
+    },
+    {
+      "file": "browser-beacons-320x548-worst-title-77-465028c9-6c254db3.png",
+      "sha256": "1287d766fb7f682e7555540421bc395ee55aee7451c8361793cc3085f5801b3b",
+      "viewport": [
+        320,
+        548
+      ],
+      "accepted": true,
+      "observation": "320x548 actual city view:77 numbers remain visibly distinct with uncropped12px text in22x18 boxes. The live selected Municipal Council card stays unchanged; reduced viewport height simulates the worst current title free area and does not claim that the longest-title historical model was selected."
+    }
+  ],
+  "bridgeRunBinding": {
+    "file": "bridge-review-run-binding.json",
+    "sha256": "9258150e5a415f3182b4ca62694ab013bea82eda39429ad81c42edd8dbb9503b",
+    "checked": true,
+    "note": "Original acceptance archive was already consumed before the parent requested redundant run provenance. It remains immutable; the additional binding explicitly records this order and matches the exact PNG, primary script, catalog, manifest and report run. The disposable active control file is removed after normal host completion."
+  },
+  "bridgeStatusText": {
+    "visibleText": "建筑模型加载中",
+    "explanation": "map-scene.js reportLandmarks reports loaded landmark count against all landmarkRecords.length, including unrequested distant entries; app.js renders this text whenever loaded<total. This registry-wide indicator is not the active-scene queue state. No claim is made that every historical model was loaded.",
+    "codeBindings": [
+      {
+        "file": "src/map-scene.js",
+        "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247",
+        "bytes": 60238,
+        "origin": "working-tree",
+        "status": 200,
+        "verification": "Actual HTTP response bytes"
+      },
+      {
+        "file": "src/app.js",
+        "sha256": "87e737e10fd7fd90713ae372e7147b60150c4a356e3784d574018a4148d3b37e",
+        "bytes": 22009,
+        "origin": "working-tree",
+        "status": 200,
+        "verification": "Actual HTTP response bytes"
+      }
+    ],
+    "actualAsset": {
+      "status": "loaded",
+      "visible": true,
+      "variant": "full",
+      "triangles": 221980,
+      "verifiedAsset": {
+        "modelId": "yangpu-former-shanghai-city-hall",
+        "variant": "web",
+        "sha256": "bd0c536cf4f756dba96130c53858c1b5576fa7f98cba10358507273b62261e9a",
+        "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-web.glb",
+        "bytes": 6621884,
+        "serial": 3
+      }
+    },
+    "actualQueues": {
+      "loading": 0,
+      "queued": 0,
+      "pendingStates": 0
+    },
+    "actualNearLoading": 0,
+    "actualRenderGate": {
+      "inner": [
+        1200,
+        900
+      ],
+      "canvas": [
+        1200,
+        900
+      ],
+      "buffer": [
+        1200,
+        900
+      ],
+      "rect": [
+        1200,
+        900
+      ],
+      "transform": [
+        1200,
+        900
+      ],
+      "ui": [
+        {
+          "x": -323,
+          "y": 112,
+          "width": 306,
+          "height": 690,
+          "top": 112,
+          "right": -17,
+          "bottom": 802,
+          "left": -323
+        },
+        {
+          "x": 28,
+          "y": 667,
+          "width": 505.015625,
+          "height": 133,
+          "top": 667,
+          "right": 533.015625,
+          "bottom": 800,
+          "left": 28
+        },
+        {
+          "x": 1120,
+          "y": 575,
+          "width": 52,
+          "height": 215,
+          "top": 575,
+          "right": 1172,
+          "bottom": 790,
+          "left": 1120
+        },
+        {
+          "x": 493.3125,
+          "y": 92,
+          "width": 213.375,
+          "height": 51.984375,
+          "top": 92,
+          "right": 706.6875,
+          "bottom": 143.984375,
+          "left": 493.3125
+        }
+      ],
+      "actualFrames": 3,
+      "frameKind": "actual MapLibre render",
+      "stableComparisons": 2,
+      "renderTimes": [
+        85658.09999999963,
+        88166.09999999963,
+        90653.70000000019
+      ]
+    }
+  },
+  "preservedContext": {
+    "capture": "global-native-near-context",
+    "probes": [
+      {
+        "localId": 239,
+        "sourceId": "1a0666bb-92ab-4d38-ba05-3ba64822d2a6",
+        "screen": [
+          839.1569507403183,
+          475.65822286510746
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 971,
+        "sourceId": "6997f0ef-594b-4a85-8ba7-bda828e2f6bf",
+        "screen": [
+          888.2365124807006,
+          289.0122455541582
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 1005,
+        "sourceId": "6c639ac2-1791-420c-ac92-5ee8b763a75c",
+        "screen": [
+          276.01750306640514,
+          416.56004100577024
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 1047,
+        "sourceId": "71c11919-eb69-41a9-9edc-3712782bd7da",
+        "screen": [
+          900.6901826975047,
+          371.0905224163856
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 1199,
+        "sourceId": "836d63d3-fb9b-47d7-8025-e2045cdc0794",
+        "screen": [
+          728.7891852024892,
+          262.0220050402924
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 1637,
+        "sourceId": "b664e264-1e91-4bee-b6d2-8dfb24c0a266",
+        "screen": [
+          335.8782414519958,
+          266.54690943858367
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 1850,
+        "sourceId": "cc39c227-d9fb-484b-9efc-859bb0059be5",
+        "screen": [
+          375.4703678599324,
+          407.8137647301904
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 534,
+        "sourceId": "3b2aa250-12ea-47e4-bda9-ede86a8991e9",
+        "screen": [
+          174.93742133143695,
+          631.5016883885771
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      },
+      {
+        "localId": 2006,
+        "sourceId": "ddb833e4-50ff-4e68-b6f7-bef9c72d3d10",
+        "screen": [
+          784.7331603376732,
+          686.9709977696225
+        ],
+        "actualVisiblePixelsReviewed": true,
+        "heightIsMapEstimate": true
+      }
+    ],
+    "nativeGroup": {
+      "id": "14-13722-6690/14-13722-6690-0_-4",
+      "macro_id": "14-13722-6690",
+      "feature_local_ids": [
+        239,
+        525,
+        534,
+        1005,
+        1047,
+        1850,
+        2006
+      ],
+      "triangles": 10,
+      "clip_feature_local_ids": [
+        525
+      ]
+    },
+    "nearHTTP": {
+      "url": "http://127.0.0.1:8782/assets/city-detail/macros/14-13722-6690/near/0_-4.glb.gz",
+      "path": "assets/city-detail/macros/14-13722-6690/near/0_-4.glb.gz",
+      "status": 200,
+      "sha256": "22da35216641004bda1c284044ae3fd403987c78b87a3303d94f8c419d0fe0eb",
+      "origin": "git:1a0185ec31a9cf665f80fc6bc2c530d3e273c5b8",
+      "bytes": 63795,
+      "phase": "global",
+      "verification": "Actual HTTP response bytes SHA-256 and length, checked against server receipt."
+    },
+    "limitation": "Seven owners share one attribute-free native mesh and the group receives10triangles belonging only to525. Six other same-group owners are protected by the reviewed spatial geometry; they do not have separate zero-triangle textures."
+  },
+  "gpu": {
+    "capabilities": {
+      "webgl2": true,
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "shadingLanguageVersion": "WebGL GLSL ES 3.00 (OpenGL ES GLSL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "maxTextureSize": 8192,
+      "maxFragmentUniformVectors": 4096,
+      "maxTextureImageUnits": 32,
+      "maxVertexTextureImageUnits": 32,
+      "floatTextureNearestSupported": true,
+      "glError": 0,
+      "clipping": {
+        "triangles": 10,
+        "triangleLimit": 192,
+        "clippingTexture": {
+          "width": 4,
+          "height": 192,
+          "bytes": 12288,
+          "type": "FloatType",
+          "format": "RGBAFormat",
+          "minFilter": "NearestFilter",
+          "magFilter": "NearestFilter",
+          "generateMipmaps": false
+        },
+        "sourceObjects": 2,
+        "boundMaterials": 24,
+        "revision": 2,
+        "ownerScopedSources": []
+      },
+      "note": "Capabilities read from the existing map context; no second WebGL context is created."
+    },
+    "afterModelChecks": {
+      "glError": 0,
+      "contextLost": false,
+      "clipping": {
+        "triangles": 10,
+        "triangleLimit": 192,
+        "clippingTexture": {
+          "width": 4,
+          "height": 192,
+          "bytes": 12288,
+          "type": "FloatType",
+          "format": "RGBAFormat",
+          "minFilter": "NearestFilter",
+          "magFilter": "NearestFilter",
+          "generateMipmaps": false
+        },
+        "sourceObjects": 4,
+        "boundMaterials": 80,
+        "revision": 6,
+        "ownerScopedSources": [
+          {
+            "id": "14-13722-6689/14-13722-6689-0_4",
+            "macro_id": "14-13722-6689",
+            "feature_local_ids": [
+              1159
+            ],
+            "triangles": 0,
+            "clip_feature_local_ids": []
+          },
+          {
+            "id": "14-13722-6689/14-13722-6689-0_3-s1-s1",
+            "macro_id": "14-13722-6689",
+            "feature_local_ids": [
+              2275,
+              2060,
+              2213,
+              853,
+              1830,
+              1396,
+              2243,
+              1972
+            ],
+            "triangles": 0,
+            "clip_feature_local_ids": []
+          }
+        ]
+      },
+      "note": "Read after actual desktop, explicitnear/bridge, full/LOD and mobile model rendering with the production 192-row clip texture."
+    },
+    "note": "Actual loaded-area shader uses10 triangles in the192-row float texture. The147-triangle global catalog budget is separately verified by the bound runtime/static report; this run does not claim all147 triangles were simultaneously active on the GPU."
+  },
+  "beacons": {
+    "count": 77,
+    "normalSizes": [
+      "22x20"
+    ],
+    "shortSizes": [
+      "22x18"
+    ],
+    "fontPixels": 12,
+    "worstTitle": [
+      {
+        "id": "qingpu-beidajie-222",
+        "name": "北大街222号民居（2022年鹤龙美术馆使用状态）",
+        "top": 328,
+        "height": 163,
+        "width": 292,
+        "overviewOnly": false
+      }
+    ],
+    "minimumCardTop": 328,
+    "nativeTouch": {
+      "method": "native CDP touchStart/touchEnd",
+      "id": "yangpu-former-shanghai-city-hall",
+      "point": [
+        199.5,
+        241
+      ],
+      "before": {
+        "hash": "#landmark=huangpu-shanghai-municipal-council&mode=overview",
+        "title": "上海公共租界工部局历史主楼",
+        "center": {
+          "lng": 121.45,
+          "lat": 31.2
+        }
+      },
+      "after": {
+        "hash": "#landmark=yangpu-former-shanghai-city-hall&mode=overview",
+        "title": "旧上海特别市政府大楼（绿瓦大楼）",
+        "center": {
+          "lng": 121.52123719500287,
+          "lat": 31.315066888424088
+        }
+      },
+      "changedDestination": true,
+      "targetAssetVisibleAfterTouch": true
+    },
+    "postTouchCard": {
+      "beforeTop": 348,
+      "afterTop": 348,
+      "testedMinimumTop": 328,
+      "afterUsesMoreVerticalSpace": false,
+      "requiresAdditionalCityCapture": false,
+      "additionalCityCapture": "Not needed: the selected target card leaves at least the free space already validated by the actual dense viewport captures."
+    },
+    "allSlotCentersMatch": true
+  },
+  "execution": {
+    "host": "One original Playwright Node host and one Chrome instance throughout; no continuation modules or secondary controllers used.",
+    "nodeExitCode": 0,
+    "debugEndpointClosed": true,
+    "browserClosed": true,
+    "failureCount": 0,
+    "captureCount": 9
+  },
+  "errors": [],
+  "warnings": [],
+  "httpFailures": [],
+  "responseCheckFailures": [],
+  "productionFilesChanged": false
+}

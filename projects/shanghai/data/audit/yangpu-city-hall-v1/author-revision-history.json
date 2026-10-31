@@ -1,0 +1,68 @@
+{
+  "schema": "yangpu-city-hall-author-revision-history-v1",
+  "candidate_id": "yangpu-former-shanghai-city-hall",
+  "final_version": "v3",
+  "scope": "Compact diagnostic record; process PNGs are original Blender renders, not source photographs. Only v3 four assets are delivered for runtime.",
+  "process_images": [
+    {
+      "stage": "v1",
+      "file": "author-process-v1-front.png",
+      "bytes": 947038,
+      "sha256": "b40a350b9d355055a613e44015451291bd55988acc7a3177740ac9ed3483b0eb",
+      "diagnostic_only_not_final_candidate": true
+    },
+    {
+      "stage": "v2",
+      "file": "author-process-v2-oblique.png",
+      "bytes": 1598531,
+      "sha256": "6289090a4e2346dedd3f1c07ad9642d890735438da4416d0671896a4c69ee1d9",
+      "diagnostic_only_not_final_candidate": true
+    }
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "raw_sha256": "4cea5dada7f545990cc2672bbf2cf527567ac39bc85b280ce2541a77a7537cc5",
+      "finding": "Packed warm-stone material batch had 463 ambiguous shared edges: 460 around duplicated balcony corner uprights/caps and 3 at rectangular rear wall end caps.",
+      "resolution_in_v2": "Keep each shared balcony corner post once; miter wall end joins.",
+      "final_candidate": false
+    },
+    {
+      "version": "v2",
+      "raw_sha256": "06e8c66c0380aa4d96999b9e7d8b2a8630360c74272867364f4508cf084392b7",
+      "finding": "Whole-wall miter mapping also sheared window back loops; 20 narrow-window probe positions encountered side walls before glass.",
+      "failed_probe_count": 20,
+      "failed_probe_labels": [
+        "west side / lower side window -7.7",
+        "south west wing / base window 0/-1",
+        "south west wing / base window 0/1",
+        "south west wing / base window 1/-1",
+        "south west wing / base window 1/1",
+        "south west wing / base window 2/-1",
+        "south west wing / base window 2/1",
+        "south central / base window 0/-1",
+        "south central / base window 0/1",
+        "south central / stone pier small window -1/6.0",
+        "south central / stone pier small window -1/11.5",
+        "east side / lower side window -7.7",
+        "north east wing / base window 0/-1",
+        "north east wing / base window 0/1",
+        "north east wing / base window 1/-1",
+        "north east wing / base window 1/1",
+        "north east wing / base window 2/-1",
+        "north east wing / base window 2/1",
+        "north base window -19.0",
+        "north base window -14.0"
+      ],
+      "resolution_in_v3": "Miter only the two exterior end-cap vertices; keep all internal opening loops perpendicular and aligned with recessed glazing.",
+      "final_candidate": false
+    },
+    {
+      "version": "v3",
+      "raw_sha256": "3bf557b44db18b986b60e9bfbf7417692f6a65f41ffa295c01bceb44c1b561cd",
+      "result": "All author solids, 117 scene probes per actual serialized geometry, packed material batches, exact FLOAT32 oriented surfaces and native save/reopen passed.",
+      "evidence": "author-packaged-checks.json",
+      "final_candidate": true
+    }
+  ]
+}

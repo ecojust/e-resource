@@ -1,0 +1,385 @@
+{
+  "schema": "shanghai-independent-prepublication-review-v1",
+  "model_id": "yangpu-former-shanghai-city-hall",
+  "reviewer": "independent model/placement reviewer",
+  "reviewed_at_utc": "2026-10-31T17:12:25.882791+00:00",
+  "baseline_commit": "c5eadbea297bb9d23d0658b2244d1e17034bbcb6",
+  "passed": true,
+  "blocking_findings": [],
+  "scope": "Read-only final documentation, source command/interface, registry, incremental diff and publication-file review. Only this new review JSON is written. No browser connection, old asset matrix or geometry/ray/native rerun is performed.",
+  "directory": {
+    "README.md": {
+      "all_view_link_count": 85,
+      "district_unique_count": 77,
+      "districts": {
+        "黄浦区": 28,
+        "徐汇区": 7,
+        "长宁区": 2,
+        "静安区": 1,
+        "普陀区": 1,
+        "虹口区": 4,
+        "杨浦区": 2,
+        "闵行区": 1,
+        "宝山区": 1,
+        "嘉定区": 1,
+        "浦东新区": 4,
+        "金山区": 1,
+        "松江区": 1,
+        "青浦区": 2,
+        "奉贤区": 1,
+        "崇明区": 20
+      },
+      "all_view_links_main_index": true
+    },
+    "projects/shanghai/README.md": {
+      "all_view_link_count": 85,
+      "district_unique_count": 77,
+      "districts": {
+        "黄浦区": 28,
+        "徐汇区": 7,
+        "长宁区": 2,
+        "静安区": 1,
+        "普陀区": 1,
+        "虹口区": 4,
+        "杨浦区": 2,
+        "闵行区": 1,
+        "宝山区": 1,
+        "嘉定区": 1,
+        "浦东新区": 4,
+        "金山区": 1,
+        "松江区": 1,
+        "青浦区": 2,
+        "奉贤区": 1,
+        "崇明区": 20
+      },
+      "all_view_links_main_index": true
+    }
+  },
+  "counts": {
+    "global_destinations": 77,
+    "existing_destinations": 40,
+    "candidate_destinations": 37,
+    "districts": 16,
+    "yangpu": 2,
+    "huangpu": 28,
+    "cumulative_candidate_manifests_including_two_derived_corridors": 39,
+    "cumulative_asset_files": 156,
+    "cumulative_asset_bytes": 623518100,
+    "current_delivery_assets": 4,
+    "current_delivery_bytes": 30865089,
+    "delivered_production_jobs": 31,
+    "existing_inventory_jobs": 46,
+    "completed_main_building_todos_removed": 10,
+    "active_heritage_or_component_todos": 1048,
+    "unchanged_original_heritage_records": 1058,
+    "linked_named_source_records": 19,
+    "pending_named_source_records": 1017
+  },
+  "source_readme": {
+    "commands_reviewed": 5,
+    "method": "Read documented commands and actual argparse definitions for build_model.py, build_native.py, package_assets.py and verify_geometry.py; Python syntax parsed. Arguments, repository-root paths and output filenames agree. No expensive rebuild executed for this documentation review.",
+    "parameters_match": true,
+    "asset_sizes_and_triangle_counts_match": true,
+    "main_map_link_correct": true,
+    "scope_correction_resolved": "The former wording locally replaces source525 was corrected to fully replaces source525 and its bounded native eaves, retains campus neighbors. It agrees with partial_model=false, source remainder0 and actual native remainder0.",
+    "estimate_limits_preserved": [
+      "93m text versus96.31m frozen map outline",
+      "25/20m interpreted depths, not added frontage",
+      "8982 gross versus8928 purported site area unresolved",
+      "1933 completion/1934 occupation versus listed1935 retained",
+      "22m raster value and authored heights are not surveyed",
+      "north/obscured surfaces, bridge and steps remain bounded estimates"
+    ]
+  },
+  "auxiliary_static_review": {
+    "entry": "projects/shanghai/yangpu-city-hall.html",
+    "script": "projects/shanghai/src/yangpu-city-hall.js",
+    "main_map_return_link": true,
+    "downloads": [
+      "raw",
+      "full",
+      "lod",
+      "native"
+    ],
+    "manifest_id_and_file_hash_checks": true,
+    "full_lod_state_and_retry_paths_present": true,
+    "scope_and_no_interior_walk_description": true,
+    "note": "Auxiliary inspector remains separately registered, while every README viewing link opens index.html. Actual WebGL, fit and download HTTP checks are pending separate QA."
+  },
+  "old_records_unchanged": {
+    "projects/shanghai/data/candidate-city-integrations.json": {
+      "old_records_unchanged": 36,
+      "current_records": 37
+    },
+    "projects/shanghai/data/global-models/additional-placement.json": {
+      "old_records_unchanged": 6,
+      "current_records": 7
+    },
+    "projects/shanghai/data/global-models/candidate-inventory.json": {
+      "old_records_unchanged": 38,
+      "current_records": 39
+    },
+    "completed_scope_old_array_unchanged": {
+      "key": "records",
+      "count": 19
+    }
+  },
+  "unfinished_scope_preserved": {
+    "grosvenor": [
+      "two forecourt source remnants",
+      "western low apartments and listing scope"
+    ],
+    "municipal_council": [
+      "western junctions and two3m uncertainty bands",
+      "independent courtyard buildings and listing scope"
+    ],
+    "green_tile_excluded": [
+      "other campus buildings",
+      "gardens and sports facilities",
+      "underground/interior",
+      "bridge deck, stairs and indoor walking"
+    ],
+    "next_jiangwan_scope": [
+      "historic outdoor stadium only; field open",
+      "gymnasium and pool separate",
+      "1934 perimeter760m and width17m are not heights",
+      "gym46m overall width and42.7m truss span not assigned to stadium",
+      "one modern gate image does not prove opposite gate identical",
+      "main-only model must not close entire b1-021"
+    ]
+  },
+  "diff_and_new_files": {
+    "tracked_diff_name_status": [
+      "M\tREADME.md",
+      "M\tprojects/shanghai/CURRENT_STATE.md",
+      "M\tprojects/shanghai/README.md",
+      "A\tprojects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+      "M\tprojects/shanghai/data/candidate-city-integrations.json",
+      "M\tprojects/shanghai/data/global-models/additional-placement.json",
+      "M\tprojects/shanghai/data/global-models/candidate-inventory.json",
+      "M\tprojects/shanghai/data/model-todo/README.md",
+      "M\tprojects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "M\tprojects/shanghai/data/model-todo/queue.json",
+      "M\tprojects/shanghai/data/model-viewers.json",
+      "M\tprojects/shanghai/data/restoration-progress/README.md",
+      "M\tprojects/shanghai/data/restoration-progress/progress.json",
+      "M\tprojects/shanghai/index.html",
+      "M\tprojects/shanghai/landmarks.html",
+      "M\tprojects/shanghai/tests/building-beacons.test.mjs",
+      "M\tprojects/shanghai/tools/build_candidate_city_integrations.py"
+    ],
+    "untracked_count": 80,
+    "new_including_staged_count": 81,
+    "old_audit_changes": [],
+    "old_model_asset_changes": [],
+    "newfile_max_bytes": 15024020,
+    "prohibited_extensions_or_dirs": [],
+    "all_A_or_M": true,
+    "new_pngs": [
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/author-process-v1-front.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/author-process-v2-oblique.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-bridge.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-front.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-oblique.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-porch.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-rear.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-roof.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/native-side.png",
+      "projects/shanghai/data/audit/yangpu-city-hall-v1/source-and-ground-collision-plan.png"
+    ],
+    "snapshot_note": "File counts exclude this report and any subsequent QA-only additions. Every file present at the snapshot is under the intended new model/audit/auxiliary paths or the listed A/M integration/docs changes.",
+    "old_production_js_changed": false,
+    "existing_code_change": "Builder adds missing yangpu=(310110,杨浦区) district mapping; existing beacon test adds new target. New auxiliary JS is a separate file.",
+    "third_party_media_added": false,
+    "new_png_provenance": "Seven final native model renders, two author process renders and one source/ground-collision plan; no reference photograph, PDF or article text distributed.",
+    "deletions_or_renames": []
+  },
+  "validation_evidence": {
+    "root_check_commands": 9,
+    "root_navigation_directory_tests": 12,
+    "root_bindings_verified_against_actual_bytes": true,
+    "runtime_incremental_tests": 8,
+    "runtime_beacon_camera_tests": 34,
+    "current_assets_verified_against_manifest_bytes_and_sha256": true,
+    "git_diff_check": true,
+    "no_geometry_replay_claim": "Previously accepted independent177 rays, strict raw/full Float32 equality, actual low slab/collision/source matrix and native reopen are bound through independent-model-review and publication-binding; public assets retain identical accepted bytes."
+  },
+  "qa_static_review": {
+    "script_private_path": "/workspace/yangpu-city-hall-qa/qa-browser.cjs",
+    "script_sha256": "7d8e1f52755bbea0cfd0b556dd4e479048a21b1e5fbf299eb3ba4a7d9900235e",
+    "model_specific_passed": true,
+    "checks": [
+      "full source525/no residual native",
+      "two collision polygons/no holes",
+      "required context roof_probe schema and7 bridge probes",
+      "17.5 near view verifies same seven-owner group,10 clip triangles owned by525, actual active group and native HTTP bytes",
+      "separate bridge crop requires SHA-bound actual visual acceptance; whole-model framing remains required in default/near views",
+      "no old1554/1754 or Municipal four-retained-roof assumptions"
+    ],
+    "browser_used_by_reviewer": false,
+    "note": "Private runner may be copied and its explicit execution guard changed by QA. This static review is not browser acceptance; continuation-helper lifecycle is separately reviewed by QA."
+  },
+  "browser_and_publication": {
+    "browser_acceptance": "pending separate exclusive QA",
+    "publication_commit": "not claimed",
+    "no_final_browser_pass_claimed": true
+  },
+  "asset_bindings": [
+    {
+      "role": "raw",
+      "path": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-raw.glb",
+      "bytes": 15024020,
+      "sha256": "3bf557b44db18b986b60e9bfbf7417692f6a65f41ffa295c01bceb44c1b561cd"
+    },
+    {
+      "role": "native",
+      "path": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall.blend",
+      "bytes": 7560381,
+      "sha256": "ef7d8e84980058656999f784b4ea995873df55d2a9b43361479e7dbb1bebb3e9"
+    },
+    {
+      "role": "full",
+      "path": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-web.glb",
+      "bytes": 6621884,
+      "sha256": "bd0c536cf4f756dba96130c53858c1b5576fa7f98cba10358507273b62261e9a"
+    },
+    {
+      "role": "lod",
+      "path": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-lod.glb",
+      "bytes": 1658804,
+      "sha256": "e6173e4388062cfcd4b6154f5b3a5f052998551604dd6eca58e33d983db4fdfc"
+    }
+  ],
+  "input_bindings": [
+    {
+      "path": "README.md",
+      "bytes": 446720,
+      "sha256": "001aa0f09a7d9c70f40243eb28b4e75b20851976b8326070989358d58c044051"
+    },
+    {
+      "path": "projects/shanghai/README.md",
+      "bytes": 41335,
+      "sha256": "d4999bfa0d3c66b70dbc011f1e0d01a9aff095a176b0bd7f2c5500ec47ad5233"
+    },
+    {
+      "path": "projects/shanghai/CURRENT_STATE.md",
+      "bytes": 59421,
+      "sha256": "e8642a5274f00f06bcf652f7e69cefad38191b71cbe3ea83b530e95de91852d7"
+    },
+    {
+      "path": "projects/shanghai/index.html",
+      "bytes": 9032,
+      "sha256": "8c4c5109238867f454ac98f6abc663bf124fc237365e71835925563805db69b8"
+    },
+    {
+      "path": "projects/shanghai/landmarks.html",
+      "bytes": 58322,
+      "sha256": "fb069c40606ca90740ebc221dd961a19f9cddb22e02a0006a58c6f8ac1af8834"
+    },
+    {
+      "path": "projects/shanghai/yangpu-city-hall.html",
+      "bytes": 2692,
+      "sha256": "697ef56aaab70ce0282a4bd0f0c6f75858b32e048e14de83146513286a35edc1"
+    },
+    {
+      "path": "projects/shanghai/src/yangpu-city-hall.js",
+      "bytes": 7611,
+      "sha256": "0346ddf9645bba381c40cba637b21dad74fe38e2c7137007bbba2ad439d90b2b"
+    },
+    {
+      "path": "projects/shanghai/source/precise/yangpu-former-shanghai-city-hall/README.md",
+      "bytes": 7307,
+      "sha256": "dc240b18a512a3ce43b65e8e0ad756bc2b71467ca4ddaa23236e69b86684a7b2"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+      "bytes": 5625,
+      "sha256": "de5cdfad962bbf0ae3a6ee329f3a3f5f1e780223dcbe1d80dab557373ae2847d"
+    },
+    {
+      "path": "projects/shanghai/data/candidate-city-integrations.json",
+      "bytes": 275552,
+      "sha256": "1ea873d20c0452ebf226feeb4b6912175bd84533296a29cde8f885ac37990cd8"
+    },
+    {
+      "path": "projects/shanghai/data/global-models/additional-placement.json",
+      "bytes": 208827,
+      "sha256": "46cbbe0b525626b68b29db842d1a2124c5bba4d10f89c5dd3d0db3821c426bc4"
+    },
+    {
+      "path": "projects/shanghai/data/global-models/candidate-inventory.json",
+      "bytes": 104863,
+      "sha256": "d99b0492d4d7c26fc43d8d4c4ead1c4725916ee260c943bd25952912f9a5037f"
+    },
+    {
+      "path": "projects/shanghai/data/model-viewers.json",
+      "bytes": 10108,
+      "sha256": "080133c84dceeffbaf22f94b802f1c4f96ffad46333bdb84ef68681c16e91940"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 102795,
+      "sha256": "a80b143bddc3829654273b0a71e402d7d79249420755b69c97d9eaa774b2d835"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "bytes": 21102,
+      "sha256": "ef8760aa11cab563a431078cb3f89bf709f63db7f7bfbfc06e2eeb55aab04d49"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/README.md",
+      "bytes": 13277,
+      "sha256": "2f32514aa5d0f1cfb854d29ab8b16231b1d6baba1f15ddaa88bcb86e6aac5401"
+    },
+    {
+      "path": "projects/shanghai/data/restoration-progress/progress.json",
+      "bytes": 65705,
+      "sha256": "b786cba6a499dd82018c3c8915528658d64c352bbe1e339e32a4457512e4c736"
+    },
+    {
+      "path": "projects/shanghai/data/restoration-progress/README.md",
+      "bytes": 3459,
+      "sha256": "4141668d091413e7685baa2734701b8cba98ca983720f4c5e6cd7bac329891d9"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/README.md",
+      "bytes": 6962,
+      "sha256": "ef3048ee7c07d0d13005e18e9a64459037023134dd11f16719e77113e3d5753e"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/footprint-review.json",
+      "bytes": 1328483,
+      "sha256": "efd6b834a9d94a3c5b7198b5f36a3a8508f26a105b87c038579e2447a36b1baa"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/independent-model-review.json",
+      "bytes": 20748,
+      "sha256": "5d92a48f1202c5e043c7b7635b96c61874667a38bbccbd6602c19c4730e98de1"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/independent-publication-binding.json",
+      "bytes": 19391,
+      "sha256": "f1554eaaa1c95558801baa6b684265c4ec031ed75288ed9875572707ff0d2d00"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/runtime-checks.json",
+      "bytes": 12803,
+      "sha256": "2d523935d708ad4cfdeb60dbdd040fa5e1a739611b53fc632008283bd49732d1"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/inventory-increment.json",
+      "bytes": 20895,
+      "sha256": "7946d0f816366c6425e5447c6548dcf57badf9fead74084e69b7b7a3639618b1"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/root-checks.json",
+      "bytes": 6977,
+      "sha256": "7578820b971c6869f6b03fe3dd716a2267409b27c1045187b4777a7c0e860a75"
+    },
+    {
+      "path": "projects/shanghai/data/audit/yangpu-city-hall-v1/todo-directory-checks.json",
+      "bytes": 3368,
+      "sha256": "2fc448695d5892ae1fd40ea044232cc5c14a63d33cde532e1ef95fa06366999e"
+    }
+  ]
+}

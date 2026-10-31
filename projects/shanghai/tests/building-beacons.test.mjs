@@ -402,7 +402,7 @@ test('long building title cards retain every delivered sign in the smaller phone
   const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
     ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
   assert(delivered.length>=75);
-  const targets=['huangpu-cathay-mansions','huangpu-grosvenor-house','huangpu-shanghai-municipal-council'];
+  const targets=['huangpu-cathay-mansions','huangpu-grosvenor-house','huangpu-shanghai-municipal-council','yangpu-former-shanghai-city-hall'];
   assert(targets.every(id=>delivered.some(row=>row.id===id&&[...row.name].length>12)));
   const map=new BeaconMap({width:320,height:568}),tools=new Element(),card=new Element(),selected=[];
   let cardTop=348,selectedTitle='',beacons;
