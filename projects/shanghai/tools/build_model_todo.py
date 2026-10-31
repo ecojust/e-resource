@@ -206,6 +206,8 @@ def main():
  if START in s:
   before,rest=s.split(START,1);_,after=rest.split(END,1);updated=before+block+after
  else:updated=s.replace('## 上海全景建模',block+'\n\n## 上海全景建模',1)
+ from sync_readme_districts import normalize_model_view_links
+ updated=normalize_model_view_links(updated)
  reference_counts=Counter(' '.join(label.split()).casefold() for label in re.findall(r'^ {0,3}\[([^\[\]]{1,999})\]:',updated,re.M))
  assert all(reference_counts[label.casefold()]==1 for label in re.findall(r'^\[(MTD-[0-9a-f]{8})\]:',block,re.M)), 'Shared TODO link reference conflicts with an existing README reference'
  assert len(updated.encode('utf-8'))<=500_000, 'README risks GitHub preview truncation; shorten repeated text/links while retaining all TODO rows'

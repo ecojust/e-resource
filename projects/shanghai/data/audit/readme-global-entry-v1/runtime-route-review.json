@@ -1,0 +1,169 @@
+{
+  "schema": "readme-global-entry-runtime-route-review-v1",
+  "generated_utc": "2026-10-31T02:32:52.426241+00:00",
+  "reviewed_base_commit": "d3306a44ec3b81bf4d718783618aa51daa2b82bc",
+  "scope": "Static review of the existing integration, historical relative-link resolution, and current camera/navigation differences. No runtime source changes and no new browser/WebGL session. README normalization is checked separately.",
+  "result": "The 30 candidate models are already loaded into the shared index.html map. Some README model-name links still led to independent viewers pinned before integration; their relative return links also remained on those old commits.",
+  "historical_examples": [
+    {
+      "commit": "c1eb2641f2f6730cd1045bf7a94936a74e834140",
+      "entry_url": "https://rawcdn.githack.com/ecojust/e-resource/c1eb2641f2f6730cd1045bf7a94936a74e834140/projects/shanghai/ji-gate.html",
+      "relative_return_href": "index.html",
+      "resolved_return_url": "https://rawcdn.githack.com/ecojust/e-resource/c1eb2641f2f6730cd1045bf7a94936a74e834140/projects/shanghai/index.html",
+      "legacy_landmark_count": 40,
+      "candidate_catalog_absent": true,
+      "main_app_imports_candidate_catalog": false,
+      "consequence": "The independent viewer and its relative return link stay on the pre-integration commit. This historical map has only the 40 earlier entries."
+    },
+    {
+      "commit": "3d45d7279200ef391b357cbf975fe3acf844e288",
+      "entry_url": "https://rawcdn.githack.com/ecojust/e-resource/3d45d7279200ef391b357cbf975fe3acf844e288/projects/shanghai/old-wing-on-company.html",
+      "relative_return_href": "landmarks.html",
+      "resolved_return_url": "https://rawcdn.githack.com/ecojust/e-resource/3d45d7279200ef391b357cbf975fe3acf844e288/projects/shanghai/landmarks.html",
+      "legacy_landmark_count": 40,
+      "candidate_catalog_absent": true,
+      "main_app_imports_candidate_catalog": false,
+      "consequence": "The independent viewer and its relative return link stay on the pre-integration commit. This historical map has only the 40 earlier entries."
+    }
+  ],
+  "current_integration": {
+    "legacy_count": 40,
+    "candidate_count": 30,
+    "total": 70,
+    "unique_ids": 70,
+    "pipeline": [
+      {
+        "file": "index.html",
+        "line": 48,
+        "evidence": "Loads src/app.js as a module."
+      },
+      {
+        "file": "src/app.js",
+        "line": 254,
+        "evidence": "Fetches data/landmarks.json and data/candidate-city-integrations.json."
+      },
+      {
+        "file": "src/app.js",
+        "line": 259,
+        "evidence": "mergeCandidateCityModels combines the original list with candidate records."
+      },
+      {
+        "file": "src/app.js",
+        "line": 266,
+        "evidence": "Passes the combined list into the same createShanghaiScene instance."
+      },
+      {
+        "file": "src/candidate-city-integrations.js",
+        "line": 29,
+        "evidence": "Maps candidate web/LOD assets to model/lod_model and marks city_integration."
+      },
+      {
+        "file": "src/map-scene.js",
+        "line": 488,
+        "evidence": "Places loaded GLB at geographic anchor, with scale and heading."
+      },
+      {
+        "file": "src/map-scene.js",
+        "line": 509,
+        "evidence": "Adds that GLB group to the shared Three.js scene."
+      }
+    ],
+    "current_global_link_example": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview",
+    "current_global_link_redirects_to_independent_viewer": false
+  },
+  "navigation_difference": {
+    "earlier_readme_links": "40 existing entries use mode=walk.",
+    "candidate_readme_links": "30 new entries use mode=overview.",
+    "candidate_navigation_listed_true": 0,
+    "guard": "walkingPose returns null for building records whose navigation.listed is not true; app.selectPlace keeps these records in overview and updates the landmark hash.",
+    "camera": "Candidate overview fits the actual GLB bounds inside the available map viewport and respects placement bearing. It uses an elevated camera target and per-building pitch overrides; the older overview path uses the prior fixed zoom/pitch defaults. Both run inside the same index.html map.",
+    "walk_support_claim": "This review does not enable or certify walking for any of the 30 candidates."
+  },
+  "remote_master_check": {
+    "performed_by": "Parent agent /root, using HTTP GET with User-Agent ShanghaiLinkCheck/1.0; results supplied at /workspace/shanghai-readme-live-check.json.",
+    "records": [
+      {
+        "path": "index.html",
+        "status": 200,
+        "bytes": 9032,
+        "matches_worktree": true,
+        "sha256": "471213200dde6224b2a7932551ec621de1e139d981e0f9c87adb2c384f30d2fd",
+        "cache_control": "max-age=60, private"
+      },
+      {
+        "path": "src/app.js",
+        "status": 200,
+        "bytes": 22009,
+        "matches_worktree": true,
+        "sha256": "87e737e10fd7fd90713ae372e7147b60150c4a356e3784d574018a4148d3b37e",
+        "cache_control": "max-age=60, public, stale-while-revalidate=60, stale-if-error=604800"
+      },
+      {
+        "path": "src/candidate-city-integrations.js",
+        "status": 200,
+        "bytes": 5669,
+        "matches_worktree": true,
+        "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605",
+        "cache_control": "max-age=60, public, stale-while-revalidate=60, stale-if-error=604800"
+      },
+      {
+        "path": "data/candidate-city-integrations.json",
+        "status": 200,
+        "bytes": 207332,
+        "matches_worktree": true,
+        "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954",
+        "cache_control": "max-age=60, public, stale-while-revalidate=60, stale-if-error=604800"
+      }
+    ],
+    "conclusion": "All four current master responses matched the worktree. There is no evidence here that stale CDN content caused the feedback.",
+    "reviewer_initial_default_user_agent_attempt": "Returned 403 for index/app/catalog; no stale-content conclusion was drawn from that failed attempt."
+  },
+  "minimal_correction": "Normalize README building model links, including model TODO names, introductory model links and district rows, to the current shared index.html#landmark=<id>. Update their generators so independent/pinned links are not reintroduced. Preserve overview-only guards and placement limitations; do not remake or re-register already integrated GLBs.",
+  "bindings": [
+    {
+      "path": "index.html",
+      "bytes": 9032,
+      "sha256": "471213200dde6224b2a7932551ec621de1e139d981e0f9c87adb2c384f30d2fd"
+    },
+    {
+      "path": "src/app.js",
+      "bytes": 22009,
+      "sha256": "87e737e10fd7fd90713ae372e7147b60150c4a356e3784d574018a4148d3b37e"
+    },
+    {
+      "path": "src/map-scene.js",
+      "bytes": 60238,
+      "sha256": "27c423a6ca036a654d35a46c6cde8db6280a8203ce0072f321d068cb784dd247"
+    },
+    {
+      "path": "src/candidate-city-integrations.js",
+      "bytes": 5669,
+      "sha256": "f2ea65d55982cbb624d972d4250c9e40298c443b1da05a9af1cdec7e3b785605"
+    },
+    {
+      "path": "src/precise-registration-ui.js",
+      "bytes": 1749,
+      "sha256": "cd01fd32d56efaecfe005c9460a2293f29f8120d1ac428f06ceeb0dd01c28c82"
+    },
+    {
+      "path": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "path": "src/landmark-navigation.js",
+      "bytes": 1958,
+      "sha256": "480e7c80a6aac623756eccca28fc2a9f11b6bf8c1f31232e0fd10e06694cfd3b"
+    },
+    {
+      "path": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "path": "data/candidate-city-integrations.json",
+      "bytes": 207332,
+      "sha256": "8935a2ad455693bce9152173930f2ddc467e7318a279c0c45d8c51c8008b6954"
+    }
+  ]
+}

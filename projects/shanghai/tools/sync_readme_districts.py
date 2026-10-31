@@ -8,6 +8,8 @@ cache on write; shallow-history gaps display 未记录 until evidence is supplie
 import argparse
 from collections import Counter
 from datetime import datetime, timezone, timedelta
+from functools import lru_cache
+from urllib.parse import parse_qsl, urlsplit
 import json
 import os
 from pathlib import Path
@@ -19,9 +21,6 @@ DATA = ROOT / 'projects/shanghai/data/model-todo'
 TIME_FILE = DATA / 'candidate-publication-times.json'
 HEADING = '## 按区查看主要建筑\n'
 CURRENT = 'https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/'
-# This former snapshot was used by current-view buttons and early-model tables.
-# Other pinned candidate versions and historical links must retain their hashes.
-LEGACY_CURRENT = 'https://rawcdn.githack.com/ecojust/e-resource/b254063f3637ad18753ab129d15ac8adac55ccf3/projects/shanghai/'
 PREFIX_DISTRICT = {'chongming':'崇明区', 'hongkou':'虹口区', 'xuhui':'徐汇区', 'huangpu':'黄浦区'}
 INTEGRATIONS = ROOT / 'projects/shanghai/data/candidate-city-integrations.json'
 MARKER = r'\n?<!-- district-candidates:[^>]+:start -->.*?<!-- district-candidates:[^>]+:end -->\n?'
@@ -83,8 +82,100 @@ def integrations():
     return {item['id']: item for item in items}
 
 
+@lru_cache(maxsize=1)
+def model_view_routes():
+    """Use current city registration to route each historical standalone page."""
+    base = json.loads((ROOT / 'projects/shanghai/data/landmarks.json').read_text())
+    added = list(integrations().values())
+    base_ids = {item['id'] for item in base}
+    records = {item['id']: item for item in base + added}
+    routes = {ident: CURRENT + f"index.html#landmark={ident}&mode={'walk' if ident in base_ids else 'overview'}" for ident in records}
+    pages = {}
+    for item in added:
+        pages[item['individual_page']] = routes[item['id']]
+    for item in json.loads((ROOT / 'projects/shanghai/data/model-viewers.json').read_text()):
+        if item.get('kind') == 'candidate' and item['id'] in routes:
+            page, route = item['page'], routes[item['id']]
+            assert page not in pages or pages[page] == route, 'Ambiguous model page'
+            pages[page] = route
+    assert all(page.endswith('.html') and '/' not in page for page in pages)
+    return routes, pages
+
+
+def normalize_model_view_links(text, project=False):
+    """Normalize only Shanghai model-view URLs, preserving evidence/downloads.
+
+    The queue keeps historical asset-version URLs. Rendered README links always
+    open the current main scene; model-walk is not promoted to city walking.
+    """
+    routes, pages = model_view_routes()
+
+    def target(url):
+        parsed = urlsplit(url)
+        if parsed.scheme or parsed.netloc:
+            if parsed.netloc not in ('raw.githack.com', 'rawcdn.githack.com'):
+                return None
+            match = re.fullmatch(r'/ecojust/e-resource/[^/]+/projects/shanghai/([^/]+)', parsed.path)
+            if not match:
+                return None
+            page = match[1]
+        else:
+            page = parsed.path.removeprefix('./')
+            if page.startswith('projects/shanghai/'):
+                page = page.removeprefix('projects/shanghai/')
+            elif not project:
+                return None
+            if '/' in page:
+                return None
+        if page in pages:
+            return pages[page]
+        if page == 'surfaces.html':
+            return CURRENT + 'index.html#mode=overview'
+        if page == 'index.html':
+            params = dict(parse_qsl(parsed.fragment))
+            if 'landmark' in params:
+                assert params['landmark'] in routes, f"Unregistered model view: {url}"
+                return routes[params['landmark']]
+            return CURRENT + 'index.html' + ('?' + parsed.query if parsed.query else '') + ('#' + parsed.fragment if parsed.fragment else '')
+        return None
+
+    view_labels = {'单体', '单体预览', '打开模型', '模型室外漫游', '进入模型漫游', '全局查看', '进入漫游', '在线预览'}
+    pattern = re.compile(r'(?<!!)\[([^\[\]\n]+)\]\((<[^<>\n]+>|[^()\s]+)\)')
+    def replace_link(match):
+        raw = match[2]
+        url = raw[1:-1] if raw.startswith('<') else raw
+        route = target(url)
+        if route is None:
+            return match[0]
+        label = '查看网页' if match[1] in view_labels else match[1]
+        wrapped = '<' + route + '>' if raw.startswith('<') else route
+        return f'[{label}]({wrapped})'
+    text = pattern.sub(replace_link, text)
+    definition = re.compile(r'^( {0,3}\[[^\]\n]+\]:[ \t]*)(<[^<>\n]+>|[^\s]+)([^\n]*)$', re.M)
+    def replace_definition(match):
+        raw = match[2]
+        route = target(raw[1:-1] if raw.startswith('<') else raw)
+        if route is None:
+            return match[0]
+        return match[1] + ('<' + route + '>' if raw.startswith('<') else route) + match[3]
+    text = definition.sub(replace_definition, text)
+    # The early preview table formerly had separate rotation and local-walk
+    # buttons; both now resolve to one main-scene destination.
+    duplicate = re.compile(r'(\[查看网页\]\(<?https://raw\.githack\.com/ecojust/e-resource/master/projects/shanghai/index\.html[^)]+\))(?:[ \t]*·[ \t]*\1)+')
+    text = duplicate.sub(r'\1', text)
+    text = text.replace('## 建筑模型预览与地面水系', '## 建筑模型与地面水系')
+    text = text.replace('## 独立模型预览', '## 已建模型查看')
+    text = text.replace('| 区域 | 模型 | 在线预览 | 来源与限制 |', '| 区域 | 模型 | 主图查看 | 来源与限制 |')
+    text = text.replace('下列早期模型保留独立预览及模型外围漫游；全局场景直达链接统一列于下方“按区查看主要建筑”。尺寸、隐蔽构造及新增接入的位置含估计。', '下列模型统一从主图查看：原40处入口保留室外漫游，新增30处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。')
+    text = text.replace('提供独立预览、室外模型漫游及Blender下载。', '提供主图俯瞰定位及Blender下载。')
+    text = text.replace('单体页面继续提供旋转、缩放、外围漫游与下载；独立预览不重复计为另一栋建筑。', '所有模型查看入口统一进入主图；原40处开放室外漫游，新增30处提供俯瞰定位。模型资产与下载保留在各自来源说明中。')
+    surface_docs = ('source/surfaces/README.md' if project else 'projects/shanghai/source/surfaces/README.md')
+    text = text.replace('提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。', f'主图可查看地面与水系；分区GLB、可编辑Blender与GIS边界的下载见[资产说明]({surface_docs})。')
+    return text
+
+
 def render(text, items, times, project=False):
-    text = text.replace(LEGACY_CURRENT, CURRENT)
+    text = normalize_model_view_links(text, project)
     text = text.replace('以下七个建筑模型均可独立预览', '下列早期模型均可独立预览')
     text = text.replace('七个模型均已接入', '下列早期模型均已接入')
     before, rest = text.split(HEADING, 1)
@@ -107,7 +198,7 @@ def render(text, items, times, project=False):
     parts = re.split(r'(?=^### )', section, flags=re.M)
     evidence = 'data/model-todo/candidate-publication-times.json' if project else 'projects/shanghai/data/model-todo/candidate-publication-times.json'
     placement = 'data/candidate-city-integrations.json' if project else 'projects/shanghai/data/candidate-city-integrations.json'
-    intro = f'<!-- district-candidates:summary:start -->\n**汇总：16区，{len(base_ids) + len(city)}处建筑与构件模型入口（{len(base_ids)}处既有＋{len(city)}处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原{len(base_ids)}处保留室外漫游；新增{len(city)}处按资料近似定位并提供全局查看，尺寸与细节限制保留；“全局查看”直接打开城市场景，“单体”保留独立预览。入口随master更新。[定位依据]({placement}) · [候选版本时间]({evidence})。\n<!-- district-candidates:summary:end -->\n'
+    intro = f'<!-- district-candidates:summary:start -->\n**汇总：16区，{len(base_ids) + len(city)}处建筑与构件模型入口（{len(base_ids)}处既有＋{len(city)}处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原{len(base_ids)}处保留室外漫游；新增{len(city)}处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据]({placement}) · [候选版本时间]({evidence})。\n<!-- district-candidates:summary:end -->\n'
     parts[0] = parts[0].rstrip() + '\n\n' + intro + '\n'
     placed, counted_districts = set(), set()
     for i in range(1, len(parts)):
@@ -135,7 +226,7 @@ def render(text, items, times, project=False):
                 record = {}
             date = datetime.fromisoformat(record['committer_date_utc'].replace('Z', '+00:00')).astimezone(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S') if record else '未记录'
             name = item['name'].replace('|', '／')
-            links = f"[全局查看]({CURRENT}index.html#landmark={item['id']}&mode=overview) · [单体]({CURRENT}{item['page']})"
+            links = f"[查看网页]({CURRENT}index.html#landmark={item['id']}&mode=overview)"
             # A global view is available for every record. Walk links require the
             # separately verified navigation contract; inclusion is not precision acceptance.
             if city[item['id']].get('navigation', {}).get('listed'):
@@ -148,7 +239,7 @@ def render(text, items, times, project=False):
     updated_section = ''.join(parts).rstrip()
     assert set(re.findall(r'#landmark=([^&]+)&mode=overview', updated_section)) == set(city)
     result = before + HEADING + updated_section + '\n\n## ' + after
-    return result
+    return normalize_model_view_links(result, project)
 
 
 def sync(check=False):

@@ -21,30 +21,30 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 1 | [崇明学宫戟门](<https://rawcdn.githack.com/ecojust/e-resource/c1eb2641f2f6730cd1045bf7a94936a74e834140/projects/shanghai/ji-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 3.95 MB／Blender 5.14 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Pan_pool_and_Ji_Gate_of_the_Chongming_Confucian_Temple.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 2 | [崇明学宫棂星门中央石门](<https://rawcdn.githack.com/ecojust/e-resource/bee34f08d2b7c8b6e545f16691d2b8b06d81b0d9/projects/shanghai/lingxing-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.65 MB／Blender 0.54 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Lingxing_Gate_of_the_Chongming_Confucian_Temple.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 3 | [崇明学宫照片左侧门（历史石框参照）](<https://rawcdn.githack.com/ecojust/e-resource/122db27da5981e493dd3f2b12f088eb2a00bc29e/projects/shanghai/lingxing-left-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.23 MB／Blender 0.26 MB | [博物馆文字][MTD-f7f0c208] · [2021图文／棂星门照片](<https://m.thepaper.cn/newsDetail_forward_11469862>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 4 | [崇明学宫照片右侧门（1990年代参照）](<https://rawcdn.githack.com/ecojust/e-resource/dafaba0ba493d0633bbfe9c13789a1fd4a951f28/projects/shanghai/lingxing-right-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.023 MB／Blender 0.11 MB | [博物馆文字][MTD-f7f0c208] · [1990年代照片（2021文章）](<https://imagepphcloud.thepaper.cn/pph/image/117/259/19.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 5 | [崇明学宫名宦祠](<https://rawcdn.githack.com/ecojust/e-resource/0727e5441bcbab99979ea05dfce753a07edbfba2/projects/shanghai/minghuan-shrine.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据][MTD-955a0115] · [单体身份审查][MTD-e31078ff]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 6 | [崇明学宫乡贤祠](<https://rawcdn.githack.com/ecojust/e-resource/67d54f87a457fe82678c7b98fdb0b3cad4f83b6d/projects/shanghai/xiangxian-shrine.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据][MTD-955a0115] · [单体身份审查][MTD-e31078ff]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 7 | [崇明学宫东庑](<https://rawcdn.githack.com/ecojust/e-resource/ba2901f26128f3959694ea541a847797c6957764/projects/shanghai/east-wing.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查][MTD-613cf4e7]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 8 | [崇明学宫西庑](<https://rawcdn.githack.com/ecojust/e-resource/3418a4b1c3add94408868e221e4b542b6a1fb21f/projects/shanghai/west-wing.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查][MTD-613cf4e7]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 9 | [崇明学宫东官厅](<https://rawcdn.githack.com/ecojust/e-resource/e84905881d151975e60cc9a0f334af186042629e/projects/shanghai/east-guanting.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.75 MB／Blender 1.06 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查][MTD-86cf0168]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 10 | [崇明学宫西官厅](<https://rawcdn.githack.com/ecojust/e-resource/ffc4510616e628d505b710b8e834f4bb3571eb8a/projects/shanghai/west-guanting.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.73 MB／Blender 0.91 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查][MTD-86cf0168]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 11 | [崇明学宫西牌坊（题名面待核）](<https://rawcdn.githack.com/ecojust/e-resource/6673d31dee681d219078b58bc658d77a0aa4e1e5/projects/shanghai/west-paifang.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查][MTD-7d653de3]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 12 | [崇明学宫东牌坊（题名面待核）](<https://rawcdn.githack.com/ecojust/e-resource/75557ce32a40e4757eaca0cce49d896a53917731/projects/shanghai/east-paifang.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查][MTD-7d653de3]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 13 | [崇明学宫儒学大门](<https://rawcdn.githack.com/ecojust/e-resource/17b34c264db43fa93fb0ca5bfd55237a1579aa89/projects/shanghai/ruxue-gate.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.74 MB／Blender 1.05 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 14 | [崇明学宫仪门](<https://rawcdn.githack.com/ecojust/e-resource/9eb58f131439840c0a9aa01e8c6d3c7f6bafcd1c/projects/shanghai/yimen.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.31 MB／Blender 1.90 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与遮挡审查](<projects/shanghai/data/model-todo/chongming-yimen-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 15 | [崇明学宫明伦堂](<https://rawcdn.githack.com/ecojust/e-resource/0edf42c76ba0ffaabeaf8047d71f01297c0f9161/projects/shanghai/minglun-hall.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.29 MB／Blender 1.79 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-minglun-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 16 | [崇明学宫碑廊](<https://rawcdn.githack.com/ecojust/e-resource/9c2ae34985b47c260fd230b602c855d11ec46176/projects/shanghai/stele-corridors.html>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 3.45 MB／Blender 8.59 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-stele-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 17 | [上海大厦／百老汇大厦历史主楼](<https://rawcdn.githack.com/ecojust/e-resource/5f6c128013ab0b8fb32e1e0a7198a1ba970bedc0/projects/shanghai/broadway-mansions.html>) | 虹口区／北苏州路（2号／20号门牌记载待核） | 全局已接入／近似定位 | 网页 3.26 MB／Blender 5.03 MB | [地方志文字](<https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html>) · [2014年外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG>) · [来源与冲突审查][MTD-3e64e2dd] · [地图轮廓与部件关系][MTD-784b2fe4]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 18 | [俄罗斯领事馆历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/6f24cb05bda5b5659ac77998dbae39bc4c411a18/projects/shanghai/russian-consulate.html>) | 虹口区／黄浦路20号 | 全局已接入／近似定位 | 网页 1.00 MB／Blender 1.69 MB | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查][MTD-3e64e2dd] · [地图轮廓与部件关系][MTD-784b2fe4]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 19 | [国际饭店历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/cc2b2f4873ed3ac01d84e6b9d50b7b3739e8cb52/projects/shanghai/park-hotel.html>) | 黄浦区／南京西路170号 | 全局已接入／近似定位 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 20 | [上海跑马总会历史东楼与主钟塔](<https://rawcdn.githack.com/ecojust/e-resource/3f88ffc426f6eba3ec8930101c1914e4df0ac309/projects/shanghai/race-club.html>) | 黄浦区／南京西路325号 | 全局已接入／近似定位 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 21 | [大光明大戏院临街入口与灯塔局部](<https://rawcdn.githack.com/ecojust/e-resource/6e75351b9fecbb3dfc3bae00442731db42d77124/projects/shanghai/grand-theatre.html>) | 黄浦区／南京西路216号 | 全局已接入／近似定位 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 22 | [金门饭店／华安大楼历史主楼外观](<https://rawcdn.githack.com/ecojust/e-resource/fb2833485b4716a89637c6f8e57db03dafc063ec/projects/shanghai/pacific-hotel.html>) | 黄浦区／南京西路104号 | 全局已接入／近似定位 | 网页 1.64 MB／Blender 2.71 MB | [官方文字与尺寸](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html>) · [已核2013外观照片](<https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG>) · [来源与冲突审查](<projects/shanghai/data/audit/pacific-hotel-v1/documentary-review.json>) · [地图外包与北楼限制](<projects/shanghai/data/audit/pacific-hotel-v1/footprint-review.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 23 | [先施公司历史主楼与摩星塔外观](<https://rawcdn.githack.com/ecojust/e-resource/8869b664fcf2ed17ac2b96315ae2b706d4370108/projects/shanghai/sincere-company.html>) | 黄浦区／南京东路690号 | 全局已接入／近似定位 | 网页 3.65 MB／Blender 6.30 MB | [官方建筑志](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284500>) · [已核2010外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_sincere_building.jpg>) · [已核2013摩星塔照片](<https://commons.wikimedia.org/wiki/File:Sincere_Department_Store.JPG>) · [来源与照片审查](<projects/shanghai/source/precise/huangpu-sincere-company/source-register.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| 24 | [老永安公司主楼与屋顶塔楼外观](<https://rawcdn.githack.com/ecojust/e-resource/3d45d7279200ef391b357cbf975fe3acf844e288/projects/shanghai/old-wing-on-company.html>) | 黄浦区／南京东路635号 | 全局已接入／近似定位 | 网页 4.91 MB／Blender 8.68 MB | [官方建筑志](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284501>) · [已核2025外观照片](<https://commons.wikimedia.org/w/index.php?title=File:Wing_On_Department_Store_20251126_%28II%29.jpg&oldid=1248639623>) · [来源与照片审查](<projects/shanghai/source/precise/huangpu-old-wing-on-company/source-register.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 1 | [崇明学宫戟门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 3.95 MB／Blender 5.14 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Pan_pool_and_Ji_Gate_of_the_Chongming_Confucian_Temple.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 2 | [崇明学宫棂星门中央石门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.65 MB／Blender 0.54 MB | [博物馆文字][MTD-affe1af2] · [2005年照片](<https://commons.wikimedia.org/wiki/File:Lingxing_Gate_of_the_Chongming_Confucian_Temple.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 3 | [崇明学宫照片左侧门（历史石框参照）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-left-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.23 MB／Blender 0.26 MB | [博物馆文字][MTD-f7f0c208] · [2021图文／棂星门照片](<https://m.thepaper.cn/newsDetail_forward_11469862>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 4 | [崇明学宫照片右侧门（1990年代参照）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-right-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.023 MB／Blender 0.11 MB | [博物馆文字][MTD-f7f0c208] · [1990年代照片（2021文章）](<https://imagepphcloud.thepaper.cn/pph/image/117/259/19.jpg>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 5 | [崇明学宫名宦祠](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minghuan-shrine&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据][MTD-955a0115] · [单体身份审查][MTD-e31078ff]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 6 | [崇明学宫乡贤祠](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xiangxian-shrine&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.64 MB／Blender 0.80 MB | [博物馆文字][MTD-c421d8ae] · [区政府方位依据][MTD-955a0115] · [单体身份审查][MTD-e31078ff]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 7 | [崇明学宫东庑](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-wing&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查][MTD-613cf4e7]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 8 | [崇明学宫西庑](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-wing&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.82 MB／Blender 2.56 MB | [博物馆文字][MTD-c421d8ae] · [现代两庑资料审查][MTD-613cf4e7]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 9 | [崇明学宫东官厅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-guanting&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.75 MB／Blender 1.06 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查][MTD-86cf0168]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 10 | [崇明学宫西官厅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-guanting&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.73 MB／Blender 0.91 MB | [博物馆文字][MTD-affe1af2] · [官厅资料审查][MTD-86cf0168]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 11 | [崇明学宫西牌坊（题名面待核）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xuehai-paifang&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查][MTD-7d653de3]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 12 | [崇明学宫东牌坊（题名面待核）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 2.84 MB／Blender 3.31 MB | [博物馆文字][MTD-affe1af2] · [题名、尺寸与高清照片审查][MTD-7d653de3]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 13 | [崇明学宫儒学大门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 0.74 MB／Blender 1.05 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 14 | [崇明学宫仪门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.31 MB／Blender 1.90 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与遮挡审查](<projects/shanghai/data/model-todo/chongming-yimen-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 15 | [崇明学宫明伦堂](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 1.29 MB／Blender 1.79 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-minglun-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 16 | [崇明学宫碑廊](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-stele-corridors&mode=overview>) | 崇明区／鳌山路696号／崇明学宫院内 | 全局已接入／近似定位 | 网页 3.45 MB／Blender 8.59 MB | [博物馆文字][MTD-e9926259] · [尺寸、身份与照片审查][MTD-3e72f439] · [可见构件与制作范围](<projects/shanghai/data/model-todo/chongming-stele-visible-features.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 17 | [上海大厦／百老汇大厦历史主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview>) | 虹口区／北苏州路（2号／20号门牌记载待核） | 全局已接入／近似定位 | 网页 3.26 MB／Blender 5.03 MB | [地方志文字](<https://web.archive.org/web/20200927095930id_/http://www.shtong.gov.cn/newsite/node2/node71994/node81772/node81774/node81784/userobject1ai108934.html>) · [2014年外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Mansion.JPG>) · [来源与冲突审查][MTD-3e64e2dd] · [地图轮廓与部件关系][MTD-784b2fe4]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 18 | [俄罗斯领事馆历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview>) | 虹口区／黄浦路20号 | 全局已接入／近似定位 | 网页 1.00 MB／Blender 1.69 MB | [旧保护建筑文字](<https://web.archive.org/web/20120914233855id_/http://www.shhkfd.gov.cn/bhjz/elslg.htm>) · [地方志文字](<https://web.archive.org/web/20120716130119id_/http://shtong.gov.cn/newsite/node2/node4/node2249/node4418/node20208/node21553/node62882/userobject1ai9029.html>) · [2010年外观照片](<https://commons.wikimedia.org/wiki/File:Russian_Consulate_General_in_Shanghai.jpg>) · [来源与冲突审查][MTD-3e64e2dd] · [地图轮廓与部件关系][MTD-784b2fe4]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 19 | [国际饭店历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview>) | 黄浦区／南京西路170号 | 全局已接入／近似定位 | 网页 2.08 MB／Blender 3.85 MB | [文字与尺寸参考](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20231208/b8e95f2a8268440ea78cb67b0f8fd668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_Park_Hotel_2007.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 20 | [上海跑马总会历史东楼与主钟塔](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview>) | 黄浦区／南京西路325号 | 全局已接入／近似定位 | 网页 2.85 MB／Blender 4.52 MB | [文字与尺寸参考](<https://m.thepaper.cn/newsDetail_forward_2042037>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Whole_View_of_Shanghai_Race_Club.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 21 | [大光明大戏院临街入口与灯塔局部](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview>) | 黄浦区／南京西路216号 | 全局已接入／近似定位 | 网页 0.21 MB／Blender 0.37 MB | [文字与尺寸参考](<https://www.shanghai.gov.cn/nw4411/20241010/c74051d489284526ab031ea450de5668.html>) · [已核外观照片](<https://commons.wikimedia.org/wiki/File:Grand_theatre_shanghai.jpg>) · [来源与冲突审查][MTD-0e2503d2] · [地图外包与栋别限制][MTD-ae734ade]；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 22 | [金门饭店／华安大楼历史主楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview>) | 黄浦区／南京西路104号 | 全局已接入／近似定位 | 网页 1.64 MB／Blender 2.71 MB | [官方文字与尺寸](<https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20240117/b213311fda44469483a68126e6bfb614.html>) · [已核2013外观照片](<https://commons.wikimedia.org/wiki/File:Pacific_Hotel_Shanghai.JPG>) · [来源与冲突审查](<projects/shanghai/data/audit/pacific-hotel-v1/documentary-review.json>) · [地图外包与北楼限制](<projects/shanghai/data/audit/pacific-hotel-v1/footprint-review.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 23 | [先施公司历史主楼与摩星塔外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview>) | 黄浦区／南京东路690号 | 全局已接入／近似定位 | 网页 3.65 MB／Blender 6.30 MB | [官方建筑志](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284500>) · [已核2010外观照片](<https://commons.wikimedia.org/wiki/File:Shanghai_sincere_building.jpg>) · [已核2013摩星塔照片](<https://commons.wikimedia.org/wiki/File:Sincere_Department_Store.JPG>) · [来源与照片审查](<projects/shanghai/source/precise/huangpu-sincere-company/source-register.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| 24 | [老永安公司主楼与屋顶塔楼外观](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview>) | 黄浦区／南京东路635号 | 全局已接入／近似定位 | 网页 4.91 MB／Blender 8.68 MB | [官方建筑志](<https://www.shtong.gov.cn/shizhi-public/#/bookView?id=5401&type=2&catalogueId=284501>) · [已核2025外观照片](<https://commons.wikimedia.org/w/index.php?title=File:Wing_On_Department_Store_20251126_%28II%29.jpg&oldid=1248639623>) · [来源与照片审查](<projects/shanghai/source/precise/huangpu-old-wing-on-company/source-register.json>)；已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
 
 ### 已有模型的后续核验
 
@@ -54,52 +54,52 @@
 
 | 模型 | 当前登记 | 后续 TODO |
 |---|---|---|
-| [上海孙中山故居主楼](<projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [徐家汇藏书楼南楼（原神父楼）](<projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [金山卫瓮城城楼](<projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [巴金旧居主楼](<projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [邬达克旧居（番禺路129号）](<projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [武康大楼主楼](<projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [奉贤博物馆](<projects/shanghai/index.html#landmark=fengxian-museum&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [哥伦比亚乡村俱乐部主楼](<projects/shanghai/index.html#landmark=columbia-country-club&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [宝山孔庙大成殿](<projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [杨浦区图书馆总馆（原上海市图书馆）](<projects/shanghai/index.html#landmark=yangpu-library&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [四行仓库（含毗邻大陆银行仓库）](<projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [包玉刚图书馆](<projects/shanghai/index.html#landmark=minhang-baoyugang-library&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海汽车博物馆](<projects/shanghai/index.html#landmark=jiading-shanghai-auto-museum&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [真如寺大殿（正殿）](<projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [兴圣教寺塔（松江方塔）](<projects/shanghai/index.html#landmark=songjiang-fangta-pagoda&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [龙华塔](<projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [鸿德堂 · 多伦路59号](<projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [江南第一茶楼 · 北大街208–212号](<projects/shanghai/index.html#landmark=qingpu-beidajie-208-212&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [徐汇武康路210号二层住宅](<projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [徐汇武康路129号二层住宅](<projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [北大街222号民居（2022年鹤龙美术馆使用状态）](<projects/shanghai/index.html#landmark=qingpu-beidajie-222&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海总会](<projects/shanghai/index.html#landmark=bund02&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [有利大楼 · 外滩3号](<projects/shanghai/index.html#landmark=bund03&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [日清大楼 · 外滩5号](<projects/shanghai/index.html#landmark=bund05&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [中国通商银行旧址 · 外滩6号](<projects/shanghai/index.html#landmark=bund06&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [大北电报公司大楼 · 外滩7号](<projects/shanghai/index.html#landmark=bund07&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [轮船招商局大楼 · 外滩9号](<projects/shanghai/index.html#landmark=bund09&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [汇丰银行大楼](<projects/shanghai/index.html#landmark=bund12&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [江海关大楼](<projects/shanghai/index.html#landmark=customs-house&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [交通银行旧址 · 外滩14号](<projects/shanghai/index.html#landmark=bund14&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [华俄道胜银行大楼](<projects/shanghai/index.html#landmark=bund15&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [字林西报大楼](<projects/shanghai/index.html#landmark=bund17&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [麦加利银行 · 外滩18号](<projects/shanghai/index.html#landmark=bund18&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [和平饭店南楼 · 汇中饭店](<projects/shanghai/index.html#landmark=bund19&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [和平饭店北楼 · 沙逊大厦](<projects/shanghai/index.html#landmark=bund20&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [中国银行大楼](<projects/shanghai/index.html#landmark=bund23&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [金茂大厦](<projects/shanghai/index.html#landmark=jin-mao&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [东方明珠电视塔](<projects/shanghai/index.html#landmark=oriental-pearl&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海中心大厦](<projects/shanghai/index.html#landmark=shanghai-tower&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [上海环球金融中心](<projects/shanghai/index.html#landmark=swfc&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
-| [崇明学宫大成殿](<projects/shanghai/dacheng-hall.html>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [崇明学宫泮池与登云桥](<projects/shanghai/pan-pool.html>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [崇明学宫尊经阁](<projects/shanghai/zunjing-pavilion.html>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [上海鲁迅故居正立面与院门](<projects/shanghai/luxun-residence.html>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [上海宋庆龄故居主楼](<projects/shanghai/soong-residence.html>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
-| [崇明学宫崇圣祠正殿](<projects/shanghai/chongsheng-shrine.html>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| [上海孙中山故居主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [徐家汇藏书楼南楼（原神父楼）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [金山卫瓮城城楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jinshanwei-wengcheng-gatehouse&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [巴金旧居主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-bajin-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [邬达克旧居（番禺路129号）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [武康大楼主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [奉贤博物馆](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=fengxian-museum&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [哥伦比亚乡村俱乐部主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [宝山孔庙大成殿](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=baoshan-confucian-dacheng-hall&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [杨浦区图书馆总馆（原上海市图书馆）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [四行仓库（含毗邻大陆银行仓库）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [包玉刚图书馆](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=minhang-baoyugang-library&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [上海汽车博物馆](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jiading-shanghai-auto-museum&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [真如寺大殿（正殿）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [兴圣教寺塔（松江方塔）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=songjiang-fangta-pagoda&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [龙华塔](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [鸿德堂 · 多伦路59号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [江南第一茶楼 · 北大街208–212号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=qingpu-beidajie-208-212&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [徐汇武康路210号二层住宅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [徐汇武康路129号二层住宅](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [北大街222号民居（2022年鹤龙美术馆使用状态）](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=qingpu-beidajie-222&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [上海总会](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund02&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [有利大楼 · 外滩3号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [日清大楼 · 外滩5号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [中国通商银行旧址 · 外滩6号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [大北电报公司大楼 · 外滩7号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [轮船招商局大楼 · 外滩9号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund09&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [汇丰银行大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund12&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [江海关大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=customs-house&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [交通银行旧址 · 外滩14号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund14&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [华俄道胜银行大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund15&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [字林西报大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund17&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [麦加利银行 · 外滩18号](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [和平饭店南楼 · 汇中饭店](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [和平饭店北楼 · 沙逊大厦](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [中国银行大楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [金茂大厦](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jin-mao&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [东方明珠电视塔](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=oriental-pearl&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [上海中心大厦](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=shanghai-tower&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [上海环球金融中心](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=swfc&mode=walk>) | 已有城市入口；精度按原验收范围 | 新资料逐项对照，补足未覆盖立面／构造；核验新增细节 |
+| [崇明学宫大成殿](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| [崇明学宫泮池与登云桥](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-pan-pool-bridge&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| [崇明学宫尊经阁](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| [上海鲁迅故居正立面与院门](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| [上海宋庆龄故居主楼](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
+| [崇明学宫崇圣祠正殿](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview>) | 已接入全局场景（近似定位） | 已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留 |
 
 </details>
 
@@ -3819,33 +3819,33 @@
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
-新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/surfaces.html)：提供分区GLB、可编辑Blender与GIS边界，支持独立查看和下载。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
+新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=overview)：主图可查看地面与水系；分区GLB、可编辑Blender与GIS边界的下载见[资产说明](projects/shanghai/source/surfaces/README.md)。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
-## 建筑模型预览与地面水系
+## 建筑模型与地面水系
 
-下列早期模型保留独立预览及模型外围漫游；全局场景直达链接统一列于下方“按区查看主要建筑”。尺寸、隐蔽构造及新增接入的位置含估计。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增30处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
-| 区域 | 模型 | 在线预览 | 来源与限制 |
+| 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
-| 徐汇 | 徐家汇藏书楼南楼 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zikawei-library.html) · [进入漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md) |
-| 徐汇 | 宋庆龄故居主楼 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/README.md) |
-| 虹口 | 鲁迅故居正立面与院门（局部构件） | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/hongkou-luxun-residence-facade/README.md) |
-| 黄浦 | 孙中山故居主楼 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sun-yatsen-residence.html) · [进入漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](projects/shanghai/source/precise/huangpu-sun-yatsen-residence/README.md) |
-| 崇明 | 学宫尊经阁 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-zunjing-pavilion/README.md) |
-| 崇明 | 学宫泮池与登云桥 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-pan-pool-bridge/README.md) |
-| 崇明 | 学宫大成殿 | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html) · [模型室外漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html#mode=model-walk) | [查看说明](projects/shanghai/source/precise/chongming-dacheng-hall/README.md) |
-| 全市16区 | 地面与江河水面（零高程平面） | [打开模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/surfaces.html) | [查看说明](projects/shanghai/source/surfaces/README.md) |
+| 徐汇 | 徐家汇藏书楼南楼 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-south-building&mode=walk) | [查看说明](projects/shanghai/source/precise/xuhui-zikawei-south-building/README.md) |
+| 徐汇 | 宋庆龄故居主楼 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) | [查看说明](projects/shanghai/source/precise/xuhui-soong-ching-ling-residence/README.md) |
+| 虹口 | 鲁迅故居正立面与院门（局部构件） | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) | [查看说明](projects/shanghai/source/precise/hongkou-luxun-residence-facade/README.md) |
+| 黄浦 | 孙中山故居主楼 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) | [查看说明](projects/shanghai/source/precise/huangpu-sun-yatsen-residence/README.md) |
+| 崇明 | 学宫尊经阁 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview) | [查看说明](projects/shanghai/source/precise/chongming-zunjing-pavilion/README.md) |
+| 崇明 | 学宫泮池与登云桥 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-pan-pool-bridge&mode=overview) | [查看说明](projects/shanghai/source/precise/chongming-pan-pool-bridge/README.md) |
+| 崇明 | 学宫大成殿 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview) | [查看说明](projects/shanghai/source/precise/chongming-dacheng-hall/README.md) |
+| 全市16区 | 地面与江河水面（零高程平面） | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=overview) | [查看说明](projects/shanghai/source/surfaces/README.md) |
 
 ## 新增文献参照候选
 
-[崇明学宫崇圣祠正殿](projects/shanghai/chongsheng-shrine.html)：三开间单檐歇山式外观，提供独立预览、室外模型漫游及Blender下载。依据博物馆旧官网文字；未获单体照片，门窗、曲线、色彩等为估计；已按院落资料近似定位并接入全局场景。[来源与限制](projects/shanghai/source/precise/chongming-chongsheng-shrine/README.md)。
+[崇明学宫崇圣祠正殿](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview)：三开间单檐歇山式外观，提供主图俯瞰定位及Blender下载。依据博物馆旧官网文字；未获单体照片，门窗、曲线、色彩等为估计；已按院落资料近似定位并接入全局场景。[来源与限制](projects/shanghai/source/precise/chongming-chongsheng-shrine/README.md)。
 
 ## 按区查看主要建筑
 
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，70处建筑与构件模型入口（40处既有＋30处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增30处按资料近似定位并提供全局查看，尺寸与细节限制保留；“全局查看”直接打开城市场景，“单体”保留独立预览。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，70处建筑与构件模型入口（40处既有＋30处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增30处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（22处）
@@ -3870,12 +3870,12 @@
 | 和平饭店南楼 · 汇中饭店 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk) |
 | 和平饭店北楼 · 沙逊大厦 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk) |
 | 中国银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk) |
-| 国际饭店历史主楼外观 | 2026-10-30 19:25:12 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/park-hotel.html) |
-| 上海跑马总会历史东楼与主钟塔 | 2026-10-30 19:40:09 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/race-club.html) |
-| 大光明大戏院临街入口与灯塔局部 | 2026-10-30 20:28:32 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/grand-theatre.html) |
-| 金门饭店／华安大楼历史主楼外观 | 2026-10-30 20:53:59 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pacific-hotel.html) |
-| 先施公司历史主楼与摩星塔外观 | 2026-10-30 21:46:35 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/sincere-company.html) |
-| 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/old-wing-on-company.html) |
+| 国际饭店历史主楼外观 | 2026-10-30 19:25:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview) |
+| 上海跑马总会历史东楼与主钟塔 | 2026-10-30 19:40:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview) |
+| 大光明大戏院临街入口与灯塔局部 | 2026-10-30 20:28:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview) |
+| 金门饭店／华安大楼历史主楼外观 | 2026-10-30 20:53:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview) |
+| 先施公司历史主楼与摩星塔外观 | 2026-10-30 21:46:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) |
+| 老永安公司主楼与屋顶塔楼外观 | 2026-10-30 22:30:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) |
 
 ### 徐汇区（7处）
 
@@ -3889,7 +3889,7 @@
 | 徐汇武康路129号二层住宅 | [2026-10-26 17:42:00](https://github.com/ecojust/e-resource/commit/b296b5ac4f68b4e6743f02fb2bb3c01091cab841) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk) |
 | 徐汇武康路210号二层住宅 | [2026-10-26 20:39:46](https://github.com/ecojust/e-resource/commit/682b72b3913eee2568305799783ca64c0e51bfbc) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk) |
 | 龙华塔 | [2026-10-27 01:37:07](https://github.com/ecojust/e-resource/commit/e501cc11f6c45bdd069d6ff88e870ea18c1bf93f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk) |
-| 上海宋庆龄故居主楼 | 2026-10-29 21:05:09 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/soong-residence.html) |
+| 上海宋庆龄故居主楼 | 2026-10-29 21:05:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) |
 
 ### 长宁区（2处）
 
@@ -3923,9 +3923,9 @@
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 鸿德堂 · 多伦路59号 | [2026-10-26 21:36:33](https://github.com/ecojust/e-resource/commit/0c0868954b943c46928d69f15dc6d9af7477424f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) |
-| 上海鲁迅故居正立面与院门 | 2026-10-29 10:24:42 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/luxun-residence.html) |
-| 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/broadway-mansions.html) |
-| 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/russian-consulate.html) |
+| 上海鲁迅故居正立面与院门 | 2026-10-29 10:24:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) |
+| 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
+| 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
 
 ### 杨浦区（1处）
 
@@ -4009,26 +4009,26 @@
 
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
-| 崇明学宫大成殿 | 2026-10-29 04:55:46 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/dacheng-hall.html) |
-| 崇明学宫泮池与登云桥 | 2026-10-29 01:09:05 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-pan-pool-bridge&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/pan-pool.html) |
-| 崇明学宫尊经阁 | 2026-10-29 00:52:39 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/zunjing-pavilion.html) |
-| 崇明学宫崇圣祠正殿 | 2026-10-29 22:57:21 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/chongsheng-shrine.html) |
-| 崇明学宫戟门 | 2026-10-29 23:14:16 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/ji-gate.html) |
-| 崇明学宫棂星门中央石门 | 2026-10-29 23:26:15 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-gate.html) |
-| 崇明学宫照片左侧门（历史石框参照） | 2026-10-29 23:34:33 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-left-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-left-gate.html) |
-| 崇明学宫照片右侧门（1990年代参照） | 2026-10-29 23:45:50 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-right-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/lingxing-right-gate.html) |
-| 崇明学宫名宦祠 | 2026-10-30 00:14:09 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minghuan-shrine&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/minghuan-shrine.html) |
-| 崇明学宫乡贤祠 | 2026-10-30 00:19:21 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xiangxian-shrine&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/xiangxian-shrine.html) |
-| 崇明学宫东庑 | 2026-10-30 00:32:00 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-wing&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-wing.html) |
-| 崇明学宫西庑 | 2026-10-30 00:37:59 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-wing&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-wing.html) |
-| 崇明学宫东官厅 | 2026-10-30 00:58:27 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-guanting&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-guanting.html) |
-| 崇明学宫西官厅 | 2026-10-30 01:04:36 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-guanting&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-guanting.html) |
-| 崇明学宫西牌坊（题名面待核） | 2026-10-30 01:30:02 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xuehai-paifang&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/west-paifang.html) |
-| 崇明学宫东牌坊（题名面待核） | 2026-10-30 01:40:24 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/east-paifang.html) |
-| 崇明学宫儒学大门 | 2026-10-30 01:49:23 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/ruxue-gate.html) |
-| 崇明学宫仪门 | 2026-10-30 02:07:29 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/yimen.html) |
-| 崇明学宫明伦堂 | 2026-10-30 02:21:31 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/minglun-hall.html) |
-| 崇明学宫碑廊 | 2026-10-30 02:37:41 | [全局查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-stele-corridors&mode=overview) · [单体](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/stele-corridors.html) |
+| 崇明学宫大成殿 | 2026-10-29 04:55:46 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview) |
+| 崇明学宫泮池与登云桥 | 2026-10-29 01:09:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-pan-pool-bridge&mode=overview) |
+| 崇明学宫尊经阁 | 2026-10-29 00:52:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview) |
+| 崇明学宫崇圣祠正殿 | 2026-10-29 22:57:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview) |
+| 崇明学宫戟门 | 2026-10-29 23:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview) |
+| 崇明学宫棂星门中央石门 | 2026-10-29 23:26:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-gate&mode=overview) |
+| 崇明学宫照片左侧门（历史石框参照） | 2026-10-29 23:34:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-left-gate&mode=overview) |
+| 崇明学宫照片右侧门（1990年代参照） | 2026-10-29 23:45:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-right-gate&mode=overview) |
+| 崇明学宫名宦祠 | 2026-10-30 00:14:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minghuan-shrine&mode=overview) |
+| 崇明学宫乡贤祠 | 2026-10-30 00:19:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xiangxian-shrine&mode=overview) |
+| 崇明学宫东庑 | 2026-10-30 00:32:00 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-wing&mode=overview) |
+| 崇明学宫西庑 | 2026-10-30 00:37:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-wing&mode=overview) |
+| 崇明学宫东官厅 | 2026-10-30 00:58:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-guanting&mode=overview) |
+| 崇明学宫西官厅 | 2026-10-30 01:04:36 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-guanting&mode=overview) |
+| 崇明学宫西牌坊（题名面待核） | 2026-10-30 01:30:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xuehai-paifang&mode=overview) |
+| 崇明学宫东牌坊（题名面待核） | 2026-10-30 01:40:24 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview) |
+| 崇明学宫儒学大门 | 2026-10-30 01:49:23 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview) |
+| 崇明学宫仪门 | 2026-10-30 02:07:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview) |
+| 崇明学宫明伦堂 | 2026-10-30 02:21:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview) |
+| 崇明学宫碑廊 | 2026-10-30 02:37:41 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-stele-corridors&mode=overview) |
 
 ### 本轮模型更新
 
