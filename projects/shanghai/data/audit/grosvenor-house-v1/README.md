@@ -63,6 +63,10 @@
 
 下一制作项为上海公共租界工部局历史主楼，已经完成文献与图像预研；须先拆清历史街面翼楼、2024补建段与庭院独立建筑，取消的50米塔楼方案不能用作现存高度。
 
+## 发布
+
+模型提交为 `781a3e306a847b60feb3c535a3ffc3925e3f27b6`。[线上核验](publication.json)实际读取该不可变提交下的15个公开HTTP文件，包括两份README、主图、目录、灯牌与源裁剪脚本、单体辅助入口、来源说明及四模型资产；均返回200，字节与提交一致。[固定版本主图直达](https://raw.githack.com/ecojust/e-resource/781a3e306a847b60feb3c535a3ffc3925e3f27b6/projects/shanghai/index.html#landmark=huangpu-grosvenor-house&mode=overview)。模型版本日期随后从真实Git提交生成，未用制作中的占位日期冒充已发布记录。
+
 ## 重建与复验
 
 从仓库根目录执行，Python依赖见[source/requirements.txt](../../../source/precise/huangpu-grosvenor-house/source/requirements.txt)，另需Blender和gltfpack：

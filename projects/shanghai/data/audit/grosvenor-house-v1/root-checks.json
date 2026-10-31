@@ -126,5 +126,43 @@
       "no private reference photos or temporary large files among untracked publishable paths"
     ],
     "browser_scope": "Final browser completion is checked separately; no additional browser was started or attached."
+  },
+  "publication_metadata_checks": {
+    "passed": true,
+    "scope": "After the actual model commit: Git-derived publication date, unchanged75-entry directory, active TODO and source registry consistency. Model assets and browser production inputs were unchanged.",
+    "commands": [
+      {
+        "command": "python tools/build_candidate_city_integrations.py --catalog-only --check",
+        "result": "passed"
+      },
+      {
+        "command": "python tools/update_global_model_metadata.py --check",
+        "result": "passed"
+      },
+      {
+        "command": "python tools/build_model_todo.py --check",
+        "result": "passed"
+      },
+      {
+        "command": "python tools/build_landmark_directory.py --check",
+        "result": "passed"
+      },
+      {
+        "command": "python tools/restoration_progress.py --check",
+        "result": "passed"
+      },
+      {
+        "command": "python tools/sync_readme_districts.py --check",
+        "result": "passed"
+      },
+      {
+        "command": "python data/audit/grosvenor-house-v1/todo-directory-checks.py",
+        "result": "passed"
+      },
+      {
+        "command": "git diff --check",
+        "result": "passed"
+      }
+    ]
   }
 }
