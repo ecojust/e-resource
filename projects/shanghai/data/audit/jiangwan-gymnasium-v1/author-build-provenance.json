@@ -1,0 +1,59 @@
+{
+  "id": "yangpu-jiangwan-gymnasium",
+  "base_commit": "a47e69e9cbde689266855d573aa8d1f25b02944d",
+  "built_at_utc": "2026-11-01T09:50:46.571864+00:00",
+  "original_building_construction": true,
+  "source_scope": "New independently mapped gymnasium building, not copied outdoor stadium/swimming hall geometry. Generic helper/workflow provenance retained in source/HELPER_PROVENANCE.json.",
+  "tools": {
+    "python": "Python 3.12.14",
+    "dependencies": [
+      "numpy==2.3.5",
+      "shapely==2.1.2",
+      "trimesh==4.9.0"
+    ],
+    "blender": "4.3.2",
+    "gltfpack": "0.25",
+    "gltfpack_sha256": "5eda19213d6edc68bdf591e2d0ae3f5deab8863831881895572aad02a650567f"
+  },
+  "build_commands": [
+    "python source/build_model.py --out BUILD",
+    "python source/build_model.py --lod --out BUILD",
+    "python source/verify_author.py --out BUILD/author-geometry-checks.json",
+    "python source/verify_author.py --lod --out BUILD/author-geometry-checks-lod.json",
+    "python source/verify_serialized.py --asset BUILD/yangpu-jiangwan-gymnasium-raw.glb --probes BUILD/surface-probes.json --out BUILD/raw-rays.json",
+    "blender -b -t 2 -P source/build_native.py -- --raw BUILD/yangpu-jiangwan-gymnasium-raw.glb --out BUILD/yangpu-jiangwan-gymnasium.blend --previews NATIVE --views front,oblique,rear,roof,entrance,south,roofdetail --samples 12",
+    "python source/package_assets.py --raw BUILD/yangpu-jiangwan-gymnasium-raw.glb --lod BUILD/yangpu-jiangwan-gymnasium-lod.glb --native BUILD/yangpu-jiangwan-gymnasium.blend --out ASSETS --gltfpack GLTFPACK"
+  ],
+  "actual_decode_reports": [
+    "author-full-rays.json",
+    "author-lod-rays.json"
+  ],
+  "assets": {
+    "raw": {
+      "file": "yangpu-jiangwan-gymnasium-raw.glb",
+      "bytes": 5727660,
+      "sha256": "57d1b5eddbda7bc3084c52d6fc130ec84ac6de079a31edb9d63d6250390243b4",
+      "triangles": 110972
+    },
+    "native": {
+      "file": "yangpu-jiangwan-gymnasium.blend",
+      "bytes": 2939057,
+      "sha256": "e18f1c7b500e63a044cc4debf108356362a04c96ff2bb1439c37cc6137d7176b"
+    },
+    "full": {
+      "file": "yangpu-jiangwan-gymnasium-web.glb",
+      "bytes": 1881528,
+      "sha256": "bdc3a60ded32481ea746f185cf227e52fec31a1792134af750203eee0b18d311",
+      "triangles": 110972
+    },
+    "lod": {
+      "file": "yangpu-jiangwan-gymnasium-lod.glb",
+      "bytes": 562704,
+      "sha256": "526a9a2d62789df457a56d59c7467de0242dc064934e6c8665fc895715b779a3",
+      "triangles": 29512
+    }
+  },
+  "native_saved_and_actually_reopened": true,
+  "no_photographs_or_textures_embedded": true,
+  "all_finished_heavy_author_jobs": true
+}

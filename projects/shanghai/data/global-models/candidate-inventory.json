@@ -44,32 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 40,
+  "candidate_manifest_count": 41,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 38,
-  "resulting_city_count": 78,
+  "new_city_model_count": 39,
+  "resulting_city_count": 79,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
-    "杨浦区": 2,
+    "杨浦区": 3,
     "虹口区": 3,
     "黄浦区": 12
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 160,
-    "bytes": 669923028,
+    "files": 164,
+    "bytes": 681033977,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 46404928,
+    "current_run_added_bytes": 11110949,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 28
+    "inherited_incremental_files": 32
   },
   "records": [
     {
@@ -2751,6 +2751,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
       "description": "开放阶梯看台、西侧三拱入口与特别台、东平台及短端通道；独立体育馆和游泳馆分开，尺寸与隐面含估计。"
+    },
+    {
+      "id": "yangpu-jiangwan-gymnasium",
+      "name": "江湾体育馆历史主楼",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "jiangwan-gymnasium.html",
+      "manifest": "assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
+      "manifest_sha256": "5b01ff05f0567a46a06b04c7f2307cddeb4eabe9a6f413daf921fb190a1118ac",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium-raw.glb",
+          "bytes": 5727660,
+          "sha256": "57d1b5eddbda7bc3084c52d6fc130ec84ac6de079a31edb9d63d6250390243b4",
+          "triangles": 110972
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium.blend",
+          "bytes": 2939057,
+          "sha256": "e18f1c7b500e63a044cc4debf108356362a04c96ff2bb1439c37cc6137d7176b"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium-web.glb",
+          "bytes": 1881528,
+          "sha256": "bdc3a60ded32481ea746f185cf227e52fec31a1792134af750203eee0b18d311",
+          "triangles": 110972
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium-lod.glb",
+          "bytes": 562704,
+          "sha256": "526a9a2d62789df457a56d59c7467de0242dc064934e6c8665fc895715b779a3",
+          "triangles": 29512
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -38.649539947509766,
+            0.0,
+            -22.911264419555664
+          ],
+          "max": [
+            35.46116256713867,
+            20.170000076293945,
+            22.735937118530273
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -38.649539947509766,
+            -22.735937118530273,
+            0.0
+          ],
+          "max": [
+            35.46116256713867,
+            22.911264419555664,
+            20.170000076293945
+          ]
+        },
+        "triangles": 110972,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "灰金属弧顶、纵向天窗、砖侧高窗与浅石三拱门面；独立馆楼，尺寸与隐面含估计。"
     }
   ],
   "baseline_inventory": {
@@ -2766,16 +2833,17 @@
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json"
   ],
-  "incremental_asset_revision": "96e4dfaff588222475c25a66af1c84a24b45a475",
-  "incremental_audit_directory": "data/audit/jiangwan-stadium-v1",
+  "incremental_asset_revision": "a47e69e9cbde689266855d573aa8d1f25b02944d",
+  "incremental_audit_directory": "data/audit/jiangwan-gymnasium-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/yangpu-city-hall-v1/inventory-increment.json",
-    "bytes": 20895,
-    "sha256": "7946d0f816366c6425e5447c6548dcf57badf9fead74084e69b7b7a3639618b1"
+    "file": "data/audit/jiangwan-stadium-v1/inventory-increment.json",
+    "bytes": 23600,
+    "sha256": "dc4d712d992f63966871383dd9745d85f777efa1fe8696398e5bfbde1eefec0f"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json"
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "id": "yangpu-jiangwan-gymnasium",
+  "final_iteration": "v6",
+  "final_assets": {
+    "raw": {
+      "file": "yangpu-jiangwan-gymnasium-raw.glb",
+      "bytes": 5727660,
+      "sha256": "57d1b5eddbda7bc3084c52d6fc130ec84ac6de079a31edb9d63d6250390243b4",
+      "triangles": 110972
+    },
+    "native": {
+      "file": "yangpu-jiangwan-gymnasium.blend",
+      "bytes": 2939057,
+      "sha256": "e18f1c7b500e63a044cc4debf108356362a04c96ff2bb1439c37cc6137d7176b"
+    },
+    "full": {
+      "file": "yangpu-jiangwan-gymnasium-web.glb",
+      "bytes": 1881528,
+      "sha256": "bdc3a60ded32481ea746f185cf227e52fec31a1792134af750203eee0b18d311",
+      "triangles": 110972
+    },
+    "lod": {
+      "file": "yangpu-jiangwan-gymnasium-lod.glb",
+      "bytes": 562704,
+      "sha256": "526a9a2d62789df457a56d59c7467de0242dc064934e6c8665fc895715b779a3",
+      "triangles": 29512
+    }
+  },
+  "process_assets_not_final": true,
+  "revisions": [
+    {
+      "iteration": "v1-v3",
+      "finding": "Coplanar long-wall end caps/main curved wall top and annex roof slab created visible dark strips; initial high-core short return segment missing.",
+      "correction": "Trim side-wall ends inside endwalls; lower end-wall top into curved roof thickness; roofcap top above adjacent wall; include short upper return segments. Final actual images accepted."
+    },
+    {
+      "iteration": "v3-v4",
+      "finding": "Front low horizontal belt crossed the three arch voids.",
+      "correction": "Clip belts against actual facade holes; add three-portal six-height serialized clear-prefix probes; all149rays pass threelevels."
+    },
+    {
+      "iteration": "v5-v6",
+      "finding": "Curved standing seams with16 segments produced broad faceted reflection stripes.",
+      "correction": "Use64 fullspan/32 partialspan samples; actual final7nativeviews confirm broad stripes removed. LOD omits fine seams."
+    },
+    {
+      "iteration": "serialized-probe-placement",
+      "finding": "Added real standing seam occupied the previous sheet-only roof positive probe atx=-23.",
+      "correction": "Move sheet-specific test tox=-22.75 between real seams; roof-sheet and glazing positive controls and skylight underside negative controls retained."
+    },
+    {
+      "iteration": "decoded-metadata-binding",
+      "finding": "gltfpack decoded output omits globalextras.",
+      "correction": "Explicitly require source-asset identity/hash binding for decoded files; still reject compressed mesh input; compare actual decoded orientedFLOAT32geometry per material to originalraw/LOD."
+    }
+  ],
+  "estimate_retained": "Skylight selected33.47m about55%mainroof is bounded photo-based estimate; no current exact survey claim."
+}

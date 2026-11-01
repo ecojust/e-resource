@@ -1,0 +1,181 @@
+{
+  "model_id": "yangpu-jiangwan-gymnasium",
+  "baseline_commit": "a47e69e9cbde689266855d573aa8d1f25b02944d",
+  "checked_at_utc": "2026-11-01T09:52:33.365121+00:00",
+  "checks": [
+    {
+      "command": "python projects/shanghai/tools/build_candidate_city_integrations.py --catalog-only --check",
+      "exit_code": 0,
+      "output": "{\"candidates\": 41, \"new_city_models\": 39, \"cumulative_verified_files\": 164, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 681033977}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/update_global_model_metadata.py --check",
+      "exit_code": 0,
+      "output": "{\"city_integrated_candidates\": 39}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/build_model_todo.py --check",
+      "exit_code": 0,
+      "output": "README district candidates verified: 39; global destinations: 79\nREADME TODO matches structured records\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/build_landmark_directory.py --check",
+      "exit_code": 0,
+      "output": "Landmark directory matches navigation data\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/restoration_progress.py --check",
+      "exit_code": 0,
+      "output": "{\"navigation_entries\": 79, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 39, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/sync_readme_districts.py --check",
+      "exit_code": 0,
+      "output": "README district candidates verified: 39; global destinations: 79\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "node --test projects/shanghai/tests/landmark-navigation.test.mjs projects/shanghai/tests/landmark-directory.test.mjs",
+      "exit_code": 0,
+      "output": "✔ current model articles, district totals and primary routes match the complete shared catalogue (40.007259ms)\n✔ the published directory is reproducible from the current base and candidate metadata (175.038647ms)\n✔ global model cards retain auxiliary previews, source documentation and asset download metadata (799.977007ms)\nℹ 41 building previews retain source/download metadata; no GLB or Blender bytes were read\n✔ lightweight directory resources and loading-screen entry remain available without starting WebGL (11.823341ms)\n✔ a new delivered candidate updates the latest overview destination and README counts (279.01377ms)\n✔ every published landmark deep link resolves to its exact reviewed walking pose (4.14846ms)\n✔ landmark links default to walking, while explicit overview and district links retain their modes (0.356344ms)\n✔ unknown destinations and malformed coordinates never silently fall back to Bund (0.817653ms)\n✔ direct list selection enters walking from overview and uses the reviewed position (1.052684ms)\n✔ requesting walking still cannot bypass an unreviewed ordinary building guard (3.093923ms)\n✔ same-page links navigate immediately and a slower previous destination cannot overwrite the new state (1.715002ms)\n✔ an unknown same-page landmark shows a notice and preserves the current position (0.503106ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1890.284689\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/data/audit/jiangwan-gymnasium-v1/todo-directory-checks.py",
+      "exit_code": 0,
+      "output": "{\"passed\": true, \"models\": 79, \"heritage_active\": 1048, \"named_active\": 1017}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "bindings": [
+    {
+      "path": "README.md",
+      "bytes": 447205,
+      "sha256": "32fba07f31d00130007a1ac6d72b001c7e3eaae12b6abf42252a4a06c4c84ef8"
+    },
+    {
+      "path": "projects/shanghai/README.md",
+      "bytes": 41754,
+      "sha256": "25baf20b50601e662b987aadc404e083de8584930d507c6c78f6dc3c26a4e1d8"
+    },
+    {
+      "path": "projects/shanghai/CURRENT_STATE.md",
+      "bytes": 62550,
+      "sha256": "2cea6979102f07ed308da94809babd3e70683acb6199a52453284e2895022aee"
+    },
+    {
+      "path": "projects/shanghai/index.html",
+      "bytes": 9032,
+      "sha256": "7e817455dfc61a61d29be826386b746bbadf26c167cde801a3e15d3b7bf5a85b"
+    },
+    {
+      "path": "projects/shanghai/landmarks.html",
+      "bytes": 59940,
+      "sha256": "967cc83fb0cd645717e7e91146e59e7cb38e322612d2b82ce6c1d3cb48cc79d6"
+    },
+    {
+      "path": "projects/shanghai/data/candidate-city-integrations.json",
+      "bytes": 401639,
+      "sha256": "80fee534e12639c4d71ceddbb2fa9f19331935223db2f6e568ad75376c98ed34"
+    },
+    {
+      "path": "projects/shanghai/data/global-models/additional-placement.json",
+      "bytes": 344193,
+      "sha256": "12c9ee450b3642503a9f20d13821f382cb342f6b72047c53492402bbd8b98fed"
+    },
+    {
+      "path": "projects/shanghai/data/global-models/candidate-inventory.json",
+      "bytes": 110253,
+      "sha256": "8bf2ab4dd9f517a9123624b5f51ea6b9ca0bea58f42ada2998b0f87f610ad369"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 108700,
+      "sha256": "766f071a1dd3e7a41d7094ee47832577a427c5ce7499295eb25e94daabf9cda6"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "bytes": 24207,
+      "sha256": "3faac9c8cfa82482e291388e5f8936a484dda0e7656b5f2758124f5939cf1346"
+    },
+    {
+      "path": "projects/shanghai/data/model-viewers.json",
+      "bytes": 11008,
+      "sha256": "e567e2d883b77b877399142118bbc57b39ab778f8518f1adccdc02110ede79b0"
+    },
+    {
+      "path": "projects/shanghai/data/restoration-progress/progress.json",
+      "bytes": 67389,
+      "sha256": "7a33155d6096a732476c55a17596991c034b3b0730017926950038f5c8db81fd"
+    },
+    {
+      "path": "projects/shanghai/src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+    },
+    {
+      "path": "projects/shanghai/tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "283e104d295835d828b2014a4445082fd591850fb3ac54d0301150a6eb0cbe88"
+    },
+    {
+      "path": "projects/shanghai/jiangwan-gymnasium.html",
+      "bytes": 2670,
+      "sha256": "a3081521b36c08b9d7c582e0fd6a952bffcbb3362472aa19220601273d7e8b1c"
+    },
+    {
+      "path": "projects/shanghai/src/jiangwan-gymnasium.js",
+      "bytes": 7627,
+      "sha256": "ecc9027da9f61956ee25b3d5867e9534d1b9cb0eeae74bd2c8d4b5dccfe940e3"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
+      "bytes": 4570,
+      "sha256": "5b01ff05f0567a46a06b04c7f2307cddeb4eabe9a6f413daf921fb190a1118ac"
+    },
+    {
+      "path": "projects/shanghai/data/audit/jiangwan-gymnasium-v1/footprint-review.json",
+      "bytes": 637879,
+      "sha256": "412ac019ce38dd456f85b87e88a8ea801706776ddaba6524faf2d9bbc100005b"
+    }
+  ],
+  "mapping_images_actually_viewed_by_root": [
+    {
+      "file": "source-and-ground-collision-plan.png",
+      "bytes": 303739,
+      "sha256": "6c48315de6be4b462f67caa2696595ab44eb56d4554c9d65ab39d8515513682e",
+      "observation_zh": "独立1558与泳馆1666、室外主场分开；source-only掩膜和真实low投影/室内导航填补分别显示。",
+      "passed": true
+    },
+    {
+      "file": "west-entry-ground-detail.png",
+      "bytes": 130643,
+      "sha256": "092e56e2526840653991d3ca526aa5ed335f0eb0f566835b6b52e1b31f554bbc",
+      "observation_zh": "三高挑台外缘下地面保持开放，浅门槛与未开放室内封挡没有冒称通行。",
+      "passed": true
+    }
+  ],
+  "static_index_count_updated": 79,
+  "historical_asset_matrix_rerun": false
+}

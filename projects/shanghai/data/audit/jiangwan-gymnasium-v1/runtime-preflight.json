@@ -1,0 +1,78 @@
+{
+  "schema": "jiangwan-gymnasium-runtime-preflight-v1",
+  "passed": true,
+  "baseline_commit": "a47e69e9cbde689266855d573aa8d1f25b02944d",
+  "executed_utc": "2026-11-01T09:33:50.844376+00:00",
+  "node_version": "v24.19.0",
+  "catalogue_at_execution": {
+    "existing_destinations": 78,
+    "candidate_models": 38,
+    "new_gymnasium_is_queued_not_finally_integrated": true
+  },
+  "checks": [
+    {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "passed": 35,
+      "failed": 0,
+      "output": "beacon-camera-preflight.tap"
+    },
+    {
+      "command": "node --test projects/shanghai/tests/candidate-city-clipping.test.mjs",
+      "passed": 10,
+      "failed": 0,
+      "output": "clipping-budget-tests.tap"
+    },
+    {
+      "command": "node projects/shanghai/data/audit/jiangwan-gymnasium-v1/check-beacon-capacity.mjs",
+      "passed": true,
+      "output": "beacon-capacity-preflight.json"
+    },
+    {
+      "command": "node projects/shanghai/data/audit/jiangwan-gymnasium-v1/check-clipping-budget.mjs",
+      "passed": true,
+      "output": "clipping-budget-preflight.json"
+    }
+  ],
+  "bindings": [
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "283e104d295835d828b2014a4445082fd591850fb3ac54d0301150a6eb0cbe88"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 386068,
+      "sha256": "0a1b6275e42149b2b460eb425f2052ce04271854d8f2682076c3cd7383d13705"
+    }
+  ],
+  "limitations": [
+    "Beacon35 tests exercised the current78 catalogue; prospective79 layout/hits are separately identified fixtures.",
+    "Shader hooks construct actual standard/depth/distance code and compare uniforms/payloads; no GPU compilation is claimed here. Sole QA browser must test actual production rendering.",
+    "No old GLB or Blender asset matrix was opened. Only immutable old metadata and production modules were read."
+  ]
+}

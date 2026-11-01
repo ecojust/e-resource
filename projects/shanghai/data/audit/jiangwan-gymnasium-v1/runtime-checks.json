@@ -1,0 +1,173 @@
+{
+  "schema": "jiangwan-gymnasium-final-runtime-checks-v1",
+  "passed": true,
+  "baseline_commit": "a47e69e9cbde689266855d573aa8d1f25b02944d",
+  "executed_utc": "2026-11-01T09:52:54.502454+00:00",
+  "catalogue_at_execution": {
+    "destinations": 79,
+    "candidate_models": 39,
+    "yangpu": 4,
+    "huangpu": 28
+  },
+  "checks": {
+    "final_integration_groups": 7,
+    "final_integration_failed": 0,
+    "beacon_camera_tests": 35,
+    "beacon_camera_failed": 0
+  },
+  "execution": [
+    {
+      "command": "node projects/shanghai/data/audit/jiangwan-gymnasium-v1/global-integration-checks.mjs",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "5f057b",
+        "wall_time_seconds": 3.448049108,
+        "exit_code": 0,
+        "original_token_count": 246,
+        "output": "{\"passed\":7,\"total\":79,\"candidates\":39,\"triangles\":202,\"limit\":224,\"groundChecks\":{\"collision_parts\":1,\"closed_ring_lengths\":[[109]],\"positive_probes\":9,\"negative_probes\":57,\"open_areas\":[{\"name\":\"under-front-balcony-0\",\"ground_collision_intersection_m2\":0},{\"name\":\"under-front-balcony-1\",\"ground_collision_intersection_m2\":0},{\"name\":\"under-front-balcony-2\",\"ground_collision_intersection_m2\":0},{\"name\":\"west-service-centre-shoulder-strip\",\"ground_collision_intersection_m2\":0},{\"name\":\"north-zhengli-centre-shoulder-strip\",\"ground_collision_intersection_m2\":0},{\"name\":\"south-zhengzhong-centre-shoulder-strip\",\"ground_collision_intersection_m2\":0},{\"name\":\"north-open-apron\",\"ground_collision_intersection_m2\":0},{\"name\":\"south-open-apron\",\"ground_collision_intersection_m2\":0},{\"name\":\"east-open-apron\",\"ground_collision_intersection_m2\":0}],\"note\":\"Production2D containment complements actual-triangle low-occupancy checks. No gym interior or elevated walking is enabled.\"}}\n"
+      }
+    },
+    {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "97d135",
+        "wall_time_seconds": 3.673095395,
+        "exit_code": 0,
+        "original_token_count": 989,
+        "output": "✔ twenty coincident site labels retain unique IDs and fit a readable mobile layout (31.533785ms)\n✔ layout preserves all seventy identifiers even when the viewport cannot fit every label (8.542817ms)\n✔ seventy dense mobile signs become separate numbered cards outside reserved interface rectangles (60.929086ms)\n✔ seventy numbered cards also fit a narrow 320 by 568 viewport with full reserved insets (2.308299ms)\n✔ normal desktop capacity retains full name cards while avoiding the sidebar and header/footer (4.941369ms)\n✔ all model beacons use real sprite symbols with fixed pixels and no collision culling at any supported zoom (107.510589ms)\n✔ beacon click resolves the exact model and disposal releases only owned layers, images and listeners (76.527861ms)\n✔ a name sign overlapping another model anchor selects its topmost model only once (20.039502ms)\n✔ screen hit testing uses current card bounds and reverse drawing order (4.435784ms)\n✔ 40 current card centers select their own IDs despite stale native symbol query boxes (25.941787ms)\n✔ 70 current card centers select their own IDs despite stale native symbol query boxes (50.401897ms)\n✔ blank space ignores stale label hits, anchor fallback is scoped, and hover uses the same current geometry (16.742152ms)\n✔ 390 by 844: compact runtime signs retain all seventy full names and stable numbers through zoom changes (66.634ms)\n✔ 320 by 568: compact runtime signs retain all seventy full names and stable numbers through zoom changes (35.376795ms)\n✔ full names and compact numbers have complementary layers, with a fixed 24 by 20 number sprite (9.578556ms)\n✔ offscreen name cards are filtered while all seventy geographic anchors and records remain registered (65.751468ms)\n✔ runtime reflows around the real desktop sidebar bounds and frees its area after closing (3.154968ms)\n✔ narrow-phone signs avoid actual tool, legend and location-card rectangles as those elements resize (17.246189ms)\n✔ all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone (83.358753ms)\n✔ long building title cards retain every delivered sign in the smaller phone area at all zooms (649.011681ms)\n✔ the 78th model retains a separate 12px number and hit area when a long title leaves only seven rows (333.625093ms)\n✔ the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable (12.935889ms)\n✔ vendored MapLibre accepts every production beacon layer and keeps it visible at zoom 24 (492.307696ms)\n✔ fixed name backgrounds, text and leaders agree with the actual ground projection below an elevated camera (36.346176ms)\n✔ public transform depth compensation cancels the native symbol shader across bearings, pitches and elevations (17.708975ms)\n✔ 1 high-pitch signs use screen offsets above the horizon without unprojecting sky (1.432873ms)\n✔ 70 high-pitch signs use screen offsets above the horizon without unprojecting sky (40.223985ms)\n✔ 1200 by 800: all delivered candidate bounds fit the real MapLibre camera outside the interface (403.440337ms)\n✔ 390 by 844: all delivered candidate bounds fit the real MapLibre camera outside the interface (63.356389ms)\n✔ 320 by 568: all delivered candidate bounds fit the real MapLibre camera outside the interface (63.15644ms)\n✔ candidate camera uses the verified approach bearing and the low Lu Xun view (0.764712ms)\n✔ all forty legacy entries preserve their established overview route (0.78336ms)\n✔ leaving a candidate overview clears the real vendor padding and elevation (3.657667ms)\n✔ walk, legacy overview and city overview each apply the complete camera reset (1.242606ms)\n✔ production overview navigation preserves candidate height through rendering and restores legacy ground clamping (6.280656ms)\nℹ tests 35\nℹ suites 0\nℹ pass 35\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3617.851831\n"
+      }
+    }
+  ],
+  "clipping": {
+    "before": 192,
+    "addition": 10,
+    "after": 202,
+    "limit": 224
+  },
+  "historical_rows_byte_identical": true,
+  "historical_payload_bytes": 12288,
+  "ground_collision": {
+    "collision_parts": 1,
+    "closed_ring_lengths": [
+      [
+        109
+      ]
+    ],
+    "positive_probes": 9,
+    "negative_probes": 57,
+    "open_areas": [
+      {
+        "name": "under-front-balcony-0",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "under-front-balcony-1",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "under-front-balcony-2",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-service-centre-shoulder-strip",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "north-zhengli-centre-shoulder-strip",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-zhengzhong-centre-shoulder-strip",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "north-open-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-open-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "east-open-apron",
+        "ground_collision_intersection_m2": 0
+      }
+    ],
+    "note": "Production2D containment complements actual-triangle low-occupancy checks. No gym interior or elevated walking is enabled."
+  },
+  "bindings": [
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 401639,
+      "sha256": "80fee534e12639c4d71ceddbb2fa9f19331935223db2f6e568ad75376c98ed34"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 344193,
+      "sha256": "12c9ee450b3642503a9f20d13821f382cb342f6b72047c53492402bbd8b98fed"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 110253,
+      "sha256": "8bf2ab4dd9f517a9123624b5f51ea6b9ca0bea58f42ada2998b0f87f610ad369"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
+      "bytes": 4570,
+      "sha256": "5b01ff05f0567a46a06b04c7f2307cddeb4eabe9a6f413daf921fb190a1118ac"
+    },
+    {
+      "file": "data/audit/jiangwan-gymnasium-v1/footprint-review.json",
+      "bytes": 637879,
+      "sha256": "412ac019ce38dd456f85b87e88a8ea801706776ddaba6524faf2d9bbc100005b"
+    },
+    {
+      "file": "data/audit/jiangwan-gymnasium-v1/global-integration-checks.mjs",
+      "bytes": 17563,
+      "sha256": "bb5af72c801fd034e33e695b66d66d3e0ef32cbff19bde6832283f10493d40a0"
+    },
+    {
+      "file": "data/audit/jiangwan-gymnasium-v1/global-integration-checks.json",
+      "bytes": 9270,
+      "sha256": "f8bf9327903260415c9b4be1065289c99cb30af65efdf2c76a68f963c2b195b5"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "283e104d295835d828b2014a4445082fd591850fb3ac54d0301150a6eb0cbe88"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "7e817455dfc61a61d29be826386b746bbadf26c167cde801a3e15d3b7bf5a85b"
+    }
+  ],
+  "scope": "Final production catalogue/navigation, new inventory metadata, old record and old clipping byte preservation, reviewed owner isolation in shader hooks, vector identity correction and production collision. The35 beacon/camera suite runs against final79 metadata, while retaining its explicit generic and fixed historical fixtures. Root inventory build verifies only the four new asset bytes; no old GLB/Blender asset matrix is rerun here. Actual WebGL compilation, pixels and native touch remain separate sole-browser QA.",
+  "preflight_evidence_preserved": "runtime-preflight.json retains the earlier78 catalogue test timing; its records are not rewritten as final79."
+}

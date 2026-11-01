@@ -2,7 +2,7 @@
  * are never clipped. Source geometry is retained unchanged in its GLB assets.
  */
 // Keep the all-city correction within a bounded shader loop.
-const MAX_TRIANGLES=192;
+const MAX_TRIANGLES=224;
 const materialUniforms=new WeakMap();
 const hash=value=>{let n=2166136261;for(const c of value||''){n^=c.charCodeAt(0);n=Math.imul(n,16777619);}return (n>>>0)%16777215;};
 const polygons=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g.coordinates:[];

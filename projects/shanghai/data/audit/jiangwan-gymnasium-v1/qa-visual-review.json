@@ -1,0 +1,128 @@
+{
+  "schema": "jiangwan-gymnasium-qa-visual-review-v1",
+  "model_id": "yangpu-jiangwan-gymnasium",
+  "passed": true,
+  "reviewer": "gym_qa",
+  "browser_report": {
+    "file": "browser.json",
+    "sha256": "ff2ad718c7b04900352a91e7d442ff5fac4a01f3678fe862205d85f572d1e18b"
+  },
+  "method": "Every saved PNG actually opened with view_image, including the insufficient original entry frame. Accepted feature views are distinct from default framing; geometry/source-state checks complement rather than replace image review.",
+  "images": [
+    {
+      "file": "browser-auxiliary-desktop-full-ecc9027d-1dc10f4c.png",
+      "bytes": 183890,
+      "sha256": "eb25d40172a9ec4f1514e8e0b28646aabe6d3d334499e6ff531d98a7b7d42015",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Full gymnasium fits desktop auxiliary canvas: curved ribbed roof and axial glazed skylight, pale entrance end and red-brick long side with upper round/lower vertical windows are visible. No neighboring stadium or pool geometry is included. The panel shows110972triangles and full asset loaded."
+    },
+    {
+      "file": "browser-auxiliary-desktop-lod-ecc9027d-1dc10f4c.png",
+      "bytes": 142323,
+      "sha256": "333236ea23df713dcaca9ed0317ce325c284d185c7d51a626e10391c539f9e4a",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Actual selected LOD shows29512triangles. Major curved roof, skylight, entrance silhouette and two side-window rows remain; high-frequency roof detailing is visibly simplified."
+    },
+    {
+      "file": "browser-auxiliary-mobile-full-ecc9027d-1dc10f4c.png",
+      "bytes": 81948,
+      "sha256": "d17b4209c5cd5f988473926cfe4a60d19045d71335fe84f8ecf14c6d90fc94ef",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "390px mobile auxiliary page contains the whole gymnasium above the information panel, including the curved roof, long side windows and entrance mass. Text, full selector and four asset download links remain within the viewport; fine roof ribs appear dense at this smaller scale."
+    },
+    {
+      "file": "browser-global-default-desktop-f57de261-94bffa97.png",
+      "bytes": 342708,
+      "sha256": "173d271fe8a6930b2c3e5ceabab5d9cdcec388b1e1a62b762dbd4b775e6c39e7",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Main-map default desktop view fully frames the gymnasium between top legend and lower card. Curved ribbed roof, axial skylight and pale western entrance are visible, with surrounding city buildings retained. The gym sign and79 totals are readable. Fine roof sampling patterns and default shadow speckling on the small entrance face are visible at this scale; the closer roof and entrance views distinguish these from actual geometry. Separate stadium retention is checked through source/model state rather than claiming its whole exterior is visible in this framing."
+    },
+    {
+      "file": "browser-global-side-detail-f57de261-94bffa97.png",
+      "bytes": 316973,
+      "sha256": "e5c4598a3b380c0ac1bcab14de64d0842f21995db7d40f84b86bff7f0b7bdaa0",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Actual full southern near view clearly shows clean red-brick wall, upper polygonal round-window openings with recessed panes, tall lower recessed windows and separate side doors. Close roof ribs are distinct lines rather than the distant sampling pattern, and the axial skylight is separate. Shadows are intentionally off for this diagnostic detail; the pale entrance side mass is clean. No old flat coarse gym block is visible over the authored side/curved roof, and neighboring near buildings stay separate. This is side detail, not a claim of front-entrance shadow quality."
+    },
+    {
+      "file": "browser-global-entry-detail-f57de261-94bffa97.png",
+      "bytes": 239144,
+      "sha256": "bbaac9ebbee39c6a903e7d90679c3f04367aed78f571b0f1196d3ef71875ec76",
+      "actually_viewed": true,
+      "accepted": false,
+      "observation": "Insufficient entry evidence: a retained foreground building/stand surface occludes almost the whole lower entrance. Keep this process image; do not hide its independent source. A closer camera inside the actual foreground gap is needed. The darker exposed west wall remains part of the normal directional-light appearance, with fine stone lines unresolved at this scale; no claim of final entrance quality from this image."
+    },
+    {
+      "file": "browser-global-entry-detail-adjusted-1-f57de261-94bffa97.png",
+      "bytes": 286466,
+      "sha256": "017247f205d45f44ee50acf514a8e65dd27ebd3e60611d8dd974836e55aa773d",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Accepted entry closeup from a nearer camera in the foreground gap: all three arch recesses, shallow solid thresholds, two perforated lattice gate leaves, dark bounded central rear stop and three projecting balconies with real apertures are clear. No retained neighboring geometry covers the front. The west wall is dark under directional lighting but its fine stone joints are continuous and resolved; this distinguishes authored lines from a coarse overlapping block. The host executed shadows:false for this detail; its lighting.enabled was not separately sampled in this capture, so it is not claimed as a direct measured shadow-state proof."
+    },
+    {
+      "file": "browser-global-roof-detail-f57de261-94bffa97.png",
+      "bytes": 363912,
+      "sha256": "dd64287af0a2f950294f60a51cdba60d0854ab19ab5d010efbbaaaf1b8251f08",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Upper near view clearly separates the long curved roof, axial multi-pane skylight and lower pale entrance roof volumes. Fine roof seams resolve as dense parallel curved lines with pixel sampling variation, rather than an old flat source roof covering them. The name sign overlaps a short lower skylight portion but leaves most panes and the roof curve visible. The entrance frontage at the bottom is not used for small-detail quality in this roof view; its accepted closeup provides that evidence. The host calls shadows:false here without a separately recorded lighting.enabled value."
+    },
+    {
+      "file": "browser-global-default-mobile-f57de261-b0aa12b8.png",
+      "bytes": 167855,
+      "sha256": "ff1c3d4e689271ae515787a4c8aeedc925437d438656cba613032f583b8665d7",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Actual390×844 main overview shows the whole arched hall, long skylight and complete west entry within the clear area above the card and away from tools; all building extents fit. The new gymnasium label is visible. Fine curved-roof seams show pronounced pixel sampling and the west face is dark/backlit at this default scale; this frame establishes whole-model phone framing, while accepted close views establish feature geometry."
+    },
+    {
+      "file": "browser-beacons-320-city-79-f57de261-b0aa12b8.png",
+      "bytes": 184460,
+      "sha256": "71c6e8d7019ff40387a61a25f7c15ce26d138550fff2d6f5b1498544c79dfcf1",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Actual320×568 zoom8 main map shows dense numbered sprites1–79 arranged as separated labels in the free area between the legend, map tools and the selected Jiangwan Stadium card; no visible sprite overlap or card/tool cover. The full79 count,12px glyph size, independent hit at every center and16district source mapping are asserted from the actual rendered beacon state. Stadium remains the selected pre-touch destination."
+    },
+    {
+      "file": "browser-beacons-320x548-worst-title-79-f57de261-b0aa12b8.png",
+      "bytes": 179627,
+      "sha256": "9e121cdf7edce59cf29fa13aaae472bfad42816e7f3952266f90f64d0ac91218",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "Actual320×548 viewport reproduces the worst title free area with the selected Stadium card top at328px. All79 numbered labels remain separated and clear above the card and left of tools; the scene state independently verifies every hit and12px glyph size. The real destination remains Stadium before native touch; this frame is a smaller real viewport, with no synthetic DOM card expansion."
+    }
+  ],
+  "all_saved_images_actually_viewed": true,
+  "saved_image_count": 11,
+  "insufficient_process_images_retained": 1,
+  "qa_assertion_failure_preserved": 1,
+  "environment_recovery": {
+    "file": "env-recovery.json",
+    "sha256": "e280eed0ad767e211e024a16740e7000ec6f8367e6b66ba3108a629ae189d23c",
+    "original_errors_preserved": true,
+    "unresolved_application_errors": 0,
+    "historical_unknown_url_observer_gaps_retained": 2,
+    "limitation_note": "The inherited bodyObserverLimitation one wording is historical to the first attempt; final original.responseCheckFailures and observer_policy retain both unknown-URL observer failures, with later synchronous coverage separately established."
+  },
+  "same_host_continuations": 3,
+  "active_control_cleanup": [
+    {
+      "active_file": "continuation-control.json",
+      "archived_file": "continuation-5d9048f5acaa9cfc.json",
+      "sha256": "5d9048f5acaa9cfcc12a886fab71b7ae58d5130be2b22e61fafbb137002279d7"
+    },
+    {
+      "active_file": "visual-review-control.json",
+      "archived_file": "visual-review-b8324b66ca0d096b.json",
+      "sha256": "b8324b66ca0d096bf164972cbed3357440479e5f961bcafa902cfa4c976b4fcf"
+    }
+  ],
+  "browser_closed": true,
+  "geometry_and_display_limits": "Fine roof/stone seam sampling and backlit west-face appearance remain visible in default scale views. Detail path called shadows:false but lighting.enabled was not sampled at those image captures; the later recovery LOD scene separately sampled lighting state and does not retroactively certify earlier views. No source-overlap inference is based solely on dark colour. Dimensional/hidden details are estimates; central rear stop is model closure, not verified door; no interior walking acceptance."
+}

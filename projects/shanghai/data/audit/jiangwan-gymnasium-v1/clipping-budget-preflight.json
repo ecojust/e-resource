@@ -1,0 +1,98 @@
+{
+  "schema": "jiangwan-gymnasium-clipping-budget-preflight-v1",
+  "passed": true,
+  "baseline": "a47e69e9cbde689266855d573aa8d1f25b02944d",
+  "scope": "Actual frozen38-candidate catalogue decoded as metadata and passed through old and new production clippers. No historical GLB assets read. This constructs standard/depth/distance shader source and uniforms; actual GPU compilation/rendering remains browser QA.",
+  "change": {
+    "old_rows": 192,
+    "new_rows": 224,
+    "new_gym_rows_expected": 10,
+    "expected_final_total": 202,
+    "remaining_rows": 22,
+    "texture_width": 4,
+    "old_texture_bytes": 12288,
+    "new_texture_bytes": 14336,
+    "added_bytes_per_texture": 2048,
+    "only_constant_changed": true
+  },
+  "frozen_catalogue": {
+    "records": 38,
+    "sha256": "f9cb04d99703f08565f180a3fc2f7c85c22012c939e9c840d94fa3aac6a1624b"
+  },
+  "production_script": {
+    "file": "src/candidate-city-clipping.js",
+    "bytes": 10046,
+    "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+  },
+  "baseline_script_sha256": "57556ec096ae74523b906e3a9699351391192d2e75c677288e69d4e48fbbb6bd",
+  "historical_payload": {
+    "rows": 192,
+    "bytes": 12288,
+    "old_sha256": "7cfab06d137a391206db20f9004deecb1865356f489cb1695604b229251b7c8f",
+    "new_sha256": "7cfab06d137a391206db20f9004deecb1865356f489cb1695604b229251b7c8f",
+    "identical": true,
+    "new_padding_zero": true,
+    "owners_identical": true
+  },
+  "material_shader_checks": [
+    {
+      "name": "stadium-west-untagged",
+      "feature_ids": [
+        1646
+      ],
+      "scoped_rows": 25,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_loop_and_uv_capacity": true
+    },
+    {
+      "name": "stadium-east-shared-untagged",
+      "feature_ids": [
+        1816,
+        1768,
+        677,
+        2225
+      ],
+      "scoped_rows": 20,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_loop_and_uv_capacity": true
+    },
+    {
+      "name": "future-gym-is-not-an-old-clip",
+      "feature_ids": [
+        1558
+      ],
+      "scoped_rows": 0,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_loop_and_uv_capacity": true
+    },
+    {
+      "name": "far-per-vertex-owners",
+      "feature_ids": null,
+      "scoped_rows": 192,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_loop_and_uv_capacity": true
+    }
+  ],
+  "all224_row_centres_addressable": true,
+  "boundary_tests": "clipping-budget-tests.tap: ten unit tests include global and scoped rows193/224,225 rejection preserving active state, source ownership, old cache-holder rebinding and shadow materials."
+}
