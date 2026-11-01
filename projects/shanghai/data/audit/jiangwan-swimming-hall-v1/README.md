@@ -57,3 +57,9 @@ node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/
 屋顶初始验收机位的固定检查点被泳馆自身灯牌遮挡，原失败保留。仅在同会话将倾角20度调整为55度后完成检查，原探针、模型与灯牌未改；续段脚本和图片分别绑定，不删除失败记录或套用历史例外。默认整体视角中的南侧两角有保留邻体局部遮挡，因此以整体取景验收，细部由独立机位补充。
 
 北侧浅石面网页近景可见少量细竖虚线。对最终真实133个平面三角的三个对应区域检查未发现缺面或共面重叠，但精确显示原因仍未证实，不能说成真实装饰或已完全无痕；见[入口平面调查](north-front-plane-investigation.json)。该限制保留在图像审查中。
+
+## 发布核对
+
+模型与验收记录已在`ecc13d6491c5fffc05845fb98a4ccbedc16eb237`提交并推送。[该版全局地图直达](https://raw.githack.com/ecojust/e-resource/ecc13d6491c5fffc05845fb98a4ccbedc16eb237/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview)。[公开HTTP记录](publication.json)实际下载15项文件，与不可变提交逐字节一致，包括两份README、主图与目录、目录数据、灯牌／集成脚本、辅助查看器、来源说明、清单及四资产；公开字节检查不代替本地真实浏览器验收。
+
+制作队列随后补入模型提交号，README日期取自实际Git提交时间；root-checks保留原输入绑定，另附发布元数据检查。最终元数据提交、远端master与干净工作区在工作区外核验，避免自引用提交号。
