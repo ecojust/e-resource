@@ -57,3 +57,9 @@ node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/
 本次最终浏览器记录没有失败项；此前未通过的运行按阶段保留，不作为最终验收证据。
 
 后厅现状范围、年代及屋面门窗细部调查，以及小源510/1262的身份与保护范围调查继续保留。README链接修正见[导航审计](../readme-navigation-v1/README.md)；另行开展的公共网页诊断独立保存，不计入本轮博物馆截图数量或模型通过结论。
+
+## 发布核对
+
+模型与验收记录已在`6a908b0c90f8aa848fef04dfe0c709e3df69c391`提交并推送。[该版全局地图直达](https://raw.githack.com/ecojust/e-resource/6a908b0c90f8aa848fef04dfe0c709e3df69c391/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview)。[公开HTTP记录](publication.json)实际下载18项文件，与不可变提交逐字节一致，包括两份README、主图与目录、目录数据、应用入口／场景／灯牌／集成脚本、辅助查看器、来源说明、清单及四资产；公开字节检查不代替本地真实浏览器验收。
+
+制作队列随后补入模型提交号，README日期取自实际Git提交时间；root-checks保留原输入绑定，另附发布元数据检查。最终元数据提交、远端master与干净工作区在工作区外核验，避免自引用提交号。

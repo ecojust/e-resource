@@ -3825,7 +3825,7 @@
 | 江湾体育场历史主场（看台与入口） | 2026-11-01 14:25:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-stadium&mode=overview) |
 | 江湾体育馆历史主楼 | 2026-11-01 18:13:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) |
 | 江湾游泳馆（历史池馆与现状屋盖） | 2026-11-01 19:56:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) |
-| 旧上海市博物馆江湾馆舍 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) |
+| 旧上海市博物馆江湾馆舍 | 2026-11-01 22:28:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) |
 
 ### 闵行区（1处）
 

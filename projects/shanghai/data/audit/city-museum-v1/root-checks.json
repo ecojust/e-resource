@@ -225,5 +225,94 @@
     }
   ],
   "static_index_count_updated": 81,
-  "historical_asset_matrix_rerun": false
+  "historical_asset_matrix_rerun": false,
+  "publication_metadata_checks": {
+    "checked_at_utc": "2026-11-01T14:30:23.695663+00:00",
+    "passed": true,
+    "checks": [
+      {
+        "command": "python projects/shanghai/tools/build_candidate_city_integrations.py --catalog-only --check",
+        "exit_code": 0,
+        "output": "{\"candidates\": 43, \"new_city_models\": 41, \"cumulative_verified_files\": 172, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 698558342}\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/update_global_model_metadata.py --check",
+        "exit_code": 0,
+        "output": "{\"city_integrated_candidates\": 41}\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/build_model_todo.py --check",
+        "exit_code": 0,
+        "output": "README district candidates verified: 41; global destinations: 81\nREADME TODO matches structured records\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/build_landmark_directory.py --check",
+        "exit_code": 0,
+        "output": "Landmark directory matches navigation data\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/restoration_progress.py --check",
+        "exit_code": 0,
+        "output": "{\"navigation_entries\": 81, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 41, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/sync_readme_districts.py --check",
+        "exit_code": 0,
+        "output": "README district candidates verified: 41; global destinations: 81\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/data/audit/city-museum-v1/todo-directory-checks.py",
+        "exit_code": 0,
+        "output": "{\"passed\": true, \"models\": 81, \"heritage_active\": 1048, \"named_active\": 1017, \"active_production_id\": \"yangpu-china-aviation-association-building\"}\n",
+        "stderr": "",
+        "passed": true
+      }
+    ],
+    "bindings": [
+      {
+        "path": "README.md",
+        "bytes": 447981,
+        "sha256": "1ab97c08b75cc2924904cc9869ae549d3bd89a4f54d970a35fdb827c126b5e85"
+      },
+      {
+        "path": "projects/shanghai/README.md",
+        "bytes": 42204,
+        "sha256": "9fe2fee03298e82974daa09ec867eec20d36934999b4ae9d4500c1b8a3bc4b96"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/queue.json",
+        "bytes": 114967,
+        "sha256": "088583246db6117cdbc0af05e25de4be6bb467b1e068da520abd01a17ce98fc2"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/candidate-publication-times.json",
+        "bytes": 16389,
+        "sha256": "eaec82468465416b07e4e8d16833a05366f021241b3fe24f5947799b259b5739"
+      },
+      {
+        "path": "projects/shanghai/data/audit/city-museum-v1/README.md",
+        "bytes": 9279,
+        "sha256": "c9bf33e68da28795e24afcd3957b24ac20115e7aae7a8e58c00f1c1084b57a18"
+      },
+      {
+        "path": "projects/shanghai/data/audit/city-museum-v1/publication.json",
+        "bytes": 10890,
+        "sha256": "fa1d8d14cc7029d87dfb69d92c36e78e6b0ebb626f3b51ae000287269e636aa3"
+      }
+    ],
+    "original_prepublication_bindings_preserved": true,
+    "browser_production_inputs_unchanged": true
+  }
 }
