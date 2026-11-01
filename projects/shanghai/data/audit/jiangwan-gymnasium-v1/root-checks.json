@@ -177,5 +177,94 @@
     }
   ],
   "static_index_count_updated": 79,
-  "historical_asset_matrix_rerun": false
+  "historical_asset_matrix_rerun": false,
+  "publication_metadata_checks": {
+    "checked_at_utc": "2026-11-01T10:14:18.548563+00:00",
+    "passed": true,
+    "checks": [
+      {
+        "command": "python projects/shanghai/tools/build_candidate_city_integrations.py --catalog-only --check",
+        "exit_code": 0,
+        "output": "{\"candidates\": 41, \"new_city_models\": 39, \"cumulative_verified_files\": 164, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 681033977}\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/update_global_model_metadata.py --check",
+        "exit_code": 0,
+        "output": "{\"city_integrated_candidates\": 39}\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/build_model_todo.py --check",
+        "exit_code": 0,
+        "output": "README district candidates verified: 39; global destinations: 79\nREADME TODO matches structured records\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/build_landmark_directory.py --check",
+        "exit_code": 0,
+        "output": "Landmark directory matches navigation data\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/restoration_progress.py --check",
+        "exit_code": 0,
+        "output": "{\"navigation_entries\": 79, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 39, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/tools/sync_readme_districts.py --check",
+        "exit_code": 0,
+        "output": "README district candidates verified: 39; global destinations: 79\n",
+        "stderr": "",
+        "passed": true
+      },
+      {
+        "command": "python projects/shanghai/data/audit/jiangwan-gymnasium-v1/todo-directory-checks.py",
+        "exit_code": 0,
+        "output": "{\"passed\": true, \"models\": 79, \"heritage_active\": 1048, \"named_active\": 1017}\n",
+        "stderr": "",
+        "passed": true
+      }
+    ],
+    "bindings": [
+      {
+        "path": "README.md",
+        "bytes": 447215,
+        "sha256": "864918bb2556ac6ce9e5f5c4f8cd5fef8fd915a0a65494030d9f2ea226af9906"
+      },
+      {
+        "path": "projects/shanghai/README.md",
+        "bytes": 41764,
+        "sha256": "042c5a868453fd87e7590cad2f0580bb923e554ebd2ea5769578bb3e77b17036"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/queue.json",
+        "bytes": 108770,
+        "sha256": "1b3d498d4585a77219efa5e49fa101a35f79f621fbd0f2eaa0298cd942629a16"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/candidate-publication-times.json",
+        "bytes": 15802,
+        "sha256": "ab294c92f43fdf8ea996eab6d6c31ddb944a4f441eaa8cbb2f846a37e06ee6fa"
+      },
+      {
+        "path": "projects/shanghai/data/audit/jiangwan-gymnasium-v1/README.md",
+        "bytes": 9146,
+        "sha256": "0ac0607118271390a2feb8ccf31dd941aaeb94f6bea946f711813d6f81665f37"
+      },
+      {
+        "path": "projects/shanghai/data/audit/jiangwan-gymnasium-v1/publication.json",
+        "bytes": 9637,
+        "sha256": "4d9c35a230a05713bf58af3db0666a78b11b6775f760b2a6796aba590242f1e6"
+      }
+    ],
+    "original_prepublication_bindings_preserved": true,
+    "browser_production_inputs_unchanged": true
+  }
 }
