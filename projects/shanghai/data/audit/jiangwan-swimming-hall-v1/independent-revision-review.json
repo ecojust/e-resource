@@ -1,0 +1,88 @@
+{
+  "schema": "jiangwan-swimming-hall-independent-revision-review-v1",
+  "passed": true,
+  "rejected_prototype": "v7",
+  "rejected_raw_sha256": "d8f30de9b0aff7bf1e11f74acf4e900221ba725f13ced55b9888454399312a44",
+  "initial_v7_existing_probe_count_per_role": 1025,
+  "existing_checks_did_not_cover_unclosed_reentrant_low_boundary": true,
+  "identification": "Root actual north entrance image review questioned two black areas. Reviewer actually opened that PNG and independently tested previously decoded v7 triangles, confirming exposed unmodeled interior rather than merely shadow.",
+  "rejected_image_actually_viewed": {
+    "file": "native-entrance.png",
+    "bytes": 1704586,
+    "sha256": "14539339b6e47c15e1aa7f7b1cf0d0f08d7af1f786196529cfc18f4757e92087"
+  },
+  "findings": [
+    {
+      "kind": "north-wing-short-end-under-fascia",
+      "boundary": "y25.99; x between central halfwidth14.8 and annex side limits; z3.8..8.0",
+      "evidence": {
+        "file": "north-reentrant-gap-investigation.json",
+        "bytes": 6813,
+        "sha256": "42a6902726f8b0f39460708e6c7f55f3f9f3d9bf39235f2d33c6f425f4ecf069"
+      },
+      "diagnostic_rays": 30
+    },
+    {
+      "kind": "adjacent-inner-L-side-return",
+      "boundary": "x±14.8; y23.5..26; z3.8 up to low wing roof",
+      "evidence": {
+        "file": "low-wing-inner-return-gap-investigation.json",
+        "bytes": 9669,
+        "sha256": "129bf9caf384b5f2d9fc2402fa2f2754f829a74f4efdca6afd1f54f559b5e4e0"
+      },
+      "diagnostic_rays": 30
+    }
+  ],
+  "resolution": "Author added true short-end and adjacent inner-side L-shaped closure surfaces and split the perimeter fascia at the south roof-profile kink. All affected views were rendered anew from v8 raw and the final native was saved/reopened.",
+  "raw_only_repair_preflight": {
+    "file": "v8-raw-closure-preflight.json",
+    "bytes": 47483,
+    "sha256": "212ffcdb432c4017fda27c16601dfa3f39a0e6d405f880d5af81736bcc9e5511"
+  },
+  "raw_only_preflight_rays": 94,
+  "final_geometry_report": {
+    "file": "independent-geometry-review.json",
+    "bytes": 2065838,
+    "sha256": "45712e353b2a00f5fe53ff8f69aec2426d7b2cfff2d2a38c4bfd14aee26f0b4e"
+  },
+  "final_assets": {
+    "raw": {
+      "file": "yangpu-jiangwan-swimming-hall-raw.glb",
+      "bytes": 1725576,
+      "sha256": "fdabd4072e7af304c0f3367e4c94cbd855a311e838d0bc3c3967753702d122ba",
+      "triangles": 28590
+    },
+    "native": {
+      "file": "yangpu-jiangwan-swimming-hall.blend",
+      "bytes": 843535,
+      "sha256": "385063c9a64de380402d61c79a3145737631002b2f331c256e382457f3cf6868"
+    },
+    "full": {
+      "file": "yangpu-jiangwan-swimming-hall-web.glb",
+      "bytes": 684280,
+      "sha256": "4db67bde0abc5f72b84817a65174935ae1166c23c8a180dbedbab813bb0e6914",
+      "triangles": 28590
+    },
+    "lod": {
+      "file": "yangpu-jiangwan-swimming-hall-lod.glb",
+      "bytes": 461760,
+      "sha256": "aa821e1b3a40408053630d040c030b30288f65a2275bd3215f0e932be4f80f1c",
+      "triangles": 19430
+    }
+  },
+  "final_ray_count_per_role": 1083,
+  "all_three_final_glb_roles_independently_decoded": true,
+  "final_native_visual_review": {
+    "file": "independent-native-visual-review.json",
+    "bytes": 5303,
+    "sha256": "bcc4e046ff48da62fc6f9e26a0f37eaebe8939459cdce64ec379afc217130093"
+  },
+  "final_native_reopen": {
+    "file": "independent-native-review.json",
+    "bytes": 4806,
+    "sha256": "b9750847cdd34f82006e027ee5e1ca6916cbb9ce5bb3980811d56b8dbdd79ec8"
+  },
+  "prior_v7_package_and_full_triangle_evidence_preserved_privately": "/workspace/jiangwan-swimming-review/retained-v7/",
+  "prior_v7_accepted_as_final": false,
+  "models_or_test_failures_silently_erased": false
+}

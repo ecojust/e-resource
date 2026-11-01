@@ -1,0 +1,210 @@
+{
+  "schema": "jiangwan-swimming-hall-final-runtime-checks-v1",
+  "passed": true,
+  "baseline_commit": "225af1b75c235177ca23c775b9a9d3483eb032ba",
+  "executed_utc": "2026-11-01T11:41:29.449896+00:00",
+  "catalogue_at_execution": {
+    "destinations": 80,
+    "candidate_models": 40,
+    "yangpu": 5,
+    "huangpu": 28
+  },
+  "checks": {
+    "final_integration_groups": 7,
+    "final_integration_failed": 0,
+    "beacon_camera_tests": 35,
+    "beacon_camera_failed": 0,
+    "retained_neighbor_controls_excluded_from_global_open_probes": 2
+  },
+  "execution": [
+    {
+      "command": "node projects/shanghai/data/audit/jiangwan-swimming-hall-v1/global-integration-checks.mjs",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "e9ff26",
+        "wall_time_seconds": 0.96858872,
+        "exit_code": 0,
+        "original_token_count": 251,
+        "output": "{\"passed\":7,\"total\":80,\"candidates\":40,\"triangles\":218,\"limit\":224,\"groundChecks\":{\"collision_parts\":1,\"closed_ring_lengths\":[[99]],\"positive_probes\":8,\"negative_probes\":64,\"open_areas\":[{\"name\":\"north-entry-apron\",\"ground_collision_intersection_m2\":0},{\"name\":\"south-central-apron\",\"ground_collision_intersection_m2\":0},{\"name\":\"west-long-apron\",\"ground_collision_intersection_m2\":0},{\"name\":\"east-long-apron\",\"ground_collision_intersection_m2\":0},{\"name\":\"northwest-exterior-step\",\"ground_collision_intersection_m2\":0},{\"name\":\"northeast-exterior-step\",\"ground_collision_intersection_m2\":0},{\"name\":\"north-curved-service-context-shoulder-strip\",\"ground_collision_intersection_m2\":0},{\"name\":\"outer-service-context-shoulder-strip\",\"ground_collision_intersection_m2\":0},{\"name\":\"perimeter-footway-context-shoulder-strip\",\"ground_collision_intersection_m2\":0}],\"note\":\"Production2D containment complements actual-triangle low-occupancy checks. No swimming-pool interior or elevated walking is enabled.\"}}\n"
+      }
+    },
+    {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "82b46b",
+        "wall_time_seconds": 1.636801832,
+        "exit_code": 0,
+        "original_token_count": 62,
+        "output": "✔ production overview navigation preserves candidate height through rendering and restores legacy ground clamping (6.424937ms)\nℹ tests 35\nℹ suites 0\nℹ pass 35\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1675.285673\n"
+      }
+    }
+  ],
+  "clipping": {
+    "before": 202,
+    "addition": 16,
+    "after": 218,
+    "limit": 224
+  },
+  "historical_rows_byte_identical": true,
+  "historical_payload_bytes": 12928,
+  "ground_collision": {
+    "collision_parts": 1,
+    "closed_ring_lengths": [
+      [
+        99
+      ]
+    ],
+    "positive_probes": 8,
+    "negative_probes": 64,
+    "open_areas": [
+      {
+        "name": "north-entry-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-central-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-long-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "east-long-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "northwest-exterior-step",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "northeast-exterior-step",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "north-curved-service-context-shoulder-strip",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "outer-service-context-shoulder-strip",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "perimeter-footway-context-shoulder-strip",
+        "ground_collision_intersection_m2": 0
+      }
+    ],
+    "note": "Production2D containment complements actual-triangle low-occupancy checks. No swimming-pool interior or elevated walking is enabled."
+  },
+  "road_check_scope": "The9 listed area controls, including3 road strips, test only the new swimming-model collision. They do not establish global road access. Two shoulder points inside retained source1870 remain outside the global-open ground-probe set.",
+  "excluded_retained_neighbor_context_controls": [
+    {
+      "name": "perimeter-footway-0.4--0.38",
+      "local_xy_m": [
+        -20.584314202614046,
+        -46.11740208959775
+      ],
+      "wgs84": [
+        121.51398809483426,
+        31.3080636759233
+      ],
+      "swimming_collision_contains": false,
+      "retained_original_source_ids": [
+        1870
+      ],
+      "reason": "Current OSM path/shoulder intersects a separately retained baseline source. It is not an open-world negative probe; this model does not add any obstruction here."
+    },
+    {
+      "name": "perimeter-footway-0.4-0",
+      "local_xy_m": [
+        -20.321711868613622,
+        -45.84273863338719
+      ],
+      "wgs84": [
+        121.51399085898007,
+        31.308066146038524
+      ],
+      "swimming_collision_contains": false,
+      "retained_original_source_ids": [
+        1870
+      ],
+      "reason": "Current OSM path/shoulder intersects a separately retained baseline source. It is not an open-world negative probe; this model does not add any obstruction here."
+    }
+  ],
+  "bindings": [
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 416891,
+      "sha256": "7b5756f3c3f54638b484c87c102bda02b28e6cbd2ad12b6be4f0308fb14a6027"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 361053,
+      "sha256": "d02bd82dcf5fc778cbff2eb4a049bcc62d0d82fea3670153e9a951e1d192c610"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 113014,
+      "sha256": "f95ee1685bbd37a15d9b783df74a185ef32b838dd9873d4cdd323464b72e8631"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json",
+      "bytes": 5637,
+      "sha256": "c1305ebd916b7bf8c6abaa957f5cc62c77a604a7a7f87d17326debe4bdc3af5b"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "283e104d295835d828b2014a4445082fd591850fb3ac54d0301150a6eb0cbe88"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/global-integration-checks.mjs",
+      "bytes": 17689,
+      "sha256": "aef01db401bfde0d0e150540cd727a2c987ac3bf1ea0bbd28038b48d99b59547"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/global-integration-checks.json",
+      "bytes": 9335,
+      "sha256": "fc6155ddf3e9eb73160759cfb538f8f1d46abfe393853813426a61aad048851f"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/final-beacon-camera-tests.tap",
+      "bytes": 3946,
+      "sha256": "b731c16e261a344b84c24e07eae2ac8b5843c9658d63761b9b5a135ce673682f"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/footprint-review.json",
+      "bytes": 619538,
+      "sha256": "3932661f0382dfbcefc285d2be977cb47add8758697137fc6b95a435cc9e91c5"
+    }
+  ],
+  "scope": "Final80 production catalogue metadata, source ownership, merge/navigation,218-of224 shader payload and2D collision; actual79-baseline tests remain in separate preflight. Shader hooks use explicit fixtures, not GPU compilation. No historical GLB asset matrix replay; actual source/asset geometry and browser rendering are independently checked.",
+  "production_code_changed": false,
+  "preflight_evidence_preserved": true
+}

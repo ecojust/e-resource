@@ -44,32 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 41,
+  "candidate_manifest_count": 42,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 39,
-  "resulting_city_count": 79,
+  "new_city_model_count": 40,
+  "resulting_city_count": 80,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
-    "杨浦区": 3,
+    "杨浦区": 4,
     "虹口区": 3,
     "黄浦区": 12
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 164,
-    "bytes": 681033977,
+    "files": 168,
+    "bytes": 684749128,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 11110949,
+    "current_run_added_bytes": 3715151,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 32
+    "inherited_incremental_files": 36
   },
   "records": [
     {
@@ -2818,6 +2818,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
       "description": "灰金属弧顶、纵向天窗、砖侧高窗与浅石三拱门面；独立馆楼，尺寸与隐面含估计。"
+    },
+    {
+      "id": "yangpu-jiangwan-swimming-hall",
+      "name": "江湾游泳馆（历史池馆与现状屋盖）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "jiangwan-swimming-hall.html",
+      "manifest": "assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json",
+      "manifest_sha256": "c1305ebd916b7bf8c6abaa957f5cc62c77a604a7a7f87d17326debe4bdc3af5b",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall-raw.glb",
+          "bytes": 1725576,
+          "sha256": "fdabd4072e7af304c0f3367e4c94cbd855a311e838d0bc3c3967753702d122ba",
+          "triangles": 28590
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall.blend",
+          "bytes": 843535,
+          "sha256": "385063c9a64de380402d61c79a3145737631002b2f331c256e382457f3cf6868"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall-web.glb",
+          "bytes": 684280,
+          "sha256": "4db67bde0abc5f72b84817a65174935ae1166c23c8a180dbedbab813bb0e6914",
+          "triangles": 28590
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall-lod.glb",
+          "bytes": 461760,
+          "sha256": "aa821e1b3a40408053630d040c030b30288f65a2275bd3215f0e932be4f80f1c",
+          "triangles": 19430
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -27.375789642333984,
+            0.0,
+            -48.15583801269531
+          ],
+          "max": [
+            27.30600357055664,
+            12.872426986694336,
+            44.772552490234375
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -27.375789642333984,
+            -44.772552490234375,
+            0.0
+          ],
+          "max": [
+            27.30600357055664,
+            48.15583801269531,
+            12.872426986694336
+          ]
+        },
+        "triangles": 28590,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "宽浅现代屋盖与抬高中部采光段、历史砖外周及北浅石单拱入口；现状尺寸与隐面含估计。"
     }
   ],
   "baseline_inventory": {
@@ -2834,16 +2901,17 @@
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
-    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
-  "incremental_asset_revision": "a47e69e9cbde689266855d573aa8d1f25b02944d",
-  "incremental_audit_directory": "data/audit/jiangwan-gymnasium-v1",
+  "incremental_asset_revision": "225af1b75c235177ca23c775b9a9d3483eb032ba",
+  "incremental_audit_directory": "data/audit/jiangwan-swimming-hall-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/jiangwan-stadium-v1/inventory-increment.json",
-    "bytes": 23600,
-    "sha256": "dc4d712d992f63966871383dd9745d85f777efa1fe8696398e5bfbde1eefec0f"
+    "file": "data/audit/jiangwan-gymnasium-v1/inventory-increment.json",
+    "bytes": 26283,
+    "sha256": "586c001245b29f5dada74875035fd4f354bfced3819553ac18febd4e4390bdc7"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ]
 }

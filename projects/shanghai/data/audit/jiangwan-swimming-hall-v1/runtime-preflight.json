@@ -1,0 +1,106 @@
+{
+  "schema": "jiangwan-swimming-hall-runtime-preflight-v1",
+  "passed": true,
+  "executed_utc": "2026-11-01T11:09:57.769139+00:00",
+  "baseline_commit": "225af1b75c235177ca23c775b9a9d3483eb032ba",
+  "catalogue_at_execution": {
+    "legacy": 40,
+    "candidates": 39,
+    "total": 79
+  },
+  "prospective_new_total": 80,
+  "production_code_changed": false,
+  "historical_asset_matrix_rerun": false,
+  "scope": "Current79 catalogue tests and prospective80 pure beacon-layout preflight. Final assets/placement/catalogue and browser rendering are not yet accepted here.",
+  "execution": [
+    {
+      "command": "node --test projects/shanghai/tests/candidate-city-clipping.test.mjs",
+      "exit_code": 0,
+      "output_file": "clipping-budget-tests.tap",
+      "bytes": 1143,
+      "sha256": "cc0f7b0cf2c26c7e58e6d71135c5230973b83ddaf3d51e7ed90da4641ceb5f1b"
+    },
+    {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "exit_code": 0,
+      "output_file": "beacon-camera-preflight.tap",
+      "bytes": 3948,
+      "sha256": "599c80be6a3056da65bfb2d855a911e917626a9a79e5c307ddc99d9bd2b0d2e3"
+    }
+  ],
+  "bindings": [
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "283e104d295835d828b2014a4445082fd591850fb3ac54d0301150a6eb0cbe88"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 401639,
+      "sha256": "80fee534e12639c4d71ceddbb2fa9f19331935223db2f6e568ad75376c98ed34"
+    },
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/model-todo/queue.json",
+      "bytes": 108770,
+      "sha256": "1b3d498d4585a77219efa5e49fa101a35f79f621fbd0f2eaa0298cd942629a16"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/check-beacon-capacity.mjs",
+      "bytes": 4342,
+      "sha256": "d1b7ee81435101cc9d283c78f5443d86333d6907969f79fc13876b9cb23703cc"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/check-clipping-budget.mjs",
+      "bytes": 7191,
+      "sha256": "f403de5a901f1c127a95ed6b78deb5a28406ca932d1e49fca34deadf46c95a05"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/beacon-capacity-preflight.json",
+      "bytes": 111783,
+      "sha256": "09124fb4fa2d1c1fee55801fcaddca653570c54ad2b088e9715491806ce4f7cf"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/clipping-budget-preflight.json",
+      "bytes": 3262,
+      "sha256": "63cb2698de9e7a7d14853132b894256cf43abecf7b2d59282e2a68efdab05db5"
+    }
+  ],
+  "prepared_final_check": {
+    "file": "data/audit/jiangwan-swimming-hall-v1/global-integration-checks.mjs",
+    "bytes": 17689,
+    "sha256": "aef01db401bfde0d0e150540cd727a2c987ac3bf1ea0bbd28038b48d99b59547",
+    "syntax_checked": true,
+    "final_execution_done": false,
+    "requires": "Final4 assets, reviewed footprint contract and actual80 catalogue."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "jiangwan-swimming-hall-clipping-budget-preflight-v1",
+  "passed": true,
+  "baseline": "225af1b75c235177ca23c775b9a9d3483eb032ba",
+  "scope": "Frozen39-candidate catalogue metadata passed through baseline and unchanged current production clippers. No historical GLB assets read. Five explicit owner fixtures construct standard/depth/distance shader source; actual source geometry, final swimming mask and real GPU rendering remain separate.",
+  "budget": {
+    "previous_catalogue_rows": 202,
+    "capacity": 224,
+    "available_rows_before_new_model": 22,
+    "texture_width": 4,
+    "texture_bytes": 14336,
+    "production_code_unchanged": true,
+    "new_model_rows_not_yet_final": true
+  },
+  "frozen_catalogue": {
+    "records": 39,
+    "sha256": "80fee534e12639c4d71ceddbb2fa9f19331935223db2f6e568ad75376c98ed34"
+  },
+  "production_script": {
+    "file": "src/candidate-city-clipping.js",
+    "bytes": 10046,
+    "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+  },
+  "baseline_script_sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd",
+  "historical_payload": {
+    "rows": 202,
+    "bytes": 12928,
+    "old_sha256": "edabf31df2ee534b4396fee002ed1229d563a0ac85dde1b696fd50f8b18f4ec7",
+    "new_sha256": "edabf31df2ee534b4396fee002ed1229d563a0ac85dde1b696fd50f8b18f4ec7",
+    "identical": true,
+    "padding_zero": true,
+    "owners_identical": true
+  },
+  "material_shader_checks": [
+    {
+      "name": "stadium-west-untagged",
+      "feature_ids": [
+        1646
+      ],
+      "scoped_rows": 25,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal": true
+    },
+    {
+      "name": "stadium-east-shared-untagged",
+      "feature_ids": [
+        1816,
+        1768,
+        677,
+        2225
+      ],
+      "scoped_rows": 20,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal": true
+    },
+    {
+      "name": "gym-shared-untagged",
+      "feature_ids": [
+        1709,
+        112,
+        1672,
+        2097,
+        349,
+        337,
+        480,
+        1558,
+        143,
+        2066,
+        2020,
+        1639
+      ],
+      "scoped_rows": 10,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal": true
+    },
+    {
+      "name": "future-swimming-is-not-an-old-clip",
+      "feature_ids": [
+        1162,
+        1666,
+        1870,
+        769,
+        1110
+      ],
+      "scoped_rows": 0,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal": true
+    },
+    {
+      "name": "far-per-vertex-owners",
+      "feature_ids": null,
+      "scoped_rows": 202,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal": true
+    }
+  ],
+  "all224_row_centres_addressable": true,
+  "boundary_tests": "clipping-budget-tests.tap: ten existing production tests check global/scoped row addressing,225-row rejection preserving state, source owners and shadow materials."
+}
