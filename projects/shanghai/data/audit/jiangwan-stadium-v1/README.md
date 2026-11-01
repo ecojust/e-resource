@@ -72,3 +72,9 @@ node --test projects/shanghai/tests/candidate-geometry.test.mjs projects/shangha
 ```
 
 模型重建见来源说明；几何、图像、实际网页、公开HTTP与目录检查分别记录，不用数量检查代替模型外观验收。
+
+## 发布核对
+
+模型与验收记录已在`01cc3bf0232e786ba8ea170ed33e3962499f3072`提交并推送。[该版全局地图直达](https://raw.githack.com/ecojust/e-resource/01cc3bf0232e786ba8ea170ed33e3962499f3072/projects/shanghai/index.html#landmark=yangpu-jiangwan-stadium&mode=overview)。[公开HTTP记录](publication.json)实际下载16项文件，与不可变提交逐字节一致，包括两份README、主图与目录、目录数据、灯牌／裁剪／集成脚本、辅助查看器、来源说明、清单及四资产；公开字节检查不代替本地真实浏览器验收。
+
+制作队列随后补入模型提交号，README日期取自实际Git提交时间；root-checks保留原输入绑定，另附发布元数据检查。最终元数据提交、远端master与干净工作区在工作区外核验，避免自引用提交号。

@@ -213,5 +213,121 @@
       "sha256": "cb1c285b4712afa992163d6d4e5e81339d723970dab866d4f7ac88f9a5a888f2"
     }
   ],
-  "binding_note": "Frozen after static index78 correction; the separate final runtime7-group pass binds that corrected index. Publication metadata is appended later without rewriting these original bindings."
+  "binding_note": "Frozen after static index78 correction; the separate final runtime7-group pass binds that corrected index. Publication metadata is appended later without rewriting these original bindings.",
+  "publication_metadata_checks": {
+    "model_commit": "01cc3bf0232e786ba8ea170ed33e3962499f3072",
+    "public_http_files": 16,
+    "passed": true,
+    "checks": [
+      {
+        "command": "python projects/shanghai/tools/update_global_model_metadata.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "38aac5",
+          "wall_time_seconds": 0.051723232,
+          "exit_code": 0,
+          "original_token_count": 9,
+          "output": "{\"city_integrated_candidates\": 38}\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/build_model_todo.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "2a83ed",
+          "wall_time_seconds": 0.680633545,
+          "exit_code": 0,
+          "original_token_count": 26,
+          "output": "README district candidates verified: 38; global destinations: 78\nREADME TODO matches structured records\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/build_landmark_directory.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "9ca981",
+          "wall_time_seconds": 0.341381946,
+          "exit_code": 0,
+          "original_token_count": 11,
+          "output": "Landmark directory matches navigation data\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/restoration_progress.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "2d9426",
+          "wall_time_seconds": 0.883422421,
+          "exit_code": 0,
+          "original_token_count": 60,
+          "output": "{\"navigation_entries\": 78, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 38, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/tools/sync_readme_districts.py --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "03f0e0",
+          "wall_time_seconds": 0.54523416,
+          "exit_code": 0,
+          "original_token_count": 17,
+          "output": "README district candidates verified: 38; global destinations: 78\n"
+        }
+      },
+      {
+        "command": "python projects/shanghai/data/audit/jiangwan-stadium-v1/todo-directory-checks.py",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "af662b",
+          "wall_time_seconds": 0.722374069,
+          "exit_code": 0,
+          "original_token_count": 20,
+          "output": "{\"passed\": true, \"models\": 78, \"heritage_active\": 1048, \"named_active\": 1017}\n"
+        }
+      },
+      {
+        "command": "git diff --check",
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "73aaa1",
+          "wall_time_seconds": 0.677588894,
+          "exit_code": 0,
+          "original_token_count": 0,
+          "output": ""
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "path": "README.md",
+        "bytes": 447164,
+        "sha256": "99ccef713240f627164de585790d25fb5a7b5d72162ea8f7202c233a2da656e7"
+      },
+      {
+        "path": "projects/shanghai/README.md",
+        "bytes": 41564,
+        "sha256": "6316618ea7d52cdfc25cf11702b36f91dd98664549f87f0a75c05a56563a3d7c"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/queue.json",
+        "bytes": 105583,
+        "sha256": "ae0e906d3e71ff216ecbda33d6920914f6e4174f3b0fc1633cde9d01fd779a40"
+      },
+      {
+        "path": "projects/shanghai/data/model-todo/candidate-publication-times.json",
+        "bytes": 15515,
+        "sha256": "9d247af4f096229af3d362cc3276c951ffba075e8f76903287d0902a22465d7f"
+      },
+      {
+        "path": "projects/shanghai/data/audit/jiangwan-stadium-v1/publication.json",
+        "bytes": 9564,
+        "sha256": "b7bb99c288f0eb1b1f578c1f93ccd11c4964128d9472983557b3cfd762fdd816"
+      },
+      {
+        "path": "projects/shanghai/data/audit/jiangwan-stadium-v1/todo-directory-checks.json",
+        "bytes": 3335,
+        "sha256": "7eee2fb159a6e027bc3dbc49259e1c95ce9caa501f391323f8e6079047ed6e31"
+      }
+    ]
+  }
 }
