@@ -318,13 +318,15 @@ def write_json(path, data, check=False):
         path.write_text(value)
 
 
-def checked_geometry(geometry, label, nullable=False):
+def checked_geometry(geometry, label, nullable=False, *, collision=False):
     if nullable and geometry is None:
         return None
     assert isinstance(geometry, dict) and geometry.get("type") in ("Polygon", "MultiPolygon"), label
     polygons = [geometry["coordinates"]] if geometry["type"] == "Polygon" else geometry["coordinates"]
-    assert 0 < len(polygons) <= 32 and all(0 < len(polygon) <= 8 for polygon in polygons), f"Runtime polygon budget exceeded: {label}"
-    assert all(4 <= len(ring) <= 65 and ring[0] == ring[-1]
+    max_rings, max_points = (32, 256) if collision else (8, 65)
+    assert 0 < len(polygons) <= 32 and all(0 < len(polygon) <= max_rings for polygon in polygons), f"Runtime polygon budget exceeded: {label}"
+    assert not collision or sum(len(ring) for polygon in polygons for ring in polygon) <= 4096, f"Runtime collision point budget exceeded: {label}"
+    assert all(4 <= len(ring) <= max_points and ring[0] == ring[-1]
                and all(len(point) == 2 and all(isinstance(v, (int, float)) and math.isfinite(v) for v in point) for point in ring)
                for polygon in polygons for ring in polygon), f"Runtime ring contract violated: {label}"
     result = shape(geometry)
@@ -384,7 +386,7 @@ def build_catalog(inventory, inventory_path=INVENTORY):
         if navigation["listed"]:
             assert len(navigation["walkStart"]) == 2 and all(math.isfinite(x) for x in navigation["walkStart"])
             assert math.isfinite(navigation["bearing"])
-        collision = checked_geometry(placement["collision_geometry"], f"{ident} collision_geometry")
+        collision = checked_geometry(placement["collision_geometry"], f"{ident} collision_geometry", collision=True)
         replacement = checked_geometry(placement.get("replacement_geometry"), f"{ident} replacement_geometry", nullable=True)
         source_ids = placement.get("source_feature_ids", {"building": [], "building_part": []})
         assert set(source_ids) == {"building", "building_part"}
@@ -419,6 +421,8 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             if key in placement:
                 model[key] = json.loads(json.dumps(placement[key]))
         site = model.get("site_replacement")
+        if site:
+            checked_geometry(site["geometry"], f"{ident} site_replacement.geometry")
         if site and "owner" not in site and site.get("source_macro") and site.get("source_local_id"):
             site["owner"] = {"macro_id": site["source_macro"], "feature_local_id": site["source_local_id"]}
         models.append(model)

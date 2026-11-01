@@ -1,0 +1,68 @@
+{
+  "schema": "jiangwan-stadium-author-revision-history-v1",
+  "model_id": "yangpu-jiangwan-stadium",
+  "versions": [
+    {
+      "stage": "prototype",
+      "raw_sha256": "4471d7ea1bfac3d61ccbd91e24fa3847f162a0ad87c5a37882c8abadf6026002",
+      "change": "Original open two-half ring and west gate/special stand. Visual review identified repeated urns and incomplete west side/end connections.",
+      "result": "Visual review only; superseded.",
+      "publish_asset": false
+    },
+    {
+      "stage": "formal-v1",
+      "raw_sha256": "ac3c2e67bb3092319750630c0404fbded3eea7831df0306365187ee0e336591c",
+      "change": "Distinct short-end gates and clear central passages; exactly2west urns; west side stairs.",
+      "result": "Closed author components passed. Sampled actual rays exposed covered windows/concave east-body overlap; superseded.",
+      "publish_asset": false
+    },
+    {
+      "stage": "formal-v3",
+      "raw_sha256": "517e138fe73a80de241b86d90466f43c6f96450d3fc3e3fb3b43d9db6b437ff4",
+      "change": "Added elevated outer rear walkways, corrected inner field rail/post dimensions and refined west room/window layout.",
+      "result": "Author near/far components passed;1sampled door/window occlusion remained; superseded.",
+      "publish_asset": false
+    },
+    {
+      "stage": "formal-v4",
+      "raw_sha256": "b60916f6f5238e36be0bfe446aa1e79629daa0b2220057c707cd39d0a781fd72",
+      "change": "Excluded windows hidden by modeled end gates and checked every authored doorway/window.",
+      "result": "375actual raw rays exposed5east projection-return overlaps; superseded.",
+      "publish_asset": false
+    },
+    {
+      "stage": "formal-v5",
+      "raw_sha256": "35409d3e60ad40f6eb2a331bee63e8af4461340af65e08b2d40bcfa27c90e1b7",
+      "change": "Separated ordinary east stand body from its outward projection and added an independent unroofed east platform.",
+      "result": "374/375raw and LOD rays passed; a curved ordinary arch stop lay44mm behind stand body; superseded.",
+      "publish_asset": false
+    },
+    {
+      "stage": "final",
+      "raw_sha256": "89a83612844e6d362664dcde9f81f27281b3a9b8023a2c04364a3fcafcddfbad",
+      "change": "Moved actual ordinary arch rear stop from1.16mto1.05m, preserving strict ray tolerance.",
+      "result": "375/375raw and LOD rays and exact web surfaces passed. Plan/native review still identified a missing elevated west front terrace; superseded despite prior rays.",
+      "publish_asset": false
+    },
+    {
+      "stage": "release",
+      "raw_sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+      "change": "Added photo-supported continuous front terrace atz4.35–4.50m and2estimated high pier-to-canopy links atz13.40–13.75m. Ground geometry unchanged.",
+      "result": "Final author387/387raw and decodedLOD rays passed, full web exact orientedFLOAT32material surfaces equal raw, every author component closed/positive/winding-consistent. Independent mapping/review and browser QA recorded separately.",
+      "publish_asset": true
+    }
+  ],
+  "process_images": [
+    {
+      "file": "process/prototype-grandstand.png",
+      "sha256": "34d099aceb3560545879e8169561ff08cdda42298e484875cf4df0b828273906",
+      "purpose": "Authored prototype screenshot for before/after trace; not current final asset."
+    },
+    {
+      "file": "process/prototype-oblique.png",
+      "sha256": "bc1f7fc9c9ceefba5984edee522e0c51983543eb3925622490c18c8852e1d5d6",
+      "purpose": "Authored prototype screenshot for before/after trace; not current final asset."
+    }
+  ],
+  "scope": "One new model only; no repeated oldasset audit and no historical model modification."
+}

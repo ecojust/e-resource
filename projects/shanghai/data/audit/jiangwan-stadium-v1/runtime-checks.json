@@ -1,0 +1,234 @@
+{
+  "schema": "jiangwan-stadium-runtime-checks-v1",
+  "passed": true,
+  "baseline_commit": "96e4dfaff588222475c25a66af1c84a24b45a475",
+  "generated_at": "2026-11-01T06:11:01.234293+00:00",
+  "entry_id": "yangpu-jiangwan-stadium",
+  "directory_state": {
+    "base_entries": 40,
+    "candidates": 38,
+    "destinations": 78,
+    "yangpu": 3
+  },
+  "final_current_directory_tests": {
+    "beacon_and_camera": {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "passed": 35,
+      "failed": 0,
+      "output": "final-beacon-camera-tests.tap"
+    },
+    "integration_delta": {
+      "command": "node projects/shanghai/data/audit/jiangwan-stadium-v1/global-integration-checks.mjs",
+      "passed_groups": 7,
+      "failed_groups": 0,
+      "report": "global-integration-checks.json",
+      "attempts": "runtime-integration-attempts.json"
+    }
+  },
+  "prior_patch_tests": {
+    "directory_at_execution": 77,
+    "beacons": 27,
+    "geometry_and_GPU": 17,
+    "python_geometry_and_incremental_catalogue": 12,
+    "note": "Prior patch-phase reports remain separate and are not relabelled as final78 catalogue runs."
+  },
+  "clipping_rows": {
+    "before": 147,
+    "addition": 45,
+    "after": 192,
+    "limit": 192
+  },
+  "prior_payload_unchanged": {
+    "rows": 147,
+    "bytes": 9408,
+    "equal": true
+  },
+  "collision": {
+    "polygons": 11,
+    "rings": 43,
+    "total_closed_points": 956,
+    "max_closed_points_per_ring": 227,
+    "max_rings_per_polygon": 18,
+    "positive_probes": 8,
+    "negative_probes": 56,
+    "open_area_checks": [
+      {
+        "name": "open-field-core",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-central-passage",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "north-central-passage",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-entry-recess--11.045",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-entry-recess--1.345",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-entry-recess-8.355",
+        "ground_collision_intersection_m2": 0
+      }
+    ]
+  },
+  "four_asset_manifest": {
+    "file": "assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
+    "sha256": "191dfeda7b380a04fd81d872d0cb6e886c008d3c12785cc5ab5fc5f7e8b90a4d",
+    "total_bytes": 46404928
+  },
+  "scope": "Only the final new catalogue/destination, two source-specific masks, new collision semantics, beacon capacity and camera framing were checked. No historical GLB/Blender matrix was replayed. Actual single-browser model/near-source rendering, digit pixels and touch remain separate QA.",
+  "bindings": [
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "src/candidate-city-integrations.js",
+      "bytes": 6120,
+      "sha256": "c9472bd9b6e60d03548c4e3e12a482c46f4b5e13a1cfabf49fd9c82377cce6ec"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "57556ec096ae74523b906e3a9699351391192d2e75c677288e69d4e48fbbb6bd"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "bytes": 33412,
+      "sha256": "cb1c285b4712afa992163d6d4e5e81339d723970dab866d4f7ac88f9a5a888f2"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "tests/candidate-geometry.test.mjs",
+      "bytes": 5162,
+      "sha256": "f4045aed1ef70d832e7fec029ab86c3e6fa82da49720c251c43575d882a3f3e2"
+    },
+    {
+      "file": "tests/candidate-catalog-increment.test.py",
+      "bytes": 18070,
+      "sha256": "9043fae5ae02682ed9e7a593d858c6e6a8b94fc2b11d31fd95fe180e74ce7f74"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 386068,
+      "sha256": "0a1b6275e42149b2b460eb425f2052ce04271854d8f2682076c3cd7383d13705"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 327639,
+      "sha256": "72613199f221b5611bccfa9f7626658e1bd789f8f135449589e9472d34b02244"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 107568,
+      "sha256": "a9ca229df73b121c0b99b0ef16f8135d100f56c4c6ae6f377975522da04e49ab"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9032,
+      "sha256": "28e571867d71e01049562815766b60c0c5dacd0fbb2ba9e4763c79394f187e2e"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
+      "bytes": 4837,
+      "sha256": "191dfeda7b380a04fd81d872d0cb6e886c008d3c12785cc5ab5fc5f7e8b90a4d"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/footprint-review.json",
+      "bytes": 3223572,
+      "sha256": "3057eedbab5e88485fb4fcb9ebd170b9486b6d75ac0f51a2087ff9bf7ff28f13"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/global-integration-checks.mjs",
+      "bytes": 17958,
+      "sha256": "89a5e2edb64e1b48ba82b8ff0ec1af094cd78d0b5e60514656fca3177fa07db8"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/global-integration-checks.json",
+      "bytes": 10454,
+      "sha256": "85917d93d1eb959a6f5ae8f53d12e8407fc782f9239aec1e59fa45a2e6e9d60b"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/runtime-integration-attempts.json",
+      "bytes": 1094,
+      "sha256": "eb41f52d2e3c32ac86de2ac52b6a8a555d2b9a18183d75b231ebd23cd3f4a9c8"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/runtime-beacon-preflight.json",
+      "bytes": 3085,
+      "sha256": "da772f7cdaea54c6de330b3560cbcecec9a6d45306588c967c14ab61f508ca89"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/collision-budget-checks.json",
+      "bytes": 2706,
+      "sha256": "dead9354c0d2a22d35e3e066a09eb01a16981f8efb893301e4670fce54dc8377"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/collision-budget-previous-models.json",
+      "bytes": 1160,
+      "sha256": "b666aa44bf23f787bf24e4f4b0a47509d6d4d9a5e80073403710a1c02759f002"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/collision-budget-test-execution.json",
+      "bytes": 3371,
+      "sha256": "3d7cfbe3ffc18ba7bdec3bb8d7f0eef13cf918e0581e3e2fabf96882fbd83939"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/beacon-tests.tap",
+      "bytes": 3115,
+      "sha256": "6f2572d56ac9b741907524384c0031768a91f2b13e362b74955c15ca7849fa7c"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/final-beacon-camera-tests.tap",
+      "bytes": 3944,
+      "sha256": "2c6a24ea7676229a065339413619e78bab7861c496fe35a0065e383376ddf9cd"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/beacon-capacity-preflight.json",
+      "bytes": 26822,
+      "sha256": "b47fa443dc47b561aceb20d8b964707033799c5f5a24fe428c2e0e67cfd2047b"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/actual-glyph-metrics.json",
+      "bytes": 25168,
+      "sha256": "04c38ff6233398db6f904cd8e434d3bc558219cbd43fa28d88ea97d08cf0594f"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/glyph-metrics-reproduction.json",
+      "bytes": 25102,
+      "sha256": "96ec7f54f987842acc89b30e95229887db22424df5b937f275483563b5e87234"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/check-beacon-capacity.mjs",
+      "bytes": 3704,
+      "sha256": "e6f3b036eba69535ad39bf02aadf2f8bed39da7a133c3f1f9fdfc4c467a346ed"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/check-collision-budget.mjs",
+      "bytes": 2535,
+      "sha256": "762ed0f2b6c9002d3916610f7e8810d0ac8483362db2ec2750f3d9439c444c82"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/check-number-glyph-metrics.py",
+      "bytes": 4358,
+      "sha256": "d4aed5630422bec38dc0f430ee0fdc82922e684008581b798c2a0f14476fada2"
+    }
+  ]
+}

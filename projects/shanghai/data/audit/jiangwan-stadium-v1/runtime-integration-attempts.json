@@ -1,0 +1,25 @@
+{
+  "schema": "jiangwan-runtime-integration-attempts-v1",
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 1,
+      "tool_output_chunk": "717ac3",
+      "script_sha256": "ca7b32ed305034bfbad61da2ec062727c21d7780dc4ef36a1e7e96a1cd330c37",
+      "failure": "The generated catalogue contained38 candidates/78 destinations, but index.html static landmark-count was still77. The first check stopped before any group was accepted.",
+      "correction": "Root updated the one static index counter to78. No production renderer or geometry was changed for this failure.",
+      "status": "superseded-by-recheck"
+    },
+    {
+      "attempt": 2,
+      "exit_code": 0,
+      "tool_output_chunk": "d4e9ff",
+      "script_sha256": "89a5e2edb64e1b48ba82b8ff0ec1af094cd78d0b5e60514656fca3177fa07db8",
+      "passed_groups": 7,
+      "catalogue_destinations": 78,
+      "static_index_count": 78,
+      "correction_note": "The script assertion now reports only the static count instead of printing the entire HTML on mismatch; the expected78 requirement is unchanged."
+    }
+  ],
+  "passed": true
+}

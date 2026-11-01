@@ -1,0 +1,71 @@
+{
+  "schema": "jiangwan-runtime-beacon-preflight-v1",
+  "baseline_commit": "96e4dfaff588222475c25a66af1c84a24b45a475",
+  "model_id": "yangpu-jiangwan-stadium",
+  "created_at": "2026-11-01T05:39:13.386334+00:00",
+  "scope": "Beacon capacity implementation only; new asset catalogue, geometry, native and browser rendering checks remain pending.",
+  "passed": true,
+  "production_change": "Only when existing compact grids cannot fit all visible IDs, choose20×18 sprite with unchanged12px text. Previous77 layouts in four supported viewport fixtures are byte-equivalent.",
+  "tests": [
+    {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs",
+      "exit_code": 0,
+      "tests": 27,
+      "pass": 27,
+      "fail": 0,
+      "tool_output_chunk": "7c33e4",
+      "output_artifact": "beacon-tests.tap",
+      "output_sha256": "6f2572d56ac9b741907524384c0031768a91f2b13e362b74955c15ca7849fa7c",
+      "note": "Rerun after fixing78 boundary fixture to remain78 when later models are added."
+    },
+    {
+      "command": "node /workspace/jiangwan-stadium-runtime/check-beacon-capacity.mjs",
+      "exit_code": 0,
+      "passed": true,
+      "preserved_previous77_layouts": 4,
+      "prospective_models": 78,
+      "old_overlap_fallbacks": 1,
+      "new_overlap_fallbacks": 0
+    },
+    {
+      "command": "git diff --check -- projects/shanghai/src/building-beacons.js projects/shanghai/tests/building-beacons.test.mjs",
+      "exit_code": 0
+    }
+  ],
+  "input_bindings": [
+    {
+      "path": "projects/shanghai/src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "path": "projects/shanghai/tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    }
+  ],
+  "capacity_report": "beacon-capacity-preflight.json",
+  "actual_font_report": "actual-glyph-metrics.json",
+  "font_raw_private_only": "noto-sans-regular-0-255.pbf",
+  "limits": [
+    "No browser was launched. Real CSS title measurement, actual SDF pixel inspection and native touch routing remain required in the sole final QA browser.",
+    "84 slots is the geometric capacity of the currently reviewed243×138px safe rectangle. This does not promise distinct labels at arbitrary smaller screen areas or future three-digit counts."
+  ],
+  "clipper": {
+    "capacity": 192,
+    "prior_effective_triangles": 147,
+    "remaining_budget": 45,
+    "production_clipper_changed": false
+  },
+  "source_module_sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1",
+  "directory_state_at_test": {
+    "base_records": 40,
+    "candidate_records": 37,
+    "total_registered": 77,
+    "stadium_fixture": "The78th queued identity was a prospective layout fixture; no stadium asset or placement was registered by these tests."
+  },
+  "reproduce": [
+    "node --test projects/shanghai/tests/building-beacons.test.mjs",
+    "node projects/shanghai/data/audit/jiangwan-stadium-v1/check-beacon-capacity.mjs"
+  ]
+}

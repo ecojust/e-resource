@@ -1,6 +1,6 @@
 const PREFIX='shanghai-building-beacons';
 const ANCHORS=`${PREFIX}-anchors`,LABELS=`${PREFIX}-labels`,LINES=`${PREFIX}-leaders`;
-const LAMP=`${PREFIX}-lamp`,SIGN=`${PREFIX}-sign`,NUMBER=`${PREFIX}-number`,TIGHT_NUMBER=`${PREFIX}-number-tight`,SHORT_NUMBER=`${PREFIX}-number-short`;
+const LAMP=`${PREFIX}-lamp`,SIGN=`${PREFIX}-sign`,NUMBER=`${PREFIX}-number`,TIGHT_NUMBER=`${PREFIX}-number-tight`,SHORT_NUMBER=`${PREFIX}-number-short`,DENSE_NUMBER=`${PREFIX}-number-dense`;
 const NAME_SIGNS=[[84,34],[120,34],[176,34],[176,48],[176,62]].map(([width,height],i)=>({id:`${SIGN}-${i}`,width,height}));
 const GROUND={getElevationForLngLat:()=>0};
 const collection=features=>({type:'FeatureCollection',features});
@@ -33,6 +33,9 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
   // A second title line can remove a row. Trim only the sprite's vertical
   // padding when necessary; the number remains 12 px and retains its own cell.
   if(compact&&slots.length<items.length){compactHeight=18;slots=makeGrid(true,0,compactWidth,compactHeight);}
+  // The 78th entry needs a twelfth column in the smallest phone safe area.
+  // Two-digit numbers keep their 12 px font; only horizontal padding changes.
+  if(compact&&slots.length<items.length){compactWidth=20;slots=makeGrid(true,0,compactWidth,compactHeight);}
   const used=new Set();
   const placed=new Map();
   for(const item of [...items].sort((a,b)=>a.y-b.y||a.x-b.x||a.id.localeCompare(b.id))){
@@ -88,8 +91,8 @@ function unprojectBeaconSlot(map,point){
 }
 
 function sprite(documentObject,kind,spec){
-  const canvas=documentObject.createElement('canvas'),number=kind==='number'||kind==='number-tight'||kind==='number-short';
-  canvas.width=kind==='lamp'?40:number?(kind==='number'?48:44):spec.width*2;canvas.height=kind==='number-short'?36:kind==='lamp'||number?40:spec.height*2;
+  const canvas=documentObject.createElement('canvas'),number=kind==='number'||kind==='number-tight'||kind==='number-short'||kind==='number-dense';
+  canvas.width=kind==='lamp'?40:number?(kind==='number'?48:kind==='number-dense'?40:44):spec.width*2;canvas.height=kind==='number-short'||kind==='number-dense'?36:kind==='lamp'||number?40:spec.height*2;
   const ctx=canvas.getContext('2d');if(!ctx)throw Error('灯牌绘图不可用');
   if(kind==='lamp'){
     const glow=ctx.createRadialGradient(20,20,2,20,20,19);glow.addColorStop(0,'#fff4bd');glow.addColorStop(.35,'#ffce6fea');glow.addColorStop(1,'#ffb33900');
@@ -121,13 +124,14 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   }
   let destroyed=false,timer=null,layout=[],revision=0;
   const listeners=[],clickEvents=new WeakSet(),sources=[LINES,ANCHORS,LABELS],layers=[`${LINES}-line`,`${ANCHORS}-symbol`,`${LABELS}-symbol`,`${LABELS}-numbers`];
-  const feature=(row,index,compact=false,inViewport=true,compactWidth=24,compactHeight=20)=>({type:'Feature',id:row.id,properties:{id:row.id,name:row.name,label:compact?String(index+1):row.name,sign:labelSize(row.name).sign,numberSprite:compactHeight===18?SHORT_NUMBER:compactWidth===22?TIGHT_NUMBER:NUMBER,compact,inViewport,districtId:row.districtId,order:index,number:index+1},geometry:{type:'Point',coordinates:[row.lng,row.lat]}});
+  const feature=(row,index,compact=false,inViewport=true,compactWidth=24,compactHeight=20)=>({type:'Feature',id:row.id,properties:{id:row.id,name:row.name,label:compact?String(index+1):row.name,sign:labelSize(row.name).sign,numberSprite:compactWidth===20?DENSE_NUMBER:compactHeight===18?SHORT_NUMBER:compactWidth===22?TIGHT_NUMBER:NUMBER,compact,inViewport,districtId:row.districtId,order:index,number:index+1},geometry:{type:'Point',coordinates:[row.lng,row.lat]}});
   const anchorData=collection(records.map((r,i)=>feature(r,i)));
   map.addImage(LAMP,sprite(documentObject,'lamp'),{pixelRatio:2});
   for(const spec of NAME_SIGNS)map.addImage(spec.id,sprite(documentObject,'sign',spec),{pixelRatio:2});
   map.addImage(NUMBER,sprite(documentObject,'number'),{pixelRatio:2});
   map.addImage(TIGHT_NUMBER,sprite(documentObject,'number-tight'),{pixelRatio:2});
   map.addImage(SHORT_NUMBER,sprite(documentObject,'number-short'),{pixelRatio:2});
+  map.addImage(DENSE_NUMBER,sprite(documentObject,'number-dense'),{pixelRatio:2});
   map.addSource(LINES,{type:'geojson',data:collection([])});
   map.addSource(ANCHORS,{type:'geojson',data:anchorData});
   map.addSource(LABELS,{type:'geojson',data:anchorData});
@@ -206,9 +210,9 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   for(const event of ['moveend','zoomend','resize']){map.on(event,refresh);listeners.push([event,refresh]);}
   refresh();
   return {refresh,hitTest,getState:()=>({count:records.length,ids:[...ids],districtCount:new Set(records.map(r=>r.districtId)).size,zoom:map.getZoom(),revision,
-    labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER,TIGHT_NUMBER,SHORT_NUMBER],viewportLabelCount:layout.length,
+    labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER,TIGHT_NUMBER,SHORT_NUMBER,DENSE_NUMBER],viewportLabelCount:layout.length,
     labelMode:layout.some(p=>p.compact)?'numbers':'names',overlapFallbackCount:layout.filter(p=>p.overlapFallback).length,labelPositions:layout.map(p=>({id:p.id,number:records.findIndex(r=>r.id===p.id)+1,x:p.labelX,y:p.labelY,width:p.width,height:p.height,compact:p.compact}))}),
     destroy(){if(destroyed)return;destroyed=true;if(timer!==null)clearTimeout(timer);for(const args of listeners)map.off(...args);
       for(const id of [...layers].reverse())if(map.getLayer(id))map.removeLayer(id);for(const id of sources)if(map.getSource(id))map.removeSource(id);
-      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER,TIGHT_NUMBER,SHORT_NUMBER])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
+      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),NUMBER,TIGHT_NUMBER,SHORT_NUMBER,DENSE_NUMBER])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
 }

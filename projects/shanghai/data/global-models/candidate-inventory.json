@@ -44,32 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 39,
+  "candidate_manifest_count": 40,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 37,
-  "resulting_city_count": 77,
+  "new_city_model_count": 38,
+  "resulting_city_count": 78,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
-    "杨浦区": 1,
+    "杨浦区": 2,
     "虹口区": 3,
     "黄浦区": 12
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 156,
-    "bytes": 623518100,
+    "files": 160,
+    "bytes": 669923028,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 30865089,
+    "current_run_added_bytes": 46404928,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 24
+    "inherited_incremental_files": 28
   },
   "records": [
     {
@@ -2684,6 +2684,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
       "description": "三段绿瓦歇山顶、红柱窗格、浅色基座及南侧阶桥；桥下道路留空，校园邻楼分开。米高、桥阶尺度与隐蔽细节含估计。"
+    },
+    {
+      "id": "yangpu-jiangwan-stadium",
+      "name": "江湾体育场历史主场（看台与入口）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "jiangwan-stadium.html",
+      "manifest": "assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
+      "manifest_sha256": "191dfeda7b380a04fd81d872d0cb6e886c008d3c12785cc5ab5fc5f7e8b90a4d",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium-raw.glb",
+          "bytes": 22738220,
+          "sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+          "triangles": 374908
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium.blend",
+          "bytes": 11819224,
+          "sha256": "00d4f98fdba6cdf360a05123229542df32c1dba7b75b64f74abe8674cbca9bb2"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium-web.glb",
+          "bytes": 8738408,
+          "sha256": "2020e9d49e94bf337741571919b2284352b13bde973cd3e1110d23c1e8b432b9",
+          "triangles": 374908
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium-lod.glb",
+          "bytes": 3109076,
+          "sha256": "9fa9579b675c49cc97aefab30f80e097f0fa2066182d1b7db4c555933be811cf",
+          "triangles": 123712
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -122.75189971923828,
+            0.0,
+            -159.16148376464844
+          ],
+          "max": [
+            126.7571792602539,
+            18.633560180664062,
+            153.54425048828125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -122.75189971923828,
+            -153.54425048828125,
+            0.0
+          ],
+          "max": [
+            126.7571792602539,
+            159.16148376464844,
+            18.633560180664062
+          ]
+        },
+        "triangles": 374908,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "开放阶梯看台、西侧三拱入口与特别台、东平台及短端通道；独立体育馆和游泳馆分开，尺寸与隐面含估计。"
     }
   ],
   "baseline_inventory": {
@@ -2698,16 +2765,17 @@
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
-    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json"
   ],
-  "incremental_asset_revision": "c5eadbea297bb9d23d0658b2244d1e17034bbcb6",
-  "incremental_audit_directory": "data/audit/yangpu-city-hall-v1",
+  "incremental_asset_revision": "96e4dfaff588222475c25a66af1c84a24b45a475",
+  "incremental_audit_directory": "data/audit/jiangwan-stadium-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/municipal-council-v1/inventory-increment.json",
-    "bytes": 18058,
-    "sha256": "75ba418d159584bfd9355fb7d10fff3725a0a3bb7004a98ea7af11e794f576b8"
+    "file": "data/audit/yangpu-city-hall-v1/inventory-increment.json",
+    "bytes": 20895,
+    "sha256": "7946d0f816366c6425e5447c6548dcf57badf9fead74084e69b7b7a3639618b1"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json"
   ]
 }

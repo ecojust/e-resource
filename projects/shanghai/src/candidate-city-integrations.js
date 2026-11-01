@@ -3,10 +3,16 @@ import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 const SHA=/^[a-f0-9]{64}$/;
 const finitePoint=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&Math.abs(p[0])<=180&&Math.abs(p[1])<=85;
 const polygons=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g.coordinates:[];
-export function validCandidateGeometry(g) {
-  const parts=polygons(g);
-  return parts.length>0&&parts.length<=32&&parts.every(p=>p.length>0&&p.length<=8&&p.every(r=>r.length>=4&&r.length<=65
-    &&r.every(finitePoint)&&r[0].every((v,i)=>v===r.at(-1)[i])));
+export function validCandidateGeometry(g,{collision=false}={}) {
+  const parts=polygons(g),maxRings=collision?32:8,maxPoints=collision?256:65;
+  let totalPoints=0;
+  // CPU collision keeps detailed boundaries and holes. Display corrections
+  // retain their smaller contour budget and the separate shader triangle cap.
+  return Array.isArray(parts)&&parts.length>0&&parts.length<=32&&parts.every(p=>Array.isArray(p)&&p.length>0&&p.length<=maxRings&&p.every(r=>{
+    if(!Array.isArray(r)||r.length<4||r.length>maxPoints)return false;
+    totalPoints+=r.length;
+    return (!collision||totalPoints<=4096)&&r.every(finitePoint)&&r[0].every((v,i)=>v===r.at(-1)[i]);
+  }));
 }
 export function mergeCandidateCityModels(existing,manifest) {
   if(manifest?.schema!=='candidate-city-integrations-v1'||!Array.isArray(manifest.models))throw Error('候选模型全局目录格式无效');
@@ -23,7 +29,7 @@ export function mergeCandidateCityModels(existing,manifest) {
       if(!asset||typeof asset.file!=='string'||!asset.file.startsWith('assets/')||asset.file.includes('..')
         ||!Number.isInteger(asset.bytes)||asset.bytes<=0||asset.bytes>=100000000||!SHA.test(asset.sha256))throw Error(`候选模型资产无效：${row.id}/${key}`);
     }
-    for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key]))throw Error(`候选模型边界无效：${row.id}/${key}`);
+    for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
     if(row.site_replacement&&(!row.site_replacement.id||!validCandidateGeometry(row.site_replacement.geometry)))throw Error(`候选模型场址修正无效：${row.id}`);
     if(row.navigation.listed&&(!finitePoint(row.navigation.walkStart)||!Number.isFinite(row.navigation.bearing)))throw Error(`候选模型漫游起点无效：${row.id}`);
     return {...row,candidate_id:row.id,city_integration:true,accepted:false,candidate_only:true,

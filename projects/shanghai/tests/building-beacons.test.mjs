@@ -384,7 +384,7 @@ test('all delivered models remain separate and clickable above a tall title card
   const beacons=createBuildingBeacons({map,records:delivered,onSelect:row=>selected.push(row.id),documentObject:doc});
   const state=beacons.getState();
   assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);assert.equal(state.labelMode,'numbers');
-  assert(state.labelPositions.every(row=>row.compact&&row.width===(count>70?22:24)&&row.height===20));
+  assert(state.labelPositions.every(row=>row.compact&&row.width===(count>70?22:24)&&row.height===(count>77?18:20)));
   assertSeparated(state.labelPositions);
   assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:340});
   assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
@@ -403,6 +403,7 @@ test('long building title cards retain every delivered sign in the smaller phone
     ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
   assert(delivered.length>=75);
   const targets=['huangpu-cathay-mansions','huangpu-grosvenor-house','huangpu-shanghai-municipal-council','yangpu-former-shanghai-city-hall'];
+  if(delivered.some(row=>row.id==='yangpu-jiangwan-stadium'))targets.push('yangpu-jiangwan-stadium');
   assert(targets.every(id=>delivered.some(row=>row.id===id&&[...row.name].length>12)));
   const map=new BeaconMap({width:320,height:568}),tools=new Element(),card=new Element(),selected=[];
   let cardTop=348,selectedTitle='',beacons;
@@ -415,29 +416,78 @@ test('long building title cards retain every delivered sign in the smaller phone
   beacons=createBuildingBeacons({map,records:delivered,documentObject:doc,onSelect(row){
     selected.push(row.id);selectedTitle=row.name;if(targets.includes(row.id))cardTop=328;beacons.refresh();
   }});
-  assert(beacons.getState().labelPositions.every(row=>row.height===20),'the existing roomy layout keeps its original height');
+  const roomyHeight=delivered.length>77?18:20,denseWidth=delivered.length>77?20:22;
+  assert(beacons.getState().labelPositions.every(row=>row.height===roomyHeight),'keep the largest sprite that fits all delivered signs');
   for(const id of targets){
     const target=beacons.getState().labelPositions.find(row=>row.id===id);map.emit('click',{point:{x:target.x,y:target.y}});
     assert.equal(selected.at(-1),id);assert.equal(selectedTitle,delivered.find(row=>row.id===id).name);
     for(const zoom of [8,12,18,24]){
       map.zoom=zoom;beacons.refresh();const state=beacons.getState();
       assert.equal(state.viewportLabelCount,delivered.length);assert.equal(state.overlapFallbackCount,0);
-      assert(state.labelPositions.every(row=>row.width===22&&row.height===18));
+      assert(state.labelPositions.every(row=>row.width===denseWidth&&row.height===18));
       assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
       assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
       for(const row of state.labelPositions)assert.equal(beacons.hitTest({x:row.x,y:row.y}),row.id);
       const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));assert.equal(numbers.layout['text-size'],12);
       for(const feature of map.getSource(numbers.source).data.features){
         const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
-        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[22,18]);
+        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[denseWidth,18]);
       }
     }
   }
   selected.length=0;
   for(const row of beacons.getState().labelPositions)map.emit('click',{point:{x:row.x,y:row.y}});
   assert.equal(selected.length,delivered.length);assert.equal(new Set(selected).size,delivered.length);
-  cardTop=348;beacons.refresh();assert(beacons.getState().labelPositions.every(row=>row.height===20));
+  cardTop=348;beacons.refresh();assert(beacons.getState().labelPositions.every(row=>row.height===roomyHeight));
   beacons.destroy();assert.equal(map.images.size,0);
+});
+
+test('the 78th model retains a separate 12px number and hit area when a long title leaves only seven rows',()=>{
+  const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
+    ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
+  const stadium=JSON.parse(readFileSync(new URL('../data/model-todo/queue.json',import.meta.url),'utf8')).production_queue.find(row=>row.id==='yangpu-jiangwan-stadium');
+  assert(stadium&&[...stadium.name].length>12);
+  // Before integration this is a prospective layout fixture. The final shared
+  // catalogue supplies the same identity and title once the model is delivered.
+  const previous=delivered.filter(row=>row.id!==stadium.id).slice(0,77);
+  const currentStadium=delivered.find(row=>row.id===stadium.id);
+  const rows=[...previous,currentStadium??{id:stadium.id,name:stadium.name,lng:121,lat:31,districtId:'310110'}];
+  assert.equal(rows.length,78,'this boundary fixture stays at78 when later models are added');
+  for(const height of [568,548]){
+    const map=new BeaconMap({width:320,height}),tools=new Element(),card=new Element(),selected=[];
+    let cardTop=328;map.project=()=>({x:160,y:260});
+    tools.getBoundingClientRect=()=>({left:263,right:308,top:190,bottom:395});
+    card.getBoundingClientRect=()=>({left:14,right:306,top:cardTop,bottom:height-12});
+    const doc={createElement(tag){const element=new Element(tag),original=element.getBoundingClientRect.bind(element);
+        element.getBoundingClientRect=()=>element.id==='building-beacon-legend'?{left:12,right:308,top:126,bottom:174}:original();return element;},
+      getElementById:id=>id==='location-card'?card:null,querySelector:selector=>selector==='.map-tools'?tools:null};
+    const old=createBuildingBeacons({map,records:previous,documentObject:doc});
+    assert(old.getState().labelPositions.every(row=>row.width===22&&row.height===18),'77 signs retain the existing sprite size');old.destroy();
+    const beacons=createBuildingBeacons({map,records:rows,onSelect:row=>selected.push(row.id),documentObject:doc});
+    for(const zoom of [8,12,18,24,8]){
+      map.zoom=zoom;beacons.refresh();const state=beacons.getState();
+      assert.equal(state.count,78);assert.equal(state.viewportLabelCount,78);assert.equal(state.overlapFallbackCount,0);
+      assert.equal(state.labelPixelSize,12);assert.equal(state.spriteIds.length,10);
+      assert(state.labelPositions.every(row=>row.width===20&&row.height===18));
+      assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
+      assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),rows.map(row=>row.id).sort());
+      const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));
+      assert.equal(numbers.layout['text-size'],12);assert.equal(numbers.layout['icon-size'],1);
+      for(const feature of map.getSource(numbers.source).data.features){
+        const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
+        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[20,18]);
+        assert.equal(feature.properties.label,String(feature.properties.number));
+      }
+      selected.length=0;
+      for(const row of state.labelPositions){
+        for(const [dx,dy] of [[0,0],[-9.5,-8.5],[9.5,8.5]])assert.equal(beacons.hitTest({x:row.x+dx,y:row.y+dy}),row.id,'the interior of every compact cell belongs only to its own model');
+        map.emit('click',{point:{x:row.x,y:row.y}});assert.equal(selected.at(-1),row.id);
+      }
+      assert.equal(new Set(selected).size,78);
+    }
+    cardTop=348;beacons.refresh();assert(beacons.getState().labelPositions.every(row=>row.width===22&&row.height===18),'a taller free area restores the wider existing sprite');
+    beacons.destroy();assert.equal(map.images.size,0);assert.equal(map.listeners.length,0);
+  }
 });
 
 test('the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable',()=>{
@@ -511,7 +561,7 @@ test('fixed name backgrounds, text and leaders agree with the actual ground proj
   assert.deepEqual([ground.x,ground.y],[actual.x,actual.y]);
   assert(ground.y-original.y>20,'the fixture must expose the previous centre-height projection error');
   const beacons=createBuildingBeacons({map,records:rows,onSelect(){},documentObject:mockDocument()});
-  assert.equal(map.images.size,9,'five fixed name sprites, three number sizes and one anchor lamp');
+  assert.equal(map.images.size,10,'five fixed name sprites, four number sizes and one anchor lamp');
   const nameLayer=[...map.layers.values()].find(layer=>layer.id.endsWith('-labels-symbol'));
   assert(nameLayer);assert.equal(nameLayer.layout['icon-text-fit'],'none');
   const anchorLayer=[...map.layers.values()].find(layer=>layer.type==='symbol'&&!layer.layout['text-field']);

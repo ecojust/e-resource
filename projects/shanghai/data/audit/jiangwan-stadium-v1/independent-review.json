@@ -1,0 +1,296 @@
+{
+  "schema": "jiangwan-stadium-independent-review-v1",
+  "passed": true,
+  "status": "Independent source, delivered geometry, native and placement checks passed; browser/global UI QA is separate.",
+  "candidate_id": "yangpu-jiangwan-stadium",
+  "baseline_commit": "96e4dfaff588222475c25a66af1c84a24b45a475",
+  "reviewer": "Independent review agent; did not author model or mapping geometry.",
+  "model_scope": "Two mapped outdoor stand halves, west exterior gate and local covered special stand, bounded east platform, asymmetrical short-end gates.",
+  "final_manifest": {
+    "file": "manifest.json",
+    "bytes": 4837,
+    "sha256": "191dfeda7b380a04fd81d872d0cb6e886c008d3c12785cc5ab5fc5f7e8b90a4d"
+  },
+  "assets": {
+    "raw": {
+      "file": "yangpu-jiangwan-stadium-raw.glb",
+      "bytes": 22738220,
+      "sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+      "triangles": 374908
+    },
+    "native": {
+      "file": "yangpu-jiangwan-stadium.blend",
+      "bytes": 11819224,
+      "sha256": "00d4f98fdba6cdf360a05123229542df32c1dba7b75b64f74abe8674cbca9bb2"
+    },
+    "full": {
+      "file": "yangpu-jiangwan-stadium-web.glb",
+      "bytes": 8738408,
+      "sha256": "2020e9d49e94bf337741571919b2284352b13bde973cd3e1110d23c1e8b432b9",
+      "triangles": 374908
+    },
+    "lod": {
+      "file": "yangpu-jiangwan-stadium-lod.glb",
+      "bytes": 3109076,
+      "sha256": "9fa9579b675c49cc97aefab30f80e097f0fa2066182d1b7db4c555933be811cf",
+      "triangles": 123712
+    }
+  },
+  "total_asset_bytes": 46404928,
+  "actual_source_review": {
+    "modern_photos_actually_viewed": 6,
+    "main_stadium_design_images_actually_viewed": 4,
+    "western_gate_identity": "PDF21 printed13 caption identifies west gate outside/inside; 2013/2021 outside photographs and2017 inside photograph confirm the two faces. Short-end rectangular gate is distinct.",
+    "source_dimension_limits": "1934 design20rows/17mstandwidth/760mcircuit are design evidence, not current surveyed dimensions. Separate gym46moverallwidth and42.7mspan do not define stadium elevations.",
+    "original_source_photos_pdf_not_redistributed": true
+  },
+  "actual_geometry_review": {
+    "method": "Direct indexed accessor and Meshopt decode. Actual current scene traversed; each of the three files has one identity node with no TRS/matrix or instances. No author construction executed.",
+    "rays_per_asset": 151,
+    "asset_variants": 3,
+    "independent_added_platform_bridge_top_and_underside_rays": 20,
+    "central_field_vertical_negatives": 71,
+    "all_rays_passed": true,
+    "raw_full_exact_oriented_float32_material_multiset_equal": true,
+    "finite_coordinates_and_no_degenerate_triangles": true,
+    "author_387_surface_probe_report": "Author supplied separate full-scene387 probes and per-component closed/winding/positive-volume checks. Those are author evidence; this review does not claim to have independently repeated those387 probes.",
+    "bounds_enu_m": {
+      "min": [
+        -122.75189971923828,
+        -153.54425048828125,
+        0
+      ],
+      "max": [
+        126.7571792602539,
+        159.16148376464844,
+        18.633560180664062
+      ]
+    },
+    "modern_metres_and_detail_dimensions_estimated": true
+  },
+  "native_review": {
+    "actual_blender_reopen": true,
+    "read_only_asset_unchanged": true,
+    "all374908_triangles_match_raw_per_material_oriented_float32": true,
+    "actual_final_pngs_individually_viewed": 7,
+    "native_has_no_external_image_texture_or_library": true,
+    "render_stage_excluded_from_model": true
+  },
+  "placement_review": {
+    "independently_read_original_git_files": 5,
+    "near_west_owner_count": 1,
+    "near_east_owner_count": 4,
+    "other_original_sources_checked": 2322,
+    "actual_far_and_near_original_projection_checks": true,
+    "display_masks_separate_from_collision": true,
+    "display_mask_vertices": [
+      27,
+      22
+    ],
+    "new_display_mask_triangles": 45,
+    "global_clip_capacity": 192,
+    "collision_polygons": 11,
+    "collision_total_closed_ring_points": 956,
+    "all_three_exact_z0to2_occupancies_covered": true,
+    "collision_within_018m_of_actual_low_union": true,
+    "both_short_end_clear_corridor_width_m": 4.6,
+    "safe_inner_field_collision_and_model_overlap_m2": 0,
+    "other_original_sources_and_actual_neighbor_mesh_projection_overlap_m2": 0,
+    "source_projection_comparisons": [
+      {
+        "role": "raw",
+        "1646": {
+          "source_area_m2": 7638.987707223079,
+          "source_not_covered_by_full_projection_m2": 49.905994333162084,
+          "full_projection_fraction_of_source": 0.9934669361640708
+        },
+        "1816": {
+          "source_area_m2": 6742.150316780656,
+          "source_not_covered_by_full_projection_m2": 3.7171041610821526e-05,
+          "full_projection_fraction_of_source": 0.9999999944867676
+        }
+      },
+      {
+        "role": "full",
+        "1646": {
+          "source_area_m2": 7638.987707223079,
+          "source_not_covered_by_full_projection_m2": 49.905994333162106,
+          "full_projection_fraction_of_source": 0.9934669361640708
+        },
+        "1816": {
+          "source_area_m2": 6742.150316780656,
+          "source_not_covered_by_full_projection_m2": 3.7171041591549466e-05,
+          "full_projection_fraction_of_source": 0.9999999944867676
+        }
+      },
+      {
+        "role": "lod",
+        "1646": {
+          "source_area_m2": 7638.987707223079,
+          "source_not_covered_by_full_projection_m2": 49.921986758833576,
+          "full_projection_fraction_of_source": 0.9934648426372467
+        },
+        "1816": {
+          "source_area_m2": 6742.150316780656,
+          "source_not_covered_by_full_projection_m2": 3.6982785938511e-05,
+          "full_projection_fraction_of_source": 0.9999999945146897
+        }
+      }
+    ]
+  },
+  "resolved_platform_issue": {
+    "initial_issue": "Separate raised core and field facade left a long full-height plan gap inconsistent with the observed continuous front platform. Intermediate first-freeze records remain private process evidence.",
+    "actual_fix": "Closed raised connection slab z4.35–4.50m connects front core/facade and southern join. Two upper middle-pier rear bridges z13.40–13.75m connect the estimated upper structure. Three lower recessed arches and rear gates remain; no low field/platform fill.",
+    "independent_verification": "20 added top/underside probes passed in raw/full/LOD; actual projection and seven final native images rechecked.",
+    "remaining_west_coarse_source_difference_m2": 49.905994333162084,
+    "remaining_difference_interpretation": "North outer wing corner, narrow source-edge strip outside the estimated field facade and small edge slivers. Explicit bounded footprint approximation, not verified courtyards or100percent source reconstruction."
+  },
+  "limits": [
+    "No modern height survey or complete original1934state restoration is claimed.",
+    "West recesses do not prove straight internal road access; only central short-end passages are through-open in this model.",
+    "Upper rear bridge details, row counts, east platform and unseen short-end construction remain estimates.",
+    "Separate gym, pool, field sources and unresolved architectural detail remain outside this main-only delivery; sh-historic-b1-021 remains partial.",
+    "Independent review did not start a browser; browser QA owns actual global-map appearance, switch hysteresis and all-beacon visibility.",
+    "No historical whole-asset matrix was rerun."
+  ],
+  "reports": [
+    {
+      "file": "independent-reference-review.json",
+      "bytes": 10219,
+      "sha256": "62972b01126f6b3731a0f3de724868d3ba1dadba4acd3630833336bfc5db373e"
+    },
+    {
+      "file": "independent-source-git-bindings.json",
+      "bytes": 2479,
+      "sha256": "9e46cdbfc8a476f5eb85d01790566a2d00d4168b3b7dec1d4894c56555047b48"
+    },
+    {
+      "file": "independent-original-city-projection.json",
+      "bytes": 120453,
+      "sha256": "0e1678a2dec1677c6228177162b6b181dca1dca37b1caace0ef1d19dd84b8e11"
+    },
+    {
+      "file": "independent-geometry-review.json",
+      "bytes": 288492,
+      "sha256": "f142db2868be06eb1bfe8a6cf209436b623de7649e299ea9efd78460e84ca6f0"
+    },
+    {
+      "file": "independent-packaging-binding.json",
+      "bytes": 1930,
+      "sha256": "edc649aa11f33431d7270a3ed55c3aaa53022f04b63e738245d2ea5d7ecbb6f9"
+    },
+    {
+      "file": "independent-native-review.json",
+      "bytes": 3839,
+      "sha256": "6e63c56f7ea951628634b64101e54a4773babe48f3544e045ee305a11e9ffffb"
+    },
+    {
+      "file": "independent-native-image-review.json",
+      "bytes": 4523,
+      "sha256": "64dcd983c28934f08ead998784b885f59acf44deca0119690e8c0db9158685e4"
+    },
+    {
+      "file": "independent-placement-review.json",
+      "bytes": 7256,
+      "sha256": "26618ca4d744cf31041624372799601243d7ed3a1cb126f651d6e37dd8bda350"
+    },
+    {
+      "file": "independent-metadata-review.json",
+      "bytes": 9606,
+      "sha256": "cd2ab13d06aa73e490a0aeb59ce13844e6ca8f7c72a2fbf2d039e3abedc140ff"
+    }
+  ],
+  "helpers": [
+    {
+      "file": "independent-geometry-check.mjs",
+      "bytes": 11019,
+      "sha256": "2d9fb1691b849ead0f9573a83cf984de43b2d72995c897a0f3b60bfeb091b32f"
+    },
+    {
+      "file": "independent-derive-occupancy.py",
+      "bytes": 4147,
+      "sha256": "896a60e1d0c6d4af9381f2973b4e535701b94d64976f72c9611e28a32833d277"
+    },
+    {
+      "file": "independent-check-native.py",
+      "bytes": 5899,
+      "sha256": "d0568b4e9feb736dff0127522434c9a78b3e224d2bbbbc9d77093215d5a3cd76"
+    },
+    {
+      "file": "independent-bind-final-package.py",
+      "bytes": 2490,
+      "sha256": "d586b9ea671310a85e97dd5b40234d0f2b6e7718322dd16c0600536147683a0f"
+    },
+    {
+      "file": "independent-check-placement.py",
+      "bytes": 7946,
+      "sha256": "4b1116db73326e6e1b5264718507db1031e33c3cf8555c6332b0e2cbc200906d"
+    },
+    {
+      "file": "independent-city-source-check.mjs",
+      "bytes": 7233,
+      "sha256": "64d2bc21d1c5df7739381c008438c37fc96353542243324f5c1d013ce3b7fb05"
+    },
+    {
+      "file": "independent-check-original-city.py",
+      "bytes": 5358,
+      "sha256": "d445e8a18cc335271da1653f626bbdf89cc050abe17f123fe2e6d9392d3866f8"
+    },
+    {
+      "file": "independent-prepare-city-input.py",
+      "bytes": 1128,
+      "sha256": "993c82f5aa92b7ada3ccde7e3e2174c5d7967e7d7757ab66fbbc7632d0cc5a02"
+    },
+    {
+      "file": "independent-check-metadata.py",
+      "bytes": 8833,
+      "sha256": "01ee9f5e4d7aaa3e75ef5c2d8a7339293837486b21c272c22b4196330908fed3"
+    }
+  ],
+  "probe_config": {
+    "file": "independent-probes-platform-fix.json",
+    "bytes": 62785,
+    "sha256": "23c0ac01fc02291f8bf513a5eb64d0775dcae4846f203d1aadbd1292edc3ae85"
+  },
+  "occupancy_products": [
+    {
+      "role": "raw",
+      "asset_sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+      "output_file": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757.json",
+      "sha256": "24204e4cd20aaece1d7c572d07097ad75abb368c7a6e92a0fc54ef333fe6a502"
+    },
+    {
+      "role": "full",
+      "asset_sha256": "2020e9d49e94bf337741571919b2284352b13bde973cd3e1110d23c1e8b432b9",
+      "output_file": "2020e9d49e94bf337741571919b2284352b13bde973cd3e1110d23c1e8b432b9.json",
+      "sha256": "9340887bf0bbb95d34c54a506722840c312ca149f8bcdc9265188499b9f551b9"
+    },
+    {
+      "role": "lod",
+      "asset_sha256": "9fa9579b675c49cc97aefab30f80e097f0fa2066182d1b7db4c555933be811cf",
+      "output_file": "9fa9579b675c49cc97aefab30f80e097f0fa2066182d1b7db4c555933be811cf.json",
+      "sha256": "f94ffd10c12c0286833033beaceb79e47518b2f2c4aaa037c141dbc2e34d56fe"
+    }
+  ],
+  "reproduction_instructions": {
+    "file": "INDEPENDENT_REVIEW.md",
+    "bytes": 4463,
+    "sha256": "8abd58003c825565bde88e0c39b40da36500a1eaecbb671ac058b5ce5090baf2"
+  },
+  "final_public_metadata_review": {
+    "passed": true,
+    "old_candidate_catalog_records_unchanged": 37,
+    "old_inventory_records_unchanged": 39,
+    "old_placement_records_unchanged": 7,
+    "old_preview_records_unchanged": 23,
+    "readme_global_links_each": 78,
+    "district_count": 16,
+    "yangpu_count": 3,
+    "index_static_count": 78,
+    "no_deletions_or_old_asset_or_old_audit_changes": true,
+    "new_pending_item": "yangpu-jiangwan-gymnasium",
+    "whole_b1_021_record_remains_partial": true,
+    "final_source_register_documentary_photo_review_match_independently_read_drafts": true,
+    "final_source_readme_additions_and_author_source_bundle_bound": true
+  }
+}

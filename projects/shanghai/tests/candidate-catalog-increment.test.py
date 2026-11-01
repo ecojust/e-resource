@@ -184,10 +184,14 @@ class IncrementalCatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, "Placement IDs"):
             builder.build_catalog(inventory, current)
         geometry = {"type": "Polygon", "coordinates": [[[121.4744,31.2368],[121.4745,31.2368],[121.4745,31.2369],[121.4744,31.2369],[121.4744,31.2368]]]}
+        detailed_ring = [[121.47445 + .0001 * math.cos(i * math.tau / 226),
+                          31.23685 + .0001 * math.sin(i * math.tau / 226)] for i in range(226)]
+        detailed_ring.append(detailed_ring[0])
+        detailed_collision = {"type": "Polygon", "coordinates": [detailed_ring]}
         record = {"id": NEW_ID, "lng": 121.47445, "lat": 31.23685, "heading": 0, "scale": 1,
                   "overviewBearing": 180, "overviewPitch": 50,
                   "model_geometry_sha256": {"raw": inventory["records"][-1]["assets"]["raw"]["sha256"]},
-                  "navigation": {"listed": False}, "collision_geometry": geometry,
+                  "navigation": {"listed": False}, "collision_geometry": detailed_collision,
                   "replacement_geometry": None, "source_feature_ids": {"building": [], "building_part": []},
                   "placement": {"status": "estimated", "note": "Test placement only"}}
         (current.parent / "additional-placement.json").write_text(json.dumps({"records": [record]}))
@@ -203,11 +207,70 @@ class IncrementalCatalogTests(unittest.TestCase):
         self.assertEqual(catalog["models"][-1]["navigation"], {"listed": False})
         self.assertEqual(catalog["models"][-1]["overviewBearing"], 180)
         self.assertEqual(catalog["models"][-1]["overviewPitch"], 50)
+        self.assertEqual(catalog["models"][-1]["collision_geometry"], detailed_collision)
         self.assertEqual(self.baseline.read_bytes(), BASELINE_BYTES)
+        for key in ("replacement_geometry", "site_replacement"):
+            record[key] = detailed_collision if key == "replacement_geometry" else {"id": "test-site", "geometry": detailed_collision}
+            (current.parent / "additional-placement.json").write_text(json.dumps({"records": [record]}))
+            with patch.object(builder, "checked_asset", return_value=b""), self.assertRaisesRegex(AssertionError, "Runtime ring contract"):
+                builder.build_catalog(inventory, current)
+            if key == "replacement_geometry":
+                record[key] = None
+            else:
+                del record[key]
         record["model_geometry_sha256"]["raw"] = "0" * 64
         (current.parent / "additional-placement.json").write_text(json.dumps({"records": [record]}))
         with patch.object(builder, "checked_asset", return_value=b""), self.assertRaisesRegex(AssertionError, "Stale placement geometry"):
             builder.build_catalog(inventory, current)
+
+
+class CollisionGeometryBudgetTests(unittest.TestCase):
+    @staticmethod
+    def ring(closed_points, radius=.001, center=(121.47, 31.23)):
+        points = [[center[0] + radius * math.cos(i * math.tau / (closed_points - 1)),
+                   center[1] + radius * math.sin(i * math.tau / (closed_points - 1))]
+                  for i in range(closed_points - 1)]
+        return points + [points[0]]
+
+    def test_complex_collision_preserves_holes_but_display_budget_stays_small(self):
+        geometry = {"type": "Polygon", "coordinates": [self.ring(227), self.ring(97, .0005)]}
+        checked = builder.checked_geometry(geometry, "collision", collision=True)
+        self.assertEqual(len(checked.interiors), 1)
+        self.assertFalse(checked.contains(builder.Point(121.47, 31.23)))
+        self.assertTrue(checked.contains(builder.Point(121.47075, 31.23)))
+        with self.assertRaisesRegex(AssertionError, "Runtime ring contract"):
+            builder.checked_geometry(geometry, "replacement")
+
+    def test_collision_ring_limit_and_original_closed_finite_valid_bounds(self):
+        builder.checked_geometry({"type": "Polygon", "coordinates": [self.ring(256)]}, "boundary", collision=True)
+        variants = [self.ring(257), self.ring(227)[:-1], self.ring(227, center=(0, 0)),
+                    [[121.47, 31.23], [121.471, 31.231], [121.47, 31.231], [121.471, 31.23], [121.47, 31.23]]]
+        nonfinite = self.ring(227)
+        nonfinite[1][0] = math.inf
+        variants.append(nonfinite)
+        for ring in variants:
+            with self.subTest(points=len(ring)), self.assertRaises(AssertionError):
+                builder.checked_geometry({"type": "Polygon", "coordinates": [ring]}, "bad collision", collision=True)
+
+    def test_collision_hole_and_polygon_limits_remain_bounded(self):
+        holes = [self.ring(5, .0001, (121.47 + (i % 8 - 3.5) * .002, 31.23 + (i // 8 - 1.5) * .002)) for i in range(32)]
+        geometry = {"type": "Polygon", "coordinates": [self.ring(33, .02)] + holes[:31]}
+        builder.checked_geometry(geometry, "32 rings", collision=True)
+        geometry["coordinates"].append(holes[31])
+        with self.assertRaisesRegex(AssertionError, "Runtime polygon budget"):
+            builder.checked_geometry(geometry, "33 rings", collision=True)
+        pieces = [[self.ring(5, .0002, (121.47 + i * .001, 31.23))] for i in range(33)]
+        builder.checked_geometry({"type": "MultiPolygon", "coordinates": pieces[:32]}, "32 pieces", collision=True)
+        with self.assertRaisesRegex(AssertionError, "Runtime polygon budget"):
+            builder.checked_geometry({"type": "MultiPolygon", "coordinates": pieces}, "33 pieces", collision=True)
+
+    def test_collision_total_point_limit_is_independent_of_per_ring_limit(self):
+        pieces = [[self.ring(256, .001, (121.47 + (i % 4) * .003, 31.23 + (i // 4) * .003))] for i in range(16)]
+        geometry = {"type": "MultiPolygon", "coordinates": pieces}
+        builder.checked_geometry(geometry, "4096 points", collision=True)
+        pieces.append([self.ring(5, .0002, (121.49, 31.23))])
+        with self.assertRaisesRegex(AssertionError, "Runtime collision point budget"):
+            builder.checked_geometry(geometry, "4101 points", collision=True)
 
 
 if __name__ == "__main__":

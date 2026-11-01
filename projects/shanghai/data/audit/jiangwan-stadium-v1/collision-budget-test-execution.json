@@ -1,0 +1,32 @@
+{
+  "javascript": {
+    "chunk_id": "3626f3",
+    "wall_time_seconds": 0.952142232,
+    "exit_code": 0,
+    "original_token_count": 456,
+    "output": "✔ an untagged eastern near group excludes Cathay clipping in visible and shadow passes (14.320507ms)\n✔ the shared Cathay near group receives its whole clip while excluding other groups and macros (6.06423ms)\n✔ ownerless wildcard clips retain prior spatial behavior while still respecting macro ownership (34.298359ms)\n✔ late candidate activation and removal update already compiled near material uniforms (8.697043ms)\n✔ per-vertex feature IDs retain the original global texture and shader owner comparison (1.874781ms)\n✔ near objects with missing owner metadata retain prior spatial clipping (1.165005ms)\n✔ near objects with empty owner metadata retain prior spatial clipping (0.739416ms)\n✔ release disposes the scoped texture and rebind updates cached shader holders without recompilation (3.854709ms)\n✔ clipping rows beyond128 remain addressable in global and owner-filtered material passes (6.193098ms)\n✔ the192-row limit accepts its last triangle and rejects193 without corrupting live clipping state (11.410582ms)\n✔ complex collision retains its hole while the same geometry remains invalid for display clipping (8.229126ms)\n✔ only collision opts into the larger budget when models enter the runtime catalogue (38.565614ms)\n✔ the closed-ring limit remains65 by default and is256 only for collision (1.478968ms)\n✔ collision keeps a bounded number of holes and polygons (0.706654ms)\n✔ the total collision budget is4096 closed points across every component and hole (3.409258ms)\n✔ collision retains finite coordinates, closed rings and geographic bounds (0.518577ms)\n✔ detailed opposing C-shaped stands leave their central field and both end passages open (1.332984ms)\nℹ tests 17\nℹ suites 0\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 723.565399\n"
+  },
+  "initial_python_geometry_tests": {
+    "chunk_id": "d17bd1",
+    "wall_time_seconds": 0.66104406,
+    "exit_code": 0,
+    "original_token_count": 150,
+    "output": "....Verified incremental asset: huangpu-new-wing-on-company\nVerified incremental asset: huangpu-xinxin-company\n.Verified incremental asset: huangpu-new-wing-on-company\n...Verified incremental asset: huangpu-new-wing-on-company\nVerified incremental asset: huangpu-xinxin-company\nVerified incremental asset: huangpu-xinxin-company\n.Verified incremental asset: huangpu-new-wing-on-company\nVerified incremental asset: huangpu-new-wing-on-company\n..Verified incremental asset: huangpu-new-wing-on-company\n.\n----------------------------------------------------------------------\nRan 12 tests in 0.134s\n\nOK\n"
+  },
+  "subsequent_python_catalogue_branch_test": {
+    "command": "python -B projects/shanghai/tests/candidate-catalog-increment.test.py",
+    "exit_code": 0,
+    "tests": 12,
+    "passed": 12,
+    "failed": 0,
+    "completion_chunk": "d9cf7f",
+    "note": "Rerun after extending the catalogue integration fixture to227 collision points, with the same replacement/site geometry rejected by the default display budget."
+  },
+  "diff_check": {
+    "chunk_id": "ea842e",
+    "wall_time_seconds": 0.101176046,
+    "exit_code": 0,
+    "original_token_count": 0,
+    "output": ""
+  }
+}

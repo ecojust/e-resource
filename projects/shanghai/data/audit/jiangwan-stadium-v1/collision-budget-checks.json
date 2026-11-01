@@ -1,0 +1,72 @@
+{
+  "schema": "jiangwan-collision-budget-checks-v1",
+  "passed": true,
+  "reason": "Preserve actual detailed stand boundaries and holes without invalid polygon splits, filled holes or coarse inflation. This is a finite CPU collision allowance, separate from GPU clipping.",
+  "collision_limits": {
+    "polygons": 32,
+    "rings_per_polygon": 32,
+    "closed_points_per_ring": 256,
+    "total_closed_points": 4096
+  },
+  "display_limits_unchanged": {
+    "rings_per_polygon": 8,
+    "closed_points_per_ring": 65,
+    "shader_triangles": 192
+  },
+  "entry_points": {
+    "javascript": "validCandidateGeometry(geometry,{collision:true}) only for collision_geometry in mergeCandidateCityModels",
+    "python": "checked_geometry(geometry,label,collision=True) only for collision_geometry; replacement and site retain default checks"
+  },
+  "tests": {
+    "javascript": {
+      "passed": 17,
+      "failed": 0,
+      "new_geometry_tests": 7,
+      "existing_gpu_clipping_tests": 10
+    },
+    "python": {
+      "passed": 12,
+      "failed": 0,
+      "geometry_budget_tests": 4,
+      "incremental_catalogue_tests": 8
+    },
+    "previous37_candidates_plus40_baseline_merge": {
+      "deep_equal": true,
+      "report": "collision-budget-previous-models.json"
+    }
+  },
+  "bindings": [
+    {
+      "file": "src/candidate-city-integrations.js",
+      "sha256": "c9472bd9b6e60d03548c4e3e12a482c46f4b5e13a1cfabf49fd9c82377cce6ec"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "sha256": "cb1c285b4712afa992163d6d4e5e81339d723970dab866d4f7ac88f9a5a888f2"
+    },
+    {
+      "file": "tests/candidate-geometry.test.mjs",
+      "sha256": "f4045aed1ef70d832e7fec029ab86c3e6fa82da49720c251c43575d882a3f3e2"
+    },
+    {
+      "file": "tests/candidate-catalog-increment.test.py",
+      "sha256": "9043fae5ae02682ed9e7a593d858c6e6a8b94fc2b11d31fd95fe180e74ce7f74"
+    }
+  ],
+  "execution_report": {
+    "file": "collision-budget-test-execution.json",
+    "sha256": "3d7cfbe3ffc18ba7bdec3bb8d7f0eef13cf918e0581e3e2fabf96882fbd83939"
+  },
+  "actual_new_model_geometry": "Not accepted by these fixtures; the final actual model is separately mapped and checked after publication inputs freeze.",
+  "directory_state_at_test": {
+    "baseline_commit": "96e4dfaff588222475c25a66af1c84a24b45a475",
+    "base_records": 40,
+    "candidate_records": 37,
+    "total_registered": 77
+  },
+  "reproduce": [
+    "node --test projects/shanghai/tests/candidate-geometry.test.mjs projects/shanghai/tests/candidate-city-clipping.test.mjs",
+    "python -B projects/shanghai/tests/candidate-catalog-increment.test.py",
+    "node projects/shanghai/data/audit/jiangwan-stadium-v1/check-collision-budget.mjs"
+  ]
+}

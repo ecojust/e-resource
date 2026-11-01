@@ -1,0 +1,74 @@
+{
+  "schema": "jiangwan-independent-native-image-review-v1",
+  "passed": true,
+  "source_raw_sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+  "native_sha256": "00d4f98fdba6cdf360a05123229542df32c1dba7b75b64f74abe8674cbca9bb2",
+  "native_json_sha256": "822e34cf82c703c42dd0f11ab2a4224d307c6ed633f09e3d0c21bf433c2b0409",
+  "reviewer": "independent-review-agent",
+  "method": "Actually reopened each of the seven final release PNGs with view_image, after viewing the earlier process images. Image observations are not inferred from hashes. Native render stage is excluded from model; actual raw/native triangle equality is separately checked.",
+  "images": [
+    {
+      "file": "native-front.png",
+      "bytes": 1117784,
+      "sha256": "956719751c25bb22453b73bc1150f720c83602c066cf53919fd49eef0df369f3",
+      "actual_view_image_review": true,
+      "observation": "Whole stadium framed; central field void and red outer ring visible; only west local canopy; no large intersection visible at whole-model scale."
+    },
+    {
+      "file": "native-oblique.png",
+      "bytes": 1244567,
+      "sha256": "f5ffd5e5a54bf96586a3c517bc28b1ea4ed7b89b0e265579e8b74e89800d6497",
+      "actual_view_image_review": true,
+      "observation": "Both stand halves, open field and short-end passages visible; continuous stepped ordinary ring and local west canopy distinguishable."
+    },
+    {
+      "file": "native-rear.png",
+      "bytes": 1291756,
+      "sha256": "79a5e2cac939bb7758967a68f1f2bcda32ec97a8e118368d5f5da911c30d91d3",
+      "actual_view_image_review": true,
+      "observation": "East projecting platform is visually separate from ordinary steps; no visible front-corner penetration at this overall scale; west field face visible across empty field."
+    },
+    {
+      "file": "native-roof.png",
+      "bytes": 1331273,
+      "sha256": "2dc48d41b30880a1cacc28cdfcb777dd257e0303b941a80958342bea22d66b52",
+      "actual_view_image_review": true,
+      "observation": "Whole-model top view shows open central field, two short-end access gaps, west local roof and uncovered east projection. Native stage is not model field geometry."
+    },
+    {
+      "file": "native-gate.png",
+      "bytes": 1451805,
+      "sha256": "4ee101ba6269cddea9b31f8d2143a60856a16cf865331d8dc4120ee86cec2027",
+      "actual_view_image_review": true,
+      "observation": "West exterior has three deep large arches, four main pier masses, two urns and bracket/cornice bands; rear closures visible, not through-road proof."
+    },
+    {
+      "file": "native-grandstand.png",
+      "bytes": 1386116,
+      "sha256": "c756a9441e8f8d21ddd7c53b1b76edc232ebdcba26c6e21f31b0223bf8223b2d",
+      "actual_view_image_review": true,
+      "observation": "Actually reopened final PNG after platform fix: three low bounded arches, front stone railing/platform, stepped seats, two urn towers and local flat canopy remain coherent. Continuous raised front connection is independently verified by top/underside triangle probes; no new low passage filling is inferred from image."
+    },
+    {
+      "file": "native-end.png",
+      "bytes": 1792179,
+      "sha256": "ea27fcac72253eae262a4e01d6a2018d820c70da1d8af0888e36a8f148464ecf",
+      "actual_view_image_review": true,
+      "observation": "South short-end facade has broad rectangular central through opening, two small recessed arches and asymmetric appearance versus west gate; field beyond visible."
+    }
+  ],
+  "platform_fix_visual_context": {
+    "actual_residual_plot_viewed": true,
+    "plot_sha256": "0d82b187f4ef155741cf2a6c317d3b3077d62c2688f13a0a9cf5844a7859ea7f",
+    "raw_sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+    "remaining_source_minus_full_projection_m2": 49.905994339193164,
+    "observation": "Prior interior field-face/core gap and middle-pier rear voids disappear from actual full projection. Remaining north wing corner, outer source-edge strip and small edge differences are bounded shape approximations, not verified courtyards or exact full-source occupancy.",
+    "independent_new_top_and_underside_probes": 20
+  },
+  "limits": [
+    "Modern metre elevations and precise row counts remain estimated.",
+    "Upper rear bridge construction is an explicit estimate, not a photo-resolved beam claim.",
+    "Views and checks do not certify interiors, public accessibility, a historical-state restoration, or completion of separate gym/pool.",
+    "Browser/global-map rendering is a separate QA responsibility."
+  ]
+}
