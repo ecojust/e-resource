@@ -1,6 +1,6 @@
 # 国际饭店外观候选检查 · 2026-10-30
 
-[模型查看](../../../park-hotel.html) · [来源与复跑](../../../source/precise/huangpu-park-hotel/README.md) · [资产清单](../../../assets/models/candidates/huangpu-park-hotel/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview) · [来源与复跑](../../../source/precise/huangpu-park-hotel/README.md) · [资产清单](../../../assets/models/candidates/huangpu-park-hotel/manifest.json)
 
 原始／近景158,248面、远景66,432面，1046处估计窗位，22个设计分层。文献83.8米选作最高砖垛高度，83.6米保留；全部平面尺寸和退台深度为估计，未用地图外框或历史面积反推楼体尺寸。
 

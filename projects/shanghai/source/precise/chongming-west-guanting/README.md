@@ -1,6 +1,6 @@
 # 崇明学宫西官厅：文字尺寸参照候选
 
-[独立预览](../../../west-guanting.html) · [资产清单](../../../assets/models/candidates/chongming-west-guanting/manifest.json) · [检查记录](../../../data/audit/west-guanting-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-west-guanting&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-west-guanting/manifest.json) · [检查记录](../../../data/audit/west-guanting-v1/README.md)
 
 依据旧馆记载的东西宽7.4米、南北长10.2米、高6.5米，制作泮池／登云桥西侧西官厅的独立基础外观候选。**文献未给开间数、中央入口或窗数；三分区立面、中门、两处格窗、双坡单脊屋顶、配色、基座和侧后墙全部包含建模假设。** 本件不称“三楹”或“中间开门”已有文献依据，也未核验实际朝院立面的面宽。
 

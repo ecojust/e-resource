@@ -1,0 +1,92 @@
+{
+  "schema": "city-museum-runtime-preflight-v1",
+  "passed": true,
+  "executed_utc": "2026-11-01T12:17:24.641106+00:00",
+  "baseline_commit": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "catalogue_at_execution": {
+    "legacy": 40,
+    "candidates": 40,
+    "total": 80
+  },
+  "prospective_new_total": 81,
+  "production_code_changed": false,
+  "historical_asset_matrix_rerun": false,
+  "scope": "Actual frozen80 catalogue beacon/camera test suite and prospective81 pure production label layout/hit fixtures. This does not validate public githack redirects, deployed cache versions, real map projection, final museum source identity or model pixels.",
+  "checks": {
+    "beacon_camera_tests": 35,
+    "beacon_camera_failed": 0,
+    "prospective81_layouts": 4,
+    "old80_layouts_preserved": 4,
+    "worst_grid_capacity": 84,
+    "remaining_slots": 3
+  },
+  "clipping_work_pending": {
+    "current_global_rows": 218,
+    "current_capacity": 224,
+    "no_production_change_yet": true,
+    "reason": "Wait for actual source/mask scope and production triangulation, then Root releases production edit after investigating user-reported public viewer mismatch. Preliminary two-mask alternative may add23+2 rows, but is not frozen."
+  },
+  "bindings": [
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 416891,
+      "sha256": "7b5756f3c3f54638b484c87c102bda02b28e6cbd2ad12b6be4f0308fb14a6027"
+    },
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/model-todo/queue.json",
+      "bytes": 111891,
+      "sha256": "ad9f82918301be0e4ae09fe9d6d01980918587aa8f4a484c8d3dc3f152cea185"
+    },
+    {
+      "file": "data/audit/city-museum-v1/check-beacon-capacity.mjs",
+      "bytes": 4340,
+      "sha256": "d00b7093fd779b48dacee30e1a525647b9eb3c13aac1e2ae44a5f478d5484461"
+    },
+    {
+      "file": "data/audit/city-museum-v1/beacon-capacity-preflight.json",
+      "bytes": 113185,
+      "sha256": "aa6319d3869a909826ee3dfef535262aeb537a28e89fe75be896f9c93515a26d"
+    },
+    {
+      "file": "data/audit/city-museum-v1/beacon-camera-preflight.tap",
+      "bytes": 3941,
+      "sha256": "37efafa02d0b0ffb0f3160db8e8d537d5de459db4f8b2eba7ce8f6243e520fc2"
+    }
+  ],
+  "prepared_final_check": {
+    "file": "data/audit/city-museum-v1/global-integration-checks.mjs",
+    "syntax_checked": true,
+    "executed": false,
+    "requires": "Final source IDs, separate mask identities, capacity, four new assets, reviewed footprint contract and actual81 registry must replace guarded PENDING values before execution."
+  }
+}

@@ -1,6 +1,6 @@
 # 仪门形态候选检查
 
-[独立预览](../../../yimen.html) · [来源与构建](../../../source/precise/chongming-yimen/README.md) · [资产清单](../../../assets/models/candidates/chongming-yimen/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview) · [来源与构建](../../../source/precise/chongming-yimen/README.md) · [资产清单](../../../assets/models/candidates/chongming-yimen/manifest.json)
 
 单体为棂星门东、儒学大门北的仪门，依据题注明确的照片观察曲线端墙、前坡、内柱、格窗分区、帘幕和竖匾色块。**模型总高7米为设计估计；文献9.07米未调和。** 本记录核查候选几何与显示，不构成完整照片复原、比例测量或地理配准验收。
 

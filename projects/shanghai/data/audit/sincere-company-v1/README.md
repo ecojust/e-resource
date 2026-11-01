@@ -1,6 +1,6 @@
 # 先施公司主楼与摩星塔外观候选检查 · 2026-10-30
 
-[模型查看](../../../sincere-company.html) · [来源与复跑](../../../source/precise/huangpu-sincere-company/README.md) · [资产清单](../../../assets/models/candidates/huangpu-sincere-company/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) · [来源与复跑](../../../source/precise/huangpu-sincere-company/README.md) · [资产清单](../../../assets/models/candidates/huangpu-sincere-company/manifest.json)
 
 原始／网页近景216,912面，远景96,128面。原始GLB 11,736,148字节，网页GLB 3,647,560字节，远景GLB 1,759,244字节，Blender 6,302,484字节。本件包含先施历史主楼的街面骑楼、两种削角、柱列与山花、阳台、东南摩星塔，以及浙江路北段降低的翼部。时装商店与东亚饭店是同楼不同用途；相邻老／新永安、新新、大新和另一处东亚大楼不在范围内。未原址配准或替换城市对象。
 

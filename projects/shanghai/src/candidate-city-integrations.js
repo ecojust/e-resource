@@ -14,9 +14,23 @@ export function validCandidateGeometry(g,{collision=false}={}) {
     return (!collision||totalPoints<=4096)&&r.every(finitePoint)&&r[0].every((v,i)=>v===r.at(-1)[i]);
   }));
 }
+// Height-only display corrections never enter the 2D vector/source/collision path.
+export function validCandidateHeightClip(c) {
+  return Boolean(c&&typeof c.id==='string'&&c.id&&validCandidateGeometry(c.geometry)
+    &&c.owner&&typeof c.owner.macro_id==='string'&&c.owner.macro_id
+    &&Number.isInteger(c.owner.feature_local_id)&&c.owner.feature_local_id>0
+    &&!('owners' in c)&&!('source_feature_ids' in c)
+    &&Number.isFinite(c.min_height)&&Number.isFinite(c.max_height)&&c.min_height<c.max_height
+    &&Number.isFinite(Math.fround(c.min_height))&&Number.isFinite(Math.fround(c.max_height))
+    &&finitePoint(c.height_reference));
+}
 export function mergeCandidateCityModels(existing,manifest) {
   if(manifest?.schema!=='candidate-city-integrations-v1'||!Array.isArray(manifest.models))throw Error('候选模型全局目录格式无效');
-  const ids=new Set(existing.map(row=>row.id));
+  const ids=new Set(existing.map(row=>row.id)),baseClipIds=new Set(),heightClipIds=new Set();
+  for(const row of [...existing,...manifest.models]){
+    if(row.replacement_geometry)baseClipIds.add(row.id);
+    if(row.site_replacement)baseClipIds.add(row.site_replacement.id);
+  }
   const models=manifest.models.map(row=>{
     if(!row.id||ids.has(row.id)||row.kind!=='building'||!finitePoint([row.lng,row.lat])
       ||!Number.isFinite(row.heading)||!Number.isFinite(row.height_m)||row.height_m<=0
@@ -31,6 +45,13 @@ export function mergeCandidateCityModels(existing,manifest) {
     }
     for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
     if(row.site_replacement&&(!row.site_replacement.id||!validCandidateGeometry(row.site_replacement.geometry)))throw Error(`候选模型场址修正无效：${row.id}`);
+    if(row.display_height_clips!==undefined){
+      if(!Array.isArray(row.display_height_clips)||row.display_height_clips.length>8)throw Error(`候选模型高度裁剪无效：${row.id}`);
+      for(const c of row.display_height_clips){
+        if(!validCandidateHeightClip(c)||baseClipIds.has(c.id)||heightClipIds.has(c.id))throw Error(`候选模型高度裁剪无效：${row.id}`);
+        heightClipIds.add(c.id);
+      }
+    }
     if(row.navigation.listed&&(!finitePoint(row.navigation.walkStart)||!Number.isFinite(row.navigation.bearing)))throw Error(`候选模型漫游起点无效：${row.id}`);
     return {...row,candidate_id:row.id,city_integration:true,accepted:false,candidate_only:true,
       model:row.assets.web.file,lod_model:row.assets.lod.file,maxDistance:row.maxDistance??450,
@@ -63,7 +84,7 @@ export function candidateGeometryContains(g,p) {
  * Every correction is conditional on a currently visible, SHA-verified asset.
  */
 export class CandidateCityState {
-  constructor({getRecords,getScene,onChange=()=>{}}){Object.assign(this,{getRecords,getScene,onChange});this.active=[];this.clips=[];this.signature='';this.revision=0;}
+  constructor({getRecords,getScene,onChange=()=>{}}){Object.assign(this,{getRecords,getScene,onChange});this.active=[];this.clips=[];this.displayClips=[];this.signature='';this.revision=0;}
   sync(){
     const active=[...this.getRecords().values()].filter(r=>candidateAssetVisible(r,this.getScene()));
     const clips=new Map();
@@ -72,12 +93,13 @@ export class CandidateCityState {
       const site=r.site_replacement;
       if(site)clips.set(site.id,{...site,source_feature_ids:site.source_feature_ids||{}});
     }
-    const signature=JSON.stringify([active.map(r=>[r.id,r.activeVariant,r.assets[r.activeVariant==='full'?'web':'lod'].sha256]),[...clips.values()]]);
-    this.active=active;this.clips=[...clips.values()];
+    const displayClips=[...clips.values(),...active.flatMap(r=>r.display_height_clips||[])];
+    const signature=JSON.stringify([active.map(r=>[r.id,r.activeVariant,r.assets[r.activeVariant==='full'?'web':'lod'].sha256]),displayClips]);
+    this.active=active;this.clips=[...clips.values()];this.displayClips=displayClips;
     if(signature===this.signature)return false;
     this.signature=signature;this.revision++;this.onChange(this);return true;
   }
-  getState(){return {revision:this.revision,active:this.active.map(r=>({id:r.id,variant:r.activeVariant,assetSha256:r.assets[r.activeVariant==='full'?'web':'lod'].sha256})),clips:this.clips.map(c=>({id:c.id,geometry:c.geometry,source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners}))};}
+  getState(){return {revision:this.revision,active:this.active.map(r=>({id:r.id,variant:r.activeVariant,assetSha256:r.assets[r.activeVariant==='full'?'web':'lod'].sha256})),clips:this.clips.map(c=>({id:c.id,geometry:c.geometry,source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners})),displayClips:this.displayClips.map(c=>({id:c.id,geometry:c.geometry,source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners,...('min_height' in c?{min_height:c.min_height,max_height:c.max_height,height_reference:c.height_reference}:{})}))};}
   clipsPoint(lng,lat,source){
     if(!source)return false;
     return this.clips.some(c=>{

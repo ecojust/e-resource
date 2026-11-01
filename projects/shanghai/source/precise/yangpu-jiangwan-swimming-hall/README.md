@@ -1,6 +1,6 @@
 # 江湾游泳馆：历史池馆与现状屋盖
 
-[全局主地图直达](../../../index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) · [来源登记](source-register.json) · [文字审查](../../../data/audit/jiangwan-swimming-hall-v1/documentary-review.json) · [图像审查](../../../data/audit/jiangwan-swimming-hall-v1/photo-review.json)
+[全局主地图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) · [来源登记](source-register.json) · [文字审查](../../../data/audit/jiangwan-swimming-hall-v1/documentary-review.json) · [图像审查](../../../data/audit/jiangwan-swimming-hall-v1/photo-review.json)
 
 本件为江湾体育中心内独立游泳馆的有界外观，区分历史红砖池馆周墙、北端浅石门楼和后来加建的宽浅屋盖。室外体育场、北侧综合体育馆、外围白色轻型棚房、院区其他建筑及道路分别保留。整体地址国和路346号／淞沪路245号来自不同资料，独立馆门牌尚未单独核实；单馆完成不等于整条优秀历史建筑名录 `sh-historic-b1-021` 全部完成。
 

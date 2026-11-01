@@ -1,6 +1,6 @@
 # 上海跑马总会东楼与主钟塔候选检查 · 2026-10-30
 
-[模型查看](../../../race-club.html) · [来源与复跑](../../../source/precise/huangpu-shanghai-race-club-east-building/README.md) · [资产清单](../../../assets/models/candidates/huangpu-shanghai-race-club-east-building/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview) · [来源与复跑](../../../source/precise/huangpu-shanghai-race-club-east-building/README.md) · [资产清单](../../../assets/models/candidates/huangpu-shanghai-race-club-east-building/manifest.json)
 
 原始／近景159,396面、远景50,670面。网页近景2.85 MB、Blender4.52 MB。主塔53米取自次级资料，计高端点未核；主体104米设计长、平面、柱网、窗格、屋面交接及未见面均为估计。候选含东楼长主体与一座主钟塔，西楼与另记副塔未建。
 

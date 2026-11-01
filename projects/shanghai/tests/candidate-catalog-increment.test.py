@@ -194,6 +194,11 @@ class IncrementalCatalogTests(unittest.TestCase):
                   "navigation": {"listed": False}, "collision_geometry": detailed_collision,
                   "replacement_geometry": None, "source_feature_ids": {"building": [], "building_part": []},
                   "placement": {"status": "estimated", "note": "Test placement only"}}
+        height_clip = {"id": "new-fixture-north-upper-source", "geometry": geometry,
+                       "owner": {"macro_id": "14-13722-6690", "feature_local_id": 1860},
+                       "min_height": 28.705, "max_height": 30.11,
+                       "height_reference": [121.519775390625, 31.306714687449947]}
+        record["display_height_clips"] = [height_clip]
         (current.parent / "additional-placement.json").write_text(json.dumps({"records": [record]}))
         # The two original derived corridor assets already have frozen SHA evidence.
         with patch.object(builder, "checked_asset", return_value=b"") as derived:
@@ -208,6 +213,9 @@ class IncrementalCatalogTests(unittest.TestCase):
         self.assertEqual(catalog["models"][-1]["overviewBearing"], 180)
         self.assertEqual(catalog["models"][-1]["overviewPitch"], 50)
         self.assertEqual(catalog["models"][-1]["collision_geometry"], detailed_collision)
+        self.assertEqual(catalog["models"][-1]["display_height_clips"], [height_clip])
+        self.assertIsNone(catalog["models"][-1]["replacement_geometry"])
+        self.assertEqual(catalog["models"][-1]["source_feature_ids"], {"building": [], "building_part": []})
         self.assertEqual(self.baseline.read_bytes(), BASELINE_BYTES)
         for key in ("replacement_geometry", "site_replacement"):
             record[key] = detailed_collision if key == "replacement_geometry" else {"id": "test-site", "geometry": detailed_collision}
@@ -271,6 +279,34 @@ class CollisionGeometryBudgetTests(unittest.TestCase):
         pieces.append([self.ring(5, .0002, (121.49, 31.23))])
         with self.assertRaisesRegex(AssertionError, "Runtime collision point budget"):
             builder.checked_geometry(geometry, "4101 points", collision=True)
+
+
+
+
+class HeightDisplayClipValidationTests(unittest.TestCase):
+    def setUp(self):
+        self.clip = {"id": "north-upper", "geometry": {"type": "Polygon", "coordinates": [
+            [[121.5, 31.3], [121.5001, 31.3], [121.5001, 31.3001], [121.5, 31.3001], [121.5, 31.3]]]},
+            "owner": {"macro_id": "14-13722-6690", "feature_local_id": 1860},
+            "min_height": 28.705, "max_height": 30.11, "height_reference": [121.519775390625, 31.306714687449947]}
+
+    def test_height_clips_preserve_the_reviewed_geometry_owner_and_native_units(self):
+        self.assertEqual(builder.checked_height_clips([self.clip], "fixture"), [self.clip])
+
+    def test_invalid_ranges_references_owners_and_duplicate_ids_reject(self):
+        for values in [{"min_height": None}, {"max_height": None}, {"min_height": True},
+                       {"min_height": "28"}, {"min_height": float("nan")}, {"max_height": float("inf")},
+                       {"min_height": 30.11}, {"min_height": 32}, {"max_height": 1e100},
+                       {"height_reference": None}, {"height_reference": [121, 86]},
+                       {"height_reference": [121, 31, 0]}, {"height_reference": [float("nan"), 31]},
+                       {"owner": None}, {"owner": {"macro_id": "x", "feature_local_id": True}},
+                       {"owner": {"macro_id": "x", "feature_local_id": 0}}, {"owners": []},
+                       {"source_feature_ids": {"building": ["original"], "building_part": []}}]:
+            with self.subTest(values=values), self.assertRaises(AssertionError):
+                builder.checked_height_clips([{**self.clip, **values}], "fixture")
+        for clips in [None, {}, [self.clip, self.clip], [{**self.clip, "id": str(i)} for i in range(9)]]:
+            with self.subTest(clips=clips), self.assertRaises(AssertionError):
+                builder.checked_height_clips(clips, "fixture")
 
 
 if __name__ == "__main__":

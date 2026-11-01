@@ -1,6 +1,6 @@
 # 俄罗斯领事馆历史主楼外观候选检查 · 2026-10-30
 
-[独立模型](../../../russian-consulate.html) · [来源与复跑](../../../source/precise/hongkou-russian-consulate/README.md) · [资产清单](../../../assets/models/candidates/hongkou-russian-consulate/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) · [来源与复跑](../../../source/precise/hongkou-russian-consulate/README.md) · [资产清单](../../../assets/models/candidates/hongkou-russian-consulate/manifest.json)
 
 近景61,316面、远景15,824面，131处估计窗位。约44×24米主体与30.8米塔顶全部为设计估计，不是已核准测绘尺寸；三层立面加坡屋顶层只是对四层文字的候选解释。右侧封闭凸窗尚简化，未建园内凉亭，不把候选称为完整实物复原。
 

@@ -1,6 +1,6 @@
 # 华懋公寓历史主楼（锦江饭店锦北楼）
 
-[在上海主地图查看](../../../index.html#landmark=huangpu-cathay-mansions&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-cathay-mansions/manifest.json) · [本轮检查](../../../data/audit/cathay-mansions-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-mansions&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-cathay-mansions/manifest.json) · [本轮检查](../../../data/audit/cathay-mansions-v1/README.md)
 
 对象为长乐路的华懋公寓，即锦江饭店北楼／锦北楼。表现花园侧褐砖长立面、浅色窗框和竖线、多边凸窗，北侧两处凸翼及其间凹入空间、顶部退台和低层外观。峻岭公寓、花园内礼堂、其他锦江楼栋、新锦江大酒店及和平饭店均为其他对象，不并入本件。
 

@@ -1,8 +1,8 @@
 # 上海鲁迅故居正立面与院门候选
 
-**本轮更新：**[进入独立模型室外漫游](../../../luxun-residence.html#mode=model-walk)。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
+**本轮更新：**[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview)。以下为当时独立页交付记录；当前入口已接入全局地图。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
 
-[独立预览](../../../luxun-residence.html) · [模型清单与下载](../../../assets/models/candidates/hongkou-luxun-residence-facade/manifest.json) · [验证记录](../../../data/audit/luxun-residence-facade-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) · [模型清单与下载](../../../assets/models/candidates/hongkou-luxun-residence-facade/manifest.json) · [验证记录](../../../data/audit/luxun-residence-facade-v1/README.md)
 
 本批制作山阴路132弄9号的**正立面与院门构件**：逐块跑马砖、拱形入口及退进门扇、二层六扇分格窗（右两扇开启）、三层阳台门和两侧窗、弧角钢栏杆、双托架、上部阶梯饰块、凹槽门柱、扇形与V形铁艺。完整模型33,880个三角面，远景7,348面。原生Blender文件可编辑，内嵌原创石质PBR；预览地面、灯光、相机属于单独的展示集合。
 

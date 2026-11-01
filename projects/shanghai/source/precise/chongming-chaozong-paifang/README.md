@@ -1,6 +1,6 @@
 # 崇明学宫东牌坊（题名面待核）：结构参照候选
 
-[独立预览](../../../east-paifang.html) · [资产清单](../../../assets/models/candidates/chongming-chaozong-paifang/manifest.json) · [检查记录](../../../data/audit/east-paifang-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-chaozong-paifang/manifest.json) · [检查记录](../../../data/audit/east-paifang-v1/README.md)
 
 本件以2021年官方文字中的物理东座为独立身份；官方东座题名组为“德配天地／朝宗”，作为有出处的文献字段保留。沿用资产ID `chongming-chaozong-paifang` 仅为兼容旧队列名称，**不表示已验收“朝宗”近景属于东座某面。两面匾额均留空，不雕刻题字。** 照片近景与物理座别、正反面之间的完整身份链仍未建立，后坡、柱后支承及细部尺寸均包含估计。
 

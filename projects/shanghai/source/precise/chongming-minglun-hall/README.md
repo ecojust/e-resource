@@ -1,6 +1,6 @@
 # 崇明学宫明伦堂：文字尺寸参照候选
 
-[独立预览](../../../minglun-hall.html) · [资产清单](../../../assets/models/candidates/chongming-minglun-hall/manifest.json) · [检查记录](../../../data/audit/minglun-hall-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-minglun-hall/manifest.json) · [检查记录](../../../data/audit/minglun-hall-v1/README.md)
 
 依据旧馆20.6×12.7×10.37米文字制作独立候选，参考题注“明伦堂”的树遮庭院照片表达木立面、浅墙、灰瓦片段和抬高入口概念。**2021年官方另记高10.5米，保留为未解决的另一版本；没有平均两个高度。历史“原共有五楹”不证明现代柱网，模型五分区、门窗、前廊和屋顶均有估计。**
 

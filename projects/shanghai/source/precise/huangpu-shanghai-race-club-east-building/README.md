@@ -1,6 +1,6 @@
 # 上海跑马总会历史东楼与主钟塔：外观候选
 
-[模型查看与外围漫游](../../../race-club.html) · [资产清单](../../../assets/models/candidates/huangpu-shanghai-race-club-east-building/manifest.json) · [检查记录](../../../data/audit/race-club-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-race-club-east-building&mode=overview) · [资产清单](../../../assets/models/candidates/huangpu-shanghai-race-club-east-building/manifest.json) · [检查记录](../../../data/audit/race-club-v1/README.md)
 
 参照Livelikerw摄于2013-12-22的整体外观照片，制作东楼长主体与一座高主钟塔。包含深柱廊、浅色楼层带与凸出翼、红褐墙面、后部红色坡屋顶、两面钟盘、开放塔亭及红瓦塔顶。西楼、庭院连接体、另记副钟塔及邻楼不在本件范围，照片前方工商银行弧形楼、后方上海大剧院均未并入。
 

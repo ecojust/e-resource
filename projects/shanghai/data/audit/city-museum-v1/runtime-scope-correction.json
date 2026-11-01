@@ -1,0 +1,25 @@
+{
+  "schema": "city-museum-runtime-scope-correction-v1",
+  "baseline_commit": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "initial_final_integration_attempt_passed": false,
+  "initial_failure": "The original invariant rejected a modified historical audit README; this turn separately authorizes explicit README main-map entry migration.",
+  "followup_validator_failure": "A first exact-migration validator listed only audit/ and source/precise/, omitting the one explicitly listed source/surfaces/README.md.",
+  "correction": "Pin navigation report and its README by exact SHA256, require its64 paths, replay every unique literal replacement from baseline to the exact current after SHA, and allow only these M paths plus the two pinned new artifacts. No binary asset or unrelated file exception.",
+  "navigation_report": {
+    "file": "data/audit/readme-navigation-v1/report.json",
+    "bytes": 131357,
+    "sha256": "65c7cbcac92d92c48fbfeb1fb648a10f637be0847cf4d14be12b81b40ae63569"
+  },
+  "navigation_readme": {
+    "file": "data/audit/readme-navigation-v1/README.md",
+    "bytes": 1392,
+    "sha256": "a2d934338d4f7048f00caba65f7c973a29206e7f84bafa18b4c496671064e006"
+  },
+  "final_integration_groups_passed": 7,
+  "actual_new_production_fault_found": false,
+  "final_script": {
+    "file": "data/audit/city-museum-v1/global-integration-checks.mjs",
+    "bytes": 21021,
+    "sha256": "8908c33e4fd45a17f5d28d201efc5f909dcf4dbb3bb714c9fd1372ae012d8029"
+  }
+}

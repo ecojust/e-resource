@@ -1,6 +1,6 @@
 # 崇明学宫戟门：2005年照片与文献参照候选
 
-[独立预览与模型室外漫游](../../../ji-gate.html) · [资产清单](../../../assets/models/candidates/chongming-ji-gate/manifest.json) · [检查记录](../../../data/audit/ji-gate-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ji-gate&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-ji-gate/manifest.json) · [检查记录](../../../data/audit/ji-gate-v1/README.md)
 
 新增五开间戟门（大成门）外观候选：连续曲面瓦顶、瓦垄及瓦当、简化透孔脊带、中央贯通门洞、两侧红色实板门、外围白墙、圆柱与石柱脚、檐下椽条和檩条、蓝色无字匾额。屋面与门洞独立编写，没有把崇圣祠的歇山顶和格扇整栋缩放。
 

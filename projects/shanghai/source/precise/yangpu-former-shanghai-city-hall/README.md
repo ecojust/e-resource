@@ -1,6 +1,6 @@
 # 旧上海特别市政府大楼（绿瓦大楼）
 
-[在上海全局模型中查看](../../../index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview)
+[在上海全局模型中查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview)
 
 对应第一批名录 `sh-historic-b1-020`，地点为杨浦区清源环路650号、上海体育大学内；修缮资料另记长海路399号。本楼与黄浦区公共租界工部局“老市府大楼”分别建模。
 

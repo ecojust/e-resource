@@ -1,6 +1,6 @@
 # 上海16区地面与水系：平面模型第一批
 
-[打开模型查看页](../../surfaces.html) · [逐区资产与校验值](../../assets/surfaces/manifest.json) · [几何验收](../../data/audit/surfaces-v1/geometry.json) · [Blender重新打开记录](../../data/audit/surfaces-v1/native.json) · [网页验收](../../data/audit/surfaces-v1/browser.json)
+[在上海主地图查看地面与水系](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=overview) · [逐区资产与校验值](../../assets/surfaces/manifest.json) · [几何验收](../../data/audit/surfaces-v1/geometry.json) · [Blender重新打开记录](../../data/audit/surfaces-v1/native.json) · [网页验收](../../data/audit/surfaces-v1/browser.json)
 
 新增16套可编辑的地面／水面模型，每套包括GLB、Blender和GIS分区边界。查看页可选择各区或合并显示16区，分别开关非水域底面和地图水面，并下载对应模型。下载后用本地HTTP服务器打开网页，无需在线地图服务。
 

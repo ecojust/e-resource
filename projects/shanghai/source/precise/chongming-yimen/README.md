@@ -1,6 +1,6 @@
 # 崇明学宫仪门：照片形态参照候选
 
-[独立预览](../../../yimen.html) · [资产清单](../../../assets/models/candidates/chongming-yimen/manifest.json) · [检查记录](../../../data/audit/yimen-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-yimen&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-yimen/manifest.json) · [检查记录](../../../data/audit/yimen-v1/README.md)
 
 依据题注明确的正面照片制作曲线白端墙、弧坡灰瓦屋面、两根内柱、两侧各6个格窗分区、帘两侧各2个可见格窗分区及中央米色折帘。竖匾只保留蓝绿色底与边框，文字留空。**模型最高点7.0米是形态设计估计，文献高度9.07米另列，二者尚未调和；没有像素换算或照片比例验收。**
 

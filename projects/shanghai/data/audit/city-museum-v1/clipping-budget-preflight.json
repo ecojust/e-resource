@@ -1,0 +1,146 @@
+{
+  "schema": "city-museum-clipping-budget-preflight-v1",
+  "passed": true,
+  "baseline": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "scope": "Frozen40-candidate catalogue metadata passed through baseline and capacity-adjusted production clippers. No historical GLB assets read. Six explicit owner fixtures construct standard/depth/distance shader source; actual source geometry, final museum masks and real GPU rendering remain separate.",
+  "budget": {
+    "previous_catalogue_rows": 218,
+    "old_capacity": 224,
+    "capacity": 288,
+    "available_rows_before_new_model": 70,
+    "texture_width": 4,
+    "texture_bytes": 18432,
+    "production_change_only_capacity": true,
+    "new_model_rows_not_yet_final": true
+  },
+  "frozen_catalogue": {
+    "records": 40,
+    "sha256": "7b5756f3c3f54638b484c87c102bda02b28e6cbd2ad12b6be4f0308fb14a6027"
+  },
+  "production_script": {
+    "file": "src/candidate-city-clipping.js",
+    "bytes": 10046,
+    "sha256": "c7e46055df04fdb4f5a60dc0ab14385e5c28f3564658d0869d0372b511a479b8"
+  },
+  "baseline_script_sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd",
+  "historical_payload": {
+    "rows": 218,
+    "bytes": 13952,
+    "old_sha256": "f2400a2fbfec5d114227c0a7e6bab4afdeef3a9cfde09015a401b5383e805dcb",
+    "new_sha256": "f2400a2fbfec5d114227c0a7e6bab4afdeef3a9cfde09015a401b5383e805dcb",
+    "identical": true,
+    "padding_zero": true,
+    "owners_identical": true
+  },
+  "material_shader_checks": [
+    {
+      "name": "stadium-west-untagged",
+      "feature_ids": [
+        1646
+      ],
+      "scoped_rows": 25,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_capacity": true
+    },
+    {
+      "name": "stadium-east-shared-untagged",
+      "feature_ids": [
+        1816,
+        1768,
+        677,
+        2225
+      ],
+      "scoped_rows": 20,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_capacity": true
+    },
+    {
+      "name": "gym-shared-untagged",
+      "feature_ids": [
+        1709,
+        112,
+        1672,
+        2097,
+        349,
+        337,
+        480,
+        1558,
+        143,
+        2066,
+        2020,
+        1639
+      ],
+      "scoped_rows": 10,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_capacity": true
+    },
+    {
+      "name": "swimming-shared-untagged",
+      "feature_ids": [
+        1162,
+        1666,
+        1870,
+        769,
+        1110
+      ],
+      "scoped_rows": 16,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_capacity": true
+    },
+    {
+      "name": "future-city-museum-eight-owner-group",
+      "feature_ids": [
+        1262,
+        1860,
+        1931,
+        510,
+        958,
+        1061,
+        169,
+        1697
+      ],
+      "scoped_rows": 0,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_capacity": true
+    },
+    {
+      "name": "far-per-vertex-owners",
+      "feature_ids": null,
+      "scoped_rows": 218,
+      "passes": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ],
+      "payload_equal": true,
+      "shader_equal_except_capacity": true
+    }
+  ],
+  "all_row_centres_addressable": true,
+  "boundary_tests": "clipping-budget-tests.tap: ten production tests check global/scoped row addressing, capacity+1 rejection preserving state, source owners and shadow materials."
+}

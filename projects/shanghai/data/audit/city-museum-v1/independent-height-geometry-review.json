@@ -1,0 +1,149 @@
+{
+  "schema": "city-museum-independent-height-geometry-v1",
+  "passed": true,
+  "scope": "Incremental original-source geometry proof; no authored model reconstruction, no browser, and no claim of exact GPU rasterization. Numerical error bounds and actual final pixels require separately bound reviews.",
+  "bindings": {
+    "preflight": {
+      "file": "/workspace/e-resource/projects/shanghai/data/audit/city-museum-v1/height-clip-input.json",
+      "sha256": "1e940561427d318799ed20abb2d537aa5ebb1b7f3a4c4034feeeff3b2dcc2967"
+    },
+    "contract": {
+      "file": "/workspace/e-resource/projects/shanghai/data/audit/city-museum-v1/final-placement-contract.json",
+      "sha256": "1a7a4205f75d350abfbac3925be12d1dc88d973360f08ca8116e2114dab25075"
+    },
+    "actual_gpu_rows": {
+      "file": "/workspace/e-resource/projects/shanghai/data/audit/city-museum-v1/gpu-height-rows.f32",
+      "bytes": 16768,
+      "sha256": "ce4d45d3a9472b07790959cdb6052c715ea4411334d6399e2bccf9baac0feb09"
+    },
+    "original_near_triangle_payload_sha256": "694100ef0513e4b9fa05e8d6dd31edb461e162799d4c11b22750ee8237d3f0da",
+    "original_far_triangle_payload_sha256": "66720439a5a4c18f822763f8e252561f0210db882285aba5fe06d35b66bfdd8e",
+    "original_placement_footprint_sha256": "e9d64114076245388cb2c45b780a68b06301090c227e7f0dab4b896abe794f6e",
+    "original_city_review_sha256": "bfb0fd870a58e597dc30360f6a5ff972104ab7d0e112d9189b4831e6a0245c8b",
+    "script_sha256": "600a649f0d2ed02e569e52f3d23e07bc7faf71348a0cf57edfec44738b523c23"
+  },
+  "changed_contract_keys": [
+    "display_height_clips",
+    "expected_display_height_triangle_count",
+    "expected_global_clip_triangle_count",
+    "expected_model_gpu_clip_triangle_count",
+    "registration_note",
+    "source_retained_actual_native_projection_area_after_height_clips_m2",
+    "source_retained_actual_native_projection_scope"
+  ],
+  "all_other_contract_fields_exactly_equal": true,
+  "all_model_assets_and_2d_vector_collision_fields_unchanged": true,
+  "clip_rows": {
+    "base_2d": 40,
+    "new_height": 4,
+    "museum_gpu": 44,
+    "all_city_gpu": 262,
+    "capacity": 288
+  },
+  "near_possible_owners_complete": true,
+  "ambiguous_triangles": 2468,
+  "possible_owner_index_payload": {
+    "file": "/workspace/shanghai-city-museum-review/height-fix-history/possible-owner-indices.json",
+    "sha256": "837bebbcafc978460c3dcec53ccfce7b42955980748daf2688f192b71745c018"
+  },
+  "world_y": {
+    "source_anchor": [
+      121.519775390625,
+      31.306714687449947
+    ],
+    "analytic_scale": 1.0008091603120683,
+    "actual_float32_range": [
+      28.728227615356445,
+      30.134363174438477
+    ],
+    "native_interval": [
+      28.705,
+      30.11
+    ],
+    "neighbor1262_max_native": 28.700000762939453,
+    "raw_world_y_margin_before_roundoff_bound": 0.005003950843288862
+  },
+  "northern_complete_support": {
+    "actual_triangle_pieces": 85,
+    "before_projection_m2_world": 0.7739698527025326,
+    "before_projection_boundary_or_line_length_world": 13.42859913901155,
+    "after_geometry_is_empty": true,
+    "uncovered_triangles": [],
+    "robust_margin_world_m": 0.003,
+    "uncovered_triangles_after_inward_margin": [],
+    "method": "Every selected actual height-clipped triangle, including degenerate projected lines/points, is intersected with the two northern patch neighborhoods and proved contained in union of actual Float32 triangle polygons intersected with their strict GPU bboxes; 3mm inward margin remains. No area-only zero criterion."
+  },
+  "foreign_gpu_acceptance_region": {
+    "shader_cross_literal_float32": 0.0010000000474974513,
+    "per_row_cross_arithmetic_error_bounds": [
+      2.488173312662892e-07,
+      2.4970366243336473e-07,
+      8.928002335157256e-08,
+      8.911350052624321e-08
+    ],
+    "method": "Union of both three-half-plane sign branches with epsilon plus binary32/FMA cross error, intersected with each strict GPU bbox; foreign support is tested against this full region plus3mm source-transform displacement.",
+    "expanded_region_area_world": 0.9112298088151881,
+    "ideal_triangle_region_area_world": 0.9090163707733154
+  },
+  "foreign_possible_owner_protection": [
+    {
+      "owner": 169,
+      "possible_original_triangles": 2688,
+      "native_max_z": 30.700000762939453,
+      "height_slab_triangles": 208,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "full height-clipped triangle support spatially separate from expanded new GPU regions"
+    },
+    {
+      "owner": 510,
+      "possible_original_triangles": 8264,
+      "native_max_z": 31.399999618530273,
+      "height_slab_triangles": 964,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "full height-clipped triangle support spatially separate from expanded new GPU regions"
+    },
+    {
+      "owner": 958,
+      "possible_original_triangles": 5394,
+      "native_max_z": 30.0,
+      "height_slab_triangles": 494,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "full height-clipped triangle support spatially separate from expanded new GPU regions"
+    },
+    {
+      "owner": 1061,
+      "possible_original_triangles": 15920,
+      "native_max_z": 31.200000762939453,
+      "height_slab_triangles": 1452,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "full height-clipped triangle support spatially separate from expanded new GPU regions"
+    },
+    {
+      "owner": 1262,
+      "possible_original_triangles": 7314,
+      "native_max_z": 28.700000762939453,
+      "height_slab_triangles": 0,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "all vertices below lower threshold"
+    },
+    {
+      "owner": 1697,
+      "possible_original_triangles": 5394,
+      "native_max_z": 29.399999618530273,
+      "height_slab_triangles": 494,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "full height-clipped triangle support spatially separate from expanded new GPU regions"
+    },
+    {
+      "owner": 1931,
+      "possible_original_triangles": 2478,
+      "native_max_z": 30.600000381469727,
+      "height_slab_triangles": 204,
+      "triangles_touching_full_cross_epsilon_gpu_regions_plus3mm": 0,
+      "protection": "full height-clipped triangle support spatially separate from expanded new GPU regions"
+    }
+  ],
+  "far_target_triangle_pieces": 8,
+  "far_actual_feature_ids_prevent_foreign_eligibility": true,
+  "numeric_boundary_limitation": "A native band of about5mm above1262 is deliberately below the new threshold to preserve original geometry under Float32 error. Do not claim zero original-source residual or a measured building height."
+}

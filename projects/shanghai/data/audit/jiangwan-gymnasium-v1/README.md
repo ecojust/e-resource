@@ -1,6 +1,6 @@
 # 江湾体育馆历史主楼接入主地图
 
-[全局主图直达](../../../index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) · [来源与重建](../../../source/precise/yangpu-jiangwan-gymnasium/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json)
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) · [来源与重建](../../../source/precise/yangpu-jiangwan-gymnasium/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json)
 
 本件为江湾体育中心内独立封闭体育馆，西端朝向室外主场。交付弧形屋面、纵向天窗、砖长墙、高侧窗、两端外观及西侧浅石三拱入口；室内球场、观众席、屋架与场馆外道路不作为本栋建筑网格。已建室外看台环、独立游泳馆和其他邻楼分别保留，本轮不关闭整条名录b1-021。
 

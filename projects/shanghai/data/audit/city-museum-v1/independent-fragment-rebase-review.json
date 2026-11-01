@@ -1,0 +1,420 @@
+{
+  "schema": "city-museum-independent-fragment-rebase-v1",
+  "passed": true,
+  "script": {
+    "file": "projects/shanghai/data/audit/city-museum-v1/independent-bind-fragment-rebase.py",
+    "bytes": 14025,
+    "sha256": "5b6147cb2dc8d07e896cea0b32eef668c79ca7602a63aaf51e653dbba24da3a4"
+  },
+  "reviewed_utc": "2026-11-01T14:02:30.318576+00:00",
+  "required_final_browser_stage": "fragment-rebased-final",
+  "final_browser_pending": true,
+  "scope": "Independent five-file exact patch replay, shader semantics and actual failed-fragment/readback/reversible-variant evidence. Original four authored assets/native and source geometry were not decoded or rerun. Fresh final browser views and its four real-GL fixtures are still required.",
+  "changed_files": [
+    "projects/shanghai/index.html",
+    "projects/shanghai/src/app.js",
+    "projects/shanghai/src/candidate-city-clipping.js",
+    "projects/shanghai/src/map-scene.js",
+    "projects/shanghai/tests/candidate-city-clipping.test.mjs"
+  ],
+  "all_existing_runtime_source_files_exactly_pinned": 9,
+  "exact_patch_replay_equals_production": true,
+  "prior_height_review": {
+    "file": "projects/shanghai/data/audit/city-museum-v1/independent-height-clip-review.json",
+    "bytes": 8482,
+    "sha256": "9b82631aeae50002147fdc89bbdc7bad42975f44339756d84567fbbded28f6c3"
+  },
+  "current_input_bindings": [
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-runtime-source-change.json",
+      "bytes": 1799,
+      "sha256": "b1a644cbada4d02f6c152debd8c475e16281f8bb6559c6fcbd0a1be695be30b8"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/runtime-height-source-change.json",
+      "bytes": 3446,
+      "sha256": "d7a39f4b602048f5b0f806bc3c6216433eb7a63b8bb4d29ec4329207c2ad33ed"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/runtime-height-source-change-pre-fragment-rebase.json",
+      "bytes": 3099,
+      "sha256": "058bb5878b7dc7afcd7bf35b9f4010dd441613dd55c3473ffa1b2e29ede228d9"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-coordinate-stability.json",
+      "bytes": 7155,
+      "sha256": "c95f45cad164ce979a4a03048d87cb7a62173165ec07806cd34197a485c8acea"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/height-clipping-checks.json",
+      "bytes": 9330,
+      "sha256": "637b233b285ee0093e4f7d11f797ad9d08457429d5870a922def7c04cee081df"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/height-focused-tests.json",
+      "bytes": 1830,
+      "sha256": "2520926e61b08a13c4c18c6c9d04b052c25afc4792624ad8f9661464514aef17"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/runtime-checks.json",
+      "bytes": 39237,
+      "sha256": "44ec4883cc53e7e672e4b65500d4475673a19588073ca14be5396dcd4de01c80"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/global-integration-checks.json",
+      "bytes": 22797,
+      "sha256": "60ecb0ff998ddbf763ee9590dab2e634f5e537bef1b81de31dc338d99515319e"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/gpu-height-rows.f32",
+      "bytes": 16768,
+      "sha256": "ce4d45d3a9472b07790959cdb6052c715ea4411334d6399e2bccf9baac0feb09"
+    },
+    {
+      "file": "projects/shanghai/src/candidate-city-clipping.js",
+      "bytes": 11485,
+      "sha256": "b0bd7aa0140414cdda39224b7ea0702222f3290fb65acf56034fe882a1429f32"
+    },
+    {
+      "file": "projects/shanghai/src/candidate-city-integrations.js",
+      "bytes": 7816,
+      "sha256": "5418ae01bf129e2f3ac08b528bb8eae4c0824dfe99364798f1b5e1d3d105999d"
+    },
+    {
+      "file": "projects/shanghai/src/map-scene.js",
+      "bytes": 60291,
+      "sha256": "92febd9b2c31c480c4cf48b5b91bae1c0a500b7b66bcbe88712bcc75ce764e35"
+    },
+    {
+      "file": "projects/shanghai/src/app.js",
+      "bytes": 22133,
+      "sha256": "4ac572c016ad5adf3815b3dab77ea1543a9bcd0dea31f8b1e0c0f7cdd3c53520"
+    },
+    {
+      "file": "projects/shanghai/index.html",
+      "bytes": 9055,
+      "sha256": "3c77ace894d05406ade662fcb9459fad7c17913bf279b587028155b6bcdeade7"
+    },
+    {
+      "file": "projects/shanghai/tools/build_candidate_city_integrations.py",
+      "bytes": 35565,
+      "sha256": "e0500ce6c7399c56d8f4f9adb9c36c1dce35879320f4551fd221d9fda8e2602e"
+    },
+    {
+      "file": "projects/shanghai/tests/candidate-city-clipping.test.mjs",
+      "bytes": 17758,
+      "sha256": "62dbca03947f284a2dfae483a4911972fb51093c193d341ed30c05c6708b3cc8"
+    },
+    {
+      "file": "projects/shanghai/tests/candidate-geometry.test.mjs",
+      "bytes": 10706,
+      "sha256": "e3ed92932892320a3a7c624e70111eafc64b377794154180b330ccd61cc0b491"
+    },
+    {
+      "file": "projects/shanghai/tests/candidate-catalog-increment.test.py",
+      "bytes": 20612,
+      "sha256": "64ecc5ad077fa1a18ac2a73ec029e3bafc7dc3fdbcd162c0e0d001a01d6d7a6a"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/footprint-review.json",
+      "bytes": 1336448,
+      "sha256": "f784f4a34b3b9651a8bed640370e655fd34a9b85d36124b19490904333c3ba38"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/final-placement-contract.json",
+      "bytes": 20465,
+      "sha256": "1a7a4205f75d350abfbac3925be12d1dc88d973360f08ca8116e2114dab25075"
+    },
+    {
+      "file": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
+      "bytes": 5541,
+      "sha256": "6932e2a77d115b9f0983ee6e60ae9754c039847ce96e6ba89fb3a93d1cb0225e"
+    },
+    {
+      "file": "projects/shanghai/data/candidate-city-integrations.json",
+      "bytes": 438083,
+      "sha256": "ef19dcbf13e4df91a0674fdbd7ad504f1262bb799c4c7d67b3b4313897dea014"
+    },
+    {
+      "file": "projects/shanghai/data/global-models/additional-placement.json",
+      "bytes": 385367,
+      "sha256": "87c568d56d9af0273b602bc454919b21bec62476c2481cbee45bfdf1f5e8ccd8"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-diagnostic/draw-pixels.json",
+      "bytes": 61717,
+      "sha256": "796e167376c9a8aa2a5748f285e01024374f734afebc83d1c6eb7412ff657ef1"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-diagnostic/dark-pixels.json",
+      "bytes": 160003,
+      "sha256": "f2885c13079cdde180e3d2a4d2d3f19de9cb1698c200e5c0a414248a14e22343"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-diagnostic/varying.json",
+      "bytes": 296904,
+      "sha256": "ed78a68b568374f759e0302530727868421b0117ec61a262a16a977f250306d5"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-diagnostic/rebase.json",
+      "bytes": 475185,
+      "sha256": "1d8b429ef59b63b1425375f6d2734f2e69b2943cb6477d9f207614840880c905"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-diagnostic/normal-color.png",
+      "bytes": 413106,
+      "sha256": "d4d88705f63dee029cb3e93dc730a429b2402ef0d8e54bd8e4acd5d033f1c7b8"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-diagnostic/restored-original.png",
+      "bytes": 413656,
+      "sha256": "72b24e6ea1d6fc02db4fe6e2620007619c42a2576b511cd23774fbc9d3b581da"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-runtime-source-change.patch",
+      "bytes": 12371,
+      "sha256": "9d721844860738d85b4bb0171d038c55582b8f5a8ec7ec6942ea94c8ada0e749"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/fragment-focused-tests.tap",
+      "bytes": 7148,
+      "sha256": "50bb9e9cb70b4bbd697ebfbb4bd1fc954282cd3214bc7d04dd6b96edad70c2d9"
+    },
+    {
+      "file": "projects/shanghai/vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    {
+      "file": "projects/shanghai/data/audit/city-museum-v1/independent-bind-fragment-rebase.py",
+      "bytes": 14025,
+      "sha256": "5b6147cb2dc8d07e896cea0b32eef668c79ca7602a63aaf51e653dbba24da3a4"
+    }
+  ],
+  "historical_input_bindings": [
+    {
+      "recorded_file": "projects/shanghai/data/audit/city-museum-v1/height-clipping-checks.json",
+      "archive_binding": {
+        "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/frozen-before/projects/shanghai/data/audit/city-museum-v1/height-clipping-checks.json",
+        "bytes": 9330,
+        "sha256": "a9f8e2316bb22e701bcd2b9b7b5e5010b459ddfb15ee76f953b9b33bebce32c4"
+      }
+    },
+    {
+      "recorded_file": "projects/shanghai/src/candidate-city-clipping.js",
+      "archive_binding": {
+        "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/frozen-before/projects/shanghai/src/candidate-city-clipping.js",
+        "bytes": 11047,
+        "sha256": "2485fcd4e15b6a90acdb423ffe2e3371af6a183821e062199390c619ef998e9d"
+      }
+    },
+    {
+      "recorded_file": "projects/shanghai/src/map-scene.js",
+      "archive_binding": {
+        "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/frozen-before/projects/shanghai/src/map-scene.js",
+        "bytes": 60291,
+        "sha256": "87f0a9491a07caac3a5b9731ce75422a651f84f07f526e33a12ee3b7b8c9de9f"
+      }
+    },
+    {
+      "recorded_file": "projects/shanghai/src/app.js",
+      "archive_binding": {
+        "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/frozen-before/projects/shanghai/src/app.js",
+        "bytes": 22133,
+        "sha256": "16dd15cbf654bd82987821786be40181a8b745e4d50440afa3d9d5fae2f3f5e1"
+      }
+    },
+    {
+      "recorded_file": "projects/shanghai/index.html",
+      "archive_binding": {
+        "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/frozen-before/projects/shanghai/index.html",
+        "bytes": 9055,
+        "sha256": "d86a032fce65763b80298a62820dfdfbe309a6bb2da5c8aa772cf5276e528001"
+      }
+    }
+  ],
+  "diagnostic_bindings": [
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-draw-pixels-diagnostic.json",
+      "bytes": 61717,
+      "sha256": "796e167376c9a8aa2a5748f285e01024374f734afebc83d1c6eb7412ff657ef1"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-gpu-diagnostic.json",
+      "bytes": 449878,
+      "sha256": "0c42e2ce0cf66cc522b28d42a16b080b1e3578b544ca0714bfd1bd68848d4ce1"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-dark-pixels-diagnostic.json",
+      "bytes": 160003,
+      "sha256": "f2885c13079cdde180e3d2a4d2d3f19de9cb1698c200e5c0a414248a14e22343"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-varying-diagnostic.json",
+      "bytes": 296904,
+      "sha256": "ed78a68b568374f759e0302530727868421b0117ec61a262a16a977f250306d5"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-rebase-diagnostic.json",
+      "bytes": 475185,
+      "sha256": "1d8b429ef59b63b1425375f6d2734f2e69b2943cb6477d9f207614840880c905"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-rebase-diagnostic-normal-color.png",
+      "bytes": 413106,
+      "sha256": "d4d88705f63dee029cb3e93dc730a429b2402ef0d8e54bd8e4acd5d033f1c7b8"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-qa/north-interface-after-rebase-restored.png",
+      "bytes": 413656,
+      "sha256": "72b24e6ea1d6fc02db4fe6e2620007619c42a2576b511cd23774fbc9d3b581da"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/diagnostic-visual-review.json",
+      "bytes": 1297,
+      "sha256": "3e57e0534b53e36f23ed862bf9f281b137bbd7c5fd07f6093e9495cd06d2a655"
+    },
+    {
+      "file": "/workspace/shanghai-city-museum-runtime/rebase/rebase-source.patch",
+      "bytes": 12371,
+      "sha256": "9d721844860738d85b4bb0171d038c55582b8f5a8ec7ec6942ea94c8ada0e749"
+    }
+  ],
+  "actual_fragment_replay": [
+    {
+      "pixel": [
+        1043.5,
+        443.5
+      ],
+      "actual_fragment_xyz": [
+        4761.578125,
+        30.067304611206055,
+        -8972.8525390625
+      ],
+      "same_pixel_ray_xyz": [
+        4761.573759896822,
+        30.06663852974872,
+        -8972.87380044821
+      ],
+      "actual_minus_ray_m": [
+        0.004365103178315621,
+        0.0006660814573358209,
+        0.0212613857092947
+      ],
+      "actual_matching_rows": [],
+      "row42_cross": [
+        0.09289121627807617,
+        -0.030643939971923828,
+        0.11016225814819336
+      ]
+    },
+    {
+      "pixel": [
+        1045.5,
+        446.5
+      ],
+      "actual_fragment_xyz": [
+        4761.79052734375,
+        30.058916091918945,
+        -8972.853515625
+      ],
+      "same_pixel_ray_xyz": [
+        4761.786364061938,
+        30.058266669422586,
+        -8972.876013517009
+      ],
+      "actual_minus_ray_m": [
+        0.0041632818119978765,
+        0.000649422496358909,
+        0.022497892008686904
+      ],
+      "actual_matching_rows": [],
+      "row42_cross": [
+        0.0796060562133789,
+        -0.033969879150390625,
+        0.12677335739135742
+      ]
+    },
+    {
+      "pixel": [
+        1050.5,
+        454.5
+      ],
+      "actual_fragment_xyz": [
+        4762.3212890625,
+        30.02373504638672,
+        -8972.857421875
+      ],
+      "same_pixel_ray_xyz": [
+        4762.316436944628,
+        30.02314015115893,
+        -8972.881531225272
+      ],
+      "actual_minus_ray_m": [
+        0.004852117872360395,
+        0.0005948952277883279,
+        0.02410935027182859
+      ],
+      "actual_matching_rows": [],
+      "row42_cross": [
+        0.046393394470214844,
+        -0.038243770599365234,
+        0.1642599105834961
+      ]
+    }
+  ],
+  "diagnostic_cause": "Large world coordinates interpolated across the long thin source triangle produced 21–24 mm Z drift at the three surviving fragments. Actual uploaded rows rejected those fragment positions at their triangle half-planes; same-pixel ray geometry passed. Moving object translation after interpolation, with unchanged clipping rows and source geometry, removed the fragment in the reversible normal-colour diagnostic.",
+  "gpu_rows_byte_identical": true,
+  "gpu_rows": {
+    "global": 262,
+    "museum": 44,
+    "planar_global": 258,
+    "height": 4,
+    "capacity": 288
+  },
+  "authored_assets_and_2d_geometry_unchanged": true,
+  "native_3d_reopen_or_model_matrix_repeated": false,
+  "browser_launched_by_reviewer": false,
+  "historical_numeric_scope": "The unchanged height proof bounds source vertices, rows and geometry only; its original changed-code/runtime inputs are bound to exact retained snapshots. It never certified GPU fragment interpolation.",
+  "static_shader_review": {
+    "object_translation_added_after_interpolation": true,
+    "batch_then_instance_order_preserved": true,
+    "three_builtin_modelMatrix_uploaded_per_object": true,
+    "shared_program_uniform_updates_supported": true,
+    "depth_distance_same_upload_path": true,
+    "physical_transmission_declaration_and_order_preserved": true,
+    "program_cache_key": "candidate-city-clip-v3",
+    "public_version_chain": "city-height-clips-v2"
+  },
+  "limits": [
+    "The reversible one-material diagnostic is not the final production browser acceptance.",
+    "The final fresh run must pass actual northern interfaces 3 and 4, retained-neighbor protection, all required views, and the four actual GPU fixture cases.",
+    "The failed height-fixed run, its rejected image and single empty-control input recovery remain privately archived; no failure exception is inherited."
+  ],
+  "baseline_and_pre_height_epoch_distinction": {
+    "differences": [
+      {
+        "file": "projects/shanghai/src/candidate-city-clipping.js",
+        "baseline_sha256": "f226eb1aeafa785f63edc94920629b857d0c409a7da572d4715ee2cf1faddbcd",
+        "retained_pre_height_sha256": "c7e46055df04fdb4f5a60dc0ab14385e5c28f3564658d0869d0372b511a479b8"
+      },
+      {
+        "file": "projects/shanghai/index.html",
+        "baseline_sha256": "86fae45eff6b1f7c39e3d65b64539f9598ae9fbfa2a78cd52e9c1bec551270a4",
+        "retained_pre_height_sha256": "b8725fa327d2c4a27ed87b4ec08f368b30745a72858be2067d5e51dbc8965570"
+      },
+      {
+        "file": "projects/shanghai/tests/candidate-city-clipping.test.mjs",
+        "baseline_sha256": "283e104d295835d828b2014a4445082fd591850fb3ac54d0301150a6eb0cbe88",
+        "retained_pre_height_sha256": "fc6e093979273a23f5f246d7b5e7d27b12afd476719ae1ccf53aea43c94dd4a4"
+      }
+    ],
+    "reason": "The retained source receipt before hashes refer to the pre-height museum stage. Its clipper/test already used capacity 288 and its index already counted 81. They are not claimed to be the earlier baseline bytes. The fresh rebase is independently replayed against all five exact pre-rebase files.",
+    "initial_checker_rejection": {
+      "file": "/workspace/shanghai-city-museum-review/fragment-rebase-history/bind-attempt-1.json",
+      "bytes": 802,
+      "sha256": "fabfdfd6e5adad144d707048b735796dcb0ca945c26b7756d30514e4772d6cfc"
+    },
+    "production_failure_waived": false
+  }
+}

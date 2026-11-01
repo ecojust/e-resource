@@ -1,6 +1,6 @@
 # 上海大厦／百老汇大厦历史主楼：外观候选
 
-[独立查看与外围漫游](../../../broadway-mansions.html) · [模型清单](../../../assets/models/candidates/hongkou-broadway-mansions/manifest.json) · [检查记录](../../../data/audit/broadway-mansions-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) · [模型清单](../../../assets/models/candidates/hongkou-broadway-mansions/manifest.json) · [检查记录](../../../data/audit/broadway-mansions-v1/README.md)
 
 本件参照Livelikerw的2014年1月照片和《上海名建筑志》文字制作历史主楼外观候选。表现内凹四翼体量、褐色砖饰面、成组上部退台、矩形窗洞与分格窗框、竖向砖肋、楼板、屋顶平台与女儿墙。照片右侧浅色邻楼没有纳入，未伪造酒店字牌和不可辨文字。原图仅本地研究，没有照片贴图或第三方图像再分发。
 

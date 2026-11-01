@@ -1,6 +1,6 @@
 # 崇明学宫儒学大门：文字尺寸参照候选
 
-[独立预览](../../../ruxue-gate.html) · [资产清单](../../../assets/models/candidates/chongming-ruxue-gate/manifest.json) · [检查记录](../../../data/audit/ruxue-gate-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-ruxue-gate/manifest.json) · [检查记录](../../../data/audit/ruxue-gate-v1/README.md)
 
 依据旧馆记载的长10.7米、宽8.8米、高8米制作儒学大门的独立基础外观候选。**文献未给开间、门窗数量或屋顶型制；三等分立面、中央闭合双门、两处格窗、单层双坡屋顶、配色和侧后墙全部是建模估计。** 当前资料没有已完整绑定的儒学大门单体照片，本件不采用仪门照片作为外观依据。
 

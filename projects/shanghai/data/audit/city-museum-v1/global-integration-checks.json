@@ -1,0 +1,642 @@
+{
+  "schema": "city-museum-global-integration-delta-v1",
+  "passed": 7,
+  "failed": 0,
+  "checks": [
+    "city museum adds one overview destination to80 entries while all40 earlier candidate records remain unchanged",
+    "new four assets inherit42 frozen manifests without replaying old model assets or changing old placements",
+    "museum binds main1860 and overlapping tower1931 as separate masks while preserving independent hospital links",
+    "new museum display rows fit the reviewed capacity while the old218 rows remain byte-identical",
+    "the reviewed real near group receives only museum clipping in colour, depth and distance passes",
+    "vector replacement respects reviewed interface residuals and leaves all supplied context identities untouched",
+    "production ground collision covers actual low structure and retains reviewed open entrance and road areas"
+  ],
+  "baseline_commit": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "entry_id": "yangpu-former-shanghai-city-museum",
+  "total_destinations": 81,
+  "candidate_models": 41,
+  "yangpu_count": 6,
+  "huangpu_count": 28,
+  "route": "index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview",
+  "walking_enabled": false,
+  "clipping_triangles": {
+    "before": 218,
+    "addition": 44,
+    "after": 262,
+    "limit": 288
+  },
+  "historical_texture_rows_equal": true,
+  "historical_texture_payload_bytes_compared": 13952,
+  "pre_height_texture_rows_equal": true,
+  "pre_height_texture_payload_bytes_compared": 16512,
+  "display_height_clipping": {
+    "base_addition": 40,
+    "height_addition": 4,
+    "gpu_model_rows": 44,
+    "source_change_report_sha256": "d7a39f4b602048f5b0f806bc3c6216433eb7a63b8bb4d29ec4329207c2ad33ed"
+  },
+  "authorized_readme_navigation_migration": {
+    "old_readmes": 64,
+    "each_exact_operation_replayed": true,
+    "report_sha256": "65c7cbcac92d92c48fbfeb1fb648a10f637be0847cf4d14be12b81b40ae63569"
+  },
+  "near_group_fixture_checks": [
+    {
+      "id": "14-13722-6690/14-13722-6690-1_-2-s0-s0",
+      "macro_id": "14-13722-6690",
+      "feature_local_ids": [
+        1262,
+        1860,
+        1931,
+        510,
+        958,
+        1061,
+        169,
+        1697
+      ],
+      "triangles": 44,
+      "clip_feature_local_ids": [
+        1860,
+        1931
+      ]
+    },
+    {
+      "id": "foreign-owners-only-control",
+      "macro_id": "14-13722-6690",
+      "feature_local_ids": [
+        1262,
+        510,
+        958,
+        1061,
+        169,
+        1697
+      ],
+      "triangles": 0,
+      "clip_feature_local_ids": []
+    }
+  ],
+  "vector_checks": {
+    "source_areas": [
+      {
+        "id": "cdc86c9b-dee5-4342-a7ee-e962fa0d030e",
+        "source_area_runtime_m2": 2555.7811902193625,
+        "residual_area_m2": 1.023005832276358,
+        "expected_residual_area_m2": 1.0230058230187111
+      },
+      {
+        "id": "d54de774-0952-43c1-98a0-c9cbeaf207b1",
+        "source_area_runtime_m2": 224.3863890557101,
+        "residual_area_m2": 0,
+        "expected_residual_area_m2": 0
+      }
+    ],
+    "real_context_features": 6,
+    "synthetic_same_footprint_foreign_controls": 2,
+    "reviewed_interface_residuals_preserved": true
+  },
+  "ground_collision": {
+    "collision_parts": 1,
+    "closed_ring_lengths": [
+      [
+        105
+      ]
+    ],
+    "positive_probes": 2,
+    "negative_probes": 54,
+    "open_areas": [
+      {
+        "name": "north-east-open-court",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-east-open-court",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "north-west-court-gap",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-west-court-gap",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-entry-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "east-rear-apron",
+        "ground_collision_intersection_m2": 0
+      }
+    ],
+    "note": "Production2D containment complements actual-triangle low-occupancy checks. No museum interior or elevated walking is enabled."
+  },
+  "scope": "Final production merge/navigation, unchanged historical catalogue and actual old/new clipper payload, reviewed exact source identity and near owners, frozen model contract, source vector correction and production collision. Near meshes in these shader tests are explicit fixtures; actual decoded source/asset geometry belongs to mapping/independent evidence and browser rendering. No historical model asset matrix replay.",
+  "bindings": [
+    {
+      "file": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/model-todo/named-map-leads.json",
+      "bytes": 766656,
+      "sha256": "92094697a326761fd1c80b7e19d34a3813b173be69e64e05161b3d4483ab394f"
+    },
+    {
+      "file": "vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    {
+      "file": "data/audit/global-model-integration-v1/inventory.json",
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+    },
+    {
+      "file": "data/audit/new-wing-on-company-v1/inventory-increment.json",
+      "bytes": 3754,
+      "sha256": "aa17b4ade750265fc582e182161a97a5651c2cc5e40f0e39cebd996ff272fd2c"
+    },
+    {
+      "file": "data/audit/xinxin-company-v1/inventory-increment.json",
+      "bytes": 6957,
+      "sha256": "9b63707a87b1f9a02ea11b6197a08b6ef3950c8938030d0f939671e89eeb7633"
+    },
+    {
+      "file": "data/audit/daxin-company-v1/inventory-increment.json",
+      "bytes": 9679,
+      "sha256": "34819b076943db80b9092d65c26647423061da20a07cb7520f4f936e4111c4ab"
+    },
+    {
+      "file": "data/audit/cathay-mansions-v1/inventory-increment.json",
+      "bytes": 12446,
+      "sha256": "fe68b611c941d9b744d879f3096fff233dd6be1868341d3d07935d05b2e0a036"
+    },
+    {
+      "file": "data/audit/grosvenor-house-v1/inventory-increment.json",
+      "bytes": 15182,
+      "sha256": "493b90c69a22e31948630818c6209d78bcb208f4d928c31ce280f315f93bbddc"
+    },
+    {
+      "file": "data/audit/municipal-council-v1/inventory-increment.json",
+      "bytes": 18058,
+      "sha256": "75ba418d159584bfd9355fb7d10fff3725a0a3bb7004a98ea7af11e794f576b8"
+    },
+    {
+      "file": "data/audit/yangpu-city-hall-v1/inventory-increment.json",
+      "bytes": 20895,
+      "sha256": "7946d0f816366c6425e5447c6548dcf57badf9fead74084e69b7b7a3639618b1"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/inventory-increment.json",
+      "bytes": 23600,
+      "sha256": "dc4d712d992f63966871383dd9745d85f777efa1fe8696398e5bfbde1eefec0f"
+    },
+    {
+      "file": "data/audit/jiangwan-gymnasium-v1/inventory-increment.json",
+      "bytes": 26283,
+      "sha256": "586c001245b29f5dada74875035fd4f354bfced3819553ac18febd4e4390bdc7"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/inventory-increment.json",
+      "bytes": 29040,
+      "sha256": "30765d89d3a95b5851f5b008711e8a538fb459800483c6553de1a61c3afd5255"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "src/candidate-vector-clipping.js",
+      "bytes": 2525,
+      "sha256": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 11485,
+      "sha256": "b0bd7aa0140414cdda39224b7ea0702222f3290fb65acf56034fe882a1429f32"
+    },
+    {
+      "file": "src/candidate-city-integrations.js",
+      "bytes": 7816,
+      "sha256": "5418ae01bf129e2f3ac08b528bb8eae4c0824dfe99364798f1b5e1d3d105999d"
+    },
+    {
+      "file": "src/map-scene.js",
+      "bytes": 60291,
+      "sha256": "92febd9b2c31c480c4cf48b5b91bae1c0a500b7b66bcbe88712bcc75ce764e35"
+    },
+    {
+      "file": "src/app.js",
+      "bytes": 22133,
+      "sha256": "4ac572c016ad5adf3815b3dab77ea1543a9bcd0dea31f8b1e0c0f7cdd3c53520"
+    },
+    {
+      "file": "index.html",
+      "bytes": 9055,
+      "sha256": "3c77ace894d05406ade662fcb9459fad7c17913bf279b587028155b6bcdeade7"
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "bytes": 35565,
+      "sha256": "e0500ce6c7399c56d8f4f9adb9c36c1dce35879320f4551fd221d9fda8e2602e"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 17758,
+      "sha256": "62dbca03947f284a2dfae483a4911972fb51093c193d341ed30c05c6708b3cc8"
+    },
+    {
+      "file": "tests/candidate-geometry.test.mjs",
+      "bytes": 10706,
+      "sha256": "e3ed92932892320a3a7c624e70111eafc64b377794154180b330ccd61cc0b491"
+    },
+    {
+      "file": "tests/candidate-catalog-increment.test.py",
+      "bytes": 20612,
+      "sha256": "64ecc5ad077fa1a18ac2a73ec029e3bafc7dc3fdbcd162c0e0d001a01d6d7a6a"
+    },
+    {
+      "file": "data/audit/city-museum-v1/runtime-height-source-change.json",
+      "bytes": 3446,
+      "sha256": "d7a39f4b602048f5b0f806bc3c6216433eb7a63b8bb4d29ec4329207c2ad33ed"
+    },
+    {
+      "file": "data/audit/broadway-mansions-v1/README.md",
+      "bytes": 2797,
+      "sha256": "58beb875817a9148ae02ede935235b09001e95b1f99573cca827048a1bb87a5d"
+    },
+    {
+      "file": "data/audit/dacheng-hall-v1/README.md",
+      "bytes": 2150,
+      "sha256": "c343b952cdcf058fe7f4f9bea39fad41190b03125fb75256c4204c69bfe62006"
+    },
+    {
+      "file": "data/audit/east-paifang-v1/README.md",
+      "bytes": 6714,
+      "sha256": "6d75ee1c20d670c64f143671ac46459ea4f0ef2b9fd299c8a7ba69083977bd1f"
+    },
+    {
+      "file": "data/audit/grand-theatre-v1/README.md",
+      "bytes": 3676,
+      "sha256": "b118276dd125ff1927b5ce6b60baeb059c26e36cb64048461c48628b5c9312d6"
+    },
+    {
+      "file": "data/audit/jiangwan-gymnasium-v1/README.md",
+      "bytes": 9205,
+      "sha256": "8a46dba5a46c8d6c62ae1e8a3576fef783a1e3231a7c5e0bdba5a82e29f62eac"
+    },
+    {
+      "file": "data/audit/jiangwan-stadium-v1/README.md",
+      "bytes": 9695,
+      "sha256": "356e32d02f2aac6c058b2a327db5a8a349c6e869a1011af5ac80210562e247c8"
+    },
+    {
+      "file": "data/audit/jiangwan-swimming-hall-v1/README.md",
+      "bytes": 7924,
+      "sha256": "0d897077816ff78ed54a9127f491e34a6dc1f7d327c4f62f6f4826e8b37c8be3"
+    },
+    {
+      "file": "data/audit/minglun-hall-v1/README.md",
+      "bytes": 4964,
+      "sha256": "034b4833e1c5b7623da0b57b00e42da16fe66355d9ff33c7ed3050eb2e70a9cd"
+    },
+    {
+      "file": "data/audit/old-wing-on-company-v1/README.md",
+      "bytes": 6835,
+      "sha256": "ab26284d10339ce06fd8b9ce1b3ba64f2df2555992eeadcc4f4346e7f0cc7d79"
+    },
+    {
+      "file": "data/audit/pacific-hotel-v1/README.md",
+      "bytes": 5412,
+      "sha256": "4751689311774d358387d394df3d2b114b9c3560a83f5ad3adff067087b0c625"
+    },
+    {
+      "file": "data/audit/park-hotel-v1/README.md",
+      "bytes": 2716,
+      "sha256": "1f38a9517246e647607e786b83b48be79f9113a507e1b89246c2c4a29ee4cbb5"
+    },
+    {
+      "file": "data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/README.md",
+      "bytes": 2656,
+      "sha256": "15f360154c12e2b9315cf713e2521c9621ce2534bd02a7c5461a0cdbb8422c8f"
+    },
+    {
+      "file": "data/audit/precise-buildings-v22/xuhui-zikawei-south-building/README.md",
+      "bytes": 2658,
+      "sha256": "96609ece56e5c0e989a28e3605b4a0b9a7b60dac74cb70fad0e17dfbbf466320"
+    },
+    {
+      "file": "data/audit/race-club-v1/README.md",
+      "bytes": 3504,
+      "sha256": "995a0eb74427d2bea7984a1b659d4d60af3dc639d914eb1e87841ee40d27936c"
+    },
+    {
+      "file": "data/audit/russian-consulate-v1/README.md",
+      "bytes": 2848,
+      "sha256": "e6974f1941d0df9a990ca979bee6d8ac31952cf9f4771b308236bd1ed6e4ef35"
+    },
+    {
+      "file": "data/audit/ruxue-gate-v1/README.md",
+      "bytes": 6259,
+      "sha256": "0461dcac3b8676ae9bd962835af59844278c21b5b0f9018450eb3b62629a5540"
+    },
+    {
+      "file": "data/audit/sincere-company-v1/README.md",
+      "bytes": 5604,
+      "sha256": "c23743134f4228da0f2f3ea9dc69c9b92b4fe73ee5089f7cf2f7cce615254f70"
+    },
+    {
+      "file": "data/audit/stele-corridors-v1/README.md",
+      "bytes": 5747,
+      "sha256": "690b16afcf610debd92225f1a8d9a46a41ab31a3104ac544ab72f39a1ecde625"
+    },
+    {
+      "file": "data/audit/west-paifang-v1/README.md",
+      "bytes": 6168,
+      "sha256": "6a7e7c7cd0f86c63c5dd12420ab7051909e20863d0b45bb75f009da2da7fb509"
+    },
+    {
+      "file": "data/audit/yangpu-city-hall-v1/README.md",
+      "bytes": 9526,
+      "sha256": "d0b0e071c33f9017021873005088b6ae576eeccdc107d2f89b0b55c83c15a6f2"
+    },
+    {
+      "file": "data/audit/yimen-v1/README.md",
+      "bytes": 4455,
+      "sha256": "773a3550bfc80612972b9c25513f08fdf3443963c647468c1f7ff4a805485b19"
+    },
+    {
+      "file": "source/precise/chongming-chaozong-paifang/README.md",
+      "bytes": 9268,
+      "sha256": "83ad449cf68319e2cd2bce2cdc3ff156c4ee0166942fbf384b27e5cef189d108"
+    },
+    {
+      "file": "source/precise/chongming-chongsheng-shrine/README.md",
+      "bytes": 3637,
+      "sha256": "2bf5b643261be74adfb1a7bf70b34c0d438d4c60b81b2b568d505ea807e99085"
+    },
+    {
+      "file": "source/precise/chongming-dacheng-hall/README.md",
+      "bytes": 4307,
+      "sha256": "450d592bef2fd266d2a32022f88d83555c22f96a174c29dea79e433a7b99d0ad"
+    },
+    {
+      "file": "source/precise/chongming-east-guanting/README.md",
+      "bytes": 6793,
+      "sha256": "0a1184784e8e8cca5b3bde22ae6b054e72857950e21c2dc191a3179edd7191dd"
+    },
+    {
+      "file": "source/precise/chongming-east-wing/README.md",
+      "bytes": 6022,
+      "sha256": "4c2b40a6c46f22cfd441c005a3840e3154b5e72f6f6328a589d6672933b38923"
+    },
+    {
+      "file": "source/precise/chongming-ji-gate/README.md",
+      "bytes": 4342,
+      "sha256": "d9f18d3a1638784589fc23462a763f3a4ea619441fc8945d64cbc8b81c3dfb5d"
+    },
+    {
+      "file": "source/precise/chongming-lingxing-gate/README.md",
+      "bytes": 4746,
+      "sha256": "51c7b7e087dc486fab5e67334493ad9a40faf0d62489cb3380ac350023114487"
+    },
+    {
+      "file": "source/precise/chongming-lingxing-photo-left-gate/README.md",
+      "bytes": 4691,
+      "sha256": "5b9acdb7f32071e91fabf18131aa12841c824b8f3ca8582102be9357c062eb93"
+    },
+    {
+      "file": "source/precise/chongming-lingxing-photo-right-gate/README.md",
+      "bytes": 5028,
+      "sha256": "b913c0265db63fbd22110614c1b95d5769a532e00ff2de07c4807f6876a37e07"
+    },
+    {
+      "file": "source/precise/chongming-minghuan-shrine/README.md",
+      "bytes": 5109,
+      "sha256": "2ffb97f4e3efb2cf14bc2759bd779010523192dcd33b5e68223892a2c70c5f72"
+    },
+    {
+      "file": "source/precise/chongming-minglun-hall/README.md",
+      "bytes": 6558,
+      "sha256": "4bd1ff9d8e1d51ecd82eed026e235e247b7ab36ba00f355c73d78b702317c687"
+    },
+    {
+      "file": "source/precise/chongming-pan-pool-bridge/README.md",
+      "bytes": 4347,
+      "sha256": "c28ef0f41c3a9e66e51ec378b52474f1384dc44b7fb804caaaaf969d58d6c164"
+    },
+    {
+      "file": "source/precise/chongming-ruxue-gate/README.md",
+      "bytes": 6718,
+      "sha256": "e4aecef49ef233ab3d874b32e30e9bc491bf60023cdb90b3b9da3c6baa2ad70e"
+    },
+    {
+      "file": "source/precise/chongming-stele-corridors/README.md",
+      "bytes": 7441,
+      "sha256": "a58fbf6594edc298b49c921483960f746aab41f380bfe098123124b6cbe853e0"
+    },
+    {
+      "file": "source/precise/chongming-west-guanting/README.md",
+      "bytes": 7229,
+      "sha256": "1a0d61e808c775d38551150f57a6794c9d209c1c96aa9199bd38264dcc849fd0"
+    },
+    {
+      "file": "source/precise/chongming-west-wing/README.md",
+      "bytes": 6813,
+      "sha256": "b8d63d795af9264651c3312f140c3b166af335b8caa5c3aa92eddeb90ec984f5"
+    },
+    {
+      "file": "source/precise/chongming-xiangxian-shrine/README.md",
+      "bytes": 5916,
+      "sha256": "bd68e64f7bb871be49728ea022b53b09daa6b378b409c3b5410f5e4cd3d42759"
+    },
+    {
+      "file": "source/precise/chongming-xuehai-paifang/README.md",
+      "bytes": 8606,
+      "sha256": "3f88deb0d3582900efb822b97bb996288dcf9dbc7737de94b309038a33291323"
+    },
+    {
+      "file": "source/precise/chongming-yimen/README.md",
+      "bytes": 6426,
+      "sha256": "1d376bd837d2cd7b10cd5686a236ad0e195f391c566dc6e55ca10e1c94d29308"
+    },
+    {
+      "file": "source/precise/chongming-zunjing-pavilion/README.md",
+      "bytes": 4032,
+      "sha256": "cf9d0f7ee9712ae52b4108bc654610f6794fb2c7f373ab15f89c65d21fa532a4"
+    },
+    {
+      "file": "source/precise/hongkou-broadway-mansions/README.md",
+      "bytes": 4940,
+      "sha256": "3b07636b800e982eba937f67032b70696d415696a4591d7854063175e80574fb"
+    },
+    {
+      "file": "source/precise/hongkou-luxun-residence-facade/README.md",
+      "bytes": 5504,
+      "sha256": "f79f1d68f5b0c67e7eaa644e8bfcd4c70deacff7e762e382ffdbb6fc013495e4"
+    },
+    {
+      "file": "source/precise/hongkou-russian-consulate/README.md",
+      "bytes": 5091,
+      "sha256": "742237713aac9e402b68d667babc7d407537bf801c74d69ac9867fc0f25e2bb1"
+    },
+    {
+      "file": "source/precise/huangpu-cathay-mansions/README.md",
+      "bytes": 4448,
+      "sha256": "199643ed3e9a044de0a23ced930009304dcb1db128245e8fa98a8da1a264d039"
+    },
+    {
+      "file": "source/precise/huangpu-daxin-company/README.md",
+      "bytes": 4219,
+      "sha256": "7c891af7cf1ac2d1f56ed9f166c33726b216ccd31de58dac8e8061808ec8d372"
+    },
+    {
+      "file": "source/precise/huangpu-grand-theatre/README.md",
+      "bytes": 5270,
+      "sha256": "7d311cc31b14b114f5958699c7f75fa69103736a79dddc7dfa7284423257256f"
+    },
+    {
+      "file": "source/precise/huangpu-grosvenor-house/README.md",
+      "bytes": 4591,
+      "sha256": "d93587d1e512a31ea4226229e74fb9bf66f1335b17a17dc7f2a8e4338e596f18"
+    },
+    {
+      "file": "source/precise/huangpu-new-wing-on-company/README.md",
+      "bytes": 4050,
+      "sha256": "fad7e12bde641ae7941110e64857179e60ef26052b58f68a1f8785cc173af579"
+    },
+    {
+      "file": "source/precise/huangpu-old-wing-on-company/README.md",
+      "bytes": 5680,
+      "sha256": "fa5ba9c70a0452b6146c73990205242f1fa6301624db8346be9996b0f81e3661"
+    },
+    {
+      "file": "source/precise/huangpu-pacific-hotel/README.md",
+      "bytes": 5330,
+      "sha256": "728e2353642d9aa045183cac861e198e98128f0e4bfd3cbda956b28108ad8f2f"
+    },
+    {
+      "file": "source/precise/huangpu-park-hotel/README.md",
+      "bytes": 4775,
+      "sha256": "efd1afbb23d712f35aeb8e5af00011d542c1f11586566f36b644f277e357fe32"
+    },
+    {
+      "file": "source/precise/huangpu-shanghai-municipal-council/README.md",
+      "bytes": 5328,
+      "sha256": "26c99dbba1101eaa91ace1e3dbdf262206560c03f3d2c5be5d9daa3c42111d58"
+    },
+    {
+      "file": "source/precise/huangpu-shanghai-race-club-east-building/README.md",
+      "bytes": 5565,
+      "sha256": "ffdfeec6aca0de32dbb7d6983c476fb5b81e4f88b36dbb47de1baadc2ba2c2e9"
+    },
+    {
+      "file": "source/precise/huangpu-sincere-company/README.md",
+      "bytes": 5566,
+      "sha256": "8a410913359b8566e1897663ba23e058325dcce3505983a56af056f7dd16e87b"
+    },
+    {
+      "file": "source/precise/huangpu-sun-yatsen-residence/README.md",
+      "bytes": 5625,
+      "sha256": "52a7101a80a8d85b3ab252daa5db223ca0750d2a4fa8497d69ed1871898ae73d"
+    },
+    {
+      "file": "source/precise/huangpu-xinxin-company/README.md",
+      "bytes": 4515,
+      "sha256": "4218172cb1ed1933f5710bdf37979375eb1031997cb60025395385cdb9603ec5"
+    },
+    {
+      "file": "source/precise/xuhui-soong-ching-ling-residence/README.md",
+      "bytes": 6318,
+      "sha256": "44d94b72c7c8b3670eabd1c77b95563caa4a92be8bf526e8a15f722f64525b1f"
+    },
+    {
+      "file": "source/precise/xuhui-zikawei-south-building/README.md",
+      "bytes": 5760,
+      "sha256": "a7604e053ef89805e07ebdd0ffff3304925b0fc69eb6e07f7b915430ae1962f7"
+    },
+    {
+      "file": "source/precise/yangpu-former-shanghai-city-hall/README.md",
+      "bytes": 7366,
+      "sha256": "861e7d8639c3381051641696d087e3a8c3caf1a083a3b2de0b891dfa54a023d1"
+    },
+    {
+      "file": "source/precise/yangpu-jiangwan-gymnasium/README.md",
+      "bytes": 5915,
+      "sha256": "609c3ac064c6ced5e353a1929ef71191451d455bf6ff2cb3437886b95a2330f2"
+    },
+    {
+      "file": "source/precise/yangpu-jiangwan-stadium/README.md",
+      "bytes": 5186,
+      "sha256": "ce17fc56d80b20e218964e4b09a1af2e568c5d5620561a182dbf9a6b7e67c187"
+    },
+    {
+      "file": "source/precise/yangpu-jiangwan-swimming-hall/README.md",
+      "bytes": 6709,
+      "sha256": "10845303399148f614e302b696588c1e0895e9339ec7f9a3e89d8c977a63dda7"
+    },
+    {
+      "file": "source/surfaces/README.md",
+      "bytes": 5719,
+      "sha256": "90087c5c259436280108f9a99794c6e150df97561ded7c1a15112ba00c717cbc"
+    },
+    {
+      "file": "data/audit/readme-navigation-v1/report.json",
+      "bytes": 131357,
+      "sha256": "65c7cbcac92d92c48fbfeb1fb648a10f637be0847cf4d14be12b81b40ae63569"
+    },
+    {
+      "file": "data/audit/readme-navigation-v1/README.md",
+      "bytes": 1392,
+      "sha256": "a2d934338d4f7048f00caba65f7c973a29206e7f84bafa18b4c496671064e006"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 438083,
+      "sha256": "ef19dcbf13e4df91a0674fdbd7ad504f1262bb799c4c7d67b3b4313897dea014"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 385367,
+      "sha256": "87c568d56d9af0273b602bc454919b21bec62476c2481cbee45bfdf1f5e8ccd8"
+    },
+    {
+      "file": "data/global-models/candidate-inventory.json",
+      "bytes": 115794,
+      "sha256": "f5452e36e930c80fc3fef78a513e77b8485282c94e069e6af458f1885292658c"
+    },
+    {
+      "file": "data/audit/city-museum-v1/footprint-review.json",
+      "bytes": 1336448,
+      "sha256": "f784f4a34b3b9651a8bed640370e655fd34a9b85d36124b19490904333c3ba38"
+    },
+    {
+      "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
+      "bytes": 5541,
+      "sha256": "6932e2a77d115b9f0983ee6e60ae9754c039847ce96e6ba89fb3a93d1cb0225e"
+    },
+    {
+      "file": "data/audit/city-museum-v1/global-integration-checks.mjs",
+      "bytes": 23682,
+      "sha256": "ece04ca2e98c8f9c733c41524792868899bfe8dcb16d68aa096c58d5b7a0ebc6"
+    }
+  ]
+}

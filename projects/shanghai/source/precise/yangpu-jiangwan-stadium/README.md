@@ -1,6 +1,6 @@
 # 江湾体育场历史主场：来源与制作范围
 
-[全局地图直达](../../../index.html#landmark=yangpu-jiangwan-stadium&mode=overview) · [来源登记](source-register.json) · [文字审查](../../../data/audit/jiangwan-stadium-v1/documentary-review.json) · [图像审查](../../../data/audit/jiangwan-stadium-v1/photo-review.json)
+[全局地图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-stadium&mode=overview) · [来源登记](source-register.json) · [文字审查](../../../data/audit/jiangwan-stadium-v1/documentary-review.json) · [图像审查](../../../data/audit/jiangwan-stadium-v1/photo-review.json)
 
 本件为杨浦江湾体育中心内历史室外主场的看台环及附着门台，保留开放内场。独立江湾体育馆、游泳馆及整个体育中心场地不并入；只交主场不能把优秀历史建筑名录 `sh-historic-b1-021` 全条标记完成。
 

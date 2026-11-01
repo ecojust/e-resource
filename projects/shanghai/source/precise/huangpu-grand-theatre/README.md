@@ -1,6 +1,6 @@
 # 大光明大戏院：临街入口与灯塔局部外观候选
 
-[模型查看与外围漫游](../../../grand-theatre.html) · [资产清单](../../../assets/models/candidates/huangpu-grand-theatre/manifest.json) · [检查记录](../../../data/audit/grand-theatre-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview) · [资产清单](../../../assets/models/candidates/huangpu-grand-theatre/manifest.json) · [检查记录](../../../data/audit/grand-theatre-v1/README.md)
 
 本件仅包含南京西路入口、大玻璃立面、五道竖肋、左侧灯塔及紧邻的圆角墙带片段。玻璃雨篷带底面方格，入口设深色石柱与门框，灯塔有浅色分格板及原创简化英文字牌。没有制作后部观众厅、整排商铺、右侧咖啡店楼或同框后方高楼；背面是局部候选的封闭截面，不能视作完整电影院后立面。
 

@@ -1,0 +1,261 @@
+{
+  "schema": "city-museum-final-runtime-checks-v1",
+  "passed": true,
+  "baseline_commit": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "executed_utc": "2026-11-01T12:42:56.080327+00:00",
+  "catalogue_at_execution": {
+    "destinations": 81,
+    "candidate_models": 41,
+    "yangpu": 6,
+    "huangpu": 28
+  },
+  "checks": {
+    "final_integration_groups": 7,
+    "final_integration_failed": 0,
+    "beacon_camera_tests": 35,
+    "beacon_camera_failed": 0
+  },
+  "execution": [
+    {
+      "command": "node projects/shanghai/data/audit/city-museum-v1/global-integration-checks.mjs",
+      "exit_code": 0,
+      "output_file": "global-integration-checks.json",
+      "prior_scope_attempts_recorded": "runtime-scope-correction.json"
+    },
+    {
+      "command": "node --test projects/shanghai/tests/building-beacons.test.mjs projects/shanghai/tests/candidate-overview-camera.test.mjs",
+      "exit_code": 0,
+      "output_file": "beacon-camera-final.tap"
+    }
+  ],
+  "clipping": {
+    "before": 218,
+    "addition": 40,
+    "after": 258,
+    "limit": 288
+  },
+  "historical_rows_byte_identical": true,
+  "historical_payload_bytes": 13952,
+  "ground_collision": {
+    "collision_parts": 1,
+    "closed_ring_lengths": [
+      [
+        105
+      ]
+    ],
+    "positive_probes": 2,
+    "negative_probes": 54,
+    "open_areas": [
+      {
+        "name": "north-east-open-court",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-east-open-court",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "north-west-court-gap",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "south-west-court-gap",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "west-entry-apron",
+        "ground_collision_intersection_m2": 0
+      },
+      {
+        "name": "east-rear-apron",
+        "ground_collision_intersection_m2": 0
+      }
+    ],
+    "note": "Production2D containment complements actual-triangle low-occupancy checks. No museum interior or elevated walking is enabled."
+  },
+  "source_vector_checks": {
+    "source_areas": [
+      {
+        "id": "cdc86c9b-dee5-4342-a7ee-e962fa0d030e",
+        "source_area_runtime_m2": 2555.7811902193625,
+        "residual_area_m2": 1.023005832276358,
+        "expected_residual_area_m2": 1.0230058230187111
+      },
+      {
+        "id": "d54de774-0952-43c1-98a0-c9cbeaf207b1",
+        "source_area_runtime_m2": 224.3863890557101,
+        "residual_area_m2": 0,
+        "expected_residual_area_m2": 0
+      }
+    ],
+    "real_context_features": 6,
+    "synthetic_same_footprint_foreign_controls": 2,
+    "reviewed_interface_residuals_preserved": true
+  },
+  "authorized_readme_navigation_migration": {
+    "old_readmes": 64,
+    "each_exact_operation_replayed": true,
+    "report_sha256": "65c7cbcac92d92c48fbfeb1fb648a10f637be0847cf4d14be12b81b40ae63569"
+  },
+  "source_context_limit": "Source-footprint zero overlap differs from actual original decoration contact. Original protruding plinths/cornices at pre-existing touching wall seams are conservatively retained. Possible-owner low contact is an upper bound because shared interfaces lack labels; no zero-all-native-overlap claim is made. Root accepted bounded existing seam retention; browser rear/court views must check visible interpenetration.",
+  "possible_foreign_low_contacts": {
+    "status": "Conservative compatible-owner original low triangles, exactly clipped to0–2m; shared interface faces may include target1860, so overlap is an upper bound, not proven foreign-face identity. Existing touching-wall plinth seams are retained; no zero-all-native-overlap claim.",
+    "records": [
+      {
+        "local_id": 510,
+        "variants": [
+          {
+            "variant": "raw",
+            "sha256": "1f2cd5ba517d0c4b9ec235894a87776af7014eebde1435cc169ced95065f327e",
+            "newlow_overlap_possible_foreign_low_m2": 0.24423337059646683,
+            "newfull_overlap_possible_foreign_low_m2": 0.2503813604747939
+          },
+          {
+            "variant": "web",
+            "sha256": "a95dfce521f7fe98c54b72d12a44f1f3f7ac289c89662ae84d9503e2d522a4e9",
+            "newlow_overlap_possible_foreign_low_m2": 0.24423337059646683,
+            "newfull_overlap_possible_foreign_low_m2": 0.2503813604747939
+          },
+          {
+            "variant": "lod",
+            "sha256": "849fe5ca4842083805591a718c86d9cec59892ae743375bd795d3737c1c7fa03",
+            "newlow_overlap_possible_foreign_low_m2": 0.24423337059646683,
+            "newfull_overlap_possible_foreign_low_m2": 0.2503813604747939
+          }
+        ]
+      },
+      {
+        "local_id": 1262,
+        "variants": [
+          {
+            "variant": "raw",
+            "sha256": "1f2cd5ba517d0c4b9ec235894a87776af7014eebde1435cc169ced95065f327e",
+            "newlow_overlap_possible_foreign_low_m2": 0.13097400335199394,
+            "newfull_overlap_possible_foreign_low_m2": 0.13579462516520446
+          },
+          {
+            "variant": "web",
+            "sha256": "a95dfce521f7fe98c54b72d12a44f1f3f7ac289c89662ae84d9503e2d522a4e9",
+            "newlow_overlap_possible_foreign_low_m2": 0.13097400335199394,
+            "newfull_overlap_possible_foreign_low_m2": 0.13579462516520446
+          },
+          {
+            "variant": "lod",
+            "sha256": "849fe5ca4842083805591a718c86d9cec59892ae743375bd795d3737c1c7fa03",
+            "newlow_overlap_possible_foreign_low_m2": 0.13097400335199394,
+            "newfull_overlap_possible_foreign_low_m2": 0.13579462516520446
+          }
+        ]
+      }
+    ]
+  },
+  "actual_foreign_high_roof_projection_checks": [
+    {
+      "local_id": 1262,
+      "actual_unique_height_roof_projection_overlap_model_m2": 0.2866979270632595,
+      "actual_unique_height_roof_projection_overlap_collision_m2": 0.2823763482523207,
+      "roof_height_m": 28.700000762939453,
+      "interpretation": "Original high cornice may project into new main-source wall at touching interface. These XY overlaps are reported, not claimed as zero native overlap."
+    },
+    {
+      "local_id": 510,
+      "actual_unique_height_roof_projection_overlap_model_m2": 0.5123528619749788,
+      "actual_unique_height_roof_projection_overlap_collision_m2": 0.5084868474466455,
+      "roof_height_m": 31.399999618530273,
+      "interpretation": "Original high cornice may project into new main-source wall at touching interface. These XY overlaps are reported, not claimed as zero native overlap."
+    },
+    {
+      "local_id": 958,
+      "actual_unique_height_roof_projection_overlap_model_m2": 0.0,
+      "actual_unique_height_roof_projection_overlap_collision_m2": 0.0,
+      "roof_height_m": 30.0,
+      "interpretation": "Independent retained owner, no model overlap."
+    },
+    {
+      "local_id": 1061,
+      "actual_unique_height_roof_projection_overlap_model_m2": 0.0,
+      "actual_unique_height_roof_projection_overlap_collision_m2": 0.0,
+      "roof_height_m": 31.200000762939453,
+      "interpretation": "Independent retained owner, no model overlap."
+    },
+    {
+      "local_id": 169,
+      "actual_unique_height_roof_projection_overlap_model_m2": 0.0,
+      "actual_unique_height_roof_projection_overlap_collision_m2": 0.0,
+      "roof_height_m": 30.700000762939453,
+      "interpretation": "Independent retained owner, no model overlap."
+    },
+    {
+      "local_id": 1697,
+      "actual_unique_height_roof_projection_overlap_model_m2": 0.0,
+      "actual_unique_height_roof_projection_overlap_collision_m2": 0.0,
+      "roof_height_m": 29.399999618530273,
+      "interpretation": "Independent retained owner, no model overlap."
+    }
+  ],
+  "historical_asset_matrix_rerun": false,
+  "browser_launched": false,
+  "heavy_cpu_jobs_remaining": false,
+  "bindings": [
+    {
+      "file": "data/audit/city-museum-v1/global-integration-checks.mjs",
+      "bytes": 21021,
+      "sha256": "8908c33e4fd45a17f5d28d201efc5f909dcf4dbb3bb714c9fd1372ae012d8029"
+    },
+    {
+      "file": "data/audit/city-museum-v1/global-integration-checks.json",
+      "bytes": 21800,
+      "sha256": "6686dd347e571ba65c12b2fd7939030793357512269033cbe5e78ec3a051769d"
+    },
+    {
+      "file": "data/audit/city-museum-v1/beacon-camera-final.tap",
+      "bytes": 3949,
+      "sha256": "52792f2fe3b8a3c5c4fe524a550e29b4e44c78a39ebadcd6b73b271b18ed04f7"
+    },
+    {
+      "file": "data/audit/city-museum-v1/runtime-scope-correction.json",
+      "bytes": 1463,
+      "sha256": "8a67b042a33a3c6d9b6379b18f8e894de8cf04a195dc5e6760bd41a80d5356d1"
+    },
+    {
+      "file": "src/building-beacons.js",
+      "bytes": 18304,
+      "sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1"
+    },
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "c7e46055df04fdb4f5a60dc0ab14385e5c28f3564658d0869d0372b511a479b8"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "fc6e093979273a23f5f246d7b5e7d27b12afd476719ae1ccf53aea43c94dd4a4"
+    },
+    {
+      "file": "src/candidate-overview-camera.js",
+      "bytes": 2719,
+      "sha256": "674c103403ca09b53baa20db5095b848e4dfbb054cb3b44a966113cd370ff4bf"
+    },
+    {
+      "file": "tests/building-beacons.test.mjs",
+      "bytes": 52209,
+      "sha256": "ca4644733ef107b2ada7ea277eddbd711bf8e17cce0ea47107e71afa7dd2e23a"
+    },
+    {
+      "file": "tests/candidate-overview-camera.test.mjs",
+      "bytes": 11171,
+      "sha256": "2a2760ba8cfe923aed2763d2a62bbd55cc23015897893b61f8f51a914b4c3a10"
+    },
+    {
+      "file": "data/candidate-city-integrations.json",
+      "bytes": 435861,
+      "sha256": "951f4b8e204025ed1bb306b97d72282a5dc9b5574da31c2ce50efbabd703d544"
+    },
+    {
+      "file": "data/audit/city-museum-v1/footprint-review.json",
+      "bytes": 1309559,
+      "sha256": "e9d64114076245388cb2c45b780a68b06301090c227e7f0dab4b896abe794f6e"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+TAP version 13
+# Subtest: twenty coincident site labels retain unique IDs and fit a readable mobile layout
+ok 1 - twenty coincident site labels retain unique IDs and fit a readable mobile layout
+  ---
+  duration_ms: 17.316799
+  type: 'test'
+  ...
+# Subtest: layout preserves all seventy identifiers even when the viewport cannot fit every label
+ok 2 - layout preserves all seventy identifiers even when the viewport cannot fit every label
+  ---
+  duration_ms: 10.473484
+  type: 'test'
+  ...
+# Subtest: seventy dense mobile signs become separate numbered cards outside reserved interface rectangles
+ok 3 - seventy dense mobile signs become separate numbered cards outside reserved interface rectangles
+  ---
+  duration_ms: 19.831627
+  type: 'test'
+  ...
+# Subtest: seventy numbered cards also fit a narrow 320 by 568 viewport with full reserved insets
+ok 4 - seventy numbered cards also fit a narrow 320 by 568 viewport with full reserved insets
+  ---
+  duration_ms: 2.360889
+  type: 'test'
+  ...
+# Subtest: normal desktop capacity retains full name cards while avoiding the sidebar and header/footer
+ok 5 - normal desktop capacity retains full name cards while avoiding the sidebar and header/footer
+  ---
+  duration_ms: 1.137438
+  type: 'test'
+  ...
+# Subtest: all model beacons use real sprite symbols with fixed pixels and no collision culling at any supported zoom
+ok 6 - all model beacons use real sprite symbols with fixed pixels and no collision culling at any supported zoom
+  ---
+  duration_ms: 17.708538
+  type: 'test'
+  ...
+# Subtest: beacon click resolves the exact model and disposal releases only owned layers, images and listeners
+ok 7 - beacon click resolves the exact model and disposal releases only owned layers, images and listeners
+  ---
+  duration_ms: 4.67865
+  type: 'test'
+  ...
+# Subtest: a name sign overlapping another model anchor selects its topmost model only once
+ok 8 - a name sign overlapping another model anchor selects its topmost model only once
+  ---
+  duration_ms: 2.814308
+  type: 'test'
+  ...
+# Subtest: screen hit testing uses current card bounds and reverse drawing order
+ok 9 - screen hit testing uses current card bounds and reverse drawing order
+  ---
+  duration_ms: 0.773409
+  type: 'test'
+  ...
+# Subtest: 40 current card centers select their own IDs despite stale native symbol query boxes
+ok 10 - 40 current card centers select their own IDs despite stale native symbol query boxes
+  ---
+  duration_ms: 6.86169
+  type: 'test'
+  ...
+# Subtest: 70 current card centers select their own IDs despite stale native symbol query boxes
+ok 11 - 70 current card centers select their own IDs despite stale native symbol query boxes
+  ---
+  duration_ms: 6.516603
+  type: 'test'
+  ...
+# Subtest: blank space ignores stale label hits, anchor fallback is scoped, and hover uses the same current geometry
+ok 12 - blank space ignores stale label hits, anchor fallback is scoped, and hover uses the same current geometry
+  ---
+  duration_ms: 3.521013
+  type: 'test'
+  ...
+# Subtest: 390 by 844: compact runtime signs retain all seventy full names and stable numbers through zoom changes
+ok 13 - 390 by 844: compact runtime signs retain all seventy full names and stable numbers through zoom changes
+  ---
+  duration_ms: 10.614661
+  type: 'test'
+  ...
+# Subtest: 320 by 568: compact runtime signs retain all seventy full names and stable numbers through zoom changes
+ok 14 - 320 by 568: compact runtime signs retain all seventy full names and stable numbers through zoom changes
+  ---
+  duration_ms: 7.329956
+  type: 'test'
+  ...
+# Subtest: full names and compact numbers have complementary layers, with a fixed 24 by 20 number sprite
+ok 15 - full names and compact numbers have complementary layers, with a fixed 24 by 20 number sprite
+  ---
+  duration_ms: 4.611512
+  type: 'test'
+  ...
+# Subtest: offscreen name cards are filtered while all seventy geographic anchors and records remain registered
+ok 16 - offscreen name cards are filtered while all seventy geographic anchors and records remain registered
+  ---
+  duration_ms: 12.054074
+  type: 'test'
+  ...
+# Subtest: runtime reflows around the real desktop sidebar bounds and frees its area after closing
+ok 17 - runtime reflows around the real desktop sidebar bounds and frees its area after closing
+  ---
+  duration_ms: 2.777274
+  type: 'test'
+  ...
+# Subtest: narrow-phone signs avoid actual tool, legend and location-card rectangles as those elements resize
+ok 18 - narrow-phone signs avoid actual tool, legend and location-card rectangles as those elements resize
+  ---
+  duration_ms: 5.51113
+  type: 'test'
+  ...
+# Subtest: all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone
+ok 19 - all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone
+  ---
+  duration_ms: 19.021105
+  type: 'test'
+  ...
+# Subtest: long building title cards retain every delivered sign in the smaller phone area at all zooms
+ok 20 - long building title cards retain every delivered sign in the smaller phone area at all zooms
+  ---
+  duration_ms: 163.82018
+  type: 'test'
+  ...
+# Subtest: the 78th model retains a separate 12px number and hit area when a long title leaves only seven rows
+ok 21 - the 78th model retains a separate 12px number and hit area when a long title leaves only seven rows
+  ---
+  duration_ms: 57.890295
+  type: 'test'
+  ...
+# Subtest: the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable
+ok 22 - the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable
+  ---
+  duration_ms: 3.114558
+  type: 'test'
+  ...
+# Subtest: vendored MapLibre accepts every production beacon layer and keeps it visible at zoom 24
+ok 23 - vendored MapLibre accepts every production beacon layer and keeps it visible at zoom 24
+  ---
+  duration_ms: 87.343314
+  type: 'test'
+  ...
+# Subtest: fixed name backgrounds, text and leaders agree with the actual ground projection below an elevated camera
+ok 24 - fixed name backgrounds, text and leaders agree with the actual ground projection below an elevated camera
+  ---
+  duration_ms: 35.108749
+  type: 'test'
+  ...
+# Subtest: public transform depth compensation cancels the native symbol shader across bearings, pitches and elevations
+ok 25 - public transform depth compensation cancels the native symbol shader across bearings, pitches and elevations
+  ---
+  duration_ms: 17.474257
+  type: 'test'
+  ...
+# Subtest: 1 high-pitch signs use screen offsets above the horizon without unprojecting sky
+ok 26 - 1 high-pitch signs use screen offsets above the horizon without unprojecting sky
+  ---
+  duration_ms: 1.064786
+  type: 'test'
+  ...
+# Subtest: 70 high-pitch signs use screen offsets above the horizon without unprojecting sky
+ok 27 - 70 high-pitch signs use screen offsets above the horizon without unprojecting sky
+  ---
+  duration_ms: 15.187315
+  type: 'test'
+  ...
+# Subtest: 1200 by 800: all delivered candidate bounds fit the real MapLibre camera outside the interface
+ok 28 - 1200 by 800: all delivered candidate bounds fit the real MapLibre camera outside the interface
+  ---
+  duration_ms: 63.096516
+  type: 'test'
+  ...
+# Subtest: 390 by 844: all delivered candidate bounds fit the real MapLibre camera outside the interface
+ok 29 - 390 by 844: all delivered candidate bounds fit the real MapLibre camera outside the interface
+  ---
+  duration_ms: 31.760242
+  type: 'test'
+  ...
+# Subtest: 320 by 568: all delivered candidate bounds fit the real MapLibre camera outside the interface
+ok 30 - 320 by 568: all delivered candidate bounds fit the real MapLibre camera outside the interface
+  ---
+  duration_ms: 24.217382
+  type: 'test'
+  ...
+# Subtest: candidate camera uses the verified approach bearing and the low Lu Xun view
+ok 31 - candidate camera uses the verified approach bearing and the low Lu Xun view
+  ---
+  duration_ms: 0.645661
+  type: 'test'
+  ...
+# Subtest: all forty legacy entries preserve their established overview route
+ok 32 - all forty legacy entries preserve their established overview route
+  ---
+  duration_ms: 0.33957
+  type: 'test'
+  ...
+# Subtest: leaving a candidate overview clears the real vendor padding and elevation
+ok 33 - leaving a candidate overview clears the real vendor padding and elevation
+  ---
+  duration_ms: 1.441572
+  type: 'test'
+  ...
+# Subtest: walk, legacy overview and city overview each apply the complete camera reset
+ok 34 - walk, legacy overview and city overview each apply the complete camera reset
+  ---
+  duration_ms: 0.495794
+  type: 'test'
+  ...
+# Subtest: production overview navigation preserves candidate height through rendering and restores legacy ground clamping
+ok 35 - production overview navigation preserves candidate height through rendering and restores legacy ground clamping
+  ---
+  duration_ms: 3.575473
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 939.75018

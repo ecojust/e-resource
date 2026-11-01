@@ -1,6 +1,6 @@
 # 崇明学宫崇圣祠正殿：文献参照外观候选
 
-[独立预览与模型室外漫游](../../../chongsheng-shrine.html) · [资产清单](../../../assets/models/candidates/chongming-chongsheng-shrine/manifest.json) · [检查记录](../../../data/audit/chongsheng-shrine-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chongsheng-shrine&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-chongsheng-shrine/manifest.json) · [检查记录](../../../data/audit/chongsheng-shrine-v1/README.md)
 
 依据崇明县博物馆旧官网“崇圣祠”一节，新增三开间正殿候选，含单檐歇山曲面屋顶、平行瓦垄与瓦当、檐下椽条、简化斗栱、柱脚、十二扇格门、内退暗面及入口三级台阶。尚无可核验的该单体照片，不能把门窗、色彩和雕饰当作真实现场细节。
 

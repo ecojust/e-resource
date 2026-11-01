@@ -1,6 +1,6 @@
 # 杨浦绿瓦大楼主楼与独立阶桥
 
-[全局主图直达](../../../index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview) · [来源与重建](../../../source/precise/yangpu-former-shanghai-city-hall/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json)
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview) · [来源与重建](../../../source/precise/yangpu-former-shanghai-city-hall/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json)
 
 本件为清源环路650号旧上海特别市政府大楼（上海体育大学内），与黄浦公共租界工部局“老市府”分开。制作主楼三段歇山顶、红柱格窗、浅色端部和基座、侧拱门阳台、北面低入口及南侧独立阶桥；校园其他楼栋、地下与室内不并入，当前提供全局俯瞰。
 

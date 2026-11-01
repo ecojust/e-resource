@@ -1,6 +1,6 @@
 # 大光明大戏院临街入口与灯塔局部候选检查 · 2026-10-30
 
-[模型查看](../../../grand-theatre.html) · [来源与复跑](../../../source/precise/huangpu-grand-theatre/README.md) · [资产清单](../../../assets/models/candidates/huangpu-grand-theatre/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grand-theatre&mode=overview) · [来源与复跑](../../../source/precise/huangpu-grand-theatre/README.md) · [资产清单](../../../assets/models/candidates/huangpu-grand-theatre/manifest.json)
 
 原始／近景10,832面、远景5,080面。网页0.21 MB、Blender0.37 MB。本件包含临街入口、大幅玻璃、雨篷、竖肋及后退屏墙、灯塔与相邻圆角墙带片段；后部影厅、整排商铺及邻楼未建，背面是候选截面封闭体。30.5米为选用的高度解释，16米记载及计高端点继续待核，所有平面尺寸为估计。
 

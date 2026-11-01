@@ -1,6 +1,6 @@
 # 崇明学宫棂星门：中央石门框与门扇局部候选
 
-[独立模型预览](../../../lingxing-gate.html) · [资产清单](../../../assets/models/candidates/chongming-lingxing-gate/manifest.json) · [检查记录](../../../data/audit/lingxing-gate-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-gate&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-lingxing-gate/manifest.json) · [检查记录](../../../data/audit/lingxing-gate-v1/README.md)
 
 网页模型约0.65 MB，远景约0.07 MB，原始GLB约1.29 MB，Blender约0.54 MB。
 

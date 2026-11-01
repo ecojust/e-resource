@@ -1,6 +1,6 @@
 # 江湾体育场历史主场接入主地图
 
-[全局主图直达](../../../index.html#landmark=yangpu-jiangwan-stadium&mode=overview) · [来源与重建](../../../source/precise/yangpu-jiangwan-stadium/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-jiangwan-stadium/manifest.json)
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-stadium&mode=overview) · [来源与重建](../../../source/precise/yangpu-jiangwan-stadium/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-jiangwan-stadium/manifest.json)
 
 本件交付国和路346号历史室外主场的两半阶梯看台、砖外墙、西侧三拱入口及场内特别台、局部棚、东侧平台和两个不同的短端通道。内场保持开放，建筑资产没有草场、跑道或场地底板。独立体育馆、游泳馆、场内独立建筑、高杆照明、临时活动设施和室内不并入，名录b1-021仍保留未完成范围。
 

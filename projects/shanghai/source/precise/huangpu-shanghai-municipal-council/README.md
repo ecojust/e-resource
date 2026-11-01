@@ -1,6 +1,6 @@
 # 上海公共租界工部局历史主楼
 
-[在上海主地图查看](../../../index.html#landmark=huangpu-shanghai-municipal-council&mode=overview)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview)
 
 ## 资料与范围
 

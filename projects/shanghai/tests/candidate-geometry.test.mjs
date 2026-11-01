@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {candidateGeometryContains,mergeCandidateCityModels,validCandidateGeometry} from '../src/candidate-city-integrations.js';
+import {candidateGeometryContains,mergeCandidateCityModels,validCandidateGeometry,CandidateCityState} from '../src/candidate-city-integrations.js';
+
+import {markVerifiedOrdinaryAsset} from '../src/ordinary-asset-verification.js';
+import {CandidateCityClipper} from '../src/candidate-city-clipping.js';
+import * as THREE from '../vendor/three.module.js';
 
 const center=[121.47,31.23];
 function ring(closedPoints,radius=.001,origin=center){
@@ -67,4 +71,65 @@ test('detailed opposing C-shaped stands leave their central field and both end p
   assert.equal(validCandidateGeometry(geometry,collisionOptions),true);assert.equal(validCandidateGeometry(geometry),false);
   for(const y of [-.002,-.001,-.0005,0,.0005,.001,.002])assert.equal(candidateGeometryContains(geometry,[center[0],center[1]+y]),false);
   for(const x of [-.00075,.00075])assert.equal(candidateGeometryContains(geometry,[center[0]+x,center[1]]),true);
+});
+
+
+const heightClip=()=>({id:'north-upper-source',geometry:polygon(ring(5,.0002,[center[0]+.005,center[1]])),
+  owner:{macro_id:'14-13722-6690',feature_local_id:1860},min_height:28.705,max_height:30.11,
+  height_reference:[121.519775390625,31.306714687449947]});
+
+test('height display clips require paired finite heights, a reference, one owner and distinct IDs',()=>{
+  const row={...model(polygon(ring(5))),replacement_geometry:polygon(ring(5)),display_height_clips:[heightClip()]};
+  const manifest={schema:'candidate-city-integrations-v1',models:[row]},before=structuredClone(manifest);
+  assert.deepEqual(mergeCandidateCityModels([],manifest)[0].display_height_clips,row.display_height_clips);
+  assert.deepEqual(manifest,before);
+  for(const patch of [{min_height:undefined},{max_height:undefined},{min_height:null},{min_height:'28'},
+    {min_height:NaN},{max_height:Infinity},{min_height:30.11},{min_height:32},
+    {height_reference:undefined},{height_reference:[121,86]},{height_reference:[121,31,0]},
+    {owner:undefined},{owner:{macro_id:'x',feature_local_id:0}},{owners:[]},
+    {source_feature_ids:{building:['source'],building_part:[]}},{id:row.id}]){
+    const invalid={...manifest,models:[{...row,display_height_clips:[{...heightClip(),...patch}]}]};
+    assert.throws(()=>mergeCandidateCityModels([],invalid),/高度裁剪/);
+  }
+  for(const entries of [null,{},Array.from({length:9},(_,i)=>({...heightClip(),id:`height-${i}`})),[heightClip(),heightClip()]]){
+    assert.throws(()=>mergeCandidateCityModels([],{...manifest,models:[{...row,display_height_clips:entries}]}),/高度裁剪/);
+  }
+  assert.throws(()=>mergeCandidateCityModels([],{...manifest,models:[row,{...row,id:'second'}]}),/高度裁剪/);
+  assert.throws(()=>mergeCandidateCityModels([],{...manifest,models:[row,{...row,id:'second',display_height_clips:[],site_replacement:{id:heightClip().id,geometry:row.replacement_geometry}}]}),/高度裁剪/);
+});
+
+test('verified display height clips are GPU-only, append after base rows, and retire with visibility',t=>{
+  const base=polygon(ring(5)),extra=heightClip(),scene=new THREE.Scene(),object=new THREE.Group();scene.add(object);
+  const row={...model(base),replacement_geometry:base,source_feature_ids:{building:['main-source'],building_part:[]},
+    owner:extra.owner,status:'loaded',object,activeVariant:'full',city_integration:true,display_height_clips:[extra]};
+  const secondObject=new THREE.Group();scene.add(secondObject);
+  const second={...row,id:'second',object:secondObject,display_height_clips:[],replacement_geometry:polygon(ring(5,.0002,[center[0]-.005,center[1]]))};
+  markVerifiedOrdinaryAsset(object,{modelId:row.id,variant:'web',asset:row.assets.web});
+  markVerifiedOrdinaryAsset(secondObject,{modelId:second.id,variant:'web',asset:second.assets.web});
+  const records=new Map([[row.id,row],[second.id,second]]),events=[];
+  const state=new CandidateCityState({getRecords:()=>records,getScene:()=>scene,onChange:s=>events.push(s.revision)});
+  assert.equal(state.sync(),true);assert.equal(state.sync(),false);
+  assert.deepEqual(state.clips.map(c=>c.id),[row.id,second.id]);
+  assert.deepEqual(state.displayClips.map(c=>c.id),[row.id,second.id,extra.id]);
+  assert.equal(state.clipsPoint(center[0]+.005,center[1],{name:'overture-buildings',layer:'building',id:'main-source'}),false);
+  assert.equal(state.clipsPoint(...center,{name:'overture-buildings',layer:'building',id:'main-source'}),true);
+  assert.deepEqual(state.collisions(),[{id:row.id,geometry:base},{id:second.id,geometry:base}]);
+  assert.equal(state.getState().clips.length,2);assert.deepEqual(state.getState().displayClips[2].height_reference,extra.height_reference);
+  const clipper=new CandidateCityClipper({THREE,geographicPosition:(x,z,y=0)=>new THREE.Vector3(x,y,z)});
+  t.after(()=>clipper.dispose());clipper.update(state.clips);const basePayload=new Float32Array(clipper.data.subarray(0,4*16));
+  clipper.update(state.displayClips);assert.equal(clipper.triangleCount,6);assert.deepEqual(clipper.data.subarray(0,4*16),basePayload);
+  extra.min_height=28.71;assert.equal(state.sync(),true,'height-only edits enter the sync signature');
+  object.visible=false;assert.equal(state.sync(),true);assert.deepEqual(state.displayClips,state.clips);
+  assert.equal(state.displayClips.length,1);clipper.update(state.displayClips);assert.equal(clipper.triangleCount,2);
+  secondObject.visible=false;assert.equal(state.sync(),true);assert.deepEqual(state.clips,[]);assert.deepEqual(state.displayClips,[]);
+  assert.deepEqual(state.collisions(),[]);clipper.update(state.displayClips);assert.equal(clipper.triangleCount,0);
+  assert.equal(events.length,4);
+});
+
+test('records without height clips retain exactly their existing display and source clips',()=>{
+  const scene=new THREE.Scene(),object=new THREE.Group();scene.add(object);
+  const row={...model(polygon(ring(5))),replacement_geometry:polygon(ring(5)),status:'loaded',object,activeVariant:'full',city_integration:true};
+  markVerifiedOrdinaryAsset(object,{modelId:row.id,variant:'web',asset:row.assets.web});
+  const state=new CandidateCityState({getRecords:()=>new Map([[row.id,row]]),getScene:()=>scene});state.sync();
+  assert.deepEqual(state.displayClips,state.clips);assert.deepEqual(state.getState().displayClips,state.getState().clips);
 });

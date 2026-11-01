@@ -1,6 +1,6 @@
 # 金门饭店／华安大楼历史主楼外观候选
 
-[查看模型](../../../pacific-hotel.html) · [资产清单与下载](../../../assets/models/candidates/huangpu-pacific-hotel/manifest.json) · [检查记录](../../../data/audit/pacific-hotel-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview) · [资产清单与下载](../../../assets/models/candidates/huangpu-pacific-hotel/manifest.json) · [检查记录](../../../data/audit/pacific-hotel-v1/README.md)
 
 本件制作南京西路104号历史主楼及屋顶钟塔。华安合群人寿保险公司大楼、华安大楼、华侨饭店和金门饭店是同一历史建筑的名称／用途沿革，不能按别名拆为两栋。经营资料另见108号；现代酒店北楼、邻近高楼和室内不在本件范围，未原址配准或替换城市地图对象。
 

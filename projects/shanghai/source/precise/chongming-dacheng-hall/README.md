@@ -1,8 +1,8 @@
 # 崇明学宫大成殿：2005年照片参照外观候选
 
-**本轮更新：**[进入独立模型室外漫游](../../../dacheng-hall.html#mode=model-walk)。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
+**本轮更新：**[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview)。以下为当时独立页交付记录；当前入口已接入全局地图。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
 
-[独立预览](../../../dacheng-hall.html) · [资产清单](../../../assets/models/candidates/chongming-dacheng-hall/manifest.json) · [验收记录](../../../data/audit/dacheng-hall-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-dacheng-hall/manifest.json) · [验收记录](../../../data/audit/dacheng-hall-v1/README.md)
 
 依据博物馆旧官网和两张公开许可照片制作重檐歇山屋顶、瓦垄、檐下构件、前廊柱网、五开间分格门窗及月台。门窗分格为实体构件，后方有独立内退暗面，不提供室内。原生文件包含可编辑网格和独立预览舞台。
 

@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: an untagged eastern near group excludes Cathay clipping in visible and shadow passes
+ok 1 - an untagged eastern near group excludes Cathay clipping in visible and shadow passes
+  ---
+  duration_ms: 15.500297
+  type: 'test'
+  ...
+# Subtest: the shared Cathay near group receives its whole clip while excluding other groups and macros
+ok 2 - the shared Cathay near group receives its whole clip while excluding other groups and macros
+  ---
+  duration_ms: 3.981143
+  type: 'test'
+  ...
+# Subtest: ownerless wildcard clips retain prior spatial behavior while still respecting macro ownership
+ok 3 - ownerless wildcard clips retain prior spatial behavior while still respecting macro ownership
+  ---
+  duration_ms: 4.617624
+  type: 'test'
+  ...
+# Subtest: late candidate activation and removal update already compiled near material uniforms
+ok 4 - late candidate activation and removal update already compiled near material uniforms
+  ---
+  duration_ms: 9.129758
+  type: 'test'
+  ...
+# Subtest: per-vertex feature IDs retain the original global texture and shader owner comparison
+ok 5 - per-vertex feature IDs retain the original global texture and shader owner comparison
+  ---
+  duration_ms: 1.998754
+  type: 'test'
+  ...
+# Subtest: near objects with missing owner metadata retain prior spatial clipping
+ok 6 - near objects with missing owner metadata retain prior spatial clipping
+  ---
+  duration_ms: 2.633083
+  type: 'test'
+  ...
+# Subtest: near objects with empty owner metadata retain prior spatial clipping
+ok 7 - near objects with empty owner metadata retain prior spatial clipping
+  ---
+  duration_ms: 2.218245
+  type: 'test'
+  ...
+# Subtest: release disposes the scoped texture and rebind updates cached shader holders without recompilation
+ok 8 - release disposes the scoped texture and rebind updates cached shader holders without recompilation
+  ---
+  duration_ms: 2.864567
+  type: 'test'
+  ...
+# Subtest: clipping rows beyond128 remain addressable in global and owner-filtered material passes
+ok 9 - clipping rows beyond128 remain addressable in global and owner-filtered material passes
+  ---
+  duration_ms: 14.905002
+  type: 'test'
+  ...
+# Subtest: rows225 and288 stay addressable and289 rejects without corrupting live clipping state
+ok 10 - rows225 and288 stay addressable and289 rejects without corrupting live clipping state
+  ---
+  duration_ms: 62.564252
+  type: 'test'
+  ...
+# Subtest: paired native heights use the actual city anchor transform in all three shader passes
+ok 11 - paired native heights use the actual city anchor transform in all three shader passes
+  ---
+  duration_ms: 211.048008
+  type: 'test'
+  ...
+# Subtest: invalid or unrepresentable paired heights reject atomically before live texture changes
+ok 12 - invalid or unrepresentable paired heights reject atomically before live texture changes
+  ---
+  duration_ms: 3.338964
+  type: 'test'
+  ...
+# Subtest: Float32 height overflow and collapsed endpoints reject without changing prior valid rows
+ok 13 - Float32 height overflow and collapsed endpoints reject without changing prior valid rows
+  ---
+  duration_ms: 0.560867
+  type: 'test'
+  ...
+# Subtest: translation-free clipping preserves batching and instancing and does not forward-reference transmission modelMatrix
+ok 14 - translation-free clipping preserves batching and instancing and does not forward-reference transmission modelMatrix
+  ---
+  duration_ms: 2.272962
+  type: 'test'
+  ...
+# Subtest: complex collision retains its hole while the same geometry remains invalid for display clipping
+ok 15 - complex collision retains its hole while the same geometry remains invalid for display clipping
+  ---
+  duration_ms: 2.529124
+  type: 'test'
+  ...
+# Subtest: only collision opts into the larger budget when models enter the runtime catalogue
+ok 16 - only collision opts into the larger budget when models enter the runtime catalogue
+  ---
+  duration_ms: 5.821168
+  type: 'test'
+  ...
+# Subtest: the closed-ring limit remains65 by default and is256 only for collision
+ok 17 - the closed-ring limit remains65 by default and is256 only for collision
+  ---
+  duration_ms: 0.415831
+  type: 'test'
+  ...
+# Subtest: collision keeps a bounded number of holes and polygons
+ok 18 - collision keeps a bounded number of holes and polygons
+  ---
+  duration_ms: 3.613113
+  type: 'test'
+  ...
+# Subtest: the total collision budget is4096 closed points across every component and hole
+ok 19 - the total collision budget is4096 closed points across every component and hole
+  ---
+  duration_ms: 1.130561
+  type: 'test'
+  ...
+# Subtest: collision retains finite coordinates, closed rings and geographic bounds
+ok 20 - collision retains finite coordinates, closed rings and geographic bounds
+  ---
+  duration_ms: 0.351248
+  type: 'test'
+  ...
+# Subtest: detailed opposing C-shaped stands leave their central field and both end passages open
+ok 21 - detailed opposing C-shaped stands leave their central field and both end passages open
+  ---
+  duration_ms: 2.242551
+  type: 'test'
+  ...
+# Subtest: height display clips require paired finite heights, a reference, one owner and distinct IDs
+ok 22 - height display clips require paired finite heights, a reference, one owner and distinct IDs
+  ---
+  duration_ms: 3.772936
+  type: 'test'
+  ...
+# Subtest: verified display height clips are GPU-only, append after base rows, and retire with visibility
+ok 23 - verified display height clips are GPU-only, append after base rows, and retire with visibility
+  ---
+  duration_ms: 8.216913
+  type: 'test'
+  ...
+# Subtest: records without height clips retain exactly their existing display and source clips
+ok 24 - records without height clips retain exactly their existing display and source clips
+  ---
+  duration_ms: 1.109515
+  type: 'test'
+  ...
+# Subtest: actual MapLibre/Three city projection puts1148 source points back within2mm
+ok 25 - actual MapLibre/Three city projection puts1148 source points back within2mm
+  ---
+  duration_ms: 19.334733
+  type: 'test'
+  ...
+# Subtest: the former uniform metre conversion reproduces the diagnosed>1m offset/inside-eye negative control
+ok 26 - the former uniform metre conversion reproduces the diagnosed>1m offset/inside-eye negative control
+  ---
+  duration_ms: 1.720494
+  type: 'test'
+  ...
+# Subtest: geographic anchor and vertical scale remain exactly the old values
+ok 27 - geographic anchor and vertical scale remain exactly the old values
+  ---
+  duration_ms: 2.789589
+  type: 'test'
+  ...
+# Subtest: far, ordinary near, and owner override groups copy one corrected transform without changing child IDs/geometry
+ok 28 - far, ordinary near, and owner override groups copy one corrected transform without changing child IDs/geometry
+  ---
+  duration_ms: 2.738506
+  type: 'test'
+  ...
+# Subtest: 16district anchor samples bound Float32 horizontal and existing uniform-Y nonlinear residuals
+ok 29 - 16district anchor samples bound Float32 horizontal and existing uniform-Y nonlinear residuals
+  ---
+  duration_ms: 9.873504
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1314.590744

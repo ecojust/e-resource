@@ -1,6 +1,6 @@
 # 先施公司历史主楼与摩星塔外观候选
 
-[查看模型](../../../sincere-company.html) · [四件资产与摘要](../../../assets/models/candidates/huangpu-sincere-company/manifest.json) · [检查记录](../../../data/audit/sincere-company-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sincere-company&mode=overview) · [四件资产与摘要](../../../assets/models/candidates/huangpu-sincere-company/manifest.json) · [检查记录](../../../data/audit/sincere-company-v1/README.md)
 
 本件表现南京东路、浙江路转角的历史先施公司主楼及摩星塔，包含照片可见的浙江路北段低翼。时装商店与东亚饭店属于同楼的不同经营用途，不能仅按别名拆为两栋。永安、新新、大新及四川中路的东亚大楼均不在本件范围；摩星塔也不是永安公司的绮云阁。
 

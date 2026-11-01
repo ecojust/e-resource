@@ -1,8 +1,8 @@
 # 崇明学宫尊经阁：独立外观候选模型
 
-**本轮更新：**[进入独立模型室外漫游](../../../zunjing-pavilion.html#mode=model-walk)。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
+**本轮更新：**[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview)。以下为当时独立页交付记录；当前入口已接入全局地图。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
 
-[打开交互预览](../../../zunjing-pavilion.html) · [资源清单](../../../assets/models/candidates/chongming-zunjing-pavilion/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview) · [资源清单](../../../assets/models/candidates/chongming-zunjing-pavilion/manifest.json)
 
 依据2005年公开照片制作的可编辑外观模型，尚未地理配准，未接入城市替换或室内漫游；独立模型场景的外围碰撞已另行加入。现有城市精细建筑目录仍为40项，本模型不计入已完成接入数量。
 

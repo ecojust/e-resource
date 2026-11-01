@@ -1,6 +1,6 @@
 # 新永安大楼主楼与后部外观模型
 
-[在上海主地图中查看](../../../index.html#landmark=huangpu-new-wing-on-company&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-new-wing-on-company/manifest.json) · [交付检查](../../../data/audit/new-wing-on-company-v1/README.md)
+[在上海主地图中查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-new-wing-on-company&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-new-wing-on-company/manifest.json) · [交付检查](../../../data/audit/new-wing-on-company-v1/README.md)
 
 本件表现南京东路627号的新永安公司／七重天大厦：北端高塔、相连的低楔形楼体、圆弧端部、竖向窗列、宽檐退台和阶梯形顶冠。南京东路635号老永安为另一件既有模型；两楼之间的跨街桥、邻楼及室内不在本件范围内。主地图采用近似定位，提供俯瞰查看。
 

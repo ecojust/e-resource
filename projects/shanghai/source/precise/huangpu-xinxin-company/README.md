@@ -1,6 +1,6 @@
 # 新新公司南侧商店主楼临街外观
 
-[在上海主地图中查看](../../../index.html#landmark=huangpu-xinxin-company&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-xinxin-company/manifest.json) · [本轮检查](../../../data/audit/xinxin-company-v1/README.md)
+[在上海主地图中查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xinxin-company&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-xinxin-company/manifest.json) · [本轮检查](../../../data/audit/xinxin-company-v1/README.md)
 
 对象为南京东路720号的新新公司，现第一食品商店。本件表现南侧商店的南立面、两侧前段、竖向柱带、凹窗、上部环廊、中央两级空心方塔及南侧街角小亭。北侧旅馆、未知天井、室内与真实南北分界未建，继续保留原底图和后续任务；模型后切面仅作展示封口，不是经核实的后立面。先施、大新及新老永安均为其他建筑，不并入本件。
 

@@ -44,32 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 42,
+  "candidate_manifest_count": 43,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 40,
-  "resulting_city_count": 80,
+  "new_city_model_count": 41,
+  "resulting_city_count": 81,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
-    "杨浦区": 4,
+    "杨浦区": 5,
     "虹口区": 3,
     "黄浦区": 12
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 168,
-    "bytes": 684749128,
+    "files": 172,
+    "bytes": 698558342,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 3715151,
+    "current_run_added_bytes": 13809214,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 36
+    "inherited_incremental_files": 40
   },
   "records": [
     {
@@ -2885,6 +2885,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
       "description": "宽浅现代屋盖与抬高中部采光段、历史砖外周及北浅石单拱入口；现状尺寸与隐面含估计。"
+    },
+    {
+      "id": "yangpu-former-shanghai-city-museum",
+      "name": "旧上海市博物馆江湾馆舍",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "city-museum.html",
+      "manifest": "assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
+      "manifest_sha256": "6932e2a77d115b9f0983ee6e60ae9754c039847ce96e6ba89fb3a93d1cb0225e",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum-raw.glb",
+          "bytes": 6600888,
+          "sha256": "1f2cd5ba517d0c4b9ec235894a87776af7014eebde1435cc169ced95065f327e",
+          "triangles": 96016
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum.blend",
+          "bytes": 3218194,
+          "sha256": "51fc1044bde7141d610b1bcf63f301e3d3fe109d0492372af006f2e840e740fb"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum-web.glb",
+          "bytes": 2858744,
+          "sha256": "a95dfce521f7fe98c54b72d12a44f1f3f7ac289c89662ae84d9503e2d522a4e9",
+          "triangles": 96016
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum-lod.glb",
+          "bytes": 1131388,
+          "sha256": "849fe5ca4842083805591a718c86d9cec59892ae743375bd795d3737c1c7fa03",
+          "triangles": 48348
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -35.54350280761719,
+            0.0,
+            -33.71819305419922
+          ],
+          "max": [
+            41.1197395324707,
+            23.96242904663086,
+            34.280765533447266
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -35.54350280761719,
+            -34.280765533447266,
+            0.0
+          ],
+          "max": [
+            41.1197395324707,
+            33.71819305419922,
+            23.96242904663086
+          ]
+        },
+        "triangles": 96016,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "西正面、两层翼部与黄瓦重檐门楼详化；东中后厅仅简化估计体量，范围、年代和细部待核。"
     }
   ],
   "baseline_inventory": {
@@ -2900,18 +2967,19 @@
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
-  "incremental_asset_revision": "225af1b75c235177ca23c775b9a9d3483eb032ba",
-  "incremental_audit_directory": "data/audit/jiangwan-swimming-hall-v1",
+  "incremental_asset_revision": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "incremental_audit_directory": "data/audit/city-museum-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/jiangwan-gymnasium-v1/inventory-increment.json",
-    "bytes": 26283,
-    "sha256": "586c001245b29f5dada74875035fd4f354bfced3819553ac18febd4e4390bdc7"
+    "file": "data/audit/jiangwan-swimming-hall-v1/inventory-increment.json",
+    "bytes": 29040,
+    "sha256": "30765d89d3a95b5851f5b008711e8a538fb459800483c6553de1a61c3afd5255"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json"
   ]
 }

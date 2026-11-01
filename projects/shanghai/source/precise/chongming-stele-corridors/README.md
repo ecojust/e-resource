@@ -1,6 +1,6 @@
 # 崇明学宫碑廊：两长边分段候选
 
-[独立预览](../../../stele-corridors.html) · [资产清单](../../../assets/models/candidates/chongming-stele-corridors/manifest.json) · [检查记录](../../../data/audit/stele-corridors-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-stele-corridors&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-stele-corridors/manifest.json) · [检查记录](../../../data/audit/stele-corridors-v1/README.md)
 
 本件只交付两条独立30.5米长边组件，基座各宽2.5米，合计表现61米。**原文总长76.7米和南北合计15.7米预算继续保留；南北具体短段、转角、入口及完整院落布局尚待核实，没有均分或制作虚构短段。**两组件并排同向、中心间距7米仅供展示，不代表院宽、实际方位或原址配准。两侧复用共性结构假设，不证明实物细节一致或照片分别属于东西哪一侧。
 

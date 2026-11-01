@@ -1,6 +1,6 @@
 # 俄罗斯领事馆历史主楼：2010外观参照候选
 
-[独立模型与外围漫游](../../../russian-consulate.html) · [资产清单](../../../assets/models/candidates/hongkou-russian-consulate/manifest.json) · [检查记录](../../../data/audit/russian-consulate-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) · [资产清单](../../../assets/models/candidates/hongkou-russian-consulate/manifest.json) · [检查记录](../../../data/audit/russian-consulate-v1/README.md)
 
 依据Baycrest的2010年5月公开照片、虹口旧保护建筑资料与上海地方志制作一件历史主楼外观候选。含浅色墙体、真实矩形与拱形窗洞、线脚壁柱、阳台石栏与柱、曲线山花、红色折坡屋面、拱形老虎窗、塔身与绿色曲顶。照片中的现代邻楼、园内凉亭、岸墙、植被和临时设备不作为本件建筑几何。
 

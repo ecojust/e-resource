@@ -1,3 +1,13 @@
+# 旧上海市博物馆江湾馆舍接入主地图
+
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) · [按区目录](landmarks.html) · [本轮证据](data/audit/city-museum-v1/README.md)
+
+现存地图主源1860完整轮廓与重叠门楼1931接入；西正面、现存两层南北翼部和黄瓦重檐门楼按照片详化。东中后厅仅作同低翼级的简化估计体量，当前具体范围、年代、屋面和门窗细部未核。院凹小源510/1262独立保留，室内、医院邻楼及院区地面不并入。 原始档96,016个三角面，网页档96,016个，远景档48,348个；四资产共13,809,214字节，含可编辑Blender。模型外包高度约23.962米，仍为作者估计。
+
+北院上方悬片已补充高度裁剪，保留独立邻体。基础裁剪40行加高度裁剪4行，全目录262／288行；具体残量与边界见[本轮审计](data/audit/city-museum-v1/README.md)。
+
+目录81处、16区，杨浦6、黄浦28；40项保留原有漫游、41件候选提供全局俯瞰，README模型入口统一主index。35项交付与46项既有模型退出重复制作；隐藏已完主楼10条，活动名录／构件1048条，具名关联19、待查1017。b2-012保留后厅细化及小源510/1262调查两项，旧完成范围不改。下一项为中国航空协会旧址飞机楼，已做真实文字和2013照片预研，地图源及修缮资料仍待核。
+
 # 江湾游泳馆接入主地图
 
 [泳馆主地图直达](index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) · [按区目录](landmarks.html) · [本轮证据](data/audit/jiangwan-swimming-hall-v1/README.md)

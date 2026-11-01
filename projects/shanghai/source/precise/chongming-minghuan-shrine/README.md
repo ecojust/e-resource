@@ -1,6 +1,6 @@
 # 崇明学宫名宦祠：文字尺寸参照候选
 
-[独立预览](../../../minghuan-shrine.html) · [资产清单](../../../assets/models/candidates/chongming-minghuan-shrine/manifest.json) · [检查记录](../../../data/audit/minghuan-shrine-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minghuan-shrine&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-minghuan-shrine/manifest.json) · [检查记录](../../../data/audit/minghuan-shrine-v1/README.md)
 
 依据博物馆文字制作三开间、中央开门的基础外观候选，提供可编辑Blender与近远景GLB。**简单双坡单脊屋顶、两侧格窗、双扇门样式、低基座、灰瓦/浅墙/红褐木配色及侧后墙都是建模假设，未获得单体照片核验。** 瓦垄和门窗构件用于表达这套假设，不代表真实瓦数或精确门窗式样。未添加无依据的斗栱、碑文、匾额、雕刻或室内陈列。
 

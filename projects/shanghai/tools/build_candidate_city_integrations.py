@@ -336,6 +336,27 @@ def checked_geometry(geometry, label, nullable=False, *, collision=False):
     return result
 
 
+def checked_height_clips(clips, label):
+    assert isinstance(clips, list) and len(clips) <= 8, f"Invalid {label} display_height_clips"
+    ids = set()
+    for clip in clips:
+        assert isinstance(clip, dict), f"Invalid {label} height clip"
+        ident = clip.get("id")
+        assert isinstance(ident, str) and ident and ident not in ids, f"Invalid {label} height clip id"
+        ids.add(ident)
+        checked_geometry(clip.get("geometry"), f"{label} display_height_clips geometry")
+        owner = clip.get("owner")
+        assert isinstance(owner, dict) and isinstance(owner.get("macro_id"), str) and owner["macro_id"], f"Invalid {label} height clip owner"
+        assert type(owner.get("feature_local_id")) is int and owner["feature_local_id"] > 0, f"Invalid {label} height clip owner"
+        assert "owners" not in clip and "source_feature_ids" not in clip, f"GPU-only {label} height clip cannot affect vector source IDs"
+        low, high = clip.get("min_height"), clip.get("max_height")
+        assert all(type(v) in (int, float) and math.isfinite(v) and abs(v) <= float(np.finfo(np.float32).max) for v in (low, high)) and low < high, f"Invalid {label} height range"
+        reference = clip.get("height_reference")
+        assert isinstance(reference, list) and len(reference) == 2 and all(type(v) in (int, float) and math.isfinite(v) for v in reference), f"Invalid {label} height reference"
+        assert abs(reference[0]) <= 180 and abs(reference[1]) <= 85, f"Invalid {label} height reference"
+    return clips
+
+
 def build_catalog(inventory, inventory_path=INVENTORY):
     inputs, placements = [], {}
     filenames = ["urban-placement.json", "chongming-placement.json"]
@@ -417,7 +438,7 @@ def build_catalog(inventory, inventory_path=INVENTORY):
                 if key == "overviewPitch":
                     assert 0 <= placement[key] <= 85
                 model[key] = placement[key]
-        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256"):
+        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "display_height_clips", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256"):
             if key in placement:
                 model[key] = json.loads(json.dumps(placement[key]))
         site = model.get("site_replacement")
@@ -425,7 +446,13 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             checked_geometry(site["geometry"], f"{ident} site_replacement.geometry")
         if site and "owner" not in site and site.get("source_macro") and site.get("source_local_id"):
             site["owner"] = {"macro_id": site["source_macro"], "feature_local_id": site["source_local_id"]}
+        if "display_height_clips" in model:
+            checked_height_clips(model["display_height_clips"], ident)
         models.append(model)
+    base_clip_ids = {model["id"] for model in models if model.get("replacement_geometry")}
+    base_clip_ids.update(model["site_replacement"]["id"] for model in models if model.get("site_replacement"))
+    height_clip_ids = [clip["id"] for model in models for clip in model.get("display_height_clips", [])]
+    assert len(set(height_clip_ids)) == len(height_clip_ids) and not base_clip_ids.intersection(height_clip_ids), "Height clip IDs must be unique and separate from 2D clips"
     assert len({model["id"] for model in models}) == len(models) == len(new)
     assert not set(inventory["existing_city_ids"]).intersection(model["id"] for model in models)
     # Test every reviewed spawn against all new candidate obstacles in metres,

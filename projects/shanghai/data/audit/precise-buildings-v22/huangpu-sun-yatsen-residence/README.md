@@ -1,6 +1,6 @@
 # 孙中山故居主楼：原址室外漫游接入
 
-[进入第三人称漫游](../../../index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) · [原模型与来源](../../../source/precise/huangpu-sun-yatsen-residence/README.md)
+[进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) · [原模型与来源](../../../../source/precise/huangpu-sun-yatsen-residence/README.md)
 
 模型位置沿用已识别源对象及照片参照的估计坐标系。`placement.json` 核对实际 Overture UUID、OSM 多面要素的精确组件、9个宏块中的40个周边源建筑，以及起点、前5米、相机和相机臂。目标邻楼不被替换。尺寸及未见立面仍为估计，不宣称实测或完整历史复原。
 
@@ -16,4 +16,4 @@
 
 几何造型、照片、原生Blender、开口与原创PBR的独立核验保留于此前模型交付审计；本次沿用相同几何。`source-files.json` 绑定本次最终源码、安装资产和运行时文件；历史审计中的文件哈希指向当时版本，不能用其文字替代本轮接入证据。
 
-运行：`node data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/qa-walk.cjs BASE_URL LABEL`；异常分支：`node data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/qa-fallback.cjs BASE_URL`。构建与归属工具见 [V22说明](../../../source/city/precise-overrides-v22/README.md)。
+运行：`node data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/qa-walk.cjs BASE_URL LABEL`；异常分支：`node data/audit/precise-buildings-v22/huangpu-sun-yatsen-residence/qa-fallback.cjs BASE_URL`。构建与归属工具见 [V22说明](../../../../source/city/precise-overrides-v22/README.md)。

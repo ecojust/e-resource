@@ -1,6 +1,6 @@
 # 大新公司历史主楼外观
 
-[在上海主地图查看](../../../index.html#landmark=huangpu-daxin-company&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-daxin-company/manifest.json) · [本轮检查](../../../data/audit/daxin-company-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-daxin-company&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-daxin-company/manifest.json) · [本轮检查](../../../data/audit/daxin-company-v1/README.md)
 
 对象为南京东路830号大新公司历史主楼，现第一百货商业中心的旧楼。本件表现圆弧形西南高转角、竖向柱带与凹窗、低翼上部敞廊和几何花格、齿状檐部、叠置圆片冠饰及沿街雨篷。北侧B馆、东侧C馆和跨街连接属于另行核对的对象，不合并为本件，也不将此入口解释为整个商业中心完成。
 

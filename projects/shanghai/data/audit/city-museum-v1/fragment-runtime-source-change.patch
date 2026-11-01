@@ -1,0 +1,142 @@
+--- a/projects/shanghai/src/candidate-city-clipping.js
++++ b/projects/shanghai/src/candidate-city-clipping.js
+@@ -73,10 +73,17 @@
+       if(!shader.vertexShader.includes('#include <project_vertex>')||!shader.fragmentShader.includes('#include <common>'))throw Error('Unsupported candidate clipping shader');
+       Object.assign(shader.uniforms,{candidateClipTexture:uniforms.texture,candidateClipCount:uniforms.count,
+         candidateMacro:{value:macro},candidateHasFeatureIds:{value:featureIds?1:0}});
++      // Interpolate source-relative coordinates. Large world X/Z values on
++      // thin triangles lost centimetres in the real fragment interpolator.
++      // Three uploads modelMatrix for every object, including cached programs.
+       const attribute=featureIds&&!shader.vertexShader.includes('attribute float _feature_id_0;')?'attribute float _feature_id_0;':'';
+       shader.vertexShader=shader.vertexShader.replace('#include <common>',`#include <common>\n${attribute}\nvarying vec3 vCandidatePosition;\nvarying float vCandidateFeatureId;`)
+-        .replace('#include <project_vertex>',`#include <project_vertex>\nvec4 candidatePosition=vec4(transformed,1.0);\n#ifdef USE_BATCHING\ncandidatePosition=batchingMatrix*candidatePosition;\n#endif\n#ifdef USE_INSTANCING\ncandidatePosition=instanceMatrix*candidatePosition;\n#endif\nvCandidatePosition=(modelMatrix*candidatePosition).xyz;\nvCandidateFeatureId=${featureIds?'_feature_id_0':'0.0'};`);
++        .replace('#include <project_vertex>',`#include <project_vertex>\nvec4 candidatePosition=vec4(transformed,1.0);\n#ifdef USE_BATCHING\ncandidatePosition=batchingMatrix*candidatePosition;\n#endif\n#ifdef USE_INSTANCING\ncandidatePosition=instanceMatrix*candidatePosition;\n#endif\nvCandidatePosition=mat3(modelMatrix)*candidatePosition.xyz;\nvCandidateFeatureId=${featureIds?'_feature_id_0':'0.0'};`);
+       shader.fragmentShader=shader.fragmentShader.replace('#include <common>',`#include <common>
++// Transmission shaders declare this later in their own pars chunk.
++#ifndef USE_TRANSMISSION
++uniform mat4 modelMatrix;
++#endif
+ uniform sampler2D candidateClipTexture;
+ uniform float candidateClipCount;
+ uniform float candidateMacro;
+@@ -84,8 +91,8 @@
+ varying vec3 vCandidatePosition;
+ varying float vCandidateFeatureId;
+ float candidateCross(vec2 a,vec2 b){return a.x*b.y-a.y*b.x;}
+-bool candidateInside(){
+-  vec2 p=vCandidatePosition.xz;
++bool candidateInside(vec3 candidateWorldPosition){
++  vec2 p=candidateWorldPosition.xz;
+   for(int i=0;i<${MAX_TRIANGLES};i++){
+     if(float(i)>=candidateClipCount)break;
+     float row=(float(i)+0.5)/${MAX_TRIANGLES}.0;
+@@ -96,14 +103,14 @@
+     if(candidateHasFeatureIds>0.5&&owner.x>0.0&&abs(owner.x-vCandidateFeatureId)>0.5)continue;
+     vec4 ab=texture2D(candidateClipTexture,vec2(0.125,row));
+     vec4 cy=texture2D(candidateClipTexture,vec2(0.375,row));
+-    if(vCandidatePosition.y<cy.z||vCandidatePosition.y>cy.w)continue;
++    if(candidateWorldPosition.y<cy.z||candidateWorldPosition.y>cy.w)continue;
+     float a=candidateCross(ab.zw-ab.xy,p-ab.xy),b=candidateCross(cy.xy-ab.zw,p-ab.zw),c=candidateCross(ab.xy-cy.xy,p-cy.xy);
+     if((a>=-0.001&&b>=-0.001&&c>=-0.001)||(a<=0.001&&b<=0.001&&c<=0.001))return true;
+   }
+   return false;
+-}`).replace(/void\s+main\s*\(\s*\)\s*\{/,'void main(){\nif(candidateInside())discard;');
++}`).replace(/void\s+main\s*\(\s*\)\s*\{/,'void main(){\nif(candidateInside(vCandidatePosition+modelMatrix[3].xyz))discard;');
+     };
+-    material.onBeforeCompile=hook;material.customProgramCacheKey=()=>`${previousKey}|candidate-city-clip-v2|${MAX_TRIANGLES}|${featureIds?1:0}|${scope?1:0}`;
++    material.onBeforeCompile=hook;material.customProgramCacheKey=()=>`${previousKey}|candidate-city-clip-v3|${MAX_TRIANGLES}|${featureIds?1:0}|${scope?1:0}`;
+     material.needsUpdate=true;this.bindings.set(material,{previous,cacheKey,hook,uniforms,scope});
+   }
+   bindObject(group,record){
+--- a/projects/shanghai/tests/candidate-city-clipping.test.mjs
++++ b/projects/shanghai/tests/candidate-city-clipping.test.mjs
+@@ -189,8 +189,10 @@
+     assert.equal(shader.uniforms.candidateClipCount.value,4);
+     assert.deepEqual([data[6],data[7]],[-100,1000]);
+     for(const row of [2,3])assert.deepEqual([data[row*16+6],data[row*16+7]],[low,high]);
+-    assert.match(shader.vertexShader,/vCandidatePosition=\(modelMatrix\*candidatePosition\)\.xyz/);
+-    assert.match(shader.fragmentShader,/if\(vCandidatePosition\.y<cy\.z\|\|vCandidatePosition\.y>cy\.w\)continue;/);
++    assert.match(shader.vertexShader,/vCandidatePosition=mat3\(modelMatrix\)\*candidatePosition\.xyz/);
++    assert.match(shader.fragmentShader,/if\(candidateWorldPosition\.y<cy\.z\|\|candidateWorldPosition\.y>cy\.w\)continue;/);
++    assert.match(shader.fragmentShader,/if\(candidateInside\(vCandidatePosition\+modelMatrix\[3\]\.xyz\)\)discard;/);
++    assert.match(shader.fragmentShader,/#ifndef USE_TRANSMISSION\nuniform mat4 modelMatrix;\n#endif/);
+   }
+ });
+ 
+@@ -229,3 +231,28 @@
+     assert.deepEqual(clipper.data,before);assert.equal(clipper.revision,revision);
+   }
+ });
++
++
++test('translation-free clipping preserves batching and instancing and does not forward-reference transmission modelMatrix',t=>{
++  const {clipper,mesh}=harness(t);
++  for(const shader of shaders(mesh)){
++    const batch=shader.vertexShader.indexOf('candidatePosition=batchingMatrix*candidatePosition;');
++    const instance=shader.vertexShader.indexOf('candidatePosition=instanceMatrix*candidatePosition;');
++    const varying=shader.vertexShader.indexOf('vCandidatePosition=mat3(modelMatrix)*candidatePosition.xyz;');
++    assert(batch>=0&&instance>batch&&varying>instance);
++    assert.match(shader.fragmentShader,/bool candidateInside\(vec3 candidateWorldPosition\)/);
++    assert.match(shader.fragmentShader,/if\(candidateInside\(vCandidatePosition\+modelMatrix\[3\]\.xyz\)\)discard;/);
++  }
++  const material=new THREE.MeshPhysicalMaterial({transmission:.5}),library=THREE.ShaderLib.physical;
++  clipper.bindMaterial(material,{featureIds:false,macroId:MACRO});
++  const shader={vertexShader:library.vertexShader,fragmentShader:library.fragmentShader,uniforms:{}};
++  material.onBeforeCompile(shader,{});
++  const helper=shader.fragmentShader.slice(shader.fragmentShader.indexOf('bool candidateInside('),shader.fragmentShader.indexOf('return false;')+'return false;'.length);
++  assert(!helper.includes('modelMatrix'),'the common helper must use its parameter, before transmission declares its modelMatrix');
++  const transmission=shader.fragmentShader.indexOf('#include <transmission_pars_fragment>'),main=shader.fragmentShader.indexOf('void main(){');
++  assert(transmission>=0&&transmission<main);
++  assert.match(THREE.ShaderChunk.transmission_pars_fragment,/#ifdef USE_TRANSMISSION[\s\S]*uniform mat4 modelMatrix;/);
++  assert.match(shader.fragmentShader,/#ifndef USE_TRANSMISSION\nuniform mat4 modelMatrix;\n#endif/);
++  assert.match(material.customProgramCacheKey(),/candidate-city-clip-v3/);
++  t.after(()=>material.dispose());
++});
+--- a/projects/shanghai/src/app.js
++++ b/projects/shanghai/src/app.js
+@@ -1,10 +1,10 @@
+-import { createShanghaiScene } from './map-scene.js?v=city-height-clips-v1';
++import { createShanghaiScene } from './map-scene.js?v=city-height-clips-v2';
+ import { WalkController } from './walk-controller.js';
+ import { districtAt } from './geography.js';
+ import { placeDescription, walkingPose } from './precise-registration-ui.js';
+ import { readVerifiedBytes } from './ordinary-building-catalog.js';
+ import { resolveNavigationRoute } from './landmark-navigation.js';
+-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=city-height-clips-v1';
++import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=city-height-clips-v2';
+ import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js';
+ 
+ const $ = id => document.getElementById(id);
+@@ -251,7 +251,7 @@
+   installUi();loadingProgress(18);
+   try{
+     let candidateCatalogError=null;
+-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=city-height-clips-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
++    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=city-height-clips-v2':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+       if(name!=='data/candidate-city-integrations.json')throw error;
+       candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
+     })));
+--- a/projects/shanghai/src/map-scene.js
++++ b/projects/shanghai/src/map-scene.js
+@@ -23,8 +23,8 @@
+   releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
+ import { correctPhotographicTexture } from './photographic-texture.js';
+ import { preparePhotographicGlass } from './photographic-glass.js';
+-import {CandidateCityState} from './candidate-city-integrations.js?v=city-height-clips-v1';
+-import {CandidateCityClipper} from './candidate-city-clipping.js?v=city-height-clips-v1';
++import {CandidateCityState} from './candidate-city-integrations.js?v=city-height-clips-v2';
++import {CandidateCityClipper} from './candidate-city-clipping.js?v=city-height-clips-v2';
+ import {planCandidateVectorClipping} from './candidate-vector-clipping.js';
+ import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
+ import {createBuildingBeacons} from './building-beacons.js';
+--- a/projects/shanghai/index.html
++++ b/projects/shanghai/index.html
+@@ -45,7 +45,7 @@
+ 
+   <dialog id="info-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form><span class="eyebrow">ABOUT THIS PROJECT</span><h2>一座可以走进的上海</h2><section id="building-reference" hidden><h3 id="reference-title"></h3><img id="reference-image" alt="" loading="lazy"><p id="reference-note"></p><small id="reference-credit"></small> · <a id="reference-source" target="_blank" rel="noopener">照片来源 ↗</a></section><p>探索上海16区地图与第三人称街景。外滩历史建筑依照公开照片逐栋重建，步道补充树木、灯具与护栏；普通建筑近景增加实体门窗、窗框、窗台和檐边。街道车辆为静态尺度示意。</p><dl><dt>地图与建筑</dt><dd>道路、水系与行政区边界来自OpenStreetMap，普通建筑采用Overture轮廓和注明来源的高度。历史建筑按照片复原；普通楼窗位和部分尺寸由参数推定，精度不同。126处有来源的坡屋顶继续保留，地图与分块按需联网加载。</dd><dt>操作方式</dt><dd>俯瞰模式双击地图选择街区起点。WASD / 方向键行走，Shift加速；拖动转向，滚轮调整镜头。Q / E转动镜头，R重置。手机支持摇杆与拖动操作。</dd><dt>数据许可</dt><dd>© OpenStreetMap contributors、Overture Maps Foundation，ODbL 1.0；高度估计按各源CC BY 4.0署名。底图由OpenFreeMap提供，Poly Haven表面与反射材料采用CC0。外滩18号照片及纹理模型采用CC BY-SA 4.0；其他照片与数据许可见项目说明。</dd></dl><a href="https://github.com/ecojust/e-resource/tree/master/projects/shanghai" target="_blank" rel="noopener">查看项目说明与模型下载 ↗</a></dialog>
+   <noscript><div class="no-script">请启用 JavaScript 以加载三维地图。</div></noscript>
+-  <script type="module" src="src/app.js?v=city-height-clips-v1"></script>
++  <script type="module" src="src/app.js?v=city-height-clips-v2"></script>
+   <script>if(location.protocol==='file:'){document.getElementById('loading-message').textContent='请在项目目录运行 python -m http.server 8000，然后打开 http://localhost:8000。';document.getElementById('loading-progress').style.width='0';}</script>
+ </body>
+ </html>

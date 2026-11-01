@@ -1,6 +1,6 @@
 # 崇明学宫西牌坊（题名面待核）：结构参照候选
 
-[独立预览](../../../west-paifang.html) · [资产清单](../../../assets/models/candidates/chongming-xuehai-paifang/manifest.json) · [检查记录](../../../data/audit/west-paifang-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-xuehai-paifang&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-xuehai-paifang/manifest.json) · [检查记录](../../../data/audit/west-paifang-v1/README.md)
 
 本件以2021年官方文字中的物理西座为独立身份，参考两座牌坊照片可见的共性石木构造。沿用资产ID `chongming-xuehai-paifang` 仅为兼容旧队列名称，**不表示已验收“学海”题名属于西座某面。两面匾额均留空，不雕刻题字。** 照片近景与物理座别、正反面之间的完整身份链仍未建立，后坡、柱后支承及细部尺寸均包含估计。
 

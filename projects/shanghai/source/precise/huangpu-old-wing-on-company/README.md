@@ -1,6 +1,6 @@
 # 老永安公司主楼与屋顶塔楼外观候选
 
-[查看模型](../../../old-wing-on-company.html) · [四件资产与摘要](../../../assets/models/candidates/huangpu-old-wing-on-company/manifest.json) · [检查记录](../../../data/audit/old-wing-on-company-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) · [四件资产与摘要](../../../assets/models/candidates/huangpu-old-wing-on-company/manifest.json) · [检查记录](../../../data/audit/old-wing-on-company-v1/README.md)
 
 本件表现南京东路635号的老永安公司外观。东北圆弧入口与南京路北立面中西段的屋顶塔楼分别建模，塔楼不在圆弧入口正上方。南京东路627号的新永安大楼、跨街天桥、先施公司及其他邻楼不在本件范围内。大东旅社、舞厅等历史用途不自动拆成独立楼栋。
 

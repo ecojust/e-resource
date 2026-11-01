@@ -1,0 +1,30 @@
+"""Bind already-completed museum checks without another geometry/browser run.
+Usage: repository-root output.json
+"""
+from pathlib import Path
+import datetime,hashlib,json,sys
+root,out=map(Path,sys.argv[1:3]);mid='yangpu-former-shanghai-city-museum';P=root/'projects/shanghai';A=P/'data/audit/city-museum-v1';assets=P/'assets/models/candidates'/mid
+def bind(p):
+ b=p.read_bytes();return{'file':p.name,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()}
+def read(n):return json.loads((A/n).read_text())
+names=['independent-geometry-review.json','independent-packaging-binding.json','independent-placement-review.json','independent-native-reopen.json','independent-native-visual-review.json','independent-reference-review.json','independent-original-city-projection.json','independent-near-contacts.json','independent-prototype-recovery.json','independent-metadata-review.json','independent-navigation-review.json','independent-source-git-bindings.json','independent-city-source-decode.json','independent-height-geometry-review.json','independent-height-row-preservation.json','independent-height-numeric.json','independent-height-clip-review.json']
+for n in names:
+ r=read(n)
+ if n not in ['independent-reference-review.json','independent-source-git-bindings.json','independent-city-source-decode.json','independent-height-geometry-review.json','independent-height-row-preservation.json','independent-height-numeric.json','independent-height-clip-review.json']:assert r['passed'],n
+ref=read('independent-reference-review.json');assert ref['result']=='bounded-current-exterior-supported-with-explicit-unverified-rear'
+manifest=json.loads((assets/'manifest.json').read_text());package=read('independent-packaging-binding.json');geometry=read('independent-geometry-review.json');placement=read('independent-placement-review.json');native=read('independent-native-reopen.json');views=read('independent-native-visual-review.json');metadata=read('independent-metadata-review.json')
+mb=bind(assets/'manifest.json');assert mb==package['final_manifest'];assert geometry['manifest']['sha256']==mb['sha256'];assert metadata['final_manifest']['sha256']==mb['sha256']
+for role,r in manifest['assets'].items():
+ b=bind(assets/r['file']);assert all(b[k]==r[k]==package['assets'][role][k]for k in ['file','bytes','sha256'])
+assert native['raw']['sha256']==views['raw_sha256']==manifest['assets']['raw']['sha256'];assert native['native']['sha256']==views['native_sha256']==manifest['assets']['native']['sha256']
+for r in views['images']:
+ b=bind(A/r['file']);assert r['actually_viewed']and all(b[k]==r[k]for k in ['file','bytes','sha256'])
+height=read('independent-height-clip-review.json');assert height['passed']
+assert height['final_footprint']['sha256']==bind(A/'footprint-review.json')['sha256']
+assert placement['bindings']['contract_sha256']==height['original_placement_footprint']['sha256']
+assert height['prior_placement_review']['sha256']==bind(A/'independent-placement-review.json')['sha256']
+assert height['base_2d_collision_and_four_authored_assets_unchanged']
+assert read('independent-prototype-recovery.json')['final_manifest']==mb
+assert metadata['current_counts']=={'navigation':81,'candidate_city':41,'legacy_city':40,'yangpu':6,'walk_entries_added':0}
+result={'schema':'city-museum-independent-review-v1','passed':True,'reviewer':'museum_review','reviewed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'model_id':mid,'status':'Offline independent sources, geometry, native, placement, metadata and incremental height-clip correction accepted for the bounded present-day exterior; final browser/prepublication gate remains separate.','final_manifest':mb,'final_footprint':bind(A/'footprint-review.json'),'reports':[bind(A/n)for n in names],'new_assets':package['assets'],'total_new_asset_bytes':package['total_asset_bytes'],'triangles':{role:geometry['assets'][role]['triangles']for role in ['raw','full','lod']},'actual_independent_controls_per_role':{role:len(geometry['assets'][role]['surfaceProbes'])for role in ['raw','full','lod']},'exact_raw_full_position_normal_material_float32_equality':geometry['assets']['full']['fullMatchesRawExactPositionNormalMaterialMultiset'],'native_readonly_actual_reopen_and_eight_individual_image_views':True,'actual_original_city_triangles_reviewed':122780,'compatible_original_owners_not_guessed':True,'retained_near_interface_limits':placement['possible_original_low_contacts'],'source1860_residual_m2':placement['display_mask']['original_source1860_residual_m2'],'collision_ring_points':placement['collision']['total_ring_points'],'clip_rows':{'base_2d':40,'height':4,'new':44,'total':262,'capacity':288},'final_height_fix':bind(A/'independent-height-clip-review.json'),'original_native_roof_projection_remaining_after_height_clips_m2':height['after_height_original_roof_projection_remaining_m2'],'current_counts':metadata['current_counts'],'navigation_document_exception':metadata['navigation_repair_exception'],'limits':['All model elevations/detail dimensions estimated; no measured reconstruction claim.','East middle rear hall is only bounded simplified low volume; present footprint does not prove historic fabric/date.','510/1262 remain separate original sources; compatible near face attribution is ambiguous, low contact upper bounds and main-source residuals are explicitly retained.','No public-access/indoor walkthrough certification; interior collision fill is conservative metadata.','b2-012 rear-hall and courtyard investigation remains open; next queued model is order36 aviation association building.','Actual global placement, persistent81 labels and repaired northern interface appearances require the new height-fixed-final browser QA and final exact-file gate; prior floating-fragment frames are not final evidence.'],'heavy_cpu_work_complete':True,'no_chrome_or_server_launched_by_reviewer':True}
+out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'passed':True,'reports':len(names),'assets':4,'native_images':len(views['images']),'global_models':81}))

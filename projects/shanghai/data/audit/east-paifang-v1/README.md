@@ -1,6 +1,6 @@
 # 东牌坊结构候选检查
 
-[独立预览](../../../east-paifang.html) · [来源与构建](../../../source/precise/chongming-chaozong-paifang/README.md) · [资产清单](../../../assets/models/candidates/chongming-chaozong-paifang/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-chaozong-paifang&mode=overview) · [来源与构建](../../../source/precise/chongming-chaozong-paifang/README.md) · [资产清单](../../../assets/models/candidates/chongming-chaozong-paifang/manifest.json)
 
 交付ID `chongming-chaozong-paifang`，中文名为崇明学宫东牌坊（题名面待核）。物理东座身份采用2021年官方文字，两座照片仅用于共性结构参照；没有完成单座正反面照片身份绑定。两面匾额均为空，不把保留的资产ID当成题字验收。没有照片贴图、再分发、城市配准或西座场景。
 

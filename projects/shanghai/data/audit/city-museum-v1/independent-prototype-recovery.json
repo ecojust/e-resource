@@ -1,0 +1,85 @@
+{
+  "schema": "city-museum-independent-prototype-recovery-v1",
+  "status": "resolved-and-bound-to-final-frozen-package",
+  "model_id": "yangpu-former-shanghai-city-museum",
+  "prototypes": [
+    {
+      "version": "v1",
+      "raw_sha256": "1a1442a74146ef5220346de9527a0f06cd563957ae4372f406154b6a4bfa01e0",
+      "actual_triangles": 93952,
+      "finding": "Visible vertical dark segment at southeast stone tier corner. Independently decoded triangles5194/5213 and5204/5197 each overlap0.480000019sqm on actual exterior planes. Three original gallery pixel rays hit duplicate first faces at identical distance.",
+      "evidence_sha256": "fc6bf727a6a31e1d94bd1c73e4fbf38f26151d1e662c283f5f6178401c22d9df",
+      "actual_native_gallery_image_sha256": "a7299e65f44086bf940ba82673467ed74f1fb2c559d45acb88fee0c9bcbb7814",
+      "corner_rays": 100,
+      "empty_corner_rays": 0,
+      "resolution": "Replace separate rectangular upper return solids with one closed tower polygon layer; remove duplicate central front height/cornice."
+    },
+    {
+      "version": "v2",
+      "raw_sha256": "e2b88ed74d1d02ae405f39b3cef8c086048aab8aeb5ad0fa5bb7ca4c81d07b60",
+      "actual_triangles": 96676,
+      "finding": "Coplanar duplicate first hits removed, but new tier bottom10.5m floats0.38000011m above actual flat roof top10.11999989m. Seven of100 identical corner probes fail, all at10.25m.",
+      "evidence_sha256": "e564218e9471278b8a4e50ae35cb38b6810ab8eebe432b07d5479111b512c4a9",
+      "corner_rays": 100,
+      "empty_corner_rays": 7,
+      "resolution": "Extend continuous tier down to10.08m, below flat roof top; stop corresponding west central wall at10.08 to avoid reintroducing coplanar exterior faces."
+    },
+    {
+      "version": "v3",
+      "raw_sha256": "1f2cd5ba517d0c4b9ec235894a87776af7014eebde1435cc169ced95065f327e",
+      "actual_triangles": 96016,
+      "finding": "All100 original corner probes now hit; three original gallery pixel rays have unique structural first hits. Independently selected261 general controls pass, including10.25m return regression, loft closure, real gallery/arch/window recesses and open courts.",
+      "evidence_sha256": "0eda890e64e7ecebfb72455de46341807f7685a802d31990540bb9d50a53c79b",
+      "corner_rays": 100,
+      "empty_corner_rays": 0,
+      "general_independent_controls": 261,
+      "actual_native_gallery_image_sha256": "738cf671760fc21a97a703393d29d6fb82f13f07b45e79913ba5a75659403030",
+      "actual_visual_result": "Individually opened original gallery PNG: old vertical segment and new horizontal slit are absent. All8 final native images independently viewed."
+    }
+  ],
+  "review_control_adjustment": {
+    "prototype": "v3",
+    "initial_review_control_failure": {
+      "label": "continuous tower base edge0 fraction0.08 at10.75",
+      "expected_first": "warm stone",
+      "actual_first": "carved pale stone",
+      "actual_stone_structural_hit_m": 0.15000020425120866
+    },
+    "control_correction": "Known photographed cornice legitimately precedes structural wall at10.75. Accept either carved pale stone or warm stone first but require warm stone at0.14..0.68m. This does not waive missing structural hits or change geometry."
+  },
+  "failure_retention_policy": "The actual V1 geometry defect and V2 regression remain recorded. V3 passes do not erase either earlier failure. One reviewer material-order expectation was corrected for a legitimate visible cornice while retaining a required structural wall hit.",
+  "public_cache_policy": "Large triangle arrays, raw prototype assets and prototype images remain private. This concise report records actual evidence hashes; final raw/native/manifest binding is added only after freeze.",
+  "passed": true,
+  "final_manifest": {
+    "file": "manifest.json",
+    "bytes": 5541,
+    "sha256": "6932e2a77d115b9f0983ee6e60ae9754c039847ce96e6ba89fb3a93d1cb0225e"
+  },
+  "final_assets": {
+    "raw": {
+      "file": "yangpu-former-shanghai-city-museum-raw.glb",
+      "bytes": 6600888,
+      "sha256": "1f2cd5ba517d0c4b9ec235894a87776af7014eebde1435cc169ced95065f327e",
+      "triangles": 96016
+    },
+    "native": {
+      "file": "yangpu-former-shanghai-city-museum.blend",
+      "bytes": 3218194,
+      "sha256": "51fc1044bde7141d610b1bcf63f301e3d3fe109d0492372af006f2e840e740fb"
+    },
+    "full": {
+      "file": "yangpu-former-shanghai-city-museum-web.glb",
+      "bytes": 2858744,
+      "sha256": "a95dfce521f7fe98c54b72d12a44f1f3f7ac289c89662ae84d9503e2d522a4e9",
+      "triangles": 96016
+    },
+    "lod": {
+      "file": "yangpu-former-shanghai-city-museum-lod.glb",
+      "bytes": 1131388,
+      "sha256": "849fe5ca4842083805591a718c86d9cec59892ae743375bd795d3737c1c7fa03",
+      "triangles": 48348
+    }
+  },
+  "final_geometry_report_sha256": "3ae06e7dfa12ec40e99909934481c62a9c6dc95ce85800329e6630cbfb6b18a6",
+  "final_native_reopen_sha256": "0a7d9961509c6e22674017b2b5d658fd318f3bfcfaf05276ab6d9bfd94dc4237"
+}

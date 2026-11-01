@@ -1,0 +1,55 @@
+{
+  "schema": "city-museum-capacity-review-v1",
+  "passed": true,
+  "executed_utc": "2026-11-01T12:27:58.557093+00:00",
+  "baseline_commit": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "production_changes": [
+    "src/candidate-city-clipping.js: MAX_TRIANGLES224→288 only",
+    "tests/candidate-city-clipping.test.mjs: capacity,row225/288,addressing and overflow289 regression assertions"
+  ],
+  "beacons_unchanged": true,
+  "current_catalogue_rows": 218,
+  "old_capacity": 224,
+  "new_capacity": 288,
+  "old_effective_bytes_unchanged": 13952,
+  "material_shader_cases": 6,
+  "material_passes": 18,
+  "production_test_count": 10,
+  "production_tests_failed": 0,
+  "final_museum_masks_pending": true,
+  "candidate_budget": {
+    "main_rows": 38,
+    "site_rows": 2,
+    "added": 40,
+    "total": 258,
+    "scope": "Private current candidate, not final coverage acceptance; root reviewed need for upper-interface residual monitoring. Final counts remain guarded by actual frozen contract."
+  },
+  "bindings": [
+    {
+      "file": "src/candidate-city-clipping.js",
+      "bytes": 10046,
+      "sha256": "c7e46055df04fdb4f5a60dc0ab14385e5c28f3564658d0869d0372b511a479b8"
+    },
+    {
+      "file": "tests/candidate-city-clipping.test.mjs",
+      "bytes": 9954,
+      "sha256": "fc6e093979273a23f5f246d7b5e7d27b12afd476719ae1ccf53aea43c94dd4a4"
+    },
+    {
+      "file": "data/audit/city-museum-v1/check-clipping-budget.mjs",
+      "bytes": 7716,
+      "sha256": "3ce30f523e962b12f586e4a97e11bd4569ef4a58abb373987630a3cdb994051f"
+    },
+    {
+      "file": "data/audit/city-museum-v1/clipping-budget-preflight.json",
+      "bytes": 3733,
+      "sha256": "cbcb6cb1f75db7cabf1495e58757f870809fefcd3331bd14b306f64f7ec0b18b"
+    },
+    {
+      "file": "data/audit/city-museum-v1/clipping-budget-tests.tap",
+      "bytes": 1148,
+      "sha256": "dfe382f417ce4b4432760d6e0efa70734fae0ffb4a58003a69f65422695283d6"
+    }
+  ],
+  "initial_preflight_preserved": "runtime-preflight.json retains the original before-capacity-change snapshot; its old production hash remains historical evidence."
+}

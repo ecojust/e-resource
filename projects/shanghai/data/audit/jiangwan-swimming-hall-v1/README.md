@@ -1,6 +1,6 @@
 # 江湾游泳馆接入主地图
 
-[全局主图直达](../../../index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) · [来源与重建](../../../source/precise/yangpu-jiangwan-swimming-hall/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json)
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) · [来源与重建](../../../source/precise/yangpu-jiangwan-swimming-hall/README.md) · [四资产清单](../../../assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json)
 
 本件为江湾体育中心内独立游泳馆的有界外观，北侧为浅石阶梯单拱入口，南侧为折角砖墙，池区上方为现代宽浅屋盖和抬高中央采光段。它与已建的室外主场、独立体育馆分别登记，周围白色轻型棚房及其他独立源不并入。
 

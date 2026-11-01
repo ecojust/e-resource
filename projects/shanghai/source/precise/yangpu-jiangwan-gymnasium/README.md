@@ -1,6 +1,6 @@
 # 江湾体育馆历史主楼：来源与制作范围
 
-[全局地图直达](../../../index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) · [来源登记](source-register.json) · [文字审查](../../../data/audit/jiangwan-gymnasium-v1/documentary-review.json) · [图像审查](../../../data/audit/jiangwan-gymnasium-v1/photo-review.json)
+[全局地图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) · [来源登记](source-register.json) · [文字审查](../../../data/audit/jiangwan-gymnasium-v1/documentary-review.json) · [图像审查](../../../data/audit/jiangwan-gymnasium-v1/photo-review.json)
 
 本件为江湾体育中心内独立封闭的综合体育馆历史主楼外观。已建室外主场看台环、南侧游泳馆及周边建筑分别处理；交付体育馆不等于优秀历史建筑名录 `sh-historic-b1-021` 全条完成。国和路346号与淞沪路245号来自整体育中心资料，单馆门牌尚未独立确认。
 

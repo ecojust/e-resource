@@ -1,0 +1,38 @@
+{
+  "schema": "city-museum-height-focused-tests-v1",
+  "passed": true,
+  "node": {
+    "command": "node --test --test-reporter=tap projects/shanghai/tests/candidate-city-clipping.test.mjs projects/shanghai/tests/candidate-geometry.test.mjs projects/shanghai/tests/city-projection.test.mjs",
+    "passed": 29,
+    "failed": 0,
+    "output_file": "fragment-focused-tests.tap"
+  },
+  "python": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 projects/shanghai/tests/candidate-catalog-increment.test.py",
+    "passed": 14,
+    "failed": 0,
+    "warning_fix": "Use Python float(np.finfo(np.float32).max) to compare enormous rejected values without NumPy scalar coercion warning; rerun14 tests passed with no warning.",
+    "rerun_in_fragment_stage": false,
+    "inherited_verified_result": "height-focused-tests-pre-fragment-rebase.json"
+  },
+  "bindings": [
+    {
+      "file": "projects/shanghai/tests/candidate-city-clipping.test.mjs",
+      "sha256": "62dbca03947f284a2dfae483a4911972fb51093c193d341ed30c05c6708b3cc8"
+    },
+    {
+      "file": "projects/shanghai/tests/candidate-geometry.test.mjs",
+      "sha256": "e3ed92932892320a3a7c624e70111eafc64b377794154180b330ccd61cc0b491"
+    },
+    {
+      "file": "projects/shanghai/tests/city-projection.test.mjs",
+      "sha256": "2d9740aa24eb324823b5d85cc5b4b7fd6f4b103ea24cb5adfeb6ca259e407ebc"
+    },
+    {
+      "file": "projects/shanghai/tests/candidate-catalog-increment.test.py",
+      "sha256": "64ecc5ad077fa1a18ac2a73ec029e3bafc7dc3fdbcd162c0e0d001a01d6d7a6a"
+    }
+  ],
+  "stage": "fragment-rebased-final",
+  "scope_note": "29 Node tests exercise actual Three shader hooks and lifecycle/coordinate assertions; they do not compile WebGL or prove per-object GPU upload. The final browser fixture is separate. Unchanged builder retains its14 previously passing tests."
+}

@@ -1,6 +1,6 @@
 # 崇明学宫东庑：文字尺寸参照候选
 
-[独立预览](../../../east-wing.html) · [资产清单](../../../assets/models/candidates/chongming-east-wing/manifest.json) · [检查记录](../../../data/audit/east-wing-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-east-wing&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-east-wing/manifest.json) · [检查记录](../../../data/audit/east-wing-v1/README.md)
 
 依据旧馆文字中的七楹、26.74×7.7×8米制作独立长屋体候选，提供可编辑Blender和近远景GLB。**七等分立面、中央关闭双门、两侧各三处格窗、简单双坡单脊屋顶、配色、基座及侧后墙均包含建模假设。** 航拍只能提供长屋形态、灰瓦屋面与白色端墙的概括参照，未核验这些具体开口和屋顶端部。
 

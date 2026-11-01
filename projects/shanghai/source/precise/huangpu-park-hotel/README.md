@@ -1,6 +1,6 @@
 # 国际饭店历史主楼：2007外观参照候选
 
-[模型查看与外围漫游](../../../park-hotel.html) · [资产清单](../../../assets/models/candidates/huangpu-park-hotel/manifest.json) · [检查记录](../../../data/audit/park-hotel-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-park-hotel&mode=overview) · [资产清单](../../../assets/models/candidates/huangpu-park-hotel/manifest.json) · [检查记录](../../../data/audit/park-hotel-v1/README.md)
 
 参照WiNG的2007年照片，以及国资委2023年介绍和上海地方志，制作前部高塔与相连较低主体。模型表现深色基座、棕褐砖面、连续竖肋、分格矩形窗、第二／三／十四设计层的弧角玻璃带、分组退台和高低砖垛塔冠。未将同框体育大厦、玻璃邻楼、后期3–9层后楼或地下室纳入。
 

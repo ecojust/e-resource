@@ -1,6 +1,6 @@
 # 崇明学宫棂星门照片左侧门（历史石框参照）
 
-[独立预览](../../../lingxing-left-gate.html) · [资产清单](../../../assets/models/candidates/chongming-lingxing-photo-left-gate/manifest.json) · [检查记录](../../../data/audit/lingxing-left-gate-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-lingxing-photo-left-gate&mode=overview) · [资产清单](../../../assets/models/candidates/chongming-lingxing-photo-left-gate/manifest.json) · [检查记录](../../../data/audit/lingxing-left-gate-v1/README.md)
 
 网页模型约0.23 MB，远景约0.05 MB，原始GLB约0.48 MB，Blender约0.26 MB。
 

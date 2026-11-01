@@ -1,0 +1,229 @@
+{
+  "model_id": "yangpu-former-shanghai-city-museum",
+  "baseline_commit": "93e3cb2d0ddeba1a7db7d435bf66c2f61492326e",
+  "checked_at_utc": "2026-11-01T13:59:29.352163+00:00",
+  "checks": [
+    {
+      "command": "python projects/shanghai/tools/build_candidate_city_integrations.py --catalog-only --check",
+      "exit_code": 0,
+      "output": "{\"candidates\": 43, \"new_city_models\": 41, \"cumulative_verified_files\": 172, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 698558342}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/update_global_model_metadata.py --check",
+      "exit_code": 0,
+      "output": "{\"city_integrated_candidates\": 41}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/build_model_todo.py --check",
+      "exit_code": 0,
+      "output": "README district candidates verified: 41; global destinations: 81\nREADME TODO matches structured records\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/build_landmark_directory.py --check",
+      "exit_code": 0,
+      "output": "Landmark directory matches navigation data\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/restoration_progress.py --check",
+      "exit_code": 0,
+      "output": "{\"navigation_entries\": 81, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 41, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/tools/sync_readme_districts.py --check",
+      "exit_code": 0,
+      "output": "README district candidates verified: 41; global destinations: 81\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "node --test projects/shanghai/tests/landmark-navigation.test.mjs projects/shanghai/tests/landmark-directory.test.mjs",
+      "exit_code": 0,
+      "output": "✔ current model articles, district totals and primary routes match the complete shared catalogue (47.619309ms)\n✔ the published directory is reproducible from the current base and candidate metadata (119.039784ms)\n✔ global model cards retain auxiliary previews, source documentation and asset download metadata (120.407843ms)\nℹ 43 building previews retain source/download metadata; no GLB or Blender bytes were read\n✔ lightweight directory resources and loading-screen entry remain available without starting WebGL (5.041977ms)\n✔ a new delivered candidate updates the latest overview destination and README counts (245.326502ms)\n✔ every published landmark deep link resolves to its exact reviewed walking pose (7.812639ms)\n✔ landmark links default to walking, while explicit overview and district links retain their modes (0.786243ms)\n✔ unknown destinations and malformed coordinates never silently fall back to Bund (0.420893ms)\n✔ direct list selection enters walking from overview and uses the reviewed position (1.345291ms)\n✔ requesting walking still cannot bypass an unreviewed ordinary building guard (0.882316ms)\n✔ same-page links navigate immediately and a slower previous destination cannot overwrite the new state (1.08594ms)\n✔ an unknown same-page landmark shows a notice and preserves the current position (0.666234ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 853.963988\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "python projects/shanghai/data/audit/city-museum-v1/todo-directory-checks.py",
+      "exit_code": 0,
+      "output": "{\"passed\": true, \"models\": 81, \"heritage_active\": 1048, \"named_active\": 1017, \"active_production_id\": \"yangpu-china-aviation-association-building\"}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "bindings": [
+    {
+      "path": "README.md",
+      "bytes": 447971,
+      "sha256": "53148e1227fd77fd5ffbc9aead638cd80eadb01d3f01db411a3ba328dee9c8ed"
+    },
+    {
+      "path": "projects/shanghai/README.md",
+      "bytes": 42194,
+      "sha256": "7522c71c9c6f3749738eb7ea7288994fb4210c0d13049f9d1c0704458f7c68b0"
+    },
+    {
+      "path": "projects/shanghai/CURRENT_STATE.md",
+      "bytes": 65600,
+      "sha256": "74e4811875c04a497280d4a509087847ee4cfdd51ee9fff014aa521941ec56ce"
+    },
+    {
+      "path": "projects/shanghai/index.html",
+      "bytes": 9055,
+      "sha256": "3c77ace894d05406ade662fcb9459fad7c17913bf279b587028155b6bcdeade7"
+    },
+    {
+      "path": "projects/shanghai/landmarks.html",
+      "bytes": 61648,
+      "sha256": "46f35d67b2783bc5c7a8b1c054da88a80dae05115c2d062dbb3061a680a366a5"
+    },
+    {
+      "path": "projects/shanghai/data/candidate-city-integrations.json",
+      "bytes": 438083,
+      "sha256": "ef19dcbf13e4df91a0674fdbd7ad504f1262bb799c4c7d67b3b4313897dea014"
+    },
+    {
+      "path": "projects/shanghai/data/global-models/additional-placement.json",
+      "bytes": 385367,
+      "sha256": "87c568d56d9af0273b602bc454919b21bec62476c2481cbee45bfdf1f5e8ccd8"
+    },
+    {
+      "path": "projects/shanghai/data/global-models/candidate-inventory.json",
+      "bytes": 115794,
+      "sha256": "f5452e36e930c80fc3fef78a513e77b8485282c94e069e6af458f1885292658c"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 114897,
+      "sha256": "714043831ea17bfec99ddb6f88806c1e08e5cc4841b24b1956b52849afae0c3b"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "bytes": 27157,
+      "sha256": "19a39a24ef75258886b8606e5ed013c1621be2238aaf7072b1a04a712621a68d"
+    },
+    {
+      "path": "projects/shanghai/data/model-viewers.json",
+      "bytes": 11931,
+      "sha256": "96be87479539ee8a3eee39b1bc352bbb5ea561f94df83357630f8d1044236a24"
+    },
+    {
+      "path": "projects/shanghai/data/restoration-progress/progress.json",
+      "bytes": 69160,
+      "sha256": "d61ae91ec4ecab87b6937ce2d647a644329992aac43ecea5f6de2a10bdc9ea9e"
+    },
+    {
+      "path": "projects/shanghai/src/candidate-city-clipping.js",
+      "bytes": 11485,
+      "sha256": "b0bd7aa0140414cdda39224b7ea0702222f3290fb65acf56034fe882a1429f32"
+    },
+    {
+      "path": "projects/shanghai/src/candidate-city-integrations.js",
+      "bytes": 7816,
+      "sha256": "5418ae01bf129e2f3ac08b528bb8eae4c0824dfe99364798f1b5e1d3d105999d"
+    },
+    {
+      "path": "projects/shanghai/src/app.js",
+      "bytes": 22133,
+      "sha256": "4ac572c016ad5adf3815b3dab77ea1543a9bcd0dea31f8b1e0c0f7cdd3c53520"
+    },
+    {
+      "path": "projects/shanghai/src/map-scene.js",
+      "bytes": 60291,
+      "sha256": "92febd9b2c31c480c4cf48b5b91bae1c0a500b7b66bcbe88712bcc75ce764e35"
+    },
+    {
+      "path": "projects/shanghai/tools/build_candidate_city_integrations.py",
+      "bytes": 35565,
+      "sha256": "e0500ce6c7399c56d8f4f9adb9c36c1dce35879320f4551fd221d9fda8e2602e"
+    },
+    {
+      "path": "projects/shanghai/tests/candidate-city-clipping.test.mjs",
+      "bytes": 17758,
+      "sha256": "62dbca03947f284a2dfae483a4911972fb51093c193d341ed30c05c6708b3cc8"
+    },
+    {
+      "path": "projects/shanghai/tests/candidate-geometry.test.mjs",
+      "bytes": 10706,
+      "sha256": "e3ed92932892320a3a7c624e70111eafc64b377794154180b330ccd61cc0b491"
+    },
+    {
+      "path": "projects/shanghai/tests/candidate-catalog-increment.test.py",
+      "bytes": 20612,
+      "sha256": "64ecc5ad077fa1a18ac2a73ec029e3bafc7dc3fdbcd162c0e0d001a01d6d7a6a"
+    },
+    {
+      "path": "projects/shanghai/city-museum.html",
+      "bytes": 2710,
+      "sha256": "0d5489f4de4058a0f5caf05f4abccb9975f59f77476b9e2fd2168836f9072187"
+    },
+    {
+      "path": "projects/shanghai/src/city-museum.js",
+      "bytes": 7667,
+      "sha256": "056164873eea08e185406c9eb3a83bb42e2ed7ab47d975215f21047118d99b4e"
+    },
+    {
+      "path": "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
+      "bytes": 5541,
+      "sha256": "6932e2a77d115b9f0983ee6e60ae9754c039847ce96e6ba89fb3a93d1cb0225e"
+    },
+    {
+      "path": "projects/shanghai/data/audit/city-museum-v1/footprint-review.json",
+      "bytes": 1336448,
+      "sha256": "f784f4a34b3b9651a8bed640370e655fd34a9b85d36124b19490904333c3ba38"
+    }
+  ],
+  "mapping_images_actually_viewed_by_root": [
+    {
+      "file": "height-clip-review.png",
+      "bytes": 163793,
+      "sha256": "085b5da9756df590b7a0b376211b0b4164fc0aa1f2098e42834b2860883cc22a",
+      "actually_viewed_by_root": true,
+      "passed": true,
+      "observation_zh": "北接口3/4两块四边形覆盖红色高段投影；剖面明确28.705–30.11原源米制、5mm保护余量与保留下段，解释按真实纬度转换GPU世界Y；南侧不改变。"
+    },
+    {
+      "file": "retained-interface-height.png",
+      "bytes": 83860,
+      "sha256": "74cfab9007a91766e77889e335185108b0b4a3c4e44b79bd8da37b9a0800e92d",
+      "actually_viewed_by_root": true,
+      "passed": true,
+      "observation_zh": "南510对比维持原保留接口；北1262上方高段标为裁掉，下段保留；图注明原地图高度为估计，与新低翼10.5m体量分清。"
+    },
+    {
+      "file": "retained-interface-plan.png",
+      "bytes": 191297,
+      "sha256": "840288b0c11c3887103fa4c4ccd56c519a4b4ac3448e640fc597f4cbcacbf60f",
+      "actually_viewed_by_root": true,
+      "passed": true,
+      "observation_zh": "二维接口仍列四处及各base残量，标题明确北3/4另做高度裁剪；主1860、重叠1931与独立510/1262/开放院落区分清楚。"
+    },
+    {
+      "file": "placement-footprint-review.png",
+      "bytes": 174830,
+      "sha256": "0032ea776b76005f5b9f18a984a65047bcaf2b7146850690700cc782ae0f1679",
+      "actually_viewed_by_root": true,
+      "passed": true,
+      "observation_zh": "完整现状主源和门楼覆盖图与地面碰撞图分开；左右图均保留独立小源，开放控制区在碰撞外，标题说明北3/4高段另裁剪。"
+    }
+  ],
+  "static_index_count_updated": 81,
+  "historical_asset_matrix_rerun": false
+}

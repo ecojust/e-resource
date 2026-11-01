@@ -1,8 +1,8 @@
 # 上海宋庆龄故居主楼外观候选
 
-**本轮更新：**[进入独立模型室外漫游](../../../soong-residence.html#mode=model-walk)。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
+**本轮更新：**[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview)。以下为当时独立页交付记录；当前入口已接入全局地图。支持键盘／触屏移动、转向和外围碰撞；场景未配准到城市原址，不包含室内、登楼或上桥，不增加40处城市漫游数量。
 
-[独立预览](../../../soong-residence.html) · [模型下载清单](../../../assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json) · [本轮验证记录](../../../data/audit/candidate-walk-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) · [模型下载清单](../../../assets/models/candidates/xuhui-soong-ching-ling-residence/manifest.json) · [本轮验证记录](../../../data/audit/candidate-walk-v1/README.md)
 
 本批制作主楼外观候选：曲面四坡屋顶、逐片筒瓦、三扇有真实屋面切口的半圆老虎窗、曲线阳台、分格玻璃与百叶、柱廊、窗台装饰、烟囱和入口门廊。完整模型198,536个三角面，远景17,332面；提供原始GLB、网页压缩模型和可编辑Blender文件。墙面采用原创程序生成的浅色细颗粒PBR，未把照片贴到模型上。
 

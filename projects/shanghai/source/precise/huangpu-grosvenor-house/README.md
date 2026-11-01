@@ -1,6 +1,6 @@
 # 峻岭公寓高层主体（锦江饭店中楼）
 
-[在上海主地图查看](../../../index.html#landmark=huangpu-grosvenor-house&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-grosvenor-house/manifest.json) · [本轮检查](../../../data/audit/grosvenor-house-v1/README.md)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grosvenor-house&mode=overview) · [四件模型资产](../../../assets/models/candidates/huangpu-grosvenor-house/manifest.json) · [本轮检查](../../../data/audit/grosvenor-house-v1/README.md)
 
 对象为峻岭寄庐／峻岭公寓，即Grosvenor House和锦江饭店中楼的历史高层主楼。文献明确记载1956年改名“茂名公寓”，因此这些旧称不重复制作成两座高楼。名录原拼写“峻林公寓、茂名公寓”保留在原始记录中。
 

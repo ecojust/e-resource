@@ -1,6 +1,6 @@
 # 大成殿外观候选：技术校验
 
-[独立网页](../../../dacheng-hall.html) · [来源与未复原部分](../../../source/precise/chongming-dacheng-hall/README.md) · [交付资产哈希](../../../assets/models/candidates/chongming-dacheng-hall/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-dacheng-hall&mode=overview) · [来源与未复原部分](../../../source/precise/chongming-dacheng-hall/README.md) · [交付资产哈希](../../../assets/models/candidates/chongming-dacheng-hall/manifest.json)
 
 此记录核验候选资产的几何一致性和独立网页，不代表通过逐栋照片复原验收。没有地理配准、城市源对象替换或第三人称漫游。
 

@@ -1,6 +1,6 @@
 # 金门饭店／华安大楼历史主楼外观候选检查 · 2026-10-30
 
-[模型查看](../../../pacific-hotel.html) · [来源与复跑](../../../source/precise/huangpu-pacific-hotel/README.md) · [资产清单](../../../assets/models/candidates/huangpu-pacific-hotel/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pacific-hotel&mode=overview) · [来源与复跑](../../../source/precise/huangpu-pacific-hotel/README.md) · [资产清单](../../../assets/models/candidates/huangpu-pacific-hotel/manifest.json)
 
 原始／网页近景93,184面，远景42,984面。原始GLB 5,362,228字节，网页GLB 1,639,532字节，远景GLB 814,792字节，Blender 2,707,751字节。本件包含历史主楼的两侧高翼、中央退进、长窗带、三处石栏阳台、石柱门廊和双层柱廊圆顶钟塔；北部运营楼、邻楼与室内未建。仅为有资料参照的外观候选，尚未原址配准。
 

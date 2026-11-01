@@ -1,6 +1,6 @@
 # 老永安公司主楼与屋顶塔楼候选检查 · 2026-10-30
 
-[模型查看](../../../old-wing-on-company.html) · [来源与复跑](../../../source/precise/huangpu-old-wing-on-company/README.md) · [资产清单](../../../assets/models/candidates/huangpu-old-wing-on-company/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-old-wing-on-company&mode=overview) · [来源与复跑](../../../source/precise/huangpu-old-wing-on-company/README.md) · [资产清单](../../../assets/models/candidates/huangpu-old-wing-on-company/manifest.json)
 
 原始GLB 16,114,420字节，网页GLB 4,907,868字节，远景GLB 1,869,448字节，Blender 8,683,894字节。近景296,412面，远景103,692面；装饰后实际模型外包约68.215×96.570×54米，均非实楼测量。
 

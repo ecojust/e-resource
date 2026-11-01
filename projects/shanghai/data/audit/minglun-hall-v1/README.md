@@ -1,6 +1,6 @@
 # 明伦堂文字尺寸参照候选检查
 
-[独立预览](../../../minglun-hall.html) · [来源与构建](../../../source/precise/chongming-minglun-hall/README.md) · [资产清单](../../../assets/models/candidates/chongming-minglun-hall/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-minglun-hall&mode=overview) · [来源与构建](../../../source/precise/chongming-minglun-hall/README.md) · [资产清单](../../../assets/models/candidates/chongming-minglun-hall/manifest.json)
 
 本件独立身份是仪门北的儒学署主要建筑。旧馆面阔20.6、进深12.7、高10.37米作为参照；2021官方10.5米高度另存未解。五分区、六前柱、中闭门、四格窗、简单双坡、四级阶与简栏是明确估计，树遮照片只提供局部色材和入口概念；不将历史五楹当现状柱网。
 

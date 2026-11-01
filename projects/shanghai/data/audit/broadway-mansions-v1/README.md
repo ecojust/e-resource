@@ -1,6 +1,6 @@
 # 上海大厦历史主楼候选检查 · 2026-10-30
 
-[模型](../../../broadway-mansions.html) · [来源和复跑](../../../source/precise/hongkou-broadway-mansions/README.md) · [资产清单](../../../assets/models/candidates/hongkou-broadway-mansions/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) · [来源和复跑](../../../source/precise/hongkou-broadway-mansions/README.md) · [资产清单](../../../assets/models/candidates/hongkou-broadway-mansions/manifest.json)
 
 已实际运行两档导出、作者构件闭合正体积检查、最终压缩模型解码、Blender保存重开和Chromium网页检查。近景173,852面、远景46,180面，868处估计窗位，22个设计分层。文献层数差异未调和，候选并非照片精确复原或历史墙线测绘。
 

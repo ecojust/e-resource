@@ -1,6 +1,6 @@
 # 儒学大门文字尺寸参照候选检查
 
-[独立预览](../../../ruxue-gate.html) · [来源与构建](../../../source/precise/chongming-ruxue-gate/README.md) · [资产清单](../../../assets/models/candidates/chongming-ruxue-gate/manifest.json)
+[在上海主地图查看](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-ruxue-gate&mode=overview) · [来源与构建](../../../source/precise/chongming-ruxue-gate/README.md) · [资产清单](../../../assets/models/candidates/chongming-ruxue-gate/manifest.json)
 
 本件ID为 `chongming-ruxue-gate`，独立身份是旧馆记载位于棂星门东、仪门正南的儒学大门。文献长10.7、宽8.8、高8米及2004年修复作为参照；没有已完整绑定的单体照片，不使用仪门照片，也不声称照片复原验收。三等分立面、中闭合双门、两格窗、单层双坡、配色与背侧面全部是建模估计。
 

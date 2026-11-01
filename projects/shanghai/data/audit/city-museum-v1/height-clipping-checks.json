@@ -1,0 +1,301 @@
+{
+  "schema": "city-museum-height-clipping-runtime-v1",
+  "passed": true,
+  "private_preflight": false,
+  "old_rows": 218,
+  "old_payload_bytes": 13952,
+  "old_rows_identical": true,
+  "pre_height_rows": 258,
+  "pre_height_payload_bytes": 16512,
+  "pre_height_rows_identical": true,
+  "added_height_rows": 4,
+  "total_rows": 262,
+  "capacity": 288,
+  "height_clip_ids": [
+    "yangpu-former-shanghai-city-museum-main-retained-interface-3-upper-only",
+    "yangpu-former-shanghai-city-museum-main-retained-interface-4-upper-only"
+  ],
+  "data_payload": {
+    "file": "gpu-height-rows.f32",
+    "bytes": 16768,
+    "sha256": "ce4d45d3a9472b07790959cdb6052c715ea4411334d6399e2bccf9baac0feb09",
+    "rows": 262,
+    "columns": 16,
+    "little_endian": true,
+    "old218_prefix_sha256": "f2400a2fbfec5d114227c0a7e6bab4afdeef3a9cfde09015a401b5383e805dcb",
+    "base258_prefix_sha256": "5ac8ce486c0df30d2bee2ca4c60ecd9b42c08757f88c3cb7b4a0ae97354e7251"
+  },
+  "source_transform": {
+    "height_reference": [
+      121.519775390625,
+      31.306714687449947
+    ],
+    "scene_origin": [
+      121.4737,
+      31.2304
+    ],
+    "macro_id": "14-13722-6690",
+    "near_inherits_far_matrix": true,
+    "model_matrix_double": [
+      0.9996906569220446,
+      0,
+      0,
+      0,
+      0,
+      1.0008091603120683,
+      0,
+      0,
+      0,
+      0,
+      0.9996906569220446,
+      0,
+      4380.927466206066,
+      0,
+      -8489.248806811524,
+      1
+    ],
+    "model_matrix_float32": [
+      0.9996906518936157,
+      0,
+      0,
+      0,
+      0,
+      1.0008091926574707,
+      0,
+      0,
+      0,
+      0,
+      0.9996906518936157,
+      0,
+      4380.92724609375,
+      0,
+      -8489.2490234375,
+      1
+    ],
+    "geographic_position_source": "  const mercatorOrigin = maplibregl.MercatorCoordinate.fromLngLat(ORIGIN, 0);\n  const metreScale = mercatorOrigin.meterInMercatorCoordinateUnits();\n  const worldToMercator = new THREE.Matrix4().makeTranslation(mercatorOrigin.x, mercatorOrigin.y, 0)\n    .multiply(new THREE.Matrix4().makeScale(metreScale, -metreScale, metreScale))\n    .multiply(new THREE.Matrix4().makeRotationX(Math.PI / 2));\n  function geographicPosition(lng, lat, altitude = 0) {\n    const p = maplibregl.MercatorCoordinate.fromLngLat([lng, lat], altitude);\n    return new THREE.Vector3((p.x - mercatorOrigin.x) / metreScale, p.z / metreScale,\n      (p.y - mercatorOrigin.y) / metreScale);\n  }\n",
+    "prepare_city_object_source": "  function prepareCityObject(group, record) {\n    group.name=`${record.name} · mapped city tile`;\n    group.position.copy(geographicPosition(record.lng,record.lat,0));\n    const scale=maplibregl.MercatorCoordinate.fromLngLat([record.lng,record.lat]).meterInMercatorCoordinateUnits()/metreScale;\n    // City X/Z were authored from EPSG:3857 (R=6378137), while MapLibre's\n    // altitude/metre conversion uses its mean-earth radius. Keep Y/anchor as\n    // before, but map authored horizontal metres back to Mercator units.\n    const horizontalScale=1/(2*Math.PI*EARTH*Math.cos(record.lat*DEG))/metreScale;\n    group.scale.multiply(new THREE.Vector3(horizontalScale,scale,horizontalScale));\n    group.traverse(object=>{\n      if(!object.isMesh)return;\n      // The map projection already supplies the full view transform, so normal\n      // Three frustum culling remains valid for the local metre coordinates.\n      object.frustumCulled=true;\n      object.geometry.computeBoundingSphere();\n      for(const material of Array.isArray(object.material)?object.material:[object.material]) {\n        if(!material?.color)continue;\n        if(/walls/i.test(material.name))material.color.setRGB(.38,.40,.39);\n        else material.color.setRGB(.34,.36,.35);\n        material.roughness=.88;material.metalness=0;\n        applyBuildingMaterial(material);\n      }\n    });\n    cityDetails.prepareFarObject(group,record);\n    candidateClipper.bindObject(group,record);\n  }\n"
+  },
+  "rows": [
+    [
+      4760.30615234375,
+      -8958.44921875,
+      4760.30615234375,
+      -8958.6337890625,
+      4764.07568359375,
+      -8958.6337890625,
+      28.728227615356445,
+      30.134363174438477,
+      4760.30615234375,
+      -8958.6337890625,
+      4764.07568359375,
+      -8958.44921875,
+      1860,
+      11345370,
+      0,
+      0
+    ],
+    [
+      4764.07568359375,
+      -8958.6337890625,
+      4764.1025390625,
+      -8958.44921875,
+      4760.30615234375,
+      -8958.44921875,
+      28.728227615356445,
+      30.134363174438477,
+      4760.30615234375,
+      -8958.6337890625,
+      4764.1025390625,
+      -8958.44921875,
+      1860,
+      11345370,
+      0,
+      0
+    ],
+    [
+      4763.0498046875,
+      -8972.94140625,
+      4763.06005859375,
+      -8972.87890625,
+      4760.30615234375,
+      -8972.8505859375,
+      28.728227615356445,
+      30.134363174438477,
+      4760.30615234375,
+      -8972.94140625,
+      4763.06005859375,
+      -8972.8505859375,
+      1860,
+      11345370,
+      0,
+      0
+    ],
+    [
+      4760.30615234375,
+      -8972.8505859375,
+      4760.30615234375,
+      -8972.94140625,
+      4763.0498046875,
+      -8972.94140625,
+      28.728227615356445,
+      30.134363174438477,
+      4760.30615234375,
+      -8972.94140625,
+      4763.0498046875,
+      -8972.8505859375,
+      1860,
+      11345370,
+      0,
+      0
+    ]
+  ],
+  "sample_checks": [
+    {
+      "interface": "main-retained-interface-3",
+      "height_reference": [
+        121.519775390625,
+        31.306714687449947
+      ],
+      "native_metres": [
+        28.705,
+        30.11
+      ],
+      "world_y_float32": [
+        28.728227615356445,
+        30.134363174438477
+      ],
+      "neighbor_max_world_y": 28.723223664513156,
+      "neighbor_max_world_y_float32": 28.723222732543945,
+      "float32_gap": 0.0050048828125,
+      "sample_count": 438,
+      "xy_perturbed_cases": 3942,
+      "perturbation_m": [
+        -0.002,
+        0,
+        0.002
+      ],
+      "target_roof_samples_removed": true,
+      "neighbor_roof_samples_preserved": true
+    },
+    {
+      "interface": "main-retained-interface-4",
+      "height_reference": [
+        121.519775390625,
+        31.306714687449947
+      ],
+      "native_metres": [
+        28.705,
+        30.11
+      ],
+      "world_y_float32": [
+        28.728227615356445,
+        30.134363174438477
+      ],
+      "neighbor_max_world_y": 28.723223664513156,
+      "neighbor_max_world_y_float32": 28.723222732543945,
+      "float32_gap": 0.0050048828125,
+      "sample_count": 438,
+      "xy_perturbed_cases": 3942,
+      "perturbation_m": [
+        -0.002,
+        0,
+        0.002
+      ],
+      "target_roof_samples_removed": true,
+      "neighbor_roof_samples_preserved": true
+    }
+  ],
+  "shader_checks": [
+    {
+      "group": "actual-eight-owner-near",
+      "pass": "standard",
+      "rows": 44,
+      "feature_ids": false
+    },
+    {
+      "group": "actual-eight-owner-near",
+      "pass": "depth",
+      "rows": 44,
+      "feature_ids": false
+    },
+    {
+      "group": "actual-eight-owner-near",
+      "pass": "distanceRGBA",
+      "rows": 44,
+      "feature_ids": false
+    },
+    {
+      "group": "foreign-only-near",
+      "pass": "standard",
+      "rows": 0,
+      "feature_ids": false
+    },
+    {
+      "group": "foreign-only-near",
+      "pass": "depth",
+      "rows": 0,
+      "feature_ids": false
+    },
+    {
+      "group": "foreign-only-near",
+      "pass": "distanceRGBA",
+      "rows": 0,
+      "feature_ids": false
+    },
+    {
+      "group": "per-vertex-far",
+      "pass": "standard",
+      "rows": 262,
+      "feature_ids": true
+    },
+    {
+      "group": "per-vertex-far",
+      "pass": "depth",
+      "rows": 262,
+      "feature_ids": true
+    },
+    {
+      "group": "per-vertex-far",
+      "pass": "distanceRGBA",
+      "rows": 262,
+      "feature_ids": true
+    }
+  ],
+  "shader_passes": 9,
+  "source_vector_collision_unchanged": true,
+  "debug_clips_separate": true,
+  "preflight_sha256": "1e940561427d318799ed20abb2d537aa5ebb1b7f3a4c4034feeeff3b2dcc2967",
+  "bindings": [
+    {
+      "file": "src/candidate-city-clipping.js",
+      "sha256": "b0bd7aa0140414cdda39224b7ea0702222f3290fb65acf56034fe882a1429f32",
+      "bytes": 11485
+    },
+    {
+      "file": "src/candidate-city-integrations.js",
+      "sha256": "5418ae01bf129e2f3ac08b528bb8eae4c0824dfe99364798f1b5e1d3d105999d",
+      "bytes": 7816
+    },
+    {
+      "file": "src/map-scene.js",
+      "sha256": "92febd9b2c31c480c4cf48b5b91bae1c0a500b7b66bcbe88712bcc75ce764e35",
+      "bytes": 60291
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "4ac572c016ad5adf3815b3dab77ea1543a9bcd0dea31f8b1e0c0f7cdd3c53520",
+      "bytes": 22133
+    },
+    {
+      "file": "index.html",
+      "sha256": "3c77ace894d05406ade662fcb9459fad7c17913bf279b587028155b6bcdeade7",
+      "bytes": 9055
+    },
+    {
+      "file": "tools/build_candidate_city_integrations.py",
+      "sha256": "e0500ce6c7399c56d8f4f9adb9c36c1dce35879320f4551fd221d9fda8e2602e",
+      "bytes": 35565
+    }
+  ],
+  "limitations": "Float32 bbox/height/cross simulation samples decoded actual roof polygons, including±2mm XY perturbation. It does not run WebGL rasterization or replay every instance shader operation. Full native triangle/foreign-owner safety is recorded separately by mapping, and final browser pixels require independent QA."
+}
