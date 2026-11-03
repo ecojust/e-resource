@@ -21,3 +21,9 @@
 [常规浏览器验收](browser.json)完成10个视图、近远景切换、四项下载哈希、83条目录／灯牌、实际鼠标与触摸、目标源与邻楼状态、8个地面探针；[整塔与宽屋顶补图](tower-supplement.json)另有2个主图视角。图像观察见[逐图记录](qa-pixel-review.json)与[独立浏览器复核](independent-browser-visual-review.json)。默认灯牌遮挡部分塔身，补图实际显示完整塔冠；未为截图隐藏灯牌。
 
 显示裁剪容量由288扩至320，本楼新增23行、全局301行；[24项单元检查](clip-unit-checks.json)和[实际GPU边界检查](gpu-capacity.json)覆盖第319／320行、owner隔离、阴影材质和321行拒绝后的状态保持。[旧登记保护检查](preservation-check.json)未发现历史模型与记录被改写。最终碰撞已保守简化为合法256点单Polygon，未放宽通用校验；具体新增面积及邻体净空见足迹报告。
+
+## 发布核对
+
+模型已在 `215d582eefeb9f584b60f4c5625b283bb1dd374e` 提交并推送。[该版全局主图](https://raw.githack.com/ecojust/e-resource/215d582eefeb9f584b60f4c5625b283bb1dd374e/projects/shanghai/index.html#landmark=huangpu-great-world&mode=overview)。[公开HTTP核对](publication.json)实际下载19项文件，与不可变提交逐字节一致，包括主图、目录、运行脚本（含本次扩容的裁剪模块）、说明文档、清单和四种资产。此记录与本地浏览器验收分别保存。
+
+制作时间依据该模型提交的实际Git时间生成；[发布元数据核对](publication-metadata-checks.json)检查随后更新的README和队列。最终元数据提交及master公开地址另在工作区外核对，避免提交号自引用。
