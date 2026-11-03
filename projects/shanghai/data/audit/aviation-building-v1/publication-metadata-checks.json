@@ -1,0 +1,126 @@
+{
+  "model_id": "yangpu-china-aviation-association-building",
+  "model_commit": "b03c756935c4359877ae31ec6d27a77e28f59208",
+  "checked_at_utc": "2026-11-03T13:11:49.397830+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/build_candidate_city_integrations.py",
+        "--catalog-only",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"candidates\": 44, \"new_city_models\": 42, \"cumulative_verified_files\": 176, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 708615432}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/update_global_model_metadata.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"city_integrated_candidates\": 42}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/build_model_todo.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "README district candidates verified: 42; global destinations: 82\nREADME TODO matches structured records\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/build_landmark_directory.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "Landmark directory matches navigation data\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/restoration_progress.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"navigation_entries\": 82, \"ordinary_catalog_records\": 21, \"ordinary_records_are_subset_of_navigation\": true, \"standalone_candidate_records\": 0, \"city_candidate_records\": 42, \"flat_surface_districts\": 16, \"flat_surface_triangles\": 410447}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/sync_readme_districts.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "README district candidates verified: 42; global destinations: 82\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "browser_frozen_inputs_unchanged": 17,
+  "scope": "Publication time and documentation only; model and browser runtime inputs remain byte-identical to their accepted versions.",
+  "bindings": [
+    {
+      "path": "README.md",
+      "bytes": 448429,
+      "sha256": "433f0e475dcc5f1928c116ce2dd5a24e3e574a370240773caf7954a80d67a107"
+    },
+    {
+      "path": "projects/shanghai/README.md",
+      "bytes": 42861,
+      "sha256": "59752841be795a913d5b451c0ebdb6c12fbc0a562bc1b386a41cc58a699ad48b"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 118066,
+      "sha256": "fffb690c0b23d7757f00d006a01ec681448330aef8caad2e705439c2d9ed916a"
+    },
+    {
+      "path": "projects/shanghai/data/model-todo/candidate-publication-times.json",
+      "bytes": 16693,
+      "sha256": "74a6b3bd5162a4031278b2f20455e3b4b3273160050b76a03604b716f47d6c96"
+    },
+    {
+      "path": "projects/shanghai/data/audit/aviation-building-v1/README.md",
+      "bytes": 6594,
+      "sha256": "0b83063b74a25b382a83f6061530359c80454b873815a89a19b1022942497cd5"
+    },
+    {
+      "path": "projects/shanghai/data/audit/aviation-building-v1/publication.json",
+      "bytes": 13041,
+      "sha256": "a1825eb277c74557252e86edfd8c8fce428b898a9dc7db17642bbc3a549dfb25"
+    }
+  ]
+}

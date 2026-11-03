@@ -33,3 +33,9 @@ v6修正的逐高度投影与接触射线见[屋面共面检查](author-roof-cap
 ## Root最终核对
 
 [Root核对记录](root-review.json)绑定最终四资产及实际查看的8张原生图、10张网页图。圆塔相对前翼的位置、屋面接缝修复、双入口、桌面和手机入框、全城编号灯牌布局通过有界外观审查；17项浏览器冻结输入及17项元数据输入的当前哈希仍与已通过记录一致。照片尺度、隐面窗位与雕饰估计继续保留。公开HTTP核对在发布后另记。
+
+## 发布核对
+
+模型已在 `b03c756935c4359877ae31ec6d27a77e28f59208` 提交并推送。[该版全局主图](https://raw.githack.com/ecojust/e-resource/b03c756935c4359877ae31ec6d27a77e28f59208/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview)。[公开HTTP核对](publication.json)实际下载18项文件，与不可变提交逐字节一致，包括主图、目录、运行脚本、说明文档、清单和四种资产。此记录与本地浏览器验收分别保存。
+
+制作时间依据该模型提交的实际Git时间生成；[发布元数据核对](publication-metadata-checks.json)检查随后更新的README和队列。最终元数据提交及master公开地址另在工作区外核对，避免提交号自引用。
