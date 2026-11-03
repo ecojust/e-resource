@@ -1,0 +1,115 @@
+{
+  "id": "huangpu-great-world",
+  "method": "Independently hash the final four assets and manifest; compare final catalog and footprint-review contract; re-evaluate collision against already decoded actual triangle projection polygons and source/native neighbors. No historical asset decode.",
+  "checks": {
+    "catalog_collision_equals_final_placement": true,
+    "manifest_bound_to_final_placement": true,
+    "all_three_geometry_hashes_match_projection_inputs": true,
+    "all_four_assets_match_manifest": true,
+    "web_lod_catalog_bindings_match_manifest": true,
+    "single_valid_256_point_collision": true,
+    "all_actual_low_triangle_projection_covered": true,
+    "38_retained_source_neighbors_have_zero_collision_overlap": true,
+    "actual_retained_near_geometry_collision_overlap_zero": true,
+    "zero_synthetic_courtyard_fill_reported": true,
+    "production_builder_and_runtime_validation_passed": true,
+    "partial_scope_is_explicit": true
+  },
+  "passed": true,
+  "manifest": {
+    "file": "assets/models/candidates/huangpu-great-world/manifest.json",
+    "bytes": 4445,
+    "sha256": "ae7e7595187ed8e5b0749d78bee4ebf207a371799f83a2c8387eca424a63f93a"
+  },
+  "assets": [
+    {
+      "role": "raw",
+      "file": "huangpu-great-world-raw.glb",
+      "bytes": 18853296,
+      "sha256": "de998c847a7d3e745b86409a43fa99c43737d8f0220a8ab4d9b88b0817b23da1",
+      "triangles": 277756,
+      "actual_bytes_sha256_match": true
+    },
+    {
+      "role": "native",
+      "file": "huangpu-great-world.blend",
+      "bytes": 9195031,
+      "sha256": "23a28e7a99dbe37d66c500854ba89a2014546ce38979e54fef65e722bd55ad28",
+      "actual_bytes_sha256_match": true
+    },
+    {
+      "role": "full",
+      "file": "huangpu-great-world-web.glb",
+      "bytes": 7879044,
+      "sha256": "9eef4001bb80576d457dd818ead09dfde499a6b89ba21425e53b4bb5b1b4c71e",
+      "triangles": 277756,
+      "actual_bytes_sha256_match": true
+    },
+    {
+      "role": "lod",
+      "file": "huangpu-great-world-lod.glb",
+      "bytes": 2626048,
+      "sha256": "86f291c749d14812b6338e4dc32df5fc3b0bf65c2c815278c1469f930ef37cb4",
+      "triangles": 102124,
+      "actual_bytes_sha256_match": true
+    }
+  ],
+  "final_footprint_review_sha256": "e02fff8e4dd8f3b73b89cf860788cf14efde35bb221e4af56d3a76dab21f16e1",
+  "collision": {
+    "type": "Polygon",
+    "closed_ring_points": 256,
+    "area_m2": 3818.1483155521837,
+    "uncovered_actual_low_projection_area_m2": 0.0,
+    "neighbor_count": 38,
+    "max_map_neighbor_overlap_m2": 0.0,
+    "actual_near_overlap_checks": [
+      {
+        "profile": "neighbor2367_near_group",
+        "area_m2": 0.0
+      },
+      {
+        "profile": "foreign_near",
+        "area_m2": 0.0
+      }
+    ],
+    "conservative_added_area_m2": 4.325505589981938,
+    "maximum_added_distance_to_actual_low_upper_bound_m": 0.44531249999999994,
+    "production_builder_validation": {
+      "schema": "great-world-production-builder-geometry-v1",
+      "production_function": "projects/shanghai/tools/build_candidate_city_integrations.py:checked_geometry",
+      "implementation_sha256": "e0500ce6c7399c56d8f4f9adb9c36c1dce35879320f4551fd221d9fda8e2602e",
+      "collision_argument": true,
+      "geometry_type": "Polygon",
+      "closed_ring_points": 256,
+      "shapely_is_valid": true,
+      "all_existing_production_geometry_checks_passed": true,
+      "model_manifest_sha256": "ae7e7595187ed8e5b0749d78bee4ebf207a371799f83a2c8387eca424a63f93a",
+      "model_geometry_sha256": {
+        "raw": "de998c847a7d3e745b86409a43fa99c43737d8f0220a8ab4d9b88b0817b23da1",
+        "web": "9eef4001bb80576d457dd818ead09dfde499a6b89ba21425e53b4bb5b1b4c71e",
+        "lod": "86f291c749d14812b6338e4dc32df5fc3b0bf65c2c815278c1469f930ef37cb4"
+      }
+    },
+    "runtime_point_probe_count": 8
+  },
+  "three_variants": [
+    {
+      "variant": "raw",
+      "sha256": "de998c847a7d3e745b86409a43fa99c43737d8f0220a8ab4d9b88b0817b23da1",
+      "triangles": 277756,
+      "all_full_and_low_neighbor_overlaps_zero": true
+    },
+    {
+      "variant": "web",
+      "sha256": "9eef4001bb80576d457dd818ead09dfde499a6b89ba21425e53b4bb5b1b4c71e",
+      "triangles": 277756,
+      "all_full_and_low_neighbor_overlaps_zero": true
+    },
+    {
+      "variant": "lod",
+      "sha256": "86f291c749d14812b6338e4dc32df5fc3b0bf65c2c815278c1469f930ef37cb4",
+      "triangles": 102124,
+      "all_full_and_low_neighbor_overlaps_zero": true
+    }
+  ]
+}

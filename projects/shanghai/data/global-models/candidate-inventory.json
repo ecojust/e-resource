@@ -44,32 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 44,
+  "candidate_manifest_count": 45,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 42,
-  "resulting_city_count": 82,
+  "new_city_model_count": 43,
+  "resulting_city_count": 83,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 3,
-    "黄浦区": 12
+    "黄浦区": 13
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 176,
-    "bytes": 708615432,
+    "files": 180,
+    "bytes": 747168851,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 10057090,
+    "current_run_added_bytes": 38553419,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 44
+    "inherited_incremental_files": 48
   },
   "records": [
     {
@@ -3019,6 +3019,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-informed bounded exterior estimate",
       "description": "圆角前后双翼、筒拱连接舱与圆塔递缩石栏平台外观；门饰和隐面简化，尺寸含估计。"
+    },
+    {
+      "id": "huangpu-great-world",
+      "name": "大世界历史主楼与街角塔",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "great-world.html",
+      "manifest": "assets/models/candidates/huangpu-great-world/manifest.json",
+      "manifest_sha256": "ae7e7595187ed8e5b0749d78bee4ebf207a371799f83a2c8387eca424a63f93a",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world-raw.glb",
+          "bytes": 18853296,
+          "sha256": "de998c847a7d3e745b86409a43fa99c43737d8f0220a8ab4d9b88b0817b23da1",
+          "triangles": 277756
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world.blend",
+          "bytes": 9195031,
+          "sha256": "23a28e7a99dbe37d66c500854ba89a2014546ce38979e54fef65e722bd55ad28"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world-web.glb",
+          "bytes": 7879044,
+          "sha256": "9eef4001bb80576d457dd818ead09dfde499a6b89ba21425e53b4bb5b1b4c71e",
+          "triangles": 277756
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world-lod.glb",
+          "bytes": 2626048,
+          "sha256": "86f291c749d14812b6338e4dc32df5fc3b0bf65c2c815278c1469f930ef37cb4",
+          "triangles": 102124
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -37.302223205566406,
+            0.0,
+            -62.89122009277344
+          ],
+          "max": [
+            54.52461624145508,
+            46.400001525878906,
+            53.006866455078125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -37.302223205566406,
+            -53.006866455078125,
+            0.0
+          ],
+          "max": [
+            54.52461624145508,
+            62.89122009277344,
+            46.400001525878906
+          ]
+        },
+        "triangles": 277756,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "四层U形沿街主体、街角塔与屋顶亭；中庭屋盖待核未建，独立剧场保留，尺寸与隐面含估计。"
     }
   ],
   "baseline_inventory": {
@@ -3029,6 +3096,7 @@
   "incremental_manifests": [
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
@@ -3040,14 +3108,14 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
-  "incremental_asset_revision": "3aebf8491b951ce3091eeabd2162be51c18c7ed4",
-  "incremental_audit_directory": "data/audit/aviation-building-v1",
+  "incremental_asset_revision": "564e8ae3bdb1e5fa918f5351f7538bff2e759f2f",
+  "incremental_audit_directory": "data/audit/great-world-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/city-museum-v1/inventory-increment.json",
-    "bytes": 31831,
-    "sha256": "173eb5d0d2c8a5f42d8770466998457c2def458fba7147caa4ae560593c22dfd"
+    "file": "data/audit/aviation-building-v1/inventory-increment.json",
+    "bytes": 34694,
+    "sha256": "9019aae3e090b4acd45f8c2a3cdb69d67dd4cb49923cbd2c18105d1aeea86f2a"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json"
   ]
 }

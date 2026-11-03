@@ -1,0 +1,2174 @@
+{
+  "passed": true,
+  "capacity": 320,
+  "cases": [
+    {
+      "name": "per-vertex-1519",
+      "owner": 1519,
+      "ownerMatched": true,
+      "tagged": true,
+      "passed": true,
+      "scope": null,
+      "passes": [
+        {
+          "label": "per-vertex-1519-standard",
+          "pass": "standard",
+          "draws": [
+            {
+              "program": "capacity-program-1",
+              "materialType": "MeshStandardMaterial",
+              "candidateClipCount": 320,
+              "candidateHasFeatureIds": 1,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "per-vertex-1519-depth",
+          "pass": "depth",
+          "draws": [
+            {
+              "program": "capacity-program-2",
+              "materialType": "MeshDepthMaterial",
+              "candidateClipCount": 320,
+              "candidateHasFeatureIds": 1,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "per-vertex-1519-distance",
+          "pass": "distance",
+          "draws": [
+            {
+              "program": "capacity-program-3",
+              "materialType": "MeshDistanceMaterial",
+              "candidateClipCount": 320,
+              "candidateHasFeatureIds": 1,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "per-vertex-2367",
+      "owner": 2367,
+      "ownerMatched": false,
+      "tagged": true,
+      "passed": true,
+      "scope": null,
+      "passes": [
+        {
+          "label": "per-vertex-2367-standard",
+          "pass": "standard",
+          "draws": [
+            {
+              "program": "capacity-program-1",
+              "materialType": "MeshStandardMaterial",
+              "candidateClipCount": 320,
+              "candidateHasFeatureIds": 1,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "per-vertex-2367-depth",
+          "pass": "depth",
+          "draws": [
+            {
+              "program": "capacity-program-4",
+              "materialType": "MeshDepthMaterial",
+              "candidateClipCount": 320,
+              "candidateHasFeatureIds": 1,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "per-vertex-2367-distance",
+          "pass": "distance",
+          "draws": [
+            {
+              "program": "capacity-program-5",
+              "materialType": "MeshDistanceMaterial",
+              "candidateClipCount": 320,
+              "candidateHasFeatureIds": 1,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                62,
+                219,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                7,
+                163,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "near-scope-1519",
+      "owner": 1519,
+      "ownerMatched": true,
+      "tagged": false,
+      "passed": true,
+      "scope": {
+        "id": "fixture/1519-near",
+        "macro_id": "fixture",
+        "feature_local_ids": [
+          1519
+        ],
+        "triangles": 2,
+        "clip_feature_local_ids": [
+          1519
+        ]
+      },
+      "passes": [
+        {
+          "label": "near-scope-1519-standard",
+          "pass": "standard",
+          "draws": [
+            {
+              "program": "capacity-program-6",
+              "materialType": "MeshStandardMaterial",
+              "candidateClipCount": 2,
+              "candidateHasFeatureIds": 0,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "near-scope-1519-depth",
+          "pass": "depth",
+          "draws": [
+            {
+              "program": "capacity-program-7",
+              "materialType": "MeshDepthMaterial",
+              "candidateClipCount": 2,
+              "candidateHasFeatureIds": 0,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "near-scope-1519-distance",
+          "pass": "distance",
+          "draws": [
+            {
+              "program": "capacity-program-8",
+              "materialType": "MeshDistanceMaterial",
+              "candidateClipCount": 2,
+              "candidateHasFeatureIds": 0,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "clear",
+              "rgba": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "near-scope-2367",
+      "owner": 2367,
+      "ownerMatched": false,
+      "tagged": false,
+      "passed": true,
+      "scope": {
+        "id": "fixture/2367-near",
+        "macro_id": "fixture",
+        "feature_local_ids": [
+          2367
+        ],
+        "triangles": 0,
+        "clip_feature_local_ids": []
+      },
+      "passes": [
+        {
+          "label": "near-scope-2367-standard",
+          "pass": "standard",
+          "draws": [
+            {
+              "program": "capacity-program-6",
+              "materialType": "MeshStandardMaterial",
+              "candidateClipCount": 0,
+              "candidateHasFeatureIds": 0,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                255,
+                255,
+                255,
+                255
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "near-scope-2367-depth",
+          "pass": "depth",
+          "draws": [
+            {
+              "program": "capacity-program-9",
+              "materialType": "MeshDepthMaterial",
+              "candidateClipCount": 0,
+              "candidateHasFeatureIds": 0,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                127,
+                91,
+                86,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        },
+        {
+          "label": "near-scope-2367-distance",
+          "pass": "distance",
+          "draws": [
+            {
+              "program": "capacity-program-10",
+              "materialType": "MeshDistanceMaterial",
+              "candidateClipCount": 0,
+              "candidateHasFeatureIds": 0,
+              "candidateMacro": 4526459,
+              "modelMatrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          ],
+          "samples": [
+            {
+              "name": "row319",
+              "world": [
+                -0.75,
+                0,
+                -0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                25,
+                102
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                62,
+                219,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "row320",
+              "world": [
+                -0.25,
+                0,
+                0.75
+              ],
+              "clipped": true,
+              "pixel": [
+                51,
+                25
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                7,
+                163,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-left-height",
+              "world": [
+                0.6,
+                0,
+                -0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                94
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            },
+            {
+              "name": "unclipped-right-height",
+              "world": [
+                0.6,
+                0,
+                0.6
+              ],
+              "clipped": false,
+              "pixel": [
+                94,
+                33
+              ],
+              "expected": "retained",
+              "rgba": [
+                85,
+                16,
+                228,
+                0
+              ],
+              "passed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "id": "capacity-program-1",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "754d19e018b249c378b186102cc6c8190879f15a1b843651c80f810cea050fd5"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "d421a3fc6edc530027ad79aafd8bbc20a447b6dd0cc632085dfe99e0f8f56345"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-2",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "1b898a83a94a53ed1bcb6a7cfcf32c456a1ad221553099f95134579a0546372d"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "0c9f8a5bf6ad535177ba2395741d201ed075ace1dfccb4a8bda489ac8eefd118"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-3",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "6c48078ffa08a29c5b1e44be156b14b86bd23bcb795b063317b12772e0ffb526"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "633fdf2e018014480f0dd12cd54dabb9f4427bb3fd0d0c721a0799449e27239b"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-4",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "1b898a83a94a53ed1bcb6a7cfcf32c456a1ad221553099f95134579a0546372d"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "0c9f8a5bf6ad535177ba2395741d201ed075ace1dfccb4a8bda489ac8eefd118"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-5",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "6c48078ffa08a29c5b1e44be156b14b86bd23bcb795b063317b12772e0ffb526"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "633fdf2e018014480f0dd12cd54dabb9f4427bb3fd0d0c721a0799449e27239b"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-6",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "dc9e09cf57b49001bf125bc2d67e4650402af94990c6bdc05d819de2146232a9"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "d421a3fc6edc530027ad79aafd8bbc20a447b6dd0cc632085dfe99e0f8f56345"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-7",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "4feab67bc9f5e56b11ac97757d58b75594b6fc068bae101f5914c7257ad474d9"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "0c9f8a5bf6ad535177ba2395741d201ed075ace1dfccb4a8bda489ac8eefd118"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-8",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "c793fabdd3ae0eb341511c90b00f7a0367866d79c5926a07cdef626cca1fd3e1"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "633fdf2e018014480f0dd12cd54dabb9f4427bb3fd0d0c721a0799449e27239b"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-9",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "4feab67bc9f5e56b11ac97757d58b75594b6fc068bae101f5914c7257ad474d9"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "0c9f8a5bf6ad535177ba2395741d201ed075ace1dfccb4a8bda489ac8eefd118"
+        }
+      ]
+    },
+    {
+      "id": "capacity-program-10",
+      "linked": true,
+      "infoLog": "",
+      "shaders": [
+        {
+          "type": 35633,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "c793fabdd3ae0eb341511c90b00f7a0367866d79c5926a07cdef626cca1fd3e1"
+        },
+        {
+          "type": 35632,
+          "compiled": true,
+          "infoLog": "",
+          "sha256": "633fdf2e018014480f0dd12cd54dabb9f4427bb3fd0d0c721a0799449e27239b"
+        }
+      ]
+    }
+  ],
+  "sourceReceipts": [
+    {
+      "url": "http://127.0.0.1:8782/src/candidate-city-clipping.js",
+      "status": 200,
+      "bytes": 11485,
+      "sha256": "29ab2bfb591f4917ce30727f9990346a334257cb0a1a588266d4db0009784a17"
+    },
+    {
+      "url": "http://127.0.0.1:8782/vendor/three.module.js",
+      "status": 200,
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    }
+  ],
+  "glErrors": [],
+  "shaderErrors": [],
+  "cleanup": {
+    "rendererDisposed": true,
+    "canvasDetached": true,
+    "contextLostRequested": true
+  },
+  "context": {
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "attributes": {
+      "alpha": true,
+      "antialias": false,
+      "depth": true,
+      "desynchronized": false,
+      "failIfMajorPerformanceCaveat": false,
+      "powerPreference": "default",
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": true,
+      "stencil": false,
+      "xrCompatible": false
+    },
+    "drawingBuffer": [
+      128,
+      128
+    ],
+    "canvasAttached": false
+  },
+  "rowBindings": [
+    {
+      "index": 318,
+      "owner": 1519,
+      "positions": [
+        0,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "index": 319,
+      "owner": 1519,
+      "positions": [
+        0,
+        1,
+        -1,
+        1,
+        0,
+        -1
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "name": "row319",
+      "world": [
+        -0.75,
+        0,
+        -0.75
+      ],
+      "clipped": true,
+      "pixel": [
+        25,
+        102
+      ]
+    },
+    {
+      "name": "row320",
+      "world": [
+        -0.25,
+        0,
+        0.75
+      ],
+      "clipped": true,
+      "pixel": [
+        51,
+        25
+      ]
+    },
+    {
+      "name": "unclipped-left-height",
+      "world": [
+        0.6,
+        0,
+        -0.6
+      ],
+      "clipped": false,
+      "pixel": [
+        94,
+        94
+      ]
+    },
+    {
+      "name": "unclipped-right-height",
+      "world": [
+        0.6,
+        0,
+        0.6
+      ],
+      "clipped": false,
+      "pixel": [
+        94,
+        33
+      ]
+    }
+  ],
+  "overflow": {
+    "attempted": 321,
+    "rejected": true,
+    "message": "候选模型局部边界过于复杂",
+    "revisionBefore": 1,
+    "revisionAfter": 1,
+    "globalDataSha256": "fe11e04ccd92de2928536f8bb0a21f55fc5e0e283a325f87b22372af0069c7fe",
+    "scopeDataSha256": "98b2b148506fbb0c81dbe2ebe830a33570e7acf7cc0414f1fb0533e883ee9c9e",
+    "texturesRetained": true,
+    "bytesUnchanged": true,
+    "passes": [
+      {
+        "label": "after-rejected-overflow-standard",
+        "pass": "standard",
+        "draws": [
+          {
+            "program": "capacity-program-6",
+            "materialType": "MeshStandardMaterial",
+            "candidateClipCount": 2,
+            "candidateHasFeatureIds": 0,
+            "candidateMacro": 4526459,
+            "modelMatrix": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "samples": [
+          {
+            "name": "row319",
+            "world": [
+              -0.75,
+              0,
+              -0.75
+            ],
+            "clipped": true,
+            "pixel": [
+              25,
+              102
+            ],
+            "expected": "clear",
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "row320",
+            "world": [
+              -0.25,
+              0,
+              0.75
+            ],
+            "clipped": true,
+            "pixel": [
+              51,
+              25
+            ],
+            "expected": "clear",
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "unclipped-left-height",
+            "world": [
+              0.6,
+              0,
+              -0.6
+            ],
+            "clipped": false,
+            "pixel": [
+              94,
+              94
+            ],
+            "expected": "retained",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "passed": true
+          },
+          {
+            "name": "unclipped-right-height",
+            "world": [
+              0.6,
+              0,
+              0.6
+            ],
+            "clipped": false,
+            "pixel": [
+              94,
+              33
+            ],
+            "expected": "retained",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "label": "after-rejected-overflow-depth",
+        "pass": "depth",
+        "draws": [
+          {
+            "program": "capacity-program-7",
+            "materialType": "MeshDepthMaterial",
+            "candidateClipCount": 2,
+            "candidateHasFeatureIds": 0,
+            "candidateMacro": 4526459,
+            "modelMatrix": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "samples": [
+          {
+            "name": "row319",
+            "world": [
+              -0.75,
+              0,
+              -0.75
+            ],
+            "clipped": true,
+            "pixel": [
+              25,
+              102
+            ],
+            "expected": "clear",
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "row320",
+            "world": [
+              -0.25,
+              0,
+              0.75
+            ],
+            "clipped": true,
+            "pixel": [
+              51,
+              25
+            ],
+            "expected": "clear",
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "unclipped-left-height",
+            "world": [
+              0.6,
+              0,
+              -0.6
+            ],
+            "clipped": false,
+            "pixel": [
+              94,
+              94
+            ],
+            "expected": "retained",
+            "rgba": [
+              127,
+              91,
+              86,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "unclipped-right-height",
+            "world": [
+              0.6,
+              0,
+              0.6
+            ],
+            "clipped": false,
+            "pixel": [
+              94,
+              33
+            ],
+            "expected": "retained",
+            "rgba": [
+              127,
+              91,
+              86,
+              0
+            ],
+            "passed": true
+          }
+        ]
+      },
+      {
+        "label": "after-rejected-overflow-distance",
+        "pass": "distance",
+        "draws": [
+          {
+            "program": "capacity-program-8",
+            "materialType": "MeshDistanceMaterial",
+            "candidateClipCount": 2,
+            "candidateHasFeatureIds": 0,
+            "candidateMacro": 4526459,
+            "modelMatrix": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "samples": [
+          {
+            "name": "row319",
+            "world": [
+              -0.75,
+              0,
+              -0.75
+            ],
+            "clipped": true,
+            "pixel": [
+              25,
+              102
+            ],
+            "expected": "clear",
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "row320",
+            "world": [
+              -0.25,
+              0,
+              0.75
+            ],
+            "clipped": true,
+            "pixel": [
+              51,
+              25
+            ],
+            "expected": "clear",
+            "rgba": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "unclipped-left-height",
+            "world": [
+              0.6,
+              0,
+              -0.6
+            ],
+            "clipped": false,
+            "pixel": [
+              94,
+              94
+            ],
+            "expected": "retained",
+            "rgba": [
+              85,
+              16,
+              228,
+              0
+            ],
+            "passed": true
+          },
+          {
+            "name": "unclipped-right-height",
+            "world": [
+              0.6,
+              0,
+              0.6
+            ],
+            "clipped": false,
+            "pixel": [
+              94,
+              33
+            ],
+            "expected": "retained",
+            "rgba": [
+              85,
+              16,
+              228,
+              0
+            ],
+            "passed": true
+          }
+        ]
+      }
+    ]
+  },
+  "finalState": {
+    "triangles": 320,
+    "triangleLimit": 320,
+    "clippingTexture": {
+      "width": 4,
+      "height": 320,
+      "bytes": 20480,
+      "type": "FloatType",
+      "format": "RGBAFormat",
+      "minFilter": "NearestFilter",
+      "magFilter": "NearestFilter",
+      "generateMipmaps": false
+    },
+    "sourceObjects": 0,
+    "boundMaterials": 0,
+    "revision": 1,
+    "ownerScopedSources": []
+  },
+  "startedAt": "2026-11-03T13:36:35.183Z",
+  "completedAt": "2026-11-03T13:36:43.522Z",
+  "browserVersion": "154.0.8037.57",
+  "scriptSha256": "7792cb8949442f741598f6234074e59bdd6da04008b23abdc88d17fd4fa26fea",
+  "runnerSha256": "688302f01e8c4710915baf5c901387b61e8bd3a9754cc544a8704bd8d5ff89e9",
+  "errors": [],
+  "warnings": [],
+  "browserClosed": true,
+  "serverClosed": true,
+  "scope": "Small detached-canvas fixture only; main scene and model assets were not loaded.",
+  "closedAt": "2026-11-03T13:36:43.823Z"
+}

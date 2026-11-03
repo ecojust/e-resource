@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>大世界历史主楼与街角塔 · 资产查看</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="大世界历史主楼与街角塔"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-great-world&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦 · 西藏南路 · 大世界</p>
+    <h1>上海大世界</h1>
+    <p>沿街主楼、街角塔与屋顶亭 · 建筑外观</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与资料">
+    <span class="badge">照片与地图参照 · 尺度含估计</span>
+    <p class="scope">表现沿街U形四层主楼、街角塔和照片可见屋顶亭。中庭屋盖现状尚未核实，本轮未制作；独立剧场分开保留。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">自动随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button id="front" type="button">街角主塔</button>
+      <button id="oblique" type="button">斜侧</button>
+      <button id="rear" type="button">背侧与院落</button>
+      <button id="roof" type="button">屋面俯瞰</button>
+      <button id="fit" type="button">适合窗口</button>
+      <button id="retry" type="button" hidden>重试加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <p id="metrics"></p>
+    <div id="downloads" class="downloads"></div>
+    <p class="scope">1917初建、名录1924、1928改扩建及2017复开分别记录；本件参照修缮后外观，尺寸和隐面含估计。2014内院白钢罩照片不作为现状屋盖的证明。</p>
+    <p class="scope">本页提供旋转查看和四项资产下载；城市位置请使用上方主地图入口。楼内房间未制作，参考照片不作贴图。</p>
+    <a href="source/precise/huangpu-great-world/README.md">来源、范围与重建说明 ↗</a>
+  </aside>
+  <footer>
+    <span>拖动旋转 · 右键平移 · 滚轮缩放<br>触屏：单指旋转，双指平移或缩放</span>
+    <span>建筑外观模型 · 非测绘<br>原创几何 MIT · 无照片贴图</span>
+  </footer>
+  <script type="module" src="src/great-world.js"></script>
+</body>
+</html>

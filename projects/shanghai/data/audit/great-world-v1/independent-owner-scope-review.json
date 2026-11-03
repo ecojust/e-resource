@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "model_id": "huangpu-great-world",
+  "baseline_git": "564e8ae3bdb1e5fa918f5351f7538bff2e759f2f",
+  "review_method": "Independent read of production source owner path, near group metadata and all mesh/pass values of mapping agent actual-loader report. This review does not re-run or claim a GPU render.",
+  "implementation_sha256": "29ab2bfb591f4917ce30727f9990346a334257cb0a1a588266d4db0009784a17",
+  "reviewed_mapping_report_sha256": "259efd8b9d2d40241d44c86b8588574e3a33a6eddf16f4ff45de013ce34d2db0",
+  "source_group_ids": {
+    "main": [
+      506,
+      497,
+      1519,
+      1812,
+      1408,
+      2113,
+      940,
+      1127
+    ],
+    "preserved_2367": [
+      2367,
+      1730,
+      961,
+      2821
+    ]
+  },
+  "findings": {
+    "near_owner_selection": "updateOwnerScope requires matching macro and either owner 0 or membership in record.ids; both new positive owners are excluded by the 2367 group.",
+    "descendants": "bindObject traverses every descendant mesh; absent per-vertex IDs uses the root scope; same config is bound to visible, customDepthMaterial and customDistanceMaterial.",
+    "far_owner_selection": "_feature_id_0 is passed to fragment shader and mismatching local IDs are skipped, in addition to macro filter.",
+    "vector_owner_selection": "Overture features filter candidate clips by source_feature_ids using ID/property ID, so separate UUID 2367 is retained.",
+    "attachment_order": "prepareCityDetailObject passes original record and binds the loaded root after near materials configured; later replacement group visibility does not add new geometry.",
+    "actual_loader_report": "13 main near meshes receive23rows;13 neighbor2367 meshes receive0rows;4 far meshes retain feature owner filtering; all three standard/depth/distance pass tuples checked.",
+    "capacity": "320rows, only capacity enlarged; new model23 rows gives city total301 per mapping preflight.",
+    "projection_caution": "1.843m² source XY overlap is insufficient to infer removal of2367; no new height clip required. Final model/neighbor projection and collision checks are recorded separately in independent-placement-review.json."
+  },
+  "status": "owner scope path verified; final model geometry is recorded in independent-geometry-review.json and GPU evidence is a separate QA audit"
+}

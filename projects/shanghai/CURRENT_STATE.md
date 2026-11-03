@@ -1,3 +1,17 @@
+# 大世界历史主楼与街角塔接入主地图
+
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-great-world&mode=overview) · [按区目录](landmarks.html) · [本轮记录](data/audit/great-world-v1/README.md)
+
+西藏南路1号大世界有界外观：地图主源1519的沿街U形四层主体、街角塔497及照片可见屋顶亭，按修缮后临街照片细化。高度、隐藏墙面和精细雕饰含估计；中庭现状屋盖未制作，独立2367共舞台／ET聚场及邻楼不并入，不开放室内。
+
+原始与网页档分别为277,756和277,756个三角面，远景档102,124个；四资产共38,553,419字节，含可编辑Blender。模型最高约46.4米，为作者估计。
+
+主源1519与街角塔497按各自owner分别替换，2367共舞台／ET聚场及其他邻体独立保留。 地面碰撞与显示边界分别核对，不开放室内漫游。1917初建、名录1924、1928改扩建及2017复开分别记录；本件参照修缮后外观，尺寸和隐面含估计。2014内院白钢罩照片不作为现状屋盖的证明。
+
+按区目录83处、16区，其中黄浦29处；40处保留原有漫游，43件候选提供全局俯瞰。README“查看网页”统一进入主index，灯牌与目录采用同一登记。本件已交付范围退出重复制作，尺寸、隐面和雕饰的证据精度限制留在[来源说明](source/precise/huangpu-great-world/README.md)；未建的具体范围继续留在TODO。
+
+下一项为北苏州路276号上海邮政总局历史主楼与钟塔，已读相关文字并实际看2010外观照；现状屋顶、院落、地图足迹与高度仍需核对，尚未制作。[身份预研](data/model-todo/postal-preflight.json)。
+
 # 中国航空协会旧址飞机楼接入主地图
 
 [全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview) · [按区目录](landmarks.html) · [本轮记录](data/audit/aviation-building-v1/README.md)

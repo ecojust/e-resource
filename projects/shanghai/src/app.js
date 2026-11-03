@@ -1,10 +1,10 @@
-import { createShanghaiScene } from './map-scene.js?v=aviation-building-v1';
+import { createShanghaiScene } from './map-scene.js?v=great-world-v1';
 import { WalkController } from './walk-controller.js';
 import { districtAt } from './geography.js';
 import { placeDescription, walkingPose } from './precise-registration-ui.js';
 import { readVerifiedBytes } from './ordinary-building-catalog.js';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=aviation-building-v1';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=great-world-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js';
 
 const $ = id => document.getElementById(id);
@@ -251,7 +251,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=aviation-building-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=great-world-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
       if(name!=='data/candidate-city-integrations.json')throw error;
       candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
     })));

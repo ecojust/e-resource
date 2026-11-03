@@ -1,0 +1,75 @@
+{
+  "id": "huangpu-great-world",
+  "manifest_sha256": "ae7e7595187ed8e5b0749d78bee4ebf207a371799f83a2c8387eca424a63f93a",
+  "actual_images_viewed": 8,
+  "root_visual_review_claimed": false,
+  "reviewer": "great_world_review",
+  "accepted": true,
+  "images": [
+    {
+      "file": "browser-auxiliary-lod.png",
+      "sha256": "9736d98d626b4d4435904e89d6eaa4b738f86ff2030c715bbe462cb6166571cc",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "LOD辅助页显示四层U形主体、角塔与两亭，主体未截断；102124三角/2.63MB与最终LOD元数据一致，文本明确中庭屋盖未制作且提供上海主地图入口。"
+    },
+    {
+      "file": "browser-global-desktop.png",
+      "sha256": "55d55ada2d5ebd6e384ce4424a06d4cee49578fee20939253c03cb13258c7447",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "上海主地图显示正确的大世界历史主楼与街角塔标题，已建模83处/16区，U形主楼、角塔与两亭处于城市邻体中；保留邻体可见，灯牌清晰可读。角塔局部被预期灯牌overlay遮挡，细节由单独入口/屋顶视图核对。"
+    },
+    {
+      "file": "browser-detail-entry.png",
+      "sha256": "deb37fb6f46ef6e15670ef2975741ec64559622cd0e285e73900d3f0c6946875",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "主图近景显示街角入口竖向大柱、逐层几何透空栏板、12拱层及退后暗芯，侧翼窗楣/石栏连续；未见旧粗塔穿插或窗边贯通裂缝。该特写裁去塔冠上部，完整塔体由overview与native冠部视图交叉检查。"
+    },
+    {
+      "file": "browser-detail-roof.png",
+      "sha256": "a913e7b0839b9e9ec38982c164ebc3426ffc8bda3b4a4154b03e9ac19fdedb67",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "局部屋面/内院近景显示U形屋面接缝、未重建的院内白钢屋盖区域与独立保留邻楼，小亭可见；这是裁切的屋面细节图，主塔在底边外，不能作为全U或整塔入框证据。"
+    },
+    {
+      "file": "browser-beacons-320-83.png",
+      "sha256": "4e905679cb05e6de0a36e86b27b29957b0e81d07a45bd753db70b2b794bab4f2",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "320×568密集全市编号灯牌网格可见，布局位于顶栏与底部卡片之间，未见与右侧控件重叠。此为布局静帧，底卡仍显示此前选中的中国航空协会，不将它当作大世界点击后选中证明；83个ID与真实touch/mouse结果由独立运行时检查绑定。"
+    },
+    {
+      "file": "browser-touch-selected-great-world-city.png",
+      "sha256": "b350c09b3070c2be0eba7bb3f5de7357573ceb9d9fca5723d3eb05e26b79b539",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "320px真实触摸后的静帧底卡已由中国航空协会切换为黄浦区“大世界历史主楼与街角塔”，83个编号灯牌网格仍完整处于可用区域；未见错名/旧模型标题或卡片遮压编号。触摸输入与目标资产摘要由browser运行时receipt另核。"
+    },
+    {
+      "file": "browser-tower-complete.png",
+      "sha256": "8e8e63ef0722970ab7a45ed851f0bfcba75cb454bc5192b367241415296d1bf1",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "新增主图视角完整显示四层街角基座、12拱圈、两直柱层、上灯笼、浅灰顶帽与细旗杆；塔顶在顶栏下方入框，选中灯牌位于塔右侧未遮盖塔冠。两侧主翼与大小亭可辨，与辅助页及最终native模型一致。"
+    },
+    {
+      "file": "browser-roof-complete.png",
+      "sha256": "1c76a3eabaa9ddf6e3758548520e77a455f5039ac5d96095a8a64111bf512c6b",
+      "actually_viewed": true,
+      "accepted": true,
+      "observation": "新增宽屋顶主图显示完整U形屋面、两个屋顶亭、角塔及独立保留的共舞台邻体，内院未被本模型屋盖填满；少量下部街墙被位置卡覆盖，完整角塔已在单独整塔图核对，不能把院盖省略解释为现状拆除。"
+    }
+  ],
+  "pending": [],
+  "passed": true,
+  "scope": "Independent actual view of the exact eight-image subset listed here. Does not claim review of the other four browser screenshots or execution of browser/GPU tests; those are separately bound by QA. Seven source photos, final native images, actual raw/LOD geometry and metadata were reviewed separately.",
+  "main_page": "projects/shanghai/index.html#landmark=huangpu-great-world&mode=overview",
+  "limitations": [
+    "The first roof close-up is cropped; the later complete-roof and complete-tower views supply framing evidence.",
+    "The dense-beacon pre-touch frame shows the former selection; the touch-after frame independently shows the new Great World title.",
+    "Map/photo dimensions and hidden elevations remain estimates; the unknown current courtyard roof remains outside this model."
+  ]
+}

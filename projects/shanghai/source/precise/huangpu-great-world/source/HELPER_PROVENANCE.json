@@ -1,0 +1,79 @@
+{
+  "baseline_commit": "564e8ae3bdb1e5fa918f5351f7538bff2e759f2f",
+  "license": "MIT",
+  "generic_helpers": [
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/common/photo_architecture.py",
+      "destination": "common/photo_architecture.py",
+      "source_sha256": "6a62484a9e416f1c2ef2c2d2ec065dd9c7c184eb758b214ae4217f6f8782d15f",
+      "reuse_scope": "generic closed-component, GLB export or serialized geometry verification framework; no aviation building mesh reused",
+      "destination_sha256": "c227a252ee802e105bc2db0e23475c34c9556053d835133df70e4e23fbecd2b1",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/requirements.txt",
+      "destination": "requirements.txt",
+      "source_sha256": "e89b5bda70d44a74ad45a30f43f54e3e368cc108a234ec89adc167b7d82d743c",
+      "reuse_scope": "generic closed-component, GLB export or serialized geometry verification framework; no aviation building mesh reused",
+      "destination_sha256": "e89b5bda70d44a74ad45a30f43f54e3e368cc108a234ec89adc167b7d82d743c",
+      "modified_for_this_building": false
+    },
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/verify_author.py",
+      "destination": "verify_author.py",
+      "source_sha256": "71bc0cce49d54441d076ecf1b32b9d83525d294db9cf2f76ff407ef3bdfd7f46",
+      "reuse_scope": "generic closed-component, GLB export or serialized geometry verification framework; no aviation building mesh reused",
+      "destination_sha256": "b4f85f3a6e3ae252bbc089e60c1c37d5c386d5183094d982802a8b5bd3c9735b",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/decode_meshopt.mjs",
+      "destination": "decode_meshopt.mjs",
+      "source_sha256": "68bf6b71072e1811a76e70917400dcc7cff4ad5acea546fbad53d83d9441f96a",
+      "reuse_scope": "generic closed-component, GLB export or serialized geometry verification framework; no aviation building mesh reused",
+      "destination_sha256": "68bf6b71072e1811a76e70917400dcc7cff4ad5acea546fbad53d83d9441f96a",
+      "modified_for_this_building": false
+    },
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/verify_serialized.py",
+      "destination": "verify_serialized.py",
+      "source_sha256": "e07cd9c89d9f0a5e1c073f7c701e600ac985fc878d6c08ba928b53db3887014c",
+      "reuse_scope": "generic closed-component, GLB export or serialized geometry verification framework; no aviation building mesh reused",
+      "destination_sha256": "1281fefe4ce6bdbd40fbe76f3a7319638dbc79bec0cddad6bb5126178fdc564c",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/build_native.py",
+      "destination": "build_native.py",
+      "source_sha256": "b741c9bdbff1110bbdf2d42433b4569b1e525a9c0d0dc24e1b70aeee72cdd3be",
+      "reuse_scope": "adapted generic native save/render/reopen or lossless GLB packaging; Great World identity, cameras and manifest authored separately",
+      "destination_sha256": "85ba10ee18f32c62d4d7757af806158df047f2511857d550dc584d48a5a4613c",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/package_assets.py",
+      "destination": "package_assets.py",
+      "source_sha256": "a140aef3f87e2259c752f764d3f645c4fce3f5f527018544749c537578bbd932",
+      "reuse_scope": "adapted generic native save/render/reopen or lossless GLB packaging; Great World identity, cameras and manifest authored separately",
+      "destination_sha256": "d945af515caf6c0cf12f94889b2ed8cf24b53b455462dfaaec58688d065de5ec",
+      "modified_for_this_building": true
+    }
+  ],
+  "building_geometry": "Great World-specific composition newly authored from its sources and map frame",
+  "adapted_geometry_method": {
+    "source": "projects/shanghai/source/precise/yangpu-china-aviation-association-building/source/aviation_geometry.py",
+    "sha256": "a4ae999609cfabd71ba2979252900b9acdfa459c4a2f0210a5f4de5d09baa34e",
+    "destination": "world_geometry.py",
+    "scope": "rectangular surface-grid shell with shared vertices; perimeter mapping, Great World ornaments and composed geometry newly authored",
+    "destination_sha256": "8d1d1b912f866247b516e99f7977395010dafc712f48b60dc3a1648526679a5a"
+  },
+  "local_patches": [
+    {
+      "destination": "common/photo_architecture.py",
+      "method": "Facade.window",
+      "reason": "independent serialized-ray check found 25mm perimeter through-gap when both glass and frame were inset from the wall cut",
+      "change": "glass backstop spans shape.buffer(0.012,join_style=2) at depth[-0.34,-0.32] m; retains true recessed front and overlaps wall invisibly by12mm",
+      "historical_helper_modified": false
+    }
+  ]
+}
