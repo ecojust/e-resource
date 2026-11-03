@@ -23,8 +23,8 @@ import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictio
   releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
 import { correctPhotographicTexture } from './photographic-texture.js';
 import { preparePhotographicGlass } from './photographic-glass.js';
-import {CandidateCityState} from './candidate-city-integrations.js?v=city-height-clips-v2';
-import {CandidateCityClipper} from './candidate-city-clipping.js?v=city-height-clips-v2';
+import {CandidateCityState} from './candidate-city-integrations.js?v=aviation-building-v1';
+import {CandidateCityClipper} from './candidate-city-clipping.js?v=aviation-building-v1';
 import {planCandidateVectorClipping} from './candidate-vector-clipping.js';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 import {createBuildingBeacons} from './building-beacons.js';

@@ -1,3 +1,15 @@
+# 中国航空协会旧址飞机楼接入主地图
+
+[全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview) · [按区目录](landmarks.html) · [本轮记录](data/audit/aviation-building-v1/README.md)
+
+西侧圆角宽翼与圆塔、三重厚石栏退台和顶部小圆体、低筒拱连接舱、东窄翼及中央后门阳台按修缮后照片制作；东西入口和门饰分别处理。前翼保留三道窗带，不将其解释为三个等高楼层。尺寸、隐蔽墙面和精细雕饰仍含估计。 原始与网页档分别为106,192和106,192个三角面，远景档60,384个；四资产共10,057,090字节，含可编辑Blender。模型最高约16.700米，为作者估计。
+
+仅替换长海医院内独立地图源1349；旧市博物馆与医院邻楼独立保留。新增16行显示裁剪，全目录278／288行；地面碰撞与显示边界分别核对，不开放室内漫游。1935兴建、1936落成和1993修复分开记录，本件不称1935原貌复原。
+
+按区目录82处、16区，杨浦7处、黄浦28处；40处保留原有漫游，42件候选提供全局俯瞰。README“查看网页”统一进入主index，灯牌与目录采用同一登记。本楼已交付外观退出重复制作，隐面和雕饰的证据精度限制留在[来源说明](source/precise/yangpu-china-aviation-association-building/README.md)。其余已列明的独立未建构件继续保留在TODO中。
+
+下一项为西藏南路1号大世界历史主楼与街角塔，已核身份及2014／2024两期照片；地图U形主体、附属边界和中庭白钢屋盖现状继续核查，尚未制作。[预研记录](data/model-todo/great-world-preflight.json)。
+
 # 旧上海市博物馆江湾馆舍接入主地图
 
 [全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) · [按区目录](landmarks.html) · [本轮证据](data/audit/city-museum-v1/README.md)

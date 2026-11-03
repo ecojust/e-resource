@@ -5,7 +5,7 @@
 <!-- model-todo:start -->
 ## 模型 TODO：逐条制作与街道资料搜集
 
-更新：2026-11-01。原始名录收录已发现的 **1,058 处建筑／建筑组线索**、**1,038 条道路名称线索**；下文列出尚未完成的制作任务及调查线索。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。
+更新：2026-11-03。原始名录收录已发现的 **1,058 处建筑／建筑组线索**、**1,038 条道路名称线索**；下文列出尚未完成的制作任务及调查线索。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。
 
 执行顺序：按下表序号逐项核对参考 → 制作近景、远景与可编辑模型 → 几何和网页检查 → 提交主分支 → 更新状态。遇到来源缺口，记录缺口后推进下一项。照片链接只代表发现线索，逐栋制作前还须打开核对身份、视角、年代和使用条件。
 
@@ -15,9 +15,9 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的35项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的36项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
-另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除10条已完成主楼的重复新建任务，当前按区列出 **1,048 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
+另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
@@ -25,7 +25,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 36 | 中国航空协会旧址（长海医院飞机楼） | 杨浦区／长海路174号（长海医院内） | 待核对身份与外观 | — | [既有名录索引：第四批4G011飞机楼/中国航空协会（原始发现数据，官方原文尚未重核）](<https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>) · [中国航空协会大楼条目（实际已读版本84972781导言、历史及版本信息；固定版本地址未另取）](<https://zh.wikipedia.org/wiki/中国航空协会大楼>) · [实际已查看2013俯视照片：圆塔、前后横翼与连接舱体（Legolas1024，CC BY-SA3.0）](<https://commons.wikimedia.org/wiki/File:中國航空協會舊址.jpg>)；已读百科建筑沿革并实际查看2013俯照；下一步补官方或可靠修缮原文和地面前后侧照片，锁定独立现状footprint、重叠地图源及现代附房边界，完成来源和范围审查后再制作模型。 |
+| 37 | 大世界历史主楼与街角塔 | 黄浦区／西藏南路1号 | 待核对身份与外观 | — | [大世界条目（Root实际读取版本91525241导言、历史及图注）](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%A4%A7%E4%B8%96%E7%95%8C>) · [澎湃2016修缮及试运营报道（已读正文）](<https://www.thepaper.cn/newsDetail_forward_1585102>) · [2024年修缮后沿街照片（实际已查看，Windmemories，CC BY-SA4.0）](<https://commons.wikimedia.org/wiki/File:20240120_Shanghai_Great_World_Entertainment_Center_01.jpg>) · [身份、年代与两期影像预研](<projects/shanghai/data/model-todo/great-world-preflight.json>)；已读建筑条目与2016修缮全文，并实际查看2014俯照及2024街面照；下一步核地图U形主体、街角塔和附属范围，补2017后顶视或工程资料确认中庭白钢屋盖现状，取得日光主立面与侧后面证据后确定制作范围。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -997,7 +997,7 @@
 
 </details>
 
-<details><summary>杨浦区：44条未完成范围／调查线索</summary>
+<details><summary>杨浦区：43条未完成范围／调查线索</summary>
 
 | ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
@@ -1024,7 +1024,6 @@
 | sh-historic-b4-174 | 复旦大学历史建筑建筑群 / 登辉堂 / 复旦大学历史建筑建筑群 / 子彬楼 / 复旦大学历史建筑建筑群 / 图书馆 / 复旦大学历史建筑建筑群 / 校门 | 邯郸路220号（复旦大学内） | [名录][H4] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b4-175 | 毓秀楼 | 武东路100号（同济大学沪东校区内） | [名录][H4] | 待核外观／拆栋 |
 | sh-historic-b4-176 | 叶家花园（白楼） | 政民路511号 | [名录][H4] · 照片待核 | 待核外观／拆栋 |
-| sh-historic-b4-177 | 飞机楼/中国航空协会 | 长海路174号（长海医院内） | [名录][H4] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b4-178 | 国立音乐专科学校主楼 | 民京路918号 | [名录][H4] | 待核外观／拆栋 |
 | sh-historic-b5-yp-j-001-v | 住宅 | 龙江路2号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b5-yp-j-002-v | 住宅 | 隆昌路362号 | [名录][H5] · 照片待核 | 待核外观／拆栋 |
@@ -3694,9 +3693,11 @@
 
 ## 上海全景建模
 
+[中国航空协会旧址（飞机楼）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview)：圆角双翼、筒拱连接舱、圆塔三重石栏退台与两侧入口；已接入全局地图和灯牌，尺寸与隐面含估计。[来源与范围](projects/shanghai/source/precise/yangpu-china-aviation-association-building/README.md)。
+
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；81处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中41件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；82处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中42件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3704,7 +3705,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增41处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增42处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3726,7 +3727,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，81处建筑与构件模型入口（40处既有＋41处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增41处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，82处建筑与构件模型入口（40处既有＋42处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增42处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（28处）
@@ -3814,7 +3815,7 @@
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
 
-### 杨浦区（6处）
+### 杨浦区（7处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310110&mode=walk)
 
@@ -3826,6 +3827,7 @@
 | 江湾体育馆历史主楼 | 2026-11-01 18:13:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) |
 | 江湾游泳馆（历史池馆与现状屋盖） | 2026-11-01 19:56:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) |
 | 旧上海市博物馆江湾馆舍 | 2026-11-01 22:28:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) |
+| 中国航空协会旧址（长海医院飞机楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview) |
 
 ### 闵行区（1处）
 

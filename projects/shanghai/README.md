@@ -1,5 +1,7 @@
 # 上海全景建模
 
+[中国航空协会旧址（飞机楼）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview)：圆角双翼、筒拱连接舱、圆塔三重石栏退台与两侧入口；已接入全局地图和灯牌，尺寸与隐面含估计。[来源与范围](source/precise/yangpu-china-aviation-association-building/README.md)。
+
 [旧上海特别市政府大楼（绿瓦大楼）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview)：三段绿瓦歇山顶、红柱格窗、浅色基座及独立阶桥；桥下道路留空，校园邻楼分开，尺寸与隐面含估计。[来源与范围](source/precise/yangpu-former-shanghai-city-hall/README.md)。
 
 [上海公共租界工部局历史主楼](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview)：北、东及部分南侧历史翼楼，含三种凹弧转角、柱廊、拱窗和通院拱道；现代西侧、未核接缝及庭院独立楼保留，尺寸与屋顶含估计。[来源与范围](source/precise/huangpu-shanghai-municipal-council/README.md)。
@@ -24,13 +26,13 @@
 
 **[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
-全市16区底图可浏览；81处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中41件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；82处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中42件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=overview)：主图可查看地面与水系；分区GLB、可编辑Blender与GIS边界的下载见[资产说明](source/surfaces/README.md)。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增41处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增42处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -48,7 +50,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，81处建筑与构件模型入口（40处既有＋41处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增41处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
+**汇总：16区，82处建筑与构件模型入口（40处既有＋42处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增42处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（28处）
@@ -136,7 +138,7 @@
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
 
-### 杨浦区（6处）
+### 杨浦区（7处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310110&mode=walk)
 
@@ -148,6 +150,7 @@
 | 江湾体育馆历史主楼 | 2026-11-01 18:13:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) |
 | 江湾游泳馆（历史池馆与现状屋盖） | 2026-11-01 19:56:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) |
 | 旧上海市博物馆江湾馆舍 | 2026-11-01 22:28:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) |
+| 中国航空协会旧址（长海医院飞机楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview) |
 
 ### 闵行区（1处）
 
@@ -300,7 +303,7 @@
 
 ## 已建模型查看
 
-所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。所有模型查看入口统一进入主图；原40处开放室外漫游，新增41处提供俯瞰定位。模型资产与下载保留在各自来源说明中。
+所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。所有模型查看入口统一进入主图；原40处开放室外漫游，新增42处提供俯瞰定位。模型资产与下载保留在各自来源说明中。
 
 [崇明学宫尊经阁预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview)：依据历史照片制作，已按院落资料近似定位并接入全局场景。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 
