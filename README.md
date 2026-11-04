@@ -2,6 +2,8 @@
 
 资源文件与示例。
 
+[协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
+
 <!-- model-todo:start -->
 ## 模型 TODO：逐条制作与街道资料搜集
 
