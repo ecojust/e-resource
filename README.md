@@ -4,7 +4,7 @@
 
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
-当前开发快照包含邮政总局的模型与地图接入，目录为84处；该栋最终网页验收和公开发布仍待完成。后续接手先看[当前交接](history/CONTINUE-SHANGHAI.md)，再推进下一栋。
+当前开发快照已推送远程，包含邮政总局的模型与地图接入，目录为84处；该栋最终网页验收和公开文件核对仍待完成。后续接手先看[当前交接](history/CONTINUE-SHANGHAI.md)，再推进下一栋。
 
 <!-- model-todo:start -->
 ## 模型 TODO：逐条制作与街道资料搜集
