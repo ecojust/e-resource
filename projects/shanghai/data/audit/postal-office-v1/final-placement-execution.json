@@ -1,0 +1,30 @@
+{
+  "schema": "postal-final-placement-execution-v1",
+  "manifest_sha256": "83715c205b4f083524dc977e218fdc3abdc63204bb400bb9ea558d83a6bcafb8",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-finalize-placement.py",
+        "--manifest",
+        "/workspace/e-resource/projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json"
+      ],
+      "script_sha256": "7b3823a2fc587ffe52563a175550ef7687d968dba7f6870108d5d0234457b593",
+      "exit_code": 0,
+      "stdout": "{\"passed\": true, \"structural_ground_m2\": 4581.125748204247, \"collision_m2\": 4639.4152970563155, \"ring_counts\": [[254]], \"floor_triangles_excluded_per_asset\": 12, \"ground_probes\": 8, \"model_height_m\": 57.70000076293945}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-verify-collision.mjs"
+      ],
+      "script_sha256": "d475f4b263fa74ed55b62b6edeb68791c42795e74f16e7d493f5780ac7406b16",
+      "exit_code": 0,
+      "stdout": "{\"passed\":true,\"ground_probes\":8,\"source_probes\":5}\n",
+      "stderr": ""
+    }
+  ],
+  "seconds": 0.5640995089997887,
+  "passed": true
+}

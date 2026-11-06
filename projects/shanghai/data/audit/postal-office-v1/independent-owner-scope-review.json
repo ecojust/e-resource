@@ -1,0 +1,84 @@
+{
+  "schema": "postal-independent-owner-scope-v1",
+  "model_id": "hongkou-general-post-office",
+  "checks": {
+    "target_identity_matches_frozen_source": true,
+    "mask_is_valid": true,
+    "mask_matches_protected_source_buffer": true,
+    "neighbor_protection_is_geometrically_independent_of_owner_classification": true,
+    "source_binding:macro-READY.json": true,
+    "source_binding:macro-feature-table.json.gz": true,
+    "source_binding:baseline-far.glb": true,
+    "source_binding:baseline-near.glb.gz": true,
+    "near_classification_recomputed_from_geometry": true,
+    "near_all_foreign_triangles_no_clip_area": true,
+    "near_source_residual_matches_explicit_retention": true,
+    "near_residual_confined_to_protected_shared_joint": true,
+    "far_all_foreign_triangles_no_clip_area": true,
+    "far_source_residual_matches_explicit_retention": true,
+    "far_residual_confined_to_protected_shared_joint": true,
+    "17_neighbor_source_polygons_preserved": true,
+    "body_and_canopy_plans_valid": true,
+    "body_has_no_near_zero_width_boundary_spur": true,
+    "body_canopy_tile_author_envelope": true
+  },
+  "passed": true,
+  "detail": {
+    "near_classification": {
+      "min_nearest_margin_m": 1.624698883737035e-08,
+      "triangle_centroids_with_margin_below_015m": 1252,
+      "scope": "Near shared group lacks vertex IDs; classification near the common seam has tiny margins. The mask excludes the whole buffered neighbor polygon irrespective of that classification; no unambiguous-owner claim."
+    },
+    "near": {
+      "triangles": 84618,
+      "target_triangles": 25400,
+      "foreign_triangles": 59218,
+      "foreign_max_intersection_m2": 0.0,
+      "target_residual_m2": 7.07941366258003,
+      "residual_outside_016m_neighbor_joint_m2": 0.0
+    },
+    "far": {
+      "triangles": 632,
+      "target_triangles": 24,
+      "foreign_triangles": 608,
+      "foreign_max_intersection_m2": 0.0,
+      "target_residual_m2": 6.990332803594065,
+      "residual_outside_016m_neighbor_joint_m2": 0.0
+    },
+    "authoring_plan": {
+      "body_minimum_clearance_m": 11.640805635125787,
+      "body_area_m2": 4514.776491423618,
+      "canopy_area_m2": 1849.8228136298983,
+      "union_envelope_difference_m2": 4.884981308350689e-14
+    }
+  },
+  "bindings": [
+    {
+      "file": "baseline-near-triangles.f64",
+      "bytes": 6092496,
+      "sha256": "64faf61fa9fd6f04beb5919f96ab27a5e0f3068d99e50d5c447c4bd746b98985"
+    },
+    {
+      "file": "baseline-near-classified-owners.u32",
+      "bytes": 338472,
+      "sha256": "f4e4bf252bb0fb9774bfbfe258f577110efd1a3829c948b6e3840232e6463a97"
+    },
+    {
+      "file": "baseline-far-triangles.f64",
+      "bytes": 45504,
+      "sha256": "78ac403fda929c52f990f9a6928b45fc0e0dbb9c7344858a12d8599fde1eab0f"
+    },
+    {
+      "file": "baseline-far-owners.u32",
+      "bytes": 2528,
+      "sha256": "c5c9719bd1b98343a8da08098111e786701344a1b5593d44786e3ec134e811e0"
+    },
+    {
+      "file": "footprint-contract.json",
+      "bytes": 17965,
+      "sha256": "0e96a6ac0f363f26e045af0b322448fc690517b9163f36bc8654b54638257761"
+    }
+  ],
+  "review_script_sha256": "7393941f415b1755396cf07c4ef3a488069ebafbced6e3bd6db18d5c01f06546",
+  "scope": "Frozen local near/far arrays, retained-neighbor mask geometry, and authoring footprint contract. Final authored GLB/collision and actual production shader behavior are verified separately."
+}

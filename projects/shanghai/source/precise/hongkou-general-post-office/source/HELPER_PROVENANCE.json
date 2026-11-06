@@ -1,0 +1,91 @@
+{
+  "baseline_commit": "c59174528765c104f09295ef10132b4bb4f63ce5",
+  "license": "MIT",
+  "generic_helpers": [
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/common/photo_architecture.py",
+      "destination": "common/photo_architecture.py",
+      "source_sha256": "c227a252ee802e105bc2db0e23475c34c9556053d835133df70e4e23fbecd2b1",
+      "reuse_scope": "generic exporter/closed architecture/geometry verification only; no old building composition or mesh reused",
+      "destination_sha256": "d09c82c68fc2205779542e2a2b6342090ec7ee6b0aa31abd1960941dea05e332",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/requirements.txt",
+      "destination": "requirements.txt",
+      "source_sha256": "e89b5bda70d44a74ad45a30f43f54e3e368cc108a234ec89adc167b7d82d743c",
+      "reuse_scope": "generic exporter/closed architecture/geometry verification only; no old building composition or mesh reused",
+      "destination_sha256": "9d1d22d71e2b41c835f51eba0a23fbd1e9b64f3773116035fc4d04896f3aafde",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/decode_meshopt.mjs",
+      "destination": "decode_meshopt.mjs",
+      "source_sha256": "68bf6b71072e1811a76e70917400dcc7cff4ad5acea546fbad53d83d9441f96a",
+      "reuse_scope": "generic exporter/closed architecture/geometry verification only; no old building composition or mesh reused",
+      "destination_sha256": "68bf6b71072e1811a76e70917400dcc7cff4ad5acea546fbad53d83d9441f96a",
+      "modified_for_this_building": false
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/verify_author.py",
+      "destination": "verify_author.py",
+      "source_sha256": "b4f85f3a6e3ae252bbc089e60c1c37d5c386d5183094d982802a8b5bd3c9735b",
+      "reuse_scope": "generic exporter/closed architecture/geometry verification only; no old building composition or mesh reused",
+      "destination_sha256": "b4f85f3a6e3ae252bbc089e60c1c37d5c386d5183094d982802a8b5bd3c9735b",
+      "modified_for_this_building": false
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/verify_serialized.py",
+      "destination": "verify_serialized.py",
+      "source_sha256": "1281fefe4ce6bdbd40fbe76f3a7319638dbc79bec0cddad6bb5126178fdc564c",
+      "reuse_scope": "generic exporter/closed architecture/geometry verification only; no old building composition or mesh reused",
+      "destination_sha256": "f87582605390e4cc1396a3cc6bb481f2bed40c2d2ef8959f911602eff9a065ac",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/world_geometry.py",
+      "destination": "shell_geometry.py",
+      "source_sha256": "8d1d1b912f866247b516e99f7977395010dafc712f48b60dc3a1648526679a5a",
+      "reuse_scope": "Generic continuous periodic shell only, no previous building composition",
+      "destination_sha256": "f1ce79ebc68f0de728166c9fa65d64bb5c0fb6e2b80533ae419f0c999c1b0d41",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/build_native.py",
+      "destination": "build_native.py",
+      "source_sha256": "85ba10ee18f32c62d4d7757af806158df047f2511857d550dc584d48a5a4613c",
+      "reuse_scope": "Generic save/render/reopen scaffold; new model ID, cameras and detail framing",
+      "destination_sha256": "766ed89112178485b48d85bf51f5a8a2ad890c5424709275a7f38ee4f8b5735f",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/huangpu-great-world/source/package_assets.py",
+      "destination": "package_assets.py",
+      "source_sha256": "d945af515caf6c0cf12f94889b2ed8cf24b53b455462dfaaec58688d065de5ec",
+      "reuse_scope": "Generic lossless packaging functions; new model manifest and scope",
+      "destination_sha256": "9aaf6116e6a3c665a9ec4a6758d6445b961c975a86aa15827781f75f52520700",
+      "modified_for_this_building": true
+    },
+    {
+      "source": "projects/shanghai/source/precise/common/sign_lettering.py",
+      "destination": "common/sign_lettering.py",
+      "source_sha256": "75f5d1cf9cbb0364d86361486e5947749a72699be68bda2fdb521e42d49d670b",
+      "reuse_scope": "Generic licensed-font extrusion; renamed independent PostalSignSubset font",
+      "destination_sha256": "c01854916b4d176fb90cdcddb0da27daf86513eaaec59cb9dba199672e91577d",
+      "modified_for_this_building": true
+    }
+  ],
+  "building_geometry": "build_model.py and postal_geometry.py newly authored for Shanghai General Post Office; no third-party model or another building composition reused",
+  "local_patches": [
+    {
+      "destination": "common/photo_architecture.py",
+      "reason": "Transparent canopy and rooftop guard glass observed in references",
+      "change": "Material alpha from explicit palette spec serialized as glTF BLEND; all geometry remains closed; original historical helper untouched"
+    },
+    {
+      "destination": "shell_geometry.py",
+      "reason": "New U-plan main block with continuous shared-vertex perimeter and actual rectangular window cutouts",
+      "change": "Only generic perimeter_mapper and rectangular_shell extracted; no Great World facade, roof, tower or ornament copied"
+    }
+  ]
+}

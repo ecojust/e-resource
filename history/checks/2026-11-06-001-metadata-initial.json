@@ -1,0 +1,987 @@
+{
+  "model_id": "hongkou-general-post-office",
+  "baseline_commit": "c59174528765c104f09295ef10132b4bb4f63ce5",
+  "verification_script_sha256": "7f21aaff73e362b9e8e762c7e1b66f2687a170fc89eaead28f2d7b8c48e05d9b",
+  "checked_at_utc": "2026-11-06T14:17:49.070222+00:00",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/build_candidate_city_integrations.py",
+        "--catalog-only",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"candidates\": 46, \"new_city_models\": 44, \"cumulative_verified_files\": 184, \"current_run_inventory_files\": 0, \"cumulative_verified_bytes\": 782834291}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/update_global_model_metadata.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"city_integrated_candidates\": 44}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/build_model_todo.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "README district candidates verified: 44; global destinations: 84\nREADME TODO matches structured records\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/build_landmark_directory.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "Landmark directory matches navigation data\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/restoration_progress.py",
+        "--check"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/e-resource/projects/shanghai/tools/restoration_progress.py\", line 96, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/workspace/e-resource/projects/shanghai/tools/restoration_progress.py\", line 90, in main\n    p=argparse.ArgumentParser();p.add_argument('--project',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--check',action='store_true');a=p.parse_args();project=a.project.resolve();r=build(project);out=project/'data/restoration-progress';payloads={'progress.json':json.dumps(r,ensure_ascii=False,indent=2)+'\\n','README.md':markdown(r)}\n                                                                                                                                                                                                               ^^^^^^^^^^^^^^\n  File \"/workspace/e-resource/projects/shanghai/tools/restoration_progress.py\", line 75, in build\n    assert {m['id'] for m in city_candidates}==set(placements), 'City placement lacks delivered candidate manifest'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: City placement lacks delivered candidate manifest\n",
+      "passed": false
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "projects/shanghai/tools/sync_readme_districts.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "README district candidates verified: 44; global destinations: 84\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "projects/shanghai/tests/landmark-navigation.test.mjs",
+        "projects/shanghai/tests/landmark-directory.test.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "✔ current model articles, district totals and primary routes match the complete shared catalogue (8.000081ms)\n✔ the published directory is reproducible from the current base and candidate metadata (49.019977ms)\n✔ global model cards retain auxiliary previews, source documentation and asset download metadata (62.531374ms)\nℹ 46 building previews retain source/download metadata; no GLB or Blender bytes were read\n✔ lightweight directory resources and loading-screen entry remain available without starting WebGL (2.706996ms)\n✔ a new delivered candidate updates the latest overview destination and README counts (98.072051ms)\n✔ every published landmark deep link resolves to its exact reviewed walking pose (5.016596ms)\n✔ landmark links default to walking, while explicit overview and district links retain their modes (0.197086ms)\n✔ unknown destinations and malformed coordinates never silently fall back to Bund (0.225518ms)\n✔ direct list selection enters walking from overview and uses the reviewed position (0.598568ms)\n✔ requesting walking still cannot bypass an unreviewed ordinary building guard (0.38002ms)\n✔ same-page links navigate immediately and a slower previous destination cannot overwrite the new state (0.485598ms)\n✔ an unknown same-page landmark shows a notice and preserves the current position (0.254381ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 353.945452\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "projects/shanghai/tests/building-beacons.test.mjs",
+        "projects/shanghai/tests/candidate-overview-camera.test.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "✔ twenty coincident site labels retain unique IDs and fit a readable mobile layout (19.291811ms)\n✔ layout preserves all seventy identifiers even when the viewport cannot fit every label (3.167181ms)\n✔ seventy dense mobile signs become separate numbered cards outside reserved interface rectangles (4.421383ms)\n✔ seventy numbered cards also fit a narrow 320 by 568 viewport with full reserved insets (7.41977ms)\n✔ normal desktop capacity retains full name cards while avoiding the sidebar and header/footer (0.399009ms)\n✔ all model beacons use real sprite symbols with fixed pixels and no collision culling at any supported zoom (11.149045ms)\n✔ beacon click resolves the exact model and disposal releases only owned layers, images and listeners (3.281874ms)\n✔ a name sign overlapping another model anchor selects its topmost model only once (7.14907ms)\n✔ screen hit testing uses current card bounds and reverse drawing order (0.347531ms)\n✔ 40 current card centers select their own IDs despite stale native symbol query boxes (4.65335ms)\n✔ 70 current card centers select their own IDs despite stale native symbol query boxes (4.515053ms)\n✔ blank space ignores stale label hits, anchor fallback is scoped, and hover uses the same current geometry (3.045369ms)\n✔ 390 by 844: compact runtime signs retain all seventy full names and stable numbers through zoom changes (8.3861ms)\n✔ 320 by 568: compact runtime signs retain all seventy full names and stable numbers through zoom changes (5.048333ms)\n✔ full names and compact numbers have complementary layers, with a fixed 24 by 20 number sprite (2.116284ms)\n✔ offscreen name cards are filtered while all seventy geographic anchors and records remain registered (6.273511ms)\n✔ runtime reflows around the real desktop sidebar bounds and frees its area after closing (1.539299ms)\n✔ narrow-phone signs avoid actual tool, legend and location-card rectangles as those elements resize (2.705147ms)\n✔ all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone (11.418639ms)\n✔ long building title cards retain every delivered sign in the smaller phone area at all zooms (112.375247ms)\n✔ the 78th model retains a separate 12px number and hit area when a long title leaves only seven rows (44.383621ms)\n✔ the 71st model uses a 22 by 20 emergency sprite while every number stays 12 px and individually clickable (2.105128ms)\n✔ vendored MapLibre accepts every production beacon layer and keeps it visible at zoom 24 (53.174008ms)\n✔ fixed name backgrounds, text and leaders agree with the actual ground projection below an elevated camera (19.530448ms)\n✔ public transform depth compensation cancels the native symbol shader across bearings, pitches and elevations (15.420282ms)\n✔ 1 high-pitch signs use screen offsets above the horizon without unprojecting sky (3.387882ms)\n✔ 70 high-pitch signs use screen offsets above the horizon without unprojecting sky (8.23923ms)\n✔ 1200 by 800: all delivered candidate bounds fit the real MapLibre camera outside the interface (36.579595ms)\n✔ 390 by 844: all delivered candidate bounds fit the real MapLibre camera outside the interface (23.695271ms)\n✔ 320 by 568: all delivered candidate bounds fit the real MapLibre camera outside the interface (33.762358ms)\n✔ candidate camera uses the verified approach bearing and the low Lu Xun view (0.523525ms)\n✔ all forty legacy entries preserve their established overview route (0.296535ms)\n✔ leaving a candidate overview clears the real vendor padding and elevation (2.152099ms)\n✔ walk, legacy overview and city overview each apply the complete camera reset (0.497015ms)\n✔ production overview navigation preserves candidate height through rendering and restores legacy ground clamping (2.918838ms)\nℹ tests 35\nℹ suites 0\nℹ pass 35\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 659.490077\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "assertions": [
+    {
+      "check": "Exactly one new candidate ID",
+      "passed": true
+    },
+    {
+      "check": "All prior 43 candidate records unchanged",
+      "passed": true
+    },
+    {
+      "check": "Candidate counts are 44 and total destinations 84",
+      "passed": true
+    },
+    {
+      "check": "All 40 legacy landmarks unchanged",
+      "passed": true
+    },
+    {
+      "check": "Hongkou has five destinations",
+      "passed": true
+    },
+    {
+      "check": "Postal ID links to its own auxiliary page",
+      "passed": true
+    },
+    {
+      "check": "Postal exterior remains overview-only",
+      "passed": true
+    },
+    {
+      "check": "Preceding 37 task records unchanged",
+      "passed": true
+    },
+    {
+      "check": "Original 46 inventory task records unchanged",
+      "passed": true
+    },
+    {
+      "check": "Postal queue item delivered with evidence",
+      "passed": true
+    },
+    {
+      "check": "Previous 45 manifest records preserved",
+      "passed": true
+    },
+    {
+      "check": "Inventory has 46 manifests and 184 assets",
+      "passed": true
+    },
+    {
+      "check": "Previous additional placements preserved",
+      "passed": true
+    },
+    {
+      "check": "Previous footprint-report bindings preserved",
+      "passed": true
+    },
+    {
+      "check": "Postal placement equals final mapping contract",
+      "passed": true
+    },
+    {
+      "check": "Final mapping report binding matches bytes",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-sun-yatsen-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund02",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund03",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund05",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund06",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund07",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund09",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund12",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: customs-house",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund14",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund15",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund17",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund18",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund19",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund20",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: bund23",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-park-hotel",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-shanghai-race-club-east-building",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-grand-theatre",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-pacific-hotel",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-sincere-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-old-wing-on-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-new-wing-on-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-xinxin-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-daxin-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-cathay-mansions",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-grosvenor-house",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-shanghai-municipal-council",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: huangpu-great-world",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-zikawei-south-building",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-bajin-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-wukang-mansion",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-wukang-129",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-wukang-210",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-longhua-pagoda",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: xuhui-soong-ching-ling-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: changning-hudec-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: columbia-country-club",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: jingan-sihang-warehouse",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: putuo-zhenru-main-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: hongkou-hongde-church",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: hongkou-luxun-residence-facade",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: hongkou-broadway-mansions",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: hongkou-russian-consulate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: hongkou-general-post-office",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-library",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-former-shanghai-city-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-jiangwan-stadium",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-jiangwan-gymnasium",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-jiangwan-swimming-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-former-shanghai-city-museum",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: yangpu-china-aviation-association-building",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: minhang-baoyugang-library",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: baoshan-confucian-dacheng-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: jiading-shanghai-auto-museum",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: jin-mao",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: oriental-pearl",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: shanghai-tower",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: swfc",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: jinshanwei-wengcheng-gatehouse",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: songjiang-fangta-pagoda",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: qingpu-beidajie-222",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: qingpu-beidajie-208-212",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: fengxian-museum",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-dacheng-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-pan-pool-bridge",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-zunjing-pavilion",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-chongsheng-shrine",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-ji-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-lingxing-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-lingxing-photo-left-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-lingxing-photo-right-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-minghuan-shrine",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-xiangxian-shrine",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-east-wing",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-west-wing",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-east-guanting",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-west-guanting",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-xuehai-paifang",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-chaozong-paifang",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-ruxue-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-yimen",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-minglun-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in README.md: chongming-stele-corridors",
+      "passed": true
+    },
+    {
+      "check": "All 84 destination IDs appear once in README.md",
+      "passed": true
+    },
+    {
+      "check": "Hongkou heading in README.md",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-sun-yatsen-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund02",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund03",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund05",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund06",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund07",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund09",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund12",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: customs-house",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund14",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund15",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund17",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund18",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund19",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund20",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: bund23",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-park-hotel",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-shanghai-race-club-east-building",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-grand-theatre",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-pacific-hotel",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-sincere-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-old-wing-on-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-new-wing-on-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-xinxin-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-daxin-company",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-cathay-mansions",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-grosvenor-house",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-shanghai-municipal-council",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: huangpu-great-world",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-zikawei-south-building",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-bajin-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-wukang-mansion",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-wukang-129",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-wukang-210",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-longhua-pagoda",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: xuhui-soong-ching-ling-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: changning-hudec-residence",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: columbia-country-club",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: jingan-sihang-warehouse",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: putuo-zhenru-main-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: hongkou-hongde-church",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: hongkou-luxun-residence-facade",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: hongkou-broadway-mansions",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: hongkou-russian-consulate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: hongkou-general-post-office",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-library",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-former-shanghai-city-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-jiangwan-stadium",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-jiangwan-gymnasium",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-jiangwan-swimming-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-former-shanghai-city-museum",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: yangpu-china-aviation-association-building",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: minhang-baoyugang-library",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: baoshan-confucian-dacheng-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: jiading-shanghai-auto-museum",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: jin-mao",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: oriental-pearl",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: shanghai-tower",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: swfc",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: jinshanwei-wengcheng-gatehouse",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: songjiang-fangta-pagoda",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: qingpu-beidajie-222",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: qingpu-beidajie-208-212",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: fengxian-museum",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-dacheng-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-pan-pool-bridge",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-zunjing-pavilion",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-chongsheng-shrine",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-ji-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-lingxing-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-lingxing-photo-left-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-lingxing-photo-right-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-minghuan-shrine",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-xiangxian-shrine",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-east-wing",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-west-wing",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-east-guanting",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-west-guanting",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-xuehai-paifang",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-chaozong-paifang",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-ruxue-gate",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-yimen",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-minglun-hall",
+      "passed": true
+    },
+    {
+      "check": "Main-map route in projects/shanghai/README.md: chongming-stele-corridors",
+      "passed": true
+    },
+    {
+      "check": "All 84 destination IDs appear once in projects/shanghai/README.md",
+      "passed": true
+    },
+    {
+      "check": "Hongkou heading in projects/shanghai/README.md",
+      "passed": true
+    },
+    {
+      "check": "Current cache token in index.html",
+      "passed": true
+    },
+    {
+      "check": "Current cache token in src/app.js",
+      "passed": true
+    },
+    {
+      "check": "Current cache token in src/map-scene.js",
+      "passed": true
+    },
+    {
+      "check": "Index loads this release app",
+      "passed": true
+    },
+    {
+      "check": "Auxiliary page identifies postal model",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "legacy_destinations": 40,
+    "new_city_candidates": 44,
+    "all_destinations": 84,
+    "hongkou": 5,
+    "candidate_manifests": 46,
+    "cumulative_asset_files": 184
+  },
+  "bindings": [
+    {
+      "file": "README.md",
+      "bytes": 450551,
+      "sha256": "44b6d023dd26a2b755b7e0742b7baf149a66aa96d357b4a5ee3053d6be29d063"
+    },
+    {
+      "file": "projects/shanghai/README.md",
+      "bytes": 44110,
+      "sha256": "835012977012272f19268b13028b861d8419f3110a99c77dd5625cb5f6fcd42e"
+    },
+    {
+      "file": "projects/shanghai/CURRENT_STATE.md",
+      "bytes": 71645,
+      "sha256": "288ae89cf5d05960e5b012da500b5878884ae4e7a726071deaa43b43b62b9c27"
+    },
+    {
+      "file": "projects/shanghai/index.html",
+      "bytes": 9051,
+      "sha256": "0491f612565b2ca5a337857e0ca63be6e704304e08271772c0c45664af9e4403"
+    },
+    {
+      "file": "projects/shanghai/landmarks.html",
+      "bytes": 64154,
+      "sha256": "bd0bc4794b4058a0b47456ee2b7120e310488d2c4ab265a0b0bb386469598bc9"
+    },
+    {
+      "file": "projects/shanghai/postal-office.html",
+      "bytes": 2749,
+      "sha256": "6034cfbeab998424e93108caf344d9b3c93c9e237f92ea4744339c31bb9850c7"
+    },
+    {
+      "file": "projects/shanghai/src/app.js",
+      "bytes": 22121,
+      "sha256": "b28591357a2869d90fe89377b31960910acc1ba6027cd506d82e0525bb2a9e85"
+    },
+    {
+      "file": "projects/shanghai/src/map-scene.js",
+      "bytes": 60283,
+      "sha256": "4334e76b949e9247ad985f51900654fdbfc9c4360469a13e523039df9031a608"
+    },
+    {
+      "file": "projects/shanghai/src/candidate-city-integrations.js",
+      "bytes": 7816,
+      "sha256": "5418ae01bf129e2f3ac08b528bb8eae4c0824dfe99364798f1b5e1d3d105999d"
+    },
+    {
+      "file": "projects/shanghai/src/postal-office.js",
+      "bytes": 7824,
+      "sha256": "712b2f5d0d7e5915fa82c6b2b3c522a824e542be8347d1e4ef32f11031c85246"
+    },
+    {
+      "file": "projects/shanghai/data/candidate-city-integrations.json",
+      "bytes": 513696,
+      "sha256": "5fca60d2dc1b524c3ad09da164b6c0de1e624fa641d4ac594e9f47351a6b420f"
+    },
+    {
+      "file": "projects/shanghai/data/global-models/additional-placement.json",
+      "bytes": 465919,
+      "sha256": "2e117da806e75d79950b020b13cb7e55b3fd4a177956fb5e84b8d51fdc63afe2"
+    },
+    {
+      "file": "projects/shanghai/data/global-models/candidate-inventory.json",
+      "bytes": 123976,
+      "sha256": "a4916a2aedc2bf01de45fedc434e2580c33b1038ad0fa45ffdde67c37ca0ad92"
+    },
+    {
+      "file": "projects/shanghai/data/model-viewers.json",
+      "bytes": 13301,
+      "sha256": "9095192b3a63b4f4eff4a9f94e38728f531e205d5ce21157c2f0c92b29420b69"
+    },
+    {
+      "file": "projects/shanghai/data/model-todo/queue.json",
+      "bytes": 123438,
+      "sha256": "938f7faca11c8857f6bfb3ea1565a570e1aadd63a446a1d219b6e8a001b05e9c"
+    },
+    {
+      "file": "projects/shanghai/data/model-todo/completed-model-scope-review.json",
+      "bytes": 33298,
+      "sha256": "39d4547c1ef8825686afa0df667d1ebd6bb8168f9cb768d460bbeb75811b023f"
+    },
+    {
+      "file": "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
+      "bytes": 5568,
+      "sha256": "83715c205b4f083524dc977e218fdc3abdc63204bb400bb9ea558d83a6bcafb8"
+    }
+  ],
+  "scope": "Generated metadata, route registrations, prior structured-record preservation and existing navigation/beacon tests. Historical GLBs not redecoded; native, GPU, browser and public HTTP checks are separate.",
+  "passed": false
+}

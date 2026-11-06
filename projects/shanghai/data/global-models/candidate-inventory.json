@@ -44,32 +44,32 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 45,
+  "candidate_manifest_count": 46,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 43,
-  "resulting_city_count": 83,
+  "new_city_model_count": 44,
+  "resulting_city_count": 84,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
-    "虹口区": 3,
+    "虹口区": 4,
     "黄浦区": 13
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 180,
-    "bytes": 747168851,
+    "files": 184,
+    "bytes": 782834291,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 38553419,
+    "current_run_added_bytes": 35665440,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 48
+    "inherited_incremental_files": 52
   },
   "records": [
     {
@@ -3086,6 +3086,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "四层U形沿街主体、街角塔与屋顶亭；中庭屋盖待核未建，独立剧场保留，尺寸与隐面含估计。"
+    },
+    {
+      "id": "hongkou-general-post-office",
+      "name": "上海邮政总局历史主楼与钟塔",
+      "districtId": "310109",
+      "district": "虹口区",
+      "already_in_city": false,
+      "individual_page": "postal-office.html",
+      "manifest": "assets/models/candidates/hongkou-general-post-office/manifest.json",
+      "manifest_sha256": "83715c205b4f083524dc977e218fdc3abdc63204bb400bb9ea558d83a6bcafb8",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office-raw.glb",
+          "bytes": 16180636,
+          "sha256": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf",
+          "triangles": 251348
+        },
+        "native": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office.blend",
+          "bytes": 8413516,
+          "sha256": "468887474b33eb556dab98d757a867b2459f19e81409211db73d9f7ea51f6f77"
+        },
+        "web": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office-web.glb",
+          "bytes": 6781500,
+          "sha256": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed",
+          "triangles": 251348
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office-lod.glb",
+          "bytes": 4289788,
+          "sha256": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a",
+          "triangles": 158452
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -62.11992645263672,
+            0.0,
+            -51.334537506103516
+          ],
+          "max": [
+            50.267601013183594,
+            57.70000076293945,
+            50.44810104370117
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -62.11992645263672,
+            -50.44810104370117,
+            0.0
+          ],
+          "max": [
+            50.267601013183594,
+            51.334537506103516,
+            57.70000076293945
+          ]
+        },
+        "triangles": 251348,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "南东巨柱立面、北侧红砖墙、东南钟塔与中庭弧网罩；西侧独立建筑保留，尺寸与隐面含估计。"
     }
   ],
   "baseline_inventory": {
@@ -3094,6 +3161,7 @@
     "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
   },
   "incremental_manifests": [
+    "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
@@ -3108,14 +3176,14 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
-  "incremental_asset_revision": "564e8ae3bdb1e5fa918f5351f7538bff2e759f2f",
-  "incremental_audit_directory": "data/audit/great-world-v1",
+  "incremental_asset_revision": "c59174528765c104f09295ef10132b4bb4f63ce5",
+  "incremental_audit_directory": "data/audit/postal-office-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/aviation-building-v1/inventory-increment.json",
-    "bytes": 34694,
-    "sha256": "9019aae3e090b4acd45f8c2a3cdb69d67dd4cb49923cbd2c18105d1aeea86f2a"
+    "file": "data/audit/great-world-v1/inventory-increment.json",
+    "bytes": 37295,
+    "sha256": "9b8115b8049aba0e24d1775f9b69fbea12da496b9efbcbc65a67e0cbede0fba9"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json"
+    "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json"
   ]
 }

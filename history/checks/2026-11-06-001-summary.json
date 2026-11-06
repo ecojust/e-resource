@@ -1,0 +1,349 @@
+{
+  "schema": "handoff-commit-checkpoint-v1",
+  "checked_at_utc": "2026-11-06T14:19:55.978126+00:00",
+  "purpose": "Documentation and complete local work-in-progress commit; not final model or public release acceptance.",
+  "passed_for_checkpoint": true,
+  "metadata_initial": {
+    "report": "2026-11-06-001-metadata-initial.json",
+    "sha256": "b036cefaf2434e523c25d2bc9ae4df34cf2aa6dd9251df5a72415f5065b43b36",
+    "commands_passed": 8,
+    "commands_total": 9,
+    "assertions_passed": 193,
+    "known_failure": "restoration_progress reads git ls-files and could not see the previously untracked new manifest."
+  },
+  "restoration_resolution": {
+    "new_manifest_added_to_index": true,
+    "generation_command": [
+      "python",
+      "-B",
+      "projects/shanghai/tools/restoration_progress.py"
+    ],
+    "generation_exit_code": 0,
+    "subsequent_check_command": [
+      "python",
+      "-B",
+      "projects/shanghai/tools/restoration_progress.py",
+      "--check"
+    ],
+    "subsequent_check_exit_code": 0,
+    "inventory": {
+      "navigation_entries": 84,
+      "ordinary_catalog_records": 21,
+      "standalone_candidate_records": 0,
+      "city_candidate_records": 44,
+      "flat_surface_districts": 16,
+      "flat_surface_triangles": 410447
+    },
+    "shared_checker_relaxed": false
+  },
+  "node_tests": {
+    "navigation_and_directory": 12,
+    "beacons_and_overview_camera": 35,
+    "passed": 47,
+    "failed": 0
+  },
+  "preservation": {
+    "report": "2026-11-06-001-preservation.json",
+    "sha256": "bcba3d940f253526da25a7726ba31dfc415855069c716b80e1a8e83170443fca",
+    "passed": true
+  },
+  "asset_manifest_check": [
+    {
+      "role": "raw",
+      "bytes": 16180636,
+      "sha256": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf",
+      "matches_manifest": true
+    },
+    {
+      "role": "native",
+      "bytes": 8413516,
+      "sha256": "468887474b33eb556dab98d757a867b2459f19e81409211db73d9f7ea51f6f77",
+      "matches_manifest": true
+    },
+    {
+      "role": "full",
+      "bytes": 6781500,
+      "sha256": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed",
+      "matches_manifest": true
+    },
+    {
+      "role": "lod",
+      "bytes": 4289788,
+      "sha256": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a",
+      "matches_manifest": true
+    }
+  ],
+  "initial_staging": {
+    "files": 187,
+    "total_bytes": 55921471,
+    "deletions": 0,
+    "credential_pattern_matches": 0,
+    "scope": "Initial explicit staging; later documentation and regenerated progress are added before the final commit."
+  },
+  "not_performed": [
+    "Final postal browser acceptance",
+    "New geometry or native rerun",
+    "Public HTTP model publication verification",
+    "Push to remote"
+  ],
+  "staged_format_check": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 2,
+    "stdout": "projects/shanghai/source/precise/hongkou-general-post-office/source/common/fonts/OFL.txt:96: new blank line at EOF.\nprojects/shanghai/source/precise/hongkou-general-post-office/source/shell_geometry.py:55: new blank line at EOF.\n",
+    "stderr": "",
+    "known_findings": 2,
+    "resolution": "Retain the previously frozen source/font license bytes and their source/rebuild bindings for this requested work-in-progress commit. No shared whitespace rule changed; this format check is not reported as passed."
+  },
+  "documentation_links": {
+    "passed": true,
+    "checked": 48,
+    "records": [
+      {
+        "document": "AGENTS.md",
+        "target": "history/INDEX.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "history/CONTINUE-SHANGHAI.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "README.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "projects/shanghai/README.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "projects/shanghai/CURRENT_STATE.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "projects/shanghai/DELIVERY_HISTORY.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "projects/shanghai/data/model-todo/queue.json",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "projects/shanghai/data/candidate-city-integrations.json",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "projects/shanghai/data/landmarks.json",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "history/INDEX.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "history/README.md",
+        "exists": true
+      },
+      {
+        "document": "AGENTS.md",
+        "target": "history/2026-11-06-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/README.md",
+        "target": "history/INDEX.md",
+        "exists": true
+      },
+      {
+        "document": "history/README.md",
+        "target": "history/CONTINUE-SHANGHAI.md",
+        "exists": true
+      },
+      {
+        "document": "history/README.md",
+        "target": "AGENTS.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "AGENTS.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "history/CONTINUE-SHANGHAI.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "history/2026-11-06-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "history/2026-11-04-002.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "history/2026-11-04-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "projects/shanghai/CURRENT_STATE.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "projects/shanghai/DELIVERY_HISTORY.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "projects/shanghai/data/audit/great-world-v1/README.md",
+        "exists": true
+      },
+      {
+        "document": "history/INDEX.md",
+        "target": "projects/shanghai/data/model-todo/queue.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "AGENTS.md",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "history/INDEX.md",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "history/2026-11-06-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "history/2026-11-04-002.md",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/audit/postal-office-v1/candidate-acceptance.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/audit/postal-office-v1/candidate-stage.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/audit/postal-office-v1/independent-candidate-visual-review.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/audit/postal-office-v1/footprint-review.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/model-todo/country-hospital-preflight.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/model-todo/completed-model-scope-review.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/source/precise/huangpu-great-world/README.md",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/audit/great-world-v1/README.md",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "projects/shanghai/data/audit/great-world-v1/publication.json",
+        "exists": true
+      },
+      {
+        "document": "history/CONTINUE-SHANGHAI.md",
+        "target": "AGENTS.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-04-002.md",
+        "target": "history/2026-11-04-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-04-002.md",
+        "target": "history/CONTINUE-SHANGHAI.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-04-002.md",
+        "target": "history/2026-11-06-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-04-002.md",
+        "target": "history/CONTINUE-SHANGHAI.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-06-001.md",
+        "target": "history/2026-11-04-001.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-06-001.md",
+        "target": "history/2026-11-04-002.md",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-06-001.md",
+        "target": "history/checks/2026-11-06-001-summary.json",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-06-001.md",
+        "target": "history/checks/2026-11-06-001-metadata-initial.json",
+        "exists": true
+      },
+      {
+        "document": "history/2026-11-06-001.md",
+        "target": "history/CONTINUE-SHANGHAI.md",
+        "exists": true
+      }
+    ]
+  },
+  "independent_documentation_review": "Accepted: published83 versus development84, candidate versus final acceptance, preserved failures, planned-only proxy, and resumption order38 before39 are explicit."
+}

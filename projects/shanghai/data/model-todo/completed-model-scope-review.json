@@ -1,6 +1,6 @@
 {
   "schema": "completed-model-scope-review-v1",
-  "reviewed_on": "2026-11-03",
+  "reviewed_on": "2026-11-04",
   "source_inventory": {
     "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
     "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a",
@@ -613,6 +613,39 @@
         {
           "path": "projects/shanghai/data/audit/great-world-v1/footprint-review.json",
           "supports": "主源1519与塔497的独立owner映射、显示替换、实际低位碰撞和保留邻体范围。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-023",
+      "source_name": "上海邮政总局",
+      "completed_models": [
+        {
+          "id": "hongkou-general-post-office",
+          "scope": "北苏州路276号上海邮政总局历史主楼有界外观：地图主源1959的南东巨柱街面、北侧红砖墙和东南钟塔，含单面钟、八柱上亭、绿色金属冠及按2010修缮后照片估计的中庭弧网罩。尺寸、雕饰和隐面含估计；西独立源3148、未核接缝及完整内院关系保留，不开放室内，不称2026实测现状。"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "postal-west-independent-building-and-junctions",
+          "title": "邮政总局西侧独立建筑与接缝范围调查",
+          "todo": "西侧独立地图源3148及未核接缝保留，不并入本次历史主楼。补清晰外观、年代与保护范围资料，核实其实体、与主楼的连接及2025街照另一灰筒拱的归属，再决定是否另行建模；不重复已交付的主楼街面和钟塔。"
+        },
+        {
+          "id": "postal-courtyard-current-layout-and-rear-connections",
+          "title": "邮政总局完整中庭现状与未见后连接补证",
+          "todo": "本次中庭弧网罩已按2010修缮后影像制作尺寸估计外观，不重复排队。继续补完整现状顶视、院内立面和工程资料，核院落平面、未见后连接、实际罩体高度及当前变化，再细化尚未核实范围；不将旧照估计或展示层内院当作2026测绘。"
+        }
+      ],
+      "exclusions": "交付历史主楼沿街与北侧外观、东南钟塔及照片支持的中庭外罩；西独立源3148与未核接缝、完整内院现状和后连接继续调查。中庭薄展示底面只作视觉收口，不作为完整院落或室内交付；室内博物馆展陈、地下结构、院区其他地面及周边建筑不并入。屋顶雕像为原创概括形体，尺寸、隐面和雕饰精度限制留在来源说明中。",
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/hongkou-general-post-office/README.md",
+          "supports": "修缮后南东柱廊、北红砖墙与东南钟塔的独立身份、名义高度及异文，中庭罩的2010照片参考与现状限制。"
+        },
+        {
+          "path": "projects/shanghai/data/audit/postal-office-v1/footprint-review.json",
+          "supports": "主源1959部分替换、西侧独立源3148及接缝带保留，实际模型投影和低位碰撞范围分别核对。"
         }
       ]
     }

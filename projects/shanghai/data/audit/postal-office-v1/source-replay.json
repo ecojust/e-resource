@@ -1,0 +1,78 @@
+{
+  "schema": "postal-source-replay-v1",
+  "passed": true,
+  "work_dir_scope": "Private isolated cache recreated exclusively from exact Git blobs and the checked-in authoring footprint contract; no live imagery or web requests.",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-extract-source.py",
+        "--repo",
+        "/workspace/e-resource",
+        "--work-dir",
+        "/workspace/shanghai-postal-mapping/source-replay"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"frozen_blobs_verified\": 4, \"context_features\": 18, \"owner\": 1959, \"shared_near_ids\": [1780, 814, 3148, 1959]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-decode-source.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "[\n  {\n    \"variant\": \"far\",\n    \"preselected_triangles\": 632,\n    \"selected_far_triangle_counts\": {\n      \"123\": 20,\n      \"125\": 12,\n      \"468\": 12,\n      \"814\": 12,\n      \"864\": 16,\n      \"1127\": 16,\n      \"1741\": 12,\n      \"1780\": 12,\n      \"1821\": 88,\n      \"1959\": 24,\n      \"2237\": 112,\n      \"2507\": 20,\n      \"2710\": 12,\n      \"2932\": 100,\n      \"3001\": 12,\n      \"3142\": 64,\n      \"3148\": 36,\n      \"3209\": 52\n    }\n  },\n  {\n    \"variant\": \"near\",\n    \"preselected_triangles\": 84618,\n    \"selected_far_triangle_counts\": null\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-analyze-source.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"near_classification\": \"Closest source polygon to each triangle centroid; full-site owner1959 and neighbors1780,814,3148\",\n  \"near_max_assigned_centroid_distance_m\": 0.07487404732446505,\n  \"near_owner_triangle_counts\": {\n    \"1780\": 16086,\n    \"814\": 13248,\n    \"3148\": 29884,\n    \"1959\": 25400\n  },\n  \"profiles\": [\n    {\n      \"name\": \"near_1780\",\n      \"area_m2\": 442.7383748435029,\n      \"bounds\": [\n        -116.58280797837266,\n        23.21016217836006,\n        -83.25147204752754,\n        53.501682515988435\n      ],\n      \"outside_source_m2\": 442.7383748435029,\n      \"intersects_source_m2\": 0.0,\n      \"distance_from_source_m\": 48.48138001569925\n    },\n    {\n      \"name\": \"far_1780\",\n      \"area_m2\": 436.27908312669456,\n      \"bounds\": [\n        -116.48754318908306,\n        23.307957200453217,\n        -83.33914613840658,\n        53.396357764949855\n      ],\n      \"outside_source_m2\": 436.2790831266946,\n      \"intersects_source_m2\": 0.0,\n      \"distance_from_source_m\": 48.553877427788734\n    },\n    {\n      \"name\": \"near_814\",\n      \"area_m2\": 389.26882060250506,\n      \"bounds\": [\n        -106.89451608891633,\n        8.420920956983318,\n        -76.621469499227,\n        36.67164087253397\n      ],\n      \"outside_source_m2\": 389.26882060250506,\n      \"intersects_source_m2\": 0.0,\n      \"distance_from_source_m\": 31.402447339857538\n    },\n    {\n      \"name\": \"far_814\",\n      \"area_m2\": 383.3407993143838,\n      \"bounds\": [\n        -106.79751366987006,\n        8.518990341669564,\n        -76.70926552903627,\n        36.56689533141426\n      ],\n      \"outside_source_m2\": 383.34079931438373,\n      \"intersects_source_m2\": 0.0,\n      \"distance_from_source_m\": 31.473468139221065\n    },\n    {\n      \"name\": \"near_3148\",\n      \"area_m2\": 3738.3883567689227,\n      \"bounds\": [\n        -109.41989584702871,\n        -87.42661448048207,\n        -27.146272770405744,\n        -4.131685920268991\n      ],\n      \"outside_source_m2\": 3738.3882655396746,\n      \"intersects_source_m2\": 9.122924622741169e-05,\n      \"distance_from_source_m\": 0.0\n    },\n    {\n      \"name\": \"far_3148\",\n      \"area_m2\": 3725.766116645909,\n      \"bounds\": [\n        -109.34811027476054,\n        -87.35528020626208,\n        -27.24190337648621,\n        -4.2306393621998835\n      ],\n      \"outside_source_m2\": 3725.766116645909,\n      \"intersects_source_m2\": 0.0,\n      \"distance_from_source_m\": 4.1032620309579204e-06\n    },\n    {\n      \"name\": \"near_1959\",\n      \"area_m2\": 6403.684256702015,\n      \"bounds\": [\n        -62.52907877972896,\n        -50.72708141714741,\n        49.8347189488203,\n        51.435640735340584\n      ],\n      \"outside_source_m2\": 18.691666532266026,\n      \"intersects_source_m2\": 6384.99259016975,\n      \"distance_from_source_m\": 0.0\n    },\n    {\n      \"name\": \"far_1959\",\n      \"area_m2\": 6384.992229963722,\n      \"bounds\": [\n        -62.430430185123775,\n        -50.637791635442014,\n        49.76307982727453,\n        51.35702061003565\n      ],\n      \"outside_source_m2\": 0.0008196384750514009,\n      \"intersects_source_m2\": 6384.991410325246,\n      \"distance_from_source_m\": 0.0\n    }\n  ],\n  \"margin_trials\": [\n    {\n      \"margin_m\": 0,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 18.691666532266026,\n      \"target_far_remaining_m2\": 0.0008196384750514009,\n      \"neighbor3148_near_overlap_m2\": 9.122924622741169e-05,\n      \"neighbor3148_far_overlap_m2\": 0.0\n    },\n    {\n      \"margin_m\": 0.02,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 13.315494045918106,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 1.1660433333384221,\n      \"neighbor3148_far_overlap_m2\": 1.1643320151668808\n    },\n    {\n      \"margin_m\": 0.05,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 5.348792735492831,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 2.9197103526459847,\n      \"neighbor3148_far_overlap_m2\": 2.911562458042119\n    },\n    {\n      \"margin_m\": 0.1,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 0.0,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 5.843067738993211,\n      \"neighbor3148_far_overlap_m2\": 5.823691493374654\n    },\n    {\n      \"margin_m\": 0.12,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 0.0,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 7.010745765571783,\n      \"neighbor3148_far_overlap_m2\": 6.988570511530163\n    },\n    {\n      \"margin_m\": 0.2,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 0.0,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 11.681614464730036,\n      \"neighbor3148_far_overlap_m2\": 11.64824317856825\n    },\n    {\n      \"margin_m\": 0.3,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 0.0,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 17.520552672575615,\n      \"neighbor3148_far_overlap_m2\": 17.47318634980045\n    },\n    {\n      \"margin_m\": 0.4,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 0.0,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 23.359882362530037,\n      \"neighbor3148_far_overlap_m2\": 23.298521007070633\n    },\n    {\n      \"margin_m\": 0.5,\n      \"vertices\": 7,\n      \"triangles\": 5,\n      \"target_near_remaining_m2\": 0.0,\n      \"target_far_remaining_m2\": 0.0,\n      \"neighbor3148_near_overlap_m2\": 29.199603534593667,\n      \"neighbor3148_far_overlap_m2\": 29.124247150379357\n    }\n  ],\n  \"target_near_neighbor3148_native_overlap_m2\": 0.07739495555936787\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-verify-source-scope.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"rows\": 6,\n  \"total\": 307,\n  \"state\": {\n    \"triangles\": 6,\n    \"triangleLimit\": 320,\n    \"clippingTexture\": {\n      \"width\": 4,\n      \"height\": 320,\n      \"bytes\": 20480,\n      \"type\": \"FloatType\",\n      \"format\": \"RGBAFormat\",\n      \"minFilter\": \"NearestFilter\",\n      \"magFilter\": \"NearestFilter\",\n      \"generateMipmaps\": false\n    },\n    \"sourceObjects\": 2,\n    \"boundMaterials\": 45,\n    \"revision\": 1,\n    \"ownerScopedSources\": [\n      {\n        \"id\": \"14-13720-6693/14-13720-6693-1_1-s1-s1-s1\",\n        \"macro_id\": \"14-13720-6693\",\n        \"feature_local_ids\": [\n          1780,\n          814,\n          3148,\n          1959\n        ],\n        \"triangles\": 6,\n        \"clip_feature_local_ids\": [\n          1959\n        ]\n      }\n    ]\n  },\n  \"sources\": [\n    {\n      \"variant\": \"shared_near\",\n      \"mesh_count\": 13\n    },\n    {\n      \"variant\": \"far\",\n      \"mesh_count\": 4\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "/workspace/e-resource/projects/shanghai/data/audit/postal-office-v1/map-review-clip.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"new_clip_rows\": 6, \"global_clip_rows\": 307, \"retained_source_joint_m2\": 6.988175138966923, \"all_foreign_overlap_zero\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "script_bindings": [
+    {
+      "file": "map-extract-source.py",
+      "sha256": "4af7701d97af89d605cbc91e418a18aea86e5c2294fbb7d8b55f18f5c172b3c3"
+    },
+    {
+      "file": "map-decode-source.mjs",
+      "sha256": "1c4a034b8541c9481c20b3b5a8209920670136010cb09c9b0a793237c445388e"
+    },
+    {
+      "file": "map-analyze-source.py",
+      "sha256": "e4facdecb003bf0996792120807c8ebe8231f7e38fc91d6a9270c3ece2d56f94"
+    },
+    {
+      "file": "map-verify-source-scope.mjs",
+      "sha256": "5add7e72ba1596b7adf53a33fc195a560e2058562c02375707c5868701145028"
+    },
+    {
+      "file": "map-review-clip.py",
+      "sha256": "9fca4f602d1ff4ec1e98533a8d9b3d7f6788abeee9f9e0f53667b439c9a84d3d"
+    }
+  ]
+}

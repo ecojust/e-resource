@@ -1,0 +1,8 @@
+"""Compare actual serialized materials of both production compressed variants."""
+from pathlib import Path
+import argparse,hashlib,importlib.util,json
+ROOT=Path(__file__).parent;SCRIPT=ROOT/'independent-check-geometry.py';SPEC=importlib.util.spec_from_file_location('postal_geometry_review',SCRIPT);M=importlib.util.module_from_spec(SPEC);SPEC.loader.exec_module(M)
+def binding(p):return {'file':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+a=argparse.ArgumentParser();a.add_argument('--raw',type=Path,required=True);a.add_argument('--web-decoded',type=Path,required=True);a.add_argument('--web-original',type=Path,required=True);a.add_argument('--lod-decoded',type=Path,required=True);a.add_argument('--lod-original',type=Path,required=True);a.add_argument('--out',type=Path,required=True);a=a.parse_args();raw=M.material_appearance(a.raw)
+rows={name:{'comparison':M.compare_materials(raw,M.material_appearance(decoded)),'actual_decoded_asset':binding(decoded),'production_asset':binding(original)} for name,decoded,original in [('web',a.web_decoded,a.web_original),('lod',a.lod_decoded,a.lod_original)]}
+r={'schema':'postal-independent-materials-v1','raw_asset':binding(a.raw),'variants':rows,'passed':all(row['comparison']['gpu_float32_appearance_exactly_equal'] for row in rows.values()),'bindings':[binding(p) for p in [Path(__file__),SCRIPT,ROOT/'independent-glb-review-helpers.py']]};a.out.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'passed':r['passed'],'variants':{k:v['comparison'] for k,v in rows.items()}}));raise SystemExit(0 if r['passed'] else 1)

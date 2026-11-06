@@ -1,0 +1,1019 @@
+{
+  "schema": "postal-independent-review-fixes-v1",
+  "reviewed_at_utc": "2026-11-04T16:41:25.826141+00:00",
+  "model_id": "hongkou-general-post-office",
+  "issues": [
+    {
+      "issue": "Shared near meshes could clip western neighbor with an unqualified source buffer",
+      "resolution": "Exclude the whole retained3148 polygon buffered0.12m; intentionally retain a thin postal source joint. Independent19-check source-scope review proves no foreign near/far triangle area is clipped.",
+      "evidence": "independent-owner-scope-review.json"
+    },
+    {
+      "issue": "Floating-point difference produced a zero-width backwards spur at U courtyard mouth",
+      "initial_minimum_clearance_m": 1.5354624920022197e-15,
+      "resolution": "Mapping removed the backwards point with area preserved; independent author-plan tiling and positive minimum-clearance checks pass.",
+      "evidence": "independent-owner-scope-review.json"
+    },
+    {
+      "issue": "Draft barrel canopy had no vertical glazing closing its east arched end",
+      "initial_raw_asset": {
+        "file": "raw.glb",
+        "bytes": 16340304,
+        "sha256": "4cf7301799127ecbdfd8e291bf50bb7c8e9cfa925cefcf6460c48142573fa96e"
+      },
+      "initial_failed_probes": [
+        {
+          "end": "east",
+          "v_m": 27,
+          "hit": null,
+          "passed": false
+        },
+        {
+          "end": "east",
+          "v_m": 32,
+          "hit": null,
+          "passed": false
+        },
+        {
+          "end": "east",
+          "v_m": 37,
+          "hit": null,
+          "passed": false
+        }
+      ],
+      "initial_review_bindings": [
+        {
+          "file": "review_geometry.py",
+          "bytes": 7800,
+          "sha256": "dd09b2e92cb0cf042403419948913c090688d8d25288f43e80eb71cdee98f6af"
+        },
+        {
+          "file": "glb_review_helpers.py",
+          "bytes": 5917,
+          "sha256": "827b50eaed9915a9952cb4375918e606726a7729a9b75c22219e8cb908883676"
+        },
+        {
+          "file": "footprint-contract.json",
+          "bytes": 17965,
+          "sha256": "0e96a6ac0f363f26e045af0b322448fc690517b9163f36bc8654b54638257761"
+        }
+      ],
+      "resolution": "Author added glazed end panels, frames and curved boundary beams; final raw, decoded web and decoded LOD all pass the same3 east-end rays.",
+      "final_variant_probes": {
+        "raw": [
+          {
+            "end": "east",
+            "v_m": 27,
+            "hit": {
+              "distance_m": 0.7149997984361312,
+              "point_enu_m": [
+                24.103270373793237,
+                6.585579950928341,
+                20.5
+              ],
+              "material": "court glazing",
+              "triangle_index": 243132
+            },
+            "passed": true
+          },
+          {
+            "end": "east",
+            "v_m": 32,
+            "hit": {
+              "distance_m": 0.6449999052864586,
+              "point_enu_m": [
+                21.853566089114885,
+                11.051420366409042,
+                20.5
+              ],
+              "material": "court gold steel",
+              "triangle_index": 250850
+            },
+            "passed": true
+          },
+          {
+            "end": "east",
+            "v_m": 37,
+            "hit": {
+              "distance_m": 0.7149998816206345,
+              "point_enu_m": [
+                19.47972460210462,
+                15.452531202463469,
+                20.5
+              ],
+              "material": "court glazing",
+              "triangle_index": 243132
+            },
+            "passed": true
+          }
+        ],
+        "web": [
+          {
+            "end": "east",
+            "v_m": 27,
+            "hit": {
+              "distance_m": 0.7149997984361312,
+              "point_enu_m": [
+                24.103270373793237,
+                6.585579950928341,
+                20.5
+              ],
+              "material": "court glazing",
+              "triangle_index": 243132
+            },
+            "passed": true
+          },
+          {
+            "end": "east",
+            "v_m": 32,
+            "hit": {
+              "distance_m": 0.6449999052864586,
+              "point_enu_m": [
+                21.853566089114885,
+                11.051420366409042,
+                20.5
+              ],
+              "material": "court gold steel",
+              "triangle_index": 250843
+            },
+            "passed": true
+          },
+          {
+            "end": "east",
+            "v_m": 37,
+            "hit": {
+              "distance_m": 0.7149998816206345,
+              "point_enu_m": [
+                19.47972460210462,
+                15.452531202463469,
+                20.5
+              ],
+              "material": "court glazing",
+              "triangle_index": 243132
+            },
+            "passed": true
+          }
+        ],
+        "lod": [
+          {
+            "end": "east",
+            "v_m": 27,
+            "hit": {
+              "distance_m": 0.7149997984361313,
+              "point_enu_m": [
+                24.103270373793237,
+                6.58557995092834,
+                20.5
+              ],
+              "material": "court glazing",
+              "triangle_index": 154912
+            },
+            "passed": true
+          },
+          {
+            "end": "east",
+            "v_m": 32,
+            "hit": {
+              "distance_m": 0.6449999052864586,
+              "point_enu_m": [
+                21.853566089114885,
+                11.051420366409042,
+                20.5
+              ],
+              "material": "court gold steel",
+              "triangle_index": 157987
+            },
+            "passed": true
+          },
+          {
+            "end": "east",
+            "v_m": 37,
+            "hit": {
+              "distance_m": 0.7149998816206347,
+              "point_enu_m": [
+                19.47972460210462,
+                15.452531202463469,
+                20.5
+              ],
+              "material": "court glazing",
+              "triangle_index": 154912
+            },
+            "passed": true
+          }
+        ]
+      },
+      "evidence": "independent-geometry-review.json",
+      "intermediate_repair_asset_bindings": {
+        "raw": {
+          "file": "hongkou-general-post-office-raw.glb",
+          "bytes": 16180636,
+          "sha256": "82a935ab11bf0caa912ed8525c3169942124464fed6ea4188881b1f529e4a83e"
+        },
+        "web": {
+          "file": "hongkou-general-post-office-web.glb",
+          "bytes": 6781500,
+          "sha256": "679d8ffea4f70a53507f43ac50d7cf2635163b2b0739f0afc645d9fe0fc7f6c4"
+        },
+        "lod": {
+          "file": "hongkou-general-post-office-lod.glb",
+          "bytes": 4289792,
+          "sha256": "560ecf98d43a32f2ba6ce8a4c4376aa12bbf8229c794fa12e8b252fdc35b5f64"
+        }
+      },
+      "final_asset_bindings": {
+        "raw": {
+          "file": "hongkou-general-post-office-raw.glb",
+          "bytes": 16180636,
+          "sha256": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf"
+        },
+        "web": {
+          "file": "hongkou-general-post-office-web.glb",
+          "bytes": 6781500,
+          "sha256": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed"
+        },
+        "lod": {
+          "file": "hongkou-general-post-office-lod.glb",
+          "bytes": 4289788,
+          "sha256": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a"
+        }
+      }
+    },
+    {
+      "issue": "Initial review compared JSON decimal material factors directly, although gltfpack serializes their Float32 representations",
+      "initial_original_json_equal": false,
+      "geometry_checks_already_passed_in_first_run": {
+        "raw": {
+          "finite_nondegenerate": true,
+          "perimeter_backstops_exist": true,
+          "window_backing_is_recessed": true,
+          "continuous_roof_wall_seams": true,
+          "tower_four_true_through_openings": true,
+          "tower_ceiling_closes_colonnade": true,
+          "single_front_clock_only": true,
+          "canopy_top_is_continuous_curved_grid": true,
+          "canopy_east_glazed_end_closed": true
+        },
+        "web": {
+          "finite_nondegenerate": true,
+          "perimeter_backstops_exist": true,
+          "window_backing_is_recessed": true,
+          "continuous_roof_wall_seams": true,
+          "tower_four_true_through_openings": true,
+          "tower_ceiling_closes_colonnade": true,
+          "single_front_clock_only": true,
+          "canopy_top_is_continuous_curved_grid": true,
+          "canopy_east_glazed_end_closed": true
+        },
+        "lod": {
+          "finite_nondegenerate": true,
+          "perimeter_backstops_exist": true,
+          "window_backing_is_recessed": true,
+          "continuous_roof_wall_seams": true,
+          "tower_four_true_through_openings": true,
+          "tower_ceiling_closes_colonnade": true,
+          "single_front_clock_only": true,
+          "canopy_top_is_continuous_curved_grid": true,
+          "canopy_east_glazed_end_closed": true
+        }
+      },
+      "original_first_report_sha256": "7ddf063a53415101906d081cc3cc66c4016e658a14fcfeba6994b2d5720798a5",
+      "resolution": "Review now compares GPU numerical factors by exact Float32 value; alpha modes, sidedness, textures and extensions still compare exactly. No asset mutation or geometric tolerance change. All three variant geometry checks rerun with final review script.",
+      "final_material_comparison": {
+        "original_json_numerical_factors_exactly_equal": false,
+        "gpu_float32_appearance_exactly_equal": true,
+        "maximum_original_decimal_factor_difference": 2.9000000068002407e-08,
+        "method": "Compare shader numerical factors after exact FLOAT32 conversion; alpha modes, sidedness, textures and extensions remain exact. No arbitrary tolerance and no model mutation."
+      }
+    },
+    {
+      "issue": "Two clock-shoulder dark narrow panels were behind the curved sandstone surface, invisible from either side",
+      "initial_asset": {
+        "file": "hongkou-general-post-office-raw.glb",
+        "bytes": 16180636,
+        "sha256": "82a935ab11bf0caa912ed8525c3169942124464fed6ea4188881b1f529e4a83e"
+      },
+      "initial_failed_probes": [
+        {
+          "side": -1,
+          "origin_enu_m": [
+            39.860883930712006,
+            -13.536525394104931,
+            24.75
+          ],
+          "direction_enu": [
+            0.4819097604926674,
+            0.8762208527203059,
+            0
+          ],
+          "first_actual_hit": {
+            "distance_m": 1.5150456839116624,
+            "point_enu_m": [
+              40.590999233381325,
+              -12.209010773037635,
+              24.75
+            ],
+            "material": "sandstone wall",
+            "triangle_index": 194922
+          },
+          "first_dark_bronze_hit": {
+            "distance_m": 1.587499763677092,
+            "point_enu_m": [
+              40.6259155616078,
+              -12.145524997482505,
+              24.75
+            ],
+            "material": "dark bronze",
+            "triangle_index": 222953
+          },
+          "panel_hidden_behind_stone": true
+        },
+        {
+          "side": -1,
+          "origin_enu_m": [
+            39.860883930712006,
+            -13.536525394104931,
+            25.0
+          ],
+          "direction_enu": [
+            0.4819097604926674,
+            0.8762208527203059,
+            0
+          ],
+          "first_actual_hit": {
+            "distance_m": 1.5150456839116624,
+            "point_enu_m": [
+              40.590999233381325,
+              -12.209010773037635,
+              25.0
+            ],
+            "material": "sandstone wall",
+            "triangle_index": 194922
+          },
+          "first_dark_bronze_hit": {
+            "distance_m": 1.587499763677092,
+            "point_enu_m": [
+              40.6259155616078,
+              -12.145524997482505,
+              25.0
+            ],
+            "material": "dark bronze",
+            "triangle_index": 222953
+          },
+          "panel_hidden_behind_stone": true
+        },
+        {
+          "side": -1,
+          "origin_enu_m": [
+            39.860883930712006,
+            -13.536525394104931,
+            25.3
+          ],
+          "direction_enu": [
+            0.4819097604926674,
+            0.8762208527203059,
+            0
+          ],
+          "first_actual_hit": {
+            "distance_m": 1.5150456839116624,
+            "point_enu_m": [
+              40.590999233381325,
+              -12.209010773037635,
+              25.3
+            ],
+            "material": "sandstone wall",
+            "triangle_index": 194922
+          },
+          "first_dark_bronze_hit": {
+            "distance_m": 1.587499763677092,
+            "point_enu_m": [
+              40.6259155616078,
+              -12.145524997482505,
+              25.3
+            ],
+            "material": "dark bronze",
+            "triangle_index": 222952
+          },
+          "panel_hidden_behind_stone": true
+        },
+        {
+          "side": 1,
+          "origin_enu_m": [
+            47.57144009859469,
+            0.4830082494199624,
+            24.75
+          ],
+          "direction_enu": [
+            -0.4819097604926674,
+            -0.8762208527203059,
+            0
+          ],
+          "first_actual_hit": {
+            "distance_m": 1.5150462334152377,
+            "point_enu_m": [
+              46.84132453111424,
+              -0.8445068531338249,
+              24.75
+            ],
+            "material": "sandstone wall",
+            "triangle_index": 194897
+          },
+          "first_dark_bronze_hit": {
+            "distance_m": 1.5875002126036661,
+            "point_enu_m": [
+              46.8064082513568,
+              -0.907992540561289,
+              24.75
+            ],
+            "material": "dark bronze",
+            "triangle_index": 222965
+          },
+          "panel_hidden_behind_stone": true
+        },
+        {
+          "side": 1,
+          "origin_enu_m": [
+            47.57144009859469,
+            0.4830082494199624,
+            25.0
+          ],
+          "direction_enu": [
+            -0.4819097604926674,
+            -0.8762208527203059,
+            0
+          ],
+          "first_actual_hit": {
+            "distance_m": 1.5150462334152377,
+            "point_enu_m": [
+              46.84132453111424,
+              -0.8445068531338249,
+              25.0
+            ],
+            "material": "sandstone wall",
+            "triangle_index": 194897
+          },
+          "first_dark_bronze_hit": {
+            "distance_m": 1.5875002126036661,
+            "point_enu_m": [
+              46.8064082513568,
+              -0.907992540561289,
+              25.0
+            ],
+            "material": "dark bronze",
+            "triangle_index": 222964
+          },
+          "panel_hidden_behind_stone": true
+        },
+        {
+          "side": 1,
+          "origin_enu_m": [
+            47.57144009859469,
+            0.4830082494199624,
+            25.3
+          ],
+          "direction_enu": [
+            -0.4819097604926674,
+            -0.8762208527203059,
+            0
+          ],
+          "first_actual_hit": {
+            "distance_m": 1.5150462334152377,
+            "point_enu_m": [
+              46.84132453111424,
+              -0.8445068531338249,
+              25.3
+            ],
+            "material": "sandstone wall",
+            "triangle_index": 194897
+          },
+          "first_dark_bronze_hit": {
+            "distance_m": 1.5875002126036661,
+            "point_enu_m": [
+              46.8064082513568,
+              -0.907992540561289,
+              25.3
+            ],
+            "material": "dark bronze",
+            "triangle_index": 222964
+          },
+          "panel_hidden_behind_stone": true
+        }
+      ],
+      "prior_nine_category_geometry_review_scope": "The previous9-category pass did not cover these side panels and did not prove all facade details. Root visual review identified the omission; independent6-ray direct-triangle checks confirmed the defect.",
+      "initial_nine_category_review_bindings": [
+        {
+          "file": "independent-check-geometry.py",
+          "bytes": 9644,
+          "sha256": "db864431f8ad04b1effce2c259e273700599532c1ff5e4c8c1587a165e509284"
+        },
+        {
+          "file": "independent-glb-review-helpers.py",
+          "bytes": 7134,
+          "sha256": "2b1ad9b0b3c57e9645a14c04a906c752ad822f066fb4fbf2e536f6f435183ae5"
+        },
+        {
+          "file": "footprint-contract.json",
+          "bytes": 17965,
+          "sha256": "0e96a6ac0f363f26e045af0b322448fc690517b9163f36bc8654b54638257761"
+        }
+      ],
+      "resolution": "Move each sealed shallow dark panel center from tower-tangent6.43m to6.50m and reverse both Facade endpoint orders so the panel normal faces outward. These represent photo-evidenced narrow dark marks, not verified open interior apertures.",
+      "final_variant_probes": {
+        "raw": [
+          {
+            "side": -1,
+            "height_m": 24.75,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              24.75
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                24.75
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222957
+            },
+            "passed": true
+          },
+          {
+            "side": -1,
+            "height_m": 25.0,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              25.0
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                25.0
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222957
+            },
+            "passed": true
+          },
+          {
+            "side": -1,
+            "height_m": 25.3,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              25.3
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                25.3
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222956
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 24.75,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              24.75
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                24.75
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222969
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 25.0,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              25.0
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                25.0
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222969
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 25.3,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              25.3
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                25.3
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222968
+            },
+            "passed": true
+          }
+        ],
+        "web": [
+          {
+            "side": -1,
+            "height_m": 24.75,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              24.75
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                24.75
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222957
+            },
+            "passed": true
+          },
+          {
+            "side": -1,
+            "height_m": 25.0,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              25.0
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                25.0
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222957
+            },
+            "passed": true
+          },
+          {
+            "side": -1,
+            "height_m": 25.3,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              25.3
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                25.3
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222956
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 24.75,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              24.75
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                24.75
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222969
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 25.0,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              25.0
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                25.0
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222969
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 25.3,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              25.3
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                25.3
+              ],
+              "material": "dark bronze",
+              "triangle_index": 222968
+            },
+            "passed": true
+          }
+        ],
+        "lod": [
+          {
+            "side": -1,
+            "height_m": 24.75,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              24.75
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                24.75
+              ],
+              "material": "dark bronze",
+              "triangle_index": 142413
+            },
+            "passed": true
+          },
+          {
+            "side": -1,
+            "height_m": 25.0,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              25.0
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                25.0
+              ],
+              "material": "dark bronze",
+              "triangle_index": 142413
+            },
+            "passed": true
+          },
+          {
+            "side": -1,
+            "height_m": 25.3,
+            "origin_enu_m": [
+              39.860883930712006,
+              -13.536525394104931,
+              25.3
+            ],
+            "direction_enu": [
+              0.4819097604926674,
+              0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.45749988864096,
+              "point_enu_m": [
+                40.56326735296506,
+                -12.259433598840198,
+                25.3
+              ],
+              "material": "dark bronze",
+              "triangle_index": 142412
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 24.75,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              24.75
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                24.75
+              ],
+              "material": "dark bronze",
+              "triangle_index": 142425
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 25.0,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              25.0
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                25.0
+              ],
+              "material": "dark bronze",
+              "triangle_index": 142425
+            },
+            "passed": true
+          },
+          {
+            "side": 1,
+            "height_m": 25.3,
+            "origin_enu_m": [
+              47.57144009859469,
+              0.4830082494199624,
+              25.3
+            ],
+            "direction_enu": [
+              -0.4819097604926674,
+              -0.8762208527203059,
+              0
+            ],
+            "hit": {
+              "distance_m": 1.4574999719791144,
+              "point_enu_m": [
+                46.86905663618017,
+                -0.7940836188673992,
+                25.3
+              ],
+              "material": "dark bronze",
+              "triangle_index": 142424
+            },
+            "passed": true
+          }
+        ]
+      },
+      "final_asset_bindings": {
+        "raw": {
+          "file": "hongkou-general-post-office-raw.glb",
+          "bytes": 16180636,
+          "sha256": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf"
+        },
+        "web": {
+          "file": "hongkou-general-post-office-web.glb",
+          "bytes": 6781500,
+          "sha256": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed"
+        },
+        "lod": {
+          "file": "hongkou-general-post-office-lod.glb",
+          "bytes": 4289788,
+          "sha256": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a"
+        }
+      },
+      "bounded_change_evidence": "independent-side-panel-delta.json",
+      "bounded_change_result": "Independent raw/LOD oriented FLOAT32 multiset comparison: only24 removed and24 added dark-bronze triangles,12 on each side, all within the two0.50m×0.95m panel neighborhoods; all other19 materials unchanged; material parameters unchanged.",
+      "evidence": "independent-geometry-review.json"
+    }
+  ],
+  "final_review_bindings": [
+    {
+      "file": "independent-check-geometry.py",
+      "bytes": 10344,
+      "sha256": "0d94ba3db6c54b05b48509cea1fafc40613774c96490fb832ad5daab7a40df68"
+    },
+    {
+      "file": "independent-glb-review-helpers.py",
+      "bytes": 7134,
+      "sha256": "2b1ad9b0b3c57e9645a14c04a906c752ad822f066fb4fbf2e536f6f435183ae5"
+    },
+    {
+      "file": "footprint-contract.json",
+      "bytes": 17965,
+      "sha256": "0e96a6ac0f363f26e045af0b322448fc690517b9163f36bc8654b54638257761"
+    }
+  ],
+  "preservation_scope": "Initial reports and exact initial script versions retained in the review scratch directory during this session; this file preserves the failing asset hashes, rays, results and final repair evidence for durable handoff. Draft geometry is not counted as a delivered model.",
+  "final_geometry_check_categories_per_variant": 10
+}

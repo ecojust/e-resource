@@ -1,0 +1,33 @@
+{
+  "schema": "postal-final-glb-projection-execution-v1",
+  "expected_asset_sha256": {
+    "raw": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf",
+    "web": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed",
+    "lod": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a"
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "projects/shanghai/data/audit/postal-office-v1/map-decode-delivered.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "[{\"variant\":\"raw\",\"bytes\":16180636,\"sha256\":\"92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf\",\"triangles\":251348,\"meshes\":20},{\"variant\":\"web\",\"bytes\":6781500,\"sha256\":\"05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed\",\"triangles\":251348,\"meshes\":20},{\"variant\":\"lod\",\"bytes\":4289788,\"sha256\":\"ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a\",\"triangles\":158452,\"meshes\":20}]\n",
+      "stderr": "",
+      "script_sha256": "3c2eb7783d8f33237ca84df6f9d4c7599412e5c9ac5feaf56fc229e773bb3db9"
+    },
+    {
+      "command": [
+        "python",
+        "projects/shanghai/data/audit/postal-office-v1/map-analyze-delivered.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"variant\": \"raw\", \"triangles\": 251348, \"full_area\": 6383.520430622297, \"low_area\": 4581.1257482042465, \"source_uncovered\": 22.600501760425658, \"beyond_source\": 21.128342212968157, \"overlapping_foreign\": []}\n{\"variant\": \"web\", \"triangles\": 251348, \"full_area\": 6383.520430622297, \"low_area\": 4581.1257482042465, \"source_uncovered\": 22.600501760425658, \"beyond_source\": 21.128342212968157, \"overlapping_foreign\": []}\n{\"variant\": \"lod\", \"triangles\": 158452, \"full_area\": 6383.453539390111, \"low_area\": 4581.061148963734, \"source_uncovered\": 22.599973122863975, \"beyond_source\": 21.060922343221367, \"overlapping_foreign\": []}\n",
+      "stderr": "",
+      "script_sha256": "56a11be2cc03dc76d4a7da33882f034519fc8082247a045b7ec8ca26e042196b"
+    }
+  ],
+  "seconds": 155.677274656,
+  "passed": true,
+  "scope": "Actual final raw/web/LOD freshly decoded/projected after the verified side-panel repair; no prior full projection reused."
+}

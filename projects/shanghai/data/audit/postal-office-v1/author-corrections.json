@@ -1,0 +1,65 @@
+{
+  "schema": "postal-author-corrections-v1",
+  "model_id": "hongkou-general-post-office",
+  "scope": "Observed development corrections; final asset hashes and checks are bound separately.",
+  "corrections": [
+    {
+      "issue": "An arc-outline seam and a reversed collinear tower-front endpoint produced open component edges in the first LOD author check.",
+      "action": "Cleaned the author-owned arc polygon and removed the collinear tower outline backtrack; kept the generic closed geometry validators unchanged.",
+      "verification": "Subsequent author raw/LOD closed edges, winding, positive volume and FLOAT32 area checks passed."
+    },
+    {
+      "issue": "First canopy had a curved roof sheet but no glazed curved end faces; independent serialized rays found three open points.",
+      "action": "Added matching arched end glazing, frame grid and continuous end rim.",
+      "verification": "Independent targeted end rays then hit the actual end material; full final variant checks are recorded separately."
+    },
+    {
+      "issue": "The first paired upper columns overlapped too closely, and roof perimeter/envelope details needed photo-informed refinement.",
+      "action": "Separated eight smooth upper columns, added thick vertically curved cornice, documented lettering, stone urns, clock ornament, roof guards and a bounded set of estimated roof objects.",
+      "verification": "Updated native views were reviewed before final geometry freeze; image phases retain their actual raw hashes."
+    },
+    {
+      "issue": "Author window probes at 0.16 of bay width landed on a three-column window mullion, yielding green frame rather than glass hits.",
+      "action": "Moved only the probe point to 0.08 of window width, inside a pane; retained the initial failures and source version privately. No geometry was changed for this correction.",
+      "verification": "A copied-source rebuild before the party-wall correction was byte-identical for raw and LOD; final probe checks are separate."
+    },
+    {
+      "issue": "An outer-wall inset made the west common cut 1.2m from the source line; a 1m interior classification threshold mistook that cut for a courtyard face and added estimated windows.",
+      "action": "Adjusted the explicit outer/inner classification threshold to 1.5m, identified source edge1 as party cut, and left it as a closed wall without invented windows. Source registration and foundation envelope did not change.",
+      "verification": "Three variants and eight native images were regenerated after the party-cut fix; they are retained under revision-82a935ab with that raw hash. The later two-side-panel correction is isolated in the next entry."
+    },
+    {
+      "issue": "Root visual review found blank curved shoulders; actual serialized rays hit sandstone before the two intended narrow dark-bronze panels. Their offset and Facade normals placed them inside the solid tower.",
+      "action": "Changed only the two existing side-panel locations and outward Facade orientation; kept the scope as bounded shallow dark panels, not extra clock faces or verified open internal windows. Added two author regression rays.",
+      "verification": "Final raw/web/LOD author probes pass 29 each. Actual oriented FLOAT32 triangle multiset subtraction proves exactly two twelve-triangle boxes changed, all other triangles are identical. Old eight views retain the previous raw hash; the final file is rendered in front/east-shoulder/west-shoulder views and reopened separately."
+    }
+  ],
+  "initial_failure_files": [
+    "development/author-lod-first.json",
+    "development/author-lod-second.json",
+    "development/first-probe-serialized-raw.json",
+    "development/first-probe-serialized-lod-uncompressed.json",
+    "revision-82a935ab/side-window-first.json"
+  ],
+  "validators_relaxed": false,
+  "final_glb_assets": {
+    "raw": {
+      "file": "hongkou-general-post-office-raw.glb",
+      "bytes": 16180636,
+      "sha256": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf",
+      "triangles": 251348
+    },
+    "web": {
+      "file": "hongkou-general-post-office-web.glb",
+      "bytes": 6781500,
+      "sha256": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed",
+      "triangles": 251348
+    },
+    "lod": {
+      "file": "hongkou-general-post-office-lod.glb",
+      "bytes": 4289788,
+      "sha256": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a",
+      "triangles": 158452
+    }
+  }
+}

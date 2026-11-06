@@ -1,0 +1,118 @@
+{
+  "schema": "postal-collision-runtime-semantics-v1",
+  "geometry_type": "Polygon",
+  "closed_ring_point_counts": [
+    254
+  ],
+  "production_geometry_validator_passed": true,
+  "production_contains_ground_probes": [
+    {
+      "name": "south-wing",
+      "wgs84": [
+        121.48056036656966,
+        31.246241954824207
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "north-wing",
+      "wgs84": [
+        121.48035123458244,
+        31.246584846921223
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "east-wing",
+      "wgs84": [
+        121.4809104014905,
+        31.246621132435003
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "tower-base",
+      "wgs84": [
+        121.48103645351816,
+        31.246433909077112
+      ],
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "covered-courtyard-center",
+      "wgs84": [
+        121.480425387216,
+        31.246404913991235
+      ],
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "covered-courtyard-west",
+      "wgs84": [
+        121.48018288007876,
+        31.246296804583697
+      ],
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "south-street",
+      "wgs84": [
+        121.48062359251928,
+        31.24613828952654
+      ],
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "east-street",
+      "wgs84": [
+        121.48114765738062,
+        31.246651940887773
+      ],
+      "expected": false,
+      "actual": false
+    }
+  ],
+  "source_mask_contains_probes": [
+    {
+      "feature_local_id": 1959,
+      "scope": "actual roof sample",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "feature_local_id": 3148,
+      "scope": "actual roof sample",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "feature_local_id": 1780,
+      "scope": "actual roof sample",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "feature_local_id": 814,
+      "scope": "actual roof sample",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "feature_local_id": 1959,
+      "scope": "retained shared joint",
+      "expected": false,
+      "actual": false
+    }
+  ],
+  "all_passed": true,
+  "contract_sha256": "f6348b23fee7b33974d1130973e83c4e3809183689c094069728af5c9a2bbd7d",
+  "runtime_module_sha256": "5418ae01bf129e2f3ac08b528bb8eae4c0824dfe99364798f1b5e1d3d105999d",
+  "scope": "Production serialized geometry validation and point containment only; actual GLB structural coverage is independently checked by map-finalize-placement.py. No browser input or GPU pixels claimed."
+}
