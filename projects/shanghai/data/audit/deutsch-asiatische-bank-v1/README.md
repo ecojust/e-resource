@@ -11,3 +11,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/462453332da2aeb50cb88b85130254aa7125810f/projects/shanghai/index.html#landmark=huangpu-deutsch-asiatische-bank&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+从九江路、四川中路交叉口补拍的两张1280×800街面近景均由143处正式目录进入。第一张可辨西北斜角的门框、双扇深色门和三角门楣；正常选中名牌覆盖门楣左缘一小段。第二张沿九江路斜看四根巨柱，四枚柱头、上方檐口及两柱之间的窗都可辨。两张均已加载实际六实体近景组，原有的1064和2602照登记裁切。两张图对应同一完整近景GLB，网页目录、近景GLB和原生组的实际HTTP字节均通过校验。[路口门头](baroque-portal-from-jiujiang-junction.png) · [九江路柱头](north-corinthian-column-heads.png) · [机位、现场状态与资源校验](street-entrance-browser.json) · [复拍脚本](check-street-entrance.cjs)

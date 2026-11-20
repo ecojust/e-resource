@@ -43,7 +43,7 @@ async function run(){
     const panel=page.locator('#panel-toggle');if(await panel.getAttribute('aria-expanded')==='true')await panel.click({force:true});
     const positions=[
       ['baroque-portal-from-jiujiang-junction',-9.46,11.765,132,71,21.93,5.3],
-      ['north-corinthian-column-heads',.2,13.0,162,72,21.79,10.5],
+      ['north-corinthian-column-heads',-.65,13.27,132,72,22.55,13.65],
     ];
     for(const [name,u,v,bearing,pitch,zoom,elevation] of positions){
       const center=mapPoint(u,v);
