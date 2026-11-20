@@ -1,3 +1,11 @@
+# 泰安路115弄6号周谷城旧居（庭院入口立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) · [单体旋转与下载](zhou-gucheng-courtyard.html) · [来源与制作范围](source/precise/changning-zhou-gucheng-courtyard/README.md) · [验收记录](data/audit/zhou-gucheng-courtyard-v1/README.md)
+
+泰安路115弄6号周谷城旧居的庭院入口立面，以2014年明示6号的照片为基准。房号与故居定位对应同一栋建筑，后期拱门、栏杆与阁顶变化另行记录。
+
+近景 12,840 个三角面，远景 6,480 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,878,213 字节。上海主图现有 98 处独立入口，长宁区 5 处。[资产清单](assets/models/candidates/changning-zhou-gucheng-courtyard/manifest.json)
+
 # 罗别根花园主宅（南向双山墙与露木构阳台）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) · [单体旋转与下载](luobiegen-garden.html) · [来源与制作范围](source/precise/changning-luobiegen-garden-villa/README.md) · [验收记录](data/audit/luobiegen-garden-villa-v1/README.md)
