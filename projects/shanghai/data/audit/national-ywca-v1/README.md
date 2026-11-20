@@ -15,3 +15,7 @@
 ## 主图默认取景
 
 正式116处对照为原底图，117处新版由区目录选择后进入。手机和桌面均显示圆明园路七组竖窗、中央入口与屋顶两层退台。正式站287个输入及4个城市源文件逐一匹配SHA-256，共159,461,535字节。阶段采集时街面、屋顶与远距地面复核仍在进行。[前态](map-before.png) · [手机](map-mobile.png) · [桌面](map-desktop.png) · [阶段收据](default-focus-verification.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/58e5682ec158782a05ecd61d847a2000fc139afb/projects/shanghai/index.html#landmark=huangpu-national-ywca&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
