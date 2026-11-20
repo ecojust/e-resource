@@ -17,3 +17,7 @@
 在聚焦标签版中用 Chromium 对照第141处和第142处实际地图。原图中削角保留城市粗模；登记后的手机、桌面和街面取景能辨削角及两翼，屋顶图保留后部原楼与两侧建筑。远景已切换到36,680面的LOD。四件下载的响应字节与清单逐一吻合，15处地面抽查通过。[前后实测与六幅截图的摘要](map-comparison-verification.json) · [原图](map-before.png) · [手机](map-mobile.png) · [桌面](map-desktop.png) · [街面](map-street-facade.png) · [屋顶](map-roof.png) · [远景](map-distant.png)
 
 从同一版默认俯瞰收起导航，使用鼠标右键向上拖动把视线抬到64°，在门额处滚轮放大并左拖。地点卡仍可见，地点卡和灯牌均避开门额。最终缩放为24.00级，「申報館」三个实模字的投影范围约99×31像素。金属字处在檐下阴影里，原图与等比例裁图均保留实拍亮度。[街口原图](map-entrance-plaque.png) · [门额原像素](map-entrance-inscription-crop.png) · [镜头、资产与手势记录](map-entrance-inscription.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e08187ff1386d368d85844cdc9f7b987bb70d237/projects/shanghai/index.html#landmark=huangpu-shen-bao-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 9 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
