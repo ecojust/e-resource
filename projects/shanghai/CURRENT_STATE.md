@@ -1,3 +1,11 @@
+# 愚谷村愚园路北弄门
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yugu-village-north-gate&mode=overview) · [单体旋转与下载](yugu-village-north-gate.html) · [来源与制作范围](source/precise/jingan-yugu-village-north-gate/README.md) · [验收记录](data/audit/yugu-village-north-gate-v1/README.md)
+
+按愚园路361弄北口多期临街照片制作两根带名牌的门柱与铁门，保留两端沿街店屋。市房管局名录作「愚谷村」，门柱题字依实物核对。
+
+近景 20,688 个三角面，远景 15,688 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,392,796 字节。上海主图现有 187 处独立入口，静安区 14 处。[资产清单](assets/models/candidates/jingan-yugu-village-north-gate/manifest.json)
+
 # 建业里总弄沿街门楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianye-li-main-lane-gate&mode=overview) · [单体旋转与下载](jianye-li-main-gate.html) · [来源与制作范围](source/precise/xuhui-jianye-li-main-lane-gate/README.md) · [验收记录](data/audit/jianye-li-main-gate-v1/README.md)
