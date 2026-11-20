@@ -19,3 +19,7 @@
 ## 正式城市入口实测
 
 24156前态和24157后态已完成193→194处的真实浏览器对照。近景新木门嵌入原住宅两窗之间；远景、桌面、触屏、18处同组邻楼以及门外可通行边界均已复核。[六幅真实城市图与地面结果](city-24157/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/526c4c0e158b9d7f78dc029d9af02aff78d075b4/projects/shanghai/index.html#landmark=xuhui-zhongnan-village-no9-door&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，11 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
