@@ -3783,7 +3783,7 @@
 | 上海公库（原三井银行九江路正门与六柱廊） | 2026-11-21 00:53:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsui-bank&mode=overview) |
 | 中汇大楼（原中汇银行大楼） | 2026-11-21 00:57:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chung-wei-bank-building&mode=overview) |
 | 建设大楼（福州路口凹入塔面） | 2026-11-21 01:09:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-development-building&mode=overview) |
-| 华商纱布交易所（上海自然博物馆旧馆） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cotton-exchange-building&mode=overview) |
+| 华商纱布交易所（上海自然博物馆旧馆） | 2026-11-21 01:22:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cotton-exchange-building&mode=overview) |
 
 ### 徐汇区（9处）
 

@@ -13,3 +13,7 @@
 158处旧地图的同址画面保留原城市体块。159处地图经正式目录在390像素手机打开本楼，随后的870像素桌面、沿街和屋面取景均载入126,728面的近景。沿街图能辨西南圆塔、山花及四层窗带，门口的本楼标牌遮住部分柱身。目录展开的桌面画面中，本楼与中汇大楼两枚标牌遮住部分南立面。屋顶图可辨两级屋面和西南圆塔。[原址旧画面](final-159-map/map-before.png) · [手机](final-159-map/map-mobile.png) · [桌面](final-159-map/map-desktop.png) · [沿街](final-159-map/map-street-facade.png) · [屋面](final-159-map/map-roof.png)
 
 首轮12个本楼和街道地面点均符合预期，4个相邻原楼的同址碰撞返回空。此时近景组已激活，五个裁片均属于1602号原楼。浏览器报告同时保留 Overture 和 OpenFreeMap 请求失败。独立请求建筑瓦片返回HTTP 503。服务恢复后，相同字节范围返回206，第二次实机在同四个坐标均碰到建筑，载入的3,332个矢量建筑特征包含四个独立UUID。此次近远两档、四种下载、原城市近远两份文件均符合签名，控制台和网络请求错误均为零。[首次实机记录](final-159-map/initial-main-browser.json) · [503响应](final-159-map/external-overture-range.json) · [206复查](final-159-map/external-overture-recovery.json) · [恢复后同址复查](final-159-map/recovery-main-browser.json) · [82,244面远景](final-159-map/map-distant.png) · [交付汇总](final-159-map/model-delivery.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/79de897805be91fbf0badaced62f558b1e255bb3/projects/shanghai/index.html#landmark=huangpu-cotton-exchange-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
