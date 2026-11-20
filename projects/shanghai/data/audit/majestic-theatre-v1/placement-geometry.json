@@ -1,0 +1,151 @@
+{
+  "id": "jingan-majestic-theatre",
+  "source_sha256": "2283877ede558e98824781cd68575a8d7220218d7db7341c1f985a20a4310e2f",
+  "manifest_sha256": "2f8ad6727294174c2875da0efbd6fe1498d2ca3b8103600c9d04fc7c3c145d37",
+  "script_sha256": "1d0b96b866a7cac7c11d1efd0d9b2948367b68fffa85b437ffc1d6d0441b5552",
+  "decoders_sha256": {
+    "data/audit/postal-office-v1/map-decode-source.mjs": "1c4a034b8541c9481c20b3b5a8209920670136010cb09c9b0a793237c445388e",
+    "data/audit/postal-office-v1/map-decode-delivered.mjs": "3c2eb7783d8f33237ca84df6f9d4c7599412e5c9ac5feaf56fc229e773bb3db9",
+    "data/audit/country-hospital-v1/verify-placement.py": "4c49b2180b984f5041a4b7effd440a340f19d41a7fba190d685d31f140541a51"
+  },
+  "contract_sha256": "ae34f9317a612dcd40aaceee090a908c11e1afa876e5347d8058583ec8a5f966",
+  "assets": {
+    "raw": {
+      "bytes": 1795656,
+      "sha256": "a8243629d3cb2911daeba85a5c070724c1a770e1ffb8bb872e39ce1147ac01d7",
+      "triangles": 29644
+    },
+    "web": {
+      "bytes": 718772,
+      "sha256": "3a17246ae512ae6a7500ef50ce97fff1eaf4cd70b9f7aa95f606214fed59bcc2",
+      "triangles": 29644
+    },
+    "lod": {
+      "bytes": 339332,
+      "sha256": "f6376d98146e260d2733448f0e8b518cd10a75c2173706519dad96551461fa27",
+      "triangles": 13580
+    }
+  },
+  "registered_owner_area_m2": 2911.434175781305,
+  "collision_area_m2": 2889.9908128471047,
+  "model_projected_area_m2": 2916.42944583,
+  "cut_area_m2": 2950.10423171196,
+  "original_shared_source_overlap_m2": 3.838430631546629,
+  "osm_vector_mask_area_m2": 2943.0615123381344,
+  "adjacent_source_overlap_with_osm_mask_m2": 7.08114250691902e-08,
+  "all_macro_neighbors_crossing_mask": [
+    {
+      "id": 1995,
+      "mask_overlap_m2": 7.042660369173717,
+      "model_overlap_m2": 0.0
+    }
+  ],
+  "party_wall_preservation": {
+    "near": {
+      "neighbor_id": 1995,
+      "neighbor_area_m2": 626.0241538498085,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.22856775538882934,
+      "clip_overlap_before_owner_filter_m2": 8.424754976023706,
+      "exclusion": "Separate source near tile without target owner"
+    },
+    "far": {
+      "neighbor_id": 1995,
+      "neighbor_area_m2": 618.9170099812525,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.29848451610408283,
+      "clip_overlap_before_owner_filter_m2": 7.042628640349307,
+      "exclusion": "Explicit native far feature ID"
+    }
+  },
+  "target_variants": {
+    "near": {
+      "original_area_m2": 2927.3210943255017,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 9.437149733066537
+    },
+    "far": {
+      "original_area_m2": 2911.4338932687715,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 9.513836414397954
+    }
+  },
+  "source_decode": {
+    "target group near": {
+      "ids": [
+        711,
+        360,
+        796,
+        1255,
+        831
+      ],
+      "input": "near/-1_0-s0-s0-s0.glb.gz",
+      "sha256": "594116d638a1589b6e06c36f5f2985d0af4b418bf3a79b627a1d3ef59b77ff45",
+      "pass": true,
+      "triangles_per_owner": {
+        "711": 18990,
+        "360": 42534,
+        "796": 41360,
+        "1255": 3662,
+        "831": 19794
+      }
+    },
+    "target group far": {
+      "ids": [
+        711,
+        360,
+        796,
+        1255,
+        831
+      ],
+      "input": "far.glb",
+      "sha256": "731d7c558632dcaf8c197862be9a628a3a59cb94549df316c27184cd3386e1d7",
+      "pass": true,
+      "triangles_per_owner": {
+        "711": 12,
+        "360": 24,
+        "796": 12,
+        "1255": 8,
+        "831": 12
+      }
+    },
+    "party-wall group near": {
+      "ids": [
+        2196,
+        1558,
+        611,
+        1995,
+        2412
+      ],
+      "input": "near/-1_-1-s1-s0-s1.glb.gz",
+      "sha256": "0985c4b3074e41d53cbd05f74691fcdde9189de370172f577bbc1427c0cdcfbf",
+      "pass": true,
+      "triangles_per_owner": {
+        "2196": 16020,
+        "1558": 13116,
+        "611": 13116,
+        "1995": 17504,
+        "2412": 4800
+      }
+    },
+    "party-wall group far": {
+      "ids": [
+        2196,
+        1558,
+        611,
+        1995,
+        2412
+      ],
+      "input": "far.glb",
+      "sha256": "731d7c558632dcaf8c197862be9a628a3a59cb94549df316c27184cd3386e1d7",
+      "pass": true,
+      "triangles_per_owner": {
+        "2196": 12,
+        "1558": 12,
+        "611": 12,
+        "1995": 20,
+        "2412": 12
+      }
+    }
+  }
+}

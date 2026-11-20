@@ -1,3 +1,11 @@
+# 美琪大戏院（圆弧门厅、临街外墙与屋顶体量）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-majestic-theatre&mode=overview) · [单体旋转与下载](majestic-theatre.html) · [来源与制作范围](source/precise/jingan-majestic-theatre/README.md) · [验收记录](data/audit/majestic-theatre-v1/README.md)
+
+美琪大戏院的圆角玻璃门厅、两侧临街外墙与屋顶体量。参考2017年修缮后的日景和夜景照片，遮挡处及屋顶设备细部含估计。
+
+近景 29,644 个三角面，远景 13,580 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,300,931 字节。上海主图现有 90 处独立入口，静安区 4 处。[资产清单](assets/models/candidates/jingan-majestic-theatre/manifest.json)
+
 # 金城银行大楼（江西中路200号临街主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-kincheng-bank&mode=overview) · [单体旋转与下载](kincheng-bank.html) · [来源与制作范围](source/precise/huangpu-kincheng-bank/README.md) · [验收记录](data/audit/kincheng-bank-v1/README.md)

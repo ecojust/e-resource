@@ -52,9 +52,15 @@ def main():
         return url
     scene = include_import(app, app_source, 'map-scene')
     catalog_module = include_import(app, app_source, 'candidate-city-integrations')
+    scene_code = blob(path(scene)).decode()
     for name in ['candidate-city-clipping', 'building-beacons']:
-        include_import(scene, blob(path(scene)).decode(), name)
-    include_import(catalog_module, blob(path(catalog_module)).decode(), 'candidate-source-sections')
+        include_import(scene, scene_code, name)
+    catalog_code = blob(path(catalog_module)).decode()
+    include_import(catalog_module, catalog_code, 'candidate-source-sections')
+    if './candidate-vector-geometry.js' in catalog_code:
+        vector_module = include_import(scene, scene_code, 'candidate-vector-clipping')
+        include_import(vector_module, blob(path(vector_module)).decode(), 'candidate-vector-geometry')
+        include_import(catalog_module, catalog_code, 'candidate-vector-geometry')
     query, = re.findall(r"candidate-city-integrations\.json'\?'(\?[^']+)'", app_source)
     files.append(PREFIX + 'data/candidate-city-integrations.json' + query)
     assets = {urljoin(manifest_path, a['file']): a for a in manifest['assets'].values()}

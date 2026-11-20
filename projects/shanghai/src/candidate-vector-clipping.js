@@ -1,4 +1,5 @@
 import '../vendor/polygon-clipping.umd.min.js';
+import {candidateVectorGeometry} from './candidate-vector-geometry.js';
 const clipping=globalThis.polygonClipping;
 const polygons=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g.coordinates:[];
 const area=parts=>parts.reduce((sum,rings)=>sum+rings.reduce((s,r,j)=>{
@@ -28,7 +29,7 @@ export function planCandidateVectorClipping(features,coverage,context){
     });
     if(!clips.length)continue;
     try{
-      const original=clipping.union(...g.parts),cuts=clips.flatMap(c=>polygons(c.geometry));
+      const original=clipping.union(...g.parts),cuts=clips.flatMap(c=>polygons(candidateVectorGeometry(c,context.source)));
       const intersection=clipping.intersection(original,...[clipping.union(...cuts)]);
       if(area(intersection)<1e-17)continue;
       const remaining=clipping.difference(original,...cuts);

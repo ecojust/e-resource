@@ -494,6 +494,11 @@ def build_catalog(inventory, inventory_path=INVENTORY):
                  "source_feature_ids": source_ids, "placement": note,
                  "detail_note": note["note"] + "；" + item["description"],
                  "complete_photo_reconstruction_accepted": False}
+        if "osm_replacement_geometry" in placement:
+            osm_geometry = placement["osm_replacement_geometry"]
+            osm_cut = checked_geometry(osm_geometry, f"{ident} osm_replacement_geometry")
+            assert replacement is not None and replacement.buffer(1e-12).covers(osm_cut), f"OSM-specific cut exceeds primary cut: {ident}"
+            model["osm_replacement_geometry"] = osm_geometry
         if clearance is not None:
             model["ground_collision_mode"] = placement["ground_collision_mode"]
             model["ground_clearance_m"] = clearance

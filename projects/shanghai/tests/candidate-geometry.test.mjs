@@ -18,6 +18,25 @@ const model=geometry=>({id:'complex-collision',name:'Open-field collision fixtur
   assets:{web:{file:'assets/fixture-web.glb',bytes:1,sha256:'1'.repeat(64)},lod:{file:'assets/fixture-lod.glb',bytes:1,sha256:'2'.repeat(64)}},
   placement:{status:'estimated'},navigation:{listed:false},collision_geometry:geometry});
 
+test('an aggregated OpenMapTiles footprint retains its neighbor when the owner cut crosses their boundary', async () => {
+  const {planCandidateVectorClipping} = await import('../src/candidate-vector-clipping.js');
+  const rectangle = (west, east) => polygon([[west, 0], [east, 0], [east, 1], [west, 1], [west, 0]]);
+  const clip = {geometry:rectangle(0, 1.1), osm_replacement_geometry:rectangle(0, 1),
+    source_feature_ids:{building:['owner']}};
+  const coverage = {candidateClips:[clip]};
+  const plan = (source, features) => planCandidateVectorClipping(features, coverage, {source, sourceLayer:'building'});
+  const result = plan('openmaptiles', [{id:100, geometry:rectangle(0, 2)}]);
+  const [neighbor] = result.residualData.features;
+  assert.equal(result.desired.size, 1);
+  assert.ok(candidateGeometryContains(neighbor.geometry, [1.05, .5]));
+  assert.equal(candidateGeometryContains(neighbor.geometry, [.95, .5]), false);
+
+  const separate = plan('overture-buildings', [{id:'owner', geometry:rectangle(0, 1.1)},
+    {id:'neighbor', geometry:rectangle(1.1, 2)}]);
+  assert.deepEqual([...separate.desired.values()], [{id:'owner', residual:false}]);
+  assert.deepEqual(separate.residualData.features, []);
+});
+
 test('a registered elevated connector preserves the walkway and both neighboring sources',()=>{
   const bridge={...model(null),ground_collision_mode:'overhead-connector',ground_clearance_m:13,
     bounds_glb:{min:[-5,13,-2],max:[5,21,2]},source_feature_ids:{building:[],building_part:[]}};

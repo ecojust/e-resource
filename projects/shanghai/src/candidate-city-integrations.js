@@ -1,3 +1,4 @@
+import {candidateVectorGeometry} from './candidate-vector-geometry.js';
 import {validSourceSection} from './candidate-source-sections.js?v=country-hospital-north-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 
@@ -45,6 +46,7 @@ export function mergeCandidateCityModels(existing,manifest) {
         ||!Number.isInteger(asset.bytes)||asset.bytes<=0||asset.bytes>=100000000||!SHA.test(asset.sha256))throw Error(`候选模型资产无效：${row.id}/${key}`);
     }
     for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
+    if(row.osm_replacement_geometry!==undefined&&(!row.replacement_geometry||!validCandidateGeometry(row.osm_replacement_geometry)))throw Error('候选模型 OSM 矢量边界无效：'+row.id);
     if(row.ground_collision_mode!==undefined){
       const rawClearance=(row.altitude??0)+(row.scale??1)*row.bounds_glb?.min?.[1];
       if(row.ground_collision_mode!=='overhead-connector' || !Number.isFinite(rawClearance)
@@ -102,7 +104,7 @@ export class CandidateCityState {
     const active=[...this.getRecords().values()].filter(r=>candidateAssetVisible(r,this.getScene()));
     const clips=new Map();
     for(const r of active){
-      if(r.replacement_geometry)clips.set(r.id,{id:r.id,geometry:r.replacement_geometry,source_feature_ids:r.source_feature_ids||{},owner:r.owner,owners:r.owners});
+      if(r.replacement_geometry)clips.set(r.id,{id:r.id,geometry:r.replacement_geometry,...(r.osm_replacement_geometry&&{osm_replacement_geometry:r.osm_replacement_geometry}),source_feature_ids:r.source_feature_ids||{},owner:r.owner,owners:r.owners});
       const site=r.site_replacement;
       if(site)clips.set(site.id,{...site,source_feature_ids:site.source_feature_ids||{}});
     }
@@ -112,13 +114,13 @@ export class CandidateCityState {
     if(signature===this.signature)return false;
     this.signature=signature;this.revision++;this.onChange(this);return true;
   }
-  getState(){return {revision:this.revision,active:this.active.map(r=>({id:r.id,variant:r.activeVariant,assetSha256:r.assets[r.activeVariant==='full'?'web':'lod'].sha256})),clips:this.clips.map(c=>({id:c.id,geometry:c.geometry,source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners})),displayClips:this.displayClips.map(c=>({id:c.id,geometry:c.geometry,source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners,...('min_height' in c?{min_height:c.min_height,max_height:c.max_height,height_reference:c.height_reference}:{})}))};}
+  getState(){return {revision:this.revision,active:this.active.map(r=>({id:r.id,variant:r.activeVariant,assetSha256:r.assets[r.activeVariant==='full'?'web':'lod'].sha256})),clips:this.clips.map(c=>({id:c.id,geometry:c.geometry,...(c.osm_replacement_geometry&&{osm_replacement_geometry:c.osm_replacement_geometry}),source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners})),displayClips:this.displayClips.map(c=>({id:c.id,geometry:c.geometry,source_feature_ids:c.source_feature_ids,owner:c.owner,owners:c.owners,...('min_height' in c?{min_height:c.min_height,max_height:c.max_height,height_reference:c.height_reference}:{})}))};}
   clipsPoint(lng,lat,source){
     if(!source)return false;
     return this.clips.some(c=>{
       const ids=c.source_feature_ids?.[source.layer];
       const matches=source.name!=='overture-buildings'||Boolean(ids?.includes(String(source.id))||ids?.includes(String(source.propertyId)));
-      return matches&&candidateGeometryContains(c.geometry,[lng,lat]);
+      return matches&&candidateGeometryContains(candidateVectorGeometry(c,source.name),[lng,lat]);
     });
   }
   collisions(){return this.active.filter(r=>r.collision_geometry).map(r=>({id:r.id,geometry:r.collision_geometry}));}
