@@ -13,3 +13,7 @@
 城市目录从189处增至190处。正式站实取1,013份文件，共968,581,899字节，全部与登记相符；针对本弄另在两期正式站实取12项、17项输入，并回放地图裁剪。两期均保留原有992个裁剪三角，14个地面见证点通过。[正式HTTP汇总](frozen-http-summary.json) · [前一期地图输入](map-action-inputs-before.json) · [本期地图输入](map-action-inputs-after.json) · [地图裁剪回放](runtime-overlay.json)
 
 正式主地图从189处增至190处。旧版同机位看见支弄地面，更新后桌面和手机均能从地图灯牌选中12号，分户立面、两排连续窗、低花坛和嵌板门可见。近照保留了门左的墙体边界和门右的小号牌；在默认全楼图上需放大才能辨认号牌细部。远景切换到低细节模型。前后两次各检查14处地面和三座原有邻屋，浏览器完成四种文件的真实保存，两次均无页面错误或请求失败。[前态](final-map-24153/before-front.png) · [桌面](final-map-24153/map-desktop.png) · [手机](final-map-24153/map-mobile.png) · [12号与嵌板门](final-map-24153/map-number-12-and-paneled-door.png) · [完整实测](final-map-24153/results.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4b65b845856822a8d5b1ae2e55ab333e50e95a12/projects/shanghai/index.html#landmark=jingan-jinghua-village-no12&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
