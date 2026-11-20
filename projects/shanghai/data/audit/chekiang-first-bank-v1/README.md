@@ -11,3 +11,7 @@
 在154处地标的完整目录下，两套矢量底图在1477号原建筑各生成一份办公楼余面。西侧银行门位于被精模替换的外墙区域，作者坐标原点则仍在保留的办公楼内。国华银行149处阶段的原有检测保持同一结果。697个已冻结网页、模型与目录资源均经真实HTTP读取后复核了字节指纹。[矢量检查](runtime-placement.json) · [新旧程序与负对照](residual-probe/README.md) · [HTTP核对](frozen-http-summary.json)
 
 从台湾银行所在的153处版本保留同机位前照，再从154处黄浦目录进入浙江第一商业银行。原正式视图的桌面、390像素手机、街角、屋面及远景模型均已加载。15个地面点以及近远城市瓦片、四件模型下载全部吻合。原桌面及手机默认镜头可见灯牌压住部分街面，收起侧栏后的街角图可见折角与长排窗口。[前态同机位](original-21116-map/before/map-before.png) · [原桌面与手机结果](original-21116-map/after/main-browser.json) · [街面](original-21116-map/after/map-street-facade.png) · [灯牌覆盖实测](original-21116-map/observed-sign-rectangles.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8ff6d7a9de90f0cd9296c2339d4568a287cc44c9/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

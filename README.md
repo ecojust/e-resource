@@ -3786,7 +3786,7 @@
 | 横滨正金银行大楼（外滩24号） | 2026-11-20 23:31:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yokohama-specie-bank&mode=overview) |
 | 法国邮船大楼（浦江大楼） | 2026-11-20 23:39:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-messageries-maritimes-building&mode=overview) |
 | 台湾银行大楼东门厅与九江路街面 | 2026-11-21 00:24:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-taiwan-building&mode=overview) |
-| 浙江第一商业银行大楼（江西中路与汉口路街面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) |
+| 浙江第一商业银行大楼（江西中路与汉口路街面） | 2026-11-21 00:39:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) |
 
 ### 徐汇区（9处）
 
