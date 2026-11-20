@@ -1,3 +1,11 @@
+# 仁济医院西院2号住院楼（庭院入口立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-renji-hospital-ward-entrance&mode=overview) · [单体旋转与下载](renji-ward-entrance.html) · [来源与制作范围](source/precise/huangpu-renji-hospital-ward-entrance/README.md) · [验收记录](data/audit/renji-ward-entrance-v1/README.md)
+
+山东中路145号内院2号住院楼入口白色塔身及其两侧可见的窗廊。
+
+近景 31,008 个三角面，远景 17,124 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,906,634 字节。上海主图现有 124 处独立入口，黄浦区 53 处。[资产清单](assets/models/candidates/huangpu-renji-hospital-ward-entrance/manifest.json)
+
 # 徐家汇藏书楼北楼（原藏书楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) · [单体旋转与下载](zikawei-north-library.html) · [来源与制作范围](source/precise/xuhui-zikawei-north-library/README.md) · [验收记录](data/audit/zikawei-north-library-v1/README.md)
