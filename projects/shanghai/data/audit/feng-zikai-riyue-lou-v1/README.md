@@ -11,3 +11,7 @@
 独立页面已在22156对应的生产版本实测。桌面1250×820与手机390×844各切换近、远两档，四个下载按钮实际取得原始、网页、远景与可编辑文件并核对哈希。[浏览器与四份下载记录](viewer/viewer.json) · [桌面近景](viewer/viewer-desktop-full.png) · [手机近景](viewer/viewer-mobile-full.png)
 
 最终的193处地标版修正了书斋的初选镜头。原镜头从庭院外侧上方望入，近侧灰墙挡住二层书斋。新镜头以棕框凸窗和门廊为中心。在1280×800桌面普通目录点击、390×844手机普通目录触摸后，均能看到书斋及左右窄窗、正门和台阶。手机画面可见两侧铁栅；桌面信息卡盖住了前景的一部分。正式28156页面的两幅截图均在原生近景组加载后拍摄，四栋中仅1452号楼的对应面被裁切。庭院宽度取实测配准，画面只作外观对照。[原镜头与对照](city-24156/overview-correction/initial-24156-camera.json) · [正式桌面入口](city-24156/overview-correction/released-desktop/signed.png) · [正式手机入口](city-24156/overview-correction/released-phone/signed.png) · [全城近远景、19个地面点与下载](city-24156/desktop/main-browser.json) · [最终机位与画面说明](city-24156/city-visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/5947c0fadf15e48eaa7a297e406b9fb65010fbe3/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，11 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
