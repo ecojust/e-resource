@@ -20,3 +20,7 @@
 在包含新版多伦路镜头及共享模型加载修正的105处目录，从上海主图的建筑目录进入裕华新村3号。桌面、手机分别查到实际近景，远处切到简化模型。一层院门、中央砖竖片和后段粗体都各有近景，实测足迹保留门前可通行区域。桌面默认标题覆盖部分高处，近门细读受发光点影响，可在独立页看清3号牌。[桌面](main-desktop.png) · [院门](numbered-gate.png) · [砖片](brick-blade.png) · [保留原生后段](retained-source.png) · [远景](distant.png) · [手机](main-mobile.png)
 
 同一份初始目录在第一次加载时遇到25秒网络超时，退回粗分块；重新请求详细目录后，首轮仍在近瓦片完全绘出前达到观察时限。完整保留该轮的控制台、HTTP字节和恢复时相机参数。第二轮从正常目录重新进入，桌面初始使用详细来源，无需手动修改视角。实际验证的同源运行与登记文件共140项，另有4项生成输入。[首轮状态与HTTP](preflight/revised-first-load.json) · [最终浏览器报告](main-map-browser.json) · [文件哈希](main-map-inputs.json) · [逐图记录](main-map-visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/22bb76d9866d472d8ce7ba4ebf06f42c757e4e79/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

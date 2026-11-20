@@ -3819,7 +3819,7 @@
 | 美琪大戏院（圆弧门厅、临街外墙与屋顶体量） | 2026-11-20 14:47:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-majestic-theatre&mode=overview) |
 | 华业公寓主楼（H形住宅与中央红瓦塔） | 2026-11-20 15:01:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huaye-apartments&mode=overview) |
 | 涌泉坊愚园路中央拱门与门楼 | 2026-11-20 16:47:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-bubbling-well-lane-gate&mode=overview) |
-| 裕华新村3号（临弄院门与可见楼面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) |
+| 裕华新村3号（临弄院门与可见楼面） | 2026-11-20 16:49:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) |
 
 ### 普陀区（1处）
 
