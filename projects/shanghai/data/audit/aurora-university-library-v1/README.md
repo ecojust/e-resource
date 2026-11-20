@@ -15,3 +15,7 @@
 在相同机位打开 172 处和 173 处两个版本，原先一整块灰色校舍的球场侧换成红砖壁柱、连续窗列及中央纵向楼梯窗。高位图能看到立面背后保留的原建筑屋顶。桌面和手机首次成图都与稳定后的同机位截图逐字节相同。楼梯窗近景有地名标签遮住部分右侧窗列，远景下已无法分辨单个窗格。[改前](city-24135/map-before.png) · [手机](city-24135/map-mobile.png) · [桌面](city-24135/map-desktop.png) · [楼梯窗](city-24135/map-central-stair-window.png) · [屋面](city-24135/map-roof.png) · [街区远景](city-24135/map-distant.png)
 
 实测 18 处地面及相邻楼体位置，包含原震旦博物馆与两处邻校舍底图编号。用最终站点重新读取页面、浏览器模块、资源清单和四件下载，逐项对照最初浏览器验收和冻结源文件。[两代全城站点](city-24135/two-served-sites.json) · [原城市场景](city-24135/control-browser.json) · [细化后场景](city-24135/main-browser.json) · [独立页文件核对](independent-viewer-24135.json) · [逐图记录](city-24135/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c8b1fc328cb0342a7572c70bc25e1e2184ea36d4/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

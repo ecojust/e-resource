@@ -155,7 +155,7 @@
 | 华商纱布交易所（上海自然博物馆旧馆） | 2026-11-21 01:22:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cotton-exchange-building&mode=overview) |
 | 上海科学会堂一号楼（南花园五亭立面） | 2026-11-21 01:57:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-science-hall-building-one&mode=overview) |
 | 光明中学教学楼（原中法学堂） | 2026-11-21 03:17:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sino-french-school-teaching-building&mode=overview) |
-| 震旦大学图书馆教学大楼（西一号楼）球场侧立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) |
+| 震旦大学图书馆教学大楼（西一号楼）球场侧立面 | 2026-11-21 03:24:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) |
 
 ### 徐汇区（14处）
 
