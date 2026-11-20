@@ -55,6 +55,7 @@ def main():
         url = urljoin(source_url, relative)
         files.append(url)
         return url
+    include_import(app, app_source, 'candidate-overview-camera')
     scene = include_import(app, app_source, 'map-scene')
     catalog_module = include_import(app, app_source, 'candidate-city-integrations')
     scene_code = blob(path(scene)).decode()

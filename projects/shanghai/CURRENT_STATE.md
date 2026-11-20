@@ -1,3 +1,11 @@
+# 原上海犹太人总会南京西路722号南楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) · [单体旋转与下载](jewish-club.html) · [来源与制作范围](source/precise/jingan-jewish-club/README.md) · [验收记录](data/audit/jewish-club-v1/README.md)
+
+南京西路722号原犹太人总会朝南园侧外观、中央拱廊及可据照片定位的两翼。
+
+近景 80,644 个三角面，远景 36,830 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 8,729,474 字节。上海主图现有 116 处独立入口，静安区 8 处。[资产清单](assets/models/candidates/jingan-jewish-club/manifest.json)
+
 # 法国总会（花园饭店历史会所）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-club&mode=overview) · [单体旋转与下载](french-club.html) · [来源与制作范围](source/precise/huangpu-french-club/README.md) · [验收记录](data/audit/french-club-v1/README.md)

@@ -44,34 +44,34 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 77,
+  "candidate_manifest_count": 78,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 75,
-  "resulting_city_count": 115,
+  "new_city_model_count": 76,
+  "resulting_city_count": 116,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 6,
     "长宁区": 4,
-    "静安区": 6,
+    "静安区": 7,
     "黄浦区": 32
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 308,
-    "bytes": 997702132,
+    "files": 312,
+    "bytes": 1006431606,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 17641599,
+    "current_run_added_bytes": 8729474,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 176
+    "inherited_incremental_files": 180
   },
   "records": [
     {
@@ -6368,6 +6368,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "茂名南路58号法国总会低层会所，建模范围按历史沿革、建筑照片和园区平面确认。"
+    },
+    {
+      "id": "jingan-jewish-club",
+      "name": "原上海犹太人总会南京西路722号南楼",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "jewish-club.html",
+      "manifest": "assets/models/candidates/jingan-jewish-club/manifest.json",
+      "manifest_sha256": "330a5dbd7ea9590a661006be1620b2849575c042129c519584b65d81c77ffd3f",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-jewish-club/jingan-jewish-club-raw.glb",
+          "bytes": 4873856,
+          "sha256": "b06178d987dbe8f40626c7aecff0b1a9828ac6af913c7128e57f4e4ceb973639",
+          "triangles": 80644,
+          "bounds_gltf_m": [
+            [
+              -28.829999923706055,
+              -0.25099998712539673,
+              -15.954999923706055
+            ],
+            [
+              28.829999923706055,
+              13.100000381469727,
+              0.7049999833106995
+            ]
+          ],
+          "materials": 17
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-jewish-club/jingan-jewish-club-web.glb",
+          "bytes": 1817984,
+          "sha256": "185e5b0ea8e6f91179f61c97a7afcd07eea1c436ec0ed833df89a25d01fd61ae",
+          "triangles": 80644,
+          "bounds_gltf_m": [
+            [
+              -28.8299999,
+              -0.250999987,
+              -15.9549999
+            ],
+            [
+              28.8299999,
+              13.1000004,
+              0.704999983
+            ]
+          ],
+          "materials": 17
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-jewish-club/jingan-jewish-club-lod.glb",
+          "bytes": 735836,
+          "sha256": "b13b55d1a47024c64320f7303e10eaa08ba88e0d982f0d1c7d7470e4642e8c07",
+          "triangles": 36830,
+          "bounds_gltf_m": [
+            [
+              -28.8299999,
+              -0.250999987,
+              -15.9549999
+            ],
+            [
+              28.8299999,
+              13.1000004,
+              0.704999983
+            ]
+          ],
+          "materials": 15
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-jewish-club/jingan-jewish-club.blend",
+          "bytes": 1301798,
+          "sha256": "9835062fb848dd27a6ac99096cd99c092261a43177e94ec08aa8457f2ecabef8"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -28.829999923706055,
+            -0.25099998712539673,
+            -15.954999923706055
+          ],
+          "max": [
+            28.829999923706055,
+            13.100000381469727,
+            0.7049999833106995
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -28.829999923706055,
+            -0.7049999833106995,
+            -0.25099998712539673
+          ],
+          "max": [
+            28.829999923706055,
+            15.954999923706055,
+            13.100000381469727
+          ]
+        },
+        "triangles": 80644,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "南京西路722号原犹太人总会朝南园侧外观、中央拱廊及可据照片定位的两翼。"
     }
   ],
   "baseline_inventory": {
@@ -6413,6 +6519,7 @@
     "projects/shanghai/assets/models/candidates/jingan-country-hospital-north-block/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-huaye-apartments/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-jewish-club/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-yuhua-new-residential-quarter-03/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
@@ -6423,13 +6530,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/french-club-v1",
+  "incremental_audit_directory": "data/audit/jewish-club-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/american-club-v1/inventory-increment.json",
-    "bytes": 147069,
-    "sha256": "64ef71de0d2a81d6ec3ed0845305e4aaf590c40f0519aa9c49da1f4dcb20ea11"
+    "file": "data/audit/french-club-v1/inventory-increment.json",
+    "bytes": 150537,
+    "sha256": "d222a594c0a41337bc0768ac05b06b16a323a7f32bc5d3c57d2df33294789a51"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-french-club/manifest.json"
+    "projects/shanghai/assets/models/candidates/jingan-jewish-club/manifest.json"
   ]
 }

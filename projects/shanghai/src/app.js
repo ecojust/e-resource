@@ -1,12 +1,12 @@
-import { createShanghaiScene } from './map-scene.js?v=french-club-v1';
+import { createShanghaiScene } from './map-scene.js?v=jewish-club-v1';
 import { WalkController } from './walk-controller.js';
-import {setupHistoricalView} from './historical-view.js?v=french-club-v1';
+import {setupHistoricalView} from './historical-view.js?v=jewish-club-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js?v=french-club-v1';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=jewish-club-v1';
 import { readVerifiedBytes } from './ordinary-building-catalog.js?v=asset-timeout-retry-v1';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=french-club-v1';
-import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=jewish-club-v1';
+import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js?v=jewish-club-courtyard-v1';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
@@ -262,7 +262,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=french-club-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=jewish-club-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
       if(name!=='data/candidate-city-integrations.json')throw error;
       candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
     })));

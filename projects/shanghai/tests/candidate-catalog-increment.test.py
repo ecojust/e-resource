@@ -213,6 +213,7 @@ class IncrementalCatalogTests(unittest.TestCase):
         detailed_collision = {"type": "Polygon", "coordinates": [detailed_ring]}
         record = {"id": NEW_ID, "lng": 121.47445, "lat": 31.23685, "heading": 0, "scale": 1,
                   "overviewBearing": 180, "overviewPitch": 50,
+                  "overview_focus_bounds_glb": {"min": [.1, .2, .3], "max": [.7, .8, .9]},
                   "model_geometry_sha256": {"raw": inventory["records"][-1]["assets"]["raw"]["sha256"]},
                   "navigation": {"listed": False}, "collision_geometry": detailed_collision,
                   "replacement_geometry": None, "source_feature_ids": {"building": [], "building_part": []},
@@ -235,6 +236,15 @@ class IncrementalCatalogTests(unittest.TestCase):
         self.assertEqual(catalog["models"][-1]["navigation"], {"listed": False})
         self.assertEqual(catalog["models"][-1]["overviewBearing"], 180)
         self.assertEqual(catalog["models"][-1]["overviewPitch"], 50)
+        self.assertEqual(catalog["models"][-1]["overview_focus_bounds_glb"], record["overview_focus_bounds_glb"])
+        self.assertEqual(catalog["models"][-1]["bounds_glb"], {"min": [0, 0, 0], "max": [1, 1, 1]})
+        for low, high in (([-.01, 0, 0], [.5, .5, .5]), ([.5, 0, 0], [.5, .5, .5]),
+                          ([0, 0], [.5, .5, .5]), ([0, 0, 0], [1.01, .5, .5])):
+            invalid = dict(record, overview_focus_bounds_glb={"min": low, "max": high})
+            (current.parent / "additional-placement.json").write_text(json.dumps({"records": [invalid]}))
+            with patch.object(builder, "checked_asset", return_value=b""), self.assertRaisesRegex(AssertionError, "overview_focus_bounds_glb"):
+                builder.build_catalog(inventory, current)
+        (current.parent / "additional-placement.json").write_text(json.dumps({"records": [record]}))
         self.assertEqual(catalog["models"][-1]["collision_geometry"], detailed_collision)
         self.assertEqual(catalog["models"][-1]["display_height_clips"], [height_clip])
         self.assertIsNone(catalog["models"][-1]["replacement_geometry"])

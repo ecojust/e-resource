@@ -538,6 +538,16 @@ def build_catalog(inventory, inventory_path=INVENTORY):
         if clearance is not None:
             model["ground_collision_mode"] = placement["ground_collision_mode"]
             model["ground_clearance_m"] = clearance
+        if "overview_focus_bounds_glb" in placement:
+            focus = placement["overview_focus_bounds_glb"]
+            label = f"Invalid {ident} overview_focus_bounds_glb"
+            assert isinstance(focus, dict) and set(focus) == {"min", "max"}, label
+            assert all(isinstance(axis, list) and len(axis) == 3 and
+                       all(type(value) in (int, float) and math.isfinite(value) for value in axis)
+                       for axis in focus.values()), label
+            assert all(outer_low <= low < high <= outer_high for outer_low, low, high, outer_high in
+                       zip(bounds["min"], focus["min"], focus["max"], bounds["max"])), label
+            model["overview_focus_bounds_glb"] = focus
         for key in ("overviewBearing", "overviewPitch"):
             if key in placement:
                 assert isinstance(placement[key], (float, int)) and math.isfinite(placement[key]), f"Invalid {ident} {key}"

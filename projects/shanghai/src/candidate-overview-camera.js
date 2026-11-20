@@ -3,12 +3,18 @@ const DEG=Math.PI/180,EARTH=6371008.8;
 // numeric zero does not clear a previous asymmetric padding object.
 export const OVERVIEW_CAMERA_RESET={elevation:0,padding:{top:0,bottom:0,left:0,right:0}};
 
-/** Fit the delivered GLB's eight corners, including height, into the free map
+/** Fit the overview bounds, including height, into the free map
  * viewport. Coordinates and camera elevation are display parameters only. */
 export function candidateOverviewCamera(place,{width,height,insets={}}){
   if(!place.city_integration)return null;
-  const bounds=place.bounds_glb;
-  if(!bounds?.min?.every(Number.isFinite)||!bounds?.max?.every(Number.isFinite))return null;
+  const whole=place.bounds_glb;
+  if(!whole?.min?.every(Number.isFinite)||!whole?.max?.every(Number.isFinite))return null;
+  const focus=place.overview_focus_bounds_glb;
+  // A documented courtyard detail may need its own framing to clear surrounding buildings.
+  const contained=Array.isArray(focus?.min) && Array.isArray(focus?.max) && focus.min.length===3 && focus.max.length===3 &&
+    focus.min.every((low,i)=>Number.isFinite(low)&&Number.isFinite(focus.max[i]) &&
+      whole.min[i]<=low && low<focus.max[i] && focus.max[i]<=whole.max[i]);
+  const bounds=contained?focus:whole;
   const padding={left:Math.max(0,insets.left||0),right:Math.max(0,insets.right||0),top:Math.max(0,insets.top||0),bottom:Math.max(0,insets.bottom||0)};
   const availableWidth=Math.max(80,width-padding.left-padding.right),availableHeight=Math.max(80,height-padding.top-padding.bottom);
   const scale=place.scale||1,angle=(place.heading||0)*DEG,c=Math.cos(angle),s=Math.sin(angle),points=[];

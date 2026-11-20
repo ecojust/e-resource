@@ -49,7 +49,7 @@ const viewports=[
   {width:320,height:568,insets:{left:16,right:65,top:182,bottom:190}},
 ];
 
-for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: all delivered candidate bounds fit the real MapLibre camera outside the interface`,()=>{
+for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: all delivered overview bounds fit the real MapLibre camera outside the interface`,()=>{
   assert(candidates.length>=30);
   for(const place of candidates){
     const camera=candidateOverviewCamera(place,viewport);
@@ -64,7 +64,7 @@ for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: a
     assert(camera,place.id);
     assert(camera.zoom>=8&&camera.zoom<=24);assert(Number.isFinite(camera.elevation));
     assert.deepEqual(camera.padding,viewport.insets);
-    const transform=actualTransform(camera,viewport),corners=worldCorners(place);
+    const transform=actualTransform(camera,viewport),corners=worldCorners({...place,bounds_glb:place.overview_focus_bounds_glb??place.bounds_glb});
     assert.equal(corners.length,8);
     for(const corner of corners){
       const pixel=transform.coordinatePoint(corner,corner.toAltitude(),transform._pixelMatrix3D);
@@ -85,6 +85,23 @@ test('candidate camera uses the verified approach bearing and the low Lu Xun vie
   const luxun=candidates.find(row=>row.id==='hongkou-luxun-residence-facade');assert(luxun);
   assert.equal(candidateOverviewCamera(luxun,viewports[0]).pitch,16);
   assert.equal(candidateOverviewCamera({...luxun,overviewPitch:22},viewports[0]).pitch,22);
+});
+
+test('an optional courtyard focus changes framing without changing the full model bounds',()=>{
+  const whole={min:[-28.83,-0.251,-15.955],max:[28.83,13.100001,0.705]};
+  const focus={min:[-6,0,-2],max:[6,13.1,0.5]};
+  const place={...candidates[0],bounds_glb:whole,overviewPitch:65,overviewBearing:-1};
+  const sourceBounds=structuredClone(whole);
+  for(const viewport of viewports){
+    const normal=candidateOverviewCamera(place,viewport);
+    const framed=candidateOverviewCamera({...place,overview_focus_bounds_glb:focus},viewport);
+    assert.deepEqual(framed,candidateOverviewCamera({...place,bounds_glb:focus},viewport));
+    assert(framed.zoom>normal.zoom);assert.deepEqual(whole,sourceBounds);
+    for(const invalid of [{min:[-30,0,-2],max:focus.max},{min:focus.max,max:focus.min},
+      {min:[NaN,0,-2],max:focus.max},{min:[-6,0],max:focus.max},{min:'bad',max:focus.max},null]){
+      assert.deepEqual(candidateOverviewCamera({...place,overview_focus_bounds_glb:invalid},viewport),normal);
+    }
+  }
 });
 
 test('all forty legacy entries preserve their established overview route',()=>{
