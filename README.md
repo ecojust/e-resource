@@ -3838,7 +3838,7 @@
 | 原上海犹太人总会南京西路722号南楼 | 2026-11-20 18:03:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) |
 | 百乐门舞厅（愚园路218号圆角立面与灯塔） | 2026-11-20 18:17:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) |
 | 同孚大楼（中国银行西区分行旧址） | 2026-11-20 22:54:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) |
-| 雷士德医学研究院主楼（2024修缮后外观） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview) |
+| 雷士德医学研究院主楼（2024修缮后外观） | 2026-11-21 02:57:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview) |
 
 ### 普陀区（1处）
 
