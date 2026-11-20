@@ -19,3 +19,7 @@
 ### 98处主地图
 
 桌面与手机均从长宁区目录进入第98处。北偏西的庭院立面能看见两侧窗组、筒瓦门篷和中央小阳台，选中标牌在部分近景覆盖门窗下缘。近景瓦片包含11个所有者，只对677进行两三角形裁剪，运行时建立一道源断面。斜视可同时看到22.483米估高的原生后部、保留的邻楼和浅层立面。五处地面查询、全量近景、远景切换与四个实际下载均经核对。共绑定126项同源资源与四项生成记录。[桌面](main-desktop.png) · [手机](main-mobile.png) · [临院入口](courtyard-door.png) · [小阳台](balcony-window.png) · [保留体块](retained-source.png) · [远景](distant.png) · [视觉记录](main-map-visual-review.json) · [浏览器状态](main-map-browser.json) · [请求收据](main-map-inputs.json) · [98处目录快照](production-snapshot.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/339e9b3290ef6c6b437531727b289290850ef601/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

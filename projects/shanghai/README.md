@@ -130,7 +130,7 @@
 | 哥伦比亚乡村俱乐部主楼 | <!-- columbia-publication-time:start -->[2026-10-27 22:57:05](https://github.com/ecojust/e-resource/commit/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746)<!-- columbia-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk) |
 | 孙科别墅主楼（南花园敞廊与北门廊） | 2026-11-20 15:24:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-sun-ke-villa&mode=overview) |
 | 罗别根花园主宅（南向双山墙与露木构阳台） | 2026-11-20 15:31:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) |
-| 泰安路115弄6号周谷城旧居（庭院入口立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) |
+| 泰安路115弄6号周谷城旧居（庭院入口立面） | 2026-11-20 15:40:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) |
 
 ### 静安区（5处）
 
