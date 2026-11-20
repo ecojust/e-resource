@@ -17,3 +17,7 @@ Livelikerw在2014年12月9日拍摄的日间原片、Windmemories在2024年1月7
 两版全城目录均有176处地点。桌面从原有“鸿德堂 · 多伦路59号”条目点击“进入漫游”，390×844手机从同一条目触摸进入。原版北门两座石台为空，修订版中两只坐狮位于门阶两侧。北面受光偏暗，东、西近照仍能辨出卷鬃、前足、胸带与原石座边缘。正面同机位的中央踏步检查区共10,208像素，所有颜色通道逐像素相同。两版真实远景分别载入178,968和192,592面。[原北门](city-24139/before/both-guardians-street.png) · [两只坐狮](city-24139/after/both-guardians-street.png) · [东侧近照](city-24139/after/east-guardian-street.png) · [西侧近照](city-24139/after/west-guardian-street.png) · [同机位像素复核](city-24139/city-pair-pixels.json)
 
 从手机会话直接将视口改为桌面宽度，场景一度贴在画面左侧。独立打开1100×744桌面窗口，再次从正常目录点击进入，北门与两翼居中，背景可见邻楼简化体块。原版与修订版的原始GLB、网页近景、网页远景和Blender文件均从相应正式站点下载并校验，四件合计分别为82,899,192和60,111,427字节。首次基准场景出现14项基础资源请求失败，恢复后两站逐件校验48个公开地址，再跑完整城市前后对照，两次均无同源HTTP或页面错误。[独立桌面](city-24139/desktop-fresh/north-entrance-desktop-fresh.png) · [手机](city-24139/after/north-entrance-phone.png) · [同页改宽对照](city-24139/after/north-entrance-walk.png) · [逐图审查](city-24139/city-visual-review.json) · [八件下载](city-24139/updated-entry-and-downloads.json) · [初次记录](city-24139/first-load/ordinary-map.json) · [资源恢复](city-24139/restored-http.json) · [两版城市签名](city-24139/signed-maps.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/2f40706a146904b967c82e93c0ac9bcab3214812/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
