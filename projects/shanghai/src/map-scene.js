@@ -28,7 +28,7 @@ import {CandidateCityState} from './candidate-city-integrations.js?v=metropol-ci
 import {CandidateCityClipper} from './candidate-city-clipping.js?v=kincheng-bank-v1';
 import {planCandidateVectorClipping} from './candidate-vector-clipping.js?v=majestic-theatre-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
-import {createBuildingBeacons} from './building-beacons.js?v=compact-city-numbers-v1';
+import {createBuildingBeacons} from './building-beacons.js?v=building-group-picker-v1';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;

@@ -1,3 +1,4 @@
+import {groupBeaconLabels,createBeaconGroupPicker} from './building-beacon-groups.js?v=building-group-picker-v1';
 const PREFIX='shanghai-building-beacons';
 const ANCHORS=`${PREFIX}-anchors`,LABELS=`${PREFIX}-labels`,LINES=`${PREFIX}-leaders`;
 const LAMP=`${PREFIX}-lamp`,SIGN=`${PREFIX}-sign`;
@@ -27,10 +28,8 @@ const GROUND={getElevationForLngLat:()=>0};
 const collection=features=>({type:'FeatureCollection',features});
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
-/** Preserve every ID. When the screen can fit the cards, use separate fixed-pixel
- * cells; at extreme density all signs remain present and the directory is the
- * accessible alternative to overlapping labels. No zoom-based culling/clusters.
- */
+/** Use full names or readable numbers while each visible building has its own
+ * hit area. At higher density spatial groups open the corresponding names. */
 export function layoutBeaconLabels(items,{width,height,insets={},focusedId=null}){
   if(!items.length)return [];
   const margin=8,x0=Math.max(margin,insets.left||0),x1=Math.min(width-margin,width-(insets.right||0));
@@ -100,6 +99,11 @@ export function layoutBeaconLabels(items,{width,height,insets={},focusedId=null}
       slots=balanced;compactWidth=size.regular;compactHeight=size.height;wideWidth=size.wide;
       break;
     }
+  }
+  const wideSlots=compact&&wideCount?slots.filter(s=>s.threeDigits).length:0;
+  if(slots.length<items.length || (compact&&wideCount&&
+    (wideSlots<wideCount || slots.length-wideSlots<items.length-wideCount || items.some(i=>i.number>=1000)))){
+    return groupBeaconLabels(items,{left:x0,top:y0,width:availableWidth,height:availableHeight});
   }
   const used=new Set();
   const placed=new Map();
@@ -194,7 +198,8 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=
     if(!row.id||ids.has(row.id)||!Number.isFinite(row.lng)||!Number.isFinite(row.lat))throw Error('建筑灯牌目录无效');
     ids.add(row.id);byId.set(row.id,row);
   }
-  let destroyed=false,timer=null,layout=[],revision=0;
+  let destroyed=false,timer=null,layout=[],revision=0,groupPicker=null,groupForMember=new Map();
+  const numbers=new Map(records.map((row,i)=>[row.id,i+1]));
   const listeners=[],clickEvents=new WeakSet(),sources=[LINES,ANCHORS,LABELS],layers=[`${LINES}-line`,`${ANCHORS}-symbol`,`${LABELS}-symbol`,`${LABELS}-numbers`];
   const feature=(row,index,compact=false,inViewport=true,width=24,height=20)=>{
     const numberSprite=numberSprites.find(spec=>spec.width===width&&spec.height===height)??NUMBER_SPRITES[0];
@@ -241,11 +246,21 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=
       right:Math.max(width>760?88:64,toolRect?width-toolRect.left+8:0),
       top:Math.max(width>760?154:182,(legendRect.bottom||0)+8),
       bottom:Math.max(width>760?152:174,cardRect?height-cardRect.top+8:0)};
-    layout=layoutBeaconLabels(visible,{width,height,insets,focusedId:getFocusedId()});const offsets=new Map(layout.map(p=>[p.id,p]));
+    layout=layoutBeaconLabels(visible,{width,height,insets,focusedId:getFocusedId()});
+    const grouped=Boolean(layout[0]?.memberIds),individual=grouped?[]:layout;
+    const offsets=new Map(individual.map(p=>[p.id,p]));
+    groupForMember=new Map();
+    if(grouped){
+      groupPicker??=createBeaconGroupPicker({documentObject,container:map.getContainer(),byId,numbers,onSelect});
+      for(const group of layout)for(const id of group.memberIds)groupForMember.set(id,group.id);
+    }
+    groupPicker?.update(grouped?layout:[]);
+    const hint=grouped?'点选分组，查看附近建筑':'密集时显示编号，点选查看名称';
+    if(note.textContent!==hint)note.textContent=hint;
     // GeoJSON vector tiles stringify array properties. Keep pixel vectors in
     // literal style expressions so the actual symbol evaluator receives vec2.
-    const expression=divisor=>layout.length?['match',['get','id'],...layout.flatMap(p=>[p.id,['literal',[(p.labelX-p.x)/divisor,(p.labelY-p.y)/divisor]]]),['literal',[0,0]]]:[0,0];
-    const sizeExpression=size=>layout.some(p=>Math.abs(p.perspectiveScale-1)>1e-7)?['match',['get','id'],...layout.flatMap(p=>[p.id,size*p.perspectiveScale]),size]:size;
+    const expression=divisor=>individual.length?['match',['get','id'],...individual.flatMap(p=>[p.id,['literal',[(p.labelX-p.x)/divisor,(p.labelY-p.y)/divisor]]]),['literal',[0,0]]]:[0,0];
+    const sizeExpression=size=>individual.some(p=>Math.abs(p.perspectiveScale-1)>1e-7)?['match',['get','id'],...individual.flatMap(p=>[p.id,size*p.perspectiveScale]),size]:size;
     for(const layer of layers.slice(1))map.setLayoutProperty(layer,'icon-size',sizeExpression(1));
     for(const layer of layers.slice(2))map.setLayoutProperty(layer,'text-size',sizeExpression(12));
     map.setLayoutProperty(layers[2],'text-offset',expression(12));
@@ -253,14 +268,16 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=
     map.setLayoutProperty(layers[3],'text-offset',expression(12));
     map.setLayoutProperty(layers[3],'icon-offset',expression(1));
     const labelData=[],leaders=[];
+    const groupLeaders=new Map(grouped?layout.map(group=>[group.representative,group]):[]);
     records.forEach((row,index)=>{
-      const point=offsets.get(row.id),slot=point?{x:point.labelX,y:point.labelY}:null;
+      const point=offsets.get(row.id),label=point||groupLeaders.get(row.id);
+      const slot=label?{x:label.labelX,y:label.labelY}:null;
       const coordinate=slot&&onSurface(slot)?unprojectBeaconSlot(map,slot):null;
       const target=coordinate?[coordinate.lng,coordinate.lat]:[row.lng,row.lat];
       // Keep label geometry at its real anchor. Pixel offsets work above the
       // ground-plane horizon, where unproject would jump behind the camera.
       labelData.push(feature(row,index,Boolean(point?.compact),Boolean(point),point?.width,point?.height));
-      leaders.push({type:'Feature',id:row.id,properties:{id:row.id},geometry:{type:'LineString',coordinates:[[row.lng,row.lat],target]}});
+      if(!grouped||label)leaders.push({type:'Feature',id:row.id,properties:{id:row.id},geometry:{type:'LineString',coordinates:[[row.lng,row.lat],target]}});
     });
     map.getSource(LABELS)?.setData(collection(labelData));map.getSource(LINES)?.setData(collection(leaders));revision++;map.triggerRepaint();
   }
@@ -270,10 +287,15 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=
     const card=hitTestBeaconLabels(layout,point);if(card)return card;
     // The original lamp has no dynamic offset and retains its native hit box.
     const hit=map.queryRenderedFeatures(point,{layers:[layers[1]]})[0];
-    const id=hit?.properties?.id??hit?.id;return byId.has(id)?id:null;
+    const id=hit?.properties?.id??hit?.id;return groupForMember.get(id) || (byId.has(id)?id:null);
   }
   const click=event=>{if(event.originalEvent&&clickEvents.has(event.originalEvent))return;
-    const row=byId.get(hitTest(event.point));
+    const id=hitTest(event.point);
+    if(id && groupPicker && layout.some(group=>group.memberIds && group.id===id)){
+      if(event.originalEvent)clickEvents.add(event.originalEvent);
+      event.originalEvent?.preventDefault?.();groupPicker.open(id);return;
+    }
+    const row=byId.get(id);
     if(row){if(event.originalEvent)clickEvents.add(event.originalEvent);event.originalEvent?.preventDefault?.();onSelect(row);}};
   // A displaced card takes precedence over an original lamp underneath it.
   map.on('click',click);listeners.push(['click',click]);
@@ -286,8 +308,8 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=
   refresh();
   return {refresh,hitTest,getState:()=>({count:records.length,ids:[...ids],districtCount:new Set(records.map(r=>r.districtId)).size,zoom:map.getZoom(),revision,
     labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),...numberSprites.map(s=>s.id)],viewportLabelCount:layout.length,
-    labelMode:layout.some(p=>p.compact)?'numbers':'names',overlapFallbackCount:layout.filter(p=>p.overlapFallback).length,labelPositions:layout.map(p=>({id:p.id,number:records.findIndex(r=>r.id===p.id)+1,x:p.labelX,y:p.labelY,width:p.width,height:p.height,compact:p.compact}))}),
+    visibleBuildingCount:groupForMember.size||layout.length,labelMode:groupForMember.size?'groups':layout.some(p=>p.compact)?'numbers':'names',overlapFallbackCount:layout.filter(p=>p.overlapFallback).length,labelPositions:layout.map(p=>({id:p.id,...(p.memberIds?{memberIds:[...p.memberIds],representative:p.representative}:{number:numbers.get(p.id)}),x:p.labelX,y:p.labelY,width:p.width,height:p.height,compact:p.compact}))}),
     destroy(){if(destroyed)return;destroyed=true;if(timer!==null)clearTimeout(timer);for(const args of listeners)map.off(...args);
       for(const id of [...layers].reverse())if(map.getLayer(id))map.removeLayer(id);for(const id of sources)if(map.getSource(id))map.removeSource(id);
-      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),...numberSprites.map(s=>s.id)])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
+      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),...numberSprites.map(s=>s.id)])if(map.hasImage(id))map.removeImage(id);groupPicker?.destroy();legend.remove();style.remove();map.getCanvas().style.cursor='';}};
 }

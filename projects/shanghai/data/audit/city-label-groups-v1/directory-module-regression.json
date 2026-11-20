@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "before": {
+    "total": 119,
+    "failed": 1,
+    "test": "global model cards retain auxiliary previews, source documentation and asset download metadata",
+    "model": "yangpu-former-shanghai-city-museum",
+    "test_source_sha256": "f7fb284b60847cb1646ae5b52ec2e86b5f7461a03f666dc29f968c1f689071d5"
+  },
+  "after": {
+    "total": 119,
+    "failed": 0,
+    "test_source_sha256": "9479cc6bfabccdfad814d0a12ee85ab001f95aa3f482087d77d5db352c9d5afd"
+  },
+  "viewer_page": "city-museum.html",
+  "actual_script": "src/city-museum.js?v=city-museum-east-hall-roof-v1",
+  "cause": "Directory test previously discarded local script tags with a version query before looking for the model download links.",
+  "suites": [
+    "building-beacons",
+    "building-beacon-groups",
+    "candidate-city-clipping",
+    "candidate-geometry",
+    "candidate-overview-camera",
+    "landmark-directory",
+    "ordinary-navigation",
+    "ordinary-runtime",
+    "ordinary-curated-regression"
+  ]
+}

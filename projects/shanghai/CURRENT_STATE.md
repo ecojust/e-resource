@@ -1,3 +1,11 @@
+# 在外滩17号字林西报大楼原模型上细化临街两端首层的双扇翼门及门楣
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund17&mode=walk) · [四种模型下载](source/precise/bund17/revisions/street-wing-doors/manifest.json) · [来源与制作范围](source/precise/bund17/revisions/street-wing-doors/README.md) · [验收记录](data/audit/daily-news-wing-doors-v1/README.md)
+
+在外滩17号字林西报大楼原模型上细化临街两端首层的双扇翼门及门楣。
+
+近景 83,288 个三角面，远景 56,524 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 29,536,030 字节。上海主图现有 126 处独立入口，黄浦区 53 处。[资产清单](source/precise/bund17/revisions/street-wing-doors/manifest.json)
+
 # 在外滩6号原模型的临江二层中央三窗增补照片可辨的六根贴柱
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk) · [四种模型下载](source/precise/bund06/revisions/east-window-columns/manifest.json) · [来源与制作范围](source/precise/bund06/revisions/east-window-columns/README.md) · [验收记录](data/audit/tongshang-east-window-columns-v1/README.md)

@@ -98,7 +98,7 @@ test('global model cards retain auxiliary previews, source documentation and ass
     const sources=[...page.matchAll(/href="(source\/[^"#]+\/README\.md)"/g)].map(row=>row[1]);
     assert(sources.length>0,`${item.id} source explanation is reachable`);
     for(const path of sources)assert(await sourceDocumentExists(path),path);
-    const scripts=[...page.matchAll(/<script\b[^>]*src="(src\/[^"?]+\.js)"/g)].map(row=>row[1]);
+    const scripts=[...page.matchAll(/<script\b[^>]*src="(src\/[^"?#]+\.js)(?:\?[^"#]*)?(?:#[^"]*)?"/g)].map(row=>row[1]);
     const modules=[...page.matchAll(/<script\b[^>]*type="module"[^>]*>([\s\S]*?)<\/script>/g)].map(row=>row[1]);
     assert(scripts.length || modules.some(code=>code.trim()), item.id);
     const source=[...await Promise.all(scripts.map(metadata)),...modules].join('\n');

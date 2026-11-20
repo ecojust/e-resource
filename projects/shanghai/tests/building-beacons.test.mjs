@@ -386,9 +386,9 @@ function expectedNumberCell(count, availableHeight) {
   assert.fail('all delivered signs must fit inside the measured phone area');
 }
 
-test('all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone',()=>{
+test('up to 125 sites remain separately numbered and clickable above a tall title card on a 320 by 568 phone',()=>{
   const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
-    ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
+    ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models].slice(0,125);
   const count=delivered.length;assert(count>=70);
   assert(delivered.some(row=>[...row.name].length>12),'use the real long model titles');
   const map=new BeaconMap({width:320,height:568}),selected=[],tools=new Element(),card=new Element();
@@ -430,9 +430,9 @@ test('97 numbered signs retain independent cells with the 138 pixel high phone m
   for(const entry of layout)assert.equal(hitTestBeaconLabels(layout,{x:entry.labelX,y:entry.labelY}),entry.id);
 });
 
-test('long building title cards retain every delivered sign in the smaller phone area at all zooms',()=>{
+test('long title cards retain the first 125 numbered sites in the smaller phone area at all zooms',()=>{
   const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
-    ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
+    ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models].slice(0,125);
   assert(delivered.length>=75);
   const targets=['huangpu-cathay-mansions','huangpu-grosvenor-house','huangpu-shanghai-municipal-council','yangpu-former-shanghai-city-hall'];
   if(delivered.some(row=>row.id==='yangpu-jiangwan-stadium'))targets.push('yangpu-jiangwan-stadium');
