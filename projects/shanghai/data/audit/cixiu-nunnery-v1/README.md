@@ -25,3 +25,7 @@
 24144版登记前，同机位显示448号旧建筑的连续屋面。24145版从1280×800桌面目录和独立390×844手机目录进入，院内可见红木两厢、透光顶棚和北殿的上层窗栏。较高的保留楼体遮住了从街面看向北殿的部分底层。在院中可通行处取景，镜头对准北殿后，能辨右起“大雄寶殿”四字、横枋和下方格扇。近图中横梁遮住字的上缘，棚架的影子斜过字面。最初的廊道镜头只拍到近处瓦面，原图也一并保留。[登记前同镜位](city-24145/before/map-before.png) · [桌面全院](city-24145/desktop/map-desktop.png) · [手机触控放大](city-24145/phone/map-mobile-zoom.png) · [北殿正面](city-24145/inside-court/central-north-hall.png) · [从东厢看北殿](city-24145/inside-court/east-gallery-to-hall.png) · [逐图判读](city-24145/city-visual-review.json)
 
 正式场景含182个目录入口，前后两版签入的输入分别为943和954项。北殿所在的原建筑448号保有两段截面，地面47处和矢量8项检查均通过。分页渲染保留该宏块全部322个裁剪三角面，远近两档的颜色、深度与阴影均在真实浏览器中复核。首次补拍时有一份相邻建筑文件返回502。按固定Git对象恢复后，两站都重新下载到相同的76,849字节，重新进入院内的全过程无HTTP或WebGL错误。[真实地图与碰撞检查](city-24145/desktop/main-browser.json) · [分页与截面](city-24145/paged-runtime.json) · [实际阴影](city-24145/paged-real-shadows.json) · [相邻文件恢复](city-24145/source-recovery/restored-http.json) · [院内复拍与相机](city-24145/inside-court/inside-court.json) · [独立页六图与四个下载](city-24145/viewer/viewer.json)
+
+GitHub 固定提交的地图入口、运行模块、来源和四种下载等 39 个公开文件均实际返回 HTTP 200，字节数及 SHA-256 均与 Git 对应文件相同。 本次固定提交在第三方地图预览服务的入口响应为 500。主图交互依据本页所列的同版本浏览器实测。[GitHub 版本目录](https://github.com/ecojust/e-resource/tree/d1968852e369491d4bb4a6591fb8947097c0586a/projects/shanghai) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，11 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
