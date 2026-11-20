@@ -1,0 +1,11 @@
+captured mobile-default 19.407984246051548 3
+captured mobile-plus 20.407984246051548 2
+captured desktop-default 18.835583645103814 5
+mobile-default 3 [(1346, 0), (1330, 0), (1327, 0), (1347, 0)] 0
+mobile-plus 2 [(4832, 0), (4795, 0), (4794, 0), (4749, 0)] 0
+desktop-default 5 [(633, 0), (627, 0), (632, 0), (619, 0)] 0
+Traceback (most recent call last):
+  File "/workspace/e-resource/projects/shanghai/data/audit/bank-of-taiwan-v1/final-map/four-columns/verify-final.py", line 21, in <module>
+    assert all(col['fully_in_viewport'] and col['on_screen_pixels']>340 and col['under_rendered_sign_pixels']==0 for col in view['column_shafts']),name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: mobile-plus

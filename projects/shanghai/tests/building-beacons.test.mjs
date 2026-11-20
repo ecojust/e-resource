@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
-import {layoutBeaconLabels,hitTestBeaconLabels,projectBeaconAnchor,beaconPerspectiveScale,createBuildingBeacons} from '../src/building-beacons.js';
+import {avoidFocusedFacade,layoutBeaconLabels,hitTestBeaconLabels,projectBeaconAnchor,beaconPerspectiveScale,createBuildingBeacons} from '../src/building-beacons.js';
 import {candidateOverviewCamera} from '../src/candidate-overview-camera.js';
 
 const clone=value=>structuredClone(value);
@@ -862,4 +862,28 @@ test('the real 135-place Hamilton desktop selection clears the facade and restor
   assert.equal(single.length,1);assert.equal(single[0].id,f.focus.id);assert.equal(single[0].x,f.mobile.recordedSelection.x);
   assert.equal(single[0].y,f.mobile.recordedSelection.y);assert.equal(single[0].width,f.mobile.recordedSelection.width);
   mobile.api.destroy();
+});
+
+test('four east portico columns stay clear with a narrow viewport or an open district panel',()=>{
+  const fixture=JSON.parse(readFileSync(new URL('./fixtures/beacon-taiwan-four-columns.json',import.meta.url),'utf8'));
+  const focusedId='huangpu-bank-of-taiwan-building';
+  for(const sample of Object.values(fixture)){
+    const [width,height]=sample.viewport, opts={width,height,insets:sample.insets,focusedId};
+    const ordinary=sample.ordinary.map(label=>({...label,labelX:label.x,labelY:label.y}));
+    const covered=p=>p.labelX+p.width/2>sample.area.left&&p.labelX-p.width/2<sample.area.right&&
+      p.labelY+p.height/2>sample.area.top&&p.labelY-p.height/2<sample.area.bottom;
+    assert(ordinary.some(covered));
+    const moved=avoidFocusedFacade(ordinary,sample.area,opts);
+    assert.deepEqual(moved.map(p=>p.id),ordinary.map(p=>p.id));
+    assert(!moved.some(covered));assert.equal(moved.find(p=>p.id===focusedId).compact,false);
+    for(const p of moved)for(const i of [-.4,0,.4])for(const j of [-.4,0,.4]){
+      assert.equal(hitTestBeaconLabels(moved,{x:p.labelX+p.width*i,y:p.labelY+p.height*j}),p.id);
+    }
+    assert.strictEqual(avoidFocusedFacade(ordinary,null,opts),ordinary);
+    const selected=ordinary.find(p=>p.id===focusedId);
+    const lone=[{...selected,labelX:(sample.area.left+sample.area.right)/2,labelY:(sample.area.top+sample.area.bottom)/2}];
+    assert(!avoidFocusedFacade(lone,sample.area,opts).some(covered));
+    const dense=ordinary.map(p=>({...p,compact:true}));assert.strictEqual(avoidFocusedFacade(dense,sample.area,opts),dense);
+    const group=ordinary.map(p=>({...p,memberIds:[p.id]}));assert.strictEqual(avoidFocusedFacade(group,sample.area,opts),group);
+  }
 });

@@ -1,3 +1,11 @@
+# 台湾银行大楼东门厅与九江路街面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-taiwan-building&mode=overview) · [单体旋转与下载](bank-of-taiwan.html) · [来源与制作范围](source/precise/huangpu-bank-of-taiwan-building/README.md) · [验收记录](data/audit/bank-of-taiwan-v1/README.md)
+
+中山东一路16号台湾银行大楼的临江和九江路转角，核对与外滩15号、17号的实际分界。
+
+近景 54,008 个三角面，远景 26,008 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,856,801 字节。上海主图现有 153 处独立入口，黄浦区 78 处。[资产清单](assets/models/candidates/huangpu-bank-of-taiwan-building/manifest.json)
+
 # 法国邮船大楼（浦江大楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-messageries-maritimes-building&mode=overview) · [单体旋转与下载](messageries-maritimes.html) · [来源与制作范围](source/precise/huangpu-messageries-maritimes-building/README.md) · [验收记录](data/audit/messageries-maritimes-v1/README.md)

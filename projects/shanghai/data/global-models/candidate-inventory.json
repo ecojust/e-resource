@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 114,
+  "candidate_manifest_count": 115,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 112,
-  "resulting_city_count": 152,
+  "new_city_model_count": 113,
+  "resulting_city_count": 153,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 9,
     "长宁区": 4,
     "静安区": 9,
-    "黄浦区": 61
+    "黄浦区": 62
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 456,
-    "bytes": 1216946228,
+    "files": 460,
+    "bytes": 1222803029,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4924012,
+    "current_run_added_bytes": 5856801,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 324
+    "inherited_incremental_files": 328
   },
   "records": [
     {
@@ -10290,6 +10290,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "中山东二路9号法国邮船公司大楼的原址、东面开间与底层入口，核定延安东路以南的街区。"
+    },
+    {
+      "id": "huangpu-bank-of-taiwan-building",
+      "name": "台湾银行大楼东门厅与九江路街面",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "bank-of-taiwan.html",
+      "manifest": "assets/models/candidates/huangpu-bank-of-taiwan-building/manifest.json",
+      "manifest_sha256": "7e9a1d5b13bb01b31bff0a0cafb803bc6279353c4e23bced4a79dec178743820",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-bank-of-taiwan-building/huangpu-bank-of-taiwan-building-raw.glb",
+          "bytes": 3210680,
+          "sha256": "0f2e74c685e2f16817903c6bdca08ab6568d92789bed4f87aa652e10ec7f0a2a",
+          "triangles": 54008,
+          "bounds_gltf_m": [
+            [
+              -14.104369163513184,
+              0.0,
+              -39.89903259277344
+            ],
+            [
+              9.055000305175781,
+              24.084999084472656,
+              0.6100000143051147
+            ]
+          ],
+          "materials": 13
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-bank-of-taiwan-building/huangpu-bank-of-taiwan-building-web.glb",
+          "bytes": 1227928,
+          "sha256": "92ab866090cb4ef5af33484b4c2c9012ab3e32abcbe421420041a4c3d254ed15",
+          "triangles": 54008,
+          "bounds_gltf_m": [
+            [
+              -14.1043692,
+              0,
+              -39.8990326
+            ],
+            [
+              9.05500031,
+              24.0849991,
+              0.610000014
+            ]
+          ],
+          "materials": 13
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-bank-of-taiwan-building/huangpu-bank-of-taiwan-building-lod.glb",
+          "bytes": 604744,
+          "sha256": "3a2cf3ac4e5d225182dc9a8c2cc412cc61bc51799eb398529c429c3192ca1087",
+          "triangles": 26008,
+          "bounds_gltf_m": [
+            [
+              -14.1043692,
+              0,
+              -39.8990326
+            ],
+            [
+              9.05500031,
+              24.0849991,
+              0.610000014
+            ]
+          ],
+          "materials": 12
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-bank-of-taiwan-building/huangpu-bank-of-taiwan-building.blend",
+          "bytes": 813449,
+          "sha256": "3adabeb6c0e553dc35ca0913e977f86014f657cb3efcab67084e617e32353b3f"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -14.104369163513184,
+            0.0,
+            -39.89903259277344
+          ],
+          "max": [
+            9.055000305175781,
+            24.084999084472656,
+            0.6100000143051147
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -14.104369163513184,
+            -0.6100000143051147,
+            0.0
+          ],
+          "max": [
+            9.055000305175781,
+            39.89903259277344,
+            24.084999084472656
+          ]
+        },
+        "triangles": 54008,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "中山东一路16号台湾银行大楼的临江和九江路转角，核对与外滩15号、17号的实际分界。"
     }
   ],
   "baseline_inventory": {
@@ -10310,6 +10416,7 @@
     "projects/shanghai/assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-american-club/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-bank-of-taiwan-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-bankers-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
@@ -10382,13 +10489,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/messageries-maritimes-v1",
+  "incremental_audit_directory": "data/audit/bank-of-taiwan-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/yokohama-specie-bank-v1/inventory-increment.json",
-    "bytes": 279904,
-    "sha256": "fa6ced41556fb1c1efd534987200de1f3745901d0c467258db8388c476fdc6e0"
+    "file": "data/audit/messageries-maritimes-v1/inventory-increment.json",
+    "bytes": 283594,
+    "sha256": "95ed1e2a788355cff6dfcb38741864839d360e23a792df7d9b098b739eb16147"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-messageries-maritimes-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-bank-of-taiwan-building/manifest.json"
   ]
 }

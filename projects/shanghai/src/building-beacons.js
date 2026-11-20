@@ -140,40 +140,56 @@ function facadeClearance(bounds) {
 
 /** Redistribute only labels which cover the central portion of the selected facade. */
 export function avoidFocusedFacade(layout,protectedArea,{width,height,insets,focusedId}) {
-  if(width<=760||!protectedArea||layout.length<2||!layout.some(p=>p.id===focusedId)||
+  if(!protectedArea||layout.length<1||!layout.some(p=>p.id===focusedId)||
      layout.some(p=>p.compact||p.memberIds))return layout;
   const conflict=layout.filter(p=>overlaps(labelRectangle(p),protectedArea));
   if(!conflict.length)return layout;
-  const stable=new Map(layout.filter(p=>!conflict.includes(p)).map(p=>[p.id,p]));
-  const occupied=[...stable.values()].map(labelRectangle);
   const left=Math.max(8,insets.left||0),right=width-Math.max(8,insets.right||0);
   const top=Math.max(8,insets.top||0),bottom=height-Math.max(8,insets.bottom||0);
-  const sorted=[...conflict].sort((a,b)=>Number(b.id===focusedId)-Number(a.id===focusedId)||a.number-b.number);
-  for(const item of sorted){
-    let chosen=null;
-    for(const compact of item.id===focusedId?[false]:[false,true]){
-      const w=compact?(item.number>=100?26:24):item.width,h=compact?20:item.height;
-      if(w>right-left||h>bottom-top)continue;
-      const xs=[item.labelX,protectedArea.left-FACADE_GAP-w/2,protectedArea.right+FACADE_GAP+w/2];
-      const ys=[item.labelY,protectedArea.top-FACADE_GAP-h/2,protectedArea.bottom+FACADE_GAP+h/2];
-      let minCost=Infinity;
-      for(const x of xs)for(const y of ys){
-        const labelX=clamp(x,left+w/2,right-w/2),labelY=clamp(y,top+h/2,bottom-h/2);
-        const candidate={...item,width:w,height:h,compact,labelX,labelY},r=labelRectangle(candidate);
-        if(overlaps(r,protectedArea)||occupied.some(other=>overlaps(r,other)))continue;
-        const cost=(labelX-item.labelX)**2+(labelY-item.labelY)**2;
-        if(cost<minCost){minCost=cost;chosen=candidate;}
+  // First preserve every clear name. If these fixed names leave no slot for the
+  // selection, make a second pass in which all names may move. Dense numbered
+  // and grouped layouts retain their measured original click cells.
+  function arrange(items, stationary, useFreeEdges) {
+    const placed=new Map(stationary.map(p=>[p.id,p]));
+    const occupied=stationary.map(labelRectangle);
+    const sorted=[...items].sort((a,b)=>Number(b.id===focusedId)-Number(a.id===focusedId)||a.number-b.number);
+    for(const item of sorted) {
+      let chosen=null;
+      for(const compact of item.id===focusedId?[false]:[false,true]) {
+        const w=compact?(item.number>=100?26:24):item.width,h=compact?20:item.height;
+        if(w>right-left||h>bottom-top)continue;
+        const xs=[item.labelX,protectedArea.left-FACADE_GAP-w/2,protectedArea.right+FACADE_GAP+w/2];
+        const ys=[item.labelY,protectedArea.top-FACADE_GAP-h/2,protectedArea.bottom+FACADE_GAP+h/2];
+        if(useFreeEdges) {
+          xs.push(left+w/2,right-w/2);
+          ys.push(top+h/2,bottom-h/2);
+          for(const r of occupied) {
+            xs.push(r.left-FACADE_GAP-w/2,r.right+FACADE_GAP+w/2);
+            ys.push(r.top-FACADE_GAP-h/2,r.bottom+FACADE_GAP+h/2);
+          }
+        }
+        let minCost=Infinity;
+        for(const x of new Set(xs))for(const y of new Set(ys)) {
+          const labelX=clamp(x,left+w/2,right-w/2),labelY=clamp(y,top+h/2,bottom-h/2);
+          const candidate={...item,width:w,height:h,compact,labelX,labelY},r=labelRectangle(candidate);
+          if(overlaps(r,protectedArea)||occupied.some(other=>overlaps(r,other)))continue;
+          const cost=(labelX-item.labelX)**2+(labelY-item.labelY)**2;
+          if(cost<minCost){minCost=cost;chosen=candidate;}
+        }
+        if(chosen)break;
       }
-      if(chosen)break;
+      if(!chosen)return null;
+      placed.set(item.id,chosen);occupied.push(labelRectangle(chosen));
     }
-    if(!chosen)return layout;
-    stable.set(item.id,chosen);occupied.push(labelRectangle(chosen));
+    return layout.map(p=>placed.get(p.id));
   }
-  return layout.map(p=>stable.get(p.id));
+  const stationary=layout.filter(p=>!conflict.includes(p));
+  return arrange(conflict,stationary,false)??arrange(conflict,stationary,true)??arrange(layout,[],true)??layout;
 }
 
 export function projectFocusedFacade(map,place){
-  const bounds=place?.overview_focus_bounds_glb??place?.bounds_glb;
+  const target=place?.label_focus_bounds_glb;
+  const bounds=target??place?.overview_focus_bounds_glb??place?.bounds_glb;
   if(!bounds?.min?.every(Number.isFinite)||!bounds?.max?.every(Number.isFinite)||
      !map.transform?.locationToScreenPoint)return null;
   const rad=Math.PI/180,angle=(place.heading||0)*rad,scale=place.scale||1;
@@ -190,6 +206,9 @@ export function projectFocusedFacade(map,place){
       top=Math.min(top,point.y);bottom=Math.max(bottom,point.y);
     }
   }
+  // A bounded architectural detail can occupy a corner of a long model. Protect
+  // its whole projected rectangle, including the extremities of the facade.
+  if(target && right-left>=32 && bottom-top>=40)return {left,right,top,bottom};
   return facadeClearance({left,right,top,bottom});
 }
 
@@ -315,7 +334,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=
       bottom:Math.max(width>760?152:174,cardRect?height-cardRect.top+8:0)};
     const focusedId=getFocusedId(),viewport={width,height,insets,focusedId};
     layout=layoutBeaconLabels(visible,viewport);
-    if(width>760&&focusedId&&layout.length>1&&layout.every(p=>!p.compact&&!p.memberIds)&&layout.some(p=>p.id===focusedId)){
+    if(focusedId&&layout.length&&layout.every(p=>!p.compact&&!p.memberIds)&&layout.some(p=>p.id===focusedId)){
       layout=avoidFocusedFacade(layout,projectFocusedFacade(map,byId.get(focusedId)),viewport);
     }
     const grouped=Boolean(layout[0]?.memberIds),individual=grouped?[]:layout;

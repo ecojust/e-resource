@@ -39,6 +39,11 @@ def main():
         assert PROJECT in path.parents, name
         data = path.read_bytes()
         if sha(data) == expected:
+            if name == 'data/candidate-city-integrations.json' and 'resulting_count' in snapshot:
+                city_count = json.loads(data)['resulting_city_count']
+                assert snapshot['resulting_count'] == city_count, (
+                    f"Snapshot has {snapshot['resulting_count']} city entries, catalog has {city_count}"
+                )
             matched.append(name)
             continue
         assert name == QUEUE, f'Browser snapshot drift: {name}'
