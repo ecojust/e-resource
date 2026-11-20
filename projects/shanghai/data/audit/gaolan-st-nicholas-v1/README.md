@@ -32,3 +32,5 @@ Blender 4.3.2 独立重开241个可编辑网格、16种材质和145,293个有向
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 45 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f1f6034f90733f9f58929e8de842fd43384937f5/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 45 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
+
+本处照片、修缮记录和实测资料分别存于七个 JSON 文件。首次公开检查因清单没有单一来源字段而中断。修正工具后，在同一个模型提交逐一核对了全部七份资料和另外38个公开文件。[检查工具修订与七个文件](separate-source-publication.json) · [45项公开下载](publication.json)

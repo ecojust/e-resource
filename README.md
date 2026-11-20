@@ -3784,7 +3784,7 @@
 | 小桃园清真寺主礼拜殿（院内东立面及五处屋顶构件） | 2026-11-21 04:21:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xiaotaoyuan-mosque-prayer-hall&mode=overview) |
 | 慈修庵正院北殿与两厢木廊 | 2026-11-21 04:38:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cixiu-nunnery-courtyard&mode=overview) |
 | 皋兰路圣尼古拉斯堂主堂 | 2026-11-21 04:58:51 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) |
-| 吉祥里山东北路西弄门 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) |
+| 吉祥里山东北路西弄门 | 2026-11-21 05:10:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) |
 
 ### 徐汇区（15处）
 

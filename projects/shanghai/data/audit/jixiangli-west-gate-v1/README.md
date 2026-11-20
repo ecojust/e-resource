@@ -19,3 +19,7 @@
 在184处的街区原貌上，门楼所在的位置可以看见后方弄道。加入模型后，桌面鼠标和手机触摸分别点中了编号185的西弄门。近看时，门楼夹在两排住宅之间，两扇铁门、上窗和石额有清晰的层次。街口正面位于阴影中，手机独立页远景仍可分辨山墙、窗和门洞。两排住宅的源网格与碰撞均通过复核，门后弄道与门前街面仍可步行。前后各检验13个地面位置，并从目录进入独立页实际保存了原始、近景、远景和 Blender 四份文件。[加入前的街区](final-map-24148/before/before-front.png) · [主图门扇近照](final-map-24148/after/map-stone-plaque-and-closed-leaves.png) · [手机街景](final-map-24148/after/map-mobile.png) · [实际操作与下载](final-map-24148/after/after.json)
 
 首次从建筑目录切换页面时，核验脚本读取了仍在载入的场景。保留首次两端点选的原始收据后，脚本改为等待场景就绪，随后复跑了后态的五幅主图、目录跳转及四件下载。前态由首次脚本完成，收据载有其摘要。[首次导航记录](preflight/first-catalog-navigation/after/after.json) · [前态记录](final-map-24148/before/before.json) · [后态核验脚本](final-map-24148/check-independent-city.cjs) · [独立页照片与正式站点的文件核对](final-map-24148/independent-viewer-24148.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a126918a917cc04972d0bd833c7ba255650dda0e/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
