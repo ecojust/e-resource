@@ -1,3 +1,11 @@
+# 汉弥登大楼（江西中路170号街角、入口及塔冠）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hamilton-house&mode=overview) · [单体旋转与下载](hamilton-house.html) · [来源与制作范围](source/precise/huangpu-hamilton-house/README.md) · [验收记录](data/audit/hamilton-house-v1/README.md)
+
+江西中路170号汉弥登大楼的街角塔部、三券入口和两端短街墙，原生1844段与两侧相连楼翼分开核实。
+
+近景 39,472 个三角面，远景 24,136 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,297,539 字节。上海主图现有 135 处独立入口，黄浦区 62 处。[资产清单](assets/models/candidates/huangpu-hamilton-house/manifest.json)
+
 # 总巡捕房旧址（福州路历史街面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-police-station&mode=overview) · [单体旋转与下载](central-police-station.html) · [来源与制作范围](source/precise/huangpu-central-police-station/README.md) · [验收记录](data/audit/central-police-station-v1/README.md)
