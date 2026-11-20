@@ -1,0 +1,202 @@
+{
+  "id": "huangpu-french-municipal-council-front",
+  "assets": {
+    "raw": {
+      "sha256": "e78be5062080e4773871425967a5e712ff86c17e08684ee9ef2dc0b8e9674ac2",
+      "bytes": 2041148,
+      "triangles": 35588
+    },
+    "web": {
+      "sha256": "4da730f7eb090a50850ae3bf2ae128f8965a570bcc7e529dabd28414aee5986d",
+      "bytes": 665524,
+      "triangles": 35588
+    },
+    "lod": {
+      "sha256": "84a663d430e9b4063ad3ea821e6783f839e23e808374232169aab72f797a82ef",
+      "bytes": 300720,
+      "triangles": 16652
+    }
+  },
+  "manifest_sha256": "43d263a80e1de2411d4698486fd5ce1a5b923a7a2c0d0acd4dac8f860b5faad6",
+  "source_m2": 1179.706169552515,
+  "collision_m2": 464.21494799999994,
+  "model_projection_m2": 505.91663377600025,
+  "cut_m2": 610.616,
+  "variants": {
+    "near": {
+      "group": "14-13720-6694--3_3-s0-s0",
+      "assigned_source_triangles": 5336,
+      "affected_source_triangles": 2393,
+      "context_triangles": 53310,
+      "projected_source_m2": 1189.418454403633,
+      "retained_m2": 944.7877378528998,
+      "retained_percent": 79.43274583936152,
+      "affected_native_roof_m": 9.600000381469727,
+      "cut_to_closest_decoded_neighbor_m": 6.6992036,
+      "model_to_closest_decoded_neighbor_m": 6.8892036,
+      "assignment": {
+        "method": "Nearest original source polygon within this group. Near the shared rear edge, taller roof vertices are ambiguous. All such faces remain outside the cut.",
+        "ambiguous_centroids": 1074,
+        "minimum_centroid_margin_within_1m_of_cut_m": 11.895586056989043,
+        "all_target_max_boundary_distance_m": 0.07900523600510982
+      }
+    },
+    "far": {
+      "group": "14-13720-6694--3_3-s0-s0",
+      "assigned_source_triangles": 12,
+      "affected_source_triangles": 8,
+      "context_triangles": 64,
+      "projected_source_m2": 1179.7068913916748,
+      "retained_m2": 938.884859041261,
+      "retained_percent": 79.58628248188656,
+      "affected_native_roof_m": 9.600000381469727,
+      "cut_to_closest_decoded_neighbor_m": 6.771183899999999,
+      "model_to_closest_decoded_neighbor_m": 6.961183899999999,
+      "assignment": {
+        "method": "Explicit _FEATURE_ID_0."
+      }
+    }
+  },
+  "cap_segments": 2,
+  "seam_deviation_m": 0.07587239305118398,
+  "neighbors": [
+    {
+      "local_id": 1304,
+      "cut_to_source_m": 17.438752915791635,
+      "model_to_source_m": 17.638752515791637,
+      "original_height_m": 35.2
+    },
+    {
+      "local_id": 2476,
+      "cut_to_source_m": 17.266774391104565,
+      "model_to_source_m": 17.472309238000012,
+      "original_height_m": 35.35
+    },
+    {
+      "local_id": 2357,
+      "cut_to_source_m": 6.771196228024084,
+      "model_to_source_m": 6.961196228024084,
+      "original_height_m": 30.153
+    },
+    {
+      "local_id": 2597,
+      "cut_to_source_m": 32.05643602658918,
+      "model_to_source_m": 32.94025596593305,
+      "original_height_m": 33.6
+    }
+  ],
+  "ground_probes": [
+    {
+      "name": "street",
+      "xy": [
+        1.2,
+        -2.58
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "lowest entrance tread",
+      "xy": [
+        1,
+        -1.22
+      ],
+      "model_obstacle": false,
+      "source_cut": true,
+      "expected_map": null
+    },
+    {
+      "name": "upper entrance tread",
+      "xy": [
+        1.14,
+        -0.23
+      ],
+      "model_obstacle": false,
+      "source_cut": true,
+      "expected_map": null
+    },
+    {
+      "name": "inside arch before doors",
+      "xy": [
+        0.81,
+        0.46
+      ],
+      "model_obstacle": false,
+      "source_cut": true,
+      "expected_map": null
+    },
+    {
+      "name": "closed door",
+      "xy": [
+        0.8,
+        0.83
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "west jamb",
+      "xy": [
+        1.98,
+        -0.14
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "east jamb",
+      "xy": [
+        -1.98,
+        -0.14
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "east recessed window",
+      "xy": [
+        -16.3,
+        2.8
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "west pavilion",
+      "xy": [
+        24.4,
+        4.2
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "beside western shop",
+      "xy": [
+        31,
+        2
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "retained podium",
+      "xy": [
+        0,
+        13
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": "building"
+    }
+  ],
+  "checker_sha256": "427dc2d26b6cd81b1ad7322e02b54ff91e3e27949a470aafc555606a5b452be2",
+  "decoder_sha256": "30c0d5e0ad3f0e12cb4fa0f509c857d371da72991567731c0bdb57d995888999"
+}

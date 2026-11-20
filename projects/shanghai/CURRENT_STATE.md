@@ -1,3 +1,11 @@
+# 法公董局旧址（淮海中路保留立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-municipal-council-front&mode=overview) · [单体旋转与下载](french-municipal-council.html) · [来源与制作范围](source/precise/huangpu-french-municipal-council-front/README.md) · [验收记录](data/audit/french-municipal-council-v1/README.md)
+
+原法公董局现存临街外观。市房管局原表记淮海中路381号，工作名录另记375号。依据原表、实照和航片核定中央门与两翼，可分辨后方塔楼。
+
+近景 35,588 个三角面，远景 16,652 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,505,753 字节。上海主图现有 144 处独立入口，黄浦区 71 处。[资产清单](assets/models/candidates/huangpu-french-municipal-council-front/manifest.json)
+
 # 江川大楼（德华银行九江路营业楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-deutsch-asiatische-bank&mode=overview) · [单体旋转与下载](deutsch-asiatische-bank.html) · [来源与制作范围](source/precise/huangpu-deutsch-asiatische-bank/README.md) · [验收记录](data/audit/deutsch-asiatische-bank-v1/README.md)
