@@ -20,3 +20,7 @@ Blender重新打开原生工程后，原网格的位置、面和顶点次序、�
 最初两次后态运行遭软件渲染进程内存回收，已保留失败时间、传输与错误。恢复时逐图进入真实公开俯瞰链接，核实了登记号、加载的GLB、三角数及帧哈希。前态默认画面保留了从城市目录进入步行、随后选择俯瞰的操作记录。[分段恢复记录](software-renderer-retry.json)
 
 两次登记的普通桌面、手机初选与同镜细节共八幅，原始分段记录包含每个视口的实际模型摘要。[登记前四图记录](main-map-before.json) · [登记后四图记录](main-map-after.json) · [独立实图目检](independent-main-map-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/21dbf957f57704c51c676825c7c30d5812404ed6/projects/shanghai/index.html#landmark=bund15&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
