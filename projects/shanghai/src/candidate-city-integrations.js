@@ -1,6 +1,7 @@
 import {candidateVectorGeometry} from './candidate-vector-geometry.js';
 import {validSourceSection} from './candidate-source-sections.js?v=country-hospital-north-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
+import {validHistoricalSite} from './historical-view.js?v=metropol-cinema-history-v1';
 
 const SHA=/^[a-f0-9]{64}$/;
 const finitePoint=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&Math.abs(p[0])<=180&&Math.abs(p[1])<=85;
@@ -34,6 +35,12 @@ export function mergeCandidateCityModels(existing,manifest) {
     if(row.site_replacement)baseClipIds.add(row.site_replacement.id);
   }
   const models=manifest.models.map(row=>{
+    if(row.kind==='historical-site'||Object.hasOwn(row,'historical_view')){
+      if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(row.id)||ids.has(row.id)||!finitePoint([row.lng,row.lat])||!validHistoricalSite(row))
+        throw Error(`历史地标资料或当代范围无效：${row.id}`);
+      ids.add(row.id);
+      return {...row,overviewZoom:17.4};
+    }
     if(!row.id||ids.has(row.id)||row.kind!=='building'||!finitePoint([row.lng,row.lat])
       ||!Number.isFinite(row.heading)||!Number.isFinite(row.height_m)||row.height_m<=0
       ||(row.scale!==undefined&&(!Number.isFinite(row.scale)||row.scale<=0))

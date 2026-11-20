@@ -1,0 +1,1663 @@
+{
+  "schema": "candidate-city-inventory-increment-v1",
+  "baseline_inventory": {
+    "file": "data/audit/global-model-integration-v1/inventory.json",
+    "bytes": 84353,
+    "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
+  },
+  "incremental_manifests": [
+    "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-wing-on-skybridges/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-country-hospital-north-block/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
+    "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
+  ],
+  "asset_revision_fallback": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
+  "current_inventory": "data/global-models/candidate-inventory.json",
+  "verification": {
+    "all_manifest_assets_read": false,
+    "files": 212,
+    "bytes": 815702136,
+    "byte_lengths_and_sha256_match": true,
+    "single_file_limit_bytes_exclusive": 100000000,
+    "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
+    "current_run_added_files": 4,
+    "current_run_added_bytes": 1681706,
+    "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
+    "all_current_delivery_assets_read": true,
+    "inherited_incremental_files": 80
+  },
+  "records": [
+    {
+      "id": "huangpu-new-wing-on-company",
+      "name": "新永安大楼主楼与后部外观",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "new-wing-on-company.html",
+      "manifest": "assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+      "manifest_sha256": "dc3ea4f7d9192f8d761cdd17fc1fbcda153ca6b648dd15788d5abaca10a2b44c",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-raw.glb",
+          "bytes": 7669016,
+          "sha256": "f039a13feba3daa42ebb74a1548060b29881add3c0ac19145ff80fba0a7672c8",
+          "triangles": 137148
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company.blend",
+          "bytes": 4046931,
+          "sha256": "ae8d90d2ba35dd5328aa99b735dc934ba4d36745208d70f5156d091b09bb8916"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-web.glb",
+          "bytes": 2433676,
+          "sha256": "13afc0767261a4f6aaf01e4bf3404dfdbb2dd27e9475aef26d04ca5e4952caf9",
+          "triangles": 137148
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-new-wing-on-company/huangpu-new-wing-on-company-lod.glb",
+          "bytes": 781548,
+          "sha256": "fcddf4f11cc29e61d527d228a110fda137d754874f10decb7e29ca139b17aec0",
+          "triangles": 38500
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -18.975860595703125,
+            0.0,
+            -35.12357711791992
+          ],
+          "max": [
+            27.091312408447266,
+            72.0,
+            24.049999237060547
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -18.975860595703125,
+            -24.049999237060547,
+            0.0
+          ],
+          "max": [
+            27.091312408447266,
+            35.12357711791992,
+            72.0
+          ]
+        },
+        "triangles": 137148,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "北端高塔、分组竖窗、宽檐退台、阶梯顶冠及相连低楔形后部；层段、平面和隐藏面含估计，老永安与跨街桥另列。"
+    },
+    {
+      "id": "huangpu-xinxin-company",
+      "name": "新新公司南侧商店主楼临街外观",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "xinxin-company.html",
+      "manifest": "assets/models/candidates/huangpu-xinxin-company/manifest.json",
+      "manifest_sha256": "3fd6a330f67ba374e512e60289b70972600dfdabc3736cd4ee565ddfd17689be",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-raw.glb",
+          "bytes": 4546352,
+          "sha256": "3c5df8ccc24e6094809589a1d478198c1833f43aa4771b21204b184b4dc17bfd",
+          "triangles": 79884
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company.blend",
+          "bytes": 2393681,
+          "sha256": "a93efbe9b452e3b4a9f9b6fc5363a583eb86ae521bcb0ee4db51e0dde620091d"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-web.glb",
+          "bytes": 1422636,
+          "sha256": "f6877967e35bda3d26757eb939ac0779b1695bab3837680d7ca3add88f4e844b",
+          "triangles": 79884
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-xinxin-company/huangpu-xinxin-company-lod.glb",
+          "bytes": 715384,
+          "sha256": "30c7e8e4d8b75a8a76268338f9e37aa3b379af0cdef89f4a9762559f6db06b86",
+          "triangles": 37960
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -25.877513885498047,
+            0.0,
+            -15.219429969787598
+          ],
+          "max": [
+            25.87283706665039,
+            37.5,
+            15.642927169799805
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -25.877513885498047,
+            -15.642927169799805,
+            0.0
+          ],
+          "max": [
+            25.87283706665039,
+            15.219429969787598,
+            37.5
+          ]
+        },
+        "triangles": 79884,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "partial-exterior-candidate-with-estimated-geographic-placement",
+      "description": "南京东路720号南侧商店临街外观：浅色柱带、凹窗、环廊、两级中空方塔及南角小亭；北旅馆、天井、室内与实际南北分界未建，尺寸及截断深度含估计。"
+    },
+    {
+      "id": "huangpu-daxin-company",
+      "name": "大新公司历史主楼外观",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "daxin-company.html",
+      "manifest": "assets/models/candidates/huangpu-daxin-company/manifest.json",
+      "manifest_sha256": "2d736bff933b7befd76d3785ec36771c5ab4d5be70ac83316559d332b41b398a",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company-raw.glb",
+          "bytes": 9961448,
+          "sha256": "5569c686feaa75dcef4d8b47f2c798473391ecc3b1df40d99609c4b8a1e0acac",
+          "triangles": 183288
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company.blend",
+          "bytes": 5324631,
+          "sha256": "55a80d9209354fe125e1074607e9d9912f7871614ec37432e3bf558277b5cb22"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company-web.glb",
+          "bytes": 3158656,
+          "sha256": "4582fd98befb8db581e55f3c850be7aadb8ae462016550a23e652be204dda4dd",
+          "triangles": 183288
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-daxin-company/huangpu-daxin-company-lod.glb",
+          "bytes": 1062040,
+          "sha256": "37edca1eafc477df28296b2c4ed1435fd7b88c5f88c039310ef03cd5abd16a0d",
+          "triangles": 53372
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -28.299720764160156,
+            0.0,
+            -27.829999923706055
+          ],
+          "max": [
+            27.03749656677246,
+            42.29999923706055,
+            30.029329299926758
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -28.299720764160156,
+            -30.029329299926758,
+            0.0
+          ],
+          "max": [
+            27.03749656677246,
+            27.829999923706055,
+            42.29999923706055
+          ]
+        },
+        "triangles": 183288,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "南京东路830号历史主楼外观：圆弧高转角、竖向窗带、顶层敞廊和雨篷；北东隐面、屋顶和尺寸含估计，相接独立B/C馆、室内与商业广告不并入。"
+    },
+    {
+      "id": "huangpu-cathay-mansions",
+      "name": "华懋公寓历史主楼（锦江饭店锦北楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "cathay-mansions.html",
+      "manifest": "assets/models/candidates/huangpu-cathay-mansions/manifest.json",
+      "manifest_sha256": "ddad5ae238228e407f10a4ba9ee8a7ee0691c972d7a1a004bc2c6af3f85813b3",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions-raw.glb",
+          "bytes": 11172688,
+          "sha256": "b7439c67f4f3ead2580f6461aafa1c94b5583497a25e1b8e8ce25c757e89905e",
+          "triangles": 241940
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions.blend",
+          "bytes": 6251495,
+          "sha256": "49a154c579716b1b81652018928e99f09a7e081fdc1a63c8f104dd941582f868"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions-web.glb",
+          "bytes": 3046720,
+          "sha256": "3d4581c59755f025dd9842ce132aa1fe52d244030299d9dd30f69c838c0ee12f",
+          "triangles": 241940
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-cathay-mansions/huangpu-cathay-mansions-lod.glb",
+          "bytes": 1441416,
+          "sha256": "2aee0c6075aa21067a1a85d477b1d204a320e88022a9f6887d4bb0d815889c49",
+          "triangles": 101436
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -32.849998474121094,
+            0.0,
+            -15.8100004196167
+          ],
+          "max": [
+            32.20000076293945,
+            57.0,
+            12.475000381469727
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -32.849998474121094,
+            -12.475000381469727,
+            0.0
+          ],
+          "max": [
+            32.20000076293945,
+            15.8100004196167,
+            57.0
+          ]
+        },
+        "triangles": 241940,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "锦江饭店北楼独立历史外观：褐砖长立面、浅色窗框、多边凸窗、北侧双凸翼与顶部退台；尺寸、局部隐面和屋顶含估计，相邻峻岭公寓及其他锦江楼栋不并入。"
+    },
+    {
+      "id": "huangpu-grosvenor-house",
+      "name": "峻岭公寓高层主体（锦江饭店中楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "grosvenor-house.html",
+      "manifest": "assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+      "manifest_sha256": "276f1c505a90f08425f9b87f720e3908804c5bbf293a09207ad0faf27f816a3f",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-raw.glb",
+          "bytes": 10430628,
+          "sha256": "8273ee99e895ab453f3467536691cc80ccf1b96ccf6ede97630115dda2b9a3fb",
+          "triangles": 193620
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house.blend",
+          "bytes": 5668340,
+          "sha256": "6d2071e3243e58ae02efc62b20a0dda456c3bfa19af4e6e11ab68f6833f6c7db"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-web.glb",
+          "bytes": 3310388,
+          "sha256": "d01d88a669aaef8b94b1c3c8ccaab07d19884c609e53206dcaa6460ed29ee360",
+          "triangles": 193620
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-grosvenor-house/huangpu-grosvenor-house-lod.glb",
+          "bytes": 1341484,
+          "sha256": "e82a2de8f5261a7e85f9166398357b1073a46a58fa121613fd184c9db7d9f915",
+          "triangles": 64540
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -44.76152420043945,
+            0.0,
+            -11.094259262084961
+          ],
+          "max": [
+            46.22146987915039,
+            78.0,
+            16.696369171142578
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -44.76152420043945,
+            -16.696369171142578,
+            0.0
+          ],
+          "max": [
+            46.22146987915039,
+            11.094259262084961,
+            78.0
+          ]
+        },
+        "triangles": 193620,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "五折高层、阶梯露台、竖向饰线与有限入口雨棚；前庭两片未核区域及相邻低楼保留。层段、尺寸和隐面含估计，不将整处名录判为完成。"
+    },
+    {
+      "id": "huangpu-shanghai-municipal-council",
+      "name": "上海公共租界工部局历史主楼",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "municipal-council.html",
+      "manifest": "assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
+      "manifest_sha256": "982784cb5053f8672747a9d71af79b4d3cc6b24a18317b9bbc92352e4f3b13d8",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-raw.glb",
+          "bytes": 18643808,
+          "sha256": "54f7b3ef2b98b3fadafb4ca6d3d046e344dfe8b760d6574db484efc830a851af",
+          "triangles": 302192
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council.blend",
+          "bytes": 9387163,
+          "sha256": "b18d86670d07d4557ffda58afcf71f1c401cc7157cb3000c7e2d28790648ccb4"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-web.glb",
+          "bytes": 5964180,
+          "sha256": "e8f8be45bab07dc892307d5f098c0391daf0d48be1884c6f21ecb498b9bc5591",
+          "triangles": 302192
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-lod.glb",
+          "bytes": 3333144,
+          "sha256": "c1df275cbe0d7545ffcccc2972b06495b0e79cfb1846080b88877d4fd5f96ef3",
+          "triangles": 152708
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -62.32367706298828,
+            0.0,
+            -62.19729232788086
+          ],
+          "max": [
+            63.21746063232422,
+            20.200000762939453,
+            58.497833251953125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -62.32367706298828,
+            -58.497833251953125,
+            0.0
+          ],
+          "max": [
+            63.21746063232422,
+            62.19729232788086,
+            20.200000762939453
+          ]
+        },
+        "triangles": 302192,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "北、东及部分南侧历史翼楼：三种凹弧转角、柱廊、拱窗与通院拱道；现代西侧、未核接缝及庭院独立楼保留，尺寸和屋顶含估计。"
+    },
+    {
+      "id": "yangpu-former-shanghai-city-hall",
+      "name": "旧上海特别市政府大楼（绿瓦大楼）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "yangpu-city-hall.html",
+      "manifest": "assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
+      "manifest_sha256": "de5cdfad962bbf0ae3a6ee329f3a3f5f1e780223dcbe1d80dab557373ae2847d",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-raw.glb",
+          "bytes": 15024020,
+          "sha256": "3bf557b44db18b986b60e9bfbf7417692f6a65f41ffa295c01bceb44c1b561cd",
+          "triangles": 221980
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall.blend",
+          "bytes": 7560381,
+          "sha256": "ef7d8e84980058656999f784b4ea995873df55d2a9b43361479e7dbb1bebb3e9"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-web.glb",
+          "bytes": 6621884,
+          "sha256": "bd0c536cf4f756dba96130c53858c1b5576fa7f98cba10358507273b62261e9a",
+          "triangles": 221980
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-hall/yangpu-former-shanghai-city-hall-lod.glb",
+          "bytes": 1658804,
+          "sha256": "e6173e4388062cfcd4b6154f5b3a5f052998551604dd6eca58e33d983db4fdfc",
+          "triangles": 60940
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -52.7461051940918,
+            0.0,
+            -17.363773345947266
+          ],
+          "max": [
+            52.707759857177734,
+            28.362430572509766,
+            51.470001220703125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -52.7461051940918,
+            -51.470001220703125,
+            0.0
+          ],
+          "max": [
+            52.707759857177734,
+            17.363773345947266,
+            28.362430572509766
+          ]
+        },
+        "triangles": 221980,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "exterior-candidate-with-estimated-geographic-placement",
+      "description": "三段绿瓦歇山顶、红柱窗格、浅色基座及南侧阶桥；桥下道路留空，校园邻楼分开。米高、桥阶尺度与隐蔽细节含估计。"
+    },
+    {
+      "id": "yangpu-jiangwan-stadium",
+      "name": "江湾体育场历史主场（看台与入口）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "jiangwan-stadium.html",
+      "manifest": "assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
+      "manifest_sha256": "191dfeda7b380a04fd81d872d0cb6e886c008d3c12785cc5ab5fc5f7e8b90a4d",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium-raw.glb",
+          "bytes": 22738220,
+          "sha256": "60ff2beddf450263c67b12a7a6af8deb59e3bfa94540f8f30fb49b65b1c6a757",
+          "triangles": 374908
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium.blend",
+          "bytes": 11819224,
+          "sha256": "00d4f98fdba6cdf360a05123229542df32c1dba7b75b64f74abe8674cbca9bb2"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium-web.glb",
+          "bytes": 8738408,
+          "sha256": "2020e9d49e94bf337741571919b2284352b13bde973cd3e1110d23c1e8b432b9",
+          "triangles": 374908
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-jiangwan-stadium/yangpu-jiangwan-stadium-lod.glb",
+          "bytes": 3109076,
+          "sha256": "9fa9579b675c49cc97aefab30f80e097f0fa2066182d1b7db4c555933be811cf",
+          "triangles": 123712
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -122.75189971923828,
+            0.0,
+            -159.16148376464844
+          ],
+          "max": [
+            126.7571792602539,
+            18.633560180664062,
+            153.54425048828125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -122.75189971923828,
+            -153.54425048828125,
+            0.0
+          ],
+          "max": [
+            126.7571792602539,
+            159.16148376464844,
+            18.633560180664062
+          ]
+        },
+        "triangles": 374908,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "开放阶梯看台、西侧三拱入口与特别台、东平台及短端通道；独立体育馆和游泳馆分开，尺寸与隐面含估计。"
+    },
+    {
+      "id": "yangpu-jiangwan-gymnasium",
+      "name": "江湾体育馆历史主楼",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "jiangwan-gymnasium.html",
+      "manifest": "assets/models/candidates/yangpu-jiangwan-gymnasium/manifest.json",
+      "manifest_sha256": "5b01ff05f0567a46a06b04c7f2307cddeb4eabe9a6f413daf921fb190a1118ac",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium-raw.glb",
+          "bytes": 5727660,
+          "sha256": "57d1b5eddbda7bc3084c52d6fc130ec84ac6de079a31edb9d63d6250390243b4",
+          "triangles": 110972
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium.blend",
+          "bytes": 2939057,
+          "sha256": "e18f1c7b500e63a044cc4debf108356362a04c96ff2bb1439c37cc6137d7176b"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium-web.glb",
+          "bytes": 1881528,
+          "sha256": "bdc3a60ded32481ea746f185cf227e52fec31a1792134af750203eee0b18d311",
+          "triangles": 110972
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-jiangwan-gymnasium/yangpu-jiangwan-gymnasium-lod.glb",
+          "bytes": 562704,
+          "sha256": "526a9a2d62789df457a56d59c7467de0242dc064934e6c8665fc895715b779a3",
+          "triangles": 29512
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -38.649539947509766,
+            0.0,
+            -22.911264419555664
+          ],
+          "max": [
+            35.46116256713867,
+            20.170000076293945,
+            22.735937118530273
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -38.649539947509766,
+            -22.735937118530273,
+            0.0
+          ],
+          "max": [
+            35.46116256713867,
+            22.911264419555664,
+            20.170000076293945
+          ]
+        },
+        "triangles": 110972,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "灰金属弧顶、纵向天窗、砖侧高窗与浅石三拱门面；独立馆楼，尺寸与隐面含估计。"
+    },
+    {
+      "id": "yangpu-jiangwan-swimming-hall",
+      "name": "江湾游泳馆（历史池馆与现状屋盖）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "jiangwan-swimming-hall.html",
+      "manifest": "assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json",
+      "manifest_sha256": "c1305ebd916b7bf8c6abaa957f5cc62c77a604a7a7f87d17326debe4bdc3af5b",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall-raw.glb",
+          "bytes": 1725576,
+          "sha256": "fdabd4072e7af304c0f3367e4c94cbd855a311e838d0bc3c3967753702d122ba",
+          "triangles": 28590
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall.blend",
+          "bytes": 843535,
+          "sha256": "385063c9a64de380402d61c79a3145737631002b2f331c256e382457f3cf6868"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall-web.glb",
+          "bytes": 684280,
+          "sha256": "4db67bde0abc5f72b84817a65174935ae1166c23c8a180dbedbab813bb0e6914",
+          "triangles": 28590
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-jiangwan-swimming-hall/yangpu-jiangwan-swimming-hall-lod.glb",
+          "bytes": 461760,
+          "sha256": "aa821e1b3a40408053630d040c030b30288f65a2275bd3215f0e932be4f80f1c",
+          "triangles": 19430
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -27.375789642333984,
+            0.0,
+            -48.15583801269531
+          ],
+          "max": [
+            27.30600357055664,
+            12.872426986694336,
+            44.772552490234375
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -27.375789642333984,
+            -44.772552490234375,
+            0.0
+          ],
+          "max": [
+            27.30600357055664,
+            48.15583801269531,
+            12.872426986694336
+          ]
+        },
+        "triangles": 28590,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "宽浅现代屋盖与抬高中部采光段、历史砖外周及北浅石单拱入口；现状尺寸与隐面含估计。"
+    },
+    {
+      "id": "yangpu-former-shanghai-city-museum",
+      "name": "旧上海市博物馆江湾馆舍",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "city-museum.html",
+      "manifest": "assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
+      "manifest_sha256": "6932e2a77d115b9f0983ee6e60ae9754c039847ce96e6ba89fb3a93d1cb0225e",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum-raw.glb",
+          "bytes": 6600888,
+          "sha256": "1f2cd5ba517d0c4b9ec235894a87776af7014eebde1435cc169ced95065f327e",
+          "triangles": 96016
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum.blend",
+          "bytes": 3218194,
+          "sha256": "51fc1044bde7141d610b1bcf63f301e3d3fe109d0492372af006f2e840e740fb"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum-web.glb",
+          "bytes": 2858744,
+          "sha256": "a95dfce521f7fe98c54b72d12a44f1f3f7ac289c89662ae84d9503e2d522a4e9",
+          "triangles": 96016
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-former-shanghai-city-museum/yangpu-former-shanghai-city-museum-lod.glb",
+          "bytes": 1131388,
+          "sha256": "849fe5ca4842083805591a718c86d9cec59892ae743375bd795d3737c1c7fa03",
+          "triangles": 48348
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -35.54350280761719,
+            0.0,
+            -33.71819305419922
+          ],
+          "max": [
+            41.1197395324707,
+            23.96242904663086,
+            34.280765533447266
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -35.54350280761719,
+            -34.280765533447266,
+            0.0
+          ],
+          "max": [
+            41.1197395324707,
+            33.71819305419922,
+            23.96242904663086
+          ]
+        },
+        "triangles": 96016,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-guided-exterior-estimated-dimensions",
+      "description": "西正面、两层翼部与黄瓦重檐门楼详化；东中后厅仅简化估计体量，范围、年代和细部待核。"
+    },
+    {
+      "id": "yangpu-china-aviation-association-building",
+      "name": "中国航空协会旧址（长海医院飞机楼）",
+      "districtId": "310110",
+      "district": "杨浦区",
+      "already_in_city": false,
+      "individual_page": "aviation-building.html",
+      "manifest": "assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
+      "manifest_sha256": "d450f9711df5e0204ad6c6984a8f723cfc819b5c47d732912dd2305fbf0b74ec",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/yangpu-china-aviation-association-building/yangpu-china-aviation-association-building-raw.glb",
+          "bytes": 5010872,
+          "sha256": "9e3574f8560cf1adf656102da91408e07700f8824ad6e4b301c619374ab06fa4",
+          "triangles": 106192
+        },
+        "native": {
+          "file": "assets/models/candidates/yangpu-china-aviation-association-building/yangpu-china-aviation-association-building.blend",
+          "bytes": 2737814,
+          "sha256": "d309577a444a7377052ea33f5a6abc50d00afc7f1c35b38ca4dc0138f56b384e"
+        },
+        "web": {
+          "file": "assets/models/candidates/yangpu-china-aviation-association-building/yangpu-china-aviation-association-building-web.glb",
+          "bytes": 1582544,
+          "sha256": "a2d51ebffca24cae352c26153abe8bc864e829a0db24257fc7d02c11a5ff333f",
+          "triangles": 106192
+        },
+        "lod": {
+          "file": "assets/models/candidates/yangpu-china-aviation-association-building/yangpu-china-aviation-association-building-lod.glb",
+          "bytes": 725860,
+          "sha256": "c349b44a9215c931108e32edba5d921666cb8eb3581c374972fa0281380e6008",
+          "triangles": 60384
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -19.0,
+            0.0,
+            -18.040000915527344
+          ],
+          "max": [
+            26.360000610351562,
+            16.700000762939453,
+            18.239999771118164
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -19.0,
+            -18.239999771118164,
+            0.0
+          ],
+          "max": [
+            26.360000610351562,
+            18.040000915527344,
+            16.700000762939453
+          ]
+        },
+        "triangles": 106192,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed bounded exterior estimate",
+      "description": "圆角前后双翼、筒拱连接舱与圆塔递缩石栏平台外观；门饰和隐面简化，尺寸含估计。"
+    },
+    {
+      "id": "huangpu-great-world",
+      "name": "大世界历史主楼与街角塔",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "great-world.html",
+      "manifest": "assets/models/candidates/huangpu-great-world/manifest.json",
+      "manifest_sha256": "ae7e7595187ed8e5b0749d78bee4ebf207a371799f83a2c8387eca424a63f93a",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world-raw.glb",
+          "bytes": 18853296,
+          "sha256": "de998c847a7d3e745b86409a43fa99c43737d8f0220a8ab4d9b88b0817b23da1",
+          "triangles": 277756
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world.blend",
+          "bytes": 9195031,
+          "sha256": "23a28e7a99dbe37d66c500854ba89a2014546ce38979e54fef65e722bd55ad28"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world-web.glb",
+          "bytes": 7879044,
+          "sha256": "9eef4001bb80576d457dd818ead09dfde499a6b89ba21425e53b4bb5b1b4c71e",
+          "triangles": 277756
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-great-world/huangpu-great-world-lod.glb",
+          "bytes": 2626048,
+          "sha256": "86f291c749d14812b6338e4dc32df5fc3b0bf65c2c815278c1469f930ef37cb4",
+          "triangles": 102124
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -37.302223205566406,
+            0.0,
+            -62.89122009277344
+          ],
+          "max": [
+            54.52461624145508,
+            46.400001525878906,
+            53.006866455078125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -37.302223205566406,
+            -53.006866455078125,
+            0.0
+          ],
+          "max": [
+            54.52461624145508,
+            62.89122009277344,
+            46.400001525878906
+          ]
+        },
+        "triangles": 277756,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "四层U形沿街主体、街角塔与屋顶亭；中庭屋盖待核未建，独立剧场保留，尺寸与隐面含估计。"
+    },
+    {
+      "id": "hongkou-general-post-office",
+      "name": "上海邮政总局历史主楼与钟塔",
+      "districtId": "310109",
+      "district": "虹口区",
+      "already_in_city": false,
+      "individual_page": "postal-office.html",
+      "manifest": "assets/models/candidates/hongkou-general-post-office/manifest.json",
+      "manifest_sha256": "83715c205b4f083524dc977e218fdc3abdc63204bb400bb9ea558d83a6bcafb8",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office-raw.glb",
+          "bytes": 16180636,
+          "sha256": "92912c581996d1fa7d617cd3602b107b1edb55185eb835565f284e9f73ad94cf",
+          "triangles": 251348
+        },
+        "native": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office.blend",
+          "bytes": 8413516,
+          "sha256": "468887474b33eb556dab98d757a867b2459f19e81409211db73d9f7ea51f6f77"
+        },
+        "web": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office-web.glb",
+          "bytes": 6781500,
+          "sha256": "05d1bb2fa8ab9c716add8afd3af4dea1e86fce00979ed59a3104c3f9bfe408ed",
+          "triangles": 251348
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-general-post-office/hongkou-general-post-office-lod.glb",
+          "bytes": 4289788,
+          "sha256": "ab39cc6b38ad9ee695c825807e4140e543a35ba45a36931b64bcc63f8b66b30a",
+          "triangles": 158452
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -62.11992645263672,
+            0.0,
+            -51.334537506103516
+          ],
+          "max": [
+            50.267601013183594,
+            57.70000076293945,
+            50.44810104370117
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -62.11992645263672,
+            -50.44810104370117,
+            0.0
+          ],
+          "max": [
+            50.267601013183594,
+            51.334537506103516,
+            57.70000076293945
+          ]
+        },
+        "triangles": 251348,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "南东巨柱立面、北侧红砖墙、东南钟塔与中庭弧网罩；西侧独立建筑保留，尺寸与隐面含估计。"
+    },
+    {
+      "id": "jingan-country-hospital",
+      "name": "宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙）",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "country-hospital.html",
+      "manifest": "assets/models/candidates/jingan-country-hospital/manifest.json",
+      "manifest_sha256": "3d4cc640af8631ea781d381a762684ccbdd1eb23b6ca5a1e203326c96270e6e9",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front-raw.glb",
+          "bytes": 5008572,
+          "sha256": "4d78ca35d8f3bca3f51e6a6ad690183cd293c0c2c6ba69a0eb256b6f54623e29",
+          "triangles": 75388,
+          "bounds_gltf_m": [
+            [
+              -38.9558219909668,
+              0.0,
+              -4.787199974060059
+            ],
+            [
+              38.9558219909668,
+              18.80384063720703,
+              0.5561599731445312
+            ]
+          ],
+          "materials": 8
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front-web.glb",
+          "bytes": 2071812,
+          "sha256": "159603e048bcf363a65b4c804a5e8c7ea7daca9dac77e97fdda7b0fc95de0d27",
+          "triangles": 75388,
+          "bounds_gltf_m": [
+            [
+              -38.955822,
+              0,
+              -4.78719997
+            ],
+            [
+              38.955822,
+              18.8038406,
+              0.556159973
+            ]
+          ],
+          "materials": 8
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front-lod.glb",
+          "bytes": 757288,
+          "sha256": "e7e3e6767e0c40aff5da5415120c963e90fde1f382a359e48a677c1e25e8afbc",
+          "triangles": 32128,
+          "bounds_gltf_m": [
+            [
+              -38.955822,
+              0,
+              -4.78719997
+            ],
+            [
+              38.955822,
+              18.8038406,
+              0.556159973
+            ]
+          ],
+          "materials": 8
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front.blend",
+          "bytes": 598684,
+          "sha256": "2b3acd6151ab632201221001aa3cf1dd8e209bf2875eadb896256de067251c51"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -38.9558219909668,
+            0.0,
+            -4.787199974060059
+          ],
+          "max": [
+            38.9558219909668,
+            18.80384063720703,
+            0.5561599731445312
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -38.9558219909668,
+            -0.5561599731445312,
+            0.0
+          ],
+          "max": [
+            38.9558219909668,
+            4.787199974060059,
+            18.80384063720703
+          ]
+        },
+        "triangles": 75388,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "朝花园立面的三处山花、两段底层拱廊及上层窗墙。布局取自1920年代，中央细部参照2015年照片。"
+    },
+    {
+      "id": "jingan-country-hospital-north-block",
+      "name": "宏恩医院历史主楼北翼与中部门诊连接体",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "country-hospital-north.html",
+      "manifest": "assets/models/candidates/jingan-country-hospital-north-block/manifest.json",
+      "manifest_sha256": "4567b67a08db7d0f875a10a14a1ad20bd68596a2d5cf0712444f9ad946dd1ff0",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-country-hospital-north-block/jingan-country-hospital-north-block-raw.glb",
+          "bytes": 2237492,
+          "sha256": "3cddf39305b0c92baf4a47e656ff31ba694ce3377d2ee207a137d467c75ff812",
+          "triangles": 38208,
+          "bounds_gltf_m": [
+            [
+              -18.139999389648438,
+              0.0,
+              -32.599998474121094
+            ],
+            [
+              17.93000030517578,
+              18.55500030517578,
+              2.5938267707824707
+            ]
+          ],
+          "materials": 12
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-country-hospital-north-block/jingan-country-hospital-north-block-web.glb",
+          "bytes": 838384,
+          "sha256": "04a9a4022b3e5d041b8edc0c8139e63cfc725249d6ed31e1cf674ec408ca9abc",
+          "triangles": 38208,
+          "bounds_gltf_m": [
+            [
+              -18.1399994,
+              0,
+              -32.5999985
+            ],
+            [
+              17.9300003,
+              18.5550003,
+              2.59382677
+            ]
+          ],
+          "materials": 12
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-country-hospital-north-block/jingan-country-hospital-north-block-lod.glb",
+          "bytes": 244568,
+          "sha256": "a7041ccd732f267a7ac81a139ca47080305d793ad66fe98d925e655671ee5784",
+          "triangles": 14560,
+          "bounds_gltf_m": [
+            [
+              -18.1399994,
+              0,
+              -32.5999985
+            ],
+            [
+              17.9300003,
+              18.5550003,
+              2.59382677
+            ]
+          ],
+          "materials": 12
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-country-hospital-north-block/jingan-country-hospital-north-block.blend",
+          "bytes": 553013,
+          "sha256": "3a51eb36ab1ad87ae502cc2a80f1ec634fae0b3970968b6147b614fc63b54b43"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -18.139999389648438,
+            0.0,
+            -32.599998474121094
+          ],
+          "max": [
+            17.93000030517578,
+            18.55500030517578,
+            2.5938267707824707
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -18.139999389648438,
+            -2.5938267707824707,
+            0.0
+          ],
+          "max": [
+            17.93000030517578,
+            32.599998474121094,
+            18.55500030517578
+          ]
+        },
+        "triangles": 38208,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "宏恩医院历史主楼北入口及其三开间凸部、东侧窗墙、平屋顶和中部门诊连接体。依据历史平面、北入口照片及航拍，层高、隐面与窗洞尺寸含估计。"
+    },
+    {
+      "id": "huangpu-wing-on-skybridges",
+      "name": "新老永安跨浙江中路北侧封闭天桥",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "wing-on-north-skybridge.html",
+      "manifest": "assets/models/candidates/huangpu-wing-on-skybridges/manifest.json",
+      "manifest_sha256": "dd49c76b16002783476e0b8391e9bb42f75bb074cc533ba3684142c114246819",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-raw.glb",
+          "bytes": 3094428,
+          "sha256": "3fcf22eaa8ca41f6327f5da9e25a10e5e98ef2257811350b1e345e0036004489",
+          "triangles": 59964
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges.blend",
+          "bytes": 264594,
+          "sha256": "88fe2a3c55822dfafa9371e2f33e194bed4406c8f9b92f71fdf0a536b31527cf"
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-web.glb",
+          "bytes": 3323012,
+          "sha256": "3eea41a1065fe277894742d3cee8dc17825190b6ada827ca24726f21ea3c575f",
+          "triangles": 59964
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-lod.glb",
+          "bytes": 180104,
+          "sha256": "1e4be2816b10280f5fe6bac774280a023f84fe38207244402f4bce7bd92f8bde",
+          "triangles": 2652
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -5.677499771118164,
+            13.0,
+            -2.1710000038146973
+          ],
+          "max": [
+            5.677499771118164,
+            20.747499465942383,
+            2.1710000038146973
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -5.677499771118164,
+            -2.1710000038146973,
+            13.0
+          ],
+          "max": [
+            5.677499771118164,
+            2.1710000038146973,
+            20.747499465942383
+          ]
+        },
+        "triangles": 59964,
+        "scene_meshes": 87,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms",
+        "overhead_min_y_m": {
+          "raw": 13.0,
+          "web": 13.0,
+          "lod": 13.0
+        }
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-overhead-connector",
+      "description": "跨浙江中路、靠南京东路的双层封闭天桥，北面每层六窗。桥下保留通行，桥深、标高和接墙位置按历史照片与两侧现有模型估算。"
+    },
+    {
+      "id": "huangpu-shanghai-concert-hall",
+      "name": "迁建后的上海音乐厅（原南京大戏院）外部体量与入口",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "concert-hall.html",
+      "manifest": "assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
+      "manifest_sha256": "0f5df27e556f49db1e601e6d8187438877530d72811c9a1fe1b3202e603b9119",
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall-web.glb",
+          "bytes": 1228664,
+          "sha256": "1e517b3b72dedd55d553f36d6599bd9573186eeaa44088e161a52c4489a0ab05",
+          "triangles": 42960
+        },
+        "raw": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall-raw.glb",
+          "bytes": 2859740,
+          "sha256": "f5c19980a3587f4e1895cc250929cd97d8675a91ac7494c179ea343a2a24a2bb",
+          "triangles": 42960
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall-lod.glb",
+          "bytes": 703376,
+          "sha256": "54679d8bcd6cf60118b061ffaa3cbfd9902cdab293b90ee2c92d22c8c45346de",
+          "triangles": 23764
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall.blend",
+          "bytes": 730697,
+          "sha256": "5636eafa9eea38164de3ce4b99344b242bce4c583a529afb5590097d709f40f3"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -28.613203048706055,
+            0.0,
+            -70.34762573242188
+          ],
+          "max": [
+            18.04435920715332,
+            21.7450008392334,
+            3.7873728275299072
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -28.613203048706055,
+            -3.7873728275299072,
+            0.0
+          ],
+          "max": [
+            18.04435920715332,
+            70.34762573242188,
+            21.7450008392334
+          ]
+        },
+        "triangles": 42960,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "迁建后上海音乐厅的外部体量、西北侧历史入口、东南侧对称入口、东北长边及坡屋顶与平屋顶。两侧入口参考2024年照片，隐面和高度含估计。"
+    },
+    {
+      "id": "huangpu-kincheng-bank",
+      "name": "金城银行大楼（江西中路200号临街主楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "kincheng-bank.html",
+      "manifest": "assets/models/candidates/huangpu-kincheng-bank/manifest.json",
+      "manifest_sha256": "8e4cbae4dd03e1e1fda13151ca557ffe6c2ffda1e37658239ef5da18bf7318fc",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-raw.glb",
+          "bytes": 1769708,
+          "sha256": "804c7a184a5eaec2005ecfc8f1d94daf8244b03dd53a3a2f38ed804b96366aee",
+          "triangles": 35368,
+          "bounds_gltf_m": [
+            [
+              -17.850000381469727,
+              0.0,
+              -19.959999084472656
+            ],
+            [
+              17.850000381469727,
+              29.75,
+              0.764859139919281
+            ]
+          ],
+          "materials": 8
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-web.glb",
+          "bytes": 563492,
+          "sha256": "fbce91f773a76fb8fefc7330ab8b210f332f10240aff3c8537acc036cf0820e7",
+          "triangles": 35368,
+          "bounds_gltf_m": [
+            [
+              -17.8500004,
+              0,
+              -19.9599991
+            ],
+            [
+              17.8500004,
+              29.75,
+              0.76485914
+            ]
+          ],
+          "materials": 8
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-lod.glb",
+          "bytes": 363520,
+          "sha256": "e81248ebb1a0dacef6b514a67728829661d873ff2325072b5ad8d41743eb9477",
+          "triangles": 22680,
+          "bounds_gltf_m": [
+            [
+              -17.8500004,
+              0,
+              -19.9599991
+            ],
+            [
+              17.8500004,
+              29.75,
+              0.76485914
+            ]
+          ],
+          "materials": 8
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank.blend",
+          "bytes": 494060,
+          "sha256": "7286b72afa744edea51a806a9527b53c6a8759da741c0a6168e48c9a9ae0cb74"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -17.850000381469727,
+            0.0,
+            -19.959999084472656
+          ],
+          "max": [
+            17.850000381469727,
+            29.75,
+            0.764859139919281
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -17.850000381469727,
+            -0.764859139919281,
+            0.0
+          ],
+          "max": [
+            17.850000381469727,
+            19.959999084472656,
+            29.75
+          ]
+        },
+        "triangles": 35368,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "江西中路200号金城银行临街主楼的双柱入口、徽饰、半圆拱窗、弧形阳台和两端窗墙。参考2015年及2021年照片，屋顶、层高与背侧遮挡部分含估计。"
+    },
+    {
+      "id": "jingan-majestic-theatre",
+      "name": "美琪大戏院（圆弧门厅、临街外墙与屋顶体量）",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "majestic-theatre.html",
+      "manifest": "assets/models/candidates/jingan-majestic-theatre/manifest.json",
+      "manifest_sha256": "2f8ad6727294174c2875da0efbd6fe1498d2ca3b8103600c9d04fc7c3c145d37",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-majestic-theatre/jingan-majestic-theatre-raw.glb",
+          "bytes": 1795656,
+          "sha256": "a8243629d3cb2911daeba85a5c070724c1a770e1ffb8bb872e39ce1147ac01d7",
+          "triangles": 29644,
+          "bounds_gltf_m": [
+            [
+              -43.05277633666992,
+              0.0,
+              -36.349998474121094
+            ],
+            [
+              43.55720138549805,
+              18.719999313354492,
+              34.589534759521484
+            ]
+          ],
+          "materials": 14
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-majestic-theatre/jingan-majestic-theatre-web.glb",
+          "bytes": 718772,
+          "sha256": "3a17246ae512ae6a7500ef50ce97fff1eaf4cd70b9f7aa95f606214fed59bcc2",
+          "triangles": 29644,
+          "bounds_gltf_m": [
+            [
+              -43.0527763,
+              0,
+              -36.3499985
+            ],
+            [
+              43.5572014,
+              18.7199993,
+              34.5895348
+            ]
+          ],
+          "materials": 14
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-majestic-theatre/jingan-majestic-theatre-lod.glb",
+          "bytes": 339332,
+          "sha256": "f6376d98146e260d2733448f0e8b518cd10a75c2173706519dad96551461fa27",
+          "triangles": 13580,
+          "bounds_gltf_m": [
+            [
+              -43.0527763,
+              0,
+              -36.3499985
+            ],
+            [
+              43.5572014,
+              18.7185497,
+              34.5895348
+            ]
+          ],
+          "materials": 11
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-majestic-theatre/jingan-majestic-theatre.blend",
+          "bytes": 447171,
+          "sha256": "18d01d8bb6a8976b72cbd5e1c6ade984d03d8123ad72ab367bba507122d419ac"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -43.05277633666992,
+            0.0,
+            -36.349998474121094
+          ],
+          "max": [
+            43.55720138549805,
+            18.719999313354492,
+            34.589534759521484
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -43.05277633666992,
+            -34.589534759521484,
+            0.0
+          ],
+          "max": [
+            43.55720138549805,
+            36.349998474121094,
+            18.719999313354492
+          ]
+        },
+        "triangles": 29644,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "美琪大戏院的圆角玻璃门厅、两侧临街外墙与屋顶体量。参考2017年修缮后的日景和夜景照片，遮挡处及屋顶设备细部含估计。"
+    },
+    {
+      "id": "huangpu-metropol-cinema-historic-front",
+      "name": "大上海大戏院历史立面（1933年建筑）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "metropol-cinema-history.html",
+      "manifest": "assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
+      "manifest_sha256": "575a39705991220638d879206ff0d017f67e5a38a6eed0b47c2af03a0cbad7fa",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-raw.glb",
+          "bytes": 862828,
+          "sha256": "700210a2060459cd10f794e0f71a26dc80b51b1a353880231e00a18620d6e37e",
+          "triangles": 12808,
+          "bounds_gltf_m": [
+            [
+              -11.850000381469727,
+              0.0,
+              -1.3200000524520874
+            ],
+            [
+              11.850000381469727,
+              21.833999633789062,
+              1.840000033378601
+            ]
+          ],
+          "materials": 13
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-web.glb",
+          "bytes": 350464,
+          "sha256": "293a174697bd9ae1698aa301ce69f9480efc3ab859675be08cb5428a14e44402",
+          "triangles": 12808,
+          "bounds_gltf_m": [
+            [
+              -11.8500004,
+              0,
+              -1.32000005
+            ],
+            [
+              11.8500004,
+              21.8339996,
+              1.84000003
+            ]
+          ],
+          "materials": 13
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-lod.glb",
+          "bytes": 240160,
+          "sha256": "97ec19435e7751a792e91d60e75099d1a75c80c3ccd7447b03b78403789c8c17",
+          "triangles": 9072,
+          "bounds_gltf_m": [
+            [
+              -11.8500004,
+              0,
+              -1.32000005
+            ],
+            [
+              11.8500004,
+              21.8339996,
+              1.84000003
+            ]
+          ],
+          "materials": 13
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front.blend",
+          "bytes": 228254,
+          "sha256": "f22a1a5b9a1bcfa1a338cb4fe2e7e0c73d0f4eac648246e57f9765f489739100"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -11.850000381469727,
+            0.0,
+            -1.3200000524520874
+          ],
+          "max": [
+            11.850000381469727,
+            21.833999633789062,
+            1.840000033378601
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -11.850000381469727,
+            -1.840000033378601,
+            0.0
+          ],
+          "max": [
+            11.850000381469727,
+            1.3200000524520874,
+            21.833999633789062
+          ]
+        },
+        "triangles": 12808,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "historical-photo-informed-facade-study",
+      "description": "1934年至1937年照片中的大上海大戏院临街立面。保留八根灯柱、挑牌、雨篷和门厅入口；尺寸、颜色与进深含估计。原馆已列入湮没建筑，现址在当代地图定位，历史模型按需独立展示。"
+    }
+  ],
+  "prior_incremental_inventory": {
+    "file": "data/audit/majestic-theatre-v1/inventory-increment.json",
+    "bytes": 60190,
+    "sha256": "541f6ed6f26624d780de34e40c8c16fce69fb5e7b59c0e3344fc38d78778fb42"
+  },
+  "current_delivery_manifests": [
+    "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json"
+  ]
+}

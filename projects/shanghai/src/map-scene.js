@@ -13,7 +13,7 @@ import { OrdinaryCityDetailStreamer as CityDetailStreamer } from './ordinary-cit
 import { OrdinaryBuildingCatalog } from './ordinary-building-catalog.js';
 import { createOrdinaryMacroRegistrar, loadOrdinaryLandmarkAsset, isOrdinaryLandmarkRecord } from './ordinary-scene-adapter.js';
 import { SourceGeometryCorrectionState } from './source-geometry-correction.js';
-import { modelSurfaceKind, isArchitecturalBuilding } from './precise-registration-ui.js';
+import { modelSurfaceKind, isArchitecturalBuilding } from './precise-registration-ui.js?v=metropol-cinema-history-v1';
 import { StreetInteraction, DEFAULT_GROUND_HEIGHT } from './street-interaction.js';
 import { loadStreetAssets } from './street-assets.js';
 import { OSMBuildingSuppressor } from './osm-building-suppression.js';
@@ -24,7 +24,7 @@ import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictio
 import { correctPhotographicTexture } from './photographic-texture.js';
 import { preparePhotographicGlass } from './photographic-glass.js';
 import {CandidateSourceSections} from './candidate-source-sections.js?v=country-hospital-north-v1';
-import {CandidateCityState} from './candidate-city-integrations.js?v=majestic-theatre-v1';
+import {CandidateCityState} from './candidate-city-integrations.js?v=metropol-cinema-history-v1';
 import {CandidateCityClipper} from './candidate-city-clipping.js?v=kincheng-bank-v1';
 import {planCandidateVectorClipping} from './candidate-vector-clipping.js?v=majestic-theatre-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
@@ -610,6 +610,9 @@ export async function createShanghaiScene(options = {}) {
     const array = Array.isArray(items) ? items : items?.landmarks || items?.features || [];
     for (const item of array) {
       const p = item.properties ? {...item.properties, lng: item.geometry.coordinates[0], lat: item.geometry.coordinates[1]} : item;
+      // Its marker points to an independent historic viewer. The current
+      // city keeps its streamed building, source clipping and collisions.
+      if (p.kind === 'historical-site') continue;
       const lng = Number(p.lng ?? p.longitude ?? p.lon), lat = Number(p.lat ?? p.latitude);
       if (!Number.isFinite(lng) || !Number.isFinite(lat) || !p.id || landmarkRecords.has(p.id)) continue;
       const path = p.url || p.model || `../assets/models/${p.id}.glb`;

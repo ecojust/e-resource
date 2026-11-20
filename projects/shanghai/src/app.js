@@ -1,16 +1,17 @@
-import { createShanghaiScene } from './map-scene.js?v=majestic-theatre-v1';
+import { createShanghaiScene } from './map-scene.js?v=metropol-cinema-history-v1';
 import { WalkController } from './walk-controller.js';
+import {setupHistoricalView} from './historical-view.js?v=metropol-cinema-history-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=metropol-cinema-history-v1';
 import { readVerifiedBytes } from './ordinary-building-catalog.js';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=majestic-theatre-v1';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=metropol-cinema-history-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js';
 
 const $ = id => document.getElementById(id);
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const BUND = {id:'bund', name:'外滩历史建筑群', districtId:'310101', walkStart:[121.48582997998342,31.2404532310156], bearing:265.447};
-let scene, controller, districts=[], landmarks=[], nearbyOrdinary=[], boundaries, activePlace=BUND;
+let historicalPanel, scene, controller, districts=[], landmarks=[], nearbyOrdinary=[], boundaries, activePlace=BUND;
 let mode='overview', category='landmarks', activeDistrict='310101', toastTimer, navigation=0;
 let districtPaths = new Map();
 let panelOpen=!mobile();
@@ -33,7 +34,11 @@ function updateLocation(place) {
   const district=districts.find(d=>d.id===(place.districtId||place.id));
   $('location-name').textContent=place.name;
   $('location-district').textContent=(district?.name||'上海市')+(place.city_integration?' · 近似定位 · 外观模型':place.kind==='building'?' · 逐栋复原':place.height_m?' · 城市地标':' · 城市探索');
-  const overviewOnly=place.kind==='building'&&!walkingPose(place);
+  const historical=place.kind==='historical-site';
+  historicalPanel?.select(place);
+  if(historical) $('location-district').textContent=`${district?.name||'上海市'} · ${place.historical_view.building_year}年建筑原址`;
+  const overviewOnly=historical||place.kind==='building'&&!walkingPose(place);
+  $('start-walk').hidden=historical;
   $('start-walk').disabled=overviewOnly;$('walk-mode').disabled=overviewOnly;
   $('start-walk').innerHTML=overviewOnly?'当前建筑仅支持俯瞰':mode==='walk'?'正在漫游 <span>↗</span>':'进入漫游 <span>↗</span>';
   activeDistrict=district?.id||activeDistrict;
@@ -43,7 +48,7 @@ function updateLocation(place) {
   renderPlaces();
 }
 function syncMode(next, announce=true) {
-  if(next==='walk'&&activePlace.kind==='building'&&!walkingPose(activePlace))next='overview';
+  if(next==='walk'&&!walkingPose(activePlace))next='overview';
   if(next==='walk')scene?.map.jumpTo(OVERVIEW_CAMERA_RESET);
   mode=next;
   if(location.hash){const hash=new URLSearchParams(location.hash.slice(1));hash.set('mode',next);history.replaceState(null,'',`#${hash}`);}
@@ -96,7 +101,7 @@ async function selectPlace(place, {mode: requestedMode} = {}) {
   const pose=walkingPose(place);
   if(!pose){
     // A selected approximate placement is still a shareable global destination.
-    if(place.city_integration)history.replaceState(null,'',`#landmark=${encodeURIComponent(place.id)}&mode=overview`);
+    if(place.city_integration||place.kind==='historical-site')history.replaceState(null,'',`#landmark=${encodeURIComponent(place.id)}&mode=overview`);
     if(mobile())togglePanel(false);
     showOverview({...place,overviewZoom:place.overviewZoom??18.2});return;
   }
@@ -139,14 +144,15 @@ function renderPlaces() {
   list.classList.toggle('districts',category==='districts'&&!query);
   if(!items.length) {const empty=document.createElement('div');empty.className='empty-list';empty.textContent='没有找到匹配的区域或地标';list.append(empty);return;}
   items.forEach((p,index)=>{
+    const landmark=Boolean(p.height_m)||p.kind==='historical-site';
     const button=document.createElement('button');button.type='button';
-    button.className=`place-button${p.height_m?' landmark-item':''}${(p.id===activePlace.id||(!p.height_m&&p.id===activeDistrict))?' selected':''}`;
+    button.className=`place-button${landmark?' landmark-item':''}${(p.id===activePlace.id||(!landmark&&p.id===activeDistrict))?' selected':''}`;
     button.dataset.place=p.id;
     button.setAttribute('aria-label',`前往${p.name}`);
-    const icon=document.createElement('span');icon.className=p.height_m?'landmark-icon':'place-number';icon.textContent=p.height_m?'▥':String(districts.findIndex(d=>d.id===p.id)+1).padStart(2,'0');
+    const icon=document.createElement('span');icon.className=landmark?'landmark-icon':'place-number';icon.textContent=landmark?'▥':String(districts.findIndex(d=>d.id===p.id)+1).padStart(2,'0');
     const words=document.createElement('span');
     const label=document.createElement('span');label.className='place-name';label.textContent=p.name;words.append(label);
-    if(p.height_m){const small=document.createElement('small');small.className='landmark-description';small.textContent=placeDescription(p,districts);words.append(small);}
+    if(landmark){const small=document.createElement('small');small.className='landmark-description';small.textContent=placeDescription(p,districts);words.append(small);}
     const arrow=document.createElement('span');arrow.className='place-arrow';arrow.textContent='↗';
     button.append(icon,words,arrow);button.addEventListener('click',()=>selectPlace(p,{mode:p.height_m||p.kind==='building'?'walk':undefined}));list.append(button);
   });
@@ -192,6 +198,11 @@ function updateHud(state) {
   $('compass-needle').style.transform=`rotate(${-(scene?.map.getBearing()||0)}deg)`;
 }
 function installUi() {
+  historicalPanel=setupHistoricalView({dialog:$('history-dialog'),button:$('history-open'),frame:$('history-frame'),
+    title:$('history-title'),closeButton:$('history-close'),onModalChange:open=>{
+      if(open) scene?.map.stop();
+      controller?.setEnabled(!open);
+    }});
   $('panel-toggle').addEventListener('click',()=>togglePanel());
   const showInfo=()=>{
     const reference=activePlace.reference;
@@ -251,7 +262,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=majestic-theatre-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=metropol-cinema-history-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
       if(name!=='data/candidate-city-integrations.json')throw error;
       candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
     })));

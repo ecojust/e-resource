@@ -61,6 +61,12 @@ def main():
         vector_module = include_import(scene, scene_code, 'candidate-vector-clipping')
         include_import(vector_module, blob(path(vector_module)).decode(), 'candidate-vector-geometry')
         include_import(catalog_module, catalog_code, 'candidate-vector-geometry')
+    if './historical-view.js' in app_source:
+        include_import(app, app_source, 'historical-view')
+        include_import(catalog_module, catalog_code, 'historical-view')
+        include_import(app, app_source, 'precise-registration-ui')
+        stylesheet, = re.findall(r'<link rel="stylesheet" href="(src/historical-view\.css(?:\?[^"]*)?)"', blob(PREFIX + 'index.html').decode())
+        files.append(PREFIX + stylesheet)
     query, = re.findall(r"candidate-city-integrations\.json'\?'(\?[^']+)'", app_source)
     files.append(PREFIX + 'data/candidate-city-integrations.json' + query)
     assets = {urljoin(manifest_path, a['file']): a for a in manifest['assets'].values()}

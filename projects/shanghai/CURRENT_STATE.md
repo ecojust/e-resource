@@ -1,3 +1,13 @@
+# 大上海大戏院历史立面（1933年建筑）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropol-cinema-historic-front&mode=overview) · [单体旋转与下载](metropol-cinema-history.html) · [来源与制作范围](source/precise/huangpu-metropol-cinema-historic-front/README.md) · [验收记录](data/audit/metropol-cinema-history-v1/README.md)
+
+1934年至1937年照片中的大上海大戏院临街立面。保留八根灯柱、挑牌、雨篷和门厅入口；尺寸、颜色与进深含估计。原馆已列入湮没建筑，现址在当代地图定位，历史模型按需独立展示。
+
+近景 12,808 个三角面，远景 9,072 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,681,706 字节。上海主图现有 91 处独立入口，黄浦区 33 处。[资产清单](assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json)
+
+第 45 项已登记历史原址和四种模型文件。91 处地图的完整桌面、触屏返回与灯牌实点正在复验，结果按实际步骤追加至本项验收记录。
+
 # 美琪大戏院（圆弧门厅、临街外墙与屋顶体量）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-majestic-theatre&mode=overview) · [单体旋转与下载](majestic-theatre.html) · [来源与制作范围](source/precise/jingan-majestic-theatre/README.md) · [验收记录](data/audit/majestic-theatre-v1/README.md)

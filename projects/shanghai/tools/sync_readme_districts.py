@@ -198,7 +198,9 @@ def render(text, items, times, project=False):
     parts = re.split(r'(?=^### )', section, flags=re.M)
     evidence = 'data/model-todo/candidate-publication-times.json' if project else 'projects/shanghai/data/model-todo/candidate-publication-times.json'
     placement = 'data/candidate-city-integrations.json' if project else 'projects/shanghai/data/candidate-city-integrations.json'
-    intro = f'<!-- district-candidates:summary:start -->\n**汇总：16区，{len(base_ids) + len(city)}处建筑与构件模型入口（{len(base_ids)}处既有＋{len(city)}处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原{len(base_ids)}处保留室外漫游；新增{len(city)}处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据]({placement}) · [候选版本时间]({evidence})。\n<!-- district-candidates:summary:end -->\n'
+    archives = sum(row.get('kind') == 'historical-site' for row in city.values())
+    archive_note = f'其中 {archives} 处为历史原址，可在地点卡中打开独立历史模型。' if archives else ''
+    intro = f'<!-- district-candidates:summary:start -->\n**汇总：16区，{len(base_ids) + len(city)}处建筑与构件模型入口（{len(base_ids)}处既有＋{len(city)}处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原{len(base_ids)}处保留室外漫游；新增{len(city)}处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。{archive_note}入口随master更新。[定位依据]({placement}) · [候选版本时间]({evidence})。\n<!-- district-candidates:summary:end -->\n'
     parts[0] = parts[0].rstrip() + '\n\n' + intro + '\n'
     placed, counted_districts = set(), set()
     for i in range(1, len(parts)):
@@ -231,6 +233,8 @@ def render(text, items, times, project=False):
             # separately verified navigation contract; inclusion is not precision acceptance.
             if city[item['id']].get('navigation', {}).get('listed'):
                 links += f" · [漫游]({CURRENT}index.html#landmark={item['id']}&mode=walk)"
+            if city[item['id']].get('kind') == 'historical-site':
+                links += f" · {city[item['id']]['historical_view']['building_year']} 年原址，地点卡可查看历史外观"
             rows.append(f"| {name} | {date} | {links} |")
             placed.add(item['id'])
         parts[i] = block + '\n' + '\n'.join(rows) + '\n\n'

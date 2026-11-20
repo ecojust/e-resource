@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>大上海大戏院 · 历史立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <style>
+    .embedded header,.embedded footer{display:none}
+    .embedded #model-view{top:8px;bottom:8px}
+    .embedded .panel{top:12px;bottom:12px}
+    .embedded #site-return{display:block;margin-top:8px}
+    @media(max-width:650px){.embedded #model-view{inset:0 0 46%}.embedded .panel{top:54%;bottom:0;max-height:none}}
+  </style>
+  <script>
+    if(window.self!==window.top && new URLSearchParams(location.search).get('embed')==='history'){
+      document.documentElement.classList.add('embedded');
+      const returnToMap=event=>{event.preventDefault();parent.postMessage('close-historical-view',location.origin);};
+      addEventListener('keydown',event=>{if(event.key==='Escape') returnToMap(event);});
+      addEventListener('DOMContentLoaded',()=>{
+        const link=document.getElementById('site-return');
+        link.textContent='返回当代原址';
+        link.addEventListener('click',returnToMap);
+        document.querySelector('.panel').append(link);
+      });
+    }
+  </script>
+</head>
+<body>
+  <main id="model-view" data-oblique="negative-x" aria-label="大上海大戏院历史立面三维模型"></main>
+  <header>
+    <a id="site-return" href="index.html#landmark=huangpu-metropol-cinema-historic-front&amp;mode=overview">← 查看当代原址</a> · <a href="landmarks.html#building-huangpu-metropol-cinema-historic-front">按区目录</a>
+    <p class="eyebrow">黄浦区 · 西藏中路原址</p>
+    <h1>大上海大戏院</h1>
+    <p>1933年建筑 · 历史立面</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">1934年至1937年的档案照片记录了大上海大戏院的八根亮柱、横向雨篷和沿街窗列。原电影院现已消失，今天的商城影院位于新楼内。本页重现历史照片所见的街面，进深和标高为估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">历史正立面</button>
+      <button type="button" data-view="oblique">斜侧面</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-metropol-cinema-historic-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-metropol-cinema-historic-front');
+  </script>
+</body>
+</html>

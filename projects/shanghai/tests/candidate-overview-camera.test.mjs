@@ -3,9 +3,11 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from '../src/candidate-overview-camera.js';
+import {mergeCandidateCityModels} from '../src/candidate-city-integrations.js';
 import {WalkController} from '../src/walk-controller.js';
 
-const candidates=JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models.map(row=>({...row,city_integration:true}));
+const catalogue=JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8'));
+const candidates=mergeCandidateCityModels([],catalogue);
 const legacy=JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8'));
 const context={module:{exports:{}},console,URL,Blob,TextDecoder,TextEncoder,setTimeout,clearTimeout,performance};
 context.exports=context.module.exports;context.self=context;context.globalThis=context;
@@ -50,7 +52,16 @@ const viewports=[
 for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: all delivered candidate bounds fit the real MapLibre camera outside the interface`,()=>{
   assert(candidates.length>=30);
   for(const place of candidates){
-    const camera=candidateOverviewCamera(place,viewport);assert(camera,place.id);
+    const camera=candidateOverviewCamera(place,viewport);
+    if(place.kind==='historical-site'){
+      assert.equal(camera,null,place.id);
+      assert.equal(place.city_integration,undefined);
+      assert.equal(place.bounds_glb,undefined);
+      assert([place.lng,place.lat].every(Number.isFinite));
+      assert(place.overviewZoom>=8&&place.overviewZoom<=24);
+      continue;
+    }
+    assert(camera,place.id);
     assert(camera.zoom>=8&&camera.zoom<=24);assert(Number.isFinite(camera.elevation));
     assert.deepEqual(camera.padding,viewport.insets);
     const transform=actualTransform(camera,viewport),corners=worldCorners(place);

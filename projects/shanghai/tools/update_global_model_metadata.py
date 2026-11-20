@@ -29,7 +29,11 @@ def main():
             'walk_enabled': model.get('navigation', {}).get('listed') is True,
             'note': model.get('registration_note', '近似定位；尺寸与未见构造仍含估计'),
         }
-        row['next_action'] = '已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留'
+        if model.get('kind') == 'historical-site':
+            row['city_integration'].update(status='historical-viewer', note='当代地图提供原址入口，历史立面在独立面板按需展示。')
+            row['next_action'] = '继续核对原馆尺度、历史街界及改建工程档案'
+        else:
+            row['next_action'] = '已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留'
     assert seen == set(models), 'City integration lacks a production-queue record'
     payload = json.dumps(queue, ensure_ascii=False, indent=2) + '\n'
     if args.check:

@@ -13,6 +13,8 @@ from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import math
+import re
+from datetime import date
 from pathlib import Path
 import struct
 import subprocess
@@ -345,6 +347,36 @@ def checked_geometry(geometry, label, nullable=False, *, collision=False):
     return result
 
 
+def historical_site_record(item, placement):
+    """An archive viewer supplies a destination only; it cannot edit the current city."""
+    ident = item["id"]
+    assert item["original_delivery_status"] == "historical-photo-informed-facade-study", ident
+    assert set(placement) == {"id", "lng", "lat", "historical_view", "navigation", "collision_geometry",
+                              "replacement_geometry", "source_feature_ids", "model_geometry_sha256"}, ident
+    assert placement["navigation"] == {"listed": False}, ident
+    assert placement["collision_geometry"] is None and placement["replacement_geometry"] is None, ident
+    assert placement["source_feature_ids"] == {"building": [], "building_part": []}, ident
+    assert placement["model_geometry_sha256"] == {key: item["assets"][key]["sha256"] for key in ("raw", "web", "lod")}, ident
+    view = placement["historical_view"]
+    assert set(view) == {"kind", "building_year", "evidence_years"} and view["kind"] == "archival-facade", ident
+    year, years = view["building_year"], view["evidence_years"]
+    assert type(year) is int and isinstance(years, list) and len(years) == 2 and all(type(x) is int for x in years), ident
+    assert 1500 <= year <= years[0] <= years[1] <= date.today().year, ident
+    assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*-history\.html", item["individual_page"]), ident
+    assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", ident), ident
+    page = (PROJECT / item["individual_page"]).read_text()
+    assert "showCandidateAssetViewer('" + ident + "')" in page, f"Archive viewer identity differs: {ident}"
+    assert item["manifest"] == f"assets/models/candidates/{ident}/manifest.json", ident
+    for key in ("web", "lod"):
+        expected = f"assets/models/candidates/{ident}/{ident}-{key}.glb"
+        assert item["assets"][key]["file"] == expected, ident
+    return {"id": ident, "name": item["name"], "kind": "historical-site", "districtId": item["districtId"],
+            "district_name": item["district"], "lng": placement["lng"], "lat": placement["lat"],
+            "individual_page": item["individual_page"], "candidate_manifest": item["manifest"], "historical_view": view,
+            "assets": {key: item["assets"][key] for key in ("web", "lod")}, "navigation": {"listed": False},
+            "collision_geometry": None, "replacement_geometry": None, "source_feature_ids": placement["source_feature_ids"]}
+
+
 def checked_ground_clearance(item, placement):
     """A suspended connector may omit its 2D obstacle only with verified clearance in every GLB."""
     label = item["id"] + " overhead connector"
@@ -443,6 +475,9 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             assert digest == item["assets"][variant]["sha256"], f"Stale placement geometry: {ident}/{variant}"
         lng, lat = placement["lng"], placement["lat"]
         assert 120.65 < lng < 122.3 and 30.55 < lat < 32
+        if "historical_view" in placement or item.get("original_delivery_status") == "historical-photo-informed-facade-study":
+            models.append(historical_site_record(item, placement))
+            continue
         heading, scale = placement["heading"], placement.get("scale", 1)
         assert math.isfinite(heading) and isinstance(scale, (float, int)) and .1 <= scale <= 4
         bounds = placement.get("bounds_glb", item["geometry"]["bounds_glb"])
@@ -552,6 +587,10 @@ def build_catalog(inventory, inventory_path=INVENTORY):
                "new_walk_entry_count": len(spawn_checks),
                "input_files": inputs, "inventory_sha256": hashlib.sha256(inventory_blob).hexdigest(),
                "models": models}
+    history_count = sum(model.get("kind") == "historical-site" for model in models)
+    if history_count:
+        catalog["historical_site_count"] = history_count
+        catalog["scope"] = f"{len(models) - history_count} current-scene models; {history_count} historical sites with separate archive viewers"
     checks = {"schema": "candidate-city-catalog-checks-v1", "existing_city_count": existing_count, "new_city_models": len(models),
               "unique_city_destinations": total, "inputs": inputs, "all_asset_contracts_match_inventory_or_checked_derivation": True,
               "all_placement_polygons_valid": True, "identified_source_required_for_replacement": True,

@@ -45,14 +45,15 @@ def render(root: Path = ROOT) -> str:
             viewer = viewers.get(ident, candidates_by_id.get(ident, {}))
             href = 'index.html#landmark=' + quote(ident, safe='') + ('&mode=overview' if integrated else '&mode=walk')
             description = (viewer.get('description') or item.get('architecture_style') or ('近似定位的建筑外观模型；尺寸与未见细节含估计。' if integrated else '逐栋建筑外观模型。'))
-            location_note = '近似定位' if integrated else '城市地标'
-            actions = [f'<a href="{esc(href, quote=True)}">{"全局查看" if integrated else "进入漫游"} ↗</a>']
+            historical = item.get('kind') == 'historical-site'
+            location_note = '历史原址 · 近似定位' if historical else '近似定位' if integrated else '城市地标'
+            actions = [f'<a href="{esc(href, quote=True)}">{"当代地图原址" if historical else "全局查看" if integrated else "进入漫游"} ↗</a>']
             if integrated and item.get('navigation', {}).get('listed'):
                 walk = 'index.html#landmark=' + quote(ident, safe='') + '&mode=walk'
                 actions.append(f'<a href="{esc(walk, quote=True)}">室外漫游 ↗</a>')
             if viewer.get('page'):
                 assert viewer['page'].endswith('.html') and '/' not in viewer['page'], 'Viewer must be a project page'
-                actions.append(f'<a href="{esc(viewer["page"], quote=True)}">单体预览 ↗</a>')
+                actions.append(f'<a href="{esc(viewer["page"], quote=True)}">{"查看历史立面" if historical else "单体预览"} ↗</a>')
             tag = '<span class="new-tag">最近接入</span>' if ident == latest['id'] else ''
             cards.append(f'''<article class="landmark-card{' featured' if tag else ''}" id="building-{esc(ident, quote=True)}" data-landmark="{esc(ident, quote=True)}" data-search="{esc(item['name'] + ' ' + district['name'] + ' ' + description, quote=True)}">
   <div class="card-meta"><span>{esc(district['name'])} · {location_note}</span>{tag}</div><h3><a href="{esc(href, quote=True)}">{esc(item['name'])}</a></h3><p>{esc(description)}</p>
@@ -69,6 +70,8 @@ def render(root: Path = ROOT) -> str:
         surface_cards.append(f'''<a class="landmark-card" id="viewer-{esc(item['id'], quote=True)}" data-viewer="{esc(item['id'], quote=True)}" href="{esc(item['page'], quote=True)}" data-search="{esc(item['name'] + ' ' + item['district'], quote=True)}"><div class="card-meta">全市16区 · 平面模型</div><h3>{esc(item['name'])}</h3><p>{esc(item['description'])}</p><div class="card-foot"><strong>分区查看与下载 ↗</strong></div></a>''')
     surface_section = f'''<section class="landmark-group" id="surfaces" aria-labelledby="heading-surfaces"><div class="group-heading"><div><h2 id="heading-surfaces">地面与水系</h2><p>地图水面与非水域底面的零高程平面；尚无实测地形。</p></div><a href="#top">回到顶部 ↑</a></div><div class="landmark-grid">{''.join(surface_cards)}</div></section>'''
     count = len(records) + len(surfaces)
+    historical_count = sum(row.get('kind') == 'historical-site' for row in records)
+    history_note = f'其中{historical_count}处历史原址设独立立面预览，可在地图中查看当代街区。' if historical_count else ''
     return f'''<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -84,7 +87,7 @@ def render(root: Path = ROOT) -> str:
   <a class="skip-link" href="#destinations">跳到建筑目录</a>
   <header class="directory-header"><a class="wordmark" href="index.html#mode=overview">上海漫游 <small>SHANGHAI EXPLORER</small></a><a class="overview-link" href="index.html#mode=overview">打开全市地图 ↗</a></header>
   <main>
-    <section class="hero"><div><span class="eyebrow">SHANGHAI MODEL COLLECTION</span><h1>按区找建筑，<br>在城市中查看。</h1><p><strong>{len(records)} 处建筑与构件 · {len(sections)} 个行政区。</strong>已完成模型统一接入全局场景；选择建筑可直接定位，单体预览保留旋转查看和下载。</p><a class="latest-link" href="#building-{esc(latest['id'], quote=True)}">最近接入：{esc(latest['name'])} ↓</a></div><div class="hero-count" aria-hidden="true">{len(records)}<span>全局建筑入口 · 上海</span></div></section>
+    <section class="hero"><div><span class="eyebrow">SHANGHAI MODEL COLLECTION</span><h1>按区找建筑，<br>在城市中查看。</h1><p><strong>{len(records)} 处建筑与构件 · {len(sections)} 个行政区。</strong>已完成模型统一接入全局场景；选择建筑可直接定位，单体预览保留旋转查看和下载。{history_note}</p><a class="latest-link" href="#building-{esc(latest['id'], quote=True)}">最近接入：{esc(latest['name'])} ↓</a></div><div class="hero-count" aria-hidden="true">{len(records)}<span>全局建筑入口 · 上海</span></div></section>
     <nav class="group-nav" aria-label="按行政区查看">{''.join(navigation)}<a href="#surfaces">地面与水系</a></nav>
     <div class="directory-search" hidden><label for="landmark-search">寻找建筑</label><input id="landmark-search" type="search" placeholder="输入建筑名称或行政区，如：永安、崇明" autocomplete="off"><span id="result-count" role="status" aria-live="polite">共 {count} 个入口</span></div>
     <div id="destinations"><span id="models"></span><span id="architecture"></span>{''.join(sections)}{surface_section}</div>

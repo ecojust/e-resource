@@ -44,33 +44,33 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 52,
+  "candidate_manifest_count": 53,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 50,
-  "resulting_city_count": 90,
+  "new_city_model_count": 51,
+  "resulting_city_count": 91,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 4,
     "静安区": 3,
-    "黄浦区": 16
+    "黄浦区": 17
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 208,
-    "bytes": 814020430,
+    "files": 212,
+    "bytes": 815702136,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 3300931,
+    "current_run_added_bytes": 1681706,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 76
+    "inherited_incremental_files": 80
   },
   "records": [
     {
@@ -3717,6 +3717,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "美琪大戏院的圆角玻璃门厅、两侧临街外墙与屋顶体量。参考2017年修缮后的日景和夜景照片，遮挡处及屋顶设备细部含估计。"
+    },
+    {
+      "id": "huangpu-metropol-cinema-historic-front",
+      "name": "大上海大戏院历史立面（1933年建筑）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "metropol-cinema-history.html",
+      "manifest": "assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
+      "manifest_sha256": "575a39705991220638d879206ff0d017f67e5a38a6eed0b47c2af03a0cbad7fa",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-raw.glb",
+          "bytes": 862828,
+          "sha256": "700210a2060459cd10f794e0f71a26dc80b51b1a353880231e00a18620d6e37e",
+          "triangles": 12808,
+          "bounds_gltf_m": [
+            [
+              -11.850000381469727,
+              0.0,
+              -1.3200000524520874
+            ],
+            [
+              11.850000381469727,
+              21.833999633789062,
+              1.840000033378601
+            ]
+          ],
+          "materials": 13
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-web.glb",
+          "bytes": 350464,
+          "sha256": "293a174697bd9ae1698aa301ce69f9480efc3ab859675be08cb5428a14e44402",
+          "triangles": 12808,
+          "bounds_gltf_m": [
+            [
+              -11.8500004,
+              0,
+              -1.32000005
+            ],
+            [
+              11.8500004,
+              21.8339996,
+              1.84000003
+            ]
+          ],
+          "materials": 13
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-lod.glb",
+          "bytes": 240160,
+          "sha256": "97ec19435e7751a792e91d60e75099d1a75c80c3ccd7447b03b78403789c8c17",
+          "triangles": 9072,
+          "bounds_gltf_m": [
+            [
+              -11.8500004,
+              0,
+              -1.32000005
+            ],
+            [
+              11.8500004,
+              21.8339996,
+              1.84000003
+            ]
+          ],
+          "materials": 13
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front.blend",
+          "bytes": 228254,
+          "sha256": "f22a1a5b9a1bcfa1a338cb4fe2e7e0c73d0f4eac648246e57f9765f489739100"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -11.850000381469727,
+            0.0,
+            -1.3200000524520874
+          ],
+          "max": [
+            11.850000381469727,
+            21.833999633789062,
+            1.840000033378601
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -11.850000381469727,
+            -1.840000033378601,
+            0.0
+          ],
+          "max": [
+            11.850000381469727,
+            1.3200000524520874,
+            21.833999633789062
+          ]
+        },
+        "triangles": 12808,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "historical-photo-informed-facade-study",
+      "description": "1934年至1937年照片中的大上海大戏院临街立面。保留八根灯柱、挑牌、雨篷和门厅入口；尺寸、颜色与进深含估计。原馆已列入湮没建筑，现址在当代地图定位，历史模型按需独立展示。"
     }
   ],
   "baseline_inventory": {
@@ -3731,6 +3837,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
@@ -3747,13 +3854,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/majestic-theatre-v1",
+  "incremental_audit_directory": "data/audit/metropol-cinema-history-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/kincheng-bank-v1/inventory-increment.json",
-    "bytes": 56597,
-    "sha256": "ddad4e52f57b5b0a1c459469953f9139b650459df000fe821d4c1ac22cdc9a42"
+    "file": "data/audit/majestic-theatre-v1/inventory-increment.json",
+    "bytes": 60190,
+    "sha256": "541f6ed6f26624d780de34e40c8c16fce69fb5e7b59c0e3344fc38d78778fb42"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json"
   ]
 }

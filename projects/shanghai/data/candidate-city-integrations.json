@@ -1,10 +1,10 @@
 {
   "schema": "candidate-city-integrations-v1",
   "asset_baseline_commit": "65af6bea52780f274d2ee005bbbd513317b559fc",
-  "scope": "50 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
+  "scope": "50 current-scene models; 1 historical sites with separate archive viewers",
   "existing_city_count": 40,
-  "new_city_model_count": 50,
-  "resulting_city_count": 90,
+  "new_city_model_count": 51,
+  "resulting_city_count": 91,
   "new_walk_entry_count": 0,
   "input_files": [
     {
@@ -19,11 +19,11 @@
     },
     {
       "file": "data/global-models/additional-placement.json",
-      "bytes": 562488,
-      "sha256": "5fb2e7790caf1586f4d1164c053c80fdba75ce1b18b9c1cce7b260a473b603de"
+      "bytes": 563478,
+      "sha256": "5be27679962bf1eadd0c8afd49e46234e72106fe89c27e962fc70b5ec8930175"
     }
   ],
-  "inventory_sha256": "1b88fa59dfebe8b33f03d8ea019389ab851475cba81474ebd5cfed3ea196a74b",
+  "inventory_sha256": "bf1a3cb8be01ea300b3e7095ad475942e3b7cac86f4edc209bc765aac52e4686",
   "models": [
     {
       "id": "chongming-chaozong-paifang",
@@ -22233,6 +22233,75 @@
         "web": "3a17246ae512ae6a7500ef50ce97fff1eaf4cd70b9f7aa95f606214fed59bcc2",
         "lod": "f6376d98146e260d2733448f0e8b518cd10a75c2173706519dad96551461fa27"
       }
+    },
+    {
+      "id": "huangpu-metropol-cinema-historic-front",
+      "name": "大上海大戏院历史立面（1933年建筑）",
+      "kind": "historical-site",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "lng": 121.4697,
+      "lat": 31.23792,
+      "individual_page": "metropol-cinema-history.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
+      "historical_view": {
+        "kind": "archival-facade",
+        "building_year": 1933,
+        "evidence_years": [
+          1934,
+          1937
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-web.glb",
+          "bytes": 350464,
+          "sha256": "293a174697bd9ae1698aa301ce69f9480efc3ab859675be08cb5428a14e44402",
+          "triangles": 12808,
+          "bounds_gltf_m": [
+            [
+              -11.8500004,
+              0,
+              -1.32000005
+            ],
+            [
+              11.8500004,
+              21.8339996,
+              1.84000003
+            ]
+          ],
+          "materials": 13
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-metropol-cinema-historic-front/huangpu-metropol-cinema-historic-front-lod.glb",
+          "bytes": 240160,
+          "sha256": "97ec19435e7751a792e91d60e75099d1a75c80c3ccd7447b03b78403789c8c17",
+          "triangles": 9072,
+          "bounds_gltf_m": [
+            [
+              -11.8500004,
+              0,
+              -1.32000005
+            ],
+            [
+              11.8500004,
+              21.8339996,
+              1.84000003
+            ]
+          ],
+          "materials": 13
+        }
+      },
+      "navigation": {
+        "listed": false
+      },
+      "collision_geometry": null,
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [],
+        "building_part": []
+      }
     }
-  ]
+  ],
+  "historical_site_count": 1
 }

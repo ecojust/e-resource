@@ -163,3 +163,51 @@ test('records without height clips retain exactly their existing display and sou
   const state=new CandidateCityState({getRecords:()=>new Map([[row.id,row]]),getScene:()=>scene});state.sync();
   assert.deepEqual(state.displayClips,state.clips);assert.deepEqual(state.getState().displayClips,state.getState().clips);
 });
+
+test('archival facade is a site marker without city geometry, owner edits or a walking pose',async()=>{
+  const {walkingPose}=await import('../src/precise-registration-ui.js');
+  const id='test-historical-front', expected={};
+  for(const key of ['web','lod'])expected[key]={file:`assets/models/candidates/${id}/${id}-${key}.glb`,bytes:122,sha256:'b'.repeat(64)};
+  const site={id,name:'历史立面',kind:'historical-site',districtId:'310101',district_name:'黄浦区',
+    lng:121.4697,lat:31.23792,individual_page:'metropol-cinema-history.html',candidate_manifest:`assets/models/candidates/${id}/manifest.json`,
+    historical_view:{kind:'archival-facade',building_year:1933,evidence_years:[1934,1937]},
+    assets:expected,navigation:{listed:false},collision_geometry:null,replacement_geometry:null,
+    source_feature_ids:{building:[],building_part:[]}};
+  const merged=(row)=>mergeCandidateCityModels([],{schema:'candidate-city-integrations-v1',models:[row]});
+  const [marker]=merged(site);assert.equal(walkingPose(marker),null);
+  assert.equal(marker.model,undefined);assert.equal(marker.city_integration,undefined);
+  for(const addition of [{kind:'building'},{heading:0},{collision_geometry:polygon(ring(3))},{replacement_geometry:polygon(ring(2))},
+    {source_feature_ids:{building:['current-mall'],building_part:[]}},{ground_collision_mode:'overhead-connector'},
+    {owner:{}},{navigation:{listed:true}},{individual_page:'otherpage.html'},{individual_page:'../outside-history.html'},
+    {model:'asset.glb'},{historical_view:{...site.historical_view,evidence_years:[1937,1934]}},
+    {assets:{...expected,web:{...expected.web,file:'assets/other.glb'}}}])assert.throws(()=>merged({...site,...addition}),/历史地标/);
+});
+
+test('the historical viewer is opt-in, checks the return message origin and disposes the embedded page',async()=>{
+  const {setupHistoricalView}=await import('../src/historical-view.js');
+  const originalWindow=globalThis.window,originalLocation=globalThis.location;
+  const host=new EventTarget(),origin='https://example.test';
+  globalThis.window=host;globalThis.location={origin};
+  const control=()=>Object.assign(new EventTarget(),{hidden:false,isConnected:true,focus(){this.focused=true;}});
+  const button=control(),closeButton=control(),dialog=control(),frameWindow={};
+  Object.assign(dialog,{open:false,showModal(){this.open=true;},close(){this.open=false;this.dispatchEvent(new Event('close'));}});
+  const title={},frame={contentWindow:frameWindow,removeAttribute(key){delete this[key];}},changes=[];
+  const site={id:'example',kind:'historical-site',name:'历史建筑',individual_page:'example-history.html',
+    historical_view:{building_year:1933,evidence_years:[1934,1937]}};
+  const post=(source,messageOrigin)=>host.dispatchEvent(Object.assign(new Event('message'),
+    {source,origin:messageOrigin,data:'close-historical-view'}));
+  try {
+    const panel=setupHistoricalView({dialog,button,frame,title,closeButton,onModalChange:open=>changes.push(open)});
+    panel.select(site);assert.equal(button.hidden,false);assert.equal(dialog.open,false);assert.equal(frame.src,undefined);
+    button.dispatchEvent(new Event('click'));assert.equal(dialog.open,true);assert.equal(frame.src,site.individual_page+'?embed=history');
+    assert.match(title.textContent,/1934—1937/);assert.equal(closeButton.focused,true);
+    post({},origin);post(frameWindow,'https://unrelated.test');assert.equal(dialog.open,true);
+    post(frameWindow,origin);assert.equal(dialog.open,false);assert.equal(frame.src,undefined);assert.equal(button.focused,true);
+    button.dispatchEvent(new Event('click'));panel.select({id:'modern',kind:'building'});
+    assert.equal(dialog.open,false);assert.equal(button.hidden,true);assert.equal(frame.src,undefined);
+    button.dispatchEvent(new Event('click'));assert.deepEqual(changes,[true,false,true,false]);
+  } finally {
+    if(originalWindow===undefined)delete globalThis.window;else globalThis.window=originalWindow;
+    if(originalLocation===undefined)delete globalThis.location;else globalThis.location=originalLocation;
+  }
+});

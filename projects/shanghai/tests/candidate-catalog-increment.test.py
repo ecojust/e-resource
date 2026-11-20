@@ -332,5 +332,33 @@ class HeightDisplayClipValidationTests(unittest.TestCase):
                 builder.checked_height_clips(clips, "fixture")
 
 
+class HistoricalSiteTest(unittest.TestCase):
+    def test_archive_viewer_cannot_supply_current_geometry_or_collision(self):
+        ident = "example-archival-front"
+        record = {"id": ident, "name": "Example cinema", "districtId": "310101", "district": "黄浦区",
+                  "individual_page": "cinema-history.html", "manifest": f"assets/models/candidates/{ident}/manifest.json",
+                  "original_delivery_status": "historical-photo-informed-facade-study",
+                  "assets": {k: {"file": f"assets/models/candidates/{ident}/{ident}-{k}.glb", "sha256": k[0] * 64}
+                             for k in ("raw", "web", "lod")}}
+        placement = {"id": ident, "lng": 121.4697, "lat": 31.23792, "navigation": {"listed": False},
+                     "historical_view": {"kind": "archival-facade", "building_year": 1933, "evidence_years": [1934, 1937]},
+                     "collision_geometry": None, "replacement_geometry": None,
+                     "source_feature_ids": {"building": [], "building_part": []},
+                     "model_geometry_sha256": {k: v["sha256"] for k, v in record["assets"].items()}}
+        with tempfile.TemporaryDirectory() as tmp, patch.object(builder, "PROJECT", Path(tmp)):
+            (Path(tmp) / record["individual_page"]).write_text(f"showCandidateAssetViewer('{ident}')")
+            result = builder.historical_site_record(record, placement)
+            self.assertEqual(result["kind"], "historical-site")
+            self.assertNotIn("model", result)
+            for invalid in ({"owner": {"feature_local_id": 15}}, {"ground_collision_mode": "overhead-connector"},
+                            {"replacement_geometry": {}}, {"collision_geometry": {}}, {"navigation": {"listed": True}},
+                            {"model_geometry_sha256": {}}, {"source_feature_ids": {"building": ["15"], "building_part": []}}):
+                with self.subTest(invalid=invalid), self.assertRaises(AssertionError):
+                    builder.historical_site_record(record, {**placement, **invalid})
+            (Path(tmp) / record["individual_page"]).write_text("showCandidateAssetViewer('unrelated-building')")
+            with self.assertRaises(AssertionError):
+                builder.historical_site_record(record, placement)
+
+
 if __name__ == "__main__":
     unittest.main()
