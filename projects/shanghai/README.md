@@ -1,7 +1,7 @@
 # 上海全景建模
 
 <!-- current-shanghai-model:start -->
-上海主图现有 122 处入口。最近接入[虹口救火会临街旧楼与瞭望塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
+上海主图现有 122 处入口。最近细化[杨浦区图书馆总馆（原上海市图书馆）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk)。[制作范围与验收记录](CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 [宏恩医院花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview)位于静安区。中央五开间门廊与两端山花之间，各有五跨底层拱廊。 [制作范围](source/precise/jingan-country-hospital/README.md) · [验收记录](data/audit/country-hospital-v1/README.md)
@@ -194,7 +194,7 @@
 
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
-| 杨浦区图书馆总馆（原上海市图书馆） | [2026-10-27 13:01:40](https://github.com/ecojust/e-resource/commit/387561d8a7297eb7fc2a42907f0819fa1d61e958) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) |
+| 杨浦区图书馆总馆（原上海市图书馆） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) |
 | 旧上海特别市政府大楼（绿瓦大楼） | 2026-11-01 01:23:04 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-hall&mode=overview) |
 | 江湾体育场历史主场（看台与入口） | 2026-11-01 14:25:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-stadium&mode=overview) |
 | 江湾体育馆历史主楼 | 2026-11-01 18:13:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-gymnasium&mode=overview) |

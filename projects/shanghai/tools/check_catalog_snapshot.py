@@ -54,7 +54,13 @@ def main():
             if 'refines_existing_model' in row:
                 base = PROJECT / 'assets/models/candidates' / row['refines_existing_model']
                 manifest = REPO / row['manifest']
-                assert manifest.parent == base and re.fullmatch(r'manifest-[a-z0-9-]+\.json',manifest.name), model
+                if manifest.parent == base:
+                    assert re.fullmatch(r'manifest-[a-z0-9-]+\.json', manifest.name), model
+                else:
+                    meta = json.loads(manifest.read_bytes())
+                    assert re.fullmatch(r'[a-z0-9-]+', meta['revision'])
+                    expected = PROJECT / 'source/precise' / row['refines_existing_model'] / 'revisions' / meta['revision'] / 'manifest.json'
+                    assert manifest == expected and meta['id'] == row['refines_existing_model'] and meta['url_base'] == 'project-root', model
             else:
                 manifest = PROJECT / 'assets/models/candidates' / model / 'manifest.json'
             content = subprocess.check_output(['git', 'show', f'{commit}:{manifest.relative_to(REPO)}'], cwd=REPO)

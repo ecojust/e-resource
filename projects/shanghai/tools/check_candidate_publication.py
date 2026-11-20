@@ -10,6 +10,8 @@ import runpy
 import subprocess
 from urllib.parse import urljoin, urlsplit
 
+from public_scene_metadata import scene_metadata_urls
+
 PROJECT = Path(__file__).resolve().parents[1]
 REPO = PROJECT.parents[1]
 PREFIX = PROJECT.relative_to(REPO).as_posix() + '/'
@@ -89,8 +91,7 @@ def main():
         include_import(app, app_source, 'precise-registration-ui')
         stylesheet, = re.findall(r'<link rel="stylesheet" href="(src/historical-view\.css(?:\?[^"]*)?)"', blob(PREFIX + 'index.html').decode())
         files.append(PREFIX + stylesheet)
-    query, = re.findall(r"candidate-city-integrations\.json'\?'(\?[^']+)'", app_source)
-    files.append(PREFIX + 'data/candidate-city-integrations.json' + query)
+    files.extend(scene_metadata_urls(app, app_source, PREFIX))
     assets = {urljoin(manifest_path, a['file']): a for a in manifest['assets'].values()}
     records = []
     for file in dict.fromkeys([*files, *assets]):

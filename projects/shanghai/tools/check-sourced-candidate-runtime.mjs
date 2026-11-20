@@ -68,7 +68,9 @@ const targets=new Set(addedOwners);
 const vector=[];
 for(const source of ['overture-buildings','openmaptiles']){
   for(const owner of review.owners.filter(r=>[...addedOwners,...spec.neighbors].includes(r.local_id))){
-    const feature={type:'Feature',id:1,properties:{id:owner.key.slice(9)},geometry:owner.geometry_wgs84};
+    const geometry=owner.geometry_wgs84??owner.geometry;
+    assert.ok(geometry?.type==='Polygon'||geometry?.type==='MultiPolygon','Missing source footprint for '+owner.local_id);
+    const feature={type:'Feature',id:1,properties:{id:owner.key.slice(9)},geometry};
     const plan=planCandidateVectorClipping([feature],{candidateClips:[clip]},{source,sourceLayer:'building'});
     assert.equal(plan.stats.clippingErrors,0);
     const retainedProbes=spec.ground.filter(p=>p.modelObstacle===false&&p.expected==='building'&&(p.ownerLocalId??ownerID)===owner.local_id);

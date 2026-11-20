@@ -38,7 +38,9 @@ export async function readVerifiedBytes(meta, baseURL, {fetchFunction = fetch, s
   controller.signal.addEventListener('abort', cancelReader, {once: true});
   try {
     if (controller.signal.aborted) throw Error('Asset request cancelled');
-    const response = await fetchFunction(assetURL(meta.file, baseURL), {signal: controller.signal});
+    const url = new URL(assetURL(meta.file, baseURL));
+    if (url.pathname.endsWith('.json')) url.searchParams.set('sha256', meta.sha256);
+    const response = await fetchFunction(url.href, {signal: controller.signal});
     ok(response.ok, `Asset request failed (${response.status})`);
     const chunks = []; let length = 0;
     if (response.body?.getReader) {

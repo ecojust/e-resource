@@ -10,7 +10,7 @@ import { createStreetBasemapReplacement } from './street-basemap.js';
 import { applyStreetWidths, applyStreetColors } from './road-width.js';
 import { FeatureStateSuppressor, LocalModelStreamer } from './local-model-streamer.js';
 import { OrdinaryCityDetailStreamer as CityDetailStreamer } from './ordinary-city-detail-streamer.js';
-import { OrdinaryBuildingCatalog } from './ordinary-building-catalog.js?v=asset-timeout-retry-v1';
+import { OrdinaryBuildingCatalog } from './ordinary-building-catalog.js?v=ordinary-metadata-sha-v1';
 import { createOrdinaryMacroRegistrar, loadOrdinaryLandmarkAsset, isOrdinaryLandmarkRecord } from './ordinary-scene-adapter.js?v=asset-timeout-retry-v1';
 import { SourceGeometryCorrectionState } from './source-geometry-correction.js';
 import { modelSurfaceKind, isArchitecturalBuilding } from './precise-registration-ui.js?v=metropol-cinema-history-v1';

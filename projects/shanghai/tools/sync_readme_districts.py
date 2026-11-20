@@ -60,6 +60,17 @@ def candidates():
     return list(result.values())
 
 
+def ordinary_revisions():
+    queue = json.loads((DATA / 'queue.json').read_text())
+    base = {row['id'] for row in json.loads((ROOT / 'projects/shanghai/data/landmarks.json').read_text())}
+    revisions = {}
+    for row in sorted(queue['production_queue'], key=lambda v: v['order']):
+        landmark = row.get('refines_existing_model')
+        if landmark in base and row['status'] in ('candidate_delivered','accepted'):
+            revisions[landmark] = {'id': landmark, 'published_commit': row.get('published_commit')}
+    return revisions
+
+
 def publication_times(items, check):
     cache = json.loads(TIME_FILE.read_text()) if TIME_FILE.exists() else {'schema': 'candidate-publication-times-v1', 'records': {}}
     changed = False
@@ -197,6 +208,17 @@ def render(text, items, times, project=False):
     base_ids = {item['id'] for item in base}
     assert len(old_city_ids) == len(set(old_city_ids)) == len(base_ids) == 40, 'Expected 40 existing city destinations'
     assert set(old_city_ids) == base_ids
+    for ident, revision in ordinary_revisions().items():
+        record = times.get(ident, {})
+        commit = revision.get('published_commit')
+        label = '未记录'
+        if commit and record.get('commit') == commit:
+            timestamp = datetime.fromisoformat(record['committer_date_utc'].replace('Z', '+00:00'))
+            date = timestamp.astimezone(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
+            label = f'[{date}](https://github.com/ecojust/e-resource/commit/{commit})'
+        row = re.compile(r'^(\|[^|\n]+\| )[^|\n]+( \| [^\n]*#landmark=' + re.escape(ident) + r'&mode=walk[^\n]*)$', re.M)
+        section, changed = row.subn(lambda m: m[1]+label+m[2], section)
+        assert changed == 1, f'Expected a single original city row for {ident}'
     city = integrations()
     assert set(city) == {item['id'] for item in items}, 'Every delivered candidate must be integrated'
     assert not base_ids.intersection(city), 'Global model duplicates an existing destination'
@@ -277,7 +299,7 @@ def render(text, items, times, project=False):
 
 def sync(check=False):
     items = candidates()
-    times = publication_times(items, check)
+    times = publication_times([*items, *ordinary_revisions().values()], check)
     for file, project in [(ROOT / 'README.md', False), (ROOT / 'projects/shanghai/README.md', True)]:
         before = file.read_text()
         after = render(before, items, times, project)

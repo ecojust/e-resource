@@ -1,0 +1,958 @@
+{
+  "started": "2026-11-20T10:02:30.000Z",
+  "browser": "156.0.8078.79",
+  "sources": {
+    "pre": "http://127.0.0.1:14077/",
+    "post": "http://127.0.0.1:14078/",
+    "fixed_modules": "/tmp/library78/cache-proof/v2/testproject",
+    "asset_fallback": null
+  },
+  "driver_sha256": "0dd3c2e22bca72651954619f8755b42efe63f2bccf442cf9f5d1e3160da93651",
+  "purpose": "Production bootstrap resource loop, verified-byte reader and ordinary macro registration executed without a map or WebGL; actual HTTP cache primed through the former site.",
+  "cases": [
+    {
+      "name": "all-warm",
+      "entry": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bootstrap_loop_executed": true,
+      "reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "scene_reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "landmark_model": "assets/models/precise/14-13722-6690/yangpu-library/yangpu-library-web.glb",
+      "landmark_sha256": "33efb74ee2f2ffb4d5e4c69d02e2e86e17062f80b314f4fbab84fc5a72a3350c",
+      "ordinary_catalog_expected": "3ff61a8d83d8ae2c46a2ceb208282529289f95a93246bf731575b5c91db623a3",
+      "phase": "registered-and-verified",
+      "errors": [],
+      "macro_expected": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638",
+      "registered_web": "assets/models/precise/14-13722-6690/yangpu-library/yangpu-library-web.glb",
+      "registered_sha256": "33efb74ee2f2ffb4d5e4c69d02e2e86e17062f80b314f4fbab84fc5a72a3350c",
+      "glb": {
+        "bytes": 6622720,
+        "magic": 1179937895,
+        "version": 2,
+        "sha256": "33efb74ee2f2ffb4d5e4c69d02e2e86e17062f80b314f4fbab84fc5a72a3350c"
+      },
+      "resources": [
+        {
+          "url": "data/landmarks.json",
+          "transfer": 476508,
+          "bytes": 476208
+        },
+        {
+          "url": "data/precise-buildings-v6.json",
+          "transfer": 136214,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 6010,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 22686,
+          "bytes": 22386
+        },
+        {
+          "url": "data/landmarks.json",
+          "transfer": 0,
+          "bytes": 476208
+        },
+        {
+          "url": "data/precise-buildings-v6.json",
+          "transfer": 0,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 0,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 0,
+          "bytes": 22386
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/replacement.json",
+          "transfer": 12494,
+          "bytes": 12194
+        }
+      ]
+    },
+    {
+      "name": "catalog-warm",
+      "entry": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bootstrap_loop_executed": true,
+      "reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "scene_reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "landmark_model": "assets/models/precise/14-13722-6690/yangpu-library/revisions/east-entry-relief/yangpu-library-web.glb",
+      "landmark_sha256": "05e7dc5f6d54286ae2cc8d74d43503faf60027b6c8780b34a4e95b013e196c60",
+      "ordinary_catalog_expected": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+      "phase": "catalog",
+      "errors": [
+        "Asset SHA256 differs"
+      ],
+      "resources": [
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 6010,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 22686,
+          "bytes": 22386
+        },
+        {
+          "url": "data/landmarks.json",
+          "transfer": 478236,
+          "bytes": 477936
+        },
+        {
+          "url": "data/precise-buildings-v6.json",
+          "transfer": 136214,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 0,
+          "bytes": 5710
+        }
+      ]
+    },
+    {
+      "name": "index-warm",
+      "entry": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bootstrap_loop_executed": true,
+      "reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "scene_reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "landmark_model": "assets/models/precise/14-13722-6690/yangpu-library/revisions/east-entry-relief/yangpu-library-web.glb",
+      "landmark_sha256": "05e7dc5f6d54286ae2cc8d74d43503faf60027b6c8780b34a4e95b013e196c60",
+      "ordinary_catalog_expected": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+      "phase": "macro",
+      "errors": [
+        "Asset byte length differs"
+      ],
+      "macro_expected": "34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08",
+      "resources": [
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 22686,
+          "bytes": 22386
+        },
+        {
+          "url": "data/landmarks.json",
+          "transfer": 478236,
+          "bytes": 477936
+        },
+        {
+          "url": "data/precise-buildings-v6.json",
+          "transfer": 136214,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 6010,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 0,
+          "bytes": 22386
+        }
+      ]
+    },
+    {
+      "name": "landmark-warm",
+      "entry": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bootstrap_loop_executed": true,
+      "reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "scene_reader_path": "./ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "landmark_model": "assets/models/precise/14-13722-6690/yangpu-library/yangpu-library-web.glb",
+      "landmark_sha256": "33efb74ee2f2ffb4d5e4c69d02e2e86e17062f80b314f4fbab84fc5a72a3350c",
+      "ordinary_catalog_expected": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+      "phase": "macro",
+      "errors": [
+        "Conflicting existing precise building record"
+      ],
+      "macro_expected": "34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08",
+      "resources": [
+        {
+          "url": "data/landmarks.json",
+          "transfer": 476508,
+          "bytes": 476208
+        },
+        {
+          "url": "data/landmarks.json",
+          "transfer": 0,
+          "bytes": 476208
+        },
+        {
+          "url": "data/precise-buildings-v6.json",
+          "transfer": 136214,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 6010,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 24510,
+          "bytes": 24210
+        }
+      ]
+    },
+    {
+      "name": "fixed",
+      "entry": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bootstrap_loop_executed": true,
+      "reader_path": "./ordinary-building-catalog.js?v=ordinary-metadata-sha-v1",
+      "scene_reader_path": "./ordinary-building-catalog.js?v=ordinary-metadata-sha-v1",
+      "landmark_model": "assets/models/precise/14-13722-6690/yangpu-library/revisions/east-entry-relief/yangpu-library-web.glb",
+      "landmark_sha256": "05e7dc5f6d54286ae2cc8d74d43503faf60027b6c8780b34a4e95b013e196c60",
+      "ordinary_catalog_expected": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+      "phase": "registered-and-verified",
+      "errors": [],
+      "macro_expected": "34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08",
+      "registered_web": "assets/models/precise/14-13722-6690/yangpu-library/revisions/east-entry-relief/yangpu-library-web.glb",
+      "registered_sha256": "05e7dc5f6d54286ae2cc8d74d43503faf60027b6c8780b34a4e95b013e196c60",
+      "glb": {
+        "bytes": 7829672,
+        "magic": 1179937895,
+        "version": 2,
+        "sha256": "05e7dc5f6d54286ae2cc8d74d43503faf60027b6c8780b34a4e95b013e196c60"
+      },
+      "resources": [
+        {
+          "url": "data/landmarks.json",
+          "transfer": 476508,
+          "bytes": 476208
+        },
+        {
+          "url": "data/precise-buildings-v6.json",
+          "transfer": 136214,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json",
+          "transfer": 6010,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json",
+          "transfer": 22686,
+          "bytes": 22386
+        },
+        {
+          "url": "data/landmarks.json?v=yangpu-library-east-entry-relief-v1",
+          "transfer": 478236,
+          "bytes": 477936
+        },
+        {
+          "url": "data/precise-buildings-v6.json?v=yangpu-library-east-entry-relief-v1",
+          "transfer": 136214,
+          "bytes": 135914
+        },
+        {
+          "url": "data/precise-buildings/catalog.json?sha256=82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+          "transfer": 6010,
+          "bytes": 5710
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/index.json?sha256=34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08",
+          "transfer": 24510,
+          "bytes": 24210
+        },
+        {
+          "url": "data/precise-buildings/macros/14-13722-6690/replacement.json?sha256=bdef33156b5261db56320e94358ef700dc55bcd669a5457be147526754554b73",
+          "transfer": 12494,
+          "bytes": 12194
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "finished": "2026-11-20T10:02:37.699Z",
+  "transfers": [
+    {
+      "case": "all-warm",
+      "stage": 77,
+      "request": "data/precise-buildings-v6.json",
+      "bytes": 135914,
+      "sha256": "f93c7ba4606fd75df8557e191451636c7575ccc66d9d10dbb1376d7a54d218fc"
+    },
+    {
+      "case": "all-warm",
+      "stage": 77,
+      "request": "data/precise-buildings/macros/14-13722-6690/index.json",
+      "bytes": 22386,
+      "sha256": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638"
+    },
+    {
+      "case": "all-warm",
+      "stage": 77,
+      "request": "data/precise-buildings/catalog.json",
+      "bytes": 5710,
+      "sha256": "3ff61a8d83d8ae2c46a2ceb208282529289f95a93246bf731575b5c91db623a3"
+    },
+    {
+      "case": "all-warm",
+      "stage": 77,
+      "request": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "index.html",
+      "bytes": 9521,
+      "sha256": "706f640fb08f518b9880ced61530015c7bcb19a8e9d5423c332cc5014bc1ead3"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 23373,
+      "sha256": "86fde390c167a1a7b6dca755cc12cd4843108246479ca01c25417545b823b981"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "data/districts.json",
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "data/scene-props.json",
+      "bytes": 1765,
+      "sha256": "5e55d5397a5cee9f2e0dd7bdfb13b7e022e943ee2d595735a6085eb6e4137a07"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "data/districts-display.geojson",
+      "bytes": 434379,
+      "sha256": "f5e0e34ea04b30c312d534fb3894362f83afe33f61052764213a45a102028c50"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "data/candidate-city-integrations.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 1146022,
+      "sha256": "5baa008f6387933bcbf18bc6af8400e5658332214a95a09558d8ca426df926c6"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/map-scene.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 61514,
+      "sha256": "e8fd92cd115313c29a5019590e351626bd9e2642d742cfdba0e8ed94835afc7c"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "bytes": 16602,
+      "sha256": "0c86f485ab8b412ee12165eca9b9e2ed83ed389032baf89120bcfa858f4cf984"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/local-model-streamer.js",
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/ordinary-scene-adapter.js?v=asset-timeout-retry-v1",
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "data/precise-buildings/macros/14-13722-6690/replacement.json",
+      "bytes": 12194,
+      "sha256": "bdef33156b5261db56320e94358ef700dc55bcd669a5457be147526754554b73"
+    },
+    {
+      "case": "all-warm",
+      "stage": 78,
+      "request": "assets/models/precise/14-13722-6690/yangpu-library/yangpu-library-web.glb",
+      "bytes": 6622720,
+      "sha256": "33efb74ee2f2ffb4d5e4c69d02e2e86e17062f80b314f4fbab84fc5a72a3350c"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 77,
+      "request": "data/precise-buildings/catalog.json",
+      "bytes": 5710,
+      "sha256": "3ff61a8d83d8ae2c46a2ceb208282529289f95a93246bf731575b5c91db623a3"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 77,
+      "request": "data/precise-buildings/macros/14-13722-6690/index.json",
+      "bytes": 22386,
+      "sha256": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "index.html",
+      "bytes": 9521,
+      "sha256": "706f640fb08f518b9880ced61530015c7bcb19a8e9d5423c332cc5014bc1ead3"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 23373,
+      "sha256": "86fde390c167a1a7b6dca755cc12cd4843108246479ca01c25417545b823b981"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "data/districts.json",
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "data/districts-display.geojson",
+      "bytes": 434379,
+      "sha256": "f5e0e34ea04b30c312d534fb3894362f83afe33f61052764213a45a102028c50"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "data/scene-props.json",
+      "bytes": 1765,
+      "sha256": "5e55d5397a5cee9f2e0dd7bdfb13b7e022e943ee2d595735a6085eb6e4137a07"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "data/candidate-city-integrations.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 1146022,
+      "sha256": "5baa008f6387933bcbf18bc6af8400e5658332214a95a09558d8ca426df926c6"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "data/precise-buildings-v6.json",
+      "bytes": 135914,
+      "sha256": "f1a215e9a6423231580369c7f534f1e219b8b7895d1876d7c14e84af59fe5580"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "data/landmarks.json",
+      "bytes": 477936,
+      "sha256": "b915361a280908c27bd3bdac539eb8755dc9488cc86a0daae0169e3f42693ca1"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/map-scene.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 61514,
+      "sha256": "e8fd92cd115313c29a5019590e351626bd9e2642d742cfdba0e8ed94835afc7c"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "bytes": 16602,
+      "sha256": "0c86f485ab8b412ee12165eca9b9e2ed83ed389032baf89120bcfa858f4cf984"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/local-model-streamer.js",
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/ordinary-scene-adapter.js?v=asset-timeout-retry-v1",
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe"
+    },
+    {
+      "case": "catalog-warm",
+      "stage": 78,
+      "request": "src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "case": "index-warm",
+      "stage": 77,
+      "request": "data/precise-buildings/macros/14-13722-6690/index.json",
+      "bytes": 22386,
+      "sha256": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "index.html",
+      "bytes": 9521,
+      "sha256": "706f640fb08f518b9880ced61530015c7bcb19a8e9d5423c332cc5014bc1ead3"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 23373,
+      "sha256": "86fde390c167a1a7b6dca755cc12cd4843108246479ca01c25417545b823b981"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/districts.json",
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/districts-display.geojson",
+      "bytes": 434379,
+      "sha256": "f5e0e34ea04b30c312d534fb3894362f83afe33f61052764213a45a102028c50"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/landmarks.json",
+      "bytes": 477936,
+      "sha256": "b915361a280908c27bd3bdac539eb8755dc9488cc86a0daae0169e3f42693ca1"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/scene-props.json",
+      "bytes": 1765,
+      "sha256": "5e55d5397a5cee9f2e0dd7bdfb13b7e022e943ee2d595735a6085eb6e4137a07"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/precise-buildings-v6.json",
+      "bytes": 135914,
+      "sha256": "f1a215e9a6423231580369c7f534f1e219b8b7895d1876d7c14e84af59fe5580"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/candidate-city-integrations.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 1146022,
+      "sha256": "5baa008f6387933bcbf18bc6af8400e5658332214a95a09558d8ca426df926c6"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/map-scene.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 61514,
+      "sha256": "e8fd92cd115313c29a5019590e351626bd9e2642d742cfdba0e8ed94835afc7c"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "bytes": 16602,
+      "sha256": "0c86f485ab8b412ee12165eca9b9e2ed83ed389032baf89120bcfa858f4cf984"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/local-model-streamer.js",
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/ordinary-scene-adapter.js?v=asset-timeout-retry-v1",
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "case": "index-warm",
+      "stage": 78,
+      "request": "data/precise-buildings/catalog.json",
+      "bytes": 5710,
+      "sha256": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 77,
+      "request": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "index.html",
+      "bytes": 9521,
+      "sha256": "706f640fb08f518b9880ced61530015c7bcb19a8e9d5423c332cc5014bc1ead3"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 23373,
+      "sha256": "86fde390c167a1a7b6dca755cc12cd4843108246479ca01c25417545b823b981"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/districts.json",
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/districts-display.geojson",
+      "bytes": 434379,
+      "sha256": "f5e0e34ea04b30c312d534fb3894362f83afe33f61052764213a45a102028c50"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/scene-props.json",
+      "bytes": 1765,
+      "sha256": "5e55d5397a5cee9f2e0dd7bdfb13b7e022e943ee2d595735a6085eb6e4137a07"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/precise-buildings-v6.json",
+      "bytes": 135914,
+      "sha256": "f1a215e9a6423231580369c7f534f1e219b8b7895d1876d7c14e84af59fe5580"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/candidate-city-integrations.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 1146022,
+      "sha256": "5baa008f6387933bcbf18bc6af8400e5658332214a95a09558d8ca426df926c6"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/map-scene.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 61514,
+      "sha256": "e8fd92cd115313c29a5019590e351626bd9e2642d742cfdba0e8ed94835afc7c"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "bytes": 16602,
+      "sha256": "0c86f485ab8b412ee12165eca9b9e2ed83ed389032baf89120bcfa858f4cf984"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/local-model-streamer.js",
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/ordinary-scene-adapter.js?v=asset-timeout-retry-v1",
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/precise-buildings/catalog.json",
+      "bytes": 5710,
+      "sha256": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/precise-buildings/macros/14-13722-6690/index.json",
+      "bytes": 24210,
+      "sha256": "34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08"
+    },
+    {
+      "case": "landmark-warm",
+      "stage": 78,
+      "request": "data/precise-buildings/macros/14-13722-6690/replacement.json",
+      "bytes": 12194,
+      "sha256": "bdef33156b5261db56320e94358ef700dc55bcd669a5457be147526754554b73"
+    },
+    {
+      "case": "fixed",
+      "stage": 77,
+      "request": "data/landmarks.json",
+      "bytes": 476208,
+      "sha256": "c3952bd58c2d79e4a6a42dfcbd682a3f7852818e0397081fb56f0724d9854bff"
+    },
+    {
+      "case": "fixed",
+      "stage": 77,
+      "request": "data/precise-buildings-v6.json",
+      "bytes": 135914,
+      "sha256": "f93c7ba4606fd75df8557e191451636c7575ccc66d9d10dbb1376d7a54d218fc"
+    },
+    {
+      "case": "fixed",
+      "stage": 77,
+      "request": "data/precise-buildings/catalog.json",
+      "bytes": 5710,
+      "sha256": "3ff61a8d83d8ae2c46a2ceb208282529289f95a93246bf731575b5c91db623a3"
+    },
+    {
+      "case": "fixed",
+      "stage": 77,
+      "request": "data/precise-buildings/macros/14-13722-6690/index.json",
+      "bytes": 22386,
+      "sha256": "1d624328a2135b37fb434d8971a1380110f55c99e71497e7be7535eac0264638"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "index.html",
+      "bytes": 9521,
+      "sha256": "706f640fb08f518b9880ced61530015c7bcb19a8e9d5423c332cc5014bc1ead3"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/app.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 23495,
+      "sha256": "39bba1f81102dad597ca864c413ea63fa13baa570bc11b9ac139bbd2610e6110"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/districts.json",
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/districts-display.geojson",
+      "bytes": 434379,
+      "sha256": "f5e0e34ea04b30c312d534fb3894362f83afe33f61052764213a45a102028c50"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/landmarks.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 477936,
+      "sha256": "b915361a280908c27bd3bdac539eb8755dc9488cc86a0daae0169e3f42693ca1"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/scene-props.json",
+      "bytes": 1765,
+      "sha256": "5e55d5397a5cee9f2e0dd7bdfb13b7e022e943ee2d595735a6085eb6e4137a07"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/precise-buildings-v6.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 135914,
+      "sha256": "f1a215e9a6423231580369c7f534f1e219b8b7895d1876d7c14e84af59fe5580"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/candidate-city-integrations.json?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 1146022,
+      "sha256": "5baa008f6387933bcbf18bc6af8400e5658332214a95a09558d8ca426df926c6"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/map-scene.js?v=yangpu-library-east-entry-relief-v1",
+      "bytes": 61516,
+      "sha256": "44634fe22db205a785258f681ee734bbd450a837bbc8a72b92e4e5fe9bf13e8b"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/ordinary-building-catalog.js?v=ordinary-metadata-sha-v1",
+      "bytes": 16722,
+      "sha256": "b1535fc29d104445946b02ef00341c169630ceed2d07d9b76f50b99800312840"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/local-model-streamer.js",
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/ordinary-scene-adapter.js?v=asset-timeout-retry-v1",
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "src/ordinary-building-catalog.js?v=asset-timeout-retry-v1",
+      "bytes": 16722,
+      "sha256": "b1535fc29d104445946b02ef00341c169630ceed2d07d9b76f50b99800312840"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/precise-buildings/catalog.json?sha256=82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+      "bytes": 5710,
+      "sha256": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/precise-buildings/macros/14-13722-6690/index.json?sha256=34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08",
+      "bytes": 24210,
+      "sha256": "34cfed70c866bc40fad10629a4cc58eaf9f063c8436ee163a3910feb35d70e08"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "data/precise-buildings/macros/14-13722-6690/replacement.json?sha256=bdef33156b5261db56320e94358ef700dc55bcd669a5457be147526754554b73",
+      "bytes": 12194,
+      "sha256": "bdef33156b5261db56320e94358ef700dc55bcd669a5457be147526754554b73"
+    },
+    {
+      "case": "fixed",
+      "stage": 78,
+      "request": "assets/models/precise/14-13722-6690/yangpu-library/revisions/east-entry-relief/yangpu-library-web.glb",
+      "bytes": 7829672,
+      "sha256": "05e7dc5f6d54286ae2cc8d74d43503faf60027b6c8780b34a4e95b013e196c60"
+    }
+  ],
+  "comparisons": {
+    "src/app.js": {
+      "original": "86fde390c167a1a7b6dca755cc12cd4843108246479ca01c25417545b823b981",
+      "adjusted": "39bba1f81102dad597ca864c413ea63fa13baa570bc11b9ac139bbd2610e6110"
+    },
+    "src/map-scene.js": {
+      "original": "e8fd92cd115313c29a5019590e351626bd9e2642d742cfdba0e8ed94835afc7c",
+      "adjusted": "44634fe22db205a785258f681ee734bbd450a837bbc8a72b92e4e5fe9bf13e8b"
+    },
+    "src/ordinary-building-catalog.js": {
+      "original": "0c86f485ab8b412ee12165eca9b9e2ed83ed389032baf89120bcfa858f4cf984",
+      "adjusted": "b1535fc29d104445946b02ef00341c169630ceed2d07d9b76f50b99800312840"
+    }
+  }
+}

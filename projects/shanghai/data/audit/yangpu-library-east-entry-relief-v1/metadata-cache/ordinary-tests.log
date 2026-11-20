@@ -1,0 +1,45 @@
+✔ precise far owner is acquired before the first far visibility and survives delayed index (198.641556ms)
+✔ near unload releases only near ownership; visible landmark still hides only its far feature (74.195914ms)
+✔ override fetch failure preserves every far neighbor and can later retry without base opaque near (12.705606ms)
+✔ reject missing owner without acquiring a near mask (7.94105ms)
+✔ reject wrong keys without acquiring a near mask (8.114982ms)
+✔ reject partial target without acquiring a near mask (6.921354ms)
+✔ reject unknown owner without acquiring a near mask (46.360753ms)
+✔ reject nested owner without acquiring a near mask (11.883127ms)
+✔ late parse reflects current landmark state and cannot revive a detached parent (6.373078ms)
+✔ baseline SHA and complete local ownership are checked before replacing near (11.674182ms)
+✔ registry rejects duplicate ownership atomically and far preparation rejects absent/wrong hash (1.527501ms)
+✔ local city record retains the manifest SHA for precise namespace binding (5.225339ms)
+✔ all selection entry points including reset keep an unlisted ordinary building in overview (1.179356ms)
+✔ listed ordinary navigation uses its reviewed nested pose, never the building center or obsolete top-level pose (9.86677ms)
+✔ legacy Bund and district navigation retain their existing poses (0.375456ms)
+✔ live macro adds exact target ownership, preserves neighbor, and restores baseline on unload (212.012064ms)
+✔ candidate clipping survives late far masks and ordinary macro rebind without duplicated shader hooks (64.723168ms)
+✔ wrong loaded far SHA or duplicate macro registration cannot mutate an existing scene (11.461871ms)
+✔ late baseline parse is disposed after registry transition and never acquires new ownership (21.709686ms)
+✔ macro candidate may not erase a pre-existing curated owner (1.200828ms)
+✔ catalog fetches only nearby macro/index variants and releases metadata when leaving (91.43091ms)
+✔ changed original index bytes fail SHA and never register an owner (6.783526ms)
+✔ missing audited registry, pending acceptance or removed neighbor fails before scene registration (21.22759ms)
+✔ generation change cancels delayed metadata, prevents a stale session and permits a fresh retry (45.20982ms)
+✔ metadata record and visible-model budgets are independent of distant catalog size (13.807785ms)
+✔ strict provider/district/owner fields survive; no guessed Bund or Lujiazui UI text (0.919305ms)
+✔ verified byte reader still times out a pending response body without publishing partial data (7.619124ms)
+✔ a stalled landmark transfer automatically retries once and verifies the complete replacement (11.511217ms)
+✔ consecutive landmark timeouts stop after two transfers and a cancelled landmark never retries (6.691617ms)
+✔ an HTTP error or a different file hash cannot trigger the timeout retry (1.313047ms)
+✔ ordinary photo GLB bytes are checked before parse; external dependency cannot bypass ownership review (12.641228ms)
+✔ scene session restores source/far owners before disposal and keeps unrelated curated models (52.826771ms)
+✔ accepted curated ordinary navigation reuses its exact record; catalog release leaves its owner intact (5.89649ms)
+✔ catalog may reuse an audited predeclared static boundary without removing it when its own model leaves (0.924763ms)
+✔ synchronous visibility callback cannot recursively unload/reset the same catalog session (9.983635ms)
+✔ canonical registration JSON key order does not change geometry or curated owner equality (1.73892ms)
+✔ launcher commit root resolves unchanged hashed catalog children without rewriting their JSON (17.788065ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2469.569332

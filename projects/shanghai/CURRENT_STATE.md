@@ -1,3 +1,11 @@
+# 原馆东侧入口拱券和门扇的可辨外部纹样
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) · [四种模型下载](source/precise/yangpu-library/revisions/east-entry-relief/manifest.json) · [来源与制作范围](source/precise/yangpu-library/revisions/east-entry-relief/README.md) · [验收记录](data/audit/yangpu-library-east-entry-relief-v1/README.md)
+
+原馆东侧入口拱券和门扇的可辨外部纹样。
+
+近景 390,432 个三角面，远景 139,556 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 43,806,031 字节。上海主图现有 122 处独立入口，杨浦区 7 处。[资产清单](source/precise/yangpu-library/revisions/east-entry-relief/manifest.json)
+
 # 虹口救火会临街旧楼与瞭望塔
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview) · [单体旋转与下载](hongkew-fire-station.html) · [来源与制作范围](source/precise/hongkou-hongkew-fire-station/README.md) · [验收记录](data/audit/hongkew-fire-station-v1/README.md)
