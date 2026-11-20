@@ -17,3 +17,7 @@
 正式197处城市模块按近景绘制组仅为4151新增12个裁片，全城共1,028片、20个宏区，最高322片。本户所在近景组加入4151，旁组无变化。更正过按钮的正式站另外逐件下载页面、公共浏览器模块、清单与四件资产。[城市运行及独立地面采样](runtime-placement.json) · [正式站7项HTTP](viewer-label/production-http.json)
 
 主图最终采用东侧弄堂内的实景视线。桌面鼠标和390像素手机触屏分别从地点目录选中永嘉新村15号，双拱、侧门洞和绿色“15”号均在地点卡上方。东侧近图还可看见窗格与花格墙角。院墙全貌可在独立页面斜视图查看。最初的静态测算忽略了部分城市楼体对镜头的实际遮挡，保留第一次进图画面和一次被邻楼挡住的手机试拍。正式地图共197处入口，对照上一版为196处。四种模型下载已逐件核对，最终站实取1,074份文件。[桌面主图](porch-map-31160/desktop-signed.png) · [手机主图](porch-map-31160/phone-signed.png) · [东向门牌与拱廊](porch-map-31160/desktop-east-facing-number-and-porch.png) · [东山墙与花格墙角](porch-map-31160/desktop-east-gable-and-garden-wall.png) · [第一次城图](first-map-framing/initial-review.json) · [主图与下载复核](city-31160/signed-routes-and-geometry.json) · [逐图观察](city-31160/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/20727e4889de44c5f3a8272dda3c0d651ad022c7/projects/shanghai/index.html#landmark=xuhui-yongjia-village-no15&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，11 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
