@@ -19,3 +19,7 @@ Blender重新打开后比对了48个网格和13种材质。原始及网页近景
 核验保留了1张前态和10张后态城景，检查4个局部裁片、1个切面及29个地面样点，其中包括8栋邻屋。第一次前态读取相邻分区远景时收到HTTP 502，补齐相同签名的原始文件后，正式前态重新通过。第一次后态完成9张图及29个地面点后，渲染进程在远景切换时退出。另开同一正式站目录，再次加载近景，切换远景并核实六项实际下载，最终进程正常退出。31165全部1,118项文件共1,016,606,490字节逐件匹配签名。[前态](city-31165/control-browser.json) [后态及两段记录](city-31165/main-browser.json) [最初的前态错误](city-31165/first-control-native-far-502.json) [首次后态退出](city-31165/main-before-renderer-crash.json) [远景复验](city-31165/distant-fresh-browser.json) [完整HTTP收据](city-31165/165-all-http.json)
 
 模型文件可直接下载。三档GLB与可编辑Blender分别在独立页和城市入口逐字节核对。[原始GLB](../../../assets/models/candidates/huangpu-sinan-road-73-garden-front/huangpu-sinan-road-73-garden-front-raw.glb) [网页近景](../../../assets/models/candidates/huangpu-sinan-road-73-garden-front/huangpu-sinan-road-73-garden-front-web.glb) [网页远景](../../../assets/models/candidates/huangpu-sinan-road-73-garden-front/huangpu-sinan-road-73-garden-front-lod.glb) [可编辑Blender](../../../assets/models/candidates/huangpu-sinan-road-73-garden-front/huangpu-sinan-road-73-garden-front.blend)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/095fbfb782b861fed17529c8d6ae41d558c7d24b/projects/shanghai/index.html#landmark=huangpu-sinan-road-73-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
