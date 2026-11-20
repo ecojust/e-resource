@@ -1,3 +1,11 @@
+# 国立上海医学院东一号楼（草坪立面、歇山顶与两翼方亭）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) · [单体旋转与下载](medical-college-east-one.html) · [来源与制作范围](source/precise/xuhui-medical-college-east-building-one/README.md) · [验收记录](data/audit/medical-college-east-one-v1/README.md)
+
+国立上海医学院东一号楼临草坪的教学楼外观，核对1936年老校舍及现有照片，区分相对的明道楼和邻近中山医院。
+
+近景 165,976 个三角面，远景 58,980 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 19,497,042 字节。上海主图现有 166 处独立入口，徐汇区 13 处。[资产清单](assets/models/candidates/xuhui-medical-college-east-building-one/manifest.json)
+
 # 美童公学主楼（衡山路10号）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) · [单体旋转与下载](american-school-hengshan.html) · [来源与制作范围](source/precise/xuhui-shanghai-american-school-main/README.md) · [验收记录](data/audit/american-school-hengshan-v1/README.md)
