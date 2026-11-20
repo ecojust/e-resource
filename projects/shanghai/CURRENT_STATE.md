@@ -1,3 +1,11 @@
+# 皋兰路圣尼古拉斯堂主堂
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) · [单体旋转与下载](gaolan-st-nicholas-church.html) · [来源与制作范围](source/precise/huangpu-gaolan-st-nicholas-church/README.md) · [验收记录](data/audit/gaolan-st-nicholas-v1/README.md)
+
+皋兰路16号圣尼古拉斯堂，以2019年改造后的实景、设计方平剖面及早期街照核对主葱顶、弧形山花、窄窗、临街门楼和现存侧翼。
+
+近景 145,293 个三角面，远景 55,857 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 13,853,670 字节。上海主图现有 184 处独立入口，黄浦区 92 处。[资产清单](assets/models/candidates/huangpu-gaolan-st-nicholas-church/manifest.json)
+
 # 圣母大堂（新乐路东正教堂）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-orthodox-cathedral&mode=overview) · [单体旋转与下载](xinle-orthodox-cathedral.html) · [来源与制作范围](source/precise/xuhui-xinle-orthodox-cathedral/README.md) · [验收记录](data/audit/xinle-orthodox-cathedral-v1/README.md)
