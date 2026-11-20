@@ -1,3 +1,11 @@
+# 徐家汇藏书楼北楼（原藏书楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) · [单体旋转与下载](zikawei-north-library.html) · [来源与制作范围](source/precise/xuhui-zikawei-north-library/README.md) · [验收记录](data/audit/zikawei-north-library-v1/README.md)
+
+北侧两层原藏书楼的山墙、拱门廊、百叶窗与双坡屋面。
+
+近景 105,688 个三角面，远景 54,672 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 10,824,095 字节。上海主图现有 123 处独立入口，徐汇区 8 处。[资产清单](assets/models/candidates/xuhui-zikawei-north-library/manifest.json)
+
 # 原馆东侧入口拱券和门扇的可辨外部纹样
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) · [四种模型下载](source/precise/yangpu-library/revisions/east-entry-relief/manifest.json) · [来源与制作范围](source/precise/yangpu-library/revisions/east-entry-relief/README.md) · [验收记录](data/audit/yangpu-library-east-entry-relief-v1/README.md)
