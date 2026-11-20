@@ -1,3 +1,11 @@
+# 外滩3号东北切角门拱两侧的葡萄垂饰，以2013年同日入口与近照核对位置、外形和原模型
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk) · [四种模型下载](source/precise/bund03/revisions/northeast-grape-pendants/manifest.json) · [来源与制作范围](source/precise/bund03/revisions/northeast-grape-pendants/README.md) · [验收记录](data/audit/union-grape-pendants-v1/README.md)
+
+外滩3号东北切角门拱两侧的葡萄垂饰，以2013年同日入口与近照核对位置、外形和原模型。
+
+近景 184,185 个三角面，远景 75,078 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 19,138,501 字节。上海主图现有 146 处独立入口，黄浦区 73 处。[资产清单](source/precise/bund03/revisions/northeast-grape-pendants/manifest.json)
+
 # 迦陵大楼（南京东路北立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) · [单体旋转与下载](jialing-building.html) · [来源与制作范围](source/precise/huangpu-jialing-building/README.md) · [验收记录](data/audit/jialing-building-v1/README.md)

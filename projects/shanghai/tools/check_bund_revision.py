@@ -29,7 +29,12 @@ def assets_match(read, manifest, path):
     landmarks, manifest_dir, lod_dir, web, raw = documents
     lm, entry, lod = one(landmarks, model), one(manifest_dir['buildings'], model), one(lod_dir['models'], model)
     assert all(row['asset_revision_manifest'] == path for row in (lm, entry, lod, web, raw))
-    assert lm['candidate_id'] == entry['candidate_id'] == web['candidate_id'] == raw['candidateId'] == model
+    assert lm['candidate_id'] == entry['candidate_id'] == web['candidate_id'] == model
+    if 'candidateId' in raw:
+        assert raw['candidateId'] == model
+    else:
+        legacy_ids = {'bund15': 'russo', 'bund18': 'bund18-chartered-bank'}
+        assert raw['id'] == legacy_ids[model]
     roles = {'raw': ('editable_model','raw'), 'full': ('model','web'), 'lod': ('lod_model','lod'), 'native': ('native_model','native')}
     assert set(manifest['assets']) == set(roles)
     for role, (field, alias) in roles.items():
@@ -68,8 +73,8 @@ def main():
         assert [r for r in before if r['id'] != ident] == [r for r in after if r['id'] != ident]
     for key in ('lng','lat','bearing','walkStart','bounds_glb','height_m','districtId'):
         assert current.get(key) == one(old[0],ident).get(key), key
-    for key in ('footprint','replaceExactBuildingIds'):
-        assert new[4][key] == old[4][key]
+    for key in ('id','candidateId','footprint','replaceExactBuildingIds','footprint_source','source_footprint','groundPolygonLocalXZ','model_axis','anchor','bounds_glb'):
+        assert new[4].get(key) == old[4].get(key)
     for path in ('data/candidate-city-integrations.json','data/global-models/additional-placement.json',
                  'data/global-models/candidate-inventory.json','data/precise-buildings-v6.json','data/model-viewers.json'):
         assert json.loads(read(path)) == prior(path), path
