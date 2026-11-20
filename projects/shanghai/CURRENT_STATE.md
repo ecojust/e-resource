@@ -1,3 +1,11 @@
+# 美国花旗总会（福州路209号主立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) · [单体旋转与下载](american-club.html) · [来源与制作范围](source/precise/huangpu-american-club/README.md) · [验收记录](data/audit/american-club-v1/README.md)
+
+福州路209号原美国总会的临街外观，按保护地址及不同时期照片查明原用。
+
+近景 80,432 个三角面，远景 36,554 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 8,026,230 字节。上海主图现有 114 处独立入口，黄浦区 47 处。[资产清单](assets/models/candidates/huangpu-american-club/manifest.json)
+
 # 新亚酒楼（上海新亚大酒店临街主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-new-asia-hotel&mode=overview) · [单体旋转与下载](new-asia-hotel.html) · [来源与制作范围](source/precise/hongkou-new-asia-hotel/README.md) · [验收记录](data/audit/new-asia-hotel-v1/README.md)

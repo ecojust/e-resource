@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>美国花旗总会 · 福州路主立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="positive-x" aria-label="福州路209号原美国总会的临街七开间立面三维模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-american-club&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 福州路209号</p>
+    <h1>美国花旗总会</h1>
+    <p>福州路主立面与转角首跨</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">参照1920至1930年代历史影像与当代实照制作棕砖七开间、四柱浅门廊、铁栏阳台和顶层白石拱窗。屋后、屋顶设施与室内另计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">福州路正面</button>
+      <button type="button" data-view="oblique">斜侧面</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-american-club/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-american-club');
+  </script>
+</body>
+</html>

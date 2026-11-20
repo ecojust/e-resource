@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 75,
+  "candidate_manifest_count": 76,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 73,
-  "resulting_city_count": 113,
+  "new_city_model_count": 74,
+  "resulting_city_count": 114,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 6,
     "长宁区": 4,
     "静安区": 6,
-    "黄浦区": 30
+    "黄浦区": 31
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 300,
-    "bytes": 972034303,
+    "files": 304,
+    "bytes": 980060533,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 12448307,
+    "current_run_added_bytes": 8026230,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 168
+    "inherited_incremental_files": 172
   },
   "records": [
     {
@@ -6156,6 +6156,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "天潼路422号原新亚酒楼的历史临街外观，结合照片和路口定位确认。"
+    },
+    {
+      "id": "huangpu-american-club",
+      "name": "美国花旗总会（福州路209号主立面）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "american-club.html",
+      "manifest": "assets/models/candidates/huangpu-american-club/manifest.json",
+      "manifest_sha256": "575324b50451c82ea01888123e3917872b60fd970ae31042c3fae39082225e58",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-american-club/huangpu-american-club-raw.glb",
+          "bytes": 4507732,
+          "sha256": "9e8d65774626e65cd7837c620c5bb8c75e359a0fb9e3a7e92170c0cd9749b67d",
+          "triangles": 80432,
+          "bounds_gltf_m": [
+            [
+              -12.390000343322754,
+              -0.10000000149011612,
+              -3.5299999713897705
+            ],
+            [
+              12.390000343322754,
+              25.600000381469727,
+              1.4600000381469727
+            ]
+          ],
+          "materials": 12
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-american-club/huangpu-american-club-web.glb",
+          "bytes": 1518396,
+          "sha256": "644eb2780d6c2660de2ee9fc6ac086e5a495cbb7f3c81f0d0287a7810b42ddad",
+          "triangles": 80432,
+          "bounds_gltf_m": [
+            [
+              -12.3900003,
+              -0.100000001,
+              -3.52999997
+            ],
+            [
+              12.3900003,
+              25.6000004,
+              1.46000004
+            ]
+          ],
+          "materials": 12
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-american-club/huangpu-american-club-lod.glb",
+          "bytes": 650984,
+          "sha256": "99cc5c676e07a6fbe4d52c99eb4a6caab759441b845617ab17abe7a2bd7d9153",
+          "triangles": 36554,
+          "bounds_gltf_m": [
+            [
+              -12.3900003,
+              -0.100000001,
+              -3.52999997
+            ],
+            [
+              12.3900003,
+              25.6000004,
+              1.46000004
+            ]
+          ],
+          "materials": 12
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-american-club/huangpu-american-club.blend",
+          "bytes": 1349118,
+          "sha256": "cdf30f454e39bd6dc54bd789abeba76ca7f9486451889b3c546624acf36fa728"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -12.390000343322754,
+            -0.10000000149011612,
+            -3.5299999713897705
+          ],
+          "max": [
+            12.390000343322754,
+            25.600000381469727,
+            1.4600000381469727
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -12.390000343322754,
+            -1.4600000381469727,
+            -0.10000000149011612
+          ],
+          "max": [
+            12.390000343322754,
+            3.5299999713897705,
+            25.600000381469727
+          ]
+        },
+        "triangles": 80432,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "福州路209号原美国总会的临街外观，按保护地址及不同时期照片查明原用。"
     }
   ],
   "baseline_inventory": {
@@ -6171,6 +6277,7 @@
     "projects/shanghai/assets/models/candidates/hongkou-duolun-250/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-new-asia-hotel/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-american-club/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
@@ -6209,13 +6316,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/new-asia-hotel-v1",
+  "incremental_audit_directory": "data/audit/american-club-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/metropole-hotel-v1/inventory-increment.json",
-    "bytes": 140018,
-    "sha256": "24c1f0a1d2a599640a7e35f154bcbc7bf36806165cace8473cf76288af295986"
+    "file": "data/audit/new-asia-hotel-v1/inventory-increment.json",
+    "bytes": 143508,
+    "sha256": "f7bc8275191eedd479ce396210f3aebda4f5971bb191bb3beb1e8adbc762485b"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/hongkou-new-asia-hotel/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-american-club/manifest.json"
   ]
 }
