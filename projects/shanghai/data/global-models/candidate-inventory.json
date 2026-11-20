@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 107,
+  "candidate_manifest_count": 108,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 105,
-  "resulting_city_count": 145,
+  "new_city_model_count": 106,
+  "resulting_city_count": 146,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 56
+    "黄浦区": 57
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 428,
-    "bytes": 1178451832,
+    "files": 432,
+    "bytes": 1180762480,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 15202168,
+    "current_run_added_bytes": 2310648,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 296
+    "inherited_incremental_files": 300
   },
   "records": [
     {
@@ -9548,6 +9548,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "对照中山东一路33号的两处保护门牌，核实原英国领事办公主楼及其可见外立面。"
+    },
+    {
+      "id": "huangpu-jialing-building",
+      "name": "迦陵大楼（南京东路北立面）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "jialing-building.html",
+      "manifest": "assets/models/candidates/huangpu-jialing-building/manifest.json",
+      "manifest_sha256": "6c89174ad7bbeec6484db114ac81d320102bd9d55bea4fac45404cdb63db45ce",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-jialing-building/huangpu-jialing-building-raw.glb",
+          "bytes": 1197064,
+          "sha256": "12b0883b745838655e027a6f70371d05627673544422a18dc239e5d812df693d",
+          "triangles": 24248,
+          "bounds_gltf_m": [
+            [
+              -8.75,
+              0.0,
+              -2.0299999713897705
+            ],
+            [
+              8.380000114440918,
+              30.940000534057617,
+              0.21299999952316284
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-jialing-building/huangpu-jialing-building-web.glb",
+          "bytes": 377416,
+          "sha256": "af8233b4c0368225e83dce2119e7ac0b2cd2cfb7a1dde58d2dd492d0e9b65a6f",
+          "triangles": 24248,
+          "bounds_gltf_m": [
+            [
+              -8.75,
+              0,
+              -2.02999997
+            ],
+            [
+              8.38000011,
+              30.9400005,
+              0.213
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-jialing-building/huangpu-jialing-building-lod.glb",
+          "bytes": 219088,
+          "sha256": "36ae755b794efc25edf2f3596138246b9278e867e7e2a1503ac52ab1830a92ca",
+          "triangles": 14464,
+          "bounds_gltf_m": [
+            [
+              -8.75,
+              0,
+              -2.02999997
+            ],
+            [
+              8.38000011,
+              30.9400005,
+              0.189999998
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-jialing-building/huangpu-jialing-building.blend",
+          "bytes": 517080,
+          "sha256": "fc42a35086ff5321dc0cab78f959be0beb4af02c1882a2bac943e86251403d6a"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -8.75,
+            0.0,
+            -2.0299999713897705
+          ],
+          "max": [
+            8.380000114440918,
+            30.940000534057617,
+            0.21299999952316284
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -8.75,
+            -0.21299999952316284,
+            0.0
+          ],
+          "max": [
+            8.380000114440918,
+            2.0299999713897705,
+            30.940000534057617
+          ]
+        },
+        "triangles": 24248,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-historic-street-elevation",
+      "description": "南京东路99号迦陵大楼北端的矩形石门框与沿街六列窗，依据历史门牌和现场照片区分四川中路主入口及高低分段。"
     }
   ],
   "baseline_inventory": {
@@ -9595,6 +9701,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-cathedral/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-jardine-matheson-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-jialing-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-lyceum-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
@@ -9633,13 +9740,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/former-british-consulate-v1",
+  "incremental_audit_directory": "data/audit/jialing-building-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/french-municipal-council-v1/inventory-increment.json",
-    "bytes": 254823,
-    "sha256": "0dedeb20231a710a6ce7488307cf48b8d7bd25300fc9f282511b7e83c3c24ded"
+    "file": "data/audit/former-british-consulate-v1/inventory-increment.json",
+    "bytes": 258521,
+    "sha256": "072174868edf3408b1c5c74610e2ad804b3423905e95ab2b0c78a3d0c22f62de"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-former-british-consulate/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-jialing-building/manifest.json"
   ]
 }

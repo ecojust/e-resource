@@ -1,3 +1,11 @@
+# 迦陵大楼（南京东路北立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) · [单体旋转与下载](jialing-building.html) · [来源与制作范围](source/precise/huangpu-jialing-building/README.md) · [验收记录](data/audit/jialing-building-v1/README.md)
+
+南京东路99号迦陵大楼北端的矩形石门框与沿街六列窗，依据历史门牌和现场照片区分四川中路主入口及高低分段。
+
+近景 24,248 个三角面，远景 14,464 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,310,648 字节。上海主图现有 146 处独立入口，黄浦区 73 处。[资产清单](assets/models/candidates/huangpu-jialing-building/manifest.json)
+
 # 原英国驻沪领事馆办公主楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-british-consulate&mode=overview) · [单体旋转与下载](former-british-consulate.html) · [来源与制作范围](source/precise/huangpu-former-british-consulate/README.md) · [验收记录](data/audit/former-british-consulate-v1/README.md)
