@@ -54,9 +54,9 @@ async function run(){
       },id,{polling:500,timeout:420000});
       await page.evaluate(()=>new Promise(resolve=>{const m=window.__SHANGHAI_APP__.scene.map;let frames=0;function tick(){if(++frames===3)return resolve();m.once('render',tick);m.triggerRepaint();}m.once('render',tick);m.triggerRepaint();}));
       const state=await page.evaluate(id=>{const s=window.__SHANGHAI_APP__.scene,m=s.map,g=s.getCandidateIntegrationState().shader.ownerScopedSources.find(x=>x.feature_local_ids.includes(830)&&x.feature_local_ids.includes(1445));
-        return {hash:location.hash,asset:s.getLandmarkAssetState(id),group:g,visibleCount:s.getBuildingBeaconState().count,center:m.getCenter(),bearing:m.getBearing(),pitch:m.getPitch(),zoom:m.getZoom(),contextLost:m.painter.context.gl.isContextLost()};
+        return {hash:location.hash,mode:window.__SHANGHAI_APP__.mode,asset:s.getLandmarkAssetState(id),group:g,visibleCount:s.getBuildingBeaconState().count,center:m.getCenter(),bearing:m.getBearing(),pitch:m.getPitch(),zoom:m.getZoom(),contextLost:m.painter.context.gl.isContextLost()};
       },id);
-      assert.equal(state.contextLost,false);assert.equal(state.hash,'#landmark='+id+'&mode=overview');assert.equal(state.visibleCount,157);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[830]);assert.equal(state.asset.verifiedAsset.sha256,row.assets.web.sha256);
+      assert.equal(state.contextLost,false);assert.equal(new URLSearchParams(state.hash.slice(1)).get('landmark'),id);assert.equal(state.mode,'overview');assert.equal(state.visibleCount,157);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[830]);assert.equal(state.asset.verifiedAsset.sha256,row.assets.web.sha256);
       const nameWithExt=name+'.png';const bytes=await page.screenshot({path:path.join(out,nameWithExt),timeout:180000});
       result.views.push({view:name,file:nameWithExt,sha256:sha(bytes),state});write();
     }

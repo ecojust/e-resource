@@ -10,7 +10,7 @@
 
 156处旧场景在银行原址载入830与邻楼1445，两者均未裁切。157处正式主图从目录选中中汇大楼，1280×800桌面与390×844手机均能看到北端红色逐层退台、桅杆和河南路横窗带。三张近景载入了这两栋的真实原生组，仅830应用替换，10个实地点、四件实际下载、167个场景资源及4个目录生成文件通过。远景切换到35,552面模型。[旧场景](map-before.png) · [桌面](main-desktop.png) · [手机](main-mobile.png) · [北塔近景](north-stepped-water-tower.png) · [屋顶](filled-central-roof.png) · [远景](distant.png) · [浏览器记录](main-map-browser.json) · [输入签名](main-map-inputs-verify.json)
 
-首轮河南路单独放大的视线穿过保留邻楼1445，图里只能看到前方建筑的灰色网格窗。已按原生轮廓和高度算出路内镜位，可从街道一侧看到红色窗间墙及浅色横带。[遮挡对照](henan-road-window-bands.png) · [五个窗位的视线计算](henan-street-camera-probes.json) · [逐图目检](main-map-visual-review.json)
+首轮河南路近景隔着保留邻楼1445，画面主要是邻楼的灰色格窗。沿街转到离邻楼约11.5米的路内镜位，五条视线均到达中汇大楼。画面中央连续数层浅色腰线与红砖色窗间墙，成排的灰绿双扇玻璃、凸出窗台和左侧窄阳台可辨。复拍时830与1445的原生近景均已载入，只有830被替换。[首轮遮挡对照](henan-road-window-bands.png) · [街道内实景](henan-road-inside-street.png) · [两侧镜位五条视线](henan-street-camera-probes.json) · [浏览器及下载签名](henan-street-window-browser.json)
 
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/618d997f6e77a47116c229fe85705e69134956c3/projects/shanghai/index.html#landmark=huangpu-chung-wei-bank-building&mode=overview) · [固定版本逐文件核对](publication.json)
 
