@@ -15,3 +15,7 @@
 前后两版城市地图分别从21104、21105打开原来的外滩3号入口。850×650桌面和390×844手机都实际加载近景，旧版172,401面，新版184,185面。两份候选目录均为146处，SHA-256相同，各自的外滩清单和网页GLB也与HTTP签名吻合。两版桌面默认视角均可见临街窗墙，手机默认视角的一列周边灯牌盖住部分立面，常规缩放下难以看清单件石雕。[前态实测](main-map-before.json) · [后态实测](main-map-after.json) · [新版桌面](main-map-after-desktop-default.png) · [新版手机](main-map-after-mobile-default.png) · [两端HTTP与四个文件的签名](104-105-final-21k-http.json)
 
 在相同的桌面街景机位，东侧券脚原为平石面。新版可见垂饰顶端两侧卷枝和端珠、中间斜带、下部果粒与叶尖。实际截图内东侧石雕外接范围为80×124像素，原始新增三角面投影覆盖3,498个像素。对比前后两图，其中3,000个像素至少有一个RGB通道相差6级，投影之外只有9个像素达到同一门槛。此近照只框入东侧一件，西侧可在上方的原生全门图中对照。[东券脚原尺寸截图裁切，左旧右新](east-jamb-map-comparison.png) · [旧版地图原图](main-map-before-desktop-detail.png) · [新版地图原图](main-map-after-desktop-detail.png) · [逐三角投影结果](real-map-geometry-pixels.json) · [复算程序](compare-map-detail.py)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1686fde1fc662f2cd6ece7675318009edf4ab2d9/projects/shanghai/index.html#landmark=bund03&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

@@ -71,7 +71,7 @@
 |---|---|---|
 | 孙中山故居主楼 | [2026-10-29 12:42:25 UTC+8](https://github.com/ecojust/e-resource/commit/518d92d468c1891a798a0ec7251fb74b41a125a9) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sun-yatsen-residence&mode=walk) |
 | 上海总会 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund02&mode=walk) |
-| 有利大楼 · 外滩3号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk) |
+| 有利大楼 · 外滩3号 | [2026-11-20 22:23:24](https://github.com/ecojust/e-resource/commit/1686fde1fc662f2cd6ece7675318009edf4ab2d9) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk) |
 | 日清大楼 · 外滩5号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk) |
 | 中国通商银行旧址 · 外滩6号 | [2026-11-20 19:22:09](https://github.com/ecojust/e-resource/commit/9f0888a873db1bc951d2ade3b45b4cd03e91be56) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk) |
 | 大北电报公司大楼 · 外滩7号 | [2026-10-26 16:20:09](https://github.com/ecojust/e-resource/commit/fb07d1739ea75948de463d23e09225bca62122d8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk) |
