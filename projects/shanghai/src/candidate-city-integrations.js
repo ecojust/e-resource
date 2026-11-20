@@ -1,4 +1,4 @@
-import {validSourceSection} from './candidate-source-sections.js';
+import {validSourceSection} from './candidate-source-sections.js?v=country-hospital-north-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 
 const SHA=/^[a-f0-9]{64}$/;
@@ -47,6 +47,8 @@ export function mergeCandidateCityModels(existing,manifest) {
     for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
     if(row.source_section_caps!==undefined&&!validSourceSection(row))throw Error(`候选模型源剖面无效：${row.id}`);
     if(row.site_replacement&&(!row.site_replacement.id||!validCandidateGeometry(row.site_replacement.geometry)))throw Error(`候选模型场址修正无效：${row.id}`);
+    const site=row.site_replacement;
+    if(site?.source_section_caps!==undefined&&!validSourceSection(site,site.geometry))throw Error(`候选模型场址源剖面无效：${site.id}`);
     if(row.display_height_clips!==undefined){
       if(!Array.isArray(row.display_height_clips)||row.display_height_clips.length>8)throw Error(`候选模型高度裁剪无效：${row.id}`);
       for(const c of row.display_height_clips){

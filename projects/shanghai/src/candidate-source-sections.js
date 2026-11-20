@@ -3,9 +3,9 @@ import * as THREE from '../vendor/three.module.js';
 const finitePoint = p => Array.isArray(p) && p.length === 2 && p.every(Number.isFinite)
   && Math.abs(p[0]) <= 180 && Math.abs(p[1]) <= 85;
 
-export function validSourceSection(row) {
+export function validSourceSection(row, replacement = row.replacement_geometry) {
   const cap = row.source_section_caps;
-  return Boolean(row.replacement_geometry && row.owner?.macro_id && Number.isInteger(row.owner.feature_local_id)
+  return Boolean(replacement && row.owner?.macro_id && Number.isInteger(row.owner.feature_local_id)
     && row.owner.feature_local_id > 0 && cap && /^[a-f0-9]{64}$/.test(cap.far_sha256)
     && finitePoint(cap.height_reference) && Number.isFinite(cap.base_m) && Number.isFinite(cap.roof_m)
     && cap.roof_m > cap.base_m && cap.geometry?.type === 'MultiLineString'
@@ -56,17 +56,19 @@ export class CandidateSourceSections {
   sync(activeCandidates, visibleMacros) {
     const wanted = new Set();
     let changed = false;
-    for (const row of activeCandidates) {
-      if (!row.source_section_caps) continue;
-      const source = visibleMacros.find(m => m.id === row.owner.macro_id && m.sha256 === row.source_section_caps.far_sha256
-        && m.object?.visible && m.object.parent === this.scene);
-      if (!source) continue;
-      wanted.add(row.id);
-      if (this.sections.has(row.id)) continue;
-      const mesh = sectionMesh(row, this.project);
-      this.scene.add(mesh);
-      this.sections.set(row.id, {row, mesh});
-      changed = true;
+    for (const candidate of activeCandidates) {
+      for (const row of [candidate, candidate.site_replacement]) {
+        if (!row?.source_section_caps) continue;
+        const source = visibleMacros.find(m => m.id === row.owner.macro_id && m.sha256 === row.source_section_caps.far_sha256
+          && m.object?.visible && m.object.parent === this.scene);
+        if (!source) continue;
+        wanted.add(row.id);
+        if (this.sections.has(row.id)) continue;
+        const mesh = sectionMesh(row, this.project);
+        this.scene.add(mesh);
+        this.sections.set(row.id, {row, mesh});
+        changed = true;
+      }
     }
     for (const id of this.sections.keys()) if (!wanted.has(id)) {
       this.remove(id);

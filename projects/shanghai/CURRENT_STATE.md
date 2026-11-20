@@ -1,3 +1,11 @@
+# 宏恩医院历史主楼北翼与中部门诊连接体
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital-north-block&mode=overview) · [单体旋转与下载](country-hospital-north.html) · [来源与制作范围](source/precise/jingan-country-hospital-north-block/README.md) · [验收记录](data/audit/country-hospital-north-v1/README.md)
+
+宏恩医院历史主楼北入口及其三开间凸部、东侧窗墙、平屋顶和中部门诊连接体。依据历史平面、北入口照片及航拍，层高、隐面与窗洞尺寸含估计。
+
+近景 38,208 个三角面，远景 14,560 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,873,457 字节。上海主图现有 86 处独立入口，静安区 3 处。[资产清单](assets/models/candidates/jingan-country-hospital-north-block/manifest.json)
+
 # 宏恩医院历史主楼花园立面
 
 [宏恩医院花园立面](index.html#landmark=jingan-country-hospital&mode=overview)已接入静安区，按区目录共 85 处，静安区 2 处。中央五开间门廊与两端山花之间，各有五跨底层拱廊。立面开间取自 1920 年代照片，中央细部和浅色外墙参照 2015 年照片。现状屋顶、后翼、连接体和室内仍待调查。

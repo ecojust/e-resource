@@ -656,18 +656,27 @@
         {
           "id": "jingan-country-hospital",
           "scope": "宏恩医院历史主楼面向南花园的立面，按1920年代影像制作三处山花、两段底层拱廊及上层退入窗墙，中央立面的用色和细部参考2015年照片。开间、进深与标高含估计。"
+        },
+        {
+          "id": "jingan-country-hospital-north-block",
+          "scope": "北翼入口、街侧窗墙、东侧立面与中部连接体的室外外观；北侧立面门廊、窗棂、檐线及可见屋面按资料估计。"
         }
       ],
       "remaining_tasks": [
         {
-          "id": "jingan-country-hospital-remaining-exterior",
-          "title": "宏恩医院历史主楼侧后立面、屋顶与连接部位",
-          "todo": "补查侧后方、屋顶和平面图，核实历史楼栋与现代连接体分界。比对早期拱廊与近年窗墙改动，按取得的年代资料扩展本次未建的部分。",
-          "completed_by_model_id": "jingan-country-hospital-remaining-exterior",
-          "completed_scope": "东、西端侧墙、花园翼北面、完整屋顶、历史主楼其他翼与连接部位。现代加建须先核实归属。"
+          "id": "country-hospital-garden-wing-rear-and-roof",
+          "title": "宏恩医院花园翼侧后墙与屋顶",
+          "todo": "调查南翼东、西端墙、北向双楼梯与完整屋顶，并核实花园侧拱廊后期改造。",
+          "split_from_task": "jingan-country-hospital-remaining-exterior"
+        },
+        {
+          "id": "country-hospital-west-reconfigured-connection",
+          "title": "宏恩医院西部改造接口及隐面",
+          "todo": "核实修缮后西部接口、北翼背面和连接体窗列的尺寸与年代。",
+          "split_from_task": "jingan-country-hospital-remaining-exterior"
         }
       ],
-      "exclusions": "东、西端侧墙、花园翼北面、完整屋顶、历史主楼其他翼与连接部位。现代加建须先核实归属。",
+      "exclusions": "调查南翼东、西端墙、北向双楼梯与完整屋顶，并核实花园侧拱廊后期改造。 核实修缮后西部接口、北翼背面和连接体窗列的尺寸与年代。",
       "evidence": [
         {
           "path": "projects/shanghai/source/precise/jingan-country-hospital/README.md",
@@ -676,6 +685,14 @@
         {
           "path": "projects/shanghai/data/audit/country-hospital-v1/footprint-review.json",
           "supports": "地图原建筑轮廓、模型局部定位与保留范围。"
+        },
+        {
+          "path": "projects/shanghai/source/precise/jingan-country-hospital-north-block/README.md",
+          "supports": "宏恩医院历史主楼北入口及其三开间凸部、东侧窗墙、平屋顶和中部门诊连接体。依据历史平面、北入口照片及航拍，层高、隐面与窗洞尺寸含估计。"
+        },
+        {
+          "path": "projects/shanghai/data/audit/country-hospital-north-v1/final-placement-contract.json",
+          "supports": "两支地图源按已见范围分别裁剪；北体东侧余段、连接体南侧余段和邻楼保留。"
         }
       ]
     }

@@ -77,3 +77,26 @@ test('section metadata binds finite lines, a roof elevation and a specific sourc
   assert.equal(validSourceSection({...contract,owner:{macro_id:'macro'}}),false);
   assert.equal(validSourceSection({...contract,replacement_geometry:null}),false);
 });
+
+test('one candidate closes each cut against its own macro and roof elevation', () => {
+  const scene = new THREE.Scene();
+  const sections = new CandidateSourceSections(scene, (lng, lat, h = 0) => new THREE.Vector3(lng, h, lat));
+  const site = {
+    id: 'secondary-cut', owner: {macro_id:'other', feature_local_id:848},
+    geometry: contract.replacement_geometry,
+    source_section_caps: {...contract.source_section_caps, roof_m:24.9},
+  };
+  const candidate = {...contract, id:'main', site_replacement:site};
+  assert.ok(validSourceSection(site, site.geometry));
+  const macros = ['macro','other'].map(id => ({id, sha256:farHash, object:new THREE.Group()}));
+  scene.add(...macros.map(m => m.object));
+  sections.sync([candidate], macros);
+  assert.deepEqual(sections.getState().map(s => [s.id, s.feature_local_id, s.roof_m]), [
+    ['main', 2764, 24.1], ['secondary-cut', 848, 24.9],
+  ]);
+  macros[0].object.visible = false;
+  sections.sync([candidate], macros);
+  assert.deepEqual(sections.getState().map(s => s.id), ['secondary-cut']);
+  sections.sync([], macros);
+  assert.deepEqual(sections.getState(), []);
+});

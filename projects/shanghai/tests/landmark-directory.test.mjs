@@ -99,8 +99,11 @@ test('global model cards retain auxiliary previews, source documentation and ass
     assert(sources.length>0,`${item.id} source explanation is reachable`);
     for(const path of sources)assert(await sourceDocumentExists(path),path);
     const scripts=[...page.matchAll(/<script\b[^>]*src="(src\/[^"?]+\.js)"/g)].map(row=>row[1]);
-    assert(scripts.length>0,item.id);
-    const implementation=(await Promise.all(scripts.map(metadata))).join('\n');
+    const modules=[...page.matchAll(/<script\b[^>]*type="module"[^>]*>([\s\S]*?)<\/script>/g)].map(row=>row[1]);
+    assert(scripts.length || modules.some(code=>code.trim()), item.id);
+    const source=[...await Promise.all(scripts.map(metadata)),...modules].join('\n');
+    const sharedViewer=/import\s*\{\s*showCandidateAssetViewer\s*\}\s*from\s*['"](?:\.\/src\/|\.\/)candidate-asset-viewer\.js['"]/;
+    const implementation=sharedViewer.test(source) ? source+'\n'+await metadata('src/candidate-asset-viewer.js') : source;
     assert.match(implementation,/\.download\s*=/,`${item.id} keeps its download action`);
     for(const role of ['raw','native','full','lod']){
       const asset=manifest.assets[role];assert(asset&&typeof asset.file==='string',`${item.id}/${role}`);

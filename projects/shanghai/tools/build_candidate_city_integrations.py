@@ -469,10 +469,12 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             if key in placement:
                 model[key] = json.loads(json.dumps(placement[key]))
         site = model.get("site_replacement")
-        if site:
-            checked_geometry(site["geometry"], f"{ident} site_replacement.geometry")
         if site and "owner" not in site and site.get("source_macro") and site.get("source_local_id"):
             site["owner"] = {"macro_id": site["source_macro"], "feature_local_id": site["source_local_id"]}
+        if site:
+            site_cut = checked_geometry(site["geometry"], f"{ident} site_replacement.geometry")
+            if "source_section_caps" in site:
+                check_source_section_caps(site, site_cut)
         if "display_height_clips" in model:
             checked_height_clips(model["display_height_clips"], ident)
         if "source_section_caps" in model:
