@@ -1,3 +1,11 @@
+# 卜内门大楼（四川中路五开间东立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-brunner-mond-building&mode=overview) · [单体旋转与下载](brunner-mond.html) · [来源与制作范围](source/precise/huangpu-brunner-mond-building/README.md) · [验收记录](data/audit/brunner-mond-v1/README.md)
+
+四川中路133号卜内门大楼东向五开间、拱门、中央柱列、石托座和贝壳山花。
+
+近景 43,600 个三角面，远景 19,104 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,029,837 字节。上海主图现有 131 处独立入口，黄浦区 58 处。[资产清单](assets/models/candidates/huangpu-brunner-mond-building/manifest.json)
+
 # 四行储蓄会大楼（四川中路261号联合大楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) · [单体旋转与下载](four-banks-savings-building.html) · [来源与制作范围](source/precise/huangpu-four-banks-savings-building/README.md) · [验收记录](data/audit/four-banks-savings-v1/README.md)

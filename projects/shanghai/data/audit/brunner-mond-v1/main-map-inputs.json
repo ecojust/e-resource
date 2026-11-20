@@ -1,0 +1,905 @@
+{
+  "model_id": "huangpu-brunner-mond-building",
+  "run_sha256": "7389bc42fb9c24cc15c0f2be0c4d415ba644486e80da188935a58504296f8de7",
+  "scope": "Local 200 and 206 response paths observed by this browser, plus downloads, verified native source requests, local runtime and registration bindings. The server log is filtered by wall time and recorded paths. SHA256 and Git blob hashes refer to complete file bytes.",
+  "generator_sha256": "9297bb59c552ad930e51f3de428bfe786c9528483a6181cd4d3137278e0936e3",
+  "catalog_generation_inputs": {
+    "data/audit/brunner-mond-v1/inventory-increment.json": {
+      "bytes": 207749,
+      "sha256": "710b99a6322ffd1e64759882784058fb00fb0e19490802b43fa64f19ebf2b8e4",
+      "git_blob": "218746e298f542ddaa7defceab1ce3a9d0114bc3"
+    },
+    "data/audit/global-model-integration-v1/inventory.json": {
+      "bytes": 84353,
+      "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470",
+      "git_blob": "9c72f548eceeb8203431cc7a961014d6bb1565e5"
+    },
+    "data/global-models/additional-placement.json": {
+      "bytes": 1113168,
+      "sha256": "23c16f871f0e07659b830f1d45c9756797355fd30f048541a64dc61c2047dd2a",
+      "git_blob": "e84dfdc77b885efd2567b212ad29f3ee1a5e5387"
+    },
+    "data/global-models/candidate-inventory.json": {
+      "bytes": 291754,
+      "sha256": "dfe3dbbee4daa7b3386edb34c7dc25ec4998f85dca29b730885044744c25a3a0",
+      "git_blob": "8f7b2e681da4106eeafff8311e8c5429815ddfb4"
+    }
+  },
+  "files": {
+    "assets/city-detail/macros/14-13720-6693/READY.json": {
+      "bytes": 1110247,
+      "sha256": "506d6ab2aaebb9004adcbf04ac48ad7a02f06abb401617d05053674383015281",
+      "git_blob": "17a6bc5602df326ea88fc6a52e04669f80626d9f"
+    },
+    "assets/city-detail/macros/14-13720-6693/far.glb": {
+      "bytes": 1161544,
+      "sha256": "56eb90b01d7947a5ff5472f929b3ea48570caa79915df7113f0a7189631aa079",
+      "git_blob": "024c2e85f0ffaad247301255a1572b20b5e3a256"
+    },
+    "assets/city-detail/macros/14-13720-6693/online-ids.json.gz": {
+      "bytes": 69897,
+      "sha256": "7ccd98de54f90e004b599f3750b1aecf45ec93e23249613aa2c7b600381caa5a",
+      "git_blob": "5d4d80b524a8546f7d5ea9d0462bf12fa4bf4c34"
+    },
+    "assets/city-detail/macros/14-13720-6694/READY.json": {
+      "bytes": 1352332,
+      "sha256": "0c46fd8ec4ca79547de1ca77bc263c301a2d576fc1d131b1f805049604e5ce2d",
+      "git_blob": "dd20b4e331212766186a48ea4106be3d256074f9"
+    },
+    "assets/city-detail/macros/14-13720-6694/far.glb": {
+      "bytes": 1046956,
+      "sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+      "git_blob": "99b35d9cec9eeaa856458abff7db78959f7464aa"
+    },
+    "assets/city-detail/macros/14-13720-6694/near/3_-3-s0-s0-s1.glb.gz": {
+      "bytes": 31627,
+      "sha256": "3df8e9fba15b94298c1eee912b5cd2211d920a6b0332f2c9e88858e24c4d1b16",
+      "git_blob": "e55819735ff756cd7cf9c056ce70eb84122d268d"
+    },
+    "assets/city-detail/macros/14-13720-6694/near/3_-3-s1-s0-s0-s0.glb.gz": {
+      "bytes": 20099,
+      "sha256": "a21e2acc3ad70c711f35a265662402ce359794ed2c8bb3fcfe0064933b331c08",
+      "git_blob": "0832a6e1a419be211947baef0a701f5b468247a4"
+    },
+    "assets/city-detail/macros/14-13720-6694/near/3_-3-s1-s0-s0-s1-s0.glb.gz": {
+      "bytes": 12245,
+      "sha256": "6aac95c4fb004f216136a4246333a1b4b44b15a41dbc173bed0d70408a3a3517",
+      "git_blob": "05aa5b8a943f40bfd386be104293f0cd19b353f4"
+    },
+    "assets/city-detail/macros/14-13720-6694/near/3_-3-s1-s0-s0-s1-s1.glb.gz": {
+      "bytes": 41214,
+      "sha256": "bd44778ee43304bb87d05cb671d86f74f48d2a104508f470ce4d99cbf0fe7b05",
+      "git_blob": "6b628a711fa686f40848b45cedc100f2ad7f9a39"
+    },
+    "assets/city-detail/macros/14-13720-6694/near/3_-3-s1-s0-s1.glb.gz": {
+      "bytes": 38301,
+      "sha256": "b5668764a9ac655f6e6158b10e945e66d9500557017cff7004fee0d7914e55ac",
+      "git_blob": "df1bab16c655493170dad5f71bce9926c9a03075"
+    },
+    "assets/city-detail/macros/14-13720-6694/online-ids.json.gz": {
+      "bytes": 65964,
+      "sha256": "8969bb65e9ab3ecaf119891839e4fe416771e6cbef560ee33479d1e491565f87",
+      "git_blob": "72b90f9fc064ede3b55696f589d8c36d9a7f9d42"
+    },
+    "assets/city-detail/macros/14-13720-6695/far.glb": {
+      "bytes": 1286952,
+      "sha256": "6ff83cbb9bc959fe8a879f1f8366ce6e323a2fa4ab13f67a24454b977f6a3117",
+      "git_blob": "570bf05fbe921e12c4414aff782f4b0da63f0d90"
+    },
+    "assets/city-detail/macros/14-13720-6695/online-ids.json.gz": {
+      "bytes": 72220,
+      "sha256": "9c9cefec8fdb23eadfdd977e172f6805ecbd97b4b897c4710593f3f43e737363",
+      "git_blob": "40db684574289469de7e44d8b01d61516851c826"
+    },
+    "assets/city-detail/macros/14-13721-6693/READY.json": {
+      "bytes": 813280,
+      "sha256": "32cc7dfc9990f6224100c8921a038a0cdcaa820ca927dec4d4f52296fbb284b3",
+      "git_blob": "3fa230e4ba70cc5478ebe5cfb66ccb6355d7fab6"
+    },
+    "assets/city-detail/macros/14-13721-6693/far.glb": {
+      "bytes": 737612,
+      "sha256": "bec89a3987e1c31351fc2999a94b2464efc98206d377638694ee044a5fd055d7",
+      "git_blob": "985ddd8c8998981cdc662ed1c748e3ec6eaf8e67"
+    },
+    "assets/city-detail/macros/14-13721-6693/online-ids.json.gz": {
+      "bytes": 45707,
+      "sha256": "a3121d0540766ed8ff06cbf34d115b1c183126198e3bc727de06b239e5733250",
+      "git_blob": "0b7109bcac51ab2aedab7e1c8abdf07279dd9dd0"
+    },
+    "assets/city-detail/macros/14-13721-6694/READY.json": {
+      "bytes": 766462,
+      "sha256": "6551e79e62459243bd4bcf0f95159310e73335ab36bf6edb72ad2bdf66371510",
+      "git_blob": "dfc0e8c4547c813d5553fe2f71b6c42384996bcf"
+    },
+    "assets/city-detail/macros/14-13721-6694/far.glb": {
+      "bytes": 669100,
+      "sha256": "9f2d901167fade4c5ab3d8acc91fbc06298f4216f193112ba88817d825b40f5b",
+      "git_blob": "1e95885583e5884417193347850c0fa3a6e9edad"
+    },
+    "assets/city-detail/macros/14-13721-6694/online-ids.json.gz": {
+      "bytes": 39155,
+      "sha256": "ef4a7785e2fd635b812f57a81da566c8b4eca453394ba6317679fb63718833a4",
+      "git_blob": "2582a7c8fa4b927825e7e2189eb1a9c88dbbc715"
+    },
+    "assets/city-detail/macros/14-13721-6695/far.glb": {
+      "bytes": 793128,
+      "sha256": "8cc6d49b8dc6199876b4fd7a6a1376dcc57f6894decaab5ff616b0d6da83b80a",
+      "git_blob": "2abd164c0de557e559f01201a6293e39d501a7d9"
+    },
+    "assets/city-detail/macros/14-13721-6695/online-ids.json.gz": {
+      "bytes": 51074,
+      "sha256": "9ff138fadbe83747d9f9226e3ef862b5ea36f724c0db616f4d120d2b111adb9b",
+      "git_blob": "e520e013dac98f0dcb0fbb2169e28eae9257d379"
+    },
+    "assets/city-detail/manifest.json": {
+      "bytes": 1097700,
+      "sha256": "c67d3d95335551386620f13077a7a8190a9bb777a7844655e166c389a7fa8e54",
+      "git_blob": "1ba06bb079c84ea57ac73ca053af2f454983e745"
+    },
+    "assets/city-overrides-v6/14-13720-6694/3_-3-s0-s1.glb.gz": {
+      "bytes": 74313,
+      "sha256": "b04c9a71cc67133c0876cd2f90a88d4b19cfd3191255057716a3e4aa60f7879c",
+      "git_blob": "9c07b1147058921f812f8203d024a88508492a65"
+    },
+    "assets/favicon.svg": {
+      "bytes": 279,
+      "sha256": "bf27f542f82fafdac91733515ff112858ed3e081f59c664395c62047c1130cf0",
+      "git_blob": "96ce2a0cc414fe1661cfe4ad0656d88bf6f1d569"
+    },
+    "assets/materials/realism-v4/clean_asphalt_diff_1k.jpg": {
+      "bytes": 697630,
+      "sha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083",
+      "git_blob": "81b703dbfdc3f2cb5472a5b1e70bb7adba8f698a"
+    },
+    "assets/materials/realism-v4/clean_asphalt_nor_gl_1k.jpg": {
+      "bytes": 776360,
+      "sha256": "99cdf6b6f0b8a319d206e1d561bf2a5d9933d8d33e1d685f8e25388101d21310",
+      "git_blob": "02d58901569d51dab5dc4b78b97aff0f983ec47f"
+    },
+    "assets/materials/realism-v4/clean_asphalt_rough_1k.jpg": {
+      "bytes": 641634,
+      "sha256": "2280be133c104eb04370b625ebcc7f6709d2173b43ae2cd15a0074c26f492bf9",
+      "git_blob": "9d728eab35a101c4cf6ebf52469393cd82bb90c8"
+    },
+    "assets/materials/realism-v4/granite_tile_03_diff_1k.jpg": {
+      "bytes": 1056664,
+      "sha256": "bdb28bea17413f1a05b0498b43e9f61f253bb72d753d3bf6b555cbf5f3c9b1b4",
+      "git_blob": "a93791e3a79ebbdb3e447f8f625424967dd9866c"
+    },
+    "assets/materials/realism-v4/granite_tile_03_nor_gl_1k.jpg": {
+      "bytes": 778769,
+      "sha256": "016a678038f885f58fdb2ab642835dddd5a4d1302dbec8cb656e37ddd17dbbff",
+      "git_blob": "0b2e09c7669be17cb4232bfa1d9acf1cd6102177"
+    },
+    "assets/materials/realism-v4/granite_tile_03_rough_1k.jpg": {
+      "bytes": 375664,
+      "sha256": "2ba3725af246e0f4a07ca7c23500fbc05f2f7961bdb055dfb95442f2d99a4a84",
+      "git_blob": "85c7b856cca5670f412161f0e1a52eabf3b613ce"
+    },
+    "assets/materials/realism-v4/grass_ground_diff_1k.jpg": {
+      "bytes": 876584,
+      "sha256": "a79cc5ed65af0f80261b39a383b64a8c5272c5144d724deb43dbc29f0e4cd19b",
+      "git_blob": "70446a286dcf98a219bd734b0c41f3b0002de3ad"
+    },
+    "assets/materials/realism-v4/grass_ground_nor_gl_1k.jpg": {
+      "bytes": 1310516,
+      "sha256": "7000e2ccd479bb7b66dcdf4faef7b47554324566886314ca620cbf03e274e826",
+      "git_blob": "d6952e9dc1e05c5eb57aaacafac43749d36eda3b"
+    },
+    "assets/materials/realism-v4/grass_ground_rough_1k.jpg": {
+      "bytes": 328190,
+      "sha256": "111341f948b7e073edf7ac6add8777e1bf10df8959400df3863243e89bbc8c08",
+      "git_blob": "12036a9d080b00fe55bd3c0f13272ae5bf79cf8d"
+    },
+    "assets/materials/realism-v4/sandstone_blocks_08_diff_1k.jpg": {
+      "bytes": 242776,
+      "sha256": "0cac65461ba33003b8a27b03c2b87f3393a824a9a98036c4c8de6182a1449369",
+      "git_blob": "dee451e9c955833953386b8750a6cbbfdb612e27"
+    },
+    "assets/materials/realism-v4/sandstone_blocks_08_nor_gl_1k.jpg": {
+      "bytes": 167040,
+      "sha256": "1203d5300dfc717db67220531fcdad75214d48b98d21114a155b3f01d54ab012",
+      "git_blob": "6f2ee08cfd5883a073dafab50f577064ee5785d1"
+    },
+    "assets/materials/realism-v4/sandstone_blocks_08_rough_1k.jpg": {
+      "bytes": 161690,
+      "sha256": "f4f3e78f08a5ca3a80509ca0af9f88cd12017ccac42b0f3b6e9f61a29d521379",
+      "git_blob": "54c212ae8dbb248b37a432dda6be6c71e6cf3ef6"
+    },
+    "assets/materials/realism-v5/shanghai_riverside_1k.hdr": {
+      "bytes": 1596163,
+      "sha256": "552670274e9bca21ab1da1d19c77d657a5b049c705da6a4c8530f78e7c741e85",
+      "git_blob": "45c4539ee74e68cdb30ab6d3c71ff737d94230a6"
+    },
+    "assets/models/bund/lod-v4/bund02.glb": {
+      "bytes": 1028728,
+      "sha256": "54f5f74662df97a09c0951ff2d8001bddf55c52042cc953cc945a1c227819867",
+      "git_blob": "994db5477ac728cc239aa1ea723bb247c87b0bb0"
+    },
+    "assets/models/bund/lod-v4/bund03.glb": {
+      "bytes": 1718152,
+      "sha256": "d1b95576b5a4c82a5247439853756f66d694d35f302d6d7a573000220f7ecc5c",
+      "git_blob": "1ae0c8a643a6f9c2e1b4ffc31120bcc4e30d126e"
+    },
+    "assets/models/bund/lod-v4/bund05.glb": {
+      "bytes": 2070252,
+      "sha256": "6da511ad35e72659c1112be66ad6bffb4b3d5ba001d4be27810e44f3663298ff",
+      "git_blob": "84dafe6a3714d8496c5cbd8c14c3e0ad9ac7f2c5"
+    },
+    "assets/models/bund/lod-v4/bund07.glb": {
+      "bytes": 2991244,
+      "sha256": "9d249d48adc5245b2fa581bd53cf0cfe008804950ead6be52ab02d075cce05b4",
+      "git_blob": "b9058867f64ec2c727eacc6910fcaa71d2af8403"
+    },
+    "assets/models/bund/lod-v4/bund09.glb": {
+      "bytes": 8429340,
+      "sha256": "43c99018149307241e34b38adbd984912c4021898cacb03cc90267f6985cf5c5",
+      "git_blob": "53b67f8e0259d396eb9a7e47cf86060171e540b3"
+    },
+    "assets/models/bund/lod-v4/bund12.glb": {
+      "bytes": 2888184,
+      "sha256": "54320546b206d546a73ea6885c3eafaa99dd727311baeedea18dc2cbd320ac5c",
+      "git_blob": "dd2cb0edfb58384c3d3f879fa0b8a5caaa25bb1a"
+    },
+    "assets/models/bund/lod-v4/bund13.glb": {
+      "bytes": 624600,
+      "sha256": "0e3f2f8135a0544ea010b76e2065251f8a7635c9c868eac0fbda27fa466dcc7a",
+      "git_blob": "cc9f4a8db20df23608926c4acb8179ffc1acc954"
+    },
+    "assets/models/bund/lod-v4/bund14.glb": {
+      "bytes": 1443684,
+      "sha256": "a4a7fc70ee4e7fd4cdae7d4efbdc933c4ff8ae66d7c3830be3a359af0db423df",
+      "git_blob": "44f349b2bf27808cbe11c672c238bad742ef8692"
+    },
+    "assets/models/bund/lod-v4/bund15.glb": {
+      "bytes": 920316,
+      "sha256": "01dfcb12d72d84c495b70473ab1a633325504d3e20e94134c06bffa78fd5a994",
+      "git_blob": "e3a1080d88ae5f200ab24212b18eaa31d604287e"
+    },
+    "assets/models/bund/lod-v4/bund18.glb": {
+      "bytes": 2653968,
+      "sha256": "1eaa199ad9664ab960eef83870be85ced5f01e3fdc446f67a38083346cdf3d34",
+      "git_blob": "055d1a837679764ac0cca3b43c6ec225150b4046"
+    },
+    "assets/models/bund/lod-v4/bund19.glb": {
+      "bytes": 1434432,
+      "sha256": "b192056180ab5110866c4c2f30b2dc1edc0f0cccb5ca3ab33414d8cce68fe8e1",
+      "git_blob": "4573d59f526b9d6023c9a25666e5b7deb1c6b2a4"
+    },
+    "assets/models/bund/lod-v4/bund20.glb": {
+      "bytes": 2529320,
+      "sha256": "b811446898318ce26ead659d406dc7bfeb4e4d502faa8e8bd928b795d7fa41f9",
+      "git_blob": "b60bddc625c7818e3cf0d01923e5e0f01a3da74a"
+    },
+    "assets/models/bund/lod-v4/bund23.glb": {
+      "bytes": 1499764,
+      "sha256": "51d09c40dcec1e676fa47dff02dc2fb4aa8a691192daead18fa6cb41edc9fe55",
+      "git_blob": "e0be9c1c2f868b0135dd203df003fcc710625753"
+    },
+    "assets/models/bund/revisions/bund06/east-window-columns/bund06-east-window-columns-lod.glb": {
+      "bytes": 1009068,
+      "sha256": "c095f837b980ce967c2266c7273a685a07eab09bbe92ad4277884ff32d852316",
+      "git_blob": "4c528ed4efde3bc1ce95b1a3668d8487237a7f87"
+    },
+    "assets/models/bund/revisions/bund06/east-window-columns/bund06-east-window-columns-web.glb": {
+      "bytes": 8526648,
+      "sha256": "49f67205e232c79044750b848cd6c2c483e2a352a332aaba31769b2c34dd813c",
+      "git_blob": "2de73562f9ad3c1d97b33bbe18175d1c9358d41b"
+    },
+    "assets/models/bund/revisions/bund17/street-wing-doors/bund17-street-wing-doors-lod.glb": {
+      "bytes": 1220228,
+      "sha256": "86269c99e2776413d251cf6cfc598ae6e4e5b7b8974e62ca06d62d7aaeb09e4f",
+      "git_blob": "dc3b9e2db9015c37bd9016fea3ce002ad6efc933"
+    },
+    "assets/models/bund/revisions/bund17/street-wing-doors/bund17-street-wing-doors-web.glb": {
+      "bytes": 8515296,
+      "sha256": "fbb109fdaf17be6e1a892206361c2c0617f10cad6a3149054892cd4722db50b6",
+      "git_blob": "44e0bb319ae0ec508f076a5dff35a5606597bbdd"
+    },
+    "assets/models/bund/web/bund-streets.glb": {
+      "bytes": 2457920,
+      "sha256": "f89a77bc83b9c0aa1c04e46e7dfa5bbfe73beb20612ec9a2f9a58a3319a7e312",
+      "git_blob": "8cd21ddbf85f29d8b165ef25a8cea3ff30f2ec97"
+    },
+    "assets/models/bund/web/bund02.glb": {
+      "bytes": 1485492,
+      "sha256": "dc7af6db8524b049372d8af8bfe4b2240f2fdc6da59a73dbf01522ae92db7c82",
+      "git_blob": "89fbad1f2a0584445340bb274caefe99564247fb"
+    },
+    "assets/models/bund/web/bund03.glb": {
+      "bytes": 3706988,
+      "sha256": "063a3d75df70ea0529f2e216b12603327e8a5db45b922af485d240a48d03d802",
+      "git_blob": "08f19490ad9b4217f888e639224346cf4bf17780"
+    },
+    "assets/models/bund/web/bund05.glb": {
+      "bytes": 8733620,
+      "sha256": "779cacbfb1ef1fe973c204164f685f2bee5ea33a470118538f1042df7d413d59",
+      "git_blob": "bef726c5f56b101ac92897711c92d7a87dc79813"
+    },
+    "assets/models/bund/web/bund07.glb": {
+      "bytes": 14586648,
+      "sha256": "84073e5615b3d732c3916a5a1b896efe645c0a1f9554150a37af1e4b1f1a5f71",
+      "git_blob": "39645bd66c6dc54de89c52d0d75eb09273627660"
+    },
+    "assets/models/bund/web/bund09.glb": {
+      "bytes": 30117188,
+      "sha256": "596802df1eced961ac421608a649b275b18657e45770fd0f8849bcf950eb95e4",
+      "git_blob": "a8ba7519c3f8a27627176a0839457887adbcc9b2"
+    },
+    "assets/models/bund/web/bund12.glb": {
+      "bytes": 11464408,
+      "sha256": "04e2eedbb85fe9bffc2d140624e37af21ddca73e5825f725f64f2cf80a5ad9fd",
+      "git_blob": "6d122b6c42802250d177017c7a3c5e54166b0eaa"
+    },
+    "assets/models/bund/web/bund13.glb": {
+      "bytes": 939820,
+      "sha256": "77d403590f2719b9b21367dcb8d52bd63bd2f19f2b6cb9e663158fad8492745f",
+      "git_blob": "09c936d572a38c2c83da97ff8c083cde1d4af11d"
+    },
+    "assets/models/bund/web/bund14.glb": {
+      "bytes": 6725708,
+      "sha256": "a838ad7887713c5cd43b2abd6e139b3d52744465c0a4ea82608571e9af7b8801",
+      "git_blob": "a7602973716b68bfca13697b9ee11b715d70b8ff"
+    },
+    "assets/models/bund/web/bund15.glb": {
+      "bytes": 1441364,
+      "sha256": "7691f938f4ceb7267928ebe1f83984d239e9f4893dfa9205213f00acd754a53f",
+      "git_blob": "f4abfb7b44b0458a0265d5410f0d692b3a8741bf"
+    },
+    "assets/models/candidates/huangpu-american-club/huangpu-american-club-lod.glb": {
+      "bytes": 650984,
+      "sha256": "99cc5c676e07a6fbe4d52c99eb4a6caab759441b845617ab17abe7a2bd7d9153",
+      "git_blob": "38ac49684f466292d15466e0d6f0d45d6b0965ce"
+    },
+    "assets/models/candidates/huangpu-american-club/huangpu-american-club-web.glb": {
+      "bytes": 1518396,
+      "sha256": "644eb2780d6c2660de2ee9fc6ac086e5a495cbb7f3c81f0d0287a7810b42ddad",
+      "git_blob": "ab9ad9ebd5d626cfb5fcf843e54e2dd1f5c297b5"
+    },
+    "assets/models/candidates/huangpu-asia-building/huangpu-asia-building-lod.glb": {
+      "bytes": 1289852,
+      "sha256": "cd5939e8a148c7c203614474281e1f75fdbe7e99ddb53fd06c0fc7a6cfc43f9a",
+      "git_blob": "cfe938b4a0a819da6226d2aa2d0b090ad17ad259"
+    },
+    "assets/models/candidates/huangpu-asia-building/huangpu-asia-building-web.glb": {
+      "bytes": 2608024,
+      "sha256": "6bcc11231bd2e92990150300751ab332099b9d6fb8dca9a2f361969285ad5d46",
+      "git_blob": "a1de4614052a3f37c33058b4a6cd70f75e1258fe"
+    },
+    "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building-lod.glb": {
+      "bytes": 463168,
+      "sha256": "2e234c8ba278bfc1944cef9fbeb31fb31ae2fbf60145e6c48130c9e9aacd48dc",
+      "git_blob": "82bc90343c54c2a634653381d197947297b5654a"
+    },
+    "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building-raw.glb": {
+      "bytes": 2735128,
+      "sha256": "ec536b55cf0ef2ce643716020dc91211553d10dbb46084e037692d9fb02ae377",
+      "git_blob": "a6f8d80efef36c1709cacbdaa58145b4f9514b04"
+    },
+    "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building-web.glb": {
+      "bytes": 1131220,
+      "sha256": "bbf1da0d6216374032a9873f71496cc52879912b626bce7b274ebd7c8f1948d0",
+      "git_blob": "239ac29afa2f8b2ce9ec3a87486c1c753b1a86ee"
+    },
+    "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building.blend": {
+      "bytes": 700321,
+      "sha256": "2fe46396936ee818659c6894a1324c0d85a4b088bdf47a56dc7224585ed60e03",
+      "git_blob": "02fa5f8645f9e98ac224a4897ab8fe117ae29f0b"
+    },
+    "assets/models/candidates/huangpu-brunner-mond-building/manifest.json": {
+      "bytes": 3234,
+      "sha256": "55b4afccf1c158d58fa62b1fd4340b8243319f86dcbe46cb6dda6bb89728efd1",
+      "git_blob": "214a9f61ed8ac69151cee0900d1152b26d370507"
+    },
+    "assets/models/candidates/huangpu-four-banks-savings-building/huangpu-four-banks-savings-building-lod.glb": {
+      "bytes": 1229880,
+      "sha256": "ab9058178f4a1484a2c1e9e268ba66be5414ae18bc09793c7ce6b906f144c8e5",
+      "git_blob": "957d2643b36c617c68c3857c43d5ceec42fc0970"
+    },
+    "assets/models/candidates/huangpu-four-banks-savings-building/huangpu-four-banks-savings-building-web.glb": {
+      "bytes": 1473636,
+      "sha256": "b5196dbca6cb7cc03db6321f7b74bae1f10fda39442ae33359d61ff15fa11de4",
+      "git_blob": "2f7d537999093d6e973177be82bc2a82c8a22e29"
+    },
+    "assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower-lod.glb": {
+      "bytes": 561052,
+      "sha256": "456f0cd4f6982a7a220d83c0f8f577e7e0779641ab5b7d41171209f19caf57b2",
+      "git_blob": "04e7dcb4a8c5c8c823da77a66828595e69f15055"
+    },
+    "assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower-web.glb": {
+      "bytes": 927264,
+      "sha256": "8f16a4d1afcf3a93f68ff246c9bc711a1a7be13a4cba28a126e975b8d8b4f5a7",
+      "git_blob": "3a5335af29d0274261c2f5044efba198ca8797b9"
+    },
+    "assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral-lod.glb": {
+      "bytes": 1317944,
+      "sha256": "b1a1cd81f76eff4752390d5da0de28ad2c7293300ec425c3dfde512f5d99cb1c",
+      "git_blob": "f22800eb06e1e3a6165078e97188bf2986e265e3"
+    },
+    "assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral-web.glb": {
+      "bytes": 2426524,
+      "sha256": "1f22f80db6ad68b266a3683923ec9b6a1ae62803e0bb2263f4a91f5e5d094eac",
+      "git_blob": "6998033c73529593435776aeaf355a23750a51e6"
+    },
+    "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-lod.glb": {
+      "bytes": 363520,
+      "sha256": "e81248ebb1a0dacef6b514a67728829661d873ff2325072b5ad8d41743eb9477",
+      "git_blob": "a33502bfd56674d881afaf5c1034b9f1e0af002c"
+    },
+    "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-web.glb": {
+      "bytes": 563492,
+      "sha256": "fbce91f773a76fb8fefc7330ab8b210f332f10240aff3c8537acc036cf0820e7",
+      "git_blob": "7cd4405b0e3a62114f1da0d3b5b9db4d2f367c72"
+    },
+    "assets/models/candidates/huangpu-metropole-hotel/huangpu-metropole-hotel-lod.glb": {
+      "bytes": 511056,
+      "sha256": "a54e2215cb9c0f9e493108702ba8c9d4084fd4d2876874ed6f64f86904207ecf",
+      "git_blob": "82c49889da3ab506a44fcb6d9193c40544139566"
+    },
+    "assets/models/candidates/huangpu-metropole-hotel/huangpu-metropole-hotel-web.glb": {
+      "bytes": 760500,
+      "sha256": "709f7db54faea18dc03cccdf6da2ffbd26a8497feea778bf11fc6c2a738c61ca",
+      "git_blob": "2d60cef61ffb5bae990c054593f6609577e27086"
+    },
+    "assets/models/candidates/huangpu-shanghai-municipal-council/huangpu-shanghai-municipal-council-lod.glb": {
+      "bytes": 3333144,
+      "sha256": "c1df275cbe0d7545ffcccc2972b06495b0e79cfb1846080b88877d4fd5f96ef3",
+      "git_blob": "408a665ba7bb2f6a6f4fd263f59fc5c3ba62b93d"
+    },
+    "assets/models/optimized/jin-mao.glb": {
+      "bytes": 37780,
+      "sha256": "7eb261cfa018c34bff5bb79fc04ce43d89c96fd337efb65d2d6df242cc3fe559",
+      "git_blob": "50a376a4bf0248a1a1a409ff7ab61c3c2614f648"
+    },
+    "assets/models/optimized/oriental-pearl.glb": {
+      "bytes": 134500,
+      "sha256": "1fd008e352942d8c9cd774e877f4917e480c3c56a3ebf7150accb4346ac9b62f",
+      "git_blob": "44b2aa472d46787bce3dd86ce3d855772000ff8b"
+    },
+    "assets/models/optimized/shanghai-tower.glb": {
+      "bytes": 211728,
+      "sha256": "6a2c3aa16ed5954fc66c7638daa18d098b5458a6f451785fc01ce6e131eae3e1",
+      "git_blob": "aadc25d4c6f9aa3a6f5937db140143688fb05958"
+    },
+    "assets/models/optimized/swfc.glb": {
+      "bytes": 12216,
+      "sha256": "cc57dca957d658db79d7da4eca4dd11790fff215e513e5a32d475abc2e923a2e",
+      "git_blob": "6eb7dfd7844d9c05986d48c7a5be37578de9066a"
+    },
+    "assets/models/precise/14-13716-6693/putuo-zhenru-main-hall/putuo-zhenru-main-hall-lod.glb": {
+      "bytes": 8623932,
+      "sha256": "b977867057667a8d4c9e3a1fc5a209b97852cd8995e4807245594d1162c78f58",
+      "git_blob": "8e5a1edc8de3509e6c6dfd4732cd73dee6267a41"
+    },
+    "assets/models/precise/14-13718-6695/changning-hudec-residence/changning-hudec-residence-lod.glb": {
+      "bytes": 622564,
+      "sha256": "f7e9dff929579284ac6a231da19eb3d83696a6d13f246d8e4746078a1abd084c",
+      "git_blob": "2add97ec61e9faf3c4cd045e170da0b889a80ba0"
+    },
+    "assets/models/precise/14-13718-6695/columbia-country-club/columbia-country-club-lod.glb": {
+      "bytes": 4315552,
+      "sha256": "21234cc8259ee4d7bad5dffca67ab983afd211eee4bef9abc6d35e9b4708952f",
+      "git_blob": "d5d6f1eb62a89979cabf859cbd374a7b4377b949"
+    },
+    "assets/models/precise/14-13718-6695/xuhui-bajin-residence/xuhui-bajin-residence-lod.glb": {
+      "bytes": 1506616,
+      "sha256": "84fa2298706be03422083303fb92eafcbbd8233e5cc76c817ec934c2c692ebeb",
+      "git_blob": "363b870cdb4814e7b29c31c3e1d4d3963114b4e1"
+    },
+    "assets/models/precise/14-13718-6695/xuhui-wukang-129/lod.glb": {
+      "bytes": 2751684,
+      "sha256": "96310f7e70b5008231bf00fa7e51923e92e4a02e5746750ff5d6b950db282414",
+      "git_blob": "f71349c35fdec1629676be3704d7dd94f88d541e"
+    },
+    "assets/models/precise/14-13718-6695/xuhui-wukang-210/lod.glb": {
+      "bytes": 1462268,
+      "sha256": "403a1a35a938a4bef98f715f7e8aa94c46e5c2fd55a4fe83382a5748cd327a3c",
+      "git_blob": "1dc304503beb3e83010561de42199078a4be7306"
+    },
+    "assets/models/precise/14-13718-6695/xuhui-wukang-mansion/xuhui-wukang-mansion-lod.glb": {
+      "bytes": 6906928,
+      "sha256": "25976476f54cfb4202173265f6401a7325b1a8f8caa65013dd9348964180a57e",
+      "git_blob": "e0601fd38388b88d8999faf1abad575a16a93872"
+    },
+    "assets/models/precise/14-13718-6696/xuhui-zikawei-south-building/xuhui-zikawei-south-building-lod.glb": {
+      "bytes": 1844120,
+      "sha256": "f1c5474dce93f89839df9ea13647b8607f9cdfd645beca9643acc1473b5e6693",
+      "git_blob": "692239671c8d0a95ef9f4dc4aac50e9dc0240c32"
+    },
+    "assets/models/precise/14-13719-6695/huangpu-sun-yatsen-residence/huangpu-sun-yatsen-residence-lod.glb": {
+      "bytes": 1507092,
+      "sha256": "cae218028abe08158b6c68b15061a3e529cc6ad790cc54443932e7b34f384c20",
+      "git_blob": "420f354802417ba4016f98c69cecdde83e353a96"
+    },
+    "assets/models/precise/14-13719-6697/xuhui-longhua-pagoda/xuhui-longhua-pagoda-lod.glb": {
+      "bytes": 9537048,
+      "sha256": "b483dc94a019927366fce269ea8a07445f792321b9e8fa2438970b16dba1ef6c",
+      "git_blob": "b0d0dc6de0f8c11025954fbe8830349d8a1d5be0"
+    },
+    "assets/models/precise/14-13720-6692/hongkou-hongde-church/hongkou-hongde-church-lod.glb": {
+      "bytes": 5212724,
+      "sha256": "c6d7af387f745102702bdf0f2349a2b26a0129d1cfab86ca49b2c455794e0a75",
+      "git_blob": "f77434ee525de4e2ea539e95213ba05735e9e533"
+    },
+    "assets/models/precise/14-13720-6693/jingan-sihang-warehouse/jingan-sihang-warehouse-lod.glb": {
+      "bytes": 5513608,
+      "sha256": "db10e84fdcb57e91c58c8d1ba1f645ec6a0a7779d15f651211a8e527bf9fc0be",
+      "git_blob": "8d5d0ba8d4e03efcbbbe43ade5b7789b913cce68"
+    },
+    "assets/models/precise/14-13722-6690/yangpu-library/revisions/east-entry-relief/yangpu-library-lod.glb": {
+      "bytes": 2860760,
+      "sha256": "9d429cb1c3543fb0e7cd3f3e5ab7e14c8ca6a28bdc2d483914ec3a29cdfb0f62",
+      "git_blob": "139d4c41f04b49ff47f8e52654ade76a3243e2ae"
+    },
+    "data/audit/brunner-mond-v1/footprint-review.json": {
+      "bytes": 10691,
+      "sha256": "088f8dda34a09701a7d9ad7225788c58fcb909c0d1e38c11003b1e21c167a61e",
+      "git_blob": "20d88750c9b43ee0f6e6b573168af3664636a0f5"
+    },
+    "data/buildings-source.json": {
+      "bytes": 445,
+      "sha256": "9328718a280625ef670c2473eb600904c0737a2077c74cdc0a4f7639f0c8608e",
+      "git_blob": "618e324ec0f792a21e0f499b35368df08d459967"
+    },
+    "data/bund/basemap-road-remainders-v4.geojson": {
+      "bytes": 385,
+      "sha256": "d3ce08909ab3d4344114aad44cb5fbebe00252fbed4ba4d2f1f47b1f98018c15",
+      "git_blob": "74a395fee369f3e2da830898178e693a26898227"
+    },
+    "data/bund/basemap-road-remainders-v4.json": {
+      "bytes": 4787,
+      "sha256": "9fca71724466eb64d6e4024c0aab5f93de1757e93c2aec5e562bc2f557ec90ef",
+      "git_blob": "beb34e38caea18cb37d0b3394886ecfefd95ce76"
+    },
+    "data/bund/greenery-v4.5.json": {
+      "bytes": 586203,
+      "sha256": "17bbb0627bdabb9bdf361369b639f7d3c163e75f3296e30e3b72329e28f550fb",
+      "git_blob": "0111d20d5f74a3f64c2ace1d9a0267f62a6b33a3"
+    },
+    "data/bund/street-interaction-v5.json": {
+      "bytes": 1814686,
+      "sha256": "a21611c1e9a00a58d9c59ec2634f788d7a4be0d18c038f1889624c8caec3a2bf",
+      "git_blob": "7ac2a12d24e193681d792da4cd50421f96960721"
+    },
+    "data/bund/traffic-v4.json": {
+      "bytes": 12448,
+      "sha256": "95a17251c627f318206bd1dc747a7fc4cb35b68610926d8cdf8bf3b2d39360fb",
+      "git_blob": "51acbb60c575236787f2ed6f1fc180bec5d2daf8"
+    },
+    "data/candidate-city-integrations.json": {
+      "bytes": 1267598,
+      "sha256": "de3cf60391f5493c1047abb6a2cc3ad9f356bfa21718a1fb1415dda5608096f3",
+      "git_blob": "f090a096a61e36313495dacd5fb981bc6f8fcbef"
+    },
+    "data/districts-display.geojson": {
+      "bytes": 434379,
+      "sha256": "f5e0e34ea04b30c312d534fb3894362f83afe33f61052764213a45a102028c50",
+      "git_blob": "d913cc0a41ce3ae7d646eaa0e8301dcafed96ee3"
+    },
+    "data/districts.json": {
+      "bytes": 43764,
+      "sha256": "1e3d779b9a81250bec74ecf7b7d1c145543ff5b2065986934d01d1a4df31502a",
+      "git_blob": "305349fba080a6cbd70e8a730035dbb433c59b89"
+    },
+    "data/landmark-exclusions.json": {
+      "bytes": 335331,
+      "sha256": "37eb2686ebb792e3654a87a588887ae9241a4f8fe46653adc7ef33ad92051832",
+      "git_blob": "a2c023487e499537d018b71c8d8f9a28c55b5e28"
+    },
+    "data/landmarks.json": {
+      "bytes": 478903,
+      "sha256": "ccb26ab8b6a5412a9ab755a868e63d65c9eb1189618f94e8c0f3bd4b919f9baf",
+      "git_blob": "e08871cc8c99f7ba3ba852e9a86d2df0ac819e05"
+    },
+    "data/map-style.json": {
+      "bytes": 43247,
+      "sha256": "908a5a98844a9de5c0507366b3c013db8a6672d92d9a26efba32a3c675bd950d",
+      "git_blob": "49efcc2daf34733869ff65124c90a712b7d3349e"
+    },
+    "data/precise-buildings-v6.json": {
+      "bytes": 135914,
+      "sha256": "f1a215e9a6423231580369c7f534f1e219b8b7895d1876d7c14e84af59fe5580",
+      "git_blob": "cc35ceba51a889d087666edd36106f41a11028cc"
+    },
+    "data/precise-buildings/catalog.json": {
+      "bytes": 5710,
+      "sha256": "82a4ef385420155311d9bab76f3db67e4a4afbe9d9332599eeb9a164bc1a0247",
+      "git_blob": "4ca3645e2db0a69c85f70189bc79e308a1f24e4d"
+    },
+    "data/scene-props.json": {
+      "bytes": 1765,
+      "sha256": "5e55d5397a5cee9f2e0dd7bdfb13b7e022e943ee2d595735a6085eb6e4137a07",
+      "git_blob": "a99420770e6e741f5896eec74346123c2412134a"
+    },
+    "index.html": {
+      "bytes": 9501,
+      "sha256": "9aa5b0b09575e2d5bca5aa17dc32a4e47f4d46671931ee6989882822820e1719",
+      "git_blob": "ecf02f0d5bd1d89d55f6c0894450ad8d5220bc65"
+    },
+    "landmarks.html": {
+      "bytes": 105803,
+      "sha256": "129972a7e168b327b6f95f33b86429e547c8bb2fdd19f9061dc4f546732aeef5",
+      "git_blob": "9a38f803f73226696c60f6f41be1ba89c330e865"
+    },
+    "src/app.js": {
+      "bytes": 23395,
+      "sha256": "0dca723d0518615ab458170d61eea22908434042abcfb1468165632632d2610e",
+      "git_blob": "349df2be247fcb8a7cab7c6cebb3f3e3a8619a1d"
+    },
+    "src/architectural-material.js": {
+      "bytes": 15248,
+      "sha256": "c08d1d0223756340dc50b27e35c6cbdb32fad8f8906519e4749c3a4ca5be675f",
+      "git_blob": "477b444d22fb9fddebb9f4168545f842e062f364"
+    },
+    "src/building-beacon-groups.js": {
+      "bytes": 7030,
+      "sha256": "64502a41bb19aa9cac5499d5f56eaab881b624334ac2817ddacae4c753d2ce99",
+      "git_blob": "4f3bea80947b71ed6e046cf72db9568700153839"
+    },
+    "src/building-beacons.js": {
+      "bytes": 22765,
+      "sha256": "2c8cfe5d4116610b160100b15d7a4c4c28419f5d00792d866a9bbf27b7df235e",
+      "git_blob": "beb87ef6cd0c884ca6f08ee37a7822cccf11f808"
+    },
+    "src/building-material.js": {
+      "bytes": 2334,
+      "sha256": "17a330dbfa0e4698008089d2525b547bef2c7cc9ab14a4c348ce24e2471cd7af",
+      "git_blob": "7f2fab2bf50e624503f9f5f9cae79db4aa5b3b67"
+    },
+    "src/candidate-city-clipping.js": {
+      "bytes": 13120,
+      "sha256": "55429cb96cc8a0b5b00412035b94f87843019be5833416ba583dcb9c4fcf0f3b",
+      "git_blob": "ca4d2a639da3ab7fc623450c056fed70d0072b33"
+    },
+    "src/candidate-city-integrations.js": {
+      "bytes": 9849,
+      "sha256": "d8290dcfe98495c89b5f60bc7a36e6b0e43154790e2ab54dbeeea7cfe29dcc89",
+      "git_blob": "ae2f57941488b0360de33e91eae79c2b6ad60362"
+    },
+    "src/candidate-overview-camera.js": {
+      "bytes": 3163,
+      "sha256": "3ab0961589d198a1acb8fa4bf6bccfbf3ac58cdd51d93b9812c7d324c9457d3f",
+      "git_blob": "0a469fdf4975f768624a6f8c7bf9d2afebb36618"
+    },
+    "src/candidate-source-sections.js": {
+      "bytes": 3822,
+      "sha256": "9832cbd628e4c0c72e2edf1e6caae38a397dbe5526e077ebd4bf04a688d36884",
+      "git_blob": "12a8520481091bdada83355755dec5f5a36e464f"
+    },
+    "src/candidate-vector-clipping.js": {
+      "bytes": 2628,
+      "sha256": "b752ff0d60a0cbd7c21c71f9e928238a8add13d1a2ef0611f61aaad1fdc1a84a",
+      "git_blob": "5912099b4203955f2a45f5ba4ea035db079468dc"
+    },
+    "src/candidate-vector-geometry.js": {
+      "bytes": 284,
+      "sha256": "8b566bbf2141c0c6920b347be3a7a24763325f0e10d4db87fd96ff3578980456",
+      "git_blob": "441b73d0b37205734e43526b697f6517d3c8a0e6"
+    },
+    "src/city-detail-streamer.js": {
+      "bytes": 23934,
+      "sha256": "fa9d24b448622cc33b9e9733e671c09721fa3db2d0fbcf5ad00fb2a638822dd7",
+      "git_blob": "450b3047065afcfbc3b726b960f09a6bc70761a0"
+    },
+    "src/city-feature-mask.js": {
+      "bytes": 8912,
+      "sha256": "c6289ce6f570efca07d0bc362b1a5d561c543447163697cd7b4905f2faf18edf",
+      "git_blob": "1d773f48e7f6878a2d844c6436a98687b9b400c9"
+    },
+    "src/city-model-codec.js": {
+      "bytes": 6227,
+      "sha256": "e79cf0ba36d65640651250ebf2eb479eb7e03dc4d497a8edd1ce11393759214a",
+      "git_blob": "52552fc8d9e2afc99745d2490d6aa969d47f75d9"
+    },
+    "src/detail-model-cache.js": {
+      "bytes": 5275,
+      "sha256": "7d0e482f30e6c92f91420024d6fee36061f1ad3fd2ef2e88fb58ad4e0064fb2e",
+      "git_blob": "eab9a11d14d73ac00bbd218760dfd0f0f2b5289e"
+    },
+    "src/geography.js": {
+      "bytes": 956,
+      "sha256": "112757660159e9b133c51fdc2db562b9b7d272964ee768f74cc04e13656e14f9",
+      "git_blob": "22eb8cc6e4adad51cff2b1ddd34b4dff828cfc1a"
+    },
+    "src/historical-view.css": {
+      "bytes": 1011,
+      "sha256": "7a0456d3a19ffe0c944cafd8eb6223bf0ba03ccd60e1419255708ce1613a6e30",
+      "git_blob": "2278dc967084dc0bba67de3583c96d00de7087e3"
+    },
+    "src/historical-view.js": {
+      "bytes": 3198,
+      "sha256": "48cb17dbc0217c9631d87edbacfb03c37a369871991cbb335eac4bf9dca4344f",
+      "git_blob": "ab1e9b30899c76124c7ce00837204fe0dbaf04d2"
+    },
+    "src/landmark-directory.css": {
+      "bytes": 6035,
+      "sha256": "09edc876930e38433c373a1239155a11eefd61732b910f0f78c157e16c5370dd",
+      "git_blob": "324cb3fc8cdce2a4073b9df7d449b00c609cb726"
+    },
+    "src/landmark-directory.js": {
+      "bytes": 1281,
+      "sha256": "955d0e389d0066dcd25acb38e2e145b178678829f7279c6c1eabe04fb0df36e0",
+      "git_blob": "f1e4b008eb8a8cbf42f371ef5c322c796ebc2585"
+    },
+    "src/landmark-entry.css": {
+      "bytes": 902,
+      "sha256": "7e9c11c22a78b8354a0b0722842668dd9ee2c919baaa10f8170aedc6d6bda120",
+      "git_blob": "c4e8b446576d779b76688345944a5b6f0164b0c3"
+    },
+    "src/landmark-navigation.js": {
+      "bytes": 1958,
+      "sha256": "480e7c80a6aac623756eccca28fc2a9f11b6bf8c1f31232e0fd10e06694cfd3b",
+      "git_blob": "116760a924b5ccc68f4dfd827a3b7729f5fbfaa1"
+    },
+    "src/local-model-streamer.js": {
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291",
+      "git_blob": "3d4dfdc25e9b8033cb1e14bf55af73fdeec8f95c"
+    },
+    "src/map-scene.js": {
+      "bytes": 61517,
+      "sha256": "53112e1957efc5f43a47649af7bd37da2ba63bdd716b408fd79b7ad135856e32",
+      "git_blob": "d5d87ebeaae54d98fee18465fd4070a18f27f155"
+    },
+    "src/model-resources.js": {
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4",
+      "git_blob": "f4729c608ba035e8da5922ef7e232ba08d2e92d0"
+    },
+    "src/ordinary-asset-verification.js": {
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3",
+      "git_blob": "ed8c563d1f9d29e223e693cdbe28dec44718b28d"
+    },
+    "src/ordinary-building-catalog.js": {
+      "bytes": 16722,
+      "sha256": "b1535fc29d104445946b02ef00341c169630ceed2d07d9b76f50b99800312840",
+      "git_blob": "ff6107c3dff5e2d35d094a56877ced6debaa722c"
+    },
+    "src/ordinary-city-detail-streamer.js": {
+      "bytes": 6654,
+      "sha256": "b0f057deeab2f08fbfc7d4a8f8b717ebd0b74375853e4c1a696cf2cea3f4fef5",
+      "git_blob": "741522b664b7889763cf532cb4797fa041a63fc9"
+    },
+    "src/ordinary-contracts.js": {
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58",
+      "git_blob": "1125d7fefe56e5a292d7cf93d8ca4e623b6b3aae"
+    },
+    "src/ordinary-scene-adapter.js": {
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe",
+      "git_blob": "7f964805777e6e5694a20033af7e3243de178776"
+    },
+    "src/osm-building-suppression.js": {
+      "bytes": 25077,
+      "sha256": "33551fc5277479e360664cc22249c9596a646e8756e3ed09032de15dfe00ce4b",
+      "git_blob": "f1334850f7fec639678dcec1cd112e67c079ce81"
+    },
+    "src/osm-residual-layer.js": {
+      "bytes": 13572,
+      "sha256": "07e44d867d68cd5a6a4954fae8ee57c88f2acb3c6603009a2d3176f90448a684",
+      "git_blob": "295fdda87e330860620ff87cd7b0acddcdf53858"
+    },
+    "src/photographic-glass.js": {
+      "bytes": 3232,
+      "sha256": "3d48608b52a89c062579c90c81b10ec21c45f642adbafb524646a0a572a146fc",
+      "git_blob": "ef1f99fec69a5a6c20360e2c561e627b665fd563"
+    },
+    "src/photographic-texture.js": {
+      "bytes": 2113,
+      "sha256": "55f438451d796ef136186a5ab78395ea6b14fefd57dcbf50272d88a855a951b8",
+      "git_blob": "6c74bd909b8b45995c5c6adbbea4975e379bc842"
+    },
+    "src/precise-registration-ui.js": {
+      "bytes": 1944,
+      "sha256": "af1eb7b79b1f35f3428b45ea8ebdc5531f1e1de89b9c9adaa6877fdd20bb891e",
+      "git_blob": "e2fc2abae2f206f7a9badad9cf89b334eee88cbe"
+    },
+    "src/realistic-lighting.js": {
+      "bytes": 23086,
+      "sha256": "6cb2fb4dc1cca564d70f2718014c11600ba5846915df4d707caa5b56a873838c",
+      "git_blob": "142dce4c61e2d073d21dfbfec7f1cb0efcff9d72"
+    },
+    "src/road-width.js": {
+      "bytes": 4714,
+      "sha256": "86072baee28b08fea9ebd96a0712e5ebcee1c698cbd337f95da5c5c3e8bf8ffe",
+      "git_blob": "e85586c9ec354fb5fb882da67c012ce308ce6d81"
+    },
+    "src/source-geometry-correction.js": {
+      "bytes": 12953,
+      "sha256": "3c1a1fd6d5225a4b4ba6f7e1026ac2a815e9879c215eea8ee4eb2c3edba4e5b0",
+      "git_blob": "a979492ee8f5d76b29b0cb16af8afa2a878f397f"
+    },
+    "src/street-assets.js": {
+      "bytes": 2743,
+      "sha256": "b05de49f35be53b01a23d8c85f6211725c29854605407053c3070eeb50c06a04",
+      "git_blob": "e8f80060b5ffeb2b427c5d52cfd8a01e13231146"
+    },
+    "src/street-basemap.js": {
+      "bytes": 5178,
+      "sha256": "1119d6258a4272c34a34d4a570393e61c59f17472bdc23ea157235a7a14c038d",
+      "git_blob": "54da7ae64c4d50fddb95011b258c8e8f2eda8ec4"
+    },
+    "src/street-greenery.js": {
+      "bytes": 11297,
+      "sha256": "9ac916ab689d8cf2df885f4508e97a5981d1f4fe4dee27a0e75900769ddaac75",
+      "git_blob": "69f62181f7d951b5fdfa6c31446cb411d6aa580b"
+    },
+    "src/street-interaction.js": {
+      "bytes": 15970,
+      "sha256": "a9bc492f96f8ecd439b8c2819db34619d3fddabdd654c484e08ad87370b20742",
+      "git_blob": "274720b623d94893f208295638fe8bd8736f664b"
+    },
+    "src/street-traffic.js": {
+      "bytes": 12398,
+      "sha256": "e8e93830afb39a1317fc8c8d08fbd151fb44dabfa969d2180318d5f3f94431bc",
+      "git_blob": "9084da69f2e9c7d5ad11ffbf6798ffafcd25806d"
+    },
+    "src/styles.css": {
+      "bytes": 16043,
+      "sha256": "7c180666d99537409cf42d87481446f1cdb20b28ac40066e9883243ab17802ff",
+      "git_blob": "f6f3fd92d78ab0f69570c5d63b0fe2b9133e180a"
+    },
+    "src/walk-controller.js": {
+      "bytes": 23179,
+      "sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+      "git_blob": "9e8a5b6a43a2ce870ae7b8e33f8aeaa998a6bbf2"
+    },
+    "src/walker-model.js": {
+      "bytes": 17943,
+      "sha256": "45bdac432c46c0014594c596688b2ecb45215343cff4e4d17c5a56fd34fb8d87",
+      "git_blob": "c6ef23d33d8f126f665ebfaa0a8e11aa39aeb865"
+    },
+    "vendor/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "git_blob": "c84dc7b2bbc99849373e17a6efae609e326f9536"
+    },
+    "vendor/GLTFLoader.js": {
+      "bytes": 114732,
+      "sha256": "adbbafe8ce40416525b6be0ee5cac0d3782482bcf0122c8ca8ec1ffa77d3440b",
+      "git_blob": "19be562bf6537e3e74b6fd73d21486a0916fc9e6"
+    },
+    "vendor/HDRLoader.js": {
+      "bytes": 12468,
+      "sha256": "d3a9522cd17b988a4fe93e1be799e59f06c8e9bd0d811665a917df140350eef4",
+      "git_blob": "64d11f804addde607941a1573525457353feb4e2"
+    },
+    "vendor/maplibre-gl.css": {
+      "bytes": 70024,
+      "sha256": "ab1e70d59ec40465bae7e7030da2f3ccf28133fd502e62bd598eefbadfd7a732",
+      "git_blob": "6b4bfda742afff685002a0aad0c1fcaaa966296b"
+    },
+    "vendor/maplibre-gl.js": {
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb",
+      "git_blob": "c5acb688e8c1d2f8dca38e0e7ce543e788c3a3af"
+    },
+    "vendor/meshopt_decoder.module.js": {
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c",
+      "git_blob": "a9bd05fe7b1ff20acf46fcc3031818119a851358"
+    },
+    "vendor/pmtiles.js": {
+      "bytes": 19565,
+      "sha256": "afc49d216fd24c0a3c0ff3cd2e0c62d6cdaf062854c3dced778dcab168824f79",
+      "git_blob": "1a901eed474dcce2b9fed185fd29047e2a0f75d7"
+    },
+    "vendor/polygon-clipping.umd.min.js": {
+      "bytes": 29106,
+      "sha256": "7f8619e84a86ce8dd400c9b50430e9c8cf8f26027b19eeb479f109f5c1a9d688",
+      "git_blob": "f3a6f7dde586ea0a44fa95ae223ca8fb3ca1e604"
+    },
+    "vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "git_blob": "7dcd0fbcbc04b8d9a20ecb96c1ce344cb55150d5"
+    },
+    "vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "git_blob": "477ca4dafa7af919a2b9818e01b5ae25198d4aa4"
+    }
+  }
+}

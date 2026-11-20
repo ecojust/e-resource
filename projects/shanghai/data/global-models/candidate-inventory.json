@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 92,
+  "candidate_manifest_count": 93,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 90,
-  "resulting_city_count": 130,
+  "new_city_model_count": 91,
+  "resulting_city_count": 131,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 41
+    "黄浦区": 42
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 368,
-    "bytes": 1082442030,
+    "files": 372,
+    "bytes": 1087471867,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 6942812,
+    "current_run_added_bytes": 5029837,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 236
+    "inherited_incremental_files": 240
   },
   "records": [
     {
@@ -7958,6 +7958,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "四川中路261号联合大楼街面，按照片核对弧形转角、分色墙、拱门与屋顶透孔。"
+    },
+    {
+      "id": "huangpu-brunner-mond-building",
+      "name": "卜内门大楼（四川中路五开间东立面）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "brunner-mond.html",
+      "manifest": "assets/models/candidates/huangpu-brunner-mond-building/manifest.json",
+      "manifest_sha256": "55b4afccf1c158d58fa62b1fd4340b8243319f86dcbe46cb6dda6bb89728efd1",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building-raw.glb",
+          "bytes": 2735128,
+          "sha256": "ec536b55cf0ef2ce643716020dc91211553d10dbb46084e037692d9fb02ae377",
+          "triangles": 43600,
+          "bounds_gltf_m": [
+            [
+              -12.309499740600586,
+              0.0,
+              -2.6500000953674316
+            ],
+            [
+              12.309499740600586,
+              31.68000030517578,
+              1.2649999856948853
+            ]
+          ],
+          "materials": 11
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building-web.glb",
+          "bytes": 1131220,
+          "sha256": "bbf1da0d6216374032a9873f71496cc52879912b626bce7b274ebd7c8f1948d0",
+          "triangles": 43600,
+          "bounds_gltf_m": [
+            [
+              -12.3094997,
+              0,
+              -2.6500001
+            ],
+            [
+              12.3094997,
+              31.6800003,
+              1.26499999
+            ]
+          ],
+          "materials": 11
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building-lod.glb",
+          "bytes": 463168,
+          "sha256": "2e234c8ba278bfc1944cef9fbeb31fb31ae2fbf60145e6c48130c9e9aacd48dc",
+          "triangles": 19104,
+          "bounds_gltf_m": [
+            [
+              -12.3094997,
+              0,
+              -2.6500001
+            ],
+            [
+              12.3094997,
+              31.6800003,
+              1.26499999
+            ]
+          ],
+          "materials": 11
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-brunner-mond-building/huangpu-brunner-mond-building.blend",
+          "bytes": 700321,
+          "sha256": "2fe46396936ee818659c6894a1324c0d85a4b088bdf47a56dc7224585ed60e03"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -12.309499740600586,
+            0.0,
+            -2.6500000953674316
+          ],
+          "max": [
+            12.309499740600586,
+            31.68000030517578,
+            1.2649999856948853
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -12.309499740600586,
+            -1.2649999856948853,
+            0.0
+          ],
+          "max": [
+            12.309499740600586,
+            2.6500000953674316,
+            31.68000030517578
+          ]
+        },
+        "triangles": 43600,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "四川中路133号卜内门大楼东向五开间、拱门、中央柱列、石托座和贝壳山花。"
     }
   ],
   "baseline_inventory": {
@@ -7980,6 +8086,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-bankers-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-brunner-mond-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-cinema/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
@@ -8028,13 +8135,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/four-banks-savings-v1",
+  "incremental_audit_directory": "data/audit/brunner-mond-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/glen-line-building-v1/inventory-increment.json",
-    "bytes": 200505,
-    "sha256": "932d5f4b9e7ebde32bda1365bc5d67f025b280a20161ef78bf3a114729cf5387"
+    "file": "data/audit/four-banks-savings-v1/inventory-increment.json",
+    "bytes": 204177,
+    "sha256": "5fa63ddf16f66a355d47d5e56f1d9bae62d5b70a583c64649c05e802266b9fdb"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-four-banks-savings-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-brunner-mond-building/manifest.json"
   ]
 }
