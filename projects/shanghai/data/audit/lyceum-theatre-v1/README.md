@@ -15,3 +15,7 @@ Blender重新打开88个可编辑网格，并逐材质回放70,804个三角面�
 121处主图已从区目录实点。桌面和手机默认视角均可辨角部门厅、券窗与拱顶。桌面名称牌盖住部分上层方窗，细部视角可看到其三联布局和石阳台。三个近景均只裁去2025，其他同组建筑保持原状。地面11点、远景与四项下载通过，浏览器记录无请求及脚本错误。[桌面主图](main-desktop.png) · [三券窗与雨篷](three-arches-and-marquee.png) · [弧形屋顶](auditorium-vault-and-stagehouse.png) · [手机主图](main-mobile.png) · [完整报告](main-map-browser.json) · [图像复核](map-visual-review.json)
 
 在前一版120处的主图中，兰心地块近景组的6个建筑仍全部由底图绘制。加入剧院的121处版本仅裁切该组的2025号，六幅主图实测及153个真实HTTP资源均已核对。[登记前实图](map-before.png) · [前态记录](before-browser.json) · [输入复核](main-map-input-verification.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/5fa74e1b60f987c0b264c39208a663c0894c19dd/projects/shanghai/index.html#landmark=huangpu-lyceum-theatre&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
