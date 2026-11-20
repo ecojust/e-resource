@@ -33,3 +33,7 @@ node data/audit/asia-building-v1/check-vector.mjs /tmp/asia-vector-input.json /t
 MODEL_BASE_URL=http://127.0.0.1:8784/ QA_OUTPUT_DIR=/tmp/asia-viewer node data/audit/asia-building-v1/check-viewer.cjs
 MODEL_BASE_URL=http://127.0.0.1:8784/ QA_OUTPUT_DIR=/tmp/asia-map node data/audit/asia-building-v1/check-main-map.cjs
 ```
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/fb605b73b3f9761a81f7e4cd890efdd5c839ee15/projects/shanghai/index.html#landmark=huangpu-asia-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
