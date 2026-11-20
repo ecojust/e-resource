@@ -20,3 +20,7 @@ Blender 4.3.2重新打开原文件和修订文件。旧主体顶点、三角面�
 外滩6号在两版主图中均由原有地标入口进入。126个地点的旧站实载91,111个三角面，修订站实载100,735个。两次使用相同的相机位置、俯仰、朝向和街面高度。三扇二楼弧顶窗的两侧现各有一根贴柱，六处柱帽均可辨。灯牌遮住最左一扇窗的下缘。[并排原图裁切](same-camera-window-comparison.png) · [旧版全幅](main-map-before-detail.png) · [修订版全幅](main-map-after-detail.png) · [实测目录、模型散列和相机](main-map-comparison.json)
 
 主图实拍来自15082和15083；随后对17082与17083的正式目录分别实取近、远两件模型，登记散列与实拍版一致。[正式目录的网络核验](corrected-registry-and-web-assets.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9f0888a873db1bc951d2ade3b45b4cd03e91be56/projects/shanghai/index.html#landmark=bund06&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项时，有 8 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
