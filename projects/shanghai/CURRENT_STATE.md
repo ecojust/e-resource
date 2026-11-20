@@ -1,3 +1,11 @@
+# 虹口中国银行大楼（西南转角）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-bank-of-china-hongkew&mode=overview) · [单体旋转与下载](bank-of-china-hongkew.html) · [来源与制作范围](source/precise/hongkou-bank-of-china-hongkew/README.md) · [验收记录](data/audit/bank-of-china-hongkew-v1/README.md)
+
+四川北路、海宁路口中国银行虹口大楼的临街外观，以实际地块、历史宿舍和沿街多门牌核定范围。
+
+近景 24,988 个三角面，远景 21,208 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,550,973 字节。上海主图现有 150 处独立入口，虹口区 10 处。[资产清单](assets/models/candidates/hongkou-bank-of-china-hongkew/manifest.json)
+
 # 外滩7号朝向黄浦江的底层东立面，两枚金色莲花标志分别位于端部扁拱窗与中央方窗之间的石墩上，2012和2025照片均可定位
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk) · [四种模型下载](source/precise/bund07/revisions/front-pier-emblems/manifest.json) · [来源与制作范围](source/precise/bund07/revisions/front-pier-emblems/README.md) · [验收记录](data/audit/great-northern-pier-emblems-v1/README.md)
