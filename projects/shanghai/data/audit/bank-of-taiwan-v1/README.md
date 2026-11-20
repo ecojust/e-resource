@@ -15,3 +15,7 @@
 原153处目录的首次手机画面中，建筑长灯牌遮住了东门厅两根柱身；展开目录的桌面画面四根都受到遮挡。独立对照站将取景放在四柱与街角，保留九江路成排窗带，并将灯牌移到石柱外。三个实测画面中，四根轴身与姓名牌的重叠均为0像素。[首次画面、修订对照及归档说明](final-map/four-columns/README.md) · [旧153处实图与地面](final-map/original153/main-browser.json) · [23115签名资源的HTTP正文](final-map/four-columns/accepted-http.json)
 
 23115正式默认手机与桌面均完整露出四根柱身，街角和九江路一侧也在画面内。手机放大一级后右端出屏39个柱身像素，左柱有1,532个像素落入地点卡范围，四根柱子与姓名牌的重叠仍全部为0。[两端默认、触控放大与邻楼选中收据](final-map/four-columns/formal-23115/accepted.json) · [正式双端覆盖与首轮断言说明](final-map/four-columns/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/70830a591b5ccbe575c1f2a09a9363f3144f46da/projects/shanghai/index.html#landmark=huangpu-bank-of-taiwan-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
