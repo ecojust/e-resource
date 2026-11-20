@@ -18,3 +18,7 @@
 首轮桌面渲染进程内存不足而退出。完整复验用同一场景，在城市详情目录首次超时后重读详情索引，随后真实六栋近景组加载成功。额外保存的原生窗口画面可能跟不上相机切换，塔冠机位的原生窗口图仍显示前一机位。上述六张图均取自最终浏览器视口。[首轮记录](first-browser-attempt.json)
 
 登记前的129处场景仍显示原来带格窗的灰色建筑。照片中的街角原体、五栋同组邻体均未裁切，也没有四行储蓄会灯牌。130处场景只更新四行储蓄会对应的2602。两个版本读取的是同一份原始六栋近景文件，SHA-256 为 `5e119d8b46aa1b3aa39d89193258ea5569f6d87bd455a0d912bc0d7ae8f33421`。[登记前主图](map-before.png) · [前态来源及实测](before-browser.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/aea40c3039e184068aa513bb0a330be93c9b8be4/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

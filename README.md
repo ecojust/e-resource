@@ -3781,7 +3781,7 @@
 | 银行公会大楼（香港路五开间柱廊） | 2026-11-20 19:45:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bankers-association-building&mode=overview) |
 | 慈淑大楼（东北街角及塔亭） | 2026-11-20 19:46:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cishu-building&mode=overview) |
 | 格林邮船大楼（外滩28号临江正面与东南街角） | 2026-11-20 20:08:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-glen-line-building&mode=overview) |
-| 四行储蓄会大楼（四川中路261号联合大楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) |
+| 四行储蓄会大楼（四川中路261号联合大楼） | 2026-11-20 20:09:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) |
 
 ### 徐汇区（9处）
 
