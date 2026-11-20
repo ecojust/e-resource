@@ -17,3 +17,7 @@
 近景实测中，两户的原始近景分组同时在场，各自仅对一户进行裁剪。街面、屋顶、灯牌切换返回和远景简化模型分别留图。城市地面上18处位置通过检查。新版正式站逐件读回1,086份文件，共996,640,722字节，另核对五次范围请求。四件下载与原单体验收的文件哈希完全一致。[街面](city-31161/map-street-facade.png) · [屋顶](city-31161/map-roof.png) · [灯牌返回](city-31161/map-beacon-return.png) · [远景](city-31161/map-distant.png) · [地面和两档模型](city-31161/main-browser.json) · [下载与版本核对](city-31161/release-evidence.json)
 
 首次实测遇到底图缓存磁盘写满。按原始Git对象恢复22个资源，经正式站重新下载82,557,705字节，随后重跑完整主图，资源请求全部成功。[首次浏览记录](city-31161/initial-browser-with-storage-errors.json) · [原始文件比对](city-31161/native-cache-recovery.json) · [正式站读回](city-31161/recovered-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9ee81341a2e7837d7a60c01e669bac81d72bdf95/projects/shanghai/index.html#landmark=xuhui-remi-apartments-181-183&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

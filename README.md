@@ -3817,7 +3817,7 @@
 | 中南新邨9号木门与气窗 | 2026-11-21 05:59:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongnan-village-no9-door&mode=overview) |
 | 懿园建国西路南门 | 2026-11-21 06:09:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yiyuan-jianguo-road-gate&mode=overview) |
 | 永嘉新村15号拱廊与东端山墙 | 2026-11-21 06:45:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongjia-village-no15&mode=overview) |
-| 永康新村永康路181、183号双门山墙 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-remi-apartments-181-183&mode=overview) |
+| 永康新村永康路181、183号双门山墙 | 2026-11-21 06:57:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-remi-apartments-181-183&mode=overview) |
 
 ### 长宁区（9处）
 
