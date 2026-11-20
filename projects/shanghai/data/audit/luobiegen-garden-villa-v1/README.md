@@ -34,3 +34,7 @@ node data/audit/luobiegen-garden-villa-v1/check-sources.mjs /tmp/luobiegen-fallb
 320 × 568 像素的手机上，选择宏恩医院的三行地点名称后，地点卡顶边为 328 像素。图例、工具按钮与地点卡之间留下 243 × 138 像素，97 个 22 × 15 像素的独立编号均可点击，字号为 12 像素。重新读取截图，97 个编号的墨绿色底板和金色描边全部已绘制；点击第 97 号后进入罗别根花园主宅，读取的完整模型哈希与登记一致。[正式窄屏截图](map-97-markers.png) · [实际点击与像素检查](compact-browser.json) · [复核程序](check-compact-map.cjs)
 
 地点卡较低时，97 个 20 × 16 像素的编号也可独立选中。初次检查较高地点卡的截图只绘出了引线；正式程序增加了地图图符就绪及逐格截图像素检查，再复核点击。[普通地点卡对照](preflight/existing-cards/compact-browser.json) · [图符载入前的首帧](preflight/before-symbols/map-97-markers.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ac3022e5d99d2e3aa31cffacc3462d68aa43991c/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

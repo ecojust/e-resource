@@ -129,7 +129,7 @@
 | 邬达克旧居 | <!-- hudec-residence-publication-time:start -->[2026-10-28 04:10:42](https://github.com/ecojust/e-resource/commit/7e178aaed36b6fc2361861b3101e48d155dbc2b2)<!-- hudec-residence-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk) |
 | 哥伦比亚乡村俱乐部主楼 | <!-- columbia-publication-time:start -->[2026-10-27 22:57:05](https://github.com/ecojust/e-resource/commit/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746)<!-- columbia-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk) |
 | 孙科别墅主楼（南花园敞廊与北门廊） | 2026-11-20 15:24:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-sun-ke-villa&mode=overview) |
-| 罗别根花园主宅（南向双山墙与露木构阳台） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) |
+| 罗别根花园主宅（南向双山墙与露木构阳台） | 2026-11-20 15:31:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) |
 
 ### 静安区（5处）
 
