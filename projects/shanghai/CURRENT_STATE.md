@@ -1,3 +1,11 @@
+# 企业大楼（原中国企业银行大楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) · [单体旋转与下载](enterprise-building.html) · [来源与制作范围](source/precise/huangpu-enterprise-building/README.md) · [验收记录](data/audit/enterprise-building-v1/README.md)
+
+四川中路33号企业大楼的七开间临街面和中央入口。市文化旅游局供稿与上海市银行博物馆资料记1931年建成，工作名录所收1920年另记。
+
+近景 80,680 个三角面，远景 45,904 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,992,238 字节。上海主图现有 138 处独立入口，黄浦区 65 处。[资产清单](assets/models/candidates/huangpu-enterprise-building/manifest.json)
+
 # 永年人寿保险公司大楼（广东路93号）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yongnian-life-insurance-building&mode=overview) · [单体旋转与下载](yongnian-life.html) · [来源与制作范围](source/precise/huangpu-yongnian-life-insurance-building/README.md) · [验收记录](data/audit/yongnian-life-v1/README.md)

@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 99,
+  "candidate_manifest_count": 100,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 97,
-  "resulting_city_count": 137,
+  "new_city_model_count": 98,
+  "resulting_city_count": 138,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 48
+    "黄浦区": 49
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 396,
-    "bytes": 1115189957,
+    "files": 400,
+    "bytes": 1123182195,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 3699116,
+    "current_run_added_bytes": 7992238,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 264
+    "inherited_incremental_files": 268
   },
   "records": [
     {
@@ -8700,6 +8700,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "广东路93号永年人寿保险公司大楼的历史街面。"
+    },
+    {
+      "id": "huangpu-enterprise-building",
+      "name": "企业大楼（原中国企业银行大楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "enterprise-building.html",
+      "manifest": "assets/models/candidates/huangpu-enterprise-building/manifest.json",
+      "manifest_sha256": "fb820b588f15bdafcaf748408096584ce6d3029604bc1af63307043b2481f62c",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-enterprise-building/huangpu-enterprise-building-raw.glb",
+          "bytes": 4425104,
+          "sha256": "00e995e1d70c7b56e35f03b84af01518a907e125a37f89368ec1b7a12e94f7b5",
+          "triangles": 80680,
+          "bounds_gltf_m": [
+            [
+              -23.508304595947266,
+              0.0,
+              -26.346786499023438
+            ],
+            [
+              19.16731834411621,
+              35.29999923706055,
+              0.4749999940395355
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-enterprise-building/huangpu-enterprise-building-web.glb",
+          "bytes": 1461908,
+          "sha256": "a016fc74d1d94f17a356d440520b0ea48de2107332eb967c85289ae328eaab64",
+          "triangles": 80680,
+          "bounds_gltf_m": [
+            [
+              -23.5083046,
+              0,
+              -26.3467865
+            ],
+            [
+              19.1673183,
+              35.2999992,
+              0.474999994
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-enterprise-building/huangpu-enterprise-building-lod.glb",
+          "bytes": 772576,
+          "sha256": "c5e6dbde1d7b1a00c92390a56e65939e7082ec34a4d20e8d90b3c2a1b650bd19",
+          "triangles": 45904,
+          "bounds_gltf_m": [
+            [
+              -23.5083046,
+              0,
+              -26.3467865
+            ],
+            [
+              19.1673183,
+              35.2999992,
+              0.474999994
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-enterprise-building/huangpu-enterprise-building.blend",
+          "bytes": 1332650,
+          "sha256": "5aa5b6e840ab87beb325fb649d56da8de3a8046903fe02fc12795931415236f2"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -23.508304595947266,
+            0.0,
+            -26.346786499023438
+          ],
+          "max": [
+            19.16731834411621,
+            35.29999923706055,
+            0.4749999940395355
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -23.508304595947266,
+            -0.4749999940395355,
+            0.0
+          ],
+          "max": [
+            19.16731834411621,
+            26.346786499023438,
+            35.29999923706055
+          ]
+        },
+        "triangles": 80680,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "四川中路33号企业大楼的七开间临街面和中央入口。市文化旅游局供稿与上海市银行博物馆资料记1931年建成，工作名录所收1920年另记。"
     }
   ],
   "baseline_inventory": {
@@ -8731,6 +8837,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-cishu-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-dongjiadu-cathedral/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-enterprise-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-foreign-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-four-banks-savings-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-french-club/manifest.json",
@@ -8777,13 +8884,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/yongnian-life-v1",
+  "incremental_audit_directory": "data/audit/enterprise-building-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/robert-dollar-v1/inventory-increment.json",
-    "bytes": 225443,
-    "sha256": "d74d5676d4a94b1ac202d1d04f7f2268cdd180d047835b3f41857041e731ffbc"
+    "file": "data/audit/yongnian-life-v1/inventory-increment.json",
+    "bytes": 229107,
+    "sha256": "1f0bb036a32e3568d9683bf65d89e1a31f7390ade57be5a907105530d50058f4"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-yongnian-life-insurance-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-enterprise-building/manifest.json"
   ]
 }
