@@ -1,3 +1,11 @@
+# 上方花园24号张元济故居弄门
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shangfang-garden-no24-entrance&mode=overview) · [单体旋转与下载](shangfang-garden-no24.html) · [来源与制作范围](source/precise/xuhui-shangfang-garden-no24-entrance/README.md) · [验收记录](data/audit/shangfang-garden-no24-v1/README.md)
+
+据上海地方志和现场文物铭牌，核对淮海中路1285弄24号北侧低墙门洞、波形墙顶与电表箱。
+
+近景 5,744 个三角面，远景 3,504 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 676,786 字节。上海主图现有 199 处独立入口，徐汇区 22 处。[资产清单](assets/models/candidates/xuhui-shangfang-garden-no24-entrance/manifest.json)
+
 # 永康新村永康路181、183号双门山墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-remi-apartments-181-183&mode=overview) · [单体旋转与下载](remi-apartments-181-183.html) · [来源与制作范围](source/precise/xuhui-remi-apartments-181-183/README.md) · [验收记录](data/audit/remi-apartments-181-183-v1/README.md)

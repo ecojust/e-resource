@@ -1,0 +1,1 @@
+ShangfangPlaqueSubset.otf contains five Simplified Chinese glyphs from Noto Serif CJK SC Regular, distributed under the SIL Open Font License 1.1. The project uses the outlines to represent the readable words on the heritage plaque. The original inscription's individual letterforms have not been surveyed.

@@ -5,6 +5,7 @@ export const OVERVIEW_CAMERA_RESET={elevation:0,padding:{top:0,bottom:0,left:0,r
 
 // The retained building across this narrow garden screens the original whole-volume view.
 export function candidateOverviewFrame(place) {
+  if (place.id === 'xuhui-shangfang-garden-no24-entrance' && place.assets?.web?.sha256 === '69412b443875cce8aabfe05d20e40f56a4ac9fec4ca79c25a32a01a425a72228') return {...place, overviewBearing: 155.23, overviewPitch: 44};
   if (place.id === 'xuhui-yongjia-village-no15' && place.assets?.web?.sha256 === '464b9fc0a4783d57cf79f3472c6dc9a98496fe496fa511a0475400bbd63aa696') return {...place, overviewBearing: -72, overviewPitch: 77, overview_focus_bounds_glb: {"min":[-4.05,1.4,0.68],"max":[-2.41,3.14,1.72]}};
   if (place.id !== 'huangpu-feng-zikai-riyue-lou' || place.assets?.web?.sha256 !== '52f1215030d959be435f05415787722fde25a7e32b3d9381ca5469c077d448e2') return place;
   return {...place, overviewBearing: -9, overviewPitch: 56,
