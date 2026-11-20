@@ -9,3 +9,7 @@
 [正式渲染及照片对照](visual-review.json) · [重开工程的庭院立面渲染](huangpu-ruijin-guesthouse-01-preview.png)
 
 106处的前态与107处的正式地图采用相同地面坐标对照。新增的主楼和门廊占用1250、2335两个原地块。门前草坪、廊下和退进的入口均可行走，封闭门扇与柱脚阻挡行人，邻近的四个原楼也仍然阻挡。12处碰撞均在真实地图中复测。手机与桌面默认视角均朝向北侧花园，远景加载简化模型后可返回近景。单体页的完整、简化模型均在手机和桌面打开，四个文件通过下载校验。[前态](control-browser.json) · [107处地图](main-browser.json) · [单体与下载](viewer.json) · [十张截图核对](map-visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/21b365ce00a96a31b5bcb8d8d63cc70db8632554/projects/shanghai/index.html#landmark=huangpu-ruijin-guesthouse-01&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

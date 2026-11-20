@@ -3777,7 +3777,7 @@
 | 怡和洋行大楼临江立面与北京东路转角 | 2026-11-20 15:59:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview) |
 | 东方汇理银行（外滩29号临江立面） | 2026-11-20 16:03:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-banque-de-lindochine&mode=overview) |
 | 西侨青年会（上海体育大厦临街主楼） | 2026-11-20 16:06:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-foreign-ymca&mode=overview) |
-| 瑞金宾馆1号楼（马立斯住宅主楼与庭院立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruijin-guesthouse-01&mode=overview) |
+| 瑞金宾馆1号楼（马立斯住宅主楼与庭院立面） | 2026-11-20 17:03:08 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruijin-guesthouse-01&mode=overview) |
 
 ### 徐汇区（7处）
 
