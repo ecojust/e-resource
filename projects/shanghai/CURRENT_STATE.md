@@ -1,3 +1,11 @@
+# 建设大楼（福州路口凹入塔面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-development-building&mode=overview) · [单体旋转与下载](development-building.html) · [来源与制作范围](source/precise/huangpu-development-building/README.md) · [验收记录](data/audit/development-building-v1/README.md)
+
+江西中路171至181号单号范围的原中国建设银公司大楼，核对181号街门、转角及相邻独立建筑。
+
+近景 36,846 个三角面，远景 28,902 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,219,400 字节。上海主图现有 158 处独立入口，黄浦区 83 处。[资产清单](assets/models/candidates/huangpu-development-building/manifest.json)
+
 # 中汇大楼（原中汇银行大楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chung-wei-bank-building&mode=overview) · [单体旋转与下载](chung-wei-bank.html) · [来源与制作范围](source/precise/huangpu-chung-wei-bank-building/README.md) · [验收记录](data/audit/chung-wei-bank-v1/README.md)
