@@ -28,3 +28,7 @@ Blender 4.3.2 独立重开241个可编辑网格、16种材质和145,293个有向
 在发布候选24146和24147用同一方位比较。旧版可见保留的街区模型，新增后的390×844手机和870×660桌面从实际界面进入，主堂金色葱顶、八面冠座、街侧钟门楼与长拱窗均可辨认。两端默认和同机位稳定帧中，10个构件投影点全部在屏内，均未落入灯牌或界面卡片。手机点击一次加号后，地点卡覆盖4个低处点，另有1个点超出屏幕。桌面街面近镜中，地点卡覆盖门扇、扇窗与两扇街窗的采样点，冠座落在图例位置。俯视屋面时10点均清楚。键盘搜索通过三次 Tab 和 Enter 从本堂切至新乐路圣母大堂，再回到本堂；离开期间模型与2197号局部裁切均卸载。[前后十张图及检查结果](final-map-24147/results.json) · [手机默认](final-map-24147/map-mobile.png) · [桌面默认](final-map-24147/map-desktop.png) · [街侧近景](final-map-24147/map-street-facade.png) · [屋顶照片机位](final-map-24147/map-roof.png) · [构件投影与界面遮挡](final-map-24147/screen-control-points.json)
 
 真实近瓦片保留同组11处邻楼。本堂2个局部裁切面只作用于2197号，北面留存屋顶的截口封边保留。主堂、开口小院、人行道、留存后房与邻楼共21处场景地面检查通过。浏览器还核对了145,293面的近档和55,857面的远档，以及四种成品和近远两层城市瓦片。完整正式站970项输入共957,365,408字节均通过HTTP签名核对，独立页和已实存的四项下载也再次比对了该版网址的字节。[183处前态](final-map-24147/control-browser.json) · [184处完整实测](final-map-24147/main-browser.json) · [正式站970项逐件回执](final-map-24147/147-all-http.json) · [两代页面与四件对应](final-map-24147/pair-and-standalone-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 45 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f1f6034f90733f9f58929e8de842fd43384937f5/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 45 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
