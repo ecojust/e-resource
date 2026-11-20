@@ -12,6 +12,8 @@
 
 首版94处视角从东面望向主堂，保留的花园侧原体挡住了东门廊。实景试拍后，默认相机改为从东南侧朝285.41°方向、俯仰45°观察。站点锚点、原模型和底图裁剪合同中的空间数据均未改动。[原视角与93处前态](preflight/original-camera/review.json) · [三张实景与唯一两项相机修改](preflight/camera-study/review.json)
 
+最终93处前态与94处主图均经过真实浏览器检验，近景使用原生登记坐标，远景交给LOD。手机触屏从目录进入，桌面保留冷加载首帧和原体退出后同一登记镜位的截图。四种模型下载、近远两种城市源和11个地面样点全部取回与匹配。[93处对照](control-browser.json) · [94处实测](main-browser.json) · [桌面稳态](map-desktop-ready.png) · [门廊近景](map-street-facade.png) · [屋面](map-roof.png) · [逐图说明与哈希](map-visual-review.json) · [正式目录收据](production-inputs.json)
+
 使用仓库根目录中的以下命令重查模型射线及配准。配准脚本需要能读取收据中冻结的 Git 对象。
 
 ```sh
