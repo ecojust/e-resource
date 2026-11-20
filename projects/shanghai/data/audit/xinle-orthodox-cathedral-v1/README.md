@@ -19,3 +19,7 @@ Blender重新打开后可编辑114个网格，使用13种材质。原始和网�
 在182处版本的同一街角，北门位置仍是一片高楼窗墙。183处版本中，从390像素宽的目录点入即可看到大堂的中央穹顶、两侧窗和北门。靠近新乐路，深绿色双扇门、扇形窗和石阶可辨，门牌小字在这个尺度难以读清。斜俯视屋顶时，三座次顶露出完整轮廓，第四座在中央大顶后方只露出一段弧边。缩至街区后，名称灯牌可见，浏览器已切换到56,736面的远景资产。[替换前](city-24146/map-before.png) · [手机目录入口](city-24146/map-mobile-settled.png) · [北门](city-24146/map-north-portal.png) · [穹顶](city-24146/map-five-domes.png) · [街区远景](city-24146/map-distant.png)
 
 最终站点的962件签名输入共943,012,158字节。前态实测曾遇五片邻区网格返回502，逐片取回相符的原始Git对象并复读两份站点后，对照机位通过。西墙剖面是一条带三个顶点的折线，渲染器生成两段墙面。原测试误填一段而超时，根据签名几何另存了两段的测试用例。手机实测完成后，第一次桌面过程在屋面截屏之前中止；另开桌面浏览器完成全部七张图、近远两档资产和21处地面检查。独立页原有四帧及四次下载也与最终站点逐件相符。[两站输入](city-24146/two-served-sites.json) · [全部HTTP核验](city-24146/146-all-http.json) · [邻区恢复](city-24146/preliminary/cache-restored-http.json) · [剖面段数](city-24146/preliminary/segment-count.json) · [逐图核对](city-24146/visual-review.json) · [独立页与实际下载](city-24146/individual-downloads-rebound.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/29629200727e86616f4cd5be832af2ddec6c78d3/projects/shanghai/index.html#landmark=xuhui-xinle-orthodox-cathedral&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，14 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
