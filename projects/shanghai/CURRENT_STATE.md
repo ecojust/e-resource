@@ -1,3 +1,11 @@
+# 德士古大楼（延安东路110号弧形街墙及入口）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-texaco-building&mode=overview) · [单体旋转与下载](texaco-building.html) · [来源与制作范围](source/precise/huangpu-texaco-building/README.md) · [验收记录](data/audit/texaco-building-v1/README.md)
+
+延安东路110号德士古大楼的临街建筑，查明会德丰、四川大楼等名称各自见于何时。
+
+近景 54,596 个三角面，远景 21,920 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,704,041 字节。上海主图现有 141 处独立入口，黄浦区 68 处。[资产清单](assets/models/candidates/huangpu-texaco-building/manifest.json)
+
 # 真光大楼（圆明园路东立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-baptist-publication-building&mode=overview) · [单体旋转与下载](china-baptist-publication.html) · [来源与制作范围](source/precise/huangpu-china-baptist-publication-building/README.md) · [验收记录](data/audit/china-baptist-publication-v1/README.md)

@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 102,
+  "candidate_manifest_count": 103,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 100,
-  "resulting_city_count": 140,
+  "new_city_model_count": 101,
+  "resulting_city_count": 141,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 51
+    "黄浦区": 52
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 408,
-    "bytes": 1145250301,
+    "files": 412,
+    "bytes": 1150954342,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 5676809,
+    "current_run_added_bytes": 5704041,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 276
+    "inherited_incremental_files": 280
   },
   "records": [
     {
@@ -9018,6 +9018,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-architectural-elevation-and-photo-informed-exterior",
       "description": "圆明园路209号真光大楼东向街面，依据朝向、门牌和尖券窗区分相邻的广学大楼。"
+    },
+    {
+      "id": "huangpu-texaco-building",
+      "name": "德士古大楼（延安东路110号弧形街墙及入口）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "texaco-building.html",
+      "manifest": "assets/models/candidates/huangpu-texaco-building/manifest.json",
+      "manifest_sha256": "56ac6c11a02f17f5ed64a159ec349d5e12e3cfe276105cbade86b43383aff6c8",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-texaco-building/huangpu-texaco-building-raw.glb",
+          "bytes": 3356616,
+          "sha256": "99d5cd9a2ceecf35bd832f1a5b052bdab2aaec1cd9b00e1d5edc8bddfe722626",
+          "triangles": 54596,
+          "bounds_gltf_m": [
+            [
+              -29.463655471801758,
+              0.0,
+              -15.825027465820312
+            ],
+            [
+              33.93424987792969,
+              22.73699951171875,
+              1.469269871711731
+            ]
+          ],
+          "materials": 9
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-texaco-building/huangpu-texaco-building-web.glb",
+          "bytes": 1368160,
+          "sha256": "19583e2ee1fd920092113a4d532e61ae4599d3e5d0a8a064b3c2dde0808bab15",
+          "triangles": 54596,
+          "bounds_gltf_m": [
+            [
+              -29.4636555,
+              0,
+              -15.8250275
+            ],
+            [
+              33.9342499,
+              22.7369995,
+              1.46926987
+            ]
+          ],
+          "materials": 9
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-texaco-building/huangpu-texaco-building-lod.glb",
+          "bytes": 606748,
+          "sha256": "6f8ec2bff18f1861655a728c45e75ed8e07276526c0f4bc6fa851b22b9d6455c",
+          "triangles": 21920,
+          "bounds_gltf_m": [
+            [
+              -29.4636555,
+              0,
+              -15.8250275
+            ],
+            [
+              33.9342499,
+              22.7369995,
+              1.46926987
+            ]
+          ],
+          "materials": 8
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-texaco-building/huangpu-texaco-building.blend",
+          "bytes": 372517,
+          "sha256": "430198532276b4ce81d512c4fb50c2b7615de86de1784219c8e799cdd37c5122"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -29.463655471801758,
+            0.0,
+            -15.825027465820312
+          ],
+          "max": [
+            33.93424987792969,
+            22.73699951171875,
+            1.469269871711731
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -29.463655471801758,
+            -1.469269871711731,
+            0.0
+          ],
+          "max": [
+            33.93424987792969,
+            15.825027465820312,
+            22.73699951171875
+          ]
+        },
+        "triangles": 54596,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-and-footprint-informed-exterior",
+      "description": "延安东路110号德士古大楼的临街建筑，查明会德丰、四川大楼等名称各自见于何时。"
     }
   ],
   "baseline_inventory": {
@@ -9076,6 +9182,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shangxianfang-gate/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-texaco-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-wayfoong-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-wing-on-skybridges/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
@@ -9098,13 +9205,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/china-baptist-publication-v1",
+  "incremental_audit_directory": "data/audit/texaco-building-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/christian-literature-v1/inventory-increment.json",
-    "bytes": 236496,
-    "sha256": "3e792aa436bd51ea962012891fdbb62b4491ffc5ce3123266b7220fcf43b96b4"
+    "file": "data/audit/china-baptist-publication-v1/inventory-increment.json",
+    "bytes": 240264,
+    "sha256": "5b5fb106127c68d0b1984fe15bec3026b2be0022919129cdda4be0fe68ee2ab4"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-texaco-building/manifest.json"
   ]
 }
