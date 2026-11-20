@@ -3786,7 +3786,7 @@
 | 浙江第一商业银行大楼（江西中路与汉口路街面） | 2026-11-21 00:39:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) |
 | 原三菱银行（九江路36号四柱门廊及南立面） | 2026-11-21 00:41:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsubishi-bank&mode=overview) |
 | 上海公库（原三井银行九江路正门与六柱廊） | 2026-11-21 00:53:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsui-bank&mode=overview) |
-| 中汇大楼（原中汇银行大楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chung-wei-bank-building&mode=overview) |
+| 中汇大楼（原中汇银行大楼） | 2026-11-21 00:57:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chung-wei-bank-building&mode=overview) |
 
 ### 徐汇区（9处）
 
