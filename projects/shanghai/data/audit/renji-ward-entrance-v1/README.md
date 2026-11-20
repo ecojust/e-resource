@@ -20,3 +20,7 @@
 在124处入口的地图上，通过 HTTP 实取带版本号的三份地图登记表，以及按 SHA-256 寻址的普通建筑总表、分区索引和替换表。共核对14个请求，返回字节与冻结清单一致。[逐次请求](metadata-cache-http.json) · [本次调整涉及的文件](runtime-input-changes.json)
 
 当前两站从页面入口读取实际主模块和登记表，另外逐一核对本站冻结清单的379个文件。[当前两站实际入口与登记表](current-predecessor-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4b2a8f70549ce1221512b190615ad735edfb1623/projects/shanghai/index.html#landmark=huangpu-renji-hospital-ward-entrance&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

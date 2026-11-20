@@ -121,7 +121,7 @@
 | 光陆大戏院（光陆大楼） | 2026-11-20 18:25:24 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) |
 | 国泰电影院（西南街角与阶梯塔） | 2026-11-20 18:27:00 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-cinema&mode=overview) |
 | 兰心大戏院（茂名南路57号） | 2026-11-20 18:27:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-lyceum-theatre&mode=overview) |
-| 仁济医院西院2号住院楼（庭院入口立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-renji-hospital-ward-entrance&mode=overview) |
+| 仁济医院西院2号住院楼（庭院入口立面） | 2026-11-20 18:52:00 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-renji-hospital-ward-entrance&mode=overview) |
 
 ### 徐汇区（8处）
 
