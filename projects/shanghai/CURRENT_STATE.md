@@ -1,3 +1,11 @@
+# 孙科别墅主楼（南花园敞廊与北门廊）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-sun-ke-villa&mode=overview) · [单体旋转与下载](sun-ke-villa.html) · [来源与制作范围](source/precise/changning-sun-ke-villa/README.md) · [验收记录](data/audit/sun-ke-villa-v1/README.md)
+
+长宁区延安西路1262号孙科住宅主楼，含南面三拱敞廊、曲面角楼和北面门廊。照片与原址建筑面可对应，屋顶、隐面及细部尺寸含估计。
+
+近景 37,172 个三角面，远景 19,548 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,175,259 字节。上海主图现有 96 处独立入口，长宁区 3 处。[资产清单](assets/models/candidates/changning-sun-ke-villa/manifest.json)
+
 # 圣三一基督教堂（独立钟塔与连接短廊）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-bell-tower&mode=overview) · [单体旋转与下载](holy-trinity-bell-tower.html) · [来源与制作范围](source/precise/huangpu-holy-trinity-bell-tower/README.md) · [验收记录](data/audit/holy-trinity-bell-tower-v1/README.md)

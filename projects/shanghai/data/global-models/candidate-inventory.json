@@ -44,33 +44,34 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 57,
+  "candidate_manifest_count": 58,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 55,
-  "resulting_city_count": 95,
+  "new_city_model_count": 56,
+  "resulting_city_count": 96,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 4,
+    "长宁区": 1,
     "静安区": 4,
     "黄浦区": 20
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 228,
-    "bytes": 860793488,
+    "files": 232,
+    "bytes": 864968747,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4941888,
+    "current_run_added_bytes": 4175259,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 96
+    "inherited_incremental_files": 100
   },
   "records": [
     {
@@ -4247,6 +4248,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "圣三一堂的独立方形钟塔、角部小尖塔、修复后的尖顶以及通往主堂北廊的短廊。按不同年代照片核对尖顶变迁，四边尺度和塔身高度含估计。"
+    },
+    {
+      "id": "changning-sun-ke-villa",
+      "name": "孙科别墅主楼（南花园敞廊与北门廊）",
+      "districtId": "310105",
+      "district": "长宁区",
+      "already_in_city": false,
+      "individual_page": "sun-ke-villa.html",
+      "manifest": "assets/models/candidates/changning-sun-ke-villa/manifest.json",
+      "manifest_sha256": "8b4bfe9b3ec68583f77d1e6f0b304e731315b92da52b6a91d54f91b5ab269c68",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/changning-sun-ke-villa/changning-sun-ke-villa-raw.glb",
+          "bytes": 2219080,
+          "sha256": "f2e1a2a4d0526527d53f4cb9a623bb4fe32a826db29bb8706aed0b22f7d0a53d",
+          "triangles": 37172,
+          "bounds_gltf_m": [
+            [
+              -10.5,
+              -0.07000000029802322,
+              -9.420000076293945
+            ],
+            [
+              10.80661678314209,
+              10.119999885559082,
+              7.829999923706055
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/changning-sun-ke-villa/changning-sun-ke-villa-web.glb",
+          "bytes": 906440,
+          "sha256": "8f91fa03923584d23e64784fbf3a7d2b2c21e1d6368c901450e2ef3ce1defc71",
+          "triangles": 37172,
+          "bounds_gltf_m": [
+            [
+              -10.5,
+              -0.0700000003,
+              -9.42000008
+            ],
+            [
+              10.8066168,
+              10.1199999,
+              7.82999992
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/changning-sun-ke-villa/changning-sun-ke-villa-lod.glb",
+          "bytes": 422628,
+          "sha256": "cb98e25179503fa17c080a892b5e5264bb8df32c2f40063a5ea6ff1df72caef7",
+          "triangles": 19548,
+          "bounds_gltf_m": [
+            [
+              -10.5,
+              -0.0700000003,
+              -9.42000008
+            ],
+            [
+              10.8066168,
+              10.1199999,
+              7.82999992
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/changning-sun-ke-villa/changning-sun-ke-villa.blend",
+          "bytes": 627111,
+          "sha256": "10c1f2d75a3db4e31e44611af65791289c82044a58d789d391e42eefd646b09d"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -10.5,
+            -0.07000000029802322,
+            -9.420000076293945
+          ],
+          "max": [
+            10.80661678314209,
+            10.119999885559082,
+            7.829999923706055
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -10.5,
+            -7.829999923706055,
+            -0.07000000029802322
+          ],
+          "max": [
+            10.80661678314209,
+            9.420000076293945,
+            10.119999885559082
+          ]
+        },
+        "triangles": 37172,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "长宁区延安西路1262号孙科住宅主楼，含南面三拱敞廊、曲面角楼和北面门廊。照片与原址建筑面可对应，屋顶、隐面及细部尺寸含估计。"
     }
   ],
   "baseline_inventory": {
@@ -4255,6 +4362,7 @@
     "sha256": "bf0dfdc8bdbb0af7e2216731ada6293d0717e1274b35295d461b7521f00f6470"
   },
   "incremental_manifests": [
+    "projects/shanghai/assets/models/candidates/changning-sun-ke-villa/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
@@ -4282,13 +4390,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/holy-trinity-bell-tower-v1",
+  "incremental_audit_directory": "data/audit/sun-ke-villa-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/holy-trinity-cathedral-v1/inventory-increment.json",
-    "bytes": 74944,
-    "sha256": "1f675971af0eb1cc36fd9e18855b38c1005b7f849c5487a1c22f228035a7ee84"
+    "file": "data/audit/holy-trinity-bell-tower-v1/inventory-increment.json",
+    "bytes": 78597,
+    "sha256": "66bb042c871de04fe98ee11e87d807b126195e40c64258138c7114acdd09605e"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json"
+    "projects/shanghai/assets/models/candidates/changning-sun-ke-villa/manifest.json"
   ]
 }

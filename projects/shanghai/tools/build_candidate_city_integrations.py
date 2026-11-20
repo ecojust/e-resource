@@ -31,7 +31,8 @@ CURRENT_INVENTORY = PROJECT / "data/global-models/candidate-inventory.json"
 CATALOG = PROJECT / "data/candidate-city-integrations.json"
 DISTRICTS = {"chongming": ("310151", "崇明区"), "hongkou": ("310109", "虹口区"),
              "huangpu": ("310101", "黄浦区"), "xuhui": ("310104", "徐汇区"),
-             "yangpu": ("310110", "杨浦区"), "jingan": ("310106", "静安区")}
+             "yangpu": ("310110", "杨浦区"), "jingan": ("310106", "静安区"),
+             "changning": ("310105", "长宁区")}
 
 
 def git(*args):
