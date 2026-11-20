@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 62,
+  "candidate_manifest_count": 63,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 60,
-  "resulting_city_count": 100,
+  "new_city_model_count": 61,
+  "resulting_city_count": 101,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 4,
     "长宁区": 3,
     "静安区": 4,
-    "黄浦区": 22
+    "黄浦区": 23
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 248,
-    "bytes": 883609799,
+    "files": 252,
+    "bytes": 890015897,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 3664544,
+    "current_run_added_bytes": 6406098,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 116
+    "inherited_incremental_files": 120
   },
   "records": [
     {
@@ -4778,6 +4778,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-informed-partial-exterior",
       "description": "外滩27号怡和洋行大楼的临江九券、四根巨柱与东北斜角。资料涉及不同时期的建筑，按照片区分旧外观和现状，尺寸含估计。"
+    },
+    {
+      "id": "huangpu-banque-de-lindochine",
+      "name": "东方汇理银行（外滩29号临江立面）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "banque-de-lindochine.html",
+      "manifest": "assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
+      "manifest_sha256": "00ab9049a10a75e09458c77b79cd089595b3d4ead945239a7948a3b2f8d8ef12",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-banque-de-lindochine/huangpu-banque-de-lindochine-raw.glb",
+          "bytes": 3413072,
+          "sha256": "317f9b40c943ee7f63ee6e830af923f99d088791e5e880512026427b3d362400",
+          "triangles": 55976,
+          "bounds_gltf_m": [
+            [
+              -10.96500015258789,
+              0.0,
+              -2.0399999618530273
+            ],
+            [
+              10.96500015258789,
+              21.600000381469727,
+              1.0378999710083008
+            ]
+          ],
+          "materials": 8
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-banque-de-lindochine/huangpu-banque-de-lindochine-web.glb",
+          "bytes": 1301064,
+          "sha256": "6f1cca210d268fcfee02889382a10b3855b575687b61b683fbaf6932fe5c51e6",
+          "triangles": 55976,
+          "bounds_gltf_m": [
+            [
+              -10.9650002,
+              0,
+              -2.03999996
+            ],
+            [
+              10.9650002,
+              21.6000004,
+              1.03789997
+            ]
+          ],
+          "materials": 8
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-banque-de-lindochine/huangpu-banque-de-lindochine-lod.glb",
+          "bytes": 738872,
+          "sha256": "fd8e8b2fa122317e9b29d7353677e8c444242c4052f068efabfbb3eef169ad64",
+          "triangles": 34124,
+          "bounds_gltf_m": [
+            [
+              -10.9650002,
+              0,
+              -2.03999996
+            ],
+            [
+              10.9650002,
+              21.6000004,
+              1.00716841
+            ]
+          ],
+          "materials": 8
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-banque-de-lindochine/huangpu-banque-de-lindochine.blend",
+          "bytes": 953090,
+          "sha256": "1c9e004bbf86f024469bfb3c8958b4f3c53e50a321fb3ea046fceebd4698adf2"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -10.96500015258789,
+            0.0,
+            -2.0399999618530273
+          ],
+          "max": [
+            10.96500015258789,
+            21.600000381469727,
+            1.0378999710083008
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -10.96500015258789,
+            -1.0378999710083008,
+            0.0
+          ],
+          "max": [
+            10.96500015258789,
+            2.0399999618530273,
+            21.600000381469727
+          ]
+        },
+        "triangles": 55976,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "外滩29号原东方汇理银行的临江五开间与中央石门，建筑层段和背侧范围按来源单列。"
     }
   ],
   "baseline_inventory": {
@@ -4791,6 +4897,7 @@
     "projects/shanghai/assets/models/candidates/changning-zhou-gucheng-courtyard/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
@@ -4818,13 +4925,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/jardine-matheson-v1",
+  "incremental_audit_directory": "data/audit/banque-de-lindochine-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/asia-building-v1/inventory-increment.json",
-    "bytes": 93341,
-    "sha256": "16c3a40a1423b7ea7a63da1c0a76bc227a5cd7a4593ae5f943d3a02742952d68"
+    "file": "data/audit/jardine-matheson-v1/inventory-increment.json",
+    "bytes": 97026,
+    "sha256": "2736c1ca2d810037579ae4240c48c41a402fa0e7d1613c143f296b20b8adce85"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-jardine-matheson-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json"
   ]
 }

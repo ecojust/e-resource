@@ -1,3 +1,11 @@
+# 东方汇理银行（外滩29号临江立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-banque-de-lindochine&mode=overview) · [单体旋转与下载](banque-de-lindochine.html) · [来源与制作范围](source/precise/huangpu-banque-de-lindochine/README.md) · [验收记录](data/audit/banque-de-lindochine-v1/README.md)
+
+外滩29号原东方汇理银行的临江五开间与中央石门，建筑层段和背侧范围按来源单列。
+
+近景 55,976 个三角面，远景 34,124 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,406,098 字节。上海主图现有 101 处独立入口，黄浦区 39 处。[资产清单](assets/models/candidates/huangpu-banque-de-lindochine/manifest.json)
+
 # 怡和洋行大楼临江立面与北京东路转角
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview) · [单体旋转与下载](jardine-matheson.html) · [来源与制作范围](source/precise/huangpu-jardine-matheson-building/README.md) · [验收记录](data/audit/jardine-matheson-v1/README.md)
