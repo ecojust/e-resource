@@ -32,3 +32,7 @@
 原近照的地点卡挡住部分门槛。将取景中心错开后，可从一张图中看清闭合双扇门的分格、门外台阶、尖券、长窗横栏和左侧半圆屋顶。灯牌仍挡住一小段墙上缘。独立页的桌面和手机近、远四图及四种下载均已逐项校验。[主图正门近照](city-24140/map-door-beside-place-card.png) · [门槛位置与原图字节](city-24140/doorway.json) · [四张独立页实图与下载核对](independent-viewer-24140.json) · [全部视图](city-24140/visual-review.json)
 
 补拍的初次屏幕位置检查只计算了卡片右侧的空间。复查同时核对门槛与卡片的纵向距离；原始记录及最终实图分别留存。[初次投影记录](preflight/doorway-first-projection.json) · [最终屏幕位置](city-24140/doorway.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1ad22764a2ead657b735259a4f4c34f8d44b939c/projects/shanghai/index.html#landmark=changning-xiyan-church&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
