@@ -1,3 +1,11 @@
+# 懿园建国西路南门
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yiyuan-jianguo-road-gate&mode=overview) · [单体旋转与下载](yiyuan-jianguo-road-gate.html) · [来源与制作范围](source/precise/xuhui-yiyuan-jianguo-road-gate/README.md) · [验收记录](data/audit/yiyuan-jianguo-road-gate-v1/README.md)
+
+市房管局2D018懿园。对照建国西路506弄南门六个道路视点和弄口近照，核对弧顶门洞、铁艺门扇、墙面题名与瓦檐。
+
+近景 47,380 个三角面，远景 26,988 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,042,701 字节。上海主图现有 195 处独立入口，徐汇区 19 处。[资产清单](assets/models/candidates/xuhui-yiyuan-jianguo-road-gate/manifest.json)
+
 # 中南新邨9号木门与气窗
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongnan-village-no9-door&mode=overview) · [单体旋转与下载](zhongnan-village-no9.html) · [来源与制作范围](source/precise/xuhui-zhongnan-village-no9-door/README.md) · [验收记录](data/audit/zhongnan-village-no9-v1/README.md)
