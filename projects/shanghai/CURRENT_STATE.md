@@ -1,3 +1,11 @@
+# 沪江大学大学礼堂（1937年主礼堂）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-hujiang-university-auditorium&mode=overview) · [单体旋转与下载](hujiang-university-auditorium.html) · [来源与制作范围](source/precise/yangpu-hujiang-university-auditorium/README.md) · [验收记录](data/audit/hujiang-university-auditorium-v1/README.md)
+
+军工路516号沪江大学1937年大礼堂，依上海理工大学校档辨明东西向主堂、双联扁拱门及与北侧思魏堂的交接。
+
+近景 56,708 个三角面，远景 20,004 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,015,309 字节。上海主图现有 174 处独立入口，杨浦区 8 处。[资产清单](assets/models/candidates/yangpu-hujiang-university-auditorium/manifest.json)
+
 # 震旦大学图书馆教学大楼（西一号楼）球场侧立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) · [单体旋转与下载](aurora-university-library.html) · [来源与制作范围](source/precise/huangpu-aurora-university-library/README.md) · [验收记录](data/audit/aurora-university-library-v1/README.md)
