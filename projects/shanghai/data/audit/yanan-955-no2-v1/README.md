@@ -15,3 +15,7 @@ Blender重开后有85个可编辑网格。原始和网页模型各15,420面，�
 实测核对了两档模型的文件签名、21处地面点和同组13栋邻屋。屋顶图可见主屋纵脊、较大的连续瓦坡与后方保留建筑，地点卡遮住了左下的大半低屋面。前后两屋面的整体关系以默认图和宽桌面街面图为据。底层外墙细部有树冠遮挡，仍采用制作说明标出的估算尺寸。首次宽桌面专项截图因系统内存不足中断，原来取得的两张宽桌面图保留，另开900×680会话验近景构造及21处地面点，再用650×520会话独立加载远景。下列记录列出各会话的画面、进程退出状态与原始报错。[屋顶关系](city-31166/architecture/map-roof.png) · [远景](city-31166/far-only/map-distant.png) · [地面点](city-31166/placement/main-browser.json) · [远档与文件签名](city-31166/far-only/main-browser.json) · [分次实测与校验](city-31166/map-process-outcomes.json) · [发布版相机与点位](city-31166/default-camera-pixel-binding.json)
 
 首次专项会话的 Playwright 原始报错已按原字节压缩保存。可读文本仅去除首行末尾的一个空格，解压后原件的大小与 SHA-256 已校验。[压缩原件](city-31166/first-architecture-interruption/architecture.log.gz) · [可读文本与原始摘要](city-31166/first-architecture-interruption/raw-log-check.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/99e7084031564cfea7cc361c71625d50c10f57d5/projects/shanghai/index.html#landmark=jingan-yanan-955-no2&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
