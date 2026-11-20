@@ -1,0 +1,73 @@
+{
+  "model_id": "hongkou-general-post-office",
+  "review_utc": "2026-11-20T05:13:47+00:00",
+  "method": "Visually inspected ten rendered browser captures and matched each original PNG SHA256 to the completed browser run. This is a visual review of those views; event dispatch, geometry ownership and byte integrity are checked separately.",
+  "browser_report_sha256": "22469ded5a45479d99d52e180ca42a232fadb681dae882cd024afd413cb43002",
+  "qa_contract_sha256": "fc832cbd8f7f59c811910e418d83846f71fe7ba867b1bb3d98acfe42b10a1c20",
+  "manifest_sha256": "83715c205b4f083524dc977e218fdc3abdc63204bb400bb9ea558d83a6bcafb8",
+  "test_registry_entries": 84,
+  "reviewed": [
+    {
+      "label": "auxiliary-full",
+      "file": "browser-auxiliary-full.png",
+      "sha256": "6e7e0ff12289ce5be76652f3c22178dc55b31c50dbbe8805fbc343e7e34db51e",
+      "observed": "独立预览的临河街墙、持续的柱列、长条玻璃屋盖、转角塔的绿顶和红旗均完整入框，右侧标为完整近景。"
+    },
+    {
+      "label": "auxiliary-lod",
+      "file": "browser-auxiliary-lod.png",
+      "sha256": "d0d6b75eb0cd26a94cb8c1c694257714c06335b10cbe011ac076c4764e010273",
+      "observed": "同视角简化远景仍保留长街墙、天窗分格、转角及旗杆轮廓，右栏状态变为简化远景。"
+    },
+    {
+      "label": "auxiliary-mobile",
+      "file": "browser-auxiliary-mobile.png",
+      "sha256": "0c6863912bd135f95b999425abf8ab8af4794f3dbd8724110a8548321e139c9f",
+      "observed": "窄屏上方画布与下方控制区分列，完整外形和红旗可辨；楼体在这张适配全景中的面积较小，细部判断取桌面特写。"
+    },
+    {
+      "label": "global-desktop",
+      "file": "browser-global-desktop.png",
+      "sha256": "fa00c15e0e5c9e1cd7e763e624e9b9221ccd6643357d3654cf8c6fea96bf6fdd",
+      "observed": "苏州河北岸靠桥一侧可见模型，所在街角两向立面、灰色邻楼、84处目录及选中名称卡可辨。默认灯牌覆盖塔的上半部，不能由该幅单独判塔顶。"
+    },
+    {
+      "label": "detail-tower-complete",
+      "file": "browser-detail-tower-complete.png",
+      "sha256": "743d460103e7d26198f637084974094027ce2297666bb24d4a1549d5b38d40a5",
+      "observed": "时钟、塔身、绿色折面屋顶至红旗尖端完整入框；两向街墙仍和拐角门连接，背后有独立灰色建筑。顶栏此时仍写建筑模型加载中，目标owner是否就绪须看运行记录。"
+    },
+    {
+      "label": "detail-roof-complete",
+      "file": "browser-detail-roof-complete.png",
+      "sha256": "c5ee6b137f6e1c963951859a182c158daa570bd51e364beef71908cfd9ee25db",
+      "observed": "屋顶长圆拱玻璃罩的端头和网格、两侧屋面、周沿栏杆、街角铜色转绿的塔冠与旗杆可见，西侧相邻普通体块仍然显示。模型名牌覆盖屋面一小段。"
+    },
+    {
+      "label": "detail-street-colonnade",
+      "file": "browser-detail-street-colonnade.png",
+      "sha256": "bc931cc1b53d1cf7253dff57438c1f82d59edc2d644df0f54f41e03310e5e273",
+      "observed": "北苏州路侧连续浅色柱、柱间绿窗格和横带可辨，在场景前部没有看见普通体块覆盖这排窗；下方名称卡局部遮挡人行道。没有据此检查不可见的相邻接缝。"
+    },
+    {
+      "label": "global-mobile",
+      "file": "browser-global-mobile.png",
+      "sha256": "4b73c509775615de81eac4d801f9bbeeaec60bc22854d13da04451b227d5574e",
+      "observed": "竖屏主图保留北岸选中名称、苏州河、过河桥和右侧缩放按钮，底卡显示邮政总局。中央灯牌覆盖缩小后的建筑一部分。"
+    },
+    {
+      "label": "beacons-320-84",
+      "file": "browser-beacons-320-84.png",
+      "sha256": "bb4215c626df54a49d6cb33cb1e6fd7139559fb8f67d62b6d228b38d32c27175",
+      "observed": "320×568城市远景中可见规则排列的编号灯牌和按区入口，当前选中卡显示航空协会旧址。按钮尺寸、指针命中和独立数量需由交互和坐标记录验证。"
+    },
+    {
+      "label": "touch-selected-postal-office-city",
+      "file": "browser-touch-selected-postal-office-city.png",
+      "sha256": "a05dec4ef42d3ec87187b0a3159f23447d840909f3e4ec7d2e1f8384da9b5ddf",
+      "observed": "同一窄屏远景仍有密集编号灯牌，底卡变为虹口区上海邮政总局历史主楼与钟塔；画面说明选中结果，触摸事件来自浏览器输入记录。"
+    }
+  ],
+  "conclusion": "在本次84处入口场景中，上述画面所见模型、局部外观、位置、前后景和选中结果符合各视图目的。",
+  "limits": "城市场景含原范围瓦片和普通建筑；截图不能逐项证明隐藏面的精度、线上网络状态或每一栋邻楼的所有权。默认灯牌遮挡的区域采用专门特写复核。"
+}

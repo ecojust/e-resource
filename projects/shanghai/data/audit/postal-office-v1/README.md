@@ -22,4 +22,10 @@
 
 ## 验收与发布状态
 
-最终原生文件、地图登记、两阶段浏览器检查和公开发布仍在执行。完成后在本节补充对应报告与实际范围；当前文件不是发布完成声明。
+2026-11-20 在 84 处目录上运行实际 Chromium。桌面和窄屏实测了整塔、屋顶、沿街柱廊、完整与远景模型切换、灯牌和四项下载。原生重开及几何沿用与此次清单哈希一致的既有结果。可核对[浏览器执行](browser.json)、[最终契约](qa-contract.json)、[元数据](metadata-checks.json)和[保留范围](preservation-check.json)。
+
+已公开模型版本为 `a758a379d86b2c39fc309a837d591027241b566b`。四件模型共 35,665,440 字节；[固定提交](publication.json)与[当时 master](publication-master-2b66614.json)各 19 项通过。此前候选执行的失败记录保留。此次 [PMTiles Range 检查](external-ranges.json)只描述本次请求地点、时间和响应。
+
+重跑本轮浏览器需为 `qa-server.py` 设置 `QA_BASELINE_COMMIT=2b66614baae35f0d032fc4d18e5f4c808d036cc4` 及仓库外的 `QA_WORK_DIR`，再设置 `MODEL_BASE_URL` 指向该服务，以空的 `QA_OUTPUT_DIR` 执行 `node qa-browser.cjs --run`。还原 84 处目录与本轮最终契约后复查此历史版本。
+
+[逐图目视记录](qa-pixel-review.json) · [独立浏览器复核](independent-browser-review.json) · [最终画面复核](root-visual-review.json)

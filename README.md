@@ -4,7 +4,7 @@
 
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
-当前开发快照已推送远程，包含邮政总局的模型与地图接入，目录为84处；该栋最终网页验收和公开文件核对仍待完成。后续接手先看[当前交接](history/CONTINUE-SHANGHAI.md)，再推进下一栋。
+上海邮政总局历史主楼与钟塔已完成网页验收和公开下载核对，当前目录为 84 处。下一个制作项目是宏恩医院花园立面。[工作记录](history/2026-11-20-001.md)
 
 <!-- model-todo:start -->
 ## 模型 TODO：逐条制作与街道资料搜集
@@ -3821,7 +3821,7 @@
 | 上海鲁迅故居正立面与院门 | 2026-10-29 10:24:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) |
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
-| 上海邮政总局历史主楼与钟塔 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-general-post-office&mode=overview) |
+| 上海邮政总局历史主楼与钟塔 | 2026-11-06 22:22:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-general-post-office&mode=overview) |
 
 ### 杨浦区（7处）
 

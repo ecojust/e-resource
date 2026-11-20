@@ -1,6 +1,6 @@
 # 上海邮政总局历史主楼与钟塔接入主地图
 
-2026-11-06交接：当前开发快照已按用户要求全部提交并推送origin/master；邮政总局最终浏览器验收及公开文件核对尚未完成。84处是当前开发目录口径，不能当作84处均已公开验收。接续步骤见[工作记录](../../history/CONTINUE-SHANGHAI.md)。
+2026-11-20 接续验收完成。桌面与窄屏主图已核对钟塔、屋面、柱廊、保留邻楼及灯牌交互。模型版本 `a758a37` 的四项公开下载均与资产清单一致。[最终浏览器记录](data/audit/postal-office-v1/browser.json) · [公开字节](data/audit/postal-office-v1/publication.json)
 
 [全局主图直达](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-general-post-office&mode=overview) · [按区目录](landmarks.html) · [本轮记录](data/audit/postal-office-v1/README.md)
 
