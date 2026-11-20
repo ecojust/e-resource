@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 148 处入口。最近接入[同孚大楼（中国银行西区分行旧址）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 148 处入口。最近细化[麦加利银行 · 外滩18号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的108项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的109项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 109 | 麦加利银行东门盾饰 | 黄浦区／中山东一路18号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查找早期门额近照和修缮记录，核对纹样及尺寸。 |
-| 110 | 北京东路国华银行大楼 | 黄浦区／北京东路342号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查验银行营业厅及办公部分的平面和沿街立面的材料更替。 |
+| 110 | 北京东路国华银行大楼 | 黄浦区／北京东路342号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；查验银行营业厅及办公部分的平面和沿街立面的材料更替。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -100,7 +99,7 @@
 | sh-historic-b2-041 | 有利大楼石雕的分期和修缮 | 中山东一路3号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查证石雕尺寸、修缮和安装年代，并核对其他立面的同类装饰。 |
 | sh-historic-b2-042 | 大陆银行后部及分期 | 九江路111号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查实后部范围、屋顶更替和历任使用单位及营业地址。 |
 | sh-historic-b2-043 | 华俄道胜银行石雕与修缮年代 | 中山东一路15号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查考立面雕塑年代及被遮藏部分的详细测绘和修缮记录。 |
-| sh-historic-b2-045 | 麦加利银行 | 中山东一路18号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund18；待核对范围 |
+| sh-historic-b2-045 | 麦加利银行旧门额的修缮年代 | 中山东一路18号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查找早期门额近照和修缮记录，核对纹样及尺寸。 |
 | sh-historic-b2-046 | 国华银行大楼 | 北京东路342号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-047 | 大北电报局 | 中山东一路7号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund07；待核对范围 |
 | sh-historic-b2-049 | 横滨正金银行 | 中山东一路24号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3657,7 +3656,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3723,7 +3721,7 @@
 | 交通银行旧址 · 外滩14号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund14&mode=walk) |
 | 华俄道胜银行大楼 | [2026-11-20 22:53:24](https://github.com/ecojust/e-resource/commit/21dbf957f57704c51c676825c7c30d5812404ed6) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund15&mode=walk) |
 | 字林西报大楼 | [2026-11-20 19:43:42](https://github.com/ecojust/e-resource/commit/e5a6d048a6398de6ef8586f91f1f4d7020633ffa) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund17&mode=walk) |
-| 麦加利银行 · 外滩18号 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk) |
+| 麦加利银行 · 外滩18号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk) |
 | 和平饭店南楼 · 汇中饭店 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk) |
 | 和平饭店北楼 · 沙逊大厦 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk) |
 | 中国银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk) |

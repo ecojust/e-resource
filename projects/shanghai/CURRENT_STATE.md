@@ -1,3 +1,11 @@
+# 中山东一路18号麦加利银行东门上方的石质盾饰与两侧横框，以可定位的临街照片核对门额轮廓
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk) · [四种模型下载](source/precise/bund18/revisions/east-door-cartouche/manifest.json) · [来源与制作范围](source/precise/bund18/revisions/east-door-cartouche/README.md) · [验收记录](data/audit/chartered-door-cartouche-v1/README.md)
+
+中山东一路18号麦加利银行东门上方的石质盾饰与两侧横框，以可定位的临街照片核对门额轮廓。
+
+近景 130,220 个三角面，远景 74,428 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 21,244,177 字节。上海主图现有 148 处独立入口，黄浦区 74 处。[资产清单](source/precise/bund18/revisions/east-door-cartouche/manifest.json)
+
 # 同孚大楼（中国银行西区分行旧址）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) · [单体旋转与下载](yates-apartments.html) · [来源与制作范围](source/precise/jingan-yates-apartments/README.md) · [验收记录](data/audit/yates-apartments-v1/README.md)

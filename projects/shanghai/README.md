@@ -1,7 +1,7 @@
 # 上海全景建模
 
 <!-- current-shanghai-model:start -->
-上海主图现有 148 处入口。最近接入[同孚大楼（中国银行西区分行旧址）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
+上海主图现有 148 处入口。最近细化[麦加利银行 · 外滩18号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk)。[制作范围与验收记录](CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 [宏恩医院花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview)位于静安区。中央五开间门廊与两端山花之间，各有五跨底层拱廊。 [制作范围](source/precise/jingan-country-hospital/README.md) · [验收记录](data/audit/country-hospital-v1/README.md)
@@ -81,7 +81,7 @@
 | 交通银行旧址 · 外滩14号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund14&mode=walk) |
 | 华俄道胜银行大楼 | [2026-11-20 22:53:24](https://github.com/ecojust/e-resource/commit/21dbf957f57704c51c676825c7c30d5812404ed6) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund15&mode=walk) |
 | 字林西报大楼 | [2026-11-20 19:43:42](https://github.com/ecojust/e-resource/commit/e5a6d048a6398de6ef8586f91f1f4d7020633ffa) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund17&mode=walk) |
-| 麦加利银行 · 外滩18号 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk) |
+| 麦加利银行 · 外滩18号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk) |
 | 和平饭店南楼 · 汇中饭店 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund19&mode=walk) |
 | 和平饭店北楼 · 沙逊大厦 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund20&mode=walk) |
 | 中国银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund23&mode=walk) |

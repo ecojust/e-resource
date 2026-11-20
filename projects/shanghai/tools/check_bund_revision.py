@@ -9,6 +9,7 @@ import subprocess
 PROJECT = Path(__file__).resolve().parents[1]
 REPO = PROJECT.parents[1]
 PREFIX = PROJECT.relative_to(REPO).as_posix() + '/'
+LEGACY_RAW_IDS = {'bund15': 'russo', 'bund18': 'bund18-chartered-bank'}
 
 
 def one(rows, ident):
@@ -33,8 +34,7 @@ def assets_match(read, manifest, path):
     if 'candidateId' in raw:
         assert raw['candidateId'] == model
     else:
-        legacy_ids = {'bund15': 'russo', 'bund18': 'bund18-chartered-bank'}
-        assert raw['id'] == legacy_ids[model]
+        assert raw['id'] == LEGACY_RAW_IDS[model]
     roles = {'raw': ('editable_model','raw'), 'full': ('model','web'), 'lod': ('lod_model','lod'), 'native': ('native_model','native')}
     assert set(manifest['assets']) == set(roles)
     for role, (field, alias) in roles.items():
@@ -47,6 +47,20 @@ def assets_match(read, manifest, path):
     assert (lod['model'],lod['sha256'],lod['triangles']) == (lm['lod_model'],lm['lod_sha256'],lm['lod_triangles'])
     assert (raw['model'],raw['native_model'],raw['triangles']) == (lm['editable_model'],lm['native_model'],lm['triangles'])
     return documents, lm
+
+
+def check_raw_registration(before, after, model):
+    """Check original identity, map placement and any new canonical catalog alias."""
+    for key in ('id', 'footprint', 'replaceExactBuildingIds', 'footprint_source', 'source_footprint',
+                'groundPolygonLocalXZ', 'model_axis', 'anchor', 'bounds_glb'):
+        assert after.get(key) == before.get(key), key
+    if 'candidateId' not in before and 'candidateId' in after:
+        assert model in LEGACY_RAW_IDS and before['id'] == LEGACY_RAW_IDS[model]
+        assert after['candidateId'] == model
+    else:
+        assert ('candidateId' in before) == ('candidateId' in after)
+        assert after.get('candidateId') == before.get('candidateId')
+
 
 
 def main():
@@ -73,8 +87,7 @@ def main():
         assert [r for r in before if r['id'] != ident] == [r for r in after if r['id'] != ident]
     for key in ('lng','lat','bearing','walkStart','bounds_glb','height_m','districtId'):
         assert current.get(key) == one(old[0],ident).get(key), key
-    for key in ('id','candidateId','footprint','replaceExactBuildingIds','footprint_source','source_footprint','groundPolygonLocalXZ','model_axis','anchor','bounds_glb'):
-        assert new[4].get(key) == old[4].get(key)
+    check_raw_registration(old[4], new[4], ident)
     for path in ('data/candidate-city-integrations.json','data/global-models/additional-placement.json',
                  'data/global-models/candidate-inventory.json','data/precise-buildings-v6.json','data/model-viewers.json'):
         assert json.loads(read(path)) == prior(path), path
