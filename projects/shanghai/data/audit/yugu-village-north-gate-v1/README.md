@@ -15,3 +15,7 @@
 ## 正式地图与用户操作
 
 在正式186处与187处两张地图上实测同一弄口。增加门楼后，桌面和手机均可点选，门前街道、门后弄道以及五栋邻楼保持原有边界。[六幅地图和通行核验](city-24150/README.md) · [门柱、竖额和四扇铁门](city-24150/map-two-name-tablets-and-closed-leaves.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/6ebbe08b9c3aa22cf9efed205fd0db33df86a721/projects/shanghai/index.html#landmark=jingan-yugu-village-north-gate&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
