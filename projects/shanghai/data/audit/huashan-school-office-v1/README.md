@@ -25,3 +25,7 @@
 前态逐件核对827个冻结输入，新态核对835个。重新读取两代真实页面观察到的HTTP资源，前态共114件、59,634,166字节，新态共126件、85,677,894字节。独立查看器及四件模型的13项依赖在先前实际查看的版本和本次正式版本中逐件相同，沿用既有4张双端近远景截图。[前后发布版本](city-24132/release-bindings.json) · [前态网络资源](city-24132/http-131.json) · [新态网络资源](city-24132/http-132.json) · [独立查看器逐件比较](independent-viewer-24132.json)
 
 完整读取了正式测试站的835项输入，共781,636,377字节。生成器也独立生成了相同的170处城市目录。[完整HTTP记录](city-24132/132-all-http.json) · [目录复算](city-24132/132-generator.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b8e4a5a9e4a23a268ff3e229def400fa20666290/projects/shanghai/index.html#landmark=jingan-huashan-american-school-office&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 2 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
