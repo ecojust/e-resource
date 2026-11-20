@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 187 处入口。最近接入[愚谷村愚园路北弄门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yugu-village-north-gate&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 188 处入口。最近接入[静安别墅25号院门与弄面院墙](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的150项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的151项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 151 | 静安别墅25号院门与弄面院墙 | 静安区／南京西路1025弄 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对12号门牌对应的实际住宅，并逐户确认其余分户线、门牌变更与各期户数。 |
-| 152 | 模范村延安中路877弄22号门廊 | 静安区／延安中路877弄 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对22号住宅其余各面、相邻带椭圆窗门扇的门牌及各排住宅的轮廓和年代。 |
+| 152 | 模范村延安中路877弄22号门廊 | 静安区／延安中路877弄 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；核对22号住宅其余各面、相邻带椭圆窗门扇的门牌及各排住宅的轮廓和年代。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -733,7 +732,7 @@
 | sh-historic-b2-068 | 中福会儿童艺术剧院其他场地与改造分期 | 华山路643号/华山路639号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核查639号与643号历次使用分界、马兰花剧场及2024年开放花园后的改变。 |
 | sh-historic-b2-077 | 怀恩堂院内大堂及早期分址 | 陕西北路375号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对内院、小礼拜堂和虹口北四川路原堂的分期与边界。 |
 | sh-historic-b2-086 | 愚谷村住宅及南京西路南口 | 愚园路361弄 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 分户核对121号旧址及其他里弄住宅，识别南京西路1892弄南门与各期修缮。 |
-| sh-historic-b2-087 | 静安别墅 | 南京西路1025弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-087 | 静安别墅其余住宅与弄道 | 南京西路1025弄 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对12号门牌对应的实际住宅，并逐户确认其余分户线、门牌变更与各期户数。 |
 | sh-historic-b2-088 | 模范村 | 延安中路877弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-089 | 景华新村 | 巨鹿路820弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-090 | 大胜胡同 | 华山路229～285弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3640,7 +3639,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3655,7 +3653,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；187处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中147件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；188处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中148件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3663,7 +3661,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增147处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增148处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3685,7 +3683,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，187处建筑与构件模型入口（40处既有＋147处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增147处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，188处建筑与构件模型入口（40处既有＋148处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增148处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（93处）
@@ -3827,7 +3825,7 @@
 | 中西女中东楼（五一楼）院落立面 | 2026-11-21 03:21:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) |
 | 息焉堂（前庭、主堂铜顶及临河半圆体） | 2026-11-21 04:16:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xiyan-church&mode=overview) |
 
-### 静安区（14处）
+### 静安区（15处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
@@ -3847,6 +3845,7 @@
 | 华山路原美国学校办公楼 | 2026-11-21 03:08:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huashan-american-school-office&mode=overview) |
 | 怀恩堂陕西北路入口与东南角砖塔 | 2026-11-21 04:17:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) |
 | 愚谷村愚园路北弄门 | 2026-11-21 05:25:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yugu-village-north-gate&mode=overview) |
+| 静安别墅25号院门与弄面院墙 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview) |
 
 ### 普陀区（2处）
 

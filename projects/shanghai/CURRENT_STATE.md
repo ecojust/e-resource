@@ -1,3 +1,11 @@
+# 静安别墅25号院门与弄面院墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview) · [单体旋转与下载](jingan-villa-no25.html) · [来源与制作范围](source/precise/jingan-villa-no25/README.md) · [验收记录](data/audit/jingan-villa-no25-v1/README.md)
+
+以2013年近照中可读的25号门牌和支弄门号范围定位双扇菱格铁门、竖栅气窗、红砖门垛、三级灰色压顶及院墙勒脚，保留同排各户和门后住宅。
+
+近景 8,280 个三角面，远景 1,288 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 986,943 字节。上海主图现有 188 处独立入口，静安区 15 处。[资产清单](assets/models/candidates/jingan-villa-no25/manifest.json)
+
 # 愚谷村愚园路北弄门
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yugu-village-north-gate&mode=overview) · [单体旋转与下载](yugu-village-north-gate.html) · [来源与制作范围](source/precise/jingan-yugu-village-north-gate/README.md) · [验收记录](data/audit/yugu-village-north-gate-v1/README.md)
