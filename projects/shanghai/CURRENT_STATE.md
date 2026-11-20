@@ -1,3 +1,11 @@
+# 原英国驻沪领事馆办公主楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-british-consulate&mode=overview) · [单体旋转与下载](former-british-consulate.html) · [来源与制作范围](source/precise/huangpu-former-british-consulate/README.md) · [验收记录](data/audit/former-british-consulate-v1/README.md)
+
+对照中山东一路33号的两处保护门牌，核实原英国领事办公主楼及其可见外立面。
+
+近景 134,672 个三角面，远景 62,872 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 15,202,168 字节。上海主图现有 145 处独立入口，黄浦区 72 处。[资产清单](assets/models/candidates/huangpu-former-british-consulate/manifest.json)
+
 # 法公董局旧址（淮海中路保留立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-municipal-council-front&mode=overview) · [单体旋转与下载](french-municipal-council.html) · [来源与制作范围](source/precise/huangpu-french-municipal-council-front/README.md) · [验收记录](data/audit/french-municipal-council-v1/README.md)
