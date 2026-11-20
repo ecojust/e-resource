@@ -273,9 +273,9 @@ def street_index():
  for district in q['district_order']:
   lines.append(f"| {district} | {sum(x['district']==district for x in b.values())} | {sum(district in x['districts_indexed'] for x in roads['roads'])} | [ ] 待取得完整道路底册并逐条核对 |")
  pending=sum(not r['districts_indexed'] for r in roads['roads'])
- lines += ['',f"另有{pending}条道路名称线索未取得区属。分类区属、历史名称、跨区道路、同名路均待核验。下表地址匹配仅为名称子串命中，不能据此认定楼栋归属。",'',
- '[建筑线索详情与全部照片链接](discovered-buildings.json) · [道路机器可读索引](discovered-streets.json) · [制作队列](queue.json)','',
- '| 道路名称 | 区属线索 | 原文入口（待逐页审阅） | 名录地址匹配ID（待核） |','|---|---|---|---|']
+ lines += ['',f"原分类索引有{pending}条道路名称线索未给出区属。分类区属、历史名称、跨区道路、同名路均待核验。下表地址匹配仅为名称子串命中，不能据此认定楼栋归属。",'',
+ '[建筑线索详情与全部照片链接](discovered-buildings.json) · [道路机器可读索引](discovered-streets.json) · [制作队列](queue.json) · [994条道路链接的版本与沿街建筑核对](../audit/road-article-revisions-2026-11-20/README.md)','',
+ '| 道路名称 | 区属线索 | 道路或列表原文入口 | 名录地址匹配ID（待核） |','|---|---|---|---|']
  for r in roads['roads']:
   urls=([r['article_url']] if r.get('article_url') else [])+r.get('list_sources',[])+r.get('category_sources',[])
   refs=link('道路资料',urls[0]) if urls else '待查'
