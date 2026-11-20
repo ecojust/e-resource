@@ -1,3 +1,11 @@
+# 申报馆（东北转角入口与两侧临街立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shen-bao-building&mode=overview) · [单体旋转与下载](shen-bao-building.html) · [来源与制作范围](source/precise/huangpu-shen-bao-building/README.md) · [验收记录](data/audit/shen-bao-building-v1/README.md)
+
+汉口路309号申报馆的历史街面、门厅与转角，核定与印刷厂相接处的建筑边界。
+
+近景 41,640 个三角面，远景 36,680 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,122,913 字节。上海主图现有 142 处独立入口，黄浦区 69 处。[资产清单](assets/models/candidates/huangpu-shen-bao-building/manifest.json)
+
 # 德士古大楼（延安东路110号弧形街墙及入口）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-texaco-building&mode=overview) · [单体旋转与下载](texaco-building.html) · [来源与制作范围](source/precise/huangpu-texaco-building/README.md) · [验收记录](data/audit/texaco-building-v1/README.md)
