@@ -15,3 +15,7 @@
 从目录用键盘搜索“若瑟堂”时，清心堂及其局部裁切卸载，搜索“清心堂”可返回。16个地面位置中，中央题额下及其后的入口净空可通行，尽端、两梯与砖墙能阻挡移动，四处独立邻楼均保持碰撞。近景只裁338号的7个三角片，实际加载4段封边，并将远景切换到简化档。独立页在1250×820桌面和390×844手机各实点近、远两档；四个文件均经过浏览器下载、保存和逐字节核验。[键盘返回](final-map-24138/map-returned.png) · [城市检查细节](final-map-24138/main-browser.json) · [独立页四图及四下载](viewer.json) · [独立页桌面](viewer-desktop-full.png) · [独立页手机](viewer-mobile-full.png)
 
 此版正式站点的883个签名输入共834,133,249字节。首轮浏览器留存了前后10张图，周边城市模型及瓦片的48次请求因本地冻结底图缓存写满返回502，涉及34个不同网址。恢复两套底图缓存后，逐个实取这34个网址并与同一冻结提交的Git对象核对；另开浏览器复拍手机默认与全城远景，34个文件再次通过，页面、请求及控制台均无错误。[全站HTTP收据](final-map-24138/138-all-http.json) · [逐网址的恢复核对](final-map-24138/cache-recovery.json) · [恢复后手机](final-map-24138/restored-mobile-default.png) · [恢复后远景](final-map-24138/restored-distant.png) · [复测报告](final-map-24138/retest.json) · [结果汇总](final-map-24138/results.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/676052fc555609681b5f63f8bd2617aa64acc0ff/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
