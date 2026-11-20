@@ -37,3 +37,9 @@ python data/audit/concert-hall-v1/check-map-inputs.py verify \
 ```
 
 正式登记后的地图复核了本次浏览器使用的 150 项 HTTP 资源和 4 项目录生成输入，全部与实测版本一致。[正式登记输入核对](main-map-production-inputs.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 26 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/413694b1a740fd216a7ecf3c6d6b3519553cb9ec/projects/shanghai/index.html#landmark=huangpu-shanghai-concert-hall&mode=overview) · [固定版本逐文件核对](publication.json)
+
+同一组 154 项输入也已对照 GitHub 模型提交逐项复核。[提交输入核对](main-map-commit-inputs.json)
+
+首次读取 master 的 26 个链接时，12 项仍返回旧缓存。固定提交的链接已通过全部检查。[master 首次实测](publication-master-initial.json)

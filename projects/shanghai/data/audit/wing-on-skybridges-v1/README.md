@@ -15,3 +15,7 @@ Blender 重开了 87 组可编辑网格，按功能和开间保留砌体、窗�
 项目完整回归通过，含相机与地图碰撞、普通建筑模型目录和 20 项引用资料策略检查。[执行记录](package-regression.json)
 
 87 处入口的主图上，桌面与 390 像素竖屏实载桥身，鼠标与触屏均选中北桥。320 像素全市视图的常规截图超时，随后保存了同一状态的诊断图，并在独立会话点选 87 号、返回近景、下载四件文件逐一核验。桥下五个路面点通行，两侧楼内对照点保持碰撞。[分次浏览器实测](main-map-closure.json) · [截图与几何目检](main-map-visual-review.json) · [触屏与下载](touch-return.json) · [地图输入记录](main-map-sources.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 26 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0157505779cc4c95243ad88203b30ba9e297cfc8/projects/shanghai/index.html#landmark=huangpu-wing-on-skybridges&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次读取 master 的 26 个链接时，12 项仍返回旧缓存。固定提交的链接已通过全部检查。[master 首次实测](publication-master-initial.json)
