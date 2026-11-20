@@ -33,3 +33,7 @@ Blender重新打开原件，核对207个可编辑网格的带方向表面。原�
 在近景及远景分别从东一号楼点往美童公学，模型均离开，2076的候选裁切随即清空。相同地块原有的矢量状态与23127基线完全一致。再从地点列表返回，远景恢复58,980面，近景恢复165,976面以及五栋共用的近景组。四种下载已实际核对；两档城市源也与不可变的原始Git文件相符。[远档回返](city-24128/far-return-from-school.png) · [近档回返](city-24128/main-return-from-school.png) · [整套浏览器记录](city-24128/main-map-browser.json)
 
 24127与24128的城市登记由165处增至166处，前125条候选记录逐条相同。正式服务的803项输入留有版本签名；本次浏览器实际观察到的141条资源路径，连同额外实取的原始GLB和Blender下载，共143件、103,748,767字节，已独立重新下载并逐一校验。另有6个本地登记和几何输入完成字节核对。[版本与取景绑定](city-24128/release-binding.json) · [实测文件白名单和SHA-256](city-24128/main-map-inputs.json) · [可复跑的正式测试](check-final-main-map.cjs)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9adf9ece13cd72ce6249a752455bbd0c70bb5310/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 0 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

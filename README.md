@@ -3806,7 +3806,7 @@
 | 徐汇公学崇思楼（修复后南北立面与孟莎屋顶） | 2026-11-21 01:35:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) |
 | 交通大学徐汇校区老校门（南洋公学旧址） | 2026-11-21 01:50:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-nanyang-campus-gate&mode=overview) |
 | 美童公学主楼（衡山路10号） | 2026-11-21 02:03:30 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) |
-| 国立上海医学院东一号楼（草坪立面、歇山顶与两翼方亭） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) |
+| 国立上海医学院东一号楼（草坪立面、歇山顶与两翼方亭） | 2026-11-21 02:37:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) |
 
 ### 长宁区（7处）
 
