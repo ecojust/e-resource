@@ -1,3 +1,11 @@
+# 中南新邨9号木门与气窗
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongnan-village-no9-door&mode=overview) · [单体旋转与下载](zhongnan-village-no9.html) · [来源与制作范围](source/precise/xuhui-zhongnan-village-no9-door/README.md) · [验收记录](data/audit/zhongnan-village-no9-v1/README.md)
+
+市房管局2D010中南新村。按徐汇区房管局门牌实照核对淮海中路1670弄9号的深色木门、方折气窗与门牌，并复核双联住宅北面的分户位置。
+
+近景 1,580 个三角面，远景 980 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 295,776 字节。上海主图现有 194 处独立入口，徐汇区 18 处。[资产清单](assets/models/candidates/xuhui-zhongnan-village-no9-door/manifest.json)
+
 # 长乐邨93号丰子恺旧居（日月楼南庭院立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) · [单体旋转与下载](feng-zikai-riyue-lou.html) · [来源与制作范围](source/precise/huangpu-feng-zikai-riyue-lou/README.md) · [验收记录](data/audit/feng-zikai-riyue-lou-v1/README.md)

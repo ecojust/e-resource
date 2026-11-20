@@ -1,11 +1,11 @@
-import { createShanghaiScene } from './map-scene.js?v=feng-zikai-riyue-lou-v1-owner-index-v1-taiwan-facade-v1';
+import { createShanghaiScene } from './map-scene.js?v=zhongnan-village-no9-v1-owner-index-v1-taiwan-facade-v1';
 import { WalkController } from './walk-controller.js';
-import {setupHistoricalView} from './historical-view.js?v=feng-zikai-riyue-lou-v1';
+import {setupHistoricalView} from './historical-view.js?v=zhongnan-village-no9-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js?v=feng-zikai-riyue-lou-v1';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=zhongnan-village-no9-v1';
 import { readVerifiedBytes } from './ordinary-building-catalog.js?v=ordinary-metadata-sha-v1';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=feng-zikai-riyue-lou-v1';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=zhongnan-village-no9-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js?v=jewish-club-courtyard-v1-riyue-courtyard-v1';
 
 const $ = id => document.getElementById(id);
@@ -271,7 +271,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const metadataRevision=new URL(import.meta.url).search || '?v=feng-zikai-riyue-lou-v1-taiwan-facade-v1';
+    const metadataRevision=new URL(import.meta.url).search || '?v=zhongnan-village-no9-v1-taiwan-facade-v1';
     const responses=await Promise.all([
       ['data/districts.json'],['data/districts-display.geojson'],['data/landmarks.json',metadataRevision],
       ['data/scene-props.json'],['data/precise-buildings-v6.json',metadataRevision],['data/candidate-city-integrations.json',metadataRevision]
