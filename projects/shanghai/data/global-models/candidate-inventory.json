@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 88,
+  "candidate_manifest_count": 89,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 86,
-  "resulting_city_count": 126,
+  "new_city_model_count": 87,
+  "resulting_city_count": 127,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 37
+    "黄浦区": 38
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 352,
-    "bytes": 1059961496,
+    "files": 356,
+    "bytes": 1064614871,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 2870443,
+    "current_run_added_bytes": 4653375,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 220
+    "inherited_incremental_files": 224
   },
   "records": [
     {
@@ -7534,6 +7534,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "长阳路147号旧址的临街门楼，以档案照片和2014、2015年的实照核实石质门额、砖饰及凹槽。"
+    },
+    {
+      "id": "huangpu-bankers-association-building",
+      "name": "银行公会大楼（香港路五开间柱廊）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "bankers-association.html",
+      "manifest": "assets/models/candidates/huangpu-bankers-association-building/manifest.json",
+      "manifest_sha256": "f85a4e1133a0f909b943df0442d6d06bdd64d168b3aa65ce1da6cf0a02350544",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-bankers-association-building/huangpu-bankers-association-building-raw.glb",
+          "bytes": 2401216,
+          "sha256": "ec9b865eefd2cb20958cab525e0bc171e9644db1124575b557367935d663b1b4",
+          "triangles": 34016,
+          "bounds_gltf_m": [
+            [
+              -10.770000457763672,
+              0.0,
+              -4.215000152587891
+            ],
+            [
+              10.770000457763672,
+              13.05674934387207,
+              0.5899999737739563
+            ]
+          ],
+          "materials": 9
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-bankers-association-building/huangpu-bankers-association-building-web.glb",
+          "bytes": 1066624,
+          "sha256": "d1af9b22297c399c5589dfc029e308b53cb5402607332d312e2d4a7a7338cfa2",
+          "triangles": 34016,
+          "bounds_gltf_m": [
+            [
+              -10.7700005,
+              0,
+              -4.21500015
+            ],
+            [
+              10.7700005,
+              13.0567493,
+              0.589999974
+            ]
+          ],
+          "materials": 9
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-bankers-association-building/huangpu-bankers-association-building-lod.glb",
+          "bytes": 569600,
+          "sha256": "cc66d457e382887397baf66629623cecd61fccf0544843d0066bcae1df2c673c",
+          "triangles": 20280,
+          "bounds_gltf_m": [
+            [
+              -10.7700005,
+              0,
+              -4.21500015
+            ],
+            [
+              10.7700005,
+              13.0562687,
+              0.589999974
+            ]
+          ],
+          "materials": 9
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-bankers-association-building/huangpu-bankers-association-building.blend",
+          "bytes": 615935,
+          "sha256": "4772917c83da9c06ffc8009c28a4d27cbb2bb23809333b714dd5aaef39b6b6ab"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -10.770000457763672,
+            0.0,
+            -4.215000152587891
+          ],
+          "max": [
+            10.770000457763672,
+            13.05674934387207,
+            0.5899999737739563
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -10.770000457763672,
+            -0.5899999737739563,
+            0.0
+          ],
+          "max": [
+            10.770000457763672,
+            4.215000152587891,
+            13.05674934387207
+          ]
+        },
+        "triangles": 34016,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "香港路59号银行公会大楼历史临街外观，包括门廊四根圆柱、两端壁柱和五个开间。"
     }
   ],
   "baseline_inventory": {
@@ -7553,6 +7659,7 @@
     "projects/shanghai/assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-american-club/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-bankers-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json",
@@ -7600,13 +7707,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/tilanqiao-historic-front-v1",
+  "incremental_audit_directory": "data/audit/bankers-association-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/zhongshan-hospital-main-v1/inventory-increment.json",
-    "bytes": 186204,
-    "sha256": "492361d3a854775eda69eb417e3442286014033ac259de38cc8fa32e37141992"
+    "file": "data/audit/tilanqiao-historic-front-v1/inventory-increment.json",
+    "bytes": 189779,
+    "sha256": "0a70e19e2a928ef4b69c9a5157350bce490cdb7ec189e6b5fe800fc4b66f713e"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-bankers-association-building/manifest.json"
   ]
 }

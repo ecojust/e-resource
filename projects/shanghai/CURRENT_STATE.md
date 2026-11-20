@@ -1,3 +1,11 @@
+# 银行公会大楼（香港路五开间柱廊）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bankers-association-building&mode=overview) · [单体旋转与下载](bankers-association.html) · [来源与制作范围](source/precise/huangpu-bankers-association-building/README.md) · [验收记录](data/audit/bankers-association-v1/README.md)
+
+香港路59号银行公会大楼历史临街外观，包括门廊四根圆柱、两端壁柱和五个开间。
+
+近景 34,016 个三角面，远景 20,280 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,653,375 字节。上海主图现有 127 处独立入口，黄浦区 54 处。[资产清单](assets/models/candidates/huangpu-bankers-association-building/manifest.json)
+
 # 在外滩17号字林西报大楼原模型上细化临街两端首层的双扇翼门及门楣
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund17&mode=walk) · [四种模型下载](source/precise/bund17/revisions/street-wing-doors/manifest.json) · [来源与制作范围](source/precise/bund17/revisions/street-wing-doors/README.md) · [验收记录](data/audit/daily-news-wing-doors-v1/README.md)
