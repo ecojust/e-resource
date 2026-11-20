@@ -1,0 +1,247 @@
+{
+  "files": {
+    "qa-original": {
+      "check-sourced-candidate-map.cjs": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+      "check-sourced-candidate-runtime.mjs": "ba911850fcb7eb9ab686c3348e7052a048aeaaff85f5ebf5bf89cd4c619eabd6"
+    },
+    "qa-proposed": {
+      "check-sourced-candidate-map.cjs": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb",
+      "test-candidate-audit-groups.cjs": "c894cb72c5e48c9aa8ada50cc4d0f792f49c811f2c2f426c10cd20c6f8c83873",
+      "candidate-audit-groups.cjs": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534",
+      "check-sourced-candidate-runtime.mjs": "f067d5769d05c4545e14bd91e4c947e137048df79e3ca85d2a74d1ceea65068d"
+    }
+  },
+  "single_group_model": "xuhui-jianye-li-main-lane-gate",
+  "single_catalog_count": 190,
+  "single_other_fields_equal": true,
+  "conditional_check_regression_sha256": "d134f1060c64ef074e3bae0309d6c5adeb00cc8320cf9f994b10324519ba2561",
+  "old_regression_sha256": "57dfa0bf64042426f393d764d58c0058e7742babd3b8387812ba513ac589f34a",
+  "multi_fixture": "正式190入口目录加161的独立回放，原始生产目录和字节保留。最终160→161将另行回放。",
+  "multi_model": "xuhui-remi-apartments-181-183",
+  "before": [
+    {
+      "id": "14-13719-6695--2_0-s1-s0-s0",
+      "macro_id": "14-13719-6695",
+      "feature_local_ids": [
+        1460,
+        1592,
+        1368,
+        5082,
+        704,
+        2530,
+        3187,
+        4807,
+        2814,
+        2035,
+        3215,
+        2268
+      ],
+      "triangles": 0,
+      "clip_feature_local_ids": []
+    },
+    {
+      "id": "14-13719-6695--2_0-s1-s0-s1",
+      "macro_id": "14-13719-6695",
+      "feature_local_ids": [
+        2598,
+        1065,
+        159,
+        2786,
+        1317,
+        4793,
+        169,
+        3389,
+        11,
+        1108,
+        5377,
+        4854
+      ],
+      "triangles": 0,
+      "clip_feature_local_ids": []
+    }
+  ],
+  "after": [
+    {
+      "id": "14-13719-6695--2_0-s1-s0-s0",
+      "macro_id": "14-13719-6695",
+      "feature_local_ids": [
+        1460,
+        1592,
+        1368,
+        5082,
+        704,
+        2530,
+        3187,
+        4807,
+        2814,
+        2035,
+        3215,
+        2268
+      ],
+      "triangles": 2,
+      "clip_feature_local_ids": [
+        2268
+      ]
+    },
+    {
+      "id": "14-13719-6695--2_0-s1-s0-s1",
+      "macro_id": "14-13719-6695",
+      "feature_local_ids": [
+        2598,
+        1065,
+        159,
+        2786,
+        1317,
+        4793,
+        169,
+        3389,
+        11,
+        1108,
+        5377,
+        4854
+      ],
+      "triangles": 2,
+      "clip_feature_local_ids": [
+        2598
+      ]
+    }
+  ],
+  "positive_cases": 2,
+  "negative_cases": 6,
+  "installer_variants": [
+    {
+      "predecessor_sample_port": 15157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "e394a7c95d8abcc78d8606f2bcdcf3988c6604df56d9263d2fb5b6a08759a7b7",
+          "after": "b1048a1e5e4743c85187395651ea9678fa32db5bb09dc89d8533dc59fff20ade"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    },
+    {
+      "predecessor_sample_port": 17157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "e394a7c95d8abcc78d8606f2bcdcf3988c6604df56d9263d2fb5b6a08759a7b7",
+          "after": "b1048a1e5e4743c85187395651ea9678fa32db5bb09dc89d8533dc59fff20ade"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    },
+    {
+      "predecessor_sample_port": 18157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "e394a7c95d8abcc78d8606f2bcdcf3988c6604df56d9263d2fb5b6a08759a7b7",
+          "after": "b1048a1e5e4743c85187395651ea9678fa32db5bb09dc89d8533dc59fff20ade"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    },
+    {
+      "predecessor_sample_port": 19157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb",
+          "after": "bad9ff8eca37528b916d9a1faff61f7a9571fa7d253b45c0b5fe34913a1cd2fd"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    },
+    {
+      "predecessor_sample_port": 20157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb",
+          "after": "bad9ff8eca37528b916d9a1faff61f7a9571fa7d253b45c0b5fe34913a1cd2fd"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    },
+    {
+      "predecessor_sample_port": 21157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb",
+          "after": "bad9ff8eca37528b916d9a1faff61f7a9571fa7d253b45c0b5fe34913a1cd2fd"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    },
+    {
+      "predecessor_sample_port": 22157,
+      "changes": {
+        "tools/check-sourced-candidate-map.cjs": {
+          "before": "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9",
+          "after": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb"
+        },
+        "tools/check-sourced-candidate-runtime.mjs": {
+          "before": "ba911850fcb7eb9ab686c3348e7052a048aeaaff85f5ebf5bf89cd4c619eabd6",
+          "after": "f067d5769d05c4545e14bd91e4c947e137048df79e3ca85d2a74d1ceea65068d"
+        },
+        "tools/candidate-audit-groups.cjs": {
+          "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534"
+        }
+      },
+      "second_install_changed": 0,
+      "rejected_tamper": true
+    }
+  ],
+  "notes": "The single-group regression used the actual 190-entry scene. A private two-group add-on fixture ran before formal 160/161 hand-off. The formal paired report is written separately."
+}

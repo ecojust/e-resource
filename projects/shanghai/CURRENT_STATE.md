@@ -1,3 +1,11 @@
+# 永康新村永康路181、183号双门山墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-remi-apartments-181-183&mode=overview) · [单体旋转与下载](remi-apartments-181-183.html) · [来源与制作范围](source/precise/xuhui-remi-apartments-181-183/README.md) · [验收记录](data/audit/remi-apartments-181-183-v1/README.md)
+
+据1994年现场铭牌、可读门牌照片和建成住宅资料，核对永康路175弄沿街181及183号的筒瓦大券、独立门洞与上层山墙。
+
+近景 11,248 个三角面，远景 6,952 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,173,911 字节。上海主图现有 198 处独立入口，徐汇区 21 处。[资产清单](assets/models/candidates/xuhui-remi-apartments-181-183/manifest.json)
+
 # 永嘉新村15号拱廊与东端山墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongjia-village-no15&mode=overview) · [单体旋转与下载](yongjia-village-no15.html) · [来源与制作范围](source/precise/xuhui-yongjia-village-no15/README.md) · [验收记录](data/audit/yongjia-village-no15-v1/README.md)

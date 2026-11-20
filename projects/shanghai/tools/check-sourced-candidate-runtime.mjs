@@ -20,6 +20,7 @@ const ownerID=contract.owner.feature_local_id;
 const addedOwners=spec.addedOwners??[ownerID];
 const declaredOwners=(contract.owners??[contract.owner]).map(o=>o.feature_local_id);
 assert.deepEqual([...addedOwners].sort((a,b)=>a-b),[...declaredOwners].sort((a,b)=>a-b));
+const {sourceGroups,assertGroupDraws}= (await import('./candidate-audit-groups.cjs')).default;
 const review=read('source/precise/'+contract.id+'/footprint-review.json');
 const catalog=read('data/candidate-city-integrations.json'),model=catalog.models.find(r=>r.id===contract.id);
 for(const key of ['owner','source_feature_ids','replacement_geometry','collision_geometry','model_geometry_sha256'])
@@ -42,27 +43,40 @@ function evaluate(models){
   }
   const clipper=new CandidateCityClipper({THREE,geographicPosition});
   const source=review.near_tiles.find(g=>g.feature_local_ids.includes(ownerID));
-  assert.ok(addedOwners.every(id=>source.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');
-  const cube=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());
-  clipper.bindObject(cube,{id:source.id,parent:{id:review.frozen_macro},ids:source.feature_local_ids});
-  const adjacentGroup=review.near_tiles.find(g=>!g.feature_local_ids.includes(ownerID));
-  const second=adjacentGroup&&new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());
-  if(second)clipper.bindObject(second,{id:adjacentGroup.id,parent:{id:review.frozen_macro},ids:adjacentGroup.feature_local_ids});
+  const targetGroups=sourceGroups(review,contract,spec);
+  const sourceIds=new Set(targetGroups.map(g=>g.id));
+  const adjacentGroup=review.near_tiles.find(g=>!sourceIds.has(g.id));
+  const groups=[...targetGroups.map(g=>g.tile),...(adjacentGroup?[adjacentGroup]:[])];
+  const meshes=groups.map(group=>{
+    const mesh=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());
+    clipper.bindObject(mesh,{id:group.id,parent:{id:review.frozen_macro},ids:group.feature_local_ids});
+    return mesh;
+  });
   clipper.update([...base.values(),...models.flatMap(r=>r.display_height_clips||[])]);
   const state=clipper.getState();
   const counts=[...clipper.macroTables.values()].map(t=>t.triangles);
   const result={triangles:state.triangles,perDrawLimit:state.triangleLimit,macroTextures:state.macroTextures,
     largestFeatureScan:Math.max(clipper.defaultTable.maxFeatureSpan,...[...clipper.macroTables.values()].map(t=>t.maxFeatureSpan)),
     denseMacroTables:state.denseMacroTables,macroTriangleCounts:counts.sort((a,b)=>b-a),largestShaderTable:Math.max(clipper.defaultTable.triangles,...counts),
-    scopedTargetDraw:state.ownerScopedSources[0],adjacentDraw:state.ownerScopedSources[1]??null};
-  clipper.dispose();cube.geometry.dispose();cube.material.dispose();if(second){second.geometry.dispose();second.material.dispose();}return result;
+    scopedTargetDraw:state.ownerScopedSources.find(g=>g.id===source.id),
+    adjacentDraw:adjacentGroup?state.ownerScopedSources.find(g=>g.id===adjacentGroup.id):null,
+    ...(spec.groups?{streamedGroups:state.ownerScopedSources.filter(g=>sourceIds.has(g.id))}:{})};
+  clipper.dispose();
+  for(const mesh of meshes){mesh.geometry.dispose();mesh.material.dispose();}
+  return result;
 }
 const before=evaluate(catalog.models.filter(r=>r.id!==contract.id)),after=evaluate(catalog.models);
 assert.equal(after.triangles-before.triangles,spec.addedTriangles??spec.groupTriangles);assert.ok(after.triangles>after.perDrawLimit);
 assert.ok(after.macroTextures>1&&after.largestFeatureScan<=after.perDrawLimit);
+if(spec.groups){
+  const groups=sourceGroups(review,contract,spec);
+  assertGroupDraws(groups,before.streamedGroups,true);
+  assertGroupDraws(groups,after.streamedGroups,false);
+}else{
 const oldOwners=spec.existingGroupOwners||[];
 assert.deepEqual([...after.scopedTargetDraw.clip_feature_local_ids].sort((a,b)=>a-b),[...oldOwners,...addedOwners].sort((a,b)=>a-b));assert.equal(after.scopedTargetDraw.triangles,spec.groupTriangles);
 assert.deepEqual(before.scopedTargetDraw.clip_feature_local_ids,oldOwners);
+}
 if(after.adjacentDraw)assert.deepEqual(after.adjacentDraw,before.adjacentDraw);
 const clip={...model,geometry:model.replacement_geometry};
 const targets=new Set(addedOwners);
@@ -80,8 +94,9 @@ for(const source of ['overture-buildings','openmaptiles']){
     if(partial){
       const retained=plan.residualData.features[0].geometry;
       for(const p of retainedProbes)assert.equal(candidateGeometryContains(retained,point(...p.xy)),true,p.name);
-      const cutProbe=spec.residualCutProbe===undefined?[0,0]:spec.residualCutProbe;
-      if(spec.residualCutProbe!==undefined){
+      const declaredProbe=spec.residualCutProbes?.[owner.local_id] ?? spec.residualCutProbe;
+      const cutProbe=declaredProbe ?? [0,0];
+      if(declaredProbe!==undefined){
         assert.ok(Array.isArray(cutProbe)&&cutProbe.length===2&&cutProbe.every(Number.isFinite),'Expected finite residualCutProbe in local metres');
         const removedPoint=point(...cutProbe);
         assert.ok(candidateGeometryContains(geometry,removedPoint),'Removed probe outside original owner');

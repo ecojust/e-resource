@@ -1,0 +1,178 @@
+{
+  "tools/check-sourced-candidate-map.cjs": {
+    "94bbc99e1ce1ee88308dcfee1514e8557275a7d74014c0e3ead8089e5f44e2e9": {
+      "result_sha256": "395f642de0070f1a7548cf93108d9e1a02f326a65279101e87a9fb4644c2e2fb",
+      "edits": [
+        {
+          "line": 29,
+          "remove": "assert.ok(addedOwners.every(id=>group.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');\n",
+          "insert": "const {sourceGroups,assertGroupDraws}=require('./candidate-audit-groups.cjs');\nconst groupCases=sourceGroups(review,contract,spec);\nconst primaryCase=groupCases.find(g=>g.id===group.id);\n"
+        },
+        {
+          "line": 70,
+          "remove": "  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,owner:source,extraOwners,neighbors,adjacentID:spec.adjacentModel};\n",
+          "insert": "  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,groupCases,owner:source,extraOwners,neighbors,adjacentID:spec.adjacentModel};\n"
+        },
+        {
+          "line": 73,
+          "remove": "    await page.waitForFunction(({selected,variant,detail,macro,group,owner,control,adjacentID})=>{\n",
+          "insert": "    await page.waitForFunction(({selected,variant,detail,macro,group,groupCases,owner,control,adjacentID})=>{\n"
+        },
+        {
+          "line": 81,
+          "remove": "      const active=c.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group);\n",
+          "insert": "      const activeGroups=groupCases.every(g=>{\n        const key=macro+'/'+g.id, draw=c.shader.ownerScopedSources.find(v=>v.id===key);\n        return t.detail.active.some(v=>v.id===key) && draw && (control || g.addedOwners.every(id=>draw.clip_feature_local_ids.includes(id)));\n      });\n"
+        },
+        {
+          "line": 83,
+          "remove": "        && active && (control||active.clip_feature_local_ids.includes(owner.local_id))\n",
+          "insert": "        && activeGroups\n"
+        },
+        {
+          "line": 99,
+          "remove": "    const state=await page.evaluate(({id,selected,macro,group,owner,extraOwners,neighbors,adjacentID})=>{\n",
+          "insert": "    const state=await page.evaluate(({id,selected,macro,group,groupCases,owner,extraOwners,neighbors,adjacentID})=>{\n"
+        },
+        {
+          "line": 107,
+          "remove": "        group:ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group)||null,shader:{triangles:ci.shader.triangles,limit:ci.shader.triangleLimit,macroTextures:ci.shader.macroTextures??null},\n",
+          "insert": "        group:ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group)||null,\n        ...(groupCases.length>1?{streamedGroups:groupCases.map(g=>ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+g.id)||null)}:{}),shader:{triangles:ci.shader.triangles,limit:ci.shader.triangleLimit,macroTextures:ci.shader.macroTextures??null},\n"
+        },
+        {
+          "line": 117,
+          "remove": "",
+          "insert": "      if(spec.groups)assertGroupDraws(groupCases,state.streamedGroups||[state.group],control);\n"
+        },
+        {
+          "line": 142,
+          "remove": "      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...(spec.existingGroupOwners||[]),...addedOwners].sort((a,b)=>a-b));assert.equal(state.group.triangles,spec.groupTriangles);if(spec.sourceSectionCount){\n",
+          "insert": "      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...primaryCase.existingOwners,...primaryCase.addedOwners].sort((a,b)=>a-b));assert.equal(state.group.triangles,primaryCase.groupTriangles);if(spec.sourceSectionCount){\n"
+        },
+        {
+          "line": 196,
+          "remove": "    for(const rec of review.frozen_bindings.filter(r=>r.repository_path.endsWith('/far.glb')||r.repository_path.endsWith('/'+group.file)))\n",
+          "insert": "    for(const rec of review.frozen_bindings.filter(r=>r.repository_path.endsWith('/far.glb')||groupCases.some(g=>r.repository_path.endsWith('/'+g.tile.file))))\n"
+        }
+      ]
+    }
+  },
+  "tools/check-sourced-candidate-runtime.mjs": {
+    "ba911850fcb7eb9ab686c3348e7052a048aeaaff85f5ebf5bf89cd4c619eabd6": {
+      "result_sha256": "f067d5769d05c4545e14bd91e4c947e137048df79e3ca85d2a74d1ceea65068d",
+      "edits": [
+        {
+          "line": 22,
+          "remove": "",
+          "insert": "const {sourceGroups,assertGroupDraws}= (await import('./candidate-audit-groups.cjs')).default;\n"
+        },
+        {
+          "line": 44,
+          "remove": "  assert.ok(addedOwners.every(id=>source.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');\n  const cube=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n  clipper.bindObject(cube,{id:source.id,parent:{id:review.frozen_macro},ids:source.feature_local_ids});\n  const adjacentGroup=review.near_tiles.find(g=>!g.feature_local_ids.includes(ownerID));\n  const second=adjacentGroup&&new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n  if(second)clipper.bindObject(second,{id:adjacentGroup.id,parent:{id:review.frozen_macro},ids:adjacentGroup.feature_local_ids});\n",
+          "insert": "  const targetGroups=sourceGroups(review,contract,spec);\n  const sourceIds=new Set(targetGroups.map(g=>g.id));\n  const adjacentGroup=review.near_tiles.find(g=>!sourceIds.has(g.id));\n  const groups=[...targetGroups.map(g=>g.tile),...(adjacentGroup?[adjacentGroup]:[])];\n  const meshes=groups.map(group=>{\n    const mesh=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n    clipper.bindObject(mesh,{id:group.id,parent:{id:review.frozen_macro},ids:group.feature_local_ids});\n    return mesh;\n  });\n"
+        },
+        {
+          "line": 56,
+          "remove": "    scopedTargetDraw:state.ownerScopedSources[0],adjacentDraw:state.ownerScopedSources[1]??null};\n  clipper.dispose();cube.geometry.dispose();cube.material.dispose();if(second){second.geometry.dispose();second.material.dispose();}return result;\n",
+          "insert": "    scopedTargetDraw:state.ownerScopedSources.find(g=>g.id===source.id),\n    adjacentDraw:adjacentGroup?state.ownerScopedSources.find(g=>g.id===adjacentGroup.id):null,\n    ...(spec.groups?{streamedGroups:state.ownerScopedSources.filter(g=>sourceIds.has(g.id))}:{})};\n  clipper.dispose();\n  for(const mesh of meshes){mesh.geometry.dispose();mesh.material.dispose();}\n  return result;\n"
+        },
+        {
+          "line": 62,
+          "remove": "",
+          "insert": "if(spec.groups){\n  const groups=sourceGroups(review,contract,spec);\n  assertGroupDraws(groups,before.streamedGroups,true);\n  assertGroupDraws(groups,after.streamedGroups,false);\n}else{\n"
+        },
+        {
+          "line": 65,
+          "remove": "",
+          "insert": "}\n"
+        },
+        {
+          "line": 82,
+          "remove": "      const cutProbe=spec.residualCutProbe===undefined?[0,0]:spec.residualCutProbe;\n      if(spec.residualCutProbe!==undefined){\n",
+          "insert": "      const declaredProbe=spec.residualCutProbes?.[owner.local_id] ?? spec.residualCutProbe;\n      const cutProbe=declaredProbe ?? [0,0];\n      if(declaredProbe!==undefined){\n"
+        }
+      ]
+    },
+    "e394a7c95d8abcc78d8606f2bcdcf3988c6604df56d9263d2fb5b6a08759a7b7": {
+      "result_sha256": "b1048a1e5e4743c85187395651ea9678fa32db5bb09dc89d8533dc59fff20ade",
+      "edits": [
+        {
+          "line": 22,
+          "remove": "",
+          "insert": "const {sourceGroups,assertGroupDraws}= (await import('./candidate-audit-groups.cjs')).default;\n"
+        },
+        {
+          "line": 44,
+          "remove": "  assert.ok(addedOwners.every(id=>source.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');\n  const cube=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n  clipper.bindObject(cube,{id:source.id,parent:{id:review.frozen_macro},ids:source.feature_local_ids});\n  const adjacentGroup=review.near_tiles.find(g=>!g.feature_local_ids.includes(ownerID));\n  const second=adjacentGroup&&new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n  if(second)clipper.bindObject(second,{id:adjacentGroup.id,parent:{id:review.frozen_macro},ids:adjacentGroup.feature_local_ids});\n",
+          "insert": "  const targetGroups=sourceGroups(review,contract,spec);\n  const sourceIds=new Set(targetGroups.map(g=>g.id));\n  const adjacentGroup=review.near_tiles.find(g=>!sourceIds.has(g.id));\n  const groups=[...targetGroups.map(g=>g.tile),...(adjacentGroup?[adjacentGroup]:[])];\n  const meshes=groups.map(group=>{\n    const mesh=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n    clipper.bindObject(mesh,{id:group.id,parent:{id:review.frozen_macro},ids:group.feature_local_ids});\n    return mesh;\n  });\n"
+        },
+        {
+          "line": 55,
+          "remove": "    scopedTargetDraw:state.ownerScopedSources[0],adjacentDraw:state.ownerScopedSources[1]??null};\n  clipper.dispose();cube.geometry.dispose();cube.material.dispose();if(second){second.geometry.dispose();second.material.dispose();}return result;\n",
+          "insert": "    scopedTargetDraw:state.ownerScopedSources.find(g=>g.id===source.id),\n    adjacentDraw:adjacentGroup?state.ownerScopedSources.find(g=>g.id===adjacentGroup.id):null,\n    ...(spec.groups?{streamedGroups:state.ownerScopedSources.filter(g=>sourceIds.has(g.id))}:{})};\n  clipper.dispose();\n  for(const mesh of meshes){mesh.geometry.dispose();mesh.material.dispose();}\n  return result;\n"
+        },
+        {
+          "line": 61,
+          "remove": "",
+          "insert": "if(spec.groups){\n  const groups=sourceGroups(review,contract,spec);\n  assertGroupDraws(groups,before.streamedGroups,true);\n  assertGroupDraws(groups,after.streamedGroups,false);\n}else{\n"
+        },
+        {
+          "line": 64,
+          "remove": "",
+          "insert": "}\n"
+        },
+        {
+          "line": 81,
+          "remove": "      assert.equal(candidateGeometryContains(retained,point(0,0)),false);\n",
+          "insert": "      const cutProbe=spec.residualCutProbes?.[owner.local_id] ?? [0,0];\n      if(spec.residualCutProbes?.[owner.local_id]){\n        assert.ok(cutProbe.length===2 && cutProbe.every(Number.isFinite));\n        assert.ok(candidateGeometryContains(geometry,point(...cutProbe)));\n        assert.ok(candidateGeometryContains(clip.geometry,point(...cutProbe)));\n      }\n      assert.equal(candidateGeometryContains(retained,point(...cutProbe)),false);\n"
+        }
+      ]
+    },
+    "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb": {
+      "result_sha256": "bad9ff8eca37528b916d9a1faff61f7a9571fa7d253b45c0b5fe34913a1cd2fd",
+      "edits": [
+        {
+          "line": 22,
+          "remove": "",
+          "insert": "const {sourceGroups,assertGroupDraws}= (await import('./candidate-audit-groups.cjs')).default;\n"
+        },
+        {
+          "line": 44,
+          "remove": "  assert.ok(addedOwners.every(id=>source.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');\n  const cube=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n  clipper.bindObject(cube,{id:source.id,parent:{id:review.frozen_macro},ids:source.feature_local_ids});\n  const adjacentGroup=review.near_tiles.find(g=>!g.feature_local_ids.includes(ownerID));\n  const second=adjacentGroup&&new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n  if(second)clipper.bindObject(second,{id:adjacentGroup.id,parent:{id:review.frozen_macro},ids:adjacentGroup.feature_local_ids});\n",
+          "insert": "  const targetGroups=sourceGroups(review,contract,spec);\n  const sourceIds=new Set(targetGroups.map(g=>g.id));\n  const adjacentGroup=review.near_tiles.find(g=>!sourceIds.has(g.id));\n  const groups=[...targetGroups.map(g=>g.tile),...(adjacentGroup?[adjacentGroup]:[])];\n  const meshes=groups.map(group=>{\n    const mesh=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());\n    clipper.bindObject(mesh,{id:group.id,parent:{id:review.frozen_macro},ids:group.feature_local_ids});\n    return mesh;\n  });\n"
+        },
+        {
+          "line": 55,
+          "remove": "    scopedTargetDraw:state.ownerScopedSources[0],adjacentDraw:state.ownerScopedSources[1]??null};\n  clipper.dispose();cube.geometry.dispose();cube.material.dispose();if(second){second.geometry.dispose();second.material.dispose();}return result;\n",
+          "insert": "    scopedTargetDraw:state.ownerScopedSources.find(g=>g.id===source.id),\n    adjacentDraw:adjacentGroup?state.ownerScopedSources.find(g=>g.id===adjacentGroup.id):null,\n    ...(spec.groups?{streamedGroups:state.ownerScopedSources.filter(g=>sourceIds.has(g.id))}:{})};\n  clipper.dispose();\n  for(const mesh of meshes){mesh.geometry.dispose();mesh.material.dispose();}\n  return result;\n"
+        },
+        {
+          "line": 61,
+          "remove": "",
+          "insert": "if(spec.groups){\n  const groups=sourceGroups(review,contract,spec);\n  assertGroupDraws(groups,before.streamedGroups,true);\n  assertGroupDraws(groups,after.streamedGroups,false);\n}else{\n"
+        },
+        {
+          "line": 64,
+          "remove": "",
+          "insert": "}\n"
+        },
+        {
+          "line": 81,
+          "remove": "      const cutProbe=spec.residualCutProbe===undefined?[0,0]:spec.residualCutProbe;\n      if(spec.residualCutProbe!==undefined){\n",
+          "insert": "      const declaredProbe=spec.residualCutProbes?.[owner.local_id] ?? spec.residualCutProbe;\n      const cutProbe=declaredProbe ?? [0,0];\n      if(declaredProbe!==undefined){\n"
+        }
+      ]
+    }
+  },
+  "tools/candidate-audit-groups.cjs": {
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": {
+      "result_sha256": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534",
+      "edits": [
+        {
+          "line": 0,
+          "remove": "",
+          "insert": "const assert = require('node:assert/strict');\n\nfunction sorted(ids) {\n  return [...ids].sort((a, b) => a - b);\n}\n\nfunction sourceGroups(review, contract, spec) {\n  const all = (contract.owners || [contract.owner]).map(owner => owner.feature_local_id);\n  const primary = review.near_tiles.find(tile => tile.feature_local_ids.includes(contract.owner.feature_local_id));\n  assert.ok(primary, 'Primary owner has no streamed group');\n  const supplied = spec.groups || [{\n    id: primary.id, addedOwners: spec.addedOwners || all,\n    existingOwners: spec.existingGroupOwners || [],\n    addedTriangles: spec.addedTriangles ?? spec.groupTriangles,\n    groupTriangles: spec.groupTriangles\n  }];\n  assert.equal(new Set(supplied.map(row => row.id)).size, supplied.length, 'Duplicate source group');\n  const groups = supplied.map(row => {\n    const tile = review.near_tiles.find(tile => tile.id === row.id);\n    assert.ok(tile, 'Missing source group '+row.id);\n    assert.ok(row.addedOwners.length && row.addedOwners.every(id => tile.feature_local_ids.includes(id)), 'Owner missing in '+row.id);\n    if (spec.groups) {\n      assert.ok(Number.isInteger(row.addedTriangles) && row.addedTriangles > 0, 'Invalid increase in '+row.id);\n      assert.ok(Number.isInteger(row.groupTriangles) && row.groupTriangles >= row.addedTriangles, 'Invalid total in '+row.id);\n    }\n    return {...row, tile, existingOwners:row.existingOwners || []};\n  });\n  assert.deepEqual(sorted(groups.flatMap(g => g.addedOwners)), sorted(all), 'Coverage must include each contract owner once');\n  if (spec.groups) assert.equal(groups.reduce((sum,g) => sum + g.addedTriangles,0), spec.addedTriangles, 'Group deltas differ from catalog increase');\n  return groups;\n}\n\nfunction assertGroupDraws(groups, draws, control) {\n  for (const group of groups) {\n    const draw = draws.find(value => value && (value.id === group.id || value.id.endsWith('/'+group.id)));\n    assert.ok(draw, 'Group was not drawn '+group.id);\n    assert.deepEqual(draw.feature_local_ids, group.tile.feature_local_ids, group.id);\n    const owners = control ? group.existingOwners : [...group.existingOwners, ...group.addedOwners];\n    assert.deepEqual(sorted(draw.clip_feature_local_ids), sorted(owners), group.id);\n    assert.equal(draw.triangles, group.groupTriangles - (control ? group.addedTriangles : 0), group.id);\n  }\n}\nmodule.exports = {sourceGroups, assertGroupDraws};\n"
+        }
+      ]
+    }
+  }
+}

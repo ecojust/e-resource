@@ -27,7 +27,9 @@ const source = review.owners.find(r => r.local_id===contract.owner.feature_local
 const addedOwners=spec.addedOwners??[source.local_id];
 const declaredOwners=(contract.owners??[contract.owner]).map(o=>o.feature_local_id);
 assert.deepEqual([...addedOwners].sort((a,b)=>a-b),[...declaredOwners].sort((a,b)=>a-b));
-assert.ok(addedOwners.every(id=>group.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');
+const {sourceGroups,assertGroupDraws}=require('./candidate-audit-groups.cjs');
+const groupCases=sourceGroups(review,contract,spec);
+const primaryCase=groupCases.find(g=>g.id===group.id);
 const extraOwners=review.owners.filter(r=>r.local_id!==source.local_id&&addedOwners.includes(r.local_id));
 const neighbors = review.owners.filter(r=>spec.neighbors.includes(r.local_id));
 const point = (x,y) => {
@@ -68,10 +70,10 @@ async function run() {
   page.on('requestfailed',r=>{if(r.failure()?.errorText!=='net::ERR_ABORTED')result.failed.push({url:r.url(),failure:r.failure()});});
   page.on('response',r=>{const u=new URL(r.url());if(r.status()>=400)result.failed.push({url:r.url(),status:r.status()});
     if(u.origin===new URL(base).origin&&r.status()===200)received.add(decodeURIComponent(u.pathname.slice(1)));});
-  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,owner:source,extraOwners,neighbors,adjacentID:spec.adjacentModel};
+  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,groupCases,owner:source,extraOwners,neighbors,adjacentID:spec.adjacentModel};
   const manifest = row && read(row.candidate_manifest);
   async function settle(variant,detail=false){
-    await page.waitForFunction(({selected,variant,detail,macro,group,owner,control,adjacentID})=>{
+    await page.waitForFunction(({selected,variant,detail,macro,group,groupCases,owner,control,adjacentID})=>{
       const s=window.__SHANGHAI_APP__?.scene;
       if(!s||s.map.isMoving())return false;
       const a=s.getLandmarkAssetState(selected);
@@ -79,9 +81,12 @@ async function run() {
       if(!detail)return true;
       if(adjacentID&&!s.getLandmarkAssetState(adjacentID)?.visible)return false;
       const c=s.getCandidateIntegrationState(),t=s.getStreamingState();
-      const active=c.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group);
+      const activeGroups=groupCases.every(g=>{
+        const key=macro+'/'+g.id, draw=c.shader.ownerScopedSources.find(v=>v.id===key);
+        return t.detail.active.some(v=>v.id===key) && draw && (control || g.addedOwners.every(id=>draw.clip_feature_local_ids.includes(id)));
+      });
       return t.active.some(t=>t.id===macro&&t.visible)&&t.detail.active.some(t=>t.id===macro+'/'+group)
-        && active && (control||active.clip_feature_local_ids.includes(owner.local_id))
+        && activeGroups
         &&c.vector.filter(v=>v.active).every(v=>!v.pending&&!v.residualLayer?.busy&&(!v.partialIDs||v.residualLayer?.ready));
     },{...context,variant,detail},{polling:400,timeout:240000});
     await page.evaluate(()=>new Promise(resolve=>{const m=window.__SHANGHAI_APP__.scene.map;m.once('render',()=>resolve());m.triggerRepaint();}));
@@ -97,7 +102,7 @@ async function run() {
       },{...context,expected:spec.sourceSectionCount},{polling:400,timeout:240000});
     }
     console.log('[map]',name);
-    const state=await page.evaluate(({id,selected,macro,group,owner,extraOwners,neighbors,adjacentID})=>{
+    const state=await page.evaluate(({id,selected,macro,group,groupCases,owner,extraOwners,neighbors,adjacentID})=>{
       const app=window.__SHANGHAI_APP__,s=app.scene,m=s.map,beacons=s.getBuildingBeaconState(),ci=s.getCandidateIntegrationState();
       const sourceState=o=>m.getFeatureState({source:'overture-buildings',sourceLayer:'building',id:o.key.slice(9)});
       const label=beacons.labelPositions.find(z=>z.id===selected),gl=m.painter.context.gl;
@@ -105,7 +110,8 @@ async function run() {
         walkDisabled:document.querySelector('#start-walk').disabled,asset:s.getLandmarkAssetState(selected),source:sourceState(owner),
         ...(extraOwners.length?{extraOwnerStates:extraOwners.map(o=>({local_id:o.local_id,state:sourceState(o)}))}:{}),
         adjacentAsset:adjacentID?s.getLandmarkAssetState(adjacentID):undefined,neighbors:neighbors.map(o=>({local_id:o.local_id,state:sourceState(o)})),sections:ci.sourceSections?.filter(x=>x.id===id)??[],clip:ci.clips.find(c=>c.id===id)||null,
-        group:ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group)||null,shader:{triangles:ci.shader.triangles,limit:ci.shader.triangleLimit,macroTextures:ci.shader.macroTextures??null},
+        group:ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group)||null,
+        ...(groupCases.length>1?{streamedGroups:groupCases.map(g=>ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+g.id)||null)}:{}),shader:{triangles:ci.shader.triangles,limit:ci.shader.triangleLimit,macroTextures:ci.shader.macroTextures??null},
         labels:beacons.count,pick:label?s.pickBuildingBeacon(label):null,camera:{center:m.getCenter(),elevation:m.getCenterElevation(),pitch:m.getPitch(),bearing:m.getBearing(),zoom:m.getZoom()},
         glError:gl.getError(),contextLost:gl.isContextLost()};
     },context);
@@ -115,6 +121,7 @@ async function run() {
     for(const n of state.neighbors){if(!spec.existingCandidateOwners?.includes(n.local_id))assert.notEqual(n.state.candidateModel,true);}
     if(detail){
       assert.deepEqual(state.group.feature_local_ids,group.feature_local_ids);
+      if(spec.groups)assertGroupDraws(groupCases,state.streamedGroups||[state.group],control);
       if(spec.adjacentModel){
         const adjacent=catalog.models.find(model=>model.id===spec.adjacentModel);
         const seen=state.adjacentAsset;
@@ -140,7 +147,7 @@ async function run() {
       assert.equal(state.asset.verifiedAsset.sha256,row.assets[variant].sha256);assert.equal(state.asset.triangles,row.assets[variant].triangles);
       assert.deepEqual(state.asset.anchor,[row.lng,row.lat]);assert.equal(state.asset.heading,row.heading);
       assert.deepEqual(state.clip.owner,row.owner);assert.deepEqual(state.clip.geometry,row.replacement_geometry);
-      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...(spec.existingGroupOwners||[]),...addedOwners].sort((a,b)=>a-b));assert.equal(state.group.triangles,spec.groupTriangles);if(spec.sourceSectionCount){
+      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...primaryCase.existingOwners,...primaryCase.addedOwners].sort((a,b)=>a-b));assert.equal(state.group.triangles,primaryCase.groupTriangles);if(spec.sourceSectionCount){
         assert.equal(state.sections.length,1);
         const section=state.sections[0];
         assert.equal(section.feature_local_id,source.local_id);
@@ -194,7 +201,7 @@ async function run() {
         await receipt(f,{bytes:size,sha256:digest},false);
       }
     }
-    for(const rec of review.frozen_bindings.filter(r=>r.repository_path.endsWith('/far.glb')||r.repository_path.endsWith('/'+group.file)))
+    for(const rec of review.frozen_bindings.filter(r=>r.repository_path.endsWith('/far.glb')||groupCases.some(g=>r.repository_path.endsWith('/'+g.tile.file))))
       await receipt(rec.repository_path.replace('projects/shanghai/',''),rec,true);
     assert.deepEqual(result.errors,[]);assert.deepEqual(result.failed,[]);result.completed=true;
    }catch(e){result.failure=e.stack;result.failureState=await page.evaluate(({id,selected,group,macro})=>{
