@@ -20,3 +20,7 @@
 最终场景又通过HTTP逐项读取了13个文件，其中包括本次修改涉及的文件和这栋建筑的四种资产。实收7,453,649字节，均与冻结清单或原文件签名一致。[逐文件核对](revised-scene-http.json)
 
 在正式110处目录（SHA-256 以 b0968aad 开头）内，用390像素宽的手机从分区目录点选董家渡天主堂。开场画面退去、邻楼近景加载完毕后，两侧小门、中央门额、双塔和钟面都在画面中，邻楼854的屋顶位于主入口下方。此处记录本次浏览器会话的两张手机截图。[手机正式取景](mobile-default/map-mobile-with-neighbors.png) · [到站时](mobile-default/map-mobile.png) · [截图时的浏览器记录](mobile-default/browser-at-capture.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/7215b7a121cec90a70c4680412eb6be7afe3c024/projects/shanghai/index.html#landmark=huangpu-dongjiadu-cathedral&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
