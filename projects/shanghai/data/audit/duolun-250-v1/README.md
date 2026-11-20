@@ -31,3 +31,7 @@ node data/audit/duolun-250-v1/check-vector.mjs /tmp/duolun-vector.json /tmp/duol
 原生高精度图块就绪后，包含13栋房屋的共享组仅裁掉808，保留另12个对象。街面、圆角释放的步行空间及554、2136、2942三栋邻楼在七处地面实测中均符合预期。135°特写覆盖了真实弧墙，前景邻楼的窗框线遮挡部分立面。140°屋顶机位被保留高楼的屋面遮挡，无法用该图辨认住宅的屋面细部。远景切到51,804面的LOD，四件下载的文件尺寸及摘要全部相符。[带邻楼的街面图](northwest-door-and-arcades.png) · [屋顶遮挡对照](curved-roof-and-neighbors.png) · [真实远档](distant.png) · [145项HTTP与运行输入](main-map-inputs.json)
 
 原132°机位在窄桌面主要显示街对面楼墙。调整预设时用旧版同一真实场景保留了对照图。老版手机的完整名称盖住部分上层窗，促成了选中单栋时的名称避让。[旧桌面默认图](preflight/original-overview/original-desktop.png) · [旧名称位置](preflight/original-overview/calibrated-phone-old-label.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9e826f92db4227ed84e51e056bf0355b162daa35/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

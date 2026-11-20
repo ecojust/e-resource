@@ -3837,7 +3837,7 @@
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
 | 上海邮政总局历史主楼与钟塔 | 2026-11-06 22:22:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-general-post-office&mode=overview) |
-| 多伦路250号住宅（弧形街面与中门） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) |
+| 多伦路250号住宅（弧形街面与中门） | 2026-11-20 16:40:49 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) |
 
 ### 杨浦区（7处）
 
