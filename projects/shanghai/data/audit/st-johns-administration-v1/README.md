@@ -13,3 +13,7 @@
 在1250×820桌面和390×844手机上，通过独立页切换了近景与远景。四张实图中均可辨认望楼、南廊及右侧车道雨篷。页面四项下载的实际字节均与清单一致。[桌面近景](viewer-desktop-full.png) · [手机近景](viewer-mobile-full.png) · [桌面远景](viewer-desktop-lod.png) · [手机远景](viewer-mobile-lod.png) · [浏览器与下载收据](viewer.json)
 
 在161处和162处的正式主地图用同一校园街区作前后对照。加入四号楼后，手机与桌面能看到南廊格栏、望楼和东端车道雨篷，拉远时实际切至20,272面的远景资源。24个地面采样点与预期一致。两版最终检测均无报错，首次前态旁侧瓦片的502和随后复取的原始散列一并留存。[原城市街块](city-23124/map-before.png) · [手机](city-23124/map-mobile.png) · [桌面](city-23124/map-desktop.png) · [南廊近景](city-23124/map-street-facade.png) · [屋顶](city-23124/map-roof.png) · [远景](city-23124/map-distant.png) · [浏览器与下载](city-23124/main-browser.json) · [视图与签名](city-23124/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/15028d8b4c4fbd8b430b7f4f1b794bde372214ab/projects/shanghai/index.html#landmark=changning-st-johns-administration-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
