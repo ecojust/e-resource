@@ -24,3 +24,7 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/7215b7a121cec90a70c4680412eb6be7afe3c024/projects/shanghai/index.html#landmark=huangpu-dongjiadu-cathedral&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 35 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+最终110处的390×844手机和870×660桌面均由正常地点选择进入，朝向1°、倾角60°，原近景和前方854号楼加载后仍可辨三门、钟及双塔。另从保留邻体的街面、屋顶及远景分别拍摄，近景59,244面、远景21,884面。桌面五图同一会话完成，四件模型与两份原始城市体块均对上SHA，11个地面点包括854号楼、两门、后段、空院地和外侧道路。[手机暖态](mobile-default/map-mobile-with-neighbors.png) · [桌面暖态](final-run/map-desktop-with-neighbors.png) · [街面细节](final-run/map-street-facade.png) · [屋顶和邻楼](final-run/map-roof.png) · [远景](final-run/map-distant.png) · [最终浏览记录](final-run/main-browser.json)
+
+手机首轮取图成功后，该会话的桌面重载遇到25秒原城市目录超时，系统退回粗档。通过原场景方法重发目录请求成功返回，但在该轮截图时限内还未得到暖态桌面图。随后一次独立桌面启动从同一最终目录完整取得五图，记录中无警告或失败请求。[含超时的原记录](preflight/final-city-fallback/main-browser.json) · [同会话人工触发的目录请求](preflight/final-city-fallback/desktop-native-recovery.json) · [两轮取图范围及签名](final-run/evidence.json)
