@@ -19,3 +19,7 @@ Blender 4.3.2重开后，40个网格保有15种原创建筑材质，三角面及
 同轮浏览覆盖街面、远景和四件实际文件，并核对场景中两栋邻屋的状态。首次脚本对MapLibre返回的60.99999999999999°与61°做过精确整数比较，已留存当时的冷暖视角和失败现场；上面的同会话复测将角度容差改为0.0000001°。[两档与下载收据](camera-comparison/main-browser.json) · [首次记录](camera-comparison/initial-check/main-browser.json)
 
 正式采用57°俯角后，在126处入口的新目录（SHA-256以 `149b8d333dede671` 开头）从普通地点卡重新进入。390×844手机触摸和870×660桌面点击均直接落到−51°／57°，门扇与右侧竖牌在两端可见。街边仍保留邻楼及其前景遮挡。两端均加载28,296面近景，所在18栋原生组共105,098面，未裁任何原生面。每幅截图前连续核对4帧相机停稳、启动遮罩已消失。404项HTTP读取共268,670,049字节，与正式输入逐字节对应。[手机原图](registered-default-57/map-mobile.png) · [桌面原图](registered-default-57/map-desktop.png) · [两端实际选择与画面散列](registered-default-57/main-browser.json) · [正式输入收据](registered-default-57/frozen-http.json) · [复核程序](registered-default-57/check-final-defaults.cjs)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/943ce447ba24ef2502257c461208f89fd7080e8c/projects/shanghai/index.html#landmark=hongkou-tilanqiao-historic-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
