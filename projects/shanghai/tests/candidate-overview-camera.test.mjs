@@ -200,9 +200,16 @@ test('the documented Riyue garden focus is bounded to this model and its verifie
   const copy=structuredClone(place);
   assert.deepEqual(frame.overview_focus_bounds_glb,{"min":[-2.55,1.4,-0.7],"max":[2.55,6.9,1.6]});
   assert.equal(frame.overviewBearing,-9);assert.equal(frame.overviewPitch,56);
-  for(const other of [...legacy,...candidates.filter(row=>row.id!==place.id)])assert.equal(candidateOverviewFrame(other),other);
+  for(const other of [...legacy,...candidates.filter(row=>row.id!==place.id && row.id!=='xuhui-yongjia-village-no15')])assert.equal(candidateOverviewFrame(other),other);
   const different={...place,assets:{...place.assets,web:{...place.assets.web,sha256:'0'.repeat(64)}}};
   assert.equal(candidateOverviewFrame(different),different);
   for(const vp of viewports){const shot=candidateOverviewCamera(place,vp);assert.equal(shot.bearing,frame.overviewBearing);assert.equal(shot.pitch,frame.overviewPitch);}
   assert.deepEqual(place,copy);
+});
+
+test('the Yongjia No. 15 porch frame requires the signed model',()=>{
+  const place=candidates.find(q=>q.id==='xuhui-yongjia-village-no15');assert.ok(place);
+  const selected=candidateOverviewFrame(place);assert.deepEqual(selected.overview_focus_bounds_glb,{"min":[-4.05,1.4,0.68],"max":[-2.41,3.14,1.72]});
+  assert.equal(selected.overviewBearing,-72);assert.equal(selected.overviewPitch,77);
+  const old={...place,assets:{...place.assets,web:{...place.assets.web,sha256:'0'.repeat(64)}}};assert.equal(candidateOverviewFrame(old),old);
 });

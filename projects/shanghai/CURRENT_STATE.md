@@ -1,3 +1,11 @@
+# 永嘉新村15号拱廊与东端山墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongjia-village-no15&mode=overview) · [单体旋转与下载](yongjia-village-no15.html) · [来源与制作范围](source/precise/xuhui-yongjia-village-no15/README.md) · [验收记录](data/audit/yongjia-village-no15-v1/README.md)
+
+市房管局2D025永嘉新村。以2014年1月26日门牌照片核对永嘉路580弄15号的双拱门廊、波状端山墙、窗和矮花墙。
+
+近景 8,396 个三角面，远景 4,164 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 869,559 字节。上海主图现有 197 处独立入口，徐汇区 20 处。[资产清单](assets/models/candidates/xuhui-yongjia-village-no15/manifest.json)
+
 # 陕南邨西南转角住宅（亚尔培公寓）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) · [单体旋转与下载](king-albert-corner-house.html) · [来源与制作范围](source/precise/huangpu-king-albert-corner-house/README.md) · [验收记录](data/audit/king-albert-corner-house-v1/README.md)
