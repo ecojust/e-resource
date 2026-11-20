@@ -24,3 +24,7 @@
 同一浏览器收起导航后拍下街面、塔冠肩部和原生两翼。街面图能辨凹入的外墙、门洞与门楣，选中灯牌仍遮住部分券窗。塔冠图显示中央塔身两侧的退台，标签压到中央上缘。六处地面点分别核对雨篷下、人行道、入口和主墙。缩到15.45级时，实景切到24,136面的远景模型。目标近瓦片和远瓦片的HTTP字节均与冻结原件相同，179个实际请求文件与4条目录生成记录完成复核。第134处版本另外对91、92两处地点完成15次公开下载，共8,760,779字节。[街面](three-arched-entrance.png) · [肩部与塔冠](paired-open-shoulders.png) · [保留的两侧](retained-source.png) · [远景](distant.png) · [六图与检测结果](main-map-browser.json) · [179个输入核验](main-map-inputs-verified.json) · [前一公开版本下载](predecessor-public-downloads-134.json)
 
 900×650桌面从默认视角收起导航，再点一次页面右侧的加号，缩放从18.074升至19.074，画面里的已绘制建筑灯牌由七块减到两块。此时可辨中央塔身、两级退台和左右两翼。再点一次加号，在缩放20.074时将鼠标从画面坐标（420，365）向左上拖至约（345，148），门楣上方的三扇拱头窗和金色字牌就离开底部位置卡；前景名牌仍遮住门扇下缘。两处放大与这一次拖动都保留123°方向、41°俯角和近景模型的同一SHA-256。[一次放大的全楼](public-zoom-one.png) · [两次放大的初始位置](public-zoom-two.png) · [拖动后的三券窗与门楣](public-dragged-street.png) · [五步控件、相机和SHA记录](public-zoom-steps.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d8dc75afee30da233fc839873aca1826ac00a6c8/projects/shanghai/index.html#landmark=huangpu-hamilton-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
