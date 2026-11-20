@@ -9,3 +9,7 @@
 第140处冻结站在第139处广学大楼的实际版本上生成。运行时同组中，西楼3051和东楼2954各占两个裁切三角。全城585个裁片分布在13个宏块，单块最大219。对冻结站实际请求了537个文件，收到417,545,909字节，全部哈希与快照一致。[城市运行时](runtime-placement.json) · [冻结文件实取核对](frozen-http-summary.json)
 
 地图用相同的立面避让灯牌版本比较了实际139和140处目录（20097、20098）。广学所在的西侧楼保留，红砖东立面出现在圆明园路浅灰原体块前。五种主图视角、原对照路段、四个独立页画面和四种文件下载均已核验。手机默认灯牌遮住部分入口，上部窗墙和高出的中央砖饰仍可见。[前态](map-before.png) · [桌面默认](map-desktop.png) · [手机默认](map-mobile.png) · [逐图核对](map-visual-review.json) · [两版输入及真实请求](selected-facade-release-bindings.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b8e97f4047bdb161cc7a354d47a0f2728f425a99/projects/shanghai/index.html#landmark=huangpu-china-baptist-publication-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
