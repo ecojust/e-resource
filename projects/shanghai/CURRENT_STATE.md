@@ -1,3 +1,11 @@
+# 永嘉路501号住宅北街面、圆塔与花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongjia-road-501-residence&mode=overview) · [单体旋转与下载](yongjia-road-501.html) · [来源与制作范围](source/precise/xuhui-yongjia-road-501-residence/README.md) · [验收记录](data/audit/yongjia-road-501-v1/README.md)
+
+以街道文物影像和地方志辨认永嘉路501号实体。制作房屋北面、红瓦与老虎窗、西北圆塔、西端和南侧照片可见构件。
+
+近景 64,700 个三角面，远景 16,088 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,206,542 字节。上海主图现有 204 处独立入口，徐汇区 24 处。[资产清单](assets/models/candidates/xuhui-yongjia-road-501-residence/manifest.json)
+
 # 延安中路955弄2号住宅（北侧老虎窗与凸廊）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yanan-955-no2&mode=overview) · [单体旋转与下载](yanan-955-no2.html) · [来源与制作范围](source/precise/jingan-yanan-955-no2/README.md) · [验收记录](data/audit/yanan-955-no2-v1/README.md)
