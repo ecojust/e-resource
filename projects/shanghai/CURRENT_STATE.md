@@ -1,3 +1,11 @@
+# 圣母大堂（新乐路东正教堂）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-orthodox-cathedral&mode=overview) · [单体旋转与下载](xinle-orthodox-cathedral.html) · [来源与制作范围](source/precise/xuhui-xinle-orthodox-cathedral/README.md) · [验收记录](data/audit/xinle-orthodox-cathedral-v1/README.md)
+
+新乐路55号圣母大堂的两处临街立面、十字形殿顶及一大四小蓝色铜皮穹顶，以地方志、2011年门牌实照和两条道路的街景核对。
+
+近景 98,800 个三角面，远景 56,736 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 12,452,849 字节。上海主图现有 183 处独立入口，徐汇区 15 处。[资产清单](assets/models/candidates/xuhui-xinle-orthodox-cathedral/manifest.json)
+
 # 慈修庵正院北殿与两厢木廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cixiu-nunnery-courtyard&mode=overview) · [单体旋转与下载](cixiu-nunnery.html) · [来源与制作范围](source/precise/huangpu-cixiu-nunnery-courtyard/README.md) · [验收记录](data/audit/cixiu-nunnery-v1/README.md)

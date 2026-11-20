@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 182 处入口。最近接入[慈修庵正院北殿与两厢木廊](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cixiu-nunnery-courtyard&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 183 处入口。最近接入[圣母大堂（新乐路东正教堂）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-orthodox-cathedral&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的145项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的146项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,7 +31,9 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 146 | 新乐路圣母大堂街面及五座穹顶 | 徐汇区／新乐路55号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；核对南侧独立主教公署、院内背面与历史十字架的分期，单列皋兰路16号圣尼古拉斯堂。 |
+| 147 | 皋兰路圣尼古拉斯堂主堂 | 黄浦区／皋兰路16号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查明历史九顶、侧塔和各次拆改的年代，另核主堂北侧后勤用房的边界及用途。 |
+| 148 | 吉祥里山东北路西弄门 | 黄浦区／河南中路531～541弄 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；分别定位河南中路531弄东口、学校旧址与弄内住宅，查证各幢建造、保护修缮与门扇变化年代。 |
+| 149 | 建业里总弄沿街门楼 | 徐汇区／建国西路440弄 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；分清东、中、西弄各自地址和沿街三字门楼，核对修缮、重建、酒店改造前后实物与各期门牌。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -344,7 +346,7 @@
 | sh-historic-b2-063 | 美童公学宿舍和水塔 | 衡山路10号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 分别核查独立宿舍楼、水塔的第四批名录记录及校园改建时段。 |
 | sh-historic-b2-064 | 上海医学院东一号楼修缮分期 | 医学院路138号（主楼） | [名录][H2] · [当前完成范围][MTD-aa5f33d7] | 补查2024年12月修缮捐资报道后的工程档案，核对原校舍屋顶与历次维修。 |
 | sh-historic-b2-065 | 岳阳路科研院区其他建筑与历史分期 | 岳阳路320号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 分别核查院内邻楼与后期连接体，区分1930年主楼建成、1931年设所及1945年后的院址沿革。 |
-| sh-historic-b2-082 | 东正教堂 | 新乐路55号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-082 | 圣母大堂南侧主教公署及修缮分期 | 新乐路55号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对南侧独立主教公署、院内背面与历史十字架的分期，单列皋兰路16号圣尼古拉斯堂。 |
 | sh-historic-b2-085 | 建业里 | 建国西路440弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-091 | 住宅 | 岳阳路200弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-093 | 中南新村 | 淮海中路1670弄 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3639,6 +3641,7 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
+[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3653,7 +3656,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；182处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中142件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；183处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中143件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3661,7 +3664,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增142处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增143处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3683,7 +3686,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，182处建筑与构件模型入口（40处既有＋142处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增142处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，183处建筑与构件模型入口（40处既有＋143处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增143处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（91处）
@@ -3784,7 +3787,7 @@
 | 小桃园清真寺主礼拜殿（院内东立面及五处屋顶构件） | 2026-11-21 04:21:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xiaotaoyuan-mosque-prayer-hall&mode=overview) |
 | 慈修庵正院北殿与两厢木廊 | 2026-11-21 04:38:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cixiu-nunnery-courtyard&mode=overview) |
 
-### 徐汇区（14处）
+### 徐汇区（15处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310104&mode=walk)
 
@@ -3804,6 +3807,7 @@
 | 美童公学主楼（衡山路10号） | 2026-11-21 02:03:30 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) |
 | 国立上海医学院东一号楼（草坪立面、歇山顶与两翼方亭） | 2026-11-21 02:37:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) |
 | 岳阳路320号在君楼（七券门廊与双内院） | 2026-11-21 02:41:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-320-research-building&mode=overview) |
+| 圣母大堂（新乐路东正教堂） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-orthodox-cathedral&mode=overview) |
 
 ### 长宁区（9处）
 
