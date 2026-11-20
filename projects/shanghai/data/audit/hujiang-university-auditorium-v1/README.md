@@ -23,3 +23,7 @@
 东北端近景可见五联窗上部和砖石轮廓，选中灯牌遮住下部门券附近。长墙图可辨相连的尖券窗、石带及两枚圆窗。保留源视图可见新旧屋面在小堂交接位置的高度差。缩至15.45级时，场景切换至20,004面的远景档，礼堂在城市总图中只占数个像素。门前小径和两侧草坪可通行，门阶、厅内与北侧小堂等八处实际碰撞返回均符合预期。[东北山墙](city-24136/northeast-five-lights.png) · [东南长墙](city-24136/long-wall-roundels.png) · [北侧小堂交接](city-24136/retained-source.png) · [城市远景](city-24136/distant.png)
 
 前态实取并复核121项、76,247,758字节，后态实取并复核115项、42,364,003字节。四个模型文件按SHA-256复核；单体页已有近远双档和四次下载，与本版十三个文件逐件相同。桌面和手机默认取自同一正式版本的前次会话。执行器两次提前终止后态进程，最后一个会话核对原有图像哈希，并另存四个专题镜头、近远两种实瓦片及八处地面复核；全部浏览器已退出。[原始首轮](city-24136/interrupted-first-run.json) · [双端原始记录](city-24136/interrupted-defaults.json) · [完整实测](city-24136/main-map-browser.json) · [173处HTTP](city-24136/http-135.json) · [174处HTTP](city-24136/http-136.json) · [单体页跨版复核](independent-viewer-24136.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/28cc98f3bcfe88230cfb596dd8bbaa7e907d289f/projects/shanghai/index.html#landmark=yangpu-hujiang-university-auditorium&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

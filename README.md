@@ -3880,7 +3880,7 @@
 | 江湾游泳馆（历史池馆与现状屋盖） | 2026-11-01 19:56:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-jiangwan-swimming-hall&mode=overview) |
 | 旧上海市博物馆江湾馆舍 | 2026-11-20 18:43:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) |
 | 中国航空协会旧址（长海医院飞机楼） | 2026-11-03 21:09:28 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview) |
-| 沪江大学大学礼堂（1937年主礼堂） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-hujiang-university-auditorium&mode=overview) |
+| 沪江大学大学礼堂（1937年主礼堂） | 2026-11-21 03:36:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-hujiang-university-auditorium&mode=overview) |
 
 ### 闵行区（1处）
 
