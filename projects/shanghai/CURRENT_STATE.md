@@ -1,3 +1,11 @@
+# 景华新邨12号弄内门面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jinghua-village-no12&mode=overview) · [单体旋转与下载](jinghua-village-no12.html) · [来源与制作范围](source/precise/jingan-jinghua-village-no12/README.md) · [验收记录](data/audit/jinghua-village-no12-v1/README.md)
+
+巨鹿路820弄12号朱屺瞻旧居，以可读门牌的实照核准本户门面，复核三期屋顶轮廓。市房管局将此组登记为景华新邨。
+
+近景 7,020 个三角面，远景 2,616 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 776,817 字节。上海主图现有 190 处独立入口，静安区 17 处。[资产清单](assets/models/candidates/jingan-jinghua-village-no12/manifest.json)
+
 # 模范邨22号冒广生旧居入口
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-mofan-village-no22-entrance&mode=overview) · [单体旋转与下载](mofan-village-no22.html) · [来源与制作范围](source/precise/jingan-mofan-village-no22-entrance/README.md) · [验收记录](data/audit/mofan-village-no22-v1/README.md)
