@@ -24,7 +24,7 @@ python -B projects/shanghai/data/audit/holy-trinity-bell-tower-v1/check-connecti
 
 在实际94处旧地图中用相同短廊相机回拍，原616号为狭长平屋面，旁边已加载137,604面主堂。本组原有12个裁剪三角面均属于587号主堂，旧地图没有钟塔的切面或替换。10项原网页与地图文件均成功回读。[原楼与已建主堂](map-before.png) · [94处浏览器记录](control-browser.json)
 
-正式95处地图的390×844手机和870×660桌面首屏均已实看，两端都显示了50,384面钟塔、137,604面主堂及616号源的两个切面。近处短廊视角已实际加载使用14面裁剪的共同分组。手机常驻灯牌横过钟层中段，塔尖和通向主堂的廊面可见。屋顶、地面与城市远景仍在同次会话中继续核对。[手机默认入口](map-mobile.png) · [桌面默认入口](map-desktop.png) · [短廊近景](map-street-facade.png) · [95处浏览器逐阶段记录](main-browser.json)
+正式95处地图的390×844手机和870×660桌面首屏均已实看，两端都显示了50,384面钟塔、137,604面主堂及616号源的两个切面。近处短廊视角已实际加载使用14面裁剪的共同分组。手机常驻灯牌横过钟层中段，塔尖和通向主堂的廊面可见。近景及屋顶实测共同分组共14面，仅含原主堂587和新加入的616号。楼内、廊道、源体两端及四处邻楼等10个地面点全过。600×460城市视图实际载入28,880面远景，四件模型与两份原城市网格的6项HTTP下载核对一致。此次正式95处会话没有页面错误、请求失败或加载告警。[手机默认入口](map-mobile.png) · [桌面默认入口](map-desktop.png) · [短廊近景](map-street-facade.png) · [首次入库时的阶段记录](preflight/main-browser-before-completion.json) · [95处完整浏览器记录](main-browser.json) · [屋顶与主堂](map-roof.png) · [城市远景](map-distant.png) · [六图实看](map-visual-review.json) · [公开95处与实测的14项文件核对](primary-map-inputs.json)
 
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/bbe7f20cbec5ba6a0f617c8c5d8ebfac3aa07954/projects/shanghai/index.html#landmark=huangpu-holy-trinity-bell-tower&mode=overview) · [固定版本逐文件核对](publication.json)
 
