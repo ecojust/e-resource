@@ -1,3 +1,11 @@
+# 若瑟堂（四川南路36号东立面与钟塔）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-st-joseph-church-east-front&mode=overview) · [单体旋转与下载](st-joseph-east-front.html) · [来源与制作范围](source/precise/huangpu-st-joseph-church-east-front/README.md) · [验收记录](data/audit/st-joseph-east-front-v1/README.md)
+
+四川南路36号院内若瑟堂东面，依1908年书影、2009年及2017年院内正面影像核查三入口、圆花窗和钟塔的形制与年代。
+
+近景 46,972 个三角面，远景 25,688 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,801,182 字节。上海主图现有 175 处独立入口，黄浦区 88 处。[资产清单](assets/models/candidates/huangpu-st-joseph-church-east-front/manifest.json)
+
 # 沪江大学大学礼堂（1937年主礼堂）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-hujiang-university-auditorium&mode=overview) · [单体旋转与下载](hujiang-university-auditorium.html) · [来源与制作范围](source/precise/yangpu-hujiang-university-auditorium/README.md) · [验收记录](data/audit/hujiang-university-auditorium-v1/README.md)
