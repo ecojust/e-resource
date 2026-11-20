@@ -24,3 +24,7 @@
 沿街骑楼近景可辨首层内退门窗、浅拱与上层窗带，塔亭近景可辨逐层收分及透空的金属灯架。随后实测保留原楼的视角及切换为29,766面的远景。此次浏览器实际读取的164个文件和四份目录生成记录均通过哈希核验。[骑楼](street-arcades.png) · [塔亭](stepped-lantern.png) · [原楼与模型交接处](retained-source.png) · [远景](distant.png) · [六个视角与运行状态](main-map-browser.json) · [现场请求](main-map-inputs.json) · [实盘对照](map-input-compare.json)
 
 合并密集灯牌后，从两份128处地图的页面入口分别下载登记行、模型清单、配准合同及四件模型。相机、单体位置、1015号源的裁剪与碰撞、多档切换阈值和所有文件字节一致。主场景代码唯一的变更行是灯牌模块的版本引用；前版已实测的桌面和手机相机姿态也写入对照。[两站22次HTTP请求与前版所选模型](label-release-http.json) · [复核脚本](check-label-release-http.py)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ef645bdc494fe42f52b2e95ca247e31622c3acd0/projects/shanghai/index.html#landmark=huangpu-cishu-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
