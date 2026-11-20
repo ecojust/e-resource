@@ -14,3 +14,7 @@
 登记前的136处地图在这处街口显示原生1289粗楼；六个共用近景体都还在。登记前后实际下载的同一近景瓦片SHA一致。[登记前实拍](map-before.png) · [136处原地块记录](before-browser.json)
 
 在广东路与四川中路交叉口内侧补拍了两幅视图。22.05级机位避开对街楼顶，能同时看到深凹门叶、半圆气窗、花岗石柱及过梁。两幅均使用真实137处目录与共有原生近景，取图时其余五栋未裁切。[街角入口](granite-door-from-junction.png) · [近距离门楣与气窗](bronze-fanlight-from-junction.png) · [两幅实机签收](street-entrance-browser.json) · [视线与地块](street-entrance-sightlines.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/33a9edbf2a9eb6b608d8262b2db8550c7ef3e7cb/projects/shanghai/index.html#landmark=huangpu-yongnian-life-insurance-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

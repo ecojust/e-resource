@@ -132,7 +132,7 @@
 | 总巡捕房旧址（福州路历史街面） | 2026-11-20 20:28:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-police-station&mode=overview) |
 | 汉弥登大楼（江西中路170号街角、入口及塔冠） | 2026-11-20 20:43:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hamilton-house&mode=overview) |
 | 大来大楼（广东路拱门与上层阳台） | 2026-11-20 20:43:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-robert-dollar-building&mode=overview) |
-| 永年人寿保险公司大楼（广东路93号） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yongnian-life-insurance-building&mode=overview) |
+| 永年人寿保险公司大楼（广东路93号） | 2026-11-20 20:56:41 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yongnian-life-insurance-building&mode=overview) |
 
 ### 徐汇区（9处）
 
