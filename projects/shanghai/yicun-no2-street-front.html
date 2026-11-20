@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>逸村2号淮海中路园侧立面 · 徐汇区</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="逸村2号园侧窗墙、红瓦屋面和独户铁门三维模型" data-oblique="positive-x" data-oblique-x="0.62" id="model-view"></main>
+<header>
+<a href="index.html#landmark=xuhui-yicun-no2-street-front&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">徐汇区 · 淮海中路1610弄</p>
+<h1>逸村2号淮海中路园侧立面</h1>
+<p>山墙三联窗 · 花铁门</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">从园侧可观察三层窗间的螺旋石柱、山墙浅弧、圆窗和双扇花铁门。依据2013、2015及2020年的街面照片制作。后墙与屋侧按足印和屋顶影像简化，檐口及烟囱高度按照片估算。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">正对园侧</button>
+<button data-view="oblique" type="button">山墙和阳台</button>
+<button data-view="above" type="button">俯看红瓦屋面</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/xuhui-yicun-no2-street-front/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=yicun-no2-street-front-v1';
+    showCandidateAssetViewer('xuhui-yicun-no2-street-front');
+  </script>
+</body>
+</html>
+

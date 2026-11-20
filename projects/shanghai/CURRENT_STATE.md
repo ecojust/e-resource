@@ -1,3 +1,11 @@
+# 逸村2号淮海中路园侧立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yicun-no2-street-front&mode=overview) · [单体旋转与下载](yicun-no2-street-front.html) · [来源与制作范围](source/precise/xuhui-yicun-no2-street-front/README.md) · [验收记录](data/audit/yicun-no2-street-front-v1/README.md)
+
+对照徐汇区记载、2015年照片和2020年多站街景，核对淮海中路1610弄2号的园侧窗墙、三联旋柱窗、挑台与有据瓦顶。
+
+近景 48,786 个三角面，远景 15,766 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,926,681 字节。上海主图现有 200 处独立入口，徐汇区 23 处。[资产清单](assets/models/candidates/xuhui-yicun-no2-street-front/manifest.json)
+
 # 上方花园24号张元济故居弄门
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shangfang-garden-no24-entrance&mode=overview) · [单体旋转与下载](shangfang-garden-no24.html) · [来源与制作范围](source/precise/xuhui-shangfang-garden-no24-entrance/README.md) · [验收记录](data/audit/shangfang-garden-no24-v1/README.md)
