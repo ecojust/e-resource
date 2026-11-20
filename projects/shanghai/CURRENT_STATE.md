@@ -1,3 +1,11 @@
+# 都城饭店（江西中路180号转角主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropole-hotel&mode=overview) · [单体旋转与下载](metropole-hotel.html) · [来源与制作范围](source/precise/huangpu-metropole-hotel/README.md) · [验收记录](data/audit/metropole-hotel-v1/README.md)
+
+江西中路180号都城饭店的路口立面及转角，按史料核对与对街福州大楼的关系。
+
+近景 31,408 个三角面，远景 20,652 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,520,627 字节。上海主图现有 112 处独立入口，黄浦区 46 处。[资产清单](assets/models/candidates/huangpu-metropole-hotel/manifest.json)
+
 # 东方饭店旧址（上海市工人文化宫西端主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-oriental-hotel&mode=overview) · [单体旋转与下载](oriental-hotel.html) · [来源与制作范围](source/precise/huangpu-oriental-hotel/README.md) · [验收记录](data/audit/oriental-hotel-v1/README.md)

@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 73,
+  "candidate_manifest_count": 74,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 71,
-  "resulting_city_count": 111,
+  "new_city_model_count": 72,
+  "resulting_city_count": 112,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 5,
     "长宁区": 4,
     "静安区": 6,
-    "黄浦区": 29
+    "黄浦区": 30
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 292,
-    "bytes": 956065369,
+    "files": 296,
+    "bytes": 959585996,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 6983964,
+    "current_run_added_bytes": 3520627,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 160
+    "inherited_incremental_files": 164
   },
   "records": [
     {
@@ -5944,6 +5944,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-informed-partial-exterior",
       "description": "西藏中路120号东方饭店的历史临街外观，结合工人文化宫时期和原楼照片核验。"
+    },
+    {
+      "id": "huangpu-metropole-hotel",
+      "name": "都城饭店（江西中路180号转角主楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "metropole-hotel.html",
+      "manifest": "assets/models/candidates/huangpu-metropole-hotel/manifest.json",
+      "manifest_sha256": "5c7aaccd0f9872dc68a37148d78498ca12c46a57fef5b555194b968d4683087c",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-metropole-hotel/huangpu-metropole-hotel-raw.glb",
+          "bytes": 1850380,
+          "sha256": "2247770c0083ae2ab547c4e2d2bea1fe9eaaa455c42b8937970760af5210dfbc",
+          "triangles": 31408,
+          "bounds_gltf_m": [
+            [
+              -20.85424041748047,
+              0.0,
+              -21.09000015258789
+            ],
+            [
+              17.615236282348633,
+              65.0,
+              5.587731838226318
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-metropole-hotel/huangpu-metropole-hotel-web.glb",
+          "bytes": 760500,
+          "sha256": "709f7db54faea18dc03cccdf6da2ffbd26a8497feea778bf11fc6c2a738c61ca",
+          "triangles": 31408,
+          "bounds_gltf_m": [
+            [
+              -20.8542404,
+              0,
+              -21.0900002
+            ],
+            [
+              17.6152363,
+              65,
+              5.58773184
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-metropole-hotel/huangpu-metropole-hotel-lod.glb",
+          "bytes": 511056,
+          "sha256": "a54e2215cb9c0f9e493108702ba8c9d4084fd4d2876874ed6f64f86904207ecf",
+          "triangles": 20652,
+          "bounds_gltf_m": [
+            [
+              -20.8542404,
+              0,
+              -21.0900002
+            ],
+            [
+              17.6152363,
+              65,
+              5.58773184
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-metropole-hotel/huangpu-metropole-hotel.blend",
+          "bytes": 398691,
+          "sha256": "79f6a01bfd5f86b172af9067c6b75d99ab9593e976043e2173d781a1d0e54df8"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -20.85424041748047,
+            0.0,
+            -21.09000015258789
+          ],
+          "max": [
+            17.615236282348633,
+            65.0,
+            5.587731838226318
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -20.85424041748047,
+            -5.587731838226318,
+            0.0
+          ],
+          "max": [
+            17.615236282348633,
+            21.09000015258789,
+            65.0
+          ]
+        },
+        "triangles": 31408,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-and-footprint-informed-exterior",
+      "description": "江西中路180号都城饭店的路口立面及转角，按史料核对与对街福州大楼的关系。"
     }
   ],
   "baseline_inventory": {
@@ -5972,6 +6078,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-jardine-matheson-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-metropole-hotel/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-moore-memorial-church/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-oriental-hotel/manifest.json",
@@ -5995,13 +6102,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/oriental-hotel-v1",
+  "incremental_audit_directory": "data/audit/metropole-hotel-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/dongjiadu-cathedral-v1/inventory-increment.json",
-    "bytes": 132981,
-    "sha256": "b74d9b5b52034c02e7ea94c9704330ab8a93693343dd56b6bd93088975e3a319"
+    "file": "data/audit/oriental-hotel-v1/inventory-increment.json",
+    "bytes": 136556,
+    "sha256": "93822bc1b25d1165d58a5336380f9783befb299e63358b9e558f28d273f533fb"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-oriental-hotel/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-metropole-hotel/manifest.json"
   ]
 }
