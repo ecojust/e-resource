@@ -1,3 +1,11 @@
+# 美童公学主楼（衡山路10号）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) · [单体旋转与下载](american-school-hengshan.html) · [来源与制作范围](source/precise/xuhui-shanghai-american-school-main/README.md) · [验收记录](data/audit/american-school-hengshan-v1/README.md)
+
+衡山路10号美童公学主楼，核对历史及现存资料所见红砖校舍、入口和中轴钟塔。
+
+近景 32,755 个三角面，远景 19,147 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,923,428 字节。上海主图现有 165 处独立入口，徐汇区 12 处。[资产清单](assets/models/candidates/xuhui-shanghai-american-school-main/manifest.json)
+
 # 上海科学会堂一号楼（南花园五亭立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-science-hall-building-one&mode=overview) · [单体旋转与下载](science-hall-one.html) · [来源与制作范围](source/precise/huangpu-science-hall-building-one/README.md) · [验收记录](data/audit/science-hall-one-v1/README.md)
