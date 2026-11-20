@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 97,
+  "candidate_manifest_count": 98,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 95,
-  "resulting_city_count": 135,
+  "new_city_model_count": 96,
+  "resulting_city_count": 136,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 46
+    "黄浦区": 47
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 388,
-    "bytes": 1102896827,
+    "files": 392,
+    "bytes": 1111490841,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4297539,
+    "current_run_added_bytes": 8594014,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 256
+    "inherited_incremental_files": 260
   },
   "records": [
     {
@@ -8488,6 +8488,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-and-footprint-informed-exterior",
       "description": "江西中路170号汉弥登大楼的街角塔部、三券入口和两端短街墙，原生1844段与两侧相连楼翼分开核实。"
+    },
+    {
+      "id": "huangpu-robert-dollar-building",
+      "name": "大来大楼（广东路拱门与上层阳台）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "robert-dollar.html",
+      "manifest": "assets/models/candidates/huangpu-robert-dollar-building/manifest.json",
+      "manifest_sha256": "4c5a771df7b6a47eac55a797a5df47476bdb310a33f588970398567977854558",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-robert-dollar-building/huangpu-robert-dollar-building-raw.glb",
+          "bytes": 4380016,
+          "sha256": "a2da1aa87e23afaae9f881a102668d70dc3df413620c0e1c7487e8db5b9a9bab",
+          "triangles": 63960,
+          "bounds_gltf_m": [
+            [
+              -23.27207374572754,
+              0.0,
+              -9.0
+            ],
+            [
+              23.27404022216797,
+              30.860000610351562,
+              0.8950033783912659
+            ]
+          ],
+          "materials": 12
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-robert-dollar-building/huangpu-robert-dollar-building-web.glb",
+          "bytes": 1870304,
+          "sha256": "d77d6c6bd201f91c14a8b9834331a1baea60a79f7127e1b24daa1e23f8a60aa3",
+          "triangles": 63960,
+          "bounds_gltf_m": [
+            [
+              -23.2720737,
+              0,
+              -9
+            ],
+            [
+              23.2740402,
+              30.8600006,
+              0.895003378
+            ]
+          ],
+          "materials": 12
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-robert-dollar-building/huangpu-robert-dollar-building-lod.glb",
+          "bytes": 1213488,
+          "sha256": "dd44173ac3f9e865c65d00781dcc3c70ad98c5bd18bf7a8d2c79d4819c01c053",
+          "triangles": 45774,
+          "bounds_gltf_m": [
+            [
+              -23.2720737,
+              0,
+              -9
+            ],
+            [
+              23.2740402,
+              30.8600006,
+              0.895003378
+            ]
+          ],
+          "materials": 12
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-robert-dollar-building/huangpu-robert-dollar-building.blend",
+          "bytes": 1130206,
+          "sha256": "21594e3a23e392a196dd5430b79b13c4209948b89ef9f8173fbc6ec112e2f503"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -23.27207374572754,
+            0.0,
+            -9.0
+          ],
+          "max": [
+            23.27404022216797,
+            30.860000610351562,
+            0.8950033783912659
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -23.27207374572754,
+            -0.8950033783912659,
+            0.0
+          ],
+          "max": [
+            23.27404022216797,
+            9.0,
+            30.860000610351562
+          ]
+        },
+        "triangles": 63960,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-partial-exterior",
+      "description": "广东路51、59号原大来轮船公司大楼的历史沿街外观。"
     }
   ],
   "baseline_inventory": {
@@ -8538,6 +8644,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-oriental-hotel/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-renji-hospital-ward-entrance/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-robert-dollar-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-ruijin-guesthouse-01/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
@@ -8563,13 +8670,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/hamilton-house-v1",
+  "incremental_audit_directory": "data/audit/robert-dollar-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/central-police-station-v1/inventory-increment.json",
-    "bytes": 218398,
-    "sha256": "d8aa61c209fe05b14bde63c9450f79b5d14c28a85d4fe59462662139ebb4f9bd"
+    "file": "data/audit/hamilton-house-v1/inventory-increment.json",
+    "bytes": 221949,
+    "sha256": "cb3de01392b636b501dc263adb3cce9bda5e2ef8a9506f79894741dfc8e8b62b"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-hamilton-house/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-robert-dollar-building/manifest.json"
   ]
 }
