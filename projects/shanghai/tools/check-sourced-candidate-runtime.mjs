@@ -53,10 +53,11 @@ function evaluate(models){
   clipper.dispose();cube.geometry.dispose();cube.material.dispose();if(second){second.geometry.dispose();second.material.dispose();}return result;
 }
 const before=evaluate(catalog.models.filter(r=>r.id!==contract.id)),after=evaluate(catalog.models);
-assert.equal(after.triangles-before.triangles,spec.groupTriangles);assert.ok(after.triangles>after.perDrawLimit);
+assert.equal(after.triangles-before.triangles,spec.addedTriangles??spec.groupTriangles);assert.ok(after.triangles>after.perDrawLimit);
 assert.ok(after.macroTextures>1&&after.largestShaderTable<=after.perDrawLimit);
-assert.deepEqual(after.scopedTargetDraw.clip_feature_local_ids,[ownerID]);assert.equal(after.scopedTargetDraw.triangles,spec.groupTriangles);
-assert.deepEqual(before.scopedTargetDraw.clip_feature_local_ids,[]);
+const oldOwners=spec.existingGroupOwners||[];
+assert.deepEqual([...after.scopedTargetDraw.clip_feature_local_ids].sort((a,b)=>a-b),[...oldOwners,ownerID].sort((a,b)=>a-b));assert.equal(after.scopedTargetDraw.triangles,spec.groupTriangles);
+assert.deepEqual(before.scopedTargetDraw.clip_feature_local_ids,oldOwners);
 if(after.adjacentDraw)assert.deepEqual(after.adjacentDraw,before.adjacentDraw);
 const clip={...model,geometry:model.replacement_geometry};
 const target=review.owners.find(o=>o.local_id===ownerID);
@@ -65,12 +66,20 @@ for(const source of ['overture-buildings','openmaptiles']){
   for(const owner of review.owners.filter(r=>[ownerID,...spec.neighbors].includes(r.local_id))){
     const feature={type:'Feature',id:1,properties:{id:owner.key.slice(9)},geometry:owner.geometry_wgs84};
     const plan=planCandidateVectorClipping([feature],{candidateClips:[clip]},{source,sourceLayer:'building'});
-    assert.equal(plan.stats.clippingErrors,0);assert.equal(plan.residualData.features.length,0);
+    assert.equal(plan.stats.clippingErrors,0);
+    const retainedProbes=spec.ground.filter(p=>p.modelObstacle===false&&p.expected==='building');
+    const partial=owner===target&&retainedProbes.length>0;
+    assert.equal(plan.residualData.features.length,partial?1:0);
+    if(partial){
+      const retained=plan.residualData.features[0].geometry;
+      for(const p of retainedProbes)assert.equal(candidateGeometryContains(retained,point(...p.xy)),true,p.name);
+      assert.equal(candidateGeometryContains(retained,point(0,0)),false);
+    }
     assert.equal(plan.desired.size,owner===target?1:0);
     vector.push({source,owner:owner.local_id,hidden:plan.desired.size===1,residuals:plan.residualData.features.length});
   }
 }
-const points=spec.ground.map(p=>[p.name,point(...p.xy),p.expected==='building',p.cut??(p.expected==='building')]);
+const points=spec.ground.map(p=>[p.name,point(...p.xy),p.modelObstacle??(p.expected==='building'),p.cut??(p.expected==='building')]);
 for(const [key,value]of Object.entries(spec.neighborGround))points.push(['neighbor '+key,value,false,false]);
 const ground=points.map(([name,position,expected,expectedCut])=>{
   const candidate=candidateGeometryContains(contract.collision_geometry,position),cut=candidateGeometryContains(contract.replacement_geometry,position);

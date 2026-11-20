@@ -1,0 +1,83 @@
+{
+  "id": "huangpu-holy-trinity-bell-tower",
+  "input_manifest": {
+    "path": "assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json",
+    "sha256": "a260dedec811c5116e9e1d188de2f842d59020b7e957f6bf3480ee5b14f245b0"
+  },
+  "inputs": {
+    "raw": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower-raw.glb",
+      "sha256": "0e07885b2542a9b27227ed679187423f37d87ae6fe494b571c1c88577c48a535"
+    },
+    "full": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower-web.glb",
+      "sha256": "8f16a4d1afcf3a93f68ff246c9bc711a1a7be13a4cba28a126e975b8d8b4f5a7"
+    },
+    "lod": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower-lod.glb",
+      "sha256": "456f0cd4f6982a7a220d83c0f8f577e7e0779641ab5b7d41171209f19caf57b2"
+    },
+    "native": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower.blend",
+      "sha256": "6bb59d153e02f4ced57e028727ad117806a8c3b2c899ed92bef9413e5bd6082d"
+    }
+  },
+  "comparison": {
+    "path": "source/precise/huangpu-holy-trinity-bell-tower/reference-review.json",
+    "sha256": "a6fea14a1c5d69d08418bc4c90a973292f2036487ca7b0dfffe1bf5d38904e52"
+  },
+  "views": [
+    {
+      "path": "data/audit/holy-trinity-bell-tower-v1/huangpu-holy-trinity-bell-tower-preview.png",
+      "sha256": "946183769c61fa35e0da2c24d5abcf676b73bed75821003ec72e7034abaca78b",
+      "size": [
+        820,
+        900
+      ],
+      "checked_zh": "完整的48米尖塔在廊上竖起。四个连接拱、塔身低位成对及中间单窗、钟室百叶和浅色横带可见，长尖顶一直到金属端饰。"
+    },
+    {
+      "path": "data/audit/holy-trinity-bell-tower-v1/bell-stage.png",
+      "sha256": "73551f39adb7272cc4c555d2d85a04e237fc6086e8d502d158961260994549c6",
+      "size": [
+        680,
+        520
+      ],
+      "checked_zh": "近景中相邻两张立面有各自的双联尖券百叶；顶缘穿孔、四角的小尖塔、赤陶色八角台的凸窗、浅色环带互有前后关系。"
+    },
+    {
+      "path": "data/audit/holy-trinity-bell-tower-v1/connecting-arcade.png",
+      "sha256": "95747e34ab14bf4b0a0fd160aabfb8a504841c1392b38f6f6217a20a2c632194",
+      "size": [
+        680,
+        520
+      ],
+      "checked_zh": "短廊石柱和四个敞开券跨依次连接方塔，低坡顶沿廊纵轴。塔脚两座窄窗与上一层中窗、钟室下一排小拱在可见侧。"
+    }
+  ],
+  "preflight": [
+    {
+      "path": "data/audit/holy-trinity-bell-tower-v1/preflight/tower-stage-review.json",
+      "sha256": "20ee9b3c855cab1aff389309fa62764e2d7da581cbcf788be663a8956fe8090a"
+    },
+    {
+      "path": "data/audit/holy-trinity-bell-tower-v1/preflight/door-check.json",
+      "sha256": "c24a7bcdce36ff07a83f47620e8c270f0c9ee381f570f9bbddb59bb77890a8b1"
+    }
+  ],
+  "geometry_audit": {
+    "path": "data/audit/holy-trinity-bell-tower-v1/geometry-native.json",
+    "sha256": "29e7bdb17342a1b45e4edde1cf12624efc01897be3670b1ac45e7072e86f127e"
+  },
+  "ray_audit": {
+    "path": "data/audit/holy-trinity-bell-tower-v1/surface-checks.json",
+    "sha256": "c635b131c1f20529aaaa0b5239a8894564a287fb8f31c499870f4c3852dfb959"
+  },
+  "detail_script": {
+    "path": "data/audit/holy-trinity-bell-tower-v1/detail-views.py",
+    "sha256": "c7009b5d1df8801bae5c8a91166cc6897563f4aa3947573bfbd0963a7a1db09e"
+  },
+  "detail_native_sha256": "6bb59d153e02f4ced57e028727ad117806a8c3b2c899ed92bef9413e5bd6082d",
+  "method": "重开交付的Blender原生场景，Cycles渲染后用OIDN降噪。对照1908年照片、法国国家图书馆旧照及2015年、2026年恢复后的样貌。三个PNG完整解码，逐块检查CRC。",
+  "limits": "塔身和尖顶分段高度、饰材、后侧开窗、栋间廊跨度和屋顶色彩有估计。钟表器件和钟具内部另查。"
+}

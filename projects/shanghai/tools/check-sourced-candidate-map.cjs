@@ -63,15 +63,16 @@ async function run() {
   page.on('requestfailed',r=>{if(r.failure()?.errorText!=='net::ERR_ABORTED')result.failed.push({url:r.url(),failure:r.failure()});});
   page.on('response',r=>{const u=new URL(r.url());if(r.status()>=400)result.failed.push({url:r.url(),status:r.status()});
     if(u.origin===new URL(base).origin&&r.status()===200)received.add(decodeURIComponent(u.pathname.slice(1)));});
-  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,owner:source,neighbors};
+  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,owner:source,neighbors,adjacentID:spec.adjacentModel};
   const manifest = row && read(row.candidate_manifest);
   async function settle(variant,detail=false){
-    await page.waitForFunction(({selected,variant,detail,macro,group,owner,control})=>{
+    await page.waitForFunction(({selected,variant,detail,macro,group,owner,control,adjacentID})=>{
       const s=window.__SHANGHAI_APP__?.scene;
       if(!s||s.map.isMoving())return false;
       const a=s.getLandmarkAssetState(selected);
       if(!control&&(!a?.visible||a.status!=='loaded'||(variant&&a.variant!==variant)))return false;
       if(!detail)return true;
+      if(adjacentID&&!s.getLandmarkAssetState(adjacentID)?.visible)return false;
       const c=s.getCandidateIntegrationState(),t=s.getStreamingState();
       const active=c.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group);
       return t.active.some(t=>t.id===macro&&t.visible)&&t.detail.active.some(t=>t.id===macro+'/'+group)
@@ -82,14 +83,22 @@ async function run() {
   }
   async function view(name,variant,detail=false){
     await settle(variant,detail);
+    if(!control && !detail && spec.sourceSectionCount && name!=='map-distant'){
+      await page.waitForFunction(({id,adjacentID,expected})=>{
+        const scene=window.__SHANGHAI_APP__.scene;
+        const section=scene.getCandidateIntegrationState().sourceSections.find(item=>item.id===id);
+        const adjacentReady=!adjacentID||scene.getLandmarkAssetState(adjacentID)?.visible;
+        return adjacentReady && section?.segments===expected;
+      },{...context,expected:spec.sourceSectionCount},{polling:400,timeout:240000});
+    }
     console.log('[map]',name);
-    const state=await page.evaluate(({id,selected,macro,group,owner,neighbors})=>{
+    const state=await page.evaluate(({id,selected,macro,group,owner,neighbors,adjacentID})=>{
       const app=window.__SHANGHAI_APP__,s=app.scene,m=s.map,beacons=s.getBuildingBeaconState(),ci=s.getCandidateIntegrationState();
       const sourceState=o=>m.getFeatureState({source:'overture-buildings',sourceLayer:'building',id:o.key.slice(9)});
       const label=beacons.labelPositions.find(z=>z.id===selected),gl=m.painter.context.gl;
       return {route:location.hash,name:document.querySelector('#location-name').textContent,viewport:[innerWidth,innerHeight],mode:app.mode,
         walkDisabled:document.querySelector('#start-walk').disabled,asset:s.getLandmarkAssetState(selected),source:sourceState(owner),
-        neighbors:neighbors.map(o=>({local_id:o.local_id,state:sourceState(o)})),clip:ci.clips.find(c=>c.id===id)||null,
+        adjacentAsset:adjacentID?s.getLandmarkAssetState(adjacentID):undefined,neighbors:neighbors.map(o=>({local_id:o.local_id,state:sourceState(o)})),sections:ci.sourceSections?.filter(x=>x.id===id)??[],clip:ci.clips.find(c=>c.id===id)||null,
         group:ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group)||null,shader:{triangles:ci.shader.triangles,limit:ci.shader.triangleLimit,macroTextures:ci.shader.macroTextures??null},
         labels:beacons.count,pick:label?s.pickBuildingBeacon(label):null,camera:{center:m.getCenter(),elevation:m.getCenterElevation(),pitch:m.getPitch(),bearing:m.getBearing(),zoom:m.getZoom()},
         glError:gl.getError(),contextLost:gl.isContextLost()};
@@ -97,16 +106,36 @@ async function run() {
     result.views.push({view:name,...state});save();
     assert.equal(state.glError,0);assert.equal(state.contextLost,false);assert.equal(state.labels,catalog.resulting_city_count);
     if(!control)assert.equal(state.pick,selected);assert.equal(new URLSearchParams(state.route.slice(1)).get('landmark'),selected);
-    for(const n of state.neighbors){assert.notEqual(n.state.candidateModel,true);}
-    if(detail)assert.deepEqual(state.group.feature_local_ids,group.feature_local_ids);
-    if(control){assert.equal(state.clip,null);assert.notEqual(state.source.candidateModel,true);assert.ok(!state.group.clip_feature_local_ids.includes(source.local_id));}
+    for(const n of state.neighbors){if(!spec.existingCandidateOwners?.includes(n.local_id))assert.notEqual(n.state.candidateModel,true);}
+    if(detail){
+      assert.deepEqual(state.group.feature_local_ids,group.feature_local_ids);
+      if(spec.adjacentModel){
+        const adjacent=catalog.models.find(model=>model.id===spec.adjacentModel);
+        const seen=state.adjacentAsset;
+        assert.equal(seen.status,'loaded');assert.equal(seen.visible,true);
+        assert.deepEqual(seen.anchor,[adjacent.lng,adjacent.lat]);
+        assert.equal(seen.verifiedAsset.sha256,adjacent.assets[seen.variant==='full'?'web':'lod'].sha256);
+        if(control){
+          assert.deepEqual(state.group.clip_feature_local_ids,spec.existingGroupOwners);
+          assert.equal(state.group.triangles,spec.groupTriangles-spec.addedTriangles);
+        }
+      }
+    }
+    if(control){assert.deepEqual(state.sections,[]);assert.equal(state.clip,null);assert.notEqual(state.source.candidateModel,true);assert.ok(!state.group.clip_feature_local_ids.includes(source.local_id));}
     else{
       assert.equal(state.name,row.name);assert.equal(state.mode,'overview');assert.equal(state.walkDisabled,true);
       const variant=state.asset.variant==='full'?'web':'lod';
       assert.equal(state.asset.verifiedAsset.sha256,row.assets[variant].sha256);assert.equal(state.asset.triangles,row.assets[variant].triangles);
       assert.deepEqual(state.asset.anchor,[row.lng,row.lat]);assert.equal(state.asset.heading,row.heading);
       assert.deepEqual(state.clip.owner,row.owner);assert.deepEqual(state.clip.geometry,row.replacement_geometry);
-      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual(state.group.clip_feature_local_ids,[source.local_id]);assert.equal(state.group.triangles,spec.groupTriangles);}
+      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...(spec.existingGroupOwners||[]),source.local_id].sort((a,b)=>a-b));assert.equal(state.group.triangles,spec.groupTriangles);if(spec.sourceSectionCount){
+        assert.equal(state.sections.length,1);
+        const section=state.sections[0];
+        assert.equal(section.feature_local_id,source.local_id);
+        assert.equal(section.macro_id,review.frozen_macro);
+        assert.equal(section.segments,spec.sourceSectionCount);
+        assert.equal(section.roof_m,row.source_section_caps.roof_m);
+      }}
     }
     const image=await page.screenshot({path:path.join(out,name+'.png'),timeout:300000});result.screenshots.push({file:name+'.png',bytes:image.length,sha256:sha(image)});save();
   }

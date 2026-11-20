@@ -1,3 +1,11 @@
+# 圣三一基督教堂（独立钟塔与连接短廊）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-bell-tower&mode=overview) · [单体旋转与下载](holy-trinity-bell-tower.html) · [来源与制作范围](source/precise/huangpu-holy-trinity-bell-tower/README.md) · [验收记录](data/audit/holy-trinity-bell-tower-v1/README.md)
+
+圣三一堂的独立方形钟塔、角部小尖塔、修复后的尖顶以及通往主堂北廊的短廊。按不同年代照片核对尖顶变迁，四边尺度和塔身高度含估计。
+
+近景 50,384 个三角面，远景 28,880 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,941,888 字节。上海主图现有 95 处独立入口，黄浦区 36 处。[资产清单](assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json)
+
 # 圣三一基督教堂（主堂与花园门廊）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-cathedral&mode=overview) · [单体旋转与下载](holy-trinity-cathedral.html) · [来源与制作范围](source/precise/huangpu-holy-trinity-cathedral/README.md) · [验收记录](data/audit/holy-trinity-cathedral-v1/README.md)

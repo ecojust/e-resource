@@ -885,18 +885,23 @@
         {
           "id": "huangpu-holy-trinity-cathedral",
           "scope": "临江西中路花园的主堂、东入口门廊、两侧柱廊、横翼与西端圣所外部。独立钟塔、学校办公楼和室内另列。"
+        },
+        {
+          "id": "huangpu-holy-trinity-bell-tower",
+          "scope": "主堂北侧的独立方塔、重建的尖顶及连接主堂北廊的短廊。"
         }
       ],
       "remaining_tasks": [
         {
-          "id": "holy-trinity-bell-tower-and-north-link",
-          "title": "圣三一堂独立钟塔与接廊",
-          "todo": "按塔基、旧影与修复后照片区分塔身、尖顶和连接主堂北廊的短廊，保留邻近校舍。"
-        },
-        {
           "id": "holy-trinity-cathedral-interior-and-hidden-details",
           "title": "圣三一堂隐蔽立面与内部资料",
           "todo": "补查修缮图和独立测绘资料，核对隐蔽立面、屋架和室内空间。"
+        },
+        {
+          "id": "holy-trinity-bell-tower-height-and-restoration",
+          "title": "圣三一堂钟塔高度与修复细节",
+          "todo": "核对不同时期的尖顶高度、塔身尺寸及修复图纸，保留史料的高度异文。",
+          "split_from_task": "holy-trinity-bell-tower-and-north-link"
         }
       ],
       "evidence": [
@@ -907,9 +912,17 @@
         {
           "path": "projects/shanghai/data/audit/holy-trinity-cathedral-v1/final-placement-contract.json",
           "supports": "原点取东山墙边线中点。主堂替换587，保留钟塔、旧校楼和周围建筑；门廊及南北敞廊保留地面通行。"
+        },
+        {
+          "path": "projects/shanghai/source/precise/huangpu-holy-trinity-bell-tower/README.md",
+          "supports": "圣三一堂的独立方形钟塔、角部小尖塔、修复后的尖顶以及通往主堂北廊的短廊。按不同年代照片核对尖顶变迁，四边尺度和塔身高度含估计。"
+        },
+        {
+          "path": "projects/shanghai/data/audit/holy-trinity-bell-tower-v1/final-placement-contract.json",
+          "supports": "塔与主堂独立锚定；原616长体两端保留，切口按原屋顶高度补面。"
         }
       ],
-      "exclusions": "按塔基、旧影与修复后照片区分塔身、尖顶和连接主堂北廊的短廊，保留邻近校舍。 补查修缮图和独立测绘资料，核对隐蔽立面、屋架和室内空间。"
+      "exclusions": "核对不同时期的尖顶高度、塔身尺寸及修复图纸，保留史料的高度异文。"
     }
   ]
 }
