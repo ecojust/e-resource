@@ -13,3 +13,7 @@
 原位修订在城市入口149处的前后版本分别完成桌面与手机实测。正面南壁柱同机位的最终截图中，穿孔莲花投影覆盖5,821像素，其中5,761像素的RGB最大通道差达到6。投影取自交付GLB的真实三角面。原有窗横档、石壁柱和三语门额在两次取景中仍可辨认。北侧莲花在这次南墩特写的画外，其两档造型另由同镜头原生渲染、可见面和旧墙射线核对。
 
 [旧版同机位](main-map-before-desktop-detail.png) · [修订版同机位](main-map-after-desktop-detail.png) · [局部原像素对照](southern-pier-city-before-after.png) · [网格投影复核](real-map-geometry-pixels.json) · [两站四件下载](final-21k-preflight.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c339911a58972e5fa7fabcfae2ee424d1e203fa7/projects/shanghai/index.html#landmark=bund07&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
