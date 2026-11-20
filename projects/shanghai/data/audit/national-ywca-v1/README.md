@@ -19,3 +19,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/58e5682ec158782a05ecd61d847a2000fc139afb/projects/shanghai/index.html#landmark=huangpu-national-ywca&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+同场继续取得[街面](map-street-facade.png)和[屋顶](map-roof.png)实图。门内、原西翼、北邻和步行街等十处地面点位均符合登记。远景确已切换至29,190面的LOD，SHA-256为 `42f2819dc67a40e215aa846cd4e3b3e07affb01579ebec0d019ffa739656ede6`。截图请求在字体加载后停留238.5秒，已保留四张新版实图和完整运行状态，独立远景截图待补。[五个视角状态与十处地面](detail-browser-interrupted.json) · [截图中断收据](distant-screenshot-interruption.json)
