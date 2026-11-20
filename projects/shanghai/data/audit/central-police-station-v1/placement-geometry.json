@@ -1,0 +1,141 @@
+{
+  "id": "huangpu-central-police-station",
+  "manifest_sha256": "60c948d97554ef404589921c44a0d19f01a3988f75e2b42aa8c2c2bdd2321a49",
+  "assets": {
+    "raw": {
+      "sha256": "6e585bca56220d1466da6685c3cea5452ff654912b821b8530941b2ecd4bff64",
+      "bytes": 1929832,
+      "triangles": 39072
+    },
+    "web": {
+      "sha256": "0f66f740eb20f0f50146dd49a3c907481c83dcd332c6855a9279e09e4b4ef93f",
+      "bytes": 570648,
+      "triangles": 39072
+    },
+    "lod": {
+      "sha256": "68d35cb5dcbc0451782a6db597aa2ffac2eca4612446741276ab64b5a5b3096c",
+      "bytes": 226328,
+      "triangles": 17396
+    }
+  },
+  "source": {
+    "near": {
+      "retained_percent": 95.58749420791102,
+      "original_area_m2": 1947.353670958816,
+      "mask_area_on_source_m2": 85.92709352351484,
+      "retained_area_m2": 1861.4265774353012,
+      "street_section_length_m": 45.010027313421986,
+      "coarse_roof_m": 32.0,
+      "owner_triangles": 41528,
+      "neighboring_triangles_preserved": 92852,
+      "assignment": {
+        "method": "group IDs and triangle-centroid distance to original polygons",
+        "largest_own_distance_m": 0.07984992240667908,
+        "smallest_next_owner_margin_m": 2.422944228044798
+      },
+      "model_clearance_to_other_members_m": 3.8695227996063255
+    },
+    "far": {
+      "retained_percent": 95.72344978068948,
+      "original_area_m2": 1928.4074787874129,
+      "mask_area_on_source_m2": 82.4693142632839,
+      "retained_area_m2": 1845.9381645241292,
+      "street_section_length_m": 44.860276290299,
+      "coarse_roof_m": 32.0,
+      "owner_triangles": 56,
+      "neighboring_triangles_preserved": 144,
+      "assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      },
+      "model_clearance_to_other_members_m": 3.9394481626785565
+    }
+  },
+  "independent_groups": [
+    {
+      "variant": "near",
+      "triangles_preserved": 78680,
+      "mask_clearance_m": 0.04752301719424512
+    },
+    {
+      "variant": "far",
+      "triangles_preserved": 156,
+      "mask_clearance_m": 0.12041646995546323
+    }
+  ],
+  "mask_m2": 97.46352,
+  "exhibit_volume_at_ground_m2": 76.6992,
+  "historic_facade_ground_witnesses": [
+    {
+      "name": "public street",
+      "xy": [
+        0,
+        -2
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "east street pavement",
+      "xy": [
+        -14,
+        -1.5
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "west street pavement",
+      "xy": [
+        14,
+        -1.5
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "historical exhibit volume",
+      "xy": [
+        -0.42,
+        0.68
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "east masonry relief",
+      "xy": [
+        -11,
+        0.65
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "west masonry relief",
+      "xy": [
+        11,
+        0.65
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "generic urban block behind the exhibit",
+      "xy": [
+        0,
+        2.5
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false
+    }
+  ],
+  "checker_sha256": "747559a7f16712e4c3f0f6fc9078f36e214cc91d3356e9edb515d01d674172e6",
+  "shared_checker_sha256": "30c0d5e0ad3f0e12cb4fa0f509c857d371da72991567731c0bdb57d995888999"
+}
