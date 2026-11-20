@@ -1,3 +1,11 @@
+# 外滩7号朝向黄浦江的底层东立面，两枚金色莲花标志分别位于端部扁拱窗与中央方窗之间的石墩上，2012和2025照片均可定位
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk) · [四种模型下载](source/precise/bund07/revisions/front-pier-emblems/manifest.json) · [来源与制作范围](source/precise/bund07/revisions/front-pier-emblems/README.md) · [验收记录](data/audit/great-northern-pier-emblems-v1/README.md)
+
+外滩7号朝向黄浦江的底层东立面，两枚金色莲花标志分别位于端部扁拱窗与中央方窗之间的石墩上，2012和2025照片均可定位。
+
+近景 279,636 个三角面，远景 111,788 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 62,803,071 字节。上海主图现有 149 处独立入口，黄浦区 75 处。[资产清单](source/precise/bund07/revisions/front-pier-emblems/manifest.json)
+
 # 国华银行大楼（东南转角与弧形窗墙）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-guohua-bank&mode=overview) · [单体旋转与下载](guohua-bank.html) · [来源与制作范围](source/precise/huangpu-guohua-bank/README.md) · [验收记录](data/audit/guohua-bank-v1/README.md)

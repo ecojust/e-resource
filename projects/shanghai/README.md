@@ -1,7 +1,7 @@
 # 上海全景建模
 
 <!-- current-shanghai-model:start -->
-上海主图现有 149 处入口。最近接入[国华银行大楼（东南转角与弧形窗墙）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-guohua-bank&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
+上海主图现有 149 处入口。最近细化[大北电报公司大楼 · 外滩7号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk)。[制作范围与验收记录](CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 [宏恩医院花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview)位于静安区。中央五开间门廊与两端山花之间，各有五跨底层拱廊。 [制作范围](source/precise/jingan-country-hospital/README.md) · [验收记录](data/audit/country-hospital-v1/README.md)
@@ -74,7 +74,7 @@
 | 有利大楼 · 外滩3号 | [2026-11-20 22:23:24](https://github.com/ecojust/e-resource/commit/1686fde1fc662f2cd6ece7675318009edf4ab2d9) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk) |
 | 日清大楼 · 外滩5号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk) |
 | 中国通商银行旧址 · 外滩6号 | [2026-11-20 19:22:09](https://github.com/ecojust/e-resource/commit/9f0888a873db1bc951d2ade3b45b4cd03e91be56) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk) |
-| 大北电报公司大楼 · 外滩7号 | [2026-10-26 16:20:09](https://github.com/ecojust/e-resource/commit/fb07d1739ea75948de463d23e09225bca62122d8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk) |
+| 大北电报公司大楼 · 外滩7号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk) |
 | 轮船招商局大楼 · 外滩9号 | [2026-10-26 16:37:45](https://github.com/ecojust/e-resource/commit/e81cc48c965a840c522caa3c900a4246b7119eae) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund09&mode=walk) |
 | 汇丰银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund12&mode=walk) |
 | 江海关大楼 | [2026-10-26 04:39:36](https://github.com/ecojust/e-resource/commit/bb464592ca0f802d834037e03af47f3a9f7ebc10) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=customs-house&mode=walk) |
