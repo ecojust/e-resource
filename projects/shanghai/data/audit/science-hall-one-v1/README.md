@@ -17,3 +17,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4b7e967bde11c5e3027cb5a36250f264a78c6e20/projects/shanghai/index.html#landmark=huangpu-science-hall-building-one&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+独立旋转页在同一份23126站点上分别用桌面及390像素手机显示正式近、远档，四个下载均校验了字节数与SHA-256。[独立页实测](viewer.json) [查看科学会堂](../../../science-hall-one.html)
