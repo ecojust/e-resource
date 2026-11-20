@@ -1,0 +1,1 @@
+HallPlaques.otf contains eight characters from Noto Serif CJK TC Regular under SIL OFL 1.1. The letters approximate the photographed wording and do not reproduce the calligrapher’s original brushwork.

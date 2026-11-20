@@ -1,3 +1,11 @@
+# 玉佛禅寺大雄宝殿
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-jade-buddha-mahavira-hall&mode=overview) · [单体旋转与下载](jade-buddha-mahavira-hall.html) · [来源与制作范围](source/precise/putuo-jade-buddha-mahavira-hall/README.md) · [验收记录](data/audit/jade-buddha-mahavira-hall-v1/README.md)
+
+安远路170号大雄宝殿，按寺方平移工程记录、寺院导览图和两期平移后影像确定现址，制作坐北朝南的殿身、重檐歇山屋面及前台阶。
+
+近景 43,102 个三角面，远景 13,354 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,394,342 字节。上海主图现有 181 处独立入口，普陀区 2 处。[资产清单](assets/models/candidates/putuo-jade-buddha-mahavira-hall/manifest.json)
+
 # 小桃园清真寺主礼拜殿（院内东立面及五处屋顶构件）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xiaotaoyuan-mosque-prayer-hall&mode=overview) · [单体旋转与下载](xiaotaoyuan-prayer-hall.html) · [来源与制作范围](source/precise/huangpu-xiaotaoyuan-mosque-prayer-hall/README.md) · [验收记录](data/audit/xiaotaoyuan-prayer-hall-v1/README.md)
