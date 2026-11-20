@@ -11,3 +11,7 @@
 181处实景目录和单体页已核。1250×820桌面与390×844手机均切换了近景及远景，外观可辨上下两层灰瓦飞檐、檐间四块匾、三组格扇、两端圆窗及中央石阶。四项实际下载的文件名、字节数及SHA-256均与制作清单一致。[公开登记前后与资源](actual-entry-and-four-downloads.json) · [桌面近景](viewer-desktop-full.png) · [手机近景](viewer-mobile-full.png) · [浏览器复核](viewer.json)
 
 城市地图的180→181处前后对照包含同镜位旧图、手机与桌面默认画面、殿前石阶、屋面及远景。27个实际行走位置均已通过。[地图实拍、分别核对的寺内建筑与签名](city-24144/README.md)
+
+GitHub 固定提交的地图入口、运行模块、来源和四种下载等 39 个公开文件均实际返回 HTTP 200，字节数及 SHA-256 均与 Git 对应文件相同。 本次固定提交在第三方地图预览服务的入口响应为 520。主图交互依据本页所列的同版本浏览器实测。[GitHub 版本目录](https://github.com/ecojust/e-resource/tree/028c1a60590e6c862089a71f9efb16b3f8e3fb31/projects/shanghai) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，9 项返回其他版本的内容，10 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

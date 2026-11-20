@@ -3850,7 +3850,7 @@
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 真如寺大殿（正殿） | [2026-10-27 03:12:03](https://github.com/ecojust/e-resource/commit/c381493024bfecec236687d5fda6c217daffd2a8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk) |
-| 玉佛禅寺大雄宝殿 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-jade-buddha-mahavira-hall&mode=overview) |
+| 玉佛禅寺大雄宝殿 | 2026-11-21 04:28:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-jade-buddha-mahavira-hall&mode=overview) |
 
 ### 虹口区（13处）
 
