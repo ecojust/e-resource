@@ -1,3 +1,11 @@
+# 国华银行大楼（东南转角与弧形窗墙）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-guohua-bank&mode=overview) · [单体旋转与下载](guohua-bank.html) · [来源与制作范围](source/precise/huangpu-guohua-bank/README.md) · [验收记录](data/audit/guohua-bank-v1/README.md)
+
+北京东路342号国华银行现存建筑的临街入口、开间和分段，以实际楼体和修缮资料核对。
+
+近景 27,932 个三角面，远景 23,932 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,980,432 字节。上海主图现有 149 处独立入口，黄浦区 75 处。[资产清单](assets/models/candidates/huangpu-guohua-bank/manifest.json)
+
 # 中山东一路18号麦加利银行东门上方的石质盾饰与两侧横框，以可定位的临街照片核对门额轮廓
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund18&mode=walk) · [四种模型下载](source/precise/bund18/revisions/east-door-cartouche/manifest.json) · [来源与制作范围](source/precise/bund18/revisions/east-door-cartouche/README.md) · [验收记录](data/audit/chartered-door-cartouche-v1/README.md)

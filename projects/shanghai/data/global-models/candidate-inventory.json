@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 110,
+  "candidate_manifest_count": 111,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 108,
-  "resulting_city_count": 148,
+  "new_city_model_count": 109,
+  "resulting_city_count": 149,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 9,
-    "黄浦区": 58
+    "黄浦区": 59
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 440,
-    "bytes": 1202480381,
+    "files": 444,
+    "bytes": 1205460813,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 17413889,
+    "current_run_added_bytes": 2980432,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 308
+    "inherited_incremental_files": 312
   },
   "records": [
     {
@@ -9866,6 +9866,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "南京西路801号中国银行西区分行和同孚大楼的临街部分，以三角地块、相邻公寓门牌和现场照片定位。"
+    },
+    {
+      "id": "huangpu-guohua-bank",
+      "name": "国华银行大楼（东南转角与弧形窗墙）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "guohua-bank.html",
+      "manifest": "assets/models/candidates/huangpu-guohua-bank/manifest.json",
+      "manifest_sha256": "db0e791372b84c15a495b76bd4b964b18fc14b6c180c64cf89fd5b8c6deb6afd",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-guohua-bank/huangpu-guohua-bank-raw.glb",
+          "bytes": 1480436,
+          "sha256": "811a4938fa2a8f385a6a1c8963c54662471b58c12ab7fcaacfcff58819247ba8",
+          "triangles": 27932,
+          "bounds_gltf_m": [
+            [
+              -10.114694595336914,
+              0.0,
+              -5.747217178344727
+            ],
+            [
+              10.785958290100098,
+              48.88999938964844,
+              0.39756378531455994
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-guohua-bank/huangpu-guohua-bank-web.glb",
+          "bytes": 551312,
+          "sha256": "a27e58e9f7f91ea7718f562fc5d36be1f449842146329fedde6e89fd4e9e3bef",
+          "triangles": 27932,
+          "bounds_gltf_m": [
+            [
+              -10.1146946,
+              0,
+              -5.74721718
+            ],
+            [
+              10.7859583,
+              48.8899994,
+              0.397563785
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-guohua-bank/huangpu-guohua-bank-lod.glb",
+          "bytes": 470632,
+          "sha256": "60bec47ca79560a4d48aa16c62487751e5103cb0027f3a68588411dc771287b3",
+          "triangles": 23932,
+          "bounds_gltf_m": [
+            [
+              -10.1146946,
+              0,
+              -5.74721718
+            ],
+            [
+              10.7859583,
+              48.8899994,
+              0.397563785
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-guohua-bank/huangpu-guohua-bank.blend",
+          "bytes": 478052,
+          "sha256": "d907d2fed8b9da8ce9bd7eae1a49f180cece87798a93bb36ee0f853650b41636"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -10.114694595336914,
+            0.0,
+            -5.747217178344727
+          ],
+          "max": [
+            10.785958290100098,
+            48.88999938964844,
+            0.39756378531455994
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -10.114694595336914,
+            -0.39756378531455994,
+            0.0
+          ],
+          "max": [
+            10.785958290100098,
+            5.747217178344727,
+            48.88999938964844
+          ]
+        },
+        "triangles": 27932,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-exterior-informed-by-historical-drawing-and-restoration-photographs",
+      "description": "北京东路342号国华银行现存建筑的临街入口、开间和分段，以实际楼体和修缮资料核对。"
     }
   ],
   "baseline_inventory": {
@@ -9910,6 +10016,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-glen-line-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-guohua-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-hamilton-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-cathedral/manifest.json",
@@ -9954,13 +10061,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/yates-apartments-v1",
+  "incremental_audit_directory": "data/audit/guohua-bank-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/continental-bank-v1/inventory-increment.json",
-    "bytes": 265558,
-    "sha256": "5037e3de98dcd6895f3a7ae1c25b13ebec8ef8893ec2332f3b8334c236dd19e0"
+    "file": "data/audit/yates-apartments-v1/inventory-increment.json",
+    "bytes": 269181,
+    "sha256": "8bfcf08ea60cac119cd7f98dc9ddf5906925c39667ffb10863ff7988119e78cc"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/jingan-yates-apartments/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-guohua-bank/manifest.json"
   ]
 }
