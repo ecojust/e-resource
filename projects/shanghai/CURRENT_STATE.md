@@ -1,3 +1,11 @@
+# 真光大楼（圆明园路东立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-baptist-publication-building&mode=overview) · [单体旋转与下载](china-baptist-publication.html) · [来源与制作范围](source/precise/huangpu-china-baptist-publication-building/README.md) · [验收记录](data/audit/china-baptist-publication-v1/README.md)
+
+圆明园路209号真光大楼东向街面，依据朝向、门牌和尖券窗区分相邻的广学大楼。
+
+近景 57,036 个三角面，远景 27,132 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,676,809 字节。上海主图现有 140 处独立入口，黄浦区 67 处。[资产清单](assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json)
+
 # 广学大楼虎丘路西立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-christian-literature-building&mode=overview) · [单体旋转与下载](christian-literature.html) · [来源与制作范围](source/precise/huangpu-christian-literature-building/README.md) · [验收记录](data/audit/christian-literature-v1/README.md)

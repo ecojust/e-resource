@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 101,
+  "candidate_manifest_count": 102,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 99,
-  "resulting_city_count": 139,
+  "new_city_model_count": 100,
+  "resulting_city_count": 140,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 50
+    "黄浦区": 51
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 404,
-    "bytes": 1139573492,
+    "files": 408,
+    "bytes": 1145250301,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 16391297,
+    "current_run_added_bytes": 5676809,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 272
+    "inherited_incremental_files": 276
   },
   "records": [
     {
@@ -8912,6 +8912,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "虎丘路128号广学大楼可独立辨认的西向立面，核对大尖拱和与东侧真光大楼相接的边界。"
+    },
+    {
+      "id": "huangpu-china-baptist-publication-building",
+      "name": "真光大楼（圆明园路东立面）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "china-baptist-publication.html",
+      "manifest": "assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json",
+      "manifest_sha256": "f70b4ad1128c87df919bc73b0ac5e6d1c8121646ce71230567663a8a20d958e2",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-china-baptist-publication-building/huangpu-china-baptist-publication-building-raw.glb",
+          "bytes": 3177888,
+          "sha256": "bbb8b8badaf0ff255c2d3760aadc28ecd8c1056e050956802405459e1434974a",
+          "triangles": 57036,
+          "bounds_gltf_m": [
+            [
+              -11.737600326538086,
+              0.0,
+              -1.9800000190734863
+            ],
+            [
+              11.657600402832031,
+              29.90999984741211,
+              0.34299999475479126
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-china-baptist-publication-building/huangpu-china-baptist-publication-building-web.glb",
+          "bytes": 1032108,
+          "sha256": "70a6a5b79f1d6cadefce9f0a54c7d9be92a1da2acfe1a80923f9c2a0b272a1eb",
+          "triangles": 57036,
+          "bounds_gltf_m": [
+            [
+              -11.7376003,
+              0,
+              -1.98000002
+            ],
+            [
+              11.6576004,
+              29.9099998,
+              0.342999995
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-china-baptist-publication-building/huangpu-china-baptist-publication-building-lod.glb",
+          "bytes": 475168,
+          "sha256": "33338f7be50b311954720068f71afe0c5a38c1607e20ef0823c80887b10805d1",
+          "triangles": 27132,
+          "bounds_gltf_m": [
+            [
+              -11.7376003,
+              0,
+              -1.98000002
+            ],
+            [
+              11.6576004,
+              29.9099998,
+              0.342999995
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-china-baptist-publication-building/huangpu-china-baptist-publication-building.blend",
+          "bytes": 991645,
+          "sha256": "639df0a90134a2830d66ee39acb62331cad3a67bf783b65ef61470aa4816ab43"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -11.737600326538086,
+            0.0,
+            -1.9800000190734863
+          ],
+          "max": [
+            11.657600402832031,
+            29.90999984741211,
+            0.34299999475479126
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -11.737600326538086,
+            -0.34299999475479126,
+            0.0
+          ],
+          "max": [
+            11.657600402832031,
+            1.9800000190734863,
+            29.90999984741211
+          ]
+        },
+        "triangles": 57036,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-architectural-elevation-and-photo-informed-exterior",
+      "description": "圆明园路209号真光大楼东向街面，依据朝向、门牌和尖券窗区分相邻的广学大楼。"
     }
   ],
   "baseline_inventory": {
@@ -8940,6 +9046,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-cathay-cinema/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-central-police-station/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-christian-literature-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cishu-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
@@ -8991,13 +9098,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/christian-literature-v1",
+  "incremental_audit_directory": "data/audit/china-baptist-publication-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/enterprise-building-v1/inventory-increment.json",
-    "bytes": 232729,
-    "sha256": "703309997021aed536ee795f2968a3c14563919f9825a2ecfe32f41b90fe6f2c"
+    "file": "data/audit/christian-literature-v1/inventory-increment.json",
+    "bytes": 236496,
+    "sha256": "3e792aa436bd51ea962012891fdbb62b4491ffc5ce3123266b7220fcf43b96b4"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-christian-literature-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json"
   ]
 }
