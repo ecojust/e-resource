@@ -26,3 +26,7 @@
 整理城图记录时发现，早期清单中去除发布提交后的队列摘要与同一份清单指向的队列文件不一致。逐一从九个实际站点取回该文件，九份字节完全一致。保留原始清单，只重新计算这个派生摘要。原有39项提交记录、目录和全部文件摘要均通过核对。[原始清单](queue-fingerprint-review/original-snapshot.json) · [九站逐份核对](queue-fingerprint-review/verified.json)
 
 在实测的191处前态，同机位可见未裁切的原楼。192处后态从街面可见五折窗墙、浅色层檐和前园铁栏，背后的原有长屋延续至两端。桌面、手机默认视角及键盘切换回本栋后，窗台、檐口和园柱八个见证点都在屏幕内，标签与界面均未遮挡。手机点一次放大后，南端一层窗点出了画面，西檐端点落入图例；另两张街面与屋顶近照中，侧栏和地点卡遮住了部分低处构件。远景切换、街面与屋顶细节和23个地面点均已现场核对。两代主图均无页面或请求错误。[主图前后实测](final-map-24155/results.json) · [桌面默认](final-map-24155/map-desktop.png) · [手机默认](final-map-24155/map-mobile.png) · [街面窗列](final-map-24155/map-street-facade.png) · [逐点屏幕检验](final-map-24155/screen-control-points.json) · [正式站1034个文件](final-map-24155/155-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 47 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/88ae16a73a68170009b803558aa667aeaa6d6b8a/projects/shanghai/index.html#landmark=xuhui-yueyang-lane-200-east-row&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 47 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
