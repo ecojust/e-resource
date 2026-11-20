@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
-import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from '../src/candidate-overview-camera.js';
+import {candidateOverviewCamera,candidateOverviewFrame,OVERVIEW_CAMERA_RESET} from '../src/candidate-overview-camera.js';
 import {mergeCandidateCityModels} from '../src/candidate-city-integrations.js';
 import {WalkController} from '../src/walk-controller.js';
 
@@ -64,7 +64,8 @@ for(const viewport of viewports)test(`${viewport.width} by ${viewport.height}: a
     assert(camera,place.id);
     assert(camera.zoom>=8&&camera.zoom<=24);assert(Number.isFinite(camera.elevation));
     assert.deepEqual(camera.padding,viewport.insets);
-    const transform=actualTransform(camera,viewport),corners=worldCorners({...place,bounds_glb:place.overview_focus_bounds_glb??place.bounds_glb});
+    const frame=candidateOverviewFrame(place);
+    const transform=actualTransform(camera,viewport),corners=worldCorners({...frame,bounds_glb:frame.overview_focus_bounds_glb??frame.bounds_glb});
     assert.equal(corners.length,8);
     for(const corner of corners){
       const pixel=transform.coordinatePoint(corner,corner.toAltitude(),transform._pixelMatrix3D);
@@ -191,4 +192,17 @@ test('production overview navigation preserves candidate height through renderin
   assert.deepEqual({...transform.padding},{top:0,bottom:0,left:0,right:0});
   assert.deepEqual([transform.centerPoint.x,transform.centerPoint.y],[viewport.width/2,viewport.height/2]);
   assert(calls.some(([name])=>name==='fly'),'legacy route still uses its established fly camera');
+});
+
+test('the documented Riyue garden focus is bounded to this model and its verified geometry',()=>{
+  const place=candidates.find(row=>row.id==='huangpu-feng-zikai-riyue-lou');assert.ok(place);
+  const frame=candidateOverviewFrame(place);
+  const copy=structuredClone(place);
+  assert.deepEqual(frame.overview_focus_bounds_glb,{"min":[-2.55,1.4,-0.7],"max":[2.55,6.9,1.6]});
+  assert.equal(frame.overviewBearing,-9);assert.equal(frame.overviewPitch,56);
+  for(const other of [...legacy,...candidates.filter(row=>row.id!==place.id)])assert.equal(candidateOverviewFrame(other),other);
+  const different={...place,assets:{...place.assets,web:{...place.assets.web,sha256:'0'.repeat(64)}}};
+  assert.equal(candidateOverviewFrame(different),different);
+  for(const vp of viewports){const shot=candidateOverviewCamera(place,vp);assert.equal(shot.bearing,frame.overviewBearing);assert.equal(shot.pitch,frame.overviewPitch);}
+  assert.deepEqual(place,copy);
 });

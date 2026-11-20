@@ -1,3 +1,11 @@
+# 长乐邨93号丰子恺旧居（日月楼南庭院立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) · [单体旋转与下载](feng-zikai-riyue-lou.html) · [来源与制作范围](source/precise/huangpu-feng-zikai-riyue-lou/README.md) · [验收记录](data/audit/feng-zikai-riyue-lou-v1/README.md)
+
+市房管局2C009梵尔登花园，核对陕西南路39弄93号门牌、丰氏家藏老照片和2022年现场记录，制作庭院侧门窗、二层梯形窗及可核实的局部坡屋面。
+
+近景 5,188 个三角面，远景 3,758 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 734,135 字节。上海主图现有 193 处独立入口，黄浦区 94 处。[资产清单](assets/models/candidates/huangpu-feng-zikai-riyue-lou/manifest.json)
+
 # 岳阳路200弄住宅临街锯齿立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-lane-200-east-row&mode=overview) · [单体旋转与下载](yueyang-lane-200-east-row.html) · [来源与制作范围](source/precise/xuhui-yueyang-lane-200-east-row/README.md) · [验收记录](data/audit/yueyang-lane-200-east-row-v1/README.md)

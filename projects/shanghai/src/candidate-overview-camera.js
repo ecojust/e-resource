@@ -3,10 +3,18 @@ const DEG=Math.PI/180,EARTH=6371008.8;
 // numeric zero does not clear a previous asymmetric padding object.
 export const OVERVIEW_CAMERA_RESET={elevation:0,padding:{top:0,bottom:0,left:0,right:0}};
 
+// The retained building across this narrow garden screens the original whole-volume view.
+export function candidateOverviewFrame(place) {
+  if (place.id !== 'huangpu-feng-zikai-riyue-lou' || place.assets?.web?.sha256 !== '52f1215030d959be435f05415787722fde25a7e32b3d9381ca5469c077d448e2') return place;
+  return {...place, overviewBearing: -9, overviewPitch: 56,
+    overview_focus_bounds_glb: {"min":[-2.55,1.4,-0.7],"max":[2.55,6.9,1.6]}};
+}
+
 /** Fit the overview bounds, including height, into the free map
  * viewport. Coordinates and camera elevation are display parameters only. */
 export function candidateOverviewCamera(place,{width,height,insets={}}){
   if(!place.city_integration)return null;
+  place=candidateOverviewFrame(place);
   const whole=place.bounds_glb;
   if(!whole?.min?.every(Number.isFinite)||!whole?.max?.every(Number.isFinite))return null;
   const focus=place.overview_focus_bounds_glb;
