@@ -1,0 +1,221 @@
+{
+  "model": "huangpu-holy-trinity-cathedral",
+  "manifest_sha256": "060393d9c4bc0d0cc2ad2dc9003f87705aba2b95e2c7199ff1b3a787735d9863",
+  "variants": {
+    "raw": {
+      "sha256": "ea366069aa9cbbd9d8f35e5f54ffa7c214a8ba4169785715d9c551eb7b3fe3e8",
+      "bytes": 7116652,
+      "triangles": 137604
+    },
+    "web": {
+      "sha256": "1f22f80db6ad68b266a3683923ec9b6a1ae62803e0bb2263f4a91f5e5d094eac",
+      "bytes": 2426524,
+      "triangles": 137604
+    },
+    "lod": {
+      "sha256": "b1a1cd81f76eff4752390d5da0de28ad2c7293300ec425c3dfde512f5d99cb1c",
+      "bytes": 1317944,
+      "triangles": 72644
+    }
+  },
+  "macro": "14-13720-6694",
+  "nearTile": {
+    "id": "14-13720-6694-2_-4-s0-s1",
+    "file": "near/2_-4-s0-s1.glb.gz",
+    "feature_local_ids": [
+      251,
+      2366,
+      1251,
+      2617,
+      409,
+      616,
+      1810,
+      587,
+      692
+    ]
+  },
+  "owner": 587,
+  "scope": "近远景完整替换源587，保留校楼1810、钟塔位置616及东侧庭园。",
+  "source": {
+    "near": {
+      "target_triangles": 20074,
+      "target_projected_m2": 1172.097356773855,
+      "uncovered_source_m2": 0.0,
+      "all_source_vertices_in_mask": true,
+      "owner_assignment": {
+        "method": "group IDs and triangle-centroid distance to original polygons",
+        "largest_own_distance_m": 0.07951795714479212,
+        "smallest_next_owner_margin_m": 6.045185210063047
+      },
+      "other_owners": [
+        251,
+        409,
+        616,
+        692,
+        1251,
+        1810,
+        2366,
+        2617
+      ],
+      "other_triangles": 66492,
+      "mask_to_nearest_other_decoded_owner_m": 5.604550786336121,
+      "model_to_nearest_other_decoded_owner_m": 6.265449169416399
+    },
+    "far": {
+      "target_triangles": 52,
+      "target_projected_m2": 1161.5427441893607,
+      "uncovered_source_m2": 0.0,
+      "all_source_vertices_in_mask": true,
+      "owner_assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      },
+      "other_owners": [
+        251,
+        409,
+        616,
+        692,
+        1251,
+        1810,
+        2366,
+        2617
+      ],
+      "other_triangles": 128,
+      "mask_to_nearest_other_decoded_owner_m": 5.676415930028117,
+      "model_to_nearest_other_decoded_owner_m": 6.341038747013593
+    }
+  },
+  "source_mask_m2": 1236.9338521445113,
+  "candidate_projection_m2": 1170.2137214888794,
+  "collision_m2": 966.9949864999992,
+  "ground_m2_by_variant": [
+    967.8283886098358,
+    967.8283886284576,
+    967.0286936963425
+  ],
+  "collision_method": "按三个 GLB 的地面上方两米投影取并集。剔除有顶敞廊的步道铺面，保留独立石柱、实墙和封闭教堂地板；轮廓简化容差0.055米。",
+  "ground_witnesses": [
+    {
+      "name": "enclosed nave",
+      "xy": [
+        0,
+        12
+      ],
+      "expected": "building",
+      "cut": true
+    },
+    {
+      "name": "enclosed sanctuary",
+      "xy": [
+        0,
+        43
+      ],
+      "expected": "building",
+      "cut": true
+    },
+    {
+      "name": "occupied garden portal pier",
+      "xy": [
+        5.25,
+        -4.25
+      ],
+      "expected": "building",
+      "cut": false
+    },
+    {
+      "name": "open central garden portal",
+      "xy": [
+        0,
+        -2.8
+      ],
+      "expected": null,
+      "cut": false
+    },
+    {
+      "name": "north covered walk",
+      "xy": [
+        10.78,
+        12.03
+      ],
+      "expected": null,
+      "cut": true
+    },
+    {
+      "name": "south covered walk",
+      "xy": [
+        -10.78,
+        12.03
+      ],
+      "expected": null,
+      "cut": true
+    },
+    {
+      "name": "garden approach",
+      "xy": [
+        0,
+        -6.5
+      ],
+      "expected": null,
+      "cut": false
+    }
+  ],
+  "neighbor_clearances": [
+    {
+      "local_id": 616,
+      "mask_m": 5.676424448415005,
+      "model_m": 6.341040534662258
+    },
+    {
+      "local_id": 1555,
+      "mask_m": 6.9642320692238835,
+      "model_m": 9.150949435392917
+    },
+    {
+      "local_id": 1086,
+      "mask_m": 9.240956274842382,
+      "model_m": 10.166576126956505
+    },
+    {
+      "local_id": 1810,
+      "mask_m": 10.346088231406577,
+      "model_m": 10.846098645881431
+    },
+    {
+      "local_id": 1898,
+      "mask_m": 10.550491882277049,
+      "model_m": 11.216600337903055
+    },
+    {
+      "local_id": 409,
+      "mask_m": 14.736226827940866,
+      "model_m": 15.380144641643477
+    },
+    {
+      "local_id": 119,
+      "mask_m": 16.90938670137791,
+      "model_m": 12.767622453670924
+    },
+    {
+      "local_id": 2617,
+      "mask_m": 20.76350453070165,
+      "model_m": 21.307932755563765
+    },
+    {
+      "local_id": 692,
+      "mask_m": 29.47022134190926,
+      "model_m": 29.818026621000783
+    },
+    {
+      "local_id": 2383,
+      "mask_m": 36.39010450088914,
+      "model_m": 38.282354219584015
+    }
+  ],
+  "retained_blocks": [
+    616,
+    1810,
+    119,
+    1555
+  ],
+  "script_sha256": "55f1f4db5d424d813a43052d668d6f3ffae49fe65abad2e419204ef5fa320f41",
+  "shared_checker_sha256": "30c0d5e0ad3f0e12cb4fa0f509c857d371da72991567731c0bdb57d995888999"
+}

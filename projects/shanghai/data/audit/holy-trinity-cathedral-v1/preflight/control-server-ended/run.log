@@ -1,0 +1,18 @@
+[map] map-before
+apiRequestContext.get: connect ECONNREFUSED 127.0.0.1:8897
+Call log:
+[2m  - → GET http://127.0.0.1:8897/data/candidate-city-integrations.json[22m
+[2m    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36[22m
+[2m    - accept: */*[22m
+[2m    - accept-encoding: gzip,deflate,br[22m
+
+    at receipt (/tmp/trinity/map-control-fit/driver.cjs:119:35)
+    at run (/tmp/trinity/map-control-fit/driver.cjs:150:13) {
+  log: [
+    '  - → GET http://127.0.0.1:8897/data/candidate-city-integrations.json',
+    '    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36',
+    '    - accept: */*',
+    '    - accept-encoding: gzip,deflate,br'
+  ],
+  name: 'Error'
+}

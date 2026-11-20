@@ -1,3 +1,11 @@
+# 圣三一基督教堂（主堂与花园门廊）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-cathedral&mode=overview) · [单体旋转与下载](holy-trinity-cathedral.html) · [来源与制作范围](source/precise/huangpu-holy-trinity-cathedral/README.md) · [验收记录](data/audit/holy-trinity-cathedral-v1/README.md)
+
+九江路圣三一堂的红砖主堂、五廊平面、花园侧敞廊和西端半圆圣所。主管机构的俯视照片可区分主堂、附房和独立钟楼；立面高度、部分屋顶及墙面细节含估计。
+
+近景 137,604 个三角面，远景 72,644 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 13,092,465 字节。上海主图现有 94 处独立入口，黄浦区 35 处。[资产清单](assets/models/candidates/huangpu-holy-trinity-cathedral/manifest.json)
+
 # 华业公寓主楼（H形住宅与中央红瓦塔）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huaye-apartments&mode=overview) · [单体旋转与下载](huaye-apartments.html) · [来源与制作范围](source/precise/jingan-huaye-apartments/README.md) · [验收记录](data/audit/huaye-apartments-v1/README.md)

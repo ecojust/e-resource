@@ -1,0 +1,77 @@
+{
+  "id": "huangpu-holy-trinity-cathedral",
+  "input_manifest": {
+    "path": "assets/models/candidates/huangpu-holy-trinity-cathedral/manifest.json",
+    "sha256": "060393d9c4bc0d0cc2ad2dc9003f87705aba2b95e2c7199ff1b3a787735d9863"
+  },
+  "inputs": {
+    "raw": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral-raw.glb",
+      "sha256": "ea366069aa9cbbd9d8f35e5f54ffa7c214a8ba4169785715d9c551eb7b3fe3e8"
+    },
+    "full": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral-web.glb",
+      "sha256": "1f22f80db6ad68b266a3683923ec9b6a1ae62803e0bb2263f4a91f5e5d094eac"
+    },
+    "lod": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral-lod.glb",
+      "sha256": "b1a1cd81f76eff4752390d5da0de28ad2c7293300ec425c3dfde512f5d99cb1c"
+    },
+    "native": {
+      "path": "assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral.blend",
+      "sha256": "61696f07fec5e0af0c4b1d18d1fa6af98855ab7a3cd328c06142e9f444a1f7c4"
+    }
+  },
+  "comparison": {
+    "path": "source/precise/huangpu-holy-trinity-cathedral/reference-review.json",
+    "sha256": "d5a9506470d8ffec74c39ec669f658d6237f2e4f8cb317af38b33e823a286f8e"
+  },
+  "views": [
+    {
+      "path": "data/audit/holy-trinity-cathedral-v1/huangpu-holy-trinity-cathedral-preview.png",
+      "sha256": "7a25faa8100f0b55289f083ac6540fbd29bf39d7ac8ac4ca37c32572e79b4aa9",
+      "size": [
+        820,
+        900
+      ],
+      "checked_zh": "东山墙两层七座尖窗、六叶花窗与三拱门廊前后分层；两侧低侧廊开敞，可区分灰石柱和砖拱。后方横翼在本张正面图的边缘，另用屋顶图检查。"
+    },
+    {
+      "path": "data/audit/holy-trinity-cathedral-v1/garden-oblique.png",
+      "sha256": "bc811179055daa043ddff20232a476b22e0675c0b48fabb68dd9e24dd6b71ffb",
+      "size": [
+        680,
+        520
+      ],
+      "checked_zh": "花园斜视可辨灰色多级坡顶、沿南侧连续的砖券与浅色柱身、后排侧墙和高侧窗。山墙中间七窗双层与圆窗在门廊上方。"
+    },
+    {
+      "path": "data/audit/holy-trinity-cathedral-v1/western-roofs.png",
+      "sha256": "43e030f187d45c1957eb7ea056983886676dbe643703b0669da8959be6ffe7a2",
+      "size": [
+        680,
+        520
+      ],
+      "checked_zh": "高处西向可见交叉屋脊、两坡相交的斜谷、短筒形和半穹形衔接的圣所屋面，端部有两块低矩形附房。背墙用简化红砖收面。"
+    }
+  ],
+  "initial": {
+    "path": "data/audit/holy-trinity-cathedral-v1/preflight/apse-review.json",
+    "sha256": "7b851d6c289f424389565f238fe2621b8a88eeb2c8b1aeb991cd8c5b21347dd0"
+  },
+  "geometry_audit": {
+    "path": "data/audit/holy-trinity-cathedral-v1/geometry-native.json",
+    "sha256": "9f48a492882679e08ad71a815bb5f874bbcb94332ce1057570d1ff613a4f8b97"
+  },
+  "ray_audit": {
+    "path": "data/audit/holy-trinity-cathedral-v1/surface-checks.json",
+    "sha256": "b31b8dc4a448eb5a7420d57330e5173ec46071ca2f2068f392c4150f4fd3366f"
+  },
+  "detail_script": {
+    "path": "data/audit/holy-trinity-cathedral-v1/detail-views.py",
+    "sha256": "875870930f31ce7ae7e9630c535e97faff3ba07bafa546859da2498822fa1f2e"
+  },
+  "detail_native_sha256": "61696f07fec5e0af0c4b1d18d1fa6af98855ab7a3cd328c06142e9f444a1f7c4",
+  "method": "重新打开最终Blender场景，采用Cycles和OIDN降噪渲染。对照1877年插图、2016年日照、2026年夜照和主管机构公布的上方照片，完整解码三个PNG并逐块验CRC。",
+  "limits": "屋面细部、石材和侧窗重复节奏依据可见照片估计；树木遮挡的西墙细部保留简化。"
+}
