@@ -28,3 +28,7 @@
 最终125处站点从目录分别在1280×800与390×844点入中山医院3号楼。六次取景中的北廊、南坡和两翼画面都加载了真实2186/1132组，并读取主楼接两侧翼楼的两段23.5米截面。南坡西端被既有翼楼部分遮挡；北侧近景可见多层病房窗及出挑栏杆。远近GLB、四件下载、周边院内通路与五座邻楼已实测。另核对135份真实HTTP资源和4份目录输入。[主图记录](main-map-browser.json) · [六图目检](map-visual-review.json) · [输入复核](main-map-input-verification.json)
 
 前一版124处的地图从原目录进入院区，2186和1132仍使用同一原生近景，替换与裁切列表为空。[登记前地图](map-before.png) · [124处前态核对](before-browser.json) · [最终125处全量HTTP](ordinary-final-snapshot-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ac8b08c0feaca1fc83683b061a5e03442b785725/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
