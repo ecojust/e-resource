@@ -13,3 +13,7 @@
 在同一香港路镜头上，实测第126版的普通窗墙及第127版的五开间柱廊。手机和桌面各自从地图入口加载，近景中的圆柱、柱后窗墙、端壁和石檐可辨。沿街、俯视、远景均通过，地面16点逐一核对，街道路面、柱间通道与门前退廊均能到达，柱身、闭合门扇、实墙及四处邻楼阻挡相符。独立页实际切换两档，四件下载的字节均与清单一致。十张图均完整解码并绑定哈希。[地图前态](control-browser.json) · [地图后态](main-browser.json) · [单体页实测](viewer.json) · [逐图像素与目视复核](map-visual-review.json)
 
 桌面、手机首屏及街面近景取自15085站，保留原截图与校验值。在最终18085站重新通过HTTP实取银行公会的单体页、放置合同、清单和四件资产。两个版本的银行公会整条城市记录相同，默认220°、38°、19.75级及占地、裁片和截口一致。最终127处目录里唯一改变的模型字段是提篮桥历史门楼首屏俯角由61°改为57°；另更新了窄屏全城灯牌的分组显示。[两份真实站点比对](final-grouped-map-http.json) · [原街面近景](map-street-facade.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/40f1bb9ad4fb9ca3c49ff09aa87e3223e27e1b79/projects/shanghai/index.html#landmark=huangpu-bankers-association-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 13 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
