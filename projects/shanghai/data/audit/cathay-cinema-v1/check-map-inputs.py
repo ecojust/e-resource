@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 import hashlib
 import importlib.util
 import json
+import re
+from urllib.parse import urlsplit
 from pathlib import Path
 
 AUDIT = Path(__file__).resolve().parent
@@ -20,6 +22,13 @@ def capture(args):
     start=datetime.fromisoformat(report['started_utc'].replace('Z','+00:00')).timestamp()
     end=datetime.fromisoformat(report['finished_utc'].replace('Z','+00:00')).timestamp()
     requested=set(report['http_response_paths'])|{r['file'] for r in report['http_assets']+report['map_files_seen']}
+    # Chromium reports decoded GLB texture blobs with their creating page's
+    # origin. The frozen browser script retained their URL.pathname minus its
+    # first byte. Such responses have UUIDs and no HTTP server request.
+    origin=urlsplit(report['server'])
+    blob_pattern=re.compile(re.escape((origin.scheme+'://'+origin.netloc+'/')[1:])+r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}')
+    blobs=sorted(name for name in requested if blob_pattern.fullmatch(name))
+    requested.difference_update(blobs)
     objects=args.cache_objects or args.server_log.parent/'objects'
     records={}
     generation={}
@@ -53,7 +62,7 @@ def capture(args):
     out={'model_id':report['model_id'],'run_sha256':base.digest(args.browser_report.read_bytes()),
          'scope':'Local 200 and 206 response paths observed by this browser, plus downloads, verified native source requests, local runtime and registration bindings. The server log is filtered by wall time and recorded paths. SHA256 and Git blob hashes refer to complete file bytes.',
          'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-         'catalog_generation_inputs':dict(sorted(generation.items())),'files':dict(sorted(records.items()))}
+         'in_memory_blob_response_count':len(blobs),'catalog_generation_inputs':dict(sorted(generation.items())),'files':dict(sorted(records.items()))}
     args.inventory.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
     print(f'Recorded {len(records)} resources and {len(generation)} catalog records.')
 

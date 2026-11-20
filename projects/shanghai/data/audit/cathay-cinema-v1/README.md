@@ -26,3 +26,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0be0b8c62d03042a90c84c23453429261edf9985/projects/shanghai/index.html#landmark=huangpu-cathay-cinema&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+同一次正式地图会话继续实拍门罩、竖招牌、原生余体以及远距街区。门罩近照能读“国泰电影院”，塔部近照的标签盖住中央竖招牌最上端，字列其余部分、阶梯叠墙和两翼窗列可见。近远模型按距离实际加载。浏览器没有页面、请求或控制台错误。146项HTTP及运行文件、4项登记输入均比对完整字节；浏览器为解码纹理生成的临时内存URL单独计数。[六个视角与地面检验](main-map-browser.json) · [运行输入](main-map-inputs.json) · [门罩](entrance-marquee.png) · [阶梯塔](stepped-tower.png) · [街角与原生余体](retained-source.png) · [远距街区](distant.png)
