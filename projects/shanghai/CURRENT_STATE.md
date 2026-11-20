@@ -1,3 +1,11 @@
+# 岳阳路320号在君楼（七券门廊与双内院）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-320-research-building&mode=overview) · [单体旋转与下载](yueyang-research-building.html) · [来源与制作范围](source/precise/xuhui-yueyang-320-research-building/README.md) · [验收记录](data/audit/yueyang-research-building-v1/README.md)
+
+岳阳路320号在君楼原上海自然科学研究所主楼。核对东立面三竖窗、七券入口、两侧长翼和南北两处内院。
+
+近景 73,664 个三角面，远景 45,416 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,005,557 字节。上海主图现有 167 处独立入口，徐汇区 14 处。[资产清单](assets/models/candidates/xuhui-yueyang-320-research-building/manifest.json)
+
 # 国立上海医学院东一号楼（草坪立面、歇山顶与两翼方亭）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) · [单体旋转与下载](medical-college-east-one.html) · [来源与制作范围](source/precise/xuhui-medical-college-east-building-one/README.md) · [验收记录](data/audit/medical-college-east-one-v1/README.md)
