@@ -19,3 +19,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d389ef3f573fcae47be06493062cac949895d2d1/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 36 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+另一轮复测中，代理在粗略街区画面出现后才尝试发送精细目录，届时浏览器的第二次请求已超时关闭。该轮记录保留了断开时刻。更新后的复测程序只中断首个请求，让后续请求按正常速度传输。[代理与浏览器时序](city-detail-recovery/second-map-run/observation.json) · [当轮原始记录](city-detail-recovery/second-map-run/cold-map-directory-recovery.json) · [当轮程序](city-detail-recovery/second-map-run/observer.cjs)

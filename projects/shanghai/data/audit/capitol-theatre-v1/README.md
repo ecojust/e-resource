@@ -27,3 +27,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/796d20085144f4472a9127800936d5f76ec4f759/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+119处场景随后完成全部五个视角。门口与邻楼8处地面实测均符合预期，地图加载的近、远两档与四个交付文件的哈希均已核准。屋顶近景可见曲折体量，远景已切换到简化模型并取得截图。[完整119处记录](main-map-browser.json) · [屋顶近景](map-roof.png) · [远景](map-distant.png)
