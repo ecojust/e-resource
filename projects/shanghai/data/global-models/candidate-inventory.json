@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 90,
+  "candidate_manifest_count": 91,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 88,
-  "resulting_city_count": 128,
+  "new_city_model_count": 89,
+  "resulting_city_count": 129,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 39
+    "黄浦区": 40
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 360,
-    "bytes": 1070226697,
+    "files": 364,
+    "bytes": 1075499218,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 5611826,
+    "current_run_added_bytes": 5272521,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 228
+    "inherited_incremental_files": 232
   },
   "records": [
     {
@@ -7746,6 +7746,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "南京东路与山东中路转角的慈淑大楼街面和塔亭，按现状照片区分1930年代建造及加层。"
+    },
+    {
+      "id": "huangpu-glen-line-building",
+      "name": "格林邮船大楼（外滩28号临江正面与东南街角）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "glen-line-building.html",
+      "manifest": "assets/models/candidates/huangpu-glen-line-building/manifest.json",
+      "manifest_sha256": "e9513f7d2f765612a9ff5b0bafada141a1714d7f325943c8567ad14423ba05e5",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-glen-line-building/huangpu-glen-line-building-raw.glb",
+          "bytes": 2719364,
+          "sha256": "722b92c629fb0e5218283643f2ce1363e8a106c60556bd6eb12f1405105d1eac",
+          "triangles": 49676,
+          "bounds_gltf_m": [
+            [
+              -12.649999618530273,
+              0.0,
+              -15.050000190734863
+            ],
+            [
+              8.670000076293945,
+              39.779998779296875,
+              0.949999988079071
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-glen-line-building/huangpu-glen-line-building-web.glb",
+          "bytes": 987212,
+          "sha256": "b00673197fba5c9092eeeb7cadb946076d1a7e97f6e9639ca7c39588dc450dbd",
+          "triangles": 49676,
+          "bounds_gltf_m": [
+            [
+              -12.6499996,
+              0,
+              -15.0500002
+            ],
+            [
+              8.67000008,
+              39.7799988,
+              0.949999988
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-glen-line-building/huangpu-glen-line-building-lod.glb",
+          "bytes": 815320,
+          "sha256": "04e34c358c5520d28d9153e6076b8cac6e7b124e865e709195d79d15f01f7652",
+          "triangles": 42404,
+          "bounds_gltf_m": [
+            [
+              -12.6499996,
+              0,
+              -15.0500002
+            ],
+            [
+              8.67000008,
+              39.7799988,
+              0.949999988
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-glen-line-building/huangpu-glen-line-building.blend",
+          "bytes": 750625,
+          "sha256": "28d27fd442b86299d9c7579e93208551911454dc736d492a837d8d4721183131"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -12.649999618530273,
+            0.0,
+            -15.050000190734863
+          ],
+          "max": [
+            8.670000076293945,
+            39.779998779296875,
+            0.949999988079071
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -12.649999618530273,
+            -0.949999988079071,
+            0.0
+          ],
+          "max": [
+            8.670000076293945,
+            15.050000190734863,
+            39.779998779296875
+          ]
+        },
+        "triangles": 49676,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-partial-exterior",
+      "description": "北京东路2号格林邮船大楼的临江立面和临北京东路的街角，江侧门牌为中山东一路28号。"
     }
   ],
   "baseline_inventory": {
@@ -7776,6 +7882,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-dongjiadu-cathedral/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-foreign-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-french-club/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-glen-line-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json",
@@ -7814,13 +7921,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/cishu-building-v1",
+  "incremental_audit_directory": "data/audit/glen-line-building-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/bankers-association-v1/inventory-increment.json",
-    "bytes": 193449,
-    "sha256": "a4e566740d33fc081d01d3a7d0b7bcdd282093afaab8832899722a41ca5be3eb"
+    "file": "data/audit/cishu-building-v1/inventory-increment.json",
+    "bytes": 196930,
+    "sha256": "22ff96f0618ca87d4826401b6f59d26ea54b2e63499767502b01707073d0cf6f"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-cishu-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-glen-line-building/manifest.json"
   ]
 }

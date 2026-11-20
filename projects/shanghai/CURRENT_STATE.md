@@ -1,3 +1,11 @@
+# 格林邮船大楼（外滩28号临江正面与东南街角）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-glen-line-building&mode=overview) · [单体旋转与下载](glen-line-building.html) · [来源与制作范围](source/precise/huangpu-glen-line-building/README.md) · [验收记录](data/audit/glen-line-building-v1/README.md)
+
+北京东路2号格林邮船大楼的临江立面和临北京东路的街角，江侧门牌为中山东一路28号。
+
+近景 49,676 个三角面，远景 42,404 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,272,521 字节。上海主图现有 129 处独立入口，黄浦区 56 处。[资产清单](assets/models/candidates/huangpu-glen-line-building/manifest.json)
+
 # 慈淑大楼（东北街角及塔亭）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cishu-building&mode=overview) · [单体旋转与下载](cishu-building.html) · [来源与制作范围](source/precise/huangpu-cishu-building/README.md) · [验收记录](data/audit/cishu-building-v1/README.md)
