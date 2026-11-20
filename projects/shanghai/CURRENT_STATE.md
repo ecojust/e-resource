@@ -1,3 +1,11 @@
+# 上海科学会堂一号楼（南花园五亭立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-science-hall-building-one&mode=overview) · [单体旋转与下载](science-hall-one.html) · [来源与制作范围](source/precise/huangpu-science-hall-building-one/README.md) · [验收记录](data/audit/science-hall-one-v1/README.md)
+
+南昌路47号原法国总会（老）、法国学堂的科学会堂一号楼，按早期及当代影像核实钟面山花、露台、拱廊与屋顶。
+
+近景 117,028 个三角面，远景 68,116 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 12,913,514 字节。上海主图现有 164 处独立入口，黄浦区 85 处。[资产清单](assets/models/candidates/huangpu-science-hall-building-one/manifest.json)
+
 # 交通大学徐汇校区老校门（南洋公学旧址）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-nanyang-campus-gate&mode=overview) · [单体旋转与下载](nanyang-campus-gate.html) · [来源与制作范围](source/precise/xuhui-nanyang-campus-gate/README.md) · [验收记录](data/audit/nanyang-campus-gate-v1/README.md)
