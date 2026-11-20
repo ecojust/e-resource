@@ -25,3 +25,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/925b7a8fbedcda93d7f6704b18cf6f2a4bb5e292/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+123处城市的五个实景均已取得。近景加载完整网格，远景完成简化档切换。图书室、横廊、三孔廊、南楼保留地面及邻楼等21个地面点与预期相符，四种交付及实际源近远瓦片共6项按字节和SHA-256核对。[东门与南楼近景](map-street-facade.png) · [屋顶](map-roof.png) · [远景](map-distant.png) · [包含地面与下载的完整记录](main-map-browser.json)
