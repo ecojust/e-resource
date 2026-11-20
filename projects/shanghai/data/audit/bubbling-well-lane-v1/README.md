@@ -18,8 +18,12 @@
 
 新版 104 处整合已从静安区目录实点进入。手机首访在加载原生城市目录时产生 `signal timed out`，门楼本身的已校验近景仍正常显示。桌面重新加载同一页面后，拉近门楼可见六个原生细节组，切远后加载 26,420 面远景。12 个现场地面点分别核对街面、门柱、通道、院内及三处原有邻楼。第三人称人物从街侧 –3.10 米一直用 Shift+W 走至院内 +9.21 米，962 个位置样本均可通行，门楼本体深约 7.25 米。[主图实测、请求告警与采样](main-browser.json) · [桌面](map-desktop.png) · [手机](map-mobile.png) · [门楼近视](map-gate-front.png) · [远景](map-distant.png)
 
-侧向按键的首轮记录只证明人物从通道中心分别接近左、右墙至 x=–1.274 米、+1.274 米。键仍按下时，读取的瞬时速度为 8.5 米/秒；多个轮询样本可能处于同一动画帧。这组记录不足以判定人物已经撞墙。现有侧向实体的直接证据是两侧房间和门柱共四个 `collisionAt` 实点。跨独立渲染帧的持续按键复查以及桌面宽度的步行补图正在进行。原来的窄步行画面下方由位置卡覆盖。[首轮原始数据](preflight/104-unreviewed-primary-browser.json) · [已注明采样限制的主报告](main-browser.json)
+侧向按键的首轮记录只证明人物从通道中心分别接近左、右墙至 x=–1.274 米、+1.274 米。键仍按下时，读取的瞬时速度为 8.5 米/秒；多个轮询样本可能处于同一动画帧。这组记录不足以判定人物已经撞墙。现有侧向实体的直接证据是两侧房间和门柱共四个 `collisionAt` 实点。持续按键和桌面宽度补图采用单独页面实测，结果见下。原来的窄步行画面下方由位置卡覆盖。[首轮原始数据](preflight/104-unreviewed-primary-browser.json) · [已注明采样限制的主报告](main-browser.json)
 
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/fa20616fb91626953c40d8ea5209f3610a636f86/projects/shanghai/index.html#landmark=jingan-bubbling-well-lane-gate&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+820×580 的桌面复查分别从通道内与院侧重新按键前行。洞内 y=3.049 米的画面可见牌匾、石柱和人物；院内 y=9.299 米的画面从门拱下向院内看，拱缘占据前景。第一次完整穿门记录的 962 个轮询样本中，有 28 个不同的纵向位置。[拱内近照](map-passage-desktop.png) · [院侧随行镜头](map-courtyard-desktop.png)
+
+从通道中心线左右各 0.80 米处分别持续按 Shift+A、Shift+D，实测人物在 x=−1.567 米和 +1.567 米停下，两次末速度均为零，按键仍处于按下状态。每一侧均核对四个不同的生产动画帧，下一步扫掠均返回建筑；人物中心仍处在可通行空间内。此次院侧截图时的背景宏块为实际 1,296,608 字节远景父块，六组近景的外观与切换另见主报告。[侧墙独立碰撞实测](passage-browser.json) · [检查程序](check-passage-details.cjs) · [同期背景块](supplemental-background.json)
