@@ -3849,7 +3849,7 @@
 | 怀恩堂陕西北路入口与东南角砖塔 | 2026-11-21 04:17:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) |
 | 愚谷村愚园路北弄门 | 2026-11-21 05:25:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yugu-village-north-gate&mode=overview) |
 | 静安别墅25号院门与弄面院墙 | 2026-11-21 05:29:58 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview) |
-| 模范邨22号冒广生旧居入口 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-mofan-village-no22-entrance&mode=overview) |
+| 模范邨22号冒广生旧居入口 | 2026-11-21 05:32:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-mofan-village-no22-entrance&mode=overview) |
 
 ### 普陀区（2处）
 

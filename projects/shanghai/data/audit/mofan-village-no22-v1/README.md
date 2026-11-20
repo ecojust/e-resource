@@ -15,3 +15,7 @@
 在24151旧图的同一巷内机位，只能看到原墙的普通窗洞。24152的正面能分辨红褐色窗栅、实体门牌“22”和门槛，斜面能看到门廊右墙及门楣的椭圆交叉铁花。正面图里的地点标签遮住了门楣上缘；全市远景用来确认远档切换，门牌在这档不能辨读。两次实际指针操作都从静安别墅25号进入22号，手机在390×844画布触摸，桌面在850×650画布点击。[旧图同机位](city-24152/before-lane-detail.png) · [临巷正面](city-24152/after-lane-detail.png) · [斜看门廊](city-24152/after-oblique-detail.png) · [手机点选](city-24152/after-mobile-label.png) · [地图实测与近远档](city-24152/city-after.json) · [指针事件和进程退出](city-24152/process-exits.json)
 
 两个站点分别有188处与189处，最终1,010项签名文件经HTTP逐项校验。交付版的独立页另由桌面和手机实拍六帧，点击保存的四份文件与清单一致。城市近远档均核对28个地面样点，裁剪只在门槛至3.10米高一段取代1275号底图，左右八栋邻屋保留。[前后两站](city-24152/two-signed-sites.json) · [全量HTTP](city-24152/all-http.json) · [地面和裁剪](city-24152/real-runtime.json) · [独立页六视图与下载](city-24152/viewer/viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/09464df04fc401feff9e90052775ac8932457bc2/projects/shanghai/index.html#landmark=jingan-mofan-village-no22-entrance&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
