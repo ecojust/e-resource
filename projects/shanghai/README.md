@@ -107,7 +107,7 @@
 | 圣三一基督教堂（独立钟塔与连接短廊） | 2026-11-20 15:19:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-bell-tower&mode=overview) |
 | 亚细亚大楼（外滩1号双街立面与东南转角） | 2026-11-20 15:45:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-building&mode=overview) |
 | 怡和洋行大楼临江立面与北京东路转角 | 2026-11-20 15:59:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview) |
-| 东方汇理银行（外滩29号临江立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-banque-de-lindochine&mode=overview) |
+| 东方汇理银行（外滩29号临江立面） | 2026-11-20 16:03:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-banque-de-lindochine&mode=overview) |
 
 ### 徐汇区（7处）
 

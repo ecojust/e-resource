@@ -17,3 +17,7 @@
 ## 真实主地图
 
 100处对照中的普通方窗楼，在101处手机及桌面默认视角改为五开间石立面，两旁原楼继续可见。近景装载55,976面，远景切换至34,124面。九处真实碰撞点包括可走门槛、闭合门扇、两侧墙、保留的旧楼核心和三处邻楼。320×568手机的全城图另核101个独立中心和101个实像灯牌，真实触按101号打开本栋。[前态100](control-browser.json) · [主图101](main-browser.json) · [101处实像与触控](compact-browser.json) · [默认手机视角](map-mobile.png) · [101号灯牌](map-101-markers.png) · [画面复核](map-visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/47e46c4989b7be3a4136a272e167e41556fc98c1/projects/shanghai/index.html#landmark=huangpu-banque-de-lindochine&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
