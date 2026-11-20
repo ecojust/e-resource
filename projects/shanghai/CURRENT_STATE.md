@@ -1,3 +1,11 @@
+# 外滩15号可在近照与整面街照中对应的拱券装饰，核对双翼人物、卷叶和中央券石
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund15&mode=walk) · [四种模型下载](source/precise/bund15/revisions/river-arch-relief/manifest.json) · [来源与制作范围](source/precise/bund15/revisions/river-arch-relief/README.md) · [验收记录](data/audit/russo-arch-relief-v1/README.md)
+
+外滩15号可在近照与整面街照中对应的拱券装饰，核对双翼人物、卷叶和中央券石。
+
+近景 129,484 个三角面，远景 54,442 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 9,219,413 字节。上海主图现有 147 处独立入口，黄浦区 74 处。[资产清单](source/precise/bund15/revisions/river-arch-relief/manifest.json)
+
 # 大陆银行（九江路111号北立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-continental-bank&mode=overview) · [单体旋转与下载](continental-bank.html) · [来源与制作范围](source/precise/huangpu-continental-bank/README.md) · [验收记录](data/audit/continental-bank-v1/README.md)
