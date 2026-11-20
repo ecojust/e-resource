@@ -1,3 +1,4 @@
+import {waitFor as until} from './fixtures/wait-for.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as THREE from '../vendor/three.module.js';
@@ -8,8 +9,6 @@ import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {triangleGLB} from './fixtures/city-model-fixture.mjs';
 const tick=()=>new Promise(resolve=>setImmediate(resolve));
-const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function until(predicate){const end=performance.now()+2000;while(!predicate()){if(performance.now()>end)throw Error('Lifecycle fixture did not settle');await pause(2);}}
 function deferred(){let resolve,reject;const promise=new Promise((a,b)=>{resolve=a;reject=b});return {promise,resolve,reject};}
 function farObject(count=2){
  const group=new THREE.Group(),geometry=new THREE.BufferGeometry(),ids=[],positions=[];
@@ -188,13 +187,12 @@ test('cancellation while gzip body is incomplete cancels its stream without invo
  assert.equal(cancelled,true);assert.equal(h.parses.length,0);assert.equal(h.owner.mask.data[1],0);assert.equal(h.errors.length,0);
 });
 
-async function settleDeadline(predicate){for(let i=0;i<1000&&!predicate();i++)await tick();assert(predicate(),'Network deadline fixture did not settle');}
 
 test('verified gzip model survives CPU parsing beyond the unchanged network deadline',async t=>{
  t.mock.timers.enable({apis:['setTimeout']});const pending=deferred();
- const h=harness(t,{count:1,metadata:gzipIndex(),fetchModel:()=>new Response(gzipBytes),parse:()=>pending.promise});h.activate();await settleDeadline(()=>h.parses.length===1);
+ const h=harness(t,{count:1,metadata:gzipIndex(),fetchModel:()=>new Response(gzipBytes),parse:()=>pending.promise});h.activate();await until(()=>h.parses.length===1);
  const signal=h.streamer.inflight.controller.signal;t.mock.timers.tick(35001);assert.equal(signal.aborted,false);
- const near=nearObject();pending.resolve(near);await settleDeadline(()=>!h.streamer.inflight);h.streamer.update(view);
+ const near=nearObject();pending.resolve(near);await until(()=>!h.streamer.inflight);h.streamer.update(view);
  assert.equal(h.streamer.getState().visible,1);assert.equal(h.streamer.stats.requests,1);assert.equal(h.streamer.stats.failed,0);assert.equal(h.streamer.stats.discarded,0);assert.equal(h.owner.mask.data[1],255);assert.equal(h.disposed.length,0);
 });
 
@@ -202,7 +200,7 @@ test('incomplete gzip network body still times out and preserves the far wall',a
  t.mock.timers.enable({apis:['setTimeout']});let body,cancelled=false;
  const h=harness(t,{count:1,metadata:gzipIndex(),fetchModel:()=>{
   body=new ReadableStream({start(c){c.enqueue(gzipBytes.subarray(0,10));},cancel(){cancelled=true;}});return new Response(body);
- }});h.activate();await settleDeadline(()=>body?.locked);const signal=h.streamer.inflight.controller.signal;
- t.mock.timers.tick(34999);assert.equal(signal.aborted,false);t.mock.timers.tick(1);await settleDeadline(()=>!h.streamer.inflight);
+ }});h.activate();await until(()=>body?.locked);const signal=h.streamer.inflight.controller.signal;
+ t.mock.timers.tick(34999);assert.equal(signal.aborted,false);t.mock.timers.tick(1);await until(()=>!h.streamer.inflight);
  assert.equal(signal.reason,'timeout');assert.equal(cancelled,true);assert.equal(h.parses.length,0);assert.equal(h.streamer.stats.failed,1);assert.equal(h.streamer.stats.requests,1);assert.equal(h.streamer.getState().visible,0);assert.equal(h.owner.mask.data[1],0);assert(h.owner.records[0].retryAt>performance.now());
 });

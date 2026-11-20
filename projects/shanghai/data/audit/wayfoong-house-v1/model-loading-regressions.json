@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "base_commit": "f91c9a5fb4f3cfcf46de626b634db8ed6d0a6617",
+  "working_city_count": 133,
+  "ran_from": "projects/shanghai",
+  "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+  "test_files": 44,
+  "earlier_failures": [
+    "A fixed number of event-loop turns elapsed before native gzip work completed.",
+    "A timed camera move sometimes ran after the initial model fetch finished.",
+    "A second fixed-turn wait sometimes elapsed before a feature-ID decode completed."
+  ],
+  "checks": {
+    "real_worker_wait": true,
+    "initial_fetch_held_until_navigation": true,
+    "simulated_network_timeout_ms": 35000
+  },
+  "results": {
+    "original_full_suite": {
+      "tests": 416,
+      "pass": 415,
+      "fail": 1,
+      "output_sha256": "6bb8d9a11d840556c3c1c1dbded06ff372e2163c94e8ba671dfc32a0816179e1"
+    },
+    "first_gzip_checks": {
+      "tests": 2,
+      "pass": 2,
+      "fail": 0,
+      "output_sha256": "704595bdd4af111ff3a2891e76d70278ea4ee7c287730b060dd29210aed8b6a2"
+    },
+    "full_suite_with_first_fix": {
+      "tests": 413,
+      "pass": 411,
+      "fail": 2,
+      "output_sha256": "6c50cff512ada73b05ef6d236b9b9fec98e359b45e5656e32c4b28c74f78d340"
+    },
+    "three_loading_test_files": {
+      "tests": 44,
+      "pass": 44,
+      "fail": 0,
+      "output_sha256": "3e97eec82ea375e7339b543cbbcef167c36fb6d0bf9d8c321df16549a0c8827a"
+    },
+    "final_full_suite": {
+      "tests": 416,
+      "pass": 416,
+      "fail": 0,
+      "output_sha256": "7a1c1ab423cea881ac4de8cea3bf43ef09e4ed859fe813b5795fda451c16f957"
+    }
+  },
+  "runtime_file_sha256": {
+    "src/local-model-streamer.js": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291",
+    "src/city-detail-streamer.js": "fa9d24b448622cc33b9e9733e671c09721fa3db2d0fbcf5ad00fb2a638822dd7"
+  },
+  "test_file_sha256": {
+    "tests/fixtures/wait-for.mjs": "c300912bf44309d98c26e6732a18520f336eafe18ec3b2116df08f8f343276a1",
+    "tests/city-detail-streamer.test.mjs": "c31b67df35bf549e6b25e0c5ddfcfabc6f02b57893879ebde65eea443c576552",
+    "tests/local-model-streamer.test.mjs": "9d8470dc8867be1a2ee0373874187ee86165682651f9b26629ad05f42756958a",
+    "tests/network-id-deadline.test.mjs": "bd60643cab4a69a1fb024d3d50b0b74a25b05b6c2537cad350d487a18426235c"
+  }
+}

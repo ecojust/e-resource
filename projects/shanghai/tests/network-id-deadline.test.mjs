@@ -1,10 +1,9 @@
+import {waitFor as until} from './fixtures/wait-for.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {gzipSync} from 'node:zlib';
 const {LocalModelStreamer}=await import(process.env.STREAMER_MODULE || '../src/local-model-streamer.js');
 
-const turn=()=>new Promise(resolve=>setImmediate(resolve));
-async function until(predicate){for(let i=0;i<2000&&!predicate();i++)await turn();assert(predicate(),'fixture did not settle');}
 function pending(){let resolve;return {promise:new Promise(r=>resolve=r),resolve:value=>resolve(value)};}
 const toBuffer=b=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength);
 const validIDs={building:['building-a','building-a','',null],building_part:['part-a',null]};
