@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 178 处入口。最近接入[怀恩堂陕西北路入口与东南角砖塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 179 处入口。最近接入[景灵堂昆山路北门山墙与修复花窗](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的141项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的142项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 142 | 景灵堂昆山路北门山墙 | 虹口区／昆山路135号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；对照原始年报、复堂与更名资料，补查后部和院内立面。 |
-| 143 | 小桃园清真寺主礼拜殿及院内东立面 | 黄浦区／小桃园街52号（主楼） | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；另核临街门楼、净身堂及24号女寺的门牌与历史边界，查证不同铭牌记载的工程年代。 |
+| 143 | 小桃园清真寺主礼拜殿及院内东立面 | 黄浦区／小桃园街52号（主楼） | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；另核临街门楼、净身堂及24号女寺的门牌与历史边界，查证不同铭牌记载的工程年代。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -914,7 +913,7 @@
 | sh-historic-b2-058 | 东大名路378号名称与改建分期 | 东大名路378号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查验虹口原址档案、保护铭牌、相邻建筑与历任机构的使用范围。 |
 | sh-historic-b2-066 | 雷氏德工学院修缮分期与邻接用房 | 东长治路505号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核对穹顶与烟囱的实测标高、分层口径、院内后期附建及南草坪边界。 |
 | sh-historic-b2-075 | 鸿德堂门前石刻的制作年代与修缮 | 多伦路59号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对旧照与修缮档案，补查石狮制作年代和背面的雕刻。 |
-| sh-historic-b2-078 | 景灵堂 | 昆山路135号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-078 | 景灵堂后部堂身及复堂更名分期 | 昆山路135号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 对照原始年报、复堂与更名资料，补查后部和院内立面。 |
 | sh-historic-b2-129 | 河滨公寓 | 北苏州路340号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-149 | 四行大楼 | 四川北路1274号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-162 | 高阳大楼 | 东大名路817号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2660,9 +2659,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余966条／已关联70条）
+### 既有地图中的具名建筑待查线索（剩余965条／已关联71条）
 
-原始1,036条具名地图要素中，70条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余966条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，71条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余965条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2763,7 +2762,6 @@
 | d720a7e2-7fa8-4e7f-839e-60bdc28f8030 | 外滩源 | 黄浦区 | 核身份／去重／查建筑参考 |
 | d754ec47-e2e6-47f9-a0e9-8377dd594cea | 住宅 | 黄浦区 | 核身份／去重／查建筑参考 |
 | d866e2dc-1c89-475c-8a8e-31e6491400d1 | 浦联公寓 | 静安区 | 核身份／去重／查建筑参考 |
-| d9ef60ce-20e2-4ae5-89be-28b45c9c2319 | 基督教景灵堂 | 虹口区 | 核身份／去重／查建筑参考 |
 | dbb572ee-6c32-4c29-90f9-847d6830834c | 巴金图书馆 | 虹口区 | 核身份／去重／查建筑参考 |
 | dd215425-09d9-493f-b310-a95bac4320ca | 北座 | 静安区 | 核身份／去重／查建筑参考 |
 | e05b9c39-e82c-4cf3-bdf9-1e0443cc8e37 | 美丰大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3643,7 +3641,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3658,7 +3655,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；178处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中138件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；179处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中139件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3666,7 +3663,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增138处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增139处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3688,7 +3685,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，178处建筑与构件模型入口（40处既有＋138处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增138处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，179处建筑与构件模型入口（40处既有＋139处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增139处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（89处）
@@ -3852,7 +3849,7 @@
 |---|---|---|
 | 真如寺大殿（正殿） | [2026-10-27 03:12:03](https://github.com/ecojust/e-resource/commit/c381493024bfecec236687d5fda6c217daffd2a8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk) |
 
-### 虹口区（12处）
+### 虹口区（13处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310109&mode=walk)
 
@@ -3870,6 +3867,7 @@
 | 虹口中国银行大楼（西南转角） | 2026-11-20 23:20:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-bank-of-china-hongkew&mode=overview) |
 | 东大名路378号红砖办公楼街面与塔亭 | 2026-11-21 01:27:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-east-daming-road-378&mode=overview) |
 | 雷氏德工学院（东长治路505号主楼） | 2026-11-21 02:46:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview) |
+| 景灵堂昆山路北门山墙与修复花窗 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview) |
 
 ### 杨浦区（8处）
 

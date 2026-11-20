@@ -1,3 +1,11 @@
+# 景灵堂昆山路北门山墙与修复花窗
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview) · [单体旋转与下载](jingling-church-north-front.html) · [来源与制作范围](source/precise/hongkou-jingling-church-north-front/README.md) · [验收记录](data/audit/jingling-church-north-front-v1/README.md)
+
+昆山路135号旧景林堂的北门山墙，按2025年修缮记录与安装照片制作10.56×5.44米彩色铅条主窗、尖券、拱带和扶壁。2017年金字匾与六扇木窗作为修前记录。
+
+近景 73,848 个三角面，远景 46,704 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,797,941 字节。上海主图现有 179 处独立入口，虹口区 13 处。[资产清单](assets/models/candidates/hongkou-jingling-church-north-front/manifest.json)
+
 # 怀恩堂陕西北路入口与东南角砖塔
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) · [单体旋转与下载](grace-church-street-front.html) · [来源与制作范围](source/precise/jingan-grace-church-street-front/README.md) · [验收记录](data/audit/grace-church-street-front-v1/README.md)
