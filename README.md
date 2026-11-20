@@ -3814,7 +3814,7 @@
 | 建业里总弄沿街门楼 | 2026-11-21 05:20:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianye-li-main-lane-gate&mode=overview) |
 | 岳阳路200弄住宅临街锯齿立面 | 2026-11-21 05:46:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-lane-200-east-row&mode=overview) |
 | 中南新邨9号木门与气窗 | 2026-11-21 05:59:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongnan-village-no9-door&mode=overview) |
-| 懿园建国西路南门 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yiyuan-jianguo-road-gate&mode=overview) |
+| 懿园建国西路南门 | 2026-11-21 06:09:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yiyuan-jianguo-road-gate&mode=overview) |
 
 ### 长宁区（9处）
 
