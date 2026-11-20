@@ -12,8 +12,10 @@ Blender 4.3.2 重开后，场景中可分别编辑原建筑、顶盖底板和分
 
 最终场景又通过HTTP逐项读取了14个文件，其中包括本次修改涉及的文件和这栋建筑的四种资产。实收16,152,771字节，均与冻结清单或原文件签名一致。[逐文件核对](revised-scene-http.json)
 
-14075与14076两套冻结城市页面分别保持121个入口。校验对照站321个HTTP文件和更新站334个HTTP文件后，从原有地标卡进入旧市博物馆。旧版东厅与远景均已在浏览器读取；同一入口在新版手机视口载入96,160面近景，并显示东厅屋面的矩形分格。图内地标名称、两侧院落和西侧门楼可用于定位。[旧站收据](camera-input-revision/121-before-http.json) · [新站收据](camera-input-revision/121-revised-http.json) · [原屋面](final-city/before-east-roof.png) · [手机实图](final-city/map-mobile.png) · [新近景签名](final-city/first-new-view.json)
+14075与14076两套冻结城市页面分别保持121个入口。校验对照站321个HTTP文件和更新站334个HTTP文件后，从原有地标卡进入旧市博物馆。旧版东厅与远景均已在浏览器读取，同一入口在新版手机视口载入96,160面近景。图内地标名称、两侧院落和西侧门楼可用于定位。810×580的首次屋面取景中，前后仅360个像素发生变化，集中在x=491–508、y=239–321。这个视角无法判读三列两排的分格。[旧站收据](camera-input-revision/121-before-http.json) · [新站收据](camera-input-revision/121-revised-http.json) · [原屋面](final-city/before-east-roof.png) · [手机实图](final-city/map-mobile.png) · [新近景签名](final-city/first-new-view.json)
 
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 37 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ee22a22efac3a1b32e1f1909e2835a610449b555/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 37 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+同一城市入口的近景、远景和6个地面采样已通过浏览器核验。既有独立页在桌面和手机视口均能切换近、远两档，浏览器实存的四件下载文件均与清单签名相符。[地标卡浏览记录](final-city/main-browser.json) · [单体页与四件下载](final-viewer/viewer.json)
