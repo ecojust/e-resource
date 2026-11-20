@@ -1,3 +1,11 @@
+# 震旦大学图书馆教学大楼（西一号楼）球场侧立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) · [单体旋转与下载](aurora-university-library.html) · [来源与制作范围](source/precise/huangpu-aurora-university-library/README.md) · [验收记录](data/audit/aurora-university-library-v1/README.md)
+
+重庆南路280号校园的原十二号楼（今西一号楼），按1936年图书馆教学大楼的校史和有日期的正面照片复原可辨外立面。
+
+近景 131,624 个三角面，远景 26,104 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 11,717,627 字节。上海主图现有 173 处独立入口，黄浦区 87 处。[资产清单](assets/models/candidates/huangpu-aurora-university-library/manifest.json)
+
 # 中西女中东楼（五一楼）院落立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) · [单体旋转与下载](mctyeire-east-building.html) · [来源与制作范围](source/precise/changning-mctyeire-east-building/README.md) · [验收记录](data/audit/mctyeire-east-building-v1/README.md)
