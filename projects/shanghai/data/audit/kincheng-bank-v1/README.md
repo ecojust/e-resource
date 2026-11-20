@@ -20,4 +20,10 @@
 
 主图89处目录中的江西中路入口已在390×844手机与870×660桌面打开。近景实际显示35,368面，远景实际显示22,680面，两档哈希均相符。7处地面探测分别核对楼内、路边、东侧小巷和四栋邻楼。四个交付文件和两份原地图 GLB 的 HTTP 字节均已回读。全市321个裁剪三角面分入7张宏块纹理，单张最多141面，每次绘制上限320。[合并检查记录](main-browser.json) · [实际文件输入](map-input-fingerprints.json) · [GPU及矢量运行检查](runtime-placement.json) · [视图观察](map-visual-review.json)
 
-街对面的屋顶和常驻灯牌遮住入口下部，主图西立面处于街谷阴影，入口饰件另有无遮挡的独立渲染。桌面远景的模型状态已核实，软件截图超过120秒；冻结粗楼对照和远景图片在首轮报告时仍待补取。[手机入口](map-mobile.png) · [桌面入口](map-desktop.png) · [江西中路近景](map-street-facade.png) · [屋顶](map-roof.png) · [截图超时及当时的模型状态](preflight/distant-screenshot-timeout.json)
+街对面的屋顶和常驻灯牌遮住入口下部，主图西立面处于街谷阴影，入口饰件另有无遮挡的独立渲染。首轮远景的模型状态已核实，软件截图超过120秒。随后在正式站520×410窗口核对22,680面模型并单独保存远景图，六份HTTP文件均再次校验。冻结原城市建筑近景对照继续补取。[正式远景](map-distant.png) · [远景及文件复核](supplement.json)[手机入口](map-mobile.png) · [桌面入口](map-desktop.png) · [江西中路近景](map-street-facade.png) · [屋顶](map-roof.png) · [截图超时及当时的模型状态](preflight/distant-screenshot-timeout.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 26 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ca4ed85996ef187b08827807d1ae9661ddf625a3/projects/shanghai/index.html#landmark=huangpu-kincheng-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次读取 master 的 26 个链接时，有 12 项仍返回旧版本。[首次 master 核验](publication-master-initial.json)
+
+[上海市房屋管理局首批保护编号及门牌核对](../first-batch-register-2026-11-20/README.md)

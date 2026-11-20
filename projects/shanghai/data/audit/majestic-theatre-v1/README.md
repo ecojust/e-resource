@@ -32,3 +32,9 @@ python data/audit/majestic-theatre-v1/check-surfaces.py --out /tmp/majestic-surf
 90处正式目录的桌面入口可辨圆弧门厅和两条临街墙。近景可读红色 MAJESTIC 和五条竖向格窗，左下地点卡遮住部分首层入口。高处可见长屋顶与东侧邻楼，390像素竖屏也能从目录返回同一建筑。[桌面](map-desktop.png) · [街角](map-street-corner.png) · [屋顶及东邻楼](map-roof-and-neighbor.png) · [手机](map-mobile.png) · [图像复核](main-map-visual-review.json)
 
 原剧院360所在近景组只裁这一项。东邻1995的近景组实际加载，裁剪三角数为0。剧院本体和邻楼各有建筑碰撞，入口外两处街面都可通过。浏览器实测近、远景切换，鼠标与320×568触屏均命中90个编号并可选中剧院，四个下载文件的长度和 SHA256 与清单一致。窄屏密集灯牌的额外全页截图在合成时超时，触屏返回记录和四个建筑画面均已保留。[运行记录](main-map-browser.json) · [正式文件比对](main-map-bindings.json) · [街面探点](map-probes.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 28 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/3a9062204c4ef87cad6015f79f3cf4f6ee9b8b24/projects/shanghai/index.html#landmark=jingan-majestic-theatre&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次读取 master 的 28 个链接时，有 13 项仍返回旧版本。[首次 master 核验](publication-master-initial.json)
+
+[上海市房屋管理局首批保护编号及门牌核对](../first-batch-register-2026-11-20/README.md)
