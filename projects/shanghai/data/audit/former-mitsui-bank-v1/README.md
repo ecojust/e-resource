@@ -19,3 +19,7 @@
 23117与23118的真实目录分别含155及156处地标。当前站实际取回721个资源、629,413,454字节。手机、桌面普通选择与上方视角可辨方柱、门洞、窗墙、蓝字带和两端的当代楼面。远景成功切换到简化网格，地点卡与建筑群遮住了街面细节。另行尝试的55°窄巷近景在两代中都被邻墙挡住，不能据这两张图核对立面；保留原图与取景结果。主图实测的19处地面点及单独对两组所作的16项矢量检查记录88与2301局部替换后的通行及邻栋保留情况。[手机](city-23118/map-mobile.png) · [桌面](city-23118/map-desktop.png) · [上方看门廊](city-23118/map-roof.png) · [远景](city-23118/map-distant.png) · [六图目视记录](city-23118/visible-review.json) · [后态浏览器与实际下载](city-23118/main-browser.json) · [目录与HTTP签名](street-selection-parent-controls.json) · [双组运行记录](street-selection-runtime.json)
 
 另从23117和23118两份分区目录分别实选地点，关闭导航并固定870×660、朝向330°、俯仰33°、缩放20.8的同一街面视角。更新前的50号为规则窗格底图，更新后可辨浅石柱、蓝白建设银行招牌、中央双扇门及两侧铁饰。两端相邻立面与道路保持可见，地点卡覆盖部分人行道和门底。两次实际取回视野内选定地标的近景文件，逐字节匹配相应签名。[更新前](city-23118/facade-before.png) · [更新后](city-23118/facade-after.png) · [同机位参数与实测记录](city-23118/street-facade-pair.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0b4b057dd4f09e3a302ecef3522d861daadf6ee5/projects/shanghai/index.html#landmark=huangpu-former-mitsui-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 0 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
