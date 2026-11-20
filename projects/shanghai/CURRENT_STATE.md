@@ -1,3 +1,11 @@
+# 法国邮船大楼（浦江大楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-messageries-maritimes-building&mode=overview) · [单体旋转与下载](messageries-maritimes.html) · [来源与制作范围](source/precise/huangpu-messageries-maritimes-building/README.md) · [验收记录](data/audit/messageries-maritimes-v1/README.md)
+
+中山东二路9号法国邮船公司大楼的原址、东面开间与底层入口，核定延安东路以南的街区。
+
+近景 49,900 个三角面，远景 45,052 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,924,012 字节。上海主图现有 152 处独立入口，黄浦区 77 处。[资产清单](assets/models/candidates/huangpu-messageries-maritimes-building/manifest.json)
+
 # 横滨正金银行大楼（外滩24号）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yokohama-specie-bank&mode=overview) · [单体旋转与下载](yokohama-specie-bank.html) · [来源与制作范围](source/precise/huangpu-yokohama-specie-bank/README.md) · [验收记录](data/audit/yokohama-specie-bank-v1/README.md)
