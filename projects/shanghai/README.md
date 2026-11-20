@@ -224,7 +224,7 @@
 | 虹口救火会临街旧楼与瞭望塔 | 2026-11-20 18:44:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview) |
 | 提篮桥旧址长阳路门楼（2015年街面） | 2026-11-20 19:20:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-tilanqiao-historic-front&mode=overview) |
 | 虹口中国银行大楼（西南转角） | 2026-11-20 23:20:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-bank-of-china-hongkew&mode=overview) |
-| 东大名路378号红砖办公楼街面与塔亭 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-east-daming-road-378&mode=overview) |
+| 东大名路378号红砖办公楼街面与塔亭 | 2026-11-21 01:27:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-east-daming-road-378&mode=overview) |
 
 ### 杨浦区（7处）
 
