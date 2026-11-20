@@ -188,7 +188,7 @@
 | 裕华新村3号（临弄院门与可见楼面） | 2026-11-20 16:49:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) |
 | 原上海犹太人总会南京西路722号南楼 | 2026-11-20 18:03:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) |
 | 百乐门舞厅（愚园路218号圆角立面与灯塔） | 2026-11-20 18:17:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) |
-| 同孚大楼（中国银行西区分行旧址） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) |
+| 同孚大楼（中国银行西区分行旧址） | 2026-11-20 22:54:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) |
 
 ### 普陀区（1处）
 

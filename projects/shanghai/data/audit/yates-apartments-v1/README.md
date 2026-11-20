@@ -9,3 +9,7 @@
 独立模型页在桌面及390像素手机上实际切换近远景。两端可看到整面弧形窗墙，屋顶柱列在窄屏远景显示较小。四项实际下载已核对字节数和SHA-256。[模型页](../../../yates-apartments.html) · [桌面近景](viewer-desktop-full.png) · [手机远景](viewer-mobile-lod.png) · [浏览器与四下载](viewer.json)
 
 正式主图从147处增加到148处。通过正常目录入口进入后，桌面与390像素手机都能看见弧形临街窗带。街面专项图显示沿弯道延伸的连续窗列，屋顶专项图同时记录露台柱列与紧邻的原生楼块。16个地面检查点全部与预期相符，其中四个检查点在保留的邻楼。前态与后态的六张原图、四件下载和近远景资源均有实际浏览器记录。前态请求10项、后态请求6项，页面错误和警告均为零。[147处前态](control-browser.json) · [148处浏览器与地面记录](main-browser.json) · [街面](map-street-facade.png) · [屋顶](map-roof.png) · [版本与下载预核](147-148-preflight.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/5469b6f2bb22377e57825ab37177f505831d73bf/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
