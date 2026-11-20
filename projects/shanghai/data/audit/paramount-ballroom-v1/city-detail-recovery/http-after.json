@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "Real HTTP directory requests using the production selection code and an instrumented manifest consumer.",
+  "version": "after",
+  "app_sha256": "283ace56a58392a85ecc41dcf5e9749310bc4e3614f409c5c7b248914f7d232f",
+  "map_scene_sha256": "a9f394bb8d0db698b90f3a363a68f5040cd373d8e8cb62cf7d1e459fab424ffe",
+  "returned_ms": 26278,
+  "elapsed_ms": 26379,
+  "requests": [
+    {
+      "file": "/assets/city-detail/manifest.json",
+      "started_ms": 402,
+      "declared_bytes": 1097700,
+      "actual_bytes": 32
+    },
+    {
+      "file": "/assets/city/manifest.json",
+      "started_ms": 25217,
+      "declared_bytes": 4005757,
+      "actual_bytes": 4005757
+    },
+    {
+      "file": "/assets/city-detail/manifest.json",
+      "started_ms": 26278,
+      "declared_bytes": 1097700,
+      "actual_bytes": 1097700
+    }
+  ],
+  "installed": [
+    {
+      "key": "city",
+      "ms": 26230,
+      "rows": 1708,
+      "sha256": "7783444283399a37fb12a8cd82b8e3a1cd75d5c955f65a019658e5826fa74f31"
+    },
+    {
+      "key": "city-detail",
+      "ms": 26378,
+      "rows": 1708,
+      "sha256": "c67d3d95335551386620f13077a7a8190a9bb777a7844655e166c389a7fa8e54"
+    }
+  ],
+  "errors": [
+    "本地建筑目录暂不可用，继续使用在线地图：The operation was aborted due to timeout"
+  ]
+}

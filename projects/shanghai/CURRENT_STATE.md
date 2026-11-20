@@ -1,3 +1,11 @@
+# 百乐门舞厅（愚园路218号圆角立面与灯塔）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) · [单体旋转与下载](paramount-ballroom.html) · [来源与制作范围](source/precise/jingan-paramount-ballroom/README.md) · [验收记录](data/audit/paramount-ballroom-v1/README.md)
+
+愚园路218号百乐门舞厅的临街外观，按不同年代照片和影院、舞厅时期核对。
+
+近景 31,078 个三角面，远景 15,586 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,416,299 字节。上海主图现有 118 处独立入口，静安区 9 处。[资产清单](assets/models/candidates/jingan-paramount-ballroom/manifest.json)
+
 # 中华基督教女青年会大楼圆明园路主立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-national-ywca&mode=overview) · [单体旋转与下载](national-ywca.html) · [来源与制作范围](source/precise/huangpu-national-ywca/README.md) · [验收记录](data/audit/national-ywca-v1/README.md)

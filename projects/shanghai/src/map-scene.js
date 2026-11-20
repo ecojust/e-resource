@@ -310,6 +310,7 @@ export async function createShanghaiScene(options = {}) {
   let ordinaryCatalog=null, updatingOrdinaryCatalog=false, nearbyOrdinaryRecords=[];
   const streetInteraction = new StreetInteraction();
   let localDataKind = 'city', streamingSignature = '', streamNoticeTime = 0, streamErrorTime = 0;
+  let cityManifestGeneration=0;
   const tileSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
   // Separate owners keep local tile replacement independent of successful
   // landmark loading. Replaced landmark IDs are excluded from tile ownership.
@@ -709,26 +710,35 @@ export async function createShanghaiScene(options = {}) {
     candidateClipper.bindObject(group,record);
   }
   async function setCityManifest(input, settings={}) {
-    localDataKind='city';
+    const generation=++cityManifestGeneration;
+    const current=()=>!destroyed&&generation===cityManifestGeneration;
+    const superseded=()=>({...localStreamer.getState(),superseded:true});
+    let deadline;
     try {
       let manifest=input, baseURL=settings.baseURL;
       if(typeof input==='string' || input instanceof URL) {
         const url=new URL(input,document.baseURI);
-        const response=await fetch(url,{signal:AbortSignal.timeout(25000)});
+        deadline=AbortSignal.timeout(25000);
+        const response=await fetch(url,{signal:deadline});
         if(!response.ok)throw new Error(`建筑目录读取失败 (${response.status})`);
         manifest=await response.json();baseURL ||= new URL('.',url).href;
       }
+      if(!current())return superseded();
       baseURL ||= new URL('../assets/city/',import.meta.url).href;
+      localDataKind='city';
       await localStreamer.setManifest(manifest,{baseURL});
+      if(!current())return superseded();
       updateLandmarkVisibility();
       updateLocalModels(true);
       return localStreamer.getState();
     } catch(error) {
+      if(!current())return superseded();
       onLoadError(new Error(`本地建筑目录暂不可用，继续使用在线地图：${error.message}`));
-      return {...localStreamer.getState(),fallback:true,error:error.message};
+      return {...localStreamer.getState(),fallback:true,error:error.message,timedOut:deadline?.aborted===true};
     }
   }
   async function setNeighborhoods(metadata) {
+    cityManifestGeneration++;
     // Compatibility for previous per-district releases; it uses the same bounded
     // scheduler and state cleanup rather than a second, unbounded loading path.
     localDataKind='legacy';

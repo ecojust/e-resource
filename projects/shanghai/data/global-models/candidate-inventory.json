@@ -44,34 +44,34 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 79,
+  "candidate_manifest_count": 80,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 77,
-  "resulting_city_count": 117,
+  "new_city_model_count": 78,
+  "resulting_city_count": 118,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 6,
     "长宁区": 4,
-    "静安区": 7,
+    "静安区": 8,
     "黄浦区": 33
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 316,
-    "bytes": 1010604675,
+    "files": 320,
+    "bytes": 1014020974,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4173069,
+    "current_run_added_bytes": 3416299,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 184
+    "inherited_incremental_files": 188
   },
   "records": [
     {
@@ -6580,6 +6580,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-informed-partial-exterior",
       "description": "圆明园路133号女青年会大楼的历史沿街立面，核对真实地图要素、照片与门牌。"
+    },
+    {
+      "id": "jingan-paramount-ballroom",
+      "name": "百乐门舞厅（愚园路218号圆角立面与灯塔）",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "paramount-ballroom.html",
+      "manifest": "assets/models/candidates/jingan-paramount-ballroom/manifest.json",
+      "manifest_sha256": "3bb0805733b8d0bc8447b74d53c9b2881146a94bddb2fc915aee870d538d68f9",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-paramount-ballroom/jingan-paramount-ballroom-raw.glb",
+          "bytes": 1870564,
+          "sha256": "20d04d18ef68740e54f8cdd70e4715724bcabb3fa9fe23519d0c556c11fba1d9",
+          "triangles": 31078,
+          "bounds_gltf_m": [
+            [
+              -31.96128273010254,
+              0.0,
+              -51.119998931884766
+            ],
+            [
+              32.88271713256836,
+              35.2400016784668,
+              1.2291182279586792
+            ]
+          ],
+          "materials": 12
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-paramount-ballroom/jingan-paramount-ballroom-web.glb",
+          "bytes": 777608,
+          "sha256": "4f022d33d3b1122247b65d69d0805a12e93a6d464bcd6d7690479579111c1822",
+          "triangles": 31078,
+          "bounds_gltf_m": [
+            [
+              -31.9612827,
+              0,
+              -51.1199989
+            ],
+            [
+              32.8827171,
+              35.2400017,
+              1.22911823
+            ]
+          ],
+          "materials": 12
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-paramount-ballroom/jingan-paramount-ballroom-lod.glb",
+          "bytes": 407260,
+          "sha256": "6595ad0e5a9d00854b000f52f5eb32b6752014fb917bc51af962f9eb29e45c42",
+          "triangles": 15586,
+          "bounds_gltf_m": [
+            [
+              -31.9612827,
+              0,
+              -51.1199989
+            ],
+            [
+              32.8827171,
+              35.2400017,
+              1.22911823
+            ]
+          ],
+          "materials": 11
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-paramount-ballroom/jingan-paramount-ballroom.blend",
+          "bytes": 360867,
+          "sha256": "8b32a9d29a8b00638366d350b9a20e44570e4139125f41ac90d72d0be7abd3ad"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -31.96128273010254,
+            0.0,
+            -51.119998931884766
+          ],
+          "max": [
+            32.88271713256836,
+            35.2400016784668,
+            1.2291182279586792
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -31.96128273010254,
+            -1.2291182279586792,
+            0.0
+          ],
+          "max": [
+            32.88271713256836,
+            51.119998931884766,
+            35.2400016784668
+          ]
+        },
+        "triangles": 31078,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-and-footprint-informed-exterior",
+      "description": "愚园路218号百乐门舞厅的临街外观，按不同年代照片和影院、舞厅时期核对。"
     }
   ],
   "baseline_inventory": {
@@ -6628,6 +6734,7 @@
     "projects/shanghai/assets/models/candidates/jingan-huaye-apartments/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-jewish-club/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-paramount-ballroom/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-yuhua-new-residential-quarter-03/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
@@ -6637,13 +6744,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/national-ywca-v1",
+  "incremental_audit_directory": "data/audit/paramount-ballroom-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/jewish-club-v1/inventory-increment.json",
-    "bytes": 154068,
-    "sha256": "0bee4f4d7bed0de1dd484c229a7d793bb392bf586026b0a63397b1a2fc346873"
+    "file": "data/audit/national-ywca-v1/inventory-increment.json",
+    "bytes": 157570,
+    "sha256": "2d074be4f52c414174cfb874a0010e1949fef75de04565ab4be51754dfa54a75"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-national-ywca/manifest.json"
+    "projects/shanghai/assets/models/candidates/jingan-paramount-ballroom/manifest.json"
   ]
 }

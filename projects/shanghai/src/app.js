@@ -1,11 +1,11 @@
-import { createShanghaiScene } from './map-scene.js?v=national-ywca-v1';
+import { createShanghaiScene } from './map-scene.js?v=paramount-ballroom-v1';
 import { WalkController } from './walk-controller.js';
-import {setupHistoricalView} from './historical-view.js?v=national-ywca-v1';
+import {setupHistoricalView} from './historical-view.js?v=paramount-ballroom-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js?v=national-ywca-v1';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=paramount-ballroom-v1';
 import { readVerifiedBytes } from './ordinary-building-catalog.js?v=asset-timeout-retry-v1';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=national-ywca-v1';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=paramount-ballroom-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js?v=jewish-club-courtyard-v1';
 
 const $ = id => document.getElementById(id);
@@ -71,6 +71,15 @@ function syncMode(next, announce=true) {
     if(announce) toast(mobile()?'已进入第三人称漫游，拖动左侧摇杆行走':'已进入第三人称漫游，使用 WASD 或方向键行走');
   }
 }
+async function loadCityBuildings(scene) {
+  const detail='assets/city-detail/manifest.json';
+  const first=await scene.setCityManifest(detail);
+  if(!first.fallback)return;
+  const fallback=await scene.setCityManifest('assets/city/manifest.json');
+  // Let navigation proceed with the available map while the detail index retries once.
+  if(first.timedOut&&!fallback.superseded)void scene.setCityManifest(detail);
+}
+
 function showOverview(place=activePlace) {
   if(!scene) return;
   syncMode('overview',false);
@@ -262,7 +271,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=national-ywca-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=paramount-ballroom-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
       if(name!=='data/candidate-city-integrations.json')throw error;
       candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
     })));
@@ -303,8 +312,7 @@ async function main(){
           baseURL:responses[4].ordinary_catalog.project_base_url||new URL('../',import.meta.url).href});
       } catch(error) {console.warn('[Shanghai ordinary catalog]',error);}
     }
-    const cityState=await scene.setCityManifest('assets/city-detail/manifest.json');
-    if(cityState.fallback)await scene.setCityManifest('assets/city/manifest.json');
+    await loadCityBuildings(scene);
     controller=new WalkController(scene,{container:scene.map.getCanvas(),onUpdate:updateHud,onNotice:toast});
     controller.setMode('overview');
     // Read again after asynchronous scene setup so the newest address wins.

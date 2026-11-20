@@ -70,7 +70,7 @@ function preciseMapFixture(t) {
   preciseLandmarkIds:new Set(['bund05']),landmarkBoundaries:new Map([['bund05',{building_ids:['new-source-id'],building_part_ids:[]}],['old-landmark',{building_ids:['old-source-id'],building_part_ids:[]}]]),
   tileSuppression,landmarkSuppression,cityDetails:{setVisibleLandmarks(ids){visible.push(ids);}},
   updateBuildingExclusions(){},selectHiddenDetailEvictions:()=>[],detailCacheLimits:{},releaseHiddenDetail(){},disposeModel(){},detailCacheStats:{},loadLandmark(){},updateStreetBasemap(){},updateLocalModels(){},
-  moduleURL:'https://example.test/project/src/map-scene.js',localDataKind:'city',onLoadError(error){throw error;}};
+  moduleURL:'https://example.test/project/src/map-scene.js',localDataKind:'city',cityManifestGeneration:0,destroyed:false,onLoadError(error){throw error;}};
  const visibilitySource=functionBetween('updateLandmarkVisibility','  function updateBuildingExclusions');
  const execute=body=>new Function('env',`with(env){${body.replaceAll('import.meta.url','moduleURL')}}`)(env);
  env.updateLandmarkVisibility=execute(visibilitySource+'\nreturn updateLandmarkVisibility;');
@@ -103,4 +103,66 @@ test('precise map city-manifest reset replays live landmark owner after the gene
  await h.setCityManifest({tiles:[]},{baseURL:'https://example.test/project/assets/city-detail/'});await h.settled();
  assert(h.tileSuppression.owners.has('precise:bund05'));assert(!h.tileSuppression.owners.has('old-city-tile'));assert(h.states.has('building:new-source-id'));
  assert(!h.states.has('building:neighbor'));assert(h.states.has('building:old-source-id'));assert.deepEqual(h.visible.at(-1),['bund05','old-landmark']);
+});
+
+const appSource=fs.readFileSync(new URL('../src/app.js',import.meta.url),'utf8');
+const startCity=appSource.indexOf('async function loadCityBuildings(scene)');
+const endCity=appSource.indexOf('function showOverview(',startCity);
+assert(startCity>=0&&endCity>startCity);
+const loadCityBuildings=new Function(appSource.slice(startCity,endCity)+'\nreturn loadCityBuildings;')();
+
+test('a slow detail index yields the coarse map before its single background retry finishes',async()=>{
+  const requested=[];
+  let finish;
+  const retry=new Promise(resolve=>{finish=resolve;});
+  const scene={setCityManifest(url){
+    requested.push(url);
+    if(requested.length===1)return Promise.resolve({fallback:true,timedOut:true});
+    if(requested.length===2)return Promise.resolve({active:['coarse']});
+    return retry;
+  }};
+  await loadCityBuildings(scene);
+  assert.deepEqual(requested,['assets/city-detail/manifest.json','assets/city/manifest.json','assets/city-detail/manifest.json']);
+  finish({fallback:true,timedOut:true});
+  await Promise.resolve();
+  assert.equal(requested.length,3);
+});
+
+test('a successful detail index, an HTTP error and an obsolete coarse request do not retry',async()=>{
+  for(const [responses,count] of [
+    [[{active:['detail']}],1],
+    [[{fallback:true,timedOut:false},{active:['coarse']}],2],
+    [[{fallback:true,timedOut:true},{superseded:true}],2]
+  ]){
+    let calls=0;
+    await loadCityBuildings({setCityManifest:async()=>responses[calls++]});
+    assert.equal(calls,count);
+  }
+});
+
+test('a late detail response cannot overwrite a subsequently selected manifest',async t=>{
+  const h=preciseMapFixture(t);
+  let response;
+  const waiting=new Promise(resolve=>{response=resolve;});
+  h.env.document={baseURI:'https://example.test/'};
+  h.env.fetch=()=>waiting;
+  const installed=[];
+  h.env.localStreamer.setManifest=async manifest=>{installed.push(manifest.name);};
+  const old=h.setCityManifest('old.json');
+  await h.setCityManifest({name:'new'},{baseURL:'https://example.test/'});
+  response(new Response(JSON.stringify({name:'old'})));
+  assert.equal((await old).superseded,true);
+  assert.deepEqual(installed,['new']);
+});
+
+test('only a genuinely expired network deadline marks a manifest retryable',async t=>{
+  const h=preciseMapFixture(t);
+  h.env.document={baseURI:'https://example.test/'};
+  h.env.onLoadError=()=>{};
+  const deadline=new AbortController();
+  h.env.AbortSignal={timeout:()=>deadline.signal};
+  h.env.fetch=async()=>new Response(null,{status:404});
+  assert.equal((await h.setCityManifest('missing')).timedOut,false);
+  h.env.fetch=async()=>{deadline.abort(new DOMException('expired','TimeoutError'));throw deadline.signal.reason;};
+  assert.equal((await h.setCityManifest('slow')).timedOut,true);
 });
