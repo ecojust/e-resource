@@ -13,3 +13,7 @@ OSM备用要素1658263140有17个分体，此处仅去除第9个，面积375.53�
 在195处旧图和196处新图使用同一街角机位实拍。旧图能看见规则方窗和平屋顶。新图能辨四层折角凸窗、窗下抹灰带、中段阳台和三角山花；从屋顶斜看也能区分两处方烟囱及瓦面的汇合方向。手机全景能辨两处凸窗的位置；较细的栏杆在窄屏全貌中难以分辨，原照中的门牌文字也无法确认。[旧图同一街角](city-28159/map-before.png) · [新图折角窗与中段阳台](city-28159/map-corner-windows.png) · [屋顶、山花与方烟囱](city-28159/map-gable-chimney.png) · [手机全景](city-28159/map-mobile-settled.png)
 
 在新版地图从懿园建国西路南门切回陕南邨时，手机触摸和桌面鼠标分别点中了画布上实际显示的地点标签。近景和远景均由浏览器加载并核对模型签名，34个建筑与空地样点全部符合预期，源组及近邻保持原有裁切范围。新版单体页、脚本、清单和四件下载也已逐字节核对。远档全市取景中，标签标出位置，窗棂与山花已不能单独分辨。[地图操作、地面样点与下载](city-28159/main-browser.json) · [两种真实指针与进程退出](city-28159/process-exits.json) · [新版单体文件与原实拍对照](city-28159/viewer-byte-continuity.json) · [单体实拍及四个浏览器下载](city-24159/viewer/viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/703735d2ae2bdf3f1559c0a1004f5a789bbb0cfc/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

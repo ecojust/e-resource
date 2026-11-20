@@ -163,7 +163,7 @@
 | 皋兰路圣尼古拉斯堂主堂 | 2026-11-21 04:58:51 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) |
 | 吉祥里山东北路西弄门 | 2026-11-21 05:10:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) |
 | 长乐邨93号丰子恺旧居（日月楼南庭院立面） | 2026-11-21 05:58:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) |
-| 陕南邨西南转角住宅（亚尔培公寓） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) |
+| 陕南邨西南转角住宅（亚尔培公寓） | 2026-11-21 06:16:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) |
 
 ### 徐汇区（19处）
 
