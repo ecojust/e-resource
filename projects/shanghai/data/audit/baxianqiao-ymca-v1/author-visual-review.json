@@ -1,0 +1,77 @@
+{
+  "id": "huangpu-baxianqiao-ymca",
+  "input_manifest": {
+    "path": "assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
+    "sha256": "da21dea1806edc7d5ff9f94eeea12758b34a7840241b3d27a32626c7dcc02bd9"
+  },
+  "inputs": {
+    "raw": {
+      "path": "assets/models/candidates/huangpu-baxianqiao-ymca/huangpu-baxianqiao-ymca-raw.glb",
+      "sha256": "2d5a0ac76289e4f837e79f665cc6e0dce5bd7f3136d2a829f8fa0d4e3b8db36a"
+    },
+    "full": {
+      "path": "assets/models/candidates/huangpu-baxianqiao-ymca/huangpu-baxianqiao-ymca-web.glb",
+      "sha256": "54d112703fb1c056c885f33d8e4fc0335c7b7121ee9b5f7c1ec2c2df3f22144b"
+    },
+    "lod": {
+      "path": "assets/models/candidates/huangpu-baxianqiao-ymca/huangpu-baxianqiao-ymca-lod.glb",
+      "sha256": "6ab2e603cbf3632006eee35b485ddd624ebde46d3f9bdb98f8dd8b54971fb491"
+    },
+    "native": {
+      "path": "assets/models/candidates/huangpu-baxianqiao-ymca/huangpu-baxianqiao-ymca.blend",
+      "sha256": "ea6151cfc16bcbca858ce31dab9b3ea401476cf2909030f159b7a31829a95cf9"
+    }
+  },
+  "comparison": {
+    "path": "source/precise/huangpu-baxianqiao-ymca/reference-review.json",
+    "sha256": "43b98f424f17f9b288a341675de9500179c9f8bd09eeddec1a23f57453a69d7f"
+  },
+  "views": [
+    {
+      "path": "data/audit/baxianqiao-ymca-v1/huangpu-baxianqiao-ymca-preview.png",
+      "sha256": "7ec48909ee6d7264a8d545068d3ec8e931b93fb7e88b32d28886a06f170d9fe1",
+      "size": [
+        820,
+        900
+      ],
+      "checked_zh": "街翼全景可读出下部浅仿石段、中部褐砖五排窗、两道起翘藏蓝檐及夹层红柱。两侧成对窄窗与单窗的间隔有变化，石段中央开口跨两层。"
+    },
+    {
+      "path": "data/audit/baxianqiao-ymca-v1/eaves.png",
+      "sha256": "1e4d623f762492cbd42ed16f0e3661f1aad24c95612c13d09296948efeccdea0",
+      "size": [
+        680,
+        520
+      ],
+      "checked_zh": "临街端角两道瓦面有不同高度，斜瓦垄止于较浅色的卷边；角部上扬、檐下彩枋和承托、檐间红色间柱与深色窗格分开表现。端面三组短窗向后转折。"
+    },
+    {
+      "path": "data/audit/baxianqiao-ymca-v1/entrance.png",
+      "sha256": "7b4cc8306af738affcb3382d142bb4a3f65738181a8fff54691f693e77b03024",
+      "size": [
+        680,
+        520
+      ],
+      "checked_zh": "石框切角收头、雕花门垛、棂门、三字额、上部窗及前挑雨篷可分辨。两侧各一处矮门，首层腰线在大门处断开；入口以上开窗独立。"
+    }
+  ],
+  "initial": {
+    "path": "data/audit/baxianqiao-ymca-v1/preflight/review.json",
+    "sha256": "7e7aade7b3d4d27eb0dc4cb1d514c1e65055189c41f5ab80db43549a9961805a"
+  },
+  "geometry_audit": {
+    "path": "data/audit/baxianqiao-ymca-v1/geometry-native.json",
+    "sha256": "c0f2d3d9ec6c3f18b121c5f3b8e286d15bcc98156ae0a19bd2ab8fbf2237e966"
+  },
+  "ray_audit": {
+    "path": "data/audit/baxianqiao-ymca-v1/surface-checks.json",
+    "sha256": "7f93f68c53380b1765dde76244320bbb04b4050a5ea0b588d50b410d679df972"
+  },
+  "detail_script": {
+    "path": "data/audit/baxianqiao-ymca-v1/detail-views.py",
+    "sha256": "f081855d52cecac0f1ffc74f0e9bd99cf0612045152796c8af7c2259478e6119"
+  },
+  "detail_native_sha256": "ea6151cfc16bcbca858ce31dab9b3ea401476cf2909030f159b7a31829a95cf9",
+  "method": "最终 Blender 原生文件以 Cycles 重开渲染，入口、瓦檐两图用14样本与OIDN 2.5.1降噪。每幅图完整读取像素并检验各PNG块CRC和IEND。对照2014年街景与2024年市国资委刊图。",
+  "limits": "材色、瓦片节距、斗拱数、门框浮雕和标高为图像引导的估计。背墙细节、变化的商业顶牌、室内和东、北侧其余楼翼另待调查。"
+}

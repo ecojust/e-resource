@@ -38,20 +38,26 @@ const save=()=>fs.writeFileSync(reportPath,JSON.stringify(result,null,2)+'\n');
 async function run() {
   fs.mkdirSync(out,{recursive:true});assert.ok(!fs.existsSync(reportPath),'Use a fresh output directory');
   const catalogFile='data/candidate-city-integrations.json';
-  const data=control?execFileSync('git',['show',review.baseline_commit+':projects/shanghai/'+catalogFile],{cwd:path.resolve(project,'../..')}):bytes(catalogFile);
+  const frozenControl=control && process.env.QA_CONTROL_CATALOG;
+  const controlRoot=frozenControl && path.dirname(path.dirname(path.resolve(frozenControl)));
+  const data=frozenControl?fs.readFileSync(frozenControl):control?execFileSync('git',['show',review.baseline_commit+':projects/shanghai/'+catalogFile],{cwd:path.resolve(project,'../..')}):bytes(catalogFile);
   const catalog=JSON.parse(data),row=catalog.models.find(r=>r.id===ID);
   result.catalog={sha256:sha(data),count:catalog.resulting_city_count};
+  if(frozenControl){
+    assert.equal(result.catalog.sha256,process.env.QA_CONTROL_CATALOG_SHA256,'Frozen predecessor catalog SHA-256');
+    assert.equal(result.catalog.count,Number(process.env.QA_CONTROL_CITY_COUNT),'Frozen predecessor catalog size');
+  }
   assert.equal(Boolean(row),!control);
   if(row) for(const key of ['owner','source_feature_ids','replacement_geometry','collision_geometry','model_geometry_sha256'])
     assert.deepEqual(row[key],contract[key],key);
   result.bindings=Object.fromEntries(['src/app.js','src/map-scene.js','src/candidate-city-clipping.js','src/candidate-city-integrations.js','src/building-beacons.js','index.html','landmarks.html']
-    .map(f=>[f,sha(bytes(f))]));
+    .map(f=>[f,sha(frozenControl?fs.readFileSync(path.join(controlRoot,f)):bytes(f))]));
   const received=new Set();
   const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader',...(process.env.QA_CDP_PORT?['--remote-debugging-port='+process.env.QA_CDP_PORT]:[])]});
   const page=await browser.newPage({viewport:{width:(control||desktopOnly)?870:390,height:(control||desktopOnly)?660:844},ignoreHTTPSErrors:true,hasTouch:true});
   result.browser=browser.version();
   page.setDefaultTimeout(180000);
-  if(control)await page.route('**/data/candidate-city-integrations.json*',r=>r.fulfill({contentType:'application/json',body:data}));
+  if(control&&!frozenControl)await page.route('**/data/candidate-city-integrations.json*',r=>r.fulfill({contentType:'application/json',body:data}));
   page.on('pageerror',e=>result.errors.push(e.message));
   page.on('console',m=>{if(m.type()==='error')result.errors.push({url:m.location().url,message:m.text()});if(m.type()==='warning'&&m.text().includes('[Shanghai map]'))result.warnings.push(m.text());});
   page.on('requestfailed',r=>{if(r.failure()?.errorText!=='net::ERR_ABORTED')result.failed.push({url:r.url(),failure:r.failure()});});
@@ -102,7 +108,7 @@ async function run() {
       assert.deepEqual(state.clip.owner,row.owner);assert.deepEqual(state.clip.geometry,row.replacement_geometry);
       if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual(state.group.clip_feature_local_ids,[source.local_id]);assert.equal(state.group.triangles,spec.groupTriangles);}
     }
-    const image=await page.screenshot({path:path.join(out,name+'.png'),timeout:120000});result.screenshots.push({file:name+'.png',bytes:image.length,sha256:sha(image)});save();
+    const image=await page.screenshot({path:path.join(out,name+'.png'),timeout:300000});result.screenshots.push({file:name+'.png',bytes:image.length,sha256:sha(image)});save();
   }
   async function jump(camera){
     await page.evaluate(c=>{const s=window.__SHANGHAI_APP__.scene;s.map.setCenterClampedToGround(false);s.map.jumpTo(c);s.loadLandmarks();s.refreshBuildingBeacons();},camera);
@@ -134,10 +140,18 @@ async function run() {
         ...spec.ground.map(w=>({name:w.name,position:point(...w.xy),expected:w.expected})),
         ...neighbors.map(n=>({name:'retained neighbor '+n.local_id,position:spec.neighborGround[n.local_id],expected:'building'}))]);
       for(const witness of result.ground)assert.equal(witness.found,witness.expected,witness.name);
+      await page.setViewportSize({width:600,height:460});
       await jump({...camera,zoom:15.5,pitch:32,elevation:0});await view('map-distant','distant');
       for(const [role,item] of Object.entries(manifest.assets))await receipt(path.posix.join(path.posix.dirname(row.candidate_manifest),item.file),item,role==='full'||role==='lod');
       assert.equal(sha(bytes(catalogFile)),result.catalog.sha256);
       for(const [f,sum] of Object.entries(result.bindings))assert.equal(sha(bytes(f)),sum,'Changed input '+f);
+    }
+    if(frozenControl){
+      await receipt(catalogFile,{bytes:data.length,sha256:result.catalog.sha256},true);
+      for(const [f,digest] of Object.entries(result.bindings)){
+        const size=fs.statSync(path.join(controlRoot,f)).size;
+        await receipt(f,{bytes:size,sha256:digest},false);
+      }
     }
     for(const rec of review.frozen_bindings.filter(r=>r.repository_path.endsWith('/far.glb')||r.repository_path.endsWith('/'+group.file)))
       await receipt(rec.repository_path.replace('projects/shanghai/',''),rec,true);

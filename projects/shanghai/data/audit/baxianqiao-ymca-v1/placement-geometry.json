@@ -1,0 +1,81 @@
+{
+  "id": "huangpu-baxianqiao-ymca",
+  "manifest_sha256": "da21dea1806edc7d5ff9f94eeea12758b34a7840241b3d27a32626c7dcc02bd9",
+  "asset_receipts": {
+    "raw": {
+      "sha256": "2d5a0ac76289e4f837e79f665cc6e0dce5bd7f3136d2a829f8fa0d4e3b8db36a",
+      "bytes": 9596476,
+      "triangles": 151200
+    },
+    "web": {
+      "sha256": "54d112703fb1c056c885f33d8e4fc0335c7b7121ee9b5f7c1ec2c2df3f22144b",
+      "bytes": 4041220,
+      "triangles": 151200
+    },
+    "lod": {
+      "sha256": "6ab2e603cbf3632006eee35b485ddd624ebde46d3f9bdb98f8dd8b54971fb491",
+      "bytes": 1528920,
+      "triangles": 60876
+    }
+  },
+  "vector_owner_area_m2": 422.87676845070564,
+  "rear_owner_vector_area_m2": 456.1812014841433,
+  "vector_owner_intersection_with_rear_m2": 0.0,
+  "GPU_clip_area_m2": 447.5150217131166,
+  "GPU_only_native_height_interval_m": [
+    -0.2,
+    29.4
+  ],
+  "ground_triangle_projection_m2": 31.845874499999926,
+  "enclosed_wing_and_ground_collision_m2": 400.9212025,
+  "enclosed_floor_method": "从三份GLB各自的flat upper roof平面识别同一圈封闭外墙，按实际portal shadow减去门洞退入开敞空间，再与两米以下外墙、门与门柱的三角面投影并集。",
+  "model_ground_collision_m2": 400.9212025,
+  "model_full_projection_m2": 483.30145051111333,
+  "scope": "仅西街翼；近景按不同源组分别核对，远景按顶点属性取源；本次不裁去相邻后楼任何部分。",
+  "variants": {
+    "near": {
+      "owner_triangles": 14568,
+      "rear_owner_triangles": 16712,
+      "source_owner_assignment": {
+        "method": "group IDs and triangle-centroid distance to original polygons",
+        "largest_own_distance_m": 0.07022744698221914,
+        "smallest_next_owner_margin_m": 12.31831808363885
+      },
+      "rear_owner_assignment": {
+        "method": "group IDs and triangle-centroid distance to original polygons",
+        "largest_own_distance_m": 0.06992859353423052,
+        "smallest_next_owner_margin_m": 5.35073716888621
+      },
+      "own_rendered_overrun_outside_vector_m2": 6.841360753068443,
+      "old_two_source_projections_overlap_m2": 0.8827606126886385,
+      "source_geometry_outside_GPU_clip_m2": 0.0,
+      "new_model_to_rear_building_m": 0.20726137141143366,
+      "new_model_intersection_with_rear_m2": 0.0,
+      "new_model_to_other_same_group_buildings_m": 11.109799528551298,
+      "GPU_clip_to_other_same_group_buildings_m": 11.964251573283649,
+      "rear_owned_by_separate_group": true,
+      "rear_feature_id": 1408
+    },
+    "far": {
+      "owner_triangles": 12,
+      "rear_owner_triangles": 20,
+      "source_owner_assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      },
+      "rear_owner_assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      },
+      "own_rendered_overrun_outside_vector_m2": 0.00013742856294102925,
+      "old_two_source_projections_overlap_m2": 0.0,
+      "source_geometry_outside_GPU_clip_m2": 0.0,
+      "new_model_to_rear_building_m": 0.2771839181666623,
+      "new_model_intersection_with_rear_m2": 0.0,
+      "new_model_to_other_same_group_buildings_m": 11.17972648404922,
+      "GPU_clip_to_other_same_group_buildings_m": 12.034177310203841,
+      "rear_owned_by_separate_group": true,
+      "rear_feature_id": 1408
+    }
+  },
+  "shared_checker_sha256": "30c0d5e0ad3f0e12cb4fa0f509c857d371da72991567731c0bdb57d995888999",
+  "checker_sha256": "2d40f14e6f1c45d2ba3f21b7db6ec67966526b33ada74d2db690c3e604b9dd03"
+}

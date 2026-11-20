@@ -1,3 +1,11 @@
+# 八仙桥基督教青年会大楼（西藏南路双檐临街翼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-baxianqiao-ymca&mode=overview) · [单体旋转与下载](baxianqiao-ymca.html) · [来源与制作范围](source/precise/huangpu-baxianqiao-ymca/README.md) · [验收记录](data/audit/baxianqiao-ymca-v1/README.md)
+
+西藏南路123号八仙桥基督教青年会的临街主翼及重檐屋顶。参照历史和当代照片，保留相邻的独立院楼。未见部分及高度含估计。
+
+近景 151,200 个三角面，远景 60,876 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 17,560,836 字节。上海主图现有 92 处独立入口，黄浦区 34 处。[资产清单](assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json)
+
 # 大上海大戏院历史立面（1933年建筑）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropol-cinema-historic-front&mode=overview) · [单体旋转与下载](metropol-cinema-history.html) · [来源与制作范围](source/precise/huangpu-metropol-cinema-historic-front/README.md) · [验收记录](data/audit/metropol-cinema-history-v1/README.md)
