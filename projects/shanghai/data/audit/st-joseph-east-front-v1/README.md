@@ -22,3 +22,7 @@
 聚焦标签及领馆镜头修订后的正式版本 21137 已核对 874 个真实HTTP响应，共 834,179,444 字节。前版的 174 处地标记录保持原值，登记后为 175 处。地面与可见范围采用该版本的正式地图模块验证；城市实拍按其自身记录归档。 [正式字节收据](map-http-bindings-21137.json) · [地面与可见范围](runtime-placement-21137.json)
 
 正式24136和24137目录分别登记174与175处地标。同一院落的原图可以与新增东立面对照。390像素手机和870像素桌面均保留首次及城市近块就绪后的取景。院内近景可见三道门、侧龛和彩色花窗，地标牌遮到花窗下缘；另取较高机位可看清十字、中央尖塔和小尖顶。保留的院前灰楼遮住一部分地面。远处实际切换到25,688面模型。两代共留十张实图，28处地面与邻楼点位全部符合原配准，四个保存下载与最终站的页面、查看器、清单及模型字节完全相同。测试未出现地图警告、WebGL错误或失败请求。875项正式输入实取831,260,170字节。[逐图观察](city-24137/visual-review.json) · [原城市底模](city-24137/map-before.png) · [三门和花窗](city-24137/map-door-and-rose.png) · [钟楼与尖顶](city-24137/map-bell-tower.png) · [实际浏览器与地面](city-24137/main-browser.json) · [四项下载](city-24137/individual-downloads-rebound.json) · [签名输入](city-24137/137-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b19f055830daa718ee95e3deada797c0319fce44/projects/shanghai/index.html#landmark=huangpu-st-joseph-church-east-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
