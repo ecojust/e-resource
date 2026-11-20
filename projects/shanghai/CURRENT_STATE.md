@@ -1,3 +1,11 @@
+# 华山路原美国学校办公楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huashan-american-school-office&mode=overview) · [单体旋转与下载](huashan-school-office.html) · [来源与制作范围](source/precise/jingan-huashan-american-school-office/README.md) · [验收记录](data/audit/huashan-school-office-v1/README.md)
+
+华山路643号中福会儿童艺术剧院红瓦办公楼，依据639号挂牌街门照片和区档案核对拱门、入口两侧与面向草坪的两层白柱廊。
+
+近景 44,836 个三角面，远景 20,104 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,221,580 字节。上海主图现有 170 处独立入口，静安区 12 处。[资产清单](assets/models/candidates/jingan-huashan-american-school-office/manifest.json)
+
 # 雷士德医学研究院主楼（2024修缮后外观）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview) · [单体旋转与下载](lester-medical-research.html) · [来源与制作范围](source/precise/jingan-lester-medical-research-institute/README.md) · [验收记录](data/audit/lester-medical-research-v1/README.md)
