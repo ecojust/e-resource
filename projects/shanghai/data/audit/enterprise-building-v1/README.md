@@ -15,3 +15,7 @@
 真实地图在前态137处与后态138处分别加载。四川中路同一机位的前照记录了874号原生源。交付后，从手机目录卡进入时可看清七开间立面与中央门厅；桌面默认的相邻标签遮住首层局部。收起侧栏后的街面近照可辨六排窗、竖向砖柱与内凹门廊。另核对了屋顶及简化远景、本楼10个地面点和5个邻楼点。两端原生远近瓦片、正式模型四项下载与浏览器错误记录均已核验。[前态原始视图](map-before.png) · [137处前态记录](control-browser.json) · [手机首屏](map-mobile.png) · [桌面街面](map-street-facade.png) · [屋顶](map-roof.png) · [远景](map-distant.png) · [138处实景及通行检查](main-browser.json)
 
 两版目录通过真实HTTP逐项比对。原有97个候选行保持相同，增至98个候选行，并与40处既有入口一同列入新版目录，成品的相机与裁剪等于审计合同。[17项共享入口、四项下载与目录收据](137-138-preflight.json) · [复验程序](check-release-inputs.py)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/fefc6f56bc8c24cd5cd310ef239aa116a5dde7b8/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

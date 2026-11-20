@@ -3783,7 +3783,7 @@
 | 汉弥登大楼（江西中路170号街角、入口及塔冠） | 2026-11-20 20:43:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hamilton-house&mode=overview) |
 | 大来大楼（广东路拱门与上层阳台） | 2026-11-20 20:43:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-robert-dollar-building&mode=overview) |
 | 永年人寿保险公司大楼（广东路93号） | 2026-11-20 20:56:41 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yongnian-life-insurance-building&mode=overview) |
-| 企业大楼（原中国企业银行大楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) |
+| 企业大楼（原中国企业银行大楼） | 2026-11-20 20:57:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) |
 
 ### 徐汇区（9处）
 
