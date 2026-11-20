@@ -32,3 +32,7 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ac8b08c0feaca1fc83683b061a5e03442b785725/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+## 125处入口版本的公开下载复查
+
+在同一份公开城市版本上重新下载了任务62至81的20份清单，以及每个模型的原生文件、原始网格、近景和远景模型。连同5个主图启动文件，共105个文件、184,650,902字节。每项都已核对长度和SHA-256。[公开下载记录](public-city-downloads-125.json) · [本次复查的固定版本](https://github.com/ecojust/e-resource/tree/ee95eabf4850d9c62de7078009f85d81ad813eda)
