@@ -17,3 +17,7 @@
 实际底图14/13719/6696瓦片中，714和715均缺少高度和层数，矢量层按12米绘制。冻结运行时对两座具名物体的真实轮廓求交，两者均可全部隐藏，周围八处保持。手机默认17.3615已满足17.3近景门限，视点到这一组的边界距离为零。较早手机画面里两源尚无隐藏状态；同会话桌面及此次正式手机的相应源均已隐藏。首次旧画面没有逐帧事件记录。最终版本全部811项输入实际读取760,586,706字节，实地对照了两个版本的46项网页和资产请求。在君楼的登记、放置、四件资产和默认相机保留一致。[取样与距离](final-map-24129/review.json) · [实到矢量及HTTP范围](final-map-24129/overture-source-samples.json) · [23/24两版对照](final-map-24129/pair-http.json) · [最终全部输入](final-map-24129/all-http.json)
 
 单体页面在1250×820桌面与390×844手机上分别切换近景和远景，并通过正面观察按钮检查画面。四幅图都完整显示长翼、抬高的中央体和七券入口。在网页上依次保存原始GLB、网页近景GLB、远景GLB和Blender工程，四份实际下载文件的名称、字节数及SHA-256均与发布清单吻合。检查期间没有页面脚本错误。[四次下载记录](viewer.json) · [桌面近景](viewer-desktop-full.png) · [桌面远景](viewer-desktop-lod.png) · [手机近景](viewer-mobile-full.png) · [手机远景](viewer-mobile-lod.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ebe8e0f4810756348b5a0f2d4a393c3c3fb12942/projects/shanghai/index.html#landmark=xuhui-yueyang-320-research-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
