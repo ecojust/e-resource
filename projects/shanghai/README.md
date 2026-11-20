@@ -135,7 +135,7 @@
 | 孙科别墅主楼（南花园敞廊与北门廊） | 2026-11-20 15:24:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-sun-ke-villa&mode=overview) |
 | 罗别根花园主宅（南向双山墙与露木构阳台） | 2026-11-20 15:31:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) |
 | 泰安路115弄6号周谷城旧居（庭院入口立面） | 2026-11-20 15:40:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) |
-| 兴国宾馆1号楼（太古洋行花园住宅） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) |
+| 兴国宾馆1号楼（太古洋行花园住宅） | 2026-11-20 16:52:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) |
 
 ### 静安区（7处）
 

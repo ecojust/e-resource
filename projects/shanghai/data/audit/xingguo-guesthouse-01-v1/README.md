@@ -9,3 +9,7 @@
 106项真实站点的独立页已在1250×820桌面和390×844手机分别运行。近、远景切换、模型旋转入口与四个真实下载均核验。[单体页浏览器](viewer.json) · [桌面近景](viewer-desktop-full.png) · [手机近景](viewer-mobile-full.png)
 
 105处旧站保留原城市体量。新版106处目录在手机实点后显示花园住宅，桌面近景可辨柱廊、石阶、五扇老虎窗和两个烟囱。远景实际切换到交付的简化GLB。两站均无页面错误和加载警告；16个地面核查点覆盖主体建筑、园侧可走区域和同一瓦片的11栋其他建筑。对照及五种新画面的输入与六张截图逐份核对散列。[105处对照](control-browser.json) · [106处主图及地面检查](main-browser.json) · [街面柱廊](map-street-facade.png) · [花园面屋顶](map-roof.png) · [正式站输入](production-snapshot.json) · [193项文件与实测报告复核](map-comparison-verification.json) · [实际对照命令](compare106-revised.sh)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0961aa3474c43bae386f801d3a92c69c2d079eaa/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
