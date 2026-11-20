@@ -3823,7 +3823,7 @@
 | 涌泉坊愚园路中央拱门与门楼 | 2026-11-20 16:47:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-bubbling-well-lane-gate&mode=overview) |
 | 裕华新村3号（临弄院门与可见楼面） | 2026-11-20 16:49:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) |
 | 原上海犹太人总会南京西路722号南楼 | 2026-11-20 18:03:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) |
-| 百乐门舞厅（愚园路218号圆角立面与灯塔） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) |
+| 百乐门舞厅（愚园路218号圆角立面与灯塔） | 2026-11-20 18:17:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) |
 
 ### 普陀区（1处）
 
