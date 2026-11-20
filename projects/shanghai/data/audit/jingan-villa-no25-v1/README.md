@@ -13,3 +13,7 @@
 最终全城版从187处增至188处，24150和24151分别签入994与1002项。用同一街面机位比较，原有排屋角和人行弄道保持连续，新增院门、砖墙和绿牌落在同排西南端。桌面从1280×800目录点击，手机从390×844目录触摸进入并放大。门垛上能读出“25”，横向气窗和右侧短通风窗可分别看清。深色铁门的小花饰在全城光照下较暗。屋顶视角显示门内浅色院地、同排保留楼和隔弄房屋，远景实取了1,288面模型。[同机位登记前](city-24151/before/map-before.png) · [手机目录与放大](city-24151/phone/phone-browser.json) · [25号牌近景](city-24151/desktop/map-number-25.png) · [保留院地与共享排屋](city-24151/desktop/map-roof.png) · [八幅地图逐图检查](city-24151/city-visual-review.json)
 
 地面13处实测中，门扇、门垛、矮墙、同排余部和五个邻楼有碰撞，门前弄道、后院和相邻门户前地面可通行。两段原生截面及12处备用矢量抽查通过。独立页实存四件文件，原始网格、近景、远景和Blender母档与模型清单逐字节相符。[正式地图、碰撞及资产回执](city-24151/desktop/main-browser.json) · [原生截面及矢量核验](city-24151/runtime-placement.json) · [独立页四图四下载](city-24151/viewer/viewer.json) · [公开站点与签名](city-24151/signed-public-sites.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/734c1db703245aeef78f187aa3f5c780e5e47cd2/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
