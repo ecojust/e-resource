@@ -115,7 +115,7 @@
 | 董家渡天主堂南入口立面 | 2026-11-20 17:52:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dongjiadu-cathedral&mode=overview) |
 | 东方饭店旧址（上海市工人文化宫西端主楼） | 2026-11-20 17:53:23 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-oriental-hotel&mode=overview) |
 | 都城饭店（江西中路180号转角主楼） | 2026-11-20 17:54:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropole-hotel&mode=overview) |
-| 美国花旗总会（福州路209号主立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) |
+| 美国花旗总会（福州路209号主立面） | 2026-11-20 17:55:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) |
 
 ### 徐汇区（7处）
 

@@ -24,3 +24,7 @@
 完整六图的实拍目录哈希为 `f05e62e8…`。其后更新了尚贤坊门楼与董家渡天主堂的默认镜头，原始拍摄输入维持可追溯。新旧对照逐项核实美国总会的机位、四件模型、源体裁剪及其余建筑条目，并列出当前发布目录的完整哈希。[新旧输入差异](camera-input-revision/input-difference.json) · [机位参数核对](camera-input-revision/camera-arguments.json)
 
 最终场景又通过HTTP逐项读取了13个文件，其中包括本次修改涉及的文件和这栋建筑的四种资产。实收10,153,623字节，均与冻结清单或原文件签名一致。[逐文件核对](revised-scene-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/bbf07f8cdbd30a16bd55ff40fbb0821074725551/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
