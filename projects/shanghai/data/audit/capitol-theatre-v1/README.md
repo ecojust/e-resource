@@ -23,3 +23,7 @@
 ## 119处正式主图的首次实测
 
 从真实目录点开光陆大楼，390×844手机和870×660桌面的默认视图都显示弧形街面、分级塔顶和附近保留建筑。选中灯牌遮住部分底层门窗；收起列表进入虎丘路近景可看清弧面的外窗和入口。首次实测记录绑定119处目录及页面、脚本的实际SHA-256。当时仍在执行118处原城市同角度的对照实拍及最后远景和下载步骤。[手机默认](map-mobile.png) · [桌面默认](map-desktop.png) · [虎丘路近景](map-street-facade.png) · [状态与实际截图签名](main-map-first-views.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/796d20085144f4472a9127800936d5f76ec4f759/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

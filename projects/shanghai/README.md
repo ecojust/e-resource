@@ -118,7 +118,7 @@
 | 美国花旗总会（福州路209号主立面） | 2026-11-20 17:55:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) |
 | 法国总会（花园饭店历史会所） | 2026-11-20 17:56:23 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-club&mode=overview) |
 | 中华基督教女青年会大楼圆明园路主立面 | 2026-11-20 18:09:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-national-ywca&mode=overview) |
-| 光陆大戏院（光陆大楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) |
+| 光陆大戏院（光陆大楼） | 2026-11-20 18:25:24 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) |
 
 ### 徐汇区（7处）
 
