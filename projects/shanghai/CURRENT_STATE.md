@@ -1,3 +1,11 @@
+# 吉祥里山东北路西弄门
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) · [单体旋转与下载](jixiangli-west-gate.html) · [来源与制作范围](source/precise/huangpu-jixiangli-west-gate/README.md) · [验收记录](data/audit/jixiangli-west-gate-v1/README.md)
+
+山东北路22弄吉祥里西口，按2013、2017和2021年门牌影像及2021年临街照片制作二层门头、深门洞、石匾和闭合金属门扇。门旁住宅单独保留。
+
+近景 19,396 个三角面，远景 9,900 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,449,056 字节。上海主图现有 185 处独立入口，黄浦区 93 处。[资产清单](assets/models/candidates/huangpu-jixiangli-west-gate/manifest.json)
+
 # 皋兰路圣尼古拉斯堂主堂
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) · [单体旋转与下载](gaolan-st-nicholas-church.html) · [来源与制作范围](source/precise/huangpu-gaolan-st-nicholas-church/README.md) · [验收记录](data/audit/gaolan-st-nicholas-v1/README.md)
