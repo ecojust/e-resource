@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 176 处入口。最近接入[清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 176 处入口。最近细化[鸿德堂 · 多伦路59号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的138项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的139项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 139 | 鸿德堂入口双石狮 | 虹口区／多伦路59号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对旧照与修缮档案，补查石狮制作年代和背面的雕刻。 |
-| 140 | 息焉堂主堂（名录安息堂） | 长宁区／可乐路1号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；单列北侧钟楼，核对原始设计、建堂与复堂年代，补查墓园历史边界。 |
+| 140 | 息焉堂主堂（名录安息堂） | 长宁区／可乐路1号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；单列北侧钟楼，核对原始设计、建堂与复堂年代，补查墓园历史边界。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -913,7 +912,7 @@
 | sh-historic-b2-048 | 中行虹口宿舍及底层门牌分期 | 四川北路894号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查证894号、912至922号和海宁路侧门牌沿革及宿舍平面。 |
 | sh-historic-b2-058 | 东大名路378号名称与改建分期 | 东大名路378号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查验虹口原址档案、保护铭牌、相邻建筑与历任机构的使用范围。 |
 | sh-historic-b2-066 | 雷氏德工学院修缮分期与邻接用房 | 东长治路505号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核对穹顶与烟囱的实测标高、分层口径、院内后期附建及南草坪边界。 |
-| sh-historic-b2-075 | 鸿德堂 | 多伦路59号 | [名录][H2] · 照片待核 | 已有模型可能关联：hongkou-hongde-church；待核对范围 |
+| sh-historic-b2-075 | 鸿德堂门前石刻的制作年代与修缮 | 多伦路59号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对旧照与修缮档案，补查石狮制作年代和背面的雕刻。 |
 | sh-historic-b2-078 | 景灵堂 | 昆山路135号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-129 | 河滨公寓 | 北苏州路340号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-149 | 四行大楼 | 四川北路1274号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3643,7 +3642,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3856,7 +3854,7 @@
 
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
-| 鸿德堂 · 多伦路59号 | [2026-10-26 21:36:33](https://github.com/ecojust/e-resource/commit/0c0868954b943c46928d69f15dc6d9af7477424f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) |
+| 鸿德堂 · 多伦路59号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) |
 | 上海鲁迅故居正立面与院门 | 2026-10-29 10:24:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) |
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |

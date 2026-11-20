@@ -1,3 +1,11 @@
+# 细化多伦路59号鸿德堂原模型入口两侧石座上的石狮，按2014年及2024年照片校对轮廓、鬃毛与前爪
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) · [四种模型下载](source/precise/hongkou-hongde-church/revisions/entrance-guardians/manifest.json) · [来源与制作范围](source/precise/hongkou-hongde-church/revisions/entrance-guardians/README.md) · [验收记录](data/audit/hongde-entrance-guardians-v1/README.md)
+
+细化多伦路59号鸿德堂原模型入口两侧石座上的石狮，按2014年及2024年照片校对轮廓、鬃毛与前爪。
+
+近景 441,648 个三角面，远景 192,592 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 60,111,427 字节。上海主图现有 176 处独立入口，虹口区 12 处。[资产清单](source/precise/hongkou-hongde-church/revisions/entrance-guardians/manifest.json)
+
 # 清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview) · [单体旋转与下载](pure-heart-church.html) · [来源与制作范围](source/precise/huangpu-pure-heart-church/README.md) · [验收记录](data/audit/pure-heart-church-v1/README.md)

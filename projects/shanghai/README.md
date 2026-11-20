@@ -1,7 +1,7 @@
 # 上海全景建模
 
 <!-- current-shanghai-model:start -->
-上海主图现有 176 处入口。最近接入[清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
+上海主图现有 176 处入口。最近细化[鸿德堂 · 多伦路59号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk)。[制作范围与验收记录](CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 [宏恩医院花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview)位于静安区。中央五开间门廊与两端山花之间，各有五跨底层拱廊。 [制作范围](source/precise/jingan-country-hospital/README.md) · [验收记录](data/audit/country-hospital-v1/README.md)
@@ -228,7 +228,7 @@
 
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
-| 鸿德堂 · 多伦路59号 | [2026-10-26 21:36:33](https://github.com/ecojust/e-resource/commit/0c0868954b943c46928d69f15dc6d9af7477424f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) |
+| 鸿德堂 · 多伦路59号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongde-church&mode=walk) |
 | 上海鲁迅故居正立面与院门 | 2026-10-29 10:24:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-luxun-residence-facade&mode=overview) |
 | 上海大厦／百老汇大厦历史主楼 | 2026-10-30 19:03:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-broadway-mansions&mode=overview) |
 | 俄罗斯领事馆历史主楼外观 | 2026-10-30 19:14:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-russian-consulate&mode=overview) |
