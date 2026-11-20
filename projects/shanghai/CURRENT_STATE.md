@@ -1,3 +1,11 @@
+# 徐汇公学崇思楼（修复后南北立面与孟莎屋顶）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) · [单体旋转与下载](chongsi-building.html) · [来源与制作范围](source/precise/xuhui-chongsi-building/README.md) · [验收记录](data/audit/chongsi-building-v1/README.md)
+
+徐汇公学崇思楼修复后的孟莎屋顶和南北立面，依据校史和保护设计记录区分虹桥路50号与68号及校园内其他楼栋。
+
+近景 239,342 个三角面，远景 56,422 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 23,360,782 字节。上海主图现有 161 处独立入口，徐汇区 10 处。[资产清单](assets/models/candidates/xuhui-chongsi-building/manifest.json)
+
 # 东大名路378号红砖办公楼街面与塔亭
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-east-daming-road-378&mode=overview) · [单体旋转与下载](east-daming-378.html) · [来源与制作范围](source/precise/hongkou-east-daming-road-378/README.md) · [验收记录](data/audit/east-daming-378-v1/README.md)
