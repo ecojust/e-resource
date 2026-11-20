@@ -1,3 +1,11 @@
+# 慕尔堂（沐恩堂礼堂与钟楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-moore-memorial-church&mode=overview) · [单体旋转与下载](moore-memorial-church.html) · [来源与制作范围](source/precise/huangpu-moore-memorial-church/README.md) · [验收记录](data/audit/moore-memorial-church-v1/README.md)
+
+西藏中路316号慕尔堂的西向街面、方塔及汉口路可辨认的侧墙。
+
+近景 65,940 个三角面，远景 42,364 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,898,972 字节。上海主图现有 109 处独立入口，黄浦区 43 处。[资产清单](assets/models/candidates/huangpu-moore-memorial-church/manifest.json)
+
 # 尚贤坊（淮海中路主弄门楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shangxianfang-gate&mode=overview) · [单体旋转与下载](shangxianfang-gate.html) · [来源与制作范围](source/precise/huangpu-shangxianfang-gate/README.md) · [验收记录](data/audit/shangxianfang-gate-v1/README.md)
