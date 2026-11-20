@@ -52,13 +52,14 @@ function evaluate(models){
   const state=clipper.getState();
   const counts=[...clipper.macroTables.values()].map(t=>t.triangles);
   const result={triangles:state.triangles,perDrawLimit:state.triangleLimit,macroTextures:state.macroTextures,
-    macroTriangleCounts:counts.sort((a,b)=>b-a),largestShaderTable:Math.max(clipper.defaultTable.triangles,...counts),
+    largestFeatureScan:Math.max(clipper.defaultTable.maxFeatureSpan,...[...clipper.macroTables.values()].map(t=>t.maxFeatureSpan)),
+    denseMacroTables:state.denseMacroTables,macroTriangleCounts:counts.sort((a,b)=>b-a),largestShaderTable:Math.max(clipper.defaultTable.triangles,...counts),
     scopedTargetDraw:state.ownerScopedSources[0],adjacentDraw:state.ownerScopedSources[1]??null};
   clipper.dispose();cube.geometry.dispose();cube.material.dispose();if(second){second.geometry.dispose();second.material.dispose();}return result;
 }
 const before=evaluate(catalog.models.filter(r=>r.id!==contract.id)),after=evaluate(catalog.models);
 assert.equal(after.triangles-before.triangles,spec.addedTriangles??spec.groupTriangles);assert.ok(after.triangles>after.perDrawLimit);
-assert.ok(after.macroTextures>1&&after.largestShaderTable<=after.perDrawLimit);
+assert.ok(after.macroTextures>1&&after.largestFeatureScan<=after.perDrawLimit);
 const oldOwners=spec.existingGroupOwners||[];
 assert.deepEqual([...after.scopedTargetDraw.clip_feature_local_ids].sort((a,b)=>a-b),[...oldOwners,...addedOwners].sort((a,b)=>a-b));assert.equal(after.scopedTargetDraw.triangles,spec.groupTriangles);
 assert.deepEqual(before.scopedTargetDraw.clip_feature_local_ids,oldOwners);

@@ -1,3 +1,11 @@
+# 慈修庵正院北殿与两厢木廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cixiu-nunnery-courtyard&mode=overview) · [单体旋转与下载](cixiu-nunnery.html) · [来源与制作范围](source/precise/huangpu-cixiu-nunnery-courtyard/README.md) · [验收记录](data/audit/cixiu-nunnery-v1/README.md)
+
+榛岭街15号慈修庵正院北端三间大雄宝殿和两侧临院廊，按2019年前后的现地摄影与地籍记载核对殿廊及分期。
+
+近景 29,110 个三角面，远景 19,042 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,285,133 字节。上海主图现有 182 处独立入口，黄浦区 91 处。[资产清单](assets/models/candidates/huangpu-cixiu-nunnery-courtyard/manifest.json)
+
 # 玉佛禅寺大雄宝殿
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-jade-buddha-mahavira-hall&mode=overview) · [单体旋转与下载](jade-buddha-mahavira-hall.html) · [来源与制作范围](source/precise/putuo-jade-buddha-mahavira-hall/README.md) · [验收记录](data/audit/jade-buddha-mahavira-hall-v1/README.md)

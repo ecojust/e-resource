@@ -128,15 +128,15 @@ test('clipping rows beyond128 remain addressable in global and owner-filtered ma
     assert.equal(shader.uniforms.candidateClipTexture.value.image.height,320);
     assert(rowContains(shader.uniforms.candidateClipTexture.value,0,139*3+.25,.25));
     assert.equal(shader.uniforms.candidateClipTexture.value.image.data[13],shader.uniforms.candidateMacro.value);
-    assert.match(shader.fragmentShader,/for\(int i=0;i<320;i\+\+\)/);
-    assert.match(shader.fragmentShader,/float row=\(float\(i\)\+0\.5\)\/320\.0/);
-    assert(shader.fragmentShader.indexOf('if(float(i)>=candidateClipCount)break;')<shader.fragmentShader.indexOf('vec4 box=texture2D(candidateClipTexture'));
+    assert.match(shader.fragmentShader,/for\(int step=0;step<320;step\+\+\)/);
+    assert.match(shader.fragmentShader,/floor\(entry\/candidateClipPages\)\+0\.5\)\/320\.0/);
+    assert(shader.fragmentShader.indexOf('if(step>=count)break;')<shader.fragmentShader.indexOf('vec4 box=candidateCell'));
   }
   clipper.releaseObject(group);clipper.bindObject(group,{...record,ids:[140]});
   assert(shaders(mesh).every(shader=>shader.uniforms.candidateClipCount.value===0));
 });
 
-test('rows225,288 and320 stay addressable and321 rejects without corrupting live clipping state',t=>{
+test('rows225,288 and320 stay addressable and a single owner exceeding the span budget rejects without corrupting live clipping state',t=>{
   const {clipper,mesh}=harness(t,{ids:[225,288,320],initial:Array.from({length:320},(_,i)=>triangleClip(i+1))}),compiled=shaders(mesh);
   assert.equal(clipper.getState().triangles,320);assert.equal(clipper.getState().triangleLimit,320);
   assert.equal(clipper.data[224*16+12],225);assert.equal(clipper.data[287*16+12],288);assert.equal(clipper.data[319*16+12],320);
@@ -146,7 +146,7 @@ test('rows225,288 and320 stay addressable and321 rejects without corrupting live
   assert(rowContains(clipper.texture,319,320*3+.25,.25));assert(!rowContains(clipper.texture,319,319*3+.25,.25));
   const texture=clipper.texture,scopedTexture=compiled[0].uniforms.candidateClipTexture.value;
   const scopedBefore=new Float32Array(scopedTexture.image.data),before=new Float32Array(clipper.data),revision=clipper.getState().revision;
-  assert.throws(()=>clipper.update(Array.from({length:321},(_,i)=>triangleClip(i+1))),/候选模型局部边界过于复杂/);
+  assert.throws(()=>clipper.update(Array.from({length:321},()=>triangleClip(225))),/候选模型局部边界过于复杂/);
   assert.equal(clipper.getState().triangles,320);assert.equal(clipper.getState().revision,revision);assert.deepEqual(clipper.data,before);
   assert.equal(clipper.texture,texture);assert.equal(compiled[0].uniforms.candidateClipTexture.value,scopedTexture);assert.deepEqual(scopedTexture.image.data,scopedBefore);
   assert(rowContains(scopedTexture,0,225*3+.25,.25));assert(rowContains(scopedTexture,1,288*3+.25,.25));assert(rowContains(scopedTexture,2,320*3+.25,.25));
@@ -248,13 +248,16 @@ test('translation-free clipping preserves batching and instancing and does not f
   clipper.bindMaterial(material,{featureIds:false,macroId:MACRO});
   const shader={vertexShader:library.vertexShader,fragmentShader:library.fragmentShader,uniforms:{}};
   material.onBeforeCompile(shader,{});
-  const helper=shader.fragmentShader.slice(shader.fragmentShader.indexOf('bool candidateInside('),shader.fragmentShader.indexOf('return false;')+'return false;'.length);
+  const start=shader.fragmentShader.indexOf('bool candidateInside(');
+  const end=shader.fragmentShader.indexOf('\n}',start);
+  assert.ok(start>=0&&end>start);
+  const helper=shader.fragmentShader.slice(start,end);
   assert(!helper.includes('modelMatrix'),'the common helper must use its parameter, before transmission declares its modelMatrix');
   const transmission=shader.fragmentShader.indexOf('#include <transmission_pars_fragment>'),main=shader.fragmentShader.indexOf('void main(){');
   assert(transmission>=0&&transmission<main);
   assert.match(THREE.ShaderChunk.transmission_pars_fragment,/#ifdef USE_TRANSMISSION[\s\S]*uniform mat4 modelMatrix;/);
   assert.match(shader.fragmentShader,/#ifndef USE_TRANSMISSION\nuniform mat4 modelMatrix;\n#endif/);
-  assert.match(material.customProgramCacheKey(),/candidate-city-clip-v3/);
+  assert.match(material.customProgramCacheKey(),/candidate-city-clip-v4/);
   t.after(()=>material.dispose());
 });
 
@@ -287,7 +290,51 @@ test('macro-local near clipping still includes wildcards and rejects local overl
   clipper.update([...rows,wildcard,triangleClip(425,'elsewhere')]);
   assert.deepEqual(ownerIds(pipelines[0]),[0,7]);
   const revision=clipper.revision;
-  assert.throws(()=>clipper.update([...rows,wildcard,wildcard]),/局部边界过于复杂/);
+  assert.throws(()=>clipper.update([...Array.from({length:319},()=>triangleClip(7)),wildcard,wildcard]),/局部边界过于复杂/);
   assert.equal(clipper.revision,revision);
   assert.deepEqual(ownerIds(pipelines[0]),[0,7]);
+});
+
+test('dense macro rows index by owner, retain wildcards and release resized textures',t=>{
+  const {clipper,mesh}=harness(t,{ids:[7,420],initial:[]});
+  const near=shaders(mesh);
+  const far=new THREE.Group(),gm=new THREE.BoxGeometry(),mat=new THREE.MeshStandardMaterial();
+  gm.setAttribute('_feature_id_0',new THREE.Float32BufferAttribute(new Float32Array(gm.attributes.position.count).fill(420),1));
+  const item=new THREE.Mesh(gm,mat);far.add(item);clipper.bindObject(far,{id:MACRO});
+  const shadersFar=shaders(item),wildcard={geometry:triangleClip(1).geometry};
+  const rows=[...Array.from({length:420},(_,i)=>triangleClip(i+1)),wildcard,triangleClip(420),triangleClip(420,'another')];
+  clipper.update(rows);
+  const texture=shadersFar[0].uniforms.candidateClipTexture.value,data=texture.image.data;
+  const at=id=>Array.from({length:422},(_,i)=>i).filter(i=>data[i*16+12]===id);
+  assert.equal(texture.image.width,8);assert.equal(texture.image.height,320);
+  assert.deepEqual(at(420),[420,421]);assert.deepEqual([...data.subarray(420*16+14,420*16+16)],[420,2]);
+  for(const shader of shadersFar){
+    assert.equal(shader.uniforms.candidateClipPages.value,2);assert.equal(shader.uniforms.candidateWildcardCount.value,1);
+    assert.equal(shader.uniforms.candidateClipCount.value,422);
+  }
+  for(const shader of near)assert.deepEqual(ownerIds(shader),[0,7,420,420]);
+  assert.equal(clipper.getState().denseMacroTables[0].maxFeatureSpan,3);
+  let freed=0;texture.addEventListener('dispose',()=>freed++);
+  clipper.update([triangleClip(420)]);assert.equal(freed,1);
+  assert.equal(shadersFar[0].uniforms.candidateClipPages.value,1);
+  assert.equal(shadersFar[0].uniforms.candidateClipCount.value,1);
+  clipper.releaseObject(far);gm.dispose();mat.dispose();
+});
+
+test('global source IDs indexed across pages stay available outside a registered macro',t=>{
+  const {clipper,mesh}=harness(t,{featureIds:true,initial:[]});
+  const rows=Array.from({length:323},(_,i)=>({source_local_id:i+1,geometry:triangleClip(i+1).geometry}));
+  const pipelines=shaders(mesh);
+  clipper.update(rows);
+  assert.equal(clipper.macroTables.size,0);
+  const table=clipper.defaultTable;
+  assert.equal(table.pages,2);
+  assert.equal(table.maxFeatureSpan,1);
+  assert.deepEqual([...table.data.slice(322*16+12,322*16+16)],[323,0,322,1]);
+  for(const shader of pipelines){
+    assert.equal(shader.uniforms.candidateClipTexture.value,table.texture);
+    assert.equal(shader.uniforms.candidateClipCount.value,323);
+  }
+  let freed=false;table.texture.addEventListener('dispose',()=>{freed=true;});
+  clipper.update([]);assert.ok(freed);assert.equal(table.pages,1);
 });

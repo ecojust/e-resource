@@ -25,7 +25,7 @@ import { correctPhotographicTexture } from './photographic-texture.js';
 import { preparePhotographicGlass } from './photographic-glass.js';
 import {CandidateSourceSections} from './candidate-source-sections.js?v=country-hospital-north-v1';
 import {CandidateCityState} from './candidate-city-integrations.js?v=metropol-cinema-history-v1';
-import {CandidateCityClipper} from './candidate-city-clipping.js?v=kincheng-bank-v1';
+import {CandidateCityClipper} from './candidate-city-clipping.js?v=owner-indexed-clipping-v1';
 import {planCandidateVectorClipping} from './candidate-vector-clipping.js?v=majestic-theatre-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 import {createBuildingBeacons} from './building-beacons.js?v=bank-of-taiwan-facade-v1';

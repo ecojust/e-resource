@@ -1,0 +1,26 @@
+✔ an untagged eastern near group excludes Cathay clipping in visible and shadow passes (11.690145ms)
+✔ the shared Cathay near group receives its whole clip while excluding other groups and macros (4.689943ms)
+✔ ownerless wildcard clips retain prior spatial behavior while still respecting macro ownership (4.939649ms)
+✔ late candidate activation and removal update already compiled near material uniforms (4.497253ms)
+✔ per-vertex feature IDs retain the original global texture and shader owner comparison (0.81664ms)
+✔ near objects with missing owner metadata retain prior spatial clipping (1.7523ms)
+✔ near objects with empty owner metadata retain prior spatial clipping (0.394484ms)
+✔ release disposes the scoped texture and rebind updates cached shader holders without recompilation (2.187514ms)
+✔ clipping rows beyond128 remain addressable in global and owner-filtered material passes (11.034097ms)
+✔ rows225,288 and320 stay addressable and a single owner exceeding the span budget rejects without corrupting live clipping state (56.289164ms)
+✔ paired native heights use the actual city anchor transform in all three shader passes (199.423207ms)
+✔ invalid or unrepresentable paired heights reject atomically before live texture changes (6.843056ms)
+✔ Float32 height overflow and collapsed endpoints reject without changing prior valid rows (0.904842ms)
+✔ translation-free clipping preserves batching and instancing and does not forward-reference transmission modelMatrix (8.651459ms)
+✔ different macros can exceed the city total without lengthening a shader draw (13.400782ms)
+✔ macro-local near clipping still includes wildcards and rejects local overload atomically (51.619972ms)
+✔ dense macro rows index by owner, retain wildcards and release resized textures (10.756129ms)
+✔ global source IDs indexed across pages stay available outside a registered macro (9.175238ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 892.663916
