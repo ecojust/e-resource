@@ -15,3 +15,7 @@
 在正式站点独立打开虹口中国银行大楼页面，桌面和手机各切换近远景，近景为24,988面，远景为21,208面。四个下载链接均经浏览器点击，保存的原始GLB、网页近景、网页远景和Blender文件与清单散列相符。[单体交互与四份下载](viewer.json) · [桌面近景](viewer-desktop-full.png) · [手机远景](viewer-mobile-lod.png)
 
 正式主地图从149处地标增至150处。沿四川北路与海宁路转角的相同机位先拍下既有地块；再从虹口区目录点选新模型，桌面与手机可见石基及红砖弧形外墙。切换至街面、屋顶和远景，确认该栋近景24,988面，远景21,208面，地面14处检查通过。原始、近景、远景和可编辑Blender四件均从同一正式站点下载核对。[原场景](map-before.png) · [桌面](map-desktop.png) · [手机](map-mobile.png) · [街面](map-street-facade.png) · [屋顶](map-roof.png) · [远景](map-distant.png) · [逐图、下载与碰撞记录](map-comparison-verification.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/65fe36449c2ea18358e820483651f3436f67a03f/projects/shanghai/index.html#landmark=hongkou-bank-of-china-hongkew&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 9 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
