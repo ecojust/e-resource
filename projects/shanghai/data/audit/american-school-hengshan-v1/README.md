@@ -19,3 +19,7 @@
 在164处的原场景和165处的登记后场景拍摄同一个校园。手机从徐汇区目录点入，桌面重载同一链接。登记后能看清正门、五扇中央阁窗、钟亭和边上的小顶。两幅默认图和正面近景中，前景原有建筑遮住左翼低层的一部分。[登记前](map-before.png) · [手机默认](map-mobile.png) · [桌面默认](map-desktop.png) · [临街正面](map-street-facade.png) · [屋顶](map-roof.png) · [城区远景](map-distant.png)
 
 两个近机位都载入了实地七栋建筑的原生组。仅3093号原楼的东翼被替换，北翼接缝有两段封口。12项实际地面检查包括主楼教室、保留北翼、另外六栋原楼、东南草坪和北翼旁院道。拉远至15.5级后，场景切换并验明远景GLB。两版浏览器均正常退出，作对照的旧场景保留了一条未带详情的地图控制台警告。[逐图观察和限制](main-map-visual-review.json) · [旧场景数据](control-browser.json) · [新场景数据与四件下载](main-browser.json) · [两版文件签名和HTTP读取](map-release-bindings.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/de24e70f4b4601d0361f16ad570f58b37dd22d05/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

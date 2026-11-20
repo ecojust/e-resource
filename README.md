@@ -3802,7 +3802,7 @@
 | 中山医院3号楼（历史中央主楼） | 2026-11-20 18:53:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) |
 | 徐汇公学崇思楼（修复后南北立面与孟莎屋顶） | 2026-11-21 01:35:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) |
 | 交通大学徐汇校区老校门（南洋公学旧址） | 2026-11-21 01:50:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-nanyang-campus-gate&mode=overview) |
-| 美童公学主楼（衡山路10号） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) |
+| 美童公学主楼（衡山路10号） | 2026-11-21 02:03:30 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-shanghai-american-school-main&mode=overview) |
 
 ### 长宁区（7处）
 
