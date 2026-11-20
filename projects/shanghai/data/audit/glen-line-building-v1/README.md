@@ -23,3 +23,7 @@
 在同一张870×660的桌面页面，先收起导航，再点一次地图右侧的加号。镜头从18.38870放大至19.38870，方向−76°、俯角62°。从立面在屏幕上的投影扣除已绘灯牌和界面边框，临江正立面的可见面积从1,792像素增至25,536，占投影面积的比例从21.2%增至76.0%。此时塔顶、连续窗排、东南圆角和侧墙清楚，中部与下部仍有遮挡。第二次放大时检查器没有取得当时的目标灯牌，未保存该档图。此项操作没有更改生产相机。[默认](public-default.png) · [收起导航](public-closed-navigation.png) · [放大一次](public-zoom-one.png) · [逐档投影、像素与相机](projected-pixel-review.json) · [原始浏览器收据](public-zoom-steps.json)
 
 独立远景复核在同一129处正式主图重新进入格林邮船大楼，使用600×460窗口、zoom 15.5、俯仰32°，保留地点卡与真实地标灯牌。渲染器当场载入815,320字节的正式LOD，报告可见、42,404个三角面、WebGL上下文有效，SHA256为04e34c358c5520d28d9153e6076b8cac6e7b124e865e709195d79d15f01f7652。新保存的远景显示中山东一路与外滩街区的区位；此比例尺下不能辨读门柱、塔亭等立面细部。随后实取原始、近景、远景、Blender四件，尺寸与SHA均符合清单。合并前述会话后，六张原位图和12个地面点均可复核。[远景实图](map-distant.png) · [单次远档浏览器记录](distant-browser.json) · [六图与四件核对](map-comparison-verification.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/29b0d60f5b3634b27a5c87f107c05b7206265b9e/projects/shanghai/index.html#landmark=huangpu-glen-line-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
