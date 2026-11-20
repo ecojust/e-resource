@@ -3795,7 +3795,7 @@
 | 徐汇武康路210号二层住宅 | [2026-10-26 20:39:46](https://github.com/ecojust/e-resource/commit/682b72b3913eee2568305799783ca64c0e51bfbc) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk) |
 | 龙华塔 | [2026-10-27 01:37:07](https://github.com/ecojust/e-resource/commit/e501cc11f6c45bdd069d6ff88e870ea18c1bf93f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk) |
 | 上海宋庆龄故居主楼 | 2026-10-29 21:05:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) |
-| 徐家汇藏书楼北楼（原藏书楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) |
+| 徐家汇藏书楼北楼（原藏书楼） | 2026-11-20 18:50:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) |
 
 ### 长宁区（6处）
 

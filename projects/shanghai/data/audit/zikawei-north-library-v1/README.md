@@ -21,3 +21,7 @@
 先在真实122处原城市选中南楼，移至相同近景查看北侧地块。原有四层神父楼和栏杆已在场，北侧667号源仍为多层平顶粗模。前序页面、目录和实际载入瓦片等10项都重新读取并核对哈希。[前序近景](map-before.png) · [122处浏览器实测](control-browser.json)
 
 123处正式场景的325°、54°默认视角，在390×844手机上可以完整看见两层北藏书楼、红瓦双坡屋面和东侧三孔廊。870×660桌面同时显示南北楼，两个灯牌局部遮住北楼中段。手机上灯牌位于楼身上方，长立面的拱窗清楚。此阶段保留双端默认结果与两套目录签名。[手机默认](map-mobile.png) · [桌面默认](map-desktop.png) · [123处首轮状态](main-map-first-views.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/925b7a8fbedcda93d7f6704b18cf6f2a4bb5e292/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
