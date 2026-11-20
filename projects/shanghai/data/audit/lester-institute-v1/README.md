@@ -25,3 +25,7 @@
 聚焦标签及领馆镜头修订后的正式版本 21130 已核对 818 个真实HTTP响应，共 770,176,307 字节。前版的 167 处地标记录保持原值，登记后为 168 处。地面与可见范围采用该版本的正式地图模块验证；城市实拍按其自身记录归档。 [正式字节收据](map-http-bindings-21130.json) · [地面与可见范围](runtime-placement-21130.json)
 
 24129和24130的同址实图分别对应167处和168处地标。真实目录入口在390像素手机与870像素桌面打开工学院，近景的七孔门廊和塔穹可以分辨，改从北面取景可看见三排蓝灰色采光窗。原城市底模的同址照片仍可对照。远处实际换到48,580面，街面近处为66,092面。六个后态下载、25个地面与邻楼见证通过；在两次浏览器会话内均无失败请求、页面错误或地图警告。该层819个冻结输入另外全量实取。[七张实图及逐张观察](city-24130/visual-review.json) · [同址原底模](city-24130/map-before.png) · [街侧拱廊](city-24130/map-street-facade.png) · [北向采光窗](city-24130/map-north-sawtooth.png) · [正式运行记录](city-24130/main-browser.json) · [完整输入](city-24130/130-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f178e5ec296d1113067e6d4d047179ce78f0810c/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
