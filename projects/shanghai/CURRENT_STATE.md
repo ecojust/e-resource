@@ -1,3 +1,11 @@
+# 雷士德医学研究院主楼（2024修缮后外观）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview) · [单体旋转与下载](lester-medical-research.html) · [来源与制作范围](source/precise/jingan-lester-medical-research-institute/README.md) · [验收记录](data/audit/lester-medical-research-v1/README.md)
+
+北京西路1320号1号楼原雷氏德医学研究院主楼，以历史立面及2024年修缮、启用照片交叉核对入口、铜灯和两翼。
+
+近景 72,156 个三角面，远景 23,188 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,218,186 字节。上海主图现有 169 处独立入口，静安区 11 处。[资产清单](assets/models/candidates/jingan-lester-medical-research-institute/manifest.json)
+
 # 雷氏德工学院（东长治路505号主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview) · [单体旋转与下载](lester-institute.html) · [来源与制作范围](source/precise/hongkou-lester-institute/README.md) · [验收记录](data/audit/lester-institute-v1/README.md)

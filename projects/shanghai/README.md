@@ -1,7 +1,7 @@
 # 上海全景建模
 
 <!-- current-shanghai-model:start -->
-上海主图现有 168 处入口。最近接入[雷氏德工学院（东长治路505号主楼）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
+上海主图现有 169 处入口。最近接入[雷士德医学研究院主楼（2024修缮后外观）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 [宏恩医院花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview)位于静安区。中央五开间门廊与两端山花之间，各有五跨底层拱廊。 [制作范围](source/precise/jingan-country-hospital/README.md) · [验收记录](data/audit/country-hospital-v1/README.md)
@@ -36,13 +36,13 @@
 
 **[打开最新地标目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [当前模型与验收](CURRENT_STATE.md)
 
-全市16区底图可浏览；168处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中128件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；169处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中129件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 新增[16区地面与水系模型](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=overview)：主图可查看地面与水系；分区GLB、可编辑Blender与GIS边界的下载见[资产说明](source/surfaces/README.md)。当前为地图水面及非水域底面的平面模型，尚无实测高程、河床与堤岸；未计入逐栋建筑复原数量。
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增128处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增129处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -60,7 +60,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，168处建筑与构件模型入口（40处既有＋128处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增128处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
+**汇总：16区，169处建筑与构件模型入口（40处既有＋129处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增129处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](data/candidate-city-integrations.json) · [候选版本时间](data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（85处）
@@ -190,7 +190,7 @@
 | 兴国宾馆1号楼（太古洋行花园住宅） | 2026-11-20 16:52:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) |
 | 圣约翰大学校政厅（四号楼）南廊与望楼 | 2026-11-21 01:43:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-st-johns-administration-building&mode=overview) |
 
-### 静安区（10处）
+### 静安区（11处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
@@ -206,6 +206,7 @@
 | 原上海犹太人总会南京西路722号南楼 | 2026-11-20 18:03:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) |
 | 百乐门舞厅（愚园路218号圆角立面与灯塔） | 2026-11-20 18:17:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) |
 | 同孚大楼（中国银行西区分行旧址） | 2026-11-20 22:54:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) |
+| 雷士德医学研究院主楼（2024修缮后外观） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview) |
 
 ### 普陀区（1处）
 
@@ -399,7 +400,7 @@
 
 ## 已建模型查看
 
-所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。所有模型查看入口统一进入主图；原40处开放室外漫游，新增128处提供俯瞰定位。模型资产与下载保留在各自来源说明中。
+所有已完成建筑与构件已归入[按区模型目录](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)，支持按名称或行政区搜索并直接进入全局场景。所有模型查看入口统一进入主图；原40处开放室外漫游，新增129处提供俯瞰定位。模型资产与下载保留在各自来源说明中。
 
 [崇明学宫尊经阁预览](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=chongming-zunjing-pavilion&mode=overview)：依据历史照片制作，已按院落资料近似定位并接入全局场景。[来源与限制](source/precise/chongming-zunjing-pavilion/README.md)。
 
