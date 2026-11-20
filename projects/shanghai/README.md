@@ -134,7 +134,7 @@
 | 大来大楼（广东路拱门与上层阳台） | 2026-11-20 20:43:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-robert-dollar-building&mode=overview) |
 | 永年人寿保险公司大楼（广东路93号） | 2026-11-20 20:56:41 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yongnian-life-insurance-building&mode=overview) |
 | 企业大楼（原中国企业银行大楼） | 2026-11-20 20:57:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) |
-| 广学大楼虎丘路西立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-christian-literature-building&mode=overview) |
+| 广学大楼虎丘路西立面 | 2026-11-20 21:07:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-christian-literature-building&mode=overview) |
 
 ### 徐汇区（9处）
 

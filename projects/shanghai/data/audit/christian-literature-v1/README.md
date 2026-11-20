@@ -17,3 +17,7 @@
 139处主图在390×844手机上从目录点选广学大楼，桌面重新打开同一条目。两端均显示163,542面近景，中央尖拱、两翼窗列和底层门口可辨。沿街视角可同时看到光陆大楼，俯视可辨虎丘路外墙与保留主体的接合处。拉远至15.5级实际换用84,746面远景。17个地面点覆盖门前退进、保留后墙和四个邻楼。四件模型、两份城市源文件及八个运行文件的实际响应分别核对通过，浏览器未记录异常。[手机](final-map/map-mobile.png) · [桌面](final-map/map-desktop.png) · [沿街](final-map/map-street-facade.png) · [屋面](final-map/map-roof.png) · [远景](final-map/map-distant.png) · [139处主图报告](final-map/main-browser.json) · [发布输入与四件文件](final-map/served-inputs-139.json)
 
 从139处版本起，默认灯牌布局会为当前选中的外立面留出显示空间。[灯牌可见性对照](../selected-facade-labels-v1/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b21c1cc843b38cf7e2279e0ddcf5d48f2659c8e0/projects/shanghai/index.html#landmark=huangpu-christian-literature-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
