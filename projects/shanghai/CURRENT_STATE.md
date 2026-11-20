@@ -1,3 +1,11 @@
+# 上海公库（原三井银行九江路正门与六柱廊）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsui-bank&mode=overview) · [单体旋转与下载](former-mitsui-bank.html) · [来源与制作范围](source/precise/huangpu-former-mitsui-bank/README.md) · [验收记录](data/audit/former-mitsui-bank-v1/README.md)
+
+九江路50号上海公库、原三井银行具有四层通高柱的沿街立面，核定其与原三菱银行的实体分界。
+
+近景 40,040 个三角面，远景 34,114 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,317,636 字节。上海主图现有 156 处独立入口，黄浦区 81 处。[资产清单](assets/models/candidates/huangpu-former-mitsui-bank/manifest.json)
+
 # 原三菱银行（九江路36号四柱门廊及南立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsubishi-bank&mode=overview) · [单体旋转与下载](former-mitsubishi-bank.html) · [来源与制作范围](source/precise/huangpu-former-mitsubishi-bank/README.md) · [验收记录](data/audit/former-mitsubishi-bank-v1/README.md)
