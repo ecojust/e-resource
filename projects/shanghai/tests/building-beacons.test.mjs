@@ -813,3 +813,53 @@ test('107–125 actual-width phone labels keep separate painted sprites and accu
     controls.destroy();assert.equal(map.images.size,0);
   }
 });
+
+test('the real 135-place Hamilton desktop selection clears the facade and restores the ordinary layout',async()=>{
+  const {projectFocusedFacade}=await import('../src/building-beacons.js');
+  const f=JSON.parse(readFileSync(new URL('./fixtures/beacon-hamilton-focus.json',import.meta.url),'utf8'));
+  const context={module:{exports:{}},console,URL,Blob,TextDecoder,TextEncoder,setTimeout,clearTimeout,performance};
+  context.exports=context.module.exports;context.self=context;context.globalThis=context;
+  vm.runInNewContext(readFileSync(new URL('../vendor/maplibre-gl.js',import.meta.url),'utf8'),context);
+  const lib=context.module.exports,records=f.records.map(p=>p.id===f.focus.id?{...p,...f.focus}:p);
+  function load(view){
+    const [width,height]=view.viewport,style=Object.create(lib.Style.prototype);let transform;
+    style.map={migrateProjection(next){transform=next;}};style.tileManagers={};style._setProjectionInternal('mercator');
+    transform.resize(width,height);transform.setFov(36.87);transform.setZoom(view.camera.zoom);
+    transform.setCenter(lib.LngLat.convert(view.camera.center));transform.setElevation((f.focus.bounds_glb.min[1]+f.focus.bounds_glb.max[1])/2);
+    transform.setPadding(view.padding);transform.setPitch(view.camera.pitch);transform.setBearing(view.camera.bearing);
+    const map=new BeaconMap({width,height});map.transform=transform;
+    map.project=p=>lib.Map.prototype.project.call({transform,style:{},terrain:null},p);
+    map.unproject=p=>transform.screenPointToLocation({x:p.x??p[0],y:p.y??p[1]});
+    let focusId=null;
+    const doc=mockDocument(),panel=new Element();panel.inert=false;
+    panel.getBoundingClientRect=()=>({right:view.insets.left-12});
+    doc.getElementById=id=>id==='explore-panel'?panel:id==='location-card'?{getBoundingClientRect:()=>({top:height-view.insets.bottom+8})}:null;
+    doc.querySelector=q=>q==='.map-tools'?{getBoundingClientRect:()=>({left:width-view.insets.right+8})}:null;
+    const selected=[];
+    const api=createBuildingBeacons({map,records,getFocusedId:()=>focusId,onSelect:p=>selected.push(p.id),documentObject:doc});
+    return {setFocus(v){focusId=v;api.refresh();},map,api,selected,transform};
+  }
+  const intersect=(p,r)=>Math.max(0,Math.min(p.x+p.width/2,r.right)-Math.max(p.x-p.width/2,r.left))*Math.max(0,Math.min(p.y+p.height/2,r.bottom)-Math.max(p.y-p.height/2,r.top));
+  const desk=load(f.desktop),ordinary=desk.api.getState().labelPositions;
+  assert.equal(ordinary.length,7);assert.equal(ordinary.find(p=>p.id===f.focus.id).x,f.desktop.recordedSelection.x);
+  assert.equal(ordinary.find(p=>p.id===f.focus.id).y,f.desktop.recordedSelection.y);
+  desk.setFocus(f.focus.id);const placed=desk.api.getState().labelPositions,area=projectFocusedFacade(desk.map,f.focus);
+  assert(ordinary.reduce((sum,p)=>sum+intersect(p,area),0)>16000);assert.equal(placed.length,7);assertSeparated(placed);
+  assert(placed.every(p=>!p.compact&&intersect(p,area)===0));
+  for(const p of placed){
+    for(const x of [p.x-p.width*.45,p.x,p.x+p.width*.45])for(const y of [p.y-p.height*.45,p.y,p.y+p.height*.45]){
+      assert.equal(desk.api.hitTest({x,y}),p.id);
+    }
+    desk.map.emit('click',{point:{x:p.x,y:p.y}});assert.equal(desk.selected.at(-1),p.id);
+  }
+  // Clearing selection must immediately restore the original cards; no stale exclusion remains.
+  desk.setFocus(null);assert.deepEqual(desk.api.getState().labelPositions,ordinary);
+  desk.setFocus(f.focus.id);desk.transform.setZoom(14);desk.map.emit('zoomend',{});
+  assert.equal(projectFocusedFacade(desk.map,f.focus),null);
+  const far=desk.api.getState().labelPositions;desk.setFocus(null);assert.deepEqual(desk.api.getState().labelPositions,far);
+  desk.api.destroy();
+  const mobile=load(f.mobile);mobile.setFocus(f.focus.id);const single=mobile.api.getState().labelPositions;
+  assert.equal(single.length,1);assert.equal(single[0].id,f.focus.id);assert.equal(single[0].x,f.mobile.recordedSelection.x);
+  assert.equal(single[0].y,f.mobile.recordedSelection.y);assert.equal(single[0].width,f.mobile.recordedSelection.width);
+  mobile.api.destroy();
+});

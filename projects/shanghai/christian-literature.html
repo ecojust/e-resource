@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>广学大楼 · 虎丘路128号</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="positive-x" aria-label="虎丘路128号广学大楼西立面三维模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-christian-literature-building&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 虎丘路128号</p>
+    <h1>广学大楼</h1>
+    <p>虎丘路西立面</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">虎丘路上的玫瑰色石拱从二层贯穿至顶层，两侧各有五间深色砖窗。依据历史照片、2015年街角实拍及2022年修缮报道制作西楼临街立面。沿圆明园路的真光大楼另列。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">虎丘路正面</button>
+      <button type="button" data-view="oblique">斜侧面</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-christian-literature-building/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-christian-literature-building');
+  </script>
+</body>
+</html>

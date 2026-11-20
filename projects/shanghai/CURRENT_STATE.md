@@ -1,3 +1,11 @@
+# 广学大楼虎丘路西立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-christian-literature-building&mode=overview) · [单体旋转与下载](christian-literature.html) · [来源与制作范围](source/precise/huangpu-christian-literature-building/README.md) · [验收记录](data/audit/christian-literature-v1/README.md)
+
+虎丘路128号广学大楼可独立辨认的西向立面，核对大尖拱和与东侧真光大楼相接的边界。
+
+近景 163,542 个三角面，远景 84,746 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 16,391,297 字节。上海主图现有 139 处独立入口，黄浦区 66 处。[资产清单](assets/models/candidates/huangpu-christian-literature-building/manifest.json)
+
 # 企业大楼（原中国企业银行大楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) · [单体旋转与下载](enterprise-building.html) · [来源与制作范围](source/precise/huangpu-enterprise-building/README.md) · [验收记录](data/audit/enterprise-building-v1/README.md)
