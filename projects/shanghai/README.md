@@ -158,7 +158,7 @@
 | 震旦大学图书馆教学大楼（西一号楼）球场侧立面 | 2026-11-21 03:24:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) |
 | 若瑟堂（四川南路36号东立面与钟塔） | 2026-11-21 03:42:28 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-st-joseph-church-east-front&mode=overview) |
 | 清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞） | 2026-11-21 03:54:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview) |
-| 小桃园清真寺主礼拜殿（院内东立面及五处屋顶构件） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xiaotaoyuan-mosque-prayer-hall&mode=overview) |
+| 小桃园清真寺主礼拜殿（院内东立面及五处屋顶构件） | 2026-11-21 04:21:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-xiaotaoyuan-mosque-prayer-hall&mode=overview) |
 
 ### 徐汇区（14处）
 

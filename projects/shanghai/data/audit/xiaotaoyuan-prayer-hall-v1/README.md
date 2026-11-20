@@ -19,3 +19,7 @@
 主图的两版已用 Chromium 在同一院侧机位对照。旧版可见连续灰色体块，接入后能辨出两侧圆窗、中央匾额和门柱。保留的院翼仍挡住底层门阶，近拍时名称框覆盖部分二层窗，中央亭顶超出画面上缘。另一个屋面视角能辨出中央金亭及四座绿顶。桌面用鼠标、390 像素手机用触摸从黄浦目录进入主图，两处画面上的名称均能命中主殿。缩至街区尺度后仍可看到标记。十处地面结果均与放置记录一致。两次浏览器运行分别结束，页面、控制台和请求均无报错。[同机位旧图](city-24143/map-before.png) · [同机位新图](city-24143/court-arcade.png) · [手机](city-24143/main-mobile.png) · [屋顶](city-24143/gold-cupola-and-four-domes.png) · [主图记录](city-24143/main-map-browser.json) · [逐图复核](city-24143/visual-review.json)
 
 两个本地冻结版分别有 179 和 180 处入口。24143 端口提供的 935 个文件共 920,442,083 字节，与本轮签名逐件相符。独立查看器原有四张画面和四件实际保存文件的哈希均已复核。[旧版浏览器](city-24143/control.json) · [两版输入及下载复核](city-24142-24143-preflight.json) · [935 个文件的传输记录](city-24143/143-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4a696f09a751bf8bbd1756bddd10c4a72bdad15f/projects/shanghai/index.html#landmark=huangpu-xiaotaoyuan-mosque-prayer-hall&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
