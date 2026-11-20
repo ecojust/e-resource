@@ -1,3 +1,11 @@
+# 岳阳路200弄住宅临街锯齿立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-lane-200-east-row&mode=overview) · [单体旋转与下载](yueyang-lane-200-east-row.html) · [来源与制作范围](source/precise/xuhui-yueyang-lane-200-east-row/README.md) · [验收记录](data/audit/yueyang-lane-200-east-row-v1/README.md)
+
+市房管局2D029所列岳阳路200弄住宅，按2013年登记照片与2013、2020年沿街实景对位临岳阳路的折角窗、三层窗带和前院围栏。
+
+近景 21,456 个三角面，远景 8,720 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,685,740 字节。上海主图现有 192 处独立入口，徐汇区 17 处。[资产清单](assets/models/candidates/xuhui-yueyang-lane-200-east-row/manifest.json)
+
 # 大胜胡同德莱蒙德住宅南向花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-dasheng-drummond-residence&mode=overview) · [单体旋转与下载](dasheng-drummond-residence.html) · [来源与制作范围](source/precise/jingan-dasheng-drummond-residence/README.md) · [验收记录](data/audit/dasheng-drummond-residence-v1/README.md)
