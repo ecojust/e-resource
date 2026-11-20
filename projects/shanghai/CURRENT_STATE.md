@@ -1,3 +1,11 @@
+# 四行储蓄会大楼（四川中路261号联合大楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) · [单体旋转与下载](four-banks-savings-building.html) · [来源与制作范围](source/precise/huangpu-four-banks-savings-building/README.md) · [验收记录](data/audit/four-banks-savings-v1/README.md)
+
+四川中路261号联合大楼街面，按照片核对弧形转角、分色墙、拱门与屋顶透孔。
+
+近景 47,752 个三角面，远景 39,632 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,942,812 字节。上海主图现有 130 处独立入口，黄浦区 57 处。[资产清单](assets/models/candidates/huangpu-four-banks-savings-building/manifest.json)
+
 # 格林邮船大楼（外滩28号临江正面与东南街角）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-glen-line-building&mode=overview) · [单体旋转与下载](glen-line-building.html) · [来源与制作范围](source/precise/huangpu-glen-line-building/README.md) · [验收记录](data/audit/glen-line-building-v1/README.md)

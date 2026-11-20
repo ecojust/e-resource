@@ -1,0 +1,170 @@
+{
+  "id": "huangpu-four-banks-savings-building",
+  "source_sha256": "8c3466b32fdd99a4e04a67db13b1c94bc32a7d612875f9ee02b10f73579c11e2",
+  "manifest_sha256": "a451fedd6ac299aa9766443ee8f95b7ca695622cca2803076e841ec6811b3251",
+  "script_sha256": "c72e0afff39a029dc00c338afc2fd79383bd5922f8c6fdce493c40a74d56d9e3",
+  "decoders_sha256": {
+    "data/audit/postal-office-v1/map-decode-source.mjs": "1c4a034b8541c9481c20b3b5a8209920670136010cb09c9b0a793237c445388e",
+    "data/audit/postal-office-v1/map-decode-delivered.mjs": "3c2eb7783d8f33237ca84df6f9d4c7599412e5c9ac5feaf56fc229e773bb3db9",
+    "data/audit/country-hospital-v1/verify-placement.py": "4c49b2180b984f5041a4b7effd440a340f19d41a7fba190d685d31f140541a51"
+  },
+  "contract_sha256": "b614efbe3efd68b98d6e8c2e3d8367529abe3357727530ae0970431869d9df6d",
+  "assets": {
+    "raw": {
+      "bytes": 3341112,
+      "sha256": "d86f998e56ac43ca16446e59f1a970b7d469f63f1573c7e60df3047278841d9f",
+      "triangles": 47752
+    },
+    "web": {
+      "bytes": 1473636,
+      "sha256": "b5196dbca6cb7cc03db6321f7b74bae1f10fda39442ae33359d61ff15fa11de4",
+      "triangles": 47752
+    },
+    "lod": {
+      "bytes": 1229880,
+      "sha256": "ab9058178f4a1484a2c1e9e268ba66be5414ae18bc09793c7ce6b906f144c8e5",
+      "triangles": 39632
+    }
+  },
+  "registered_owner_area_m2": 572.7478319556886,
+  "collision_area_m2": 608.0292277079253,
+  "model_projected_area_m2": 597.3773159050003,
+  "cut_area_m2": 595.3974604344662,
+  "original_shared_source_overlap_m2": 0.0,
+  "osm_vector_mask_area_m2": 592.7451962764875,
+  "adjacent_source_overlap_with_osm_mask_m2": 0.0,
+  "all_macro_neighbors_crossing_mask": [
+    {
+      "id": 1782,
+      "mask_overlap_m2": 2.639541671739156,
+      "model_overlap_m2": 0.0
+    }
+  ],
+  "party_wall_preservation": {
+    "near": {
+      "neighbor_id": 1782,
+      "neighbor_area_m2": 620.7704272344025,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.0529005034697714,
+      "clip_overlap_before_owner_filter_m2": 3.519313938204651,
+      "exclusion": "Separate source near tile without target owner"
+    },
+    "far": {
+      "neighbor_id": 1782,
+      "neighbor_area_m2": 609.9719603456595,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.12503270422291207,
+      "clip_overlap_before_owner_filter_m2": 2.6394478587440893,
+      "exclusion": "Explicit native far feature ID"
+    }
+  },
+  "adjoining_entire_near_group": {
+    "ids": [
+      2201,
+      539,
+      1718,
+      53,
+      1782
+    ],
+    "projected_area_m2": 4392.448784751176,
+    "model_overlap_m2": 0.0,
+    "clearance_m": 0.0529005034697714
+  },
+  "owner_classification_margins": {
+    "target group": {
+      "max_assigned_distance_m": 0.0852703171749524,
+      "min_runner_up_gap_m": 15.551028147562834
+    }
+  },
+  "target_variants": {
+    "near": {
+      "original_area_m2": 580.0873484895609,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 15.353672145116022
+    },
+    "far": {
+      "original_area_m2": 572.7483557152947,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 15.425198922803165
+    }
+  },
+  "source_decode": {
+    "target group near": {
+      "ids": [
+        2602,
+        1064,
+        431,
+        59,
+        1618,
+        1797
+      ],
+      "input": "near/3_-4-s1-s0.glb.gz",
+      "sha256": "5e119d8b46aa1b3aa39d89193258ea5569f6d87bd455a0d912bc0d7ae8f33421",
+      "pass": true,
+      "triangles_per_owner": {
+        "2602": 15920,
+        "1064": 7620,
+        "431": 36768,
+        "59": 10928,
+        "1618": 3216,
+        "1797": 6812
+      }
+    },
+    "target group far": {
+      "ids": [
+        2602,
+        1064,
+        431,
+        59,
+        1618,
+        1797
+      ],
+      "input": "far.glb",
+      "sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+      "pass": true,
+      "triangles_per_owner": {
+        "2602": 20,
+        "1064": 24,
+        "431": 12,
+        "59": 16,
+        "1618": 12,
+        "1797": 20
+      }
+    },
+    "party-wall group near": {
+      "ids": [
+        2201,
+        539,
+        1718,
+        53,
+        1782
+      ],
+      "input": "near/2_-4-s1-s1-s1.glb.gz",
+      "sha256": "68ba096da870a6c69afa76c2069ee8502068f045bafff1df47de2bb3149dc0f7",
+      "triangle_count": 103716,
+      "possible_north_bank_triangles": 13672,
+      "method": "All triangles retained. For the overlap bound, include every triangle within 0.30 m of the closest source polygon for East Asia Bank."
+    },
+    "party-wall group far": {
+      "ids": [
+        2201,
+        539,
+        1718,
+        53,
+        1782
+      ],
+      "input": "far.glb",
+      "sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+      "pass": true,
+      "triangles_per_owner": {
+        "2201": 28,
+        "539": 20,
+        "1718": 20,
+        "53": 28,
+        "1782": 44
+      }
+    }
+  },
+  "geometry_input_manifest_sha256": "109d1d54df9512c03f7a0f333e692f67d75a0d2e3129187244694887f20b497f",
+  "final_geometry_binding": "The independent decoder and surface checks read these same three SHA256-verified meshes while the editable camera was rendered. Rebound all three role hashes, triangle counts and lengths to the final four-file manifest."
+}
