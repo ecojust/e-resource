@@ -12,6 +12,8 @@
 
 从台湾银行所在的153处版本保留同机位前照，再从154处黄浦目录进入浙江第一商业银行。原正式视图的桌面、390像素手机、街角、屋面及远景模型均已加载。15个地面点以及近远城市瓦片、四件模型下载全部吻合。原桌面及手机默认镜头可见灯牌压住部分街面，收起侧栏后的街角图可见折角与长排窗口。[前态同机位](original-21116-map/before/map-before.png) · [原桌面与手机结果](original-21116-map/after/main-browser.json) · [街面](original-21116-map/after/map-street-facade.png) · [灯牌覆盖实测](original-21116-map/observed-sign-rectangles.json)
 
+新版本从目录进入时，390 像素手机默认、手机点一次「＋」和 870 像素桌面展开目录三种画面，均可辨认街角六层的十二扇折角窗。逐窗按真实相机投影计算，三幅图的窗面总面积分别为 1,010.37、4,003.43 和 1,631.45 平方像素，灯牌覆盖面积均为零。前后目录从 153 处增至 154 处，四份模型实取哈希吻合，新站清单 705 个文件合计 617,174,383 字节。[桌面默认](formal-23116-windows/desktop-default.png) · [手机默认](formal-23116-windows/mobile-default.png) · [手机放大](formal-23116-windows/mobile-plus.png) · [逐窗覆盖面积](formal-23116-windows/window-coverage.json) · [目录和下载核对](formal-23116-windows/release-bindings.json)
+
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8ff6d7a9de90f0cd9296c2339d4568a287cc44c9/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
