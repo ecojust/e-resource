@@ -144,7 +144,7 @@
 | 迦陵大楼（南京东路北立面） | 2026-11-20 22:22:10 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) |
 | 大陆银行（九江路111号北立面） | 2026-11-20 22:27:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-continental-bank&mode=overview) |
 | 国华银行大楼（东南转角与弧形窗墙） | 2026-11-20 23:09:30 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-guohua-bank&mode=overview) |
-| 横滨正金银行大楼（外滩24号） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yokohama-specie-bank&mode=overview) |
+| 横滨正金银行大楼（外滩24号） | 2026-11-20 23:31:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yokohama-specie-bank&mode=overview) |
 
 ### 徐汇区（9处）
 

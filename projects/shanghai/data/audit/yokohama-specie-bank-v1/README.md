@@ -13,3 +13,7 @@
 在150处版本的外滩24号，地图仍显示原有街区楼体。登记后的151处版本可从目录选中银行，桌面和手机均能看清三道门、双柱与顶层窗带。近景显示柱头和底座，屋顶角度可见北侧保留的高楼。临江视角的右侧绿色楼牌擦过一段窗带。九个地面点涵盖大门、后翼、人行道、楼间通道及相邻地块，四项下载的数据摘要与发布文件一致。[登记前地图](map-before.png) · [登记前检查](before-browser.json) · [桌面](main-desktop.png) · [临江门廊](river-front-bronze-portals.png) · [爱奥尼克柱](double-ionic-shafts.png) · [退台与屋顶](upper-attic-and-roof.png) · [远景](distant.png) · [手机](main-mobile.png)
 
 本次浏览器测试登记了195项地图与程序资源和4项生成目录的输入。[运行报告](main-map-browser.json) · [资源清单](main-map-inputs.json) · [独立目检](independent-main-map-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/aaedef77e0bbf8e38241f18936aa64c8fe25c798/projects/shanghai/index.html#landmark=huangpu-yokohama-specie-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
