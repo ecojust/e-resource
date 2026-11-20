@@ -23,3 +23,7 @@
 第135处版本在广东路同一位置显示原城市粗楼。第136处版本从手机上的区目录实点大来大楼，390×844窗口加载63,960面的近景。870×660桌面入口也准确命中；此时打开的目录和附近地标牌遮住了一部分街墙。两张实图的相机视线到原城市建筑屋顶最小余量分别为9.57米、11.68米。桌面放大后的正面图能区分长阳台、两端墙界和从纸卡右侧延续的底层拱门，屋面图可见浅色顶面及其与邻楼的接缝。广东路北向立面处于阴影中。[原街区](map-before.png) · [手机入口](map-mobile.png) · [桌面入口](map-desktop.png) · [临街近看](map-street-facade.png) · [屋面](map-roof.png) · [实图相机的视线检查](observed-camera-sightlines.json)
 
 主图在15.5级缩放实际启用了45,774面的远档。8处步行碰撞与预期一致，原始GLB、网页GLB、远景GLB与Blender原件下载后均与清单SHA256吻合。前后两站共归档6张原图。[远景](map-distant.png) · [前态交互记录](control-browser.json) · [正式交互记录](main-browser.json) · [图片及资产复核](map-comparison-verification.json) · [该版公开输入](final-city-snapshot.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8075d436b9f951490586d7a56dea486c1bd56ba0/projects/shanghai/index.html#landmark=huangpu-robert-dollar-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
