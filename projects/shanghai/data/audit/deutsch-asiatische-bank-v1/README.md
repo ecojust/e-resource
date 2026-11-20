@@ -7,3 +7,7 @@
 18101单体页的网页近景和远景均在桌面与390像素手机上正常切换。四张图都容纳整片九江路街墙、底层券窗、门柱与右侧转角。页面四个下载与正式清单逐项比对。[实机签收与下载](viewer.json) · [桌面近景](viewer-desktop-full.png) · [手机远景](viewer-mobile-lod.png)
 
 142处原场景中，同一组六栋的德华银行1064仍是原始粗模，只有已登记的2602号被裁切。143处新版在桌面和手机目录均可选中银行，近景只替换1064，旧2602的边界及另外四栋保留。两档均取得实际模型，13个碰撞点覆盖室内、路口、人行道和共墙两侧。六幅实机画面以及四种资源下载均有散列记录。第一组近景中，街对面的楼体挡住门口，另一张可从两楼间看到三层通柱和上部加层。[142处前态](map-before.png) · [143处桌面](main-desktop.png) · [手机入口](main-mobile.png) · [街道中的柱廊](three-storey-corinthian-colonnade.png) · [屋面与后期加层](original-fourth-storey-and-1988-additions.png) · [远景](distant.png) · [实机记录](main-map-browser.json) · [200个公开请求和4个登记记录的逐项校验](main-map-verification.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/462453332da2aeb50cb88b85130254aa7125810f/projects/shanghai/index.html#landmark=huangpu-deutsch-asiatische-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
