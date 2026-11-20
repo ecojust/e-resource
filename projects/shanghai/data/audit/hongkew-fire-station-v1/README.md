@@ -21,3 +21,7 @@
 ## 121处至122处主图复核
 
 14076上的121处目录和14077上的122处目录使用各自的实际资源。手机与桌面从普通目的地入口到达吴淞路与武进路口。街面视图能看到弧形开间、两侧砖墙和瞭望塔，俯视图能区分两处矮屋面和原底图保留的东段。远档实际使用27,046三角面的模型。共20处地面、后翼、街道和周边建筑探针通过，源站346份文件的SHA-256均吻合。[六图与输入核验](map-comparison-verification.json) · [主图报告](main-browser.json) · [街面](map-street-facade.png) · [屋面](map-roof.png) · [远档](map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/3feba51f2ea6f5a7733c37c58cc88be2ca90f640/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
