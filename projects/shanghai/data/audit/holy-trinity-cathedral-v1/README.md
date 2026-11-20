@@ -20,3 +20,7 @@ python -B projects/shanghai/data/audit/holy-trinity-cathedral-v1/verify-placemen
   --manifest projects/shanghai/assets/models/candidates/huangpu-holy-trinity-cathedral/manifest.json \
   --work /tmp/trinity-placement --out /tmp/trinity-result
 ```
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8c6cdccf3f3f9daeb341b4043b05cac5039cc84b/projects/shanghai/index.html#landmark=huangpu-holy-trinity-cathedral&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

@@ -3769,7 +3769,7 @@
 | 金城银行大楼（江西中路200号临街主楼） | 2026-11-20 14:46:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-kincheng-bank&mode=overview) |
 | 大上海大戏院历史立面（1933年建筑） | 2026-11-20 14:56:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropol-cinema-historic-front&mode=overview) · 1933 年原址，地点卡可查看历史外观 |
 | 八仙桥基督教青年会大楼（西藏南路双檐临街翼） | 2026-11-20 14:58:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-baxianqiao-ymca&mode=overview) |
-| 圣三一基督教堂（主堂与花园门廊） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-cathedral&mode=overview) |
+| 圣三一基督教堂（主堂与花园门廊） | 2026-11-20 15:11:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-cathedral&mode=overview) |
 
 ### 徐汇区（7处）
 
