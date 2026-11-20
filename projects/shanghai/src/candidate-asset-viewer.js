@@ -32,9 +32,10 @@ export function showCandidateAssetViewer(modelId) {
   const controls = new OrbitControls(camera, renderer.domElement);
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const sideSign = screen.dataset.oblique === 'negative-x' ? -1 : 1;
+  const obliqueX = Number(screen.dataset.obliqueX);
   const directions = {
     front: [0, 0.06, frontSign],
-    oblique: [sideSign * 0.38, 0.17, frontSign],
+    oblique: [Number.isFinite(obliqueX) ? obliqueX : sideSign * 0.38, 0.17, frontSign],
     above: [sideSign * 0.16, 1, frontSign * 0.65],
   };
   let bounds, manifest, current, variant, pending, controller, delay;

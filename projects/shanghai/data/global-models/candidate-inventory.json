@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 60,
+  "candidate_manifest_count": 61,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 58,
-  "resulting_city_count": 98,
+  "new_city_model_count": 59,
+  "resulting_city_count": 99,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 4,
     "长宁区": 3,
     "静安区": 4,
-    "黄浦区": 20
+    "黄浦区": 21
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 240,
-    "bytes": 868638977,
+    "files": 244,
+    "bytes": 879945255,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 1878213,
+    "current_run_added_bytes": 11306278,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 108
+    "inherited_incremental_files": 112
   },
   "records": [
     {
@@ -4566,6 +4566,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "泰安路115弄6号周谷城旧居的庭院入口立面，以2014年明示6号的照片为基准。房号与故居定位对应同一栋建筑，后期拱门、栏杆与阁顶变化另行记录。"
+    },
+    {
+      "id": "huangpu-asia-building",
+      "name": "亚细亚大楼（外滩1号双街立面与东南转角）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "asia-building.html",
+      "manifest": "assets/models/candidates/huangpu-asia-building/manifest.json",
+      "manifest_sha256": "578355d27c77dafef399f771245a0257cd30e2c411b25893a5cde32ace06292e",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-asia-building/huangpu-asia-building-raw.glb",
+          "bytes": 6058296,
+          "sha256": "649baae0416faa21e1c8ce63257d5c51d5161e8d0c2f0f6fd54f317cca1ccacd",
+          "triangles": 91276,
+          "bounds_gltf_m": [
+            [
+              -24.34728240966797,
+              -0.07999999821186066,
+              -24.45296859741211
+            ],
+            [
+              23.810623168945312,
+              34.849998474121094,
+              25.12335205078125
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-asia-building/huangpu-asia-building-web.glb",
+          "bytes": 2608024,
+          "sha256": "6bcc11231bd2e92990150300751ab332099b9d6fb8dca9a2f361969285ad5d46",
+          "triangles": 91276,
+          "bounds_gltf_m": [
+            [
+              -24.3472824,
+              -0.0799999982,
+              -24.4529686
+            ],
+            [
+              23.8106232,
+              34.8499985,
+              25.1233521
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-asia-building/huangpu-asia-building-lod.glb",
+          "bytes": 1289852,
+          "sha256": "cd5939e8a148c7c203614474281e1f75fdbe7e99ddb53fd06c0fc7a6cfc43f9a",
+          "triangles": 44952,
+          "bounds_gltf_m": [
+            [
+              -24.3472824,
+              -0.0799999982,
+              -24.4529686
+            ],
+            [
+              23.8106232,
+              34.8499985,
+              25.1233521
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-asia-building/huangpu-asia-building.blend",
+          "bytes": 1350106,
+          "sha256": "998c7c4761d9bc1d2ffea7fa7b1244d794ae016d05488a5067039aee317d194c"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -24.34728240966797,
+            -0.07999999821186066,
+            -24.45296859741211
+          ],
+          "max": [
+            23.810623168945312,
+            34.849998474121094,
+            25.12335205078125
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -24.34728240966797,
+            -25.12335205078125,
+            -0.07999999821186066
+          ],
+          "max": [
+            23.810623168945312,
+            24.45296859741211,
+            34.849998474121094
+          ]
+        },
+        "triangles": 91276,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "外滩1号亚细亚大楼的东向临江立面、延安东路一侧与东南转角。按照片与实际建筑面界定主体，保留外滩2号和街道。"
     }
   ],
   "baseline_inventory": {
@@ -4578,6 +4684,7 @@
     "projects/shanghai/assets/models/candidates/changning-sun-ke-villa/manifest.json",
     "projects/shanghai/assets/models/candidates/changning-zhou-gucheng-courtyard/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
@@ -4604,13 +4711,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/zhou-gucheng-courtyard-v1",
+  "incremental_audit_directory": "data/audit/asia-building-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/luobiegen-garden-villa-v1/inventory-increment.json",
-    "bytes": 86000,
-    "sha256": "929a2e7dc63952c9ec7389a595885f2bb60156508e58c9a9a76c4f10616c95ba"
+    "file": "data/audit/zhou-gucheng-courtyard-v1/inventory-increment.json",
+    "bytes": 89727,
+    "sha256": "3ba7dade5a79e5fa9e75cb35e1ce38493375f29d39caf7de0f0d3e61eb58ad2b"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/changning-zhou-gucheng-courtyard/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json"
   ]
 }

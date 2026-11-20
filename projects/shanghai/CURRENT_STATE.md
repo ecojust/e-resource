@@ -1,3 +1,11 @@
+# 亚细亚大楼（外滩1号双街立面与东南转角）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-building&mode=overview) · [单体旋转与下载](asia-building.html) · [来源与制作范围](source/precise/huangpu-asia-building/README.md) · [验收记录](data/audit/asia-building-v1/README.md)
+
+外滩1号亚细亚大楼的东向临江立面、延安东路一侧与东南转角。按照片与实际建筑面界定主体，保留外滩2号和街道。
+
+近景 91,276 个三角面，远景 44,952 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 11,306,278 字节。上海主图现有 99 处独立入口，黄浦区 37 处。[资产清单](assets/models/candidates/huangpu-asia-building/manifest.json)
+
 # 泰安路115弄6号周谷城旧居（庭院入口立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) · [单体旋转与下载](zhou-gucheng-courtyard.html) · [来源与制作范围](source/precise/changning-zhou-gucheng-courtyard/README.md) · [验收记录](data/audit/zhou-gucheng-courtyard-v1/README.md)

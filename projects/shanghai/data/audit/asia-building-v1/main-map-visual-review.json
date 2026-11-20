@@ -1,0 +1,49 @@
+{
+  "model_id": "huangpu-asia-building",
+  "evidence": "七张原始截屏逐张目检。",
+  "reviewed": [
+    {
+      "file": "main-desktop.png",
+      "sha256": "f76c177cbf70f3a8efab96df81f894da1142252f252e6e71e4fb6fb0a3ca0455",
+      "observation": "840像素桌面，面板遮住左侧一部分，东南转角及两面的退廊、屋面清楚可见。"
+    },
+    {
+      "file": "overview-settled-desktop.png",
+      "sha256": "3b4ab42bec34a03bf9b1147411514aecfd58cbdf6588190faf3c552f38809f21",
+      "observation": "目录鼠标进入后自动取景17.515，左右立面可见至街面；北侧上海总会仍独立。"
+    },
+    {
+      "file": "southeast-two-facades.png",
+      "sha256": "cd2e30db5f5eb20e891f70a1e5f9fed3a6a39156f4936c41f2ee0f7c38f5a0fa",
+      "observation": "收起侧栏，两面柱列、退廊和倒角窗完整，建筑名牌遮住右面数开间。"
+    },
+    {
+      "file": "roof-and-shanghai-club.png",
+      "sha256": "311735e37e27fd83b446e483ab399027afb353183380cf20a1acbf18c3498fe5",
+      "observation": "四个屋角构筑物与中央玻璃升起部分可辨，北侧保留相邻三角面。"
+    },
+    {
+      "file": "distant.png",
+      "sha256": "44d21fa7286575b2bd8b903f3d199d0798840ff29be0b15bcbc968138c77b04a",
+      "observation": "远档在全街区显示，当前建筑以编号99和选中卡片辨识。"
+    },
+    {
+      "file": "overview-settled-mobile.png",
+      "sha256": "2012fb1473bc7a90ccdb2547461b85e6becbf1dcef390c568de6c89adf1f8c67",
+      "observation": "390×844触控目录后自动取景17.947；当候选状态先就绪时，旧底图棱柱仍遮住这帧下层，保留这张过渡图。"
+    },
+    {
+      "file": "main-mobile.png",
+      "sha256": "1c110d58c86b48a7b78e7d4fdb19e08cca6a0462eb5e756aa1b5ab09dc90031e",
+      "observation": "同一手机页面在19.15的源组和底图均更新后，两街立面从地面到采光顶都清楚可辨。"
+    }
+  ],
+  "walkthrough": {
+    "mouse_directory": true,
+    "touch_directory": true,
+    "retained_neighbor": "bund02",
+    "ground_probes": 6,
+    "manifest_matched_assets": 4
+  },
+  "limitation": "无缓存进入时底图和候选模型异步到达，手机默认机位保留一次旧粗楼与细模叠显的实际帧。"
+}
