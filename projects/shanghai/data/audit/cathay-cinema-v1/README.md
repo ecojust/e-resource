@@ -22,3 +22,7 @@
 当前两站从页面入口读取实际主模块和登记表，另外逐一核对本站冻结清单的313个文件。[当前两站实际入口与登记表](current-predecessor-http.json)
 
 正式120处地图从黄浦区目录进入，桌面使用点击，390×844手机使用触屏。两种首屏的街角、竖排CATHAY、阶梯塔和门罩都可辨。119处旧目录的79条候选逐条相同，三个GLB及原生文件均通过HTTP核对完整字节和SHA。两次默认均加载2706所属的真实11成员瓦片，首屏未触发粗略索引重试，记录中未见页面、请求或控制台错误。[手机与桌面的浏览器记录](default-views-browser.json) · [桌面](main-desktop.png) · [手机](main-mobile.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0be0b8c62d03042a90c84c23453429261edf9985/projects/shanghai/index.html#landmark=huangpu-cathay-cinema&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
