@@ -3781,7 +3781,7 @@
 | 四行储蓄会大楼（四川中路261号联合大楼） | 2026-11-20 20:09:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) |
 | 卜内门大楼（四川中路五开间东立面） | 2026-11-20 20:15:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-brunner-mond-building&mode=overview) |
 | 新汇丰大楼（汇丰银行职员宿舍） | 2026-11-20 20:16:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wayfoong-house&mode=overview) |
-| 正广和公司福州路历史街翼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-caldbeck-macgregor-building&mode=overview) |
+| 正广和公司福州路历史街翼 | 2026-11-20 20:24:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-caldbeck-macgregor-building&mode=overview) |
 
 ### 徐汇区（9处）
 

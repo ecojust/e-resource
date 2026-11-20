@@ -17,3 +17,7 @@ Blender 4.3.2重新打开46个可编辑网格，18种材质的三角面构成与
 外滩7号及9号也与此处使用同一个近景组。第131、132及133处的站点均从V6清单加载同一74,313字节的组。对照原始底图，10个源号共81,458个三角面的表面坐标在0.01毫米比对精度内一致。1960号原有2,712面，本次保留实际近景投影786.08平方米。旧检查在所有133处实图完成后仍要求页面访问早期原始近景文件，留下了一条失败断言。现场单独记录了浏览器实际加载的V6压缩响应体和散列，132处复验亦同时取得原始文件和正在使用的V6文件。最终汇总逐一核对实图、源码模块版本、下载、同一会话响应与三代城市清单。可在本目录运行 `python final-map/verify-map-bundle.py` 复查。[最终核验](final-map/verified-map.json) · [三代近景组实测](final-map/near-transport.json) · [同会话文件收据](final-map/live-resource-evidence.json) · [原始检查记录](final-map/main-browser.json)
 
 第62至90项的29组已发表模型在同一个132处GitHub版本上复核通过。150次实际文件下载合计281,341,768字节，模型文件均与各自清单匹配。[132处版本公开下载收据](predecessor-public-downloads-132.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/074cd7e100b58aee79a40e8c1220640ca38528eb/projects/shanghai/index.html#landmark=huangpu-caldbeck-macgregor-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
