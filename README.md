@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 195 处入口。最近接入[懿园建国西路南门](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yiyuan-jianguo-road-gate&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 196 处入口。最近接入[陕南邨西南转角住宅（亚尔培公寓）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的158项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的159项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 159 | 陕南邨陕西南路181号西南转角住宅 | 黄浦区／陕西南路151～187号(单) | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；另核183号、185号和各排公寓、未见的内院立面与屋面。陕西南路213号陕南大楼另列。 |
-| 160 | 永嘉新村15号拱廊与东端山墙 | 徐汇区／永嘉路580弄 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；保留同栋16号、21号和东邻13、14号，另核三层住宅、其余各排、院落和遮挡面。 |
+| 160 | 永嘉新村15号拱廊与东端山墙 | 徐汇区／永嘉路580弄 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；保留同栋16号、21号和东邻13、14号，另核三层住宅、其余各排、院落和遮挡面。 |
 | 161 | 永康新村永康路181、183号双门山墙 | 徐汇区／永康路109、175弄 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；区分永康路197、199号、太原路63弄及永康路141弄文安坊；复核市房管局2D026的永康路580号地址异文。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -123,7 +122,7 @@
 | sh-historic-b2-083 | 圣尼古拉斯堂历史顶群与后勤房 | 皋兰路16号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查明历史九顶、侧塔和各次拆改的年代，另核主堂北侧后勤用房的边界及用途。 |
 | sh-historic-b2-084 | 吉祥里河南中路东口及弄内住宅 | 河南中路531～541弄 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 分别定位河南中路531弄东口、学校旧址与弄内住宅，查证各幢建造、保护修缮与门扇变化年代。 |
 | sh-historic-b2-092 | 梵尔登花园38号、日月楼其余各面和其他单元 | 陕西南路39弄1～103号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 另核2015年原照中可读门牌的38号；补日月楼背面与屋面分户界，登记各排住宅及长乐路临街单元。 |
-| sh-historic-b2-095 | 陕南村 | 陕西南路151～187号(单) | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-095 | 陕南邨内排与相邻独立住宅 | 陕西南路151～187号(单) | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 另核183号、185号和各排公寓、未见的内院立面与屋面。陕西南路213号陕南大楼另列。 |
 | sh-historic-b2-101 | 花园住宅 | 思南路51～95号(单) | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-131 | 培文公寓 | 淮海中路449号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-134 | ASTRID公寓 | 茂名南路143号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3656,7 +3655,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；195处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中155件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；196处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中156件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3664,7 +3663,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增155处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增156处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3686,10 +3685,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，195处建筑与构件模型入口（40处既有＋155处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增155处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，196处建筑与构件模型入口（40处既有＋156处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增156处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（94处）
+### 黄浦区（95处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3789,6 +3788,7 @@
 | 皋兰路圣尼古拉斯堂主堂 | 2026-11-21 04:58:51 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gaolan-st-nicholas-church&mode=overview) |
 | 吉祥里山东北路西弄门 | 2026-11-21 05:10:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) |
 | 长乐邨93号丰子恺旧居（日月楼南庭院立面） | 2026-11-21 05:58:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) |
+| 陕南邨西南转角住宅（亚尔培公寓） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) |
 
 ### 徐汇区（19处）
 
