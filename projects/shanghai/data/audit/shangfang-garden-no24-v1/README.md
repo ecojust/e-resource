@@ -27,3 +27,7 @@
 原站同一弄内位置只显示住宅墙面和两扇窗。加入弄门后，在390像素触屏点正式目录，能同时看见灰瓦雨棚、贯穿的门洞和右侧电表柜。桌面收起导航后保留相同的44°俯角。从另一处地点实际点击地图灯牌，也回到24号弄门。正面近景能分清左侧上方的矩形铭牌、下方圆牌与右侧九个表窗；碑文细笔画在主图里偏暗。斜侧图可见棚下空隙和墙体厚度。选中标签覆盖棚顶中部，近景下的位置卡遮到部分墙脚。[原站同机位](city-31162/before-lane-detail.png) · [手机目录实点](city-31162/after-mobile-default.png) · [桌面](city-31162/after-desktop-default.png) · [灯牌实点返回](city-31162/after-desktop-beacon-return.png) · [正面](city-31162/after-lane-detail.png) · [斜侧](city-31162/after-oblique-detail.png)
 
 主图两代各查11个地面位置。加入的墙面挡住四个取样点，其余七点保留门洞、棚下和弄道空域。原住宅1934与同组12座邻屋均保留，各自的地面与原始要素状态可在前后记录逐项对照。远景实际加载简化文件，四份交付物与独立页下载的哈希一致。最终正式站完整读回1,094份文件，共997,800,325字节。桌面与手机实测均无页面或HTTP错误。[前态](city-31162/city-before.json) · [后态](city-31162/city-after.json) · [远景](city-31162/after-distant.png) · [全站下载](city-31162/all-http.json) · [正式验收汇总](city-31162/release-evidence.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/80616706362db0c19423a80a57b4fce5a2c3084f/projects/shanghai/index.html#landmark=xuhui-shangfang-garden-no24-entrance&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，11 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
