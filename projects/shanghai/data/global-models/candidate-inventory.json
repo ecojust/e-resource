@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 81,
+  "candidate_manifest_count": 82,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 79,
-  "resulting_city_count": 119,
+  "new_city_model_count": 80,
+  "resulting_city_count": 120,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 6,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 34
+    "黄浦区": 35
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 324,
-    "bytes": 1019522395,
+    "files": 328,
+    "bytes": 1025378576,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 5501421,
+    "current_run_added_bytes": 5856181,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 192
+    "inherited_incremental_files": 196
   },
   "records": [
     {
@@ -6792,6 +6792,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "虎丘路142至146号光陆大楼下部戏院及上层临街外观，按不同时期照片核实。"
+    },
+    {
+      "id": "huangpu-cathay-cinema",
+      "name": "国泰电影院（西南街角与阶梯塔）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "cathay-cinema.html",
+      "manifest": "assets/models/candidates/huangpu-cathay-cinema/manifest.json",
+      "manifest_sha256": "0cc8f49d20de53dddaf51e14e497d0e97aee34394e7de117114028616221bcbe",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-cathay-cinema/huangpu-cathay-cinema-raw.glb",
+          "bytes": 3160940,
+          "sha256": "9fade85eaa9228a42e484db01d59799d4d599a4c413fbbedeaf8626119fd4d3f",
+          "triangles": 54410,
+          "bounds_gltf_m": [
+            [
+              -13.97406005859375,
+              0.0,
+              -9.371842384338379
+            ],
+            [
+              13.825703620910645,
+              22.040000915527344,
+              1.7330000400543213
+            ]
+          ],
+          "materials": 14
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-cathay-cinema/huangpu-cathay-cinema-web.glb",
+          "bytes": 1147488,
+          "sha256": "7baf9fd47457e565021ebaf7cadb1666e9fa5b6500ef5978af0f32b64258dcda",
+          "triangles": 54410,
+          "bounds_gltf_m": [
+            [
+              -13.9740601,
+              0,
+              -9.37184238
+            ],
+            [
+              13.8257036,
+              22.0400009,
+              1.73300004
+            ]
+          ],
+          "materials": 14
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-cathay-cinema/huangpu-cathay-cinema-lod.glb",
+          "bytes": 576512,
+          "sha256": "2c6691834349a7fd46ae00f00242f7747c50c291edab57b75e5e85a437da3d34",
+          "triangles": 26710,
+          "bounds_gltf_m": [
+            [
+              -13.9740601,
+              0,
+              -9.37184238
+            ],
+            [
+              13.8257036,
+              22.0400009,
+              1.73300004
+            ]
+          ],
+          "materials": 14
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-cathay-cinema/huangpu-cathay-cinema.blend",
+          "bytes": 971241,
+          "sha256": "dfeea86cccdb18cef31c18e2748019a41ffe4857d846d929163d046713c1b1ad"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -13.97406005859375,
+            0.0,
+            -9.371842384338379
+          ],
+          "max": [
+            13.825703620910645,
+            22.040000915527344,
+            1.7330000400543213
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -13.97406005859375,
+            -1.7330000400543213,
+            0.0
+          ],
+          "max": [
+            13.825703620910645,
+            9.371842384338379,
+            22.040000915527344
+          ]
+        },
+        "triangles": 54410,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "淮海中路870号国泰大戏院的历史街面，核对各年代入口、转角及保留部分。"
     }
   ],
   "baseline_inventory": {
@@ -6812,6 +6918,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-cathay-cinema/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-dongjiadu-cathedral/manifest.json",
@@ -6851,13 +6958,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/capitol-theatre-v1",
+  "incremental_audit_directory": "data/audit/cathay-cinema-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/paramount-ballroom-v1/inventory-increment.json",
-    "bytes": 161128,
-    "sha256": "97f04e31ab731bf89d6de6b476004067a88882146d69ab187ffcc93c397d801c"
+    "file": "data/audit/capitol-theatre-v1/inventory-increment.json",
+    "bytes": 164661,
+    "sha256": "a174944a86d0f9c1fca5b6ec1d78e1be0c0a58e0cade87f987eaeff77a6ed692"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-cathay-cinema/manifest.json"
   ]
 }

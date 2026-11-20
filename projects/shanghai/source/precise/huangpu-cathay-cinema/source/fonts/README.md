@@ -1,0 +1,1 @@
+从 Noto Sans CJK SC Regular 截取现场所见“国泰电影院”及“CATHAY”的字形，子集重新命名为 Cathay Cinema Sign Subset。字体遵循 SIL OFL 1.1。模型使用压低或拉长的近似字形，未描摹店方字标。源字体集合 SHA-256 为 b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a。[许可全文](OFL.txt) · [上游字体](https://github.com/notofonts/noto-cjk)

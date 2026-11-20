@@ -1,3 +1,11 @@
+# 国泰电影院（西南街角与阶梯塔）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-cinema&mode=overview) · [单体旋转与下载](cathay-cinema.html) · [来源与制作范围](source/precise/huangpu-cathay-cinema/README.md) · [验收记录](data/audit/cathay-cinema-v1/README.md)
+
+淮海中路870号国泰大戏院的历史街面，核对各年代入口、转角及保留部分。
+
+近景 54,410 个三角面，远景 26,710 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,856,181 字节。上海主图现有 120 处独立入口，黄浦区 51 处。[资产清单](assets/models/candidates/huangpu-cathay-cinema/manifest.json)
+
 # 光陆大戏院（光陆大楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) · [单体旋转与下载](capitol-theatre.html) · [来源与制作范围](source/precise/huangpu-capitol-theatre/README.md) · [验收记录](data/audit/capitol-theatre-v1/README.md)

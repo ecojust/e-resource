@@ -1,0 +1,51 @@
+{
+  "scope": "Actual HTTP entrypoint, loaded app URL and version-resolved model catalog on the current two release servers. The comparison covers all prior candidate rows.",
+  "stages": [
+    {
+      "url": "http://127.0.0.1:14073/",
+      "city_count": 119,
+      "verified_input_file_count": 304,
+      "traffic": [
+        {
+          "url": "http://127.0.0.1:14073/index.html",
+          "bytes": 9504,
+          "sha256": "dde4dda417aaaf2f113541006f0e4145fa93b11ffdd474d93fd6ff5ee14a7625"
+        },
+        {
+          "url": "http://127.0.0.1:14073/src/app.js?v=capitol-theatre-v1",
+          "bytes": 23288,
+          "sha256": "1b1ef82dc448af5e767d2bbea79c9b8baabf377d81ca58ab4fac71e9c6e21ec3"
+        },
+        {
+          "url": "http://127.0.0.1:14073/data/candidate-city-integrations.json?v=capitol-theatre-v1",
+          "bytes": 1111509,
+          "sha256": "803f13ab33219644708540b051ddac86dd0f9fb82ed609c412f4dcc42d4413c3"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:14074/",
+      "city_count": 120,
+      "verified_input_file_count": 313,
+      "traffic": [
+        {
+          "url": "http://127.0.0.1:14074/index.html",
+          "bytes": 9502,
+          "sha256": "3e8984a082a1d829a65857e1c7531be41a152928cbed98a244c392f8a821bf0c"
+        },
+        {
+          "url": "http://127.0.0.1:14074/src/app.js?v=cathay-cinema-v1",
+          "bytes": 23278,
+          "sha256": "5c4340785381b7cc2b82ce8d86f6ce0bdd76c48d5fa44dcc7ca000153c60f161"
+        },
+        {
+          "url": "http://127.0.0.1:14074/data/candidate-city-integrations.json?v=cathay-cinema-v1",
+          "bytes": 1123338,
+          "sha256": "a883ed5cb6d5b14a80efcd0d5470b11168755a37662d7c766be17ea78ecf0d37"
+        }
+      ]
+    }
+  ],
+  "unchanged_prior_rows": 79,
+  "appended_model": "huangpu-cathay-cinema"
+}
