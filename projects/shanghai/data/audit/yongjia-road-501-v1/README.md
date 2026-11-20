@@ -9,3 +9,7 @@ Blender重开后检查79个可编辑网格、14种材质和64,700个近景三角
 在22167正式独立模型页，桌面与390像素手机均从近景切到远景，实际下载三个GLB与Blender文件，四份正文散列按清单核对。该版地图204处、1,129个签名输入，运行时在20个宏块纹理中验证1,119个裁切三角，最大单纹理322，目标源新增27个裁切三角。[桌面近景](viewer-desktop-full.png) · [手机近景](viewer-mobile-full.png) · [四件实际下载](viewer.json) · [运行时与地面结果](runtime-placement.json)
 
 31166与31167两代主地图实拍包含桌面和触屏手机默认视角、地面近景、屋顶及远景。住宅浅色窗格、三只老虎窗、尖顶圆塔在街面相机中可辨，另五座原建筑保留原地碰撞。[主地图对比与六张原图](city-31167/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/56a06d911a6422f841fb5a9ea72fa63d4b654ce5/projects/shanghai/index.html#landmark=xuhui-yongjia-road-501-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
