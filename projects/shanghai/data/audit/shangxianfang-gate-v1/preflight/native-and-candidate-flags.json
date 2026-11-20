@@ -1,0 +1,13 @@
+{
+  "failed_check": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(!n.state.candidateModel&&!n.state.localModel)\n\n    at verify (/workspace/e-resource/projects/shanghai/data/audit/shangxianfang-gate-v1/check-main-map.cjs:25:526)\n    at async run (/workspace/e-resource/projects/shanghai/data/audit/shangxianfang-gate-v1/check-main-map.cjs:31:307)",
+  "received_asset": {
+    "modelId": "huangpu-shangxianfang-gate",
+    "variant": "web",
+    "sha256": "c96c759417de61b5427e0fa466661e56fba1f7ac618efa2fd7d8889127d1a10e",
+    "file": "assets/models/candidates/huangpu-shangxianfang-gate/huangpu-shangxianfang-gate-web.glb",
+    "bytes": 1125968,
+    "serial": 1
+  },
+  "analysis": "localModel tracks ordinary streamed city geometry; the candidateModel field and the candidate clip list independently identify corrections from the new gate. Capture the ordinary source flags in both versions at the identical front camera.",
+  "old_check_sha256": "8a645af45c0e05b17fb3e66e979ff92b6b9a54bc4934329079060a5944f6f7b1"
+}

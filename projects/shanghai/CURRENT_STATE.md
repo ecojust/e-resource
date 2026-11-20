@@ -1,3 +1,11 @@
+# 尚贤坊（淮海中路主弄门楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shangxianfang-gate&mode=overview) · [单体旋转与下载](shangxianfang-gate.html) · [来源与制作范围](source/precise/huangpu-shangxianfang-gate/README.md) · [验收记录](data/audit/shangxianfang-gate-v1/README.md)
+
+尚贤坊临淮海中路入口，按原址修缮和年代照片核对沿街门楼范围，里弄其他各排另查。
+
+近景 59,336 个三角面，远景 9,188 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,780,856 字节。上海主图现有 108 处独立入口，黄浦区 42 处。[资产清单](assets/models/candidates/huangpu-shangxianfang-gate/manifest.json)
+
 # 瑞金宾馆1号楼（马立斯住宅主楼与庭院立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruijin-guesthouse-01&mode=overview) · [单体旋转与下载](ruijin-guesthouse-01.html) · [来源与制作范围](source/precise/huangpu-ruijin-guesthouse-01/README.md) · [验收记录](data/audit/ruijin-guesthouse-01-v1/README.md)
