@@ -1,3 +1,11 @@
+# 交通大学徐汇校区老校门（南洋公学旧址）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-nanyang-campus-gate&mode=overview) · [单体旋转与下载](nanyang-campus-gate.html) · [来源与制作范围](source/precise/xuhui-nanyang-campus-gate/README.md) · [验收记录](data/audit/nanyang-campus-gate-v1/README.md)
+
+南洋公学、上海交通大学徐汇校区华山路1954号的老校门，核对照片可见各开间及门柱。
+
+近景 136,652 个三角面，远景 46,052 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 18,394,402 字节。上海主图现有 163 处独立入口，徐汇区 11 处。[资产清单](assets/models/candidates/xuhui-nanyang-campus-gate/manifest.json)
+
 # 圣约翰大学校政厅（四号楼）南廊与望楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-st-johns-administration-building&mode=overview) · [单体旋转与下载](st-johns-administration.html) · [来源与制作范围](source/precise/changning-st-johns-administration-building/README.md) · [验收记录](data/audit/st-johns-administration-v1/README.md)
