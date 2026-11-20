@@ -36,3 +36,7 @@ python projects/shanghai/data/audit/metropol-cinema-history-v1/check-history-ent
 在91处地标的预发布站，已从黄浦区目录到达当代原址。当时商城取样点有建筑碰撞，西藏中路取样点可通行，历史模型没有进入当代场景。手动打开后，桌面面板加载12,808个三角面的历史立面，鼠标拖动改变了画面。一次软件渲染检查在等待远景的25秒时限内未完成。91处站点的灯牌点击、手机和完整返回流程仍在复核。[阶段记录](main-map-phase.json) · [当代原址](phase91-desktop-site.png) · [历史面板](phase91-desktop-archive.png)
 
 另一次88处地标的定向预检完成了桌面开关面板、旋转、远景、四种下载和返回。手机已核对旋转、远景及下载，在等待面板关闭的5秒内超时。独立历史页面的桌面、手机和下载记录见上方独立预览报告。
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 31 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/77a4b89d203ba96baeb89b704a16a04d56ab6c53/projects/shanghai/index.html#landmark=huangpu-metropol-cinema-historic-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+master 首次核对 31 项，其中 12 项返回的是前一版本缓存；固定提交的全部文件均已校验。[master 缓存实测](publication-master-initial.json)
