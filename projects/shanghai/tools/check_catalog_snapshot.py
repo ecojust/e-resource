@@ -50,7 +50,13 @@ def main():
         assert changes, name
         for model, commit in changes.items():
             assert re.fullmatch('[0-9a-f]{40}', commit)
-            manifest = PROJECT / 'assets/models/candidates' / model / 'manifest.json'
+            row, = [r for r in json.loads(data)['production_queue'] if r['id'] == model]
+            if 'refines_existing_model' in row:
+                base = PROJECT / 'assets/models/candidates' / row['refines_existing_model']
+                manifest = REPO / row['manifest']
+                assert manifest.parent == base and re.fullmatch(r'manifest-[a-z0-9-]+\.json',manifest.name), model
+            else:
+                manifest = PROJECT / 'assets/models/candidates' / model / 'manifest.json'
             content = subprocess.check_output(['git', 'show', f'{commit}:{manifest.relative_to(REPO)}'], cwd=REPO)
             assert content == manifest.read_bytes(), model
         recorded = changes

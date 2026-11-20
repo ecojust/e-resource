@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 121 处入口。最近接入[兰心大戏院（茂名南路57号）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-lyceum-theatre&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 121 处入口。最近细化[旧上海市博物馆江湾馆舍](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的75项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的76项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 76 | 旧市博物馆东侧中央厅屋顶 | 杨浦区／长海路174号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143] · [三处历史建筑已有模型和继续制作的部位](<projects/shanghai/data/audit/municipal-heritage-register-2026-11-20/existing-building-scopes.json>)；将屋顶位置、可见边框与分格对准历年正射影像，注明估计高度，并核对庭院内两处独立建筑。 |
-| 77 | 虹口救火会临街旧楼 | 虹口区／吴淞路560号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；依据文保牌和历年公开街景拆分历史楼体、附属建筑和后期建筑。 |
+| 77 | 虹口救火会临街旧楼 | 虹口区／吴淞路560号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；依据文保牌和历年公开街景拆分历史楼体、附属建筑和后期建筑。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -1010,7 +1009,7 @@
 |---|---|---|---|---|
 | sh-historic-b1-021 | 江湾主场局部边界与门台细部调查 | 国和路346号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核对西侧北翼与粗地图源的未核边角差（实际范围见定位合同）、东台立面及短端门装饰与修缮变化；已有有界基础外观，不复制西门三拱和顶棚，也不重复制作已建普通看台及西门主体。 |
 | sh-historic-b1-025 | 杨树浦水厂 | 杨树浦路830号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；水厂为厂区名称，先建立厂内历史建筑和设施清单；原索引没有可直接采用的单栋数。 |
-| sh-historic-b2-012 | 旧市博物馆东中后厅范围、年代与外观细化；旧市博物馆院内小源510/1262与保护范围调查 | 长海路174号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 后厅已仅以同低翼级简化估计体量接入。补现状后侧照片、原设计及改建资料，核实其具体范围、建造年代、层高、屋面和门窗，再据证据细化；不能把当前估计体量表述为照片核实的完整历史外观；主轮廓凹部内的小源510/1262保持地图独立源，未纳入本次模型替换。补独立照片与保护范围资料，核实小构筑物或连接体的身份、年代、形态、与主楼接缝及是否属于同一保护条目，再决定是否另行建模。 |
+| sh-historic-b2-012 | 旧市博物馆东中后厅范围、年代与外观细化；旧市博物馆院内小源510/1262与保护范围调查 | 长海路174号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核实东中厅墙界、南北侧及后立面、顶盖用途和年代。屋顶的矩形分格已有四期影像和几何复核；主轮廓凹部内的小源510/1262保持地图独立源，未纳入本次模型替换。补独立照片与保护范围资料，核实小构筑物或连接体的身份、年代、形态、与主楼接缝及是否属于同一保护条目，再决定是否另行建模。 |
 | sh-historic-b2-014 | 旧市图书馆 | 黑山路181号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-072 | 沪江大学 | 军工路516号礼堂/实验楼 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-156 | 杨树浦电厂 | 杨树浦路2800号（铁皮车间） | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3677,7 +3676,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->

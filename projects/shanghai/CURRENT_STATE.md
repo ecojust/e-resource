@@ -1,3 +1,11 @@
+# 旧市博物馆东侧中央厅现状屋面上的矩形分格顶盖
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) · [单体旋转与下载](city-museum.html) · [来源与制作范围](source/precise/yangpu-former-shanghai-city-museum/revisions/east-hall-roof/README.md) · [验收记录](data/audit/city-museum-east-hall-roof-v1/README.md)
+
+旧市博物馆东侧中央厅现状屋面上的矩形分格顶盖。
+
+近景 96,160 个三角面，远景 48,492 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 13,824,740 字节。上海主图现有 121 处独立入口，杨浦区 7 处。[资产清单](assets/models/candidates/yangpu-former-shanghai-city-museum/manifest-east-hall-roof.json)
+
 # 兰心大戏院（茂名南路57号）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-lyceum-theatre&mode=overview) · [单体旋转与下载](lyceum-theatre.html) · [来源与制作范围](source/precise/huangpu-lyceum-theatre/README.md) · [验收记录](data/audit/lyceum-theatre-v1/README.md)

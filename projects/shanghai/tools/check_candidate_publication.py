@@ -30,16 +30,26 @@ def main():
     ref = args.ref or commit
     def path(url):
         return urlsplit(url).path
-    manifest_path = PREFIX + 'assets/models/candidates/' + args.model + '/manifest.json'
-    manifest = json.loads(blob(manifest_path))
-    assert manifest['id'] == args.model and set(manifest['assets']) == {'raw', 'full', 'lod', 'native'}
     queue = json.loads(blob(PREFIX + 'data/model-todo/queue.json'))
     job, = [j for j in queue['production_queue'] if j['id'] == args.model]
+    landmark_id = job.get('refines_existing_model', args.model)
+    folder = Path(PREFIX) / 'assets/models/candidates' / landmark_id
+    manifest_path = job['manifest']
+    assert Path(manifest_path).parent == folder
+    if landmark_id == args.model:
+        assert Path(manifest_path).name == 'manifest.json'
+    else:
+        assert re.fullmatch(r'manifest-[a-z0-9-]+\.json', Path(manifest_path).name)
+    manifest = json.loads(blob(manifest_path))
+    assert manifest['id'] == landmark_id and set(manifest['assets']) == {'raw', 'full', 'lod', 'native'}
     files = ['README.md', job['evidence'], PREFIX + 'README.md', PREFIX + 'CURRENT_STATE.md',
              PREFIX + 'landmarks.html', PREFIX + 'index.html', PREFIX + manifest['viewer_page'],
              PREFIX + 'data/model-todo/queue.json', PREFIX + 'data/model-viewers.json',
              PREFIX + 'data/global-models/additional-placement.json', manifest_path,
-             PREFIX + 'source/precise/' + args.model + '/README.md', PREFIX + manifest['source_register']]
+             PREFIX + 'source/precise/' + landmark_id + '/README.md', PREFIX + manifest['source_register']]
+    if landmark_id != args.model:
+        assert re.fullmatch(r'[a-z0-9-]+', manifest['revision'])
+        files.append(PREFIX + 'source/precise/' + landmark_id + '/revisions/' + manifest['revision'] + '/README.md')
     viewer = PREFIX + manifest['viewer_page']
     viewer_html = blob(viewer).decode()
     local_modules = re.findall(r"""(?:from\s*['"]\./|<script type="module" src=")(src/[a-z0-9-]+\.js(?:\?[^'"]*)?)""", viewer_html)
@@ -94,9 +104,9 @@ def main():
             r['response'] = result
             r['matches_commit'] = (result.get('status'), result.get('bytes'), result.get('sha256')) == (200, r['expected_bytes'], r['expected_sha256'])
     passed = all(r['matches_commit'] for r in records)
-    report = dict(model=args.model, commit=commit, http_ref=ref, checked_at_utc=datetime.now(timezone.utc).isoformat(),
+    report = dict(model=args.model, landmark_id=landmark_id, commit=commit, http_ref=ref, checked_at_utc=datetime.now(timezone.utc).isoformat(),
                   checked_files=len(records), passed=passed, verifier_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-                  direct_view=BASE + ref + '/' + PREFIX + 'index.html#landmark=' + args.model + '&mode=overview', records=records)
+                  direct_view=BASE + ref + '/' + PREFIX + 'index.html#landmark=' + landmark_id + '&mode=overview', records=records)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'passed': passed, 'count': len(records), 'failed': [r['path'] for r in records if not r['matches_commit']]}))
     return 0 if passed else 1

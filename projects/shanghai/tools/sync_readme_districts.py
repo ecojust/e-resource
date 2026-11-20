@@ -43,9 +43,17 @@ def candidates():
     for job in sorted(queue['production_queue'], key=lambda x: x['order']):
         if job['status'] not in ('candidate_delivered', 'accepted'):
             continue
-        viewer = viewers.get(job['id'], {})
-        result[job['id']] = {
-            'id': job['id'], 'name': job['name'], 'district': job['district'],
+        model_id = job.get('refines_existing_model', job['id'])
+        if model_id in base_ids:
+            continue
+        if model_id != job['id']:
+            original = result[model_id]
+            assert original['district'] == job['district']
+            result[model_id] = {**original, 'published_commit': job.get('published_commit')}
+            continue
+        viewer = viewers.get(model_id, {})
+        result[model_id] = {
+            'id': model_id, 'name': job['name'], 'district': job['district'],
             'page': (job.get('preview_source') or viewer.get('page') or job['preview']).split('/')[-1].split('#')[0],
             'published_commit': job.get('published_commit'),
         }
@@ -195,11 +203,17 @@ def render(text, items, times, project=False):
     district_names = {str(item['id']): item['name'] for item in json.loads((ROOT / 'projects/shanghai/data/districts.json').read_text())['districts']}
     counts = Counter(district_names[str(item['districtId'])] for item in [*base, *city.values()])
     assert len(counts) == 16 and sum(counts.values()) == len(base_ids) + len(city)
+    queue = json.loads((DATA / 'queue.json').read_text())
+    latest_job = max((job for job in queue['production_queue'] if job['status'] in ('candidate_delivered', 'accepted')), key=lambda job: job['order'], default={})
+    revision_id = latest_job.get('refines_existing_model')
     latest = next(reversed(city.values())) if city else base[-1]
-    latest_mode = 'overview' if city else 'walk'
+    if revision_id:
+        latest = next(row for row in [*base, *city.values()] if row['id'] == revision_id)
+    latest_mode = 'overview' if latest['id'] in city else 'walk'
+    action = '最近细化' if revision_id else '最近接入'
     latest_url = f"{CURRENT}index.html#landmark={latest['id']}&mode={latest_mode}"
     state_path = 'CURRENT_STATE.md' if project else 'projects/shanghai/CURRENT_STATE.md'
-    lead = (f"上海主图现有 {sum(counts.values())} 处入口。最近接入[{latest['name']}]({latest_url})。"
+    lead = (f"上海主图现有 {sum(counts.values())} 处入口。{action}[{latest['name']}]({latest_url})。"
             f"[制作范围与验收记录]({state_path})")
     before, changes = re.subn(r'(?<=<!-- current-shanghai-model:start -->)\n.*?\n(?=<!-- current-shanghai-model:end -->)',
                               lambda match: '\n' + lead + '\n', before, flags=re.S)

@@ -1,7 +1,7 @@
 # 上海全景建模
 
 <!-- current-shanghai-model:start -->
-上海主图现有 121 处入口。最近接入[兰心大戏院（茂名南路57号）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-lyceum-theatre&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
+上海主图现有 121 处入口。最近细化[旧上海市博物馆江湾馆舍](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview)。[制作范围与验收记录](CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 [宏恩医院花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview)位于静安区。中央五开间门廊与两端山花之间，各有五跨底层拱廊。 [制作范围](source/precise/jingan-country-hospital/README.md) · [验收记录](data/audit/country-hospital-v1/README.md)

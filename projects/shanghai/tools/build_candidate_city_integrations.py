@@ -448,6 +448,22 @@ def check_source_section_caps(model, replacement):
     assert replacement.boundary.buffer(1e-8).covers(seams), f"Section cap outside {label} cut boundary"
 
 
+def revised_delivery(item, binding, revision):
+    """Use the current four-file delivery while keeping its original inventory record reproducible."""
+    original = Path(item["manifest"])
+    path = Path(binding["file"])
+    assert path.parent == original.parent and re.fullmatch(r"manifest-[a-z0-9-]+\.json", path.name), path
+    assert binding["original_manifest_sha256"] == item["manifest_sha256"], "Revision refers to a different original delivery"
+    path = Path("projects/shanghai") / path
+    manifest_blob = checked_asset(path, binding, revision)
+    updated, _, _ = verify_manifest(path, revision, set(), {}, {}, manifest_blob=manifest_blob)
+    assert updated["id"] == item["id"] and updated["individual_page"] == item["individual_page"]
+    assert updated["districtId"] == item["districtId"]
+    for role, asset in updated["assets"].items():
+        assert asset["file"] != item["assets"][role]["file"], f"Revision must preserve the original {role} file"
+    return {**item, **{key: updated[key] for key in ("manifest", "manifest_sha256", "assets", "geometry", "original_delivery_status")}}
+
+
 def build_catalog(inventory, inventory_path=INVENTORY):
     inputs, placements = [], {}
     filenames = ["urban-placement.json", "chongming-placement.json"]
@@ -470,6 +486,8 @@ def build_catalog(inventory, inventory_path=INVENTORY):
         ident = item["id"]
         placement = placements[ident]
         assert placement["id"] == ident
+        if "revised_delivery" in placement:
+            item = revised_delivery(item, placement["revised_delivery"], inventory["asset_baseline_commit"])
         geometry_sources = placement.get("model_geometry_sha256", {})
         assert set(geometry_sources).issubset({"raw", "web", "lod"}), f"Unknown {ident} placement geometry variant"
         for variant, digest in geometry_sources.items():

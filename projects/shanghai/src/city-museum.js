@@ -82,6 +82,6 @@ $('retry').addEventListener('click',()=>loadVariant(requestedVariant));
 addEventListener('resize',()=>{const {width,height}=viewport();renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();setView('fit');});
 setView('fit');
 try{
- const response=await fetch('assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json');if(!response.ok)throw Error('模型目录无法读取');
+ const response=await fetch('assets/models/candidates/yangpu-former-shanghai-city-museum/manifest-east-hall-roof.json');if(!response.ok)throw Error('模型目录无法读取');
  manifest=await response.json();if(manifest.id!=='yangpu-former-shanghai-city-museum')throw Error('模型身份不匹配');downloads();await loadVariant('full');
 }catch(error){state.status='error';state.error=error.message;$('status').textContent=error.message+'，请刷新重试。';}
