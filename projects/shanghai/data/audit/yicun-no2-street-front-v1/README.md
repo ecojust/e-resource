@@ -26,3 +26,7 @@ Blender 4.3.2 独立重开 94 个网格、15 种材质和 48,786 个有向三角
 31162站的199处公开目录中仍可进入上方花园24号，此时逸村2号的2940号原楼和同组18栋邻屋均存在。31163站的目录增至200处。桌面鼠标和390像素触屏分别从目录点入，也在地图画布上点中标牌，落在同一栋逸村2号。八幅实图覆盖旧城、两个设备的公开入口、街面近景、屋顶和街区远景。街面近景能分清三层三联窗、圆窗、阳台和铁门，屋顶斜视能分清交叉屋坡及烟囱。手机默认视图中院门和屋顶轮廓分得开，窗间石柱的螺旋纹理较小。街区远景主要供定位。[手机地图标牌](city-31163/map-mobile-label.png) · [街面近景](city-31163/map-street-facade.png) · [屋顶斜视](city-31163/map-roof.png) · [街区远景](city-31163/map-distant.png)
 
 地图实测的32处碰撞与通行结果全部符合原有地块和新增住宅的边界，弄口另一侧的2927号及其余17栋邻屋保持原有状态。31163站重新读取了独立页、查看器代码及四件下载，逐份核对与早期实测一致。24163站的四幅独立页实图和四次真实下载亦留存备查。[城市运行实测](city-31163/main-browser.json) · [手机触屏操作](city-31163/phone-browser.json) · [两代签名和入口](city-31163/31k-live-inputs.json) · [独立页与下载复核](city-31163/viewer-byte-continuity.json) · [24163站独立页留档](city-24163/viewer/viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 44 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/093d1028c9d995d623c112fcb6905f9a2c575e5a/projects/shanghai/index.html#landmark=xuhui-yicun-no2-street-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 44 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
