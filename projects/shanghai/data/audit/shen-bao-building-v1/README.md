@@ -21,3 +21,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e08187ff1386d368d85844cdc9f7b987bb70d237/projects/shanghai/index.html#landmark=huangpu-shen-bao-building&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 9 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+单体网页另以1250像素桌面、390像素手机实际切换两档，四张截图均包含转角入口和两面街墙。近档41,640面，远档36,680面，原始、网页两档及Blender四项下载均与交付清单一致。[单体页实测](viewer.json) · [桌面近档](viewer-desktop-full.png) · [手机远档](viewer-mobile-lod.png)
