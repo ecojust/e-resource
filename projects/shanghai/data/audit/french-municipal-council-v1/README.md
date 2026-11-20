@@ -19,3 +19,7 @@
 浏览器实取了原始、网页、远景GLB与可编辑Blender文件以及近远两种城市源，逐份核对字节数和SHA-256。另对前版99至101项的20个公开固定地址复核，共16,565,000字节。[前态浏览器记录](control-browser.json) · [后态浏览器、地面及文件](main-browser.json) · [143与144处正式输入核对](143-144-preflight.json) · [前项公开下载](predecessor-public-downloads-143.json)
 
 将143至144处测得的街景相机与原生轮廓叠合，源2357的30.15米屋顶四角与灰色前楼逐边一致。它位于道路对面，与本栋2541的裁切没有交集。[实图与轮廓叠合](retained-neighbor-2357.png) · [源号、相机及投影坐标](retained-neighbor-2357.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/240a6d6bbe9ba913974f6dd4f55a8e58e20df028/projects/shanghai/index.html#landmark=huangpu-french-municipal-council-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
