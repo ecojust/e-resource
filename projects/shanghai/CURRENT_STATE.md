@@ -1,3 +1,11 @@
+# 华业公寓主楼（H形住宅与中央红瓦塔）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huaye-apartments&mode=overview) · [单体旋转与下载](huaye-apartments.html) · [来源与制作范围](source/precise/jingan-huaye-apartments/README.md) · [验收记录](data/audit/huaye-apartments-v1/README.md)
+
+陕西北路华业公寓的H形主楼、中央红瓦八角塔和两翼露台。依据历史照片、街面实照和带定位的航拍重建，实际楼高及隐蔽墙体含估计。
+
+近景 105,170 个三角面，远景 50,166 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 9,496,163 字节。上海主图现有 93 处独立入口，静安区 5 处。[资产清单](assets/models/candidates/jingan-huaye-apartments/manifest.json)
+
 # 八仙桥基督教青年会大楼（西藏南路双檐临街翼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-baxianqiao-ymca&mode=overview) · [单体旋转与下载](baxianqiao-ymca.html) · [来源与制作范围](source/precise/huangpu-baxianqiao-ymca/README.md) · [验收记录](data/audit/baxianqiao-ymca-v1/README.md)

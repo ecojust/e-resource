@@ -44,33 +44,33 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 54,
+  "candidate_manifest_count": 55,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 52,
-  "resulting_city_count": 92,
+  "new_city_model_count": 53,
+  "resulting_city_count": 93,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 4,
-    "静安区": 3,
+    "静安区": 4,
     "黄浦区": 18
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 216,
-    "bytes": 833262972,
+    "files": 220,
+    "bytes": 842759135,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 17560836,
+    "current_run_added_bytes": 9496163,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 84
+    "inherited_incremental_files": 88
   },
   "records": [
     {
@@ -3929,6 +3929,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "西藏南路123号八仙桥基督教青年会的临街主翼及重檐屋顶。参照历史和当代照片，保留相邻的独立院楼。未见部分及高度含估计。"
+    },
+    {
+      "id": "jingan-huaye-apartments",
+      "name": "华业公寓主楼（H形住宅与中央红瓦塔）",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "huaye-apartments.html",
+      "manifest": "assets/models/candidates/jingan-huaye-apartments/manifest.json",
+      "manifest_sha256": "cae30c8d758f73e0fe61bfb65ff3bf6decbc9bdd0e81bbf70ffca963b12212c7",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-huaye-apartments/jingan-huaye-apartments-raw.glb",
+          "bytes": 5748016,
+          "sha256": "a08947573388147dc700e77435a6b2759d95d41cafaa5a465206196f3e65d54a",
+          "triangles": 105170,
+          "bounds_gltf_m": [
+            [
+              -16.940000534057617,
+              0.0,
+              -12.965005874633789
+            ],
+            [
+              16.940000534057617,
+              42.7599983215332,
+              12.275006294250488
+            ]
+          ],
+          "materials": 11
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-huaye-apartments/jingan-huaye-apartments-web.glb",
+          "bytes": 2067284,
+          "sha256": "b0cb49106a3ccebf5f0f09aaa7cd067a6af8e7882d46261baed8f2c44614f054",
+          "triangles": 105170,
+          "bounds_gltf_m": [
+            [
+              -16.9400005,
+              0,
+              -12.9650059
+            ],
+            [
+              16.9400005,
+              42.7599983,
+              12.2750063
+            ]
+          ],
+          "materials": 11
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-huaye-apartments/jingan-huaye-apartments-lod.glb",
+          "bytes": 756692,
+          "sha256": "80922f903e8c04650294181c382f4fd191747f727eebdb4f3c085925086d58c8",
+          "triangles": 50166,
+          "bounds_gltf_m": [
+            [
+              -16.9400005,
+              0,
+              -12.9650431
+            ],
+            [
+              16.9400005,
+              42.7599983,
+              12.2750502
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-huaye-apartments/jingan-huaye-apartments.blend",
+          "bytes": 924171,
+          "sha256": "9cd5c41c6326fdf16235a34ecc7b4209a2a18a1625164532c0e8442fda535729"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -16.940000534057617,
+            0.0,
+            -12.965005874633789
+          ],
+          "max": [
+            16.940000534057617,
+            42.7599983215332,
+            12.275006294250488
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -16.940000534057617,
+            -12.275006294250488,
+            0.0
+          ],
+          "max": [
+            16.940000534057617,
+            12.965005874633789,
+            42.7599983215332
+          ]
+        },
+        "triangles": 105170,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "陕西北路华业公寓的H形主楼、中央红瓦八角塔和两翼露台。依据历史照片、街面实照和带定位的航拍重建，实际楼高及隐蔽墙体含估计。"
     }
   ],
   "baseline_inventory": {
@@ -3952,6 +4058,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-country-hospital-north-block/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-huaye-apartments/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
@@ -3961,13 +4068,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/baxianqiao-ymca-v1",
+  "incremental_audit_directory": "data/audit/huaye-apartments-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/metropol-cinema-history-v1/inventory-increment.json",
-    "bytes": 64042,
-    "sha256": "254a19bb51d96a61687eb6a907940dd1449ed61fb8d21f0fa9f6b2a6e485cb50"
+    "file": "data/audit/baxianqiao-ymca-v1/inventory-increment.json",
+    "bytes": 67629,
+    "sha256": "3da83ef312567224716d66f1369af56eb866e9fc08b25173bbb4cfa5703b35dd"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json"
+    "projects/shanghai/assets/models/candidates/jingan-huaye-apartments/manifest.json"
   ]
 }
