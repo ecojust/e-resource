@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>永安公司 · 跨浙江中路的北天桥</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="negative-z" aria-label="永安公司跨浙江中路的北天桥三维模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-wing-on-skybridges&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 南京东路与浙江中路交会处</p>
+    <h1>永安公司</h1>
+    <p>跨浙江中路的北天桥</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从南京东路望向浙江中路，两座永安大楼之间可见双层封闭天桥。每层六扇临街窗。桥底高度、桥身进深和两端接墙位置均含估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">北向街面</button>
+      <button type="button" data-view="oblique">斜侧面</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-wing-on-skybridges/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-wing-on-skybridges');
+  </script>
+</body>
+</html>

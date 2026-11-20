@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {CandidateCityState} from '../src/candidate-city-integrations.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {SourceGeometryCorrectionState} from '../src/source-geometry-correction.js';
@@ -45,6 +46,7 @@ function harness({tilesReadyAt=0,roads=true}={}) {
     querySourceFeatures(id,{sourceLayer}){queries.push({at:clock.now,source:id,sourceLayer});return samples.get(`${id}:${sourceLayer}`)||[];}};
   const streetInteraction={sweep(a,b,dimensions){sweeps.push({a,b,dimensions});return null;}};
   const env={SourceGeometryCorrectionState,scene:f.sceneRoot,landmarkRecords:records,landmarkBoundaries:boundaries,
+    candidateState:new CandidateCityState({getRecords:()=>records,getScene:()=>f.sceneRoot}),
     map,performance:{now:()=>clock.now},sleep,streetInteraction,osmSuppression:{schedule(){} }};
   const names=Object.keys(env),factory=new Function(...names,`
     const DEG=Math.PI/180,EARTH=6378137,clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));

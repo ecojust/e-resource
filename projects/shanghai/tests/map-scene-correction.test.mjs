@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {CandidateCityState} from '../src/candidate-city-integrations.js';
 import {SourceGeometryCorrectionState} from '../src/source-geometry-correction.js';
 import {planOSMBuildingReplacement} from '../src/osm-building-suppression.js';
 import {fixture,ID,clone,makeRecord,makeBoundary,loadVerified,rect,syntheticCollision} from './source-correction-fixtures.mjs';
@@ -35,6 +36,7 @@ function harness() {
   const localStreamer={getVisible:()=>[]},staticLandmarkIds=new Set();
   const env={SourceGeometryCorrectionState,scene:f.sceneRoot,landmarkRecords:records,landmarkBoundaries:boundaries,
     map,performance:{now:()=>clock.value},osmSuppression:{schedule(){events.push('OSM scheduled');}},localStreamer,staticLandmarkIds};
+  env.candidateState=new CandidateCityState({getRecords:()=>records,getScene:()=>f.sceneRoot});
   const names=Object.keys(env);
   const factory=new Function(...names,`const DEG=Math.PI/180,EARTH=6378137,clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
     let destroyed=false,buildingMode='osm',buildingSourceId='openmaptiles';const sourceId='openmaptiles';

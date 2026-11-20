@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import vm from 'node:vm';
+import {CandidateCityState} from '../src/candidate-city-integrations.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const sourceRoot = path.resolve(here, '..');
@@ -94,12 +95,12 @@ function cacheFixture() {
   const declaration=sceneCode.match(/let collisionDirty = true[^;]+;/)[0];
   const functions=sceneCode.slice(sceneCode.indexOf('  function sourceFeatures('),sceneCode.indexOf('  async function waitForData('));
   const getter=sceneCode.match(/collisionRevision:\(\)=>\{([^}]+)\}/)?.[1] || 'return 0;';
-  const cache=new Function('map','performance','boundsOf','geometryContains','nearestOnLine',
+  const cache=new Function('map','performance','boundsOf','geometryContains','nearestOnLine','candidateState',
     `${declaration}\nconst buildingMode='overture',buildingSourceId='buildings',sourceId='basemap';
 const syncSourceGeometryCorrections=()=>false,sourceGeometryCorrections={beginCollisionPass(){},filterFeature:f=>f.geometry,getCollisionGeometries:()=>[]};\n${functions}\n`+
     `return {revision(){${getter}},collisionAt,dirty(){collisionDirty=true},`+
     `state(){return {dirty:collisionDirty,updated:collisionUpdated,polygons:polygons.length}}};`)(
-      map,{now:()=>now},bounds,contains,()=>null);
+      map,{now:()=>now},bounds,contains,()=>null,new CandidateCityState({getRecords:()=>new Map(),getScene:()=>null}));
   return {...cache,advance(ms){now+=ms},setPresent(value){present=value;cache.dirty()},
     setZoom(value){zoom=value},queryCount:()=>queries};
 }

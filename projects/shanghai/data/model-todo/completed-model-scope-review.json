@@ -295,6 +295,10 @@
         {
           "id": "huangpu-old-wing-on-company",
           "scope": "南京东路635号老永安主楼、东北圆弧入口与北侧屋顶塔楼外观"
+        },
+        {
+          "id": "huangpu-wing-on-skybridges",
+          "scope": "南京东路一侧的北桥外观。北立面参照2025年5月1日照片，两列水平窗带各六跨。南向隐面、桥深、桥底及两端接头按资料估计。后方另一座桥及商场室内另行核查。"
         }
       ],
       "remaining_tasks": [
@@ -306,9 +310,10 @@
           "completed_scope": "南京东路627号新永安前塔与相连后部外观；跨街桥另计"
         },
         {
-          "id": "wing-on-cross-street-bridges",
-          "title": "新老永安之间的跨街桥",
-          "todo": "待核两座封闭跨街桥的范围与外观后制作；跨街桥不并入两栋主楼，新楼交付后仅保留此项。"
+          "id": "wing-on-south-skybridge",
+          "title": "新老永安之间的南侧天桥",
+          "todo": "补查较深处第二座桥的准确位置、标高、立面和两端接口，核实年代后独立建模。",
+          "split_from_task": "wing-on-cross-street-bridges"
         }
       ],
       "evidence": [
@@ -319,8 +324,17 @@
         {
           "path": "projects/shanghai/source/precise/huangpu-new-wing-on-company/source-register.json",
           "supports": "2013照片复核记录右侧两座不同标高的封闭跨街桥；本轮新楼scope明确排除桥。此证据不表示新楼已交付。"
+        },
+        {
+          "path": "projects/shanghai/source/precise/huangpu-wing-on-skybridges/README.md",
+          "supports": "跨浙江中路、靠南京东路的双层封闭天桥，北面每层六窗。桥下保留通行，桥深、标高和接墙位置按历史照片与两侧现有模型估算。"
+        },
+        {
+          "path": "projects/shanghai/data/audit/wing-on-skybridges-v1/final-placement-contract.json",
+          "supports": "跨浙江中路北侧，由老永安东墙接新永安西墙。就当前两栋已交付几何拟合跨距，纵向位置、桥深与标高含估计。"
         }
-      ]
+      ],
+      "exclusions": "补查较深处第二座桥的准确位置、标高、立面和两端接口，核实年代后独立建模。"
     },
     {
       "heritage_id": "sh-historic-b1-015",

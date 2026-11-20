@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import * as cache from '../src/detail-model-cache.js';
+import {CandidateCityState} from '../src/candidate-city-integrations.js';
 import {preparePhotographicGlass} from '../src/photographic-glass.js';
 import {loadOrdinaryLandmarkAsset,isOrdinaryLandmarkRecord} from '../src/ordinary-scene-adapter.js';
 import {createHash} from 'node:crypto';
@@ -27,6 +28,7 @@ function harness({maxCount=2,maxBytes=32*cache.MIB,fetchFunction}={}) {
   const disposeModel=object=>{assert.equal(object.disposed,undefined,'object disposed twice');object.disposed=true;events.push({type:'dispose',object});};
   const boundary=new Map();
   const env={...cache,events,current,landmarkRecords:records,scene,disposeModel,
+    candidateState:new CandidateCityState({getRecords:()=>records,getScene:()=>scene}),
     // No correction fields in these unchanged legacy fixtures. New tests cover the real correction state.
     syncSourceGeometryCorrections:()=>false,
     isLandmarkSourceActive:r=>r.status==='loaded' && Boolean(r.object?.visible),

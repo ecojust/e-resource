@@ -1,10 +1,10 @@
 {
   "schema": "candidate-city-integrations-v1",
   "asset_baseline_commit": "65af6bea52780f274d2ee005bbbd513317b559fc",
-  "scope": "46 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
+  "scope": "47 completed exterior candidates placed in the shared Shanghai scene; placement and model precision remain explicitly bounded",
   "existing_city_count": 40,
-  "new_city_model_count": 46,
-  "resulting_city_count": 86,
+  "new_city_model_count": 47,
+  "resulting_city_count": 87,
   "new_walk_entry_count": 0,
   "input_files": [
     {
@@ -19,11 +19,11 @@
     },
     {
       "file": "data/global-models/additional-placement.json",
-      "bytes": 513999,
-      "sha256": "b5f3ed704bb596163105beb4f60c22d0a7ac289ea8a8e0c5dd7f6bf7d5d3d0ec"
+      "bytes": 516125,
+      "sha256": "514e3c5858b161c8f29e266f2b15ace9f25e9b8e28a583a5012fa4d25f5f912c"
     }
   ],
-  "inventory_sha256": "63b2b38932a993a96345ca9ec3b39386a6e20882332393763f33b34058f0b4dc",
+  "inventory_sha256": "2725d02b18134a762a383a08bdb9e85491e89f7483cc9fc88e01ed7853173154",
   "models": [
     {
       "id": "chongming-chaozong-paifang",
@@ -20149,6 +20149,92 @@
         "raw": "3cddf39305b0c92baf4a47e656ff31ba694ce3377d2ee207a137d467c75ff812",
         "web": "04a9a4022b3e5d041b8edc0c8139e63cfc725249d6ed31e1cf674ec408ca9abc",
         "lod": "a7041ccd732f267a7ac81a139ca47080305d793ad66fe98d925e655671ee5784"
+      }
+    },
+    {
+      "id": "huangpu-wing-on-skybridges",
+      "name": "新老永安跨浙江中路北侧封闭天桥",
+      "kind": "building",
+      "candidate_id": "huangpu-wing-on-skybridges",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.47412422705281,
+      "lat": 31.237034656441327,
+      "heading": -15.75,
+      "scale": 1,
+      "height_m": 20.747499465942383,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -5.677499771118164,
+          13.0,
+          -2.1710000038146973
+        ],
+        "max": [
+          5.677499771118164,
+          20.747499465942383,
+          2.1710000038146973
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-web.glb",
+          "bytes": 3323012,
+          "sha256": "3eea41a1065fe277894742d3cee8dc17825190b6ada827ca24726f21ea3c575f",
+          "triangles": 59964
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-lod.glb",
+          "bytes": 180104,
+          "sha256": "1e4be2816b10280f5fe6bac774280a023f84fe38207244402f4bce7bd92f8bde",
+          "triangles": 2652
+        }
+      },
+      "model": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-wing-on-skybridges/huangpu-wing-on-skybridges-lod.glb",
+      "web_bytes": 3323012,
+      "web_sha256": "3eea41a1065fe277894742d3cee8dc17825190b6ada827ca24726f21ea3c575f",
+      "lod_bytes": 180104,
+      "lod_sha256": "1e4be2816b10280f5fe6bac774280a023f84fe38207244402f4bce7bd92f8bde",
+      "triangles": 59964,
+      "lod_triangles": 2652,
+      "individual_page": "wing-on-north-skybridge.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-wing-on-skybridges/manifest.json",
+      "navigation": {
+        "listed": false,
+        "note": "仅俯瞰查看北侧悬空天桥。桥下城市街道照常通行，桥内部未开放。"
+      },
+      "overviewZoom": 19.7,
+      "maxDistance": 450,
+      "lod_switch_in_m": 110,
+      "lod_switch_out_m": 150,
+      "collision_geometry": null,
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "跨浙江中路北侧，由老永安东墙接新永安西墙。就当前两栋已交付几何拟合跨距，纵向位置、桥深与标高含估计。",
+        "surveyed": false,
+        "source_identity": "既有模型两侧接头（同宏块1039/1275）；街道无独立建筑源，无源替换。"
+      },
+      "detail_note": "跨浙江中路北侧，由老永安东墙接新永安西墙。就当前两栋已交付几何拟合跨距，纵向位置、桥深与标高含估计。；跨浙江中路、靠南京东路的双层封闭天桥，北面每层六窗。桥下保留通行，桥深、标高和接墙位置按历史照片与两侧现有模型估算。",
+      "complete_photo_reconstruction_accepted": false,
+      "ground_collision_mode": "overhead-connector",
+      "ground_clearance_m": 13.0,
+      "overviewBearing": 164.25,
+      "overviewPitch": 64,
+      "partial_model": true,
+      "model_scope": "南京东路一侧的北桥外观。北立面参照2025年5月1日照片，两列水平窗带各六跨。南向隐面、桥深、桥底及两端接头按资料估计。后方另一座桥及商场室内另行核查。",
+      "altitude": 0,
+      "model_geometry_sha256": {
+        "raw": "3fcf22eaa8ca41f6327f5da9e25a10e5e98ef2257811350b1e345e0036004489",
+        "web": "3eea41a1065fe277894742d3cee8dc17825190b6ada827ca24726f21ea3c575f",
+        "lod": "1e4be2816b10280f5fe6bac774280a023f84fe38207244402f4bce7bd92f8bde"
       }
     }
   ]

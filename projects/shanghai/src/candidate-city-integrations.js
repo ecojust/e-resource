@@ -45,6 +45,15 @@ export function mergeCandidateCityModels(existing,manifest) {
         ||!Number.isInteger(asset.bytes)||asset.bytes<=0||asset.bytes>=100000000||!SHA.test(asset.sha256))throw Error(`候选模型资产无效：${row.id}/${key}`);
     }
     for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
+    if(row.ground_collision_mode!==undefined){
+      const rawClearance=(row.altitude??0)+(row.scale??1)*row.bounds_glb?.min?.[1];
+      if(row.ground_collision_mode!=='overhead-connector' || !Number.isFinite(rawClearance)
+        || !Number.isFinite(row.ground_clearance_m) || row.ground_clearance_m<=2 || row.ground_clearance_m>rawClearance
+        || row.collision_geometry!==null || row.navigation.listed || row.owner || row.owners
+        || row.replacement_geometry || row.site_replacement || row.source_section_caps || row.display_height_clips?.length
+        || Object.values(row.source_feature_ids||{}).some(ids=>ids.length))
+        throw Error(`候选悬空构件净高或源范围无效：${row.id}`);
+    }
     if(row.source_section_caps!==undefined&&!validSourceSection(row))throw Error(`候选模型源剖面无效：${row.id}`);
     if(row.site_replacement&&(!row.site_replacement.id||!validCandidateGeometry(row.site_replacement.geometry)))throw Error(`候选模型场址修正无效：${row.id}`);
     const site=row.site_replacement;

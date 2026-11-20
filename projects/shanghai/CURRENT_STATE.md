@@ -1,3 +1,11 @@
+# 新老永安跨浙江中路北侧封闭天桥
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wing-on-skybridges&mode=overview) · [单体旋转与下载](wing-on-north-skybridge.html) · [来源与制作范围](source/precise/huangpu-wing-on-skybridges/README.md) · [验收记录](data/audit/wing-on-skybridges-v1/README.md)
+
+跨浙江中路、靠南京东路的双层封闭天桥，北面每层六窗。桥下保留通行，桥深、标高和接墙位置按历史照片与两侧现有模型估算。
+
+近景 59,964 个三角面，远景 2,652 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,862,138 字节。上海主图现有 87 处独立入口，黄浦区 30 处。[资产清单](assets/models/candidates/huangpu-wing-on-skybridges/manifest.json)
+
 # 宏恩医院历史主楼北翼与中部门诊连接体
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital-north-block&mode=overview) · [单体旋转与下载](country-hospital-north.html) · [来源与制作范围](source/precise/jingan-country-hospital-north-block/README.md) · [验收记录](data/audit/country-hospital-north-v1/README.md)

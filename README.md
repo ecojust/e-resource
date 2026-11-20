@@ -19,7 +19,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的40项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的41项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -29,8 +29,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 41 | 新老永安跨浙江中路北侧封闭天桥 | 黄浦区／南京东路635号；南京东路627号 | 制作中 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E6%B0%B8%E5%AE%89%E5%85%AC%E5%8F%B8%E5%A4%A7%E6%A5%BC>)；核验两端与现有模型的接合、桥底净空及地图灯牌。 |
-| 42 | 上海音乐厅迁建后的外观 | 黄浦区／延安东路523号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%9F%B3%E4%B9%90%E5%8E%85>)；核对迁建年代、地图原体块替换和两个入口的可见性。 |
+| 42 | 上海音乐厅迁建后的外观 | 黄浦区／延安东路523号 | 制作中 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%9F%B3%E4%B9%90%E5%8E%85>)；核对迁建年代、地图原体块替换和两个入口的可见性。 |
 | 43 | 金城银行大楼江西中路临街主楼 | 黄浦区／江西中路200号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%87%91%E5%9F%8E%E9%93%B6%E8%A1%8C%E5%A4%A7%E6%A5%BC>)；核对地址和历史层数异文，保留后院及独立楼栋。 |
 | 44 | 美琪大戏院临街外观 | 静安区／江宁路99号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E7%BE%8E%E7%90%AA%E5%A4%A7%E6%88%8F%E9%99%A2>)；核对江宁路门牌异文和影院改造年代，对照侧、背面的影像。 |
 | 45 | 大上海大戏院历史立面（1933年建筑） | 黄浦区／西藏中路520号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E5%A4%A7%E4%B8%8A%E6%B5%B7%E7%94%B5%E5%BD%B1%E9%99%A2>)；核查城市史档案照片和湮没名录，保留原址街道与现代商城，为历史版本单独设置查看入口。 |
@@ -48,7 +47,7 @@
 | sh-historic-b1-010 | 跑马总会西楼；跑马总会副钟塔与庭院连接体 | 南京西路325号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核并制作西楼，保留文献三层的范围口径；待绑定副钟塔和庭院连接体的照片及位置后制作；不重复东楼及已建主钟塔。 |
 | sh-historic-b1-011 | 大光明后部观众厅与休息厅；大光明完整商铺带 | 南京西路216号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待制作后部观众厅、转向的门厅／影厅关系及腰果形休息厅；先核平面与外观资料；待核完整商铺带归属后制作；不将同框咖啡店楼或后方高楼自动并入。 |
 | sh-historic-b1-012 | 金门饭店北楼 | 南京西路104号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核酒店北楼的身份、边界和资料口径后制作；不按历史主楼别名重复建楼，也不直接套用未绑定的招标尺寸。 |
-| sh-historic-b1-014 | 新老永安之间的跨街桥 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 待核两座封闭跨街桥的范围与外观后制作；跨街桥不并入两栋主楼，新楼交付后仅保留此项。 |
+| sh-historic-b1-014 | 新老永安之间的南侧天桥 | 南京东路635号；南京东路627号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补查较深处第二座桥的准确位置、标高、立面和两端接口，核实年代后独立建模。 |
 | sh-historic-b1-015 | 新新公司北侧旅馆、天井与南北连接 | 南京东路720号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对延至天津路、从贵州路进入的北部旅馆层数与外观，取得天井和真实南北分界依据后制作；现模型北切面不是实际后立面，不重复已建南侧临街外观。 |
 | sh-historic-b1-018 | 峻岭公寓前庭两片未核源区域；峻岭公寓西侧低层住宅与名录范围 | 茂名南路65－125号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查明入口雨棚左右两片原地图源的实际构造、年代和高度；当前保留约35.04平方米原源范围，24.7米粗略屋顶不等于实测高度。不得为清空源范围扩大雨棚或重复已建高层；逐栋核对文献所提西侧六幢三层公寓的现存实体及与茂名南路65－125号名录范围的关系，再按独栋制作；茂名公寓别称不另当第二座高层。 |
 | sh-historic-b1-019 | 工部局西端接缝与保留带；工部局庭院独立楼及名录范围 | 汉口路153号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核实北西短回翼、南翼西端的实际年代界线与接缝坐标；保留两条3米未核带约120.34平方米，可能仍含历史墙体，不按当前作者切面宣称历史范围全部完成；核对独立红色B楼的平移后位置、源对应和名录归属，再按独栋制作；新多功能厅、现代西侧和屋顶亭台与旧主楼分开，不因项目同名自动并入历史名录完成量。 |
@@ -3708,7 +3707,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；86处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中46件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；87处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中47件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3716,7 +3715,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增46处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增47处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3738,10 +3737,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，86处建筑与构件模型入口（40处既有＋46处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增46处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，87处建筑与构件模型入口（40处既有＋47处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增47处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（29处）
+### 黄浦区（30处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3776,6 +3775,7 @@
 | 峻岭公寓高层主体（锦江饭店中楼） | 2026-10-31 15:27:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-grosvenor-house&mode=overview) |
 | 上海公共租界工部局历史主楼 | 2026-11-01 00:59:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview) |
 | 大世界历史主楼与街角塔 | 2026-11-03 22:31:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-great-world&mode=overview) |
+| 新老永安跨浙江中路北侧封闭天桥 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wing-on-skybridges&mode=overview) |
 
 ### 徐汇区（7处）
 

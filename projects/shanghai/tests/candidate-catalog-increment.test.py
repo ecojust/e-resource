@@ -21,8 +21,8 @@ PLACEMENTS = {name: json.loads((PROJECT / "data/global-models" / name).read_text
 NEW_ID = "huangpu-new-wing-on-company"
 
 
-def raw_glb():
-    binary = struct.pack("<9f3H", 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 2)
+def raw_glb(base=0):
+    binary = struct.pack("<9f3H", 0, base, 0, 1, base+1, 0, 0, base, 1, 0, 1, 2)
     binary += b"\0" * ((-len(binary)) % 4)
     doc = {"asset": {"version": "2.0"}, "buffers": [{"byteLength": len(binary)}],
            "bufferViews": [{"buffer": 0, "byteOffset": 0, "byteLength": 36},
@@ -105,6 +105,29 @@ class IncrementalCatalogTests(unittest.TestCase):
         self.assertEqual(builder.normalized_manifest_path(self.manifest),
                          builder.normalized_manifest_path("assets/models/candidates/" + NEW_ID + "/manifest.json"))
         self.assertEqual(self.increment(), result, "a later --check can reproduce the same current inventory")
+
+    def test_suspended_connector_clearance_uses_all_three_verified_meshes(self):
+        manifest = json.loads(self.manifest.read_text())
+        manifest["ground_collision_mode"] = "overhead-connector"
+        for variant, low in (("raw", 14), ("full", 13), ("lod", 12)):
+            blob = raw_glb(low)
+            asset = manifest["assets"][variant]
+            (self.manifest.parent / asset["file"]).write_bytes(blob)
+            asset.update(bytes=len(blob), sha256=hashlib.sha256(blob).hexdigest())
+        self.manifest.write_text(json.dumps(manifest))
+        item = self.increment()["records"][-1]
+        self.assertEqual(item["geometry"]["overhead_min_y_m"], {"raw":14, "web":13, "lod":12})
+        row = {"ground_collision_mode":"overhead-connector", "collision_geometry":None, "navigation":{"listed":False},
+               "model_geometry_sha256":{key:item["assets"][key]["sha256"] for key in ("raw","web","lod")},
+               "scale":0.5, "altitude":-1}
+        self.assertEqual(builder.checked_ground_clearance(item, row), 5)
+        for unsafe in ({"altitude":-4}, {"replacement_geometry":{"type":"Polygon"}},
+                       {"site_replacement":{"id":"street"}}, {"collision_geometry":{"type":"Polygon","coordinates":[]}},
+                       {"bounds_glb":{"min":[0,100,0],"max":[1,101,1]}}, {"source_feature_ids":{"building":["owner"]}}):
+            with self.subTest(unsafe=unsafe), self.assertRaises(AssertionError):
+                builder.checked_ground_clearance(item, {**row, **unsafe})
+        with self.assertRaises(AssertionError):
+            builder.checked_geometry(None, "ordinary ground building", collision=True)
 
     def test_changed_asset_bytes_are_rejected(self):
         (self.manifest.parent / "full.glb").write_bytes(b"changed")

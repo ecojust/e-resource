@@ -18,6 +18,17 @@ const model=geometry=>({id:'complex-collision',name:'Open-field collision fixtur
   assets:{web:{file:'assets/fixture-web.glb',bytes:1,sha256:'1'.repeat(64)},lod:{file:'assets/fixture-lod.glb',bytes:1,sha256:'2'.repeat(64)}},
   placement:{status:'estimated'},navigation:{listed:false},collision_geometry:geometry});
 
+test('a registered elevated connector preserves the walkway and both neighboring sources',()=>{
+  const bridge={...model(null),ground_collision_mode:'overhead-connector',ground_clearance_m:13,
+    bounds_glb:{min:[-5,13,-2],max:[5,21,2]},source_feature_ids:{building:[],building_part:[]}};
+  const merge=(changes={})=>mergeCandidateCityModels([],{schema:'candidate-city-integrations-v1',models:[{...bridge,...changes}]});
+  assert.equal(merge()[0].collision_geometry,null);
+  for(const changes of [{ground_clearance_m:2},{ground_clearance_m:14},{altitude:-12},{scale:.1},
+    {collision_geometry:polygon(ring(5))},{site_replacement:{id:'street'}},{owner:{feature_local_id:1039}}]){
+    assert.throws(()=>merge(changes),/悬空构件/);
+  }
+});
+
 test('complex collision retains its hole while the same geometry remains invalid for display clipping',()=>{
   const geometry=complicated();assert.equal(validCandidateGeometry(geometry),false);
   assert.equal(validCandidateGeometry(geometry,collisionOptions),true);

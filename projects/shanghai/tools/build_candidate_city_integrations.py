@@ -127,6 +127,8 @@ def verify_manifest(path, revision, existing_ids, viewers, jobs, manifest_blob=N
     ident = manifest["id"]
     assert ident == path.parent.name
     assets, geometry = {}, None
+    overhead = manifest.get("ground_collision_mode") == "overhead-connector"
+    verified_minima = {}
     verified_files, verified_bytes = 0, 0
     assert all(not Path(asset["file"]).is_absolute() and ".." not in Path(asset["file"]).parts
                for asset in manifest["assets"].values()), "Asset file must remain inside its delivery directory"
@@ -139,10 +141,17 @@ def verify_manifest(path, revision, existing_ids, viewers, jobs, manifest_blob=N
         verified_files += 1
         verified_bytes += len(blob)
         assets["web" if variant == "full" else variant] = {**asset, "file": file.relative_to("projects/shanghai").as_posix()}
-        if variant == "raw":
-            geometry = raw_geometry(blob)
-            assert geometry["triangles"] == asset["triangles"]
+        if variant == "raw" or (overhead and variant in ("full", "lod")):
+            measurements = raw_geometry(blob)
+            assert measurements["triangles"] == asset["triangles"]
+            if variant == "raw":
+                geometry = measurements
+            if overhead:
+                verified_minima["web" if variant == "full" else variant] = measurements["bounds_glb"]["min"][1]
     assert geometry and set(assets) == {"raw", "native", "web", "lod"}
+    if overhead:
+        assert set(verified_minima) == {"raw", "web", "lod"}
+        geometry["overhead_min_y_m"] = verified_minima
     viewer, job = viewers.get(ident, {}), jobs.get(ident, {})
     page = viewer.get("page") or job.get("preview_source") or manifest.get("viewer_page") or job.get("url")
     assert page, f"No individual page metadata for {ident}"
@@ -336,6 +345,28 @@ def checked_geometry(geometry, label, nullable=False, *, collision=False):
     return result
 
 
+def checked_ground_clearance(item, placement):
+    """A suspended connector may omit its 2D obstacle only with verified clearance in every GLB."""
+    label = item["id"] + " overhead connector"
+    assert placement["ground_collision_mode"] == "overhead-connector", label
+    assert placement["collision_geometry"] is None and not placement["navigation"]["listed"], label
+    assert not any(placement.get(key) for key in (
+        "owner", "owners", "source_owner", "source_owners", "site_replacement", "replacement_geometry",
+        "display_height_clips", "source_section_caps", "assets",
+    )), label
+    assert not any(placement.get("source_feature_ids", {}).values()), label
+    assert set(placement.get("model_geometry_sha256", {})) == {"raw", "web", "lod"}, label
+    geometry = item["geometry"]
+    assert placement.get("bounds_glb", geometry["bounds_glb"]) == geometry["bounds_glb"], label
+    minima = geometry.get("overhead_min_y_m", {})
+    assert set(minima) == {"raw", "web", "lod"} and all(math.isfinite(v) for v in minima.values()), label
+    altitude, scale = placement.get("altitude", 0), placement.get("scale", 1)
+    assert math.isfinite(altitude) and math.isfinite(scale) and scale > 0, label
+    clearance = altitude + min(minima.values()) * scale
+    assert clearance > 2.0, f"{label} has insufficient ground clearance: {clearance} m"
+    return clearance
+
+
 def checked_height_clips(clips, label):
     assert isinstance(clips, list) and len(clips) <= 8, f"Invalid {label} display_height_clips"
     ids = set()
@@ -434,7 +465,11 @@ def build_catalog(inventory, inventory_path=INVENTORY):
         if navigation["listed"]:
             assert len(navigation["walkStart"]) == 2 and all(math.isfinite(x) for x in navigation["walkStart"])
             assert math.isfinite(navigation["bearing"])
-        collision = checked_geometry(placement["collision_geometry"], f"{ident} collision_geometry", collision=True)
+        clearance = None
+        if "ground_collision_mode" in placement:
+            clearance = checked_ground_clearance(item, placement)
+        else:
+            checked_geometry(placement["collision_geometry"], f"{ident} collision_geometry", collision=True)
         replacement = checked_geometry(placement.get("replacement_geometry"), f"{ident} replacement_geometry", nullable=True)
         source_ids = placement.get("source_feature_ids", {"building": [], "building_part": []})
         assert set(source_ids) == {"building", "building_part"}
@@ -459,6 +494,9 @@ def build_catalog(inventory, inventory_path=INVENTORY):
                  "source_feature_ids": source_ids, "placement": note,
                  "detail_note": note["note"] + "；" + item["description"],
                  "complete_photo_reconstruction_accepted": False}
+        if clearance is not None:
+            model["ground_collision_mode"] = placement["ground_collision_mode"]
+            model["ground_clearance_m"] = clearance
         for key in ("overviewBearing", "overviewPitch"):
             if key in placement:
                 assert isinstance(placement[key], (float, int)) and math.isfinite(placement[key]), f"Invalid {ident} {key}"
@@ -495,7 +533,8 @@ def build_catalog(inventory, inventory_path=INVENTORY):
         lng, lat = model["navigation"]["walkStart"]
         sx, sy = 6378137 * math.pi / 180 * math.cos(math.radians(lat)), 6378137 * math.pi / 180
         project = lambda x, y, z=None: ((np.asarray(x) - lng) * sx, (np.asarray(y) - lat) * sy)
-        distances = [(other["id"], transform(project, shape(other["collision_geometry"])).distance(Point(0, 0))) for other in models]
+        distances = [(other["id"], transform(project, shape(other["collision_geometry"])).distance(Point(0, 0))) for other in models
+                     if other["collision_geometry"] is not None]
         nearest, distance = min(distances, key=lambda item: item[1])
         assert distance >= .38, f"Spawn intersects candidate body: {model['id']} -> {nearest}, {distance:.3f} m"
         spawn_checks.append({"id": model["id"], "nearest_candidate": nearest, "clearance_m": round(distance, 6)})

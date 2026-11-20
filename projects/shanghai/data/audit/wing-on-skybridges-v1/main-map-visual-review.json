@@ -1,0 +1,110 @@
+{
+  "model": "huangpu-wing-on-skybridges",
+  "passed": true,
+  "browser_report_sha256": "e9ee06b9aca30ae69ad44dd505915d24ea7a1d3ff33f0d01c9ba81efea83cc52",
+  "images": [
+    {
+      "file": "map-desktop.png",
+      "sha256": "0c9bef69152d7516de33736f12c21c6f2b69fb017dd5ed8684fa0b26053dfddc",
+      "observation": "960×720 的默认入口将深色砖桥身放在两栋既有模型之间。上下窗带、挑出的屋顶和抬高的桥底可辨，左侧导航和邻楼铭牌遮住部分接墙处。"
+    },
+    {
+      "file": "map-north-bridge.png",
+      "sha256": "bad0b330c2d2ac38225a602b4c1787b7145e1e69d08ec179c717402a45ef9abe",
+      "observation": "从南京东路一侧沿街轴看，能分辨两排横窗、窗间深色砖带及两端接墙处。桥底以下连续留出浙江中路，既有两楼的外立面保留。北面砖色在当前街道光照下偏暗。"
+    },
+    {
+      "file": "map-bridge-roof.png",
+      "sha256": "e8fd0079516d12920da32b931cd9b344fc0e58ddc07583defa5ecce7615bf00d",
+      "observation": "从高处可辨横跨街道的平屋顶和两侧墙面的接合位置。北桥横断街巷的上空，街道在其两侧延续。屋面和后方隐蔽部分的尺度仍是估计。"
+    },
+    {
+      "file": "map-mobile.png",
+      "sha256": "893ad030dda996a950366086531fe7a999a328f65161091bc9d9e20057e293a7",
+      "observation": "390×844 竖屏中，屋顶、上下窗带和悬空底板完整落在上方工具条和下方地点卡之间。地点卡指向北侧天桥，桥下可见街面。"
+    },
+    {
+      "file": "failure-state.png",
+      "sha256": "48ae2d68c41c916e4cbebdeda45bca91bc9e4871854c9f3373b27a74cc7fc99d",
+      "observation": "原计划截图超时后，诊断截图成功保存了相同的320×568全市视图。编号灯牌分行排列，87号位于第七行。下方旧永安地点卡记录点击前的状态，专项报告记录了触屏实点87号后新地点卡和近景模型的哈希。"
+    }
+  ],
+  "secondary_review": {
+    "files": [
+      "map-desktop.png",
+      "map-north-bridge.png"
+    ],
+    "observation": "第二位检查者复核了两张实景，识别到两端接入两栋楼、两排横窗和桥下连续的街道。原有粗楼截面没有遮住桥面。"
+  },
+  "touch_return_sha256": "c25336dddbf57e11f4fee4291f11a11a43e90339c6b298c0f62c047042132aa6",
+  "road_comparison": {
+    "road_probes": 5,
+    "neighbor_building_controls": 2,
+    "passing_views": 6
+  },
+  "input": {
+    "mouse": {
+      "point": {
+        "id": "huangpu-wing-on-skybridges",
+        "number": 87,
+        "x": 129.5,
+        "y": 399,
+        "width": 24,
+        "height": 20,
+        "compact": true
+      },
+      "hits": 87,
+      "count": 87
+    },
+    "dense_hit_tests_before_capture_timeout": {
+      "point": {
+        "id": "huangpu-wing-on-skybridges",
+        "number": 87,
+        "x": 45.5,
+        "y": 324,
+        "width": 22,
+        "height": 18,
+        "compact": true
+      },
+      "hits": 87,
+      "count": 87
+    },
+    "actual_touch": {
+      "hash": "#landmark=huangpu-old-wing-on-company&mode=overview",
+      "viewport": [
+        320,
+        568
+      ],
+      "count": 87,
+      "correct": 87,
+      "overlapFallback": 0,
+      "target": {
+        "id": "huangpu-wing-on-skybridges",
+        "number": 87,
+        "x": 111.5,
+        "y": 306,
+        "width": 22,
+        "height": 18,
+        "compact": true
+      }
+    },
+    "after_tap": {
+      "hash": "#landmark=huangpu-wing-on-skybridges&mode=overview",
+      "title": "新老永安跨浙江中路北侧封闭天桥",
+      "mode": "overview",
+      "viewport": [
+        320,
+        568
+      ],
+      "walkDisabled": true,
+      "visible": true,
+      "variant": "full",
+      "sha256": "3eea41a1065fe277894742d3cee8dc17825190b6ada827ca24726f21ea3c575f",
+      "bytes": 3323012,
+      "triangles": 59964,
+      "zoom": 19.97573663357898,
+      "contextLost": false
+    }
+  },
+  "limits": "桥底13米为模型净高。既有东楼的简化窗洞造成部分探针穿过外墙，真实结构支座、南桥和商场内部未实测。"
+}

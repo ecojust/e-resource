@@ -1,0 +1,34 @@
+{
+  "model": "huangpu-wing-on-skybridges",
+  "completed": true,
+  "catalogSha256": "1566ca9b8cf868734035c018d89b47e2b69a0d8204b73e953fab9d7b362d24c5",
+  "count": 87,
+  "stages": [
+    {
+      "report": "main-map-browser.json",
+      "sha256": "e9ee06b9aca30ae69ad44dd505915d24ea7a1d3ff33f0d01c9ba81efea83cc52",
+      "passed": [
+        "desktop entry",
+        "north elevation",
+        "roof and connections",
+        "city LOD",
+        "mobile entry",
+        "87 mouse and 87 touch label hit tests",
+        "real mouse selection and verified full bridge on return"
+      ],
+      "stopped": "The additional 320 × 568 city screenshot exceeded its 180-second compositor timeout before the tap. The subsequent diagnostic screenshot succeeded at the same size and location."
+    },
+    {
+      "report": "touch-return.json",
+      "sha256": "c25336dddbf57e11f4fee4291f11a11a43e90339c6b298c0f62c047042132aa6",
+      "passed": [
+        "all four downloads match manifest bytes and SHA256",
+        "87/87 dense touch targets",
+        "actual touchscreen tap, selected bridge route, overview, correct title and verified full geometry"
+      ]
+    }
+  ],
+  "diagnostic_image": "failure-state.png",
+  "visual_review": "main-map-visual-review.json",
+  "source_receipts": "main-map-sources.json"
+}
