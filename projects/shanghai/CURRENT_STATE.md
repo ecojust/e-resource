@@ -1,3 +1,11 @@
+# 中西女中东楼（五一楼）院落立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) · [单体旋转与下载](mctyeire-east-building.html) · [来源与制作范围](source/precise/changning-mctyeire-east-building/README.md) · [验收记录](data/audit/mctyeire-east-building-v1/README.md)
+
+江苏路155号原中西女中东楼（五一楼）面向草坪的中央山墙、两侧拱廊、双排窗及前坡老虎窗，按2017年院内照片核查。
+
+近景 35,328 个三角面，远景 21,408 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,118,912 字节。上海主图现有 172 处独立入口，长宁区 8 处。[资产清单](assets/models/candidates/changning-mctyeire-east-building/manifest.json)
+
 # 光明中学教学楼（原中法学堂）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sino-french-school-teaching-building&mode=overview) · [单体旋转与下载](sino-french-school.html) · [来源与制作范围](source/precise/huangpu-sino-french-school-teaching-building/README.md) · [验收记录](data/audit/sino-french-school-v1/README.md)
