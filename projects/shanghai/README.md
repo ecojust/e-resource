@@ -125,7 +125,7 @@
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 四行仓库（含毗邻大陆银行仓库） | [2026-10-27 10:11:58](https://github.com/ecojust/e-resource/commit/20e45cb3b33234e73bcef1a12528c249d98f3cac) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk) |
-| 宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview) |
+| 宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙） | 2026-11-20 13:21:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview) |
 
 ### 普陀区（1处）
 

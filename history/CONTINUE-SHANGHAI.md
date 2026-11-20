@@ -4,7 +4,7 @@
 
 ## 当前进度（2026-11-20）
 
-第 38 项上海邮政总局已完成浏览器验收和公开字节核对，本地验收提交为 `2405a88`。第 39 项宏恩医院花园立面已经制作，目录现有 85 个入口，静安区 2 处。四件模型合计 8,436,356 字节，原始 GLB 的 SHA256 为 `4d78ca35d8f3bca3f51e6a6ad690183cd293c0c2c6ba69a0eb256b6f54623e29`。本次新增版本只在本地 master 保存，首次发布后核对公开字节。接手时核对[模型清单](../projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json)、[验收记录](../projects/shanghai/data/audit/country-hospital-v1/README.md)与[本轮工作记录](2026-11-20-001.md)。
+第 38 项上海邮政总局已完成浏览器验收和公开字节核对，本地验收提交为 `2405a88`。第 39 项宏恩医院花园立面已经制作，目录现有 85 个入口，静安区 2 处。四件模型合计 8,436,356 字节，原始 GLB 的 SHA256 为 `4d78ca35d8f3bca3f51e6a6ad690183cd293c0c2c6ba69a0eb256b6f54623e29`。模型提交 `fe99c18` 已推送 GitHub master，28 项[固定版本公开文件](../projects/shanghai/data/audit/country-hospital-v1/publication.json)已逐字节核对。接手时核对[模型清单](../projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json)、[验收记录](../projects/shanghai/data/audit/country-hospital-v1/README.md)与[本轮工作记录](2026-11-20-001.md)。
 
 第 40 项搜集宏恩医院主楼侧后部、完整屋顶和历史楼与现代连接楼的资料。先查历史平面、修缮资料和可定年的侧后照片，确定各部分所属楼栋及参考年代。现有花园一侧的 21 个开间和门廊已经交付，不要重复建模。
 

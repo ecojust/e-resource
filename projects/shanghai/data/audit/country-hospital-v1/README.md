@@ -31,3 +31,8 @@ MODEL_BASE_URL=http://127.0.0.1:8784/ QA_OUTPUT_DIR=/tmp/country-hospital-city n
 ```
 
 六项目录生成检查及本次灯牌、导航、相机和截面专项均通过。全项目 `npm test` 中的旧碰撞测试有六项因夹具未提供 `candidateState` 而失败，在上栋提交和本轮工作区均已复现。[基线对照](test-baseline-comparison.json)
+
+
+## 公开下载
+
+模型提交 `fe99c185d485d8916b265a0e04fe42b72bde717c` 的 28 个公开文件与 Git 字节一致，包括三份 GLB 和可编辑 Blender 文件。[固定版本主图](https://raw.githack.com/ecojust/e-resource/fe99c185d485d8916b265a0e04fe42b72bde717c/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview) · [逐文件哈希](publication.json)
