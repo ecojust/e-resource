@@ -20,3 +20,7 @@ Blender重新打开286个可编辑网格并逐材质匹配142,818个三角面。
 115处主图从区目录进入。1280×800默认视图和手机默认视图均可看清花园一侧的圆凸厅及左右低翼。近景逐一打开五开间的西廊、弧面柱廊及宴会厅屋顶，三个视角均确认只裁去历史会所所占的4860，保留现代酒店塔3385及其他同组建筑。地面12点、远景切换和四项下载通过。此轮绑定原115处场景的140个实际HTTP资源和四项目录记录。[桌面主图](main-desktop.png) · [花园正面](garden-bow-and-five-arches.png) · [手机主图](main-mobile.png) · [图像复核](map-visual-review.json) · [完整运行](main-map-browser.json) · [字节复核](main-map-input-verification.json)
 
 更新后的115处发布页面另从区目录进入并实拍，1280×800下花园立面和圆凸厅完整可见，名称牌位于建筑上方。四帧开场遮罩均已隐藏，地块4860的绑定及其精确掩膜与上一轮一致。此默认相机截帧时邻近原生细节仍在加载；上轮三个近景已逐项检查相同的共享组。[最终默认入口](final-overview.png) · [相机和地块记录](final-overview-browser.json) · [全部267个HTTP输入](final-snapshot-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/30073fb520857a3208e70130ea022be2a4cd6eee/projects/shanghai/index.html#landmark=huangpu-french-club&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
