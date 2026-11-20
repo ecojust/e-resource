@@ -1,3 +1,11 @@
+# 瑞金宾馆1号楼（马立斯住宅主楼与庭院立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruijin-guesthouse-01&mode=overview) · [单体旋转与下载](ruijin-guesthouse-01.html) · [来源与制作范围](source/precise/huangpu-ruijin-guesthouse-01/README.md) · [验收记录](data/audit/ruijin-guesthouse-01-v1/README.md)
+
+原马立斯住宅、瑞金宾馆1号楼的花园侧外观。分栋依据包括带比例的酒店总图，门牌按各自来源保留。
+
+近景 42,304 个三角面，远景 15,420 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,562,391 字节。上海主图现有 107 处独立入口，黄浦区 41 处。[资产清单](assets/models/candidates/huangpu-ruijin-guesthouse-01/manifest.json)
+
 # 兴国宾馆1号楼（太古洋行花园住宅）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) · [单体旋转与下载](xingguo-guesthouse-01.html) · [来源与制作范围](source/precise/changning-xingguo-guesthouse-01/README.md) · [验收记录](data/audit/xingguo-guesthouse-01-v1/README.md)

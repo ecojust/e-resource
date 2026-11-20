@@ -24,6 +24,11 @@ const contract = JSON.parse(fs.readFileSync(path.join(audit,'final-placement-con
 const selected = control ? PRIOR : ID;
 const group = review.near_tiles.find(g=>g.feature_local_ids.includes(contract.owner.feature_local_id));
 const source = review.owners.find(r => r.local_id===contract.owner.feature_local_id);
+const addedOwners=spec.addedOwners??[source.local_id];
+const declaredOwners=(contract.owners??[contract.owner]).map(o=>o.feature_local_id);
+assert.deepEqual([...addedOwners].sort((a,b)=>a-b),[...declaredOwners].sort((a,b)=>a-b));
+assert.ok(addedOwners.every(id=>group.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');
+const extraOwners=review.owners.filter(r=>r.local_id!==source.local_id&&addedOwners.includes(r.local_id));
 const neighbors = review.owners.filter(r=>spec.neighbors.includes(r.local_id));
 const point = (x,y) => {
   const h=contract.heading*Math.PI/180,k=6371008.8*Math.cos(contract.lat*Math.PI/180);
@@ -63,7 +68,7 @@ async function run() {
   page.on('requestfailed',r=>{if(r.failure()?.errorText!=='net::ERR_ABORTED')result.failed.push({url:r.url(),failure:r.failure()});});
   page.on('response',r=>{const u=new URL(r.url());if(r.status()>=400)result.failed.push({url:r.url(),status:r.status()});
     if(u.origin===new URL(base).origin&&r.status()===200)received.add(decodeURIComponent(u.pathname.slice(1)));});
-  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,owner:source,neighbors,adjacentID:spec.adjacentModel};
+  const context={id:ID,selected,control,macro:review.frozen_macro,group:group.id,owner:source,extraOwners,neighbors,adjacentID:spec.adjacentModel};
   const manifest = row && read(row.candidate_manifest);
   async function settle(variant,detail=false){
     await page.waitForFunction(({selected,variant,detail,macro,group,owner,control,adjacentID})=>{
@@ -92,12 +97,13 @@ async function run() {
       },{...context,expected:spec.sourceSectionCount},{polling:400,timeout:240000});
     }
     console.log('[map]',name);
-    const state=await page.evaluate(({id,selected,macro,group,owner,neighbors,adjacentID})=>{
+    const state=await page.evaluate(({id,selected,macro,group,owner,extraOwners,neighbors,adjacentID})=>{
       const app=window.__SHANGHAI_APP__,s=app.scene,m=s.map,beacons=s.getBuildingBeaconState(),ci=s.getCandidateIntegrationState();
       const sourceState=o=>m.getFeatureState({source:'overture-buildings',sourceLayer:'building',id:o.key.slice(9)});
       const label=beacons.labelPositions.find(z=>z.id===selected),gl=m.painter.context.gl;
       return {route:location.hash,name:document.querySelector('#location-name').textContent,viewport:[innerWidth,innerHeight],mode:app.mode,
         walkDisabled:document.querySelector('#start-walk').disabled,asset:s.getLandmarkAssetState(selected),source:sourceState(owner),
+        ...(extraOwners.length?{extraOwnerStates:extraOwners.map(o=>({local_id:o.local_id,state:sourceState(o)}))}:{}),
         adjacentAsset:adjacentID?s.getLandmarkAssetState(adjacentID):undefined,neighbors:neighbors.map(o=>({local_id:o.local_id,state:sourceState(o)})),sections:ci.sourceSections?.filter(x=>x.id===id)??[],clip:ci.clips.find(c=>c.id===id)||null,
         group:ci.shader.ownerScopedSources.find(v=>v.id===macro+'/'+group)||null,shader:{triangles:ci.shader.triangles,limit:ci.shader.triangleLimit,macroTextures:ci.shader.macroTextures??null},
         labels:beacons.count,pick:label?s.pickBuildingBeacon(label):null,camera:{center:m.getCenter(),elevation:m.getCenterElevation(),pitch:m.getPitch(),bearing:m.getBearing(),zoom:m.getZoom()},
@@ -121,6 +127,12 @@ async function run() {
         }
       }
     }
+    if(detail&&extraOwners.length){
+      for(const o of state.extraOwnerStates){
+        if(control){assert.notEqual(o.state.candidateModel,true);assert.ok(!state.group.clip_feature_local_ids.includes(o.local_id));}
+        else assert.ok(o.state.candidateModel||o.state.localModel,'Missing model state on source '+o.local_id);
+      }
+    }
     if(control){assert.deepEqual(state.sections,[]);assert.equal(state.clip,null);assert.notEqual(state.source.candidateModel,true);assert.ok(!state.group.clip_feature_local_ids.includes(source.local_id));}
     else{
       assert.equal(state.name,row.name);assert.equal(state.mode,'overview');assert.equal(state.walkDisabled,true);
@@ -128,7 +140,7 @@ async function run() {
       assert.equal(state.asset.verifiedAsset.sha256,row.assets[variant].sha256);assert.equal(state.asset.triangles,row.assets[variant].triangles);
       assert.deepEqual(state.asset.anchor,[row.lng,row.lat]);assert.equal(state.asset.heading,row.heading);
       assert.deepEqual(state.clip.owner,row.owner);assert.deepEqual(state.clip.geometry,row.replacement_geometry);
-      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...(spec.existingGroupOwners||[]),source.local_id].sort((a,b)=>a-b));assert.equal(state.group.triangles,spec.groupTriangles);if(spec.sourceSectionCount){
+      if(detail){assert.ok(state.source.candidateModel||state.source.localModel);assert.deepEqual([...state.group.clip_feature_local_ids].sort((a,b)=>a-b),[...(spec.existingGroupOwners||[]),...addedOwners].sort((a,b)=>a-b));assert.equal(state.group.triangles,spec.groupTriangles);if(spec.sourceSectionCount){
         assert.equal(state.sections.length,1);
         const section=state.sections[0];
         assert.equal(section.feature_local_id,source.local_id);

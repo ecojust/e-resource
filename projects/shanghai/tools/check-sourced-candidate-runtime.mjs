@@ -17,6 +17,9 @@ const {planCandidateVectorClipping}=await import(pathToFileURL(local('src/candid
 const {candidateGeometryContains}=await import(pathToFileURL(local('src/candidate-city-integrations.js')));
 const contract=JSON.parse(fs.readFileSync(path.join(audit,'final-placement-contract.json')));
 const ownerID=contract.owner.feature_local_id;
+const addedOwners=spec.addedOwners??[ownerID];
+const declaredOwners=(contract.owners??[contract.owner]).map(o=>o.feature_local_id);
+assert.deepEqual([...addedOwners].sort((a,b)=>a-b),[...declaredOwners].sort((a,b)=>a-b));
 const review=read('source/precise/'+contract.id+'/footprint-review.json');
 const catalog=read('data/candidate-city-integrations.json'),model=catalog.models.find(r=>r.id===contract.id);
 for(const key of ['owner','source_feature_ids','replacement_geometry','collision_geometry','model_geometry_sha256'])
@@ -39,6 +42,7 @@ function evaluate(models){
   }
   const clipper=new CandidateCityClipper({THREE,geographicPosition});
   const source=review.near_tiles.find(g=>g.feature_local_ids.includes(ownerID));
+  assert.ok(addedOwners.every(id=>source.feature_local_ids.includes(id)),'Expected every added owner in the tested streamed group');
   const cube=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());
   clipper.bindObject(cube,{id:source.id,parent:{id:review.frozen_macro},ids:source.feature_local_ids});
   const adjacentGroup=review.near_tiles.find(g=>!g.feature_local_ids.includes(ownerID));
@@ -56,26 +60,26 @@ const before=evaluate(catalog.models.filter(r=>r.id!==contract.id)),after=evalua
 assert.equal(after.triangles-before.triangles,spec.addedTriangles??spec.groupTriangles);assert.ok(after.triangles>after.perDrawLimit);
 assert.ok(after.macroTextures>1&&after.largestShaderTable<=after.perDrawLimit);
 const oldOwners=spec.existingGroupOwners||[];
-assert.deepEqual([...after.scopedTargetDraw.clip_feature_local_ids].sort((a,b)=>a-b),[...oldOwners,ownerID].sort((a,b)=>a-b));assert.equal(after.scopedTargetDraw.triangles,spec.groupTriangles);
+assert.deepEqual([...after.scopedTargetDraw.clip_feature_local_ids].sort((a,b)=>a-b),[...oldOwners,...addedOwners].sort((a,b)=>a-b));assert.equal(after.scopedTargetDraw.triangles,spec.groupTriangles);
 assert.deepEqual(before.scopedTargetDraw.clip_feature_local_ids,oldOwners);
 if(after.adjacentDraw)assert.deepEqual(after.adjacentDraw,before.adjacentDraw);
 const clip={...model,geometry:model.replacement_geometry};
-const target=review.owners.find(o=>o.local_id===ownerID);
+const targets=new Set(addedOwners);
 const vector=[];
 for(const source of ['overture-buildings','openmaptiles']){
-  for(const owner of review.owners.filter(r=>[ownerID,...spec.neighbors].includes(r.local_id))){
+  for(const owner of review.owners.filter(r=>[...addedOwners,...spec.neighbors].includes(r.local_id))){
     const feature={type:'Feature',id:1,properties:{id:owner.key.slice(9)},geometry:owner.geometry_wgs84};
     const plan=planCandidateVectorClipping([feature],{candidateClips:[clip]},{source,sourceLayer:'building'});
     assert.equal(plan.stats.clippingErrors,0);
-    const retainedProbes=spec.ground.filter(p=>p.modelObstacle===false&&p.expected==='building');
-    const partial=owner===target&&retainedProbes.length>0;
+    const retainedProbes=spec.ground.filter(p=>p.modelObstacle===false&&p.expected==='building'&&(p.ownerLocalId??ownerID)===owner.local_id);
+    const partial=targets.has(owner.local_id)&&retainedProbes.length>0;
     assert.equal(plan.residualData.features.length,partial?1:0);
     if(partial){
       const retained=plan.residualData.features[0].geometry;
       for(const p of retainedProbes)assert.equal(candidateGeometryContains(retained,point(...p.xy)),true,p.name);
       assert.equal(candidateGeometryContains(retained,point(0,0)),false);
     }
-    assert.equal(plan.desired.size,owner===target?1:0);
+    assert.equal(plan.desired.size,targets.has(owner.local_id)?1:0);
     vector.push({source,owner:owner.local_id,hidden:plan.desired.size===1,residuals:plan.residualData.features.length});
   }
 }
