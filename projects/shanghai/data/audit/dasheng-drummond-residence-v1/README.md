@@ -17,3 +17,7 @@
 正式191处城市站逐件复读更名后的页面、公共浏览器模块、模型清单与四件下载。[正式站7项HTTP](viewer-label/production-http.json)
 
 正式主图从190处增至191处。在同一庭院机位，登记前是一面连续的通用建筑外墙，登记后可看到中央红砖门廊、两侧三角山花、上层敞廊及门前石阶。手机从目录点入，桌面鼠标与手机触屏也分别从上一处住宅点选了本栋灯牌。全城缩放下已实取远景文件。地面22次抽查中，草坪小径、弧墙前方和两侧廊前空地均可走，矮墙、石阶与保留的后厅均有阻挡。近远景的10段原有建筑切面分别核实。首次取回两个原始底图文件时上游返回502，随后按原有提交取回相同字节，在两期实测站点逐件复核。[同机位登记前](city-24154/before/map-before.png) · [手机目录进入](city-24154/after/map-mobile-settled.png) · [门廊与石阶](city-24154/after/map-portico-stair.png) · [侧廊与山花](city-24154/after/map-gabled-gallery.png) · [地面和远景文件](city-24154/after/main-browser.json) · [原始底图取回记录](city-24154/input-recovery.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0a5756e1fe5d114d68aed34a1e5092af9328a653/projects/shanghai/index.html#landmark=jingan-dasheng-drummond-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

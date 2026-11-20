@@ -225,7 +225,7 @@
 | 静安别墅25号院门与弄面院墙 | 2026-11-21 05:29:58 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview) |
 | 模范邨22号冒广生旧居入口 | 2026-11-21 05:32:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-mofan-village-no22-entrance&mode=overview) |
 | 景华新邨12号弄内门面 | 2026-11-21 05:36:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jinghua-village-no12&mode=overview) |
-| 大胜胡同德莱蒙德住宅南向花园立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-dasheng-drummond-residence&mode=overview) |
+| 大胜胡同德莱蒙德住宅南向花园立面 | 2026-11-21 05:41:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-dasheng-drummond-residence&mode=overview) |
 
 ### 普陀区（2处）
 
