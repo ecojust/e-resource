@@ -44,34 +44,34 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 109,
+  "candidate_manifest_count": 110,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 107,
-  "resulting_city_count": 147,
+  "new_city_model_count": 108,
+  "resulting_city_count": 148,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
     "杨浦区": 6,
     "虹口区": 8,
     "长宁区": 4,
-    "静安区": 8,
+    "静安区": 9,
     "黄浦区": 58
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 436,
-    "bytes": 1185066492,
+    "files": 440,
+    "bytes": 1202480381,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4304012,
+    "current_run_added_bytes": 17413889,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 304
+    "inherited_incremental_files": 308
   },
   "records": [
     {
@@ -9760,6 +9760,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-informed-partial-exterior",
       "description": "九江路111号大陆银行的临街建筑，核对原址门牌、建筑体量及不同期的临街细部。"
+    },
+    {
+      "id": "jingan-yates-apartments",
+      "name": "同孚大楼（中国银行西区分行旧址）",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "yates-apartments.html",
+      "manifest": "assets/models/candidates/jingan-yates-apartments/manifest.json",
+      "manifest_sha256": "f469d5f63d85c8fc6c12b919f086777cb57f31e014c7401199b59d32edb6658f",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-yates-apartments/jingan-yates-apartments-raw.glb",
+          "bytes": 9483016,
+          "sha256": "d92f1b836e98dba7cfdc78f45169cf39154f0d065fb4657deda996eab4943dad",
+          "triangles": 163140,
+          "bounds_gltf_m": [
+            [
+              -18.003585815429688,
+              0.009999999776482582,
+              -6.940000057220459
+            ],
+            [
+              19.815000534057617,
+              34.45000076293945,
+              9.450675010681152
+            ]
+          ],
+          "materials": 14
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-yates-apartments/jingan-yates-apartments-web.glb",
+          "bytes": 3762864,
+          "sha256": "1f052338fdb316bca2842d65758f5083ced6439fadd5636f5ede1a5e6e6e57bf",
+          "triangles": 163140,
+          "bounds_gltf_m": [
+            [
+              -18.0035858,
+              0.00999999978,
+              -6.94000006
+            ],
+            [
+              19.8150005,
+              34.4500008,
+              9.45067501
+            ]
+          ],
+          "materials": 14
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-yates-apartments/jingan-yates-apartments-lod.glb",
+          "bytes": 2407508,
+          "sha256": "c062fb1fed8b0aa5ab44af0a97467b8255ced1e0856c0d8510564cf313c651e3",
+          "triangles": 104642,
+          "bounds_gltf_m": [
+            [
+              -17.9863644,
+              0.00999999978,
+              -6.94000006
+            ],
+            [
+              19.8150005,
+              34.4500008,
+              9.43222332
+            ]
+          ],
+          "materials": 14
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-yates-apartments/jingan-yates-apartments.blend",
+          "bytes": 1760501,
+          "sha256": "7f7642d7fc19cdee601f362843443dadf6b33ab215c632fa0c345d8c15f8b52c"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -18.003585815429688,
+            0.009999999776482582,
+            -6.940000057220459
+          ],
+          "max": [
+            19.815000534057617,
+            34.45000076293945,
+            9.450675010681152
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -18.003585815429688,
+            -9.450675010681152,
+            0.009999999776482582
+          ],
+          "max": [
+            19.815000534057617,
+            6.940000057220459,
+            34.45000076293945
+          ]
+        },
+        "triangles": 163140,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "南京西路801号中国银行西区分行和同孚大楼的临街部分，以三角地块、相邻公寓门牌和现场照片定位。"
     }
   ],
   "baseline_inventory": {
@@ -9836,6 +9942,7 @@
     "projects/shanghai/assets/models/candidates/jingan-jewish-club/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-paramount-ballroom/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-yates-apartments/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-yuhua-new-residential-quarter-03/manifest.json",
     "projects/shanghai/assets/models/candidates/xuhui-zhongshan-hospital-main-building/manifest.json",
     "projects/shanghai/assets/models/candidates/xuhui-zikawei-north-library/manifest.json",
@@ -9847,13 +9954,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/continental-bank-v1",
+  "incremental_audit_directory": "data/audit/yates-apartments-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/jialing-building-v1/inventory-increment.json",
-    "bytes": 262040,
-    "sha256": "49da5f1eb82f46770fcf6f1b124a0536266b4d759fd7938a95787776266016c6"
+    "file": "data/audit/continental-bank-v1/inventory-increment.json",
+    "bytes": 265558,
+    "sha256": "5037e3de98dcd6895f3a7ae1c25b13ebec8ef8893ec2332f3b8334c236dd19e0"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-continental-bank/manifest.json"
+    "projects/shanghai/assets/models/candidates/jingan-yates-apartments/manifest.json"
   ]
 }

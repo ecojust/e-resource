@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>同孚大楼 · 原中国银行西区分行</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".18" aria-label="南京西路同孚大楼三维模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-yates-apartments&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 南京西路801–803号</p>
+    <h1>同孚大楼</h1>
+    <p>1936年 · 原中国银行西区分行</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">银行上方的八排公寓窗沿半月形街墙连续转弯。南京西路端升起方塔，吴江路端留有圆柱状的老供暖设施。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">南京西路弧形街面</button>
+      <button type="button" data-view="oblique">斜侧面</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-yates-apartments/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-yates-apartments');
+  </script>
+</body>
+</html>
