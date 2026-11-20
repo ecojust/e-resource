@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 175 处入口。最近接入[若瑟堂（四川南路36号东立面与钟塔）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-st-joseph-church-east-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 176 处入口。最近接入[清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的137项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的138项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 138 | 清心堂主堂东北内庭 | 黄浦区／大昌街30号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；另核沿街钟楼、校舍以及陆家浜路原址的范围和年代。 |
-| 139 | 鸿德堂入口双石狮 | 虹口区／多伦路59号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对旧照与修缮档案，补查石狮制作年代和背面的雕刻。 |
+| 139 | 鸿德堂入口双石狮 | 虹口区／多伦路59号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对旧照与修缮档案，补查石狮制作年代和背面的雕刻。 |
 | 140 | 息焉堂主堂（名录安息堂） | 长宁区／可乐路1号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；单列北侧钟楼，核对原始设计、建堂与复堂年代，补查墓园历史边界。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -117,7 +116,7 @@
 | sh-historic-b2-069 | 中法学堂早期校舍与分期接缝 | 淮海东路70号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补查两翼接缝的原始图纸、南门变迁以及与校园后建高楼的范围。 |
 | sh-historic-b2-071 | 震旦大学博物馆及图书馆其余立面 | 重庆南路280号/重庆南路225号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 单列重庆南路225号1930年博物馆，核实图书馆背面、两栋的分期与旧门牌。 |
 | sh-historic-b2-073 | 若瑟堂后部堂身、侧廊及钟塔分期 | 四川南路36号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对后部堂身与侧廊、有日期的修缮剖面和钟塔历史装饰分期。 |
-| sh-historic-b2-074 | 清心堂 | 大昌街30号 | [名录][H2] | 待核外观／拆栋 |
+| sh-historic-b2-074 | 清心堂外院及原清心书院分期 | 大昌街30号 | [名录][H2] · [当前完成范围][MTD-aa5f33d7] | 另核沿街钟楼、校舍以及陆家浜路原址的范围和年代。 |
 | sh-historic-b2-079 | 小桃园清真寺 | 小桃园街52号（主楼） | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-081 | 慈修庵 | 榛岭街15号 | [名录][H2] | 待核外观／拆栋 |
 | sh-historic-b2-083 | 东正教堂 | 皋兰路16号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2661,9 +2660,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余967条／已关联69条）
+### 既有地图中的具名建筑待查线索（剩余966条／已关联70条）
 
-原始1,036条具名地图要素中，69条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余967条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，70条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余966条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -3312,7 +3311,6 @@
 | 16ee2ebd-e6be-4908-87b1-24f902797b39 | 南国大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 1790c5cf-7e8b-4f44-8bef-7f73c3239391 | 泰隆银行大厦 | 浦东新区 | 核身份／去重／查建筑参考 |
 | 1f826d63-8941-4491-9827-7cbbca761951 | N3 | 浦东新区 | 核身份／去重／查建筑参考 |
-| 233c0561-13c5-4b71-9b9b-9109a415e713 | 清心堂 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 267d96e0-6654-42b8-9fb0-87f732ec7d94 | 陆家嘴滨江中心N2座 | 浦东新区 | 核身份／去重／查建筑参考 |
 | 2a57d9ea-d55f-415f-89ff-d042c7f772f5 | S1 | 浦东新区 | 核身份／去重／查建筑参考 |
 | 382d62e2-a094-43e7-928b-9b48f33c817a | 武警水上支队 | 浦东新区 | 核身份／去重／查建筑参考 |
@@ -3660,7 +3658,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；175处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中135件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；176处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中136件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3668,7 +3666,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增135处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增136处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3690,10 +3688,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，175处建筑与构件模型入口（40处既有＋135处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增135处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，176处建筑与构件模型入口（40处既有＋136处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增136处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（88处）
+### 黄浦区（89处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3787,6 +3785,7 @@
 | 光明中学教学楼（原中法学堂） | 2026-11-21 03:17:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sino-french-school-teaching-building&mode=overview) |
 | 震旦大学图书馆教学大楼（西一号楼）球场侧立面 | 2026-11-21 03:24:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-aurora-university-library&mode=overview) |
 | 若瑟堂（四川南路36号东立面与钟塔） | 2026-11-21 03:42:28 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-st-joseph-church-east-front&mode=overview) |
+| 清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview) |
 
 ### 徐汇区（14处）
 

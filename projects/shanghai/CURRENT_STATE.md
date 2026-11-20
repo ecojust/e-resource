@@ -1,3 +1,11 @@
+# 清心堂主堂东北内庭（两翼拱窗、双梯与中央门洞）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-church&mode=overview) · [单体旋转与下载](pure-heart-church.html) · [来源与制作范围](source/precise/huangpu-pure-heart-church/README.md) · [验收记录](data/audit/pure-heart-church-v1/README.md)
+
+大昌街30号现存主堂的东北内庭，按堂点资料和不同时期庭院照片制作两翼券窗、双梯及中央门洞。
+
+近景 20,196 个三角面，远景 13,280 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,469,597 字节。上海主图现有 176 处独立入口，黄浦区 89 处。[资产清单](assets/models/candidates/huangpu-pure-heart-church/manifest.json)
+
 # 若瑟堂（四川南路36号东立面与钟塔）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-st-joseph-church-east-front&mode=overview) · [单体旋转与下载](st-joseph-east-front.html) · [来源与制作范围](source/precise/huangpu-st-joseph-church-east-front/README.md) · [验收记录](data/audit/st-joseph-east-front-v1/README.md)
