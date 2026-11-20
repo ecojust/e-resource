@@ -1187,13 +1187,13 @@
     {
       "id": "bund06",
       "candidate_id": "bund06",
-      "model": "assets/models/bund/lod-v4/bund06.glb",
-      "sha256": "433f701a74159017e0df0c76872245d5b56ff8100705bd4ce81a8fdcf65c5996",
-      "bytes": 956784,
-      "triangles": 40467,
-      "full_triangles": 91111,
-      "actual_triangle_ratio": 0.444150541647002,
-      "draw_primitives": 10,
+      "model": "assets/models/bund/revisions/bund06/east-window-columns/bund06-east-window-columns-lod.glb",
+      "sha256": "c095f837b980ce967c2266c7273a685a07eab09bbe92ad4277884ff32d852316",
+      "bytes": 1009068,
+      "triangles": 45663,
+      "full_triangles": 100735,
+      "actual_triangle_ratio": 0.4532982578051323,
+      "draw_primitives": 16,
       "maximum_bounds_change_m": 4.782714668749577e-08,
       "source_bounds_glb": {
         "min": [
@@ -1219,31 +1219,20 @@
           22.6925716
         ]
       },
-      "full_model_unchanged_sha256": "641bc6f0b747df3a7405bda467b65311f9758493f6b32d6d463d18cb94eed0a6",
-      "close_up_web_unchanged_sha256": "bd7e553e55a09efe4f01279cd68650cbfb2fe324aeee0228eabb712d2054a596",
-      "native_unchanged_sha256": "c57b8c8c0f5714cfd08deb7e218fb1876c497cd3c3d528bcf2b12c28c7ce9474",
+      "full_model_unchanged_sha256": "bb14869f2c326c00c8b3863b4d4156a6308ea2d2c30cf46dd52ee0ce69daa3cd",
+      "close_up_web_unchanged_sha256": "49f67205e232c79044750b848cd6c2c483e2a352a332aaba31769b2c34dd813c",
+      "native_unchanged_sha256": "c6eac82f72a48069da094a4bdb065cf280bdd3a6d1834d4efd858b0a9617bd20",
       "switch_out_distance_m": 400,
       "switch_in_distance_m": 300,
       "generation": {
-        "mode": "simplified",
-        "target_triangle_ratio": 0.35,
-        "relative_error_limit": 0.002,
-        "permissive_attribute_simplification": true,
-        "parameters": [
-          "-cc",
-          "-noq",
-          "-km",
-          "-ke",
-          "-si",
-          "0.35",
-          "-se",
-          "0.002",
-          "-sp"
-        ],
-        "triangles": 40467,
-        "bytes": 956784,
+        "mode": "existing V6 LOD plus six independently authored lower-detail window shafts",
+        "triangles": 45663,
+        "bytes": 1009068,
         "maximum_bounds_change_m": 4.782714668749577e-08,
-        "accepted": true
+        "accepted": true,
+        "base_lod_sha256": "433f701a74159017e0df0c76872245d5b56ff8100705bd4ce81a8fdcf65c5996",
+        "base_lod_triangles": 40467,
+        "added_triangles": 5196
       },
       "attempts": [
         {
@@ -1266,6 +1255,16 @@
           "bytes": 956784,
           "maximum_bounds_change_m": 4.782714668749577e-08,
           "accepted": true
+        },
+        {
+          "mode": "existing V6 LOD plus six independently authored lower-detail window shafts",
+          "triangles": 45663,
+          "bytes": 1009068,
+          "maximum_bounds_change_m": 4.782714668749577e-08,
+          "accepted": true,
+          "base_lod_sha256": "433f701a74159017e0df0c76872245d5b56ff8100705bd4ce81a8fdcf65c5996",
+          "base_lod_triangles": 40467,
+          "added_triangles": 5196
         }
       ],
       "photographic_texture_in_lod": false,
@@ -1319,7 +1318,8 @@
         "geometry_scene_buffer_json_unchanged": true
       },
       "explicit_material_approximation": true,
-      "source_package": "source/bund/photo-rebuild-v6/bund06/README.md"
+      "source_package": "source/precise/bund06/revisions/east-window-columns/README.md",
+      "asset_revision_manifest": "source/precise/bund06/revisions/east-window-columns/manifest.json"
     },
     {
       "id": "bund07",

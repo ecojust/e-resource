@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 126 处入口。最近接入[提篮桥旧址长阳路门楼（2015年街面）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-tilanqiao-historic-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 126 处入口。最近细化[中国通商银行旧址 · 外滩6号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的82项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的83项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,7 +31,9 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 83 | 中国通商银行临江二层窗柱 | 黄浦区／中山东一路6号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>) · [外滩6号既有窗套与两期真实照片](<projects/shanghai/data/audit/municipal-heritage-register-2026-11-20/bund06-bund17/README.md>)；核对2014和2025年临江照片，记录屋顶栏板的改建，保留原立面与现有城市入口。 |
+| 84 | 字林西报大楼两端翼门 | 黄浦区／中山东一路17号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143] · [原外滩17号三角面与首层照片核对](<projects/shanghai/data/audit/municipal-heritage-register-2026-11-20/bund06-bund17/README.md>)；对照有日期的外景与V4.4原网格，保留已有原建筑窗洞、照片玻璃与屋顶。 |
+| 85 | 香港路银行公会大楼 | 黄浦区／香港路59号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；逐项比对街景、中部后退及院侧资料，分开密接邻栋。 |
+| 86 | 慈淑大楼南京路街角 | 黄浦区／南京东路353号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；对照当前门牌、1930年代建筑档案及近年实照核实开幕与加层日期。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -74,7 +76,7 @@
 | sh-historic-b2-010 | 国泰大戏院观众厅和后部 | 淮海中路870号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 取得背侧建筑面、原观众厅平面及修缮期资料。 |
 | sh-historic-b2-011 | 兰心后部戏台与侧面 | 茂名南路57号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核查剧院屋面、侧墙与后台的历史和现状。 |
 | sh-historic-b2-016 | 仁济住院楼其余翼部与背侧 | 山东中路145号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实住院楼其余院翼和背面，区分门诊楼和后建住院设施。 |
-| sh-historic-b2-019 | 中国通商银行 | 中山东一路6号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund06；待核对范围 |
+| sh-historic-b2-019 | 中国通商银行屋顶栏板改建 | 中山东一路6号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核查2014与2025年两组照片之间的屋顶栏板改建年份和侧后部资料。 |
 | sh-historic-b2-020 | 字林西报大楼 | 中山东一路17号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund17；待核对范围 |
 | sh-historic-b2-021 | 银行公会大楼 | 香港路59号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-022 | 慈淑大楼 | 南京东路353号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3676,6 +3678,7 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
+[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3733,7 +3736,7 @@
 | 上海总会 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund02&mode=walk) |
 | 有利大楼 · 外滩3号 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk) |
 | 日清大楼 · 外滩5号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk) |
-| 中国通商银行旧址 · 外滩6号 | [2026-10-26 15:50:52](https://github.com/ecojust/e-resource/commit/6509d058496278190fc97d97ccfb9ef809960d41) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk) |
+| 中国通商银行旧址 · 外滩6号 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund06&mode=walk) |
 | 大北电报公司大楼 · 外滩7号 | [2026-10-26 16:20:09](https://github.com/ecojust/e-resource/commit/fb07d1739ea75948de463d23e09225bca62122d8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund07&mode=walk) |
 | 轮船招商局大楼 · 外滩9号 | [2026-10-26 16:37:45](https://github.com/ecojust/e-resource/commit/e81cc48c965a840c522caa3c900a4246b7119eae) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund09&mode=walk) |
 | 汇丰银行大楼 | [2026-10-26 09:46:05](https://github.com/ecojust/e-resource/commit/ede477945f224a6d152159ec07ed81dcf9d6bc33) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund12&mode=walk) |
