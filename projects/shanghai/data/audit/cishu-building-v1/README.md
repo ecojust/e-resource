@@ -28,3 +28,7 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ef645bdc494fe42f52b2e95ca247e31622c3acd0/projects/shanghai/index.html#landmark=huangpu-cishu-building&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+## 128处入口版本的公开下载
+
+第82至86项制作涉及五处建筑。提篮桥门楼、银行公会大楼和慈淑大楼各新增一个入口，外滩6号和17号沿用原入口。已从同一固定版本下载并核对五份模型清单、20件模型文件及五个地图启动文件，共76,928,296字节；主图128个地点标识均唯一。[地点、下载地址与校验值](public-city-downloads-128.json)
