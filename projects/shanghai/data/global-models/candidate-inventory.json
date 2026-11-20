@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 118,
+  "candidate_manifest_count": 119,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 116,
-  "resulting_city_count": 156,
+  "new_city_model_count": 117,
+  "resulting_city_count": 157,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 9,
     "长宁区": 4,
     "静安区": 9,
-    "黄浦区": 65
+    "黄浦区": 66
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 472,
-    "bytes": 1239400372,
+    "files": 476,
+    "bytes": 1244944812,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4317636,
+    "current_run_added_bytes": 5544440,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 340
+    "inherited_incremental_files": 344
   },
   "records": [
     {
@@ -10714,6 +10714,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "photo-informed-partial-exterior",
       "description": "九江路50号上海公库、原三井银行具有四层通高柱的沿街立面，核定其与原三菱银行的实体分界。"
+    },
+    {
+      "id": "huangpu-chung-wei-bank-building",
+      "name": "中汇大楼（原中汇银行大楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "chung-wei-bank.html",
+      "manifest": "assets/models/candidates/huangpu-chung-wei-bank-building/manifest.json",
+      "manifest_sha256": "ae2f134fde7a9d5740c56f05a5f4fc082418c8dee193c3166e3fd6013a1651b1",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-chung-wei-bank-building/huangpu-chung-wei-bank-building-raw.glb",
+          "bytes": 2839204,
+          "sha256": "3792d91aaef826add53d2541676467b13fc7d48ca4a5ceb43d214beae7994471",
+          "triangles": 45204,
+          "bounds_gltf_m": [
+            [
+              -18.296791076660156,
+              -0.09000000357627869,
+              -36.857276916503906
+            ],
+            [
+              17.286691665649414,
+              67.9000015258789,
+              36.43901062011719
+            ]
+          ],
+          "materials": 10
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-chung-wei-bank-building/huangpu-chung-wei-bank-building-web.glb",
+          "bytes": 1160820,
+          "sha256": "5348f87da8edb8feca0d3930f42b41eb3a808396556fd3d94a3359ba21260571",
+          "triangles": 45204,
+          "bounds_gltf_m": [
+            [
+              -18.2967911,
+              -0.0900000036,
+              -36.8572769
+            ],
+            [
+              17.2866917,
+              67.9000015,
+              36.4390106
+            ]
+          ],
+          "materials": 10
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-chung-wei-bank-building/huangpu-chung-wei-bank-building-lod.glb",
+          "bytes": 904660,
+          "sha256": "34de01061816ba11cf236cf5c3640a7bebef064142b94bce43556f72a675dc8f",
+          "triangles": 35552,
+          "bounds_gltf_m": [
+            [
+              -18.2967911,
+              -0.0900000036,
+              -36.8572769
+            ],
+            [
+              17.2866917,
+              67.9000015,
+              36.4390106
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-chung-wei-bank-building/huangpu-chung-wei-bank-building.blend",
+          "bytes": 639756,
+          "sha256": "20b15388779869a2804a6473b0465173f4b58e5502b427e87ddf5872cbbfac35"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -18.296791076660156,
+            -0.09000000357627869,
+            -36.857276916503906
+          ],
+          "max": [
+            17.286691665649414,
+            67.9000015258789,
+            36.43901062011719
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -18.296791076660156,
+            -36.43901062011719,
+            -0.09000000357627869
+          ],
+          "max": [
+            17.286691665649414,
+            36.857276916503906,
+            67.9000015258789
+          ]
+        },
+        "triangles": 45204,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "延安东路143号中汇大楼及其临街入口，依据原中汇银行建筑的照片及实名地块核对邻楼和屋顶。"
     }
   ],
   "baseline_inventory": {
@@ -10747,6 +10853,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-chekiang-first-commercial-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-christian-literature-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-chung-wei-bank-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cishu-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-continental-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
@@ -10810,13 +10917,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/former-mitsui-bank-v1",
+  "incremental_audit_directory": "data/audit/chung-wei-bank-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/former-mitsubishi-bank-v1/inventory-increment.json",
-    "bytes": 294568,
-    "sha256": "5b0428bde89261414aeca95ee47bb5363b8a892069699a2bc07dd7d34aa09577"
+    "file": "data/audit/former-mitsui-bank-v1/inventory-increment.json",
+    "bytes": 298158,
+    "sha256": "50a7c0bfd96203cb449b9fa8b6a729c81a5a39701ef1f619162b5e6975dce3eb"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-former-mitsui-bank/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-chung-wei-bank-building/manifest.json"
   ]
 }

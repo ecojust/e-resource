@@ -1,3 +1,11 @@
+# 中汇大楼（原中汇银行大楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chung-wei-bank-building&mode=overview) · [单体旋转与下载](chung-wei-bank.html) · [来源与制作范围](source/precise/huangpu-chung-wei-bank-building/README.md) · [验收记录](data/audit/chung-wei-bank-v1/README.md)
+
+延安东路143号中汇大楼及其临街入口，依据原中汇银行建筑的照片及实名地块核对邻楼和屋顶。
+
+近景 45,204 个三角面，远景 35,552 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,544,440 字节。上海主图现有 157 处独立入口，黄浦区 82 处。[资产清单](assets/models/candidates/huangpu-chung-wei-bank-building/manifest.json)
+
 # 上海公库（原三井银行九江路正门与六柱廊）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsui-bank&mode=overview) · [单体旋转与下载](former-mitsui-bank.html) · [来源与制作范围](source/precise/huangpu-former-mitsui-bank/README.md) · [验收记录](data/audit/former-mitsui-bank-v1/README.md)
