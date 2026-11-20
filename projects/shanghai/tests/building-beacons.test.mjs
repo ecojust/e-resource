@@ -367,7 +367,13 @@ test('narrow-phone signs avoid actual tool, legend and location-card rectangles 
 // In these two phone fixtures the measured safe width is 243 CSS pixels.
 function expectedNumberCell(count, availableHeight) {
   const allowed = [[24, 20], [22, 20], [22, 18], [20, 18], [20, 16], [22, 15]];
-  const largest = allowed.find(([w, h]) => Math.floor(243 / w) * Math.floor(availableHeight / h) >= count);
+  if (count >= 100) allowed.push([20,15]);
+  const largest = allowed.find(([w,h]) => {
+    const rows=Math.floor(availableHeight/h),wide=Math.max(0,count-99);
+    const fullWideRows=Math.floor(wide/9),lastWide=wide%9;
+    const finalMixed=lastWide?lastWide+Math.floor((243-lastWide*26)/w):0;
+    return fullWideRows*9+finalMixed+(rows-fullWideRows-(lastWide?1:0))*Math.floor(243/w)>=count;
+  });
   assert(largest, 'all delivered signs must fit inside the measured phone area');
   return largest;
 }
@@ -393,7 +399,7 @@ test('all delivered models remain separate and clickable above a tall title card
   const state=beacons.getState();
   assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);assert.equal(state.labelMode,'numbers');
   const [cellWidth,cellHeight]=expectedNumberCell(count,158);
-  assert(state.labelPositions.every(row=>row.compact&&row.width===cellWidth&&row.height===cellHeight));
+  assert(state.labelPositions.every(row=>row.compact&&row.width===(row.number>=100?26:cellWidth)&&row.height===cellHeight));
   assertSeparated(state.labelPositions);
   assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:340});
   assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
@@ -443,14 +449,14 @@ test('long building title cards retain every delivered sign in the smaller phone
     for(const zoom of [8,12,18,24]){
       map.zoom=zoom;beacons.refresh();const state=beacons.getState();
       assert.equal(state.viewportLabelCount,delivered.length);assert.equal(state.overlapFallbackCount,0);
-      assert(state.labelPositions.every(row=>row.width===denseWidth&&row.height===denseHeight));
+      assert(state.labelPositions.every(row=>row.width===(row.number>=100?26:denseWidth)&&row.height===denseHeight));
       assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
       assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
       for(const row of state.labelPositions)assert.equal(beacons.hitTest({x:row.x,y:row.y}),row.id);
       const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));assert.equal(numbers.layout['text-size'],12);
       for(const feature of map.getSource(numbers.source).data.features){
         const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
-        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[denseWidth,denseHeight]);
+        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[feature.properties.number>=100?26:denseWidth,denseHeight]);
       }
     }
   }
@@ -713,4 +719,37 @@ for(const count of [1,70])test(`${count} high-pitch signs use screen offsets abo
     for(const [lng,lat] of points)assert(lng>120.9&&lng<121.1&&lat>30.9&&lat<31.1,'no label or leader may jump behind the camera or outside the local city');
   }
   beacons.destroy();
+});
+
+
+test('100 records keep separate sprites, fixed 12 px digits and accurate taps in the 243×138 phone opening',()=>{
+  const map=new BeaconMap({width:320,height:568}),selected=[];
+  map.project=()=>({x:175,y:260});
+  const tools=new Element(),card=new Element();
+  tools.getBoundingClientRect=()=>({left:263,top:190,right:308,bottom:370});
+  card.getBoundingClientRect=()=>({left:12,top:328,right:308,bottom:556});
+  const doc={createElement:tag=>new Element(tag),getElementById:id=>id==='location-card'?card:null,
+    querySelector:q=>q==='.map-tools'?tools:null};
+  const rows=Array.from({length:100},(_,i)=>({id:`hundred-${i+1}`,name:`历史建筑${i+1}号`,lng:121,lat:31,districtId:'310105'}));
+  for(const count of [97,99,100]){
+    const controls=createBuildingBeacons({map,documentObject:doc,records:rows.slice(0,count),onSelect:r=>selected.push(r.id)});
+    const state=controls.getState(),positions=state.labelPositions;
+    assert.equal(state.labelPixelSize,12);assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);
+    assertSeparated(positions);assertWithin(positions,{left:12,right:255,top:182,bottom:320});
+    const layer=[...map.layers.values()].find(l=>l.id.endsWith('-labels-numbers'));
+    assert.equal(layer.layout['text-size'],12);assert.equal(layer.paint['text-halo-width'],.5);
+    const features=map.getSource(layer.source).data.features;
+    for(const item of positions){
+      const f=features.find(f=>f.properties.id===item.id),number=f.properties.number;
+      const width=count<100?22:number===100?26:20;
+      assert.deepEqual([item.width,item.height],[width,15]);assert.equal(f.properties.label,String(number));
+      const key=evaluateStyleExpression(layer.layout['icon-image'],f.properties),sprite=map.images.get(key);
+      assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[width,15]);
+      for(const [dx,dy] of [[0,0],[-width/2+.25,-7.25],[width/2-.25,7.25]]){
+        const point={x:item.x+dx,y:item.y+dy};assert.equal(controls.hitTest(point),item.id);
+        map.emit('click',{point});assert.equal(selected.at(-1),item.id);
+      }
+    }
+    controls.destroy();assert.equal(map.images.size,0);
+  }
 });

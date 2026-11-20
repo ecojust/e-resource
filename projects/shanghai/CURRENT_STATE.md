@@ -1,3 +1,11 @@
+# 怡和洋行大楼临江立面与北京东路转角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview) · [单体旋转与下载](jardine-matheson.html) · [来源与制作范围](source/precise/huangpu-jardine-matheson-building/README.md) · [验收记录](data/audit/jardine-matheson-v1/README.md)
+
+外滩27号怡和洋行大楼的临江九券、四根巨柱与东北斜角。资料涉及不同时期的建筑，按照片区分旧外观和现状，尺寸含估计。
+
+近景 33,332 个三角面，远景 20,672 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,664,544 字节。上海主图现有 100 处独立入口，黄浦区 38 处。[资产清单](assets/models/candidates/huangpu-jardine-matheson-building/manifest.json)
+
 # 亚细亚大楼（外滩1号双街立面与东南转角）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-building&mode=overview) · [单体旋转与下载](asia-building.html) · [来源与制作范围](source/precise/huangpu-asia-building/README.md) · [验收记录](data/audit/asia-building-v1/README.md)

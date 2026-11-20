@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 99 处入口。最近接入[亚细亚大楼（外滩1号双街立面与东南转角）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-building&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 100 处入口。最近接入[怡和洋行大楼临江立面与北京东路转角](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的53项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的54项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 54 | 怡和洋行大楼临江正立面 | 黄浦区／中山东一路27号 | 制作中 | — | [市房屋管理局第一批优秀历史建筑保护名录][MTD-ced8ff8c]；对照官方表、独立建筑面和历次改建资料，区分现栋与先前的洋行建筑。 |
-| 55 | 东方汇理银行临江立面 | 黄浦区／中山东一路29号 | 待制作 | — | [市房屋管理局第一批优秀历史建筑保护名录][MTD-ced8ff8c]；核实原址、建筑年代和临江立面，保留相邻格林邮船大楼与今日滨江街道。 |
+| 55 | 东方汇理银行临江立面 | 黄浦区／中山东一路29号 | 制作中 | — | [市房屋管理局第一批优秀历史建筑保护名录][MTD-ced8ff8c]；核实原址、建筑年代和临江立面，保留相邻格林邮船大楼与今日滨江街道。 |
 | 56 | 西侨青年会南京西路历史主楼 | 黄浦区／南京西路150号 | 待制作 | — | [市房屋管理局第一批优秀历史建筑保护名录][MTD-ced8ff8c]；核对体育大厦和协会原址，按实际独立楼栋调查街面和屋顶，保留其他体育设施。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -60,7 +59,7 @@
 | sh-historic-b1-044 | 八仙桥青年会院侧及屋面补证 | 西藏南路123号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对院侧外墙、屋面接缝及被街景遮挡的区域，调查独立院楼年代。 |
 | sh-historic-b1-046 | 圣三一堂隐蔽立面与内部资料；圣三一堂钟塔高度与修复细节 | 九江路219号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补查修缮图和独立测绘资料，核对隐蔽立面、屋架和室内空间；核对不同时期的尖顶高度、塔身尺寸及修复图纸，保留史料的高度异文。 |
 | sh-historic-b1-050 | 亚细亚大楼院侧与屋顶资料 | 中山东一路1号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实院内立面、改造年代和未得到完整照片的屋面细部。 |
-| sh-historic-b1-051 | 怡和洋行 | 中山东一路27号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b1-051 | 怡和洋行西院与历次增层 | 中山东一路27号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 复核西院立面与临北京东路的各段墙面，分辨不同时期石屏、增建层和当代屋顶。 |
 | sh-historic-b1-052 | 东方汇理银行 | 中山东一路29号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-053 | 西侨青年会 | 南京西路150号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-058 | 瑞金二路住宅 | 瑞金二路18号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -2661,9 +2660,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余1011条／已关联25条）
+### 既有地图中的具名建筑待查线索（剩余1010条／已关联26条）
 
-原始1,036条具名地图要素中，25条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1011条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，26条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1010条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2701,7 +2700,6 @@
 | 3f981638-bddd-49c5-b0e8-d0a410f61a98 | 上海投资组合中心大厦 | 虹口区 | 核身份／去重／查建筑参考 |
 | 41da24c8-93eb-4976-ab99-29a0d0de9bd6 | 浦联公寓 | 静安区 | 核身份／去重／查建筑参考 |
 | 42ea3adc-6585-4c3b-bf91-d79f8e10c5a9 | 4幢 | 静安区 | 核身份／去重／查建筑参考 |
-| 42fc2ba6-9ef2-4f9d-b4c2-51c03092095f | 罗斯福/外滩27 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 461b717b-6418-4f8b-a70d-eba8612d18ee | 上海电气输配电集团有限公司 | 静安区 | 核身份／去重／查建筑参考 |
 | 4621cb59-fd06-4b17-85b4-07457e63a4f1 | 协进大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 4973d67d-e8ce-4ff8-8981-fd60d2940d55 | 上海文学馆 | 虹口区 | 核身份／去重／查建筑参考 |
@@ -3704,7 +3702,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；99处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中59件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；100处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中60件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3712,7 +3710,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增59处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增60处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3734,10 +3732,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，99处建筑与构件模型入口（40处既有＋59处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增59处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，100处建筑与构件模型入口（40处既有＋60处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增60处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（37处）
+### 黄浦区（38处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3780,6 +3778,7 @@
 | 圣三一基督教堂（主堂与花园门廊） | 2026-11-20 15:11:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-cathedral&mode=overview) |
 | 圣三一基督教堂（独立钟塔与连接短廊） | 2026-11-20 15:19:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-holy-trinity-bell-tower&mode=overview) |
 | 亚细亚大楼（外滩1号双街立面与东南转角） | 2026-11-20 15:45:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-building&mode=overview) |
+| 怡和洋行大楼临江立面与北京东路转角 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview) |
 
 ### 徐汇区（7处）
 

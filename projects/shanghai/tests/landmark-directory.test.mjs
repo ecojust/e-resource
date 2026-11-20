@@ -102,7 +102,7 @@ test('global model cards retain auxiliary previews, source documentation and ass
     const modules=[...page.matchAll(/<script\b[^>]*type="module"[^>]*>([\s\S]*?)<\/script>/g)].map(row=>row[1]);
     assert(scripts.length || modules.some(code=>code.trim()), item.id);
     const source=[...await Promise.all(scripts.map(metadata)),...modules].join('\n');
-    const sharedViewer=/import\s*\{\s*showCandidateAssetViewer\s*\}\s*from\s*['"](?:\.\/src\/|\.\/)candidate-asset-viewer\.js['"]/;
+    const sharedViewer=/import\s*\{\s*showCandidateAssetViewer\s*\}\s*from\s*['"](?:\.\/src\/|\.\/)candidate-asset-viewer\.js(?:\?[^'"\s]+)?['"]/;
     const implementation=sharedViewer.test(source) ? source+'\n'+await metadata('src/candidate-asset-viewer.js') : source;
     assert.match(implementation,/\.download\s*=/,`${item.id} keeps its download action`);
     for(const role of ['raw','native','full','lod']){

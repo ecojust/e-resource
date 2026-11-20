@@ -9,6 +9,11 @@ const NUMBER_SPRITES=[
   {id:`${PREFIX}-number-low`,width:20,height:16},
   {id:`${PREFIX}-number-wide-low`,width:22,height:15},
 ];
+const WIDE_NUMBER_WIDTH=26;
+const SHORT_NUMBER={id:`${PREFIX}-number-short-low`,width:20,height:15};
+const THREE_DIGIT_SPRITES=[SHORT_NUMBER,...[20,18,16,15].map(height=>({
+  id:`${PREFIX}-number-three-${height}`,width:WIDE_NUMBER_WIDTH,height,
+}))];
 const NAME_SIGNS=[[84,34],[120,34],[176,34],[176,48],[176,62]].map(([width,height],i)=>({id:`${SIGN}-${i}`,width,height}));
 const GROUND={getElevationForLngLat:()=>0};
 const collection=features=>({type:'FeatureCollection',features});
@@ -23,10 +28,29 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
   const margin=8,x0=Math.max(margin,insets.left||0),x1=Math.min(width-margin,width-(insets.right||0));
   const y0=Math.max(margin,insets.top||0),y1=Math.min(height-margin,height-(insets.bottom||0));
   const availableWidth=Math.max(24,x1-x0),availableHeight=Math.max(20,y1-y0);
+  const wideCount=items.filter(item=>item.number>=100).length;
   const makeGrid=(compact,gap=compact?2:7,compactWidth=24,compactHeight=20)=>{
     const maxW=compact?compactWidth:Math.min(availableWidth,Math.max(...items.map(p=>p.width))),maxH=compact?compactHeight:Math.max(...items.map(p=>p.height));
     const columns=Math.max(1,Math.floor((availableWidth+gap)/(maxW+gap))),rows=Math.max(1,Math.floor((availableHeight+gap)/(maxH+gap))),slots=[];
-    const left=x0+(availableWidth-(columns*maxW+(columns-1)*gap))/2,top=y0+(availableHeight-(rows*maxH+(rows-1)*gap))/2;
+    const top=y0+(availableHeight-(rows*maxH+(rows-1)*gap))/2;
+    if(compact&&wideCount){
+      // Reserve real wider backgrounds only for the visible three-digit numbers.
+      // Each row keeps its original height and centres its own group of cells.
+      let remaining=wideCount;
+      for(let y=0;y<rows;y++){
+        const wide=Math.min(remaining,Math.floor((availableWidth+gap)/(WIDE_NUMBER_WIDTH+gap)));
+        remaining-=wide;
+        const regular=Math.max(0,Math.floor((availableWidth+gap-wide*(WIDE_NUMBER_WIDTH+gap))/(maxW+gap)));
+        const total=wide*(WIDE_NUMBER_WIDTH+gap)+regular*(maxW+gap)-gap;
+        let left=x0+(availableWidth-total)/2;
+        for(let x=0;x<regular+wide;x++){
+          const threeDigits=x>=regular,width=threeDigits?WIDE_NUMBER_WIDTH:maxW;
+          slots.push({x:left+width/2,y:top+maxH/2+y*(maxH+gap),width,threeDigits});left+=width+gap;
+        }
+      }
+      return slots;
+    }
+    const left=x0+(availableWidth-(columns*maxW+(columns-1)*gap))/2;
     for(let y=0;y<rows;y++)for(let x=0;x<columns;x++)slots.push({x:left+maxW/2+x*(maxW+gap),y:top+maxH/2+y*(maxH+gap)});
     return slots;
   };
@@ -34,7 +58,7 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
   if(slots.length<items.length){compact=true;slots=makeGrid(true);}
   // Prefer the largest numbered cell that fits the space between the map controls.
   // With 85 signs a 243×138 safe area fits eight rows of 20×16 px cells.
-  for(const spec of NUMBER_SPRITES){
+  for(const spec of wideCount?[...NUMBER_SPRITES,SHORT_NUMBER]:NUMBER_SPRITES){
     if(slots.length>=items.length)break;
     compactWidth=spec.width;compactHeight=spec.height;
     slots=makeGrid(true,0,compactWidth,compactHeight);
@@ -44,10 +68,11 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
   for(const item of [...items].sort((a,b)=>a.y-b.y||a.x-b.x||a.id.localeCompare(b.id))){
     let best=-1,cost=Infinity;
     for(let i=0;i<slots.length;i++)if(!used.has(i)){
+      if(compact&&wideCount&&slots[i].threeDigits!==(item.number>=100))continue;
       const slot=slots[i],distance=(slot.x-item.x)**2+(slot.y-item.y)**2;
       if(distance<cost){cost=distance;best=i;}
     }
-    const cardWidth=compact?compactWidth:item.width,cardHeight=compact?compactHeight:item.height;
+    const cardWidth=compact?(item.number>=100?WIDE_NUMBER_WIDTH:compactWidth):item.width,cardHeight=compact?compactHeight:item.height;
     const slot=best>=0?slots[best]:{x:clamp(item.x,x0+cardWidth/2,x1-cardWidth/2),y:clamp(item.y,y0+cardHeight/2,y1-cardHeight/2)};
     if(best>=0)used.add(best);
     placed.set(item.id,{...item,width:cardWidth,height:cardHeight,labelX:slot.x,labelY:slot.y,compact,overlapFallback:best<0});
@@ -122,6 +147,7 @@ function labelSize(name){
  */
 export function createBuildingBeacons({map,records,onSelect=()=>{},documentObject=document}){
   const ids=new Set(),byId=new Map();
+  const numberSprites=records.length>=100?[...NUMBER_SPRITES,...THREE_DIGIT_SPRITES]:NUMBER_SPRITES;
   for(const row of records){
     if(!row.id||ids.has(row.id)||!Number.isFinite(row.lng)||!Number.isFinite(row.lat))throw Error('建筑灯牌目录无效');
     ids.add(row.id);byId.set(row.id,row);
@@ -129,7 +155,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   let destroyed=false,timer=null,layout=[],revision=0;
   const listeners=[],clickEvents=new WeakSet(),sources=[LINES,ANCHORS,LABELS],layers=[`${LINES}-line`,`${ANCHORS}-symbol`,`${LABELS}-symbol`,`${LABELS}-numbers`];
   const feature=(row,index,compact=false,inViewport=true,width=24,height=20)=>{
-    const numberSprite=NUMBER_SPRITES.find(spec=>spec.width===width&&spec.height===height)??NUMBER_SPRITES[0];
+    const numberSprite=numberSprites.find(spec=>spec.width===width&&spec.height===height)??NUMBER_SPRITES[0];
     return {type:'Feature',id:row.id,
       properties:{id:row.id,name:row.name,label:compact?String(index+1):row.name,sign:labelSize(row.name).sign,
         numberSprite:numberSprite.id,compact,inViewport,districtId:row.districtId,order:index,number:index+1},
@@ -138,7 +164,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   const anchorData=collection(records.map((r,i)=>feature(r,i)));
   map.addImage(LAMP,sprite(documentObject,'lamp'),{pixelRatio:2});
   for(const spec of NAME_SIGNS)map.addImage(spec.id,sprite(documentObject,'sign',spec),{pixelRatio:2});
-  for(const spec of NUMBER_SPRITES)map.addImage(spec.id,sprite(documentObject,'number',spec),{pixelRatio:2});
+  for(const spec of numberSprites)map.addImage(spec.id,sprite(documentObject,'number',spec),{pixelRatio:2});
   map.addSource(LINES,{type:'geojson',data:collection([])});
   map.addSource(ANCHORS,{type:'geojson',data:anchorData});
   map.addSource(LABELS,{type:'geojson',data:anchorData});
@@ -163,7 +189,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
     if(destroyed)return;if(timer!==null){clearTimeout(timer);timer=null;}
     const canvas=map.getCanvas(),width=canvas.clientWidth||canvas.width,height=canvas.clientHeight||canvas.height;
     const onSurface=point=>!map.transform?.isPointOnMapSurface||map.transform.isPointOnMapSurface(point);
-    const visible=records.map(r=>{const coordinate=[r.lng,r.lat],p=projectBeaconAnchor(map,coordinate);return {id:r.id,x:p.x,y:p.y,perspectiveScale:beaconPerspectiveScale(map,coordinate),...labelSize(r.name)};})
+    const visible=records.map((r,i)=>{const coordinate=[r.lng,r.lat],p=projectBeaconAnchor(map,coordinate);return {id:r.id,number:i+1,x:p.x,y:p.y,perspectiveScale:beaconPerspectiveScale(map,coordinate),...labelSize(r.name)};})
       .filter(p=>p.x>=0&&p.x<=width&&p.y>=0&&p.y<=height&&onSurface(p));
     const panel=documentObject.getElementById?.('explore-panel'),panelOpen=panel&&!panel.inert&&!panel.classList.contains('closed');
     const toolRect=documentObject.querySelector?.('.map-tools')?.getBoundingClientRect();
@@ -217,9 +243,9 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
   for(const event of ['moveend','zoomend','resize']){map.on(event,refresh);listeners.push([event,refresh]);}
   refresh();
   return {refresh,hitTest,getState:()=>({count:records.length,ids:[...ids],districtCount:new Set(records.map(r=>r.districtId)).size,zoom:map.getZoom(),revision,
-    labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),...NUMBER_SPRITES.map(s=>s.id)],viewportLabelCount:layout.length,
+    labelPixelSize:12,anchorPixelSize:20,sourceIds:sources,layerIds:layers,spriteIds:[LAMP,...NAME_SIGNS.map(s=>s.id),...numberSprites.map(s=>s.id)],viewportLabelCount:layout.length,
     labelMode:layout.some(p=>p.compact)?'numbers':'names',overlapFallbackCount:layout.filter(p=>p.overlapFallback).length,labelPositions:layout.map(p=>({id:p.id,number:records.findIndex(r=>r.id===p.id)+1,x:p.labelX,y:p.labelY,width:p.width,height:p.height,compact:p.compact}))}),
     destroy(){if(destroyed)return;destroyed=true;if(timer!==null)clearTimeout(timer);for(const args of listeners)map.off(...args);
       for(const id of [...layers].reverse())if(map.getLayer(id))map.removeLayer(id);for(const id of sources)if(map.getSource(id))map.removeSource(id);
-      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),...NUMBER_SPRITES.map(s=>s.id)])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
+      for(const id of [LAMP,...NAME_SIGNS.map(s=>s.id),...numberSprites.map(s=>s.id)])if(map.hasImage(id))map.removeImage(id);legend.remove();style.remove();map.getCanvas().style.cursor='';}};
 }

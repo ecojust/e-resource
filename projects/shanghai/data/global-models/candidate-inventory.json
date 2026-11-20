@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 61,
+  "candidate_manifest_count": 62,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 59,
-  "resulting_city_count": 99,
+  "new_city_model_count": 60,
+  "resulting_city_count": 100,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 4,
     "长宁区": 3,
     "静安区": 4,
-    "黄浦区": 21
+    "黄浦区": 22
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 244,
-    "bytes": 879945255,
+    "files": 248,
+    "bytes": 883609799,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 11306278,
+    "current_run_added_bytes": 3664544,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 112
+    "inherited_incremental_files": 116
   },
   "records": [
     {
@@ -4672,6 +4672,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "外滩1号亚细亚大楼的东向临江立面、延安东路一侧与东南转角。按照片与实际建筑面界定主体，保留外滩2号和街道。"
+    },
+    {
+      "id": "huangpu-jardine-matheson-building",
+      "name": "怡和洋行大楼临江立面与北京东路转角",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "jardine-matheson.html",
+      "manifest": "assets/models/candidates/huangpu-jardine-matheson-building/manifest.json",
+      "manifest_sha256": "5f4af84d43c22f1e4cd044efb332fa3f2122d851e41163d30895785346fd62cc",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-jardine-matheson-building/huangpu-jardine-matheson-building-raw.glb",
+          "bytes": 1960400,
+          "sha256": "9dbb3cc068bfb51477008eb7ff8154b3a3ef8bfbb35fbb44dad0d7a542f45918",
+          "triangles": 33332,
+          "bounds_gltf_m": [
+            [
+              -23.988767623901367,
+              0.0,
+              -11.082592964172363
+            ],
+            [
+              30.7253360748291,
+              40.439998626708984,
+              1.100000023841858
+            ]
+          ],
+          "materials": 11
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-jardine-matheson-building/huangpu-jardine-matheson-building-web.glb",
+          "bytes": 727656,
+          "sha256": "db3b0cfe5a65c4d51d7521f3010b9649f91c6089760266dd335f955955425acf",
+          "triangles": 33332,
+          "bounds_gltf_m": [
+            [
+              -23.9887676,
+              0,
+              -11.082593
+            ],
+            [
+              30.7253361,
+              40.4399986,
+              1.10000002
+            ]
+          ],
+          "materials": 11
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-jardine-matheson-building/huangpu-jardine-matheson-building-lod.glb",
+          "bytes": 427592,
+          "sha256": "a8c1ca4f41506132b85b721329db9b6a87ca5c6a4befd79c515c1e1f08162267",
+          "triangles": 20672,
+          "bounds_gltf_m": [
+            [
+              -23.9887676,
+              0,
+              -11.082593
+            ],
+            [
+              30.7253361,
+              40.4399986,
+              1.10000002
+            ]
+          ],
+          "materials": 11
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-jardine-matheson-building/huangpu-jardine-matheson-building.blend",
+          "bytes": 548896,
+          "sha256": "24bd19519df4535e2a551674152d85b5f00c46ba0973c2f830b224a758e8f087"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -23.988767623901367,
+            0.0,
+            -11.082592964172363
+          ],
+          "max": [
+            30.7253360748291,
+            40.439998626708984,
+            1.100000023841858
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -23.988767623901367,
+            -1.100000023841858,
+            0.0
+          ],
+          "max": [
+            30.7253360748291,
+            11.082592964172363,
+            40.439998626708984
+          ]
+        },
+        "triangles": 33332,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-partial-exterior",
+      "description": "外滩27号怡和洋行大楼的临江九券、四根巨柱与东北斜角。资料涉及不同时期的建筑，按照片区分旧外观和现状，尺寸含估计。"
     }
   ],
   "baseline_inventory": {
@@ -4692,6 +4798,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-cathedral/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-jardine-matheson-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
@@ -4711,13 +4818,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/asia-building-v1",
+  "incremental_audit_directory": "data/audit/jardine-matheson-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/zhou-gucheng-courtyard-v1/inventory-increment.json",
-    "bytes": 89727,
-    "sha256": "3ba7dade5a79e5fa9e75cb35e1ce38493375f29d39caf7de0f0d3e61eb58ad2b"
+    "file": "data/audit/asia-building-v1/inventory-increment.json",
+    "bytes": 93341,
+    "sha256": "16c3a40a1423b7ea7a63da1c0a76bc227a5cd7a4593ae5f943d3a02742952d68"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-jardine-matheson-building/manifest.json"
   ]
 }

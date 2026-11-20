@@ -1,0 +1,33 @@
+{
+  "command": "node --test --test-concurrency=1 tests/building-beacons.test.mjs tests/landmark-directory.test.mjs tests/candidate-overview-camera.test.mjs",
+  "working_directory": "projects/shanghai",
+  "tests_sha256": {
+    "tests/building-beacons.test.mjs": "b25f879de9aa7ed1db0f7507dac245be810aad42bb1d2f244b70142217994a79",
+    "tests/landmark-directory.test.mjs": "f7fb284b60847cb1646ae5b52ec2e86b5f7461a03f666dc29f968c1f689071d5",
+    "tests/candidate-overview-camera.test.mjs": "ed08f7f4e31f00a7cb030f4ccfc79a1128a20d88bbe3cb124a116a4aea17c1a4"
+  },
+  "runs": [
+    {
+      "phase": "before",
+      "results": {
+        "tests": 43,
+        "pass": 42,
+        "fail": 1,
+        "skipped": 0
+      },
+      "output_sha256": "8438575517a777ebaf2b8a639407ac08801f1fd770fd9c5be1dbe2679d5768ea"
+    },
+    {
+      "phase": "after",
+      "results": {
+        "tests": 43,
+        "pass": 43,
+        "fail": 0,
+        "skipped": 0
+      },
+      "output_sha256": "8f468be1e5301b195a86a76bfc62195996e7bdacd7285066efcb5c5ded525bd4"
+    }
+  ],
+  "initial_failure": "The directory checker did not recognize a shared viewer import followed by its version query. The real Asia Building browser checks had already downloaded all four files.",
+  "fix": "Follow the same local viewer module for both an unversioned import and an import with a cache query. Require its download action and all four valid manifest entries in either case."
+}
