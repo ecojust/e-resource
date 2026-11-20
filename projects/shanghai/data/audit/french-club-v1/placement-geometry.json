@@ -1,0 +1,127 @@
+{
+  "id": "huangpu-french-club",
+  "source_sha256": "5f242dbf2c946cc6a508fd3d3d20b1a58b72c16ef09085b1bd7cfd43d1b70d02",
+  "manifest_sha256": "5536f5a0a347e8a4a658daa0c5c272e3b8413677e80fb4c44cb7c76416dce94c",
+  "script_sha256": "71e8f4c354d3bf5f752d1cd0cc22a309c9d09dac47ae4bc7e8f912517352af3e",
+  "decoders_sha256": {
+    "data/audit/postal-office-v1/map-decode-source.mjs": "1c4a034b8541c9481c20b3b5a8209920670136010cb09c9b0a793237c445388e",
+    "data/audit/postal-office-v1/map-decode-delivered.mjs": "3c2eb7783d8f33237ca84df6f9d4c7599412e5c9ac5feaf56fc229e773bb3db9",
+    "data/audit/country-hospital-v1/verify-placement.py": "4c49b2180b984f5041a4b7effd440a340f19d41a7fba190d685d31f140541a51"
+  },
+  "contract_sha256": "6299581fc836911d0941b70693f45e3f0b49d39e9cb0cb2a38cfdfa111b36c19",
+  "assets": {
+    "raw": {
+      "bytes": 9710236,
+      "sha256": "9cc0b2a54de81254c0c158489e5759acbfc3f5aa084ba6708eb4dc7f68c9eda3",
+      "triangles": 142818
+    },
+    "web": {
+      "bytes": 4024892,
+      "sha256": "433316a121a0306afd69316b79e6b0bc3a0c6b633dd4753669f23af16882a49e",
+      "triangles": 142818
+    },
+    "lod": {
+      "bytes": 2193700,
+      "sha256": "700bba3162181811360d567c9289340bef024c26ec45693c35a280f9acfaecba",
+      "triangles": 78400
+    }
+  },
+  "registered_owner_area_m2": 4884.548553295015,
+  "collision_area_m2": 4876.822613730751,
+  "model_projected_area_m2": 5024.647848404994,
+  "cut_area_m2": 4956.941064793607,
+  "original_shared_source_overlap_m2": 0.3685060916206545,
+  "osm_vector_mask_area_m2": 4938.915142827529,
+  "adjacent_source_overlap_with_osm_mask_m2": 2.531681660535096e-06,
+  "all_macro_neighbors_crossing_mask": [
+    {
+      "id": 3550,
+      "mask_overlap_m2": 18.01833350160438,
+      "model_overlap_m2": 0.0
+    }
+  ],
+  "party_wall_preservation": {
+    "near": {
+      "neighbor_id": 3550,
+      "neighbor_area_m2": 1212.9643324797742,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.47419444956664764,
+      "clip_overlap_before_owner_filter_m2": 23.985586121588078,
+      "exclusion": "Separate source near tile without target owner"
+    },
+    "far": {
+      "neighbor_id": 3550,
+      "neighbor_area_m2": 1201.1121691562073,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.544115605174115,
+      "clip_overlap_before_owner_filter_m2": 18.01808533884854,
+      "exclusion": "Explicit native far feature ID"
+    }
+  },
+  "target_variants": {
+    "near": {
+      "original_area_m2": 4908.0651205727245,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 25.032554952537907
+    },
+    "far": {
+      "original_area_m2": 4884.546933870066,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 25.104097756377794
+    }
+  },
+  "source_decode": {
+    "target group near": {
+      "ids": [
+        4860,
+        3385
+      ],
+      "input": "near/0_-5-s1.glb.gz",
+      "sha256": "bd5e6213fdae67c7bf7aad17a4bcf03dcce8915eaa69d0304ed3799cf73229c1",
+      "pass": true,
+      "triangles_per_owner": {
+        "4860": 34184,
+        "3385": 33008
+      }
+    },
+    "target group far": {
+      "ids": [
+        4860,
+        3385
+      ],
+      "input": "far.glb",
+      "sha256": "6d1b1136b2c7b76bb8b75f406964f3da6704a89794a63e224191d30dc4e43cc7",
+      "pass": true,
+      "triangles_per_owner": {
+        "4860": 96,
+        "3385": 56
+      }
+    },
+    "party-wall group near": {
+      "ids": [
+        5407,
+        3550
+      ],
+      "input": "near/0_-5-s0.glb.gz",
+      "sha256": "335d10b96e722e32a7b0e65810ea0f3270604d04771ad5ace9cf41cbdd948b2f",
+      "pass": true,
+      "triangles_per_owner": {
+        "5407": 30192,
+        "3550": 105612
+      }
+    },
+    "party-wall group far": {
+      "ids": [
+        5407,
+        3550
+      ],
+      "input": "far.glb",
+      "sha256": "6d1b1136b2c7b76bb8b75f406964f3da6704a89794a63e224191d30dc4e43cc7",
+      "pass": true,
+      "triangles_per_owner": {
+        "5407": 24,
+        "3550": 44
+      }
+    }
+  }
+}

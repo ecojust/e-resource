@@ -1,3 +1,11 @@
+# 法国总会（花园饭店历史会所）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-club&mode=overview) · [单体旋转与下载](french-club.html) · [来源与制作范围](source/precise/huangpu-french-club/README.md) · [验收记录](data/audit/french-club-v1/README.md)
+
+茂名南路58号法国总会低层会所，建模范围按历史沿革、建筑照片和园区平面确认。
+
+近景 142,818 个三角面，远景 78,400 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 17,641,599 字节。上海主图现有 115 处独立入口，黄浦区 48 处。[资产清单](assets/models/candidates/huangpu-french-club/manifest.json)
+
 # 美国花旗总会（福州路209号主立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) · [单体旋转与下载](american-club.html) · [来源与制作范围](source/precise/huangpu-american-club/README.md) · [验收记录](data/audit/american-club-v1/README.md)
