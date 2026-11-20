@@ -113,7 +113,7 @@
 | 尚贤坊（淮海中路主弄门楼） | 2026-11-20 17:29:54 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shangxianfang-gate&mode=overview) |
 | 慕尔堂（沐恩堂礼堂与钟楼） | 2026-11-20 17:39:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-moore-memorial-church&mode=overview) |
 | 董家渡天主堂南入口立面 | 2026-11-20 17:52:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dongjiadu-cathedral&mode=overview) |
-| 东方饭店旧址（上海市工人文化宫西端主楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-oriental-hotel&mode=overview) |
+| 东方饭店旧址（上海市工人文化宫西端主楼） | 2026-11-20 17:53:23 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-oriental-hotel&mode=overview) |
 
 ### 徐汇区（7处）
 

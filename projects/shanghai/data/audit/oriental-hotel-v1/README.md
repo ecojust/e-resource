@@ -15,3 +15,7 @@
 两次场景之间，尚贤坊门楼、董家渡天主堂的默认镜头有调整。其余可拟合镜头的建筑在三种窗口尺寸下共有207组计算，取景参数一致。[场景输入及目录差异](camera-input-revision/input-difference.json) · [逐栋镜头核对](camera-input-revision/camera-arguments.json)
 
 最终场景又通过HTTP逐项读取了13个文件，其中包括本次修改涉及的文件和这栋建筑的四种资产。实收9,045,677字节，均与冻结清单或原文件签名一致。[逐文件核对](revised-scene-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f9033b57cb9dc3f616c2403cad2047cc01fbc11b/projects/shanghai/index.html#landmark=huangpu-oriental-hotel&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
