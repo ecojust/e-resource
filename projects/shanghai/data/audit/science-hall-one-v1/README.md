@@ -13,3 +13,7 @@
 在旧版163处地图中，同一座一号楼由楼体底图表示。新版164处地图能从手机目录直接打开南花园立面，桌面默认能看到长廊、中央时钟与露台；地址灯牌挡住东端一部分亭顶。花园近景与屋面视角可看清五个亭顶及其间低瓦坡。周围楼栋、北面的既有楼体以及两头的平屋顶继续显示。[旧版同位置](map-before.png) [手机](map-mobile.png) [桌面](map-desktop.png) [花园近景](map-street-facade.png) [屋面](map-roof.png)
 
 实际地图显示117,028面近景，拉远后切换为68,116面远景。18个地面位置分别核对可进入的台阶与廊下、门窗与方柱、保留的原楼及五栋邻楼。正式浏览器实取四件下载文件，核验了五处旧体量切面。六张PNG均完整解码并与采集时的文件签名一致。[远景](map-distant.png) [六图及运行报告](city-capture-files.json) [正式核验](main-browser.json) [旧版对照](control-browser.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4b7e967bde11c5e3027cb5a36250f264a78c6e20/projects/shanghai/index.html#landmark=huangpu-science-hall-building-one&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
