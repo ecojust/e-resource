@@ -15,3 +15,7 @@
 教学楼加入后全城目录共171处。运行期检查逐点核实三段外廊和教室碰撞，教学楼新增11个裁剪三角面，全城926面分布在16个宏块，单块最多316面。833个登记输入共804,859,243字节，逐项比对SHA-256通过。[运行期验证](runtime-placement.json) · [171处输入清单](production-snapshot.json)
 
 24132原图和24133校舍加入后的实图在同一操场机位对照。390像素手机和870像素桌面均保留首次画面及城市近块就绪后的画面。操场近景可见两段退廊、正中三开间的栏杆、后墙及上方金字曲匾；从西藏南路看，五开间的顶层券窗清晰，地图牌遮住底层中央入口的一部分。街区远景实际使用61,040面，近景为182,492面。两代合计十张实图，实测72处地面与邻楼点位。后态从本站取得四种模型及近远城市底模共六份文件，独立页已保存的四次下载也与正式站逐字节一致。完整复测无失败请求、地图警告或WebGL错误，843份正式输入的实取总量为804,960,679字节。首轮前态页面因系统内存不足崩溃，释放空间后以相同机位重测并保留原记录。[十张实图与逐图观察](city-24133/visual-review.json) · [原城市底模](city-24133/map-before.png) · [操场廊柱和曲匾](city-24133/map-courtyard-gallery.png) · [西藏南路端墙](city-24133/map-west-street-end.png) · [正式地面与近远档](city-24133/main-browser.json) · [四项下载对照](city-24133/individual-downloads-rebound.json) · [完整签名实取](city-24133/133-all-http.json) · [首轮中断](city-24133/initial-control-failure.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0f89d92aac992b04e112393a4116231ad7cc03c5/projects/shanghai/index.html#landmark=huangpu-sino-french-school-teaching-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 9 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
