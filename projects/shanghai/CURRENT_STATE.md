@@ -1,3 +1,11 @@
+# 建业里总弄沿街门楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianye-li-main-lane-gate&mode=overview) · [单体旋转与下载](jianye-li-main-gate.html) · [来源与制作范围](source/precise/xuhui-jianye-li-main-lane-gate/README.md) · [验收记录](data/audit/jianye-li-main-gate-v1/README.md)
+
+建国西路五字「建業里總衖」门楼，以2020年街面实照制作双窗、从左向右的门额及两旁石柱；2014年从右向左的凸字留作改造前对照。异文门牌分别与地方志及2D017原表核对。
+
+近景 14,256 个三角面，远景 6,876 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,389,262 字节。上海主图现有 186 处独立入口，徐汇区 16 处。[资产清单](assets/models/candidates/xuhui-jianye-li-main-lane-gate/manifest.json)
+
 # 吉祥里山东北路西弄门
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jixiangli-west-gate&mode=overview) · [单体旋转与下载](jixiangli-west-gate.html) · [来源与制作范围](source/precise/huangpu-jixiangli-west-gate/README.md) · [验收记录](data/audit/jixiangli-west-gate-v1/README.md)
