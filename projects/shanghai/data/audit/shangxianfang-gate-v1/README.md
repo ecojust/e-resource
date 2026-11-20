@@ -20,7 +20,7 @@
 
 正式108处目录SHA-256以 `1c5b659a` 开头。手机和桌面从名录实际进入后，分别拍摄到站和近源就绪两态。两端均可点选门楼灯牌，最终暖态仍显示原生2357、2541、2597。街面近看时，灯牌会遮到部分上层砖饰，完整街景请同时参照手机默认镜头。正式近档59,336面，远档9,188面；四个模型下载和两份原生远近源均校验长度或哈希。真实107处前态没有门楼，原邻楼仍在相同街面位置。[手机默认暖态](registered-mobile-with-neighbors.png) · [桌面默认暖态](registered-desktop-with-neighbors.png) · [街面近看](registered-desktop-street.png) · [正式远景](registered-desktop-distant.png) · [107处对照](map-before.png) · [正式浏览器与四下载](main-browser.json) · [前态实测](control-browser.json) · [主树与冻结输入](primary-map-inputs.json)
 
-320×568全市编号密布的原回归在要求108个号码无重叠时超时，当前证据只确认390及870像素的本地门楼灯牌。该小屏全市状态单列追踪。[320像素原始记录](preflight/compact-grid-timeout/compact-browser.json)
+320×568全市视图下，长建筑名会压缩编号的可用高度。原108处页面测得3个回退、6对牌面重叠，972个采样点中27个命中错误；实点外滩9号的一处牌面落入了金山卫瓮城。保持同一108处登记的修复试验页改用19×15及25×15像素的编号，972个采样点全部正确，108张牌分别落位，实触108号进入尚贤坊。图标模块与运行时发布版本分别记录。[原版实际截图](compact-capacity/registered/map-108-markers.png) · [修复试验截图](compact-capacity/repaired/map-108-markers.png) · [输入、几何、实触及像素对照](compact-capacity/comparison.json) · [先前超时记录](preflight/compact-grid-timeout/compact-browser.json)
 
 此次调镜头涉及尚贤坊一处。其余67处可拟合镜头的建筑，在三种窗口尺寸下共201组取景参数均与原版一致。[两份目录的逐文件差异](camera-input-revision/input-difference.json) · [各建筑的实际镜头参数](camera-input-revision/camera-arguments.json)
 
