@@ -16,3 +16,7 @@
 分别在157处的第119版和158处的第120版打开实服。手机从目录点入建设大楼，桌面默认画面显示弧形中央窗列、两侧阶梯肩部及街角入口。390像素画面的“总巡捕房旧址”标签靠近塔冠，建筑自身的标签覆盖部分底层窗带。拉近福州路口可看清凹弧与黑石入口。汉弥登仍能独立选取。同组实际裁片由11增加到25，其中本楼占14片，九段截口保持完整。[157处前态](map-before.png) [158处手机](initial-neighbor-witness/map-mobile.png) [桌面默认](initial-neighbor-witness/map-desktop.png) [街口近景](initial-neighbor-witness/map-street-facade.png) [屋顶](initial-neighbor-witness/map-roof.png) [远景](map-distant.png)
 
 第一轮的城区与门口碰撞均符合预期。用作邻楼“建筑实体”的汉弥登旧中心落在它已裁去的网格内，实际可通行。复测继续以旧点检验通行，并验证第93项已实测的北翼室内点会阻挡行走。九处本楼与广场、五栋邻楼实体及旧点反例共15处全部通过。远景加载28,902面，四件模型与原始街区的两份几何数据均逐项验签。四张独立页图、六张主城前后图均完整解码、复核尺寸及SHA-256。[核验总表](capture-files.json) [早期地面取点诊断](initial-neighbor-witness/witness-review.json) [保留的首轮实测](initial-neighbor-witness/main-browser.json) [最终补测](main-browser.json) [157处对照](control-browser.json) [双站绑定](release-bindings.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/41223aab371d9bffb3c6834a09e76935e3fce714/projects/shanghai/index.html#landmark=huangpu-development-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
