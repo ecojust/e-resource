@@ -1,3 +1,11 @@
+# 新亚酒楼（上海新亚大酒店临街主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-new-asia-hotel&mode=overview) · [单体旋转与下载](new-asia-hotel.html) · [来源与制作范围](source/precise/hongkou-new-asia-hotel/README.md) · [验收记录](data/audit/new-asia-hotel-v1/README.md)
+
+天潼路422号原新亚酒楼的历史临街外观，结合照片和路口定位确认。
+
+近景 122,504 个三角面，远景 58,096 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 12,448,307 字节。上海主图现有 113 处独立入口，虹口区 7 处。[资产清单](assets/models/candidates/hongkou-new-asia-hotel/manifest.json)
+
 # 都城饭店（江西中路180号转角主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropole-hotel&mode=overview) · [单体旋转与下载](metropole-hotel.html) · [来源与制作范围](source/precise/huangpu-metropole-hotel/README.md) · [验收记录](data/audit/metropole-hotel-v1/README.md)
