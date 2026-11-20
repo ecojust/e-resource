@@ -3785,7 +3785,7 @@
 | 江川大楼（德华银行九江路营业楼） | 2026-11-20 21:35:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-deutsch-asiatische-bank&mode=overview) |
 | 法公董局旧址（淮海中路保留立面） | 2026-11-20 21:44:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-municipal-council-front&mode=overview) |
 | 原英国驻沪领事馆办公主楼 | 2026-11-20 22:08:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-british-consulate&mode=overview) |
-| 迦陵大楼（南京东路北立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) |
+| 迦陵大楼（南京东路北立面） | 2026-11-20 22:22:10 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) |
 
 ### 徐汇区（9处）
 

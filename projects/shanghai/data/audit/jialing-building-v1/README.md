@@ -9,3 +9,7 @@
 [原版145与146处对照实拍](release-20103-20104/README.md)保留了英国领事馆默认相机调整前的城市画面、四种模型下载和真实地面检查。
 
 英国前领馆的默认相机调整后，重新在145处地图打开旧街区，并从146处目录在手机与桌面打开迦陵大楼。前后合计十幅原始PNG，十二个地面样点通过，两代迦陵模型的四种下载签名一致。[最终145处对照](map-before.png) · [146处桌面](map-desktop.png) · [146处手机](map-mobile.png) · [南京东路街面](map-street-facade.png) · [屋顶](map-roof.png) · [远景](map-distant.png) · [真实地图记录](main-browser.json) · [独立页与四下载](viewer.json) · [两次实拍与建筑配置对照](release-comparison.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/2fe9287a0534be7d70e7f87801d9852010f7a4ab/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
