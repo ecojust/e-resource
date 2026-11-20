@@ -1,3 +1,11 @@
+# 华商纱布交易所（上海自然博物馆旧馆）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cotton-exchange-building&mode=overview) · [单体旋转与下载](cotton-exchange.html) · [来源与制作范围](source/precise/huangpu-cotton-exchange-building/README.md) · [验收记录](data/audit/cotton-exchange-v1/README.md)
+
+延安东路260号华商纱布交易所大楼、上海自然博物馆旧馆的现存临街部分，核对两期使用及建筑范围。
+
+近景 126,728 个三角面，远景 82,244 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 13,044,631 字节。上海主图现有 159 处独立入口，黄浦区 84 处。[资产清单](assets/models/candidates/huangpu-cotton-exchange-building/manifest.json)
+
 # 建设大楼（福州路口凹入塔面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-development-building&mode=overview) · [单体旋转与下载](development-building.html) · [来源与制作范围](source/precise/huangpu-development-building/README.md) · [验收记录](data/audit/development-building-v1/README.md)

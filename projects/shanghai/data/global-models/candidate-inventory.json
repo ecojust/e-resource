@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 120,
+  "candidate_manifest_count": 121,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 118,
-  "resulting_city_count": 158,
+  "new_city_model_count": 119,
+  "resulting_city_count": 159,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 9,
     "长宁区": 4,
     "静安区": 9,
-    "黄浦区": 67
+    "黄浦区": 68
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 480,
-    "bytes": 1249164212,
+    "files": 484,
+    "bytes": 1262208843,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 4219400,
+    "current_run_added_bytes": 13044631,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 348
+    "inherited_incremental_files": 352
   },
   "records": [
     {
@@ -10926,6 +10926,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-exterior-informed-by-street-photography-and-conservation-report",
       "description": "江西中路171至181号单号范围的原中国建设银公司大楼，核对181号街门、转角及相邻独立建筑。"
+    },
+    {
+      "id": "huangpu-cotton-exchange-building",
+      "name": "华商纱布交易所（上海自然博物馆旧馆）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "cotton-exchange.html",
+      "manifest": "assets/models/candidates/huangpu-cotton-exchange-building/manifest.json",
+      "manifest_sha256": "c892493ead2cf0757c37e0e90d865e9f905fcadd3d41628962bd033bb00f60eb",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-cotton-exchange-building/huangpu-cotton-exchange-building-raw.glb",
+          "bytes": 6812832,
+          "sha256": "52380c71bdaebd2cf161ed42245bfa311852647fbd093338f026330104416ca4",
+          "triangles": 126728,
+          "bounds_gltf_m": [
+            [
+              -24.707256317138672,
+              0.0,
+              -71.44588470458984
+            ],
+            [
+              47.367610931396484,
+              31.690000534057617,
+              1.0668251514434814
+            ]
+          ],
+          "materials": 11
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-cotton-exchange-building/huangpu-cotton-exchange-building-web.glb",
+          "bytes": 2484912,
+          "sha256": "1e8724b757c3cd25936a334d3c56eaa9dadc7e3d097303caa2aee4af5bb762d4",
+          "triangles": 126728,
+          "bounds_gltf_m": [
+            [
+              -24.7072563,
+              0,
+              -71.4458847
+            ],
+            [
+              47.3676109,
+              31.6900005,
+              1.06682515
+            ]
+          ],
+          "materials": 11
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-cotton-exchange-building/huangpu-cotton-exchange-building-lod.glb",
+          "bytes": 1634672,
+          "sha256": "09113820beac4847972b0e4d486354cb3b8bcbd59b72bbb436b8c13f8cec2317",
+          "triangles": 82244,
+          "bounds_gltf_m": [
+            [
+              -24.7072563,
+              0,
+              -71.4458847
+            ],
+            [
+              47.3676109,
+              31.6900005,
+              1.06500006
+            ]
+          ],
+          "materials": 10
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-cotton-exchange-building/huangpu-cotton-exchange-building.blend",
+          "bytes": 2112215,
+          "sha256": "dc497b1ba969e477fb258518d33ed407ab8006f29dd1652760d987e896fd3622"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -24.707256317138672,
+            0.0,
+            -71.44588470458984
+          ],
+          "max": [
+            47.367610931396484,
+            31.690000534057617,
+            1.0668251514434814
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -24.707256317138672,
+            -1.0668251514434814,
+            0.0
+          ],
+          "max": [
+            47.367610931396484,
+            71.44588470458984,
+            31.690000534057617
+          ]
+        },
+        "triangles": 126728,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "延安东路260号华商纱布交易所大楼、上海自然博物馆旧馆的现存临街部分，核对两期使用及建筑范围。"
     }
   ],
   "baseline_inventory": {
@@ -10962,6 +11068,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-chung-wei-bank-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cishu-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-continental-bank/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-cotton-exchange-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-deutsch-asiatische-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-development-building/manifest.json",
@@ -11024,13 +11131,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/development-building-v1",
+  "incremental_audit_directory": "data/audit/cotton-exchange-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/chung-wei-bank-v1/inventory-increment.json",
-    "bytes": 301844,
-    "sha256": "a815e96b39f385dccc6665b7f31f6e77356fe506394412ace173d98051a8abce"
+    "file": "data/audit/development-building-v1/inventory-increment.json",
+    "bytes": 305459,
+    "sha256": "f6b21af5784129f2ccdf81279cabfaaf3c32853e78c20e5c2309ba083b6b4c6c"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-development-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-cotton-exchange-building/manifest.json"
   ]
 }
