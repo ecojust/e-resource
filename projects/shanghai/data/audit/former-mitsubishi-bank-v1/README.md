@@ -29,3 +29,7 @@
 本次实景来自21116与21117。213个浏览或下载资源经再次实际请求并核验完整字节，共287,707,826字节，另有六项生成资料独立核对。下一套23116、23117加入台湾银行专项聚焦，分别签入705项与713项。跨版本62次HTTP核对确认三菱登记、各档文件及源合同相同，上一段的照片记录21k两端的实景。[实际输入](main-map-inputs.json) · [两代焦点版本的HTTP对照](focus-23116-23117-http.json)
 
 以155处全量目录重放23117的正式布局，两个视口均只有三菱这一枚可见名称牌，其中心和矩形与21117实际截图逐像素相同。四根石柱每根2,212个真实三角面，中央铜门72个三角面，各自投影均与名称牌零像素交叠。灯点地面位置沿用21117，实拍中仍可见台阶上的发光效果。[23k正式布局与门柱投影](focus-23117-occlusion.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/02ecc28117331b18bd5f9647d15a3575490f91de/projects/shanghai/index.html#landmark=huangpu-former-mitsubishi-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
