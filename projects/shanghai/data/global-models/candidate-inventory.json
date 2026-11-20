@@ -44,16 +44,16 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 86,
+  "candidate_manifest_count": 87,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 84,
-  "resulting_city_count": 124,
+  "new_city_model_count": 85,
+  "resulting_city_count": 125,
   "new_models_by_district": {
     "崇明区": 20,
-    "徐汇区": 2,
+    "徐汇区": 3,
     "杨浦区": 6,
     "虹口区": 7,
     "长宁区": 4,
@@ -62,16 +62,16 @@
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 344,
-    "bytes": 1050851253,
+    "files": 348,
+    "bytes": 1057091053,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 2906634,
+    "current_run_added_bytes": 6239800,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 212
+    "inherited_incremental_files": 216
   },
   "records": [
     {
@@ -7322,6 +7322,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "山东中路145号内院2号住院楼入口白色塔身及其两侧可见的窗廊。"
+    },
+    {
+      "id": "xuhui-zhongshan-hospital-main-building",
+      "name": "中山医院3号楼（历史中央主楼）",
+      "districtId": "310104",
+      "district": "徐汇区",
+      "already_in_city": false,
+      "individual_page": "zhongshan-hospital-main.html",
+      "manifest": "assets/models/candidates/xuhui-zhongshan-hospital-main-building/manifest.json",
+      "manifest_sha256": "2e6ac51390ae135f77355b58962f0704c4dfd423d145ee3f9a656b4868e3486d",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/xuhui-zhongshan-hospital-main-building/xuhui-zhongshan-hospital-main-building-raw.glb",
+          "bytes": 3428052,
+          "sha256": "f666354c4b2bd6c9c50dcb75dfff77a10b0be194877a95c8a4b337692500a22c",
+          "triangles": 56912,
+          "bounds_gltf_m": [
+            [
+              -28.26766586303711,
+              -0.004999999888241291,
+              -10.034422874450684
+            ],
+            [
+              28.26766586303711,
+              26.46625518798828,
+              10.04699993133545
+            ]
+          ],
+          "materials": 12
+        },
+        "web": {
+          "file": "assets/models/candidates/xuhui-zhongshan-hospital-main-building/xuhui-zhongshan-hospital-main-building-web.glb",
+          "bytes": 1362300,
+          "sha256": "80522530032b5217efe2824a74a3a0da07f6b40f74ab1708c2f9f075864710d3",
+          "triangles": 56912,
+          "bounds_gltf_m": [
+            [
+              -28.2676659,
+              -0.00499999989,
+              -10.0344229
+            ],
+            [
+              28.2676659,
+              26.4662552,
+              10.0469999
+            ]
+          ],
+          "materials": 12
+        },
+        "lod": {
+          "file": "assets/models/candidates/xuhui-zhongshan-hospital-main-building/xuhui-zhongshan-hospital-main-building-lod.glb",
+          "bytes": 562840,
+          "sha256": "1688edfcdfdd08b4152491721d042bd35d21c9b9047273d8c0aeeab26a960710",
+          "triangles": 29464,
+          "bounds_gltf_m": [
+            [
+              -28.2676659,
+              -0.00499999989,
+              -10.0344229
+            ],
+            [
+              28.2676659,
+              26.4662552,
+              10.0469999
+            ]
+          ],
+          "materials": 12
+        },
+        "native": {
+          "file": "assets/models/candidates/xuhui-zhongshan-hospital-main-building/xuhui-zhongshan-hospital-main-building.blend",
+          "bytes": 886608,
+          "sha256": "2cd68a2ebe2357fc96405406dea4d660e380ab9a97b1bce6ed8459dcabb124f8"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -28.26766586303711,
+            -0.004999999888241291,
+            -10.034422874450684
+          ],
+          "max": [
+            28.26766586303711,
+            26.46625518798828,
+            10.04699993133545
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -28.26766586303711,
+            -10.04699993133545,
+            -0.004999999888241291
+          ],
+          "max": [
+            28.26766586303711,
+            10.034422874450684,
+            26.46625518798828
+          ]
+        },
+        "triangles": 56912,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "中山医院3号楼的中央病房立面、顶层平台和黄琉璃瓦歇山顶。1936年照片、复旦校史及当代航片可核对主楼与两翼。"
     }
   ],
   "baseline_inventory": {
@@ -7377,6 +7483,7 @@
     "projects/shanghai/assets/models/candidates/jingan-majestic-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-paramount-ballroom/manifest.json",
     "projects/shanghai/assets/models/candidates/jingan-yuhua-new-residential-quarter-03/manifest.json",
+    "projects/shanghai/assets/models/candidates/xuhui-zhongshan-hospital-main-building/manifest.json",
     "projects/shanghai/assets/models/candidates/xuhui-zikawei-north-library/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
@@ -7386,13 +7493,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/renji-ward-entrance-v1",
+  "incremental_audit_directory": "data/audit/zhongshan-hospital-main-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/zikawei-north-library-v1/inventory-increment.json",
-    "bytes": 178760,
-    "sha256": "6ad4e552accdbf959d9f55a1029bc1291fa5d2f31f203061fd73f0f4258d397e"
+    "file": "data/audit/renji-ward-entrance-v1/inventory-increment.json",
+    "bytes": 182401,
+    "sha256": "58b1e00d5c06220c5df300706765e8993fbedb7657cf619608d13b5c2fc8b7d2"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-renji-hospital-ward-entrance/manifest.json"
+    "projects/shanghai/assets/models/candidates/xuhui-zhongshan-hospital-main-building/manifest.json"
   ]
 }

@@ -1,3 +1,11 @@
+# 中山医院3号楼（历史中央主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) · [单体旋转与下载](zhongshan-hospital-main.html) · [来源与制作范围](source/precise/xuhui-zhongshan-hospital-main-building/README.md) · [验收记录](data/audit/zhongshan-hospital-main-v1/README.md)
+
+中山医院3号楼的中央病房立面、顶层平台和黄琉璃瓦歇山顶。1936年照片、复旦校史及当代航片可核对主楼与两翼。
+
+近景 56,912 个三角面，远景 29,464 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,239,800 字节。上海主图现有 125 处独立入口，徐汇区 9 处。[资产清单](assets/models/candidates/xuhui-zhongshan-hospital-main-building/manifest.json)
+
 # 仁济医院西院2号住院楼（庭院入口立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-renji-hospital-ward-entrance&mode=overview) · [单体旋转与下载](renji-ward-entrance.html) · [来源与制作范围](source/precise/huangpu-renji-hospital-ward-entrance/README.md) · [验收记录](data/audit/renji-ward-entrance-v1/README.md)
