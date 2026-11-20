@@ -1,0 +1,79 @@
+{
+  "id": "huangpu-kincheng-bank",
+  "review": "作者在最终重开 Blender 文件的正面与入口近图实看，与来源表内江西中路2015年整体照片及何晓云2021年发布的角度对照。",
+  "assets": {
+    "raw": {
+      "path": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-raw.glb",
+      "sha256": "804c7a184a5eaec2005ecfc8f1d94daf8244b03dd53a3a2f38ed804b96366aee"
+    },
+    "full": {
+      "path": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-web.glb",
+      "sha256": "fbce91f773a76fb8fefc7330ab8b210f332f10240aff3c8537acc036cf0820e7"
+    },
+    "lod": {
+      "path": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-lod.glb",
+      "sha256": "e81248ebb1a0dacef6b514a67728829661d873ff2325072b5ad8d41743eb9477"
+    },
+    "native": {
+      "path": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank.blend",
+      "sha256": "7286b72afa744edea51a806a9527b53c6a8759da741c0a6168e48c9a9ae0cb74"
+    }
+  },
+  "manifest": {
+    "path": "assets/models/candidates/huangpu-kincheng-bank/manifest.json",
+    "sha256": "8e4cbae4dd03e1e1fda13151ca557ffe6c2ffda1e37658239ef5da18bf7318fc"
+  },
+  "source_reference": {
+    "path": "source/precise/huangpu-kincheng-bank/reference-review.json",
+    "sha256": "bbbe90e3f38b23782ef8778d9440cadd589ece95fb49227eee29de5be3bb2d9f"
+  },
+  "prior": {
+    "path": "data/audit/kincheng-bank-v1/preflight/author-first-look.json",
+    "sha256": "60ec888d867af3c0aa4c66778765a55f836bb2fcfa19301db9ff7d4bcb878bd1"
+  },
+  "views": [
+    {
+      "path": "data/audit/kincheng-bank-v1/huangpu-kincheng-bank-preview.png",
+      "sha256": "9ddc48fb0856eb968de896b1c2ec2ae4e5c1fbea794efabb9dc91a278823bdf8",
+      "pixels": [
+        820,
+        900
+      ],
+      "observations_zh": "两端下部大券窗的拱顶内可见玻璃和金属分格。其内侧各三扇窄窗，拱腹处呈石材浅面。大券窗上方可识别成对的长窗、三窄窗和顶层组窗，阁层下排两端保留券窗。水平线脚和主檐贯穿临街面，中轴入口双柱在立面下边缘可见。首稿错误的端窗分格已修正。"
+    },
+    {
+      "path": "data/audit/kincheng-bank-v1/entrance.png",
+      "sha256": "9544e98bda6001dc89588cd48ae8a3e55e893127a3763d282c386b45bc17c113",
+      "pixels": [
+        760,
+        820
+      ],
+      "observations_zh": "入口近景可辨两根浅色圆柱、深凹的门道、弧肩和圆形徽章。上方依次为矩形长窗、三角眉、凸字“交通银行”、半圆玻璃窗和前凸阳台。两侧盲楣和楔石与中轴玻璃拱清楚分离。上层、楼角在本张近景裁切之外，整体图另行查看。",
+      "processing": "最终 Blender 原图经 OIDN 2.5.1 去噪，使用 ImageMagick 7 转 PNG。"
+    }
+  ],
+  "checks": {
+    "geometry-native.json": {
+      "path": "data/audit/kincheng-bank-v1/geometry-native.json",
+      "sha256": "63da0eab921c7b020302784111fa82d3d40bbec45cfb22da68a0ddad380949eb"
+    },
+    "surface-checks.json": {
+      "path": "data/audit/kincheng-bank-v1/surface-checks.json",
+      "sha256": "068e5148e662c4220dd028e1205a60a0d02be7ecb97795e81cab62324c98bb1f"
+    },
+    "render-entrance.py": {
+      "path": "data/audit/kincheng-bank-v1/render-entrance.py",
+      "sha256": "68919695c31a2d9955d454fbd0479360a9d7e08e9d5af68387c35ac4e548d26d"
+    }
+  },
+  "scope_limits_zh": "端窗分格由北端较清楚的一侧引导，另一端受树及透视遮挡。四个牌字取当前用途和近照，字形为字体近似。徽章内纹、实际厚度与窗框色泽、精确层高均缺实测，屋顶为估计，侧后窗、屋顶设备及室内未复原。",
+  "png_integrity": {
+    "checked": [
+      "entrance.png",
+      "huangpu-kincheng-bank-preview.png",
+      "preflight/draft-front.png"
+    ],
+    "method": "All PNG chunk CRCs, end-of-file IEND and full Pillow image decoding.",
+    "corrected": "首次复制的入口PNG存在损坏IDAT，改从同一次已重开最终Blender模型的完整渲染导出并目视复核。"
+  }
+}

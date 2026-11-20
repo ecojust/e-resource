@@ -257,3 +257,37 @@ test('translation-free clipping preserves batching and instancing and does not f
   assert.match(material.customProgramCacheKey(),/candidate-city-clip-v3/);
   t.after(()=>material.dispose());
 });
+
+test('different macros can exceed the city total without lengthening a shader draw',t=>{
+  const rows=Array.from({length:319},(_,i)=>triangleClip(i+1));
+  const across=[...rows,triangleClip(548,'elsewhere'),triangleClip(549,'elsewhere'),triangleClip(550,'elsewhere')];
+  const {clipper,mesh}=harness(t,{featureIds:true,initial:[]});
+  const pipelines=shaders(mesh);
+  clipper.update(across);
+  assert.equal(clipper.getState().triangles,322);
+  assert.equal(clipper.getState().macroTextures,2);
+  for(const pipeline of pipelines){
+    assert.equal(pipeline.uniforms.candidateClipCount.value,319);
+    assert.deepEqual(ownerIds(pipeline),rows.map(r=>r.owner.feature_local_id));
+  }
+  const other=clipper.tableFor([...clipper.macroTables.keys()].find(key=>clipper.tableFor(key).triangles===3));
+  assert.deepEqual([other.data[12],other.data[28],other.data[44]],[548,549,550]);
+  let disposed=false;other.texture.addEventListener('dispose',()=>{disposed=true;});
+  clipper.update(rows.slice(0,2));
+  assert(disposed);
+  assert.equal(clipper.getState().macroTextures,0);
+  assert.equal(pipelines[0].uniforms.candidateClipTexture.value,clipper.texture);
+});
+
+test('macro-local near clipping still includes wildcards and rejects local overload atomically',t=>{
+  const rows=Array.from({length:319},(_,i)=>triangleClip(i+1));
+  const wildcard={geometry:triangleClip(1).geometry};
+  const {clipper,mesh}=harness(t,{ids:[7],initial:[]});
+  const pipelines=shaders(mesh);
+  clipper.update([...rows,wildcard,triangleClip(425,'elsewhere')]);
+  assert.deepEqual(ownerIds(pipelines[0]),[0,7]);
+  const revision=clipper.revision;
+  assert.throws(()=>clipper.update([...rows,wildcard,wildcard]),/局部边界过于复杂/);
+  assert.equal(clipper.revision,revision);
+  assert.deepEqual(ownerIds(pipelines[0]),[0,7]);
+});

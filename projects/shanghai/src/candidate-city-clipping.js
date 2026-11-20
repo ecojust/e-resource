@@ -1,7 +1,7 @@
 /** Geographic display clipping for inferred candidate placement. Authored models
  * are never clipped. Source geometry is retained unchanged in its GLB assets.
  */
-// Keep the all-city correction within a bounded shader loop.
+// Every draw retains the same bounded shader loop, including large city catalogs.
 const MAX_TRIANGLES=320;
 const materialUniforms=new WeakMap();
 const hash=value=>{let n=2166136261;for(const c of value||''){n^=c.charCodeAt(0);n=Math.imul(n,16777619);}return (n>>>0)%16777215;};
@@ -10,10 +10,31 @@ const polygons=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g
 export class CandidateCityClipper {
   constructor({THREE,geographicPosition}){
     Object.assign(this,{THREE,geographicPosition});this.bindings=new Map();this.objects=new Map();this.triangleCount=0;this.triangleOwners=[];
-    this.data=new Float32Array(4*4*MAX_TRIANGLES);
-    this.texture=new THREE.DataTexture(this.data,4,MAX_TRIANGLES,THREE.RGBAFormat,THREE.FloatType);
-    this.texture.magFilter=this.texture.minFilter=THREE.NearestFilter;this.texture.generateMipmaps=false;this.texture.needsUpdate=true;
+    this.macroTables=new Map();
+    this.defaultTable=this.newTable();
+    this.texture=this.defaultTable.texture;
+    this.data=this.defaultTable.data;
     this.uniforms={texture:{value:this.texture},count:{value:0}};this.revision=0;
+  }
+  newTable(){
+    const {THREE}=this;
+    const data=new Float32Array(16*MAX_TRIANGLES);
+    const texture=new THREE.DataTexture(data,4,MAX_TRIANGLES,THREE.RGBAFormat,THREE.FloatType);
+    texture.magFilter=texture.minFilter=THREE.NearestFilter;
+    texture.generateMipmaps=false;texture.needsUpdate=true;
+    return {data,texture,triangles:0};
+  }
+  writeTable(table,rows){
+    table.data.fill(0);
+    rows.forEach(({p:[a,b,c],localId,macro,minHeight,maxHeight},i)=>table.data.set([
+      a.x,a.y,b.x,b.y,c.x,c.y,minHeight,maxHeight,
+      Math.min(a.x,b.x,c.x),Math.min(a.y,b.y,c.y),Math.max(a.x,b.x,c.x),Math.max(a.y,b.y,c.y),localId,macro,0,0
+    ],i*16));
+    table.triangles=rows.length;
+    table.texture.needsUpdate=true;
+  }
+  tableFor(macro){
+    return this.macroTables.get(macro)||this.defaultTable;
   }
   update(clips){
     const {THREE,geographicPosition}=this,triangles=[];
@@ -40,24 +61,46 @@ export class CandidateCityClipper {
         }
       }
     }
-    if(triangles.length>MAX_TRIANGLES)throw Error('候选模型局部边界过于复杂');
-    this.data.fill(0);
-    triangles.forEach(({p:[a,b,c],localId,macro,minHeight,maxHeight},i)=>this.data.set([a.x,a.y,b.x,b.y,c.x,c.y,minHeight,maxHeight,
-      Math.min(a.x,b.x,c.x),Math.min(a.y,b.y,c.y),Math.max(a.x,b.x,c.x),Math.max(a.y,b.y,c.y),localId,macro,0,0],i*16));
+    // Prefer the original shared texture for small sets. Beyond one texture,
+    // an owner in another macro can never match this draw. Wildcards can.
+    let common=triangles;
+    const groups=new Map();
+    if(triangles.length>MAX_TRIANGLES){
+      common=[];
+      for(const triangle of triangles){
+        if(!triangle.macro){ common.push(triangle); continue; }
+        if(!groups.has(triangle.macro))groups.set(triangle.macro,[]);
+        groups.get(triangle.macro).push(triangle);
+      }
+      if(common.length>MAX_TRIANGLES||[...groups.values()].some(rows=>rows.length+common.length>MAX_TRIANGLES))
+        throw Error('候选模型局部边界过于复杂');
+    }
+    this.writeTable(this.defaultTable,common);
+    for(const [macro,rows] of groups){
+      if(!this.macroTables.has(macro))this.macroTables.set(macro,this.newTable());
+      this.writeTable(this.macroTables.get(macro),[...common,...rows]);
+    }
+    for(const [macro,table] of this.macroTables)if(!groups.has(macro)){
+      this.macroTables.delete(macro);
+      table.texture.dispose();
+    }
     this.triangleOwners=triangles.map(({localId,macro})=>({localId,macro}));
-    this.uniforms.count.value=this.triangleCount=triangles.length;this.texture.needsUpdate=true;this.revision++;
+    this.uniforms.count.value=common.length;this.triangleCount=triangles.length;this.revision++;
     for(const {scope} of this.objects.values())if(scope)this.updateOwnerScope(scope);
-    for(const {uniforms,scope} of this.bindings.values()){
-      uniforms.texture.value=scope?.texture||this.texture;uniforms.count.value=scope?scope.triangles:this.triangleCount;
+    for(const {uniforms,scope,macro} of this.bindings.values()){
+      const table=scope||this.tableFor(macro);
+      uniforms.texture.value=table.texture;uniforms.count.value=table.triangles;
     }
   }
   updateOwnerScope(scope){
+    const table=this.tableFor(scope.macro);
     scope.data.fill(0);scope.triangles=0;scope.clipIds.clear();
-    this.triangleOwners.forEach(({localId,macro},index)=>{
+    for(let i=0;i<table.triangles;i++){
+      const offset=i*16,localId=table.data[offset+12],macro=table.data[offset+13];
       if((macro===0||macro===scope.macro)&&(localId===0||scope.ids.has(localId))){
-        scope.data.set(this.data.subarray(index*16,index*16+16),scope.triangles++*16);scope.clipIds.add(localId);
+        scope.data.set(table.data.subarray(offset,offset+16),scope.triangles++*16);scope.clipIds.add(localId);
       }
-    });
+    }
     scope.texture.needsUpdate=true;
   }
   bindMaterial(material,{featureIds,macroId,scope=null}){
@@ -66,8 +109,8 @@ export class CandidateCityClipper {
     // Cached Three programs keep these holders when a near object is rebound.
     let uniforms=materialUniforms.get(material);
     if(!uniforms){uniforms={texture:{value:null},count:{value:0}};materialUniforms.set(material,uniforms);}
-    uniforms.texture.value=scope?.texture||this.texture;uniforms.count.value=scope?scope.triangles:this.triangleCount;
-    const macro=hash(macroId);
+    const macro=hash(macroId),table=scope||this.tableFor(macro);
+    uniforms.texture.value=table.texture;uniforms.count.value=table.triangles;
     const hook=(shader,renderer)=>{
       previous?.call(material,shader,renderer);
       if(!shader.vertexShader.includes('#include <project_vertex>')||!shader.fragmentShader.includes('#include <common>'))throw Error('Unsupported candidate clipping shader');
@@ -111,7 +154,7 @@ bool candidateInside(vec3 candidateWorldPosition){
 }`).replace(/void\s+main\s*\(\s*\)\s*\{/,'void main(){\nif(candidateInside(vCandidatePosition+modelMatrix[3].xyz))discard;');
     };
     material.onBeforeCompile=hook;material.customProgramCacheKey=()=>`${previousKey}|candidate-city-clip-v3|${MAX_TRIANGLES}|${featureIds?1:0}|${scope?1:0}`;
-    material.needsUpdate=true;this.bindings.set(material,{previous,cacheKey,hook,uniforms,scope});
+    material.needsUpdate=true;this.bindings.set(material,{previous,cacheKey,hook,uniforms,scope,macro});
   }
   bindObject(group,record){
     if(this.objects.has(group))return;
@@ -150,11 +193,11 @@ bool candidateInside(vec3 candidateWorldPosition){
     for(const {mesh,property,material} of binding.created){if(mesh[property]===material)mesh[property]=undefined;material.dispose();}
     binding.scope?.texture.dispose();this.objects.delete(group);
   }
-  getState(){return {triangles:this.triangleCount,triangleLimit:MAX_TRIANGLES,clippingTexture:{width:this.texture.image.width,height:this.texture.image.height,bytes:this.data.byteLength,
+  getState(){return {triangles:this.triangleCount,triangleLimit:MAX_TRIANGLES,macroTextures:this.macroTables.size,clippingTexture:{width:this.texture.image.width,height:this.texture.image.height,bytes:this.data.byteLength,
     type:this.texture.type===this.THREE.FloatType?'FloatType':this.texture.type,format:this.texture.format===this.THREE.RGBAFormat?'RGBAFormat':this.texture.format,
     minFilter:this.texture.minFilter===this.THREE.NearestFilter?'NearestFilter':this.texture.minFilter,
     magFilter:this.texture.magFilter===this.THREE.NearestFilter?'NearestFilter':this.texture.magFilter,generateMipmaps:this.texture.generateMipmaps},sourceObjects:this.objects.size,boundMaterials:this.bindings.size,revision:this.revision,
     ownerScopedSources:[...this.objects.values()].filter(({scope})=>scope).map(({scope})=>({id:scope.id,macro_id:scope.macroId,
       feature_local_ids:[...scope.ids],triangles:scope.triangles,clip_feature_local_ids:[...scope.clipIds]}))};}
-  dispose(){for(const object of [...this.objects.keys()])this.releaseObject(object);this.texture.dispose();}
+  dispose(){for(const object of [...this.objects.keys()])this.releaseObject(object);for(const table of this.macroTables.values())table.texture.dispose();this.macroTables.clear();this.texture.dispose();}
 }

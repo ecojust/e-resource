@@ -44,33 +44,33 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 50,
+  "candidate_manifest_count": 51,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 48,
-  "resulting_city_count": 88,
+  "new_city_model_count": 49,
+  "resulting_city_count": 89,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 4,
     "静安区": 2,
-    "黄浦区": 15
+    "黄浦区": 16
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 200,
-    "bytes": 807528719,
+    "files": 204,
+    "bytes": 810719499,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 5522477,
+    "current_run_added_bytes": 3190780,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 68
+    "inherited_incremental_files": 72
   },
   "records": [
     {
@@ -3505,6 +3505,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "迁建后上海音乐厅的外部体量、西北侧历史入口、东南侧对称入口、东北长边及坡屋顶与平屋顶。两侧入口参考2024年照片，隐面和高度含估计。"
+    },
+    {
+      "id": "huangpu-kincheng-bank",
+      "name": "金城银行大楼（江西中路200号临街主楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "kincheng-bank.html",
+      "manifest": "assets/models/candidates/huangpu-kincheng-bank/manifest.json",
+      "manifest_sha256": "8e4cbae4dd03e1e1fda13151ca557ffe6c2ffda1e37658239ef5da18bf7318fc",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-raw.glb",
+          "bytes": 1769708,
+          "sha256": "804c7a184a5eaec2005ecfc8f1d94daf8244b03dd53a3a2f38ed804b96366aee",
+          "triangles": 35368,
+          "bounds_gltf_m": [
+            [
+              -17.850000381469727,
+              0.0,
+              -19.959999084472656
+            ],
+            [
+              17.850000381469727,
+              29.75,
+              0.764859139919281
+            ]
+          ],
+          "materials": 8
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-web.glb",
+          "bytes": 563492,
+          "sha256": "fbce91f773a76fb8fefc7330ab8b210f332f10240aff3c8537acc036cf0820e7",
+          "triangles": 35368,
+          "bounds_gltf_m": [
+            [
+              -17.8500004,
+              0,
+              -19.9599991
+            ],
+            [
+              17.8500004,
+              29.75,
+              0.76485914
+            ]
+          ],
+          "materials": 8
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-lod.glb",
+          "bytes": 363520,
+          "sha256": "e81248ebb1a0dacef6b514a67728829661d873ff2325072b5ad8d41743eb9477",
+          "triangles": 22680,
+          "bounds_gltf_m": [
+            [
+              -17.8500004,
+              0,
+              -19.9599991
+            ],
+            [
+              17.8500004,
+              29.75,
+              0.76485914
+            ]
+          ],
+          "materials": 8
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank.blend",
+          "bytes": 494060,
+          "sha256": "7286b72afa744edea51a806a9527b53c6a8759da741c0a6168e48c9a9ae0cb74"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -17.850000381469727,
+            0.0,
+            -19.959999084472656
+          ],
+          "max": [
+            17.850000381469727,
+            29.75,
+            0.764859139919281
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -17.850000381469727,
+            -0.764859139919281,
+            0.0
+          ],
+          "max": [
+            17.850000381469727,
+            19.959999084472656,
+            29.75
+          ]
+        },
+        "triangles": 35368,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "江西中路200号金城银行临街主楼的双柱入口、徽饰、半圆拱窗、弧形阳台和两端窗墙。参考2015年及2021年照片，屋顶、层高与背侧遮挡部分含估计。"
     }
   ],
   "baseline_inventory": {
@@ -3518,6 +3624,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
@@ -3533,13 +3640,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/concert-hall-v1",
+  "incremental_audit_directory": "data/audit/kincheng-bank-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/wing-on-skybridges-v1/inventory-increment.json",
-    "bytes": 50254,
-    "sha256": "c5b0761ebca2071ef23ba3e2043799ac7a38c528172f380062307211570a5062"
+    "file": "data/audit/concert-hall-v1/inventory-increment.json",
+    "bytes": 53076,
+    "sha256": "57dc9309bc3db06393e71c0f9ad7f1d66ffe692d6170890d3ff050bfd76c4307"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-kincheng-bank/manifest.json"
   ]
 }

@@ -1,3 +1,11 @@
+# 金城银行大楼（江西中路200号临街主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-kincheng-bank&mode=overview) · [单体旋转与下载](kincheng-bank.html) · [来源与制作范围](source/precise/huangpu-kincheng-bank/README.md) · [验收记录](data/audit/kincheng-bank-v1/README.md)
+
+江西中路200号金城银行临街主楼的双柱入口、徽饰、半圆拱窗、弧形阳台和两端窗墙。参考2015年及2021年照片，屋顶、层高与背侧遮挡部分含估计。
+
+近景 35,368 个三角面，远景 22,680 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,190,780 字节。上海主图现有 89 处独立入口，黄浦区 32 处。[资产清单](assets/models/candidates/huangpu-kincheng-bank/manifest.json)
+
 # 迁建后的上海音乐厅（原南京大戏院）外部体量与入口
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-concert-hall&mode=overview) · [单体旋转与下载](concert-hall.html) · [来源与制作范围](source/precise/huangpu-shanghai-concert-hall/README.md) · [验收记录](data/audit/concert-hall-v1/README.md)

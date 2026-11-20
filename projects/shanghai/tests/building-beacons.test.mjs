@@ -364,6 +364,14 @@ test('narrow-phone signs avoid actual tool, legend and location-card rectangles 
   check();toolLeft=260;cardTop=378;legendBottom=180;beacons.refresh();check();beacons.destroy();
 });
 
+// In these two phone fixtures the measured safe width is 243 CSS pixels.
+function expectedNumberCell(count, availableHeight) {
+  const allowed = [[24, 20], [22, 20], [22, 18], [20, 18], [20, 16]];
+  const largest = allowed.find(([w, h]) => Math.floor(243 / w) * Math.floor(availableHeight / h) >= count);
+  assert(largest, 'all delivered signs must fit inside the measured phone area');
+  return largest;
+}
+
 test('all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone',()=>{
   const delivered=[...JSON.parse(readFileSync(new URL('../data/landmarks.json',import.meta.url),'utf8')),
     ...JSON.parse(readFileSync(new URL('../data/candidate-city-integrations.json',import.meta.url),'utf8')).models];
@@ -384,7 +392,8 @@ test('all delivered models remain separate and clickable above a tall title card
   const beacons=createBuildingBeacons({map,records:delivered,onSelect:row=>selected.push(row.id),documentObject:doc});
   const state=beacons.getState();
   assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);assert.equal(state.labelMode,'numbers');
-  assert(state.labelPositions.every(row=>row.compact&&row.width===(count>70?22:24)&&row.height===(count>77?18:20)));
+  const [cellWidth,cellHeight]=expectedNumberCell(count,158);
+  assert(state.labelPositions.every(row=>row.compact&&row.width===cellWidth&&row.height===cellHeight));
   assertSeparated(state.labelPositions);
   assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:340});
   assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
@@ -416,8 +425,8 @@ test('long building title cards retain every delivered sign in the smaller phone
   beacons=createBuildingBeacons({map,records:delivered,documentObject:doc,onSelect(row){
     selected.push(row.id);selectedTitle=row.name;if(targets.includes(row.id))cardTop=328;beacons.refresh();
   }});
-  const roomyHeight=delivered.length>77?18:20,denseWidth=delivered.length>77?20:22;
-  const denseHeight=delivered.length>84?16:18;
+  const [,roomyHeight]=expectedNumberCell(delivered.length,158);
+  const [denseWidth,denseHeight]=expectedNumberCell(delivered.length,138);
   assert(beacons.getState().labelPositions.every(row=>row.height===roomyHeight),'keep the largest sprite that fits all delivered signs');
   for(const id of targets){
     const target=beacons.getState().labelPositions.find(row=>row.id===id);map.emit('click',{point:{x:target.x,y:target.y}});
