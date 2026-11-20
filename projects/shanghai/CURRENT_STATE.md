@@ -1,3 +1,11 @@
+# 怀恩堂陕西北路入口与东南角砖塔
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) · [单体旋转与下载](grace-church-street-front.html) · [来源与制作范围](source/precise/jingan-grace-church-street-front/README.md) · [验收记录](data/audit/grace-church-street-front-v1/README.md)
+
+陕西北路375号现堂的临街短立面和东南角砖钟塔，以2006年门牌照、2013年街角实照、区博物馆旧展照和2026年照片核对。
+
+近景 58,956 个三角面，远景 10,268 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,481,596 字节。上海主图现有 178 处独立入口，静安区 13 处。[资产清单](assets/models/candidates/jingan-grace-church-street-front/manifest.json)
+
 # 息焉堂（前庭、主堂铜顶及临河半圆体）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xiyan-church&mode=overview) · [单体旋转与下载](xiyan-church.html) · [来源与制作范围](source/precise/changning-xiyan-church/README.md) · [验收记录](data/audit/xiyan-church-v1/README.md)
