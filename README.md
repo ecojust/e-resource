@@ -3867,7 +3867,7 @@
 | 虹口中国银行大楼（西南转角） | 2026-11-20 23:20:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-bank-of-china-hongkew&mode=overview) |
 | 东大名路378号红砖办公楼街面与塔亭 | 2026-11-21 01:27:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-east-daming-road-378&mode=overview) |
 | 雷氏德工学院（东长治路505号主楼） | 2026-11-21 02:46:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview) |
-| 景灵堂昆山路北门山墙与修复花窗 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview) |
+| 景灵堂昆山路北门山墙与修复花窗 | 2026-11-21 04:18:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview) |
 
 ### 杨浦区（8处）
 

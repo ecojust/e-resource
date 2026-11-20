@@ -16,3 +16,7 @@ Blender 4.3.2重开原生文件后测得75个网格、15种材质和73,848个三
 在24141和24142的同一街面机位，登记前可见原城市体量，登记后可以辨认中央尖拱花窗与两旁红砖山墙。390×844手机从地点目录进入，九个检查点都在屏内，灯牌和面板没有遮住它们。点一次加号后可细看中央花窗与门廊，东侧小圆窗超出右侧边界。870×660桌面展开目录时，本楼灯牌与台阶底部的一个检查点重叠，另八点可见。主动切换到正面近景后，底部地点卡覆盖同一台阶点。独立页保留了台阶的完整正视图。[前版同机位](final-map-24142/map-before.png) · [手机默认](final-map-24142/map-mobile-same-camera.png) · [手机放大](final-map-24142/map-mobile-public-zoom.png) · [桌面默认](final-map-24142/map-desktop-same-camera.png) · [街面近景](final-map-24142/map-street-facade.png) · [斜上方](final-map-24142/map-roof.png)
 
 用键盘搜索怀恩堂后，景灵堂的模型和局部裁切随视点卸载。再从目录搜索景灵堂，恢复同一立面，远景切换至对应低细节模型。灰色屋面属于保留的原主堂。现场读取3,550个矢量建筑要素，人行道、门前台阶、原主堂和四处独立邻楼的15个检查点均符合预期。两版城市目录从178处增加到179处，原有138条候选模型记录逐字段相同。24142实际读取927个签名输入，共914,574,271字节。两次浏览器运行均无页面错误或失败请求。[返回景灵堂](final-map-24142/map-returned.png) · [远景](final-map-24142/map-distant.png) · [城市实测与15处地面](final-map-24142/main-browser.json) · [两个版本的文件及下载](final-map-24142/pair-and-standalone-http.json) · [927项实取](final-map-24142/142-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a8f022be1c4770300502e4ab729cfc43533f1acf/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
