@@ -23,3 +23,7 @@
 地图内执行的六个地面查询中，门前街道、挑阳台下的门槛外及南端窗前街道可以通行，凹入的花岗岩踏步、铜门和石墩均返回建筑碰撞。原始GLB、网页近景、远景和Blender文件均实际下载且SHA-256一致。验收同时核对175份浏览器实取资源和四项目录生成记录，包括新版分组灯牌的三个模块；记录中页面、控制台和请求错误均为零。[入口近景](five-arch-entrance.png) · [浏览器实测与四件下载](main-map-browser.json) · [实取文件签名](main-map-inputs.json)
 
 前一版主图的七处近期交付也在同一 GitHub 提交逐件下载复核。130 个入口中，七处均指向各自的模型清单，40 个公开文件合计 89,172,995 字节。[七处入口及下载收据](predecessor-public-downloads-130.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/96e469361949708de834b820965e6a4e9ae76f2f/projects/shanghai/index.html#landmark=huangpu-brunner-mond-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 7 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
