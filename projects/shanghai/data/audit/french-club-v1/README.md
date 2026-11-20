@@ -24,3 +24,5 @@ Blender重新打开286个可编辑网格并逐材质匹配142,818个三角面。
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/30073fb520857a3208e70130ea022be2a4cd6eee/projects/shanghai/index.html#landmark=huangpu-french-club&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+前一版114处的同地块仍是底图粗楼。实测近景组同时含历史会所4860与现代塔楼3385，裁切清单为空。登记后的115处独立查看器可见舞厅所在的低翼与圆凸厅，主图在三个不同近景中只替换4860。[登记前画面](map-before.png) · [114处原生组与下载散列](before-browser.json)

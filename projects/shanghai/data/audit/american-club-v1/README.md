@@ -28,3 +28,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/bbf07f8cdbd30a16bd55ff40fbb0821074725551/projects/shanghai/index.html#landmark=huangpu-american-club&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+更新后的114处正式站点从黄浦区目录重新实测默认入口。1000×700桌面画面可见七开间砖墙、顶层弧窗及底层四柱，灯牌叠在檐线中央上方。浏览器命中本楼灯牌，载入1488号所在十个所有者的近景瓦片，并核对目录、运行模块和网页模型等八个HTTP文件。[新版默认桌面](camera-input-revision/current-default-desktop.png) · [实机、下载指纹与相机](camera-input-revision/current-default-browser.json)
