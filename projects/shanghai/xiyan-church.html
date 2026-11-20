@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>息焉堂主堂 · 长宁区</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="息焉堂主堂前庭尖券、临河半圆体和三层收分铜顶的三维模型" data-oblique="negative-x" data-oblique-x="-0.82" id="model-view"></main>
+<header>
+<a href="index.html#landmark=changning-xiyan-church&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">长宁区 · 虹桥路2381号</p>
+<h1>息焉堂主堂</h1>
+<p>前庭尖券 · 临河半圆体与铜顶</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">按2011年及2016年外景和教区记录复原主堂。铜顶下十四尖券和园侧附半圆体可旋转查看，侧后墙与标高按比例估计。北钟楼和墓园另列研究。教区正文及联系地址分记可乐路1号、17号。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">前庭正面</button>
+<button data-view="oblique" type="button">临河斜视</button>
+<button data-view="above" type="button">铜顶俯看</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/changning-xiyan-church/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=xiyan-church-v1';
+    showCandidateAssetViewer('changning-xiyan-church');
+  </script>
+</body>
+</html>
+
