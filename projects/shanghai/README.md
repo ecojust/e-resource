@@ -96,9 +96,9 @@
 | 大世界历史主楼与街角塔 | 2026-11-03 22:31:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-great-world&mode=overview) |
 | 新老永安跨浙江中路北侧封闭天桥 | 2026-11-20 14:37:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wing-on-skybridges&mode=overview) |
 | 迁建后的上海音乐厅（原南京大戏院）外部体量与入口 | 2026-11-20 14:38:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-concert-hall&mode=overview) |
-| 金城银行大楼（江西中路200号临街主楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-kincheng-bank&mode=overview) |
-| 大上海大戏院历史立面（1933年建筑） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropol-cinema-historic-front&mode=overview) · 1933 年原址，地点卡可查看历史外观 |
-| 八仙桥基督教青年会大楼（西藏南路双檐临街翼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-baxianqiao-ymca&mode=overview) |
+| 金城银行大楼（江西中路200号临街主楼） | 2026-11-20 14:46:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-kincheng-bank&mode=overview) |
+| 大上海大戏院历史立面（1933年建筑） | 2026-11-20 14:56:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-metropol-cinema-historic-front&mode=overview) · 1933 年原址，地点卡可查看历史外观 |
+| 八仙桥基督教青年会大楼（西藏南路双檐临街翼） | 2026-11-20 14:58:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-baxianqiao-ymca&mode=overview) |
 
 ### 徐汇区（7处）
 
@@ -132,8 +132,8 @@
 | 四行仓库（含毗邻大陆银行仓库） | [2026-10-27 10:11:58](https://github.com/ecojust/e-resource/commit/20e45cb3b33234e73bcef1a12528c249d98f3cac) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk) |
 | 宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙） | 2026-11-20 13:21:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview) |
 | 宏恩医院历史主楼北翼与中部门诊连接体 | 2026-11-20 14:07:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital-north-block&mode=overview) |
-| 美琪大戏院（圆弧门厅、临街外墙与屋顶体量） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-majestic-theatre&mode=overview) |
-| 华业公寓主楼（H形住宅与中央红瓦塔） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huaye-apartments&mode=overview) |
+| 美琪大戏院（圆弧门厅、临街外墙与屋顶体量） | 2026-11-20 14:47:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-majestic-theatre&mode=overview) |
+| 华业公寓主楼（H形住宅与中央红瓦塔） | 2026-11-20 15:01:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huaye-apartments&mode=overview) |
 
 ### 普陀区（1处）
 

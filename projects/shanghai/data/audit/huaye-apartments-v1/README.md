@@ -25,3 +25,7 @@
 [手机](map-mobile.png) · [默认桌面](map-desktop.png) · [西南立面](map-southwest.png) · [塔顶](map-roof.png) · [城市远景](map-distant.png)
 
 93 项正式登记与测试站的地图目录、入口、代码及资产内容一致。测试站以 HTTP 取得并校验了 150 份输入；其中五份为冻结的城市宏块源文件。145 份登记快照中有一份业务队列在正式工作区增加了先前建筑的发布记录，页面资源与地标目录的字节均一致。[HTTP 响应摘要](map-http-bindings.json) · [与第 93 项正式登记比对](registered-equivalence.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4b0bf5210ce8b644b7c435ef1be6494b7f9d1a50/projects/shanghai/index.html#landmark=jingan-huaye-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
