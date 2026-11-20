@@ -1,3 +1,11 @@
+# 迁建后的上海音乐厅（原南京大戏院）外部体量与入口
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-concert-hall&mode=overview) · [单体旋转与下载](concert-hall.html) · [来源与制作范围](source/precise/huangpu-shanghai-concert-hall/README.md) · [验收记录](data/audit/concert-hall-v1/README.md)
+
+迁建后上海音乐厅的外部体量、西北侧历史入口、东南侧对称入口、东北长边及坡屋顶与平屋顶。两侧入口参考2024年照片，隐面和高度含估计。
+
+近景 42,960 个三角面，远景 23,764 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,522,477 字节。上海主图现有 88 处独立入口，黄浦区 31 处。[资产清单](assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json)
+
 # 新老永安跨浙江中路北侧封闭天桥
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wing-on-skybridges&mode=overview) · [单体旋转与下载](wing-on-north-skybridge.html) · [来源与制作范围](source/precise/huangpu-wing-on-skybridges/README.md) · [验收记录](data/audit/wing-on-skybridges-v1/README.md)

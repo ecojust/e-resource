@@ -44,33 +44,33 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 49,
+  "candidate_manifest_count": 50,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 47,
-  "resulting_city_count": 87,
+  "new_city_model_count": 48,
+  "resulting_city_count": 88,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 4,
     "静安区": 2,
-    "黄浦区": 14
+    "黄浦区": 15
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 196,
-    "bytes": 802006242,
+    "files": 200,
+    "bytes": 807528719,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 6862138,
+    "current_run_added_bytes": 5522477,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 64
+    "inherited_incremental_files": 68
   },
   "records": [
     {
@@ -3438,6 +3438,73 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-overhead-connector",
       "description": "跨浙江中路、靠南京东路的双层封闭天桥，北面每层六窗。桥下保留通行，桥深、标高和接墙位置按历史照片与两侧现有模型估算。"
+    },
+    {
+      "id": "huangpu-shanghai-concert-hall",
+      "name": "迁建后的上海音乐厅（原南京大戏院）外部体量与入口",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "concert-hall.html",
+      "manifest": "assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
+      "manifest_sha256": "0f5df27e556f49db1e601e6d8187438877530d72811c9a1fe1b3202e603b9119",
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall-web.glb",
+          "bytes": 1228664,
+          "sha256": "1e517b3b72dedd55d553f36d6599bd9573186eeaa44088e161a52c4489a0ab05",
+          "triangles": 42960
+        },
+        "raw": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall-raw.glb",
+          "bytes": 2859740,
+          "sha256": "f5c19980a3587f4e1895cc250929cd97d8675a91ac7494c179ea343a2a24a2bb",
+          "triangles": 42960
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall-lod.glb",
+          "bytes": 703376,
+          "sha256": "54679d8bcd6cf60118b061ffaa3cbfd9902cdab293b90ee2c92d22c8c45346de",
+          "triangles": 23764
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-shanghai-concert-hall/huangpu-shanghai-concert-hall.blend",
+          "bytes": 730697,
+          "sha256": "5636eafa9eea38164de3ce4b99344b242bce4c583a529afb5590097d709f40f3"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -28.613203048706055,
+            0.0,
+            -70.34762573242188
+          ],
+          "max": [
+            18.04435920715332,
+            21.7450008392334,
+            3.7873728275299072
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -28.613203048706055,
+            -3.7873728275299072,
+            0.0
+          ],
+          "max": [
+            18.04435920715332,
+            70.34762573242188,
+            21.7450008392334
+          ]
+        },
+        "triangles": 42960,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "迁建后上海音乐厅的外部体量、西北侧历史入口、东南侧对称入口、东北长边及坡屋顶与平屋顶。两侧入口参考2024年照片，隐面和高度含估计。"
     }
   ],
   "baseline_inventory": {
@@ -3452,6 +3519,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-wing-on-skybridges/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
@@ -3465,13 +3533,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/wing-on-skybridges-v1",
+  "incremental_audit_directory": "data/audit/concert-hall-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/country-hospital-north-v1/inventory-increment.json",
-    "bytes": 47374,
-    "sha256": "1d59cb1d27c707f30863c06f4649477cb7969464799db1aebcf8a3ccffae7234"
+    "file": "data/audit/wing-on-skybridges-v1/inventory-increment.json",
+    "bytes": 50254,
+    "sha256": "c5b0761ebca2071ef23ba3e2043799ac7a38c528172f380062307211570a5062"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-wing-on-skybridges/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-shanghai-concert-hall/manifest.json"
   ]
 }

@@ -19,7 +19,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的41项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的42项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -29,8 +29,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 42 | 上海音乐厅迁建后的外观 | 黄浦区／延安东路523号 | 制作中 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%9F%B3%E4%B9%90%E5%8E%85>)；核对迁建年代、地图原体块替换和两个入口的可见性。 |
-| 43 | 金城银行大楼江西中路临街主楼 | 黄浦区／江西中路200号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%87%91%E5%9F%8E%E9%93%B6%E8%A1%8C%E5%A4%A7%E6%A5%BC>)；核对地址和历史层数异文，保留后院及独立楼栋。 |
+| 43 | 金城银行大楼江西中路临街主楼 | 黄浦区／江西中路200号 | 制作中 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E9%87%91%E5%9F%8E%E9%93%B6%E8%A1%8C%E5%A4%A7%E6%A5%BC>)；核对地址和历史层数异文，保留后院及独立楼栋。 |
 | 44 | 美琪大戏院临街外观 | 静安区／江宁路99号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E7%BE%8E%E7%90%AA%E5%A4%A7%E6%88%8F%E9%99%A2>)；核对江宁路门牌异文和影院改造年代，对照侧、背面的影像。 |
 | 45 | 大上海大戏院历史立面（1933年建筑） | 黄浦区／西藏中路520号 | 待制作 | — | [历史建筑名录原行][MTD-f682a0d0] · [条目资料入口](<https://zh.wikipedia.org/wiki/%E5%A4%A7%E4%B8%8A%E6%B5%B7%E7%94%B5%E5%BD%B1%E9%99%A2>)；核查城市史档案照片和湮没名录，保留原址街道与现代商城，为历史版本单独设置查看入口。 |
 
@@ -53,7 +52,7 @@
 | sh-historic-b1-019 | 工部局西端接缝与保留带；工部局庭院独立楼及名录范围 | 汉口路153号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核实北西短回翼、南翼西端的实际年代界线与接缝坐标；保留两条3米未核带约120.34平方米，可能仍含历史墙体，不按当前作者切面宣称历史范围全部完成；核对独立红色B楼的平移后位置、源对应和名录归属，再按独栋制作；新多功能厅、现代西侧和屋顶亭台与旧主楼分开，不因项目同名自动并入历史名录完成量。 |
 | sh-historic-b1-022 | 大世界中庭屋盖现状核查与后续建模 | 西藏南路1号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 2014俯照可见白钢弧屋盖，但现有资料不能证明2017复开后及当前拆留状态。本次未制作该屋盖；补修缮后顶视、内院影像或可信工程资料，核其现状轮廓、高度、材质、完整内院立面及与主楼／独立剧场的连接，再决定建模范围。不重复排已交付的沿街主楼与街角塔。 |
 | sh-historic-b1-037 | 步高里 | 陕西南路387号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；里弄整体名称，先按入口、里弄房屋及具体门牌拆分；不能以一栋完成整处，原索引未给可用逐栋数。 |
-| sh-historic-b1-040 | 南京大戏院 | 延安东路523号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；南京大戏院／上海音乐厅，名录地址延安东路523号；先核照片时期和新旧位置关系，索引未给迁建年份，不填未经核查的年代。 |
+| sh-historic-b1-040 | 上海音乐厅西南侧立面补证 | 延安东路523号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查找迁建后西南立面的正投影或完整照片，核实被遮挡的门窗、修缮后细部及其分布。 |
 | sh-historic-b1-041 | 金城银行 | 江西中路200号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-043 | 大上海大戏院 | 西藏中路520号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b1-044 | 八仙桥基督教青年会 | 西藏南路123号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -2660,9 +2659,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余1015条／已关联21条）
+### 既有地图中的具名建筑待查线索（剩余1014条／已关联22条）
 
-原始1,036条具名地图要素中，21条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1015条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，22条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余1014条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2986,7 +2985,6 @@
 | cdc48e9e-46fe-4381-a865-6ea823832aec | 上海铁道宾馆 | 黄浦区 | 核身份／去重／查建筑参考 |
 | cea07b92-90b2-463c-9e24-d38879f15d8b | 申报馆 | 黄浦区 | 核身份／去重／查建筑参考 |
 | d0a3bc45-6e7a-4653-8e02-63be41a68a97 | 外滩街道社区卫生服务中心 | 黄浦区 | 核身份／去重／查建筑参考 |
-| d49e6b9c-1cbb-47f7-a73f-bb8c59295130 | 上海音乐厅 | 黄浦区 | 核身份／去重／查建筑参考 |
 | d6bcbe6d-24a1-4e1b-8250-cd71b9a271aa | 香港广场南座 | 黄浦区 | 核身份／去重／查建筑参考 |
 | d71667a8-8666-4d89-b990-4efc43be5af1 | 上海世茂广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | d8545eb1-0f43-4579-a9e1-de3124993a7d | 都市总部大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3707,7 +3705,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；87处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中47件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；88处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中48件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3715,7 +3713,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增47处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增48处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3737,10 +3735,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，87处建筑与构件模型入口（40处既有＋47处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增47处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，88处建筑与构件模型入口（40处既有＋48处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增48处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（30处）
+### 黄浦区（31处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3776,6 +3774,7 @@
 | 上海公共租界工部局历史主楼 | 2026-11-01 00:59:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-municipal-council&mode=overview) |
 | 大世界历史主楼与街角塔 | 2026-11-03 22:31:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-great-world&mode=overview) |
 | 新老永安跨浙江中路北侧封闭天桥 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wing-on-skybridges&mode=overview) |
+| 迁建后的上海音乐厅（原南京大戏院）外部体量与入口 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-concert-hall&mode=overview) |
 
 ### 徐汇区（7处）
 
