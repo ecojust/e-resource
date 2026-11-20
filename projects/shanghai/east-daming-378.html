@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>东大名路378号历史办公楼</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="positive-x" data-oblique-x="0.76" aria-label="东大名路378号历史红砖办公楼街面与塔亭模型"></main>
+  <header>
+    <a href="index.html#landmark=hongkou-east-daming-road-378&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">虹口区 · 东大名路378号</p>
+    <h1>东大名路378号历史办公楼</h1>
+    <p>红砖街面、退台与翘檐塔亭</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">上海市第二批优秀历史建筑名录在此门牌列有北方局、远洋运输公司。七开间砖墙、两层退台和西侧绿顶塔亭参照2014年1月街照制作。院内门房、楼体后部和同门牌的30层总部另列。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">东大名路街面</button>
+      <button type="button" data-view="oblique">西侧塔亭</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-east-daming-road-378/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-east-daming-road-378');
+  </script>
+</body>
+</html>
