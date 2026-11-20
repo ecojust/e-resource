@@ -79,7 +79,14 @@ for(const source of ['overture-buildings','openmaptiles']){
     if(partial){
       const retained=plan.residualData.features[0].geometry;
       for(const p of retainedProbes)assert.equal(candidateGeometryContains(retained,point(...p.xy)),true,p.name);
-      assert.equal(candidateGeometryContains(retained,point(0,0)),false);
+      const cutProbe=spec.residualCutProbe===undefined?[0,0]:spec.residualCutProbe;
+      if(spec.residualCutProbe!==undefined){
+        assert.ok(Array.isArray(cutProbe)&&cutProbe.length===2&&cutProbe.every(Number.isFinite),'Expected finite residualCutProbe in local metres');
+        const removedPoint=point(...cutProbe);
+        assert.ok(candidateGeometryContains(geometry,removedPoint),'Removed probe outside original owner');
+        assert.ok(candidateGeometryContains(clip.geometry,removedPoint),'Removed probe outside replacement cut');
+      }
+      assert.equal(candidateGeometryContains(retained,point(...cutProbe)),false,'Removed probe still inside residual');
     }
     assert.equal(plan.desired.size,targets.has(owner.local_id)?1:0);
     vector.push({source,owner:owner.local_id,hidden:plan.desired.size===1,residuals:plan.residualData.features.length});

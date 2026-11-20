@@ -1,0 +1,91 @@
+{
+  "legacy_original": {
+    "case_sha256": "dcf5de8e7315b9de94213a90549cedd27b08e076953d4a309ce1435ac41bcb57",
+    "checker_sha256": "e394a7c95d8abcc78d8606f2bcdcf3988c6604df56d9263d2fb5b6a08759a7b7",
+    "exit_code": 0,
+    "catalog_sha256": "c32852d3e62984722d9957bb16afc5aa1699ff526f8e101e8275ae472e6298cf",
+    "shader": {
+      "triangles": 651,
+      "macroTextures": 13,
+      "largest": 256
+    },
+    "city_rows": 149
+  },
+  "legacy_revised": {
+    "case_sha256": "dcf5de8e7315b9de94213a90549cedd27b08e076953d4a309ce1435ac41bcb57",
+    "checker_sha256": "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb",
+    "exit_code": 0,
+    "catalog_sha256": "c32852d3e62984722d9957bb16afc5aa1699ff526f8e101e8275ae472e6298cf",
+    "shader": {
+      "triangles": 651,
+      "macroTextures": 13,
+      "largest": 256
+    },
+    "city_rows": 149
+  },
+  "legacy_result_equal_except_checker_hash": true,
+  "target_original": {
+    "case_sha256": "b57cb50cd6247f2067f1ca7e0a347932ae27564186a2535c3dd98434fd673c47",
+    "checker_sha256": "e394a7c95d8abcc78d8606f2bcdcf3988c6604df56d9263d2fb5b6a08759a7b7",
+    "exit_code": 1,
+    "catalog_sha256": "87af839f10e34e53585577765228552e52700b23bffddd15e6bc238fc9c255e1",
+    "matched_failure": "true !== false"
+  },
+  "target_revised": {
+    "case_sha256": "57d677a08542bb116f2f30363171c70a14f025cbb2b01e38e08b44d25dc0c393",
+    "checker_sha256": "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb",
+    "exit_code": 0,
+    "catalog_sha256": "87af839f10e34e53585577765228552e52700b23bffddd15e6bc238fc9c255e1",
+    "shader": {
+      "triangles": 684,
+      "macroTextures": 14,
+      "largest": 269
+    },
+    "city_rows": 154
+  },
+  "target_witnesses": {
+    "author_frame_removed_xy": [
+      13.155313358072158,
+      1.238153803098888
+    ],
+    "removed": {
+      "name": "closed bank door",
+      "position": [
+        121.482703436273,
+        31.237917301698154
+      ],
+      "candidate": true,
+      "cut": true
+    },
+    "retained_author_origin": {
+      "name": "retained offices at author origin",
+      "position": [
+        121.4827414202794,
+        31.238031608837435
+      ],
+      "candidate": false,
+      "cut": false
+    },
+    "owner_vectors": [
+      {
+        "source": "overture-buildings",
+        "owner": 1477,
+        "hidden": true,
+        "residuals": 1
+      },
+      {
+        "source": "openmaptiles",
+        "owner": 1477,
+        "hidden": true,
+        "residuals": 1
+      }
+    ]
+  },
+  "target_negative_control": {
+    "case_sha256": "96c1f7ec522cf7944b6866245f90be8ecd4f74cf324d25bb660698e85194e01f",
+    "checker_sha256": "ffbcf60a746a8283cac1a4b9df4c5e28d7fd5db5e4dce59ce1626e522c810dfb",
+    "exit_code": 1,
+    "catalog_sha256": "87af839f10e34e53585577765228552e52700b23bffddd15e6bc238fc9c255e1",
+    "matched_failure": "Removed probe outside replacement cut"
+  }
+}

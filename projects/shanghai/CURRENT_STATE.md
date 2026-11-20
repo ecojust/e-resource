@@ -1,3 +1,11 @@
+# 浙江第一商业银行大楼（江西中路与汉口路街面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) · [单体旋转与下载](chekiang-first-bank.html) · [来源与制作范围](source/precise/huangpu-chekiang-first-commercial-bank/README.md) · [验收记录](data/audit/chekiang-first-bank-v1/README.md)
+
+汉口路151号浙江第一商业银行在原址的临街外观，并核实江西中路222号入口及各期建筑关系。
+
+近景 39,474 个三角面，远景 20,198 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,032,967 字节。上海主图现有 154 处独立入口，黄浦区 79 处。[资产清单](assets/models/candidates/huangpu-chekiang-first-commercial-bank/manifest.json)
+
 # 台湾银行大楼东门厅与九江路街面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-taiwan-building&mode=overview) · [单体旋转与下载](bank-of-taiwan.html) · [来源与制作范围](source/precise/huangpu-bank-of-taiwan-building/README.md) · [验收记录](data/audit/bank-of-taiwan-v1/README.md)
