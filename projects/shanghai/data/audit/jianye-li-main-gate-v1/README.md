@@ -15,3 +15,7 @@
 正式24149地图将全市目录从185处增至186处，原有145条候选记录逐项一致。十张实图中，改造前同一街段的连续窗墙在中部形成门楼开口，改造后可见两侧石柱、分层女儿墙和成对木窗。窄屏默认视距可辨轮廓，放大后可分辨窗扇。地图视角较高，五字额的字形以独立页正视图最清楚。街面和俯视图均保留两侧原有楼体以及街对面近景遮挡。按地点搜索切换到吉祥里，再返回建业里后，门楼重新载入。[同一街段前态](city-24149/map-before.png) · [桌面默认视距](city-24149/map-desktop-same-camera.png) · [手机放大](city-24149/map-mobile-public-zoom.png) · [街面](city-24149/map-street-facade.png) · [回返](city-24149/map-returned.png)
 
 手机触屏和桌面鼠标分别在真实画布上命中门楼标签。桌面第一次松键发生在监听建立之前，随后在同一窗口同一标签再点一次，收据保存了浏览器确认的鼠标事件。地图中18个地面点逐项符合门柱、门洞和街面的预期。正式站共实取986个文件，合962,072,528字节，全部符合签名。[双端操作及下载](city-24149/main-browser.json) · [桌面复点](city-24149/repeated-mouse.json) · [整站传输](city-24149/149-all-http.json) · [汇总](city-24149/result.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d59f88b886c7029371fde82dbd282a5a5817418c/projects/shanghai/index.html#landmark=xuhui-jianye-li-main-lane-gate&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

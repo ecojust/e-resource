@@ -3810,7 +3810,7 @@
 | 国立上海医学院东一号楼（草坪立面、歇山顶与两翼方亭） | 2026-11-21 02:37:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-medical-college-east-building-one&mode=overview) |
 | 岳阳路320号在君楼（七券门廊与双内院） | 2026-11-21 02:41:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-320-research-building&mode=overview) |
 | 圣母大堂（新乐路东正教堂） | 2026-11-21 04:52:18 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-orthodox-cathedral&mode=overview) |
-| 建业里总弄沿街门楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianye-li-main-lane-gate&mode=overview) |
+| 建业里总弄沿街门楼 | 2026-11-21 05:20:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianye-li-main-lane-gate&mode=overview) |
 
 ### 长宁区（9处）
 
