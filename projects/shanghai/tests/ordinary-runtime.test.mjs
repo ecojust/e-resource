@@ -143,6 +143,78 @@ test('verified byte reader still times out a pending response body without publi
 });
 
 function glb(doc) {const raw=bytes(JSON.stringify(doc)),padded=new Uint8Array(Math.ceil(raw.length/4)*4);padded.fill(32);padded.set(raw);const out=new Uint8Array(20+padded.length),v=new DataView(out.buffer);v.setUint32(0,0x46546c67,true);v.setUint32(4,2,true);v.setUint32(8,out.length,true);v.setUint32(12,padded.length,true);v.setUint32(16,0x4e4f534a,true);out.set(padded,20);return out;}
+test('a stalled landmark transfer automatically retries once and verifies the complete replacement', async t => {
+  t.mock.timers.enable({apis:['setTimeout']});
+  const data = glb({asset:{version:'2.0'}, buffers:[]});
+  const asset = {file:'assets/model.glb', bytes:data.byteLength, sha256:sha(data)};
+  const record = {id:'timeout-recovery', ordinaryBaseURL:'https://example.test/', assets:{web:asset,lod:asset}};
+  let attempts = 0, cancelled = 0, parses = 0;
+  const fetchFunction = async () => {
+    attempts++;
+    if (attempts === 1) return new Response(new ReadableStream({
+      start(stream) { stream.enqueue(data.slice(0, 8)); },
+      cancel() { cancelled++; }
+    }));
+    return new Response(data);
+  };
+  const loader = {async parseAsync(buffer) {
+    parses++;
+    assert.deepEqual(new Uint8Array(buffer),data);
+    return {scene:new THREE.Group()};
+  }};
+  const result = loadOrdinaryLandmarkAsset({record,variant:'full',loader,fetchFunction});
+  await until(() => attempts === 1);
+  t.mock.timers.tick(35000);
+  const model = await result;
+  assert.equal(attempts,2); assert.equal(cancelled,1); assert.equal(parses,1);
+  assert.equal(model.scene.userData.__ordinaryVerifiedAsset.sha256,asset.sha256);
+  assert.equal(record.catalogController,null);
+});
+
+test('consecutive landmark timeouts stop after two transfers and a cancelled landmark never retries', async t => {
+  t.mock.timers.enable({apis:['setTimeout']});
+  const data = glb({asset:{version:'2.0'}, buffers:[]});
+  const asset = {file:'assets/model.glb', bytes:data.byteLength, sha256:sha(data)};
+  const record = {id:'double-timeout', ordinaryBaseURL:'https://example.test/', assets:{web:asset,lod:asset}};
+  const loader = {parseAsync() { assert.fail('A partial GLB cannot reach the parser'); }};
+  let attempts = 0;
+  const transfers = [deferred(), deferred(), deferred()];
+  const fetchFunction = async () => {
+    transfers[attempts++].resolve();
+    return new Response(new ReadableStream({start(stream) { stream.enqueue(data.slice(0, 8)); }}));
+  };
+  const first = assert.rejects(loadOrdinaryLandmarkAsset({record,variant:'distant',loader,fetchFunction}),
+    {name:'TimeoutError',message:'Asset network timed out'});
+  await transfers[0].promise;
+  t.mock.timers.tick(35000);
+  await transfers[1].promise;
+  t.mock.timers.tick(35000);
+  await first;
+  assert.equal(attempts,2); assert.equal(record.catalogController,null);
+  const request = new AbortController();
+  const cancelled = assert.rejects(loadOrdinaryLandmarkAsset({record,variant:'full',loader,fetchFunction,request}));
+  await transfers[2].promise;
+  request.abort('ordinary-view-changed');
+  await cancelled;
+  assert.equal(attempts,3); assert.equal(record.catalogController,null);
+});
+
+test('an HTTP error or a different file hash cannot trigger the timeout retry', async () => {
+  const data = glb({asset:{version:'2.0'}, buffers:[]});
+  const asset = {file:'assets/model.glb', bytes:data.byteLength, sha256:sha(data)};
+  const record = {id:'invalid-transfer', ordinaryBaseURL:'https://example.test/', assets:{web:asset,lod:asset}};
+  const loader = {parseAsync() { assert.fail('Invalid bytes cannot reach the parser'); }};
+  const wrong = data.slice();
+  wrong[wrong.length - 1] ^= 1;
+  for (const [response, error] of [[new Response(null,{status:404}), /404/], [new Response(wrong), /SHA256/]]) {
+    let attempts = 0;
+    const fetchFunction = async () => { attempts++; return response; };
+    await assert.rejects(loadOrdinaryLandmarkAsset({record,variant:'full',loader,fetchFunction}),error);
+    assert.equal(attempts,1);
+    assert.equal(record.catalogController,null);
+  }
+});
+
 test('ordinary photo GLB bytes are checked before parse; external dependency cannot bypass ownership review',async()=>{
   let parsed=0;const loader={async parseAsync(){parsed++;return {scene:new THREE.Group()};}};
   const data=glb({asset:{version:'2.0'},buffers:[],images:[]}),record={catalogBaseURL:'https://example.test/',assets:{web:{file:'assets/models/precise/a/web.glb',bytes:data.length,sha256:sha(data)}}};

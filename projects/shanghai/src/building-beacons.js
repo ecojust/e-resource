@@ -23,7 +23,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
  * cells; at extreme density all signs remain present and the directory is the
  * accessible alternative to overlapping labels. No zoom-based culling/clusters.
  */
-export function layoutBeaconLabels(items,{width,height,insets={}}){
+export function layoutBeaconLabels(items,{width,height,insets={},focusedId=null}){
   if(!items.length)return [];
   const margin=8,x0=Math.max(margin,insets.left||0),x1=Math.min(width-margin,width-(insets.right||0));
   const y0=Math.max(margin,insets.top||0),y1=Math.min(height-margin,height-(insets.bottom||0));
@@ -66,10 +66,14 @@ export function layoutBeaconLabels(items,{width,height,insets={}}){
   const used=new Set();
   const placed=new Map();
   for(const item of [...items].sort((a,b)=>a.y-b.y||a.x-b.x||a.id.localeCompare(b.id))){
+    // A lone selected sign can sit at the opposite edge of the free viewport.
+    // Keep its full name, hit area and leader while leaving the building visible.
+    const preferredY=items.length===1&&item.id===focusedId
+      ? (item.y-y0>=y1-item.y?y0:y1) : item.y;
     let best=-1,cost=Infinity;
     for(let i=0;i<slots.length;i++)if(!used.has(i)){
       if(compact&&wideCount&&slots[i].threeDigits!==(item.number>=100))continue;
-      const slot=slots[i],distance=(slot.x-item.x)**2+(slot.y-item.y)**2;
+      const slot=slots[i],distance=(slot.x-item.x)**2+(slot.y-preferredY)**2;
       if(distance<cost){cost=distance;best=i;}
     }
     const cardWidth=compact?(item.number>=100?WIDE_NUMBER_WIDTH:compactWidth):item.width,cardHeight=compact?compactHeight:item.height;
@@ -145,7 +149,7 @@ function labelSize(name){
 /** Sprite-based screen-facing light signs above the 3D map. The GeoJSON keeps
  * all delivered model records regardless of model fetch, LOD, distance or zoom.
  */
-export function createBuildingBeacons({map,records,onSelect=()=>{},documentObject=document}){
+export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=()=>null,documentObject=document}){
   const ids=new Set(),byId=new Map();
   const numberSprites=records.length>=100?[...NUMBER_SPRITES,...THREE_DIGIT_SPRITES]:NUMBER_SPRITES;
   for(const row of records){
@@ -199,7 +203,7 @@ export function createBuildingBeacons({map,records,onSelect=()=>{},documentObjec
       right:Math.max(width>760?88:64,toolRect?width-toolRect.left+8:0),
       top:Math.max(width>760?154:182,(legendRect.bottom||0)+8),
       bottom:Math.max(width>760?152:174,cardRect?height-cardRect.top+8:0)};
-    layout=layoutBeaconLabels(visible,{width,height,insets});const offsets=new Map(layout.map(p=>[p.id,p]));
+    layout=layoutBeaconLabels(visible,{width,height,insets,focusedId:getFocusedId()});const offsets=new Map(layout.map(p=>[p.id,p]));
     // GeoJSON vector tiles stringify array properties. Keep pixel vectors in
     // literal style expressions so the actual symbol evaluator receives vec2.
     const expression=divisor=>layout.length?['match',['get','id'],...layout.flatMap(p=>[p.id,['literal',[(p.labelX-p.x)/divisor,(p.labelY-p.y)/divisor]]]),['literal',[0,0]]]:[0,0];

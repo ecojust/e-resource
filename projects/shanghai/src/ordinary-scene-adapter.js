@@ -1,4 +1,4 @@
-import {assetURL, readVerifiedBytes} from './ordinary-building-catalog.js';
+import {assetURL, readVerifiedBytes} from './ordinary-building-catalog.js?v=asset-timeout-retry-v1';
 import {sameJSON as equal} from './ordinary-contracts.js';
 import {markVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 const assert = (condition, message) => { if (!condition) throw Error(message); };
@@ -14,7 +14,13 @@ export async function loadOrdinaryLandmarkAsset({record, variant, loader, fetchF
   const controller = request; record.catalogController = controller;
   const baseURL = record.catalogBaseURL || record.ordinaryBaseURL;
   try {
-    const buffer = await readVerifiedBytes(asset, baseURL, {fetchFunction, signal: controller.signal});
+    const read = () => readVerifiedBytes(asset, baseURL, {fetchFunction, signal: controller.signal});
+    // A stalled first transfer can finish on retry. Keep this landmark's existing load slot
+    // and cancellation signal so a late result cannot install after the user moves away.
+    const buffer = await read().catch(error => {
+      if (error.name !== 'TimeoutError' || controller.signal.aborted || record.catalogDisposed) throw error;
+      return read();
+    });
     const view = new DataView(buffer);
     assert(buffer.byteLength >= 20 && view.getUint32(0, true) === 0x46546c67
       && view.getUint32(4, true) === 2 && view.getUint32(8, true) === buffer.byteLength

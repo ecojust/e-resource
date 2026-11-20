@@ -1,11 +1,11 @@
-import { createShanghaiScene } from './map-scene.js?v=foreign-ymca-v1';
+import { createShanghaiScene } from './map-scene.js?v=duolun-250-v1';
 import { WalkController } from './walk-controller.js';
-import {setupHistoricalView} from './historical-view.js?v=foreign-ymca-v1';
+import {setupHistoricalView} from './historical-view.js?v=duolun-250-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js?v=foreign-ymca-v1';
-import { readVerifiedBytes } from './ordinary-building-catalog.js';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=duolun-250-v1';
+import { readVerifiedBytes } from './ordinary-building-catalog.js?v=asset-timeout-retry-v1';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=foreign-ymca-v1';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=duolun-250-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js';
 
 const $ = id => document.getElementById(id);
@@ -262,7 +262,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=foreign-ymca-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
+    const responses=await Promise.all(['data/districts.json','data/districts-display.geojson','data/landmarks.json','data/scene-props.json','data/precise-buildings-v6.json','data/candidate-city-integrations.json'].map(name=>fetch(new URL(`../${name}${name==='data/candidate-city-integrations.json'?'?v=duolun-250-v1':''}`,import.meta.url)).then(r=>{if(!r.ok)throw new Error(`无法读取 ${name}`);return r.json();}).catch(error=>{
       if(name!=='data/candidate-city-integrations.json')throw error;
       candidateCatalogError=error;return {schema:'candidate-city-integrations-v1',models:[]};
     })));
@@ -284,7 +284,8 @@ async function main(){
       },
       onLoadError:error=>{console.warn('[Shanghai map]',error);$('live-status').textContent='地图连接稍慢';}});
     scene.map.dragRotate.enable();scene.setDistricts(boundaries);scene.setDistrictVisibility(true);
-    scene.setBuildingBeacons(landmarks,{onSelect:place=>selectPlace(place,{mode:'overview'})});
+    scene.setBuildingBeacons(landmarks,{onSelect:place=>selectPlace(place,{mode:'overview'}),
+      getFocusedId:()=>mode==='overview'&&activePlace?.city_integration?activePlace.id:null});
     scene.map.on('move',()=>{if(mode==='overview')updateHud({distance:controller?.distance||0});});
     scene.map.doubleClickZoom.disable();
     scene.map.on('dblclick',event=>{

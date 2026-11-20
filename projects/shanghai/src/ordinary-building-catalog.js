@@ -43,6 +43,7 @@ export async function readVerifiedBytes(meta, baseURL, {fetchFunction = fetch, s
     const chunks = []; let length = 0;
     if (response.body?.getReader) {
       reader = response.body.getReader();
+      if (controller.signal.aborted) throw Error('Asset request cancelled');
       for (;;) {
         const {done, value} = await reader.read(); if (done) break;
         length += value.byteLength;
@@ -64,7 +65,7 @@ export async function readVerifiedBytes(meta, baseURL, {fetchFunction = fetch, s
     return bytes.buffer;
   } catch (error) {
     await reader?.cancel().catch(() => {});
-    if (controller.signal.reason === 'timeout') throw Error('Asset network timed out');
+    if (controller.signal.reason === 'timeout') throw new DOMException('Asset network timed out', 'TimeoutError');
     if (!controller.signal.aborted) controller.abort('request-failed');
     throw error;
   } finally {

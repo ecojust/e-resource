@@ -1,3 +1,11 @@
+# 多伦路250号住宅（弧形街面与中门）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) · [单体旋转与下载](duolun-250.html) · [来源与制作范围](source/precise/hongkou-duolun-250/README.md) · [验收记录](data/audit/duolun-250-v1/README.md)
+
+多伦路250号住宅的弧形街面、中央门洞和二层拱窗，按2014年及2024年照片定位西北向观察面。
+
+近景 113,856 个三角面，远景 51,804 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 15,983,014 字节。上海主图现有 103 处独立入口，虹口区 6 处。[资产清单](assets/models/candidates/hongkou-duolun-250/manifest.json)
+
 # 西侨青年会（上海体育大厦临街主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-foreign-ymca&mode=overview) · [单体旋转与下载](foreign-ymca.html) · [来源与制作范围](source/precise/huangpu-foreign-ymca/README.md) · [验收记录](data/audit/foreign-ymca-v1/README.md)

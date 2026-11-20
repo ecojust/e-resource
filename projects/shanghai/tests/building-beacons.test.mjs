@@ -753,3 +753,22 @@ test('100 records keep separate sprites, fixed 12 px digits and accurate taps in
     controls.destroy();assert.equal(map.images.size,0);
   }
 });
+
+
+test('a lone focused name leaves the open map centre clear without changing dense labels',()=>{
+  const item={id:'duolun',number:103,x:166,y:427,width:176,height:48};
+  const viewport={width:390,height:844,insets:{left:12,right:64,top:182,bottom:220}};
+  const normal=layoutBeaconLabels([item],viewport)[0];
+  const [focused]=layoutBeaconLabels([item],{...viewport,focusedId:item.id});
+  assert.equal(focused.width,176);
+  assert.equal(focused.height,48);
+  assert.equal(focused.compact,false);
+  assert(focused.labelY+focused.height/2<=item.y-90);
+  assert(focused.labelY-focused.height/2>=viewport.insets.top);
+  assert(Math.abs(normal.labelY-item.y)<40);
+  const upper={...item,y:228};
+  const [bottom]=layoutBeaconLabels([upper],{...viewport,focusedId:item.id});
+  assert(bottom.labelY-bottom.height/2>upper.y+90);
+  const pair=[item,{...item,id:'other',number:11,y:467}];
+  assert.deepEqual(layoutBeaconLabels(pair,viewport),layoutBeaconLabels(pair,{...viewport,focusedId:item.id}));
+});
