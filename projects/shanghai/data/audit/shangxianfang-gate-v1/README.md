@@ -23,3 +23,7 @@
 320×568全市编号密布的原回归在要求108个号码无重叠时超时，当前证据只确认390及870像素的本地门楼灯牌。该小屏全市状态单列追踪。[320像素原始记录](preflight/compact-grid-timeout/compact-browser.json)
 
 此次调镜头涉及尚贤坊一处。其余67处可拟合镜头的建筑，在三种窗口尺寸下共201组取景参数均与原版一致。[两份目录的逐文件差异](camera-input-revision/input-difference.json) · [各建筑的实际镜头参数](camera-input-revision/camera-arguments.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0a1aeb1e2b658fd02b93c30fd563570a4e88c005/projects/shanghai/index.html#landmark=huangpu-shangxianfang-gate&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
