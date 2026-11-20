@@ -3801,7 +3801,7 @@
 | 上海宋庆龄故居主楼 | 2026-10-29 21:05:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) |
 | 徐家汇藏书楼北楼（原藏书楼） | 2026-11-20 18:50:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) |
 | 中山医院3号楼（历史中央主楼） | 2026-11-20 18:53:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) |
-| 徐汇公学崇思楼（修复后南北立面与孟莎屋顶） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) |
+| 徐汇公学崇思楼（修复后南北立面与孟莎屋顶） | 2026-11-21 01:35:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) |
 
 ### 长宁区（6处）
 

@@ -21,3 +21,7 @@
 23122前态有160个地点。通过目录进入相邻的徐家汇藏书楼北楼后，在崇思楼位置记录了原始街景。23123目录新增崇思楼后有161个地点。900×650桌面和390×844手机均从正式城市入口载入了近景模型和含316号源的原瓦片组。默认视角完整呈现南立面和孟莎屋顶，名称牌位于建筑上方，发光定位点覆盖南面中央的一小处。 另取南门砖柱、屋面老虎窗、北侧楼梯以及远景。8个街面和墙体样点完成碰撞复核，四件下载按实际响应校验。北侧视角的西端楼梯局部被原有邻楼遮挡。远景截图主要呈现街区位置，运行记录另行确认远景网格已加载。
 
 [前态与原瓦片](control-browser-23122.json) · [前态画面](map-before-23122.png) · [桌面实图](main-desktop.png) · [手机实图](main-mobile.png) · [后态实际操作](main-map-browser-23123.json) · [南门与砖柱](south-door-and-piers.png) · [屋面与老虎窗](mansard-and-dormers.png) · [北侧原邻楼与楼梯](north-stair-towers.png) · [街区远景](distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/6ca543f4ae326c5e7ffc6c3f08cdd6b5d8f024bd/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 8 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
