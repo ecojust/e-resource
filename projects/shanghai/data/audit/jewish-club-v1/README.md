@@ -19,3 +19,7 @@
 最终116处地图从目录选择南京西路722号的庭院南楼。新的构图框覆盖中央门廊，原模型的尺寸、定位与两翼不变。390×844手机和870×660桌面上的初次画面与原邻楼加载后的暖态均已实际截图；暖态可辨双柱入口、拱券、上窗、栏杆与屋面。
 
 [手机初次选择](final-defaults/map-mobile.png) · [手机暖态](final-defaults/map-mobile-with-neighbors.png) · [桌面初次选择](final-defaults/map-desktop.png) · [桌面暖态](final-defaults/map-desktop-with-neighbors.png) · [四张图取得时的真实状态](final-defaults/browser-at-capture.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d47ce5c1f7f409d9808f138d5a08e2717bb45baa/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
