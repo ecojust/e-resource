@@ -1,3 +1,11 @@
+# 罗别根花园主宅（南向双山墙与露木构阳台）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-luobiegen-garden-villa&mode=overview) · [单体旋转与下载](luobiegen-garden.html) · [来源与制作范围](source/precise/changning-luobiegen-garden-villa/README.md) · [验收记录](data/audit/luobiegen-garden-villa-v1/README.md)
+
+虹桥路2310号罗别根花园的独立主宅，两处花园山墙、中央阳台、红瓦长屋脊与两座高烟囱依据1998及2017年照片重建。临西连接段与独立邻楼保留。建造年代存在异文。
+
+近景 18,834 个三角面，远景 9,276 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,792,017 字节。上海主图现有 97 处独立入口，长宁区 4 处。[资产清单](assets/models/candidates/changning-luobiegen-garden-villa/manifest.json)
+
 # 孙科别墅主楼（南花园敞廊与北门廊）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-sun-ke-villa&mode=overview) · [单体旋转与下载](sun-ke-villa.html) · [来源与制作范围](source/precise/changning-sun-ke-villa/README.md) · [验收记录](data/audit/sun-ke-villa-v1/README.md)

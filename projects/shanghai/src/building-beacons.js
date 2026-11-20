@@ -7,6 +7,7 @@ const NUMBER_SPRITES=[
   {id:`${PREFIX}-number-short`,width:22,height:18},
   {id:`${PREFIX}-number-dense`,width:20,height:18},
   {id:`${PREFIX}-number-low`,width:20,height:16},
+  {id:`${PREFIX}-number-wide-low`,width:22,height:15},
 ];
 const NAME_SIGNS=[[84,34],[120,34],[176,34],[176,48],[176,62]].map(([width,height],i)=>({id:`${SIGN}-${i}`,width,height}));
 const GROUND={getElevationForLngLat:()=>0};

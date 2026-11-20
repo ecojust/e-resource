@@ -156,6 +156,7 @@ metadata.INTEGRATIONS = metadata.ROOT / 'projects/shanghai/data/candidate-city-i
 readme = metadata.render((metadata.ROOT / 'projects/shanghai/README.md').read_text(), metadata.candidates(), {}, True)
 print(json.dumps({'directory': directory.render(metadata.ROOT / 'projects/shanghai'), 'readme': readme}))`,new URL('tools/',root).pathname,temporary],{encoding:'utf8'}));
     const rendered=result.directory;
+    assert(result.readme.includes(`上海主图现有 ${records.length+1} 处入口。最近接入[${next.name}](`));
     assert(result.readme.includes(`全市16区底图可浏览；${records.length+1}处建筑与构件模型已归入按区目录`));
     assert(result.readme.includes(`其中${candidates.length+1}件新增接入采用近似定位`));
     assert(result.readme.includes(`原${legacy.length}处入口保留室外漫游，新增${candidates.length+1}处打开俯瞰定位`));

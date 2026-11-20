@@ -195,6 +195,15 @@ def render(text, items, times, project=False):
     district_names = {str(item['id']): item['name'] for item in json.loads((ROOT / 'projects/shanghai/data/districts.json').read_text())['districts']}
     counts = Counter(district_names[str(item['districtId'])] for item in [*base, *city.values()])
     assert len(counts) == 16 and sum(counts.values()) == len(base_ids) + len(city)
+    latest = next(reversed(city.values())) if city else base[-1]
+    latest_mode = 'overview' if city else 'walk'
+    latest_url = f"{CURRENT}index.html#landmark={latest['id']}&mode={latest_mode}"
+    state_path = 'CURRENT_STATE.md' if project else 'projects/shanghai/CURRENT_STATE.md'
+    lead = (f"上海主图现有 {sum(counts.values())} 处入口。最近接入[{latest['name']}]({latest_url})。"
+            f"[制作范围与验收记录]({state_path})")
+    before, changes = re.subn(r'(?<=<!-- current-shanghai-model:start -->)\n.*?\n(?=<!-- current-shanghai-model:end -->)',
+                              lambda match: '\n' + lead + '\n', before, flags=re.S)
+    assert changes == 1, 'Expected one current Shanghai model section'
     parts = re.split(r'(?=^### )', section, flags=re.M)
     evidence = 'data/model-todo/candidate-publication-times.json' if project else 'projects/shanghai/data/model-todo/candidate-publication-times.json'
     placement = 'data/candidate-city-integrations.json' if project else 'projects/shanghai/data/candidate-city-integrations.json'

@@ -366,7 +366,7 @@ test('narrow-phone signs avoid actual tool, legend and location-card rectangles 
 
 // In these two phone fixtures the measured safe width is 243 CSS pixels.
 function expectedNumberCell(count, availableHeight) {
-  const allowed = [[24, 20], [22, 20], [22, 18], [20, 18], [20, 16]];
+  const allowed = [[24, 20], [22, 20], [22, 18], [20, 18], [20, 16], [22, 15]];
   const largest = allowed.find(([w, h]) => Math.floor(243 / w) * Math.floor(availableHeight / h) >= count);
   assert(largest, 'all delivered signs must fit inside the measured phone area');
   return largest;
@@ -405,6 +405,15 @@ test('all delivered models remain separate and clickable above a tall title card
   }
   assert.equal(selected.length,count);assert.equal(new Set(selected).size,count);
   beacons.destroy();
+});
+
+test('97 numbered signs retain independent cells with the 138 pixel high phone map area',()=>{
+  const items=Array.from({length:97},(_,i)=>({id:'cell-'+i,x:90,y:260,width:140,height:34}));
+  const layout=layoutBeaconLabels(items,{width:320,height:568,insets:{left:12,right:65,top:182,bottom:248}});
+  assert.equal(layout.length,97);
+  assert(layout.every(row=>row.compact&&!row.overlapFallback&&row.width===22&&row.height===15));
+  assertSeparated(layout.map(row=>({...row,x:row.labelX,y:row.labelY})));
+  for(const entry of layout)assert.equal(hitTestBeaconLabels(layout,{x:entry.labelX,y:entry.labelY}),entry.id);
 });
 
 test('long building title cards retain every delivered sign in the smaller phone area at all zooms',()=>{
@@ -509,7 +518,7 @@ test('the 78th model retains a separate 12px number and hit area when a long tit
     for(const zoom of [8,12,18,24,8]){
       map.zoom=zoom;beacons.refresh();const state=beacons.getState();
       assert.equal(state.count,78);assert.equal(state.viewportLabelCount,78);assert.equal(state.overlapFallbackCount,0);
-      assert.equal(state.labelPixelSize,12);assert.equal(state.spriteIds.length,11);
+      assert.equal(state.labelPixelSize,12);assert.equal(state.spriteIds.length,12);
       assert(state.labelPositions.every(row=>row.width===20&&row.height===18));
       assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
       assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),rows.map(row=>row.id).sort());
@@ -603,7 +612,7 @@ test('fixed name backgrounds, text and leaders agree with the actual ground proj
   assert.deepEqual([ground.x,ground.y],[actual.x,actual.y]);
   assert(ground.y-original.y>20,'the fixture must expose the previous centre-height projection error');
   const beacons=createBuildingBeacons({map,records:rows,onSelect(){},documentObject:mockDocument()});
-  assert.equal(map.images.size,11,'five fixed name sprites, five number sizes and one anchor lamp');
+  assert.equal(map.images.size,12,'five fixed name sprites, six number sizes and one anchor lamp');
   const nameLayer=[...map.layers.values()].find(layer=>layer.id.endsWith('-labels-symbol'));
   assert(nameLayer);assert.equal(nameLayer.layout['icon-text-fit'],'none');
   const anchorLayer=[...map.layers.values()].find(layer=>layer.type==='symbol'&&!layer.layout['text-field']);
