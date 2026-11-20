@@ -1,3 +1,11 @@
+# 圣约翰大学校政厅（四号楼）南廊与望楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-st-johns-administration-building&mode=overview) · [单体旋转与下载](st-johns-administration.html) · [来源与制作范围](source/precise/changning-st-johns-administration-building/README.md) · [验收记录](data/audit/st-johns-administration-v1/README.md)
+
+保护名录所列圣约翰大学校政厅（现4号楼，霍格别墅），按华东政法大学4号楼档案核查草坪南侧本体与屋脊。格致楼、42号科学馆另行查证。
+
+近景 46,008 个三角面，远景 20,272 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,359,448 字节。上海主图现有 162 处独立入口，长宁区 7 处。[资产清单](assets/models/candidates/changning-st-johns-administration-building/manifest.json)
+
 # 徐汇公学崇思楼（修复后南北立面与孟莎屋顶）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-chongsi-building&mode=overview) · [单体旋转与下载](chongsi-building.html) · [来源与制作范围](source/precise/xuhui-chongsi-building/README.md) · [验收记录](data/audit/chongsi-building-v1/README.md)

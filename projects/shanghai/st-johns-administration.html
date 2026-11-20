@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>圣约翰大学校政厅（四号楼）</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="positive-x" data-oblique-x="0.51" aria-label="校政厅四号楼南廊、乘车门廊与望楼模型"></main>
+  <header>
+    <a href="index.html#landmark=changning-st-johns-administration-building&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">长宁区 · 万航渡路1575号</p>
+    <h1>圣约翰大学校政厅（四号楼）</h1>
+    <p>霍格别墅 · 南廊与望楼</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">霍格别墅1863年始建，次年基本建成，1899年大修，后作校长办公室。红漆南廊、黑铁皮乘车门廊和中央望楼参照华东政法大学校史照片。北部房间、格致楼与其余校园楼宇另列。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">南廊正面</button>
+      <button type="button" data-view="oblique">乘车门廊一侧</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/changning-st-johns-administration-building/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-st-johns-administration-building');
+  </script>
+</body>
+</html>
