@@ -23,3 +23,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 36 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d47ce5c1f7f409d9808f138d5a08e2717bb45baa/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 36 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+同一真实116处会话随后检查中央门廊近照、斜俯屋顶以及全城远档。近景80,644面、远景36,830面，四件候选资产及两种原城景资源的网络字节都与冻结清单一致。11处地面核验包含院地、历史楼体及原邻楼。七张取图的四帧开场遮罩均已关闭，页面没有警告或失败请求。四张默认图保留在前述目录。[完整主图报告](final-run/main-browser.json) · [七张图路径](final-run/image-locations.json) · [中央门廊细节](final-run/map-street-facade.png) · [屋顶与周围建筑](final-run/map-roof.png) · [远景](final-run/map-distant.png)
