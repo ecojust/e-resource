@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 108,
+  "candidate_manifest_count": 109,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 106,
-  "resulting_city_count": 146,
+  "new_city_model_count": 107,
+  "resulting_city_count": 147,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
@@ -58,20 +58,20 @@
     "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 57
+    "黄浦区": 58
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 432,
-    "bytes": 1180762480,
+    "files": 436,
+    "bytes": 1185066492,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 2310648,
+    "current_run_added_bytes": 4304012,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 300
+    "inherited_incremental_files": 304
   },
   "records": [
     {
@@ -9654,6 +9654,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-historic-street-elevation",
       "description": "南京东路99号迦陵大楼北端的矩形石门框与沿街六列窗，依据历史门牌和现场照片区分四川中路主入口及高低分段。"
+    },
+    {
+      "id": "huangpu-continental-bank",
+      "name": "大陆银行（九江路111号北立面）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "continental-bank.html",
+      "manifest": "assets/models/candidates/huangpu-continental-bank/manifest.json",
+      "manifest_sha256": "96113532fa3b1d8dfd20644e76ec77fdefcd937177ef873d6ea4984ef5d48799",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-continental-bank/huangpu-continental-bank-raw.glb",
+          "bytes": 2322008,
+          "sha256": "ff7396bd53114c6dac1cfae92c2cfbbf17d0f0096f8c111252e63552fc481f92",
+          "triangles": 42118,
+          "bounds_gltf_m": [
+            [
+              -14.981542587280273,
+              0.0,
+              -8.399999618530273
+            ],
+            [
+              14.981542587280273,
+              28.510000228881836,
+              0.7350000143051147
+            ]
+          ],
+          "materials": 17
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-continental-bank/huangpu-continental-bank-web.glb",
+          "bytes": 717144,
+          "sha256": "83a1ff40c9cc8458c4c1ef1ff0ae5699d2dd674849a771b73ac5dd75ab3f3861",
+          "triangles": 42118,
+          "bounds_gltf_m": [
+            [
+              -14.9815426,
+              0,
+              -8.39999962
+            ],
+            [
+              14.9815426,
+              28.5100002,
+              0.735000014
+            ]
+          ],
+          "materials": 17
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-continental-bank/huangpu-continental-bank-lod.glb",
+          "bytes": 641380,
+          "sha256": "8a974ca1841266a6767281d2fd3cf2822f4bd2be8b47f3af22d9820c9633dfcc",
+          "triangles": 36138,
+          "bounds_gltf_m": [
+            [
+              -14.9815426,
+              0,
+              -8.39999962
+            ],
+            [
+              14.9815426,
+              28.5100002,
+              0.735000014
+            ]
+          ],
+          "materials": 17
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-continental-bank/huangpu-continental-bank.blend",
+          "bytes": 623480,
+          "sha256": "f660fea65cc5fe379e246a0c6831a9cece787197cfe83c195e4c2f7bd9debd95"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -14.981542587280273,
+            0.0,
+            -8.399999618530273
+          ],
+          "max": [
+            14.981542587280273,
+            28.510000228881836,
+            0.7350000143051147
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -14.981542587280273,
+            -0.7350000143051147,
+            0.0
+          ],
+          "max": [
+            14.981542587280273,
+            8.399999618530273,
+            28.510000228881836
+          ]
+        },
+        "triangles": 42118,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-partial-exterior",
+      "description": "九江路111号大陆银行的临街建筑，核对原址门牌、建筑体量及不同期的临街细部。"
     }
   ],
   "baseline_inventory": {
@@ -9685,6 +9791,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-china-baptist-publication-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-christian-literature-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cishu-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-continental-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-deutsch-asiatische-bank/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-dongjiadu-cathedral/manifest.json",
@@ -9740,13 +9847,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/jialing-building-v1",
+  "incremental_audit_directory": "data/audit/continental-bank-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/former-british-consulate-v1/inventory-increment.json",
-    "bytes": 258521,
-    "sha256": "072174868edf3408b1c5c74610e2ad804b3423905e95ab2b0c78a3d0c22f62de"
+    "file": "data/audit/jialing-building-v1/inventory-increment.json",
+    "bytes": 262040,
+    "sha256": "49da5f1eb82f46770fcf6f1b124a0536266b4d759fd7938a95787776266016c6"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-jialing-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-continental-bank/manifest.json"
   ]
 }

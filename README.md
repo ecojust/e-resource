@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 146 处入口。最近细化[有利大楼 · 外滩3号](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund03&mode=walk)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 147 处入口。最近接入[大陆银行（九江路111号北立面）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-continental-bank&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的105项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的106项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 106 | 九江路大陆银行大楼 | 黄浦区／九江路111号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查实后部范围、屋顶更替和历任使用单位及营业地址。 |
-| 107 | 华俄道胜银行临江拱饰 | 黄浦区／中山东一路15号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查考立面雕塑年代及被遮藏部分的详细测绘和修缮记录。 |
+| 107 | 华俄道胜银行临江拱饰 | 黄浦区／中山东一路15号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；查考立面雕塑年代及被遮藏部分的详细测绘和修缮记录。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -98,7 +97,7 @@
 | sh-historic-b2-039 | 英国领事官邸与附属建筑 | 中山东一路33号1#楼；中山东一路33号8#楼 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 独立核对领事官邸、办公楼编号和两者之间的附属建筑及修缮日期。 |
 | sh-historic-b2-040 | 迦陵大楼后部与使用沿革 | 南京东路99号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对四川中路西面、南段高楼、分级屋顶和大通银行历史营业空间。 |
 | sh-historic-b2-041 | 有利大楼石雕的分期和修缮 | 中山东一路3号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查证石雕尺寸、修缮和安装年代，并核对其他立面的同类装饰。 |
-| sh-historic-b2-042 | 大陆银行 | 九江路111号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-042 | 大陆银行后部及分期 | 九江路111号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查实后部范围、屋顶更替和历任使用单位及营业地址。 |
 | sh-historic-b2-043 | 华俄道胜银行 | 中山东一路15号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund15；待核对范围 |
 | sh-historic-b2-045 | 麦加利银行 | 中山东一路18号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund18；待核对范围 |
 | sh-historic-b2-046 | 国华银行大楼 | 北京东路342号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2660,9 +2659,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余981条／已关联55条）
+### 既有地图中的具名建筑待查线索（剩余980条／已关联56条）
 
-原始1,036条具名地图要素中，55条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余981条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，56条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余980条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2914,7 +2913,6 @@
 | 90d69264-e9f4-4458-a876-d912d1b28b22 | 明天广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 90e353fe-0433-456f-b077-33ab2159f2b4 | 元芳弄 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 93519dcb-da30-406f-b22b-9e0a0b4b702e | 无限极荟 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 943bfadf-d6df-48aa-9801-4d2c1ba64393 | 上投大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 94f6099d-f768-48f9-8e1b-8b2d3ac764ad | 港泰广场 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 95b1ebaf-7393-4955-9f2b-0caf467f5d5e | 港陆黄浦中心 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 9710c734-801e-4ca7-9a82-0f966ffbc86a | 上海博物馆 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3658,7 +3656,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3673,7 +3670,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；146处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中106件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；147处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中107件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3681,7 +3678,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增106处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增107处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3703,10 +3700,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，146处建筑与构件模型入口（40处既有＋106处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增106处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，147处建筑与构件模型入口（40处既有＋107处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增107处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（73处）
+### 黄浦区（74处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3785,6 +3782,7 @@
 | 法公董局旧址（淮海中路保留立面） | 2026-11-20 21:44:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-french-municipal-council-front&mode=overview) |
 | 原英国驻沪领事馆办公主楼 | 2026-11-20 22:08:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-british-consulate&mode=overview) |
 | 迦陵大楼（南京东路北立面） | 2026-11-20 22:22:10 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jialing-building&mode=overview) |
+| 大陆银行（九江路111号北立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-continental-bank&mode=overview) |
 
 ### 徐汇区（9处）
 
