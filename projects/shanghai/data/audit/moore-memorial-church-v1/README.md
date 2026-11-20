@@ -33,3 +33,7 @@ node data/audit/moore-memorial-church-v1/check-vector.mjs /tmp/moore-vector.json
 同一新版的单体查看器实测了1250×820和390×844。两个尺寸都能完整看清三处山墙与钟楼，完整和远景模型均保留红十字架、尖券塔窗、礼堂中央门廊与两侧凸窗。四个下载文件与模型清单匹配。[单体四视角和下载](viewer.json)
 
 两次场景之间，尚贤坊门楼的默认镜头有调整。其余可拟合镜头的建筑在三种窗口尺寸下共有204组计算，取景参数一致。[场景输入及目录差异](camera-input-revision/input-difference.json) · [逐栋镜头核对](camera-input-revision/camera-arguments.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c7cd6eabd440708bd705b920b91e10e5e6e3931b/projects/shanghai/index.html#landmark=huangpu-moore-memorial-church&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
