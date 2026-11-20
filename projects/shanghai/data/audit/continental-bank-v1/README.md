@@ -15,3 +15,7 @@
 独立模型页已经在1250像素桌面与390像素手机中切换两档，近档42,118面、远档36,138面均完整呈现九江路正立面。四项下载逐份比对清单SHA-256，页面和通用查看器脚本的实际字节也记录在案。[独立页实测及下载](viewer.json) · [桌面近档](viewer-desktop-full.png) · [手机近档](viewer-mobile-full.png)
 
 正式21105→21106地图的146处旧版和147处新版分别打开同一个九江路街口。区目录手机进入后核对模型，桌面再检查屋檐、两翼窗和远景，11处地面及四项模型下载均通过。桌面默认取景中两张邻楼灯牌与中段局部重合；固定街面机位能辨窗列和砖柱，近处城市原楼的屋顶遮挡石门额下部。门额近景另行实拍。近档42,118面，实测远档36,138面，代表性视角可见两翼与凹入中段。[双端与六张实图](map-comparison-verification.json) · [同街旧版](map-before.png) · [默认手机图](map-mobile.png) · [原街面机位](map-street-facade.png) · [屋檐和门厅位置](map-roof.png) · [最终输入字节](map-http-bindings-21106.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/72a0a63c768d0add9b5c45200464455826f68927/projects/shanghai/index.html#landmark=huangpu-continental-bank&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 13 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
