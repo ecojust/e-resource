@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "test_inputs": 84,
+  "failure": "At 20fps and sprint speed a sampled step passed two 0.31m-wide garden walls outside the gate opening.",
+  "wall_failures": [
+    {
+      "x": -4.55,
+      "fps": 20,
+      "sprint": true,
+      "inward": false,
+      "central_passage": false,
+      "crossings": [
+        -4.039807902122804
+      ],
+      "final_local": [
+        -4.039808919484859,
+        -7.633234772713775
+      ]
+    },
+    {
+      "x": -4.55,
+      "fps": 20,
+      "sprint": true,
+      "inward": true,
+      "central_passage": false,
+      "crossings": [
+        -4.923745007104638
+      ],
+      "final_local": [
+        -4.923745569037953,
+        8.51555416461532
+      ]
+    },
+    {
+      "x": 6.3,
+      "fps": 20,
+      "sprint": true,
+      "inward": false,
+      "central_passage": false,
+      "crossings": [
+        6.798066492458783
+      ],
+      "final_local": [
+        6.798066226539982,
+        -7.633235134303488
+      ]
+    },
+    {
+      "x": 6.3,
+      "fps": 20,
+      "sprint": true,
+      "inward": true,
+      "central_passage": false,
+      "crossings": [
+        5.914128740299143
+      ],
+      "final_local": [
+        5.914127381013094,
+        8.515554527694876
+      ]
+    }
+  ],
+  "source_contract_sha256": "fb66be6fba3523eb7d9a3f5bad831c3f353b8499631ad2754523b444b5a7be20",
+  "visible_geometry_sha256": {
+    "raw": "6d523f3a88ab72febad169f1eef24e99b1e7de521c509e615973a457a8d35cf3",
+    "web": "8c17d68dac0d573926f11a3d48a7fb7bf3360baf1090e325d79cb2eb28fa9154",
+    "lod": "5628c37b49e5c84a3110f6cefd140abc283270722627796b96599073583ef91b"
+  },
+  "controller_sha256": "71e1d1ed4c939e83dd482952c19af99881b93dae84dd489f6cf4578fe6c9d611",
+  "chosen_change": "Widen only the two wall collisions to the existing original mesh coping projection. Preserve both masonry piers and the 4.30m opening."
+}

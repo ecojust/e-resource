@@ -1,3 +1,11 @@
+# 卫乐园泰安路120弄街门
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-weile-garden-taian-gate&mode=overview) · [单体旋转与下载](weile-garden-gate.html) · [来源与制作范围](source/precise/changning-weile-garden-taian-gate/README.md) · [验收记录](data/audit/weile-garden-gate-v1/README.md)
+
+依据2014年12月照片与2017、2019年现场记载，建模泰安路120弄半圆拱门、赭红色卷草、筒瓦及两侧有据墙段。
+
+近景 39,384 个三角面，远景 19,052 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,194,548 字节。上海主图现有 201 处独立入口，长宁区 10 处。[资产清单](assets/models/candidates/changning-weile-garden-taian-gate/manifest.json)
+
 # 逸村2号淮海中路园侧立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yicun-no2-street-front&mode=overview) · [单体旋转与下载](yicun-no2-street-front.html) · [来源与制作范围](source/precise/xuhui-yicun-no2-street-front/README.md) · [验收记录](data/audit/yicun-no2-street-front-v1/README.md)

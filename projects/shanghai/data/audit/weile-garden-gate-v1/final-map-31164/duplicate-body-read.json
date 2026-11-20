@@ -1,0 +1,85 @@
+{
+  "id": "changning-weile-garden-taian-gate",
+  "reason": "A duplicate body read did not finish after the scene switched to the distant view. An independently completed response to the identical URL supplied the signed bytes. The QA harness stopped waiting on the duplicate after 180 seconds. The required-page-response and downloaded-file assertions then ran normally in the original browser.",
+  "actual_requests": [
+    {
+      "u": "near/-1_2-s0-s0-s1.glb.gz",
+      "failure": null,
+      "timing": -1,
+      "finished": false
+    },
+    {
+      "u": "near/-1_2-s0-s0-s1.glb.gz",
+      "failure": null,
+      "timing": 15.892,
+      "finished": true
+    }
+  ],
+  "complete_response": {
+    "source": "http://127.0.0.1:31164/assets/city-detail/macros/14-13718-6695/near/-1_2-s0-s0-s1.glb.gz",
+    "bytes": 63851,
+    "sha256": "5c1d6ae3145577bacf85d8e40f550af17fc34063c6f283ceeeae86a8189425b1",
+    "duplicate_orphan_count": 1,
+    "navigation": 200,
+    "route": "http://127.0.0.1:31164/landmarks.html"
+  },
+  "bounded_reader": {
+    "reader_timed_out": true,
+    "resource": "http://127.0.0.1:31164/assets/city-detail/macros/14-13718-6695/near/-1_2-s0-s0-s1.glb.gz",
+    "verified_complete_response_sha256": "5c1d6ae3145577bacf85d8e40f550af17fc34063c6f283ceeeae86a8189425b1",
+    "bytes": 63851,
+    "attempts": 2,
+    "utc": "2026-11-20T23:19:00.960Z",
+    "scope": "QA response body reader only; map and original required-file assertions are intact."
+  },
+  "original_checker_verified_response": {
+    "sha256": "5c1d6ae3145577bacf85d8e40f550af17fc34063c6f283ceeeae86a8189425b1",
+    "bytes": 63851,
+    "url": "http://127.0.0.1:31164/assets/city-detail/macros/14-13718-6695/near/-1_2-s0-s0-s1.glb.gz"
+  },
+  "external_view_changes_canceled": [
+    {
+      "url": "https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://tiles.overturemaps.org/2026-10-21.0/buildings.pmtiles",
+      "reason": "net::ERR_ABORTED"
+    }
+  ],
+  "completed_original_script": true,
+  "completed_original_fulfilled_downloads": [
+    {
+      "role": "raw",
+      "name": "changning-weile-garden-taian-gate-raw.glb",
+      "bytes": 2809868,
+      "sha256": "6d523f3a88ab72febad169f1eef24e99b1e7de521c509e615973a457a8d35cf3"
+    },
+    {
+      "role": "full",
+      "name": "changning-weile-garden-taian-gate-web.glb",
+      "bytes": 1288056,
+      "sha256": "8c17d68dac0d573926f11a3d48a7fb7bf3360baf1090e325d79cb2eb28fa9154"
+    },
+    {
+      "role": "lod",
+      "name": "changning-weile-garden-taian-gate-lod.glb",
+      "bytes": 541940,
+      "sha256": "5628c37b49e5c84a3110f6cefd140abc283270722627796b96599073583ef91b"
+    },
+    {
+      "role": "native",
+      "name": "changning-weile-garden-taian-gate.blend",
+      "bytes": 554684,
+      "sha256": "328e6587474e54cdb9532dc4aff9a5cfef58f5dc5f77f54af46b81a34763ae90"
+    }
+  ]
+}
