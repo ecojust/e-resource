@@ -11,3 +11,7 @@
 独立模型页以1250像素桌面与390像素手机实际打开临江正面，分别切换完整近景和简化远景。原始GLB、网页近景、远景与Blender原生文件四项下载均核对字节和完整SHA-256。[独立模型页](../../../messageries-maritimes.html) · [桌面近景](viewer-desktop-full.png) · [手机远景](viewer-mobile-lod.png) · [浏览器和下载](viewer.json)
 
 城市地图的已建地点从151处增加到152处。前一期在同一街段可见原有窗口体量。本期手机和桌面默认视角都能看到中央窗带、较低的两翼和深色门楼。转至街面可辨双门与两旁窗，屋顶视角可辨退台和旗杆。远景实际切换至45,052面模型。地图在远处以编号呈现密集地标，门额六字需打开独立页入口特写辨读。十五个地面检查点均符合预期，包括入口凹间、关闭门扇和四栋保留邻楼。十幅原图均已完整解码并与各次浏览器记录核对。[前一期同街段](map-before.png) · [手机默认](map-mobile.png) · [桌面默认](map-desktop.png) · [临江街面](map-street-facade.png) · [屋顶退台](map-roof.png) · [远景](map-distant.png) · [地图实测](main-browser.json) · [原图清单](capture-files.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a5a542f78e34abb260b3e172e7a1d9294d93d346/projects/shanghai/index.html#landmark=huangpu-messageries-maritimes-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
