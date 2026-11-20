@@ -1,3 +1,11 @@
+# 虹口救火会临街旧楼与瞭望塔
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview) · [单体旋转与下载](hongkew-fire-station.html) · [来源与制作范围](source/precise/hongkou-hongkew-fire-station/README.md) · [验收记录](data/audit/hongkew-fire-station-v1/README.md)
+
+吴淞路与武进路转角的老消防站，包括西南向凹弧、双层敞廊和砖砌瞭望塔。市房管局名录另记哈尔滨路2号。
+
+近景 35,454 个三角面，远景 27,046 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,386,141 字节。上海主图现有 122 处独立入口，虹口区 8 处。[资产清单](assets/models/candidates/hongkou-hongkew-fire-station/manifest.json)
+
 # 旧市博物馆东侧中央厅现状屋面上的矩形分格顶盖
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) · [单体旋转与下载](city-museum.html) · [来源与制作范围](source/precise/yangpu-former-shanghai-city-museum/revisions/east-hall-roof/README.md) · [验收记录](data/audit/city-museum-east-hall-roof-v1/README.md)

@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 121 处入口。最近细化[旧上海市博物馆江湾馆舍](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 122 处入口。最近接入[虹口救火会临街旧楼与瞭望塔](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的76项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的77项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,7 +31,9 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 77 | 虹口救火会临街旧楼 | 虹口区／吴淞路560号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；依据文保牌和历年公开街景拆分历史楼体、附属建筑和后期建筑。 |
+| 78 | 旧市图书馆东入口拱券和双扇门 | 杨浦区／黑山路181号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143] · [已有馆舍与模型制作范围][MTD-a44550f1]；以外部门正照及修缮资料核实浮雕和金属纹样，单独记录二楼中厅的孔雀门。 |
+| 79 | 徐家汇藏书楼北楼 | 徐汇区／漕溪北路80号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143] · [已有馆舍与模型制作范围][MTD-a44550f1]；按原藏书楼、四层神父楼分别核对体量、门窗及连接处，并对照已建的南楼模型。 |
+| 80 | 仁济医院住院楼庭院入口 | 黄浦区／山东中路145号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；以入口楼号和院史对应塔身、窗带及白色门廊，保留3号楼及4号门诊楼。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -907,7 +909,7 @@
 | sh-historic-b1-023 | 邮政总局西侧独立建筑与接缝范围调查；邮政总局完整中庭现状与未见后连接补证 | 北苏州路276号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 西侧独立地图源3148及未核接缝保留，不并入本次历史主楼。补清晰外观、年代与保护范围资料，核实其实体、与主楼的连接及2025街照另一灰筒拱的归属，再决定是否另行建模；不重复已交付的主楼街面和钟塔；本次中庭弧网罩已按2010修缮后影像制作尺寸估计外观，不重复排队。继续补完整现状顶视、院内立面和工程资料，核院落平面、未见后连接、实际罩体高度及当前变化，再细化尚未核实范围；不将旧照估计或展示层内院当作2026测绘。 |
 | sh-historic-b1-054 | 多伦路250号住宅背侧和庭院 | 多伦路250号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实庭院及东南侧后部的轮廓、尺寸和修缮时期。 |
 | sh-historic-b2-003 | 新亚大酒店后部与修缮沿革 | 天潼路422号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查后部隐面、楼顶设备和修缮记录，分清独立邻楼。 |
-| sh-historic-b2-013 | 虹口救火会 | 吴淞路560号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-013 | 虹口救火会东翼及后院 | 吴淞路560号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实东翼与院内其他楼的年代、连接方式和照片。 |
 | sh-historic-b2-018 | 上海公共租界工部局警务处监狱 | 长阳路147号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-048 | 中国银行大楼 | 四川北路894号 | [名录][H2] · 照片待核 | 已有模型可能关联：bund23；待核对范围 |
 | sh-historic-b2-058 | 北方局 | 东大名路378号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3676,6 +3678,8 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
+[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
+[MTD-a44550f1]: <projects/shanghai/data/audit/municipal-heritage-register-2026-11-20/existing-building-scopes.json>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3690,7 +3694,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；121处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中81件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；122处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中82件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3698,7 +3702,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增81处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增82处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3720,7 +3724,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，121处建筑与构件模型入口（40处既有＋81处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增81处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，122处建筑与构件模型入口（40处既有＋82处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增82处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（52处）
@@ -3833,7 +3837,7 @@
 |---|---|---|
 | 真如寺大殿（正殿） | [2026-10-27 03:12:03](https://github.com/ecojust/e-resource/commit/c381493024bfecec236687d5fda6c217daffd2a8) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-zhenru-main-hall&mode=walk) |
 
-### 虹口区（7处）
+### 虹口区（8处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310109&mode=walk)
 
@@ -3846,6 +3850,7 @@
 | 上海邮政总局历史主楼与钟塔 | 2026-11-06 22:22:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-general-post-office&mode=overview) |
 | 多伦路250号住宅（弧形街面与中门） | 2026-11-20 16:40:49 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) |
 | 新亚酒楼（上海新亚大酒店临街主楼） | 2026-11-20 17:54:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-new-asia-hotel&mode=overview) |
+| 虹口救火会临街旧楼与瞭望塔 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-hongkew-fire-station&mode=overview) |
 
 ### 杨浦区（7处）
 

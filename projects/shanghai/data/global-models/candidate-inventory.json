@@ -44,34 +44,34 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 83,
+  "candidate_manifest_count": 84,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 81,
-  "resulting_city_count": 121,
+  "new_city_model_count": 82,
+  "resulting_city_count": 122,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
-    "虹口区": 6,
+    "虹口区": 7,
     "长宁区": 4,
     "静安区": 8,
     "黄浦区": 36
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 332,
-    "bytes": 1032734383,
+    "files": 336,
+    "bytes": 1037120524,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 7355807,
+    "current_run_added_bytes": 4386141,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 200
+    "inherited_incremental_files": 204
   },
   "records": [
     {
@@ -7004,6 +7004,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "茂名南路57号兰心大戏院的三拱、首层入口和上部阳台。"
+    },
+    {
+      "id": "hongkou-hongkew-fire-station",
+      "name": "虹口救火会临街旧楼与瞭望塔",
+      "districtId": "310109",
+      "district": "虹口区",
+      "already_in_city": false,
+      "individual_page": "hongkew-fire-station.html",
+      "manifest": "assets/models/candidates/hongkou-hongkew-fire-station/manifest.json",
+      "manifest_sha256": "c7ed5876f70e884c4975eb91550e7506c539f25f9bec140883bdf3ded81bb8d1",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/hongkou-hongkew-fire-station/hongkou-hongkew-fire-station-raw.glb",
+          "bytes": 2276480,
+          "sha256": "104428bbe33cb04b60ff2bf2add8b943facedfbfeaaf37a50abafe5b6368fb53",
+          "triangles": 35454,
+          "bounds_gltf_m": [
+            [
+              -28.810487747192383,
+              0.0,
+              -21.520000457763672
+            ],
+            [
+              19.6229305267334,
+              37.83000183105469,
+              0.43229541182518005
+            ]
+          ],
+          "materials": 15
+        },
+        "web": {
+          "file": "assets/models/candidates/hongkou-hongkew-fire-station/hongkou-hongkew-fire-station-web.glb",
+          "bytes": 941280,
+          "sha256": "035c1b594ffcb9e4eca58e21f53698562d79758571de5808f1f2e1cd9e1e2db9",
+          "triangles": 35454,
+          "bounds_gltf_m": [
+            [
+              -28.8104877,
+              0,
+              -21.5200005
+            ],
+            [
+              19.6229305,
+              37.8300018,
+              0.432295412
+            ]
+          ],
+          "materials": 15
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-hongkew-fire-station/hongkou-hongkew-fire-station-lod.glb",
+          "bytes": 710212,
+          "sha256": "2fb29b030276c9de085d8206699714d5d8554a436690ada3f114ec8c533b5db6",
+          "triangles": 27046,
+          "bounds_gltf_m": [
+            [
+              -28.8104877,
+              0,
+              -21.5200005
+            ],
+            [
+              19.6229305,
+              37.8300018,
+              0.432295412
+            ]
+          ],
+          "materials": 14
+        },
+        "native": {
+          "file": "assets/models/candidates/hongkou-hongkew-fire-station/hongkou-hongkew-fire-station.blend",
+          "bytes": 458169,
+          "sha256": "6ae56c616a9feddd02c13e867c84710f32f0decc4e7e1c71f7bb2f45678dce0b"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -28.810487747192383,
+            0.0,
+            -21.520000457763672
+          ],
+          "max": [
+            19.6229305267334,
+            37.83000183105469,
+            0.43229541182518005
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -28.810487747192383,
+            -0.43229541182518005,
+            0.0
+          ],
+          "max": [
+            19.6229305267334,
+            21.520000457763672,
+            37.83000183105469
+          ]
+        },
+        "triangles": 35454,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-partial-exterior",
+      "description": "吴淞路与武进路转角的老消防站，包括西南向凹弧、双层敞廊和砖砌瞭望塔。市房管局名录另记哈尔滨路2号。"
     }
   ],
   "baseline_inventory": {
@@ -7018,6 +7124,7 @@
     "projects/shanghai/assets/models/candidates/changning-zhou-gucheng-courtyard/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-duolun-250/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
+    "projects/shanghai/assets/models/candidates/hongkou-hongkew-fire-station/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-new-asia-hotel/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-american-club/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
@@ -7065,13 +7172,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/lyceum-theatre-v1",
+  "incremental_audit_directory": "data/audit/hongkew-fire-station-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/cathay-cinema-v1/inventory-increment.json",
-    "bytes": 168137,
-    "sha256": "a92494b05c342a76437e5a9f91204fe5d168d57b348fc8d139f936a8d24dc6f4"
+    "file": "data/audit/lyceum-theatre-v1/inventory-increment.json",
+    "bytes": 171598,
+    "sha256": "fcfd4ca0cf9437985e02bd959527b7ced5203f9391ba1e928798ed69ae4d7f83"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-lyceum-theatre/manifest.json"
+    "projects/shanghai/assets/models/candidates/hongkou-hongkew-fire-station/manifest.json"
   ]
 }
