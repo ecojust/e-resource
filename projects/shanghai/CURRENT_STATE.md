@@ -1,3 +1,11 @@
+# 大胜胡同德莱蒙德住宅南向花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-dasheng-drummond-residence&mode=overview) · [单体旋转与下载](dasheng-drummond-residence.html) · [来源与制作范围](source/precise/jingan-dasheng-drummond-residence/README.md) · [验收记录](data/audit/dasheng-drummond-residence-v1/README.md)
+
+华山路263弄7号朝院的红砖三开间，按2014年与2022年照片对合中央露台、石栏板和两侧木构三角山花，区分里弄及普爱堂。
+
+近景 59,124 个三角面，远景 12,688 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,258,276 字节。上海主图现有 191 处独立入口，静安区 18 处。[资产清单](assets/models/candidates/jingan-dasheng-drummond-residence/manifest.json)
+
 # 景华新邨12号弄内门面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jinghua-village-no12&mode=overview) · [单体旋转与下载](jinghua-village-no12.html) · [来源与制作范围](source/precise/jingan-jinghua-village-no12/README.md) · [验收记录](data/audit/jinghua-village-no12-v1/README.md)
