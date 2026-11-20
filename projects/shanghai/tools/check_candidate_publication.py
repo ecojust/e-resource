@@ -3,6 +3,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
+from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
@@ -17,6 +18,56 @@ REPO = PROJECT.parents[1]
 PREFIX = PROJECT.relative_to(REPO).as_posix() + '/'
 BASE = 'https://raw.githack.com/ecojust/e-resource/'
 fetch = runpy.run_path(str(PROJECT / 'data/audit/country-hospital-v1/check-publication.py'))['public_bytes']
+
+
+class PageAssets(HTMLParser):
+    """Local release assets declared by the HTML page or its inline ES modules."""
+
+    def __init__(self, html):
+        super().__init__()
+        self.modules = []
+        self.external_modules = []
+        self.styles = []
+        self.inline_module = False
+        self.feed(html)
+        self.close()
+
+    @staticmethod
+    def local_url(value, extension):
+        value = value.strip().removeprefix('./')
+        url = urlsplit(value)
+        if (not url.scheme and not url.netloc and url.path.startswith('src/')
+                and url.path.endswith(extension) and '..' not in url.path.split('/')):
+            return value
+        return None
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict((key, value or '') for key, value in attrs)
+        if tag == 'link' and 'stylesheet' in attributes.get('rel', '').lower().split():
+            style = self.local_url(attributes.get('href', ''), '.css')
+            if style:
+                self.styles.append(style)
+        if tag == 'script':
+            module = attributes.get('type', '').strip().lower() == 'module'
+            self.inline_module = module and 'src' not in attributes
+            if module and 'src' in attributes:
+                source = self.local_url(attributes['src'], '.js')
+                if source:
+                    self.external_modules.append(source)
+                    self.modules.append(source)
+
+    def handle_endtag(self, tag):
+        if tag == 'script':
+            self.inline_module = False
+
+    def handle_data(self, data):
+        if self.inline_module:
+            imports = re.finditer(r"""(?:^|;)\s*import\s+(?:[^;'"]*?\bfrom\s*)?(['"])(\./src/[^'"]+)\1""",
+                                  data, re.MULTILINE)
+            for match in imports:
+                source = self.local_url(match[2], '.js')
+                if source:
+                    self.modules.append(source)
 
 
 def main():
@@ -53,12 +104,11 @@ def main():
         assert re.fullmatch(r'[a-z0-9-]+', manifest['revision'])
         files.append(PREFIX + 'source/precise/' + landmark_id + '/revisions/' + manifest['revision'] + '/README.md')
     viewer = PREFIX + manifest['viewer_page']
-    viewer_html = blob(viewer).decode()
-    local_modules = re.findall(r"""(?:from\s*['"]\./|<script type="module" src=")(src/[a-z0-9-]+\.js(?:\?[^'"]*)?)""", viewer_html)
-    local_styles = re.findall(r'<link rel="stylesheet" href="(src/[^"]+)"', viewer_html)
-    assert local_modules and local_styles, 'Standalone viewer must include its released script and stylesheet'
-    files.extend(urljoin(viewer, relative) for relative in (*local_modules, *local_styles))
-    entry, = re.findall(r'<script type="module" src="([^"]+)"', blob(PREFIX + 'index.html').decode())
+    viewer_assets = PageAssets(blob(viewer).decode())
+    assert viewer_assets.modules and viewer_assets.styles, 'Standalone viewer must include its released script and stylesheet'
+    files.extend(urljoin(viewer, relative) for relative in (*viewer_assets.modules, *viewer_assets.styles))
+    index_assets = PageAssets(blob(PREFIX + 'index.html').decode())
+    entry, = index_assets.external_modules
     app = PREFIX + entry
     app_source = blob(path(app)).decode()
     files.append(app)
@@ -89,7 +139,7 @@ def main():
         include_import(app, app_source, 'historical-view')
         include_import(catalog_module, catalog_code, 'historical-view')
         include_import(app, app_source, 'precise-registration-ui')
-        stylesheet, = re.findall(r'<link rel="stylesheet" href="(src/historical-view\.css(?:\?[^"]*)?)"', blob(PREFIX + 'index.html').decode())
+        stylesheet, = (link for link in index_assets.styles if urlsplit(link).path == 'src/historical-view.css')
         files.append(PREFIX + stylesheet)
     files.extend(scene_metadata_urls(app, app_source, PREFIX))
     assets = {urljoin(manifest_path, a['file']): a for a in manifest['assets'].values()}
