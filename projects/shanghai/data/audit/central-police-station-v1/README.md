@@ -11,3 +11,7 @@
 对照采用18091的133处地标版本，实装采用18092的134处版本。桌面和手机均选中了福州路历史街面；两道通高竖窗、首层门洞与东邻美国花旗总会能分别辨认。近景的两个名称灯牌覆盖部分首层窗间，后方原城市屋面可从屋顶视角辨认。11处地面检查均符合预期，五幅总图的WebGL错误码均为零。独立页实测了两种设备的近、远档切换及四种下载。[133处同位对照](map-before.png) · [桌面街景](map-street-facade.png) · [手机地图](map-mobile.png) · [地面及地图实测](main-browser.json) · [十幅实图核对](map-visual-review.json)
 
 浏览器取图时，制作队列列到本站的第 92 项。发布时依照既定顺序补列汉弥登、大来和永年三项。已逐行核对原有 92 项并校验其余 490 份输入。[队列衔接复核](queue-continuation/verified.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/bd2058df24c2eb0e2338760bebeafa2d5e394241/projects/shanghai/index.html#landmark=huangpu-central-police-station&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
