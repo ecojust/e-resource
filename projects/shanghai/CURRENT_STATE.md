@@ -1,3 +1,11 @@
+# 雷氏德工学院（东长治路505号主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview) · [单体旋转与下载](lester-institute.html) · [来源与制作范围](source/precise/hongkou-lester-institute/README.md) · [验收记录](data/audit/lester-institute-v1/README.md)
+
+东长治路505号雷氏德工学院1934年主楼，按历史图纸及修缮照片核对南园折翼、中央门廊、穹顶和北侧锯齿采光屋面。
+
+近景 66,092 个三角面，远景 48,580 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,305,487 字节。上海主图现有 168 处独立入口，虹口区 12 处。[资产清单](assets/models/candidates/hongkou-lester-institute/manifest.json)
+
 # 岳阳路320号在君楼（七券门廊与双内院）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-320-research-building&mode=overview) · [单体旋转与下载](yueyang-research-building.html) · [来源与制作范围](source/precise/xuhui-yueyang-320-research-building/README.md) · [验收记录](data/audit/yueyang-research-building-v1/README.md)

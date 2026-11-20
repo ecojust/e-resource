@@ -1,0 +1,61 @@
+{
+  "checked_utc": "2026-11-20T13:08:29.815189+00:00",
+  "http_catalogs": [
+    {
+      "url": "http://127.0.0.1:15130/data/candidate-city-integrations.json",
+      "status": 200,
+      "layer": "source stage",
+      "bytes": 1799733,
+      "sha256": "9a81475068b80dd1f30fe814f880591c0fc77d0fe3339c1cbe0fc1d7ded11193",
+      "city_count": 168
+    },
+    {
+      "url": "http://127.0.0.1:17130/data/candidate-city-integrations.json",
+      "status": 200,
+      "layer": "Tilanqiao fixed at 57 degrees",
+      "bytes": 1799733,
+      "sha256": "ff4b58aee8dd03bc4880c07c56098b946e967464f4b5368ee007610449374b75",
+      "city_count": 168
+    },
+    {
+      "url": "http://127.0.0.1:18130/data/candidate-city-integrations.json",
+      "status": 200,
+      "layer": "grouped city labels",
+      "bytes": 1799733,
+      "sha256": "ff4b58aee8dd03bc4880c07c56098b946e967464f4b5368ee007610449374b75",
+      "city_count": 168
+    },
+    {
+      "url": "http://127.0.0.1:20130/data/candidate-city-integrations.json",
+      "status": 200,
+      "layer": "selected landmark focus",
+      "bytes": 1799733,
+      "sha256": "ff4b58aee8dd03bc4880c07c56098b946e967464f4b5368ee007610449374b75",
+      "city_count": 168
+    }
+  ],
+  "model_field_differences": [
+    {
+      "id": "hongkou-tilanqiao-historic-front",
+      "field": "overviewPitch",
+      "before": 61,
+      "after": 57
+    }
+  ],
+  "input_file_differences": [
+    {
+      "source": {
+        "file": "data/global-models/additional-placement.json",
+        "bytes": 1557819,
+        "sha256": "4112d11ddd058f675e51e784153ad8b0d7d66181710391db0075c090a5ee2bdf"
+      },
+      "final": {
+        "file": "data/global-models/additional-placement.json",
+        "bytes": 1557819,
+        "sha256": "7316d673106f47170fdcfcb900d2a04f575546f9655a152c2651b1fbdbab5fad"
+      }
+    }
+  ],
+  "target_row_unchanged": true,
+  "production_snapshot_sha256": "9192d3474dc2f174d14c131f89183386293abb0aeaca7bea4779600201248cb8"
+}

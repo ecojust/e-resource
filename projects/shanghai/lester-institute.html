@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>雷氏德工学院 · 东长治路505号</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="雷氏德工学院的园侧尖券门廊、双折翼与中央穹顶三维模型" data-oblique-x="0.40" id="model-view"></main>
+<header>
+<a href="index.html#landmark=hongkou-lester-institute&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">虹口区 · 东长治路505号</p>
+<h1>雷氏德工学院旧址</h1>
+<p>园侧七孔尖券 · 中央穹顶与折翼</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">1934年开学的工学院，今为上海创新创意设计研究院。七孔尖券围合门廊，左右两翼各五开间，塔穹内藏锅炉烟囱。模型依据历史图纸和2022年修缮照片制作，背面窗距、穹肋及分层标高含估算。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">园侧正面</button>
+<button data-view="oblique" type="button">翼部斜视</button>
+<button data-view="above" type="button">屋面与采光天窗</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/hongkou-lester-institute/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=lester-institute-v1';
+    showCandidateAssetViewer('hongkou-lester-institute');
+  </script>
+</body>
+</html>
+
