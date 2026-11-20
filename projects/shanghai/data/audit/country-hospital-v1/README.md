@@ -36,3 +36,5 @@ MODEL_BASE_URL=http://127.0.0.1:8784/ QA_OUTPUT_DIR=/tmp/country-hospital-city n
 ## 公开下载
 
 模型提交 `fe99c185d485d8916b265a0e04fe42b72bde717c` 的 28 个公开文件与 Git 字节一致，包括三份 GLB 和可编辑 Blender 文件。[固定版本主图](https://raw.githack.com/ecojust/e-resource/fe99c185d485d8916b265a0e04fe42b72bde717c/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview) · [逐文件哈希](publication.json)
+
+2026-11-20 05:48 UTC 的复查中，master 的 28 项公开字节均与模型提交 `fe99c18` 一致。登记提交 `92fd7a5` 发布后，缓存中两项文档曾仍为旧版，05:53 UTC 复查时该提交的 28 项全部一致。[模型提交的 master 复查](publication-master-fe99c18.json) · [登记提交固定链接实测](publication-92fd7a5.json) · [缓存中的旧文件](publication-master-92fd7a5-initial.json) · [登记提交的 master 复查](publication-master-92fd7a5.json)
