@@ -11,3 +11,7 @@
 南邻797的原饰边与旧校门的原饰边部分重叠。七个裁剪三角形覆盖实名建筑的整个原底面，近景保留0.059平方米的旧饰边投影（约0.029%），远景完整移除旧门楼。保留部分只涉及南侧靠街约2.38米的一段，实际相交旧面的顶点最高20.9米。裁剪区域距相邻实际近景至少1.5厘米，新模型距相邻网格约0.32米。同组17,472个近景及56个远景邻楼面保留。[南缘残留测量](southern-edge.json) · [27个步行点](map-case.json)
 
 桌面和手机可从地点目录进入老校门。实际键盘步行穿过门洞、进入校园并退回华山路侧，独立检查覆盖中央通线、两侧狮座和四栋保留邻楼。[162→163处城市实测](final-163-map/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c9d2ed8255ae7a004a12c9507a80aac1defadb0f/projects/shanghai/index.html#landmark=xuhui-nanyang-campus-gate&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
