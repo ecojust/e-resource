@@ -1,3 +1,11 @@
+# 兴国宾馆1号楼（太古洋行花园住宅）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) · [单体旋转与下载](xingguo-guesthouse-01.html) · [来源与制作范围](source/precise/changning-xingguo-guesthouse-01/README.md) · [验收记录](data/audit/xingguo-guesthouse-01-v1/README.md)
+
+兴国宾馆1号楼的历史园侧柱廊、宽阶、两处高烟囱及屋面，用照片与独立楼面定位。
+
+近景 28,690 个三角面，远景 14,222 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,656,991 字节。上海主图现有 106 处独立入口，长宁区 6 处。[资产清单](assets/models/candidates/changning-xingguo-guesthouse-01/manifest.json)
+
 # 裕华新村3号（临弄院门与可见楼面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) · [单体旋转与下载](yuhua-residence-03.html) · [来源与制作范围](source/precise/jingan-yuhua-new-residential-quarter-03/README.md) · [验收记录](data/audit/yuhua-residence-03-v1/README.md)
