@@ -1,0 +1,160 @@
+{
+  "id": "huangpu-deutsch-asiatische-bank",
+  "source_sha256": "568b002e554e2c9df243ba27fda001762c31f3797a80e828df6e01efa5ec0c75",
+  "manifest_sha256": "71190fb0bbb4a1e16d9a2610e93f862934ed89261fb0db45267a000a9d27539b",
+  "script_sha256": "d66a4f04fc1ffe2e77f193b1750f9561aa0129868028fa03dc356d99793d7d23",
+  "decoders_sha256": {
+    "data/audit/postal-office-v1/map-decode-source.mjs": "1c4a034b8541c9481c20b3b5a8209920670136010cb09c9b0a793237c445388e",
+    "data/audit/postal-office-v1/map-decode-delivered.mjs": "3c2eb7783d8f33237ca84df6f9d4c7599412e5c9ac5feaf56fc229e773bb3db9",
+    "data/audit/country-hospital-v1/verify-placement.py": "4c49b2180b984f5041a4b7effd440a340f19d41a7fba190d685d31f140541a51"
+  },
+  "contract_sha256": "a97d99c270a8342ba75169d1ab0ca7316fb7e56b0e76649e70084f58efdcaa59",
+  "assets": {
+    "raw": {
+      "bytes": 1832732,
+      "sha256": "9723e8ccb44ef219e47b3b98f5eb868eab5c4b9994e273af98d1b3ecd6b04b0e",
+      "triangles": 28332
+    },
+    "web": {
+      "bytes": 785200,
+      "sha256": "f7c64b1b4a5cca37f283c905bf04d370666254ae1fc924ef4fd32c4d84f2e8cb",
+      "triangles": 28332
+    },
+    "lod": {
+      "bytes": 612972,
+      "sha256": "0fbf3a7a094ec756033844fda40695086fa46ce9b8b341423af35aa6749388ff",
+      "triangles": 22116
+    }
+  },
+  "registered_owner_area_m2": 565.730871779636,
+  "collision_area_m2": 583.5253366076236,
+  "model_projected_area_m2": 588.3153408100002,
+  "cut_area_m2": 586.4534140098201,
+  "original_shared_source_overlap_m2": 0.0,
+  "osm_vector_mask_area_m2": 581.4445060182101,
+  "adjacent_source_overlap_with_osm_mask_m2": 0.0,
+  "all_macro_neighbors_crossing_mask": [
+    {
+      "id": 2676,
+      "mask_overlap_m2": 4.984911605047868,
+      "model_overlap_m2": 0.0
+    }
+  ],
+  "party_wall_preservation": {
+    "near": {
+      "neighbor_id": 2676,
+      "neighbor_area_m2": 632.1446229087456,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.30342680499167607,
+      "clip_overlap_before_owner_filter_m2": 6.679106424829134,
+      "exclusion": "Separate source near tile without target owner"
+    },
+    "far": {
+      "neighbor_id": 2676,
+      "neighbor_area_m2": 625.0414363734727,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.38017881352361826,
+      "clip_overlap_before_owner_filter_m2": 4.985177024945232,
+      "exclusion": "Explicit native far feature ID"
+    }
+  },
+  "adjoining_entire_near_group": {
+    "ids": [
+      88,
+      2862,
+      2676
+    ],
+    "projected_area_m2": 2701.424738179867,
+    "model_overlap_m2": 0.0,
+    "clearance_m": 0.30342680499167607
+  },
+  "owner_classification_margins": {
+    "target group": {
+      "max_assigned_distance_m": 0.07443686659052344,
+      "min_runner_up_gap_m": 11.08235106967817
+    }
+  },
+  "target_variants": {
+    "near": {
+      "original_area_m2": 572.3113608366087,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 10.846836453698934
+    },
+    "far": {
+      "original_area_m2": 565.7315343353421,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 10.918736579259004
+    }
+  },
+  "source_decode": {
+    "target group near": {
+      "ids": [
+        2602,
+        1064,
+        431,
+        59,
+        1618,
+        1797
+      ],
+      "input": "near/3_-4-s1-s0.glb.gz",
+      "sha256": "5e119d8b46aa1b3aa39d89193258ea5569f6d87bd455a0d912bc0d7ae8f33421",
+      "pass": true,
+      "triangles_per_owner": {
+        "2602": 15920,
+        "1064": 7620,
+        "431": 36768,
+        "59": 10928,
+        "1618": 3216,
+        "1797": 6812
+      }
+    },
+    "target group far": {
+      "ids": [
+        2602,
+        1064,
+        431,
+        59,
+        1618,
+        1797
+      ],
+      "input": "far.glb",
+      "sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+      "pass": true,
+      "triangles_per_owner": {
+        "2602": 20,
+        "1064": 24,
+        "431": 12,
+        "59": 16,
+        "1618": 12,
+        "1797": 20
+      }
+    },
+    "party-wall group near": {
+      "ids": [
+        88,
+        2862,
+        2676
+      ],
+      "input": "near/3_-4-s0-s0-s1.glb.gz",
+      "sha256": "37403038a489acb5440de91b476c2b873d87fe02595725537ab6039490c70a2e",
+      "triangle_count": 47366,
+      "possible_east_neighbor_triangles": 15756,
+      "method": "All triangles retained. For the overlap bound, include every triangle within 0.30 m of the closest source polygon for the retained eastern property."
+    },
+    "party-wall group far": {
+      "ids": [
+        88,
+        2862,
+        2676
+      ],
+      "input": "far.glb",
+      "sha256": "7150a39dcd9581f8d3cc0cc440308794093ec35baaea37913a77c6237ad369bd",
+      "pass": true,
+      "triangles_per_owner": {
+        "88": 16,
+        "2862": 16,
+        "2676": 12
+      }
+    }
+  }
+}

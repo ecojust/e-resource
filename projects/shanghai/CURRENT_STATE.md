@@ -1,3 +1,11 @@
+# 江川大楼（德华银行九江路营业楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-deutsch-asiatische-bank&mode=overview) · [单体旋转与下载](deutsch-asiatische-bank.html) · [来源与制作范围](source/precise/huangpu-deutsch-asiatische-bank/README.md) · [验收记录](data/audit/deutsch-asiatische-bank-v1/README.md)
+
+九江路89号名录所列建筑的历史街面与入口，以市房管局所列“物业供应站”和九江路89号为定位依据，另核历史银行名称和门牌。
+
+近景 28,332 个三角面，远景 22,116 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,666,656 字节。上海主图现有 143 处独立入口，黄浦区 70 处。[资产清单](assets/models/candidates/huangpu-deutsch-asiatische-bank/manifest.json)
+
 # 申报馆（东北转角入口与两侧临街立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shen-bao-building&mode=overview) · [单体旋转与下载](shen-bao-building.html) · [来源与制作范围](source/precise/huangpu-shen-bao-building/README.md) · [验收记录](data/audit/shen-bao-building-v1/README.md)
