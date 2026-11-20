@@ -27,3 +27,7 @@ blender -b --threads 2 --python-exit-code 1 \
 ### 96处主地图
 
 桌面和390×844触屏均从长宁区目录进入孙科别墅，两种默认视角都能看见南园立面、红瓦坡顶和东南圆端。近距加载37,172面，远距切换19,548面；实际近景瓦片的九个建筑编号中，裁剪仅指向2445。六处地面查询符合主楼、拱廊石面、开放车道及独立柱脚的预期。北侧较远反拍的前景屋顶挡住车廊下半部，该帧用于记录真实遮挡。四件文件逐字节核对，六个主图视角的142项资源与四项登记输入已绑定。[桌面](main-desktop.png) · [手机](main-mobile.png) · [花园侧](garden-arcade.png) · [受遮挡的北向反拍](north-carriage-porch.png) · [屋顶](main-roof.png) · [远景](distant.png) · [观察记录](main-map-visual-review.json) · [真实浏览器](main-map-browser.json) · [请求资源](main-map-inputs.json) · [96处快照](production-snapshot.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/83bdaf74ba123734dd696c815edd6d65a84e7ad5/projects/shanghai/index.html#landmark=changning-sun-ke-villa&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
