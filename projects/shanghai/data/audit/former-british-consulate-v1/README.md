@@ -25,3 +25,7 @@
 正式南廊焦点接入后的项目测试通过417项Node及20项Python检查，另复核第100和101项的8件已公开实图与收据，共1,922,228字节。[项目回归](project-regressions.json) · [前序实图复核](preceding-viewer-evidence.json)
 
 正式145处目录采用南廊局部取景后，从地标卡实际进入，手机和桌面均收到完整的134,672面模型及3111的近景裁切，南面上下两层五间廊完整可见。两端默认图与独立取景试验逐字节相同。随后核对了花园侧街面、屋面、62,872面远景、16个地面点及6件下载；浏览器无错误。前后对照沿用同一144处旧版控制。[正式手机默认](final-map/accepted/map-mobile.png) · [正式桌面默认](final-map/accepted/map-desktop.png) · [街面](final-map/accepted/map-street-facade.png) · [屋面](final-map/accepted/map-roof.png) · [远景](final-map/accepted/map-distant.png) · [完整实机报告](final-map/accepted/main-browser.json) · [正式网页输入](final-map/accepted/accepted-verified-inputs.json) · [144处父版同位](final-map/map-before.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1a8e3da5b74acf2b4ad5b07ec25e38284161899b/projects/shanghai/index.html#landmark=huangpu-former-british-consulate&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 11 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
