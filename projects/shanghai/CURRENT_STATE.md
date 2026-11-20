@@ -1,3 +1,11 @@
+# 裕华新村3号（临弄院门与可见楼面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yuhua-new-residential-quarter-03&mode=overview) · [单体旋转与下载](yuhua-residence-03.html) · [来源与制作范围](source/precise/jingan-yuhua-new-residential-quarter-03/README.md) · [验收记录](data/audit/yuhua-residence-03-v1/README.md)
+
+富民路182弄裕华新村3号住宅的院门和临弄楼面，按2014年鲜明门牌和实际照片核实，连续住宅和各户分开。
+
+近景 15,386 个三角面，远景 7,256 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,920,900 字节。上海主图现有 105 处独立入口，静安区 7 处。[资产清单](assets/models/candidates/jingan-yuhua-new-residential-quarter-03/manifest.json)
+
 # 涌泉坊愚园路中央拱门与门楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-bubbling-well-lane-gate&mode=overview) · [单体旋转与下载](bubbling-well-lane.html) · [来源与制作范围](source/precise/jingan-bubbling-well-lane-gate/README.md) · [验收记录](data/audit/bubbling-well-lane-v1/README.md)
