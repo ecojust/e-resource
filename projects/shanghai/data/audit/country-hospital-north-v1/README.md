@@ -24,3 +24,7 @@
 北翼模型在已有花园立面和相邻建筑之间新增单独入口。北横翼和中部连接体分别切入原始地图的 848 与 2764 号体块，两处开口按照各自原屋顶高度收边。三档模型与两个地图源的近远景逐三角面比对，相邻体块没有被裁掉。地面碰撞按两米以下的实际几何推导。全市现有 86 处入口，静安区 3 处。[裁剪、碰撞与相邻体块](placement-geometry.json) · [定位数据](final-placement-contract.json) · [目录增量核对](catalog-preservation.json)
 
 在主图中，窄屏从静安区目录进入，桌面以近景和鸟瞰核对北翼、连接体和相邻建筑。正对北楼时，前方另栋的屋面遮住部分底层门洞。保留该栋后，完整入口、灯和院牌可在单体页观看。全市缩放下的 86 个灯牌均可通过命中测试，在密集排列中分别实点鼠标与触屏返回北翼。浏览器取得的四件模型文件及三份原地图资源均已核对字节。[主图实测](main-browser.json) · [画面复核](map-visual-review.json) · [北向近景](map-north-face.png) · [手机灯牌](map-beacons-mobile.png)
+
+## GitHub 发布
+
+资产提交 `ae55637ce1d7cbc4d21fd94934c8309aca1dcd09` 已推送 master。逐字节检查固定版本的主图、运行模块、目录、清单及四件下载，共 26 项通过。首次同时访问 master，有 13 项仍返回缓存中的旧字节。[固定版本的上海主图](https://raw.githack.com/ecojust/e-resource/ae55637ce1d7cbc4d21fd94934c8309aca1dcd09/projects/shanghai/index.html#landmark=jingan-country-hospital-north-block&mode=overview) · [固定版本公开核对](publication.json) · [master 首次核对](publication-master-initial.json)
