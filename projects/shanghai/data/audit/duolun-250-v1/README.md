@@ -35,3 +35,5 @@ node data/audit/duolun-250-v1/check-vector.mjs /tmp/duolun-vector.json /tmp/duol
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9e826f92db4227ed84e51e056bf0355b162daa35/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 32 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+固定版本还复查了独立页面实际引用的带版本脚本、地图读取器和模型校验模块，35 个网址的响应与同次提交逐字节一致。[公开脚本及模型的复查记录](preflight/published-runtime-imports.json)

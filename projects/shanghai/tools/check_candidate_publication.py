@@ -37,10 +37,15 @@ def main():
     job, = [j for j in queue['production_queue'] if j['id'] == args.model]
     files = ['README.md', job['evidence'], PREFIX + 'README.md', PREFIX + 'CURRENT_STATE.md',
              PREFIX + 'landmarks.html', PREFIX + 'index.html', PREFIX + manifest['viewer_page'],
-             PREFIX + 'src/candidate-asset-viewer.js', PREFIX + 'src/dacheng-hall.css',
              PREFIX + 'data/model-todo/queue.json', PREFIX + 'data/model-viewers.json',
              PREFIX + 'data/global-models/additional-placement.json', manifest_path,
              PREFIX + 'source/precise/' + args.model + '/README.md', PREFIX + manifest['source_register']]
+    viewer = PREFIX + manifest['viewer_page']
+    viewer_html = blob(viewer).decode()
+    local_modules = re.findall(r"""(?:from\s*['"]\./|<script type="module" src=")(src/[a-z0-9-]+\.js(?:\?[^'"]*)?)""", viewer_html)
+    local_styles = re.findall(r'<link rel="stylesheet" href="(src/[^"]+)"', viewer_html)
+    assert local_modules and local_styles, 'Standalone viewer must include its released script and stylesheet'
+    files.extend(urljoin(viewer, relative) for relative in (*local_modules, *local_styles))
     entry, = re.findall(r'<script type="module" src="([^"]+)"', blob(PREFIX + 'index.html').decode())
     app = PREFIX + entry
     app_source = blob(path(app)).decode()
@@ -53,6 +58,12 @@ def main():
     scene = include_import(app, app_source, 'map-scene')
     catalog_module = include_import(app, app_source, 'candidate-city-integrations')
     scene_code = blob(path(scene)).decode()
+    if './ordinary-scene-adapter.js' in scene_code:
+        adapter = include_import(scene, scene_code, 'ordinary-scene-adapter')
+        adapter_code = blob(path(adapter)).decode()
+        include_import(adapter, adapter_code, 'ordinary-building-catalog')
+        include_import(adapter, adapter_code, 'ordinary-asset-verification')
+        include_import(app, app_source, 'ordinary-building-catalog')
     for name in ['candidate-city-clipping', 'building-beacons']:
         include_import(scene, scene_code, name)
     catalog_code = blob(path(catalog_module)).decode()

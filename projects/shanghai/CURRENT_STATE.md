@@ -1,3 +1,11 @@
+# 涌泉坊愚园路中央拱门与门楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-bubbling-well-lane-gate&mode=overview) · [单体旋转与下载](bubbling-well-lane.html) · [来源与制作范围](source/precise/jingan-bubbling-well-lane-gate/README.md) · [验收记录](data/audit/bubbling-well-lane-v1/README.md)
+
+愚园路395弄涌泉坊的独立中央门楼、拱券、石柱与牌匾，弄道的贯通与旁屋按原址核对。
+
+近景 55,868 个三角面，远景 26,420 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,798,302 字节。上海主图现有 104 处独立入口，静安区 6 处。[资产清单](assets/models/candidates/jingan-bubbling-well-lane-gate/manifest.json)
+
 # 多伦路250号住宅（弧形街面与中门）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-duolun-250&mode=overview) · [单体旋转与下载](duolun-250.html) · [来源与制作范围](source/precise/hongkou-duolun-250/README.md) · [验收记录](data/audit/duolun-250-v1/README.md)
