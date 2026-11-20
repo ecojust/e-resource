@@ -22,3 +22,7 @@
 实际从黄浦目录进入20099的141处城市地图，桌面和390×844手机均能选中德士古大楼。桌面可辨弧形街墙、两段不同高度的女儿墙和中央短窗；手机的两块灯牌遮住底层中央门洞。收起侧栏后的近景可见并排的门、中央圆柱和凹入的玻璃，转至东翼可见连贯的浅色窗带。另在同一会话拍摄保留的后部屋面及21,920面远景模型。[桌面](main-desktop.png) · [手机](main-mobile.png) · [中央双门](central-double-door.png) · [东翼窗带](east-ribbon-windows.png) · [保留屋面](retained-source.png) · [远景](distant.png)
 
 该会话从20098取得前项140处目录，核对原有100个候选条目、四种交付物的字节及摘要，并确认底图1848所在的近景瓦片与远景瓦片均实际加载。七个地面点分别检查门前人行道、门侧的凹处、门槛后方、中柱和两翼墙体；网页、控制台与资源请求错误均为零。182个HTTP输入和4个登记生成文件已逐项对照。前项公开版本另从固定提交下载25项共35,794,962字节。[完整浏览器记录](main-map-browser.json) · [本次实取文件](main-map-inputs.json) · [工作树核对](project-comparison.json) · [140处公开版本取件](predecessor-public-downloads-140.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8f2798fc89817c592dd627182d528d19782a0fec/projects/shanghai/index.html#landmark=huangpu-texaco-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

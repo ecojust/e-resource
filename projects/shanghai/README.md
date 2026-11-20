@@ -136,7 +136,7 @@
 | 企业大楼（原中国企业银行大楼） | 2026-11-20 20:57:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-enterprise-building&mode=overview) |
 | 广学大楼虎丘路西立面 | 2026-11-20 21:07:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-christian-literature-building&mode=overview) |
 | 真光大楼（圆明园路东立面） | 2026-11-20 21:11:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-baptist-publication-building&mode=overview) |
-| 德士古大楼（延安东路110号弧形街墙及入口） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-texaco-building&mode=overview) |
+| 德士古大楼（延安东路110号弧形街墙及入口） | 2026-11-20 21:15:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-texaco-building&mode=overview) |
 
 ### 徐汇区（9处）
 
