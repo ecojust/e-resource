@@ -37,3 +37,6 @@ node data/audit/moore-memorial-church-v1/check-vector.mjs /tmp/moore-vector.json
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c7cd6eabd440708bd705b920b91e10e5e6e3931b/projects/shanghai/index.html#landmark=huangpu-moore-memorial-church&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 35 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+
+第62项相机更新后的109处目录另行实测了1280×800默认视图。从行政区卡片点选慕尔堂，主图读入同一近景模型。连续四帧都确认开场遮罩已隐藏、鼠标可用、相机稳定。画面可辨红砖钟塔、十字架、并列山墙和西侧尖拱窗，名称牌与前部右侧山墙局部相叠。第一张补测截图记录了尚未退场的开场页，单独保留用于复查。原109处的近景、碰撞、四项下载和保留邻楼的验收见上文。[更新后的默认主图](gate300-wide.png) · [实测参数及页面散列](gate300-wide-browser.json) · [219项HTTP记录](gate300-snapshot-http.json) · [开场页复核](startup-overlay-review.json)
