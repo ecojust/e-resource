@@ -374,8 +374,16 @@ function expectedNumberCell(count, availableHeight) {
     const finalMixed=lastWide?lastWide+Math.floor((243-lastWide*26)/w):0;
     return fullWideRows*9+finalMixed+(rows-fullWideRows-(lastWide?1:0))*Math.floor(243/w)>=count;
   });
-  assert(largest, 'all delivered signs must fit inside the measured phone area');
-  return largest;
+  if (largest) return [...largest, 26];
+  for (const [width, wideWidth, height] of [[19,25,15], [18,24,14], [18,23,13.5]]) {
+    const rows = Math.floor(availableHeight / height);
+    const shortRow = Math.floor(count / rows), longerRows = count % rows;
+    const wideSlots = cells => Math.min(cells, Math.floor((243 - cells * width) / (wideWidth - width)));
+    if (wideSlots(shortRow) < 0 || (longerRows > 0 && wideSlots(shortRow + 1) < 0)) continue;
+    const availableWide = (rows - longerRows) * wideSlots(shortRow) + longerRows * wideSlots(shortRow + 1);
+    if (availableWide >= Math.max(0, count - 99)) return [width, height, wideWidth];
+  }
+  assert.fail('all delivered signs must fit inside the measured phone area');
 }
 
 test('all delivered models remain separate and clickable above a tall title card on a 320 by 568 phone',()=>{
@@ -398,8 +406,8 @@ test('all delivered models remain separate and clickable above a tall title card
   const beacons=createBuildingBeacons({map,records:delivered,onSelect:row=>selected.push(row.id),documentObject:doc});
   const state=beacons.getState();
   assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);assert.equal(state.labelMode,'numbers');
-  const [cellWidth,cellHeight]=expectedNumberCell(count,158);
-  assert(state.labelPositions.every(row=>row.compact&&row.width===(row.number>=100?26:cellWidth)&&row.height===cellHeight));
+  const [cellWidth,cellHeight,wideWidth]=expectedNumberCell(count,158);
+  assert(state.labelPositions.every(row=>row.compact&&row.width===(row.number>=100?wideWidth:cellWidth)&&row.height===cellHeight));
   assertSeparated(state.labelPositions);
   assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:340});
   assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
@@ -441,7 +449,7 @@ test('long building title cards retain every delivered sign in the smaller phone
     selected.push(row.id);selectedTitle=row.name;if(targets.includes(row.id))cardTop=328;beacons.refresh();
   }});
   const [,roomyHeight]=expectedNumberCell(delivered.length,158);
-  const [denseWidth,denseHeight]=expectedNumberCell(delivered.length,138);
+  const [denseWidth,denseHeight,wideWidth]=expectedNumberCell(delivered.length,138);
   assert(beacons.getState().labelPositions.every(row=>row.height===roomyHeight),'keep the largest sprite that fits all delivered signs');
   for(const id of targets){
     const target=beacons.getState().labelPositions.find(row=>row.id===id);map.emit('click',{point:{x:target.x,y:target.y}});
@@ -449,14 +457,14 @@ test('long building title cards retain every delivered sign in the smaller phone
     for(const zoom of [8,12,18,24]){
       map.zoom=zoom;beacons.refresh();const state=beacons.getState();
       assert.equal(state.viewportLabelCount,delivered.length);assert.equal(state.overlapFallbackCount,0);
-      assert(state.labelPositions.every(row=>row.width===(row.number>=100?26:denseWidth)&&row.height===denseHeight));
+      assert(state.labelPositions.every(row=>row.width===(row.number>=100?wideWidth:denseWidth)&&row.height===denseHeight));
       assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
       assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
       for(const row of state.labelPositions)assert.equal(beacons.hitTest({x:row.x,y:row.y}),row.id);
       const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));assert.equal(numbers.layout['text-size'],12);
       for(const feature of map.getSource(numbers.source).data.features){
         const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
-        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[feature.properties.number>=100?26:denseWidth,denseHeight]);
+        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[feature.properties.number>=100?wideWidth:denseWidth,denseHeight]);
       }
     }
   }
@@ -771,4 +779,37 @@ test('a lone focused name leaves the open map centre clear without changing dens
   assert(bottom.labelY-bottom.height/2>upper.y+90);
   const pair=[item,{...item,id:'other',number:11,y:467}];
   assert.deepEqual(layoutBeaconLabels(pair,viewport),layoutBeaconLabels(pair,{...viewport,focusedId:item.id}));
+});
+
+test('107–125 actual-width phone labels keep separate painted sprites and accurate 12 px numbers',()=>{
+  const map=new BeaconMap({width:320,height:568}),selected=[];
+  map.project=()=>({x:175,y:260});
+  const tools=new Element(),card=new Element();
+  tools.getBoundingClientRect=()=>({left:263,top:190,right:308,bottom:370});
+  card.getBoundingClientRect=()=>({left:12,top:328,right:308,bottom:556});
+  const doc={createElement:tag=>new Element(tag),getElementById:id=>id==='location-card'?card:null,
+    querySelector:q=>q==='.map-tools'?tools:null};
+  const rows=Array.from({length:125},(_,i)=>({id:`hundred-${i+1}`,name:`历史建筑${i+1}号`,lng:121,lat:31,districtId:'310105'}));
+  for(const count of [106,107,108,115,121,125]){
+    const controls=createBuildingBeacons({map,documentObject:doc,records:rows.slice(0,count),onSelect:r=>selected.push(r.id)});
+    const state=controls.getState(),positions=state.labelPositions;
+    assert.equal(state.labelPixelSize,12);assert.equal(state.viewportLabelCount,count);assert.equal(state.overlapFallbackCount,0);
+    assertSeparated(positions);assertWithin(positions,{left:12,right:255,top:182,bottom:320});
+    const layer=[...map.layers.values()].find(l=>l.id.endsWith('-labels-numbers'));
+    assert.equal(layer.layout['text-size'],12);assert.equal(layer.paint['text-halo-width'],.5);
+    const features=map.getSource(layer.source).data.features;
+    for(const item of positions){
+      const f=features.find(f=>f.properties.id===item.id),number=f.properties.number;
+      const [regular,wide,height]=count===106?[20,26,15]:count<=108?[19,25,15]:[18,23,13.5];
+      const width=number<100?regular:wide;
+      assert.deepEqual([item.width,item.height],[width,height]);assert.equal(f.properties.label,String(number));
+      const key=evaluateStyleExpression(layer.layout['icon-image'],f.properties),sprite=map.images.get(key);
+      assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[width,height]);
+      for(const [dx,dy] of [[0,0],[-width/2+.25,-height/2+.25],[width/2-.25,height/2-.25]]){
+        const point={x:item.x+dx,y:item.y+dy};assert.equal(controls.hitTest(point),item.id);
+        map.emit('click',{point});assert.equal(selected.at(-1),item.id);
+      }
+    }
+    controls.destroy();assert.equal(map.images.size,0);
+  }
 });

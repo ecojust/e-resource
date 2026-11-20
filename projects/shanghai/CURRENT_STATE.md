@@ -1,3 +1,11 @@
+# 董家渡天主堂南入口立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dongjiadu-cathedral&mode=overview) · [单体旋转与下载](dongjiadu-cathedral.html) · [来源与制作范围](source/precise/huangpu-dongjiadu-cathedral/README.md) · [验收记录](data/audit/dongjiadu-cathedral-v1/README.md)
+
+董家渡路天主堂朝南的正立面与入口，由照片、航片和具名建筑轮廓校核。
+
+近景 59,244 个三角面，远景 21,884 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,412,896 字节。上海主图现有 110 处独立入口，黄浦区 44 处。[资产清单](assets/models/candidates/huangpu-dongjiadu-cathedral/manifest.json)
+
 # 慕尔堂（沐恩堂礼堂与钟楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-moore-memorial-church&mode=overview) · [单体旋转与下载](moore-memorial-church.html) · [来源与制作范围](source/precise/huangpu-moore-memorial-church/README.md) · [验收记录](data/audit/moore-memorial-church-v1/README.md)

@@ -14,6 +14,14 @@ const SHORT_NUMBER={id:`${PREFIX}-number-short-low`,width:20,height:15};
 const THREE_DIGIT_SPRITES=[SHORT_NUMBER,...[20,18,16,15].map(height=>({
   id:`${PREFIX}-number-three-${height}`,width:WIDE_NUMBER_WIDTH,height,
 }))];
+// These extra backgrounds are used only when all the larger number grids fail.
+const CROWDED_NUMBER_SIZES=[
+  {regular:19,wide:25,height:15},
+  {regular:18,wide:24,height:14},
+  {regular:18,wide:23,height:13.5},
+];
+const CROWDED_NUMBER_SPRITES=CROWDED_NUMBER_SIZES.flatMap(({regular,wide,height})=>
+  [regular,wide].map(width=>({id:PREFIX+'-number-'+width+'x'+height,width,height})));
 const NAME_SIGNS=[[84,34],[120,34],[176,34],[176,48],[176,62]].map(([width,height],i)=>({id:`${SIGN}-${i}`,width,height}));
 const GROUND={getElevationForLngLat:()=>0};
 const collection=features=>({type:'FeatureCollection',features});
@@ -63,6 +71,36 @@ export function layoutBeaconLabels(items,{width,height,insets={},focusedId=null}
     compactWidth=spec.width;compactHeight=spec.height;
     slots=makeGrid(true,0,compactWidth,compactHeight);
   }
+  let wideWidth=WIDE_NUMBER_WIDTH;
+  // Keep the number font at 12 CSS pixels. Balance the number of signs in each
+  // row before assigning its wider labels. Packing the three-digit signs into
+  // the first row leaves unused strips that cannot fit another sign.
+  if(wideCount && slots.length<items.length){
+    for(const size of CROWDED_NUMBER_SIZES){
+      const rows=Math.min(items.length,Math.floor(availableHeight/size.height));
+      if(!rows)continue;
+      const balanced=[];
+      let remaining=wideCount;
+      const base=Math.floor(items.length/rows),extra=items.length%rows;
+      for(let i=0;i<rows;i++){
+        const count=base+(i<extra?1:0),spare=availableWidth-count*size.regular;
+        if(spare<0)break;
+        const wide=Math.min(count,remaining,Math.floor(spare/(size.wide-size.regular)));
+        remaining-=wide;
+        const span=(count-wide)*size.regular+wide*size.wide;
+        let x=x0+(availableWidth-span)/2;
+        const y=y0+(availableHeight-rows*size.height)/2+(i+.5)*size.height;
+        for(let col=0;col<count;col++){
+          const threeDigits=col>=count-wide,width=threeDigits?size.wide:size.regular;
+          balanced.push({x:x+width/2,y,width,threeDigits});
+          x+=width;
+        }
+      }
+      if(balanced.length!==items.length||remaining)continue;
+      slots=balanced;compactWidth=size.regular;compactHeight=size.height;wideWidth=size.wide;
+      break;
+    }
+  }
   const used=new Set();
   const placed=new Map();
   for(const item of [...items].sort((a,b)=>a.y-b.y||a.x-b.x||a.id.localeCompare(b.id))){
@@ -76,7 +114,7 @@ export function layoutBeaconLabels(items,{width,height,insets={},focusedId=null}
       const slot=slots[i],distance=(slot.x-item.x)**2+(slot.y-preferredY)**2;
       if(distance<cost){cost=distance;best=i;}
     }
-    const cardWidth=compact?(item.number>=100?WIDE_NUMBER_WIDTH:compactWidth):item.width,cardHeight=compact?compactHeight:item.height;
+    const cardWidth=compact?(item.number>=100?wideWidth:compactWidth):item.width,cardHeight=compact?compactHeight:item.height;
     const slot=best>=0?slots[best]:{x:clamp(item.x,x0+cardWidth/2,x1-cardWidth/2),y:clamp(item.y,y0+cardHeight/2,y1-cardHeight/2)};
     if(best>=0)used.add(best);
     placed.set(item.id,{...item,width:cardWidth,height:cardHeight,labelX:slot.x,labelY:slot.y,compact,overlapFallback:best<0});
@@ -151,7 +189,7 @@ function labelSize(name){
  */
 export function createBuildingBeacons({map,records,onSelect=()=>{},getFocusedId=()=>null,documentObject=document}){
   const ids=new Set(),byId=new Map();
-  const numberSprites=records.length>=100?[...NUMBER_SPRITES,...THREE_DIGIT_SPRITES]:NUMBER_SPRITES;
+  const numberSprites=records.length>=100?[...NUMBER_SPRITES,...THREE_DIGIT_SPRITES,...CROWDED_NUMBER_SPRITES]:NUMBER_SPRITES;
   for(const row of records){
     if(!row.id||ids.has(row.id)||!Number.isFinite(row.lng)||!Number.isFinite(row.lat))throw Error('建筑灯牌目录无效');
     ids.add(row.id);byId.set(row.id,row);
