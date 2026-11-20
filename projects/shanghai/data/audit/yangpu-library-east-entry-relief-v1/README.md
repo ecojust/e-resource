@@ -26,3 +26,7 @@ Blender 4.3.2重新打开交付工程后，核得四组可编辑的局部门饰�
 在122处入口的地图上，通过 HTTP 实取带版本号的三份地图登记表，以及按 SHA-256 寻址的普通建筑总表、分区索引和替换表。共核对14个请求，返回字节与冻结清单一致。[逐次请求](metadata-cache-http.json) · [本次调整涉及的文件](runtime-input-changes.json)
 
 两代均从原有普通地标入口实开城市地图。122个灯牌保持同数，新近、远景实际显示390,432和139,556面；旧V13的365,524和122,688面也在同机位取得。每次均实收六项签名。[真实主图对照](city-map/README.md) · [四件与目录的实际下载](download-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 35 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b37c0297fe755586875fe7ec0c4c7b4499adb821/projects/shanghai/index.html#landmark=yangpu-library&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 35 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
