@@ -1,3 +1,11 @@
+# 模范邨22号冒广生旧居入口
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-mofan-village-no22-entrance&mode=overview) · [单体旋转与下载](mofan-village-no22.html) · [来源与制作范围](source/precise/jingan-mofan-village-no22-entrance/README.md) · [验收记录](data/audit/mofan-village-no22-v1/README.md)
+
+以2021年实照的绿色22号门牌核准冒广生旧居的凹门廊、菱形铁栅、左侧木窗与墙裙；分别校对房管局所列877号与现地弄号。
+
+近景 3,696 个三角面，远景 1,692 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 583,704 字节。上海主图现有 189 处独立入口，静安区 16 处。[资产清单](assets/models/candidates/jingan-mofan-village-no22-entrance/manifest.json)
+
 # 静安别墅25号院门与弄面院墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-villa-no25&mode=overview) · [单体旋转与下载](jingan-villa-no25.html) · [来源与制作范围](source/precise/jingan-villa-no25/README.md) · [验收记录](data/audit/jingan-villa-no25-v1/README.md)
