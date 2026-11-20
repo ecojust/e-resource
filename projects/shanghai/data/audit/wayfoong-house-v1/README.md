@@ -20,3 +20,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a58fb5460faddaf61a17e5bf1bf0342e42995b73/projects/shanghai/index.html#landmark=huangpu-wayfoong-house&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项时，有 9 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
+
+320×568触屏在全城缩放8显示9个可点分组。逐个实点开关后，共读到132个互不重复的建筑名。各按钮的九个位置另用DOM命中测试核对，81处全部落在目标按钮上；随后在分组内输入“汇丰”，实际触选小汇丰大楼并确认名称与地图地址。[分组全景](map-320-groups.png) · [实点前的建筑列表](map-320-selection.png) · [触控与命中记录](groups320.json)
