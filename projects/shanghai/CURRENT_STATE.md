@@ -1,3 +1,11 @@
+# 兰心大戏院（茂名南路57号）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-lyceum-theatre&mode=overview) · [单体旋转与下载](lyceum-theatre.html) · [来源与制作范围](source/precise/huangpu-lyceum-theatre/README.md) · [验收记录](data/audit/lyceum-theatre-v1/README.md)
+
+茂名南路57号兰心大戏院的三拱、首层入口和上部阳台。
+
+近景 70,804 个三角面，远景 31,516 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,355,807 字节。上海主图现有 121 处独立入口，黄浦区 52 处。[资产清单](assets/models/candidates/huangpu-lyceum-theatre/manifest.json)
+
 # 国泰电影院（西南街角与阶梯塔）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathay-cinema&mode=overview) · [单体旋转与下载](cathay-cinema.html) · [来源与制作范围](source/precise/huangpu-cathay-cinema/README.md) · [验收记录](data/audit/cathay-cinema-v1/README.md)

@@ -1,0 +1,182 @@
+{
+  "id": "huangpu-lyceum-theatre",
+  "source_sha256": "d481937362239de23b018696de9eb768dbcd4c08dbf85fbd9a9eedd774cff899",
+  "manifest_sha256": "65b071b8929d9fb9b159576714d968f138c027042a85fd52443a6468f136ed41",
+  "script_sha256": "a097708bcf8c20557947ea8d85d6ca5a63daf7d6e830357606285b683677b9f3",
+  "decoders_sha256": {
+    "data/audit/postal-office-v1/map-decode-source.mjs": "1c4a034b8541c9481c20b3b5a8209920670136010cb09c9b0a793237c445388e",
+    "data/audit/postal-office-v1/map-decode-delivered.mjs": "3c2eb7783d8f33237ca84df6f9d4c7599412e5c9ac5feaf56fc229e773bb3db9",
+    "data/audit/country-hospital-v1/verify-placement.py": "4c49b2180b984f5041a4b7effd440a340f19d41a7fba190d685d31f140541a51"
+  },
+  "contract_sha256": "ea88a06c0737519b28f18661af51d805659cf3ef5d0aeb6e91ea6b6eccaef475",
+  "assets": {
+    "raw": {
+      "bytes": 3913268,
+      "sha256": "62ce49e3b7febb5f927d9233f8744eda4856113b7f2e655a2626de20ab676c76",
+      "triangles": 70804
+    },
+    "web": {
+      "bytes": 1398560,
+      "sha256": "c917a77c852aab9fc7b97f104152351caf632d1cf48c149b04e44528f12b1788",
+      "triangles": 70804
+    },
+    "lod": {
+      "bytes": 816100,
+      "sha256": "6a0f590e7f1c35dcea32a33bf281557898058f9d7eaab4302d9cfd226d670f9c",
+      "triangles": 31516
+    }
+  },
+  "registered_owner_area_m2": 1668.9391696879704,
+  "collision_area_m2": 1646.9039180293162,
+  "model_projected_area_m2": 1709.1095922099996,
+  "cut_area_m2": 1703.9807353357855,
+  "original_shared_source_overlap_m2": 0.5488156346166306,
+  "osm_vector_mask_area_m2": 1699.272971418717,
+  "adjacent_source_overlap_with_osm_mask_m2": 1.5426708475288555e-09,
+  "all_macro_neighbors_crossing_mask": [
+    {
+      "id": 880,
+      "mask_overlap_m2": 4.706529202295805,
+      "model_overlap_m2": 0.0
+    }
+  ],
+  "party_wall_preservation": {
+    "near": {
+      "neighbor_id": 880,
+      "neighbor_area_m2": 339.1531807731583,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.23259907675736602,
+      "clip_overlap_before_owner_filter_m2": 6.074806745536911,
+      "exclusion": "Separate source near tile without target owner"
+    },
+    "far": {
+      "neighbor_id": 880,
+      "neighbor_area_m2": 333.97120216256536,
+      "model_overlap_m2": 0.0,
+      "model_clearance_m": 0.30269268257157944,
+      "clip_overlap_before_owner_filter_m2": 4.706563877309705,
+      "exclusion": "Explicit native far feature ID"
+    }
+  },
+  "adjoining_entire_near_group": {
+    "ids": [
+      817,
+      2448,
+      3052,
+      880,
+      217,
+      1889
+    ],
+    "projected_area_m2": 2202.5021140506933,
+    "model_overlap_m2": 0.0,
+    "clearance_m": 0.23259907675736602
+  },
+  "owner_classification_margins": {
+    "target group": {
+      "max_assigned_distance_m": 0.08230792307888032,
+      "min_runner_up_gap_m": 8.765794502223974
+    },
+    "party-wall group": {
+      "max_assigned_distance_m": 0.07748265152195624,
+      "min_runner_up_gap_m": 0.5364997328394343
+    }
+  },
+  "target_variants": {
+    "near": {
+      "original_area_m2": 1680.223336257754,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 8.427904723813482
+    },
+    "far": {
+      "original_area_m2": 1668.9395514778578,
+      "retained_m2": 0.0,
+      "closest_shared_group_neighbor_m": 8.497844377492202
+    }
+  },
+  "source_decode": {
+    "target group near": {
+      "ids": [
+        592,
+        733,
+        1620,
+        1909,
+        238,
+        2025
+      ],
+      "input": "near/0_3-s1-s1-s1-s0.glb.gz",
+      "sha256": "ee72b918d92d0da961f56d3cd4938d638745e5856f41fcfa84440af50fa7e3fb",
+      "pass": true,
+      "triangles_per_owner": {
+        "592": 4668,
+        "733": 3397,
+        "1620": 6978,
+        "1909": 17923,
+        "238": 10410,
+        "2025": 27784
+      }
+    },
+    "target group far": {
+      "ids": [
+        592,
+        733,
+        1620,
+        1909,
+        238,
+        2025
+      ],
+      "input": "far.glb",
+      "sha256": "731d7c558632dcaf8c197862be9a628a3a59cb94549df316c27184cd3386e1d7",
+      "pass": true,
+      "triangles_per_owner": {
+        "592": 12,
+        "733": 12,
+        "1620": 12,
+        "1909": 20,
+        "238": 12,
+        "2025": 16
+      }
+    },
+    "party-wall group near": {
+      "ids": [
+        817,
+        2448,
+        3052,
+        880,
+        217,
+        1889
+      ],
+      "input": "near/0_3-s1-s1-s1-s1.glb.gz",
+      "sha256": "e36b31d047cfaf1241a6bdb1c66bc6f592d500dc959fe205756dac1d63411f43",
+      "pass": true,
+      "triangles_per_owner": {
+        "817": 12332,
+        "2448": 40080,
+        "3052": 12332,
+        "880": 4008,
+        "217": 17252,
+        "1889": 12332
+      }
+    },
+    "party-wall group far": {
+      "ids": [
+        817,
+        2448,
+        3052,
+        880,
+        217,
+        1889
+      ],
+      "input": "far.glb",
+      "sha256": "731d7c558632dcaf8c197862be9a628a3a59cb94549df316c27184cd3386e1d7",
+      "pass": true,
+      "triangles_per_owner": {
+        "817": 12,
+        "2448": 120,
+        "3052": 12,
+        "880": 12,
+        "217": 12,
+        "1889": 12
+      }
+    }
+  }
+}
