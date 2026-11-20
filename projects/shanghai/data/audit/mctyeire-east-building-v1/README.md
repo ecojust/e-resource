@@ -21,3 +21,7 @@ Blender 4.3.2重开128个可编辑网格，16种材质的逐面结果与原始GL
 390×844手机从地标目录进入后，默认镜头能看见整段红瓦轮廓，按一次地图加号可以分辨中央门廊及两侧柱列。870×660桌面展开目录时，地标牌位于瓦顶上方。两端各留存了首帧和相同机位的后续画面，各自两张图片的SHA256一致。用键盘搜索“光明中学”离开时，五一楼精模及其局部裁切退出；搜索“五一楼”返回后两者恢复。[手机默认](final-map-24134/map-mobile.png) · [手机放大](final-map-24134/map-mobile-public-zoom.png) · [桌面默认](final-map-24134/map-desktop.png) · [键盘返回](final-map-24134/map-returned.png) · [含稳定采样的浏览器记录](final-map-24134/main-browser.json)
 
 浏览器从底图读取了3,752个矢量要素，16处碰撞结果符合实物范围。草坪、凸出门廊下方和两段拱廊开间可通行，石柱、后房、侧翼及三处独立邻楼仍挡住通行。近景瓦片只对2885号东楼启用6片裁切及3段封边，保留同组的733号北楼等原几何。此版逐一实取851项、808,498,238字节。另对两代站点的35项实际响应核验了城市目录、脚本、底图和模型，证实独立页、脚本、清单与四件成品和前述浏览器四图、四个已保存下载对应。两代城市浏览器的页面错误、失败请求及警告均为零。[前代原地块](final-map-24134/control-browser.json) · [结果汇总](final-map-24134/results.json) · [全站HTTP收据](final-map-24134/134-all-http.json) · [两代站点与独立页下载收据](final-map-24134/pair-and-standalone-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/199b4335a7d96fce79ec18753a0d391697d4f5a5/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

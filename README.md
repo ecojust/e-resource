@@ -3822,7 +3822,7 @@
 | 泰安路115弄6号周谷城旧居（庭院入口立面） | 2026-11-20 15:40:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhou-gucheng-courtyard&mode=overview) |
 | 兴国宾馆1号楼（太古洋行花园住宅） | 2026-11-20 16:52:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xingguo-guesthouse-01&mode=overview) |
 | 圣约翰大学校政厅（四号楼）南廊与望楼 | 2026-11-21 01:43:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-st-johns-administration-building&mode=overview) |
-| 中西女中东楼（五一楼）院落立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) |
+| 中西女中东楼（五一楼）院落立面 | 2026-11-21 03:21:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) |
 
 ### 静安区（12处）
 
