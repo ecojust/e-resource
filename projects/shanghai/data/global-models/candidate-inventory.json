@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 63,
+  "candidate_manifest_count": 64,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 61,
-  "resulting_city_count": 101,
+  "new_city_model_count": 62,
+  "resulting_city_count": 102,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 4,
     "长宁区": 3,
     "静安区": 4,
-    "黄浦区": 23
+    "黄浦区": 24
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 252,
-    "bytes": 890015897,
+    "files": 256,
+    "bytes": 900067083,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 6406098,
+    "current_run_added_bytes": 10051186,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 120
+    "inherited_incremental_files": 124
   },
   "records": [
     {
@@ -4884,6 +4884,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "外滩29号原东方汇理银行的临江五开间与中央石门，建筑层段和背侧范围按来源单列。"
+    },
+    {
+      "id": "huangpu-foreign-ymca",
+      "name": "西侨青年会（上海体育大厦临街主楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "foreign-ymca.html",
+      "manifest": "assets/models/candidates/huangpu-foreign-ymca/manifest.json",
+      "manifest_sha256": "502b78c65d1b6214068bf1a15c3ff67810685da5c055ebcb397654a3fd83e696",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-foreign-ymca/huangpu-foreign-ymca-raw.glb",
+          "bytes": 5500328,
+          "sha256": "9797466975683466035e2ca56806fce7596000aeea6a01a7fbbcca7bbd478070",
+          "triangles": 105992,
+          "bounds_gltf_m": [
+            [
+              -13.55253791809082,
+              0.0,
+              -33.22999954223633
+            ],
+            [
+              14.165712356567383,
+              34.90650177001953,
+              1.4259999990463257
+            ]
+          ],
+          "materials": 15
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-foreign-ymca/huangpu-foreign-ymca-web.glb",
+          "bytes": 1851292,
+          "sha256": "768c7e822166dd9792b42a571b87266dc6e21e9e9c98174e87ce1e332d542c38",
+          "triangles": 105992,
+          "bounds_gltf_m": [
+            [
+              -13.5525379,
+              0,
+              -33.2299995
+            ],
+            [
+              14.1657124,
+              34.9065018,
+              1.426
+            ]
+          ],
+          "materials": 15
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-foreign-ymca/huangpu-foreign-ymca-lod.glb",
+          "bytes": 998328,
+          "sha256": "8f5ed35d5cdcb65d799fc753d764eecfe0dd5ce37ec14c37d9827bc969b63b02",
+          "triangles": 57004,
+          "bounds_gltf_m": [
+            [
+              -13.5525379,
+              0,
+              -33.2299995
+            ],
+            [
+              14.1657124,
+              34.9065018,
+              1.38499999
+            ]
+          ],
+          "materials": 13
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-foreign-ymca/huangpu-foreign-ymca.blend",
+          "bytes": 1701238,
+          "sha256": "ddf61e339af97435474d17f979a50dc317ff1d12ba88811dc12af072c06631e9"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -13.55253791809082,
+            0.0,
+            -33.22999954223633
+          ],
+          "max": [
+            14.165712356567383,
+            34.90650177001953,
+            1.4259999990463257
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -13.55253791809082,
+            -1.4259999990463257,
+            0.0
+          ],
+          "max": [
+            14.165712356567383,
+            33.22999954223633,
+            34.90650177001953
+          ]
+        },
+        "triangles": 105992,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "南京西路150号原西侨青年会、今体育大厦的历史街面与中部凹入空间。以现场照片核实两翼，保留西邻国际饭店。"
     }
   ],
   "baseline_inventory": {
@@ -4901,6 +5007,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-foreign-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-great-world/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-grosvenor-house/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-holy-trinity-bell-tower/manifest.json",
@@ -4925,13 +5032,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/banque-de-lindochine-v1",
+  "incremental_audit_directory": "data/audit/foreign-ymca-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/jardine-matheson-v1/inventory-increment.json",
-    "bytes": 97026,
-    "sha256": "2736c1ca2d810037579ae4240c48c41a402fa0e7d1613c143f296b20b8adce85"
+    "file": "data/audit/banque-de-lindochine-v1/inventory-increment.json",
+    "bytes": 100602,
+    "sha256": "3fb6772bd1130e25421f8ab034d9610daf087d8f02f4efb88fe730630f534e6f"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-foreign-ymca/manifest.json"
   ]
 }

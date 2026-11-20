@@ -1,3 +1,11 @@
+# 西侨青年会（上海体育大厦临街主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-foreign-ymca&mode=overview) · [单体旋转与下载](foreign-ymca.html) · [来源与制作范围](source/precise/huangpu-foreign-ymca/README.md) · [验收记录](data/audit/foreign-ymca-v1/README.md)
+
+南京西路150号原西侨青年会、今体育大厦的历史街面与中部凹入空间。以现场照片核实两翼，保留西邻国际饭店。
+
+近景 105,992 个三角面，远景 57,004 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 10,051,186 字节。上海主图现有 102 处独立入口，黄浦区 40 处。[资产清单](assets/models/candidates/huangpu-foreign-ymca/manifest.json)
+
 # 东方汇理银行（外滩29号临江立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-banque-de-lindochine&mode=overview) · [单体旋转与下载](banque-de-lindochine.html) · [来源与制作范围](source/precise/huangpu-banque-de-lindochine/README.md) · [验收记录](data/audit/banque-de-lindochine-v1/README.md)
