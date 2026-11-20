@@ -1,3 +1,11 @@
+# 思南路73号周公馆庭院立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sinan-road-73-garden-front&mode=overview) · [单体旋转与下载](sinan-road-73-garden-front.html) · [来源与制作范围](source/precise/huangpu-sinan-road-73-garden-front/README.md) · [验收记录](data/audit/sinan-road-73-garden-front-v1/README.md)
+
+核实市房管局2C011花园住宅及全国重点文物保护单位中国共产党代表团驻沪办事处旧址。按草坪侧照片制作弧拱、两层窗廊、木栏杆与上方红瓦屋面。
+
+近景 50,912 个三角面，远景 5,492 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,184,519 字节。上海主图现有 202 处独立入口，黄浦区 96 处。[资产清单](assets/models/candidates/huangpu-sinan-road-73-garden-front/manifest.json)
+
 # 卫乐园泰安路120弄街门
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-weile-garden-taian-gate&mode=overview) · [单体旋转与下载](weile-garden-gate.html) · [来源与制作范围](source/precise/changning-weile-garden-taian-gate/README.md) · [验收记录](data/audit/weile-garden-gate-v1/README.md)

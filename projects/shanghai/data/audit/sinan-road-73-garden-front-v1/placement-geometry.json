@@ -1,0 +1,305 @@
+{
+  "id": "huangpu-sinan-road-73-garden-front",
+  "source_sha256": "d023c075d3a0f918be4bbea9bb7f6027ee6d4c9c0354f5f61e862a3d16820481",
+  "manifest_sha256": "e2bab03b4d2a3e376d0385a224ece29acbb59ee344735c14ac2c6bf1b3a91efb",
+  "checker_sha256": "206f8c9c22eb4c1ca216142b44404864338092e15073175eed640735ccb0a46d",
+  "assets": {
+    "raw": {
+      "sha256": "2092444719c91b940946f82876e07f133528b2cb838235515c76d93c141b522f",
+      "bytes": 2981936,
+      "triangles": 50912
+    },
+    "web": {
+      "sha256": "f87e31f9de7befd342aed9e4082188299c81d5c471938463ed71097e4118e712",
+      "bytes": 1213848,
+      "triangles": 50912
+    },
+    "lod": {
+      "sha256": "1e178b5adc354a28a4f0381b3e66aa20183f50ea61fe3fdb41992c254ac368a1",
+      "bytes": 115408,
+      "triangles": 5492
+    }
+  },
+  "model_projection_m2": 214.40434703338977,
+  "collision_m2": 6.342720000000008,
+  "front_cut_m2": 44.8032,
+  "height_only_m2": 254.18159999999997,
+  "eave_m": 8.09,
+  "variants": {
+    "near": {
+      "owner_triangles": 9382,
+      "front_affected_faces": 3030,
+      "rear_faces_spanning_eave": 240,
+      "retained_ground_area_m2": 180.1741219907184,
+      "original_area_m2": 218.0774931114683,
+      "retained_ground_fraction": 0.8261931087891956,
+      "native_max_m": 18.299999237060547,
+      "neighbor_clearance_m": 6.893522890111961,
+      "assignment": {
+        "method": "group IDs and triangle-centroid distance to original polygons",
+        "largest_own_distance_m": 0.08090681686820086,
+        "smallest_next_owner_margin_m": 7.630493693663401
+      }
+    },
+    "far": {
+      "owner_triangles": 12,
+      "front_affected_faces": 10,
+      "rear_faces_spanning_eave": 2,
+      "retained_ground_area_m2": 177.3631341246251,
+      "original_area_m2": 213.91757350589057,
+      "retained_ground_fraction": 0.8291190443955794,
+      "native_max_m": 18.299999237060547,
+      "neighbor_clearance_m": 6.9634532056133915,
+      "assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      }
+    }
+  },
+  "cap_agreement_m": 0.06998965769754584,
+  "ground_probes": [
+    {
+      "name": "garden approach",
+      "xy": [
+        0,
+        -1.25
+      ],
+      "cut": false,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "arch threshold",
+      "xy": [
+        0,
+        0.17
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "porch clear left",
+      "xy": [
+        -1.91,
+        1.34
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "porch clear right",
+      "xy": [
+        1.79,
+        1.54
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "porch in front of inner door",
+      "xy": [
+        0,
+        2.32
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "closed inner door",
+      "xy": [
+        0,
+        2.53
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "west abutment",
+      "xy": [
+        -2.62,
+        0.16
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "east abutment",
+      "xy": [
+        2.62,
+        0.16
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "inside west jamb",
+      "xy": [
+        -2.35,
+        1.22
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "inside east jamb",
+      "xy": [
+        2.35,
+        1.22
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "garden below west shutters",
+      "xy": [
+        -5.36,
+        0.9
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "garden below east shutters",
+      "xy": [
+        5.36,
+        0.95
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "west stair tread",
+      "xy": [
+        -5.45,
+        1.93
+      ],
+      "cut": true,
+      "modelObstacle": false,
+      "expected": null
+    },
+    {
+      "name": "west stair rail",
+      "xy": [
+        -5.45,
+        1.51
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "west wing wall",
+      "xy": [
+        -5.2,
+        2.47
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "east wing wall",
+      "xy": [
+        5.2,
+        2.48
+      ],
+      "cut": true,
+      "modelObstacle": true,
+      "expected": "building"
+    },
+    {
+      "name": "rear of veranda",
+      "xy": [
+        0,
+        5.1
+      ],
+      "cut": false,
+      "modelObstacle": false,
+      "expected": "building"
+    },
+    {
+      "name": "west retained wall",
+      "xy": [
+        -6.53,
+        8.17
+      ],
+      "cut": false,
+      "modelObstacle": false,
+      "expected": "building"
+    },
+    {
+      "name": "east retained wall",
+      "xy": [
+        6.51,
+        8.17
+      ],
+      "cut": false,
+      "modelObstacle": false,
+      "expected": "building"
+    },
+    {
+      "name": "rear hip footprint",
+      "xy": [
+        0,
+        13.64
+      ],
+      "cut": false,
+      "modelObstacle": false,
+      "expected": "building"
+    },
+    {
+      "name": "garden beyond east facade",
+      "xy": [
+        8.12,
+        1.66
+      ],
+      "cut": false,
+      "modelObstacle": false,
+      "expected": null
+    }
+  ],
+  "neighbor_points_wgs84": {
+    "1561": [
+      121.46401494500608,
+      31.21625150500609
+    ],
+    "3592": [
+      121.46344164470754,
+      31.21613979792708
+    ],
+    "2077": [
+      121.46291677378646,
+      31.216154771206465
+    ],
+    "4337": [
+      121.46315395827564,
+      31.21602670441019
+    ],
+    "5683": [
+      121.46361261386107,
+      31.215898249612152
+    ],
+    "3513": [
+      121.46422416000716,
+      31.215898245015918
+    ],
+    "4816": [
+      121.46403104000774,
+      31.215840900014914
+    ],
+    "796": [
+      121.46327465560391,
+      31.215746855207044
+    ]
+  }
+}
