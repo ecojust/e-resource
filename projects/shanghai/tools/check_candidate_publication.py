@@ -70,6 +70,20 @@ class PageAssets(HTMLParser):
                     self.modules.append(source)
 
 
+
+def source_registers(manifest, source_folder, list_source_files):
+    """Resolve the declared register or the earlier layout of separate source records."""
+    if 'source_register' in manifest:
+        return [PREFIX + manifest['source_register']]
+    # Older deliveries keep their photograph, conservation and footprint records
+    # alongside the source README. Enumerate that directory at the released commit.
+    names = sorted(name for name in list_source_files(source_folder)
+                   if re.fullmatch(r'[a-zA-Z0-9_-]+(?:[.][a-zA-Z0-9_-]+)*[.]json', name))
+    if not names:
+        raise ValueError(f'No source registers found in {source_folder}')
+    return [source_folder + '/' + name for name in names]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('model')
@@ -95,11 +109,18 @@ def main():
         assert re.fullmatch(r'manifest-[a-z0-9-]+\.json', Path(manifest_path).name)
     manifest = json.loads(blob(manifest_path))
     assert manifest['id'] == landmark_id and set(manifest['assets']) == {'raw', 'full', 'lod', 'native'}
+    source_folder = PREFIX + 'source/precise/' + landmark_id
+
+    def list_source_files(folder):
+        return subprocess.check_output(
+            ['git', 'ls-tree', '--name-only', commit + ':' + folder], cwd=REPO, text=True
+        ).splitlines()
+
     files = ['README.md', job['evidence'], PREFIX + 'README.md', PREFIX + 'CURRENT_STATE.md',
              PREFIX + 'landmarks.html', PREFIX + 'index.html', PREFIX + manifest['viewer_page'],
              PREFIX + 'data/model-todo/queue.json', PREFIX + 'data/model-viewers.json',
              PREFIX + 'data/global-models/additional-placement.json', manifest_path,
-             PREFIX + 'source/precise/' + landmark_id + '/README.md', PREFIX + manifest['source_register']]
+             source_folder + '/README.md', *source_registers(manifest, source_folder, list_source_files)]
     if landmark_id != args.model:
         assert re.fullmatch(r'[a-z0-9-]+', manifest['revision'])
         files.append(PREFIX + 'source/precise/' + landmark_id + '/revisions/' + manifest['revision'] + '/README.md')

@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from check_candidate_publication import PageAssets
+from check_candidate_publication import PageAssets, PREFIX, source_registers
 
 
 class PublicationHTMLTests(unittest.TestCase):
@@ -40,6 +40,24 @@ class PublicationHTMLTests(unittest.TestCase):
             </script>
             <p>from './src/text.js'</p>""")
         self.assertEqual((page.styles, page.modules, page.external_modules), ([], [], []))
+
+
+class PublicationSourceTests(unittest.TestCase):
+    def test_explicit_register_keeps_its_original_path(self):
+        records = source_registers({'source_register':'source/precise/site/references.json'},
+                                   PREFIX + 'source/precise/site', None)
+        self.assertEqual(records, [PREFIX + 'source/precise/site/references.json'])
+
+    def test_legacy_layout_includes_each_local_source_record(self):
+        folder = PREFIX + 'source/precise/site'
+        files = ['source', 'README.md', 'photo-history.json', 'conservation-receipts.json',
+                 '../another/site.json', 'subdir/nested.json', 'https://invalid.site/file.json']
+        self.assertEqual(source_registers({}, folder, lambda _: files),
+                         [folder + '/conservation-receipts.json', folder + '/photo-history.json'])
+
+    def test_missing_legacy_records_fails(self):
+        with self.assertRaises(ValueError):
+            source_registers({}, 'source/precise/site', lambda _: ['README.md', 'source'])
 
 
 if __name__ == '__main__':
