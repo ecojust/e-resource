@@ -1,3 +1,9 @@
+# 宏恩医院历史主楼花园立面
+
+[宏恩医院花园立面](index.html#landmark=jingan-country-hospital&mode=overview)已接入静安区，按区目录共 85 处，静安区 2 处。中央五开间门廊与两端山花之间，各有五跨底层拱廊。立面开间取自 1920 年代照片，中央细部和浅色外墙参照 2015 年照片。现状屋顶、后翼、连接体和室内仍待调查。
+
+近景 75,388 个三角面，远景 32,128 个三角面。可编辑 Blender、原始及网页 GLB 见[资产清单](assets/models/candidates/jingan-country-hospital/manifest.json)。[逐项来源与尺度](source/precise/jingan-country-hospital/README.md) · [主图及网页验收](data/audit/country-hospital-v1/README.md)
+
 # 上海邮政总局历史主楼与钟塔接入主地图
 
 2026-11-20 接续验收完成。桌面与窄屏主图已核对钟塔、屋面、柱廊、保留邻楼及灯牌交互。模型版本 `a758a37` 的四项公开下载均与资产清单一致。[最终浏览器记录](data/audit/postal-office-v1/browser.json) · [公开字节](data/audit/postal-office-v1/publication.json)

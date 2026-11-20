@@ -1,6 +1,6 @@
 {
   "schema": "shanghai-model-production-queue-v1",
-  "updated": "2026-11-04",
+  "updated": "2026-11-20",
   "baseline_commit": "49df6270be491dee5237348c675e2d55eff9786f",
   "scope": "Expandable source-discovery backlog, not an exhaustive census or blanket acceptance",
   "district_order": [
@@ -1691,10 +1691,10 @@
     {
       "order": 39,
       "id": "jingan-country-hospital",
-      "name": "宏恩医院历史主楼（华东医院干部病房楼）",
+      "name": "宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙）",
       "district": "静安区",
       "street": "延安西路221号",
-      "status": "identity_review",
+      "status": "candidate_delivered",
       "heritage_record_id": "sh-historic-b1-024",
       "references": [
         {
@@ -1708,10 +1708,55 @@
         {
           "label": "宏恩医院身份与外观有限预研",
           "url": "projects/shanghai/data/model-todo/country-hospital-preflight.json"
+        },
+        {
+          "label": "花园立面参考与建模范围",
+          "url": "projects/shanghai/source/precise/jingan-country-hospital/README.md"
         }
       ],
-      "scope": "延安西路221号宏恩医院历史主楼身份与单张照片预研，与现代院区高楼及其他门诊部区分。1926旧楼和1951医院机构重建口径分开；工字平面、年代与面积仍需交叉核验，尚未制作或接受地图足迹。",
-      "next_action": "已读建筑历史文字并实际看2015正面照片；下一步确认干部病房楼与历史主楼实体对应，补侧后面、屋顶和现状平面，核地图源、连接体边界、高度与层数后确定制作范围。"
+      "scope": "宏恩医院历史主楼面向南花园的立面，按1920年代影像制作三处山花、两段底层拱廊及上层退入窗墙，中央立面的用色和细部参考2015年照片。开间、进深与标高含估计。",
+      "next_action": "已接入全局场景（近似定位）；继续核验原址坐标、尺寸与未见细节，原单体来源及范围限制仍保留",
+      "preview_source": "projects/shanghai/country-hospital.html",
+      "preview": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview",
+      "manifest": "projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json",
+      "evidence": "projects/shanghai/data/audit/country-hospital-v1/README.md",
+      "next_action_before_city_integration": "补查侧后方、屋顶和平面图，核实历史楼栋与现代连接体分界。比对早期拱廊与近年窗墙改动，按取得的年代资料扩展本次未建的部分。",
+      "city_integration": {
+        "catalog": "projects/shanghai/data/candidate-city-integrations.json",
+        "preview": "https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview",
+        "status": "approximate-placement",
+        "walk_enabled": false,
+        "note": "近似定位；尺寸与未见构造仍含估计"
+      }
+    },
+    {
+      "order": 40,
+      "id": "jingan-country-hospital-remaining-exterior",
+      "name": "宏恩医院历史主楼侧后立面、屋顶与连接部位",
+      "district": "静安区",
+      "street": "延安西路221号",
+      "status": "reference_pending",
+      "heritage_record_id": "sh-historic-b1-024",
+      "references": [
+        {
+          "label": "华东医院条目（资料组已读版本95200788的导言、历史与院区段）",
+          "url": "https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E5%8D%8E%E4%B8%9C%E5%8C%BB%E9%99%A2"
+        },
+        {
+          "label": "2015年宏恩医院外观照片（资料组实际已查看，Fayhoo，CC BY-SA3.0）",
+          "url": "https://commons.wikimedia.org/wiki/File:Country_Hospital.JPG"
+        },
+        {
+          "label": "宏恩医院身份与外观有限预研",
+          "url": "projects/shanghai/data/model-todo/country-hospital-preflight.json"
+        },
+        {
+          "label": "花园立面参考与建模范围",
+          "url": "projects/shanghai/source/precise/jingan-country-hospital/README.md"
+        }
+      ],
+      "scope": "东、西端侧墙、花园翼北面、完整屋顶、历史主楼其他翼与连接部位。现代加建须先核实归属。",
+      "next_action": "补查侧后方、屋顶和平面图，核实历史楼栋与现代连接体分界。比对早期拱廊与近年窗墙改动，按取得的年代资料扩展本次未建的部分。"
     }
   ],
   "existing_models": [

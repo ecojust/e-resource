@@ -1,0 +1,109 @@
+{
+  "server": "http://127.0.0.1:8784/",
+  "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+  "server_script": "data/audit/postal-office-v1/qa-server.py",
+  "server_script_sha256": "2878618e4f8aff224c0a8b91f31f41652d17ad8e295af67fb6c74386fb3a4e8d",
+  "source": "This single local server used the working tree for authored models/modules; all city macro fallback objects were verified against the specified immutable Git blob before serving. It remained up across the two local QA phases. It did not intercept or change external PMTiles responses.",
+  "first_logged_response_utc": "2026-11-20T05:02:52.871388+00:00",
+  "last_logged_response_utc": "2026-11-20T05:20:37.486530+00:00",
+  "shutdown_utc": "2026-11-20T05:21:18.037024+00:00",
+  "server_pid": 1302,
+  "port_8784_closed": true,
+  "logged_response_count": 883,
+  "logged_status_counts": {
+    "200": 883
+  },
+  "fallback_errors": [],
+  "browser_reports": [
+    {
+      "path": "data/audit/postal-office-v1/browser.json",
+      "sha256": "22469ded5a45479d99d52e180ca42a232fadb681dae882cd024afd413cb43002"
+    },
+    {
+      "path": "data/audit/country-hospital-v1/main-map-browser.json",
+      "sha256": "b9cfe1841cc1531924af9d93877170845f6b2be44df1e48fe4d1f841449a50c3"
+    }
+  ],
+  "verified_target_inputs": [
+    {
+      "path": "assets/city-detail/macros/14-13720-6693/far.glb",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "024c2e85f0ffaad247301255a1572b20b5e3a256",
+      "actual_git_blob": "024c2e85f0ffaad247301255a1572b20b5e3a256",
+      "bytes": 1161544,
+      "sha256": "56eb90b01d7947a5ff5472f929b3ea48570caa79915df7113f0a7189631aa079",
+      "origin": "immutable-public-http",
+      "url": "https://raw.githack.com/ecojust/e-resource/2b66614baae35f0d032fc4d18e5f4c808d036cc4/projects/shanghai/assets/city-detail/macros/14-13720-6693/far.glb"
+    },
+    {
+      "path": "assets/city-detail/macros/14-13720-6693/READY.json",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "17a6bc5602df326ea88fc6a52e04669f80626d9f",
+      "actual_git_blob": "17a6bc5602df326ea88fc6a52e04669f80626d9f",
+      "bytes": 1110247,
+      "sha256": "506d6ab2aaebb9004adcbf04ac48ad7a02f06abb401617d05053674383015281",
+      "origin": "immutable-public-http",
+      "url": "https://raw.githack.com/ecojust/e-resource/2b66614baae35f0d032fc4d18e5f4c808d036cc4/projects/shanghai/assets/city-detail/macros/14-13720-6693/READY.json"
+    },
+    {
+      "path": "assets/city-detail/macros/14-13720-6693/feature-table.json.gz",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "c2d7cfe35cad1f4e151dbd4a4a582ace4e204d79",
+      "actual_git_blob": "c2d7cfe35cad1f4e151dbd4a4a582ace4e204d79",
+      "bytes": 483689,
+      "sha256": "d9b50cd29e04014e5017669347a3849a29a60171d1586325bdd6bd5096072762",
+      "origin": "immutable-public-http",
+      "url": "https://raw.githack.com/ecojust/e-resource/2b66614baae35f0d032fc4d18e5f4c808d036cc4/projects/shanghai/assets/city-detail/macros/14-13720-6693/feature-table.json.gz"
+    },
+    {
+      "path": "assets/city-detail/macros/14-13720-6693/near/1_1-s1-s1-s1.glb.gz",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "644548dd16cf07c186be1f0b914f892db24f28e5",
+      "actual_git_blob": "644548dd16cf07c186be1f0b914f892db24f28e5",
+      "bytes": 48679,
+      "sha256": "ca32e860def10ee960214efa7fd2ea24f6e5a2221ab2840bb221acf0d01b79d0",
+      "origin": "immutable-public-http",
+      "url": "https://raw.githack.com/ecojust/e-resource/2b66614baae35f0d032fc4d18e5f4c808d036cc4/projects/shanghai/assets/city-detail/macros/14-13720-6693/near/1_1-s1-s1-s1.glb.gz"
+    },
+    {
+      "path": "assets/city-detail/macros/14-13718-6695/far.glb",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "34a6b532000c2254ac983200f2a093f465f61608",
+      "actual_git_blob": "34a6b532000c2254ac983200f2a093f465f61608",
+      "bytes": 1419952,
+      "sha256": "669911d0fde4c6be1d62b3c3a21f7d2590a2ca7c9ace7d6af6122a19590383ba",
+      "origin": "local-git-object",
+      "url": null
+    },
+    {
+      "path": "assets/city-detail/macros/14-13718-6695/READY.json",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "f17147192757eeb197832e0305ec13913fbfc890",
+      "actual_git_blob": "f17147192757eeb197832e0305ec13913fbfc890",
+      "bytes": 1173775,
+      "sha256": "dfe77772d7d77cb8096a9a01e3f4379ad990865978e519a4250987e900029d87",
+      "origin": "local-git-object",
+      "url": null
+    },
+    {
+      "path": "assets/city-detail/macros/14-13718-6695/feature-table.json.gz",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "64819f586b372db555e211599a7f3bbf35f89569",
+      "actual_git_blob": "64819f586b372db555e211599a7f3bbf35f89569",
+      "bytes": 611815,
+      "sha256": "ae08831809b5d7651774e04ea3a6d11e8ad59cfc156c92d3ee1b95c7e5659512",
+      "origin": "local-git-object",
+      "url": null
+    },
+    {
+      "path": "assets/city-detail/macros/14-13718-6695/near/1_-4-s1.glb.gz",
+      "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+      "git_blob": "ea53a306b860b619e446f196c463f632d968c16a",
+      "actual_git_blob": "ea53a306b860b619e446f196c463f632d968c16a",
+      "bytes": 97916,
+      "sha256": "aa20c14ca12375bfc5f3854ea754137ddb95bfdfa57c31b6bd6edb4ced363e4b",
+      "origin": "local-git-object",
+      "url": null
+    }
+  ]
+}

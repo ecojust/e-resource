@@ -1,0 +1,52 @@
+{
+  "model_id": "jingan-country-hospital",
+  "method": "真实注册表84项加队列第39项身份的临时85项目录，用相同投影模拟密集城区。随后用固定85个合成标牌测试三个视口并验证逐个鼠标命中。网页实测另外记录。",
+  "before": {
+    "commit": "2405a88d1e72a6ed011cd3d77f0d0a2e11b51bfc",
+    "script_sha256": "f57de261eda306e8bb4584c0181ac5186b768882429e350f8fa219702b97fbc1",
+    "test": "long building title cards retain every delivered sign in the smaller phone area at all zooms",
+    "viewport": [
+      320,
+      568
+    ],
+    "actual_overlap_fallback_count": 1,
+    "expected": 0
+  },
+  "after": {
+    "script_sha256": "005455691693bc0ff5e317a998f674a252a92e4822ee99121faf47200f1f0c5b",
+    "test_sha256": "d4d69cf3a67884a5f8082c00d8ebd7c8cf9574993c4408d22a871690b82cfea0",
+    "node": "v24.22.1",
+    "regression": "85 beacon numbers have distinct cells and preserve their 12 px text at citywide density",
+    "viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1200,
+        900
+      ]
+    ],
+    "narrow_safe_area_px": [
+      243,
+      138
+    ],
+    "narrow_84_cell_px": [
+      20,
+      18
+    ],
+    "narrow_85_cell_px": [
+      20,
+      16
+    ],
+    "number_font_px": 12,
+    "all_85_hit_targets_distinct": true,
+    "test_command": "node --test tests/building-beacons.test.mjs tests/landmark-navigation.test.mjs tests/landmark-directory.test.mjs tests/candidate-overview-camera.test.mjs",
+    "passes": 48,
+    "failures": 0
+  }
+}

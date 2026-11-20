@@ -23,11 +23,12 @@ import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictio
   releaseHiddenDetail, retainDetailResult, detailCacheState } from './detail-model-cache.js';
 import { correctPhotographicTexture } from './photographic-texture.js';
 import { preparePhotographicGlass } from './photographic-glass.js';
-import {CandidateCityState} from './candidate-city-integrations.js?v=postal-office-v1';
-import {CandidateCityClipper} from './candidate-city-clipping.js?v=postal-office-v1';
+import {CandidateSourceSections} from './candidate-source-sections.js';
+import {CandidateCityState} from './candidate-city-integrations.js?v=country-hospital-v1';
+import {CandidateCityClipper} from './candidate-city-clipping.js?v=country-hospital-v1';
 import {planCandidateVectorClipping} from './candidate-vector-clipping.js';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
-import {createBuildingBeacons} from './building-beacons.js';
+import {createBuildingBeacons} from './building-beacons.js?v=country-hospital-v1';
 
 const DEG = Math.PI / 180;
 const EARTH = 6378137;
@@ -286,7 +287,9 @@ export async function createShanghaiScene(options = {}) {
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const landmarkRecords = new Map();
   const candidateClipper=new CandidateCityClipper({THREE,geographicPosition});
+  const sourceSections=new CandidateSourceSections(scene,geographicPosition);
   const candidateState=new CandidateCityState({getRecords:()=>landmarkRecords,getScene:()=>scene,onChange(state){
+    sourceSections.sync(state.active,localStreamer.getVisible());
     candidateClipper.update(state.displayClips); collisionDirty=true; collisionUpdated=-Infinity; collisionRevision++;
     refreshCandidateVectors(); lighting?.invalidate(); if(!destroyed)map.triggerRepaint();
   }});
@@ -431,7 +434,7 @@ export async function createShanghaiScene(options = {}) {
         disposeModel(record.object);
         record.object = null;
       }
-      candidateClipper.dispose();lighting?.dispose(); traffic?.dispose(); surfaces?.dispose();
+      sourceSections.dispose();candidateClipper.dispose();lighting?.dispose(); traffic?.dispose(); surfaces?.dispose();
       scene.traverse(obj => {
         if (obj.geometry) obj.geometry.dispose();
         if (obj.material) for (const m of Array.isArray(obj.material) ? obj.material : [obj.material]) m.dispose();
@@ -653,7 +656,9 @@ export async function createShanghaiScene(options = {}) {
     candidateClipper.bindObject(group,record);
   }
   function handleStreamingChange(state) {
-    cityDetails.syncParents(localStreamer.getVisible());
+    const visibleMacros=localStreamer.getVisible();
+    if(sourceSections.sync(candidateState.active,visibleMacros))lighting?.invalidate();
+    cityDetails.syncParents(visibleMacros);
     const signature=state.active.filter(record=>record.visible).map(record=>record.id).sort().join('|');
     const changed=signature!==streamingSignature;
     if(changed){streamingSignature=signature;updateBuildingExclusions();map.triggerRepaint();}
@@ -908,7 +913,7 @@ export async function createShanghaiScene(options = {}) {
     refreshBuildingBeacons:()=>buildingBeacons?.refresh(),
     getOrdinaryCatalogState:()=>ordinaryCatalog?.getState()||null,
     getSourceGeometryCorrectionState:()=>sourceGeometryCorrections.getState(),
-    getCandidateIntegrationState:()=>({...candidateState.getState(),shader:candidateClipper.getState(),vector:candidateVectorSuppressors.map(c=>({source:c.source,sourceLayer:c.sourceLayer,...c.getState()}))}),
+    getCandidateIntegrationState:()=>({...candidateState.getState(),shader:candidateClipper.getState(),sourceSections:sourceSections.getState(),vector:candidateVectorSuppressors.map(c=>({source:c.source,sourceLayer:c.sourceLayer,...c.getState()}))}),
     getNearbyOrdinaryRecords:()=>nearbyOrdinaryRecords.map(record=>({...record})),
     setAvatarVisible(visible){
       if(!visible){

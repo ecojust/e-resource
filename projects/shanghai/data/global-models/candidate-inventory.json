@@ -44,32 +44,33 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 46,
+  "candidate_manifest_count": 47,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 44,
-  "resulting_city_count": 84,
+  "new_city_model_count": 45,
+  "resulting_city_count": 85,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
     "杨浦区": 6,
     "虹口区": 4,
+    "静安区": 1,
     "黄浦区": 13
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 184,
-    "bytes": 782834291,
+    "files": 188,
+    "bytes": 791270647,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 35665440,
+    "current_run_added_bytes": 8436356,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 52
+    "inherited_incremental_files": 56
   },
   "records": [
     {
@@ -3153,6 +3154,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "南东巨柱立面、北侧红砖墙、东南钟塔与中庭弧网罩；西侧独立建筑保留，尺寸与隐面含估计。"
+    },
+    {
+      "id": "jingan-country-hospital",
+      "name": "宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙）",
+      "districtId": "310106",
+      "district": "静安区",
+      "already_in_city": false,
+      "individual_page": "country-hospital.html",
+      "manifest": "assets/models/candidates/jingan-country-hospital/manifest.json",
+      "manifest_sha256": "3d4cc640af8631ea781d381a762684ccbdd1eb23b6ca5a1e203326c96270e6e9",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front-raw.glb",
+          "bytes": 5008572,
+          "sha256": "4d78ca35d8f3bca3f51e6a6ad690183cd293c0c2c6ba69a0eb256b6f54623e29",
+          "triangles": 75388,
+          "bounds_gltf_m": [
+            [
+              -38.9558219909668,
+              0.0,
+              -4.787199974060059
+            ],
+            [
+              38.9558219909668,
+              18.80384063720703,
+              0.5561599731445312
+            ]
+          ],
+          "materials": 8
+        },
+        "web": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front-web.glb",
+          "bytes": 2071812,
+          "sha256": "159603e048bcf363a65b4c804a5e8c7ea7daca9dac77e97fdda7b0fc95de0d27",
+          "triangles": 75388,
+          "bounds_gltf_m": [
+            [
+              -38.955822,
+              0,
+              -4.78719997
+            ],
+            [
+              38.955822,
+              18.8038406,
+              0.556159973
+            ]
+          ],
+          "materials": 8
+        },
+        "lod": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front-lod.glb",
+          "bytes": 757288,
+          "sha256": "e7e3e6767e0c40aff5da5415120c963e90fde1f382a359e48a677c1e25e8afbc",
+          "triangles": 32128,
+          "bounds_gltf_m": [
+            [
+              -38.955822,
+              0,
+              -4.78719997
+            ],
+            [
+              38.955822,
+              18.8038406,
+              0.556159973
+            ]
+          ],
+          "materials": 8
+        },
+        "native": {
+          "file": "assets/models/candidates/jingan-country-hospital/jingan-country-hospital-garden-front.blend",
+          "bytes": 598684,
+          "sha256": "2b3acd6151ab632201221001aa3cf1dd8e209bf2875eadb896256de067251c51"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -38.9558219909668,
+            0.0,
+            -4.787199974060059
+          ],
+          "max": [
+            38.9558219909668,
+            18.80384063720703,
+            0.5561599731445312
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -38.9558219909668,
+            -0.5561599731445312,
+            0.0
+          ],
+          "max": [
+            38.9558219909668,
+            4.787199974060059,
+            18.80384063720703
+          ]
+        },
+        "triangles": 75388,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "朝花园立面的三处山花、两段底层拱廊及上层窗墙。布局取自1920年代，中央细部参照2015年照片。"
     }
   ],
   "baseline_inventory": {
@@ -3169,6 +3276,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-shanghai-municipal-council/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-xinxin-company/manifest.json",
+    "projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-china-aviation-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-hall/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-former-shanghai-city-museum/manifest.json",
@@ -3176,14 +3284,14 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-stadium/manifest.json",
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
-  "incremental_asset_revision": "c59174528765c104f09295ef10132b4bb4f63ce5",
-  "incremental_audit_directory": "data/audit/postal-office-v1",
+  "incremental_asset_revision": "2405a88d1e72a6ed011cd3d77f0d0a2e11b51bfc",
+  "incremental_audit_directory": "data/audit/country-hospital-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/great-world-v1/inventory-increment.json",
-    "bytes": 37295,
-    "sha256": "9b8115b8049aba0e24d1775f9b69fbea12da496b9efbcbc65a67e0cbede0fba9"
+    "file": "data/audit/postal-office-v1/inventory-increment.json",
+    "bytes": 40011,
+    "sha256": "34f306dddec5c560de1a68b7384f3e427894af47c4e2d1ab1b65022e023ac4cc"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json"
+    "projects/shanghai/assets/models/candidates/jingan-country-hospital/manifest.json"
   ]
 }

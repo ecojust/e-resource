@@ -4,12 +4,12 @@
 
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
-上海邮政总局历史主楼与钟塔已完成网页验收和公开下载核对，当前目录为 84 处。下一个制作项目是宏恩医院花园立面。[工作记录](history/2026-11-20-001.md)
+最新制作的是静安区宏恩医院历史主楼的花园立面，主地图共 85 处入口。上海邮政总局的主图和公开下载已验收。[宏恩医院制作范围](projects/shanghai/source/precise/jingan-country-hospital/README.md) · [本次工作记录](history/2026-11-20-001.md)
 
 <!-- model-todo:start -->
 ## 模型 TODO：逐条制作与街道资料搜集
 
-更新：2026-11-04。原始名录收录已发现的 **1,058 处建筑／建筑组线索**、**1,038 条道路名称线索**；下文列出尚未完成的制作任务及调查线索。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。
+更新：2026-11-20。原始名录收录已发现的 **1,058 处建筑／建筑组线索**、**1,038 条道路名称线索**；下文列出尚未完成的制作任务及调查线索。发现名录覆盖现今16区，但**尚未穷尽上海所有街道、所有可查资料**；名录中的一处可能包含多栋楼，不能直接视为单栋完成数。
 
 执行顺序：按下表序号逐项核对参考 → 制作近景、远景与可编辑模型 → 几何和网页检查 → 提交主分支 → 更新状态。遇到来源缺口，记录缺口后推进下一项。照片链接只代表发现线索，逐栋制作前还须打开核对身份、视角、年代和使用条件。
 
@@ -19,7 +19,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的38项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的39项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -29,7 +29,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 39 | 宏恩医院历史主楼（华东医院干部病房楼） | 静安区／延安西路221号 | 待核对身份与外观 | — | [华东医院条目（资料组已读版本95200788的导言、历史与院区段）](<https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E5%8D%8E%E4%B8%9C%E5%8C%BB%E9%99%A2>) · [2015年宏恩医院外观照片（资料组实际已查看，Fayhoo，CC BY-SA3.0）](<https://commons.wikimedia.org/wiki/File:Country_Hospital.JPG>) · [宏恩医院身份与外观有限预研](<projects/shanghai/data/model-todo/country-hospital-preflight.json>)；已读建筑历史文字并实际看2015正面照片；下一步确认干部病房楼与历史主楼实体对应，补侧后面、屋顶和现状平面，核地图源、连接体边界、高度与层数后确定制作范围。 |
+| 40 | 宏恩医院历史主楼侧后立面、屋顶与连接部位 | 静安区／延安西路221号 | 待查资料 | — | [华东医院条目（资料组已读版本95200788的导言、历史与院区段）](<https://zh.wikipedia.org/wiki/%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E5%8D%8E%E4%B8%9C%E5%8C%BB%E9%99%A2>) · [2015年宏恩医院外观照片（资料组实际已查看，Fayhoo，CC BY-SA3.0）](<https://commons.wikimedia.org/wiki/File:Country_Hospital.JPG>) · [宏恩医院身份与外观有限预研](<projects/shanghai/data/model-todo/country-hospital-preflight.json>) · [花园立面参考与建模范围](<projects/shanghai/source/precise/jingan-country-hospital/README.md>)；补查侧后方、屋顶和平面图，核实历史楼栋与现代连接体分界。比对早期拱廊与近年窗墙改动，按取得的年代资料扩展本次未建的部分。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -716,7 +716,7 @@
 
 | ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |
 |---|---|---|---|---|
-| sh-historic-b1-024 | 宏恩医院 | 延安西路221号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录指华东医院干部病房楼；先确认历史楼栋，不用整个华东医院院区替代。 |
+| sh-historic-b1-024 | 宏恩医院历史主楼侧后立面、屋顶与连接部位 | 延安西路221号 | [名录][H1] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补查侧后方、屋顶和平面图，核实历史楼栋与现代连接体分界。比对早期拱廊与近年窗墙改动，按取得的年代资料扩展本次未建的部分。 |
 | sh-historic-b1-029 | 嘉道理爵士住宅 | 延安西路64号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；名录现名中国福利会少年宫；与第34条长宁区少年宫不同，先确认历史住宅主体。 |
 | sh-historic-b1-032 | 马勒住宅 | 陕西南路30号 | [名录][H1] · 照片待核 · [库存范围复核][MTD-663cb64a] | 待核外观／拆栋；陕西南路30号历史住宅；现酒店名称不能自动把全部附属设施纳入。 |
 | sh-historic-b1-042 | 美琪大戏院 | 江宁路99号 | [名录][H1] · 照片待核 | 待核外观／拆栋 |
@@ -3703,7 +3703,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；84处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中44件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；85处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中45件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3711,7 +3711,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增44处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增45处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3733,7 +3733,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，84处建筑与构件模型入口（40处既有＋44处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增44处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，85处建筑与构件模型入口（40处既有＋45处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增45处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（29处）
@@ -3795,13 +3795,14 @@
 | 邬达克旧居 | <!-- hudec-residence-publication-time:start -->[2026-10-28 04:10:42](https://github.com/ecojust/e-resource/commit/7e178aaed36b6fc2361861b3101e48d155dbc2b2)<!-- hudec-residence-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hudec-residence&mode=walk) |
 | 哥伦比亚乡村俱乐部主楼 | <!-- columbia-publication-time:start -->[2026-10-27 22:57:05](https://github.com/ecojust/e-resource/commit/0039b0dd113dfe6b8d75748c0abf7d7b24ed7746)<!-- columbia-publication-time:end --> | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=columbia-country-club&mode=walk) |
 
-### 静安区（1处）
+### 静安区（2处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
 | 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |
 |---|---|---|
 | 四行仓库（含毗邻大陆银行仓库） | [2026-10-27 10:11:58](https://github.com/ecojust/e-resource/commit/20e45cb3b33234e73bcef1a12528c249d98f3cac) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-sihang-warehouse&mode=walk) |
+| 宏恩医院历史主楼花园立面（三处山花与两段拱廊窗墙） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-country-hospital&mode=overview) |
 
 ### 普陀区（1处）
 

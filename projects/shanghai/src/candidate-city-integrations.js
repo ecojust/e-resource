@@ -1,3 +1,4 @@
+import {validSourceSection} from './candidate-source-sections.js';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
 
 const SHA=/^[a-f0-9]{64}$/;
@@ -44,6 +45,7 @@ export function mergeCandidateCityModels(existing,manifest) {
         ||!Number.isInteger(asset.bytes)||asset.bytes<=0||asset.bytes>=100000000||!SHA.test(asset.sha256))throw Error(`候选模型资产无效：${row.id}/${key}`);
     }
     for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
+    if(row.source_section_caps!==undefined&&!validSourceSection(row))throw Error(`候选模型源剖面无效：${row.id}`);
     if(row.site_replacement&&(!row.site_replacement.id||!validCandidateGeometry(row.site_replacement.geometry)))throw Error(`候选模型场址修正无效：${row.id}`);
     if(row.display_height_clips!==undefined){
       if(!Array.isArray(row.display_height_clips)||row.display_height_clips.length>8)throw Error(`候选模型高度裁剪无效：${row.id}`);

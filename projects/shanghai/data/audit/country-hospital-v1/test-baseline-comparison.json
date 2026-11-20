@@ -1,0 +1,61 @@
+{
+  "scope": "第39项新增后，对照第38项提交检查全项目 npm test 的中止位置和实际受影响的共享场景测试。",
+  "baseline": "2405a88d1e72a6ed011cd3d77f0d0a2e11b51bfc",
+  "node": "v24.22.1",
+  "npm_test": {
+    "baseline_exit": 1,
+    "current_exit": 1,
+    "baseline_first_group_passed": 42,
+    "current_first_group_passed": 45,
+    "walk_controller": "both passed",
+    "failed_group": "node --test tests/camera-collision-revision.test.mjs tests/city-projection.test.mjs",
+    "passed_in_group": 5,
+    "failed_in_group": 6,
+    "failed_test_names": [
+      "actual scene revision changes only after a completed rebuild and respects 850ms throttle",
+      "actual B pose: late 1148 source arrival shortens idle camera, source removal restores it",
+      "an explicit camera reset still submits after external camera changes",
+      "legacy adapter without collisionRevision keeps prior behavior",
+      "actual vendored MapLibre shortened B camera is not clamped by either scene zoom limit",
+      "the existing3.5m minimum boom also fits the vendored camera projection at the QA viewport"
+    ],
+    "error": "ReferenceError: candidateState is not defined",
+    "diagnosis": "camera-collision-revision.test.mjs 的 cacheFixture() 以 new Function 执行抽取的生产代码，未注入 candidateState。两版的夹具文件和抽取的函数正文逐字节相同。npm 命令在此处中止，未执行后续整条测试链。",
+    "fixture_sha256": "a466e5892d42264c0ac9621de140516184ce1ba03604d2cffd2d6b13b38efde2",
+    "extracted_scene_functions_sha256": "723680226c257a2aba7aa9f8885b7f3fa046602ec4d4f0e73c16aace3ee9ec53"
+  },
+  "additional_shared_runtime_comparison": {
+    "test_files": [
+      "tests/candidate-city-clipping.test.mjs",
+      "tests/candidate-geometry.test.mjs",
+      "tests/city-detail-map-integration.test.mjs",
+      "tests/detail-model-cache-integration.test.mjs",
+      "tests/map-scene-correction.test.mjs",
+      "tests/ordinary-navigation.test.mjs",
+      "tests/source-correction-navigation.test.mjs"
+    ],
+    "each_version_tested": 63,
+    "each_version_passed": 35,
+    "each_version_failed": 28,
+    "matching_failure_names_and_messages": true,
+    "error": "candidateState is not defined"
+  },
+  "hospital_regressions": {
+    "test_files": [
+      "tests/candidate-source-sections.test.mjs",
+      "tests/building-beacons.test.mjs",
+      "tests/candidate-overview-camera.test.mjs",
+      "tests/landmark-directory.test.mjs",
+      "tests/landmark-navigation.test.mjs"
+    ],
+    "passed": 50,
+    "failed": 0
+  },
+  "current_sha256": {
+    "package.json": "1090ecef61c40a73b02c1c2da5ea674a3d5298fbf07db470091a5fded602f702",
+    "src/map-scene.js": "8d18dad2bc835fad37f0584e605db989bbe2cf61f743a921ad7445ee712d8c11",
+    "src/building-beacons.js": "005455691693bc0ff5e317a998f674a252a92e4822ee99121faf47200f1f0c5b",
+    "src/candidate-source-sections.js": "e4a66b2740bfde425208708b346ec83d4b80979f48d83ff8e323498f71ae464e",
+    "src/candidate-city-integrations.js": "28299df6329743a85d2b117d887faf1ddab3fc7b8d2c596b4d23e60adc08a46b"
+  }
+}

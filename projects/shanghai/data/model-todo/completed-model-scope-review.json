@@ -1,6 +1,6 @@
 {
   "schema": "completed-model-scope-review-v1",
-  "reviewed_on": "2026-11-04",
+  "reviewed_on": "2026-11-20",
   "source_inventory": {
     "path": "projects/shanghai/data/model-todo/discovered-buildings.json",
     "sha256": "c5d19bb2e2852873c90e67bffa720bd3693dd10c913d0f3a47b543364939f57a",
@@ -646,6 +646,36 @@
         {
           "path": "projects/shanghai/data/audit/postal-office-v1/footprint-review.json",
           "supports": "主源1959部分替换、西侧独立源3148及接缝带保留，实际模型投影和低位碰撞范围分别核对。"
+        }
+      ]
+    },
+    {
+      "heritage_id": "sh-historic-b1-024",
+      "source_name": "宏恩医院",
+      "completed_models": [
+        {
+          "id": "jingan-country-hospital",
+          "scope": "宏恩医院历史主楼面向南花园的立面，按1920年代影像制作三处山花、两段底层拱廊及上层退入窗墙，中央立面的用色和细部参考2015年照片。开间、进深与标高含估计。"
+        }
+      ],
+      "remaining_tasks": [
+        {
+          "id": "jingan-country-hospital-remaining-exterior",
+          "title": "宏恩医院历史主楼侧后立面、屋顶与连接部位",
+          "todo": "补查侧后方、屋顶和平面图，核实历史楼栋与现代连接体分界。比对早期拱廊与近年窗墙改动，按取得的年代资料扩展本次未建的部分。",
+          "completed_by_model_id": "jingan-country-hospital-remaining-exterior",
+          "completed_scope": "东、西端侧墙、花园翼北面、完整屋顶、历史主楼其他翼与连接部位。现代加建须先核实归属。"
+        }
+      ],
+      "exclusions": "东、西端侧墙、花园翼北面、完整屋顶、历史主楼其他翼与连接部位。现代加建须先核实归属。",
+      "evidence": [
+        {
+          "path": "projects/shanghai/source/precise/jingan-country-hospital/README.md",
+          "supports": "宏恩医院历史主楼面向南花园的立面，按1920年代影像制作三处山花、两段底层拱廊及上层退入窗墙，中央立面的用色和细部参考2015年照片。开间、进深与标高含估计。"
+        },
+        {
+          "path": "projects/shanghai/data/audit/country-hospital-v1/footprint-review.json",
+          "supports": "地图原建筑轮廓、模型局部定位与保留范围。"
         }
       ]
     }

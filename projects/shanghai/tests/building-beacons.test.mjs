@@ -417,6 +417,7 @@ test('long building title cards retain every delivered sign in the smaller phone
     selected.push(row.id);selectedTitle=row.name;if(targets.includes(row.id))cardTop=328;beacons.refresh();
   }});
   const roomyHeight=delivered.length>77?18:20,denseWidth=delivered.length>77?20:22;
+  const denseHeight=delivered.length>84?16:18;
   assert(beacons.getState().labelPositions.every(row=>row.height===roomyHeight),'keep the largest sprite that fits all delivered signs');
   for(const id of targets){
     const target=beacons.getState().labelPositions.find(row=>row.id===id);map.emit('click',{point:{x:target.x,y:target.y}});
@@ -424,14 +425,14 @@ test('long building title cards retain every delivered sign in the smaller phone
     for(const zoom of [8,12,18,24]){
       map.zoom=zoom;beacons.refresh();const state=beacons.getState();
       assert.equal(state.viewportLabelCount,delivered.length);assert.equal(state.overlapFallbackCount,0);
-      assert(state.labelPositions.every(row=>row.width===denseWidth&&row.height===18));
+      assert(state.labelPositions.every(row=>row.width===denseWidth&&row.height===denseHeight));
       assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
       assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),delivered.map(row=>row.id).sort());
       for(const row of state.labelPositions)assert.equal(beacons.hitTest({x:row.x,y:row.y}),row.id);
       const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));assert.equal(numbers.layout['text-size'],12);
       for(const feature of map.getSource(numbers.source).data.features){
         const sprite=map.images.get(evaluateStyleExpression(numbers.layout['icon-image'],feature.properties));
-        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[denseWidth,18]);
+        assert.deepEqual([sprite.image.width/sprite.options.pixelRatio,sprite.image.height/sprite.options.pixelRatio],[denseWidth,denseHeight]);
       }
     }
   }
@@ -440,6 +441,38 @@ test('long building title cards retain every delivered sign in the smaller phone
   assert.equal(selected.length,delivered.length);assert.equal(new Set(selected).size,delivered.length);
   cardTop=348;beacons.refresh();assert(beacons.getState().labelPositions.every(row=>row.height===roomyHeight));
   beacons.destroy();assert.equal(map.images.size,0);
+});
+
+test('85 beacon numbers have distinct cells and preserve their 12 px text at citywide density',()=>{
+  const rows=Array.from({length:85},(_,index)=>({id:`building-${index+1}`,name:`建筑${index+1}`,lng:121,lat:31,districtId:'310106'}));
+  for(const viewport of [{width:320,height:568},{width:390,height:844},{width:1200,height:900}]){
+    const map=new BeaconMap(viewport),card=new Element(),tools=new Element(),selected=[];
+    map.project=()=>({x:viewport.width/2,y:viewport.height/2});
+    card.getBoundingClientRect=()=>({top:viewport.height-240,bottom:viewport.height-12});
+    tools.getBoundingClientRect=()=>({left:viewport.width-57});
+    const doc={...mockDocument(),getElementById:id=>id==='location-card'?card:null,
+      querySelector:id=>id==='.map-tools'?tools:null};
+    if(viewport.width===320){
+      const previous=createBuildingBeacons({map,records:rows.slice(0,84),documentObject:doc});
+      assert(previous.getState().labelPositions.every(p=>p.width===20&&p.height===18));
+      previous.destroy();
+    }
+    const beacons=createBuildingBeacons({map,records:rows,documentObject:doc,onSelect:r=>selected.push(r.id)});
+    const state=beacons.getState();
+    assert.equal(state.viewportLabelCount,85);assert.equal(state.overlapFallbackCount,0);
+    assertSeparated(state.labelPositions);
+    const numbers=[...map.layers.values()].find(layer=>layer.id.endsWith('-numbers'));
+    assert.equal(numbers.layout['text-size'],12);
+    for(const pos of state.labelPositions){
+      const feature=map.getSource(numbers.source).data.features.find(f=>f.id===pos.id);
+      const sprite=map.images.get(pos.compact?feature.properties.numberSprite:feature.properties.sign);
+      assert.deepEqual([sprite.image.width/2,sprite.image.height/2],[pos.width,pos.height]);
+      if(viewport.width===320)assert.deepEqual([pos.width,pos.height],[20,16]);
+      map.emit('click',{point:{x:pos.x,y:pos.y}});assert.equal(selected.at(-1),pos.id);
+    }
+    assert.equal(new Set(selected).size,85);
+    beacons.destroy();
+  }
 });
 
 test('the 78th model retains a separate 12px number and hit area when a long title leaves only seven rows',()=>{
@@ -467,7 +500,7 @@ test('the 78th model retains a separate 12px number and hit area when a long tit
     for(const zoom of [8,12,18,24,8]){
       map.zoom=zoom;beacons.refresh();const state=beacons.getState();
       assert.equal(state.count,78);assert.equal(state.viewportLabelCount,78);assert.equal(state.overlapFallbackCount,0);
-      assert.equal(state.labelPixelSize,12);assert.equal(state.spriteIds.length,10);
+      assert.equal(state.labelPixelSize,12);assert.equal(state.spriteIds.length,11);
       assert(state.labelPositions.every(row=>row.width===20&&row.height===18));
       assertSeparated(state.labelPositions);assertWithin(state.labelPositions,{left:12,right:255,top:182,bottom:320});
       assert.deepEqual(state.labelPositions.map(row=>row.id).sort(),rows.map(row=>row.id).sort());
@@ -561,7 +594,7 @@ test('fixed name backgrounds, text and leaders agree with the actual ground proj
   assert.deepEqual([ground.x,ground.y],[actual.x,actual.y]);
   assert(ground.y-original.y>20,'the fixture must expose the previous centre-height projection error');
   const beacons=createBuildingBeacons({map,records:rows,onSelect(){},documentObject:mockDocument()});
-  assert.equal(map.images.size,10,'five fixed name sprites, four number sizes and one anchor lamp');
+  assert.equal(map.images.size,11,'five fixed name sprites, five number sizes and one anchor lamp');
   const nameLayer=[...map.layers.values()].find(layer=>layer.id.endsWith('-labels-symbol'));
   assert(nameLayer);assert.equal(nameLayer.layout['icon-text-fit'],'none');
   const anchorLayer=[...map.layers.values()].find(layer=>layer.type==='symbol'&&!layer.layout['text-field']);

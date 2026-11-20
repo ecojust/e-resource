@@ -1,0 +1,39 @@
+{
+  "model": "jingan-country-hospital",
+  "reviewed_at": "2026-11-20T05:21:22.852062+00:00",
+  "browser_report": "main-map-browser.json",
+  "report_sha256": "b9cfe1841cc1531924af9d93877170845f6b2be44df1e48fe4d1f841449a50c3",
+  "script_sha256": "826b800044d3839a9cc28ed9a9e46a492602d827de65bad9f8d4d69e2f173fab",
+  "views": [
+    {
+      "image": "main-mobile.png",
+      "sha256": "227ebe7733bdc418e6ed242f48afa36241718c0d6e4a57748274757a89031129",
+      "observed": "390×844静安目录冷启动，选点名称正确，三处山花在画面中。常显灯牌遮住部分中央拱廊；可用较大的花园近景图查看细部。此图拍摄时近景共享瓦片尚在加载，裁剪验收以主图花园近景为准。"
+    },
+    {
+      "image": "main-desktop.png",
+      "sha256": "a3c12bbb9ad304f8d93eededc8c042ad31c2e3e32c6293464f3038284183acb1",
+      "observed": "静安区目录可进入宏恩医院花园立面。中央与两端三处山花均在窗口内，原楼两端及背景楼仍可见。"
+    },
+    {
+      "image": "main-garden-near.png",
+      "sha256": "19f57e700b94249ab0d8b0687669416ebe2cf9df36dc59c10dc5a019dc5bda16",
+      "observed": "三处山花、中央柱廊和两段底层拱廊均可辨。东山花上方的原源切面已由中性灰面闭合；同一屏幕区域的透底粉色占比从83.67%降为0。原源端面仍与历史立面明显有别。"
+    },
+    {
+      "image": "main-roof-near.png",
+      "sha256": "acdba6892525a9f5b772274e8fb0082de48fd5f685ecc2cda52b2a11987b4923",
+      "observed": "顶部视角可辨浅段花园立面、其后的高位粗楼屋顶及两端残余。该俯角下左侧和中部灰色端面的阴影呈细颗粒。真实历史楼的完整屋顶仍待核。"
+    },
+    {
+      "image": "main-city-85-beacons.png",
+      "sha256": "904540ca0e4141b9b132d4562ac8f7aee14f03bb289cd627f01dc2bc0db84b39",
+      "observed": "320×568、zoom 8，全市视角中紧凑编号排在地图上。截图选中的是邮政总局，是实际触摸宏恩医院灯牌之前的起点；触摸后标题、路由及模型验证见运行报告。"
+    }
+  ],
+  "resize_evidence": {
+    "earlier_attempt": "preflight/resize-in-flight/main-map-browser.json",
+    "failure": "桌面缩窄后，测试在地图 transform 异步改宽之前重新选择，越界断言失败。执行时的脚本保存为同目录 executed.cjs，当时脚本路径在本交付审计目录根部。保留前三张已通过的主图及原始失败记录。",
+    "verified": "正式执行分别复核手机目录冷启动和地图 transform 完成尺寸调整后重选，两次八角投影一致。没有覆盖用户旋转设备后不再选择的所有相机状态。"
+  }
+}

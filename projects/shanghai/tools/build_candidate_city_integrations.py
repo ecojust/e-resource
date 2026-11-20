@@ -29,7 +29,7 @@ CURRENT_INVENTORY = PROJECT / "data/global-models/candidate-inventory.json"
 CATALOG = PROJECT / "data/candidate-city-integrations.json"
 DISTRICTS = {"chongming": ("310151", "崇明区"), "hongkou": ("310109", "虹口区"),
              "huangpu": ("310101", "黄浦区"), "xuhui": ("310104", "徐汇区"),
-             "yangpu": ("310110", "杨浦区")}
+             "yangpu": ("310110", "杨浦区"), "jingan": ("310106", "静安区")}
 
 
 def git(*args):
@@ -357,6 +357,33 @@ def checked_height_clips(clips, label):
     return clips
 
 
+def check_source_section_caps(model, replacement):
+    """Verify the source mesh and seam lines used to close a partial cut."""
+    label = model["id"] + " source_section_caps"
+    caps = model["source_section_caps"]
+    owner = model.get("owner", {})
+    assert replacement is not None and any(model["source_feature_ids"].values()), label
+    macro = owner.get("macro_id", "").split("-")
+    assert len(macro) == 3 and all(part.isascii() and part.isdigit() for part in macro), label
+    assert type(owner.get("feature_local_id")) is int and owner["feature_local_id"] > 0, label
+    far_path = Path("projects/shanghai/assets/city-detail/macros") / owner["macro_id"] / "far.glb"
+    assert hashlib.sha256(read_file(far_path, "HEAD")).hexdigest() == caps["far_sha256"], label
+
+    low, high = caps["base_m"], caps["roof_m"]
+    assert all(type(v) in (int, float) and math.isfinite(v) for v in (low, high)) and low < high, label
+    reference = caps["height_reference"]
+    assert len(reference) == 2 and 120.65 <= reference[0] <= 122.3 and 30.55 <= reference[1] <= 32, label
+    geometry = caps["geometry"]
+    assert geometry["type"] == "MultiLineString" and geometry["coordinates"], label
+    for line in geometry["coordinates"]:
+        assert len(line) >= 2 and all(len(p) == 2 and 120.65 <= p[0] <= 122.3 and 30.55 <= p[1] <= 32 for p in line), label
+        assert all(a != b for a, b in zip(line, line[1:])), label
+    seams = shape(geometry)
+    assert seams.is_valid and not seams.is_empty, label
+    # Allow rounding at the source polygon's eight-decimal coordinate precision.
+    assert replacement.boundary.buffer(1e-8).covers(seams), f"Section cap outside {label} cut boundary"
+
+
 def build_catalog(inventory, inventory_path=INVENTORY):
     inputs, placements = [], {}
     filenames = ["urban-placement.json", "chongming-placement.json"]
@@ -438,7 +465,7 @@ def build_catalog(inventory, inventory_path=INVENTORY):
                 if key == "overviewPitch":
                     assert 0 <= placement[key] <= 85
                 model[key] = placement[key]
-        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "display_height_clips", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256"):
+        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "display_height_clips", "source_section_caps", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256"):
             if key in placement:
                 model[key] = json.loads(json.dumps(placement[key]))
         site = model.get("site_replacement")
@@ -448,6 +475,8 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             site["owner"] = {"macro_id": site["source_macro"], "feature_local_id": site["source_local_id"]}
         if "display_height_clips" in model:
             checked_height_clips(model["display_height_clips"], ident)
+        if "source_section_caps" in model:
+            check_source_section_caps(model, replacement)
         models.append(model)
     base_clip_ids = {model["id"] for model in models if model.get("replacement_geometry")}
     base_clip_ids.update(model["site_replacement"]["id"] for model in models if model.get("site_replacement"))

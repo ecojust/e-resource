@@ -21,7 +21,7 @@ DATA = ROOT / 'projects/shanghai/data/model-todo'
 TIME_FILE = DATA / 'candidate-publication-times.json'
 HEADING = '## 按区查看主要建筑\n'
 CURRENT = 'https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/'
-PREFIX_DISTRICT = {'chongming':'崇明区', 'hongkou':'虹口区', 'xuhui':'徐汇区', 'huangpu':'黄浦区'}
+PREFIX_DISTRICT = {'chongming':'崇明区', 'hongkou':'虹口区', 'xuhui':'徐汇区', 'huangpu':'黄浦区', 'jingan':'静安区'}
 INTEGRATIONS = ROOT / 'projects/shanghai/data/candidate-city-integrations.json'
 MARKER = r'\n?<!-- district-candidates:[^>]+:start -->.*?<!-- district-candidates:[^>]+:end -->\n?'
 

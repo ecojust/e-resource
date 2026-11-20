@@ -1,0 +1,171 @@
+{
+  "scope": "Serialized mask/collision predicates and real source material bindings on CPU. Browser pixels recorded separately.",
+  "catalogSha256": "76faca400d9f6e486d0aaad57b639f20e0035ab4ef0866092de2596e8072b388",
+  "contractSha256": "e0a746613277226e425af932094e4e6fe93f6f096b6f8dc808011aa1c80b20d8",
+  "scriptSha256": "be868173f63375c9fc24cd8a34ef97191a758f81f44bc748a461af12e085384f",
+  "allCityTriangles": 313,
+  "limit": 320,
+  "checks": [
+    {
+      "name": "central plinth",
+      "uv": [
+        0,
+        0.5
+      ],
+      "point": [
+        121.43690105307765,
+        31.220036329792663
+      ],
+      "structuralCollision": true,
+      "sourceCut": true
+    },
+    {
+      "name": "ground in front of recessed bays",
+      "uv": [
+        15,
+        1
+      ],
+      "point": [
+        121.43705205899633,
+        31.220075587352202
+      ],
+      "structuralCollision": false,
+      "sourceCut": true
+    },
+    {
+      "name": "infill upper-ground pier",
+      "uv": [
+        15,
+        3.4
+      ],
+      "point": [
+        121.4370455267464,
+        31.22009643558265
+      ],
+      "structuralCollision": true,
+      "sourceCut": true
+    },
+    {
+      "name": "end portico",
+      "uv": [
+        33,
+        0.5
+      ],
+      "point": [
+        121.43723626004665,
+        31.22011314096641
+      ],
+      "structuralCollision": true,
+      "sourceCut": true
+    },
+    {
+      "name": "garden path",
+      "uv": [
+        0,
+        -6
+      ],
+      "point": [
+        121.4369187445879,
+        31.21997986578865
+      ],
+      "structuralCollision": false,
+      "sourceCut": false
+    },
+    {
+      "name": "rear coarse source",
+      "uv": [
+        0,
+        10
+      ],
+      "point": [
+        121.43687519625499,
+        31.22011885404557
+      ],
+      "structuralCollision": false,
+      "sourceCut": false
+    },
+    {
+      "name": "west source",
+      "uv": [
+        -47,
+        1
+      ],
+      "point": [
+        121.4364222762061,
+        31.219931275341203
+      ],
+      "structuralCollision": false,
+      "sourceCut": false
+    },
+    {
+      "name": "east source",
+      "uv": [
+        45,
+        1
+      ],
+      "point": [
+        121.43735679260452,
+        31.220145415665552
+      ],
+      "structuralCollision": false,
+      "sourceCut": false
+    }
+  ],
+  "vectorResults": [
+    {
+      "source": "overture-buildings",
+      "partialIDs": 1,
+      "retainsBackAndSides": true
+    },
+    {
+      "source": "openmaptiles",
+      "partialIDs": 1,
+      "retainsBackAndSides": true
+    }
+  ],
+  "sectionCheck": {
+    "id": "jingan-country-hospital",
+    "macro_id": "14-13718-6695",
+    "feature_local_id": 2764,
+    "segments": 7,
+    "roof_m": 24.100000381469727,
+    "minWorldY": 0,
+    "maxWorldY": 24.09551429748535,
+    "hiddenWithoutCandidate": true,
+    "hiddenWithoutSource": true,
+    "hiddenWithWrongHash": true
+  },
+  "results": [
+    {
+      "variant": "near",
+      "file": "near/1_-4-s1.glb.gz",
+      "sha256": "aa20c14ca12375bfc5f3854ea754137ddb95bfdfa57c31b6bd6edb4ced363e4b",
+      "meshCount": 18,
+      "targetClipTriangles": 6,
+      "materialPasses": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ]
+    },
+    {
+      "variant": "far",
+      "file": "far.glb",
+      "sha256": "669911d0fde4c6be1d62b3c3a21f7d2590a2ca7c9ace7d6af6122a19590383ba",
+      "meshCount": 4,
+      "targetClipTriangles": 6,
+      "materialPasses": [
+        "standard",
+        "depth",
+        "distanceRGBA"
+      ]
+    }
+  ],
+  "runtimeModuleSha256": {
+    "src/candidate-city-clipping.js": "29ab2bfb591f4917ce30727f9990346a334257cb0a1a588266d4db0009784a17",
+    "src/candidate-city-integrations.js": "28299df6329743a85d2b117d887faf1ddab3fc7b8d2c596b4d23e60adc08a46b",
+    "src/candidate-source-sections.js": "e4a66b2740bfde425208708b346ec83d4b80979f48d83ff8e323498f71ae464e",
+    "src/candidate-vector-clipping.js": "84a7416b150009643f785c00d55091e3d7b1c3e3152bfc66508ddfd04b10fae5",
+    "src/map-scene.js": "8d18dad2bc835fad37f0584e605db989bbe2cf61f743a921ad7445ee712d8c11"
+  }
+}

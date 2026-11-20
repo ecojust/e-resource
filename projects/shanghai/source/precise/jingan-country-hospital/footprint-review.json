@@ -1,0 +1,415 @@
+{
+  "schema": "country-hospital-footprint-review-v1",
+  "model_id": "jingan-country-hospital",
+  "reviewed_utc": "2026-11-20T05:05:57.527272+00:00",
+  "baseline_commit": "2b66614baae35f0d032fc4d18e5f4c808d036cc4",
+  "scope": "Garden-facing historical south wing only; preliminary alignment for exterior modeling. Northern transverse connection, campus buildings, uncertain east end platform, west portion and interiors excluded.",
+  "owner": {
+    "macro_id": "14-13718-6695",
+    "feature_local_id": 2764,
+    "source_key": "building:ab10ec65-1986-40dc-887c-766b726e118c",
+    "source_record": "w1226645404@1",
+    "source_layer": "building",
+    "district_code": "310106"
+  },
+  "anchor": {
+    "lng": 121.43688505879362,
+    "lat": 31.22008737696455
+  },
+  "authoring_uv": {
+    "origin": "center of selected garden-facing roof band",
+    "positive_u": "along facade toward east, true bearing 75 degrees",
+    "positive_v": "inward toward rear, true bearing 345 degrees",
+    "outward_bearing_deg": 165,
+    "axes_enu": [
+      [
+        0.9659258262890683,
+        0.25881904510252074
+      ],
+      [
+        -0.25881904510252074,
+        0.9659258262890683
+      ]
+    ],
+    "units": "metres",
+    "scale_radius_m": 6371008.8,
+    "envelope_extent_m": [
+      -38.769,
+      -6.376,
+      38.769,
+      6.376
+    ],
+    "width_m": 77.54,
+    "depth_m": 12.75,
+    "bay_frontage_estimates_m": {
+      "end_pediments_each": 10.5,
+      "central_pediment": 17.6,
+      "loggia_setback": 3.1
+    },
+    "accuracy": "Estimates from a shaded roof and photos. Absolute placement, roof-to-wall registration, side depth and divisions have metre-scale uncertainty."
+  },
+  "source_geometry_wgs84": {
+    "coordinates": [
+      [
+        [
+          121.43737793,
+          31.22030239
+        ],
+        [
+          121.43743157,
+          31.22012807
+        ],
+        [
+          121.4360851,
+          31.21981153
+        ],
+        [
+          121.43602073,
+          31.21999503
+        ],
+        [
+          121.43737793,
+          31.22030239
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "source_geometry_uv_m": [
+    [
+      51.459,
+      10.963
+    ],
+    [
+      51.369,
+      -9.08
+    ],
+    [
+      -81.416,
+      -9.939
+    ],
+    [
+      -82.048,
+      11.354
+    ],
+    [
+      51.459,
+      10.963
+    ]
+  ],
+  "model_envelope_wgs84": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          121.43650861008928,
+          31.219941747976446
+        ],
+        [
+          121.43729621783683,
+          31.220122224841436
+        ],
+        [
+          121.43726150749802,
+          31.22023300572829
+        ],
+        [
+          121.43647389975047,
+          31.220052529074795
+        ],
+        [
+          121.43650861008928,
+          31.219941747976446
+        ]
+      ]
+    ]
+  },
+  "source_geometry_comparison": {
+    "frozen_area_m2": 2751.97,
+    "frozen_model_overlap_m2": 988.82,
+    "model_envelope_area_m2": 988.82,
+    "source_outside_envelope_m2": 1763.14,
+    "source_live_symmetric_difference_m2": 46.4,
+    "source_live_hausdorff_m": 0.34,
+    "geometric_scope": "OSM/frozen four-corner outline extends beyond the visible wing at both ends and front/back. Never infer ownership of the whole block or clip adjoining buildings from the heritage POI. The authored envelope is not a final visual clip or collision polygon."
+  },
+  "osm": {
+    "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=121.432,31.216,121.440,31.224",
+    "bytes": 938731,
+    "sha256": "39b56a4eebae57ffb4f7577169be05f3232888dd20a6e639bb1fdbc492152267",
+    "building_way": {
+      "id": 1226645404,
+      "version": 1,
+      "timestamp": "2023-11-25T03:55:13Z",
+      "tags": {
+        "building": "hospital"
+      }
+    },
+    "heritage_poi": {
+      "id": 10738298237,
+      "version": 1,
+      "tags": {
+        "name": "宏恩医院",
+        "tourism": "attraction"
+      },
+      "lon": 121.4367558,
+      "lat": 31.219993,
+      "inside_live_way": true,
+      "inside_frozen_owner": true
+    },
+    "garden": {
+      "id": 1226645406,
+      "version": 1,
+      "name": "复旦大学附属华东医院南花园"
+    },
+    "attribution": "© OpenStreetMap contributors, ODbL 1.0. Overture building record imports the cited OSM way."
+  },
+  "roof_alignment": {
+    "service": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "provider": "Esri World Imagery, basemap and its imagery contributors, visual reference only",
+    "capture_date": "unknown; acquisition here is distinct from imagery capture",
+    "tile_check": "z20 returned gray no-data; actual inspection used z19.",
+    "method": "15 original north-up 256 px Web Mercator tiles, column 438997–439001 and row 214242–214244. To inspect, assemble 1280×768 mosaic, rotate clockwise 15 degrees about (640,384) without resizing, crop to original-scale box (230,255,830,550), and view at 2×. Approximate symmetric roof band spans x=396..1004, y=225..325 in that enlarged crop. 1 mosaic pixel is ~0.255 m. West, center and east projections align with the archival elevation; an additional rough platform at the far east lacks matching facade evidence. Northern transverse link is visible but outside this scope. Terrain relief and roof displacement remain uncertain.",
+    "tile_receipts": [
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214242/438997",
+        "sha256": "e5eb879754f6c61b911d50cf58ebebf5e60b8e6b7a28a3aaee873d0049fd0e7d",
+        "bytes": 12239
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214243/438997",
+        "sha256": "e0952c54c109edf89d5ba38c7c1eb05eb3026d600063a7c6f77ff25c628e6263",
+        "bytes": 15247
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214244/438997",
+        "sha256": "81993ac72631054c755caba62123b9c211b05d6571e935e85b33c2b1d88b6d43",
+        "bytes": 11925
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214242/438998",
+        "sha256": "b6a781fb8a9628535ddd7250a407bad92a59923b6f9b7fa1e7fa5e4d842c86fe",
+        "bytes": 13597
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214243/438998",
+        "sha256": "6d10df7e6373a32efc030fe1b16b3b4919c591c9503231b760d223d4645a0370",
+        "bytes": 15749
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214244/438998",
+        "sha256": "3e1a6add7723fc288f2265a55ad837d96b22b167c6d230e1a9a11ce8ddb5fc0b",
+        "bytes": 13657
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214242/438999",
+        "sha256": "9476e339809e84fe6b81c97319f8f973c7ad9703c0369e122cae04a1002ba2e2",
+        "bytes": 13149
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214243/438999",
+        "sha256": "ea2da4e82b36bb6997a117d623ca61936be55950ccb48e1205a55fde2fc2e000",
+        "bytes": 14277
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214244/438999",
+        "sha256": "a6058ff975c5be032b072d6fa47fbe2302e6755eee6c66438e2e6a1588e03453",
+        "bytes": 13116
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214242/439000",
+        "sha256": "50adb18448530f0a6dee76e6f7ab35adfefa20de6fc922c219a28bd550098737",
+        "bytes": 15390
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214243/439000",
+        "sha256": "3d0774a10d14931c1e9f7ccfd279e11b92e487a3e2c0afa13f1dacd377299336",
+        "bytes": 15833
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214244/439000",
+        "sha256": "ab164d474c96b92477caeb4c028e1e9b9aa1984ff45e3bd44fb8ce894afd6c45",
+        "bytes": 14387
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214242/439001",
+        "sha256": "cc2249be304aa8dc6963ba1390fcbb3ceb56d03c65e7c58144cf943d81ef8a31",
+        "bytes": 16580
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214243/439001",
+        "sha256": "825b6024ae1503e5aed07b49084a42555819d6a2dc2b4fa3a75d45dd6959cfdf",
+        "bytes": 12333
+      },
+      {
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/214244/439001",
+        "sha256": "23cfc52010e8c8457508717bdc7695181d61d1d86d49f404043b501668fe41ac",
+        "bytes": 17285
+      }
+    ],
+    "third_party_images_distributed": false
+  },
+  "height": {
+    "count": 27,
+    "estimated": true,
+    "height_epoch": 2020,
+    "height_estimated": true,
+    "height_license": "CC-BY-4.0",
+    "height_m": 24.1,
+    "height_method": "footprint-pixel-center-positive-median",
+    "height_quality": "cnbh_estimate_10m",
+    "height_resolution_m": 10,
+    "height_sample_count": 27,
+    "height_sampler_version": "2026-10-25-v1",
+    "height_source": "cnbh-10m-2020",
+    "license": "CC-BY-4.0",
+    "method": "footprint-pixel-center-positive-median",
+    "resolution": 10
+  },
+  "height_limit": "24.1 m is a 2020 CNBH raster estimate from 27 samples for the larger source rectangle; attribution per repository CNBH CC BY 4.0. It cannot determine the portico/pediment heights or floor count.",
+  "frozen_bindings": {
+    "projects/shanghai/assets/city-detail/macros/14-13718-6695/feature-table.json.gz": {
+      "bytes": 611815,
+      "sha256": "ae08831809b5d7651774e04ea3a6d11e8ad59cfc156c92d3ee1b95c7e5659512",
+      "git_blob": "64819f586b372db555e211599a7f3bbf35f89569"
+    },
+    "projects/shanghai/assets/city-detail/macros/14-13718-6695/READY.json": {
+      "bytes": 1173775,
+      "sha256": "dfe77772d7d77cb8096a9a01e3f4379ad990865978e519a4250987e900029d87",
+      "git_blob": "f17147192757eeb197832e0305ec13913fbfc890"
+    },
+    "projects/shanghai/assets/city-detail/macros/14-13718-6695/near/1_-4-s1.glb.gz": {
+      "bytes": 97916,
+      "sha256": "aa20c14ca12375bfc5f3854ea754137ddb95bfdfa57c31b6bd6edb4ced363e4b",
+      "git_blob": "ea53a306b860b619e446f196c463f632d968c16a"
+    },
+    "projects/shanghai/assets/city-detail/macros/14-13718-6695/far.glb": {
+      "bytes": 1419952,
+      "sha256": "669911d0fde4c6be1d62b3c3a21f7d2590a2ca7c9ace7d6af6122a19590383ba",
+      "git_blob": "34a6b532000c2254ac983200f2a093f465f61608"
+    }
+  },
+  "near": {
+    "file": "near/1_-4-s1.glb.gz",
+    "owner_count": 16,
+    "local_ids": [
+      3791,
+      2764,
+      1782,
+      4040,
+      4073,
+      2143,
+      684,
+      3929,
+      4055,
+      1351,
+      3867,
+      278,
+      2280,
+      3755,
+      3371,
+      1631
+    ],
+    "all_must_persist_except_authorized_target_portion": true
+  },
+  "context_within_approx_60m": [
+    {
+      "localId": 441,
+      "source_key": "building:1ca9f672-f00f-4767-93fb-732fad8a78bd",
+      "source_record": "w1199510400@3",
+      "distance_to_model_envelope_m": 30.36,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 495,
+      "source_key": "building:1fdfda36-2c1f-4c5a-99a4-857ece0cf0d5",
+      "source_record": "w1221253556@1",
+      "distance_to_model_envelope_m": 41.84,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 633,
+      "source_key": "building:288dfcfb-8d00-4bd5-a36d-99ead1109042",
+      "source_record": null,
+      "distance_to_model_envelope_m": 41.94,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 848,
+      "source_key": "building:36a59be6-cd84-4cca-a87c-4d0636ba2ecb",
+      "source_record": "w1226645405@1",
+      "distance_to_model_envelope_m": 13.26,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 1370,
+      "source_key": "building:5725688c-49dc-454a-bc69-169443a06415",
+      "source_record": "w1221253557@1",
+      "distance_to_model_envelope_m": 41.6,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 1805,
+      "source_key": "building:726f57fb-27cf-4c7c-83ac-7efd715bf0bb",
+      "source_record": "w1226645402@1",
+      "distance_to_model_envelope_m": 29.99,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 2013,
+      "source_key": "building:7efb089b-8e75-4be9-a1b4-b5afb67356fb",
+      "source_record": "w1221253558@1",
+      "distance_to_model_envelope_m": 47.73,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 2143,
+      "source_key": "building:871813ac-0edc-4c0d-b381-cf9aa1fc74aa",
+      "source_record": "w1199510408@1",
+      "distance_to_model_envelope_m": 50.58,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 2507,
+      "source_key": "building:9cdf8b15-72d3-4291-9b7e-2e23a467653a",
+      "source_record": null,
+      "distance_to_model_envelope_m": 17.74,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 2809,
+      "source_key": "building:ada1a269-3ca2-4a1a-9db6-e4f4f385871a",
+      "source_record": "w1226645401@1",
+      "distance_to_model_envelope_m": 50.14,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 3292,
+      "source_key": "building:cc011abb-c4f3-41e3-a8db-18a54799667b",
+      "source_record": "w1226645403@1",
+      "distance_to_model_envelope_m": 13.35,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 3503,
+      "source_key": "building:d92268c6-a247-454c-a836-6957e3cab688",
+      "source_record": "w1199510399@2",
+      "distance_to_model_envelope_m": 53.88,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 3867,
+      "source_key": "building:ee0e7aa0-d8e3-4655-b6aa-838fb663f34d",
+      "source_record": null,
+      "distance_to_model_envelope_m": 31.1,
+      "overlap_envelope_m2": 0.0
+    },
+    {
+      "localId": 3988,
+      "source_key": "building:f5d8caea-4d10-4392-8264-d246efaf8ec8",
+      "source_record": "w1199510409@1",
+      "distance_to_model_envelope_m": 56.46,
+      "overlap_envelope_m2": 0.0
+    }
+  ]
+}
