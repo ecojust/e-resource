@@ -17,3 +17,7 @@ Blender 4.3.2重新打开修订前后原生文件，原主体顶点、面、UV�
 主图17083与17084在相同经纬度、俯仰、朝向和缩放下比较了北翼门。原玻璃窗格在新版变成黑色双扇门，中缝两侧有金色竖条与羽状饰件，上部门楣和17号清楚可见。两次网页均实际读取各自登记的完整模型，近景三角面由73,808变为83,288。南翼门的核对来自可编辑原件、门部原片和实际网格。[同机位双图](same-camera-wing-door-comparison.png) · [原版实图](main-map-before-detail.png) · [修订实图](main-map-after-detail.png) · [双端相机、模型和截图哈希](main-map-comparison.json)
 
 本次发布还修复了320像素宽手机在全市视图点错建筑的问题。实测覆盖126处地点，从分组中选择兰心大戏院后，地址栏和地点卡均切换至该剧院。字林西报大楼的单体和街景证据见上方对照。[手机地图选择记录](../city-label-groups-v1/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e5a6d048a6398de6ef8586f91f1f4d7020633ffa/projects/shanghai/index.html#landmark=bund17&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
