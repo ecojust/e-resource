@@ -17,3 +17,7 @@
 在177处对照图中，陕西北路街面显示原有高楼。加入怀恩堂后，同一机位能辨出十字架、砖塔纵窗、三角山花和两扇入口。390像素宽手机从目录点入时，建筑完整出现在选择卡上方，堂名字形较小。贴近门厅的低机位被街区前景挡住，双门外观可从街面对照，门凹位及门扇的深度另有射线与碰撞记录。街区远景中，塔窗缩小到难以辨认，浏览器实际加载10,268面的远景模型。[加入前](city-24141/map-before.png) · [街面](city-24141/map-street-facade.png) · [手机入口](city-24141/map-mobile-settled.png) · [低机位遮挡](city-24141/map-street-vestibule.png) · [远景](city-24141/map-distant.png) · [逐图观察](city-24141/visual-review.json)
 
 最终178处站点的919件签名文件共907,363,582字节。浏览器对照前后两个站点，进入主图后核验了15处地面点及两栋邻宅；独立页原有的四张近远景实拍和四种下载也逐一与此版页面、脚本及资产匹配。[两版输入](city-24141/two-served-sites.json) · [最终HTTP校验](city-24141/141-all-http.json) · [主图运行记录](city-24141/main-browser.json) · [独立页下载与最终版本对照](city-24141/individual-downloads-rebound.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e39804084880a518b0263aa98430f456b3cf8914/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)

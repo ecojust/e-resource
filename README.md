@@ -3842,7 +3842,7 @@
 | 同孚大楼（中国银行西区分行旧址） | 2026-11-20 22:54:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yates-apartments&mode=overview) |
 | 雷士德医学研究院主楼（2024修缮后外观） | 2026-11-21 02:57:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-lester-medical-research-institute&mode=overview) |
 | 华山路原美国学校办公楼 | 2026-11-21 03:08:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-huashan-american-school-office&mode=overview) |
-| 怀恩堂陕西北路入口与东南角砖塔 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) |
+| 怀恩堂陕西北路入口与东南角砖塔 | 2026-11-21 04:17:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-grace-church-street-front&mode=overview) |
 
 ### 普陀区（1处）
 
