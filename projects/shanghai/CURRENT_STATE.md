@@ -1,3 +1,11 @@
+# 横滨正金银行大楼（外滩24号）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yokohama-specie-bank&mode=overview) · [单体旋转与下载](yokohama-specie-bank.html) · [来源与制作范围](source/precise/huangpu-yokohama-specie-bank/README.md) · [验收记录](data/audit/yokohama-specie-bank-v1/README.md)
+
+中山东一路24号原横滨正金银行上海分行的临江外观、街门和柱廊，核对相邻银行的独立占地。
+
+近景 35,900 个三角面，远景 29,804 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,010,430 字节。上海主图现有 151 处独立入口，黄浦区 76 处。[资产清单](assets/models/candidates/huangpu-yokohama-specie-bank/manifest.json)
+
 # 虹口中国银行大楼（西南转角）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-bank-of-china-hongkew&mode=overview) · [单体旋转与下载](bank-of-china-hongkew.html) · [来源与制作范围](source/precise/hongkou-bank-of-china-hongkew/README.md) · [验收记录](data/audit/bank-of-china-hongkew-v1/README.md)
