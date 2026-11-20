@@ -24,3 +24,7 @@
 正式桌面记录绑定四份交付资产及原城市远、近景瓦片的真实响应。手机从区目录实触地点的记录独立保留。街面和屋顶视角都显示同一833号建筑的单段封口；近景网格另外四个来源保持原样。[桌面、地面与资产逐项核验](main-browser.json) · [街面](map-street-facade.png) · [屋顶](map-roof.png) · [远景](map-distant.png)
 
 灯牌布局、目录及取景回归共 43 项通过。目录核验现会沿带版本号的单体预览模块检查下载实现，并逐项检查四种资产的路径、大小与哈希。[回归记录](directory-regression.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/60789e76f3676ef09f16914a936722097f0bbfa2/projects/shanghai/index.html#landmark=huangpu-jardine-matheson-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 12 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
