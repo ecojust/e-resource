@@ -1,3 +1,11 @@
+# 光陆大戏院（光陆大楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-capitol-theatre&mode=overview) · [单体旋转与下载](capitol-theatre.html) · [来源与制作范围](source/precise/huangpu-capitol-theatre/README.md) · [验收记录](data/audit/capitol-theatre-v1/README.md)
+
+虎丘路142至146号光陆大楼下部戏院及上层临街外观，按不同时期照片核实。
+
+近景 48,576 个三角面，远景 25,616 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,501,421 字节。上海主图现有 119 处独立入口，黄浦区 50 处。[资产清单](assets/models/candidates/huangpu-capitol-theatre/manifest.json)
+
 # 百乐门舞厅（愚园路218号圆角立面与灯塔）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-paramount-ballroom&mode=overview) · [单体旋转与下载](paramount-ballroom.html) · [来源与制作范围](source/precise/jingan-paramount-ballroom/README.md) · [验收记录](data/audit/paramount-ballroom-v1/README.md)

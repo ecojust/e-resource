@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 80,
+  "candidate_manifest_count": 81,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 78,
-  "resulting_city_count": 118,
+  "new_city_model_count": 79,
+  "resulting_city_count": 119,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 6,
     "长宁区": 4,
     "静安区": 8,
-    "黄浦区": 33
+    "黄浦区": 34
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 320,
-    "bytes": 1014020974,
+    "files": 324,
+    "bytes": 1019522395,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 3416299,
+    "current_run_added_bytes": 5501421,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 188
+    "inherited_incremental_files": 192
   },
   "records": [
     {
@@ -6686,6 +6686,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-and-footprint-informed-exterior",
       "description": "愚园路218号百乐门舞厅的临街外观，按不同年代照片和影院、舞厅时期核对。"
+    },
+    {
+      "id": "huangpu-capitol-theatre",
+      "name": "光陆大戏院（光陆大楼）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "capitol-theatre.html",
+      "manifest": "assets/models/candidates/huangpu-capitol-theatre/manifest.json",
+      "manifest_sha256": "9c774b2cd25b9abc82d80d196e8d969bc05a528aa38044867fb9e27342938040",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-capitol-theatre/huangpu-capitol-theatre-raw.glb",
+          "bytes": 3018088,
+          "sha256": "507164b1de64fbe17b21c193dfaffc7d337f2f980f54578a1f77ea8a9bcff129",
+          "triangles": 48576,
+          "bounds_gltf_m": [
+            [
+              -26.689783096313477,
+              -0.003000000026077032,
+              -10.496999740600586
+            ],
+            [
+              21.413000106811523,
+              41.75,
+              16.266481399536133
+            ]
+          ],
+          "materials": 13
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-capitol-theatre/huangpu-capitol-theatre-web.glb",
+          "bytes": 1277044,
+          "sha256": "b196e16209b12606c84b2dfc122d5a2c16b1a7e5f119495d59c274c63e98b837",
+          "triangles": 48576,
+          "bounds_gltf_m": [
+            [
+              -26.6897831,
+              -0.00300000003,
+              -10.4969997
+            ],
+            [
+              21.4130001,
+              41.75,
+              16.2664814
+            ]
+          ],
+          "materials": 13
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-capitol-theatre/huangpu-capitol-theatre-lod.glb",
+          "bytes": 710588,
+          "sha256": "3e821814cd31437081ad0854b091df23af6aa5c1c45fa181a33f5022d36ab558",
+          "triangles": 25616,
+          "bounds_gltf_m": [
+            [
+              -26.6897831,
+              -0.00300000003,
+              -10.4969997
+            ],
+            [
+              21.4130001,
+              41.75,
+              16.2664814
+            ]
+          ],
+          "materials": 12
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-capitol-theatre/huangpu-capitol-theatre.blend",
+          "bytes": 495701,
+          "sha256": "4df1e204433c34f65dd0b461c509824e9c695fa9d2916e7a736247bd716617ee"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -26.689783096313477,
+            -0.003000000026077032,
+            -10.496999740600586
+          ],
+          "max": [
+            21.413000106811523,
+            41.75,
+            16.266481399536133
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -26.689783096313477,
+            -16.266481399536133,
+            -0.003000000026077032
+          ],
+          "max": [
+            21.413000106811523,
+            10.496999740600586,
+            41.75
+          ]
+        },
+        "triangles": 48576,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "虎丘路142至146号光陆大楼下部戏院及上层临街外观，按不同时期照片核实。"
     }
   ],
   "baseline_inventory": {
@@ -6705,6 +6811,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-mansions/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-daxin-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-dongjiadu-cathedral/manifest.json",
@@ -6744,13 +6851,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/paramount-ballroom-v1",
+  "incremental_audit_directory": "data/audit/capitol-theatre-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/national-ywca-v1/inventory-increment.json",
-    "bytes": 157570,
-    "sha256": "2d074be4f52c414174cfb874a0010e1949fef75de04565ab4be51754dfa54a75"
+    "file": "data/audit/paramount-ballroom-v1/inventory-increment.json",
+    "bytes": 161128,
+    "sha256": "97f04e31ab731bf89d6de6b476004067a88882146d69ab187ffcc93c397d801c"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/jingan-paramount-ballroom/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json"
   ]
 }
