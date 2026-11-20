@@ -16,3 +16,7 @@
 132处的真实地图已从模型目录打开四川中路220号小汇丰大楼。此前131处场景在同一街段显示原城市建筑，十个对照文件均核过SHA-256。新增后390×844手机和870×660桌面各装入完整近景，实取两段邻楼截面。手机可辨上层窗带和两处低屋面，选中灯牌遮住首层下缘。桌面默认展开导航，同街与外滩的多个灯牌遮挡了部分正面和屋顶，两端默认图均保留这个初始状态。[131处原街景](map-before.png) · [原态和十个文件](control-browser.json) · [132处手机](map-mobile.png) · [132处桌面](map-desktop.png) · [两端载入记录](main-browser-progress.json)
 
 正式地图其余三张实拍分别记录同机位的四川中路街面、上方两处采光井及缩放15.5的远景。街面与屋面实际装入419所属的近瓦片并使用六个裁剪三角形，邻楼低段共墙的两个截面可见。十八处步行见证全部通过，包括两处门口、现街、隔墙保留下段和邻楼。实际场景分别下载网页近景及远景，并读取城市近、远两份瓦片。四个模型文件及两份瓦片的HTTP复取结果与冻结清单相符。[街面](map-street-facade.png) · [屋面](map-roof.png) · [远景](map-distant.png) · [完整浏览器结果](main-map-browser.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a58fb5460faddaf61a17e5bf1bf0342e42995b73/projects/shanghai/index.html#landmark=huangpu-wayfoong-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项时，有 9 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
