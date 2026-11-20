@@ -3836,7 +3836,7 @@
 | 圣约翰大学校政厅（四号楼）南廊与望楼 | 2026-11-21 01:43:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-st-johns-administration-building&mode=overview) |
 | 中西女中东楼（五一楼）院落立面 | 2026-11-21 03:21:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) |
 | 息焉堂（前庭、主堂铜顶及临河半圆体） | 2026-11-21 04:16:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xiyan-church&mode=overview) |
-| 卫乐园泰安路120弄街门 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-weile-garden-taian-gate&mode=overview) |
+| 卫乐园泰安路120弄街门 | 2026-11-21 07:22:18 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-weile-garden-taian-gate&mode=overview) |
 
 ### 静安区（18处）
 
