@@ -1,0 +1,88 @@
+{
+  "completed": true,
+  "id": "huangpu-caldbeck-macgregor-building",
+  "mode": "Combined real browser and transport verification",
+  "completed_checks": [
+    "132-place unchanged owner using the repacked native group",
+    "133-place mobile, desktop, street, roof and distant city frames",
+    "Original, web, distant and editable downloads",
+    "11 ground checks",
+    "Active V6 response body and baseline triangle comparison across 131/132/133"
+  ],
+  "earlier_assertion": "The 133-place browser passed every frame, ground and model-download check. Its last check incorrectly required the source to request the baseline near GLB instead of the configured V6 group. The original failing report is preserved in main-browser.json. The V6 response reached that same live browser and matches its manifest.",
+  "active_native_received_in_delivered_browser": {
+    "url": "http://127.0.0.1:18091/assets/city-overrides-v6/14-13720-6694/3_-3-s0-s1.glb.gz",
+    "status": 200,
+    "actualPageResponse": true,
+    "receivedBytes": 74313,
+    "sha256": "b04c9a71cc67133c0876cd2f90a88d4b19cfd3191255057716a3e4aa60f7879c",
+    "at": "2026-11-20T12:16:50.721Z",
+    "performanceEntry": {
+      "url": "http://127.0.0.1:18091/assets/city-overrides-v6/14-13720-6694/3_-3-s0-s1.glb.gz",
+      "transferSize": 74613,
+      "encodedBodySize": 74313,
+      "decodedBodySize": 74313,
+      "startTime": 108975.19999999925,
+      "initiatorType": "fetch"
+    }
+  },
+  "before_source_group": {
+    "id": "14-13720-6694/14-13720-6694-3_-3-s0-s1",
+    "macro_id": "14-13720-6694",
+    "feature_local_ids": [
+      529,
+      2645,
+      1960,
+      2295,
+      1609,
+      1051,
+      1140,
+      2375,
+      1580,
+      1087
+    ],
+    "triangles": 0,
+    "clip_feature_local_ids": []
+  },
+  "actual_owner_measurements": {
+    "triangles": 2712,
+    "surface_sha256_10um": "921161632ffacdaa0031bcc5b6bb4741db9cbe23614bcf76df3d4de9c8f42ac8",
+    "native_m2": 1050.6558476041544,
+    "remaining_m2": 786.0771424263642,
+    "retained_fraction": 0.7481775732927981,
+    "cut_m2": 264.57870517778997
+  },
+  "catalogs": [
+    {
+      "sha256": "4d51a1cb90a75a231c03947591d290fd6a202f99c19e66b0c3e43d3739fe191d",
+      "count": 132
+    },
+    {
+      "sha256": "5c8ccd55a1fc857572fab0ed78b5f095303ab202aa71d30ec1711f5cd7efd155",
+      "count": 133
+    }
+  ],
+  "screenshots": [
+    "map-before.png",
+    "map-mobile.png",
+    "map-desktop.png",
+    "map-street-facade.png",
+    "map-roof.png",
+    "map-distant.png"
+  ],
+  "model_sha256": {
+    "raw": "49cc2197c517da0de08349589a8b965eb7e5dd7dcdcc46a94a54627aa005be4c",
+    "full": "9d2e46ccfad75c84eb5598152c230def1639bc4da721f792a1eb55e015b4d898",
+    "lod": "9fc6ce9e35c402bea9e0e19845529b02aaad0334698c6d5bb87d7a6533bfa774",
+    "native": "4b36fe7077a291003b69fecb222e34c5c4a86bfb712d1ce42e35d7b04722f608"
+  },
+  "checker_sha256": "845d1472851db93b7cfe3b5d427bb5103a90b45124d8315cd1b178e30abb0924",
+  "bindings": {
+    "main-browser.json": "e252a23068dcbf49699ff3239122e196181a1b0d6ede294287fcadebab1f88c8",
+    "control-browser.json": "86703ced8c1b2da0d29c590e636591b76c29a19f362fd839dc5a4cff752e4ef8",
+    "live-resource-evidence.json": "82c13796fee73b838110c6af8123a5b9bed71357268dea57904158df49bf49cb",
+    "near-transport.json": "bfe4f1f5b1d5f5508958d621b9ba16c871084ffe5a7ad66c4ba5836e6c7df08d",
+    "check-native-registered-map.cjs": "58eb6615bfd6c570a44118ba39b9c8d44b3f7607f89363fda7b513faacb59ee7",
+    "check-registered-map.cjs": "38d04c641c0a1ce5ec807941b6a15ba1ee4c00487da1fb4569cc5187f3c0a3b8"
+  }
+}

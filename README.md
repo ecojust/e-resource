@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 132 处入口。最近接入[新汇丰大楼（汇丰银行职员宿舍）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wayfoong-house&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 133 处入口。最近接入[正广和公司福州路历史街翼](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-caldbeck-macgregor-building&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的90项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的91项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 91 | 福州路正广和公司大楼 | 黄浦区／福州路44号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；分别取证福州路办公街址和其他地区的汽水工厂，按照片、历史门牌和实际地块确认。 |
-| 92 | 福州路原公共租界总巡捕房临街立面 | 黄浦区／福州路185号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；依据有日期的历史街景与市保护名录确认建筑，分别记录早期河南路捕房和1930年代沿街高楼。 |
+| 92 | 福州路原公共租界总巡捕房临街立面 | 黄浦区／福州路185号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；依据有日期的历史街景与市保护名录确认建筑，分别记录早期河南路捕房和1930年代沿街高楼。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -83,7 +82,7 @@
 | sh-historic-b2-024 | 联合大楼内院与分期 | 四川中路261号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查明内院、背面及不同年代的临街改造。 |
 | sh-historic-b2-025 | 卜内门大楼历史雕像与侧后立面 | 四川中路133号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实旧托座人像的保留、拆除年代和侧后部各时期的楼面。 |
 | sh-historic-b2-026 | 新汇丰大楼背侧和楼层分期 | 四川中路220号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查证背立面与顶部的改建年代，对照资料所载八层与地图楼层记录。 |
-| sh-historic-b2-027 | 正广和公司 | 福州路44号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-027 | 正广和公司的背侧与改建 | 福州路44号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补查侧后各面和历次修缮资料，独立核实其他厂址。 |
 | sh-historic-b2-028 | 总巡捕房 | 福州路185号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-029 | 汉弥登大楼 | 江西中路170号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-030 | 大来大楼 | 广东路51,59号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2660,9 +2659,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余994条／已关联42条）
+### 既有地图中的具名建筑待查线索（剩余993条／已关联43条）
 
-原始1,036条具名地图要素中，42条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余994条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，43条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余993条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2941,7 +2940,6 @@
 | a2543f0a-f32b-4214-816d-125ac5386eea | 上海长途电信科技发展公司 | 黄浦区 | 核身份／去重／查建筑参考 |
 | a4b19293-8a86-4837-a6df-58d6bcc1fe0e | 经纬公寓 | 黄浦区 | 核身份／去重／查建筑参考 |
 | a52f9f58-c444-42c5-9139-9bd8b4c4e83d | 春申江大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
-| a601284f-259c-4286-8611-faec291b6688 | 上海市机要通信局 | 黄浦区 | 核身份／去重／查建筑参考 |
 | a8f5aeb4-b578-4aab-96d8-06ba08971a06 | 中国邮政储蓄银行上海分行 | 黄浦区 | 核身份／去重／查建筑参考 |
 | aa1ea8eb-a9ca-4c86-a8e0-111777a5e4d9 | 巴卡拉西苑 | 黄浦区 | 核身份／去重／查建筑参考 |
 | af2c5877-9530-4a28-93dd-c72d34435fa1 | 圣德娜商厦 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3671,7 +3669,6 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
-[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3686,7 +3683,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；132处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中92件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；133处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中93件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3694,7 +3691,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增92处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增93处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3716,10 +3713,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，132处建筑与构件模型入口（40处既有＋92处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增92处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，133处建筑与构件模型入口（40处既有＋93处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增93处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（59处）
+### 黄浦区（60处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3784,6 +3781,7 @@
 | 四行储蓄会大楼（四川中路261号联合大楼） | 2026-11-20 20:09:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-four-banks-savings-building&mode=overview) |
 | 卜内门大楼（四川中路五开间东立面） | 2026-11-20 20:15:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-brunner-mond-building&mode=overview) |
 | 新汇丰大楼（汇丰银行职员宿舍） | 2026-11-20 20:16:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-wayfoong-house&mode=overview) |
+| 正广和公司福州路历史街翼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-caldbeck-macgregor-building&mode=overview) |
 
 ### 徐汇区（9处）
 
