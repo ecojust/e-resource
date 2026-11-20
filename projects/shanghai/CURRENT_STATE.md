@@ -1,3 +1,11 @@
+# 东方饭店旧址（上海市工人文化宫西端主楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-oriental-hotel&mode=overview) · [单体旋转与下载](oriental-hotel.html) · [来源与制作范围](source/precise/huangpu-oriental-hotel/README.md) · [验收记录](data/audit/oriental-hotel-v1/README.md)
+
+西藏中路120号东方饭店的历史临街外观，结合工人文化宫时期和原楼照片核验。
+
+近景 55,252 个三角面，远景 33,136 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,983,964 字节。上海主图现有 111 处独立入口，黄浦区 45 处。[资产清单](assets/models/candidates/huangpu-oriental-hotel/manifest.json)
+
 # 董家渡天主堂南入口立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dongjiadu-cathedral&mode=overview) · [单体旋转与下载](dongjiadu-cathedral.html) · [来源与制作范围](source/precise/huangpu-dongjiadu-cathedral/README.md) · [验收记录](data/audit/dongjiadu-cathedral-v1/README.md)

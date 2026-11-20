@@ -1,0 +1,39 @@
+{
+  "id": "huangpu-oriental-hotel",
+  "verified_utc": "2026-11-20T08:53:58.216991+00:00",
+  "success": true,
+  "frozen_runtime_inputs": 235,
+  "matching_http_gets": 239,
+  "matching_http_bytes": 103737117,
+  "prior_candidate_rows_unchanged": true,
+  "before": {
+    "sha256": "f1e4ab715e08a2e3fd133c743dbc3ca559dec0f21e209d1577f3c64b18ed3509",
+    "count": 110
+  },
+  "after": {
+    "sha256": "2b3222607b72d45ca39f16006a7e66840c785ce18fdee8d8a0187c0f9adb59a2",
+    "count": 111
+  },
+  "driver": "compare111-revised.sh",
+  "driver_sha256": "ffa987fa229f9c404780e1f8f7fce7d3450e1dd6e04fe2ccb39376966854de7f",
+  "checker": "check-main-map.cjs",
+  "checker_sha256": "cad8ebc1e38f6b0da6e370afe887c00aa2878731c4d9654c56ad0730e1862ae6",
+  "production_snapshot_sha256": "89b0a1a9dfb8def343ede79ff0a47cd1c7367c56994675aef7c703ba7da264a3",
+  "http_bindings_sha256": "fa22d6e6cb6f483b4d43692847596d5cf1022c26dc4afd859c343df75aadc751",
+  "control_report_sha256": "41ad140c4c5f4c6fd077a7ec134dbf2555f2704a06e1ed71e7d65ed6bb1976fd",
+  "new_report_sha256": "6fd63310c59152f45b2c0a775332ed0c309b0e11f6873d103ef56efade54a908",
+  "matching_screenshots": 6,
+  "ground_probes_passed": 7,
+  "ordinary_page_reloads": [
+    {
+      "attempt": 1,
+      "route": "http://127.0.0.1:9081/index.html#landmark=huangpu-oriental-hotel&mode=overview",
+      "reason": "application loaded the ordinary city manifest after detailed catalog failure"
+    }
+  ],
+  "retained_browser_warnings": [
+    "[Shanghai map] Error: 本地建筑目录暂不可用，继续使用在线地图：signal timed out\n    at Object.setCityManifest (http://127.0.0.1:9081/src/map-scene.js?v=oriental-hotel-v1:727:19)\n    at async main (http://127.0.0.1:9081/src/app.js?v=oriental-hotel-v1:306:21)",
+    "[Shanghai map] Error: 14-13720-6694 分块暂不可用，保留在线建筑：Precise replacement far baseline differs\n    at LocalModelStreamer.load (http://127.0.0.1:9081/src/local-model-streamer.js:297:22)"
+  ],
+  "notes": "The recorded shell driver uses the two local snapshot checkouts and served origins from the actual verification. Both reports reference the checker by its content SHA-256."
+}
