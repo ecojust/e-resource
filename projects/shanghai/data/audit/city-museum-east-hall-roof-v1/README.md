@@ -19,3 +19,5 @@ GitHub 公开固定版本中，地图、入口页、来源说明和四件下载�
 首次在 master 检查 37 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
 
 同一城市入口的近景、远景和6个地面采样已通过浏览器核验。既有独立页在桌面和手机视口均能切换近、远两档，浏览器实存的四件下载文件均与清单签名相符。[地标卡浏览记录](final-city/main-browser.json) · [单体页与四件下载](final-viewer/viewer.json)
+
+850×620的城市主图中，从同一地标卡进入，在两站使用完全相同的正上方俯视机位。旧版东厅可见连续平屋面，新版可辨新增盖板四边、两道横隔和一道纵隔。格盖西北、东南两点经实际渲染相机投影，相距约424×204像素。两站原始实图、绘制时的近景签名和对应屋面窗口的像素差均可复核。[修订前](final-city/roof-comparison/before.png) · [修订后](final-city/roof-comparison/after.png) · [同位相机与差分](final-city/roof-comparison/comparison.json)
