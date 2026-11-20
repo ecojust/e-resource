@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 154 处入口。最近接入[浙江第一商业银行大楼（江西中路与汉口路街面）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 155 处入口。最近接入[原三菱银行（九江路36号四柱门廊及南立面）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsubishi-bank&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的116项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的117项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 117 | 九江路原三菱银行上海支店 | 黄浦区／九江路36号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；补查银行营业厅、后部构件和中华邮政储金汇业局接管时的调整。 |
-| 118 | 九江路上海公库旧址 | 黄浦区／九江路50号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查找银行、公库历期的实物照片、竣工图及被遮挡侧面。 |
+| 118 | 九江路上海公库旧址 | 黄浦区／九江路50号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查找银行、公库历期的实物照片、竣工图及被遮挡侧面。 |
 | 119 | 延安东路中汇大楼 | 黄浦区／河南南路16号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；补查原银行营业层、附属空间、屋面改建和各街段的门牌沿革。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -108,7 +107,7 @@
 | sh-historic-b2-050 | 法国邮船公司大楼的立面与附属工程分期 | 中山东二路9号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核定原公司附属建筑、现立面修缮、屋顶及后部空间。 |
 | sh-historic-b2-051 | 原台湾银行内部与修缮沿革 | 中山东一路16号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查证背侧、底层各期门面和银行营业厅院落。 |
 | sh-historic-b2-052 | 浙一银行旧址与现存楼体分期 | 汉口路151号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实旧银行、1948至1951年新建楼的工程与后续底层变动。 |
-| sh-historic-b2-053 | 中华邮政储金汇业局 | 九江路36号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-053 | 原三菱银行营业厅和用途变迁 | 九江路36号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补查银行营业厅、后部构件和中华邮政储金汇业局接管时的调整。 |
 | sh-historic-b2-054 | 上海公库 | 九江路50号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-055 | 中汇大楼 | 河南南路16号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-056 | 建设大厦 | 江西中路181号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2661,9 +2660,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余976条／已关联60条）
+### 既有地图中的具名建筑待查线索（剩余975条／已关联61条）
 
-原始1,036条具名地图要素中，60条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余976条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，61条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余975条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2929,7 +2928,6 @@
 | a2543f0a-f32b-4214-816d-125ac5386eea | 上海长途电信科技发展公司 | 黄浦区 | 核身份／去重／查建筑参考 |
 | a4b19293-8a86-4837-a6df-58d6bcc1fe0e | 经纬公寓 | 黄浦区 | 核身份／去重／查建筑参考 |
 | a52f9f58-c444-42c5-9139-9bd8b4c4e83d | 春申江大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
-| a8f5aeb4-b578-4aab-96d8-06ba08971a06 | 中国邮政储蓄银行上海分行 | 黄浦区 | 核身份／去重／查建筑参考 |
 | aa1ea8eb-a9ca-4c86-a8e0-111777a5e4d9 | 巴卡拉西苑 | 黄浦区 | 核身份／去重／查建筑参考 |
 | af2c5877-9530-4a28-93dd-c72d34435fa1 | 圣德娜商厦 | 黄浦区 | 核身份／去重／查建筑参考 |
 | b0075379-d993-43c1-85a7-2e0087caad17 | 维拉斯酒店 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3669,7 +3667,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；154处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中114件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；155处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中115件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3677,7 +3675,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增114处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增115处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3699,10 +3697,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，154处建筑与构件模型入口（40处既有＋114处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增114处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，155处建筑与构件模型入口（40处既有＋115处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增115处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 1 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（79处）
+### 黄浦区（80处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3787,6 +3785,7 @@
 | 法国邮船大楼（浦江大楼） | 2026-11-20 23:39:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-messageries-maritimes-building&mode=overview) |
 | 台湾银行大楼东门厅与九江路街面 | 2026-11-21 00:24:43 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-taiwan-building&mode=overview) |
 | 浙江第一商业银行大楼（江西中路与汉口路街面） | 2026-11-21 00:39:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) |
+| 原三菱银行（九江路36号四柱门廊及南立面） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsubishi-bank&mode=overview) |
 
 ### 徐汇区（9处）
 

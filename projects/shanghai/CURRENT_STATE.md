@@ -1,3 +1,11 @@
+# 原三菱银行（九江路36号四柱门廊及南立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-former-mitsubishi-bank&mode=overview) · [单体旋转与下载](former-mitsubishi-bank.html) · [来源与制作范围](source/precise/huangpu-former-mitsubishi-bank/README.md) · [验收记录](data/audit/former-mitsubishi-bank-v1/README.md)
+
+九江路36号中华邮政储金汇业局原址的临街立面，核对原三菱银行与相邻50号三井银行的各自边界。
+
+近景 58,600 个三角面，远景 23,464 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,246,740 字节。上海主图现有 155 处独立入口，黄浦区 80 处。[资产清单](assets/models/candidates/huangpu-former-mitsubishi-bank/manifest.json)
+
 # 浙江第一商业银行大楼（江西中路与汉口路街面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-first-commercial-bank&mode=overview) · [单体旋转与下载](chekiang-first-bank.html) · [来源与制作范围](source/precise/huangpu-chekiang-first-commercial-bank/README.md) · [验收记录](data/audit/chekiang-first-bank-v1/README.md)
