@@ -1,3 +1,11 @@
+# 提篮桥旧址长阳路门楼（2015年街面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-tilanqiao-historic-front&mode=overview) · [单体旋转与下载](tilanqiao-historic-front.html) · [来源与制作范围](source/precise/hongkou-tilanqiao-historic-front/README.md) · [验收记录](data/audit/tilanqiao-historic-front-v1/README.md)
+
+长阳路147号旧址的临街门楼，以档案照片和2014、2015年的实照核实石质门额、砖饰及凹槽。
+
+近景 28,296 个三角面，远景 17,204 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,870,443 字节。上海主图现有 126 处独立入口，虹口区 9 处。[资产清单](assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json)
+
 # 中山医院3号楼（历史中央主楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) · [单体旋转与下载](zhongshan-hospital-main.html) · [来源与制作范围](source/precise/xuhui-zhongshan-hospital-main-building/README.md) · [验收记录](data/audit/zhongshan-hospital-main-v1/README.md)

@@ -44,34 +44,34 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 87,
+  "candidate_manifest_count": 88,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 85,
-  "resulting_city_count": 125,
+  "new_city_model_count": 86,
+  "resulting_city_count": 126,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 3,
     "杨浦区": 6,
-    "虹口区": 7,
+    "虹口区": 8,
     "长宁区": 4,
     "静安区": 8,
     "黄浦区": 37
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 348,
-    "bytes": 1057091053,
+    "files": 352,
+    "bytes": 1059961496,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 6239800,
+    "current_run_added_bytes": 2870443,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 216
+    "inherited_incremental_files": 220
   },
   "records": [
     {
@@ -7428,6 +7428,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "中山医院3号楼的中央病房立面、顶层平台和黄琉璃瓦歇山顶。1936年照片、复旦校史及当代航片可核对主楼与两翼。"
+    },
+    {
+      "id": "hongkou-tilanqiao-historic-front",
+      "name": "提篮桥旧址长阳路门楼（2015年街面）",
+      "districtId": "310109",
+      "district": "虹口区",
+      "already_in_city": false,
+      "individual_page": "tilanqiao-historic-front.html",
+      "manifest": "assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json",
+      "manifest_sha256": "3e5417ded29851463383f6e932cd84409a2b6b1ffaa1792d6d295c78012245c1",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/hongkou-tilanqiao-historic-front/hongkou-tilanqiao-historic-front-raw.glb",
+          "bytes": 1583284,
+          "sha256": "519850194a9bf62bb698aaae4aa2232ad00915e2afb42bf26e0126228286c7bc",
+          "triangles": 28296,
+          "bounds_gltf_m": [
+            [
+              -8.800000190734863,
+              0.0,
+              -1.309999942779541
+            ],
+            [
+              8.800000190734863,
+              10.0,
+              0.4399999976158142
+            ]
+          ],
+          "materials": 15
+        },
+        "web": {
+          "file": "assets/models/candidates/hongkou-tilanqiao-historic-front/hongkou-tilanqiao-historic-front-web.glb",
+          "bytes": 482196,
+          "sha256": "adc9d86e21aa4f26242d6abe5a27955188fbac46e44ec2a5263f62bf582b217b",
+          "triangles": 28296,
+          "bounds_gltf_m": [
+            [
+              -8.80000019,
+              0,
+              -1.30999994
+            ],
+            [
+              8.80000019,
+              10,
+              0.439999998
+            ]
+          ],
+          "materials": 15
+        },
+        "lod": {
+          "file": "assets/models/candidates/hongkou-tilanqiao-historic-front/hongkou-tilanqiao-historic-front-lod.glb",
+          "bytes": 284008,
+          "sha256": "aa07e7081ec168a6dd9cf721d4dd7b6788089c7303d5e442c724d3e070c10843",
+          "triangles": 17204,
+          "bounds_gltf_m": [
+            [
+              -8.80000019,
+              0,
+              -1.30999994
+            ],
+            [
+              8.80000019,
+              10,
+              0.439999998
+            ]
+          ],
+          "materials": 15
+        },
+        "native": {
+          "file": "assets/models/candidates/hongkou-tilanqiao-historic-front/hongkou-tilanqiao-historic-front.blend",
+          "bytes": 520955,
+          "sha256": "e30d6ca81f41887657b1aae5bf9e31ba79e03ef25e5d254c49d0b199650c1e36"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -8.800000190734863,
+            0.0,
+            -1.309999942779541
+          ],
+          "max": [
+            8.800000190734863,
+            10.0,
+            0.4399999976158142
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -8.800000190734863,
+            -0.4399999976158142,
+            0.0
+          ],
+          "max": [
+            8.800000190734863,
+            1.309999942779541,
+            10.0
+          ]
+        },
+        "triangles": 28296,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-photo-informed-exterior",
+      "description": "长阳路147号旧址的临街门楼，以档案照片和2014、2015年的实照核实石质门额、砖饰及凹槽。"
     }
   ],
   "baseline_inventory": {
@@ -7444,6 +7550,7 @@
     "projects/shanghai/assets/models/candidates/hongkou-general-post-office/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-hongkew-fire-station/manifest.json",
     "projects/shanghai/assets/models/candidates/hongkou-new-asia-hotel/manifest.json",
+    "projects/shanghai/assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-american-club/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-asia-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
@@ -7493,13 +7600,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/zhongshan-hospital-main-v1",
+  "incremental_audit_directory": "data/audit/tilanqiao-historic-front-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/renji-ward-entrance-v1/inventory-increment.json",
-    "bytes": 182401,
-    "sha256": "58b1e00d5c06220c5df300706765e8993fbedb7657cf619608d13b5c2fc8b7d2"
+    "file": "data/audit/zhongshan-hospital-main-v1/inventory-increment.json",
+    "bytes": 186204,
+    "sha256": "492361d3a854775eda69eb417e3442286014033ac259de38cc8fa32e37141992"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/xuhui-zhongshan-hospital-main-building/manifest.json"
+    "projects/shanghai/assets/models/candidates/hongkou-tilanqiao-historic-front/manifest.json"
   ]
 }
