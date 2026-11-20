@@ -28,3 +28,5 @@
 ## GitHub 发布
 
 资产提交 `ae55637ce1d7cbc4d21fd94934c8309aca1dcd09` 已推送 master。逐字节检查固定版本的主图、运行模块、目录、清单及四件下载，共 26 项通过。首次同时访问 master，有 13 项仍返回缓存中的旧字节。[固定版本的上海主图](https://raw.githack.com/ecojust/e-resource/ae55637ce1d7cbc4d21fd94934c8309aca1dcd09/projects/shanghai/index.html#landmark=jingan-country-hospital-north-block&mode=overview) · [固定版本公开核对](publication.json) · [master 首次核对](publication-master-initial.json)
+
+06:10 UTC 再次访问 master 时，上述 26 项均与资产提交一致。[master 缓存更新后实测](publication-master.json)
