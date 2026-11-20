@@ -1,3 +1,11 @@
+# 延安中路955弄2号住宅（北侧老虎窗与凸廊）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yanan-955-no2&mode=overview) · [单体旋转与下载](yanan-955-no2.html) · [来源与制作范围](source/precise/jingan-yanan-955-no2/README.md) · [验收记录](data/audit/yanan-955-no2-v1/README.md)
+
+以市房管局2B008延安中路955弄1至11号为准，对合2号地址、2021年三个地面视角与航片，复原两扇老虎窗、主坡屋面及近街低凸廊。
+
+近景 15,420 个三角面，远景 5,788 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,481,038 字节。上海主图现有 203 处独立入口，静安区 19 处。[资产清单](assets/models/candidates/jingan-yanan-955-no2/manifest.json)
+
 # 思南路73号周公馆庭院立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sinan-road-73-garden-front&mode=overview) · [单体旋转与下载](sinan-road-73-garden-front.html) · [来源与制作范围](source/precise/huangpu-sinan-road-73-garden-front/README.md) · [验收记录](data/audit/sinan-road-73-garden-front-v1/README.md)
