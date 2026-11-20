@@ -183,7 +183,10 @@ async function run() {
     if(await panel.getAttribute('aria-expanded')==='true') await panel.click();
     await camera(0,-1.15,4.7,21.00,57,-14);
     await snapshot('numbered-entrance','full',true);
-    const ground=foot.ground_probes.map(p=>({name:p.label,xy:p.world,expected:p.blocked?'building':null}));
+    const cityGround=JSON.parse(fs.readFileSync(path.join(__dirname,'city-ground-probes.json')));
+    assert.deepEqual(cityGround.owner,row.owner);
+    assert.deepEqual(cityGround.probes.map(p=>p.xy),foot.ground_probes.map(p=>p.world));
+    const ground=cityGround.probes.map(p=>({name:p.name,xy:p.xy,expected:p.expected_city_collision}));
     results.ground_probes=await page.evaluate(queries=>{
       const s=window.__SHANGHAI_APP__.scene;return queries.map(q=>({...q,actual:s.collisionAt(...q.xy)}));
     },ground);
