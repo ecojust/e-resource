@@ -1,3 +1,11 @@
+# 中华基督教女青年会大楼圆明园路主立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-national-ywca&mode=overview) · [单体旋转与下载](national-ywca.html) · [来源与制作范围](source/precise/huangpu-national-ywca/README.md) · [验收记录](data/audit/national-ywca-v1/README.md)
+
+圆明园路133号女青年会大楼的历史沿街立面，核对真实地图要素、照片与门牌。
+
+近景 38,806 个三角面，远景 29,190 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,173,069 字节。上海主图现有 117 处独立入口，黄浦区 49 处。[资产清单](assets/models/candidates/huangpu-national-ywca/manifest.json)
+
 # 原上海犹太人总会南京西路722号南楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-jewish-club&mode=overview) · [单体旋转与下载](jewish-club.html) · [来源与制作范围](source/precise/jingan-jewish-club/README.md) · [验收记录](data/audit/jewish-club-v1/README.md)

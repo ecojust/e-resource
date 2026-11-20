@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 78,
+  "candidate_manifest_count": 79,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 76,
-  "resulting_city_count": 116,
+  "new_city_model_count": 77,
+  "resulting_city_count": 117,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 1,
@@ -58,20 +58,20 @@
     "虹口区": 6,
     "长宁区": 4,
     "静安区": 7,
-    "黄浦区": 32
+    "黄浦区": 33
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 312,
-    "bytes": 1006431606,
+    "files": 316,
+    "bytes": 1010604675,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 8729474,
+    "current_run_added_bytes": 4173069,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 180
+    "inherited_incremental_files": 184
   },
   "records": [
     {
@@ -6474,6 +6474,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "南京西路722号原犹太人总会朝南园侧外观、中央拱廊及可据照片定位的两翼。"
+    },
+    {
+      "id": "huangpu-national-ywca",
+      "name": "中华基督教女青年会大楼圆明园路主立面",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "national-ywca.html",
+      "manifest": "assets/models/candidates/huangpu-national-ywca/manifest.json",
+      "manifest_sha256": "86675e1d991478e4093f10026d325c0ee3ca3064665985fad2b60797403988d8",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-national-ywca/huangpu-national-ywca-raw.glb",
+          "bytes": 2187132,
+          "sha256": "77efef4b77e90e8cc0ca36de5984097ba32fee9b38c82bd29e2dcdab4ffafe14",
+          "triangles": 38806,
+          "bounds_gltf_m": [
+            [
+              -15.86107349395752,
+              0.0,
+              -12.053540229797363
+            ],
+            [
+              14.352726936340332,
+              31.100000381469727,
+              0.9500014185905457
+            ]
+          ],
+          "materials": 13
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-national-ywca/huangpu-national-ywca-web.glb",
+          "bytes": 841964,
+          "sha256": "129b297dac58ddca0780e209d9842f87542fd25bbcb14964286e15167921854e",
+          "triangles": 38806,
+          "bounds_gltf_m": [
+            [
+              -15.8610735,
+              0,
+              -12.0535402
+            ],
+            [
+              14.3527269,
+              31.1000004,
+              0.950001419
+            ]
+          ],
+          "materials": 13
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-national-ywca/huangpu-national-ywca-lod.glb",
+          "bytes": 490000,
+          "sha256": "42f2819dc67a40e215aa846cd4e3b3e07affb01579ebec0d019ffa739656ede6",
+          "triangles": 29190,
+          "bounds_gltf_m": [
+            [
+              -15.8610735,
+              0,
+              -12.0535402
+            ],
+            [
+              14.2587271,
+              31.1000004,
+              0.950001419
+            ]
+          ],
+          "materials": 13
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-national-ywca/huangpu-national-ywca.blend",
+          "bytes": 653973,
+          "sha256": "c2f26515ab5ede39dff069ae9011b146ea8e7b05e1c3801817c90947ad361fa0"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -15.86107349395752,
+            0.0,
+            -12.053540229797363
+          ],
+          "max": [
+            14.352726936340332,
+            31.100000381469727,
+            0.9500014185905457
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -15.86107349395752,
+            -0.9500014185905457,
+            0.0
+          ],
+          "max": [
+            14.352726936340332,
+            12.053540229797363,
+            31.100000381469727
+          ]
+        },
+        "triangles": 38806,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-partial-exterior",
+      "description": "圆明园路133号女青年会大楼的历史沿街立面，核对真实地图要素、照片与门牌。"
     }
   ],
   "baseline_inventory": {
@@ -6507,6 +6613,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-metropol-cinema-historic-front/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-metropole-hotel/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-moore-memorial-church/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-national-ywca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-new-wing-on-company/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-oriental-hotel/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-ruijin-guesthouse-01/manifest.json",
@@ -6530,13 +6637,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/jewish-club-v1",
+  "incremental_audit_directory": "data/audit/national-ywca-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/french-club-v1/inventory-increment.json",
-    "bytes": 150537,
-    "sha256": "d222a594c0a41337bc0768ac05b06b16a323a7f32bc5d3c57d2df33294789a51"
+    "file": "data/audit/jewish-club-v1/inventory-increment.json",
+    "bytes": 154068,
+    "sha256": "0bee4f4d7bed0de1dd484c229a7d793bb392bf586026b0a63397b1a2fc346873"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/jingan-jewish-club/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-national-ywca/manifest.json"
   ]
 }
