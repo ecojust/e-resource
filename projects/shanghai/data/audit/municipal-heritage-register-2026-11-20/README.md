@@ -39,3 +39,13 @@ python projects/shanghai/data/audit/municipal-heritage-register-2026-11-20/extra
   --cache /tmp/shanghai-historic-registers --output /tmp/shanghai-register-recheck.json
 cmp /tmp/shanghai-register-recheck.json projects/shanghai/data/audit/municipal-heritage-register-2026-11-20/register.json
 ```
+
+### 已有模型的三处登记范围
+
+| 市表编号及原名 | 已有模型 | 后续细化范围 |
+| --- | --- | --- |
+| 2G003 旧市博物馆，长海路 174 号 | 江湾馆舍模型已包含西门楼、现存两侧翼和东侧中央厅的简化外体。 | 在原模型核查东厅屋面，两处院内附属建筑各有独立轮廓。[现有模型与参考资料](../../../source/precise/yangpu-former-shanghai-city-museum/README.md) |
+| 2G004 旧市图书馆，黑山路 181 号 | 修缮扩建后的杨浦区图书馆总馆已建成整馆模型。现馆报道地址为长海路 366 号，主门向东，临恒仁路。 | 后侧与院内仍缺逐跨照片。报道所述孔雀门位于二楼中厅。[现有整馆模型](../../../source/precise/yangpu-library/CURRENT_STATE.md) · [区政府总平面图公告](https://www.shyp.gov.cn/shypq/yqyw-wb-gtjzl-gsgg-ghgcxkgg/20181220/313249.html) · [上海观察](https://export.shobserver.com/baijiahao/html/535160.html) |
+| 2D033 徐家汇藏书楼，漕溪北路 80 号 | 已建部分是四层神父楼所在的南楼，交付范围包括五开间外廊。 | 北侧两层原藏书楼另有轮廓。继续制作时可以保留南楼模型和入口。[南楼制作范围](../../../source/precise/xuhui-zikawei-south-building/README.md) · [人民网档案](https://web.archive.org/web/20190511202647id_/http://www.people.com.cn/GB/paper39/13902/1241051.html) |
+
+每条记录关联市表中的行号、工作名录编号、模型 ID、原交付说明和本次读取的网页原始字节摘要。[三处范围及来源核验](existing-building-scopes.json)
