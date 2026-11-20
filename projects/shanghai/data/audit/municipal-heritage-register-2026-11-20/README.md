@@ -49,3 +49,5 @@ cmp /tmp/shanghai-register-recheck.json projects/shanghai/data/audit/municipal-h
 | 2D033 徐家汇藏书楼，漕溪北路 80 号 | 已建部分是四层神父楼所在的南楼，交付范围包括五开间外廊。 | 北侧两层原藏书楼另有轮廓。继续制作时可以保留南楼模型和入口。[南楼制作范围](../../../source/precise/xuhui-zikawei-south-building/README.md) · [人民网档案](https://web.archive.org/web/20190511202647id_/http://www.people.com.cn/GB/paper39/13902/1241051.html) |
 
 每条记录关联市表中的行号、工作名录编号、模型 ID、原交付说明和本次读取的网页原始字节摘要。[三处范围及来源核验](existing-building-scopes.json)
+
+外滩 6 号与 17 号已把下一轮细化具体定位到临江二层窗柱和首层两端翼门。两栋原模型及有日期的照片均已核对。[既有几何与照片对照](bund06-bund17/README.md)
