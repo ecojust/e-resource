@@ -13,3 +13,7 @@
 独立页桌面与手机都能切换近远档，三座高拱和双翼不受地图灯牌遮挡。四种下载逐项取得并核对哈希。[桌面近档](viewer-desktop-full.png) · [桌面远档](viewer-desktop-lod.png) · [手机近档](viewer-mobile-full.png) · [手机远档](viewer-mobile-lod.png) · [四文件下载](viewer.json) · [像素复核](viewer-visual-review.json)
 
 正式仓库登记至102处后，实测站点的主入口、运行脚本、目录、落位合同、清单和四种模型等14项，逐字节与正式工作树一致。[正式登记与实测输入对照](primary-map-inputs.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 32 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/7990fc8cb55bb7ab39f07624b0dda7c954bf8b3a/projects/shanghai/index.html#landmark=huangpu-foreign-ymca&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 32 项时，有 10 项仍是前一版本缓存。[首次 master 核验](publication-master-initial.json)
