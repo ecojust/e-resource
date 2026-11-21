@@ -1,4 +1,6 @@
 """Build the covered lane entrance and projecting bay at Lane 613 Changle Road."""
+import argparse
+import os
 from math import cos, pi, sin
 from pathlib import Path
 import sys
@@ -11,7 +13,7 @@ sys.path.insert(0, str(SOURCE.parents[3] / 'tools'))
 import package_architectural_model as package
 sys.path.insert(0, str(SOURCE.parents[1] / 'huangpu-somekh-building-street-corner/source'))
 from aggregate_mesh import AggregateBuilder
-from photo_architecture import Facade
+from photo_architecture import Facade, pieces
 from street_finish import STONE, assign_uvs
 
 ID = 'xuhui-hujiang-villas-changle-passage-bay'
@@ -25,6 +27,9 @@ META = {
 }
 GLASS = 'Grey blue window glass'
 DARK_GLASS = 'Shadowed guard window glass'
+SKY_GLASS = 'Pale grey blue upper glass'
+MUTED_GLASS = 'Cool grey casement glass'
+GASKET = 'Graphite glazing bed'
 STEEL = 'Dark steel window framing'
 WHITE = 'Pale bay window framing'
 GROOVE = 'Recessed horizontal joints'
@@ -50,6 +55,8 @@ def color(rgb, roughness, metallic=0):
 PALETTE = {
     STONE: dict(color=[1, 1, 1], roughness=.86, texture=str(SOURCE / 'street-finish.png')),
     GLASS: color((102, 123, 130), .27, .24), DARK_GLASS: color((69, 85, 82), .36, .18),
+    SKY_GLASS: color((137, 153, 156), .22, .29), MUTED_GLASS: color((117, 132, 134), .25, .25),
+    GASKET: color((76, 79, 73), .71),
     STEEL: color((53, 60, 57), .53, .24), WHITE: color((204, 207, 197), .42, .21),
     GROOVE: color((107, 100, 95), .86), BAND: color((174, 165, 151), .81), FINS: color((163, 139, 93), .79),
     LINING: color((164, 156, 143), .89), MORTAR: color((147, 120, 107), .86),
@@ -92,7 +99,17 @@ def casement(face, width, low, high, columns, rows, frame, glass, name, inset=.0
     cy = (low + high) / 2
     stile = .040 if frame == WHITE else .031
     rail = .035 if frame == WHITE else .024
-    face.box(0, cy, width, height, .012, -inset, glass, name+' glass')
+    # The projecting enclosure has separate sheets in slightly staggered metal tracks.
+    cell_width = width / columns
+    for column in range(columns):
+        x = -width/2 + (column + .5) * cell_width
+        sliding = frame == WHITE and glass == GLASS
+        pane_mat = (SKY_GLASS, MUTED_GLASS, GLASS, SKY_GLASS)[column % 4] if sliding else glass
+        depth = -inset - (.018 if sliding and column % 2 else 0.)
+        face.box(x, cy, cell_width, height, .014, depth, pane_mat, name+' panes')
+        if sliding:
+            for side in (-1,1):
+                face.box(x + side*(cell_width/2-.028),cy,.012,height-.042,.018,depth+.016,GASKET,name+' glazing seals')
     for i in range(columns + 1):
         x = -width/2 + stile/2 + i*(width-stile)/columns
         face.box(x, cy, stile, height, .054, -inset+.026, frame, name+' stiles')
@@ -166,13 +183,24 @@ def passage(b,lod):
                 if tile.is_empty:continue
                 mat=RED_ALT if (ix+3*iz)%7==0 else RED
                 if lod:
-                    # The LOD retains every mortar gap and window opening while dropping concealed tile sides.
+                    # These narrow tiles are seen lengthwise from the lane. Their vertical
+                    # ends conceal part of the mortar bed even in the simplified model.
+                    for patch in pieces(tile):
+                        corners = list(patch.exterior.coords)
+                        for start, end in zip(corners, corners[1:]):
+                            if abs(start[0] - end[0]) < 1e-8:
+                                points = [f.point(*start,.002), f.point(*end,.002),
+                                          f.point(*end,.012), f.point(*start,.012)]
+                                b.add(points,[(0,1,2,3)],mat,f.label+'/Glazed red tiles')
                     for triangle in triangulate(tile):
                         if tile.covers(triangle.representative_point()):
                             points = [f.point(u,z,.012) for u,z in list(triangle.exterior.coords)[:3]]
                             b.add(points,[(0,1,2)],mat,f.label+'/Glazed red tiles')
                 else:
                     f.prism(tile,.002,.012,mat,'Glazed red tiles')
+    for f in (front, side):
+        f.box(0,2.95,f.length+.03,.125,.07,.033,RED_ALT,'Projecting red tile head')
+        f.box(0,2.885,f.length+.034,.018,.083,.036,MORTAR,'Pale bed below tile head')
     front.box(0,2.67,.55,.245,.022,.035,ADDRESS,'613 lane enamel plate')
     from lane_numbers import address_digits
     address_digits(front)
@@ -186,5 +214,10 @@ def add_building(b,lod):
 
 
 if __name__ == '__main__':
+    cli = argparse.ArgumentParser(add_help=False)
+    cli.add_argument('--blender', default='blender')
+    options, extra = cli.parse_known_args()
+    os.environ['HUJIANG_LANE_BLENDER'] = options.blender
+    sys.argv[1:] = [*extra, '--blender', str(SOURCE / 'native_blender.py')]
     package.Builder = AggregateBuilder
     package.build(SOURCE,META,PALETTE,add_building)
