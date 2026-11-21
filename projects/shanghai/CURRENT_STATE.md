@@ -1,3 +1,11 @@
+# 海格公寓主楼南向花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) · [单体旋转与下载](haig-apartments-garden.html) · [来源与制作范围](source/precise/jingan-haig-apartments-garden-front/README.md) · [验收记录](data/audit/haig-apartments-garden-v1/README.md)
+
+市表2B018登记华山路400号，现入口见370号。以2016航片、2014修缮前照片及2025修后草坪照片区分主楼1554和西侧上海宾馆，建两个凸塔、对称阳台及中央券门。
+
+近景 83,028 个三角面，远景 53,364 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 8,881,290 字节。上海主图现有 244 处独立入口，静安区 29 处。[资产清单](assets/models/candidates/jingan-haig-apartments-garden-front/manifest.json)
+
 # 高安公寓转角弧窗与通高门廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview) · [单体旋转与下载](amyron-apartments.html) · [来源与制作范围](source/precise/xuhui-amyron-apartments-street-front/README.md) · [验收记录](data/audit/amyron-apartments-v1/README.md)

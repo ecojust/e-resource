@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 243 处入口。最近接入[高安公寓转角弧窗与通高门廊](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 244 处入口。最近接入[海格公寓主楼南向花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列][TD6] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD3] · [来源、许可与更新规则][TD2]
 
-已交付的206项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD6]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的207项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD6]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD4]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 207 | 海格公寓主楼南向花园立面 | 静安区／华山路370号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][TD1]；分辨主楼的北立面、侧翼及独立院内建筑；补查山形屋冠与底层敞廊恢复前后的尺寸。 |
-| 208 | 毕卡迪公寓南向阶梯塔楼与534号入口 | 徐汇区／衡山路534号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][TD1]；区分1958号合并地块中的后院与后加体，分别记录修缮前后的屋顶、门厅和行政楼。 |
+| 208 | 毕卡迪公寓南向阶梯塔楼与534号入口 | 徐汇区／衡山路534号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][TD1]；区分1958号合并地块中的后院与后加体，分别记录修缮前后的屋顶、门厅和行政楼。 |
 | 209 | 会乐精舍花园面半圆阳台与主楼入口 | 徐汇区／复兴西路34号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][TD1]；查证穿楼车道、北侧附房和后部楼层，分别记录旧文与房管档案的设计署名。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -748,7 +747,7 @@
 |sh-historic-b2-130|泰兴大楼年代、后立面与屋顶改动|南京西路934号|[名录][H2] · 照片待核 · [当前完成范围][TD4]|核对初建和竣工年份的原始记录、后侧窗墙布局和各期屋面设施。|
 |sh-historic-b2-132|德义大楼历史屋顶与背街立面|南京西路778号|[名录][H2] · 照片待核 · [当前完成范围][TD4]|核住宅入口具体开间、北面被遮挡的墙体和历史店面；核转角原有四尊人物像的准确位置、原形与拆除年代。|
 |sh-historic-b2-139|枕流公寓北侧入口、背翼与花园边界|华山路731号|[名录][H2] · 照片待核 · [当前完成范围][TD4]|补查华山路方向的入口、西端底图多边形误差与背面轮廓，保留花园及邻楼。|
-|sh-historic-b2-143|海格大楼|华山路370号|[名录][H2] · 照片待核|待核外观／拆栋|
+|sh-historic-b2-143|海格公寓后翼、宾馆院落与修缮分期|华山路370号|[名录][H2] · 照片待核 · [当前完成范围][TD4]|分辨主楼的北立面、侧翼及独立院内建筑；补查山形屋冠与底层敞廊恢复前后的尺寸。|
 |sh-historic-b2-154|陈炳谦宅|陕西北路80号|[名录][H2]|待核外观／拆栋|
 |sh-historic-b2-157|四行仓库|光复路1号|[名录][H2] · 照片待核|已有模型可能关联：jingan-sihang-warehouse；待核对范围|
 |sh-historic-b2-163|西摩路会堂|陕西北路500号|[名录][H2] · 照片待核|待核外观／拆栋|
@@ -3656,7 +3655,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；243处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中203件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；244处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中204件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3664,7 +3663,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增203处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增204处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3686,7 +3685,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，243处建筑与构件模型入口（40处既有＋203处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增203处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，244处建筑与构件模型入口（40处既有＋204处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增204处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（98处）
@@ -3869,7 +3868,7 @@
 | 愚园路754号住宅 | 2026-11-21 11:36:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-yuyuan-road-754&mode=overview) |
 | 西园大厦 | 2026-11-21 13:42:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) |
 
-### 静安区（28处）
+### 静安区（29处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
@@ -3903,6 +3902,7 @@
 | 泰兴大楼（MEDHURST大楼）南京西路与泰兴路转角 | 2026-11-21 12:58:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview) |
 | 德义大楼（南京西路与石门路转角） | 2026-11-21 13:34:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) |
 | 枕流公寓 | 2026-11-21 15:43:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-brookside-apartments&mode=overview) |
+| 海格公寓主楼南向花园立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) |
 
 ### 普陀区（2处）
 
