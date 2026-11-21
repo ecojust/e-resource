@@ -1,0 +1,1 @@
+西侧门楼全景和99号门牌剪裁均来自Livelikerw于2013年12月31日拍摄的《Former Residence of the manager of Calbeck Macgregor》。两张剪裁沿用CC BY-SA 3.0许可。[摄影及原文件](https://commons.wikimedia.org/wiki/File:Former_Residence_of_the_manager_of_Calbeck_Macgregor.JPG) · [许可](https://creativecommons.org/licenses/by-sa/3.0/)

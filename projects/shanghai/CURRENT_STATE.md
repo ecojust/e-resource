@@ -1,3 +1,11 @@
+# 武康路99号正广和大班住宅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) · [单体旋转与下载](caldbeck-manager-residence.html) · [来源与制作范围](source/precise/xuhui-caldbeck-manager-residence/README.md) · [验收记录](data/audit/caldbeck-manager-residence-v1/README.md)
+
+对照2D036、2013年99号门牌、2009年门口照片、图书馆花园照片和地方志，制作住宅的露木山墙、南侧敞廊和透花砖栏、陡坡屋顶及成组烟囱。
+
+近景 30,613 个三角面，远景 15,381 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,199,535 字节。上海主图现有 208 处独立入口，徐汇区 28 处。[资产清单](assets/models/candidates/xuhui-caldbeck-manager-residence/manifest.json)
+
 # 永福路151号花园住宅南立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongfu-road-151-south-front&mode=overview) · [单体旋转与下载](yongfu-road-151.html) · [来源与制作范围](source/precise/xuhui-yongfu-road-151-south-front/README.md) · [验收记录](data/audit/yongfu-road-151-v1/README.md)
