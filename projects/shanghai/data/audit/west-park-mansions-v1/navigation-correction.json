@@ -1,0 +1,68 @@
+{
+  "scope": "登记后发现导览状态文字误述了另一栋楼。源校验脚本、合同和派生清单的校正经过独立重建，保持登记状态、碰撞、相机、模型四件和其他候选不变。",
+  "proposal": {
+    "id": "changning-west-park-mansions",
+    "old": {
+      "listed": false,
+      "status": "在院内查看抬高的方柱木廊、中央绿窗与几组翘檐老虎窗。"
+    },
+    "new": {
+      "listed": false,
+      "status": "从南侧庭院可见三组宽浅拱、住户围合的阳台与两端屋顶花架。"
+    }
+  },
+  "frozen_raw_catalog": "ae2da6000d02586d22e779e794ee284d0233c19026a1dfcc5071279b885616cd",
+  "corrected_independent_raw_catalog": "7515f12452fe91dfa4e01310b17b6a5924b19032fa68346e8aa1a1fcff7c5a2d",
+  "raw_signed_delta": {
+    "identical_files": 1361,
+    "changes": {
+      "data/audit/west-park-mansions-v1/final-placement-contract.json": {
+        "old": "df119e513394a545e5a16fd8ee7845c7570d118fa87d8470323875aa2916a581",
+        "new": "e61ea6c4ff22b2c6fc1bd87fd26c770ba93445fc75adabc21c08fe5a0453c986"
+      },
+      "data/candidate-city-integrations.json": {
+        "old": "ae2da6000d02586d22e779e794ee284d0233c19026a1dfcc5071279b885616cd",
+        "new": "7515f12452fe91dfa4e01310b17b6a5924b19032fa68346e8aa1a1fcff7c5a2d"
+      },
+      "data/global-models/additional-placement.json": {
+        "old": "9d6bf3894b2ddd842a12796aff6dee79881052fa8e138218cc1a23f05932142a",
+        "new": "af7b11227d3c0eab06fd18d49309428bfda7e293532188daa64e95d2488fe7c9"
+      }
+    },
+    "clinical_comparison": "One model field, its placement source contract file signature and the dependent catalog placement hash/byte count."
+  },
+  "independent_rehearsal": {
+    "passed": true,
+    "exact_result": {
+      "197": {
+        "scene_count": 234,
+        "other_model_rows": 193,
+        "original_sha256": "ae2da6000d02586d22e779e794ee284d0233c19026a1dfcc5071279b885616cd",
+        "corrected_sha256": "7515f12452fe91dfa4e01310b17b6a5924b19032fa68346e8aa1a1fcff7c5a2d",
+        "exact_rebuild": true
+      },
+      "already_corrected_197": {
+        "scene_count": 234,
+        "other_model_rows": 193,
+        "original_sha256": "7515f12452fe91dfa4e01310b17b6a5924b19032fa68346e8aa1a1fcff7c5a2d",
+        "corrected_sha256": "7515f12452fe91dfa4e01310b17b6a5924b19032fa68346e8aa1a1fcff7c5a2d",
+        "exact_rebuild": true
+      },
+      "198": {
+        "scene_count": 235,
+        "other_model_rows": 194,
+        "original_sha256": "bb54267746fa09631e8ef2a79b38232dc4fbb99bc8fa111fd15e25bae83f2909",
+        "corrected_sha256": "7386e2c6bea258af28a501f40deb10d58671d11b736a22d9c18c95eadf3a4901",
+        "exact_rebuild": false
+      }
+    },
+    "checks_rejected": [
+      "wrong status",
+      "duplicate id",
+      "wrong placement byte count",
+      "original source checker"
+    ]
+  },
+  "prior_served_stage": "23197",
+  "prior_23k_signed_sha256": "e86f000e85405b19a775d3f2b1793d3ef9938d9197fc37b68922550df2012f79"
+}

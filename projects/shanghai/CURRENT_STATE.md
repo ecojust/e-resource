@@ -1,3 +1,11 @@
+# 西园大厦
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) · [单体旋转与下载](west-park-mansions.html) · [来源与制作范围](source/precise/changning-west-park-mansions/README.md) · [验收记录](data/audit/west-park-mansions-v1/README.md)
+
+按市表2M004、区规资记录、2014年花园面照片和2021年长宁路街景，制作南向浅弧阳台与中央开间、两端屋顶透空构架和背面凹入窗井。
+
+近景 51,772 个三角面，远景 36,044 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,196,128 字节。上海主图现有 234 处独立入口，长宁区 17 处。[资产清单](assets/models/candidates/changning-west-park-mansions/manifest.json)
+
 # 德义大楼（南京西路与石门路转角）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) · [单体旋转与下载](denis-apartments.html) · [来源与制作范围](source/precise/jingan-denis-apartments/README.md) · [验收记录](data/audit/denis-apartments-v1/README.md)
