@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>丁香花园三号楼 · 三号门廊与弧形石阶</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="五级弧形石阶、3号牌和带木扶手的双侧铁栏"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 华山路849号</p>
+    <h1>丁香花园三号楼</h1>
+    <p>三号门廊与弧形石阶</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从五级弧形石阶进入门廊，左柱挂着3号牌。近看石阶两侧的木扶手、绞铁杆与圆环。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看三号门廊</button>
+      <button type="button" data-view="oblique">斜看入口石阶</button>
+      <button type="button" data-view="above">俯看红瓦挑檐</button>
+      <button type="button" data-view="inscription">近看三号门牌</button>
+      <button type="button" data-view="return">转看弧形扶手</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-dingxiang-three-numbered-porch/README.md">两组实景照片、分栋与石阶尺寸</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-dingxiang-three-numbered-porch', {
+      inscription: {center: [-1.73, 3.20, .14], size: [1.70, 1.58, .67], direction: [-.15, .06, 1]},
+      return: {center: [1.95, 1.02, .71], size: [2.35, 1.64, 1.50], direction: [.83, .22, 1]},
+    });
+  </script>
+</body>
+</html>
