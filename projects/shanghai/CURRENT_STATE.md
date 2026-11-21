@@ -1,3 +1,11 @@
+# 盖司康公寓主楼南向前院立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-gascogne-apartments-main-building&mode=overview) · [单体旋转与下载](gascogne-apartments-main.html) · [来源与制作范围](source/precise/xuhui-gascogne-apartments-main-building/README.md) · [验收记录](data/audit/gascogne-main-front-v1/README.md)
+
+核对2D003淮海中路1202号，以1937、2013和2023年图片制作主楼107隔庭院朝南的立面与高层轮廓；临街五层辅楼另列3D003、1204至1218号。
+
+近景 36,960 个三角面，远景 26,208 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,713,807 字节。上海主图现有 242 处独立入口，徐汇区 43 处。[资产清单](assets/models/candidates/xuhui-gascogne-apartments-main-building/manifest.json)
+
 # 亨利公寓（淮中大楼）淮海中路门面与弧形露台
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-hanray-mansions&mode=overview) · [单体旋转与下载](hanray-mansions.html) · [来源与制作范围](source/precise/xuhui-hanray-mansions/README.md) · [验收记录](data/audit/hanray-mansions-v1/README.md)
