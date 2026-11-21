@@ -165,7 +165,7 @@
 | 长乐邨93号丰子恺旧居（日月楼南庭院立面） | 2026-11-21 05:58:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) |
 | 陕南邨西南转角住宅（亚尔培公寓） | 2026-11-21 06:16:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) |
 | 思南路73号周公馆庭院立面 | 2026-11-21 07:28:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sinan-road-73-garden-front&mode=overview) |
-| 培文公寓（淮海中路街面与重庆南路圆角） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) |
+| 培文公寓（淮海中路街面与重庆南路圆角） | 2026-11-21 13:18:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) |
 
 ### 徐汇区（37处）
 

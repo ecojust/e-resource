@@ -17,3 +17,9 @@
 从前一版地图的泰兴大楼进入街区，记录培文公寓所在街面的原貌。新一版在870×660桌面和390×844手机上均由正常目录进入，另用鼠标和触屏实点地图标牌。默认47°俯角可辨沿淮海中路伸展的街墙、七层圆角窗带和中央九层退台。十二处建筑及街面样点、七处邻楼样点均符合放置合同。[前版街面](final-map-31195/before/control-browser.json) · [两版实景与实点记录](final-map-31195/results.json) · [中央退台](final-map-31195/architecture/map-stepped-center.png)
 
 街面专项视角的地点卡遮住部分底层商铺。沿街偏移后的近照清楚显示连续店窗和上下窗框，三处实测像素均位于地图画布。远景缩至15.5级时实际载入36,658面模型，四个文件下载与清单一致。本轮共保留11张城市实图、8个成功退出的浏览器会话，以及两次早期失败的原始回执和随后通过的同站记录。[避开地点卡的店面近照](final-map-31195/clear-shopfront/map-shopfront-without-location-card.png) · [远景与下载](final-map-31195/distant/main-browser.json) · [早期实测回执](archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a58b13a13286aca9b4096ea1afc1fb79419be7ca/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，9 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
+
+培文公寓的单体文件先行发布，随后在独立提交中接入主图。公开目录保留原有条目，新增第232个地图入口。[主图登记提交与公开文件核对](published-city-registration.json)
