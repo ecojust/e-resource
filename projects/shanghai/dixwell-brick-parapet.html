@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>狄思威公寓四川北路砖砌女儿墙冠与窗檐</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="狄思威公寓四川北路砖砌女儿墙冠与窗檐" data-oblique="negative-x" id="model-view"></main>
+<header>
+<a href="landmarks.html">← 返回建筑目录</a>
+<p class="eyebrow">虹口区 · 四川北路1914–1932号</p>
+<h1>狄思威公寓</h1>
+<p>砖砌女儿墙冠与窗檐</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">临街上部一组五脊砖冠、浅色女儿墙，以及其下相隔的两扇钢窗和各自的板檐。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">正看五脊砖冠</button>
+<button data-view="oblique" type="button">斜看两窗挑檐</button>
+<button data-view="above" type="button">细看砖脊折角</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/hongkou-dixwell-apartments-ribbed-brick-parapet/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-dixwell-apartments-ribbed-brick-parapet', {
+      front: {center:[0.0,2.145325,-0.0475],size:[6.724004,4.290654,0.875004],direction:[0,0.04,1]},
+      oblique: {center:[0.0,2.145325,-0.0475],size:[6.724004,4.290654,0.875004],direction:[0.63,0.16,1]},
+      above: {center:[0,3.60,-0.1],size:[3.4,1.7,0.75],direction:[0.48,0.16,1]}
+    });
+  </script>
+</body>
+</html>
+
