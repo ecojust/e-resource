@@ -21,3 +21,7 @@
 远景证据分两次采集。第一轮拍下720×510的正常城区地图，确认远档网格加载与WebGL画面，并核对三个文件的HTTP字节。它在最后读取输入设备时退出，状态码为1。第二轮在相同视口用鼠标实际点击普通查看页，再将四份下载逐件保存并核对摘要，退出状态码为0。远景图中可以辨认街区布局和地图标记，细部见前廊和屋顶特写。
 
 [实机、地面与四种下载](city-31228/process-exits.json) · [旧城对照](city-31228/map-before.png) · [南向庭院立面](city-31228/map-south-garden-facade.png) · [前廊圆柱与内退的玻璃门窗](city-31228/map-terrace-columns-and-recessed-hall.png) · [远档](city-31228/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/81bdda5009c1fd62afbfef645e443722b47c606c/projects/shanghai/index.html#landmark=xuhui-yanqing-road-130-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
