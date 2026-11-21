@@ -41,9 +41,10 @@ export function setupHistoricalView({dialog,button,frame,title,closeButton,onMod
     if(!active || dialog.open) return;
     const [first,last]=active.historical_view.evidence_years;
     // These two dates identify publication and archival accessions. The photographs are undated.
+    const period=first===last ? String(first) : `${first}—${last}`;
     const dates=active.id==='xuhui-huaihai-1469-garden-front'
       ? `影像资料年份 ${first}—${last}`
-      : `${first}—${last}年照片`;
+      : `${period}年照片`;
     title.textContent=`${active.name} · ${dates}`;
     frame.title=active.name;
     frame.src=active.individual_page+'?embed=history';

@@ -29,6 +29,11 @@ test('1934–1937 photographed cinema and 2010–2011 archived garden elevation 
     button.dispatchEvent(new Event('click'));
     assert.equal(title.textContent,'花园住宅 · 影像资料年份 2010—2011');
     post(frameWindow,origin);
+    panel.select({...site,id:'xuhui-jianguo-618-historic-front',name:'建国西路住宅',
+      historical_view:{building_year:1948,evidence_years:[2013,2013]}});
+    button.dispatchEvent(new Event('click'));
+    assert.equal(title.textContent,'建国西路住宅 · 2013年照片');
+    post(frameWindow,origin);
     assert.equal(dialog.open,false);
   } finally {
     if(originalWindow===undefined)delete globalThis.window;else globalThis.window=originalWindow;

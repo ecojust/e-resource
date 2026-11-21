@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>建国西路618号住宅 · 挑阳台与窗列</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <style>
+    .embedded header,.embedded footer{display:none}
+    .embedded #model-view{top:8px;bottom:8px}
+    .embedded .panel{top:12px;bottom:12px}
+    .embedded #site-return{display:block;margin-top:8px}
+    @media(max-width:650px){.embedded #model-view{inset:0 0 46%}.embedded .panel{top:54%;bottom:0;max-height:none}}
+  </style>
+  <script>
+    if(window.self!==window.top && new URLSearchParams(location.search).get('embed')==='history'){
+      document.documentElement.classList.add('embedded');
+      const returnToMap=event=>{event.preventDefault();parent.postMessage('close-historical-view',location.origin);};
+      addEventListener('keydown',event=>{if(event.key==='Escape') returnToMap(event);});
+      addEventListener('DOMContentLoaded',()=>{
+        const link=document.getElementById('site-return');
+        link.textContent='返回当代原址';
+        link.addEventListener('click',returnToMap);
+        document.querySelector('.panel').append(link);
+      });
+    }
+  </script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".57" aria-label="建国西路618号住宅挑阳台与窗列三维模型"></main>
+  <header>
+    <a id="site-return" href="index.html#landmark=xuhui-jianguo-618-historic-front&amp;mode=overview">← 查看当代原址</a> · <a href="landmarks.html#building-xuhui-jianguo-618-historic-front">按区目录</a>
+    <p>第二批优秀历史建筑 · 住宅</p>
+    <h1>建国西路618号住宅</h1>
+    <p>2013年照片 · 挑阳台与窗列</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p>工作名录记载住宅建于1948年。2013年7月10日的馆方照片可见挑阳台、扶手下的窄缝、上下窗扇和墙面接缝。左侧枝叶遮挡处和阳台深度按比例估算。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">窗列正面</button>
+      <button type="button" data-view="oblique">斜看板底与栏板</button>
+      <button type="button" data-view="above">俯看挑阳台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-jianguo-618-historic-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-jianguo-618-historic-front');
+  </script>
+</body>
+</html>

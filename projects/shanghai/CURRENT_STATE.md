@@ -1,3 +1,11 @@
+# 建国西路618号住宅挑阳台与窗列
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianguo-618-historic-front&mode=overview) · [单体旋转与下载](jianguo-618-historic-front-history.html) · [来源与制作范围](source/precise/xuhui-jianguo-618-historic-front/README.md) · [验收记录](data/audit/jianguo-618-historic-front-v1/README.md)
+
+以市级名录2D019和馆方留存的2013年外观照片复原住宅可见的浅色墙面、窗格、水平线脚和浅挑阳台。
+
+近景 1,320 个三角面，远景 996 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 253,915 字节。上海主图现有 219 处独立入口，徐汇区 36 处。[资产清单](assets/models/candidates/xuhui-jianguo-618-historic-front/manifest.json)
+
 # 丽波花园东主楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) · [单体旋转与下载](libo-garden-east.html) · [来源与制作范围](source/precise/xuhui-libo-garden-east-house/README.md) · [验收记录](data/audit/libo-garden-east-v1/README.md)
