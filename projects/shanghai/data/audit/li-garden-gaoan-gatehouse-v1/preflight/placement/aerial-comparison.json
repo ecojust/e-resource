@@ -1,0 +1,112 @@
+{
+  "order": 388,
+  "sources": {
+    "google": {
+      "file": "source/precise/xuhui-li-garden-gaoan-gatehouse/measurements/google-aerial.json",
+      "sha256": "4d7984c2f6898423bb3ff4fefb7e95c5c6eaa56814595d1da3060e5473888c93",
+      "native_pixel_size_m": 0.06384611875201876,
+      "inspection_mosaic_size_px": [
+        750,
+        600
+      ]
+    },
+    "esri": {
+      "file": "source/precise/xuhui-li-garden-gaoan-gatehouse/measurements/esri-aerial.json",
+      "sha256": "6177b80df78315db740408e8a48f264d24716d209d956333e5134b933886eea5",
+      "native_pixel_size_m": 0.25538447500807504,
+      "inspection_mosaic_size_px": [
+        750,
+        600
+      ]
+    }
+  },
+  "manual_image_control": "两幅图依各自原始切片范围拼成750×600，同标主屋南坡东西檐角与东端脊折；像素坐标从各图左上角起算。",
+  "roof_tie_points": [
+    {
+      "feature": "院内主屋南坡西端檐角",
+      "google_pixel": [
+        302,
+        390
+      ],
+      "esri_pixel": [
+        291,
+        395
+      ],
+      "google_wgs84": [
+        121.44141943752766,
+        31.204283714574274
+      ],
+      "esri_wgs84": [
+        121.44140791296957,
+        31.204279508610817
+      ],
+      "east_north_difference_m": [
+        -1.0973039333989212,
+        -0.4682057102868522
+      ],
+      "discrepancy_m": 1.1930182351489687
+    },
+    {
+      "feature": "院内主屋南坡东端檐角",
+      "google_pixel": [
+        481,
+        315
+      ],
+      "esri_pixel": [
+        471,
+        325
+      ],
+      "google_wgs84": [
+        121.44161788523195,
+        31.204355407104625
+      ],
+      "esri_wgs84": [
+        121.44160746932033,
+        31.204346421643802
+      ],
+      "east_north_difference_m": [
+        -0.9917440933339283,
+        -1.0002569234033905
+      ],
+      "discrepancy_m": 1.408570289151078
+    },
+    {
+      "feature": "院内主屋东端屋脊折点",
+      "google_pixel": [
+        447,
+        228
+      ],
+      "esri_pixel": [
+        439,
+        239
+      ],
+      "google_wgs84": [
+        121.44158019125462,
+        31.204438570371757
+      ],
+      "esri_wgs84": [
+        121.44157199263572,
+        31.204428629019542
+      ],
+      "east_north_difference_m": [
+        -0.7806253603784554,
+        -1.1066662662954165
+      ],
+      "discrepancy_m": 1.354284378637748
+    }
+  ],
+  "manual_reading_resolution": "两源影像分辨率、采集角度、阴影和树冠不同。读点可相差数个显示像素，屋檐为离地像点。该差值只表示两幅影像的局部对应差异。",
+  "street_camera_signed_residuals_m": [
+    0.35929911093201594,
+    -0.2935755129921415,
+    0.43229166345492503
+  ],
+  "street_camera_rms_residual_m": 0.3661322690129722,
+  "inner_portal_registration": "航空图能识别宅顶与沿街门屋的相对位置，树冠和檐线遮住院内端接地点。门屋深度由两端券口照片中的透视关系估计。两幅图和三个街景机位均未独立定出院端的落地点。",
+  "depth_source": {
+    "file": "source/precise/xuhui-li-garden-gaoan-gatehouse/measurements/building-dimensions.json",
+    "sha256": "41494e7a0881fbd3bfb623feed6e20544c54c1ea1d1eb62d6adb63b68448e8c6"
+  },
+  "inward_wall_ground_triangulated": false,
+  "public_road_cadastral_boundary_surveyed": false
+}
