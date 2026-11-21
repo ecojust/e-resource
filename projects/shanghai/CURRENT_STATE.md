@@ -1,3 +1,11 @@
+# 会乐精舍（卫乐公寓）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-willow-court&mode=overview) · [单体旋转与下载](willow-court.html) · [来源与制作范围](source/precise/xuhui-willow-court/README.md) · [验收记录](data/audit/willow-court-v1/README.md)
+
+对照2D043、1935年总平面和施工照片、2013年实景与三期航片，选定主楼4000，制作南面中轴半圆阳台、半层高入口和窄翼退顶。
+
+近景 54,520 个三角面，远景 26,776 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,438,913 字节。上海主图现有 246 处独立入口，徐汇区 46 处。[资产清单](assets/models/candidates/xuhui-willow-court/manifest.json)
+
 # 毕卡迪公寓南向阶梯塔楼与534号入口
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) · [单体旋转与下载](picardie-apartments.html) · [来源与制作范围](source/precise/xuhui-picardie-apartments-south-front/README.md) · [验收记录](data/audit/picardie-apartments-v1/README.md)

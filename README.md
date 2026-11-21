@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 245 处入口。最近接入[毕卡迪公寓南向阶梯塔楼与534号入口](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 246 处入口。最近接入[会乐精舍（卫乐公寓）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-willow-court&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][TD5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD2] · [来源、许可与更新规则][TD1]
 
-已交付的208项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的209项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 209 | 会乐精舍花园面半圆阳台与主楼入口 | 徐汇区／复兴西路34号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；查证穿楼车道、北侧附房和后部楼层，分别记录旧文与房管档案的设计署名。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -375,7 +371,7 @@
 |sh-historic-b2-141|盖司康公寓主楼后翼、裙房与院落|淮海中路1202号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|查证主楼背面和低层交界，分别保留独立登记的街角楼及院内附属体。|
 |sh-historic-b2-142|高安公寓后立面与庭院|高安路14号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|补查两翼后部、庭院和屋顶，多时相资料分别记录。|
 |sh-historic-b2-144|毕卡迪公寓其他翼楼、行政楼与院落|衡山路534号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|区分1958号合并地块中的后院与后加体，分别记录修缮前后的屋顶、门厅和行政楼。|
-|sh-historic-b2-145|会乐精舍|复兴西路34号|[名录][H2] · 照片待核|待核外观／拆栋|
+|sh-historic-b2-145|会乐公寓后院车行线、两座附房与花园|复兴西路34号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|主楼内东端车道的前、中、后三点已核实。继续调查后院车道走向、北侧两座附房、花园和后部楼层，分别记录旧文与房管档案的设计署名。|
 |sh-historic-b2-146|自由公寓|五原路258号|[名录][H2] · 照片待核|待核外观／拆栋|
 |sh-historic-b2-147|密丹公寓|武康路115号|[名录][H2] · 照片待核|待核外观／拆栋|
 |sh-historic-b2-148|皇家公寓|淮海中路1300～1326号|[名录][H2] · 照片待核|待核外观／拆栋|
@@ -3653,7 +3649,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；245处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中205件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；246处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中206件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3661,7 +3657,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增205处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增206处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3683,7 +3679,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，245处建筑与构件模型入口（40处既有＋205处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增205处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，246处建筑与构件模型入口（40处既有＋206处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增206处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（98处）
@@ -3791,7 +3787,7 @@
 | 培文公寓（淮海中路街面与重庆南路圆角） | 2026-11-21 13:18:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) |
 | 南昌大楼（阿斯屈来特公寓）街角入口 | 2026-11-21 13:58:46 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-astrid-apartments-corner&mode=overview) |
 
-### 徐汇区（45处）
+### 徐汇区（46处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310104&mode=walk)
 
@@ -3842,6 +3838,7 @@
 | 盖司康公寓主楼南向前院立面 | 2026-11-21 16:49:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-gascogne-apartments-main-building&mode=overview) |
 | 高安公寓转角弧窗与通高门廊 | 2026-11-21 17:03:25 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview) |
 | 毕卡迪公寓南向阶梯塔楼与534号入口 | 2026-11-21 17:47:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) |
+| 会乐精舍（卫乐公寓） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-willow-court&mode=overview) |
 
 ### 长宁区（17处）
 
