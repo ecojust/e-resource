@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>永安里多伦路174号题名门与双窗条篷</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="多伦路174号永安里题名门、上层木窗与两侧相邻商铺"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 多伦路174号</p>
+    <h1>永安里</h1>
+    <p>多伦路174号题名门与双窗条篷</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">两盏带螺旋纹的挂灯标出174号弄口，抬头可以从右向左读出「永安里」。门上是一扇宽窗，两侧各有一对窄窗。浅灰色罩篷取自2020年三处街景。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">整体</button>
+      <button type="button" data-view="oblique">看双窗条篷</button>
+      <button type="button" data-view="above">看三层檐口</button>
+      <button type="button" data-view="inscription">近看永安里题额</button>
+      <button type="button" data-view="return">看螺旋纹挂灯</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-yonganli-duolun-174-awning-front/README.md">两处题名门与立面测量</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-yonganli-duolun-174-awning-front', {
+  "front": {
+    "center": [
+      0.0,
+      5.45,
+      -0.0
+    ],
+    "size": [
+      10.00322816,
+      7.78028857,
+      0.80025825
+    ],
+    "direction": [
+      -0.9803778,
+      0.03707056,
+      -0.1936108
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.01664,
+      7.0,
+      -3.52996
+    ],
+    "size": [
+      2.79736876,
+      2.17573126,
+      0.2237895
+    ],
+    "direction": [
+      -0.97239718,
+      0.07879297,
+      -0.21962556
+    ]
+  },
+  "above": {
+    "center": [
+      -0.00495,
+      9.61,
+      1.04999
+    ],
+    "size": [
+      5.68562158,
+      4.42215012,
+      0.45484973
+    ],
+    "direction": [
+      -0.85521304,
+      0.07022916,
+      0.51349636
+    ]
+  },
+  "inscription": {
+    "center": [
+      0.0,
+      4.53,
+      -0.0
+    ],
+    "size": [
+      2.08701969,
+      1.62323753,
+      0.16696157
+    ],
+    "direction": [
+      -0.9550838,
+      -0.06208468,
+      -0.28975925
+    ]
+  },
+  "return": {
+    "center": [
+      -0.10551,
+      2.52,
+      1.16952
+    ],
+    "size": [
+      1.02809657,
+      0.79963066,
+      0.08224773
+    ],
+    "direction": [
+      -0.88037599,
+      0.12496219,
+      0.45751782
+    ]
+  }
+});
+  </script>
+</body>
+</html>
