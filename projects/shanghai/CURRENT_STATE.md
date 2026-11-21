@@ -1,3 +1,11 @@
+# 贝宅花园侧主楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) · [单体旋转与下载](pei-mansion-garden-front.html) · [来源与制作范围](source/precise/jingan-pei-mansion-garden-front/README.md) · [验收记录](data/audit/pei-mansion-garden-front-v1/README.md)
+
+对照北京西路1301号的保护登记、南阳路170号酒店资料及2013年原照，制作两侧多边窗、中间凹入露台和几何栏板。
+
+近景 21,272 个三角面，远景 13,908 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,004,473 字节。上海主图现有 215 处独立入口，静安区 22 处。[资产清单](assets/models/candidates/jingan-pei-mansion-garden-front/manifest.json)
+
 # 吴同文住宅（绿房子）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-woo-tongwen-green-house&mode=overview) · [单体旋转与下载](woo-green-house.html) · [来源与制作范围](source/precise/jingan-woo-tongwen-green-house/README.md) · [验收记录](data/audit/woo-green-house-v1/README.md)

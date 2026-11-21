@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "order": 178,
+  "renderer_port": 23178,
+  "renderer_verifier_sha256": "b0d0b6eeec2b9ee23065daa2de5237833668c4a397c9824d7415b557fe63e0f8",
+  "queue_verified_snapshot_sha256": "3fb3e4df74d260db5d622b7c663c03acabcd7fc1e834d3de655f8f6de279199f",
+  "combined_snapshot_sha256": "762529cef915b84294ba1f4c32c1a12c3d836eaa5fe8ebfc436c8d0d516b9f5a",
+  "unchanged_inputs": 1220,
+  "changed_delivery_checks": [
+    "tools/check_candidate_publication.py",
+    "tests/candidate-publication-html.test.py"
+  ],
+  "published_verifier": {
+    "commit": "e032d1b3768841b607155c0a371ce72dc873e96f",
+    "previous_commit": "0b0cbea3b09ec3fef4a7fa862382151a2645dd1b",
+    "previous_verifier_sha256": "b0d0b6eeec2b9ee23065daa2de5237833668c4a397c9824d7415b557fe63e0f8",
+    "files": {
+      "tools/check_candidate_publication.py": {
+        "url": "https://raw.githubusercontent.com/ecojust/e-resource/e032d1b3768841b607155c0a371ce72dc873e96f/projects/shanghai/tools/check_candidate_publication.py",
+        "bytes": 9690,
+        "sha256": "d165ac00c0143c6a70416a15a483943a9dbf2baa3bc41dd94be8dc51a41ab932"
+      },
+      "tests/candidate-publication-html.test.py": {
+        "url": "https://raw.githubusercontent.com/ecojust/e-resource/e032d1b3768841b607155c0a371ce72dc873e96f/projects/shanghai/tests/candidate-publication-html.test.py",
+        "bytes": 3347,
+        "sha256": "e8e49ca967c88850132e39a8cebdbab879000681c8f6ad6d557f1278154c9fc2"
+      }
+    },
+    "regression": "six unittest cases, including split source records, empty records and registered manifests",
+    "released_html_checked": 122,
+    "observation": "The original HTML reference checks remain in force. When a released model predates source_register, its source README and every top-level JSON source record are verified from the same immutable Git tree.",
+    "previous_public_files_sha256": {
+      "tools/check_candidate_publication.py": "07e6a78e2263af2030908a7371ade7d773bc1d0e9af198325e9c5d8ffd2b0026",
+      "tests/candidate-publication-html.test.py": "3b3370e529f335e8dc6fe98cab7244d07796a820940dae1b62cd560363575f88"
+    }
+  },
+  "city_catalog_sha256": "33ec4995fe3dc532a0d83c4a74bef85359caf9a0cf16896a59b125ba82ce56c7"
+}

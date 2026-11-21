@@ -1,0 +1,17 @@
+{
+  "reviewed": true,
+  "observation": "桌面和390像素手机从目录进入时均显示“贝宅花园侧主楼”，正常俯瞰可辨两侧折面与中央内凹。近景里钢窗横竖梃、上下两道栏板的孔洞和入口石阶都有独立轮廓。屋顶镜位可见一座浅色竖井及其投影。近景左下说明卡遮住一段窗脚，中央标牌局部遮住一层栏板。独立页的斜视给出同一侧连续三层折面窗。440×380像素的远景保留北京西路与周围街块、215处目录计数和贝宅地点卡。地点卡遮住中央大段街面，这个尺度看不清窗格。远景文件和13,908个三角面的载入记录与截图同次取得。",
+  "photos": [
+    "before/map-before.png",
+    "phone/map-mobile.png",
+    "phone/map-mobile-settled.png",
+    "desktop/map-desktop.png",
+    "desktop/map-desktop-settled.png",
+    "architecture/map-street-facade.png",
+    "architecture/map-roof.png",
+    "architecture/map-recessed-galleries.png",
+    "architecture/map-faceted-steel-windows.png",
+    "distant/map-distant.png"
+  ],
+  "prose": "## 贝宅花园侧主楼在上海地图中的实拍\n\n从城市目录进入时，桌面和390像素宽的手机都选中了贝宅。旧目录有214处，增加贝宅后有215处。地图鼠标与触屏测试均从吴同文住宅出发，以真实指针点中贝宅灯牌，再核对所选地点。13处主楼、台阶和花园地面，加上5座保留邻屋，实测通行与碰撞均与登记相符。[旧目录主图](city-31178/before/map-before.png) · [桌面目录与主图](city-31178/desktop/map-desktop-settled.png) · [手机地图](city-31178/phone/map-mobile-settled.png) · [指针和地面记录](city-31178/visual-review.json)\n\n花园侧的两组凸窗向侧面折转，钢窗横竖梃沿三层延续。中央凹廊的两道透花栏板、下面的门和台阶能从建筑近景辨认。左下方的说明卡遮住一段窗脚，地图标牌也遮到局部栏板，独立页斜视能看到整排窗与栏板。屋顶镜位可见浅色竖井及其投影。[开间与钢窗](city-31178/architecture/map-faceted-steel-windows.png) · [两道内凹廊](city-31178/architecture/map-recessed-galleries.png) · [屋面](city-31178/architecture/map-roof.png) · [独立页斜视](faceted-windows/oblique-desktop.png) · [全城远景](city-31178/distant/map-distant.png)\n\n第一次建筑近景会话遇到本地静态服务连接中断。恢复受影响的原路径后，原先失败的25条资源均返回正确字节。第一次鼠标会话的渲染器在操作中退出。在600像素宽的鼠标复测中，灯牌已选中贝宅，自动镜头停在17.18级，尚未进入近景底模的加载层级。鼠标复测分别记录了选中及街墙近景。第一次触屏会话在选中并加载贝宅后切换镜头时中断，随后独立触屏会话复核实际指针、地点、可见近景和其下载字节；手机建筑画面由正常目录会话另行保存。第一次连续从近镜切远镜时渲染器退出，单独远景会话已载入并验证LOD，但首次截图时退出。释放本地复核服务占用的内存后，后续会话单独从同一地图拍摄远景。触屏会话实载近景，远景会话实载LOD，四份独立页下载的字节数与SHA-256均符合清单。[中断与复测](city-31178/initial-attempts/comparison.json) · [下载核验](viewer.json)"
+}

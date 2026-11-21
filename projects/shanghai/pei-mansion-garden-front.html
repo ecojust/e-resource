@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>贝宅花园侧主楼 · 静安区</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="贝宅花园侧折面窗、回纹栏板与屋顶竖井三维模型" data-oblique-x="0.43" id="model-view"></main>
+<header>
+<a href="index.html#landmark=jingan-pei-mansion-garden-front&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">静安区 · 北京西路1301号</p>
+<h1>贝宅花园侧主楼</h1>
+<p>三层折面窗与两层凹廊</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">2013年园内实照可辨两侧折面钢窗、两层凹廊、镂空回纹石栏及屋顶竖井。中部玻璃门记录酒店时期的状态。侧背与平屋面按地块和屋顶影像简化，南阳路170号街门、园亭和室内另列。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">花园正面</button>
+<button data-view="oblique" type="button">折面窗与凹廊</button>
+<button data-view="above" type="button">女儿墙与竖井</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/jingan-pei-mansion-garden-front/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=pei-mansion-garden-front-v1';
+    showCandidateAssetViewer('jingan-pei-mansion-garden-front');
+  </script>
+</body>
+</html>
+
