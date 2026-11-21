@@ -1,3 +1,11 @@
+# 皇家公寓淮海中路、常熟路转角立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-empire-mansions-street-front&mode=overview) · [单体旋转与下载](empire-mansions.html) · [来源与制作范围](source/precise/xuhui-empire-mansions-street-front/README.md) · [验收记录](data/audit/empire-mansions-v1/README.md)
+
+对照市表2D005、1947年行号图及修缮后实景，选定5455，制作1326号街角入口、抬高的三道竖肋、两翼横窗带与圆角窗台。
+
+近景 139,692 个三角面，远景 93,616 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 15,765,417 字节。上海主图现有 249 处独立入口，徐汇区 49 处。[资产清单](assets/models/candidates/xuhui-empire-mansions-street-front/manifest.json)
+
 # 密丹公寓武康路与湖南路转角立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-midget-apartments&mode=overview) · [单体旋转与下载](midget-apartments.html) · [来源与制作范围](source/precise/xuhui-midget-apartments/README.md) · [验收记录](data/audit/midget-apartments-v1/README.md)
