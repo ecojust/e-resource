@@ -4,12 +4,29 @@ import {MeshoptDecoder} from '../vendor/meshopt_decoder.module.js';
 import {OrbitControls} from '../vendor/OrbitControls.js';
 import {disposeModelResources} from './model-resources.js';
 
+function getDetailSelector(status) {
+  const existing = document.getElementById('detail');
+  if (existing) return existing;
+
+  const label = document.createElement('label');
+  label.htmlFor = 'detail';
+  label.textContent = '模型细节';
+  const select = document.createElement('select');
+  select.id = 'detail';
+  for (const [value, title] of [['auto', '随距离切换'], ['full', '完整近景'], ['lod', '简化远景']]) {
+    select.add(new Option(title, value));
+  }
+  const buttons = status.closest('.panel')?.querySelector('.buttons');
+  (buttons ?? status).before(label, select);
+  return select;
+}
+
 export function showCandidateAssetViewer(modelId) {
   const folder = 'assets/models/candidates/' + modelId + '/';
   const screen = document.getElementById('model-view');
   const frontSign = screen.dataset.front === 'negative-z' ? -1 : 1;
   const status = document.getElementById('status');
-  const detail = document.getElementById('detail');
+  const detail = getDetailSelector(status);
   const retry = document.getElementById('retry');
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#172a30');
