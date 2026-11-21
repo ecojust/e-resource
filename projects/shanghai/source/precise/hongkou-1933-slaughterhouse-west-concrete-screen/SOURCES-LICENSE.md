@@ -1,0 +1,7 @@
+# 来源与许可
+
+- 本项目原创的参数、网格、相机与水泥骨料纹理采用仓库许可。水泥纹理由程序绘制。招牌按现状以 DejaVu Sans、DejaVu Serif 与 Noto Serif CJK 字形排版，源文件包含轮廓及重绘脚本。[仓库许可](../../../../../LICENSE) · [水泥纹理](source/aggregate_finish.py) · [招牌轮廓生成](source/make_sign_outlines.py) · [DejaVu 字体许可](https://dejavu-fonts.github.io/License.html) · [Noto CJK 字体许可](https://github.com/notofonts/noto-cjk/blob/main/Serif/LICENSE)
+- Han Lei 于2010年12月23日拍摄两幅室内图。《1933 - panoramio》一图经裁切、缩放并与模型并排，用于室内花格对照，整张对照图采用 CC BY-SA 3.0。《1933 5th floor - panoramio (1)》用于复核楼层、楼板与连续窗格。[室内近照](https://commons.wikimedia.org/wiki/File:1933_-_panoramio.jpg) · [整层室内照](https://commons.wikimedia.org/wiki/File:1933_5th_floor_-_panoramio_(1).jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+- Windmemories 于2026年2月8日拍摄沿街正面。街景对照图缩放原照、与模型并置并加注文字，整张采用 CC BY-SA 4.0。Chainwit. 于2024年4月24日拍摄的四张照片采用 CC BY 4.0，用于核对窗后深度、窗冠、门廊与斜片。[Windmemories 原作](https://commons.wikimedia.org/wiki/File:20260208_Shanghai_International_Settlement_Slaughterhouse_01.jpg) · [四幅研究照与原作链接](reference-review.json) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by/4.0/) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Legolas1024 于2017年12月10日拍摄的俯视照用于核对两端和普通开间数量。另以2015年12月多站街景量取窗跨、端界与街道侧的高程，公开记录保留量测数值、来源与摘要。[俯视照与署名](reference-review.json) · [街道测站](measurements/three-station-screen-measurements.json)
+- 公共地图轮廓来自 OpenStreetMap 贡献者，采用 ODbL 1.0。两个地址的历史登记和运营年代另据上海市房管局、工部局公报及年报。[OSM 历史版本](https://www.openstreetmap.org/way/131469476/history) · [地图许可与署名](https://www.openstreetmap.org/copyright) · [登记和史料链接](reference-review.json)
