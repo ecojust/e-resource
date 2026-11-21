@@ -18,7 +18,9 @@ def shaft(b,cx,half,top,name):
     for axis,ids in [(2,[0,3,2,1]),(2,[4,5,6,7]),(1,[0,1,5,4]),(0,[1,2,6,5]),(1,[2,3,7,6]),(0,[3,0,4,7])]:
         verts=[corners[i]for i in ids]
         b.add(verts,[(0,1,2,3)],SHAFT,name+' square stone shaft')
-        b.parts[-1]['texcoords']=[uv(*v,axis)for v in verts]
+        # The embedded PNG uses glTF's top-left origin. Blender uses its lower-left origin.
+        native_uvs = [uv(*point, axis) for point in verts]
+        b.parts[-1]['texcoords'] = [(u, 1 - v) for u, v in native_uvs]
 
 
 def create():

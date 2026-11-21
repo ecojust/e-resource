@@ -1,0 +1,11 @@
+{
+  "model": 348,
+  "initial_geometry_exit": "46f1bb8a8b97dc2efa060414737fc9e74411bd9b2c3aecad30ccdb8cc31a9f22",
+  "first_measurement_exit": "eed49b507a3fc3a11bc84ee2d157c7f994804ab55c6d15a83a0f83290a01d555",
+  "initial_measurement_log": "25c0febd71c95589292c12bd72b843c96a3f3dcfcb395d5f9de01d6c20dd6475",
+  "observed_max_corner_uv_error": 7.176056002227353,
+  "first_source": "07a86c424e3a456dbac35db682d13be4591f539ef5cb9ace28390f01558b489a",
+  "revised_source": "a3547f1d084b4115dc60c95c13927bc0a5355dc1cc06d7c3e6b7f70a6886f130",
+  "issue": "The glTF exporter received the native bottom-origin V coordinate. The Blender material and the independently decoded glTF used vertically opposite orientations for the same stone PNG.",
+  "change": "Flip V only when writing glTF texture coordinates. Preserve the native material coordinates, geometry, camera positions and the original stone image."
+}
