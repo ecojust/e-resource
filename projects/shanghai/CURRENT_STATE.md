@@ -1,3 +1,11 @@
+# 河滨大楼临苏州河立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-embankment-building-riverfront&mode=overview) · [单体旋转与下载](embankment-riverfront.html) · [来源与制作范围](source/precise/hongkou-embankment-building-riverfront/README.md) · [验收记录](data/audit/embankment-riverfront-v1/README.md)
+
+按2F002、修缮资料与2013至2025年的临河实照，核对S形河湾两段，制作沿河长窗带、端部弧窗和中段亭冠，保留同组独立邻楼。
+
+近景 130,980 个三角面，远景 62,394 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 14,344,040 字节。上海主图现有 230 处独立入口，虹口区 14 处。[资产清单](assets/models/candidates/hongkou-embankment-building-riverfront/manifest.json)
+
 # 爱登公寓（常德公寓）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-eddington-house&mode=overview) · [单体旋转与下载](eddington-house.html) · [来源与制作范围](source/precise/jingan-eddington-house/README.md) · [验收记录](data/audit/eddington-house-v1/README.md)
