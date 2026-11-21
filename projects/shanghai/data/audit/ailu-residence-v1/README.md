@@ -17,3 +17,7 @@
 加入甲楼后，城市目录由252处增加到253处。最终服务的1,532个输入文件全部通过实际HTTP下载，合计1,299,077,120字节。目录中保留甲、乙两栋的身份说明。桌面与手机已实测的独立页、加载程序和模型文件与最终服务逐一相同。[逐层文件回读](release-http-summary.json) · [地点卡与独立页核对](formal-26216-page-identity.json) · [四幅图与最终文件对应](formal-26216-viewer-http.json)
 
 地面运行检查采用最终目录的实发字节，验证了庭院、敞廊、保留楼体及6处邻楼的26个点位；原有甲楼背面继续保留。该记录覆盖运行模块与碰撞边界。第216期在前后两代全城地图上实测了11幅画面。鼠标与触屏分别在地图上点中了甲楼灯牌，均由赛华公寓切换到甲楼。五个建筑机位拍到花园敞廊、临街券口、屋顶、石栏和老虎窗，远景核对了实际加载的两档模型。[11幅地图与逐图观察](final-map-31216/manual-visual-review.json) · [建筑取景与26个地面点位](final-map-31216/architecture/main-browser.json) · [四幅独立页及下载记录](final-map-31216/standalone-manual-visual-review.json)。[运行模块与地面点位](city-25216/runtime-placement.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a6e50ca5545c9202bbac5589a6540a7fa28008d3/projects/shanghai/index.html#landmark=xuhui-ailu-residence-garden-loggia&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，11 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

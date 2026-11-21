@@ -225,7 +225,7 @@
 | 密丹公寓武康路与湖南路转角立面 | 2026-11-21 19:08:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-midget-apartments&mode=overview) |
 | 皇家公寓淮海中路、常熟路转角立面 | 2026-11-21 19:42:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-empire-mansions-street-front&mode=overview) |
 | 赛华公寓常熟路、延庆路转角立面 | 2026-11-21 21:42:08 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-savoy-apartments-street-front&mode=overview) |
-| 东平路9号爱庐甲楼花园敞廊 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-ailu-residence-garden-loggia&mode=overview) |
+| 东平路9号爱庐甲楼花园敞廊 | 2026-11-21 22:48:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-ailu-residence-garden-loggia&mode=overview) |
 
 ### 长宁区（17处）
 
