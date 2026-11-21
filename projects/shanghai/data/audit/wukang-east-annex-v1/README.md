@@ -19,3 +19,7 @@
 23处地面检查覆盖副楼门口、人行道、保留的旧楼和4个邻楼位置。限定原楼320的3个裁片按近远两档生效，八层主楼1235独立保留。桌面鼠标与触屏都从地图灯牌重新回到副楼。440×380远景使用页面的缩小按钮，取得22,956面的远景文件。这个比例下只能辨街区。独立页则在桌面和手机分别显示整面近景与远景，并实存原始、网页、远景和Blender四件。[主楼保持检查](city-31199/main-eight-story-preserved.json) [实际输入与地面](city-31199/main-browser.json) [远景操作](city-31199/distant-public-zoom.json) [独立页与下载](city-31199/standalone/viewer.json) [逐图记录](city-31199/visual-review.json)
 
 首次手机访问时17项底图与旧建筑资源返回502。随后从原始服务和最终服务各完整读回17项，逐份核对Git对象与SHA-256。一次复跑在写出进程回执前中断。最终手机目录与其余各段均从正式服务取得页面与实图。[首次失败记录](city-31199/first-phone-http/main-browser.json) [34次复读](city-31199/first-phone-http/all-first-phone-failures-recovered.json) [最终逐段退出记录](city-31199/slot-released.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/86f8ca706a4cb14dd929eee203155dff577fc4a1/projects/shanghai/index.html#landmark=xuhui-wukang-mansion-east-annex&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

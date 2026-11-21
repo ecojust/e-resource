@@ -3831,7 +3831,7 @@
 | 丽波花园东主楼 | 2026-11-21 10:10:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) |
 | 建国西路618号住宅挑阳台与窗列 | 2026-11-21 10:14:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianguo-618-historic-front&mode=overview) · 1948 年原址，地点卡可查看历史外观 |
 | 海关俱乐部木屋 | 2026-11-21 11:56:16 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-fenyang-customs-club&mode=overview) |
-| 武康大楼东侧副楼临淮海中路立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion-east-annex&mode=overview) |
+| 武康大楼东侧副楼临淮海中路立面 | 2026-11-21 14:15:25 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion-east-annex&mode=overview) |
 
 ### 长宁区（17处）
 
