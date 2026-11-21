@@ -1,0 +1,22 @@
+start desktop 2026-11-21T15:47:39.511907+00:00 1070164432 5701632
+exit desktop {'name': 'desktop', 'process_rss_highwater': 799961088, 'process_rss_checkpoints': [['2026-11-21T15:47:39.639501+00:00', 55513088, 1030535168], ['2026-11-21T15:47:40.195588+00:00', 277602304, 911329296], ['2026-11-21T15:47:41.006231+00:00', 356798464, 893511464], ['2026-11-21T15:47:41.600582+00:00', 414830592, 877406968], ['2026-11-21T15:47:42.369187+00:00', 451289088, 860096064], ['2026-11-21T15:47:45.505810+00:00', 472449024, 835227400], ['2026-11-21T15:47:46.787156+00:00', 493637632, 813995600], ['2026-11-21T15:47:48.586652+00:00', 520396800, 810561624], ['2026-11-21T15:47:49.765302+00:00', 560807936, 758483512], ['2026-11-21T15:47:50.664090+00:00', 594358272, 733070544], ['2026-11-21T15:47:53.803176+00:00', 620109824, 727809200], ['2026-11-21T15:47:59.069514+00:00', 658481152, 714948880], ['2026-11-21T15:48:01.763525+00:00', 701685760, 675329960], ['2026-11-21T15:48:07.483663+00:00', 728879104, 544897128], ['2026-11-21T15:48:13.716771+00:00', 752128000, 525784680], ['2026-11-21T15:48:14.898369+00:00', 771780608, 504228504], ['2026-11-21T15:48:17.202514+00:00', 799961088, 498014648]], 'cgroup_before': 'low 0\nhigh 0\nmax 16558010\noom 570\noom_kill 178\noom_group_kill 0\n', 'cgroup_after': 'low 0\nhigh 0\nmax 16577192\noom 570\noom_kill 178\noom_group_kill 0\n', 'launcher_sha256': 'e2e4017f179c3d6125cb71e0de5c0223788185c6a74cceb494e186b62362c3d7', 'started': '2026-11-21T15:47:39.511907+00:00', 'finished': '2026-11-21T15:48:32.971666+00:00', 'exit': 0, 'node_pid': 2889306, 'node_closed': True, 'chromium_pids': [2889318], 'remaining_chromium': [], 'profile': '/dev/shm/shanghai-jiangnan219-desktop-z_j12gpn', 'report': '/dev/shm/jiangnan219-final/segments/desktop/main-browser.json', 'report_sha256': '3260948e27d5357ba276db71d4962279d329705e993a852b92ac4bf1686f9f87'}
+Traceback (most recent call last):
+  File "/tmp/wanyi343/mapping/219-desktop-model.py", line 8, in <module>
+    assert receipt==folder/'desktop-closed.json'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/dev/shm/jiangnan219-final/physical-segments.py", line 123, in <module>
+    try:run()
+        ^^^^^
+  File "/dev/shm/jiangnan219-final/physical-segments.py", line 44, in run
+    subprocess.run([sys.executable,'-B',guest,host],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', PosixPath('/tmp/wanyi343/mapping/219-desktop-model.py'), PosixPath('/dev/shm/jiangnan219-final/segments/desktop-closed.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/jiangnan219/run-official.py", line 19, in <module>
+    subprocess.run([sys.executable,'-Bu',qa/'physical-segments.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/dev/shm/jiangnan219-final/physical-segments.py')]' returned non-zero exit status 1.

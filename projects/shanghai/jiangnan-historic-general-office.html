@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>江南制造局旧址总办公楼 · 西公务厅</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x="-.44" aria-label="龙华东路南正面的两座门廊、两层窗列与三翼坡顶"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-jiangnan-historic-general-office&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 龙华东路北侧 · 原厂区门牌高雄路2号</p>
+    <h1>江南制造局旧址总办公楼</h1>
+    <p>西公务厅 · 原世博浦西园区</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">上海市文旅局记载，西公务厅为两层砖木建筑，两端各有门廊。龙华东路2013、2015和2021年的街照可见浅色抹灰、两层窄窗与红瓦坡顶。模型尺寸按照片及两期航片估算，院内窗列作简化处理。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">龙华东路正面</button>
+      <button type="button" data-view="oblique">斜看两座门廊</button>
+      <button type="button" data-view="above">俯看凹形三翼与院落</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-jiangnan-historic-general-office/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-jiangnan-historic-general-office');
+  </script>
+</body>
+</html>
