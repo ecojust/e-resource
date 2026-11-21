@@ -1,3 +1,11 @@
+# 新华路185弄1号花园住宅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-185-no1&mode=overview) · [单体旋转与下载](xinhua-lane-185-no1.html) · [来源与制作范围](source/precise/changning-xinhua-lane-185-no1/README.md) · [验收记录](data/audit/xinhua-lane-185-no1-v1/README.md)
+
+核对2M001、1号楼门牌与修缮前后实照，制作花园侧三间券廊、石栏板、棚式老虎窗、红砖墙和烟囱。
+
+近景 35,762 个三角面，远景 18,167 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,546,154 字节。上海主图现有 221 处独立入口，长宁区 12 处。[资产清单](assets/models/candidates/changning-xinhua-lane-185-no1/manifest.json)
+
 # 武夷路127号历史住宅南立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-wuyi-road-127-garden-front&mode=overview) · [单体旋转与下载](wuyi-road-127-history.html) · [来源与制作范围](source/precise/changning-wuyi-road-127-garden-front/README.md) · [验收记录](data/audit/wuyi-road-127-garden-front-v1/README.md)
