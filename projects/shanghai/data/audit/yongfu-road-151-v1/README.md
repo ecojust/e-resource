@@ -17,3 +17,7 @@
 从206处旧城的同地块进入207处新版，1280像素桌面以鼠标、390像素手机以触屏从目录选中永福路151号。两端默认画面都可辨西侧分格弧廊、中央两道阳台铁栏和东侧两排拱窗。窄屏里东侧窗组较小。近看庭院时能读到环廊竖框、上层柱和阳台的进深，右端部分窗组在该幅之外。[桌面默认](city-31170/desktop/map-desktop.png) · [手机默认](city-31170/phone/map-mobile.png) · [庭院近景](city-31170/architecture/map-garden-terrace-and-windows.png)
 
 同机位前后对照保留了住宅后方的相邻楼体。街面、屋面、远景和手机放大均完成实拍，16个地面测点及四件模型下载通过。第一次旧城实测遇到浏览器渲染进程中断，原日志和同址重跑结果均已保留。[同地旧景](city-31170/before/map-before.png) · [地面实测](city-31170/desktop/main-browser.json) · [远景与下载](city-31170/distant/main-browser.json) · [实图判读](city-31170/visible-architecture.json) · [首次中断记录](city-31170/first-control-interruption/log-proof.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/88cd37ba7eb2101d5848a2f39c20d37b317ee033/projects/shanghai/index.html#landmark=xuhui-yongfu-road-151-south-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，12 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
