@@ -19,18 +19,29 @@ def cell(value):
  return str(value or '—').replace('|','／').replace('\n',' ').replace('\r',' ')
 def link(title,url):
  return f'[{cell(title)}](<{url}>)' if url else cell(title)
-def compact_repeated_links(text):
- # Only rewrite the angle-bracket links emitted by link(); labels and URLs stay exact.
- pattern=re.compile(r'(?<!!)\[([^\[\]\n]+)\]\(<([^<>\n]+)>\)')
- counts=Counter(m.group(2) for m in pattern.finditer(text));refs={}
+def reference_labels(text):
+ return [' '.join(label.split()).casefold() for label in re.findall(r'^ {0,3}\[([^\[\]\n]{1,999})\]:',text,re.M)]
+def available_reference(label,reserved):
+ while label.casefold() in reserved:label='TD-'+label
+ return label
+def compact_repeated_links(text,reserved=()):
+ # A generated link can occur in prose or a cell, with either URL spelling.
+ pattern=re.compile(r'(?<!!)\[([^\[\]\n]+)\]\((<[^<>\n]+>|[^()\s]+)\)')
+ def destination(match):
+  raw=match.group(2)
+  return raw[1:-1] if raw.startswith('<') else raw
+ counts=Counter(destination(m) for m in pattern.finditer(text));refs={}
  for url,count in sorted(counts.items()):
   if count<2:continue
-  ref='MTD-'+hashlib.sha256(url.encode()).hexdigest()[:8]
-  saving=count*(len(url.encode())+2-len(ref))
-  if saving>len(f'[{ref}]: <{url}>\n'.encode())+1:refs[url]=ref
+  ref=available_reference(f'TD{len(refs)+1}',reserved)
+  # Use the smaller, unwrapped spelling for a conservative savings estimate.
+  if count*(len(url.encode())-len(ref))>len(f'[{ref}]: <{url}>\n'.encode())+1:
+   refs[url]=ref
  if not refs:return text
- assert len(set(refs.values()))==len(refs), 'Shared TODO link reference hash collision'
- compact=pattern.sub(lambda m:f'[{m.group(1)}][{refs[m.group(2)]}]' if m.group(2) in refs else m.group(0),text)
+ def shared_link(match):
+  ref=refs.get(destination(match))
+  return f'[{match.group(1)}][{ref}]' if ref else match.group(0)
+ compact=pattern.sub(shared_link,text)
  return compact+'\n'+'\n'.join(f'[{ref}]: <{url}>' for url,ref in refs.items())+'\n'
 def model_sizes(job):
  if not job.get('manifest'):return '—'
@@ -43,7 +54,7 @@ def model_sizes(job):
   parts.append(f"{label} {mb:.3f} MB" if mb<.1 else f"{label} {mb:.2f} MB")
  return '／'.join(parts)
 
-def official_road_lines(prefix):
+def official_road_lines(prefix, *, compact=False,reserved=()):
  d=json.loads((DATA/'official-road-leads.json').read_text());rows=d['records']
  review=json.loads((DATA/'official-road-reconciliation.json').read_text())
  for source in ('baseline','source'):
@@ -55,7 +66,8 @@ def official_road_lines(prefix):
  states={'existing_name':'已有名称匹配／仍待核对','new_name_candidate':'新名称候选／待核别名','composite_review':'组合条目／待拆分'}
  counts=Counter(r['match_status'] for r in rows)
  assert set(counts).issubset(states), 'Unknown official road match state'
- source_refs={url:'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8] for url in sorted({r['source_url'] for r in rows})}
+ sources=sorted({r['source_url'] for r in rows})
+ source_refs={url:(available_reference(f'TDR{i}',reserved) if compact else 'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8]) for i,url in enumerate(sources,1)}
  lines=['### 官方专题道路清单补充 TODO','',f"另收录 **{len(rows)} 条官方原表记录**：2022年主要道路范围及2023年绿化特色道路名录。包含 {counts['existing_name']} 条已有名称初步匹配、{counts['new_name_candidate']} 条新名称候选、{counts['composite_review']} 条组合名称待拆分；均不等于新增独立道路数，不能与上方名称数量直接相加。两份专题清单均不是全市道路底册，文件年代也不代表2026年现状已核验。",'',
  '以下仅整理道路名称、原表范围和明确区属，继续查沿街建筑及照片／文字资料。区属缺项保留待核，不从道路名推断。'+link('来源、匹配依据及机器可读记录',prefix+'official-road-leads.json'),'','<details><summary>展开全部官方道路／路段资料待办</summary>','','| ID | 原表道路名称 | 明确区属 | 原表范围 | 来源 | TODO |','|---|---|---|---|---|---|']
  lines[4:4]=[f"名称复核已覆盖其余 {len(reviewed)} 个源行，提出 {review['summary']['proposed_new_name_leads_distinct_strings']} 个待查名称；仅为名称关联及拆分建议，不增加已确认道路数。组合范围仍属于原表整组，不能赋给每个拆分名称。"+link('逐行复核与未解项',prefix+'official-road-reconciliation.json'),'']
@@ -75,7 +87,7 @@ def official_road_lines(prefix):
  lines += [f'[{ref}]: <{url}>' for url,ref in source_refs.items()]+['']
  return lines
 
-def map_road_label_lines(prefix):
+def map_road_label_lines(prefix, *, compact=False,reserved=()):
  d=json.loads((DATA/'bund-map-road-label-leads.json').read_text());rows=d['records'];counts=d['counts']
  assert len({r['id'] for r in rows})==len(rows), 'Duplicate map label group ID'
  for path in (d['baseline_path'],d['official_path'],d['reconciliation_path']):
@@ -89,6 +101,7 @@ def map_road_label_lines(prefix):
  assert all(r['matched_existing_road_ids'] for r in matched)
  assert sum(r['occurrence_count'] for r in rows)==counts['grouped_occurrences']
  tiles={t['id']:t for t in d['tiles']}
+ tile_refs={key:(available_reference(key,reserved) if compact else 'MR-'+key.replace('/','-')) for key in tiles}
  flags={'nonstandard_street_name_suffix_review':'名称类型待核','path_or_pedestrian_label_review':'步道／人行',
         'plaza_area_or_greenway_name_review':'广场／场所／绿道','road_shaped_name_identity_unverified':'路名形态／实体待核',
         'service_or_access_label_review':'服务／通行','tunnel_or_underpass_name_review':'隧道／地道','bridge_name_review':'桥',
@@ -102,13 +115,13 @@ def map_road_label_lines(prefix):
  for r in unmatched:
   assert set(r['label_review_flags']).issubset(flags), 'Unknown map label review flag'
   review_flags='、'.join(flags[f] for f in r['label_review_flags'])+'；class：'+'／'.join(r['classes'])
-  refs=' · '.join(f"[{tile_id}][MR-{tile_id.replace('/','-')}]" for tile_id in r['tile_ids'])
+  refs=' · '.join(f"[{key}][]" if tile_refs[key]==key else f"[{key}][{tile_refs[key]}]" for key in r['tile_ids'])
   todo=r['todo']
   if r['reconciliation_proposed_name_matches']:
    todo+='；官方待查名称同名：'+'、'.join(x['name'] for x in r['reconciliation_proposed_name_matches'])+'（实体仍待核）'
   lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(review_flags)} | {r['occurrence_count']} | {refs} | {cell(todo)} |")
  lines+=['','</details>','']
- lines += [f"[MR-{tile_id.replace('/','-')}]: <{t['source_url']}>" for tile_id,t in tiles.items()]+['']
+ lines += [f"[{tile_refs[tile_id]}]: <{t['source_url']}>" for tile_id,t in tiles.items()]+['']
  return lines
 
 def delivered_model_ids(queue):
@@ -169,7 +182,7 @@ def delivered_source_object_models(delivered_ids):
    for source_id in source_ids:associations.setdefault((layer,source_id),set()).add(model_id)
  return associations
 
-def build():
+def build(reserved=()):
  queue=json.loads((DATA/'queue.json').read_text())
  discovery=json.loads((DATA/'discovered-buildings.json').read_text())
  maps=json.loads((DATA/'named-map-leads.json').read_text())['records']
@@ -226,12 +239,13 @@ def build():
    lines.append(f"| {link(m['name'],m.get('url'))} | {cell(m['status'])} | {cell(m['next_action'])} |")
  lines+=['','### 按区列出的未完成建筑与构件 TODO','',
  '当前范围复核确认已完成的主楼不再重复安排制作；有遗漏构件的条目沿用源ID，只列剩余任务。其余成组地址仍须拆分到具体楼栋，名录年代、地址或照片链接本身不足以完成外观建模，已有模型的可能关联仅作查重提示。','']
+ batch_refs={batch:available_reference(f'H{batch}',reserved) for batch in {r['batch'] for r in records}}
  for district in queue['district_order']:
   group=[r for r in active_records if r['district']==district]
   lines += [f'<details><summary>{district}：{len(group)}条未完成范围／调查线索</summary>','','| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |','|---|---|---|---|---|']
   for r in group:
    title=r['name']
-   refs=f"[名录][H{r['batch']}]"
+   refs=f"[名录][{batch_refs[r['batch']]}]"
    if r.get('photo_url'):refs+=' · 照片待核'
    todo='待核外观／拆栋'
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
@@ -247,25 +261,25 @@ def build():
      todo='已关联单体：'+'、'.join(m['id'] for m in review['existing_models'])+'；'+review['modeled_scope_or_gap']+'；未将整处名录判为完成'
     else:todo+='；'+review['split_review']['note']
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']
-   lines.append(f"| {cell(r['id'])} | {cell(title)} | {cell(r['address'])} | {refs} | {cell(todo)} |")
+   lines.append(f"|{cell(r['id'])}|{cell(title)}|{cell(r['address'])}|{refs}|{cell(todo)}|")
   lines+=['','</details>','']
  lines+=['### 道路资料搜集 TODO','','表中“查资料”指逐页读取、查沿街建筑／照片与文字、核对照片并拆为模型任务。道路名可能含历史名称、跨区道路或同名路，尚不是完整市政道路清单。各条原文入口见[街道索引](projects/shanghai/data/model-todo/STREETS.md)。','','<details><summary>展开全部道路名称线索</summary>','','| 道路 | 分类索引给出的区（待核） | TODO |','|---|---|---|']
  for road in roads:
   lines.append(f"| {cell(road.get('name_simplified',road['name']))} | {cell('、'.join(road['districts_indexed']))} | 查资料 |")
  lines+=['','</details>','']
- lines+=official_road_lines('projects/shanghai/data/model-todo/')
- lines+=map_road_label_lines('projects/shanghai/data/model-todo/')
+ lines+=official_road_lines('projects/shanghai/data/model-todo/',compact=True,reserved=reserved)
+ lines+=map_road_label_lines('projects/shanghai/data/model-todo/',compact=True,reserved=reserved)
  lines += [f'### 既有地图中的具名建筑待查线索（剩余{len(active_maps)}条／已关联{associated_map_count}条）','',
   f'原始{len(maps):,}条具名地图要素中，{associated_map_count}条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余{len(active_maps)}条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。','',
   '<details><summary>展开剩余具名地图线索</summary>','','| 源ID | 名称 | 区 | TODO |','|---|---|---|---|']
  for m in active_maps:
-  lines.append(f"| {cell(m['id'])} | {cell(m['name'])} | {cell(m['district'])} | 核身份／去重／查建筑参考 |")
+  lines.append(f"|{cell(m['id'])}|{cell(m['name'])}|{cell(m['district'])}|核身份／去重／查建筑参考|")
  lines+=['','</details>','']
- for batch in sorted({r['batch'] for r in records}):
+ for batch in sorted(batch_refs):
   url=next(r['source_url'] for r in records if r['batch']==batch)
-  lines.append(f'[H{batch}]: <{url}>')
+  lines.append(f'[{batch_refs[batch]}]: <{url}>')
  assert sum(counts.values())==sum(1 for r in records if r['district'] in queue['district_order'])
- return compact_repeated_links('\n'.join(lines).rstrip()+'\n')
+ return compact_repeated_links('\n'.join(lines).rstrip()+'\n',reserved)
 def street_index():
  d=json.loads((DATA/'discovered-buildings.json').read_text());roads=json.loads((DATA/'discovered-streets.json').read_text());q=json.loads((DATA/'queue.json').read_text())
  b={r['id']:r for r in d['records']}
@@ -288,14 +302,19 @@ def street_index():
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--check',action='store_true');a=p.parse_args()
- readme=ROOT/'README.md';s=readme.read_text();block=START+'\n'+build()+END
+ readme=ROOT/'README.md';s=readme.read_text()
  if START in s:
-  before,rest=s.split(START,1);_,after=rest.split(END,1);updated=before+block+after
+  before,rest=s.split(START,1);_,after=rest.split(END,1)
+  reserved=set(reference_labels(before+after))
+ else:
+  reserved=set(reference_labels(s))
+ block=START+'\n'+build(reserved)+END
+ if START in s:updated=before+block+after
  else:updated=s.replace('## 上海全景建模',block+'\n\n## 上海全景建模',1)
  from sync_readme_districts import normalize_model_view_links
  updated=normalize_model_view_links(updated)
- reference_counts=Counter(' '.join(label.split()).casefold() for label in re.findall(r'^ {0,3}\[([^\[\]]{1,999})\]:',updated,re.M))
- assert all(reference_counts[label.casefold()]==1 for label in re.findall(r'^\[(MTD-[0-9a-f]{8})\]:',block,re.M)), 'Shared TODO link reference conflicts with an existing README reference'
+ reference_counts=Counter(reference_labels(updated))
+ assert all(reference_counts[label]==1 for label in reference_labels(block)), 'Shared TODO link reference conflicts with an existing README reference'
  assert len(updated.encode('utf-8'))<=500_000, 'README risks GitHub preview truncation; shorten repeated text/links while retaining all TODO rows'
  street=DATA/'STREETS.md';street_text=street_index()
  if a.check:

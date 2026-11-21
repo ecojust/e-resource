@@ -1,3 +1,11 @@
+# 枕流公寓
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-brookside-apartments&mode=overview) · [单体旋转与下载](brookside-apartments.html) · [来源与制作范围](source/precise/jingan-brookside-apartments/README.md) · [验收记录](data/audit/brookside-apartments-v1/README.md)
+
+按2B020、华山路731号、2019年有方位记录的航拍与独立屋面资料核对原楼2669，制作南向七层折翼、花园面窗组和中央顶层券廊。
+
+近景 84,852 个三角面，远景 34,172 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 8,291,489 字节。上海主图现有 240 处独立入口，静安区 28 处。[资产清单](assets/models/candidates/jingan-brookside-apartments/manifest.json)
+
 # 克莱门公寓（复兴中路弄口西侧前楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-clements-apartments-west-front&mode=overview) · [单体旋转与下载](clements-apartments-west-front.html) · [来源与制作范围](source/precise/xuhui-clements-apartments-west-front/README.md) · [验收记录](data/audit/clements-apartments-west-front-v1/README.md)
