@@ -1,3 +1,11 @@
+# 新华路315号花园住宅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-road-315-garden-house&mode=overview) · [单体旋转与下载](xinhua-road-315.html) · [来源与制作范围](source/precise/changning-xinhua-road-315-garden-house/README.md) · [验收记录](data/audit/xinhua-road-315-garden-house-v1/README.md)
+
+以315号保护牌、2024年发布的花园正景、旧平面和南北实照建立露木山墙、坡屋顶和花园侧窗墙，区别各期外观。
+
+近景 30,409 个三角面，远景 13,760 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,052,620 字节。上海主图现有 222 处独立入口，长宁区 13 处。[资产清单](assets/models/candidates/changning-xinhua-road-315-garden-house/manifest.json)
+
 # 新华路185弄1号花园住宅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-185-no1&mode=overview) · [单体旋转与下载](xinhua-lane-185-no1.html) · [来源与制作范围](source/precise/changning-xinhua-lane-185-no1/README.md) · [验收记录](data/audit/xinhua-lane-185-no1-v1/README.md)

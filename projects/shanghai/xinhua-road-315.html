@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>新华路315号花园住宅</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="positive-x" data-oblique-x="0.59" aria-label="新华路315号花园住宅模型"></main>
+  <header>
+    <a href="index.html#landmark=changning-xinhua-road-315-garden-house&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">长宁区 · 新华路315号</p>
+    <h1>新华路315号花园住宅</h1>
+    <p>前凸山墙、红瓦坡顶和通向花园的二层阳台</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">花园面采用2024年发布照片中的红砖宽券和两层退台。转到新华路一侧，可见北庭院的两道露木山墙。1994年保护牌记1930年竣工，另有1948年和1949年的记载。模型保留这项年代分歧。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">南侧花园立面</button>
+      <button type="button" data-view="oblique">花园山墙与阳台</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/changning-xinhua-road-315-garden-house/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-xinhua-road-315-garden-house');
+  </script>
+</body>
+</html>

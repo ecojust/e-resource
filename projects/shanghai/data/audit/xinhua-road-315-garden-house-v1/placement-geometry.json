@@ -1,0 +1,378 @@
+{
+  "id": "changning-xinhua-road-315-garden-house",
+  "source_sha256": "0edcc02dae5f4608b0e227e7dbbcddef6de0273e3f38f6cdd4342d7064a06ffa",
+  "manifest_sha256": "d9fbddfbeb52516cfc945ddd18aa40b439e20e3ff8806aaf0b296af25af4d553",
+  "contract_sha256": "14fa4907702154931b7caaa21d9da9f99cbe23c3a1c6e55e58005c8ff05b7186",
+  "script_sha256": "fc050bbb80d44c6855831b02852a849f9ac0ad2bfe3c3eba44160220a1fc772b",
+  "assets": {
+    "raw": {
+      "sha256": "1be1b6dae892e5ded61a5157511720ea8b48ec68b276a4c5bbc9d8e9df59a75a",
+      "bytes": 1755916,
+      "triangles": 30409
+    },
+    "web": {
+      "sha256": "687c295808bcddd6682ae57d24c25a138c7adcf4dd76b20533ce9882beb3afeb",
+      "bytes": 585412,
+      "triangles": 30409
+    },
+    "lod": {
+      "sha256": "2737a798270fd9d46611adc9e4e292c690ef9e9e13c5101ba1ebcf95acb9fc9c",
+      "bytes": 235364,
+      "triangles": 13760
+    }
+  },
+  "near_and_far": {
+    "near": {
+      "triangles": 12586,
+      "height_m": 21.700000762939453,
+      "retained_m2": 0.0,
+      "actual_model_overlap_m2": 431.847288744393,
+      "old_m2": 441.436766921924,
+      "cut_m2": 441.436766921924,
+      "peer_cut_gap_m": 0.8548515739931126,
+      "peer_cut_m2": 0.0,
+      "peer_model_gap_m": 1.0424855000000015,
+      "other_triangles": 125410,
+      "assignment": {
+        "method": "For each near triangle, all three vertices and centroid agree both with nearest frozen vector footprint and with the far surfaces decoded from per-vertex feature IDs.",
+        "largest_own_vertex_or_centroid_distance_m": 0.1007563982299397,
+        "smallest_next_owner_margin_m": 1.1637897059906726,
+        "vector_gap_m": 1.3362136959667357,
+        "checked_near_points": 551984
+      }
+    },
+    "far": {
+      "triangles": 28,
+      "height_m": 21.700000762939453,
+      "retained_m2": 0.0,
+      "actual_model_overlap_m2": 426.9153412501368,
+      "old_m2": 434.29108060574,
+      "cut_m2": 434.29108060574,
+      "peer_cut_gap_m": 0.9247428481737581,
+      "peer_cut_m2": 0.0,
+      "peer_model_gap_m": 1.1125414999999987,
+      "other_triangles": 316,
+      "assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      }
+    }
+  },
+  "neighbors": {
+    "237": {
+      "footprint_gap_to_cut_m": 6.583866039385713,
+      "footprint_gap_to_model_m": 5.12141303436008
+    },
+    "4002": {
+      "footprint_gap_to_cut_m": 0.9247564695246357,
+      "footprint_gap_to_model_m": 1.1125586721619918
+    },
+    "1552": {
+      "footprint_gap_to_cut_m": 7.749026137722539,
+      "footprint_gap_to_model_m": 7.5437888771267865
+    },
+    "1401": {
+      "footprint_gap_to_cut_m": 9.559693687967261,
+      "footprint_gap_to_model_m": 9.674211450521522
+    },
+    "4091": {
+      "footprint_gap_to_cut_m": 8.540030896472944,
+      "footprint_gap_to_model_m": 8.460867243692313
+    },
+    "672": {
+      "footprint_gap_to_cut_m": 12.041395071459595,
+      "footprint_gap_to_model_m": 12.437518487106818
+    }
+  },
+  "ground_probes": [
+    {
+      "name": "three garden windows",
+      "xy": [
+        -3.18,
+        -1.4
+      ],
+      "point": [
+        121.42213059370687,
+        31.204549162696857
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": false
+    },
+    {
+      "name": "grass before projecting gable",
+      "xy": [
+        -3.18,
+        -2.14
+      ],
+      "point": [
+        121.42212759188591,
+        31.204543022953903
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "garden door setback",
+      "xy": [
+        4.59,
+        0.7
+      ],
+      "point": [
+        121.42221448425258,
+        31.204539627258285
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": true
+    },
+    {
+      "name": "garden room glazing",
+      "xy": [
+        4.59,
+        1.39
+      ],
+      "point": [
+        121.4222172832478,
+        31.204545352153954
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "arcade west springing pier",
+      "xy": [
+        9.18,
+        0.3
+      ],
+      "point": [
+        121.42225738633886,
+        31.204520382868502
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "arcade east springing pier",
+      "xy": [
+        14.69,
+        0.3
+      ],
+      "point": [
+        121.42231083537024,
+        31.204501265194278
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "open passage through broad arch",
+      "xy": [
+        11.95,
+        0.35
+      ],
+      "point": [
+        121.42228445918582,
+        31.204511186835038
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": true
+    },
+    {
+      "name": "open bay before rear door",
+      "xy": [
+        11.95,
+        2.66
+      ],
+      "point": [
+        121.42229382973505,
+        31.204530352794528
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": true
+    },
+    {
+      "name": "closed veranda glazed doors",
+      "xy": [
+        11.95,
+        3.2
+      ],
+      "point": [
+        121.42229602025306,
+        31.20453483314813
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "northwest wing",
+      "xy": [
+        -8.4,
+        18.68
+      ],
+      "point": [
+        121.42216141259993,
+        31.20473387673935
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "recess between two northern gables",
+      "xy": [
+        -2.49,
+        14.58
+      ],
+      "point": [
+        121.42220211006804,
+        31.204679353817614
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "north stair bay",
+      "xy": [
+        2.08,
+        13.55
+      ],
+      "point": [
+        121.42224226254261,
+        31.2046549517765
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": false
+    },
+    {
+      "name": "north entry court",
+      "xy": [
+        2.08,
+        16.5
+      ],
+      "point": [
+        121.42225422926133,
+        31.204679427747482
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "lawn",
+      "xy": [
+        3,
+        -4.2
+      ],
+      "point": [
+        121.42217918374378,
+        31.204504488908032
+      ],
+      "expected": null,
+      "modelObstacle": false,
+      "cut": false
+    },
+    {
+      "name": "preserved neighboring building 237",
+      "xy": [
+        -9.422076027506783,
+        -12.512561597846197
+      ],
+      "point": [
+        121.42202496499733,
+        31.204478620006398
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false,
+      "ownerLocalId": 237
+    },
+    {
+      "name": "preserved neighboring building 4002",
+      "xy": [
+        -23.18789006233053,
+        -4.719566329516226
+      ],
+      "point": [
+        121.4219230439269,
+        31.20459104040722
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false,
+      "ownerLocalId": 4002
+    },
+    {
+      "name": "preserved neighboring building 1552",
+      "xy": [
+        -27.0714024621167,
+        11.390531738629637
+      ],
+      "point": [
+        121.42195072327641,
+        31.20473817925524
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false,
+      "ownerLocalId": 1552
+    },
+    {
+      "name": "preserved neighboring building 1401",
+      "xy": [
+        33.55865770098946,
+        16.144726109019185
+      ],
+      "point": [
+        121.42255814267254,
+        31.20456726082116
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false,
+      "ownerLocalId": 1401
+    },
+    {
+      "name": "preserved neighboring building 4091",
+      "xy": [
+        -26.80202961004955,
+        20.398090114604187
+      ],
+      "point": [
+        121.4219898755864,
+        31.204811979713075
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false,
+      "ownerLocalId": 4091
+    },
+    {
+      "name": "preserved neighboring building 672",
+      "xy": [
+        32.77945644741533,
+        -14.908559934028972
+      ],
+      "point": [
+        121.42242461601815,
+        31.204312316515807
+      ],
+      "expected": "building",
+      "modelObstacle": false,
+      "cut": false,
+      "ownerLocalId": 672
+    }
+  ],
+  "model_projection_m2": 472.0705421430915,
+  "collision_m2": 401.96830000000006,
+  "old_vector_m2": 434.2919253997681,
+  "mask_m2": 475.07816605743
+}
