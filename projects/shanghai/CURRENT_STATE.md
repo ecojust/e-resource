@@ -1,3 +1,11 @@
+# 四川北路四行大楼临街北段
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-sihang-building-north-front&mode=overview) · [单体旋转与下载](sihang-building.html) · [来源与制作范围](source/precise/hongkou-sihang-building-north-front/README.md) · [验收记录](data/audit/sihang-building-v1/README.md)
+
+对照市表2F008、四川北路1274–1290号的修缮报道及两个时期街照，制作临街北段可辨的竖肋、凸窗与底层商铺层带。
+
+近景 29,114 个三角面，远景 12,564 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,730,986 字节。上海主图现有 250 处独立入口，虹口区 15 处。[资产清单](assets/models/candidates/hongkou-sihang-building-north-front/manifest.json)
+
 # 皇家公寓淮海中路、常熟路转角立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-empire-mansions-street-front&mode=overview) · [单体旋转与下载](empire-mansions.html) · [来源与制作范围](source/precise/xuhui-empire-mansions-street-front/README.md) · [验收记录](data/audit/empire-mansions-v1/README.md)

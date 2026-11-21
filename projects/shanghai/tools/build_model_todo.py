@@ -265,7 +265,7 @@ def build(reserved=()):
   lines+=['','</details>','']
  lines+=['### 道路资料搜集 TODO','','表中“查资料”指逐页读取、查沿街建筑／照片与文字、核对照片并拆为模型任务。道路名可能含历史名称、跨区道路或同名路，尚不是完整市政道路清单。各条原文入口见[街道索引](projects/shanghai/data/model-todo/STREETS.md)。','','<details><summary>展开全部道路名称线索</summary>','','| 道路 | 分类索引给出的区（待核） | TODO |','|---|---|---|']
  for road in roads:
-  lines.append(f"| {cell(road.get('name_simplified',road['name']))} | {cell('、'.join(road['districts_indexed']))} | 查资料 |")
+  lines.append(f"|{cell(road.get('name_simplified',road['name']))}|{cell('、'.join(road['districts_indexed']))}|查资料|")
  lines+=['','</details>','']
  lines+=official_road_lines('projects/shanghai/data/model-todo/',compact=True,reserved=reserved)
  lines+=map_road_label_lines('projects/shanghai/data/model-todo/',compact=True,reserved=reserved)
