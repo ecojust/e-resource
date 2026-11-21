@@ -11,3 +11,7 @@
 正式31195和31196城市目录从232处增至233处。390×844手机触屏打开德义大楼，可从弧形转角屋顶看到临街橱窗。790×590桌面用鼠标打开同栋时已载入168,810面近景模型，地点牌挡住地面层一部分；点一下「拉近视角」后，城市近景瓦片也已载入。两个默认视角均保留。屋顶图能辨随街角弯折的女儿墙，路口低位图可见两条街交接处的石带、店面大窗和窗间墩。[手机默认](city-31196/phone/map-mobile-settled.png) · [桌面默认](city-31196/desktop/map-desktop.png) · [拉近一次](city-31196/desktop/map-desktop-after-zoom-button.png) · [屋顶](city-31196/architecture/map-roof.png) · [转角底层橱窗](city-31196/shopfront/map-corner-retail-glazing.png)
 
 街区内鼠标和触屏分别点中同一栋楼，街沿内外和邻楼共19处地面检测符合登记，远档实载44,288面。单体页两端切换近远档，四种下载共16,605,883字节，文件逐件与制作清单一致。初轮桌面检查曾在默认缩放17.05等待街区近瓦片，正式街区模块的启用阈值为17.3。原次记录及其哈希可供还原。[入场与下载](city-31196/visual-review.json) · [原桌面等待记录](city-31196/first-desktop-attempt/source-and-recovery.json) · [原专项等待记录](city-31196/first-architecture-attempt/source-and-recovery.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 42 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9234f7012eea783d3e6a2ad040ab19402bf4927e/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 42 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

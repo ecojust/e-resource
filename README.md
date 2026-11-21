@@ -3886,7 +3886,7 @@
 | 望德堂院内门廊与曲线山墙 | 2026-11-21 12:08:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wangdetang-augustinian-office&mode=overview) |
 | 爱登公寓（常德公寓） | 2026-11-21 12:21:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-eddington-house&mode=overview) |
 | 泰兴大楼（MEDHURST大楼）南京西路与泰兴路转角 | 2026-11-21 12:58:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview) |
-| 德义大楼（南京西路与石门路转角） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) |
+| 德义大楼（南京西路与石门路转角） | 2026-11-21 13:34:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) |
 
 ### 普陀区（2处）
 
