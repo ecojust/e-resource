@@ -19,3 +19,7 @@
 最终相机更新后，分别在253处和254处两个地图版本复查了目录、相机模块和原始近远景网格。第254处的单体页面、查看器脚本、模型清单和四个下载均与原实拍所用文件一致。最终站逐项读取1,540个文件、1,303,544,339字节，五组范围请求均返回206。[前后站HTTP实测](city-28217/real-28k-predecessor-and-new-building.json) · [最终站完整核验](city-28217/after-all-http.json)
 
 正式地图先从253处旧城取图，再经普通地标目录打开254处新城。手机默认图能看见整座住宅，桌面能认出红瓦坡顶和外廊。庭院近景能辨方柱与栏杆。东入口的专项视角受屋顶和地点卡遮挡，只露出部分门墙。独立页庭院视角保留柱廊与错层门墙的相对位置。17个地面与邻屋点、鼠标和触屏选择、近远档切换均已复核。桌面捕获曾三次发生渲染进程中止，第四次成功，并保留前三次的原始日志与退出记录。[逐图观察](final-map-31217/manual-visual-review.json) · [正式地图结果](final-map-31217/results.json) · [桌面庭院斜视](viewer-desktop-courtyard.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/be01bf87212410bb03f92607650c3c158c473043/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1634-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
