@@ -16,7 +16,8 @@ function validHistoricalPeriod(view,exact) {
     return archiveYear(view.building_year)&&view.building_year<=years[0];
   }
   return exact(view,['kind','listed_year','approximate_loss_year','evidence_kind','evidence_years'])
-    && view.evidence_kind==='published-drawing'&&archiveYear(view.listed_year)
+    && (view.evidence_kind==='published-drawing'||(view.evidence_kind==='reprinted-photograph'&&years[0]===years[1]&&view.approximate_loss_year<=years[0]))
+    && archiveYear(view.listed_year)
     && archiveYear(view.approximate_loss_year)&&view.listed_year<=view.approximate_loss_year;
 }
 
@@ -25,7 +26,8 @@ export function validHistoricalSite(row) {
   const exact=(object,keys)=>object && Object.keys(object).length===keys.length && keys.every(key=>Object.hasOwn(object,key));
   return typeof row.id==='string' && row.candidate_manifest===`assets/models/candidates/${row.id}/manifest.json`
     && row.kind==='historical-site' && exact(row,fields) && typeof row.name==='string' && row.name.length>0
-    && /^[a-z0-9]+(?:-[a-z0-9]+)*-history\.html$/.test(row.individual_page)
+    && (/^[a-z0-9]+(?:-[a-z0-9]+)*-history\.html$/.test(row.individual_page)
+        || (row.id==='jingan-chen-bingqian-historic-residence' && row.individual_page==='chen-bingqian-historic-residence.html'))
     && validHistoricalPeriod(view,exact)
     && exact(row.navigation,['listed']) && row.navigation.listed===false
     && row.collision_geometry===null && row.replacement_geometry===null
@@ -63,7 +65,9 @@ export function setupHistoricalView({dialog,button,frame,title,closeButton,onMod
       : `${period}年照片`;
     const evidence=active.historical_view.evidence_kind==='published-drawing'
       ? (first===last ? `${first}年出版的钢笔画` : `${first}年出版的钢笔画，${last}年重刊`)
-      : dates;
+      : active.historical_view.evidence_kind==='reprinted-photograph'
+        ? `${first}年刊载的历史照片，拍摄年份未详`
+        : dates;
     title.textContent=`${active.name} · ${evidence}`;
     frame.title=active.name;
     frame.src=active.individual_page+'?embed=history';

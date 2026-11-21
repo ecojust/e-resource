@@ -1,7 +1,7 @@
 import {candidateVectorGeometry} from './candidate-vector-geometry.js';
 import {validSourceSection} from './candidate-source-sections.js?v=country-hospital-north-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
-import {validHistoricalSite} from './historical-view.js?v=historical-record-dates-v1';
+import {validHistoricalSite} from './historical-view.js?v=reprinted-historical-photograph-v1';
 
 const SHA=/^[a-f0-9]{64}$/;
 const finitePoint=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&Math.abs(p[0])<=180&&Math.abs(p[1])<=85;

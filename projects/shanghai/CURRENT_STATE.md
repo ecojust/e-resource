@@ -1,3 +1,11 @@
+# 陈炳谦宅（原托益住宅）双塔与券廊历史正立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-chen-bingqian-historic-residence&mode=overview) · [单体旋转与下载](chen-bingqian-historic-residence.html) · [来源与制作范围](source/precise/jingan-chen-bingqian-historic-residence/README.md) · [验收记录](data/audit/chen-bingqian-historic-residence-v1/README.md)
+
+按第二批2B012*及约1994年灭失脚注、原宅正面旧照和1948年航片，复原历史双角塔、上下两层各八券洞与花木上方可辨的中央低矮轮廓，仅在历史原址入口展示。
+
+近景 34,956 个三角面，远景 12,324 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,762,327 字节。上海主图现有 255 处独立入口，静安区 30 处。[资产清单](assets/models/candidates/jingan-chen-bingqian-historic-residence/manifest.json)
+
 # 淮海中路1634号花园住宅（院内柱廊与错层入口）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1634-residence&mode=overview) · [单体旋转与下载](huaihai-road-1634-residence.html) · [来源与制作范围](source/precise/xuhui-huaihai-road-1634-residence/README.md) · [验收记录](data/audit/huaihai-road-1634-residence-v1/README.md)

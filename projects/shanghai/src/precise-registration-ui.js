@@ -1,8 +1,9 @@
-import {historicalSiteCaption} from './historical-view.js?v=historical-record-dates-v1';
+import {historicalSiteCaption} from './historical-view.js?v=reprinted-historical-photograph-v1';
 /** Display only explicitly declared district/provider metadata. */
 export function placeDescription(place, districts = []) {
   if(place.kind==='historical-site') {
     const view=place.historical_view;
+    if(view.evidence_kind==='reprinted-photograph') return `${place.district_name} · ${historicalSiteCaption(view)} · 历史照片复原`;
     if(view.evidence_kind==='published-drawing') return `${place.district_name} · ${historicalSiteCaption(view)} · 出版画稿复原`;
     return `${place.district_name} · ${view.building_year}年建筑 · 历史照片复原`;
   }
