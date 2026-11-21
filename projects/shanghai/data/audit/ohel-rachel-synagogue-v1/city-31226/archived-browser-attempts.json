@@ -1,0 +1,76 @@
+{
+  "order": 226,
+  "previous_order": 225,
+  "previous_release_sha256": "9da6da5b17bbe3e418496b288f24dc9d85d47f773bf530a7a80fa1ca4984de1f",
+  "attempts": {
+    "before01-preload-enospc": {
+      "files": {
+        "process.json": "fc6412342e6fd4dbb5695656af7b8420b0b4a45c3ba294e22a2ccf0eca4ddf31",
+        "checker-inputs.json": "5d1c520f751775f1994c7f2a8937bb03f2cecbf40c03a96d617519522953049f",
+        "wait-and-run.log": "f3bd54a5de48dbe433b098a01f0971d17350bcfafeccaa1c4dfb9914bb423a92",
+        "prior-release.json": "c52567953558b198dca772a2a7205bd669009100b1d7fb78afc73ab4e8093af3",
+        "check-map-stages.cjs": "49bf9766abaf349534267a6c925cf2427f37127be6959c3e6d94627124a55829",
+        "run.py": "4c5c31d21ed0f51c41c0ed1381c381675b01021be167c33bdb7b2de47c69d91f",
+        "relocated-preload.json": "3422fed1638d5f3e43ac145b53773ae37df13f30778ef61646aa7bffe4e2addd",
+        "sequence.py": "c239a3b0eb386ef82fde9d059f64bc2bbd53f7ded903ed63df8e06bc8bea4ddb"
+      },
+      "replacement_files": {
+        "control-browser.json": "e61e6f92c397e48346d200ac018820e968ef38365b31519c2de70873a2e08d56",
+        "process.json": "1a292a1369711fd6a4075a2f85399b102c5704ce661171374f7c524d707e5186",
+        "map-before.png": "5b041d3fe0318cd9464367c8c80fd0b7806fc71df5ab5fed8ea33e284c3280a9",
+        "check-map-stages.cjs": "49bf9766abaf349534267a6c925cf2427f37127be6959c3e6d94627124a55829"
+      },
+      "observation": {
+        "phase": "before",
+        "failed_exit": 1,
+        "replacement_exit": 0,
+        "missing_report": true
+      }
+    },
+    "phone01-disappeared-materialized-root": {
+      "files": {
+        "phone.exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+        "process.json": "67f0f773833a77131a284a8e05b220029ecb2c00f3007fc91c4b3b21213fab4f",
+        "main-browser.json": "90f1d9446914a6185cd128ee32099a91191a2f5403214ed406e85c5af0b37464",
+        "phone.log": "73221cfe585875e4ae42e09802ebb685ef335b56b75544a472cd7d1de36d0bd9",
+        "map-mobile.png": "62f6e5b9f9571b840b71cb9b9be60003d0b3a95e0522a9ca8c00e7a0f182db19",
+        "map-mobile-settled.png": "8ae2e51a221c4b403453bfb37fccdc0f2ae81bb00f2c28a42516fcb90d5ae159"
+      },
+      "replacement_files": {
+        "process.json": "d2b2211a24136795b5ec9ca7930929abda6dfd7061a040b72285b4aff786d300",
+        "main-browser.json": "5482f3a362f03d2a60cc306ccd516fff15123e87a6c11db54a8f9c09f9596736",
+        "map-mobile.png": "4059c12749af0831e7397c8630223333d82fe383ad1e71112156164b1c7e0142",
+        "map-mobile-settled.png": "f53c315717221119561eb0e1f82d821df9e9df901cb7e464d9489c86610df5e6",
+        "check-map-stages.cjs": "49bf9766abaf349534267a6c925cf2427f37127be6959c3e6d94627124a55829"
+      },
+      "observation": {
+        "phase": "phone",
+        "failed_exit": 1,
+        "replacement_exit": 0,
+        "missing_report": false
+      }
+    },
+    "phone02-unix-socket-length": {
+      "files": {
+        "phone.exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+        "process.json": "1afeaff746ddc9489301f1c1bb562d359c57d7e3a57304343e1cda3a46478033",
+        "phone.log": "a419378487e13c47e4a934b560362d56e63fe6f6faf6647d1b7b144f1069663c"
+      },
+      "replacement_files": {
+        "process.json": "d2b2211a24136795b5ec9ca7930929abda6dfd7061a040b72285b4aff786d300",
+        "main-browser.json": "5482f3a362f03d2a60cc306ccd516fff15123e87a6c11db54a8f9c09f9596736",
+        "map-mobile.png": "4059c12749af0831e7397c8630223333d82fe383ad1e71112156164b1c7e0142",
+        "map-mobile-settled.png": "f53c315717221119561eb0e1f82d821df9e9df901cb7e464d9489c86610df5e6",
+        "check-map-stages.cjs": "49bf9766abaf349534267a6c925cf2427f37127be6959c3e6d94627124a55829"
+      },
+      "observation": {
+        "phase": "phone",
+        "failed_exit": 1,
+        "replacement_exit": 0,
+        "missing_report": true,
+        "browser_pid_in_log": 92899,
+        "browser_exit_signal": "SIGABRT"
+      }
+    }
+  }
+}

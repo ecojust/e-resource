@@ -1,3 +1,11 @@
+# 西摩路会堂（拉结会堂院内柱廊与侧窗）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-ohel-rachel-synagogue&mode=overview) · [单体旋转与下载](ohel-rachel-synagogue.html) · [来源与制作范围](source/precise/jingan-ohel-rachel-synagogue/README.md) · [验收记录](data/audit/ohel-rachel-synagogue-v1/README.md)
+
+按市表2B014、陕西北路500号现场铭牌、历年入口实照和世界古迹基金会航拍，制作朝东的院内柱廊、后方山墙及可辨侧窗。
+
+近景 29,008 个三角面，远景 20,356 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,315,625 字节。上海主图现有 263 处独立入口，静安区 31 处。[资产清单](assets/models/candidates/jingan-ohel-rachel-synagogue/manifest.json)
+
 # 高阳大楼东大名路双塔正立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-gaoyang-building-south-front&mode=overview) · [单体旋转与下载](gaoyang-building-south-front.html) · [来源与制作范围](source/precise/hongkou-gaoyang-building-south-front/README.md) · [验收记录](data/audit/gaoyang-building-south-front-v1/README.md)
