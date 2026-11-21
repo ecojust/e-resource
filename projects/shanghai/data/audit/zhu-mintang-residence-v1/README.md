@@ -23,3 +23,7 @@
 两组原地图网格各有20栋。实际载入这两组时，院内4287、3702及其余四栋核查对象均继续挡住行人，门扇、门柱、短墙和狮座挡住行人，门前人行道和绕过狮座的地面可通行。两版各实测24个地面点。街区远景载入17,872面版本。440×380画面中位置卡覆盖中心，狮首和门扇要在57,736面的近景中查看。独立页实际保存的原始GLB、网页近景、远景和Blender工程均与各自清单逐字节匹配。[两档与四次下载](city-31179/after.json) · [近远地面](city-31179/runtime-overlay.json) · [远景取证](city-31179/map-distant.png) · [1,231项正式文件的下载校验](city-31179/all-http.json)
 
 首次在同一浏览器连续打开两个全城视图时，取得桌面图后渲染器因内存不足退出。另一次从已加载近景切换至远景时也曾中止。正式图使用分别启动并退出的浏览器，逐次记录实际设备尺寸、相机、网格与截图的校验值。[首次中断](city-31179/initial-after-renderer-interruption/after.json) · [远景初试](city-31179/initial-distant-renderer-interruption/after.json) · [各次记录与正式地图](city-31179/release-evidence.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c84c142a719f541f2ea801955bb287c06573815e/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

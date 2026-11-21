@@ -3830,7 +3830,7 @@
 | 丁香花园一号楼拱廊与露木山墙 | 2026-11-21 08:40:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview) |
 | 淮海中路1431号巴塞住宅历史花园立面 | 2026-11-21 08:49:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
 | 岳阳路110号住宅花园立面 | 2026-11-21 09:17:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-110-residence&mode=overview) |
-| 朱敏堂住宅乌鲁木齐南路151号街门与双石狮 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) |
+| 朱敏堂住宅乌鲁木齐南路151号街门与双石狮 | 2026-11-21 09:55:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) |
 
 ### 长宁区（10处）
 
