@@ -37,3 +37,7 @@
 两端的独立页面均拍到完整正面、斜面及U形屋顶。正面可看到两层连续门窗和两端较宽的入口。 [桌面正面](city-31219/ordinary-viewer/viewer-desktop-full-front.png) · [手机斜面](city-31219/ordinary-viewer/viewer-mobile-full-oblique.png) · [屋顶与返翼](city-31219/ordinary-viewer/viewer-desktop-lod-above.png) · [六幅图及四项下载](city-31219/ordinary-viewer/viewer.json)
 
 初次独立页与控制试拍的记录、同一时段其他建筑的开发测试均已留档。六段城市实拍与本栋正式独立页各自附有原始报告。 [早期尝试及开发回单](city-31219/attempts/index.json) · [人工判读与逐图校验值](city-31219/manual-visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/67035bcf984053c0e2ef8b54e04ce74ef00bcda4/projects/shanghai/index.html#landmark=huangpu-jiangnan-historic-general-office&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

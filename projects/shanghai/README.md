@@ -168,7 +168,7 @@
 | 培文公寓（淮海中路街面与重庆南路圆角） | 2026-11-21 13:18:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) |
 | 南昌大楼（阿斯屈来特公寓）街角入口 | 2026-11-21 13:58:46 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-astrid-apartments-corner&mode=overview) |
 | 永业大楼（杨氏公寓）淮海中路、雁荡路圆角 | 2026-11-21 21:15:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-young-apartments&mode=overview) |
-| 江南制造局旧址总办公楼（西公务厅） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jiangnan-historic-general-office&mode=overview) |
+| 江南制造局旧址总办公楼（西公务厅） | 2026-11-22 00:01:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jiangnan-historic-general-office&mode=overview) |
 
 ### 徐汇区（52处）
 
