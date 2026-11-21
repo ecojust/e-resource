@@ -1,3 +1,11 @@
+# 岳阳路110号住宅花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-110-residence&mode=overview) · [单体旋转与下载](yueyang-road-110.html) · [来源与制作范围](source/precise/xuhui-yueyang-road-110-residence/README.md) · [验收记录](data/audit/yueyang-road-110-v1/README.md)
+
+据2D027、衡复街区的1948年行号图及实景照片，制作岳阳路110号两层住宅的花园窗廊、雨篷和可见红瓦屋顶。
+
+近景 6,450 个三角面，远景 3,502 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 771,296 字节。上海主图现有 213 处独立入口，徐汇区 32 处。[资产清单](assets/models/candidates/xuhui-yueyang-road-110-residence/manifest.json)
+
 # 郭氏兄弟住宅弧形檐廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-kwok-brothers-residence-historic-front&mode=overview) · [单体旋转与下载](kwok-brothers-residence-history.html) · [来源与制作范围](source/precise/jingan-kwok-brothers-residence-historic-front/README.md) · [验收记录](data/audit/kwok-brothers-residence-v1/README.md)
