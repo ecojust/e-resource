@@ -1,3 +1,11 @@
+# 朱敏堂住宅乌鲁木齐南路151号街门与双石狮
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) · [单体旋转与下载](zhu-mintang-residence.html) · [来源与制作范围](source/precise/xuhui-zhu-mintang-residence/README.md) · [验收记录](data/audit/zhu-mintang-residence-v1/README.md)
+
+依据2011年街照和2013至2021年多站影像制作闭合双扇门、151号门牌柱、门侧短墙及双石狮；按2019年门板与柱帽制作。
+
+近景 57,736 个三角面，远景 17,872 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,967,882 字节。上海主图现有 216 处独立入口，徐汇区 33 处。[资产清单](assets/models/candidates/xuhui-zhu-mintang-residence/manifest.json)
+
 # 贝宅花园侧主楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) · [单体旋转与下载](pei-mansion-garden-front.html) · [来源与制作范围](source/precise/jingan-pei-mansion-garden-front/README.md) · [验收记录](data/audit/pei-mansion-garden-front-v1/README.md)

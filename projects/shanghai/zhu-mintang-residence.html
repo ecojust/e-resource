@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>朱敏堂住宅151号街门与双石狮</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="negative-x" data-oblique-x="0.48" aria-label="朱敏堂住宅151号街门与双石狮模型"></main>
+  <header>
+    <a href="index.html#landmark=xuhui-zhu-mintang-residence&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">徐汇区 · 乌鲁木齐南路151号</p>
+    <h1>朱敏堂住宅151号街门与双石狮</h1>
+    <p>两尊带座石狮守着四格雕饰的双扇门</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">门柱上的绿色门牌写着151号。2011年照片已见两尊石狮，模型按2019年实照制作球形柱帽、双扇门和门侧短墙。地方志记载原有三宅，1995年翻建。院内山墙和文献所记门廊原柱另列。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">乌鲁木齐南路正面</button>
+      <button type="button" data-view="oblique">门扇与双石狮</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-zhu-mintang-residence/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-zhu-mintang-residence');
+  </script>
+</body>
+</html>
