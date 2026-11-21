@@ -22,3 +22,7 @@
 最终206处站点的1,149项正式文件已按实际URL逐字节请求，共1,032,743,350字节。[全量HTTP回执](23169-all-http.json)
 
 在205处的前一版本和新增后的206处版本，以同一街区视角核对了登记点。桌面和390像素触屏均从按区目录进入，现状图可见原有街区与登记牌。地点卡的“查看历史立面”打开单独的花园立面，正面的底层门廊、台阶和上下两排窗在两种屏宽均可辨认。查看器标注2010—2011年为影像资料收录年份，拍摄日期未详。实测切换近景和远景、关闭历史页后回到原地点卡。登记点在前后两版各连续三次地面检查均可通行，历史模型在现状地图的三角面与裁切均为零。[两版实测](final-map-31169/results.json) · [桌面原址](final-map-31169/desktop-location.png) · [手机历史近景](final-map-31169/mobile-archive-near.png) · [两代网页和文件绑定](final-map-31169/bound-inputs.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/caa6f7f12f49987a4beb96738bf685480d099b27/projects/shanghai/index.html#landmark=xuhui-huaihai-1469-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，12 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

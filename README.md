@@ -3820,7 +3820,7 @@
 | 逸村2号淮海中路园侧立面 | 2026-11-21 07:12:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yicun-no2-street-front&mode=overview) |
 | 永嘉路501号住宅北街面、圆塔与花园立面 | 2026-11-21 07:46:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongjia-road-501-residence&mode=overview) |
 | 岳阳路145号花园住宅南立面与折檐红瓦屋顶 | 2026-11-21 08:06:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-145-residence&mode=overview) |
-| 淮海中路1469号历史花园立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1469-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
+| 淮海中路1469号历史花园立面 | 2026-11-21 08:10:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1469-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
 
 ### 长宁区（10处）
 
