@@ -15,3 +15,7 @@
 第224处接入后，城市目录由260处增至261处。采用真实桌面鼠标和手机触屏，从四川路桥点选了益丰洋行。两次回选均保持同页，地点卡显示益丰洋行全名。街面近摄可以数出底层五道券洞，斜角近摄可看见相邻两个方向的圆窗。普通街面视角打开的地点卡会挡住左下立面的一部分。[街面照](city-31224/map-street-facade.png) · [北京东路五券](city-31224/map-beijing-road-shop-arches.png) · [切角双圆窗](city-31224/map-chamfer-and-two-oculi.png) · [俯视屋顶](city-31224/map-roof.png)
 
 远景缩至街区比例时使用10,811面模型，分组灯标可定位本栋。在单体页的桌面和手机近、远两档，整段五券与三座老虎窗都在画面内，下载的原始GLB、网页GLB、远景GLB和Blender工程逐一核过文件大小和摘要。正式站1,602项共1,329,289,806字节已实际读取。本次留存10幅城市图、4幅单体页图及逐张观察。[城市远景](city-31224/map-distant.png) · [桌面单体](city-31224/standalone/viewer-desktop-full.png) · [手机单体](city-31224/standalone/viewer-mobile-full.png) · [14幅图的观察记录](city-31224/visual-review.json) · [完整传输记录](city-31224/all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/93b0b7de03c782be2a1a690df893441fd703667c/projects/shanghai/index.html#landmark=huangpu-abraham-building-beijing-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

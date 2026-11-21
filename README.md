@@ -3788,7 +3788,7 @@
 | 外白渡桥 | 2026-11-22 01:19:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=walk) |
 | 外滩信号台（现址塔身、号杆与站房） | 2026-11-22 02:11:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-signal-tower&mode=overview) |
 | 四川路桥三孔桥身与两侧人行道 | 2026-11-22 03:21:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=walk) |
-| 益丰洋行大楼北京东路西端券窗与切角 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-abraham-building-beijing-front&mode=overview) |
+| 益丰洋行大楼北京东路西端券窗与切角 | 2026-11-22 04:16:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-abraham-building-beijing-front&mode=overview) |
 
 ### 徐汇区（52处）
 
