@@ -40,3 +40,7 @@
 手机地点目录和900×650桌面都能看清两条街交会处的弧形窗带、浅色楼层横带和顶层圆亭。街面近景的七处采样有六处露出，屋面取景能分辨下层圆形红屋面和上层小圆顶。窄桌面410×370的回返截图能读到已重新选中永业大楼，但七处采样均被页面遮盖。488×362的远景也有相同限制。两帧分别记录地点恢复和远档载入，建筑细部可对照手机实拍及独立页。[手机放大](city-31214/map-mobile-public-zoom.png) · [街面](city-31214/map-street-facade.png) · [屋面](city-31214/map-roof.png) · [逐点遮挡](city-31214/default-screen-coverage.json)
 
 前态有五次未通过，回返有两次未通过。首次回返在切走及切回后渲染进程中止，第二次回返在验收程序限制并发请求时出现近景文件载入超时。第三次回返使用正常网络并发，初始地图记录过一次目录超时，随后在真实公开地点地址重新载入，选中状态、裁切范围和近景原件均通过复核。七次未通过的运行保留了各自的输出和退出状态，可与成功报告逐项对照。[七次运行的原始记录](city-31214/failed-attempts/index.json) · [回返实测](city-31214/segment-return.json) · [远档实测](city-31214/segment-distant.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9309e6e5023e353664f87bd384090240ca5df359/projects/shanghai/index.html#landmark=huangpu-young-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
