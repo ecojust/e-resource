@@ -31,3 +31,7 @@
 从衡山路街角和高安路看去，手机地图中栉比的凸窗和长街墙可辨，使用地图的放大键后，窗列占据更多画面。桌面可以用鼠标从目录进入，也可以直接点击地图灯牌。紧凑桌面中，导航和地点卡占去部分楼面；街道镜位中的地点卡遮住了48号门额。两次针对门额的近景补拍均遇渲染进程退出。辨认其窄绿门、门上的长方形浮雕与上层束腰饰板，请结合街面实照和原生模型细部。[手机地图](city-31201/after/map-mobile.png) · [手机点按放大](city-31201/after/map-mobile-public-zoom.png) · [街面取景](city-31201/after/map-street-facade.png) · [48号门口对照](48-gaoan-entrance-detail.jpg) · [补拍原始记录](city-31201/48-entrance-camera-attempts/attempt-2.json)
 
 城市目录由237处增至238处。原楼131在本栋裁切内增加六个三角面，与丽波花园东主楼原有的两个共八个。浏览器实测34个地面见证，含入口、店面、保留原楼和相邻建筑。远景实际载入65,732面版本，四件模型逐字核对。九段地图进程分别正常退出。正式站的1,411个输入共1,215,409,757字节，含5项分段读取抽查。[前一版控制图](city-31201/before/map-before.png) · [后态、地面与四件](city-31201/after/main-browser.json) · [逐图复核](city-31201/visual-review.json) · [整站签名](city-31201/201-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/6afc462c128201785ed99d31e309354a0c95c45c/projects/shanghai/index.html#landmark=xuhui-washington-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
