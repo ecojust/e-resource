@@ -27,3 +27,7 @@ python "$audit/check-overview.py"
 独立页原有桌面、手机各两张截图，均已核过。近景21,760面、远景12,512面，两个门洞、窗头与屋顶轮廓在两档仍可辨。四种下载与两个站的实际文件摘要一致。视图原拍自28227，31227的页面、查看模块、清单及四个模型下载地址另经逐字核对。
 
 [实机、地面与四种下载](city-31227/process-exits.json) · [旧城对照](city-31227/map-before.png) · [弄口窗墙及护栏](city-31227/map-street-windows-and-guardrails.png) · [弄牌和浅券](city-31227/map-enameled-lane-sign-and-lower-arch.png) · [远档](city-31227/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/11935c2c68e8aa333a36b4690cd543815a45d8c4/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1768-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
