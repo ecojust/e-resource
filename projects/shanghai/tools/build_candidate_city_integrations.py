@@ -348,10 +348,28 @@ def checked_geometry(geometry, label, nullable=False, *, collision=False):
     return result
 
 
+def validate_historical_period(view, ident):
+    def year(value):
+        return type(value) is int and 1500 <= value <= date.today().year
+    assert isinstance(view, dict) and view.get("kind") == "archival-facade", ident
+    years = view.get("evidence_years")
+    assert isinstance(years, list) and len(years) == 2 and all(year(value) for value in years), ident
+    assert years[0] <= years[1], ident
+    if "building_year" in view:
+        assert set(view) == {"kind", "building_year", "evidence_years"}, ident
+        assert year(view["building_year"]) and view["building_year"] <= years[0], ident
+        return
+    assert set(view) == {"kind", "listed_year", "approximate_loss_year", "evidence_kind", "evidence_years"}, ident
+    assert view["evidence_kind"] == "published-drawing", ident
+    assert year(view["listed_year"]) and year(view["approximate_loss_year"]), ident
+    assert view["listed_year"] <= view["approximate_loss_year"], ident
+
+
 def historical_site_record(item, placement):
     """An archive viewer supplies a destination only; it cannot edit the current city."""
     ident = item["id"]
-    assert item["original_delivery_status"] == "historical-photo-informed-facade-study", ident
+    expected_status = ("historical-illustration-informed-facade-study" if placement.get("historical_view", {}).get("evidence_kind") == "published-drawing" else "historical-photo-informed-facade-study")
+    assert item["original_delivery_status"] == expected_status, ident
     assert set(placement) == {"id", "lng", "lat", "historical_view", "navigation", "collision_geometry",
                               "replacement_geometry", "source_feature_ids", "model_geometry_sha256"}, ident
     assert placement["navigation"] == {"listed": False}, ident
@@ -359,10 +377,7 @@ def historical_site_record(item, placement):
     assert placement["source_feature_ids"] == {"building": [], "building_part": []}, ident
     assert placement["model_geometry_sha256"] == {key: item["assets"][key]["sha256"] for key in ("raw", "web", "lod")}, ident
     view = placement["historical_view"]
-    assert set(view) == {"kind", "building_year", "evidence_years"} and view["kind"] == "archival-facade", ident
-    year, years = view["building_year"], view["evidence_years"]
-    assert type(year) is int and isinstance(years, list) and len(years) == 2 and all(type(x) is int for x in years), ident
-    assert 1500 <= year <= years[0] <= years[1] <= date.today().year, ident
+    validate_historical_period(view, ident)
     assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*-history\.html", item["individual_page"]), ident
     assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", ident), ident
     page = (PROJECT / item["individual_page"]).read_text()
@@ -494,7 +509,7 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             assert digest == item["assets"][variant]["sha256"], f"Stale placement geometry: {ident}/{variant}"
         lng, lat = placement["lng"], placement["lat"]
         assert 120.65 < lng < 122.3 and 30.55 < lat < 32
-        if "historical_view" in placement or item.get("original_delivery_status") == "historical-photo-informed-facade-study":
+        if "historical_view" in placement or item.get("original_delivery_status") in ("historical-photo-informed-facade-study", "historical-illustration-informed-facade-study"):
             models.append(historical_site_record(item, placement))
             continue
         heading, scale = placement["heading"], placement.get("scale", 1)

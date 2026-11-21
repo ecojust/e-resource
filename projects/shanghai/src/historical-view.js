@@ -1,16 +1,32 @@
 /** Historic site markers have a verified viewer and no present-day scene geometry. */
 const fields = ['id','name','kind','districtId','district_name','lng','lat','individual_page','candidate_manifest',
   'historical_view','assets','navigation','collision_geometry','replacement_geometry','source_feature_ids'];
+const archiveYear=year=>Number.isInteger(year)&&year>=1500&&year<=new Date().getUTCFullYear();
+
+export function historicalSiteCaption(view) {
+  if(view.building_year!==undefined) return `${view.building_year}年建筑原址`;
+  return `${view.listed_year}年名录登记 · 原建筑约${view.approximate_loss_year}年灭失`;
+}
+
+function validHistoricalPeriod(view,exact) {
+  if(!view || view.kind!=='archival-facade') return false;
+  const years=view.evidence_years;
+  if(!Array.isArray(years)||years.length!==2||!years.every(archiveYear)||years[0]>years[1]) return false;
+  if(exact(view,['kind','building_year','evidence_years'])) {
+    return archiveYear(view.building_year)&&view.building_year<=years[0];
+  }
+  return exact(view,['kind','listed_year','approximate_loss_year','evidence_kind','evidence_years'])
+    && view.evidence_kind==='published-drawing'&&archiveYear(view.listed_year)
+    && archiveYear(view.approximate_loss_year)&&view.listed_year<=view.approximate_loss_year;
+}
+
 export function validHistoricalSite(row) {
-  const view=row.historical_view, years=view?.evidence_years, sourceIds=row.source_feature_ids;
+  const view=row.historical_view, sourceIds=row.source_feature_ids;
   const exact=(object,keys)=>object && Object.keys(object).length===keys.length && keys.every(key=>Object.hasOwn(object,key));
   return typeof row.id==='string' && row.candidate_manifest===`assets/models/candidates/${row.id}/manifest.json`
     && row.kind==='historical-site' && exact(row,fields) && typeof row.name==='string' && row.name.length>0
     && /^[a-z0-9]+(?:-[a-z0-9]+)*-history\.html$/.test(row.individual_page)
-    && exact(view,['kind','building_year','evidence_years']) && view.kind==='archival-facade'
-    && Number.isInteger(view.building_year) && view.building_year>=1500
-    && Array.isArray(years) && years.length===2 && years.every(Number.isInteger)
-    && view.building_year<=years[0] && years[0]<=years[1] && years[1]<=new Date().getUTCFullYear()
+    && validHistoricalPeriod(view,exact)
     && exact(row.navigation,['listed']) && row.navigation.listed===false
     && row.collision_geometry===null && row.replacement_geometry===null
     && exact(sourceIds,['building','building_part']) && Object.values(sourceIds).every(v=>Array.isArray(v)&&v.length===0)
@@ -45,7 +61,10 @@ export function setupHistoricalView({dialog,button,frame,title,closeButton,onMod
     const dates=active.id==='xuhui-huaihai-1469-garden-front'
       ? `影像资料年份 ${first}—${last}`
       : `${period}年照片`;
-    title.textContent=`${active.name} · ${dates}`;
+    const evidence=active.historical_view.evidence_kind==='published-drawing'
+      ? (first===last ? `${first}年出版的钢笔画` : `${first}年出版的钢笔画，${last}年重刊`)
+      : dates;
+    title.textContent=`${active.name} · ${evidence}`;
     frame.title=active.name;
     frame.src=active.individual_page+'?embed=history';
     dialog.showModal();

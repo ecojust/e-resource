@@ -1,11 +1,11 @@
-import { createShanghaiScene } from './map-scene.js?v=xinhua-lane-329-no17-v1-owner-index-v1-taiwan-facade-v1';
+import { createShanghaiScene } from './map-scene.js?v=hongqiao-road-2275-history-v1-owner-index-v1-taiwan-facade-v1';
 import { WalkController } from './walk-controller.js';
-import {setupHistoricalView} from './historical-view.js?v=xinhua-lane-329-no17-v1';
+import {historicalSiteCaption,setupHistoricalView} from './historical-view.js?v=hongqiao-road-2275-history-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js?v=xinhua-lane-329-no17-v1';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=hongqiao-road-2275-history-v1';
 import { readVerifiedBytes } from './ordinary-building-catalog.js?v=ordinary-metadata-sha-v1';
 import { resolveNavigationRoute } from './landmark-navigation.js';
-import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=xinhua-lane-329-no17-v1';
+import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=hongqiao-road-2275-history-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js?v=jewish-club-courtyard-v1-riyue-courtyard-v1-yongjia-porch-view-v1-shangfang-gate-view-v1';
 
 const $ = id => document.getElementById(id);
@@ -36,7 +36,7 @@ function updateLocation(place) {
   $('location-district').textContent=(district?.name||'上海市')+(place.city_integration?' · 近似定位 · 外观模型':place.kind==='building'?' · 逐栋复原':place.height_m?' · 城市地标':' · 城市探索');
   const historical=place.kind==='historical-site';
   historicalPanel?.select(place);
-  if(historical) $('location-district').textContent=`${district?.name||'上海市'} · ${place.historical_view.building_year}年建筑原址`;
+  if(historical) $('location-district').textContent=`${district?.name||'上海市'} · ${historicalSiteCaption(place.historical_view)}`;
   const overviewOnly=historical||place.kind==='building'&&!walkingPose(place);
   $('start-walk').hidden=historical;
   $('start-walk').disabled=overviewOnly;$('walk-mode').disabled=overviewOnly;
@@ -271,7 +271,7 @@ async function main(){
   installUi();loadingProgress(18);
   try{
     let candidateCatalogError=null;
-    const metadataRevision=new URL(import.meta.url).search || '?v=xinhua-lane-329-no17-v1-taiwan-facade-v1';
+    const metadataRevision=new URL(import.meta.url).search || '?v=hongqiao-road-2275-history-v1-taiwan-facade-v1';
     const responses=await Promise.all([
       ['data/districts.json'],['data/districts-display.geojson'],['data/landmarks.json',metadataRevision],
       ['data/scene-props.json'],['data/precise-buildings-v6.json',metadataRevision],['data/candidate-city-integrations.json',metadataRevision]

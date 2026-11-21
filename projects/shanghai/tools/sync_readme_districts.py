@@ -279,7 +279,11 @@ def render(text, items, times, project=False):
             if city[item['id']].get('navigation', {}).get('listed'):
                 links += f" · [漫游]({CURRENT}index.html#landmark={item['id']}&mode=walk)"
             if city[item['id']].get('kind') == 'historical-site':
-                links += f" · {city[item['id']]['historical_view']['building_year']} 年原址，地点卡可查看历史外观"
+                view = city[item['id']]['historical_view']
+                if 'building_year' in view:
+                    links += f" · {view['building_year']} 年原址，地点卡可查看历史外观"
+                else:
+                    links += f" · {view['listed_year']} 年入录，约 {view['approximate_loss_year']} 年灭失，地点卡可查看出版画稿复原"
             rows.append(f"| {name} | {date} | {links} |")
             placed.add(item['id'])
         parts[i] = block + '\n' + '\n'.join(rows) + '\n\n'

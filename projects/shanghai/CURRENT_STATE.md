@@ -1,3 +1,11 @@
+# 虹桥路2275号历史住宅山墙与屋顶
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview) · [单体旋转与下载](hongqiao-road-2275-history.html) · [来源与制作范围](source/precise/changning-hongqiao-road-2275-historic-front/README.md) · [验收记录](data/audit/hongqiao-road-2275-history-v1/README.md)
+
+按2015年出版、2020年由学苑出版社重刊的署址钢笔画复原高山墙、成组窗、两翼屋面与两根烟囱，登记1994年入录、约1996年灭失及建年待考。
+
+近景 2,346 个三角面，远景 1,034 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 349,882 字节。上海主图现有 224 处独立入口，长宁区 15 处。[资产清单](assets/models/candidates/changning-hongqiao-road-2275-historic-front/manifest.json)
+
 # 新华路329弄17号住宅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-329-no17&mode=overview) · [单体旋转与下载](xinhua-lane-329-no17.html) · [来源与制作范围](source/precise/changning-xinhua-lane-329-no17/README.md) · [验收记录](data/audit/xinhua-lane-329-no17-v1/README.md)

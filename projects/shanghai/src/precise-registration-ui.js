@@ -1,6 +1,11 @@
+import {historicalSiteCaption} from './historical-view.js?v=historical-record-dates-v1';
 /** Display only explicitly declared district/provider metadata. */
 export function placeDescription(place, districts = []) {
-  if(place.kind==='historical-site')return `${place.district_name} · ${place.historical_view.building_year}年建筑 · 历史照片复原`;
+  if(place.kind==='historical-site') {
+    const view=place.historical_view;
+    if(view.evidence_kind==='published-drawing') return `${place.district_name} · ${historicalSiteCaption(view)} · 出版画稿复原`;
+    return `${place.district_name} · ${view.building_year}年建筑 · 历史照片复原`;
+  }
   if(place.city_integration)return `${place.district_name||districts.find(d=>String(d.id)===String(place.districtId))?.name||'上海市'} · 近似定位 · 外观模型`;
   if (Number.isInteger(place.bund_number) && place.bund_number > 0) {
     return `外滩 ${place.bund_number} 号 · ${place.architecture_style || '历史建筑'}`;
