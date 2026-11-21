@@ -1,5 +1,5 @@
 """Reconstruct the broad gable shown on plate 29 of Shanghai of To-day (1930)."""
-from math import pi,cos,sin
+from math import pi,cos,sin,sqrt
 from pathlib import Path
 from random import Random
 from PIL import Image,ImageDraw
@@ -95,7 +95,7 @@ def add_building(b,lod):
         for u in (l+.5,r-.5):
             rect(b,u-.57,318 if i==1 else 351,u+.57,491,-.153,-.083,FRAME,f'Recessed outer jamb {i+1}')
         for f in (.035,.34,.67,.965):
-            u=l+(r-l)*f;top=351 if i!=1 else 307+(abs(f-.5)*20)
+            u=l+(r-l)*f;top=350.1 if i!=1 else 317-19*sqrt(max(0,1-(2*f-1)**2))+.10
             rect(b,u-.9,top,u+.9,491,-.159,-.093,FRAME,f'Upright of window {i+1}')
         levels=(349.7,397,449,490)if i!=1 else(351.5,406,450,490)
         for v in levels:rect(b,l+.7,v-.9,r-.7,v+.9,-.157,-.085,FRAME,f'Cross rail of window {i+1}')
