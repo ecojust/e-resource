@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>瑞康洋行买办住宅 · 贝润生宅历史庭院立面</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<style>
+    .embedded header,.embedded footer{display:none}
+    .embedded #model-view{top:8px;bottom:8px}
+    .embedded .panel{top:12px;bottom:12px}
+    .embedded #site-return{display:block;margin-top:8px}
+    @media(max-width:650px){.embedded #model-view{inset:0 0 46%}.embedded .panel{top:54%;bottom:0;max-height:none}}
+  </style>
+<script>
+    if(window.self!==window.top && new URLSearchParams(location.search).get('embed')==='history'){
+      document.documentElement.classList.add('embedded');
+      const returnToMap=event=>{event.preventDefault();parent.postMessage('close-historical-view',location.origin);};
+      addEventListener('keydown',event=>{if(event.key==='Escape') returnToMap(event);});
+      addEventListener('DOMContentLoaded',()=>{
+        const link=document.getElementById('site-return');
+        link.textContent='返回当代原址';
+        link.addEventListener('click',returnToMap);
+        document.querySelector('.panel').append(link);
+      });
+    }
+  </script>
+</head>
+<body>
+<main aria-label="贝润生宅的五段庭院立面与中央券廊三维模型" data-oblique-x=".57" id="model-view"></main>
+<header>
+<a href="index.html#landmark=huangpu-ruikang-comprador-residence&amp;mode=overview" id="site-return">← 查看当代原址</a> · <a href="landmarks.html#building-huangpu-ruikang-comprador-residence">按区目录</a>
+<p>第三批优秀历史建筑 · 黄陂南路25号乙</p>
+<h1>瑞康洋行买办住宅</h1>
+<p>贝润生宅历史庭院立面</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p>瞿凯的拆除前旧影显示了中央两层券廊、两侧后退的露廊和深窗。照片于2019年再刊，原来的拍摄日期待考。市名录记载原宅约于2000年灭失。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">正看庭院五段立面</button>
+<button data-view="oblique" type="button">斜看石柱与券廊</button>
+<button data-view="above" type="button">俯看山花与短侧返</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/huangpu-ruikang-comprador-residence/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-ruikang-comprador-residence');
+  </script>
+</body>
+</html>
+
