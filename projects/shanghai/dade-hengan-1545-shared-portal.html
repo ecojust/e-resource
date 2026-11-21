@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>大德里与恒安坊四川北路1545弄题名过街门</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="大德里与恒安坊四川北路1545弄题名过街门"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 四川北路1545弄</p>
+    <h1>大德里与恒安坊</h1>
+    <p>四川北路1545弄过街门</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">门额并列“大德里”和“恒安坊”。两侧绿色1545弄牌夹着阶状曲托和挑出的门楣。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看两处题名</button>
+      <button type="button" data-view="oblique">斜看曲托与铁栅</button>
+      <button type="button" data-view="above">俯看门楣挑出</button>
+      <button type="button" data-view="inscription">细看石额与双绿牌</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-dade-hengan-1545-shared-portal/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-dade-hengan-1545-shared-portal', {
+      front: {"center": [0, 1.605, -0.16], "size": [3.74, 3.21, 0.63], "direction": [0.04, 0.025, 1]},
+      oblique: {"center": [0, 1.605, -0.16], "size": [3.74, 3.21, 0.63], "direction": [0.59, 0.11, 1]},
+      above: {"center": [0, 1.605, -0.16], "size": [3.74, 3.21, 0.63], "direction": [-0.37, 0.34, 1]},
+      inscription: {"center": [0, 2.65, 0], "size": [3.65, 1.30, 0.61], "direction": [0.19, 0.07, 1]},
+    });
+  </script>
+</body>
+</html>
