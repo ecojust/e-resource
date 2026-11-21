@@ -1,3 +1,11 @@
+# 华盛顿公寓衡山路街角与高安路48号入口
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-washington-apartments&mode=overview) · [单体旋转与下载](washington-apartments.html) · [来源与制作范围](source/precise/xuhui-washington-apartments/README.md) · [验收记录](data/audit/washington-apartments-v1/README.md)
+
+以2D021、2016年转角实照、2020年可辨48号的门口近照及徐汇区房管资料核对西湖公寓尖角窗列、阶梯冠部、两路立面与高安路入口。
+
+近景 82,076 个三角面，远景 65,732 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 10,466,700 字节。上海主图现有 238 处独立入口，徐汇区 40 处。[资产清单](assets/models/candidates/xuhui-washington-apartments/manifest.json)
+
 # 道斐南公寓南向花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dauphine-apartments-garden-front&mode=overview) · [单体旋转与下载](dauphine-apartments.html) · [来源与制作范围](source/precise/xuhui-dauphine-apartments-garden-front/README.md) · [验收记录](data/audit/dauphine-apartments-v1/README.md)
