@@ -3850,7 +3850,7 @@
 | 中西女中东楼（五一楼）院落立面 | 2026-11-21 03:21:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-mctyeire-east-building&mode=overview) |
 | 息焉堂（前庭、主堂铜顶及临河半圆体） | 2026-11-21 04:16:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xiyan-church&mode=overview) |
 | 卫乐园泰安路120弄街门 | 2026-11-21 07:22:18 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-weile-garden-taian-gate&mode=overview) |
-| 武夷路127号历史住宅南立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-wuyi-road-127-garden-front&mode=overview) · 1925 年原址，地点卡可查看历史外观 |
+| 武夷路127号历史住宅南立面 | 2026-11-21 10:28:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-wuyi-road-127-garden-front&mode=overview) · 1925 年原址，地点卡可查看历史外观 |
 
 ### 静安区（22处）
 

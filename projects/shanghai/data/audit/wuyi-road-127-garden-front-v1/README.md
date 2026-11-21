@@ -11,3 +11,7 @@
 正式地图31182和31183从219处增至220处。桌面鼠标和390像素触屏都从孙科住宅返回公开地图，点中了武夷路127号的灯牌。地点卡可打开2018至2024年照片据以制作的南立面，切换近景和远景后能关闭展窗、回到同一地点。独立页下载的四份成品与原有签名一致。[两版地图实测](final-map-31183/results.json) · [独立页四图和四件下载](final-map-31183/viewer/viewer.json)
 
 地图、嵌入展窗与独立页共十三幅实图已逐张查看。其中模型画面能看到三跨玻璃廊、上方宝瓶栏杆、中央带山花的老虎窗和两侧屋顶窗口。小屏远景的栏杆与窗格较难分辨。街区标记画面的普通体量在截图瞬间载入进度不同。六栋最近原房相距标记约13.7至52.8米，前后两版的完整轮廓、14个Overture地物、一个OpenMapTiles地物及5个地面点均一致。[实图观察与原房轮廓](final-map-31183/visual-review.json) · [两次早期尝试与复核](archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1ba2c74cd62793654b9b5431ccecc07ba869c618/projects/shanghai/index.html#landmark=changning-wuyi-road-127-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，12 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
