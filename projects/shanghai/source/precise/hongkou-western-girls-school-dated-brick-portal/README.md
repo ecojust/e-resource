@@ -1,4 +1,6 @@
-# 工部局西童女子学校双年份砖券门
+# 工部局西童女子学校砖券门（2014年所见）
+
+2014年9月14日Fayhoo拍摄时，左牌读1893，右牌读1894，砖山花下方还有两块浅色素匾。高参88发表于2015年6月28日的走访照片图4、图6呈现相同的年份。2019年7月补记的修缮后图2中，左牌读1886，右牌仍读1894，上排可读PUBLIC与SCHOOL。 [2014年Fayhoo原照](https://commons.wikimedia.org/wiki/File:Gonglijihanbilixitongnvxue.JPG) · [高参88走访及修缮补记](https://blog.sina.com.cn/s/blog_5d1bdf480102vxb0.html)
 
 市房屋管理局第四批名录4F006记载，塘沽路390号原为工部局西童女子学校，名录所列现用单位为上海市安装工程有限公司。对街塘沽路387–401号小浦西公寓另列为4F005。[上海市房屋管理局名录](https://fgj.sh.gov.cn/yxlsjz/20200331/e3b99cf457ae48cab87ad5c02aa0fee3.html)
 
