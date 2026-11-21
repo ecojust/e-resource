@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>中一信托大楼 · 北京东路正面与银行大厅彩绘天棚</title>
+  <link href="assets/favicon.svg" rel="icon">
+  <link href="src/dacheng-hall.css" rel="stylesheet">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <style>
+    #hall-open { background:#405851; border-color:#809c8c; }
+    #hall-dialog { width:min(94vw,1080px); max-width:100%; max-height:95dvh; overflow:auto; padding:0; border:1px solid #53676b; border-radius:12px; background:#1d3036; color:#eaf0ef; }
+    #hall-dialog::backdrop { background:rgb(10 18 21 / .83); }
+    .hall-toolbar,.hall-instructions { display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; padding:12px 16px; }
+    .hall-toolbar h2 { flex:1 1 auto; margin:0; font-size:19px; font-weight:550; }
+    .hall-angles { display:flex; gap:6px; }
+    .hall-toolbar button { min-height:40px; }
+    .hall-angles [aria-pressed="true"] { background:#d6e1d5; color:#162f2d; border-color:#d6e1d5; }
+    #hall-screen { position:relative; height:min(65dvh,650px); min-height:180px; background:#172921; }
+    #hall-screen canvas { width:100%; height:100%; }
+    .hall-instructions { font-size:12px; color:#c8d8d6; justify-content:space-between; }
+    .hall-instructions p { margin:0; }
+    #hall-retry[hidden] { display:none; }
+    #hall-retry { padding:5px 10px; }
+    @media (max-width:650px) {
+      #hall-dialog { width:calc(100% - 16px); }
+      .hall-toolbar,.hall-instructions { padding:10px 12px; gap:6px 8px; }
+      .hall-toolbar h2 { width:calc(100% - 70px); }
+      .hall-angles { flex-basis:100%; order:1; }
+      #hall-screen { height:55dvh; }
+    }
+  </style>
+</head>
+<body>
+  <main id="model-view" aria-label="中一信托大楼北京东路正面" data-oblique="positive-x"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-central-trust-beijing-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 北京东路270号</p>
+    <h1>中一信托大楼</h1>
+    <p>北京东路正立面与银行大厅彩绘天棚</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">原五层的石质檐口横贯街面，檐上两层为1990年代加建。正门的两根槽柱、石刻楼名和退入门廊的双扇门取自街照。银行大厅天棚依据二层平面与修缮照片制作。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">北京东路正面</button>
+      <button type="button" data-view="oblique">斜看石柱门廊</button>
+      <button type="button" data-view="above">俯看前楼天井</button>
+      <button type="button" id="hall-open" aria-haspopup="dialog" aria-controls="hall-dialog">仰看彩绘天棚</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/huangpu-central-trust-beijing-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+
+  <dialog id="hall-dialog" aria-labelledby="hall-title">
+    <div class="hall-toolbar">
+      <h2 id="hall-title">银行大厅彩绘天棚</h2>
+      <div class="hall-angles" role="group" aria-label="观察位置">
+        <button type="button" id="hall-below" aria-pressed="true">从厅内仰看</button>
+        <button type="button" id="hall-above" aria-pressed="false">从天井俯看</button>
+      </div>
+      <button type="button" id="hall-close" autofocus>关闭</button>
+    </div>
+    <div id="hall-screen"></div>
+    <div class="hall-instructions">
+      <p id="hall-status" role="status" aria-live="polite"></p>
+      <button type="button" id="hall-retry" hidden>重试</button>
+      <p id="hall-keys">拖动或方向键旋转，双指、滚轮或加减键缩放。</p>
+    </div>
+  </dialog>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    const id = 'huangpu-central-trust-beijing-front';
+    showCandidateAssetViewer('huangpu-central-trust-beijing-front');
+
+    const dialog = document.querySelector('#hall-dialog');
+    const opener = document.querySelector('#hall-open');
+    const screen = document.querySelector('#hall-screen');
+    const status = document.querySelector('#hall-status');
+    const below = document.querySelector('#hall-below');
+    const above = document.querySelector('#hall-above');
+    const retry = document.querySelector('#hall-retry');
+    const folder = new URL('assets/models/candidates/' + id + '/', document.baseURI);
+    let active = null;
+    let angle = 'below';
+
+    // SW, SE, NE, NW from this building's signed plan-registration.json. The
+    // authoring (east, north, up) points become glTF (east, up, -north).
+    const corners = [[6.56506,10.63937], [12.37539,11.21521],
+                     [10.11613,29.05603], [4.62072,28.42505]];
+    const soffit = 10.55;
+    function centreline(t, z) {
+      const [sw,se,ne,nw] = corners;
+      return [
+        ((1-t)*(sw[0]+se[0]) + t*(nw[0]+ne[0]))/2,
+        z,
+        -((1-t)*(sw[1]+se[1]) + t*(nw[1]+ne[1]))/2,
+      ];
+    }
+
+    function release() {
+      const state = active;
+      if (!state) return;
+      active = null;
+      state.abort.abort();
+      state.observer?.disconnect();
+      state.controls?.dispose();
+      if (state.model) state.disposeModel(state.model);
+      state.scene?.clear();
+      if (state.renderer) {
+        state.renderer.dispose();
+        state.renderer.forceContextLoss();
+        state.renderer.domElement.remove();
+      }
+      screen.replaceChildren();
+    }
+
+    function choose(view) {
+      angle = view;
+      const under = view === 'below';
+      below.setAttribute('aria-pressed', String(under));
+      above.setAttribute('aria-pressed', String(!under));
+      const s = active;
+      if (!s?.model) return;
+      const eye = centreline(under ? .22 : .15, under ? soffit-4.45 : soffit+6.7);
+      const target = centreline(under ? .46 : .48, under ? soffit+.14 : soffit+.55);
+      if (under) target[0] += .26;
+      s.camera.position.set(...eye);
+      s.controls.target.set(...target);
+      const bearing = Math.atan2(eye[0]-target[0], eye[2]-target[2]);
+      s.controls.minAzimuthAngle = bearing-.22;
+      s.controls.maxAzimuthAngle = bearing+.22;
+      s.controls.minPolarAngle = under ? Math.PI*.54 : .06;
+      s.controls.maxPolarAngle = under ? Math.PI*.95 : Math.PI*.46;
+      s.controls.minDistance = 2.7;
+      s.controls.maxDistance = under ? 9.45 : 10.3;
+      s.controls.update();
+      s.resize();
+      status.textContent = (under ? '厅内 · 彩绘玻璃与铅格' : '天井内 · 天棚上护盖') +
+        ' · ' + (s.role === 'lod' ? '简化远景' : '完整近景');
+    }
+
+    function keyboard(s, event) {
+      const dir = s.camera.position.clone().sub(s.controls.target);
+      const sphere = new s.THREE.Spherical().setFromVector3(dir);
+      switch (event.key) {
+        case 'ArrowLeft': sphere.theta -= .055; break;
+        case 'ArrowRight': sphere.theta += .055; break;
+        case 'ArrowUp': sphere.phi -= .055; break;
+        case 'ArrowDown': sphere.phi += .055; break;
+        case '+': case '=': sphere.radius *= .88; break;
+        case '-': case '_': sphere.radius /= .88; break;
+        case 'Home': event.preventDefault(); choose(angle); return;
+        default: return;
+      }
+      event.preventDefault();
+      s.camera.position.copy(s.controls.target).add(dir.setFromSpherical(sphere));
+      s.controls.update();
+      s.render();
+    }
+
+    async function load() {
+      release();
+      const s = {abort:new AbortController()};
+      active = s;
+      const signal = s.abort.signal;
+      const current = () => !signal.aborted && active === s && dialog.open;
+      retry.hidden = true;
+      status.textContent = '正在读取并校验天棚模型…';
+      s.role = document.querySelector('#detail').value === 'lod' ? 'lod' : 'full';
+      try {
+        const [THREE, {GLTFLoader}, {MeshoptDecoder}, {OrbitControls}, resources, response] =
+          await Promise.all([
+            import('three'), import('./vendor/GLTFLoader.js'),
+            import('./vendor/meshopt_decoder.module.js'), import('./vendor/OrbitControls.js'),
+            import('./src/model-resources.js'), fetch(new URL('manifest.json', folder), {signal}),
+          ]);
+        if (!current()) return;
+        if (!response.ok) throw Error('模型清单读取失败');
+        const manifest = await response.json();
+        const asset = manifest.assets?.[s.role];
+        if (manifest.id !== id || !asset || !/^[\w.-]+\.glb$/.test(asset.file) ||
+            !/^[a-f\d]{64}$/.test(asset.sha256) || !Number.isSafeInteger(asset.bytes) ||
+            asset.bytes <= 0) throw Error('模型清单与本栋建筑不符');
+        const modelURL = new URL(asset.file, folder);
+        const file = await fetch(modelURL, {signal});
+        if (!file.ok) throw Error('模型读取失败');
+        const bytes = await file.arrayBuffer();
+        if (bytes.byteLength !== asset.bytes) throw Error('模型文件大小不符');
+        const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+        const hash = Array.from(digest, value => value.toString(16).padStart(2,'0')).join('');
+        if (hash !== asset.sha256) throw Error('模型文件校验失败');
+        if (!current()) return;
+        const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+        const loaded = await loader.parseAsync(bytes, folder.href);
+        s.disposeModel = resources.disposeModelResources;
+        if (!current()) {
+          s.disposeModel(loaded.scene);
+          return;
+        }
+        s.model = loaded.scene;
+        s.THREE = THREE;
+        s.scene = new THREE.Scene();
+        s.scene.background = new THREE.Color(0x89958c);
+        s.scene.add(s.model);
+        s.scene.add(new THREE.HemisphereLight(0xfff6e8,0xe2e5da,1.95));
+        const indoor = new THREE.DirectionalLight(0xfff5df,1.4);
+        indoor.position.set(4,-7,8);
+        s.scene.add(indoor);
+        const sky = new THREE.DirectionalLight(0xfffcf3,1.5);
+        sky.position.set(-5,15,6);
+        s.scene.add(sky);
+        s.camera = new THREE.PerspectiveCamera(65,1,.035,160);
+        s.renderer = new THREE.WebGLRenderer({antialias:true, powerPreference:'low-power'});
+        s.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+        s.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        s.renderer.toneMappingExposure = 1.05;
+        const canvas = s.renderer.domElement;
+        canvas.tabIndex = 0;
+        canvas.setAttribute('aria-label','观察彩绘天棚的三维画布');
+        canvas.setAttribute('aria-describedby','hall-keys');
+        canvas.dataset.assetSha256 = hash;
+        canvas.dataset.modelRole = s.role;
+        screen.append(canvas);
+        s.controls = new OrbitControls(s.camera, canvas);
+        s.controls.enablePan = false;
+        s.controls.enableDamping = false;
+        s.controls.rotateSpeed = .43;
+        s.controls.zoomSpeed = .70;
+        s.render = () => {
+          if (current()) s.renderer.render(s.scene,s.camera);
+        };
+        s.controls.addEventListener('change',s.render);
+        canvas.addEventListener('keydown', event => keyboard(s,event), {signal});
+        s.resize = () => {
+          if (!current()) return;
+          const w = Math.max(1,screen.clientWidth), h = Math.max(1,screen.clientHeight);
+          s.camera.aspect = w/h;
+          s.camera.fov = angle === 'below' ? (w/h < 1.1 ? 65 : 53) : (w/h < 1.1 ? 74 : 61);
+          s.camera.updateProjectionMatrix();
+          s.renderer.setSize(w,h,false);
+          s.render();
+        };
+        choose(angle);
+        s.observer = new ResizeObserver(s.resize);
+        s.observer.observe(screen);
+      } catch (error) {
+        if (!current()) return;
+        release();
+        status.textContent = '无法打开天棚视图。' + error.message;
+        retry.hidden = false;
+      }
+    }
+
+    opener.addEventListener('click', () => {
+      choose('below');
+      dialog.showModal();
+      load();
+    });
+    below.addEventListener('click', () => choose('below'));
+    above.addEventListener('click', () => choose('above'));
+    document.querySelector('#hall-close').addEventListener('click', () => dialog.close());
+    retry.addEventListener('click', load);
+    dialog.addEventListener('close', () => { release(); opener.focus(); });
+    window.addEventListener('pagehide', release);
+  </script>
+</body>
+</html>
