@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>毓秀楼正门五券石廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="毓秀楼正门五券石廊"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">杨浦区 · 武东路100号</p>
+    <h1>毓秀楼</h1>
+    <p>正门五券石廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">中央三券通向内退的玻璃门。边跨各有一扇菱格窗，五道券的上方是楼名题字。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看五券与题名</button>
+      <button type="button" data-view="oblique">斜看柱墩与内退门</button>
+      <button type="button" data-view="above">俯看门廊进深</button>
+      <button type="button" data-view="inscription">细看券石与题字</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/yangpu-yuxiu-building-five-arch-entrance/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('yangpu-yuxiu-building-five-arch-entrance', {
+      front: {"center": [0,2.16,-.72], "size": [13.28,4.34,2.14], "direction": [.03,-.035,1]},
+      oblique: {"center": [0,2.16,-.72], "size": [13.28,4.34,2.14], "direction": [.45,.18,1]},
+      above: {"center": [0,2.16,-.72], "size": [13.28,4.34,2.14], "direction": [.26,.50,1]},
+      inscription: {"center": [0,3.63,-.06], "size": [4.83,1.35,.61], "direction": [.18,.01,1]},
+    });
+  </script>
+</body>
+</html>
