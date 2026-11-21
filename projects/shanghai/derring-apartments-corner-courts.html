@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>德邻公寓街角与双天井</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="德邻公寓修缮前的街角、双券阳台和有覆顶的天井"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 江西北路、崇明路</p>
+    <h1>德邻公寓</h1>
+    <p>修缮前的街角与双天井</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">西南角的盲券门额正上方是双券阳台。沿江西北路和崇明路转动模型，可见深褐面砖、浅色窗下板和两处有覆顶的院井。模型对应2019至2022年所见。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">整体</button>
+      <button type="button" data-view="oblique">近看双券阳台</button>
+      <button type="button" data-view="above">俯看双天井</button>
+      <button type="button" data-view="inscription">近看门额</button>
+      <button type="button" data-view="return">看窗下饰板</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-derring-apartments-corner-courts/README.md">修缮前照片、屋面轮廓与制作依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-derring-apartments-corner-courts', {
+  "front": {
+    "center": [
+      -1,
+      8.9,
+      2
+    ],
+    "size": [
+      60.64972643,
+      49.69908138,
+      4.85197811
+    ],
+    "direction": [
+      -0.57423729,
+      0.25961996,
+      0.77643352
+    ]
+  },
+  "oblique": {
+    "center": [
+      -21,
+      18.8,
+      36.25
+    ],
+    "size": [
+      9.50301506,
+      7.7871929,
+      0.7602412
+    ],
+    "direction": [
+      -0.45015786,
+      -0.33440298,
+      0.82796893
+    ]
+  },
+  "above": {
+    "center": [
+      0,
+      20.0,
+      4.3
+    ],
+    "size": [
+      64.66881621,
+      52.99250218,
+      5.1735053
+    ],
+    "direction": [
+      0.0,
+      0.99998822,
+      0.00485431
+    ]
+  },
+  "inscription": {
+    "center": [
+      -21,
+      2.48,
+      36
+    ],
+    "size": [
+      6.20770942,
+      5.086873,
+      0.49661675
+    ],
+    "direction": [
+      -0.44556167,
+      0.08587189,
+      0.89112334
+    ]
+  },
+  "return": {
+    "center": [
+      -21,
+      10.8,
+      36
+    ],
+    "size": [
+      6.48286636,
+      5.31234882,
+      0.51862931
+    ],
+    "direction": [
+      -0.38438516,
+      0.03459466,
+      0.92252439
+    ]
+  }
+});
+  </script>
+</body>
+</html>
