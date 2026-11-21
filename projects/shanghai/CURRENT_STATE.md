@@ -1,3 +1,11 @@
+# 爱登公寓（常德公寓）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-eddington-house&mode=overview) · [单体旋转与下载](eddington-house.html) · [来源与制作范围](source/precise/jingan-eddington-house/README.md) · [验收记录](data/audit/eddington-house-v1/README.md)
+
+据2B022、现场牌1933年始建与1936年建成、2013至2026街面照片及2020高位正景，制作东立面两翼圆角长阳台、中央红褐色竖带、退台、条纹门廊与常德公寓题字。
+
+近景 47,000 个三角面，远景 35,200 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,633,831 字节。上海主图现有 229 处独立入口，静安区 25 处。[资产清单](assets/models/candidates/jingan-eddington-house/manifest.json)
+
 # 望德堂院内门廊与曲线山墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wangdetang-augustinian-office&mode=overview) · [单体旋转与下载](wangdetang.html) · [来源与制作范围](source/precise/jingan-wangdetang-augustinian-office/README.md) · [验收记录](data/audit/wangdetang-v1/README.md)
