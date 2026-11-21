@@ -112,10 +112,11 @@ def wire(b,path,r,lod,label,material=IRON):
     b.tube(path,r,material,4 if lod else 7,label)
 
 def oval_band(b,face,left,bottom,width,height,mirrored,lod,label):
+    frame_label=label.removeprefix(face.label+'/')
     for edge in (.025,.975):
-        face.box(left+edge*width,bottom+height/2,.010,height,.016,.013,IRON,label+'/Band uprights')
+        face.box(left+edge*width,bottom+height/2,.010,height,.016,.013,IRON,frame_label+'/Band uprights')
     for row in range(1,4):
-        face.box(left+width/2,bottom+height*row/4,width,.011,.016,.013,IRON,label+'/Band crossbars')
+        face.box(left+width/2,bottom+height*row/4,width,.011,.016,.013,IRON,frame_label+'/Band crossbars')
     for u,v in ((.72,.123),(.21,.365),(.62,.606),(.23,.854)):
         x=left+width*(1-u if mirrored else u);z=bottom+(1-v)*height
         for scale in ((1.,) if lod else (1.,.62)):
@@ -131,16 +132,17 @@ def oval_band(b,face,left,bottom,width,height,mirrored,lod,label):
 
 
 def ornamental_cell(b,face,left,bottom,width,height,lod,label):
+    frame_label=label.removeprefix(face.label+'/')
     # The ornament field occupies the space to the right of its narrow oblong band.
     def p(u,v,depth=.013):return tuple(face.point(left+u*width,bottom+(1-v)*height,depth))
     # The framing uprights span the opening and support both rectangular ornament panels.
     for u in (.286,.896):
-        face.box(left+u*width,bottom+height/2,.010,height,.016,.013,IRON,label+'/Uprights through the two plaques')
+        face.box(left+u*width,bottom+height/2,.010,height,.016,.013,IRON,frame_label+'/Continuous plaque uprights')
     for v in (0.,.5,1.):
-        face.box(left+.5*width,bottom+(1-v)*height,width,.014,.018,.012,IRON,label+'/Horizontal rails')
+        face.box(left+.5*width,bottom+(1-v)*height,width,.014,.018,.012,IRON,frame_label+'/Horizontal rails')
     for v,c in ((.25,.598),(.742,.594)):
         half_width=.098
-        face.box(left+c*width,bottom+(1-v)*height,2*half_width*width,.232*height,.023,.022,IRON,label+'/Square iron plaques')
+        face.box(left+c*width,bottom+(1-v)*height,2*half_width*width,.232*height,.023,.022,IRON,frame_label+'/Square iron plaques')
         sw=.078*width;sh=.096*height
         wire(b,[tuple(face.point(left+c*width+u,bottom+(1-v)*height+z,.037))
                 for u,z in ((-sw,-sh),(sw,-sh),(sw,sh),(-sw,sh),(-sw,-sh))],.005,lod,label+'/Raised plaque rims',EDGE)
@@ -164,15 +166,15 @@ def little_balcony(b,cx,floor,level,side,lod):
     band_edges=((0.,.0859),(.4498,.5411),(.906,1.))
     for j,(lo,hi) in enumerate(band_edges):
         left=(lo-.5)*front_x
-        band_label=label+'/Ornamental ironwork'
+        band_label=label+'/Ironwork'
         oval_band(b,near,left,floor+.047,(hi-lo)*front_x,rail_h,j==1,lod,band_label)
         if j<2:
             cell_width=(band_edges[j+1][0]-lo)*front_x
             ornamental_cell(b,near,left,floor+.047,cell_width,rail_h,lod,band_label)
-    near.box(0,top,front_x+.055,.041,.063,.018,EDGE,label+'/Top handrail')
-    near.box(0,floor+.044,front_x+.024,.031,.037,.011,IRON,label+'/Base rail')
+    near.box(0,top,front_x+.055,.041,.063,.018,EDGE,'Top handrail')
+    near.box(0,floor+.044,front_x+.024,.031,.037,.011,IRON,'Base rail')
     for xx in (-front_x/2,front_x/2):
-        near.box(xx,(floor+top)/2,.026,top-floor,.038,.018,IRON,label+'/Balcony posts')
+        near.box(xx,(floor+top)/2,.026,top-floor,.038,.018,IRON,'Balcony posts')
     for hand in (-1,1):
         xx=cx+hand*front_x/2
         sideface=Facade(b,(xx,-depth),(xx,0),label+'/Side')
@@ -247,7 +249,7 @@ def ridge_and_tiles(b,lod):
         b.prism(cap,-.111,.111,lambda y,z,x:(x,y,z),CAP,'Stepped cap of party wall')
 
 def add_building(b,lod):
-    half=2.24;wall=Facade(b,(-half,0),(half,0),'South face of adjoining homes')
+    half=2.24;wall=Facade(b,(-half,0),(half,0),'South wall')
     openings=[]
     for side in (-1,1):
         cx=side*D['centres']/2

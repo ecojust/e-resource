@@ -38,7 +38,7 @@ shader = next(n for n in material.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'
 assert shader.inputs['Base Color'].links[0].from_node == node
 groups = [o for o in scene.objects if o.type=='MESH']
 for label in ('Square iron plaques','Stepped balcony slab','Raised central party wall',
-              'Clipped transom glass','Green awnings','Ground entrance arch','Stacked elongated loops'):
+              'Clipped transom glass','Green awnings','Ground entrance arch','Nested oblongs','Continuous plaque uprights'):
     assert any(label in obj.name for obj in groups),label
 loops = 0
 max_error = 0.
