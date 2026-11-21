@@ -79,6 +79,7 @@ node --test projects/shanghai/tests/landmark-navigation.test.mjs projects/shangh
 - 按既有流程，每栋完成后独立提交主分支；用户另有分支或发布指令时遵从。只暂存本轮明确文件，稀疏检出按需用 `git add --sparse -- <paths>`，检查暂存 diff，避免把清理本地文件变成历史资产删除。
 - 用户明确要求把全部本地改动提交时，可以提交尚未验收的开发快照；先核对完整变更清单和暂存区，保留所有已授权改动，并在提交说明及history中列出未完成事项。提交、推送与公开验收分别记录，不把一次保存进度的提交写成模型发布完成。
 - 明确区分本地完成、检查通过、已提交、已推送和公开文件已核对。公开 HTTP 200 不代表版本正确，应对照确切提交校验关键页面、模块、清单与下载字节；缓存过期时保留失败与重试范围，必要时提供已验证的不可变提交主图链接。
+- 候选模型发布后，先用 `check_candidate_publication.py` 核对公开文件，再运行 `python projects/shanghai/tools/check_reviewed_city_publication.py <publication.json>`，将公开主图目录与该模型验收时的场景快照核对。
 - 更新模型提交时间时可以追加元数据提交，不回写不存在的自引用提交号。检查通过且资产未再变化时，不反复重跑相同重型任务。
 
 ## 持续记录与交接

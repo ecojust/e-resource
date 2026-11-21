@@ -84,17 +84,6 @@ def source_registers(manifest, source_folder, list_source_files):
     return [source_folder + '/' + name for name in names]
 
 
-def publication_failures(records, reviewed_catalog_sha256):
-    failed = [r['path'] for r in records if not r['matches_commit']]
-    if reviewed_catalog_sha256 is not None:
-        catalog, = [r for r in records if r['path'] == PREFIX + 'data/candidate-city-integrations.json']
-        catalog['reviewed_sha256'] = reviewed_catalog_sha256
-        catalog['matches_reviewed_catalog'] = catalog['expected_sha256'] == reviewed_catalog_sha256
-        if not catalog['matches_reviewed_catalog'] and catalog['path'] not in failed:
-            failed.append(catalog['path'])
-    return failed
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('model')
@@ -126,13 +115,6 @@ def main():
         return subprocess.check_output(
             ['git', 'ls-tree', '--name-only', commit + ':' + folder], cwd=REPO, text=True
         ).splitlines()
-
-    snapshot_file = Path(job['evidence']).with_name('production-snapshot.json').as_posix()
-    has_snapshot = subprocess.check_output(
-        ['git', 'ls-tree', '--name-only', commit, '--', snapshot_file], cwd=REPO, text=True
-    ).strip() == snapshot_file
-    catalog_path = 'data/candidate-city-integrations.json'
-    reviewed_digest = json.loads(blob(snapshot_file))['files'][catalog_path] if has_snapshot else None
 
     files = ['README.md', job['evidence'], PREFIX + 'README.md', PREFIX + 'CURRENT_STATE.md',
              PREFIX + 'landmarks.html', PREFIX + 'index.html', PREFIX + manifest['viewer_page'],
@@ -193,13 +175,12 @@ def main():
         for r, result in zip(records, pool.map(fetch, [r['url'] for r in records])):
             r['response'] = result
             r['matches_commit'] = (result.get('status'), result.get('bytes'), result.get('sha256')) == (200, r['expected_bytes'], r['expected_sha256'])
-    failed = publication_failures(records, reviewed_digest)
-    passed = not failed
+    passed = all(r['matches_commit'] for r in records)
     report = dict(model=args.model, landmark_id=landmark_id, commit=commit, http_ref=ref, checked_at_utc=datetime.now(timezone.utc).isoformat(),
                   checked_files=len(records), passed=passed, verifier_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                   direct_view=BASE + ref + '/' + PREFIX + 'index.html#landmark=' + landmark_id + '&mode=overview', records=records)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-    print(json.dumps({'passed': passed, 'count': len(records), 'failed': failed}))
+    print(json.dumps({'passed': passed, 'count': len(records), 'failed': [r['path'] for r in records if not r['matches_commit']]}))
     return 0 if passed else 1
 
 
