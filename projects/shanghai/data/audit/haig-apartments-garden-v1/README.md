@@ -43,3 +43,7 @@
 高安公寓普通机位中心距海格锚点实测1,493.08米。海格登记距离为1,200米，已显示物体另有300米保留范围，两座公寓同时出现符合此处的实际距离。[机位、两栋裁切与运行条件](city-31207/nearby-return/retained-nearby-visibility.json)
 
 480×360的街面和屋面截图保留了地点卡。卡片盖住门厅及下部立面，窄幅近景只露出阳台栏杆、窗格的一部分。另从正式目录以鼠标打开830×820地图，保留同一页面控件，分别拍摄东西端敞廊、中央门厅和屋顶。东西端可分出两根石柱、三跨栏杆与后退的暗部，门厅可见外凸拱罩与洞口，地点光点遮住门洞下部。较高的全景可同时看见四列阳台、两处高起屋面和与后方旧楼相接的位置。[西端券廊](city-31207/garden-details/garden-west-loggia.png) · [东端券廊](city-31207/garden-details/garden-east-loggia.png) · [门厅](city-31207/garden-details/garden-entrance.png) · [屋面与全立面](city-31207/garden-details/garden-upper-balconies.png) · [实拍及各点的界面遮挡](city-31207/garden-details/main-browser.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9977b91a7b26eb58696f67834a7d4462ba2720ff/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

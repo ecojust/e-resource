@@ -3902,7 +3902,7 @@
 | 泰兴大楼（MEDHURST大楼）南京西路与泰兴路转角 | 2026-11-21 12:58:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview) |
 | 德义大楼（南京西路与石门路转角） | 2026-11-21 13:34:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) |
 | 枕流公寓 | 2026-11-21 15:43:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-brookside-apartments&mode=overview) |
-| 海格公寓主楼南向花园立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) |
+| 海格公寓主楼南向花园立面 | 2026-11-21 17:21:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) |
 
 ### 普陀区（2处）
 
