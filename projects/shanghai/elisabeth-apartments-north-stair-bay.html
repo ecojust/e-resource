@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>伊丽莎白公寓 · 北立面主楼梯间与雨厦</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="北立面中央五层楼梯窗、折角砖带和双柱雨厦"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 复兴中路1327号</p>
+    <h1>伊丽莎白公寓</h1>
+    <p>北立面主楼梯间与雨厦</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从雨厦下向上看，主楼梯的窗和红砖窗间墙沿同一道折角向外凸出。浅色壁带从二层贯通至檐口。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看北立面楼梯间</button>
+      <button type="button" data-view="oblique">斜看折角与两侧窗</button>
+      <button type="button" data-view="above">俯看檐口与雨厦</button>
+      <button type="button" data-view="inscription">近看铁门与门牌</button>
+      <button type="button" data-view="return">转看折角楼梯窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-elisabeth-apartments-north-stair-bay/README.md">北立面原图、英制尺寸与入口照片</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-elisabeth-apartments-north-stair-bay', {
+      inscription: {center: [0, 1.44, .02], size: [2.88, 2.90, 1.20], direction: [.20, .04, 1]},
+      return: {center: [0, 7.00, .42], size: [2.64, 4.60, 1.50], direction: [-.75, -.20, 1]},
+    });
+  </script>
+</body>
+</html>
