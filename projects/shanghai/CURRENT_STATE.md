@@ -1,3 +1,11 @@
+# 吴同文住宅（绿房子）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-woo-tongwen-green-house&mode=overview) · [单体旋转与下载](woo-green-house.html) · [来源与制作范围](source/precise/jingan-woo-tongwen-green-house/README.md) · [验收记录](data/audit/woo-green-house-v1/README.md)
+
+按铜仁路333号2B015、四层平立面和花园实景制作主楼绿釉砖墙、东南三层弧窗、退台、红色面层弧形露天楼梯、底层车道与北侧通高楼梯窗。
+
+近景 51,536 个三角面，远景 22,612 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,125,104 字节。上海主图现有 214 处独立入口，静安区 21 处。[资产清单](assets/models/candidates/jingan-woo-tongwen-green-house/manifest.json)
+
 # 岳阳路110号住宅花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-110-residence&mode=overview) · [单体旋转与下载](yueyang-road-110.html) · [来源与制作范围](source/precise/xuhui-yueyang-road-110-residence/README.md) · [验收记录](data/audit/yueyang-road-110-v1/README.md)
