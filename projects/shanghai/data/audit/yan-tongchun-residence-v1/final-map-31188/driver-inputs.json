@@ -1,0 +1,74 @@
+{
+  "source_sha256": {
+    "archive.py": "fddbf6a194b5557d75244959e64940d089b0446b6bb10d25cfe6255921b33369",
+    "run.sh": "ad2684b3e85f58666c964604a47796defc9b03ef1f1818252f3bc71d036c8643",
+    "check-independent-city.cjs": "07f22f2b176fa0ba9fa875b08563799ff97df6d50b2cc06e94bc187b06fa5e40",
+    "sequence.sh": "dacf05958c52fd8b468285a34c25c4e47b77a1e6bd8d97ed2dbb54111bf8f662",
+    "slot-between.py": "2d139cbf3166cf54d3214a36446752990f5e153315ba3db359328e1f85c434cb",
+    "constrained-viewport.cjs": "85cbe158ed52a4728105d06ca7e5d2ed75cb96d75739c0defcc8202ce001ac05",
+    "record-attempts.py": "985b7e0332b41aa61a3e71d95134d50008beb422cfd7864b2f698a9143d92f27",
+    "merge-sessions.py": "25705cd91f490234d9a9989493b31643f14edad32e65eec1366556987f0273c2",
+    "check-distant-and-downloads.cjs": "6b4bc0b2dba1be892493cc0c105f0ecfdf630e77b7a94e5ff09e68081bd39965"
+  },
+  "accepted_sources_sha256": {
+    "check-independent-city.cjs": "6739e6e543a468f0027c04c93c7c9f8a573ff1eb26a680d2834dec3cda2cc2c3",
+    "run.sh": "2e5d1042d335003d562956b9ca03457a9137b1d82d3a5d8c1c928c55a7fd6e98",
+    "sequence.sh": "e37cc5c189e9bf039291c8ec9263a7ab114428deb3916bc14ddebb80509ef7fa",
+    "archive.py": "d0f8901ca6c4b20cd72b9d777da1c5d1b5e375eae39f0390ba224edaf97ef85a",
+    "merge-sessions.py": "16cc00b0b2a53561b505a1e2f5e64e8459d335c193d222b2c4bc2c83f6c7bfe5"
+  },
+  "old_and_new": [
+    "http://127.0.0.1:31187/",
+    "http://127.0.0.1:31188/"
+  ],
+  "views": {
+    "before": [
+      "before-front"
+    ],
+    "desktop": [
+      "map-desktop"
+    ],
+    "phone": [
+      "map-mobile"
+    ],
+    "architecture": [
+      "map-front",
+      "map-carved-door-and-transom"
+    ],
+    "distant": [
+      "map-distant"
+    ]
+  },
+  "scope": "Same frozen target, controls, probes, opposite houses and four downloads. One separate desktop, phone, detail and distant browser; click coordinates must hit the map canvas and actual target.",
+  "initial_driver_sha256": "6739e6e543a468f0027c04c93c7c9f8a573ff1eb26a680d2834dec3cda2cc2c3",
+  "control_recovery": {
+    "reason": "Original prior-landmark jump crossed districts during 254 full HTTP streaming. The old renderer crashed before producing a view.",
+    "route": "The public coordinate link in 31187 opens the unchanged street directly; compare at the same named front camera.",
+    "viewport": [
+      620,
+      450
+    ],
+    "first_attempt_path": "/tmp/yan816188/final-map-31188/attempt-01-control-renderer-crash",
+    "current_script_sha256": "7479ef81b166359a008bddf2ff4ec2a0eda753ae3c2292053c55d3ac1545f5e1",
+    "second_attempt_path": "/tmp/yan816188/final-map-31188/attempt-02-control-after-frame-crash",
+    "skipped_camera_action": "Skip a second camera move if the named native group is already active. The full group, 10 owners and 12 ground comparisons remain compulsory."
+  },
+  "desktop_viewport_recovery": {
+    "width": 790,
+    "height": 510,
+    "phone": [
+      390,
+      844
+    ],
+    "control": [
+      620,
+      450
+    ],
+    "first_attempt": "attempt-03-desktop-after-selection-crash",
+    "reason": "The original 960 by 700 desktop reached the label click and active full model before the renderer crashed. The repeated standalone browser uses fewer pixels without changing the catalog, case, scene or runner logic."
+  },
+  "distant_retry": {
+    "first_map": "attempt-04-distant-while-opening-download-crash",
+    "reason": "Distant LOD frame and model response were verified at 15.5. The tab crashed at the first download event; close the replayed map browser before opening a fresh browser for downloads."
+  }
+}

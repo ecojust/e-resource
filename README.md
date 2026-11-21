@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 224 处入口。最近接入[虹桥路2275号历史住宅山墙与屋顶](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 225 处入口。最近接入[延安中路816号严同春宅东宅街面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yan-tongchun-residence-street-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的187项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的188项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,7 +31,9 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 188 | 延安中路816号严同春宅东宅街面 | 静安区／延安中路816号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；核对1933年建造档案、林瑞骥设计图、花园历史照片及街门各期变化。 |
+| 189 | 愚园路754号住宅 | 长宁区／愚园路754号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对花园各栋的初建、改建档案及完整立面，分别记录相邻门牌。 |
+| 190 | 汾阳路9弄3号原海关俱乐部木屋 | 徐汇区／汾阳路9弄3号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查找原施工图、北侧与庭园附属的合期照片和改造记录。 |
+| 191 | 望德堂北京西路1220弄2号楼 | 静安区／北京西路1220弄2号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对小堂与办事处内部的原始边界、后侧立面和历次改建，区别香山路同类机构。 |
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -740,7 +742,7 @@
 | sh-historic-b2-111 | 郭氏兄弟住宅其余楼栋、立面与沿街附属 | 南京西路1418号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 依历史档案区分两幢住宅、沿街附属及不同阶段的门墙，继续补证隐蔽的立面和构件。 |
 | sh-historic-b2-113 | 绿房子未见室内、院墙与独立附属 | 铜仁路333号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续核实北侧院墙、独立门房和车库、未见的室内装修及不同时期改动；保留园南独立办公楼。 |
 | sh-historic-b2-114 | 贝宅其余立面与历史入口 | 北京西路1301号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核实两个门牌各自的历史入口、花园门墙和主楼背立面。 |
-| sh-historic-b2-124 | 花园住宅 | 延安中路816号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-124 | 严同春旧居建成年代与花园住宅本体 | 延安中路816号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核对1933年建造档案、林瑞骥设计图、花园历史照片及街门各期变化。 |
 | sh-historic-b2-127 | 望德堂 | 北京西路1220弄2号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-128 | 爱登公寓 | 常德路195号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-130 | MEDHURST大楼 | 南京西路934号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -3639,6 +3641,7 @@
 [H4]: <https://zh.wikipedia.org/w/index.php?title=%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BC%98%E7%A7%80%E5%8E%86%E5%8F%B2%E5%BB%BA%E7%AD%91&oldid=95304946#第四批>
 [H5]: <https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html>
 
+[MTD-10c79143]: <https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>
 [MTD-aa5f33d7]: <projects/shanghai/data/model-todo/completed-model-scope-review.json>
 [MTD-663cb64a]: <projects/shanghai/data/model-todo/heritage-next20-model-reconciliation.json>
 <!-- model-todo:end -->
@@ -3653,7 +3656,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；224处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中184件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；225处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中185件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3661,7 +3664,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增184处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增185处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3683,7 +3686,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，224处建筑与构件模型入口（40处既有＋184处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增184处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，225处建筑与构件模型入口（40处既有＋185处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增185处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（96处）
@@ -3854,7 +3857,7 @@
 | 新华路329弄17号住宅 | 2026-11-21 11:02:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-329-no17&mode=overview) |
 | 虹桥路2275号历史住宅山墙与屋顶 | 2026-11-21 11:10:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview) · 1994 年入录，约 1996 年灭失，地点卡可查看出版画稿复原 |
 
-### 静安区（22处）
+### 静安区（23处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
@@ -3882,6 +3885,7 @@
 | 郭氏兄弟住宅弧形檐廊 | 2026-11-21 09:09:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-kwok-brothers-residence-historic-front&mode=overview) · 1926 年原址，地点卡可查看历史外观 |
 | 吴同文住宅（绿房子） | 2026-11-21 09:23:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-woo-tongwen-green-house&mode=overview) |
 | 贝宅花园侧主楼 | 2026-11-21 09:47:44 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) |
+| 延安中路816号严同春宅东宅街面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yan-tongchun-residence-street-front&mode=overview) |
 
 ### 普陀区（2处）
 

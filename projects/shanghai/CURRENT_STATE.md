@@ -1,3 +1,11 @@
+# 延安中路816号严同春宅东宅街面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yan-tongchun-residence-street-front&mode=overview) · [单体旋转与下载](yan-tongchun-residence.html) · [来源与制作范围](source/precise/jingan-yan-tongchun-residence-street-front/README.md) · [验收记录](data/audit/yan-tongchun-residence-v1/README.md)
+
+核对2B025、家属指认的严同春宅816号东宅和沿街实照，制作浅色砖柱、带木扇的下部开口、铁窗和腰墙。
+
+近景 41,984 个三角面，远景 17,840 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,912,025 字节。上海主图现有 225 处独立入口，静安区 23 处。[资产清单](assets/models/candidates/jingan-yan-tongchun-residence-street-front/manifest.json)
+
 # 虹桥路2275号历史住宅山墙与屋顶
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview) · [单体旋转与下载](hongqiao-road-2275-history.html) · [来源与制作范围](source/precise/changning-hongqiao-road-2275-historic-front/README.md) · [验收记录](data/audit/hongqiao-road-2275-history-v1/README.md)
