@@ -19,3 +19,7 @@
 街区远景实际载入 37,860 面模型，邻近还可见美琪大戏院和同孚大楼的灯牌。这个比例尺下，地点标签会遮住部分建筑，窗格与挑脊的细节见近景。浏览器实取原始 GLB、网页 GLB、远景 GLB 和可编辑原生文件，四件字节数与 SHA-256 均与登记一致。首次屋顶检查曾把地面灯牌的点选要求套在高空机位，原始退出记录与复测结果已一并保存。[首次屋顶检查及复测](archived-browser-attempts.json)
 
 [十二段浏览器退出与四件下载](city-31194/process-exits.json) · [旧城同机位](city-31194/map-before.png) · [近距街面](city-31194/map-street-facade.png) · [桌面地点卡](city-31194/map-desktop.png) · [手机地点卡](city-31194/map-mobile.png) · [五道挑脊](city-31194/map-finely-stepped-crown-without-overlay.png) · [街区远档](city-31194/map-distant-visible-in-street-context.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f9ce28182d51ea1f94c1e0c3bef0a0765a3faace/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
