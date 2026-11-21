@@ -1,3 +1,11 @@
+# 泰兴大楼（MEDHURST大楼）南京西路与泰兴路转角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview) · [单体旋转与下载](medhurst-apartments.html) · [来源与制作范围](source/precise/jingan-medhurst-apartments/README.md) · [验收记录](data/audit/medhurst-apartments-v1/README.md)
+
+按2B004的MEDHURST大楼登记和两期独立街照，重现南京西路934号中央高段、冠部线脚及两侧条窗街翼，核对市名录与1933、1934年异文。
+
+近景 71,920 个三角面，远景 37,860 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,689,305 字节。上海主图现有 231 处独立入口，静安区 26 处。[资产清单](assets/models/candidates/jingan-medhurst-apartments/manifest.json)
+
 # 河滨大楼临苏州河立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-embankment-building-riverfront&mode=overview) · [单体旋转与下载](embankment-riverfront.html) · [来源与制作范围](source/precise/hongkou-embankment-building-riverfront/README.md) · [验收记录](data/audit/embankment-riverfront-v1/README.md)
