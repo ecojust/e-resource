@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>励家花园 · 高安路63号街门</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="高安路63号励家花园街门、双面砖券及贯通车道"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 高安路63号</p>
+    <h1>励家花园</h1>
+    <p>高安路街门与双面砖券过道</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">街面和庭院各有一座红砖拱券，两侧石座承托多层券砖。穿过敞开的铁门，可以看见车道两端的山墙和上层拱窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">临街山墙</button>
+      <button type="button" data-view="oblique">院内山墙</button>
+      <button type="button" data-view="above">俯看双坡屋顶</button>
+      <button type="button" data-view="inscription">近看券砖与覆瓦</button>
+      <button type="button" data-view="return">沿车道望入庭院</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-li-garden-gaoan-gatehouse/README.md">门牌、历史实照与测量依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-li-garden-gaoan-gatehouse', {
+  "front": {
+    "center": [
+      0,
+      3.31,
+      -0.08
+    ],
+    "size": [
+      7.73295167,
+      6.62304567,
+      0.61863613
+    ],
+    "direction": [
+      0.01251144,
+      0.00990489,
+      0.99987267
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      3.32,
+      -6.18
+    ],
+    "size": [
+      7.68145095,
+      6.57893681,
+      0.61451608
+    ],
+    "direction": [
+      -0.02828339,
+      0.03870359,
+      -0.99885038
+    ]
+  },
+  "above": {
+    "center": [
+      1.23,
+      5.63,
+      -2.36
+    ],
+    "size": [
+      3.39051074,
+      2.90387272,
+      0.27124086
+    ],
+    "direction": [
+      0.69187158,
+      0.47462194,
+      0.54410268
+    ]
+  },
+  "inscription": {
+    "center": [
+      0,
+      1.94,
+      0.08
+    ],
+    "size": [
+      4.10920944,
+      3.51941702,
+      0.32873675
+    ],
+    "direction": [
+      0.26927913,
+      0.20242362,
+      0.94154842
+    ]
+  },
+  "return": {
+    "center": [
+      0.01,
+      1.42,
+      -1.61
+    ],
+    "size": [
+      3.32543595,
+      2.84813808,
+      0.26603488
+    ],
+    "direction": [
+      0.03493363,
+      -0.00873341,
+      0.99935147
+    ]
+  }
+});
+  </script>
+</body>
+</html>
