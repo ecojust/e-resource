@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>沪江大学北体育馆历史入口石券</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="沪江大学北体育馆历史入口石券"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">杨浦区 · 军工路516号</p>
+    <h1>沪江大学北体育馆</h1>
+    <p>历史入口石券</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">浅尖石券向门内逐层收进。拱下的上亮窗分成窄格，两扇木门后退于门框。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看石券与双扇门</button>
+      <button type="button" data-view="oblique">斜看门框退距</button>
+      <button type="button" data-view="above">俯看门槛与券顶</button>
+      <button type="button" data-view="inscription">细看券顶与上亮窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/yangpu-hujiang-haskell-gymnasium-arched-portal/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('yangpu-hujiang-haskell-gymnasium-arched-portal', {
+      front: {"center": [0,1.69,-.08], "size": [3.20,3.40,.73], "direction": [.03,-.035,1]},
+      oblique: {"center": [0,1.69,-.08], "size": [3.20,3.40,.73], "direction": [.45,.18,1]},
+      above: {"center": [0,1.69,-.08], "size": [3.20,3.40,.73], "direction": [.26,.50,1]},
+      inscription: {"center": [0,2.61,-.06], "size": [2.41,1.33,.61], "direction": [.18,.01,1]},
+    });
+  </script>
+</body>
+</html>
