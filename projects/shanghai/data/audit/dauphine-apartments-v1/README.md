@@ -37,3 +37,7 @@
 街面和转角首轮采用480×360画幅。转至原定屋顶相机后，楼体与女儿墙顶采样点仍在画面内，地点标牌未能命中，所以该段以1退出。用相同俯仰、方位、中心和缩放改为600×730画幅后，同一组楼体、屋顶、标牌和地面检查通过。[初次屋顶取景记录](city-31200/initial-roof-framing/main-browser-original.txt) · [原始退出记录](city-31200/initial-roof-framing/exit-original.txt) · [最终屋面](city-31200/map-roof.png)
 
 普通目录的两幅稳定图中，能辨认南立面中央竖向转角窗和连续阳台；左侧较低的街区楼体遮住局部下层。公开加号放大后中央窗框更清楚，两侧阳台延伸至画幅边缘。屋顶近景保留中央突出部分和两翼檐线，下层已在画外。远档用于核对整栋在城区中的位置和资产切换，构件细部请看街面图或单体页。[手机公开缩放](city-31200/map-mobile-public-zoom.png) · [街面与阳台转角](city-31200/map-west-balcony-corner.png) · [远档实拍](city-31200/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/cb9189cd90505da93bc17842a2bad7d5f079e15a/projects/shanghai/index.html#landmark=xuhui-dauphine-apartments-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
