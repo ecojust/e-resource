@@ -1,3 +1,11 @@
+# 淮海中路1469号历史花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1469-garden-front&mode=overview) · [单体旋转与下载](huaihai-1469-garden-front-history.html) · [来源与制作范围](source/precise/xuhui-huaihai-1469-garden-front/README.md) · [验收记录](data/audit/huaihai-1469-garden-front-v1/README.md)
+
+以市房管局2D007、2011年官方建筑沿革和早期馆方花园侧照片为据，用历史展示页呈现1921年主楼的窗列、腰线与中央门廊。
+
+近景 4,656 个三角面，远景 2,724 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 685,064 字节。上海主图现有 206 处独立入口，徐汇区 26 处。[资产清单](assets/models/candidates/xuhui-huaihai-1469-garden-front/manifest.json)
+
 # 岳阳路145号花园住宅南立面与折檐红瓦屋顶
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-145-residence&mode=overview) · [单体旋转与下载](yueyang-road-145-residence.html) · [来源与制作范围](source/precise/xuhui-yueyang-road-145-residence/README.md) · [验收记录](data/audit/yueyang-road-145-residence-v1/README.md)
