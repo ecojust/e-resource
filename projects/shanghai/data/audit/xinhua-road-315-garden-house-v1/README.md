@@ -13,3 +13,7 @@
 [旧站对照](city-31185/before/map-before.png) · [桌面街区](city-31185/desktop/map-desktop-settled.png) · [手机街区](city-31185/phone/map-mobile-settled.png) · [正立面](city-31185/architecture/map-street-facade.png) · [屋顶](city-31185/architecture/map-roof.png) · [街区远景](city-31185/distant/map-distant.png)
 
 在221处旧站和222处新站分别打开同一带标签位置。旧站牌后的中灰原楼在新站变为多段红褐色坡顶，桌面与手机等待邻楼载入后，仍能从院内辨认具有两条屋脊的主屋和北翼。建筑近景中，前凸山墙里的深木构、底层三扇高窗、中央玻璃门、东端露台栏杆和长屋面上的老虎窗可辨。左侧保留邻房遮住一小段外墙。屋顶视图能分开前后坡面、穿屋烟囱和两端伸翼。独立开启的街区远景显示整片灰色建筑和已选住宅名牌，页面读取了远景模型。实际鼠标点选和触屏点选均进入本住宅，四件下载与资源清单逐字匹配。
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0d81b96bb1e5fe126c2593af667713135115f678/projects/shanghai/index.html#landmark=changning-xinhua-road-315-garden-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
