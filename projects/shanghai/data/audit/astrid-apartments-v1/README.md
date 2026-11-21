@@ -20,3 +20,7 @@
 街面近照可见门前斜收的两侧墙、门框和深色扇形气窗。另一张高位画面可见塔冠的折线和逐级收窄的顶端。五个门面和塔冠采样点均落在画布上，避开了标签和地点卡。本楼16处及邻楼8处的实际通行结果均与底图对照相符。[门与气窗](final-map-31198/architecture/map-iron-fanlight.png) · [塔冠](final-map-31198/architecture/map-tower-crown.png) · [24处地面与两种实际点击](final-map-31198/results.json)
 
 第一次建筑实测有两份城市资源返回502；补回原始字节后，前后两站都返回200，四张建筑实景重新拍摄。第一次远景切换时渲染进程退出，随后在同站较小视口成功拍下远景并取回四份文件。两次原始失败和对应的成功记录均保留。[两站资源摘要](final-map-31198/repaired-ready-31197-31198.json) · [原始与复测记录](archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f94594b3e7959bf502dbf20bd0e04d5a6485f993/projects/shanghai/index.html#landmark=huangpu-astrid-apartments-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，4 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
