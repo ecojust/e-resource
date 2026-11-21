@@ -1,4 +1,4 @@
-"""Frame the street window, its pediment and stone apron."""
+"""Frame the three arcade windows, both stone columns, and their carved capitals."""
 import bpy
 from mathutils import Vector
 
@@ -17,7 +17,7 @@ def frame_windows(_):
     hi=Vector([max(v[i] for v in corners) for i in range(3)])
     camera.rotation_euler=rotation.to_euler()
     camera.location=rotation @ ((lo+hi)/2)+eye*30
-    camera.name='Anting street window and carved garland'
+    camera.name='Zhang Shuxun garden arcade'
     camera.data.type='ORTHO'
     scene.render.resolution_x=800
     scene.render.resolution_y=640
