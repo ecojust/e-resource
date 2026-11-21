@@ -30,3 +30,7 @@
 两端都从地点卡打开档案、切换近远档，再返回同一标记。画面可辨中央四柱弧廊、花园阶面、双翼瓦顶和右侧低附房。该版本弹窗显示“1921—1939年照片”，展件说明保留了确切拍摄年份待考。浏览器签验了两档实际模型；独立页的六张视图及四个下载与这期文件逐件相符。[桌面近景](final-map-31174/desktop-archive-near.png) · [触屏远景](final-map-31174/mobile-archive-lod.png) · [两端操作及签名](final-map-31174/after.json) · [独立页对照](final-map-31174/bound-inputs.json)
 
 首次前态因内存压力在首图前退出，桌面后态首轮则因检查器预期的标题与当期页面不同而中止。三次正式复测均退出成功，前态与后态共留下七幅画面。[首轮前态](final-map-31174/initial-control-failure/session.json) · [标题检查订正](final-map-31174/initial-caption-expectation/checker-correction.json) · [正式结果](final-map-31174/results.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ccc65ff224edf5edf201e419fa4c6f81709bcf62/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

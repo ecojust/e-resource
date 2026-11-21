@@ -3827,7 +3827,7 @@
 | 武康路99号正广和大班住宅 | 2026-11-21 08:29:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) |
 | 郭棣活旧居西楼（东南花园立面） | 2026-11-21 08:35:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-guo-dihuo-west-house&mode=overview) |
 | 丁香花园一号楼拱廊与露木山墙 | 2026-11-21 08:40:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview) |
-| 淮海中路1431号巴塞住宅历史花园立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
+| 淮海中路1431号巴塞住宅历史花园立面 | 2026-11-21 08:49:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
 
 ### 长宁区（10处）
 
