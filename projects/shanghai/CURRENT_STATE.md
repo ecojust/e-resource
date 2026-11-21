@@ -1,3 +1,11 @@
+# 赛华公寓常熟路、延庆路转角立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-savoy-apartments-street-front&mode=overview) · [单体旋转与下载](savoy-apartments.html) · [来源与制作范围](source/precise/xuhui-savoy-apartments-street-front/README.md) · [验收记录](data/audit/savoy-apartments-v1/README.md)
+
+原名赛华公寓，现名瑞华公寓。常熟路与延庆路两翼各有两处敞开楼梯，斜街角有连续五层折面凸窗及浅色檐带。
+
+近景 33,436 个三角面，远景 26,692 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,628,453 字节。上海主图现有 252 处独立入口，徐汇区 50 处。[资产清单](assets/models/candidates/xuhui-savoy-apartments-street-front/manifest.json)
+
 # 永业大楼（杨氏公寓）淮海中路、雁荡路圆角
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-young-apartments&mode=overview) · [单体旋转与下载](young-apartments.html) · [来源与制作范围](source/precise/huangpu-young-apartments/README.md) · [验收记录](data/audit/young-apartments-v1/README.md)
