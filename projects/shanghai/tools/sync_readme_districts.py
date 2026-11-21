@@ -282,6 +282,8 @@ def render(text, items, times, project=False):
                 view = city[item['id']]['historical_view']
                 if 'building_year' in view:
                     links += f" · {view['building_year']} 年原址，地点卡可查看历史外观"
+                elif view['evidence_kind'] == 'dated-photograph':
+                    links += f" · 厂区范围索引，保护建筑现存，照片对应的具体楼翼待考。地点卡可查看 {view['evidence_years'][0]} 年拍摄的历史外观"
                 elif view['evidence_kind'] == 'reprinted-photograph':
                     links += f" · {view['listed_year']} 年入录，约 {view['approximate_loss_year']} 年灭失，地点卡可查看历史照片复原"
                 else:

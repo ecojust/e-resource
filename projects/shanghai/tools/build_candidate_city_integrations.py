@@ -355,6 +355,11 @@ def validate_historical_period(view, ident):
     years = view.get("evidence_years")
     assert isinstance(years, list) and len(years) == 2 and all(year(value) for value in years), ident
     assert years[0] <= years[1], ident
+    if view.get("evidence_kind") == "dated-photograph":
+        assert set(view) == {"kind", "evidence_kind", "evidence_years", "site_status", "location_precision"}, ident
+        assert years[0] == years[1] and view["site_status"] == "protected-building-unlocated", ident
+        assert view["location_precision"] == "complex", ident
+        return
     if "building_year" in view:
         assert set(view) == {"kind", "building_year", "evidence_years"}, ident
         assert year(view["building_year"]) and view["building_year"] <= years[0], ident
@@ -382,7 +387,9 @@ def historical_site_record(item, placement):
     view = placement["historical_view"]
     validate_historical_period(view, ident)
     archive_page = re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*-history\.html", item["individual_page"])
-    assert archive_page or (ident == "jingan-chen-bingqian-historic-residence" and item["individual_page"] == "chen-bingqian-historic-residence.html"), ident
+    custom_pages = {"jingan-chen-bingqian-historic-residence": "chen-bingqian-historic-residence.html",
+                    "yangpu-yangshupu-power-turbine-hall": "yangshupu-turbine-hall.html"}
+    assert archive_page or (ident in custom_pages and item["individual_page"] == custom_pages[ident]), ident
     assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", ident), ident
     page = (PROJECT / item["individual_page"]).read_text()
     assert "showCandidateAssetViewer('" + ident + "')" in page, f"Archive viewer identity differs: {ident}"

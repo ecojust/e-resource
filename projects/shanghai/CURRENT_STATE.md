@@ -1,3 +1,11 @@
+# 杨树浦电厂汽机房及4号锅炉房（1926年合影可见外观）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-yangshupu-power-turbine-hall&mode=overview) · [单体旋转与下载](yangshupu-turbine-hall.html) · [来源与制作范围](source/precise/yangpu-yangshupu-power-turbine-hall/README.md) · [验收记录](data/audit/yangshupu-turbine-hall-v1/README.md)
+
+按杨浦区文物说明及题注为“1926年汽机房及4号锅炉房历史照片”的合影，复原两者同框可辨的外轮廓和开窗。以历史厂区作为地图索引，具体分栋与现存屋面对应关系待证。
+
+近景 24,384 个三角面，远景 9,408 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,617,680 字节。上海主图现有 257 处独立入口，杨浦区 9 处。[资产清单](assets/models/candidates/yangpu-yangshupu-power-turbine-hall/manifest.json)
+
 # 江南制造局旧址总办公楼（西公务厅）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jiangnan-historic-general-office&mode=overview) · [单体旋转与下载](jiangnan-historic-general-office.html) · [来源与制作范围](source/precise/huangpu-jiangnan-historic-general-office/README.md) · [验收记录](data/audit/jiangnan-historic-general-office-v1/README.md)

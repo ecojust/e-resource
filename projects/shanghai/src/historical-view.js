@@ -4,6 +4,7 @@ const fields = ['id','name','kind','districtId','district_name','lng','lat','ind
 const archiveYear=year=>Number.isInteger(year)&&year>=1500&&year<=new Date().getUTCFullYear();
 
 export function historicalSiteCaption(view) {
+  if(view.evidence_kind==='dated-photograph') return '厂区范围索引 · 保护建筑现存，照片对应的具体楼翼待考';
   if(view.building_year!==undefined) return `${view.building_year}年建筑原址`;
   return `${view.listed_year}年名录登记 · 原建筑约${view.approximate_loss_year}年灭失`;
 }
@@ -12,6 +13,10 @@ function validHistoricalPeriod(view,exact) {
   if(!view || view.kind!=='archival-facade') return false;
   const years=view.evidence_years;
   if(!Array.isArray(years)||years.length!==2||!years.every(archiveYear)||years[0]>years[1]) return false;
+  if(view.evidence_kind==='dated-photograph') {
+    return exact(view,['kind','evidence_kind','evidence_years','site_status','location_precision'])
+      && years[0]===years[1] && view.site_status==='protected-building-unlocated' && view.location_precision==='complex';
+  }
   if(exact(view,['kind','building_year','evidence_years'])) {
     return archiveYear(view.building_year)&&view.building_year<=years[0];
   }
@@ -27,7 +32,8 @@ export function validHistoricalSite(row) {
   return typeof row.id==='string' && row.candidate_manifest===`assets/models/candidates/${row.id}/manifest.json`
     && row.kind==='historical-site' && exact(row,fields) && typeof row.name==='string' && row.name.length>0
     && (/^[a-z0-9]+(?:-[a-z0-9]+)*-history\.html$/.test(row.individual_page)
-        || (row.id==='jingan-chen-bingqian-historic-residence' && row.individual_page==='chen-bingqian-historic-residence.html'))
+        || (row.id==='jingan-chen-bingqian-historic-residence' && row.individual_page==='chen-bingqian-historic-residence.html')
+        || (row.id==='yangpu-yangshupu-power-turbine-hall' && row.individual_page==='yangshupu-turbine-hall.html'))
     && validHistoricalPeriod(view,exact)
     && exact(row.navigation,['listed']) && row.navigation.listed===false
     && row.collision_geometry===null && row.replacement_geometry===null
@@ -67,7 +73,9 @@ export function setupHistoricalView({dialog,button,frame,title,closeButton,onMod
       ? (first===last ? `${first}年出版的钢笔画` : `${first}年出版的钢笔画，${last}年重刊`)
       : active.historical_view.evidence_kind==='reprinted-photograph'
         ? `${first}年刊载的历史照片，拍摄年份未详`
-        : dates;
+        : active.historical_view.evidence_kind==='dated-photograph'
+          ? `${first}年拍摄的历史照片`
+          : dates;
     title.textContent=`${active.name} · ${evidence}`;
     frame.title=active.name;
     frame.src=active.individual_page+'?embed=history';
