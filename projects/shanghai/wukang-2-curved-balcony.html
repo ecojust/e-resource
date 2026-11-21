@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>武康路2号花园住宅南向弧形阳台与双柱</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="面向花园的弧形阳台和塔司干双柱"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 武康路2号</p>
+    <h1>莫觞清旧居</h1>
+    <p>南向弧形阳台与双柱</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">花园一侧的双柱托起弧形阳台。浅色分隔柱之间嵌着绿色椭圆栏片，柱后是内退的入口。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">从花园看双柱</button>
+      <button type="button" data-view="oblique">斜看阳台挑出</button>
+      <button type="button" data-view="above">近看绿色椭圆栏片</button>
+      <button type="button" data-view="capital">查看柱头与托板</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/xuhui-wukang-2-garden-villa-curved-balcony/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-wukang-2-garden-villa-curved-balcony', {
+      front: {center: [0, 2.43, .66], size: [6.2, 5.1, 3.95], direction: [.07,.09,1]},
+      oblique: {center: [0, 2.43, .68], size: [6.20, 5.1, 3.95], direction: [.85,.23,1]},
+      above: {center: [.32,4.46,2.48], size: [2.45,1.35,.84], direction: [.18,.08,1]},
+      capital: {center: [1.86,3.07,1.68], size: [1.31,1.45,1.18], direction: [.46,.12,1]}
+    });
+  </script>
+</body>
+</html>
