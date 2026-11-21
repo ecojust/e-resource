@@ -13,3 +13,7 @@
 独立页已在桌面和390像素手机切换近、远景，四种文件均可下载。正式预览站逐项下载了1,285个输入，共1,105,145,667字节。另在该站单独核对独立页、脚本与模型文件，逐字节匹配运行浏览器时使用的版本。[桌面](viewer-desktop-full.png) · [手机](viewer-mobile-full.png) · [四件下载](viewer.json) · [HTTP校验](renderer-release-http.json)
 
 31185与31186的普通目录和地图入口分别实开，前站222处、后站223处。手机触摸和桌面鼠标从地图标记选中新华路329弄17号，保存了两张手机与七张桌面后态图。西门、车库与院内券廊各有专项视角。后态的18处房屋或通行点与6处邻房原点共24处均和预期碰撞一致。第一张街面特写中，原样保留的邻楼挡住西门右侧。从弄内可通行地面补拍的四张图可辨浅尖券车库、圆券铁花门、绿色17号牌和庭院廊柱。[前站场景](city-31186/map-before.png) · [手机点选](city-31186/map-mobile-label.png) · [桌面专项和逐图观察](city-31186/visual-inspection.json) · [实机和碰撞](city-31186/main-browser.json) · [三次进程退出](city-31186/process-exits.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/885bec2daa572b1ae6be0eae837bd5006c8d0436/projects/shanghai/index.html#landmark=changning-xinhua-lane-329-no17&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
