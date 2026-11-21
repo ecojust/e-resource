@@ -1,3 +1,11 @@
+# 丽波花园东主楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) · [单体旋转与下载](libo-garden-east.html) · [来源与制作范围](source/precise/xuhui-libo-garden-east-house/README.md) · [验收记录](data/audit/libo-garden-east-v1/README.md)
+
+根据市表2D038、吴兴路87号及历史和修缮照片，核实丽波花园东主楼的位置、山墙及屋顶，区分衡山路300弄排屋。
+
+近景 17,176 个三角面，远景 9,720 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,013,589 字节。上海主图现有 218 处独立入口，徐汇区 35 处。[资产清单](assets/models/candidates/xuhui-libo-garden-east-house/manifest.json)
+
 # 东湖宾馆七号楼花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-donghu-hotel-house-seven&mode=overview) · [单体旋转与下载](donghu-house-seven.html) · [来源与制作范围](source/precise/xuhui-donghu-hotel-house-seven/README.md) · [验收记录](data/audit/donghu-house-seven-v1/README.md)
