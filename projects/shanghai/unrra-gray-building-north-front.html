@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>黄浦路106号 · 联合国大厦灰楼</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.75" aria-label="联合国大厦灰楼临黄浦路的北立面"></main>
+  <header>
+    <a href="index.html#landmark=hongkou-unrra-gray-building-north-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">虹口区 · 黄浦路106号</p>
+    <h1>黄浦路106号 · 联合国大厦灰楼</h1>
+    <p>北立面六根凹槽壁柱</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">1945年冬的远景已可辨认这幢灰楼。1948年1月，入驻的联合国机构将其定名为联合国大厦。模型按2014年黄浦路街面照片制作六根凹槽壁柱、中央三座内凹门洞、两翼竖窗和上层成对窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看壁柱</button>
+      <button type="button" data-view="oblique">斜看三座门洞</button>
+      <button type="button" data-view="above">檐口与上层窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-unrra-gray-building-north-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('hongkou-unrra-gray-building-north-front');
+  </script>
+</body>
+</html>
