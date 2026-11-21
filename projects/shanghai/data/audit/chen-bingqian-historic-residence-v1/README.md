@@ -19,3 +19,7 @@ Blender 工程重开后保有57个可编辑网格。原始和网页近景各34,9
 桌面实测时，缩放按钮与历史入口中央局部重叠。历史入口仍可在左侧用鼠标点开，实际点击位于视口坐标（688，297）。本轮桌面浏览器报告2 GiB设备内存。桌面分别保存原始GLB、网页近景、远景和可编辑Blender文件，四件与独立页同名文件逐字相同。两个界面关闭历史立面后都回到登记点，七栋周邻的碰撞保持一致。[实际操作与四件下载](desktop/after.json)
 
 [前后两站、触屏和桌面的实际记录](final-map-31218/results.json) · [街区及七栋现存建筑](final-map-31218/existing-city-geometry.json) · [桌面近景](final-map-31218/desktop/desktop-archive-near.png) · [手机远景](final-map-31218/phone/mobile-archive-lod.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/3d9681c52beba0a1753087e0674b87b35014efc6/projects/shanghai/index.html#landmark=jingan-chen-bingqian-historic-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，15 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

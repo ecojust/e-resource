@@ -3905,7 +3905,7 @@
 | 德义大楼（南京西路与石门路转角） | 2026-11-21 13:34:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) |
 | 枕流公寓 | 2026-11-21 15:43:55 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-brookside-apartments&mode=overview) |
 | 海格公寓主楼南向花园立面 | 2026-11-21 17:21:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) |
-| 陈炳谦宅（原托益住宅）双塔与券廊历史正立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-chen-bingqian-historic-residence&mode=overview) · 1994 年入录，约 1994 年灭失，地点卡可查看历史照片复原 |
+| 陈炳谦宅（原托益住宅）双塔与券廊历史正立面 | 2026-11-21 23:41:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-chen-bingqian-historic-residence&mode=overview) · 1994 年入录，约 1994 年灭失，地点卡可查看历史照片复原 |
 
 ### 普陀区（2处）
 
