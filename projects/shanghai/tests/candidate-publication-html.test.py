@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from check_candidate_publication import PageAssets, PREFIX, source_registers
+from check_candidate_publication import PageAssets, PREFIX, publication_failures, source_registers
 
 
 class PublicationHTMLTests(unittest.TestCase):
@@ -40,6 +40,20 @@ class PublicationHTMLTests(unittest.TestCase):
             </script>
             <p>from './src/text.js'</p>""")
         self.assertEqual((page.styles, page.modules, page.external_modules), ([], [], []))
+
+
+class PublicationCatalogTests(unittest.TestCase):
+    def test_committed_predecessor_catalog_is_rejected_even_when_public_bytes_match_git(self):
+        catalog = dict(path=PREFIX + 'data/candidate-city-integrations.json',
+                       expected_sha256='a' * 64, matches_commit=True)
+        self.assertEqual(publication_failures([catalog], 'b' * 64), [catalog['path']])
+        self.assertFalse(catalog['matches_reviewed_catalog'])
+        self.assertEqual(publication_failures([catalog], 'a' * 64), [])
+        self.assertTrue(catalog['matches_reviewed_catalog'])
+
+    def test_older_model_without_review_snapshot_preserves_http_diagnostics(self):
+        records = [dict(path='model.glb', matches_commit=False)]
+        self.assertEqual(publication_failures(records, None), ['model.glb'])
 
 
 class PublicationSourceTests(unittest.TestCase):
