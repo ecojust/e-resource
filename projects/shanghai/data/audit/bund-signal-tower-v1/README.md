@@ -33,3 +33,7 @@
 信号台的附楼南门、南侧窗、北端圆室、低层环廊、塔身两道砖带、塔顶环廊与风向杆共八处实物进入取景核对。13处地面采样和4栋邻屋逐点复查。同一近景分组保留原有863号，加入589号的两片裁切。另从正式31222单体页在桌面和手机分别拍摄全楼、附楼与塔、远档三景，并实际保存四件文件。[独立页六图和四份下载](city-31222/standalone/viewer.json) · [正式站与前代的签名](city-31222-signed-inheritance.json) · [地图十一帧实拍与退出回执](city-31222/222-map-slot-released.json)
 
 两张480×360专项图中，打开的详情卡片遮住了塔身大部。放宽屋顶画幅后，环廊、栏杆、桅杆及其与附楼的位置关系可以辨认，上部仍有一段被地点标牌挡住。第三次实测取得两张街面图，第八次取得宽幅屋顶图，第九次核对全部17个地面点；第十次在实际发起近、远两组源文件请求后，核完原城模型与裁切。远景从两次公开缩放中得到，实测距模型2186米，超过1100米的远档阈值；当时的单体标牌已聚合，信息卡仍选中信号台。完整的远景会话复用了首次实拍与场景签名，另从正式站逐字复核四份模型资源。各次中止的画面、原始报告、实际退出与成功补测分别保留。[现场记录与原始截图](city-31222/attempts/index.json) · [逐图目检](city-31222/manual-visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/981fe0bbccdcc6a062022248b31f1592757ddb67/projects/shanghai/index.html#landmark=huangpu-bund-signal-tower&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
