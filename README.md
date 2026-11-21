@@ -3833,7 +3833,7 @@
 | 朱敏堂住宅乌鲁木齐南路151号街门与双石狮 | 2026-11-21 09:55:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) |
 | 东湖宾馆七号楼花园立面 | 2026-11-21 10:00:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-donghu-hotel-house-seven&mode=overview) |
 | 丽波花园东主楼 | 2026-11-21 10:10:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) |
-| 建国西路618号住宅挑阳台与窗列 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianguo-618-historic-front&mode=overview) · 1948 年原址，地点卡可查看历史外观 |
+| 建国西路618号住宅挑阳台与窗列 | 2026-11-21 10:14:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianguo-618-historic-front&mode=overview) · 1948 年原址，地点卡可查看历史外观 |
 
 ### 长宁区（10处）
 

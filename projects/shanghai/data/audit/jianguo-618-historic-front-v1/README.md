@@ -20,3 +20,7 @@
 八个实际服务版本各自核对了218处前态和219处后态，共192次HTTP取件。现行23182服务的全部1,253个文件均与发布签名一致，合计1,090,723,563字节。第219个标记显示“2013年照片”，原有218处登记、原城几何与地面碰撞保持一致。[逐层实际输入](historical-layer-http.json) · [219处登记检查](registered-marker-219.json) · [全量HTTP记录](public-inputs-23182.json)
 
 第181与182期的正式城市目录从218处增至219处。旧城同机位、桌面目录和390像素手机触屏各启用一个独立浏览器，七幅画面均已核对。新增地点卡标注“1948年建筑原址”，打开“查看历史立面”后可辨挑阳台、上下窗扇及栏板；近景、远景均可切换，返回后仍是现状街区。新地点的城市三角面、源裁切与新增碰撞均为零，前后同一点的地面积测结果一致。桌面会话记录到离开当前视图后取消的一项近景瓦片请求。[前后验收与实图](final-map-31182/results.json) · [桌面记录](final-map-31182/after-desktop.json) · [手机记录](final-map-31182/after-mobile.json) · [实测独立页与下载](viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/41081803213a58142e6cdb2af6353a05bbf5f0ba/projects/shanghai/index.html#landmark=xuhui-jianguo-618-historic-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，12 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
