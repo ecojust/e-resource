@@ -1,3 +1,11 @@
+# 道斐南公寓南向花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dauphine-apartments-garden-front&mode=overview) · [单体旋转与下载](dauphine-apartments.html) · [来源与制作范围](source/precise/xuhui-dauphine-apartments-garden-front/README.md) · [验收记录](data/audit/dauphine-apartments-v1/README.md)
+
+据2D016、徐汇区文化局资料、上海住宅建设志、天平街道实照和2014年近照，制作建国西路394号历史公寓的半圆雨篷、圆窗、凸窗和成列弧角阳台。
+
+近景 62,688 个三角面，远景 29,688 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,348,768 字节。上海主图现有 237 处独立入口，徐汇区 39 处。[资产清单](assets/models/candidates/xuhui-dauphine-apartments-garden-front/manifest.json)
+
 # 武康大楼东侧副楼临淮海中路立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion-east-annex&mode=overview) · [单体旋转与下载](wukang-east-annex.html) · [来源与制作范围](source/precise/xuhui-wukang-mansion-east-annex/README.md) · [验收记录](data/audit/wukang-east-annex-v1/README.md)
