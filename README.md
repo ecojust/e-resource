@@ -3872,7 +3872,7 @@
 | 延安中路955弄2号住宅（北侧老虎窗与凸廊） | 2026-11-21 07:41:58 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yanan-955-no2&mode=overview) |
 | 郭氏兄弟住宅弧形檐廊 | 2026-11-21 09:09:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-kwok-brothers-residence-historic-front&mode=overview) · 1926 年原址，地点卡可查看历史外观 |
 | 吴同文住宅（绿房子） | 2026-11-21 09:23:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-woo-tongwen-green-house&mode=overview) |
-| 贝宅花园侧主楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) |
+| 贝宅花园侧主楼 | 2026-11-21 09:47:44 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) |
 
 ### 普陀区（2处）
 

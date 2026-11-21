@@ -28,3 +28,7 @@ Blender实地重开并逐面核对165个可编辑网格。原始、实际解压�
 花园侧的两组凸窗向侧面折转，钢窗横竖梃沿三层延续。中央凹廊的两道透花栏板、下面的门和台阶能从建筑近景辨认。左下方的说明卡遮住一段窗脚，地图标牌也遮到局部栏板，独立页斜视能看到整排窗与栏板。屋顶镜位可见浅色竖井及其投影。[开间与钢窗](city-31178/architecture/map-faceted-steel-windows.png) · [两道内凹廊](city-31178/architecture/map-recessed-galleries.png) · [屋面](city-31178/architecture/map-roof.png) · [独立页斜视](faceted-windows/oblique-desktop.png) · [全城远景](city-31178/distant/map-distant.png)
 
 第一次建筑近景会话遇到本地静态服务连接中断。恢复受影响的原路径后，原先失败的25条资源均返回正确字节。第一次鼠标会话的渲染器在操作中退出。在600像素宽的鼠标复测中，灯牌已选中贝宅，自动镜头停在17.18级，尚未进入近景底模的加载层级。鼠标复测分别记录了选中及街墙近景。第一次触屏会话在选中并加载贝宅后切换镜头时中断，随后独立触屏会话复核实际指针、地点、可见近景和其下载字节；手机建筑画面由正常目录会话另行保存。第一次连续从近镜切远镜时渲染器退出，单独远景会话已载入并验证LOD，但首次截图时退出。释放本地复核服务占用的内存后，后续会话单独从同一地图拍摄远景。触屏会话实载近景，远景会话实载LOD，四份独立页下载的字节数与SHA-256均符合清单。[中断与复测](city-31178/initial-attempts/comparison.json) · [下载核验](viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 43 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0edd3fc1f0edfbfcfb19ceb58cf4538f6c9d560a/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 43 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
