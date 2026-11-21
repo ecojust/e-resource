@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>霍山路119–121号住宅双拱窗与砖砌女儿墙</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="霍山路119–121号街面上部的四对拱窗、两座屋面窗与曲线女儿墙"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 霍山路119–121号</p>
+    <h1>霍山路119–121号住宅</h1>
+    <p>双拱窗与砖砌女儿墙</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">临街面的两翼各有上下两对拱窗。下层每扇窗的深色方格上方还有五块小亮窗。中央的曲线砖墙越过屋脊，两边各立一座覆短斜檐的屋面窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">整体</button>
+      <button type="button" data-view="oblique">看西南转角</button>
+      <button type="button" data-view="above">看屋面窗</button>
+      <button type="button" data-view="inscription">近看双拱窗</button>
+      <button type="button" data-view="return">看砖女儿墙</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-huoshan-119-121-arcaded-front/README.md">两期实照与街景量测</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-huoshan-119-121-arcaded-front', {
+  "front": {
+    "center": [
+      -0.566342,
+      9.3,
+      -0.565269
+    ],
+    "size": [
+      16.39453491,
+      14.11751618,
+      1.31156279
+    ],
+    "direction": [
+      0.45270151,
+      -0.00437434,
+      0.89165139
+    ]
+  },
+  "oblique": {
+    "center": [
+      -3.714669,
+      8.23,
+      2.725116
+    ],
+    "size": [
+      13.12498257,
+      11.30206833,
+      1.04999861
+    ],
+    "direction": [
+      0.03142126,
+      0.06616065,
+      0.99731413
+    ]
+  },
+  "above": {
+    "center": [
+      -4.789795,
+      12.98,
+      2.371556
+    ],
+    "size": [
+      7.22671824,
+      6.22300737,
+      0.57813746
+    ],
+    "direction": [
+      0.08824834,
+      0.20667904,
+      0.97442086
+    ]
+  },
+  "inscription": {
+    "center": [
+      -3.624343,
+      5.1,
+      3.526078
+    ],
+    "size": [
+      3.34494237,
+      2.88036704,
+      0.26759539
+    ],
+    "direction": [
+      0.73717036,
+      0.07626954,
+      0.67138873
+    ]
+  },
+  "return": {
+    "center": [
+      0.171918,
+      14.29,
+      0.015052
+    ],
+    "size": [
+      4.98667999,
+      4.29408555,
+      0.3989344
+    ],
+    "direction": [
+      0.73187329,
+      0.13384338,
+      0.66816722
+    ]
+  }
+});
+  </script>
+</body>
+</html>
