@@ -22,3 +22,7 @@
 正式31174与31175从目录实测了同视点现状城区。桌面鼠标和390×844手机触屏均从附近地点点中了郭氏兄弟住宅的地图标记，弹出的原址卡可打开2014—2019年照片对应的历史檐廊。两端都切换了近景、远景并关窗回到原址。九幅城市实图中，当前街角前方可见高层建筑；照片所示的弧形石栏、柱头和檐下齿饰在历史窗口与单体页中清晰可辨。地图维持原有的现状几何与碰撞。跨度和树冠遮住部分的间距仍按照片估算。[九幅城市实测](final-map-31175/results.json) · [桌面](final-map-31175/after-desktop.json) · [手机](final-map-31175/after-mobile.json)
 
 同一正式站的独立页另拍摄桌面与手机的正面、斜面和俯视远景，四个下载文件逐字节符合清单。内存中断前完成的桌面地点与历史近远景三张原图，经原始报告与保存文件的SHA-256复核后保留；另启浏览器实测鼠标返回并补齐第四图。[独立页六图和四件下载](final-map-31175/viewer/viewer.json) · [三幅原图与续验](final-map-31175/desktop-resume-evidence.json) · [历次浏览器记录](archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/615bcad97d4649d980d28b40b215074638a6d7be/projects/shanghai/index.html#landmark=jingan-kwok-brothers-residence-historic-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
