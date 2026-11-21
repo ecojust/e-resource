@@ -1,5 +1,7 @@
 # 柳亚子旧居（思南书局）主楼与东侧砖券入口模型下载
 
+[在浏览器中查看三维模型](https://raw.githack.com/ecojust/e-resource/c219f1f3bff55e02195de51c347447a93cee181e/projects/shanghai/liu-yazi-residence-fuxing-517.html)
+
 复兴中路517号花园住宅主楼外壳、东侧弧形阶梯和红色券廊、南庭院双层玻璃廊、露台、南北山墙与交叉坡屋顶。沿街相邻住宅和外围庭院不计入。 [制作范围](../../../../source/precise/huangpu-liu-yazi-residence-fuxing-517/README.md) · [资料与署名](../../../../source/precise/huangpu-liu-yazi-residence-fuxing-517/reference-review.json)
 
 | 下载 | 三角面 | 字节 | SHA-256 |
