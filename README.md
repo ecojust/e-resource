@@ -3856,7 +3856,7 @@
 | 新华路329弄17号住宅 | 2026-11-21 11:02:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-329-no17&mode=overview) |
 | 虹桥路2275号历史住宅山墙与屋顶 | 2026-11-21 11:10:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview) · 1994 年入录，约 1996 年灭失，地点卡可查看出版画稿复原 |
 | 愚园路754号住宅 | 2026-11-21 11:36:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-yuyuan-road-754&mode=overview) |
-| 西园大厦 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) |
+| 西园大厦 | 2026-11-21 13:42:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) |
 
 ### 静安区（27处）
 

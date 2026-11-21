@@ -17,3 +17,7 @@
 正式城市31196与31197的目录由233处增至234处。手机触屏与桌面鼠标分别从目录进入西园大厦。从附近另一栋楼开始浏览时，两种输入也都能直接点中地图上的西园大厦灯牌。南庭院近照可分辨较高一排的六个窄窗位、下方三组宽浅拱和部分后装封窗。北面两处凹入窗井与中央窗列可见，底部受画框和地点卡遮挡。屋顶远近关系以两端花架和北沿的凹口为据。[手机目录](city-31197/phone/map-mobile.png) · [桌面目录](city-31197/desktop/map-desktop.png) · [庭院开窗](city-31197/architecture/map-south-garden-arch-windows.png) · [北侧窗井](city-31197/architecture/map-north-road-lightwells.png) · [两端屋顶花架](city-31197/architecture/map-roof.png)
 
 28处地面检查覆盖主楼、邻屋与可通行的庭园。远档实载36,044面，四个下载按钮共取得4,196,128字节，与清单逐件一致。[逐图记录](city-31197/city-photo-review.json) · [鼠标和触屏的真实退出记录](city-31197/map-process-outcomes.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/3a959fa1fd51ea466415b8ebb0e49c5b49c2ff37/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
