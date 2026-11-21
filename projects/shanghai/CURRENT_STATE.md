@@ -1,3 +1,11 @@
+# 望德堂院内门廊与曲线山墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wangdetang-augustinian-office&mode=overview) · [单体旋转与下载](wangdetang.html) · [来源与制作范围](source/precise/jingan-wangdetang-augustinian-office/README.md) · [验收记录](data/audit/wangdetang-v1/README.md)
+
+核对2B023、宗教志记载的奥斯定会办事处、2号楼地址及院内实照，制作半圆入口、三角窗楣和南面曲线山墙。
+
+近景 23,672 个三角面，远景 15,596 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,325,013 字节。上海主图现有 228 处独立入口，静安区 24 处。[资产清单](assets/models/candidates/jingan-wangdetang-augustinian-office/manifest.json)
+
 # 海关俱乐部木屋
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-fenyang-customs-club&mode=overview) · [单体旋转与下载](fenyang-customs-club.html) · [来源与制作范围](source/precise/xuhui-fenyang-customs-club/README.md) · [验收记录](data/audit/fenyang-customs-club-v1/README.md)
