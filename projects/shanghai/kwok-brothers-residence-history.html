@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>郭氏兄弟住宅 · 弧形檐廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <style>
+    .embedded header,.embedded footer{display:none}
+    .embedded #model-view{top:8px;bottom:8px}
+    .embedded .panel{top:12px;bottom:12px}
+    .embedded #site-return{display:block;margin-top:8px}
+    @media(max-width:650px){.embedded #model-view{inset:0 0 46%}.embedded .panel{top:54%;bottom:0;max-height:none}}
+  </style>
+  <script>
+    if(window.self!==window.top && new URLSearchParams(location.search).get('embed')==='history'){
+      document.documentElement.classList.add('embedded');
+      const returnToMap=event=>{event.preventDefault();parent.postMessage('close-historical-view',location.origin);};
+      addEventListener('keydown',event=>{if(event.key==='Escape') returnToMap(event);});
+      addEventListener('DOMContentLoaded',()=>{
+        const link=document.getElementById('site-return');
+        link.textContent='返回当代原址';
+        link.addEventListener('click',returnToMap);
+        document.querySelector('.panel').append(link);
+      });
+    }
+  </script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".57" aria-label="郭氏兄弟住宅弧形檐廊三维模型"></main>
+  <header>
+    <a id="site-return" href="index.html#landmark=jingan-kwok-brothers-residence-historic-front&amp;mode=overview">← 查看当代原址</a> · <a href="landmarks.html#building-jingan-kwok-brothers-residence-historic-front">按区目录</a>
+    <p>1926年花园住宅</p>
+    <h1>郭氏兄弟住宅</h1>
+    <p>南京西路1400—1418号 · 弧形檐廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p>市政府保护单位名录将这对住宅记为1926年。根据2014年及2019年照片可见的弧形石栏、中央圆饰墩、檐下齿饰和柱头制作。跨度、颜色和树冠遮挡处的重复节距为估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">弧形檐廊</button>
+      <button type="button" data-view="oblique">斜看栏杆</button>
+      <button type="button" data-view="above">俯看檐口</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-kwok-brothers-residence-historic-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-kwok-brothers-residence-historic-front');
+  </script>
+</body>
+</html>

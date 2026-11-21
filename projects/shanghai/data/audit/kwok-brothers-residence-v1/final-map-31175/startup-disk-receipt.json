@@ -1,0 +1,25 @@
+{
+  "stage": "The original process exited while creating its output directory, before launching Chromium. The subsequent Chrome traces use a different output volume.",
+  "originals": {
+    "sequence-stable.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "text": ""
+    },
+    "sequence.exit": {
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "bytes": 2,
+      "text": "1\n"
+    },
+    "after-desktop.log": {
+      "sha256": "a61d878b187c1b6f3a527b90275f1fc049d2199078d11cd39acc59222c950ab3",
+      "bytes": 860,
+      "text": "node:fs:1410\n  const result = binding.mkdir(\n                         ^\n\nError: ENOSPC: no space left on device, mkdir '/tmp/grace-final-31k/175/after-desktop'\n    at Object.mkdirSync (node:fs:1410:26)\n    at Object.<anonymous> (/tmp/grace-final-31k/175/check-historical-map.cjs:15:4)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  errno: -28,\n  code: 'ENOSPC',\n  syscall: 'mkdir',\n  path: '/tmp/grace-final-31k/175/after-desktop'\n}\n\nNode.js v24.22.1\n"
+    },
+    "after-desktop.exit": {
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "bytes": 2,
+      "text": "1\n"
+    }
+  }
+}

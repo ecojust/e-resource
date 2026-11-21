@@ -1,3 +1,11 @@
+# 郭氏兄弟住宅弧形檐廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-kwok-brothers-residence-historic-front&mode=overview) · [单体旋转与下载](kwok-brothers-residence-history.html) · [来源与制作范围](source/precise/jingan-kwok-brothers-residence-historic-front/README.md) · [验收记录](data/audit/kwok-brothers-residence-v1/README.md)
+
+核对第二批2B006及市政府保护名单第29项，依据2014年及2019年实照制作郭氏兄弟住宅可辨的弧形檐廊与栏杆。
+
+近景 19,092 个三角面，远景 8,368 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,489,347 字节。上海主图现有 212 处独立入口，静安区 20 处。[资产清单](assets/models/candidates/jingan-kwok-brothers-residence-historic-front/manifest.json)
+
 # 淮海中路1431号巴塞住宅历史花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · [单体旋转与下载](huaihai-1431-history.html) · [来源与制作范围](source/precise/xuhui-huaihai-1431-historic-garden-front/README.md) · [验收记录](data/audit/huaihai-1431-historic-front-v1/README.md)
