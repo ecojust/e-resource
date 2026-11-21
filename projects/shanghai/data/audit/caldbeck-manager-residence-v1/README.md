@@ -30,3 +30,7 @@
 桌面和手机地图上都能辨认红瓦屋顶与两个老虎窗。花园近景能看到砖柱敞廊和上层透花栏板；左下说明卡遮住部分山墙和柱脚，标牌也挡住局部窗面。独立页的街侧斜视可从围墙外侧查看西阳台及双柱。[花园敞廊](city-31171/architecture/map-garden-loggia.png) · [山墙和老虎窗](city-31171/architecture/map-timber-gable-and-dormers.png) · [屋面](city-31171/architecture/map-roof.png) · [独立页街侧阳台](street-balcony/oblique-desktop.png)
 
 首次连续切换画幅时，只取得手机两图，桌面重载中断。随后六个独立浏览器会话使用同一版地图，依次完成手机、桌面、建筑近景、鼠标选中、触屏选中与远景核验。远近网格在真实场景中加载；四份下载的长度和SHA-256与清单相符。[原始中断记录](city-31171/initial-interruption/main-browser.json) · [实测汇总与进程退出记录](city-31171/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 43 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a32c9658c58447160696953fd6bb2745540f6ff7/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 43 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

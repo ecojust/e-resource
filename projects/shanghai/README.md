@@ -199,7 +199,7 @@
 | 岳阳路145号花园住宅南立面与折檐红瓦屋顶 | 2026-11-21 08:06:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-145-residence&mode=overview) |
 | 淮海中路1469号历史花园立面 | 2026-11-21 08:10:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1469-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
 | 永福路151号花园住宅南立面 | 2026-11-21 08:17:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongfu-road-151-south-front&mode=overview) |
-| 武康路99号正广和大班住宅 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) |
+| 武康路99号正广和大班住宅 | 2026-11-21 08:29:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) |
 
 ### 长宁区（10处）
 
