@@ -1,3 +1,11 @@
+# 岳阳路145号花园住宅南立面与折檐红瓦屋顶
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-145-residence&mode=overview) · [单体旋转与下载](yueyang-road-145-residence.html) · [来源与制作范围](source/precise/xuhui-yueyang-road-145-residence/README.md) · [验收记录](data/audit/yueyang-road-145-residence-v1/README.md)
+
+核对市房管局岳阳路145号地址异文和历史总图，按照片与航片复原145号南面与折檐红瓦屋顶。
+
+近景 37,177 个三角面，远景 22,184 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,735,479 字节。上海主图现有 205 处独立入口，徐汇区 25 处。[资产清单](assets/models/candidates/xuhui-yueyang-road-145-residence/manifest.json)
+
 # 永嘉路501号住宅北街面、圆塔与花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongjia-road-501-residence&mode=overview) · [单体旋转与下载](yongjia-road-501.html) · [来源与制作范围](source/precise/xuhui-yongjia-road-501-residence/README.md) · [验收记录](data/audit/yongjia-road-501-v1/README.md)
