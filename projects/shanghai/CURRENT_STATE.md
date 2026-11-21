@@ -1,3 +1,11 @@
+# 德义大楼（南京西路与石门路转角）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-denis-apartments&mode=overview) · [单体旋转与下载](denis-apartments.html) · [来源与制作范围](source/precise/jingan-denis-apartments/README.md) · [验收记录](data/audit/denis-apartments-v1/README.md)
+
+依据第二批2B002、静安区志与2013年转角街照，制作褐砖弧形街墙、竖向凸肋、二层石带与临南京西路商铺开间。
+
+近景 168,810 个三角面，远景 44,288 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 16,605,883 字节。上海主图现有 233 处独立入口，静安区 27 处。[资产清单](assets/models/candidates/jingan-denis-apartments/manifest.json)
+
 # 培文公寓（淮海中路街面与重庆南路圆角）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) · [单体旋转与下载](bearn-apartments.html) · [来源与制作范围](source/precise/huangpu-bearn-apartments/README.md) · [验收记录](data/audit/bearn-apartments-v1/README.md)
