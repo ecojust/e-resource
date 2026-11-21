@@ -4,17 +4,22 @@ import numpy as np
 
 PLASTER='Pale ochre cement render'
 PERIOD=.36
+from stone_finish import STONE, PERIOD as GRANITE_PERIOD
+FINISHES = {
+    PLASTER: ('ochre-dragged-render.png', PERIOD, 'Jianguo mineral render', 'Jianguo render, 0.36 m'),
+    STONE: ('dressed-grey-granite.png', GRANITE_PERIOD, 'Jianguo grey granite', 'Jianguo granite, 0.32 m'),
+}
 
 def dominant_axis(normal):
     v=np.abs(normal)
     return int(np.flatnonzero(v>=v.max()*(1-1e-5))[0])
 
-def uv(x,y,z,axis):
-    return ((y if axis==0 else x)/PERIOD,(y if axis==2 else z)/PERIOD)
+def uv(x,y,z,axis,period=PERIOD):
+    return ((y if axis==0 else x)/period,(y if axis==2 else z)/period)
 
 def texture_coordinates(b):
     for part in b.parts:
-        if part['material']!=PLASTER:
+        if part['material'] not in FINISHES:
             continue
         vertices=[];coords=[];faces=[];aliases={}
         for face in part['triangles']:
@@ -24,7 +29,7 @@ def texture_coordinates(b):
             for i in face:
                 key=(axis,i)
                 if key not in aliases:
-                    xyz=part['vertices'][i];u,v=uv(*xyz,axis)
+                    xyz=part['vertices'][i];u,v=uv(*xyz,axis,FINISHES[part['material']][1])
                     aliases[key]=len(vertices);vertices.append(xyz);coords.append((u,1-v))
                 new.append(aliases[key])
             faces.append(new)

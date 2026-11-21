@@ -10,7 +10,8 @@ if __name__=='__main__':
     args=parser.parse_args();cameras=SOURCE/'cameras.json';rows=json.loads(cameras.read_bytes())
     method=HERE.parent/'fifth-textile-warehouse-river-front-v1/inspect-export.py'
     report=runpy.run_path(method)['render'](args.mesh,args.output,[(r['name'],r['eye'],r['target'],r['width_m'])for r in rows],rows[0]['width'],rows[0]['height'])
-    assert len(report['views'])==7 and report['embedded_textures'][0]['embedded_sha256']==hashlib.sha256((SOURCE/'ochre-dragged-render.png').read_bytes()).hexdigest()
+    expected={hashlib.sha256((SOURCE/name).read_bytes()).hexdigest() for name in ('ochre-dragged-render.png','dressed-grey-granite.png')}
+    assert len(report['views'])==7 and {item['embedded_sha256'] for item in report['embedded_textures']}==expected
     prominent = {
         'west-entrance':('Pale ochre cement render','Green painted sheet metal','Grey dressed granite'),
         'oblique-entrance':('Pale ochre cement render','Green painted sheet metal','Grey dressed granite'),

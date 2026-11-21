@@ -45,6 +45,10 @@ def cases():
     # On the stone circle, raised visibility of a groove is only 1.52 mm. Test
     # material as well as first intersection, with bare neighbouring points.
     down('Disc / plain stone centre',(0,cy),.28,STONE)
+    # Additional first hits across the photographed fracture and the neighbouring polished granite.
+    for i, (x,y) in enumerate(((.092541,-.174882),(.048419,-.175799),(-.010318,-.164965),(-.054516,-.162222))):
+        down(f'Stone fissure / observed dark core {i}',(x,y),.28072,'Weathered granite fissure')
+        down(f'Stone fissure / adjacent unbroken grain {i}',(x,y+.009),.28,STONE)
     for deg in (-135,-85,-30,0,37,86,128):
         a=math.radians(deg)
         down(f'Disc / engraved ring {deg}',polar(a,inner),.281521,GROOVE)
@@ -86,10 +90,16 @@ def cases():
     for x,y in [(0,-.71),(.51,-.41),(-.73,-.34)]:
         ray(f'Canopy / sheltered soffit {x}',(x,y,3.44),(0,0,1),.60,'Shadowed metal soffit',[.44,.46])
     ray('Canopy / air beyond the bowed eave',(.68,-1.15,3.44),(0,0,1),.86)
-    ray('Canopy / gathered crown and finial',(0,-.020,5.93),(0,0,-1),.51,EDGE,[.31,.38])
+    # The projecting parapet cap masks the finial from directly above.
+    ray('Terrace / parapet above the finial',(0,-.020,5.93),(0,0,-1),.51,JAMB,[.016,.025])
+    ray('Terrace / lower cornice over crown',(0,-.020,5.70),(0,0,-1),.21,JAMB,[.073,.077])
+    ray('Canopy / exposed half finial seen from street',(0,-.600,5.540),(0,1,0),.61,EDGE,[.520,.526])
+    ray('Door head / segment recessed behind plaster',(0,-.62,3.73),(0,1,0),1.01,'Recessed ochre door head',[.748,.762])
     for sign in (-1,1):
         x=sign*1.045
-        ray(f'Bracket / stepped horizontal shoe {sign}',(x,-.49,3.70),(0,1,0),.55,EDGE,[.292,.314])
+        # The rising strut crosses the middle of the shoe; sample its open shoulder separately.
+        ray(f'Bracket / rising strut in front of shoe {sign}',(x,-.49,3.70),(0,1,0),.55,SEAM,[.235,.253])
+        ray(f'Bracket / stepped horizontal shoe {sign}',(x+sign*.050,-.49,3.70),(0,1,0),.55,EDGE,[.292,.314])
         ray(f'Bracket / rising strut {sign}',(x,-.49,3.625),(0,1,0),.55,SEAM,[.295,.445])
 
     # Follow the leaf itself in plan. The near hinge stile and its remote latch

@@ -14,7 +14,8 @@ PROJECT=next(p for p in SOURCE.parents if (p/'tools/package_architectural_model.
 sys.path.insert(0,str(PROJECT/'tools'))
 import package_architectural_model as package
 sys.path.insert(0,str(PROJECT/'source/precise/huangpu-somekh-building-street-corner/source'))
-from aggregate_mesh import AggregateBuilder
+from mineral_builder import MineralBuilder as AggregateBuilder
+from stone_finish import FISSURE, build_fissure
 from photo_architecture import Facade,opening
 from metal_canopy import build_canopy,SHEET,SEAM,EDGE,SOFFIT
 from plaster import PLASTER,texture_coordinates
@@ -34,8 +35,9 @@ def tone(rgb,roughness=.85,metallic=0.):
     return dict(color=linear.tolist(),roughness=roughness,metallic=metallic)
 PALETTE={PLASTER:dict(color=[1.,1.,1.],roughness=.94,texture=str(SOURCE/'ochre-dragged-render.png')),
      SHEET:tone((68,109,85),.55,.32),SEAM:tone((43,72,56),.53,.37),EDGE:tone((72,104,81),.60,.28),SOFFIT:tone((64,73,55)),
-     STONE:tone((157,151,139)),GROOVE:tone((96,89,75)),JAMB:tone((222,212,188)),BASE:tone((132,132,122)),
-     INNER:tone((81,78,68)),IRON:tone((39,77,63),.59,.32),GLASS:tone((78,83,73),.31,.17),CLAY:tone((153,85,64)),
+     STONE:dict(color=[1.,1.,1.],roughness=.93,texture=str(SOURCE/'dressed-grey-granite.png')),
+     FISSURE:tone((69,64,57),.98),GROOVE:tone((96,89,75)),JAMB:tone((222,212,188)),BASE:tone((132,132,122)),
+     'Recessed ochre door head':tone((171,161,138)),INNER:tone((81,78,68)),IRON:tone((39,77,63),.59,.32),GLASS:tone((78,83,73),.31,.17),CLAY:tone((153,85,64)),
      'Terrazzo mortar':tone((106,99,88)),'Black rainwater pipe':tone((57,58,52),.71,.23),
      'Yellow clay tile':tone((163,99,72)),'Dark steel hardware':tone((58,62,55),.65,.33)}
 
@@ -47,6 +49,7 @@ def staircase(b,lod):
         b.plan_prism(plan,low,high,STONE,label+' step / half-round granite')
         pts=[(rad*.995*cos(t),-.010-rad*.995*sin(t),high-.012) for t in ts]
         b.tube(pts,.012,STONE,6 if lod else 10,label+' step / eased nosing')
+    build_fissure(b,D['inner_step_width']/2,D['upper_step'])
     from radial_stone import build_radial_stone
     build_radial_stone(b,D['inner_step_width']/2,top=D['upper_step'],center_x=0.,threshold_y=0.,lod=lod,material=GROOVE)
 
@@ -110,7 +113,10 @@ def build_hall(b,front,width,head,lod):
     inner=opening(0,z,span,top-z,.35,segments=21 if lod else 37)
     surround=inner.buffer(.077,join_style=1).difference(inner).intersection(box(-span,head+.061,span,top+.14))
     front.prism(surround,-.033,.100,JAMB,'Portal / rounded outer hood moulding')
-    return current
+    # The camera sees a shallow shadowed segment between the rectangular door and hood.
+    lunette=inner.intersection(box(-span,current.bounds[3],span,top+.02))
+    front.prism(lunette,-.145,-.136,'Recessed ochre door head','Portal / recessed segment above transom')
+    return current.union(lunette)
 
 def add_building(b,lod):
     W=D['wall_width'];left=-D['wall_left_of_door'];right=left+W;top=D['wall_top'];z=D['upper_step']
