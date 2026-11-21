@@ -3888,7 +3888,7 @@
 | 贝宅花园侧主楼 | 2026-11-21 09:47:44 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-pei-mansion-garden-front&mode=overview) |
 | 延安中路816号严同春宅东宅街面 | 2026-11-21 11:20:52 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yan-tongchun-residence-street-front&mode=overview) |
 | 望德堂院内门廊与曲线山墙 | 2026-11-21 12:08:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wangdetang-augustinian-office&mode=overview) |
-| 爱登公寓（常德公寓） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-eddington-house&mode=overview) |
+| 爱登公寓（常德公寓） | 2026-11-21 12:21:27 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-eddington-house&mode=overview) |
 
 ### 普陀区（2处）
 
