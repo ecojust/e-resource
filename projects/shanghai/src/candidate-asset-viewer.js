@@ -21,7 +21,7 @@ function getDetailSelector(status) {
   return select;
 }
 
-export function showCandidateAssetViewer(modelId) {
+export function showCandidateAssetViewer(modelId, detailViews = {}) {
   const folder = 'assets/models/candidates/' + modelId + '/';
   const screen = document.getElementById('model-view');
   const frontSign = screen.dataset.front === 'negative-z' ? -1 : 1;
@@ -57,25 +57,30 @@ export function showCandidateAssetViewer(modelId) {
   };
   let bounds, manifest, current, variant, pending, controller, delay;
   let fitDistance = 1;
+  let activeDetailView;
   const render = () => renderer.render(scene, camera);
 
   function frame(view) {
     if (!bounds) return;
-    const center = bounds.getCenter(new THREE.Vector3());
-    const size = bounds.getSize(new THREE.Vector3());
-    const direction = new THREE.Vector3(...directions[view]).normalize();
+    const detailView = detailViews[view];
+    activeDetailView = detailView ? view : undefined;
+    const center = detailView ? new THREE.Vector3(...detailView.center) : bounds.getCenter(new THREE.Vector3());
+    const size = detailView ? new THREE.Vector3(...detailView.size) : bounds.getSize(new THREE.Vector3());
+    const direction = new THREE.Vector3(...(detailView?.direction ?? directions[view])).normalize();
     const halfAngle = THREE.MathUtils.degToRad(camera.fov / 2);
     camera.position.copy(center).add(direction);
     camera.lookAt(center);
     const inverse = camera.quaternion.clone().invert();
-    fitDistance = 1;
+    // A photographed detail can span less than one metre, including its orbit radius.
+    const minimumDistance = detailView ? Math.max(camera.near * 1.5, size.length() * 0.12) : 1;
+    fitDistance = minimumDistance;
     for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) {
       const corner = new THREE.Vector3(x, y, z).multiply(size).multiplyScalar(0.5).applyQuaternion(inverse);
       const projected = Math.max(Math.abs(corner.y), Math.abs(corner.x) / camera.aspect);
       fitDistance = Math.max(fitDistance, corner.z + 1.14 * projected / Math.tan(halfAngle));
     }
     controls.target.copy(center);
-    controls.minDistance = 1;
+    controls.minDistance = minimumDistance;
     controls.maxDistance = fitDistance * 6;
     camera.far = Math.max(3000, controls.maxDistance * 2);
     camera.updateProjectionMatrix();
@@ -166,7 +171,7 @@ export function showCandidateAssetViewer(modelId) {
     renderer.setSize(width, height);
     camera.aspect = width / Math.max(1, height);
     camera.updateProjectionMatrix();
-    frame('oblique');
+    frame(activeDetailView ?? 'oblique');
   }).observe(screen);
 
   async function initialize() {
