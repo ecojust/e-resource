@@ -8,3 +8,13 @@
 /* Bund architectural study and source comparison. */
 .bund-start{width:100%;display:flex;justify-content:space-between;align-items:center;margin:14px 0 0;padding:11px 13px;border:1px solid #cbded4;border-radius:10px;background:#e5eee4;color:#175854;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer}.bund-start:hover{background:#d8e9dc}.reference-button{display:block;padding:0;margin:5px 0 0;border:0;background:transparent;color:#286662;font-size:11px;cursor:pointer}.reference-button[hidden]{display:none}#building-reference{margin:22px 0;padding-bottom:22px;border-bottom:1px solid #d8e1dc}#building-reference[hidden]{display:none}#building-reference h3{margin:0 0 12px}#reference-image{display:block;width:100%;max-height:500px;object-fit:contain;background:#e9eeeb;border-radius:10px}#reference-credit{color:#617a73;font-size:12px}
 @media(max-width:760px){.walking .mobile-controls{bottom:216px}}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .location-card {
+    max-width: calc(100% - var(--panel) - 124px);
+  }
+
+  .panel-collapsed .location-card {
+    max-width: calc(100% - 116px);
+  }
+}
