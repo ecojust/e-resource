@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>益丰洋行大楼 · 北京东路西段</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique="positive-x" aria-label="益丰洋行大楼北京东路西段与圆明园路切角"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-abraham-building-beijing-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 北京东路81号</p>
+    <h1>益丰洋行大楼</h1>
+    <p>北京东路西端券窗与切角</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">街墙转向圆明园路时，两枚圆窗跨在转角两侧。底层券窗上方，有一处三面凸窗和多重窗间砖柱。模型据2012年重新开放后的照片制作，范围从这处凸窗至街角。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">北京东路正面</button>
+      <button type="button" data-view="oblique">双圆窗与切角</button>
+      <button type="button" data-view="above">俯看老虎窗与屋面前缘</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-abraham-building-beijing-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-abraham-building-beijing-front');
+  </script>
+</body>
+</html>

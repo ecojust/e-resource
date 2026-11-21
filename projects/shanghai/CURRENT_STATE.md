@@ -1,3 +1,11 @@
+# 益丰洋行大楼北京东路西端券窗与切角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-abraham-building-beijing-front&mode=overview) · [单体旋转与下载](abraham-building.html) · [来源与制作范围](source/precise/huangpu-abraham-building-beijing-front/README.md) · [验收记录](data/audit/abraham-building-beijing-front-v1/README.md)
+
+按市表2A018、2012年修缮开放报道及2014年实照，制作北京东路西段切角双圆窗、浅凸窗、底层券列和可见老虎窗。
+
+近景 26,249 个三角面，远景 10,811 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,753,139 字节。上海主图现有 261 处独立入口，黄浦区 104 处。[资产清单](assets/models/candidates/huangpu-abraham-building-beijing-front/manifest.json)
+
 # 四川路桥三孔桥身与两侧人行道
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=overview) · [单体旋转与下载](sichuan-road-bridge.html) · [来源与制作范围](source/precise/huangpu-sichuan-road-bridge/README.md) · [验收记录](data/audit/sichuan-road-bridge-v1/README.md)
