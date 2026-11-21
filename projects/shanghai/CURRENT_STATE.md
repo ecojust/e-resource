@@ -1,3 +1,11 @@
+# 密丹公寓武康路与湖南路转角立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-midget-apartments&mode=overview) · [单体旋转与下载](midget-apartments.html) · [来源与制作范围](source/precise/xuhui-midget-apartments/README.md) · [验收记录](data/audit/midget-apartments-v1/README.md)
+
+按市表2D037、武康路115号和三个年份的街照，制作窄切角、顶层双窄窗、两排横窗及门上阶梯挑块，控制在两路交会处的短墙范围。
+
+近景 9,220 个三角面，远景 7,404 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,152,333 字节。上海主图现有 248 处独立入口，徐汇区 48 处。[资产清单](assets/models/candidates/xuhui-midget-apartments/manifest.json)
+
 # 自由公寓南面退台、中央三肋与转角窗
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-liberty-apartments-south-front&mode=overview) · [单体旋转与下载](liberty-apartments.html) · [来源与制作范围](source/precise/xuhui-liberty-apartments-south-front/README.md) · [验收记录](data/audit/liberty-apartments-v1/README.md)
