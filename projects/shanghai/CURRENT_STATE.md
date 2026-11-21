@@ -1,3 +1,11 @@
+# 新华路329弄17号住宅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-329-no17&mode=overview) · [单体旋转与下载](xinhua-lane-329-no17.html) · [来源与制作范围](source/precise/changning-xinhua-lane-329-no17/README.md) · [验收记录](data/audit/xinhua-lane-329-no17-v1/README.md)
+
+按2M003、1994年保护牌、带方位的旧地块图与两向实照，制作西侧砖券主人入口、低尖券车库、南面花园券廊和塔楼。
+
+近景 26,018 个三角面，远景 13,274 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,401,381 字节。上海主图现有 223 处独立入口，长宁区 14 处。[资产清单](assets/models/candidates/changning-xinhua-lane-329-no17/manifest.json)
+
 # 新华路315号花园住宅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-road-315-garden-house&mode=overview) · [单体旋转与下载](xinhua-road-315.html) · [来源与制作范围](source/precise/changning-xinhua-road-315-garden-house/README.md) · [验收记录](data/audit/xinhua-road-315-garden-house-v1/README.md)
