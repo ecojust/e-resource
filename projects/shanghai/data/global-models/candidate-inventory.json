@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 220,
+  "candidate_manifest_count": 221,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 218,
-  "resulting_city_count": 258,
+  "new_city_model_count": 219,
+  "resulting_city_count": 259,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 46,
@@ -59,20 +59,20 @@
     "虹口区": 14,
     "长宁区": 15,
     "静安区": 29,
-    "黄浦区": 85
+    "黄浦区": 86
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 880,
-    "bytes": 1815424885,
+    "files": 884,
+    "bytes": 1818480540,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 3124240,
+    "current_run_added_bytes": 3055655,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 748
+    "inherited_incremental_files": 752
   },
   "records": [
     {
@@ -21527,6 +21527,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "River and street elevations reconstructed from attributed public photographs.",
       "description": "按市表2A012、市政志、三期以上公开照片以及名为外白渡桥的道路与桥面轮廓，制作两跨钢构、街面门架、人行栏杆与临水可见的桥墩。"
+    },
+    {
+      "id": "huangpu-bund-signal-tower",
+      "name": "外滩信号台（现址塔身、号杆与站房）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "bund-signal-tower.html",
+      "manifest": "assets/models/candidates/huangpu-bund-signal-tower/manifest.json",
+      "manifest_sha256": "3eb092b0ccd773c2d9c51964b1d37cd6b7994c861487dd1d7ba4be2b336db306",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-bund-signal-tower/huangpu-bund-signal-tower-raw.glb",
+          "bytes": 1550988,
+          "sha256": "f61cfb600f0193ac3b1ee7e5e6593f56bb19717d6bb0e707242a803f2f793180",
+          "triangles": 25184,
+          "bounds_gltf_m": [
+            [
+              -3.9800000190734863,
+              0.0,
+              -10.270000457763672
+            ],
+            [
+              3.9800000190734863,
+              47.400001525878906,
+              10.649999618530273
+            ]
+          ],
+          "materials": 9
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-bund-signal-tower/huangpu-bund-signal-tower-web.glb",
+          "bytes": 608324,
+          "sha256": "cc038968194e11c46ba8ff2e7c6e51b1a1370cb9a0d49195b6ef153940f508d1",
+          "triangles": 25184,
+          "bounds_gltf_m": [
+            [
+              -3.98000002,
+              0,
+              -10.2700005
+            ],
+            [
+              3.98000002,
+              47.4000015,
+              10.6499996
+            ]
+          ],
+          "materials": 9
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-bund-signal-tower/huangpu-bund-signal-tower-lod.glb",
+          "bytes": 493880,
+          "sha256": "c900f6724a4fb5d76f1db03a489c0d2d66eff63fcc5036362f57ad713b0de12d",
+          "triangles": 21328,
+          "bounds_gltf_m": [
+            [
+              -3.98000002,
+              0,
+              -10.2700005
+            ],
+            [
+              3.98000002,
+              47.4000015,
+              10.6499996
+            ]
+          ],
+          "materials": 9
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-bund-signal-tower/huangpu-bund-signal-tower.blend",
+          "bytes": 402463,
+          "sha256": "da644892aba2be73f7196c81dacb68317f6b86f307856b4767d868955e0f5861"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -3.9800000190734863,
+            0.0,
+            -10.270000457763672
+          ],
+          "max": [
+            3.9800000190734863,
+            47.400001525878906,
+            10.649999618530273
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -3.9800000190734863,
+            -10.649999618530273,
+            0.0
+          ],
+          "max": [
+            3.9800000190734863,
+            10.270000457763672,
+            47.400001525878906
+          ]
+        },
+        "triangles": 25184,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "photo-informed-relocated-signal-station",
+      "description": "按现场铭牌、市表2A011、现址589、历年照片及航片制作西北塔身与东南附楼、环廊平台和信号杆。"
     }
   ],
   "baseline_inventory": {
@@ -21571,6 +21677,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-bearn-apartments/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-brunner-mond-building/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-bund-signal-tower/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-caldbeck-macgregor-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-cathay-cinema/manifest.json",
@@ -21725,13 +21832,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-yangshupu-power-turbine-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/waibaidu-bridge-v1",
+  "incremental_audit_directory": "data/audit/bund-signal-tower-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/yangshupu-turbine-hall-v1/inventory-increment.json",
-    "bytes": 669130,
-    "sha256": "0b76ed2b0e9bf787c3880f925cbc15ac41ef1b772997a98eb2011366a0e0d21c"
+    "file": "data/audit/waibaidu-bridge-v1/inventory-increment.json",
+    "bytes": 672757,
+    "sha256": "514bb22ec9d19c70e9f9b2def008bcd8708891ffdb5ec3ca1ef19e6ec987ae8b"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/huangpu-waibaidu-bridge/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-bund-signal-tower/manifest.json"
   ]
 }

@@ -1,3 +1,11 @@
+# 外滩信号台（现址塔身、号杆与站房）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-signal-tower&mode=overview) · [单体旋转与下载](bund-signal-tower.html) · [来源与制作范围](source/precise/huangpu-bund-signal-tower/README.md) · [验收记录](data/audit/bund-signal-tower-v1/README.md)
+
+按现场铭牌、市表2A011、现址589、历年照片及航片制作西北塔身与东南附楼、环廊平台和信号杆。
+
+近景 25,184 个三角面，远景 21,328 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,055,655 字节。上海主图现有 259 处独立入口，黄浦区 102 处。[资产清单](assets/models/candidates/huangpu-bund-signal-tower/manifest.json)
+
 # 外白渡桥
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [单体旋转与下载](waibaidu-bridge.html) · [来源与制作范围](source/precise/huangpu-waibaidu-bridge/README.md) · [验收记录](data/audit/waibaidu-bridge-v1/README.md)
