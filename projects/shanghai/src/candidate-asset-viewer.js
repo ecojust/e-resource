@@ -182,6 +182,7 @@ export function showCandidateAssetViewer(modelId, detailViews = {}) {
       if (catalog.id !== modelId) throw Error('模型身份不符');
       manifest = catalog;
       for (const [role, title] of Object.entries({raw: '原始 GLB', full: '网页 GLB', lod: '远景 GLB', native: 'Blender'})) {
+        if (role === 'native' && !catalog.assets.native) continue;
         const link = document.createElement('a');
         link.href = folder + catalog.assets[role].file;
         link.textContent = title;
