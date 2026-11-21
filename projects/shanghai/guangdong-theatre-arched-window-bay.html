@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>广东大戏院临街右翼三层窗带与砖券</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="广东大戏院临街右翼三层窗带与砖券"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 四川北路1552号</p>
+    <h1>广东大戏院</h1>
+      <p>临街右翼三层窗带与砖券</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">2025年修缮后的窗带。最上层有半圆亮窗，浅色券框围住三层窗洞，窗间墙各嵌两条竖向短砖。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看三层窗带</button>
+      <button type="button" data-view="oblique">近看半圆亮窗与砖券</button>
+      <button type="button" data-view="tiles">近看窗间墙竖砖</button>
+      <button type="button" data-view="rail">侧看横檐</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/hongkou-guangdong-theatre-arched-window-bay/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-guangdong-theatre-arched-window-bay', {
+  "front": {
+    "center": [
+      0,
+      4.65,
+      0
+    ],
+    "size": [
+      4.0,
+      9.4,
+      0.5
+    ],
+    "direction": [
+      0.11,
+      0.035,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      6.79,
+      0.04
+    ],
+    "size": [
+      2.55,
+      2.55,
+      0.5
+    ],
+    "direction": [
+      0.2,
+      -0.16,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0,
+      3.0,
+      0.03
+    ],
+    "size": [
+      2.4,
+      3.3,
+      0.5
+    ],
+    "direction": [
+      0.23,
+      0.06,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.58,
+      8.66,
+      0.01
+    ],
+    "size": [
+      3.1,
+      2.6,
+      0.5
+    ],
+    "direction": [
+      0.54,
+      0.12,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
