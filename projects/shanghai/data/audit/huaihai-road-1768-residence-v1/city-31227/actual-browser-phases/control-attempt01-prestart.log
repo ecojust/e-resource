@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-227/formal-31227/capture.py", line 10, in <module>
+    ev.mkdir(exist_ok=True);out=ev/stage;out.mkdir(exist_ok=True);assert not (out/'closed.json').exists()
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/shanghai-main-227/formal-31227/isolated-evidence'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-227/formal-31227/sequence.py", line 52, in <module>
+    first=use('control');external('native',first)
+          ^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-227/formal-31227/sequence.py", line 20, in use
+    fcntl.flock(lock,fcntl.LOCK_EX);subprocess.run([sys.executable,'-Bu',str(w/'capture.py'),stage,*([str(old)]if stage=='control'else[])],check=True)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-227/formal-31227/capture.py', 'control', '/tmp/shanghai-main-226/226-map-slot-released.json']' returned non-zero exit status 1.

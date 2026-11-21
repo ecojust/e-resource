@@ -1,0 +1,41 @@
+{
+  "order": 227,
+  "model": "xuhui-huaihai-road-1768-residence",
+  "superseded_attempts": [
+    {
+      "phase": "control",
+      "before_chromium": true,
+      "exit_record": "control-attempt01-prestart.json",
+      "python_exception_log": "control-attempt01-prestart.log",
+      "initial_inputs": "initial-inputs.json",
+      "initial_sequence": "initial-sequence.py",
+      "capture_program": "../capture.py",
+      "retained_images": [],
+      "replacement_report": "control.json",
+      "replacement_exit": "control-closed.json",
+      "replacement_image": "../map-before.png"
+    },
+    {
+      "phase": "street",
+      "before_chromium": false,
+      "exit_record": "street-attempt01-exit.json",
+      "browser_report": "street-attempt01-browser.json",
+      "node_log": "street-attempt01-node.log",
+      "browser_driver": "../check-lane-house.cjs",
+      "retained_images": [],
+      "replacement_report": "street.json",
+      "replacement_exit": "street-closed.json",
+      "replacement_image": "../map-street-windows-and-guardrails.png"
+    }
+  ],
+  "retained_sha256": {
+    "control-attempt01-prestart.json": "1868ac3d970950e6740c398dfd1a5eaf20cf87f3caac4bcabdaba4fab81fb1e7",
+    "control-attempt01-prestart.log": "98fa91c298bf09ccbbe11146cad0bb02bd356891cf39839bab8a0374d3f0bc78",
+    "street-attempt01-browser.json": "ec10a9f13cb8f41fd476d89ab27441d7d50d4c9663bf38e8bc4f307efc711a8c",
+    "street-attempt01-exit.json": "fcff80c966166a2b2c041142d51ae8d425045923837be3d05fcd704cc2c4f41d",
+    "street-attempt01-node.log": "f3568247bb37777ea161eee3929ded914a0f3bace2ba9e6673a08c5c626c57ab",
+    "initial-inputs.json": "62a59c6ef777c71d1e28b68a7bf58450db36d41895f0477a73f37de207a17c1b",
+    "initial-sequence.py": "5650b9118b0ae226bbcb443bff3009673131e71b9515422795dac30f14285a65"
+  },
+  "original_inbox_sha256": "5a3132056f17efb25599df8e87e58a6b7ef2058166f687f5d9af4cec98840f5e"
+}

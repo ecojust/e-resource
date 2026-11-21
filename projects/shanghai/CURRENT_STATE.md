@@ -1,3 +1,11 @@
+# 霞飞别墅淮海中路1768弄口临街住宅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1768-residence&mode=overview) · [单体旋转与下载](huaihai-road-1768-residence.html) · [来源与制作范围](source/precise/xuhui-huaihai-road-1768-residence/README.md) · [验收记录](data/audit/huaihai-road-1768-residence-v1/README.md)
+
+按市表2D011的原1754弄、2013年带1768弄号牌实照和2015年临街照片，制作现弄口东侧住宅的可见窗墙。记录1990年修缮和2001年前后改造，区分现状与1930年代原貌。
+
+近景 21,760 个三角面，远景 12,512 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,439,408 字节。上海主图现有 264 处独立入口，徐汇区 53 处。[资产清单](assets/models/candidates/xuhui-huaihai-road-1768-residence/manifest.json)
+
 # 西摩路会堂（拉结会堂院内柱廊与侧窗）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-ohel-rachel-synagogue&mode=overview) · [单体旋转与下载](ohel-rachel-synagogue.html) · [来源与制作范围](source/precise/jingan-ohel-rachel-synagogue/README.md) · [验收记录](data/audit/ohel-rachel-synagogue-v1/README.md)
