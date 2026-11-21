@@ -14,7 +14,7 @@ import { OrdinaryBuildingCatalog } from './ordinary-building-catalog.js?v=ordina
 import { createOrdinaryMacroRegistrar, loadOrdinaryLandmarkAsset, isOrdinaryLandmarkRecord } from './ordinary-scene-adapter.js?v=asset-timeout-retry-v1';
 import { SourceGeometryCorrectionState } from './source-geometry-correction.js';
 import { modelSurfaceKind, isArchitecturalBuilding } from './precise-registration-ui.js?v=metropol-cinema-history-v1';
-import { StreetInteraction, DEFAULT_GROUND_HEIGHT } from './street-interaction.js';
+import { StreetInteraction, DEFAULT_GROUND_HEIGHT } from './street-interaction.js?v=bridge-walk-v1';
 import { loadStreetAssets } from './street-assets.js';
 import { OSMBuildingSuppressor } from './osm-building-suppression.js';
 import { OSMResidualLayer } from './osm-residual-layer.js';
@@ -24,7 +24,8 @@ import { MIB, detailIsNearby, estimateDetailResources, selectHiddenDetailEvictio
 import { correctPhotographicTexture } from './photographic-texture.js';
 import { preparePhotographicGlass } from './photographic-glass.js';
 import {CandidateSourceSections} from './candidate-source-sections.js?v=country-hospital-north-v1';
-import {CandidateCityState} from './candidate-city-integrations.js?v=metropol-cinema-history-v1';
+import {CandidateBridgeWalks} from './candidate-bridge-walk.js?v=bridge-walk-v1';
+import {CandidateCityState} from './candidate-city-integrations.js?v=bridge-walk-v1';
 import {CandidateCityClipper} from './candidate-city-clipping.js?v=owner-indexed-clipping-v1';
 import {planCandidateVectorClipping} from './candidate-vector-clipping.js?v=majestic-theatre-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
@@ -288,7 +289,10 @@ export async function createShanghaiScene(options = {}) {
   const landmarkRecords = new Map();
   const candidateClipper=new CandidateCityClipper({THREE,geographicPosition});
   const sourceSections=new CandidateSourceSections(scene,geographicPosition);
+  const streetInteraction = new StreetInteraction();
+  const bridgeWalks=new CandidateBridgeWalks(streetInteraction);
   const candidateState=new CandidateCityState({getRecords:()=>landmarkRecords,getScene:()=>scene,onChange(state){
+    bridgeWalks.sync(state.active);
     sourceSections.sync(state.active,localStreamer.getVisible());
     candidateClipper.update(state.displayClips); collisionDirty=true; collisionUpdated=-Infinity; collisionRevision++;
     refreshCandidateVectors(); lighting?.invalidate(); if(!destroyed)map.triggerRepaint();
@@ -308,7 +312,6 @@ export async function createShanghaiScene(options = {}) {
     return visible && (!sourceGeometryCorrections.isConfigured(record.id) || sourceGeometryCorrections.isActive(record.id));
   }
   let ordinaryCatalog=null, updatingOrdinaryCatalog=false, nearbyOrdinaryRecords=[];
-  const streetInteraction = new StreetInteraction();
   let localDataKind = 'city', streamingSignature = '', streamNoticeTime = 0, streamErrorTime = 0;
   let cityManifestGeneration=0;
   const tileSuppression = new FeatureStateSuppressor(map, OVERTURE_SOURCE);
@@ -424,6 +427,7 @@ export async function createShanghaiScene(options = {}) {
       if (!destroyed) {
         destroyed = true;
         buildingBeacons?.destroy();buildingBeacons=null;
+        bridgeWalks.sync([]);
         ordinaryCatalog?.destroy();
         osmSuppression?.destroy();for(const c of candidateVectorSuppressors)c.destroy({mapWillBeRemoved:true});
         streetBasemap?.dispose();
@@ -797,13 +801,13 @@ export async function createShanghaiScene(options = {}) {
       if (['rail', 'aerialway', 'ferry'].includes(type)) continue;
       const lines = f.geometry.type === 'LineString' ? [f.geometry.coordinates]
         : f.geometry.type === 'MultiLineString' ? f.geometry.coordinates : [];
-      for (const coordinates of lines) roadLines.push({coordinates, bridge: properties.brunnel === 'bridge',
+      for (const coordinates of lines) roadLines.push({coordinates, featureId:f.id, bridge: properties.brunnel === 'bridge',
         width: ['motorway','trunk','primary','secondary'].includes(type) ? 13 : 6});
     }
     collisionRevision += 1;
   }
   function onBridge(lng, lat) {
-    return roadLines.some(road => road.bridge && (nearestOnLine({lng, lat}, road.coordinates)?.distance ?? Infinity) < road.width);
+    return roadLines.some(road => road.bridge && bridgeWalks.allowsNativeRoad(road.featureId,lng,lat,road.width) && (nearestOnLine({lng, lat}, road.coordinates)?.distance ?? Infinity) < road.width);
   }
   function collisionAt(lng, lat) {
     rebuildCollisionCache();
@@ -815,7 +819,7 @@ export async function createShanghaiScene(options = {}) {
       if (record.kind === 'building') {if(!record.candidate&&candidateState.clipsPoint(lng,lat,record.source))continue;return 'building';}
       water = true;
     }
-    return water && !onBridge(lng,lat) ? 'water' : null;
+    return water && !bridgeWalks.coversWater(lng,lat) && !onBridge(lng,lat) ? 'water' : null;
   }
   async function waitForData(timeout = 8000) {
     // Let a preceding camera teleport schedule its new vector tile requests.
@@ -965,5 +969,5 @@ export async function createShanghaiScene(options = {}) {
     getLandmarkExclusionState(){return landmarkSuppression.getState();},
     getCollisionState(){rebuildCollisionCache();return {polygons:polygons.length,roads:roadLines.length,updated:collisionUpdated,revision:collisionRevision,buildingSource:buildingMode,release:overtureRelease};},
     resize(){map.resize();},
-    destroy(){destroyed=true;buildingBeacons?.destroy();buildingBeacons=null;ordinaryCatalog?.destroy();osmSuppression?.destroy({mapWillBeRemoved:true});for(const c of candidateVectorSuppressors)c.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
+    destroy(){destroyed=true;buildingBeacons?.destroy();buildingBeacons=null;bridgeWalks.sync([]);ordinaryCatalog?.destroy();osmSuppression?.destroy({mapWillBeRemoved:true});for(const c of candidateVectorSuppressors)c.destroy({mapWillBeRemoved:true});streetBasemap?.dispose();localStreamer.destroy();cityDetails.destroy();landmarkSuppression.destroy({clearMap:true});map.remove();}};
 }

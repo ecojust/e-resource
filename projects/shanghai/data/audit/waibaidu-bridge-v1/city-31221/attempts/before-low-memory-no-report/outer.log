@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-221/run-when-released.py", line 68, in <module>
+    phase(name,args,report,gate)
+  File "/tmp/shanghai-main-221/run-when-released.py", line 56, in phase
+    rec=j(result);assert rec['passed']and not rec.get('errors')and not rec.get('pageErrors')and not rec.get('failedRequests')
+        ^^^^^^^^^
+  File "/tmp/shanghai-main-221/run-when-released.py", line 6, in <lambda>
+    j=lambda path:json.loads(path.read_bytes())
+                             ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/shanghai-main-221/sessions/before/report.json'

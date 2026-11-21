@@ -70,14 +70,27 @@ def main():
         else:
             assert actual == prior
     assert job['status'] in ('accepted', 'candidate_delivered')
-    assert job['preview'].endswith('#landmark=' + args.model + '&mode=overview')
+    overview = job.get('city_integration', {}).get('preview', job['preview'])
+    assert overview.endswith('#landmark=' + args.model + '&mode=overview')
+    mode = 'walk' if row.get('bridge_walk') and row.get('navigation', {}).get('listed') else 'overview'
+    assert job['preview'] == overview.removesuffix('overview') + mode
+    if mode == 'walk':
+        assert row.get('bridge_walk') == model.get('bridge_walk') and row.get('bridge_walk')
+        assert job['city_integration']['walk_enabled'] and model['navigation'] == row['navigation']
+        view = selected(read('data/model-viewers.json'))
+        assert view['model_walk']
+        directory_page = (PROJECT / 'landmarks.html').read_text()
+        for suffix in ('walk', 'overview'):
+            assert f'href="index.html#landmark={args.model}&amp;mode={suffix}"' in directory_page
     assert (REPO / job['manifest']).resolve() == manifest and (REPO / job['preview_source']).is_file()
     directory = read('data/landmarks.json') + town['models']
     assert len({r['id'] for r in directory}) == len(directory) == town['resulting_city_count']
     district_total = sum(r['districtId'] == model['districtId'] for r in directory)
     for doc in (REPO / 'README.md', PROJECT / 'README.md'):
         district_rows = doc.read_text().split(f"### {job['district']}（{district_total}处）", 1)[1].split('\n### ', 1)[0]
-        assert district_rows.count(f"[查看网页]({job['preview']})") == 1
+        assert district_rows.count(f"[查看网页]({overview})") == 1
+        if mode == 'walk':
+            assert district_rows.count(f"[漫游]({job['preview']})") == 1
     scope, = [r for r in read('data/model-todo/completed-model-scope-review.json')['records'] if r['heritage_id'] == job['heritage_record_id']]
     assert selected(scope['completed_models'])['scope'] == job['scope']
     assert scope['remaining_tasks']

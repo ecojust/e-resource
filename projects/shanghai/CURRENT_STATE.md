@@ -1,3 +1,11 @@
+# 外白渡桥
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [单体旋转与下载](waibaidu-bridge.html) · [来源与制作范围](source/precise/huangpu-waibaidu-bridge/README.md) · [验收记录](data/audit/waibaidu-bridge-v1/README.md)
+
+按市表2A012、市政志、三期以上公开照片以及名为外白渡桥的道路与桥面轮廓，制作两跨钢构、街面门架、人行栏杆与临水可见的桥墩。
+
+近景 28,624 个三角面，远景 16,752 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,124,240 字节。上海主图现有 258 处独立入口，黄浦区 101 处。[资产清单](assets/models/candidates/huangpu-waibaidu-bridge/manifest.json)
+
 # 杨树浦电厂汽机房及4号锅炉房（1926年合影可见外观）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-yangshupu-power-turbine-hall&mode=overview) · [单体旋转与下载](yangshupu-turbine-hall.html) · [来源与制作范围](source/precise/yangpu-yangshupu-power-turbine-hall/README.md) · [验收记录](data/audit/yangshupu-turbine-hall-v1/README.md)

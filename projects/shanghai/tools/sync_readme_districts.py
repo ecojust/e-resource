@@ -128,6 +128,7 @@ def normalize_model_view_links(text, project=False):
     open the current main scene; model-walk is not promoted to city walking.
     """
     routes, pages = model_view_routes()
+    walkable = {ident for ident, row in integrations().items() if row.get('navigation', {}).get('listed')}
 
     def target(url):
         parsed = urlsplit(url)
@@ -154,7 +155,10 @@ def normalize_model_view_links(text, project=False):
             params = dict(parse_qsl(parsed.fragment))
             if 'landmark' in params:
                 assert params['landmark'] in routes, f"Unregistered model view: {url}"
-                return routes[params['landmark']]
+                ident = params['landmark']
+                if params.get('mode') == 'walk' and ident in walkable:
+                    return CURRENT + f'index.html#landmark={ident}&mode=walk'
+                return routes[ident]
             return CURRENT + 'index.html' + ('?' + parsed.query if parsed.query else '') + ('#' + parsed.fragment if parsed.fragment else '')
         return None
 

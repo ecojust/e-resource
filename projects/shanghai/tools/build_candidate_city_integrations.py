@@ -404,6 +404,45 @@ def historical_site_record(item, placement):
             "collision_geometry": None, "replacement_geometry": None, "source_feature_ids": placement["source_feature_ids"]}
 
 
+def checked_bridge_walk(item, placement):
+    label = item["id"] + " bridge walk"
+    b = placement["bridge_walk"]
+    def number(x, low, high):
+        return type(x) in (float, int) and math.isfinite(x) and low <= x <= high
+    assert b["version"] == 1 and b["longitudinal_axis"] in ("x", "-z"), label
+    assert set(placement.get("model_geometry_sha256", {})) == {"raw", "web", "lod"}, label
+    assert placement["collision_geometry"] is None and not any(placement.get(k) for k in
+        ("owner", "owners", "source_owner", "source_owners", "replacement_geometry", "site_replacement",
+         "display_height_clips", "source_section_caps", "ground_collision_mode")), label
+    assert not any(placement.get("source_feature_ids", {}).values()), label
+    assert number(placement["altitude"], -1000, 1000) and number(b["shear"], -1, 1), label
+    width, road = b["half_deck_m"], b["half_road_m"]
+    assert number(road, .25, 50) and number(width, road + .5, 60) and number(b["sidewalk_rise_m"], 0, .2), label
+    ids = b["transportation_feature_ids"]
+    assert isinstance(ids, list) and 1 <= len(ids) <= 16 and len(ids) == len(set(ids)), label
+    assert all(type(i) is int and 0 < i <= 2**53 - 1 for i in ids), label
+    stations = b["stations_m"]
+    assert 2 <= len(stations) <= 256 and all(len(s) == 2 and number(s[0], -1000, 1000)
+        and number(s[1], -50, 100) for s in stations), label
+    assert all(next_s[0] > s[0] for s, next_s in zip(stations, stations[1:])), label
+    assert 2 <= len(b["rails"]) <= 16 and all(number(r["offset_m"], -width, width)
+        and number(r["radius_m"], .01, 1) and number(r["base_above_road_m"], -.3, 2)
+        and number(r["top_above_road_m"], r["base_above_road_m"], 4) for r in b["rails"]), label
+    assert all(any(sign * r["offset_m"] > road for r in b["rails"]) for sign in (-1, 1)), label
+    posts = b.get("posts", [])
+    assert len(posts) <= 64 and all(number(p["station_m"], stations[0][0], stations[-1][0])
+        and number(p["offset_m"], -width, width) and number(p["half_length_m"], .01, 3)
+        and number(p["half_width_m"], .01, 3) and number(p["top_above_road_m"], .2, 8) for p in posts), label
+    bounds = item["geometry"]["bounds_glb"]
+    for s, height in stations:
+        for offset in (-width, width):
+            along = s + b["shear"] * offset
+            x, z = (along, -offset) if b["longitudinal_axis"] == "x" else (offset, -along)
+            for axis, value in enumerate((x, height + b["sidewalk_rise_m"], z)):
+                assert bounds["min"][axis] - .02 <= value <= bounds["max"][axis] + .02, label
+    return b
+
+
 def checked_ground_clearance(item, placement):
     """A suspended connector may omit its 2D obstacle only with verified clearance in every GLB."""
     label = item["id"] + " overhead connector"
@@ -546,7 +585,9 @@ def build_catalog(inventory, inventory_path=INVENTORY):
             assert len(navigation["walkStart"]) == 2 and all(math.isfinite(x) for x in navigation["walkStart"])
             assert math.isfinite(navigation["bearing"])
         clearance = None
-        if "ground_collision_mode" in placement:
+        if "bridge_walk" in placement:
+            checked_bridge_walk(item, placement)
+        elif "ground_collision_mode" in placement:
             clearance = checked_ground_clearance(item, placement)
         else:
             checked_geometry(placement["collision_geometry"], f"{ident} collision_geometry", collision=True)
@@ -600,7 +641,7 @@ def build_catalog(inventory, inventory_path=INVENTORY):
                 if key == "overviewPitch":
                     assert 0 <= placement[key] <= 85
                 model[key] = placement[key]
-        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "display_height_clips", "source_section_caps", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256"):
+        for key in ("owner", "owners", "source_owner", "source_owners", "site_replacement", "display_height_clips", "source_section_caps", "derived_asset_note", "partial_model", "model_scope", "altitude", "model_geometry_sha256", "bridge_walk"):
             if key in placement:
                 model[key] = json.loads(json.dumps(placement[key]))
         site = model.get("site_replacement")

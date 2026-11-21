@@ -1,3 +1,4 @@
+import {validBridgeWalk} from './candidate-bridge-walk.js?v=bridge-walk-v1';
 import {candidateVectorGeometry} from './candidate-vector-geometry.js';
 import {validSourceSection} from './candidate-source-sections.js?v=country-hospital-north-v1';
 import {getVerifiedOrdinaryAsset} from './ordinary-asset-verification.js';
@@ -54,6 +55,7 @@ export function mergeCandidateCityModels(existing,manifest) {
     }
     for(const key of ['collision_geometry','replacement_geometry'])if(row[key]&&!validCandidateGeometry(row[key],{collision:key==='collision_geometry'}))throw Error(`候选模型边界无效：${row.id}/${key}`);
     if(row.osm_replacement_geometry!==undefined&&(!row.replacement_geometry||!validCandidateGeometry(row.osm_replacement_geometry)))throw Error('候选模型 OSM 矢量边界无效：'+row.id);
+    if(row.bridge_walk!==undefined&&!validBridgeWalk(row))throw Error('候选桥面步行参数无效：'+row.id);
     if(row.ground_collision_mode!==undefined){
       const rawClearance=(row.altitude??0)+(row.scale??1)*row.bounds_glb?.min?.[1];
       if(row.ground_collision_mode!=='overhead-connector' || !Number.isFinite(rawClearance)

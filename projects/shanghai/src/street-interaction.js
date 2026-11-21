@@ -84,7 +84,19 @@ function prepareFeature(feature,origin,ids) {
   const bounds=vertices.reduce((b,v)=>[Math.min(b[0],v[0]-radius),Math.min(b[1],v[1]-radius),Math.max(b[2],v[0]+radius),Math.max(b[3],v[1]+radius)],[Infinity,Infinity,-Infinity,-Infinity]);
   const segments=[];
   for(const line of [...polygons.flat(),...lines])for(let i=1;i<line.length;i++)segments.push([line[i-1],line[i]]);
-  return {id,properties:p,surface,polygons,points,segments,radius,bounds};
+  let heightAt=null;
+  if(p.height_plane===true) {
+    if(!surface||g.type!=='Polygon'||g.coordinates.length!==1)throw Error('Invalid sloped surface: '+id);
+    const xyz=g.coordinates[0],vertices=polygons[0][0];
+    if(xyz.length<4||!xyz.every(q=>finite(q[2])))throw Error('Missing surface elevation: '+id);
+    const origin=vertices[0],a=sub(vertices[1],origin),b=sub(vertices[2],origin),det=cross(a,b);
+    if(Math.abs(det)<1e-8||Math.abs(p.height_world_m-xyz[0][2])>1e-6)throw Error('Invalid surface plane: '+id);
+    const da=xyz[1][2]-xyz[0][2],db=xyz[2][2]-xyz[0][2];
+    const east=(da*b[1]-db*a[1])/det,north=(a[0]*db-b[0]*da)/det;
+    heightAt=point=>p.height_world_m+(point[0]-origin[0])*east+(point[1]-origin[1])*north;
+    if(vertices.some((v,i)=>Math.abs(heightAt(v)-xyz[i][2])>.001))throw Error('Nonplanar surface: '+id);
+  }
+  return {id,properties:p,surface,polygons,points,segments,radius,bounds,heightAt};
 }
 
 /** Same-origin furniture generator primitives, local X east/Y up/Z south.
@@ -176,7 +188,7 @@ export class StreetInteraction {
     try {
       const metadata=geojson?.metadata||geojson;
       if(geojson?.type!=='FeatureCollection'||metadata.schema_version!==1||metadata.owner!==ownerId)throw Error('Sidecar schema/owner mismatch');
-      if(!/^[a-f0-9]{64}$/i.test(modelSha256||'')||![metadata.web_model_sha256,metadata.raw_model_sha256].includes(modelSha256))throw Error('Sidecar/model SHA mismatch');
+      if(!/^[a-f0-9]{64}$/i.test(modelSha256||'')||![metadata.web_model_sha256,metadata.raw_model_sha256,metadata.lod_model_sha256].includes(modelSha256))throw Error('Sidecar/model SHA mismatch');
       const origin=metadata.origin;
       if(!Array.isArray(origin)||!validPoint({lng:origin[0],lat:origin[1]}))throw Error('Invalid sidecar origin');
       if(!Array.isArray(geojson.features))throw Error('Missing sidecar features');
@@ -203,9 +215,9 @@ export class StreetInteraction {
     for(const owner of this.owners.values())if(owner.active) {
       const point=project(geographic,owner.origin);
       for(const feature of owner.query(pathBounds(point,point))) {
-        if(feature.surface&&inArea(point,feature.polygons)&&(!found||feature.properties.height_world_m>found.height)) {
-          found={height:feature.properties.height_world_m,id:feature.id,ownerId:owner.id};
-        }
+        if(!feature.surface||!inArea(point,feature.polygons))continue;
+        const height=feature.heightAt?feature.heightAt(point):feature.properties.height_world_m;
+        if(!found||height>found.height)found={height,id:feature.id,ownerId:owner.id};
       }
     }
     return found;
