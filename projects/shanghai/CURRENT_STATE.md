@@ -1,3 +1,11 @@
+# 东湖宾馆七号楼花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-donghu-hotel-house-seven&mode=overview) · [单体旋转与下载](donghu-house-seven.html) · [来源与制作范围](source/precise/xuhui-donghu-hotel-house-seven/README.md) · [验收记录](data/audit/donghu-house-seven-v1/README.md)
+
+依据淮海中路1110号2D001登记及花园实照，制作两侧弧拱窗和垂花、中部成对爱奥尼亚柱、主屋红瓦顶、后加的花园玻璃廊和正中石阶。
+
+近景 45,884 个三角面，远景 16,966 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,457,302 字节。上海主图现有 217 处独立入口，徐汇区 34 处。[资产清单](assets/models/candidates/xuhui-donghu-hotel-house-seven/manifest.json)
+
 # 朱敏堂住宅乌鲁木齐南路151号街门与双石狮
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) · [单体旋转与下载](zhu-mintang-residence.html) · [来源与制作范围](source/precise/xuhui-zhu-mintang-residence/README.md) · [验收记录](data/audit/zhu-mintang-residence-v1/README.md)
