@@ -15,3 +15,7 @@
 31205与31206的城市目录分别有242处和243处。先从上一版进入相同街角，再用桌面目录、390像素触屏和街区灯牌进入高安公寓。低位隔街视角中，对街原楼的屋面遮住门廊下半部。正面近景能分辨凹廊、门扇及两根通高门墩，斜视可见弧形窗带及两翼阳台。七处构件投影均落于未被界面遮挡的画布，另有17个地面及邻房落点符合原登记。[十二张街区实录及核验](final-map-31206/results.json) · [逐图观察](final-map-31206/manual-visual-review.json)
 
 街区灯牌的第一次鼠标点击已切换到正确建筑，随后渲染进程退出。原始失败报告和对应的成功复测均已保留。成功复测从附近的盖司康公寓出发，分别用鼠标和触屏选中高安公寓，并在新地点确认实际加载的模型。远景切换和四种下载按正式版本逐件核对。[首次尝试与复测](archived-browser-attempts.json) · [四种文件与远景](final-map-31206/distant/main-browser.json) · [独立页六幅与下载复核](final-map-31206/standalone-signed-replay.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/849bea4d93fbda031d82e60df2479f3267d50576/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
