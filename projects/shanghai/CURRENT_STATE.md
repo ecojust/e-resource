@@ -1,3 +1,11 @@
+# 毕卡迪公寓南向阶梯塔楼与534号入口
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) · [单体旋转与下载](picardie-apartments.html) · [来源与制作范围](source/precise/xuhui-picardie-apartments-south-front/README.md) · [验收记录](data/audit/picardie-apartments-v1/README.md)
+
+按2D022、衡山路534号、1930年代照片、2011至2018年街景和2023年修缮图，核对现衡山宾馆南面的逐层退台、深阳台与入口雨篷。
+
+近景 34,036 个三角面，远景 22,648 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,969,634 字节。上海主图现有 245 处独立入口，徐汇区 45 处。[资产清单](assets/models/candidates/xuhui-picardie-apartments-south-front/manifest.json)
+
 # 海格公寓主楼南向花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) · [单体旋转与下载](haig-apartments-garden.html) · [来源与制作范围](source/precise/jingan-haig-apartments-garden-front/README.md) · [验收记录](data/audit/haig-apartments-garden-v1/README.md)
