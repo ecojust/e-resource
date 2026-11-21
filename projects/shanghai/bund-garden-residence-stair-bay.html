@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>汉口路花园住宅 · 楼梯窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.53" aria-label="花园住宅两层错位钢窗和砖石窗带三维模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-bund-garden-residence-stair-bay&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 汉口路</p>
+    <h1>汉口路花园住宅 · 楼梯窗</h1>
+    <p>南立面楼梯间</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">汉口路南向街墙的楼梯间，上下两排各四道逐级升高的钢窗、浅色壁带、交错边石、深红砖肩与顶部压盖。街墙西端起约7.68至11.28米，模型下缘距街面约2.75米。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">街面正视</button>
+      <button type="button" data-view="oblique">错层窗与边石</button>
+      <button type="button" data-view="above">石质压盖</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-bund-garden-residence-stair-bay/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('huangpu-bund-garden-residence-stair-bay');
+  </script>
+</body>
+</html>
