@@ -11,3 +11,7 @@
 在最终城市页面，桌面用鼠标、390×844手机用触屏从目录点开同一资料标记。旧版223项在新版224项中保持原序。两端地点卡均显示1994年名录登记、约1996年灭失；点开历史查看器可见署址钢笔画的出版和重刊年，切换近远档后仍能返回原地点。两档都能分辨中部陡山墙、窗下挑檐、左右相交的屋面和两根烟囱。桌面逐项保存四个下载，共349,882字节。[桌面历史画面](final-map-31187/desktop/desktop-archive-near.png) · [手机历史画面](final-map-31187/phone/mobile-archive-near.png) · [浏览器与下载实测](final-map-31187/results.json)
 
 前后同一街区坐标的地面分类均为建筑，历史展件在现状地图的渲染三角面、源裁切和碰撞均为零。两次截屏处于不同的街区加载阶段，普通楼体的明暗与细节有差别。另从前后两个站实取同一普通城市要素1429的近景组、远景及其清单，逐件字节一致。首次旧站冷启动期间浏览器异常退出；重试用同一机位和真实页面取得对照图。[实有街区几何对照](final-map-31187/existing-city-geometry.json) · [旧站同机位](final-map-31187/before/before-same-overview.png) · [首次退出记录](final-map-31187/first-control-crash/failure-binding.json) · [原始失败报告，可逐字解压](final-map-31187/first-control-crash/before.json.gz)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0e1fa8ba363ae1e21059b9e79609ce1c47c8b6e1/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，14 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
