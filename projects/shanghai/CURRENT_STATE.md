@@ -1,3 +1,11 @@
+# 郭棣活旧居西楼（东南花园立面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-guo-dihuo-west-house&mode=overview) · [单体旋转与下载](guo-dihuo-west-house.html) · [来源与制作范围](source/precise/xuhui-guo-dihuo-west-house/README.md) · [验收记录](data/audit/guo-dihuo-west-house-v1/README.md)
+
+按2D014、2018年实照及修缮单位原始照片，对合原893号西楼与今899号，制作1938年西楼东南圆角、曲尺阳台、细柱与平顶。
+
+近景 15,624 个三角面，远景 11,180 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,702,323 字节。上海主图现有 209 处独立入口，徐汇区 29 处。[资产清单](assets/models/candidates/xuhui-guo-dihuo-west-house/manifest.json)
+
 # 武康路99号正广和大班住宅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) · [单体旋转与下载](caldbeck-manager-residence.html) · [来源与制作范围](source/precise/xuhui-caldbeck-manager-residence/README.md) · [验收记录](data/audit/caldbeck-manager-residence-v1/README.md)
