@@ -75,12 +75,14 @@ def glazed_window(b,l,r,index,lod):
     name=f'Classroom window {index}'
     t,base=222,275
     rect(b,l-.8,t-1.5,r+.8,base+1,-.145,-.115,REVEAL,name+' recessed return')
-    # Three narrow lights and an upper row can be read in the 2017 image.
+    # The strongest upright divides the opening into two leaves. The thin side
+    # bars are visible between that stile and the jambs; their opening action is unknown.
     rect(b,l+1.25,t+1.1,r-1.25,base-.8,-.108,-.099,GLASS,name+' glazing')
-    for u in [l+1,l+(r-l)*.35,l+(r-l)*.68,r-1]:
-        rect(b,u-.55,t+.45,u+.55,base-.3,-.107,-.058,FRAME,name+' vertical bars')
-    for v in [t+.7,t+18.1,base-.9]:
-        rect(b,l+.6,v-.65,r-.6,v+.65,-.105,-.052,FRAME,name+' horizontal bars')
+    for fraction,half_width in [(0.023,.55),(.235,.38),(.50,.83),(.765,.38),(.977,.55)]:
+        u=l+(r-l)*fraction
+        rect(b,u-half_width,t+.45,u+half_width,base-.3,-.107,-.054,FRAME,name+' vertical bars')
+    for v,half_height in [(t+.7,.65),(t+8.8,.44),(t+20.2,.65),(base-.9,.65)]:
+        rect(b,l+.6,v-half_height,r-.6,v+half_height,-.105,-.049,FRAME,name+' horizontal bars')
     if not lod:
         for u in [l+.48,r-.48]:
             rect(b,u-.20,t,u+.20,base,-.067,-.043,REVEAL,name+' frame rebate')
