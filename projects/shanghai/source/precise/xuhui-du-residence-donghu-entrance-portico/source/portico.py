@@ -37,7 +37,7 @@ def column(b,x,y,name,lod):
               (1.04,radius),(2.71,.343),(4.71,.316),
               (4.76,.320),(4.78,.346),(4.821,.348),(4.852,.333),
               (4.903,.376),(4.940,.393),(4.977,.415)]
-    if lod:sections=[sections[i]for i in (0,2,4,6,8,11,13,14,16,18,20,22)]
+    if lod:sections=[sections[i]for i in (0,1,2,4,6,8,11,13,14,16,18,20,22)]
     b.lathe((x,y),sections,'warm limestone',16 if lod else 44,'portico/'+name+'/shaft and circular base')
     slab_part(b,'portico/'+name+'/capital slab','light cap stone',
               x-.465,x+.465,y-.465,y+.465,4.970,SOFFIT+.025)
