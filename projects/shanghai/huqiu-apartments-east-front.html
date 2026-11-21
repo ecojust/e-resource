@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>虎丘公寓虎丘路东立面</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="虎丘公寓虎丘路东立面" data-oblique="positive-x" id="model-view"></main>
+<header>
+<a href="index.html#landmark=huangpu-huqiu-apartments-east-front&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">黄浦区 · 虎丘路131号</p>
+<h1>虎丘公寓</h1>
+<p>红砖街翼、内凹门楼与北翼加层</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">依据2014年的虎丘路街照和2022年发布的门楼近照，制作两翼的红砖窗墙、门前双柱、金字横匾与木框格门。北翼顶层可见于街照，层高和装饰进深据图估计。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">正看门楼与双翼</button>
+<button data-view="oblique" type="button">斜看折面钢窗</button>
+<button data-view="above" type="button">俯看北翼加层</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/huangpu-huqiu-apartments-east-front/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-huqiu-apartments-east-front');
+  </script>
+</body>
+</html>
