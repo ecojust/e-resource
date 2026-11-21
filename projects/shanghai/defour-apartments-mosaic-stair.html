@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>巨福公寓公共楼梯马赛克踏步</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="巨福公寓公共楼梯马赛克踏步"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 乌鲁木齐南路176号</p>
+    <h1>巨福公寓</h1>
+    <p>公共楼梯马赛克踏步</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">修缮记录中的四级公共楼梯。深灰色小方砖沿中央贯通，两边的茶褐色带从踢面翻上踏面，浅色窄边标出踏鼻。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看四级楼梯</button>
+      <button type="button" data-view="oblique">斜看踏步起落</button>
+      <button type="button" data-view="nosing">近看踏鼻窄边</button>
+      <button type="button" data-view="tiles">俯看马赛克拼色</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/xuhui-defour-apartments-mosaic-stair/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-defour-apartments-mosaic-stair', {
+  "front": {
+    "center": [
+      0,
+      0.42,
+      -0.57
+    ],
+    "size": [
+      1.25,
+      1.02,
+      1.2
+    ],
+    "direction": [
+      0.08,
+      0.82,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      0.44,
+      -0.57
+    ],
+    "size": [
+      1.25,
+      1.02,
+      1.2
+    ],
+    "direction": [
+      0.36,
+      0.75,
+      1
+    ]
+  },
+  "nosing": {
+    "center": [
+      -0.04,
+      0.18,
+      -0.15
+    ],
+    "size": [
+      0.69,
+      0.48,
+      0.44
+    ],
+    "direction": [
+      0.17,
+      0.57,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0.11,
+      0.4,
+      -0.53
+    ],
+    "size": [
+      0.95,
+      0.82,
+      0.77
+    ],
+    "direction": [
+      -0.1,
+      1.71,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
