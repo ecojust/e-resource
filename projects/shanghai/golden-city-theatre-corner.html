@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>黄浦剧场 · 北京东路转角</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="negative-z" data-oblique-x="-0.32" aria-label="黄浦剧场圆角门厅"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-golden-city-theatre-corner&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 北京东路780号</p>
+    <h1>黄浦剧场</h1>
+    <p>北京东路与贵州路转角</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">金城大戏院于1934年开幕。此处按2016年修缮后的街面制作，四根浅色圆柱分出五道高窗。雨篷正面的英文、上方横排院名和北京东路一侧的竖牌均可放大查看。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">街口正面</button>
+      <button type="button" data-view="oblique">斜看窗柱与竖牌</button>
+      <button type="button" data-view="above">俯看弧形雨篷</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-golden-city-theatre-corner/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('huangpu-golden-city-theatre-corner');
+  </script>
+</body>
+</html>
