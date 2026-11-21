@@ -13,3 +13,7 @@
 26213修订页的桌面与390×844手机分别核对虹口、四川北路、2F008、1932年及两期街面影像，实点六次视角、切换两档、逐一下载四件模型。[查看与下载记录](viewer.json) · [桌面斜视](viewer-desktop-full-oblique.png) · [手机正面](viewer-mobile-full-front.png)
 
 修订后的26213服务逐件返回1,508个签名文件，共1,286,008,990字节。两版之间仅本楼独立页的范围段落变化。250处城市目录和本楼四件模型的摘要逐项相同。实取158个独立展示页比较，修订前有四行大楼与自由公寓一对范围段落重复，修订后没有重复段落。地点卡另以正式地图程序读取真实字段，显示虹口区、四行大楼及经两期街面资料核定的制作范围。[变更逐项比对](viewer-description-comparison-26213.json) · [修订后的逐件下载](26213-all-http.json) · [原展示页扫描](viewer-copy-scan-25213.json) · [新展示页扫描](viewer-copy-scan-26213.json) · [字段及四件模型比对](sihang-page-fields.json) · [地点卡显示内容](city-card-fields-26213.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b57f313d4846a9cde19d289a6cb8aa95452df5bf/projects/shanghai/index.html#landmark=hongkou-sihang-building-north-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
