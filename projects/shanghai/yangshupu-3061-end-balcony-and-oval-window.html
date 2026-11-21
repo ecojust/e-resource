@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>杨树浦路3061弄住宅端部阳台与椭圆砖窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="杨树浦路3061弄住宅端部、阳台、三开间窗与侧墙砖饰窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">杨浦区 · 杨树浦路3061弄</p>
+    <h1>杨树浦路3061弄住宅</h1>
+    <p>端部阳台与椭圆砖窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">阳台的黑色栏杆顺着凸出的底板微微弯曲，栏后四扇红框窗的格数不同。转过墙角，一扇六格红窗向外开启，窗顶和窗底各有一圈放射状的砖。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">整体</button>
+      <button type="button" data-view="oblique">看弧形阳台</button>
+      <button type="button" data-view="above">看披檐窗</button>
+      <button type="button" data-view="inscription">看侧墙椭圆窗</button>
+      <button type="button" data-view="return">看底层三窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/yangpu-yangshupu-3061-end-balcony-and-oval-window/README.md">2013年实照与尺寸估算</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('yangpu-yangshupu-3061-end-balcony-and-oval-window', {
+  "front": {
+    "center": [
+      1.72,
+      4.65,
+      -0.56
+    ],
+    "size": [
+      8.54251528,
+      7.53751348,
+      0.68340122
+    ],
+    "direction": [
+      0.47436959,
+      -0.23587938,
+      0.84813585
+    ]
+  },
+  "oblique": {
+    "center": [
+      1.57,
+      5.23,
+      0.15
+    ],
+    "size": [
+      4.01995361,
+      3.54701789,
+      0.32159629
+    ],
+    "direction": [
+      0.29755263,
+      0.08401486,
+      0.95100154
+    ]
+  },
+  "above": {
+    "center": [
+      1.99,
+      8.06,
+      -0.92
+    ],
+    "size": [
+      3.51005013,
+      3.09710306,
+      0.28080401
+    ],
+    "direction": [
+      0.54160798,
+      0.2345818,
+      0.80723737
+    ]
+  },
+  "inscription": {
+    "center": [
+      3.81,
+      5.91,
+      -2.06
+    ],
+    "size": [
+      2.65816311,
+      2.34543804,
+      0.21265305
+    ],
+    "direction": [
+      0.60151233,
+      0.02203817,
+      0.79855947
+    ]
+  },
+  "return": {
+    "center": [
+      1.58,
+      1.9,
+      0.35
+    ],
+    "size": [
+      4.04371631,
+      3.56798498,
+      0.3234973
+    ],
+    "direction": [
+      0.24276814,
+      0.10221816,
+      0.96468393
+    ]
+  }
+});
+  </script>
+</body>
+</html>
