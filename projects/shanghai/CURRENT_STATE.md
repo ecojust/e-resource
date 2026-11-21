@@ -1,3 +1,11 @@
+# 永业大楼（杨氏公寓）淮海中路、雁荡路圆角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-young-apartments&mode=overview) · [单体旋转与下载](young-apartments.html) · [来源与制作范围](source/precise/huangpu-young-apartments/README.md) · [验收记录](data/audit/young-apartments-v1/README.md)
+
+对照市表2C003、两期建成旧照和街景，制作2824东北圆角的银行门面、铁栏阳台、红砖窗带和屋顶日光室，并沿街延伸至邻近可辨认的窗组。
+
+近景 41,484 个三角面，远景 18,756 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,888,101 字节。上海主图现有 251 处独立入口，黄浦区 99 处。[资产清单](assets/models/candidates/huangpu-young-apartments/manifest.json)
+
 # 四川北路四行大楼临街北段
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-sihang-building-north-front&mode=overview) · [单体旋转与下载](sihang-building.html) · [来源与制作范围](source/precise/hongkou-sihang-building-north-front/README.md) · [验收记录](data/audit/sihang-building-v1/README.md)
