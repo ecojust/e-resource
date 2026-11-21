@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>陈炳谦宅 · 双塔与花园券廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <style>
+    .embedded header,.embedded footer{display:none}
+    .embedded #model-view{top:8px;bottom:8px}
+    .embedded .panel{top:12px;bottom:12px}
+    .embedded #site-return{display:block;margin-top:8px}
+    @media(max-width:650px){.embedded #model-view{inset:0 0 46%}.embedded .panel{top:54%;bottom:0;max-height:none}}
+  </style>
+  <script>
+    if(window.self!==window.top && new URLSearchParams(location.search).get('embed')==='history'){
+      document.documentElement.classList.add('embedded');
+      const returnToMap=event=>{event.preventDefault();parent.postMessage('close-historical-view',location.origin);};
+      addEventListener('keydown',event=>{if(event.key==='Escape') returnToMap(event);});
+      addEventListener('DOMContentLoaded',()=>{
+        const link=document.getElementById('site-return');
+        link.textContent='返回街区资料标记';
+        link.addEventListener('click',returnToMap);
+        document.querySelector('.panel').append(link);
+      });
+    }
+  </script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".57" aria-label="陈炳谦宅双塔与花园券廊历史立面三维模型"></main>
+  <header>
+    <a id="site-return" href="index.html#landmark=jingan-chen-bingqian-historic-residence&amp;mode=overview">← 查看名录街区</a> · <a href="landmarks.html#building-jingan-chen-bingqian-historic-residence">按区目录</a>
+    <p>第二批优秀历史建筑 · 2B012*</p>
+    <h1>陈炳谦宅（原托益住宅）</h1>
+    <p>双塔与双层花园券廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p>陕西北路80号原住宅的花园正面有两座折坡角塔，两层券廊各设八跨。花木间可见中央低矮的石质轮廓。地方文史资料称住宅约建于1900年，市房管局名录注记约1994年灭失。模型依据2014年重刊、拍摄年代待考的黑白旧照制作，尺寸与色彩按图文估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">正对花园立面</button>
+      <button type="button" data-view="oblique">斜看双塔与券廊</button>
+      <button type="button" data-view="above">俯看屋顶轮廓</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-chen-bingqian-historic-residence/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-chen-bingqian-historic-residence');
+  </script>
+</body>
+</html>
