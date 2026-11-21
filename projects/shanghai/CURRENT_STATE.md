@@ -1,3 +1,11 @@
+# 自由公寓南面退台、中央三肋与转角窗
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-liberty-apartments-south-front&mode=overview) · [单体旋转与下载](liberty-apartments.html) · [来源与制作范围](source/precise/xuhui-liberty-apartments-south-front/README.md) · [验收记录](data/audit/liberty-apartments-v1/README.md)
+
+按市表2D040、五原路258号、2013年署名实照和三期航片选定主楼3297，制作可辨的南面退台、中央三肋与转角窗。
+
+近景 33,510 个三角面，远景 11,924 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,570,493 字节。上海主图现有 247 处独立入口，徐汇区 47 处。[资产清单](assets/models/candidates/xuhui-liberty-apartments-south-front/manifest.json)
+
 # 会乐精舍（卫乐公寓）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-willow-court&mode=overview) · [单体旋转与下载](willow-court.html) · [来源与制作范围](source/precise/xuhui-willow-court/README.md) · [验收记录](data/audit/willow-court-v1/README.md)
