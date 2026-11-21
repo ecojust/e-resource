@@ -1,0 +1,77 @@
+{
+  "order": 368,
+  "source_hashes": {
+    "6": "ee814c03e66691149c71dbee1094de4621c2d5543164b5d03bb0d8edf656420f",
+    "7": "caa61a324a5b49b147775e867c0170bd422625a85e6c099c006d096d3b3ad8db"
+  },
+  "positions": "一层成对木窗所在水刷石墙；洞内木扇与外挑石窗台分别有进出。另一个位置是悬挑木格正下方的结构托木和后方凹墙。",
+  "method": "未使用一层像点拟合平面。图6到7以二层悬挑长面四角和二层窗框及脚梁的六个高相关纹理核定单应，之后以13块一层成对窗的原像检验；正侧向帧几何不同，地面像点只作为检验。",
+  "correspondences_source": "window-plane-correspondences.json",
+  "correspondences_sha256": "28658f233a7020b7a3c8a4e9d410a8b55ef2ce5f5bd5bd313e10e11918c4f114",
+  "upper": {
+    "calibration_points": 10,
+    "supplementary_median_ncc": 0.8294999999999999,
+    "supplementary_median_residual_px": 0.97
+  },
+  "independent_ground": {
+    "patches": 13,
+    "median_ncc": 0.803,
+    "median_xy_residual": [
+      4.0,
+      3.0
+    ],
+    "median_abs_residual_px": 5.66,
+    "p10_p90_abs_residual_px": [
+      3.78,
+      11.42
+    ]
+  },
+  "positive_depth_comparison": {
+    "source_view6_foot_of_rear_return": [
+      424,
+      351
+    ],
+    "assumed_same_front_plane_projection_in_view7": [
+      472.66,
+      467.66
+    ],
+    "actual_return_foot_range_view7": [
+      [
+        485,
+        457
+      ],
+      [
+        496,
+        453
+      ]
+    ],
+    "why_range": "树影、立柱和边口遮住后端准确交点，采用其可见边界范围。",
+    "observed_real_offset_vectors": [
+      [
+        12.34,
+        -10.66
+      ],
+      [
+        23.34,
+        -14.66
+      ]
+    ],
+    "ground_offset_fraction_along_return_displacement_p10_median_p90": [
+      [
+        -0.358,
+        -0.08,
+        0.176
+      ],
+      [
+        -0.151,
+        -0.009,
+        0.127
+      ]
+    ],
+    "foot_not_window": "这是相邻已知回折的直接反例；不是把脚梁某一个像素位差当作全画面同一个每米系数。"
+  },
+  "interpretation": "横跨两种视角，一层成对窗对外墙前面的重投影中位差5.66像素；地面窗的偏移未沿整段回折的15.6–27.6像素方向出现。照片支持一层成对窗外墙沿上层窗墙往下，未显示整面退回悬挑背后。可将窗框略嵌、窗台外挑、腰线独立处理。木格下方正对的深色石子墙、托木背面和可见梁底应另保留为有退深的区域。",
+  "limits": "前墙是否严格共面到厘米不能由这两图确定。普通针孔拟合对未经测定的焦距、原片裁剪、暗处后角点和楼层分带中心敏感；曾出现4–6像素的控制点残差。不采用该拟合导出的绝对退距。",
+  "comparison_model": "与上层窗墙连续是与证据相合的模型近似；不要把一层木窗回退整段1.095m，也不要为了凑一个数把所有窗洞与墙齐平。",
+  "original_review_sha256": "02b250dc542e18cfbd03876e7c8cdd52b066510bd65340256eaec40ad31339aa"
+}
