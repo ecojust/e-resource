@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>东平路11号宋氏住宅南坡三扇老虎窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="宋氏住宅南坡三窗与红瓦"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 东平路11号</p>
+    <h1>宋氏住宅</h1>
+    <p>南坡三扇老虎窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">三座浅色山花突出于红瓦屋面。每座窗内有两扇木窗和细木棂，斜视可见窗侧壁。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">三窗正面</button>
+      <button type="button" data-view="oblique">斜看屋面</button>
+      <button type="button" data-view="above">瓦面俯视</button>
+      <button type="button" data-view="inscription">中窗山花与木棂</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-dongping-eleven-mansard-dormers/README.md">花园照片与测量依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-dongping-eleven-mansard-dormers', {
+      front:{center:[0,.96,-.34],size:[11.0,2.06,1.25],direction:[.11,.04,1]},
+      oblique:{center:[0,.96,-.34],size:[11.0,2.06,1.25],direction:[.71,.19,1]},
+      above:{center:[0,.96,-.34],size:[11.0,2.06,1.25],direction:[-.36,.63,1]},
+      inscription:{center:[0,1.00,-.18],size:[1.72,2.09,1.05],direction:[.18,.14,1]},
+    });
+  </script>
+</body>
+</html>
