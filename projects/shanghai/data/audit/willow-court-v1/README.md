@@ -25,3 +25,7 @@
 地图近、远两档分别实载54,520面和26,776面。独立单体页的1250像素桌面、390像素触屏各两幅实图显示相同的阳台轴线、翼部及顶部退台。已将这些原图、当时保存的四件下载与正式站的页面、浏览脚本、模型清单和实取文件逐项核对。
 
 [实机、地面与四种下载](city-31209/process-exits.json) · [旧城对照](city-31209/map-before.png) · [南向半圆阳台](city-31209/map-round-balconies-and-garden.png) · [半层高入口与扇形台阶](city-31209/map-raised-entrance-and-fan-steps-wide.png) · [屋面退台](city-31209/map-setback-roof-and-terraces-wide.png) · [远档](city-31209/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/55dd1a5052863af0e32890b1884f94270c1a2a48/projects/shanghai/index.html#landmark=xuhui-willow-court&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，8 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
