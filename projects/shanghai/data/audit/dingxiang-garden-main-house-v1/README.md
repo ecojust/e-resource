@@ -35,3 +35,7 @@
 郭棣活住宅西楼相距约189米。切到郭宅时，两栋楼分别保留自己的模型与既有楼体的裁切。再切至虹口东大名路378号，丁香花园的模型与裁切才退出；切回后重新出现。[切至郭宅时的现场](city-31173/map-neighbor-guo.png)
 
 390×844手机默认图里可辨正面的露木山墙、前突窗与底层拱门。870×620桌面的本楼标牌压住山墙顶的一个采样点。街面近图可见门廊卷拱和侧翼窗，屋面近图可辨红瓦坡面及木构山墙，底层窗位有地点卡遮挡。门墩“1”的字形结合2013年原照和独立模型核对。[手机稳定画面](city-31173/map-mobile-same-camera.png) · [街面](city-31173/map-street-facade.png) · [原图与编号复核](../../../source/precise/xuhui-dingxiang-garden-main-house/numbered-buildings-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1f58410adc0eca6008b23769168efeac3441eb94/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
