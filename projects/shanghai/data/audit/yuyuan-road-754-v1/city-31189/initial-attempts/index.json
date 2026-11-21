@@ -1,0 +1,30 @@
+[
+  {
+    "attempt": "attempt-01-31188-before-870-target-crash",
+    "report_sha256": "23cfd4ab337ada38303bcfa7b2cef595529865d996e59ae93cd4859bdc3bc031",
+    "driver_sha256": "2cb971d89432054c26b66cdeb524be3d0d54865b45f9eaaa1474a17e2f0ae988",
+    "exit": 1,
+    "failure": "page.waitForFunction: Target crashed \n    at run (/tmp/shanghai-main-189/check-189-separated.cjs:190:18)"
+  },
+  {
+    "attempt": "attempt-02-31188-650-physical-crash",
+    "report_sha256": "63632bc00732e163780316dc2ae9d4d2048d257dcd41ae697421f06ac066e403",
+    "driver_sha256": "6c08a6fba03ad26f06d0ef51cb7ba9b333827f5a7439db07bf8296e5817252b0",
+    "exit": 1,
+    "failure": "page.waitForFunction: Target crashed \n    at run (/tmp/shanghai-main-189/check-189-separated.cjs:196:18)"
+  },
+  {
+    "attempt": "attempt-03-31189-desktop-renderer-crash",
+    "report_sha256": "041897b1efc5842b38b907fe78595166ff4499a3d51cc3f7210990b0a1c58de4",
+    "driver_sha256": "bea2ec465057aa5cf4c0c4fcac76c627d08553f2401eb4ec0951bc1f3ff4994a",
+    "exit": 1,
+    "failure": "page.waitForFunction: Target crashed \n    at settle (/tmp/shanghai-main-189/check-189-separated.cjs:78:16)\n    at view (/tmp/shanghai-main-189/check-189-separated.cjs:97:11)\n    at run (/tmp/shanghai-main-189/check-189-separated.cjs:205:15)"
+  },
+  {
+    "attempt": "attempt-04-tight-view-beacon-offscreen",
+    "report_sha256": "49c3a7c2b4aea987df573f8774b4c1da26237a81335d8b9cb9b2521fab43beaf",
+    "driver_sha256": "2aa9e6f4e612c50b325719dcd673e478eeacf74f25a5b01b858fb64303fb8a67",
+    "exit": 1,
+    "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- 'changning-yuyuan-road-754'\n\n    at view (/tmp/shanghai-main-189/check-189-architecture.cjs:127:14)\n    at async run (/tmp/shanghai-main-189/check-189-architecture.cjs:207:7)"
+  }
+]

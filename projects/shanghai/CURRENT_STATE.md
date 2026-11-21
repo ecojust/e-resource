@@ -1,3 +1,11 @@
+# 愚园路754号住宅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-yuyuan-road-754&mode=overview) · [单体旋转与下载](yuyuan-road-754.html) · [来源与制作范围](source/precise/changning-yuyuan-road-754/README.md) · [验收记录](data/audit/yuyuan-road-754-v1/README.md)
+
+按2M011与2018年近照，核对754号门牌、灰色抹灰叠弧纹、绿瓦檐及拱窗，独立辨认院前构件与主屋。
+
+近景 108,978 个三角面，远景 14,628 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 9,233,781 字节。上海主图现有 226 处独立入口，长宁区 16 处。[资产清单](assets/models/candidates/changning-yuyuan-road-754/manifest.json)
+
 # 延安中路816号严同春宅东宅街面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-yan-tongchun-residence-street-front&mode=overview) · [单体旋转与下载](yan-tongchun-residence.html) · [来源与制作范围](source/precise/jingan-yan-tongchun-residence-street-front/README.md) · [验收记录](data/audit/yan-tongchun-residence-v1/README.md)
