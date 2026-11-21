@@ -17,3 +17,7 @@
 390像素宽的院前近照中，两扇绿色院门之间有浅色院墙，墙顶瓦和两端门柱轮廓可辨；其后是圆券窗与浅色露台栏板。手机连续点两次「＋」后以高低两片屋顶为主，屋顶专项还能见临巷一侧的窄通道。440×380的同机位对照受地点卡和顶部控件遮挡，细部以院前近照和独立模型为据。[院前近照](city-31189/architecture/map-lane-arch-and-wing.png) · [实际放大](city-31189/architecture/map-mobile-public-plus.png) · [屋面与巷道](city-31189/architecture/map-court-roofs.png) · [近照浏览记录](city-31189/architecture/main-browser.json)
 
 两个版本分别实取原始近景组和远景网格。新站四件下载均与原清单相符，当前城市远景实际加载14,628个三角面。地面实测包含14个院墙、院内外、退后高翼及保留原楼等点，并检查同组23座邻体。三次较大窗口的浏览器中断，以及一次放大后地图灯牌离开画面的测试记录，均随实拍结果保留。[37个地面与模型记录](city-31189/main-browser.json) · [城市远景](city-31189/map-distant.png) · [四件与两代签名](city-31189/release-evidence.json) · [早期检查](city-31189/initial-attempts/index.json)
+
+GitHub 固定提交的地图入口、运行模块、来源和四种下载等 43 个公开文件均实际返回 HTTP 200，字节数及 SHA-256 均与 Git 对应文件相同。 本次固定提交在第三方地图预览服务的入口响应为 429。主图交互依据本页所列的同版本浏览器实测。[GitHub 版本目录](https://github.com/ecojust/e-resource/tree/011530bf86c706116d0f861cf1b481bb506ad730/projects/shanghai) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 43 项，10 项返回其他版本的内容，7 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
