@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>张叔驯故居花园面三联钢窗券廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="张叔驯故居花园面三联钢窗券廊"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 天平路40号</p>
+    <h1>张叔驯故居</h1>
+    <p>花园面三联钢窗券廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">三扇落地钢窗的半圆扇光各有两道圆弧，窗间的石柱以雕花柱头承托券脚。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看三联券窗</button>
+      <button type="button" data-view="oblique">斜看石柱与窗框</button>
+      <button type="button" data-view="above">俯看三道半圆券</button>
+      <button type="button" data-view="inscription">细看翻叶柱头</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-zhang-shuxun-garden-arcade/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-zhang-shuxun-garden-arcade', {
+      front: {"center": [0, 1.80, -0.06], "size": [6.29, 3.58, 0.62], "direction": [0.04, 0.025, 1]},
+      oblique: {"center": [0, 1.80, -0.06], "size": [6.29, 3.58, 0.62], "direction": [0.59, 0.11, 1]},
+      above: {"center": [0, 1.80, -0.06], "size": [6.29, 3.58, 0.62], "direction": [-0.37, 0.34, 1]},
+      inscription: {"center": [-1.035, 2.27, 0.065], "size": [0.87, 0.83, 0.58], "direction": [0.19, 0.07, 1]},
+    });
+  </script>
+</body>
+</html>
