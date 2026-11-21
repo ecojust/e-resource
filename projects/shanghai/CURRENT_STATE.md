@@ -1,3 +1,11 @@
+# 南昌大楼（阿斯屈来特公寓）街角入口
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-astrid-apartments-corner&mode=overview) · [单体旋转与下载](astrid-apartments.html) · [来源与制作范围](source/precise/huangpu-astrid-apartments-corner/README.md) · [验收记录](data/audit/astrid-apartments-v1/README.md)
+
+据2C007、茂名南路143与151号保护牌、2019街景图及2023高位照片，制作两翼交会处的几何门额、深色金属门、黄绿色面砖双窗列、冠饰与紧邻的凸窗开间。
+
+近景 48,624 个三角面，远景 34,172 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,211,655 字节。上海主图现有 235 处独立入口，黄浦区 98 处。[资产清单](assets/models/candidates/huangpu-astrid-apartments-corner/manifest.json)
+
 # 西园大厦
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) · [单体旋转与下载](west-park-mansions.html) · [来源与制作范围](source/precise/changning-west-park-mansions/README.md) · [验收记录](data/audit/west-park-mansions-v1/README.md)
