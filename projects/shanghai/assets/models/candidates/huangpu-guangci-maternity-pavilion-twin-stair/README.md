@@ -11,8 +11,9 @@
 | [原始 GLB](huangpu-guangci-maternity-pavilion-twin-stair-raw.glb?raw=true) | 92,962 | 6,129,704 | `7fd4517cdd3e5789131517609909ff687defb9a30538e757dc91bf5780015463` |
 | [网页近景 GLB](huangpu-guangci-maternity-pavilion-twin-stair-web.glb?raw=true) | 92,962 | 2,350,260 | `eb1d148b09e43b88246b99cb837368167b8487650b65db83f5753992f7eb7cd1` |
 | [远景 GLB](huangpu-guangci-maternity-pavilion-twin-stair-lod.glb?raw=true) | 52,290 | 1,168,816 | `948336f1d79c0ccda951b87c22a4d3771d4a792c63502ed8b1cb07c08e1bff0e` |
+| [可编辑 Blender 原件](huangpu-guangci-maternity-pavilion-twin-stair.blend?raw=true) | 92,962 | 1,134,902 | `77845bc055ca5a0d1e6fcedafe99407ec17dd804a38876f8c1aa1f536cd5398f` |
 
-此制作快照提供三份 GLB。可编辑 Blender 原件、独立网页的四项下载和全城地图验收仍在进行。
+Blender 重开后核对了400个可编辑网格和九个机位。独立网页实拍桌面四幅、手机两幅，四个下载均逐字复核。25舍在院区内的底图轮廓仍待证实。 [打开独立网页](../../../../guangci-maternity-pavilion-twin-stair.html) · [六幅实拍](../../../../data/audit/guangci-maternity-pavilion-twin-stair-v1/development-native/standalone/viewer.json) · [Cycles 预览](../../../../data/audit/guangci-maternity-pavilion-twin-stair-v1/development-native/huangpu-guangci-maternity-pavilion-twin-stair-preview.png) · [原生复核](../../../../data/audit/guangci-maternity-pavilion-twin-stair-v1/development-native/verified-editable.json)
 
 ## 模型图
 
