@@ -13,3 +13,7 @@
 31187 的旧图显示816号所在的灰色原楼。31188 的普通目录增至225处。从790×510桌面实点和390×844手机触摸地图灯牌，都进入同一处东宅临街面。四根浅砖柱分出三段木门窗。街面近景能分辨上方长方气窗和下侧成对木门，地点卡挡住近景左下部，手机灯牌位于上层窗前。实拍留存旧态、两种默认屏、街面、木门及远景共六张。[前后态与屏幕证据](final-map-31188/results.json) · [木门及气窗](final-map-31188/map-carved-door-and-transom.png) · [真实手机触摸](final-map-31188/map-mobile.png)
 
 两代浏览器分别核验12处地面，原楼757和同组九栋的命中保持。正式远档从同一目录进入，切至15.5级后查到远景模型。关闭该地图浏览器后，在独立浏览器重新从同一目录打开单体页，逐件下载原始GLB、网页GLB、远景GLB及Blender文件，并按清单比对长度与SHA-256。四次早期会话曾因渲染进程中断而退出，各自的记录、当时已生成的图像及最终重测一并保留。[原实测与下载](final-map-31188/after.json) · [中断与重测对照](archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a392c9f7f6890d2a70b99f4f80d5b6479022ffa4/projects/shanghai/index.html#landmark=jingan-yan-tongchun-residence-street-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
