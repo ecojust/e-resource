@@ -17,3 +17,7 @@
 从收录240处地标的前一版到收录241处的版本，在同一地点、角度和440×380画幅中，沿街底模换为中央内凹、两翼横窗的亨利公寓。390×844手机可见门框至上部退台，普通桌面展开目录时右上退台受地标牌部分遮挡。另在东湖七号楼画面，以鼠标和触屏各点一次亨利公寓的实地灯牌，均进入本栋详情并读到31,512面的网页近景。[前后同机位](city-31204/paired-street-view.json) · [手机](city-31204/phone/map-mobile.png) · [桌面](city-31204/desktop/map-desktop.png) · [鼠标](city-31204/physical-mouse/main-browser.json) · [触屏](city-31204/physical-touch/main-browser.json)
 
 门口斜照能区分两边返墙、玻璃下扇、门槛和铺地，上亮的一部分被牌遮住。右端近照能读到前后两道曲线退台，底部中央有资料卡遮挡。远视距实际载入22,220面的模型，地标牌与街区在此视距更显眼。街面检查还逐点核对了25处入口、楼体和邻屋地面。桌面、手机分别从正式独立页切换近远档，四个下载控件保存的文件与发布清单一致。原先较窄的画幅和中断的浏览过程均保留了原始字节及校验值。[入口](city-31204/threshold/map-entrance-and-door-threshold.png) · [退台](city-31204/terraces/map-stepped-curved-terraces.png) · [远景](city-31204/distant/map-distant.png) · [实点](city-31204/street/main-browser.json) · [四次下载](city-31204/standalone/viewer.json) · [原始尝试](city-31204/previous-attempts/archive-index.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e3b0828c9f64faac5703f43e5ff2b07fbf4a4f7a/projects/shanghai/index.html#landmark=xuhui-hanray-mansions&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
