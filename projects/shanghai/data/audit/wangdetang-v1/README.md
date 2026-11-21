@@ -15,3 +15,7 @@
 从227处的前一版打开原址，再从228处的正式目录进入望德堂，桌面与390像素触屏均能选中同一地点。默认视角可辨双山墙和南侧相接的窗墙。西入口的圆拱、门上小阳台与南侧窗列在院内近景中更容易分辨。西面照片保留了前景相邻构筑物，临街视角下方仍有地点卡。两张近景使用同一地图中的既有几何。[原址对照](city-31191/before/map-before.png) · [桌面](city-31191/after/map-desktop.png) · [手机](city-31191/after/map-mobile.png) · [西入口](city-31191/courtyard-detail/map-entrance-porch.png) · [南侧山墙](city-31191/courtyard-detail/map-south-gable.png)
 
 近远切换、四件文件与18个地面探点均已实测。仅786号旧楼进入本栋裁剪，保留的旧楼体从屋面视角可见，773和404号邻楼仍在。早期两次加载遇到本地底图缓存空间不足。按原始数据的哈希恢复后，重开浏览器取得前后态、桌面与手机画面及近远档记录，各轮退出码为零。[屋面](city-31191/after/map-roof.png) · [远景](city-31191/after/map-distant.png) · [前后态与地面见证](city-31191/after/main-browser.json) · [原始失败与恢复记录](city-31191/recovery) · [逐场退出记录](city-31191/separated-sessions/six-session-exits.json) · [入口近景记录](city-31191/courtyard-detail/main-browser.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/95dda9dd704e84ceb99f9a49c52ca177fbd3c363/projects/shanghai/index.html#landmark=jingan-wangdetang-augustinian-office&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
