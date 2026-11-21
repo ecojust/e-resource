@@ -21,3 +21,5 @@
 GitHub 固定提交的地图入口、运行模块、来源和四种下载等 39 个公开文件均实际返回 HTTP 200，字节数及 SHA-256 均与 Git 对应文件相同。 本次固定提交在第三方地图预览服务的入口响应为 429。主图交互依据本页所列的同版本浏览器实测。[GitHub 版本目录](https://github.com/ecojust/e-resource/tree/f723404054b12fd8aa2d7bf1c2e67c6154ea315e/projects/shanghai) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项，10 项返回其他版本的内容，4 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
+
+随后复查，第三方预览的地图入口已正常返回 HTML。固定版本的 39 个文件及地图实际引用的模块链均与 Git 对应字节一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f723404054b12fd8aa2d7bf1c2e67c6154ea315e/projects/shanghai/index.html#landmark=xuhui-donghu-hotel-house-seven&mode=overview) · [预览复查](public-preview-recheck.json)

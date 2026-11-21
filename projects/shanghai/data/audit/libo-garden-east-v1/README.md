@@ -39,3 +39,7 @@
 首次从公开坐标直接进入时，原底图已稳定，浏览器在读取画面状态时退出，尚未保存图片。随后在相同街区与同一机位减少浏览器绘制内存，并将前态与街面复查统一为480×360。[首次坐标入口浏览记录](city-31181/third-control-report.txt) · [该次退出记录](city-31181/third-control-exit.txt)
 
 在披露的远景视图中，首次退至地图缩放15.65时，眼点高671.6米，模型仍保持近档。通过页面的减号实点一次后，缩放降至14.65，距离越过本楼的820米远档阈值，浏览器实际换用9,720个三角面的远景文件。[公开减号点击记录](city-31181/public-distant-zoom.json) · [远景画面与加载记录](city-31181/segment-distant.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/3dca9823aa18c7799e24603991def9b9d10c997a/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

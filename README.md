@@ -3829,7 +3829,7 @@
 | 岳阳路110号住宅花园立面 | 2026-11-21 09:17:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yueyang-road-110-residence&mode=overview) |
 | 朱敏堂住宅乌鲁木齐南路151号街门与双石狮 | 2026-11-21 09:55:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhu-mintang-residence&mode=overview) |
 | 东湖宾馆七号楼花园立面 | 2026-11-21 10:00:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-donghu-hotel-house-seven&mode=overview) |
-| 丽波花园东主楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) |
+| 丽波花园东主楼 | 2026-11-21 10:10:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-libo-garden-east-house&mode=overview) |
 
 ### 长宁区（10处）
 
