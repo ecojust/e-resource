@@ -34,3 +34,7 @@
 长屏手机与宽屏桌面的初始正面可以辨出高阳大楼两端的塔冠、上层连续窗和下层门前廊。临街专项图能辨塔身与两列弧窗。南门廊近摄、键盘回返和小视口远景中，打开的详情卡盖住下半幅；这三张各有九处采样点被控件遮住或落在画幅外。屋面和塔冠两张从较高机位还能分别看清六处和五处采样点。独立页正面保留两座迭层塔冠、完整底层入口和中间廊柱，俯视能辨两端屋顶之间的高差。 [十二幅城区与六幅单体实拍的逐图复核](city-31225/manual-visual-review.json) · [单体正面](city-31225/standalone/viewer-desktop-full-front.png)
 
 正式31225单体页面在桌面与手机分别实拍正立面、斜侧和远档俯视，六张图均保留原始像素与散列。四个下载按钮实际保存原始、近景、远景及可编辑工程，下载字节与模型清单逐件吻合。[六张实拍与四件下载](city-31225/standalone/viewer.json) · [两代城区与相机](city-31225-signed-inheritance.json) · [六个地图会话的退出凭据](city-31225/225-map-slot-released.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/67167d8cd279f0feaf8056594cbf341280961dea/projects/shanghai/index.html#landmark=hongkou-gaoyang-building-south-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
