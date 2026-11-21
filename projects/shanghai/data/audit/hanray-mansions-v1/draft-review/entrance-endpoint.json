@@ -1,0 +1,67 @@
+{
+  "original_case_sha256": "ad33ec037bc8ddc644e03195ff79454728ccf413367b3ad11d70dececa2757ba",
+  "original_points": [
+    {
+      "name": "left curved entrance return",
+      "xy": [
+        -1.8,
+        2.74
+      ],
+      "point": [
+        121.4495360693411,
+        31.21670214051066
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    },
+    {
+      "name": "right curved entrance return",
+      "xy": [
+        1.8,
+        2.74
+      ],
+      "point": [
+        121.44956992936643,
+        31.216716619308748
+      ],
+      "expected": "building",
+      "modelObstacle": true,
+      "cut": true
+    }
+  ],
+  "geometric_observation": "The original points sat on the flat end caps of the curved walls. After projection to geographic coordinates the JavaScript inside-polygon test placed the right endpoint outside. Both revised points lie inside the middle of the curved walls.",
+  "first_runtime_exception": "right curved entrance return: false !== true",
+  "revised_local_xy": [
+    [
+      -2.13,
+      2.12
+    ],
+    [
+      2.13,
+      2.12
+    ]
+  ],
+  "raw_glb_downward_rays_from_z_3_51": [
+    {
+      "distance_m": 0.5199999904632565,
+      "point_enu_m": [
+        -2.13,
+        2.12,
+        2.990000009536743
+      ],
+      "material": "pale artificial stone",
+      "triangle_index": 12762
+    },
+    {
+      "distance_m": 0.5199999904632565,
+      "point_enu_m": [
+        2.13,
+        2.12,
+        2.990000009536743
+      ],
+      "material": "pale artificial stone",
+      "triangle_index": 12847
+    }
+  ]
+}

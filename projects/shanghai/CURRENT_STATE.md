@@ -1,3 +1,11 @@
+# 亨利公寓（淮中大楼）淮海中路门面与弧形露台
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-hanray-mansions&mode=overview) · [单体旋转与下载](hanray-mansions.html) · [来源与制作范围](source/precise/xuhui-hanray-mansions/README.md) · [验收记录](data/audit/hanray-mansions-v1/README.md)
+
+核对2D002、1162号实名建筑、2013年全景照片和独立入口近照，制作沿淮海中路的中央入口、标准层窗组及上层弧形露台。
+
+近景 31,512 个三角面，远景 22,220 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,300,810 字节。上海主图现有 241 处独立入口，徐汇区 42 处。[资产清单](assets/models/candidates/xuhui-hanray-mansions/manifest.json)
+
 # 枕流公寓
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-brookside-apartments&mode=overview) · [单体旋转与下载](brookside-apartments.html) · [来源与制作范围](source/precise/jingan-brookside-apartments/README.md) · [验收记录](data/audit/brookside-apartments-v1/README.md)

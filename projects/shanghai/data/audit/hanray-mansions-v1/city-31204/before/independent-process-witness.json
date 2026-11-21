@@ -1,0 +1,27 @@
+{
+  "observation": "During capture, ps -eo pid,ppid,pgid,sid,state,rss,etime,comm,args showed Chrome 54023 with PPID 54008 and its recording profile m204-before. Playwright put Chromium in its own session 54023. The Node supervisor's same-session filter consequently missed those children. The exit report and physical captures were preserved as originally written.",
+  "ps_pid_to_parent": {
+    "54023": 54008,
+    "54044": 54023,
+    "54045": 54023,
+    "54065": 54044,
+    "54066": 54023,
+    "54111": 54045,
+    "54124": 54045,
+    "54135": 54045
+  },
+  "current_states": {
+    "54008": "exited",
+    "54023": "exited",
+    "54044": "Z",
+    "54045": "Z",
+    "54065": "exited",
+    "54066": "exited",
+    "54111": "exited",
+    "54124": "exited",
+    "54135": "exited"
+  },
+  "completed": true,
+  "report_sha256": "aff98f446a80cf61b16d75cb8b29bf6d49cd994efc6c8bfd6b4c31cfcc78dca4",
+  "checked": "2026-11-21T07:46:50.578030+00:00"
+}
