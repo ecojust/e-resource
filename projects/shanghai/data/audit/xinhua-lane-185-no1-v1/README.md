@@ -15,3 +15,7 @@
 31183与31184两版主图显示，同一地块从普通城市楼体变为1号住宅。桌面与手机分别从目录真实点选，初始图中能辨主屋、较低的西翼和三座烟囱。近景复核了21个地面位置，远景加载了简化网格，并实取四个模型文件。[桌面初始](city-31184/desktop/map-desktop.png) [手机初始](city-31184/phone/map-mobile.png) [登记前](city-31184/before/map-before.png) [屋顶与老虎窗](city-31184/architecture/map-shed-dormer-roof.png) [远景及四件收据](city-31184/distant/main-browser.json)
 
 原来从远处向南立面取景，中央视线被邻墙挡住。移到院内后，三道浅尖券、四处支承、券上花栏及后墙门窗可同时辨认。左下柱脚有一段被信息卡挡住。第一次院内图已捕获，随后尝试的斜角机位未通过地标牌命中检查；从目录重新进入的正面单次检查完整通过。[原视角](city-31184/architecture/map-south-arcade-railing.png) [院内正面](city-31184/courtyard/map-court-front-three-arches.png) [分镜与图像校验](city-31184/visible-architecture.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4f86ac8af96f0f2f1190ecac35145d79cc046998/projects/shanghai/index.html#landmark=changning-xinhua-lane-185-no1&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

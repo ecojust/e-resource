@@ -226,7 +226,7 @@
 | 息焉堂（前庭、主堂铜顶及临河半圆体） | 2026-11-21 04:16:19 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xiyan-church&mode=overview) |
 | 卫乐园泰安路120弄街门 | 2026-11-21 07:22:18 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-weile-garden-taian-gate&mode=overview) |
 | 武夷路127号历史住宅南立面 | 2026-11-21 10:28:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-wuyi-road-127-garden-front&mode=overview) · 1925 年原址，地点卡可查看历史外观 |
-| 新华路185弄1号花园住宅 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-185-no1&mode=overview) |
+| 新华路185弄1号花园住宅 | 2026-11-21 10:39:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-xinhua-lane-185-no1&mode=overview) |
 
 ### 静安区（22处）
 
