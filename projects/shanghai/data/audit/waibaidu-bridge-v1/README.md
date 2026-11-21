@@ -11,3 +11,7 @@
 在加入桥面步行入口的全城版本中，外白渡桥把目录从257处增至258处。「现场漫游」从南桥头东侧的人行道出发，沿桥向北；网站也保留从河侧看双跨的独立视图。两版地点目录逐项比对，新增桥梁以外的原有地点一致。最终站逐件实取1,578份文件，共1,320,182,822字节，另外按普通网址复取查看器与四种模型文件。[两版目录、步行起点与四件下载](signed-stations/paired-catalog-and-assets.json) · [步行入口核对](signed-stations/navigation.json) · [完整文件检查](signed-stations/28221-all-http.json)
 
 第221项在正式站完成桌面和手机复核。桌面人物从南岸步道走到北岸，123个实测位置覆盖103.58米。移动端从同一侧步道出发，实际操作摇杆沿桥前进。两端另从江侧查看钢桁架，并验证了离开与返回。17幅画面已逐图核看，四种模型均从正式独页保存并校核文件摘要。全站实取1,578项，共1,320,184,832字节。[正式站画面与下载](city-31221/slot-released.json) · [逐幅观察](city-31221/visual-review.json) · [过桥地面与网格核验](city-31221/sessions/walk-desktop/real-city-mesh.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/222d74939d3391f367e3d3d368a32e7e75c3f5dc/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，12 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

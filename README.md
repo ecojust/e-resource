@@ -3787,7 +3787,7 @@
 | 南昌大楼（阿斯屈来特公寓）街角入口 | 2026-11-21 13:58:46 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-astrid-apartments-corner&mode=overview) |
 | 永业大楼（杨氏公寓）淮海中路、雁荡路圆角 | 2026-11-21 21:15:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-young-apartments&mode=overview) |
 | 江南制造局旧址总办公楼（西公务厅） | 2026-11-22 00:01:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jiangnan-historic-general-office&mode=overview) |
-| 外白渡桥 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=walk) |
+| 外白渡桥 | 2026-11-22 01:19:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=walk) |
 
 ### 徐汇区（52处）
 
