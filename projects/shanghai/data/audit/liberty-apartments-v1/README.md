@@ -13,3 +13,7 @@
 17k取景修订站点的1,468项物理文件及HTTP响应分别复核，共1,264,126,571字节。README为保留全部TODO行并符合预览大小限制，对八种重复链接改用Markdown引用。变更前后GFM生成的全部HTML逐字相同，涵盖2,010处链接、30个标题及37张表格。[取景修订站逐件记录](17210-all-http.json) · [README呈现对照](readme-link-comparison.json)
 
 正式地图从上代246处进入当代247处。桌面和手机的正常目录都能选中自由公寓，鼠标及触屏灯牌也能定位到南立面。街面近图可辨粗石基座中的凹门，俯图可看出中央三肋伸至屋面和两翼退台。七处邻屋与13处门前、室内和院落地面点分别核实。三次触屏从相邻公寓成功切换后，渲染器在存图前退出；另一次点击已载入的灯牌成功存图。窗口、门扇和台阶的细部以单体正视与斜视为准。全站逐项读取1,483份文件，共1,264,318,568字节，另验五个区间请求。独立页保存了桌面、手机两档共六图，并逐件校验四份实际下载。[两代普通地图与整站签名](city-31210/release-evidence.json) · [十幅地图与六幅单体目检](city-31210/visual-review.json) · [触屏切换过程](city-31210/touch-cross-selection.json) · [独立页下载记录](city-31210/standalone/viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4270bcf3c405ca32c03bb6853a4ca495c0068635/projects/shanghai/index.html#landmark=xuhui-liberty-apartments-south-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

@@ -3845,7 +3845,7 @@
 | 高安公寓转角弧窗与通高门廊 | 2026-11-21 17:03:25 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview) |
 | 毕卡迪公寓南向阶梯塔楼与534号入口 | 2026-11-21 17:47:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) |
 | 会乐精舍（卫乐公寓） | 2026-11-21 18:11:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-willow-court&mode=overview) |
-| 自由公寓南面退台、中央三肋与转角窗 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-liberty-apartments-south-front&mode=overview) |
+| 自由公寓南面退台、中央三肋与转角窗 | 2026-11-21 18:35:00 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-liberty-apartments-south-front&mode=overview) |
 
 ### 长宁区（17处）
 
