@@ -35,3 +35,7 @@
 远档切换距离为820米。第一次在817.16米点击地图公开缩小按钮，渲染进程中止。随后两次会话分别达到894.41米和877.52米，均未保存截图，退出码为1。第四次以340 × 270画幅进入877.52米，在页面确认载入远档后保存浏览器原帧，正常退出。远景画面中央由地点卡片遮住，建筑细部以门廊近景和单体页为准。[三次退出与最终距离实测](city-31190/distance-sessions/distance-comparison.json) · [远档原帧](city-31190/map-distant.png)
 
 默认手机及桌面可以辨出整体坡屋顶和平面，画面中的近邻建筑会挡住局部。手机再点一次公开加号，前方浅色楼体遮住中部。街面视角可见门廊窗扇和绿门一部，屋面近景的标牌与地点卡遮住中央老虎窗。另以540 × 610画幅从花园侧补拍，近邻灰屋面遮住此栋，保留原帧供比较。单体页可旋转对照老虎窗、门廊与入口的相对位置。[街面门廊](city-31190/map-street-facade.png) · [花园侧遮挡对照](city-31190/garden-approach/map-garden-porch-and-dormers.png) · [补拍报告](city-31190/garden-approach/main-browser.json) · [全部浏览器退出记录](city-31190/garden-approach/190-map-slot-released.json) · [单体页](../../../fenyang-customs-club.html)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/bbf029d5a5e3842530758f16b41083160f6fecbf/projects/shanghai/index.html#landmark=xuhui-fenyang-customs-club&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，3 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
