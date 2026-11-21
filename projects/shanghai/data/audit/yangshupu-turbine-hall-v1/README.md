@@ -13,3 +13,7 @@ Blender 4.3.2重开后，63个可编辑网格按八种材质逐面与原始文�
 桌面1250×820和手机390×844各从独立页查看了近景、远景。整段长翼及右侧高冠都入画，可用拖动改变角度。四个下载按钮分别保存原始GLB、网页GLB、远景GLB和Blender工程，长度及摘要与正式清单一致。[桌面近景](viewer-desktop-full.png) · [手机近景](viewer-mobile-full.png) · [两端实测与下载记录](viewer.json)
 
 日月楼相机更新后，又从28220正式页面读取了厂区地点、独立页和四件模型文件。厂区坐标、1926年说明、查看器字节及历史状态模块的摘要均与上述实测一致。[更新后的实际入口校验](final-28220/marker-and-viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/26caf96f051cf0d3e44656bf3bf579cc402d3722/projects/shanghai/index.html#landmark=yangpu-yangshupu-power-turbine-hall&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，14 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

@@ -3957,7 +3957,7 @@
 | 旧上海市博物馆江湾馆舍 | 2026-11-20 18:43:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-former-shanghai-city-museum&mode=overview) |
 | 中国航空协会旧址（长海医院飞机楼） | 2026-11-03 21:09:28 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-china-aviation-association-building&mode=overview) |
 | 沪江大学大学礼堂（1937年主礼堂） | 2026-11-21 03:36:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-hujiang-university-auditorium&mode=overview) |
-| 杨树浦电厂汽机房及4号锅炉房（1926年合影可见外观） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-yangshupu-power-turbine-hall&mode=overview) · 厂区范围索引，保护建筑现存，照片对应的具体楼翼待考。地点卡可查看 1926 年拍摄的历史外观 |
+| 杨树浦电厂汽机房及4号锅炉房（1926年合影可见外观） | 2026-11-22 00:14:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=yangpu-yangshupu-power-turbine-hall&mode=overview) · 厂区范围索引，保护建筑现存，照片对应的具体楼翼待考。地点卡可查看 1926 年拍摄的历史外观 |
 
 ### 闵行区（1处）
 
