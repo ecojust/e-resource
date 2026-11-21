@@ -9,3 +9,7 @@
 目录的「进入漫游」从南桥头西侧的人行道向北出发，距南端 1.650 米、实体栏杆 0.930 米、最近灯座 14.351 米。该点落在历史冻结桥面与现行桥面两个独立轮廓中，离西侧现行人行线 0.236 米。原始 GLB 与解压后的近远两档均在此命中步道铺装。[入口与三档表面复核](walk-entry.json)
 
 正式城市目录在前后两期由259处增至260处。步行版本通过1,594个文件逐项HTTP验签，后续默认镜位版本也逐文件核对，并另外读取本桥原生、原始GLB及网页近远两档。城中实际角色行走和河面遮挡的检查另记。[逐层文件数与字节签名](release-http-summary.json) · [最终站点的实际模型请求](served-28223.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/194159844f22001ae9facb16ac470d9054c4e83e/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

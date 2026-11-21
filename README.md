@@ -3792,7 +3792,7 @@
 | 江南制造局旧址总办公楼（西公务厅） | 2026-11-22 00:01:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-jiangnan-historic-general-office&mode=overview) |
 | 外白渡桥 | 2026-11-22 01:19:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-waibaidu-bridge&mode=walk) |
 | 外滩信号台（现址塔身、号杆与站房） | 2026-11-22 02:11:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-signal-tower&mode=overview) |
-| 四川路桥三孔桥身与两侧人行道 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=walk) |
+| 四川路桥三孔桥身与两侧人行道 | 2026-11-22 03:21:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=walk) |
 
 ### 徐汇区（52处）
 
