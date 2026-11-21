@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>沪江别墅 · 长乐路613弄通道与挑窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".55" aria-label="613弄临街通道、值守小窗、钢窗和上层挑窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 长乐路613弄</p>
+    <h1>沪江别墅</h1>
+    <p>长乐路613弄通道与挑窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">沿街通道右侧保留砖红色值守窗。上方可见三列钢窗，以及窗腹带有十道水平凸条的挑窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看临街通道</button>
+      <button type="button" data-view="oblique">侧看窗腹挑出</button>
+      <button type="button" data-view="above">俯看窗顶和女儿墙</button>
+      <button type="button" data-view="inscription">放大613弄门牌</button>
+      <button type="button" data-view="return">转看挑窗圆角</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-hujiang-villas-changle-passage-bay/README.md">街景比量与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-hujiang-villas-changle-passage-bay', {
+      inscription: {center: [1.705, 2.65, -0.31], size: [1.06, 0.81, 0.16], direction: [-0.25, 0.06, 1]},
+      return: {center: [-0.46, 8.56, 0.60], size: [2.71, 2.31, 1.15], direction: [-0.69, -0.11, 1]},
+    });
+  </script>
+</body>
+</html>

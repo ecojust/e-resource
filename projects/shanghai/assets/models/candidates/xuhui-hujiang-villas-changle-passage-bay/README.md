@@ -7,6 +7,7 @@
 | [原始 GLB](xuhui-hujiang-villas-changle-passage-bay-raw.glb?raw=true) | 9,400 | 603,932 | `8241a3a0e271e732dc40f4c7024a4f9ca4efaaf3a6b6fe77d3512a199b05c462` |
 | [近景 GLB](xuhui-hujiang-villas-changle-passage-bay-web.glb?raw=true) | 9,400 | 234,352 | `c765ad4f0f0499851721ad06f2395c871e16f02d82216b765b8aa6cd6427ba5b` |
 | [远景 GLB](xuhui-hujiang-villas-changle-passage-bay-lod.glb?raw=true) | 5,980 | 171,652 | `8836508648aea276b8e0930f84d260b59c43646a0db2b5c6e388cf266861217f` |
+| [可编辑 Blender 原件](xuhui-hujiang-villas-changle-passage-bay.blend?raw=true) | 9,400 | 286,399 | `42dd9870a02a578eacebbd4788ec1dcb4b1ceb093f3fd7d3efabb5ccf4dfc765` |
 
 近、远档各有七幅原创模型图。可查看[临街正面](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/preflight/full-views/street-front.jpg)、[通道和小窗](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/preflight/full-views/passage.jpg)、[红砖转角](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/preflight/full-views/red-return.jpg)和[挑窗窗腹](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/preflight/full-views/bay-nose.jpg)。
 
@@ -14,4 +15,4 @@
 
 源码包含原创招牌笔画、建筑几何和程序生成的外墙细纹。摄影资料保留署名与出处。[源码与许可](../../../../source/precise/xuhui-hujiang-villas-changle-passage-bay/SOURCES-LICENSE.md) · [摄影记录](../../../../source/precise/xuhui-hujiang-villas-changle-passage-bay/reference-review.json)
 
-本次提供三份 GLB。可编辑 Blender 文件、网页查看器与全城验收仍在制作。
+Blender 实际重开49个可编辑网格和7个机位。独立网页可放大613弄门牌、斜看弧形挑窗。桌面和手机共保存11幅近远档实图，四个下载均已核对 SHA-256。 [打开独立网页](../../../../hujiang-villas-changle-passage-bay.html) · [网页实拍](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/development-native/standalone/viewer.json) · [Cycles 预览](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/development-native/xuhui-hujiang-villas-changle-passage-bay-preview.png) · [原生复核](../../../../data/audit/hujiang-villas-changle-passage-bay-v1/development-native/verified-editable.json)
