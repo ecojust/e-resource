@@ -1,3 +1,11 @@
+# 海关俱乐部木屋
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-fenyang-customs-club&mode=overview) · [单体旋转与下载](fenyang-customs-club.html) · [来源与制作范围](source/precise/xuhui-fenyang-customs-club/README.md) · [验收记录](data/audit/fenyang-customs-club-v1/README.md)
+
+据2D045、1898年木屋保护牌、南侧庭院实照及屋面俯拍，制作高台与方柱廊、浅绿格窗、中央凸窗及复合灰瓦屋顶。
+
+近景 50,956 个三角面，远景 21,224 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,490,176 字节。上海主图现有 227 处独立入口，徐汇区 37 处。[资产清单](assets/models/candidates/xuhui-fenyang-customs-club/manifest.json)
+
 # 愚园路754号住宅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-yuyuan-road-754&mode=overview) · [单体旋转与下载](yuyuan-road-754.html) · [来源与制作范围](source/precise/changning-yuyuan-road-754/README.md) · [验收记录](data/audit/yuyuan-road-754-v1/README.md)
