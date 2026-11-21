@@ -1,0 +1,33 @@
+{
+  "accepted": false,
+  "proceed_to_packaging": true,
+  "first_exit_sha256": "3519109b303b19331f2667a2bab0d82799497ce18be5674ed1d85a07196fdf61",
+  "reviewed": {
+    "full": {
+      "curved-canopy.jpg": "e82b7e30d9d64ff4b41d3d713b29aa27548e8987029f56edda64551b3f37e94b",
+      "eastern-arches.jpg": "d0987a012058f81921ca1593f0608493c5238b1b1ac7e02ce482955af6257b9c",
+      "garden-colonnade.jpg": "8ea00afeef469877359c86581433f2c895694616d51b0eeed0b66bb4e7afb070",
+      "garden-elevation.jpg": "9755757518c904ecdfc5ebe73b77bac3d233bdec08a28b0270d256f675417bdf",
+      "north-front.jpg": "36bbbf1f57b59061512c9f7f4a4d3ec848176a4948fbec4f9b58419e2f6e2798",
+      "oblique-roofs.jpg": "2e8f4b371e1f466845f3278b7c7cc9ef4a4aef6fb90e09828891b6db6814a088",
+      "stair-light.jpg": "01276c135716ed1d8b294ec40f63f515a723970bb617091d2e8c5a27ba81afa8"
+    },
+    "lod": {
+      "curved-canopy.jpg": "b0aaed2e277a9681d7dfbeee17c2ebc04945018826669293b26b939b0f2b32c5",
+      "eastern-arches.jpg": "09b9c0948373160afce4894caa7340830aa223b9800015dd66f28022cce1de4d",
+      "garden-colonnade.jpg": "0ecf5b0401de58e457b9cab4469f12b8e59a76e4067bd978bdf895f139c13926",
+      "garden-elevation.jpg": "6a05b1de38c283bb18c052c0763b2353e398562e46a17ef7e444344229a8804a",
+      "north-front.jpg": "49270020e4cecab59d79e7b26d5de73e396a24dd74c916159fc989d5579ab116",
+      "oblique-roofs.jpg": "2e160db33bb0f8fd3febf8824e6328687efdf09d4632c3080f22334a06925914",
+      "stair-light.jpg": "a2270af0159fe5bebb6cfb93f0de9a030a7a51fad792fe20d0ca9676f8408699"
+    }
+  },
+  "problem": "Both model bounds extend to 80 m south. A tile lap line leaves the east roof valley, crossing the garden and roof views. A tiny collinear roof intersection produced an unbounded line in GEOS. The photograph also shows an exposed line of brackets under the southern eave that is missing from the first model.",
+  "revised_source": {
+    "roofscape.py": "f465159d4d000aeac29fca617c8c0d0a5c421bc291c7cae9b20d893cd29db8c3",
+    "build_model.py": "72637479d5679b0d0c584f02c4bd86a1e03dc1aa7a899ee6d83fc501c9f3b94e",
+    "side_elevations.py": "be8924d0a96c85ed3cd82cd08539c1ac0c674c0b7429a848203fc302f23abd2f",
+    "north_elevation.py": "b310b944b5bba5e6c3b9041f864e0d72ca4ee429367305b795b7ee3f8affe826"
+  },
+  "requested": "Check the actual three decoded bounds against the photographed extent. Check all seven cameras and the southern eaves again. Ensure Blender label lengths retain all distinct groups."
+}
