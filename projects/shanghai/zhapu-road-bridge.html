@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>乍浦路桥</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-1.45" aria-label="乍浦路桥三跨、桥墩和上游桥名牌"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-zhapu-road-bridge&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 虎丘路至乍浦路</p>
+    <h1>乍浦路桥</h1>
+    <p>1927年三跨钢筋混凝土梁桥</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">中跨36.58米，两侧各17.68米。沿上游河岸可以看到两处石砌墩头，中央桥孔上方分列“乍浦路桥”四块字牌。桥面两旁各有2.2米宽的人行道。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">沿车行道看桥面</button>
+      <button type="button" data-view="oblique">从上游看三跨</button>
+      <button type="button" data-view="above">俯看桥面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-zhapu-road-bridge/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('huangpu-zhapu-road-bridge');
+  </script>
+</body>
+</html>
