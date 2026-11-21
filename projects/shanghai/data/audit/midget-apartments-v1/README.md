@@ -15,3 +15,7 @@ Blender文件重开后核实有77组可编辑网格；近景与原始GLB各9,220
 目录从247处增至248处。桌面和手机都能从徐汇区目录及地图灯牌选中密丹公寓。两幅近景可辨切角顶层的两扇窄窗、下方两层横窗，以及深窗两侧的阶形石托。地点灯牌遮住窄护栏下缘，独立页保留了完整窗台。原街区的巴金故居和另两座邻房在场，29个地面点与登记相符。[街面](city-31211/map-street-facade.png) · [顶层窗](city-31211/map-paired-upper-windows.png) · [深窗与窗台](city-31211/map-recessed-window-and-balustrade.png) · [逐图复核](city-31211/visual-review.json)
 
 最后一版正式网站的1,491份文件和5次分段读取都通过校验。独立页在桌面与手机各切换近远档，实际保存的四个文件均与原清单一致。[整站核对](city-31211/all-http.json) · [独立页与下载](city-31211/standalone/viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0c176a935477839b2556eb6411267bf149e4be49/projects/shanghai/index.html#landmark=xuhui-midget-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
