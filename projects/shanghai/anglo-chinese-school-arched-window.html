@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>英华书馆双色砖券窗与镂花裙板</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="英华书馆双色砖券窗与镂花裙板"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 武进路412号</p>
+    <h1>英华书馆</h1>
+      <p>双色砖券窗与镂花裙板</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">灰砖与红砖围成窗券。中央双扇窗前有细竖栏，下方三格裙板保留五组卷花。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看砖券窗</button>
+      <button type="button" data-view="oblique">仰看双色砖券</button>
+      <button type="button" data-view="tiles">近看中央双扇</button>
+      <button type="button" data-view="rail">近看裙板卷花</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/hongkou-anglo-chinese-school-arched-window/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-anglo-chinese-school-arched-window', {
+  "front": {
+    "center": [
+      0,
+      1.55,
+      0
+    ],
+    "size": [
+      4.1,
+      3.2,
+      0.5
+    ],
+    "direction": [
+      0.045,
+      0.025,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.03,
+      2.64,
+      0.015
+    ],
+    "size": [
+      2.6,
+      1.3,
+      0.5
+    ],
+    "direction": [
+      0.2,
+      -0.17,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0,
+      1.51,
+      0.02
+    ],
+    "size": [
+      3.16,
+      2.12,
+      0.5
+    ],
+    "direction": [
+      0.1,
+      0.015,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.02,
+      0.51,
+      0.057
+    ],
+    "size": [
+      2.2,
+      1.08,
+      0.5
+    ],
+    "direction": [
+      0.2,
+      0.05,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
