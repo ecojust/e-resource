@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/tmp/bearn195/final-map-31195/run.py", line 21, in <module>
+    if match:actual.symlink_to(match)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1386, in symlink_to
+    os.symlink(target, self, target_is_directory)
+FileExistsError: [Errno 17] File exists: '/tmp/medhurst231/projects/shanghai/landmarks.html' -> '/dev/shm/qa-bearn195/194/landmarks.html'
+Traceback (most recent call last):
+  File "/tmp/bearn195/final-map-31195/sequence.py", line 78, in <module>
+    assert rc==0 and rcfile.read_text().strip()=='0' and json.loads(rp.read_bytes())['completed'] and row['node_closed'] and chromes and not row['remaining_children'] and not row['remaining_chromium'],row
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'phase': 'before', 'exit_code': 1, 'node_pids': [], 'chromium_pids': [], 'node_closed': False, 'remaining_children': [], 'started': '2026-11-21T04:59:39.796461+00:00', 'finished': '2026-11-21T04:59:41.717993+00:00', 'remaining_chromium': [], 'report_sha256': None}

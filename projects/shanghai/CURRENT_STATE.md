@@ -1,3 +1,11 @@
+# 培文公寓（淮海中路街面与重庆南路圆角）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) · [单体旋转与下载](bearn-apartments.html) · [来源与制作范围](source/precise/huangpu-bearn-apartments/README.md) · [验收记录](data/audit/bearn-apartments-v1/README.md)
+
+按市房管局2C002、黄浦区档案图、1945至1949年历史街景和2014年实照，制作源楼97沿淮海中路的九层中央退台塔及重庆南路东端六至七层收头。
+
+近景 55,210 个三角面，远景 36,658 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,471,757 字节。上海主图现有 232 处独立入口，黄浦区 97 处。[资产清单](assets/models/candidates/huangpu-bearn-apartments/manifest.json)
+
 # 泰兴大楼（MEDHURST大楼）南京西路与泰兴路转角
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview) · [单体旋转与下载](medhurst-apartments.html) · [来源与制作范围](source/precise/jingan-medhurst-apartments/README.md) · [验收记录](data/audit/medhurst-apartments-v1/README.md)

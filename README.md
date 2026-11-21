@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 231 处入口。最近接入[泰兴大楼（MEDHURST大楼）南京西路与泰兴路转角](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-medhurst-apartments&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 232 处入口。最近接入[培文公寓（淮海中路街面与重庆南路圆角）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的194项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的195项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 195 | 培文公寓淮海中路长立面与重庆南路圆角 | 黄浦区／淮海中路449号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核北侧后翼、庭院与住宅后门，保留独立1180、979两楼。分辨旧门牌453及469号和现门牌449号。 |
-| 196 | 德义大楼南京西路与石门路转角 | 静安区／南京西路778号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核住宅入口具体开间、北面被遮挡的墙体和历史店面；核转角原有四尊人物像的准确位置、原形与拆除年代。 |
+| 196 | 德义大楼南京西路与石门路转角 | 静安区／南京西路778号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核住宅入口具体开间、北面被遮挡的墙体和历史店面；核转角原有四尊人物像的准确位置、原形与拆除年代。 |
 | 197 | 西园大厦南园主立面与长宁路背面 | 长宁区／愚园路1396号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；核对最初敞廊与后封窗的分期、顶层加建及室内平面，保留南侧花园和后建沿街楼。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -125,7 +124,7 @@
 | sh-historic-b2-092 | 梵尔登花园38号、日月楼其余各面和其他单元 | 陕西南路39弄1～103号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 另核2015年原照中可读门牌的38号；补日月楼背面与屋面分户界，登记各排住宅及长乐路临街单元。 |
 | sh-historic-b2-095 | 陕南邨内排与相邻独立住宅 | 陕西南路151～187号(单) | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 另核183号、185号和各排公寓、未见的内院立面与屋面。陕西南路213号陕南大楼另列。 |
 | sh-historic-b2-101 | 思南路73号其余各面、院落及51至95号各宅 | 思南路51～95号(单) | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 保留周公馆背面、侧面、其余屋顶及室内；思南公馆组团中的各独立住宅、其他院落和附属建筑分别核址。 |
-| sh-historic-b2-131 | 培文公寓 | 淮海中路449号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-131 | 培文公寓后翼与院内分栋 | 淮海中路449号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 核北侧后翼、庭院与住宅后门，保留独立1180、979两楼。分辨旧门牌453及469号和现门牌449号。 |
 | sh-historic-b2-134 | ASTRID公寓 | 茂名南路143号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-150 | 永业大楼 | 淮海中路481号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-155 | 江南制造局 | 高雄路2号（总办公楼）/2号船坞/指挥楼/飞机车间 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
@@ -2661,9 +2660,9 @@
 [MR-14-13721-6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [MR-14-13721-6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余961条／已关联75条）
+### 既有地图中的具名建筑待查线索（剩余960条／已关联76条）
 
-原始1,036条具名地图要素中，75条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余961条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，76条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余960条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2786,7 +2785,6 @@
 | 0547f379-67e3-4ebf-8f31-55f967e839ce | 爱建金融大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 05e89df8-6aa0-4a3c-8560-0ec38473c0a2 | 汉口路50号大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 0979bd03-5c94-47d5-a74c-ae09edd06eb0 | 淮海中华大厦 | 黄浦区 | 核身份／去重／查建筑参考 |
-| 09c30bb0-e684-486e-812a-af572da5476d | 培文公寓 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 09eebc01-4357-4be3-b01f-86492f87a926 | 老鹰私宅 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 0a6c1146-2c61-4d86-acc7-1a520aca16f8 | 黄浦区青少年艺术活动中心 | 黄浦区 | 核身份／去重／查建筑参考 |
 | 0c49c288-a11e-4d5a-85c2-737bc7e2393d | 有利大楼 | 黄浦区 | 核身份／去重／查建筑参考 |
@@ -3654,7 +3652,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；231处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中191件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；232处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中192件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3662,7 +3660,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增191处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增192处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3684,10 +3682,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，231处建筑与构件模型入口（40处既有＋191处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增191处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，232处建筑与构件模型入口（40处既有＋192处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增192处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 7 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（96处）
+### 黄浦区（97处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3789,6 +3787,7 @@
 | 长乐邨93号丰子恺旧居（日月楼南庭院立面） | 2026-11-21 05:58:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-feng-zikai-riyue-lou&mode=overview) |
 | 陕南邨西南转角住宅（亚尔培公寓） | 2026-11-21 06:16:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) |
 | 思南路73号周公馆庭院立面 | 2026-11-21 07:28:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sinan-road-73-garden-front&mode=overview) |
+| 培文公寓（淮海中路街面与重庆南路圆角） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bearn-apartments&mode=overview) |
 
 ### 徐汇区（37处）
 

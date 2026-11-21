@@ -44,13 +44,13 @@
     "xuhui-zikawei-south-building",
     "yangpu-library"
   ],
-  "candidate_manifest_count": 193,
+  "candidate_manifest_count": 194,
   "already_integrated_candidate_ids": [
     "huangpu-sun-yatsen-residence",
     "xuhui-zikawei-south-building"
   ],
-  "new_city_model_count": 191,
-  "resulting_city_count": 231,
+  "new_city_model_count": 192,
+  "resulting_city_count": 232,
   "new_models_by_district": {
     "崇明区": 20,
     "徐汇区": 31,
@@ -59,20 +59,20 @@
     "虹口区": 13,
     "长宁区": 14,
     "静安区": 25,
-    "黄浦区": 80
+    "黄浦区": 81
   },
   "verification": {
     "all_manifest_assets_read": false,
-    "files": 772,
-    "bytes": 1672215305,
+    "files": 776,
+    "bytes": 1678687062,
     "byte_lengths_and_sha256_match": true,
     "single_file_limit_bytes_exclusive": 100000000,
     "geometry_scope": "Raw model world bounds and triangle counts only; this is not a renewed shape or source-identity acceptance",
     "current_run_added_files": 4,
-    "current_run_added_bytes": 6689305,
+    "current_run_added_bytes": 6471757,
     "scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse.",
     "all_current_delivery_assets_read": true,
-    "inherited_incremental_files": 640
+    "inherited_incremental_files": 644
   },
   "records": [
     {
@@ -18665,6 +18665,112 @@
       "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
       "original_delivery_status": "original-photo-informed-exterior",
       "description": "按2B004的MEDHURST大楼登记和两期独立街照，重现南京西路934号中央高段、冠部线脚及两侧条窗街翼，核对市名录与1933、1934年异文。"
+    },
+    {
+      "id": "huangpu-bearn-apartments",
+      "name": "培文公寓（淮海中路街面与重庆南路圆角）",
+      "districtId": "310101",
+      "district": "黄浦区",
+      "already_in_city": false,
+      "individual_page": "bearn-apartments.html",
+      "manifest": "assets/models/candidates/huangpu-bearn-apartments/manifest.json",
+      "manifest_sha256": "01d060636e37bc8dabbe7aacf8463391329fdc1af67284d603c5310a3f4ead07",
+      "assets": {
+        "raw": {
+          "file": "assets/models/candidates/huangpu-bearn-apartments/huangpu-bearn-apartments-raw.glb",
+          "bytes": 3460884,
+          "sha256": "84b784422f26202bca8c784784e351dab50f16a66becbe1c6362b8a55874cd1d",
+          "triangles": 55210,
+          "bounds_gltf_m": [
+            [
+              -56.76087188720703,
+              0.0,
+              -20.90678596496582
+            ],
+            [
+              35.00741958618164,
+              34.02000045776367,
+              0.6304150819778442
+            ]
+          ],
+          "materials": 11
+        },
+        "web": {
+          "file": "assets/models/candidates/huangpu-bearn-apartments/huangpu-bearn-apartments-web.glb",
+          "bytes": 1464100,
+          "sha256": "ded76a45fe2b10eb36f48b5750a42ffcbdf5161b6af6ea95614879aa328ac079",
+          "triangles": 55210,
+          "bounds_gltf_m": [
+            [
+              -56.7608719,
+              0,
+              -20.906786
+            ],
+            [
+              35.0074196,
+              34.0200005,
+              0.630415082
+            ]
+          ],
+          "materials": 11
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-bearn-apartments/huangpu-bearn-apartments-lod.glb",
+          "bytes": 1071908,
+          "sha256": "2145ae0bf6aba55563ea30a9353e661a3d422a303f3f809ff62eeda84910f2d8",
+          "triangles": 36658,
+          "bounds_gltf_m": [
+            [
+              -56.7608719,
+              0,
+              -20.906786
+            ],
+            [
+              35.0074196,
+              34.0200005,
+              0.630415082
+            ]
+          ],
+          "materials": 11
+        },
+        "native": {
+          "file": "assets/models/candidates/huangpu-bearn-apartments/huangpu-bearn-apartments.blend",
+          "bytes": 474865,
+          "sha256": "1ccff1948f3ccebb3c7249dbfe295ea46376bdfac7c4b61ba90c4cf6c68d6da2"
+        }
+      },
+      "geometry": {
+        "bounds_glb": {
+          "min": [
+            -56.76087188720703,
+            0.0,
+            -20.90678596496582
+          ],
+          "max": [
+            35.00741958618164,
+            34.02000045776367,
+            0.6304150819778442
+          ]
+        },
+        "bounds_enu_m": {
+          "min": [
+            -56.76087188720703,
+            -0.6304150819778442,
+            0.0
+          ],
+          "max": [
+            35.00741958618164,
+            20.90678596496582,
+            34.02000045776367
+          ]
+        },
+        "triangles": 55210,
+        "scene_meshes": 1,
+        "method": "actual raw GLB FLOAT32 position arrays with complete scene-node world transforms"
+      },
+      "coordinate_convention": "GLB [east, up, -north] in metres; placement rotates this local basis",
+      "original_delivery_status": "original-exterior-informed-by-archival-and-2014-photography",
+      "description": "按市房管局2C002、黄浦区档案图、1945至1949年历史街景和2014年实照，制作源楼97沿淮海中路的九层中央退台塔及重庆南路东端六至七层收头。"
     }
   ],
   "baseline_inventory": {
@@ -18704,6 +18810,7 @@
     "projects/shanghai/assets/models/candidates/huangpu-bankers-association-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-banque-de-lindochine/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-baxianqiao-ymca/manifest.json",
+    "projects/shanghai/assets/models/candidates/huangpu-bearn-apartments/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-brunner-mond-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-caldbeck-macgregor-building/manifest.json",
     "projects/shanghai/assets/models/candidates/huangpu-capitol-theatre/manifest.json",
@@ -18836,13 +18943,13 @@
     "projects/shanghai/assets/models/candidates/yangpu-jiangwan-swimming-hall/manifest.json"
   ],
   "incremental_asset_revision": "ae55637ce1d7cbc4d21fd94934c8309aca1dcd09",
-  "incremental_audit_directory": "data/audit/medhurst-apartments-v1",
+  "incremental_audit_directory": "data/audit/bearn-apartments-v1",
   "prior_incremental_inventory": {
-    "file": "data/audit/embankment-riverfront-v1/inventory-increment.json",
-    "bytes": 569367,
-    "sha256": "414cad7015586fac155dd12fca4f316741c3318003d2aa69dc572c00bad042ea"
+    "file": "data/audit/medhurst-apartments-v1/inventory-increment.json",
+    "bytes": 572986,
+    "sha256": "b8591858236f6eae5aa19f2ab46650f29f7029ce88764fc47a4d878180e652df"
   },
   "current_delivery_manifests": [
-    "projects/shanghai/assets/models/candidates/jingan-medhurst-apartments/manifest.json"
+    "projects/shanghai/assets/models/candidates/huangpu-bearn-apartments/manifest.json"
   ]
 }
