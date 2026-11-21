@@ -25,3 +25,7 @@
 旧窄幅远档把建筑截在左边。补拍的620像素方形全图在街区中央可见院面长、短两翼和门前光点，本栋灯牌遮住了中央屋顶的一部分。两张远景都从实际场景读取到34,172面的远档，四件下载的字节数及SHA-256均与发布清单相符。
 
 [实机、地面与四种下载](city-31203/process-exits.json) · [旧城对照](city-31203/map-before.png) · [南花园立面](city-31203/map-south-garden-facade.png) · [顶层券廊](city-31203/map-open-upper-arcade-and-pediment.png) · [远档](city-31203/map-distant-centered.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a2ab8c4927cc3669a5d4436ad6c8e871a098c9d8/projects/shanghai/index.html#landmark=jingan-brookside-apartments&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
