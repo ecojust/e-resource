@@ -293,7 +293,7 @@
 | 东大名路378号红砖办公楼街面与塔亭 | 2026-11-21 01:27:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-east-daming-road-378&mode=overview) |
 | 雷氏德工学院（东长治路505号主楼） | 2026-11-21 02:46:01 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-lester-institute&mode=overview) |
 | 景灵堂昆山路北门山墙与修复花窗 | 2026-11-21 04:18:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-jingling-church-north-front&mode=overview) |
-| 河滨大楼临苏州河立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-embankment-building-riverfront&mode=overview) |
+| 河滨大楼临苏州河立面 | 2026-11-21 12:44:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-embankment-building-riverfront&mode=overview) |
 
 ### 杨浦区（8处）
 

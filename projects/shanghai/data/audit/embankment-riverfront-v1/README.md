@@ -11,3 +11,7 @@
 独立页在桌面和390像素手机切换近、远两档并实际下载四件文件。[独立查看结果](viewer.json)
 
 正式前后两代直接读取HTTP目录、运行模块和最终资产并比对签名。[发行收据](signed-23k-http.json) [两个来源的运行时替换](runtime-placement.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/78ab4a46339e973f02d2f3bcd3d95b06d2213bce/projects/shanghai/index.html#landmark=hongkou-embankment-building-riverfront&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
