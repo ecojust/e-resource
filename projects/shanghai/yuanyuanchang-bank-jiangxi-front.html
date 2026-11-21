@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>源源长银行 · 江西中路473号圆徽砖立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="positive-x" data-oblique-x=".45" aria-label="江西中路473号两层棕砖东立面、通高壁柱和横翼圆徽"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-yuanyuanchang-bank-jiangxi-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 江西中路473号</p>
+    <h1>源源长银行</h1>
+    <p>江西中路473号圆徽砖立面</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">上海市人民政府公布的保护铭牌记载本楼约建于1930年代。临街棕砖墙以两根通高壁柱分隔开间，中央门洞上有三扇窗和横翼圆徽。模型取香港路口可见的东立面，门窗与雕饰深度按实照估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">江西中路正面</button>
+      <button type="button" data-view="oblique">斜看双柱与门洞</button>
+      <button type="button" data-view="above">俯看退台与墙冠</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-yuanyuanchang-bank-jiangxi-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-yuanyuanchang-bank-jiangxi-front');
+  </script>
+</body>
+</html>
