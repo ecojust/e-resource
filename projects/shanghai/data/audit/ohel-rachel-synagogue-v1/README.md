@@ -13,3 +13,7 @@
 两端最终地图的目录、入口模块和原底图近远档均已发起HTTP请求。263处版本又核对了单体查看页、脚本、清单和四个下载。最终站逐项读取1,618个文件、1,340,677,073字节，五次范围请求均与完整文件对应位置的字节相同。[前后版本及冻结底图](signed-stations/real-28k-predecessor-and-new-building.json) · [逐层签名](signed-stations/26k-comparison.json) · [最终全量HTTP](signed-stations/28k-all-http.json)
 
 31226正式站的七个地图场景完成10幅实拍，独立页面另存6幅桌面与手机图，四件下载逐字复核。地图和独立页初次失败及随后成功均有记录。[地图实测](final-map-31226/results.json) · [六图四下载](final-map-31226/independent/viewer.json) · [初次记录](city-31226/archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/224c39fa21ac4c0c44a9d804b2189f4a77f697b1/projects/shanghai/index.html#landmark=jingan-ohel-rachel-synagogue&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
