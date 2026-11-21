@@ -1,11 +1,11 @@
 {
   "schema": "candidate-city-integrations-v1",
   "asset_baseline_commit": "65af6bea52780f274d2ee005bbbd513317b559fc",
-  "scope": "210 current-scene models; 9 historical sites with separate archive viewers",
+  "scope": "211 current-scene models; 9 historical sites with separate archive viewers",
   "existing_city_count": 40,
-  "new_city_model_count": 219,
-  "resulting_city_count": 259,
-  "new_walk_entry_count": 1,
+  "new_city_model_count": 220,
+  "resulting_city_count": 260,
+  "new_walk_entry_count": 2,
   "input_files": [
     {
       "file": "data/global-models/urban-placement.json",
@@ -19,11 +19,11 @@
     },
     {
       "file": "data/global-models/additional-placement.json",
-      "bytes": 2382073,
-      "sha256": "e2373fc329a5382c37d2ff6b29e8991aa9015e8a3e0b6203fe58e3e81a360e0f"
+      "bytes": 2389667,
+      "sha256": "2556e0e4ae56a19605d5b057ee0fccb2ec434bd5f05a324591d3d00eb013b887"
     }
   ],
-  "inventory_sha256": "d397bb4fb5d16f7423e8bca290bb990d9b0ec7dfb6b604e90ab075b422221275",
+  "inventory_sha256": "0c8a26767a5503289d5e5e505621f0bfa39c6616ca6e2bee76e3182c11cbdc67",
   "models": [
     {
       "id": "chongming-chaozong-paifang",
@@ -102488,6 +102488,381 @@
         "raw": "f61cfb600f0193ac3b1ee7e5e6593f56bb19717d6bb0e707242a803f2f793180",
         "web": "cc038968194e11c46ba8ff2e7c6e51b1a1370cb9a0d49195b6ef153940f508d1",
         "lod": "c900f6724a4fb5d76f1db03a489c0d2d66eff63fcc5036362f57ad713b0de12d"
+      }
+    },
+    {
+      "id": "huangpu-sichuan-road-bridge",
+      "name": "四川路桥三孔桥身与两侧人行道",
+      "kind": "building",
+      "candidate_id": "huangpu-sichuan-road-bridge",
+      "detail_level": "architectural",
+      "districtId": "310101",
+      "district_name": "黄浦区",
+      "architecture_style": "外观候选 · 近似定位",
+      "lng": 121.4812753,
+      "lat": 31.245956200000002,
+      "heading": 263.3482229135034,
+      "scale": 1,
+      "height_m": 9.649346351623535,
+      "height_estimated": true,
+      "bounds_glb": {
+        "min": [
+          -37.86140060424805,
+          0.10000000149011612,
+          -9.460000038146973
+        ],
+        "max": [
+          37.86140060424805,
+          9.649346351623535,
+          9.460000038146973
+        ]
+      },
+      "assets": {
+        "web": {
+          "file": "assets/models/candidates/huangpu-sichuan-road-bridge/huangpu-sichuan-road-bridge-web.glb",
+          "bytes": 221040,
+          "sha256": "c4117896fd2ec83e0fc2a8cab53f1fa95a329d4b9d9987a7b4f96213bbd50b89",
+          "triangles": 12400,
+          "bounds_gltf_m": [
+            [
+              -37.8614006,
+              0.100000001,
+              -9.46000004
+            ],
+            [
+              37.8614006,
+              9.64934635,
+              9.46000004
+            ]
+          ],
+          "materials": 7
+        },
+        "lod": {
+          "file": "assets/models/candidates/huangpu-sichuan-road-bridge/huangpu-sichuan-road-bridge-lod.glb",
+          "bytes": 93708,
+          "sha256": "567d4a0545d9d90c75c6b7ec6fbf2e892a6b64f09add2ab870c57a8998dbdced",
+          "triangles": 4504,
+          "bounds_gltf_m": [
+            [
+              -37.8614006,
+              0.100000001,
+              -9.46000004
+            ],
+            [
+              37.8614006,
+              9.64934635,
+              9.46000004
+            ]
+          ],
+          "materials": 6
+        }
+      },
+      "model": "assets/models/candidates/huangpu-sichuan-road-bridge/huangpu-sichuan-road-bridge-web.glb",
+      "lod_model": "assets/models/candidates/huangpu-sichuan-road-bridge/huangpu-sichuan-road-bridge-lod.glb",
+      "web_bytes": 221040,
+      "web_sha256": "c4117896fd2ec83e0fc2a8cab53f1fa95a329d4b9d9987a7b4f96213bbd50b89",
+      "lod_bytes": 93708,
+      "lod_sha256": "567d4a0545d9d90c75c6b7ec6fbf2e892a6b64f09add2ab870c57a8998dbdced",
+      "triangles": 12400,
+      "lod_triangles": 4504,
+      "individual_page": "sichuan-road-bridge.html",
+      "candidate_manifest": "assets/models/candidates/huangpu-sichuan-road-bridge/manifest.json",
+      "navigation": {
+        "listed": true,
+        "walkStart": [
+          121.4812380085289,
+          31.245627889983613
+        ],
+        "bearing": 353.3482229135034,
+        "status": "从南桥头西侧人行道向北过桥，通往四川北路。"
+      },
+      "overviewZoom": 18.22,
+      "maxDistance": 2100,
+      "lod_switch_in_m": 410,
+      "lod_switch_out_m": 490,
+      "collision_geometry": null,
+      "replacement_geometry": null,
+      "source_feature_ids": {
+        "building": [],
+        "building_part": []
+      },
+      "placement": {
+        "status": "estimated",
+        "note": "冻结桥面8156319942与现行OSM环重合98.05%。主桥跨度取《上海市政工程志》的三跨；桥面端标高按步道试验与地图街面接合。"
+      },
+      "detail_note": "冻结桥面8156319942与现行OSM环重合98.05%。主桥跨度取《上海市政工程志》的三跨；桥面端标高按步道试验与地图街面接合。；按市表2A014、市政志的三跨与桥面宽度、两端历史照片及具名桥面，制作三孔弧缘、四座灯柱、栏杆与人行道。",
+      "complete_photo_reconstruction_accepted": false,
+      "overviewBearing": 263,
+      "overviewPitch": 39,
+      "partial_model": true,
+      "model_scope": "跨越苏州河的四川路桥三孔可见桥身、两侧实心栏墙、四座灯柱、车行道和两条人行道；桥西北邮政总局、乍浦路桥与两岸原有楼房保留。",
+      "altitude": -4.06,
+      "model_geometry_sha256": {
+        "raw": "a615f44ad611095e105ca2630d965bcbfe2a5dc66c0a31b86c4de81ffcb025a6",
+        "web": "c4117896fd2ec83e0fc2a8cab53f1fa95a329d4b9d9987a7b4f96213bbd50b89",
+        "lod": "567d4a0545d9d90c75c6b7ec6fbf2e892a6b64f09add2ab870c57a8998dbdced"
+      },
+      "bridge_walk": {
+        "version": 1,
+        "longitudinal_axis": "x",
+        "shear": -0.26,
+        "half_road_m": 6.4,
+        "half_deck_m": 9.1,
+        "sidewalk_rise_m": 0.145,
+        "stations_m": [
+          [
+            -35.485,
+            4.135
+          ],
+          [
+            -35.329408808,
+            4.140950122888794
+          ],
+          [
+            -34.868614515,
+            4.158418448089672
+          ],
+          [
+            -34.120325186,
+            4.186296878310415
+          ],
+          [
+            -33.113297161,
+            4.2228603445863735
+          ],
+          [
+            -31.886229962,
+            4.265932622236818
+          ],
+          [
+            -30.486279094,
+            4.313087356577633
+          ],
+          [
+            -28.967243883,
+            4.361858701141052
+          ],
+          [
+            -27.3875,
+            4.409935601114602
+          ],
+          [
+            -25.807756117,
+            4.455317104625895
+          ],
+          [
+            -24.288720906,
+            4.4964126094834835
+          ],
+          [
+            -22.888770038,
+            4.532079637890713
+          ],
+          [
+            -21.661702839,
+            4.561601242464629
+          ],
+          [
+            -20.654674814,
+            4.584614035665786
+          ],
+          [
+            -19.906385485,
+            4.601004759948923
+          ],
+          [
+            -19.445591192,
+            4.610797245454223
+          ],
+          [
+            -19.29,
+            4.614051971881262
+          ],
+          [
+            -17.29,
+            4.6535606946746055
+          ],
+          [
+            -16.957777498,
+            4.659705112373964
+          ],
+          [
+            -15.973877117,
+            4.67720293356656
+          ],
+          [
+            -14.376109597,
+            4.703390273592537
+          ],
+          [
+            -12.225876247,
+            4.734280347333545
+          ],
+          [
+            -9.605809329,
+            4.765170421076636
+          ],
+          [
+            -6.616596546,
+            4.791357761107205
+          ],
+          [
+            -3.373111668,
+            4.808855582302546
+          ],
+          [
+            -0.0,
+            4.8149999999999995
+          ],
+          [
+            3.373111668,
+            4.808855582302546
+          ],
+          [
+            6.616596546,
+            4.791357761107205
+          ],
+          [
+            9.605809329,
+            4.765170421076636
+          ],
+          [
+            12.225876247,
+            4.734280347333545
+          ],
+          [
+            14.376109597,
+            4.703390273592537
+          ],
+          [
+            15.973877117,
+            4.67720293356656
+          ],
+          [
+            16.957777498,
+            4.659705112373964
+          ],
+          [
+            17.29,
+            4.6535606946746055
+          ],
+          [
+            19.29,
+            4.614051971881262
+          ],
+          [
+            19.445591192,
+            4.610797245454223
+          ],
+          [
+            19.906385485,
+            4.601004759948923
+          ],
+          [
+            20.654674814,
+            4.584614035665786
+          ],
+          [
+            21.661702839,
+            4.561601242464629
+          ],
+          [
+            22.888770038,
+            4.532079637890713
+          ],
+          [
+            24.288720906,
+            4.4964126094834835
+          ],
+          [
+            25.807756117,
+            4.455317104625895
+          ],
+          [
+            27.3875,
+            4.409935601114602
+          ],
+          [
+            28.967243883,
+            4.361858701141052
+          ],
+          [
+            30.486279094,
+            4.313087356577633
+          ],
+          [
+            31.886229962,
+            4.265932622236818
+          ],
+          [
+            33.113297161,
+            4.2228603445863735
+          ],
+          [
+            34.120325186,
+            4.186296878310415
+          ],
+          [
+            34.868614515,
+            4.158418448089672
+          ],
+          [
+            35.329408808,
+            4.140950122888794
+          ],
+          [
+            35.485,
+            4.135
+          ]
+        ],
+        "rails": [
+          {
+            "offset_m": -8.91,
+            "radius_m": 0.23,
+            "base_above_road_m": -0.005,
+            "top_above_road_m": 1.135
+          },
+          {
+            "offset_m": 8.91,
+            "radius_m": 0.23,
+            "base_above_road_m": -0.005,
+            "top_above_road_m": 1.135
+          }
+        ],
+        "posts": [
+          {
+            "station_m": -18.29,
+            "offset_m": -8.72,
+            "half_length_m": 0.88,
+            "half_width_m": 0.55,
+            "top_above_road_m": 3.365
+          },
+          {
+            "station_m": 18.29,
+            "offset_m": -8.72,
+            "half_length_m": 0.88,
+            "half_width_m": 0.55,
+            "top_above_road_m": 3.365
+          },
+          {
+            "station_m": -18.29,
+            "offset_m": 8.72,
+            "half_length_m": 0.88,
+            "half_width_m": 0.55,
+            "top_above_road_m": 3.365
+          },
+          {
+            "station_m": 18.29,
+            "offset_m": 8.72,
+            "half_length_m": 0.88,
+            "half_width_m": 0.55,
+            "top_above_road_m": 3.365
+          }
+        ],
+        "transportation_feature_ids": [
+          1775945602,
+          14679321220
+        ]
       }
     }
   ],
