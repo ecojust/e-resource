@@ -11,3 +11,7 @@
 正式独立页面在桌面和 390 像素手机各切换一次近、远模型。四张实图可见门廊、上层长窗、栏杆与三段坡屋顶，四份下载与资产清单逐件一致。[桌面近景](viewer-desktop-full.png) · [桌面远景](viewer-desktop-lod.png) · [手机近景](viewer-mobile-full.png) · [手机远景](viewer-mobile-lod.png) · [下载与视图核对](viewer.json)
 
 正式主图中，31175的212处城市保留原房。31176交付后，桌面和触屏的普通目录均可打开花园正面，三组瓦坡、连续窗格、门廊与石阶出现在卡片上方。屋面图可见后方仍沿用的底图体量。17个地面样点核对了台阶、可通过的柱间、退进门扇、两根方柱及六座邻房，近景与远景均确认两段原体剖面。前态首次测试的图形进程因内存不足退出。复测从相距约110米的同一旧版岳阳路145号地标进入，沿原相机查看尚未替换的110号地块。[前后态和资源绑定](city-31176/reviewed-inputs.json) · [五个后态视角与目视说明](city-31176/visible-review.json) · [桌面](city-31176/after/map-desktop.png) · [手机](city-31176/after/map-mobile.png) · [前态](city-31176/before/map-before.png) · [初次失败记录](city-31176/first-control-failure/control-browser.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/308ac2b6ab0b72e052b67c334fd34007b124c601/projects/shanghai/index.html#landmark=xuhui-yueyang-road-110-residence&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
