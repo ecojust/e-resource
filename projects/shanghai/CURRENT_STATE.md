@@ -1,3 +1,11 @@
+# 淮海中路1634号花园住宅（院内柱廊与错层入口）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1634-residence&mode=overview) · [单体旋转与下载](huaihai-road-1634-residence.html) · [来源与制作范围](source/precise/xuhui-huaihai-road-1634-residence/README.md) · [验收记录](data/audit/huaihai-road-1634-residence-v1/README.md)
+
+核对市表2D009、花园住宅命名和1634号门牌，按两幅原始实照及源2222制作院内方柱铁栏、两层红瓦转角、高台阶双门与较低的单门。
+
+近景 26,824 个三角面，远景 10,732 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,749,904 字节。上海主图现有 254 处独立入口，徐汇区 52 处。[资产清单](assets/models/candidates/xuhui-huaihai-road-1634-residence/manifest.json)
+
 # 东平路9号爱庐甲楼花园敞廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-ailu-residence-garden-loggia&mode=overview) · [单体旋转与下载](ailu-residence.html) · [来源与制作范围](source/precise/xuhui-ailu-residence-garden-loggia/README.md) · [验收记录](data/audit/ailu-residence-v1/README.md)
