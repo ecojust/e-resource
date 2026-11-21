@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>太古洋行东楼 · 临江七开间</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="positive-x" data-oblique-x="0.38" aria-label="太古洋行东楼临江七开间和双联拱窗"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-swire-east-building-bund-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 中山东二路22号</p>
+    <h1>太古洋行东楼</h1>
+    <p>临江七开间红砖正立面</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">1906年建成的东楼主入口朝向黄浦江。从街上可见中轴门券、两组双联拱窗和顶端曲山花。窗框与铁栏按2022年竣工后的街照绘制。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看临江七开间</button>
+      <button type="button" data-view="oblique">斜看门券与窗廊</button>
+      <button type="button" data-view="above">高处看山花和檐口</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-swire-east-building-bund-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-swire-east-building-bund-front');
+  </script>
+</body>
+</html>
