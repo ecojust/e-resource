@@ -1,3 +1,11 @@
+# 武康大楼东侧副楼临淮海中路立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion-east-annex&mode=overview) · [单体旋转与下载](wukang-east-annex.html) · [来源与制作范围](source/precise/xuhui-wukang-mansion-east-annex/README.md) · [验收记录](data/audit/wukang-east-annex-v1/README.md)
+
+分辨2D012名录整组登记的1842至1858号与历史文献所列东侧新楼1828至1834号。主楼1235已交付，另按地方志、署名建筑史与2020街景制作1930年五层副楼320的红砖基座、水平窗带及弧形东端。
+
+近景 37,138 个三角面，远景 22,956 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,726,814 字节。上海主图现有 236 处独立入口，徐汇区 38 处。[资产清单](assets/models/candidates/xuhui-wukang-mansion-east-annex/manifest.json)
+
 # 南昌大楼（阿斯屈来特公寓）街角入口
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-astrid-apartments-corner&mode=overview) · [单体旋转与下载](astrid-apartments.html) · [来源与制作范围](source/precise/huangpu-astrid-apartments-corner/README.md) · [验收记录](data/audit/astrid-apartments-v1/README.md)
