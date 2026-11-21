@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>杜重远寓所 · 南花园西端帕拉第奥式窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="南花园西端窗组，中央半圆扇窗、红木色窗扇、两侧圆柱和卷涡形券心石"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 淮海中路1897号</p>
+    <h1>杜重远寓所</h1>
+    <p>南花园西端帕拉第奥式窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">正面可见半圆扇窗和两侧平过梁窄窗。转到侧面，可以看到卷涡形券心石向墙外突出。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看花园三联窗</button>
+      <button type="button" data-view="oblique">斜看窗框与圆柱</button>
+      <button type="button" data-view="above">俯看窗券与窗台</button>
+      <button type="button" data-view="inscription">放大卷涡券心石</button>
+      <button type="button" data-view="return">转看圆柱与侧窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-du-zhongyuan-residence-serlian-window/README.md">花园照片、比例和制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-du-zhongyuan-residence-serlian-window', {
+      inscription: {center: [0, 3.34, .19], size: [.72, .57, .43], direction: [1.3, .22, .98]},
+      return: {center: [-1.52, 1.21, .025], size: [2.26, 2.35, .70], direction: [-.82, .14, 1]},
+    });
+  </script>
+</body>
+</html>
