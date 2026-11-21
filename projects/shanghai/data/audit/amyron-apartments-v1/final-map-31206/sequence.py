@@ -1,0 +1,100 @@
+"""Exercise each viewport on the same signed site, store the reports and real process outcomes."""
+import datetime,subprocess,os,time,fcntl,json,hashlib,shutil
+from pathlib import Path as P
+w=P(__file__).parent;
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+def alive(profile):
+ result=[]
+ for f in P('/proc').glob('[0-9]*/cmdline'):
+  try:b=f.read_bytes().split(b'\0')
+  except OSError:continue
+  if b'chromium' in b[0] and any(os.fsencode(profile) in arg for arg in b):result.append(int(f.parent.name))
+ return result
+
+def sample_processes(pid):
+ processes={}
+ children={}
+ for f in P('/proc').glob('[0-9]*/stat'):
+  try:
+   fields=f.read_text().rsplit(')',1)[1].split()
+   current=int(f.parent.name); parent=int(fields[1])
+   processes[current]=(fields[19],(f.parent/'comm').read_text().strip())
+   children.setdefault(parent,[]).append(current)
+  except (OSError,IndexError,ValueError):continue
+ pending=[pid];seen={}
+ while pending:
+  current=pending.pop()
+  if current in seen or current not in processes:continue
+  seen[current]=processes[current]
+  pending.extend(children.get(current,[]))
+ return seen
+
+def remaining_processes(samples):
+ running=[]
+ for pid,(start,exe) in samples.items():
+  try:stat=(P('/proc')/str(pid)/'stat').read_text().rsplit(')',1)[1].split()
+  except OSError:continue
+  if stat[19]==start and stat[0] not in ('Z','X'):running.append(pid)
+ return sorted(running)
+
+def verify_previous_city():
+ receipt = P('/tmp/shanghai-main-205/205-map-slot-released.json')
+ row = json.loads(receipt.read_bytes())
+ assert row['order'] == 205 and row['passed'] and row['views_reviewed'] and row['exit_code'] == 0
+ assert row['remaining_chromium'] == [] and row['remaining'] == []
+ assert row['screenshots'] and len(row['actual_saved_downloads']) == 4
+ for name, section in row['reports'].items():
+  path = P(section['report']); closing = P(section['exit'])
+  assert hashlib.sha256(path.read_bytes()).hexdigest() == section['report_sha256']
+  assert hashlib.sha256(closing.read_bytes()).hexdigest() == section['exit_sha256']
+  closed = json.loads(closing.read_bytes())
+  assert closed['report_sha256'] == section['report_sha256'] and closed['node_closed'] and closed['chromium_pids']
+  if name == 'standalone':
+   assert closed['code'] == 0 and closed['remaining_chromium'] == []
+  else:
+   assert closed['exit'] == 0 and closed['remaining'] == []
+
+with (w/'runner.lock').open('a') as lock:
+ fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+ verify_previous_city()
+ for phase in ['before','phone','desktop','architecture','mouse','touch','distant']:
+  if phase=='phone':
+   control=json.loads((w/'before/process.json').read_bytes())
+   assert control['phase']=='before' and control['exit_code']==0 and control['remaining_chromium']==[]
+   native=P('/tmp/zhongyi271/native-closed.json')
+   deferred=native.with_name('206-window-deferred.json')
+   while not (native.exists() or deferred.exists()):time.sleep(3)
+   if native.exists():
+    bound=json.loads(native.read_bytes())
+    assert bound['order']==271 and bound['exit']==0 and bound['passed']
+    assert not bound['remaining_blender'] and not bound.get('remaining_oidn',[]) and len(bound.get('files',bound.get('assets',{})))==4
+   else:
+    row=json.loads(deferred.read_bytes())
+    assert row.get('source_phase',206)==206 and row.get('order',271)==271 and row['deferred'] and row.get('blender_started') is False
+    assert not alive('/tmp/zhongyi271')
+  d=w/phase;d.mkdir(exist_ok=True)
+  rp=d/('control-browser.json' if phase=='before' else 'main-browser.json')
+  rcfile=w/(phase+'.exit');close=d/'process.json'
+  if close.is_file():
+   row=json.loads(close.read_bytes())
+   assert row['exit_code']==0 and row['node_closed'] and row['chromium_pids'] and not row['remaining_children'] and not row['remaining_chromium'] and rp.is_file()
+   assert json.loads(rp.read_bytes())['completed'] and hashlib.sha256(rp.read_bytes()).hexdigest()==row['report_sha256']
+   continue
+  assert not rp.exists(), 'Archive incomplete evidence before a new run'
+  began=now()
+  proc=subprocess.Popen(['python','-B',w/'run.py',phase],start_new_session=True)
+  observed={}
+  while proc.poll() is None:
+   observed.update(sample_processes(proc.pid))
+   time.sleep(.5)
+  rc=proc.returncode;profile=P(os.environ.get('AMYRON_MATERIALIZED','/dev/shm/qa-amyron206'))/('profile-'+phase)
+  for i in range(15):
+   if not alive(profile):break
+   time.sleep(1)
+  nodes={pid:state for pid,state in observed.items() if state[1] in ('node','nodejs','MainThread')}
+  chromes={pid:state for pid,state in observed.items() if state[1] in ('chromium','chrome')}
+  live_nodes=remaining_processes(nodes);live_chromes=remaining_processes(chromes)
+  row=dict(phase=phase,exit_code=rc,node_pids=sorted(nodes),chromium_pids=sorted(chromes),node_closed=bool(nodes) and not live_nodes,remaining_children=sorted(live_nodes+live_chromes),started=began,finished=now(),remaining_chromium=alive(profile),report_sha256=hashlib.sha256(rp.read_bytes()).hexdigest() if rp.is_file() else None)
+  close.write_text(json.dumps(row,indent=2)+'\n')
+  assert rc==0 and rcfile.read_text().strip()=='0' and json.loads(rp.read_bytes())['completed'] and row['node_closed'] and chromes and not row['remaining_children'] and not row['remaining_chromium'],row
+ (w/'all-real-processes-closed.json').write_text(json.dumps({'closed_time':now(),'phases':7})+'\n')

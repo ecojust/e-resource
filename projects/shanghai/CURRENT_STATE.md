@@ -1,3 +1,11 @@
+# 高安公寓转角弧窗与通高门廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview) · [单体旋转与下载](amyron-apartments.html) · [来源与制作范围](source/precise/xuhui-amyron-apartments-street-front/README.md) · [验收记录](data/audit/amyron-apartments-v1/README.md)
+
+核对2D042、高安路康平路路口及2008和2013年实照，制作六层转角弧窗、两侧五层可见阳台和跨一二层的门廊。
+
+近景 24,580 个三角面，远景 10,204 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,560,409 字节。上海主图现有 243 处独立入口，徐汇区 44 处。[资产清单](assets/models/candidates/xuhui-amyron-apartments-street-front/manifest.json)
+
 # 盖司康公寓主楼南向前院立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-gascogne-apartments-main-building&mode=overview) · [单体旋转与下载](gascogne-apartments-main.html) · [来源与制作范围](source/precise/xuhui-gascogne-apartments-main-building/README.md) · [验收记录](data/audit/gascogne-main-front-v1/README.md)
