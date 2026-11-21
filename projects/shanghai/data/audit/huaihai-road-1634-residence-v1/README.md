@@ -23,3 +23,5 @@
 GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/be01bf87212410bb03f92607650c3c158c473043/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1634-residence&mode=overview) · [固定版本逐文件核对](publication.json)
 
 首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
+
+普通城市地图补拍看清了东端石阶、斜扶手和右侧下层门。三张近图分别保留顶部状态条或地点标记的实际遮挡。[完整城市近图与操作步骤](east-entrance-follow-up/README.md)
