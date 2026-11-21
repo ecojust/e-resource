@@ -11,6 +11,7 @@ from mathutils import Vector
 source = Path(__file__).resolve().parent
 sys.path.insert(0, str(source))
 from villa_materials import ROUGH, pebble_uv
+from blender_preview import SOURCE_NAMES_SHA256, label_digest, native_name
 
 blend, raw, output = map(Path, sys.argv[sys.argv.index("--") + 1:])
 report = json.loads(output.read_bytes())
@@ -37,9 +38,20 @@ assert uv_name == 'Pebble dash, 0.74 metre repeat'
 shader = next(n for n in material.node_tree.nodes if n.type == 'BSDF_PRINCIPLED')
 assert shader.inputs['Base Color'].links[0].from_node == node
 groups = [o for o in scene.objects if o.type=='MESH']
+source_names = []
+aliases = {}
+for obj in groups:
+    original = obj.get("source_group_label", obj.name)
+    assert native_name(original) == obj.name == obj.data.name, original
+    if "source_group_label" in obj:
+        assert original != obj.name and len(original.encode("utf-8")) > 63
+        aliases[obj.name] = original
+    source_names.append(original)
+assert len(groups) == len(set(source_names)) == 329
+assert len(aliases) == 16 and label_digest(source_names) == SOURCE_NAMES_SHA256
 for label in ('brick arch mortar joints','red barrel vault lining','attic door ridge','open diamond stone balusters',
               'attic door threshold','main cross ridge','terrace paving','tapered flue with rolled lip'):
-    assert any(label in obj.name for obj in groups), label
+    assert any(label in name for name in source_names), label
 loops = 0
 max_error = 0.
 for obj in groups:
@@ -55,5 +67,6 @@ for obj in groups:
     loops += len(mesh.loops)
 assert loops == scene["villa_metric_uv_loops"] and loops > 0 and max_error < .00001
 report["villa_roof_and_elevations"] = dict(cameras=views, groups=len(groups), texture_sha256=texture_sha,
+    original_group_labels_sha256=label_digest(source_names), native_source_labels=aliases,
     packed_image_bytes=image.packed_file.size,uv_loops=loops,max_uv_error=max_error)
 output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")

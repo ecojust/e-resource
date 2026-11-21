@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import os
 import sys
 
 import bpy
@@ -18,6 +19,12 @@ UV_NAME = "Pebble dash, 0.74 metre repeat"
 @bpy.app.handlers.persistent
 def prepare_villa(_):
     scene = bpy.context.scene
+    aliases = json.loads(os.environ["SINAN_NATIVE_SOURCE_LABELS"])
+    assert len(aliases) == 16
+    for short, original in aliases.items():
+        obj = scene.objects[short]
+        assert obj.type == 'MESH' and obj.data.name == short
+        obj["source_group_label"] = original
     material = bpy.data.materials[ROUGH]
     material.use_nodes = True
     tree = material.node_tree
