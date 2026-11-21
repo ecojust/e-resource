@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>五原路314号花园住宅石狮券廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="五原路314号花园住宅石狮券廊"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 五原路314号</p>
+    <h1>五原路314号花园住宅</h1>
+    <p>花园一侧的石狮券廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">主券内退设有木门与铁花玻璃。两侧灯柱靠近门廊外沿，石狮安放在柱后的石座上。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">从花园看主券</button>
+      <button type="button" data-view="oblique">侧看券廊与木门</button>
+      <button type="button" data-view="above">看石狮与木门</button>
+      <button type="button" data-view="lion">查看左侧石狮</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/xuhui-wuyuan-314-welfare-house-lion-portico/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-wuyuan-314-welfare-house-lion-portico', {
+      "front": {
+        "center": [
+          0,
+          2.08,
+          -1.35
+        ],
+        "size": [
+          5.68,
+          4.39,
+          3.68
+        ],
+        "direction": [
+          0.18,
+          0.08,
+          1
+        ]
+      },
+      "oblique": {
+        "center": [
+          0,
+          2.06,
+          -1.33
+        ],
+        "size": [
+          5.68,
+          4.39,
+          3.68
+        ],
+        "direction": [
+          0.91,
+          0.14,
+          1
+        ]
+      },
+      "above": {
+        "center": [
+          -0.4,
+          1.37,
+          -2.1
+        ],
+        "size": [
+          4.58,
+          3.4,
+          2.0
+        ],
+        "direction": [
+          0.16,
+          0.08,
+          1
+        ]
+      },
+      "lion": {
+        "center": [
+          -2.03,
+          0.79,
+          -2.19
+        ],
+        "size": [
+          1.16,
+          1.4,
+          1.38
+        ],
+        "direction": [0.58, 0.16, 1]
+      }
+    });
+  </script>
+</body>
+</html>
