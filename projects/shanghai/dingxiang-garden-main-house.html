@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>丁香花园一号楼拱廊与露木山墙</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x="0.56" aria-label="丁香花园一号楼拱廊与露木山墙模型"></main>
+  <header>
+    <a href="index.html#landmark=xuhui-dingxiang-garden-main-house&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">徐汇区 · 华山路849号</p>
+    <h1>丁香花园一号楼拱廊与露木山墙</h1>
+    <p>庭院入口、出挑木窗与两侧转折窗墙</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">拱廊右侧的金属牌写着“1”。切换正面和斜视，可看到三面拱洞、窗下木托、露木山墙和凸窗下的嵌板。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">入口正面</button>
+      <button type="button" data-view="oblique">斜看拱廊</button>
+      <button type="button" data-view="above">上方俯视</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-dingxiang-garden-main-house/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-dingxiang-garden-main-house');
+  </script>
+</body>
+</html>

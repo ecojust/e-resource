@@ -1,3 +1,11 @@
+# 丁香花园一号楼拱廊与露木山墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview) · [单体旋转与下载](dingxiang-garden-main-house.html) · [来源与制作范围](source/precise/xuhui-dingxiang-garden-main-house/README.md) · [验收记录](data/audit/dingxiang-garden-main-house-v1/README.md)
+
+按2D013、地方志所记一号楼及两张不同视角的外观实照，复原华山路849号主楼的弧拱门廊、露木山墙和出挑木窗。
+
+近景 17,820 个三角面，远景 8,700 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,062,118 字节。上海主图现有 210 处独立入口，徐汇区 30 处。[资产清单](assets/models/candidates/xuhui-dingxiang-garden-main-house/manifest.json)
+
 # 郭棣活旧居西楼（东南花园立面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-guo-dihuo-west-house&mode=overview) · [单体旋转与下载](guo-dihuo-west-house.html) · [来源与制作范围](source/precise/xuhui-guo-dihuo-west-house/README.md) · [验收记录](data/audit/guo-dihuo-west-house-v1/README.md)
