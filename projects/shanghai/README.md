@@ -214,7 +214,7 @@
 | 武康大楼东侧副楼临淮海中路立面 | 2026-11-21 14:15:25 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-mansion-east-annex&mode=overview) |
 | 道斐南公寓南向花园立面 | 2026-11-21 14:30:34 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dauphine-apartments-garden-front&mode=overview) |
 | 华盛顿公寓衡山路街角与高安路48号入口 | 2026-11-21 14:59:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-washington-apartments&mode=overview) |
-| 克莱门公寓（复兴中路弄口西侧前楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-clements-apartments-west-front&mode=overview) |
+| 克莱门公寓（复兴中路弄口西侧前楼） | 2026-11-21 15:29:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-clements-apartments-west-front&mode=overview) |
 
 ### 长宁区（17处）
 

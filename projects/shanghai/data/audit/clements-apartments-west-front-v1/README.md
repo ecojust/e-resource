@@ -9,3 +9,7 @@
 正式独立查看页在桌面与390像素宽手机上各留四张实图。沿街正面可辨两翼山墙和中央凹院，斜向视角显示临街进深，俯视角可对照两翼收坡及檐口。两种屏宽均从页面按钮切换近档的三个取景，再切换远档复看正立面。四个下载链接返回的文件与签名一致。[独立页面实测与下载](viewer.json) · [桌面斜向](viewer-desktop-full-oblique.png) · [手机俯视](viewer-mobile-full-above.png) · [实测脚本](check-viewer.cjs)
 
 主图用238处的旧城和239处的新城分别打开实测。旧城的原始近档仍遮住同址矢量，西前楼所在分组新增裁片为零。加入新模型后，复兴中路临街两翼与中央退入的窗体连成一体，两侧瓦屋面、烟囱及砖色转角均可见。手机从建筑目录点入并放大，桌面目录与地图点选均实际触发。主图实测27个地面点，同时核对12户近邻，另在独立页保存并核验四种下载。246像素宽的远景窗口能显示地标簇，信息卡遮住下半幅，具体外观请看临街图。[旧城同址](city-31202/before/map-before.png) · [手机放大](city-31202/phone/map-mobile-zoom.png) · [临街全貌](city-31202/architecture/map-street-facade.png) · [瓦顶与烟囱](city-31202/architecture/map-roof.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 42 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d287ead3a35b967b5401a1a4ca391a041fd19bc1/projects/shanghai/index.html#landmark=xuhui-clements-apartments-west-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 42 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
