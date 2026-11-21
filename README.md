@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 210 处入口。最近接入[丁香花园一号楼拱廊与露木山墙](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 211 处入口。最近接入[淮海中路1431号巴塞住宅历史花园立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,7 +21,7 @@
 
 [机器可读制作队列](projects/shanghai/data/model-todo/queue.json) · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口](projects/shanghai/data/model-todo/STREETS.md) · [来源、许可与更新规则](projects/shanghai/data/model-todo/README.md)
 
-已交付的173项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的174项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列](projects/shanghai/data/model-todo/queue.json)和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核](projects/shanghai/data/model-todo/completed-model-scope-review.json)移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
@@ -31,8 +31,7 @@
 
 | 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
 |---:|---|---|---|---|---|
-| 174 | 淮海中路1431号住宅历史花园立面 | 徐汇区／淮海中路1431号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；查找有确切年代的历史图纸及背面照片，并核实其余侧翼与花园台阶的尺寸。 |
-| 175 | 南京西路1400—1418号郭氏兄弟住宅 | 静安区／南京西路1418号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；依历史档案区分两幢住宅、沿街附属及不同阶段的门墙，继续补证隐蔽的立面和构件。 |
+| 175 | 南京西路1400—1418号郭氏兄弟住宅 | 静安区／南京西路1418号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；依历史档案区分两幢住宅、沿街附属及不同阶段的门墙，继续补证隐蔽的立面和构件。 |
 | 176 | 岳阳路110号住宅 | 徐汇区／岳阳路110号 | 待制作 | — | [市房屋管理局第二批优秀历史建筑登记表][MTD-10c79143]；继续核实住宅未见部分和不同年代的修缮变化。 |
 
 ### 按区列出的未完成建筑与构件 TODO
@@ -362,7 +361,7 @@
 | sh-historic-b2-107 | 武康路99号街门、北面与屋后附属 | 武康路99号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 补证街门落位、北面门窗、后部附属及室内，继续与福州路正广和办公楼分别登记。 |
 | sh-historic-b2-108 | 郭棣活住宅东楼与西楼其余外立面 | 华山路893号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 另核1947至1948年红瓦东楼，继续补证西楼背面、室内与各次修缮。 |
 | sh-historic-b2-109 | 丁香花园主楼其余立面、附屋及园内各楼 | 华山路849号主楼 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 继续查证一号楼其他立面与屋面，船形二号楼、三号楼、园亭及附屋分别核实。 |
-| sh-historic-b2-110 | 花园住宅 | 淮海中路1431号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
+| sh-historic-b2-110 | 巴塞住宅其余历史立面与年代 | 淮海中路1431号 | [名录][H2] · 照片待核 · [当前完成范围][MTD-aa5f33d7] | 查找有确切年代的历史图纸及背面照片，并核实其余侧翼与花园台阶的尺寸。 |
 | sh-historic-b2-112 | 花园住宅 | 岳阳路110号 | [名录][H2] | 待核外观／拆栋 |
 | sh-historic-b2-115 | 朱敏堂住宅 | 乌鲁木齐南路151号 | [名录][H2] · 照片待核 | 待核外观／拆栋 |
 | sh-historic-b2-116 | 花园住宅 | 淮海中路1110号 | [名录][H2] | 待核外观／拆栋 |
@@ -3656,7 +3655,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态](projects/shanghai/CURRENT_STATE.md)
 
-全市16区底图可浏览；210处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中170件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；211处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中171件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3664,7 +3663,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增170处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增171处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3686,7 +3685,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，210处建筑与构件模型入口（40处既有＋170处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增170处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 2 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，211处建筑与构件模型入口（40处既有＋171处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增171处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 3 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（96处）
@@ -3792,7 +3791,7 @@
 | 陕南邨西南转角住宅（亚尔培公寓） | 2026-11-21 06:16:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-king-albert-corner-house&mode=overview) |
 | 思南路73号周公馆庭院立面 | 2026-11-21 07:28:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sinan-road-73-garden-front&mode=overview) |
 
-### 徐汇区（30处）
+### 徐汇区（31处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310104&mode=walk)
 
@@ -3828,6 +3827,7 @@
 | 武康路99号正广和大班住宅 | 2026-11-21 08:29:33 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-caldbeck-manager-residence&mode=overview) |
 | 郭棣活旧居西楼（东南花园立面） | 2026-11-21 08:35:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-guo-dihuo-west-house&mode=overview) |
 | 丁香花园一号楼拱廊与露木山墙 | 2026-11-21 08:40:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview) |
+| 淮海中路1431号巴塞住宅历史花园立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · 1921 年原址，地点卡可查看历史外观 |
 
 ### 长宁区（10处）
 

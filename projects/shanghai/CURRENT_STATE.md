@@ -1,3 +1,11 @@
+# 淮海中路1431号巴塞住宅历史花园立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1431-historic-garden-front&mode=overview) · [单体旋转与下载](huaihai-1431-history.html) · [来源与制作范围](source/precise/xuhui-huaihai-1431-historic-garden-front/README.md) · [验收记录](data/audit/huaihai-1431-historic-front-v1/README.md)
+
+核对市房管局2D006、巴塞家族早年记载及里昂所藏两份照片，复原中央四柱弧廊、正面石阶与两翼窗列。
+
+近景 43,904 个三角面，远景 24,328 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,831,092 字节。上海主图现有 211 处独立入口，徐汇区 31 处。[资产清单](assets/models/candidates/xuhui-huaihai-1431-historic-garden-front/manifest.json)
+
 # 丁香花园一号楼拱廊与露木山墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-dingxiang-garden-main-house&mode=overview) · [单体旋转与下载](dingxiang-garden-main-house.html) · [来源与制作范围](source/precise/xuhui-dingxiang-garden-main-house/README.md) · [验收记录](data/audit/dingxiang-garden-main-house-v1/README.md)

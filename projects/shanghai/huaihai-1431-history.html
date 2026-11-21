@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>淮海中路1431号巴塞住宅 · 历史花园立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <style>
+    .embedded header,.embedded footer{display:none}
+    .embedded #model-view{top:8px;bottom:8px}
+    .embedded .panel{top:12px;bottom:12px}
+    .embedded #site-return{display:block;margin-top:8px}
+    @media(max-width:650px){.embedded #model-view{inset:0 0 46%}.embedded .panel{top:54%;bottom:0;max-height:none}}
+  </style>
+  <script>
+    if(window.self!==window.top && new URLSearchParams(location.search).get('embed')==='history'){
+      document.documentElement.classList.add('embedded');
+      const returnToMap=event=>{event.preventDefault();parent.postMessage('close-historical-view',location.origin);};
+      addEventListener('keydown',event=>{if(event.key==='Escape') returnToMap(event);});
+      addEventListener('DOMContentLoaded',()=>{
+        const link=document.getElementById('site-return');
+        link.textContent='返回当代原址';
+        link.addEventListener('click',returnToMap);
+        document.querySelector('.panel').append(link);
+      });
+    }
+  </script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".57" aria-label="淮海中路1431号历史花园立面三维模型"></main>
+  <header>
+    <a id="site-return" href="index.html#landmark=xuhui-huaihai-1431-historic-garden-front&amp;mode=overview">← 查看当代原址</a> · <a href="landmarks.html#building-xuhui-huaihai-1431-historic-garden-front">按区目录</a>
+    <p class="eyebrow">徐汇区 · 巴塞住宅</p>
+    <h1>淮海中路1431号</h1>
+    <p>约1921至1939年的花园立面</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">两幅里昂档案照片和一幅雪景留下了中央四柱弧廊、两座瓦顶前翼和低附房的模样。住宅建于1921年，影像的确切拍摄年份待考。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">花园立面</button>
+      <button type="button" data-view="oblique">斜看四柱弧廊</button>
+      <button type="button" data-view="above">俯看屋面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-huaihai-1431-historic-garden-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-huaihai-1431-historic-garden-front');
+  </script>
+</body>
+</html>
