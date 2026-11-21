@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>克莱门公寓西前楼 · 徐汇区</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="复兴中路克莱门公寓西前楼三维模型" data-oblique-x="0.37" id="model-view"></main>
+<header>
+<a href="index.html#landmark=xuhui-clements-apartments-west-front&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">徐汇区 · 复兴中路1363弄</p>
+<h1>克莱门公寓西前楼</h1>
+<p>面向复兴中路的双翼与内凹庭院</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">1929年建成，全组由五幢公寓组成。这一模型沿2013年临街照片与2015、2017年街景复原弄口西侧前楼。东侧前楼、共用弄门与后三幢各自保留。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">临街双翼</button>
+<button data-view="oblique" type="button">凹庭砖饰</button>
+<button data-view="above" type="button">瓦檐与烟囱</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/xuhui-clements-apartments-west-front/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=clements-apartments-west-front-v1';
+    showCandidateAssetViewer('xuhui-clements-apartments-west-front');
+  </script>
+</body>
+</html>
+

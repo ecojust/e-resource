@@ -1,3 +1,11 @@
+# 克莱门公寓（复兴中路弄口西侧前楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-clements-apartments-west-front&mode=overview) · [单体旋转与下载](clements-apartments-west-front.html) · [来源与制作范围](source/precise/xuhui-clements-apartments-west-front/README.md) · [验收记录](data/audit/clements-apartments-west-front-v1/README.md)
+
+以2D044、2013及2015年实照和2017年街景选定1925西前楼。按照片制作沿街凸翼、白墙与红砖带、方格窗和凹进门廊，保留弄口拱门及其他四座楼。
+
+近景 63,049 个三角面，远景 27,763 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,209,936 字节。上海主图现有 239 处独立入口，徐汇区 41 处。[资产清单](assets/models/candidates/xuhui-clements-apartments-west-front/manifest.json)
+
 # 华盛顿公寓衡山路街角与高安路48号入口
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-washington-apartments&mode=overview) · [单体旋转与下载](washington-apartments.html) · [来源与制作范围](source/precise/xuhui-washington-apartments/README.md) · [验收记录](data/audit/washington-apartments-v1/README.md)
