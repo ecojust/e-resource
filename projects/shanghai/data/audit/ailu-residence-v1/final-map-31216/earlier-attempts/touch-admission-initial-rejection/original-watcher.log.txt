@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-216/development-344-after-pointers.py", line 6, in <module>
+    d=w/phase;e=d/'process.json';r=read(e);f=d/'main-browser.json';s=read(f)
+                                                                     ^^^^^^^
+  File "/tmp/shanghai-main-216/development-344-after-pointers.py", line 4, in <lambda>
+    w=Path(__file__).parent/'final-map-31216';receipts={};h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_bytes())
+                                                                                                                                         ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/shanghai-main-216/final-map-31216/touch/main-browser.json'

@@ -1,3 +1,11 @@
+# 东平路9号爱庐甲楼花园敞廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-ailu-residence-garden-loggia&mode=overview) · [单体旋转与下载](ailu-residence.html) · [来源与制作范围](source/precise/xuhui-ailu-residence-garden-loggia/README.md) · [验收记录](data/audit/ailu-residence-v1/README.md)
+
+按市表2D046、甲乙两楼分列实照及两期航片，制作3522南面花园敞廊的宽券、向东转折的侧券、石栏和阶台，保留乙楼及校园其他建筑。
+
+近景 20,788 个三角面，远景 10,592 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,495,787 字节。上海主图现有 253 处独立入口，徐汇区 51 处。[资产清单](assets/models/candidates/xuhui-ailu-residence-garden-loggia/manifest.json)
+
 # 赛华公寓常熟路、延庆路转角立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-savoy-apartments-street-front&mode=overview) · [单体旋转与下载](savoy-apartments.html) · [来源与制作范围](source/precise/xuhui-savoy-apartments-street-front/README.md) · [验收记录](data/audit/savoy-apartments-v1/README.md)
