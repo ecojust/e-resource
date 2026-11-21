@@ -1,0 +1,53 @@
+{
+  "id": "bund05",
+  "coordinate_frame": {
+    "geographic": "WGS84 / EPSG:4326",
+    "earth_radius_m": 6378137.0,
+    "metre_frame": "Web Mercator coordinate differences multiplied by cos(anchor latitude), retaining the current city and Bund source-builder metre convention; not UTM axes.",
+    "east_formula": "(R*longitude_radians - originMercatorX)*cos(originLatitude)",
+    "north_formula": "(R*ln(tan(pi/4+latitude_radians/2)) - originMercatorY)*cos(originLatitude)",
+    "gltf_xyz": "[east_m, elevation_m, -north_m]",
+    "rings_closed": true,
+    "original_osm_vertex_order_preserved": true,
+    "existing_coordinate_source": {
+      "project_relative_path": "source/city/build_district_models.py",
+      "bytes": 12013,
+      "sha256": "d1d3c0ba39031ef293d39b456aeef5d6fa259af9094a97f43a6cd181dc884906"
+    },
+    "runtime_radius_note": "The source builders use R=6378137; vendored MapLibre meterInMercatorCoordinateUnits uses mean Earth radius 6371008.8. This freeze deliberately retains existing source coordinates and does not silently change model scale or the renderer.",
+    "round_trip_max_degree_error": 1.4210854715202004e-14
+  },
+  "anchor": [
+    121.48611653838704,
+    31.236373979797833
+  ],
+  "original_southwest_vertex": [
+    -24.294121943971994,
+    -20.39146204965385
+  ],
+  "west_wall_start": [
+    -32.42267203268343,
+    2.26203480063666
+  ],
+  "west_wall_length_m": 24.06770130466997,
+  "native_camera": {
+    "eye_local_ENZ_m": [
+      -31.172938100835857,
+      -26.68446517058655,
+      3.72
+    ],
+    "target_local_ENZ_m": [
+      -26.091605857634192,
+      -17.15857609742392,
+      2.12
+    ],
+    "target_lnglat": [
+      121.48584241531275,
+      31.23621984156047
+    ],
+    "view_bearing_degrees": 28.07650492437124,
+    "pitch_from_downward_vertical_degrees": 81.57027022459854,
+    "frame_width_m": 10.4
+  },
+  "source_geometry_sha256": "a899e5cd42566321d41f5c270c98db39f775ab9b4fc99ea29bc675df358a0245"
+}
