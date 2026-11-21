@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>乍浦路260号金顶角楼与老虎窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="乍浦路260号的金色八角顶、十处三角老虎窗与乍浦路凸窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 乍浦路260号 · 昆山路口</p>
+    <h1>乍浦路260号</h1>
+    <p>金顶角楼与老虎窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从八角塔楼转向昆山路，可以数出十处三角老虎窗。乍浦路一侧，宽拱窗和凹折侧窗上方有一处曲线山花。模型依据2015至2019年可见的街角外观。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">整体</button>
+      <button type="button" data-view="oblique">看八角金顶</button>
+      <button type="button" data-view="above">看瓦屋顶</button>
+      <button type="button" data-view="inscription">近看敞口</button>
+      <button type="button" data-view="return">看乍浦路凸窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-young-allen-court-gilded-corner/README.md">原照对读、街景测量与制作依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-young-allen-court-gilded-corner', {
+  "front": {
+    "center": [
+      12.43791,
+      6.2,
+      2.30185
+    ],
+    "size": [
+      32.77064726,
+      26.85372484,
+      2.62165178
+    ],
+    "direction": [
+      -0.76777737,
+      0.19067113,
+      -0.61168819
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.0,
+      14.48,
+      -0.0
+    ],
+    "size": [
+      5.11562867,
+      4.19197349,
+      0.40925029
+    ],
+    "direction": [
+      -0.72421558,
+      0.08249001,
+      -0.68462193
+    ]
+  },
+  "above": {
+    "center": [
+      16.53777,
+      4.9,
+      2.739
+    ],
+    "size": [
+      34.09805525,
+      27.94146194,
+      2.72784442
+    ],
+    "direction": [
+      -0.09689047,
+      0.98075348,
+      -0.16951354
+    ]
+  },
+  "inscription": {
+    "center": [
+      -0.67722,
+      11.9,
+      -0.51125
+    ],
+    "size": [
+      2.93798347,
+      2.40751423,
+      0.23503868
+    ],
+    "direction": [
+      -0.79627182,
+      0.06783444,
+      -0.60112368
+    ]
+  },
+  "return": {
+    "center": [
+      0.50028,
+      7.8,
+      8.20971
+    ],
+    "size": [
+      8.74998195,
+      7.1701241,
+      0.69999856
+    ],
+    "direction": [
+      -0.8949056,
+      0.11648842,
+      0.4307835
+    ]
+  }
+});
+  </script>
+</body>
+</html>
