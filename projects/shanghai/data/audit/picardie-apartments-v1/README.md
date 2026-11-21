@@ -18,8 +18,12 @@ Blender工程保留106组可编辑网格，按构件、材质与朝向分组。�
 
 ## 比卡迪公寓在31208的实际城景
 
-前一版目录有244处。加入比卡迪公寓后，分别从390像素宽的手机和790像素宽的桌面目录选中衡山路534号入口。两端普通视距可辨中央竖窗和两旁窗列。窄屏顶端另有附近地标的标签，资料卡覆盖部分地层。前后两版另用同一440×380视窗、同一坐标和俯仰角拍摄，核对原楼块与修订后立面的变化。[手机首屏](city-31208/phone/map-mobile.png) · [桌面首屏](city-31208/desktop/map-desktop.png) · [同机位数据](city-31208/paired-street-view.json)
+前一版目录有244处。加入比卡迪公寓后，分别从390像素宽的手机和820像素宽的桌面目录选中衡山路534号入口。两端普通视距可辨中央竖窗和两旁窗列。窄屏顶端另有附近地标的标签，资料卡覆盖部分地层。前后两版另用同一440×380视窗、同一坐标和俯仰角拍摄，核对原楼块与修订后立面的变化。[手机首屏](city-31208/phone/map-mobile.png) · [桌面首屏](city-31208/desktop/map-desktop.png) · [同机位数据](city-31208/paired-street-view.json)
 
 门前专幅能分辨正中的双扇、两侧窄门、横档和成对的壁灯。左、右门的下部各有一处受页面控件遮挡。上部近景见中央两列小阳台和两翼退台，补拍的宽屏斜俯视将完整阶梯屋冠移到目录提示下方，屋面高差和浅色边墙清楚可见。[门扇与壁灯](city-31208/architecture/map-three-doors-and-lamps.png) · [阳台和退台](city-31208/terraces/map-stepped-crown-and-balconies.png) · [宽屏屋顶](city-31208/roof-wide/map-roof-wide.png)
 
 同一真实站点完成了39个地面位置检查与远档载入。鼠标、触屏分别从另一座已登记地标进入地图，实点本楼灯牌。远景检查从目录回到单体页保存四件文件。在另开的手机和桌面单体页，分别实看近、远两档，并再次保存原始、网页、远景和Blender四件，逐一核对字节数与SHA-256。14场实测均记录了浏览器退出。前态初次没有捕获浏览器PID、两次屋顶中断和第一次远景换页中断的原件均可复查。[鼠标实点](city-31208/physical-mouse/main-browser.json) · [触屏实点](city-31208/physical-touch/main-browser.json) · [独立页面](city-31208/standalone/viewer.json) · [退出记录](city-31208/map-process-outcomes.json) · [早期尝试](city-31208/previous-attempts/archive-index.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1d36ccc8e64660c4b2dc32ddeff198c4664c675c/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，8 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

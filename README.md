@@ -3841,7 +3841,7 @@
 | 亨利公寓（淮中大楼）淮海中路门面与弧形露台 | 2026-11-21 16:13:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-hanray-mansions&mode=overview) |
 | 盖司康公寓主楼南向前院立面 | 2026-11-21 16:49:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-gascogne-apartments-main-building&mode=overview) |
 | 高安公寓转角弧窗与通高门廊 | 2026-11-21 17:03:25 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-amyron-apartments-street-front&mode=overview) |
-| 毕卡迪公寓南向阶梯塔楼与534号入口 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) |
+| 毕卡迪公寓南向阶梯塔楼与534号入口 | 2026-11-21 17:47:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-picardie-apartments-south-front&mode=overview) |
 
 ### 长宁区（17处）
 
