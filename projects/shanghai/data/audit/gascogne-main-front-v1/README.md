@@ -21,3 +21,7 @@
 从桌面和手机的普通目录进入主楼，可以看清两边成对的露廊、中央三道竖肋和逐级退下的屋顶。俯视入口时，雨篷内三片玻璃和弧形石阶清楚可见。低机位另拍到雨篷下两个后退的入口及其间的黑色石墙。地点灯牌遮住石墙右上部。[南院手机全景](city-31205/map-mobile.png) · [屋顶退台](city-31205/map-roof.png) · [雨篷和石阶](city-31205/map-garden-doors-and-canopy.png) · [雨篷下的双入口](city-31205/map-twin-doorways-beneath-canopy.png)
 
 两代城市地图与桌面、手机独立查看器共核对15幅画面，另实测25处地面，包含五幢相邻建筑。四件文件均从实际页面保存并核对字节。[逐图说明](city-31205/visual-review.json) · [实照对读](city-31205/independent-photo-comparison.json) · [两端独立查看及下载](city-31205/standalone/viewer.json) · [各阶段退出记录](city-31205/slot-released.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/cd5f162df93688f3da40f3e1a8a33b7c1750f84e/projects/shanghai/index.html#landmark=xuhui-gascogne-apartments-main-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
