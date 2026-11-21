@@ -1,3 +1,11 @@
+# 永福路151号花园住宅南立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yongfu-road-151-south-front&mode=overview) · [单体旋转与下载](yongfu-road-151.html) · [来源与制作范围](source/precise/xuhui-yongfu-road-151-south-front/README.md) · [验收记录](data/audit/yongfu-road-151-v1/README.md)
+
+按徐汇区政府建造沿革、1994年建筑铭牌及立面照片核对1941至1942年杨增化设计的三层住宅，制作南面三开间、连续拱廊、螺旋柱与可辨檐部。
+
+近景 79,428 个三角面，远景 39,632 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 11,056,140 字节。上海主图现有 207 处独立入口，徐汇区 27 处。[资产清单](assets/models/candidates/xuhui-yongfu-road-151-south-front/manifest.json)
+
 # 淮海中路1469号历史花园立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-1469-garden-front&mode=overview) · [单体旋转与下载](huaihai-1469-garden-front-history.html) · [来源与制作范围](source/precise/xuhui-huaihai-1469-garden-front/README.md) · [验收记录](data/audit/huaihai-1469-garden-front-v1/README.md)
