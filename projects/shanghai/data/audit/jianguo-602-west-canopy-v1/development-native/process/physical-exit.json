@@ -1,0 +1,108 @@
+{
+  "phase": "desktop-card",
+  "host_sha256": "781f8bab80bd0ce0eea0a0c9e185e9d09e3be5126c7303b7d32e64fb0b3de6bb",
+  "host_report_sha256": "efc6665ae7276ef97fd7fe97e2575532ae3cb686cb2730451ccb02fc1f9231c0",
+  "previous_sha256": "7869981762af7f9bbe96b53cb2efcfe8dc374e9f4b5989008edcf057c1b67f9c",
+  "order": 384,
+  "host": 228,
+  "started": "2026-11-21T19:35:01.187741+00:00",
+  "attempted": true,
+  "passed": true,
+  "exit_code": 0,
+  "all_children_exited": true,
+  "remaining_children": [],
+  "reports": {
+    "manifest.json": "48739dd48cd538b56300b5cdc0063239147e2a8bd5e8bc339eb4db6841b648de",
+    "verified-editable.json": "33df9ec82f3af9ce2bfb8b72cc02e7cff167b3768bb6b8bb10bea13e4a61142d",
+    "geometry-native.json": "cb5230b4aa4faf0bf5d4a83271f25efcaa6d0205a4a941e0003b87500965f13f",
+    "storage/development-views/viewer.json": "dbeed715cce948dc06dff833631f8f6fbbe310ff812cb34cdf67a373b552630c"
+  },
+  "ended": "2026-11-21T21:59:25.907065+00:00",
+  "early_native_sha256": "10d5bcab10f15aa3d17f4b066cb9eb8a82e3c7fb3556c54e238110fcdea96542",
+  "previous_failed_physical_sha256": "83f812467f5bebde7d08f32bd01459901dfa524f0bfade1ee36cd26e9a396d4a",
+  "previous_failed_viewer_sha256": "ae8681f1ba4632e300714d0cab2081665205cf64f3baa08b0b5f8e18bb1557fd",
+  "model_review_sha256": "2ad65cc4bfc1939cf035db8b9354c183f1647d4287a2e7b82f1af4a2f2d3ff77",
+  "events": [
+    {
+      "name": "prepare",
+      "pid": 3923699,
+      "started": "2026-11-21T19:35:12.490772+00:00",
+      "ended": "2026-11-21T19:35:15.223887+00:00",
+      "exit_code": 0,
+      "all_children_exited": true,
+      "remaining_children": [],
+      "seen_processes": {
+        "3923699": {
+          "birth": 1795289711.68,
+          "command": "python"
+        }
+      },
+      "log_sha256": "33d89d11c74921c4e998e0a46e89222dbabc36c644749c32dba9e4080e7da4e9",
+      "peak_tree_rss_bytes": 46817280
+    },
+    {
+      "name": "run-native-nonblocking",
+      "pid": 3923764,
+      "started": "2026-11-21T19:35:15.224143+00:00",
+      "ended": "2026-11-21T19:36:23.130380+00:00",
+      "exit_code": 0,
+      "all_children_exited": true,
+      "remaining_children": [],
+      "seen_processes": {
+        "3923764": {
+          "birth": 1795289714.41,
+          "command": "python"
+        },
+        "3923765": {
+          "birth": 1795289714.52,
+          "command": "blender"
+        },
+        "3925734": {
+          "birth": 1795289775.58,
+          "command": "blender"
+        },
+        "3925770": {
+          "birth": 1795289778.27,
+          "command": "oidnDenoise"
+        },
+        "3925962": {
+          "birth": 1795289782.04,
+          "command": "magick"
+        }
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "peak_tree_rss_bytes": 405458944
+    },
+    {
+      "name": "views-replay",
+      "pid": 320560,
+      "started": "2026-11-21T21:59:11.407569+00:00",
+      "ended": "2026-11-21T21:59:25.907029+00:00",
+      "exit_code": 0,
+      "all_children_exited": true,
+      "remaining_children": [],
+      "observed": {
+        "320562": {
+          "name": "MainThread",
+          "parent": 320560,
+          "session": 320560,
+          "birth": 14753764
+        },
+        "320574": {
+          "name": "chromium",
+          "parent": 320562,
+          "session": 320574,
+          "birth": 14753820
+        },
+        "320876": {
+          "name": "chromium",
+          "parent": 320562,
+          "session": 320876,
+          "birth": 14754791
+        }
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_receipt_sha256": "c82977d7866ac2cb35e2b9410bce90ac4dce3daf801bb83b9f7781c3f4b95df3"
+}
