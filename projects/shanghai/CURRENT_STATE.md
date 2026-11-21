@@ -1,3 +1,11 @@
+# 延庆路130号住宅南向庭院立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yanqing-road-130-residence&mode=overview) · [单体旋转与下载](yanqing-road-130.html) · [来源与制作范围](source/precise/xuhui-yanqing-road-130-residence/README.md) · [验收记录](data/audit/yanqing-road-130-v1/README.md)
+
+核对市表2D048、延庆路130号具名照片及院内主屋轮廓，制作中央低凸窗、石栏、两端弧形冠饰和可辨坡屋顶。
+
+近景 30,092 个三角面，远景 12,452 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,959,828 字节。上海主图现有 265 处独立入口，徐汇区 54 处。[资产清单](assets/models/candidates/xuhui-yanqing-road-130-residence/manifest.json)
+
 # 霞飞别墅淮海中路1768弄口临街住宅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1768-residence&mode=overview) · [单体旋转与下载](huaihai-road-1768-residence.html) · [来源与制作范围](source/precise/xuhui-huaihai-road-1768-residence/README.md) · [验收记录](data/audit/huaihai-road-1768-residence-v1/README.md)
