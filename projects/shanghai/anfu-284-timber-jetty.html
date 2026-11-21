@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>安福路284号花园住宅 · 露木构悬挑窗楼</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.66"
+        aria-label="悬出石子墙的红色木构、弧形托木和相邻两扇格窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 安福路284号</p>
+    <h1>安福路284号花园住宅</h1>
+    <p>露木构悬挑窗楼</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从花园转角仰看，弧形托座和几根短横木支在悬挑底面。红褐色立木与斜撑分隔着灰色水刷石墙。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看露木构</button>
+      <button type="button" data-view="oblique">斜看花园转角</button>
+      <button type="button" data-view="above">俯看斜檐</button>
+      <button type="button" data-view="inscription">近看红木斜撑</button>
+      <button type="button" data-view="return">仰看托木与悬挑底面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-anfu-284-timber-jetty/README.md">历史号图、取景方向与悬挑尺寸</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-anfu-284-timber-jetty', {
+      inscription: {center: [0, 4.66, 1.09], size: [3.70, 3.40, 1.20], direction: [-.22, .04, 1]},
+      return: {center: [-.30, 2.86, .51], size: [3.45, 2.09, 1.65], direction: [-.75, -.39, 1]},
+    });
+  </script>
+</body>
+</html>
