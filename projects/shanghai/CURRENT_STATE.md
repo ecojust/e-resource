@@ -1,3 +1,11 @@
+# 武夷路127号历史住宅南立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-wuyi-road-127-garden-front&mode=overview) · [单体旋转与下载](wuyi-road-127-history.html) · [来源与制作范围](source/precise/changning-wuyi-road-127-garden-front/README.md) · [验收记录](data/audit/wuyi-road-127-garden-front-v1/README.md)
+
+按2M005和区房管资料核对武夷路127号，制作南侧三跨玻璃廊、二层宝瓶栏杆、檐口小牛腿和三处老虎窗。
+
+近景 16,932 个三角面，远景 12,588 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,141,854 字节。上海主图现有 220 处独立入口，长宁区 11 处。[资产清单](assets/models/candidates/changning-wuyi-road-127-garden-front/manifest.json)
+
 # 建国西路618号住宅挑阳台与窗列
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-jianguo-618-historic-front&mode=overview) · [单体旋转与下载](jianguo-618-historic-front-history.html) · [来源与制作范围](source/precise/xuhui-jianguo-618-historic-front/README.md) · [验收记录](data/audit/jianguo-618-historic-front-v1/README.md)
