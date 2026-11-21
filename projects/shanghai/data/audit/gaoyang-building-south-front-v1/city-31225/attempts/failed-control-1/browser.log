@@ -1,0 +1,19 @@
+[Launch settings] ["--no-sandbox","--use-angle=swiftshader","--enable-unsafe-swiftshader","--num-raster-threads=1","--disable-background-networking","--disable-dev-shm-usage","--enable-low-end-device-mode","--window-size=430,350","--disable-gpu-shader-disk-cache","--disable-back-forward-cache","--js-flags=--max-old-space-size=240 --max-semi-space-size=3","--remote-debugging-port=9825","--single-process","--no-zygote","--in-process-gpu","--disable-gpu-rasterization","--disable-extensions","--renderer-process-limit=1","--disk-cache-size=2097152"]
+[bootstrap] 35 1492 /src/osm-building-suppression.js
+[bootstrap] 70 12054 /planet
+[bootstrap] 105 21566 /2026-10-21.0/buildings.pmtiles
+[bootstrap] 140 41396 /assets/models/precise/14-13720-6692/hongkou-hongde-church/revisions/entrance-guardians/hongkou-hongde-church-lod.glb
+[map] map-before
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(Math.abs(state.camera.zoom-camera.zoom)<1e-5 && Math.abs(state.camera.bearing-camera.bearing)<1e-5 && Math.abs(state.camera.pitch-camera.pitch)<1e-5)
+
+    at view (/dev/shm/gaoyang225-final/check-map.cjs:188:14)
+    at async run (/dev/shm/gaoyang225-final/check-map.cjs:336:7) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

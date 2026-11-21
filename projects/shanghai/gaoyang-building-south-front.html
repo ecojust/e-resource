@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>高阳大楼 · 东大名路双塔正立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".58" aria-label="东大名路的双塔、券窗和中央四柱门廊"></main>
+  <header>
+    <a href="index.html#landmark=hongkou-gaoyang-building-south-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">虹口区 · 东大名路817号</p>
+    <h1>高阳大楼</h1>
+    <p>原南洋兄弟烟草公司办公楼</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">市住建委和市历保中心记载，高阳大楼1920年设计、1921年竣工。1937年和1949年的照片可见临街双塔与中段退进。模型按近年照片表现五层南立面和四柱门廊，窗饰与屋顶标高为估算。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">东大名路正面</button>
+      <button type="button" data-view="oblique">斜看中央门廊</button>
+      <button type="button" data-view="above">俯看双塔亭</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/hongkou-gaoyang-building-south-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-gaoyang-building-south-front');
+  </script>
+</body>
+</html>
