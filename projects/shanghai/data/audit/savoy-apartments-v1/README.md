@@ -17,3 +17,7 @@
 ## 最终城市实拍
 
 31214旧站的251处地点加入赛华公寓后，31215实测为252处。九场独立的公开页面分别验证旧街区、手机及桌面目录、正面与屋顶、手机放大、鼠标与触屏灯牌以及远景。近景实际渲染33,436面。远景以实测相机高度越过1,200米门限后加载26,692面，29个地面探点保留街沿和邻楼碰撞。主图的地点卡遮住街面局部，手机放大与独立页能更清楚地看到角窗和两翼楼梯。 [九张地图与四张单体实图](city-31215/visual-review.json) · [九次实退与四件下载](city-31215/slot-released.json) · [四次早先试拍的原始记录](city-31215/failed-attempts/index.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/829382f54780b4cf011fc48719fe65d213e44858/projects/shanghai/index.html#landmark=xuhui-savoy-apartments-street-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
