@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Malcolm Rosholt, circa 1938, Historical Photographs of China, University of Bristol (Ro-s018)'
+PHOTO_SOURCE='https://www.hpcbristol.net/visual/Ro-s018'
+LICENSE_URL='https://opensource.org/license/mit/'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
