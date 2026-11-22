@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>愚园路865弄花园住宅木构图案山墙与内凹门洞</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="花园住宅的山墙、双面钢窗和石门套"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">长宁区 · 愚园路865弄</p>
+    <h1>花园住宅山墙</h1>
+    <p>1930年花园住宅组 · 第四批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">深色弯撑托住两坡屋檐。中央钢窗右侧向内折进，底层石门套后还能看到木门的浅弧顶。区级照片收在五栋住宅的共同条目下，具体栋号待考。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">整体</button>
+      <button type="button" data-view="front">山墙弯撑</button>
+      <button type="button" data-view="above">两坡屋檐</button>
+      <button type="button" data-view="inscription">石门套</button>
+      <button type="button" data-view="return">中央钢窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/changning-yuyuan-lane-865-timber-gable/README.md">区级实照与尺寸依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-yuyuan-lane-865-timber-gable', {
+  "oblique": {
+    "center": [
+      0.0,
+      3.93,
+      -0.02
+    ],
+    "size": [
+      6.3996384,
+      7.37061802,
+      0.51197107
+    ],
+    "direction": [
+      0.50610823,
+      -0.07119828,
+      0.85952618
+    ]
+  },
+  "front": {
+    "center": [
+      -0.03,
+      5.44,
+      -0.02
+    ],
+    "size": [
+      4.14623652,
+      4.77532068,
+      0.33169892
+    ],
+    "direction": [
+      0.22078827,
+      -0.01839902,
+      0.9751482
+    ]
+  },
+  "above": {
+    "center": [
+      -0.07,
+      6.8,
+      0.05
+    ],
+    "size": [
+      4.13144876,
+      4.75828926,
+      0.3305159
+    ],
+    "direction": [
+      0.37027696,
+      -0.00258033,
+      0.92891782
+    ]
+  },
+  "inscription": {
+    "center": [
+      0.0,
+      1.16,
+      -0.18
+    ],
+    "size": [
+      2.23296021,
+      2.57175418,
+      0.17863682
+    ],
+    "direction": [
+      0.4377343,
+      0.1103689,
+      0.89230454
+    ]
+  },
+  "return": {
+    "center": [
+      0.01,
+      4.68,
+      -0.19
+    ],
+    "size": [
+      1.51684135,
+      1.74698279,
+      0.12134731
+    ],
+    "direction": [
+      0.47391522,
+      -0.01393868,
+      0.88046015
+    ]
+  }
+});
+  </script>
+</body>
+</html>
