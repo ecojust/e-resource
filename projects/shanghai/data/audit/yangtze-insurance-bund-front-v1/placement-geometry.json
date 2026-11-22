@@ -1,0 +1,431 @@
+{
+  "id": "huangpu-yangtze-insurance-bund-front",
+  "manifest_sha256": "67a6bc28599bdb79fc26486fb51021ec85cbe6dac9d8c10089f924bdbfee7c69",
+  "source_sha256": "f795745e2c9ae246ef3509d345b1221b40ac6417fea77783e0a1433ceaaf37b7",
+  "checker_sha256": "3d58c2f519a06a953658bee936b47fb413baae064d7cd43f8f8eb60f1b994e5a",
+  "mesh_decoder_sha256": "30c0d5e0ad3f0e12cb4fa0f509c857d371da72991567731c0bdb57d995888999",
+  "assets": {
+    "raw": {
+      "sha256": "a7fd82fc7792bb9b0f29c8ac7f594004562948239789f1fde3b3cde27a94503c",
+      "bytes": 1264876,
+      "triangles": 23240
+    },
+    "web": {
+      "sha256": "0b6123cdf125d46e0f98fca1d0af116cddb77ee98f0c2d753f6663495b8074c5",
+      "bytes": 450356,
+      "triangles": 23240
+    },
+    "lod": {
+      "sha256": "e641499ce6ebff463ed8aa9c104e2751051268be30f7a9ff272e85399686d842",
+      "bytes": 253724,
+      "triangles": 14568
+    }
+  },
+  "model_projected_m2": 86.60590100600011,
+  "collision_m2": 76.73917509063213,
+  "mask_m2": 91.956,
+  "source_variants": {
+    "near": {
+      "assignment": {
+        "method": "group IDs and triangle-centroid distance to original polygons",
+        "largest_own_distance_m": 0.08231125295985296,
+        "smallest_next_owner_margin_m": 1.6961111842445036
+      },
+      "source_triangles": 13908,
+      "affected_source_triangles": 3569,
+      "unchanged_other_group_triangles": 120846,
+      "other_source_distance_m": 1.7672150999999996,
+      "source_projected_m2": 598.3629090941442,
+      "retained_m2": 524.6521101229652,
+      "retained_percent": 87.68125533001884,
+      "source_roof_m": 22.399999618530273,
+      "mask_seam_m": 18.557502896411748
+    },
+    "far": {
+      "assignment": {
+        "method": "per-vertex _FEATURE_ID_0"
+      },
+      "source_triangles": 12,
+      "affected_source_triangles": 10,
+      "unchanged_other_group_triangles": 132,
+      "other_source_distance_m": 1.8387764999999998,
+      "source_projected_m2": 591.0556883856302,
+      "retained_m2": 519.2346227597478,
+      "retained_percent": 87.84868041418405,
+      "source_roof_m": 22.399999618530273,
+      "mask_seam_m": 18.40825074677436
+    }
+  },
+  "seam_agreement_m": 0.07927860586995372,
+  "cap_segments": 1,
+  "neighbors": [
+    {
+      "owner": 1571,
+      "model_distance_m": 2.0687565734894644,
+      "mask_distance_m": 1.838756573489464,
+      "remaining": true
+    },
+    {
+      "owner": 833,
+      "model_distance_m": 4.859720676421597,
+      "mask_distance_m": 4.660395308228727,
+      "remaining": true
+    },
+    {
+      "owner": 1595,
+      "model_distance_m": 53.972062760679826,
+      "mask_distance_m": 53.78266305458683,
+      "remaining": true
+    },
+    {
+      "owner": 2421,
+      "model_distance_m": 58.26811266640878,
+      "mask_distance_m": 58.006990100817305,
+      "remaining": true
+    },
+    {
+      "owner": 2903,
+      "model_distance_m": 53.85100708782252,
+      "mask_distance_m": 53.76813160749417,
+      "remaining": true
+    },
+    {
+      "owner": 419,
+      "model_distance_m": 85.72105017141523,
+      "mask_distance_m": 85.63681828205756,
+      "remaining": true
+    },
+    {
+      "owner": 1332,
+      "model_distance_m": 70.84127186894493,
+      "mask_distance_m": 70.59056115608205,
+      "remaining": true
+    },
+    {
+      "owner": 2037,
+      "model_distance_m": 95.53108480214576,
+      "mask_distance_m": 95.28201980791926,
+      "remaining": true
+    },
+    {
+      "owner": 686,
+      "model_distance_m": 135.69901372143553,
+      "mask_distance_m": 135.63401382143556,
+      "remaining": true
+    },
+    {
+      "owner": 3248,
+      "model_distance_m": 142.6184550512477,
+      "mask_distance_m": 142.377840344335,
+      "remaining": true
+    },
+    {
+      "owner": 2493,
+      "model_distance_m": 145.92379747674693,
+      "mask_distance_m": 145.8030878019762,
+      "remaining": true
+    },
+    {
+      "owner": 2192,
+      "model_distance_m": 122.90230448341225,
+      "mask_distance_m": 122.65445341226584,
+      "remaining": true
+    }
+  ],
+  "ground_probes": [
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        -8.17,
+        -1.06
+      ],
+      "wgs84": [
+        121.48549899323045,
+        31.24191578307158
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        -8.17,
+        0.54
+      ],
+      "wgs84": [
+        121.48548239258128,
+        31.241918148933397
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        -6.07,
+        -1.06
+      ],
+      "wgs84": [
+        121.4855026250994,
+        31.241934411785206
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        -6.07,
+        0.54
+      ],
+      "wgs84": [
+        121.48548602445021,
+        31.24193677764656
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        -4.35,
+        -1.06
+      ],
+      "wgs84": [
+        121.485505599773,
+        31.241949669586006
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        -4.35,
+        0.54
+      ],
+      "wgs84": [
+        121.48548899912382,
+        31.24195203544698
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        -2.52,
+        -1.06
+      ],
+      "wgs84": [
+        121.48550876468737,
+        31.241965903173696
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        -2.52,
+        0.54
+      ],
+      "wgs84": [
+        121.48549216403818,
+        31.241968269034263
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        0,
+        -1.06
+      ],
+      "wgs84": [
+        121.48551312293009,
+        31.24198825761774
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        0,
+        0.54
+      ],
+      "wgs84": [
+        121.48549652228091,
+        31.24199062347775
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        2.52,
+        -1.06
+      ],
+      "wgs84": [
+        121.48551748117282,
+        31.242010612056497
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        2.52,
+        0.54
+      ],
+      "wgs84": [
+        121.48550088052365,
+        31.242012977915945
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        4.35,
+        -1.06
+      ],
+      "wgs84": [
+        121.48552064608718,
+        31.24202684563371
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        4.35,
+        0.54
+      ],
+      "wgs84": [
+        121.485504045438,
+        31.24202921149275
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        6.07,
+        -1.06
+      ],
+      "wgs84": [
+        121.48552362076079,
+        31.24204210341959
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        6.07,
+        0.54
+      ],
+      "wgs84": [
+        121.48550702011161,
+        31.24204446927824
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "Bund pavement outside the facade",
+      "xy": [
+        8.17,
+        -1.06
+      ],
+      "wgs84": [
+        121.48552725262974,
+        31.242060732108296
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "inside the street threshold",
+      "xy": [
+        8.17,
+        0.54
+      ],
+      "wgs84": [
+        121.48551065198055,
+        31.242063097966483
+      ],
+      "model_obstacle": true,
+      "source_cut": true,
+      "expected_map": "building"
+    },
+    {
+      "name": "existing west office beyond the frontage",
+      "xy": [
+        0,
+        9.6
+      ],
+      "wgs84": [
+        121.48540252110493,
+        31.242004020158916
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": "building"
+    },
+    {
+      "name": "south passage between numbers 24 and 26",
+      "xy": [
+        -10.05,
+        2.0
+      ],
+      "wgs84": [
+        121.48546399310146,
+        31.241903630645837
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    },
+    {
+      "name": "north passage between numbers 26 and 27",
+      "xy": [
+        10.25,
+        2.0
+      ],
+      "wgs84": [
+        121.48549910116789,
+        31.24208370808016
+      ],
+      "model_obstacle": false,
+      "source_cut": false,
+      "expected_map": null
+    }
+  ]
+}

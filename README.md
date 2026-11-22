@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 275 处入口。最近接入[业广地产公司大楼滇池路与四川中路转角](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 276 处入口。最近接入[扬子大楼外滩26号临江东立面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yangtze-insurance-bund-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][TD5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD2] · [来源、许可与更新规则][TD1]
 
-已交付的238项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的239项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 239 | 扬子水火保险公司大楼外滩26号临江东立面 | 黄浦区／中山东一路26号 | 制作中 | — | [市房屋管理局第三批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/bc5957926d80432b8bea0157eb16bb94.html>)；补查两侧、背面与屋顶，另据早期照片开展1908年前身历史复原。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -137,7 +133,7 @@
 |sh-historic-b2-172|三井洋行北段与门牌沿革|四川中路175号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|补查四川中路175号与185号门牌沿革、北半街面及其他立面。|
 |sh-historic-b2-174|仁记洋行其余街面与早期尖顶|滇池路100号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|补查其余沿街面、院内及1908年锥形尖顶的变动。|
 |sh-historic-b2-175|业广地产公司大楼其余窗墙与屋面|滇池路120号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|补查两条街的其余窗墙、完整屋面及1907至1908年建造档案。|
-|sh-historic-b3-001|扬子大楼/扬子水火保险公司|中山东一路26号|[名录][H3] · 照片待核|待核外观／拆栋|
+|sh-historic-b3-001|扬子大楼侧后立面与早期旧楼|中山东一路26号|[名录][H3] · 照片待核 · [当前完成范围][TD3]|补查两侧、背面与屋顶，另据早期照片开展1908年前身历史复原。|
 |sh-historic-b3-002|交通银行/交通银行|中山东一路14号|[名录][H3] · 照片待核|待核外观／拆栋|
 |sh-historic-b3-003|日清大楼/日清汽船株式会社|中山东一路5号|[名录][H3] · 照片待核|已有模型可能关联：bund05；待核对范围|
 |sh-historic-b3-004|普益大楼 /普益地产公司|四川中路106~110号|[名录][H3] · 照片待核|待核外观／拆栋|
@@ -2659,9 +2655,9 @@
 [14/13721/6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [14/13721/6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余952条／已关联84条）
+### 既有地图中的具名建筑待查线索（剩余951条／已关联85条）
 
-原始1,036条具名地图要素中，84条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余952条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，85条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余951条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2763,7 +2759,6 @@
 |e05b9c39-e82c-4cf3-bdf9-1e0443cc8e37|美丰大楼|黄浦区|核身份／去重／查建筑参考|
 |e45260da-bbbd-4272-987d-ee1adbfa4bc2|四行天地A座|静安区|核身份／去重／查建筑参考|
 |e51cb26e-89f2-463d-a100-9460a1063784|八路有轨电车|虹口区|核身份／去重／查建筑参考|
-|e7d1e1e6-effc-417d-b599-6df4f909472e|中国农业银行|黄浦区|核身份／去重／查建筑参考|
 |e9600c6c-004c-4d4e-bbfc-22b116d03258|虬龙公寓|虹口区|核身份／去重／查建筑参考|
 |eba241a0-2e1b-4423-aa68-23fd821bcbef|圆明园公寓|黄浦区|核身份／去重／查建筑参考|
 |f0d8ac85-ae32-43e2-a65b-13cf3eaf012b|兴铁大厦|静安区|核身份／去重／查建筑参考|
@@ -3645,7 +3640,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；275处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中235件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；276处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中236件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3653,7 +3648,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增235处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增236处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3675,10 +3670,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，275处建筑与构件模型入口（40处既有＋235处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增235处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 9 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，276处建筑与构件模型入口（40处既有＋236处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增236处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 9 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（110处）
+### 黄浦区（111处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3794,6 +3789,7 @@
 | 三井洋行四川中路东立面南端山花与入口 | 2026-11-22 13:53:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview) |
 | 仁记洋行大楼东南转角与相连街墙 | 2026-11-22 14:32:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gibb-livingston-corner&mode=overview) |
 | 业广地产公司大楼滇池路与四川中路转角 | 2026-11-22 14:43:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview) |
+| 扬子大楼外滩26号临江东立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yangtze-insurance-bund-front&mode=overview) |
 
 ### 徐汇区（55处）
 
