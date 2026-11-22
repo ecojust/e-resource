@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>梁氏民宅的砖券铁花窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="梁氏民宅上下铁花窗与辐射砖券"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 山西北路457弄61号</p>
+    <h1>梁氏民宅</h1>
+    <p>状元里 · 砖券铁花窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">上窗由成对的卷草、垂直花枝和花心连成，下窗以圆环为中心。转到侧面可以看见铁条断面、玻璃的退深和窗下出挑的石台。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">院窗全景</button>
+      <button type="button" data-view="front">上下两层铁花</button>
+      <button type="button" data-view="above">砖券与键砖</button>
+      <button type="button" data-view="inscription">下窗花心</button>
+      <button type="button" data-view="return">石台与砖裙</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-liang-residence-arched-iron-window/README.md">窗门原照、铁花取样与门牌依据</a>
+    <small>模型据 Aaron Zhu 摄影制作，按 <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 共享。</small>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-liang-residence-arched-iron-window', {
+  "oblique": {
+    "center": [
+      -0.0276,
+      1.3271,
+      0.0
+    ],
+    "size": [
+      4.05997585,
+      3.46659476,
+      0.32479807
+    ],
+    "direction": [
+      -0.00119052,
+      -0.28218535,
+      0.95935917
+    ]
+  },
+  "front": {
+    "center": [
+      -0.0283,
+      1.2806,
+      0.0
+    ],
+    "size": [
+      2.87097378,
+      2.45136992,
+      0.2296779
+    ],
+    "direction": [
+      0.1042227,
+      0.09111418,
+      0.99037156
+    ]
+  },
+  "above": {
+    "center": [
+      -0.0014,
+      3.2792,
+      0.0
+    ],
+    "size": [
+      2.52597658,
+      2.15679538,
+      0.20207813
+    ],
+    "direction": [
+      -0.20679837,
+      0.06266961,
+      0.97637439
+    ]
+  },
+  "inscription": {
+    "center": [
+      -0.0466,
+      0.3516,
+      0.0
+    ],
+    "size": [
+      1.23828919,
+      1.05730846,
+      0.09906314
+    ],
+    "direction": [
+      0.05757193,
+      0.04364801,
+      0.99738675
+    ]
+  },
+  "return": {
+    "center": [
+      -0.0306,
+      -0.1422,
+      0.0
+    ],
+    "size": [
+      2.05097355,
+      1.75121588,
+      0.16407788
+    ],
+    "direction": [
+      0.28993329,
+      -0.03413855,
+      0.95643779
+    ]
+  }
+});
+  </script>
+</body>
+</html>
