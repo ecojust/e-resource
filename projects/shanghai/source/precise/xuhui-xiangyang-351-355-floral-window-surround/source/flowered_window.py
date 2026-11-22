@@ -10,12 +10,21 @@ PALETTE={name:dict(color=colour,roughness=roughness) for name,colour,roughness i
  (SASH,[.383,.405,.368],.76),(SHADOW,[.33,.345,.322],.94)]}
 ID='xuhui-xiangyang-351-355-floral-window-surround'
 FLOWERS=[(-.83,1.37),(-.51,1.37),(-.18,1.37),(.158,1.37),(.464,1.37),(.674,1.37)]
+def save_mapped_texture(tile, path):
+    """Store the material pattern 2 by 2 times inside one clamp-to-edge image."""
+    atlas=Image.new('P',(tile.width*2,tile.height*2))
+    atlas.putpalette(tile.getpalette())
+    for row in range(2):
+        for col in range(2):
+            atlas.paste(tile,(col*tile.width,row*tile.height))
+    atlas.save(path,optimize=True)
+
 def texture():
     p=Path(__file__).with_name('dark-red-stretchers.png')
     if not p.exists():
         y,x=np.indices((400,480));row=y//24;run=x+36*(row%2);idx=run//72;g=np.random.default_rng(787)
         a=np.array([93,64,52])+g.normal(0,8,(18,9))[row,idx,None]+g.normal(0,3.4,x.shape)[:,:,None]
-        a[(y%24<=1)|(run%72<2)]=[149,135,118];Image.fromarray(a.clip(0,255).astype('uint8')).quantize(108).save(p)
+        a[(y%24<=1)|(run%72<2)]=[149,135,118];save_mapped_texture(Image.fromarray(a.clip(0,255).astype('uint8')).quantize(108),p)
     PALETTE[BRICK]['texture']=str(p)
 def curve(controls,n):
     a,b,c,d=np.asarray(controls,float);t=np.linspace(0,1,n)[:,None]
@@ -83,4 +92,4 @@ def add_building(b,far=False):
         th=np.linspace(-1.53,3.86,17 if far else 35);rad=np.linspace(.058,.010,len(th))
         ribbon([(xc+s*(.095+r*np.cos(t)),1.015+r*np.sin(t)) for t,r in zip(th,rad)],.011,.046,.071,RELIEF,'Small rolled tip of leaf pair')
     for part in b.parts:
-        if part['material']==BRICK:part['texcoords']=[[(x+1.13)/1.44,z/1.20] for x,y,z in part['vertices']]
+        if part['material']==BRICK:part['texcoords']=[[(x+1.13)/(2*1.44),z/(2*1.20)] for x,y,z in part['vertices']]
