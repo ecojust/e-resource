@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>虹桥路1518号花园住宅的木构山墙与三面凸窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="花园南面右侧的半歇山、木构阁楼与凸窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">长宁区 · 虹桥路1518号</p>
+    <h1>虹桥路1518号花园住宅</h1>
+    <p>南面花园侧 · 右侧山墙</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">四扇阁楼窗嵌在木构山墙里。沿瓦檐向下，可以看到凸窗三面的交叉带饰、两只石托臂和底层五段弧窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">花园山墙</button>
+      <button type="button" data-view="front">三面凸窗</button>
+      <button type="button" data-view="above">瓦顶与筒脊</button>
+      <button type="button" data-view="inscription">交叉浅浮雕</button>
+      <button type="button" data-view="return">底层弧窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/changning-hongqiao-1518-timber-gable-oriel/README.md">两面原照、测量与建模依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-hongqiao-1518-timber-gable-oriel', {
+  "oblique": {
+    "center": [
+      -0.1252,
+      -2.7548,
+      0.0
+    ],
+    "size": [
+      14.12191176,
+      11.84418406,
+      1.12975294
+    ],
+    "direction": [
+      0.1862368,
+      -0.15479225,
+      0.97023462
+    ]
+  },
+  "front": {
+    "center": [
+      -0.0702,
+      -3.672,
+      0.58
+    ],
+    "size": [
+      3.73186279,
+      3.12994943,
+      0.29854902
+    ],
+    "direction": [
+      0.37654099,
+      -0.06389489,
+      0.92419388
+    ]
+  },
+  "above": {
+    "center": [
+      -0.2295,
+      0.8392,
+      0.0
+    ],
+    "size": [
+      6.39999457,
+      5.36773738,
+      0.51199957
+    ],
+    "direction": [
+      0.56445877,
+      0.26638888,
+      0.78129589
+    ]
+  },
+  "inscription": {
+    "center": [
+      -0.1313,
+      -4.8296,
+      0.7
+    ],
+    "size": [
+      1.98321343,
+      1.6633403,
+      0.15865707
+    ],
+    "direction": [
+      0.28576916,
+      -0.06331263,
+      0.95620474
+    ]
+  },
+  "return": {
+    "center": [
+      -0.0035,
+      -7.3912,
+      0.22
+    ],
+    "size": [
+      4.08839314,
+      3.4289749,
+      0.32707145
+    ],
+    "direction": [
+      0.39118922,
+      0.04597988,
+      0.91916095
+    ]
+  }
+});
+  </script>
+</body>
+</html>
