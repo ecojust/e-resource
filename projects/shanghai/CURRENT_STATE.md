@@ -1,3 +1,11 @@
+# 仁记洋行大楼东南转角与相连街墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gibb-livingston-corner&mode=overview) · [单体旋转与下载](gibb-livingston-corner.html) · [来源与制作范围](source/precise/huangpu-gibb-livingston-corner/README.md) · [验收记录](data/audit/gibb-livingston-corner-v1/README.md)
+
+核对市表2A017、滇池路100至110号具名足印、1908年图版及2007与2017年实照，制作东南圆角、曲线石栏、砖贴柱与现状顶部鼓座。
+
+近景 30,296 个三角面，远景 25,372 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,654,954 字节。上海主图现有 274 处独立入口，黄浦区 109 处。[资产清单](assets/models/candidates/huangpu-gibb-livingston-corner/manifest.json)
+
 # 文联老楼南园面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wenlian-old-house&mode=overview) · [单体旋转与下载](wenlian-old-house.html) · [来源与制作范围](source/precise/jingan-wenlian-old-house/README.md) · [验收记录](data/audit/wenlian-old-house-v1/README.md)
