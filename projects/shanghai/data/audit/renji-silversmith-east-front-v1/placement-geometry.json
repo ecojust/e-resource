@@ -1,0 +1,671 @@
+{
+  "id": "huangpu-renji-silversmith-east-front",
+  "passed": true,
+  "source_cut_sha256": "49050727d0a0043bb7b8e5566bd769e72e41e71d284724f75c41964fd8b5b9e7",
+  "manifest_sha256": "44f2351c67c8cb0f8a6ad8cbeebe3a5f5a5ecf3e63b1885f1c0837cd3cfbb719",
+  "checker_sha256": "a834b2297af656d591f46d98b115580982b3673e3ef67444eebeb78ddf0ca31f",
+  "texture_decoder_sha256": "2ff46e30214cac4d0e04bd5f4c2e6ce1329a274ac17c2f30fed8d7e2277336e8",
+  "assets": {
+    "raw": {
+      "sha256": "7fd909b8b8e068a407564cc5f983c9f3dc25250936e1beb768b9d3a05c109160",
+      "bytes": 1453800,
+      "triangles": 22812
+    },
+    "web": {
+      "sha256": "4b3bf89f933bdc390bf80166abd1e43569786329df4323040ba98c49245abf85",
+      "bytes": 608716,
+      "triangles": 22812
+    },
+    "lod": {
+      "sha256": "b486da57c9db780f5e45ce5407a7c21ded870fb48af065eef7ddfb860123fae9",
+      "bytes": 338044,
+      "triangles": 13832
+    }
+  },
+  "native_variants": {
+    "far": {
+      "group_triangles": 32,
+      "triangles_intersecting_cut": 10,
+      "foreign_intersections": 0,
+      "other_face_distance_m": 8.51730910813771,
+      "source_projected_m2": 308.4310991387146,
+      "retained_m2": 256.7110622081775,
+      "projected_area_basis": "typed far",
+      "roof_m": 9.600000381469727,
+      "attribution": {
+        "method": "Per-vertex feature IDs in the archived far mesh"
+      }
+    },
+    "near": {
+      "group_triangles": 10490,
+      "triangles_intersecting_cut": 1183,
+      "foreign_intersections": 0,
+      "other_face_distance_m": 8.44581697379962,
+      "source_projected_m2": 313.5603937465046,
+      "retained_m2": 260.37557047637716,
+      "projected_area_basis": "nearest-ring estimate outside cut",
+      "roof_m": 9.600000381469727,
+      "attribution": {
+        "method": "Nearest source rings in a 0.50 m halo, compared with typed far mesh",
+        "halo_triangles": 1183,
+        "halo_minimum_margin_m": 8.116781712257831,
+        "max_hit_centroid_distance_to_owner_m": 0.07212970878017577,
+        "ambiguous_triangles_outside_scope": 0,
+        "closest_ambiguous_triangle_to_cut_m": null
+      }
+    }
+  },
+  "ground_probes": [
+    {
+      "name": "南墙垛车道边",
+      "xy": [
+        -5.32,
+        -1.78
+      ],
+      "wgs84": [
+        121.4927644736156,
+        31.22715435257143
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "南墙垛人行道",
+      "xy": [
+        -5.32,
+        -0.65
+      ],
+      "wgs84": [
+        121.49275295518638,
+        31.227151851020697
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "南墙垛门前",
+      "xy": [
+        -5.32,
+        -0.14
+      ],
+      "wgs84": [
+        121.49274775660326,
+        31.22715072200221
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "南墙垛临街建筑前部",
+      "xy": [
+        -5.32,
+        0.35
+      ],
+      "wgs84": [
+        121.49274276188618,
+        31.22714963725894
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "南墙垛制作范围内",
+      "xy": [
+        -5.32,
+        2.38
+      ],
+      "wgs84": [
+        121.49272206948677,
+        31.227145143322403
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "南墙垛同址保留后部",
+      "xy": [
+        -5.32,
+        3.45
+      ],
+      "wgs84": [
+        121.49271116265557,
+        31.227142774597148
+      ],
+      "expected_map": "building",
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "南封闭店口车道边",
+      "xy": [
+        -3.8,
+        -1.78
+      ],
+      "wgs84": [
+        121.49276053858537,
+        31.227167601621833
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "南封闭店口人行道",
+      "xy": [
+        -3.8,
+        -0.65
+      ],
+      "wgs84": [
+        121.49274902015615,
+        31.22716510007146
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "南封闭店口门前",
+      "xy": [
+        -3.8,
+        -0.14
+      ],
+      "wgs84": [
+        121.49274382157304,
+        31.227163971053127
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "南封闭店口临街建筑前部",
+      "xy": [
+        -3.8,
+        0.35
+      ],
+      "wgs84": [
+        121.49273882685596,
+        31.227162886310005
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "南封闭店口制作范围内",
+      "xy": [
+        -3.8,
+        2.38
+      ],
+      "wgs84": [
+        121.49271813445655,
+        31.22715839237411
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "南封闭店口同址保留后部",
+      "xy": [
+        -3.8,
+        3.45
+      ],
+      "wgs84": [
+        121.49270722762535,
+        31.227156023649187
+      ],
+      "expected_map": "building",
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "商铺南门扇车道边",
+      "xy": [
+        -0.44,
+        -1.78
+      ],
+      "wgs84": [
+        121.49275184009751,
+        31.227196888989834
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "商铺南门扇人行道",
+      "xy": [
+        -0.44,
+        -0.65
+      ],
+      "wgs84": [
+        121.4927403216683,
+        31.227194387440232
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "商铺南门扇门前",
+      "xy": [
+        -0.44,
+        -0.14
+      ],
+      "wgs84": [
+        121.49273512308518,
+        31.227193258422247
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "商铺南门扇临街建筑前部",
+      "xy": [
+        -0.44,
+        0.35
+      ],
+      "wgs84": [
+        121.4927301283681,
+        31.22719217367947
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "商铺南门扇制作范围内",
+      "xy": [
+        -0.44,
+        2.38
+      ],
+      "wgs84": [
+        121.49270943596869,
+        31.227187679744954
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "商铺南门扇同址保留后部",
+      "xy": [
+        -0.44,
+        3.45
+      ],
+      "wgs84": [
+        121.49269852913748,
+        31.227185311020772
+      ],
+      "expected_map": "building",
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "商铺北门扇车道边",
+      "xy": [
+        0.44,
+        -1.78
+      ],
+      "wgs84": [
+        121.49274956192211,
+        31.227204559489476
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "商铺北门扇人行道",
+      "xy": [
+        0.44,
+        -0.65
+      ],
+      "wgs84": [
+        121.49273804349289,
+        31.227202057940083
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "商铺北门扇门前",
+      "xy": [
+        0.44,
+        -0.14
+      ],
+      "wgs84": [
+        121.4927328449098,
+        31.22720092892219
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "商铺北门扇临街建筑前部",
+      "xy": [
+        0.44,
+        0.35
+      ],
+      "wgs84": [
+        121.49272785019271,
+        31.227199844179495
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "商铺北门扇制作范围内",
+      "xy": [
+        0.44,
+        2.38
+      ],
+      "wgs84": [
+        121.4927071577933,
+        31.227195350245346
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "商铺北门扇同址保留后部",
+      "xy": [
+        0.44,
+        3.45
+      ],
+      "wgs84": [
+        121.4926962509621,
+        31.227192981521352
+      ],
+      "expected_map": "building",
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北开间车道边",
+      "xy": [
+        3.77,
+        -1.78
+      ],
+      "wgs84": [
+        121.49274094109933,
+        31.227233585351808
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北开间人行道",
+      "xy": [
+        3.77,
+        -0.65
+      ],
+      "wgs84": [
+        121.49272942267011,
+        31.22723108380318
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "北开间门前",
+      "xy": [
+        3.77,
+        -0.14
+      ],
+      "wgs84": [
+        121.49272422408701,
+        31.227229954785635
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "北开间临街建筑前部",
+      "xy": [
+        3.77,
+        0.35
+      ],
+      "wgs84": [
+        121.49271922936991,
+        31.227228870043273
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "北开间制作范围内",
+      "xy": [
+        3.77,
+        2.38
+      ],
+      "wgs84": [
+        121.49269853697051,
+        31.227224376110502
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "北开间同址保留后部",
+      "xy": [
+        3.77,
+        3.45
+      ],
+      "wgs84": [
+        121.4926876301393,
+        31.227222007387237
+      ],
+      "expected_map": "building",
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北角壁柱车道边",
+      "xy": [
+        5.34,
+        -1.78
+      ],
+      "wgs84": [
+        121.49273687662732,
+        31.227247270214736
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北角壁柱人行道",
+      "xy": [
+        5.34,
+        -0.65
+      ],
+      "wgs84": [
+        121.4927253581981,
+        31.227244768666473
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "北角壁柱门前",
+      "xy": [
+        5.34,
+        -0.14
+      ],
+      "wgs84": [
+        121.492720159615,
+        31.227243639649085
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": true
+    },
+    {
+      "name": "北角壁柱临街建筑前部",
+      "xy": [
+        5.34,
+        0.35
+      ],
+      "wgs84": [
+        121.4927151648979,
+        31.227242554906887
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "北角壁柱制作范围内",
+      "xy": [
+        5.34,
+        2.38
+      ],
+      "wgs84": [
+        121.49269447249851,
+        31.22723806097477
+      ],
+      "expected_map": "building",
+      "model_obstacle": true,
+      "source_cut": true
+    },
+    {
+      "name": "北角壁柱同址保留后部",
+      "xy": [
+        5.34,
+        3.45
+      ],
+      "wgs84": [
+        121.49268356566729,
+        31.22723569225185
+      ],
+      "expected_map": "building",
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "南邻侧-1.61",
+      "xy": [
+        -6.8,
+        -1.61
+      ],
+      "wgs84": [
+        121.49276657223136,
+        31.22714107583892
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "南邻侧0.38",
+      "xy": [
+        -6.8,
+        0.38
+      ],
+      "wgs84": [
+        121.49274628756396,
+        31.227136670452456
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "南邻侧2.3",
+      "xy": [
+        -6.8,
+        2.3
+      ],
+      "wgs84": [
+        121.4927267164276,
+        31.227132420029154
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北侧方浜中路-1.61",
+      "xy": [
+        8.12,
+        -1.61
+      ],
+      "wgs84": [
+        121.49272794680311,
+        31.227271125666363
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北侧方浜中路0.38",
+      "xy": [
+        8.12,
+        0.38
+      ],
+      "wgs84": [
+        121.49270766213573,
+        31.22726672028597
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    },
+    {
+      "name": "北侧方浜中路2.3",
+      "xy": [
+        8.12,
+        2.3
+      ],
+      "wgs84": [
+        121.49268809099935,
+        31.227262469868514
+      ],
+      "expected_map": null,
+      "model_obstacle": false,
+      "source_cut": false
+    }
+  ],
+  "neighbors": {
+    "34": 44.86448748037851,
+    "275": 58.53263200394158,
+    "321": 22.566833675556246,
+    "380": 33.167320428973774,
+    "462": 21.339317186643804,
+    "728": 49.311173683716966,
+    "757": 53.986574551001226,
+    "826": 58.803056939967455,
+    "901": 39.96914318705564,
+    "1042": 47.63981451695407,
+    "1126": 41.72724785009374,
+    "1149": 8.51731325991513,
+    "1252": 37.57285556693073,
+    "1264": 45.54771535971695,
+    "1348": 30.21891730408579,
+    "1383": 48.924921485770426,
+    "1726": 41.46387376578499
+  },
+  "area_model_m2": 42.00267970882309,
+  "area_collision_m2": 35.95888800000001,
+  "area_cut_m2": 63.03407278062709,
+  "seam_segments": 1
+}
