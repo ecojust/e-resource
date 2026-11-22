@@ -21,3 +21,7 @@
 ## 独立页的桌面与触屏视图
 
 在1250像素宽的桌面及390像素宽的手机上分别切换近景和远景。四幅正面图均完整显示两重灰瓦檐、红色窗框、横匾与贯通的门洞。实际保存的原始模型、网页近景、远景和Blender工程各自与清单的文件长度及SHA-256相符。[桌面近景](viewer-desktop-full.png) · [桌面远景](viewer-desktop-lod.png) · [手机近景](viewer-mobile-full.png) · [手机远景](viewer-mobile-lod.png) · [四项实际下载](viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/6a81ab0234c1488485e79f240d2621455ed9e96d/projects/shanghai/index.html#landmark=huangpu-longmen-village-gatehouse&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，8 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
