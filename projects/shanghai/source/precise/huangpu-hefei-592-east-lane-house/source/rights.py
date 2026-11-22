@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Baidu Maps street panorama, field measurements only'
+PHOTO_SOURCE='https://map.baidu.com/?panotype=street&pid=09000300001502091227113707B'
+LICENSE_URL='https://opensource.org/license/mit/'
+GEOMETRY_LICENSE='MIT; replacement address glyphs SIL OFL 1.1'
+TEXTURE_LICENSE='MIT'

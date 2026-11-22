@@ -1,0 +1,728 @@
+{
+ "coordinates": "X east along street, Y into lane, Z up. Origin follows hefei-street-cameras.json, the street corner of the public east gable. Reported ground levels are local photographic interpolation.",
+ "photographic_observations": "Three separate vehicle stations on 9 February 2015, with a further September 2017 check of the west address face. The native panorama is not distributed. W and E are the two gate posts viewed from the street.",
+ "method": "Joint least-squares estimation of two vertical red street arrises, the planar rectangular address plate, two cap summits and the orientation of the eastern camera. February west and far west station poses are taken from the independent building-window calibration. Two similar pier heights and weak camera orientation priors are used in the fit. Stereo station spacing is taken from the published map coordinates.",
+ "features": {
+  "west red street corner head": {
+   "xyz_m": [
+    -3.464221,
+    -1.506668,
+    3.121397
+   ],
+   "observed_px": [
+    [
+     432,
+     103
+    ],
+    [
+     274,
+     180
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     426.02,
+     101.64
+    ],
+    [
+     274.49,
+     181.74
+    ],
+    [
+     544.8,
+     149.64
+    ]
+   ]
+  },
+  "west red street corner foot": {
+   "xyz_m": [
+    -3.464221,
+    -1.506668,
+    0.568507
+   ],
+   "observed_px": [
+    [
+     418,
+     484
+    ],
+    [
+     280,
+     421
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     423.83,
+     486.52
+    ],
+    [
+     280.62,
+     417.62
+    ],
+    [
+     544.65,
+     375.54
+    ]
+   ]
+  },
+  "west plate TL": {
+   "xyz_m": [
+    -4.111876,
+    -1.382494,
+    3.057603
+   ],
+   "observed_px": [
+    [
+     328,
+     107
+    ],
+    [
+     228,
+     190
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     327.99,
+     106.83
+    ],
+    [
+     228.75,
+     189.6
+    ],
+    [
+     515.31,
+     152.71
+    ]
+   ]
+  },
+  "west plate TR": {
+   "xyz_m": [
+    -3.551071,
+    -1.520878,
+    3.057603
+   ],
+   "observed_px": [
+    [
+     416,
+     110
+    ],
+    [
+     267,
+     188
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     415.58,
+     110.51
+    ],
+    [
+     266.73,
+     187.82
+    ],
+    [
+     543.61,
+     154.95
+    ]
+   ]
+  },
+  "west plate BL": {
+   "xyz_m": [
+    -4.111876,
+    -1.382494,
+    2.862676
+   ],
+   "observed_px": [
+    [
+     328,
+     138
+    ],
+    [
+     230,
+     207
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     328.0,
+     137.85
+    ],
+    [
+     229.31,
+     207.49
+    ],
+    [
+     515.33,
+     170.88
+    ]
+   ]
+  },
+  "west plate BR": {
+   "xyz_m": [
+    -3.551071,
+    -1.520878,
+    2.862676
+   ],
+   "observed_px": [
+    [
+     415,
+     141
+    ],
+    [
+     267,
+     206
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     415.43,
+     140.75
+    ],
+    [
+     267.22,
+     206.22
+    ],
+    [
+     543.6,
+     172.51
+    ]
+   ]
+  },
+  "west cap summit": {
+   "xyz_m": [
+    -3.901713,
+    -0.975013,
+    3.469035
+   ],
+   "observed_px": [
+    [
+     329,
+     54
+    ],
+    [
+     266,
+     151
+    ],
+    null
+   ],
+   "reprojected_px": [
+    [
+     329.5,
+     51.55
+    ],
+    [
+     265.38,
+     155.17
+    ],
+    [
+     486.69,
+     117.0
+    ]
+   ]
+  },
+  "east red head": {
+   "xyz_m": [
+    -0.40779,
+    -1.808926,
+    3.115951
+   ],
+   "observed_px": [
+    [
+     782,
+     124
+    ],
+    [
+     540,
+     172
+    ],
+    [
+     635,
+     165
+    ]
+   ],
+   "reprojected_px": [
+    [
+     785.35,
+     124.58
+    ],
+    [
+     542.03,
+     173.89
+    ],
+    [
+     636.31,
+     161.51
+    ]
+   ]
+  },
+  "east red corner foot": {
+   "xyz_m": [
+    -0.40779,
+    -1.808926,
+    0.527165
+   ],
+   "observed_px": [
+    [
+     779,
+     450
+    ],
+    [
+     543,
+     449
+    ],
+    [
+     636,
+     355
+    ]
+   ],
+   "reprojected_px": [
+    [
+     776.23,
+     454.87
+    ],
+    [
+     541.27,
+     442.3
+    ],
+    [
+     635.18,
+     353.16
+    ]
+   ]
+  },
+  "east cap summit": {
+   "xyz_m": [
+    0.100881,
+    -1.560693,
+    3.462488
+   ],
+   "observed_px": [
+    [
+     803,
+     86
+    ],
+    [
+     602,
+     137
+    ],
+    [
+     639,
+     142
+    ]
+   ],
+   "reprojected_px": [
+    [
+     806.49,
+     87.02
+    ],
+    [
+     600.29,
+     138.42
+    ],
+    [
+     627.71,
+     138.35
+    ]
+   ]
+  }
+ },
+ "camera_order": [
+  "root-gate-feb-west",
+  "root-gate-feb-east",
+  "root-gate-feb-farwest"
+ ],
+ "cameras": {
+  "root-gate-feb-west": {
+   "id": "09000300001502091227113707B",
+   "station_wgs84": [
+    121.46740188335737,
+    31.215675440483256
+   ],
+   "recorded_eye_height_m": 2.32,
+   "projection": [
+    [
+     1243.7236064423082,
+     -245.74650094507209,
+     -24.008166809517224,
+     7290.533048970595
+    ],
+    [
+     131.31256269602142,
+     182.11794976260748,
+     -1194.9398341651474,
+     5241.039622608132
+    ],
+    [
+     0.5455081882754033,
+     0.8349878528875854,
+     -0.07222258687327089,
+     11.066132009586731
+    ]
+   ],
+   "date": "20150209",
+   "image_sha256": "df6058bc84b98e74435ed49def785ef42e63010ba7e33d73e3b79a8c25d25046",
+   "metadata_url": "https://mapsv0.bdimg.com/?qt=sdata&sid=09000300001502091227113707B",
+   "raster_inputs": [
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227113707B&pos=3_7&z=5&from=PC",
+     "sha256": "4787921ab1042044a029847085a635874cbd4597ab1e937b8fbf5138590dd8cc",
+     "bytes": 49553
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227113707B&pos=3_8&z=5&from=PC",
+     "sha256": "cc2ea90cb4bac56e579053b69f70ed6ea7878f1d2d77024cc4f290de4e609ea0",
+     "bytes": 38766
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227113707B&pos=3_9&z=5&from=PC",
+     "sha256": "a8181dc93d7c1f8b523c7d7e1c8ce1be7d0a4fe9e484e177dfe88332b81e78b7",
+     "bytes": 45028
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227113707B&pos=4_7&z=5&from=PC",
+     "sha256": "d4b4469f4d7d873b2837cc315d148805310d9a5d0af9772b3f8b2566cb454015",
+     "bytes": 27425
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227113707B&pos=4_8&z=5&from=PC",
+     "sha256": "31982ad07eda11c9913669bced4bfa2610057dbb70a1ed5a2edcb0d1a522658a",
+     "bytes": 27040
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227113707B&pos=4_9&z=5&from=PC",
+     "sha256": "31812aad38c523541d6cd4709ff60839673abfb8f6a366d846772784aac327d7",
+     "bytes": 23816
+    }
+   ],
+   "frame": {
+    "az": 20,
+    "pitch": -4,
+    "width": 950,
+    "height": 620,
+    "hfov": 44
+   }
+  },
+  "root-gate-feb-east": {
+   "id": "09000300001502091227130487B",
+   "station_wgs84": [
+    121.46750329939644,
+    31.21567685721248
+   ],
+   "recorded_eye_height_m": 2.32,
+   "projection": [
+    [
+     739.2847632447567,
+     768.880067687355,
+     -51.51606009330727,
+     6565.909523391159
+    ],
+    [
+     -64.1847620553887,
+     248.71346981673346,
+     -945.724246465067,
+     4882.544736212489
+    ],
+    [
+     -0.2614625398512016,
+     0.9600334920841371,
+     -0.09986508064031153,
+     10.636418337220622
+    ]
+   ],
+   "date": "20150209",
+   "image_sha256": "e9d3e24b0fd25ec0e4624a2bba5634fbfec4310c045a6de32ed222f29eddde81",
+   "metadata_url": "https://mapsv0.bdimg.com/?qt=sdata&sid=09000300001502091227130487B",
+   "raster_inputs": [
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=3_5&z=5&from=PC",
+     "sha256": "c4cc971dd388e441d6df1a343532087a7b067f29781c6c1a68e7588c5e088471",
+     "bytes": 55262
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=3_6&z=5&from=PC",
+     "sha256": "efdfa8a01ce8835941ba8b05a4ab36a0f41337c6cf5894c1bd501b6f2aa3cd70",
+     "bytes": 41795
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=3_7&z=5&from=PC",
+     "sha256": "81ecb858adcb42c397087987fe2da94944ec94789cde660f65a8414538d72764",
+     "bytes": 37462
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=3_8&z=5&from=PC",
+     "sha256": "736a04a8cc55c8dd679dee52a444cb143603157127fdc004e1a95e1cd653ff7c",
+     "bytes": 35077
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=4_5&z=5&from=PC",
+     "sha256": "765d101e526eb05ef62595a7aa16b66f13da0eb3e11f389bcd0c36dfbc369b75",
+     "bytes": 24803
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=4_6&z=5&from=PC",
+     "sha256": "3eb075321f21e6ba6c9a1da62280bb2248acb4490758cb10e8470cdb307ee267",
+     "bytes": 26368
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=4_7&z=5&from=PC",
+     "sha256": "8e8c945827967be6a3d66310ebfcc8a67d5d93e7e057d0dd045d687a407ff36b",
+     "bytes": 23688
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=4_8&z=5&from=PC",
+     "sha256": "03adc17ffc5947d775115c0b4911a376dc7a892f5239532a9565fec2aa4eec36",
+     "bytes": 27053
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=5_6&z=5&from=PC",
+     "sha256": "62f7944b1e3f704445f9723a6442e0d78b15380f6f0868c169ccdbb4f8afd330",
+     "bytes": 22799
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=5_7&z=5&from=PC",
+     "sha256": "774b4424cc3846f3df725dcad4eb76a56591a09a34b4be7afbed895e9dd0ed1b",
+     "bytes": 22280
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227130487B&pos=5_5&z=5&from=PC",
+     "sha256": "1960021b25a5fdc1d8edcd12f7a443e38d3669f215c59f8d0da5ba54d41c62b3",
+     "bytes": 22143
+    }
+   ],
+   "frame": {
+    "az": 330,
+    "pitch": -4,
+    "width": 1100,
+    "height": 700,
+    "hfov": 62
+   }
+  },
+  "root-gate-feb-farwest": {
+   "id": "09000300001502091227096287B",
+   "station_wgs84": [
+    121.4673004657366,
+    31.215676569002117
+   ],
+   "recorded_eye_height_m": 2.32,
+   "projection": [
+    [
+     888.1063859735174,
+     -983.1803186815046,
+     -38.08013483939057,
+     9284.413124765491
+    ],
+    [
+     204.4746731400229,
+     83.59461354639905,
+     -1256.385146819757,
+     6835.354885188899
+    ],
+    [
+     0.9302441531594497,
+     0.3599284137679811,
+     -0.07139574549735578,
+     17.883319491295094
+    ]
+   ],
+   "date": "20150209",
+   "image_sha256": "c9489605df6d687409a007a638b2b58c34424eb95aaf6b728c26548769650c08",
+   "metadata_url": "https://mapsv0.bdimg.com/?qt=sdata&sid=09000300001502091227096287B",
+   "raster_inputs": [
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227096287B&pos=3_9&z=5&from=PC",
+     "sha256": "cce9d9cc84b77a7753646cde6ab53dd60bccf6bd7b45d3a240e791452f031ca5",
+     "bytes": 45642
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227096287B&pos=3_10&z=5&from=PC",
+     "sha256": "a7a038dbd645b2f0f50f4ec2ac9928a8c7cad7ff5c836d0f2e436c84e972dc9b",
+     "bytes": 54986
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227096287B&pos=3_11&z=5&from=PC",
+     "sha256": "53a4e057f65b71078f516a845bccfd8acd6803cb3fdc4268c016d55f3fddd45e",
+     "bytes": 57390
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227096287B&pos=4_9&z=5&from=PC",
+     "sha256": "41e7d38efccb7fe28c17e201679b8ec4764765848712365d4230a0dc079f55fe",
+     "bytes": 27276
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227096287B&pos=4_10&z=5&from=PC",
+     "sha256": "fa7ae8ae7f1eb340526f1de452ff2c4c6226a02a71282f21159804b8d5a7dd6c",
+     "bytes": 25347
+    },
+    {
+     "url": "https://mapsv0.bdimg.com/?qt=pdata&sid=09000300001502091227096287B&pos=4_11&z=5&from=PC",
+     "sha256": "7e901e4108ab555bce173f7d8c4c41ed26f76ba397b85d162b349b047d802121",
+     "bytes": 19166
+    }
+   ],
+   "frame": {
+    "az": 55,
+    "pitch": -4,
+    "width": 950,
+    "height": 620,
+    "hfov": 42
+   }
+  }
+ },
+ "east_camera_correction_yaw_pitch_roll_deg": [
+  1.260146,
+  -1.731401,
+  0.214502
+ ],
+ "alcove": "The pavement and masonry disappear behind shelving, trees, signs or the near pier at some angles. Only the lane mouth and its first pair of curved fence returns are modeled.",
+ "side_screen_outer_centres_approx_xy_m": [
+  [
+   -6.18,
+   -2.34
+  ],
+  [
+   2.25,
+   -3.66
+  ]
+ ],
+ "brick_colour_profile": "Alternating long/short ends give two-course periods of 18.83 pixels on the west pier and 15.55–15.83 on the east in the 950×620 west view. The September 2017 west pier has a 10.73 px period and the 2015 east-station view of the east pier 13.39 px. Dividing by the local vertical projection gives about 0.061 m per course. On the signed west post the toothed facing stops above the pavement; on the east post it descends to the pavement.",
+ "clear_text": "592弄",
+ "other_type": "Smaller painted characters and numerals are visible on the green sign. At this sampling their individual shapes cannot be securely transcribed.",
+ "gate_wing": "At both 2015 stations the two black metal leaves are swung inward alongside the entrance, with clear pedestrian passage through the center. The 2017 view corroborates the east leaf.",
+ "uncertainty": "Dimensions and depths are street-photogrammetric estimates. The west gate iron is partly screened by a tree. Color is interpreted from areas with differing illumination.",
+ "open_leaves": [
+  {
+   "name": "West open iron leaf",
+   "hinge_xy_m": [
+    -3.24,
+    -1.205
+   ],
+   "free_top_xy_m": [
+    -3.24,
+    0.64
+   ],
+   "free_lower_xy_m": [
+    -3.24,
+    0.585
+   ],
+   "top_z": 3.084,
+   "under_head_z": 2.27,
+   "base_z": 0.6,
+   "pierced_band_bottom_z": 1.34,
+   "pierced_band_top_z": 1.545,
+   "upper_bar_intervals": 12,
+   "lower_bar_intervals": 10,
+   "band_lights": 3,
+   "projection": "The broad west leaf was read from the February eastern station. The adopted X=-3.24 m plane puts the hinges just clear of the mass of the west pier. The photographed rectangle spans about 1.85 m in this plane.",
+   "upper_bar_plane_y_m": [
+    -1.21816,
+    -1.13245,
+    -0.97903,
+    -0.79816,
+    -0.682,
+    -0.4909,
+    -0.34318,
+    -0.16585,
+    -0.00939,
+    0.15135,
+    0.31658,
+    0.48646,
+    0.63174
+   ],
+   "upper_bar_native_row": {
+    "u": [
+     308,
+     312,
+     319,
+     327,
+     332,
+     340,
+     346,
+     353,
+     359,
+     365,
+     371,
+     377,
+     382
+    ],
+    "v": 217,
+    "station": "root-gate-feb-east"
+   }
+  },
+  {
+   "name": "East open iron leaf",
+   "hinge_xy_m": [
+    -0.5,
+    -1.398
+   ],
+   "free_top_xy_m": [
+    -0.5,
+    -0.2644
+   ],
+   "free_lower_xy_m": [
+    -0.5,
+    -0.7389
+   ],
+   "top_z": 3.068,
+   "under_head_z": 2.602,
+   "base_z": 0.592,
+   "pierced_band_bottom_z": 1.42,
+   "pierced_band_top_z": 1.63,
+   "upper_bar_intervals": 9,
+   "lower_bar_intervals": 5,
+   "band_lights": 2,
+   "projection": "The upper frame overhangs the lower free edge by about 0.51 m. The same step is present in the September 2017 photograph. Read 2015 west station in the assumed leaf plane X=-0.50. Upper ends (738,137) and (643,138), free underside (643,194), lower free upright (679,402), hinged foot (735,440).",
+   "lower_bar_plane_y_m": [
+    -1.39255,
+    -1.25856,
+    -1.13293,
+    -0.95709,
+    -0.83688,
+    -0.73892
+   ],
+   "lower_bar_native_u_at_v267": [
+    678,
+    686,
+    696,
+    711,
+    722,
+    734
+   ],
+   "upper_bar_plane_y_m": [
+    -1.39731,
+    -1.25307,
+    -1.12812,
+    -1.01214,
+    -0.88185,
+    -0.74863,
+    -0.62489,
+    -0.53674,
+    -0.3826,
+    -0.26441
+   ],
+   "upper_bar_native_row": {
+    "u": [
+     643,
+     652,
+     664,
+     671,
+     681,
+     692,
+     703,
+     713,
+     724,
+     737
+    ],
+    "v": 163,
+    "station": "root-gate-feb-west"
+   }
+  }
+ ],
+ "registered_group_on_map": "The map names the estate 合肥小区, 合肥路592弄16-31号. Those characters identify the group in the map record. The additional tiny lettering of the original plaque remains below the transcription threshold."
+}
