@@ -1,0 +1,118 @@
+{
+ "gate_to_house": [
+  [
+   0.9366053982734097,
+   0.15978077274437905,
+   0.006828682817083935,
+   11.596285569986867
+  ],
+  [
+   -0.16794188426654347,
+   0.9423685419469472,
+   -0.008179097462559725,
+   -21.358175704934638
+  ],
+  [
+   -0.0031382453253229583,
+   0.00907442919186784,
+   0.9481781500809044,
+   0.30309811193413005
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "gate_joint_world_m": [
+  11.596285569986867,
+  -21.358175704934638,
+  0.30309811193413005
+ ],
+ "gate_scale": 0.951548210628138,
+ "gate_yaw_degrees_relative_to_house_x": -10.165626563056126,
+ "gate_camera_sha256": "c47726efd67951e79d1def327866ecf8f09a9bc939a80f24d8c1bdf88dbedd25",
+ "house_camera_sha256": "030287675ea40a0e4ea0e563bb6ecf18dc7ccacb5ca1dd9074d47e41b3bdf254",
+ "source_native_sha256": {
+  "5": "04e0affe60dd6ef9ac683cec093307149dd6f5fb9c6895dd9ab1bbad91e9a5e5",
+  "6": "05253cacf3d970048f526bc726ae665acf2f5677de3717f45749f920b0cdfe80"
+ },
+ "gate_local_eye_before_transfer_m": [
+  4.210408097972759,
+  -5.964932218501022,
+  1.4936410042335975
+ ],
+ "house05_eye_m": [
+  14.596894644902797,
+  -27.698660687348177,
+  1.6519942276310833
+ ],
+ "house06_eye_m": [
+  9.792830942010045,
+  -20.82112089157552,
+  1.7359989153098836
+ ],
+ "house06_eye_in_transferred_gate_m": [
+  -1.9758531095477485,
+  0.23081748416703943,
+  1.5024661289160854
+ ],
+ "positive_y_is_courtyard": true,
+ "optical_transfer": {
+  "uniform_scale_removed_singular_values": [
+   1.0075501294917308,
+   0.9995772598837199,
+   0.9938956069266578
+  ],
+  "vertical_axis_difference_deg": 0.643823677441924,
+  "comment": "The two 05 calibrations are related by a measured near-similarity. Transferring through their common optical centre preserves the entire native image, including the plaque and near-zero-width scroll edges. Small departures from orthogonality are calibration differences, not a surveyed lean."
+ },
+ "field06_unobstructed": {
+  "native_size": [
+   4912,
+   3264
+  ],
+  "triangles": 70664,
+  "visibility_by_scale": {
+   "0.87": false,
+   "0.92": false,
+   "0.95": false,
+   "0.98": false,
+   "0.99": false,
+   "1.0": true,
+   "1.05": true,
+   "1.1547672": true
+  },
+  "largest_scale_with_all_triangles_outside": 0.9958786058425902,
+  "smallest_intruding_scale": 0.995878620147705,
+  "selected_scale_leaves_any_visible_triangles": false
+ },
+ "conditioning": {
+  "wicket_gauge_m": 0.9,
+  "wicket_tolerance_m": 0.12,
+  "uncertainty_in_courtyard_grade_m": 0.2,
+  "assumed_handle_elevation_uncertainty_m": 0.15,
+  "plausible_scale_range": [
+   0.8666666666666667,
+   0.9958786058425902
+  ],
+  "model_5_50_95_percentiles": [
+   0.8812978408742637,
+   0.951548210628138,
+   0.992020489060742
+  ],
+  "alternative_gate_origin_grade_at_range_ends_m": [
+   0.42342452699659683,
+   0.24025621149840548
+  ],
+  "method": "Intersect the original wicket-width interval with the measured upper bound from every triangle and the full second photograph. Select the median of the remaining grid weighted by the independent approximate width and height priors. This is a conditional model range, not a measured gate distance."
+ },
+ "physical_grade": {
+  "working_local_datum_elevation_m": 0.30309811193413005,
+  "finished_post_base_house_z_m": -0.016,
+  "finished_iron_clearance_house_z_m": 0.035,
+  "explanation": "The gate feet are below the source image. Only the plain post bases and unadorned bottom ends of the uprights continue to the observed forecourt level."
+ },
+ "limits": "The closed leaves are visible in 05. Their open or closed state 21 seconds later cannot be observed in 06. This reconstruction retains the photographed 05 state and also places the entire gate outside the 06 camera frame. No camera was moved."
+}

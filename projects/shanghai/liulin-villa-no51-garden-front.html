@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>柳林别墅51号双凸窗与弧廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.69" aria-label="柳林别墅51号"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 愚园路532弄</p>
+    <h1>柳林别墅51号</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">愚园路532弄51号的三层凸窗分立在弧形柱廊两侧。穿过花园门，左翼二层两扇打开的木窗后面露出横帘。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看庭院正面</button>
+      <button type="button" data-view="front">看双层弧廊</button>
+      <button type="button" data-view="above">看露台与屋面</button>
+      <button type="button" data-view="inscription">看五十一号院门</button>
+      <button type="button" data-view="return">看开启的木窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/liulin-villa-no51-garden-front-v1/elevations/no51-garden-front.jpg">看主楼与两翼凸窗</a>
+    <a href="data/audit/liulin-villa-no51-garden-front-v1/colonnade/garden-colonnade.jpg">看柱廊与石栏杆</a>
+    <a href="data/audit/liulin-villa-no51-garden-front-v1/courtyard-gate/whole-model.jpg">看院门与五十一号铭牌</a>
+    <a href="data/audit/liulin-villa-no51-garden-front-v1/entrance-portal/garden-entrance.jpg">看正门与三级石阶</a>
+    <a href="data/audit/liulin-villa-no51-garden-front-v1/curved-parapet/whole-model.jpg">看女儿墙转弯处的砖缝</a>
+    <a href="source/precise/jingan-liulin-villa-no51-garden-front/README.md">查看照片与尺度依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-liulin-villa-no51-garden-front', {
+  "oblique": {
+    "center": [
+      0,
+      6.86,
+      -1.1
+    ],
+    "size": [
+      18.4,
+      14.8,
+      5.2
+    ],
+    "direction": [
+      0.17,
+      0.04,
+      1
+    ]
+  },
+  "front": {
+    "center": [
+      0,
+      4.65,
+      -0.45
+    ],
+    "size": [
+      10.3,
+      9.6,
+      4.0
+    ],
+    "direction": [
+      0.11,
+      0.04,
+      1
+    ]
+  },
+  "above": {
+    "center": [
+      0.02,
+      10.7,
+      -1.94
+    ],
+    "size": [
+      11.8,
+      7.5,
+      5.5
+    ],
+    "direction": [
+      0.55,
+      0.36,
+      1
+    ]
+  },
+  "inscription": {
+    "center": [
+      11.6,
+      1.83,
+      21.33
+    ],
+    "size": [
+      7.3,
+      4.55,
+      1.6
+    ],
+    "direction": [
+      0.02,
+      0.05,
+      1
+    ]
+  },
+  "return": {
+    "center": [
+      -5.65,
+      6.64,
+      -0.1
+    ],
+    "size": [
+      4.1,
+      3.65,
+      1.15
+    ],
+    "direction": [
+      -0.2,
+      0.03,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
