@@ -12,12 +12,21 @@ PALETTE = {m: dict(color=c,roughness=r) for m,c,r in [
     (TILE,[.426,.241,.178],.90),(RIDGE,[.75,.755,.69],.84),(IRON,[.095,.091,.085],.67),
     (PLATE,[.09,.317,.206],.65),(MARK,[.87,.853,.70],.68)]}
 CENTRES = (-1.32,.20,1.37)
+def save_mapped_texture(tile, path):
+    """Store the material pattern 5 by 4 times inside one clamp-to-edge image."""
+    atlas=Image.new('P',(tile.width*5,tile.height*4))
+    atlas.putpalette(tile.getpalette())
+    for row in range(4):
+        for col in range(5):
+            atlas.paste(tile,(col*tile.width,row*tile.height))
+    atlas.save(path,optimize=True)
+
 def texture():
     target=Path(__file__).with_name('buff-painted-render.png')
     if not target.exists():
         rng=np.random.default_rng(779)
         field=rng.normal(0,2.6,(240,240,1))+np.array([211,190,139])
-        Image.fromarray(field.clip(0,255).astype('uint8')).quantize(80).save(target)
+        save_mapped_texture(Image.fromarray(field.clip(0,255).astype('uint8')).quantize(80),target)
     PALETTE[RENDER]['texture']=str(target)
 def digit_lines():
     four=[(-.066,1.750),(-.101,1.692),(-.043,1.692)]
@@ -75,4 +84,4 @@ def add_building(b,far=False):
         stroke([(xx+.098*np.cos(t),1.355+.076*np.sin(t)) for t in ts],.009,IRON,'Shallow bowed railing crest')
     for part in b.parts:
         if part['material']==RENDER:
-            part['texcoords']=[[(x+.19)/.67,z/.67] for x,y,z in part['vertices']]
+            part['texcoords']=[[((x+.19)/.67+2)/5,z/(4*.67)] for x,y,z in part['vertices']]
