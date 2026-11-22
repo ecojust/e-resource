@@ -1,0 +1,489 @@
+{
+  "calibration": "Two independent garden camera poses jointly adjusted with the four shared east porch details and the measured south gallery controls. The four necks are held out. Distinctive front edges and returns define registrations. Gaussian priors on lens for the dated Nikon, grade and bay size.",
+  "world": {
+    "column_X": 19.890242589545455,
+    "southern_column_Y": 9.886739869013635,
+    "sill_Z": 0.5479385793854274,
+    "axis_spacing_m": 2.607000518275389,
+    "garden_east_return_Y": 4.118743274647595
+  },
+  "garden_cameras": {
+    "gao07": [
+      [
+        -9.49654051965345,
+        498.7291682323698,
+        74.90200843125204,
+        3726.1109784737105
+      ],
+      [
+        -233.18124348288353,
+        200.63182270830984,
+        -306.0713279599147,
+        8365.463192574194
+      ],
+      [
+        -0.7307502800976522,
+        0.6437174929387093,
+        0.2272263572341584,
+        24.575950820345064
+      ]
+    ],
+    "gao13": [
+      [
+        214.1215935007527,
+        638.9746463670975,
+        69.61259084782256,
+        478.0871632171461
+      ],
+      [
+        -231.72357157485075,
+        257.28434906362844,
+        -521.366251699614,
+        9651.145090091353
+      ],
+      [
+        -0.6459176341813064,
+        0.7332188653350705,
+        0.21255706379787925,
+        25.010626208979573
+      ]
+    ]
+  },
+  "observations": [
+    {
+      "camera": "gao07",
+      "feature": "a0",
+      "role": "garden",
+      "observed_px": [
+        155,
+        270
+      ],
+      "residual_vector_px": [
+        4.06,
+        -0.17
+      ],
+      "error_px": 4.06
+    },
+    {
+      "camera": "gao07",
+      "feature": "b0",
+      "role": "garden",
+      "observed_px": [
+        175,
+        261
+      ],
+      "residual_vector_px": [
+        -1.27,
+        -2.62
+      ],
+      "error_px": 2.91
+    },
+    {
+      "camera": "gao07",
+      "feature": "c0",
+      "role": "garden",
+      "observed_px": [
+        221,
+        238
+      ],
+      "residual_vector_px": [
+        3.65,
+        1.15
+      ],
+      "error_px": 3.83
+    },
+    {
+      "camera": "gao07",
+      "feature": "d0",
+      "role": "garden",
+      "observed_px": [
+        337,
+        213
+      ],
+      "residual_vector_px": [
+        -9.46,
+        0.01
+      ],
+      "error_px": 9.46
+    },
+    {
+      "camera": "gao07",
+      "feature": "a1",
+      "role": "garden",
+      "observed_px": [
+        165,
+        214
+      ],
+      "residual_vector_px": [
+        -0.51,
+        4.38
+      ],
+      "error_px": 4.41
+    },
+    {
+      "camera": "gao07",
+      "feature": "b1",
+      "role": "garden",
+      "observed_px": [
+        187,
+        194
+      ],
+      "residual_vector_px": [
+        -7.18,
+        1.69
+      ],
+      "error_px": 7.38
+    },
+    {
+      "camera": "gao07",
+      "feature": "c1",
+      "role": "garden",
+      "observed_px": [
+        227,
+        161
+      ],
+      "residual_vector_px": [
+        2.98,
+        -2.42
+      ],
+      "error_px": 3.84
+    },
+    {
+      "camera": "gao07",
+      "feature": "d1",
+      "role": "garden",
+      "observed_px": [
+        322,
+        113
+      ],
+      "residual_vector_px": [
+        5.68,
+        -3.11
+      ],
+      "error_px": 6.47
+    },
+    {
+      "camera": "gao07",
+      "feature": "left_cap",
+      "role": "porch",
+      "observed_px": [
+        514,
+        272
+      ],
+      "residual_vector_px": [
+        0.51,
+        -0.3
+      ],
+      "error_px": 0.59
+    },
+    {
+      "camera": "gao07",
+      "feature": "right_cap",
+      "role": "porch",
+      "observed_px": [
+        540,
+        276
+      ],
+      "residual_vector_px": [
+        -2.04,
+        -0.69
+      ],
+      "error_px": 2.15
+    },
+    {
+      "camera": "gao07",
+      "feature": "canopy_near_left",
+      "role": "porch",
+      "observed_px": [
+        545,
+        255
+      ],
+      "residual_vector_px": [
+        0.09,
+        1.4
+      ],
+      "error_px": 1.4
+    },
+    {
+      "camera": "gao07",
+      "feature": "canopy_near_right",
+      "role": "porch",
+      "observed_px": [
+        581,
+        266
+      ],
+      "residual_vector_px": [
+        0.85,
+        -0.76
+      ],
+      "error_px": 1.14
+    },
+    {
+      "camera": "gao07",
+      "feature": "left_neck",
+      "role": "held out",
+      "observed_px": [
+        514,
+        278
+      ],
+      "residual_vector_px": [
+        0.06,
+        2.27
+      ],
+      "error_px": 2.27
+    },
+    {
+      "camera": "gao07",
+      "feature": "right_neck",
+      "role": "held out",
+      "observed_px": [
+        540,
+        282
+      ],
+      "residual_vector_px": [
+        -2.4,
+        1.11
+      ],
+      "error_px": 2.64
+    },
+    {
+      "camera": "gao07",
+      "feature": "gallery side northern return",
+      "role": "garden-return",
+      "observed_px": [
+        410,
+        227
+      ],
+      "residual_vector_px": [
+        -1.03,
+        3.97
+      ],
+      "error_px": 4.1
+    },
+    {
+      "camera": "gao13",
+      "feature": "a0",
+      "role": "garden",
+      "observed_px": [
+        28,
+        276
+      ],
+      "residual_vector_px": [
+        3.01,
+        0.4
+      ],
+      "error_px": 3.04
+    },
+    {
+      "camera": "gao13",
+      "feature": "b0",
+      "role": "garden",
+      "observed_px": [
+        75,
+        262
+      ],
+      "residual_vector_px": [
+        -3.13,
+        -2.47
+      ],
+      "error_px": 3.99
+    },
+    {
+      "camera": "gao13",
+      "feature": "c0",
+      "role": "garden",
+      "observed_px": [
+        177,
+        238
+      ],
+      "residual_vector_px": [
+        -1.25,
+        -4.02
+      ],
+      "error_px": 4.21
+    },
+    {
+      "camera": "gao13",
+      "feature": "d0",
+      "role": "garden",
+      "observed_px": [
+        349,
+        202
+      ],
+      "residual_vector_px": [
+        -0.63,
+        2.31
+      ],
+      "error_px": 2.39
+    },
+    {
+      "camera": "gao13",
+      "feature": "c0back",
+      "role": "garden",
+      "observed_px": [
+        198,
+        241
+      ],
+      "residual_vector_px": [
+        1.9,
+        -2.96
+      ],
+      "error_px": 3.52
+    },
+    {
+      "camera": "gao13",
+      "feature": "a1",
+      "role": "garden",
+      "observed_px": [
+        41,
+        195
+      ],
+      "residual_vector_px": [
+        -1.27,
+        1.1
+      ],
+      "error_px": 1.68
+    },
+    {
+      "camera": "gao13",
+      "feature": "b1",
+      "role": "garden",
+      "observed_px": [
+        82,
+        156
+      ],
+      "residual_vector_px": [
+        -1.1,
+        7.75
+      ],
+      "error_px": 7.82
+    },
+    {
+      "camera": "gao13",
+      "feature": "c1",
+      "role": "garden",
+      "observed_px": [
+        181,
+        115
+      ],
+      "residual_vector_px": [
+        1.43,
+        0.74
+      ],
+      "error_px": 1.61
+    },
+    {
+      "camera": "gao13",
+      "feature": "d1",
+      "role": "garden",
+      "observed_px": [
+        346,
+        62
+      ],
+      "residual_vector_px": [
+        1.25,
+        -0.63
+      ],
+      "error_px": 1.4
+    },
+    {
+      "camera": "gao13",
+      "feature": "left_cap",
+      "role": "porch",
+      "observed_px": [
+        570,
+        289
+      ],
+      "residual_vector_px": [
+        -0.13,
+        -0.38
+      ],
+      "error_px": 0.41
+    },
+    {
+      "camera": "gao13",
+      "feature": "right_cap",
+      "role": "porch",
+      "observed_px": [
+        597,
+        294
+      ],
+      "residual_vector_px": [
+        -0.73,
+        0.07
+      ],
+      "error_px": 0.74
+    },
+    {
+      "camera": "gao13",
+      "feature": "canopy_near_left",
+      "role": "porch",
+      "observed_px": [
+        613,
+        266
+      ],
+      "residual_vector_px": [
+        -0.25,
+        3.07
+      ],
+      "error_px": 3.08
+    },
+    {
+      "camera": "gao13",
+      "feature": "canopy_near_right",
+      "role": "porch",
+      "observed_px": [
+        651,
+        284
+      ],
+      "residual_vector_px": [
+        1.38,
+        -2.4
+      ],
+      "error_px": 2.76
+    },
+    {
+      "camera": "gao13",
+      "feature": "left_neck",
+      "role": "held out",
+      "observed_px": [
+        569,
+        298
+      ],
+      "residual_vector_px": [
+        -0.04,
+        2.12
+      ],
+      "error_px": 2.12
+    },
+    {
+      "camera": "gao13",
+      "feature": "right_neck",
+      "role": "held out",
+      "observed_px": [
+        597,
+        301
+      ],
+      "residual_vector_px": [
+        -1.51,
+        3.57
+      ],
+      "error_px": 3.88
+    },
+    {
+      "camera": "gao13",
+      "feature": "gallery side northern return",
+      "role": "garden-return",
+      "observed_px": [
+        443,
+        230
+      ],
+      "residual_vector_px": [
+        -1.1,
+        0.52
+      ],
+      "error_px": 1.22
+    }
+  ],
+  "units": "metres, x east, y north, z above garden ground"
+}
