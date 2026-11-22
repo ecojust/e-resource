@@ -8,12 +8,21 @@ from shapely.affinity import translate,scale
 ID='changning-wuyi-100-numbered-door-and-mailbox'
 BRICK='Red brickwork';SAND='Pale cement reveal';STONE='Grey base and threshold';RED='Soldier course';DOOR='Dark recessed leaf';GREEN='Green enamel address';WHITE='Off-white enamel lettering';MAIL='Deep green mailbox';EDGE='Green mailbox rim';BRASS='Brass-coloured lock';LIGHT='Warm porch lamps';PIPE='Pale downpipe'
 PALETTE={k:dict(color=c,roughness=r)for k,c,r in [(BRICK,[1.,1.,1.],.95),(SAND,[.627,.586,.52],.91),(STONE,[.54,.532,.489],.90),(RED,[.505,.297,.218],.90),(DOOR,[.128,.113,.107],.79),(GREEN,[.097,.31,.215],.67),(WHITE,[.841,.842,.72],.68),(MAIL,[.142,.237,.173],.72),(EDGE,[.214,.303,.216],.73),(BRASS,[.57,.47,.289],.60),(LIGHT,[.94,.82,.52],.46),(PIPE,[.77,.78,.73],.82)]}
+def save_mapped_texture(tile, path):
+    """Store the material pattern 2 by 3 times inside one clamp-to-edge image."""
+    atlas=Image.new('P',(tile.width*2,tile.height*3))
+    atlas.putpalette(tile.getpalette())
+    for row in range(3):
+        for col in range(2):
+            atlas.paste(tile,(col*tile.width,row*tile.height))
+    atlas.save(path,optimize=True)
+
 def texture():
     f=Path(__file__).with_name('red-stretcher-course.png')
     if not f.exists():
         y,x=np.indices((512,512));row=y//19;col=(x+27*(row%2))//54;g=np.random.default_rng(703)
         a=np.array([135,73,55])+g.normal(0,7,(30,12))[row,col,None]+g.normal(0,3.5,x.shape)[:,:,None]
-        mask=(y%19<=1)|((x+27*(row%2))%54<2);a[mask]=[170,145,125];Image.fromarray(a.clip(0,255).astype('uint8')).quantize(108).save(f)
+        mask=(y%19<=1)|((x+27*(row%2))%54<2);a[mask]=[170,145,125];save_mapped_texture(Image.fromarray(a.clip(0,255).astype('uint8')).quantize(108),f)
     PALETTE[BRICK]['texture']=str(f)
 def words(string,cx,cz,hw,hh):
     o=json.loads(Path(__file__).with_name('number-and-street.json').read_bytes())
@@ -51,4 +60,4 @@ def add_building(b,far=False):
     for x in [l+.187,r-.102]:
         panel(Point(x,1.965).buffer(.034,resolution=7 if far else 18),-.127,-.097,LIGHT,'Two sheltered round porch lights')
     for part in b.parts:
-        if part['material']==BRICK:part['texcoords']=[[(x+1.19)/1.77,z/1.155]for x,y,z in part['vertices']]
+        if part['material']==BRICK:part['texcoords']=[[(x+1.19)/(2*1.77),z/(3*1.155)]for x,y,z in part['vertices']]
