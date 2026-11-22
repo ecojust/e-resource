@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>戴宅的绿色曲边山墙、三联拱窗与折角阳台</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="戴宅曲边山墙、三联拱窗与透雕花格阳台"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">长宁区 · 利西路24弄5号</p>
+    <h1>利西路戴宅</h1>
+    <p>约1920年 · 顾道生设计</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">绿色山墙的两边向内收曲，上层拱窗下方排列三扇绿框拱窗。阳台转折处的石花格有圆环与斜撑，开孔能看见背后的窗墙。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">整体</button>
+      <button type="button" data-view="front">拱窗组</button>
+      <button type="button" data-view="above">曲坡陶瓦</button>
+      <button type="button" data-view="inscription">石花格</button>
+      <button type="button" data-view="return">阳台折角</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/changning-lixi-lane-24-dai-villa-gable/README.md">两幅照片与建模依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-lixi-lane-24-dai-villa-gable', {
+  "oblique": {
+    "center": [
+      0.0,
+      1.12,
+      0.22
+    ],
+    "size": [
+      9.81010651,
+      7.3360034,
+      0.78480852
+    ],
+    "direction": [
+      -0.2472953,
+      -0.17805262,
+      0.95244018
+    ]
+  },
+  "front": {
+    "center": [
+      -0.02,
+      -0.15,
+      0.1
+    ],
+    "size": [
+      4.28387942,
+      3.20348754,
+      0.34271035
+    ],
+    "direction": [
+      0.0462321,
+      -0.01216634,
+      0.99885663
+    ]
+  },
+  "above": {
+    "center": [
+      1.94,
+      4.11,
+      -0.21
+    ],
+    "size": [
+      2.54991373,
+      1.90682698,
+      0.2039931
+    ],
+    "direction": [
+      0.71855112,
+      0.34395101,
+      0.60446836
+    ]
+  },
+  "inscription": {
+    "center": [
+      0.34,
+      -2.1,
+      2.11
+    ],
+    "size": [
+      1.10008196,
+      0.82264194,
+      0.08800656
+    ],
+    "direction": [
+      -0.12926812,
+      0.03314567,
+      0.99105556
+    ]
+  },
+  "return": {
+    "center": [
+      -0.3,
+      -2.06,
+      1.28
+    ],
+    "size": [
+      3.74734259,
+      2.80226499,
+      0.29978741
+    ],
+    "direction": [
+      -0.43541445,
+      0.09388624,
+      0.89532096
+    ]
+  }
+});
+  </script>
+</body>
+</html>
