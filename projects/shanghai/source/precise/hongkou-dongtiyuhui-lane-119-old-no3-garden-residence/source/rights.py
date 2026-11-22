@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='高参88（2015年10月6日），刘恩惠（老香菇）／上海门牌研究所（2020年报道）'
+PHOTO_SOURCE='https://www.thepaper.cn/newsDetail_forward_8327982'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT, original procedural granulated grey plaster and red clay roof tiles'
