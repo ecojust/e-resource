@@ -1,0 +1,51 @@
+closed control 2026-11-22T05:23:46.651255+00:00
+closed mobile-card 2026-11-22T05:24:59.947845+00:00
+closed mobile-pin 2026-11-22T05:25:51.203795+00:00
+closed desktop-card 2026-11-22T05:26:30.464484+00:00
+closed desktop-pin 2026-11-22T05:27:26.385566+00:00
+closed street 2026-11-22T05:28:54.961716+00:00
+roof 2026-11-22T05:35:19.497487+00:00 {99058: '144245', 99067: '144246', 99095: '144256', 99094: '144256', 99132: '144270', 99125: '144269', 99130: '144270', 99169: '144292', 99190: '144298', 112890: '150468'}
+closed roof 2026-11-22T05:35:19.497487+00:00
+plaque 2026-11-22T05:36:20.313791+00:00 {117792: '152349', 117893: '152356', 117896: '152356', 117975: '152369', 117944: '152362', 117945: '152362', 118072: '152380', 118094: '152383'}
+closed plaque 2026-11-22T05:36:20.313791+00:00
+pediment 2026-11-22T05:37:20.702029+00:00 {126006: '158428', 126025: '158436', 126027: '158436', 126050: '158441', 126057: '158444', 126048: '158441', 126095: '158459', 126106: '158462'}
+closed pediment 2026-11-22T05:37:20.702029+00:00
+distant 2026-11-22T05:39:28.336159+00:00 {126748: '164465', 126767: '164470', 126769: '164470', 126793: '164475', 126796: '164476', 126835: '164485', 126846: '164487', 126792: '164475', 137591: '170653'}
+closed distant 2026-11-22T05:39:28.336159+00:00
+Traceback (most recent call last):
+  File "/tmp/blackstone361/development-native/start.py", line 49, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/tmp/blackstone361/development-native/start.py", line 20, in main
+    audit=Path('/workspace/e-resource/projects/shanghai/data/audit/blackstone-apartments-east-portico-v1/preflight/model-review.json');assert read(audit)['passed'] and read(audit)['model_assets']==read(root.parent/'checked/manifest.json')['assets']; assert sha(audit)==sys.argv[2]
+                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/blackstone361/development-native/start.py", line 6, in read
+    def read(p):return json.loads(p.read_bytes())
+                                  ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/.e-resource-recovery/mosque/resumed/blackstone361/checked/manifest.json'
+Traceback (most recent call last):
+  File "/tmp/blackstone361/development-native/after-235.py", line 38, in <module>
+    result=read(physical);assert result['order']==order and result['all_children_exited'] and result['remaining_children']==[] and p.returncode==result['exit_code']
+           ^^^^^^^^^^^^^^
+  File "/tmp/blackstone361/development-native/after-235.py", line 8, in read
+    def read(p):return json.loads(Path(p).read_bytes())
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/blackstone361/development-native/physical.json'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-235/formal-31235/sequence.py", line 105, in <module>
+    subprocess.run([sys.executable,'-Bu',source361,endpoint,prior416],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/blackstone361/development-native/after-235.py'), PosixPath('/tmp/shanghai-main-235/formal-31235/isolated-evidence/distant/closed.json'), PosixPath('/tmp/hongkou-416-study/development-native/235-development-returned.json')]' returned non-zero exit status 1.

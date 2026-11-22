@@ -1,0 +1,34 @@
+[map] map-before
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   {
++     message: 'Failed to load resource: the server responded with a status of 404 (Not Found)',
++     url: 'http://127.0.0.1:31234/src/historical-view.css'
++   },
++   {
++     message: 'Failed to load resource: the server responded with a status of 404 (Not Found)',
++     url: 'http://127.0.0.1:31234/assets/models/candidates/huangpu-kincheng-bank/huangpu-kincheng-bank-web.glb'
++   },
++   {
++     message: 'Failed to load resource: the server responded with a status of 404 (Not Found)',
++     url: 'http://127.0.0.1:31234/assets/models/candidates/huangpu-holy-trinity-cathedral/huangpu-holy-trinity-cathedral-web.glb'
++   },
++   {
++     message: 'Failed to load resource: the server responded with a status of 404 (Not Found)',
++     url: 'http://127.0.0.1:31234/assets/models/candidates/huangpu-holy-trinity-bell-tower/huangpu-holy-trinity-bell-tower-web.glb'
++   }
++ ]
+- []
+
+    at run (/tmp/shanghai-main-235/formal-31235/check-mitsui.cjs:295:12)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

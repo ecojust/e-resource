@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/tmp/xiaonanmen300/mapping/handoff/235-actual-viewer.py", line 25, in <module>
+    attempt.mkdir()
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/xiaonanmen300/mapping/handoff/viewer-attempt-2026-11-22T054121.561894-0000'
+Traceback (most recent call last):
+  File "/workspace/.e-resource-recovery/grace/reboot235/offer-final-300.py", line 54, in <module>
+    if not matching:raise RuntimeError('No physical exit record found for this failed admission')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: No physical exit record found for this failed admission
+Traceback (most recent call last):
+  File "/dev/shm/recovery235/finish-independent.py", line 8, in <module>
+    subprocess.run([sys.executable,'-Bu',w/'offer-final-300.py','235',m/'actual-31235-standalone/closed.json'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/workspace/.e-resource-recovery/grace/reboot235/offer-final-300.py'), '235', PosixPath('/tmp/shanghai-main-235/formal-31235/actual-31235-standalone/closed.json')]' returned non-zero exit status 1.
