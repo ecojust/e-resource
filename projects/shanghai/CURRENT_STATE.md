@@ -1,3 +1,11 @@
+# 文联老楼南园面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wenlian-old-house&mode=overview) · [单体旋转与下载](wenlian-old-house.html) · [来源与制作范围](source/precise/jingan-wenlian-old-house/README.md) · [验收记录](data/audit/wenlian-old-house-v1/README.md)
+
+对照市表2B009、1995年影像及修缮单位实景，制作238号老楼南花园的双翼凸窗、曲顶山花、中央敞廊与红瓦坡屋。
+
+近景 65,010 个三角面，远景 33,342 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 8,668,580 字节。上海主图现有 273 处独立入口，静安区 32 处。[资产清单](assets/models/candidates/jingan-wenlian-old-house/manifest.json)
+
 # 三井洋行四川中路东立面南端山花与入口
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview) · [单体旋转与下载](mitsui-bussan-pediment-front.html) · [来源与制作范围](source/precise/huangpu-mitsui-bussan-pediment-front/README.md) · [验收记录](data/audit/mitsui-bussan-pediment-front-v1/README.md)

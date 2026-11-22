@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 272 处入口。最近接入[三井洋行四川中路东立面南端山花与入口](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 273 处入口。最近接入[文联老楼南园面](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wenlian-old-house&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][TD5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD2] · [来源、许可与更新规则][TD1]
 
-已交付的235项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的236项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 236 | 延安西路238号文联老楼南花园立面 | 静安区／延安西路238号 | 制作中 | — | [市房屋管理局第二批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html>)；补查238号东入口等其余立面。另址200号一侧的1941年意大利商务总会礼堂已拆，须据图签与旧行号图独立开展历史复原。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -750,7 +746,7 @@
 |sh-historic-b2-154|陈炳谦宅原平面、后部立面及确切拆除日期|陕西北路80号|[名录][H2] · [当前完成范围][TD3]|继续核对原宅平面及背面，区分同园第五批5B032现存教研楼，保留现状几何。|
 |sh-historic-b2-157|四行仓库北侧窗格与屋顶可见设备|光复路1号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|原模型的北侧窗格和屋顶可见设备尺寸仍为估计，待有清晰资料时逐项补证。|
 |sh-historic-b2-163|西摩路会堂西立面与院内附属建筑|陕西北路500号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|核对会堂西侧、未见窗墙、室内与校园附属建筑，辨别街口和院内入口。|
-|sh-historic-b2-173|意大利总会|延安西路238号|[名录][H2] · 照片待核|待核外观／拆栋|
+|sh-historic-b2-173|另址意大利总会旧礼堂历史复原与文联老楼东入口|延安西路238号|[名录][H2] · 照片待核 · [当前完成范围][TD3]|补查238号东入口等其余立面。另址200号一侧的1941年意大利商务总会礼堂已拆，须据图签与旧行号图独立开展历史复原。|
 |sh-historic-b3-021|邱氏住宅|威海路412号|[名录][H3] · 照片待核|待核外观／拆栋|
 |sh-historic-b3-022|联华公寓|北京西路1341~1383号 铜仁路304~330号 南阳路208~228号|[名录][H3] · 照片待核|待核外观／拆栋|
 |sh-historic-b3-023|住宅|铜仁路280号|[名录][H3] · 照片待核|待核外观／拆栋|
@@ -3647,7 +3643,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；272处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中232件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；273处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中233件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3655,7 +3651,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增232处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增233处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3677,7 +3673,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，272处建筑与构件模型入口（40处既有＋232处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增232处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 9 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，273处建筑与构件模型入口（40处既有＋233处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增233处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 9 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（108处）
@@ -3881,7 +3877,7 @@
 | 愚园路754号住宅 | 2026-11-21 11:36:38 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-yuyuan-road-754&mode=overview) |
 | 西园大厦 | 2026-11-21 13:42:13 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview) |
 
-### 静安区（31处）
+### 静安区（32处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310106&mode=walk)
 
@@ -3918,6 +3914,7 @@
 | 海格公寓主楼南向花园立面 | 2026-11-21 17:21:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-haig-apartments-garden-front&mode=overview) |
 | 陈炳谦宅（原托益住宅）双塔与券廊历史正立面 | 2026-11-21 23:41:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-chen-bingqian-historic-residence&mode=overview) · 1994 年入录，约 1994 年灭失，地点卡可查看历史照片复原 |
 | 西摩路会堂（拉结会堂院内柱廊与侧窗） | 2026-11-22 05:44:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-ohel-rachel-synagogue&mode=overview) |
+| 文联老楼南园面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=jingan-wenlian-old-house&mode=overview) |
 
 ### 普陀区（3处）
 
