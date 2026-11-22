@@ -11,3 +11,7 @@
 第254期冻结的289处目录中，原楼714号东南切角没有在先模型占用。美伦西楼占用邻房1562，哈同大楼保留原城两向长翼与店面。两版实际向量底图逐一核过23个部件，包含2927187770号要素第52号子部件。[原房与库存](final-prior-coverage.json) · [原始向量部件](vector-on-predecessor.json)
 
 哈同大楼（慈安里大楼）东南转角立面成为第290处地点。复核了前版1,833项和本期1,841项签入文件。 正式末层31255逐一下载了1,858项，共1,519,021,956字节。 在28254、28255和31254、31255上重新读取了来源图块与原楼轮廓，新版还重新下载了两档展示模型、原始网格和可编辑源文件。[逐层签收清单](signed-stations/final-bound-stations.json) · [正式前后两版的模型与原楼](signed-stations/real-31k-predecessor-and-new-building.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/94493dd10b691e8ff15af1a17d14090f8ac1d7f0/projects/shanghai/index.html#landmark=huangpu-hardoon-building-chamfer&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
