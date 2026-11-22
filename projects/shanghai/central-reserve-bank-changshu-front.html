@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>中央储备银行旧址 · 常熟路庭院正门</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.62" aria-label="中央储备银行旧址东南正门中央三跨立面模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-central-reserve-bank-changshu-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 常熟路100弄10号</p>
+    <h1>中央储备银行旧址</h1>
+    <p>花园正门与三跨石阳台</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">正门上方的折角石阳台有九根栏柱，两侧较浅的窗栏各有十一根。东侧可见腰檐和上檐转过墙角。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看门套与三跨石栏</button>
+      <button type="button" data-view="oblique">侧看阳台与东侧格窗</button>
+      <button type="button" data-view="above">俯看出檐与短压顶</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-central-reserve-bank-changshu-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=central-reserve-bank-changshu-front-v1';
+    showCandidateAssetViewer('jingan-central-reserve-bank-changshu-front');
+  </script>
+</body>
+</html>
