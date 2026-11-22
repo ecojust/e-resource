@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Architectural archival register: south elevation and entrance, 16 August 2014'
+PHOTO_SOURCE='http://www.heritage-architectures.com/'
+LICENSE_URL='https://opensource.org/license/mit/'
+GEOMETRY_LICENSE='MIT; replacement sign outlines SIL OFL 1.1'
+TEXTURE_LICENSE='MIT'
