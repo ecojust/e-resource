@@ -1,3 +1,11 @@
+# 安培洋行大楼圆明园路主立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ampire-and-co-building&mode=overview) · [单体旋转与下载](ampire-and-co.html) · [来源与制作范围](source/precise/huangpu-ampire-and-co-building/README.md) · [验收记录](data/audit/ampire-and-co-v1/README.md)
+
+原安培洋行大楼位于圆明园路97号。佳士得的资料记其始建于1907年。中央拱门上方设圆挑窗，两端半圆凸出，每层各开三窗。
+
+近景 39,204 个三角面，远景 20,144 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,835,601 字节。上海主图现有 271 处独立入口，黄浦区 107 处。[资产清单](assets/models/candidates/huangpu-ampire-and-co-building/manifest.json)
+
 # 礼和洋行九江路街面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) · [单体旋转与下载](carlowitz-jiujiang-front.html) · [来源与制作范围](source/precise/huangpu-carlowitz-jiujiang-front/README.md) · [验收记录](data/audit/carlowitz-jiujiang-front-v1/README.md)
