@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>康定花园 · 中楼南向三开间柱廊</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="康定花园中楼南向柱廊" data-oblique="positive-x" id="model-view"></main>
+<header>
+<a href="index.html#landmark=jingan-kangding-garden-central-portico&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">静安区 · 康定路2号</p>
+<h1>康定花园中楼</h1>
+<p>南向三开间柱廊</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">康定花园始建于1923年，1925年竣工。中楼南面两根通高圆柱托起回纹栏墙，三处浅弧形石栏后方可见红褐色窗扇，陶瓦坡顶中央设一扇老虎窗。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">正看三开间柱廊</button>
+<button data-view="oblique" type="button">斜看双柱与透空石栏</button>
+<button data-view="above" type="button">俯看陶瓦与老虎窗</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/jingan-kangding-garden-central-portico/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-kangding-garden-central-portico');
+  </script>
+</body>
+</html>
+
