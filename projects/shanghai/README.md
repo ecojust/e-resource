@@ -235,7 +235,7 @@
 | 淮海中路1634号花园住宅（院内柱廊与错层入口） | 2026-11-21 23:12:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1634-residence&mode=overview) |
 | 霞飞别墅淮海中路1768弄口临街住宅 | 2026-11-22 06:02:04 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1768-residence&mode=overview) |
 | 延庆路130号住宅南向庭院立面 | 2026-11-22 06:37:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yanqing-road-130-residence&mode=overview) |
-| 徐家汇圣母院旧主楼庭院中央山花立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-convent-central-front&mode=overview) |
+| 徐家汇圣母院旧主楼庭院中央山花立面 | 2026-11-22 11:19:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-convent-central-front&mode=overview) |
 
 ### 长宁区（17处）
 

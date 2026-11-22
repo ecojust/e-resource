@@ -21,3 +21,7 @@
 远景照片来自第二次远景会话。该场在保存照片后浏览器中断。第三次重新打开同一网站、进入同一地图镜位，实测远档、WebGL状态及三个下载地址成功。两场的原始报告、截图摘要及退出码分别保留。初次打开独立页时，临时目录名超过系统套接字长度限制；缩短路径后已完成全部独立页操作。
 
 [实机、地面与四种下载](city-31232/process-exits.json) · [旧城对照](city-31232/map-before.png) · [中央庭院立面](city-31232/map-garden-front.png) · [西端封闭玻璃廊](city-31232/map-west-enclosed-veranda.png) · [远档](city-31232/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8dec7be325b53135dd33f73e30c4e62ab209bbfb/projects/shanghai/index.html#landmark=xuhui-zikawei-convent-central-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
