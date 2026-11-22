@@ -19,3 +19,7 @@
 街面近镜的资料卡遮住了部分窗身。补拍沿临河长面取景，在同一时刻的地图画布上可以逐一数清七道券顶、窗心圆环和细竖梃。三块地图标牌仍遮住中部窗身。东北抹角近镜可见转角三处门洞和中央拉手。两端独立查看页另有近远四图，原始、近景、远景和可编辑Blender文件均由实际下载后按字节及SHA-256核对。
 
 [实机、地面与四种下载](city-31248/process-exits.json) · [旧城对照](city-31248/map-before.png) · [临街转角](city-31248/map-north-river-seven-arched-bays.png) · [临河长排窗](city-31248/riverside-window-row/map-riverside-window-row-canvas.png) · [长拱窗及窗套](city-31248/map-long-arched-windows.png) · [远档](city-31248/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/9e3409c9cf15795a7c40a2bf2f7f5cb5b7a53e57/projects/shanghai/index.html#landmark=huangpu-yee-tsoong-tobacco-northeast-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
