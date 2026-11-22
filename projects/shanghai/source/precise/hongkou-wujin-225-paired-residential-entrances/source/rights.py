@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='高参88，2015年7月；独立刊图中附2012年的9号砖券。'
+PHOTO_SOURCE='https://blog.sina.com.cn/s/blog_5d1bdf480102vysd.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT (original procedural material textures)'
