@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>卡德大楼街面阳台的四排横槽与转角铁栏</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="卡德大楼街面阳台的四排横槽与转角铁栏"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 石门二路50号</p>
+    <h1>卡德大楼街面阳台的四排横槽与转角铁栏</h1>
+      <p>取石门二路50号卡德大楼临街阳台的左端与中段。女儿墙上连续四排穿孔，左端一道开孔折回侧面；低铁栏沿墙顶折转。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">据Fayhoo于2015年拍摄的卡德公寓全景量取横槽分组、铁栏与楼板的相对比例。取样正面名义宽5.53米，楼板深度、孔口截面和铁杆直径为估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看四排横槽</button>
+      <button type="button" data-view="oblique">看阳台转角</button>
+      <button type="button" data-view="tiles">看孔口与铁栏</button>
+      <button type="button" data-view="rail">看楼板下的短托</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/jingan-kade-apartments-slotted-balcony/README.md">史料、测量与模型范围</a>
+  <p>原照由 Fayhoo 于2015年10月17日拍摄。<a href="https://commons.wikimedia.org/wiki/File:Kade_Gongyu.JPG">查看《Kade Gongyu.JPG》</a>，<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>。</p></aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-kade-apartments-slotted-balcony', {
+  "front": {
+    "center": [
+      2.73,
+      0.56,
+      -0.35
+    ],
+    "size": [
+      5.928000000000001,
+      5.7,
+      2.451
+    ],
+    "direction": [
+      0.05,
+      0.06,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.96,
+      0.63,
+      -0.33
+    ],
+    "size": [
+      2.4440000000000004,
+      2.35,
+      1.0105
+    ],
+    "direction": [
+      -0.68,
+      0.23,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      3.5,
+      0.85,
+      -0.07
+    ],
+    "size": [
+      2.2359999999999998,
+      2.15,
+      0.9245
+    ],
+    "direction": [
+      -0.22,
+      0.18,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      3.58,
+      0.03,
+      -0.12
+    ],
+    "size": [
+      2.496,
+      2.4,
+      1.032
+    ],
+    "direction": [
+      -0.53,
+      -0.26,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
