@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>泰昌木器公司转角屋顶亭的穹顶与叠檐</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="泰昌木器公司转角屋顶亭的穹顶与叠檐"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 南京东路740号</p>
+    <h1>泰昌木器公司转角屋顶亭的穹顶与叠檐</h1>
+      <p>南京东路740号转角的敞亭。低圆穹顶压在数层折线石檐上，街面几根细柱之间留空；柱下的斜台上有浅浅的折面装饰。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">以2016年具名全幅照片及其屋面局部为几何依据。亭檐估宽约2.1米，曲率、进深及相邻柱距按照片比例近似。店侧街摄只能核门面；背面被遮的柱列、设备和广告牌均未复原。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看转角屋顶亭</button>
+      <button type="button" data-view="oblique">看折线檐口</button>
+      <button type="button" data-view="tiles">看亭柱留空</button>
+      <button type="button" data-view="rail">看斜台饰面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/huangpu-taichang-furniture-rooftop-lantern/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-taichang-furniture-rooftop-lantern', {
+  "front": {
+    "center": [
+      0,
+      1.5,
+      0
+    ],
+    "size": [
+      4.0040000000000004,
+      3.85,
+      1.6555
+    ],
+    "direction": [
+      0.55,
+      0.18,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      2.27,
+      0.28
+    ],
+    "size": [
+      2.3816,
+      2.29,
+      0.9847
+    ],
+    "direction": [
+      -0.65,
+      0.04,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0,
+      1.46,
+      0.27
+    ],
+    "size": [
+      2.34,
+      2.25,
+      0.9675
+    ],
+    "direction": [
+      0.64,
+      -0.055,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0,
+      0.38,
+      0.27
+    ],
+    "size": [
+      2.4024,
+      2.31,
+      0.9933
+    ],
+    "direction": [
+      -0.53,
+      0.27,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
