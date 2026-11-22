@@ -12,11 +12,20 @@ PALETTE={name:dict(color=colour,roughness=roughness) for name,colour,roughness i
  (WALL,[.685,.648,.598],.94),(BAND,[.54,.511,.466],.96),(WOOD,[.235,.139,.126],.79),
  (PANEL,[.196,.113,.111],.82),(EYE,[.37,.381,.37],.87),(LINE,[.581,.554,.516],.89),(REVEAL,[.385,.352,.307],.94)]}
 CENTRES=(-.779,.779)
+def save_mapped_texture(tile, path):
+    """Store the material pattern 7 by 7 times inside one clamp-to-edge image."""
+    atlas=Image.new('P',(tile.width*7,tile.height*7))
+    atlas.putpalette(tile.getpalette())
+    for row in range(7):
+        for col in range(7):
+            atlas.paste(tile,(col*tile.width,row*tile.height))
+    atlas.save(path,optimize=True)
+
 def texture():
     p=Path(__file__).with_name('speckled-grey-render.png')
     if not p.exists():
         g=np.random.default_rng(783);arr=np.array([143,140,130])+g.standard_t(5,(320,320,1))*7
-        Image.fromarray(arr.clip(0,255).astype('uint8')).quantize(112).save(p)
+        save_mapped_texture(Image.fromarray(arr.clip(0,255).astype('uint8')).quantize(112),p)
     PALETTE[PEBBLE]['texture']=str(p)
 def curve(points,count):
     a,b,c,d=np.asarray(points,float);t=np.linspace(0,1,count)[:,None]
@@ -63,4 +72,4 @@ def add_building(b,far=False):
     b.plan_prism(deck.buffer(.009,resolution=3 if far else 10),2.704,2.725,EDGE,'Top weathering surface')
     for p in b.parts:
         if p['material']==PEBBLE:
-            p['texcoords']=[[(x+.69*y)/.53,(z+.33*y)/.53] for x,y,z in p['vertices']]
+            p['texcoords']=[[((x+.69*y)/.53+4)/7,((z+.33*y)/.53+1)/7] for x,y,z in p['vertices']]
