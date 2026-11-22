@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>上海纱业银行大楼东端弧形石阳台与瓶栏</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="上海纱业银行大楼东端弧形石阳台与瓶栏"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 延安东路134–150号</p>
+    <h1>上海纱业银行大楼东端弧形石阳台与瓶栏</h1>
+      <p>东端券窗上方外凸的石阳台。两道水平压边围住弧形楼板，瓶栏立在方座上，扶手绕到两端方墩，挑台底下有卷纹石托。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">节选宽约3.5米，挑出约0.9米。弧面、瓶栏和石托按2013与2021年街摄比例构造。树枝掩住的端部、石雕背面和构件实尺仍待复测。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看弧形阳台</button>
+      <button type="button" data-view="oblique">看瓶栏腰身</button>
+      <button type="button" data-view="tiles">看三层扶手</button>
+      <button type="button" data-view="rail">看台下卷托</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/huangpu-yarn-bank-east-balustraded-balcony/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-yarn-bank-east-balustraded-balcony', {
+  "front": {
+    "center": [
+      0,
+      0.87,
+      0.25
+    ],
+    "size": [
+      4.056,
+      3.9,
+      1.677
+    ],
+    "direction": [
+      0.32,
+      0.21,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.02,
+      1.14,
+      0.71
+    ],
+    "size": [
+      1.1024,
+      1.06,
+      0.45580000000000004
+    ],
+    "direction": [
+      -0.28,
+      0.04,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0.62,
+      1.405,
+      0.7
+    ],
+    "size": [
+      1.9032000000000002,
+      1.83,
+      0.7869
+    ],
+    "direction": [
+      0.68,
+      0.52,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.55,
+      0.42,
+      0.27
+    ],
+    "size": [
+      1.0192,
+      0.98,
+      0.4214
+    ],
+    "direction": [
+      0.82,
+      -0.32,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
