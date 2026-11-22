@@ -21,3 +21,7 @@
 独立页的六张图分别来自桌面与手机。两张正面图能从上层窗组看到底层门洞，斜视图里能看出退进的柱廊与两端较高的檐口，远档俯视保留了屋顶长度和两端台阶。手机竖屏将资料和按钮排在模型下方。页面实际保存了原始网格、近档、远档和可编辑原生文件，四件均与清单中的字节数及SHA-256一致。
 
 [实机、地面与四种下载](city-31242/process-exits.json) · [旧城对照](city-31242/map-before.png) · [四川中路凹入口与门柱](city-31242/map-sichuan-recessed-doorways.png) · [南端入口及其柱窗](city-31242/map-southern-column-doorway.png) · [远档](city-31242/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/194f248359843ddfe34faa8f2d6edd5a8e8a5420/projects/shanghai/index.html#landmark=huangpu-asia-realty-sichuan-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
