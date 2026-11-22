@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>长春路沙逊楼群北立面八开间 · 上海历史建筑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="negative-x" aria-label="长春路沙逊楼群北立面三维模型"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 长春路</p>
+    <h1>沙逊楼群北立面八开间</h1>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">左右两组双山花之间有三座低屋窗。中间四轴的三层窗是扁弧，二层窗外有红砖尖券。2015年原照中可读的319号绿牌位于左数第二轴、院墙后面的楼门上。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">斜看连续立面</button>
+      <button type="button" data-view="front">看八个开间</button>
+      <button type="button" data-view="above">俯看屋顶</button>
+      <button type="button" data-view="inscription">近看红砖券</button>
+      <button type="button" data-view="return">看319号门牌</button>
+      <button type="button" data-view="gable">看木饰山花</button>
+      <button type="button" data-view="middle">看中间四轴</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads" aria-label="模型下载"></div>
+    <p><a href="data/audit/changchun-road-sassoon-brick-terrace-v1/facade/eight-bays-and-two-cameras.jpg">从两个实拍机位看八开间</a></p>
+    <p><a href="data/audit/changchun-road-sassoon-brick-terrace-v1/upper-windows/registered-window-study.jpg">细看十六扇窗的窗框、气窗和开扇</a></p>
+    <p><a href="data/audit/changchun-road-sassoon-brick-terrace-v1/roof-windows/roof-windows-three-views.jpg">从三个角度看四个山花与三座低屋窗</a></p>
+    <p><a href="source/precise/hongkou-changchun-road-sassoon-brick-terrace/README.md">建模范围与测量</a> · <a href="source/precise/hongkou-changchun-road-sassoon-brick-terrace/SOURCES-LICENSE.md">来源与许可</a></p>
+    <p><a href="source/precise/hongkou-changchun-road-sassoon-brick-terrace/measurements/street-front-and-address.json">核对保护地址与街面范围</a></p>
+    <p class="scope" id="related-gate">319号木刻讲习会旧址陈列馆的院门位于临街围墙，两根门柱各有一块牌。</p>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-changchun-road-sassoon-brick-terrace', {
+  "oblique": {
+    "center": [
+      -0.3425,
+      2.9562,
+      -0.1181
+    ],
+    "size": [
+      43.58,
+      31.1993,
+      7.8444
+    ],
+    "direction": [
+      -0.50252,
+      0.25931,
+      1.0
+    ]
+  },
+  "front": {
+    "center": [
+      0.6021,
+      5.2194,
+      -0.1955
+    ],
+    "size": [
+      42.12,
+      30.1541,
+      7.5816
+    ],
+    "direction": [
+      -0.01276,
+      0.02078,
+      1.0
+    ]
+  },
+  "above": {
+    "center": [
+      0.3,
+      10.0,
+      -1.2
+    ],
+    "size": [
+      32.5,
+      23.267,
+      5.85
+    ],
+    "direction": [
+      -0.53302,
+      0.76415,
+      1.0
+    ]
+  },
+  "inscription": {
+    "center": [
+      -9.5,
+      4.7,
+      0.04
+    ],
+    "size": [
+      11.6,
+      8.3045,
+      2.088
+    ],
+    "direction": [
+      -0.05401,
+      -0.02315,
+      1.0
+    ]
+  },
+  "return": {
+    "center": [
+      -9.0,
+      -0.6,
+      0.01
+    ],
+    "size": [
+      7.8,
+      5.5841,
+      1.404
+    ],
+    "direction": [
+      -0.0834,
+      0.03753,
+      1.0
+    ]
+  },
+  "gable": {
+    "center": [
+      10.4,
+      12.5,
+      0.71
+    ],
+    "size": [
+      9.9,
+      7.0875,
+      1.782
+    ],
+    "direction": [
+      -0.0931,
+      0.1474,
+      1.0
+    ]
+  },
+  "middle": {
+    "center": [
+      0.3,
+      6.9,
+      0
+    ],
+    "size": [
+      15.2,
+      10.8818,
+      2.736
+    ],
+    "direction": [
+      0.18333,
+      -0.02222,
+      1.0
+    ]
+  }
+});
+  </script>
+</body>
+</html>

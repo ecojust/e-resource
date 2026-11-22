@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='上海虹口；高参88，2015年4月25日'
+PHOTO_SOURCE='https://www.shhk.gov.cn/qyfwy/030002/030002002/030002002005/20230308/10447587-89ab-4422-a788-bf19e49a6f77.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT (original procedural brickwork textures)'
