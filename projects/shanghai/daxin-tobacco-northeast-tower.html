@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>观渡庐 · 东北砖塔与端墙拱窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-0.78" aria-label="大新烟草公司旧址观渡庐的六边形砖塔和一对端墙拱窗的三维模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-daxin-tobacco-northeast-tower&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 北京西路1094弄2号</p>
+    <h1>观渡庐</h1>
+    <p>东北砖塔与短翼成对拱窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">六边形红砖塔位于旧宅东端。中层的高窗随墙面折转，顶层实窗与封闭砖拱相间，收于灰色围边。沿东端转过去，可以看到一对低矢高的分格拱窗。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看端墙双窗</button>
+      <button type="button" data-view="oblique">侧看六边砖塔</button>
+      <button type="button" data-view="above">俯看塔顶围边</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-daxin-tobacco-northeast-tower/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=rong-residence-garden-tower-v1';
+    showCandidateAssetViewer('jingan-daxin-tobacco-northeast-tower');
+  </script>
+</body>
+</html>
