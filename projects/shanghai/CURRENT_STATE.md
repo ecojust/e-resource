@@ -1,3 +1,11 @@
+# 谦信大楼江西中路中央六券窗廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qianxin-building-historic-front&mode=overview) · [单体旋转与下载](qianxin-six-arches-history.html) · [来源与制作范围](source/precise/huangpu-qianxin-building-historic-front/README.md) · [验收记录](data/audit/qianxin-historic-front-v1/README.md)
+
+按3A019江西中路138号及2015年2月17日公开街照，在原址标记中独立展示中央两排各三座大拱、红砖券、柱头、退进窗扇、下排三处石栏与下方短檐。工作名录记1907年建成。
+
+近景 38,584 个三角面，远景 21,676 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,975,015 字节。上海主图现有 292 处独立入口，黄浦区 127 处。[资产清单](assets/models/candidates/huangpu-qianxin-building-historic-front/manifest.json)
+
 # 东亚大楼四柱门廊及转角立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-east-asia-corner&mode=overview) · [单体旋转与下载](bank-of-east-asia-corner.html) · [来源与制作范围](source/precise/huangpu-bank-of-east-asia-corner/README.md) · [验收记录](data/audit/bank-of-east-asia-corner-v1/README.md)
