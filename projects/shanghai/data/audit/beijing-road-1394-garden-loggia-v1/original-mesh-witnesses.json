@@ -1,0 +1,133 @@
+{
+ "passed": true,
+ "source_baseline": 31269,
+ "local_mask": [
+  -3.55,
+  -1.18,
+  3.55,
+  2.09
+ ],
+ "original_owner_area_m2": 349.652485585393,
+ "trimmed_original_area_m2": 15.226188423088274,
+ "retained_original_area_percent": 95.6453367126516,
+ "distance_to_other_members_m": {
+  "755": 46.3055,
+  "2517": 22.34717,
+  "3001": 60.03227,
+  "25": 31.79092,
+  "126": 44.62132,
+  "1790": 24.16143,
+  "1280": 8.06276,
+  "455": 27.48191,
+  "669": 43.75631,
+  "2582": 60.20923,
+  "681": 65.37843
+ },
+ "actual_owner_triangles": {
+  "far": {
+   "owner_triangles": 12,
+   "untouched_neighbor_triangles": 184,
+   "owner_min": [
+    -10.105816893053104,
+    -0.10571573101501357,
+    0.0
+   ],
+   "owner_max": [
+    10.002965518279174,
+    17.443087287028,
+    25.5
+   ],
+   "identification": {
+    "method": "Per-vertex _FEATURE_ID_0 verified by original parcel distance on every far triangle, including all 11 neighbours",
+    "matching_projected_owner_selection": true
+   },
+   "original_owner_triangle_sha256": "778b174339f26c325300ad4914c23ee64cecf243182e2f454f9cb8fc7aee63f7",
+   "original_neighbor_triangle_sha256": "b5e7f65f88819810572dd2b85d4515d7cb2cdee6052261f59c2c435d39203296"
+  },
+  "near": {
+   "owner_triangles": 11664,
+   "untouched_neighbor_triangles": 128116,
+   "owner_min": [
+    -10.176014234756,
+    -0.17600640113968707,
+    0.0
+   ],
+   "owner_max": [
+    10.073158905725169,
+    17.517710402618434,
+    25.5
+   ],
+   "identification": {
+    "method": "Near mesh centroids and every assigned triangle vertex compared with all 12 signed parcel masks. Same parcel assignment reproduces every independently indexed far triangle.",
+    "largest_own_centroid_distance_m": 0.0835340911146906,
+    "smallest_other_owner_margin_m": 1.4039119819507222,
+    "largest_distance_any_own_vertex_m": 0.09933442870897227,
+    "smallest_neighbour_centroid_to_this_parcel_m": 1.5927918596681991,
+    "independently_labelled_far_and_near_convex_footprint_iou": 0.9839436587009807
+   },
+   "original_owner_triangle_sha256": "83bc457ccb3de96d216348bd2ce582ca7ba1b4d241e66e81cd2f48b603f9640f",
+   "original_neighbor_triangle_sha256": "d7ecfef414462fd7e5908549c0d9c44d72aa47bea0d531d9aaf1a5ce30f082f8"
+  }
+ },
+ "actual_local_source_geometry": {
+  "type": "Polygon",
+  "coordinates": [
+   [
+    [
+     9.936244112276139,
+     17.340547358101546
+    ],
+    [
+     10.002969043003814,
+     -0.10571620340134483
+    ],
+    [
+     -10.039109734468513,
+     -0.0031660353988169306
+    ],
+    [
+     -10.105836785071041,
+     17.443089634660613
+    ],
+    [
+     9.936244112276139,
+     17.340547358101546
+    ]
+   ]
+  ]
+ },
+ "vector_match": {
+  "iou": 0.9999610168344857,
+  "feature": 64634100,
+  "component": 337
+ },
+ "original_vector_count": 8,
+ "ground_points": 210,
+ "source_cut_intersections": {
+  "type": "LineString",
+  "coordinates": [
+   [
+    3.55,
+    -0.07269801866997976
+   ],
+   [
+    3.55,
+    2.09
+   ],
+   [
+    -3.55,
+    2.09
+   ],
+   [
+    -3.55,
+    -0.036369142763337116
+   ]
+  ]
+ },
+ "clear_front_entrance_walks": 100,
+ "full_height_original_approx_m": 25.5,
+ "pending_final_stages": [
+  31306,
+  31307
+ ]
+}
