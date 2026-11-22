@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Shwangtianyuan and Livelikerw'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:355_Middle_Sichuan_Road_Shanghai-20220828.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/4.0/'
+GEOMETRY_LICENSE='CC BY-SA 4.0'
+TEXTURE_LICENSE='MIT'
