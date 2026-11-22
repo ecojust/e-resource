@@ -1,3 +1,11 @@
+# 徐家汇圣母院旧主楼庭院中央山花立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-convent-central-front&mode=overview) · [单体旋转与下载](zikawei-convent-central-front.html) · [来源与制作范围](source/precise/xuhui-zikawei-convent-central-front/README.md) · [验收记录](data/audit/zikawei-convent-central-front-v1/README.md)
+
+对照市表2D032与2016年院景，制作旧门牌漕溪北路45号中央大山花、山花窗洞、四开间窗墙及可见玻璃廊。
+
+近景 12,252 个三角面，远景 6,548 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,327,434 字节。上海主图现有 269 处独立入口，徐汇区 55 处。[资产清单](assets/models/candidates/xuhui-zikawei-convent-central-front/manifest.json)
+
 # 黄浦路106号联合国大厦灰楼北立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-unrra-gray-building-north-front&mode=overview) · [单体旋转与下载](unrra-gray-building-north-front.html) · [来源与制作范围](source/precise/hongkou-unrra-gray-building-north-front/README.md) · [验收记录](data/audit/unrra-gray-building-north-front-v1/README.md)
