@@ -1,3 +1,11 @@
+# 黄浦路106号联合国大厦灰楼北立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-unrra-gray-building-north-front&mode=overview) · [单体旋转与下载](unrra-gray-building-north-front.html) · [来源与制作范围](source/precise/hongkou-unrra-gray-building-north-front/README.md) · [验收记录](data/audit/unrra-gray-building-north-front-v1/README.md)
+
+对照市表2F001、2014年灰楼照片、虹口区街景与具名地块，制作临黄浦路的六根通高壁柱、三个入口及窗列。
+
+近景 28,664 个三角面，远景 5,676 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,533,496 字节。上海主图现有 268 处独立入口，虹口区 17 处。[资产清单](assets/models/candidates/hongkou-unrra-gray-building-north-front/manifest.json)
+
 # 乍浦路桥
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=overview) · [单体旋转与下载](zhapu-road-bridge.html) · [来源与制作范围](source/precise/huangpu-zhapu-road-bridge/README.md) · [验收记录](data/audit/zhapu-road-bridge-v1/README.md)
