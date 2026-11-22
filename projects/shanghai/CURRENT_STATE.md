@@ -1,3 +1,11 @@
+# 礼和洋行九江路街面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) · [单体旋转与下载](carlowitz-jiujiang-front.html) · [来源与制作范围](source/precise/huangpu-carlowitz-jiujiang-front/README.md) · [验收记录](data/audit/carlowitz-jiujiang-front-v1/README.md)
+
+核对市表“礼记洋行”、江西中路255号门牌、黄浦区修缮报告及1908、2013年两期照片，制作九江路红砖券窗、透空石栏、双窗山花与可辨弧角。
+
+近景 119,146 个三角面，远景 46,670 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 12,997,459 字节。上海主图现有 270 处独立入口，黄浦区 106 处。[资产清单](assets/models/candidates/huangpu-carlowitz-jiujiang-front/manifest.json)
+
 # 徐家汇圣母院旧主楼庭院中央山花立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-convent-central-front&mode=overview) · [单体旋转与下载](zikawei-convent-central-front.html) · [来源与制作范围](source/precise/xuhui-zikawei-convent-central-front/README.md) · [验收记录](data/audit/zikawei-convent-central-front-v1/README.md)
