@@ -17,3 +17,7 @@
 编辑文件保留建筑网格、原照片、临江正面和西端外梯两个相机，以及可单独选取的外梯和气窗顶点组。支架、花铁、梯宽、进深及14级踏步的尺度来自照片估计。临江入口、建筑轮廓和原地标编号均沿用原登记。[西墙预览](bund05-west-service-stair-preview.png) · [原生文件重开结果](native-reopen.json) · [五处登记的重复执行校验](five-registries.json) · [四个成品文件](../../../source/precise/bund05/revisions/west-service-stair/manifest.json)
 
 在前后两份276处目录中逐项核对，仅本栋的资产、面数和制作说明有变。其他275处的登记，以及本栋的地图位置、可步行入口、地块编号和边界均一致。外滩总表与两份单栋元数据同步指向新文件。[五份登记文件的具体字段](in-place-catalog-comparison.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/adea4fa80619345c5a63012d5fb4dffa61d82d0a/projects/shanghai/index.html#landmark=bund05&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
