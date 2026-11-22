@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>小校经阁 · 院南八角藏书楼</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="negative-x" data-oblique-x="-.70" aria-label="小校经阁八角绿瓦攒尖顶、檐下斗拱和朝院门窗"></main>
+  <header>
+    <a href="index.html#landmark=jingan-xiaojiaojing-octagonal-library&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 新闸路1321号</p>
+    <h1>小校经阁</h1>
+    <p>院南八角藏书楼</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">刘体智的藏书楼位于新闸路1321号院南。《静安文博勾沉》记载建于1912年，二层共214平方米。上层每道折面都有窗和横向亮子。近看屋檐，可见圆瓦当与尖滴水交替。檐角平面据航片拟合，层高、如意纹和门轴方位据照片估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看院门与上窗</button>
+      <button type="button" data-view="oblique">看八角转折与斗拱</button>
+      <button type="button" data-view="above">俯看八脊攒尖顶</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-xiaojiaojing-octagonal-library/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=xiaojiaojing-octagonal-library-v1';
+    showCandidateAssetViewer('jingan-xiaojiaojing-octagonal-library');
+  </script>
+</body>
+</html>

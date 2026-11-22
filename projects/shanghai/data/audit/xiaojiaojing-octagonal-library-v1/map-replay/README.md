@@ -1,0 +1,5 @@
+# Shanghai Xiaojiaojing Library map replay
+
+From this directory, run `npm install`, then `node check-runtime.mjs 310 before.json` and `node check-runtime.mjs 311 after.json` in a project checkout with the published library models. Each command checks a full historical catalogue, four basemap inputs, nineteen scene modules, and both mesh variants. Project files are used when their saved SHA-256 matches. An optional SHANGHAI_MAP_SOURCE_ROOT can point to a second checkout or a local mirror with the same paths. Missing basemap or scene files are read from the exact public revision in signed-inputs.json. Geometry and texture checks run in the ordinary scene loader. The local listener only serves the two verified model assets during the run.
+
+Each result reports the six visibility and loading states, 17 pedestrian samples in each state, the retained neighbors, six-state collision behavior, and decoded texture hashes. Stage 310 uses the library as a proposed addition. Stage 311 reads it from the historical city catalogue.
