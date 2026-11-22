@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>贤邻别墅愚园路470弄19号的转角露台与庭院立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.69" aria-label="贤邻别墅19号"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 愚园路</p>
+    <h1>贤邻别墅19号</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">这座住宅的露台绕黄砖墙角折转，下面是三联窗，灰色长墙上有红扇和蓝玻璃窗。2015年的庭院照片记录了树前可见的二十根小栏柱。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看庭院住宅全貌</button>
+      <button type="button" data-view="front">看三联窗和黄砖角</button>
+      <button type="button" data-view="above">看屋檐与玻璃间</button>
+      <button type="button" data-view="inscription">看露台转角</button>
+      <button type="button" data-view="return">看长墙三樘窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/xianlin-villa-no19-terrace-v1/courtyard-house/courtyard-house.jpg">对照2015年院内原照</a>
+    <a href="data/audit/xianlin-villa-no19-terrace-v1/terrace/terrace-corner.jpg">看转角露台石栏和檐线</a>
+    <a href="data/audit/xianlin-villa-no19-terrace-v1/side-windows/whole-photo-comparison.jpg">看长墙三樘窗</a>
+    <a href="source/precise/jingan-xianlin-villa-no19-terrace/README.md">照片与建筑资料</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-xianlin-villa-no19-terrace', {
+  "oblique": {
+    "center": [
+      -4.4,
+      6.0,
+      -2.4
+    ],
+    "size": [
+      15.3,
+      12.0,
+      7.1
+    ],
+    "direction": [
+      0.58,
+      0.16,
+      0.83
+    ]
+  },
+  "front": {
+    "center": [
+      1.3,
+      5.75,
+      -1.97
+    ],
+    "size": [
+      4.7,
+      7.4,
+      6.8
+    ],
+    "direction": [
+      0.94,
+      0.1,
+      0.4
+    ]
+  },
+  "above": {
+    "center": [
+      -3.5,
+      9.95,
+      -1.72
+    ],
+    "size": [
+      13.7,
+      5.6,
+      7.6
+    ],
+    "direction": [
+      0.57,
+      0.55,
+      0.66
+    ]
+  },
+  "inscription": {
+    "center": [
+      1.04,
+      7.6,
+      -1.52
+    ],
+    "size": [
+      4.5,
+      2.9,
+      4.9
+    ],
+    "direction": [
+      0.7,
+      0.25,
+      0.68
+    ]
+  },
+  "return": {
+    "center": [
+      -4.73,
+      7.18,
+      -0.27
+    ],
+    "size": [
+      10.3,
+      6.0,
+      1.6
+    ],
+    "direction": [
+      0.1,
+      0.07,
+      1.0
+    ]
+  }
+});
+  </script>
+</body>
+</html>

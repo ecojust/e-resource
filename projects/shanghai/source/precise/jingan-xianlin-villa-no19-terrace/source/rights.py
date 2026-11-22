@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Fayhoo'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:Xianlin_Bieshu.JPG'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/3.0/'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
