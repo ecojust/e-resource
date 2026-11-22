@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>何东公馆 · 花园四柱门廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-0.62" aria-label="何东公馆花园侧四柱门廊模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-ho-tung-residence-garden-portico&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 陕西北路457号</p>
+    <h1>何东公馆</h1>
+    <p>花园侧四柱门廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">四根带凹槽的爱奥尼柱立在弧形台阶上。柱廊深处有三樘拱门，上方是折面铁栏阳台。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看花园四柱</button>
+      <button type="button" data-view="oblique">侧看弧阶与铁栏</button>
+      <button type="button" data-view="above">俯看前檐与石栏</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-ho-tung-residence-garden-portico/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=ho-tung-garden-portico-v1';
+    showCandidateAssetViewer('jingan-ho-tung-residence-garden-portico');
+  </script>
+</body>
+</html>
