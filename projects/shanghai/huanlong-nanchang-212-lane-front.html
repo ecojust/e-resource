@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>南昌路212弄环龙别业门楼与244弄入口</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="南昌路212弄和244弄，两处独立入口"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 南昌路</p>
+    <h1>南昌路212弄与244弄</h1>
+    <p>环龙别业门楼与西侧弄口</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">212弄门前的两盏灯悬在铁拱下，楼上有木格窗与露台。向西约86米，244弄绿牌钉在带窄窗的侧墙上。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看212弄门楼</button>
+      <button type="button" data-view="front">看212弄外开木窗</button>
+      <button type="button" data-view="above">看露台栏杆</button>
+      <button type="button" data-view="inscription">看212弄门牌</button>
+      <button type="button" data-view="return">看244弄绿牌与窄窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/huanlong-nanchang-212-lane-front-v1/numbered-entrances/nanchang-212-and-244.jpg">两处弄口的原照与完整模型</a>
+    <a href="data/audit/huanlong-nanchang-212-lane-front-v1/numbered-entrances/nanchang-212-and-244-lod.jpg">两处弄口的远景模型对照</a>
+    <a href="data/audit/huanlong-nanchang-212-lane-front-v1/upper-casements/whole-photo-comparison.jpg">212弄原照与木窗模型对照</a>
+    <a href="source/precise/huangpu-huanlong-nanchang-212-lane-front/README.md">双弄位置、构件依据与重建方法</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-huanlong-nanchang-212-lane-front', {
+  "front": {
+    "center": [
+      -0.08,
+      7.22,
+      -0.06
+    ],
+    "size": [
+      6.85,
+      3.1,
+      1.1
+    ],
+    "direction": [
+      -0.3278003,
+      0.0282212,
+      0.9443254
+    ]
+  },
+  "oblique": {
+    "center": [
+      -0.07,
+      5.12,
+      0.47
+    ],
+    "size": [
+      8.9,
+      11.8,
+      4.6
+    ],
+    "direction": [
+      -0.4307014,
+      0.0667119,
+      0.9000255
+    ]
+  },
+  "above": {
+    "center": [
+      -0.18,
+      9.06,
+      -0.28
+    ],
+    "size": [
+      6.35,
+      3.32,
+      1.58
+    ],
+    "direction": [
+      -0.340312,
+      0.2165622,
+      0.9150347
+    ]
+  },
+  "inscription": {
+    "center": [
+      -1.68,
+      2.68,
+      3.64
+    ],
+    "size": [
+      3.15,
+      3.23,
+      1.03
+    ],
+    "direction": [
+      0.1876119,
+      0.0088288,
+      0.9822036
+    ]
+  },
+  "return": {
+    "center": [
+      -85.76,
+      1.87,
+      -0.1
+    ],
+    "size": [
+      4.6,
+      3.18,
+      1.25
+    ],
+    "direction": [
+      0.5679448,
+      0.1423907,
+      0.8106563
+    ]
+  }
+});
+  </script>
+</body>
+</html>

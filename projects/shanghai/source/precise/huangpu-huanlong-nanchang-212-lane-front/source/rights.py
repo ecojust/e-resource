@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Antigng, 2015-09-09, Wikimedia Commons'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:%E5%8D%97%E6%98%8C%E8%B7%AF212%E5%BC%84.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/4.0/'
+GEOMETRY_LICENSE='CC BY-SA 4.0; replacement address lettering SIL OFL 1.1'
+TEXTURE_LICENSE='MIT'
