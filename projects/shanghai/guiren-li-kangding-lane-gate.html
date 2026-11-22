@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>归仁里过街楼 · 上海历史建筑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.69" aria-label="花雅堂的三联窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 康定东路3弄</p>
+    <h1>归仁里过街楼</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">弄口上方镶着从右往左读的“归仁里”，再往上是镜心山花。东面街窗留在砖墙内，西面的木廊向街面凸出。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">斜看过街楼</button>
+      <button type="button" data-view="front">正看弄口</button>
+      <button type="button" data-view="above">俯看门洞和街廊</button>
+      <button type="button" data-view="inscription">近看镜心与弄名</button>
+      <button type="button" data-view="return">看右侧木廊</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/guiren-li-kangding-lane-gate-v1/street-wall/guiren-street-gate.jpg">街面、两侧开间与铺地</a>
+    <a href="data/audit/guiren-li-kangding-lane-gate-v1/gable-relief/whole-gable-relief.jpg">镜心、垂饰和弄额</a>
+    <a href="data/audit/guiren-li-kangding-lane-gate-v1/iron-gate/whole-iron-gate.jpg">两扇铁门与通道</a>
+    <a href="data/audit/guiren-li-kangding-lane-gate-v1/sashes/five-windows-photo-registration.jpg">五组街窗的照片投影</a>
+    <a href="source/precise/jingan-guiren-li-kangding-lane-gate/README.md">查阅照片及测量记录</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-guiren-li-kangding-lane-gate', {
+  "oblique": {
+    "center": [
+      0,
+      4.3,
+      0
+    ],
+    "size": [
+      14.8,
+      10.65,
+      3
+    ],
+    "direction": [
+      -0.44,
+      0.12,
+      1
+    ]
+  },
+  "front": {
+    "center": [
+      0.18,
+      4.55,
+      0.1
+    ],
+    "size": [
+      14.8,
+      10.7,
+      2
+    ],
+    "direction": [
+      0.01,
+      0.02,
+      1
+    ]
+  },
+  "above": {
+    "center": [
+      0.1,
+      4.1,
+      -0.75
+    ],
+    "size": [
+      14.35,
+      10.3,
+      5.0
+    ],
+    "direction": [
+      -0.29,
+      0.64,
+      1
+    ]
+  },
+  "inscription": {
+    "center": [
+      0.15,
+      8.01,
+      0.013
+    ],
+    "size": [
+      4.26,
+      3.65,
+      0.64
+    ],
+    "direction": [
+      0.02,
+      0.014,
+      1
+    ]
+  },
+  "return": {
+    "center": [
+      4.1,
+      5.32,
+      0.78
+    ],
+    "size": [
+      5.42,
+      4.38,
+      1.25
+    ],
+    "direction": [
+      0.43,
+      0.1,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>

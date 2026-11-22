@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='高参88、YOCO、张渊源及百度地图分期公开街景。'
+PHOTO_SOURCE='https://m.thepaper.cn/newsDetail_forward_14165880'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT (original procedural brick, glazing and redrawn address plate)'

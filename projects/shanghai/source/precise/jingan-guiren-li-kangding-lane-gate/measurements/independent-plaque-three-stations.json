@@ -1,0 +1,251 @@
+{
+  "landmark": "同一康定东路3弄过街楼绿色弄牌的牌面外框中心",
+  "method": "Three independent visual center picks from rectilinear photos. Horizontal WGS84 tangent plane at original 1797 west street corner. Reconstruct sight with original width, principal (width−1)/2,(height−1)/2, pitch and true azimuth, then least squares orthogonal distance to horizontal rays. Heights use the metadata 2.32m above local road for each camera and are an independent check. Cross-date panorama station biases affect result.",
+  "street_reference": {
+    "start_wgs84": [
+      121.45296693,
+      31.23907736
+    ],
+    "end_wgs84": [
+      121.45322978,
+      31.23916909
+    ],
+    "len_m": 27.006,
+    "bearing_deg": 67.878,
+    "cross_road_diff_deg": 4.949,
+    "edge_mid_to_road_centre_m": 11.095,
+    "gate_to_edge_m": 2.54
+  },
+  "setback_sign": "positive into polygon from its north street edge; positive chainage going east from west vertex",
+  "inputs": [
+    {
+      "name": "2015-east",
+      "station": "09000300011512281219236635B",
+      "camera_wgs84": [
+        121.45316831003005,
+        31.239258703379722
+      ],
+      "azimuth": 179.06066456132538,
+      "pitch": 18,
+      "hfov": 100,
+      "width": 1152,
+      "height": 800,
+      "pixel": [
+        591.3,
+        466.0
+      ],
+      "east_north_up_per_horizontal_m": [
+        -0.01649478022373068,
+        -0.9998639518581369,
+        0.17921678617788325
+      ],
+      "image_sha256": "7a1e2f9837796edc0c9444942a390255b4c7c9851381529c6154d794345be7e0"
+    },
+    {
+      "name": "2015-middle",
+      "station": "09000300011512281219224015B",
+      "camera_wgs84": [
+        121.45307177118123,
+        31.239216516614984
+      ],
+      "azimuth": 137.93643852918365,
+      "pitch": 18,
+      "hfov": 100,
+      "width": 1152,
+      "height": 800,
+      "pixel": [
+        248.5,
+        458.6
+      ],
+      "east_north_up_per_horizontal_m": [
+        0.9721395846720454,
+        -0.23440270457838766,
+        0.1608508432204582
+      ],
+      "image_sha256": "43f1ebeaae55bb8cbebd7ae58a9a6709382e1088217295a510e42e4c3b9b7478"
+    },
+    {
+      "name": "2020-middle",
+      "station": "09000300122002231015189635O",
+      "camera_wgs84": [
+        121.45310326359139,
+        31.239232032252634
+      ],
+      "azimuth": 152.0112680296593,
+      "pitch": 18,
+      "hfov": 100,
+      "width": 1152,
+      "height": 800,
+      "pixel": [
+        431.5,
+        452.3
+      ],
+      "east_north_up_per_horizontal_m": [
+        0.7048942276994332,
+        -0.7093124331040727,
+        0.19935897665561805
+      ],
+      "image_sha256": "afd90a5823c64df9e54b722a74a54ab335d7164c8a3c4463b7c72175dbed44db"
+    }
+  ],
+  "intersection": {
+    "all": {
+      "wgs84": [
+        121.45316221893617,
+        31.239191969492726
+      ],
+      "east_north_m": [
+        18.60423224414689,
+        12.707165041745128
+      ],
+      "chainage_east_along_1797_m": 22.019,
+      "setback_inside_1797_from_street_edge_m": -4.772,
+      "camera_distances_m": [
+        7.408,
+        9.014,
+        7.11
+      ],
+      "horizontal_cross_track_residual_m": [
+        0.458,
+        0.626,
+        -0.853
+      ],
+      "heights_above_camera_local_road_m": [
+        3.648,
+        3.77,
+        3.737
+      ],
+      "pixel_coordinates": {
+        "2015-east": [
+          591.3,
+          466.0
+        ],
+        "2015-middle": [
+          248.5,
+          458.6
+        ],
+        "2020-middle": [
+          431.5,
+          452.3
+        ]
+      }
+    },
+    "pairs": [
+      {
+        "stations": [
+          "2015-east",
+          "2015-middle"
+        ],
+        "wgs84": [
+          121.45316712076854,
+          31.23919676244253
+        ],
+        "east_north_m": [
+          19.07120610257524,
+          13.238576556713387
+        ],
+        "chainage_east_along_1797_m": 22.651,
+        "setback_inside_1797_from_street_edge_m": -5.089,
+        "camera_distances_m": [
+          6.869,
+          9.344
+        ],
+        "horizontal_cross_track_residual_m": [
+          0.0,
+          -0.0
+        ],
+        "heights_above_camera_local_road_m": [
+          3.551,
+          3.823
+        ],
+        "pixel_coordinates": {
+          "2015-east": [
+            591.3,
+            466.0
+          ],
+          "2015-middle": [
+            248.5,
+            458.6
+          ]
+        }
+      },
+      {
+        "stations": [
+          "2015-east",
+          "2020-middle"
+        ],
+        "wgs84": [
+          121.45316674414214,
+          31.23917714640993
+        ],
+        "east_north_m": [
+          19.035326726917205,
+          11.063676749074185
+        ],
+        "chainage_east_along_1797_m": 21.799,
+        "setback_inside_1797_from_street_edge_m": -3.087,
+        "camera_distances_m": [
+          9.044,
+          8.579
+        ],
+        "horizontal_cross_track_residual_m": [
+          0.0,
+          0.0
+        ],
+        "heights_above_camera_local_road_m": [
+          3.941,
+          4.03
+        ],
+        "pixel_coordinates": {
+          "2015-east": [
+            591.3,
+            466.0
+          ],
+          "2020-middle": [
+            431.5,
+            452.3
+          ]
+        }
+      },
+      {
+        "stations": [
+          "2015-middle",
+          "2020-middle"
+        ],
+        "wgs84": [
+          121.45313678812384,
+          31.23920304664691
+        ],
+        "east_north_m": [
+          16.18156177535039,
+          13.93532880942575
+        ],
+        "chainage_east_along_1797_m": 20.236,
+        "setback_inside_1797_from_street_edge_m": -6.822,
+        "camera_distances_m": [
+          6.371,
+          4.531
+        ],
+        "horizontal_cross_track_residual_m": [
+          -0.0,
+          -0.0
+        ],
+        "heights_above_camera_local_road_m": [
+          3.345,
+          3.223
+        ],
+        "pixel_coordinates": {
+          "2015-middle": [
+            248.5,
+            458.6
+          ],
+          "2020-middle": [
+            431.5,
+            452.3
+          ]
+        }
+      }
+    ]
+  },
+  "fourth_view": "2019-west is obstructed by intervening trunk and foliage at the plaque; excluded."
+}

@@ -1,0 +1,111 @@
+{
+ "checks": {
+  "raw": {
+   "asset_sha256": "9fbf5c5ca88de97980ed3c4b1d3cea3aacc80a08ab13fd91f9ba71ad6db45888",
+   "triangles": 37180,
+   "real_sections": [
+    104,
+    104
+   ],
+   "real_photo_first_hits": [
+    57,
+    62
+   ],
+   "section_details": "wall-sections-raw.json.gz",
+   "detail_sha256": "71dc8eb1162962671550c637c365cc3774d1bddcaea5ffd4bc3ae6f264f5ae9e"
+  },
+  "full": {
+   "asset_sha256": "955cb0030529c77f1bb21aec4d86b1261132f5d66f6e2348a92c068cc020ed7e",
+   "triangles": 37180,
+   "real_sections": [
+    104,
+    104
+   ],
+   "real_photo_first_hits": [
+    57,
+    62
+   ],
+   "section_details": "wall-sections-full.json.gz",
+   "detail_sha256": "9c50be25e45d2eda2d97435019f233e032595a08f905cbbe1f037f026fd215cd"
+  },
+  "lod": {
+   "asset_sha256": "393d28b19d5a092927faf6bfb7c3cb16f8a795c111e96b8144a61e16f16e0ebe",
+   "triangles": 13868,
+   "real_sections": [
+    104,
+    104
+   ],
+   "real_photo_first_hits": [
+    57,
+    62
+   ],
+   "section_details": "wall-sections-lod.json.gz",
+   "detail_sha256": "b0304f0403871e4f8376ad8e63ea0df90bb837a6946037b2e64dd2c85ecd926a"
+  }
+ },
+ "illustration": {
+  "file": "data/audit/guiren-li-kangding-lane-gate-v1/street-wall/guiren-street-gate.jpg",
+  "sha256": "7e91fa21c7a4998bbccf1cd5d859343a82ec2029b8d23a0cf573214e929c3d3a"
+ },
+ "independent_green_plaque_checks": {
+  "total": 3,
+  "passed": 3
+ },
+ "colour_readings": {
+  "total": 59,
+  "agreed": 54,
+  "residuals": [
+   {
+    "camera": "struct-2015-east",
+    "uv": [
+     140,
+     592
+    ],
+    "observed": "red band",
+    "model": "Guiren | grey running-bond brick"
+   },
+   {
+    "camera": "struct-2020-middle",
+    "uv": [
+     249,
+     400
+    ],
+    "observed": "red band",
+    "model": "Guiren | grey running-bond brick"
+   },
+   {
+    "camera": "struct-2020-middle",
+    "uv": [
+     56,
+     678
+    ],
+    "observed": "grey masonry",
+    "model": "Guiren | russet band brick"
+   },
+   {
+    "camera": "independent-2021-middle",
+    "uv": [
+     90,
+     170
+    ],
+    "observed": "red band",
+    "model": "Guiren | grey running-bond brick"
+   },
+   {
+    "camera": "independent-2021-middle",
+    "uv": [
+     8,
+     212
+    ],
+    "observed": "grey masonry",
+    "model": "Guiren | russet band brick"
+   }
+  ]
+ },
+ "numeric_refit_max_repeat_px": 5.874060595315995e-05,
+ "limitations": [
+  "五个红灰砖颜色读数与网格首交不同，原像局部遮挡和带缘的像素归属仍有偏差。",
+  "深度为二期街面照片所见的局部度量；内端后墙无可靠地面测点。",
+  "27.006米为原图1797整段街边，本模型收录过街楼和两侧相邻开间，未将整块地形图用作过街楼外廓。"
+ ]
+}
