@@ -15,9 +15,11 @@ import struct
 import sys
 
 SOURCE = Path(__file__).resolve().parent
-TEXTURE = SOURCE / "letterbox-relief-atlas.png"
-MATERIAL = "Weathered calibrated slate relief atlas"
-UV = "Weathered calibrated slate relief atlas UV"
+sys.path.insert(0, str(SOURCE))
+from mailbox_material import STONE as MATERIAL, TEXTURE
+
+UV = "Mailbox photograph UV"
+IMAGE_NODE = "Packed WQL mailbox photograph"
 RAW_ENV = "GREAT_WESTERN_VILLA_16_RAW"
 MODE_ENV = "GREAT_WESTERN_VILLA_16_BLENDER_STAGE"
 
@@ -148,7 +150,7 @@ def prepare(scene):
     uv = nodes.new("ShaderNodeUVMap")
     uv.uv_map = UV
     node = nodes.new("ShaderNodeTexImage")
-    node.name = "Packed Weathered calibrated slate relief atlas"
+    node.name = IMAGE_NODE
     node.image = bpy.data.images.load(str(TEXTURE), check_existing=True)
     node.image.pack()
     node.extension = "REPEAT"
@@ -178,7 +180,7 @@ def check_reopened():
     assert Path(bpy.data.filepath).resolve() == blend.resolve() and report["match_raw"]
     assert scene["source_glb_sha256"] == sha(raw)
     mat = bpy.data.materials[MATERIAL]
-    node = mat.node_tree.nodes["Packed Weathered calibrated slate relief atlas"]
+    node = mat.node_tree.nodes[IMAGE_NODE]
     shader = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
     assert shader.inputs["Base Color"].links[0].from_node == node
     assert node.inputs["Vector"].links[0].from_node.uv_map == UV and node.extension == "REPEAT"

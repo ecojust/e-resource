@@ -10,8 +10,7 @@ from photo_architecture import Facade
 from shapely.geometry import box
 from registration import C,HERE
 DATA=json.loads((HERE.parent/'measurements/letterbox-relief.json').read_bytes())
-STONE='Relief plaque from WQL photograph'
-TEXTURE=HERE/'letterbox-relief-atlas.png'
+from mailbox_material import STONE, TEXTURE
 METAL='Black bronzed letter shelf'
 EDGE='Worn gunmetal edge'
 CORNERS=np.array(C['plaque_corners_enu'])
