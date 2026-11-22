@@ -3802,7 +3802,7 @@
 | 哈同大楼（慈安里大楼）东南转角立面 | 2026-11-23 03:08:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hardoon-building-chamfer&mode=overview) |
 | 东亚大楼四柱门廊及转角立面 | 2026-11-23 03:47:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-east-asia-corner&mode=overview) |
 | 谦信大楼江西中路中央六券窗廊 | 2026-11-23 04:12:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qianxin-building-historic-front&mode=overview) · 1907 年原址，地点卡可查看历史外观 |
-| 瑞康洋行买办住宅（贝润生宅）历史庭院立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruikang-comprador-residence&mode=overview) · 1999 年入录，约 2000 年灭失，地点卡可查看历史照片复原 |
+| 瑞康洋行买办住宅（贝润生宅）历史庭院立面 | 2026-11-23 04:36:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruikang-comprador-residence&mode=overview) · 1999 年入录，约 2000 年灭失，地点卡可查看历史照片复原 |
 
 ### 徐汇区（55处）
 
