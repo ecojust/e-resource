@@ -13,3 +13,7 @@
 ## 文联老楼在第236期正式城区中的实测
 
 第236期将延安西路238号文联老楼南园面加入正式城区，登记由272处增至273处。桌面鼠标和390像素手机触屏分别从普通目录及地图灯牌进入，同一栋建筑的街区近景中核对了敞廊、石栏杆及两翼切角凸窗和曲顶山花。18处地面与9栋邻屋逐项核对，地图远近档和独立页四项下载均已读回。12张城区图和6张独立页图分别记录可见构件。[逐段退出](final-map-31236/slot-released.json) · [逐图观察](final-map-31236/visual-review.json) · [地面与专项取景](final-map-31236/architecture/main-browser.json) · [全站实取](final-map-31236/all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b4f818c65c1e626b6a9fa5edf20d1fd7041d9722/projects/shanghai/index.html#landmark=jingan-wenlian-old-house&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
