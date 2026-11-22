@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>修德里41号住宅四联木窗、斜角窗与波齿雨篷</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="修德里41号住宅四联木窗、斜角窗与波齿雨篷"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 威海路590弄41号</p>
+    <h1>修德里41号住宅四联木窗、斜角窗与波齿雨篷</h1>
+      <p>院内住宅立面画面左侧一跨。四联红褐色木窗退入较厚的洞口，边上另有一扇随折墙转向的木窗；窗台及窗上石带随转角折回。正窗上方的一道浅雨篷保留波齿前缘和端支撑。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">按2019年照片校核正面四扇、侧面一扇和石带转折。正面墙段名义宽2.45米，侧墙长度约0.96米；雨篷材料、窗洞深度及斜角均为估计。外加管线、爬藤与窗外铁丝不纳入房屋构件。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看四联木窗</button>
+      <button type="button" data-view="oblique">斜看转角侧窗</button>
+      <button type="button" data-view="tiles">看雨篷波齿前缘</button>
+      <button type="button" data-view="rail">看转角窗台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/jingan-xiudeli-41-canted-bay-awning/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-xiudeli-41-canted-bay-awning', {
+  "front": {
+    "center": [
+      0,
+      1.35,
+      -0.1
+    ],
+    "size": [
+      3.3280000000000003,
+      3.2,
+      1.3760000000000001
+    ],
+    "direction": [
+      0.22,
+      0.04,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      1.35,
+      -0.1
+    ],
+    "size": [
+      3.3280000000000003,
+      3.2,
+      1.3760000000000001
+    ],
+    "direction": [
+      0.76,
+      0.11,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      -0.22,
+      2.14,
+      0.04
+    ],
+    "size": [
+      1.7784,
+      1.71,
+      0.7353
+    ],
+    "direction": [
+      0.25,
+      0.18,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.99,
+      0.78,
+      -0.18
+    ],
+    "size": [
+      1.7576,
+      1.69,
+      0.7267
+    ],
+    "direction": [
+      0.56,
+      -0.04,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
