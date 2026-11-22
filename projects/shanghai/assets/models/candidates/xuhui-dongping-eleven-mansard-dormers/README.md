@@ -1,15 +1,9 @@
 # 东平路11号宋氏住宅南坡三扇老虎窗
 
-东平路11号花园主宅南坡三扇带山花的老虎窗，含两扇式木窗、叠层窗套、侧壁及相连的红瓦屋面。
+东平路11号花园主宅南坡三扇带山花的老虎窗，含两扇式木窗、叠层窗套、侧壁及相连的红瓦屋面。 三条窗轴线取自园内主屋航片，间距约3.8米；窗宽和叠线高度按修缮后正面原照片比例还原，南阳台遮住的一小段下槛经过估计。
 
-| 下载 | 三角面 | 字节 |
-| --- | ---: | ---: |
-| [原始网格](xuhui-dongping-eleven-mansard-dormers-raw.glb?raw=true) | 8,592 | 486,068 |
-| [近景模型](xuhui-dongping-eleven-mansard-dormers-web.glb?raw=true) | 8,592 | 196,212 |
-| [远景模型](xuhui-dongping-eleven-mansard-dormers-lod.glb?raw=true) | 4,560 | 112,668 |
+[原始 GLB](xuhui-dongping-eleven-mansard-dormers-raw.glb?raw=true) · [近景 GLB](xuhui-dongping-eleven-mansard-dormers-web.glb?raw=true) · [远景 GLB](xuhui-dongping-eleven-mansard-dormers-lod.glb?raw=true) · [可编辑 Blender](xuhui-dongping-eleven-mansard-dormers.blend?raw=true)
 
-正面三扇窗的浅色山花、上下窗套和细竖棂可分别辨认。由斜向看，窗身从红瓦坡面中伸出，窗侧壁与瓦面相交；远景保留三座山花的轮廓。
+[打开模型](../../../../dongping-eleven-mansard-dormers.html) · [照片出处](../../../../source/precise/xuhui-dongping-eleven-mansard-dormers/reference-review.json) · [桌面与手机十张实图](../../../../data/audit/dongping-eleven-mansard-dormers-v1/development-views) · [逐图核对](../../../../data/audit/dongping-eleven-mansard-dormers-v1/development-views/actual-visual-review.json)
 
-[近景正面](../../../data/audit/dongping-eleven-mansard-dormers-v1/development-first-study/model-front.jpg) · [近景斜面](../../../data/audit/dongping-eleven-mansard-dormers-v1/development-first-study/model-oblique.jpg) · [远景正面](../../../data/audit/dongping-eleven-mansard-dormers-v1/development-first-study/model-lod-front.jpg) · [远景斜面](../../../data/audit/dongping-eleven-mansard-dormers-v1/development-first-study/model-lod-oblique.jpg)
-
-[模型范围与摄影出处](../../../source/precise/xuhui-dongping-eleven-mansard-dormers/README.md) · [三档构件检查](../../../data/audit/dongping-eleven-mansard-dormers-v1/development-first-study/geometry-rays.json)
+可编辑工程包含83个网格。桌面正视与手机竖屏都能辨出同一南坡上的三座老虎窗和红瓦。近摄能分清中窗的双扇木棂、上方三角山花的轮廓和逐层回收的线脚。远档保留三窗间距与两侧坡面。 四项下载均已逐件保存核对。
