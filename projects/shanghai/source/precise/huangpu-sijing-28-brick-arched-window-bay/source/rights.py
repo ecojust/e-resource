@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Antigng'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:%E6%B3%97%E6%B3%BE%E8%B7%AF28%E5%8F%B7.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/4.0/'
+GEOMETRY_LICENSE='CC BY-SA 4.0'
+TEXTURE_LICENSE='MIT'
