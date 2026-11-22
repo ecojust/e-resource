@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>平凉路629号临街二层钢窗与绿色檐饰</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="平凉路629号临街二层钢窗与绿色檐饰"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">杨浦区 · 平凉路629号</p>
+    <h1>平凉路629号临街二层钢窗与绿色檐饰</h1>
+      <p>根据2021年2月的现场影像，复原629号门牌点所在连续立面的三间二层钢窗，逐扇分出六列、三排玻璃及近看可见的下排帘面。上方的棕色封檐托住一道连续的绿色起伏饰带。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">2015年12月的窗扇分格与2021年不同，作品取后者的可见状态。两处街景的交点相距该号地址点约1.9米；店招右缘用于定位。梃距和窗高按全景角度展开，玻璃背后及屋顶深处未获实测。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看临街三间钢窗</button>
+      <button type="button" data-view="oblique">看六列玻璃分格</button>
+      <button type="button" data-view="tiles">斜看绿色檐饰</button>
+      <button type="button" data-view="rail">看深色窗梃和下缘折面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/yangpu-pingliang-629-upper-window-band/README.md">史料、测量与模型范围</a>
+  <p>据百度地图2015年12月、2019年5月和2021年2月平凉路公开街景。模型的几何、材料与展示图为独立制作，参考图仅供测量。 <a href="https://map.baidu.com/">街景来源</a></p></aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('yangpu-pingliang-629-upper-window-band', {
+  "front": {
+    "center": [
+      0,
+      1.18,
+      0
+    ],
+    "size": [
+      4.5656,
+      4.39,
+      1.8877
+    ],
+    "direction": [
+      0.18,
+      0.07,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      0.88,
+      -0.04
+    ],
+    "size": [
+      1.8304,
+      1.76,
+      0.7568
+    ],
+    "direction": [
+      -0.22,
+      0.06,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0.19,
+      2.18,
+      0.28
+    ],
+    "size": [
+      1.8408,
+      1.77,
+      0.7611
+    ],
+    "direction": [
+      0.45,
+      0.19,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      -0.62,
+      0.3,
+      0.01
+    ],
+    "size": [
+      1.6744,
+      1.61,
+      0.6923
+    ],
+    "direction": [
+      0.61,
+      0.12,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
