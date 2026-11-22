@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='高参88；nina（2021）；CyberCop（2000）；2015/2020年公共街面影像'
+PHOTO_SOURCE='https://www.meipian.cn/3f5icwhf'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'

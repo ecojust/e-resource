@@ -1,0 +1,953 @@
+{
+  "assumed_plane_z_m": -2.29,
+  "coordinate_frame": "metric-porch-local, X across the street front, +Y toward the door; coordinates relative to the granite top arris",
+  "origins": {
+    "nina-03-native.jpg": "4fbe8ea06537e41825bd9afa7f0f647bf71b9b6986b962ffe91b311a7a4b86bb",
+    "nina-05-native.jpg": "0ddb90a1fdf974eca6f83c742736cd2ab60fa35992451f61048a24722de0a148",
+    "metric-porch-local.json": "9fd56089a6dd1b97446d7f96f6f2fb00b54ed8b0c6cc26ef81e6b54c883398cc",
+    "nina3-entrance-camera.json": "7229b48ac0a8435aeda031bfc577625628e35548bbcb7420508b394664727b19",
+    "entrance-plane-ties.json": "04596dcb25804883a968d051095178e0385468b447bf3916ec796dcc1ec55121"
+  },
+  "native_pixels": "input photos 3000×2000 and 2000×3000, origin top left",
+  "calibration": "Photo 5 uses the homography from original published photograph 13 to the original 5, times P13. Photograph 3 has a separate perspective fit principally from elevated door and column controls. At pavement height the two metric grids separate in depth. Six floor motifs shared by the two images give a local affine correction from P3 floor readouts into the P5 floor frame. Its extrapolation across the right half is approximate.",
+  "floor_patch_registration": {
+    "photo3_xy_to_photo5_xy": [
+      [
+        1.01394,
+        -0.01297,
+        0.05831
+      ],
+      [
+        -0.01456,
+        1.18506,
+        -0.10892
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "matched_xy_photo3": [
+      [
+        0.18,
+        1.09286
+      ],
+      [
+        0.655,
+        1.08214
+      ],
+      [
+        0.655,
+        0.70357
+      ],
+      [
+        0.64429,
+        0.30714
+      ],
+      [
+        0.31571,
+        0.92143
+      ],
+      [
+        0.30857,
+        -0.05
+      ]
+    ],
+    "matched_xy_photo5": [
+      [
+        0.22643,
+        1.175
+      ],
+      [
+        0.71214,
+        1.17143
+      ],
+      [
+        0.70857,
+        0.71071
+      ],
+      [
+        0.70857,
+        0.23929
+      ],
+      [
+        0.36571,
+        0.98571
+      ],
+      [
+        0.37286,
+        -0.16786
+      ]
+    ],
+    "fitted_residuals_m": [
+      [
+        0.00022,
+        0.00856
+      ],
+      [
+        -0.00373,
+        -0.00748
+      ],
+      [
+        0.00475,
+        0.00461
+      ],
+      [
+        -0.00098,
+        0.0064
+      ],
+      [
+        0.00077,
+        -0.00728
+      ],
+      [
+        -0.00102,
+        -0.00481
+      ]
+    ],
+    "mean_residual_m": 0.00704
+  },
+  "observations": {
+    "3": {
+      "left_L_visible_end_corner_foot": {
+        "rectified_readout_px": [
+          [
+            179,
+            245
+          ],
+          [
+            290,
+            246
+          ],
+          [
+            288,
+            518
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            -0.08071,
+            0.925
+          ],
+          [
+            0.31571,
+            0.92143
+          ],
+          [
+            0.30857,
+            -0.05
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1080.2526,
+            1449.61257
+          ],
+          [
+            1186.81767,
+            1449.01588
+          ],
+          [
+            1147.23802,
+            1531.76396
+          ]
+        ],
+        "local_xy_m": [
+          [
+            -0.03552,
+            0.98844
+          ],
+          [
+            0.36648,
+            0.97843
+          ],
+          [
+            0.37183,
+            -0.17266
+          ]
+        ]
+      },
+      "right_L_visible_end_corner_foot": {
+        "rectified_readout_px": [
+          [
+            1058,
+            262
+          ],
+          [
+            928,
+            258
+          ],
+          [
+            925,
+            521
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            3.05857,
+            0.86429
+          ],
+          [
+            2.59429,
+            0.87857
+          ],
+          [
+            2.58357,
+            -0.06071
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1915.81314,
+            1447.31807
+          ],
+          [
+            1793.03024,
+            1447.26417
+          ],
+          [
+            1838.77037,
+            1525.99382
+          ]
+        ],
+        "local_xy_m": [
+          [
+            3.1483,
+            0.87078
+          ],
+          [
+            2.67736,
+            0.89447
+          ],
+          [
+            2.67867,
+            -0.21848
+          ]
+        ]
+      },
+      "street_edge": {
+        "rectified_readout_px": [
+          [
+            287,
+            544
+          ],
+          [
+            540,
+            546
+          ],
+          [
+            741,
+            549
+          ],
+          [
+            1020,
+            553
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            0.305,
+            -0.14286
+          ],
+          [
+            1.20857,
+            -0.15
+          ],
+          [
+            1.92643,
+            -0.16071
+          ],
+          [
+            2.92286,
+            -0.175
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1141.9365,
+            1540.96883
+          ],
+          [
+            1422.70656,
+            1538.86492
+          ],
+          [
+            1643.98226,
+            1537.70714
+          ],
+          [
+            1948.82394,
+            1536.05415
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.36941,
+            -0.28265
+          ],
+          [
+            1.28567,
+            -0.30427
+          ],
+          [
+            2.01367,
+            -0.32742
+          ],
+          [
+            3.02417,
+            -0.35886
+          ]
+        ]
+      },
+      "door_edge": {
+        "rectified_readout_px": [
+          [
+            192,
+            93
+          ],
+          [
+            550,
+            97
+          ],
+          [
+            990,
+            112
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            -0.03429,
+            1.46786
+          ],
+          [
+            1.24429,
+            1.45357
+          ],
+          [
+            2.81571,
+            1.4
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1116.07485,
+            1411.77931
+          ],
+          [
+            1435.43287,
+            1410.37096
+          ],
+          [
+            1825.24456,
+            1410.96605
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.00452,
+            1.63108
+          ],
+          [
+            1.30109,
+            1.59553
+          ],
+          [
+            2.89511,
+            1.50917
+          ]
+        ]
+      },
+      "row_centre_door_side": {
+        "rectified_readout_px": [
+          [
+            252,
+            198
+          ],
+          [
+            385,
+            201
+          ],
+          [
+            519,
+            205
+          ],
+          [
+            655,
+            208
+          ],
+          [
+            789,
+            211
+          ],
+          [
+            922,
+            214
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            0.18,
+            1.09286
+          ],
+          [
+            0.655,
+            1.08214
+          ],
+          [
+            1.13357,
+            1.06786
+          ],
+          [
+            1.61929,
+            1.05714
+          ],
+          [
+            2.09786,
+            1.04643
+          ],
+          [
+            2.57286,
+            1.03571
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1156.76804,
+            1436.83961
+          ],
+          [
+            1281.18179,
+            1436.62475
+          ],
+          [
+            1406.19616,
+            1436.65648
+          ],
+          [
+            1532.82091,
+            1436.42035
+          ],
+          [
+            1657.26019,
+            1436.19946
+          ],
+          [
+            1780.45885,
+            1435.98641
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.22665,
+            1.18356
+          ],
+          [
+            0.70841,
+            1.16395
+          ],
+          [
+            1.19384,
+            1.14005
+          ],
+          [
+            1.68646,
+            1.12028
+          ],
+          [
+            2.17184,
+            1.10062
+          ],
+          [
+            2.6536,
+            1.08101
+          ]
+        ]
+      },
+      "same_two_columns_next_two_rows": {
+        "rectified_readout_px": [
+          [
+            385,
+            307
+          ],
+          [
+            382,
+            418
+          ],
+          [
+            519,
+            309
+          ],
+          [
+            518,
+            421
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            0.655,
+            0.70357
+          ],
+          [
+            0.64429,
+            0.30714
+          ],
+          [
+            1.13357,
+            0.69643
+          ],
+          [
+            1.13,
+            0.29643
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1272.94717,
+            1464.88769
+          ],
+          [
+            1260.25173,
+            1497.783
+          ],
+          [
+            1404.38727,
+            1464.33693
+          ],
+          [
+            1401.19003,
+            1497.4306
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.71332,
+            0.71532
+          ],
+          [
+            0.70759,
+            0.24568
+          ],
+          [
+            1.19865,
+            0.69989
+          ],
+          [
+            1.20022,
+            0.22592
+          ]
+        ]
+      }
+    },
+    "5": {
+      "left_L_visible_end_corner_foot": {
+        "rectified_readout_px": [
+          [
+            126,
+            226
+          ],
+          [
+            304,
+            228
+          ],
+          [
+            306,
+            551
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            -0.27,
+            0.99286
+          ],
+          [
+            0.36571,
+            0.98571
+          ],
+          [
+            0.37286,
+            -0.16786
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1359.38667,
+            2259.35451
+          ],
+          [
+            1686.35302,
+            2363.05717
+          ],
+          [
+            1368.10653,
+            2704.51874
+          ]
+        ],
+        "local_xy_m": [
+          [
+            -0.27,
+            0.99286
+          ],
+          [
+            0.36571,
+            0.98571
+          ],
+          [
+            0.37286,
+            -0.16786
+          ]
+        ]
+      },
+      "left_L_thin_band_corner_centre": {
+        "rectified_readout_px": [
+          [
+            299,
+            234
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            0.34786,
+            0.96429
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1671.59231,
+            2364.74938
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.34786,
+            0.96429
+          ]
+        ]
+      },
+      "street_edge": {
+        "rectified_readout_px": [
+          [
+            232,
+            582
+          ],
+          [
+            383,
+            580
+          ],
+          [
+            486,
+            579
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            0.10857,
+            -0.27857
+          ],
+          [
+            0.64786,
+            -0.27143
+          ],
+          [
+            1.01571,
+            -0.26786
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1154.07375,
+            2669.17653
+          ],
+          [
+            1529.57391,
+            2836.96198
+          ],
+          [
+            1838.66201,
+            2975.93649
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.10857,
+            -0.27857
+          ],
+          [
+            0.64786,
+            -0.27143
+          ],
+          [
+            1.01571,
+            -0.26786
+          ]
+        ]
+      },
+      "door_edge": {
+        "rectified_readout_px": [
+          [
+            35,
+            60
+          ],
+          [
+            209,
+            61
+          ],
+          [
+            386,
+            64
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            -0.595,
+            1.58571
+          ],
+          [
+            0.02643,
+            1.58214
+          ],
+          [
+            0.65857,
+            1.57143
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1358.05829,
+            2122.04271
+          ],
+          [
+            1631.63549,
+            2196.84961
+          ],
+          [
+            1958.51364,
+            2287.90977
+          ]
+        ],
+        "local_xy_m": [
+          [
+            -0.595,
+            1.58571
+          ],
+          [
+            0.02643,
+            1.58214
+          ],
+          [
+            0.65857,
+            1.57143
+          ]
+        ]
+      },
+      "row_centre_door_side": {
+        "rectified_readout_px": [
+          [
+            132,
+            175
+          ],
+          [
+            265,
+            175
+          ],
+          [
+            401,
+            176
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            -0.24857,
+            1.175
+          ],
+          [
+            0.22643,
+            1.175
+          ],
+          [
+            0.71214,
+            1.17143
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1414.40726,
+            2229.37138
+          ],
+          [
+            1650.22484,
+            2299.45381
+          ],
+          [
+            1926.43409,
+            2382.55314
+          ]
+        ],
+        "local_xy_m": [
+          [
+            -0.24857,
+            1.175
+          ],
+          [
+            0.22643,
+            1.175
+          ],
+          [
+            0.71214,
+            1.17143
+          ]
+        ]
+      },
+      "rightmost_column_next_two_rows": {
+        "rectified_readout_px": [
+          [
+            400,
+            305
+          ],
+          [
+            400,
+            437
+          ]
+        ],
+        "native_camera_xy_m": [
+          [
+            0.70857,
+            0.71071
+          ],
+          [
+            0.70857,
+            0.23929
+          ]
+        ],
+        "original_photo_uv_px": [
+          [
+            1837.88246,
+            2500.48083
+          ],
+          [
+            1728.76766,
+            2650.29639
+          ]
+        ],
+        "local_xy_m": [
+          [
+            0.70857,
+            0.71071
+          ],
+          [
+            0.70857,
+            0.23929
+          ]
+        ]
+      }
+    }
+  },
+  "street_side_line_y_equals_ax_plus_b": [
+    -0.0305,
+    -0.26183
+  ],
+  "threshold_side_line_y_equals_ax_plus_b": [
+    -0.02439,
+    1.59662
+  ],
+  "centre_panel_envelope": {
+    "definition": "Intersections of the two inside-pattern side lines through the L elbows with the street seam and threshold seam. The floral top row and end tiles extend to both sides beyond this central panel.",
+    "order": [
+      "left street",
+      "right street",
+      "right threshold",
+      "left threshold"
+    ],
+    "xy_m": [
+      [
+        0.37351,
+        -0.27323
+      ],
+      [
+        2.67882,
+        -0.34355
+      ],
+      [
+        2.67661,
+        1.53135
+      ],
+      [
+        0.36199,
+        1.58779
+      ]
+    ],
+    "photo3_uv_px": [
+      [
+        1143.59609,
+        1540.1532
+      ],
+      [
+        1844.72167,
+        1536.23741
+      ],
+      [
+        1771.56869,
+        1410.32374
+      ],
+      [
+        1203.52599,
+        1413.2263
+      ]
+    ],
+    "photo5_uv_px": [
+      [
+        1329.13145,
+        2746.33694
+      ],
+      [
+        4372.69605,
+        4219.22906
+      ],
+      [
+        3567.85536,
+        2738.21195
+      ],
+      [
+        1799.96383,
+        2241.15881
+      ]
+    ]
+  },
+  "overall_outer_carpet": {
+    "all_four_cut_corners_visible": false,
+    "direct_extent_ground_xy_m": [
+      [
+        -0.595,
+        1.58571
+      ],
+      [
+        3.1483,
+        0.87078
+      ]
+    ],
+    "occlusion": "Vegetation and the left granite base cover the left outside return. The right base and bags obscure the right end near the threshold. Neither picture supplies four outside corners for a rectangle. The two long seams and the two stepped side returns are measured separately.",
+    "points_beyond_the_2000x3000_photo5_frame_are_projections_only": true
+  },
+  "repeat_spacing_m": {
+    "across_by_seven_intervals": [
+      0.48216,
+      0.48601,
+      0.49302,
+      0.48578,
+      0.48216,
+      0.475,
+      0.48573
+    ],
+    "across_median": 0.48573,
+    "depth_photo5": [
+      0.46073,
+      0.47143
+    ],
+    "depth_registered3": [
+      0.44866,
+      0.46967
+    ]
+  },
+  "street_edge_difference_between_cameras_near_x_0_5_m": -0.01062,
+  "scale_uncertainty": "All metre values inherit the assumed 65 mm brick course and the Z=-2.29 m floor plane. Photo 3 cannot supply a second independent absolute scale on the right."
+}
