@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='言衣草2016年11月2日拍摄，图文《上海 延安中路 卢永祥公馆》'
+PHOTO_SOURCE='https://blog.sina.cn/dpool/blog/s/blog_a598306e0102xev6.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
