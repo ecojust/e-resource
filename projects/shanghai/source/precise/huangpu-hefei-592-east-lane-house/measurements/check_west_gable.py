@@ -51,7 +51,39 @@ def samples():
                 yield r["key"]+" exposed recessed glass",np.array([.193,a+(b-a)*.72,r["bottom"]+v*(r["top"]-r["bottom"])]),np.array([1.,0.,0.]),GLASS,.7
 
 
-def verify(model,dest):
+def rebate_samples(level):
+    """Read each raised stile of each upper shutter panel at three distinct heights."""
+    for row in side_openings():
+        width=(row["back_y"]-row["front_y"])/2-.024
+        stile=.035 if width<.44 else .040
+        low,top=row["bottom"]+.030,row["top"]-.030
+        panel_start=low+.701*(top-low)+.039
+        panel_end=top-.051
+        for inland in (False,True):
+            n,d,v=axes(row,inland)
+            hinge=np.array([-.023,row["back_y"]-.020 if inland else row["front_y"]+.020,0.])
+            mat=BACK if row["inward_leaf_angle_deg"] and inland else TIMBER
+            for side,s in enumerate((stile+.008,width-stile-.008),1):
+                for fraction in (.17,.49,.82):
+                    z=panel_start+(panel_end-panel_start)*fraction
+                    depth=-.012 if level=="full" else -.006
+                    label=f"{row['key']} {'inland' if inland else 'street'} edge {side} at {fraction}"
+                    yield label,hinge+d*s+v*z+n*depth,n,mat
+
+
+def check_rebates(scene,level):
+    result=[]
+    for feature,point,normal,material in rebate_samples(level):
+        hit=scene.ray(point-normal*.008,normal,.020)
+        error=None if hit is None else float(np.linalg.norm(np.asarray(hit["point_enu_m"])-point))
+        result.append({"feature":feature,"expected_xyz_m":point.round(6).tolist(),
+                       "expected_material":material,"actual_material":None if hit is None else hit["material"],
+                       "error_m":error,"passed":error is not None and error<.0015 and hit["material"]==material})
+    return {"level":level,"count":len(result),"passed":bool(result) and all(row["passed"] for row in result),
+            "checks":result}
+
+
+def verify(model,dest,level=None):
     scene=SerialScene(model);rays=[]
     for name,p,d,material,gap in samples():
         o=p-d*gap;hit=scene.ray(o,d,gap+.012)
@@ -59,10 +91,14 @@ def verify(model,dest):
         correct=hit is not None and hit["material"]==material and delta<.007
         rays.append(dict(feature=name,expected_material=material,expected_xyz=p.round(6).tolist(),first_hit=None if hit is None else hit["material"],distance_error_m=delta,passed=correct))
     report={**scene.asset,"triangles":len(scene.tri),"rays":len(rays),"passed":all(r["passed"] for r in rays),"checks":rays}
+    if level is not None:
+        report["lod_rebates"]=check_rebates(scene,level)
+        report["passed"]=report["passed"] and report["lod_rebates"]["passed"]
     dest.write_text(json.dumps(report,indent=2)+"\n")
     print(model.name,len(scene.tri),sum(r["passed"] for r in rays),len(rays))
     return report["passed"]
 
 if __name__=="__main__":
     a=argparse.ArgumentParser();a.add_argument("model",type=Path);a.add_argument("report",type=Path)
-    q=a.parse_args();raise SystemExit(0 if verify(q.model,q.report) else 1)
+    a.add_argument("--level",choices=("full","lod"))
+    q=a.parse_args();raise SystemExit(0 if verify(q.model,q.report,q.level) else 1)

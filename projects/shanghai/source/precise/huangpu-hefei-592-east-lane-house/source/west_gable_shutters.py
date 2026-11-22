@@ -94,6 +94,10 @@ def sill(builder,row):
 
 
 def add_shutters(builder,lod):
+    # Whole-building callers pass a boolean, while the standalone export names the two levels.
+    lod = "lod" if lod is True else "full" if lod is False else lod
+    if lod not in ("full","lod"):
+        raise ValueError("Expected a named or boolean level of detail")
     for row in side_openings():
         a,b,z0,z1=row["front_y"],row["back_y"],row["bottom"],row["top"]
         for y in (a+.014,b-.014):
