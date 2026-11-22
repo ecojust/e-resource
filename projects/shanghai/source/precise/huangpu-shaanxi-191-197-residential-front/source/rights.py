@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='WQL'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:%E9%99%95%E8%A5%BF%E5%8D%97%E8%B7%AF195%E5%8F%B7.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/4.0/'
+GEOMETRY_LICENSE='CC BY-SA 4.0'
+TEXTURE_LICENSE='MIT'
