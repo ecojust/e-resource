@@ -1,3 +1,11 @@
+# 龙门邨尚文路总弄过街楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-longmen-village-gatehouse&mode=overview) · [单体旋转与下载](longmen-village-gatehouse.html) · [来源与制作范围](source/precise/huangpu-longmen-village-gatehouse/README.md) · [验收记录](data/audit/longmen-village-gatehouse-v1/README.md)
+
+第三批3A022尚文路133弄的南弄口过街楼。以2017年带方向鸟瞰、2025年门面与独立街门定位核实通道、双墩、匾额、1935年号、二楼红窗和上翘瓦檐。城景353与1608保留。
+
+近景 35,072 个三角面，远景 15,944 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,816,157 字节。上海主图现有 295 处独立入口，黄浦区 130 处。[资产清单](assets/models/candidates/huangpu-longmen-village-gatehouse/manifest.json)
+
 # 清心女中庚午校舍（北大楼）中央山花柱列正面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-girls-school-gengwu-front&mode=overview) · [单体旋转与下载](pure-heart-girls-school-history.html) · [来源与制作范围](source/precise/huangpu-pure-heart-girls-school-gengwu-front/README.md) · [验收记录](data/audit/pure-heart-girls-school-gengwu-v1/README.md)
