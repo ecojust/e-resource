@@ -19,5 +19,5 @@
 ```sh
 python source/build_model.py --output dai-gable.glb
 python source/build_model.py --lod --output dai-gable-lod.glb
-python source/build_model.py --blender blender
+python source/build_model.py --blender blender --out ./exports --audit ./audit
 ```
