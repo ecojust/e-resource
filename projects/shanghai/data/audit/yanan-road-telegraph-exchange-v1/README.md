@@ -7,3 +7,7 @@ Blender重开后核实65个可编辑网格组，原始网格、近景和远景�
 第242期冻结的277处目录中，1913号原楼没有既有精建所有者。向量底图的194200050号要素第11个部件与原楼匹配，裁去南缘后保留后楼约1054平方米。附近另外十个部件与前版逐项一致。[原楼和已建库存](final-prior-coverage.json) · [前版向量对照](vector-on-predecessor.json)
 
 大北大楼电报局成为第278处地点。复核了前版1,737项和本期1,745项签入文件。 正式末层31243逐一下载了1,762项，共1,476,087,269字节。 在28242、28243和31242、31243上重新读取了来源图块与原楼轮廓，新版还重新下载了两档展示模型、原始网格和可编辑源文件。[逐层签收清单](signed-stations/final-bound-stations.json) · [正式前后两版的模型与原楼](signed-stations/real-31k-predecessor-and-new-building.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8d60f729c53d0c150bf93d97178c6d24e400b91c/projects/shanghai/index.html#landmark=huangpu-yanan-road-telegraph-exchange&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

@@ -3795,7 +3795,7 @@
 | 业广地产公司大楼滇池路与四川中路转角 | 2026-11-22 14:43:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview) |
 | 扬子大楼外滩26号临江东立面 | 2026-11-22 15:01:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yangtze-insurance-bund-front&mode=overview) |
 | 普益大楼四川中路街面 | 2026-11-22 17:33:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-realty-sichuan-front&mode=overview) |
-| 大北大楼电报局延安东路正立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yanan-road-telegraph-exchange&mode=overview) |
+| 大北大楼电报局延安东路正立面 | 2026-11-22 17:58:40 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yanan-road-telegraph-exchange&mode=overview) |
 
 ### 徐汇区（55处）
 
