@@ -1,0 +1,10 @@
+"""Build the measured architectural component as an editable native model and two web meshes."""
+from pathlib import Path
+import sys
+SOURCE=Path(__file__).resolve().parent
+sys.path.insert(0,str(SOURCE.parents[3]/"tools"))
+from package_architectural_model import build
+from steel_window import PALETTE,add_building
+META={'id': 'hongkou-pingliang-25-north-casements', 'name': '平凉路25号住宅北立面第三开间外悬亮窗与石壁柱', 'scope': '北立面第三开间的上亮为四列两行钢窗，底边向街面外悬。下部左右两扇由窄红钢梃分格，右扇外开。两根石壁柱的窄凹板上端有浅帽檐。', 'model_scope_zh': '北立面第三开间的上亮为四列两行钢窗，底边向街面外悬。下部左右两扇由窄红钢梃分格，右扇外开。两根石壁柱的窄凹板上端有浅帽檐。', 'estimated': '以第三开间两张原照和其余开间的实名图对照。用中央窗洞名义宽1.50米估算尺度，钢框截面、墙厚、两扇张开角和玻璃颜色为估计。', 'viewer_page': 'pingliang-25-north-casements.html', 'source_reference_only': True}
+if __name__=="__main__":
+    build(SOURCE,META,PALETTE,add_building)
