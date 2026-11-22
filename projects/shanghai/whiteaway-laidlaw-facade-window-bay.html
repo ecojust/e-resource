@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>惠罗公司大楼沿街竖带与横梃格窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="惠罗公司大楼沿街竖带与横梃格窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 南京东路100号</p>
+    <h1>惠罗公司大楼</h1>
+    <p>沿街竖带与横梃格窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">营业层上方的两层窗各有一对深色钢窗，横向细梃与粗横框区分上下窗格。相邻开间的浅色壁带在窗间墙外连续上升。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看两层双窗</button>
+      <button type="button" data-view="oblique">斜看通高浅色竖带</button>
+      <button type="button" data-view="above">俯看成对窗台</button>
+      <button type="button" data-view="arch">细看横梃与上部窗格</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-whiteaway-laidlaw-facade-window-bay/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-whiteaway-laidlaw-facade-window-bay', {
+      front: {"center": [0,2.56,0], "size": [4.81,4.42,.76], "direction": [.03,-.035,1]},
+      oblique: {"center": [0,2.56,0], "size": [4.81,4.42,.76], "direction": [.45,.18,1]},
+      above: {"center": [0,2.56,0], "size": [4.81,4.42,.76], "direction": [.26,.50,1]},
+      arch: {"center": [.83,3.90,-.06], "size": [2.55,2.71,.81], "direction": [.18,.01,1]},
+    });
+  </script>
+</body>
+</html>
