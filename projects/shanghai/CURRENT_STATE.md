@@ -1,3 +1,11 @@
+# 东亚大楼四柱门廊及转角立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-east-asia-corner&mode=overview) · [单体旋转与下载](bank-of-east-asia-corner.html) · [来源与制作范围](source/precise/huangpu-bank-of-east-asia-corner/README.md) · [验收记录](data/audit/bank-of-east-asia-corner-v1/README.md)
+
+按3A018四川中路299号及具名足印493784118与原房1782的比对，制作东亚大楼四柱门廊及相连转角立面。
+
+近景 30,684 个三角面，远景 17,980 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,078,423 字节。上海主图现有 291 处独立入口，黄浦区 126 处。[资产清单](assets/models/candidates/huangpu-bank-of-east-asia-corner/manifest.json)
+
 # 哈同大楼（慈安里大楼）东南转角立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hardoon-building-chamfer&mode=overview) · [单体旋转与下载](hardoon-building-chamfer.html) · [来源与制作范围](source/precise/huangpu-hardoon-building-chamfer/README.md) · [验收记录](data/audit/hardoon-building-chamfer-v1/README.md)

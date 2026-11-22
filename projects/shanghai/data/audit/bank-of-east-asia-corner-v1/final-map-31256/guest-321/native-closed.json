@@ -1,0 +1,156 @@
+{
+  "order": 321,
+  "host": 256,
+  "kind": "native",
+  "exit": 0,
+  "pid": 3800905,
+  "started": "2026-11-22T19:14:15.950635+00:00",
+  "finished": "2026-11-22T19:14:51.476443+00:00",
+  "observed_descendants": {
+    "3800997": {
+      "parent": 3800905,
+      "birth": 5066234,
+      "name": "python3"
+    },
+    "3800999": {
+      "parent": 3800997,
+      "birth": 5066242,
+      "name": "blender"
+    },
+    "3801710": {
+      "parent": 3800905,
+      "birth": 5069145,
+      "name": "python3"
+    },
+    "3801711": {
+      "parent": 3801710,
+      "birth": 5069149,
+      "name": "blender"
+    },
+    "3801754": {
+      "parent": 3800905,
+      "birth": 5069302,
+      "name": "python3"
+    },
+    "3801757": {
+      "parent": 3801754,
+      "birth": 5069305,
+      "name": "oidnDenoise"
+    },
+    "3801793": {
+      "parent": 3800905,
+      "birth": 5069486,
+      "name": "magick"
+    }
+  },
+  "wrapper_closed": true,
+  "remaining": [],
+  "host_receipt_sha256": "80579363d48887d1a57ec68e983af0fc17490c27c960cf9a16d7de02f0e1505a",
+  "host_report_sha256": "55ac60b862d18f712e4bf7cd38a4c4fe0be9dbf07f4c4ee65895971767311b12",
+  "dispatch_sha256": "e54ccaf616fc859c8725d5800f5f744fd172ba104a3ba64e8f61e88dc57fb0a3",
+  "parent_snapshot_sha256": "345873356e595eac53906f406db95ec90628dab0b087b9649530efb133a844b5",
+  "parent_receipt_sha256": "efb929ded4e20c8af8c5300aece93726af811827f4050e9a05fd05f3e0345ef2",
+  "passed": true,
+  "assets": {
+    "raw": {
+      "file": "jingan-liu-residence-changle-courtyard-gable-raw.glb",
+      "bytes": 615956,
+      "sha256": "3a14d0f43117b58916b49ec39358a8aaa12453dfe05f70e809b5d7952cf16424",
+      "triangles": 11720,
+      "bounds_gltf_m": [
+        [
+          -3.586268663406372,
+          0.0,
+          -1.5700000524520874
+        ],
+        [
+          3.9660000801086426,
+          12.954120635986328,
+          1.0460000038146973
+        ]
+      ],
+      "materials": 18
+    },
+    "full": {
+      "file": "jingan-liu-residence-changle-courtyard-gable-web.glb",
+      "bytes": 211300,
+      "sha256": "8827aae96a34329795b05e6cc87c2a71897e43103c910b80f26e91eccc5c0929",
+      "triangles": 11720,
+      "bounds_gltf_m": [
+        [
+          -3.58626866,
+          0,
+          -1.57000005
+        ],
+        [
+          3.96600008,
+          12.9541206,
+          1.046
+        ]
+      ],
+      "materials": 18
+    },
+    "lod": {
+      "file": "jingan-liu-residence-changle-courtyard-gable-lod.glb",
+      "bytes": 122076,
+      "sha256": "da262415003f405c054884731230a73516b4d09b23698b3dca5583fadf7a32f0",
+      "triangles": 5624,
+      "bounds_gltf_m": [
+        [
+          -3.58626866,
+          0,
+          -1.57000005
+        ],
+        [
+          3.96600008,
+          12.9338541,
+          1.046
+        ]
+      ],
+      "materials": 18
+    },
+    "native": {
+      "file": "jingan-liu-residence-changle-courtyard-gable.blend",
+      "bytes": 286883,
+      "sha256": "5fd4d2ae2f0f6bbe114fba49a7b2223545b033246d94c0a06b5cfef56683ed0f"
+    }
+  },
+  "manifest_sha256": "c49cc4713e29eeee5bdd697db02761cf75dbbd9fb83cbc15b3b0e8359f09947d",
+  "geometry_native_sha256": "886a5cd6e6e79116a5fed662f782dfb40cc077c6d3dc1654665c7dbe59781c44",
+  "group_count": 128,
+  "blender_pids": [
+    3800999,
+    3801711
+  ],
+  "native_stages": [
+    {
+      "stage": "render",
+      "program": "blender",
+      "pid": 3800999,
+      "wrapper_pid": 3800997,
+      "started": "2026-11-22T19:14:18.828888+00:00",
+      "finished": "2026-11-22T19:14:47.852553+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "reopen",
+      "program": "blender",
+      "pid": 3801711,
+      "wrapper_pid": 3801710,
+      "started": "2026-11-22T19:14:47.896246+00:00",
+      "finished": "2026-11-22T19:14:49.377095+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "denoise",
+      "program": "/tmp/country-tools/oidn/bin/oidnDenoise",
+      "pid": 3801757,
+      "wrapper_pid": 3801754,
+      "started": "2026-11-22T19:14:49.455269+00:00",
+      "finished": "2026-11-22T19:14:51.235936+00:00",
+      "exit": 0
+    }
+  ],
+  "remaining_blender": [],
+  "remaining_oidn": []
+}
