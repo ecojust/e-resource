@@ -13,3 +13,7 @@
 元芳弄原沪宁铁路局东南角塔楼成为第284处地点。复核了前版1,785项和本期1,793项签入文件。 正式末层31249逐一下载了1,810项，共1,495,123,059字节。 在28248、28249和31248、31249上重新读取了来源图块与原楼轮廓，新版还重新下载了两档展示模型、原始网格和可编辑源文件。[逐层签收清单](signed-stations/final-bound-stations.json) · [正式前后两版的模型与原楼](signed-stations/real-31k-predecessor-and-new-building.json)
 
 地图实拍共十幅。手机正面能看到两侧阳台与砖塔深檐，桌面街面图中塔身下部受邻屋遮挡。近景实取6,112面，远景实取2,232面，并在组合标点中选中该塔。49个地面与邻屋检查点通过；独立页桌面、手机各有三图，四种下载均由浏览器保存后逐字复核。[地图与独立页逐图记录](city-31249/visual-review.json) · [八场地图及独立页进程回执](city-31249/slot-released.json) · [历次拍摄与实际复拍](city-31249/renderer-failures/index.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b46b8bc939b18eaf3bb4dad581854a8f6278f12d/projects/shanghai/index.html#landmark=huangpu-yuanfang-lane-railway-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

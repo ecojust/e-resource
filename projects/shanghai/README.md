@@ -187,7 +187,7 @@
 | 电力大楼南京东路与江西中路转角塔楼 | 2026-11-22 19:52:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-electric-company-corner-tower&mode=overview) |
 | 原亚洲文会博物院虎丘路立面 | 2026-11-22 20:31:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-royal-asiatic-society-huqiu-front&mode=overview) |
 | 颐中大楼南苏州路北面与东北抹角 | 2026-11-22 21:02:12 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yee-tsoong-tobacco-northeast-front&mode=overview) |
-| 元芳弄原沪宁铁路局东南角塔楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanfang-lane-railway-corner&mode=overview) |
+| 元芳弄原沪宁铁路局东南角塔楼 | 2026-11-22 22:12:23 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanfang-lane-railway-corner&mode=overview) |
 
 ### 徐汇区（55处）
 
