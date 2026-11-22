@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>五原路251号花园住宅山墙拱框百叶窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="五原路251号花园住宅山墙拱框百叶窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 五原路251号</p>
+    <h1>五原路251号花园住宅</h1>
+    <p>山墙拱框百叶窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">浅色半圆拱框嵌入山墙红砖，横百叶退在拱口内。斜视可看叶片的倾角和窗台的出挑。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">山墙正面</button>
+      <button type="button" data-view="oblique">拱窗斜面</button>
+      <button type="button" data-view="above">百叶俯视</button>
+      <button type="button" data-view="inscription">叶片与拱框</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/xuhui-wuyuan-251-arched-gable-vent/README.md">两期照片与比例</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('xuhui-wuyuan-251-arched-gable-vent', {
+      front:{center:[0,.42,-.05],size:[1.50,.87,.19],direction:[.11,.04,1]},
+      oblique:{center:[0,.42,-.05],size:[1.50,.87,.19],direction:[.71,.19,1]},
+      above:{center:[0,.42,-.05],size:[1.50,.87,.19],direction:[-.36,.63,1]},
+      inscription:{center:[0,.36,-.05],size:[1.12,.78,.17],direction:[.18,.14,1]},
+    });
+  </script>
+</body>
+</html>
