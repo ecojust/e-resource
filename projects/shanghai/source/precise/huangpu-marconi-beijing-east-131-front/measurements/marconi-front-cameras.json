@@ -1,0 +1,287 @@
+{
+  "id": "huangpu-marconi-beijing-east-131-front",
+  "coordinates": "X positive west along Beijing East Road; Y positive south into the building from its principal brick street wall; Z above adjacent pavement, X0 entrance axis.",
+  "dimensions_upright": [
+    2988,
+    5312
+  ],
+  "camera_matrices": {
+    "2017_front": [
+      [
+        3366.024867138569,
+        2456.7234383355035,
+        650.4543913311705,
+        32820.583785751296
+      ],
+      [
+        -743.0776299267443,
+        3325.2222871118784,
+        -3137.2266600938706,
+        62402.417784427504
+      ],
+      [
+        -0.28059603859635346,
+        0.9213319259842451,
+        0.26909727848158405,
+        14.450687122949407
+      ]
+    ],
+    "2015_oblique": [
+      [
+        2016.325370976817,
+        3948.5487966279666,
+        335.0874886188431,
+        28250.68959080493
+      ],
+      [
+        -2046.074643859556,
+        1543.0601132993615,
+        -3755.105452345237,
+        85491.34660674138
+      ],
+      [
+        -0.39715532905957723,
+        0.2756604309507997,
+        0.19657717623600104,
+        14.594253200561186
+      ]
+    ]
+  },
+  "projection": "P @ [X,Y,Z,1], u,v equal the first two components divided by the third.",
+  "cameras": {
+    "2017_front": {
+      "file": "北京东路131号-2017-08-31.jpg",
+      "creator": "Antigng",
+      "license": "CC BY-SA 4.0",
+      "date": "2017-08-31",
+      "sha256": "2bffcbcd67abd1bd044619bc87f9874de7cff5695c479399b7bd4f17654e05dd",
+      "focal_native_px": 3944.1942616793413,
+      "estimated_principal_px": [
+        1494,
+        2427.918937226405
+      ],
+      "vp_x": [
+        -11995.98142574174,
+        2648.2114061335187
+      ],
+      "vp_z": [
+        2417.171942434509,
+        -11658.336634974812
+      ],
+      "line_support": [
+        241,
+        143
+      ]
+    },
+    "2015_oblique": {
+      "file": "北京东路131号.jpg",
+      "creator": "Antigng",
+      "license": "CC BY-SA 4.0",
+      "date": "2015-07-20",
+      "sha256": "6570dee32f6b9cca804841cdf450c52ef2fa7a475bf4562a55bc4c9809018592",
+      "effective_projective_intrinsics": [
+        1221.16003088744,
+        1934.1232644793918,
+        8410.363666628706
+      ],
+      "side_vanishing_point_px": [
+        14323.959311130548,
+        5597.684469900468
+      ],
+      "side_line_count": 15,
+      "side_edges_median_error_deg": 0.095167620773926,
+      "metric_axes_relative_scale_ratio": 0.9797266195128422,
+      "note": "The effective projective focal distance from three orthogonal edge families differs from the EXIF-equivalent focal length. The common facade homography remains empirical; depths use the photographed return direction."
+    }
+  },
+  "historic_street_scale": {
+    "source_date": "20151219",
+    "source_id": "09000300011512191258053978D",
+    "source_hash": "7278c3994e0b91f6a0ebb61f69a54f58d01ee00f9dff5cd80e43801366901749",
+    "view": {
+      "az": 193.68085277447787,
+      "pitch": 3,
+      "hfov": 68,
+      "width": 850,
+      "height": 1150
+    },
+    "station_height_m": 2.32,
+    "assumed_kerb_rise_m": 0.13,
+    "sidewalk_height_sensitivity_m": [
+      0.05,
+      0.21
+    ],
+    "feet_in_street_view_px": [
+      [
+        343,
+        839
+      ],
+      [
+        543,
+        830
+      ]
+    ],
+    "feet_in_2017_px": [
+      [
+        2000.0,
+        4287.0
+      ],
+      [
+        2547.0,
+        4362.0
+      ]
+    ],
+    "feet_horizontal_length_m": 1.9594184089350615,
+    "plinth_front_relative_to_wall_m": -0.12,
+    "estimated_span_uncertainty_m": 0.13
+  },
+  "common_plane": {
+    "source": "2015_oblique",
+    "target": "2017_front",
+    "matrix": [
+      [
+        1.534970730901146,
+        -0.056682303502968885,
+        -390.3969137967288
+      ],
+      [
+        0.26154719595684284,
+        0.8082679499359889,
+        -965.2008997932803
+      ],
+      [
+        4.2014968092194606e-05,
+        -1.5563187996936096e-05,
+        1.0
+      ]
+    ],
+    "matched_points": 120,
+    "residual_median_px": 2.29819655418396,
+    "residual_90pc_px": 3.7103583812713623,
+    "observations_file": "marconi-wall-matches.json",
+    "limits": "Station height and pavement rise set the metric scale. The ornamental relief and brick face can occupy different Y. The 2015 normal axis is inferred from the common-plane match and approximate intrinsics; camera-dependent Y is estimated."
+  },
+  "portal_upright_px": [
+    {
+      "feature": "keystone lower mid",
+      "front": [
+        2283,
+        2821
+      ],
+      "oblique": [
+        1915,
+        4125
+      ],
+      "approximate_xz_at_y0": [
+        -0.007527529891215587,
+        5.55305965536634
+      ],
+      "wall_plane_oblique_prediction": [
+        1918.322699674584,
+        4121.043534432279
+      ]
+    },
+    {
+      "feature": "keystone lower left",
+      "front": [
+        2238,
+        2821
+      ],
+      "oblique": null,
+      "approximate_xz_at_y0": [
+        -0.18717512632251887,
+        5.550824230662596
+      ],
+      "wall_plane_oblique_prediction": [
+        1886.6596093428655,
+        4126.357662127307
+      ]
+    },
+    {
+      "feature": "keystone lower right",
+      "front": [
+        2329,
+        2824
+      ],
+      "oblique": null,
+      "approximate_xz_at_y0": [
+        0.17503189083341533,
+        5.5430943180521774
+      ],
+      "wall_plane_oblique_prediction": [
+        1950.8314919185011,
+        4119.170749920829
+      ]
+    },
+    {
+      "feature": "east shoulder extremity",
+      "front": [
+        1970,
+        3014
+      ],
+      "oblique": [
+        1723,
+        4380
+      ],
+      "approximate_xz_at_y0": [
+        -1.256312482504758,
+        4.741070182842094
+      ],
+      "wall_plane_oblique_prediction": [
+        1703.956530902538,
+        4384.262193184124
+      ]
+    },
+    {
+      "feature": "west shoulder extremity",
+      "front": [
+        2600,
+        3001
+      ],
+      "oblique": null,
+      "approximate_xz_at_y0": [
+        1.2184172401321818,
+        4.856159607717539
+      ],
+      "wall_plane_oblique_prediction": [
+        2146.3480996201815,
+        4298.914305818085
+      ]
+    },
+    {
+      "feature": "east capital lower band",
+      "front": [
+        1963,
+        3419
+      ],
+      "oblique": [
+        1770,
+        4854
+      ],
+      "approximate_xz_at_y0": [
+        -1.235002443731366,
+        3.1371861134951082
+      ],
+      "wall_plane_oblique_prediction": [
+        1707.5984318593719,
+        4855.464733781016
+      ]
+    },
+    {
+      "feature": "west capital lower band",
+      "front": [
+        2629,
+        3455
+      ],
+      "oblique": null,
+      "approximate_xz_at_y0": [
+        1.3035179349260866,
+        3.140034178216041
+      ],
+      "wall_plane_oblique_prediction": [
+        2173.104537103437,
+        4834.217733970031
+      ]
+    }
+  ]
+}

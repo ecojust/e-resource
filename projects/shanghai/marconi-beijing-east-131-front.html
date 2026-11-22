@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>北京东路131号马可尼公司住宅临街立面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="北京东路131号住宅的门券和临街屋面"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 北京东路</p>
+    <h1>马可尼公司住宅</h1>
+    <p>北京东路131号</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">红砖门券内嵌绿色铁门，上方三道弧形窗口保留木扇。相邻宽开间的上方露出两座山墙老虎窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看北京东路街面</button>
+      <button type="button" data-view="front">看上层三联木窗</button>
+      <button type="button" data-view="above">看两座山墙老虎窗</button>
+      <button type="button" data-view="inscription">看131号门牌与铁门</button>
+      <button type="button" data-view="return">看相邻宽开间</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/marconi-beijing-east-131-front-v1/arched-portal/beijing-131-full.jpg">131号券门与两年实照</a>
+    <a href="data/audit/marconi-beijing-east-131-front-v1/arched-portal/beijing-131-lod.jpg">轻量档的铁门和券肩</a>
+    <a href="data/audit/marconi-beijing-east-131-front-v1/upper-windows/whole-photo-comparison.jpg">三洞木窗与原照</a>
+    <a href="source/precise/huangpu-marconi-beijing-east-131-front/README.md">照片、地址与尺寸依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-marconi-beijing-east-131-front', {
+  "oblique": {
+    "center": [
+      -5.4,
+      10.2,
+      -0.1
+    ],
+    "size": [
+      20.8,
+      22.7,
+      4.0
+    ],
+    "direction": [
+      0.4549012,
+      -0.0502164,
+      0.889125
+    ]
+  },
+  "front": {
+    "center": [
+      0.04,
+      11.12,
+      -0.25
+    ],
+    "size": [
+      4.35,
+      4.2,
+      1.0
+    ],
+    "direction": [
+      0.0842642,
+      -0.1334183,
+      0.9874711
+    ]
+  },
+  "above": {
+    "center": [
+      -10.6,
+      20.27,
+      -1.0
+    ],
+    "size": [
+      11.4,
+      5.1,
+      3.8
+    ],
+    "direction": [
+      0.4446343,
+      -0.1623335,
+      0.8808792
+    ]
+  },
+  "inscription": {
+    "center": [
+      0,
+      3.15,
+      -0.13
+    ],
+    "size": [
+      4.2,
+      6.7,
+      1.45
+    ],
+    "direction": [
+      0.1626826,
+      -0.0040671,
+      0.9866701
+    ]
+  },
+  "return": {
+    "center": [
+      -7.47,
+      14.2,
+      -0.13
+    ],
+    "size": [
+      8.4,
+      8.0,
+      1.5
+    ],
+    "direction": [
+      -0.1727585,
+      -0.1980236,
+      0.9648529
+    ]
+  }
+});
+  </script>
+</body>
+</html>
