@@ -17,3 +17,7 @@
 点击地图的缩小按钮后，缩放级别从15.5降至14.5，视点海拔从697.25米升至1394.49米。页面在远档加载后拍到了河岸、街区和灰楼地点卡。浏览器随后退出，补验在同一正式站逐件重新取得模型及底图文件。原互动、截图、分次退出和补验均可追溯。[远景截图](city-31231/map-distant.png) · [缩放与文件回读](city-31231/sessions/distant/main-browser.json) · [原始运行记录](city-31231/retained-attempts/index.json)
 
 独立页在桌面和手机各拍摄近档正面、近档斜视和远档正面。四种文件均从页面实际保存并逐件核对。正式站共读取1,658项、1,359,664,773字节，另核五个分段响应。[桌面斜视](city-31231/standalone/viewer-desktop-fluted-order-and-three-portals.png) · [手机远档](city-31231/standalone/viewer-mobile-lod.png) · [四个下载](city-31231/standalone/viewer.json) · [全站读取](city-31231/all-http.json) · [逐图核看](city-31231/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/18ae2284924454064393c8f734efafa51ff9cdda/projects/shanghai/index.html#landmark=hongkou-unrra-gray-building-north-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

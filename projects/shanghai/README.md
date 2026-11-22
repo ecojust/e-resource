@@ -330,7 +330,7 @@
 | 河滨大楼临苏州河立面 | 2026-11-21 12:44:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-embankment-building-riverfront&mode=overview) |
 | 四川北路四行大楼临街北段 | 2026-11-21 20:18:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-sihang-building-north-front&mode=overview) |
 | 高阳大楼东大名路双塔正立面 | 2026-11-22 04:50:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-gaoyang-building-south-front&mode=overview) |
-| 黄浦路106号联合国大厦灰楼北立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-unrra-gray-building-north-front&mode=overview) |
+| 黄浦路106号联合国大厦灰楼北立面 | 2026-11-22 10:40:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=hongkou-unrra-gray-building-north-front&mode=overview) |
 
 ### 杨浦区（9处）
 
