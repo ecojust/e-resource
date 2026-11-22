@@ -14,7 +14,7 @@ from aggregate_mesh import AggregateBuilder
 from material_names import MATERIAL,TEXTURE
 from paint import apply_metric_uv
 
-from shopfront import PALETTE as SHOP, add_carvings, add_shopfront, add_shop_mark, add_wall
+from shopfront import PALETTE as SHOP, add_carvings, add_shopfront, add_shop_mark, add_recess_backings, add_wall
 from upper_bookshop_windows import PALETTE as WINDOWS, add_windows
 from fuzhou_masonry import PALETTE as MASONRY, add_upper_masonry
 from asset_rights import licensed_writer,retain_metadata
@@ -33,6 +33,7 @@ def add_building(builder,lod):
     add_shopfront(builder,lod)
     add_carvings(builder,lod)
     add_shop_mark(builder,lod)
+    add_recess_backings(builder,lod)
     add_windows(builder,lod)
     add_upper_masonry(builder,lod)
     apply_metric_uv(builder)

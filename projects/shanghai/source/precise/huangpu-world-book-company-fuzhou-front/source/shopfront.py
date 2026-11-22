@@ -20,8 +20,9 @@ STEEL='Dark metal frame of the inclined canopies'
 SHADE='Dark interior behind the shop entrance'
 STONE='Weathered grey stone shopfront figures'
 BRASS='Faded metal lettering on the central fascia'
+RECESS='Unlit recess beyond photographed open casements'
 CARVED='Recesses of the draped stone figures'
-PALETTE={BRASS:finish((164,148,119),.72,.17),GRANITE:finish((50,51,56),.46,.17),RAIL:finish((40,37,37),.50,.19),
+PALETTE={RECESS:finish((32,30,32),.97,.0),BRASS:finish((164,148,119),.72,.17),GRANITE:finish((50,51,56),.46,.17),RAIL:finish((40,37,37),.50,.19),
          GLASS:finish((83,105,105),.26,.24),SHOP:finish((162,143,100),.35,.17),
          CANOPY:finish((126,137,142),.37,.30),STEEL:finish((69,65,65),.58,.22),
          SHADE:finish((46,40,36),.82,.00),STONE:finish((159,146,131),.88,.02),
@@ -164,3 +165,15 @@ def add_shop_mark(b,lod=False):
         width=np.linalg.norm(on_wall(u+line['half_thickness_px'],v,y)-on_wall(u,v,y))
         shape=LineString(zip(x,z)).buffer(width,cap_style=1,join_style=1,quad_segs=2 if lod else 4)
         plate(b,shape,y,-.379,BRASS,'Central fascia script '+line['label'])
+
+def add_recess_backings(b,lod=False):
+    # The 2016 close photographs show a nearly unlit space beyond these
+    # five swung leaves. Its depth is estimated; the recess closes behind
+    # the open sash, while the foreground remains unobstructed.
+    names={'B1-R4-W1','B1-R4-W3','B5-R4-W3','B5-R5-W1'}
+    for r in openings():
+        if r['label'] not in names:continue
+        l,z,rgt,top=r['left'],r['bottom'],r['right'],r['top']
+        block(b,l-.38,z-.32,rgt+.38,top+.34,1.86,1.93,RECESS,r['label']+' unlit recess backing')
+        block(b,l-.39,z-.32,l-.34,top+.34,1.07,1.90,RECESS,r['label']+' shadowed left return')
+        block(b,rgt+.34,z-.32,rgt+.39,top+.34,1.07,1.90,RECESS,r['label']+' shadowed right return')

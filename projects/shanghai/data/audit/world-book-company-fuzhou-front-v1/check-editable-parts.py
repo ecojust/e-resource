@@ -10,14 +10,14 @@ HERE=Path(__file__).resolve().parent
 SRC=HERE.parents[2]/'source/precise/huangpu-world-book-company-fuzhou-front/source'
 sys.path.insert(0,str(SRC))
 from build_model import AggregateBuilder, PALETTE
-from shopfront import add_shopfront,add_carvings,add_shop_mark,add_wall
+from shopfront import add_shopfront,add_carvings,add_shop_mark,add_recess_backings,add_wall
 from upper_bookshop_windows import add_windows
 from fuzhou_masonry import add_upper_masonry
 
 def check(lod):
     b=AggregateBuilder(PALETTE)
     counts={}
-    acts=[add_shopfront,add_carvings,add_shop_mark,add_windows,add_upper_masonry]
+    acts=[add_shopfront,add_carvings,add_shop_mark,add_recess_backings,add_windows,add_upper_masonry]
     add_wall(b);counts['perforated_wall']=len(b.parts)
     for action in acts:
         start=len(b.parts);action(b,lod);counts[action.__name__]=len(b.parts)-start
