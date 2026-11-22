@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>富民新邨弄口四块字牌与通道过梁</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="富民新邨弄口四块字牌与通道过梁"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 富民路148-172弄</p>
+    <h1>富民新邨弄口四块字牌与通道过梁</h1>
+      <p>取富民路148—172弄临街入口上方四块浅色方牌。自右向左的“富民新邨”立体深红字、各牌的下缘、过梁底和两侧墙的起端可单独查看。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">依据2017年街面正照取四个字面、石牌与过梁之间的比例。过梁名义全长4.99米，字的凸出高度约2至3厘米，实际未量。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看弄名四字</button>
+      <button type="button" data-view="oblique">斜看门楣与墙端</button>
+      <button type="button" data-view="tiles">看“富民”字面</button>
+      <button type="button" data-view="rail">看“新邨”字面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/jingan-fumin-village-four-sign-panels/README.md">史料、测量与模型范围</a>
+    <p class="photo-source">Antigng，2017-08-19，《富民新邨》，Wikimedia Commons，CC BY-SA 4.0。 依据原照描出四字的可见面后制成立体浮字。左端“邨”的一小段被管线遮住；保留现有读数。字的色彩、背面和凸出尺寸是估算。 <a href="https://commons.wikimedia.org/wiki/File:%E5%AF%8C%E6%B0%91%E6%96%B0%E9%82%A8.jpg">照片原页</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></p>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-fumin-village-four-sign-panels', {
+  "front": {
+    "center": [
+      0,
+      0.74,
+      -0.13
+    ],
+    "size": [
+      4.992,
+      4.8,
+      2.064
+    ],
+    "direction": [
+      0.13,
+      0.02,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      0.74,
+      -0.13
+    ],
+    "size": [
+      4.992,
+      4.8,
+      2.064
+    ],
+    "direction": [
+      0.56,
+      -0.08,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      1.24,
+      0.77,
+      0.04
+    ],
+    "size": [
+      2.6519999999999997,
+      2.55,
+      1.0964999999999998
+    ],
+    "direction": [
+      -0.14,
+      0.028,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      -1.21,
+      0.76,
+      0.04
+    ],
+    "size": [
+      2.6519999999999997,
+      2.55,
+      1.0964999999999998
+    ],
+    "direction": [
+      0.19,
+      0.03,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
