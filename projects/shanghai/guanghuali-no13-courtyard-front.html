@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>光华里13号院门、凸窗与露台</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.69" aria-label="光华里13号"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 巨鹿路786弄</p>
+    <h1>光华里13号</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">13号的深褐色三面凸窗上方是一座小露台。站在弄堂里，能透过水平钢管栏杆看见露台后方的坡顶小屋。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看院墙与住宅</button>
+      <button type="button" data-view="front">看三面凸窗</button>
+      <button type="button" data-view="above">看屋顶露台</button>
+      <button type="button" data-view="inscription">看十三号院门</button>
+      <button type="button" data-view="return">看阔窗与窗台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/guanghuali-no13-courtyard-front-v1/elevations/guanghuali-no13-frontage.jpg">看院墙、凸窗和阔窗</a>
+    <a href="data/audit/guanghuali-no13-courtyard-front-v1/elevations/guanghuali-no13-frontage-lod.jpg">看轻量版的相同机位</a>
+    <a href="data/audit/guanghuali-no13-courtyard-front-v1/terrace/courtyard-terrace-and-roof.jpg">看露台栏杆与坡檐</a>
+    <a href="data/audit/guanghuali-no13-courtyard-front-v1/garden-gate/whole-model.jpg">看十三号院门</a>
+    <a href="source/precise/jingan-guanghuali-no13-courtyard-front/README.md">查看照片来源与测量依据</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-guanghuali-no13-courtyard-front', {
+  "oblique": {
+    "center": [
+      -2,
+      4.7,
+      -1.9
+    ],
+    "size": [
+      10,
+      10.1,
+      5.7
+    ],
+    "direction": [
+      -0.17,
+      0.18,
+      1
+    ]
+  },
+  "front": {
+    "center": [
+      -4.24,
+      6.03,
+      -2.5
+    ],
+    "size": [
+      5,
+      5.8,
+      2.5
+    ],
+    "direction": [
+      -0.3,
+      0.11,
+      1
+    ]
+  },
+  "above": {
+    "center": [
+      -4.02,
+      8.6,
+      -3.4
+    ],
+    "size": [
+      5.9,
+      3.5,
+      4.3
+    ],
+    "direction": [
+      0.64,
+      0.42,
+      1
+    ]
+  },
+  "inscription": {
+    "center": [
+      -0.04,
+      1.16,
+      -0.22
+    ],
+    "size": [
+      4.46,
+      3.5,
+      1
+    ],
+    "direction": [
+      -0.33,
+      0.12,
+      1
+    ]
+  },
+  "return": {
+    "center": [
+      -0.22,
+      6.05,
+      -3.47
+    ],
+    "size": [
+      4.2,
+      3.43,
+      1.2
+    ],
+    "direction": [
+      0.1,
+      0.03,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
