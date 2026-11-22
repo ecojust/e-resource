@@ -1,3 +1,11 @@
+# 美伦大楼西楼南京东路西北转角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-meilun-west-nanjing-corner&mode=overview) · [单体旋转与下载](meilun-west-nanjing-corner.html) · [来源与制作范围](source/precise/huangpu-meilun-west-nanjing-corner/README.md) · [验收记录](data/audit/meilun-west-nanjing-corner-v1/README.md)
+
+核对第三批3A007与第五批5A030在南京东路161号的重合范围，按西楼临南京东路的西北转角建模，保留东楼151号、南楼和中庭。
+
+近景 14,444 个三角面，远景 5,236 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,826,792 字节。上海主图现有 280 处独立入口，黄浦区 115 处。[资产清单](assets/models/candidates/huangpu-meilun-west-nanjing-corner/manifest.json)
+
 # 中南银行大楼汉口路南立面中央柱列
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-south-sea-bank-front&mode=overview) · [单体旋转与下载](china-south-sea-bank-front.html) · [来源与制作范围](source/precise/huangpu-china-south-sea-bank-front/README.md) · [验收记录](data/audit/china-south-sea-bank-front-v1/README.md)
