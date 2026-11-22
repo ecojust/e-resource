@@ -18,3 +18,7 @@
 在前后两份276处目录中逐项核对，仅本栋的资产、面数和制作说明有变。其他275处的登记，以及本栋的地图位置、可步行入口、地块编号和边界均一致。外滩总表与两份单栋元数据同步指向新文件。[五份登记文件的具体字段](in-place-catalog-comparison.json)
 
 两代网页均从原有外滩14号入口加载。实际核对修订前、后各四个下载的完整文件和断点读取，修订后的全城1,734项文件共1,427,994,734字节，逐件与签名相符。[两代下载核验](final-site-downloads.json) · [全城文件核验](final-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 30 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b45b8088aecef2c90216de3028e45eabcf70966a/projects/shanghai/index.html#landmark=bund14&mode=walk) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 30 项，8 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
