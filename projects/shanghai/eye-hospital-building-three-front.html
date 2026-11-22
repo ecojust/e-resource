@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>市眼科医院3号楼 · 西南弧窗与山墙</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-0.52" aria-label="市眼科医院3号楼西南侧弧窗和楼顶山墙的三维模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-eye-hospital-building-three-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 陕西北路805号</p>
+    <h1>市眼科医院3号楼</h1>
+    <p>西南侧弧窗与山墙</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">庭院左端的金色楼号标出3号楼。两层弧窗上是花瓶栏杆阳台，继续向上可见弧形山墙和球饰。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看弧窗与楼号</button>
+      <button type="button" data-view="oblique">侧看弧窗进深</button>
+      <button type="button" data-view="above">俯看山墙与阳台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-eye-hospital-building-three-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=eye-hospital-building-three-front-v1';
+    showCandidateAssetViewer('jingan-eye-hospital-building-three-front');
+  </script>
+</body>
+</html>
