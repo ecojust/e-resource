@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Baidu Maps street imagery, 2017–2021; measurements only'
+PHOTO_SOURCE='https://map.baidu.com/?panotype=street&pid=09000300121710141031291991A'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
