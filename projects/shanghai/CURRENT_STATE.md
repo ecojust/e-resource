@@ -1,3 +1,11 @@
+# 颐中大楼南苏州路北面与东北抹角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yee-tsoong-tobacco-northeast-front&mode=overview) · [单体旋转与下载](yee-tsoong-tobacco.html) · [来源与制作范围](source/precise/huangpu-yee-tsoong-tobacco-northeast-front/README.md) · [验收记录](data/audit/yee-tsoong-tobacco-front-v1/README.md)
+
+以3A010、南苏州路175号与161–175号具名原址、2015年公开街照及市历保中心与上海交大图文对照，制作临河北面七组拱窗、两端窗、东北抹角券门和虎丘路相邻短跨。
+
+近景 24,036 个三角面，远景 18,720 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,525,732 字节。上海主图现有 283 处独立入口，黄浦区 118 处。[资产清单](assets/models/candidates/huangpu-yee-tsoong-tobacco-northeast-front/manifest.json)
+
 # 原亚洲文会博物院虎丘路立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-royal-asiatic-society-huqiu-front&mode=overview) · [单体旋转与下载](royal-asiatic-society.html) · [来源与制作范围](source/precise/huangpu-royal-asiatic-society-huqiu-front/README.md) · [验收记录](data/audit/royal-asiatic-society-v1/README.md)

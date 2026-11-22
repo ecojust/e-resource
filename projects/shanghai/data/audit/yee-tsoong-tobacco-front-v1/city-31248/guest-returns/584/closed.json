@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "all_children_exited": true,
+  "order": 584,
+  "started": "2026-11-22T12:56:56.502116+00:00",
+  "ended": "2026-11-22T12:57:34.558798+00:00",
+  "attempt": "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351",
+  "events": [
+    {
+      "name": "render",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/e-resource/projects/shanghai/source/precise/jingan-may-lee-court-no14-canted-bay/source/build_blender_source.py",
+        "-b",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/source/precise/jingan-country-hospital/source/make_native.py",
+        "--",
+        "/proc/2329232/fd/5",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/jingan-may-lee-court-no14-canted-bay.blend",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/cycles.png"
+      ],
+      "pid": 2329233,
+      "started": "2026-11-22T12:56:56.511382+00:00",
+      "ended": "2026-11-22T12:57:29.571406+00:00",
+      "exit": 0,
+      "log": "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/render.log",
+      "log_sha256": "522399aeca7c23104d50fd99a32c89d071fa623eb17b683496e5ed10b345fa10"
+    },
+    {
+      "name": "reopen",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/e-resource/projects/shanghai/source/precise/jingan-may-lee-court-no14-canted-bay/source/build_blender_source.py",
+        "-b",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/tools/verify_editable_model.py",
+        "--",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/jingan-may-lee-court-no14-canted-bay.blend",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/jingan-may-lee-court-no14-canted-bay-raw.glb",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/verified-editable.json"
+      ],
+      "pid": 2329565,
+      "started": "2026-11-22T12:57:29.571879+00:00",
+      "ended": "2026-11-22T12:57:31.333388+00:00",
+      "exit": 0,
+      "log": "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/reopen.log",
+      "log_sha256": "302554b233bb00fcbb2653db1f3183bd32f4640525194b4d7bc97ab8a94ac0cb"
+    },
+    {
+      "name": "convert",
+      "argv": [
+        "magick",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/cycles.png",
+        "-colorspace",
+        "sRGB",
+        "-endian",
+        "LSB",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/render.pfm"
+      ],
+      "pid": 2329591,
+      "started": "2026-11-22T12:57:31.335559+00:00",
+      "ended": "2026-11-22T12:57:31.365778+00:00",
+      "exit": 0,
+      "log": "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/convert.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "denoise",
+      "argv": [
+        "/tmp/country-tools/oidn/bin/oidnDenoise",
+        "-d",
+        "cpu",
+        "--threads",
+        "1",
+        "--ldr",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/render.pfm",
+        "--srgb",
+        "-o",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/clean.pfm"
+      ],
+      "pid": 2329592,
+      "started": "2026-11-22T12:57:31.366085+00:00",
+      "ended": "2026-11-22T12:57:34.349286+00:00",
+      "exit": 0,
+      "log": "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/denoise.log",
+      "log_sha256": "f65e12d6909c903f72b2041ff20bb1b40177d16322c351aa58ded38235226797"
+    },
+    {
+      "name": "preview",
+      "argv": [
+        "magick",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/clean.pfm",
+        "-set",
+        "colorspace",
+        "sRGB",
+        "-depth",
+        "8",
+        "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/jingan-may-lee-court-no14-canted-bay-preview.png"
+      ],
+      "pid": 2329636,
+      "started": "2026-11-22T12:57:34.349770+00:00",
+      "ended": "2026-11-22T12:57:34.543306+00:00",
+      "exit": 0,
+      "log": "/workspace/.e-resource-recovery/root/jingan-584-frontage/development-native/storage/attempt-1795352216502087351/preview.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "error": "",
+  "origin": "independent development copy; the the photographed garden frontage at no. 14, May Lee Court and city listing 5B005"
+}

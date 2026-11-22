@@ -1,0 +1,28 @@
+control 2026-11-22T12:42:08.482092+00:00 {2159184: '2708539', 2159205: '2708550', 2159206: '2708550', 2159230: '2708562', 2159237: '2708564', 2159228: '2708562', 2159275: '2708581', 2159286: '2708586'}
+closed control 2026-11-22T12:42:08.482092+00:00
+Traceback (most recent call last):
+  File "/tmp/kangding313/handoff/admit-after-restart.py", line 75, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/tmp/kangding313/handoff/admit-after-restart.py", line 60, in main
+    fcntl.flock(gate,fcntl.LOCK_EX);row=host(kind,source);done=w/(kind+'-closed.json')
+                                        ^^^^^^^^^^^^^^^^^
+  File "/tmp/kangding313/handoff/admit-after-restart.py", line 15, in host
+    report=Path(row['report']);assert report.parent==source.parent and sha(report)==row['report_sha256'];a=read(report);assert a['completed'] and a['phase']==phase and not a['errors'] and not a['failed'] and a['screenshots']
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-248/formal-31248/sequence-with-restored-558.py", line 56, in <module>
+    external('native',use('control'));use('mobile-card');external('viewer',use('mobile-pin'))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-248/formal-31248/sequence-with-restored-558.py", line 40, in external
+    subprocess.run([sys.executable,'-B',admit,kind,prior],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', PosixPath('/tmp/kangding313/handoff/admit-after-restart.py'), 'native', PosixPath('/tmp/shanghai-main-248/formal-31248/isolated-evidence/control/closed.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-248/after-247-restored-558.py", line 19, in <module>
+    subprocess.run([sys.executable,'-Bu',script],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-248/formal-31248/sequence-with-restored-558.py')]' returned non-zero exit status 1.
