@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='上海市虹口区，上海学习平台（2019年9月16日）；澎湃政务（2022年3月5日）'
+PHOTO_SOURCE='https://www.xuexi.cn/lgpage/detail/index.html?id=16613037030431701524'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT (original procedural red brick and exposed pebble finishes)'

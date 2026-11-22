@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>公园坊24号野风画会旧址南立面 · 上海历史建筑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="negative-x" aria-label="公园坊24号野风画会旧址三维模型"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 西江湾路476弄</p>
+    <h1>公园坊24号野风画会旧址</h1>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">这幢公寓是1932年成立的野风画会旧址。24号门牌旁是红砖拱券，弧形凸窗沿楼层向上接到敞廊。门内的红色箱体、门前四级台阶和中央窄坡取自另一张能看全入口的照片。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">从弄堂侧看</button>
+      <button type="button" data-view="front">看南立面</button>
+      <button type="button" data-view="above">看敞廊屋檐</button>
+      <button type="button" data-view="inscription">看弧形凸窗</button>
+      <button type="button" data-view="return">看24号门牌和台阶</button>
+      <button type="button" data-view="gable">看卵石山墙</button>
+      <button type="button" data-view="middle">近看退台敞廊</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads" aria-label="模型下载"></div>
+    <p><a href="data/audit/gongyuanfang-24-yefeng-art-society-front-v1/facade/no24-three-published-views.jpg">从三个实拍机位看模型</a></p>
+    <p><a href="data/audit/gongyuanfang-24-yefeng-art-society-front-v1/upper-balcony/upper-balcony-two-views.jpg">看弧形敞廊和后梁</a> · <a href="data/audit/gongyuanfang-24-yefeng-art-society-front-v1/bay-windows/registered-bay-windows.jpg">看六扇弧窗</a></p>
+    <p><a href="source/precise/hongkou-gongyuanfang-24-yefeng-art-society-front/README.md">建模范围与图像量测</a> · <a href="source/precise/hongkou-gongyuanfang-24-yefeng-art-society-front/SOURCES-LICENSE.md">照片出处与许可</a></p>
+    <p><a href="source/precise/hongkou-gongyuanfang-24-yefeng-art-society-front/measurements/registered-address-and-photographs.json">核对野风画会、门牌与建筑名录</a></p>
+    <p class="scope" id="related-house">公园坊8号是连横家族住过的另一户，窗框和栏杆与24号有别。</p>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-gongyuanfang-24-yefeng-art-society-front', {
+  "oblique": {
+    "center": [
+      0.3216,
+      1.3175,
+      -0.0667
+    ],
+    "size": [
+      22.31,
+      15.9719,
+      4.0158
+    ],
+    "direction": [
+      -0.54619,
+      0.22163,
+      1.0
+    ]
+  },
+  "front": {
+    "center": [
+      0.8302,
+      1.1278,
+      -0.0556
+    ],
+    "size": [
+      21.86,
+      15.6498,
+      3.9348
+    ],
+    "direction": [
+      -0.01733,
+      0.08775,
+      1.0
+    ]
+  },
+  "above": {
+    "center": [
+      1.35,
+      3.24,
+      -0.35
+    ],
+    "size": [
+      10.1,
+      7.2307,
+      1.818
+    ],
+    "direction": [
+      0.39665,
+      0.82235,
+      1.0
+    ]
+  },
+  "inscription": {
+    "center": [
+      1.65,
+      -0.35,
+      0.13
+    ],
+    "size": [
+      5.3,
+      3.7943,
+      0.954
+    ],
+    "direction": [
+      -0.02555,
+      0.22998,
+      1.0
+    ]
+  },
+  "return": {
+    "center": [
+      -1.07,
+      -1.88,
+      0
+    ],
+    "size": [
+      3.8,
+      2.7205,
+      0.684
+    ],
+    "direction": [
+      -0.3069,
+      0.16897,
+      1.0
+    ]
+  },
+  "gable": {
+    "center": [
+      -1.26,
+      2.52,
+      0
+    ],
+    "size": [
+      6.3,
+      4.5102,
+      1.134
+    ],
+    "direction": [
+      -0.38125,
+      0.12969,
+      1.0
+    ]
+  },
+  "middle": {
+    "center": [
+      1.91,
+      3.1,
+      -0.14
+    ],
+    "size": [
+      6.4,
+      4.5818,
+      1.152
+    ],
+    "direction": [
+      0.4555,
+      -0.10539,
+      1.0
+    ]
+  }
+});
+  </script>
+</body>
+</html>
