@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>南市发电厂主厅右侧上下两层钢交叉撑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="南市发电厂主厅右侧上下两层钢交叉撑"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 花园港路200号</p>
+    <h1>南市发电厂主厅右侧上下两层钢交叉撑</h1>
+      <p>花园港路200号主厅的一个墙跨，两层深灰钢斜撑、连接两段的横向工字梁、两侧柱面和灰色分带。两层交点均可辨认；上部左端被梁遮住，模型在照片可见处截止。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">原照记录等效焦距24毫米。取两侧柱间约4米作为名义尺度，单照反投影给出两层净高合计约5.22米。开间、型钢厚度和杆件前后错位均待现场测量。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看主厅两层钢撑</button>
+      <button type="button" data-view="oblique">看上层交叉搭接</button>
+      <button type="button" data-view="tiles">看下层交叉搭接</button>
+      <button type="button" data-view="rail">看横梁翼缘与柱面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/huangpu-nanshi-power-station-hall-cross-bracing/README.md">史料、测量与模型范围</a>
+  <p>依据 Iswzo 在 2020 年拍摄的主厅照片测绘。模型采用 CC BY-SA 4.0 许可。<a href="https://commons.wikimedia.org/wiki/File:Interior_of_Power_Station_of_Art.jpg">原作与署名</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">许可</a></p>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-nanshi-power-station-hall-cross-bracing', {
+  "front": {
+    "center": [
+      0,
+      2.65,
+      0
+    ],
+    "size": [
+      6.864,
+      6.6,
+      2.8379999999999996
+    ],
+    "direction": [
+      0.22,
+      0.09,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      4.08,
+      -0.01
+    ],
+    "size": [
+      2.7872000000000003,
+      2.68,
+      1.1524
+    ],
+    "direction": [
+      0.41,
+      0.16,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0.05,
+      1.49,
+      -0.01
+    ],
+    "size": [
+      2.5584000000000002,
+      2.46,
+      1.0578
+    ],
+    "direction": [
+      -0.49,
+      0.16,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      1.55,
+      2.72,
+      -0.0
+    ],
+    "size": [
+      2.6519999999999997,
+      2.55,
+      1.0964999999999998
+    ],
+    "direction": [
+      0.64,
+      0.35,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
