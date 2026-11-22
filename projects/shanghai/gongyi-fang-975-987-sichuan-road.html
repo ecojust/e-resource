@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公益坊三号楼 · 四川北路975–987号</title>
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="src/dacheng-hall.css">
+<style>
+@media(max-width:650px){body{display:grid;grid-template-rows:auto minmax(245px,44svh) auto auto;min-height:100svh}header,.panel,footer,#model-view{position:static}header{grid-row:1;padding:10px 16px 4px}#model-view{grid-row:2;min-width:0;overflow:hidden}.panel{margin:0 10px;max-height:none;overflow:visible}footer{padding:5px 16px}}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a><p class="eyebrow">虹口区 · 四川北路975–987号</p><h1>公益坊三号楼</h1></header>
+<main id="model-view" aria-label="公益坊三号楼沿街九开间商住楼三维模型"></main>
+<aside class="panel" aria-label="模型观察与下载">
+<p class="scope">四川北路西侧这一排商住楼共有九个开间。两层混凝土阳台沿街展开，红褐木门与清水砖墙相间。南端朝向支路，上层四扇窗，下层三扇窗。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div class="buttons"><button type="button" data-view="overview">斜看整楼</button>
+<button type="button" data-view="street">看九开间街面</button>
+<button type="button" data-view="south">看南端七窗</button>
+<button type="button" data-view="roof">看修后屋面</button>
+<button type="button" data-view="balconies">看两层阳台</button>
+<button type="button" data-view="ironwork">近看阳台铁栏</button>
+<button type="button" data-view="doors">看木门与上亮</button>
+<button type="button" data-view="shops">看沿街店面</button><button type="button" id="retry" hidden>重新加载</button></div>
+<p id="status" role="status" aria-live="polite">正在读取模型…</p>
+<div id="downloads" class="downloads" aria-label="下载模型"></div>
+<p><a href="gongyi-fang-1297-1311-sichuan-road.html">同组另一栋 · 公益坊一号楼（四川北路1297–1311号）</a></p>
+<p><a href="source/precise/hongkou-gongyi-fang-975-987-sichuan-road/measurements/roof-2018-2025-documentary-geometry.json">修前与修后屋面的影像依据</a></p>
+</aside>
+<footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script type="module" src="source/precise/hongkou-gongyi-fang-975-987-sichuan-road/source/viewer.js"></script>
+</body></html>
