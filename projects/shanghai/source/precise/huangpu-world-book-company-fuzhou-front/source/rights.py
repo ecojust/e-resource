@@ -1,0 +1,5 @@
+PHOTO_AUTHOR = 'Fayhoo'
+PHOTO_SOURCE = 'https://commons.wikimedia.org/wiki/File:Waiwen_Shudian.JPG'
+LICENSE_URL = 'https://creativecommons.org/licenses/by-sa/3.0/'
+GEOMETRY_LICENSE = 'CC BY-SA 3.0'
+TEXTURE_LICENSE = 'MIT'
