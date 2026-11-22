@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>上海银行旧楼北京东路205号几何铁格门与上亮窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="上海银行旧楼北京东路205号几何铁格门与上亮窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 北京东路205号</p>
+    <h1>上海银行旧楼</h1>
+    <p>几何铁格门与上亮窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">褐色横枋上是两行上亮窗。绿色门扇由一条横向实板分隔，两列方折纹带上下呼应，金属扁条之间留有空隙。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看铁格门与上亮窗</button>
+      <button type="button" data-view="oblique">斜看方折铁条和门框</button>
+      <button type="button" data-view="above">俯看窗框和横枋</button>
+      <button type="button" data-view="arch">细看两层回折铁条</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-shanghai-bank-beijing-205-grille/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-shanghai-bank-beijing-205-grille', {
+      front: {"center": [0,1.65,0], "size": [2.92,3.45,.72], "direction": [.03,-.035,1]},
+      oblique: {"center": [0,1.65,0], "size": [2.92,3.45,.72], "direction": [.45,.18,1]},
+      above: {"center": [0,1.65,0], "size": [2.92,3.45,.72], "direction": [.26,.50,1]},
+      arch: {"center": [0,1.05,.03], "size": [1.79,2.35,.73], "direction": [.18,.01,1]},
+    });
+  </script>
+</body>
+</html>
