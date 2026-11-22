@@ -47,7 +47,7 @@ def panelled_stone(f,bay):
                 p0,p1=(1-t0)*outline+t0*inn,(1-t1)*outline+t1*inn
                 vertices=[position(*p0[side],-d0),position(*p0[side+1],-d0),position(*p1[side+1],-d1),position(*p1[side],-d1)]
                 material=LIGHT if it in (1,3,5,8) else SHADE if it in (2,4,7) else STONE
-                f.builder.add(vertices,[(0,1,2,3)],material,label(name,tag+' '+str(side+1)+' fillet '+str(it+1)))
+                f.builder.add(vertices,[(3,2,1,0)],material,label(name,tag+' '+str(side+1)+' fillet '+str(it+1)))
     raking_sweep(q,inside,[(0,.06),(.04,.285),(.11,.298),(.16,.276),(.23,.276),(.35,.241),(.49,.245),(.69,.207),(.80,.193),(.91,.158),(1,.12)],'raking cornice')
     # Flat run-outs at both feet. The level moulding is interrupted by the projecting keystone.
     feet=np.asarray([q[0]-[0,-2.5],q[2]+[11 if name=="Left" else 15,-4]])
@@ -136,7 +136,7 @@ def cloth(b,bay,lod):
                     verts.append(position(*uv,d))
             for us in range(ns):
                 for vs in range(nt):
-                    s=us*(nt+1)+vs;faces.append((s,s+nt+1,s+nt+2,s+1))
+                    s=us*(nt+1)+vs;faces.append((s+1,s+nt+2,s+nt+1,s))
             b.add(verts,faces,BLUE if is_blue else OCHRE,label(name,'striped side '+str(index+1)+' band '+str(band+1)))
     for i,t in enumerate((.06,.93)):
         top=point(t,1);end=point(t,0)

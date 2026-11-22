@@ -6,6 +6,8 @@ Antigng 于 2015 年 7 月 20 日拍摄的原图还能辨认尘蓝和赭黄相�
 
 测量使用旋正后的 2988 × 5312 像素原图。窗楣的轮廓以独立估读的角点和未用于建模的边缘采样复核。三个档位均通过84束几何首交。四片垂布各留两条独立采样线，共60个高对比点。原始、近景各有58点与原照片的蓝赭色别相符，远景59点相符，差异集中在折痕边缘。[色带复核](measurements/final-curtain-colour-review.json)。原城建筑 278 的轮廓与具名地址相合，本期两扇窗的准确定位尚待现场测绘，模型独立展示。[照片和坐标](measurements/photographic-reference.json) · [窗楣边缘](measurements/observed-raking-edges.json) · [地块复核](measurements/footprint-review.json) · [来源及许可](SOURCES-LICENSE.md)
 
+普通网页复核使用实际 WebGL 绘制。四片垂布在窗楣两侧前后翻折，蓝、赭、深灰三种薄布材质均能从两面观察，凸石斜檐朝街的一面沿外轮廓连续。
+
 ## 重新生成
 
 安装项目使用的 Python 依赖后，从本目录运行以下命令可生成完整网格和简化网格，再检查原生适配器能否读回原始网格的纹理。

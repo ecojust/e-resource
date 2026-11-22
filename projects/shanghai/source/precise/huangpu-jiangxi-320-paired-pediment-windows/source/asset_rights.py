@@ -8,6 +8,22 @@ def document(path):
     size=struct.unpack_from('<I',data,12)[0]
     return json.loads(data[20:20+size])
 
+def visible_canvas_surfaces(path, materials):
+    """Woven cloth has a visible front and back in a single membrane."""
+    data = path.read_bytes()
+    size = struct.unpack_from('<I', data, 12)[0]
+    doc = json.loads(data[20:20 + size])
+    found = set()
+    for material in doc['materials']:
+        if material['name'] in materials:
+            material['doubleSided'] = True
+            found.add(material['name'])
+    assert found == materials
+    header = json.dumps(doc, ensure_ascii=False, separators=(',', ':')).encode()
+    header += b' ' * (-len(header) % 4)
+    binary = data[20 + size:]
+    path.write_bytes(struct.pack('<4sIIII', b'glTF', 2, 20 + len(header) + len(binary), len(header), 0x4e4f534a) + header + binary)
+
 def retain_metadata(path,source):
     data=path.read_bytes()
     size=struct.unpack_from('<I',data,12)[0]

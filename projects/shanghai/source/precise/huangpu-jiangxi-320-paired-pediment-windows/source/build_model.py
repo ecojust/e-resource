@@ -19,7 +19,7 @@ from photo_architecture import Facade
 from window_details import (BAYS,STONE,LIGHT,SHADE,FIELD,JOINT,REVEAL,SILL,WOOD,GLAZING,
     BLUE,OCHRE,HEM,LINING,METAL,shape,panelled_stone,sash,cloth)
 from paint import TEXTURE,apply_metric_uv
-from asset_rights import licensed_writer,retain_metadata
+from asset_rights import licensed_writer,retain_metadata,visible_canvas_surfaces
 from rights import PHOTO_AUTHOR,PHOTO_SOURCE,LICENSE_URL,GEOMETRY_LICENSE,TEXTURE_LICENSE
 META=dict(id='huangpu-jiangxi-320-paired-pediment-windows',name='道达大楼江西中路立面双三角窗楣与托座',
     heritage_group='5A004',viewer_page='jiangxi-320-paired-pediment-windows.html',
@@ -55,6 +55,7 @@ def add_building(builder,lod):
 class AggregateBuilder(TexturedBuilder):
     def save(self,path,metadata=None):
         super().save(path,metadata)
+        visible_canvas_surfaces(Path(path), {BLUE,OCHRE,HEM})
         p=Path(path);side=p.with_suffix('.geometry.json')
         if side.is_file():
             record=json.loads(side.read_bytes())

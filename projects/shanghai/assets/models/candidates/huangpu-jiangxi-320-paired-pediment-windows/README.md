@@ -4,8 +4,8 @@
 
 | 下载 | 三角面 | 字节 | SHA-256 |
 | --- | ---: | ---: | --- |
-| [原始 GLB](huangpu-jiangxi-320-paired-pediment-windows-raw.glb?raw=true) | 16,604 | 1,393,892 | `73de6734836bf428b6fd52b6844e693960a8084ee2a2a477f6c5ed909d711971` |
-| [近景 GLB](huangpu-jiangxi-320-paired-pediment-windows-web.glb?raw=true) | 16,604 | 675,728 | `9c7a91cae63e6221438f200bf95eefeb38f7c7ec2151c0585bbbce2bf3c1f436` |
-| [远景 GLB](huangpu-jiangxi-320-paired-pediment-windows-lod.glb?raw=true) | 4,640 | 213,908 | `7fbfbff6b1a3dc49c26f95fb18df9133351cd7bbb86c1f2cfadf876d2c1e8892` |
+| [原始 GLB](huangpu-jiangxi-320-paired-pediment-windows-raw.glb?raw=true) | 16,604 | 1,393,948 | `a417eb2b191df8f9397fc539881e07cbc0255a9a559f0a50d0f5d5da523aec3a` |
+| [近景 GLB](huangpu-jiangxi-320-paired-pediment-windows-web.glb?raw=true) | 16,604 | 677,496 | `1d185c50fbb681e54a9fbdf8e871b509f5bfce795a25f969647fb446a6618145` |
+| [远景 GLB](huangpu-jiangxi-320-paired-pediment-windows-lod.glb?raw=true) | 4,640 | 214,008 | `1cfb2b73e6521d43d717af9e692654d0e28e5b218b052fd8e3ba859144d7f28f` |
 
 近景含 183 个可编辑网格组，远景含 183 个。三档模型分别核对了 84 个几何探点。[原始检查记录](../../../data/audit/jiangxi-320-paired-pediment-windows-v1/preflight/model-review.json)
