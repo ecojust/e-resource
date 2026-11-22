@@ -1,3 +1,11 @@
+# 清心女中庚午校舍（北大楼）中央山花柱列正面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-girls-school-gengwu-front&mode=overview) · [单体旋转与下载](pure-heart-girls-school-history.html) · [来源与制作范围](source/precise/huangpu-pure-heart-girls-school-gengwu-front/README.md) · [验收记录](data/audit/pure-heart-girls-school-gengwu-v1/README.md)
+
+市表3A021记陆家浜路550号，工作名录记650号。按1930年落成的庚午校舍、民国照片与设计图及2014年11月23日实照独立制作中央五开间、四根通高柱、两端壁柱、阁层五窗与三角山花圆窗。地图使用街段资料标记。
+
+近景 15,656 个三角面，远景 10,452 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,938,227 字节。上海主图现有 294 处独立入口，黄浦区 129 处。[资产清单](assets/models/candidates/huangpu-pure-heart-girls-school-gengwu-front/manifest.json)
+
 # 瑞康洋行买办住宅（贝润生宅）历史庭院立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruikang-comprador-residence&mode=overview) · [单体旋转与下载](ruikang-comprador-residence-history.html) · [来源与制作范围](source/precise/huangpu-ruikang-comprador-residence/README.md) · [验收记录](data/audit/ruikang-comprador-residence-v1/README.md)
