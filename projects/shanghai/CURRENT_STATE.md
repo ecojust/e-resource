@@ -1,3 +1,11 @@
+# 据2015年公开的西端近照及广东路街照，在外滩5号既有模型西山墙南端补直跑外梯、平台、铁花扶手和两樘带拱形气窗的街窗。梯侧入口暗部依照片保留，室内走向待查
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk) · [四种模型下载](source/precise/bund05/revisions/west-service-stair/manifest.json) · [来源与制作范围](source/precise/bund05/revisions/west-service-stair/README.md) · [验收记录](data/audit/nissin-west-stair-v1/README.md)
+
+据2015年公开的西端近照及广东路街照，在外滩5号既有模型西山墙南端补直跑外梯、平台、铁花扶手和两樘带拱形气窗的街窗。梯侧入口暗部依照片保留，室内走向待查。
+
+近景 154,972 个三角面，远景 101,026 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 37,132,579 字节。上海主图现有 276 处独立入口，黄浦区 111 处。[资产清单](source/precise/bund05/revisions/west-service-stair/manifest.json)
+
 # 据2012、2014及2025照片在外滩14号既有模型补中央塔冠后方独立旗杆、杆顶与近年可辨的收垂旗幅
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund14&mode=walk) · [四种模型下载](source/precise/bund14/revisions/roof-mast/manifest.json) · [来源与制作范围](source/precise/bund14/revisions/roof-mast/README.md) · [验收记录](data/audit/bund14-roof-mast-v1/README.md)

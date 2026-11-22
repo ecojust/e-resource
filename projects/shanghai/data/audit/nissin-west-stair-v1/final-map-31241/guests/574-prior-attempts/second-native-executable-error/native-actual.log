@@ -1,0 +1,15 @@
+{"input":"/tmp/zizhong574/native-temp/tmp95dcgja0/huangpu-zizhong-424-426-paired-brick-arches-web.glb","output":"/tmp/zizhong574/native-temp/tmp95dcgja0/full.glb","decoded_bytes":125976}
+{"input":"/tmp/zizhong574/native-temp/tmp95dcgja0/huangpu-zizhong-424-426-paired-brick-arches-lod.glb","output":"/tmp/zizhong574/native-temp/tmp95dcgja0/lod.glb","decoded_bytes":87552}
+Traceback (most recent call last):
+  File "/workspace/e-resource/projects/shanghai/source/precise/huangpu-zizhong-424-426-paired-brick-arches/source/build_model.py", line 10, in <module>
+    build(SOURCE,META,PALETTE,add_building)
+  File "/workspace/e-resource/projects/shanghai/tools/package_architectural_model.py", line 69, in build
+    subprocess.run([*blender, PREVIOUS/'make_native.py','--',data_file,native,unfiltered],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: '/workspace/e-resource/projects/shanghai/source/precise/huangpu-zizhong-424-426-paired-brick-arches/source/blender_preview.py'
