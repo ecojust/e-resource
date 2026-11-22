@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>平凉路250号住宅红砖烟囱与斜坡瓦面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="平凉路250号住宅红砖烟囱与斜坡瓦面"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">杨浦区 · 平凉路250号</p>
+    <h1>平凉路250号住宅红砖烟囱与斜坡瓦面</h1>
+      <p>平凉路后排屋顶的一座方形红砖烟囱。可从树间看到增厚的顶圈，其下有一层暗红悬挑砖；下方红瓦屋面斜向烟囱，右侧与另一坡面相接。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">2019年5月与2021年2月的街景分别从北面和西面量取。砖身正面取1.10米宽，露出瓦面的高度约2.1米。上口受树木遮挡，内孔、顶帽背面和瓦沟防水细部未获实测。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看红砖烟囱与瓦面</button>
+      <button type="button" data-view="oblique">看顶盖和悬挑砖</button>
+      <button type="button" data-view="tiles">看筒身转角砌缝</button>
+      <button type="button" data-view="rail">俯看相交的瓦面</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/yangpu-pingliang-250-hip-roof-chimney/README.md">史料、测量与模型范围</a>
+  <p>参考百度地图2017年8月、2019年5月和2021年2月的平凉路街景。像素点、相机方位与同一时段的原始影像地址用于定位；模型的几何、材料、瓦片和展示图独立绘制。 <a href="https://map.baidu.com/">街景来源</a></p></aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('yangpu-pingliang-250-hip-roof-chimney', {
+  "front": {
+    "center": [
+      0,
+      1.38,
+      -0.02
+    ],
+    "size": [
+      3.8480000000000003,
+      3.7,
+      1.591
+    ],
+    "direction": [
+      0.39,
+      0.25,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      2.55,
+      -0.02
+    ],
+    "size": [
+      1.6016000000000001,
+      1.54,
+      0.6622
+    ],
+    "direction": [
+      -0.52,
+      0.22,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0.15,
+      1.66,
+      0
+    ],
+    "size": [
+      1.7888,
+      1.72,
+      0.7395999999999999
+    ],
+    "direction": [
+      0.94,
+      0.15,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.38,
+      0.57,
+      -0.03
+    ],
+    "size": [
+      2.756,
+      2.65,
+      1.1395
+    ],
+    "direction": [
+      0.61,
+      0.68,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
