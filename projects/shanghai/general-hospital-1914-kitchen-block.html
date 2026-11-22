@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>公济医院旧楼东部（1914年后勤楼） · 上海历史建筑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="negative-x" aria-label="公济医院旧楼东部三维模型"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">虹口区 · 天潼路与乍浦路转角</p>
+    <h1>公济医院旧楼东部</h1>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">这座五层红砖楼建于1914年，曾是公济医院的后勤楼。沿天潼路可见交替排列的三角形和弧形窗楣，中央石额下有四个托座。街景测得北墙长约44.6米，主檐距街面约23.7米。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="overview">看全楼</button>
+      <button type="button" data-view="street">看天潼路立面</button>
+      <button type="button" data-view="court">看庭院立面</button>
+      <button type="button" data-view="roof">近看檐口</button>
+      <button type="button" data-view="tablet">近看石额</button>
+      <button type="button" data-view="windows">近看窗楣</button>
+      <button type="button" data-view="entrance">近看石门套</button>
+      <button type="button" data-view="balcony">近看庭院阳台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads" aria-label="模型下载"></div>
+    <p><a href="data/audit/general-hospital-1914-kitchen-block-v1/stone-cartouche/north-stone-cartouche.jpg">查看北墙石额细部</a> · <a href="data/audit/general-hospital-1914-kitchen-block-v1/README.md">查看模型核验记录</a></p>
+    <p><a href="source/precise/hongkou-general-hospital-1914-kitchen-block/README.md">尺寸与建模范围</a> · <a href="source/precise/hongkou-general-hospital-1914-kitchen-block/SOURCES-LICENSE.md">照片出处与许可</a></p>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('hongkou-general-hospital-1914-kitchen-block', {
+  "overview": {
+    "center": [
+      20.8,
+      12.9,
+      -3.3
+    ],
+    "size": [
+      61,
+      43.6705,
+      10.98
+    ],
+    "direction": [
+      -1.0,
+      0.27381,
+      0.90646
+    ]
+  },
+  "street": {
+    "center": [
+      22.2,
+      12.7,
+      0
+    ],
+    "size": [
+      52,
+      37.2273,
+      9.36
+    ],
+    "direction": [
+      0.0,
+      0.00769,
+      1.0
+    ]
+  },
+  "court": {
+    "center": [
+      23.8,
+      12.7,
+      -10
+    ],
+    "size": [
+      54,
+      38.6591,
+      9.72
+    ],
+    "direction": [
+      -0.44255,
+      0.15532,
+      -1.0
+    ]
+  },
+  "roof": {
+    "center": [
+      13,
+      23.1,
+      -3.2
+    ],
+    "size": [
+      43,
+      30.7841,
+      7.74
+    ],
+    "direction": [
+      -0.9542,
+      0.79771,
+      1.0
+    ]
+  },
+  "tablet": {
+    "center": [
+      21.52,
+      11.82,
+      0.2
+    ],
+    "size": [
+      5.9,
+      4.2239,
+      1.062
+    ],
+    "direction": [
+      -0.45128,
+      0.26667,
+      1.0
+    ]
+  },
+  "windows": {
+    "center": [
+      14.6,
+      11.6,
+      0
+    ],
+    "size": [
+      10.2,
+      7.3023,
+      1.836
+    ],
+    "direction": [
+      -0.2087,
+      0.07826,
+      1.0
+    ]
+  },
+  "entrance": {
+    "center": [
+      0,
+      1.8,
+      -2.35
+    ],
+    "size": [
+      5.9,
+      4.2239,
+      1.062
+    ],
+    "direction": [
+      -1.0,
+      0.12222,
+      0.51667
+    ]
+  },
+  "balcony": {
+    "center": [
+      34.4,
+      18.35,
+      -12.2
+    ],
+    "size": [
+      14.8,
+      10.5955,
+      2.664
+    ],
+    "direction": [
+      -0.74436,
+      0.16165,
+      -1.0
+    ]
+  },
+  "oblique": {
+    "center": [
+      20.8,
+      12.9,
+      -3.3
+    ],
+    "size": [
+      61,
+      43.6705,
+      10.98
+    ],
+    "direction": [
+      -1.0,
+      0.27381,
+      0.90646
+    ]
+  }
+});
+  </script>
+</body>
+</html>

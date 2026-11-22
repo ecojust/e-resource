@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='乔争月／Shanghai Daily（2020年5月）；戴邹君／澎湃新闻（2020年4月）；2015、2019年独立街景'
+PHOTO_SOURCE='https://www.citynewsservice.cn/articles/cns/lifestyle/iconic-red-brick-facade-reminiscent-of-former-glory-of-innovative-hospital-in-city-rkla75jm'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT, original procedural fired-brick texture'
