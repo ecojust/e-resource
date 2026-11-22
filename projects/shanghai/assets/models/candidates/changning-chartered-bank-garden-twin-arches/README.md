@@ -1,15 +1,9 @@
 # 麦加利银行襄理住宅花园侧双石券与中柱
 
-江苏路796号花园侧相连的两个石拱，自原照取可见柱段、粗砌券石、拱肩和上部抹灰栏板。
+江苏路796号花园侧相连的两个石拱，自原照取可见柱段、粗砌券石、拱肩和上部抹灰栏板。 以照片中的单券净跨约2.4米作比例估算；石材色和进深属近似值。
 
-| 下载 | 三角面 | 字节 |
-| --- | ---: | ---: |
-| [原始网格](changning-chartered-bank-garden-twin-arches-raw.glb?raw=true) | 6,928 | 568,472 |
-| [近景模型](changning-chartered-bank-garden-twin-arches-web.glb?raw=true) | 6,928 | 322,500 |
-| [远景模型](changning-chartered-bank-garden-twin-arches-lod.glb?raw=true) | 4,524 | 265,276 |
+[原始 GLB](changning-chartered-bank-garden-twin-arches-raw.glb?raw=true) · [近景 GLB](changning-chartered-bank-garden-twin-arches-web.glb?raw=true) · [远景 GLB](changning-chartered-bank-garden-twin-arches-lod.glb?raw=true) · [可编辑 Blender](changning-chartered-bank-garden-twin-arches.blend?raw=true)
 
-近远两档正面可读两拱共用的中墩、放射石缝和蓝色楼号。斜面可见券石向内转折及上沿石挑檐。四幅均复看；按规资局照片给券石与拱肩增加了略凸的石面，并补了栏板上下细线脚。
+[打开模型](../../../../chartered-bank-garden-twin-arches.html) · [照片出处](../../../../source/precise/changning-chartered-bank-garden-twin-arches/reference-review.json) · [桌面与手机十张实图](../../../../data/audit/chartered-bank-garden-twin-arches-v1/development-views) · [逐图核对](../../../../data/audit/chartered-bank-garden-twin-arches-v1/development-views/actual-visual-review.json)
 
-[近景正面](../../../data/audit/chartered-bank-garden-twin-arches-v1/development-first-study/model-front.jpg) · [近景斜面](../../../data/audit/chartered-bank-garden-twin-arches-v1/development-first-study/model-oblique.jpg) · [远景正面](../../../data/audit/chartered-bank-garden-twin-arches-v1/development-first-study/model-lod-front.jpg) · [远景斜面](../../../data/audit/chartered-bank-garden-twin-arches-v1/development-first-study/model-lod-oblique.jpg)
-
-[模型范围与摄影出处](../../../source/precise/changning-chartered-bank-garden-twin-arches/README.md) · [三档构件检查](../../../data/audit/chartered-bank-garden-twin-arches-v1/development-first-study/geometry-rays.json)
+可编辑工程包含19个网格。两处石拱共用中墩，桌面和手机上的特写可沿券顶辨认楔形砌块。四项下载均已保存并核对。
