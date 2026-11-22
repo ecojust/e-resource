@@ -75,7 +75,7 @@ def add_windows(builder,lod):
             for n in range(len(zsect)-1):
                 c,d=zsect[n][1],zsect[n+1][0]
                 mat=SKY if n>=2 else LIGHT
-                if lod=='full':
+                if lod is False or lod == 'full':
                     bead=.006;face=FRAME_SETBACK+.034
                     box(a,a+bead,c,d,face,.014,SEAL,f'light {col+1}/{n+1} left rebate')
                     box(b-bead,b,c,d,face,.014,SEAL,f'light {col+1}/{n+1} right rebate')
