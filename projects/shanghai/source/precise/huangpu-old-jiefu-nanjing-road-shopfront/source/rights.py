@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Chainwit.; Antigng; Livelikerw'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:257_Nanjing_East_Road,_Shanghai_%E5%8D%97%E4%BA%AC%E4%B8%9C%E8%B7%AF257%E5%8F%B7_(2024)_-_IMG_01.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/4.0/'
+GEOMETRY_LICENSE='CC BY-SA 4.0'
+TEXTURE_LICENSE='MIT'
