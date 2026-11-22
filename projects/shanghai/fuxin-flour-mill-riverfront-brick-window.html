@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>福新面粉一厂沿河厂房红砖壁柱与矩形窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="福新面粉一厂沿河厂房红砖壁柱与矩形窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 光复路423–433号、长安路101号</p>
+    <h1>福新面粉一厂沿河厂房红砖壁柱与矩形窗</h1>
+      <p>沿河三层厂房上部的一跨窗墙，红砖壁柱与浅褐砖墙交接，矩形窗上方设砖过梁，窗底石台向外挑出。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">取沿河三层厂房上层单跨，区分后排六层钢筋混凝土建筑。宽约3.0米、高约3.1米和各构件进深均据实景照片估算。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看沿河窗跨</button>
+      <button type="button" data-view="oblique">斜看窗洞</button>
+      <button type="button" data-view="tiles">看红砖过梁</button>
+      <button type="button" data-view="rail">看壁柱和窗台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/jingan-fuxin-flour-mill-riverfront-brick-window/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-fuxin-flour-mill-riverfront-brick-window', {
+  "front": {
+    "center": [
+      0,
+      1.52,
+      0
+    ],
+    "size": [
+      3.5880000000000005,
+      3.45,
+      1.4835
+    ],
+    "direction": [
+      -0.28,
+      0.12,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      1.61,
+      0
+    ],
+    "size": [
+      2.2256,
+      2.14,
+      0.9202
+    ],
+    "direction": [
+      0.53,
+      0.15,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0.1,
+      2.49,
+      0
+    ],
+    "size": [
+      1.456,
+      1.4,
+      0.602
+    ],
+    "direction": [
+      0.27,
+      0.24,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      -1.04,
+      1.3,
+      0
+    ],
+    "size": [
+      1.56,
+      1.5,
+      0.645
+    ],
+    "direction": [
+      -0.46,
+      0.26,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
