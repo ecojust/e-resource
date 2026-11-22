@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>自忠路424、426号临街二层双砖券与木窗</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="自忠路424、426号临街二层双砖券与木窗"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 自忠路414-454号</p>
+    <h1>自忠路424、426号临街二层双砖券与木窗</h1>
+      <p>两块绿门牌上方的两跨红砖券。面街左侧426号为两扇合拢的百叶，右侧424号可见打开的木框、暗色窗洞。双跨之间的竖管经过券肩，白色凸窗台分别位于两窗下方。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">采用2020年街景球面转切面后按两处起拱点与窗台校准。两跨合计名义宽3.60米。照片能约束相对几何，开间、厚度和窗扇角度仍为估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看双砖券</button>
+      <button type="button" data-view="oblique">看券肩与白窗台</button>
+      <button type="button" data-view="tiles">看426号木百叶</button>
+      <button type="button" data-view="rail">看424号敞窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/huangpu-zizhong-424-426-paired-brick-arches/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-zizhong-424-426-paired-brick-arches', {
+  "front": {
+    "center": [
+      0,
+      1.08,
+      -0.09
+    ],
+    "size": [
+      3.276,
+      3.15,
+      1.3545
+    ],
+    "direction": [
+      0.15,
+      0.06,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      1.08,
+      -0.09
+    ],
+    "size": [
+      3.276,
+      3.15,
+      1.3545
+    ],
+    "direction": [
+      0.42,
+      0.15,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      -0.84,
+      0.98,
+      -0.12
+    ],
+    "size": [
+      1.092,
+      1.05,
+      0.4515
+    ],
+    "direction": [
+      0.1,
+      0.12,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.97,
+      1.03,
+      -0.02
+    ],
+    "size": [
+      1.196,
+      1.15,
+      0.49449999999999994
+    ],
+    "direction": [
+      -0.36,
+      0.13,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
