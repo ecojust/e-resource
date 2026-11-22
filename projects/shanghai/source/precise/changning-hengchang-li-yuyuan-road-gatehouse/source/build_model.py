@@ -20,6 +20,7 @@ import east_balconies
 import entrance_relief
 import exterior_sashes
 import gate_passage
+import passage_entrance_soffit
 import gatehouse_finishes
 import hengchang_roof
 import street_envelope
@@ -31,7 +32,7 @@ ID='changning-hengchang-li-yuyuan-road-gatehouse'
 SLUG='hengchang-li-yuyuan-road-gatehouse'
 PALETTE={**gatehouse_finishes.PALETTE,**exterior_sashes.PALETTE,**gate_passage.PALETTE,
          **entrance_relief.PALETTE,**hengchang_roof.PALETTE,**east_balconies.PALETTE,**street_shops.PALETTE,
-         **west_blind_arch.PALETTE}
+         **west_blind_arch.PALETTE,**passage_entrance_soffit.PALETTE}
 META=dict(id=ID,name='亨昌里愚园路南口过街楼与东侧街屋',address='上海市长宁区愚园路1376弄南口',
           viewer_page=SLUG+'.html',heritage_group='5M006',period='2022',
           scope='更新后的南过街楼、东侧第一段相接的街屋、南北通廊及其展陈。另有2018年旧貌独立模型。',
@@ -71,6 +72,7 @@ def add_building(b,lod=False,period='2022'):
     hengchang_roof.add_roof(b,lod,layout)
     gate_passage.add_passage(b,lod,layout)
     if period=='2022':
+        passage_entrance_soffit.add_soffit(b,lod,layout)
         awning.add_awning(b,lod,layout)
         entrance_relief.add_relief(b,lod,layout)
 
