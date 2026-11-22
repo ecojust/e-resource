@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='虹口区企业服务云，Coolmanjackey（2013年7月30日实拍）'
+PHOTO_SOURCE='https://www.shhk.gov.cn/qyfwy/030002/030002002/030002002002/20181206/43c1beda-cde3-4a3b-bc6f-858a999280d5.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT, original procedural grey brick, warm brick bands and roof tiles'
