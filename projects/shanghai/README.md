@@ -178,7 +178,7 @@
 | 安培洋行大楼圆明园路主立面 | 2026-11-22 13:16:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ampire-and-co-building&mode=overview) |
 | 三井洋行四川中路东立面南端山花与入口 | 2026-11-22 13:53:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview) |
 | 仁记洋行大楼东南转角与相连街墙 | 2026-11-22 14:32:15 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gibb-livingston-corner&mode=overview) |
-| 业广地产公司大楼滇池路与四川中路转角 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview) |
+| 业广地产公司大楼滇池路与四川中路转角 | 2026-11-22 14:43:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview) |
 
 ### 徐汇区（55处）
 

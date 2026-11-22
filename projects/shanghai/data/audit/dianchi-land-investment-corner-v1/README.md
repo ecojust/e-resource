@@ -21,3 +21,7 @@
 在含275处地点的地图中，鼠标和触屏分别从仁记洋行点到业广地产公司大楼，登记的业主为3157号。街面、屋顶、两侧山花与阳台分别拍摄，42个地面样点逐点比对。拉远后地图把此楼并入一个含16处地点的图钉组，当时载入的远景网格为7,276面。[街角图](city-31238/map-street-facade.png) · [两侧山花](city-31238/map-sichuan-and-dianchi-gables.png) · [远景](city-31238/map-distant.png) · [两次点选与地面记录](city-31238/main-browser.json)
 
 独立模型页在1250像素桌面和390像素手机上各留四幅图，可对照斜切角的两侧宽度、转折的阳台、山花与保留的屋顶截面。原始GLB、网页GLB、远景GLB与Blender文件都由页面下载按钮另存并逐件核对摘要。[桌面斜视](city-31238/standalone/viewer-desktop-full-oblique.png) · [手机俯视](city-31238/standalone/viewer-mobile-lod-above.png) · [视图与保存记录](city-31238/standalone/viewer.json) · [18幅图的逐张意见](city-31238/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e7c760a57cb5d4b9cd0a4716b074a7127a5fb954/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
