@@ -3794,7 +3794,7 @@
 | 中南银行大楼汉口路南立面中央柱列 | 2026-11-22 18:52:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-south-sea-bank-front&mode=overview) |
 | 美伦大楼西楼南京东路西北转角 | 2026-11-22 19:30:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-meilun-west-nanjing-corner&mode=overview) |
 | 电力大楼南京东路与江西中路转角塔楼 | 2026-11-22 19:52:02 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-electric-company-corner-tower&mode=overview) |
-| 原亚洲文会博物院虎丘路立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-royal-asiatic-society-huqiu-front&mode=overview) |
+| 原亚洲文会博物院虎丘路立面 | 2026-11-22 20:31:53 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-royal-asiatic-society-huqiu-front&mode=overview) |
 
 ### 徐汇区（55处）
 

@@ -21,3 +21,7 @@
 前后两期名录从281处增至282处。桌面鼠标和手机触屏均点中本栋，街面复核的21个地面与相邻位置均与记录一致。河岸远景实际载入12,160个三角面。桌面与手机独立页均切换了近远档，并对可编辑原件、原始网格、近档及远档四种文件进行了真实另存和指纹复核。
 
 [各图的观察与指纹](city-31247/reviewed-images.json) · [实机、地面与四种下载](city-31247/process-exits.json) · [街面原景](city-31247/map-huqiu-three-stone-arches.png) · [入口正面](city-31247/facade-reframe/map-three-arches-front.png) · [入口斜角](city-31247/facade-oblique/map-stone-arches-oblique.png) · [八角窗](city-31247/map-octagonal-window-and-gate.png) · [独立页](city-31247/current-standalone/viewer-desktop-full.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/6ead5b09f19e418eaee580f6a1de0e104462e2d9/projects/shanghai/index.html#landmark=huangpu-royal-asiatic-society-huqiu-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
