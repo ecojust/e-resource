@@ -1,0 +1,5 @@
+PHOTO_AUTHOR = 'Baidu Maps street panorama service, observations from 2015 and 2020'
+PHOTO_SOURCE = 'https://map.baidu.com/?panotype=street&pid=09000300122002211531108835O'
+LICENSE_URL = 'https://opensource.org/license/mit/'
+GEOMETRY_LICENSE = 'MIT'
+TEXTURE_LICENSE = 'MIT'

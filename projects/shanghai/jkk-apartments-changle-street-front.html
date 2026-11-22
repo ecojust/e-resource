@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>J.K.K.公寓长乐路临街立面与弧形阳台</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="J.K.K.公寓的临街立面"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 长乐路</p>
+    <h1>J.K.K.公寓</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">四列弧形阳台各叠三层。两处楼梯窗后退，窗前的水泥压线在楼梯间两侧收头。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看长乐路街面</button>
+      <button type="button" data-view="front">正看两处楼梯间</button>
+      <button type="button" data-view="above">看连续挑檐</button>
+      <button type="button" data-view="inscription">细看中央开启的钢窗</button>
+      <button type="button" data-view="return">看相接的弧形阳台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/jkk-apartments-changle-street-front-v1/balconies/gallery-views.jpg">十二座阳台的三层栏板和圆角</a>
+    <a href="data/audit/jkk-apartments-changle-street-front-v1/central-steel/central-steel-measured-views.png">中央楼梯间四个窗洞的实测模型</a>
+    <a href="data/audit/jkk-apartments-changle-street-front-v1/central-steel/central-steel-opening-states.png">钢窗开启角度与上悬扇</a>
+    <a href="source/precise/jingan-jkk-apartments-changle-street-front/README.md">照片与建筑资料</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-jkk-apartments-changle-street-front', {
+  "oblique": {
+    "center": [
+      6.75,
+      7.5,
+      0
+    ],
+    "size": [
+      30,
+      15.3,
+      4.3
+    ],
+    "direction": [
+      0.32,
+      0.044,
+      0.946
+    ]
+  },
+  "front": {
+    "center": [
+      6.6,
+      7.5,
+      0
+    ],
+    "size": [
+      29.9,
+      15.4,
+      4.3
+    ],
+    "direction": [
+      0.035,
+      0,
+      0.999
+    ]
+  },
+  "above": {
+    "center": [
+      6.9,
+      13.4,
+      0.2
+    ],
+    "size": [
+      29.4,
+      5.5,
+      4.0
+    ],
+    "direction": [
+      0.2,
+      0.38,
+      0.9
+    ]
+  },
+  "inscription": {
+    "center": [
+      0,
+      7.7,
+      -1.32
+    ],
+    "size": [
+      3.6,
+      9.2,
+      1.28
+    ],
+    "direction": [
+      0.26,
+      0.02,
+      0.965
+    ]
+  },
+  "return": {
+    "center": [
+      7.43,
+      7.8,
+      0.3
+    ],
+    "size": [
+      11.6,
+      8.75,
+      2.13
+    ],
+    "direction": [
+      -0.3,
+      -0.012,
+      0.954
+    ]
+  }
+});
+  </script>
+</body>
+</html>
