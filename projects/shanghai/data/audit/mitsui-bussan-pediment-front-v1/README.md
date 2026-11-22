@@ -23,3 +23,7 @@
 在本期独立模型页以 1250 和 390 像素宽的视口分别检查了正面、斜面和远档。两侧均可辨认红砖与浅色石饰的边界。原始模型、网页模型、远档模型和可编辑文件均通过浏览器保存，四份文件的字节和摘要与正式清单一致。[六张实图与四次保存](city-31235/standalone-31235/viewer.json) · [恢复经过与分场实录](city-31235/actual-current-and-recovery.json)
 
 [实机、地面与四种下载](city-31235/process-exits.json) · [旧城对照](city-31235/map-before.png) · [四川中路南端山花与入口](city-31235/map-east-pediment-and-stone-doorcase.png) · [181号门牌与石门罩](city-31235/map-181-number-and-doorcase.png) · [远档](city-31235/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d68420a29d3f34e95a4eac11c988ef1496116b11/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

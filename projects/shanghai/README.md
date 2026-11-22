@@ -176,7 +176,7 @@
 | 乍浦路桥 | 2026-11-22 09:38:51 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=walk) |
 | 礼和洋行九江路街面 | 2026-11-22 12:29:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) |
 | 安培洋行大楼圆明园路主立面 | 2026-11-22 13:16:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ampire-and-co-building&mode=overview) |
-| 三井洋行四川中路东立面南端山花与入口 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview) |
+| 三井洋行四川中路东立面南端山花与入口 | 2026-11-22 13:53:29 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsui-bussan-pediment-front&mode=overview) |
 
 ### 徐汇区（55处）
 
