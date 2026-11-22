@@ -1,15 +1,9 @@
 # 纺三小区特号住宅门廊与石阶
 
-许昌路227弄特号面向圆形绿地的入口，含七级石阶、两道斜杆、方柱、平挑雨篷、绿底特号牌及门上楼梯窗。
+许昌路227弄特号面向圆形绿地的入口，含七级石阶、两道斜杆、方柱、平挑雨篷、绿底特号牌及门上楼梯窗。 门高和踏步高度取常用范围作相片尺度估算。雨篷进深、遮挡后的柱身、门扇、墙厚及栏杆直径按照片约束。
 
-| 下载 | 三角面 | 字节 |
-| --- | ---: | ---: |
-| [原始网格](yangpu-fangsan-special-number-entrance-raw.glb?raw=true) | 4,368 | 302,748 |
-| [近景模型](yangpu-fangsan-special-number-entrance-web.glb?raw=true) | 4,368 | 137,272 |
-| [远景模型](yangpu-fangsan-special-number-entrance-lod.glb?raw=true) | 3,280 | 115,952 |
+[原始 GLB](yangpu-fangsan-special-number-entrance-raw.glb?raw=true) · [近景 GLB](yangpu-fangsan-special-number-entrance-web.glb?raw=true) · [远景 GLB](yangpu-fangsan-special-number-entrance-lod.glb?raw=true) · [可编辑 Blender](yangpu-fangsan-special-number-entrance.blend?raw=true)
 
-正面图可数清十二格上窗、七级石阶和两根前方柱。斜面图可分辨柱后的暗色退门、两侧红色扶手与踏面前沿。两档都保留门框左侧的绿色特号牌和水平雨篷，水刷石墙面可与米色柱身区分。
+[打开模型](../../../../fangsan-special-number-entrance.html) · [照片出处](../../../../source/precise/yangpu-fangsan-special-number-entrance/reference-review.json) · [桌面与手机十张实图](../../../../data/audit/fangsan-special-number-entrance-v1/development-views) · [逐图核对](../../../../data/audit/fangsan-special-number-entrance-v1/development-views/actual-visual-review.json)
 
-[近景正面](../../../data/audit/fangsan-special-number-entrance-v1/development-first-study/model-front.jpg) · [近景斜面](../../../data/audit/fangsan-special-number-entrance-v1/development-first-study/model-oblique.jpg) · [远景正面](../../../data/audit/fangsan-special-number-entrance-v1/development-first-study/model-lod-front.jpg) · [远景斜面](../../../data/audit/fangsan-special-number-entrance-v1/development-first-study/model-lod-oblique.jpg)
-
-[模型范围与摄影出处](../../../source/precise/yangpu-fangsan-special-number-entrance/README.md) · [三档构件检查](../../../data/audit/fangsan-special-number-entrance-v1/development-first-study/geometry-rays.json)
+可编辑工程包含36个网格。桌面与手机实际画面中，米色柱廊和浅灰踏步立在水刷石墙之前。正视、斜视和俯视显示平台和两侧斜栏杆，近远两档的局部观察都能读到绿色牌面上黄色“特号”二字。 四项下载均已逐件保存核对。
