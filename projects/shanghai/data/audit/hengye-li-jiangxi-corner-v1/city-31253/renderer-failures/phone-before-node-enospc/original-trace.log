@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-253/run-253-recovered.py", line 31, in <module>
+    dst=e/'before'if control else parts/part;dst.mkdir(parents=True,exist_ok=True)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/shanghai-main-253/evidence/253/separate/phone'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-253/run-253-recovered.py", line 20, in <module>
+    subprocess.run([sys.executable,'-Bu',__file__,previous,part],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-253/run-253-recovered.py', PosixPath('/tmp/shanghai-main-252/252-map-slot-released.json'), 'phone']' returned non-zero exit status 1.

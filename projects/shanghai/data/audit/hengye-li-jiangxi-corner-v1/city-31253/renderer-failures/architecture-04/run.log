@@ -1,0 +1,28 @@
+page.evaluate: Target crashed 
+    at settle (/tmp/shanghai-main-253/check-253-two-real-windows.cjs:126:16)
+    at async view (/tmp/shanghai-main-253/check-253-two-real-windows.cjs:129:5)
+    at async run (/tmp/shanghai-main-253/check-253-two-real-windows.cjs:308:87)
+    at async photographs (/tmp/shanghai-main-253/check-253-two-real-windows.cjs:351:55) {
+  log: [],
+  name: 'Error'
+}
+AssertionError [ERR_ASSERTION]: {"pose":"0","pid":3240628,"code":1,"signal":null,"report_sha256":"cd7afe9b61b2f4f055b94480870c45e7b4d4ad9ef7f50eadba0e13bbe9432513","report":"actual-camera-0/main-browser.json"}
+
+1 !== 0
+
+    at photographs (/tmp/shanghai-main-253/check-253-two-real-windows.cjs:361:12)
+    at Object.<anonymous> (/tmp/shanghai-main-253/check-253-two-real-windows.cjs:382:1)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
