@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>上海律师公会会所双列钢窗与人字纹窗裙</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="上海律师公会会所双列钢窗与人字纹窗裙"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 复兴中路301号</p>
+    <h1>上海律师公会会所</h1>
+    <p>双列钢窗与人字纹窗裙</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">入口上方三层各有一对钢窗，两列窗沿中轴上升，在屋顶各有一块压顶。窗下反向的斜纹在相邻区块相接，形成人字。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看三层钢窗与窗裙</button>
+      <button type="button" data-view="oblique">斜看斜纹窗裙和窗梃</button>
+      <button type="button" data-view="above">俯看分块压顶</button>
+      <button type="button" data-view="arch">细看人字纹和钢窗框</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-lawyers-club-chevron-spandrels/README.md">历史照片与制作范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-lawyers-club-chevron-spandrels', {
+      front: {"center": [0,2.18,0], "size": [2.65,4.63,.70], "direction": [.03,-.035,1]},
+      oblique: {"center": [0,2.18,0], "size": [2.65,4.63,.70], "direction": [.45,.18,1]},
+      above: {"center": [0,2.18,0], "size": [2.65,4.63,.70], "direction": [.26,.50,1]},
+      arch: {"center": [0,1.47,0], "size": [2.31,1.98,.77], "direction": [.18,.01,1]},
+    });
+  </script>
+</body>
+</html>
