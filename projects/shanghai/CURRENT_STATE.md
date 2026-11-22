@@ -1,3 +1,11 @@
+# 中南银行大楼汉口路南立面中央柱列
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-south-sea-bank-front&mode=overview) · [单体旋转与下载](china-south-sea-bank-front.html) · [来源与制作范围](source/precise/huangpu-china-south-sea-bank-front/README.md) · [验收记录](data/audit/china-south-sea-bank-front-v1/README.md)
+
+按3A006及汉口路110号实照制作南面中央三开间，二至四层为四根多立克柱，底层为1997年改后的三门和四对塔司干柱。分别记录1917年设计、1921年竣工、1997年修缮改门及顶部、1998年更名。
+
+近景 37,108 个三角面，远景 12,512 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,141,965 字节。上海主图现有 279 处独立入口，黄浦区 114 处。[资产清单](assets/models/candidates/huangpu-china-south-sea-bank-front/manifest.json)
+
 # 大北大楼电报局延安东路正立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yanan-road-telegraph-exchange&mode=overview) · [单体旋转与下载](yanan-road-telegraph-exchange.html) · [来源与制作范围](source/precise/huangpu-yanan-road-telegraph-exchange/README.md) · [验收记录](data/audit/yanan-road-telegraph-exchange-v1/README.md)

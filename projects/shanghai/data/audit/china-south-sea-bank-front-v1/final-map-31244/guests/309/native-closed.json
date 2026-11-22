@@ -1,0 +1,208 @@
+{
+  "order": 309,
+  "exit": 0,
+  "exit_code": 0,
+  "remaining": [],
+  "wrapper_pid": 1533564,
+  "wrapper_closed": true,
+  "observed_processes": {
+    "1533711": "MainThread",
+    "1533719": "MainThread",
+    "1533726": "MainThread",
+    "1533742": "python3",
+    "1533744": "blender",
+    "1534290": "python3",
+    "1534291": "blender",
+    "1534305": "magick",
+    "1534306": "python3",
+    "1534307": "oidnDenoise",
+    "1534328": "magick"
+  },
+  "process_births": {
+    "1533711": 1797641,
+    "1533719": 1797658,
+    "1533726": 1797684,
+    "1533742": 1797757,
+    "1533744": 1797784,
+    "1534290": 1802875,
+    "1534291": 1802880,
+    "1534305": 1803030,
+    "1534306": 1803034,
+    "1534307": 1803037,
+    "1534328": 1803379
+  },
+  "started": "2026-11-22T10:09:22.209675+00:00",
+  "finished": "2026-11-22T10:10:30.567221+00:00",
+  "log_sha256": "e35b4f37b61265d01cf07a1e325480625e826f0c3516d405aa2037d59409ab81",
+  "admitted_from": "a9503bc9085160f23711ca3e71265b4976137589168b99ed501aec442ebc2d73",
+  "parent_snapshot_sha256": "f1d423b393b95d337022b1ee8d9cb28a9bcaecbefab368e5f3087e890b9634af",
+  "passed": true,
+  "native_stages": [
+    {
+      "stage": "render",
+      "program": "blender",
+      "pid": 1533744,
+      "wrapper_pid": 1533742,
+      "started": "2026-11-22T10:09:34.244250+00:00",
+      "finished": "2026-11-22T10:10:25.151347+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "reopen",
+      "program": "blender",
+      "pid": 1534291,
+      "wrapper_pid": 1534290,
+      "started": "2026-11-22T10:10:25.204290+00:00",
+      "finished": "2026-11-22T10:10:26.703706+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "denoise",
+      "program": "/tmp/country-tools/oidn/bin/oidnDenoise",
+      "pid": 1534307,
+      "wrapper_pid": 1534306,
+      "started": "2026-11-22T10:10:26.776463+00:00",
+      "finished": "2026-11-22T10:10:30.195557+00:00",
+      "exit": 0
+    }
+  ],
+  "manifest": "/workspace/e-resource/projects/shanghai/assets/models/candidates/jingan-jueyuan-xiangguang-hall/manifest.json",
+  "geometry_native": "/workspace/e-resource/projects/shanghai/data/audit/jueyuan-xiangguang-hall-v1/geometry-native.json",
+  "blender_pids": [
+    1533744,
+    1534291
+  ],
+  "remaining_blender": [],
+  "remaining_oidn": [],
+  "geometry_native_sha256": "8eaa9a2c0964eb189d7d8be1963503936f16b0cb75a40d908b9422a5abc8f7f0",
+  "manifest_sha256": "3f1b8a1c1d07bf95d149d42ce7a5fbdd3fc1379f4a86290f843b5fb23d24ed87",
+  "group_count": 212,
+  "assets": {
+    "raw": {
+      "file": "jingan-jueyuan-xiangguang-hall-raw.glb",
+      "bytes": 3826032,
+      "sha256": "faf5c5db6993b8683c4be318c359f21cf7b28d2b2353af065c3866e63f3490ed",
+      "triangles": 70503,
+      "bounds_gltf_m": [
+        [
+          -12.806492805480957,
+          0.0,
+          -4.711630821228027
+        ],
+        [
+          12.806492805480957,
+          8.326064109802246,
+          1.6200000047683716
+        ]
+      ],
+      "materials": 13
+    },
+    "full": {
+      "file": "jingan-jueyuan-xiangguang-hall-web.glb",
+      "bytes": 1424040,
+      "sha256": "8aebf46c71dd2974a6775dced0619dcc30357880e5d955348a51db29e91f33ac",
+      "triangles": 70503,
+      "bounds_gltf_m": [
+        [
+          -12.8064928,
+          0,
+          -4.71163082
+        ],
+        [
+          12.8064928,
+          8.32606411,
+          1.62
+        ]
+      ],
+      "materials": 13
+    },
+    "lod": {
+      "file": "jingan-jueyuan-xiangguang-hall-lod.glb",
+      "bytes": 646460,
+      "sha256": "b163d673741dcdca4027de5f1bdf4332bef5ea25160a3cee3418971c5456aab1",
+      "triangles": 36459,
+      "bounds_gltf_m": [
+        [
+          -12.8072243,
+          0,
+          -4.7157259
+        ],
+        [
+          12.8184929,
+          8.34115314,
+          1.62
+        ]
+      ],
+      "materials": 13
+    },
+    "native": {
+      "file": "jingan-jueyuan-xiangguang-hall.blend",
+      "bytes": 826528,
+      "sha256": "5043a717c313580ca25a9b14fb556265b3f0d9382e946e9bccdcbb30d97e03a7"
+    }
+  },
+  "files": [
+    {
+      "file": "jingan-jueyuan-xiangguang-hall-raw.glb",
+      "bytes": 3826032,
+      "sha256": "faf5c5db6993b8683c4be318c359f21cf7b28d2b2353af065c3866e63f3490ed",
+      "triangles": 70503,
+      "bounds_gltf_m": [
+        [
+          -12.806492805480957,
+          0.0,
+          -4.711630821228027
+        ],
+        [
+          12.806492805480957,
+          8.326064109802246,
+          1.6200000047683716
+        ]
+      ],
+      "materials": 13
+    },
+    {
+      "file": "jingan-jueyuan-xiangguang-hall-web.glb",
+      "bytes": 1424040,
+      "sha256": "8aebf46c71dd2974a6775dced0619dcc30357880e5d955348a51db29e91f33ac",
+      "triangles": 70503,
+      "bounds_gltf_m": [
+        [
+          -12.8064928,
+          0,
+          -4.71163082
+        ],
+        [
+          12.8064928,
+          8.32606411,
+          1.62
+        ]
+      ],
+      "materials": 13
+    },
+    {
+      "file": "jingan-jueyuan-xiangguang-hall-lod.glb",
+      "bytes": 646460,
+      "sha256": "b163d673741dcdca4027de5f1bdf4332bef5ea25160a3cee3418971c5456aab1",
+      "triangles": 36459,
+      "bounds_gltf_m": [
+        [
+          -12.8072243,
+          0,
+          -4.7157259
+        ],
+        [
+          12.8184929,
+          8.34115314,
+          1.62
+        ]
+      ],
+      "materials": 13
+    },
+    {
+      "file": "jingan-jueyuan-xiangguang-hall.blend",
+      "bytes": 826528,
+      "sha256": "5043a717c313580ca25a9b14fb556265b3f0d9382e946e9bccdcbb30d97e03a7"
+    }
+  ]
+}
