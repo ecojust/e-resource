@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>原交通银行仓库 · 上海历史建筑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".42" aria-label="原交通银行仓库光复路临河立面与中央入口"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 光复路195号</p>
+    <h1>原交通银行仓库</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">临苏州河的四层仓库沿光复路转折。正面可看中央门楼的“光二倉庫”四字和两翼钢窗，俯视可看露台的形状；车道视角可见贯通的门洞与脚下铺地。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">从东南看两翼</button>
+      <button type="button" data-view="front">正看临河立面</button>
+      <button type="button" data-view="above">俯看南侧露台</button>
+      <button type="button" data-view="inscription">看中央四字门额</button>
+      <button type="button" data-view="return">看车道通口</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/riverfront/riverfront-survey.jpg">看临河全立面、门楼和窗列</a>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/window-sashes/warehouse-window-elevation.jpg">比较南面与西侧回墙的窗扇</a>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/south-entrance/warehouse-riverfront-portal.jpg">看“光二倉庫”题字、门洞和车道</a>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/south-passage/public-passage.jpg">看车道柱列、顶灯与铺地</a>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/east-return-sign/east-return-lettering.jpg">看东侧回墙的双行字牌</a>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/roof-terrace/south-terrace-model.jpg">看南露台铺地、灯具和边栏</a>
+    <a href="data/audit/bank-of-communications-warehouse-guangfu-riverfront-v1/roof-terrace/south-terrace-plan.jpg">对照露台平面与实测剖面</a>
+    <a href="source/precise/jingan-bank-of-communications-warehouse-guangfu-riverfront/measurements/1947-address-and-1934-opening.json">查阅1934年开业记载与1947年门号</a>
+    <a href="source/precise/jingan-bank-of-communications-warehouse-guangfu-riverfront/README.md">建筑范围、照片和测量说明</a>
+    <a href="source/precise/jingan-bank-of-communications-warehouse-guangfu-riverfront/SOURCES-LICENSE.md">查看摄影出处与模型许可</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-bank-of-communications-warehouse-guangfu-riverfront', {
+  "oblique": {
+    "center": [
+      0,
+      10.2,
+      -2.8
+    ],
+    "size": [
+      73.0,
+      47.45,
+      9.49
+    ],
+    "direction": [
+      0.58594,
+      0.23958,
+      1.0
+    ]
+  },
+  "front": {
+    "center": [
+      0,
+      11.05,
+      -1
+    ],
+    "size": [
+      67.0,
+      43.550000000000004,
+      8.71
+    ],
+    "direction": [
+      0.00187,
+      0.03812,
+      1.0
+    ]
+  },
+  "above": {
+    "center": [
+      0,
+      16.7,
+      -6
+    ],
+    "size": [
+      65.0,
+      42.25,
+      8.450000000000001
+    ],
+    "direction": [
+      0.58333,
+      0.50625,
+      1.0
+    ]
+  },
+  "inscription": {
+    "center": [
+      0,
+      8.2,
+      -0.2
+    ],
+    "size": [
+      14.3,
+      9.295,
+      2
+    ],
+    "direction": [
+      0.01765,
+      0.02353,
+      1.0
+    ]
+  },
+  "return": {
+    "center": [
+      0,
+      1.98,
+      -8.1
+    ],
+    "size": [
+      7.1,
+      4.615,
+      2
+    ],
+    "direction": [
+      0.04979,
+      0.01328,
+      1.0
+    ]
+  }
+});
+  </script>
+</body>
+</html>
