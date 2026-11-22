@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='上海静安、庭院设计企业项目摄影、百度街景'
+PHOTO_SOURCE='https://sghexport.shobserver.com/html/baijiahao/2024/05/04/1313551.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
