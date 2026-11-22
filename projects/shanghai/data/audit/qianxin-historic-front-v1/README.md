@@ -7,3 +7,7 @@
 城市以三位小数的名录街区位置为索引。打开地点卡后，可单独看2015年照片所见窗廊。模型不覆盖城市实景，切片和新增地面碰撞体数量均为零。1937、1946年的两张街区旧照未能辨认138号的六券组，也不足以确定加层年份。[地图规则](final-placement-contract.json) · [原址与历史展件检查](marker-preflight.json)
 
 正式31257站的桌面和390像素手机各从独立页实点正面近景、斜看券脚和远档。两端正视可见上下两排共六券，斜视能看出退入的窗扇、拱脚和下栏板厚度。四份文件均通过页面保存，下载名、长度及SHA256分别对应原始GLB、网页近远档和可编辑Blender文件。此前292处的整城目录与1,874份正式资源另有完整实取。[六幅截图和四件下载](viewer.json) · [正式原址标记](registered-marker-31257.json) · [全站实取](31257-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f551e0411e3367c408e590d8dff28e60eb347399/projects/shanghai/index.html#landmark=huangpu-qianxin-building-historic-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

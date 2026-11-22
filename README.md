@@ -3795,7 +3795,7 @@
 | 四明银行北京东路转角门楼 | 2026-11-23 01:40:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) |
 | 哈同大楼（慈安里大楼）东南转角立面 | 2026-11-23 03:08:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hardoon-building-chamfer&mode=overview) |
 | 东亚大楼四柱门廊及转角立面 | 2026-11-23 03:47:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bank-of-east-asia-corner&mode=overview) |
-| 谦信大楼江西中路中央六券窗廊 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qianxin-building-historic-front&mode=overview) · 1907 年原址，地点卡可查看历史外观 |
+| 谦信大楼江西中路中央六券窗廊 | 2026-11-23 04:12:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qianxin-building-historic-front&mode=overview) · 1907 年原址，地点卡可查看历史外观 |
 
 ### 徐汇区（55处）
 
