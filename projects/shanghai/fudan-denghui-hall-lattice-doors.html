@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>复旦公学登辉堂正厅朱漆格扇</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="复旦公学登辉堂正厅朱漆格扇"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">长宁区 · 华山路1626号</p>
+    <h1>复旦公学登辉堂正厅朱漆格扇</h1>
+      <p>登辉堂正厅两扇相邻的朱漆格扇。上半扇的深色方格木棂留有通孔，下半扇为凹入的板心、抹头与边梃。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">根据长宁区文化数字地图的正厅照片估算两扇合宽约1.18米，格扇通高约2.88米。格条的具体排法依可辨图形简化，边梃的进深、倒角和背侧属于估算。两端石鼓、上悬题匾、其余门扇、登辉堂西侧迁建的门楼及力学堂另留研究。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看正厅双扇</button>
+      <button type="button" data-view="oblique">看错格木棂</button>
+      <button type="button" data-view="tiles">看门腰与板心</button>
+      <button type="button" data-view="rail">看正面框角</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/changning-fudan-denghui-hall-lattice-doors/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-fudan-denghui-hall-lattice-doors', {
+  "front": {
+    "center": [
+      0,
+      1.45,
+      -0.05
+    ],
+    "size": [
+      3.3592,
+      3.23,
+      1.3889
+    ],
+    "direction": [
+      0.22,
+      0.12,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.055,
+      2.019,
+      -0.022
+    ],
+    "size": [
+      0.8944,
+      0.86,
+      0.36979999999999996
+    ],
+    "direction": [
+      0.29,
+      0.11,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0,
+      0.86,
+      0.007
+    ],
+    "size": [
+      1.3624,
+      1.31,
+      0.5633
+    ],
+    "direction": [
+      -0.28,
+      0.15,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      -0.278,
+      2.47,
+      -0.019
+    ],
+    "size": [
+      1.0296,
+      0.99,
+      0.42569999999999997
+    ],
+    "direction": [
+      0.51,
+      0.18,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
