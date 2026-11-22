@@ -1,3 +1,11 @@
+# 兰心大楼圆明园路入口塔楼与东立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-rockbund-lyceum-building&mode=overview) · [单体旋转与下载](rockbund-lyceum-building.html) · [来源与制作范围](source/precise/huangpu-rockbund-lyceum-building/README.md) · [验收记录](data/audit/rockbund-lyceum-east-front-v1/README.md)
+
+以3A014、圆明园路185号门牌及具名原房2358对照修缮设计单位东立面尺图与修缮完成后街照，制作入口塔、最高半圆券窗、下层三角楣挑窗和向北砖翼。两层退台及檐下短窗按图建模。
+
+近景 17,592 个三角面，远景 11,024 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,004,505 字节。上海主图现有 287 处独立入口，黄浦区 122 处。[资产清单](assets/models/candidates/huangpu-rockbund-lyceum-building/manifest.json)
+
 # 虎丘公寓虎丘路东立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-huqiu-apartments-east-front&mode=overview) · [单体旋转与下载](huqiu-apartments-east-front.html) · [来源与制作范围](source/precise/huangpu-huqiu-apartments-east-front/README.md) · [验收记录](data/audit/huqiu-apartments-east-front-v1/README.md)
