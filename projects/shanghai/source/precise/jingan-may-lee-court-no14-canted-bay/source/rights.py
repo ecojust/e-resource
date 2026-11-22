@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='高参88'
+PHOTO_SOURCE='https://blog.sina.cn/dpool/blog/s/blog_5d1bdf480102uyin.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
