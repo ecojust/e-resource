@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>英商上海电车公司大楼临河立面与柱廊入口</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="南苏州路185号电车公司临河立面"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 南苏州路185号</p>
+    <h1>英商上海电车公司大楼</h1>
+    <p>临河立面与柱廊入口</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">四条浅色壁柱直抵齿饰檐口，每条各悬一道红色叶环。中央阳台的铁栏沿弧形台面转折，街层圆柱和卷涡柱头围合入口。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">沿河看立面</button>
+      <button type="button" data-view="front">正面</button>
+      <button type="button" data-view="above">花环与檐口</button>
+      <button type="button" data-view="inscription">三柱券门</button>
+      <button type="button" data-view="return">弧形阳台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-shanghai-tramways-suzhou-road-front/README.md">照片、立面测量与位置</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-shanghai-tramways-suzhou-road-front', {
+  "oblique": {
+    "center": [
+      0.0,
+      10.6,
+      0.0
+    ],
+    "size": [
+      21.48677664,
+      18.34640159,
+      1.71894213
+    ],
+    "direction": [
+      0.34752775,
+      -0.06148568,
+      0.93565163
+    ]
+  },
+  "front": {
+    "center": [
+      0.0,
+      10.6,
+      0.0
+    ],
+    "size": [
+      24.20933107,
+      20.67104422,
+      1.93674649
+    ],
+    "direction": [
+      0.00208333,
+      0.0,
+      0.99999783
+    ]
+  },
+  "above": {
+    "center": [
+      4.0,
+      16.26,
+      0.2
+    ],
+    "size": [
+      8.74813201,
+      7.46955887,
+      0.69985056
+    ],
+    "direction": [
+      0.40805008,
+      -0.1116137,
+      0.9061112
+    ]
+  },
+  "inscription": {
+    "center": [
+      0.14,
+      2.67,
+      0.05
+    ],
+    "size": [
+      5.21895384,
+      4.45618366,
+      0.41751631
+    ],
+    "direction": [
+      0.32822064,
+      -0.06056452,
+      0.94265749
+    ]
+  },
+  "return": {
+    "center": [
+      0.64,
+      13.72,
+      0.26
+    ],
+    "size": [
+      3.72119249,
+      3.17732589,
+      0.2976954
+    ],
+    "direction": [
+      -0.23493966,
+      -0.06790164,
+      0.96963536
+    ]
+  }
+});
+  </script>
+</body>
+</html>
