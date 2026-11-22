@@ -1,0 +1,1615 @@
+{
+  "building": "历史照片所见二层切角门楼",
+  "sources": [
+    {
+      "name": "archival-then-and-now.jpg",
+      "sha256": "47174150975bd8003594b10c193c1d27cab57059b50772a33bd2faab2caf75a7"
+    },
+    {
+      "name": "corners-then-only.jpg",
+      "sha256": "98412ee8d9188a2a9a4a45b6b7d01a3ff999210a000c26b64f3a6c76ce2f692c"
+    }
+  ],
+  "registered_with": "5322c8fbe0af2480524170d1555d885f77076374f26544aabe75f929f42616bb",
+  "calibration": {
+    "high_coordinates": "640px旧照裁片，自左上像素中心起算",
+    "low_coordinates": "323px出版合图上部，同一原点",
+    "hi_to_lo_matrix": [
+      [
+        0.510346693243625,
+        -0.0007105765770641634,
+        0.2920920331568869
+      ],
+      [
+        -0.0001364530713974101,
+        0.5098046001091104,
+        -4.496985169817952
+      ],
+      [
+        -9.059451674863644e-08,
+        -2.465764352352025e-06,
+        1.0000216993936284
+      ]
+    ],
+    "held_out_median_native640": 0.3189,
+    "held_out_p90_native640": 1.2246
+  },
+  "method": "人工定位交会中心和明暗边，以短法向灰度梯度定位边线。各点在两种扫描上用局部11×11高分像素片独立微移配准，记录低分原坐标、预测坐标与往返残差。左右均指像面方向。",
+  "limits": "同底片重印只有一个观察角。深色区域能用于比轮廓，透空或后部阴影不能仅据灰度区分。第4格贴近折角，暗面和杆身有并合。栏顶栏底节点标识二维折线形状，角度随像面投影。",
+  "panels": [
+    {
+      "panel": 1,
+      "nominal_center_uncertainty_640_px": 1.5,
+      "observed": "X形交会及其两侧亮地、暗杆",
+      "points": [
+        {
+          "label": "X形交会",
+          "kind": "人工标定交会中心",
+          "side": "",
+          "pixel_640": [
+            116.0,
+            211.0
+          ],
+          "measured_pixel_323": [
+            59.25,
+            102.923
+          ],
+          "registered_pixel_323": [
+            59.373,
+            103.108
+          ],
+          "residual_xy_640": [
+            -0.24,
+            -0.364
+          ],
+          "residual_length_640": 0.436,
+          "local_patch_correlation": 0.9534
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            105.497,
+            203.503
+          ],
+          "measured_pixel_323": [
+            53.894,
+            99.179
+          ],
+          "registered_pixel_323": [
+            54.014,
+            99.284
+          ],
+          "residual_xy_640": [
+            -0.236,
+            -0.204
+          ],
+          "residual_length_640": 0.312,
+          "local_patch_correlation": 0.9872,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            181.056,
+            55.437
+          ],
+          "contrast_4px": 125.62,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            105.116,
+            216.116
+          ],
+          "measured_pixel_323": [
+            53.69,
+            105.639
+          ],
+          "registered_pixel_323": [
+            53.812,
+            105.721
+          ],
+          "residual_xy_640": [
+            -0.239,
+            -0.161
+          ],
+          "residual_length_640": 0.288,
+          "local_patch_correlation": 0.9883,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            169.882,
+            114.806
+          ],
+          "contrast_4px": 55.08,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            112.149,
+            218.149
+          ],
+          "measured_pixel_323": [
+            57.175,
+            106.689
+          ],
+          "registered_pixel_323": [
+            57.402,
+            106.757
+          ],
+          "residual_xy_640": [
+            -0.445,
+            -0.134
+          ],
+          "residual_length_640": 0.465,
+          "local_patch_correlation": 0.9921,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            59.891,
+            185.502
+          ],
+          "contrast_4px": 125.61,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            122.912,
+            199.912
+          ],
+          "measured_pixel_323": [
+            62.788,
+            97.341
+          ],
+          "registered_pixel_323": [
+            62.908,
+            97.449
+          ],
+          "residual_xy_640": [
+            -0.236,
+            -0.212
+          ],
+          "residual_length_640": 0.317,
+          "local_patch_correlation": 0.9911,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            221.258,
+            64.863
+          ],
+          "contrast_4px": 156.39,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            124.116,
+            205.116
+          ],
+          "measured_pixel_323": [
+            63.399,
+            99.948
+          ],
+          "registered_pixel_323": [
+            63.52,
+            100.105
+          ],
+          "residual_xy_640": [
+            -0.238,
+            -0.307
+          ],
+          "residual_length_640": 0.388,
+          "local_patch_correlation": 0.9887,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            57.774,
+            217.997
+          ],
+          "contrast_4px": 160.22,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            124.912,
+            217.088
+          ],
+          "measured_pixel_323": [
+            63.874,
+            106.133
+          ],
+          "registered_pixel_323": [
+            63.92,
+            106.214
+          ],
+          "residual_xy_640": [
+            -0.09,
+            -0.159
+          ],
+          "residual_length_640": 0.183,
+          "local_patch_correlation": 0.9791,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            128.516,
+            205.54
+          ],
+          "contrast_4px": 77.02,
+          "eligible_contour_control": true
+        }
+      ]
+    },
+    {
+      "panel": 2,
+      "nominal_center_uncertainty_640_px": 1.5,
+      "observed": "浅色交叉形和两侧深色区域，下方有边界较清楚的深色三角",
+      "points": [
+        {
+          "label": "X形交会",
+          "kind": "人工标定交会中心",
+          "side": "",
+          "pixel_640": [
+            175.0,
+            214.0
+          ],
+          "measured_pixel_323": [
+            89.362,
+            104.461
+          ],
+          "registered_pixel_323": [
+            89.497,
+            104.632
+          ],
+          "residual_xy_640": [
+            -0.266,
+            -0.336
+          ],
+          "residual_length_640": 0.428,
+          "local_patch_correlation": 0.9885
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            168.884,
+            208.116
+          ],
+          "measured_pixel_323": [
+            86.349,
+            101.633
+          ],
+          "registered_pixel_323": [
+            86.377,
+            101.63
+          ],
+          "residual_xy_640": [
+            -0.055,
+            0.005
+          ],
+          "residual_length_640": 0.055,
+          "local_patch_correlation": 0.9811,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            39.022,
+            107.529
+          ],
+          "contrast_4px": 68.51,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            166.884,
+            217.884
+          ],
+          "measured_pixel_323": [
+            85.288,
+            106.447
+          ],
+          "registered_pixel_323": [
+            85.351,
+            106.615
+          ],
+          "residual_xy_640": [
+            -0.125,
+            -0.329
+          ],
+          "residual_length_640": 0.351,
+          "local_patch_correlation": 0.9927,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            58.656,
+            201.893
+          ],
+          "contrast_4px": 143.24,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            166.912,
+            223.912
+          ],
+          "measured_pixel_323": [
+            85.265,
+            109.597
+          ],
+          "registered_pixel_323": [
+            85.362,
+            109.691
+          ],
+          "residual_xy_640": [
+            -0.191,
+            -0.185
+          ],
+          "residual_length_640": 0.266,
+          "local_patch_correlation": 0.9919,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            209.995,
+            56.795
+          ],
+          "contrast_4px": 153.2,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            181.884,
+            210.884
+          ],
+          "measured_pixel_323": [
+            92.884,
+            102.842
+          ],
+          "registered_pixel_323": [
+            93.014,
+            103.041
+          ],
+          "residual_xy_640": [
+            -0.255,
+            -0.389
+          ],
+          "residual_length_640": 0.466,
+          "local_patch_correlation": 0.988,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            102.827,
+            55.09
+          ],
+          "contrast_4px": 47.74,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            183.028,
+            218.972
+          ],
+          "measured_pixel_323": [
+            93.372,
+            106.917
+          ],
+          "registered_pixel_323": [
+            93.594,
+            107.168
+          ],
+          "residual_xy_640": [
+            -0.436,
+            -0.493
+          ],
+          "residual_length_640": 0.659,
+          "local_patch_correlation": 0.9894,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            204.19,
+            58.855
+          ],
+          "contrast_4px": 145.33,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            180.939,
+            224.061
+          ],
+          "measured_pixel_323": [
+            92.379,
+            109.61
+          ],
+          "registered_pixel_323": [
+            92.525,
+            109.766
+          ],
+          "residual_xy_640": [
+            -0.287,
+            -0.305
+          ],
+          "residual_length_640": 0.419,
+          "local_patch_correlation": 0.9922,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            51.533,
+            207.829
+          ],
+          "contrast_4px": 156.3,
+          "eligible_contour_control": true
+        }
+      ]
+    },
+    {
+      "panel": 3,
+      "nominal_center_uncertainty_640_px": 1.5,
+      "observed": "浅色交叉形和两侧深色区域，下方有边界较清楚的深色三角",
+      "points": [
+        {
+          "label": "X形交会",
+          "kind": "人工标定交会中心",
+          "side": "",
+          "pixel_640": [
+            220.0,
+            218.0
+          ],
+          "measured_pixel_323": [
+            112.319,
+            106.586
+          ],
+          "registered_pixel_323": [
+            112.474,
+            106.668
+          ],
+          "residual_xy_640": [
+            -0.303,
+            -0.16
+          ],
+          "residual_length_640": 0.343,
+          "local_patch_correlation": 0.9851
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            214.884,
+            212.116
+          ],
+          "measured_pixel_323": [
+            109.812,
+            103.659
+          ],
+          "registered_pixel_323": [
+            109.864,
+            103.665
+          ],
+          "residual_xy_640": [
+            -0.101,
+            -0.012
+          ],
+          "residual_length_640": 0.102,
+          "local_patch_correlation": 0.9886,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            48.926,
+            84.484
+          ],
+          "contrast_4px": 35.56,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            214.116,
+            221.116
+          ],
+          "measured_pixel_323": [
+            109.343,
+            108.176
+          ],
+          "registered_pixel_323": [
+            109.468,
+            108.259
+          ],
+          "residual_xy_640": [
+            -0.245,
+            -0.162
+          ],
+          "residual_length_640": 0.294,
+          "local_patch_correlation": 0.985,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            72.098,
+            196.954
+          ],
+          "contrast_4px": 124.86,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            213.912,
+            227.912
+          ],
+          "measured_pixel_323": [
+            109.224,
+            111.644
+          ],
+          "registered_pixel_323": [
+            109.36,
+            111.727
+          ],
+          "residual_xy_640": [
+            -0.267,
+            -0.161
+          ],
+          "residual_length_640": 0.312,
+          "local_patch_correlation": 0.99,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            179.609,
+            42.197
+          ],
+          "contrast_4px": 137.41,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            228.149,
+            213.149
+          ],
+          "measured_pixel_323": [
+            116.389,
+            104.178
+          ],
+          "registered_pixel_323": [
+            116.637,
+            104.191
+          ],
+          "residual_xy_640": [
+            -0.486,
+            -0.026
+          ],
+          "residual_length_640": 0.486,
+          "local_patch_correlation": 0.9908,
+          "normal_xy": [
+            0.707,
+            0.707
+          ],
+          "luma_minus_plus_2px": [
+            117.074,
+            46.084
+          ],
+          "contrast_4px": 70.99,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            227.088,
+            223.912
+          ],
+          "measured_pixel_323": [
+            115.917,
+            109.538
+          ],
+          "registered_pixel_323": [
+            116.091,
+            109.684
+          ],
+          "residual_xy_640": [
+            -0.34,
+            -0.286
+          ],
+          "residual_length_640": 0.444,
+          "local_patch_correlation": 0.9872,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            182.988,
+            44.974
+          ],
+          "contrast_4px": 138.01,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            230.884,
+            227.116
+          ],
+          "measured_pixel_323": [
+            117.92,
+            111.216
+          ],
+          "registered_pixel_323": [
+            118.028,
+            111.319
+          ],
+          "residual_xy_640": [
+            -0.211,
+            -0.202
+          ],
+          "residual_length_640": 0.292,
+          "local_patch_correlation": 0.988,
+          "normal_xy": [
+            0.707,
+            -0.707
+          ],
+          "luma_minus_plus_2px": [
+            180.863,
+            53.259
+          ],
+          "contrast_4px": 127.6,
+          "eligible_contour_control": true
+        }
+      ]
+    },
+    {
+      "panel": 4,
+      "nominal_center_uncertainty_640_px": 2.5,
+      "observed": "面宽明显压缩，右侧暗带与背景连在一起，交会中心区约五像素宽",
+      "points": [
+        {
+          "label": "X形交会",
+          "kind": "人工标定交会中心",
+          "side": "",
+          "pixel_640": [
+            265.5,
+            228.5
+          ],
+          "measured_pixel_323": [
+            135.634,
+            111.875
+          ],
+          "registered_pixel_323": [
+            135.704,
+            112.021
+          ],
+          "residual_xy_640": [
+            -0.136,
+            -0.285
+          ],
+          "residual_length_640": 0.316,
+          "local_patch_correlation": 0.9852
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            261.099,
+            222.95
+          ],
+          "measured_pixel_323": [
+            133.319,
+            109.151
+          ],
+          "registered_pixel_323": [
+            133.458,
+            109.189
+          ],
+          "residual_xy_640": [
+            -0.273,
+            -0.073
+          ],
+          "residual_length_640": 0.283,
+          "local_patch_correlation": 0.9871,
+          "normal_xy": [
+            0.894,
+            -0.447
+          ],
+          "luma_minus_plus_2px": [
+            178.135,
+            47.944
+          ],
+          "contrast_4px": 130.19,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            263.893,
+            230.836
+          ],
+          "measured_pixel_323": [
+            134.772,
+            113.125
+          ],
+          "registered_pixel_323": [
+            134.882,
+            113.213
+          ],
+          "residual_xy_640": [
+            -0.216,
+            -0.173
+          ],
+          "residual_length_640": 0.277,
+          "local_patch_correlation": 0.9837,
+          "normal_xy": [
+            0.857,
+            0.514
+          ],
+          "luma_minus_plus_2px": [
+            146.348,
+            51.53
+          ],
+          "contrast_4px": 94.82,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面左半",
+          "pixel_640": [
+            262.138,
+            233.976
+          ],
+          "measured_pixel_323": [
+            133.909,
+            114.728
+          ],
+          "registered_pixel_323": [
+            133.985,
+            114.816
+          ],
+          "residual_xy_640": [
+            -0.149,
+            -0.171
+          ],
+          "residual_length_640": 0.227,
+          "local_patch_correlation": 0.99,
+          "normal_xy": [
+            0.876,
+            0.482
+          ],
+          "luma_minus_plus_2px": [
+            181.511,
+            54.054
+          ],
+          "contrast_4px": 127.46,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边上段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            269.876,
+            221.482
+          ],
+          "measured_pixel_323": [
+            137.817,
+            108.373
+          ],
+          "registered_pixel_323": [
+            137.941,
+            108.438
+          ],
+          "residual_xy_640": [
+            -0.243,
+            -0.128
+          ],
+          "residual_length_640": 0.275,
+          "local_patch_correlation": 0.9604,
+          "normal_xy": [
+            0.876,
+            0.482
+          ],
+          "luma_minus_plus_2px": [
+            112.438,
+            50.219
+          ],
+          "contrast_4px": 62.22,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边中段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            268.138,
+            233.024
+          ],
+          "measured_pixel_323": [
+            136.892,
+            114.177
+          ],
+          "registered_pixel_323": [
+            137.049,
+            114.329
+          ],
+          "residual_xy_640": [
+            -0.308,
+            -0.299
+          ],
+          "residual_length_640": 0.429,
+          "local_patch_correlation": 0.9444,
+          "normal_xy": [
+            0.876,
+            -0.482
+          ],
+          "luma_minus_plus_2px": [
+            53.517,
+            104.857
+          ],
+          "contrast_4px": 51.34,
+          "eligible_contour_control": true
+        },
+        {
+          "label": "斜边下段",
+          "kind": "实测明暗边",
+          "side": "像面右半",
+          "pixel_640": [
+            269.905,
+            237.602
+          ],
+          "measured_pixel_323": [
+            137.764,
+            116.61
+          ],
+          "registered_pixel_323": [
+            137.949,
+            116.666
+          ],
+          "residual_xy_640": [
+            -0.363,
+            -0.11
+          ],
+          "residual_length_640": 0.379,
+          "local_patch_correlation": 0.9646,
+          "normal_xy": [
+            0.876,
+            -0.482
+          ],
+          "luma_minus_plus_2px": [
+            94.562,
+            134.047
+          ],
+          "contrast_4px": 39.49,
+          "eligible_contour_control": true
+        }
+      ]
+    }
+  ],
+  "rail_edge_samples": [
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        87.0,
+        184.25
+      ],
+      "measured_pixel_323": [
+        44.356,
+        89.261
+      ],
+      "registered_pixel_323": [
+        44.581,
+        89.462
+      ],
+      "residual_xy_640": [
+        -0.441,
+        -0.394
+      ],
+      "residual_length_640": 0.591,
+      "local_patch_correlation": 0.8779,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        44.75,
+        49.75
+      ],
+      "contrast_4px": 5.0,
+      "eligible_contour_control": false
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        115.0,
+        186.375
+      ],
+      "measured_pixel_323": [
+        58.254,
+        90.36
+      ],
+      "registered_pixel_323": [
+        58.876,
+        90.543
+      ],
+      "residual_xy_640": [
+        -1.219,
+        -0.359
+      ],
+      "residual_length_640": 1.271,
+      "local_patch_correlation": 0.997,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        223.25,
+        59.125
+      ],
+      "contrast_4px": 164.12,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        137.0,
+        187.125
+      ],
+      "measured_pixel_323": [
+        69.77,
+        90.728
+      ],
+      "registered_pixel_323": [
+        70.108,
+        90.923
+      ],
+      "residual_xy_640": [
+        -0.663,
+        -0.382
+      ],
+      "residual_length_640": 0.765,
+      "local_patch_correlation": 0.9948,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        214.0,
+        60.75
+      ],
+      "contrast_4px": 153.25,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        158.0,
+        189.125
+      ],
+      "measured_pixel_323": [
+        80.655,
+        91.809
+      ],
+      "registered_pixel_323": [
+        80.83,
+        91.94
+      ],
+      "residual_xy_640": [
+        -0.343,
+        -0.257
+      ],
+      "residual_length_640": 0.429,
+      "local_patch_correlation": 0.9925,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        168.125,
+        58.5
+      ],
+      "contrast_4px": 109.62,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        190.0,
+        196.25
+      ],
+      "measured_pixel_323": [
+        96.826,
+        95.394
+      ],
+      "registered_pixel_323": [
+        97.165,
+        95.572
+      ],
+      "residual_xy_640": [
+        -0.663,
+        -0.349
+      ],
+      "residual_length_640": 0.749,
+      "local_patch_correlation": 0.9768,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        100.0,
+        45.5
+      ],
+      "contrast_4px": 54.5,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        211.0,
+        198.5
+      ],
+      "measured_pixel_323": [
+        107.763,
+        96.559
+      ],
+      "registered_pixel_323": [
+        107.887,
+        96.718
+      ],
+      "residual_xy_640": [
+        -0.242,
+        -0.31
+      ],
+      "residual_length_640": 0.393,
+      "local_patch_correlation": 0.9884,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        153.0,
+        39.5
+      ],
+      "contrast_4px": 113.5,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        242.0,
+        198.25
+      ],
+      "measured_pixel_323": [
+        122.818,
+        96.386
+      ],
+      "registered_pixel_323": [
+        123.716,
+        96.586
+      ],
+      "residual_xy_640": [
+        -1.758,
+        -0.393
+      ],
+      "residual_length_640": 1.801,
+      "local_patch_correlation": 0.9975,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        214.5,
+        72.25
+      ],
+      "contrast_4px": 142.25,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        258.0,
+        203.25
+      ],
+      "measured_pixel_323": [
+        131.73,
+        99.066
+      ],
+      "registered_pixel_323": [
+        131.883,
+        99.135
+      ],
+      "residual_xy_640": [
+        -0.3,
+        -0.136
+      ],
+      "residual_length_640": 0.329,
+      "local_patch_correlation": 0.9827,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        94.75,
+        48.25
+      ],
+      "contrast_4px": 46.5,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "帽石上缘",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        279.0,
+        206.375
+      ],
+      "measured_pixel_323": [
+        142.774,
+        100.702
+      ],
+      "registered_pixel_323": [
+        142.605,
+        100.727
+      ],
+      "residual_xy_640": [
+        0.33,
+        -0.05
+      ],
+      "residual_length_640": 0.333,
+      "local_patch_correlation": 0.9635,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        129.125,
+        66.75
+      ],
+      "contrast_4px": 62.38,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        84.0,
+        236.25
+      ],
+      "measured_pixel_323": [
+        42.824,
+        115.82
+      ],
+      "registered_pixel_323": [
+        43.018,
+        115.999
+      ],
+      "residual_xy_640": [
+        -0.38,
+        -0.351
+      ],
+      "residual_length_640": 0.517,
+      "local_patch_correlation": 0.9878,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        149.75,
+        32.0
+      ],
+      "contrast_4px": 117.75,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        104.0,
+        234.25
+      ],
+      "measured_pixel_323": [
+        53.254,
+        114.748
+      ],
+      "registered_pixel_323": [
+        53.232,
+        114.976
+      ],
+      "residual_xy_640": [
+        0.043,
+        -0.446
+      ],
+      "residual_length_640": 0.448,
+      "local_patch_correlation": 0.9932,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        148.25,
+        50.25
+      ],
+      "contrast_4px": 98.0,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        120.0,
+        234.125
+      ],
+      "measured_pixel_323": [
+        61.145,
+        114.786
+      ],
+      "registered_pixel_323": [
+        61.402,
+        114.91
+      ],
+      "residual_xy_640": [
+        -0.505,
+        -0.242
+      ],
+      "residual_length_640": 0.56,
+      "local_patch_correlation": 0.9951,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        143.625,
+        71.375
+      ],
+      "contrast_4px": 72.25,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        138.0,
+        237.25
+      ],
+      "measured_pixel_323": [
+        70.595,
+        116.368
+      ],
+      "registered_pixel_323": [
+        70.592,
+        116.502
+      ],
+      "residual_xy_640": [
+        0.005,
+        -0.262
+      ],
+      "residual_length_640": 0.263,
+      "local_patch_correlation": 0.9916,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        179.75,
+        51.25
+      ],
+      "contrast_4px": 128.5,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        158.0,
+        238.125
+      ],
+      "measured_pixel_323": [
+        80.821,
+        116.776
+      ],
+      "registered_pixel_323": [
+        80.805,
+        116.946
+      ],
+      "residual_xy_640": [
+        0.032,
+        -0.334
+      ],
+      "residual_length_640": 0.336,
+      "local_patch_correlation": 0.9932,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        173.5,
+        64.625
+      ],
+      "contrast_4px": 108.88,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        189.0,
+        242.125
+      ],
+      "measured_pixel_323": [
+        96.387,
+        118.843
+      ],
+      "registered_pixel_323": [
+        96.633,
+        118.984
+      ],
+      "residual_xy_640": [
+        -0.481,
+        -0.277
+      ],
+      "residual_length_640": 0.555,
+      "local_patch_correlation": 0.9801,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        100.75,
+        51.25
+      ],
+      "contrast_4px": 49.5,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        200.0,
+        242.75
+      ],
+      "measured_pixel_323": [
+        102.248,
+        119.181
+      ],
+      "registered_pixel_323": [
+        102.25,
+        119.302
+      ],
+      "residual_xy_640": [
+        -0.004,
+        -0.237
+      ],
+      "residual_length_640": 0.237,
+      "local_patch_correlation": 0.9899,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        165.25,
+        52.25
+      ],
+      "contrast_4px": 113.0,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        226.0,
+        242.125
+      ],
+      "measured_pixel_323": [
+        115.583,
+        118.875
+      ],
+      "registered_pixel_323": [
+        115.527,
+        118.98
+      ],
+      "residual_xy_640": [
+        0.108,
+        -0.205
+      ],
+      "residual_length_640": 0.232,
+      "local_patch_correlation": 0.9966,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        172.875,
+        44.25
+      ],
+      "contrast_4px": 128.62,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        246.0,
+        244.125
+      ],
+      "measured_pixel_323": [
+        125.632,
+        119.84
+      ],
+      "registered_pixel_323": [
+        125.74,
+        119.998
+      ],
+      "residual_xy_640": [
+        -0.211,
+        -0.309
+      ],
+      "residual_length_640": 0.374,
+      "local_patch_correlation": 0.9923,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        157.125,
+        79.25
+      ],
+      "contrast_4px": 77.88,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        260.0,
+        248.125
+      ],
+      "measured_pixel_323": [
+        132.832,
+        121.881
+      ],
+      "registered_pixel_323": [
+        132.887,
+        122.038
+      ],
+      "residual_xy_640": [
+        -0.109,
+        -0.307
+      ],
+      "residual_length_640": 0.325,
+      "local_patch_correlation": 0.9836,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        139.5,
+        55.125
+      ],
+      "contrast_4px": 84.38,
+      "eligible_contour_control": true
+    },
+    {
+      "label": "栏身底边接线",
+      "kind": "实测明暗边",
+      "side": "沿栏左至右",
+      "pixel_640": [
+        279.0,
+        251.25
+      ],
+      "measured_pixel_323": [
+        142.421,
+        123.412
+      ],
+      "registered_pixel_323": [
+        142.589,
+        123.63
+      ],
+      "residual_xy_640": [
+        -0.329,
+        -0.429
+      ],
+      "residual_length_640": 0.54,
+      "local_patch_correlation": 0.9874,
+      "normal_xy": [
+        0.0,
+        1.0
+      ],
+      "luma_minus_plus_2px": [
+        157.75,
+        65.5
+      ],
+      "contrast_4px": 92.25,
+      "eligible_contour_control": true
+    }
+  ]
+}

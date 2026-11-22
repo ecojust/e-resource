@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='《档案春秋》刊载的历史门楼街照（原拍未署名）；高参88的临街旧构件参照'
+PHOTO_SOURCE='https://kknews.cc/zh-sg/history/yae3gmg.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
