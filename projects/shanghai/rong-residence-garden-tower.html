@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>荣氏花园住宅 · 花园角塔与首间柱廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.58" aria-label="荣氏花园住宅花园面角塔和双层柱廊的三维模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-rong-residence-garden-tower&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 陕西北路186号</p>
+    <h1>荣氏花园住宅</h1>
+    <p>花园角塔与首间柱廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从花园看，红色圆顶立在三面开窗的折角上。中层每扇窗下各挂一道石雕花环，两层敞廊从塔旁伸出。模型保留紧邻角塔的第一个开间，依据2015年街面照片与2017年修缮后的花园照片制作。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看花园折面</button>
+      <button type="button" data-view="oblique">侧看双层柱廊</button>
+      <button type="button" data-view="above">俯看圆顶与屋顶石栏</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-rong-residence-garden-tower/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=rong-residence-garden-tower-v1';
+    showCandidateAssetViewer('jingan-rong-residence-garden-tower');
+  </script>
+</body>
+</html>
