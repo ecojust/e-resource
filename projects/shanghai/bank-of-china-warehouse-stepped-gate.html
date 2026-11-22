@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>中国银行仓库双扇阶格式金属大门</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="中国银行仓库双扇阶格式金属大门"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 北苏州路1040号</p>
+    <h1>中国银行仓库双扇阶格式金属大门</h1>
+      <p>两扇黑漆金属门各有四块横向实心框板。窄横档和短竖梃在框板间相接，形成能透视的阶梯形空格。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">依据门扇修缮前后正面照片绘制。两扇合宽约2.0米、门扇高约2.1米，按照片估算；门后空间未测。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看双扇阶格</button>
+      <button type="button" data-view="oblique">斜看左扇门框</button>
+      <button type="button" data-view="tiles">看实板与镂空</button>
+      <button type="button" data-view="rail">看门槛与中缝</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/jingan-bank-of-china-warehouse-stepped-gate/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-bank-of-china-warehouse-stepped-gate', {
+  "front": {
+    "center": [
+      0,
+      1.09,
+      0
+    ],
+    "size": [
+      2.6519999999999997,
+      2.55,
+      1.0964999999999998
+    ],
+    "direction": [
+      -0.2,
+      0.12,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      -0.505,
+      1.22,
+      -0.0
+    ],
+    "size": [
+      1.9032000000000002,
+      1.83,
+      0.7869
+    ],
+    "direction": [
+      0.34,
+      0.19,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      -0.505,
+      0.97,
+      0
+    ],
+    "size": [
+      0.6656000000000001,
+      0.64,
+      0.2752
+    ],
+    "direction": [
+      -0.43,
+      0.24,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.04,
+      0.29,
+      -0.01
+    ],
+    "size": [
+      0.9568000000000001,
+      0.92,
+      0.3956
+    ],
+    "direction": [
+      0.32,
+      0.37,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
