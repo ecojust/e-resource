@@ -19,3 +19,7 @@
 从虎丘路一侧西人行道出发，桌面在660×410的紧凑窗口内用键盘走到北岸，手机用触控摇杆在桥上移动。过桥实拍使用原地图的低分辨率渲染，桥面斑纹与远处楼体细节较模糊。把真实行走轨迹逐点投到当时加载的近景或远景桥面三角形，两端最大高度差为0.0005米。已归档的三桥通行条件还在此次正式站上复验了36次通行、162个桥面位置及576项道路归属。[桌面到达北岸](city-31230/walk-desktop/map-north-bank.png) · [手机桥上行走](city-31230/walk-phone/map-touch-walking.png) · [桥面三角形与实际轨迹](city-31230/sessions/walk-desktop/real-city-mesh.json) · [三桥运行复验](city-31230/replayed-signed-navigation.json)
 
 独立页分别在桌面和手机切换近远档、上游斜视与桥面俯视，两端共八幅图，四个文件均通过页面下载并校验。正式站共读取1,650份文件、1,356,372,864字节。21幅常规图与一幅前期宽屏补图均逐张核验。[桌面上游斜视](city-31230/standalone/viewer-desktop-oblique.png) · [手机俯视桥面](city-31230/standalone/viewer-mobile-above.png) · [逐图观察](city-31230/visual-review.json) · [全量读取](city-31230/all-http.json) · [正式收件与四个下载](city-31230/slot-released.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/4bfb4638904f397395879bc5260aada55ae1dc14/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
