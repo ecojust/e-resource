@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 288 处入口。最近接入[恒业里江西中路115号泗泾路转角](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengye-li-jiangxi-corner&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 289 处入口。最近接入[四明银行北京东路转角门楼](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][TD5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD2] · [来源、许可与更新规则][TD1]
 
-已交付的253项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的254项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 254 | 四明银行北京东路转角门楼 | 黄浦区／北京东路232~240号 | 制作中 | — | [市房屋管理局第三批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20210922/bc5957926d80432b8bea0157eb16bb94.html>)；核查北京东路及支路的长翼、后楼，保留邻屋；1921年旧照中的圆顶单列历史复原。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -152,7 +148,7 @@
 |sh-historic-b3-013|虎丘公寓北翼、后部和内院|虎丘路131号|[名录][H3] · 照片待核 · [当前完成范围][TD3]|核查北翼加层及完整平面、后部和内院，与已完成的东立面分别登记。|
 |sh-historic-b3-014|兰心大楼后立面、塔内楼梯与增层|圆明园路185号|[名录][H3] · 照片待核 · [当前完成范围][TD3]|补查后立面、塔内楼梯和历次增层的施工档案；塔顶背坡、西部边界、南端共墙882及北侧真光大楼2954按原范围保留。|
 |sh-historic-b3-015|恒业里其余沿街立面与135弄|江西中路135弄1~13号|[名录][H3] · 照片待核 · [当前完成范围][TD3]|补查江西中路135弄1至11号及江西中路115至147号单号、泗泾路10至24号双号其余街面与弄内。135弄资料点所在原房2642保留。|
-|sh-historic-b3-016|四明大楼|北京东路232~240号|[名录][H3] · 照片待核|待核外观／拆栋|
+|sh-historic-b3-016|四明银行长翼与原圆顶|北京东路232~240号|[名录][H3] · 照片待核 · [当前完成范围][TD3]|核查北京东路及支路的长翼、后楼，保留邻屋；1921年旧照中的圆顶单列历史复原。|
 |sh-historic-b3-017|哈同大楼|南京东路98~114号|[名录][H3] · 照片待核|待核外观／拆栋|
 |sh-historic-b3-018|东亚大楼|四川中路299号|[名录][H3] · 照片待核|待核外观／拆栋|
 |sh-historic-b3-019|谦信大楼|江西中路138号|[名录][H3] · 照片待核|待核外观／拆栋|
@@ -2659,9 +2655,9 @@
 [14/13721/6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [14/13721/6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余943条／已关联93条）
+### 既有地图中的具名建筑待查线索（剩余942条／已关联94条）
 
-原始1,036条具名地图要素中，93条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余943条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，94条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余942条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2768,7 +2764,6 @@
 |f5a8fdbd-992c-4087-91a2-a67161ecb434|原教会公寓|黄浦区|核身份／去重／查建筑参考|
 |f610ebaf-7599-4b92-8491-d05d4735b853|中实大楼|黄浦区|核身份／去重／查建筑参考|
 |fc90dc3d-4bf9-4cdf-9a0c-5260e4e7983d|华侨城苏河湾行政公馆|静安区|核身份／去重／查建筑参考|
-|fcc2def2-cd54-4398-a9a7-935c19618845|上海建筑材料集团总公司|黄浦区|核身份／去重／查建筑参考|
 |ff43ab85-6d00-498c-89b3-5e12b95cdf14|胜利电影院|虹口区|核身份／去重／查建筑参考|
 |fe059296-0a9a-378b-b347-5bb336741e38|Sassoon House|黄浦区|核身份／去重／查建筑参考|
 |016935a4-7a72-483c-9bb2-b164b858ba51|世界贸易大厦|黄浦区|核身份／去重／查建筑参考|
@@ -3636,7 +3631,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；288处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中248件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；289处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中249件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3644,7 +3639,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增248处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增249处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3666,10 +3661,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，288处建筑与构件模型入口（40处既有＋248处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增248处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 9 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，289处建筑与构件模型入口（40处既有＋249处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增249处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 9 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（123处）
+### 黄浦区（124处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3798,6 +3793,7 @@
 | 虎丘公寓虎丘路东立面 | 2026-11-22 23:10:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-huqiu-apartments-east-front&mode=overview) |
 | 兰心大楼圆明园路入口塔楼与东立面 | 2026-11-22 23:36:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-rockbund-lyceum-building&mode=overview) |
 | 恒业里江西中路115号泗泾路转角 | 2026-11-23 00:50:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengye-li-jiangxi-corner&mode=overview) |
+| 四明银行北京东路转角门楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) |
 
 ### 徐汇区（55处）
 

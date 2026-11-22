@@ -1,0 +1,32 @@
+253 18 22 288
+254 18 28 289
+{"triangles":1693,"macroTextures":22,"largest":374}
+before {'exit': 1, 'node': 3266611, 'chromium_pids': [3266632, 3266653, 3266654, 3266676, 3266679, 3266694, 3266716, 3266736], 'node_closed': True, 'remaining': [], 'report_sha256': 'ffe5705eee47dcdfc3b5fce82e4be8fdc9b463c6760dbc55f9cb20413340f12b', 'driver_sha256': '9042077dff6b4240eb8f833c145e9d452b299e8a9192b78617df6082f63e743e', 'finished': '2026-11-22T16:54:46.498387+00:00'}
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-254/run-254-recovered.py", line 74, in <module>
+    assert q['exit']==0 and q['node_closed'] and seen and not active and report.is_file()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-254/run-254-recovered.py", line 36, in <module>
+    subprocess.run([sys.executable,'-Bu',__file__,previous,part],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-254/run-254-recovered.py', PosixPath('/tmp/shanghai-main-253/253-map-slot-released.json'), 'before']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-254/after-253-with-608.py", line 19, in <module>
+    call(w/'run-254-recovered.py',m)
+  File "/tmp/shanghai-main-254/after-253-with-608.py", line 7, in call
+    subprocess.run([sys.executable,'-Bu',*v],check=True,env=env)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-254/run-254-recovered.py'), PosixPath('/tmp/shanghai-main-253/253-map-slot-released.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-254/after-253.py", line 18, in <module>
+    subprocess.run([sys.executable,'-Bu',host/'after-253-with-608.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-254/after-253-with-608.py')]' returned non-zero exit status 1.
+253 18 22 288
+254 18 28 289
+{"triangles":1693,"macroTextures":22,"largest":374}

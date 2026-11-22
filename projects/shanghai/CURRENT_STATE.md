@@ -1,3 +1,11 @@
+# 四明银行北京东路转角门楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) · [单体旋转与下载](ningpo-commercial-bank-corner.html) · [来源与制作范围](source/precise/huangpu-ningpo-commercial-bank-corner/README.md) · [验收记录](data/audit/ningpo-commercial-bank-corner-v1/README.md)
+
+依3A016北京东路232–240号、具名足印446936782及原房3201，制作东南截角券门塔楼和两侧短跨。双柱券门、矩形与椭圆窗、弧形阳台及屋顶栏杆按2014年1月27日的实照处理。
+
+近景 28,804 个三角面，远景 17,284 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,057,565 字节。上海主图现有 289 处独立入口，黄浦区 124 处。[资产清单](assets/models/candidates/huangpu-ningpo-commercial-bank-corner/manifest.json)
+
 # 恒业里江西中路115号泗泾路转角
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengye-li-jiangxi-corner&mode=overview) · [单体旋转与下载](hengye-li-jiangxi-corner.html) · [来源与制作范围](source/precise/huangpu-hengye-li-jiangxi-corner/README.md) · [验收记录](data/audit/hengye-li-jiangxi-corner-v1/README.md)
