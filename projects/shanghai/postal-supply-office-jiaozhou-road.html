@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>胶州路邮政供应处 · 上海历史建筑</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".42" aria-label="胶州路邮政供应处的西立面和南端墙"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 胶州路320号</p>
+    <h1>胶州路邮政供应处</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">市名录所列320号院内，街景可读的门牌为322号。主入口上方有浅雨篷。沿街能看到成对窄窗、红灰饰带，以及绕到南侧的檐口。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">从南侧沿街看</button>
+      <button type="button" data-view="front">正看沿街立面</button>
+      <button type="button" data-view="above">俯看屋顶与方台</button>
+      <button type="button" data-view="inscription">近看门套与雨篷</button>
+      <button type="button" data-view="return">看南端窗列与檐边</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/postal-supply-office-jiaozhou-road-v1/courtyard-elevations/postal-courtyard-survey.jpg">查看西立面、南侧端墙与檐口的街景对照</a>
+    <a href="data/audit/postal-supply-office-jiaozhou-road-v1/window-sashes/window-construction.jpg">对照五种窗扇的窗格和开启部位</a>
+    <a href="data/audit/postal-supply-office-jiaozhou-road-v1/main-porch/whole-model.jpg">查看入口石门套与雨篷剖面</a>
+    <a href="data/audit/postal-supply-office-jiaozhou-road-v1/south-bay-frieze/whole-model.jpg">查看南侧开间分色饰带</a>
+    <a href="source/precise/jingan-postal-supply-office-jiaozhou-road/measurements/published-directories-and-address.json">查阅1941、1942及1947年的名录原页</a>
+    <a href="source/precise/jingan-postal-supply-office-jiaozhou-road/measurements/west-front-openings.json">查看窗洞量测</a>
+    <a href="source/precise/jingan-postal-supply-office-jiaozhou-road/README.md">建筑门牌、街景和模型说明</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-postal-supply-office-jiaozhou-road', {
+  "oblique": {
+    "center": [
+      -12.3,
+      9.25,
+      -0.55
+    ],
+    "size": [
+      34.5,
+      21,
+      5.8
+    ],
+    "direction": [
+      0.42,
+      0.12,
+      1
+    ]
+  },
+  "front": {
+    "center": [
+      -12.3,
+      9.25,
+      0
+    ],
+    "size": [
+      34.7,
+      22.3,
+      4.4
+    ],
+    "direction": [
+      0,
+      0.015,
+      1
+    ]
+  },
+  "above": {
+    "center": [
+      -12.25,
+      10,
+      -1.9
+    ],
+    "size": [
+      36.4,
+      23.8,
+      8.4
+    ],
+    "direction": [
+      0.34,
+      0.6,
+      1
+    ]
+  },
+  "inscription": {
+    "center": [
+      -13.28,
+      2.58,
+      0.32
+    ],
+    "size": [
+      7.6,
+      5.9,
+      1.25
+    ],
+    "direction": [
+      0.025,
+      0.06,
+      1
+    ]
+  },
+  "return": {
+    "center": [
+      -0.35,
+      11.1,
+      -0.84
+    ],
+    "size": [
+      10.2,
+      15.1,
+      5.6
+    ],
+    "direction": [
+      0.62,
+      0.19,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
