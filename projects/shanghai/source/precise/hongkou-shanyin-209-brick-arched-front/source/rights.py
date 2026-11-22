@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Fayhoo，2015年4月12日，Wikimedia Commons'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:Shanyinlu_209_Long_Zhuzhai.JPG'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/3.0/'
+GEOMETRY_LICENSE='CC BY-SA 3.0'
+TEXTURE_LICENSE='MIT (original procedural material textures)'
