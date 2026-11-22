@@ -9,3 +9,7 @@
 底图原楼102在近档和远档分别保留94.19%和94.36%的投影。十个相邻地块均留在原位，包括西侧120号。25处地面检查覆盖弧形基座、两面人行道及保留楼内。默认桌面和手机机位各取八个可辨构件，另以实际解码的近远楼体检查视线。[局部裁切和地面](placement-geometry.json) [照片构件的默认视线](camera-sightlines.json) [解码楼体的逐射线对照](source-ray-sightlines.json)
 
 从273处到274处，前版所有旧条目逐行相同。实际城市渲染器向七栋同组楼中的102提交四个裁剪三角面。两类矢量图源共核对22项，楼体、人行道及十个邻地共核对35个地面点。最终31237站的1,706项签署文件合计1,396,755,321字节，全部按实际网址读取并比对。独立页在桌面和390像素手机上均可辨转角鼓座、阳台及滇池路一侧窗带，四种文件均已用下载链接实际保存。[正式渲染器](runtime-placement.json) [两代实际网页与模块](final-renderer-31237-http.json) [全量下载收据](31237-all-http.json) [独立页与四种下载](viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1986def2a1c5acbad8e18f1c8d47d9fecfea25b8/projects/shanghai/index.html#landmark=huangpu-gibb-livingston-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
