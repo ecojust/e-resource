@@ -7,7 +7,7 @@ from photo_architecture import Facade
 
 WOOD='Brown board behind museum sign'
 METAL='Patinated metal museum lettering'
-PALETTE={WOOD:dict(color=[.17,.086,.046],roughness=.87),METAL:dict(color=[.11,.14,.13],metallic=.4,roughness=.57)}
+PALETTE={WOOD:dict(color=[.20,.18,.21],roughness=.87),METAL:dict(color=[.25,.31,.38],metallic=.15,roughness=.73)}
 def add_museum_sign(builder,lod,position,support_y):
     f=Facade(builder,(-1.,0.),(1.,0.),'Sign')
     y=support_y-.038
