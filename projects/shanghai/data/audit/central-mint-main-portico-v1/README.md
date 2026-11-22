@@ -9,3 +9,7 @@
 桌面和手机分别打开近景与远景，均能辨认中央山花和六柱。四个下载文件均在浏览器实际保存并核对摘要。地图登记把原有265处增至266处，前后两版均核过旧条目；运行时新增两片裁剪面，绑定到主楼1577。[四幅单体实图与下载结果](viewer.json) [城市渲染器与前后版本核对](final-renderer-http.json)
 
 31228前态的265处目录保留原墙连续的窗列。31229的266处目录可选中造币厂门廊，近景可辨六柱和三角山花。33处地面与相邻建筑检查均通过。独立页面保留桌面与手机六图及四件实际下载。[前后地图与地面检查](final-map-31229/results.json) · [17张照片的观察记录](final-map-31229/visual-review.json) · [查看页实测](final-map-31229/independent/viewer.json) · [原始重试记录](city-31229/archived-browser-attempts.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c887ca28241076a1557f71f8512581e3d7bf1b76/projects/shanghai/index.html#landmark=putuo-central-mint-main-portico&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
