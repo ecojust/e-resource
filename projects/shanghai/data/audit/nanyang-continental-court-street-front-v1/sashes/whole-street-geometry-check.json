@@ -1,0 +1,126 @@
+{
+  "source": "continental_window_sashes.py",
+  "source_sha256": "6ad419c12d6af7cdf1b904e0a93d4e1938984fc5a69f14683e5bdce7e77a22da",
+  "texture_sha256": "e254c0bbd2a2b47579a41fd307f53d119eb3ddf2c941a1f6ac5d927c59b0968d",
+  "schedule_sha256": "6536d45023b9121fc1a13885fbe2cd711c42b3c0b9b50d02ede7d2973d23b841",
+  "scope": "Window components in actual recorded clear openings. Parent wall, stone, and awnings are separate.",
+  "external_reference": [
+    {
+      "bay": 7,
+      "storey": 2,
+      "opening": 0,
+      "source": "Gao08 orthorectified street-camera-plan at 55px/m",
+      "window_box_px": [
+        67,
+        666,
+        122,
+        771
+      ],
+      "transom_y_px": 701,
+      "lower_columns": 4,
+      "lower_rows": 4,
+      "model_height_fraction": 0.66,
+      "rail_difference_px": 0.7
+    },
+    {
+      "bay": 7,
+      "storey": 3,
+      "opening": 0,
+      "source": "Gao08 orthorectified street-camera-plan at 55px/m",
+      "window_box_px": [
+        66,
+        435,
+        119,
+        539
+      ],
+      "transom_y_px": 475,
+      "lower_columns": 4,
+      "lower_rows": 4,
+      "model_height_fraction": 0.62,
+      "rail_difference_px": 0.48
+    },
+    {
+      "bay": 7,
+      "storey": 3,
+      "opening": 1,
+      "source": "Gao08 orthorectified street-camera-plan at 55px/m",
+      "window_box_px": [
+        173,
+        435,
+        224,
+        538
+      ],
+      "transom_y_px": 462,
+      "lower_columns": 2,
+      "lower_rows": 4,
+      "model_height_fraction": 0.72,
+      "rail_difference_px": 1.84
+    },
+    {
+      "bay": 7,
+      "storey": 4,
+      "opening": 0,
+      "source": "Gao08 orthorectified street-camera-plan at 55px/m",
+      "window_box_px": [
+        67,
+        203,
+        125,
+        296
+      ],
+      "transom_y_px": 243,
+      "lower_columns": 4,
+      "lower_rows": 4,
+      "model_height_fraction": 0.575,
+      "rail_difference_px": 0.475
+    }
+  ],
+  "results": [
+    {
+      "lod": "near",
+      "physical_openings": 75,
+      "groups": 547,
+      "triangles": 40296,
+      "ray_tests": 1095,
+      "glass_uv_vertices": 9552
+    },
+    {
+      "lod": "distant",
+      "physical_openings": 75,
+      "groups": 547,
+      "triangles": 28344,
+      "ray_tests": 1095,
+      "glass_uv_vertices": 1584
+    }
+  ],
+  "edit_group_solids": {
+    "near": {
+      "groups": 547,
+      "closed_positive_solids": 3358,
+      "min_volume_m3": 0.00011622765,
+      "max_volume_m3": 0.00899652
+    },
+    "distant": {
+      "groups": 547,
+      "closed_positive_solids": 2362,
+      "min_volume_m3": 0.00011622765,
+      "max_volume_m3": 0.00899652
+    }
+  },
+  "solid_fields": [
+    "distant",
+    "edit_group",
+    "material",
+    "independent_solids",
+    "solid_volumes_m3"
+  ],
+  "component_joinery": "The editable frames collect individually closed steel sections. Contact faces at butt joints are preserved as the mating faces of separate pieces. For each eight-vertex solid, each directed triangle edge is paired with its reverse.",
+  "rays_fields": [
+    "distant",
+    "bay",
+    "floor",
+    "opening",
+    "u_m",
+    "z_m",
+    "first_hit_depth_m_group_material"
+  ]
+}

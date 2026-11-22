@@ -1,0 +1,126 @@
+{
+  "name": "南洋大楼，1927年。陕西北路204–216号与南京西路1175–1185号。",
+  "scope": "北翼东端至西翼南端，十二根水刷石尖墩间的十一跨与三层街面窗。九组三联窗有独立石中梃，二十四组双窗有砖间墙，共75个实际净洞。四层砌体本身带有窗边和窗后侧壁。",
+  "datums_m": {
+    "grade": 0.0,
+    "band": 4.484284709838565,
+    "tip": 18.35526679941441
+  },
+  "extent": "三维尺寸由公开轮廓和街面照片共同约束。店楣带约4.48米、柱冠约18.36米。历史牌确认1927年竣工、L形平面、弧形街角、红砖与水刷石，不提供实测尺寸。",
+  "camera_registration": {
+    "original_exposures": 4,
+    "point_observations": 75,
+    "individually_measured_verticals": 91,
+    "withheld_verticals": 261,
+    "stereo_pairs": 66,
+    "repeatability_px": 0.0013875486811882097,
+    "refit": "refit_street_cameras.py",
+    "withheld_results": "camera-refit-and-withheld-verticals.json"
+  },
+  "parapet": "四个短凹口之间为五段女儿墙。2019年全景在中央清楚显示凹口上部细横件，2018年陕西北路斜视照的南段可见开顶槽。两种墙头断面按其原像记录。两源37个实像点用于复核本轮修正。另在冻结几何后，从第三张照片重新读取22个像点，作为独立检查。",
+  "holdout_limit": "独立斜视照片的6个天空间隙像点先遇建筑本身的灰色包边或砖。此小处的净空、灰边深度和完整街面的摄影投影均有误差。",
+  "physical": "逐净洞的灰砖/灰石筛选可检测被窗扇或玻璃遮住的错误填墙。女儿墙、花砖和檐线其余射线使用真实不限材质的最近交点。原照片位射线自相机发出，检查全模型首个交面。",
+  "texture": "砖纹由脚本原创。三处红砖图块的逐带空间谱约0.06–0.067米一皮；取0.064米，砖长以约0.238米估算。四瓣花砖与两层灰石凸窗建为独立实体，参考照片未嵌入。",
+  "artifacts": {
+    "raw": {
+      "sha256": "1b9a10d92cfb1cbecd3693b492c9799ae4c19e343878aad1597f8de5b8918b22",
+      "physical": [
+        397,
+        397
+      ],
+      "photo_2019": [
+        15,
+        15
+      ],
+      "photo_2018": [
+        22,
+        22
+      ],
+      "withheld_photo": [
+        16,
+        22
+      ],
+      "all_photos": [
+        53,
+        59
+      ],
+      "rays": "raw-wall-rays.json.gz",
+      "rays_sha256": "a587ac33ae77acd8ab8433d61d253b1667310852103b5c81556e41117d320ec4"
+    },
+    "decoded-full": {
+      "sha256": "bed18713ae5ca1ddbc30ace6960455b61addfd7af67dd46b39c069966e7f7f83",
+      "physical": [
+        397,
+        397
+      ],
+      "photo_2019": [
+        15,
+        15
+      ],
+      "photo_2018": [
+        22,
+        22
+      ],
+      "withheld_photo": [
+        16,
+        22
+      ],
+      "all_photos": [
+        53,
+        59
+      ],
+      "rays": "decoded-full-wall-rays.json.gz",
+      "rays_sha256": "88f7c239a90bd1dfac6c0aeade79e6f966211987ee8dd2f37e59bc29f420c49c"
+    },
+    "decoded-lod": {
+      "sha256": "8e785846ced30422e17c06748a71df15e18c91bee55c948726c3e2c5b453a442",
+      "physical": [
+        397,
+        397
+      ],
+      "photo_2019": [
+        15,
+        15
+      ],
+      "photo_2018": [
+        22,
+        22
+      ],
+      "withheld_photo": [
+        16,
+        22
+      ],
+      "all_photos": [
+        53,
+        59
+      ],
+      "rays": "decoded-lod-wall-rays.json.gz",
+      "rays_sha256": "57eb3741860e8bfed5a31b67d13749738bc0eb12068b1f2dd88c451f463102be"
+    }
+  },
+  "figure": {
+    "path": "data/audit/nanyang-continental-court-street-front-v1/street-front/eleven-bay-street-front.jpg",
+    "sha256": "77eb468e1c7fccb8d9547a017218b64aafe583a5b74882e568e60e9e1d9d4ef9",
+    "size": [
+      1290,
+      926
+    ],
+    "source_photo_pixels": 0
+  },
+  "local_wall_components": {
+    "full": {
+      "sha256": "5c39b400e2a52f75ce1b197dd1e32723c6d3b0dcac9d0ab2d81d66a6dcfa1622",
+      "pieces": 1308,
+      "closed_wall_parts": 761,
+      "triangles": 65656,
+      "wall_textured_triangles": 18152
+    },
+    "lod": {
+      "sha256": "816932489098c348db2c8747ef58859fd09b5ce7716ee0a7135c74dd8bddc3e7",
+      "pieces": 962,
+      "closed_wall_parts": 415,
+      "triangles": 45128,
+      "wall_textured_triangles": 13156
+    }
+  }
+}

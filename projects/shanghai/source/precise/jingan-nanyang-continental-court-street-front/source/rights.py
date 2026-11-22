@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='高参88、高亦寒的南洋大楼街面与内院实照；1930–1940年代明信片和1945–1949年可口可乐档案街照'
+PHOTO_SOURCE='https://www.meipian.cn/4ja3bpdg'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'

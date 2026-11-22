@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>南洋大楼 · 十二根尖墩与204号券门</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-.69" aria-label="南洋大楼的弧形街角"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">静安区 · 南京西路与陕西北路</p>
+    <h1>南洋大楼的弧形街角</h1>
+    <p>上海市第五批优秀历史建筑</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">从南京西路走向陕西北路，十二根尖墩顺着街角展开。204号宽券门上有四道尖龛，门洞通向后院。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看街角全貌</button>
+      <button type="button" data-view="front">看陕西北路一翼</button>
+      <button type="button" data-view="above">看屋顶四孔压檐</button>
+      <button type="button" data-view="inscription">看204号券门</button>
+      <button type="button" data-view="return">看后院通道</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/nanyang-continental-court-street-front-v1/elevations/continental-street-full.jpg">看街角与204号门的两个机位</a>
+    <a href="data/audit/nanyang-continental-court-street-front-v1/street-front/eleven-bay-street-front.jpg">看建筑上层的砖面、窗洞与女儿墙</a>
+    <a href="data/audit/nanyang-continental-court-street-front-v1/pointed-piers/whole-pointed-piers.jpg">看十二根尖墩与龛座</a>
+    <a href="data/audit/nanyang-continental-court-street-front-v1/sashes/four-street-window-types.jpg">看四种窗扇的构造</a>
+    <a href="data/audit/nanyang-continental-court-street-front-v1/elevations/continental-street-lod.jpg">看远景模型与店面开口</a>
+    <a href="source/precise/jingan-nanyang-continental-court-street-front/README.md">查阅门牌、历史街照与测量记录</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('jingan-nanyang-continental-court-street-front', {
+  "oblique": {
+    "center": [
+      1.7,
+      9.1,
+      1.0
+    ],
+    "size": [
+      45,
+      20,
+      45
+    ],
+    "direction": [
+      -1,
+      0.28,
+      -0.58
+    ]
+  },
+  "front": {
+    "center": [
+      -8.9,
+      8.4,
+      8.5
+    ],
+    "size": [
+      24,
+      19,
+      30
+    ],
+    "direction": [
+      -1,
+      0.13,
+      0.16
+    ]
+  },
+  "above": {
+    "center": [
+      -9.45,
+      16.55,
+      0.5
+    ],
+    "size": [
+      14,
+      5,
+      15
+    ],
+    "direction": [
+      -0.85,
+      0.42,
+      -0.45
+    ]
+  },
+  "inscription": {
+    "center": [
+      -1.65,
+      3.43,
+      22.7
+    ],
+    "size": [
+      8.3,
+      7.4,
+      8.3
+    ],
+    "direction": [
+      -0.86,
+      0.08,
+      0.56
+    ]
+  },
+  "return": {
+    "center": [
+      4.7,
+      4.1,
+      19.4
+    ],
+    "size": [
+      11.5,
+      9,
+      10
+    ],
+    "direction": [
+      0.94,
+      0.18,
+      -0.37
+    ]
+  }
+});
+  </script>
+</body>
+</html>
