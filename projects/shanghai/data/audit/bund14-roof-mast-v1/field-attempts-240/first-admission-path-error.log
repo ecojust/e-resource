@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/tmp/shi-tongren305/handoff/admit-window.py", line 82, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/tmp/shi-tongren305/handoff/admit-window.py", line 67, in main
+    fcntl.flock(gate,fcntl.LOCK_EX);row=host(kind,source);done=w/(kind+'-closed.json')
+                                        ^^^^^^^^^^^^^^^^^
+  File "/tmp/shi-tongren305/handoff/admit-window.py", line 15, in host
+    report=Path(row['report']);assert report.parent==source.parent and sha(report)==row['report_sha256'];a=read(report);assert a['completed'] and a['phase']==phase and not a['errors'] and not a['failed'] and a['screenshots']
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-240/sequence.py", line 141, in <module>
+    run()
+  File "/tmp/shanghai-main-240/sequence.py", line 136, in run
+    handoff(which, c)
+  File "/tmp/shanghai-main-240/sequence.py", line 68, in handoff
+    subprocess.run([sys.executable, '-B', script, which, ticket], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', PosixPath('/tmp/shi-tongren305/handoff/admit-window.py'), 'native', PosixPath('/tmp/shanghai-main-240/evidence/before/closed.json')]' returned non-zero exit status 1.

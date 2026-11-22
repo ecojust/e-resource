@@ -1,3 +1,11 @@
+# 据2012、2014及2025照片在外滩14号既有模型补中央塔冠后方独立旗杆、杆顶与近年可辨的收垂旗幅
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund14&mode=walk) · [四种模型下载](source/precise/bund14/revisions/roof-mast/manifest.json) · [来源与制作范围](source/precise/bund14/revisions/roof-mast/README.md) · [验收记录](data/audit/bund14-roof-mast-v1/README.md)
+
+据2012、2014及2025照片在外滩14号既有模型补中央塔冠后方独立旗杆、杆顶与近年可辨的收垂旗幅。
+
+近景 78,204 个三角面，远景 68,948 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 25,500,822 字节。上海主图现有 276 处独立入口，黄浦区 111 处。[资产清单](source/precise/bund14/revisions/roof-mast/manifest.json)
+
 # 扬子大楼外滩26号临江东立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yangtze-insurance-bund-front&mode=overview) · [单体旋转与下载](yangtze-insurance-bund-front.html) · [来源与制作范围](source/precise/huangpu-yangtze-insurance-bund-front/README.md) · [验收记录](data/audit/yangtze-insurance-bund-front-v1/README.md)

@@ -1,0 +1,220 @@
+{
+  "order": 240,
+  "passed": true,
+  "normal_release_sha256": "9e693b30e5277a63494252176d0e301f91605543f5cb9eed2f7693acea4a6db0",
+  "attempts": {
+    "first-240-roof-diagnostic": {
+      "phase": "old-roof",
+      "report_sha256": "11f58a8613a7c223467b3e109cb6381f6fed0bcf80e10577fcc658b757cd59c9",
+      "exit_sha256": "5c44953d51277d0982c9776d1bd9a76bcf095e37c2986db0e905b83b83f49636",
+      "node_pid": 794120,
+      "exit": 1,
+      "failure": "AssertionError [ERR_ASSERTION]: The map interface covers a projected roof feature\n    at main (/tmp/shanghai-main-240/map.cjs:44:4)",
+      "observed_attempts": 3
+    },
+    "second-240-roof-diagnostic": {
+      "phase": "old-roof",
+      "report_sha256": "20f56077a6b20ccf49b256837317133842af5ba6edb3ccffc0290603421e7850",
+      "exit_sha256": "8f96da4a5150635ad927cd83b1234176f20c07eeb709df20a88a559f281d26d4",
+      "node_pid": 868827,
+      "exit": 1,
+      "failure": "page.evaluate: Target crashed \n    at frame (/tmp/shanghai-main-240/map.cjs:24:36)\n    at main (/tmp/shanghai-main-240/map.cjs:50:111)",
+      "observed_attempts": 2
+    },
+    "third-240-roof-diagnostic": {
+      "phase": "old-roof",
+      "report_sha256": "538b339631fa1127784487c2a669e5281866eb81adec68aa238aeda1c4412518",
+      "exit_sha256": "dcac8c25dc29bd4391db8c6c5cd2492a344fa8f25762fc1247777478ef7faa52",
+      "node_pid": 949211,
+      "exit": 1,
+      "failure": "page.evaluate: Target crashed \n    at frame (/tmp/shanghai-main-240/map.cjs:24:36)\n    at main (/tmp/shanghai-main-240/map.cjs:50:111)",
+      "observed_attempts": 0
+    },
+    "fourth-240-river-diagnostic": {
+      "phase": "old-river",
+      "report_sha256": "3410210cbdf256874a1f38c622fc15d98d6e0d000d19424b5ae854169ceffe01",
+      "exit_sha256": "e1fe244e36b9ffaa200cc504fb61130a1dc17a05c23f6df2c1cbf66975252501",
+      "node_pid": 976617,
+      "exit": 1,
+      "failure": "AssertionError [ERR_ASSERTION]: The map interface covers a projected roof feature\n    at main (/tmp/shanghai-main-240/map.cjs:55:4)",
+      "observed_attempts": 49
+    },
+    "guest305-native": {
+      "status": "completed",
+      "source_sha256": "6820242021a16ca5ef7f03d020529e84f7da8004927228e594ab84a8f144dd8f",
+      "receipt_sha256": "2d63f913d31aa2f3e3f378a5de383509d4cf94946fcdf30750a6b9b97d9737a7"
+    },
+    "guest305-viewer": {
+      "status": "completed",
+      "source_sha256": "d871aff0116f91058a683790c68023c5c16519ff81c2ea9ac2c93f5eb3cf45a7",
+      "receipt_sha256": "133e4a34220c84b618d51ea2f0e1b51eb31cfffcba7341d4a2f4a43f86fd170c"
+    },
+    "guest526": {
+      "early_sha256": "ac26b8bd6bd2c26a5fb9bd80bf8e63b432dce993d8e095a3481348d29df31d9f",
+      "gate_sha256": "ce723b1e76372beb1f83cee6f9d28d28b6ea91a5ca0dcb6524cc89fcf50856ca",
+      "phase_count": 2
+    }
+  },
+  "files": {
+    "first-240-roof-diagnostic/stdout.log": {
+      "bytes": 258,
+      "sha256": "9997cffba265f10a385feeda81b44943062357c5644b3c9bb80026658446be34"
+    },
+    "first-240-roof-diagnostic/closed.json": {
+      "bytes": 575,
+      "sha256": "5c44953d51277d0982c9776d1bd9a76bcf095e37c2986db0e905b83b83f49636"
+    },
+    "first-240-roof-diagnostic/browser.json": {
+      "bytes": 6421,
+      "sha256": "11f58a8613a7c223467b3e109cb6381f6fed0bcf80e10577fcc658b757cd59c9"
+    },
+    "first-240-roof-diagnostic/bound.json": {
+      "bytes": 26632,
+      "sha256": "67f08acffb2f91d6f66e88754ca715c8260b80029399db8212b1d6f2c9a8f581"
+    },
+    "first-240-roof-diagnostic/sequence.py": {
+      "bytes": 7764,
+      "sha256": "a93a81fd2cfb64e894051f38689ef043a777a6a7f1551d049f0c1a531bdc5f5f"
+    },
+    "first-240-roof-diagnostic/review.py": {
+      "bytes": 7047,
+      "sha256": "a1abe2f8fdd1c4af616c6bd66b36e9c25c528752517efe932f8355bd46c576da"
+    },
+    "first-240-roof-diagnostic/map.cjs": {
+      "bytes": 11523,
+      "sha256": "04b47dbe68d4938432e84dc6848832211e1786258af4215e015e7586b8561516"
+    },
+    "second-240-roof-diagnostic/stdout.log": {
+      "bytes": 166,
+      "sha256": "1bda33204691bcb3aba45fa341cc61cd040019255863605924be2efda0124552"
+    },
+    "second-240-roof-diagnostic/closed.json": {
+      "bytes": 1239,
+      "sha256": "8f96da4a5150635ad927cd83b1234176f20c07eeb709df20a88a559f281d26d4"
+    },
+    "second-240-roof-diagnostic/browser.json": {
+      "bytes": 4748,
+      "sha256": "20f56077a6b20ccf49b256837317133842af5ba6edb3ccffc0290603421e7850"
+    },
+    "second-240-roof-diagnostic/sequence.py": {
+      "bytes": 8157,
+      "sha256": "bc09f3858424092d0e90655bf1a7304f2c236d31f3b5d7765c9584102a441ef2"
+    },
+    "second-240-roof-diagnostic/map.cjs": {
+      "bytes": 11853,
+      "sha256": "b7ebab668f0aa82b87bf3938135252cb8f2ebc1c3da3857785c9d72030ef43df"
+    },
+    "third-240-roof-diagnostic/closed.json": {
+      "bytes": 575,
+      "sha256": "dcac8c25dc29bd4391db8c6c5cd2492a344fa8f25762fc1247777478ef7faa52"
+    },
+    "third-240-roof-diagnostic/browser.json": {
+      "bytes": 1632,
+      "sha256": "538b339631fa1127784487c2a669e5281866eb81adec68aa238aeda1c4412518"
+    },
+    "third-240-roof-diagnostic/sequence.py": {
+      "bytes": 8157,
+      "sha256": "bc09f3858424092d0e90655bf1a7304f2c236d31f3b5d7765c9584102a441ef2"
+    },
+    "third-240-roof-diagnostic/map.cjs": {
+      "bytes": 11919,
+      "sha256": "44e66de3c0dadf7d18ccad5c087bb326594c712365e1ecefb922499a4624f76a"
+    },
+    "fourth-240-river-diagnostic/early-240-native-returned.json": {
+      "bytes": 2219,
+      "sha256": "33ded8bd04f5c2158afa4cd142500b5b8ca4186b8bdea4a7444f03e79c1b00b2"
+    },
+    "fourth-240-river-diagnostic/stdout.log": {
+      "bytes": 258,
+      "sha256": "d05a09c204efad814d3bdc490372d9998d0504dd0084134e8f6b3f81ec5b40d6"
+    },
+    "fourth-240-river-diagnostic/closed.json": {
+      "bytes": 589,
+      "sha256": "e1fe244e36b9ffaa200cc504fb61130a1dc17a05c23f6df2c1cbf66975252501"
+    },
+    "fourth-240-river-diagnostic/browser.json": {
+      "bytes": 105698,
+      "sha256": "3410210cbdf256874a1f38c622fc15d98d6e0d000d19424b5ae854169ceffe01"
+    },
+    "fourth-240-river-diagnostic/sequence.py": {
+      "bytes": 8157,
+      "sha256": "bc09f3858424092d0e90655bf1a7304f2c236d31f3b5d7765c9584102a441ef2"
+    },
+    "fourth-240-river-diagnostic/map.cjs": {
+      "bytes": 12225,
+      "sha256": "43d822ae3a4fd86b0512983be8f50bee28fbb391d0442c8c1b0ec6bc45dcece1"
+    },
+    "archived-305-admissions/305-native-gate.json": {
+      "bytes": 335,
+      "sha256": "180bc55f18bcfd90861f09be2e5449c5f3492f1090774fe97e5ff3f90e0b5ac2"
+    },
+    "archived-305-admissions/305-viewer-gate.json": {
+      "bytes": 334,
+      "sha256": "ed2ec1316fd9c312983abff9a1b5ad20bb719fb3b218c803feb2055780cf5f0c"
+    },
+    "305-native-gate.json": {
+      "bytes": 325,
+      "sha256": "d4eacaebb677b14dcd0b856686ccbfea952029426919a904afdc2e33848e6873"
+    },
+    "305-viewer-gate.json": {
+      "bytes": 324,
+      "sha256": "5915310325fd3b0c58b02c543290850628b1e4de683649423a01851259cad7bb"
+    },
+    "first-admission-path-error.log": {
+      "bytes": 1611,
+      "sha256": "900c78b29848001d28880f02fbf406a30997f0b62a70030cd6aa1fe362c87420"
+    },
+    "305-returned-on-roof.json": {
+      "bytes": 539,
+      "sha256": "ed3ab5c13a5b3007b8396bafae830c65ec6e7adaf3a5042af035e9f437e12fc0"
+    },
+    "resume-on-305-geometry.py": {
+      "bytes": 216,
+      "sha256": "a57c20c3024fd179a3411a56795b0f36c760e4af7976c47ff4dd47230b7095cc"
+    },
+    "station-305-after-roof.py": {
+      "bytes": 1013,
+      "sha256": "4fb4eb22305511327a7336d34865afbf1976c89e11469be2bc4d862dd40c78c0"
+    },
+    "after-physical-526/sequence.py": {
+      "bytes": 8232,
+      "sha256": "fa3cf2a72582777b21abb3b2f02847c65d79b304261311401156437c4af01cfc"
+    },
+    "after-physical-526/first-consumer.log": {
+      "bytes": 307,
+      "sha256": "d78bd2f5de0415ef9147898358daa6ac6ab9f8413fdf3b5a5e9297af6a8514e3"
+    },
+    "after-physical-526/reverified.json": {
+      "bytes": 1926,
+      "sha256": "ce723b1e76372beb1f83cee6f9d28d28b6ea91a5ca0dcb6524cc89fcf50856ca"
+    },
+    "sequence.py": {
+      "bytes": 8526,
+      "sha256": "76d92c0315c6c995d8b90cd7c376a8a92517b620b2e52717945c31d2366dbed5"
+    },
+    "review.py": {
+      "bytes": 7047,
+      "sha256": "a1abe2f8fdd1c4af616c6bd66b36e9c25c528752517efe932f8355bd46c576da"
+    },
+    "map.cjs": {
+      "bytes": 12771,
+      "sha256": "4d64caae19b43d432c4f0e4a9fa73b1a83159eebb61e01f7ba2c42ad4d03fade"
+    },
+    "guest-305/native-closed.json": {
+      "bytes": 6406,
+      "sha256": "2d63f913d31aa2f3e3f378a5de383509d4cf94946fcdf30750a6b9b97d9737a7"
+    },
+    "guest-305/viewer-closed.json": {
+      "bytes": 6155,
+      "sha256": "133e4a34220c84b618d51ea2f0e1b51eb31cfffcba7341d4a2f4a43f86fd170c"
+    },
+    "guest-526/early-236-native-returned.json": {
+      "bytes": 2233,
+      "sha256": "ac26b8bd6bd2c26a5fb9bd80bf8e63b432dce993d8e095a3481348d29df31d9f"
+    },
+    "guest-526/author-physical.json": {
+      "bytes": 956,
+      "sha256": "d090dd7d847930a4c7852cbb19fde7e92a1961a5f66b812574fc82aed771ca8a"
+    }
+  }
+}
