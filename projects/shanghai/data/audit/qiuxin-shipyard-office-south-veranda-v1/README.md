@@ -9,3 +9,7 @@
 正常目录机位采用15°方位和48°俯仰。手机和桌面分别复核12处外廊构件，周围共包括161个原有体量。另实取城市矢量底图26个建筑对象的895个部件，办公楼替换边界与这些部件相交数为零。邻近厂房所在的743部件合并图形全数保留。[目录机位与邻房](overview-sightlines.json) · [矢量底图核查](initial-vector-comparison.json)
 
 另从31261正式服务逐件读取独立页、浏览模块及其全部依赖、样式、清单和四个下载，与桌面和手机实拍会话的输入校对散列。[正式服务与双端会话的文件对应](standalone-31261-bindings.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/327a687f2e07fa1ffd8e972d2d7f524a1cd2f4b7/projects/shanghai/index.html#landmark=huangpu-qiuxin-shipyard-office-south-veranda&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，9 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
