@@ -1,0 +1,32 @@
+before {'exit': 0, 'node': 495203, 'chromium_pids': [495215], 'node_closed': True, 'remaining': [], 'report_sha256': '78d73600946481a98d51a8ca6a387f47e950533b06fb1cb8de16a10c9287cb6a', 'driver_sha256': '3c42ced05f3160a510e0285fee00cdb81c2295844260174622b7dc1fa7b64aa8', 'finished': '2026-11-22T06:32:57.128505+00:00'}
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/shanghai-main-238/evidence/238/separate/phone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-238/run-238-separated.py", line 29, in <module>
+    dst=e/'before'if control else parts/part;dst.mkdir(parents=True,exist_ok=True)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/shanghai-main-238/evidence/238/separate'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-238/run-238-separated.py", line 19, in <module>
+    subprocess.run([sys.executable,'-Bu',__file__,previous,part],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-238/run-238-separated.py', PosixPath('/tmp/shanghai-main-237/237-map-slot-released.json'), 'phone']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-238/when-237-closed.py", line 19, in <module>
+    run('run-238-separated.py',parent,'before','phone','desktop','details','touch','architecture','distant')
+  File "/tmp/shanghai-main-238/when-237-closed.py", line 8, in run
+    def run(name,*args):subprocess.run([sys.executable,'-Bu',str(home/name),*map(str,args)],check=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-238/run-238-separated.py', '/tmp/shanghai-main-237/237-map-slot-released.json', 'before', 'phone', 'desktop', 'details', 'touch', 'architecture', 'distant']' returned non-zero exit status 1.

@@ -1,3 +1,11 @@
+# 业广地产公司大楼滇池路与四川中路转角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-dianchi-land-investment-corner&mode=overview) · [单体旋转与下载](dianchi-land-investment-corner.html) · [来源与制作范围](source/precise/huangpu-dianchi-land-investment-corner/README.md) · [验收记录](data/audit/dianchi-land-investment-corner-v1/README.md)
+
+核对市表2A016、滇池路120号与四川中路444至464号双号街角、具名足印和Fayhoo照片，制作斜切角、两侧山花窗、石窗头和连续铁栏阳台。
+
+近景 11,552 个三角面，远景 7,276 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,832,389 字节。上海主图现有 275 处独立入口，黄浦区 110 处。[资产清单](assets/models/candidates/huangpu-dianchi-land-investment-corner/manifest.json)
+
 # 仁记洋行大楼东南转角与相连街墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-gibb-livingston-corner&mode=overview) · [单体旋转与下载](gibb-livingston-corner.html) · [来源与制作范围](source/precise/huangpu-gibb-livingston-corner/README.md) · [验收记录](data/audit/gibb-livingston-corner-v1/README.md)
