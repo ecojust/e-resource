@@ -7,3 +7,7 @@ Blender 4.3.2重新打开工程得到55个网格、10种材质与39,204个三角
 仅替换街面约3.8米深的部分。城市底图对象1125与具名OSM地块重叠98.60%，地图近、远两档分别保留原体投影的82.15%和82.35%。南北邻楼保持完整。两处相接边依照原体封口，地面采用街道、门槛、墙及后部原屋等十个点校核。在900像素宽桌面和390像素宽手机的投影中，十个建筑细部均在可见地图内。[近远景与邻房实测](placement-geometry.json) · [地面样点](ground-witnesses.json) · [取景投影](overview-sightlines.json)
 
 独立页在第271处登记的冻结站实测。桌面与390像素触屏均完成近景和远景切换，近景39,204面、远景20,144面。原始GLB、两个网页档与Blender工程均通过实际下载和摘要核对。[四幅截图与下载收据](viewer.json) · [冻结站核验](release-verification.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/088f2a5ab352a810b5b9a2a3dc5ad712e84268d6/projects/shanghai/index.html#landmark=huangpu-ampire-and-co-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

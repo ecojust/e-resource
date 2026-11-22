@@ -3795,7 +3795,7 @@
 | 益丰洋行大楼北京东路西端券窗与切角 | 2026-11-22 04:16:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-abraham-building-beijing-front&mode=overview) |
 | 乍浦路桥 | 2026-11-22 09:38:51 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=walk) |
 | 礼和洋行九江路街面 | 2026-11-22 12:29:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) |
-| 安培洋行大楼圆明园路主立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ampire-and-co-building&mode=overview) |
+| 安培洋行大楼圆明园路主立面 | 2026-11-22 13:16:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ampire-and-co-building&mode=overview) |
 
 ### 徐汇区（55处）
 
