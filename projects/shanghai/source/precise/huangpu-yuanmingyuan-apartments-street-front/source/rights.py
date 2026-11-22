@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Livelikerw'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:Yuanmingyuan_Apartments_Rockbund_Shanghai.JPG'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/3.0/'
+GEOMETRY_LICENSE='CC BY-SA 3.0'
+TEXTURE_LICENSE='MIT'

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>圆明园公寓东立面与切角柱廊</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="圆明园公寓东立面"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 圆明园路115号</p>
+    <h1>圆明园公寓</h1>
+    <p>东立面与切角柱廊</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">四根石柱分立在入口两侧，石楣上的五个金属字为“圓明園公寓”。沿两侧走向街角，可以看到曲面的红砖栏板、承托栏板的柱廊和券窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">东南街面</button>
+      <button type="button" data-view="front">东立面全景</button>
+      <button type="button" data-view="above">中央砖券与两翼山墙</button>
+      <button type="button" data-view="inscription">圓明園公寓门额</button>
+      <button type="button" data-view="return">切角柱廊与砖栏</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-yuanmingyuan-apartments-street-front/README.md">实照、构件测量与重建方法</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-yuanmingyuan-apartments-street-front', {
+  "oblique": {
+    "center": [
+      0.0,
+      12.29,
+      -1.6
+    ],
+    "size": [
+      39.3354,
+      16.3098,
+      5.7564
+    ],
+    "direction": [
+      -0.4427027,
+      0.0338225,
+      0.8960303
+    ]
+  },
+  "front": {
+    "center": [
+      0.0,
+      12.29,
+      -0.0
+    ],
+    "size": [
+      37.4166,
+      15.5142,
+      5.4756
+    ],
+    "direction": [
+      0.0,
+      0.0091068,
+      0.9999585
+    ]
+  },
+  "above": {
+    "center": [
+      0.0,
+      12.8,
+      -0.0
+    ],
+    "size": [
+      7.626,
+      3.162,
+      1.116
+    ],
+    "direction": [
+      0.1134653,
+      0.0378218,
+      0.9928218
+    ]
+  },
+  "inscription": {
+    "center": [
+      -0.12,
+      5.16,
+      -0.745
+    ],
+    "size": [
+      4.8052,
+      1.9924,
+      0.7032
+    ],
+    "direction": [
+      -0.0130702,
+      0.0090486,
+      0.9998736
+    ]
+  },
+  "return": {
+    "center": [
+      -13.2,
+      4.1,
+      -2.5
+    ],
+    "size": [
+      6.724,
+      2.788,
+      0.984
+    ],
+    "direction": [
+      -0.4492486,
+      0.0051051,
+      0.8933922
+    ]
+  }
+});
+  </script>
+</body>
+</html>
