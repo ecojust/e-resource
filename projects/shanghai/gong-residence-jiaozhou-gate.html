@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>龚氏花园住宅 · 胶州路522号拱门</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.62" aria-label="龚氏花园住宅胶州路522号临街拱门的三维模型"></main>
+  <header>
+    <a href="index.html#landmark=jingan-gong-residence-jiaozhou-gate&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">静安区 · 胶州路522号</p>
+    <h1>龚氏花园住宅</h1>
+    <p>胶州路522号拱门</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">浅色拱圈跨在两座砖墩上。左右铭牌取自2015年的正面照，左侧墩内有一块圆形慢行牌。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看拱圈与铁花</button>
+      <button type="button" data-view="oblique">侧看砖墩与门扇</button>
+      <button type="button" data-view="above">俯看门扇开合</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/jingan-gong-residence-jiaozhou-gate/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=gong-residence-jiaozhou-gate-v1';
+    showCandidateAssetViewer('jingan-gong-residence-jiaozhou-gate');
+  </script>
+</body>
+</html>
