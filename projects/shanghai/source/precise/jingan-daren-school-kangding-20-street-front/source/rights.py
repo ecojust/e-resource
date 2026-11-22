@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='街景写生达人；2015及2020年分站实景资料'
+PHOTO_SOURCE='https://www.bilibili.com/video/BV1MeFVzqEiJ'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT'
+TEXTURE_LICENSE='MIT'
