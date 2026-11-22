@@ -1,3 +1,11 @@
+# 求新船厂厂部办公楼南立面铸铁外廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qiuxin-shipyard-office-south-veranda&mode=overview) · [单体旋转与下载](qiuxin-shipyard-office-south-veranda.html) · [来源与制作范围](source/precise/huangpu-qiuxin-shipyard-office-south-veranda/README.md) · [验收记录](data/audit/qiuxin-shipyard-office-south-veranda-v1/README.md)
+
+第三批3A023登记机厂路132号。按修缮前后照片、廊内实照及修缮设计团队的记录，制作1923年厂部办公楼的南面双层铸铁外廊、科林斯式柱与植物挂落；双坡屋面按现存范围衔接。
+
+近景 70,338 个三角面，远景 12,052 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 8,953,244 字节。上海主图现有 296 处独立入口，黄浦区 131 处。[资产清单](assets/models/candidates/huangpu-qiuxin-shipyard-office-south-veranda/manifest.json)
+
 # 龙门邨尚文路总弄过街楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-longmen-village-gatehouse&mode=overview) · [单体旋转与下载](longmen-village-gatehouse.html) · [来源与制作范围](source/precise/huangpu-longmen-village-gatehouse/README.md) · [验收记录](data/audit/longmen-village-gatehouse-v1/README.md)

@@ -1,0 +1,56 @@
+326 ordinary site running with real phone return
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/shanghai-publisher-preservation/city-261/signed-31326-viewer/assets/models/candidates/jingan-ho-tung-residence-garden-portico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/shanghai-publisher-preservation/city-261/signed-31326-viewer/assets/models/candidates'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/shanghai-publisher-preservation/city-261/signed-31326-viewer/assets/models'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/shanghai-publisher-preservation/city-261/signed-31326-viewer/assets'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ho-tung326/mapping/handoff/admit-window-recovered.py", line 45, in <module>
+    helper=runpy.run_path(str(here/'signed-viewer-inputs.py'))['inputs']; snapshot=w/'raw-326-confirmed.json';inputs=helper(326,snapshot,ident,page,here/'signed-31326-viewer');write(here/'viewer-inputs.json',inputs)
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shanghai-publisher-preservation/city-261/signed-viewer-inputs.py", line 32, in inputs
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/workspace/shanghai-publisher-preservation/city-261/signed-31326-viewer'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-261/offer-326-recovered.py", line 57, in <module>
+    if command.returncode and not deferred.is_file() and not (G/f'261-{kind}-failed.json').is_file():raise RuntimeError(f'Admission exited {command.returncode} without physical receipt')
+                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Admission exited 1 without physical receipt
+Traceback (most recent call last):
+  File "/tmp/q261-runtime/326-after-desktop-crash.py", line 12, in <module>
+    subprocess.run([sys.executable,'-Bu',h/'offer-326-recovered.py','viewer'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-261/offer-326-recovered.py'), 'viewer']' returned non-zero exit status 1.

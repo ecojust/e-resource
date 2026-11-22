@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-261/veranda-field-details/observe-survey.py", line 37, in <module>
+    j=read(report) if report.exists() else {}
+      ^^^^^^^^^^^^
+  File "/tmp/shanghai-main-261/veranda-field-details/observe-survey.py", line 7, in read
+    def read(p):return json.loads(p.read_bytes())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 368641 (char 368640)

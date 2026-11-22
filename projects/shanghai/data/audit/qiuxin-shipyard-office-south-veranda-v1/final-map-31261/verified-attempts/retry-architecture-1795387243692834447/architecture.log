@@ -1,0 +1,20 @@
+node:fs:2482
+    return binding.writeFileUtf8(
+                   ^
+
+Error: ENOSPC: no space left on device, write
+    at Object.writeFileSync (node:fs:2482:20)
+    at save (/dev/shm/qiuxin261-formal-work/final-map-31261/architecture/actual-driver.cjs:83:19)
+    at targetTransfer (/dev/shm/qiuxin261-formal-work/final-map-31261/architecture/actual-driver.cjs:256:85)
+    at async routeModel (/dev/shm/qiuxin261-formal-work/final-map-31261/architecture/actual-driver.cjs:267:7)
+    at async Promise.all (index 1)
+    at async RouteHandler._handleInternal (/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59784:27)
+    at async RouteHandler._handleImpl (/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59753:18)
+    at async RouteHandler.handle (/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59747:16)
+    at async _Page._onRoute (/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:61037:27) {
+  errno: -28,
+  code: 'ENOSPC',
+  syscall: 'write'
+}
+
+Node.js v24.22.1

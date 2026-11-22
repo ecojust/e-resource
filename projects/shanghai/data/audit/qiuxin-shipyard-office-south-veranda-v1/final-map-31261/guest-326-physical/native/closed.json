@@ -1,0 +1,163 @@
+{
+  "order": 326,
+  "host": 261,
+  "kind": "native",
+  "exit": 0,
+  "pid": 628048,
+  "started": "2026-11-22T22:21:15.897791+00:00",
+  "finished": "2026-11-22T22:22:29.155407+00:00",
+  "observed_descendants": {
+    "628077": {
+      "parent": 628048,
+      "birth": 6187979,
+      "name": "python"
+    },
+    "628134": {
+      "parent": 628048,
+      "birth": 6188198,
+      "name": "python3"
+    },
+    "628143": {
+      "parent": 628134,
+      "birth": 6188203,
+      "name": "blender"
+    },
+    "629670": {
+      "parent": 628048,
+      "birth": 6194686,
+      "name": "python3"
+    },
+    "629671": {
+      "parent": 629670,
+      "birth": 6194697,
+      "name": "blender"
+    },
+    "629733": {
+      "parent": 628048,
+      "birth": 6194876,
+      "name": "python3"
+    },
+    "629734": {
+      "parent": 629733,
+      "birth": 6194880,
+      "name": "oidnDenoise"
+    },
+    "629827": {
+      "parent": 628048,
+      "birth": 6195218,
+      "name": "magick"
+    }
+  },
+  "wrapper_closed": true,
+  "all_processes_closed": true,
+  "remaining": [],
+  "host_receipt_sha256": "f21555e4db4557a1750329fa1c122ad6d3acdb62af390562feeb59b12c3cd919",
+  "host_report_sha256": "3aa576dc84e7ba8412baa22668e4201dde7a72525e580130868c34d2c051f280",
+  "dispatch_sha256": "5e5205d108f6b48e7405149ec7acc355f358fd90a0c788055df0fdea95336eaf",
+  "parent_snapshot_sha256": "ea234c9e5f8f17cf0f11cc72f3b5145a28ba0696c109d43d8a0fbff2e75615f9",
+  "parent_receipt_sha256": "b3671a35686686085833069e6bf8ee4a4a74f47a5b369538892cd52064abac22",
+  "attempt": "/dev/shm/ho-tung326-actual/native-dn39_3rs",
+  "passed": true,
+  "assets": {
+    "raw": {
+      "file": "jingan-ho-tung-residence-garden-portico-raw.glb",
+      "bytes": 4836628,
+      "sha256": "9c6977ee0b6da048701d2e67a341b485dad295b488f0cae4708329d166e95b3b",
+      "triangles": 63648,
+      "bounds_gltf_m": [
+        [
+          -5.53000020980835,
+          0.0,
+          -4.423356056213379
+        ],
+        [
+          5.53000020980835,
+          8.680000305175781,
+          0.8600000143051147
+        ]
+      ],
+      "materials": 12
+    },
+    "full": {
+      "file": "jingan-ho-tung-residence-garden-portico-web.glb",
+      "bytes": 2179592,
+      "sha256": "e8ff55a6553dc83c8043b3436a977764f7686e5b99ab4f470da00b5ef9d39498",
+      "triangles": 63648,
+      "bounds_gltf_m": [
+        [
+          -5.53000021,
+          0,
+          -4.42335606
+        ],
+        [
+          5.53000021,
+          8.68000031,
+          0.860000014
+        ]
+      ],
+      "materials": 12
+    },
+    "lod": {
+      "file": "jingan-ho-tung-residence-garden-portico-lod.glb",
+      "bytes": 752336,
+      "sha256": "3e1833e75e209b01ae905c612c90fd4ab7c6cfa2b7c4ba3afcae11798084c1b6",
+      "triangles": 24060,
+      "bounds_gltf_m": [
+        [
+          -5.53000021,
+          0,
+          -4.42335606
+        ],
+        [
+          5.53000021,
+          8.68000031,
+          0.860000014
+        ]
+      ],
+      "materials": 12
+    },
+    "native": {
+      "file": "jingan-ho-tung-residence-garden-portico.blend",
+      "bytes": 722172,
+      "sha256": "c207b5629574b6273d93b57fab0ef8ce74c6ff2969b552b074b16c1f5ab4a5d6"
+    }
+  },
+  "manifest_sha256": "f5f586622c10509e7954ab52ba2c84bd21ea9acb58c810bc92245aba43f7629b",
+  "geometry_native_sha256": "b935ea39a2f9a12474392a37117bcee174351f79c0a3b2bc946626a6f7ea5890",
+  "group_count": 142,
+  "blender_pids": [
+    628143,
+    629671
+  ],
+  "native_stages": [
+    {
+      "stage": "render",
+      "program": "blender",
+      "pid": 628143,
+      "wrapper_pid": 628134,
+      "started": "2026-11-22T22:21:18.434198+00:00",
+      "finished": "2026-11-22T22:22:23.258888+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "reopen",
+      "program": "blender",
+      "pid": 629671,
+      "wrapper_pid": 629670,
+      "started": "2026-11-22T22:22:23.380424+00:00",
+      "finished": "2026-11-22T22:22:25.125561+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "denoise",
+      "program": "/tmp/country-tools/oidn/bin/oidnDenoise",
+      "pid": 629734,
+      "wrapper_pid": 629733,
+      "started": "2026-11-22T22:22:25.205557+00:00",
+      "finished": "2026-11-22T22:22:28.580417+00:00",
+      "exit": 0
+    }
+  ],
+  "remaining_blender": [],
+  "remaining_oidn": []
+}
