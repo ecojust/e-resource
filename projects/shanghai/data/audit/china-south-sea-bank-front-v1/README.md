@@ -11,3 +11,7 @@
 31243与31244的正式目录分别有278处和279处。前一版所有条目逐项保留，新版1,770项文件经HTTP读取并校验，共1,481,062,945字节。实站裁剪器在近、远档均保留底模53在16.58米以上的表面，地面检查核对了三处门位和周边原建筑。[全站文件回执](31244-all-http.json) · [两版目录与页面输入](final-renderer-31244-http.json) · [底模高度区间](height-window-runtime-31244.json) · [城市运行校验](runtime-placement.json)
 
 独立页面在1250×820桌面和390像素宽手机分别加载近、远档。四张画面均能分辨三开间窗墙、柱列、底层门廊和上下檐口。四个下载按钮分别保存了原始GLB、网页GLB、远景GLB和可编辑Blender文件，大小与SHA-256均与清单相符。[浏览器与下载回执](viewer.json) · [桌面近景](viewer-desktop-full.png) · [桌面远景](viewer-desktop-lod.png) · [手机近景](viewer-mobile-full.png) · [手机远景](viewer-mobile-lod.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/12bdff821ae42624265848bd95fbc4dd7c4417a0/projects/shanghai/index.html#landmark=huangpu-china-south-sea-bank-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

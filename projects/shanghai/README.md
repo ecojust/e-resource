@@ -182,7 +182,7 @@
 | 扬子大楼外滩26号临江东立面 | 2026-11-22 15:01:32 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yangtze-insurance-bund-front&mode=overview) |
 | 普益大楼四川中路街面 | 2026-11-22 17:33:07 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-realty-sichuan-front&mode=overview) |
 | 大北大楼电报局延安东路正立面 | 2026-11-22 17:58:40 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yanan-road-telegraph-exchange&mode=overview) |
-| 中南银行大楼汉口路南立面中央柱列 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-south-sea-bank-front&mode=overview) |
+| 中南银行大楼汉口路南立面中央柱列 | 2026-11-22 18:52:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-china-south-sea-bank-front&mode=overview) |
 
 ### 徐汇区（55处）
 
