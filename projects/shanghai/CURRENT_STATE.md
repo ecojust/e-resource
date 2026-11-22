@@ -1,3 +1,11 @@
+# 哈同大楼（慈安里大楼）东南转角立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hardoon-building-chamfer&mode=overview) · [单体旋转与下载](hardoon-building-chamfer.html) · [来源与制作范围](source/precise/huangpu-hardoon-building-chamfer/README.md) · [验收记录](data/audit/hardoon-building-chamfer-v1/README.md)
+
+按3A017南京东路98至114号及具名足印380339993与原房714的比对，制作南京东路、四川中路相交处东南斜面店面上方一跨。照片可见砖墙、券窗、弧形白栏阳台、铁栏与曲线老虎窗，向转角两侧短接。
+
+近景 30,280 个三角面，远景 8,242 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,053,327 字节。上海主图现有 290 处独立入口，黄浦区 125 处。[资产清单](assets/models/candidates/huangpu-hardoon-building-chamfer/manifest.json)
+
 # 四明银行北京东路转角门楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) · [单体旋转与下载](ningpo-commercial-bank-corner.html) · [来源与制作范围](source/precise/huangpu-ningpo-commercial-bank-corner/README.md) · [验收记录](data/audit/ningpo-commercial-bank-corner-v1/README.md)

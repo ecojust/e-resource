@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-255/final-map-31255/sequence-recovered.py", line 127, in <module>
+    assert rc==0 and rcfile.read_text().strip()=='0' and json.loads(rp.read_bytes())['completed'] and row['node_closed'] and chromes and not row['remaining_children'] and not row['remaining_chromium'],row
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'phase': 'before', 'exit_code': 1, 'node_pids': [3548874], 'chromium_pids': [3548923, 3548946, 3548947, 3548971, 3548974, 3548976, 3549029, 3549030], 'node_closed': True, 'remaining_children': [], 'started': '2026-11-22T17:57:55.783299+00:00', 'finished': '2026-11-22T17:58:34.099002+00:00', 'remaining_chromium': [], 'report_sha256': 'f3faf20959a09de3ab142191b0ceeab522b316bed62be3ad66829898b377e61f'}
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-255/after-254.py", line 18, in <module>
+    subprocess.run([sys.executable,'-Bu',script],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-255/watch-recovered.py')]' returned non-zero exit status 1.

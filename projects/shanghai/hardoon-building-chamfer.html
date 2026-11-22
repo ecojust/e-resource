@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>哈同大楼 · 慈安里东南转角</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.53" aria-label="哈同大楼东南一跨灰砖券窗与屋顶老虎窗的三维模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-hardoon-building-chamfer&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 南京东路98–114号</p>
+    <h1>哈同大楼 · 慈安里东南转角</h1>
+    <p>1906年慈安里大楼的东南转角</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">南京东路与四川中路交口的一跨灰砖立面，往上依次可见宽拱窗、弧形栏板、第四层拱窗和屋顶老虎窗。模型采用2020年上海规划资源东南角照片的外饰色，结合2014年街照估算细部尺寸。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">切角正面</button>
+      <button type="button" data-view="oblique">弧形栏台</button>
+      <button type="button" data-view="above">屋顶老虎窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-hardoon-building-chamfer/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('huangpu-hardoon-building-chamfer');
+  </script>
+</body>
+</html>
