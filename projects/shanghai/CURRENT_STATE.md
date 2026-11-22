@@ -1,3 +1,11 @@
+# 普益大楼四川中路街面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-realty-sichuan-front&mode=overview) · [单体旋转与下载](asia-realty-building.html) · [来源与制作范围](source/precise/huangpu-asia-realty-sichuan-front/README.md) · [验收记录](data/audit/asia-realty-front-v1/README.md)
+
+以市表3A004、四川中路106至110号具名足印及2015年街照定位两端石翼、三联窗、柱廊、券门及檐下曲托。
+
+近景 48,868 个三角面，远景 27,572 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,334,719 字节。上海主图现有 277 处独立入口，黄浦区 112 处。[资产清单](assets/models/candidates/huangpu-asia-realty-sichuan-front/manifest.json)
+
 # 据2015年公开的西端近照及广东路街照，在外滩5号既有模型西山墙南端补直跑外梯、平台、铁花扶手和两樘带拱形气窗的街窗。梯侧入口暗部依照片保留，室内走向待查
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=bund05&mode=walk) · [四种模型下载](source/precise/bund05/revisions/west-service-stair/manifest.json) · [来源与制作范围](source/precise/bund05/revisions/west-service-stair/README.md) · [验收记录](data/audit/nissin-west-stair-v1/README.md)

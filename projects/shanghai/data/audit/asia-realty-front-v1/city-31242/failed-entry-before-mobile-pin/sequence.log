@@ -1,0 +1,21 @@
+control 2026-11-22T09:11:38.816485+00:00 {1257786: '1444772', 1257804: '1444781', 1257805: '1444781', 1257832: '1444789', 1257841: '1444792', 1257830: '1444789', 1257878: '1444806', 1257889: '1444809'}
+closed control 2026-11-22T09:11:38.816485+00:00
+mobile-card 2026-11-22T09:13:18.822226+00:00 {1259969: '1455271', 1259990: '1455292', 1259991: '1455292', 1260017: '1455300', 1260030: '1455304', 1260014: '1455299', 1260062: '1455316', 1260073: '1455320'}
+closed mobile-card 2026-11-22T09:13:18.822226+00:00
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-242/formal-31242/capture.py", line 10, in <module>
+    ev.mkdir(exist_ok=True);out=ev/stage;out.mkdir(exist_ok=True);assert not (out/'closed.json').exists()
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/shanghai-main-242/formal-31242/isolated-evidence/mobile-pin'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-242/formal-31242/sequence.py", line 67, in <module>
+    external('viewer',use('mobile-pin'))
+                      ^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-242/formal-31242/sequence.py", line 20, in use
+    fcntl.flock(lock,fcntl.LOCK_EX);subprocess.run([sys.executable,'-Bu',str(w/'capture.py'),stage,*([str(old)]if stage=='control'else[])],check=True)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-242/formal-31242/capture.py', 'mobile-pin']' returned non-zero exit status 1.

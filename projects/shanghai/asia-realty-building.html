@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>普益大楼 · 四川中路街面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-oblique-x=".47" aria-label="南端大券门、柱窗与檐下曲托"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-asia-realty-sichuan-front&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 四川中路106–110号</p>
+    <h1>普益大楼</h1>
+    <p>德和洋行设计 · 四川中路街面</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">普益大楼于1921至1922年兴建。临街一面有五组中段三联窗和两端双窗石翼，下层巨柱位于窗墙之前。2015年1月2日的斜照可辨中央小券门和南端大券门。照片未摄入的北端首层在地图上保留原楼。层高、石材分缝、窗花与檐口尺度据照片估计。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">临街正面</button>
+      <button type="button" data-view="oblique">斜看柱窗</button>
+      <button type="button" data-view="above">俯看檐口</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-asia-realty-sichuan-front/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-asia-realty-sichuan-front');
+  </script>
+</body>
+</html>
