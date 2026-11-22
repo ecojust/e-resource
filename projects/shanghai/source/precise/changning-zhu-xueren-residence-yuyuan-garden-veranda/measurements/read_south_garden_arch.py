@@ -9,9 +9,9 @@ from PIL import Image
 
 ORIGINAL_SHA256 = 'e76712e95e77aaf485668b4312c2fe5fe422678f30eb8247b6659bc8f9e157c8'
 SAMPLES = [244,252,262,272,284,298,312,326,342,357,372,387,402,417,432,447,462,477,492,507,522,537,549,558]
-# Read the wall edges at the bottom of the cornice and at the top landing.
+# Read the wall edges at the bottom of the cornice and at the front of the upper landing. The rear door threshold lies behind this plane.
 # Their small tilt is visible in the masonry courses on each side.
-CENTRAL_REFERENCE = [[168.5,121.5],[629.5,122],[635,372.5],[158.5,373.5]]
+CENTRAL_REFERENCE = [[168.5,121.5],[629.5,122],[635.0,392.5],[157.5,393.5]]
 
 
 def projected_grid(uv):
