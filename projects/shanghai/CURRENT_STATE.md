@@ -1,3 +1,11 @@
+# 原亚洲文会博物院虎丘路立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-royal-asiatic-society-huqiu-front&mode=overview) · [单体旋转与下载](royal-asiatic-society.html) · [来源与制作范围](source/precise/huangpu-royal-asiatic-society-huqiu-front/README.md) · [验收记录](data/audit/royal-asiatic-society-v1/README.md)
+
+对照3A009及虎丘路20号馆舍，制作西立面街层三座券洞、两侧八卦窗、石栏阳台、中轴圆券顶竖窗与女儿墙。
+
+近景 18,932 个三角面，远景 12,160 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,883,820 字节。上海主图现有 282 处独立入口，黄浦区 117 处。[资产清单](assets/models/candidates/huangpu-royal-asiatic-society-huqiu-front/manifest.json)
+
 # 电力大楼南京东路与江西中路转角塔楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-electric-company-corner-tower&mode=overview) · [单体旋转与下载](electric-company-corner-tower.html) · [来源与制作范围](source/precise/huangpu-electric-company-corner-tower/README.md) · [验收记录](data/audit/electric-company-corner-tower-v1/README.md)

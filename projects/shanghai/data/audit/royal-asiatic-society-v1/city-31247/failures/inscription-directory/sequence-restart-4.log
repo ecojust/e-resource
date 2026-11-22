@@ -1,0 +1,32 @@
+closed control 2026-11-22T11:53:32.442709+00:00
+closed mobile-card 2026-11-22T11:55:29.780411+00:00
+closed mobile-pin 2026-11-22T11:56:17.540795+00:00
+closed desktop-card 2026-11-22T11:57:42.334211+00:00
+closed desktop-pin 2026-11-22T11:58:43.700033+00:00
+closed street 2026-11-22T12:04:30.639527+00:00
+closed roof 2026-11-22T12:05:28.311047+00:00
+octagon 2026-11-22T12:09:20.775648+00:00 {1960873: '2509437', 1960895: '2509447', 1960896: '2509447', 1960923: '2509455', 1960952: '2509465', 1960972: '2509472', 1960922: '2509454', 1961001: '2509480'}
+closed octagon 2026-11-22T12:09:20.775648+00:00
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-247/formal-31247/capture.py", line 10, in <module>
+    ev.mkdir(exist_ok=True);out=ev/stage;out.mkdir(exist_ok=True);assert not (out/'closed.json').exists()
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/shanghai-main-247/formal-31247/isolated-evidence/inscription'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-247/formal-31247/sequence.py", line 56, in <module>
+    host=use(stage)
+         ^^^^^^^^^^
+  File "/tmp/shanghai-main-247/formal-31247/sequence.py", line 20, in use
+    fcntl.flock(lock,fcntl.LOCK_EX);subprocess.run([sys.executable,'-Bu',str(w/'capture.py'),stage,*([str(old)]if stage=='control'else[])],check=True)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-247/formal-31247/capture.py', 'inscription']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-247/after-246.py", line 19, in <module>
+    subprocess.run([sys.executable,'-Bu',script],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-247/formal-31247/sequence.py')]' returned non-zero exit status 1.

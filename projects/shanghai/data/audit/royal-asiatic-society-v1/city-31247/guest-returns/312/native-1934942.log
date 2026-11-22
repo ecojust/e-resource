@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/yide-changhua312/handoff/run-phase.py", line 8, in <module>
+    cfg=read(w/'raw-config.json');p=Path('/workspace/e-resource/projects/shanghai');a=p/'data/audit'/cfg['tag'];id=cfg['id'];source=p/'source/precise'/id/'source';assets=p/'assets/models/candidates'/id;model=assets/'manifest.json';pilot=Path('/dev/shm/yide-changhua312/pilot');ref=read(pilot/'geometry-input.json');start=datetime.now(timezone.utc);attempt=h/(k+'-'+start.strftime('%Y%m%dT%H%M%S%f'));attempt.mkdir()
+                                                                                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/yide-changhua312/handoff/admit-window.py", line 6, in <lambda>
+    read=lambda f:json.loads(f.read_bytes())
+                             ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/shm/yide-changhua312/pilot/geometry-input.json'
