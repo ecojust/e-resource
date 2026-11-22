@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>洋泾中学旧办公楼前四柱钟亭与铜校钟</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="洋泾中学旧办公楼前四柱钟亭与铜校钟"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">浦东新区 · 潍坊路111号</p>
+    <h1>洋泾中学旧办公楼前四柱钟亭与铜校钟</h1>
+      <p>潍坊路111号校史馆（1947年旧办公楼）前的青铜校钟挂在一座四柱亭内。四根方形深色木柱向上收拢，支着短横梁、方形檐口和低矮的斜坡顶。钟肩向下缓收，钟腹在钟口处外张，口沿内可见悬出的钟舌。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">依据学校在2021年发出的两幅图。钟亭和校钟的总高与开间按图像比例估算，方亭名义高2.69米。铜钟的内部厚度、不可见的挂件、木构背面及屋面背坡为推测。钟亭建造年份待考。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看旧楼前四柱钟亭</button>
+      <button type="button" data-view="oblique">斜看四柱与上梁</button>
+      <button type="button" data-view="tiles">近看钟口与钟舌</button>
+      <button type="button" data-view="rail">看坡顶与檐下横梁</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/pudong-yangjing-school-historic-bell-pavilion/README.md">史料、测量与模型范围</a>
+  <p>照片与沿革据上海市洋泾中学供稿的浦东教育巡展（2021年5月11日）。2016年中国青年网的校史报道提供复校背景。原照片只作研究观察，模型采用原创几何与材质。 <a href="https://www.shangnaxue.net/a/1400625199730200577?cid=101">校方说明与照片</a> · <a href="https://www.krzzjn.com/88/35200.html">复校史料</a> · <a href="https://opensource.org/license/mit/">模型许可</a></p></aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('pudong-yangjing-school-historic-bell-pavilion', {
+  "front": {
+    "center": [
+      0,
+      1.35,
+      0
+    ],
+    "size": [
+      3.38,
+      3.25,
+      1.3975
+    ],
+    "direction": [
+      0.5,
+      0.08,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      2.267,
+      0
+    ],
+    "size": [
+      1.196,
+      1.15,
+      0.49449999999999994
+    ],
+    "direction": [
+      -0.6,
+      -0.25,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      0,
+      2.055,
+      0
+    ],
+    "size": [
+      0.7176,
+      0.69,
+      0.29669999999999996
+    ],
+    "direction": [
+      0.21,
+      -0.34,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0,
+      2.477,
+      0
+    ],
+    "size": [
+      1.3624,
+      1.31,
+      0.5633
+    ],
+    "direction": [
+      0.64,
+      0.47,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
