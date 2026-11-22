@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Fayhoo，2016年2月9日，Wikimedia Commons'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:Wujinlu_225_Long_9,_11_Hao_Zhuzhai.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/3.0/'
+GEOMETRY_LICENSE='CC BY-SA 3.0'
+TEXTURE_LICENSE='MIT (original procedural material textures)'
