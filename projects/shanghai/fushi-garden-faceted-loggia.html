@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>福世花园园侧折线浅拱敞廊与铁栏</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="福世花园园侧折线浅拱敞廊与铁栏"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">长宁区 · 安化路200弄</p>
+    <h1>福世花园园侧折线浅拱敞廊与铁栏</h1>
+      <p>花园一侧二层敞廊的五段折线券底、外挑窗台、分叉花铁栏和后退的两樘玻璃门窗。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">廊口按照片比例估计，净宽约3.58米，栏顶高约1米，后排门窗与栏杆相距约1.2米。被树枝和衣物遮挡的栏花间距与末端以照片中的重复间距推估。两张同栋照片可核，具体门牌缺独立可读证据。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看园侧敞廊</button>
+      <button type="button" data-view="oblique">看分叉铁栏</button>
+      <button type="button" data-view="tiles">看浅拱折面</button>
+      <button type="button" data-view="rail">看后排格窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/changning-fushi-garden-faceted-loggia/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('changning-fushi-garden-faceted-loggia', {
+  "front": {
+    "center": [
+      0,
+      1.3,
+      -0.48
+    ],
+    "size": [
+      4.5760000000000005,
+      4.4,
+      1.8920000000000001
+    ],
+    "direction": [
+      0.22,
+      0.09,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      -0.32,
+      0.878,
+      -0.11
+    ],
+    "size": [
+      0.676,
+      0.65,
+      0.2795
+    ],
+    "direction": [
+      0.23,
+      0.06,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      -1.13,
+      2.35,
+      -0.11
+    ],
+    "size": [
+      1.4768,
+      1.42,
+      0.6105999999999999
+    ],
+    "direction": [
+      -0.63,
+      0.14,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.4,
+      1.47,
+      -1.33
+    ],
+    "size": [
+      2.1632000000000002,
+      2.08,
+      0.8944
+    ],
+    "direction": [
+      0.26,
+      0.03,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
