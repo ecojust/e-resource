@@ -17,3 +17,7 @@
 从31256实际打开独立页，在桌面和触屏尺寸各切换一次近远档。两档画面均可辨四柱门廊、向两侧连续弯转的窗带、双退台和方形小冠，四种下载同各自登记的字节数及SHA-256一致。[两端四幅实图与四项下载](viewer.json) · [浏览器退出记录](standalone-closed.json)
 
 同一底图分组的大陆银行1718与中南银行53在前一版本各使用2个裁切三角面。后者使用有限高度的柱廊裁切。模型1782加入的8个裁切三角使本组达到12个，三项各自绑定到原建筑。最终站的1,866份输入、1,523,949,096字节已逐份通过HTTP，三种真实站点均可读取独立页依赖。[运行时分组核查](runtime-placement.json) · [完整HTTP收据](31256-all-http.json) · [独立页脚本与渲染依赖](real-vendor-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/339987e93ab89d1a214a557705a1548050e4ff83/projects/shanghai/index.html#landmark=huangpu-bank-of-east-asia-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，6 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
