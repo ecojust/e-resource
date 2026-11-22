@@ -1,0 +1,60 @@
+{
+ "model": "jingan-rongkang-villas-changshu-road-lane-front",
+ "release_inputs": [
+  {
+   "role": "raw",
+   "model_sha256": "2efb9099acac3caa977af504cc2cef230194be4054f016e3bccfc6afd9892c1a",
+   "checks": {
+    "physical": [
+     257,
+     257
+    ],
+    "native_pixels": [
+     25,
+     25
+    ]
+   },
+   "evidence": "data/audit/rongkang-villas-changshu-road-lane-front-v1/streetfront/raw-sections.json.gz",
+   "compressed_sha256": "d73e1df10c827f4f339003ca7b8d827a790657849bb8c1329517390ce3131bd3"
+  },
+  {
+   "role": "decoded-full",
+   "model_sha256": "ef4caa439600993573897cb88f5dbc241faa2abd80487bbb7fe0f70e9e75e0d9",
+   "checks": {
+    "physical": [
+     257,
+     257
+    ],
+    "native_pixels": [
+     25,
+     25
+    ]
+   },
+   "evidence": "data/audit/rongkang-villas-changshu-road-lane-front-v1/streetfront/decoded-full-sections.json.gz",
+   "compressed_sha256": "419680f035df86a73c203ad56dd53cde6ef634116cef79fbb4f0c8c8132f1767"
+  },
+  {
+   "role": "decoded-lod",
+   "model_sha256": "21096f0bc63c099b5d2fcecbff7c121ba4fcb7f910e79d821f850b8b913520c6",
+   "checks": {
+    "physical": [
+     257,
+     257
+    ],
+    "native_pixels": [
+     25,
+     25
+    ]
+   },
+   "evidence": "data/audit/rongkang-villas-changshu-road-lane-front-v1/streetfront/decoded-lod-sections.json.gz",
+   "compressed_sha256": "d849303d598cbdc896afe6d0be0029b8b6816f9e9c41c963091f8dd1e08df62c"
+  }
+ ],
+ "method": "Direct first-hit ray tests on the raw deliverable and each independently decoded Meshopt web asset. Tests cover five walls, eighteen upper openings, true shop doors and windows, the parapets, projecting ceramic bands, the open passage, both counters in the number 118, and 25 measured native-photo pixels from 2017 and 2021.",
+ "native_cameras": "streetfront-photo-controls.json",
+ "check_script_sha256": "407a16c1d63e4a22cf911d37b7be1dfe01d2f9538a24a96e8c9c8f730bfcf2c6",
+ "board": "data/audit/rongkang-villas-changshu-road-lane-front-v1/streetfront/streetfront-survey.jpg",
+ "board_sha256": "a062e8c99e8706766d431873880a5bc1c2956c067459a9ddbb56342803ae0ed5",
+ "board_mesh_sha256": "21096f0bc63c099b5d2fcecbff7c121ba4fcb7f910e79d821f850b8b913520c6",
+ "model_includes_photo_pixels": false
+}
