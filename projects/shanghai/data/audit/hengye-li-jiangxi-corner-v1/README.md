@@ -11,3 +11,7 @@
 另从31253正式服务逐件读取独立页、浏览模块及其全部依赖、样式、清单和四个下载，与桌面和手机实拍会话的输入校对散列。[正式服务与双端会话的文件对应](standalone-31253-bindings.json)
 
 普通城市目录由287处增至288处。地图核验了江西中路与泗泾路转角的五处墙体切面、28个街角地面点和18处邻屋。两次浏览器在相同位置拍摄街角，第二幅收起了资料卡，可见深砖圆角、红色横带和浅色挑窗台。金色地标提示仍遮住中央一小部分。两次窗口均已退出。第一轮在拍完画面后发生崩溃，留存了原图和进程记录。[普通城市中的十幅图与独立页六幅](city-31253/visual-review.json) · [原有界面](city-31253/supplemental-corner/first-attempt/street-corner-with-controls.png) · [同机位的街角实景](city-31253/supplemental-corner/completed/street-corner-map.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/815da679e9499ff9295f91893af5f310a9ba8145/projects/shanghai/index.html#landmark=huangpu-hengye-li-jiangxi-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
