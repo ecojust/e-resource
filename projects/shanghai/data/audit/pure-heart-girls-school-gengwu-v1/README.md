@@ -9,3 +9,7 @@
 31258 的 293 个地点全部保留，31259 增至 294 个。两版实测均保持现状建筑和步行碰撞，历史页面单独打开。正式站 1,890 个文件合计 1,538,099,962 字节，逐项符合签名。[原址资料点回验](registered-marker-31259.json) · [前后两版实际请求](historical-marker-31259-http.json) · [全量 HTTP 回执](31259-all-http.json)
 
 桌面 1,250 像素和手机 390 像素分别实点正面、斜看柱列和远档。六幅实图均能辨认中央山花圆窗、四根通高柱与五开间，手机操作区位于模型下方。四个下载均实际保存并逐件验签。[六图与四件下载](viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/c49afe295cdd45ce47075f90889a511abae365b4/projects/shanghai/index.html#landmark=huangpu-pure-heart-girls-school-gengwu-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，5 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
