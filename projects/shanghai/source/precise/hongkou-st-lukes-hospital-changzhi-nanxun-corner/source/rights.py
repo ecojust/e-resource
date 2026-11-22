@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Fayhoo（2016）；老房子爱好者（2021刊）；上海虹口（2023）；独立街景（2015–2021）'
+PHOTO_SOURCE='https://www.shhk.gov.cn/xwzx/002008/002008040/20230807/120972e3-ae79-4420-b022-093ba0da8881.html'
+LICENSE_URL='https://opensource.org/license/mit'
+GEOMETRY_LICENSE='MIT for original authored architectural detail; underlying building footprint retains its source attribution'
+TEXTURE_LICENSE='MIT, original procedural lime render and clay roof tiles'

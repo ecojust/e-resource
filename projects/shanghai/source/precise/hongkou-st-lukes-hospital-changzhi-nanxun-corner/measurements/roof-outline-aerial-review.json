@@ -1,0 +1,240 @@
+{
+  "map_service": "Esri World Imagery and World Imagery Wayback",
+  "releases": [
+    {
+      "edition": "current",
+      "layer": "World Imagery",
+      "metadata_service": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
+    },
+    {
+      "edition": "20210721",
+      "layer": "World Imagery (Wayback 2021-07-21)",
+      "metadata_service": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2021_r10/MapServer"
+    },
+    {
+      "edition": "20240627",
+      "layer": "World Imagery (Wayback 2024-06-27)",
+      "metadata_service": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer"
+    }
+  ],
+  "acquisition_dates": {
+    "20210721": "2019-11-09",
+    "20240627": "2021-11-25",
+    "current": "2025-04-18"
+  },
+  "studied_local_polylines": {
+    "outer_north": {
+      "median_xy_m": [
+        [
+          18.61,
+          -0.48
+        ],
+        [
+          20.78,
+          3.44
+        ],
+        [
+          21.28,
+          6.27
+        ],
+        [
+          19.65,
+          9.08
+        ],
+        [
+          18.0,
+          11.74
+        ],
+        [
+          14.54,
+          12.24
+        ],
+        [
+          10.62,
+          12.23
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        0.41,
+        0.49,
+        0.78,
+        1.04,
+        1.5,
+        1.35,
+        2.1
+      ]
+    },
+    "inner_wing_seam": {
+      "median_xy_m": [
+        [
+          9.03,
+          12.53
+        ],
+        [
+          8.44,
+          8.78
+        ],
+        [
+          6.69,
+          2.15
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        0.91,
+        0.79,
+        1.8
+      ]
+    },
+    "return_join": {
+      "median_xy_m": [
+        [
+          2.67,
+          10.38
+        ],
+        [
+          -0.38,
+          9.21
+        ],
+        [
+          -2.64,
+          8.26
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        0.4,
+        0.57,
+        0.4
+      ]
+    },
+    "long_wing_back_edge": {
+      "median_xy_m": [
+        [
+          2.21,
+          11.34
+        ],
+        [
+          1.05,
+          14.44
+        ],
+        [
+          -0.92,
+          18.3
+        ],
+        [
+          -2.6,
+          21.77
+        ],
+        [
+          -4.18,
+          25.38
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        0.25,
+        0.25,
+        1.07,
+        1.48,
+        1.77
+      ]
+    },
+    "long_wing_far_end": {
+      "median_xy_m": [
+        [
+          -4.18,
+          25.38
+        ],
+        [
+          -6.64,
+          23.99
+        ],
+        [
+          -9.21,
+          22.21
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        1.77,
+        1.38,
+        0.93
+      ]
+    },
+    "ridge_north": {
+      "median_xy_m": [
+        [
+          17.84,
+          4.2
+        ],
+        [
+          13.01,
+          4.19
+        ],
+        [
+          8.24,
+          4.49
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        1.93,
+        2.08,
+        2.44
+      ]
+    },
+    "ridge_changzhi": {
+      "median_xy_m": [
+        [
+          -0.92,
+          10.44
+        ],
+        [
+          -2.42,
+          13.81
+        ],
+        [
+          -4.33,
+          17.49
+        ],
+        [
+          -5.74,
+          20.82
+        ]
+      ],
+      "maximum_cross_date_spread_from_median_m": [
+        0.92,
+        0.99,
+        0.97,
+        0.81
+      ],
+      "interpretation": "The broad change of tile tone is a ridge candidate. Position of a sharp ridge cannot be read uniformly in the three acquisitions."
+    }
+  },
+  "units": "metres",
+  "back_cap_xy_m": [
+    [
+      4.441,
+      2.339
+    ],
+    [
+      4.408,
+      4.095
+    ],
+    [
+      2.707,
+      5.321
+    ],
+    [
+      0.634,
+      4.775
+    ]
+  ],
+  "maximum_between_image_disagreement_per_back_vertex_m": [
+    0.175,
+    0.426,
+    0.302,
+    0.248
+  ],
+  "method": [
+    "Eave translations come from the long straight roof edges on the two streets. Cap translations are fitted independently to the upper four corner points measured from the two street photographs. Native imagery 0.31 to 0.5 metres, sampled onto a 0.255 metre grid.",
+    "Roof boundaries describe visible changes of plane or colour. A roof ridge height cannot be inferred from one orthophotograph. The lower neighbour is marked separately in each image and carries different parallax. Its shape is excluded from the historic corner roof."
+  ],
+  "credits": "2019 and 2021 imagery Maxar; 2025 imagery Vantor. The public drawings are generated from independently traced geometry. The aerial imagery is not included."
+}
