@@ -15,3 +15,7 @@
 31254正式站实取全部1,850个文件，共1,515,148,885字节。城市运行时在全目录下核对切面、碰撞和原房保留。独立页通过桌面与390像素手机的近远四图，实际保存四个模型文件。原生文件重开后核验20,940个UV角和内嵌石材纹理。桌面能辨认入口券、双柱、椭圆窗及两层石栏；手机整栋居中，细饰须放大查看。[最终运行时与前后两站](final-renderer-31254-http.json) · [全量HTTP](31254-all-http.json) · [四视图和下载](viewer.json) · [原生UV](native-uv.json)
 
 本次在实测地图上的街面、屋顶、入口和椭圆窗四个机位各保留了一张浏览器画面和一张地图原始画布。入口与椭圆窗的补拍隐藏了本栋地名标签，楔石、完整券弧、椭圆窗石框和两层栏杆均可辨。前后机位、楼体网格、17处邻屋及摄影结果均逐项核对。[四个机位与截图](city-31254/field-supplement/verified-cameras-and-screens.json) · [逐张观察](city-31254/field-supplement/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/f6aec6b7322ef3eb82d29a5e48ae27db626aada6/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

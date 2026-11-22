@@ -3793,7 +3793,7 @@
 | 虎丘公寓虎丘路东立面 | 2026-11-22 23:10:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-huqiu-apartments-east-front&mode=overview) |
 | 兰心大楼圆明园路入口塔楼与东立面 | 2026-11-22 23:36:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-rockbund-lyceum-building&mode=overview) |
 | 恒业里江西中路115号泗泾路转角 | 2026-11-23 00:50:20 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengye-li-jiangxi-corner&mode=overview) |
-| 四明银行北京东路转角门楼 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) |
+| 四明银行北京东路转角门楼 | 2026-11-23 01:40:56 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ningpo-commercial-bank-corner&mode=overview) |
 
 ### 徐汇区（55处）
 
