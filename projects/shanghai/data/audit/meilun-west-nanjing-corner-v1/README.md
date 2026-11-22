@@ -21,3 +21,7 @@ OpenMapTiles将这一街角归在高5米的多部件对象106284410。与前代�
 另从31245正式服务逐件读取独立页、浏览模块、清单和四个下载，与桌面和手机实拍会话的输入校对散列。[正式服务与双端会话的文件对应](standalone-31245-bindings.json)
 
 Three.js核心、GLTF加载器、网格解码、旋转控制与其依赖和样式均可由31245相应地址完整读取。八项均与冻结源文件逐字节相同。[独立页实际运行依赖](standalone-31245-runtime.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/fefff8c028f10fb75f1ff0343e350aa4267dac6a/projects/shanghai/index.html#landmark=huangpu-meilun-west-nanjing-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
