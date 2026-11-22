@@ -18,8 +18,8 @@ SOURCE = Path(__file__).resolve().parent
 TEXTURE = SOURCE / "yiding-cream-render.png"
 MATERIAL = "Yiding pale roughcast"
 UV = "Yiding pale roughcast UV"
-RAW_ENV = "YIDING_STEEL_CASEMENTS_RAW"
-MODE_ENV = "YIDING_STEEL_CASEMENTS_BLENDER_STAGE"
+RAW_ENV = "YIDING_ROOF_PAVILION_RAW"
+MODE_ENV = "YIDING_ROOF_PAVILION_BLENDER_STAGE"
 
 
 def sha(path):
@@ -179,7 +179,7 @@ def check_reopened():
     assert node.inputs["Vector"].links[0].from_node.uv_map == UV and node.extension == "REPEAT"
     assert hashlib.sha256(bytes(node.image.packed_file.data)).hexdigest() == scene["stucco_texture_sha256"] == sha(TEXTURE)
     faces = texture_faces(raw)
-    report["zhongyi_steel_casements"] = dict(raw_sha256=sha(raw), texture_sha256=sha(TEXTURE), textured_corners=3*len(faces),
+    report["yiding_roof_pavilion"] = dict(raw_sha256=sha(raw), texture_sha256=sha(TEXTURE), textured_corners=3*len(faces),
                               max_uv_error=native_uv(scene, faces, False), cameras=cameras(scene, False))
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 
