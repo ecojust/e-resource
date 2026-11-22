@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>永嘉路39弄郑家衖弄口与院内横屋</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x=".59" aria-label="永嘉路39弄双门柱及院内横屋"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 永嘉路</p>
+    <h1>郑家衖</h1>
+    <p>永嘉路39弄弄口与院内横屋</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">临街双柱之间通往弄内。三层横屋的绿底“家政”牌、百叶窗和短雨篷在2015年原照中仍可辨认。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="oblique">看弄口与花池</button>
+      <button type="button" data-view="front">院内横屋</button>
+      <button type="button" data-view="above">瓦面与烟囱</button>
+      <button type="button" data-view="inscription">39弄门牌</button>
+      <button type="button" data-view="return">“家政”牌与箭头</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="data/audit/zhengjia-lane-39-street-gate-v1/street-views/yongjia-39-court-and-gate.jpg">弄口与门牌近景图</a>
+    <a href="data/audit/zhengjia-lane-39-street-gate-v1/street-views/yongjia-39-court-and-gate-lod.jpg">远景简化图</a>
+    <a href="data/audit/zhengjia-lane-39-street-gate-v1/courtyard-windows/whole-photo-comparison.jpg">对照院内原照与模型</a>
+    <a href="source/precise/huangpu-zhengjia-lane-39-street-gate/README.md">实照、构件测量与重建方法</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-zhengjia-lane-39-street-gate', {
+  "front": {
+    "center": [
+      5.57,
+      4.99,
+      -45.85
+    ],
+    "size": [
+      15.211,
+      6.307,
+      2.226
+    ],
+    "direction": [
+      -0.0495051,
+      0.0165017,
+      0.9986375
+    ]
+  },
+  "oblique": {
+    "center": [
+      -0.71,
+      1.11,
+      0.63
+    ],
+    "size": [
+      9.84,
+      4.08,
+      1.44
+    ],
+    "direction": [
+      -0.5837403,
+      0.273143,
+      0.7646176
+    ]
+  },
+  "above": {
+    "center": [
+      5.55,
+      8.84,
+      -46.0
+    ],
+    "size": [
+      12.4476,
+      5.1612,
+      1.8216
+    ],
+    "direction": [
+      -0.4137523,
+      0.3254035,
+      0.8502479
+    ]
+  },
+  "inscription": {
+    "center": [
+      0.05,
+      1.57,
+      0
+    ],
+    "size": [
+      5.084,
+      2.108,
+      0.744
+    ],
+    "direction": [
+      0.0101478,
+      0.117424,
+      0.99303
+    ]
+  },
+  "return": {
+    "center": [
+      3.61,
+      2.48,
+      -45.76
+    ],
+    "size": [
+      2.3944,
+      0.9928,
+      0.3504
+    ],
+    "direction": [
+      -0.0557741,
+      0.0214516,
+      0.9982129
+    ]
+  }
+});
+  </script>
+</body>
+</html>

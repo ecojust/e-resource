@@ -1,0 +1,5 @@
+PHOTO_AUTHOR='Antigng, 2015-09-09; independently identified in dated Yongjia Road street views'
+PHOTO_SOURCE='https://commons.wikimedia.org/wiki/File:%E9%83%91%E5%AE%B6%E5%BC%84.jpg'
+LICENSE_URL='https://creativecommons.org/licenses/by-sa/4.0/'
+GEOMETRY_LICENSE='CC BY-SA 4.0; replacement address lettering SIL OFL 1.1'
+TEXTURE_LICENSE='MIT'
