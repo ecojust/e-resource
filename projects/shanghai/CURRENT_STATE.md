@@ -1,3 +1,11 @@
+# 虎丘公寓虎丘路东立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-huqiu-apartments-east-front&mode=overview) · [单体旋转与下载](huqiu-apartments-east-front.html) · [来源与制作范围](source/precise/huangpu-huqiu-apartments-east-front/README.md) · [验收记录](data/audit/huqiu-apartments-east-front-v1/README.md)
+
+对照3A013、虎丘路131号的原青年协会大楼及现状街照，制作临街东面、双柱石门廊、“虎丘公寓”题额与分格门窗。按具名足印与底图2591定位，保留相邻光陆大楼2457和颐中大楼2726。
+
+近景 23,416 个三角面，远景 14,924 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,953,970 字节。上海主图现有 286 处独立入口，黄浦区 121 处。[资产清单](assets/models/candidates/huangpu-huqiu-apartments-east-front/manifest.json)
+
 # 广东路102号三菱洋行西南圆塔与拱门
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsubishi-trading-house-round-corner&mode=overview) · [单体旋转与下载](mitsubishi-trading-house-corner.html) · [来源与制作范围](source/precise/huangpu-mitsubishi-trading-house-round-corner/README.md) · [验收记录](data/audit/mitsubishi-trading-house-corner-v1/README.md)

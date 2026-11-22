@@ -1,0 +1,24 @@
+4 actual city LOD groups; 22 independent neighbours; 20 ground points
+{'raw': 96, 'web': 96, 'lod': 96}
+Traceback (most recent call last):
+  File "/workspace/e-resource/projects/shanghai/data/audit/zhu-douwen-side-porch-v1/check-aggregate.py", line 66, in <module>
+    with TemporaryDirectory()as tmp:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 886, in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 384, in mkdtemp
+    _os.mkdir(file, 0o700)
+OSError: [Errno 28] No space left on device: '/tmp/tmp7x0qgow8'
+Traceback (most recent call last):
+  File "/tmp/kangding759-316/mapping/handoff/post-geometry.py", line 15, in <module>
+    subprocess.run([sys.executable,'-Bu',WORK/'array-run.py',sys.executable,'-Bu',AUDIT/program,*args],env={**os.environ,'OPENBLAS_NUM_THREADS':'1'},check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/kangding759-316/array-run.py'), '/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/workspace/e-resource/projects/shanghai/data/audit/zhu-douwen-side-porch-v1/check-aggregate.py'), '--manifest', PosixPath('/workspace/e-resource/projects/shanghai/assets/models/candidates/jingan-zhu-douwen-residence-side-porch/manifest.json'), '--out', PosixPath('/workspace/e-resource/projects/shanghai/data/audit/zhu-douwen-side-porch-v1/effective-uv.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/kangding759-316/mapping/handoff/run-recovered.py", line 124, in <module>
+    subprocess.run([sys.executable,'-Bu',HERE/'post-geometry.py'],check=True,env={**os.environ,'OPENBLAS_NUM_THREADS':'1'})
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/kangding759-316/mapping/handoff/post-geometry.py')]' returned non-zero exit status 1.

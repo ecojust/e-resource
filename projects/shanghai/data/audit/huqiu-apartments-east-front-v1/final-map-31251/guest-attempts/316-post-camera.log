@@ -1,0 +1,18 @@
+4 actual city LOD groups; 22 independent neighbours; 20 ground points
+{'raw': 96, 'web': 96, 'lod': 96}
+{"input":"/workspace/e-resource/projects/shanghai/assets/models/candidates/jingan-zhu-douwen-residence-side-porch/jingan-zhu-douwen-residence-side-porch-web.glb","output":"/run/codex-docker/user/316-post-geometry/tmpcuec_mao/full.glb","decoded_bytes":1737896}
+{"input":"/workspace/e-resource/projects/shanghai/assets/models/candidates/jingan-zhu-douwen-residence-side-porch/jingan-zhu-douwen-residence-side-porch-lod.glb","output":"/run/codex-docker/user/316-post-geometry/tmpcuec_mao/lod.glb","decoded_bytes":1017632}
+Traceback (most recent call last):
+  File "/tmp/kangding759-316/mapping/handoff/post-geometry.py", line 17, in <module>
+    assert read(AUDIT/f)==read(AUDIT/'preflight'/f),f
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: camera-sightlines.json
+Traceback (most recent call last):
+  File "/run/codex-docker/user/finish-316-native.py", line 27, in <module>
+    exec(compile('if True:\n'+checks,str(original),'exec'))
+  File "/tmp/kangding759-316/mapping/handoff/run-recovered.py", line 22, in <module>
+    begin=datetime.datetime.now(datetime.timezone.utc).isoformat()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/kangding759-316/mapping/handoff/post-geometry.py')]' returned non-zero exit status 1.
