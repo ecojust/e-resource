@@ -23,3 +23,7 @@
 ## 外滩26号在第239期正式城区中的实测
 
 正式目录由275处增至276处。普通目录和地图灯牌分别用桌面鼠标和390像素手机触屏点选。外滩东面街景核对南北入口、中央三轴窗、通高壁柱、阳台与退后阁楼，21处街面与12栋邻屋逐点复查。远近档和四次资产保存均读回至本机，12张城图与6张独立页图分别记录实际可见内容。[真实退出与逐段报告](final-map-31239/slot-released.json) · [逐图观察](final-map-31239/visual-review.json) · [地面和专项取景](final-map-31239/architecture/main-browser.json) · [全站实取](final-map-31239/all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/e4250fec0bbbc3bf75f03e13a722f61b3ce7568c/projects/shanghai/index.html#landmark=huangpu-yangtze-insurance-bund-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
