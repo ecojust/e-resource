@@ -1,3 +1,11 @@
+# 乍浦路桥
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=overview) · [单体旋转与下载](zhapu-road-bridge.html) · [来源与制作范围](source/precise/huangpu-zhapu-road-bridge/README.md) · [验收记录](data/audit/zhapu-road-bridge-v1/README.md)
+
+按市表2A013、《上海市政工程志》的1927年三跨梁桥记录，以及2010、2014年的实照，制作中跨、两侧短跨、梁底曲线、桥墩与可见桥面。
+
+近景 21,760 个三角面，远景 8,120 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,744,257 字节。上海主图现有 267 处独立入口，黄浦区 105 处。[资产清单](assets/models/candidates/huangpu-zhapu-road-bridge/manifest.json)
+
 # 中央造币厂主楼三角山花与六柱门廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-central-mint-main-portico&mode=overview) · [单体旋转与下载](central-mint-main-portico.html) · [来源与制作范围](source/precise/putuo-central-mint-main-portico/README.md) · [验收记录](data/audit/central-mint-main-portico-v1/README.md)
