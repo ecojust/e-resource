@@ -3789,7 +3789,7 @@
 | 四川路桥三孔桥身与两侧人行道 | 2026-11-22 03:21:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-sichuan-road-bridge&mode=walk) |
 | 益丰洋行大楼北京东路西端券窗与切角 | 2026-11-22 04:16:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-abraham-building-beijing-front&mode=overview) |
 | 乍浦路桥 | 2026-11-22 09:38:51 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=overview) · [漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhapu-road-bridge&mode=walk) |
-| 礼和洋行九江路街面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) |
+| 礼和洋行九江路街面 | 2026-11-22 12:29:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) |
 
 ### 徐汇区（55处）
 

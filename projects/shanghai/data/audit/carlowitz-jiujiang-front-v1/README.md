@@ -25,3 +25,7 @@
 普通独立页分别在1250×820桌面、390×844触屏选择近景和远景。四张图均显示整段正面与其重复开间。近档119,146面、远档46,670面。可由页面下载原始GLB（7,474,896字节）、网页GLB（2,892,704字节）、远档GLB（796,684字节）和可编辑Blender文件（1,833,175字节）。四次浏览器保存的大小与逐文件摘要均吻合。
 
 [实机、地面与四种下载](city-31233/process-exits.json) · [旧城对照](city-31233/map-before.png) · [九江路街面立面](city-31233/map-jiujiang-street-front.png) · [东端两跨弧窗与石栏](city-31233/map-eastern-bowed-windows.png) · [远档](city-31233/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/054764953268e920e377d8a85e158c0c2e9d86c3/projects/shanghai/index.html#landmark=huangpu-carlowitz-jiujiang-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
