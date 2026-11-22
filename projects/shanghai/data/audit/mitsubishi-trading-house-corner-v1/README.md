@@ -9,3 +9,7 @@
 独立底模302的地块与实际OSM第3版轮廓交并比98.71%。规划裁口只占西南角一小段，原地块近景保留96.53%，远景保留96.57%。同组的825号与1289号及其余地块保持原样。25个地面点覆盖路口、门前石阶、合拢的门扇及后方原楼。桌面和手机的目录相机均核对了8处立面构件。各视口的实际尺寸与射线见原始数据。[原地块](../../../source/precise/huangpu-mitsubishi-trading-house-round-corner/footprint-review.json) · [裁切和地面](placement-geometry.json) · [相机计算](camera-sightlines.json) · [真实源网格视线](source-ray-sightlines.json)
 
 正式前后两站为284处和285处。独立页在桌面与390像素手机上分别加载完整和远景网格，四次保存均与清单逐字一致。285处站实取1,818项、1,500,523,001字节。整城专项仍在队列中。[独立查看实测](viewer.json) · [前后站点与渲染器](final-renderer-31250-http.json) · [完整下载核对](31250-all-http.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/0c00b1c0e75a06f8696b4011a64f8dc31cbc9114/projects/shanghai/index.html#landmark=huangpu-mitsubishi-trading-house-round-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
