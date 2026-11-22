@@ -1,15 +1,9 @@
 # 原汤公馆南门廊中跨弧形阳台与双柱
 
-四川北路2023弄35号南门廊的两根中央通高石柱、科林斯式柱头、弧形阳台石边及铁花栏杆，并表现其后可见的红褐色木窗。
+四川北路2023弄35号南门廊的两根中央通高石柱、科林斯式柱头、弧形阳台石边及铁花栏杆，并表现其后可见的红褐色木窗。 尺寸按斜向外观照片的比例估算。两层通高、四柱与阳台形式可由区级档案和第二张照片交叉确认。
 
-| 下载 | 三角面 | 字节 |
-| --- | ---: | ---: |
-| [原始网格](hongkou-tang-residence-south-balcony-bay-raw.glb?raw=true) | 17,224 | 1,361,052 |
-| [近景模型](hongkou-tang-residence-south-balcony-bay-web.glb?raw=true) | 17,224 | 655,660 |
-| [远景模型](hongkou-tang-residence-south-balcony-bay-lod.glb?raw=true) | 6,704 | 254,264 |
+[原始 GLB](hongkou-tang-residence-south-balcony-bay-raw.glb?raw=true) · [近景 GLB](hongkou-tang-residence-south-balcony-bay-web.glb?raw=true) · [远景 GLB](hongkou-tang-residence-south-balcony-bay-lod.glb?raw=true) · [可编辑 Blender](hongkou-tang-residence-south-balcony-bay.blend?raw=true)
 
-近远正面均可分辨光面石柱、层层柱脚、卷叶柱头及栏杆。斜视可见栏杆沿阳台外弧绕回，前缘石线分出四层，后方两组木窗之间留有墙垛。修订后底层门下段有实木板；远档叶饰比近档简洁。
+[打开模型](../../../../tang-residence-south-balcony-bay.html) · [照片出处](../../../../source/precise/hongkou-tang-residence-south-balcony-bay/reference-review.json) · [桌面与手机十张实图](../../../../data/audit/tang-residence-south-balcony-bay-v1/development-views) · [逐图核对](../../../../data/audit/tang-residence-south-balcony-bay-v1/development-views/actual-visual-review.json)
 
-[近景正面](../../../data/audit/tang-residence-south-balcony-bay-v1/development-first-study/model-front.jpg) · [近景斜面](../../../data/audit/tang-residence-south-balcony-bay-v1/development-first-study/model-oblique.jpg) · [远景正面](../../../data/audit/tang-residence-south-balcony-bay-v1/development-first-study/model-lod-front.jpg) · [远景斜面](../../../data/audit/tang-residence-south-balcony-bay-v1/development-first-study/model-lod-oblique.jpg)
-
-[模型范围与摄影出处](../../../source/precise/hongkou-tang-residence-south-balcony-bay/README.md) · [三档构件检查](../../../data/audit/tang-residence-south-balcony-bay-v1/development-first-study/geometry-rays.json)
+可编辑工程包含25个网格。两屏正面可见前方两根浅色通高柱，柱后两层红褐色木窗。桌面斜视和俯视显示阳台前缘曲线，近远两档的局部都能分辨深色铁栏。 四项下载均已逐件保存核对。
