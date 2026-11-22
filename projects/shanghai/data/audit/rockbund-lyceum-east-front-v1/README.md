@@ -11,3 +11,7 @@
 独立页从正式站打开后，桌面1250×820和手机390×844均可完整看到入口塔和右侧北翼。塔顶浅色券窗、下方带三角楣的窗、两侧齿状石边和街层门洞在近远两档均可分辨。正面全图里的门额和185号字样较小，详部见门楼局部。四个下载分别为原始GLB、网页GLB、远景GLB和Blender工程，浏览器实存共2,004,505字节，逐文件与登记指纹相合。[桌面近景](viewer-desktop-full.png) · [手机近景](viewer-mobile-full.png) · [入口局部](entrance-mesh-study.jpg) · [四图及下载记录](viewer.json) · [街照与双端对读](viewer-visual-review.json)
 
 本次登记使全城目录由286处增至287处。正式站的1,834个输入均已实取，共1,507,128,151字节。矢量裁切保留17栋相邻实体及同一聚合要素的其余27片。登记前的同组模型按原目录顺序复核，原先数值排序造成的检查失败留有记录。[前后目录与运行文件](final-renderer-31252-http.json) · [正式全站实取](31252-all-http.json) · [按前版矢量实算](vectors/final-251.json) · [原有两栋的登记顺序](previous-owner-order-check.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/346078583eb17f7d294e8a27be5af116bd5dcb74/projects/shanghai/index.html#landmark=huangpu-rockbund-lyceum-building&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

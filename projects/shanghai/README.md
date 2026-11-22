@@ -190,7 +190,7 @@
 | 元芳弄原沪宁铁路局东南角塔楼 | 2026-11-22 22:12:23 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanfang-lane-railway-corner&mode=overview) |
 | 广东路102号三菱洋行西南圆塔与拱门 | 2026-11-22 22:40:50 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsubishi-trading-house-round-corner&mode=overview) |
 | 虎丘公寓虎丘路东立面 | 2026-11-22 23:10:22 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-huqiu-apartments-east-front&mode=overview) |
-| 兰心大楼圆明园路入口塔楼与东立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-rockbund-lyceum-building&mode=overview) |
+| 兰心大楼圆明园路入口塔楼与东立面 | 2026-11-22 23:36:35 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-rockbund-lyceum-building&mode=overview) |
 
 ### 徐汇区（55处）
 
