@@ -1,3 +1,11 @@
+# 瑞康洋行买办住宅（贝润生宅）历史庭院立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ruikang-comprador-residence&mode=overview) · [单体旋转与下载](ruikang-comprador-residence-history.html) · [来源与制作范围](source/precise/huangpu-ruikang-comprador-residence/README.md) · [验收记录](data/audit/ruikang-comprador-residence-v1/README.md)
+
+第三批3A020*登记黄陂南路25号乙并注约2000年灭失。按瞿凯署名旧照片和相互印证的庭院影像制作三券露廊、中央山花及可见窗组。以街坊为历史资料标记，1999为入录年，2019为照片再刊年。
+
+近景 59,600 个三角面，远景 35,996 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,769,590 字节。上海主图现有 293 处独立入口，黄浦区 128 处。[资产清单](assets/models/candidates/huangpu-ruikang-comprador-residence/manifest.json)
+
 # 谦信大楼江西中路中央六券窗廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qianxin-building-historic-front&mode=overview) · [单体旋转与下载](qianxin-six-arches-history.html) · [来源与制作范围](source/precise/huangpu-qianxin-building-historic-front/README.md) · [验收记录](data/audit/qianxin-historic-front-v1/README.md)
