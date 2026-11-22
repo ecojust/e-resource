@@ -1,3 +1,11 @@
+# 广东路102号三菱洋行西南圆塔与拱门
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-mitsubishi-trading-house-round-corner&mode=overview) · [单体旋转与下载](mitsubishi-trading-house-corner.html) · [来源与制作范围](source/precise/huangpu-mitsubishi-trading-house-round-corner/README.md) · [验收记录](data/audit/mitsubishi-trading-house-corner-v1/README.md)
+
+按3A012的分段门牌、1947年照片与2015年1月2日实照，制作西南圆角的平切券门、四层三窗轴曲面、透空栏杆和屋面圆鼓。
+
+近景 36,400 个三角面，远景 17,970 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,577,624 字节。上海主图现有 285 处独立入口，黄浦区 120 处。[资产清单](assets/models/candidates/huangpu-mitsubishi-trading-house-round-corner/manifest.json)
+
 # 元芳弄原沪宁铁路局东南角塔楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanfang-lane-railway-corner&mode=overview) · [单体旋转与下载](yuanfang-railway-corner.html) · [来源与制作范围](source/precise/huangpu-yuanfang-lane-railway-corner/README.md) · [验收记录](data/audit/yuanfang-railway-corner-v1/README.md)

@@ -1,0 +1,37 @@
+250 15 78 d8b88b27e79e299e0d6c6f54148574b05f341dfd889f89cdcb0bba4b9375188d
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-250/admit-recovered-315.py", line 60, in <module>
+    for f in (*new_audit.iterdir(),*new_assets.iterdir()):copy(f,(audit if f.parent==new_audit else assets)/f.name)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shanghai-publisher-preservation/city-250/admit-recovered-315.py", line 20, in copy
+    if dst.is_file():assert sha(src)==sha(dst),dst
+                            ^^^^^^^^^^^^^^^^^^
+AssertionError: /workspace/e-resource/projects/shanghai/data/audit/eye-hospital-building-three-front-v1/geometry-native.json
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-250/offer-315-after-restart.py", line 46, in <module>
+    subprocess.run([sys.executable,'-Bu',b['admit'],kind,str(exit_file)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/workspace/shanghai-publisher-preservation/city-250/admit-recovered-315.py', 'native', '/tmp/shanghai-main-250/evidence/before/closed.json']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-250/run-250-recovered.py", line 22, in <module>
+    subprocess.run([sys.executable,'-Bu',w/'offer-315-after-restart.py','native' if part=='before' else 'viewer'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-250/offer-315-after-restart.py'), 'native']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-250/when-249-closed-recovered.py", line 17, in <module>
+    run('run-250-recovered.py',m);run('merge-250.py');run('viewer-recovered.py','--assigned-standalone-slot');run('bind-full-http.py');run('archive.py','250')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-250/when-249-closed-recovered.py", line 8, in run
+    def run(name,*args):subprocess.run([sys.executable,'-Bu',w/name,*args],check=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-250/run-250-recovered.py'), PosixPath('/tmp/shanghai-main-249/249-map-slot-released.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-250/after-249.py", line 17, in <module>
+    subprocess.run([sys.executable,'-Bu',host/'when-249-closed-recovered.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-250/when-249-closed-recovered.py')]' returned non-zero exit status 1.

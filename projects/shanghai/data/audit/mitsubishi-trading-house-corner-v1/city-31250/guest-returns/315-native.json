@@ -1,0 +1,176 @@
+{
+  "order": 315,
+  "host": 250,
+  "kind": "native",
+  "exit": 0,
+  "pid": 2622030,
+  "started": "2026-11-22T14:14:07.395110+00:00",
+  "finished": "2026-11-22T14:14:47.268882+00:00",
+  "observed_descendants": {
+    "2622146": {
+      "parent": 2622030,
+      "birth": 3265428,
+      "name": "MainThread"
+    },
+    "2622168": {
+      "parent": 2622030,
+      "birth": 3265452,
+      "name": "MainThread"
+    },
+    "2622185": {
+      "parent": 2622030,
+      "birth": 3265483,
+      "name": "python3"
+    },
+    "2622186": {
+      "parent": 2622185,
+      "birth": 3265490,
+      "name": "blender"
+    },
+    "2622730": {
+      "parent": 2622030,
+      "birth": 3268581,
+      "name": "python3"
+    },
+    "2622731": {
+      "parent": 2622730,
+      "birth": 3268585,
+      "name": "blender"
+    },
+    "2622747": {
+      "parent": 2622030,
+      "birth": 3268708,
+      "name": "magick"
+    },
+    "2622748": {
+      "parent": 2622030,
+      "birth": 3268711,
+      "name": "python3"
+    },
+    "2622749": {
+      "parent": 2622748,
+      "birth": 3268713,
+      "name": "oidnDenoise"
+    },
+    "2622827": {
+      "parent": 2622030,
+      "birth": 3269057,
+      "name": "magick"
+    },
+    "2622829": {
+      "parent": 2622030,
+      "birth": 3269075,
+      "name": "MainThread"
+    }
+  },
+  "wrapper_closed": true,
+  "remaining": [],
+  "host_receipt_sha256": "7b5feab82d98d762b3880fe668aa2f454af2a860992665a7487f62eb8fe3da7d",
+  "host_report_sha256": "46e2fd8980a0e78d2c1994d6ec1d3c36ddfca6aba337451067c69b2b4358f90c",
+  "dispatch_sha256": "9e7969c610becc7a3a9e1ca85aff4de77fc58dfc4a104bf19d280f52723b319d",
+  "parent_snapshot_sha256": "211f37483790bb53a6fc46b8894b25bd6718d709e945ea6fb5c4d711d90f3b29",
+  "parent_receipt_sha256": "d5545a5eae78782dc6149573929fdcae6c1d61f7969d400b025bd8fa34e06abb",
+  "passed": true,
+  "assets": {
+    "raw": {
+      "file": "jingan-eye-hospital-building-three-front-raw.glb",
+      "bytes": 1501484,
+      "sha256": "6e4c1f8944822bfd5a5eb13d369b0ba905caf9ad6b982fe84167a826fb6d275f",
+      "triangles": 25226,
+      "bounds_gltf_m": [
+        [
+          -3.325000047683716,
+          0.0,
+          -2.7200000286102295
+        ],
+        [
+          3.325000047683716,
+          17.84000015258789,
+          2.4549999237060547
+        ]
+      ],
+      "materials": 13
+    },
+    "full": {
+      "file": "jingan-eye-hospital-building-three-front-web.glb",
+      "bytes": 591568,
+      "sha256": "3eea7d8fab9618400861a563c825694a7322acfb032ec4f159bfbff408d359de",
+      "triangles": 25226,
+      "bounds_gltf_m": [
+        [
+          -3.32500005,
+          0,
+          -2.72000003
+        ],
+        [
+          3.32500005,
+          17.8400002,
+          2.45499992
+        ]
+      ],
+      "materials": 13
+    },
+    "lod": {
+      "file": "jingan-eye-hospital-building-three-front-lod.glb",
+      "bytes": 235328,
+      "sha256": "af5bbfc33b794729bd39a901219d8b43e915f10a84745483b72cfcea2e4e33da",
+      "triangles": 9660,
+      "bounds_gltf_m": [
+        [
+          -3.32500005,
+          0,
+          -2.72000003
+        ],
+        [
+          3.32500005,
+          17.8400002,
+          2.45499992
+        ]
+      ],
+      "materials": 13
+    },
+    "native": {
+      "file": "jingan-eye-hospital-building-three-front.blend",
+      "bytes": 411580,
+      "sha256": "e30b86606ea79e3289d3c4844760b83954ef50addd1249e438d3dfd14524b62b"
+    }
+  },
+  "manifest_sha256": "b38c19fd49723f056c05c523053ebe80a8983a9341233d8892b2b595ffe6a305",
+  "geometry_native_sha256": "b5490a8752f53639405cf793fcad289650ca087853ffb3954200b45b68fb4266",
+  "group_count": 150,
+  "blender_pids": [
+    2622186,
+    2622731
+  ],
+  "native_stages": [
+    {
+      "stage": "render",
+      "program": "blender",
+      "pid": 2622186,
+      "wrapper_pid": 2622185,
+      "started": "2026-11-22T14:14:11.306180+00:00",
+      "finished": "2026-11-22T14:14:42.211272+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "reopen",
+      "program": "blender",
+      "pid": 2622731,
+      "wrapper_pid": 2622730,
+      "started": "2026-11-22T14:14:42.258344+00:00",
+      "finished": "2026-11-22T14:14:43.482147+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "denoise",
+      "program": "/tmp/country-tools/oidn/bin/oidnDenoise",
+      "pid": 2622749,
+      "wrapper_pid": 2622748,
+      "started": "2026-11-22T14:14:43.538545+00:00",
+      "finished": "2026-11-22T14:14:46.956578+00:00",
+      "exit": 0
+    }
+  ],
+  "remaining_blender": [],
+  "remaining_oidn": []
+}
