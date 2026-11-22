@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>海青大楼顶层双窗与成对弧形檐托</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="海青大楼顶层双窗与成对弧形檐托" data-oblique="positive-x" id="model-view"></main>
+<header>
+<a href="landmarks.html">← 返回建筑目录</a>
+<p class="eyebrow">黄浦区 · 四川中路630号</p>
+<h1>海青大楼</h1>
+<p>顶层双窗与成对弧形檐托</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">四川中路与香港路街口浅色顶层的双窗、独立弧篷、深檐下的两组弯托及两侧转回处。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">看顶层双窗</button>
+<button data-view="oblique" type="button">看街角折回</button>
+<button data-view="above" type="button">仰看成对檐托</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/huangpu-navy-ymca-paired-eave-brackets/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer("huangpu-navy-ymca-paired-eave-brackets", {
+  "front": {
+    "center": [
+      0,
+      1.74,
+      -0.22
+    ],
+    "size": [
+      6.7,
+      3.54,
+      2.03
+    ],
+    "direction": [
+      0,
+      0.02,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0,
+      1.74,
+      -0.22
+    ],
+    "size": [
+      6.72,
+      3.54,
+      2.03
+    ],
+    "direction": [
+      0.48,
+      0.13,
+      1
+    ]
+  },
+  "above": {
+    "center": [
+      -0.74,
+      2.93,
+      0.2
+    ],
+    "size": [
+      3.0,
+      1.46,
+      1.73
+    ],
+    "direction": [
+      -0.22,
+      -0.22,
+      1
+    ]
+  }
+});
+  </script>
+</body>
+</html>
+
