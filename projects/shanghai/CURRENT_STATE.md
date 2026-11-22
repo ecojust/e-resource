@@ -1,3 +1,11 @@
+# 中央造币厂主楼三角山花与六柱门廊
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=putuo-central-mint-main-portico&mode=overview) · [单体旋转与下载](central-mint-main-portico.html) · [来源与制作范围](source/precise/putuo-central-mint-main-portico/README.md) · [验收记录](data/audit/central-mint-main-portico-v1/README.md)
+
+核对市表2N001、历史全景和2016年1月9日实照，制作光复西路17号旧主楼的中央山花、六根爱奥尼亚柱及两侧短窗墙。
+
+近景 35,492 个三角面，远景 19,896 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,617,230 字节。上海主图现有 266 处独立入口，普陀区 3 处。[资产清单](assets/models/candidates/putuo-central-mint-main-portico/manifest.json)
+
 # 延庆路130号住宅南向庭院立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yanqing-road-130-residence&mode=overview) · [单体旋转与下载](yanqing-road-130.html) · [来源与制作范围](source/precise/xuhui-yanqing-road-130-residence/README.md) · [验收记录](data/audit/yanqing-road-130-v1/README.md)

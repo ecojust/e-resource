@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-229/final-map-31229/run.py", line 27, in <module>
+    fcntl.fcntl(fd,fcntl.F_ADD_SEALS,fcntl.F_SEAL_SHRINK|fcntl.F_SEAL_GROW|fcntl.F_SEAL_WRITE|fcntl.F_SEAL_SEAL)
+                   ^^^^^^^^^^^^^^^^^
+AttributeError: module 'fcntl' has no attribute 'F_ADD_SEALS'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-229/final-map-31229/sequence.py", line 155, in <module>
+    assert rc==0 and rcfile.read_text().strip()=='0' and json.loads(rp.read_bytes())['completed'] and row['node_closed'] and chromes and not row['remaining_children'] and not row['remaining_chromium'],row
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'phase': 'before', 'exit_code': 1, 'node_pids': [], 'chromium_pids': [], 'node_closed': False, 'remaining_children': [], 'started': '2026-11-21T22:36:16.615118+00:00', 'finished': '2026-11-21T22:36:22.328020+00:00', 'remaining_chromium': [], 'report_sha256': None}
+Traceback (most recent call last):
+  File "/workspace/.e-resource-recovery/history/replay229/continue-229.py", line 4, in <module>
+    for script in ('sequence.py','real-viewer.py','archive.py'):subprocess.run([sys.executable,'-Bu',w/script],cwd=w,check=True)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-229/final-map-31229/sequence.py')]' returned non-zero exit status 1.

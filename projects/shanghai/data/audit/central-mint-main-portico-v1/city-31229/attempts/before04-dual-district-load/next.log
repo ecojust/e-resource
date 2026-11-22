@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-229/final-map-31229/sequence.py", line 155, in <module>
+    assert rc==0 and rcfile.read_text().strip()=='0' and json.loads(rp.read_bytes())['completed'] and row['node_closed'] and chromes and not row['remaining_children'] and not row['remaining_chromium'],row
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'phase': 'before', 'exit_code': 1, 'node_pids': [602417], 'chromium_pids': [602433], 'node_closed': True, 'remaining_children': [], 'started': '2026-11-21T22:42:39.345065+00:00', 'finished': '2026-11-21T22:43:11.466312+00:00', 'remaining_chromium': [], 'report_sha256': '757d89d2a4c1ec06902011891a9a2752f142cce86bfa80051d16eccafd3bbd99'}
+Traceback (most recent call last):
+  File "/workspace/.e-resource-recovery/history/replay229/continue-229.py", line 4, in <module>
+    for script in ('sequence.py','real-viewer.py','archive.py'):subprocess.run([sys.executable,'-Bu',w/script],cwd=w,check=True)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-229/final-map-31229/sequence.py')]' returned non-zero exit status 1.
