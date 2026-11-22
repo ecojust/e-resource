@@ -6,4 +6,4 @@
 
 [打开模型](../../../../zhang-shuxun-garden-arcade.html) · [照片出处](../../../../source/precise/xuhui-zhang-shuxun-garden-arcade/reference-review.json) · [桌面与手机十张实图](../../../../data/audit/zhang-shuxun-garden-arcade-v1/development-views) · [逐图核对](../../../../data/audit/zhang-shuxun-garden-arcade-v1/development-views/actual-visual-review.json)
 
-可编辑工程包含28个网格。桌面和手机查看器保留了正面、斜侧和菱格栏板近摄，四项下载已经逐件保存核对。
+可编辑工程包含62个网格。桌面和手机的近景可见三列半圆券、浅色石柱与深色钢窗。柱头特写显示卷叶和两道领圈。四项下载均已保存并核对。
