@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>沪南钱业公所 · 古城公园南门楼</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique="negative-x" data-oblique-x="-0.56" aria-label="古城公园内沪南钱业公所三券门楼"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-south-money-guild-gucheng-gate&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 古城公园</p>
+    <h1>沪南钱业公所</h1>
+    <p>迁建现址南面砖雕门楼</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">沪南钱业公所1883年建于北施家弄133号，2000年抢救拆解，2002年起迁建古城公园，2004年对外开放。南门保留三道石券，砖额自右向左刻“滬南錢業公所”。本模型据2014、2015及2020年照片制作。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看三券门额</button>
+      <button type="button" data-view="oblique">斜看石券与门枕</button>
+      <button type="button" data-view="above">高处看三组翘檐</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-south-money-guild-gucheng-gate/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-south-money-guild-gucheng-gate');
+  </script>
+</body>
+</html>
