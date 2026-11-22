@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>大北大楼电报局 · 延安东路正面</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-0.38" aria-label="正对延安东路的上海电信博物馆三门与六组窗"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-yanan-road-telegraph-exchange&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 延安东路34号</p>
+    <h1>大北大楼电报局 · 延安东路正面</h1>
+    <p>上海电信博物馆临街入口与窗列</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">1922年，大北、大东和太平洋商务电报公司迁入爱多亚路4号，即今天的延安东路34号。市经信委的今昔照片和2014年街照记录了三座门篷、六列中央窗和两翼女儿墙。馆牌由七个金字网格组成。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">延安东路正面</button>
+      <button type="button" data-view="oblique">斜看三座玻璃门篷</button>
+      <button type="button" data-view="above">圆花窗裙与檐口</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-yanan-road-telegraph-exchange/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('huangpu-yanan-road-telegraph-exchange');
+  </script>
+</body>
+</html>

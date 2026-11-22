@@ -1,3 +1,11 @@
+# 大北大楼电报局延安东路正立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yanan-road-telegraph-exchange&mode=overview) · [单体旋转与下载](yanan-road-telegraph-exchange.html) · [来源与制作范围](source/precise/huangpu-yanan-road-telegraph-exchange/README.md) · [验收记录](data/audit/yanan-road-telegraph-exchange-v1/README.md)
+
+按市表3A005与延安东路34号街面影像，制作三座门罩、六组竖窗、窗裙圆花与两端女儿墙。
+
+近景 31,996 个三角面，远景 13,860 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,974,463 字节。上海主图现有 278 处独立入口，黄浦区 113 处。[资产清单](assets/models/candidates/huangpu-yanan-road-telegraph-exchange/manifest.json)
+
 # 普益大楼四川中路街面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-asia-realty-sichuan-front&mode=overview) · [单体旋转与下载](asia-realty-building.html) · [来源与制作范围](source/precise/huangpu-asia-realty-sichuan-front/README.md) · [验收记录](data/audit/asia-realty-front-v1/README.md)
