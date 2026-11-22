@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>华侨大楼九江路上层拱窗与双石梃</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" aria-label="华侨大楼九江路上层拱窗与双石梃"></main>
+  <header>
+    <a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">黄浦区 · 九江路120号</p>
+    <h1>华侨大楼九江路上层拱窗与双石梃</h1>
+      <p>九江路短立面靠转角的上层拱窗，两根直石梃将弧形窗洞分作三栏。中栏的横竖细框在石梃后，两侧窗头收成弧形；窗台挑出，墙面凹缝在拱顶处向上放射。</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">窗洞节选估宽约2.04米，两道石梃约宽0.13米。中栏玻璃分格、拱形侧光与放射缝参照2013、2018和2019年的照片；建筑经改建，本作记录照片可相互印证的外观，窗框材料及绝对尺寸待实测。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="front">看上层三分拱窗</button>
+      <button type="button" data-view="oblique">看拱顶楔石</button>
+      <button type="button" data-view="tiles">看双石梃与横框</button>
+      <button type="button" data-view="rail">看石窗台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div class="downloads" id="downloads"></div>
+    <a href="source/precise/huangpu-overseas-chinese-building-arched-tripartite-window/README.md">史料、测量与模型范围</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-overseas-chinese-building-arched-tripartite-window', {
+  "front": {
+    "center": [
+      0.0,
+      0.9074999801814556,
+      -0.05500000715255737
+    ],
+    "size": [
+      3.001439889907837,
+      2.885999894142151,
+      1.2409799544811249
+    ],
+    "direction": [
+      0.28,
+      0.13,
+      1
+    ]
+  },
+  "oblique": {
+    "center": [
+      0.06,
+      1.53,
+      0.11
+    ],
+    "size": [
+      1.6848,
+      1.62,
+      0.6966
+    ],
+    "direction": [
+      -0.41,
+      0.19,
+      1
+    ]
+  },
+  "tiles": {
+    "center": [
+      -0.08,
+      0.77,
+      -0.028
+    ],
+    "size": [
+      1.456,
+      1.4,
+      0.602
+    ],
+    "direction": [
+      0.3,
+      0.02,
+      1
+    ]
+  },
+  "rail": {
+    "center": [
+      0.12,
+      0.05,
+      0.09
+    ],
+    "size": [
+      2.1319999999999997,
+      2.05,
+      0.8815
+    ],
+    "direction": [
+      0.68,
+      0.12,
+      1
+    ]
+  }
+
+});
+  </script>
+</body>
+</html>
