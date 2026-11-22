@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "all_children_exited": true,
+  "order": 421,
+  "started": "2026-11-22T14:09:27.075411+00:00",
+  "ended": "2026-11-22T14:09:51.222371+00:00",
+  "attempt": "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041",
+  "events": [
+    {
+      "name": "render",
+      "argv": [
+        "/workspace/e-resource/projects/shanghai/source/precise/hongkou-yaxiya-huangdu-109-four-window-dormer/source/blender_preview.py",
+        "-b",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/source/precise/jingan-country-hospital/source/make_native.py",
+        "--",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/parts.json",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/hongkou-yaxiya-huangdu-109-four-window-dormer.blend",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/cycles.png"
+      ],
+      "pid": 2587963,
+      "started": "2026-11-22T14:09:27.082942+00:00",
+      "ended": "2026-11-22T14:09:47.594783+00:00",
+      "exit": 0,
+      "log": "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/render.log",
+      "log_sha256": "458173edc6024d9fbd0b8ff6ab204911aab2a8457dee660b8872115edbb23e57"
+    },
+    {
+      "name": "reopen",
+      "argv": [
+        "/workspace/e-resource/projects/shanghai/source/precise/hongkou-yaxiya-huangdu-109-four-window-dormer/source/blender_preview.py",
+        "-b",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/tools/verify_editable_model.py",
+        "--python",
+        "/dev/shm/mosque421-model/development-native/verify-camera.py",
+        "--",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/hongkou-yaxiya-huangdu-109-four-window-dormer.blend",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/hongkou-yaxiya-huangdu-109-four-window-dormer-raw.glb",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/verified-editable.json"
+      ],
+      "pid": 2588220,
+      "started": "2026-11-22T14:09:47.595721+00:00",
+      "ended": "2026-11-22T14:09:48.788974+00:00",
+      "exit": 0,
+      "log": "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/reopen.log",
+      "log_sha256": "0d0c2407fd9d3a3497542a768f84890d25efd33c424210ab41fb62d10a9a855c"
+    },
+    {
+      "name": "convert",
+      "argv": [
+        "magick",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/cycles.png",
+        "-colorspace",
+        "sRGB",
+        "-endian",
+        "LSB",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/render.pfm"
+      ],
+      "pid": 2588249,
+      "started": "2026-11-22T14:09:48.789443+00:00",
+      "ended": "2026-11-22T14:09:48.812127+00:00",
+      "exit": 0,
+      "log": "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/convert.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "denoise",
+      "argv": [
+        "/tmp/country-tools/oidn/bin/oidnDenoise",
+        "-d",
+        "cpu",
+        "--threads",
+        "1",
+        "--ldr",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/render.pfm",
+        "--srgb",
+        "-o",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/clean.pfm"
+      ],
+      "pid": 2588250,
+      "started": "2026-11-22T14:09:48.812396+00:00",
+      "ended": "2026-11-22T14:09:51.076526+00:00",
+      "exit": 0,
+      "log": "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/denoise.log",
+      "log_sha256": "3af96297d174d6d6596a947484cf9d12d0863798d1e98ec6f1c9190ea5fb4aa0"
+    },
+    {
+      "name": "preview",
+      "argv": [
+        "magick",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/clean.pfm",
+        "-set",
+        "colorspace",
+        "sRGB",
+        "-depth",
+        "8",
+        "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/hongkou-yaxiya-huangdu-109-four-window-dormer-preview.png"
+      ],
+      "pid": 2588274,
+      "started": "2026-11-22T14:09:51.076944+00:00",
+      "ended": "2026-11-22T14:09:51.216122+00:00",
+      "exit": 0,
+      "log": "/dev/shm/mosque421-model/development-native/storage/attempt-1795356567075386041/preview.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "error": "",
+  "origin": "independent development copy; four dormer windows, dark projecting eaves, and two roof pitches documented in the dated street photograph"
+}
