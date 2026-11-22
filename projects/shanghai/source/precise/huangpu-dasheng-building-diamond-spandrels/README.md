@@ -7,3 +7,7 @@
 2019年照片页面把该处题作中菲大楼。模型采用市房管局第五批登记名，大楼沿革不由两种题名推定。檐托深度、浮饰截面、窗扇倾角和立面绝对尺度无实测。
 
 [市第五批名录](https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html) · [Livelikerw，2019-07-11，CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:230_Jiujiang_Road_Shanghai.jpg)
+
+2015年9月22日市规划国土资源局公布的第五批表，用“中菲大楼”登记九江路230号，编号 HP-J-031-V。市房管局现行表同址用“大生公司大楼”，编号 5A031。2019年现场照片沿用早期题名。
+
+[2015年名录原文存档](https://web.archive.org/web/20190524082636id_/http://ghzyj.sh.gov.cn/gsgg/qtgg/201509/t20150922_666291.html) · [市房管局名录](https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html)
