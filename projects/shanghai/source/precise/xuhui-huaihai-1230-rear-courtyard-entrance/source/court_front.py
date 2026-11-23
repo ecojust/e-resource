@@ -57,13 +57,17 @@ def add_window(f, name, bounds):
         columns=3 if 'east-of-entry' in name else 4
     if 'east-of-entry.top4' in name or 'east-of-entry.middle3' in name:columns=3
     bars=[]
-    for i in range(1,columns):
-        at=x0+w*i/columns
+    positions = [x0+w*i/columns for i in range(1,columns)]
+    if name == 'east-of-entry.lower2':
+        # Register all three verticals independently in the 2013 and 2016 views.
+        positions = [1.746, 2.177, 2.619]
+    for at in positions:
         bars.append(box(at-.014,z0,at+.014,z1))
     top_light=z1-min(.30,h*.23)
     bars.append(box(x0,top_light-.015,x1,top_light+.015))
     if '.ground' in name or 'lower2' in name:
-        mid=z0+.43*h;bars.append(box(x0,mid-.011,x1,mid+.011))
+        mid=5.3702 if name == 'east-of-entry.lower2' else z0+.43*h
+        bars.append(box(x0,mid-.011,x1,mid+.011))
     panes=glass.difference(unary_union(bars))
     material=PALE if 'west-plain' in name or '.ground' in name else STEEL
     f.prism(outside.difference(panes),-.103,-.067,material,name+'/steel-casement-and-transom')
@@ -127,8 +131,8 @@ def add_front(b,lod=False):
     return windows
 
 def add_number_and_box(f,lod):
-    cx,cz=1.27,2.46
-    f.box(cx,cz,.282,.139,.015,.0075,GREEN,'green-1230-number-plate')
+    cx,cz=1.249,2.519
+    f.box(cx,cz,.233,.163,.015,.0075,GREEN,'green-1230-number-plate')
     # Draw original strokes for the legible address. The lower caption in the
     # original photograph has too little detail for an attributed transcription.
     paths={
@@ -138,7 +142,7 @@ def add_number_and_box(f,lod):
         '0':[(.48,.98),(.72,.95),(.90,.76),(.91,.28),(.75,.08),(.52,.04),(.26,.08),(.09,.26),(.08,.75),(.24,.94),(.48,.98)]}
     for i,ch in enumerate('1230'):
         line=LineString(paths[ch]).buffer(.069,cap_style='round',join_style='round',quad_segs=2 if lod else 4)
-        shape=translate(scale(line,xfact=.045,yfact=.081,origin=(0,0)),cx-.109+i*.056,cz-.026)
+        shape=translate(scale(line,xfact=.0372,yfact=.095,origin=(0,0)),cx-.090+i*.0463,cz-.0305)
         f.prism(shape,.0150,.0168,LETTER,'number-plate-digit-'+ch)
     x,z=1.296,2.105
     f.box(x,z,.292,.389,.102,.053,MAIL,'red-wall-cabinet')

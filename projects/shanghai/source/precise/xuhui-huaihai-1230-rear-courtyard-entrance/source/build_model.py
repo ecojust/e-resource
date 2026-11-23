@@ -13,10 +13,11 @@ from crown_builder import CrownBuilder
 import court_front
 import courtyard_balconies
 import court_finishes
+import attachments
 
 ID='xuhui-huaihai-1230-rear-courtyard-entrance'
 SLUG='huaihai-1230-rear-courtyard-entrance'
-PALETTE={**courtyard_balconies.PALETTE,**court_front.PALETTE,**court_finishes.PALETTE}
+PALETTE={**attachments.PALETTE,**courtyard_balconies.PALETTE,**court_front.PALETTE,**court_finishes.PALETTE}
 META=dict(id=ID,name='淮海中路后排1230号入口与叠层阳台',address='上海市徐汇区淮海中路1230号院内',
           heritage_id='sh-historic-b5-xh-j-095-v',heritage_group='5D095',
           source='https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
@@ -40,6 +41,7 @@ class Builder(CrownBuilder):
 def add_building(builder,lod=False):
     court_front.add_front(builder,lod)
     courtyard_balconies.add_balconies(builder,lod)
+    attachments.add_attachments(builder,lod,period=2016)
 
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__)
