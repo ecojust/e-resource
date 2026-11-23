@@ -9,3 +9,7 @@
 网页近景15,032面，远景8,432面。Blender重开得到40个可编辑网格。原始、网页和远档均以144道首交射线核验窗带、门心圆章与菱纹、石楣和塔冠。桌面与手机的默认机位各有12处标记通过原城283个体量的视线测试。独立页在桌面与手机共记录六张实际画面，四个下载链接均取得与原件相同的字节。[材质射线](surface-checks.json) · [普通目录机位](overview-sightlines.json) · [原生重开](geometry-native.json) · [实拍及下载](viewer.json) · [进程退出](native-and-viewer-exits.json)
 
 另从31270正式服务逐件读取独立页、浏览模块及其全部依赖、样式、清单和四个下载，与桌面和手机实拍会话的输入校对散列。[正式服务与双端会话的文件对应](standalone-31270-bindings.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/daebd1ea017c4f7f706daf80db10f4c517d6f3ed/projects/shanghai/index.html#landmark=huangpu-zhongken-bank-239-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
