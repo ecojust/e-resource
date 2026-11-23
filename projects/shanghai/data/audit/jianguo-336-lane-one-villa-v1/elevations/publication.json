@@ -1,0 +1,236 @@
+{
+  "building": "徐汇区 5D083 建国西路336弄1号",
+  "name": "Registered front elevation and portico controls",
+  "description": "Two distinct sets of 49 independently read exterior marks. Direct first hits in 03, 04 and 05 are retained. The upper aperture and dark entry observations use actual hit depth to distinguish an opening from a dark surface. Native image positions are archived in the front-face observations; tolerances are four pixels of each indicated working frame.",
+  "primary_reference": "https://blog.sina.cn/dpool/blog/s/blog_5d1bdf480101f66y.html",
+  "photo_rights": "The original photographs remain at source; their pixels are not included. Observations and software are original.",
+  "sources": {
+    "source/courtyard_portico.py": {
+      "sha256": "065eaa32a4be4bac362d5c560fb5d5593c1c612c8efbbb932d595035a6b1cd49",
+      "bytes": 10767
+    },
+    "source/garden_front.py": {
+      "sha256": "d507381889f2bf6597cbb09091a3e20abe77aa8e8e384b7e3316ca85ae422a82",
+      "bytes": 8709
+    },
+    "source/bay_carvings.py": {
+      "sha256": "78ce8cd18059c7c2c32f737da03ec8ef728820ab419aae6dfe512f41cd966227",
+      "bytes": 5555
+    },
+    "measurements/front-face-controls.json": {
+      "sha256": "8997bf196e0e26bebc5baade30d25bbf09fd44e39e66d92f286f4251ff2f2132",
+      "bytes": 16131
+    },
+    "measurements/check_front_faces.py": {
+      "sha256": "26285b75355270d869218c194c1448a1b3ea2d1c7c9aaa583a90e5929f208535",
+      "bytes": 4574
+    },
+    "measurements/check_courtyard_portico.py": {
+      "sha256": "12b9438c41e72872f2ce20e4d2d8e6e83595997796468fe6d22e1fc58b5a8843",
+      "bytes": 3913
+    },
+    "measurements/front-facet-geometry.json": {
+      "sha256": "5539444107a798ac1863ef86bc18dcd638d414f239bce18b06514dee02e7dab1",
+      "bytes": 1552
+    },
+    "measurements/portico-observations.json": {
+      "sha256": "bd4d8f03ddc26774db920e9a917348255311374d64464548053f9cc81621bb78",
+      "bytes": 9639
+    },
+    "measurements/portico-measurements-and-sources.json": {
+      "sha256": "7681a5e5f7a34aef912545803b4de49201283cf4de0fd8299cde801a8f15207b",
+      "bytes": 4509
+    },
+    "measurements/balcony-curves.json": {
+      "sha256": "33d0a7f88f25ab32757560b74f757fdda7ea3c512bb3a097de11f9f65a77c4f5",
+      "bytes": 3742
+    },
+    "measurements/court-cameras.json": {
+      "sha256": "50d9c4bfb703fac68262e20c46bce23f9b54ee1143d5607da80eb293af092162",
+      "bytes": 8270
+    },
+    "measurements/fit_portico.py": {
+      "sha256": "e904d24f4c93848e905c946faf8fecac65089fd9957946b441be6520223d69d1",
+      "bytes": 5372
+    },
+    "measurements/fit_balcony_arc.py": {
+      "sha256": "cd9bbbcbe02e11b7ec007759aa382cc39e26abb4576821261c278d0e37c1aff3",
+      "bytes": 2618
+    },
+    "measurements/register_court.py": {
+      "sha256": "46cc63aee370ef36697683f6c954ed28774813158d80d2079e1d59269365c43f",
+      "bytes": 1224
+    }
+  },
+  "mesh_checks": {
+    "raw": {
+      "traced_mesh": {
+        "path": "whole/full-source.glb",
+        "sha256": "423751f112c5d29e7a1e7e6b8c463816b6f0ded1e57e41faca537d5111c67526",
+        "bytes": 9847184
+      },
+      "release_mesh": {
+        "file": "xuhui-jianguo-336-lane-one-villa-raw.glb",
+        "sha256": "423751f112c5d29e7a1e7e6b8c463816b6f0ded1e57e41faca537d5111c67526",
+        "bytes": 9847184
+      },
+      "checks": {
+        "front-faces": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 2.0,
+          "report": "raw-front-faces.json"
+        },
+        "courtyard-portico": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 3.0,
+          "report": "raw-courtyard-portico.json"
+        }
+      }
+    },
+    "lod-source": {
+      "traced_mesh": {
+        "path": "whole/lod-source.glb",
+        "sha256": "d1f6dfa3717e0595394014e5cc596bd098a39ed32c0af61f2f830a0288d7f43d",
+        "bytes": 5675020
+      },
+      "release_mesh": null,
+      "checks": {
+        "front-faces": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 2.0,
+          "report": "lod-source-front-faces.json"
+        },
+        "courtyard-portico": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 3.0,
+          "report": "lod-source-courtyard-portico.json"
+        }
+      }
+    },
+    "web": {
+      "traced_mesh": {
+        "path": "packaged/decoded-full.glb",
+        "sha256": "4b3ee7aac34cf77d44ca031dec8359cd65ef719693c778373cd4afa01ca58e09",
+        "bytes": 9273576
+      },
+      "release_mesh": {
+        "file": "xuhui-jianguo-336-lane-one-villa-web.glb",
+        "sha256": "8d00d3e5b5c2b0d6a73584e8f3a01da7a66f66455f6427114900b41034dcf470",
+        "bytes": 4414764
+      },
+      "checks": {
+        "front-faces": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 2.0,
+          "report": "web-front-faces.json"
+        },
+        "courtyard-portico": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 3.0,
+          "report": "web-courtyard-portico.json"
+        }
+      }
+    },
+    "lod": {
+      "traced_mesh": {
+        "path": "packaged/decoded-lod.glb",
+        "sha256": "fc59472a5b4dfa0abda81f4dde09302c64297f8db618ec152719891841e3f7dc",
+        "bytes": 5210616
+      },
+      "release_mesh": {
+        "file": "xuhui-jianguo-336-lane-one-villa-lod.glb",
+        "sha256": "0f2778d772102e2dd85c94989086cbd50e576027248d86e4d4fa75774839b5fa",
+        "bytes": 2726048
+      },
+      "checks": {
+        "front-faces": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 2.0,
+          "report": "lod-front-faces.json"
+        },
+        "courtyard-portico": {
+          "total": 49,
+          "exact": 45,
+          "within_four_working_pixels": 49,
+          "max_matching_offset_working_pixels": 3.0,
+          "report": "lod-courtyard-portico.json"
+        }
+      }
+    }
+  },
+  "final_reports": [
+    {
+      "file": "full-whole-before-correction-49.json",
+      "sha256": "931f884d31287e07fc5285cdde7e9899a185f9b0dec94f13a052d4f5248bd8c2",
+      "bytes": 53221
+    },
+    {
+      "file": "lod-whole-before-correction-49.json",
+      "sha256": "73c4f63b6ad1de0720a2ab2c90a7f4ad0e0e95c2cac28d7333204f8092413245",
+      "bytes": 53201
+    },
+    {
+      "file": "two-back-windows-and-ground-sash-review.json",
+      "sha256": "092b92e665f154ed6206622f674e6e76a9ec9a819cacc1d026e0b6cfe078d3b9",
+      "bytes": 9814
+    },
+    {
+      "file": "raw-front-faces.json",
+      "sha256": "fee404b096d8aba89a944e7d273f2a780de0da20de1dfe6c5ece5350eba69253",
+      "bytes": 55066
+    },
+    {
+      "file": "raw-courtyard-portico.json",
+      "sha256": "694359fbd2905a2fed6d3e86e3d7e68af6c388249e7163817b771456cac27147",
+      "bytes": 41666
+    },
+    {
+      "file": "lod-source-front-faces.json",
+      "sha256": "0f39e1250100edf8e000d9d2bbf83bd59f4d217a9d597296ca362422ddd01008",
+      "bytes": 55050
+    },
+    {
+      "file": "lod-source-courtyard-portico.json",
+      "sha256": "8d62a86a619e3ab71cfa3b48c4039e924cd2174826e23ec30341d1694420a361",
+      "bytes": 41621
+    },
+    {
+      "file": "web-front-faces.json",
+      "sha256": "09ae98e68ec02dc39c0c77fc709217c0b6937254f546a3263d32d10f4888c13e",
+      "bytes": 55067
+    },
+    {
+      "file": "web-courtyard-portico.json",
+      "sha256": "302d3406bd785d4970cdcb42802db032cdd3ba60783b3647dc70ffb3ece7cc5e",
+      "bytes": 41664
+    },
+    {
+      "file": "lod-front-faces.json",
+      "sha256": "e77ce9b1ca1d5e3ce2f133651226ff71ac86f1ffe30a3442afc996917542d974",
+      "bytes": 55051
+    },
+    {
+      "file": "lod-courtyard-portico.json",
+      "sha256": "9aba4edb9c88e5f8ce32afdd46e369fcd853895eb192f38de82962650f76853d",
+      "bytes": 41621
+    }
+  ],
+  "reproduce": [
+    "python measurements/check_front_faces.py DECODED_OR_SOURCE.glb front-faces.json",
+    "python measurements/check_courtyard_portico.py DECODED_OR_SOURCE.glb courtyard-portico.json"
+  ]
+}
