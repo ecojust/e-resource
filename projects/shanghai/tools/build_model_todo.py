@@ -341,6 +341,11 @@ def build(reserved=()):
   url=next(r['source_url'] for r in records if r['batch']==batch)
   lines.append(f'[{batch_refs[batch]}]: <{url}>')
  assert sum(counts.values())==sum(1 for r in records if r['district'] in queue['district_order'])
+ # GFM accepts a missing final border when the nonempty last cell ends in text.
+ # Keep leading pipes, alignment rows, headings and empty trailing cells intact.
+ for i,line in enumerate(lines):
+  if line.startswith('|') and not line.startswith(('|---','| ')) and line.endswith('|') and line[-2] not in '| \\':
+   lines[i]=line[:-1]
  return compact_repeated_links('\n'.join(lines).rstrip()+'\n',reserved)
 def street_index():
  d=json.loads((DATA/'discovered-buildings.json').read_text());roads=json.loads((DATA/'discovered-streets.json').read_text());q=json.loads((DATA/'queue.json').read_text())
