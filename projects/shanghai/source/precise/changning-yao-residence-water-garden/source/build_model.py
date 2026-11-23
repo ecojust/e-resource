@@ -13,7 +13,11 @@ from shapely.geometry import box as rectangle
 HERE = Path(__file__).resolve().parent
 PROJECT = next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder
+from photo_architecture import Builder as ArchitectureBuilder
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+sys.path.insert(0,str(HERE))
+from crown_builder import CrownBuilder
+import garden_finishes
 
 MEASUREMENTS = HERE.parent/'measurements'
 HOUSE_ID = 'changning-yao-residence-water-garden'
@@ -28,6 +32,26 @@ PALETTE = {EAVE:{'color':[.70,.65,.45],'roughness':.85},ROOF:{'color':[.14,.145,
            WATER:{'color':[.15,.19,.135],'roughness':.19,'metallic':.14},
            AC:{'color':[.67,.655,.58],'roughness':.64},FAN:{'color':[.23,.22,.16],'roughness':.66}}
 
+PALETTE.update(garden_finishes.PALETTE)
+ID=HOUSE_ID
+META={'id':ID,'name':'淮阴路姚氏住宅水庭转角长窗与水平格栅','address':'上海市长宁区淮阴路200号西郊宾馆4号楼',
+      'heritage_id':'sh-historic-b1-036','official_id':'1M001','geometry_license':'MIT','texture_license':'MIT',
+      'viewer_page':'yao-residence-water-garden.html','photos_embedded':False,
+      'camera_views':json.loads((HERE/'cameras.json').read_bytes()),
+      'source':'https://wenhui.whb.cn/third/yidian/201907/11/276235.html',
+      'photo_source':'https://news.sina.cn/2017-09-16/detail-ifykyfwq7849691.d.html?vt=4',
+      'scope':'Photographic section of the two glazed garden walls, horizontal screens, joined eaves and stone pool. The inner room, unseen building wings, guest hotel and other buildings lie outside this study.'}
+
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in garden_finishes.STEMS:
+            garden_finishes.metric_uv(self.parts[-1])
+
+    def save(self,path,metadata=None):
+        ArchitectureBuilder.save(self,path,metadata)
+        return garden_finishes.writer.embed_normals(path)
+
 
 def flat(builder, polygon, bottom, top, material, label):
     builder.prism(polygon,bottom,top,lambda x,y,z:(x,y,z),material,label)
@@ -36,6 +60,7 @@ def flat(builder, polygon, bottom, top, material, label):
 class WindowPlane:
     def __init__(self,builder,kind,xcorner,sill,head):
         self.b=builder; self.kind=kind; self.corner=xcorner;self.sill=sill;self.head=head
+        self.existing_stiles=set()
 
     def solid(self,left,right,bottom,top,out,depth,material,name):
         mid=(left+right)/2;z=(bottom+top)/2
@@ -53,6 +78,9 @@ class WindowPlane:
             self.solid(lo,hi,h-.023,h+.023,.01,.092,WOOD,name+' '+label)
         for i,t in enumerate([0.,*divisions,1.]):
             x=lo+(hi-lo)*t
+            axis=round(x,7)
+            if axis in self.existing_stiles:continue
+            self.existing_stiles.add(axis)
             self.solid(x-.021,x+.021,zs+.023,zh-.023,.01,.09,WOOD,name+f' stile {i+1}')
         if curtain:
             # Woven folds are behind the glass. Relief is independent of the photo colours.
@@ -99,6 +127,7 @@ def add_building(b,lod=False):
     a=survey['axes_m'];xc=survey['corner_x_m'];zs=survey['sill_m'];zh=survey['opening_head_m']
     eave=survey['eave_top_m'];lip=survey['eave_face_height_m'];projection=survey['eave_projection_m']
     xr=a['court-pier-right']+1.17;yf=a['return-glazing-outer']
+    outer_screen=sections['outer_screen']
     back=WindowPlane(b,'back',xc,zs,zh);side=WindowPlane(b,'return',xc,zs,zh)
     back.glazing(xc,a['court-dark-left'],[],.61,'shadowed inside corner')
     back.glazing(a['court-dark-left'],0,[],.61,'narrow dark light')
@@ -108,17 +137,34 @@ def add_building(b,lod=False):
     back.units(a['court-red-right'],a['court-pier-left'],lod)
     back.screen(a['court-pier-left'],a['court-pier-right'],sections['back_bands_bottom_to_top'],lod)
     back.glazing(a['court-pier-right'],xr,[.48],.62,'part of next glazed opening')
+    # Only the four ends clear of the foreground tree are photographically grounded.
+    side.screen(outer_screen['observed_interval_y'][0],yf,outer_screen['bands'],lod)
     side.glazing(yf,a['return-pier-outer'],[.34,.67],.64,'three-part garden return')
     side.screen(a['return-pier-outer'],a['return-pier-inner'],sections['return_bands_bottom_to_top'],lod)
     side.glazing(a['return-pier-inner'],0,[.23,.47,.7,.87],.62,'corner return glazing')
+    yf=outer_screen['observed_interval_y'][0]
     for wall,left,right in [(back,xc,xr),(side,yf,0)]:
         wall.solid(left,right,-.025,zs,-.04,.24,WOOD,'continuous red plinth')
         wall.solid(left,right,zh,eave-lip+.008,-.08,.19,EAVE,'cream lintel over glazed openings')
     # The two survey panels meet continuously at the real re-entrant corner.
     # Their inner boundary is a section cut, not a claim about the back of the house.
     roof=unary_union([rectangle(xc-.97,-projection,xr,1.0),rectangle(xc-.97,yf,xc+projection,1.0)])
-    flat(b,roof,eave-lip,eave-.17,EAVE,'continuous L-shaped cream canopy and soffit')
-    flat(b,roof,eave-.17,eave,ROOF,'dark upper edge of both garden eaves')
+    # Both published photographs constrain a very shallow rise along the back wing.
+    # The external return meets the same corner profile and stays level past it.
+    edges=sections['back_roof_edges']
+    for lo,hi,mat,name in [('bottom','dark_soffit',EAVE,'continuous cream canopy and soffit'),
+                           ('dark_soffit','top',ROOF,'dark top edge of garden eaves')]:
+        def map_roof(x,y,d):
+            location=max(x,xc+projection)
+            def height(k):
+                if k=='bottom':return eave-lip
+                edge=edges[k]
+                return edge['intercept']+edge['slope']*location
+            return x,y,(1-d)*height(lo)+d*height(hi)
+        # Split the polygons at the longitudinal bend so every face is planar.
+        joint=xc+projection
+        for zone in [rectangle(xc-1.05,yf-.1,joint,1.1),rectangle(joint,yf-.1,xr+.1,1.1)]:
+            b.prism(roof.intersection(zone),0.,1.,map_roof,mat,name)
     terrace=unary_union([rectangle(xc-.65,-.72,xr,.60),rectangle(xc-.65,yf,xc+.72,.60)])
     flat(b,terrace,-.18,-.025,STONE,'narrow garden terrace at the glazed sill')
     pool=sections['pool'];n=48 if lod else 96
@@ -131,7 +177,4 @@ if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--output',required=True,type=Path);cli.add_argument('--lod',action='store_true')
     args=cli.parse_args()
     builder=Builder(PALETTE);add_building(builder,args.lod)
-    meta={'id':HOUSE_ID,'name':'淮阴路姚氏住宅水庭转角长窗与水平格栅','address':'上海市长宁区淮阴路200号西郊宾馆4号楼',
-          'heritage_id':'sh-historic-b1-036','official_id':'1M001','geometry_license':'MIT','photos_embedded':False,
-          'scope':'Two observed garden window walls, eave and stone-edged garden pool. The open section behind the window walls bounds the photographic study.'}
-    print(builder.save(args.output,meta)['sha256'])
+    print(builder.save(args.output,META)['sha256'])

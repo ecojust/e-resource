@@ -26,6 +26,25 @@ def measure():
         for top,bottom in data['bright_ranges_v']:
             profiles.append([float(on_plane(fit['stations']['whb2019'],[data['sample_u'],v],dim,at)[2]) for v in (bottom,top)])
         result[side+'_bands_bottom_to_top']=list(reversed(profiles))
+    line_values={}
+    y=-fit['eave_projection_m']
+    for edge in ('top','dark_soffit'):
+        obs=[]
+        for name in ('whb2019','garden2017'):
+            for point in survey['cap_profiles'][name][edge]:
+                obs.append(on_plane(fit['stations'][name],point,1,y))
+        xyz=np.asarray(obs)
+        slope,intercept=np.polyfit(xyz[:,0],xyz[:,2],1)
+        model=intercept+slope*xyz[:,0]
+        line_values[edge]={'slope':slope,'intercept':intercept,
+                          'rms_height_m':float(np.sqrt(np.mean((model-xyz[:,2])**2)))}
+    result['back_roof_edges']=line_values
+    added=survey['outer_screen']
+    st=fit['stations'][added['station']];x=fit['corner_x_m']+.10
+    outer=[on_plane(st,[u,174],0,x)[1]for u in added['y_axis_crop_u']]
+    result['outer_screen']={'observed_interval_y':outer,'bands':[]}
+    for top,bottom in added['visible_bright_ranges_v']:
+        result['outer_screen']['bands'].append([float(on_plane(st,[added['x_sample'],v],0,x)[2])for v in (bottom,top)])
     pool=survey['pool']
     site=np.array([on_plane(fit['stations']['garden2017'],pt,2,pool['rim_z_m'])[:2] for pt in pool['edge_points_px']])
     def residual(v):
