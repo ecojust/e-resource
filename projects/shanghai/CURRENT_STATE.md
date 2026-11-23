@@ -1,3 +1,11 @@
+# 南京饭店山西南路入口与钝角阳台
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) · [单体旋转与下载](nankin-hotel-shanxi-front.html) · [来源与制作范围](source/precise/huangpu-nankin-hotel-shanxi-front/README.md) · [验收记录](data/audit/nankin-hotel-shanxi-front-v1/README.md)
+
+第四批4A016，山西南路182–200号、天津路191号至211弄。原城900及OSM 414733139匹配。按区级报道和修复后照片制作西墙入口、独立褐色雨篷、门前邮筒，以及四、五层连续钝角阳台和铸铁栏杆。
+
+近景 37,872 个三角面，远景 17,448 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 4,180,205 字节。上海主图现有 313 处独立入口，黄浦区 148 处。[资产清单](assets/models/candidates/huangpu-nankin-hotel-shanxi-front/manifest.json)
+
 # 上海钱业公会大楼（宁波路三开间正面）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-money-guild-front&mode=overview) · [单体旋转与下载](shanghai-money-guild-front.html) · [来源与制作范围](source/precise/huangpu-shanghai-money-guild-front/README.md) · [验收记录](data/audit/shanghai-money-guild-front-v1/README.md)
