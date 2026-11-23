@@ -63,7 +63,7 @@ def add_entry(b,lod=False):
     n=10 if lod else 22
     outer=path(OUTER,n);inner=path(INNER,n)
     panel=rectangle(-.802,2.806,.870,3.267)
-    wall=rectangle(-1.97,0,2.08,4.215).difference(Polygon(outer)).difference(panel)
+    wall=rectangle(-1.97,0,2.08,4.645).difference(Polygon(outer)).difference(panel)
     prism(b,wall,0,.235,WALL,'enclosure with cut openings')
     # A closed splayed surround has independently measured front and rear arrises.
     band(b,[at_y(outer,-.001),at_y(inner,DOOR_Y-.006),at_y(inner,DOOR_Y+.012),
@@ -81,4 +81,5 @@ def add_entry(b,lod=False):
         block(b,left,right,-.077,.011,0,2.688,SHAFT,name+' tall pier')
         shoulder(b,left,right,name)
         block(b,left+.013,right-.012,-.090,.012,2.795,3.330,SHAFT,name+' short upper pier')
-    block(b,-1.97,2.08,-.019,.244,4.159,4.212,COPING,'weathered cap behind cornice')
+    block(b,-1.97,2.08,-.009,.244,4.47,4.497,COPING,'lower coping fillet behind cornice')
+    block(b,-1.97,2.08,-.019,.251,4.584,4.67,COPING,'weathered upper cap behind cornice')

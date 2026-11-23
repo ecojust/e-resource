@@ -1,23 +1,36 @@
 """Build the double-leaf residence gate at 20, Lane 222 South Shaanxi Road."""
 import argparse
+import json
 from pathlib import Path
 import sys
 
 HERE=Path(__file__).resolve().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.append(str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder
+sys.path.append(str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+from gate_finishes import PALETTE as FINISHES, map_finish, embed_normals
 from residence_gate import PALETTE as ENTRY, add_entry
 from gate_frieze import PALETTE as FRIEZE, add_frieze
 from gate_hardware import PALETTE as HARDWARE, add_hardware
 ID='xuhui-shaanxi-222-no20-residence-gate'
 SLUG='shaanxi-222-no20-residence-gate'
-PALETTE={**ENTRY,**FRIEZE,**HARDWARE}
+PALETTE={**ENTRY,**FRIEZE,**HARDWARE,**FINISHES}
 META={'id':ID,'name':'陕西南路222弄20号住宅院门','address':'上海市徐汇区陕西南路222弄20号','heritage_group':'5D063',
       'source':'https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
       'photo_source':'https://blog.sina.com.cn/s/blog_5d1bdf480102whoy.html','photo_author':'高参88',
       'reference_publication_date':'2016-02-02','photos_embedded':False,'geometry_license':'MIT','texture_license':'MIT',
       'scope':'20号临弄院门，含灰色门柱、退进的连饰檐口、圆角门洞、兽面双环和号码牌。'}
+META.update(camera_views=json.loads((HERE/'cameras.json').read_text()),viewer_page=SLUG+'.html')
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in FINISHES:
+            map_finish(self.parts[-1])
+    def save(self,path,metadata=None):
+        super().save(path,metadata)
+        return embed_normals(path)
+
 def add_building(b,lod=False):
     add_entry(b,lod)
     add_frieze(b,lod)
