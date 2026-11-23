@@ -4,4 +4,6 @@
 
 网页可切换九个机位；原始GLB、网页近景、远景、Blender、FBX、带材质OBJ、STL及可复建源码共八项。四张摄影机位按原照片裁框输出。两种原创饰面带颜色和法线，源码包在干净目录中重新生成四张PNG和三项交付网格。[查看模型及下载](../../../xiyan-church-north-belfry.html) · [Blender九个机位](editable/nine-native-cameras.jpg) · [源码包复建](source-archive/changning-xiyan-church-north-belfry-source.verification.json)
 
-桌面和手机分别实测九个机位，实存八个文件，并打开三张摄影机位模型图。下载签名与对应原件一致。[浏览器验收](ordinary-ui/closed.json)
+首版桌面和手机各实测九个机位、保存八份文件并打开三张模型图。[首版浏览器验收](ordinary-ui/closed.json)
+
+四张离线说明图已校正裁框内像素与天空遮蔽计算之间的坐标偏移。四站塔身内部受测区域的平均亮度降低3.63至4.99级（满量程255），钟室百叶沉入石券后的暗部更清楚。两端分别重新打开三张链接图并保存更新源码包。初版实测的七个模型文件、九镜相机和网页几何仍可按原始散列核对。[四站前后对照](registration/crop-lighting-comparison.jpg) · [旧新图逐件校验](registration/registered-illumination-correction.json) · [亮度读数](registration/crop-lighting.json) · [本次网页与下载回执](ordinary-ui/illumination-correction/correction-receipt.json)
