@@ -1,0 +1,22 @@
+before {'order': 274, 'phase': 'before', 'exit_code': 1, 'remaining_chromium': [], 'report': '/tmp/shanghai-main-274/evidence/274/before/control-browser.json', 'exit': 1, 'node': 2248762, 'chromium_pids': [2248778], 'node_closed': True, 'remaining': [], 'report_sha256': 'd1085bd8a3bccbcd21d58b65c5b7f16c79ca5da034cc1576110e25c24bb9088d', 'driver_sha256': 'b525374889451cef993652c1ceaaaeb0fcd76e8ef8277dcc98e612933d021c0c', 'finished': '2026-11-23T06:11:48.206574+00:00'}
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-274/run-274-separated-recovered.py", line 58, in <module>
+    assert q['exit']==0 and q['node_closed'] and seen and not active and report.is_file()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-274/run-274-separated-recovered.py", line 20, in <module>
+    subprocess.run([sys.executable,'-Bu',__file__,previous,part],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-274/run-274-separated-recovered.py', PosixPath('/tmp/shanghai-main-273/273-map-slot-released.json'), 'before']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-274/start-reviewed-274.py", line 47, in <module>
+    run('run-274-separated-recovered.py',m);run('merge-274-recovered.py');run('viewer-recovered.py','--assigned-standalone-slot');run('bind-full-http.py');run('archive-recovered.py','274');run('local-catalogs.py','verify')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-274/start-reviewed-274.py", line 8, in run
+    def run(name,*args):subprocess.run([sys.executable,'-Bu',w/name,*args],check=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-274/run-274-separated-recovered.py'), PosixPath('/tmp/shanghai-main-273/273-map-slot-released.json')]' returned non-zero exit status 1.

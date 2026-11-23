@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-274/attest-sites.py", line 30, in <module>
+    old=read(w/f'{n}-all-http.json');assert old['passed'] and old['production_receipt_sha256']==z['production'] and old['count']==len(book['files']) and len(old['ranges'])>=5 and read(scenes/f'{n}-all-http.json')==old
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-274/start-reviewed-274.py", line 45, in <module>
+    subprocess.run([sys.executable,'-Bu','/workspace/shanghai-publisher-preservation/city-274/attest-sites.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/workspace/shanghai-publisher-preservation/city-274/attest-sites.py']' returned non-zero exit status 1.

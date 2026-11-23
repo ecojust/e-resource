@@ -1,3 +1,11 @@
+# 中央储蓄会大楼天津路江西中路转角塔楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-savings-society-corner-tower&mode=overview) · [单体旋转与下载](central-savings-corner.html) · [来源与制作范围](source/precise/huangpu-central-savings-society-corner-tower/README.md) · [验收记录](data/audit/central-savings-corner-v1/README.md)
+
+第四批4A012，天津路2号、江西中路349号。配准原城1455东南切角，按旧照和署址街照制作双扇铁栅门、每扇中腰圆章、上部三列窗、贯通竖肋及高出两翼的塔冠。
+
+近景 40,052 个三角面，远景 19,060 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,851,046 字节。上海主图现有 309 处独立入口，黄浦区 144 处。[资产清单](assets/models/candidates/huangpu-central-savings-society-corner-tower/manifest.json)
+
 # 上海商业储蓄银行宁波路主楼重檐歇山楼亭
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-commercial-savings-bank-pavilion&mode=overview) · [单体旋转与下载](shanghai-commercial-savings-bank-pavilion.html) · [来源与制作范围](source/precise/huangpu-shanghai-commercial-savings-bank-pavilion/README.md) · [验收记录](data/audit/shanghai-commercial-savings-bank-pavilion-v1/README.md)

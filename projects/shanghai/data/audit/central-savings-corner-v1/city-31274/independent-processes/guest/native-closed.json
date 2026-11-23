@@ -1,0 +1,177 @@
+{
+  "order": 339,
+  "host": 274,
+  "kind": "native",
+  "exit": 0,
+  "pid": 2253488,
+  "started": "2026-11-23T06:13:06.294428+00:00",
+  "finished": "2026-11-23T06:14:06.748692+00:00",
+  "observed_descendants": {
+    "2253516": {
+      "parent": 2253488,
+      "birth": 1766409,
+      "name": "MainThread"
+    },
+    "2253523": {
+      "parent": 2253488,
+      "birth": 1766420,
+      "name": "MainThread"
+    },
+    "2253530": {
+      "parent": 2253488,
+      "birth": 1766430,
+      "name": "MainThread"
+    },
+    "2253538": {
+      "parent": 2253488,
+      "birth": 1766437,
+      "name": "MainThread"
+    },
+    "2253559": {
+      "parent": 2253488,
+      "birth": 1766458,
+      "name": "python3"
+    },
+    "2253560": {
+      "parent": 2253559,
+      "birth": 1766460,
+      "name": "blender"
+    },
+    "2254507": {
+      "parent": 2253488,
+      "birth": 1771724,
+      "name": "python3"
+    },
+    "2254508": {
+      "parent": 2254507,
+      "birth": 1771727,
+      "name": "blender"
+    },
+    "2254541": {
+      "parent": 2253488,
+      "birth": 1771881,
+      "name": "python3"
+    },
+    "2254544": {
+      "parent": 2254541,
+      "birth": 1771883,
+      "name": "oidnDenoise"
+    },
+    "2254586": {
+      "parent": 2253488,
+      "birth": 1772201,
+      "name": "magick"
+    }
+  },
+  "wrapper_closed": true,
+  "all_processes_closed": true,
+  "remaining": [],
+  "host_receipt_sha256": "974fa622d2c7ce1cc7f23bcf577efdc9325643ce04aa9e09306cd0d405a5efa4",
+  "host_report_sha256": "f402ccc1d72c466436aaa851a1c4a91110e9da303466ad5fed1c4027d87ba76c",
+  "dispatch_sha256": "7ab73f5f4bb416a1b692f337528c16f40a34c2b201aacd75bed73604f75f4f67",
+  "parent_snapshot_sha256": "3267517e9ddec92ddffade35d758d357c517b7d9adaba9de0b3180e700177e8d",
+  "parent_receipt_sha256": "ea56939fda374b55a351fe2fb572eeb51568c7ba336003611355397060684357",
+  "passed": true,
+  "assets": {
+    "raw": {
+      "file": "huangpu-fuxing-garden-north-house-east-portico-raw.glb",
+      "bytes": 1726248,
+      "sha256": "b2c6606aadfb181ea2c7547776636ea59306005e174a3c7fee0fd82a083a9ae1",
+      "triangles": 24038,
+      "bounds_gltf_m": [
+        [
+          -3.4921352863311768,
+          0.023000000044703484,
+          -5.123507976531982
+        ],
+        [
+          3.4200000762939453,
+          9.661829948425293,
+          0.28299999237060547
+        ]
+      ],
+      "materials": 11
+    },
+    "full": {
+      "file": "huangpu-fuxing-garden-north-house-east-portico-web.glb",
+      "bytes": 798752,
+      "sha256": "d9e4a92542c581097abd9caa4c15ca05b0dc4019ec61d7ac334290be9eebf859",
+      "triangles": 24038,
+      "bounds_gltf_m": [
+        [
+          -3.49213529,
+          0.023,
+          -5.12350798
+        ],
+        [
+          3.42000008,
+          9.66182995,
+          0.282999992
+        ]
+      ],
+      "materials": 11
+    },
+    "lod": {
+      "file": "huangpu-fuxing-garden-north-house-east-portico-lod.glb",
+      "bytes": 145128,
+      "sha256": "fbbb0f2238e67ace7156f9846736a572f0dd72e279a17b33c261f16edc767d61",
+      "triangles": 5736,
+      "bounds_gltf_m": [
+        [
+          -3.49499989,
+          0.023,
+          -5.12381077
+        ],
+        [
+          3.42000008,
+          9.66250992,
+          0.282999992
+        ]
+      ],
+      "materials": 11
+    },
+    "native": {
+      "file": "huangpu-fuxing-garden-north-house-east-portico.blend",
+      "bytes": 438810,
+      "sha256": "0bd331e0613527b10b5080659e793259d294057dd8defb3efee46774b07006f3"
+    }
+  },
+  "manifest_sha256": "717974a6124a66e115cbf671d47ebb6e25500cc65b18ffd0ae5b0d2bbadf22f3",
+  "geometry_native_sha256": "6e3a4c7f0f73ebcf4c32c495f5f0c4899862eaaa3a2b2ff0230a279718c2dd43",
+  "group_count": 80,
+  "blender_pids": [
+    2253560,
+    2254508
+  ],
+  "native_stages": [
+    {
+      "stage": "render",
+      "program": "blender",
+      "pid": 2253560,
+      "wrapper_pid": 2253559,
+      "started": "2026-11-23T06:13:09.006041+00:00",
+      "finished": "2026-11-23T06:14:01.641492+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "reopen",
+      "program": "blender",
+      "pid": 2254508,
+      "wrapper_pid": 2254507,
+      "started": "2026-11-23T06:14:01.667766+00:00",
+      "finished": "2026-11-23T06:14:03.166186+00:00",
+      "exit": 0
+    },
+    {
+      "stage": "denoise",
+      "program": "/tmp/country-tools/oidn/bin/oidnDenoise",
+      "pid": 2254544,
+      "wrapper_pid": 2254541,
+      "started": "2026-11-23T06:14:03.233956+00:00",
+      "finished": "2026-11-23T06:14:06.401937+00:00",
+      "exit": 0
+    }
+  ],
+  "remaining_blender": [],
+  "remaining_oidn": []
+}
