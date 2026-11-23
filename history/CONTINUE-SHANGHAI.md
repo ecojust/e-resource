@@ -64,6 +64,8 @@
 
 [沪西别墅东侧临弄山墙与跨层钢窗](../projects/shanghai/huxi-villas-east-row-gable.html)收录3M008东侧住宅群中的一段临弄山墙。九个机位包括2014年弄内主照与2015年同一南口的两种排位推算，八种下载附可编辑源文件。 [固定工作版本](https://github.com/ecojust/e-resource/tree/b5bca6590f820e37a620f167a41ee7b5727f850d/projects/shanghai/source/precise/changning-huxi-villas-east-row-gable)
 
+愚园路1294号董竹君旧居18号楼，以题号山墙和阁楼短瓦檐核对2018年院内全景，以独立近照核对外梯。 [模型](../projects/shanghai/yuyuan-1294-dong-zhujun-garden-residence.html) · [固定工作版本](https://github.com/ecojust/e-resource/blob/9f87ecd15facc601867a297c6a39e5ffe4f754b0/projects/shanghai/yuyuan-1294-dong-zhujun-garden-residence.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
