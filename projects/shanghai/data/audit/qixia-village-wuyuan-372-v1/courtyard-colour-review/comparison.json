@@ -1,0 +1,214 @@
+{
+  "source_camera": "source/cameras.json#overview",
+  "reference_canvas": [
+    900,
+    612
+  ],
+  "camera_sha256": "5c95237e65419c54057026a17bfeeb9b19749a159d83a246305746744194dc9b",
+  "unscaled_crop_ltrb": [
+    80,
+    246,
+    164,
+    352
+  ],
+  "method": "Six renders per version at the same camera. Original is the issued PBR material, no-normal removes its tangent normal, no-color removes its base-color map, base removes both. Unlit uses the original color texture and no lights, unlit-flat uses the base color alone. The variance is across the identical front wall crop. The Fourier peak is measured on an 8-bit luminance crop after subtracting its mean and applying a 2D Hann window.",
+  "measures": {
+    "first": {
+      "mesh_sha256": "9145ef141045cbaf635ff9e6c2ae629b2810d549b12c05d1d60f817fb4a7001e",
+      "variants": {
+        "original": {
+          "sha256": "5e417b1afb5b3d2d2467ee2908847d8dec80823c54d1fbabeb9d19467dfd3596",
+          "std": 2.0428406773462338,
+          "range": [
+            168.0,
+            180.0
+          ],
+          "dominant_frequency_per_px": [
+            -0.0660377358490566,
+            0.0
+          ],
+          "correlation_with_original": 1.0
+        },
+        "no-normal": {
+          "sha256": "679d6eae2edb72c826bc5498648b5e79553b8048737a764aed8540466dad9605",
+          "std": 2.05303709469055,
+          "range": [
+            168.0,
+            180.33333333333334
+          ],
+          "dominant_frequency_per_px": [
+            0.0660377358490566,
+            0.0
+          ],
+          "correlation_with_original": 0.9913413898873231
+        },
+        "no-color": {
+          "sha256": "6bb67f32351cb1a07b0f310a39de1b4d69e3b27d8414e62326ee42770854ee83",
+          "std": 0.18234775869712552,
+          "range": [
+            230.33333333333334,
+            232.33333333333334
+          ],
+          "dominant_frequency_per_px": [
+            -0.12264150943396226,
+            -0.13095238095238093
+          ],
+          "correlation_with_original": -0.02347210675557423
+        },
+        "base": {
+          "sha256": "31d29d0ae707825a8ed48c6ffd6540cd1c14d118ebbe57e7a1d1ed07173b9ef3",
+          "std": 0.0,
+          "range": [
+            231.33333333333334,
+            231.33333333333334
+          ],
+          "dominant_frequency_per_px": [
+            0.0,
+            0.0
+          ],
+          "correlation_with_original": null
+        },
+        "unlit": {
+          "sha256": "8e797017fcdba8223b40627d6eb33edc255920cee36344e4bbbe54168ecc5734",
+          "std": 2.2841703078812605,
+          "range": [
+            184.0,
+            198.0
+          ],
+          "dominant_frequency_per_px": [
+            0.0660377358490566,
+            0.0
+          ],
+          "correlation_with_original": 0.9854566204480545
+        },
+        "unlit-flat": {
+          "sha256": "d2c3139fe8e6ad0b64fcf36af503af9b0ad831290c4efbc4e249e5feb2700079",
+          "std": 0.0,
+          "range": [
+            255.0,
+            255.0
+          ],
+          "dominant_frequency_per_px": [
+            0.0,
+            0.0
+          ],
+          "correlation_with_original": null
+        }
+      },
+      "camera": {
+        "name": "Qixia | buff roughcast",
+        "map": 256,
+        "normal": 256,
+        "sampler": [
+          1008,
+          1006,
+          true
+        ],
+        "n": 1
+      }
+    },
+    "revised": {
+      "mesh_sha256": "563aa85ac0f3b278a829754b6896bfcee164b603116aad3abb3cdc1d5e3755f6",
+      "variants": {
+        "original": {
+          "sha256": "1e45d48e05231db880badfb7bb92d8c58cc81ca9eae1de7615973f56dbc45889",
+          "std": 0.6605829802682452,
+          "range": [
+            170.33333333333334,
+            175.33333333333334
+          ],
+          "dominant_frequency_per_px": [
+            0.03773584905660377,
+            -0.023809523809523808
+          ],
+          "correlation_with_original": 0.9999999999999998
+        },
+        "no-normal": {
+          "sha256": "ba0bec97a23e7256c6d4b36750b8492b31ee7baa57eb1f08004bd32959c7abb9",
+          "std": 0.6348237686803129,
+          "range": [
+            171.0,
+            174.66666666666666
+          ],
+          "dominant_frequency_per_px": [
+            0.02830188679245283,
+            0.08333333333333333
+          ],
+          "correlation_with_original": 0.8842938807944859
+        },
+        "no-color": {
+          "sha256": "7bd7725d22079fbe4c4b9c701b75c71deb0db903a898884222815625ddd39097",
+          "std": 0.2840261906465764,
+          "range": [
+            230.0,
+            233.0
+          ],
+          "dominant_frequency_per_px": [
+            0.07547169811320754,
+            0.13095238095238093
+          ],
+          "correlation_with_original": 0.2862827836124251
+        },
+        "base": {
+          "sha256": "9ac916c397321985206df07e97368d498da4a6b9e98040314f0acd41106bd544",
+          "std": 0.0,
+          "range": [
+            231.33333333333334,
+            231.33333333333334
+          ],
+          "dominant_frequency_per_px": [
+            0.0,
+            0.0
+          ],
+          "correlation_with_original": null
+        },
+        "unlit": {
+          "sha256": "9549b7a2b92dceeb6229a2ac0c228bec388daa53c87535f7534453efdee05601",
+          "std": 0.7329422909669354,
+          "range": [
+            187.0,
+            192.0
+          ],
+          "dominant_frequency_per_px": [
+            -0.018867924528301886,
+            0.011904761904761904
+          ],
+          "correlation_with_original": 0.8552035700850137
+        },
+        "unlit-flat": {
+          "sha256": "8e9587784f7c8dca05f00b7c9c12bb4e1d7cb9e2c42a33180cc8b8c0ebbbfba2",
+          "std": 0.0,
+          "range": [
+            255.0,
+            255.0
+          ],
+          "dominant_frequency_per_px": [
+            0.0,
+            0.0
+          ],
+          "correlation_with_original": null
+        }
+      },
+      "camera": {
+        "name": "Qixia | buff roughcast",
+        "map": 256,
+        "normal": 256,
+        "sampler": [
+          1008,
+          1006,
+          true
+        ],
+        "n": 1
+      }
+    }
+  },
+  "former_peak_fft_index_yx": [
+    99,
+    0
+  ],
+  "former_peak_amplitude": [
+    1721.2092691666098,
+    70.7901056571637
+  ],
+  "amplitude_reduction_percent": 95.88718775077017
+}

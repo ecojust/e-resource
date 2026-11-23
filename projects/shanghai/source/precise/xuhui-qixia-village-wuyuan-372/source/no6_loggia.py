@@ -49,7 +49,8 @@ def no6_rear_opening(cam,face_y,rear_y):
 def add_no6_loggia(builder,cam,face_y,rear_y,lod=False):
     if rear_y<=face_y:
         raise ValueError('No. 6 rear face must be behind the enclosure')
-    builder.palette.update(PALETTE)
+    for name,material in PALETTE.items():
+        builder.palette.setdefault(name,material)
     a=layout(cam,face_y,rear_y);l,r=a['left'],a['right'];mid=a['middle'];d=rear_y-face_y
     front=face_y-.045
     def block(name,x0,y0,z0,x1,y1,z1,material):

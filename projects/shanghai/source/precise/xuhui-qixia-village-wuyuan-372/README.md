@@ -11,3 +11,9 @@
     python measurements/fit_court.py --output measurements/court-cameras.json
     python source/build_model.py --output full.glb
     python source/build_model.py --lod --output lod.glb
+
+## 比例、细节与下载
+
+院墙暂按主墙前2.40米布置。按这个进深，照片推算的6号门洞净宽约0.76米，7号约0.90米。院面内退墙约在主墙后0.69米。上述尺寸用于约束单目照片重建，未作现场测绘。
+
+近景模型有13,240个三角面、649个闭合构件，远景模型有10,376个三角面、593个闭合构件。下载页提供可编辑的Blender工程、原始GLB、网页用近景及远景GLB，另有含建模脚本、相机观测和本地复建说明的源码包。墙体、院墙和6号红廊的色图及法线图均为原创生成纹理。

@@ -2,7 +2,7 @@
 from pathlib import Path
 import json
 import numpy as np
-from shapely.geometry import LineString,box
+from shapely.geometry import LineString,Polygon
 from shapely.ops import unary_union
 from court_masonry import Camera,slab,layer,FENCE,PIER,DOOR,SIGN,INK,STEEL,TRIM,PIPE
 COURT=-2.40
@@ -37,8 +37,6 @@ def add_boundary(b,ends,lod):
                                     (g7[1],g6[0],g7[2]-.12,g6[2]-.14,'between Nos 7 and 6'),
                                     (g6[1],ends['right'],g6[2]-.14,g6[2]-.14,'No 6 front')]:
         if right<=left:continue
-        poly=box(left,0,right,1).exterior.coords
-        from shapely.geometry import Polygon
         field=Polygon([(left,0),(right,0),(right,hi),(left,lo)])
         layer(b,field,COURT+.025,.18,FENCE,'Gardens | '+label)
         band=Polygon([(left,lo-.045),(right,hi-.045),(right,hi+.015),(left,lo+.015)])
