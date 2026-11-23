@@ -7,3 +7,7 @@
 首版桌面和手机各实测九个机位、保存八份文件并打开三张模型图。[首版浏览器验收](ordinary-ui/closed.json)
 
 四张离线说明图已校正裁框内像素与天空遮蔽计算之间的坐标偏移。四站塔身内部受测区域的平均亮度降低3.63至4.99级（满量程255），钟室百叶沉入石券后的暗部更清楚。两端分别重新打开三张链接图并保存更新源码包。初版实测的七个模型文件、九镜相机和网页几何仍可按原始散列核对。[四站前后对照](registration/crop-lighting-comparison.jpg) · [旧新图逐件校验](registration/registered-illumination-correction.json) · [亮度读数](registration/crop-lighting.json) · [本次网页与下载回执](ordinary-ui/illumination-correction/correction-receipt.json)
+
+### 教堂设计及1956年影像
+
+张化在《建筑史学刊》2026年第1期图4注明息焉公墓圣母升天堂由潘世义于1929年设计，刊出何西满1956年摄教堂及墓地的照片。表1第7项列1929至1931年、可乐路17号、建筑面积239平方米。第2.2节将勘探、测量、设计、集材与监造归于潘世义，并记邬达克挂名请领营造执照。面积属于整座教堂，钟楼底宽另据照片按条件尺度推算。[原刊与图4、表1](https://www.jgcm.ac.cn/jah/article/doi/10.12329/20969368.2026.01016) · [原刊文件校验与逐项出处](history/cemetery-design-literature.json)
