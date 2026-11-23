@@ -1,0 +1,40 @@
+[(263, 298, 7), (264, 299, 15)]
+264 [('263', 4), ('264', 9)] 7475995
+Traceback (most recent call last):
+  File "/tmp/cathay329/mapping/handoff/admit-window-recovered.py", line 47, in <module>
+    helper=runpy.run_path(str(here/'signed-viewer-inputs.py'))['inputs']; snapshot=w/'raw-329-confirmed.json';inputs=helper(329,snapshot,ident,page,here/'signed-31329-viewer');write(here/'viewer-inputs.json',inputs)
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shanghai-publisher-preservation/city-264/signed-viewer-inputs.py", line 13, in inputs
+    raw = json.loads(raw_file.read_bytes())
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/cathay329/raw-329-confirmed.json'
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-264/offer-329-recovered.py", line 10, in <module>
+    subprocess.run([sys.executable,'-Bu',program,kind,source],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/cathay329/mapping/handoff/admit-window-recovered.py'), 'viewer', PosixPath('/tmp/shanghai-main-264/final-map-31264/phone/process.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-264/final-map-31264/sequence-recovered.py", line 48, in <module>
+    subprocess.run([sys.executable,'-B',w.parent/'offer-329-recovered.py',subphase,str(w/prior_phase/'process.json')],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', PosixPath('/tmp/shanghai-main-264/offer-329-recovered.py'), 'viewer', '/tmp/shanghai-main-264/final-map-31264/phone/process.json']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-264/after-263-recovered.py", line 18, in <module>
+    subprocess.run([sys.executable,'-Bu',w/script],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-264/final-map-31264/sequence-recovered.py')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-264/wait-263.py", line 19, in <module>
+    subprocess.run([sys.executable,'-Bu',h/'after-263-recovered.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-264/after-263-recovered.py')]' returned non-zero exit status 1.

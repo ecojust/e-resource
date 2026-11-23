@@ -1,3 +1,11 @@
+# 英商自来水公司大楼（自来大楼）西南转角花饰
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-waterworks-484-corner&mode=overview) · [单体旋转与下载](shanghai-waterworks-484-corner.html) · [来源与制作范围](source/precise/huangpu-shanghai-waterworks-484-corner/README.md) · [验收记录](data/audit/shanghai-waterworks-484-corner-v1/README.md)
+
+第四批4A002，江西中路484号。按三个具名摄影来源，制作约5.95米宽的西南切角上段，包括凸框墙板、花叶环形浮雕、单樘矩形窗及向上收分的红瓦坡檐。具名足印446937019与原城1766相符。
+
+近景 12,324 个三角面，远景 4,004 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,783,932 字节。上海主图现有 299 处独立入口，黄浦区 134 处。[资产清单](assets/models/candidates/huangpu-shanghai-waterworks-484-corner/manifest.json)
+
 # 浦光大楼（上海基督教青年会）四川中路门头与东立面窗墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-puguang-ymca-east-entrance&mode=overview) · [单体旋转与下载](puguang-ymca-east-entrance.html) · [来源与制作范围](source/precise/huangpu-puguang-ymca-east-entrance/README.md) · [验收记录](data/audit/puguang-ymca-east-entrance-v1/README.md)
