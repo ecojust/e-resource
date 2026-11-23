@@ -15,3 +15,7 @@
 街面斜照中，浅石壁柱、砖墙和圆徽横带探出相邻屋面。圆徽近景里，前排屋顶遮住了圆徽的下半部。切到独立页正面，可以看清长方形额枋、两旁高壁柱和中央深色门扇。左侧探索栏与地点卡覆盖街景的位置也保存在原始画面中。[街面斜照](city-31266/map-street-facade.png) · [圆徽近景](city-31266/map-street-medallion-brickwork.png) · [独立页正面](city-31266/standalone/viewer-desktop-full.png)
 
 本期留存八段城市地图操作的十幅实拍与独立页四幅实拍。地图核对了本栋及邻近房屋的50处地面点，远景切换处实测相机距目标约816米。鼠标首次选中建筑后，WebGL 返回错误1281。复测等前一栋的地图瓦片加载完成，再于同一位置点击，鼠标、触摸两次操作均到达本栋，渲染错误值为零。[十四幅逐图记录](city-31266/visual-review.json) · [独立目审](independent-266/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/2d191affcae2811c90fa99b9bf4c59b4ffaaeebf/projects/shanghai/index.html#landmark=huangpu-yuanyuanchang-bank-jiangxi-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
