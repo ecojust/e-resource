@@ -63,6 +63,9 @@ def source_files():
     for folder, types in ((HERE, {'.py','.png','.json','.js','.c'}),
                           (HERE.parent/'measurements', {'.py','.json','.md','.geojson','.csv','.tsv','.c','.h'})):
         paths.update(p for p in folder.iterdir() if p.is_file() and p.suffix in types)
+    measurements = HERE.parent/'measurements'
+    paths.add(measurements/'nearby-source-features.json.gz')
+    paths.update((measurements/'wayback-numeric-sources').glob('*.json'))
     paths.update(HERE.parent.glob('*.md'))
     paths.update(p for p in (HERE.parent/'measurements').glob('*.txt'))
     paths.update(p for p in (HERE.parent/'measurements').glob('*.cpp'))
