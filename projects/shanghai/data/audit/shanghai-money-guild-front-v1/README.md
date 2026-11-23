@@ -15,3 +15,7 @@
 本期十个城市场景保存了十张阶段图，另补拍了一张宽幅全立面。补拍后切换远景时浏览器被内存上限中止，另一次独立会话在小视窗完成了实际近远切换。随后从独立页分别在桌面和手机截取近、远景四张，与早期六幅独立页图一起复看。四个下载文件逐件核对大小和 SHA-256。三份导出的网格另作每档 238 次射线检验。
 
 [城市主图](../../../index.html#landmark=huangpu-shanghai-money-guild-front&mode=overview) · [三开间全立面](city-31277/map-frontage-overview.png) · [宁波路阳台和长窗](city-31277/map-ningbo-road-front.png) · [中央券门](city-31277/map-arched-entrance.png) · [阳台牛腿](city-31277/map-balcony-brackets.png) · [独立页正面](city-31277/standalone/viewer-desktop-full.png) · [三开间照片和网格测量](photo-recheck/README.md) · [逐图观察](city-31277/observations.md) · [实际浏览和地面核验](city-31277/process-exits.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/8cd199445ce2a1b66eafe72efc3dc753abab1ee1/projects/shanghai/index.html#landmark=huangpu-shanghai-money-guild-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，6 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
