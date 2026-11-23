@@ -1,3 +1,11 @@
+# 汉口路花园住宅临街错层楼梯窗
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) · [单体旋转与下载](bund-garden-residence-stair-bay.html) · [来源与制作范围](source/precise/huangpu-bund-garden-residence-stair-bay/README.md) · [验收记录](data/audit/bund-garden-residence-stair-bay-v1/README.md)
+
+第四批4A020，市房管表列花园住宅／上海外滩花园酒店、汉口路200号，工作名录及具名地块资料列210号。原城1555与OSM 380339888@4匹配，限汉口路临街错层楼梯窗。
+
+近景 11,192 个三角面，远景 2,716 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 969,942 字节。上海主图现有 317 处独立入口，黄浦区 152 处。[资产清单](assets/models/candidates/huangpu-bund-garden-residence-stair-bay/manifest.json)
+
 # 九江路原教会学校入口与双山墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview) · [单体旋转与下载](cathedral-school-jiujiang-front.html) · [来源与制作范围](source/precise/huangpu-cathedral-school-jiujiang-front/README.md) · [验收记录](data/audit/cathedral-school-jiujiang-front-v1/README.md)

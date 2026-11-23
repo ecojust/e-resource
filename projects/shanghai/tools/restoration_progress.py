@@ -23,6 +23,14 @@ class Directory(HTMLParser):
  def handle_data(self,data):
   if self.title and self.current:self.current['name']+=data
 
+def candidate_status_fields(manifest,path):
+ if 'status' in manifest:
+  return {'status':manifest['status']}
+ if (manifest.get('model_id')==manifest['id'] and manifest.get('viewer_page') and manifest.get('scope')
+     and {'raw','full','lod','native'}<=manifest.get('assets',{}).keys()):
+  return {'status':'standalone-exterior-study','scope':manifest['scope'],'viewer_page':manifest['viewer_page']}
+ raise ValueError('Candidate manifest has no recorded status or recognizable standalone exterior delivery: '+path)
+
 def build(project):
  repo=Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=project,text=True).strip());prefix=project.relative_to(repo).as_posix()+'/'
  inputs={}
@@ -67,7 +75,9 @@ def build(project):
    assert d.get('map_replacement') is True and d.get('walk_integration') is True and d['id'] in {m['id'] for m in models} and d['id'] in {r['id'] for r in nav}, 'Integrated preview lacks registered model/navigation'
    integrated_previews.append({'id':d['id'],'manifest':path});continue
   assert not d.get('map_replacement') and not d.get('walk_integration'), 'Candidate integration status changed; reassess report categories'
-  item={'id':d['id'],'name':d['name'],'status':d['status'],'manifest':path,'assets_revalidated':False}
+  item={'id':d['id'],'name':d['name']}
+  item.update(candidate_status_fields(d,path))
+  item.update(manifest=path,assets_revalidated=False)
   if d['id'] in placements:
    item.update(city_integration='data/candidate-city-integrations.json',registration_note=placements[d['id']].get('registration_note','近似定位'),accepted_source_replacement=False)
    if placements[d['id']].get('kind')=='historical-site':

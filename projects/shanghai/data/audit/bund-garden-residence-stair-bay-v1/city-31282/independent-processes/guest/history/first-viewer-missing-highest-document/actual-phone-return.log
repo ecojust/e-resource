@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-282/offer-347-live.py", line 47, in <module>
+    write('returned' if state=='complete' else 'deferred',dict(passed=state=='complete',deferred=state!='complete',state=state,actual_receipt=str(q),sha256=digest(q),dispatch_sha256=b['dispatch_sha256']))
+  File "/tmp/shanghai-main-282/offer-347-live.py", line 22, in write
+    else:assert target.read_bytes()==payload
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

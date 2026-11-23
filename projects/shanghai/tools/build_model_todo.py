@@ -33,7 +33,7 @@ def compact_repeated_links(text,reserved=()):
  counts=Counter(destination(m) for m in pattern.finditer(text));refs={}
  for url,count in sorted(counts.items()):
   if count<2:continue
-  ref=available_reference(f'TD{len(refs)+1}',reserved)
+  ref=available_reference(f'T{len(refs)+1}',reserved)
   # Use the smaller, unwrapped spelling for a conservative savings estimate.
   if count*(len(url.encode())-len(ref))>len(f'[{ref}]: <{url}>\n'.encode())+1:
    refs[url]=ref
@@ -67,7 +67,7 @@ def official_road_lines(prefix, *, compact=False,reserved=()):
  counts=Counter(r['match_status'] for r in rows)
  assert set(counts).issubset(states), 'Unknown official road match state'
  sources=sorted({r['source_url'] for r in rows})
- source_refs={url:(available_reference(f'TDR{i}',reserved) if compact else 'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8]) for i,url in enumerate(sources,1)}
+ source_refs={url:(available_reference(f'O{i}',reserved) if compact else 'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8]) for i,url in enumerate(sources,1)}
  lines=['### 官方专题道路清单补充 TODO','',f"另收录 **{len(rows)} 条官方原表记录**：2022年主要道路范围及2023年绿化特色道路名录。包含 {counts['existing_name']} 条已有名称初步匹配、{counts['new_name_candidate']} 条新名称候选、{counts['composite_review']} 条组合名称待拆分；均不等于新增独立道路数，不能与上方名称数量直接相加。两份专题清单均不是全市道路底册，文件年代也不代表2026年现状已核验。",'',
  '以下仅整理道路名称、原表范围和明确区属，继续查沿街建筑及照片／文字资料。区属缺项保留待核，不从道路名推断。'+link('来源、匹配依据及机器可读记录',prefix+'official-road-leads.json'),'','<details><summary>展开全部官方道路／路段资料待办</summary>','','| ID | 原表道路名称 | 明确区属 | 原表范围 | 来源 | TODO |','|---|---|---|---|---|---|']
  lines[4:4]=[f"名称复核已覆盖其余 {len(reviewed)} 个源行，提出 {review['summary']['proposed_new_name_leads_distinct_strings']} 个待查名称；仅为名称关联及拆分建议，不增加已确认道路数。组合范围仍属于原表整组，不能赋给每个拆分名称。"+link('逐行复核与未解项',prefix+'official-road-reconciliation.json'),'']
@@ -253,7 +253,7 @@ def build(reserved=()):
    lines.append(f"| {link(m['name'],m.get('url'))} | {cell(m['status'])} | {cell(m['next_action'])} |")
  lines+=['','### 按区列出的未完成建筑与构件 TODO','',
  '当前范围复核确认已完成的主楼不再重复安排制作；有遗漏构件的条目沿用源ID，只列剩余任务。其余成组地址仍须拆分到具体楼栋，名录年代、地址或照片链接本身不足以完成外观建模，已有模型的可能关联仅作查重提示。','']
- batch_refs={batch:available_reference(f'H{batch}',reserved) for batch in {r['batch'] for r in records}}
+ batch_refs={batch:available_reference(str(batch),reserved) for batch in {r['batch'] for r in records}}
  for district in queue['district_order']:
   group=[r for r in active_records if r['district']==district]
   lines += [f'<details><summary>{district}：{len(group)}条未完成范围／调查线索</summary>','','| ID | 待做建筑／构件 | 地址／街道线索 | 参考 | TODO |','|---|---|---|---|---|']
