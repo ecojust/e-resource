@@ -1,3 +1,11 @@
+# 源源长银行江西中路473号圆徽砖立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanyuanchang-bank-jiangxi-front&mode=overview) · [单体旋转与下载](yuanyuanchang-bank-jiangxi-front.html) · [来源与制作范围](source/precise/huangpu-yuanyuanchang-bank-jiangxi-front/README.md) · [验收记录](data/audit/yuanyuanchang-bank-jiangxi-front-v1/README.md)
+
+第四批4A004，江西中路473号。按西侧沿街实照，制作两层棕砖墙、带槽的通高白色壁柱、上部带水平翼饰的圆徽和中央门洞。市表未列年代，2005年保护牌记为砖木结构、约1930年代建。
+
+近景 4,848 个三角面，远景 3,068 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 896,411 字节。上海主图现有 301 处独立入口，黄浦区 136 处。[资产清单](assets/models/candidates/huangpu-yuanyuanchang-bank-jiangxi-front/manifest.json)
+
 # 自力大楼（英商自来水公司办公楼）江西中路464号券门及上层窗墙
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zili-waterworks-office-front&mode=overview) · [单体旋转与下载](zili-waterworks-office.html) · [来源与制作范围](source/precise/huangpu-zili-waterworks-office-front/README.md) · [验收记录](data/audit/zili-waterworks-office-v1/README.md)

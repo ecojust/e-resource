@@ -1,0 +1,35 @@
+{
+  "order": 266,
+  "phase": "before",
+  "actual_exit": 1,
+  "remaining_chromium": [],
+  "original_report_path": "/tmp/shanghai-main-266/evidence/266/before/control-browser.json",
+  "original_failure": "ReferenceError: Cannot access 'source' before initialization\n    at view (/dev/shm/shanghai-city266/evidence/266/before/actual-driver.cjs:238:342)\n    at async run (/dev/shm/shanghai-city266/evidence/266/before/actual-driver.cjs:321:143)",
+  "corrective_change": "The capture output path now uses displaySource. The original target source, camera, owner, macro and geometry assertions are preserved.",
+  "files": {
+    "closed.json": {
+      "sha256": "72793728b314d9bf0862561d62a3da5bfd0afc49d300614efeed9e8102a76915",
+      "bytes": 605
+    },
+    "control-browser.json": {
+      "sha256": "29e649e8ddb8cddd41af7af4b5e9d152be86ed392e07e473f0f929a250614096",
+      "bytes": 11534
+    },
+    "viewport-calibration-x11-root.png": {
+      "sha256": "5fbdc2db6fb846c96d72916c0d590213c1386fc761bd9583b03b69befc9896ae",
+      "bytes": 13623
+    },
+    "run.log": {
+      "sha256": "e6ba240bec11c73109a87e3a6553006c3f34d893e22065831c56ca935da5b90f",
+      "bytes": 255
+    },
+    "candidate-audit-groups.cjs": {
+      "sha256": "55c2de631679842d636adc97791816a1c7fdc2e1f7dcdc32e59b9023d0510534",
+      "bytes": 2403
+    },
+    "actual-driver.cjs": {
+      "sha256": "9e9672172e1666ca823d4a23fcb5d883ff801093decfe34b1cd3a33c0da7c8e7",
+      "bytes": 32601
+    }
+  }
+}
