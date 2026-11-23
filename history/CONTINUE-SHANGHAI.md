@@ -48,6 +48,8 @@
 
 [新华村11号楼的四跨院廊、洗石双阶与四座老虎窗](projects/shanghai/xinhuacun-11-garden-front.html) · [固定制作版](https://raw.githubusercontent.com/ecojust/e-resource/99c996de6ce9aa75ae80305a1279529675783532/projects/shanghai/xinhuacun-11-garden-front.html)
 
+[兆丰别墅长宁路712弄入口](projects/shanghai/zhaofeng-villas-sunburst-entry.html) · [固定制作页](https://raw.githubusercontent.com/ecojust/e-resource/cf6ff08ddc8da32036e2e0b5f7a64fec8e074358/projects/shanghai/zhaofeng-villas-sunburst-entry.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
