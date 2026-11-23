@@ -26,6 +26,8 @@
 
 [新华路593弄梅泉别墅题名入口](../projects/shanghai/meiquan-villas-inscribed-entrance.html)。四字刻名门柱、门球灯、铁门、街边砖栏和内折的第一段院栏。五个街面站及两个园侧站用于区分2013至2015年所见的双开门与2020年闭扇状态。三张摄影位自渲、九个视角、八项下载。近远两档的实网足迹与最近原户1187净距4.67米。 [固定工作版](https://raw.githack.com/ecojust/e-resource/bd2c2a710989d165db3a5f3102ef716151f33d68/projects/shanghai/meiquan-villas-inscribed-entrance.html)
 
+息焉堂1929年设计与1956年影像　[原刊取证](../projects/shanghai/data/audit/xiyan-church-north-belfry-v1/history/cemetery-design-literature.json)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
