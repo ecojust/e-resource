@@ -54,6 +54,12 @@ def model_sizes(job):
   parts.append(f"{label} {mb:.3f} MB" if mb<.1 else f"{label} {mb:.2f} MB")
  return '／'.join(parts)
 
+def table_row(values,compact):
+ # Markdown cell padding is optional. The standalone street index keeps the
+ # padded source layout while the complete README fits GitHub's preview.
+ padding='' if compact else ' '
+ return '|'+ '|'.join(padding+value+padding for value in values)+'|'
+
 def official_road_lines(prefix, *, compact=False,reserved=()):
  d=json.loads((DATA/'official-road-leads.json').read_text());rows=d['records']
  review=json.loads((DATA/'official-road-reconciliation.json').read_text())
@@ -82,7 +88,8 @@ def official_road_lines(prefix, *, compact=False,reserved=()):
     targets.append(t['road_name']+'（'+label+('：'+names if label=='别名待核' else '')+'）')
    todo+='；名称复核：'+('、'.join(targets) if targets else rr['unresolved_reason'])
    if rr['review_type']=='optional_parenthesis_interpretation':todo+='；单项括号展开仍待确认'
-  lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell('、'.join(r['districts']))} | {cell(r['extent'])} | [官方原表][{source_refs[r['source_url']]}] | {cell(todo)} |")
+  cells=(cell(r['id']),cell(r['name']),cell('、'.join(r['districts'])),cell(r['extent']),f"[官方原表][{source_refs[r['source_url']]}]",cell(todo))
+  lines.append(table_row(cells,compact))
  lines+=['','</details>','']
  lines += [f'[{ref}]: <{url}>' for url,ref in source_refs.items()]+['']
  return lines
@@ -119,7 +126,8 @@ def map_road_label_lines(prefix, *, compact=False,reserved=()):
   todo=r['todo']
   if r['reconciliation_proposed_name_matches']:
    todo+='；官方待查名称同名：'+'、'.join(x['name'] for x in r['reconciliation_proposed_name_matches'])+'（实体仍待核）'
-  lines.append(f"| {cell(r['id'])} | {cell(r['name'])} | {cell(review_flags)} | {r['occurrence_count']} | {refs} | {cell(todo)} |")
+  cells=(cell(r['id']),cell(r['name']),cell(review_flags),str(r['occurrence_count']),refs,cell(todo))
+  lines.append(table_row(cells,compact))
  lines+=['','</details>','']
  lines += [f"[{tile_refs[tile_id]}]: <{t['source_url']}>" for tile_id,t in tiles.items()]+['']
  return lines
