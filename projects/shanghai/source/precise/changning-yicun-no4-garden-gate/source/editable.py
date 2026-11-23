@@ -26,7 +26,7 @@ def create(raw,out,poses):
     bpy.ops.import_scene.gltf(filepath=str(raw),import_pack_images=True,merge_vertices=True)
     scene=bpy.context.scene
     meshes=[o for o in scene.objects if o.type=='MESH']
-    for prefix,label in [('00','Threshold'),('01','Gateposts'),('02','Double iron leaves'),('03','Lane walls'),('04','Number 4'),('1','House gable, vents and windows')]:
+    for prefix,label in [('00','Threshold and exhibition datum'),('01','Gateposts'),('02','Double iron leaves'),('03','Lane walls'),('04','Number 4'),('1','House gable, vents and windows')]:
         group=bpy.data.collections.new(label);scene.collection.children.link(group)
         for obj in meshes:
             if obj.name.startswith(prefix):

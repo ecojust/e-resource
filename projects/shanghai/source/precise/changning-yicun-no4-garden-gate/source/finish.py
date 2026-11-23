@@ -4,6 +4,7 @@ from io import BytesIO
 from math import sin,cos,pi
 import random
 PALETTE={
+ 'datum':('Exhibition ground datum',(137,133,120)),'cut':('Neutral support below the photographed cut',(179,169,151)),
  'render':('Warm lime-rendered gate pillars',(211,174,132)), 'pale':('Pale plaster on the photographed gable',(222,209,187)),
  'wing':('Pale rose render on side return',(217,188,163)), 'cap':('Dark weathered cement edge',(135,126,106)),
  'foot':('Weathered grey at base of gateposts',(152,151,140)),'paint':('Worn blue-green painted iron and irregular oxide',(61,109,97)),
@@ -28,8 +29,8 @@ def make_png(mat):
             u=i/(n-1);v=j/(n-1); c=.48*(coarse[i,j]/255)+.33*(mid[i,j]/255)+.19*(grit[i,j]/255)
             # Image top aligns to the corroded head of the leaves. A second narrow
             # corrosion band follows their bottom and the exposed perimeter.
-            top=.40*(1-v)**2.6; edge=.22*max(0,1-min(u,1-u)*15); bottom=.22*max(0,1-(1-v)*12)
-            p=max(0,min(1,(c+top+edge+bottom-.62)*10))
+            top=.53*(1-v)**4+.15*max(0,1-abs(u-.5)*15); edge=.18*max(0,1-min(u,1-u)*15); bottom=.10*max(0,1-(1-v)*12)
+            p=max(0,min(1,(c+top+edge+bottom-.65)*12))
             rust=(123+.22*(mid[i,j]-120),65+.13*(coarse[i,j]-128),39)
             color=[base[k]*(1-p)+rust[k]*p for k in range(3)]
         else:

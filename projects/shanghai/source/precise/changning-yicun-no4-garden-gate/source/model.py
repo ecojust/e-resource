@@ -123,10 +123,21 @@ class Model:
         self.sash('15.wing-shaded-window',2.757,3.14,3.277,3.705,y+.32,2,[0,1])
         self.sash('15.wing-tall-window',3.666,2.60,4.575,3.825,y+.32,3,[0,.35,.72,1])
         self.block('15.east-wing-fascia','pale',r,4.84,y+.206,y+.77,3.993,4.052)
-        self.slab('15.east-wing-tiled-roof','clay',[(r,4.052),(4.84,4.052),(4.76,4.125),(r,4.125)],y+.20,y+1.0)
-        for i in range({'raw':34,'full':22,'lod':6}[self.role]):
-            count={'raw':34,'full':22,'lod':6}[self.role];x=r+(4.81-r)*(i+.5)/count
-            self.block('15.tiled-edge','clayedge',x-.008,x+.008,y+.20,y+.98,4.117,4.132)
+        # Roof tops of the visible side wing rise from the street edge. The
+        # rear edge ends at a sectional cut, independently of the unknown rear slope.
+        roof=[(r,8.19,4.066),(4.84,8.19,4.066),(4.84,9.40,4.54),(r,9.40,4.54)]
+        self.quad('15.east-wing-tiled-roof','clay',roof)
+        lower=[(x,y,z-.054)for x,y,z in roof]
+        self.quad('15.east-wing-tiled-roof','clay',lower[::-1])
+        for k in range(4):
+            q=(k+1)%4;self.quad('15.east-wing-tiled-roof','clayedge',(roof[k],lower[k],lower[q],roof[q]))
+        count={'raw':38,'full':26,'lod':15}[self.role]
+        for i in range(count):
+            x=r+(4.84-r)*(i+.5)/count
+            def ridge(at_y,height):
+                return [(x-.012,at_y,height),(x,at_y,height+.012),(x+.012,at_y,height)]
+            lo=ridge(8.19,4.066);hi=ridge(9.40,4.54)
+            for k in (0,1):self.quad('15.tiled-edge','clayedge',(lo[k],lo[k+1],hi[k+1],hi[k]))
         g='14.window-side-condenser';self.block(g+'-case','case',1.69,2.13,y-.22,y-.006,3.443,3.835)
         self.ring(g+'-fan-opening','hardware',1.908,3.646,.104,.146,y-.235,.018,{'raw':40,'full':28,'lod':12}[self.role])
         if self.role!='lod':
@@ -134,4 +145,10 @@ class Model:
                 z=3.535+i*.034;dx=(.108**2-(z-3.646)**2)**.5 if abs(z-3.646)<.108 else .03
                 self.block(g+'-guard','bead',1.908-dx,1.908+dx,y-.242,y-.228,z-.004,z+.004)
     def build(self):
-        self.gate();self.gable();return self.parts
+        self.gate();self.gable()
+        # A separately named exhibition support shows the scale-dependent yard
+        # interval. Its neutral tone distinguishes the cut from documented masonry.
+        self.block('00.display-datum-not-historic-paving','datum',-2.81,4.91,-.37,9.45,-.094,-.042)
+        self.block('00.rear-section-support','cut',-.669,2.439,HOUSE+.01,HOUSE+.295,-.042,.91)
+        self.block('00.rear-section-support','cut',2.444,4.813,HOUSE+.33,HOUSE+.558,-.042,.97)
+        return self.parts
