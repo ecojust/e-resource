@@ -23,3 +23,7 @@
 城市近景的白色地点卡遮住了低层双组回纹。在独立展示的两端正视及斜视中，两组回纹都在首层玻璃门面上方；斜视还可看出檐口出挑和窗洞后退。手机远档保留了主要轮廓，屏上较小的回纹难以逐折分辨。独立页四次实际下载均已按长度和摘要复读。
 
 [实机、地面与四种下载](city-31269/process-exits.json) · [旧城对照](city-31269/map-before.png) · [北京东路第一西窗跨](city-31269/map-first-west-beijing-bay.png) · [双组方回纹几何](city-31269/map-terracotta-double-fret.png) · [远档](city-31269/map-distant.png) · [北京东路230号原照、三档和原房复算](source-recheck/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/5f5bbb1af46f50a6f5dc762f8f54b566f9f099be/projects/shanghai/index.html#landmark=huangpu-chekiang-industrial-bank-beijing-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
