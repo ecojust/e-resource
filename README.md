@@ -510,7 +510,7 @@
 |sh-historic-b5-xh-j-040-v|市文广局老干部活动中心|岳阳路44号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-041-v|君悦酒店|永嘉路624弄|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-042-v|上海戏曲艺术中心|岳阳路168弄|[名录][H5]|待核外观／拆栋|
-|sh-historic-b5-xh-j-043-v|住宅|延庆路121号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-043-v|延庆路121号住宅|延庆路121号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/082825979d54bde6edcdfd580e5cd34c23885a29/projects/shanghai/yanqing-121-brick-front.html>)|已建北向临街砖墙、五樘上窗、人字拼窗芯和西端木筋凸窗与券门。东侧街面延续段、后排坡顶归属和住宅内部待核。|
 |sh-historic-b5-xh-j-044-v|住宅|新乐路54号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-045-v|住宅|新乐路28号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-046-v|住宅|华亭路40,42,44,58号,延庆路132号|[名录][H5] · 照片待核|待核外观／拆栋|
