@@ -81,13 +81,35 @@ def galleries(b,lod):
                 x=cx+s;z0=floor+.48;z1=ceiling-.43
                 holes.append(box(x-.59,z0,x+.59,z1));window(b,x-.59,x+.59,z0,z1,y+.10,2,3,f'gallery back level {k} bay {j+1} sash {h+1}',lod)
         front(b,box(-10.27,floor,10.27,ceiling).difference(unary_union(holes)),y,y+.30,PLASTER,'gallery back / pierced level '+str(k))
-    block(b,-10.32,10.32,.38,2.80,.03,D-.13,BRICK,'plinth / red facing')
+    # The near stair station shows a lower side-wall window beneath this left corner.
+    for side in (-1,1):
+        x=side*10.19;upper_y=2.83
+        def section(poly,front_x,back_x,material,label):
+            b.prism(poly,min(front_x,back_x),max(front_x,back_x),lambda y,z,d:(d,y,z),material,label)
+        if side<0:
+            opening=box(1.12,.66,1.96,1.79)
+            section(box(.34,.03,upper_y,D).difference(opening),x-.13,x+.08,BRICK,'left return / pierced plinth')
+            section(opening,x+.08,x+.105,GLASS,'left return / basement glazing')
+            section(opening,x+.27,x+.32,SHADE,'left return / basement shade')
+            for z in [.63,1.82]:
+                block(b,x-.19,x+.13,1.02,2.06,z,z+.085,STONE,'left return / basement sill or lintel')
+        else:
+            section(box(.34,.03,upper_y,D),x-.08,x+.13,BRICK,'right return / plinth enclosure')
+        for k,(floor,top) in enumerate([(D,L),(F+.20,U)]):
+            holes=[box(.63+i*.34,top-.42,.79+i*.34,top-.13) for i in range(6)]
+            section(box(.36,floor,upper_y,top).difference(unary_union(holes)),x-.13,x+.12,STONE,'end return '+str(side)+' / pierced rail '+str(k+1))
+            block(b,x-.19,x+.17,.32,upper_y+.06,top-.08,top+.04,STONE,'end return / rail coping')
+    block(b,-10.19,10.19,.37,.57,.03,D-.13,BRICK,'plinth / red facing')
+    block(b,-10.17,10.17,2.60,2.81,.04,D-.13,BRICK,'plinth / short inner enclosure')
+    block(b,-10.37,10.37,-.28,2.83,E-.165,E+.025,PLASTER,'upper gallery / continuous shaded plaster soffit')
+    for z,front_edge in [(E-.16,-.30),(E-.085,-.34)]:
+        block(b,-10.40,10.40,front_edge,.29,z,z+.052,WOOD,'upper eave / moulded dark cornice')
 def terrace(b,lod):
     yr=ST+.30;y0=ST
     holes=[]
-    for x in [-3.22,-1.77,1.77,3.22]:
-        holes.append(box(x-.15,.65,x+.15,1.80));window(b,x-.15,x+.15,.65,1.80,yr+.07,1,2,'raised terrace / narrow plinth opening',lod)
-        for z in [.61,1.82]:block(b,x-.24,x+.24,y0-.065,yr,z,z+.09,STONE,'plinth opening / hood or sill')
+    for x in [-3.60,-1.90,2.0,3.58]:
+        holes.append(box(x-.21,.53,x+.21,1.73));window(b,x-.21,x+.21,.53,1.73,y0+.11,1,2,'raised terrace / narrow plinth opening',lod)
+        for z in [.48,1.75]:block(b,x-.29,x+.29,y0-.065,yr,z,z+.09,STONE,'plinth opening / hood or sill')
     front(b,box(-AX,0,AX,D).difference(unary_union(holes)),y0,yr,PEBBLE,'terrace / pierced pebble-dash face')
     block(b,-AX,AX,y0-.025,.20,D-.065,D+.025,STONE,'terrace / upper landing')
     count=12;outer=9.66;length=outer-AX
@@ -118,7 +140,7 @@ def terrace(b,lod):
     front(b,box(x0,D+.025,x1,L-.07).difference(unary_union(holes)),y0-.19,y0+.07,STONE,'landing / perforated straight parapet')
     block(b,x0-.04,x1+.04,y0-.23,y0+.11,L-.10,L+.045,STONE,'landing / continuous coping')
 def roofs(b,lod):
-    front_y=-.34;ridge_y=p['ridge_y'];ridge=p['ridge'];x0,x1=-10.61,10.61;rise=ridge-E
+    front_y=-.34;ridge_y=p['ridge_y'];ridge=p['ridge'];x0,x1=-10.73,10.73;rise=ridge-E
     def height(y):return E+(y-front_y)*rise/(ridge_y-front_y)
     # Shallow hips begin beyond the two end dormers. The back slope lies outside the measured study.
     outline=Polygon([(x0,front_y),(x1,front_y),(x1-3.26,ridge_y),(x0+3.26,ridge_y)])
@@ -130,7 +152,7 @@ def roofs(b,lod):
     # XY plan extruded vertically with the exact principal plane evaluated at each vertex.
     b.prism(slope,-.115,0,lambda x,y,t:(x,y,height(y)+t),TILE,'roof / continuous front hip pitch with four cutouts')
     for side in [-1,1]:
-        x=side*10.61;top=x-side*3.26
+        x=side*10.73;top=x-side*3.26
         skin(b,[(x,front_y,E),(x,ridge_y,E),(top,ridge_y,ridge)],.115,TILE,'roof / visible hip side')
         b.tube([(x,front_y,E+.025),(top,ridge_y,ridge+.03)],.063,TILE,7,'roof / diagonal hip roll')
     block(b,x0,x1,front_y-.06,.37,E-.137,E+.02,WOOD,'eave / dark fascia')
@@ -159,7 +181,7 @@ def roofs(b,lod):
         z=ridge+(1.68 if j==1 else 1.02);low=ridge-.40 if j==1 else E+.63
         block(b,cx-.262,cx+.262,ridge_y-.30,ridge_y+.30,low,z-.10,BRICK,'roof / chimney '+str(j+1))
         block(b,cx-.296,cx+.296,ridge_y-.344,ridge_y+.344,z-.14,z,BRICK,'chimney / cap '+str(j+1))
-    for x in [-9.93,.035,10.06]:
+    for x in [-9.73,.035,10.06]:
         b.tube([(x,-.35,E-.02),(x,-.25,E-.29),(x,-.115,E-.54),(x,-.105,.18)],.063,METAL,8,'gallery / downpipe')
 def add_building(b,lod=False):
     galleries(b,lod);terrace(b,lod);roofs(b,lod)

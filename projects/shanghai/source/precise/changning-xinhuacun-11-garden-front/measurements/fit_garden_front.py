@@ -5,7 +5,7 @@ import numpy as np
 from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation
 HERE=Path(__file__).resolve().parent
-PITCH=5.00  # initial facade scale, inferred from domestic storey and stair; no original plan
+PITCH=5.00  # Four-bay field approximately 20 m; independent 2019/2025 roof picks put the outer dormer centres 14.44/14.45 m apart.
 KEYS=['eave','upper_rail','upper_soffit','lower_rail','platform','dormer_sill','dormer_head','dormer_y','ridge','ridge_y','stair_y','stair_axis']
 START=[8.72,6.55,5.38,3.30,2.35,9.55,11.23,1.35,12.58,4.68,-2.07,4.48]
 SIGMAS=[.35,.31,.26,.21,.21,.43,.48,.35,.72,.72,.40,.32]
@@ -49,7 +49,7 @@ def main():
  for i in range(len(raw)):
   low[n+7*i+2]=1.12;high[n+7*i+2]=2.24
  q=least_squares(residual,x,bounds=(low,high),loss='soft_l1',f_scale=2.0,max_nfev=600).x
- report=dict(pitch=PITCH,parameters=dict(zip(KEYS,q[:n])),stations=residual(q,True),scale_note='A 5.00 m pier pitch is conditional on a typical domestic storey. No archival plan or known public measured dimension was found. Ground photographing heights are regularised to 1.60 ± 0.35 m. Do not use this registration as a survey.')
+ report=dict(pitch=PITCH,parameters=dict(zip(KEYS,q[:n])),stations=residual(q,True),scale_note='The four-pier pitches span 20.0 m. Two independent dated orthophotos measured the main front eave width at 20.57 and 21.84 m. The 2019/2025 outer dormer spans were 14.44/14.45 m; the corresponding modeled span is 15 m. A surveyed house plan has not been found. Ground photographing heights are regularised to 1.60 ± 0.35 m. Do not use this registration as a survey.')
  (HERE/'garden-registration.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  for k,s in report['stations'].items():
   print(k,s['eye'],np.median([t['error_px'] for t in s['controls'] if not t['held']]),[(t['id'],round(t['error_px'],2)) for t in s['controls'] if t['held']])
