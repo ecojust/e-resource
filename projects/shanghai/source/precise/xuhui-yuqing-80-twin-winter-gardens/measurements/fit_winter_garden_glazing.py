@@ -23,7 +23,7 @@ WINDOWS = {
 # The far views clip window bases behind the straight bridge parapet. Near jambs carry the aperture.
 # The near 06 fourth right jamb is nearly tangent. The corresponding far 04 jamb has the wider baseline.
 APERTURES = {'SW':[[-70.07,-48.23],[-42.30,-20.78],[-13.44,6.01],[16.16,46.65],[52.0,76.0]],
-             'NE':[[-75.0,-55.0],[-31.22,-10.70],[-3.61,17.78],[24.17,43.56],[51.37,70.31]]}
+             'NE':[[-75.0,-55.0],[-39.5,-10.70],[-3.61,17.78],[24.17,43.56],[51.37,70.31]]}
 
 def evaluate(parameters, report=False):
     errors, per_jamb = [], []
@@ -53,7 +53,9 @@ def fit():
                 windows=WINDOWS,radii_m=dict(zip(WINDOWS,opt.x[:2])),head_z=opt.x[2],sill_z=opt.x[3],
                 angles=evaluate(opt.x,True),aperture_angles_deg=APERTURES,
                 scope='Visible glazing only. The far images crop or hide several jambs, especially the westernmost northeast aperture, whose left return is seen in 06. The leader sits between the first two openings in both photographs.',
-                angle_reference='Degrees clockwise from the frontmost garden point toward positive X.',
+                western_jamb_returns_m={'NE':[[-55,0],[-39.5,-.152],[-10.7,0]]},
+                western_jamb_note='04 and 06 place the left jamb of NE window 2 at a shallower return than a regular cylinder. Its plan radius is reduced by 0.152 m at the marked jamb and interpolated to the two adjoining jambs. Vertical reprojection in the far view is less certain.',
+                angle_reference='Angles are in degrees with X = cx + R sin(theta), Y = -R cos(theta).',
                 sw_open_leaf={'window':2,'view':6,'free_edge_observed_px':[[290,169],[290,249]],'hinge':'left lower light','angle_degrees':60,'free_edge_reprojection_px_approx':[[290,168],[291,246]]})
 if __name__=='__main__':
     (HERE/'winter-garden-glazing.json').write_text(json.dumps(fit(),indent=2)+'\n')

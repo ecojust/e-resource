@@ -12,7 +12,7 @@ from register_garden import Camera
 
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/'source'))
-from southwest_colonnade import WALL,WHITE,TERRACE,WOOD,PANEL,STONE
+from southwest_colonnade import COPING,WALL,WHITE,TERRACE,WOOD,PANEL,STONE
 
 SAMPLES={
     '4':[
@@ -65,7 +65,14 @@ def inspect(path):
         hit=scene.ray(np.array([-5.39,y,z]),np.array([1.,0.,0.]),.60)
         sections.append(dict(section=label,y=y,z=z,expect_solid=should_close,hit=hit,
                              accepted=bool(hit)==should_close))
-    return {'asset_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'file':path.name,
+    # The far edge of the soffit lies within the photo-plane residual of the textured
+    # back wall. What the source establishes independently at this seam is opacity.
+    seam=[]
+    cam=Camera(6)
+    for uv in [(140,416),(124,419),(201,420),(185,423)]:
+        hit=scene.ray(cam.c,cam.ray(uv),65.)
+        seam.append(dict(pixel=list(uv),hit=hit,accepted=hit is not None and hit['material'] in (WALL,COPING)))
+    return {'west_soffit_interface':seam, 'asset_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'file':path.name,
             'camera_sha256':hashlib.sha256((HERE/'garden-cameras.json').read_bytes()).hexdigest(),
             'source_controls_sha256':hashlib.sha256((HERE/'southwest-court-photo-controls.json').read_bytes()).hexdigest(),
             'rays':records,'exact_count':sum(r['first_hit'] is not None and r['first_hit']['material'] in r['material_options'] for r in records),

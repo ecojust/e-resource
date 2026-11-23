@@ -69,27 +69,56 @@ def make_window(b,record,limits,y,lod):
     solid(b,l-.035,r+.035,y-.042,y+.055,base-.029,base+.012,COPING,name+' | sill')
 
 def central_column(b,cam,points,lod,soffit):
-    foot=cam.at_height(points['foot'],0)
-    y=foot[1]
-    a=cam.wall(points['left_at_middle'],y);c=cam.wall(points['right_at_middle'],y)
-    radius=float(np.clip(abs(c[0]-a[0])/2,.19,.34))
-    x=foot[0]
-    b.tube([(x,y,0),(x,y,soffit-.20)],radius,CERAMIC,12 if lod else 32,'Center | round garden support')
-    upper=x+radius
-    q=[(x-radius,soffit-.62),(upper,soffit-.62),(upper,soffit-.16),(upper+.20,soffit-.04),
-       (upper+.20,soffit),(x-radius-.59,soffit),(x-radius-.39,soffit-.083),
-       (x-radius-.20,soffit-.19),(x-radius-.09,soffit-.32)]
-    face(b,Polygon(q),y-radius,.62,CERAMIC,'Center | scooped haunch below the terrace')
+    # A projected vertical through each photographed shaft centre constrains a vertical plane.
+    # These planes intersect in the physical centre line, independent of approximate floor height.
+    normals=[];constants=[];cameras={'4':cam,'6':Camera(6)}
+    for view,c in cameras.items():
+        ray=c.ray(points['centre_pixels'][view])
+        n=np.cross(ray,[0,0,1])[:2];normals.append(n);constants.append(n@c.c[:2])
+    xy=np.linalg.solve(normals,constants);x,y=xy;radii=[]
+    for view,c in cameras.items():
+        for p in points['opposed_shaft_edges'][view]:
+            v=c.ray(p)[:2];v/=np.linalg.norm(v);offset=xy-c.c[:2]
+            radii.append(abs(v[0]*offset[1]-v[1]*offset[0]))
+    radius=float(np.median(radii))
+    b.tube([(x,y,-.015),(x,y,soffit-.41)],radius,CERAMIC,12 if lod else 32,'Center | round garden support')
+    c=cameras['6'];west=x-radius;profile=[]
+    for p in points['photo6_front_haunch_underside']:
+        ray=c.ray(p);v=c.c+ray*((west-c.c[0])/ray[0]);profile.append((v[1],v[2]))
+    yz=[(y+radius,soffit-.77),*profile,(profile[-1][0]-.10,soffit),(y+radius,soffit)]
+    b.prism(Polygon(yz),west,x+radius,lambda v,z,x:(x,v,z),CERAMIC,'Center | scooped front haunch')
 
 def roof_edge(b,left,right,roof,lod):
-    solid(b,left,right,-.34,1.55,roof,roof+.22,COPING,'Upper roof | projecting eave')
-    solid(b,left+.24,right-.24,.18,.36,roof+.22,roof+.53,PLASTER,'Upper roof | garden curb')
-    for z in [roof+.62,roof+1.08]:
-        solid(b,left+.31,right-.31,.28,.33,z-.019,z+.019,RAILING,'Upper roof | terrace rail')
-    for i,x in enumerate(np.linspace(left+.35,right-.35,47 if lod else 94)):
-        solid(b,x-.020,x+.020,.277,.328,roof+.50,roof+1.1,RAILING,'Upper roof | vertical guard')
-        if not lod and i%10==0:
-            solid(b,x-.057,x+.057,.23,.36,roof+.22,roof+1.12,RAILING,'Upper roof | principal post')
+    # Two notches in the roof slab can both be followed in the 2013 northeast photograph.
+    edges=[(left,-.62),(-5.19,-.62),(-5.19,-1.24),(6.23,-.94),(6.23,-.37),(right,-.15)]
+    deck=Polygon([*edges,(right,1.55),(left,1.55)])
+    b.plan_prism(deck,roof,roof+.22,COPING,'Upper roof | twice-stepped eave')
+    for (a,ay),(c,cy) in zip(edges,edges[1:]):
+        length=np.hypot(c-a,cy-ay)
+        if length<.01:continue
+        dx,dy=(c-a)/length,(cy-ay)/length
+        # A narrow curb follows the two actual returns as well as the long reaches.
+        q=Polygon([(a,ay+.13),(c,cy+.13),(c-dy*.15,cy+.13+dx*.15),(a-dy*.15,ay+.13+dx*.15)])
+        b.plan_prism(q,roof+.22,roof+.49,PLASTER,'Upper roof | curb following eaves')
+        for z in [roof+.59,roof+1.08]:
+            b.tube([(a,ay+.23,z),(c,cy+.23,z)],.019,RAILING,6 if lod else 10,'Upper roof | terrace rail')
+        count=max(2,int(round(length/(.27 if lod else .14))))
+        for i,f in enumerate(np.linspace(0,1,count,endpoint=False)):
+            x=a+(c-a)*f;y=ay+.23+(cy-ay)*f
+            w=.041 if i%13==0 else .017
+            solid(b,x-w,x+w,y-.020,y+.020,roof+.49,roof+1.10,RAILING,'Upper roof | vertical guard')
+
+def cooling_unit(b,cam,survey):
+    # The square unit and its circular fan occur in both principal views.
+    xy=cam.wall(survey['air_conditioner_center']['4'],-.02)
+    x,z=xy[0],xy[2];front=-.10
+    solid(b,x-.39,x+.39,front,.25,z-.30,z+.30,COPING,'Upper garden wall | air conditioner')
+    radial=np.linspace(0,2*np.pi,33)
+    ring=[(x-.065+.195*np.cos(t),front-.022,z+.19*np.sin(t))for t in radial]
+    b.tube(ring,.013,FRAME,6,'Upper garden wall | circular fan grille')
+    for dz in np.linspace(-.16,.16,7):
+        half=np.sqrt(.19**2-dz**2)
+        solid(b,x-.065-half,x-.065+half,front-.022,front-.010,z+dz-.006,z+dz+.006,FRAME,'Upper garden wall | fan guard slats')
 
 def add_central_front(b,lod=False):
     cam=Camera(4);survey=json.loads((HERE.parent/'measurements/central-front-controls.json').read_bytes())
@@ -113,11 +142,20 @@ def add_central_front(b,lod=False):
     solid(b,left,right,-3.065,.91,soffit,soffit+.15,COPING,'Garden | broad lower bridge slab')
     solid(b,left,right,-3.065,-2.84,soffit+.15,sills-.075,PLASTER,'Garden | long first-floor parapet')
     solid(b,left,right,-3.10,-2.81,sills-.075,sills-.033,COPING,'Garden | first-floor coping')
-    solid(b,left+sw+.04,right,-1.47,.84,eave+.02,eave+.22,COPING,'Garden | recessed upper bridge')
-    solid(b,left+sw+.04,right,-1.46,-1.26,eave+.22,d['upper_parapet_z']-.04,PLASTER,'Garden | upper bridge solid edge')
-    solid(b,left+sw+.04,right,-1.49,-1.23,d['upper_parapet_z']-.04,d['upper_parapet_z'],COPING,'Garden | upper coping')
-    # A perpendicular cheek marks the southwest end of the shortened upper bridge in photo 6.
-    solid(b,left+sw+.04,left+sw+.24,-1.45,.81,sills-.02,eave+.11,PLASTER,'Gallery | upper bridge end return')
+    # The upper parapet is considerably shorter than the uninterrupted lower bridge.
+    # Corner rays from both garden photographs place its southwest end almost on X=0.
+    # Its floor projects further forward and to the southwest of that parapet.
+    upper=[(-.58,-2.36),(5.67,-2.29),(right,-1.87),(right,.91),(-.58,.91)]
+    from shapely.geometry import Point
+    visible_deck=Polygon(upper).difference(Point(right,0).buffer(ne,resolution=42).intersection(box(right-ne,-ne,right+ne,0)))
+    b.plan_prism(visible_deck,6.23,6.49,COPING,'Garden | shorter upper deck with projecting rim')
+    wallfront=Polygon([(.10,-1.18),(5.93,-1.17),(right,-1.13),(right,-.96),(.10,-.98)])
+    parapet=wallfront.difference(Point(right,0).buffer(ne-.61,resolution=42).intersection(box(right-ne,-ne,right+ne,0)))
+    b.plan_prism(parapet,6.49,7.80,PLASTER,'Garden | upper terrace parapet')
+    b.plan_prism(parapet.buffer(.018,join_style=2),7.80,7.835,RAILING,'Garden | thin dark upper coping')
+    solid(b,.10,.27,-1.18,.64,6.49,7.80,PLASTER,'Upper terrace | southwest parapet return')
+    solid(b,.084,.286,-1.19,.65,7.80,7.835,RAILING,'Upper terrace | coping on west return')
+    solid(b,.02,.26,-2.35,.82,sills-.06,6.255,PLASTER,'Gallery | transverse support of the shorter upper deck')
     solid(b,right+ne-1.25,right+ne+2.0,.78,1.42,6.06,6.19,COPING,'Northeast end | hood over the square upper window')
     solid(b,right+ne-1.15,right+ne+1.95,.96,1.22,6.98,7.08,COPING,'Northeast end | roof coping')
     solid(b,east_web,5.54,.68,.90,0,soffit,PLASTER,'Ground | recessed wall adjoining the eastern curve')
@@ -131,8 +169,9 @@ def add_central_front(b,lod=False):
     for x in np.linspace(west_web+.10,east_web-.10,7):
         b.tube([(x,-3.17,.285),(x,-3.17,1.02)],.025,RAILING,8,'Ground | garden rail post')
     roof_edge(b,left-sw+.04,right+ne+.12,roof,lod)
+    cooling_unit(b,cam,survey)
     for p in survey['upper_drain_heads']:
         v=cam.wall(p,.27);x=v[0]
-        b.tube([(x,.240,eave+.18),(x,.240,roof-.08)],.057,PIPE,8 if lod else 12,'Upper roof | rainwater leader')
+        b.tube([(x,.240,sills+.03),(x,.240,roof-.08)],.057,PIPE,8 if lod else 12,'Upper roof | rainwater leader')
         b.tube([(x,.215,roof-.47),(x,.215,roof-.22)],.089,PIPE,8 if lod else 16,'Upper roof | collector socket')
     return dict(sw_center=left,ne_center=right,soffit=soffit,roof=roof)

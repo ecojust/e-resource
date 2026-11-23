@@ -14,16 +14,20 @@ from register_garden import Camera
 WALL = 'Garden | cream roughcast'
 WHITE = 'Garden | warm white column'
 TERRACE = 'Garden | weathered terrace'
+COPING = 'Garden | pale edged concrete'
 WOOD = 'Garden | walnut door joinery'
 PANEL = 'Garden | inset hardwood panels'
+RECESS = 'Garden | shaded doorway interior'
 HANDLE = 'Garden | patinated door hardware'
 STONE = 'Garden | dark porch threshold'
 PALETTE = {
     WALL: dict(color=[.82, .79, .70], roughness=.96),
     WHITE: dict(color=[.87, .85, .76], roughness=.87),
+    COPING: dict(color=[.84,.83,.75], roughness=.88),
     TERRACE: dict(color=[.61, .59, .53], roughness=.90),
     WOOD: dict(color=[.113, .059, .031], roughness=.75),
     PANEL: dict(color=[.159, .089, .045], roughness=.77),
+    RECESS: dict(color=[.011,.010,.009], roughness=1.),
     HANDLE: dict(color=[.108, .095, .073], roughness=.51, metallic=.44),
     STONE: dict(color=[.148, .142, .12], roughness=.88),
 }
@@ -44,6 +48,18 @@ def add_wooden_door(builder, left, right, back_y, head, lod):
     def front_panel(poly,y0,y1,material,name):
         builder.prism(poly,-y1,-y0,lambda x,z,d:(x,-d,z),material,label+' | '+name)
 
+    # The partially open leaf shows a dark interior in 6. These short dark returns
+    # close the observed recess at the clearance of one leaf; they do not define a room.
+    depth = .91
+    width = right-left
+    back = back_y+depth+.018
+    builder.box(((left+right)*.5,back,head*.5),(width,.036,head),RECESS,
+                label=label+' | shadow behind open leaf')
+    for jamb,x in [('west',left+.012),('east',right-.012)]:
+        builder.box((x,back_y+(depth+.18)*.5,head*.5),(.024,depth-.18,head),RECESS,
+                    label=label+' | short '+jamb+' dark reveal')
+    builder.box(((left+right)*.5,back_y+(depth+.18)*.5,head-.012),(width,depth-.18,.024),RECESS,
+                label=label+' | inner soffit')
     frame = .070
     inner = box(left+frame,.025,right-frame,head-frame)
     shell = box(left,0,right,head).difference(box(left+frame,-.10,right-frame,head-frame))
@@ -98,6 +114,14 @@ def add_southwest_colonnade(builder,lod=False):
     anchors=camera.data['shared_colonnade_xyz']
     roof=camera.data['middle_slab_underside_z']
     base=0.
+    # The rounded part ends at Y=0. In 6 its ceiling remains unbroken as it
+    # reaches the rectangular rear wall. The central bridge only covers X>=cx.
+    cx=camera.data['centres_m']['SW']
+    rear=source['back_y']+.19
+    radius=camera.data['midfloor_radii_m']['SW']
+    closure=box(cx-radius,-.006,cx,rear)
+    builder.prism(closure,roof,roof+.15,lambda x,y,z:(x,y,z),COPING,
+                  'SW porch | flat soffit return from semicircle to back wall')
     for key,name in [('west_capital','west end'),('inner_capital','inner end')]:
         x,y=anchors[key][:2]
         builder.tube([(x,y,base),(x,y,roof+.006)],source['radii'][key],WHITE,

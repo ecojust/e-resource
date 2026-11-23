@@ -23,12 +23,20 @@ def arc_xy(cx,radius,angle):
     a=np.radians(angle)
     return (cx+radius*np.sin(a),-radius*np.cos(a))
 
-def arc_polygon(cx,outer,start,stop,segments,inner=0):
+def local_radius(radius,angle,returns):
+    if not returns:
+        return radius
+    knots,offsets=zip(*returns)
+    return radius+np.interp(angle,knots,offsets,left=0,right=0)
+
+def arc_polygon(cx,outer,start,stop,segments,inner=0,returns=()):
     count=max(1,round(segments*(stop-start)/180))
     angles=np.linspace(start,stop,count+1)
-    points=[arc_xy(cx,outer,a) for a in angles]
+    if returns:
+        angles=np.unique(np.r_[angles,[v[0] for v in returns if start<v[0]<stop]])
+    points=[arc_xy(cx,local_radius(outer,a,returns),a) for a in angles]
     if inner:
-        points.extend(arc_xy(cx,inner,a) for a in angles[::-1])
+        points.extend(arc_xy(cx,local_radius(inner,a,returns),a) for a in angles[::-1])
     elif stop-start<179.99:
         points.append((cx,0))
     return Polygon(points)
@@ -46,9 +54,9 @@ def open_sash(face,lo,hi,sill,transom,angle,lod):
         for height in (sill+.10,transom-.10):
             face.builder.tube([face.point(lo,height-.035,.011),face.point(lo,height+.035,.011)],.009,FRAME,8,face.label+'/hinge')
 
-def glazing(b,cx,radius,angles,sill,head,opening,title,lod):
+def glazing(b,cx,radius,angles,sill,head,opening,title,lod,returns):
     start,stop=angles
-    wall=Facade(b,arc_xy(cx,radius,start),arc_xy(cx,radius,stop),title)
+    wall=Facade(b,arc_xy(cx,local_radius(radius,start,returns),start),arc_xy(cx,local_radius(radius,stop,returns),stop),title)
     half=wall.length/2
     border=.040 if not lod else .044
     inner=box(-half+border,sill+border,half-border,head-border)
@@ -84,8 +92,9 @@ def add_winter_gardens(b,lod=False):
         z0,z1=windows['sill_z'],windows['head_z']
         prefix=side+' winter garden | '
         n=26 if lod else 72
-        def band(outer,inner,bottom,top,material,label,start=-90,stop=90,cut=None):
-            shape=arc_polygon(cx,outer,start,stop,n,inner)
+        returns=windows['western_jamb_returns_m'].get(side,())
+        def band(outer,inner,bottom,top,material,label,start=-90,stop=90,cut=None,profile=()):
+            shape=arc_polygon(cx,outer,start,stop,n,inner,profile)
             if cut is not None:
                 shape=shape.difference(cut)
             b.plan_prism(shape,bottom,top,material,prefix+label)
@@ -95,14 +104,14 @@ def add_winter_gardens(b,lod=False):
         band(lower,0,soffit,soffit+.15,COPING,'lower cantilever soffit',cut=between)
         band(apron,apron-.16,soffit+.15,sillz-.067,PLASTER,'solid apron below glazing')
         band(apron+.025,apron-.18,sillz-.067,sillz,COPING,'round apron coping')
-        band(radius+.050,radius-.15,sillz,z0,PLASTER,'sill below flat glazing')
-        band(radius+.050,radius-.15,z1,eavez,PLASTER,'roughcast spandrel over glazing')
+        band(radius+.050,radius-.15,sillz,z0,PLASTER,'sill below flat glazing',profile=returns)
+        band(radius+.050,radius-.15,z1,eavez,PLASTER,'roughcast spandrel over glazing',profile=returns)
         begin=-90.
         for i,(start,stop) in enumerate(openings):
-            band(radius+.050,radius-.15,z0,z1,PLASTER,'masonry pier '+str(i+1),begin,start)
-            glazing(b,cx,radius,[start,stop],z0,z1,side=='SW' and i==1,prefix+'window '+str(i+1),lod)
+            band(radius+.050,radius-.15,z0,z1,PLASTER,'masonry pier '+str(i+1),begin,start,profile=returns)
+            glazing(b,cx,radius,[start,stop],z0,z1,side=='SW' and i==1,prefix+'window '+str(i+1),lod,returns)
             begin=stop
-        band(radius+.050,radius-.15,z0,z1,PLASTER,'last masonry pier',begin,90.)
+        band(radius+.050,radius-.15,z0,z1,PLASTER,'last masonry pier',begin,90.,profile=returns)
         band(eave,0,eavez,eavez+.195,COPING,'projecting upper slab')
         band(roof,roof-.185,eavez+.195,parapetz-.032,PLASTER,'roof parapet')
         band(roof+.012,roof-.19,parapetz-.032,parapetz,COPING,'roof parapet coping')
@@ -111,7 +120,7 @@ def add_winter_gardens(b,lod=False):
         pts=[[*arc_xy(cx,roof-.075,v),parapetz+.026] for v in angles]
         b.tube(pts,.017,RAILING,6 if lod else 9,prefix+'dark top bead')
         # Both opposite views show the black rainwater leader beside the glazing.
-        a=49.5 if side=='SW' else -33.3
-        x,y=arc_xy(cx,radius+.078,a)
+        a=49.5 if side=='SW' else -42.25
+        x,y=arc_xy(cx,local_radius(radius+.078,a,returns),a)
         b.tube([(x,y,sillz+.025),(x,y,eavez-.012)],.034,PIPE,6 if lod else 10,prefix+'cast iron downpipe')
     return garden,windows
