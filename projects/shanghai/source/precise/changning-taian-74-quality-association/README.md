@@ -13,3 +13,5 @@
 在2021年1月的一张连续街照中，从街角到窄角窗为1.14米，四条常宽窗轴依次在4.06、7.38、10.58和13.73米；第二至第四轴都看得到三列两行凹板。靠近街角的一组树枝遮挡较多，细分按估计表达。[同一画面的窗轴、消失点与区间](measurements/chainage-of-west-side-windows.json)
 
 最终近景有785个闭合构件、22,628个三角面，远景有760个闭合构件、17,136面。四组成对的原创色纹及法线分别表现浅灰抹面、浅色线脚、门罩金属和红色台阶铺地。竖向名牌和绿色74号牌可以分别查看。历史院号的考据不占用这个临街实物的定位。[四组现场色样](measurements/finish-readings.json) · [拱肩与凸徽的源图像点](measurements/portal-original-details.json)
+
+原始GLB和分别解码的近景、远景文件都按69个独立照片像点检查最先撞到的三角面。每档有57点直接落在对应构件上，全部69点都在原图4像素范围内找到对应表面。三档的颜色和法线图解码后与源图逐像素一致。[69点的三档首击核对](../../../data/audit/taian-74-quality-association-v1/final/registration/independent/registered-material-validation.json)
