@@ -18,10 +18,10 @@ def prepare(raw,out):
     b=build(False);rebuilt=out/'regenerated.glb';b.save(rebuilt,META)
     assert engine.sha(raw)==engine.sha(rebuilt)
     doc,_=engine.read_gltf(raw);parts=[]
-    for part in b.parts:
+    for number,part in enumerate(b.parts,1):
         v=np.asarray(part['vertices'],dtype='<f4');t=np.asarray(part['triangles'],dtype=int)
         xyz,ix=np.unique(v,axis=0,return_inverse=True);label=part['label']
-        entry={'name':label,'label':label,'collection':collection(label),'material':part['material'],'v':xyz.tolist(),'t':ix[t].tolist()}
+        entry={'name':f'G60-{number:03d} '+label[:48],'label':label,'collection':collection(label),'material':part['material'],'v':xyz.tolist(),'t':ix[t].tolist()}
         if 'texcoords' in part:
             uv=np.asarray(part['texcoords'],dtype='<f4')[t];uv[:,:,1]=(1.-uv[:,:,1].astype(np.float64)).astype(np.float32)
             entry['corner_uv']=uv.reshape(-1,2).tolist()
