@@ -542,7 +542,7 @@
 |sh-historic-b5-xh-j-076-v|住宅|衡山路2号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-077-v|住宅|宝庆路20号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-078-v|中共上海市纪委|宛平路7号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-079-v|上海教育评估院|陕西南路202号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-079-v|怡和医院旧址庭院立面与拱顶门廊|陕西南路202号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/49d3ffe33930b7995aa3b617b2b293b40abad5e3/projects/shanghai/shaanxi-202-former-yihe-hospital.html>)|已建六轴庭院立面、三处透雕挑台、拱券雨篷、双扇透花门、石阶、石狮与可见西翼红瓦屋面。资料未覆盖的北侧门窗、其余庭院楼栋和室内深处待核。|
 |sh-historic-b5-xh-j-080-v|崇源别墅|常熟路183弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-081-v|南区电话局汾阳路分局|汾阳路63号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-082-v|菁英会|岳阳路265号|[名录][H5]|待核外观／拆栋|
