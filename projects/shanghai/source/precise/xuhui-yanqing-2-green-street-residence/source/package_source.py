@@ -1,0 +1,129 @@
+"""Archive the editable architectural source and verify both exported GLBs from a clean extraction."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+from zipfile import ZipFile, ZIP_DEFLATED, ZipInfo
+
+HERE = Path(__file__).resolve().parent
+PROJECT = next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
+ID = HERE.parent.name
+SHARED = (
+    'source/precise/changning-hongji-yuyuan-garden-houses-8-and-9/measurements/render-garden-stations.py',
+    'source/precise/huangpu-old-jiefu-nanjing-road-shopfront/measurements/northwest_raster.c',
+    'source/precise/huangpu-yuanmingyuan-apartments-street-front/measurements/photo_glb_raster.py',
+    'source/precise/xuhui-shaanxi-222-no20-residence-gate/source/build_blender_source.py',
+    'source/precise/xuhui-shaanxi-222-no20-residence-gate/source/package_model.py',
+    'tools/package_architectural_model.py', 'tools/verify_editable_model.py',
+    'source/precise/hongkou-general-post-office/source/common/photo_architecture.py',
+    'source/precise/hongkou-general-post-office/source/decode_meshopt.mjs',
+    'source/precise/hongkou-general-post-office/source/package_assets.py',
+    'source/precise/hongkou-tanggu-road-apartment-dated-crown/source/crown_builder.py',
+    'source/precise/jingan-country-hospital/source/build_garden.py',
+    'source/precise/jingan-country-hospital/source/check_meshes.py',
+    'source/precise/jingan-country-hospital/source/make_native.py',
+    'source/precise/jingan-country-hospital/source/portico.py',
+    'source/precise/xuhui-wanping-42-brick-window-bays/source/brick_finishes.py',
+    'source/precise/xuhui-huashan-823-827-stair-loggia/source/build_blender_source.py',
+    'source/precise/xuhui-huashan-823-827-stair-loggia/source/package_editable.py',
+    'source/precise/xuhui-yanqing-159-garden-residence/source/build_blender_source.py',
+    'source/precise/xuhui-yanqing-159-garden-residence/source/package_model.py',
+    'source/precise/xuhui-yanqing-159-garden-residence/source/garden_finishes.py',
+    'source/precise/xuhui-baisaizhong-apartments-fuxing-road-corner/source/build_blender_source.py',
+    'source/precise/hongkou-gongyi-fang-975-987-sichuan-road/source/asset_rights.py',
+    'source/precise/xuhui-hujiang-villas-changle-passage-bay/measurements/city-contact/glb_triangles.py',
+    'data/audit/postal-office-v1/independent-glb-review-helpers.py', 'vendor/meshopt_decoder.module.js',
+)
+README = '''# 延庆路2号浅绿住宅
+
+2015年6月21日，Fayhoo拍摄了沿街的延庆路2号，照片可见同一面墙上的两块2号门牌。原照采用 CC BY-SA 3.0 许可，见 https://commons.wikimedia.org/wiki/File:Yanqinglu_2_Hao_Zhuzhai.JPG 。同年冬季的多个站位用于校正弧形楼梯井、凸窗、阳台、端墙和檐线。程序纹面等资源按实际建模清单保存在 source 目录。本包保存带SHA-256的脚本、程序纹理、摄像机、测量记录及所需的共用模块，路径与制作仓库一致。
+
+从解压目录运行以下命令。两档建模使用Python 3、NumPy、Shapely 2.1和Pillow。复核照片控制点另需SciPy，照片取景渲染另需C编译器。压缩、逐面核对和可编辑工程另需Node.js、gltfpack及Blender。下列各通用脚本的帮助可通过 --help 查看。
+
+```sh
+src=projects/shanghai/source/precise/xuhui-yanqing-2-green-street-residence/source
+mkdir -p rebuilt/whole rebuilt/packaged rebuilt/native
+python "$src/build_model.py" --output rebuilt/whole/full-source.glb
+python "$src/build_model.py" --output rebuilt/whole/lod-source.glb --lod
+python "$src/package_model.py" rebuilt/whole rebuilt/packaged --gltfpack gltfpack
+python "$src/package_editable.py" prepare rebuilt/packaged rebuilt/native
+python "$src/package_editable.py" run rebuilt/packaged rebuilt/native
+```
+'''
+def digest(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+def add(z, path, data):
+    entry=ZipInfo(path,(1980,1,1,0,0,0))
+    entry.compress_type=ZIP_DEFLATED
+    entry.external_attr=0o100644<<16
+    z.writestr(entry,data)
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('output',type=Path)
+    parser.add_argument('--verify-mesh-dir',type=Path,required=True)
+    parser.add_argument('--verify-packaged-dir',type=Path,help='Compare clean raw and both meshopt encodings with this directory')
+    parser.add_argument('--gltfpack',default=os.environ.get('GLTFPACK','gltfpack'))
+    args=parser.parse_args(); args.output.parent.mkdir(parents=True,exist_ok=True)
+    files={PROJECT/s for s in SHARED}
+    files.update(p for p in HERE.iterdir() if p.is_file() and p.suffix in {'.py','.png','.json','.js'})
+    files.update(p for p in (HERE.parent/'measurements').glob('*') if p.is_file() and p.suffix in {'.py','.json','.md','.geojson'})
+    files.update(p for p in HERE.parent.glob('*.md') if p.is_file())
+    source_names={}
+    temp=args.output.with_suffix('.partial')
+    with ZipFile(temp,'w') as z:
+        for p in sorted(files):
+            name='projects/shanghai/'+p.relative_to(PROJECT).as_posix()
+            data=p.read_bytes()
+            add(z,name,data);source_names[name]=dict(bytes=len(data),sha256=digest(data))
+        add(z,'README.md',README.encode())
+        add(z,'source-files.json',(json.dumps(source_names,indent=2,ensure_ascii=False)+'\n').encode())
+    verified_web={}
+    regenerated_textures={}
+    with tempfile.TemporaryDirectory(dir=args.output.parent,prefix='verified-source-')as folder:
+        root=Path(folder)
+        with ZipFile(temp)as z:
+            assert z.testzip() is None and len(z.namelist())==len(set(z.namelist()))
+            z.extractall(root)
+        source=(root/'projects/shanghai'/HERE.relative_to(PROJECT)/'build_model.py')
+        generated=root/'generated-textures'
+        images=sorted(source.parent.glob('*.png'))
+        if images:
+            subprocess.run([sys.executable,source.with_name('residence_finishes.py'),'--output',generated],
+                           env={**os.environ,'OPENBLAS_NUM_THREADS':'1','PYTHONDONTWRITEBYTECODE':'1'},check=True)
+            for image in images:
+                data=(generated/image.name).read_bytes()
+                if data!=image.read_bytes():
+                    raise ValueError(f'The procedural finish cannot be regenerated byte-for-byte: {image.name}')
+                regenerated_textures[image.name]=digest(data)
+        result={}
+        for role in ('full','lod'):
+            mesh=root/(role+'-source.glb')
+            command=[sys.executable,source,'--output',mesh]
+            if role=='lod':command.append('--lod')
+            subprocess.run(command,env={**os.environ,'OPENBLAS_NUM_THREADS':'1','PYTHONDONTWRITEBYTECODE':'1'},check=True)
+            expected=(args.verify_mesh_dir/mesh.name).read_bytes()
+            actual=mesh.read_bytes()
+            if actual!=expected:raise ValueError(f'Clean source rebuild changed {role} bytes')
+            result[role]=dict(bytes=len(actual),sha256=digest(actual))
+        if args.verify_packaged_dir:
+            packed=root/'packaged'
+            subprocess.run([sys.executable,source.with_name('package_model.py'),root,packed,'--gltfpack',args.gltfpack],
+                           check=True,env={**os.environ,'OPENBLAS_NUM_THREADS':'1','PYTHONDONTWRITEBYTECODE':'1'})
+            for role in ('raw','web','lod'):
+                file=ID+'-'+role+'.glb'
+                data=(packed/file).read_bytes()
+                if data!=(args.verify_packaged_dir/file).read_bytes():
+                    raise ValueError(f'Offline rebuild changed {role} delivery bytes')
+                verified_web[role]=dict(bytes=len(data),sha256=digest(data))
+    temp.replace(args.output)
+    report=dict(archive=args.output.name,bytes=args.output.stat().st_size,sha256=digest(args.output.read_bytes()),
+                source_paths=len(source_names),verified_external_original_assets=0,verified_geometry=result,verified_deliveries=verified_web,regenerated_textures=regenerated_textures)
+    args.output.with_suffix('.verification.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
+    print(json.dumps(report,ensure_ascii=False))
+if __name__=='__main__':main()

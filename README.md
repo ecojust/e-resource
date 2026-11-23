@@ -534,7 +534,7 @@
 |sh-historic-b5-xh-j-068-v|住宅|延庆路43-49号、51弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-069-v|住宅|五原路84弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-070-v|华邸|五原路76弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-071-v|栖霞村|徐汇区五原路372弄6-9号|[名录][H5]|待核外观／拆栋|
+|sh-historic-b5-xh-j-071-v|栖霞村6–9号院向立面|徐汇区五原路372弄6-9号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/db5e21f740c8a49b851036ca07fadc15cb2bdae6/projects/shanghai/qixia-village-wuyuan-372.html>)|已建6号红棚白窗、7号绿封廊、9号敞开阳台，以及相接的成组钢窗和院墙。8号单户边界、隐蔽屋面、背面与室内待核。|
 |sh-historic-b5-xh-j-072-v|爱棠新村|余庆路146弄13号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-073-v|茂龄别墅|建国西路619弄1-24号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-074-v|住宅|淮海中路1800号|[名录][H5] · 照片待核|待核外观／拆栋|
