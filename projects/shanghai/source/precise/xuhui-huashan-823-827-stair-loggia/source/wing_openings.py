@@ -46,13 +46,13 @@ def opening(bounds, arched=False, lod=False):
     return box(a,bottom,b,spring).union(cap)
 
 
-def sash(face, bounds, label, *, arched=False, columns=6, rows=4, lod=False):
+def sash(face, bounds, label, *, arched=False, columns=6, rows=4, lod=False, detail_scale=1.):
     a, bottom, b, top = bounds
     width, mid = b-a, (a+b)/2
     radius = width*.333
     spring = top-radius if arched else top
     outline = opening(bounds,arched,lod)
-    rim = min(.046,.028*width)
+    rim = min(.046*detail_scale,.028*width)
     pieces = [outline.difference(outline.buffer(-rim,join_style=2))]
     for i in range(1,columns):
         x = a+width*i/columns
@@ -73,28 +73,29 @@ def sash(face, bounds, label, *, arched=False, columns=6, rows=4, lod=False):
         pieces.append(box(mid-rim*.22,spring,mid+rim*.22,spring+inner))
     # One solid for connected steel avoids superimposed edges at the muntin joins.
     bars = set_precision(unary_union(pieces).intersection(outline),1e-6)
-    face.solid(outline,-.196,-.183,DARK,label+' | interior recess')
-    face.solid(outline,-.128,-.118,GLASS,label+' | glazing')
-    face.solid(bars,-.117,-.086,STEEL,label+' | casement and glazing bars')
-    face.rect(a-.047,b+.047,max(0.,bottom-.054),bottom+.004,-.108,.083,SILL,label+' | pale sill')
+    face.solid(outline,-.196*detail_scale,-.183*detail_scale,DARK,label+' | interior recess')
+    face.solid(outline,-.128*detail_scale,-.118*detail_scale,GLASS,label+' | glazing')
+    face.solid(bars,-.117*detail_scale,-.086*detail_scale,STEEL,label+' | casement and glazing bars')
+    face.rect(a-.047*detail_scale,b+.047*detail_scale,max(0.,bottom-.054*detail_scale),bottom+.004*detail_scale,
+              -.108*detail_scale,.083*detail_scale,SILL,label+' | pale sill')
 
 
-def _awning_mesh(face, bounds, top, retract, label, lod, measured_drop=None):
+def _awning_mesh(face, bounds, top, retract, label, lod, measured_drop=None, detail_scale=1.):
     left,right = bounds
     width = right-left
     span = 8 if lod else 18
-    drop = measured_drop if measured_drop is not None else (.075 if retract else .20)
-    projection = min(.31 if retract else .58,.38*width)
+    drop = measured_drop if measured_drop is not None else ((.075 if retract else .20)*detail_scale)
+    projection = min((.31 if retract else .58)*detail_scale,.38*width)
     points, faces = [], []
     for i in range(span+1):
         t = i/span
         x = left+width*t
-        fold = -.029*(sin(2*pi*t)**2) if retract else -.012*sin(pi*t)
-        sections = [(0.,top-.016),(-projection*.35,top+fold*.50),
-                    (-projection*.84,top+fold-.035),(-projection,top-drop*.49+fold),
+        fold = (-.029*(sin(2*pi*t)**2) if retract else -.012*sin(pi*t))*detail_scale
+        sections = [(0.,top-.016*detail_scale),(-projection*.35,top+fold*.50),
+                    (-projection*.84,top+fold-.035*detail_scale),(-projection,top-drop*.49+fold),
                     (-projection*.98,top-drop+fold)]
         outer = sections
-        inner = [(d+.006,z-.006) for d,z in reversed(sections)]
+        inner = [(d+.006*detail_scale,z-.006*detail_scale) for d,z in reversed(sections)]
         for d,z in outer+inner:
             points.append(face.point(x,d,z))
     ring = len(outer+inner)
@@ -115,19 +116,19 @@ def _awning_mesh(face, bounds, top, retract, label, lod, measured_drop=None):
     if np.einsum('ij,ij->i',tri[:,0],np.cross(tri[:,1],tri[:,2])).sum()<0:
         faces=[(a,c,b) for a,b,c in faces]
     face.b.add(points,faces,CANVAS,face.label+' | '+label+' | fabric')
-    for x in (left+.029,right-.029):
-        face.rail([(x,.010,top-(.62 if retract else .54)),(x,-projection*.96,top-drop*.55)],
-                  .011,ROD,label+' | awning brace',6 if lod else 8)
+    for x in (left+.029*detail_scale,right-.029*detail_scale):
+        face.rail([(x,.010*detail_scale,top-(.62 if retract else .54)*detail_scale),(x,-projection*.96,top-drop*.55)],
+                  .011*detail_scale,ROD,label+' | awning brace',6 if lod else 8)
 
 
-def awning(face, bounds, label, *, retract=False, lod=False, measurements=None):
+def awning(face, bounds, label, *, retract=False, lod=False, measurements=None, detail_scale=1.):
     a,bottom,b,top = bounds
     margin = (b-a)*(.145 if retract else .115)
     if measurements is None:
-        _awning_mesh(face,(a-margin,b+margin),top+(.17 if retract else .09),retract,label,lod)
+        _awning_mesh(face,(a-margin,b+margin),top+(.17 if retract else .09)*detail_scale,retract,label,lod,detail_scale=detail_scale)
     else:
         left,right,attachment,drop=measurements
-        _awning_mesh(face,(left,right),attachment,retract,label,lod,drop)
+        _awning_mesh(face,(left,right),attachment,retract,label,lod,drop,detail_scale)
 
 
 def _diamond():
@@ -143,7 +144,7 @@ def vent_outline(bounds, cells):
                               xoff=(a+b)/2,yoff=(lo+hi)/2)
 
 
-def geometric_vent(face,bounds,label,cells=1,lod=False):
+def geometric_vent(face,bounds,label,cells=1,lod=False,detail_scale=1.):
     """One diamond flower or a three-cell hexagonal band, each with perforations."""
     a,lo,b,hi=bounds
     unit=(b-a)/cells
@@ -165,5 +166,5 @@ def geometric_vent(face,bounds,label,cells=1,lod=False):
     for i,shape in apertures:
         hole=affinity.scale(shape,unit,hi-lo,origin=(0,0))
         cuts.append(affinity.translate(hole,xoff=a+(i+.5)*unit,yoff=(lo+hi)/2))
-    face.solid(panel,-.166,-.154,DARK,label+' | vent shadow')
-    face.solid(panel.difference(unary_union(cuts)),-.090,-.017,VENT,label+' | perforated green airbrick')
+    face.solid(panel,-.166*detail_scale,-.154*detail_scale,DARK,label+' | vent shadow')
+    face.solid(panel.difference(unary_union(cuts)),-.090*detail_scale,-.017*detail_scale,VENT,label+' | perforated green airbrick')

@@ -560,7 +560,7 @@
     }
   },
   "scope": "Two outer gables and two connecting strips visible in the 2018 photograph. Central circulation and the separate inner houses are outside this module.",
-  "registration": "The first provisional placement uses Y=0 for both rendered wings. The three-gabled 2015 and 2020 street photographs confirm the obscured right gable and the long vent below each middle-tier window.",
+  "registration": "The central stair front is local y=0. Projected source points for the outer gables use y=5.50, while the connectors use y=.75. The common 0.683 scale converts these model units into metres.",
   "estimated": [
     "Thickness of the 0.28-unit front envelope and the individual glass and bar depths.",
     "Right ridge height and cap spans obscured by tree branches. Right low window omitted from the foliage-covered area.",
@@ -609,5 +609,73 @@
     },
     "initial_first_hit": "41 of 50 source-photo pixels in both authored meshes, including four dark slots incorrectly displaying pale inner faces.",
     "revised_first_hit": "45 of 50 in both authored meshes. Four slots hit their dark interior returns. The five remaining mismatches are at the fanlight or narrow glazing bars."
+  },
+  "spatial_revision": {
+    "input_camera": "front-camera.json, working size 1300 × 731",
+    "point_scale": 0.683,
+    "data": "The two street acquisitions independently return a projection of the central gable ahead of the line joining the outside gable tips of 3.86 and 3.57 m. The joint bundle gives 3.81 m. Its direction and winter photo-ray uncertainties are documented by the survey author.",
+    "measured_gable_tip_separation_m": 15.61,
+    "result_gable_tip_separation_m": 15.70828,
+    "adopted_gable_projection_m": 3.7565,
+    "connector_projection_m": 0.51225,
+    "alternative": "Mirror symmetry around the apparent arch centre gives offsets of 1.93, 2.05 and 2.13 unscaled units. The adopted y=5.50 is determined by the independent street views and permits the two wings to be asymmetric.",
+    "scale_method": "The central raw-camera photograph is preserved. For each marked point at original y=0, multiply its vector from the lens centre by (y_target−C_y)/(−C_y). The same derived factor sets the pixel width of narrow visible bars and canvas edges.",
+    "estimated": [
+      "Connector setback limited by the fully visible right edge of the six-column northern upper window. It would pass behind the solid stair side if this strip were placed significantly more than one unscaled unit back. The selected .75 unit is approximate.",
+      "Right ridge and verge are partly obscured in the 2018 image. Both are present in the earlier and later street views. Physical joining edges behind other construction and below the hedge are estimated.",
+      "The two ground-floor sills behind garden growth are limited to the model ground datum."
+    ],
+    "component_checks": {
+      "full": {
+        "parts": 119,
+        "triangles": 20716,
+        "closure_failures": [],
+        "sha256": "87d3b4a5251b51ba7c56e21b8cd65c28fda76670409fd688fbaca8f6a9fc2144",
+        "photo_first_hit_match": 45,
+        "fixed_pixels": 50
+      },
+      "lod": {
+        "parts": 103,
+        "triangles": 14884,
+        "closure_failures": [],
+        "sha256": "0287817336344966e80a8274e42fd0a9373fcfffa77ec0a83910b932194d46fa",
+        "photo_first_hit_match": 45,
+        "fixed_pixels": 50
+      }
+    },
+    "later_twelve_view_solution": {
+      "source": "twelve-view-front-and-side-adjustment.json",
+      "observation": "The white downpipe at the eave was initially marked as the southern ridge in the two furthest obliques. The broader study corrected its identity.",
+      "central_setback_combined_m": 2.57,
+      "separate_2015_and_2020_m": [
+        3.42,
+        2.61
+      ],
+      "adopted_depth_range_m": [
+        2.6,
+        3.8
+      ],
+      "model_m": 3.7565,
+      "limits": "The modelled setback retains the upper part of the supported range. The difference from the combined twelve-view estimate is 1.19 m."
+    }
+  },
+  "south_wall_join": {
+    "feature": "White downpipe at the outside corner of the high wall, identifiable in twelve street views. The lower projecting boxes behind the gable belong to the side elevation.",
+    "earlier_inferred_x": 18.68906,
+    "corrected_x": 17.15,
+    "ridge_x": 13.03901,
+    "ridge_to_corner_x_metres": 2.8078061699999997,
+    "observed_ridge_to_corner_x_m": {
+      "combined": 2.9,
+      "first_year": 2.48,
+      "second_year": 2.83
+    },
+    "observed_ridge_to_eave_height_m": {
+      "combined": 1.32,
+      "first_year": 2.51,
+      "second_year": 1.03
+    },
+    "model_ridge_to_eave_height_m": 1.479,
+    "remaining_uncertainty": "The ridge height and outer eave are partly obscured by branches. The retained vertical difference agrees within 0.16 m of the joint observation."
   }
 }

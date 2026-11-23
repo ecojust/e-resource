@@ -15,10 +15,11 @@ from loggia_materials import PALETTE as LOGGIA
 from wing_facades import add_wings, PALETTE as WINGS
 from wing_finishes import REPEAT_METRES
 from central_loggia import add_loggia
+from side_roofs import add_side_roofs
 
 ID='xuhui-huashan-823-827-stair-loggia'
 SLUG='huashan-823-827-stair-loggia'
-SCALE=1.0
+SCALE=.683
 PALETTE={**LOGGIA,**WINGS}
 META={'id':ID,'name':'华山路823、825、827号院临街住宅三山墙与明梯',
       'address':'上海市徐汇区华山路823、825、827号院','heritage_group':'5D051',
@@ -26,7 +27,10 @@ META={'id':ID,'name':'华山路823、825、827号院临街住宅三山墙与明�
       'photo_source':'https://commons.wikimedia.org/wiki/File:华山路823号住宅.jpg',
       'photo_author':'Antigng','photo_reference_date':'2018-02-10','photo_reference_license':'CC BY-SA 4.0',
       'geometry_license':'MIT','texture_license':'MIT','photos_embedded':False,
-      'scope':'同一院门内可以辨认的临街住宅；现阶段包括中央拱厅及其中可见的一段明梯。'}
+      'scope':'同院临街住宅的三座山墙、钢窗花孔、露明拱厅和楼梯，以及可辨的南侧凸窗、烟囱和屋面交接。后檐与北端简化，隐蔽室内及各楼逐号归属待核。'}
+
+
+META.update(viewer_page=SLUG+'.html',camera_views=json.loads((HERE/'cameras.json').read_text()))
 
 
 class Builder(CrownBuilder):
@@ -42,6 +46,7 @@ class Builder(CrownBuilder):
 def add_building(b,lod=False):
     add_loggia(Facade(b,label='Huashan Road | three-gabled street frontage'),lod)
     add_wings(b,lod=lod)
+    add_side_roofs(b,lod=lod)
 
 
 if __name__=='__main__':
