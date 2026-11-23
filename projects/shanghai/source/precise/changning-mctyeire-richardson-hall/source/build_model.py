@@ -10,8 +10,20 @@ from shapely.ops import unary_union
 HERE=Path(__file__).resolve().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder,Facade
+from photo_architecture import Builder as ArchitectureBuilder,Facade
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+from auditorium import build_auditorium
+import hall_finishes
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in hall_finishes.STEMS:hall_finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        ArchitectureBuilder.save(self,path,metadata);return hall_finishes.writer.embed_normals(path)
+
 sys.path.insert(0,str(HERE.parent/'measurements'))
+from vestibule import build_vestibule
 from frontage import x,z,rect,SASH_GROUPS,DORMERS,SPAN,SCALE
 ID='changning-mctyeire-richardson-hall';SLUG='mctyeire-richardson-hall'
 WALL='grey ashlar';CUT='carved pale stone';WINDOW='smoky casement glass';STEEL='charcoal lead and steel'
@@ -21,7 +33,10 @@ PALETTE={name:dict(color=rgb,roughness=rough) for name,rgb,rough in [
     (WALL,[.49,.47,.425],.88),(CUT,[.61,.57,.49],.82),(WINDOW,[.126,.152,.176],.33),
     (STEEL,[.074,.068,.056],.57),(OAK,[.185,.083,.037],.65),(CLAY,[.38,.144,.081],.87),
     (COPING,[.29,.283,.253],.80),(INSIDE,[.79,.73,.60],.91),(FLOOR,[.28,.235,.197],.43),
+    ('bronze-black joinery',[.111,.085,.055],.50),('honey lantern glass',[.58,.36,.105],.33),
+    ('charcoal stone skirting',[.17,.15,.13],.55),('pale panel recess',[.60,.55,.46],.85),
     (LAV,[.265,.205,.276],.39),(BLUE,[.085,.144,.215],.32),(BRONZE,[.34,.228,.106],.53)]}
+PALETTE.update(hall_finishes.PALETTE)
 META=dict(id=ID,name='中西女中北楼景莲堂草坪立面与门厅',heritage_id='sh-historic-b2-070',
           address='江苏路155号北楼',viewer_page=SLUG+'.html',geometry_license='MIT',photos_embedded=False,
           source='https://www.meet-in-shanghai.net/cn/shanghai-cultural-relics-protection-unit/the-former-site-of-the-chinese-and-western-girls-school-788399/',
@@ -93,8 +108,16 @@ def dormer(b,u,lo,front,width,lod):
     cut=box(-width*.292,lo+.085,width*.292,lo+h-.16)
     face.prism(box(-width/2,lo-.075,width/2,lo+h+.07).difference(cut),-.12,0,WALL,'face opening')
     grid(face,cut,STEEL,WINDOW,2 if lod else 3,2 if lod else 3,-.095,'dormer sash')
-    roof=Polygon([(-width/2-.095,lo+h+.08),(0,lo+h+.51),(width/2+.095,lo+h+.08),(width/2+.095,lo+h+.145),(0,lo+h+.58),(-width/2-.095,lo+h+.145)])
-    b.prism(roof,-back,-front+.10,lambda x,z,d:(u+x,-d,z),CLAY,'Roof dormers/red pitched hood')
+    # Official oblique photographs and the district description show three roof slopes per dormer.
+    half=width/2+.095;fore=front-.10;low=lo+h+.14;high=lo+h+.58
+    top=[(u-half,fore,low),(u+half,fore,low),(u+half,back,low),(u-half,back,low),
+         (u,front+.70,high),(u,back,high)]
+    faces=[(0,1,4),(1,2,5,4),(4,5,3,0)]
+    skin=top+[(x,y,z-.075) for x,y,z in top]
+    lower=[tuple(k+6 for k in reversed(poly)) for poly in faces]
+    perimeter=[0,1,2,5,3]
+    sides=[(i,i+6,j+6,j) for i,j in zip(perimeter,perimeter[1:]+perimeter[:1])]
+    b.add(skin,faces+lower+sides,CLAY,'Roof dormers/three pitched red-tile planes')
     face.box(0,lo+h+.02,width+.16,.095,.16,.03,COPING,'drip')
 def add_building(b,lod=False):
     a,c=-SPAN/2,SPAN/2;d=17.01;front=Facade(b,(a,0),(c,0),'Lawn')
@@ -127,7 +150,8 @@ def add_building(b,lod=False):
         front.box(x(px),eaves/2,.20,eaves,.195,.032,CUT,'Classroom panel pier')
     for end1,end2 in [(a,left),(right,c)]:
         centre=(end1+end2)/2;w=end2-end1
-        b.box((centre,d/2,eaves+.07),(w,d,.14),COPING,label='End pavilions/flat roof')
+        return_depth=22.94 if end2==c else d
+        b.box((centre,return_depth/2,eaves+.07),(w,return_depth,.14),COPING,label='End pavilions/flat roof')
         front.box(centre,eaves+.47,w,.72,.264,0,WALL,'End pavilion/parapet')
         for t in range(4):
             u=end1+w*(t+.5)/4;front.box(u,eaves+.86,w/7,.18,.291,.012,CUT,'End pavilion/stepped merlon')
@@ -144,9 +168,20 @@ def add_building(b,lod=False):
     front.box((left+right)/2,eaves-.009,right-left+.12,.18,.29,.045,CUT,'Gutter and projecting eaves')
     for px in DORMERS:
         dormer(b,x(px),eaves+.67,.72,1.84,lod)
-    for end in (a,c):
-        b.box((end,d/2,eaves/2),(.25,d,eaves),WALL,label='Return wall/conditional plain depth')
-    b.box((0,d,eaves/2),(SPAN,.24,eaves),WALL,label='Section closure/lawn wing only')
+    for end,depth in [(a,d),(c,22.94)]:
+        b.box((end,depth/2,eaves/2),(.25,depth,eaves),WALL,label='Teaching wing/return wall')
+    for lo,hi,depth in [(a,-16.15,d),(10.23,c,22.94)]:
+        b.box(((lo+hi)/2,depth,eaves/2),(hi-lo,.24,eaves),WALL,label='Teaching wing/north return')
+    b.plan_prism(box(10.23,d,right,22.94),eaves-.13,eaves+.015,COPING,'Teaching wing/east return roof apron')
+    # Keep the ground and first-gallery transverse passages open to the vestibule on both sides.
+    for lo,hi in [(a+.13,-3.79),(3.79,c-.13)]:
+        for zmin,zmax in [(0.025,3.40),(3.64,6.62)]:
+            b.box(((lo+hi)/2,8.12,zmin-.052),(hi-lo,3.54,.104),FLOOR,label='Teaching wing/transverse passage floor')
+            b.box(((lo+hi)/2,8.12,zmax+.05),(hi-lo,3.54,.10),INSIDE,label='Teaching wing/passage soffit')
+            for y in (6.36,9.88):
+                b.box(((lo+hi)/2,y,(zmin+zmax)/2),(hi-lo,.125,zmax-zmin),INSIDE,label='Teaching wing/inner passage lining')
+    build_vestibule(b,lod)
+    build_auditorium(b,lod)
     return b
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--lod',action='store_true');a=parser.parse_args()

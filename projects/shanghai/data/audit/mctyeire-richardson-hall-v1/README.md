@@ -1,5 +1,7 @@
-# 景莲堂草坪教学翼与独立侧门
-
-草坪教学翼采用上海市文旅推广网正面照。侧门另据Ctny于2017年8月21日所摄原幅建模，原点定在门槛中点，两扇外开镶板门、右扇球形把手、券顶亮子、卷边雨棚、落水管及门右两扇完整石框窗均在画面内。按净宽1.82±0.20米换算，门高约2.18米。照片未交代它连在楼栋的哪一面，侧门用自己的坐标交付。近档191件、远档89件均逐件查过闭合，35束原照射线中，近远档分别31和32处直接命中材面，两档各34处在4像素以内。[侧门近景](../../../assets/models/candidates/changning-mctyeire-richardson-hall/side-entrance/full-side-entrance.glb) · [侧门远景](../../../assets/models/candidates/changning-mctyeire-richardson-hall/side-entrance/lod-side-entrance.glb) · [照片机位模型图](final/registration/side-entrance-model.jpg) · [检查原始记录](final/registration/side-entrance-check.json) · [Ctny原照](https://commons.wikimedia.org/wiki/File:Shanghai_No._3_Girls%27_High_School,_Five-Four_lecture_building_side_entrance.jpg)
-
-[草坪立面与出处](../../../source/precise/changning-mctyeire-richardson-hall/README.md) · [草坪机位](working-geometry/lawn-model.jpg)
+# 景莲堂（五四楼）
+ 
+原中西女中北楼建于1935年。草坪一侧有五段教室窗、十一扇老虎窗和一座双层门厅。门厅三樘后门通向礼堂，楼座后的墙、矩形侧窗、两侧尖券彩窗和舞台的位置均可在模型中查看。主楼近景共1,803个闭合构件、120,652个三角面。远景保留1,583个构件、80,052个三角面。[查看模型及下载](../../../mctyeire-richardson-hall.html) · [三个草坪机位、门厅、礼堂及侧门的模型图](final/registration/registered-views.jpg) · [构件检查](final/solid-review.json)
+ 
+用2017年门厅照片检验开启的中央右门扇，照片反算的门隙约0.60至0.63米，成品横剖面为0.57米。侧门照片有独立相机和近远两个下载文件，两扇木门外开，右侧保留两扇完整石框窗。现有照片难以定位它与主楼的接点。草坪、门厅与礼堂各有实照机位，登记表保存相机、原图像点和模型射线。[门厅门扇与吊灯](final/registration/vestibule-clearances-full.json) · [三份下载网格的草坪和门厅量测](final/registration/encoded/three-delivered-roles.json) · [礼堂窗及楼座](registration/raw-auditorium-probes.json) · [侧门量测](final/registration/side-entrance-check.json)
+ 
+网页近远景、原始GLB、Blender、FBX、带材质OBJ、STL及可复建源码均可下载。可编辑工程含十一台主楼相机。源码包在新目录生成近远档、网页模型和六张原创材质贴图。[十一台原生相机出图](editable/eleven-native-cameras.jpg) · [源码包重建](source-archive/changning-mctyeire-richardson-hall-source.verification.json) · [两份年报与东楼楼名核对](../../../source/precise/changning-mctyeire-richardson-hall/measurements/east-building-dates.json)
