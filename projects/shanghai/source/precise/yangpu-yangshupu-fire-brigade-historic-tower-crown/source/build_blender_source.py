@@ -31,7 +31,7 @@ def prepare(raw,out):
         parts.append(entry)
     assert len(set(x['name']for x in parts))==len(parts)
     palette={m['name']:m['pbrMetallicRoughness']for m in doc['materials']}
-    data={'id':ID,'source':META,'copyright':META['copyright'],'raw_sha256':engine.sha(raw),'parts':parts,'materials':palette,
+    data={'id':ID,'source':dict(META, scope='Historic ornament from the square cornice through the open lantern and cap. Shaft width is normalized to one display unit.'),'copyright':META['copyright'],'raw_sha256':engine.sha(raw),'parts':parts,'materials':palette,
           'textures':engine.raw_textures(raw),'cameras':json.loads((HERE/'cameras.json').read_bytes()),'layout_sha256':engine.sha(HERE.parent/'measurements/historical-crown-camera.json')}
     engine.write(out/'editable-parts.json',data)
     engine.write(out/'editable-inputs.json',{'raw_sha256':engine.sha(raw),'signed_parts':engine.sha(out/'editable-parts.json'),'components':len(parts)})

@@ -63,7 +63,10 @@ def decorated_face(b,face,lod):
     left=(fl[0]+bl[0])/2;right=(fr[0]+br[0])/2
     base=(br[1]+bl[1])/2;top=(fl[1]+fr[1])/2
     field=box(left,base,right,top)
-    skin=box(-.5,-.26,.5,1.70)
+    # The front skin occupies the first .055 of the return. Butt the two solids
+    # at its inside edge to avoid coincident exterior faces at the photographed corner.
+    skin_start=-.445 if face=='return' else -.5
+    skin=box(skin_start,-.26,.5,1.70)
     extrude(skin.difference(unary_union([field,circle(r)])),-.055,0,WALL,'shaft wall around the recessed panels')
     extrude(field,-.055,-.017,PANEL,'rectangular recessed mineral panel')
     extrude(circle(r),-.055,-.037,GLASS,'dark circular face')
