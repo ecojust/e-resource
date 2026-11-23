@@ -606,7 +606,7 @@
 |sh-historic-b2-133|西园大厦花园、屋顶和敞廊分期|愚园路1396号|[名录][2] · 照片待核 · [当前完成范围][c]|核对最初敞廊与后封窗的分期、顶层加建及室内平面，保留南侧花园和后建沿街楼。
 |sh-historic-b3-099|兆丰别墅长宁路入口|长宁路712弄|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/cf6ff08ddc8da32036e2e0b5f7a64fec8e074358/projects/shanghai/zhaofeng-villas-sunburst-entry.html>)|长宁路712弄东、西入口墙、日升饰纹和四个铸字、两盏壁灯、两扇向内打开的铁门、花台及门牌。六个摄影机位核对入口。弄内各排住宅的编号、栋别与建筑细部仍待逐栋对照。街口位置约有2至4米误差。
 |sh-historic-b3-100|新华村11号楼|愚园路1320号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/99c996de6ce9aa75ae80305a1279529675783532/projects/shanghai/xinhuacun-11-garden-front.html>)|五根砖柱分出的四跨双层院廊、洗石双梯与平台券孔、四座老虎窗及朝院瓦坡。三张摄影位分别对读实物，九个视角可察看情形。侧后外墙、室内及封廊改造年代待查。院内12、14、15号楼另列名录。原城市1617号房屋保留。
-|sh-historic-b3-101|新华村|愚园路1320号|[名录][3]|待核外观／拆栋
+|sh-historic-b3-101|新华村12号楼|愚园路1320号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/d6cc911f3990990106e789e97dba522a212e01ed/projects/shanghai/xinhuacun-12-numbered-gable.html>)|山墙上的12号、三樘绿色格窗和红砖交牙，墙后的两处烟囱、朝园的两层三跨敞廊、平台下三道砖券及远端红瓦坡。三个摄影机位供逐点对读。侧后外墙、整个屋脊的进深与室内格局待查。原城市1888号房屋保留。
 |sh-historic-b3-102|新华村|愚园路1320号|[名录][3]|待核外观／拆栋
 |sh-historic-b3-103|新华村|愚园路1320号|[名录][3]|待核外观／拆栋
 |sh-historic-b3-104|亦村|泰安路76弄|[名录][3]|待核外观／拆栋
