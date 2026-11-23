@@ -19,3 +19,7 @@
 ## 城市主图中的恒利银行
 
 主图目录由 310 处增至 311 处。鼠标和触摸各从地图标记选中本栋，斜角门、天津路短立面与河南中路长立面均已验看。62 个地面和碰撞检查点按预期返回。独立页实存原始、近景、远景和 Blender 四件，逐件比对发布清单。 相机高度从 30 米升至 1142 米后，恒利银行从 68,712 面近景切换为 29,972 面远景。 城市截图沿用现场照明。门廊镜实测阴影开启，阴影图为 1024 像素，参与投影的模型有 6 个。早期驱动中标作关闭的字段是固定文字，应以[读取的渲染状态](final-map-31276/actual-map-rendering.json)为准。[本轮城市和独立页图审](final-map-31276/visual-review.json) · [照片窗轴与网格复核](photo-recheck/README.md) · [城市主图](../../../index.html#landmark=huangpu-hengli-bank-henan-tianjin-corner&mode=overview)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ab5394498bb9d0980c1ee057d2ca18b612aa6419/projects/shanghai/index.html#landmark=huangpu-hengli-bank-henan-tianjin-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，7 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
