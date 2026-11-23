@@ -9,6 +9,12 @@ PRECISE=HERE.parents[1]
 sys.path.insert(0,str(HERE.parent/'source'))
 def projection(name=None):
     from build_model import METRIC_SCALE
+    if name and name.startswith('street-'):
+        view=int(name.split('-')[1])
+        record=json.loads((HERE/'street-attic-height-comparison.json').read_text())
+        P=np.array(next(r['P_pre_metric'] for r in record['views'] if r['view']==view))
+        P[:,:3]/=METRIC_SCALE
+        return P
     c=json.loads((HERE/'court-station.json').read_text())
     K=np.array(c['pinhole']);R=np.array(c['world_to_camera_rotation'])
     centre=np.asarray(c['camera_centre_in_authored_frame'])*METRIC_SCALE
@@ -18,7 +24,7 @@ def render(mesh,out):
     engine=backend['renderer'];parts=engine.read_glb(mesh);out.mkdir(parents=True,exist_ok=True)
     light=np.array([-.46,-.66,.61],dtype=np.float32);light/=np.linalg.norm(light)
     angles=[float(np.degrees(np.arctan2(light[0],light[1]))%360),float(np.degrees(np.arcsin(light[2])))]
-    survey={'garden-corner':('garden',[0,0,600,401]),'recessed-entrance':('garden',[45,75,170,390]),'hinged-steel':('garden',[142,9,485,176])}
+    survey={'garden-corner':('garden',[0,0,600,401]),'recessed-entrance':('garden',[45,75,170,390]),'hinged-steel':('garden',[142,9,485,176]),'street-2015-east':('street-0',[120,5,675,414]),'street-2015-front':('street-1',[265,-95,960,391]),'street-2020':('street-3',[186,-91,867,387])}
     with tempfile.TemporaryDirectory() as temp:
         lib=Path(temp)/'garden.so';subprocess.run(['cc','-O2','-shared','-fPIC',str(PRECISE/'huangpu-old-jiefu-nanjing-road-shopfront/measurements/northwest_raster.c'),'-lm','-o',str(lib)],check=True)
         dll=ctypes.CDLL(str(lib));report={}

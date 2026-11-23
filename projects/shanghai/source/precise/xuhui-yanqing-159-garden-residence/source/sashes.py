@@ -32,15 +32,17 @@ def louvre_leaf(f,l,h,width,height,lod,label):
         f.b.prism(blade,0,.017,lambda x,z,t:f.point(x,-.012-(top-z)*.39-t,z),GREEN,label+' | overlapping shutter blades')
 
 
-def shutters(f,bounds,name,lod,angles):
+def shutters(f,bounds,name,lod,angles,hinge_limits=None):
     glazing(f,bounds,name,4,3)
     x0,z0,x1,z1=bounds
     for i,a in enumerate(angles):
         hinge=x0+.024 if i==0 else x1-.024
+        if hinge_limits is not None:
+            hinge=hinge_limits[i]
         angle=math.radians(a);sgn=1 if i==0 else -1
         # A face's local depth points inward. Negative depth opens into the garden.
         face=f.face(hinge,-.059,math.cos(angle),-sgn*math.sin(angle))
-        width=(x1-x0)/2-.032
+        width=(.70 if i==0 else .75) if hinge_limits else (x1-x0)/2-.032
         louvre_leaf(face,0 if i==0 else -width,z0+.023,width,z1-z0-.046,lod,name)
         if not lod:
             for z in [z0+.18,z1-.18]:

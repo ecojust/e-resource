@@ -44,7 +44,11 @@ def add_return_sash(f,name,bounds,lod=False):
     opening=box(a,low,b,top);inner=opening.buffer(-min(.031,.06*w),join_style=2)
     f.solid(opening.difference(inner),-.068,-.018,paint,label+' | recessed fixed jamb')
     # Offset the shadow backing from the moving leaf to retain its real opening.
-    f.solid(inner,-.30,-.292,RECESS,label+' | interior opening')
+    # Continue the reveal to the rear board so an oblique street view cannot
+    # see sky through the depth between the exterior wall core and the frame.
+    lining=opening.buffer(.015,join_style=2).difference(inner)
+    f.solid(lining,-.302,-.067,RECESS,label+' | side and head lining')
+    f.solid(opening,-.306,-.294,RECESS,label+' | interior opening')
     if name=='near-open':
         axis=f.face(a+.695*w,.085,1,0)
         casement_grid(axis,w*.265,low+.055*h,top-.08*h,1,(.34,.66),paint,glass,

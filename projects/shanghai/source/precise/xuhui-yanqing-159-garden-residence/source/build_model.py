@@ -15,6 +15,9 @@ for folder in ('hongkou-general-post-office/source/common',
 from crown_builder import CrownBuilder
 from placement import Facade
 from corner_facades import entrance,street
+from corner_attic import add_corner_attic,PALETTE as ATTIC
+from north_roof import add_north_roof
+from lower_gable import add_lower_gable, PALETTE as STAIR_ROOF
 from court_layout import STREET_WINDOWS
 from garden_finishes import REPEAT_METRES
 from residence_materials import PALETTE as WALLS
@@ -23,13 +26,13 @@ from upper_sash import PALETTE as STEEL,add_upper_sash
 ID='xuhui-yanqing-159-garden-residence'
 SLUG='yanqing-159-garden-residence'
 METRIC_SCALE=1.184
-PALETTE={**WALLS,**STEEL}
+PALETTE={**WALLS,**STEEL,**ATTIC,**STAIR_ROOF}
 META={'id':ID,'name':'延庆路159号住宅庭院拱门与临街转角','address':'上海市徐汇区延庆路159号',
       'heritage_group':'5D047','period':'建造年代待考，1934年行名录有该址公使馆记录',
       'geometry_license':'MIT','texture_license':'MIT','photos_embedded':False,
       'source':'https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
       'photo_source':'https://blog.sina.com.cn/s/blog_8001328c010305q4.html',
-      'scope':'有照片与街景依据的庭院入口和相交的临街外墙。照片仅作识读。',
+      'scope':'庭院拱门与相交的临街外墙、玻璃山墙、红瓦楼梯山墙及三管烟囱。未见室内与院后开窗待核。',
       'viewer_page':SLUG+'.html','camera_views':json.loads((HERE/'cameras.json').read_text())}
 
 
@@ -50,6 +53,9 @@ def add_building(b,lod=False):
     entrance(garden,lod)
     street(along_street,lod)
     add_upper_sash(b,lod=lod)
+    add_corner_attic(b,lod=lod)
+    add_north_roof(b,lod=lod)
+    add_lower_gable(b,lod=lod)
     for name in ('near-open','attic-green','attic-pale'):
         add_return_sash(along_street,name,STREET_WINDOWS[name],lod=lod)
 
