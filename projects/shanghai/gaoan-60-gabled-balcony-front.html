@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>高安路60号住宅中央山花与双列阳台 · 上海徐汇</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header><a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 高安路60号</p><h1>高安路60号住宅中央山花与双列阳台</h1>
+  </header>
+  <main id="model-view" aria-label="高安路60号住宅中央山花与双列阳台三维模型"></main>
+  <aside class="panel" aria-label="观察机位与模型下载">
+    <p class="scope">窄山花下，两扇钢窗向外开启。两侧二至四层各有三座阳台，中央鱼鳞纹栏片两旁排着窄直孔。选取下方机位可近看花栏与红砖窗额。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="overview">中央山花与两侧阳台</button>
+      <button type="button" data-view="front">三跨正面</button>
+      <button type="button" data-view="crest">山花砖齿与灰色凸饰</button>
+      <button type="button" data-view="sash">拱额下外开的钢窗</button>
+      <button type="button" data-view="terraces">三层阳台转角</button>
+      <button type="button" data-view="grille">细孔与鱼鳞形栏片</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads" aria-label="下载模型"></div>
+    <p><a href="source/precise/xuhui-gaoan-60-gabled-balcony-front/README.md">历史与模型范围</a> · <a href="source/precise/xuhui-gaoan-60-gabled-balcony-front/measurements/identity-and-photos.json">建筑照片及出处</a></p>
+    <p><a href="data/audit/gaoan-60-gabled-balcony-front-v1/gabled-balcony-front.jpg">三跨立面模型图</a></p>
+  </aside>
+  <footer>拖动旋转 · 滚轮或双指缩放</footer>
+  <script type="module" src="source/precise/xuhui-gaoan-60-gabled-balcony-front/source/viewer.js"></script>
+</body></html>
