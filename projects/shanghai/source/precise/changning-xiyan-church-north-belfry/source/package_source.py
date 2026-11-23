@@ -65,6 +65,7 @@ def source_files():
         paths.update(p for p in folder.iterdir() if p.is_file() and p.suffix in types)
     measurements = HERE.parent/'measurements'
     paths.update(HERE.parent.glob('*.md'))
+    paths.add(HERE.parent/'reference-review.json')
     paths.update(p for p in (HERE.parent/'measurements').glob('*.txt'))
     paths.update(p for p in (HERE.parent/'measurements').glob('*.cpp'))
     paths.add(PROJECT/'xiyan-church-north-belfry.html')

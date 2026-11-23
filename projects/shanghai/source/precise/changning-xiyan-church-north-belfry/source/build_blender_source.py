@@ -34,9 +34,14 @@ digest,used_textures,texture_bindings,attribution=io.digest,io.used_textures,io.
 def attribution(raw):
     meta=helpers.raw_document(raw)['extras']
     if (meta.get('id')!=helpers.MODEL_ID or meta.get('geometry_license')!='MIT'
-            or meta.get('texture_license')!='MIT' or meta.get('photos_embedded') is not False):
+            or meta.get('texture_license') not in (None,'MIT') or meta.get('photos_embedded') is not False):
         raise ValueError('Expected attributed Xiyan Church north belfry model with procedural textures')
-    return {k:v for k,v in meta.items() if isinstance(v,(str,bool,int,float))}
+    declaration=(SOURCE.parent/'SOURCES-LICENSE.md').read_text()
+    if '几何、程序颜色和法线及模型图由本项目制作，按仓库MIT许可证发布' not in declaration:
+        raise ValueError('Missing the documented licence of the generated tower textures')
+    data={k:v for k,v in meta.items() if isinstance(v,(str,bool,int,float))}
+    data.update(texture_license='MIT',texture_license_source='SOURCES-LICENSE.md')
+    return data
 
 io.attribution=io.native.attribution=attribution
 

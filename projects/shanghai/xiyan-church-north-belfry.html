@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>息焉堂北侧独立钟楼三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 可乐路1号</p><h1>息焉堂北侧独立钟楼</h1></header>
+<main aria-label="息焉堂北侧独立钟楼三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">四张实照记录了院前与隔河的钟楼。隔河可以同时看到两面各三扇尖券百叶，向下可沿塔身寻找错落的小窗。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-xiyan-church-north-belfry/changning-xiyan-church-north-belfry-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>市级名录2M010称「安息堂」。教区记北钟楼内有四只铜钟。塔脚暂取3.60米宽，依照片推得檐高约16.6米，十字顶约20.7米。</p>
+<p><a target="_blank" rel="noopener" href="data/audit/xiyan-church-north-belfry-v1/registration/four-station-models.jpg">四处实照机位的模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/xiyan-church-north-belfry-v1/registration/june-court-model.jpg">院前塔身与碑</a> · <a target="_blank" rel="noopener" href="data/audit/xiyan-church-north-belfry-v1/registration/winter-river-model.jpg">冬季隔河视角</a></p>
+<p>取2016年6月的外观。五月照片另见临时金字。钟室内部、塔脚实测和原墓园墙线仍待资料。</p>
+<p><a href="https://fgj.sh.gov.cn/yxlsjz/20210922/8f72fa07617c4828a25ef948cd1c5da7.html">上海市房屋管理局名录</a> · <a href="http://www.catholicsh.org/DetailMap.aspx?ID=4">上海教区堂史</a> · <a href="https://commons.wikimedia.org/wiki/File:Catholic_Country_Church.jpg">2016年6月院前原照</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-xiyan-church-north-belfry/source/viewer.js" type="module"></script>
+</body></html>
