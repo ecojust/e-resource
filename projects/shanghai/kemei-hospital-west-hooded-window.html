@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>克美产科医院旧址</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="0.62" aria-label="西墙上层挑檐窗的三维模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-kemei-hospital-west-hooded-window&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 重庆南路139号</p>
+    <h1>克美产科医院旧址</h1>
+    <p>西墙挑檐窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">挑檐从上层窗头向外伸出，窗前低栏的压顶与上方砖檐分成几道水平线。2020年与2021年街照共同显示这一窗跨。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail">
+      <option value="auto">随距离切换</option>
+      <option value="full">完整近景</option>
+      <option value="lod">简化远景</option>
+    </select>
+    <div class="buttons">
+      <button type="button" data-view="front">正看挑檐窗</button>
+      <button type="button" data-view="oblique">侧看挑檐与窗框</button>
+      <button type="button" data-view="above">上看砖檐和栏墙</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-kemei-hospital-west-hooded-window/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=asia-building-v1';
+    showCandidateAssetViewer('huangpu-kemei-hospital-west-hooded-window');
+  </script>
+</body>
+</html>
