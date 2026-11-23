@@ -16,6 +16,9 @@ def slab(f,plan,z0,z1,mat,label):
 
 def piers(f,lo,hi,base,head,name):
     f.rect(lo,hi,base,head,-.015,.084,WALL,name+' | shaft')
+    plinth=hit(207,484)[1]
+    f.rect(lo-.009,hi+.009,base,plinth,.085,.109,BASE,name+' | coursed pier base')
+    f.rect(lo-.015,hi+.015,plinth-.015,plinth+.035,.081,.12,SHADE,name+' | plinth cap')
     for low,high,edge,mat in [(head-.09,head+.01,.034,TRIM),(head+.01,head+.065,.057,SHADE),
                               (head+.065,head+.136,.077,PALE),(head+.136,head+.197,.098,TRIM)]:
         f.rect(lo-edge,hi+edge,low,high,-.008,.099+edge,mat,name+' | stepped capital')
