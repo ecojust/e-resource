@@ -148,7 +148,7 @@ class Model:
             for i in range(n):
                 a,b=sorted((side*(inner+i*tread),side*(inner+(i+1)*tread)))
                 top=BASE*(1-i/n)
-                self.strip(p+'.risers','stone',a,b,-2.67,.04,0,top,2)
+                self.strip(p+'.risers','stone',a,b,-2.67,.04,0,top-.063,2)
                 self.strip(p+'.treads','paving',a-.013,b+.013,-2.718,.07,top-.063,top,2)
             lo,hi=sorted((side*inner,side*end))
             self.rail(p+'.raking_rail',lo,hi,-2.60,lambda x: BASE*(1-(abs(x)-inner)/(end-inner)),12)
