@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>爱麦虞限路9号宅绍兴路拱窗与挑篷入口</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="爱麦虞限路9号宅绍兴路拱窗与挑篷入口" data-oblique="positive-x" id="model-view"></main>
+<header>
+<a href="index.html#landmark=huangpu-shaoxing-road-nine-arched-entrance&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">黄浦区 · 绍兴路9号</p>
+<h1>爱麦虞限路9号宅</h1>
+<p>绍兴路拱窗与挑篷入口</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">挑篷后的双扇门与上方半圆拱窗共用中轴，四列窗框下部各有一枚红色菱花。靠近入口能看到篷底圆灯和两旁带卷曲浮饰的竖条。</p>
+<label for="detail">模型细节</label>
+<select id="detail">
+<option value="auto">随距离切换</option>
+<option value="full">完整近景</option>
+<option value="lod">简化远景</option>
+</select>
+<div class="buttons">
+<button data-view="front" type="button">正看半圆拱窗与双扇门</button>
+<button data-view="oblique" type="button">斜看挑篷与竖饰</button>
+<button data-view="above" type="button">高处看挑篷折面</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/huangpu-shaoxing-road-nine-arched-entrance/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-shaoxing-road-nine-arched-entrance');
+  </script>
+</body>
+</html>
