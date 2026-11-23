@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>丰田纱厂干部住宅 · 愚园路1249弄1号</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 愚园路1249弄1号</p><h1>丰田纱厂干部住宅</h1>
+</header>
+<main aria-label="丰田纱厂干部住宅1号三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">沿长立面看四个圆券与三根石柱，最靠转角的一格保留独立的红框单窗。转到侧面可以比较底层三座小券和两面开敞的平顶门廊。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div class="buttons">
+<button data-view="overview" type="button">住宅两立面</button>
+<button data-view="arcade" type="button">上层四联宽券</button>
+<button data-view="shaft" type="button">圆柱与砖券</button>
+<button data-view="single" type="button">山墙单窗</button>
+<button data-view="return" type="button">三券与侧门廊</button>
+<button data-view="windows" type="button">三座径砖小窗</button>
+<button data-view="porch" type="button">门廊双向砖券</button>
+<button data-view="terrace" type="button">门廊平顶与栏板</button>
+<button data-view="roof" type="button">交接双坡屋面</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a href="source/precise/changning-toyoda-yuyuan-1249-house-one/measurements/commons-corner-camera.json">转角照片标定</a> · <a href="source/precise/changning-toyoda-yuyuan-1249-house-one/measurements/photograph-register.json">实拍来源和门号</a></p>
+<p><a href="source/precise/changning-toyoda-yuyuan-1249-house-one/README.md">模型范围</a> · <a href="source/precise/changning-toyoda-yuyuan-1249-house-one/SOURCES-LICENSE.md">来源与许可</a> · <a href="data/audit/toyoda-yuyuan-1249-house-one-v1/README.md">模型复核</a></p>
+</aside>
+<footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-toyoda-yuyuan-1249-house-one/source/viewer.js" type="module"></script>
+</body></html>
+
