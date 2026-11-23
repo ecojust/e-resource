@@ -359,10 +359,10 @@ def build(reserved=()):
  for i,line in enumerate(lines):
   if line.startswith('|') and not line.startswith(('|---','| ')) and line.endswith('|') and line[-2] not in '| \\':
    lines[i]=line[:-1]
- # Rows beginning with a literal heritage ID already have internal cell separators.
- # GFM renders these rows identically without the optional outer left border.
+ # Data rows beginning with an ID or a Han character retain internal cell separators.
+ # Their optional left border can be omitted in a GitHub Markdown table.
  for i,row in enumerate(lines):
-  if row.startswith('|sh-historic-'):
+  if row.startswith(('|sh-historic-','|official-main','|official-green','|bund-label-')) or (row.startswith('|') and len(row)>1 and '\u3400'<=row[1]<='\u9fff'):
    lines[i]=row[1:]
  return compact_repeated_links('\n'.join(lines).rstrip()+'\n',reserved)
 def street_index():
