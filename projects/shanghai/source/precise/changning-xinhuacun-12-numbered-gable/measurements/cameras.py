@@ -23,7 +23,7 @@ def view(key,label,eye,focus,width,height=750):
     return dict(name=key,label=label,eye=eye,target=focus,width_m=width,width=1080,height=height)
 def make():
     stations=json.loads((HERE/'three-photographic-stations.json').read_bytes())
-    cameras=[view('overview','12号山墙、院廊和三道砖券',[21,-20,12.0],[4.5,3.2,5.1],17.5)]
+    cameras=[view('overview','12号山墙、院廊和三道砖券',[21,-20,12.0],[4.5,3.2,5.1],21.5)]
     focus=[3.9,0,6.4]
     for key,label in [('numbered-front','园中正面 · 墙上的12号'),('archival-front','旧照 · 12号楼山墙'),('garden-oblique','2026年 · 从花园看山墙转角')]:
         s=stations[key];cameras.append(registered(key,label,dict(projection=s['P'],frame=s['size']),[0,0,*s['size']],focus))
