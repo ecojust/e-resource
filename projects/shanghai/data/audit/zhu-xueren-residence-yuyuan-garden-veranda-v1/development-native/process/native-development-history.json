@@ -1,0 +1,82 @@
+{
+  "original_author": "7bb2feedbc8bdb648e1f54a59105a62d8a89c14671f5b4ad58eaf00c7893156c",
+  "actual_adapter_sha256": "16b700fdd4a946307001a4d5ac882c7758faa0266b5bd3c8da2e1a6e2089b73f",
+  "portable_adapter_sha256": "f39ae8569955e19e9db6af31da0748ef4a5ee433d93604450c5d304bff2fc8a9",
+  "prior_attempts": [
+    {
+      "issue": "The editable scene and independent reopen completed. The initial filter command used an option unsupported by this OIDN version. The subsequent pass retained the SHA-verified scene and camera/UV proof and used the documented --maxmem option.",
+      "receipt_sha256": "295ed91df4b06c0ecfe8e8ef41932e95b812d666a9c88ca5c0bfc6ba92f79d01",
+      "events": [
+        {
+          "name": "render",
+          "pid": 2479516,
+          "started": "2026-11-23T06:39:53.912588+00:00",
+          "ended": "2026-11-23T06:40:27.790596+00:00",
+          "exit": 0,
+          "log_sha256": "eab2f47be69941bea3cf04cfe183dc79e580830dfbe2d251ee282bb1bca92f91"
+        },
+        {
+          "name": "reopen",
+          "pid": 2480084,
+          "started": "2026-11-23T06:40:27.793653+00:00",
+          "ended": "2026-11-23T06:40:29.839894+00:00",
+          "exit": 0,
+          "log_sha256": "7f72573348fcb84c0ee5d16a159d66f46314f22a2f29a8be15d6def33541f899"
+        },
+        {
+          "name": "convert",
+          "pid": 2480128,
+          "started": "2026-11-23T06:40:29.865244+00:00",
+          "ended": "2026-11-23T06:40:29.904775+00:00",
+          "exit": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "denoise",
+          "pid": 2480129,
+          "started": "2026-11-23T06:40:29.905132+00:00",
+          "ended": "2026-11-23T06:40:29.916179+00:00",
+          "exit": 1,
+          "log_sha256": "b7a7eb4e451d1292a35aa03732d3010ad6b041aa72213308bc37e06a5d23e204"
+        }
+      ]
+    },
+    {
+      "issue": "The Blender Python interpreter did not have Shapely installed. The adapter now reads the two original image/material bindings without importing the building generator in Blender.",
+      "receipt_sha256": "c62e0aa0512f5cf4548d5cbbf00cf70b6095d40117ab848f7618126b61d78c42",
+      "events": [
+        {
+          "name": "render",
+          "pid": 2473089,
+          "started": "2026-11-23T06:36:01.800925+00:00",
+          "ended": "2026-11-23T06:36:03.899737+00:00",
+          "exit": 1,
+          "log_sha256": "d93c15c7799c48c2e0c14754b347fd775ea985f8ec45df1f54d6780cb250cdc5"
+        }
+      ]
+    },
+    {
+      "issue": "The archived camera table has names and metric projections; its display labels are in the published web page. The native adapter now uses those nine labels.",
+      "receipt_sha256": "e6fbd63ab0e4cb9ea3f9fd7844875546d0dc4217f41572bfcd5616bacbf296a6",
+      "events": [
+        {
+          "name": "render",
+          "pid": 2476572,
+          "started": "2026-11-23T06:38:13.054227+00:00",
+          "ended": "2026-11-23T06:38:47.916389+00:00",
+          "exit": 0,
+          "log_sha256": "c7ef4a582b4de411653b1184361d694a9b72d2ee5b38ecd8137f6aa122c29602"
+        },
+        {
+          "name": "reopen",
+          "pid": 2477783,
+          "started": "2026-11-23T06:38:47.917248+00:00",
+          "ended": "2026-11-23T06:38:50.293424+00:00",
+          "exit": 1,
+          "log_sha256": "c9cff42b6dfa551940c6a0ad4d8f2b67777349bb20466269cd5623e1b207714d"
+        }
+      ]
+    }
+  ],
+  "final_native_receipt": "d022476366c76b99b07d5c5bb197e4d0c5326e9ca0fe79474b74762966282abe"
+}
