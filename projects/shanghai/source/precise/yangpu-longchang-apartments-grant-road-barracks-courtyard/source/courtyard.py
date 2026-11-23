@@ -40,11 +40,11 @@ def gallery_wall(w,L,level,lod):
         start=j*pitch;door=start+pitch*.28;window=start+pitch*.72
         openings=[(door,.88,.025,2.24,'door'),(window,1.16,.98,2.34,'window')]
         for x,width,bottom,top,kind in openings:
-            holes.append(rect(x-width/2,z+bottom,x+width/2,z+top))
             frames.append((x,width,z+bottom,z+top,kind))
     if level==0 and w.name=='street' and L.get('public_entrance'):
         a,b=L['public_entrance']['inner_s'];holes.append(rect(a,z-.01,b,z+L['public_entrance']['height']))
         frames=[v for v in frames if v[0]+v[1]/2<a or v[0]-v[1]/2>b]
+    holes.extend(rect(x-width/2,bot,x+width/2,top) for x,width,bot,top,kind in frames)
     wall=rect(0,z,span,z+h).difference(unary_union(holes))
     w.surface(wall,-depth-.29,-depth,B,f'inner wall level {level+1}')
     for x,width,bot,top,kind in frames:
@@ -57,50 +57,74 @@ def gallery_wall(w,L,level,lod):
             w.box(x,-depth-.046,(bot+top)/2,.042,.05,hi,D,label+' sash')
             if not lod:w.box(x,-depth-.037,bot+hi*.68,width,.05,.039,D,label+' sash')
             w.box(x,-depth+.01,bot-.025,width+.15,.24,.08,G,label+' sill')
+def flight(w, profile, low, high, cross, material, label):
+    if cross:
+        w.surface(profile,low,high,material,label)
+    else:
+        w.section(profile,low,high,material,label)
+
+def stair_run(w, l0, l1, z0, z1, edge, inside, cross, level, number, lod):
+    # Tread and soffit form one closed prism; the parapet remains an independent sloped plate.
+    count=max(4,round(abs(z1-z0)/.17));along=np.linspace(l0,l1,count+1);heights=np.linspace(z0,z1,count+1)
+    plus=z1>z0;tread=[(l0,z0)]
+    for k in range(count):
+        z=heights[k+1 if plus else k]
+        if abs(z-tread[-1][1])>1e-7:tread.append((along[k],z))
+        tread.append((along[k+1],z))
+    if abs(tread[-1][1]-z1)>1e-7:tread.append((l1,z1))
+    name=f'flight {level+1}.{number}'
+    flight(w,Polygon(tread+[(l1,z1-.19),(l0,z0-.19)]),min(edge,inside),max(edge,inside),cross,SL,name)
+    for dz,thickness,mat,tag in [(0,.8,C,' spandrel'),(.8,.055,G,' coping')]:
+        poly=Polygon([(l0,z0+dz),(l1,z1+dz),(l1,z1+dz+thickness),(l0,z0+dz+thickness)])
+        at=edge+(.13 if inside>edge else -.13)
+        flight(w,poly,min(edge,at),max(edge,at),cross,mat,name+tag)
+    if not lod:
+        mapping=lambda l,z:(l,inside,z) if cross else (inside,l,z)
+        w.tube(mapping(l0,z0+.86),mapping(l1,z1+.86),.024,I,name+' rail',8)
+        for k in range(4):
+            r=k/3;u,d,z=mapping(l0+(l1-l0)*r,z0+(z1-z0)*r+.42)
+            w.box(u,d,z,.036,.036,.84,I,name+' rail post')
+
 def tower(w,layout,register,lod):
     s=register['along'];width=register['width'];depth=register['projection'];h=layout['storey_pitch'];half=width/2
-    label=w.name+' stair'; t0=depth/3;t1=2*depth/3;wing=min(2.25,(width-.55)/2); cap=5*h+2.62
-    for idx,x in enumerate([s-half,s,s+half]):
-        for iy,y in enumerate([.02,t0,t1,depth]):
-            # Intermediate columns along an active flight would pierce the stairs.
-            if idx==1 and iy in (1,2):continue
-            w.box(x,y,cap/2,.30,.30,cap,C,f'stair pier {idx+1}-{iy+1}')
+    left,right=s-half,s+half;t0=depth/3;t1=2*depth/3
+    wing=min(2.25,depth*.26);cap=5*h+2.62
+    for ix,x in enumerate([left,left+width/3,left+2*width/3,right]):
+        for iy,y in enumerate([0,t0,t1,depth]):
+            if ix in [1,2] and iy in [1,2]:continue
+            w.box(x,y,cap/2,.30,.30,cap,C,f'stair pier {ix+1}-{iy+1}')
+    def slab(x0,x1,y0,y1,z,label):
+        w.box((x0+x1)/2,(y0+y1)/2,z-.095,x1-x0,y1-y0,.19,SL,label)
+    def wall(x0,x1,y0,y1,z,label):
+        w.box((x0+x1)/2,(y0+y1)/2,z+.40,x1-x0,y1-y0,.80,C,label)
+        w.box((x0+x1)/2,(y0+y1)/2,z+.825,x1-x0,y1-y0,.05,G,label+' cap')
     for level in range(5):
-        z=level*h
-        for ix,(lo,hi) in enumerate([(s-half,s-half+wing),(s+half-wing,s+half)]):
-            rising=ix==0
-            steps=11;dz=h*.5/steps;dy=(t1-t0)/steps
-            topz=lambda y: z+(y-t0)/(t1-t0)*h*.5 if rising else z+h-(y-t0)/(t1-t0)*h*.5
-            # Stepped surface and soffit form one watertight flight.
-            tread=[(t0,topz(t0))];last=topz(t0)
-            for st in range(steps):
-                start=t0+st*dy;end=start+dy;above=topz(end) if rising else topz(start)
-                if abs(above-last)>.0001:tread.append((start,above))
-                tread.append((end,above));last=above
-            if abs(last-topz(t1))>.0001:tread.append((t1,topz(t1)))
-            profile=Polygon(tread+[(t1,topz(t1)-.20),(t0,topz(t0)-.20)])
-            w.section(profile,lo,hi,SL,f'stair flight {level+1}-{ix+1}')
-            edge=lo if rising else hi-.13
-            # Solid spandrel follows the real slope, with a narrow cap above it.
-            for offset,height,material,reveal in [(0,.79,C,' parapet'),(.79,.058,G,' cap')]:
-                contour=Polygon([(t0,topz(t0)+offset),(t1,topz(t1)+offset),(t1,topz(t1)+offset+height),(t0,topz(t0)+offset+height)])
-                w.section(contour,edge,edge+.13,material,f'stair {level+1}-{ix+1}'+reveal)
-            if not lod:
-                inner=hi-.055 if rising else lo+.055
-                w.tube((inner,t0,topz(t0)+.86),(inner,t1,topz(t1)+.86),.026,I,f'handrail {level+1}-{ix+1}',8)
-                for d in np.linspace(t0,t1,4):
-                    w.box(inner,d,topz(d)+.43,.035,.035,.86,I,f'handrail {level+1}-{ix+1}')
-        for lo,hi,z0 in [(0,t0,z),(t1,depth,z+h*.5)]:
-            w.box(s,(lo+hi)/2,z0-.1,width,hi-lo,.20,SL,f'stair landing {level+1}')
-            for sign in (-1,1):
-                w.box(s+sign*(half-.065),(lo+hi)/2,z0+.40,.13,hi-lo,.80,C,f'landing sides {level+1}')
-            if lo>0:w.box(s,depth-.065,z0+.4,width,.13,.8,C,f'landing head {level+1}')
+        z=level*h;zl=z+.25*h;zr=z+.75*h;za=z+h
+        # Photographs F07, F16 and F17 show the front sloping bay and the orthogonal side flights.
+        stair_run(w,t0,t1,z,zl,left,left+wing,False,level,1,lod)
+        stair_run(w,left+width/3,left+2*width/3,zl,zr,depth,depth-wing,True,level,2,lod)
+        stair_run(w,t0,t1,za,zr,right,right-wing,False,level,3,lod)
+        for x0,x1,edge,sign,inner,outer in [(left,left+wing,left,1,z,zl),(right-wing,right,right,-1,za,zr)]:
+            slab(x0,x1,0,t0,inner,f'gallery-side stair landing {level+1}')
+            slab(x0,x1,t1,depth,outer,f'outer stair landing {level+1}')
+            for y0,y1,zp in [(0,t0,inner),(t1,depth,outer)]:
+                wall(min(edge,edge+sign*.13),max(edge,edge+sign*.13),y0,y1,zp,f'side flat parapet {level+1}')
+        for lo,hi,zp in [(left,left+width/3,zl),(left+width*2/3,right,zr)]:
+            slab(lo,hi,depth-wing,depth,zp,f'cross landing {level+1}')
+            wall(lo,hi,depth-.13,depth,zp,f'outer flat parapet {level+1}')
     w.box(s,t0/2,5*h-.1,width,t0,.2,SL,'roof access landing')
     w.box(s,depth/2,cap-.16,width+.75,depth+.75,.32,C,'stair canopy')
     w.box(s,depth/2,cap+.025,width+.77,depth+.77,.05,F,'stair cap flashing')
     # Recessed panels under the roof carry the stepped chevrons photographed in F17.
     for y in [0,depth]:
         w.box(s,y,cap-.73,width,.16,1.04,C,'stair frieze cross')
+        if not lod and y==depth:
+            for j in range(3):
+                for k in range(3):
+                    mid=left+(j+(k+.5)/3)*width/3;u=width/23.0
+                    plane=depth+.087;base=cap-.92
+                    w.tube((mid-u,plane,base),(mid,plane,base+.105),.034,G,'cross chevron',5)
+                    w.tube((mid,plane,base+.105),(mid+u,plane,base),.034,G,'cross chevron',5)
     for side in [-1,1]:
         for d0,d1 in zip([0,t0,t1],[t0,t1,depth]):
             w.box(s+side*half,(d0+d1)/2,cap-.73,.16,d1-d0,1.04,C,'stair frieze side')
