@@ -200,7 +200,7 @@
 | 清心女中庚午校舍（北大楼）中央山花柱列正面 | 2026-11-23 05:15:31 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-pure-heart-girls-school-gengwu-front&mode=overview) · 1930 年原址，地点卡可查看历史外观 |
 | 龙门邨尚文路总弄过街楼 | 2026-11-23 06:04:41 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-longmen-village-gatehouse&mode=overview) |
 | 求新船厂厂部办公楼南立面铸铁外廊 | 2026-11-23 07:14:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qiuxin-shipyard-office-south-veranda&mode=overview) |
-| 上海电话局南市总局中华路钟楼立面 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nanshi-telephone-exchange&mode=overview) |
+| 上海电话局南市总局中华路钟楼立面 | 2026-11-23 08:35:08 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nanshi-telephone-exchange&mode=overview) |
 
 ### 徐汇区（55处）
 

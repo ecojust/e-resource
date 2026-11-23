@@ -27,3 +27,7 @@
 独立页面在桌面1250像素和手机390像素宽度各查看正面、斜向及俯看，一共六幅。两端均可辨入口台阶、中轴拱窗和屋顶钟座。四个下载经页面实际保存并复读，原始GLB为1,740,040字节，网页近档643,804字节，远档457,660字节，可编辑Blender文件512,002字节。[六幅照片逐张记录](city-31262/current-standalone/manual-visual-review.json)
 
 [实机、地面与四种下载](city-31262/process-exits.json) · [旧城对照](city-31262/map-before.png) · [中华路钟楼正立面](city-31262/map-zhonghua-clock-street.png) · [钟面与角柱](city-31262/map-clock-face-and-columns.png) · [远档](city-31262/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/b019d0cee4158dc0c1e42662b94d101d34fc2572/projects/shanghai/index.html#landmark=huangpu-nanshi-telephone-exchange&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
