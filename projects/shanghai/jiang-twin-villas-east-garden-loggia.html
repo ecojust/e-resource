@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>姜氏双子别墅 · 淮海中路796号</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<main aria-label="姜氏双子别墅淮海中路796号东馆花园面西端柱廊" data-front="positive-z" data-oblique="positive-x" data-oblique-x="0.52" id="model-view"></main>
+<header>
+<a href="index.html#landmark=huangpu-jiang-twin-villas-east-garden-loggia&amp;mode=overview">← 在上海主地图中查看</a>
+<p class="eyebrow">黄浦区 · 淮海中路796号</p>
+<h1>姜氏双子别墅</h1>
+<p>东馆花园面西端柱廊</p>
+</header>
+<aside aria-label="模型操作与下载" class="panel">
+<p class="scope">由南花园看，右侧为东馆。沿两馆之间的通道向右，第一开间的方墩与圆柱托起三层敞廊，瓶式石栏在柱间延伸。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div class="buttons">
+<button data-view="front" type="button">正看三层柱廊</button>
+<button data-view="oblique" type="button">斜看廊深与窗扇</button>
+<button data-view="above" type="button">俯看檐口与廊顶</button>
+<button hidden="" id="retry" type="button">重新加载</button>
+</div>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div class="downloads" id="downloads"></div>
+<a href="source/precise/huangpu-jiang-twin-villas-east-garden-loggia/README.md">制作范围与照片来源</a>
+</aside>
+<footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+<script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js';
+    showCandidateAssetViewer('huangpu-jiang-twin-villas-east-garden-loggia');
+  </script>
+</body>
+</html>
