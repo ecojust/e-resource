@@ -206,7 +206,7 @@
 | 自力大楼（英商自来水公司办公楼）江西中路464号券门及上层窗墙 | 2026-11-23 10:47:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zili-waterworks-office-front&mode=overview) |
 | 源源长银行江西中路473号圆徽砖立面 | 2026-11-23 11:12:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanyuanchang-bank-jiangxi-front&mode=overview) |
 | 恒丰大楼江西中路题名门罩与柱列 | 2026-11-23 11:39:41 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengfeng-building-entrance&mode=overview) |
-| 沙美大楼北京东路主立面与四川中路转角 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-somekh-building-street-corner&mode=overview) |
+| 沙美大楼北京东路主立面与四川中路转角 | 2026-11-23 11:58:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-somekh-building-street-corner&mode=overview) |
 
 ### 徐汇区（55处）
 

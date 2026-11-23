@@ -11,3 +11,7 @@
 桌面与手机各从地点目录进入沙美大楼，再用鼠标和触摸从恒丰大楼切换过来。地图中的九轴窗墙向四川中路转折，楼梯间在中央抬高，敞开的鼓座位于右端。部分窗轴被地图地点标签遮住，放大北京东路190号主门后能看到卷涡断山花与两旁石柱，门槛仍有一部分被地点卡覆盖。[北京东路立面](final-map-31268/architecture/map-street-facade.png) · [主门](final-map-31268/architecture/map-beijing-190-portal.png) · [四川中路转角](final-map-31268/architecture/map-corner-porch-and-open-drum.png)
 
 七次地图操作留存十三幅画面，另从独立建筑页保存六幅。地图复核了79处地面，包括24座邻屋。第一次手机校准时，浏览器把九像素的标记缩至三像素。校准页面采用设备宽度后，390×844视口上下两角均与实际显示栅格吻合。[逐图观察](final-map-31268/visual-review.json) · [独立页俯视](final-map-31268/standalone/viewer-desktop-full-above.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/5a701e72ad28afdf9d9231a521636c10a5d2763f/projects/shanghai/index.html#landmark=huangpu-somekh-building-street-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
