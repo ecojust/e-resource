@@ -5,3 +5,6 @@
 中部每层有两樘钢窗夹一块清水砖墙。上层为平楣，中层、下层为浅弧形窗头。右侧墙面的三道水平线可用于估算弧墙半径约1.30米。2017年照片能数出23皮砖的高度，按每皮63毫米估算，中层两道水平线相距约3.26米。两张照片上17个共同点的重投影均方根误差为1.60像素，数值以2019年发表照片的640×480画幅计。建筑的绝对尺度、地理朝向和后界仍有不确定性。[机位和曲率](measurements/front-registration.json) · [砖皮与原图取点](measurements/front-registration-controls.json) · [原照片](https://commons.wikimedia.org/wiki/File:建国西路629弄.jpg)
 
 2019年发表的照片中，右侧窄带有三列压花玻璃砖，中间穿插红砖横带。2017年照片则能辨出单片带框玻璃。模型以2019年发表照片中的做法表现窄带。花园墙上的八个凸字分两列，为“立言、立思、立行、立志”。文字读数、窗带各列和各层清水砖外轮廓均保留了依据。[窗带量取记录](measurements/brick-and-glass-photo-observations.json) · [墙上题字](measurements/garden-inscription-reading.json) · [2019年图文](https://www.sohu.com/a/300473463_120103574)
+
+
+2017年照片还能辨出中央上方的白色屋檐，以及左上方大钢窗的右框。两处机位交会后，白檐距花园主墙约1.1米，大钢窗约2.5米。右侧后翼的两层平窗和底部拱口见于2019年刊发图，但其进深被前景遮住。模型以1.45米的后退距离安放这一局部，主要楼体在主墙后3.15米处截取。这两个尺寸属于展示假设。中部两层窗的浅券边缘、实心砖芯与成对外开的钢窗扇均为独立构件，窗扇开启角度近似。[左上退台的七个双照控制点](measurements/upper-wing-registration.json) · [配准方法和误差](measurements/front-registration-notes.md) · [2017年照片与模型](../../../data/audit/jianguo-629-rounded-garden-residence-v1/registration/2017-photograph-and-model.jpg) · [可旋转浏览与下载](../../../jianguo-629-rounded-garden-residence.html)

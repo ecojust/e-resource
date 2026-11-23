@@ -5,3 +5,6 @@
 - 2019年3月11日发表的建国西路建筑文章第5节提供园内正面照片，原文未注明照片拍摄日期。模型使用自行量取的点位、比例和独立建模的构件。[2019年图文](https://www.sohu.com/a/300473463_120103574)
 - 陶玲2022年的访记记载这处老宅和墙上的“四立”文字，为末字“志”提供独立旁证。[陶玲访记](https://www.meipian.cn/4jlr2uud)
 - 自动生成的建筑几何、程序化抹灰与红砖材质、独立描绘的字形均按仓库MIT许可发布。实景照片未嵌入GLB的材质。[材质制作脚本](source/finishes.py)
+
+
+[2017年照片与模型比较图](../../../data/audit/jianguo-629-rounded-garden-residence-v1/registration/2017-photograph-and-model.jpg)左半为Antigng原作的转正、裁切和缩放，右半为模型在同机位的渲染。该比较图按[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)发布。

@@ -10,6 +10,11 @@ from arch_brick_and_glass import RIM
 from materials import BLOCK,BRICK,DARK,FRAME,GLASS,MID_GLASS,MORTAR,RENDER,SILL,TRIM
 RED=(BRICK,);PANE=(GLASS,MID_GLASS,FRAME);WALL=(RENDER,);BLOCK_FACE=(BLOCK,RIM,MORTAR)
 POINTS={'camera_2019_publication':[
+ ('recessed upper steel window',245,74,PANE),('recessed upper secondary light',261,82,PANE),
+ ('small upper rooftop light',314,40,PANE),('plaster beside large roof window',220,86,WALL),
+ ('recessed right top window',505,157,PANE),('recessed right lower window',516,244,PANE),
+ ('field between the right windows',512,208,WALL),('right lower arch in shadow',526,358,(DARK,TRIM)),
+ ('plaster on the right corner',482,249,WALL),('right lower arched return',529,370,(DARK,TRIM)),
  ('middle central brick',353,218,RED),('middle brick shoulder',343,193,RED),('middle brick foot',370,254,RED),
  ('upper central brick',345,122,RED),('upper brick lower right',369,137,RED),('ground brick head',361,317,RED),
  ('middle west steel window',316,217,PANE),('middle east steel window',397,235,PANE),
@@ -24,6 +29,8 @@ POINTS={'camera_2019_publication':[
  ('middle narrow glass register',446,201,BLOCK_FACE),('middle narrow brick interval',450,239,RED),
  ('lower strip upper register',455,325,BLOCK_FACE),('lower strip brick interval',459,361,RED)],
  'camera_2017':[
+ ('large upper roof window',81,2334,PANE),('left side of high steel casement',46,2302,PANE),
+ ('little roof light between coping and front parapet',338,2204,PANE),
  ('upper brick left',426,2588,RED),('upper brick right',568,2667,RED),
  ('upper brick foot',526,2713,RED),('middle central brick left',412,3015,RED),
  ('middle central brick right',565,3157,RED),('middle red brick lower edge',423,3250,RED),

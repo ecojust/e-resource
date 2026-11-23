@@ -4,7 +4,7 @@ from shapely.geometry import Polygon,box
 from shapely.ops import unary_union
 from arch_brick_and_glass import add_brick_and_glass,opening_profiles
 from garden_plane import SURVEY,flat_single_windows,hit,wide_openings
-from garden_sashes import insert_sash
+from garden_sashes import insert_sash,open_casements
 from materials import BASE,DARK,FRAME,GLASS,MID_GLASS,RENDER,ROOF,SILL,TRIM
 
 LEFT=-6.40
@@ -40,8 +40,11 @@ def casement_pairs(face,wide,profiles):
         for side,shape in [('left',left),('right',right)]:
             # The masonry pier divides paired windows; each upper light follows the real lintel.
             divs=[.50] if name=='upper' else []
-            if (name,side)==('middle','left'):divs=[.48]
-            insert_sash(face,shape,name+' main window '+side,divs,[.72],MID_GLASS if side=='left' else GLASS,0)
+            label=name+' main window '+side
+            if name=='middle' or (name=='upper' and side=='left'):
+                open_casements(face,shape,label,(46,53) if name=='upper' else (33,43))
+            else:
+                insert_sash(face,shape,label,divs,[.23,.78],MID_GLASS if side=='left' else GLASS,0)
         panel=outer.difference(unary_union([left,right,pier]))
         face.solid(panel,-.155,-.025,TRIM,name+' casement | rendered fillets around brick and glass')
         outer_rim=outer.buffer(.075,join_style=2).difference(outer)
