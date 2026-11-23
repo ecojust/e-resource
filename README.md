@@ -494,11 +494,11 @@
 |sh-historic-b5-xh-j-028-v|住宅|康平路101弄1-4号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-029-v|住宅|宛平路15号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-030-v|住宅|淮海中路1857弄67号|[名录][H5]|待核外观／拆栋|
-|sh-historic-b5-xh-j-031-v|住宅|康平路196号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-031-v|康平路196号住宅|康平路196号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/d363b32dd29f6ecb736eff6c0369a5606d62755f/projects/shanghai/kangping-196-shuttered-residence.html>)|已建街面百叶、卷草灰塑、后排窗组与两段红瓦坡顶。遮挡处进深、背面及左邻山墙连接待核。|
 |sh-historic-b5-xh-j-032-v|住宅|淮海中路1893号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-033-v|住宅|建国西路395弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-034-v|住宅&上海尚朵文化传播有限公司|襄阳南路525号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-035-v|住宅|太原路4弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-035-v|太原路4弄慈惠村住宅|太原路4弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/00b5c6ca777f789d9bef16149d60ec639bd6b0e3/projects/shanghai/taiyuan-lane-4-cihui-village.html>)|已建1–2号太原路与汾阳路转角、双券窗、折面窗和上层花铁。临街两面以外的后部和住宅分户待核。|
 |sh-historic-b5-xh-j-036-v|住宅|复兴中路1365-1373号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-037-v|住宅|肇嘉浜路604号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-038-v|住宅|乌鲁木齐路180-182弄|[名录][H5] · 照片待核|待核外观／拆栋|
