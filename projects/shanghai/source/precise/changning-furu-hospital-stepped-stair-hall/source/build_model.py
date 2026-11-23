@@ -3,8 +3,8 @@ from pathlib import Path
 import argparse, json, sys
 import numpy as np
 from shapely.geometry import Point, Polygon, box, shape as geometry_from_mapping
-from shapely.affinity import scale,translate
-from shapely.ops import unary_union
+from shapely.affinity import translate
+from shapely.ops import transform,unary_union
 
 HERE=Path(__file__).absolute().parent
 PROJECT=next(x for x in HERE.parents if (x/'tools/package_architectural_model.py').exists())
@@ -67,13 +67,31 @@ def add_building(b,lod=False):
                 if not lod:
                     x=a+(c-a)*.49
                     section(b,box(x-.010,h,x+.010,k),.105,.134,frame,label+' vertical division')
+    # The title is a series of individual applied characters on the front brick skin.
+    # Invert the measured archive camera at their front faces, preserving its perspective.
     lettering=json.loads((HERE/'archive-inscription.json').read_bytes())['glyphs']
+    camera=json.loads((HERE.parent/'measurements/registered-stair-stations.json').read_bytes())['stations']['district-archive']
+    metric=json.loads((HERE.parent/'measurements/street-metric-facade.json').read_bytes())
+    inverse=np.asarray(camera['R']).T@np.linalg.inv(np.asarray(camera['K']))
+    centre=np.asarray(camera['C'])
+    xy_scale=metric['plate_x_scale']
+    front=-.045
     for letter in lettering:
-        u,v,u1,v1=letter['native_bbox']
-        x0,z0=xz(u,v1);x1,z1=xz(u1,v)
-        relief=translate(scale(geometry_from_mapping(letter['outline']),xfact=x1-x0,yfact=z1-z0,origin=(0,0)),x0,z0)
+        u0,v0,u1,v1=letter['native_bbox']
+        def photograph_to_wall(u,v):
+            # The inscription outline uses a lower-left origin; the photograph uses upper-left.
+            cols=u0+np.asarray(u)*(u1-u0)
+            rows=v1-np.asarray(v)*(v1-v0)
+            sight=inverse@np.stack(np.broadcast_arrays(cols,rows,np.ones_like(cols)))
+            point=centre[:,None]+sight*(front*xy_scale-centre[1])/sight[1]
+            return point[0]/xy_scale,(point[2]-metric['plate_z_offset'])/metric['plate_z_scale']
+        relief=transform(photograph_to_wall, geometry_from_mapping(letter['outline']))
+        # The archive photograph shows the final character resting completely on the brick.
+        # Move its whole outline uniformly if the independent wall fit and letter box overlap the corner.
+        excess=max(0.,relief.bounds[2]-4.95+.004)
+        if excess:relief=translate(relief,xoff=-excess)
         if lod:relief=relief.simplify(.007,preserve_topology=True)
-        section(b,relief,-.045,-.012,stone,'archival hospital name/'+letter['character'])
+        section(b,relief,front,.003,stone,'archival hospital name/'+letter['character'])
     def slab(x0,x1,y0,y1,z0,z1,mat,label):
         b.box([(x0+x1)/2,(y0+y1)/2,(z0+z1)/2],[x1-x0,y1-y0,z1-z0],mat,label=label)
     for side in [(0,.23),(4.72,4.95)]:
