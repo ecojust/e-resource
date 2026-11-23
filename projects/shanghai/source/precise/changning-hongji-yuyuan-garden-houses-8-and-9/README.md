@@ -29,3 +29,13 @@ python measurements/check-six-front-cameras.py
 ```
 
 [模型检查](../../../data/audit/hongji-yuyuan-garden-houses-8-and-9-v1/README.md)
+
+[下载本次276期独立制作的 Blender 可编辑工程](../../../assets/models/candidates/changning-hongji-yuyuan-garden-houses-8-and-9/changning-hongji-yuyuan-garden-houses-8-and-9.blend?raw=true)（1,451,519 字节，SHA-256 `2bf2e207af284976c240d1c3c735f2b48598f6a376dceda75b314a754923fbf2`）。
+
+工程保留 714 个可编辑网格、九台相机和 27,936 个贴图角。桌面与手机各实拍九个镜位，核对了原始、近景、远景和可编辑工程四份下载。
+
+[独立网页](../../../hongji-yuyuan-garden-houses-8-and-9.html)
+
+[实拍与下载记录](../../../data/audit/hongji-yuyuan-garden-houses-8-and-9-v1/development-native/standalone/viewer.json)
+
+[可编辑工程预览](../../../data/audit/hongji-yuyuan-garden-houses-8-and-9-v1/development-native/changning-hongji-yuyuan-garden-houses-8-and-9-preview.png)
