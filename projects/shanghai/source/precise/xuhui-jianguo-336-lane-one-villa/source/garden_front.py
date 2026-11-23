@@ -30,13 +30,13 @@ def cut_stone(face,wall,left,right,bottom,top,lod):
         for x in np.arange(left+.37+(j%2)*.49,right,.98):
             lines.append(box(x,z+.008,x+.006,min(z+.456,top)))
     face.prism(unary_union(lines).intersection(wall),-.002,.003,DEEP,'coursed joints')
-def sah_window(face,u,w,base,top,level,narrow,closed,lod):
+def sah_window(face,u,w,base,top,level,narrow,closed,lod,forward=0.):
     left=u-w/2;right=u+w/2;head=top;low=base
     slit=box(left,low,right,head)
     face.prism(box(left-.071,low-.039,right+.071,head+.095).difference(slit),-.007,.041,SCULPT,'stone sash surround')
     face.box(u,low-.014,w+.152,.100,.164,.038,SCULPT,'projecting sill')
     inner=box(left+.04,low+.044,right-.04,head-.044)
-    face.prism(slit.difference(inner),-.20,-.12,SASH,'stepped reveal and lining')
+    face.prism(slit.difference(inner),-.20+forward,-.12+forward,SASH,'stepped reveal and lining')
     if closed:
         face.prism(inner,-.19,-.175,SLAT,'shadow behind closed shutter')
         dz=.138 if lod else .071
@@ -44,15 +44,15 @@ def sah_window(face,u,w,base,top,level,narrow,closed,lod):
                           for z in np.arange(low+.045,head-.045,dz) if z+.011<head-.045])
         face.prism(bars,-.172,-.142,DARK,'recessed horizontal shutter blades')
     else:
-        face.prism(inner,-.220,-.202,GLASS,'recessed casement glass')
+        face.prism(inner,-.220+forward,-.202+forward,GLASS,'recessed casement glass')
         count=2 if narrow else 4
         for t in np.arange(1,count)/count:
-            face.box(left+w*t,(low+head)/2,.029,head-low-.06,.045,-.136,SASH,'wood sash muntin')
+            face.box(left+w*t,(low+head)/2,.029,head-low-.06,.045,-.136+forward,SASH,'wood sash muntin')
         for f,sz in [(.27,.030),(.71,.052),(.86,.025)]:
-            face.box(u,low+f*(head-low),w-.066,sz,.047,-.134,SASH,'window transom')
+            face.box(u,low+f*(head-low),w-.066,sz,.047,-.134+forward,SASH,'window transom')
     apron(face,u,w+.12,low-.07,lod)
     guilloche(face,u,w+.14,head+.033,.07,lod)
-def bay(face,spec,lod):
+def bay(face,spec,lod,ground_sash_forward=0.):
     style,u,width,storeys,closed,supported=spec
     left=-face.length/2;right=face.length/2;upper=11.325
     holes=[box(u-width/2,lo,u+width/2,hi)for lo,hi in storeys] if supported else []
@@ -62,7 +62,7 @@ def bay(face,spec,lod):
     cut_stone(face,wall,left,right,.35,upper,lod)
     if not supported:return
     for i,(lo,hi) in enumerate(storeys):
-        sah_window(face,u,width,lo,hi,i,style!='broad',closed[i],lod)
+        sah_window(face,u,width,lo,hi,i,style!='broad',closed[i],lod,ground_sash_forward if i==0 else 0.)
     for i in range(2):
         z0=storeys[i][1]+.28;z1=storeys[i+1][0]-.45
         spandrel(face,u,width+.21,z0,z1,style!='broad',lod)
@@ -73,7 +73,8 @@ def center(b,lod):
     face=Facade(b,(l,back),(r,back),'Garden | recessed center')
     opening=box(-1.002,.58,1.002,3.344)
     mids=[box(-1.69,4.60,-.55,6.65),box(.53,4.60,1.64,6.65)]
-    uppers=[box(-1.50,7.80,-.36,10.51),box(.25,7.80,1.40,10.51)]
+    # In 04 the western rear window ends just right of the entrance axis; its glazing sits behind the canted reveal.
+    uppers=[box(-.90,7.80,.22,10.36),box(.55,7.80,1.44,10.38)]
     wall=box(l,0,r,11.34).difference(unary_union([opening,*mids,*uppers]))
     face.prism(wall,-.255,.0,STONE,'recessed entrance and two-storey gallery wall')
     frame=box(-1.002,.58,1.002,3.345).difference(box(-.92,.58,.92,3.25))
@@ -93,13 +94,23 @@ def center(b,lod):
     solid(b,-1.05,-.98,1.61,3.05,.57,3.32,ROOM,'Entrance | side of shadow recess')
     solid(b,.98,1.05,1.61,3.05,.57,3.32,ROOM,'Entrance | opposite side of shadow recess')
     solid(b,-1.03,1.03,3.05,3.12,.57,3.33,ROOM,'Entrance | limit of visible interior')
-    solid(b,l,r,.62,1.77,.45,.56,TILE,'Entrance | entrance landing')
     solid(b,-1.02,1.02,1.60,3.10,.50,.58,TILE,'Entrance | inside threshold')
     for win in mids+uppers:
         x0,z0,x1,z1=win.bounds
+        if win is uppers[1]:
+            # Photo 04 distinguishes the open western casement, a solid intervening pier and the eastern blind.
+            inside=box(x0+.032,z0+.04,x1-.032,z1-.04)
+            face.prism(win.difference(inside),-.15,-.105,SASH,'casing around eastern upper blind')
+            face.prism(inside,-.160,-.150,SLAT,'dark gaps behind eastern gallery blind')
+            spacing=.12 if lod else .067
+            blades=[box(x0+.032,z,x1-.032,min(z+spacing-.012,z1-.04))
+                    for z in np.arange(z0+.04,z1-.04,spacing) if z+.012<z1-.04]
+            face.prism(unary_union(blades),-.148,-.119,DARK,'horizontal blades of eastern upper blind')
+            continue
         face.prism(win,-.24,-.214,GLASS,'dark casement inside loggia')
         for x in (x0+.025,(x0+x1)/2,x1-.025):face.box(x,(z0+z1)/2,.043,z1-z0,.062,-.144,SASH,'gallery sash stile')
-        face.box((x0+x1)/2,z0+(z1-z0)*.72,x1-x0,.056,.062,-.144,SASH,'gallery window transom')
+        transom_fraction=.79 if win is uppers[0] else .72
+        face.box((x0+x1)/2,z0+(z1-z0)*transom_fraction,x1-x0,.056,.062,-.144,SASH,'gallery window transom')
     # The top loggia presents a shallow opening with scooped and stepped corner haunches.
     y=.835;front=Facade(b,(l,y),(r,y),'Upper loggia | garden opening')
     arch=Polygon([(l-.01,8.70),(r+.01,8.70),(r+.01,10.28),(r-.13,10.28),
@@ -110,13 +121,6 @@ def center(b,lod):
     solid(b,l,r,y,back+.10,10.77,10.86,STONE,'Upper loggia | soffit')
     for x0,x1 in ((l,l+.12),(r-.12,r)):
         solid(b,x0,x1,y,back,.48,11.32,STONE,'Garden | side returns of central recess')
-    # Black and grey stone rosette directly in front of the door on the landing in photograph 03.
-    ring=Point(0,.83).buffer(.242,quad_segs=14 if lod else 30).difference(Point(0,.83).buffer(.207,quad_segs=14 if lod else 30))
-    petals=[]
-    for a in np.linspace(0,2*np.pi,8,endpoint=False):
-        u=np.array([math.cos(a),math.sin(a)]);v=np.array([-u[1],u[0]]);q=np.array([0,.83])
-        petals.append(Polygon([q+.048*u,q+.12*u+.04*v,q+.185*u,q+.12*u-.04*v]))
-    b.plan_prism(unary_union([ring,*petals]),.5605,.563,INLAY,'Entrance | circular stone inlay')
 def add_front(b,lod=False):
     data=json.loads((HERE/'front-facet-geometry.json').read_bytes());levels=data['sill_head_z']
     for hand in ('west','east'):
@@ -131,5 +135,7 @@ def add_front(b,lod=False):
             else:
                 center_u=0;width=data['narrow_openings'][style+'_width_m']
                 closed=[style=='outer',hand=='east' or style=='outer',True]
-            bay(face,(style,center_u,width,levels,closed,hand!='east'or style!='outer'),lod)
+            # The earlier oblique 05 resolves the shallower east ground sash; all other rebates follow 03.
+            forward=.083 if hand=='east' and style=='broad' else 0.
+            bay(face,(style,center_u,width,levels,closed,hand!='east'or style!='outer'),lod,forward)
     center(b,lod)
