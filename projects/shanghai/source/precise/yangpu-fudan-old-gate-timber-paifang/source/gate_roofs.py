@@ -1,11 +1,14 @@
 """Curved tiled eaves, barrel ridges and the four lifted corners of the old gate."""
-import math
+import math,json
+from pathlib import Path
 import numpy as np
 from shapely.geometry import Polygon
 TILE='Fudan | dark grey clay'
 NOSE='Fudan | grey ridge tile'
 TIMBER='Fudan | weathered cypress'
 DARK='Fudan | dark eave timber'
+FINIAL='Fudan | pale glazed ridge ornaments'
+ORNAMENT=json.loads((Path(__file__).resolve().parents[1]/'measurements/ridge-ornaments.json').read_bytes())['parameters']
 def field(b,label,fn,na,nb,mat,thickness):
     vertices=[]
     for z in (0,-thickness):
@@ -28,7 +31,7 @@ def field(b,label,fn,na,nb,mat,thickness):
 def lifted_roof(b, center, width, depth, center_y, low, high, tip, lod, label, small=False,ridge_y=None):
     """A hipped roof with a concave main slope, outward-curving corners and a solid soffit."""
     half=width/2;dh=depth/2;ridge=half*(.70 if small else .842);base=low+.10
-    ridge_y=center_y if ridge_y is None else ridge_y
+    ridge_y=center_y if ridge_y is None else ORNAMENT['y']
     nx=10 if lod else 20;steps=4 if lod else 8
     def xf(a,t):
         return center+(2*a-1)*((1-t)*half+t*ridge)
@@ -41,13 +44,21 @@ def lifted_roof(b, center, width, depth, center_y, low, high, tip, lod, label, s
         field(b,label+f' / curved tile field {side}',fit,nx,steps,TILE,.105 if not small else .074)
         # Longitudinal crown tiles sit above the dark pantile field. The dark
         # concave band in each row remains exposed between the raised rolls.
-        count=(20 if lod else 35) if not small else (6 if lod else 10)
+        count=49 if not small else 11
         for k in range(count+1):
             a=k/count
             pts=[]
             for t in np.linspace(0,1,steps+1):
                 x,y,h=fit(a,t);pts.append([x,y,h+.021])
-            b.tube(pts,.027 if small else .039,NOSE,5 if lod else 8,label+'/covered tile roll '+str(k))
+            roll=.031 if small else .041
+            b.tube(pts,roll,NOSE,5 if lod else 8,label+'/covered tile roll '+str(k))
+            # Circular tile ends project beyond the timber eave fascia.
+            x,y,h=fit(a,0)
+            b.tube([[x,y+side*.035,h+.011],[x,y+side*.072,h-.014]],roll*1.22,NOSE,6 if lod else 10,label+'/tile nose '+str(k))
+            if not lod and not small:
+                for t in (.24,.50,.76):
+                    x,y,h=fit(a,t);x2,y2,h2=fit(a,t+.022)
+                    b.tube([[x,y,h+.021],[x2,y2,h2+.021]],roll*1.11,NOSE,7,label+'/tile collar '+str(k))
         pts=[list(fit(a,0))for a in np.linspace(0,1,nx+1)]
         for p in pts:p[2]-=.092 if not small else .059
         b.tube(pts,.049 if small else .069,TIMBER if not small else TILE,6 if lod else 10,label+'/eave fascia')
@@ -57,7 +68,7 @@ def lifted_roof(b, center, width, depth, center_y, low, high, tip, lod, label, s
         def hip(a,t):
             h=z(1.,t)
             e=(abs(2*a-1)**2.7)
-            h-=(tip-base)*(1-e)*(1-t)**1.55
+            h-=min(.16, .23*(tip-base))*(1-e)*(1-t)**1.55
             return center+sign*((1-t)*half+t*ridge),ridge_y*t+(center_y+(2*a-1)*dh)*(1-t),h
         verts=[];faces=[]
         for iz in (0,-.08):
@@ -84,8 +95,16 @@ def lifted_roof(b, center, width, depth, center_y, low, high, tip, lod, label, s
     # Raised straight ridge over the scalloped curved bands.
     b.tube([[center-ridge,ridge_y,high+.076],[center+ridge,ridge_y,high+.076]],.076 if small else .108,NOSE,8 if lod else 14,label+'/long ridge')
     for sign in (-1,1):
-        width0=.35 if small else .58;rise=.25 if small else .41
-        x=center+sign*(ridge-.39 if not small else ridge-.19)
-        curve=[(0,0),(.46,.02),(.66,.19),(.61,.43),(.76,.70),(1,.75),(.82,.95),(.57,1.00),(.35,.78),(.22,.49),(.02,.38)]
-        outline=Polygon([(x+sign*a*width0,high+.07+z*rise)for a,z in curve])
-        b.prism(outline,-.053,.053,lambda x,h,d:(x,ridge_y-d,h),NOSE,label+'/ridge terminal curl')
+        width0=.19 if small else .31
+        rise=.19 if small else ORNAMENT['height']
+        x0=center+sign*(ridge-.20 if small else ORNAMENT['half_spacing'])
+        base_z=high+.07 if small else ORNAMENT['z_foot']
+        # The front, side and reverse photographs all show the pale glazed ornaments
+        # inboard of the long dark ridge ends, with their upper heads turned inward.
+        curve=[(-.31,0),(.21,.01),(.62,.15),(.75,.28),(.37,.19),(.16,.20),
+               (.08,.31),(.23,.38),(.48,.38),(.34,.48),(.02,.48),(-.14,.62),
+               (-.11,.75),(.02,.85),(.34,.88),(.48,.83),(.44,.94),
+               (.29,.99),(.32,1.04),(.10,1.00),(-.14,.89),(-.38,.78),
+               (-.54,.59),(-.58,.38),(-.54,.16)]
+        outline=Polygon([(x0-sign*a*width0,base_z+z*rise)for a,z in curve])
+        b.prism(outline,-.048,.048,lambda x,h,d:(x,ridge_y-d,h),FINIAL,label+'/pale inward-facing ridge ornament')

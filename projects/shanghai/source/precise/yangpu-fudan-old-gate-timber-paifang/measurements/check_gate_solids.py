@@ -4,7 +4,8 @@ from collections import Counter
 from pathlib import Path
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'source'))
-from build_model import Builder,PALETTE,add_building
+from build_model import PALETTE,add_building
+from photo_architecture import Builder
 def check(lod,inscribed=True):
     b=Builder(PALETTE);add_building(b,lod,inscribed);bad=[];count=0
     for p in b.parts:
