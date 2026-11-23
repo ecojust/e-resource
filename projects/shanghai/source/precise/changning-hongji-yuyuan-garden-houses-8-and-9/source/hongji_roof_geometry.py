@@ -6,6 +6,7 @@ import numpy as np
 from shapely import set_precision
 from shapely.geometry import Point, Polygon, box
 from shapely.ops import unary_union
+from garden_fabric import BRICK, RENDER as PEBBLE, PALETTE as FACADE_FINISHES
 
 TILE8='Hongji 8 | fired pantile'
 TILE9='Hongji 9 | dark red fired pantile'
@@ -14,9 +15,7 @@ EAVE='Hongji roofs | eave gutter'
 SOFFIT='Hongji roofs | pale painted soffit'
 CAP='Hongji roofs | half-round clay ridge tile'
 FLASH='Hongji roofs | folded valley flashing'
-BRICK='Hongji 8 | exposed chimney brick'
 STONE='Hongji roofs | buff cement cap'
-PEBBLE='Hongji 9 | pebbled stack'
 PALETTE={
     TILE8:{'color':[1,1,1],'roughness':.89,'texture':str(Path(__file__).with_name('hongji-8-red-tile.png'))},
     TILE9:{'color':[1,1,1],'roughness':.91,'texture':str(Path(__file__).with_name('hongji-9-red-tile.png'))},
@@ -25,9 +24,9 @@ PALETTE={
     SOFFIT:{'color':[.57,.54,.43],'roughness':.91},
     CAP:{'color':[.32,.117,.07],'roughness':.89},
     FLASH:{'color':[.147,.133,.107],'roughness':.64},
-    BRICK:{'color':[.329,.119,.078],'roughness':.93},
+    BRICK:FACADE_FINISHES[BRICK],
     STONE:{'color':[.60,.565,.495],'roughness':.89},
-    PEBBLE:{'color':[.442,.401,.332],'roughness':.96},
+    PEBBLE:FACADE_FINISHES[PEBBLE],
 }
 
 
@@ -135,11 +134,18 @@ def surface(b,face,plane,tile,name,lod):
             textured_vertices(b.parts[-1],(a,c))
 
 
-def strips_and_caps(b,finished,house,lod):
+def strips_and_caps(b,finished,house,lod,wall_plan):
     tile=TILE8 if house==8 else TILE9
     for zone,face,plane in finished:surface(b,face,plane,tile,f'{house} | {zone} tile course',lod)
     outline=unary_union([f for _,f,_ in finished])
+    # Tile is visible above the roofs. Beneath the eaves, pale boarding runs
+    # from each true wall face to the rake or gutter around the projection.
+    inset=wall_plan.buffer(-.018,join_style=2)
     for zone,face,(a,c,k) in finished:
+        mapper=lambda x,y,d:(x,y,a*x+c*y+k+d)
+        for underside in pieces(set_precision(face.difference(inset),1.e-6)):
+            if underside.area>.001:
+                b.prism(underside,-.162,-.077,mapper,SOFFIT,f'{house} | {zone} soffit')
         boundary=face.boundary.intersection(outline.boundary)
         for line in getattr(boundary,'geoms',[boundary]):
             if line.geom_type!='LineString' or line.length<.10:continue
@@ -153,8 +159,6 @@ def strips_and_caps(b,finished,house,lod):
                 # A narrow closed verge follows the exact raking edge; the
                 # flat return at an eave incorporates a rounded external gutter.
                 gradient=abs((qt[0]-pt[0])*a+(qt[1]-pt[1])*c)/length
-                ring=Polygon([pt,qt,tuple(np.asarray(qt)-normal*.24),tuple(np.asarray(pt)-normal*.24)])
-                b.prism(ring,-.162,-.077,lambda x,y,d:(x,y,a*x+c*y+k+d),SOFFIT,f'{house} | {zone} soffit')
                 lip=Polygon([tuple(np.asarray(pt)+normal*.026),tuple(np.asarray(qt)+normal*.026),
                              tuple(np.asarray(qt)-normal*.037),tuple(np.asarray(pt)-normal*.037)])
                 b.prism(lip,-.153,.021,lambda x,y,d:(x,y,a*x+c*y+k+d),VERGE,f'{house} | {zone} verge')

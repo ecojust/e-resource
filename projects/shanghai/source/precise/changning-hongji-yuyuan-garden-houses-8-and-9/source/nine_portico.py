@@ -103,3 +103,30 @@ def add_portico(b, lod, layout):
         for z in (.92,1.21):
             stone('pull fixing',handle-.022,handle+.022,back-.035,back+.073,z-.023,z+.023,BRASS)
         stone('pull handle',handle-.017,handle+.017,back-.046,back-.018,.913,1.225,BRASS)
+
+
+def porch_lighting(b,lod):
+    from math import cos, pi, sin
+    survey=json.loads((SURVEY.parent/'nine-porch-lamps.json').read_bytes())
+    back=dimensions()['door_plane_y']
+    for j,(x,y,z) in enumerate(survey['front_sconce_centres_xyz'],1):
+        name='9 | door lantern '+str(j)
+        block(b,x-.052,x+.052,back-.019,back+.009,z-.11,z+.095,METAL,name+' wall plate')
+        b.tube([(x,back-.01,z+.057),(x,y+.025,z+.112),(x,y,z+.111)],.018,METAL,6,name+' bracket')
+        b.lathe((x,y),[(z-.14,.044),(z-.106,.063),(z+.070,.100)],GLASS,6,name+' lantern glass')
+        b.lathe((x,y),[(z+.064,.115),(z+.096,.119),(z+.151,.072),(z+.166,.037)],
+                METAL,6,name+' faceted hood')
+        b.lathe((x,y),[(z+.164,.029),(z+.226,.011),(z+.235,.004)],
+                METAL,6,name+' upper finial')
+        b.lathe((x,y),[(z-.204,.009),(z-.153,.043),(z-.133,.057)],METAL,6,name+' base finial')
+        for i in range(6):
+            a=i*pi/3
+            b.tube([(x+.063*cos(a),y+.063*sin(a),z-.106),
+                    (x+.101*cos(a),y+.101*sin(a),z+.071)],.0057,METAL,5 if lod else 7,name+' glass rib')
+    x,y,z=survey['ceiling_bowl']['visible_centre_xyz']
+    b.lathe((x,y),[(z-.057,.016),(z-.049,.071),(z-.023,.122),(z+.008,.160),(z+.036,.1775)],
+            WOOD,12 if lod else 28,'9 | suspended bowl opal glass')
+    b.lathe((x,y),[(z+.036,.178),(z+.052,.181),(z+.065,.079)],METAL,12 if lod else 26,
+            '9 | bowl metal rim')
+    b.tube([(x,y,z+.064),(x,y,dimensions()['terrace_cornice_z']-.084)],.012,METAL,6,
+           '9 | bowl suspension')

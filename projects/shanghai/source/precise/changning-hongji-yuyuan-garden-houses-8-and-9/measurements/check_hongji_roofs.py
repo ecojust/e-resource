@@ -41,9 +41,9 @@ def read(path):
     return json.loads(path.read_bytes())
 
 def component_review(n, lod, directory):
-    from package_architectural_model import Builder
+    from garden_builder import GardenBuilder
     model = HOUSES[n]
-    builder = Builder({})
+    builder = GardenBuilder({})
     model.add_roof(builder, lod, {})
     materials = Counter()
     counts = Counter()
@@ -62,11 +62,11 @@ def component_review(n, lod, directory):
         volume = np.einsum('ij,ij->i',tri[:,0]-origin,np.cross(tri[:,1]-origin,tri[:,2]-origin)).sum()/6
         if volume <= 0: raise ValueError(('nonpositive volume',item['label'], volume))
         minimum_volume = min(minimum_volume, volume)
-        if item['material'] == TILES[n]:
+        if item['material'] in {TILES[n], BRICK if n==8 else PEBBLE}:
             uv = np.asarray(item['texcoords'])[f]
             det = (uv[:,1,0]-uv[:,0,0])*(uv[:,2,1]-uv[:,0,1]) - (uv[:,2,0]-uv[:,0,0])*(uv[:,1,1]-uv[:,0,1])
             if np.any(abs(det)<1.e-10): raise ValueError(('degenerate UV',item['label']))
-            counts['faces_with_checked_tile_uv'] += len(uv)
+            counts['faces_with_checked_tile_uv' if item['material']==TILES[n] else 'faces_with_checked_chimney_uv'] += len(uv)
         materials[item['material']] += len(f)
         counts['triangles'] += len(f)
     report = dict(house=n,lod=lod,closed_positive_parts=len(builder.parts),
@@ -108,6 +108,14 @@ def survey(scene, n, camera_file, local):
     def ray(o, d, allowed):
         if not local: o,d = offset + basis@o,basis@d
         return sample(scene, o, d, allowed)
+    def photograph(eye,direction,allowed,category):
+        result=ray(eye,direction,allowed)
+        if category in ('cap','shaft') and result['hit']:
+            # The chimney now uses the same authentic finish as the wall below.
+            # Confirm the intersected geometry also lies above the roof.
+            min_z=7.45 if n==8 else 7.05
+            result['matched'] &= result['hit']['point'][2]>min_z
+        return result
     rows=[]
     cameras=read(camera_file)[str(n)]['fits']
     for record in cameras:
@@ -117,7 +125,33 @@ def survey(scene, n, camera_file, local):
         for category,points in PHOTO[record['image']].items():
             allowed=COVER if category=='tile' else STACK[n] if category=='shaft' else {STONE}
             for u,v in points:
-                rows.append(dict(source=record['image'],kind=category,uv=[u,v],**ray(eye,transform@[u,v,1.],allowed)))
+                rows.append(dict(source=record['image'],kind=category,uv=[u,v],**photograph(eye,transform@[u,v,1.],allowed,category)))
+    if n==8:
+        station=read(M/'courtyard-front-station.json')
+        p=np.array(station['house8_to_upright_pixel_camera'])
+        transform=np.linalg.inv(p[:,:3]);eye=-transform@p[:,3]
+        for kind,pixels in PHOTO['winter2023-04'].items():
+            allowed=COVER if kind=='tile' else STACK[n] if kind=='shaft' else {STONE}
+            for u,v in pixels:
+                rows.append(dict(source='winter2023-04 garden-constrained',kind=kind,uv=[u,v],
+                                 **photograph(eye,transform@[u,v,1.],allowed,kind)))
+    # Opposite oblique views register each north wing independently of its
+    # lawn facade. The eight-house cameras came from the separate café study.
+    # Keep measured image coordinates, including silhouette uncertainties.
+    if n==8:
+        north=read(M/'eight-north-hip-two-sides.json')['images']
+        supplementary={'8':[(71,198),(160,124),(225,72),(330,80),(403,104),(505,183),(562,261)],
+                       '10':[(365,180),(414,217),(510,244),(563,274),(598,289)]}
+    else:
+        north=read(M/'nine-north-windows-and-stepped-gables.json')['views']
+        supplementary={'20':[(428,157),(456,117),(478,99),(513,114),(554,125),
+                              (583,62),(613,43),(652,51),(728,62),(830,75)],
+                       '22':[(198,168),(199,178),(601,310),(570,273),(500,214)]}
+    for name,pixels in supplementary.items():
+        p=np.array(north[name]['P']);transform=np.linalg.inv(p[:,:3]);eye=-transform@p[:,3]
+        for u,v in pixels:
+            rows.append(dict(source='winter2023-'+name.zfill(2),kind='north roof or verge',
+                             uv=[u,v],**ray(eye,transform@[u,v,1.],COVER)))
     controls = read(M/('house-%d-roofs-and-source-points.json'%n))
     aerial=[]
     geo=read(M/'roof-aerial-two-ridge-registrations.json')[str(n)]
@@ -147,15 +181,27 @@ def survey(scene, n, camera_file, local):
     # Direct downward rays to each editable face are independent of the view
     # selection. Endpoint and satellite misses stay observable in the output.
     probes=[]
-    for zone,shape,plane in HOUSES[n].roof_sections({}):
+    layout={} if local else read(M.parent/'source/garden-layout.json')[str(n)]
+    for zone,shape,plane in HOUSES[n].roof_sections(layout):
         point=shape.representative_point()
         for fraction in (.32,.68):
             q=point if fraction==.32 else shape.centroid
             if not shape.contains(q) or q.distance(shape.boundary)<.12: q=point
             x,y=q.coords[0]
             probes.append(dict(zone=zone,local_xy=[round(x,4),round(y,4)],**ray(np.array([x,y,30.]),[0,0,-1],COVER|STACK[n])))
-    return {'house':n,'photos':rows,'aerial':aerial,'roof_surface':probes,
-            'summary':{k:[sum(row['matched'] for row in values),len(values)] for k,values in [('photo_pixels',rows),('aerial_pixels',aerial),('roof_faces',probes)]}}
+    wall=HOUSES[n].dimensions(layout)
+    soffits=[]
+    for xf in (.07,.23,.42,.58,.77,.93):
+        for yf in (.11,.49,.88):
+            x=wall['wall_width']*xf
+            y=-wall['front_overhang']*yf
+            z=HOUSES[n].wall_head_at(x,y,layout)
+            soffits.append(dict(local_xy=[round(x,4),round(y,4)],
+                                **ray(np.array([x,y,z-.35]),[0,0,1],{SOFFIT})))
+    counts=Counter(row['source'] for row in rows)
+    views={name:[sum(row['matched'] for row in rows if row['source']==name),len([row for row in rows if row['source']==name])] for name in counts}
+    return {'house':n,'photos':rows,'per_photo':views,'aerial':aerial,'roof_surface':probes,'front_soffit_from_below':soffits,
+            'summary':{k:[sum(row['matched'] for row in values),len(values)] for k,values in [('photo_pixels',rows),('aerial_pixels',aerial),('roof_faces',probes),('front_soffits',soffits)]}}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)

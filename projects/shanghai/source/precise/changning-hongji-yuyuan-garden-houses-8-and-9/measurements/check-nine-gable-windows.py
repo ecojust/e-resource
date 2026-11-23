@@ -26,12 +26,16 @@ for view,photo in survey["images"].items():
     inverse=np.linalg.inv(P[:,:3])
     eye=-inverse@P[:,3]
     scale=photo["camera_pixel_per_native_pixel"]
-    def test(label,uv,expected,point_type):
+    def test(label,uv,expected,point_type,face_y=None):
         direction=inverse@np.r_[np.array(uv)*scale,1.]
         hit=scene.ray(eye,direction,120)
+        matched = bool(hit and any(hit["material"].startswith(k) for k in expected))
+        if hit and face_y is not None:
+            local_hit = np.linalg.solve(M, np.r_[hit["point_enu_m"], 1.])
+            matched = matched and abs(local_hit[1] - face_y) < .012
         out.append({"station":view,"label":label,"type":point_type,"upright_native_pixel":list(uv),
                     "expected_material_prefix":expected,"first_hit":hit,
-                    "matched":bool(hit and any(hit["material"].startswith(k)for k in expected))})
+                    "expected_face_depth":face_y,"matched":bool(matched)})
     for row in photo["windows"]:
         q=np.array(row["frame_outline_or_visible_extent"])
         for name,(tx,ty) in {"left glass":(.24,.22),"right glass":(.76,.22)}.items():
@@ -48,7 +52,7 @@ for view,photo in survey["images"].items():
             test(row["id"]+" "+index,uv,exp,"photographed edge, may hit adjoining surface")
     if view in ['winter2023-14','winter2023-18']:
         px=[456,426] if view=='winter2023-14' else [395,377]
-        test("lower breast front",px,["Hongji 9 | pebbled stack"],"front face")
+        test("lower breast front",px,["Hongji 9 | pebbled render"],"front face",face_y=-.3272)
 report={"glb_sha256":sha256(args.glb.read_bytes()).hexdigest(),"rays":len(out),
         "matches":sum(row["matched"] for row in out),"transform":M.tolist(),"first_hits":out}
 args.report.write_text(json.dumps(report,ensure_ascii=False,indent=1)+'\n')

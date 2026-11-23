@@ -1,8 +1,9 @@
 """Three independently observed parts adjoining the west lawn gable of house eight."""
 from math import ceil, cos, hypot, sin, sqrt
 
-from shapely.affinity import scale
-from shapely.geometry import LineString, Point, Polygon, box
+import json
+from pathlib import Path
+from shapely.geometry import LineString, Polygon, box
 from shapely.ops import unary_union
 
 from garden_fabric import BOARD, BRASS, BRICK, CREAM, METAL, PLINTH, TREAD, block, face, paint
@@ -43,13 +44,17 @@ def arc_profile(mid, half, spring, crown, sill, steps):
     return Polygon([(mid-half,sill),(mid+half,sill),*edge])
 
 
-def numeral(b, lod, x, z, y):
-    fine=9 if lod else 20
-    def oval(w,h,rise):
-        return scale(Point(x,z+rise).buffer(1.,quad_segs=fine),w/2,h/2,origin=(x,z+rise))
-    outer=unary_union([oval(.414,.401,.151),oval(.461,.448,-.168)])
-    holes=unary_union([oval(.225,.262,.155),oval(.257,.300,-.174)])
-    face(b,outer.difference(holes),y-.049,y-.012,BRASS,'8 | raised brass numeral with two counters')
+def numeral(b, lod, y):
+    reference = Path(__file__).resolve().parents[1] / 'measurements/eight-raised-brass-number.json'
+    contours = json.loads(reference.read_bytes())['face_profile']
+    # The numeral is slightly left of the plate center. Both irregular holes
+    # follow the rectified close photograph, including their different sizes.
+    rings = [[(10.235 + 1.122*u, 3.808 - 1.084*v) for u,v in contour]
+             for contour in contours]
+    shape = Polygon(rings[0], rings[1:])
+    if lod:
+        shape = shape.simplify(.008, preserve_topology=True)
+    face(b,shape,y-.049,y-.012,BRASS,'8 | raised brass numeral with two counters')
 
 
 def numbered_wing(b,lod):
@@ -85,7 +90,7 @@ def numbered_wing(b,lod):
     block(b,left+.030,right-.042,front+.035,rear-.072,cap+.189,cap+.202,DECK,'8 | lowered roof finish')
     mount_y=front-.009
     block(b,10.235,11.357,mount_y-.053,mount_y,2.724,3.808,BOARD,'8 | square number backplate')
-    numeral(b,lod,10.789,3.265,mount_y-.053)
+    numeral(b,lod,mount_y-.053)
     # A narrow black two-level threshold is visible through the garden hedge
     # in the 2016 original. Its risers have only an image-scale estimate.
     block(b,7.28,10.93,front-.37,front+.18,-.014,.031,TREAD,'8 | garden threshold outer step')

@@ -1,7 +1,8 @@
 """No. 8. West lawn gable and tall chimney, clipped side gable and cross-range."""
-from shapely.affinity import affine_transform
+from numpy import array
+from numpy.linalg import solve
 from shapely.geometry import Polygon
-from hongji_roof_geometry import BRICK, STONE, PALETTE, height, roof_envelope, stack_box, strips_and_caps, triangular
+from hongji_roof_geometry import BRICK, STONE, PALETTE, halfplane, height, roof_envelope, stack_box, strips_and_caps, triangular
 
 DEFAULTS={'wall_width':7.12,'overhang':.59,'front_overhang':.60,'eave_z':5.57,'gable_rise':2.58,'ridge_depth':10.58}
 
@@ -14,24 +15,35 @@ def planes(layout):
     out=triangular('west lawn gable','x',(-a,w/2,w+a),(-d['front_overhang'],depth+.75),e,k)
     # The north cross-gable has a short hipped shoulder at its upper end.
     # The rake turns twice above the café doorway, as photographed in 2023.
-    axis=depth-.78;half=3.87;run=(N,w+3.13)
-    cross=triangular('transverse range','y',(axis-half,axis,axis+half),run,e-.28,k-.20)
-    # The crossridge is fractionally oblique to the lawn ridge: its north
-    # clipped end is at Y9.80 and its south end at about Y10.94.
+    axis=depth-.78
     shear=.0743
-    for name,poly,plane in cross:
-        poly=affine_transform(poly,[1.,0.,shear,1.,0.,-shear*N])
-        pa,pb,pc=plane
-        plane=(pa-pb*shear,pb,pc+pb*shear*N)
-        # A clipped triangle slopes up from the truncated summit in the end
-        # gable face to the main ridge, fitted inside the lateral roof planes.
-        end_plane=(.75,0.,k-.2-.78-.75*N)
-        from hongji_roof_geometry import halfplane
-        diff=[end_plane[i]-plane[i] for i in range(3)]
-        keep=poly.intersection(halfplane(*diff))
-        cap=poly.intersection(halfplane(*[-v for v in diff]))
-        if not keep.is_empty:out.append((name,keep,plane))
-        if not cap.is_empty:out.append(('clipped café end',cap,end_plane))
+    # Two 2023 images of the café side independently constrain the visible
+    # lower eaves and clipped upper rectangle against both door thresholds.
+    # The longer range retains its original ridge and far eave.
+    outer_axis=axis-.133
+    outer_half=3.740
+    blend=N+2.65
+    inner_axis=axis+shear*(blend-N)
+    outer_eave=e-1.229
+    clipped_z=k-1.511
+    outer_crest=outer_eave+(clipped_z-outer_eave)*outer_half/(outer_half-1.278)
+    lip_points=[(N,outer_axis-outer_half,outer_eave),(N,outer_axis,outer_crest),
+                (N,outer_axis+outer_half,outer_eave)]
+    inner_points=[(blend,inner_axis-3.87,e-.28),(blend,inner_axis,k-.20),
+                  (blend,inner_axis+3.87,e-.28)]
+    far_points=[(w+3.13,y+shear*(w+3.13-blend),z) for _,y,z in inner_points]
+    cap_slope=(k-.2-clipped_z)/1.14
+    cap_plane=(cap_slope,0.,clipped_z-cap_slope*N)
+    for left,right in ((lip_points,inner_points),(inner_points,far_points)):
+        for i in range(2):
+            for rows in ((left[i],right[i],right[i+1]),(left[i],right[i+1],left[i+1])):
+                poly=Polygon([(x,y) for x,y,_ in rows])
+                plane=tuple(solve(array([[x,y,1.]for x,y,_ in rows]),array([z for _,_,z in rows])))
+                diff=[cap_plane[q]-plane[q] for q in range(3)]
+                keep=poly.intersection(halfplane(*diff))
+                cap=poly.intersection(halfplane(*[-v for v in diff]))
+                if keep.area>.00001:out.append(('transverse range',keep,plane))
+                if cap.area>.00001:out.append(('clipped café end',cap,cap_plane))
     # The east roof beyond the cross-ridge occupies the adjoining *same*
     # range in the birds-eye image. Stop at the visible distinct roof step.
     back=depth+10.67
@@ -42,15 +54,19 @@ def planes(layout):
     # Below the transverse ridge, two independent front photographs show the
     # north-side tiled cover extending left of the main gable. Its outer profile
     # has a very steep lower face and a flatter shoulder above a real break.
-    x0=-5.24; x1=-4.85; x2=-4.02; inside=.20
+    x1=-4.85; x2=-4.02; inside=.20
     y0,y1,y2,y3=4.88,5.76,7.12,9.18
     low,fold,upper=e-1.61,e+.35,e+1.24
-    for label,xa,xb,ya,yb,za,zb in [
-            ('low cafe skirt',x0,x1,y0,y1,low,fold),
-            ('cafe shoulder',x1,x2,y1,y2,fold,upper)]:
-        pitch=(zb-za)/(yb-ya)
-        poly=Polygon([(xa,ya),(inside,ya),(inside,yb),(xb,yb)])
-        out.append((label,poly,(0.,pitch,za-pitch*ya)))
+    # This outer corner is independently read in 2016 and 2023. A third
+    # view exposes the eave edge, while foliage hides the exact outer tip.
+    outline=[(-5.472,4.946,e-1.677),(inside,y0,low),(inside,y1,fold),(x1,y1,fold)]
+    for indices in ((0,1,2),(0,2,3)):
+        tri=[outline[i] for i in indices]
+        plane=tuple(solve(array([[x,y,1.] for x,y,z in tri]),array([z for x,y,z in tri])))
+        out.append(('low cafe skirt',Polygon([(x,y)for x,y,z in tri]),plane))
+    pitch=(upper-fold)/(y2-y1)
+    shoulder=Polygon([(x1,y1),(inside,y1),(inside,y2),(x2,y2)])
+    out.append(('cafe shoulder',shoulder,(0.,pitch,fold-pitch*y1)))
     pitch=-.31
     poly=Polygon([(x2,y2),(inside,y2),(inside,y3),(x2,y3)])
     out.append(('cafe roof inner slope',poly,(0.,pitch,upper-pitch*y2)))
@@ -66,7 +82,8 @@ def wall_head_at(x,y,layout):
 
 def add_roof(b,lod,layout):
     for name,values in PALETTE.items():b.palette.setdefault(name,values)
-    strips_and_caps(b,roof_sections(layout),8,lod)
+    from garden_shells import footprint
+    strips_and_caps(b,roof_sections(layout),8,lod,footprint(8,dimensions(layout)))
     d=dimensions(layout);z=d['eave_z']+d['gable_rise']
     x=float(layout.get('chimney_x',d['wall_width']*3.6466/7.12))
     y=float(layout.get('chimney_y',.171));ctr=(x,y)
