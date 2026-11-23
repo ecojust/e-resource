@@ -17,3 +17,7 @@
 旗昌洋行福州路沿街三开间已接入黄浦区目录。用于影像复核的城市目录收录318处建筑。本次核对47个地块采样点与16处邻房采样位置，确认原街道与保留楼体的位置，并检查桌面、触屏、两处局部和远景。四个下载文件均由普通独立页实际保存，已按内容摘要逐一核对。
 
 [主图](../../../index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) · [三开间下层和东侧台阶](city-31283/map-fuzhou-road-three-round-doors-and-eastern-steps.png) · [上层尖券和石托块](city-31283/map-three-upper-arches-and-stone-brackets.png) · [照片、测算及可编辑网格复核](photo-recheck/README.md) · [现场逐图观察](city-31283/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ddb294af54c675e286663e56d397a4e4933c676e/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，16 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
