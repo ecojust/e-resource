@@ -1,3 +1,11 @@
+# 沙美大楼北京东路主立面与四川中路转角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-somekh-building-street-corner&mode=overview) · [单体旋转与下载](somekh-building-street-corner.html) · [来源与制作范围](source/precise/huangpu-somekh-building-street-corner/README.md) · [验收记录](data/audit/somekh-building-street-corner-v1/README.md)
+
+第四批4A006，市表信托大楼／上海信托公司，北京东路190号。制作南立面九个窗轴、190号入口与楼梯间、东南圆廊与鼓座、四川中路邻角第一开间。OSM 446937294与原城251相符。
+
+近景 103,260 个三角面，远景 64,320 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 12,201,154 字节。上海主图现有 303 处独立入口，黄浦区 138 处。[资产清单](assets/models/candidates/huangpu-somekh-building-street-corner/manifest.json)
+
 # 恒丰大楼江西中路题名门罩与柱列
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengfeng-building-entrance&mode=overview) · [单体旋转与下载](hengfeng-building-entrance.html) · [来源与制作范围](source/precise/huangpu-hengfeng-building-entrance/README.md) · [验收记录](data/audit/hengfeng-building-entrance-v1/README.md)
