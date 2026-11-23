@@ -73,7 +73,7 @@ def add(scene,lod):
             bar(n+f' door/handle {i+1}',(x,1.152,1.15),(x,1.152,1.48),.018,HANDLE)
             for z in [1.17,1.46]:
                 bar(n+f' door/handle lug {i+1} at {z}',(x,1.152,z),(x,1.244,z),.016,HANDLE)
-    for i,(x,b) in enumerate([(1.90,.41),(5.69,.51),(9.44,.43)]):
+    for i,(x,b) in enumerate([(2.11,.41),(5.69,.51),(9.44,.43)]):
         cub(f'entrance pier {i+1}/shaft',x-b/2,x+b/2,.993,1.138,.17,3.53,TRIM)
         cub(f'entrance pier {i+1}/foot',x-b*.65,x+b*.65,.94,1.139,.16,.39,STONE)
         cub(f'entrance pier {i+1}/cap',x-b*.68,x+b*.68,.936,1.14,3.39,3.54,TRIM)

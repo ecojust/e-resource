@@ -13,12 +13,26 @@ PROJECT = next(p for p in HERE.parents if (p/'tools/package_architectural_model.
 sys.path.insert(0, str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
 import entrance
+import porch_relief
+import west_elevation
+import finishes
+sys.path.insert(0, str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+
+class SurfaceBuilder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in finishes.STEMS:finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        Builder.save(self,path,metadata)
+        return finishes.writer.embed_normals(path)
 
 ID = 'changning-taian-74-quality-association'
 META = dict(id=ID, name='泰安路74号上海市质量协会临街面', address='上海市长宁区泰安路74号（76弄口东侧）',
             neighbouring_register='3M006', neighbouring_site='亦村', geometry_license='MIT', photos_embedded=False,
-            scope='泰安路74号机构楼沿街一面。其西邻为76弄亦村入口，受保护的院内住宅另行建模。',
+            scope='74号三角山花、双拱肩门廊、机构题牌及沿弄西墙至第二山花旁的双V纹窗裙。西邻76弄亦村院内住宅另行建模。',
             viewer_page='taian-74-quality-association.html')
+META['camera_views']=json.loads((HERE/'cameras.json').read_bytes())
 WALL='scored pale render'
 TRIM='off-white cast moulding'
 DARK='painted metal joinery'
@@ -98,16 +112,23 @@ def build(lod=False):
         (4.19,.165,.29,.17,STONE),(4.355,.103,.19,.115,TRIM),
         (12.09,.133,.163,.08,TRIM),(12.23,.078,.236,.13,STONE),
         (12.31,.174,.29,.18,TRIM),(12.49,.135,.37,.235,TRIM),(12.63,.161,.45,.29,STONE)]):
-        fascia(-.32-over,width+.20+over,z,z+th,depth,mat,f'street cornice/course {i+1}')
-    xmid=5.62;left=2.37;right=8.90;base=12.68;peak=13.78
-    pediment=Polygon([(left,base),(xmid,peak),(right,base)])
-    face(pediment,-.43,.031,WALL,'attic pediment/triangular infill')
+        if z>=12.23:
+            for side,lo,hi in [('west',-.32-over,2.50),('east',8.72,width+.20+over)]:
+                fascia(lo,hi,z,z+th,depth,mat,f'street cornice/{side} course {i+1}')
+        else:
+            fascia(-.32-over,width+.20+over,z,z+th,depth,mat,f'street cornice/course {i+1}')
+    xmid=5.58;left=2.50;right=8.72;base=12.68;peak=13.78
+    pediment=Polygon([(left,12.19),(left,base),(xmid,peak),(right,base),(right,12.19)])
+    face(pediment,-.43,.292,WALL,'attic pediment/triangular infill')
     for i,(w,dep,raised) in enumerate([(.185,.315,0.),(.063,.36,.105),(.094,.240,-.126)]):
         slope=LineString([(left-.09,base+raised),(xmid,peak+raised),(right+.09,base+raised)])
         face(slope.buffer(w/2,cap_style='flat',join_style='mitre'),-.35,dep,TRIM,f'attic pediment/raking cornice {i+1}')
     for i,x in enumerate(np.arange(-.24,width+.15,.220 if not lod else .440)):
         scene.box((x,-.152,12.20),(.092 if not lod else .14,.144,.112),TRIM,label=f'cornice/dentil {i+1:02}')
-    return entrance.add(scene,lod)
+    scene=west_elevation.add(porch_relief.add(entrance.add(scene,lod),lod),lod)
+    result=SurfaceBuilder({**scene.palette,**finishes.PALETTE})
+    for part in scene.parts:result.add(part['vertices'],part['triangles'],part['material'],part['label'])
+    return result
 
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__)
