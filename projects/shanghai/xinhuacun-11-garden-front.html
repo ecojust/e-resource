@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>新华村11号楼花园立面三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 愚园路1320号</p><h1>新华村11号楼花园立面</h1></header>
+<main aria-label="新华村11号楼花园立面三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">新华村11号楼的花园一侧有四开间双层敞廊，两端的斜阶从花园通向廊下。沿红瓦屋面可见四组老虎窗。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-xinhuacun-11-garden-front/changning-xinhuacun-11-garden-front-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p><a href="data/audit/xinhuacun-11-garden-front-v1/final/registration/garden-front-stations.jpg" target="_blank" rel="noopener">三处摄影机位对照</a> · <a href="data/audit/xinhuacun-11-garden-front-v1/final/registration/commons-model.jpg" target="_blank" rel="noopener">花园正面</a> · <a href="data/audit/xinhuacun-11-garden-front-v1/final/registration/park-stair-model.jpg" target="_blank" rel="noopener">一侧斜阶</a> · <a href="data/audit/xinhuacun-11-garden-front-v1/final/registration/garden-oblique-model.jpg" target="_blank" rel="noopener">花园斜望</a></p>
+<p>长宁区规划和自然资源局将愚园路1320号新华村11号楼单列为3M002。同院另有三栋分别登记。<a href="https://www.shcn.gov.cn/col7698/20211206/1118301.html">长宁区优秀历史建筑名录</a></p>
+<p>三处取景分别依据Antigng的2014年照片及高参88图记的第6、第11张。高参88的图记发表于2014年6月11日，文中未记这两张的拍摄日期。<a href="https://commons.wikimedia.org/wiki/File:愚园路1320号住宅新华村.jpg">Antigng原照（CC BY-SA 4.0）</a> · <a href="https://blog.sina.cn/dpool/blog/s/blog_5d1bdf480101iqnm.html">高参88新华村图记</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-xinhuacun-11-garden-front/source/viewer.js" type="module"></script>
+</body></html>
