@@ -45,14 +45,25 @@ def face_ring(w,opening,thick,spring,label):
     a,b,c,d=opening.bounds
     shape=opening.buffer(thick,join_style=2).difference(opening).intersection(box(a-thick-.01,spring,c+thick+.01,d+thick+.01))
     w.put(shape,-.13,.04,R,label+' / extruded brick archivolt')
-def sash(w,opening,label,lod,upper):
+def sash(w,opening,label,lod,upper,sign_bay=False):
     a,b,c,d=opening.bounds;cx=(a+c)/2;inner=opening.buffer(-.072,join_style=2)
     w.put(opening.difference(inner),.074,.17,WOOD,label+' / sash surround')
     bars=[box(cx-.032,b,cx+.032,d)]
-    if not lod:
-        for frac in [.24,.76]:
-            x=a+(c-a)*frac;bars.append(box(x-.022,b,x+.022,d))
-    l=b+(d-b)*.68;bars.append(box(a,l-.027,c,l+.027))
+    if sign_bay:
+        # School close-up 8 shows six tall glazed lights immediately above the name.
+        for frac in [1/6, 2/6, 4/6, 5/6]:
+            x=a+(c-a)*frac
+            bars.append(box(x-.020,b,x+.020,d))
+        for frac in [.43,.73]:
+            z=b+(d-b)*frac
+            bars.append(box(a,z-.023,c,z+.023))
+    else:
+        if not lod:
+            for frac in [.24,.76]:
+                x=a+(c-a)*frac
+                bars.append(box(x-.022,b,x+.022,d))
+        z=b+(d-b)*.68
+        bars.append(box(a,z-.027,c,z+.027))
     w.put(inner.intersection(unary_union(bars)),.105,.153,WOOD,label+' / mullions and transom')
     w.put(inner,.17,.19,GLASS,label+' / inset glass')
     w.put(inner,.54,.58,SHADE,label+' / room behind sash')
@@ -70,6 +81,29 @@ def hip(b,x0,x1,y0,y1,eave,ridge,label,along_y=False):
         b.add(lo+top,faces,TILE,label+' / pitch '+str(k+1))
     b.tube([v[4],v[5]],.07,TILE,8,label+' / ridge')
     for i,j in [(0,4),(3,4),(1,5),(2,5)]:b.tube([v[i],v[j]],.073,TILE,8,label+' / hip roll '+str(i))
+def cross_apron(b,x,half,label):
+    """Short cross-hip and its raking eaves, constrained by the aerial and the street silhouette."""
+    # At y=4.52 the three visible shallow triangular breaks lie near photo pixels
+    # (116,271), (274,271), (430,273). The street eave bounds their forward height.
+    front,vent,crest,back=-.72,4.52,7.22,14.73
+    z0,z1,z2=E+.19,11.34,RIDGE+.12
+    tip=11.67
+    def panel(vertices,name):
+        n=len(vertices);base=[(u,y,z-.115)for u,y,z in vertices]
+        winding=sum(vertices[i][0]*vertices[(i+1)%n][1]-vertices[(i+1)%n][0]*vertices[i][1] for i in range(n))
+        if abs(winding)<1e-8:raise ValueError(name)
+        face=[tuple(reversed(range(n))),tuple(range(n,n+n))]+[(i,(i+1)%n,(i+1)%n+n,i+n)for i in range(n)]
+        if winding<0:face=[tuple(reversed(t))for t in face]
+        b.add(base+vertices,face,TILE,label+' / '+name)
+    fl=(x-half,front,z0);fr=(x+half,front,z0);vl=(x-.90,vent,z1);vr=(x+.90,vent,z1)
+    top=(x,vent,tip);ridge=(x,crest,z2);rl=(x-half,back,z0);rr=(x+half,back,z0)
+    panel([fl,fr,vr,vl],'front apron')
+    panel([fl,vl,ridge,rl],'west fold');panel([fr,rr,ridge,vr],'east fold')
+    panel([vl,top,ridge],'west cap');panel([top,vr,ridge],'east cap');panel([rl,ridge,rr],'rear hip')
+    g=Plane(b,(0,vent),(1,0))
+    g.put(Polygon([(x-.90,z1-.04),(x+.90,z1-.04),(x,tip-.07)]),.008,.112,SHADE,label+' / recessed triangular vent')
+    for k,(u,t)in enumerate([(fl,vl),(fr,vr),(vl,top),(top,vr),(top,ridge)]):
+        b.tube([u,t],.044,TILE,7,label+' / tile verge '+str(k+1))
 def plaque(w):
     z=p['sign centre'];cx=C
     w.put(box(cx-1.56,z-.35,cx+1.56,z+.35),-.16,-.04,WOOD,'portal sign / red surround')
@@ -88,15 +122,31 @@ def south(b,lod):
     # Ground photo 10 identifies the six bays just west of the entrance.
     # The university's long historical negative and aerial view extend the count along both halves.
     for i in range(-11,12):
-        cx=C+DX*i;half=1.28 if i else 1.58
+        # The small group of end bays foreshortens on the oblique entrance view.
+        # Keep the calibrated central pitch and distribute the remaining width to the end pier.
+        sign=1 if i>0 else -1
+        end_axis=WIDTH-1.70 if i>0 else 1.70
+        if abs(i)<=7:
+            cx=C+DX*i
+        else:
+            start=C+sign*7*DX
+            cx=start+(end_axis-start)*(abs(i)-7)/4
+        half=1.20 if abs(i)>7 else (1.28 if i else 1.58)
         lower=span(cx,-.04 if i==0 else Z0,half,.37 if i else .49,Z1,n)
         upper=span(cx,Z2,half,.38,Z3,n)
         for j,opening in enumerate([lower,upper]):
             label=f'front bay {i+12:02} / level {j+1}';holes.append(opening)
             face_ring(w,opening,.19,(Z3 if j else Z1)-(.55 if i else .63),label)
-            if i or j:sash(w,opening,label,lod,bool(j))
+            if i or j:sash(w,opening,label,lod,bool(j),sign_bay=(i==0 and j==1))
+            crown=Z3 if j else Z1
+            keystone=Polygon([(cx-.105,crown-.04),(cx+.105,crown-.04),(cx+.145,crown+.23),(cx-.145,crown+.23)])
+            w.put(keystone,-.168,-.128,R,label+' / projecting crown brick')
         if -11<=i<11:
-            xx=cx+DX/2
+            k=i+1;sgn=1 if k>0 else -1
+            endpoint=WIDTH-1.70 if k>0 else 1.70
+            start=C+sgn*7*DX
+            nxt=C+DX*k if abs(k)<=7 else start+(endpoint-start)*(abs(k)-7)/4
+            xx=(cx+nxt)/2
             for k,(z,width,height) in enumerate([(Z1-.56,.43,.19),(Z1-.35,.55,.10),(Z3-.53,.47,.19),(Z3-.35,.56,.10)]):
                 w.put(box(xx-width/2,z,xx+width/2,z+height),-.16,.025,R,f'front pier {i+12} / impost {k+1}')
     w.put(box(-.15,-.02,WIDTH+.16,E+.04).difference(unary_union(holes)),0,.39,G,'south front / pierced grey brick')
@@ -108,6 +158,9 @@ def south(b,lod):
         block(b,x-.16,x+.16,.38,11.2,0,4.0,G,'entrance passage / side wall '+str(x))
     block(b,C-1.96,C+1.96,.38,11.2,3.96,4.16,PLASTER,'entrance passage / soffit')
     block(b,C-1.94,C+1.94,-.08,12.2,-.08,-.015,STONE,'entrance passage / paving')
+    # Between the lower return and the white East-Wind sign, photo 8 resolves four projecting string courses.
+    for k,(z,h,front) in enumerate([(4.11,.07,-.22),(4.23,.06,-.245),(4.37,.065,-.255),(4.51,.07,-.29)]):
+        w.put(box(C-1.77,z,C+1.77,z+h),front,front+.15,R,'portal sign / stepped cornice '+str(k+1))
     plaque(w)
 def courtyard(b,lod):
     n=11 if lod else 23
@@ -123,7 +176,7 @@ def courtyard(b,lod):
         for j in range(count+1):
             x=x1-j*(CP if side=='east' else pitch)
             if x<x0-.30:continue
-            for k,(z0,z1,hw,mat)in enumerate([(PLATFORM,PLATFORM+.30,.33,STONE),(PLATFORM+.30,CAP-.27,.245,G),(CAP-.28,CAP-.18,.30,R),(CAP-.18,CAP+.06,.36,R),(CAP+.06,CAP+.13,.41,R)]):
+            for k,(z0,z1,hw,mat)in enumerate([(PLATFORM,PLATFORM+.30,.33,STONE),(PLATFORM+.30,CAP-.27,.245,G),(CAP-.28,CAP-.18,.30,R),(CAP-.18,CAP+.06,.36,R),(CAP+.06,CAP+.14,.41,R),(CAP+.14,CAP+.29,.35,R),(CAP+.29,CAP+.34,.37,R)]):
                 block(b,x-hw,x+hw,COURT-.13,COURT+.51,z0,z1,mat,f'{side} arcade post {j+1} / course {k+1}')
         back=Plane(b,(0,COURT+2.25),(1,0));back.put(box(x0,PLATFORM,x1,LOW-.15),.0,.23,PLASTER,side+' north gallery / back wall')
         block(b,x0,x1,COURT-.35,COURT+2.55,0,PLATFORM,STONE,side+' north gallery / raised floor')
@@ -140,10 +193,14 @@ def courtyard(b,lod):
         # The perpendicular return carries open pillars below red-framed upper glazing.
         start=COURT if label=='east' else 15.12;w=Plane(b,(x,start),facing);length=COURT-15.12;pitch=length/6;holes=[]
         for i in range(6):
-            u=(i+.5)*pitch;low=span(u,PLATFORM-.05,pitch/2-.25,.59,CAP+.59,n);up=span(u,4.85,pitch/2-.28,.52,7.55,n)
+            u=(i+.5)*pitch;low=span(u,PLATFORM-.05,pitch/2-.25,.70,CAP+.83,n);up=span(u,4.85,pitch/2-.28,.52,7.55,n)
             holes.extend([low,up]);face_ring(w,low,.21,CAP-.08,label+f' return / ground {i+1}');face_ring(w,up,.17,7.00,label+f' return / upper {i+1}');sash(w,up,label+f' upper court sash {i+1}',lod,True)
         w.put(box(0,PLATFORM,length,E).difference(unary_union(holes)),0,.42,G,label+' return / arcade and upper wall')
-        w.put(box(0,4.05,length,4.38),-.17,.12,R,label+' return / sill course')
+        for i in range(1,6):
+            u=i*pitch
+            w.put(box(u-.34,2.39,u+.34,2.64),-.145,.045,R,label+f' return / red impost {i}')
+            w.put(box(u-.415,2.64,u+.415,2.78),-.173,.04,R,label+f' return / red impost cap {i}')
+        w.put(box(0,3.58,length,3.86),-.17,.12,R,label+' return / sill course')
         inside=Plane(b,(x+(2.36 if label=='east' else -2.36),start),facing);outline=box(0,PLATFORM,length,4.24)
         lower=[]
         for i in range(6):
@@ -160,7 +217,7 @@ def add_building(b,lod=False):
     hip(b,-.54,12.76,6.92,50.53,E+.08,RIDGE-.18,'west wing roof',True)
     hip(b,64.06,WIDTH+.54,7.0,50.38,E+.08,RIDGE-1.13,'east wing roof',True)
     for i,(x,half)in enumerate([(3.33,3.25),(25.23,3.60),(46.98,3.58),(68.22,3.28)]):
-        hip(b,x-half,x+half,-.72,14.73,E+.19,RIDGE+.35,'front roof cross return '+str(i+1),True)
+        cross_apron(b,x,half,'front roof cross return '+str(i+1))
     for j,(xa,xb)in enumerate([(-.06,C-1.62),(C+1.62,WIDTH+.07)]):
         block(b,xa,xb,12.40,12.76,0,E-.16,G,'south wing / court envelope '+str(j+1))
     block(b,C-1.62,C+1.62,12.40,12.76,Z1+.15,E-.16,G,'south wing / upper wall over passage')

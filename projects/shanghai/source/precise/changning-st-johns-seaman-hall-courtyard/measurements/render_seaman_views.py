@@ -8,6 +8,7 @@ import runpy
 import struct
 
 import numpy as np
+from seaman_shadow import SunMap
 from PIL import Image, ImageDraw, ImageFont
 
 HERE=Path(__file__).resolve().parent
@@ -70,6 +71,7 @@ def raster(path,cam,crop,width):
     viewdir=eye-tri.mean(axis=1);viewdir/=np.linalg.norm(viewdir,axis=1)[:,None]
     daylight=np.array([.19,-.61,.77]);daylight/=np.linalg.norm(daylight)
     weight=.56+.31*np.maximum(0,normal@daylight)+.12*np.sum(viewdir*normal,axis=1)
+    sun=SunMap(tri[rgba[mi,3]>=.99],daylight)
     opaque=visible[rgba[mi[visible],3]>=.99];trans=visible[rgba[mi[visible],3]<.99]
     order=np.concatenate([opaque,trans[np.argsort(-cam_xyz[trans,:,2].mean(axis=1))]])
     for j in order:
@@ -88,6 +90,8 @@ def raster(path,cam,crop,width):
         zb=zbuffer[ly:hy,lx:hx];hit&=depth<zb
         color=rgba[mi[j],:3]*weight[j];alpha=rgba[mi[j],3]
         if not np.any(hit):continue
+        weights=np.column_stack(((1-u[hit]-v[hit])/d[0],u[hit]/d[1],v[hit]/d[2]))*depth[hit,None]
+        exposure=sun.exposure(weights@tri[j])
         if mi[j] in textures:
             # Perspective-correct UVs and each material's embedded tangent-space normal map.
             coords=((1-u[hit]-v[hit])[:,None]/d[0]*tex_uv[j,0]+u[hit,None]/d[1]*tex_uv[j,1]+v[hit,None]/d[2]*tex_uv[j,2])*depth[hit,None]
@@ -103,6 +107,7 @@ def raster(path,cam,crop,width):
                 normals/=np.linalg.norm(normals,axis=1)[:,None]
                 light=(.56+.31*np.maximum(0,normals@daylight)+.12*(normals@viewdir[j]))[:,None]
             color=alb[iy,ix]*rgba[mi[j],:3]*light
+        color=color*exposure[:,None]
         local=scene[ly:hy,lx:hx];local[hit]=color*alpha+local[hit]*(1-alpha)
         if alpha>=.99:zb[hit]=depth[hit]
     mapped=np.where(scene<=.0031308,12.92*scene,1.055*scene**(1/2.4)-.055)
@@ -112,7 +117,7 @@ def raster(path,cam,crop,width):
 def render(mesh,out,width):
     out.mkdir(exist_ok=True,parents=True)
     book=json.loads((HERE/'seaman-registration.json').read_bytes())
-    cards=[];report={'mesh_sha256':hashlib.sha256(mesh.read_bytes()).hexdigest(),'inputs':'Actual GLB plus fitted cameras. No source imagery is loaded.','views':{}}
+    cards=[];report={'mesh_sha256':hashlib.sha256(mesh.read_bytes()).hexdigest(),'inputs':'Actual GLB plus fitted cameras. Directional self-shadow from opaque triangles, 24 samples/m. No source imagery is loaded.','views':{}}
     for name,(crop,caption) in VIEWS.items():
         pic=raster(mesh,book['stations'][name],crop,width*2)
         pic=pic.resize((width,round(pic.height/2)),Image.Resampling.LANCZOS)
