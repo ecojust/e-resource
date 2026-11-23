@@ -59,6 +59,19 @@ def add_roof(b,frame,lod=False,front_holes=(),side_holes=()):
         else:
             mapping=lambda x,y,z:(x,y,eave+(x-left)/(ll-left)*(ridge-eave)+z)
         b.prism(pts,-.123,0,mapping,TILE,'Eves roof / '+label)
+    # Both dated views show the sloping upper end disappearing behind the lower
+    # link. Its three exposed corners form a small separate facet, not a vertical gap.
+    link_ridge_y=front+3.65*frame.width/14.8
+    reads=((frame.design,[386,153]),(frame.album,[648,529]))
+    seam=np.mean([cam.wall(uv,link_ridge_y) for cam,uv in reads],axis=0)
+    top_tip=np.array([rr,d/2,ridge])
+    near_tip=np.array([right+.97,front,eave])
+    end_plan=Polygon([near_tip[:2],top_tip[:2],seam[:2]])
+    normal=np.cross(top_tip-near_tip,seam-near_tip)
+    def end_level(x,y,z):
+        dz=-(normal[0]*(x-near_tip[0])+normal[1]*(y-near_tip[1]))/normal[2]
+        return (x,y,near_tip[2]+dz+z)
+    b.prism(end_plan,-.127,0,end_level,TILE,'Eves roof / short end over low connecting ridge')
     # The back slope has no photograph of its openings. The visible ridge and
     # projecting front edge are independently closed; no rear elevation is inferred.
     b.box([(left+right)/2,front+.026,eave-.073],[right-left,.072,.14],EDGE,label='Eves roof / front eaves board')

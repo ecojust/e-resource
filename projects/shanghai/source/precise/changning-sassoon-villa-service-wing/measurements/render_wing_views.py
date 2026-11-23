@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 import numpy as np
-from PIL import Image,ImageDraw
+from PIL import Image,ImageDraw,ImageFont
 from wing_frame import Camera
 
 HERE=Path(__file__).resolve().parent
@@ -16,8 +16,8 @@ SHARED=HERE.parents[1]/'xuhui-huaihai-1230-rear-courtyard-entrance/measurements'
 sys.path.insert(0,str(SHARED))
 engine=runpy.run_path(str(SHARED/'render_registered_entrance.py'))
 lighting,raster=engine['ENGINE'],engine['RASTER']
-VIEWS={'design':('restoration-proposal-model.jpg','Service wing, 2014 repair design',(58,103,403,252)),
-       'album':('album-1937-model.jpg','Eves, 1937 album',(286,470,670,656))}
+VIEWS={'album':('album-1937-model.jpg','1937年《Eves》相册的视角',(286,470,670,656)),
+       'design':('restoration-proposal-model.jpg','2014年修缮设计透视的视角',(58,103,403,252))}
 
 def digest(path):
     with path.open('rb') as stream:
@@ -43,9 +43,12 @@ def render(model_path,out,width,grid):
                                  'output_dimensions':list(pic.size),'foreground':stats['zbuffer_foreground_pixels'],
                                  'visible_materials':stats['materials_visible_samples']}
             tile=pic.copy();tile.thumbnail((450,406));panels.append((label,tile))
-    sh=Image.new('RGB',(462*len(panels),443),'#e6e3db');d=ImageDraw.Draw(sh)
+    content_h=max(im.height for _,im in panels)
+    sh=Image.new('RGB',(462*len(panels),content_h+49),'#e6e3db');d=ImageDraw.Draw(sh)
+    font=ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',16,index=2)
     for i,(label,im) in enumerate(panels):
-        sh.paste(im,(i*462+(462-im.width)//2,6+(406-im.height)//2));d.text((i*462+12,419),label,fill='#282724')
+        sh.paste(im,(i*462+(462-im.width)//2,6+(content_h-im.height)//2))
+        d.text((i*462+10,content_h+13),label,font=font,fill='#282724')
     f=out/'two-dated-views.jpg';sh.save(f,quality=94,subsampling=0)
     result['sheet']={'file':f.name,'sha256':digest(f)}
     (out/'registered-renders.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')

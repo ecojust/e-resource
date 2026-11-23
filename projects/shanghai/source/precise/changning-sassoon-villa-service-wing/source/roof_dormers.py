@@ -29,6 +29,16 @@ def dormer_layout(frame):
         apex = frame.design.plane(item['cap']['design'],[mid,0,0],[1,0,0])
         front=y-.080*scale
         eave=top+.065*scale
+        outer_l,outer_r=l-.064*scale,r+.064*scale
+        if 'eaves_design' in item:
+            # Locate a level, approximately symmetric overhang from the two actual
+            # eave tips, independently of the casement jambs and front wall depth.
+            rim=item['eaves_design']
+            mid_x=lambda depth: np.mean([frame.design.wall(p,depth)[0] for p in rim])
+            front=min(y-.055*scale,(mid-mid_x(0))/(mid_x(1)-mid_x(0)))
+            left_tip,right_tip=[frame.design.wall(p,front) for p in rim]
+            outer_l,outer_r=left_tip[0],right_tip[0]
+            eave=(left_tip[2]+right_tip[2])/2
         if name=='center':
             shoulder_points=[frame.design.wall(pt,front) for pt in item['timber_envelope_design'][1:3]]
             apron=np.mean([p[2] for p in shoulder_points])
@@ -42,7 +52,7 @@ def dormer_layout(frame):
             hip=max(front+.22*scale,apex[1])
             clipped_z=eave
         forms.append(dict(name=name,l=l,r=r,y=y,z0=base,z1=top,scale=scale,mid=mid,
-                          front=front,eave=eave,tip=float(apex[2]),hip=hip,
+                          front=front,eave=eave,tip=float(apex[2]),hip=hip,outer_l=outer_l,outer_r=outer_r,
                           clipped_z=clipped_z,pitch=pitch,observation=item))
     return forms
 
@@ -103,7 +113,7 @@ def clipped(poly,normal,offset):
 def faces(frame,m):
     ll,rr=m['l'],m['r'];cx=m['mid'];s=m['scale']
     y=m['front']; e=m['eave']; tip=m['tip'];hy=m['hip'];far=limits(frame,m)[1]+.05*s
-    left,right=ll-.064*s,rr+.064*s
+    left,right=m['outer_l'],m['outer_r']
     front_l=np.array([left,y,e]);front_r=np.array([right,y,e])
     if m['name']=='center':
         front_l[2]=front_r[2]=m['clipped_z']
@@ -171,10 +181,15 @@ def add_dormers(b,frame,lod=False):
                 panel(curve,-.043,.025,FRAME,'bowed oak '+str(i+1))
             path=LineString([gable.exterior.coords[i] for i in [1,2,3,0]]).buffer(.037*s,cap_style=2,join_style=2)
             panel(path,-.035,.042,FRAME,'raked gable fascia')
+        if name!='center':
+            panel(box(l-.02*s,h-.003*s,r+.02*s,m['eave']-.022*s),-.021,.071,FRAME,'head of projecting casement')
+            left,right=m['outer_l'],m['outer_r']
+            b.box([(left+right)/2,m['front']+.042*s,m['eave']-.045*s],
+                  [right-left,.085*s,.065*s],EDGE,label=pre+'front fascia below the projecting tile edge')
         low=frame.roof_level(y)-.035*s
         # With the front skin cut by the host, solid cheek boards meet its slope.
         for i,x in enumerate((l,r)):
-            section=Polygon([(y,low),(y,h+.055*s),(eave_y+.012*s,h+.055*s)])
+            section=Polygon([(y,low),(y,m['eave']-.020*s),(eave_y+.012*s,m['eave']-.020*s)])
             b.prism(section,x-.035*s,x+.035*s,lambda depth,height,offset:(offset,depth,height),
                     EDGE,pre+'boarded cheek '+str(i+1))
         casement=box(l,z,r,h)
