@@ -14,6 +14,7 @@ from glb_triangles import SerialScene
 from court_three import CAP, CAST, CHARCOAL, CREAM, ENAMEL, GLASS, GREEN, LETTER, SEAM
 from court_terrace import BLUE, EYE, IRON, RIGHT, SLAB, TOP, Terrace
 from build_model import FRONT_Y, WALL_Y
+from court_frontage import CLAY
 
 
 def samples():
@@ -36,10 +37,10 @@ def samples():
     pane = ('upper window pane', window(.306,.046,4.915), GLASS)
     stile = ('green centre stile', window(.108,.028,4.915), GREEN)
     corner = ('left window surround', window(-.446,-.044,5.053), CREAM)
-    dentil = ('third dentil', window(-.499+2*1.049/19+.013,-.074,5.376), CREAM)
+    dentil = ('third dentil', window(-.499+2*1.049/19+.013,-.075,5.359), CREAM)
     band = ('projecting head band', window(.20,-.0905,5.416), CREAM)
-    return {'overview':[plaque,beam,pane], 'original':[door,front_rail,pane],
-            'number':[plaque,letter,cap], 'gate':[door,('vertical folded seam',(.919,.078,1.51),SEAM),('rendered pier',(-.119,0,1.8),CAST)],
+    return {'overview':[plaque,beam,pane,('green head behind the court gate',(-1.07,WALL_Y+.035,2.82),GREEN)], 'original':[door,front_rail,pane],
+            'number':[plaque,letter,cap,('terracotta lug below the plate',(.05,-.030,2.15),CLAY)], 'gate':[door,('vertical folded seam',(.919,.078,1.51),SEAM),('rendered pier',(-.119,0,1.8),CAST)],
             'terrace':[beam,blue,front_rail], 'ironwork':[front_rail,end_rail,blue],
             'green-sash':[pane,stile,corner], 'underside':[beam,beam_under,cap],
             'dentils':[dentil,band,('lower head fillet',window(.11,-.0625,5.315),CREAM)]}
@@ -67,9 +68,11 @@ def inspect(mesh,camera_file):
         for label,xyz,material in features[camera['name']]:
             point=np.asarray(xyz,dtype=float);uv=image_fraction(camera,eye,point)
             hit=scene.ray(eye,point-eye,50)
-            passed=bool(hit and hit['material']==material and all(0<v<1 for v in uv))
+            separation=float(np.linalg.norm(np.asarray(hit['point_enu_m'])-point)) if hit else None
+            tolerance=.035 if material==IRON else .008
+            passed=bool(hit and hit['material']==material and separation<=tolerance and all(0<v<1 for v in uv))
             rows.append(dict(camera=camera['name'],feature=label,world_m=point.tolist(),image_fraction=uv,
-                             expected=material,first_hit=hit,passed=passed))
+                             expected=material,first_hit=hit,separation_m=separation,tolerance_m=tolerance,passed=passed))
     sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     return dict(mesh=mesh.name,sha256=sha(mesh),cameras_sha256=sha(camera_file),count=len(rows),
                 matched=sum(r['passed'] for r in rows),rays=rows)
