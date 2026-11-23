@@ -14,3 +14,9 @@ python measurements/make_arcade_cameras.py
 python source/arcade_finishes.py
 python measurements/check_mesh.py /tmp/yen-hall
 ```
+
+## 成品与旧城屋体
+
+最终模型有126个闭合部件，近景36,572个三角面，远景27,124个。西端相机的近栏可辨五行交错菱孔，东段女儿墙由四段相连圆顶小孔及宽墩构成。三支视角作单独画面，另一航摄用作几何校对。四个相机的像点误差中位数为1.5至2.9像素，东侧地面站个别点偏到15.3像素。阶前草坪、实体内院、历史照片中的高翘角均不在本次截面内。[栏板与台阶量读](measurements/parapet-and-rail.json) · [模型独页与下载](../../../st-johns-yen-hall-arcade.html)
+
+原城1435仍贯穿思颜堂的整个U形院落与东西翼。新件只含东西约43米、向内至5.07米的前廊。两档模型的平面凸包与原1435相交190.58平方米，实际原城近、远网格都在南缘内侧0.40米处测到9.60米的旧屋面。独页展开前廊细节，城市内保留原1435及相邻41号楼。[地块与实网复核](measurements/issued-city-and-arcade.json)
