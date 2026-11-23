@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>康绥公寓 · 淮海中路494弄入口</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-0.62" aria-label="康绥公寓494弄入口模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-cozy-apartments-494-lane-portal&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 淮海中路494弄</p>
+    <h1>康绥公寓</h1>
+    <p>石门额、铁门与二层窗</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">淮海中路上的石门框着四个红字。两扇铁门向弄内开启，门额上方是红砖墙和一对长窗。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看门额与双窗</button>
+      <button type="button" data-view="oblique">侧看铁门与通道</button>
+      <button type="button" data-view="above">俯看石框与窗台</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-cozy-apartments-494-lane-portal/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=cozy-apartments-huaihai-lane-portal-v1';
+    showCandidateAssetViewer('huangpu-cozy-apartments-494-lane-portal');
+  </script>
+</body>
+</html>
