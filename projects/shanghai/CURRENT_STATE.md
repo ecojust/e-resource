@@ -1,3 +1,11 @@
+# 浙江兴业银行（浙兴大楼）北京东路西端窗跨
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-industrial-bank-beijing-front&mode=overview) · [单体旋转与下载](chekiang-industrial-bank-beijing-front.html) · [来源与制作范围](source/precise/huangpu-chekiang-industrial-bank-beijing-front/README.md) · [验收记录](data/audit/chekiang-industrial-bank-beijing-front-v1/README.md)
+
+第四批4A007，北京东路230号。按具名街照和银行博物馆资料，制作西南角往东第一完整窗跨的红砖竖墩、二层大窗、矩形回纹浮雕、上层三窗和顶檐。OSM 495117576与原城2404相符。
+
+近景 8,016 个三角面，远景 2,312 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 869,179 字节。上海主图现有 304 处独立入口，黄浦区 139 处。[资产清单](assets/models/candidates/huangpu-chekiang-industrial-bank-beijing-front/manifest.json)
+
 # 沙美大楼北京东路主立面与四川中路转角
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-somekh-building-street-corner&mode=overview) · [单体旋转与下载](somekh-building-street-corner.html) · [来源与制作范围](source/precise/huangpu-somekh-building-street-corner/README.md) · [验收记录](data/audit/somekh-building-street-corner-v1/README.md)

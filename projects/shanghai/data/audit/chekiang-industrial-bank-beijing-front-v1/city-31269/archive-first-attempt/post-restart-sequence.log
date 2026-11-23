@@ -1,0 +1,37 @@
+268 physical receipts verified 8
+control 2026-11-23T04:00:03.750062+00:00 {1167317: '964402'}
+closed control 2026-11-23T04:00:03.750062+00:00
+mobile-card 2026-11-23T04:00:37.602255+00:00 {1167798: '967997'}
+closed mobile-card 2026-11-23T04:00:37.602255+00:00
+mobile-pin 2026-11-23T04:02:06.543140+00:00 {1168517: '974719'}
+closed mobile-pin 2026-11-23T04:02:06.543140+00:00
+desktop-card 2026-11-23T04:02:49.861033+00:00 {1169217: '980352'}
+closed desktop-card 2026-11-23T04:02:49.861033+00:00
+desktop-pin 2026-11-23T04:03:39.425775+00:00 {1169794: '984590'}
+closed desktop-pin 2026-11-23T04:03:39.425775+00:00
+street 2026-11-23T04:04:20.952653+00:00 {1170428: '989538'}
+closed street 2026-11-23T04:04:20.952653+00:00
+roof 2026-11-23T04:05:10.289765+00:00 {1170976: '993730'}
+closed roof 2026-11-23T04:05:10.289765+00:00
+double-fret 2026-11-23T04:07:03.044829+00:00 {1173916: '1004910'}
+closed double-fret 2026-11-23T04:07:03.044829+00:00
+tripartite-windows 2026-11-23T04:07:46.850182+00:00 {1175246: '1009902'}
+closed tripartite-windows 2026-11-23T04:07:46.850182+00:00
+distant 2026-11-23T04:09:28.831883+00:00 {1176926: '1014312'}
+closed distant 2026-11-23T04:09:28.831883+00:00
+31269 separate viewer certified
+All 269 main-scene sessions have closed. Inspect the ten actual views.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-269/formal-31269/archive-recovered.py", line 31, in <module>
+    sig=r(w/f'{n}-production.json')['files'];native=intake['original_city_bindings_retrieved_on_both']
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-269/formal-31269/archive-recovered.py", line 10, in <lambda>
+    r=lambda f:plain(f)if f.exists()else json.loads(actual(f))
+                                                    ^^^^^^^^^
+TypeError: 'dict' object is not callable
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-269/wait-268.py", line 23, in <module>
+    subprocess.run([sys.executable,'-Bu',f],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-269/formal-31269/archive-recovered.py')]' returned non-zero exit status 1.

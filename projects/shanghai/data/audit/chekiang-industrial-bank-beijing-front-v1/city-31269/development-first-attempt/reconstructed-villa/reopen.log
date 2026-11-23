@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/.e-resource-recovery/placement/companion-villa-269/native-materials.py", line 100, in <module>
+    q=json.loads(out.read_bytes());assert q['match_raw'];q['packed_villa_materials'],q['villa_cameras']=inspect(bpy.context.scene,False);out.write_text(json.dumps(q,ensure_ascii=False,indent=2)+'\n')
+                                                                                                        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.e-resource-recovery/placement/companion-villa-269/native-materials.py", line 71, in inspect
+    sys.path.insert(0,str(SOURCE));from build_model import CAMERAS
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/e-resource/projects/shanghai/source/precise/hongkou-yimin-food-factory-reconstructed-villa/source/build_model.py", line 15, in <module>
+    from package_architectural_model import Builder, check_pair, glb_stats
+  File "/workspace/e-resource/projects/shanghai/tools/package_architectural_model.py", line 15, in <module>
+    from build_garden import glb_stats, group_parts
+  File "/workspace/e-resource/projects/shanghai/source/precise/jingan-country-hospital/source/build_garden.py", line 19, in <module>
+    from photo_architecture import Builder
+  File "/workspace/e-resource/projects/shanghai/source/precise/hongkou-general-post-office/source/common/photo_architecture.py", line 15, in <module>
+    from shapely import constrained_delaunay_triangles
+ModuleNotFoundError: No module named 'shapely'
+
+Error: script failed, file: '/workspace/.e-resource-recovery/placement/companion-villa-269/native-materials.py', exiting.
+Blender 4.3.2
+Read blend: "/dev/shm/root-yimin668/browser/development-native/attempt-1795407497395054676/hongkou-yimin-food-factory-reconstructed-villa.blend"
+
+Blender quit

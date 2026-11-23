@@ -1,0 +1,29 @@
+node:fs:621
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open '/dev/shm/yiding-448-dev/manifest.json'
+    at Object.openSync (node:fs:621:18)
+    at Object.readFileSync (node:fs:487:35)
+    at Object.<anonymous> (/dev/shm/yiding-448-dev/development-views.cjs:16:29)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/dev/shm/yiding-448-dev/manifest.json'
+}
+
+Node.js v24.22.1
+Traceback (most recent call last):
+  File "/workspace/.e-resource-recovery/root/changning-448-study/development-native/views.py", line 22, in <module>
+    try:subprocess.run(['node',W/'development-views.cjs',model,out],env=env,check=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node', PosixPath('/workspace/.e-resource-recovery/root/changning-448-study/development-native/development-views.cjs'), 'changning-yiding-village-roof-pavilion', PosixPath('/workspace/.e-resource-recovery/root/changning-448-study/development-native/storage/development-views')]' returned non-zero exit status 1.

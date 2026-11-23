@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/tmp/kemi334/handoff/run-phase-recovered.py", line 8, in <module>
+    cfg=read(w/'raw-config.json');p=Path('/workspace/e-resource/projects/shanghai');a=p/'data/audit'/cfg['tag'];id=cfg['id'];source=p/'source/precise'/id/'source';assets=p/'assets/models/candidates'/id;model=assets/'manifest.json';ref=read(a/'preflight/pilot-manifest.json');start=datetime.now(timezone.utc);attempt=h/(k+'-'+start.strftime('%Y%m%dT%H%M%S%f'));attempt.mkdir()
+                                                                                                                                                                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [Errno 28] No space left on device: '/tmp/kemi334/handoff/native-20261123T040003958067'

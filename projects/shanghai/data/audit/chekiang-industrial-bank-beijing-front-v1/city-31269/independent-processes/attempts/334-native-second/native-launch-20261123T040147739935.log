@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/kemi334/handoff/run-phase-recovered.py", line 26, in <module>
+    fcntl.flock(l,fcntl.LOCK_EX);assert not [proc.pid for proc in psutil.process_iter(['name','status']) if proc.info['name']in('chromium','chrome','blender')and proc.info['status']!=psutil.STATUS_ZOMBIE]
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
