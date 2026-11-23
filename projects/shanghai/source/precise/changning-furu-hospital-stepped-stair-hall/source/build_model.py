@@ -8,7 +8,8 @@ from shapely.ops import unary_union
 HERE=Path(__file__).absolute().parent
 PROJECT=next(x for x in HERE.parents if (x/'tools/package_architectural_model.py').exists())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder
+from stair_builder import StairBuilder as Builder
+import finishes
 ID='changning-furu-hospital-stepped-stair-hall'
 brick='Furu | dark red facing brick'
 stone='Furu | chalk grey cement'
@@ -17,6 +18,8 @@ glass='Furu | green grey glass'
 dark='Furu | opening shadow'
 PALETTE={brick:dict(color=[.43,.185,.149],roughness=.92),stone:dict(color=[.68,.675,.614],roughness=.88),frame:dict(color=[.104,.149,.120],roughness=.64),glass:dict(color=[.235,.339,.290],roughness=.30,alpha=.71),dark:dict(color=[.061,.072,.061],roughness=.9)}
 META=dict(id=ID,model_id=ID,name='私立妇孺医院旧院临街楼梯间与阶梯钢窗',viewer_page='furu-hospital-stepped-stair-hall.html',heritage_id='sh-historic-b3-108',official_id='3M010',geometry_license='MIT',photos_embedded=False,scope='The projecting stair hall as documented in the Changning authority photograph. The hospital name on the historic facade records an earlier use.')
+PALETTE.update(finishes.PALETTE)
+META.update(camera_views=json.loads((HERE/'cameras.json').read_bytes()),texture_license='MIT',photo_source='Changning District Planning and Natural Resources Bureau; Zhoudao Shanghai; Baidu historical road panorama, 2020-02-16. Observations only.')
 data=json.loads((HERE.parent/'measurements/plate-readings.json').read_bytes())
 
 def image_to_wall():
