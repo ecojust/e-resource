@@ -1,0 +1,21 @@
+[map] map-before
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ []
+- [
+-   1588,
+-   1766
+- ]
+
+    at view (/dev/shm/267-city-live/evidence/267/before/actual-driver.cjs:217:14)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9)
+    at async run (/dev/shm/267-city-live/evidence/267/before/actual-driver.cjs:325:143) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [],
+  expected: [Array],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

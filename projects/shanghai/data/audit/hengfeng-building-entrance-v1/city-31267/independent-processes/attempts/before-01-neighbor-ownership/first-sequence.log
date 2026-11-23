@@ -1,0 +1,30 @@
+266 24 1946
+267 30 1954
+before {'order': 267, 'phase': 'before', 'exit_code': 1, 'remaining_chromium': [], 'report': '/tmp/shanghai-main-267/evidence/267/before/control-browser.json', 'exit': 1, 'node': 739249, 'chromium_pids': [739264], 'node_closed': True, 'remaining': [], 'report_sha256': '7dc3da44b58c7896d261c63bcf8694bf1a346e6dfd88df768162493bd55a4b26', 'driver_sha256': '2351c995b7244da892b20422b976a5f16a23a8ae2559b3e897cc04a8923f4f40', 'actual_driver': '/tmp/shanghai-main-267/evidence/267/before/actual-driver.cjs', 'debug_port': 34997, 'finished': '2026-11-23T03:13:36.058805+00:00'}
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-267/run-267-separated-recovered.py", line 65, in <module>
+    assert q['exit']==0 and q['node_closed'] and seen and not active and report.is_file()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-267/run-267-separated-recovered.py", line 20, in <module>
+    subprocess.run([sys.executable,'-Bu',__file__,previous,part],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-267/run-267-separated-recovered.py', PosixPath('/tmp/shanghai-main-266/266-map-slot-released.json'), 'before']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-267/when-266-closed-recovered.py", line 21, in <module>
+    run('local-catalogs.py','restore');run('run-267-separated-recovered.py',parent);run('merge-267-measured.py');run('viewer.py','--assigned-standalone-slot')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-267/when-266-closed-recovered.py", line 7, in run
+    def run(program,*args):subprocess.run([sys.executable,'-Bu',w/program,*args],check=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-267/run-267-separated-recovered.py'), PosixPath('/tmp/shanghai-main-266/266-map-slot-released.json')]' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-267/wait-266.py", line 19, in <module>
+    subprocess.run([sys.executable,'-Bu',h/'when-266-closed-recovered.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-267/when-266-closed-recovered.py')]' returned non-zero exit status 1.

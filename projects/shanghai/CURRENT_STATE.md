@@ -1,3 +1,11 @@
+# 恒丰大楼江西中路题名门罩与柱列
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengfeng-building-entrance&mode=overview) · [单体旋转与下载](hengfeng-building-entrance.html) · [来源与制作范围](source/precise/huangpu-hengfeng-building-entrance/README.md) · [验收记录](data/audit/hengfeng-building-entrance-v1/README.md)
+
+第四批4A005，江西中路450至454号。按2013、2021年街景和Fayhoo于2015年上传的照片，制作可辨的恆豐大樓题名、双层拱形门罩、对卷饰、门柱柱础、涡卷柱头、后方凹槽柱及短檐。OSM 495116056及原城163相符。
+
+近景 22,252 个三角面，远景 15,616 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,531,963 字节。上海主图现有 302 处独立入口，黄浦区 137 处。[资产清单](assets/models/candidates/huangpu-hengfeng-building-entrance/manifest.json)
+
 # 源源长银行江西中路473号圆徽砖立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-yuanyuanchang-bank-jiangxi-front&mode=overview) · [单体旋转与下载](yuanyuanchang-bank-jiangxi-front.html) · [来源与制作范围](source/precise/huangpu-yuanyuanchang-bank-jiangxi-front/README.md) · [验收记录](data/audit/yuanyuanchang-bank-jiangxi-front-v1/README.md)

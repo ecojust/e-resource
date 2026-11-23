@@ -1,0 +1,49 @@
+{
+  "schema": "candidate-city-catalog-checks-v1",
+  "existing_city_count": 40,
+  "new_city_models": 262,
+  "unique_city_destinations": 302,
+  "inputs": [
+    {
+      "file": "data/global-models/urban-placement.json",
+      "bytes": 40256,
+      "sha256": "daf632cd62165dec52e569eac0decba888c056c5cf6dc21a1f5356598c4d7b1a"
+    },
+    {
+      "file": "data/global-models/chongming-placement.json",
+      "bytes": 117477,
+      "sha256": "e127ed43290eb345bf52dac399bf344b00d0b5eaf51baa1e7192314952d85398"
+    },
+    {
+      "file": "data/global-models/additional-placement.json",
+      "bytes": 2752218,
+      "sha256": "e474d0afffcce13787f711a0ecd5549c09141ea6a402db54e23d82c98c713507"
+    }
+  ],
+  "all_asset_contracts_match_inventory_or_checked_derivation": true,
+  "all_placement_polygons_valid": true,
+  "identified_source_required_for_replacement": true,
+  "listed_spawn_count": 3,
+  "spawn_clearance_radius_m": 0.38,
+  "spawn_checks": [
+    {
+      "id": "huangpu-waibaidu-bridge",
+      "nearest_candidate": "hongkou-russian-consulate",
+      "clearance_m": 99.11706
+    },
+    {
+      "id": "huangpu-sichuan-road-bridge",
+      "nearest_candidate": "hongkou-general-post-office",
+      "clearance_m": 79.920395
+    },
+    {
+      "id": "huangpu-zhapu-road-bridge",
+      "nearest_candidate": "huangpu-capitol-theatre",
+      "clearance_m": 42.512991
+    }
+  ],
+  "limitation": "Static candidate geometry checks; source-map roads, vector clipping and loading/fallback behavior require separate runtime/browser checks.",
+  "inventory_file": "data/global-models/candidate-inventory.json",
+  "inventory_sha256": "9aab8a468b6c606393ede360844b9ecb88105482f53b469af93dabecee4e9581",
+  "asset_verification_scope": "Original and previous incremental records retain their frozen verification; only this delivery's manifests/assets are read. Prior increment bytes and SHA are checked before reuse."
+}
