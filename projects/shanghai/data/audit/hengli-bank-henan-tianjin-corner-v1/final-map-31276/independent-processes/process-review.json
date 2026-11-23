@@ -1,0 +1,965 @@
+{
+  "order": 276,
+  "guest_results": [
+    "final-map-31276/independent-processes/guest/341-native-result.json",
+    "final-map-31276/independent-processes/guest/341-viewer-result.json"
+  ],
+  "historical_attempts": {
+    "final-map-31276/independent-processes/attempts/first-architecture/process.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/process.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/closed.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/second-single-roof-oom/closed.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-webgl1/closed.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/closed.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/process.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/process.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/process.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    },
+    "final-map-31276/independent-processes/guest/native-20261123T070959934088/physical-exit.json": {
+      "exit": 1,
+      "exit_field": "exit_code"
+    }
+  },
+  "observations": {
+    "first-host-transition": "276前控已退出并保存原图。原调度代码调用Path时名称尚未导入，首轮在调用341前停止；恢复后复用同一前控。",
+    "first-architecture": "首场实际留下街面普通、X11和WebGL图。随后屋顶镜的方位参数缺失，报告留下无效经纬度，真实退出1。",
+    "second-architecture": "修正相对方位后，报告有街面、屋顶两个视图状态，落盘的普通截图仍只有街面。第二次浏览进程以1退出。",
+    "third-roof": "第三次屋顶单独进程退出1，尚无场景截图，有视口校准图、报告、进程票及当时的内存事件计数。",
+    "fourth-roof": "第四次屋顶单独进程亦在截图前退出1，留下校准图、浏览日志和空的视图列表。",
+    "fifth-roof": "第五次屋顶尝试的网页报告提示场景依赖库需要WebGL 2，该环境只提供WebGL 1。240秒超时后退出，场景未出图。",
+    "upper-samples": "上部退台的初次独立视图实际试了四次界面留白，五个采样点没有在同一布局全部露出；报告记下每次命中元素，浏览器退出1。",
+    "341-first-native": "341首次原生进程以1退出。日志记录预览脚本无执行许可，未启动Blender；同字节源补回执行位后沿原前控重入，两次Blender和降噪均实际退出。",
+    "341-deferred": "341首个手机受理当时尚无341原始册及正式最高比较册，未启动浏览器，原暂候票单独保存。",
+    "341-first-catalog": "原始册与最终网页册的城市目录摘要不同。旧准入错误地要求两册相同，首轮停在浏览器启动前。现分别向各自的签名册核对，公共页、模块和桌手共用的清单按两套账独立复查。",
+    "341-final-viewer": "原手机回单进入独立桌面、手机两个Node/Chromium。共留六图，桌面四次saveAs后从保留文件核签。",
+    "final-architecture": "最终四个机位分别在独立的浏览进程完成。前三镜使用相同程序，上层退台扩大视口后再拍；四个源、退出单、截图和对应的根窗口、WebGL帧均可复核。",
+    "first-mouse": "620×460鼠标场已从美丰的初始路径按出恒利银行，实体坐标(283.5,217)。在第一幅场景截图写入前浏览器退出1；校准画面与选点报告留在最初尝试。",
+    "first-distant": "原远档zoom 15.65，小视口里仍载入full，浏览器退出1，尚无普通截图。实际远档与门槛改按页面的960米切换距离复核。",
+    "second-distant": "第二次远档已取得真正distant的全页、X11与WebGL三张图。其后检查本次会话收到的旧近景宏时，原1_-5-s1.glb.gz未在网络记录中，整段仍退出1；三图按该尝试存放。",
+    "standalone-first": "首个独页进程已存桌面三幅，在核公共模块时发现工作树已更新。实际冻结站返回40dddc88…，与工作树23cd72e3…有别。三幅与原退出实票分存，随后从同一正式端逐字核模块，桌手六图与四实存均完成。"
+  },
+  "files": {
+    "final-map-31276/independent-processes/before/process.json": {
+      "bytes": 564,
+      "sha256": "8b53054ba9dc67a4e8c437ce06dcf6f7352121dc0d2bec4c628e7f4fc67fdc6e"
+    },
+    "final-map-31276/independent-processes/before/map-before-webgl.png": {
+      "bytes": 28567,
+      "sha256": "79f108ef54e825c034b185264e88cf2a5a64c08cdc3a4bf06d43300da3c0acdc"
+    },
+    "final-map-31276/independent-processes/before/map-before.png": {
+      "bytes": 108224,
+      "sha256": "205f89b4fa3942b6f5c6f4b3569c0e72b53e2d9a627325d85ab5891a56347b8b"
+    },
+    "final-map-31276/independent-processes/before/map-before-x11-root.png": {
+      "bytes": 137403,
+      "sha256": "f1a78e31183072c62946531f2f26011a650fadda6063eb9fce1cce3f1423e78f"
+    },
+    "final-map-31276/independent-processes/before/control-browser.json": {
+      "bytes": 11506,
+      "sha256": "48234147ef3751ab6d9c8a8ed08d1d1c4932ea33a876dd2f05e8533d97f6ccf4"
+    },
+    "final-map-31276/independent-processes/before/viewport-calibration-x11-root.png": {
+      "bytes": 14674,
+      "sha256": "c0b61b8696ce4b1c6aa21f2e2740bfb57505881241f16647733423cff9ecaabe"
+    },
+    "final-map-31276/independent-processes/before/actual-driver.cjs": {
+      "bytes": 31977,
+      "sha256": "936066d2ac322d307c28ed9f68ec586926947652d57dfa0a88da9628917adc9b"
+    },
+    "final-map-31276/independent-processes/phone/process.json": {
+      "bytes": 559,
+      "sha256": "287c86a44be5a1164cf3414d51e631e9505f43bc6ef8968ee123df72dd7d751e"
+    },
+    "final-map-31276/independent-processes/phone/map-mobile-settled-webgl.png": {
+      "bytes": 46795,
+      "sha256": "cc2f465aa5daae8c3ac1a80444a8a5927fcb5a963594979b3ae9be03f79733c7"
+    },
+    "final-map-31276/independent-processes/phone/map-mobile-settled.png": {
+      "bytes": 148897,
+      "sha256": "f46a925b5563824d8fe4c7fafd163b531048fba0d7a8091b27f02feb5a8b8c8a"
+    },
+    "final-map-31276/independent-processes/phone/map-mobile-settled-x11-root.png": {
+      "bytes": 188942,
+      "sha256": "decc805f6d8576d816a7190cf33743688701686d98d0724e79b07c363e34a56a"
+    },
+    "final-map-31276/independent-processes/phone/map-mobile-webgl.png": {
+      "bytes": 47294,
+      "sha256": "b85b6d632bc75c6b65ec28e51b7635d061962735817f39f46d8a95b5ef3431ba"
+    },
+    "final-map-31276/independent-processes/phone/map-mobile.png": {
+      "bytes": 147063,
+      "sha256": "8c3e2c082e46e17cdd8238b344c979aaa283a7fef15c00801d559de0a99ac821"
+    },
+    "final-map-31276/independent-processes/phone/map-mobile-x11-root.png": {
+      "bytes": 187236,
+      "sha256": "df7218f1b49202733385d13515239c466dec1aa19acfa681df2a783faac26d9e"
+    },
+    "final-map-31276/independent-processes/phone/main-browser.json": {
+      "bytes": 19463,
+      "sha256": "9bd80e775f5bef43a72e488d85d2ac60ed6f42125b3b09246b158fe6dcd621d7"
+    },
+    "final-map-31276/independent-processes/phone/viewport-calibration-x11-root.png": {
+      "bytes": 16005,
+      "sha256": "a6575cec627cb21e384fdf6b3fe5efd53be92d687546bdbbed82285b73c1e35c"
+    },
+    "final-map-31276/independent-processes/phone/actual-driver.cjs": {
+      "bytes": 31977,
+      "sha256": "936066d2ac322d307c28ed9f68ec586926947652d57dfa0a88da9628917adc9b"
+    },
+    "final-map-31276/independent-processes/desktop/process.json": {
+      "bytes": 563,
+      "sha256": "28f701d534cc44dae89c43fa6b9f1c08a9803747061f61bfe8da1907f82314b2"
+    },
+    "final-map-31276/independent-processes/desktop/map-desktop-settled-webgl.png": {
+      "bytes": 119677,
+      "sha256": "f639aeb4286c32007e0a373f33d4ea5a1eda8a7085a72af7ffc43cf84958a7b6"
+    },
+    "final-map-31276/independent-processes/desktop/map-desktop-settled.png": {
+      "bytes": 263009,
+      "sha256": "f2e5a951d6951aecede1a0e2ad04f08cd5e36de53047968d6372aa7d77b41d2a"
+    },
+    "final-map-31276/independent-processes/desktop/map-desktop-settled-x11-root.png": {
+      "bytes": 298585,
+      "sha256": "ca85de240dc474f99fd6df22bf08bc8846f34c43270559b2b480929de2c1f828"
+    },
+    "final-map-31276/independent-processes/desktop/map-desktop-webgl.png": {
+      "bytes": 119677,
+      "sha256": "f639aeb4286c32007e0a373f33d4ea5a1eda8a7085a72af7ffc43cf84958a7b6"
+    },
+    "final-map-31276/independent-processes/desktop/map-desktop.png": {
+      "bytes": 260418,
+      "sha256": "2e7b3afe542d67314a0bf67beb4b5f6da2f1d282597c8c3ed9e95fdd11b7ab62"
+    },
+    "final-map-31276/independent-processes/desktop/map-desktop-x11-root.png": {
+      "bytes": 294945,
+      "sha256": "7610d13c3fbaf60a4e1317f41a3ea98584ad8ed88b99d1fc670b2e04ac27bbf7"
+    },
+    "final-map-31276/independent-processes/desktop/main-browser.json": {
+      "bytes": 19476,
+      "sha256": "c13bfd91f6f3a76f82a21e3ba2533db225595742e870d8ef2c43198ee4cd88e8"
+    },
+    "final-map-31276/independent-processes/desktop/viewport-calibration-x11-root.png": {
+      "bytes": 15779,
+      "sha256": "28624d273b4db6da5069ba9338e6fa99fee5a84fa84565a7ee1f6a00de32ce27"
+    },
+    "final-map-31276/independent-processes/desktop/actual-driver.cjs": {
+      "bytes": 31977,
+      "sha256": "936066d2ac322d307c28ed9f68ec586926947652d57dfa0a88da9628917adc9b"
+    },
+    "final-map-31276/independent-processes/architecture/process.json": {
+      "bytes": 2671,
+      "sha256": "e9fa0675519132f7371ef84edbe0c3b38d88944a7df3a2e5a582aa68f632a551"
+    },
+    "final-map-31276/independent-processes/architecture/main-browser.json": {
+      "bytes": 65811,
+      "sha256": "55f68750e2abebf45a2f546219314a4e04266aa7e16e29ab684bb3c4e466caea"
+    },
+    "final-map-31276/independent-processes/architecture/map-upper-setback-and-tianjin-fin-x11-root.png": {
+      "bytes": 349441,
+      "sha256": "41664c9c1e61da7a02f17084bc6b161848e0f65996f77f3c096fd5c1895fc332"
+    },
+    "final-map-31276/independent-processes/architecture/map-upper-setback-and-tianjin-fin.png": {
+      "bytes": 313144,
+      "sha256": "5c41d1e134b601b064bc029575648a9c73964a19402ce9088ef7f8981187215f"
+    },
+    "final-map-31276/independent-processes/architecture/map-upper-setback-and-tianjin-fin-webgl.png": {
+      "bytes": 94754,
+      "sha256": "b2b1f098dedebf0ef9dc6d983c8ac944e855828528acdd6ffdf0b4fe7dd37016"
+    },
+    "final-map-31276/independent-processes/architecture/actual-driver.cjs": {
+      "bytes": 32486,
+      "sha256": "b9c346bab57d1f940bdee53c41c57e932fa8a8a56490b569b67ec062d0f2f369"
+    },
+    "final-map-31276/independent-processes/architecture/map-corner-portal-and-street-sashes-x11-root.png": {
+      "bytes": 278345,
+      "sha256": "2a83d49f07d4a6819310bec9882b7ca330f5fd5e5775ca089d265b7e999f00d0"
+    },
+    "final-map-31276/independent-processes/architecture/map-corner-portal-and-street-sashes.png": {
+      "bytes": 243626,
+      "sha256": "dd4f5423d8bf6d57e9cb3dbee971676d8ee081a79cb635da2aea73c31f4af5a0"
+    },
+    "final-map-31276/independent-processes/architecture/map-corner-portal-and-street-sashes-webgl.png": {
+      "bytes": 85358,
+      "sha256": "14c0165ddcfb96f8ec01f1fa3087bf2183ac6deeff2fb9abcc0d177512ea5296"
+    },
+    "final-map-31276/independent-processes/architecture/map-roof-x11-root.png": {
+      "bytes": 219292,
+      "sha256": "616113cd9197b15870121ee2fd26ab66974a4b16fd4b2cd16fef80ffe8d8c74e"
+    },
+    "final-map-31276/independent-processes/architecture/map-roof.png": {
+      "bytes": 185931,
+      "sha256": "906074acead0e6d2565c2269ae54993b3f28123066b48684ff2d877c4c4ab6ec"
+    },
+    "final-map-31276/independent-processes/architecture/map-roof-webgl.png": {
+      "bytes": 65761,
+      "sha256": "af2d28566cdfe759c98ca675cc2ed1fc6ae18f895a8c3ad920754bad792b3e64"
+    },
+    "final-map-31276/independent-processes/architecture/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/architecture/map-street-facade-x11-root.png": {
+      "bytes": 247712,
+      "sha256": "9fb2d4dd7705049d5bd40e091f6043297d1a0a18c2885236a8549281ed032305"
+    },
+    "final-map-31276/independent-processes/architecture/map-street-facade.png": {
+      "bytes": 214615,
+      "sha256": "710964d8c9c0087c0bffcb10424b1a61581cff3f8e835c6b9b5de3ad8e42080b"
+    },
+    "final-map-31276/independent-processes/architecture/map-street-facade-webgl.png": {
+      "bytes": 69671,
+      "sha256": "89255a4227bf7ec6b5c28dc6a43b8443a8a4015f47e3813fa5ae92965f3970a3"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/closed.json": {
+      "bytes": 433,
+      "sha256": "50b4170f39ce5ac242d9434345ab022eac23968d46ec5dff52de59a3cd5c23d2"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/raw.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/map-upper-setback-and-tianjin-fin-webgl.png": {
+      "bytes": 94754,
+      "sha256": "b2b1f098dedebf0ef9dc6d983c8ac944e855828528acdd6ffdf0b4fe7dd37016"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/map-upper-setback-and-tianjin-fin.png": {
+      "bytes": 313144,
+      "sha256": "5c41d1e134b601b064bc029575648a9c73964a19402ce9088ef7f8981187215f"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/map-upper-setback-and-tianjin-fin-x11-root.png": {
+      "bytes": 349441,
+      "sha256": "41664c9c1e61da7a02f17084bc6b161848e0f65996f77f3c096fd5c1895fc332"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/main-browser.json": {
+      "bytes": 34041,
+      "sha256": "647f3cebe37da49b03a2ad353b571a5531d359e8bd09f4aefba47565ec2cae52"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/viewport-calibration-x11-root.png": {
+      "bytes": 15790,
+      "sha256": "125cd20b27d95d94be7fab32f17721a61bda6122f08ee72c467e4eb46004a679"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/run.log": {
+      "bytes": 40,
+      "sha256": "dce2c9311f6bf83978b17ebd4c7a577aca26590903b92a3ece365ab894ed5152"
+    },
+    "final-map-31276/independent-processes/architecture/captures/upper/actual-driver.cjs": {
+      "bytes": 32486,
+      "sha256": "b9c346bab57d1f940bdee53c41c57e932fa8a8a56490b569b67ec062d0f2f369"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/actual-driver.cjs": {
+      "bytes": 32295,
+      "sha256": "126e970892e931f28444d51c228e9b98a98e1f865942e7c55a2786f3785be803"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/closed.json": {
+      "bytes": 434,
+      "sha256": "62847deffcd12f3d6f4d1e881f828f41f067afee52a4a1da9688350edba70b36"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/raw.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/map-corner-portal-and-street-sashes-webgl.png": {
+      "bytes": 85358,
+      "sha256": "14c0165ddcfb96f8ec01f1fa3087bf2183ac6deeff2fb9abcc0d177512ea5296"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/map-corner-portal-and-street-sashes.png": {
+      "bytes": 243626,
+      "sha256": "dd4f5423d8bf6d57e9cb3dbee971676d8ee081a79cb635da2aea73c31f4af5a0"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/map-corner-portal-and-street-sashes-x11-root.png": {
+      "bytes": 278345,
+      "sha256": "2a83d49f07d4a6819310bec9882b7ca330f5fd5e5775ca089d265b7e999f00d0"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/main-browser.json": {
+      "bytes": 29959,
+      "sha256": "ac3dd65ed73bee33879c96b3193f32b495e57ef34a98c3e027fdd9158d846572"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/architecture/captures/portal/run.log": {
+      "bytes": 42,
+      "sha256": "35f18bedf1ae1f8d2e3a77de7d227a79563025d66320c84885cc5c5e31a84fc9"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/actual-driver.cjs": {
+      "bytes": 32295,
+      "sha256": "126e970892e931f28444d51c228e9b98a98e1f865942e7c55a2786f3785be803"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/closed.json": {
+      "bytes": 432,
+      "sha256": "bbb306672bc14532b5156d6b6dd04c3afcce60a4949eafee035d77c8d2501508"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/raw.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/map-roof-webgl.png": {
+      "bytes": 65761,
+      "sha256": "af2d28566cdfe759c98ca675cc2ed1fc6ae18f895a8c3ad920754bad792b3e64"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/map-roof.png": {
+      "bytes": 185931,
+      "sha256": "906074acead0e6d2565c2269ae54993b3f28123066b48684ff2d877c4c4ab6ec"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/map-roof-x11-root.png": {
+      "bytes": 219292,
+      "sha256": "616113cd9197b15870121ee2fd26ab66974a4b16fd4b2cd16fef80ffe8d8c74e"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/main-browser.json": {
+      "bytes": 23590,
+      "sha256": "b57dfae69d3735e96d849c8ed4d8aafd3b278a47646b4f93b74d29e363fd7809"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/architecture/captures/roof/run.log": {
+      "bytes": 15,
+      "sha256": "25eeb391600a039c6c60c3f8736f39a1d2660a1c890f8dcc3fc7f66ef0a7f561"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/actual-driver.cjs": {
+      "bytes": 32295,
+      "sha256": "126e970892e931f28444d51c228e9b98a98e1f865942e7c55a2786f3785be803"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/closed.json": {
+      "bytes": 434,
+      "sha256": "c753f095703933b1ebf4815f4ea8691c2f324f76b86a1f15965cd066ef4e6213"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/raw.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/map-street-facade-webgl.png": {
+      "bytes": 69671,
+      "sha256": "89255a4227bf7ec6b5c28dc6a43b8443a8a4015f47e3813fa5ae92965f3970a3"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/map-street-facade.png": {
+      "bytes": 214615,
+      "sha256": "710964d8c9c0087c0bffcb10424b1a61581cff3f8e835c6b9b5de3ad8e42080b"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/map-street-facade-x11-root.png": {
+      "bytes": 247712,
+      "sha256": "9fb2d4dd7705049d5bd40e091f6043297d1a0a18c2885236a8549281ed032305"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/main-browser.json": {
+      "bytes": 23593,
+      "sha256": "7f38e362202c4f63bc278b9a49cb65c069731383b30384a6a569b8e9b4b8d034"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/architecture/captures/street/run.log": {
+      "bytes": 24,
+      "sha256": "2a8a918f7f495eb0ad8804b1284295c5295c9fc30f90e21c8dcfec713b8c05ea"
+    },
+    "final-map-31276/independent-processes/mouse/process.json": {
+      "bytes": 559,
+      "sha256": "0ef350c5bc6db185f7059e55c516ae42429276b0c9f78e8f6543ddbed147b10c"
+    },
+    "final-map-31276/independent-processes/mouse/map-after-physical-mouse-webgl.png": {
+      "bytes": 110335,
+      "sha256": "0c8d0c180bc5686a5f2db8c1a1f3bcc93bcc99c8820fd0277cad085684c6c2cf"
+    },
+    "final-map-31276/independent-processes/mouse/map-after-physical-mouse.png": {
+      "bytes": 305651,
+      "sha256": "db62bf944a2bb91889f771918318fdae122db9b68a916bda83f9bc67d95405fc"
+    },
+    "final-map-31276/independent-processes/mouse/map-after-physical-mouse-x11-root.png": {
+      "bytes": 344537,
+      "sha256": "801286499d9ecff8b03bfbd8009f52aae52cef863cf399563e5cc270279f14cd"
+    },
+    "final-map-31276/independent-processes/mouse/main-browser.json": {
+      "bytes": 12475,
+      "sha256": "907bdb37b93133d47449608e53aefc239bae1eff81179ca35afc1a6eb21ae8cf"
+    },
+    "final-map-31276/independent-processes/mouse/viewport-calibration-x11-root.png": {
+      "bytes": 15779,
+      "sha256": "28624d273b4db6da5069ba9338e6fa99fee5a84fa84565a7ee1f6a00de32ce27"
+    },
+    "final-map-31276/independent-processes/mouse/actual-driver.cjs": {
+      "bytes": 33140,
+      "sha256": "36b53fdc7638e6bd51a55edcffaf0785a8931d8669163a7c9e35c54b8776afb3"
+    },
+    "final-map-31276/independent-processes/touch/process.json": {
+      "bytes": 559,
+      "sha256": "c9207ed44fa6850b64660842b0397da422e3748943b27bb94f0584ea64466a9f"
+    },
+    "final-map-31276/independent-processes/touch/map-after-physical-touch-webgl.png": {
+      "bytes": 45493,
+      "sha256": "180abcc6390ac31f1d07abe780fcb74af539a5b5f49153e652b658602c365b77"
+    },
+    "final-map-31276/independent-processes/touch/map-after-physical-touch.png": {
+      "bytes": 143946,
+      "sha256": "bc32a2bd043e095aa8daa0f05fc26b471aa56199ce3086c2e553598994ed752c"
+    },
+    "final-map-31276/independent-processes/touch/map-after-physical-touch-x11-root.png": {
+      "bytes": 183778,
+      "sha256": "a3676e55c94dc1991e6a89387e724e9a7c39d62d0e8a0b3d007a42253a3d99ca"
+    },
+    "final-map-31276/independent-processes/touch/main-browser.json": {
+      "bytes": 12475,
+      "sha256": "3647b2ddf9846c13fc2161924bf7f61313027ce4f6710122fcf976bd99ca60c9"
+    },
+    "final-map-31276/independent-processes/touch/viewport-calibration-x11-root.png": {
+      "bytes": 16005,
+      "sha256": "a6575cec627cb21e384fdf6b3fe5efd53be92d687546bdbbed82285b73c1e35c"
+    },
+    "final-map-31276/independent-processes/touch/actual-driver.cjs": {
+      "bytes": 33140,
+      "sha256": "36b53fdc7638e6bd51a55edcffaf0785a8931d8669163a7c9e35c54b8776afb3"
+    },
+    "final-map-31276/independent-processes/distant/process.json": {
+      "bytes": 563,
+      "sha256": "41987994e3ee57eda1fedcd0975df57948868b5843a5369d3f57b253cb6e9c7d"
+    },
+    "final-map-31276/independent-processes/distant/map-distant-webgl.png": {
+      "bytes": 72875,
+      "sha256": "a00ed5dc3b3b7470befad0cc5746de5d9f78989617144ad3a98b1ec4501a7cbc"
+    },
+    "final-map-31276/independent-processes/distant/map-distant.png": {
+      "bytes": 137372,
+      "sha256": "a01be96e244f050db6cfe650fff834230ad29e8ec2f5e71d8e725cc1335c242a"
+    },
+    "final-map-31276/independent-processes/distant/map-distant-x11-root.png": {
+      "bytes": 164112,
+      "sha256": "ab7bf4ee9998ca282d8eaaefb3dacfb284e7d902ea9093f7aeb38aa54d19f8ad"
+    },
+    "final-map-31276/independent-processes/distant/main-browser.json": {
+      "bytes": 13606,
+      "sha256": "a490f8fa8d7d86371e4b2e16b5abb1de0ad7ddc53eb147cbd2005a3fc6b00780"
+    },
+    "final-map-31276/independent-processes/distant/viewport-calibration-x11-root.png": {
+      "bytes": 13785,
+      "sha256": "f9d533dd60774e855bb726a5856a5e8a3feb457dad72d02b6f3020cbabf26994"
+    },
+    "final-map-31276/independent-processes/distant/actual-driver.cjs": {
+      "bytes": 34312,
+      "sha256": "ad6c5d83bab9190d13ea98af18251e622b99f8d2231675d33e03998da5261ec5"
+    },
+    "final-map-31276/independent-processes/standalone/viewer.json": {
+      "bytes": 5825,
+      "sha256": "274676b3fccd850ec8a40c573a4c978a1c820432aec78fd7bbcf2126989dbecc"
+    },
+    "final-map-31276/independent-processes/standalone/viewer-mobile-lod-above.png": {
+      "bytes": 65807,
+      "sha256": "db50a772ad9ff0e22d01f6ea98df307ce61ba78df1b45d3ae9f1d61635db44dc"
+    },
+    "final-map-31276/independent-processes/standalone/viewer-mobile-full-oblique.png": {
+      "bytes": 87033,
+      "sha256": "6e234ad8baf4f864149c5f437c2d557da66d3f6572525e5d58e488b6595e38cb"
+    },
+    "final-map-31276/independent-processes/standalone/viewer-mobile-full-front.png": {
+      "bytes": 84747,
+      "sha256": "0b8744b62fe9175219eea486f0acb35485cc8cb1b6f8829a12bdc2ac70bb553b"
+    },
+    "final-map-31276/independent-processes/standalone/viewer-desktop-lod-above.png": {
+      "bytes": 119982,
+      "sha256": "5b8d17a4397f3839d45cd85d191101c91ea2acf983f0c6a0af5e9f75ce1b1ec9"
+    },
+    "final-map-31276/independent-processes/standalone/viewer-desktop-full-oblique.png": {
+      "bytes": 209630,
+      "sha256": "bc20648dbe012197d4ba4fe07f2e442f1dae793489476eae955d33a32b7aa687"
+    },
+    "final-map-31276/independent-processes/standalone/viewer-desktop-full-front.png": {
+      "bytes": 207330,
+      "sha256": "58424ec5efa4796c1790c636aaaf058c353f188427234f366b5119f1b4ad3fb2"
+    },
+    "final-map-31276/independent-processes/standalone/saved/huangpu-hengli-bank-henan-tianjin-corner.blend": {
+      "bytes": 1083842,
+      "sha256": "4bee35a8c6467b0bef032263af3553cfcbbe91027b2d9b048a0d6d052e9ff2a8"
+    },
+    "final-map-31276/independent-processes/standalone/saved/huangpu-hengli-bank-henan-tianjin-corner-lod.glb": {
+      "bytes": 810768,
+      "sha256": "f19055268a3605310f8ba9f87e69f51d586b367813e1bba87e4e9cf0418b3452"
+    },
+    "final-map-31276/independent-processes/standalone/saved/huangpu-hengli-bank-henan-tianjin-corner-web.glb": {
+      "bytes": 1995096,
+      "sha256": "549781f5c78844207ff09a2c92180cced4be1c7727d451cc67ebe72e8c61abe4"
+    },
+    "final-map-31276/independent-processes/standalone/saved/huangpu-hengli-bank-henan-tianjin-corner-raw.glb": {
+      "bytes": 4664804,
+      "sha256": "626aaca0e9720005ead08d519564eef1c45a6c32491096bd6ad649e6d59b31ea"
+    },
+    "final-map-31276/independent-processes/standalone/closed.json": {
+      "bytes": 481,
+      "sha256": "889e1565ab86eab3a76b1d27f9fdffabcc31f2c9dcc8ffd009edd4820ce40b40"
+    },
+    "final-map-31276/independent-processes/attempts/first-341-offer/sequence-first-stopped-before-native.py": {
+      "bytes": 4083,
+      "sha256": "6c2452a9f8f97f594735e5414b9adb505a518f5ee4b26218a43b81abd1e60097"
+    },
+    "final-map-31276/independent-processes/attempts/first-341-offer/city2.log": {
+      "bytes": 1049,
+      "sha256": "671acaab2872a7e298d9812e785c4d979cd33dad66ffd88f735ba644cdded2c3"
+    },
+    "final-map-31276/independent-processes/attempts/341-first-catalog-comparison/rejection.json": {
+      "bytes": 394,
+      "sha256": "42528693b35a8a4014b7f2c8f9c2312e22f5b3af27e372e930ef764cecce512e"
+    },
+    "final-map-31276/independent-processes/attempts/341-first-catalog-comparison/guest-341-live.json": {
+      "bytes": 487,
+      "sha256": "8a41f4f159a8860e3f56e8f46d7c66ea92654d5521873e0532a17679be0918d9"
+    },
+    "final-map-31276/independent-processes/attempts/341-first-catalog-comparison/admit-window-live.py": {
+      "bytes": 6614,
+      "sha256": "5bc7b32c1dff26fb20181a1f1d4d72b074ee9e1a8fdd0bd000045a0eefac9a0e"
+    },
+    "final-map-31276/independent-processes/attempts/341-first-catalog-comparison/dispatch-live.json": {
+      "bytes": 13123,
+      "sha256": "1f74544fde59c03625ae808f46977b49921949a5baf9493bb9e32fc60a6f1409"
+    },
+    "final-map-31276/independent-processes/attempts/341-first-catalog-comparison/prepare341.py": {
+      "bytes": 6869,
+      "sha256": "820a988757e7989a1b936768ad6e84a01a4030babcb387b68b93f3064956f94d"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/architecture.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/architecture.log": {
+      "bytes": 1012,
+      "sha256": "66df9d9a39ed9dae87ab742a35fa8a675e0e6cfc79526505d0ab2a4ba5bba7ce"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/actual-driver.cjs": {
+      "bytes": 31977,
+      "sha256": "936066d2ac322d307c28ed9f68ec586926947652d57dfa0a88da9628917adc9b"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/viewport-calibration-x11-root.png": {
+      "bytes": 15779,
+      "sha256": "28624d273b4db6da5069ba9338e6fa99fee5a84fa84565a7ee1f6a00de32ce27"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/main-browser.json": {
+      "bytes": 18285,
+      "sha256": "52ad5522ba03f559a645b445ac4a12a7a6da1d2ce71cf17f0ef0a1fd483cb8e1"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/map-street-facade-x11-root.png": {
+      "bytes": 312491,
+      "sha256": "73040d545c26bc73a7e8e9af610258218cb0b49b9994cfe8ee2e014eb01f898a"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/map-street-facade.png": {
+      "bytes": 275868,
+      "sha256": "de52d165a014a28c1aa64a6004da860ef34960da6810902b47ccb29a1d9e6deb"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/map-street-facade-webgl.png": {
+      "bytes": 80924,
+      "sha256": "bb23e7e2a46673d417ef0e733f6766b0587c4fa2a05c079974c4926d98e7c333"
+    },
+    "final-map-31276/independent-processes/attempts/first-architecture/process.json": {
+      "bytes": 573,
+      "sha256": "e7ee7b327e3e71032d7927c7bce9a30ce9f60bf8a29477febb263b86612f2d4c"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/architecture.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/architecture.log": {
+      "bytes": 10049,
+      "sha256": "8f98f32c4bd3511d6ae75eaeccf405deab3a0785e3a7422238c2c44e45f68d4a"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/actual-driver.cjs": {
+      "bytes": 32019,
+      "sha256": "5c3e393f0dcc3b6da6101df2f9640f366fe8913d1095db62b1efc4cc5c0a8819"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/viewport-calibration-x11-root.png": {
+      "bytes": 15779,
+      "sha256": "28624d273b4db6da5069ba9338e6fa99fee5a84fa84565a7ee1f6a00de32ce27"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/main-browser.json": {
+      "bytes": 28410,
+      "sha256": "8cca5d24b8906d1a8150a4305301ffffaad3cd6adc65901c05d725520a4eb367"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/map-street-facade-x11-root.png": {
+      "bytes": 312493,
+      "sha256": "049ae137ff194c6ccd3fd880b808f5071a5960c4097b7f9cf4a0142d1d7b43aa"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/map-street-facade.png": {
+      "bytes": 275868,
+      "sha256": "de52d165a014a28c1aa64a6004da860ef34960da6810902b47ccb29a1d9e6deb"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/map-street-facade-webgl.png": {
+      "bytes": 80924,
+      "sha256": "bb23e7e2a46673d417ef0e733f6766b0587c4fa2a05c079974c4926d98e7c333"
+    },
+    "final-map-31276/independent-processes/attempts/second-architecture/process.json": {
+      "bytes": 573,
+      "sha256": "c1f957f6a229b7f515838f280f750f1ecb41b35dce7c9a4d3c57f778010364e2"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/memory-events.txt": {
+      "bytes": 61,
+      "sha256": "876c6ee5ecf642a84e21fe5ea38a6a2fd797b51053a7d29d21ceedf13e7eb48d"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/closed.json": {
+      "bytes": 432,
+      "sha256": "9d647860672aca740831c2dc85f49943b619b53e2a8b5e537b036ef98c184d3a"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/raw.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/main-browser.json": {
+      "bytes": 13901,
+      "sha256": "680756a52f33371181dfdf6b669876f5f84987c6df905165f32f04673b2ef8d8"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-oom/run.log": {
+      "bytes": 10022,
+      "sha256": "4e6e3b8258fd5cf1b7dbec3c0fb20586b33ba1d137341cb58c8c5b334b02d612"
+    },
+    "final-map-31276/independent-processes/attempts/second-single-roof-oom/closed.json": {
+      "bytes": 432,
+      "sha256": "7c556f76f09313b7fba595da0776d453aa7469b664b0dd84263752cd1c12262e"
+    },
+    "final-map-31276/independent-processes/attempts/second-single-roof-oom/raw.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/second-single-roof-oom/main-browser.json": {
+      "bytes": 13901,
+      "sha256": "dd53e49e0432cd772d0046ffe96e035479f8ebf1aea6bec25f8862b56b974936"
+    },
+    "final-map-31276/independent-processes/attempts/second-single-roof-oom/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/attempts/second-single-roof-oom/run.log": {
+      "bytes": 10007,
+      "sha256": "44812390bc6a8467572f4a5df9b5900f653653600860eda859dac74597c1871c"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-webgl1/closed.json": {
+      "bytes": 432,
+      "sha256": "5a6a7e1f638e3dcc56ab0708a86f2301fc0a38c1732222a33b4c39070791df24"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-webgl1/raw.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-webgl1/main-browser.json": {
+      "bytes": 7375,
+      "sha256": "2a93ce3bb0792340d4ab588fb184f2d64cb5d498bab115d87130e64d4bb928da"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-webgl1/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/attempts/single-roof-webgl1/run.log": {
+      "bytes": 276,
+      "sha256": "050c088ddbc8b32820eb26f23a4b88e71c184a50222f33f4938345bee7a7ca38"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/actual-driver.cjs": {
+      "bytes": 32295,
+      "sha256": "126e970892e931f28444d51c228e9b98a98e1f865942e7c55a2786f3785be803"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/closed.json": {
+      "bytes": 433,
+      "sha256": "07fe8b32a5ded7df3d4f1e4ee95e170e269f7883deaa70d38df65a71872b5d98"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/raw.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/main-browser.json": {
+      "bytes": 17982,
+      "sha256": "b80dd258e5f23121040f1d73c38026a24b1befc4cbaecc94d7e87f563ab78556"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/viewport-calibration-x11-root.png": {
+      "bytes": 15106,
+      "sha256": "4171e6c52cb22bb9f02dadbc6fa6f0e4b8c88ceeecb4c458d9a23e55264eb84e"
+    },
+    "final-map-31276/independent-processes/attempts/single-upper-covered/run.log": {
+      "bytes": 304,
+      "sha256": "3deb572b0ffca15174486f8120a1c2f60367341b120398271b0b5e42fe5af6cb"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/mouse.log": {
+      "bytes": 10139,
+      "sha256": "53795984c743b5586a2b060258480039c42bb99bd61ceea51c3457957e1c523e"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/mouse.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/process.json": {
+      "bytes": 559,
+      "sha256": "f9649b3e01b5477f0cf1853898232717dacac787a8b8dcb23a8029f5f43bdb7d"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/zoom-input.json": {
+      "bytes": 1179,
+      "sha256": "6fbe520b74c8cc579e1f13584a0ea157d962a31fd1983f3b08e4b3d2012ea524"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/zoom-detail.cjs": {
+      "bytes": 2387,
+      "sha256": "384e4a2c838775d40e88e7aa736d92765211acff2e18ae2879d712f59359f42c"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/main-browser.json": {
+      "bytes": 21012,
+      "sha256": "44f913644abb170be1ce4d80a27ee511f21496341a3bd3f3797809493db08e56"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/viewport-calibration-x11-root.png": {
+      "bytes": 14279,
+      "sha256": "4b1d2cf6b4d33e872a2ecb68f20d59d1367cd6d735903c71ff4cd1b0d40c5be9"
+    },
+    "final-map-31276/independent-processes/attempts/first-mouse/actual-driver.cjs": {
+      "bytes": 31977,
+      "sha256": "936066d2ac322d307c28ed9f68ec586926947652d57dfa0a88da9628917adc9b"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/distant.log": {
+      "bytes": 10056,
+      "sha256": "05143225c0aabc8500a594386a3973f70b9e4cf884e685042a8c8ae8ebfdd428"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/distant.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/zoom-out-observer.cjs": {
+      "bytes": 2486,
+      "sha256": "2666a226ed7790bfdc40ae2644d56972e1752de25a39e1033db300d64d2e8784"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/process.json": {
+      "bytes": 563,
+      "sha256": "128bcc77001b1a43fb4619169655458eed064e1330d9c9b31c1531b6787da6c3"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/main-browser.json": {
+      "bytes": 13962,
+      "sha256": "5183c8fdb840efe933662429c63fea85a1b7a14a6d2980f42e89082155d3d6b7"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/viewport-calibration-x11-root.png": {
+      "bytes": 13785,
+      "sha256": "f9d533dd60774e855bb726a5856a5e8a3feb457dad72d02b6f3020cbabf26994"
+    },
+    "final-map-31276/independent-processes/attempts/first-distant/actual-driver.cjs": {
+      "bytes": 33140,
+      "sha256": "36b53fdc7638e6bd51a55edcffaf0785a8931d8669163a7c9e35c54b8776afb3"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/distant.log": {
+      "bytes": 451,
+      "sha256": "187c05e65ed721f0cae6833a640caab97d506749d5e26a4f733597cc7630541e"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/distant.exit": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/process.json": {
+      "bytes": 563,
+      "sha256": "53d3b0eb290266908b9824d2acfccef352094d6880bca2ea1c8c72fbc0061970"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/map-distant-webgl.png": {
+      "bytes": 75742,
+      "sha256": "b0fa26529934c5bc83e85fb14fafb95670936618a1e24dc78f130bc694802571"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/map-distant.png": {
+      "bytes": 138515,
+      "sha256": "43c5681dd6a46a9e4a1e2cd42761a9f383d616a730850facc927d95716b3ab91"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/map-distant-x11-root.png": {
+      "bytes": 165220,
+      "sha256": "25b5f3e8d114e80441f7fbdfa8bd433ae12869d6a77e9ba88ff9fc514e949fc1"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/main-browser.json": {
+      "bytes": 18139,
+      "sha256": "9fb24f8a8349e95ef858c701432678023e780a2619f3cbf5a15a89cccb492ebe"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/viewport-calibration-x11-root.png": {
+      "bytes": 13785,
+      "sha256": "f9d533dd60774e855bb726a5856a5e8a3feb457dad72d02b6f3020cbabf26994"
+    },
+    "final-map-31276/independent-processes/attempts/distant-formed-without-near-tile/actual-driver.cjs": {
+      "bytes": 33848,
+      "sha256": "59e30113790d39cd3615366d1546f09eb1275b30718325ebba9d8409c3546878"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/standalone-retained.py": {
+      "bytes": 3601,
+      "sha256": "18033dc620dd5ade591f995c8a587ca20859cd51870481726ad9ed0fa2894bba"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/independent-real.log": {
+      "bytes": 588,
+      "sha256": "87484c02344bd1871f3a89453fa3ff5672c0dea96ef258e19b30cf73bef2c2c4"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/standalone-closed.json": {
+      "bytes": 442,
+      "sha256": "4ee5491055cbe0d720694542aebc23c08297e97334f15138f68f55993ee7a4d1"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/viewer.json": {
+      "bytes": 3260,
+      "sha256": "56d59421ec4a0d399c87ca068e23e8fa5be8755ffe29631024788374bca2214f"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/viewer-desktop-lod-above.png": {
+      "bytes": 119982,
+      "sha256": "5b8d17a4397f3839d45cd85d191101c91ea2acf983f0c6a0af5e9f75ce1b1ec9"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/viewer-desktop-full-oblique.png": {
+      "bytes": 209630,
+      "sha256": "bc20648dbe012197d4ba4fe07f2e442f1dae793489476eae955d33a32b7aa687"
+    },
+    "final-map-31276/independent-processes/attempts/first-standalone/viewer-desktop-full-front.png": {
+      "bytes": 207330,
+      "sha256": "58424ec5efa4796c1790c636aaaf058c353f188427234f366b5119f1b4ad3fb2"
+    },
+    "final-map-31276/independent-processes/attempts/guest-prior/341-viewer-result.json": {
+      "bytes": 417,
+      "sha256": "45d74e277681ad852f7864cca5e73294e60ee22727fb1f1e1b19b7820e2a2b8e"
+    },
+    "final-map-31276/independent-processes/attempts/guest-prior/276-viewer-deferred.json": {
+      "bytes": 751,
+      "sha256": "cbbbf3b8486905aa59f3095e50d5e6ba80b1cc6b5179f0a606185867b6fc0569"
+    },
+    "final-map-31276/independent-processes/guest/341-native-result.json": {
+      "bytes": 412,
+      "sha256": "f457a4dcf3e05706821577235821de21c71e838e0a95de0ae387e31892a0d943"
+    },
+    "final-map-31276/independent-processes/guest/native-closed.json": {
+      "bytes": 4690,
+      "sha256": "b6cf075547bd59353f6c527a0f961daf80aa38b364f748146e5c693079b7caff"
+    },
+    "final-map-31276/independent-processes/guest/341-viewer-result.json": {
+      "bytes": 411,
+      "sha256": "cc3403e4857342ee814f289bc684a4018c17c33adca196582ab1cb670ae7b5f2"
+    },
+    "final-map-31276/independent-processes/guest/viewer-closed.json": {
+      "bytes": 5211,
+      "sha256": "314a289dbd647fcced0d5e0fe655a1481d118a64e92a8b6b0a5eb21a055ad732"
+    },
+    "final-map-31276/independent-processes/guest/native-20261123T070959934088/physical-exit.json": {
+      "bytes": 798,
+      "sha256": "c86da108f7aca53151de6904800c287c9d8449d437b2cc4ea8614cf31a99092b"
+    },
+    "final-map-31276/independent-processes/guest/native-20261123T070959934088/stdout.log": {
+      "bytes": 1826,
+      "sha256": "e45c4c1bd2dc5cacb7098db5b54c1e171990e18853cfbdad6f4726cf019635d8"
+    },
+    "final-map-31276/independent-processes/guest/native-20261123T071114328329/physical-exit.json": {
+      "bytes": 966,
+      "sha256": "21cfa049185c9739564311dafeeb7ef45352e4167815c656bdb5e6e962491d8b"
+    },
+    "final-map-31276/independent-processes/guest/native-20261123T071114328329/stdout.log": {
+      "bytes": 11603,
+      "sha256": "642faa578039944172e3ac07be1690c5e6ae51d9d494f6e66bd768ad1e07cc95"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/desktop-node-exit.json": {
+      "bytes": 220,
+      "sha256": "024a72a45fbd9b378dd1cbe66cbec7f980c8f342db9794265fa92df0d6572d36"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/desktop-node.log": {
+      "bytes": 13866,
+      "sha256": "8dfb4ec3f11e37bb30e4426582ba83074d02f0de022aae14fd6ab0fec7622009"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/desktop-viewer.json": {
+      "bytes": 4061,
+      "sha256": "4ccbe85411ebdd9efd29fe6e3f545274dffbae1d61317cd8453d559b0b78e506"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/mobile-node-exit.json": {
+      "bytes": 219,
+      "sha256": "59bf1730136bb4dab9a0254d2064f8a8df913b08dbf9dcd359c6501082a1eecb"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/mobile-node.log": {
+      "bytes": 13866,
+      "sha256": "c71286e6a4142a368fa377a69fd09b6c687852d8d375181641b742e90fd35d2b"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/mobile-viewer.json": {
+      "bytes": 2485,
+      "sha256": "70773106fe228625b2aba0c99da002011c7ddc4e8a114c74ca043d35babaa48c"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/physical-exit.json": {
+      "bytes": 852,
+      "sha256": "5c8f79531763e413c60ecd768ead794cccf19ed247a2d6425377366b3cca7093"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "final-map-31276/independent-processes/guest/viewer-20261123T072150368712/viewer.json": {
+      "bytes": 6431,
+      "sha256": "c84a5a9bdff6e6926993b2cd62a2fcb765cf1558745fd04927e8def7174ae88a"
+    },
+    "final-map-31276/independent-processes/guest/programs/admit-window-live.py": {
+      "bytes": 6838,
+      "sha256": "ee21e5e8227b8803994f794afc39fdfab9083175710bbe4af824fb6935393a54"
+    },
+    "final-map-31276/independent-processes/guest/programs/run-phase-live.py": {
+      "bytes": 6552,
+      "sha256": "3336898b885811b0d031917771371b87ec15a27267638083195aca69b2010779"
+    },
+    "final-map-31276/independent-processes/guest/programs/six-view-download-live.cjs": {
+      "bytes": 8751,
+      "sha256": "ecdda5f2523c0f070dfbc1340008135e4bec93c1b771db9a4d5c6e409b89f229"
+    },
+    "final-map-31276/independent-processes/guest/programs/run-341-devices.py": {
+      "bytes": 2373,
+      "sha256": "96e0bfcd904f70a142f40989933d963d1f6492ce15088a7e0355a7f83ffb487c"
+    },
+    "final-map-31276/independent-processes/guest/programs/chromium-341-mesa": {
+      "bytes": 979,
+      "sha256": "e5d453effda8a5d564bd4e05e153b29a36be6165a6f75a9709fd80e83716b57f"
+    },
+    "final-map-31276/independent-processes/guest/admission/native-window.json": {
+      "bytes": 636,
+      "sha256": "f471b56ef230c2e124dcd93e8e694ddf0dc2be619e2ec3c5d41c17d0ca2344dc"
+    },
+    "final-map-31276/independent-processes/guest/admission/viewer-window.json": {
+      "bytes": 1097,
+      "sha256": "2a00d991794ed4148a800f45abca1b00898e8f85b5e5d55f77f0d85ba1cdbad2"
+    },
+    "final-map-31276/independent-processes/guest/admission/verified-official-inputs.json": {
+      "bytes": 596,
+      "sha256": "7337ce74437ac355189edb7e782931ad7b34c9731ed7c34631b40c100ea48759"
+    },
+    "final-map-31276/independent-processes/guest/admission/dispatch-live.json": {
+      "bytes": 13123,
+      "sha256": "53083c5ab7f71f740faa5f34691fb49df5e8c04789a15a0451da8989c42e3c9a"
+    },
+    "final-map-31276/independent-processes/source/four-cameras.py": {
+      "bytes": 3823,
+      "sha256": "746725ebc7c83c2bcf60eda993c8aadef594b789c238077e394a37f423641cb9"
+    },
+    "final-map-31276/independent-processes/source/verify-standalone-retained.cjs": {
+      "bytes": 6399,
+      "sha256": "b0bcdb906acec601da64a3a767962f15e9d1661d0601152c6baa3b3b5d610d08"
+    },
+    "final-map-31276/independent-processes/source/standalone-retained.py": {
+      "bytes": 3652,
+      "sha256": "ff0754e99254606e77ea2e991f8540df68216948c5f4659e7030f5ae8d899940"
+    },
+    "final-map-31276/independent-processes/source/sequence-live.py": {
+      "bytes": 4461,
+      "sha256": "fe4777b4a0a5bf52decbc0c5831a946d5085a0bb82bb20999706bbc5964285cf"
+    },
+    "final-map-31276/independent-processes/source/run-live.py": {
+      "bytes": 4696,
+      "sha256": "867bd81e398a179329912cab97a2c64d6d2541b988cee15fcd03a5048e3a8ce7"
+    },
+    "final-map-31276/independent-processes/visual-review.json": {
+      "bytes": 6214,
+      "sha256": "399e514dd1004917be9e708f8424113150bafa857283d860cdbc03bfbe05a53c"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{"input":"/dev/shm/s341-n6_b4azv/tmp7wcwq1zs/huangpu-fuxing-fang-553-inscribed-balcony-web.glb","output":"/dev/shm/s341-n6_b4azv/tmp7wcwq1zs/full.glb","decoded_bytes":277704}
+{"input":"/dev/shm/s341-n6_b4azv/tmp7wcwq1zs/huangpu-fuxing-fang-553-inscribed-balcony-lod.glb","output":"/dev/shm/s341-n6_b4azv/tmp7wcwq1zs/lod.glb","decoded_bytes":230544}
+Traceback (most recent call last):
+  File "/tmp/fuxing341/mapping/handoff/split-scratch.py", line 41, in <module>
+    runpy.run_path(str(source),run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/e-resource/projects/shanghai/source/precise/huangpu-fuxing-fang-553-inscribed-balcony/source/build_model.py", line 19, in <module>
+    build(SOURCE, META, PALETTE, add_balcony)
+  File "/workspace/e-resource/projects/shanghai/tools/package_architectural_model.py", line 69, in build
+    subprocess.run([*blender, PREVIOUS/'make_native.py','--',data_file,native,unfiltered],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: '/workspace/e-resource/projects/shanghai/source/precise/huangpu-fuxing-fang-553-inscribed-balcony/source/blender_preview.py'
