@@ -14,6 +14,25 @@ sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source
 from photo_architecture import Builder
 from pier_projection import paint_number
 from fanlight import fit_fanlight
+from court_elevation import courtyard_wall
+from inscriptions import add_ink
+from arch_masonry import arch_course
+import finishes
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+
+class PorticoBuilder(CrownBuilder):
+    def add(self, vertices, faces, material='limestone', label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in finishes.SCALES:
+            _,width,height,_ = finishes.SCALES[material]
+            part = self.parts[-1]
+            part['texcoords'] = (np.asarray(part['texcoords']) / [.78*width,.78*height]).tolist()
+
+    def save(self,path,metadata=None):
+        Builder.save(self,path,metadata)
+        return finishes.writer.embed_normals(path)
+
 
 STONE='weathered light stone'
 PLINTH='dark foundation stone'
@@ -24,9 +43,13 @@ IRON='aged ironwork'
 METAL='brass door fittings'
 PAPER='red paper'
 GILT='pale paper and gilt ink'
+PLAQUE='pale enamel heritage plaque'
+SASH='dark courtyard window joinery'
+JOINT='arch bedding mortar'
+CLAYS=('warm radial brick','dark radial brick','russet radial brick')
 BLUE='deep blue house-number paint'
 PALETTE={name:dict(color=color,roughness=roughness) for name,color,roughness in [
-    (GILT,[.83,.67,.43],.84),(BLUE,[.022,.033,.075],.86),(STONE,[.48,.44,.34],.93),(PLINTH,[.215,.211,.185],.91),
+    (JOINT,[.114,.088,.073],.93),(CLAYS[0],[.178,.055,.030],.91),(CLAYS[1],[.132,.044,.029],.91),(CLAYS[2],[.151,.053,.037],.91),(PLAQUE,[.46,.60,.60],.65),(SASH,[.047,.053,.05],.73),(GILT,[.83,.67,.43],.84),(BLUE,[.022,.033,.075],.86),(STONE,[.48,.44,.34],.93),(PLINTH,[.215,.211,.185],.91),
     (BRICK,[.334,.118,.077],.93),(WOOD,[.275,.049,.040],.66),
     (GLASS,[.105,.121,.114],.32),(IRON,[.086,.075,.056],.81),
     (METAL,[.454,.326,.155],.4),(PAPER,[.596,.061,.048],.94)]}
@@ -91,7 +114,16 @@ def upper(b,lod):
         ('cornice',[(87,184),(462,184),(471,168),(77,168)],-.29,STONE),
         ('cornice face',[(75,168),(474,168),(477,151),(72,151)],-.325,PLINTH),
         ('coping',[(71,151),(478,151),(473,146),(76,145)],-.32,STONE)]
-    for name,loop,near,mat in rows:block(b,loop,near,near,WALL+.10,mat,'entablature/'+name)
+    for i,(name,loop,near,mat) in enumerate(rows):
+        # The lower three mouldings face the court. The higher slab continues
+        # to the house, leaving the brick arch crown visible below its soffit.
+        back = .28 if i < 3 else WALL+.10
+        block(b,loop,near,near,back,mat,'entablature/'+name)
+    for label,u in [('west',127),('east',422)]:
+        x=point(u,261)[0]
+        low=point(u,264)[2]
+        high=point(u,204)[2]
+        b.box((x,(WALL+.28)/2,(low+high)/2),(.37,WALL-.28,high-low),STONE,label=label+' return of garden beam')
     for u in (129,420):
         centre=point(u,221,-.228)
         for j in range(4):
@@ -117,9 +149,8 @@ def doorway(b,lod):
     zs=(left[2]+right[2])/2;bottom=point(275,632,WALL)[2]
     rise=point(275,329,WALL)[2]-zs
     inner=half_arch(cx,bottom,zs,radius,rise,n)
-    outer=half_arch(cx,bottom,zs,radius+.222,rise+.235,n)
-    back=outline([(-4,647),(506,647),(505,145),(-4,145)],WALL)
-    plate(b,back.difference(outer),WALL,WALL+.32,BRICK,'entrance/red brick wall and open arch')
+    outer=arch_course(b,lod,point,plate,WALL,PLINTH,JOINT,CLAYS)
+    courtyard_wall(b,CAL['stations'],WALL,outer,plate,point,(BRICK,PLINTH,SASH,GLASS,PLAQUE,METAL))
     plate(b,outer.difference(inner),WALL-.075,WALL+.075,PLINTH,'entrance/stone arch surround')
     leaf=box(cx-radius+.045,bottom+.035,cx+radius-.045,zs-.05)
     plate(b,leaf,WALL+.081,WALL+.135,WOOD,'door/panelled leaf')
@@ -146,11 +177,12 @@ def steps(b):
 
 META=dict(id=HERE.parent.name,name='新华路329弄32号乙花园住宅双柱门廊',register='3M013',formal_id='sh-historic-b3-111',address='上海市长宁区新华路329弄32号乙',geometry_license='MIT',photos_embedded=False,scope='庭院面可辨门廊，尺度依据门扇净高2.10米暂估。整栋屋面与室内楼梯另核。')
 def build(lod):
-    b=Builder(PALETTE)
+    b=PorticoBuilder(PALETTE | finishes.PALETTE)
     columns(b,lod)
     readings=json.loads((HERE/'pier-number-reading.json').read_bytes())['letters']
     paint_number(b,readings,EYE,MAPPER,BLUE)
     upper(b,lod);doorway(b,lod);steps(b)
+    add_ink(b,point,plate,WALL,GILT,SASH)
     return b
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--output',type=Path,required=True);cli.add_argument('--lod',action='store_true')
