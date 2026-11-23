@@ -15,7 +15,8 @@ spec.loader.exec_module(writer)
 SCALES = {'exposed red brick':('garden-brick',.49,.292,.91),
           'weathered light stone':('portico-stone',.54,.64,.94),
           'dark foundation stone':('pedestal-stone',.47,.41,.88),
-          'deep red door joinery':('painted-wood',.32,.78,.68)}
+          'deep red door joinery':('painted-wood',.32,.78,.68),
+          'weathered flat roof tile':('dormer-tiles',.88,.54,.86)}
 writer.HERE = HERE
 writer.STEMS = {k:v[0] for k,v in SCALES.items()}
 writer.NORMAL_FILENAMES = {k:v[0]+'-normal.png' for k,v in SCALES.items()}
@@ -48,6 +49,12 @@ def generate():
             colour=base+(variations+4*cloud+4*grain)[:,:,None]*[1,.79,.63]
             colour[joint]=np.array([112,97,86])+grain[joint,None]*4
             depth=.00075*grain+.0012*cloud-.0038*joint
+        elif stem=='dormer-tiles':
+            rows=(v*4).astype(int);x=(u*4+.5*(rows%2))%1;y=(v*4)%1
+            seam=np.exp(-(np.minimum(x,1-x)/.033)**2)
+            lap=np.exp(-(np.minimum(y,1-y)/.057)**2)
+            colour=base+(4.5*grain+3*cloud+5*(1-y)-17*seam-23*lap)[:,:,None]*[1,.91,.85]
+            depth=.0038*(1-y)-.0031*lap-.0021*seam+.00035*grain
         elif stem=='painted-wood':
             lines=field(67,4)
             colour=base+(2.5*grain+3.8*lines+1.3*cloud)[:,:,None]*[1,.70,.65]

@@ -13,7 +13,14 @@ CHECK = runpy.run_path(str(PROJECT/'source/precise/changning-yuyuan-1112-no4/mea
 def report(mesh):
     triangles, indices, materials, _ = CHECK['LOAD'](mesh)
     cameras = json.loads((HERE/'portico-camera-pair.json').read_bytes())['stations']
+    extra = HERE/'joint-court-roof.json'
+    if extra.is_file():
+        cameras['atlas'] = json.loads(extra.read_bytes())['atlas_camera']
     readings = json.loads((HERE/'two-photo-surface-marks.json').read_bytes())
+    marks = HERE/'roof-surface-marks.json'
+    if marks.is_file():
+        for station, points in json.loads(marks.read_bytes()).items():
+            readings.setdefault(station,[]).extend(points)
     observations = []
     for station, points in readings.items():
         ray = CHECK['first_surface'](triangles, indices, materials, cameras[station])

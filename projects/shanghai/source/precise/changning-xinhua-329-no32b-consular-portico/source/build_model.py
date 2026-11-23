@@ -17,6 +17,8 @@ from fanlight import fit_fanlight
 from court_elevation import courtyard_wall
 from inscriptions import add_ink
 from arch_masonry import arch_course
+from court_roofs import add_roofs
+from stair_tower import add_tower
 import finishes
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
 from crown_builder import CrownBuilder
@@ -45,11 +47,13 @@ PAPER='red paper'
 GILT='pale paper and gilt ink'
 PLAQUE='pale enamel heritage plaque'
 SASH='dark courtyard window joinery'
+TILE='weathered flat roof tile'
+CREAM='cream-painted dormer sash'
 JOINT='arch bedding mortar'
 CLAYS=('warm radial brick','dark radial brick','russet radial brick')
 BLUE='deep blue house-number paint'
 PALETTE={name:dict(color=color,roughness=roughness) for name,color,roughness in [
-    (JOINT,[.114,.088,.073],.93),(CLAYS[0],[.178,.055,.030],.91),(CLAYS[1],[.132,.044,.029],.91),(CLAYS[2],[.151,.053,.037],.91),(PLAQUE,[.46,.60,.60],.65),(SASH,[.047,.053,.05],.73),(GILT,[.83,.67,.43],.84),(BLUE,[.022,.033,.075],.86),(STONE,[.48,.44,.34],.93),(PLINTH,[.215,.211,.185],.91),
+    (CREAM,[.73,.72,.64],.69),(JOINT,[.114,.088,.073],.93),(CLAYS[0],[.178,.055,.030],.91),(CLAYS[1],[.132,.044,.029],.91),(CLAYS[2],[.151,.053,.037],.91),(PLAQUE,[.46,.60,.60],.65),(SASH,[.047,.053,.05],.73),(GILT,[.83,.67,.43],.84),(BLUE,[.022,.033,.075],.86),(STONE,[.48,.44,.34],.93),(PLINTH,[.215,.211,.185],.91),
     (BRICK,[.334,.118,.077],.93),(WOOD,[.275,.049,.040],.66),
     (GLASS,[.105,.121,.114],.32),(IRON,[.086,.075,.056],.81),
     (METAL,[.454,.326,.155],.4),(PAPER,[.596,.061,.048],.94)]}
@@ -183,6 +187,8 @@ def build(lod):
     paint_number(b,readings,EYE,MAPPER,BLUE)
     upper(b,lod);doorway(b,lod);steps(b)
     add_ink(b,point,plate,WALL,GILT,SASH)
+    add_tower(b,CAL['stations'],dict(brick=BRICK,window=SASH,glass=GLASS))
+    add_roofs(b,lod,plate,dict(tile=TILE,brick=BRICK,timber=WOOD,glass=GLASS,sash=CREAM,stone=STONE),CAL['stations']['wide'])
     return b
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--output',type=Path,required=True);cli.add_argument('--lod',action='store_true')

@@ -20,20 +20,14 @@ def courtyard_wall(builder, cameras, wall, opening, plate, point, materials):
     def from_portrait(loop):
         return Polygon([point(u,v,wall)[[0,2]] for u,v in loop])
 
-    west = from_wide([(30,190),(208,195),(243,155),(248,104),(337,118),
-                      (340,64),(398,48),(412,59),(417,131),
-                      (438,139),(434,446),(130,457),(23,444)])
-    east = from_wide([(337,118),(348,62),(394,39),(505,58),(527,128),
-                      (538,242),(540,411),(527,449),(429,453),(414,390)])
-    centre = from_portrait([(-4,647),(506,647),(505,145),(-4,145)])
-    windows = [
-        ('west ground-floor window',[(63,257),(115,256),(100,369),(41,370)],2,3),
-        ('east ground-floor light',[(450,294),(479,294),(480,382),(452,385)],2,1),
-        ('east upper-floor light',[(445,147),(470,150),(469,195),(445,194)],2,2),
-    ]
+    # Only the masonry measured on the doorway plane stays here. The east
+    # bay is built separately on its folded, ray-measured wall planes.
+    west = from_wide([(30,190),(208,195),(245,158),(320,162),(330,451),(130,457),(23,444)])
+    centre = from_portrait([(-4,647),(455,647),(455,145),(-4,145)])
+    windows = [('west ground-floor window',[(63,257),(115,256),(100,369),(41,370)],2,3)]
     holes = [from_wide(loop) for _,loop,_,_ in windows]
-    panel = unary_union([centre,west,east]).difference(unary_union([opening,*holes]))
-    plate(builder,panel,wall,wall+.32,brick,'courtyard/brickwork around three window openings')
+    panel = unary_union([centre,west]).difference(unary_union([opening,*holes]))
+    plate(builder,panel,wall,wall+.32,brick,'courtyard/west brick wall and portico backing')
     for (name,loop,columns,rows),hole in zip(windows,holes):
         frame = hole.buffer(-.034,join_style='mitre')
         plate(builder,hole.difference(frame),wall+.057,wall+.107,timber,name+'/recessed frame')
