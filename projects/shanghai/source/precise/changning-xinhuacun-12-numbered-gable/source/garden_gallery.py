@@ -1,7 +1,7 @@
 """The garden return with two open galleries, a pierced parapet and three brick arches."""
 import math
 import numpy as np
-from shapely.geometry import Polygon,box
+from shapely.geometry import Polygon,LineString,box
 from shapely.ops import unary_union
 
 B='warm red facing brick';P='pale precast cement';M='coarse grey-brown pebble dash';W='deep green window joinery';G='dark casement glass';T='terracotta roof';D='dark cast rainwater iron'
@@ -66,7 +66,6 @@ def make(builder,lod):
         if not lod:
             for j,theta in enumerate(np.linspace(.16,math.pi-.16,11)):
                 p0=(mid+half*math.cos(theta),.93+.73*math.sin(theta));p1=(mid+(half+.14)*math.cos(theta),.93+.878*math.sin(theta))
-                from shapely.geometry import LineString
                 cut=LineString([p0,p1]).buffer(.003,cap_style='flat')
                 side(cut,edge+.0254,edge+.0271,P,f'arcade {i+1}/radial mortar joint {j+1:02}')
     side(arcade,edge-.36,edge-.021,B,'arcade/three brick arches and returns')
@@ -85,7 +84,16 @@ def make(builder,lod):
         for k in range(3):
             b.box((7.009,y+(k-1)*.278,8.99),(.021,.239,.35),G,label=f'garden dormer {i+1}/light {k+1}')
         b.box((6.77,y,9.293),(.87,1.39,.093),D,label=f'garden dormer {i+1}/projecting head')
-    rear=Polygon([(L,2.38),(L+2.18,2.38),(L+2.18,8.44),(L+1.1,9.70),(L,8.44)])
+    rear=Polygon([(L,2.38),(L+3.58,2.38),(L+3.58,7.42),(10.05,9.62),(L,7.42)])
+    for label,ends in [('near',[(L-.13,7.39),(10.05,9.66)]),('far',[(10.05,9.66),(L+3.68,7.39)])]:
+        pitch=LineString(ends).buffer(.079,cap_style='flat',join_style='mitre')
+        side(pitch,5.48,7.47,T,'garden return/'+label+' sloping tile roof')
+        verge=LineString(ends).buffer(.097,cap_style='flat',join_style='mitre')
+        side(verge,7.47,7.55,B,'garden return/'+label+' gable edging')
+        n=7 if lod else 15
+        for j in range(1,n):
+            y,z=np.asarray(ends[0])*(1-j/n)+np.asarray(ends[1])*(j/n)
+            b.tube([(5.51,y,z+.094),(7.455,y,z+.094)],.020,T,5 if lod else 8,f'garden return {label}/tile course {j:02}')
     opening=box(L+.36,5.8,L+1.83,7.06);side(rear.difference(opening),7.07,7.36,M,'garden return/far gable around green window')
     side(opening.difference(opening.buffer(-.055,join_style='mitre')),7.13,7.28,W,'garden return/far green frame')
     side(opening.buffer(-.054,join_style='mitre'),7.12,7.14,G,'garden return/far glazing')

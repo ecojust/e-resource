@@ -9,10 +9,22 @@ PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
 import garden_gallery
+import terrace_planting,finishes,short_wing
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+class SurfaceBuilder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in finishes.STEMS:finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        Builder.save(self,path,metadata)
+        return finishes.writer.embed_normals(path)
 ID='changning-xinhuacun-12-numbered-gable'
 META=dict(id=ID,heritage_id='sh-historic-b3-101',protection_number='3M003',name='新华村12号题号山墙',address='愚园路1320号新华村12号',scope='12号有数字的主山墙，三樘绿色小格窗、粗砂面与红砖交牙、窄凹廊、檐口、瓦面及两处可见烟囱。',geometry_license='MIT',photos_embedded=False,viewer_page='xinhuacun-12-numbered-gable.html')
 M='coarse grey-brown pebble dash';B='warm red facing brick';T='terracotta roof';P='pale precast cement';W='deep green window joinery';G='dark casement glass';D='dark cast rainwater iron';I='ivory cast house numerals'
-PALETTE={n:dict(color=c,roughness=r)for n,c,r in [(M,[.344,.319,.271],.95),(B,[.65,.356,.224],.89),(T,[.523,.257,.177],.87),(P,[.64,.593,.492],.82),(W,[.14,.225,.181],.59),(G,[.188,.251,.227],.29),(D,[.144,.145,.128],.64),(I,[.851,.767,.565],.59)]}
+META['camera_views']=json.loads((HERE/'cameras.json').read_bytes())
+META['scope']='带12号数字的山墙、三樘绿窗、可见屋面、两层三跨院廊、抬高平台及三道砖券。'
+PALETTE={n:dict(color=c,roughness=r)for n,c,r in [(M,[.344,.319,.271],.95),(B,[.65,.356,.224],.89),(T,[.523,.257,.177],.87),(P,[.64,.593,.492],.82),(W,[.029,.079,.052],.59),(G,[.042,.076,.061],.29),(D,[.044,.041,.034],.64),(I,[.851,.767,.565],.59)]}
 reg=json.loads((HERE/'registered-gable.json').read_bytes());H=np.array(reg['image_to_xz'])
 def xz(u,v):
     q=H@[u,v,1.]
@@ -69,7 +81,9 @@ def build(lod=False):
             b.box(((xmin+xmax)/2,-depth/3,z),(w+.156,depth*1.33,hh),P,label=f'casement {name}/{part}')
     for d in reg['digit_outlines']:
         for i,(shell,*holes)in enumerate(d['rings']):
-            solid(Polygon(shell,holes).buffer(-.0015,join_style='mitre'),-.0004,.037,I,'house number/'+d['number']+' stroke '+str(i+1))
+            solid(Polygon(shell,holes).buffer(-.0015,join_style='mitre'),.019,.052,I,'house number/'+d['number']+' stroke '+str(i+1))
+    for i,uv in enumerate([(530,315),(542,311),(542,322)]):
+        x,z=xz(*uv);b.tube([(x,-.001,z),(x,-.045,z)],.019,D,6 if lod else 10,'house number/mounting post '+str(i+1))
     # Three edges run independently along the two sloping verges and the lower fascia.
     for label,coords in [('left',[(452,212),(574,86)]),('right',[(575,86),(702,203)])]:
         strip(coords,.135,-.32,.102,P,'gable verge/'+label+' moulding')
@@ -103,9 +117,14 @@ def build(lod=False):
     for label,u,v,r in [('upper collar',685,261,.080),('hopper rim',686,275,.145),('lower collar',687,386,.070)]:
         x,z=xz(u,v);b.tube([(x,-.125,z-.052),(x,-.125,z+.052)],r,D,d,'drain/'+label)
     for label,u,v,width,height,depth in [('ridge stack',547,112,.77,.91,1.50),('west stack',448,171,.49,.94,1.90)]:
-        x,z=xz(u,v);b.box((x,depth,z),(width,.56,height),B,label='chimney/'+label)
+        x,z=xz(u,v)
+        if label=='west stack':x,depth,z=json.loads((HERE/'roof-end.json').read_bytes())['west_chimney_center_xyz']
+        b.box((x,depth,z),(width,.56,height),B,label='chimney/'+label)
         b.box((x,depth,z+height/2), (width+.061,.620,.074),P,label='chimney/'+label+' coping')
-    return garden_gallery.make(b,lod)
+    model=short_wing.make(terrace_planting.add(garden_gallery.make(b,lod),lod),lod)
+    result=SurfaceBuilder({**model.palette,**finishes.PALETTE})
+    for part in model.parts:result.add(part['vertices'],part['triangles'],part['material'],part['label'])
+    return result
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--lod',action='store_true');a=p.parse_args()
     print(build(a.lod).save(a.output,META)['sha256'])
