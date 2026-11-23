@@ -83,8 +83,12 @@ def add_west_balcony(builder, lod=False):
 
     # Only the five regularly spaced openings clear of the foliage are measured.
     slab(3.86,3.99,"lower terrace floor and soffit")
-    axes=[-5.064,-4.814,-4.568,-4.324,-4.083]
-    slots=[rect(x-.043,4.16,x+.043,4.66) for x in axes]
+    # The observed dark widths are the part seen through both faces. At this
+    # oblique station the rear jamb projects about 0.08 m across the front opening.
+    # These bounds use the left 1.2px edge at the back and the right 1.2px edge
+    # at the front of the 0.112 m concrete parapet.
+    slot_spans=[(-5.1949, -5.02118), (-4.94241, -4.77196), (-4.69294, -4.52571), (-4.44643, -4.28238), (-4.20284, -4.04193)]
+    slots=[rect(x0,4.125,x1,4.66) for x0,x1 in slot_spans]
     piece(builder,rect(LEFT,3.99,RIGHT,4.83),slots,FRONT,FRONT+.112,CAST,
           "west bay | open second-floor slotted parapet")
     side_panel(3.99,4.83,"second-floor parapet")
@@ -114,8 +118,8 @@ def add_west_balcony(builder, lod=False):
     windows(side,[FRONT,-.39,-.01],11.06,12.89,12.55,.01,
             lod=lod,frame=FRAME,materials=[GLASS,GLASS],name="fourth-floor east return")
     # A shallow return into the top dark opening is visible. Its interior is not documented.
-    flat(west_edges[1],west_edges[2],11.06,12.55,.405,.445,DEEP,"fourth-floor rear of dark opening")
-    flat(LEFT,RIGHT,12.89,12.95,FRONT,.08,CAST,"top enclosure head")
+    flat(LEFT+.065,RIGHT-.065,10.98,12.82,.405,.445,DEEP,"fourth-floor rear of dark opening")
+    flat(LEFT,RIGHT,12.89,12.95,FRONT,BACK+.10,CAST,"top enclosure head")
     flat(LEFT,LEFT+.065,3.99,12.89,FRONT+.12,BACK,CAST,"unseen west return")
     if not lod:
         flat(LEFT+.015,RIGHT-.015,11.045,11.079,FRONT-.025,FRONT+.017,FRAME,"upper window sill lip")
