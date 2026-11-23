@@ -1,0 +1,29 @@
+phone {'order': 279, 'phase': 'phone', 'exit_code': 0, 'remaining_chromium': [], 'report': '/tmp/shanghai-main-279/evidence/279/separate/phone/main-browser.json', 'exit': 0, 'node': 3504061, 'chromium_pids': [3504096], 'node_closed': True, 'remaining': [], 'report_sha256': '8b393393ae0ae6306780543672dec63350840d6c0ef84efe10b176432446041e', 'driver_sha256': 'fa87f6bab98a6aae3983206d781638749748d6f7dd4d22e81b327f60f4c06b3f', 'finished': '2026-11-23T09:14:58.877738+00:00'}
+Traceback (most recent call last):
+  File "/tmp/guangci344/mapping/handoff/admit-window-live.py", line 106, in <module>
+    for run in dev:assert processes[0]['children'][run['node']]['name']=='node'
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-279/offer-344-live.py", line 46, in <module>
+    subprocess.run([sys.executable,'-Bu',b['admit'],kind,str(exit_file)],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/guangci344/mapping/handoff/admit-window-live.py', 'viewer', '/tmp/shanghai-main-279/evidence/phone/closed.json']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-279/run-279-live.py", line 23, in <module>
+    if not any((w/f'344-{kind}-{state}.json').is_file() for state in ('returned','deferred')):subprocess.run([sys.executable,'-Bu',w/'offer-344-live.py',kind],check=True)
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-279/offer-344-live.py'), 'viewer']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-279/after-278-live.py", line 19, in <module>
+    supervisor=read(w/'supervisor.json');assert all(h(Path(n))==v for n,v in supervisor['geometry_inputs'].items());subprocess.run([sys.executable,'-Bu','/workspace/shanghai-publisher-preservation/city-279/attest-sites.py'],check=True);run('run-279-live.py',parent);run('merge-279-live.py')
+                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-279/after-278-live.py", line 7, in run
+    def run(program,*args):subprocess.run([sys.executable,'-Bu',w/program,*args],check=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-279/run-279-live.py'), PosixPath('/tmp/shanghai-main-278/278-map-slot-released.json')]' returned non-zero exit status 1.

@@ -1,3 +1,11 @@
+# 安利大楼西南转角入口与两街红砖窗带
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-arnhold-building-southwest-corner&mode=overview) · [单体旋转与下载](arnhold-building-southwest-corner.html) · [来源与制作范围](source/precise/huangpu-arnhold-building-southwest-corner/README.md) · [验收记录](data/audit/arnhold-building-southwest-corner-v1/README.md)
+
+第四批4A017，四川中路320号、九江路80号。原城2862与具名OSM 380339946匹配。按2019年现场照片、2020年门牌照片和2023年文旅导览制作西南角及相邻两街红砖窗带、白腰线、出檐与可见门窗。分别注明320号现门及历史角部入口。
+
+近景 48,956 个三角面，远景 28,548 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,750,383 字节。上海主图现有 314 处独立入口，黄浦区 149 处。[资产清单](assets/models/candidates/huangpu-arnhold-building-southwest-corner/manifest.json)
+
 # 南京饭店山西南路入口与钝角阳台
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) · [单体旋转与下载](nankin-hotel-shanxi-front.html) · [来源与制作范围](source/precise/huangpu-nankin-hotel-shanxi-front/README.md) · [验收记录](data/audit/nankin-hotel-shanxi-front-v1/README.md)
