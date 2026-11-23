@@ -9,3 +9,7 @@
 在河南中路与宁波路交口，桌面与手机都能从目录或地图标记点选美丰银行。地图目录从 309 处增至 310 处。核验覆盖弧形店面、中央入口、上部钢窗、女儿墙和远景切换，174 个碰撞检查点全部符合预期。手机触摸标记后成功回到本模型，同时记录了一次地图控制台的请求失败提示。独立模型页保留两种屏幕尺寸共六幅画面，原始、网页近景、远景及 Blender 源文件均已实际下载并复核。[城市图像与逐幅记录](city-31275/visual-review.json) · [地图中的店面与入口](city-31275/map-rounded-shopfront-and-corner-door.png) · [独立模型页检查](city-31275/standalone/viewer.json)
 
 以两张不同年代的街照核对七条窗轴，并在三档模型上复算了 846 条街面射线。[照片和网格复核](photo-recheck/README.md) · [城市主图](../../../index.html#landmark=huangpu-american-oriental-bank-rounded-corner&mode=overview)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/48e87aff1cb42194816487956fc73e1af523858d/projects/shanghai/index.html#landmark=huangpu-american-oriental-bank-rounded-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，8 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

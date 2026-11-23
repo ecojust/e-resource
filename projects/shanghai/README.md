@@ -213,7 +213,7 @@
 | 盐业大楼北京东路280号门罩与石栏 | 2026-11-23 13:38:45 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-salt-industry-bank-entrance&mode=overview) |
 | 上海商业储蓄银行宁波路主楼重檐歇山楼亭 | 2026-11-23 14:05:42 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-commercial-savings-bank-pavilion&mode=overview) |
 | 中央储蓄会大楼天津路江西中路转角塔楼 | 2026-11-23 14:26:11 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-savings-society-corner-tower&mode=overview) |
-| 上海美丰银行河南中路宁波路弧形转角 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-oriental-bank-rounded-corner&mode=overview) |
+| 上海美丰银行河南中路宁波路弧形转角 | 2026-11-23 14:54:36 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-oriental-bank-rounded-corner&mode=overview) |
 
 ### 徐汇区（55处）
 
