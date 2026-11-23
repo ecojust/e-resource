@@ -3806,7 +3806,7 @@
 | 上海电话局南市总局中华路钟楼立面 | 2026-11-23 08:35:08 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nanshi-telephone-exchange&mode=overview) |
 | 浦光大楼（上海基督教青年会）四川中路门头与东立面窗墙 | 2026-11-23 09:54:44 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-puguang-ymca-east-entrance&mode=overview) |
 | 英商自来水公司大楼（自来大楼）西南转角花饰 | 2026-11-23 10:26:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-waterworks-484-corner&mode=overview) |
-| 自力大楼（英商自来水公司办公楼）江西中路464号券门及上层窗墙 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zili-waterworks-office-front&mode=overview) |
+| 自力大楼（英商自来水公司办公楼）江西中路464号券门及上层窗墙 | 2026-11-23 10:47:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zili-waterworks-office-front&mode=overview) |
 
 ### 徐汇区（55处）
 

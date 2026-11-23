@@ -19,3 +19,7 @@
 独立页面的四幅正面图分别在桌面和手机看过。桌面近景能直接读出中央红砖券上的绿色「464」门牌，上方两层窗列、中央交叉铁门、左侧窄券和右侧盲券均可辨。手机正面完整显示街墙及两条层间线，门牌字在该比例下不宜判读。原始GLB、网页近档、远档和Blender编辑工程已分别用页面下载链接保存并核对字节。
 
 [实机、地面与四种下载](city-31265/process-exits.json) · [旧城对照](city-31265/map-before.png) · [江西中路464号券门与街墙](city-31265/map-jiangxi-464-street.png) · [砖券、门牌及上层红砖窗带](city-31265/map-orange-arch-and-house-number.png) · [远档](city-31265/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/1d9ae19cc88848cffcd0ed2981733b150f057355/projects/shanghai/index.html#landmark=huangpu-zili-waterworks-office-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
