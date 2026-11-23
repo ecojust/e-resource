@@ -38,6 +38,7 @@ async function start() {
   for (const [role, label] of Object.entries(labels)) {
     const asset = manifest.assets[role];
 
+    if (!asset?.file && role === 'native') continue;
     if (!asset?.file) throw new Error('模型目录缺少' + label + '。');
     const link = document.createElement('a');
     link.href = folder + asset.file;
@@ -49,7 +50,7 @@ async function start() {
 
   for (const [role, label] of Object.entries({fbx:'FBX',obj:'OBJ 与 MTL（ZIP）',stl:'STL（米）'})) {
     const file = manifest.interchange?.[role]?.file;
-    if (!file) throw new Error('缺少' + label + '下载记录。');
+    if (!file) continue;
     const link = document.createElement('a');
     link.href = folder + file;
     link.download = file;
