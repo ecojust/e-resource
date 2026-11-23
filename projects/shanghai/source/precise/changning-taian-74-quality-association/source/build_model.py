@@ -12,6 +12,7 @@ HERE = Path(__file__).absolute().parent
 PROJECT = next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0, str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
+import entrance
 
 ID = 'changning-taian-74-quality-association'
 META = dict(id=ID, name='泰安路74号上海市质量协会临街面', address='上海市长宁区泰安路74号（76弄口东侧）',
@@ -106,7 +107,7 @@ def build(lod=False):
         face(slope.buffer(w/2,cap_style='flat',join_style='mitre'),-.35,dep,TRIM,f'attic pediment/raking cornice {i+1}')
     for i,x in enumerate(np.arange(-.24,width+.15,.220 if not lod else .440)):
         scene.box((x,-.152,12.20),(.092 if not lod else .14,.144,.112),TRIM,label=f'cornice/dentil {i+1:02}')
-    return scene
+    return entrance.add(scene,lod)
 
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__)
