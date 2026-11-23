@@ -1,0 +1,26 @@
+/workspace/shanghai-publisher-preservation/city-273/parent-ledger-and-physical-layers.json 5157af06193a47b789e57a7f4cfe92af4213a047786d7a47bf3e4877f8a26af4
+control 2026-11-23T05:43:45.392306+00:00 {2025771: '1582581'}
+closed control 2026-11-23T05:43:45.392306+00:00
+mobile-card 2026-11-23T05:45:01.578994+00:00 {2028748: '1592902'}
+closed mobile-card 2026-11-23T05:45:01.578994+00:00
+mobile-pin 2026-11-23T05:46:11.131705+00:00 {2030561: '1597772'}
+closed mobile-pin 2026-11-23T05:46:11.131705+00:00
+desktop-card 2026-11-23T05:47:13.783124+00:00 {2032688: '1604730'}
+closed desktop-card 2026-11-23T05:47:13.783124+00:00
+desktop-pin 2026-11-23T05:48:12.659333+00:00 {2034926: '1610984'}
+closed desktop-pin 2026-11-23T05:48:12.659333+00:00
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-273/formal-31273/sequence-measured.py", line 38, in <module>
+    use(stage)
+  File "/tmp/shanghai-main-273/formal-31273/sequence-measured.py", line 20, in use
+    fcntl.flock(lock,fcntl.LOCK_EX);subprocess.run([sys.executable,'-Bu',str(w/'capture-measured.py'),stage,*([str(old)]if stage=='control'else[])],check=True)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-273/formal-31273/capture-measured.py', 'street']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/dev/shm/pavilion273/enter-after-272.py", line 71, in <module>
+    subprocess.run([sys.executable, '-Bu', host / 'sequence-measured.py'], check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-273/formal-31273/sequence-measured.py')]' returned non-zero exit status 1.

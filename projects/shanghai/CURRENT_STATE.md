@@ -1,3 +1,11 @@
+# 上海商业储蓄银行宁波路主楼重檐歇山楼亭
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-commercial-savings-bank-pavilion&mode=overview) · [单体旋转与下载](shanghai-commercial-savings-bank-pavilion.html) · [来源与制作范围](source/precise/huangpu-shanghai-commercial-savings-bank-pavilion/README.md) · [验收记录](data/audit/shanghai-commercial-savings-bank-pavilion-v1/README.md)
+
+第四批4A011，宁波路40、50号、江西中路368号。按宁波路50号具名街照、上海市银行博物馆屋顶近照和两幅航片，制作主楼南翼屋顶亭的重檐歇山、翘角、瓦当、红柱与成对格扇。OSM关系16213630和原城2363吻合，1931年银行迁入。
+
+近景 50,774 个三角面，远景 7,022 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 6,646,380 字节。上海主图现有 308 处独立入口，黄浦区 143 处。[资产清单](assets/models/candidates/huangpu-shanghai-commercial-savings-bank-pavilion/manifest.json)
+
 # 盐业大楼北京东路280号门罩与石栏
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-salt-industry-bank-entrance&mode=overview) · [单体旋转与下载](salt-industry-bank-entrance.html) · [来源与制作范围](source/precise/huangpu-salt-industry-bank-entrance/README.md) · [验收记录](data/audit/salt-industry-bank-entrance-v1/README.md)
