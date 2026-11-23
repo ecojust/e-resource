@@ -11,3 +11,7 @@
 在桌面街景里，浅色钟门、两侧店券和上层窗墙都能辨认。手机竖屏的地点卡遮住门面下部，钟门与石山花另有近景可看。此次复核记录了八段实际地图操作、十张城市画面和独立页的四张近远景，还检查了本栋及邻近街面的 59 处地面位置，并从独立页实际保存四种模型文件。[四川中路街面](city-31263/map-street-facade.png) · [钟门与石刻](city-31263/map-stone-entrance-and-clock.png) · [石山花与上层窗](city-31263/map-upper-windows-and-pediment.png) · [逐图观察](city-31263/visual-review.json) · [独立页与下载记录](city-31263/standalone/viewer.json)
 
 环境重启前登记的 85 个取证路径中，5 个重新取得与原记录相同的字节，另外 80 个保留原校验值。重启后重新拍摄的八段操作、两次未完成的尝试和各自的原屏、画布记录可从索引查阅。[现场记录与早期文件索引](city-31263/recovered-field/field-process-index.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/aa366251f9f2f2fdf1dbf9cb8707720d469b2377/projects/shanghai/index.html#landmark=huangpu-puguang-ymca-east-entrance&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
