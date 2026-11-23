@@ -510,7 +510,7 @@
 |sh-historic-b5-xh-j-044-v|住宅|新乐路54号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-045-v|住宅|新乐路28号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-046-v|住宅|华亭路40,42,44,58号,延庆路132号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-047-v|住宅|延庆路159号|[名录][H5]|待核外观／拆栋|
+|sh-historic-b5-xh-j-047-v|延庆路159号住宅|延庆路159号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/83a618dbe0feab0f596d8ae62ad0a725c8c57fbc/projects/shanghai/yanqing-159-garden-residence.html>)|已建庭院拱门、临街钢窗和百叶、两座山墙、玻璃阁楼与三管烟囱。院后墙面、踏步数量和室内待核。|
 |sh-historic-b5-xh-j-048-v|住宅|东湖路51号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-049-v|住宅|华亭路93弄3号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-050-v|住宅|延庆路18弄10号|[名录][H5] · 照片待核|待核外观／拆栋|
