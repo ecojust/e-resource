@@ -1,10 +1,12 @@
 """Project the measured gate in three January panorama stations and three independent street photographs."""
 from pathlib import Path
-import argparse,json,math
+import argparse,json,math,sys
 import numpy as np
 from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation
 HERE=Path(__file__).absolute().parent
+sys.path.insert(0,str(HERE.parent/'source'))
+import wall_plane
 read=lambda p:json.loads(p.read_bytes())
 s=read(HERE.parent/'source/street-scale.json');survey=read(HERE/'surveyed-street-gate.json');native=survey['native_observations'];local=np.asarray(s['basis_enu_rows']);origin=np.asarray(s['frame_origin_enu_m']);sy,by=s['initial_z_to_metres'];sx,bx=s['initial_x_to_metres'];H=np.asarray(read(HERE.parent/'source/registered-name.json')['image_to_initial_xz'])
 def matrix(c,rot,f,size):
@@ -24,7 +26,7 @@ def panoramas():
   cam.update(observed_residual_pixels=res,source=d['metadata_url'],image_sha256=d['image_sha256'],station_id=d['id']);result['street-station-'+i]=cam
  return result
 def xyz(uv,depth=.0):
- q=H@[*uv,1.];x,z=q[:2]/q[2];return [x*sx+bx,s['adjusted_curb_face_y_m']-depth,z*sy+by]
+ return wall_plane.pixel_to_world(uv,depth)
 # The close-up photograph uses paired crown corners and arrises. Corners on face,
 # shelf noses, applied metal letters and the lantern occupy distinct depth planes.
 control={'peak-west':((559,108),.0),'peak-east':((648,95),.0),'tier-west':((478,157),.0),'tier-east':((744,119),.0),'left-vee':((521,185),.018),'peak-vee':((605,139),.018),'right-vee':((701,164),.018),'cap-west':((480,247),.068),'cap-east':((758,216),.068),'rail-west':((487,359),.046),'rail-east':((779,339),.046),'lamp':((442,389),.09),'shield':((691,445),.023)}
@@ -41,7 +43,8 @@ def fit(name,size,points,seen,initial,omit):
  cam.update(registered_controls=rows,fit_rms_px=float(np.sqrt(np.mean([r['residual_px']**2 for r in rows.values() if not r['held_out']]))),held_out_rms_px=float(np.sqrt(np.mean([r['residual_px']**2 for r in rows.values()if r['held_out']]))));return cam
 def build():
  result=panoramas();points={k:xyz(u,d)for k,(u,d)in control.items()};near={k:u for k,(u,d)in control.items()}
- result['district-detail']=fit('district-detail',[1000,701],points,near,[2.7,-3.8,1.57,1.25,.23,2.35,750],['left-vee','right-vee'])
+ result['district-detail']={k:wall_plane.primary[k] for k in ('C','R','K','P','size','controls','weighted_residuals')}
+ result['district-detail']['source_calibration']='../source/close-camera.json'
  reverse={'peak-west':[126,142],'peak-east':[177,161],'tier-west':[65,148],'tier-east':[222,208],'left-vee':[104,188],'peak-vee':[155,185],'right-vee':[200,229],'cap-west':[66,219],'cap-east':[228,271],'rail-west':[64,311],'rail-east':[234,349],'lamp':[19,338]}
  result['opposite-detail']=fit('opposite-detail',[331,546],points,reverse,[-.55,-2.7,1.4,1.15,.23,2.4,390],['left-vee','right-vee'])
  street={'west-lantern-fixture-center':[85,272],'east-lantern-fixture-center':[452,275],'west-green-address-plate-center':[49,194],'west-pier-inner-front-top':[134,157],'east-wall-inner-front-ground':[438,397],'east-wall-inner-front-under-moulding':[426,215],'east-wall-outer-front-ground':[579,374],'east-wall-outer-front-pier-top':[548,192],'sunburst-crown-upper-midpoint':[492,161]}

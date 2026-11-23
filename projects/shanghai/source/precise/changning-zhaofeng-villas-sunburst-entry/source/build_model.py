@@ -8,8 +8,20 @@ PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
 import street_gate
+import finishes
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+class SurfaceBuilder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in finishes.STEMS:finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        Builder.save(self,path,metadata)
+        return finishes.writer.embed_normals(path)
+
 ID='changning-zhaofeng-villas-sunburst-entry'
 META={'id':ID,'heritage_id':'sh-historic-b3-099','name':'兆丰别墅长宁路弄口题名墙','address':'长宁路712弄','scope':'长宁路入口东西灰墙、开向弄内的两扇铁门、两盏半圆壁灯、东侧花台和阶梯日升纹题名墙。','viewer_page':'zhaofeng-villas-sunburst-entry.html','geometry_license':'MIT','photos_embedded':False}
+META['camera_views']=json.loads((HERE/'cameras.json').read_bytes())
 PLASTER='grey-pink aggregate plaster';EDGE='worn pale cement';IRON='patinated cast letters';BRASS='bronze lamp frame';GLASS='warm opal lamp';MARBLE='heritage plaque stone';ENAMEL='interpretive enamel'
 PALETTE={name:{'color':color,'roughness':rough}for name,color,rough in [(PLASTER,[.51,.481,.483],.91),(EDGE,[.59,.566,.55],.86),(IRON,[.113,.106,.114],.46),(BRASS,[.338,.263,.166],.54),(GLASS,[.823,.747,.533],.38),(MARBLE,[.695,.683,.625],.82),(ENAMEL,[.773,.690,.517],.57)]}
 data=json.loads((HERE/'registered-name.json').read_bytes());H=np.asarray(data['image_to_initial_xz'])
@@ -26,7 +38,7 @@ def build(lod=False):
   poly=LineString([measured(p)for p in uv]).buffer(width/2,cap_style='flat',join_style='mitre')
   sculpt(poly,back,front,EDGE,group)
  # The stepped silhouette, five downward chevrons and radial ornament belong to
- # the masonry name wall. The separate western traffic pier is outside this study.
+ # the masonry name wall. The western address pier is constructed in street_gate.
  sky=[(399,205),(400,200),(477,189),(478,157),(559,145),(559,108),(648,95),(655,133),(744,119),(752,160),(856,146),(861,121),(908,110)]
  low=[(915,606),(400,637)]
  profile(sky+low,-.23,0,PLASTER,'wall/stepped sunburst silhouette')
@@ -78,7 +90,10 @@ def build(lod=False):
   theta=t*math.pi
   x=center_x+radius*.89*math.cos(theta);y=-.009-radius*.89*math.sin(theta)
   b.box((x,y,base+.5*height),(.010,.012,height*.86),BRASS,label=f'lantern/vertical rib {i+1}')
- return street_gate.assemble(b,lod)
+ model=street_gate.assemble(b,lod)
+ result=SurfaceBuilder({**model.palette,**finishes.PALETTE})
+ for part in model.parts:result.add(part['vertices'],part['triangles'],part['material'],part['label'])
+ return result
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--lod',action='store_true');args=parser.parse_args()
  result=build(args.lod).save(args.output,META);print(result['sha256'])

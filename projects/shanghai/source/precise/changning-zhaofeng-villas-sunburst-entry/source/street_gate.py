@@ -2,6 +2,8 @@
 from pathlib import Path
 import json,math
 import numpy as np
+import pier_details
+import wall_plane
 from shapely.geometry import box
 H=Path(__file__).absolute().parent
 STONE='grey-pink aggregate plaster';EDGE='worn pale cement';GREEN='green enamel address plate';IRON='black enamel gate iron';SOIL='dark planter soil';PAVE='age-darkened lane paving'
@@ -9,7 +11,7 @@ def frontage(b,depth):
  def prism(poly,z0,z1,mat,name):
   b.prism(poly,z0,z1,lambda x,z,d:(x,-d,z),mat,name)
  # The central opening remains walkable. Three narrow grooves cut the face of the western pier.
- west_inner=-4.81;west_outer=-5.98;west_front=-.37;upper=3.42;thickness=.30
+ west_inner=-4.81;west_outer=-5.85;west_front=-.37;upper=3.42;thickness=.30
  b.box(((west_outer+west_inner)/2,west_front+thickness/2+.015,upper/2),(west_inner-west_outer,thickness-.03,upper),STONE,label='west pier/solid back and reveals')
  face=box(west_outer,0,west_inner,upper)
  for i,x in enumerate([-5.80,-5.42,-5.10]):face=face.difference(box(x-.020,.17,x+.020,2.51))
@@ -28,7 +30,7 @@ def frontage(b,depth):
  b.box(((x0+x1)/2,(front+rear)/2,.270),(x1-x0-.162,rear-front-.158,.054),SOIL,label='planter/exposed soil')
  # The two gates swing into the lane as photographed. The hinge offsets are measured
  # from the pier returns. The angular positions can change when residents use the lane.
- for side,hinge,sign,angle in [('west',west_inner+.065,1,78.),('east',.13,-1,82.)]:
+ for side,hinge,sign,angle in [('west',west_inner+.065,1,80.),('east',.13,-1,103.)]:
   span=2.35;theta=math.radians(angle);along=np.asarray([sign*math.cos(theta),math.sin(theta),0]);out=np.asarray([along[1],-along[0],0]);up=np.asarray([0,0,1])
   root=np.asarray([hinge,west_front+.28 if side=='west'else .55,0.])
   def xyz(s,z,d=0.):return root+along*s+up*z+out*d
@@ -58,7 +60,7 @@ def assemble(b,lod):
  lamps=[];ground='wall/stepped sunburst silhouette'
  for part in b.parts:
   a=np.asarray(part['vertices']);original=a.copy()
-  a[:,0]=a[:,0]*sx+bx;a[:,1]=a[:,1]*.80+y0;a[:,2]=a[:,2]*sz+bz
+  a[:,[0,2]]=wall_plane.plane_xz(a[:,[0,2]]);a[:,1]=a[:,1]*.80+y0
   if part['label']==ground:a[original[:,2]<0,2]=.005
   part['vertices']=a.tolist()
   if part['label'].startswith('lantern/'):lamps.append(part)
@@ -68,4 +70,4 @@ def assemble(b,lod):
  for i,part in enumerate(lamps):
   p=np.asarray(part['vertices']);p+=np.asarray([-5.35,-.60,-.035])
   b.add(p,part['triangles'],part['material'],part['label'].replace('lantern/','west lantern/'))
- return frontage(b,lod)
+ return pier_details.add(frontage(b,lod),lod)
