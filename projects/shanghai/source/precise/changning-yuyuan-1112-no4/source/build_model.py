@@ -8,6 +8,9 @@ import numpy as np
 from shapely.geometry import Polygon, box
 from shapely.ops import unary_union
 
+import corner_and_lane
+import street_control
+
 HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
@@ -25,7 +28,7 @@ GLASS='blue grey glazing'
 SHADOW='deep opening reveal'
 PALETTE={key:dict(color=color,roughness=r) for key,color,r in [
     (WALL,[.715,.668,.552],.95),(LINTEL,[.564,.527,.433],.89),(BELT,[.365,.344,.295],.92),
-    (DARK,[.128,.079,.055],.63),(LIGHT,[.641,.677,.652],.62),(GLASS,[.119,.169,.166],.27),(SHADOW,[.089,.09,.075],.93)]}
+    (DARK,[.128,.079,.055],.63),(LIGHT,[.641,.677,.652],.62),(GLASS,[.119,.169,.166],.27),(SHADOW,[.089,.09,.075],.93),('indigo awning cloth',[.086,.106,.157],.89)]}
 FEATURES=json.loads((HERE/'window-readings.json').read_bytes())
 CAMERA=json.loads((HERE/'camera-2011.json').read_bytes())
 
@@ -34,7 +37,7 @@ def homography(uv,xz):
     for (u,v),(x,z) in zip(uv,xz):
         system.extend([[u,v,1,0,0,0,-x*u,-x*v],[0,0,0,u,v,1,-z*u,-z*v]])
         target.extend((x,z))
-    return np.r_[np.linalg.solve(system,target),1.].reshape(3,3)
+    return np.r_[np.linalg.lstsq(system,target,rcond=None)[0],1.].reshape(3,3)
 
 def on_plane(pixel,axis,value):
     center=np.array(CAMERA['principal_point_px'])
@@ -45,7 +48,7 @@ def on_plane(pixel,axis,value):
 def wing_openings(side):
     reg=FEATURES['sources'][side]
     if side=='street-wing':
-        matrix=homography(reg['control_pixels_reference'],reg['control_geometry_metres'])
+        matrix=homography(*street_control.wing_registration())
         def position(p):
             q=matrix@[*p,1.]
             return q[:2]/q[2]
@@ -97,11 +100,13 @@ def wing(b,lod):
         for j,(z0,z1,d,m) in enumerate([(3.50,3.55,.072,BELT),(3.90,3.98,.089,BELT),(4.17,4.25,.142,LINTEL),
                                          (11.00,11.10,.076,LINTEL),(11.10,11.19,.153,BELT),
                                          (11.19,11.34,.221,LINTEL),(11.34,11.42,.272,BELT)]):
-            extrude(box(left,z0,right,z1),-.03,d,m,f'horizontal belt course {j+1}')
+            over=(street_control.P['west_to_east_eave_width']-street_control.P['waist_frontage_width'])/2/street_control.WING_SCALE if front and z0>=11 else 0.
+            extrude(box(left-over,z0,right+over,z1),-.03,d,m,f'horizontal belt course {j+1}')
     return b
 
 def build(lod=False):
-    return wing(Builder(PALETTE),lod)
+    b=wing(Builder(PALETTE),lod)
+    return street_control.apply(corner_and_lane.add(b,sys.modules[__name__],lod))
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
