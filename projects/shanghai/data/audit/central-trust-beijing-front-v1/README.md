@@ -9,3 +9,7 @@
 本期在街区原有的305处地点上加入中一信托大楼。桌面鼠标和手机触摸均可从建筑标牌打开本栋。97个地面点逐一复测，远景在距模型约810米处显示简化档。两张城市近照中的建筑标牌和资料卡遮住了部分门廊，用独立页的正面、斜看按钮可看清中央双柱、三开间窗列和挑出的五层檐口。[城市十八幅逐图观察](city-31271/visual-review.json) · [北京东路正面与门廊](city-31271/exterior-views/README.md)
 
 在营业大厅向上看，彩绘天棚是两侧绿色纹样夹着米白色环纹中带。从天井向下看，浅绿色分格护盖位于两排侧窗之间。桌面与手机分别在两种精细度下从这两个方向观察，并核对四份实际保存的文件。[桌面厅内仰看](city-31271/standalone/desktop-full-below.png) · [手机天井俯看](city-31271/standalone/phone-full-above.png) · [构件与厅内视线复算](source-recheck/README.md) · [城市操作与文件校验](city-31271/slot-released.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/83f219052db29437e0be4d4ea22bf8465283d16e/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

@@ -209,7 +209,7 @@
 | 沙美大楼北京东路主立面与四川中路转角 | 2026-11-23 11:58:39 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-somekh-building-street-corner&mode=overview) |
 | 浙江兴业银行（浙兴大楼）北京东路西端窗跨 | 2026-11-23 12:22:18 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-industrial-bank-beijing-front&mode=overview) |
 | 中垦大楼北京东路239号东北转角门楼 | 2026-11-23 12:53:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongken-bank-239-corner&mode=overview) |
-| 中一信托大楼北京东路正立面与银行大厅彩绘天棚 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview) |
+| 中一信托大楼北京东路正立面与银行大厅彩绘天棚 | 2026-11-23 13:10:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview) |
 
 ### 徐汇区（55处）
 
