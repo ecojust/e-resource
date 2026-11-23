@@ -9,3 +9,5 @@
 1995年11月15日，邹韬奋半身铜像在南院揭幕。模型中的四级台阶、红石座、西装驳领、圆眼镜、交握的手和卷件分别与2004年背面、2024年正面及2026年斜前照片核对。台正面可读“鄒韜奮”和“1895—1944”。按2004年院内相机把台阶四角反投到地面，像顶约高3.57米。精细面部和背碑正文仍待近照，台前文字采用字形近似。[纪念物影像与模型量测](measurements/sculpture-evidence.json) · [近远档闭合及投影](measurements/sculpture-check.json) · [题字字体许可](measurements/sculpture-lettering-LICENSE.txt)
  
 北部两座小院东西并排。两期航片和区志照片中，南北向短翼的北端屋檐距滨河横翼内檐约2.7至3.8米，模型给这条横向通道留了空隙。滨河外墙和小院的门窗数缺少定位照片，仅复原可辨的屋形和建筑体量。北面屋檐取局部Y约78.5米，与现有城市地块北沿有差异，原地块保留。独立模型近景987个构件、145,120面，远景954个构件、98,072面，共十台可切换相机。[三套屋檐实测](measurements/north-courts-roof-limits.json) · [滨河照片归属核对](measurements/river-and-northern-courts.json) · [查看模型与下载](../../../st-johns-schereschewsky-hall.html) · [资料与许可](SOURCES-LICENSE.md)
+
+将两档网格逐一和同一城市图块的3,707个建筑轮廓比较，只有1840号与模型相交。最近的相邻建筑为2173号，间隔至少6.33米。临河北翼外墙在本地坐标Y约77.73米，较原1840北边中点向北3.47米，檐端约78.50米。旧城市网格把南院盖在23.07米高的整块屋顶之下。当前用独立模型展示两座小院和铜像，城市图块仍沿用原地块。[原城市网格十六组射线](measurements/current-real-1840-surfaces.json) · [两档边界与全部相邻地块](measurements/all-1840-neighbors-and-rays.json)

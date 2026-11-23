@@ -33,7 +33,7 @@ def prepare(out, raw):
     import runpy
     prepare_groups=runpy.run_path(str(PROJECT/'source/precise/xuhui-huaihai-1230-rear-courtyard-entrance/source/prepare_editable_groups.py'))['prepare_groups']
     sidecar=raw.parent/'source-part-order.json'
-    scene_metadata = META
+    scene_metadata = dict(META, scope='怀施堂街面钟楼、南院券廊与铜像、北部两个小院和滨河横翼。')
     names,aliases,triangles,corners=prepare_groups(out,raw,sidecar,scene_metadata)
     if META['camera_views']!=read(HERE/'cameras.json'):
         raise ValueError('The registered camera file changed')
