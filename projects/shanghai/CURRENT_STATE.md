@@ -1,3 +1,11 @@
+# 中垦大楼北京东路239号东北转角门楼
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongken-bank-239-corner&mode=overview) · [单体旋转与下载](zhongken-bank-239-corner.html) · [来源与制作范围](source/precise/huangpu-zhongken-bank-239-corner/README.md) · [验收记录](data/audit/zhongken-bank-239-corner-v1/README.md)
+
+第四批4A008，北京东路239、255号。239号东北街角石门、上方中央三窗竖带及退台墙冠可见，原城1970。保护牌记1932年建，银行史记1933年10月竣工迁入。
+
+近景 15,032 个三角面，远景 8,432 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,810,399 字节。上海主图现有 305 处独立入口，黄浦区 140 处。[资产清单](assets/models/candidates/huangpu-zhongken-bank-239-corner/manifest.json)
+
 # 浙江兴业银行（浙兴大楼）北京东路西端窗跨
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-industrial-bank-beijing-front&mode=overview) · [单体旋转与下载](chekiang-industrial-bank-beijing-front.html) · [来源与制作范围](source/precise/huangpu-chekiang-industrial-bank-beijing-front/README.md) · [验收记录](data/audit/chekiang-industrial-bank-beijing-front-v1/README.md)
