@@ -2,6 +2,7 @@
 from shapely.geometry import Polygon,box
 from shapely.ops import unary_union
 from brick_finishes import GREY_BRICK,HERRINGBONE,RED_BAND
+from masonry_details import grille,herringbone_panel,window_jambs
 from front_layout import LEFT,RIGHT,OPENINGS,PARAPET
 from materials import BROWN,CREAM,DARK,GLASS,GREEN,PALE,STONE,WHITE
 
@@ -30,6 +31,7 @@ def add_front(f,lod):
         if key not in ('paired_green_light','green_entry_door','lower_dark_east'):
             surround=box(x0-.095,z0-.012,x1+.095,z1+.135).difference(hole)
             f.solid(surround,-.002,.020,RED_BAND,name+' | red jambs and head')
+            if not lod:window_jambs(f,hole,name)
         if key=='green_entry_door':
             f.solid(hole,-.12,-.074,GREEN,name+' | recessed door leaf')
             f.rect(x1-.087,x1-.062,z0+.70,z0+.82,-.075,-.043,STONE,name+' | small metal handle');continue
@@ -46,6 +48,7 @@ def add_front(f,lod):
         if key.startswith('upper'):
             panel=box(x0,3.15,x1,4.19);rim=panel.buffer(.032,join_style=2).difference(panel)
             f.solid(panel,.005,.014,HERRINGBONE,name+' | herringbone spandrel')
+            if not lod:herringbone_panel(f,panel,name)
             f.solid(rim,.004,.019,BROWN,name+' | spandrel edging')
             for x in (x0-.125,x1+.125):f.rect(x-.044,x+.044,2.86,4.26,.002,.012,RED_BAND,name+' | red brick strip')
     for z0,z1,back,front,mat,name in [(6.23,6.30,-.18,.076,STONE,'thin lower moulding'),(6.30,7.02,-.21,.024,CREAM,'rendered fascia'),(7.02,7.11,-.21,.143,DARK,'dark soffit'),(7.11,7.21,-.24,.19,STONE,'projecting cornice'),(7.21,PARAPET,-.23,-.015,PALE,'grey rendered parapet'),(PARAPET-.016,PARAPET+.046,-.25,.025,STONE,'stepped coping')]:
@@ -57,6 +60,7 @@ def add_front(f,lod):
     # The right edge of the flat frontage returns towards the recessed arched opening.
     f.face(RIGHT,0,0,1).rect(0,1.24,0,6.26,-.14,0,GREY_BRICK,'west end of brick front | stepped return')
     f.face(RIGHT,0,0,1).rect(0,1.24,6.26,PARAPET,-.14,0,CREAM,'west end of brick front | upper return')
+    for a,b in [(-4.03,-3.57),(-2.69,-2.30)]:grille(f,a,b,.93,2.43,lod,'lower west window')
     # Two attached canopies are visible in the dated street photograph below the brick panels.
     for x0,x1,top,depth,mat,name in [(-7.57,-4.67,2.92,.37,BROWN,'brown shop canopy'),(-3.62,-2.08,2.90,.25,STONE,'metal window hood')]:
         fall=.105
