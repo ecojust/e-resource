@@ -13,3 +13,21 @@ python measurements/fit_gate.py measurements/gate-cameras.json
 python measurements/make_gate_cameras.py
 python measurements/check_mesh.py /tmp/meiquan-gate
 ```
+
+## 七个实景摄影站与尺度
+
+五处2013年至2020年的街站共同定位两根方柱，相距4.64米、柱宽约0.75米；取刻名柱临街面中心脚为局部原点。向右指向真方位284.89°。两处朝外的2015年2月弄内反打用于独立检查折开门扇的端点和园沿返栏。返栏第一根矮砖柱顶约在局部坐标(0.75, 4.81, 1.60)米。砖横缝由三张不同照片独立量得每皮约0.117、0.124与0.127米，程序纹理采用0.125米。[街面多站联合解](measurements/gate-cameras.json) · [反向交会](measurements/gate-return-sections.json) · [砖缝逐行测读](measurements/brick-course-readings.json)
+
+首版已包含四块刻名和实际贯入的凹槽。细化版增加园沿砖基返栏与转角小柱、铁门铰轴、石牌固定件、原创砖面与石面两组色纹和法线，并根据弄内照片修正两扇门的开启角和上缘。三档模型的40个留验位置均在原帧4像素范围内出现预期构件或透空，33处直接命中。原近远场景与新物件的实际三角投影均无交叠，最近原户为1187，边缘净距约4.67米。[实射程序](measurements/check_gate_views.py) · [邻屋与平面测量](measurements/gate-original-city-clearance.json)
+
+重建程序纹理、复算弄内朝外的两个摄站、生成三张原视角模型图及一张合图，分别运行以下命令。
+
+```sh
+python source/gate_finishes.py
+python measurements/fit_inside.py measurements/gate-return-sections.json
+python measurements/check_gate_views.py /tmp/meiquan-gate/full-source.glb /tmp/meiquan-gate/controls.json
+python measurements/check_nine_cameras.py /tmp/meiquan-gate/full-source.glb /tmp/meiquan-gate/frames.json
+python measurements/render_gate_views.py /tmp/meiquan-gate/full-source.glb /tmp/meiquan-gate/views --width 512
+```
+
+[独立模型页与下载](../../../meiquan-villas-inscribed-entrance.html)

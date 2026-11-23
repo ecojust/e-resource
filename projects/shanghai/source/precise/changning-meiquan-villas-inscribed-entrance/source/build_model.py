@@ -7,15 +7,28 @@ HERE=Path(__file__).resolve().parent
 MEASUREMENTS=HERE.parent/'measurements'
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder
+from photo_architecture import Builder as BaseBuilder
 sys.path.insert(0,str(HERE))
 from name_plaques import add_plaques
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+import gate_finishes
+
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in gate_finishes.STEMS:gate_finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        BaseBuilder.save(self,path,metadata)
+        return gate_finishes.writer.embed_normals(path)
+
 ID='changning-meiquan-villas-inscribed-entrance'
 BRICK='Meiquan | pale gate brick';STONE='Meiquan | cut plaque stone';IRON='Meiquan | painted black iron'
 OLD='Meiquan | grey heritage tablet';WORDS='Meiquan | dark letter recess';LAMP='Meiquan | opal globe';CORD='Meiquan | bronze lamp seat'
 PALETTE={BRICK:{'color':[.49,.445,.364],'roughness':.85},STONE:{'color':[.43,.352,.266],'roughness':.88},
          OLD:{'color':[.28,.275,.247],'roughness':.85},IRON:{'color':[.035,.031,.025],'roughness':.66,'metallic':.48},
          WORDS:{'color':[.041,.031,.018],'roughness':.95},LAMP:{'color':[.78,.75,.575],'roughness':.36},CORD:{'color':[.21,.165,.082],'metallic':.43}}
+PALETTE.update(gate_finishes.PALETTE)
 META={'id':ID,'name':'新华路593弄梅泉别墅东北入口刻名门柱与铁门','address':'上海市长宁区新华路593弄东北口','heritage_id':'sh-historic-b3-116','official_id':'3M018','geometry_license':'MIT','texture_license':'MIT','photos_embedded':False,'source':'http://sh.people.com.cn/n2/2021/1004/c134768-34943565.html','photo_source':'https://m.thepaper.cn/baijiahao_8356585','viewer_page':'meiquan-villas-inscribed-entrance.html','camera_views':json.loads((HERE/'cameras.json').read_bytes()),'scope':'The named public street gate, walk-through gate, early open paired leaves, globe finials and adjoining fence panel as documented in 2013–15. A geographically registered 2020 comparison records a different cap and closed-gate state. No attribution of a villa interior or all twenty houses.'}
 
 def block(b,label,mat,x1,x2,y1,y2,z1,z2):
@@ -39,7 +52,10 @@ def field(b,tag,origin,tangent,width,top,lod,leaf=True,sweep=True):
     def rail(t0,t1,z0,z1,d,label):
         b.box(xyz((t0+t1)/2,(z0+z1)/2),[t1-t0,d,z1-z0],IRON,basis=([*u,0],[*v,0],[0,0,1]),label=tag+' / '+label)
     def profile(t):
-        frac=t/width;return top+(.21*math.sin(math.pi*frac)+.121*frac if sweep else 0)
+        frac=t/width
+        if tag.startswith('main iron'):
+            return top+.079*math.sin(math.pi*frac)+.43*(1-math.cos(math.pi*frac))/2
+        return top+(.21*math.sin(math.pi*frac)+.121*frac if sweep else 0)
     low=.098 if leaf else .53
     for i,t in enumerate([.026,width-.026]):
         rail(t-.022,t+.022,low,profile(t)+.075,.061,'edge stile '+str(i+1))
@@ -71,15 +87,36 @@ def add_building(b,lod=False):
     block(b,'plain gate pier / heritage panel',OLD,-d-.247,-d+.247,-.032,0,1.77,2.25)
     add_plaques(b,STONE,WORDS,lod)
     kw=d-w;segment=kw/2-.031
-    for n,x,angle in [('left',-d+w/2+.015,88.),('right',-w/2-.015,94.)]:
+    for n,x,angle in [('left',-d+w/2+.015,98.4),('right',-w/2-.015,93.4)]:
         th=math.radians(angle);direction=[math.cos(th)*(1 if n=='left' else -1),math.sin(th)]
-        field(b,'main iron leaf '+n,[x,.36],direction,segment,2.02,lod)
+        field(b,'main iron leaf '+n,[x,.73],direction,segment,2.08,lod)
     field(b,'pedestrian gate',[walk+.218,.34],[1,0],(-d-w/2)-(walk+.218)-.020,2.02,lod)
     xend=4.62
     pier(b,xend,.53,2.63,False,'fence outer pier',lod)
     block(b,'street fence / brick curb',BRICK,w/2,xend-.265,.10,.48,0,.49)
     block(b,'street fence / curb cap',STONE,w/2,xend-.265,.07,.50,.49,.54)
     field(b,'street fence',[w/2+.014,.29],[1,0],xend-.265-w/2-.026,2.32,lod,False,False)
+
+    # The first garden-side return is visible behind the inscribed pier from both
+    # February stations inside the lane. Its end is surveyed independently.
+    ctr=np.array([.75,4.81]);start=np.array([.18,w+.012])
+    vec=ctr-start;length=float(np.linalg.norm(vec));u=vec/length;v=np.array([-u[1],u[0]])
+    def span(label,a,bottom,top,depth,mat):
+        mid=start+u*(a*.5)
+        b.box([*mid,(bottom+top)/2],[a,depth,top-bottom],mat,
+              basis=([*u,0],[*v,0],[0,0,1]),label='garden return / '+label)
+    span('brick curb',length-.20,0,.48,.33,BRICK)
+    span('overhanging curb cap',length-.20,.48,.55,.37,STONE)
+    field(b,'garden return railing',start,u,length-.21,1.59,lod,False,False)
+    b.box([*ctr,.75],[.45,.43,1.50],BRICK,basis=([*u,0],[*v,0],[0,0,1]),label='garden return / first short brick pier')
+    b.box([*ctr,1.55],[.53,.51,.10],STONE,basis=([*u,0],[*v,0],[0,0,1]),label='garden return / visible post cap')
+    for name,x,sgn in [('left',-d+w/2,+1),('right',-w/2,-1)]:
+        for i,z in enumerate([.33,1.84]):
+            b.lathe((x+sgn*.023,.73),[(z,.026),(z+.11,.026),(z+.125,.033)],IRON,
+                    8 if lod else 14,name+f' hinge / vertical pin {i+1}')
+    # The plaque is held clear of the brick face; cast fasteners are seen at the corners.
+    for corner,(x,z) in enumerate([(-d-.213,2.218),(-d+.213,2.218),(-d-.213,1.801),(-d+.213,1.801)]):
+        b.tube([(x,-.034,z),(x,-.044,z)],.011,IRON,8 if lod else 14,f'heritage panel / fixing {corner+1}')
 
 def main():
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('path',type=Path,nargs='?');cli.add_argument('--output',type=Path);cli.add_argument('--lod',action='store_true');a=cli.parse_args();out=a.output or a.path
