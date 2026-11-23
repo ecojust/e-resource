@@ -27,6 +27,7 @@ class Model:
     def __init__(self, detail):
         self.parts = defaultdict(lambda: defaultdict(list))
         self.detail = detail
+        self.rail_newels = set()
         self.arc_samples = {'raw': 26, 'full': 18, 'lod': 8}[detail]
 
     def quad(self, part, mat, a, b, c, d):
@@ -126,6 +127,11 @@ class Model:
                 self.quad(part+'.balusters','dressed',*ring0[::-1])
                 self.quad(part+'.balusters','dressed',*ring1)
         for s in [a,b]:
+            # Contiguous panels share their structural end post.
+            key=(round(s,6),round(depth,6),round(z_at(s),6))
+            if key in self.rail_newels:
+                continue
+            self.rail_newels.add(key)
             self.strip(part+'.newels','stone',s-.13,s+.13,depth-.11,depth+.18,z_at(s),z_at(s)+.99)
             self.strip(part+'.newels','dressed',s-.17,s+.17,depth-.15,depth+.22,z_at(s)+.93,z_at(s)+1.035)
 
@@ -140,16 +146,16 @@ class Model:
             self.strip('04_Basement_plinth','plinth',a,b,-2.63,-2.33,0,.17,3)
         for a,b in [(-2.05,-1.19),(.11,.37),(1.27,2.05)]:
             self.strip('04_Basement_front_piers','plinth',a,b,-2.63,-2.33,0,BASE-.14,3)
-        self.strip('05_Landing_slab','paving',-2.05,2.05,-2.74,.12,BASE-.17,BASE,14)
-        self.rail('05_Landing_rail',-2.04,2.04,-2.60,lambda s:BASE,15)
+        self.strip('05_Landing_slab','paving',-2.05,2.05,-2.74,-.02,BASE-.17,BASE,14)
+        self.rail('05_Landing_rail',-2.05,2.05,-2.60,lambda s:BASE,15)
         for side,label in [(-1,'west'),(1,'east')]:
             p='06_'+label+'_stair'
             n=15; inner=2.05; end=6.85; tread=(end-inner)/n
             for i in range(n):
                 a,b=sorted((side*(inner+i*tread),side*(inner+(i+1)*tread)))
                 top=BASE*(1-i/n)
-                self.strip(p+'.risers','stone',a,b,-2.67,.04,0,top-.063,2)
-                self.strip(p+'.treads','paving',a-.013,b+.013,-2.718,.07,top-.063,top,2)
+                self.strip(p+'.risers','stone',a,b,-2.67,-.02,0,top-.063,2)
+                self.strip(p+'.treads','paving',a,b,-2.718,-.02,top-.063,top,2)
             lo,hi=sorted((side*inner,side*end))
             self.rail(p+'.raking_rail',lo,hi,-2.60,lambda x: BASE*(1-(abs(x)-inner)/(end-inner)),12)
         # Three large open arches on the lower level, four structurally continuous piers.
