@@ -20,11 +20,14 @@ BASE = Path(__file__).absolute().parent.parent / 'measurements'
 
 def project_to_surface(u, v, depth, coefficients):
     """Intersect a garden image ray with a plane a given distance outside the wall."""
-    u0, v0, scale, slope, dv, ds, yaw, roll = coefficients
+    if len(coefficients) not in (8, 10):
+        raise ValueError('A registered garden camera requires eight or ten coefficients')
+    u0, v0, scale, slope, dv, ds, yaw, roll = coefficients[:8]
+    z_scale, z_perspective = coefficients[8:] or (1., 0.)
     u -= u0
     v -= v0
-    a, b = u * yaw - scale, -roll
-    c, d = v * yaw + roll, scale
+    a, b = u * yaw - scale, u * z_perspective - roll
+    c, d = v * yaw + roll, v * z_perspective + scale * z_scale
     h = ds * depth - u * (1 - slope * depth)
     k = dv * depth - v * (1 - slope * depth)
     det = a * d - b * c

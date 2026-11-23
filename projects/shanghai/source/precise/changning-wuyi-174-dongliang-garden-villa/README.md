@@ -23,3 +23,22 @@ python measurements/check-wuyi-road-registration.py
 临街一面以两扇上层窗所在的墙面定比例。木格山尖前有深挑檐。入口一侧的阳台平直，三扇底层窗一侧向外折转，券门上方的石托向内收曲。两处白色遮阳篷上的英文店名按照片重新绘制。朝街的较低屋翼还有一组平顶老虎窗。北庭石板和修剪灌木的范围取自2025年入口照片。
 
 花园一面的大老虎窗有斜屋顶，小老虎窗覆浅坡顶。两处窗台前各留一段低瓦面，与左右两片大坡屋面分别交接。开业照片中另可辨凸窗玻璃、玻璃门上的布篷和两侧长短不同的阳台。阳台后墙、外凸玻璃、挑檐与主脊各有不同的进深。近照可以量门框和栏杆，远屋脊须结合航片与街侧的山尖高度估计。按525、650像素两种试用焦距反投，交叉屋脊在所取进深处约高9.6至10.3米。东、西两侧被房舍和树木遮住的部位仅保留能确定的大体轮廓。[花园侧照片测点](measurements/south-garden-two-photographs.json) · [屋顶19点与焦距、进深变化](measurements/garden-roof-nineteen-landmarks.json) · [东侧凸窗](measurements/south-oriel-image-observations.json)
+
+两幅花园照片都能看见红瓦滴水沿和三块白色门篷。用滴水沿的两端和中部校核两站后，模型把南檐放在门窗墙面前约0.30米、离地约5.52米。黑色雨槽在瓦沿下方，白色门篷再低一层。较早的近景试模有三处门篷被屋顶遮盖；记录中保留旧相机和远屋脊上的留出点，可复查调整前后的差别。[街侧与花园侧的相片登记](measurements/south-garden-two-photographs.json)
+
+## 重建与实测
+
+从本目录运行以下命令。Python 需要 NumPy、Shapely 2.1 与 Pillow。网页打包使用 Node.js 和 gltfpack，可编辑工程使用 Blender。最后一条命令由 Chromium 在本地打开项目页面，实际切换近远模型和机位并下载四件文件。
+
+```sh
+python measurements/export_checked_model.py full --out output/exports
+python measurements/export_checked_model.py lod --out output/exports
+python measurements/package-web-model.py output/exports output/models output/audit
+python source/build_blender_source.py output/exports/full-source.glb output/models/changning-wuyi-174-dongliang-garden-villa-editable.blend output/audit/native-reopened.json
+python measurements/register-native.py output/models output/audit/native-reopened.json
+python measurements/render-villa-stations.py output/exports/full-source.glb output/previews
+python measurements/check-street-rays.py output/exports output/audit/street-three-models.json
+python measurements/check-viewer.py output/ui
+```
+
+网页验收从项目的 `assets/models/candidates/changning-wuyi-174-dongliang-garden-villa/` 目录加载模型和清单。替换网页文件时，应将 `output/models/` 中的五件一起放入该目录。[浏览花园住宅](../../../wuyi-174-dongliang-garden-villa.html) · [模型复核](../../../data/audit/wuyi-174-dongliang-garden-villa-v1/README.md)

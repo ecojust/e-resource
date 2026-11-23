@@ -18,9 +18,10 @@ renderer=shared['renderer']
 
 
 def garden_camera(c):
-    u,v,s,k,dv,ds,yaw,r=c
-    den=np.array([yaw,-k,0.,1.])
-    local=np.stack([u*den+[s,ds,r,0.],v*den+[-r,dv,-s,0.],den])
+    u,v,s,k,dv,ds,yaw,r=c[:8]
+    aspect,pitch=c[8:] if len(c)==10 else (1.,0.)
+    den=np.array([yaw,-k,pitch,1.])
+    local=np.stack([u*den+[s,ds,r,0.],v*den+[-r,dv,-s*aspect,0.],den])
     transform=np.array([[-1.,0.,0.,9.55],[0.,1.,0.,-13.60],[0.,0.,1.,-2.96],[0.,0.,0.,1.]])
     return local@transform
 

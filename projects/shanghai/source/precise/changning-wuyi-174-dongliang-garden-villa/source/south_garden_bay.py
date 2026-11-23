@@ -1,5 +1,6 @@
 """South garden storefront and balcony photographed at the October 2024 opening."""
 from math import cos, hypot, pi, sin, sqrt
+from pathlib import Path
 
 from shapely.geometry import LineString, Polygon, box
 from shapely.ops import unary_union
@@ -8,10 +9,33 @@ from wuyi_fabric import DARK, DOOR, FABRIC, FRAME, IRON, SOFFIT, STONE, WALL, pa
 
 SHOP_GLASS = '174 | south shop glazing'
 DOOR_GLASS = '174 | south timber door glazing'
+FASCIA_FINISH = '174 | grey streaked balcony facing'
 PALETTE = {
     SHOP_GLASS: paint((150, 121, 79), .22, .16),
     DOOR_GLASS: paint((79, 67, 49), .24, .17),
+    FASCIA_FINISH: {'color': [1., 1., 1.], 'roughness': .94,
+                    'texture': str(Path(__file__).with_name('south-garden-grey-facing.png'))},
 }
+
+
+def make_facing_texture(path):
+    """Original repeat pattern for the fine upright streaks visible on the balcony fascia."""
+    import numpy as np
+    from PIL import Image
+    rng = np.random.default_rng(174208)
+    size = 192
+    row, col = np.mgrid[:size, :size]
+    tone = rng.normal(0., .85, (size, size))
+    # Circular distances keep the repeat continuous around the segmented stone front.
+    for number in range(48):
+        centre = rng.uniform(0, size)
+        offset = (col - centre + size / 2) % size - size / 2
+        width = rng.uniform(.8, 2.8)
+        height = .64 + .36 * np.cos(row * 2 * pi / size + rng.uniform(0, 2*pi))
+        tone -= rng.uniform(1.8, 7.0) * np.exp(-.5 * (offset / width) ** 2) * height
+    tone -= tone.mean()
+    rgb = np.clip(np.array([158., 157., 146.]) + tone[:, :, None], 0, 255)
+    Image.fromarray(np.rint(rgb).astype('uint8')).save(path, optimize=True)
 
 HALF_CURVE = 2.36947
 SHOULDER = 1.78127
@@ -95,7 +119,7 @@ def upper_doors(b, layout, deck):
             window_grid(b,a,c,box(start,base+.024,end,head-.035),2,6,thick=.029,stile=.017,
                         material=DOOR,glass=DOOR_GLASS,label=label+' leaf '+str(j+1))
         # Sloping fabric with visible lower hanging hem. Far side behind the fabric is unrecorded.
-        hem = deck + 1.833
+        hem = deck + 1.71114
         profile = Polygon([(0,head+.068),(.33,hem+.034),(.33,hem),
                            (.30,hem),(.30,hem+.026),(0,head+.04)])
         width = DOOR_WIDTH * 1.15
@@ -225,7 +249,7 @@ def add_south_bay(b,lod=False,layout=None):
     arc=[(x,round_edge(x))for x in [-HALF_CURVE+2*HALF_CURVE*i/n for i in range(n+1)]]
     outline=[(left,0),(left,SHOULDER),*arc,(right,SHOULDER),(right,0)]
     shape=Polygon([local_plan(x,y,layout) for x,y in outline])
-    slab(b,shape,deck-FASCIA,deck-.025,STONE,'south balcony continuous curved fascia')
+    slab(b,shape,deck-FASCIA,deck-.025,FASCIA_FINISH,'south balcony continuous curved fascia')
     slab(b,shape,deck-.025,deck,STONE,'south balcony rounded coping')
     slab(b,shape.buffer(-.028,join_style='mitre'),deck-FASCIA-.018,deck-FASCIA,SOFFIT,'south balcony soffit')
     end=2.82

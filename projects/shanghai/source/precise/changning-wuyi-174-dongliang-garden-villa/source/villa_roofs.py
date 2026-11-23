@@ -98,7 +98,8 @@ def installed_roofs(b,facets,footprint,lod):
                 if outline.covers(Point((p[0]+q[0])/2+.02*nx,(p[1]+q[1])/2+.02*ny)):
                     nx,ny=-nx,-ny
                 rim=Polygon([(x+s*nx,y+s*ny)for (x,y),s in [(p,.025),(q,.025),(q,-.05),(p,-.05)]])
-                plane_skin(b,rim,-.178,.02,slope,VERGE,name+' fascia')
+                fascia_base=-.27 if name=='north and garden gables' and abs(dy)<.005 else -.178
+                plane_skin(b,rim,fascia_base,.02,slope,VERGE,name+' fascia')
                 if abs(a*dx+c*dy)<.05*length:
                     b.tube([(x+nx*.04,y+ny*.04,a*x+c*y+k-.137)for x,y in (p,q)],.055,GUTTER,7 if lod else 12,name+' gutter')
     for i,(_,first,p) in enumerate(panels):
@@ -120,30 +121,32 @@ def dormer(b,x0,x1,front,back,sill,head,groups,hipped,lod,name):
     north=back>front
     a,c=((x0,front),(x1,front)) if north else ((x1,front),(x0,front))
     width=x1-x0;edge=.215;gap=.19
+    garden=not north
+    roof_base=(.47 if hipped else .53) if garden else .24
     span=(width-2*edge-gap*(len(groups)-1))/len(groups)
     cuts=[box(edge+i*(span+gap),sill,edge+i*(span+gap)+span,head)for i in range(len(groups))]
-    wall(b,box(0,sill-.20,width,head+.18).difference(unary_union(cuts)),a,c,0,.16,WALL,name+' window wall')
+    wall(b,box(0,sill-.20,width,head+roof_base-.08).difference(unary_union(cuts)),a,c,0,.16,WALL,name+' window wall')
     for i,(opening,cols) in enumerate(zip(cuts,groups)):
         glazing(b,opening,a,c,.065,name+' sash '+str(i+1),cols,2)
     iy=1 if north else -1
     for ix in (x0,x1):
         lengths=abs(back-front)
-        height_back=head+.04 if hipped else head+.12
-        cheek=Polygon([(0,sill-.18),(lengths,head-.17),(lengths,height_back),(.001,head+.15)])
+        height_back=head+roof_base-.09
+        cheek=Polygon([(0,sill-.18),(lengths,head-.17),(lengths,height_back),(.001,head+roof_base-.097)])
         pivot=(ix,front);end=(ix,back)
         wall(b,cheek,pivot,end,-.064,.064,TIMBER,name+' boarding return')
     if hipped:
         cap=box(x0-.26,min(front-.32*iy,back),x1+.26,max(front-.32*iy,back));lo,fy,hi,by=cap.bounds
-        h=head+.18;s=.77
+        h=head+roof_base;s=.95
         planes=[(s,0.,h-s*lo),(-s,0.,h+s*hi),(0.,s*iy,h-s*iy*(front-.32*iy))]
         installed_roofs(b,hip(name+' hip cap',cap,planes),box(x0,min(back,front),x1,max(front,back)),lod)
     else:
         cap=box(x0-.28,min(front-.36*iy,back),x1+.28,max(front-.36*iy,back))
-        plane=(0.,.085*iy,head+.24-.085*iy*front)
+        plane=(0.,.085*iy,head+roof_base-.085*iy*front)
         plane_skin(b,cap,-.14,-.055,plane,SOFFIT,name+' pale dormer soffit')
         plane_skin(b,cap,-.055,.04,plane,VERGE,name+' shallow projecting cap')
         for x in (x0+.08,x1-.08,(x0+x1)/2):
-            b.tube([(x,front-.015*iy,head-.17),(x,front-.28*iy,head+.10)],.035,TIMBER,6,name+' exposed eave stay')
+            b.tube([(x,front-.015*iy,head-.17),(x,front-.28*iy,head+roof_base-.14)],.035,TIMBER,6,name+' exposed eave stay')
 
 
 def chimney(b,x,y,width,depth,low,top,count,lod,name):
@@ -176,29 +179,34 @@ def chimney(b,x,y,width,depth,low,top,count,lod,name):
 
 def add_roofs(b,lod):
     facets=triangular('north and garden gables','x',(-.71,RIDGE_X,7.66),(NORTH_EAVE,14.30),5.84,10.54)
-    wing=box(5.08,-.65,15.78,14.24)
-    north_eave=6.32;south_eave=5.10;crest=9.99;spine=7.52
-    s=(crest-north_eave)/(spine+.65);t=(crest-south_eave)/(14.24-spine)
-    facets+=hip('west cross wing',wing,[(0,s,north_eave+s*.65),(0,-t,south_eave+t*14.24),
+    # The ridge sits 0.12 m east of the midpoint of the photographed rakes.
+    # Across the west end of the north wall the underside clears the wall plate.
+    west_pitch=(10.54-6.12)/(7.66-RIDGE_X)
+    zone,foot,_=facets[1]
+    facets[1]=(zone,foot,(-west_pitch,0.,10.54+west_pitch*RIDGE_X))
+    wing=box(5.08,-.65,15.78,13.90)
+    north_eave=6.32;south_eave=5.52;crest=10.42;spine=7.52
+    s=(crest-north_eave)/(spine+.65);t=(crest-south_eave)/(13.90-spine)
+    facets+=hip('west cross wing',wing,[(0,s,north_eave+s*.65),(0,-t,south_eave+t*13.90),
                                         (-.98,0,north_eave+.98*15.78)])
     # The garden dormers cut through the common slope. In front of each sash
     # a short tiled apron connects its lower sill to the uninterrupted eave.
     # Their visible fronts and aprons are separately identifiable in photo 00.
     apron_faces=[]
-    for lo,hi,front,back,sill in [(11.10,12.91,11.98,9.29,6.37),(6.82,9.93,12.05,9.04,6.10)]:
-        cut=box(lo-.018,back,hi+.018,14.24+.002)
+    for lo,hi,front,back,sill in [(11.10,13.02,11.98,9.29,6.73),(6.61,9.92,12.05,9.04,6.36)]:
+        cut=box(lo-.018,back,hi+.018,13.90+.002)
         facets=[(n,shape.difference(cut),plane) if n=='west cross wing' else (n,shape,plane)
                 for n,shape,plane in facets]
-        slope=(sill-.075-south_eave)/(14.24-front)
-        apron_faces.append(('garden dormer apron',box(lo-.018,front,hi+.018,14.24),
-                            (0.,-slope,south_eave+slope*14.24)))
+        slope=(sill-.075-south_eave)/(13.90-front)
+        apron_faces.append(('garden dormer apron',box(lo-.018,front,hi+.018,13.90),
+                            (0.,-slope,south_eave+slope*13.90)))
     installed_roofs(b,facets+apron_faces,WALL_PLAN,lod)
     dormer(b,8.13,12.39,.57,5.00,7.18,8.35,[2,3],False,lod,'street dormer')
-    dormer(b,11.10,12.91,11.98,9.29,6.37,7.34,[3],False,lod,'small garden dormer')
-    dormer(b,6.82,9.93,12.05,9.04,6.10,7.07,[2,2],True,lod,'hipped garden dormer')
+    dormer(b,11.10,13.02,11.98,9.29,6.73,7.93,[3],False,lod,'small garden dormer')
+    dormer(b,6.61,9.92,12.05,9.04,6.36,7.59,[2,2],True,lod,'hipped garden dormer')
     chimney(b,3.54,1.28,.55,.58,10.14,11.63,1,lod,'gable ridge chimney')
-    chimney(b,8.34,7.30,1.49,.70,9.26,11.35,3,lod,'triple flue wing chimney')
-    chimney(b,14.17,8.76,.43,.48,7.20,9.04,1,lod,'garden west chimney')
+    chimney(b,8.34,7.30,1.49,.70,9.26,11.78,3,lod,'triple flue wing chimney')
+    chimney(b,14.40,8.76,.43,.48,7.20,9.53,1,lod,'garden west chimney')
 
 
 if __name__=='__main__':

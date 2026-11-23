@@ -49,8 +49,18 @@ def add_envelope(b,lod=False):
     # north-side windows has been inferred on the obscured side elevation.
     a,c=NORTH_WING[3],(NORTH_WING[3][0],13.60)
     length=c[1]-a[1]
-    end=Polygon([(0,0),(length,0),(length,5.60),(length-1.78,6.82),(.48,6.82),(0,6.69)])
+    pitch=(10.42-5.52)/(13.90-7.52)
+    hip_at_wall=6.32+.98*(15.78-a[0])
+    meeting=13.90-(hip_at_wall-5.52)/pitch-a[1]
+    end=Polygon([(0,0),(length,0),(length,5.52+pitch*(13.90-c[1])-.13),
+                 (meeting,hip_at_wall-.13),(0,hip_at_wall-.13)])
     wall(b,end,a,c,0,.23,WALL,'west hipped return')
+    # The south gable rises above the cross wing. Its masonry closes the
+    # exposed strip between the two roof heights at the east end of the large dormer.
+    wall(b,Polygon([(0,5.24),(.524,5.24),(.524,6.98),(0,6.44)]),
+         (W,13.60),(W-1.,13.60),0.,.22,WALL,'south gable junction spandrel')
+    wall(b,Polygon([(0,6.36),(2.15,5.24),(2.15,6.44),(0,6.44)]),
+         (W,11.45),(W,13.60),0.,.20,WALL,'south gable exposed side below verge')
     for y in (.02,13.59):
         a,c=((0,y),(0,y-1)) if y>6 else ((0,y+.59),(0,y))
         for i in range(74):
@@ -58,11 +68,18 @@ def add_envelope(b,lod=False):
             if y<6:r=box(.59-span,z,.59,z+.073)
             else:r=box(0,z,span,z+.073)
             wall(b,r,a,c,-.012,.009,BRICK,'east return staggered quoin')
+    # Red brick shows through the render at the west wing end and at the
+    # stepped corner just east of the central balcony in the 2024 garden view.
+    for x,high in [(15.13,5.51),(6.66,6.40)]:
+        a,c=(x,13.60),(x-1.,13.60)
+        for i in range(int(high/.087)):
+            z=.015+i*.087;width=.265 if i%2 else .124
+            wall(b,box(0,z,width,z+.075),a,c,-.022,.012,BRICK,'garden staggered brick quoin')
     pipe(b,7.98,1.54,-.10,6.89,'street downpipe with offset head',lod)
     # Small balcony on the west of the curved garden projection as seen behind the open gate.
     a,c=(15.13,13.60),(12.44,13.60)
     openings=[(box(1.00,2.98,2.55,4.58),2,2,'upper double casement')]
-    pierced_face(b,a,c,5.57,openings,'garden west end')
+    pierced_face(b,a,c,5.31,openings,'garden west end')
     left,right=12.22,14.03
     slab(b,box(left,13.58,right,14.03),2.69,2.90,STONE,'short garden balcony')
     for p,q in [((left,13.60),(left,14.01)),((left,14.01),(right,14.01)),((right,14.01),(right,13.60))]:

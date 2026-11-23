@@ -22,7 +22,7 @@ META=dict(id=ID,name='武夷路174号花园住宅',address='上海市长宁区�
           photo_source='https://www.chinastrategy.org/2025/09/12/maison-dongliang-a-style-sanctuary-in-shanghai/',
           url='https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
           photos_embedded=False,third_party_models_embedded=False,geometry_license='MIT, original reconstruction',
-          texture_license='MIT, original procedural roughcast and clay roof tiles',license_url='https://opensource.org/license/mit',
+          texture_license='MIT, original procedural roughcast, clay roof tiles and stone balcony facing',license_url='https://opensource.org/license/mit',
           copyright='Original geometry and procedural architectural finishes, MIT. Reference photographs are credited in the source notes.')
 
 
@@ -30,7 +30,7 @@ def add_building(b,lod=False):
     add_street_gable(b,lod)
     add_north_balcony(b,lod)
     add_envelope(b,lod)
-    add_south_bay(b,lod,{'south_eave_z':5.57,'south_bay_soffit_z':5.22})
+    add_south_bay(b,lod,{'south_eave_z':5.48,'south_bay_soffit_z':5.22})
     add_south_oriel(b,lod)
     add_roofs(b,lod)
     add_north_garden(b,lod)

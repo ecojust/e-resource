@@ -5,9 +5,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 OBSERVATIONS = [
-    ("garden tile drip west", 309, 204, 0.64),
-    ("garden tile drip centre", 521, 205, 0.64),
-    ("garden tile drip east", 626, 204, 0.64),
+    ("garden tile drip west", 309, 204, 0.30),
+    ("garden tile drip centre", 521, 205, 0.30),
+    ("garden tile drip east", 626, 204, 0.30),
     ("cross wing ridge W", 493, 114, -6.08),
     ("cross wing ridge E", 644, 113, -6.08),
     ("small dormer front lip W", 397, 129, -1.38),
@@ -29,10 +29,11 @@ OBSERVATIONS = [
 
 def point_at_depth(camera, u, v, out):
     """Return house X, Y, Z at the given outward offset from the garden wall."""
-    u0,v0,scale,k,dv,ds,yaw,roll=camera
+    u0,v0,scale,k,dv,ds,yaw,roll=camera[:8]
+    aspect,pitch=camera[8:] if len(camera)==10 else (1.,0.)
     u-=u0
     v-=v0
-    a,b,c,d=scale-u*yaw,roll,-roll-v*yaw,-scale
+    a,b,c,d=scale-u*yaw,roll-u*pitch,-roll-v*yaw,-scale*aspect-v*pitch
     e=u*(1-k*out)-ds*out
     f=v*(1-k*out)-dv*out
     det=a*d-b*c

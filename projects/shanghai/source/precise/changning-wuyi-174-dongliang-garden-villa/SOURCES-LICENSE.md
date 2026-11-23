@@ -6,3 +6,5 @@
 - SmartShanghai 的场所页列明“武夷路168号174号别墅”。首图中的临时展览布幔遮住一部分下层窗，仍可见街侧阳台和屋顶。图像地址的日期仅作为发布线索。[场所与照片](https://www.smartshanghai.com/venue/34706/maison_dongliang)
 
 本目录发布独立测点、计算结果和重建源码。摄影图像的权利由原作者保留。新写源码与几何采用项目 MIT 许可。[项目许可](../../../../../LICENSE)
+
+2020年百度地图街景用于交会临街山墙上层两窗及烟囱的位置。Esri World Imagery Wayback 的四期已注明拍摄日期的航片用于辨认路南房屋轮廓和屋顶。测量记录列有全景站号、瓦片地址、服务返回的摄影日期、分辨率和文件散列。摄影像素保留在原服务。项目公开的拉毛墙面、黏土瓦和灰色阳台石带纹理均由源码独立生成。[街景与跨期航片定位](measurements/placement-identity.json) · [原始服务记录](measurements/tile-date-responses.json)
