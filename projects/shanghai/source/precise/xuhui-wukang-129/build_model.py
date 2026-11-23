@@ -84,20 +84,22 @@ def glass_window(f, shape, cols, rows, label, arch=0., blind=False):
         'facade_origin_enu':f.center.tolist(),'facade_u_enu':f.t.tolist(),'facade_outward_enu':f.n.tolist()}
 
 
-def tile_profile(r=.062,t=.012):
-    ang=np.linspace(0,math.pi,7)
+def tile_profile(r=.062,t=.012,segments=7):
+    ang=np.linspace(0,math.pi,segments)
     return Polygon([(r*math.cos(a),.025+r*math.sin(a)) for a in ang]+[((r-t)*math.cos(a),.025+(r-t)*math.sin(a)) for a in reversed(ang)])
 
 
-def add_tile(builder, start, down, length, side, label, pale=False):
+def add_tile(builder, start, down, length, side, label, pale=False, low_detail=False):
     side=np.asarray(side);side/=np.linalg.norm(side)
     down=np.asarray(down);down/=np.linalg.norm(down)
     normal=np.cross(down,side);normal/=np.linalg.norm(normal)
     if normal[2]<0:side=-side;normal=-normal
     def mapper(x,h,d):return np.asarray(start)+side*x+normal*(h+.012*d/length)+down*d
-    builder.prism(tile_profile(),0,length,mapper,'clay tile varied' if pale else 'clay tile',label)
+    builder.prism(tile_profile(segments=4 if low_detail else 7),0,length,mapper,'clay tile varied' if pale else 'clay tile',label)
     # Concave receiving pan between this cover and the next, also finite thickness.
     profile=[(-.072,.032),(-.04,.014),(0,.008),(.04,.014),(.072,.032)]
+    if low_detail:
+        profile=profile[::2]
     pan=Polygon(profile+[(x,z-.008) for x,z in reversed(profile)])
     builder.prism(pan,0,length,lambda x,h,d:mapper(x+.07,h,d),'clay tile',label+'-receiving-pan')
 
@@ -121,8 +123,10 @@ def check_parts(builder):
     return {'passed':all(r['passed'] for r in rows),'scope':'Each part FLOAT32 position-welded: closed oriented shell, positive volume. Separate architectural parts intentionally meet/overlap; no claim of global Boolean union.', 'parts':rows}
 
 
-def build(output):
-    output.mkdir(parents=True,exist_ok=True)
+def build(output, *, builder_factory=Builder, archivolt=None, balcony_doors=None, low_detail=False):
+    """Generate the original published design or supply newly measured details for its two openings."""
+    if output is not None:
+        output.mkdir(parents=True,exist_ok=True)
     source=json.loads((HERE/'geometry-input.json').read_text())
     metric=json.loads((HERE/'calibration/calibration-independent.json').read_text())
     O=np.asarray(source['front_edge']['center_local_east_north_m'])
@@ -131,7 +135,7 @@ def build(output):
     def plan(poly):return Polygon([point(x,y,0)[:2] for x,y in poly.exterior.coords],[[point(x,y,0)[:2] for x,y in r.coords] for r in poly.interiors])
     original=Polygon(source['polygon_local_east_north'])
     uvpoly=Polygon([(float((np.asarray(v)-O)@X),float((np.asarray(v)-O)@Y)) for v in source['polygon_local_east_north']])
-    b=Builder({'cream plaster':{'color':[.76,.735,.64],'roughness':.91},'gray render':{'color':[.40,.43,.425],'roughness':.85},
+    b=builder_factory({'cream plaster':{'color':[.76,.735,.64],'roughness':.91},'gray render':{'color':[.40,.43,.425],'roughness':.85},
         'red brown joinery':{'color':[.24,.055,.035],'roughness':.62},'dark reflection glass':{'color':[.075,.11,.12],'roughness':.30,'metallic':.12},
         'clay tile':{'color':[.34,.135,.085],'roughness':.88},'clay tile varied':{'color':[.42,.19,.12],'roughness':.88},
         'painted white metal':{'color':[.72,.72,.66],'roughness':.65},'address green':{'color':[.02,.23,.12],'roughness':.55},'brass fitting':{'color':[.40,.28,.10],'roughness':.46,'metallic':.55}})
@@ -203,10 +207,13 @@ def build(output):
     assert front_clean.symmetric_difference(front_union).area<1e-10
     b.prism(front_clean,-.30,0,lambda x,z,d:point(x,-d,z),'cream plaster','ACF-single-union-front-with-original-openings')
     for i,shape in enumerate(flanks):records.append(glass_window(F,shape,1,3,f'entry-flank-{i}'))
-    F.prism(door.buffer(.19,join_style=2).difference(door),-.015,.075,'gray render','thick-arched-door-surround')
-    for n in range(3):
-        ring=door.buffer(.04+n*.045,join_style=2).difference(door.buffer(.027+n*.045,join_style=2))
-        F.prism(ring,.075,.092,'gray render','nested-arch-moulding')
+    if archivolt is None:
+        F.prism(door.buffer(.19,join_style=2).difference(door),-.015,.075,'gray render','thick-arched-door-surround')
+        for n in range(3):
+            ring=door.buffer(.04+n*.045,join_style=2).difference(door.buffer(.027+n*.045,join_style=2))
+            F.prism(ring,.075,.092,'gray render','nested-arch-moulding')
+    else:
+        archivolt(b,F,door,low_detail)
     F.prism(door.buffer(-.015),-.09,-.045,'red brown joinery','red-arched-entry-leaf')
     # Inset panel shape and restrained visible iron/brass fittings.
     F.prism(opening(door_u,.34,.71,1.05,.08),-.044,-.034,'red brown joinery','entry-raised-lower-panel')
@@ -253,7 +260,10 @@ def build(output):
         curved_prism(b,box(-radius*math.pi/2,z,radius*math.pi/2,z+h),0,d,curved,'gray render','E-curved-layered-cornice')
     # Flat joinery tangent to the circle; its sides penetrate the thick real jamb.
     E=facade((cx-.65,cy-radius+.02),(cx+.65,cy-radius+.02),'E-upper-arched-door')
-    records.append(glass_window(E,hole,2,1,'upper-fanlight-door',.54,blind=True))
+    if balcony_doors is None:
+        records.append(glass_window(E,hole,2,1,'upper-fanlight-door',.54,blind=True))
+    else:
+        balcony_doors(b,E,hole,low_detail)
     # Bowed balcony slab and belly-shaped wrought-iron balusters.
     angles=np.linspace(-1.04,1.04,33)
     balcony=Polygon([(cx+.72*math.sin(a),cy-radius-.14-.30*math.cos(a)) for a in angles]+[(cx+.62,cy-radius+.07),(cx-.62,cy-radius+.07)])
@@ -290,7 +300,7 @@ def build(output):
             start=point(*pxy,apex_z-(apex_z-6.02)*r0/1.75)
             end=point(*qxy,apex_z-(apex_z-6.02)*r1/1.75)
             side=np.r_[X*math.cos(a)+Y*math.sin(a),0.]
-            add_tile(b,start,end-start,float(np.linalg.norm(end-start)),side,'E-radial-lapped-clay-tile',(row+j)%9==0)
+            add_tile(b,start,end-start,float(np.linalg.norm(end-start)),side,'E-radial-lapped-clay-tile',(row+j)%9==0,low_detail=low_detail)
     # Left gable roof: hidden longitudinal extent follows original mapped side direction.
     slope=.370;depth=8.5;ridge=peak
     left_roof=Polygon([(left-.10,-.10),(hinge+.10,-.10),(hinge+.10+slope*depth,depth),(left-.10+slope*depth,depth)])
@@ -307,7 +317,7 @@ def build(output):
                 r1=min(run+.31,lengthside+.08)
                 p=point(ridge+sign*run+slope*y,y,gable_h(ridge+sign*run+slope*y,y))
                 q=point(ridge+sign*r1+slope*y,y,gable_h(ridge+sign*r1+slope*y,y))
-                add_tile(b,p,q-p,float(np.linalg.norm(q-p)),np.r_[X*slope+Y,0.],'A-finite-lapped-clay-tile',(row+col)%11==0)
+                add_tile(b,p,q-p,float(np.linalg.norm(q-p)),np.r_[X*slope+Y,0.],'A-finite-lapped-clay-tile',(row+col)%11==0,low_detail=low_detail)
     # Front low canopy: finite sloping slab and real overlapping rows.
     canopy=Polygon([(-.50,-.12),(3.90,-.12),(4.25,3.40),(.05,5.52)]).intersection(uvpoly)
     hcan=lambda x,y:2.76+.145*y
@@ -317,7 +327,7 @@ def build(output):
             y1=min(y+.31,5.5)
             if not canopy.covers(Point(x,y)) or not canopy.covers(Point(x,y1)):continue
             p=point(x,y1,hcan(x,y1));q=point(x,y,hcan(x,y))
-            add_tile(b,p,q-p,float(np.linalg.norm(q-p)),np.r_[X,0.],'D-low-canopy-lapped-tile',(row+col)%10==0)
+            add_tile(b,p,q-p,float(np.linalg.norm(q-p)),np.r_[X,0.],'D-low-canopy-lapped-tile',(row+col)%10==0,low_detail=low_detail)
     F.beam(2.72,.13,.16,'gray render',label='lower-canopy-edge')
     # Directly visible in2026: a separate red-tile slope above the recessed
     # upper D windows. The old rear cap was only an unseen closure and did not
@@ -334,7 +344,7 @@ def build(output):
             v1=min(v+.235,upper_depth+.025)
             high=upper_a+upper_t*u+upper_in*v1;low=upper_a+upper_t*u+upper_in*v
             p=point(*high,upper_h(*high));q=point(*low,upper_h(*low))
-            add_tile(b,p,q-p,float(np.linalg.norm(q-p)),np.r_[X*upper_t[0]+Y*upper_t[1],0.],'D-visible-upper-lapped-tile-v2',(row+col)%10==0)
+            add_tile(b,p,q-p,float(np.linalg.norm(q-p)),np.r_[X*upper_t[0]+Y*upper_t[1],0.],'D-visible-upper-lapped-tile-v2',(row+col)%10==0,low_detail=low_detail)
     # Unseen rear roof is a conservative closed cap. No invented repeating rear windows.
     rear=uvpoly.intersection(Polygon([B_end,Dend,(20,9),(20,20),(-10,20)]))
     for rp in pieces(rear):b.prism(rp,5.52,5.62,lambda x,y,d:point(x,y,d),'clay tile','unphotographed-rear-roof-closure-estimate')
@@ -348,6 +358,8 @@ def build(output):
         pts=[F.point(local_u(F,3.11,0)+rr*math.cos(a),2.10+rr*math.sin(a),.315) for a in np.linspace(0,math.tau,33)]
         b.tube(pts,.006,'gray render',6,'ac-fan-ring')
     for zz in np.linspace(1.96,2.24,8):F.line((local_u(F,3.28,0),zz,.312),(local_u(F,3.44,0),zz,.312),.004,'gray render',5,'ac-grille')
+    if output is None:
+        return b
     audit=check_parts(b);write(output/'structural-check.json',audit)
     if not audit['passed']:
         print(json.dumps([r for r in audit['parts'] if not r['passed']],indent=2));raise ValueError('Part structure failed')
