@@ -114,11 +114,20 @@ def wing(b,lod):
         for key,shape in openings.items():
             joinery(extrude,shape,key,lod)
         extrude(box(left,.0,right,4.245),-.37,-.007,BELT,'ground floor behind enclosure')
-        for j,(z0,z1,d,m) in enumerate([(3.50,3.55,.072,BELT),(3.90,3.98,.089,BELT),(4.17,4.25,.142,LINTEL),
-                                         (11.00,11.10,.076,LINTEL),(11.10,11.19,.153,BELT),
-                                         (11.19,11.34,.221,LINTEL),(11.34,11.42,.272,BELT)]):
-            over=(street_control.P['west_to_east_eave_width']-street_control.P['waist_frontage_width'])/2/street_control.WING_SCALE if front and z0>=11 else 0.
-            extrude(box(left-over,z0,right+over,z1),-.03,d,m,f'horizontal belt course {j+1}')
+        for j,(z0,z1,depth,material) in enumerate([
+            (3.50,3.55,.072,BELT),(3.90,3.98,.089,BELT),(4.17,4.25,.142,LINTEL)
+        ]):
+            extrude(box(left,z0,right,z1),-.03,depth,material,f'horizontal belt course {j+1}')
+        profile=json.loads((HERE.parent/'measurements/front-cornice-four-stations.json').read_bytes())
+        elevations=[profile['registered_roof_lip_elevation_m'],*profile['median_absolute_course_edges_m']]
+        depths=[.272,.25,.22,.17,.12]
+        materials=[BELT,LINTEL,BELT,LINTEL,BELT]
+        maximum_overhang=(street_control.P['west_to_east_eave_width']-street_control.P['waist_frontage_width'])/(2*street_control.WING_SCALE)
+        for j,(upper,lower,depth,material) in enumerate(zip(elevations,elevations[1:],depths,materials)):
+            z0=(lower-street_control.OFFSET)/street_control.SCALE
+            z1=(upper-street_control.OFFSET)/street_control.SCALE
+            over=maximum_overhang*depth/depths[0] if front else 0.
+            extrude(box(left-over,z0,right+over,z1),-.03,depth,material,f'photographed eave course {j+1}')
     return b
 
 def build(lod=False):
