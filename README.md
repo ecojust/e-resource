@@ -538,7 +538,7 @@
 |sh-historic-b5-xh-j-072-v|爱棠新村|余庆路146弄13号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-073-v|茂龄别墅|建国西路619弄1-24号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-074-v|住宅|淮海中路1800号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-075-v|住宅|余庆路80号|[名录][H5]|待核外观／拆栋|
+|sh-historic-b5-xh-j-075-v|余庆路80号双圆阳光房花园立面|余庆路80号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/fdf34bc6e71869db91b242a13d7fac7b9e73b8d5/projects/shanghai/yuqing-80-twin-winter-gardens.html>)|已建双圆阳光房、西南穿券敞廊、东北五道弧面钢窗、相接长挑廊与折面屋缘。牌示二、三号楼的逐栋归属、其余庭院建筑、背面与室内待核。|
 |sh-historic-b5-xh-j-076-v|住宅|衡山路2号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-077-v|住宅|宝庆路20号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-078-v|中共上海市纪委|宛平路7号|[名录][H5] · 照片待核|待核外观／拆栋|
