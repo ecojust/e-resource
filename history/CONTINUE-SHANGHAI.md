@@ -30,6 +30,8 @@
 
 [国际礼拜堂临街七扇尖窗山墙](../projects/shanghai/community-church-garden-tracery.html)。临街高山墙、七扇菱形铅条窗、双花饰、石券与砖压顶；门厅下部的旧外形另有历史照片依据。三张原摄影位模型图、九个视角及八项下载。 [固定工作版](https://raw.githack.com/ecojust/e-resource/e5f89ab6a3f32641584eee47f2da01f85a791030/projects/shanghai/community-church-garden-tracery.html)
 
+中西女中北楼景莲堂（五四楼）　[查看模型](../projects/shanghai/mctyeire-richardson-hall.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
