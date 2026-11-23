@@ -12,6 +12,8 @@ HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
+from pier_projection import paint_number
+from fanlight import fit_fanlight
 
 STONE='weathered light stone'
 PLINTH='dark foundation stone'
@@ -21,8 +23,10 @@ GLASS='smoked transom glazing'
 IRON='aged ironwork'
 METAL='brass door fittings'
 PAPER='red paper'
+GILT='pale paper and gilt ink'
+BLUE='deep blue house-number paint'
 PALETTE={name:dict(color=color,roughness=roughness) for name,color,roughness in [
-    (STONE,[.48,.44,.34],.93),(PLINTH,[.215,.211,.185],.91),
+    (GILT,[.83,.67,.43],.84),(BLUE,[.022,.033,.075],.86),(STONE,[.48,.44,.34],.93),(PLINTH,[.215,.211,.185],.91),
     (BRICK,[.334,.118,.077],.93),(WOOD,[.275,.049,.040],.66),
     (GLASS,[.105,.121,.114],.32),(IRON,[.086,.075,.056],.81),
     (METAL,[.454,.326,.155],.4),(PAPER,[.596,.061,.048],.94)]}
@@ -122,10 +126,7 @@ def doorway(b,lod):
     plate(b,inner.difference(leaf),WALL+.12,WALL+.15,WOOD,'door/frame behind reed and transom')
     fan=half_arch(cx,zs-.012,zs,radius-.028,rise-.032,n)
     plate(b,fan,WALL+.045,WALL+.068,GLASS,'door/fanlight')
-    for j,t in enumerate(np.linspace(.18,.82,3 if lod else 5)):
-        angle=t*math.pi
-        end=np.array([cx+(radius-.04)*math.cos(angle),WALL+.030,zs+(rise-.045)*math.sin(angle)])
-        b.tube([[cx,WALL+.030,zs+.007],end],.009,IRON,6 if lod else 8,f'fanlight/iron ray {j+1}')
+    fit_fanlight(b,lod,point,plate,WALL,IRON,GILT,PAPER)
     for j,(a,c,e,f) in enumerate([(224,420,251,487),(295,420,327,486),(225,507,252,562),(263,506,291,563),(297,506,326,562),(223,577,327,608)]):
         shape=outline([(a,c),(e,c),(e,f),(a,f)],WALL+.079)
         plate(b,shape.difference(shape.buffer(-.021,join_style='mitre')),WALL+.040,WALL+.086,WOOD,f'door/raised panel {j+1}')
@@ -146,7 +147,10 @@ def steps(b):
 META=dict(id=HERE.parent.name,name='新华路329弄32号乙花园住宅双柱门廊',register='3M013',formal_id='sh-historic-b3-111',address='上海市长宁区新华路329弄32号乙',geometry_license='MIT',photos_embedded=False,scope='庭院面可辨门廊，尺度依据门扇净高2.10米暂估。整栋屋面与室内楼梯另核。')
 def build(lod):
     b=Builder(PALETTE)
-    columns(b,lod);upper(b,lod);doorway(b,lod);steps(b)
+    columns(b,lod)
+    readings=json.loads((HERE/'pier-number-reading.json').read_bytes())['letters']
+    paint_number(b,readings,EYE,MAPPER,BLUE)
+    upper(b,lod);doorway(b,lod);steps(b)
     return b
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--output',type=Path,required=True);cli.add_argument('--lod',action='store_true')

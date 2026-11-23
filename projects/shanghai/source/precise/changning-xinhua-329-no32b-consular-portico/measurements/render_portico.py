@@ -14,10 +14,14 @@ def render(mesh,output):
     output.mkdir(parents=True,exist_ok=True)
     poses=json.loads((HERE/'portico-camera-pair.json').read_bytes())['stations']
     records={}
-    for name,crop,width in [('portrait',(0,0,1280,1919),442),('wide',(129,135,386,350),442)]:
-        target=output/(name+'-model.jpg')
-        RASTER(mesh,poses[name],crop,width).save(target,quality=93)
-        records[name]=dict(crop=crop,sha256=hashlib.sha256(target.read_bytes()).hexdigest())
+    views = [('portrait','portrait',(0,0,1280,1919),442),
+             ('wide','wide',(129,135,386,350),442),
+             ('pier-number','portrait',(229,1370,337,1537),270),
+             ('iron-fanlight','portrait',(455,733,858,998),544)]
+    for name, station, crop, width in views:
+        target = output / (name+'-model.jpg')
+        RASTER(mesh,poses[station],crop,width).save(target,quality=93)
+        records[name] = dict(station=station,crop=crop,sha256=hashlib.sha256(target.read_bytes()).hexdigest())
     (output/'rendered-views.json').write_text(json.dumps(dict(model_sha256=hashlib.sha256(mesh.read_bytes()).hexdigest(),views=records),indent=2)+'\n')
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('mesh',type=Path);cli.add_argument('output',type=Path)
