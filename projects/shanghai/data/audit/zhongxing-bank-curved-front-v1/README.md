@@ -13,3 +13,7 @@
 福州路89号中兴银行前楼已接入黄浦区目录，用于现场影像复核的城市目录收录319处建筑。两张街面照片可辨福州路直立面、四川中路转角的连续弧窗及其窗梃。三档模型保留这段圆弧。1948年航片用于核对街角的方向，现有街景资料用于核对窗轴。
 
 [打开城市主图](../../../index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview) · [两处街面摄影与模型复核](frontage-photographs/README.md) · [本次视图与下载复核](final-map-31284/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/6bd8f9a805d4af8150cc792e9c19e1f462bc54ec/projects/shanghai/index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

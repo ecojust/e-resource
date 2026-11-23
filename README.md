@@ -3809,7 +3809,7 @@
 | 九江路原教会学校入口与双山墙 | 2026-11-23 19:41:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview) |
 | 汉口路花园住宅临街错层楼梯窗 | 2026-11-23 20:23:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) |
 | 旗昌洋行福州路三开间石墙与尖券窗 | 2026-11-23 22:21:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) |
-| 中兴银行前楼（福州路与四川中路圆弧窗墙） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview) |
+| 中兴银行前楼（福州路与四川中路圆弧窗墙） | 2026-11-23 23:39:00 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview) |
 
 ### 徐汇区（57处）
 
