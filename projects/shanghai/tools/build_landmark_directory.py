@@ -51,9 +51,10 @@ def render(root: Path = ROOT) -> str:
             if integrated and item.get('navigation', {}).get('listed'):
                 walk = 'index.html#landmark=' + quote(ident, safe='') + '&mode=walk'
                 actions.append(f'<a href="{esc(walk, quote=True)}">室外漫游 ↗</a>')
-            if viewer.get('page'):
-                assert viewer['page'].endswith('.html') and '/' not in viewer['page'], 'Viewer must be a project page'
-                actions.append(f'<a href="{esc(viewer["page"], quote=True)}">{"查看历史立面" if historical else "单体预览"} ↗</a>')
+            viewer_page = viewer.get('page') or item.get('standalone_page')
+            if viewer_page:
+                assert viewer_page.endswith('.html') and '/' not in viewer_page, 'Viewer must be a project page'
+                actions.append(f'<a href="{esc(viewer_page, quote=True)}">{"查看历史立面" if historical else "单体预览"} ↗</a>')
             tag = '<span class="new-tag">最近接入</span>' if ident == latest['id'] else ''
             cards.append(f'''<article class="landmark-card{' featured' if tag else ''}" id="building-{esc(ident, quote=True)}" data-landmark="{esc(ident, quote=True)}" data-search="{esc(item['name'] + ' ' + district['name'] + ' ' + description, quote=True)}">
   <div class="card-meta"><span>{esc(district['name'])} · {location_note}</span>{tag}</div><h3><a href="{esc(href, quote=True)}">{esc(item['name'])}</a></h3><p>{esc(description)}</p>

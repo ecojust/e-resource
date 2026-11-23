@@ -31,6 +31,44 @@ def candidate_status_fields(manifest,path):
   return {'status':'standalone-exterior-study','scope':manifest['scope'],'viewer_page':manifest['viewer_page']}
  raise ValueError('Candidate manifest has no recorded status or recognizable standalone exterior delivery: '+path)
 
+def ordinary_revision_owner(manifest, path, ordinary_by_id):
+    """Match all four candidate descriptors to one existing ordinary model."""
+    model_id = manifest.get('city_object')
+    if not model_id or model_id != manifest.get('id') or model_id != manifest.get('model_id'):
+        raise ValueError('Ordinary revision model ID differs: ' + path)
+    if path != f'assets/models/candidates/{model_id}/manifest.json' or model_id not in ordinary_by_id:
+        raise ValueError('Ordinary revision has no matching directory record: ' + path)
+    row = ordinary_by_id[model_id]
+    role_map = {'raw': 'raw', 'full': 'web', 'lod': 'lod', 'native': 'native'}
+    candidates = manifest.get('assets', {})
+    catalog = row.get('assets', {})
+    if set(candidates) != set(role_map) or set(catalog) != set(role_map.values()):
+        raise ValueError('Ordinary revision requires four distinct roles: ' + path)
+    names = set()
+    for role, registered_role in role_map.items():
+        current = candidates[role]
+        registered = catalog[registered_role]
+        filename = current.get('file')
+        checksum = registered.get('sha256', '')
+        size = registered.get('bytes')
+        if (not isinstance(filename, str) or Path(filename).name != filename or filename in names
+                or Path(filename).suffix != ('.blend' if role == 'native' else '.glb')
+                or len(checksum) != 64 or any(c not in '0123456789abcdef' for c in checksum)
+                or type(size) is not int or size <= 0 or type(current.get('bytes')) is not int
+                or current.get('sha256') != checksum or current['bytes'] != size):
+            raise ValueError(f'Ordinary revision {role} descriptor differs: {path}')
+        names.add(filename)
+    owner = row.get('owner', {})
+    key = owner.get('feature_key', '')
+    local_id = owner.get('feature_local_id')
+    if (not key or ':' not in key or type(local_id) is not int
+            or ('gers_id' in manifest and manifest['gers_id'] != key.split(':', 1)[1])
+            or ('source_owner' in manifest and manifest['source_owner'] != key)
+            or ('source_local_id' in manifest and manifest['source_local_id'] != local_id)):
+        raise ValueError('Ordinary revision source ownership differs: ' + path)
+    return {'id': model_id, 'manifest': path, 'source_key': key, 'source_local_id': local_id}
+
+
 def build(project):
  repo=Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=project,text=True).strip());prefix=project.relative_to(repo).as_posix()+'/'
  inputs={}
@@ -47,11 +85,12 @@ def build(project):
  assert sum(d['features'] for d in city['districts'])==expected
  assert {d['id']:d['features'] for d in city['districts']}=={d['id']:d['features'] for d in detail['districts']}
  assert len(city['tiles'])==len(detail['tiles'])==city['model_count']==detail['model_count']
- models=[]
+ models=[];ordinary_by_id={}
  for entry in catalog['macros']:
   doc=read(entry['file']);assert inputs[entry['file']]['bytes']==entry['bytes'] and inputs[entry['file']]['sha256']==entry['sha256'],'Catalog index hash mismatch: '+entry['file']
   assert doc['record_count']==len(doc['models'])==entry['record_count']
   for model in doc['models']:
+   ordinary_by_id[model['id']]=model
    models.append({'id':model['id'],'name':model['name'],'district_id':model['district']['id'],'catalog_accepted':model.get('accepted'),'candidate_only':model.get('candidate_only'),'pending_stages':model.get('pending_stages',[]),'source_index':entry['file'],'evidence_status':{key:val.get('status') for key,val in model.get('acceptance',{}).items() if isinstance(val,dict)},'evidence_revalidated':False})
  assert len(models)==catalog['record_count'] and len({m['id'] for m in models})==len(models)
  directory=Directory();directory.feed(read('landmarks.html',False));nav=directory.rows
@@ -71,6 +110,11 @@ def build(project):
  candidates=[];integrated_previews=[];city_candidates=[]
  for file in files:
   path=file[len(prefix):];d=read(path)
+  if 'city_object' in d:
+   owner=ordinary_revision_owner(d,path,ordinary_by_id)
+   existing=next(m for m in models if m['id']==owner['id'])
+   existing['registered_revision']=owner
+   continue
   if d.get('map_replacement') or d.get('walk_integration'):
    assert d.get('map_replacement') is True and d.get('walk_integration') is True and d['id'] in {m['id'] for m in models} and d['id'] in {r['id'] for r in nav}, 'Integrated preview lacks registered model/navigation'
    integrated_previews.append({'id':d['id'],'manifest':path});continue

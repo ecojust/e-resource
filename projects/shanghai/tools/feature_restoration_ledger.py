@@ -14,7 +14,7 @@ import subprocess
 import tempfile
 
 from ordinary_assets import inspect as inspect_ordinary
-from restoration_progress import candidate_status_fields
+from restoration_progress import candidate_status_fields, ordinary_revision_owner
 
 
 def require(value, message):
@@ -114,6 +114,12 @@ def build(project, output):
     for file in tracked:
         name = file[len(prefix):]
         candidate = read(name)
+        if 'city_object' in candidate:
+            revision = ordinary_revision_owner(candidate, name, ordinary['records'])
+            owner = joined.get(revision['source_key'])
+            require(owner and owner['model_id'] == revision['id'] and owner['local_id'] == revision['source_local_id'],
+                    'Ordinary revision does not match the verified replacement registry')
+            continue
         if candidate.get('map_replacement') or candidate.get('walk_integration'):
             require(candidate.get('map_replacement') is True and candidate.get('walk_integration') is True, 'Partial candidate integration declaration')
             owner = joined.get(candidate.get('source_owner'))
