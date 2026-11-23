@@ -14,17 +14,18 @@ import court_front
 import courtyard_balconies
 import court_finishes
 import attachments
+import west_court_balcony
 
 ID='xuhui-huaihai-1230-rear-courtyard-entrance'
 SLUG='huaihai-1230-rear-courtyard-entrance'
-PALETTE={**attachments.PALETTE,**courtyard_balconies.PALETTE,**court_front.PALETTE,**court_finishes.PALETTE}
+PALETTE={**west_court_balcony.PALETTE,**attachments.PALETTE,**courtyard_balconies.PALETTE,**court_front.PALETTE,**court_finishes.PALETTE}
 META=dict(id=ID,name='淮海中路后排1230号入口与叠层阳台',address='上海市徐汇区淮海中路1230号院内',
           heritage_id='sh-historic-b5-xh-j-095-v',heritage_group='5D095',
           source='https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
           photo_source='https://4travel.jp/travelogue/11115719',photo_author='高参88（2013年图文）及中国の風景（2016年1月20日）',
           photos_embedded=False,geometry_license='MIT',texture_license='MIT',viewer_page=SLUG+'.html',
           local_axes='X along courtyard front toward ENE; positive Y inward NNW; Z above the court walk.',
-          scope='后排1230号门洞、台阶、相邻暖色砖窗墙和门右的四层叠台，开合及封窗采用2016年院内照片，细部对照2013年近照。')
+          scope='后排1230号门洞、台阶、相邻暖色砖窗墙、东西两组四层叠台与窗外金属笼，开合及封窗采用2016年院内照片，细部对照2013年近照。')
 if (HERE/'cameras.json').exists():META['camera_views']=json.loads((HERE/'cameras.json').read_bytes())
 
 class Builder(CrownBuilder):
@@ -41,6 +42,7 @@ class Builder(CrownBuilder):
 def add_building(builder,lod=False):
     court_front.add_front(builder,lod)
     courtyard_balconies.add_balconies(builder,lod)
+    west_court_balcony.add_west_balcony(builder,lod)
     attachments.add_attachments(builder,lod,period=2016)
 
 if __name__=='__main__':

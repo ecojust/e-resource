@@ -88,9 +88,10 @@ def condenser(b,name,left,base,right,top,lod):
         for dy in (-.65,-.32,0,.32,.65):
             reach=radius*sqrt(1-dy*dy)*.94
             rail(b,(x-reach,y-.023,z+radius*dy),(x+reach,y-.023,z+radius*dy),.005,CASE,label+' grille bar')
-    for f in (.22,.80):
+    support_x=(.22,.45) if name=='door left' else (.22,.80)
+    for f in support_x:
         xx=left+f*width
-        box(b,xx-.021,xx+.021,y-.016,-.025,base-.032,base,BRACKET,label+' support')
+        box(b,xx-.021,xx+.021,y-.016,.015,base-.032,base,BRACKET,label+' support')
 
 def add_attachments(b,lod=False,*,period=2016):
     if period==2013:

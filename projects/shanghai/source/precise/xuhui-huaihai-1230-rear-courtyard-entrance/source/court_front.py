@@ -27,7 +27,9 @@ PALETTE={STEEL:{'color':[.16,.18,.17],'roughness':.68},
          LETTER:{'color':[.73,.77,.65],'roughness':.65},
          IRON:{'color':[.085,.09,.083],'roughness':.69,'metallic':.18}}
 MEASUREMENTS=Path(__file__).absolute().parent.parent/'measurements/window-controls.json'
-WALL_LEFT=-3.40
+WEST_SURVEY=MEASUREMENTS.with_name('west-wing-openings.json')
+WEST_BALCONY=(-6.72,-3.82)
+WALL_LEFT=-10.98
 WALL_RIGHT=9.93
 UPPER_RIGHT=7.14
 EAVE=13.02
@@ -45,6 +47,8 @@ def openings():
     # The west ground opening is partly obscured by the later cage. Its limits
     # are taken at the backing wall of the 2016 court view, with lower confidence.
     result['west-plain.ground']=(-3.04,1.81,-1.52,3.15)
+    for window in json.loads(WEST_SURVEY.read_bytes())['windows']:
+        result[window['opening']] = tuple(window['bounds_x0_z0_x1_z1'])
     return result
 
 def add_window(f, name, bounds):
@@ -82,7 +86,7 @@ def add_front(b,lod=False):
     fields=[box(*bounds) for bounds in windows.values()]
     mouth=box(-.98,.84,.98,3.49)
     stacked=box(4.10,.842,6.92,12.91)
-    fields.extend([mouth,stacked])
+    fields.extend([mouth,stacked,box(WEST_BALCONY[0],.84,WEST_BALCONY[1],12.95)])
     # The upper east section falls outside the two recorded photographs.
     # End this measured fragment at the pier beside the stacked balcony.
     outline=Polygon([(WALL_LEFT,0),(WALL_RIGHT,0),(WALL_RIGHT,6.45),
@@ -93,13 +97,13 @@ def add_front(b,lod=False):
     f.prism(front.intersection(greys),-.264,.002,FOOT,'grey-socle-and-first-floor-band')
     for name,bounds in windows.items():add_window(f,name,bounds)
     # Eastern and western portions of the band meet the balcony ends.
-    for l,r in ((WALL_LEFT,4.10),(6.92,WALL_RIGHT)):
+    for l,r in ((WALL_LEFT,WEST_BALCONY[0]),(WEST_BALCONY[1],4.10),(6.92,WALL_RIGHT)):
         f.prism(box(l,3.745,r,3.837),-.13,.085,CAST,'projecting-course-below-first-floor-band')
     for i,(bottom,top,projection) in enumerate([(12.88,12.99,.10),(12.99,13.13,.22),(13.13,13.20,.30)]):
         f.prism(box(WALL_LEFT,bottom,UPPER_RIGHT,top),-.36,projection,CAST,f'eaves-layer-{i+1}')
     # Transverse laid bricks below the ground window sills are discernible
     # in Gao 04, including the thin belt visible alongside the letter box.
-    for l,r in ((WALL_LEFT,-.98),(.98,4.10),(6.92,WALL_RIGHT)):
+    for l,r in ((WALL_LEFT,WEST_BALCONY[0]),(WEST_BALCONY[1],-.98),(.98,4.10),(6.92,WALL_RIGHT)):
         f.prism(box(l,1.62,r,1.764),-.015,.003,SOLDIER,'narrow-upright-brick-course')
     # Physical returns close the recessed vestibule. No interior room is inferred.
     wall_y=1.066
