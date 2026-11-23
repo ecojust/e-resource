@@ -519,7 +519,7 @@
 |sh-historic-b5-xh-j-048-v|住宅|东湖路51号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-049-v|住宅|华亭路93弄3号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-050-v|住宅|延庆路18弄10号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-051-v|住宅|华山路823、825、827号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-051-v|华山路823、825、827号院临街住宅|华山路823、825、827号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/6ae8fe2c61a443f33818e7ec9a885a2307a292c4/projects/shanghai/huashan-823-827-stair-loggia.html>)|已建临街三山墙、露明楼梯、扇形钢窗、花孔和南侧可辨墙顶。院内各栋逐号归属、隐蔽屋面及室内待核。|
 |sh-historic-b5-xh-j-052-v|住宅|武康路40弄5号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-053-v|住宅|安福路255号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-054-v|住宅|襄阳南路355号|[名录][H5] · 照片待核|待核外观／拆栋|
