@@ -15,3 +15,7 @@
 主图收录的建筑由 314 处增至 315 处。四川中路和汉口路交界的转角保留矮铜穹和细顶杆，两条街各自的第一个开间也可在图中辨认。桌面视口用鼠标、手机尺寸视口用触摸输入，各从地图标记选中本栋。21 处地面和墙体检查点、12 处相邻建筑检查点均与预期相符。独立页在桌面和手机尺寸视口取得的六幅视图覆盖正面、斜侧和远景，四份下载实物与模型清单的 SHA-256 一致。
 
 [城市主图](../../../index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) · [城市与独立页逐图记录](final-map-31280/visual-review.json) · [导出模型表面、纹理与视线](tower-recheck/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/cec7cede033b1b659fbeb6b0c903a558dea98c9d/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，8 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)

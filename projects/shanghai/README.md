@@ -218,7 +218,7 @@
 | 上海钱业公会大楼（宁波路三开间正面） | 2026-11-23 16:15:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-money-guild-front&mode=overview) |
 | 南京饭店山西南路入口与钝角阳台 | 2026-11-23 16:49:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) |
 | 安利大楼西南转角入口与两街红砖窗带 | 2026-11-23 17:36:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-arnhold-building-southwest-corner&mode=overview) |
-| 大清银行上海分行旧址（西南八角塔楼） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) |
+| 大清银行上海分行旧址（西南八角塔楼） | 2026-11-23 18:44:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) |
 
 ### 徐汇区（55处）
 
