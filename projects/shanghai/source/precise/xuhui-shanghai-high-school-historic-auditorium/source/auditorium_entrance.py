@@ -106,6 +106,21 @@ def projecting_apron(b, camera, data, y):
     prism(b,polygon(camera,data["door_lintel"],y+.03),y+.03,.26,TRIM,"recessed lower nosing")
 
 
+def soffit(b, camera, data, y, door_y):
+    apron=polygon(camera,data["lower_apron"],y)
+    door=polygon(camera,data["door_outer"],door_y)
+    ax,az,ar,_=apron.bounds
+    dx,_,dr,dz=door.bounds
+    fore=y+.12
+    rear=door_y+.025
+    ground=[(ax+.13,fore,az+.055),(ar-.13,fore,az+.055),
+            (dr+.15,rear,dz+.025),(dx-.15,rear,dz+.025)]
+    vertices=ground+[(x,yy,z+.24) for x,yy,z in ground]
+    faces=[(3,2,1,0),(4,5,6,7),(0,1,5,4),(1,2,6,5),
+           (2,3,7,6),(3,0,4,7)]
+    b.add(vertices,faces,TRIM,label="Entrance | sheltered stone soffit")
+
+
 def mainwall_ornament(b,camera,data):
     y=-.034
     limits=box(-5.2,-20.,5.2,45.)
@@ -124,8 +139,11 @@ def mainwall_ornament(b,camera,data):
                 prism(b,rib.intersection(limits),y-.054,.021,TRIM,f"{name} {i+1} bead {n+1}")
     band=points(camera,data["upper_band_outer"],-.05)
     prism(b,Polygon(band).intersection(limits),-.05,.06,TRIM,"upper frieze band")
-    for i in range(11):
-        left=i/11; right=(i+1)/11;middle=(left+right)/2
+    # The 2020 photograph shows a repeating crest every roughly 44 native pixels.
+    # Seven bays bridge the two visible returns; the first is partly screened by foliage.
+    count=7
+    for i in range(count):
+        left=i/count; right=(i+1)/count;middle=(left+right)/2
         for lo,hi,width in [(.18,.82,.038),(.30,.70,.022)]:
             ring=[quad_fraction(band,u,v) for u,v in
                   [(left,.50),(middle,lo),(right,.50),(middle,hi),(left,.50)]]
@@ -148,7 +166,7 @@ def garden_stair(b,camera,data,door_y):
         heights.append(float(np.mean([p[2] for p in xyz])))
         sides.append((float(xyz[0][0]),float(xyz[1][0]),y))
     top=np.mean([camera.wall(p,door_y)[2] for p in data["door_outer"][-2:]])
-    bottom=heights[-1]
+    bottom=0.0
     # The returned points are silhouettes of eight masonry noses; their grade can
     # differ from the campus photogrammetric datum through plane-depth uncertainty.
     zlevels=np.linspace(top,bottom,len(rows))
@@ -188,6 +206,7 @@ def add_from_camera(b,camera,apron_y,door_y,lod=False):
     data=json.loads((MEASUREMENTS/"entrance-photo-controls.json").read_bytes())
     entrance_doors(b,camera,data,door_y,lod)
     projecting_apron(b,camera,data,apron_y)
+    soffit(b,camera,data,apron_y,door_y)
     mainwall_ornament(b,camera,data)
     garden_stair(b,camera,data,door_y)
     return entrance_layout(camera,apron_y,door_y,data)

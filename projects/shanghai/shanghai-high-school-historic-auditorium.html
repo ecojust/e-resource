@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>上海中学历史大礼堂三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">徐汇区 · 上中路400号</p><h1>上海中学历史大礼堂</h1></header>
+<main id="model-view" aria-label="礼堂建筑三维模型"></main>
+<aside class="panel" aria-label="观察机位与模型下载">
+<p class="scope">1934年的斜向照片记录了礼堂正门和东长墙。沿侧面可数出八跨成对的下窗，树枝遮住了靠前两跨的上窗。模型在照片中可辨的墙身交界处收口。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div id="model-cameras" class="buttons" aria-label="摄影与模型机位"></div>
+<button type="button" id="retry" hidden>重新加载</button>
+<p id="status" role="status" aria-live="polite">正在读取模型…</p>
+<div id="downloads" class="downloads" aria-label="下载模型"></div>
+<p><a download id="download-source" href="assets/models/candidates/xuhui-shanghai-high-school-historic-auditorium/xuhui-shanghai-high-school-historic-auditorium-source.zip">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>1934年正门上方有一排四樘高窗。2020年的正面照片中，同一位置呈浅色几何纹样。模型采用2020年的几何纹样。两幅配准图展示同一模型在1934年和2020年摄影位置的样子。</p>
+<a class="photo-link" href="data/audit/shanghai-high-school-historic-auditorium-v1/registration/registered-hall.jpg" target="_blank" rel="noopener"><img loading="lazy" width="260" alt="按1934年斜拍和2020年正面位置渲染的礼堂模型" src="data/audit/shanghai-high-school-historic-auditorium-v1/registration/registered-hall.jpg"><span>放大两次取景的模型图</span></a>
+<p><a href="data/audit/shanghai-high-school-historic-auditorium-v1/registration/view-1934.jpg" target="_blank" rel="noopener">1934年斜向机位</a> · <a href="data/audit/shanghai-high-school-historic-auditorium-v1/registration/view-2020.jpg" target="_blank" rel="noopener">2020年正面机位</a></p>
+<p><a href="https://pastvu.com/p/1872086">1934年《江苏省立上海中学 大礼堂》</a> · <a href="https://www.meipian.cn/547hqpfk">校友组照《我们的母校——上海中学》</a></p>
+<p><a href="source/precise/xuhui-shanghai-high-school-historic-auditorium/README.md">复建说明</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/xuhui-shanghai-high-school-historic-auditorium/source/viewer.js" type="module"></script>
+</body></html>

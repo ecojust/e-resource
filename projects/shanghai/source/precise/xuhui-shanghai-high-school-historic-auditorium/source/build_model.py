@@ -3,7 +3,7 @@ import argparse,json,sys
 from pathlib import Path
 HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
-sys.path[:0]=[str(HERE),str(PROJECT/'source/precise/hongkou-general-post-office/source/common'),
+sys.path[:0]=[str(HERE),str(HERE.parent/'measurements'),str(PROJECT/'source/precise/hongkou-general-post-office/source/common'),
               str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source')]
 from photo_architecture import Builder as GeometryBuilder
 from crown_builder import CrownBuilder

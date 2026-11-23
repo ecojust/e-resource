@@ -75,11 +75,13 @@ def add_roof(b,lod=False):
         face=straight_wall(b,a,c,h-.18,backtop,WALL,'Stage | raised rear volume')
         face.box(0,backtop-.085,face.length,.16,.32,.02,TRIM,'flat raised edge')
     b.plan_prism(box(-n-.11,join-.12,n+.11,rear-.12),backtop-.11,backtop+.045,COVER,'Stage | flat upper roof')
-    # The north faces of the front parapet and its cheek walls are exposed. The
-    # side photo resolves neither the back of the projection nor a timber roof frame.
-    for a,c in [((-x,front),(-x,0)),((x,0),(x,front))]:
-        cheek=Facade(b,a,c,'Front | raised front cheek')
-        if a[0]<0:cheek.box(0,(h+d['south_top_z'])/2,cheek.length,d['south_top_z']-h,.29,-.13,WALL,'return above flat roof')
+    # The east and west wall authors already supply the raised side cheeks.
+    # Two dated aerial views show a lighter strip along the eastern part of the
+    # otherwise dark rear roof. Transverse joints are visible in April 2025.
+    strip=box(5.78,join+.55,11.00,rear-.65)
+    b.plan_prism(strip,backtop+.047,backtop+.104,TRIM,'Stage | pale strip on rear roof')
+    for at in (join+3.45,join+8.42,join+13.37):
+        b.plan_prism(box(5.80,at-.028,10.98,at+.028),backtop+.103,backtop+.118,FLASH,'Stage | joint on pale strip')
     upper=Facade(b,(x,front),(-x,front),'Front | back of entrance block')
     upper.box(0,(h+d['south_top_z']-.36)/2,upper.length,d['south_top_z']-h-.36,.23,-.108,TRIM,'head return')
     b.plan_prism(box(-x+.06,.095,x-.06,front-.07),d['south_top_z']-.41,d['south_top_z']-.27,COVER,'Front | flat roof inside parapet')

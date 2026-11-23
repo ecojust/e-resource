@@ -22,7 +22,7 @@ def add_flank(b, lod=False):
     axes = measured['pier_axes_y']
     bays = measured['bays']
     wall_start, wall_end = measured['wall_limits_y']
-    half = .18
+    half = measured['pier_width']*.5
     def flank(y,z,d):
         return (x+d,y,z)
     def raised(surface, start, end, mat, title, face=flank):
@@ -31,14 +31,15 @@ def add_flank(b, lod=False):
     def window(rectangle, name, face, transom):
         left,bottom,right,top = rectangle
         outer = box(left,bottom,right,top)
+        recess=min(.184,(right-left)*.095)
         # Concealed glass overlaps the jambs so that oblique views never reveal an open slit.
-        raised(outer.buffer(.009,join_style=2),-.204,-.184,GLASS,name+' glass',face)
+        raised(outer.buffer(.009,join_style=2),-recess-.020,-recess,GLASS,name+' glass',face)
         thickness = min(.052,(right-left)*.10)
         frame = outer.difference(outer.buffer(-thickness,join_style=2))
         if transom:
             z = bottom+(top-bottom)*.73
             frame = frame.union(box(left,z-.027,right,z+.027))
-        raised(frame,-.178,-.125,FRAME,name+' frame',face)
+        raised(frame,-recess+.006,-recess+.053,FRAME,name+' frame',face)
         raised(box(left-.045,bottom-.067,right+.045,bottom-.008),-.092,.076,CAST,name+' sill',face)
         return outer
 

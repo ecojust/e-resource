@@ -89,6 +89,21 @@ def wing_panel(face,x,width,z):
         face.box(xx,z+.92,.021,1.68,.016,.063,TRIM,'narrow field striations')
     strip(face,x,z+1.86,width+.15,.109,TRIM,'cap below pointed panel',.148)
 
+def add_current_fields(face,camera,polygons):
+    # Convert inclined-photo coordinates back to the articulated masonry plane.
+    for name,points in polygons.items():
+        outline=Polygon([camera.wall(uv)[[0,2]] for uv in points])
+        if name.startswith('fourth_'):
+            face.prism(outline,.030,.065,TRIM,name.replace('_',' '))
+            for t in (.066,.151):
+                inner=outline.buffer(-t,join_style=2)
+                bead=inner.difference(inner.buffer(-.022,join_style=2))
+                face.prism(bead,.064,.089,FIELD,'fold in outer triangle')
+        elif name.startswith('separator_'):
+            face.prism(outline,.038,.088,TRIM,'divider between central relief panels')
+        else:
+            face.prism(outline,.063,.154,TRIM,name.replace('_',' '))
+
 def build_south(b,lod=False):
     d=json.loads(DATA.read_bytes());w=d['estimated_south_wall_width'];half=w/2;axes=d['south_pier_axes_x']
     face=Facade(b,(-half,0),(half,0),'South facade')
@@ -105,7 +120,14 @@ def build_south(b,lod=False):
         decorative_pier(face,x,1.02 if central else .85,cap,central,lod)
     for idx,(l,r) in enumerate(zip(axes,axes[1:])):
         if idx!=2:outer_fields(face,l+.42,r-.42,top,lod)
-    for x in (-8.12,8.12):wing_panel(face,x,2.44,1.63)
+    from register_court import Camera
+    current=Camera('2020')
+    fields=json.loads((DATA.parent/'south-facade-fields.json').read_bytes())
+    west,east=fields['lower_plaque_apices_native_2020']
+    for pixel,width in zip((west,east),fields['estimated_outer_plaque_widths_m']):
+        x,_,point=current.wall(pixel)
+        wing_panel(face,x,width,point-3.14)
+    add_current_fields(face,current,fields['polygons_native_2020'])
     # Front block visible above the side roofs in both time periods.
     for a,c in [( (-half,d['front_head_depth_y']),(-half,0) ),((half,0),(half,d['front_head_depth_y']))]:
         side=Facade(b,a,c,'South facade | outer return')
@@ -150,6 +172,14 @@ def raised_center(b):
     # in the independently dated aerial views.
     x0,x1=-5.27,5.27;y0,y1=6.99,7.54
     f=Facade(b,(x0,y0),(x1,y0),'Upper hall | set-back crest')
+    # The parapet must bear on both roof slopes. Coping the foot to the
+    # pitch leaves the top silhouette unchanged from the two photo stations.
+    d=json.loads(DATA.read_bytes())
+    crest=d['roof_eave_z']+d['roof_pitch_rise']
+    foot_at_end=crest-d['roof_pitch_rise']*x1/d['auditorium_red_roof_half_span']
+    seat=Polygon([(x0,foot_at_end-.06),(0.,crest-.06),(x1,foot_at_end-.06),
+                  (x1,17.32),(x0,17.32)])
+    f.prism(seat,-(y1-y0),0.,WALL,'masonry seat across both roof slopes')
     f.box(0,19.16,f.length,3.77,y1-y0,-(y1-y0)/2,WALL,'upper step in silhouette')
     strip(f,0,20.90,f.length+.08,.16,TRIM,'weathering course over upper step',.14)
     for x in (x0+.13,x1-.13):
