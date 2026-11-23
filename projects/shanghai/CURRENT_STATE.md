@@ -1,3 +1,11 @@
+# 旗昌洋行福州路三开间石墙与尖券窗
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) · [单体旋转与下载](russell-company-fuzhou-three-bay-front.html) · [来源与制作范围](source/precise/huangpu-russell-company-fuzhou-three-bay-front/README.md) · [验收记录](data/audit/russell-company-fuzhou-three-bay-front-v1/README.md)
+
+第四批4A021，福州路17、19号。原城1140与具名OSM 380340030匹配。按2015年街照、2016年调查和2021年街景制作北面东段三开间的底层圆券、上层尖券窗、外阶与铁栏。外滩9号的原城1580独立保留。
+
+近景 19,988 个三角面，远景 10,540 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,957,161 字节。上海主图现有 318 处独立入口，黄浦区 153 处。[资产清单](assets/models/candidates/huangpu-russell-company-fuzhou-three-bay-front/manifest.json)
+
 # 汉口路花园住宅临街错层楼梯窗
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) · [单体旋转与下载](bund-garden-residence-stair-bay.html) · [来源与制作范围](source/precise/huangpu-bund-garden-residence-stair-bay/README.md) · [验收记录](data/audit/bund-garden-residence-stair-bay-v1/README.md)
