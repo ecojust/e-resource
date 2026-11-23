@@ -45,6 +45,22 @@ def compact_repeated_links(text,reserved=()):
   return f'[{match.group(1)}][{ref}]' if ref else match.group(0)
  compact=pattern.sub(shared_link,text)
  return compact+'\n'+'\n'.join(f'[{ref}]: <{url}>' for url,ref in refs.items())+'\n'
+def frequent_reference_labels(text,preserved):
+ # When a visible label repeats, GFM can use that label as its reference key.
+ # Explicit links to other targets keep their original reference keys.
+ for label in ('名录','当前完成范围','官方原表'):
+  token='['+label+']'
+  if re.search(r'\[\s*'+re.escape(label)+r'\s*\]',preserved) or re.search(re.escape(token)+r'(?!\[[a-zA-Z0-9-]+\]|\()',text):continue
+  counts=Counter(re.findall(re.escape(token)+r'\[([a-zA-Z0-9-]+)\]',text))
+  if not counts:continue
+  ref,count=counts.most_common(1)[0]
+  target=re.search(r'^\['+re.escape(ref)+r'\]: (.+)$',text,re.M)
+  if not target:continue
+  definition=token+': '+target[1]+'\n'
+  if count*(len(ref)+2)<=len(definition.encode()):continue
+  text=text.replace(token+'['+ref+']',token)+'\n'+definition
+ return text
+
 def model_sizes(job):
  if not job.get('manifest'):return '—'
  p=ROOT/job['manifest']
@@ -401,7 +417,7 @@ def build(reserved=()):
  # Data rows beginning with an ID or a Han character retain internal cell separators.
  # Their optional left border can be omitted in a GitHub Markdown table.
  for i,row in enumerate(lines):
-  if row.startswith(('|sh-historic-','|official-main','|official-green','|bund-label-')) or (row.startswith('|') and len(row)>1 and '\u3400'<=row[1]<='\u9fff'):
+  if re.match('\\|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\|',row) or row.startswith(('|sh-historic-','|official-main','|official-green','|bund-label-')) or (row.startswith('|') and len(row)>1 and '\u3400'<=row[1]<='\u9fff'):
    lines[i]=row[1:]
  return compact_repeated_links('\n'.join(lines).rstrip()+'\n',reserved)
 def street_index():
@@ -432,7 +448,7 @@ def main():
   reserved=set(reference_labels(before+after))
  else:
   reserved=set(reference_labels(s))
- block=START+'\n'+build(reserved)+END
+ block=START+'\n'+frequent_reference_labels(build(reserved),before+after if START in s else s)+END
  if START in s:updated=before+block+after
  else:updated=s.replace('## 上海全景建模',block+'\n\n## 上海全景建模',1)
  from sync_readme_districts import normalize_model_view_links
