@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>希勒公寓 · 茂名南路圆窗与悬挑阳台</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="model-view" data-front="positive-z" data-oblique-x="-0.37" aria-label="希勒公寓茂名南路二至四层街面模型"></main>
+  <header>
+    <a href="index.html#landmark=huangpu-xile-apartments-maoming-portholes&amp;mode=overview">← 在上海主地图中查看</a>
+    <p class="eyebrow">黄浦区 · 茂名南路116号</p>
+    <h1>希勒公寓</h1>
+    <p>二至四层圆窗与悬挑阳台</p>
+  </header>
+  <aside class="panel" aria-label="模型操作与下载">
+    <p class="scope">116号入口上方，三扇镶仿石窗套的圆窗排成一列。窗旁的阳台保留了实心栏板、细铁杆和退到后方的门窗。向侧面转动模型，可以看到前缘到后墙约2.5米的进深。</p>
+    <div class="buttons">
+      <button type="button" data-view="front">正看三层圆窗</button>
+      <button type="button" data-view="oblique">侧看悬挑阳台</button>
+      <button type="button" data-view="above">俯看栏杆与后墙</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads"></div>
+    <a href="source/precise/huangpu-xile-apartments-maoming-portholes/README.md">制作范围与照片来源</a>
+  </aside>
+  <footer><span>拖动旋转 · 滚轮或双指缩放</span></footer>
+  <script type="module">
+    import {showCandidateAssetViewer} from './src/candidate-asset-viewer.js?v=xile-apartments-maoming-portholes-v1';
+    showCandidateAssetViewer('huangpu-xile-apartments-maoming-portholes');
+  </script>
+</body>
+</html>
