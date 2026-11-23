@@ -94,6 +94,13 @@ io.native.cameras=calibrated_nodes
 
 def prepare(scene):
     courts.prepare(scene)
+    # Retain the source camera dimensions on the objects, and use a separate
+    # studio-sized verification render when the scene is first made.
+    scene.render.resolution_x,scene.render.resolution_y=600,376
+    scene.render.resolution_percentage=100
+    scene.cycles.samples=6
+    scene.render.threads_mode='FIXED'
+    scene.render.threads=1
 
 
 def verify(blend,raw,out):

@@ -1,0 +1,46 @@
+{
+  "first_attempt": [
+    {
+      "phase": "make",
+      "pid": 209153,
+      "start": "2026-11-23T13:03:20.864633+00:00",
+      "finish": "2026-11-23T13:03:41.813630+00:00",
+      "exit": -9,
+      "log_sha256": "a362e47db7f89a216d92f55d37c610a3a90ba58a87f2733fee886cec73c6f5b6"
+    }
+  ],
+  "first_log_sha256": "a362e47db7f89a216d92f55d37c610a3a90ba58a87f2733fee886cec73c6f5b6",
+  "incomplete_preview_scene": {
+    "file": "xuhui-changle-337-courtyard-gate-and-street-house-editable.blend",
+    "sha256": "beed3f5e2d215682431acb3d50ab4f5a8b6614b6f3ac9b9286002778ff4e59f5",
+    "bytes": 2363621
+  },
+  "phase": "The first maker saved and reopened the native scene, then received SIGKILL in Cycles image generation. The output preview was incomplete.",
+  "retry": "The same fixed source meshes and nine cameras were reopened in a new Blender process after a 600 \u00d7 376 preview render. A third process rendered the complete nine-camera set.",
+  "successful_two_processes": [
+    {
+      "phase": "make",
+      "pid": 211610,
+      "start": "2026-11-23T13:05:04.506150+00:00",
+      "finish": "2026-11-23T13:05:19.622075+00:00",
+      "exit": 0,
+      "log_sha256": "5d3ac7680eee0435fde8571603f5e29f51b8b8f7b3e5895937cbfd69cd20b04f"
+    },
+    {
+      "phase": "reopen",
+      "pid": 212147,
+      "start": "2026-11-23T13:05:19.622779+00:00",
+      "finish": "2026-11-23T13:05:21.617545+00:00",
+      "exit": 0,
+      "log_sha256": "87f176fcaff19250ebef693f60c5698156dc35cd3096e88ab52b1f6f67175a72"
+    }
+  ],
+  "nine_view_render": {
+    "pid": 212200,
+    "exit": 0,
+    "started": "2026-11-23T13:05:21.696360+00:00",
+    "stopped": "2026-11-23T13:05:39.867648+00:00",
+    "log_sha256": "a015eed33f6ded1dc6b5a962b408680b05cd5a4946c6d5461cefb6578f58813f",
+    "editable_sha256": "f5c918cc164c4f7ee6f0422e494b8b216110c0565b2fa8032a1d678fe6e308f3"
+  }
+}
