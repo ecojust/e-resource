@@ -1,0 +1,195 @@
+{
+  "model": "xuhui-gaoan-77-curved-veranda",
+  "evidence": "Centered and eastward winter views of the residence from the Gaoan garden. The east wall and both visible sides of the cantilevered rail are unobstructed on plate 38.",
+  "source": "https://blog.sina.com.cn/s/blog_5d1bdf480101ee2y.html",
+  "images": {
+    "35": {
+      "file": "large-35.jpg",
+      "original_bytes": 304757,
+      "sha256": "ef664af0fd64e9401bbc41a580effe84404428d1ce26241ae3def6f77e9d600f"
+    },
+    "38": {
+      "file": "large-38.jpg",
+      "original_bytes": 5004566,
+      "sha256": "ced5035dfb4b0e344a3deba4779100c3c0aa3d322733f856cc65f4c2455618b2"
+    }
+  },
+  "working_images": {
+    "sina-35": [
+      690,
+      390
+    ],
+    "sina-38": [
+      690,
+      459
+    ]
+  },
+  "basis": "Same southern local metre frame as house_layout.py and photo_cameras.py. The affine scale implied by the brick joints is conditional. Non-triangulated depths of the east wall and balustrade are approximations.",
+  "registration": {
+    "method": "Robust single-view transfer from camera sina-35 in south-window-and-gallery-fit.json to the east region of sina-38, fitted to the 150 COLMAP matches lying right of x=415 in the first image. These nearly coincident views are treated as one direction.",
+    "matches": 150,
+    "median_px": 1.1829351514298505,
+    "p90_px": 3.413696953896373,
+    "homography_35_to_38": [
+      [
+        0.7994728467857469,
+        0.0007371798275437851,
+        31.157767790141545
+      ],
+      [
+        -0.013756915370902727,
+        0.7842971976521054,
+        52.60450198659182
+      ],
+      [
+        -2.2832199058492702e-05,
+        -4.6818316656781564e-05,
+        1.0
+      ]
+    ]
+  },
+  "fixed_plane": {
+    "wall_east_post_units": 2.55,
+    "roof_overhang_m": 0.24,
+    "d_z_roof_edge_post_units": [
+      [
+        0.56,
+        -0.045
+      ],
+      [
+        0.88,
+        -0.057
+      ],
+      [
+        2.48,
+        -0.116
+      ],
+      [
+        3.27,
+        -0.902
+      ]
+    ],
+    "roof_edge_pixels_38": [
+      [
+        483,
+        168
+      ],
+      [
+        604,
+        210
+      ],
+      [
+        665,
+        319
+      ]
+    ]
+  },
+  "terrace": {
+    "east_face_pierced_pairs": 13,
+    "south_face_pierced_pairs": 4,
+    "cap_front_start_end_rear_px": [
+      [
+        492,
+        286
+      ],
+      [
+        535,
+        279
+      ],
+      [
+        595,
+        298
+      ]
+    ],
+    "platform_front_start_end_rear_px": [
+      [
+        490,
+        324
+      ],
+      [
+        542,
+        325
+      ],
+      [
+        599,
+        342
+      ]
+    ],
+    "working_top_and_slab_post_units": [
+      -0.925,
+      -1.2
+    ],
+    "near_and_far_d_units": [
+      0.997,
+      1.774
+    ],
+    "outer_u_units": 2.94,
+    "scope": "Tall lower voids with small apertures above. A short stone intermediate rail separates the registers. Two small collars occur on the upper balusters. The unobserved rear rail return is kept plain."
+  },
+  "openings": {
+    "south_double_leaf_head_px": [
+      [
+        510,
+        221
+      ],
+      [
+        531,
+        229
+      ]
+    ],
+    "middle_narrow_light_head_px": [
+      [
+        575,
+        263
+      ],
+      [
+        584,
+        266
+      ]
+    ],
+    "rear_light_head_and_sill_px": [
+      [
+        613,
+        313
+      ],
+      [
+        622,
+        316
+      ],
+      [
+        625,
+        355
+      ],
+      [
+        617,
+        353
+      ]
+    ],
+    "ground_arch_spring_crown_and_spring_px": [
+      [
+        547.3,
+        376
+      ],
+      [
+        559.6,
+        371
+      ],
+      [
+        577,
+        380.3
+      ]
+    ],
+    "two_small_air_bricks_px": [
+      [
+        572,
+        232
+      ],
+      [
+        578,
+        235
+      ]
+    ],
+    "scope": "The lower portions of the first two upper openings and the arched lower sill are partly hidden. Rear bay extends past the terrace and falls under the folded eave."
+  },
+  "initial_notes": "In the initial glass/wood ray classification both lower-arch points (558,392) and (572,393) were marked glazing. At 4912 px both touch wooden mullions. Before that reading was corrected, 14 of 17 classes matched after the east sash recess was adjusted to approximately 65 mm. The rear coping pier test is close to the transition between pale finish materials."
+}

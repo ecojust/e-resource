@@ -1,0 +1,84 @@
+{
+  "feature": "Centre of the western south-loggia circular capital just below its square bearing",
+  "scope": "Only the height of the circular capital was adjusted. The foot and soffit remain at their established levels. The absolute scale is approximate. The hidden eastern support repeats the measured western arrangement.",
+  "method": "One vertical parameter chosen to minimize the sum of squared image errors from the two fixed south-window-and-gallery-fit.json cameras. The held_out entries fit height using only the other photograph’s vertical observation.",
+  "references": {
+    "paper-25": "https://sh.people.com.cn/n2/2022/1227/c350122-40245366.html",
+    "sina-35": "https://blog.sina.com.cn/s/blog_5d1bdf480101ee2y.html"
+  },
+  "working_rasters": {
+    "paper-25": [
+      640,
+      368
+    ],
+    "sina-35": [
+      690,
+      390
+    ]
+  },
+  "previous_separation_m": 0.09,
+  "fitted_separation_m": 0.532,
+  "lowering_m": 0.442,
+  "observations": [
+    {
+      "photo": "paper-25",
+      "observed_px": [
+        393.0,
+        139.0
+      ],
+      "before": {
+        "projected_px": [
+          391.7369,
+          128.6504
+        ],
+        "residual_px": 10.4264
+      },
+      "after": {
+        "projected_px": [
+          391.3842,
+          139.9652
+        ],
+        "residual_px": 1.8821
+      },
+      "held_out": {
+        "fit_vertical_coordinate_from": "sina-35",
+        "capital_separation_m": 0.543,
+        "predicted_px": [
+          391.3754,
+          140.2471
+        ],
+        "residual_px": 2.0481
+      }
+    },
+    {
+      "photo": "sina-35",
+      "observed_px": [
+        223.0,
+        204.0
+      ],
+      "before": {
+        "projected_px": [
+          222.0714,
+          181.404
+        ],
+        "residual_px": 22.6151
+      },
+      "after": {
+        "projected_px": [
+          221.8025,
+          203.4494
+        ],
+        "residual_px": 1.318
+      },
+      "held_out": {
+        "fit_vertical_coordinate_from": "paper-25",
+        "capital_separation_m": 0.4943,
+        "predicted_px": [
+          221.8255,
+          201.5653
+        ],
+        "residual_px": 2.7032
+      }
+    }
+  ]
+}
