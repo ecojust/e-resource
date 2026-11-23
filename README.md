@@ -491,11 +491,11 @@
 |sh-historic-b5-xh-j-020-v|住宅|淮海中路1380号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-021-v|住宅|复兴西路147号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-022-v|台拉新村|建国西路365弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-023-v|住宅|襄阳南路364弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-023-v|襄阳南路364号住宅|襄阳南路364弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/b1904d3f50d190adac01e92884cc687fc789d1f5/projects/shanghai/xiangyang-364-arched-residence.html>)|市名录作364号。已建临街券门、两层弧窗、檐带和屋顶小屋。街面后3.18米以外及与362号院侧的连接待核。|
 |sh-historic-b5-xh-j-024-v|住宅|桃江路7号-21号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-025-v|住宅|东平路2号-10号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-026-v|住宅|东平路1弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-027-v|住宅|建国西路629弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-027-v|建国西路629号住宅|建国西路629弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/7e09ab289c41af908232433ecdcbb0a401e3353d/projects/shanghai/jianguo-629-rounded-garden-residence.html>)|市名录作629号。已建圆墙花园立面、清水砖芯、窗带、题字及屋顶退台。右侧后翼进深和遮挡处待核。|
 |sh-historic-b5-xh-j-028-v|住宅|康平路101弄1-4号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-029-v|住宅|宛平路15号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-030-v|住宅|淮海中路1857弄67号|[名录][H5]|待核外观／拆栋|
