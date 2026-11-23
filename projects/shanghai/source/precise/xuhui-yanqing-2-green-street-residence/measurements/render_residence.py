@@ -15,7 +15,7 @@ from register_front import Camera
 HERE = Path(__file__).resolve().parent
 PRECISE = HERE.parents[1]
 backend = runpy.run_path(str(PRECISE / 'changning-hongji-yuyuan-garden-houses-8-and-9/measurements/render-garden-stations.py'))
-CROPS = {'2015-street': (92, 74, 1916, 1308), '2015-entrance': (1065, 970, 1313, 1292),
+CROPS = {'2015-roof':(129,87,1715,545), '2015-street': (92, 74, 1916, 1308), '2015-entrance': (1065, 970, 1313, 1292),
          '2015-stair': (953, 515, 1419, 1012), '2015-window-bays': (130, 713, 988, 1240),
          '2015-balconies':(1355, 527, 1741, 1165)}
 
@@ -46,6 +46,13 @@ def render(mesh, photo, output):
             draw.text((width+14,height+4),'Model | Same camera and crop',fill='#242628')
             draw.text((8,height+29),'commons.wikimedia.org/wiki/File:Yanqinglu_2_Hao_Zhuzhai.JPG',fill='#3e4143')
             sheet.save(output/(key+'-comparison.jpg'),quality=94,optimize=True)
+        survey = json.loads((HERE/'2020-roof-two-view-fit.json').read_text())
+        rotation = np.array(survey['rotation'])
+        projection = np.array(survey['intrinsic']) @ rotation @ np.column_stack([np.eye(3),-np.array(survey['camera_centre'])])
+        clip = backend['projected_parts'](parts, projection)
+        with patch.object(engine, 'read_glb', return_value=clip):
+            winter,report['2020-roof'] = engine.raster(mesh,dll,900,projection,(130,147,920,582),light,angles)
+        winter.convert('RGB').save(output/'2020-street-model.jpg',quality=94,optimize=True)
     (output/'model-projection-renders.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 
 if __name__=='__main__':

@@ -59,8 +59,8 @@ def window(b,bounds,idx,upper,lod):
 def add_stair(b,lod=False,extra_cutouts=()):
     low=[box(l,z,r,h)for l,r,z,h in STEPS+UPPER]
     low+=[entry_openings()['gate'][1],*extra_cutouts]
-    main=box(PLAN[0,0],0,PLAN[-1,0],9.48).difference(unary_union(low))
-    for z0,z1,mat,d0 in [(0,.545,BASE,-.012),(.545,9.48,WALL,0)]:
+    main=box(PLAN[0,0],0,PLAN[-1,0],9.96).difference(unary_union(low))
+    for z0,z1,mat,d0 in [(0,.545,BASE,-.012),(.545,9.96,WALL,0)]:
         part(b,main.intersection(box(-20,z0,20,z1)),d0,.205,mat,'curved exterior wall')
     for i,w in enumerate(STEPS):window(b,w,i+1,False,lod)
     for i,w in enumerate(UPPER):window(b,w,i+1,True,lod)
@@ -70,4 +70,4 @@ def add_stair(b,lod=False,extra_cutouts=()):
         boundary=Polygon([(cx,cz+rz),(cx+rx,cz),(cx,cz-rz),(cx-rx,cz)])
         strip=boundary.difference(boundary.buffer(-.083,join_style=2))
         part(b,strip,-.018,-.001,CREAM,'outlined diamond above middle flight')
-    part(b,box(PLAN[0,0],9.37,PLAN[-1,0],9.47),-.09,.22,CREAM,'curved cornice')
+    part(b,box(PLAN[0,0],9.84,PLAN[-1,0],9.96),-.09,.22,CREAM,'curved cornice')

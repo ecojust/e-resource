@@ -10,6 +10,7 @@ from shapely.ops import unary_union
 sys.path.append(str(Path(__file__).resolve().parents[1]/'measurements'))
 from register_front import Camera
 from stair_surface import at_surface
+from east_end_sashes import openings as east_recessed_openings
 from photo_architecture import Facade
 
 WALL = 'Yanqing 2 | pale celadon mineral render'
@@ -116,7 +117,6 @@ def trim_and_sash(f,row,opening,lod):
             if transom else [z0+height*i/3 for i in (1,2)])
     for z in levels:
         strips.append(box(x0,z-.009,x1,z+.009))
-    frame=unary_union(strips)
     if 'balcony door' in name:
         # The 2015 and 2020 street views show a real narrow balcony above
         # the two-window ground bay. Its side rails turn back to the wall.
@@ -135,7 +135,25 @@ def trim_and_sash(f,row,opening,lod):
             f.box(x+u,z0+.292,.015,.586,.019,front,FRAME,name+' / vertical baluster')
     f.prism(shape,-.185,-.166,REAR,name+' / dark window back')
     f.prism(glass,-.147,-.136,GLASS,name+' / recessed glazing')
-    f.prism(frame,-.135,-.101,FRAME,name+' / joined steel grille')
+    if lod:
+        # At distance the same observed pane boundaries can use two abutting
+        # layers of rolled steel sections. The continuous uprights sit just
+        # behind the traversing rails. This keeps the full silhouette while
+        # avoiding a new through-hole prism around every individual pane.
+        f.prism(strips[0],-.135,-.101,FRAME,name+' / perimeter steel sash')
+        for strip in strips[1:]:
+            left,bottom,right,top=strip.bounds
+            upright=top-bottom>right-left
+            if upright:
+                bottom,top=z0+.032,z1-.032
+                depth,centre=.020,-.125
+            else:
+                left,right=x0+.032,x1-.032
+                depth,centre=.014,-.108
+            f.box((left+right)/2,(bottom+top)/2,right-left,top-bottom,depth,centre,
+                  FRAME,name+' / rolled steel glazing sections')
+    else:
+        f.prism(unary_union(strips),-.135,-.101,FRAME,name+' / joined steel grille')
     if not lod and columns>=3:
         f.box(x,low-.009,.042,.068,.021,-.092,FRAME,name+' / central sash catch')
     f.box(x,z0-.048,width+.13,.096,.177,.010,CREAM,name+' / projecting sill')
@@ -200,6 +218,15 @@ def add_bays(builder,lod=False,paths=None):
             if levels:
                 bottom=(footing if group in ('west','three-window bay') else levels[0])
                 holes=[box(*opening) for _,opening in windows]
+                if group=='east shoulder' and i==len(pts)-2:
+                    # The last shallow return overlaps the jamb of the two
+                    # east sashes. Continue their jambs through the return
+                    # and its backing thickness, including the off-axis view.
+                    for window in east_recessed_openings():
+                        left,low,right,high=window.bounds
+                        start=(left-.047-f.center[0])/f.t[0]
+                        end=(right+.047-f.center[0])/f.t[0]
+                        holes.append(box(start,low-.025,end,high+.025))
                 f.wall(bottom,levels[1],holes,.145,material=WALL)
                 if group in ('west','three-window bay','east shoulder'):
                     f.box(0,3.74 if group=='west' else 3.75,f.length,.09,.081,.018,CREAM,'interstorey flat eave')

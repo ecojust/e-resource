@@ -5,6 +5,7 @@ from central_stair import WALL,BASE,CREAM,FRAME,PANE,LANDING,SOFFIT
 from stair_surface import PLAN,Camera
 from street_bays import bay_layout,bay_wall_cutouts
 from street_entry import openings as entry_openings
+from east_end_sashes import openings as upper_end_openings, add_upper_sashes
 
 def block(b,left,right,front,back,bottom,top,mat,label):
     if left>=right or front>=back or bottom>=top:return
@@ -35,7 +36,7 @@ def add_balconies(b,lod):
     upper=[]
     for z,h in [(3.80,5.98),(6.92,9.32)]:
         upper.append((2.96,z,4.11,h))
-    field(b,left,right,rear,9.51,[*lower_window,*[box(*v) for v in upper]],'balcony back wall')
+    field(b,left,right,rear,9.86,[*lower_window,*[box(*v) for v in upper]],'balcony back wall')
     for num,(x,z,xx,h) in enumerate(upper,1):
         ordinary_sash(b,(x,z,xx,h),rear,2,5,'balcony door '+str(num))
         y=.89 if num==1 else 1.00
@@ -66,7 +67,7 @@ def add_joining_walls(b,lod=False):
     c=Camera();l=c.wall((529,955),wall_y);r=c.wall((568,1054),wall_y)
     slit=(l[0],r[2],r[0],l[2]);extra=[box(*slit)]
     left_edge=min(west[0][0],-12.53)-.12
-    field(b,left_edge,PLAN[0,0],wall_y,9.04,[*cut,*extra],'street wing to left of stair')
+    field(b,left_edge,PLAN[0,0],wall_y,10.19,[*cut,*extra],'street wing to left of stair')
     ordinary_sash(b,slit,wall_y,2,4,'narrow window between left projections')
     # The long folded window group leaves a short return where its end and
     # the stair wall are offset in plan.
@@ -77,5 +78,6 @@ def add_joining_walls(b,lod=False):
     last=8.15
     y=2.40
     right_hole=entry_openings({'right_wall_y':y})['right_window'][1]
-    field(b,east[0][0],last,y,8.76,[*cut,right_hole],'wall by the second number 2 plate')
+    field(b,east[0][0],last,y,9.86,[*cut,right_hole,*upper_end_openings()],'wall by the second number 2 plate')
+    add_upper_sashes(b,lod,right_wall_y=y)
     return left_edge,last
