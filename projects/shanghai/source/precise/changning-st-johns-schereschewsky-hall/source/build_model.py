@@ -14,24 +14,34 @@ from photo_architecture import Builder as ArchitectureBuilder, Facade
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
 from crown_builder import CrownBuilder
 import courtyard
+import rear_courts
 import clock_glazing
+import sculpture
 import finishes
 class Builder(CrownBuilder):
     def add(self,vertices,faces,material='limestone',label='detail'):
         super().add(vertices,faces,material,label)
         if material in finishes.STEMS:finishes.metric_uv(self.parts[-1])
+        part=self.parts[-1]
+        # Keep the editable component boundaries while avoiding a Python object for
+        # every scalar in the full group of arcades. The writer receives identical doubles.
+        part['vertices']=np.asarray(part['vertices'],dtype=np.float64)
+        part['triangles']=np.asarray(part['triangles'],dtype=np.uint32)
+        if 'texcoords' in part:part['texcoords']=np.asarray(part['texcoords'],dtype=np.float64)
     def save(self,path,metadata=None):
         ArchitectureBuilder.save(self,path,metadata)
         return finishes.writer.embed_normals(path)
 
 ID = 'changning-st-johns-schereschewsky-hall'
 META = dict(id=ID, heritage_id='sh-historic-b2-060', name='圣约翰大学怀施堂（韬奋楼）南翼与钟楼', address='万航渡路1575号41号楼', viewer_page='st-johns-schereschewsky-hall.html', geometry_license='MIT', photos_embedded=False)
+if (HERE/'cameras.json').is_file():META['camera_views']=json.loads((HERE/'cameras.json').read_bytes())
 BRICK='blue-grey facing brick'; RED='warm red brick dressings'; STONE='weathered granite'; RAIL='painted red-brown timber'; DARK='dark iron and timber'; GLASS='smoke grey glazing'; TILE='grey butterfly tile'; WHITE='warm cream stucco'; DIAL='clock enamel'
 PALETTE={role:dict(color=color,roughness=rough) for role,color,rough in [
     (BRICK,[.29,.288,.297],.86),(RED,[.52,.254,.177],.84),(STONE,[.46,.421,.355],.85),
     (RAIL,[.33,.126,.097],.68),(DARK,[.064,.06,.054],.56),(GLASS,[.16,.18,.185],.31),
     (TILE,[.20,.205,.206],.79),(WHITE,[.82,.78,.66],.87),(DIAL,[.875,.864,.817],.44)]}
-PALETTE.update(finishes.PALETTE);PALETTE.update(clock_glazing.PALETTE)
+PALETTE.update(finishes.PALETTE);PALETTE.update(clock_glazing.PALETTE);PALETTE.update(sculpture.PALETTE)
+PALETTE.update({'lawn grass':dict(color=[.19,.25,.117],roughness=.98),'court pebble paving':dict(color=[.43,.413,.36],roughness=.93)})
 WIDTH=40.533; DEPTH=12.5; COURT=20.75; TOWER=4.8515
 COURT_EAVE=8.342; FLOOR=4.8207; LOW_EAVE=8.342; RIDGE=11.961
 def curve(c,bottom,spring,peak,width,n,flat=.0):
@@ -56,6 +66,18 @@ def lattice(f,c,z,width,height,lod,label):
     for t in ([.50] if lod else [.43,.73]):
         pieces.append(box(c-width/2,z+height*t-.013,c+width/2,z+height*t+.013))
     f.prism(unary_union(pieces),-.108,-.048,RAIL,label)
+def street_railing(f,u,z,width,height,lod):
+    posts=[box(u-width/2,z,u+width/2,z+.055),box(u-width/2,z+height-.058,u+width/2,z+height)]
+    count=max(2,round(width/.39));unit=width/count
+    for i in range(count):
+        left=u-width/2+i*unit
+        posts.append(box(left-.017,z,left+.017,z+height))
+        posts.append(box(left+unit*.50-.016,z+.055,left+unit*.50+.016,z+height*.66))
+        posts.append(box(left+unit*.50-.012,z+height*.64,left+unit*.94,z+height*.68))
+        if not lod:
+            posts.append(box(left+unit*.42,z+height*.36,left+unit*.96,z+height*.40))
+            posts.append(box(left+unit*.90,z+height*.38,left+unit*.94,z+height*.67))
+    f.prism(unary_union(posts),-.064,.01,RAIL,'street gallery fretwork balustrade')
 def wing(b,side,street,lod):
     a,c=sorted([side*TOWER/2,side*(WIDTH if street else COURT)/2]);length=c-a
     y=0 if street else DEPTH
@@ -78,7 +100,7 @@ def wing(b,side,street,lod):
         if street:
             p=curve(u,FLOOR,7.68,7.98,w,n,.30*w)
             hood(f,p,7.68,RED,'upper flat-shouldered brick head',.12)
-            lattice(f,u,FLOOR+.02,w,.89,lod,'upper gallery timber balusters')
+            street_railing(f,u,FLOOR+.07,w,.90,lod)
         else:
             p=box(u-.432,5.91,u+.432,7.36)
             f.window(p,2,2,DARK,False,GLASS,'courtyard recessed upper sash')
@@ -126,6 +148,14 @@ def clock_face(f,lod):
         f.prism(p,d,d+.020,DARK,'clock/hand')
     from shapely.geometry import Point
     f.prism(Point(0,c).buffer(.098,quad_segs=8),.186,.223,DARK,'clock/axle')
+def tower_sash(f,q,columns,rows,sill):
+    l,z,r,h=q.bounds
+    f.prism(q.buffer(.009,join_style=2),-.264,-.241,GLASS,'tower recessed sash glazing')
+    bars=[box(l+(r-l)*i/columns-.019,z,l+(r-l)*i/columns+.019,h)for i in range(1,columns)]
+    bars.extend(box(l,z+(h-z)*i/rows-.017,r,z+(h-z)*i/rows+.017)for i in range(1,rows))
+    panes=q.buffer(-.036,join_style=2).difference(unary_union(bars))
+    f.prism(q.buffer(-.010,join_style=2).difference(panes),-.189,-.116,DARK,'tower sash joinery')
+    f.box((l+r)/2,z-.033,r-l+.048,.066,.16,-.045,sill,'short tower reveal sill')
 def tower_face(b,court,lod):
     half=TOWER/2;y=DEPTH if court else 0
     f=Facade(b,(half,y),(-half,y),'Court clock') if court else Facade(b,(-half,y),(half,y),'Street clock')
@@ -138,13 +168,14 @@ def tower_face(b,court,lod):
     hood(f,portal,.04 if not court else 3.03,RED,'portal shaped brick surround',.205, .117)
     for q in lights:
         hood(f,q,7.62,RED,'arch over tower sash',.15)
-        f.window(q,2 if q==lights[1] else 1,3,DARK,False,GLASS,'arched light')
+        tower_sash(f,q,2 if q==lights[1] else 1,3,STONE if court else RED)
     for i,q in enumerate(clerestory):
-        if court:f.window(q,2 if i==1 else 1,4,DARK,False,GLASS,'rectangular light')
+        if court:tower_sash(f,q,2 if i==1 else 1,4,RED)
         else:clock_glazing.add(f,q,i,lod,DARK)
     projecting_bands(f,wall,[(1.73,.10),(3.04,.08),(4.821,.15),(5.93,.096),(7.15,.096),(7.80,.08),(9.125,.12),(11.555,.14),(14.937,.15)])
     f.prism(box(-half+.04,14.982,half-.04,16.95),-.32,.002,WHITE,'cream upper belfry panel')
-    for z in [11.555,14.937,16.94]:f.box(0,z,TOWER+.10,.105,.40,.016,RED,'cap moulding')
+    for z,width in [(11.555,2.98),(14.937,TOWER+.10),(16.94,TOWER+.10)]:
+        f.box(0,z,width,.105,.40,.016,RED,'cap moulding')
     for u in np.linspace(-1.53,1.53,6):f.box(u,16.66,.047,.225,.08,.045,DARK,'belfry vent')
     clock_face(f,lod)
     if not court:
@@ -164,16 +195,32 @@ def tower_face(b,court,lod):
 def clock_roof(b):
     # The Chinese roof corners sweep above the eaves. Nested polygonal rings give the
     # top a concave profile; the hips join the ridge before the four corner tips rise.
-    xc=0;yc=DEPTH/2;layers=[(3.06,DEPTH/2+.74,17.03,.61),(2.85,DEPTH/2+.51,17.12,.39),(1.88,DEPTH/2-.54,17.52,.18),(.63,DEPTH/2-2.03,17.95,.04)]
-    pts=[]
+    yc=DEPTH/2
+    layers=[(3.06,yc+.74,17.13,.70),(2.91,yc+.57,17.19,.48),
+            (2.32,yc-.09,17.43,.24),(1.51,yc-.89,17.78,.09),(.22,yc-2.10,18.35,.04)]
+    ring=[]
+    for i in range(8):ring.append((-1+i*.25,-1))
+    for i in range(8):ring.append((1,-1+i*.25))
+    for i in range(8):ring.append((1-i*.25,1))
+    for i in range(8):ring.append((-1,1-i*.25))
+    count=len(ring);vertices=[];faces=[]
     for hx,hy,z,lift in layers:
-        pts.extend([(xc+x*hx,yc+y*hy,z+(lift if x and y else 0))for x,y in [(-1,-1),(0,-1),(1,-1),(1,0),(1,1),(0,1),(-1,1),(-1,0)]])
-    faces=[tuple(range(7,-1,-1))]
-    for j in range(len(layers)-1):
-        for i in range(8):faces.append((j*8+i,j*8+(i+1)%8,(j+1)*8+(i+1)%8,(j+1)*8+i))
-    faces.append(tuple(range(24,32)));b.add(pts,faces,TILE,'belfry/swept hipped roof')
-    for side in (-1,1):
-        b.tube([(side*.60,yc-DEPTH/2+2.03,17.995),(side*.60,yc+DEPTH/2-2.03,17.995)],.061,TILE,8,'belfry/upper ridge')
+        vertices.extend([(x*hx,yc+y*hy,z+lift*abs(x*y)**5)for x,y in ring])
+    bottom=len(vertices);vertices.append((0,yc,17.08))
+    top=len(vertices);vertices.append((0,yc,18.41))
+    for i in range(count):
+        j=(i+1)%count;faces.append((bottom,j,i))
+        for r in range(len(layers)-1):
+            a=r*count;c=(r+1)*count
+            faces.extend([(a+i,a+j,c+j),(a+i,c+j,c+i)])
+        a=(len(layers)-1)*count;faces.append((a+i,a+j,top))
+    b.add(vertices,faces,TILE,'Belfry / hipped roof with curved eaves')
+    for x,y in [(-1,-1),(1,-1),(1,1),(-1,1)]:
+        line=[(x*hx,yc+y*hy,z+lift+.034)for hx,hy,z,lift in layers]
+        b.tube(line,.068,TILE,9,'Belfry / swept hip ridge')
+        end=[(x*3.00,yc+y*(yc+.65),17.68),(x*3.08,yc+y*(yc+.77),17.87),(x*3.13,yc+y*(yc+.79),18.04)]
+        b.tube(end,.059,TILE,9,'Belfry / upswept eave tip')
+    b.tube([(0,2.08,18.45),(0,DEPTH-2.08,18.45)],.083,TILE,10,'Belfry / main axial ridge')
 def low_roof(b,side):
     a,c=sorted([side*TOWER/2,side*(WIDTH/2+1.06)])
     y0=-.73;y1=DEPTH+.73;ym=(y0+y1)/2
@@ -193,7 +240,9 @@ def build(lod):
         wing(b,side,True,lod);wing(b,side,False,lod);low_roof(b,side)
         sidewall=Facade(b,(side*TOWER/2,DEPTH if side<0 else 0),(side*TOWER/2,0 if side<0 else DEPTH),'Tower passage and cheek')
         sidewall.wall(.028,14.98,material=BRICK)
-        sidewall.wall(14.98,16.99,material=WHITE)
+        side_vents=[box(u-.30,15.88,u+.30,16.67)for u in [-4.08,0.,4.08]]
+        sidewall.wall(14.98,16.99,side_vents,material=WHITE)
+        for vent in side_vents:sidewall.prism(vent,-.215,-.183,DARK,'side clerestory vent')
         for z in [4.821,9.125,11.555,14.937]:sidewall.beam(z,.098,.008,RED)
         outer=side*WIDTH/2
         b.box((outer,DEPTH/2,LOW_EAVE/2),(.28,DEPTH,LOW_EAVE),BRICK,label='Teaching wing/end wall')
@@ -201,6 +250,8 @@ def build(lod):
     b.box((0,DEPTH/2,.03),(TOWER-.65,DEPTH,.06),STONE,label='Clock passage/granite threshold and floor')
     b.box((0,DEPTH/2,4.69),(TOWER-.69,DEPTH-.61,.17),WHITE,label='Clock passage/soffit')
     courtyard.install(b,lod,sys.modules[__name__])
+    sculpture.add_sculpture(b,lod)
+    rear_courts.add(b,sys.modules[__name__])
     return b
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--lod',action='store_true')

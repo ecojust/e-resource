@@ -5,10 +5,10 @@ from shapely.ops import unary_union
 from photo_architecture import Facade
 def install(b,lod,arch):
     half=arch.COURT/2;outer=arch.WIDTH/2
-    first=arch.DEPTH;last=first+9*3.138;pitch=(last-first)/9
+    first=arch.DEPTH;last=46.40;pitch=(last-first)/11
     floor=arch.FLOOR
-    # Eight bays are identifiable in the published north-facing crop. The ninth fits the
-    # independently measured return length in both aerials and is partly behind the photographer.
+    # Eight bays are identifiable in the published north-facing crop. Eleven fit the
+    # courtyard in the campus aerial and minimize the independent pier and bay-centre residuals from both ends.
     def gallery(f,spans,roof,bottom_rail=True,accent=None):
         cuts=[]
         for k,(u,p) in enumerate(spans):
@@ -30,7 +30,7 @@ def install(b,lod,arch):
         x=half*side
         a,c=((x,first),(x,last)) if side<0 else ((x,last),(x,first))
         f=Facade(b,a,c,'South court / west arcade' if side<0 else 'South court / east arcade')
-        spans=[((i-4)*pitch,pitch)for i in range(9)]
+        spans=[((i-5)*pitch,pitch)for i in range(11)]
         gallery(f,spans,arch.COURT_EAVE)
         centre=(first+last)/2;corridor=2.10
         backx=x+side*corridor
@@ -46,7 +46,7 @@ def install(b,lod,arch):
         for q in doors:back.prism(q,-.24,-.20,arch.RAIL,'passage door')
         for h in [.23,floor-.115]:
             b.box((x+side*corridor/2,centre,h),(corridor+.18,last-first,.17),arch.STONE,label='Side galleries/continuous passage floor')
-        for bay in [2,6]:
+        for bay in [2,8]:
             y=first+(bay+.5)*pitch
             for step in range(3):
                 b.box((x-side*(.58-.19*step),y,.071*(step+1)),(.25,1.11,.142*(step+1)),arch.STONE,label='Side galleries/lawn steps')
@@ -61,20 +61,28 @@ def install(b,lod,arch):
         # Plain return mass spans the aerially visible teaching wing. Outer elevations
         # receive no count of street windows in the absence of a calibrated exterior.
         b.box((side*outer,centre,arch.COURT_EAVE/2),(.29,last-first,arch.COURT_EAVE),arch.BRICK,label='Side wing/outer shell')
-    width=7.66;fa=Facade(b,(-width/2,last),(width/2,last),'Cross wing / central three-bay pavilion')
+    centre_x=-.22;width=8.40;fa=Facade(b,(centre_x-width/2,last),(centre_x+width/2,last),'Cross wing / central three-bay pavilion')
     central_width=width/3
     gallery(fa,[(i*central_width,central_width)for i in [-1,0,1]],8.40,True,arch.WHITE)
-    outline=Polygon([(-width/2,8.38),(width/2,8.38),(width/2,9.28),(0,10.24),(-width/2,9.28)])
+    outline=box(-width/2,8.37,width/2,9.46)
     fa.prism(outline,-.31,.002,arch.WHITE,'three-medallion pavilion gable')
-    for x in [-2.3,0,2.3]:
-        disk=Point(x,8.92).buffer(.35 if x else .43,quad_segs=8 if lod else 16)
-        fa.prism(disk,.012,.073,arch.RED if x else arch.STONE,'circular medallion')
+    for x,z in [(-2.59,8.68),(.01,8.77),(2.72,8.76)]:
+        disk=Point(x,z).buffer(.35 if abs(x)>1 else .43,quad_segs=8 if lod else 16)
+        fa.prism(disk,.012,.073,arch.RED if abs(x)>1 else arch.STONE,'circular medallion')
         fa.prism(disk.buffer(.038).difference(disk),.015,.092,arch.RED,'medallion raised border')
-    gable=Point(0,9.77).buffer(.18,quad_segs=9)
-    fa.prism(gable,.009,.036,arch.DARK,'pediment round opening')
-    halfdepth=4.45;cy=last+halfdepth
+    # Seen in the 2026 frontal photograph of the bust: a red five-pointed star
+    # lies inside the central roundel, and the flanking disks have red borders.
+    a=np.linspace(np.pi/2,np.pi/2+np.pi*2,11)[:-1]
+    badge=Polygon([(.01+(.227 if i%2==0 else .094)*np.cos(q),8.77+(.227 if i%2==0 else .094)*np.sin(q))for i,q in enumerate(a)])
+    fa.prism(badge,.081,.095,arch.RED,'central roundel five-pointed star')
+    pediment=Facade(b,(centre_x-1.08,last+.87),(centre_x+1.08,last+.87),'Cross wing / recessed white pediment')
+    face=Polygon([(-1.08,10.09),(1.08,10.09),(0,11.27)])
+    eye=Point(0,10.53).buffer(.154,quad_segs=10)
+    pediment.prism(face.difference(eye),-.16,.012,arch.WHITE,'upper gable')
+    pediment.prism(eye,-.11,-.09,arch.DARK,'pediment aperture')
+    halfdepth=3.80;cy=last+halfdepth
     for side in [-1,1]:
-        left,right=sorted([side*half,side*width/2]);f=Facade(b,(left,last+.40),(right,last+.40),'Cross wing / outer arcade')
+        left,right=sorted([side*half,centre_x+side*width/2]);f=Facade(b,(left,last+.40),(right,last+.40),'Cross wing / outer arcade')
         gap=(right-left)/2
         gallery(f,[(-gap/2,gap),(gap/2,gap)],arch.COURT_EAVE)
     # The cross-wing roof extends to the outer side walls. Its ridge can be traced
@@ -83,20 +91,39 @@ def install(b,lod,arch):
                   (last+2*halfdepth+.56,8.25),(cy,10.51),(last-.47,8.25)])
     b.prism(sec,-outer-.60,outer+.60,lambda y,z,x:(x,y,z),arch.TILE,'Cross wing/full tile shell')
     b.tube([(-outer+.22,cy,10.72),(outer-.22,cy,10.72)],.077,arch.TILE,9,'Cross wing/tile ridge')
-    # The raised three-bay face has a secondary Chinese pediment and upturned ends.
-    xs=np.linspace(-width/2-.34,width/2+.34,9)
-    def heights(x):
-        t=abs(x)/(width/2+.34)
-        return 10.37-1.31*t+.39*t**6
-    upper=[(x,heights(x))for x in xs]
-    lower=[(x,z-.105)for x,z in reversed(upper)]
-    b.prism(Polygon(upper+lower),-(last+4.32),-(last-.39),lambda x,z,d:(x,-d,z),arch.TILE,'Cross wing/pavilion tile cap')
+    # The school northward image has a lower transverse swept eave between its
+    # three medallions and a short, raised white gable. Only the central triangle is plaster.
+    from rear_courts import folded_roof
+    xs=np.linspace(-width/2-.34,width/2+.34,21)
+    pts=[];faces=[]
+    for row,(dy,eave,rise) in enumerate([(-.62,9.38,.65),(-.23,9.54,.38),(.35,9.88,.19),(.95,10.19,.065)]):
+        for x in xs:
+            k=abs(x)/(width/2+.34);pts.append((centre_x+x,last+dy,eave+rise*k**5))
+        if row:
+            for i in range(len(xs)-1):
+                old=(row-1)*len(xs)+i;new=row*len(xs)+i
+                faces.append((old,old+1,new+1,new))
+    folded_roof(b,pts,faces,arch.TILE,'Cross wing / lower swept eave')
     for side in [-1,1]:
         x=side*(width/2+.34)
-        b.tube([(x-side*.48,last-.39,heights(x-side*.48)+.05),(x,last-.39,heights(x)+.05),(x+side*.20,last-.42,heights(x)+.22)],.052,arch.TILE,7,'Cross wing/pavilion swept corner')
+        b.tube([(centre_x+x-side*.43,last-.60,9.80),(centre_x+x,last-.62,10.03),(centre_x+x+side*.16,last-.64,10.25)],.054,arch.TILE,8,'Cross wing/swept tip')
+    higher=[(-1.17,10.14),(0,11.38),(1.17,10.14),(1.17,10.04),(0,11.28),(-1.17,10.04)]
+    b.prism(Polygon([(x+centre_x,z)for x,z in higher]),-(last+3.21),-(last+.78),lambda x,z,d:(x,-d,z),arch.TILE,'Cross wing / upper gable roof')
     f=Facade(b,(-half,last+2.75),(half,last+2.75),'Cross wing / gallery rear face')
     openings=[box(x-.48,.12,x+.48,2.72)for x in [-7.7,-5.1,-2.5,0,2.5,5.1,7.7]]
     f.wall(0,8.37,holes=openings,material=arch.BRICK)
     for q in openings:f.prism(q,-.21,-.18,arch.RAIL,'rear door')
     for h in [.20,floor-.11]:
         b.box((0,last+1.54,h),(2*half,2.95,.17),arch.STONE,label='Cross wing/passage slab')
+
+    # The institutional photograph and the 2004 rear portrait both show a pale
+    # pebble path on the centreline, with closely cut lawn either side.
+    from shapely.geometry import box as footprint
+    court=footprint(-half+.02,first+.04,half-.02,last-.05)
+    middle=footprint(-.86,first+.03,.86,last-.02)
+    margins=court.difference(court.buffer(-.68,join_style=2))
+    walkway=unary_union([middle,margins]).intersection(court)
+    b.plan_prism(walkway,-.09,-.014,'court pebble paving','Courtyard/pebble path')
+    b.plan_prism(court.difference(walkway.buffer(.014,join_style=2)),-.072,-.008,'lawn grass','Courtyard/grass on two sides of path')
+    back=box(-outer,last+2*halfdepth-.30,outer,last+2*halfdepth+.0)
+    b.plan_prism(back,0,8.28,arch.BRICK,'Cross wing/rear closure to the northern courts')
