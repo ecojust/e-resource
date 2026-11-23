@@ -15,3 +15,7 @@
 汉口路花园住宅南向楼梯间已进入黄浦区目录，城市内可定位的模型由316处增至317处。地图视图和独立页在桌面及手机尺寸视口复核，四种下载均按文件摘要校验。
 
 [主图](../../../index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) · [现场逐图复核](city-31282/visual-review.json) · [两排错层窗的几何与照片核对](stair-window-recheck/README.md)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ad6c708e8e2fc7e1d704fd771661652b5d5dc978/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，9 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
