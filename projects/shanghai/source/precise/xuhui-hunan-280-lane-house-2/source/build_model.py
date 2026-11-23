@@ -1,5 +1,6 @@
 """Build the surveyed exterior of No. 2, Lane 280, Hunan Road."""
 import argparse
+import json
 from pathlib import Path
 import sys
 HERE=Path(__file__).resolve().parent
@@ -22,8 +23,9 @@ META={'id':ID,'name':'湖南路280弄2号五层住宅临街窗墙与弧窗','add
       'heritage_id':'sh-historic-b5-xh-j-115-v','heritage_group':'5D115','viewer_page':SLUG+'.html',
       'source':'https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
       'photo_source':'https://4travel.jp/travelogue/11116083','photo_author':'中国の風景, 2016-03-13',
+      'camera_views':json.loads((HERE/'cameras.json').read_bytes()),
       'photos_embedded':False,'geometry_license':'MIT','texture_license':'MIT',
-      'scope':'湖南路一侧的五层窗墙、斜向弄堂墙、四层转角钢窗和下方带2号门牌的入口。'}
+      'scope':'湖南路一侧的五层窗墙、斜向弄堂墙、东墙的三樘小窗、四层转角钢窗和下方带2号门牌的入口。'}
 class Builder(CrownBuilder):
     def add(self,vertices,faces,material='limestone',label='detail'):
         before=len(self.parts)

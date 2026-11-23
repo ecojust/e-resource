@@ -10,6 +10,7 @@ from register_house import Camera
 from curved_corner import corner_limits
 from flat_windows import add_window
 import exterior_fittings as fittings
+import east_face
 from house_finishes import WALL,GROUND,SILL,STEEL
 
 HERE=Path(__file__).resolve().parent
@@ -43,14 +44,14 @@ def tiled_edge(face,z0,z1):
 def pos_face(builder,lo,hi,depth,label):
     return Facade(builder,(lo,depth),(hi,depth),label)
 
-def strip_roof_rail(b,face,z,length):
+def strip_roof_rail(b,face,z,length,height=.49):
     span=min(face.length,length)
     start=-face.length/2;end=start+span
-    for rise in (.26,.49):
+    for rise in (.47*height,height):
         b.tube([face.point(start,z+rise,-.13),face.point(end,z+rise,-.13)],.014,RAIL,7,'280-2 roof / long horizontal guard')
     count=math.ceil(span/1.0)
     for u in np.linspace(start,end,count+1):
-        b.tube([face.point(u,z+.01,-.13),face.point(u,z+.50,-.13)],.014,RAIL,7,'280-2 roof / guard upright')
+        b.tube([face.point(u,z+.01,-.13),face.point(u,z+height+.01,-.13)],.014,RAIL,7,'280-2 roof / guard upright')
 
 def window_from_points(face,results,code,cam):
     pts=results['points']
@@ -66,41 +67,62 @@ def window_from_points(face,results,code,cam):
 def add_street_wall(b,results,lod):
     parameters=results['parameters'];span=parameters['span'];depth=parameters['depth'];cam=Camera('86')
     west,_,zwest=cam.wall(OUTLINE['south_front']['upper_west_corner'])
-    east=span[-1]+.59
-    cwest=span[3]-.48;ceast=span[4]+.38
-    ewest=span[5]-.49
+    eastern=east_face.data()
+    turn,far,rail_top,_=east_face.side_measurements()
+    surveyed=eastern['geometry_on_retained_eight_station_system']
+    cwest=span[3]-.53;ceast=span[4]+.44
+    ewest=span[5]-.48
     zbreak=cam.wall((395,568))[2]
     ztop=cam.wall(OUTLINE['south_front']['upper_step_right'])[2]
-    depth_sets=[(west,cwest,0.,0.,('A','B')),(cwest,ceast,depth[0],depth[1],('C',)),
-                (ceast,ewest,0.,0.,()),(ewest,east,depth[2],depth[3],('E',))]
-    for lo,hi,lower,upper,banks in depth_sets:
-        for low,high,z0,z1,y,mat in [(1,1,0,zbreak,lower,GROUND),(2,5,zbreak,ztop,upper,WALL)]:
-            surf=pos_face(b,lo,hi,y,'280-2 south')
+    previous={}
+    for low,high in [(1,1),(2,5)]:
+        group='1' if low==1 else '2'
+        def edge(bank,x):
+            p=np.array(surveyed[bank+group+'BL'][:2]);q=np.array(surveyed[bank+group+'BR'][:2])
+            return east_face.point_at_x(p,q,x)
+        c0,c1=edge('C',cwest),edge('C',ceast)
+        ep=np.array(surveyed['E'+group+'BL'][:2]);eq=np.array(surveyed['E'+group+'BR'][:2])
+        e0=edge('E',ewest)
+        e1=east_face.turn_curve(ep,eq,turn,far,2)[0]
+        panels=[('AB',[west,0.],[cwest,0.],ztop),('C',c0,c1,turn[2]),
+                ('',[ceast,0.],[ewest,0.],turn[2]),('E',e0,e1,turn[2])]
+        z0=0 if low==1 else zbreak
+        for banks,p,q,roof_z in panels:
+            z1=zbreak if low==1 else roof_z
+            surf=Facade(b,p,q,'280-2 street')
             holes={}
             for bank in banks:
                 for storey in range(low,high+1):
-                    code=bank+str(storey);opening=window_from_points(surf,results,code,cam)
-                    if opening is None:continue
-                    holes[code]=opening
-            outlines=[(z0,z1,mat)] if low>1 else [(z0,.34,PLINTH),(.34,z1,mat)]
+                    code=bank+str(storey)
+                    if code+'BL' in surveyed:
+                        corners=[np.array(surveyed[code+corner]) for corner in ('BL','TR')]
+                        u=[(vertex-surf.center)@surf.t for vertex in corners]
+                        opening=box(u[0],corners[0][2],u[1],corners[1][2])
+                    else:
+                        opening=window_from_points(surf,results,code,cam)
+                    if opening is not None:holes[code]=opening
+            outlines=[(z0,z1,WALL)] if low>1 else [(z0,.34,PLINTH),(.34,z1,GROUND)]
             plaster(surf,outlines,holes,'south',lod)
-            if low==1 and 'A' in banks:
-                fittings.ground_vent(surf,cam,[(338,733),(358,746)])
-            if low>1 and 'B' in banks:
-                fittings.condenser(surf,Camera('6-1512'),OUTLINE['visible_fixtures']['6-1512_front_air_unit'][0],'street lower condenser',lod)
-                fittings.bracket_pair(surf,holes['A3'],lod)
-            if low==1 and upper<lower-.045:
-                # Restitute the horizontal lower face of the projecting range.
-                b.plan_prism(box(lo,upper,hi,lower),z1-.068,z1,SILL,'280-2 south / soffit under upper bank')
-            if low>1:tiled_edge(surf,z1,z1+.07)
-        # Where one stack projects, the ends are visible strips, not windowless full floors.
-        for z0,z1,y in [(0,zbreak,lower),(zbreak,ztop,upper)]:
-            if abs(y)<.035:continue
-            for x,reverse in [(lo,False),(hi,True)]:
-                ends=[(x,0.),(x,y)]
-                if reverse:ends.reverse()
-                side=Facade(b,*ends,'280-2 south stepped reveal')
-                side.prism(box(-side.length/2,z0,side.length/2,z1),-.115,0,GROUND if z0==0 else WALL,'short corner of window bank')
+            if low==1:
+                previous[banks]=(p,q)
+                if 'A' in banks:fittings.ground_vent(surf,cam,[(338,733),(358,746)])
+            else:
+                if banks in ('C','E'):
+                    oldp,oldq=previous[banks]
+                    ledge=Polygon([p,q,oldq,oldp])
+                    if ledge.is_valid and ledge.area>.002:
+                        b.plan_prism(ledge,z0-.055,z0,SILL,'280-2 street / soffit connecting the two storeys')
+                if 'B' in banks:
+                    fittings.condenser(surf,Camera('6-1512'),OUTLINE['visible_fixtures']['6-1512_front_air_unit'][0],'street lower condenser',lod)
+                    fittings.bracket_pair(surf,holes['A3'],lod)
+                tiled_edge(surf,z1,z1+.06)
+                if banks=='E':strip_roof_rail(b,surf,z1+.06,surf.length,rail_top[2]-turn[2]-.06)
+        for earlier,later in zip(panels,panels[1:]):
+            p=earlier[2];q=later[1]
+            if np.linalg.norm(np.array(q)-p)<.002:continue
+            side=Facade(b,p,q,'280-2 stepped facade')
+            z1=zbreak if low==1 else min(earlier[3],later[3])
+            side.prism(box(-side.length/2,z0,side.length/2,z1),-.12,0,GROUND if low==1 else WALL,'exposed side of window bank')
     rail=pos_face(b,west,cwest,0.,'280-2 south roof')
     strip_roof_rail(b,rail,ztop+.07,rail.length)
     return np.array([west,0.]),ztop
@@ -200,4 +222,5 @@ def add_registered_walls(b,lod=False):
     west,ztop=add_street_wall(b,data,lod)
     add_short_return(b,limits,west,ztop,lod)
     add_lane_wall(b,limits,lod)
+    east_face.add_east_face(b,lod)
     add_door_wall(b,limits)
