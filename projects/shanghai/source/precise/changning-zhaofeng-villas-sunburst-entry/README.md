@@ -7,3 +7,5 @@
 2021年1月11日的三个街景机位相隔5.10至12.27米，入口净宽估计为5.0±0.35米。三站共同观察的门柱和两盏灯等控制点重投影均方根误差1.88像素。西门扇约向内打开80度，东扇约103度，两扇长度各约2.35米。调整正面近照时另用五个实测部位和十三条横纵边。区府照片用1000×701的等比工作图标注，图册近照另按331×546像素独立标记。网页和Blender含六处摄影机位及四处检查视图。[街景三站](measurements/surveyed-street-gate.json) · [铁门、花台和西侧短墙](measurements/metal-leaves-and-plinths.json) · [机位参数](measurements/registered-views.json)
 
 灰色墙砂、磨损水泥、深色铁门漆和牌面浅石各有一组自制颜色与法线纹理。生成器依据照片色样计算程序纹理。近档保留英文标牌标题、细门条和绿篱外叶，远档简化灯罩圆弧、绿叶和小字。弄口的街道坐标有约2至4米不确定度，花台后部、背墙厚度和局部铁艺弯曲采用可见轮廓与范围估计。[饰面色样](measurements/finish-readings.json) · [所用资料与授权](SOURCES-LICENSE.md)
+
+四张原照片另选51个像点，用每条视线碰到的第一块模型表面核对铸字、灯架、门扇、花台和绿牌。近远两档均有32点直接命中，46点在4个原像素内命中。两张方向相反的题名墙近照共26点，均在4像素内。街口全景里绿牌“712”的三个数字分别有12、8和4像素的横向偏差，第二行小字按街名排字。[独立原照像点](measurements/independent-original-photo-pixels.json) · [近档射线报告](../../../data/audit/zhaofeng-villas-sunburst-entry-v1/final/registration/independent-full-photo-materials.json)

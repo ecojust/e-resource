@@ -9,11 +9,13 @@ import shutil
 import subprocess
 import sys
 
-from build_model import PROJECT, META, ID, HERE
-sys.path.insert(0,str(Path(__file__).absolute().parent))
-from build_blender_source import helpers, digest, attribution, used_textures
+HERE = Path(__file__).absolute().parent
+PROJECT = next(p for p in HERE.parents if (p / 'tools/verify_editable_model.py').is_file())
+ID = HERE.parent.name
 
-sys.path.insert(0, str(PROJECT / 'tools'))
+def digest(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
 
@@ -28,6 +30,8 @@ def read(path):
 
 
 def prepare(out, raw):
+    from build_model import META
+    from build_blender_source import helpers, attribution, used_textures
     if META.get('id') != ID or ID != HERE.parent.name:
         raise ValueError('The model identifier must match the architecture source directory')
     import runpy
@@ -80,7 +84,7 @@ def run(pack, out, raw, manifest):
         log = out / (phase + '.log')
         start = datetime.now(timezone.utc).isoformat()
         with log.open('w') as stream:
-            process = subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT, env=env)
+            process = subprocess.Popen(command, stdout=stream, stderr=subprocess.STDOUT, env=env, cwd=out)
             status = process.wait()
         history.append(dict(phase=phase, pid=process.pid, start=start, finish=datetime.now(timezone.utc).isoformat(),
                             exit=status, log_sha256=digest(log)))
@@ -92,13 +96,15 @@ def run(pack, out, raw, manifest):
     verified = report['architectural_source']
     assert report['match_raw'] and report['triangles'] == record['triangles']
     assert verified['editable_groups'] == record['editable_groups']
-    assert verified['cameras'] == META['camera_views'] and verified['metadata'] == record['metadata']
+    assert verified['cameras'] == read(HERE / 'cameras.json') and verified['metadata'] == record['metadata']
     assert set(verified['textured_materials']) == set(record['materials'])
     for name, expected in record['materials'].items():
         actual = verified['textured_materials'][name]
         assert actual['textured_corners'] == expected['corners']
         assert actual['packed_png_sha256'] == expected['sha256'] and actual['extension'] == 'REPEAT'
 
+    if not preview.is_file():
+        raise FileNotFoundError(preview)
     final = pack / blend.name
     if final.exists():
         if digest(final) != digest(blend):
