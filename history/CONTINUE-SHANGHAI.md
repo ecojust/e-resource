@@ -4,19 +4,11 @@
 
 ## 当前进度（2026-11-20）
 
-[武康路129号德利那齐宅](../projects/shanghai/wukang-129-arched-door-and-balcony.html)。原城市住宅已更新，名录已链接28项。
-
-[淮海中路后排1230号院内入口与阳台](../projects/shanghai/huaihai-1230-rear-courtyard-entrance.html)。院内局部模型已独立发布，名录已链接29项。
-
-[长乐坊337号院门与相邻临街窗墙](../projects/shanghai/changle-337-courtyard-gate-and-street-house.html)。337号院门与窗墙已独立发布，名录已链接30项。
-
-[襄阳南路313号院内住宅](../projects/shanghai/xiangyang-313-restored-courtyard-fronts.html)已在原地物3304更新，优秀历史建筑名录已链接31项。
-
 [新乐坊143-1号临街前楼](../projects/shanghai/xinle-143-1-street-corner.html)已建成，名录已链接32项。
 
-当前主图已更新第 283 项旗昌洋行福州路三开间石墙与尖券窗，共有 318 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/russell-company-fuzhou-three-bay-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
+当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
-下一项核对第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙）。
+下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
 
 ## 2026-11-06 交接快照
 

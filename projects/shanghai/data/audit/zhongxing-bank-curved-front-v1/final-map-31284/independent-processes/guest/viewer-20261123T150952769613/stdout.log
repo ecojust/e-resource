@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/dev/shm/jiangvilla349/mapping/handoff/run-349-devices.py", line 24, in <module>
+    j=read(data);assert j['passed'] and j['device']==device and j['closed'] and len(j['views'])==3
+      ^^^^^^^^^^
+  File "/dev/shm/jiangvilla349/mapping/handoff/run-349-devices.py", line 8, in <lambda>
+    read=lambda p:json.loads(p.read_bytes())
+                             ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/shm/jiangvilla349/mapping/handoff/viewer-20261123T150952769613/desktop-viewer.json'

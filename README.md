@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 320 处入口。最近接入[新乐坊143-1号临街窗墙与弄口门柱](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-143-1-street-corner&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 321 处入口。最近接入[中兴银行前楼（福州路与四川中路圆弧窗墙）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][T5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][T2] · [来源、许可与更新规则][T1]
 
-已交付的283项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][T5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的284项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][T5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][T3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 284 | 中兴银行前楼（福州路与四川中路圆弧窗墙） | 黄浦区／福州路89号 | 制作中 | — | [市房屋管理局第四批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20200331/e3b99cf457ae48cab87ad5c02aa0fee3.html>)；另查两街长翼、后楼与连接体。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -199,7 +195,7 @@
 |sh-historic-b4-019|九江路原教会学校其余两翼与背面|九江路219号|[名录][4] · 照片待核 · [当前完成范围][T3]|另查其余沿街两翼、背面和室内。|
 |sh-historic-b4-020|汉口路花园住宅其余宅墙与庭园|汉口路210号|[名录][4] · 照片待核 · [当前完成范围][T3]|另查其余宅墙与庭园，保持邻近圣三一堂和钟楼。|
 |sh-historic-b4-021|旗昌洋行福州路西段、南弄与内院|福州路17、19号|[名录][4] · 照片待核 · [当前完成范围][T3]|另查西段被后期外观遮盖的墙面、南弄及内院。|
-|sh-historic-b4-022|中兴银行|福州路89号|[名录][4] · 照片待核|待核外观／拆栋|
+|sh-historic-b4-022|中兴银行两街长翼、后楼与连接体|福州路89号|[名录][4] · 照片待核 · [当前完成范围][T3]|另查两街长翼、后楼与连接体。|
 |sh-historic-b4-023|雷米洋行/利名洋行|金陵东路8号|[名录][4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-024|约克大楼|四川南路29号|[名录][4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-025|太古洋行|中山东二路22号|[名录][4] · 照片待核|待核外观／拆栋|
@@ -2659,9 +2655,9 @@
 [14/13721/6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [14/13721/6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余929条／已关联107条）
+### 既有地图中的具名建筑待查线索（剩余928条／已关联108条）
 
-原始1,036条具名地图要素中，107条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余929条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，108条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余928条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2909,7 +2905,6 @@
 |c5169af3-7e57-4c45-99be-ac0d63d728b6|申之江|黄浦区|核身份／去重／查建筑参考|
 |c7d36a36-851c-4a58-9827-94a3a81531dd|友邦大厦|黄浦区|核身份／去重／查建筑参考|
 |c9745fcb-1b36-4f09-8e7f-55034ee2ce29|中国大戏院|黄浦区|核身份／去重／查建筑参考|
-|c9f24d9b-21de-478c-b245-6e08548ffcfd|申达大楼|黄浦区|核身份／去重／查建筑参考|
 |ca2aea97-ceb5-470b-bec7-8719e95226ed|永新广场|黄浦区|核身份／去重／查建筑参考|
 |ca39d11e-7ac8-4f82-90f8-173bc2ffe967|共舞台|黄浦区|核身份／去重／查建筑参考|
 |cad0fd83-346c-4a85-a178-529a0098f815|中国民生银行大厦|黄浦区|核身份／去重／查建筑参考|
@@ -3622,7 +3617,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；320处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中279件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；321处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中280件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3630,7 +3625,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增280处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增281处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3652,10 +3647,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，320处建筑与构件模型入口（40处既有＋280处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增280处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，321处建筑与构件模型入口（40处既有＋281处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增281处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（153处）
+### 黄浦区（154处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3814,6 +3809,7 @@
 | 九江路原教会学校入口与双山墙 | 2026-11-23 19:41:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview) |
 | 汉口路花园住宅临街错层楼梯窗 | 2026-11-23 20:23:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) |
 | 旗昌洋行福州路三开间石墙与尖券窗 | 2026-11-23 22:21:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) |
+| 中兴银行前楼（福州路与四川中路圆弧窗墙） | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview) |
 
 ### 徐汇区（57处）
 

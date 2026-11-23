@@ -4,7 +4,7 @@
 
 | 记录 | 状态 | 用户目标 | 当前结果与下一步 |
 | --- | --- | --- | --- |
-| [2026-11-20-001](2026-11-20-001.md) | in_progress | 按 README 继续细化并实时发布 | 主图已更新第 283 项旗昌洋行福州路三开间石墙与尖券窗，共 318 处。下一项核对第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙）。 [武康路129号德利那齐宅](../projects/shanghai/wukang-129-arched-door-and-balcony.html)。原城市住宅已更新，名录已链接28项。 [淮海中路后排1230号院内入口与阳台](../projects/shanghai/huaihai-1230-rear-courtyard-entrance.html)。院内局部模型已独立发布，名录已链接29项。 [长乐坊337号院门与相邻临街窗墙](../projects/shanghai/changle-337-courtyard-gate-and-street-house.html)。337号院门与窗墙已独立发布，名录已链接30项。 [襄阳南路313号院内住宅](../projects/shanghai/xiangyang-313-restored-courtyard-fronts.html)已在原地物3304更新，优秀历史建筑名录已链接31项。 [新乐坊143-1号临街前楼](../projects/shanghai/xinle-143-1-street-corner.html)已建成，名录已链接32项。 |
+| [2026-11-20-001](2026-11-20-001.md) | in_progress | 按 README 继续细化并实时发布 | 主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共 320 处。下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。 [新乐坊143-1号临街前楼](../projects/shanghai/xinle-143-1-street-corner.html)已建成，名录已链接32项。 |
 | [2026-11-06-001](2026-11-06-001.md) | completed | 参照pureTV完善AGENTS与history；提交全部本地改动 | 规则与交接已补齐，192文件快照 `a758a37` 及 `e8df5e6` 已推送origin/master并核对；邮政总局继续paused，先完成最终验收。 |
 | [2026-11-04-002](2026-11-04-002.md) | paused | 继续下一个模型 | 邮政总局四资产、源码、地图与候选接受已具备，开发目录84处、虹口5处；先完成最终网页验收及发布，再开始宏恩医院。 |
 | [2026-11-04-001](2026-11-04-001.md) | completed | 参照 pureTV 建立规则与历史，支持持续开发 | AGENTS、任务模板、历史索引和上海接续入口已建立；37 个相对链接及 README 目录检查通过，主文档 `296ba55` 已推送 master。本次不增加模型，下一制作项仍为邮政总局。 |

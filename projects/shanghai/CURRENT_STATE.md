@@ -1,3 +1,11 @@
+# 中兴银行前楼（福州路与四川中路圆弧窗墙）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongxing-bank-curved-front&mode=overview) · [单体旋转与下载](zhongxing-bank-curved-front.html) · [来源与制作范围](source/precise/huangpu-zhongxing-bank-curved-front/README.md) · [验收记录](data/audit/zhongxing-bank-curved-front-v1/README.md)
+
+第四批4A022，中兴银行／申达大楼、福州路89号。原城2362与具名OSM 380340012@5匹配97.972%。2011年修缮论文区分六层L形前楼、五层后楼与连接体。按2015年2月6日街照制作前楼东北圆弧三窗轴、成组窗、浅陷窗裙及弯挑檐托臂。
+
+近景 20,556 个三角面，远景 12,600 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,392,120 字节。上海主图现有 320 处独立入口，黄浦区 154 处。[资产清单](assets/models/candidates/huangpu-zhongxing-bank-curved-front/manifest.json)
+
 # 旗昌洋行福州路三开间石墙与尖券窗
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) · [单体旋转与下载](russell-company-fuzhou-three-bay-front.html) · [来源与制作范围](source/precise/huangpu-russell-company-fuzhou-three-bay-front/README.md) · [验收记录](data/audit/russell-company-fuzhou-three-bay-front-v1/README.md)
