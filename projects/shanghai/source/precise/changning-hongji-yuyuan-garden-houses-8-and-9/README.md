@@ -5,7 +5,7 @@
 | 部位 | 模型所采用的观察 |
 | --- | --- |
 | 8号草坪面 | 四扇长方形窗穿过砖墙和上部粉刷层。独立砖烟道向屋脊收窄，竖排十个金属字母拼成 STEAK HOUSE。三道浅色固定条从字母之间露出。2023年草坪边的绿篱遮住最下方的 E。[十字轮廓](measurements/eight-chimney-lettering.json) |
-| 8号入口与侧面 | 红砖低翼有浅色拱券、三幅落地玻璃和深底铜8字。另一侧的平露台装透空菱格栏板，北侧折面门廊邻着削顶山墙，木门、窄侧窗和上层窗分别建模。2016年低翼顶上的玻璃搭建在2023年的同角度照片中已拆除。[六个入口视角](measurements/house-eight-entrance-observations.json) |
+| 8号入口与侧面 | 红砖低翼有浅色拱券、三幅落地玻璃和深底铜8字。另一侧的平露台装透空菱格栏板，北侧折面门廊邻着削顶山墙，木门、窄侧窗和上层窗分别建模。门廊上方的白底牛形招牌、门楣上的 Ribone Café 和红砖侧墙的店名牌均按原图描摹、分别挤出。[招牌轮廓与原图测点](measurements/eight-cafe-sign-observations.json) 2016年低翼顶上的玻璃搭建在2023年的同角度照片中已拆除。[六个入口视角](measurements/house-eight-entrance-observations.json) |
 | 9号草坪面 | 两层共六扇有真实窗洞的窗，凸起的烟道一直通到瓦屋顶。两根方柱托住石色露台，栏杆中央为实心刻边栏板。台下的两扇玻璃木门向后退约3米，两盏壁灯分列门侧，碗形灯悬在廊中。[六窗](measurements/nine-gable-window-survey.json) · [方柱与门](measurements/nine-entrance-portico.json) · [三盏灯](measurements/nine-porch-lamps.json) |
 | 9号侧面 | 南侧三个山墙投影的间距和进深不同，角上挂铜9字，最远一道山墙下可见拱形入口。北侧两处突出体也各有独立窗洞，其中较大屋顶前又伸出一道窄山墙。[南面双照](measurements/nine-south-gables-two-oblique-views.json) · [门牌三面定位](measurements/nine-brass-number-plaque.json) · [北面两站互证](measurements/nine-north-windows-and-stepped-gables.json) |
 
@@ -19,12 +19,12 @@
 
 ## 重建
 
-在本目录运行下列命令。公开模型包括可编辑几何的原始 GLB、压缩近景和简化远景。
+在本目录运行下列命令可生成原始 GLB、压缩近景和简化远景。Python 源码保留两栋住宅和庭院的构件分组，原始 GLB 按材质合并表面，以供网页加载。打包需要 Node.js 和 gltfpack。
 
 ```sh
-mkdir -p output
-python source/build_model.py --output output/hongji-raw.glb
-python source/build_model.py --lod --output output/hongji-lod.glb
+python measurements/export_checked_model.py full --out output/source
+python measurements/export_checked_model.py lod --out output/source
+python measurements/package-web-model.py output/source output/models output/audit
 python measurements/check-six-front-cameras.py
 ```
 

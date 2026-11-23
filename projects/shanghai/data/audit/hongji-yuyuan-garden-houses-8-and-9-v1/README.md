@@ -25,3 +25,7 @@
 - **屋面与檐底。** 从上方取44和38个点核对两座楼的屋面，近远两档均命中。下方36条射线中35条先遇浅色檐底，另一条正穿8号烟囱。地面照片和航片的边缘像点结果另外保留，可辨读遮挡与配准差异。[屋面、两侧照片与航片复核](preflight/roof-and-north-windows-review.json) · [屋面与北山墙图](preflight/roof-and-north-gables.jpg)
 
 2023年用于确定本版外观，依据为组照发布日期。同一窗在早年照片中可有不同遮挡。新模型只嵌入独立生成的四张纹理。出处、摄影日期和发布日分别见[来源与许可](../../../source/precise/changning-hongji-yuyuan-garden-houses-8-and-9/SOURCES-LICENSE.md)。
+
+## 桌面和手机网页
+
+两种屏幕都从普通模型地址打开，逐一查看九个机位，切换近景和远景，并实际保存原始、近景和远景文件。六份下载分别核对字节数和 SHA-256。可在记录中查看各屏画面、加载状态和下载文件。[两种屏幕的18幅实图与下载结果](ordinary-ui/ordinary-page-checks.json)
