@@ -7,12 +7,24 @@ HERE=Path(__file__).resolve().parent
 SHARED=HERE.parents[3]/'source/precise/changning-st-johns-gezhi-science-hall/measurements/render_science_views.py'
 raster=runpy.run_path(str(SHARED))['raster']
 LABELS={'district-archive':'区规资局档案斜照','press-archive':'周到上海旧院正照','road-centre':'2020年2月街面复测'}
+def render_crop(mesh,camera,crop,width):
+    scale=width/(crop[2]-crop[0])
+    height=round((crop[3]-crop[1])*scale)
+    frame=Image.new('RGB',(width,height))
+    for y in range(0,height,48):
+        bottom=min(height,y+48)
+        clipped=(crop[0],crop[1]+y/scale,crop[2],crop[1]+bottom/scale)
+        stripe=raster(mesh,camera,clipped,width)
+        assert stripe.size==(width,bottom-y)
+        frame.paste(stripe,(0,y))
+    return frame
+
 def render(mesh,d,width):
     d.mkdir(parents=True,exist_ok=True);stations=json.loads((HERE/'registered-stair-stations.json').read_text())['stations']
     report={'mesh_sha256':hashlib.sha256(mesh.read_bytes()).hexdigest(),'source_photo_pixels_loaded':False,'views':{}}; images=[]
     for k in LABELS:
         cam=stations[k]
-        crop=cam['crop'];im=raster(mesh,cam,crop,2*width)
+        crop=cam['crop'];im=render_crop(mesh,cam,crop,2*width)
         im=im.resize((width,im.height//2),Image.Resampling.LANCZOS)
         fn=d/(k+'-model.jpg');im.save(fn,quality=92)
         report['views'][k]={'crop':crop,'file':fn.name,'sha256':hashlib.sha256(fn.read_bytes()).hexdigest()};images.append((k,im))

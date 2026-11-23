@@ -2,7 +2,8 @@
 from pathlib import Path
 import argparse, json, sys
 import numpy as np
-from shapely.geometry import Point, Polygon, box
+from shapely.geometry import Point, Polygon, box, shape as geometry_from_mapping
+from shapely.affinity import scale,translate
 from shapely.ops import unary_union
 
 HERE=Path(__file__).absolute().parent
@@ -66,6 +67,13 @@ def add_building(b,lod=False):
                 if not lod:
                     x=a+(c-a)*.49
                     section(b,box(x-.010,h,x+.010,k),.105,.134,frame,label+' vertical division')
+    lettering=json.loads((HERE/'archive-inscription.json').read_bytes())['glyphs']
+    for letter in lettering:
+        u,v,u1,v1=letter['native_bbox']
+        x0,z0=xz(u,v1);x1,z1=xz(u1,v)
+        relief=translate(scale(geometry_from_mapping(letter['outline']),xfact=x1-x0,yfact=z1-z0,origin=(0,0)),x0,z0)
+        if lod:relief=relief.simplify(.007,preserve_topology=True)
+        section(b,relief,-.045,-.012,stone,'archival hospital name/'+letter['character'])
     def slab(x0,x1,y0,y1,z0,z1,mat,label):
         b.box([(x0+x1)/2,(y0+y1)/2,(z0+z1)/2],[x1-x0,y1-y0,z1-z0],mat,label=label)
     for side in [(0,.23),(4.72,4.95)]:

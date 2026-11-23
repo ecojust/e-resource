@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>私立妇孺医院临街楼梯间三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 延安西路934号</p><h1>私立妇孺医院临街楼梯间</h1></header>
+<main aria-label="私立妇孺医院临街楼梯间三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">红砖楼梯间的窗沿梯段逐扇升高。四组钢窗、底层圆窗与挑檐的位置依据两张旧院照片，以及2020年2月从街面拍摄的三个方向。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-furu-hospital-stepped-stair-hall/changning-furu-hospital-stepped-stair-hall-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p><a href="data/audit/furu-hospital-stepped-stair-hall-v1/final/registration/registered-stair-hall.jpg" target="_blank" rel="noopener">三张模型投影</a> · <a href="data/audit/furu-hospital-stepped-stair-hall-v1/final/registration/district-archive-model.jpg" target="_blank" rel="noopener">区政府档案斜照机位</a> · <a href="data/audit/furu-hospital-stepped-stair-hall-v1/final/registration/press-archive-model.jpg" target="_blank" rel="noopener">院史正照机位</a> · <a href="data/audit/furu-hospital-stepped-stair-hall-v1/final/registration/road-centre-model.jpg" target="_blank" rel="noopener">2020年道路机位</a></p>
+<p>旧院原址大西路212号，今延安西路934号。庄俊于1934年设计，长江营造厂施工，1935年竣工。<a href="https://www.shcn.gov.cn/japan/col1756/20130502/523000.html">长宁区历史建筑资料</a></p>
+<p>竖排旧院名按档案照片的位置重绘，用思源宋体同源的 Noto Serif CJK 作可辨字形参考。1993年合并后使用“上海市长宁区妇幼保健院”名称，2002年迁往武夷路。<a href="http://static.zhoudaosh.com/files/cnews/2019/20191014/1D95113076CF492F3F64F27C37446A7AF3C6BC1BCA11872281693C8745339FB8/6.html">2019年周到上海院史</a> · <a href="https://www.shcn.gov.cn/col7698/20250526/1290741.html">区规划资源局档案照片</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-furu-hospital-stepped-stair-hall/source/viewer.js" type="module"></script>
+</body></html>
