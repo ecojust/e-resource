@@ -14,12 +14,22 @@ RAY=PROJECT/'data/audit/postal-office-v1/independent-glb-review-helpers.py'
 SerialScene=runpy.run_path(str(RAY))['SerialScene']
 def test_mesh(scene,signature,matrix,picks):
     inv=np.linalg.inv(matrix[:,:3]);eye=-inv@matrix[:,3];rows=[]
+    def first(uv):
+        direction=inv@[*uv,1]
+        hit=scene.ray(eye,direction/np.linalg.norm(direction),200)
+        return None if hit is None else hit['material']
     for expected,points in picks.items():
         for uv in points:
-            direction=inv@[*uv,1]
-            hit=scene.ray(eye,direction/np.linalg.norm(direction),200)
-            material=None if hit is None else hit['material']
-            rows.append(dict(uv=uv,from_photo=expected,first_hit=material,matched=material is not None and expected in material))
+            material=first(uv);matched=material is not None and expected in material
+            nearest=0.0 if matched else None;offset=[0,0]if matched else None
+            if not matched:
+                # Only report the nearest same-material pixels. Keep the original direct result.
+                offsets=sorted((x*x+y*y,x,y)for x in range(-6,7)for y in range(-6,7)if 0<x*x+y*y<=36)
+                for squared,x,y in offsets:
+                    other=first([uv[0]+x,uv[1]+y])
+                    if other and expected in other:
+                        nearest=float(np.sqrt(squared));offset=[x,y];break
+            rows.append(dict(uv=uv,from_photo=expected,first_hit=material,matched=matched,nearest_same_material_px=nearest,offset_px=offset))
     return dict(asset_sha256=signature,points=rows,count=len(rows),direct=sum(v['matched']for v in rows))
 def render(path,out,matrix,crop):
     model_dir=PROJECT/'source/precise/xuhui-huaihai-1230-rear-courtyard-entrance/measurements'

@@ -12,7 +12,18 @@ from shapely.ops import unary_union
 HERE=Path(__file__).resolve().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder
+from photo_architecture import Builder as ArchitectureBuilder
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+import belfry_finishes
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in belfry_finishes.STEMS:belfry_finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        ArchitectureBuilder.save(self,path,metadata)
+        return belfry_finishes.writer.embed_normals(path)
+
 sys.path.insert(0,str(HERE.parent/'measurements'))
 from fit_tower import surface,BASE
 ID='changning-xiyan-church-north-belfry'
@@ -27,6 +38,7 @@ PALETTE={m:{'color':c,'roughness':r}for m,c,r in [
     (WALL,[.55,.455,.233],.94),(STONE,[.245,.191,.153],.82),(SLATE,[.149,.158,.152],.68),
     (SHADE,[.045,.040,.033],.97),(FLASH,[.105,.105,.091],.73),(UPPER,[.54,.472,.303],.90),
     (MEMORIAL,[.064,.059,.052],.42),(IRON,[.119,.113,.101],.68)]}
+PALETTE.update(belfry_finishes.PALETTE)
 META=dict(id=ID,name='息焉堂北侧独立钟楼',heritage_id='sh-historic-b2-076',address='可乐路1号；名录虹桥路2381号',
           source='https://commons.wikimedia.org/wiki/File:Catholic_Country_Church.jpg',
           viewer_page=SLUG+'.html',photos_embedded=False,geometry_license='MIT',
