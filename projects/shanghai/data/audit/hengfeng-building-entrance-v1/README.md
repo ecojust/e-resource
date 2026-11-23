@@ -11,3 +11,7 @@
 桌面鼠标与手机触摸均从地图标牌打开恒丰大楼。街面镜位可见浅石弧形门罩、红字题额与柱列。两张城市近景里的资料卡和地图标牌遮住了部分柱脚、折栅与三角楣，桌面和手机独立页保留了这段门廊的完整轮廓。八段城市检查与独立页共留下十四幅实图，四份实际保存的文件均通过逐字校验。[逐图观察](city-31267/visual-review.json) · [街面与柱列](city-31267/map-street-facade.png) · [桌面独立页](city-31267/standalone/viewer-desktop-full.png) · [手机独立页](city-31267/standalone/viewer-mobile-full.png)
 
 两期近、远城市底模分别复测了同一组75个地面位置。门廊作者网的48条视线和原街区的96条遮挡视线均已复算。首次前场检查把同组的两个既登记点当成裁切源。原地籍、登记行与着色器记录确认两处都保留了原网，修正检查后重新完成了前场。[照片、视线与地面复算](source-recheck/README.md) · [原场记录](city-31267/independent-processes/) · [进程与四项下载](city-31267/slot-released.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/896d3d2073bfac74f7e26f5e9f0d319f01dd40bc/projects/shanghai/index.html#landmark=huangpu-hengfeng-building-entrance&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
