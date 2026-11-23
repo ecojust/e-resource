@@ -522,7 +522,7 @@
 |sh-historic-b5-xh-j-056-v|福禄村|建国西路384弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-057-v|新兴盛里，永盛里|嘉善路117弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-058-v|顾德坊|襄阳北路68-72弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-059-v|大福里|延庆路29弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-059-v|大福里|延庆路29弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/69c60fb433aab399e193620fa784d4fe5759c2a5/projects/shanghai/dafuli-yanqing-29-no3-court.html>)|已建延庆路29弄3号院门、门牌、蓝衬铁艺露台及绿框窗。弄口总门、其余各户和完整屋面仍待核。|
 |sh-historic-b5-xh-j-060-v|培福里|陕西南路186弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-061-v|住宅|新乐路34弄76-80号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-062-v|储康里|长乐路401弄|[名录][H5] · 照片待核|待核外观／拆栋|
