@@ -1,0 +1,63 @@
+{
+  "order": 340,
+  "host": 275,
+  "passed": true,
+  "source_binding_sha256": "6443fb20134b860514cbcb47a3c99df838fda12a21de493d0e8cf1d81c16d6a8",
+  "source_manifest_sha256": "434f51c847e3bc19ebba35edfa10e51deb58e347c7e0799edbc75ea89c833b0e",
+  "source_geometry_sha256": "bb4c953f52ae187715e5fb476440aa142dcfd967cf86a2ef3ed607a302e14372",
+  "development_finished": "2026-11-21T13:55:12.261858+00:00",
+  "admitted_from": "629e3b68f453ee9ca2b4932b6ad2567b3edf28db4eb9620174997054fa6bfce6",
+  "host_report_sha256": "c0d4d44c5eec79f515cee3a05814387b4019ca3aa87f7030daf57b821cd87495",
+  "reopened": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json",
+  "reopened_sha256": "35bdce665bd3382d3459781ab9ed6bbdaa8e90237859c30a6dc2f4b9d767e752",
+  "stages": [
+    {
+      "stage": "reopen-geometry",
+      "started": "2026-11-23T06:36:04.373300+00:00",
+      "finished": "2026-11-23T06:36:06.181152+00:00",
+      "pid": 2473139,
+      "exit": 0,
+      "log": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopen-geometry.log",
+      "log_sha256": "e22278326f158c59182e4459d0598b2353cdd6cf4d14239b4214ceeb8fb7e107",
+      "args": [
+        "blender",
+        "-b",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/tools/verify_editable_model.py",
+        "--",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+        "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json"
+      ]
+    },
+    {
+      "stage": "reopen-materials-cameras",
+      "started": "2026-11-23T06:36:06.182148+00:00",
+      "finished": "2026-11-23T06:36:07.371883+00:00",
+      "pid": 2473182,
+      "exit": 0,
+      "log": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopen-materials-cameras.log",
+      "log_sha256": "32019822e2888d59d45f489f2a3f4beba98a14bfb9b21a8d5bfce733f29e4fd8",
+      "args": [
+        "blender",
+        "-b",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/source/precise/huangpu-liu-yazi-residence-fuxing-517/source/verify_reopened.py",
+        "--",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+        "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json"
+      ]
+    }
+  ],
+  "geometry_native_sha256": "bb4c953f52ae187715e5fb476440aa142dcfd967cf86a2ef3ed607a302e14372"
+}

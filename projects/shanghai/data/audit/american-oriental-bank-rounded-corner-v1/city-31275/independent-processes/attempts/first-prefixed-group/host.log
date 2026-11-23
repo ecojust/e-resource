@@ -1,0 +1,22 @@
+before {'order': 275, 'phase': 'before', 'exit_code': 1, 'remaining_chromium': [], 'report': '/tmp/shanghai-main-275/evidence/275/before/control-browser.json', 'exit': 1, 'node': 2466614, 'chromium_pids': [2466641], 'node_closed': True, 'remaining': [], 'report_sha256': '3fe1ade8b7d55bd165dee3a2058d8e0885bcf2364d1b62eaf3425cd25b3e566c', 'driver_sha256': '12664edafe532dc9123bb10f4d2c1c0cd04b15f9da223bacf52cddd18ac26cb7', 'finished': '2026-11-23T06:33:06.718351+00:00'}
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-275/run-275-live.py", line 61, in <module>
+    assert q['exit']==0 and q['node_closed'] and seen and not active and report.is_file()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-275/run-275-live.py", line 20, in <module>
+    subprocess.run([sys.executable,'-Bu',__file__,previous,part],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-275/run-275-live.py', PosixPath('/tmp/shanghai-main-274/274-map-slot-released.json'), 'before']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-275/admit-275-live.py", line 27, in <module>
+    run('run-275-live.py',parent);run('merge-275-live.py');run('viewer-retained.py','--assigned-standalone-slot')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-275/admit-275-live.py", line 7, in run
+    def run(program,*args):subprocess.run([sys.executable,'-Bu',w/program,*args],check=True)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-275/run-275-live.py'), PosixPath('/tmp/shanghai-main-274/274-map-slot-released.json')]' returned non-zero exit status 1.

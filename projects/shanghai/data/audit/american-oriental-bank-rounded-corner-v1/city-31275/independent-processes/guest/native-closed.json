@@ -1,0 +1,286 @@
+{
+  "order": 340,
+  "exit": 0,
+  "exit_code": 0,
+  "remaining": [],
+  "wrapper_pid": 2473136,
+  "wrapper_closed": true,
+  "observed_processes": {
+    "2473139": "blender",
+    "2473182": "blender"
+  },
+  "observed_process_births": {
+    "2473139": 1795415763.97,
+    "2473182": 1795415765.78
+  },
+  "started": "2026-11-23T06:35:43.804818+00:00",
+  "finished": "2026-11-23T06:36:07.505461+00:00",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "admitted_from": "629e3b68f453ee9ca2b4932b6ad2567b3edf28db4eb9620174997054fa6bfce6",
+  "host_receipt_sha256": "629e3b68f453ee9ca2b4932b6ad2567b3edf28db4eb9620174997054fa6bfce6",
+  "host_report_sha256": "c0d4d44c5eec79f515cee3a05814387b4019ca3aa87f7030daf57b821cd87495",
+  "author_review_sha256": "cccca5516b1ffeafdb202add4dab51494237f4065ce3e0f9ad0a1cb36cf24bfa",
+  "physical_map_order": 275,
+  "parent_snapshot_sha256": "f5a100eef33447e0859455106278b74dee329dfe1dc99c3ea0289c216143fe50",
+  "passed": true,
+  "all_processes_closed": true,
+  "blender_pids": [
+    2473139,
+    2473182
+  ],
+  "remaining_blender": [],
+  "remaining_oidn": [],
+  "geometry_native_sha256": "bb4c953f52ae187715e5fb476440aa142dcfd967cf86a2ef3ed607a302e14372",
+  "manifest": "/workspace/e-resource/projects/shanghai/assets/models/candidates/huangpu-liu-yazi-residence-fuxing-517/manifest.json",
+  "manifest_sha256": "434f51c847e3bc19ebba35edfa10e51deb58e347c7e0799edbc75ea89c833b0e",
+  "native_stages": [
+    {
+      "stage": "reopen-geometry",
+      "started": "2026-11-23T06:36:04.373300+00:00",
+      "finished": "2026-11-23T06:36:06.181152+00:00",
+      "pid": 2473139,
+      "exit": 0,
+      "log": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopen-geometry.log",
+      "log_sha256": "e22278326f158c59182e4459d0598b2353cdd6cf4d14239b4214ceeb8fb7e107",
+      "args": [
+        "blender",
+        "-b",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/tools/verify_editable_model.py",
+        "--",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+        "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json"
+      ]
+    },
+    {
+      "stage": "reopen-materials-cameras",
+      "started": "2026-11-23T06:36:06.182148+00:00",
+      "finished": "2026-11-23T06:36:07.371883+00:00",
+      "pid": 2473182,
+      "exit": 0,
+      "log": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopen-materials-cameras.log",
+      "log_sha256": "32019822e2888d59d45f489f2a3f4beba98a14bfb9b21a8d5bfce733f29e4fd8",
+      "args": [
+        "blender",
+        "-b",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+        "--threads",
+        "1",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/e-resource/projects/shanghai/source/precise/huangpu-liu-yazi-residence-fuxing-517/source/verify_reopened.py",
+        "--",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+        "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+        "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json"
+      ]
+    }
+  ],
+  "camera_count": 9,
+  "texture_sha256": "8c15366a4d2ba393e54a7ea2dd144710a3a19cd145c0ac16b310b6d4ac052598",
+  "uv_loops": 7818,
+  "development_source": {
+    "order": 340,
+    "host": 275,
+    "passed": true,
+    "source_binding_sha256": "6443fb20134b860514cbcb47a3c99df838fda12a21de493d0e8cf1d81c16d6a8",
+    "source_manifest_sha256": "434f51c847e3bc19ebba35edfa10e51deb58e347c7e0799edbc75ea89c833b0e",
+    "source_geometry_sha256": "bb4c953f52ae187715e5fb476440aa142dcfd967cf86a2ef3ed607a302e14372",
+    "development_finished": "2026-11-21T13:55:12.261858+00:00",
+    "admitted_from": "629e3b68f453ee9ca2b4932b6ad2567b3edf28db4eb9620174997054fa6bfce6",
+    "host_report_sha256": "c0d4d44c5eec79f515cee3a05814387b4019ca3aa87f7030daf57b821cd87495",
+    "reopened": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json",
+    "reopened_sha256": "35bdce665bd3382d3459781ab9ed6bbdaa8e90237859c30a6dc2f4b9d767e752",
+    "stages": [
+      {
+        "stage": "reopen-geometry",
+        "started": "2026-11-23T06:36:04.373300+00:00",
+        "finished": "2026-11-23T06:36:06.181152+00:00",
+        "pid": 2473139,
+        "exit": 0,
+        "log": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopen-geometry.log",
+        "log_sha256": "e22278326f158c59182e4459d0598b2353cdd6cf4d14239b4214ceeb8fb7e107",
+        "args": [
+          "blender",
+          "-b",
+          "--threads",
+          "1",
+          "--python-exit-code",
+          "1",
+          "--python",
+          "/workspace/e-resource/projects/shanghai/tools/verify_editable_model.py",
+          "--",
+          "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+          "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+          "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json"
+        ]
+      },
+      {
+        "stage": "reopen-materials-cameras",
+        "started": "2026-11-23T06:36:06.182148+00:00",
+        "finished": "2026-11-23T06:36:07.371883+00:00",
+        "pid": 2473182,
+        "exit": 0,
+        "log": "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopen-materials-cameras.log",
+        "log_sha256": "32019822e2888d59d45f489f2a3f4beba98a14bfb9b21a8d5bfce733f29e4fd8",
+        "args": [
+          "blender",
+          "-b",
+          "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+          "--threads",
+          "1",
+          "--python-exit-code",
+          "1",
+          "--python",
+          "/workspace/e-resource/projects/shanghai/source/precise/huangpu-liu-yazi-residence-fuxing-517/source/verify_reopened.py",
+          "--",
+          "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517.blend",
+          "/tmp/liuyazi340/development-native/huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+          "/run/codex-docker/user/field340/active/native-attempt-2026-11-23T063543.804818-0000/reopened.json"
+        ]
+      }
+    ],
+    "geometry_native_sha256": "bb4c953f52ae187715e5fb476440aa142dcfd967cf86a2ef3ed607a302e14372"
+  },
+  "group_count": 329,
+  "assets": {
+    "raw": {
+      "file": "huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+      "triangles": 106615,
+      "bounds_gltf_m": [
+        [
+          -9.492034912109375,
+          -0.07000000029802322,
+          -6.102499961853027
+        ],
+        [
+          10.884035110473633,
+          16.649999618530273,
+          7.385000228881836
+        ]
+      ],
+      "materials": 33,
+      "sha256": "6107def3ff5dfa4c18bc468f2d183742916ef2b63b5e808047afc3fec5cefd2e",
+      "bytes": 7188696
+    },
+    "full": {
+      "file": "huangpu-liu-yazi-residence-fuxing-517-web.glb",
+      "triangles": 106615,
+      "bounds_gltf_m": [
+        [
+          -9.49203491,
+          -0.0700000003,
+          -6.10249996
+        ],
+        [
+          10.8840351,
+          16.6499996,
+          7.38500023
+        ]
+      ],
+      "materials": 33,
+      "sha256": "e6a3caf7e7ee58f9e7b30ec00d5d011aaeeeb571310fa3e2842ba7cdff6e3891",
+      "bytes": 3159892
+    },
+    "lod": {
+      "file": "huangpu-liu-yazi-residence-fuxing-517-lod.glb",
+      "triangles": 39441,
+      "bounds_gltf_m": [
+        [
+          -9.49203491,
+          -0.0700000003,
+          -6.10249996
+        ],
+        [
+          10.8840351,
+          16.6499996,
+          7.38500023
+        ]
+      ],
+      "materials": 31,
+      "sha256": "4c5d080ed46d1ade9615b543e0936aeb12bfe9bd9e33d383fb62ce101d302a12",
+      "bytes": 1042264
+    },
+    "native": {
+      "file": "huangpu-liu-yazi-residence-fuxing-517.blend",
+      "bytes": 2018753,
+      "sha256": "ba3bb93ac960e1eae61c52d492f5b11a77b748dbc03535c743d203dfc201c0f5"
+    }
+  },
+  "files": [
+    {
+      "file": "huangpu-liu-yazi-residence-fuxing-517-raw.glb",
+      "triangles": 106615,
+      "bounds_gltf_m": [
+        [
+          -9.492034912109375,
+          -0.07000000029802322,
+          -6.102499961853027
+        ],
+        [
+          10.884035110473633,
+          16.649999618530273,
+          7.385000228881836
+        ]
+      ],
+      "materials": 33,
+      "sha256": "6107def3ff5dfa4c18bc468f2d183742916ef2b63b5e808047afc3fec5cefd2e",
+      "bytes": 7188696
+    },
+    {
+      "file": "huangpu-liu-yazi-residence-fuxing-517-web.glb",
+      "triangles": 106615,
+      "bounds_gltf_m": [
+        [
+          -9.49203491,
+          -0.0700000003,
+          -6.10249996
+        ],
+        [
+          10.8840351,
+          16.6499996,
+          7.38500023
+        ]
+      ],
+      "materials": 33,
+      "sha256": "e6a3caf7e7ee58f9e7b30ec00d5d011aaeeeb571310fa3e2842ba7cdff6e3891",
+      "bytes": 3159892
+    },
+    {
+      "file": "huangpu-liu-yazi-residence-fuxing-517-lod.glb",
+      "triangles": 39441,
+      "bounds_gltf_m": [
+        [
+          -9.49203491,
+          -0.0700000003,
+          -6.10249996
+        ],
+        [
+          10.8840351,
+          16.6499996,
+          7.38500023
+        ]
+      ],
+      "materials": 31,
+      "sha256": "4c5d080ed46d1ade9615b543e0936aeb12bfe9bd9e33d383fb62ce101d302a12",
+      "bytes": 1042264
+    },
+    {
+      "file": "huangpu-liu-yazi-residence-fuxing-517.blend",
+      "bytes": 2018753,
+      "sha256": "ba3bb93ac960e1eae61c52d492f5b11a77b748dbc03535c743d203dfc201c0f5"
+    }
+  ],
+  "host_reopening_sha256": "35bdce665bd3382d3459781ab9ed6bbdaa8e90237859c30a6dc2f4b9d767e752",
+  "reuse_proof_sha256": "f256715b3e453006c249f4acf6883adcc1bd013aa9b924187312a49cf5b18bca",
+  "launch_process": "/tmp/liuyazi340/mapping/handoff/native-launch-20261123T063543205700Z-closed.json",
+  "launch_process_sha256": "6dce1f5380d958c4b4f90f1a9db07752d2ac87189c9e49d93cf5d9b9b16c0f54",
+  "launch_log": "/tmp/liuyazi340/mapping/handoff/native-launch-20261123T063543205700Z.log",
+  "launch_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,3 +1,11 @@
+# 上海美丰银行河南中路宁波路弧形转角
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-oriental-bank-rounded-corner&mode=overview) · [单体旋转与下载](american-oriental-bank-rounded-corner.html) · [来源与制作范围](source/precise/huangpu-american-oriental-bank-rounded-corner/README.md) · [验收记录](data/audit/american-oriental-bank-rounded-corner-v1/README.md)
+
+第四批4A013，河南中路521至529号、宁波路180号。现况街照、建筑修缮资料和原城2839相互核对，制作两街之间的弧形转角及相接短段；OSM 495110049独立于上海商业储蓄银行和中央储蓄会。
+
+近景 42,964 个三角面，远景 27,276 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,157,691 字节。上海主图现有 310 处独立入口，黄浦区 145 处。[资产清单](assets/models/candidates/huangpu-american-oriental-bank-rounded-corner/manifest.json)
+
 # 中央储蓄会大楼天津路江西中路转角塔楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-savings-society-corner-tower&mode=overview) · [单体旋转与下载](central-savings-corner.html) · [来源与制作范围](source/precise/huangpu-central-savings-society-corner-tower/README.md) · [验收记录](data/audit/central-savings-corner-v1/README.md)
