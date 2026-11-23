@@ -21,3 +21,7 @@
 江西中路484号西南转角的方窗下有一圈浅色石刻花饰，向上可见红瓦坡檐。街面画面里的地点卡挡住了花饰下端，另一张俯视图可看清窗额和屋顶相接的位置。核验覆盖七段地图操作、12张地图画面和独立页的6张画面，另从独立页保存了原始、近景、远景和可编辑四份文件。[石刻花饰](final-map-31264/architecture/map-window-cartouche-stone-garland.png) · [方窗与红瓦坡檐](final-map-31264/architecture/map-square-window-and-red-hipped-roof.png) · [18幅逐图说明](final-map-31264/visual-review.json)
 
 新版实测本栋44处地面和15处邻户位置。远景初次检查时，四栋建筑共用一个地点标记，按单栋查询返回空值。复测从屏幕点中该组标记并核对其中四个成员，确认本栋列在组内，远景模型也已加载。[远景画面](final-map-31264/distant/map-distant.png) · [原始尝试及复测记录](final-map-31264/process-and-failure-index.json) · [实际下载记录](final-map-31264/standalone/viewer.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/a1dc14b3dbee0c3ded6fd5729fe22101d12f1b8b/projects/shanghai/index.html#landmark=huangpu-shanghai-waterworks-484-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
