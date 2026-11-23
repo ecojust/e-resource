@@ -1,0 +1,18 @@
+node:fs:2872
+      const stats = binding.lstat(base, true, undefined, true /* throwIfNoEntry */);
+                            ^
+
+Error: ENOENT: no such file or directory, lstat 'MOUNT_ROOT/700-current-ordinary'
+    at Object.realpathSync (node:fs:2872:29)
+    at toRealPath (node:internal/modules/helpers:67:13)
+    at Module._findPath (node:internal/modules/cjs/loader:850:22)
+    at resolveMainPath (node:internal/modules/run_main:35:21)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:146:20)
+    at node:internal/main/run_main_module:33:47 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'lstat',
+  path: 'MOUNT_ROOT/700-current-ordinary'
+}
+
+Node.js v24.22.1
