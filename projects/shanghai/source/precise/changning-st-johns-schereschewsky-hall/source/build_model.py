@@ -10,7 +10,20 @@ from shapely.ops import unary_union
 HERE = Path(__file__).resolve().parent
 PROJECT = next(p for p in HERE.parents if (p / 'tools/package_architectural_model.py').exists())
 sys.path.insert(0, str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder, Facade
+from photo_architecture import Builder as ArchitectureBuilder, Facade
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+import courtyard
+import clock_glazing
+import finishes
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in finishes.STEMS:finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        ArchitectureBuilder.save(self,path,metadata)
+        return finishes.writer.embed_normals(path)
+
 ID = 'changning-st-johns-schereschewsky-hall'
 META = dict(id=ID, heritage_id='sh-historic-b2-060', name='圣约翰大学怀施堂（韬奋楼）南翼与钟楼', address='万航渡路1575号41号楼', viewer_page='st-johns-schereschewsky-hall.html', geometry_license='MIT', photos_embedded=False)
 BRICK='blue-grey facing brick'; RED='warm red brick dressings'; STONE='weathered granite'; RAIL='painted red-brown timber'; DARK='dark iron and timber'; GLASS='smoke grey glazing'; TILE='grey butterfly tile'; WHITE='warm cream stucco'; DIAL='clock enamel'
@@ -18,6 +31,7 @@ PALETTE={role:dict(color=color,roughness=rough) for role,color,rough in [
     (BRICK,[.29,.288,.297],.86),(RED,[.52,.254,.177],.84),(STONE,[.46,.421,.355],.85),
     (RAIL,[.33,.126,.097],.68),(DARK,[.064,.06,.054],.56),(GLASS,[.16,.18,.185],.31),
     (TILE,[.20,.205,.206],.79),(WHITE,[.82,.78,.66],.87),(DIAL,[.875,.864,.817],.44)]}
+PALETTE.update(finishes.PALETTE);PALETTE.update(clock_glazing.PALETTE)
 WIDTH=40.533; DEPTH=12.5; COURT=20.75; TOWER=4.8515
 COURT_EAVE=8.342; FLOOR=4.8207; LOW_EAVE=8.342; RIDGE=11.961
 def curve(c,bottom,spring,peak,width,n,flat=.0):
@@ -58,9 +72,9 @@ def wing(b,side,street,lod):
     holes=[]
     for i,(u,span) in enumerate(intervals):
         w=span-.30 if street else span-.35
-        q=curve(u,.32,3.04,4.12,w,n,.14*w if street else 0.)
+        q=curve(u,(.32 if street else .81),3.04,4.12,w,n,.14*w if street else 0.)
         holes.append(q);hood(f,q,3.04,RED,'ground arcade brick head',.165)
-        if not(street and i==0):lattice(f,u,.35,w,.80,lod,'gallery ground railing')
+        if not(street and i==0):lattice(f,u,.35 if street else .83,w,.80,lod,'gallery ground railing')
         if street:
             p=curve(u,FLOOR,7.68,7.98,w,n,.30*w)
             hood(f,p,7.68,RED,'upper flat-shouldered brick head',.12)
@@ -125,17 +139,28 @@ def tower_face(b,court,lod):
     for q in lights:
         hood(f,q,7.62,RED,'arch over tower sash',.15)
         f.window(q,2 if q==lights[1] else 1,3,DARK,False,GLASS,'arched light')
-    for q in clerestory:f.window(q,2 if q==clerestory[1] else 1,4,DARK,False,GLASS,'rectangular light')
+    for i,q in enumerate(clerestory):
+        if court:f.window(q,2 if i==1 else 1,4,DARK,False,GLASS,'rectangular light')
+        else:clock_glazing.add(f,q,i,lod,DARK)
     projecting_bands(f,wall,[(1.73,.10),(3.04,.08),(4.821,.15),(5.93,.096),(7.15,.096),(7.80,.08),(9.125,.12),(11.555,.14),(14.937,.15)])
     f.prism(box(-half+.04,14.982,half-.04,16.95),-.32,.002,WHITE,'cream upper belfry panel')
     for z in [11.555,14.937,16.94]:f.box(0,z,TOWER+.10,.105,.40,.016,RED,'cap moulding')
     for u in np.linspace(-1.53,1.53,6):f.box(u,16.66,.047,.225,.08,.045,DARK,'belfry vent')
     clock_face(f,lod)
     if not court:
-        for z,w,h in [(5.36,3.30,.55),(15.44,2.61,.43)]:
+        tablets=json.loads((HERE/'tower-tablets.json').read_bytes())
+        for key,z,w,h in [('lower',5.30,3.30,.55),('upper',15.40,2.61,.43)]:
             f.prism(box(-w/2,z-h/2,w/2,z+h/2),.009,.071,RED,'tablet frame')
             f.prism(box(-w/2+.064,z-h/2+.045,w/2-.064,z+h/2-.045),.074,.100,WHITE,'inscribed tablet field')
-        lattice(f,0,3.17,2.55,1.28,lod,'iron transom grille')
+            for poly in tablets[key]['polygons']:
+                loops=[[(x*w,z+y*h)for x,y in ring]for ring in poly]
+                f.prism(Polygon(loops[0],loops[1:]),.104,.119,DARK,'tablet raised characters')
+        # The 2026 street photograph shows square white-metal wire across the lunette
+        # above the passage. Its grid terminates at the actual intrados.
+        mesh=portal.intersection(box(-2,3.05,2,5))
+        bars=[box(u-.009,3.05,u+.009,4.6)for u in np.arange(-1.28,1.29,.18 if not lod else .255)]
+        bars.extend(box(-1.32,z-.009,1.32,z+.009)for z in np.arange(3.05,4.55,.17 if not lod else .23))
+        f.prism(mesh.intersection(unary_union(bars)),-.25,-.222,DARK,'iron transom grille')
 def clock_roof(b):
     # The Chinese roof corners sweep above the eaves. Nested polygonal rings give the
     # top a concave profile; the hips join the ridge before the four corner tips rise.
@@ -175,6 +200,7 @@ def build(lod):
     tower_face(b,False,lod);tower_face(b,True,lod);clock_roof(b)
     b.box((0,DEPTH/2,.03),(TOWER-.65,DEPTH,.06),STONE,label='Clock passage/granite threshold and floor')
     b.box((0,DEPTH/2,4.69),(TOWER-.69,DEPTH-.61,.17),WHITE,label='Clock passage/soffit')
+    courtyard.install(b,lod,sys.modules[__name__])
     return b
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--lod',action='store_true')

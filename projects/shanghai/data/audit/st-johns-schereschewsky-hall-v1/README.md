@@ -1,3 +1,3 @@
-# 怀施堂钟楼与南教学翼
+# 怀施堂钟楼与南院券廊
  
-临街十孔上廊、院侧六个底券、门户、钟面、翘角瓦顶按华东政法大学照片与2004、2026两面实照建模。第一版近远均有452个独立闭合体，近景54,836面，远景38,240面。楼宽40.53米取现有地块南侧，钟塔宽4.85米、檐底8.34米取摄影拟合。中央券门可从街面直通院内，校园其余三翼另行核对。[构件及三角面复建检查](clock-study/solid-review.json) · [近景GLB](clock-study/full-source.glb) · [远景GLB](clock-study/lod-source.glb) · [来源与尺寸](../../../source/precise/changning-st-johns-schereschewsky-hall/README.md)
+钟楼三扇蓝色花窗、砖边方钟、透空券门和东、西长廊按院内与街面照片细化。南大院对面设三孔白墙中舱及三面圆饰。四组程序贴图取样于校档和新闻实照，模型未嵌入原图。近远均为853件独立闭合几何，近景123,284面、远景88,112面。较早的正反机位记录在目录中。当前院洞深度、院中铜像位置与第三个北望机位正在用校方航拍进一步核形。[街照机位](court-study/registration/street-model.jpg) · [院照机位](court-study/registration/court-model.jpg) · [四组纹理及资料](../../../source/precise/changning-st-johns-schereschewsky-hall/README.md) · [网格重建](court-study/solid-review.json)
