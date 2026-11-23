@@ -22,3 +22,5 @@ python "$s/source/build_blender_source.py" prepare exports/near.glb native-test
 python "$s/source/build_blender_source.py" run exports/near.glb native-test
 python "$s/measurements/check_gable_photo.py" exports/near.glb exports/decoded-near.glb exports/decoded-far.glb --out audit-test/photo-rays.json
 ```
+
+六个观察角度已分别在桌面及触屏浏览器实测，两端都从普通页面保存了三个网格文件及Blender工程。[十二张画面和下载后的文件校验](../../../data/audit/yangshupu-road-713-historic-residence-v1/ordinary-ui/ordinary-views.json)
