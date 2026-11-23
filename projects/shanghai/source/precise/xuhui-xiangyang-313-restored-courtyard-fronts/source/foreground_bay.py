@@ -67,9 +67,9 @@ def shutter_bank(face,bounds,lod=False):
             for j in range(n):
                 z=b+(j+.5)*(t-b)/n
                 face.box((x0+x1)/2,z,x1-x0,.52*(t-b)/n,.034,-.080,LOUVRE,f'lower shutters/{name} bank, leaf {i+1}')
-    face.box((l+r)/2,hi+.121,w+.32,.044,.293,.128,HEAD,'shuttered entrance/shallow rain hood')
+    face.box((l+r)/2,hi+.173,w+.48,.044,.293,.128,HEAD,'shuttered entrance/shallow rain hood')
     for x in (l-.086,r+.085):
-        face.line((x,hi+.085,.21),(x,hi-.121,.017),.011,HARDWARE,6 if lod else 10,'shuttered entrance/short diagonal hood bracket')
+        face.line((x,hi+.144,.21),(x,hi-.076,.017),.011,HARDWARE,6 if lod else 10,'shuttered entrance/short diagonal hood bracket')
 
 PLASTER='Xiangyang 313 | pale courtyard render'
 CASE='Xiangyang 313 | pale enamel condenser'
@@ -129,17 +129,20 @@ def add_foreground_bay(builder,lod=False):
     large=((tl[0]+bl[0])/2,(bl[2]+br[2])/2,(tr[0]+br[0])/2,(tl[2]+tr[2])/2)
     undercut=-1.255
     shutters=(-.665,.065,.886,1.997)
-    high=(-.705,6.902,.655,7.875)
-    mass=unary_union([box(undercut,0,1.91,2.56),box(-2.125,2.55,1.91,high[3])])
+    high=(-.705,6.902,.655,8.208)
+    # The eastern and upper limits run outside the photograph. The adjoining
+    # footprint edge and registered east-side roof constrain their continuation.
+    roof=(11.33-1.43)/1.08
+    mass=unary_union([box(undercut,0,2.433,2.56),box(-2.163,2.55,2.433,roof)])
     openings=unary_union([box(*large),box(*shutters),box(*high)])
     face.prism(mass.difference(openings),-.215,0,PLASTER,'continuous wall with three real apertures')
     # The pale lower return beneath the projecting upper corner is visible
     # in the photograph; dimensions behind the wall are only a working cut.
-    side=Facade(builder,(-2.125,.65),(-2.125,0),'projecting bay/east return')
-    side.wall(2.55,high[3],thickness=.115,material=PLASTER)
-    lower=Facade(builder,(undercut,.65),(undercut,0),'lower recessed entrance return')
+    side=Facade(builder,(-2.163,.6725),(-2.163,0),'projecting bay/east return')
+    side.wall(2.55,roof,thickness=.115,material=PLASTER)
+    lower=Facade(builder,(undercut,.6725),(undercut,0),'lower recessed entrance return')
     lower.wall(0,2.555,thickness=.115,material=PLASTER)
-    builder.plan_prism(box(-2.126,0,undercut+.003,.65),2.545,2.607,PLASTER,'projecting bay/soffit above recess')
+    builder.plan_prism(box(-2.164,0,undercut+.003,.673),2.545,2.607,PLASTER,'projecting bay/soffit above recess')
     face.box(-.101,3.135,4.11,.051,.078,.007,SILL,'projecting bay/lower plaster drip band')
     large_window(face,large,lod)
     shutter_bank(face,shutters,lod)

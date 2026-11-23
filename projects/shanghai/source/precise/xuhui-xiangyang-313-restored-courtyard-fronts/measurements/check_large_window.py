@@ -6,6 +6,8 @@ from pathlib import Path
 import runpy
 import numpy as np
 from register_courtyard import Camera
+from plan_points import load as read_plan
+
 HERE=Path(__file__).resolve().parent
 helper=HERE.parents[1]/'xuhui-hujiang-villas-changle-passage-bay/measurements/city-contact/glb_triangles.py'
 SerialScene=runpy.run_path(str(helper))['SerialScene']
@@ -22,18 +24,20 @@ DETAIL=[('light sill',(468,181),('pale projecting sill',)),
         ('pale condenser case',(407,147),('pale enamel condenser',)),
         ('lower hood',(482,273),('blue edged shallow hood',)),
         ('lower shutter',(492,310),('dark shutter blades','shaded inside reveal','dark painted window joinery'))]
-def examine(mesh):
+def examine(mesh,local=False):
     model=SerialScene(mesh);cam=Camera('case1')
+    pose=np.eye(4) if local else np.asarray(read_plan()['facade_frames']['case1']['local_to_ENU'])
+    eye=(pose@[*cam.c,1])[:3]
     readings=[(f'leaf {col+1}, row {j+1}',uv,('reflected glass','blue grey glass')) for j,row in enumerate(CENTRES)for col,uv in enumerate(row)]
     readings+=DETAIL
     result=[]
     for label,uv,types in readings:
-        hit=model.ray(cam.c,cam.ray(uv),45.)
+        hit=model.ray(eye,pose[:3,:3]@cam.ray(uv),45.)
         result.append({'label':label,'source_pixel':uv,'first_hit':hit,
                        'correct_direct_hit':bool(hit and any(s in hit['material']for s in types))})
     return {'asset':model.asset,'camera_sha256':hashlib.sha256((HERE/'courtyard-cameras.json').read_bytes()).hexdigest(),
             'count':len(readings),'exact':sum(v['correct_direct_hit']for v in result),'rays':result}
 if __name__=='__main__':
-    cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('mesh',type=Path);cli.add_argument('output',type=Path)
-    a=cli.parse_args();r=examine(a.mesh);a.output.write_text(json.dumps(r,indent=2)+'\n')
+    cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--local',action='store_true',help='Read a fragment in its original photographic frame');cli.add_argument('mesh',type=Path);cli.add_argument('output',type=Path)
+    a=cli.parse_args();r=examine(a.mesh,a.local);a.output.write_text(json.dumps(r,indent=2)+'\n')
     print(r['exact'],r['count'],[(h['label'],h['first_hit']['material'] if h['first_hit']else None)for h in r['rays'] if not h['correct_direct_hit']])
