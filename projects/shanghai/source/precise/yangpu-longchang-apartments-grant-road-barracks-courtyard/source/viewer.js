@@ -61,8 +61,10 @@ async function start() {
   function draw() { renderer.render(scene, camera); }
   function updateFOV() {
     const pose = poses.get(view);
-    const registeredHeight = pose.width_m * pose.height / pose.width;
-    const frameHeight = Math.max(registeredHeight, pose.width_m / camera.aspect);
+    // Give the southeast street corner room in the wide-screen overview.
+    const frameWidth = pose.width_m * (pose.name === 'overview' ? 1.15 : 1);
+    const registeredHeight = frameWidth * pose.height / pose.width;
+    const frameHeight = Math.max(registeredHeight, frameWidth / camera.aspect);
     camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(frameHeight / (2 * distance)));
     camera.updateProjectionMatrix();
   }
