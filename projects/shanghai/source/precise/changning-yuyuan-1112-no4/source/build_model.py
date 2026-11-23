@@ -1,0 +1,111 @@
+"""The two exposed elevations of the projecting southeast wing at 4, Lane 1112, Yuyuan Road."""
+import argparse
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+from shapely.geometry import Polygon, box
+from shapely.ops import unary_union
+
+HERE=Path(__file__).absolute().parent
+PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
+from photo_architecture import Builder
+
+ID='changning-yuyuan-1112-no4'
+META=dict(id=ID,name='愚园路1112弄4号蒋光鼐旧居',address='上海市长宁区愚园路1112弄4号',register='3M009',
+          scope='4号东南凸翼及相邻转折；名录同行的20号另栋。',geometry_license='MIT', photos_embedded=False)
+WALL='aged warm lime render'
+LINTEL='light ochre cast stone'
+BELT='banded grey base'
+DARK='oxide brown joinery'
+LIGHT='pale painted steel'
+GLASS='blue grey glazing'
+SHADOW='deep opening reveal'
+PALETTE={key:dict(color=color,roughness=r) for key,color,r in [
+    (WALL,[.715,.668,.552],.95),(LINTEL,[.564,.527,.433],.89),(BELT,[.365,.344,.295],.92),
+    (DARK,[.128,.079,.055],.63),(LIGHT,[.641,.677,.652],.62),(GLASS,[.119,.169,.166],.27),(SHADOW,[.089,.09,.075],.93)]}
+FEATURES=json.loads((HERE/'window-readings.json').read_bytes())
+CAMERA=json.loads((HERE/'camera-2011.json').read_bytes())
+
+def homography(uv,xz):
+    system=[];target=[]
+    for (u,v),(x,z) in zip(uv,xz):
+        system.extend([[u,v,1,0,0,0,-x*u,-x*v],[0,0,0,u,v,1,-z*u,-z*v]])
+        target.extend((x,z))
+    return np.r_[np.linalg.solve(system,target),1.].reshape(3,3)
+
+def on_plane(pixel,axis,value):
+    center=np.array(CAMERA['principal_point_px'])
+    v=np.array(CAMERA['world_to_camera_rotation']).T@np.r_[(np.array(pixel)-center)/CAMERA['focal_pixels'],1.]
+    c=np.array(CAMERA['camera_origin_m'])
+    return c+v*(value-c[axis])/v[axis]
+
+def wing_openings(side):
+    reg=FEATURES['sources'][side]
+    if side=='street-wing':
+        matrix=homography(reg['control_pixels_reference'],reg['control_geometry_metres'])
+        def position(p):
+            q=matrix@[*p,1.]
+            return q[:2]/q[2]
+    else:
+        def position(p):
+            v=on_plane(p,0,reg['constant_x_m'])
+            return (-v[1],v[2])
+    return {key:Polygon([position(p) for p in points]) for key,points in FEATURES[side].items()}
+
+def joinery(extrude,opening,key,lod):
+    x0,z0,x1,z1=opening.bounds
+    glass=opening.buffer(-.087,join_style='mitre')
+    paint=LIGHT if key in {'front-arch-left','front-arch-middle','side-mid-arch'} else DARK
+    extrude(opening.difference(glass),-.226,-.132,paint,key+'/rebated perimeter')
+    # The segmental openings have a continuous transom. The raised shoulders remain open around the upper light.
+    narrow=key.endswith(('slit','narrow'))
+    xs=[] if narrow else ([.50] if lod else [.30,.68])
+    zs=[.73] if 'arch' in key or narrow else ([.71] if lod else [.36,.72])
+    for j,t in enumerate(xs):
+        x=x0+(x1-x0)*t
+        extrude(glass.intersection(box(x-.028,z0-.02,x+.028,z1+.02)),-.215,-.149,paint,f'{key}/vertical bar {j+1}')
+    for j,t in enumerate(zs):
+        z=z0+(z1-z0)*t
+        extrude(glass.intersection(box(x0-.02,z-.028,x1+.02,z+.028)),-.206,-.143,paint,f'{key}/transom {j+1}')
+    if lod:
+        extrude(glass,-.255,-.237,GLASS,key+'/glazing')
+    else:
+        cuts=[box(x0+(x1-x0)*t-.027,z0-.1,x0+(x1-x0)*t+.027,z1+.1) for t in xs]
+        cuts.extend(box(x0-.1,z0+(z1-z0)*t-.027,x1+.1,z0+(z1-z0)*t+.027) for t in zs)
+        panes=glass.difference(unary_union(cuts))
+        for j,p in enumerate(getattr(panes,'geoms',[panes])):
+            extrude(p,-.255,-.237,GLASS,f'{key}/pane {j+1}')
+    sill=box(x0-.091,z0-.096,x1+.095,z0-.009)
+    extrude(sill,-.047,.132,LINTEL,key+'/drip sill')
+
+def wing(b,lod):
+    for side in ['street-wing','west-wing-return']:
+        front=side=='street-wing'
+        mapper=(lambda u,z,d:(u,-3.30-d,z)) if front else (lambda u,z,d:(5.53-d,-u,z))
+        left,right=(5.53,14.98) if front else (-.67,3.30)
+        def extrude(shape,back,face,material,label):
+            b.prism(shape,back,face,mapper,material,side+'/'+label)
+        openings=wing_openings(side)
+        field=box(left,4.25,right,11.27).difference(unary_union(list(openings.values())))
+        extrude(field,-.37,0,WALL,'wall with open reveals')
+        for key,shape in openings.items():
+            joinery(extrude,shape,key,lod)
+        extrude(box(left,.0,right,4.245),-.37,-.007,BELT,'ground floor behind enclosure')
+        for j,(z0,z1,d,m) in enumerate([(3.50,3.55,.072,BELT),(3.90,3.98,.089,BELT),(4.17,4.25,.142,LINTEL),
+                                         (11.00,11.10,.076,LINTEL),(11.10,11.19,.153,BELT),
+                                         (11.19,11.34,.221,LINTEL),(11.34,11.42,.272,BELT)]):
+            extrude(box(left,z0,right,z1),-.03,d,m,f'horizontal belt course {j+1}')
+    return b
+
+def build(lod=False):
+    return wing(Builder(PALETTE),lod)
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--lod',action='store_true')
+    args=parser.parse_args()
+    print(build(args.lod).save(args.output,META)['sha256'])
