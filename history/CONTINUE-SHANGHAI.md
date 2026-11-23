@@ -60,6 +60,8 @@
 
 [新华村15号院面方塔与侧廊](../projects/shanghai/xinhuacun-15-courtyard-tower.html)采用3M005题注院照、北门斜照与冬季街站确定的三层北窗。九镜、八份下载和可编辑源收录于[固定工作版本](https://github.com/ecojust/e-resource/tree/b20c7ac17d6230d0c5b59e5725d58db92991495a/projects/shanghai/source/precise/changning-xinhuacun-15-courtyard-tower)。
 
+[泰安路74号上海市质量协会临街面](../projects/shanghai/taian-74-quality-association.html)可查看双拱门廊、绿色74号牌、协会竖牌及西侧窗列。该楼紧邻泰安路76弄亦村，独页提供十个视角与八件下载。 [固定工作版](https://github.com/ecojust/e-resource/tree/18136f35f361c7bf3802e73f40bff72d0d046336/projects/shanghai/source/precise/changning-taian-74-quality-association)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。

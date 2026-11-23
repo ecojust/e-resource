@@ -212,9 +212,29 @@ def verify_campus_component(entry):
 def standalone_heritage_models(records):
  data=repository_json('projects/shanghai/data/model-todo/standalone-heritage-models.json')
  assert data['schema']=='standalone-heritage-models-v1'
- known={record['id'] for record in records}
+ known={record['id']:record for record in records}
  by_heritage={}
+ neighbours={}
+ pages=set()
  for entry in data['records']:
+  assert entry['page'] not in pages, 'Duplicate standalone page'
+  pages.add(entry['page'])
+  if entry.get('relationship_to_register')=='neighbouring-property':
+   assert entry['heritage_id'] is None and 'component_id' not in entry and 'campus_building_number' not in entry
+   adjacent=entry['neighbouring_heritage_id']
+   reference=known[adjacent]
+   component=entry['model_id']
+   assert re.fullmatch(r'[a-z0-9-]+',component) and re.fullmatch(r'[a-z0-9-]+\.html',entry['page'])
+   assert re.fullmatch(r'[0-9a-f]{40}',entry['published_commit'])
+   assert all(entry[key].strip() for key in ('title','modeled_scope','remaining'))
+   manifest=repository_json(f'projects/shanghai/assets/models/candidates/{component}/manifest.json')
+   evidence=repository_json(f'projects/shanghai/source/precise/{component}/reference-review.json')
+   assert (manifest['id'],manifest['viewer_page'],manifest['name'])==(component,entry['page'],entry['title'])
+   assert 'heritage_id' not in manifest and manifest['neighbouring_site']==reference['name']
+   assert any(row[0]==manifest['neighbouring_register'] and row[1]==reference['name'] and row[3] in reference['addresses'] for row in evidence['neighbouring_heritage_register']['rows'])
+   assert set(manifest['assets'])=={'raw','full','lod','native'} and not manifest.get('map_replacement') and not manifest.get('walk_integration')
+   neighbours.setdefault(adjacent,[]).append(entry)
+   continue
   heritage_id=entry['heritage_id']
   assert heritage_id in known, 'Unknown standalone heritage ID'
   siblings=by_heritage.setdefault(heritage_id,[])
@@ -226,7 +246,7 @@ def standalone_heritage_models(records):
   assert re.fullmatch(r'[a-z0-9-]+\.html',entry['page']) and re.fullmatch(r'[0-9a-f]{40}',entry['published_commit'])
   assert all(entry[key].strip() for key in ('title','modeled_scope','remaining'))
   siblings.append(entry)
- return by_heritage
+ return by_heritage,neighbours
 
 def delivered_source_object_models(delivered_ids):
  # These are identity associations, not assertions of full source coverage.
@@ -271,7 +291,7 @@ def build(reserved=()):
  assert len(set(map_keys))==len(map_keys), 'Duplicate named source object'
  active_maps=[m for m in maps if (m['source_layer'],m['id']) not in source_models]
  associated_map_count=len(maps)-len(active_maps)
- standalone=standalone_heritage_models(records)
+ standalone,neighbours=standalone_heritage_models(records)
  scope_reviews=completed_scope_reviews(queue,records,delivered_ids)
  active_records=[r for r in records if r['id'] not in scope_reviews or scope_reviews[r['id']]['active_tasks']]
  hidden_record_count=len(records)-len(active_records)
@@ -314,6 +334,9 @@ def build(reserved=()):
     view_url=f"https://raw.githack.com/ecojust/e-resource/{project['published_commit']}/projects/shanghai/{project['page']}"
     label=project['campus_building_number']+'号模型' if len(projects)>1 else '公开模型'
     refs+=' · '+link(label,view_url)
+   for adjacent in neighbours.get(r['id'],[]):
+    url=f"https://raw.githack.com/ecojust/e-resource/{adjacent['published_commit']}/projects/shanghai/{adjacent['page']}"
+    refs+=' · '+link('邻址专题：'+adjacent['title'],url)
    if not projects and r.get('photo_url'):refs+=' · 照片待核'
    todo='待核外观／拆栋'
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
