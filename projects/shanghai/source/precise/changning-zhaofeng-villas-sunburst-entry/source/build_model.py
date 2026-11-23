@@ -7,8 +7,9 @@ HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
+import street_gate
 ID='changning-zhaofeng-villas-sunburst-entry'
-META={'id':ID,'heritage_id':'sh-historic-b3-099','name':'兆丰别墅长宁路弄口题名墙','address':'长宁路712弄','scope':'东墙阶梯日升纹、两道横线、铸字、壁灯、说明牌及竖向线脚。','viewer_page':'zhaofeng-villas-sunburst-entry.html','geometry_license':'MIT','photos_embedded':False}
+META={'id':ID,'heritage_id':'sh-historic-b3-099','name':'兆丰别墅长宁路弄口题名墙','address':'长宁路712弄','scope':'长宁路入口东西灰墙、开向弄内的两扇铁门、两盏半圆壁灯、东侧花台和阶梯日升纹题名墙。','viewer_page':'zhaofeng-villas-sunburst-entry.html','geometry_license':'MIT','photos_embedded':False}
 PLASTER='grey-pink aggregate plaster';EDGE='worn pale cement';IRON='patinated cast letters';BRASS='bronze lamp frame';GLASS='warm opal lamp';MARBLE='heritage plaque stone';ENAMEL='interpretive enamel'
 PALETTE={name:{'color':color,'roughness':rough}for name,color,rough in [(PLASTER,[.51,.481,.483],.91),(EDGE,[.59,.566,.55],.86),(IRON,[.113,.106,.114],.46),(BRASS,[.338,.263,.166],.54),(GLASS,[.823,.747,.533],.38),(MARBLE,[.695,.683,.625],.82),(ENAMEL,[.773,.690,.517],.57)]}
 data=json.loads((HERE/'registered-name.json').read_bytes());H=np.asarray(data['image_to_initial_xz'])
@@ -77,7 +78,7 @@ def build(lod=False):
   theta=t*math.pi
   x=center_x+radius*.89*math.cos(theta);y=-.009-radius*.89*math.sin(theta)
   b.box((x,y,base+.5*height),(.010,.012,height*.86),BRASS,label=f'lantern/vertical rib {i+1}')
- return b
+ return street_gate.assemble(b,lod)
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--lod',action='store_true');args=parser.parse_args()
  result=build(args.lod).save(args.output,META);print(result['sha256'])
