@@ -8,8 +8,4 @@
 
 2024年总图的尺度读取误差约1.3米。2019、2025年航片的屋面投影分别占入现有西侧建筑约42和35平方米，对既有主楼屋面的判断也不同。本成果在独立页面展示。原城市地图仍可查看已建的孙科别墅主楼。[总图的原像素与两期航片比较](measurements/2024-siteplan-and-orthophotos.json) · [主楼模型与资料](../changning-sun-ke-villa/README.md)
 
-市房管局修缮工程记录](https://fgj.sh.gov.cn/tpxw/20220913/7f0783f24e514531a2bc717a1a636b3d.html) · [长宁区修缮报道](https://m.thepaper.cn/baijiahao_14106378) · [总平面与摄影来源](reference-review.json) · [既有主楼](../changning-sun-ke-villa/README.md)
-
-正面摄影用木柱与穿堂前后边校准，另有四个柱点作留出检查。七跨从左至右各按1.65米条件间距建模，依据实照恢复前廊的筒瓦脊、两级檐沟、细木栏、两座斜帽券墩、钢窗和方门内侧。首版近景208个闭合构件、6,606个三角形，远景162个闭合构件、3,508个三角形。两档都可逐字复建，逐面检查重复三角形数为零。28个独立材面点中两档均有26处正中。木栏和右端落水管的两个余差可在记录中查看。[机位与保留检查点](measurements/gallery-station.json) · [同机位模型渲染](../../../data/audit/sun-ke-villa-annex-gallery-v1/working-geometry/arcade-model.jpg)
-
 市房管局和区修缮纪录记主屋1931年建成；园景团队使用1930年，早期名录转录另载1948年。2003年研究所曾整修，2019年11月再开工，2020年11月开门。门卫室独立平面、附楼背面及改建前窗门尚待可定位的图纸。[修缮年代与总图](reference-review.json)
