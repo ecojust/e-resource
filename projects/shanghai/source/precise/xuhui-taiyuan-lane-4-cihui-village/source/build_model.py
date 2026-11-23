@@ -126,7 +126,7 @@ def add_northern_facets(b,lod):
             labels.append((row,r,o))
         # The two near angled faces rise behind the garden screen. Only the section
         # reaching the street beside the black-framed arch is fully observable below sill level.
-        bottom=3.35 if name in ('near-flank','middle-pier','far-flank','short-return') else 0.
+        bottom=3.35 if name in ('near-flank','ac-window-wall','middle-pier','far-flank','short-return') else 0.
         shell=box(0,bottom,length,h).difference(unary_union(holes))
         sheet(b,F,shell,-.205,0,WALL,'Return bay | '+name+' faceted wall')
         lip(b,F,0,length,h,lod,'Return bay | '+name+' cornice')
@@ -147,7 +147,7 @@ def add_northern_facets(b,lod):
                     x0=q0+.012+((q1-q0)-.024)*k0/4
                     band(b,F,x0-.009,x0+.009,z0,z1-z0,-.048,-.022,IRON,namepart+f' metal bar {k0+1}')
             else:
-                count=2 if kind=='arch' or win['width']>.65 else 1
+                count=2 if kind=='arch' or k=='upper-1' or win['width']>.65 else 1
                 glazed(b,F,win,o,kind=='arch',count,2 if kind=='arch' else 3,0,lod,namepart,paint=PALE if k.startswith('white-') else STEEL)
                 casing(b,F,o,0,kind=='arch',lod,namepart)
 def public_street_screen(b,lod):
