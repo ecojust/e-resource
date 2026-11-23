@@ -10,15 +10,30 @@ from shapely.ops import unary_union
 
 import corner_and_lane
 import street_control
+import numbered_gate
+import roof_and_court
+import finishes
 
 HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+
+class SurfaceBuilder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in finishes.STEMS:finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        Builder.save(self,path,metadata)
+        return finishes.writer.embed_normals(path)
+
 
 ID='changning-yuyuan-1112-no4'
-META=dict(id=ID,name='愚园路1112弄4号蒋光鼐旧居',address='上海市长宁区愚园路1112弄4号',register='3M009',
-          scope='4号东南凸翼及相邻转折；名录同行的20号另栋。',geometry_license='MIT', photos_embedded=False)
+META=dict(id=ID,name='愚园路1112弄4号蒋光鼐旧居',address='上海市长宁区愚园路1112弄4号',register='3M009',formal_id='sh-historic-b3-107',number='4',viewer_page='yuyuan-1112-no4.html',
+          scope='4号南凸翼、弧形压顶、临弄窗墙、门牌、公告箱、院门与两片屋顶。后端遮挡面依据俯视近似。北栋20号另记。',geometry_license='MIT', photos_embedded=False)
+META['camera_views']=json.loads((HERE/'cameras.json').read_bytes())
 WALL='aged warm lime render'
 LINTEL='light ochre cast stone'
 BELT='banded grey base'
@@ -67,6 +82,8 @@ def joinery(extrude,opening,key,lod):
     narrow=key.endswith(('slit','narrow'))
     xs=[] if narrow else ([.50] if lod else [.30,.68])
     zs=[.73] if 'arch' in key or narrow else ([.71] if lod else [.36,.72])
+    if key=='corner_upper_window' and not lod:
+        xs=[.24,.49,.74];zs=[.17,.34,.51,.69,.87]
     for j,t in enumerate(xs):
         x=x0+(x1-x0)*t
         extrude(glass.intersection(box(x-.028,z0-.02,x+.028,z1+.02)),-.215,-.149,paint,f'{key}/vertical bar {j+1}')
@@ -105,8 +122,14 @@ def wing(b,lod):
     return b
 
 def build(lod=False):
-    b=wing(Builder(PALETTE),lod)
-    return street_control.apply(corner_and_lane.add(b,sys.modules[__name__],lod))
+    b=wing(Builder({**PALETTE,**numbered_gate.PALETTE,**roof_and_court.PALETTE}),lod)
+    corner_and_lane.add(b,sys.modules[__name__],lod)
+    street_control.apply(roof_and_court.court(b,sys.modules[__name__],lod))
+    roof_and_court.roof(b,sys.modules[__name__],lod)
+    numbered_gate.add(b,sys.modules[__name__],lod)
+    result=SurfaceBuilder({**b.palette,**finishes.PALETTE})
+    for part in b.parts:result.add(part['vertices'],part['triangles'],part['material'],part['label'])
+    return result
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
