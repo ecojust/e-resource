@@ -4,6 +4,7 @@ from shapely.geometry import Polygon, box
 from shapely.ops import unary_union
 from materials import BASE, CEMENT, DARK, DENTIL, FRAME, GLASS, PLASTER, ROOF, SHADOW, WOOD
 from numbered_entrance import add_entrance, openings
+from rounded_bay import add_round_windows
 from street_windows import floral_apron,photo_lights,sash
 
 TANGENT=-6.53
@@ -49,7 +50,7 @@ def add_body(f,lod=False):
     cut=unary_union([*openings(),*shop_openings,*[record[1] for record in lights]])
     f.solid(box(TANGENT,0,NORTH,EAVE).difference(cut),-.25,0,PLASTER,'continuous street wall with recessed openings')
     f.solid(box(TANGENT,.012,NORTH,.52).difference(cut),.001,.031,BASE,'washed gravel plinth')
-    corner_band(f,-.25,0,0,EAVE,PLASTER,'rounded south wall',steps)
+    add_round_windows(f,TANGENT,RADIUS,EAVE,lod)
     corner_band(f,0,.03,.012,.52,BASE,'rounded south plinth',steps)
     for a,b in retail:
         u=(a+b)/2
@@ -62,7 +63,9 @@ def add_body(f,lod=False):
     floral_apron(f,lod)
     add_entrance(f,lod)
     side_wall(f.face(NORTH,0,0,1),DEPTH,2.15,lod,'north return casement')
-    side_wall(f.face(SOUTH,DEPTH,0,-1),DEPTH-RADIUS,DEPTH-2.52,lod,'south return casement')
+    south=f.face(SOUTH,DEPTH,0,-1)
+    south.rect(0,DEPTH-RADIUS,0,EAVE,-.25,0,PLASTER,'short south return beyond surveyed curve')
+    south.rect(0,DEPTH-RADIUS,.015,.52,.003,.029,BASE,'south return | plinth')
     rear=f.face(NORTH,DEPTH,-1,0)
     rear.rect(0,NORTH-SOUTH,0,EAVE,-.24,0,PLASTER,'inner limit of the documented street segment')
     outline=Polygon([(NORTH,0),*corner(RADIUS,steps),(SOUTH,DEPTH),(NORTH,DEPTH)])

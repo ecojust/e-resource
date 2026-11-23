@@ -1,0 +1,87 @@
+"""Prepare editable part groups and run two independent Blender processes against the verified GLB."""
+import argparse
+from datetime import datetime, timezone
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+from build_model import Builder, PALETTE, PROJECT, META, ID, HERE, add_building
+sys.path.insert(0,str(HERE))
+from build_blender_source import helpers, digest, attribution
+sys.path.insert(0,str(PROJECT/'tools'))
+from package_architectural_model import group_parts
+
+def write(path,data):
+    tmp=path.with_suffix(path.suffix+'.partial')
+    tmp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    tmp.replace(path)
+def read(path):return json.loads(path.read_bytes())
+
+def prepare(out,raw):
+    if META.get('id') != ID or ID != 'xuhui-xiangyang-364-arched-residence':
+        raise ValueError('The editable package requires the authored No. 364 residence')
+    b=Builder(PALETTE);add_building(b,False)
+    authored = group_parts(b)
+    aliases = {label.removeprefix('Xiangyang 364 | '): label for label in authored if len(label.encode()) > 63}
+    groups = {label.removeprefix('Xiangyang 364 | ') if label in aliases.values() else label: part
+              for label, part in authored.items()}
+    if len(groups) != len(authored):
+        raise ValueError('The short Blender names collide')
+    names = helpers.editable_groups(groups.keys())
+    regen=out/'regenerated.glb';b.save(regen,META)
+    assert digest(regen)==digest(raw)
+    assert META['camera_views']==read(HERE/'cameras.json')
+    parts=out/'editable-parts.json'
+    write(parts,{'groups':groups,'palette':b.palette,'metadata':dict(META,scope='襄阳南路364号具名住宅的沿街立面、门洞、窗扇及可辨侧墙')})
+    images={m:{'sha256':digest(p),'corners':3*len(helpers.texture_faces(raw,m))} for m,p in helpers.source_materials(raw).items()}
+    record={'raw_sha256':digest(raw),'editable_groups':names,'original_names':aliases,'parts_sha256':digest(parts),'triangles':sum(len(v['f']) for v in groups.values()),
+            'cameras_sha256':digest(HERE/'cameras.json'),'materials':images,'metadata':attribution(raw)}
+    write(out/'editable-inputs.json',record)
+    return record
+
+def run(pack,out,raw,manifest):
+    record=read(out/'editable-inputs.json');parts=out/'editable-parts.json';assert digest(parts)==record['parts_sha256'] and digest(raw)==record['raw_sha256']
+    assert record['triangles']==manifest['assets']['raw']['triangles'] and digest(HERE/'cameras.json')==record['cameras_sha256']
+    if manifest.get('id') != ID or not {'raw','full','lod'} <= set(manifest['assets']):
+        raise ValueError('The three production assets must be present in the current manifest')
+    for k,v in manifest['assets'].items():
+        if k!='native':assert digest(pack/v['file'])==v['sha256'] and (pack/v['file']).stat().st_size==v['bytes']
+    blender=os.getenv('BLENDER') or shutil.which('blender')
+    if not blender:raise FileNotFoundError('Blender executable')
+    base=[blender,'-b','--threads','1','--python-exit-code','1'];script=HERE/'build_blender_source.py'
+    maker=PROJECT/'source/precise/jingan-country-hospital/source/make_native.py'
+    checker=PROJECT/'tools/verify_editable_model.py'
+    blend=out/(ID+'-editable.blend');proof=out/'reopened.json';preview=out/'native-preview.png'
+    jobs={'make':[*base,'--python',script,'--python',maker,'--',parts,blend,preview],
+          'reopen':[*base,'--python',checker,'--python',script,'--',blend,raw,proof]}
+    history=[]
+    for kind,command in jobs.items():
+        env=dict(os.environ,XIANGYANG_364_STAGE=kind,XIANGYANG_364_RAW=str(raw),XIANGYANG_364_GROUPS=str(out/'editable-inputs.json'),OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
+        log=out/(kind+'.log');start=datetime.now(timezone.utc).isoformat()
+        with log.open('w') as stream:
+            proc=subprocess.Popen(command,stdout=stream,stderr=subprocess.STDOUT,env=env);exitcode=proc.wait()
+        history.append(dict(phase=kind,pid=proc.pid,start=start,finish=datetime.now(timezone.utc).isoformat(),exit=exitcode,log_sha256=digest(log)))
+        write(out/'blender-exits.json',history)
+        if exitcode:raise RuntimeError(f'{kind} exited {exitcode}; see {log}')
+    report=read(proof);re=report['xiangyang_364'];assert report['match_raw'] and report['triangles']==record['triangles'] and re['editable_groups']==record['editable_groups']
+    assert re['cameras']==META['camera_views'] and re['metadata']==record['metadata']
+    for m,v in record['materials'].items():
+        actual=re['textured_materials'][m];assert actual['textured_corners']==v['corners'] and actual['packed_png_sha256']==v['sha256'] and actual['extension']=='REPEAT'
+    final=pack/blend.name
+    if final.exists():
+        if digest(final)!=digest(blend):raise ValueError('The output already contains a different editable file')
+    else:
+        try:os.link(blend,final)
+        except OSError:shutil.copyfile(blend,final)
+    native=dict(file=blend.name,bytes=blend.stat().st_size,sha256=digest(blend))
+    result=dict(manifest,assets=dict(manifest['assets'],native=native));write(out/'four-role-manifest.json',result);write(pack/'manifest.json',result)
+    return dict(native=native,triangles=report['triangles'],groups=report['mesh_count'],textures=re['textured_materials'])
+
+if __name__=='__main__':
+    cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('stage',choices=['prepare','run']);cli.add_argument('pack',type=Path);cli.add_argument('out',type=Path);a=cli.parse_args()
+    pack=a.pack.resolve();out=a.out.resolve();out.mkdir(exist_ok=True,parents=True)
+    manifest=read(pack/'manifest.json');raw=pack/manifest['assets']['raw']['file']
+    result=prepare(out,raw) if a.stage=='prepare' else run(pack,out,raw,manifest)
+    print(json.dumps(result,ensure_ascii=False))

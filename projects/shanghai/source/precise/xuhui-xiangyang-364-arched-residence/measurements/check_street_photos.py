@@ -13,6 +13,11 @@ TRIM=(CEMENT,DENTIL,ROOF)
 FIELD=(PLASTER,)
 SAMPLES={
 'south':[
+ ('curved top sash upper pane',157,134,WINDOW),('curved top sash lower pane',150,155,WINDOW),
+ ('curved top sash northern light',165,145,WINDOW),('curved top sash southern light',143,155,WINDOW),
+ ('curved lower sash upper light',135,243,WINDOW),('curved lower sash lower light',139,260,WINDOW),
+ ('curved lower sash northern light',150,246,WINDOW),('curved lower sash central light',141,251,WINDOW),
+ ('round plaster apron under upper sash',160,192,FIELD),('curved wall outside lower sash',174,253,FIELD),
  ('south third-storey window',298,178,WINDOW),('south window upper glass',295,158,WINDOW),
  ('plaster below south upper window',302,215,FIELD),('plaster below curved upper wall',260,219,FIELD),
  ('south arched clear lower pane',291,290,WINDOW),('south arched fanlight',292,263,WINDOW),

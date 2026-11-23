@@ -27,7 +27,9 @@ def opening_profile():
     return arch(.90,1.71,.70)
 
 def openings():
-    return [opening_profile(),box(*LEFT),box(*RIGHT)]
+    # The shell meets the middle of the 44 mm plaster lining.
+    # Its aperture has no surface coincident with the finished opening.
+    return [opening_profile().buffer(.022,join_style=2),box(*LEFT),box(*RIGHT)]
 
 def _mark_number(f):
     u,z=1.035,2.058
