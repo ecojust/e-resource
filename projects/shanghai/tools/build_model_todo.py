@@ -209,6 +209,19 @@ def verify_campus_component(entry):
  assert not manifest.get('map_replacement',False) and not manifest.get('walk_integration',False)
  return number
 
+def verify_yuyuan_house(entry,record):
+ number=entry['street_building_number']
+ pages={'4':'yuyuan-1112-no4.html','20':'yuyuan-1112-no20-stair-and-lane.html'}
+ assert pages.get(number)==entry['page'] and entry['model_id']=='changning-'+entry['page'][:-5], 'Unrecognized house number or page'
+ assert record['official_code']=='M-Ⅲ-09' and '愚园路1112弄4号，20号' in record['addresses'], 'Municipal entry does not list these two houses'
+ manifest=repository_json(f"projects/shanghai/assets/models/candidates/{entry['model_id']}/manifest.json")
+ assert manifest['id']==entry['model_id'] and manifest['viewer_page']==entry['page'] and manifest['address'].endswith('愚园路1112弄'+number+'号'), 'House manifest identifies a different address'
+ assert manifest.get('heritage_id',manifest.get('formal_id'))==record['id'] and manifest.get('protection_number',manifest.get('register'))=='3M009'
+ assert manifest.get('number',number)==number and manifest['scope'] and set(manifest['assets'])=={'raw','full','lod','native'}
+ assert not manifest.get('map_replacement') and not manifest.get('walk_integration')
+ assert 'campus_building_number' not in entry and 'component_id' not in entry
+ return number
+
 def standalone_heritage_models(records):
  data=repository_json('projects/shanghai/data/model-todo/standalone-heritage-models.json')
  assert data['schema']=='standalone-heritage-models-v1'
@@ -241,8 +254,11 @@ def standalone_heritage_models(records):
   if heritage_id=='sh-historic-b2-060':
    number=verify_campus_component(entry)
    assert all(other['campus_building_number']!=number for other in siblings), 'Duplicate campus building'
+  elif heritage_id=='sh-historic-b3-107':
+   number=verify_yuyuan_house(entry,known[heritage_id])
+   assert all(other['street_building_number']!=number for other in siblings), 'Duplicate house number'
   else:
-   assert not siblings and 'campus_building_number' not in entry and 'component_id' not in entry, 'Unexpected component or repeated heritage ID'
+   assert not siblings and 'campus_building_number' not in entry and 'component_id' not in entry and 'street_building_number' not in entry, 'Unexpected component or repeated heritage ID'
   assert re.fullmatch(r'[a-z0-9-]+\.html',entry['page']) and re.fullmatch(r'[0-9a-f]{40}',entry['published_commit'])
   assert all(entry[key].strip() for key in ('title','modeled_scope','remaining'))
   siblings.append(entry)
@@ -332,7 +348,7 @@ def build(reserved=()):
    projects=standalone.get(r['id'],[])
    for project in projects:
     view_url=f"https://raw.githack.com/ecojust/e-resource/{project['published_commit']}/projects/shanghai/{project['page']}"
-    label=project['campus_building_number']+'号模型' if len(projects)>1 else '公开模型'
+    label=(project.get('street_building_number') or project['campus_building_number'])+'号模型' if len(projects)>1 else '公开模型'
     refs+=' · '+link(label,view_url)
    for adjacent in neighbours.get(r['id'],[]):
     url=f"https://raw.githack.com/ecojust/e-resource/{adjacent['published_commit']}/projects/shanghai/{adjacent['page']}"
@@ -353,9 +369,9 @@ def build(reserved=()):
     else:todo+='；'+review['split_review']['note']
    if projects:
     if r['id'] not in scope_reviews:
-     assert len(projects)==1, 'Multi-building site requires a shared scope review'
-     title=projects[0]['title']
-     todo=projects[0]['modeled_scope']+projects[0]['remaining']
+     assert len(projects)==1 or r['id']=='sh-historic-b3-107', 'Multi-building site requires a shared scope review'
+     title='、'.join(project['title'] for project in projects)
+     todo=''.join(project['modeled_scope']+project['remaining'] for project in projects)
     else:
      todo=''.join(project['modeled_scope'] for project in projects)+todo
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']

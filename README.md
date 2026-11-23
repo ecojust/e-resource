@@ -612,7 +612,7 @@ sh-historic-b3-103|新华村15号院面方塔与侧廊|愚园路1320号|[名录]
 sh-historic-b3-104|亦村4号贺绿汀旧居院门及三孔山墙|泰安路76弄|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/ea457efcd1b42ed397cd0b8579530122171bf97f/projects/shanghai/yicun-no4-garden-gate.html>) · [邻址专题：泰安路74号上海市质量协会临街面](<https://raw.githack.com/ecojust/e-resource/18136f35f361c7bf3802e73f40bff72d0d046336/projects/shanghai/taian-74-quality-association.html>)|按两期照片制作4号门柱、号码牌、绿色铁门及搭扣，门后可见三孔山墙、钢窗与右侧外机。院内进深按照片比例估算。整幢后部、同弄其他楼及门后两处既有地物的边界仍待地面勘测。
 sh-historic-b3-105|董竹君旧居18号楼南面券廊与题号山墙|愚园路1294号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/9f87ecd15facc601867a297c6a39e5ffe4f754b0/projects/shanghai/yuyuan-1294-dong-zhujun-garden-residence.html>)|愚园路1294号院内18号楼的三跨券廊、贯层红砖柱、圆形门牌、阁楼绿窗、窗下短瓦檐与室外踏步。十个视角含两张照片配准，提供八种下载。外阶近照没有拍到题号山墙，可核对踏步、方柱和栏板，其在花园中的准确朝向与距离仍待实测。屋后与树荫内的部分檐线待核。城市原户168及邻宅保留。
 sh-historic-b3-106|沪西别墅东侧临弄山墙与跨层钢窗|愚园路1210弄东侧|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/b5bca6590f820e37a620f167a41ee7b5727f850d/projects/shanghai/huxi-villas-east-row-gable.html>)|2014年弄内照片最靠近镜头的一片西山墙，包括上下两扇狭窗、转角的排水管、面向小院的跨层钢窗、窄段瓦坡和矮砖墙。两处实际摄影站、九个机位及八种下载。院内最近山墙的门牌在现有实照中不可读，南数首排及次排均为候选。2号图点可独立定位首排。城市保留两排及其余住宅、西侧邻屋和愚园路沿街房。
-sh-historic-b3-107|住宅|愚园路1112弄4号，20号|[名录][3] · 照片待核|待核外观／拆栋
+sh-historic-b3-107|愚园路1112弄20号北栋巷面与室内石阶|愚园路1112弄4号，20号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/5720ca6ee96af55ccaa433bdc796a8a18d5ca04b/projects/shanghai/yuyuan-1112-no20-stair-and-lane.html>)|20号临弄立面、弧形墙顶、洞窗与室内首跑水磨石梯、木扶手和信报箱，另附20号搪瓷门牌模型。立面与室内楼梯的两张照片分别定向，两组构件之间的距离和朝向尚待实地联测。4号另有独立模型。
 sh-historic-b3-108|私立妇孺医院|延安西路934号|[名录][3]|待核外观／拆栋
 sh-historic-b3-109|住宅|新华路200号|[名录][3] · 照片待核|待核外观／拆栋
 sh-historic-b3-110|住宅|新华路231号|[名录][3]|待核外观／拆栋
