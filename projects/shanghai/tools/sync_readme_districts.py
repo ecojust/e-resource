@@ -57,6 +57,37 @@ def candidates():
             'page': (job.get('preview_source') or viewer.get('page') or job['preview']).split('/')[-1].split('#')[0],
             'published_commit': job.get('published_commit'),
         }
+    # Independently published heritage studies can acquire a real city placement
+    # later. Their source ledger and normal viewer identify the exact delivery.
+    registry = json.loads((DATA / 'standalone-heritage-models.json').read_text())['records']
+    registered = {entry['page']: entry for entry in registry}
+    project = DATA.parent.parent
+    for placement in integrations().values():
+        model_id = placement['id']
+        if model_id in result or model_id in base_ids:
+            continue
+        viewer = viewers.get(model_id, {})
+        page = placement.get('individual_page')
+        row = registered.get(page)
+        if row is None:
+            continue
+        relative = f'assets/models/candidates/{model_id}/manifest.json'
+        if placement.get('candidate_manifest') != relative or viewer.get('manifest') != relative:
+            raise ValueError('Registered city candidate and viewer must name one manifest: '+model_id)
+        manifest = json.loads((project / relative).read_text())
+        if (manifest.get('id'),manifest.get('heritage_id'),manifest.get('viewer_page')) != (model_id,row['heritage_id'],page) or viewer.get('page') != page:
+            raise ValueError('Mismatched heritage entry, model and city viewer: '+model_id)
+        if not (project/page).is_file() or viewer.get('kind') != 'candidate':
+            raise ValueError('Missing independent candidate viewer: '+model_id)
+        assets = manifest['assets']
+        for role, key in [('full','web'),('lod','lod')]:
+            source = assets[role]
+            encoded = placement['assets'][key]
+            path = str(Path(relative).parent/source['file'])
+            if (encoded['file'],encoded['bytes'],encoded['sha256']) != (path,source['bytes'],source['sha256']):
+                raise ValueError('City placement differs from registered '+key+' asset: '+model_id)
+        result[model_id] = {'id':model_id,'name':manifest['name'],'district':viewer['district'],
+                            'page':page,'published_commit':row['published_commit']}
     return list(result.values())
 
 

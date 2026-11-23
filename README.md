@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 319 处入口。最近接入[旗昌洋行福州路三开间石墙与尖券窗](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 320 处入口。最近接入[新乐坊143-1号临街窗墙与弄口门柱](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-143-1-street-corner&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -574,7 +574,7 @@
 |sh-historic-b5-xh-j-104-v|住宅|复兴西路299弄1号|[名录][5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-105-v|慎成里|永嘉路291弄1-90号（66号为区保）|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-106-v|住宅|新乐路44号|[名录][5]|待核外观／拆栋|
-|sh-historic-b5-xh-j-107-v|住宅|新乐路143弄|[名录][5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-107-v|新乐坊143-1号临街窗墙与弄口门柱|新乐路143弄|[名录][5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-143-1-street-corner&mode=overview>)|已建143-1号前楼的七樘错层钢窗、两块号码牌、三处底层门面、弄内7.1米窗墙及相接屋檐和水斗。院内1–4号各户的对应范围、后脊及不可见室内待核，弄对面的前楼与临街其余住宅另计。|
 |sh-historic-b5-xh-j-108-v|住宅|淮海中路1251弄|[名录][5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-109-v|中信一村|常熟路163弄1-30号|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-110-v|住宅|延庆路82号|[名录][5] · 照片待核|待核外观／拆栋|
@@ -3622,7 +3622,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；319处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中278件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；320处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中279件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3630,7 +3630,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增279处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增280处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3652,7 +3652,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，319处建筑与构件模型入口（40处既有＋279处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增279处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，320处建筑与构件模型入口（40处既有＋280处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增280处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（153处）
@@ -3815,7 +3815,7 @@
 | 汉口路花园住宅临街错层楼梯窗 | 2026-11-23 20:23:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) |
 | 旗昌洋行福州路三开间石墙与尖券窗 | 2026-11-23 22:21:06 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-russell-company-fuzhou-three-bay-front&mode=overview) |
 
-### 徐汇区（56处）
+### 徐汇区（57处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310104&mode=walk)
 
@@ -3877,6 +3877,7 @@
 | 霞飞别墅淮海中路1768弄口临街住宅 | 2026-11-22 06:02:04 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-huaihai-road-1768-residence&mode=overview) |
 | 延庆路130号住宅南向庭院立面 | 2026-11-22 06:37:48 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-yanqing-road-130-residence&mode=overview) |
 | 徐家汇圣母院旧主楼庭院中央山花立面 | 2026-11-22 11:19:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-convent-central-front&mode=overview) |
+| 新乐坊143-1号临街窗墙与弄口门柱 | 2026-11-23 22:15:37 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xinle-143-1-street-corner&mode=overview) |
 
 ### 长宁区（17处）
 

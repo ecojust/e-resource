@@ -1,0 +1,120 @@
+{
+  "source_feature_key": "building:1750092d-3d30-44f6-b7f3-991f0eb809fc",
+  "local_id": 493,
+  "source_commit": "ef259b7af5f3990ba7fa0ae34dc88883fc825c3e",
+  "scenes": {
+    "near": {
+      "historical_native": "a7136c257be34ef13d7d1cd112ee4be8f09adcd2e829eff2019211534ce4e447",
+      "retained_native": {
+        "file": "near-capped.glb",
+        "sha256": "b6c590fa9fca555794a9465dd39ddcbd2cd0776204e45fe894378aca3b8b1d30",
+        "cut_plane_local_x": -8.719,
+        "cut_depth_m": [
+          2.849268855345732e-06,
+          4.679469460194699
+        ],
+        "cut_height_m": [
+          0.0,
+          19.68199920654297
+        ],
+        "added_triangles": 2
+      },
+      "photographic_model": "xuhui-xinle-143-1-street-corner-web.glb",
+      "photographic_sha256": "b0f4b5da24e633a7e9b398734f40aa8b9f65e3d25e661f1df3ee79e9bd4185d8",
+      "selected_model_root_count": 1
+    },
+    "far": {
+      "historical_native": "6d1b1136b2c7b76bb8b75f406964f3da6704a89794a63e224191d30dc4e43cc7",
+      "retained_native": {
+        "file": "far-capped.glb",
+        "sha256": "f1b847b56167d5124bfa44c65d1590159fe8224e46bfc78b77adef05a19f8492",
+        "cut_plane_local_x": -8.719,
+        "cut_depth_m": [
+          2.849268855345732e-06,
+          4.679469460194699
+        ],
+        "cut_height_m": [
+          0.0,
+          19.68199920654297
+        ],
+        "added_triangles": 2
+      },
+      "photographic_model": "decoded-lod.glb",
+      "photographic_sha256": "31f8ced7760c738cc2f990b001f5127092768b26cbfb9e4dc23fc745ceac5fa4",
+      "selected_model_root_count": 1
+    }
+  },
+  "photo_to_tile": {
+    "measured_threshold_WGS84": [
+      121.45014143465146,
+      31.219265966608127
+    ],
+    "matched_macro_threshold_WGS84": [
+      121.450190249386,
+      31.21922249818373
+    ],
+    "macro_reference_wgs84": [
+      121.453857421875,
+      31.212800991510285
+    ],
+    "matched_world_xz": [
+      -349.1361920939647,
+      -714.8631280087651
+    ],
+    "registered_wall_angle_degrees": 249.9294122756627,
+    "measured_wall_angle_degrees": 250.64333720285904,
+    "delta_east_north_m": [
+      4.647447205740605,
+      -4.839212644006466
+    ],
+    "origin_displacement_m": 6.709451881044994,
+    "glTF_local_to_original_tile_column_major": [
+      -0.939270542981101,
+      0,
+      0.3431775736961663,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -0.3431775736961663,
+      0,
+      -0.939270542981101,
+      0,
+      -349.1361920939647,
+      0,
+      -714.8631280087651,
+      1
+    ]
+  },
+  "old_front_edge_xz": [
+    [
+      -324.8205652453099,
+      -723.7472326867829
+    ],
+    [
+      -351.3782308800606,
+      -714.0439631403524
+    ]
+  ],
+  "old_street_length_m": 28.274777520926712,
+  "register_measured_x_extent_m": [
+    -8.719,
+    2.387
+  ],
+  "retained_native_front_m": 17.16877752092671,
+  "other_near_ids": [
+    3611,
+    644,
+    424,
+    4001,
+    3674,
+    4291
+  ],
+  "scope": "Preserve the original complete tiles for failure or removal. Once the selected precise LOD is ready, atomically replace the native tile with the corresponding clipped tile and add a single precise root. Apply the same geometry and visibility state to depth and shadow. Retain the native row to the measured eastern cut. The plain section closes the original schematic shell at the observed frontage limit.",
+  "limitations": [
+    "The city footprint street line is displaced relative to the calibrated photographic street edge. The roof height of the retained neighbor comes from a 100 m GHSL cell, not a surveyed ridge.",
+    "The geometric cut marks the documented span of the photographed facade. No original cadastral boundary assigns it a separate property or an interior.",
+    "These two GLBs are isolated tile prototypes. An untrimmed Overture/OMT replacement, a citywide local-ID mask or non-atomic fallback would invalidate their isolated scene test."
+  ]
+}
