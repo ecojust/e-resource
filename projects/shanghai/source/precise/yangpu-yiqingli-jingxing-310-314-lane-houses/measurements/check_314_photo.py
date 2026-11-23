@@ -11,7 +11,11 @@ from glb_triangles import SerialScene
 def check(path):
     ctl=json.loads((HERE/'314-facade-observations.json').read_bytes())
     reg=json.loads((HERE/'314-open-casement.json').read_bytes())
-    mat=np.array(reg['camera_to_rectified']);inverse=np.linalg.inv(mat[:,:3]);eye=-inverse@mat[:,3]
+    sys.path.insert(0,str(HERE.parent/'source'))
+    from build_model import placed_matrix
+    placement=json.loads((HERE.parent/'source/house-placements.json').read_bytes())['house_314']
+    mat=np.array(reg['camera_to_rectified'])@np.linalg.inv(placed_matrix(placement))
+    inverse=np.linalg.inv(mat[:,:3]);eye=-inverse@mat[:,3]
     mesh=SerialScene(path);results=[]
     offsets=[(0,0),(-1,0),(1,0),(0,-1),(0,1),(-2,0),(2,0),(0,-2),(0,2)]
     for name,u,v,feature in ctl['controls']:

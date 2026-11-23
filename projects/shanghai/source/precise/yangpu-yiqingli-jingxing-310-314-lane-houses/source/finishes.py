@@ -25,6 +25,15 @@ def write_tiles(folder):
     body=variation+patina*3+fine*.64
     chalk=np.array([162,153,133])+((fine*.67+patina*9)[:,:,None]*np.array([1.0,.87,.7]))
     Image.fromarray(np.clip(chalk,0,255).astype('uint8')).save(folder/'yiqingli-limewash.png',optimize=True)
+    tile_row=yy//72
+    tile_pos=(xx+(tile_row%2)*9)%72
+    rib=np.exp(-((tile_pos-4.)/4.5)**2)
+    shadow=np.exp(-((tile_pos-15.)/5.8)**2)
+    lap=np.exp(-((yy%72-1.8)/2.2)**2)
+    patches=rng.normal(0,8,(6,6))[tile_row,((xx+(tile_row%2)*9)//72)%6]
+    relief=15*rib-10*shadow-23*lap+patches+.66*fine+4*patina
+    roof=np.array([136,82,60])+relief[:,:,None]*np.array([1.,.85,.72])
+    Image.fromarray(np.clip(roof,0,255).astype('uint8')).save(folder/'yiqingli-roof-tile.png',optimize=True)
     for filename,base,mortar in [
         ('yiqingli-scarlet-brick.png',(143,56,36),(168,139,113)),
         ('yiqingli-gable-wash.png',(144,52,37),(125,50,36)),

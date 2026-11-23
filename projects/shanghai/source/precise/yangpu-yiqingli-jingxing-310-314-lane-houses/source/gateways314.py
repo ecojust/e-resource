@@ -1,7 +1,7 @@
 """Two differently treated side entrances in the frame of the 2015 photograph of lane 314."""
 from math import cos, sin, pi
 import numpy as np
-from shapely.geometry import Polygon, LineString
+from shapely.geometry import Polygon, LineString, box
 from street314 import RED, GABLE, BASE, STONE, CAP, IRON, BROWN
 
 def stepped_courses(w,left,right,top,bottom,count,label):
@@ -77,3 +77,8 @@ def left_portal(w,lod):
 def add_gateways(w,lod):
     left_portal(w,lod)
     right_portal(w,lod)
+    for tag,left,right,depth in [('northwest',-16,55,2.25),('southeast',1093,1249,2.10)]:
+        footprint=box(w.x(left),-.10,w.x(right),depth)
+        w.b.plan_prism(footprint,-.076,-.009,CAP,'314 '+tag+' gateway paving')
+    # The southeast passage has a masonry lining behind its coursed street jambs.
+    w.block(1242,466,1247,694,-1.91,-1.09,BASE,'southeast gateway inner side')

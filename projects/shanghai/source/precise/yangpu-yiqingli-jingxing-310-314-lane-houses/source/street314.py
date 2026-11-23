@@ -107,9 +107,9 @@ def tall_windows(w,A,lod):
             x0=x+j*(r-x)/2+2; x1=x+(j+1)*(r-x)/2-2
             w.block(x0,y+2,x1,mid-2,-.233,-.215,DEEP,label+' dark transom')
         if idx==0:
-            width=(r-x)*w.k/2
+            width=35.2*w.k
             panes={(col,row) for col in range(2) for row in range(4)}
-            hinged_leaf(w,x+2,mid+1,t-1,width,4,1,panes-{(1,2),(1,1)},lod,label+' left leaf')
+            hinged_leaf(w,x+13.3,mid+1,t-1,width,4,1,panes-{(1,3),(1,1)},lod,label+' left leaf')
             fit=json.loads((HERE.parent/'measurements/314-open-casement.json').read_bytes())
             hinged_leaf(w,fit['hinge_registered_u'],fit['sash_head_registered_v'],
                         fit['sash_foot_registered_v'],fit['leaf_width_m'],fit['outward_angle_deg'],
