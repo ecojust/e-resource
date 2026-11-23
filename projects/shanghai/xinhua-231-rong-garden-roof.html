@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>新华路231号住宅三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 新华路231号</p><h1>新华路231号住宅</h1></header>
+<main aria-label="新华路231号住宅三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">从花园看，深色木格的山墙向前突出，右侧的宽老虎窗嵌入主瓦坡。树冠遮蔽的侧后墙采用简化轮廓。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-xinhua-231-rong-garden-roof/changning-xinhua-231-rong-garden-roof-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p><a href="data/audit/xinhua-231-rong-garden-roof-v1/first-geometry/model-comparison.jpg">照片机位与屋顶俯视对照</a> · <a href="source/precise/changning-xinhua-231-rong-garden-roof/README.md">尺寸依据与模型范围</a></p>
+<p>新华路231号列于上海市第三批优秀历史建筑，编号3M012。2017年央广网记为荣漱仁旧居。屋坡、山尖和木格依据2023年发表的具名斜俯照片建模，屋脊方向另与2019年、2025年两期航片核对。<a href="https://fgj.sh.gov.cn/yxlsjz/20210922/bc5957926d80432b8bea0157eb16bb94.html">市级名录</a> · <a href="https://sh.people.com.cn/n2/2023/0627/c350122-40472567.html">人民网照片与图注</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-xinhua-231-rong-garden-roof/source/viewer.js" type="module"></script>
+</body></html>
