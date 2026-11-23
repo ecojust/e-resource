@@ -31,6 +31,21 @@ planter={'wall_left':[370.0,138.8],'wall_right':[424.6,141.6],'outer_left':[375.
 'left_brace_wall':[370.3,145.4],'right_brace_wall':[429.0,146.7],
 'note':'The projecting metal shelf under the middle canopy carries a low pale rail and dark items. No individual flower or object is identifiable.'}
 samples={'yellow-sunlit-render':[(308,75),(330,72),(432,90),(432,101),(502,77),(422,150)],'lower-render':[(310,202),(320,215),(309,240),(316,276),(305,168)],'bright-sill':[(327,130),(349,132),(344,241),(387,258),(454,139)],'green-glass-bright':[(375,79),(391,80),(404,81),(460,86),(478,87),(497,89)],'green-glass-shadow':[(378,96),(383,95),(407,98),(472,103),(486,105)],'upper-frame':[(336,99),(337,104),(321,99),(347,111),(465,109)],'upper-east-lower-shadow':[(469,121),(469,125),(470,130),(471,133)],'upper-east-lower-reflection':[(487,122),(485,130),(495,132)],'glass-reflection':[(325,105),(331,119),(349,113),(347,123),(477,124)],'dark-recess':[(345,197),(352,213),(347,228),(354,224)],'dark-steel-rainpipe':[(367,178),(370,201),(373,223),(376,247),(378,275),(382,310)]}
+# Silhouettes, fan, brackets and exposed sliver are separately recorded at native pixels.
+appliances={
+ 'large':{'face':[[445.5,137.8],[470.6,139.3],[473.1,154.6],[447.4,153.2]],
+          'fan_centre':[454.9,146.7],'fan_edges':[[447.8,145.5],[461.0,148.0],[454.1,139.4],[456.0,152.8]],
+          'mounts':[{'outer':[448.1,153.6],'wall_foot':[448.2,164.2]},
+                    {'outer':[470.8,155.1],'wall_foot':[462.9,165.5]}],
+          'pipe':[[444.9,148.1],[440.3,147.8],[435.4,147.0],[431.4,144.7]],
+          'assumed_face_offset_m':0.32},
+ 'left_sliver':{'right_jamb':[281.2,170.7,281.5,227.8],
+                'visible_left_limit_px':273.0,'transoms_y_px':[190.6,207.5],
+                'scope':'The nearer wing hides the full width. Only the exposed right jamb, head, two rails, partial panes and sill are drawn.'},
+ 'small_grille':{'face':[[278.1,254.7],[285.9,255.3],[286.5,276.1],[277.8,275.8]],
+                   'shelf_ends_px':[[273.6,278.9],[288.2,279.5]],
+                   'wire_hook_px':[[272.9,241.4],[275.0,241.5],[275.0,245.7],[272.8,247.9]],
+                   'scope':'Thin partially occluded gridded casing and lower ledge. Its function and hidden dimensions cannot be identified.'}}
 sample_row={}
 for k,pts in samples.items():
  rgb=[]
@@ -39,6 +54,6 @@ for k,pts in samples.items():
  sample_row[k]={'centres_px':pts,'patch_medians_srgb8':rgb,'combined_median_srgb8':[int(statistics.median(a))for a in zip(*rgb)]}
 d={'source_url':'http://www.shwfjz.com/showcase/3/','source_image':'http://www.shwfjz.com/newwsm/editor/attached/image/20180109/20180109132998189818.JPG',
    'photo_sha256':hashlib.sha256(a.photograph.read_bytes()).hexdigest(),'size':im.size,'pixel_origin':'top-left, centres, native resolution',
-   'features':{'visible_wall_boundary':[[274.6,51.0],[516.8,69.9],[560,251],[273,254]],'openings':openings,'glass_canopies':canopies,'open_right_hand_leaf':open_leaf,'projecting_centre_shelf':planter,'downpipe_centreline':[[367,164],[370,186],[375,234],[378.5,263.5],[383,306],[387,353]],'downpipe_left_arm':[[316,159.0],[343,163],[368,165.8]],'downpipe_right_arm':[[368,165.8],[417.5,166.6],[422.1,164.2]],'edge_observations':{'west':'Closer left body occludes part of the wall. The vertical strip at x≈271–282 is bounded by that occlusion.','lower':'Foliage hides the lower sills, the entrance feet and the eastern wall limit. The three reported lower rectangles end at observed dark regions, not inferred complete sills.'}},'colour_samples':sample_row,
+   'features':{'appliances_and_western_sliver':appliances,'visible_wall_boundary':[[274.6,51.0],[516.8,69.9],[560,251],[273,254]],'openings':openings,'glass_canopies':canopies,'open_right_hand_leaf':open_leaf,'projecting_centre_shelf':planter,'downpipe_centreline':[[367,164],[370,186],[375,234],[378.5,263.5],[383,306],[387,353]],'downpipe_left_arm':[[316,159.0],[343,163],[368,165.8]],'downpipe_right_arm':[[368,165.8],[417.5,166.6],[422.1,164.2]],'edge_observations':{'west':'Closer left body occludes part of the wall. The vertical strip at x≈271–282 is bounded by that occlusion.','lower':'Foliage hides the lower sills, the entrance feet and the eastern wall limit. The three reported lower rectangles end at observed dark regions, not inferred complete sills.'}},'colour_samples':sample_row,
    'colour_scope':'Observed photographic sRGB contains lighting, sky reflection, JPEG compression and tree shading. Canopy alpha, cross-section and hidden fasteners cannot be read directly.'}
 a.output.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n');print({k:v['combined_median_srgb8']for k,v in sample_row.items()})

@@ -32,7 +32,7 @@ def make():
     plan=load();vertices=plan['vertices'];ground=np.asarray([p['ground_EN_m']for p in vertices])
     bounds=ground.min(0),ground.max(0);cx,cy=(bounds[0]+bounds[1])/2
     return [
-        study('overview','住宅与院面',[cx+13.4,cy-25.2,15.7],[cx,cy,5.9],25.65,1040,680),
+        study('overview','住宅与院面',[cx+13.4,cy-25.2,15.7],[cx,cy,3.9],30.2,1040,680),
         original('case1','south-photo','修缮后南院摄影机位',plan),
         local_study('case1','twenty-lights','凸窗四扇二十格',(1.1,-4.1,4.6),(.0,.0,4.55),3.05,plan),
         local_study('case1','shuttered-door','百叶门与薄挑檐',(.7,-4.6,1.83),(.1,0,1.35),3.30,plan),

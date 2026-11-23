@@ -28,6 +28,7 @@ def windows(face,name,bounds):
     x=l+w*(.53 if name in ('upper-east','middle-east') else .5)
     pieces.append(box(x-.022,lo,x+.022,hi))
     transom=hi-h*(.32 if name.startswith('upper') else .22)
+    if name=='balcony-open':transom+=.038
     pieces.append(box(l,transom-.025,r,transom+.025))
     if name=='middle-east':
         for f in (.17,.32,.47,.62):
@@ -51,7 +52,9 @@ def windows(face,name,bounds):
         if name.startswith('balcony') and z<transom:mat=CYAN
         face.prism(pane,-.13,-.122,mat,name+' / separate pane')
     if not name.startswith('balcony'):
-        face.box((l+r)/2,lo-.026,w+.13,.055,.136,.015,SILL,name+' / pale sill')
+        sill_depth=.158 if name=='middle-east' else .136
+        sill_height=.084 if name=='middle-east' else .055
+        face.box((l+r)/2,lo-sill_height/2,w+.13,sill_height,sill_depth,.015,SILL,name+' / pale sill')
     if name=='balcony-open':
         # A partly open leaf, seen edge-on left of the two balcony doors.
         sash=Facade(face.builder,(l+.024,DEPTH+.068),(l-.22,DEPTH-.32),name+' / hinged leaf')
@@ -86,7 +89,7 @@ def window_rail(b,c,name,record,lod):
     a,d=[c.wall(uv,y) for uv in record['front']]
     left,right=a[0],d[0];z=(a[2]+d[2])/2
     b.box(((left+right)/2,(y+DEPTH)/2,z-.028),(right-left,DEPTH-y,.05),HARDWARE,label=name+' / projecting shelf')
-    for rail in (z+.055,z+.17):
+    for rail in ((z+.047,z+.114,z+.184) if name=='eastern rails' else (z+.055,z+.17)):
         beam(b,(left,y,rail),(right,y,rail),.017,.024,BRIGHT,name+' / front rail')
         for x in (left,right):
             beam(b,(x,y,rail),(x,DEPTH,rail),.017,.024,BRIGHT,name+' / end return')
@@ -101,7 +104,7 @@ def add_setback_wall(b,lod=False):
     # The wall under the projection continues up to its recessed lower return;
     # above it the courtyard's projecting bay covers that same strip.
     height=(11.33-1.43)/1.08
-    wall=unary_union([box(-9.311,0,-2.163,height),box(-2.165,0,-1.255,2.55)])
+    wall=box(-9.311,0,-2.163,height)
     holes=unary_union([box(*v) for v in bounds.values()])
     face.prism(wall.difference(holes),-.17,0,PLASTER,'masonry with seven cut openings')
     for key,v in bounds.items():windows(face,key,v)

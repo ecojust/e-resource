@@ -44,5 +44,21 @@ out={'camera': 'case2','sources':['courtyard-cameras.json','case2-window-photogr
      'openings':openings,'canopies':hoods,'plant_shelf':shelf,'outward_leaf':{'hinge_xy':rounded(hinge[:,:2].mean(axis=0)),'free_xy':rounded(free[:,:2].mean(axis=0)),'hinge_top_z':round(hinge[0][2],4),'hinge_bottom_z':round(hinge[1][2],4),'hinge_to_tip_xy_m':rounded(delta),'apparent_open_leaf_width_m':round(float(np.linalg.norm(delta)),4),'direction_deg_from_closed_toward_street':round(float(np.degrees(np.arctan2(-delta[1],-delta[0]))),2)},
      'pipe_xyz':pipe,'left_pipe_arm':[rounded(wall(uv,-.09))for uv in source['downpipe_left_arm']],'right_pipe_arm':[rounded(wall(uv,-.09))for uv in source['downpipe_right_arm']],
      'scope':'Case 2 local fragment. Upper wall edge and truncated foot height are image-supported. No common lot pose with photograph 1 is asserted. Root of each partial lower reveal is visibly screened by trees and its lower section is not reconstructed. Rain sheets and frames are separated; thickness and the small sheet fall are modeling assumptions.'}
+fixtures=source['appliances_and_western_sliver']
+def bounds(quad,depth):
+    xyz=np.array([wall(uv,depth) for uv in quad])
+    return rounded([xyz[[0,3],0].mean(),xyz[[2,3],2].mean(),xyz[[1,2],0].mean(),xyz[[0,1],2].mean()])
+ac=fixtures['large'];depth=-ac['assumed_face_offset_m']
+fan=wall(ac['fan_centre'],depth)
+rz=np.mean([abs(wall(ac['fan_edges'][j],depth)[2]-fan[2])for j in [2,3]])
+out['exterior_unit']={'bounds':bounds(ac['face'],depth),'front_y':depth,'fan_xz':rounded(fan[[0,2]]),
+ 'fan_radius':round(float(rz),5),'mounts':[[rounded(wall(m['outer'],depth+.025)),rounded(wall(m['wall_foot'],-.015))] for m in ac['mounts']],
+ 'service_pipe':[rounded(wall(p,y)) for p,y in zip(ac['pipe'],[depth+.1,-.13,-.07,-.013])]}
+j=fixtures['left_sliver']['right_jamb'];zbottom=wall(j[2:])[2];ztop=wall(j[:2])[2];right=(wall(j[:2])[0]+wall(j[2:])[0])/2
+out['west_sliver']={'bounds':[out['wall_xz'][0],round(zbottom,5),round(right,5),round(ztop,5)],
+ 'rail_z':[round(wall([278,y],.065)[2],5) for y in fixtures['left_sliver']['transoms_y_px']]}
+sg=fixtures['small_grille'];out['small_grille']={'bounds':bounds(sg['face'],-.10),'shelf':[rounded(wall(uv,-.14))for uv in sg['shelf_ends_px']],
+ 'hook_face_y':-2.034,'hook':[rounded(wall(uv,-2.034+d))for uv,d in zip(sg['wire_hook_px'],[-.012,-.068,-.075,-.02])]}
+out['scope']='Case 2 local fragment registered in ENU with 3304-local-footprint.json. Unseen widths and lower ends are clipped at the visible extent. Condenser projection and small grille depth are modeling estimates; their photographic outlines, brackets and visible pipe are independently recorded.'
 (here/'case2-window-registration.json').write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
 print(out['wall_xz'],[(k,round(v['depth'],3),v['pixels_residual_for_regularized_rectangle'])for k,v in hoods.items()],round(shelf['depth'],3),out['outward_leaf'])

@@ -15,12 +15,15 @@ from plan_points import load as load_plan
 import foreground_bay
 import service_balcony
 import setback_wall
+import side_shutters
 import canopy_front
 import plaster_finishes
+import courtyard_shell
+import street_windows
 ID='xuhui-xiangyang-313-restored-courtyard-fronts'
 SLUG='xiangyang-313-restored-courtyard-fronts'
 PALETTE=(foreground_bay.PALETTE | service_balcony.PALETTE | setback_wall.PALETTE |
-         canopy_front.PALETTE | plaster_finishes.PALETTE)
+         canopy_front.PALETTE | courtyard_shell.PALETTE | street_windows.PALETTE | plaster_finishes.PALETTE)
 META={'id':ID,'name':'襄阳南路313号修缮后住宅院面','address':'上海市徐汇区襄阳南路313号',
       'heritage_id':'sh-historic-b5-xh-j-103-v','heritage_group':'5D103',
       'source':'https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html',
@@ -29,7 +32,7 @@ META={'id':ID,'name':'襄阳南路313号修缮后住宅院面','address':'上海
       'photos_embedded':False,'geometry_license':'MIT','texture_license':'MIT','viewer_page':SLUG+'.html',
       'local_axes':'East, north, up (metres). Footprint 3304. The datum is the street level.',
       'camera_views':json.loads((HERE/'cameras.json').read_bytes()),
-      'scope':'两处施工院面的格窗、百叶、阳台、雨篷、接水管、外机与安装托脚。'}
+      'scope':'原城市对象3304的修缮后三层平顶住宅。南院凸窗与钢阳台、北院青色雨篷、朝街西折墙五樘窗及可见屋檐。东侧隐面按原平面约束。'}
 
 class Builder(CrownBuilder):
     def save(self,path,metadata=None):
@@ -37,9 +40,11 @@ class Builder(CrownBuilder):
         return plaster_finishes.embed_normals(path)
 
 def add_building(builder,lod=False):
+    courtyard_shell.add_courtyard_shell(builder,lod)
+    street_windows.add_street_windows(builder,lod)
     plan=load_plan()
     surfaces={'case1':(foreground_bay.add_foreground_bay,setback_wall.add_setback_wall,
-                       service_balcony.add_service_balcony),
+                       service_balcony.add_service_balcony,side_shutters.add_return_shutters),
               'case2':(canopy_front.add_canopy_front,)}
     for name,components in surfaces.items():
         transform=np.asarray(plan['facade_frames'][name]['local_to_ENU'])

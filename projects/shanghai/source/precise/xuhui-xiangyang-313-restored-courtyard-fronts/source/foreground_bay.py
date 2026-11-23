@@ -133,7 +133,7 @@ def add_foreground_bay(builder,lod=False):
     # The eastern and upper limits run outside the photograph. The adjoining
     # footprint edge and registered east-side roof constrain their continuation.
     roof=(11.33-1.43)/1.08
-    mass=unary_union([box(undercut,0,2.433,2.56),box(-2.163,2.55,2.433,roof)])
+    mass=unary_union([box(undercut,0,1.403,2.56),box(-2.163,2.55,2.433,roof)])
     openings=unary_union([box(*large),box(*shutters),box(*high)])
     face.prism(mass.difference(openings),-.215,0,PLASTER,'continuous wall with three real apertures')
     # The pale lower return beneath the projecting upper corner is visible

@@ -5,3 +5,5 @@
 - 2014年10月2日的院外街照可见乔家栅外卖窗旁的313门牌。2015年和2020年街面机位进一步分辨相邻311及313院门以及院内住宅的折墙。临街商铺、门牌和后方住宅使用不同的定位点。[2014年摄影记录](https://4travel.jp/travelogue/10943345) · [街景来源](https://map.baidu.com/)
 - 城市几何引用项目既有Overture Maps及OpenStreetMap资料，原户为14-13719-6695内3304号，地物键 `building:96191040-d523-46f9-aa66-08c453635f97`。Esri World Imagery Wayback各期航片用于核对院内房屋的平面折角、屋面外缘。地图资料仍按各自条款使用。[OpenStreetMap版权](https://www.openstreetmap.org/copyright) · [Wayback](https://livingatlas.arcgis.com/wayback/)
 - 施工照片、旅游摄影及街景原件的版权由摄影者或发布方持有。本项目公开原始链接、文件散列、量测和自建模型渲染图；新建网格、建模脚本与程序材质采用仓库MIT许可。[项目许可](../../../../../LICENSE)
+
+两院面粉刷颜色取自9个无图案区域。下载包内四幅PNG由可重复执行的程序绘制，分别表现南、北墙的底色和细微凹凸。修缮组图、街景平台及航片的摄影原件不随模型分发。原城市轮廓、地物标识和派生测量保留来源署名及各自的数据库许可。[粉刷面样本数值](measurements/render-tones.json) · [航片版本与来源](measurements/release-8432.json) · [Overture数据署名](https://docs.overturemaps.org/attribution/)

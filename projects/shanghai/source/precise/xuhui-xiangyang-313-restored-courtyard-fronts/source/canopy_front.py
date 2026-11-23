@@ -2,7 +2,7 @@
 from pathlib import Path
 import json
 import numpy as np
-from shapely.geometry import box, Polygon
+from shapely.geometry import box, Point, Polygon
 from shapely.ops import unary_union
 
 WALL = 'Xiangyang 313 | light yellow rendered window wall'
@@ -16,7 +16,13 @@ HOOD = 'Xiangyang 313 | translucent cyan canopy'
 TINT = 'Xiangyang 313 | upper light below cyan canopy'
 DARK = 'Xiangyang 313 | dark hood edging and pipe'
 RACK = 'Xiangyang 313 | shelf and pale metal rails'
+CASE = 'Xiangyang 313 | ivory appliance housing'
+GRILLE = 'Xiangyang 313 | dull metal fan grille'
+FAN = 'Xiangyang 313 | shaded circular intake'
 PALETTE = {
+    CASE:{'color':[.76,.745,.645],'roughness':.68},
+    GRILLE:{'color':[.24,.245,.203],'roughness':.58,'metallic':.14},
+    FAN:{'color':[.057,.062,.049],'roughness':.78},
     WALL:{'color':[.85,.745,.53], 'roughness':.90},
     FRAME:{'color':[.060,.058,.069], 'roughness':.65},
     GLASS:{'color':[.195,.205,.207], 'metallic':.12, 'roughness':.32},
@@ -24,7 +30,7 @@ PALETTE = {
     BRIGHT:{'color':[.542,.561,.526], 'metallic':.09, 'roughness':.41},
     DEEP:{'color':[.025,.029,.031], 'roughness':.90},
     SILL:{'color':[.69,.68,.635], 'roughness':.85},
-    HOOD:{'color':[.011,.46,.56], 'alpha':.52, 'roughness':.24, 'metallic':.06},
+    HOOD:{'color':[.0012,.52,.88], 'alpha':.92, 'roughness':.24, 'metallic':.06},
     TINT:{'color':[.036,.18,.22], 'roughness':.30, 'metallic':.10},
     DARK:{'color':[.041,.044,.044], 'roughness':.53, 'metallic':.31},
     RACK:{'color':[.55,.51,.43], 'roughness':.65, 'metallic':.26},
@@ -129,11 +135,66 @@ def raised_shelf(b,lod):
             x=l+(r-l)*t
             beam(b,[x,-.016,z-.042],[x,y+.014,z-.042],.028,.036,DARK,'shelf underside runner')
 
+def suspended_condenser(b,lod):
+    g=D['exterior_unit']
+    l,z,r,h=g['bounds'];out=-g['front_y'];cx,cz=g['fan_xz']
+    radius=min(g['fan_radius'],cz-z-.023,h-cz-.023,cx-l-.022)
+    n=6 if lod else 12
+    intake=Point(cx,cz).buffer(radius,resolution=n)
+    housing=box(l,z,r,h)
+    face(b,housing,.028,out-.065,CASE,'condenser case and side panels')
+    face(b,housing.difference(intake),out-.066,out,CASE,'condenser front with open circular recess')
+    face(b,intake,out-.064,out-.058,FAN,'condenser recessed fan inlet')
+    # A dark rotor, central boss and interrupted light bars read separately in relief.
+    hub=Point(cx,cz).buffer(radius*.19,resolution=n)
+    face(b,hub,out-.054,out-.033,GRILLE,'condenser central fan boss')
+    rings=[intake.difference(intake.buffer(-.008))]
+    for frac in ([.56] if lod else [.40,.68,.85]):
+        a=Point(cx,cz).buffer(radius*frac,resolution=n)
+        rings.append(a.difference(a.buffer(-.006)))
+    for direction in [0,60,120]:
+        from shapely.affinity import rotate
+        bar=box(cx-radius,cz-.004,cx+radius,cz+.004)
+        rings.append(rotate(bar,direction,origin=(cx,cz)).intersection(intake))
+    face(b,unary_union(rings),out-.012,out+.004,GRILLE,'condenser radial and concentric guards')
+    for outer,wall in g['mounts']:
+        # Two metal cantilevers, each separately tied to the wall.
+        heel=[wall[0],wall[1],z-.017]
+        toe=[outer[0],outer[1],z-.017]
+        beam(b,wall,heel,.040,.032,DARK,'condenser bracket vertical wall leg')
+        beam(b,heel,toe,.047,.035,GRILLE,'condenser bracket shelf under casing')
+        beam(b,wall,toe,.035,.031,DARK,'condenser diagonal bracket')
+    b.tube(g['service_pipe'],.025,CASE,8,'view 2 | exposed condenser pipe')
+
+def partial_west_fixtures(b,lod):
+    g=D['west_sliver']
+    l,z,r,h=g['bounds']
+    # The adjacent projecting wall occludes the left portion; it owns the physical sight line.
+    rect(b,l,r,z,h,-.132,-.102,BRIGHT,'partial west window pane')
+    rect(b,r-.045,r,z,h,-.076,-.042,FRAME,'partial west window right jamb')
+    for level in [z+.035,*g['rail_z'],h-.025]:
+        rect(b,l,r-.045,level-.016,level+.016,-.072,-.042,FRAME,'partial west window exposed rail')
+    rect(b,l,r+.035,z-.055,z,-.008,.047,SILL,'partial west window sill')
+    g=D['small_grille'];l,z,r,h=g['bounds']
+    rect(b,l-.021,r+.021,z-.024,h+.020,.007,.075,CASE,'western slotted unit pale casing')
+    rect(b,l,r,z,h,.075,.091,FAN,'western grille shadow')
+    count=3 if lod else 5
+    for i in range(count):
+        u=l+(r-l)*(i+.5)/count
+        rect(b,u-.005,u+.005,z+.008,h-.008,.093,.101,GRILLE,'western grille vertical slot bar')
+    if not lod:
+        for i in range(1,7):
+            zz=z+(h-z)*i/7
+            rect(b,l,r,zz-.003,zz+.003,.092,.096,GRILLE,'western grille fine crossbar')
+    ends=g['shelf'];level=(ends[0][2]+ends[1][2])/2
+    rect(b,ends[0][0],ends[1][0],level-.035,level,.005,.141,DARK,'grille lower projecting shelf')
+    b.tube(g['hook'],.016,DARK,8,'view 2 | separate short hook above grille')
+
 def add_canopy_front(b,lod=False):
     for k,v in PALETTE.items():b.palette.setdefault(k,v)
     l,base,r,hi=D['wall_xz'];openings=D['openings']
     front=box(l,base,r,hi)
-    holes=[]
+    holes=[box(*D['west_sliver']['bounds'])]
     for key,(x0,z0,x1,z1) in openings.items():
         # The bottom three lights vanish behind foliage. Leave their lower
         # continuation as a study cut rather than building a conjectural sill.
@@ -168,5 +229,7 @@ def add_canopy_front(b,lod=False):
         if name=='lower-west':rect(b,l,r,bottom+(h-bottom)*.58,bottom+(h-bottom)*.58+.026,-.13,-.08,FRAME,name+' rail')
     for name,g in D['canopies'].items():glass_hood(b,name,g)
     raised_shelf(b,lod)
+    suspended_condenser(b,lod)
+    partial_west_fixtures(b,lod)
     for key,title in [('pipe_xyz','downpipe'),('left_pipe_arm','left head arm'),('right_pipe_arm','right head arm')]:
         b.tube(D[key],.050 if key=='pipe_xyz' else .038,DARK,8 if lod else 12,'view 2 | '+title)
