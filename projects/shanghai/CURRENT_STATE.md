@@ -1,3 +1,11 @@
+# 上海电话局南市总局中华路钟楼立面
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nanshi-telephone-exchange&mode=overview) · [单体旋转与下载](nanshi-telephone-exchange.html) · [来源与制作范围](source/precise/huangpu-nanshi-telephone-exchange/README.md) · [验收记录](data/audit/nanshi-telephone-clock-front-v1/README.md)
+
+第三批3A024中华路734号。原牌记1920年竣工。按2017年具名街照和钟楼近照制作中华路钟面、方台穹顶、檐下角柱、中央大半圆窗及券肩装饰与相邻可见街墙。
+
+近景 30,826 个三角面，远景 22,470 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,353,506 字节。上海主图现有 297 处独立入口，黄浦区 132 处。[资产清单](assets/models/candidates/huangpu-nanshi-telephone-exchange/manifest.json)
+
 # 求新船厂厂部办公楼南立面铸铁外廊
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-qiuxin-shipyard-office-south-veranda&mode=overview) · [单体旋转与下载](qiuxin-shipyard-office-south-veranda.html) · [来源与制作范围](source/precise/huangpu-qiuxin-shipyard-office-south-veranda/README.md) · [验收记录](data/audit/qiuxin-shipyard-office-south-veranda-v1/README.md)
