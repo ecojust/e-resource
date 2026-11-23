@@ -66,7 +66,9 @@ def set_material(name, spec, inputs, temp):
 
 
 def make(package, path):
-    bpy.ops.wm.read_factory_settings(use_empty=True)
+    # The command line opens an isolated factory scene.
+    for item in list(bpy.context.scene.objects):
+        bpy.data.objects.remove(item, do_unlink=True)
     with tempfile.TemporaryDirectory(dir=path.parent) as temp:
         mats = {name:set_material(name,spec,package['textures'],Path(temp))
                 for name,spec in package['materials'].items()}
@@ -101,7 +103,15 @@ def make(package, path):
     scene['reference_sha256'] = package['reference_sha256']
     scene['model_id'] = package['metadata']['id']
     bpy.context.view_layer.update()
-    bpy.ops.wm.save_as_mainfile(filepath=str(path),compress=True)
+    store_project(scene,path)
+
+def store_project(scene,path):
+    from courtyard_studio import set_up
+    set_up(scene)
+    print('Saving editable courtyard project',len(scene.objects),'objects',flush=True)
+    bpy.ops.wm.save_as_mainfile(filepath=str(path),compress=False)
+    print('Saved',path.stat().st_size,'bytes',flush=True)
+
 
 
 def verify(package):
@@ -149,15 +159,20 @@ def verify(package):
                 uv_corners=uv_corners,cameras=len(cameras),images=images,materials=len(mats))
 
 p=argparse.ArgumentParser()
-p.add_argument('phase',choices=['make','verify'])
+p.add_argument('phase',choices=['make','finish','verify'])
 for k in ('components','blend','report'):p.add_argument(k,type=Path)
 a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
-package=json.loads(a.components.read_bytes())
+print('Reading component list',flush=True)
+sys.path.insert(0,str(Path(__file__).absolute().parent))
+from stream_editable_parts import open_components
+package=open_components(a.components)
 a.blend.parent.mkdir(parents=True,exist_ok=True)
 if a.phase=='make':make(package,a.blend)
+elif a.phase=='finish':store_project(bpy.context.scene,a.blend)
 elif Path(bpy.data.filepath).resolve()!=a.blend.resolve():raise ValueError('Open the specified .blend on the Blender command line')
 result=verify(package)
 result['file']=a.blend.name;result['bytes']=a.blend.stat().st_size
-result['sha256']=hashlib.sha256(a.blend.read_bytes()).hexdigest()
+with a.blend.open('rb') as stream:
+    result['sha256']=hashlib.file_digest(stream,'sha256').hexdigest()
 a.report.parent.mkdir(parents=True,exist_ok=True)
 a.report.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
