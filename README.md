@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 323 处入口。最近接入[湖南路280弄2号五层住宅临街窗墙与弧窗](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-hunan-280-lane-house-2&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 324 处入口。最近接入[中山公园大理石亭](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhongshan-park-marble-pavilion&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -629,7 +629,7 @@
 |sh-historic-b3-121|住宅|延安西路2558号（1~4号楼）|[名录][3]|待核外观／拆栋|
 |sh-historic-b3-122|住宅|新华路211弄2号|[名录][3]|待核外观／拆栋|
 |sh-historic-b3-123|哥伦比亚总会|延安西路1262号|[名录][3] · 照片待核|已有模型可能关联：columbia-country-club；待核对范围|
-|sh-historic-b3-124|大理石亭|长宁路780号中山公园内|[名录][3] · 照片待核|待核外观／拆栋|
+|sh-historic-b3-124|中山公园大理石亭|长宁路780号中山公园内|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhongshan-park-marble-pavilion&mode=overview>)|已建四柱透空椽廊、三孔石屏、双龛雕像、花钵石栏与正面石阶。旧照一处拱孔还差15像素，平面定位估计误差4米。|
 |sh-historic-b3-125|弗兰克林住宅、中央银行俱乐部|淮海西路338号|[名录][3] · 照片待核|待核外观／拆栋|
 |sh-historic-b3-126|公务部西区（污水）处理厂风机房|天山路30号（哈密路路口）|[名录][3] · 照片待核|待核外观／拆栋；原表含已拆或拆除记载，需历史时点核验|
 |sh-historic-b3-127|达华公寓|延安西路918~928号|[名录][3]|待核外观／拆栋|
@@ -3617,7 +3617,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；323处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中282件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；324处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中283件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3625,7 +3625,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增283处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增284处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3647,7 +3647,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，323处建筑与构件模型入口（40处既有＋283处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增283处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，324处建筑与构件模型入口（40处既有＋284处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增284处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（154处）
@@ -3877,7 +3877,7 @@
 |长乐路325号院内弧窗与红瓦券廊|2026-11-23 22:48:15|[查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-changle-325-garden-courtyard-and-arched-porch&mode=overview)|
 |湖南路280弄2号五层住宅临街窗墙与弧窗|2026-11-23 23:37:20|[查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-hunan-280-lane-house-2&mode=overview)|
 
-### 长宁区（17处）
+### 长宁区（18处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310105&mode=walk)
 
@@ -3900,6 +3900,7 @@
 |虹桥路2275号历史住宅山墙与屋顶|2026-11-21 11:10:07|[查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-hongqiao-road-2275-historic-front&mode=overview) · 1994 年入录，约 1996 年灭失，地点卡可查看出版画稿复原|
 |愚园路754号住宅|2026-11-21 11:36:38|[查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-yuyuan-road-754&mode=overview)|
 |西园大厦|2026-11-21 13:42:13|[查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-west-park-mansions&mode=overview)|
+|中山公园大理石亭|2026-11-24 00:16:41|[查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=changning-zhongshan-park-marble-pavilion&mode=overview)|
 
 ### 静安区（32处）
 

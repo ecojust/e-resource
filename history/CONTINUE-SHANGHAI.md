@@ -36,6 +36,8 @@
 
 [圣约翰大学思孟堂43号楼临河窗墙](../projects/shanghai/st-johns-mann-hall-river-front.html)。43号思孟堂临河十开间窗墙、楼梯塔圆窗、坡屋顶抬高段及北端折面券窗；三张校方日景、夜景和俯斜图可对照。 [固定工作版](https://raw.githack.com/ecojust/e-resource/36cecd7abb725c6b0662da01059d75a7ec6672b5/projects/shanghai/st-johns-mann-hall-river-front.html)
 
+[中山公园大理石亭](../projects/shanghai/zhongshan-park-marble-pavilion.html)。1935年迁建入园。四柱廊、三孔石屏、双龛雕像和花钵石栏可按三处原摄影位查看，另有九镜和八项下载。平面位置估计误差4米。[固定工作版](https://raw.githack.com/ecojust/e-resource/0087ef4590dab1b365ea5d98bffae3db1b047ce4/projects/shanghai/zhongshan-park-marble-pavilion.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
