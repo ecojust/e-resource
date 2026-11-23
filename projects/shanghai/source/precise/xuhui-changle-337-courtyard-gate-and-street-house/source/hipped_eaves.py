@@ -15,19 +15,21 @@ DRIP = "Changle roof | weather-darkened drip edge"
 WOOD = "Changle roof | dark red eaves timber"
 BOARD = "Changle roof | shaded boarded soffit"
 PALETTE = {
-    TILES[0]: {"color":[.37,.275,.235],"roughness":.85},
-    TILES[1]: {"color":[.355,.301,.268],"roughness":.86},
-    TILES[2]: {"color":[.31,.239,.211],"roughness":.85},
-    CAP: {"color":[.46,.304,.243],"roughness":.81},
-    DRIP: {"color":[.18,.161,.149],"roughness":.79},
-    WOOD: {"color":[.335,.19,.147],"roughness":.83},
-    BOARD: {"color":[.29,.223,.183],"roughness":.90},
+    # glTF baseColorFactor values are linear reflectances. Colour samples and
+    # same-view daylight/adjacent-wall comparisons are in the measurement set.
+    TILES[0]: {"color":[.245,.218,.198],"roughness":.85},
+    TILES[1]: {"color":[.219,.201,.187],"roughness":.86},
+    TILES[2]: {"color":[.181,.162,.150],"roughness":.85},
+    CAP: {"color":[.283,.207,.179],"roughness":.81},
+    DRIP: {"color":[.069,.061,.055],"roughness":.79},
+    WOOD: {"color":[.130,.084,.065],"roughness":.83},
+    BOARD: {"color":[.074,.064,.055],"roughness":.90},
 }
 # Heights describe the tile bed at the projecting fascia's upper edge. The
 # cap noses have their own radius above this datum. Depths behind the screen
 # of trees are approximate. Full photographic controls accompany the source.
-MAIN = ((-2.20,-.67,5.285),(4.80,-.54,5.48),(1.23,3.00,7.92),4.51)
-WING = ((5.40,1.55,5.73),(11.07,1.50,5.84),(7.75,4.10,7.65),5.12)
+MAIN = ((-2.20,-.67,5.285),(4.71,-.57,5.43),(1.23,3.00,7.92),4.51)
+WING = ((5.40,1.55,5.73),(11.64,1.50,6.005),(7.75,4.10,7.65),5.12)
 
 def _closed(b,points,faces,material,label):
     verts=np.array(points,dtype=float)
@@ -158,12 +160,38 @@ def _hip(b,shape,lod,label):
     _caps(b,left,peak,lod,label+' left');_caps(b,right,peak,lod,label+' right')
     _caps(b,peak,back_peak,lod,label+' ridge')
 
-def add_roofs(builder,lod=False):
+WING_WALL_SEATS = ((5.40,3.10), (10.10,3.10), (11.075,3.94), (11.55,3.94))
+
+
+def _wing_soffit(b,left,right,back,wall_seats):
+    """Join the continuous front and end soffits to the stepped return wall."""
+    x0,y0,z0=left
+    x1,y1,z1=right
+    seats=[(x,y+.004,5.58) for x,y in wall_seats]
+    if len(seats)<2 or any(a[0]>=c[0] for a,c in zip(seats,seats[1:])):
+        raise ValueError('The wall seat must follow the eave from east to west')
+    # The front lining continues above the rafter tails and behind the wall
+    # face. The oblique segment meets the set-back narrow window bay.
+    face=[]
+    for i,(x,_,_) in enumerate(seats):
+        xx=x0 if i==0 else x1-.063 if i==len(seats)-1 else x
+        f=(xx-x0)/(x1-x0)
+        face.append((xx,y0+f*(y1-y0)+.078,z0+f*(z1-z0)-.170))
+    for i in range(len(seats)-1):
+        panel=[face[i],face[i+1],seats[i+1],seats[i]]
+        _prism(b,panel,[0.,0.,.075],BOARD,'setback wing lining | under outer eaves '+str(i+1))
+    west=seats[-1]
+    _prism(b,[face[-1],(face[-1][0],back,face[-1][2]),(west[0],back,west[2]),west],
+           [0.,0.,.075],BOARD,'setback wing lining | west eaves to wall plate')
+
+
+def add_roofs(builder,lod=False,wing_wall_seats=WING_WALL_SEATS):
     _hip(builder,MAIN,lod,'central projecting roof')
     # Winter photographs show a short upper ridge entering the high wall on
     # the left. Its awning continues beneath the hidden joint; its near face
     # has a horizontal upper edge before it slopes to the exposed right hip.
     left,right,tip,back=WING
+    _wing_soffit(builder,left,right,back,wing_wall_seats)
     ridge_left=(left[0],tip[1],tip[2]-.044)
     _slope(builder,left,right,ridge_left,tip,lod,'setback wing roof front')
     left=np.asarray(left);right=np.asarray(right);tip=np.asarray(tip)

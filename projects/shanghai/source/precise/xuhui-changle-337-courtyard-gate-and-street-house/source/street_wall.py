@@ -14,17 +14,18 @@ DARK='Changle | shaded stairwell'
 PIPE='Changle | yellow painted service pipe'
 IRON='Changle | iron drain and fittings'
 LOUVER='Changle | cream louvre screen'
+RED='Changle | weathered red timber at wing end'
 PALETTE={SILL:{'color':[.34,.34,.29],'roughness':.88},GLASS:{'color':[.042,.064,.064],'metallic':.13,'roughness':.37},
          GLASS_LIGHT:{'color':[.16,.23,.24],'metallic':.21,'roughness':.26},DARK:{'color':[.013,.018,.016],'roughness':.91},
          PIPE:{'color':[.37,.23,.057],'roughness':.7},IRON:{'color':[.065,.064,.053],'metallic':.25,'roughness':.7},
-         LOUVER:{'color':[.65,.60,.46],'roughness':.7}}
+         LOUVER:{'color':[.65,.60,.46],'roughness':.7},RED:{'color':[.155,.066,.045],'roughness':.86}}
 HERE=Path(__file__).absolute().parent
 DATA=HERE.parent/'measurements/street-cameras.json'
 LEFT=-5.57
 UPPER_LEFT=-2.06
 RIGHT=4.10
 HOUSE_EAVE=5.34
-REAR_Y=2.20
+REAR_Y=3.10
 
 def arch_shape(cx,w,z0,top,rise):
     shoulder=top-rise
@@ -132,8 +133,8 @@ def service_pipe(f,lod):
 
 def add_rear_wing(b,lod=False):
     f=Facade(b,(-1,REAR_Y),(1,REAR_Y),'337 recessed wing')
-    x0,x1=4.03,11.38;top=5.64
-    window=(4.23,3.235,5.84,4.615);hole=box(*window)
+    x0,x1=3.69,10.10;top=5.64
+    window=(3.85,3.28,5.47,4.60);hole=box(*window)
     wall=box(x0,0,x1,top).difference(hole)
     f.prism(wall,-.22,0,UPPER,'roughcast-face-with-recessed-window')
     f.prism(hole,-.235,-.22,DARK,'dark-window-backing')
@@ -153,33 +154,38 @@ def add_rear_wing(b,lod=False):
     f.box((a+c)/2,lo-.234,c-a-.09,.37,.11,-.036,SILL,'below-sash rendered panel')
     add_louvred_unit(b,f,lod)
     # 2017 hopper, outlet and inclined downpipe are measured independently.
-    f.line((10.40,2.75,.079),(10.378,4.84,.079),.037,IRON,8 if lod else 14,'rainwater-downpipe')
-    f.prism(Polygon([(10.264,4.82),(10.501,4.82),(10.593,5.143),(10.237,5.115)]),.024,.153,IRON,'rainwater-hopper')
-    f.line((10.39,5.13,.077),(10.34,top,.077),.043,IRON,8 if lod else 14,'upper-pipe')
-    for z in (3.17,4.13,4.79):f.box(10.39,z,.12,.046,.117,.049,IRON,'downpipe-collar')
+    f.line((9.73,2.52,.042),(9.83,4.78,.087),.037,IRON,8 if lod else 14,'rainwater-downpipe')
+    f.prism(Polygon([(9.73,4.78),(9.938,4.78),(10.00,5.086),(9.68,5.076)]),.024,.153,IRON,'rainwater-hopper')
+    f.line((9.85,5.075,.077),(9.82,top,.077),.043,IRON,8 if lod else 14,'upper-pipe')
+    for z in (3.17,4.13,4.79):f.box(9.73+(z-2.52)*.10/2.26,z,.12,.046,.117,.049,IRON,'downpipe-collar')
+    wing_end(b,lod)
 
 
 def add_louvred_unit(b,f,lod):
     # A 2017 transect at native x=4425 records ten exposed slats, spaced
     # 17–18 px apart. The penultimate member visibly bends toward its middle.
-    left,right=8.238,9.39
-    bottom,head,depth=2.659,3.426,.26
-    cx=(left+right)/2
+    survey=json.loads((DATA.parent/'grille-third-station.json').read_bytes())
+    corners=next(v for v in survey.values() if isinstance(v,dict) and 'bottom left' in v)
+    tl,tr,bl,br=(corners[k]['three_station_xyz'] for k in ('top left','top right','bottom left','bottom right'))
+    left,right=(tl[0]+bl[0])/2,(tr[0]+br[0])/2
+    bottom,head=(bl[2]+br[2])/2,(tl[2]+tr[2])/2
+    depth=REAR_Y-sum(p[1] for p in (tl,tr,bl,br))/4
+    cx=(left+right)/2;cz=(bottom+head)/2
     f.prism(box(left,bottom,right,head).difference(box(left+.040,bottom+.031,right-.040,head-.053)),depth-.033,depth,LOUVER,'louvre/front-frame')
     f.box(cx,head-.024,right-left,.048,depth,depth/2,LOUVER,'louvre/top-return')
     # The casing, closely finned black coil and pale uprights are all visible
     # behind the screen on the original. A fan profile is concealed.
-    f.box(cx-.018,3.008,.977,.634,.077,.037,SILL,'louvre/condensing-unit-case')
-    f.box(cx-.055,3.005,.552,.503,.036,.093,DARK,'louvre/dark-heat-exchanger')
+    f.box(cx-.018,cz-.018,(right-left)*.85,(head-bottom)*.84,.077,.037,SILL,'louvre/condensing-unit-case')
+    f.box(cx-.055,cz-.02,.552,.503,.036,.093,DARK,'louvre/dark-heat-exchanger')
     fins=39 if not lod else 19
     for n in range(fins):
         a=cx-.313+.514*n/(fins-1)
-        f.box(a,3.009,.0045 if not lod else .007,.49,.012,.114,IRON,'louvre/coil fins')
+        f.box(a,cz-.016,.0045 if not lod else .007,.49,.012,.114,IRON,'louvre/coil fins')
     for a in (left+.018,right-.018):
         f.box(a,(bottom+head)/2,.036,head-bottom,.042,depth-.021,LOUVER,'louvre/front-stile')
         f.box(a,(bottom+head)/2,.026,head-bottom,.030,.021,LOUVER,'louvre/wall-stile')
     for n in range(10):
-        z=head-.094-n*.0703
+        z=head-.095-n*(head-bottom-.135)/9
         sag=.028 if n==8 else 0.
         if sag:
             # Two sloping splits visibly follow the lowered centre of this member.
@@ -189,3 +195,23 @@ def add_louvred_unit(b,f,lod):
             f.box(cx,z,right-left-.063,.023,.039,depth-.019,LOUVER,'louvre/horizontal-slat')
         for a in (left+.014,right-.014):
             f.box(a,z,.027,.022,depth-.049,depth/2-.002,LOUVER,'louvre/return slat')
+
+def wing_end(b,lod):
+    # The offset between the pipe's wall and the red timber reveal is
+    # supported by the oblique station. Only this western return recedes.
+    turn=Facade(b,(10.10,REAR_Y),(11.075,3.94),'western ochre return')
+    turn.wall(0.,5.64,thickness=.17,material=UPPER)
+    face=Facade(b,(11.075,3.94),(11.55,3.94),'western red timber opening')
+    w=face.length
+    for x in (-w/2+.024,w/2-.024):face.box(x,3.965,.048,2.99,.104,-.030,RED,'outside timber jamb')
+    face.box(0,5.457,w,.083,.113,-.024,RED,'timber head')
+    face.box(0,3.415,w,.083,.113,-.024,RED,'timber sill')
+    face.box(0,3.004,w-.091,.725,.066,-.092,LOWER,'inset lower render panel')
+    face.line((-.190,2.724,-.013),(.193,3.330,-.013),.027,RED,6 if lod else 8,'lower timber brace')
+    outline=box(-w/2+.041,3.454,w/2-.041,5.418)
+    inner=outline.buffer(-.036,join_style=2)
+    face.prism(outline.difference(inner),-.112,-.069,GREEN,'green casement frame')
+    face.prism(inner,-.135,-.123,GLASS,'shaded western glazing')
+    for z in (4.05,4.60):face.box(0,z,w-.115,.026,.035,-.091,GREEN,'glazing rail')
+    face.box(-.09,4.432,.018,1.86,.026,-.094,GREEN,'off-centre glazing bar')
+    face.box(0,1.32,w,2.64,.16,-.074,UPPER,'concealed base at west cut')

@@ -25,7 +25,8 @@ def check(mesh):
         hit=scene.ray(c,d,80)
         ok=bool(hit and any(k in hit['material'].lower() for k in pick['materials']) and hit['point_enu_m'][2]>6.75)
         rows.append(dict(**pick,hit=hit,exact=ok))
-    return dict(asset=scene.asset,matched=sum(r['exact']for r in rows),total=len(rows),rows=rows)
+    visible=[r for r in rows if not r.get('visibility')]
+    return dict(asset=scene.asset,matched=sum(r['exact']for r in rows),total=len(rows), visible_matched=sum(r['exact'] for r in visible),visible_total=len(visible),rows=rows)
 if __name__=='__main__':
     cli=argparse.ArgumentParser(description=__doc__)
     cli.add_argument('mesh',type=Path);cli.add_argument('output',type=Path);a=cli.parse_args()
