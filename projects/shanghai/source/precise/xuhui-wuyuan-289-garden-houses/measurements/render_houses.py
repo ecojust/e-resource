@@ -28,6 +28,8 @@ def raster(model,out):
     stations['north-photo']=(np.array(s['native_P'])@local_matrix(Facade(None,'1-2')),[300,0,4247,3239])
     for i,r in enumerate(json.loads((HERE/'house-three-two-registered-views.json').read_bytes())['stations']):
         w,h=r['observed_image_size'];stations['south-photo-'+str(i+1)]=(np.array(r['P'])@local_matrix(Facade(None,'3-4')),[0,0,w,h])
+    record=json.loads((HERE/'garden-1935-camera.json').read_bytes())
+    stations['garden-1935']=(np.asarray(record['P'])@local_matrix(Facade(None,'3-4')),[0,0,760,460])
     light=np.array([.48,-.45,.75],dtype=np.float32);light/=np.linalg.norm(light)
     angles=[float(np.degrees(np.arctan2(light[0],light[1]))),float(np.degrees(np.arcsin(light[2])))]
     parts=renderer.read_glb(model);report={}

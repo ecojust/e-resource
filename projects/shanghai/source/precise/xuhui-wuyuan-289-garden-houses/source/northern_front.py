@@ -18,7 +18,15 @@ def gable_face(f,bay,upper,low,number,lod=False):
     wall=profile.difference(holes)
     f.solid(wall,front-.205,front,CREAM,number+' upper plaster nogging')
     f.solid(box(a,.045,b,FLOOR).difference(unary_union(low)),front-.28,front-.006,BRICK,number+' lower brick and reveals')
-    for x0,z0,x1,z1,cols,rows in upper:window(f,x0,x1,z0,z1,front,cols,rows,number+' upper casement',lod,False)
+    for i,(x0,z0,x1,z1,cols,rows) in enumerate(upper):
+        if number=='larger gable' and i==0:
+            # The left upper casement swings into the lane in Gao's numbered
+            # photograph. At an oblique angle it stands ahead of the deep reveal.
+            f.rect(x0,x1,z0,z1,front-.46,front-.405,DARK,'shadow behind open No 1 casement')
+            theta=np.radians(32)
+            opened=f.face(x0,-front,np.cos(theta),-np.sin(theta))
+            window(opened,0,x1-x0,z0,z1,.21,cols,rows,'outward upper casement of No 1',lod,False)
+        else:window(f,x0,x1,z0,z1,front,cols,rows,number+' upper casement',lod,False)
     def timber(path,width=.13):
         f.band(path,width,front+.004,front+.063,OAK,number+' structural timber',wall)
     for h,width in [(FLOOR+.073,.145),(4.63,.128),(eave-.065,.132)]:
@@ -47,7 +55,7 @@ def add_one_two(f,lod=False):
     door(f,0,.94,.18,2.36,.105,0,'number 1',lod)
     f.rect(-.59,.54,.02,.11,-.09,.415,STEP,'No 1 lowest doorstep')
     f.rect(-.52,.5,.11,.19,-.09,.255,STEP,'No 1 upper doorstep')
-    plaque(f,.625,1.88,1,.008)
+    plaque(f,.66,2.128,1,.008)
     # The bracket above No.1 is visible in the close oblique view.
     f.rail([(-.17,-.035,2.82),(-.16,-.07,2.97),(-.10,-.15,3.01),(.035,-.28,2.97),(.10,-.33,2.86)],.017,IRON,'curved iron lamp bracket above No 1')
     f.rect(.005,.20,2.79,2.83,.26,.41,IRON,'small shade above numbered arch')

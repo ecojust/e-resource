@@ -8,17 +8,17 @@ from math import sin,cos,radians
 import numpy as np
 from shapely.geometry import LineString,box
 from materials import *
-AZIMUTH=75.0
-OUT=np.array([sin(radians(AZIMUTH)),cos(radians(AZIMUTH))])
-ALONG=np.array([-OUT[1],OUT[0]])
-CENTERS={'1-2':np.array([-2.05,10.45]),'3-4':np.array([2.05,-10.45])}
+# Local ENU metres, relative to WGS84 121.4374664 E, 31.2133500 N.
+AZIMUTHS={'1-2':75.96,'3-4':73.50}
+FRONT_ORIGINS={'1-2':(2.8130,12.9394),'3-4':(7.4095,-8.6796)}
 class Facade:
     def __init__(self,b,name,origin=None,along=None):
         self.b=b
         self.name=name
-        self.u=np.asarray(ALONG if along is None else along)
+        az=radians(AZIMUTHS[name])
+        self.u=np.asarray([-cos(az),sin(az)] if along is None else along)
         self.out=np.array([self.u[1],-self.u[0]])
-        self.origin=np.asarray(CENTERS[name]+OUT*5.4-ALONG*.42 if origin is None else origin)
+        self.origin=np.asarray(FRONT_ORIGINS[name] if origin is None else origin)
     def point(self,u,d,z):
         xy=self.origin+self.u*u-self.out*d
         return (xy[0],xy[1],z)

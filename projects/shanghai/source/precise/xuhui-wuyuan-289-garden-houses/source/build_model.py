@@ -6,7 +6,9 @@ PROJECT=next(p for p in [*HERE.parents,Path(os.getenv('E_RESOURCE_SHANGHAI','.')
 for sub in ['hongkou-general-post-office/source/common','hongkou-tanggu-road-apartment-dated-crown/source']:
     sys.path.insert(0,str(PROJECT/'source/precise'/sub))
 from crown_builder import CrownBuilder as Builder
-from materials import PALETTE
+from materials import PALETTE as HOUSE_PALETTE
+from lane_gate import PALETTE as GATE_PALETTE
+PALETTE=HOUSE_PALETTE|GATE_PALETTE
 from placement import Facade
 from northern_front import add_one_two
 from body import add_body
