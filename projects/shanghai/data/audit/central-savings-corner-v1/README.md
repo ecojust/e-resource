@@ -13,3 +13,7 @@
 天津路与江西中路交角处，目录可以从手机和桌面打开本楼，两端也均可在地图上直接点选。主图由 308 处增至 309 处。近景检查了门洞、钢门圆章和塔冠竖肋，远景使用单独的低面数模型。沿街、楼内、原模型余部和 17 栋邻屋共核对 49 个碰撞点。[城市画面与复核记录](city-31274/visual-review.json) · [街面](city-31274/map-street-facade.png) · [钢门近图](city-31274/independent-processes/closeups/map-canton-latticed-doors-webgl.png) · [塔冠近图](city-31274/independent-processes/closeups/map-canton-ribbed-crown-webgl.png)
 
 两幅可定位的照片都能辨认塔楼正面八排三联窗。每幅各保留 16 个未参与配准的窗中心作检查，三档模型的中位偏差分别为 2.28 和 0.95 像素。独立页面分别保存了原始模型、网页近景、远景和 Blender 源文件并复核字节。[照片与取点](photo-recheck/README.md) · [独立页实测](city-31274/standalone/viewer.json) · [主图入口](../../../index.html#landmark=huangpu-central-savings-society-corner-tower&mode=overview)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/53b6cc9934fdc02f68f977061fa9998382f8e11b/projects/shanghai/index.html#landmark=huangpu-central-savings-society-corner-tower&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
