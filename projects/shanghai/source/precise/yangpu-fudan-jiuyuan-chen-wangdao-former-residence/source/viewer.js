@@ -32,6 +32,7 @@ async function start() {
   const downloads = document.querySelector('#downloads');
   for (const [role, label] of Object.entries(labels)) {
     const asset = manifest.assets[role];
+    if (role === 'native' && !asset) continue;
     if (!asset?.file) throw new Error('模型目录缺少' + label + '。');
     const link = document.createElement('a');
     link.href = folder + asset.file;
