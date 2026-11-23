@@ -1,0 +1,43 @@
+264 physical receipts verified 8
+648 and 441 returned 0926840f2bac812694190120133a2fbd86f9369ce065242de91e1c263961cba0
+control 2026-11-23T02:27:59.649104+00:00 {331437: '412737'}
+closed control 2026-11-23T02:27:59.649104+00:00
+mobile-card 2026-11-23T02:29:16.115276+00:00 {334153: '419978'}
+closed mobile-card 2026-11-23T02:29:16.115276+00:00
+mobile-pin 2026-11-23T02:30:20.495050+00:00 {337267: '423254'}
+closed mobile-pin 2026-11-23T02:30:20.495050+00:00
+desktop-card 2026-11-23T02:31:36.156491+00:00 {351902: '429746'}
+closed desktop-card 2026-11-23T02:31:36.156491+00:00
+desktop-pin 2026-11-23T02:32:24.523500+00:00 {366706: '437301'}
+closed desktop-pin 2026-11-23T02:32:24.523500+00:00
+street 2026-11-23T02:33:26.907062+00:00 {367206: '442053'}
+closed street 2026-11-23T02:33:26.907062+00:00
+roof 2026-11-23T02:34:39.952288+00:00 {368295: '448333'}
+closed roof 2026-11-23T02:34:39.952288+00:00
+brick-door 2026-11-23T02:35:36.282434+00:00 {396813: '455685'}
+closed brick-door 2026-11-23T02:35:36.282434+00:00
+side-arches 2026-11-23T02:36:26.077456+00:00 {410780: '461307'}
+closed side-arches 2026-11-23T02:36:26.077456+00:00
+distant 2026-11-23T02:37:44.622059+00:00 {423716: '466212'}
+closed distant 2026-11-23T02:37:44.622059+00:00
+All 265 main-scene sessions have closed. Inspect the ten actual views.
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-265/formal-31265/archive-recovered.py", line 26, in <module>
+    full=(pr264 if n==264 else a/'31265-all-http.json');assert r(full)['passed'] and r(full)['production_receipt_sha256']==h(w/f'{n}-production.json');save(full)
+                                                                                                                                                       ^^^^^^^^^^
+  File "/tmp/shanghai-main-265/formal-31265/archive-recovered.py", line 13, in save
+    t=dest/(rel or f.name);f=f.resolve(strict=True);t.parent.mkdir(exist_ok=True,parents=True)
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1240, in resolve
+    s = self._flavour.realpath(self, strict=strict)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 424, in realpath
+  File "<frozen posixpath>", line 491, in _joinrealpath
+  File "<frozen posixpath>", line 468, in _joinrealpath
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/r684closedhttp/mount/fcfc3304333636e86e'
+Traceback (most recent call last):
+  File "/workspace/shanghai-publisher-preservation/city-265/wait-264.py", line 23, in <module>
+    subprocess.run([sys.executable,'-Bu',f],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-265/formal-31265/archive-recovered.py')]' returned non-zero exit status 1.

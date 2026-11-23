@@ -1,3 +1,11 @@
+# 自力大楼（英商自来水公司办公楼）江西中路464号券门及上层窗墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zili-waterworks-office-front&mode=overview) · [单体旋转与下载](zili-waterworks-office.html) · [来源与制作范围](source/precise/huangpu-zili-waterworks-office-front/README.md) · [验收记录](data/audit/zili-waterworks-office-v1/README.md)
+
+第四批4A003，江西中路464至466号。以可读的464号门牌定位券门与相邻短段窗墙，制作灰砖、三道红砖弧券、两层窗口及层间灰白挑檐。原城1588和北侧484号的原城1766分别配准。
+
+近景 6,192 个三角面，远景 4,896 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 906,644 字节。上海主图现有 300 处独立入口，黄浦区 135 处。[资产清单](assets/models/candidates/huangpu-zili-waterworks-office-front/manifest.json)
+
 # 英商自来水公司大楼（自来大楼）西南转角花饰
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-waterworks-484-corner&mode=overview) · [单体旋转与下载](shanghai-waterworks-484-corner.html) · [来源与制作范围](source/precise/huangpu-shanghai-waterworks-484-corner/README.md) · [验收记录](data/audit/shanghai-waterworks-484-corner-v1/README.md)
