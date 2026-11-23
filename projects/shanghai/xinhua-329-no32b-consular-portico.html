@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>新华路329弄32号乙花园住宅三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+      .detail-views {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+    .detail-views a {display:grid;gap:3px}
+    .detail-views img {width:100%;height:80px;object-fit:contain;background:#e6e5df}
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 新华路329弄32号乙</p><h1>新华路329弄32号乙花园住宅</h1></header>
+<main aria-label="新华路329弄32号乙花园住宅三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">从庭院观察双柱门廊、老虎窗和多边形楼梯间。柱脚的蓝色“32乙”、门上的铁花和两层楼梯窗均可单独查看。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-xinhua-329-no32b-consular-portico/changning-xinhua-329-no32b-consular-portico-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<div class="detail-views" aria-label="细部渲染图"><a href="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/scaffold-station-model.jpg"><img loading="lazy" src="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/scaffold-station-model.jpg" alt="施工时期的庭院视角的模型渲染"><span>施工时期的庭院视角</span></a><a href="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/dormer-model.jpg"><img loading="lazy" src="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/dormer-model.jpg" alt="双扇老虎窗的模型渲染"><span>双扇老虎窗</span></a><a href="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/iron-fanlight-model.jpg"><img loading="lazy" src="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/iron-fanlight-model.jpg" alt="门楣砖券与铁花的模型渲染"><span>门楣砖券与铁花</span></a><a href="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/pier-number-model.jpg"><img loading="lazy" src="data/audit/xinhua-329-no32b-consular-portico-v1/roof-and-stair-tower/registration/near/pier-number-model.jpg" alt="左柱脚的蓝色门牌的模型渲染"><span>左柱脚的蓝色门牌</span></a></div>
+<p>市级名录编号3M013。门扇净高暂取2.10米，山墙背面的进深和后坡均为估算。院内实拍与规划册的施工照共复核63个材质位置，楼梯侧窗在施工照中仍有约9至12像素偏差。<a href="source/precise/changning-xinhua-329-no32b-consular-portico/README.md">测量依据</a> · <a href="https://www.sohu.com/a/145677223_391447">庭院实拍</a> · <a href="http://www.dayuehs.com/pdf/xmyh02.pdf">规划图册第10页</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-xinhua-329-no32b-consular-portico/source/viewer.js" type="module"></script>
+</body></html>

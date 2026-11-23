@@ -179,7 +179,11 @@ def steps(b):
         rect(b,p[0],p[2],q[0],q[2],near,WALL+.18,PLINTH,f'stair/stone tread and riser {i+1}')
     block(b,[(170,657),(386,657),(377,635),(180,635)],WALL-.19,WALL-.26,WALL+.13,PLINTH,'stair/door sill')
 
-META=dict(id=HERE.parent.name,name='新华路329弄32号乙花园住宅双柱门廊',register='3M013',formal_id='sh-historic-b3-111',address='上海市长宁区新华路329弄32号乙',geometry_license='MIT',photos_embedded=False,scope='庭院面可辨门廊，尺度依据门扇净高2.10米暂估。整栋屋面与室内楼梯另核。')
+META=dict(id=HERE.parent.name,name='新华路329弄32号乙花园住宅庭院立面',register='3M013',
+          formal_id='sh-historic-b3-111',address='上海市长宁区新华路329弄32号乙',
+          geometry_license='MIT',photos_embedded=False,
+          scope='双柱门廊、庭院窗墙、楼梯塔、老虎窗和可见坡屋顶。绝对尺度据门扇净高2.10米估算，后坡及山墙进深暂定。',
+          camera_views=json.loads((HERE.parent/'measurements/courtyard-cameras.json').read_bytes()))
 def build(lod):
     b=PorticoBuilder(PALETTE | finishes.PALETTE)
     columns(b,lod)
