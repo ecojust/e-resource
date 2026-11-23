@@ -62,6 +62,8 @@
 
 [泰安路74号上海市质量协会临街面](../projects/shanghai/taian-74-quality-association.html)可查看双拱门廊、绿色74号牌、协会竖牌及西侧窗列。该楼紧邻泰安路76弄亦村，独页提供十个视角与八件下载。 [固定工作版](https://github.com/ecojust/e-resource/tree/18136f35f361c7bf3802e73f40bff72d0d046336/projects/shanghai/source/precise/changning-taian-74-quality-association)
 
+[沪西别墅东侧临弄山墙与跨层钢窗](../projects/shanghai/huxi-villas-east-row-gable.html)收录3M008东侧住宅群中的一段临弄山墙。九个机位包括2014年弄内主照与2015年同一南口的两种排位推算，八种下载附可编辑源文件。 [固定工作版本](https://github.com/ecojust/e-resource/tree/b5bca6590f820e37a620f167a41ee7b5727f850d/projects/shanghai/source/precise/changning-huxi-villas-east-row-gable)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
