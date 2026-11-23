@@ -359,6 +359,11 @@ def build(reserved=()):
  for i,line in enumerate(lines):
   if line.startswith('|') and not line.startswith(('|---','| ')) and line.endswith('|') and line[-2] not in '| \\':
    lines[i]=line[:-1]
+ # Rows beginning with a literal heritage ID already have internal cell separators.
+ # GFM renders these rows identically without the optional outer left border.
+ for i,row in enumerate(lines):
+  if row.startswith('|sh-historic-'):
+   lines[i]=row[1:]
  return compact_repeated_links('\n'.join(lines).rstrip()+'\n',reserved)
 def street_index():
  d=json.loads((DATA/'discovered-buildings.json').read_text());roads=json.loads((DATA/'discovered-streets.json').read_text());q=json.loads((DATA/'queue.json').read_text())
