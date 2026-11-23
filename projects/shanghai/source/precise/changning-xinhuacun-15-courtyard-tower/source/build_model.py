@@ -8,6 +8,8 @@ HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
+from tower_builder import TowerBuilder
+import finishes
 ID='changning-xinhuacun-15-courtyard-tower'
 M='coarse grey-brown pebble dash';B='warm red facing brick';T='terracotta roof'
 G='Tower 15 | green-grey glazing';W='Tower 15 | weathered green joinery';P='Tower 15 | warm grey coping';D='Tower 15 | eaves and rainwater iron';V='Tower 15 | pale gallery frames';I='Tower 15 | shaded interior'
@@ -43,13 +45,20 @@ def panel(b,label,rect,y,sign,mat,lod=False,swing=False,bars=3):
         if not lod and bars>=3:sash('lower glazing bar',.038,dx-.038,z0+h*.32-.011,z0+h*.32+.011,.048,mat)
     if not swing:
         block(b,label+'/inner shadow',I,x0,x1,*sorted((y-sign*.17,y-sign*.20)),z0,z1)
-def roof(b,L,R,F,H,e,z,half,material,label):
+def roof(b,L,R,F,H,e,z,half,material,label,lod=False):
     cx=(L+R)/2;cy=(F+H)/2
     p=[(L,F,e),(R,F,e),(R,H,e),(L,H,e),(cx-half,cy,z),(cx+half,cy,z)]
     for i,face in enumerate([[0,1,5,4],[1,2,5],[2,3,4,5],[3,0,4]]):
         top=[np.array(p[k])for k in face];verts=top+[x-[0,0,.14]for x in top];n=len(top)
         faces=[list(range(n)),list(range(2*n-1,n-1,-1))]+[[j+n,(j+1)%n+n,(j+1)%n,j]for j in range(n)]
         b.add(verts,faces,material,label+'/pitched plane '+str(i+1))
+        if not lod:
+            # Rows follow the continuous hips and terminate before the ridge/corner rolls.
+            start,end=top[:2];endridge=top[2];startridge=top[-1]
+            for k,u in enumerate(np.linspace(.058,.95,14)):
+                v=start*(1-u)+startridge*u;w=end*(1-u)+endridge*u
+                if np.linalg.norm(w-v)>.12:
+                    b.tube([v+[0,0,.020],w+[0,0,.020]],.018,material,6,label+'/visible tile course '+str(i+1)+'/'+str(k+1))
     b.tube([p[4],p[5]],.080,material,10,label+'/rounded ridge')
     for i,j in [(0,4),(1,5),(2,5),(3,4)]:b.tube([p[i],p[j]],.050,material,8,label+'/hip roll '+str(i+1))
 def tower(b,lod):
@@ -70,20 +79,28 @@ def tower(b,lod):
             for drop,label in [(z0-.048,'stone sill'),(z1+.036,'stone head')]:
                 block(b,key+'/'+label+' '+str(i+1),P,x0-.088,x1+.082,*sorted([y+side*.11,y-side*.082]),drop-.035,drop+.038)
         for j in (-1,1):
+            rectangles=[]
             for k,lo in enumerate(np.arange(base,z,.44)):
                 width=(.48 if k%2==0 else .32)
                 x0,x1=(a-width,a)if j==1 else(-a,-a+width)
-                block(b,key+'/bonded corner '+str(j)+'/'+str(k+1),B,x0,x1,*sorted([y+side*.020,y-side*.024]),lo,min(lo+.431,z))
+                if lod:rectangles.append(box(x0,lo,x1,min(lo+.44,z)))
+                else:block(b,key+'/bonded corner '+str(j)+'/'+str(k+1),B,x0,x1,*sorted([y+side*.020,y-side*.024]),lo,min(lo+.431,z))
+            if lod:xz(b,unary_union(rectangles).buffer(.00001,join_style=2).buffer(-.00001,join_style=2).simplify(.00003),*sorted([y+side*.020,y-side*.024]),B,key+'/serrated quoin band '+str(j))
     for j in (-1,1):
         x0,x1=sorted([j*a,j*(a-th)])
         block(b,'tower/non-windowed return '+str(j),M,x0,x1,th,d-th,base,z)
         for end in [0.,d]:
+            rectangles=[]
             for k,lo in enumerate(np.arange(base,z,.44)):
                 v=.44 if k%2 else .31
                 y0,y1=(.020,v)if end==0 else(d-v,d-.020)
-                block(b,'tower/returning quoin '+str(j)+'/'+str(end)+'/'+str(k),B,*sorted([j*(a+.019),j*(a-.021)]),y0,y1,lo,min(lo+.430,z))
+                if lod:rectangles.append(box(y0,lo,y1,min(lo+.44,z)))
+                else:block(b,'tower/returning quoin '+str(j)+'/'+str(end)+'/'+str(k),B,*sorted([j*(a+.019),j*(a-.021)]),y0,y1,lo,min(lo+.430,z))
+            if lod:
+                poly=unary_union(rectangles).buffer(.00001,join_style=2).buffer(-.00001,join_style=2).simplify(.00003)
+                b.prism(poly,*sorted([j*(a+.019),j*(a-.021)]),lambda y,z,x:(x,y,z),B,'tower/serrated return '+str(j)+'/'+str(end))
     block(b,'tower/dark exposed soffit',D,-a-over,a+over,-over,d+over,z-.035,z+.13)
-    roof(b,-a-over,a+over,-over,d+over,z+.14,g['roof_top'],g['ridge_half'],T,'tower hipped roof')
+    roof(b,-a-over,a+over,-over,d+over,z+.14,g['roof_top'],g['ridge_half'],T,'tower hipped roof',lod)
     # The red stack terminates above the courtyard-facing eave just beyond the east plane.
     q=np.array([on_y('numbered-court',pt,2.85)for pt in READ['numbered-court']['tower_chimney_TL_TR']]);x=q[:,0].mean();h=q[:,2].mean();w=abs(q[1,0]-q[0,0])
     block(b,'adjacent courtyard chimney',B,x-w*.46,x+w*.46,2.54,3.39,8.6,h-.14)
@@ -101,7 +118,13 @@ def gallery(b,lod):
     for z,name in [(2.12,'lower floor'),(5.62,'upper gallery floor'),(8.68,'eaves and soffit')]:
         beam(name,P,0,end,-.135,2.31,z-.205,z)
     for j,pix in enumerate([88,156,199]):
-        u=local((pix,137))[0];beam('facing brick support '+str(j+1),B,max(0,u-.20),min(end,u+.20),-.035,.31,2.12,8.64)
+        u=local((pix,137))[0]
+        beam('upper facing brick support '+str(j+1),B,max(0,u-.20),min(end,u+.20),-.035,.31,5.62,8.64)
+        v=local(([93,164,198][j],160))[0]
+        beam('lower dressed brick pilaster '+str(j+1),B,max(0,v-.31),min(end,v+.31),-.065,.31,2.12,5.62)
+        if not lod:
+            for k,z in enumerate(np.arange(2.48,5.58,.43)):
+                beam('lower pilaster/banded course '+str(j+1)+'/'+str(k),B,max(0,v-.337),min(end,v+.337),-.097,.305,z,z+.053)
     for name,lo,hi in [('lower',2.12,3.0),('upper',5.62,6.93)]:
         beam(name+' coping rail',P,0,end,-.12,.17,hi-.102,hi);beam(name+' foot rail',P,0,end,-.06,.13,lo+.055,lo+.165)
         for j,u in enumerate(np.arange(.27,end-.11,.34)):
@@ -124,10 +147,28 @@ def gallery(b,lod):
     a=origin+t*.01-n*.13+up*8.69;b0=origin+t*end-n*.13+up*8.69
     c=b0+n*2.66+up*2.90;d=a+n*2.66+up*2.90
     top=[a,b0,c,d];b.add(top+[p-up*.16 for p in top],[[0,1,2,3],[7,6,5,4],[4,5,1,0],[5,6,2,1],[6,7,3,2],[7,4,0,3]],T,'court gallery/visible sloping red roof')
+    # The independent northern view shows a low return with a three-light window at the tower.
+    # Only its adjoining bay is reconstructed. The distant chimney and next structure are separate.
+    for name,mat,l,r,h0,h1 in [
+        ('north return below the first shared opening',M,0,end,g['south_z0'],7.18),
+        ('north return below soffit',M,0,end,8.55,9.08),
+        ('north return east pier',M,0,1.05,7.18,8.55),
+        ('north return wall past first opening',M,3.92,end,7.18,8.55),
+    ]:beam(name,mat,l,r,3.34,3.57,h0,h1)
+    beam('north return/three lights',G,1.05,3.92,3.43,3.46,7.18,8.55)
+    for k in range(4):
+        u=1.05+(3.92-1.05)*k/3;beam('north return/green mullion '+str(k),W,u-.035,u+.035,3.42,3.49,7.18,8.55)
+    for h in [7.2,7.94,8.52]:beam('north return/sash rail',W,1.05,3.92,3.42,3.49,h-.027,h+.027)
+    beam('north return/projecting sill',P,.95,4.02,3.35,3.60,7.09,7.18)
+    f=origin+t*end+n*3.68+up*9.08;e=origin+n*3.68+up*9.08
+    top=[d,c,f,e];b.add(top+[p-up*.16 for p in top],[[0,1,2,3],[7,6,5,4],[4,5,1,0],[5,6,2,1],[6,7,3,2],[7,4,0,3]],T,'north return/observed roof slope')
+    if not lod:
+        for k,u in enumerate(np.linspace(.05,.94,12)):
+            b.tube([a*(1-u)+d*u+up*.02,b0*(1-u)+c*u+up*.02],.02,T,6,'court gallery/roof tile course '+str(k))
     beam('outer grey drip edge',D,0,end,-.16,-.06,8.56,8.70)
 def add_building(builder,lod=False):
     tower(builder,lod);gallery(builder,lod)
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--lod',action='store_true');args=parser.parse_args()
-    b=Builder(PALETTE);add_building(b,args.lod);q=b.save(args.output,META);print(q['sha256'],q['parts'],q['triangles'])
+    b=TowerBuilder(PALETTE|finishes.PALETTE);add_building(b,args.lod);q=b.save(args.output,META);print(q['sha256'],q['parts'],q['triangles'])
 if __name__=='__main__':main()

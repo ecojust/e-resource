@@ -6,7 +6,13 @@ from scipy.spatial.transform import Rotation
 from scipy.optimize import least_squares
 from fit_tower import geometry,NAMES
 H=Path(__file__).absolute().parent
-r=json.loads((H/'registered-tower.json').read_bytes());rows=json.loads((H/'window-readings.json').read_bytes());g=r['geometry'];pts=geometry([g[n]for n in NAMES]);o=rows['gao-northgate'];obs=o['visible_roof_edges']|o['upper_window'];xyz=np.array([pts[k]for k in obs]);uv=list(obs.values())
+r=json.loads((H/'registered-tower.json').read_bytes());rows=json.loads((H/'window-readings.json').read_bytes());g=r['geometry'];pts=geometry([g[n]for n in NAMES]);o=rows['gao-northgate'];obs=o['visible_roof_edges']|o['upper_window']
+# Reserve the complete lowest northern window for validation. Middle head and sill
+# supply depth leverage beyond the high roof alone.
+ref=r['cameras']['street-2015'];c0=np.array(ref['c']);inv=np.array(ref['R']).T@np.linalg.inv(ref['K'])
+for i,(src,dest)in enumerate(zip(rows['street-2015']['window_outer_TL_TR_BR_BL'][1],o['held_mid_window'])):
+    v=inv@[*src,1];name='north_middle_'+str(i);pts[name]=c0+v*(g['depth']-c0[1])/v[1];obs[name]=dest
+xyz=np.array([pts[k]for k in obs]);uv=list(obs.values())
 cam=r['cameras']['street-2015'];v0=[-12.,33.,1.48,*Rotation.from_matrix(cam['R']).as_rotvec(),np.log(980.)]
 def calc(v,ret=False):
  c=v[:3];R=Rotation.from_rotvec(v[3:6]).as_matrix();f=np.exp(v[6]);K=np.array([[f,0,511.5],[0,f,383.5],[0,0,1.]]);P=K@np.column_stack([R,-R@c]);q=(xyz-c)@R.T@K.T;er=q[:,:2]/q[:,2,None]-uv
