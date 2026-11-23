@@ -6,7 +6,8 @@ import sys
 args=sys.argv[1:]
 for i in range(len(args)-1):
     if args[i]=='--python' and Path(args[i+1]).name=='make_native.py':
-        args[i:i]=['--python',str(Path(__file__).with_name('preview_camera.py'))]
+        args[i:i]=['--python',str(Path(__file__).with_name('native_timber.py')),
+                   '--python',str(Path(__file__).with_name('preview_camera.py'))]
         break
 executable=os.environ['ZHOU_CURVED_HALL_BLENDER']
 os.execvp(executable,[executable,*args])
