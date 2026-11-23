@@ -191,8 +191,21 @@ def verify_campus_component(entry):
  component='changning-'+entry['page'][:-5]
  assert entry['component_id']==component, 'Campus component and page disagree'
  manifest=repository_json(f'projects/shanghai/assets/models/candidates/{component}/manifest.json')
- assert (manifest['id'],manifest['official_id'],manifest['heritage_id'],manifest['viewer_page'])==(component,'2M006',entry['heritage_id'],entry['page']), 'Campus manifest names another building'
- assert set(manifest['assets'])=={'raw','full','lod','native'} and manifest['scope'].strip()
+ assert (manifest['id'],manifest['heritage_id'],manifest['viewer_page'])==(component,entry['heritage_id'],entry['page']), 'Campus manifest names another building'
+ assert set(manifest['assets'])=={'raw','full','lod','native'}
+ if 'official_id' in manifest or 'scope' in manifest:
+  assert manifest['official_id']=='2M006' and manifest['scope'].strip()
+ else:
+  from registered_public_study import registered_public_study
+  project=ROOT/'projects/shanghai'
+  path=Path('assets/models/candidates')/component/'manifest.json'
+  study=registered_public_study(manifest,str(path),project)
+  assert number=='41' and study and study['scope']==entry['modeled_scope'], 'Missing independently registered campus scope'
+  reference=project/'source/precise'/component/'reference-review.json'
+  raw=reference.read_bytes()
+  assert hashlib.sha256(raw).hexdigest()=='fd93b9372cd0d892f80912dfd5c8736ca70286b65f8fe399f279c3c8cdcf78e5'
+  evidence=json.loads(raw)
+  assert '市房管局2M006' in evidence['address_note'] and '怀施堂为41号楼' in evidence['address_note']
  assert not manifest.get('map_replacement',False) and not manifest.get('walk_integration',False)
  return number
 
