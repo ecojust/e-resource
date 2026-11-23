@@ -1,0 +1,29 @@
+705e1e063ed781e7e27388e2d681210702b3573166187c9983ee7deb13754125
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-277/formal-31277/capture-live.py", line 63, in <module>
+    (out/'failed-exit.json').write_text(json.dumps(closed,indent=2)+'\n');sys.exit(rc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1047, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device
+Traceback (most recent call last):
+  File "/tmp/shanghai-main-277/formal-31277/sequence-live.py", line 67, in <module>
+    control=use('control');external('native',control);use('mobile-card');phone=use('mobile-pin');external('viewer',phone)
+            ^^^^^^^^^^^^^^
+  File "/tmp/shanghai-main-277/formal-31277/sequence-live.py", line 20, in use
+    fcntl.flock(lock,fcntl.LOCK_EX);subprocess.run([sys.executable,'-Bu',str(w/'capture-live.py'),stage,*([str(old)]if stage=='control'else[])],check=True)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', '/tmp/shanghai-main-277/formal-31277/capture-live.py', 'control', '/tmp/shanghai-main-276/276-map-slot-released.json']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/dev/shm/moneyguild277-live/admit-live.py", line 40, in <module>
+    subprocess.run([sys.executable,'-Bu',w/'sequence-live.py'],check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-Bu', PosixPath('/tmp/shanghai-main-277/formal-31277/sequence-live.py')]' returned non-zero exit status 1.

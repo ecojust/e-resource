@@ -1,3 +1,11 @@
+# 上海钱业公会大楼（宁波路三开间正面）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-money-guild-front&mode=overview) · [单体旋转与下载](shanghai-money-guild-front.html) · [来源与制作范围](source/precise/huangpu-shanghai-money-guild-front/README.md) · [验收记录](data/audit/shanghai-money-guild-front-v1/README.md)
+
+第四批4A015，宁波路276号。按具名OSM 414733198、2015年街照与2017年文汇资料制作中央券柱入口、二层窗、悬挑栏阳台和下方牛腿。
+
+近景 20,030 个三角面，远景 12,178 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 2,625,753 字节。上海主图现有 312 处独立入口，黄浦区 147 处。[资产清单](assets/models/candidates/huangpu-shanghai-money-guild-front/manifest.json)
+
 # 恒利银行河南中路天津路转角入口与竖窗立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengli-bank-henan-tianjin-corner&mode=overview) · [单体旋转与下载](hengli-bank-henan-tianjin-corner.html) · [来源与制作范围](source/precise/huangpu-hengli-bank-henan-tianjin-corner/README.md) · [验收记录](data/audit/hengli-bank-henan-tianjin-corner-v1/README.md)
