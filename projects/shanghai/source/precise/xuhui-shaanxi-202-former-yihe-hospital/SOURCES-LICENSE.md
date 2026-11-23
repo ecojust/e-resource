@@ -1,0 +1,8 @@
+# 资料、署名和使用范围
+
+- 上海市房屋管理局第五批优秀历史建筑名录。5D079条登记“上海教育评估院”，地址为陕西南路202号。[名录](https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html)
+- 上海市教育评估院官网。机构网站用于核对单位全称和联系地址。[机构官网](https://www.seei.edu.sh.cn/)
+- Fayhoo 拍摄的《Shanghai Jiaoyu Pingguyuan.JPG》，2015年2月7日13时38分39秒。图像显示六轴庭院立面、朝院挑台、侧翼、屋檐与入口。原图2144×1424，CC BY-SA 3.0。公开渲染图由本项目几何生成。[原图和作者署名](https://commons.wikimedia.org/wiki/File:Shanghai_Jiaoyu_Pingguyuan.JPG) · [照片许可](https://creativecommons.org/licenses/by-sa/3.0/)
+- 高参88《陕西南路202号怡和医院旧址》。文中第05、06、10幅公开照片用于对照院墙、门廊、石狮、木窗及红瓦屋面，记录了2016年和2018年的建筑状态。本文沿用作者的旧址名称，公开交付物仅含观测点、尺寸估计和重建图。照片权利属于原作者。[文章及照片](https://blog.sina.com.cn/s/blog_5d1bdf480102yff0.html)
+- Esri World Imagery Wayback四期影像和上海项目原有建筑底图用于对照屋缘、方向和地块。底图中主楼属于14-13719-6695号瓦片的4619号体量。测量记录保留影像来源和坐标。[历史影像](https://livingatlas.arcgis.com/wayback/)
+- 本项目制作的几何、立面细节、程序纹理、建模脚本和重建渲染采用仓库的MIT许可。石材颗粒由程序生成，金属铭牌保留可见分块与紧固件。构件尺寸和焦距是照片拟合值，缺少测绘施工图提供的精度。
