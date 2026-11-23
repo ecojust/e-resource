@@ -17,3 +17,7 @@
 本次独页重新打开桌面和竖屏近、远两档。近档可读密排瓦垄和红色细窗格，远档保留两层檐线和柱间分格。四个下载分别实际保存并比对字节数和 SHA256，原始与近景各50,774个三角面。
 
 [实机、地面与四种下载](city-31273/process-exits.json) · [旧城对照](city-31273/map-before.png) · [南翼屋顶亭](city-31273/map-south-roof-pavilion.png) · [重檐间红柱格扇](city-31273/map-red-timber-screens.png) · [远档](city-31273/map-distant.png)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/70b4c3bd86ab6a8e1e4872b8127fc8cdcb867731/projects/shanghai/index.html#landmark=huangpu-shanghai-commercial-savings-bank-pavilion&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
