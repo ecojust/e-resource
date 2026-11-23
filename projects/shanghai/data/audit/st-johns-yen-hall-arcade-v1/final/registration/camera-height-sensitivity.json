@@ -1,0 +1,80 @@
+{
+  "source_photo_observations_sha256": "c0211d7ebba0682369fb4f7063b2d27f7241d298a981d4e419c4046c9b5a1ac9",
+  "production_fit": {
+    "levels_m": {
+      "deck": 0.41,
+      "ground_apex": 3.774907880918699,
+      "lower_floor": 5.14890414325307,
+      "middle_apex": 8.537817511858444,
+      "upper_floor": 9.93460076085822,
+      "parapet": 11.088757153168402,
+      "upper_apex": 12.979564940382437,
+      "high_eave": 14.495265143640617
+    },
+    "camera_h_m": {
+      "west-ground": 0.16005,
+      "east-ground": 1.4203,
+      "school-aerial": 76.30578,
+      "west-aerial-control": 71.08626
+    },
+    "median_reprojection_native_px": {
+      "west-ground": 2.4657659939021803,
+      "east-ground": 2.84978198885336,
+      "school-aerial": 1.5035049660737998,
+      "west-aerial-control": 2.668383946338632
+    }
+  },
+  "ground_observer_height_prior_m": 1.55,
+  "weak_prior_sigma_m": 0.22,
+  "tight_prior_sigma_m": 0.015,
+  "weak_fit": {
+    "levels_m": {
+      "deck": 0.41,
+      "ground_apex": 3.6886306847182877,
+      "lower_floor": 5.031718440045104,
+      "middle_apex": 8.32024548084508,
+      "upper_floor": 9.684835393606216,
+      "parapet": 10.800466062891946,
+      "upper_apex": 12.637870837265757,
+      "high_eave": 14.10365444589842
+    },
+    "camera_h_m": {
+      "west-ground": 0.45419,
+      "east-ground": 1.47869,
+      "school-aerial": 73.1354,
+      "west-aerial-control": 67.90597
+    },
+    "median_reprojection_native_px": {
+      "west-ground": 2.4359821263007957,
+      "east-ground": 2.8808773815084323,
+      "school-aerial": 1.4882418752202267,
+      "west-aerial-control": 2.695311265111203
+    }
+  },
+  "tight_fit": {
+    "levels_m": {
+      "deck": 0.41,
+      "ground_apex": 3.7870377761713265,
+      "lower_floor": 5.1808044532879105,
+      "middle_apex": 8.519398766950372,
+      "upper_floor": 9.93694780275647,
+      "parapet": 11.049627562132851,
+      "upper_apex": 12.866717197330038,
+      "high_eave": 14.307707282241234
+    },
+    "camera_h_m": {
+      "west-ground": 1.53783,
+      "east-ground": 1.54947,
+      "school-aerial": 75.30492,
+      "west-aerial-control": 69.20484
+    },
+    "median_reprojection_native_px": {
+      "west-ground": 3.4933065634306617,
+      "east-ground": 2.8675611767803315,
+      "school-aerial": 1.5779171161912677,
+      "west-aerial-control": 2.5957850630311103
+    }
+  },
+  "reproduction": "Add ((-R.T @ t)[2] - 1.55)/sigma to the same objective for both ground images. Fit the same visible corner observations and published ground width 42.8 m.",
+  "interpretation": "The independent front plane can be drawn more accurately than the absolute camera positions. The production fit gives an implausibly low west effective camera center, and moving it to a standing-height solution raises the west median from 2.47 to 3.49 native pixels. High eave level is 14.50 m at the production optimum, 14.10\u201314.31 m in the standing-height variants. These are conditional dimensions, not an independent survey of the camera or eave."
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>思颜堂院前红砖券廊三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 华东政法大学长宁校区</p><h1>思颜堂院前红砖券廊</h1></header>
+<main aria-label="思颜堂院前红砖券廊三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">院前三层七开间红砖券廊接上两层四开间，走廊外侧设斜格栏板。从两端的地面视角可看出敞廊深度，从上方可见两段屋缘的高差。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-st-johns-yen-hall-arcade/changning-st-johns-yen-hall-arcade-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>思颜堂现为40号楼。华东政法大学校史记载，1903年12月24日奠定隅石，1904年10月1日举行落成典礼，堂名纪念颜永京。</p>
+<p>长宁区校园介绍所列地址为万航渡路1575号。市房管局2M006号名录登记万航渡路1175号，并将思颜堂列作40号楼。<a href="https://fgj.sh.gov.cn/yxlsjz1/20200331/30c648cb811f401192bb61dd1dd487c9.html">市房管局名录</a> · <a href="https://www.shcn.gov.cn/col6991/20210301/867409.html">长宁区校园建筑介绍</a></p>
+<p><a target="_blank" rel="noopener" href="data/audit/st-johns-yen-hall-arcade-v1/final/registration/registered-arcade.jpg">三处摄影机位模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/st-johns-yen-hall-arcade-v1/final/registration/west-ground-model.jpg">从西端看券廊</a> · <a target="_blank" rel="noopener" href="data/audit/st-johns-yen-hall-arcade-v1/final/registration/east-ground-model.jpg">从东端看券廊</a> · <a target="_blank" rel="noopener" href="data/audit/st-johns-yen-hall-arcade-v1/final/registration/school-aerial-model.jpg">院落航摄机位</a></p>
+<p>两幅地面照和一幅航摄照刊于华东政法大学2022年资料，原图拍摄日期未载。<a href="http://www.ecupl.edu.cn/2022/1101/c13514a193945/page.htm">校方图文原页</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-st-johns-yen-hall-arcade/source/viewer.js" type="module"></script>
+</body></html>
