@@ -8,6 +8,7 @@ HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
 from photo_architecture import Builder
+import garden_gallery
 ID='changning-xinhuacun-12-numbered-gable'
 META=dict(id=ID,heritage_id='sh-historic-b3-101',protection_number='3M003',name='新华村12号题号山墙',address='愚园路1320号新华村12号',scope='12号有数字的主山墙，三樘绿色小格窗、粗砂面与红砖交牙、窄凹廊、檐口、瓦面及两处可见烟囱。',geometry_license='MIT',photos_embedded=False,viewer_page='xinhuacun-12-numbered-gable.html')
 M='coarse grey-brown pebble dash';B='warm red facing brick';T='terracotta roof';P='pale precast cement';W='deep green window joinery';G='dark casement glass';D='dark cast rainwater iron';I='ivory cast house numerals'
@@ -104,7 +105,7 @@ def build(lod=False):
     for label,u,v,width,height,depth in [('ridge stack',547,112,.77,.91,1.50),('west stack',448,171,.49,.94,1.90)]:
         x,z=xz(u,v);b.box((x,depth,z),(width,.56,height),B,label='chimney/'+label)
         b.box((x,depth,z+height/2), (width+.061,.620,.074),P,label='chimney/'+label+' coping')
-    return b
+    return garden_gallery.make(b,lod)
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--lod',action='store_true');a=p.parse_args()
     print(build(a.lod).save(a.output,META)['sha256'])
