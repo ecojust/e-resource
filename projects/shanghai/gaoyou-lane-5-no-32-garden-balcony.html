@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>高邮路5弄32号住宅花园阳台与清水砖转角 · 上海徐汇</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header><a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 高邮路5弄32号</p><h1>高邮路5弄32号住宅花园阳台与清水砖转角</h1>
+  </header>
+  <main id="model-view" aria-label="高邮路5弄32号住宅花园阳台与清水砖转角三维模型"></main>
+  <aside class="panel" aria-label="观察机位与模型下载">
+    <p class="scope">1931年竣工。两樘宽钢窗夹着一道浅阳台，砖墩间保留成对的涡卷铁栏。顺着檐边绕过屋角，可见凸出墙面上的两扇窄窗。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="overview">花园立面与侧翼</button>
+      <button type="button" data-view="front">两樘钢窗与中间阳台</button>
+      <button type="button" data-view="sash">六列五层的钢窗</button>
+      <button type="button" data-view="grille">砖墩间的成对涡卷</button>
+      <button type="button" data-view="canopy">弧形撑架与红色封檐</button>
+      <button type="button" data-view="return">转角凸出的双窄窗</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads" aria-label="下载模型"></div>
+    <p><a href="source/precise/xuhui-gaoyou-lane-5-no-32-garden-balcony/README.md">历史与模型范围</a> · <a href="source/precise/xuhui-gaoyou-lane-5-no-32-garden-balcony/measurements/identity-and-photos.json">建筑照片及出处</a></p>
+    <p><a href="data/audit/gaoyou-lane-5-no-32-garden-balcony-v1/garden-balcony-study.jpg">花园立面与窗栏模型图</a></p>
+  </aside>
+  <footer>拖动旋转 · 滚轮或双指缩放</footer>
+  <script type="module" src="source/precise/xuhui-gaoyou-lane-5-no-32-garden-balcony/source/viewer.js"></script>
+</body></html>
