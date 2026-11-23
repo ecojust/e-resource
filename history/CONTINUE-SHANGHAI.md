@@ -38,6 +38,8 @@
 
 [中山公园大理石亭](../projects/shanghai/zhongshan-park-marble-pavilion.html)。1935年迁建入园。四柱廊、三孔石屏、双龛雕像和花钵石栏可按三处原摄影位查看，另有九镜和八项下载。平面位置估计误差4米。[固定工作版](https://raw.githack.com/ecojust/e-resource/0087ef4590dab1b365ea5d98bffae3db1b047ce4/projects/shanghai/zhongshan-park-marble-pavilion.html)
 
+[圣约翰大学格致楼（科学馆42号）西院券廊](../projects/shanghai/st-johns-gezhi-science-hall.html)。西院九轴券窗、端部圆窗、格致樓横额和两处起翘小屋面。校方院面、校史斜照及校方航照配准，九镜八件。城市2173号原户保留整屋及河面墙。 [固定工作版](https://raw.githack.com/ecojust/e-resource/b6b4b6817960bdfba5da0170d413261b4cbcc97c/projects/shanghai/st-johns-gezhi-science-hall.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。

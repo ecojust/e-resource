@@ -1,0 +1,64 @@
+{
+  "revisions": [
+    {
+      "iteration": "first shell",
+      "raw_sha256": "9cef776a4642f8c3d73ae63d1f53727492129589f56fa30944c28f266b279b0f",
+      "lod_sha256": "4380fb6fdfb0945f7c14077478e2ef576a3df2ca77491a29ce72d7dab34a53ae",
+      "near_closed": 124,
+      "near_triangles": 36496,
+      "web_render_input": "79fc1094c657854e06edfa8cae401c9e2377cf7d96030542682752c1ac606160",
+      "view_sha256": "3c87c6308f3792b457a525e3d353d76ce3093f0bd10e1f540c1fdece7bcb4368",
+      "render_sha256": "3f0d9dba171783384974dc345badc489629e0303057ce35204c2c90ba4281c42",
+      "source_glass_declaration_diagnostic": {
+        "original_sha256": "9cef776a4642f8c3d73ae63d1f53727492129589f56fa30944c28f266b279b0f",
+        "review_copy_sha256": "79fc1094c657854e06edfa8cae401c9e2377cf7d96030542682752c1ac606160",
+        "original_invalid_material": [
+          [
+            "Science Hall | gallery glazing",
+            [
+              0.38,
+              0.52,
+              0.57,
+              0.68,
+              1
+            ]
+          ]
+        ],
+        "bin_unchanged": true,
+        "notes": "The first shell was closed. An independent glTF reader rejected the five-channel factor before the F2 shading correction. This preview changes only the declaration to the planned four-channel factor and BLEND mode. F1 geometry and cameras remain original."
+      }
+    },
+    {
+      "iteration": "lettering and glazing",
+      "raw_sha256": "29ca8b39c9bd650dda486c986fbd8fad36f5e532635a68897013323aef36fffc",
+      "lod_sha256": "13db44baf49e00fa455a532f3b90cd8d437cbb10dd65b941c4b8f83af7c8ae6a",
+      "near_closed": 129,
+      "near_triangles": 37944,
+      "web_render_input": "29ca8b39c9bd650dda486c986fbd8fad36f5e532635a68897013323aef36fffc",
+      "view_sha256": "11903ed264096b24614597db0d0ba94938a8a39f8c82a0dbd2d2aba5edb9878e",
+      "render_sha256": "899b6df15a53e041752a1edadeb75d09e9c5b9aff8484f0516f40fdd2bed47ca"
+    },
+    {
+      "iteration": "solid eave trial",
+      "raw_sha256": "732b4445680edf84030caaa0d04c1e0a2185a72d09eef9d3c9a4af2a9658f2a7",
+      "lod_sha256": "8eba5e61b9275981bb07803cfdd87f31adb475d01a6a34c9a3650374e44e7d4b",
+      "near_closed": 132,
+      "near_triangles": 42576,
+      "web_render_input": "732b4445680edf84030caaa0d04c1e0a2185a72d09eef9d3c9a4af2a9658f2a7",
+      "view_sha256": "dceec02647a0cb1f8e463ff377a071e912696b7ca70928e6ced1799276da2dd3",
+      "render_sha256": "6a7232155603b5b31655363d0bc7ad9d24b24e11bfb6241f610a2d7573361ce5"
+    },
+    {
+      "iteration": "fitted thin hip and bearing",
+      "raw_sha256": "927e8f0f6c52676c53a4b6d17d059fd249091477ff7b0cc627d462d94eb3e7c8",
+      "lod_sha256": "dee5a0ecbb0ed905f21e8fca3a7b6e56bf01e278a743fb6cef1c4d3fbc8980df",
+      "near_closed": 134,
+      "near_triangles": 42376,
+      "web_render_input": "927e8f0f6c52676c53a4b6d17d059fd249091477ff7b0cc627d462d94eb3e7c8",
+      "view_sha256": "217540e023ea58d868b8b0e6f69ac1842e37ebcbfbb9397d839f52d7dea3f6b1",
+      "render_sha256": "70e129558f43ac173d04e7cf46a582e51d01c7176871ffbdc202eddb088a63e8"
+    }
+  ],
+  "comparison_sha256": "709ced35f514b876b5058a41ece60f83b44cf92f61a2019e0671f838596c3a74",
+  "notes": "F1 preview corrected only the invalid five-channel colour declaration in memory; the binary mesh was preserved. F2 corrects the factor to four channels, publishes 0.68 opacity and independently extruded characters. The complete solid infill in F3 fixed the see-through gap but gave the small pitched eaves a thick face below their tips. The final model uses the separate hipped cap and timber support. The penultimate shell had unmatched diagonals on the two nonplanar sides. Pairing each diagonal brought the four independent vertical slices of the visible edge to 0.1400m each."
+}
