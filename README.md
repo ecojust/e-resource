@@ -531,7 +531,7 @@
 |sh-historic-b5-xh-j-060-v|培福里|陕西南路186弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-061-v|住宅|新乐路34弄76-80号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-062-v|储康里|长乐路401弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-063-v|住宅|陕西南路222弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-063-v|陕西南路222弄20号住宅|陕西南路222弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/2f177b871164efba0024b420af1b328e68546bfc/projects/shanghai/shaanxi-222-no20-residence-gate.html>)|已建20号双扇院门、两枚兽面环、灰色门柱与卵形檐饰。院内三开间住宅现状、屋面和室内待核。|
 |sh-historic-b5-xh-j-064-v|住宅|新乐路59号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-065-v|住宅|东湖路56弄51,53,55号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-066-v|住宅|宝庆路9弄|[名录][H5] · 照片待核|待核外观／拆栋|
