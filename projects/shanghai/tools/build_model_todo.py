@@ -176,6 +176,26 @@ def repository_json(relative_path):
  raw=path.read_bytes() if path.exists() else subprocess.check_output(['git','show','HEAD:'+relative_path],cwd=ROOT)
  return json.loads(raw)
 
+# Shanghai's 2M006 record lists these named buildings and current campus numbers.
+ST_JOHNS_COMPONENT_PAGES={
+ '40':'st-johns-yen-hall-arcade.html',
+ '41':'st-johns-schereschewsky-hall.html',
+ '42':'st-johns-gezhi-science-hall.html',
+ '43':'st-johns-mann-hall-river-front.html',
+ '22':'st-johns-seaman-hall-courtyard.html',
+}
+
+def verify_campus_component(entry):
+ number=entry['campus_building_number']
+ assert ST_JOHNS_COMPONENT_PAGES.get(number)==entry['page'], 'Unknown or misnumbered campus building'
+ component='changning-'+entry['page'][:-5]
+ assert entry['component_id']==component, 'Campus component and page disagree'
+ manifest=repository_json(f'projects/shanghai/assets/models/candidates/{component}/manifest.json')
+ assert (manifest['id'],manifest['official_id'],manifest['heritage_id'],manifest['viewer_page'])==(component,'2M006',entry['heritage_id'],entry['page']), 'Campus manifest names another building'
+ assert set(manifest['assets'])=={'raw','full','lod','native'} and manifest['scope'].strip()
+ assert not manifest.get('map_replacement',False) and not manifest.get('walk_integration',False)
+ return number
+
 def standalone_heritage_models(records):
  data=repository_json('projects/shanghai/data/model-todo/standalone-heritage-models.json')
  assert data['schema']=='standalone-heritage-models-v1'
@@ -183,10 +203,16 @@ def standalone_heritage_models(records):
  by_heritage={}
  for entry in data['records']:
   heritage_id=entry['heritage_id']
-  assert heritage_id in known and heritage_id not in by_heritage, 'Unknown or repeated standalone heritage ID'
+  assert heritage_id in known, 'Unknown standalone heritage ID'
+  siblings=by_heritage.setdefault(heritage_id,[])
+  if heritage_id=='sh-historic-b2-060':
+   number=verify_campus_component(entry)
+   assert all(other['campus_building_number']!=number for other in siblings), 'Duplicate campus building'
+  else:
+   assert not siblings and 'campus_building_number' not in entry and 'component_id' not in entry, 'Unexpected component or repeated heritage ID'
   assert re.fullmatch(r'[a-z0-9-]+\.html',entry['page']) and re.fullmatch(r'[0-9a-f]{40}',entry['published_commit'])
   assert all(entry[key].strip() for key in ('title','modeled_scope','remaining'))
-  by_heritage[heritage_id]=entry
+  siblings.append(entry)
  return by_heritage
 
 def delivered_source_object_models(delivered_ids):
@@ -270,11 +296,12 @@ def build(reserved=()):
   for r in group:
    title=r['name']
    refs=f"[名录][{batch_refs[r['batch']]}]"
-   project=standalone.get(r['id'])
-   if project:
+   projects=standalone.get(r['id'],[])
+   for project in projects:
     view_url=f"https://raw.githack.com/ecojust/e-resource/{project['published_commit']}/projects/shanghai/{project['page']}"
-    refs+=' · '+link('公开模型',view_url)
-   elif r.get('photo_url'):refs+=' · 照片待核'
+    label=project['campus_building_number']+'号模型' if len(projects)>1 else '公开模型'
+    refs+=' · '+link(label,view_url)
+   if not projects and r.get('photo_url'):refs+=' · 照片待核'
    todo='待核外观／拆栋'
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
    if r['id'] in scope_reviews:
@@ -288,12 +315,13 @@ def build(reserved=()):
     if review['existing_models']:
      todo='已关联单体：'+'、'.join(m['id'] for m in review['existing_models'])+'；'+review['modeled_scope_or_gap']+'；未将整处名录判为完成'
     else:todo+='；'+review['split_review']['note']
-   if project:
+   if projects:
     if r['id'] not in scope_reviews:
-     title=project['title']
-     todo=project['modeled_scope']+project['remaining']
+     assert len(projects)==1, 'Multi-building site requires a shared scope review'
+     title=projects[0]['title']
+     todo=projects[0]['modeled_scope']+projects[0]['remaining']
     else:
-     todo=project['modeled_scope']+todo
+     todo=''.join(project['modeled_scope'] for project in projects)+todo
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']
    lines.append(f"|{cell(r['id'])}|{cell(title)}|{cell(r['address'])}|{refs}|{cell(todo)}|")
   lines+=['','</details>','']

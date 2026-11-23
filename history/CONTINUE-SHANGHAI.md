@@ -34,6 +34,8 @@
 
 [圣约翰大学思颜堂四十号楼草坪前廊](../projects/shanghai/st-johns-yen-hall-arcade.html)。草坪前十一开间三层、二层相接，红砖券、五行菱孔栏板、东段四幅透空女儿墙及三个踏步。两处地面站与两处校方航照共同量测，九个视角、八件下载。完整U形院落留在原城1435。 [固定工作版](https://raw.githack.com/ecojust/e-resource/9d86f6ebd6ea71265339d62155aa5dd04e2f9fbc/projects/shanghai/st-johns-yen-hall-arcade.html)
 
+[圣约翰大学思孟堂43号楼临河窗墙](../projects/shanghai/st-johns-mann-hall-river-front.html)。43号思孟堂临河十开间窗墙、楼梯塔圆窗、坡屋顶抬高段及北端折面券窗；三张校方日景、夜景和俯斜图可对照。 [固定工作版](https://raw.githack.com/ecojust/e-resource/36cecd7abb725c6b0662da01059d75a7ec6672b5/projects/shanghai/st-johns-mann-hall-river-front.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
