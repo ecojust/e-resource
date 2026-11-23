@@ -615,7 +615,7 @@ sh-historic-b3-106|沪西别墅东侧临弄山墙与跨层钢窗|愚园路1210�
 sh-historic-b3-107|愚园路1112弄20号北栋巷面与室内石阶、愚园路1112弄4号蒋光鼐旧居|愚园路1112弄4号，20号|[名录][3] · [20号模型](<https://raw.githack.com/ecojust/e-resource/5720ca6ee96af55ccaa433bdc796a8a18d5ca04b/projects/shanghai/yuyuan-1112-no20-stair-and-lane.html>) · [4号模型](<https://raw.githack.com/ecojust/e-resource/543d48aaf34cebd202376d6d5bf1d1c06bf08a68/projects/shanghai/yuyuan-1112-no4.html>)|20号临弄立面、弧形墙顶、洞窗与室内首跑水磨石梯、木扶手和信报箱，另附20号搪瓷门牌模型。立面与室内楼梯的两张照片分别定向，两组构件之间的距离和朝向尚待实地联测。4号另有独立模型。4号南侧凸翼、临弄窗列、两片曲线墙顶、屋面、绿色门牌、公告箱与院门。檐底按四个街景机位测至街面上11.83米。屋后轮廓与院内外地坪高差尚待实测。实测屋面与城内841号南栋重叠167.94平方米，旧城地物完整保留。北栋20号另有独立模型。
 sh-historic-b3-108|私立妇孺医院旧址临街楼梯间与阶梯钢窗|延安西路934号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/09c37a4d1f9fd358b7fd649be4b32f6958cba5ae/projects/shanghai/furu-hospital-stepped-stair-hall.html>)|临街楼梯间的四组阶梯钢窗、底层圆窗、混凝土遮檐、红砖墙和十一字竖排院名。各层高度为照片配准的条件尺度。院名按档案照片的位置逐字转写，历史字样的原笔形与材料仍待考证。院区其他楼翼和内部楼梯尚待测绘。
 sh-historic-b3-109|住宅|新华路200号|[名录][3] · 照片待核|待核外观／拆栋
-sh-historic-b3-110|住宅|新华路231号|[名录][3]|待核外观／拆栋
+sh-historic-b3-110|新华路231号住宅花园侧木格山墙与交叉瓦顶|新华路231号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/7cc8b7a20b1de24d4e655a5862b4c2c3fbc4f53d/projects/shanghai/xinhua-231-rong-garden-roof.html>)|南花园一侧突出的木格山墙、宽老虎窗与相交瓦脊。依据2023年发表的斜俯照片及2019、2025年两期正射影像，提供四个机位、八种下载。两期屋面都与原城市地块564相交，影像绝对定位误差为8.47米。树冠遮住侧后墙及部分檐边，首层窗数、隐蔽屋面和屋脊实测标高待查。
 sh-historic-b3-111|住宅|新华路329弄32号乙|[名录][3]|待核外观／拆栋
 sh-historic-b3-112|住宅|新华路329弄36号|[名录][3] · [公开模型](<https://raw.githack.com/ecojust/e-resource/01ea2a17f207755854c2bf0f05ed1203f48d2995/projects/shanghai/xinhua-329-no36-cake-villa.html>)|庭园入口、两侧十列十四行玻璃砖、三跨上廊、短横档错列的铁栏、侧转砖墙与可见瓦面。两张摄影位自渲、九个视角、八项下载。门高提供条件尺度。2019与2025年圆顶和城市粗模411只部分重合，门的绝对方位仍待核实。
 sh-historic-b3-113|住宅|新华路236号，248号，272弄2号、6号，294弄1号|[名录][3]|待核外观／拆栋
