@@ -30,8 +30,22 @@ def render(out):
         scene.render.resolution_x=round(item['width']*ratio);scene.render.resolution_y=round(item['height']*ratio)
         output=out/(item['name']+'.png');scene.render.filepath=str(output)
         bpy.ops.render.render(write_still=True)
+        # Measure the actual rendered PNG. A sky-only image can still have
+        # valid dimensions and a numerically correct projection matrix.
+        rendered = bpy.data.images.load(str(output), check_existing=False)
+        try:
+            import numpy as np
+            pixels = np.empty(len(rendered.pixels), dtype=np.float32)
+            rendered.pixels.foreach_get(pixels)
+            rgb = pixels.reshape(-1, 4)[:, :3]
+            low, high = np.percentile(rgb, [2,98], axis=0)
+            contrast = float(max(high - low))
+            if contrast < .035:
+                raise ValueError(('Render contains no detectable architecture', item['name'], contrast))
+        finally:
+            bpy.data.images.remove(rendered)
         report.append({'view':item['name'],'camera':camera.name,'width':scene.render.resolution_x,
-                       'height':scene.render.resolution_y,'file':output.name,'bytes':output.stat().st_size,
+                       'height':scene.render.resolution_y,'file':output.name,'bytes':output.stat().st_size,'percentile_contrast_linear':contrast,
                        'sha256':hashlib.sha256(output.read_bytes()).hexdigest()})
     (out/'nine-cameras.json').write_text(json.dumps({'engine':scene.render.engine,'samples':scene.cycles.samples,
         'registered_photo_cameras':[item['name'] for item in views if item.get('reference')],

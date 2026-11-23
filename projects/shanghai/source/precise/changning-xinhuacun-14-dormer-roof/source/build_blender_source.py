@@ -48,12 +48,19 @@ def calibrated_nodes(scene,create,raw):
     if len(views)!=9 or len({view['name'] for view in views})!=9:
         raise ValueError('Expected nine distinct Xinhua Village House 14 dormer roof viewpoints')
     stage=bpy.data.collections['Preview lighting and camera']
+    # The registered target sets the viewing direction and can be much closer
+    # than the building. Use mesh bounds to place the clipping planes.
+    stage_mesh_objects = [obj for obj in scene.objects if obj.type == 'MESH']
+    model_corners = [obj.matrix_world @ Vector(corner) for obj in stage_mesh_objects for corner in obj.bound_box]
+    if not model_corners:
+        raise ValueError('The editable scene contains no model geometry')
     for i,view in enumerate(views):
         title=view['label']
         cam=scene.camera if create and i==0 else bpy.data.objects.get(title)
         eye=Vector(view['eye'])
         target=Vector(view['target'])
         direction=(target-eye).normalized()
+        farthest_depth = max((corner - eye).dot(direction) for corner in model_corners)
         if create:
             if cam is None:
                 cam=bpy.data.objects.new(title,bpy.data.cameras.new(title))
@@ -70,11 +77,13 @@ def calibrated_nodes(scene,create,raw):
             cam.data.sensor_fit='HORIZONTAL'
             cam.data.lens=cam.data.sensor_width*(target-eye).length/view['width_m']
             cam.data.clip_start=.005
-            cam.data.clip_end=max(100.,2*(target-eye).length+view['width_m'])
+            cam.data.clip_end=max(100., 1.05 * farthest_depth + 1.)
             cam.data.shift_x=view.get('shift_x',0.)
             cam.data.shift_y=view.get('shift_y',0.)
             cam.data['width_px'],cam.data['height_px']=view['width'],view['height']
         bpy.context.view_layer.update()
+        if cam.data.clip_end <= farthest_depth:
+            raise ValueError(('Model lies beyond the camera far plane',title,farthest_depth,cam.data.clip_end))
         if (cam.location-eye).length>1e-4 or cam.data.sensor_fit!='HORIZONTAL':
             raise ValueError('Editable camera eye or sensor fit changed: '+title)
         if abs((target-eye).length*cam.data.sensor_width/cam.data.lens-view['width_m'])>.0001:
@@ -154,7 +163,7 @@ def verify(blend,raw,out):
             raise ValueError('Reopened Xinhua Village House 14 dormer roof camera does not project to the registered photograph')
         proof.setdefault('photographic_up_axes',{})[view['name']]=dict(reference=view['reference'],
             sensor_fit=cam.data.sensor_fit,expected=view['world_up'],reopened=actual_up,image_dimensions=[view['width'],view['height']],pixel_aspect=[render.pixel_aspect_x,render.pixel_aspect_y],
-            reprojected_samples=len(check),max_projection_error_px=max(check),maximum_whole_field_skew_px=skew_budget-.003)
+            far_plane_m=cam.data.clip_end,reprojected_samples=len(check),max_projection_error_px=max(check),maximum_whole_field_skew_px=skew_budget-.003)
     render.resolution_x,render.resolution_y=old_size
     render.pixel_aspect_x,render.pixel_aspect_y=old_aspect
     out.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
