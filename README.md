@@ -507,7 +507,7 @@
 |sh-historic-b5-xh-j-036-v|住宅|复兴中路1365-1373号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-037-v|住宅|肇嘉浜路604号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-038-v|住宅|乌鲁木齐路180-182弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-039-v|住宅|高安路77弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-039-v|高安路77号花园住宅|高安路77弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/1d04d19bd2a1cd3cdbd5261472a4f20b799ce567/projects/shanghai/gaoan-77-curved-veranda.html>)|已建折檐弧台、木拱、南侧柱廊、西侧烟囱和三处屋顶采光窗。后部进深、北侧门窗与独立门房待核。|
 |sh-historic-b5-xh-j-040-v|市文广局老干部活动中心|岳阳路44号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-041-v|君悦酒店|永嘉路624弄|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-042-v|上海戏曲艺术中心|岳阳路168弄|[名录][H5]|待核外观／拆栋|
