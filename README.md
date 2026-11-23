@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 306 处入口。最近接入[中一信托大楼北京东路正立面与银行大厅彩绘天棚](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 307 处入口。最近接入[盐业大楼北京东路280号门罩与石栏](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-salt-industry-bank-entrance&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][TD5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD2] · [来源、许可与更新规则][TD1]
 
-已交付的271项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的272项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 272 | 盐业大楼北京东路280号门罩与石栏 | 黄浦区／北京东路280号 | 制作中 | — | [市房屋管理局第四批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20200331/e3b99cf457ae48cab87ad5c02aa0fee3.html>)；另查其余街面窗列、后期加高屋顶及各时段机构名称。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -187,7 +183,7 @@
 |sh-historic-b4-007|浙江兴业银行其余街墙与底层|北京东路230号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|保留并另查角部底层商铺、两街其余立面、屋顶和邻屋。|
 |sh-historic-b4-008|中垦大楼255号门及其余街翼|北京东路239，255号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查同栋255号门、两翼和后部。|
 |sh-historic-b4-009|中一信托大楼后楼与厅室|北京东路270号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查后楼、产权内其他房间及银行大厅其余细节。|
-|sh-historic-b4-010|盐业大楼 /盐业银行|北京东路280号|[名录][H4] · 照片待核|待核外观／拆栋|
+|sh-historic-b4-010|盐业大楼街面其余开间与加高屋顶|北京东路280号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查其余街面窗列、后期加高屋顶及各时段机构名称。|
 |sh-historic-b4-011|上海洋行/ 上海商业储蓄银行|宁波路40、50号，江西中路368号|[名录][H4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-012|中央储蓄会/广东银行|天津路2号，江西中路349号|[名录][H4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-013|美丰银行|河南中路521-529号，宁波路180号|[名录][H4] · 照片待核|待核外观／拆栋|
@@ -3629,7 +3625,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；306处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中266件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；307处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中267件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3637,7 +3633,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增266处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增267处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3659,10 +3655,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，306处建筑与构件模型入口（40处既有＋266处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增266处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，307处建筑与构件模型入口（40处既有＋267处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增267处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（141处）
+### 黄浦区（142处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3809,6 +3805,7 @@
 | 浙江兴业银行（浙兴大楼）北京东路西端窗跨 | 2026-11-23 12:22:18 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-chekiang-industrial-bank-beijing-front&mode=overview) |
 | 中垦大楼北京东路239号东北转角门楼 | 2026-11-23 12:53:21 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongken-bank-239-corner&mode=overview) |
 | 中一信托大楼北京东路正立面与银行大厅彩绘天棚 | 2026-11-23 13:10:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview) |
+| 盐业大楼北京东路280号门罩与石栏 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-salt-industry-bank-entrance&mode=overview) |
 
 ### 徐汇区（55处）
 

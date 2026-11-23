@@ -1,3 +1,11 @@
+# 盐业大楼北京东路280号门罩与石栏
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-salt-industry-bank-entrance&mode=overview) · [单体旋转与下载](salt-industry-bank-entrance.html) · [来源与制作范围](source/precise/huangpu-salt-industry-bank-entrance/README.md) · [验收记录](data/audit/salt-industry-bank-entrance-v1/README.md)
+
+第四批4A010，北京东路280号。按2014年1月27日街照制作中央前伸门罩、圆柱与柱头、透孔石栏和中央圆牌；OSM 414733172对应原城718。
+
+近景 12,996 个三角面，远景 7,260 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 1,508,637 字节。上海主图现有 307 处独立入口，黄浦区 142 处。[资产清单](assets/models/candidates/huangpu-salt-industry-bank-entrance/manifest.json)
+
 # 中一信托大楼北京东路正立面与银行大厅彩绘天棚
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview) · [单体旋转与下载](central-trust-beijing-front.html) · [来源与制作范围](source/precise/huangpu-central-trust-beijing-front/README.md) · [验收记录](data/audit/central-trust-beijing-front-v1/README.md)
