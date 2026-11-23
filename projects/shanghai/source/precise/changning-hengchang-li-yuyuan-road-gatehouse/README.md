@@ -13,6 +13,8 @@
 
 两期的门楼西侧都保留一道浅浮雕盲拱。2015年和2021年的斜街视角露出了拱顶和北侧拱脚，其南侧轮廓被街边立柱遮住，模型以可见半边估算。它和更靠弄内的窄窗相隔约三米。更新后的酒红色折篷有四道活动弓、一根靠墙固定弓和两侧铰销。2020、2021年的东西向斜照可以交叉核对篷面轮廓。[背街侧的盲拱](measurements/west-return-blind-arch.json) · [折篷尺寸与重投影误差](measurements/refurbished-folding-awning.json)
 
+更新后的外门上沿约为5.09米，往里可见一道横向灰色垂面，与廊内较低的吊顶相接。入口近照和廊内反向照片分别给出梁腹的前后边线，以及灰板约3.04至3.13米的底缘。梁背的遮蔽部分按两侧墙和吊顶封合。[南侧门头的照片测点](measurements/entrance-soffit-photo-observations.json)
+
 ## 尺寸与坐标
 
 建筑坐标以街面西侧门墩底为原点。X沿街向东，Y指向弄内，Z向上。四期正射影像给出门楼正面宽约6.34米，街巷方向全长约16.2米。东侧第一段街屋沿街长约29.5米。2018年5312×2988原照经过两面透视校准，得到入口净宽约4.45米。新内廊的装饰墙净宽约3.98米、拱格约1.55米。这些尺寸属于摄影与航片估计，背面和远侧使用限定范围内的简化封合。[街面相机与误差](measurements/registered-street-camera.json) · [内廊量测](measurements/passage-2022-profile.json) · [街屋范围](measurements/entrance-and-first-east-roof.json)

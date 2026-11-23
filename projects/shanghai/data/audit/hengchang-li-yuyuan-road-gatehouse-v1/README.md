@@ -8,6 +8,7 @@
 | 门额和花叶山花 | 区府图37中选择28个花叶、茎蔓、中央卵盾和底面位置，在整栋实网中核对首个相交构件。[整栋门头复核](street-entrance-relief/whole-building-first-surfaces.json) |
 | 改造后的上窗 | 原照片的同一横向位置对照铭牌上沿和新窗下沿，换用各自年代的四扇窗位置。[窗台与铭牌](../../../source/precise/changning-hengchang-li-yuyuan-road-gatehouse/measurements/refurbished-window-and-tablet-clearance.json) |
 | 门楼西侧与折篷 | 两个年代各自检查西侧盲拱和独立侧窗。新折篷从东西三处斜拍核对，模型另检四道活动金属弓、铰销和固定弓与灰檐的净空。[两期正面与西侧图](street-entrance-relief/tower-and-west-return.jpg) · [折动弓架](awning/README.md) |
+| 外门和吊顶之间的横梁 | 区府图37的7条街向光线先命中梁腹；反向看街口的照片另核内侧垂面及下缘。图中上排5点在实网先碰横梁，报告依实记录。[南入口的两向实测](entrance-soffit/three-mesh-first-hits.json) |
 | 廊内两面展墙 | 2022年两站和2025年反向站各有独立成像矩阵，114处像点保留命中、误差与遮挡。[内廊实网首击](passage/three-mesh-passage-photo-observations.json) · [两期通视](passage/two-period-through-sightlines.json) |
 | 屋冠、临街瓦肩及蓝盖 | 四期正射、2018年斜街照片和从两侧观察的窗带。校核保留街树、超出本次范围的点和金属顶盖先于瓦面入射的结果。[屋面复核与投影图](roof-review/README.md) |
 
