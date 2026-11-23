@@ -40,9 +40,12 @@ def render(path,out,matrix,crop):
         lib=engine['make_library'](Path(t));painter=engine['MaterialPass'](lib,model[1],model[2])
         transforms,ranges,depths=engine['sky_maps'](model[0],lib,raster)
         lib.set_sky(engine['SAMPLES'],engine['DEPTH_RESOLUTION'],raster.ptr(transforms),raster.ptr(ranges),raster.ptr(depths))
-        projection=matrix.copy();projection[:2]+=.5*projection[2]
+        projection=matrix.copy()
+        projection[0]+=(.5-crop[0])*projection[2]
+        projection[1]+=(.5-crop[1])*projection[2]
+        local_frame=(0,0,crop[2]-crop[0],crop[3]-crop[1])
         width=round(690*(crop[2]-crop[0])/max(crop[2]-crop[0],crop[3]-crop[1]))
-        im,_,stats=runtime.sample_view(path,model,painter,lib,projection,crop,width,np.array([-.38,-.70,.61],dtype='float32'),None,2)
+        im,_,stats=runtime.sample_view(path,model,painter,lib,projection,local_frame,width,np.array([-.38,-.70,.61],dtype='float32'),None,2)
         im.save(out,quality=90)
     return dict(sha256=hashlib.sha256(out.read_bytes()).hexdigest(),size=list(im.size),foreground=stats['zbuffer_foreground_pixels'])
 WALL='ochre stippled roughcast';SLATE='weathered grey vents';STONE='brown dressed masonry'
