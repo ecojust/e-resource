@@ -522,7 +522,7 @@
 |sh-historic-b5-xh-j-052-v|住宅|武康路40弄5号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-053-v|住宅|安福路255号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-054-v|住宅|襄阳南路355号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-055-v|住宅|宛平路42号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-055-v|宛平路42号住宅|宛平路42号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/3472cbfdbf8a0144c8b22ce9b2ed8ee466b2099c/projects/shanghai/wanping-42-brick-window-bays.html>)|已建双色砖墙、四组折面凸窗、楼梯间窗裙、浮雕门楣及顶层格窗。隐蔽后墙、院内分栋和室内待核。|
 |sh-historic-b5-xh-j-056-v|福禄村|建国西路384弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-057-v|新兴盛里，永盛里|嘉善路117弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-058-v|顾德坊|襄阳北路68-72弄|[名录][H5] · 照片待核|待核外观／拆栋|
