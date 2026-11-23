@@ -13,7 +13,10 @@ HERE = Path(__file__).resolve().parent
 PROJECT = next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path[:0] = [str(HERE.parent/'measurements'),str(PROJECT/'source/precise/hongkou-general-post-office/source/common')]
 from fit_gallery import GalleryPlane
-from photo_architecture import Builder, Facade
+from photo_architecture import Builder as ArchitectureBuilder, Facade
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+import gallery_finishes
 
 ID = 'changning-sun-ke-villa-annex-gallery'
 SLUG = 'sun-ke-villa-annex-gallery'
@@ -24,9 +27,22 @@ PALETTE = {name:{'color':rgb,'roughness':rough} for name,rgb,rough in [
     (WALL,[.61,.48,.36],.90),(BEAM,[.30,.085,.040],.66),(TILE,[.47,.18,.095],.87),
     (EDGE,[.064,.061,.056],.55),(FLOOR,[.50,.43,.35],.83),
     (SHADOW,[.29,.225,.165],.95),(GLASS,[.11,.16,.17],.24),(STEEL,[.074,.067,.059],.54)]}
+PALETTE.update(gallery_finishes.PALETTE)
+PALETTE['patinated bronze boss']={'color':[.175,.113,.067],'roughness':.55,'metallic':.28}
+PALETTE['warm inset circle']={'color':[.54,.385,.245],'roughness':.65}
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in gallery_finishes.STEMS:
+            gallery_finishes.metric_uv(self.parts[-1])
+
+    def save(self,path,metadata=None):
+        ArchitectureBuilder.save(self,path,metadata)
+        return gallery_finishes.writer.embed_normals(path)
+
 META={'id':ID,'name':'孙科住宅附楼三券通道与七跨木廊','heritage_id':'sh-historic-b1-047',
       'address':'延安西路1262号（现番禺路60号园内）','viewer_page':SLUG+'.html','source':'https://m.thepaper.cn/baijiahao_14106378',
-      'photos_embedded':False,'geometry_license':'MIT','estimated':'立面来自修缮资料实拍，米制取条件尺度。裁切处、楼内及门卫室另记。'}
+      'camera_views':json.loads((HERE/'cameras.json').read_bytes()),'photos_embedded':False,'geometry_license':'MIT','texture_license':'MIT','scope':'附楼临院面可见段：七跨红木廊、三道扁券、方形双端通道、两级筒瓦屋顶与接水斗。','estimated':'立面来自修缮资料实拍，米制取条件尺度。裁切处、楼内及门卫室另记。'}
 ARCHES = [
     [(369,476),(385,466),(403,458),(422,453),(437,452),(455,454),(475,461),(487,467),(502,478)],
     [(542,475),(557,466),(576,460),(593,457),(608,456),(625,458),(641,464),(653,469),(663,476)],
@@ -85,6 +101,17 @@ def add_building(b,lod=False):
         b.box((x,depth/2,top/2),(.17,depth,top),SHADOW,label='Through passage/plastered cheek')
     b.box(((a+c)/2,depth/2,top+.07),(c-a,depth,.14),SHADOW,label='Through passage/flat soffit')
     b.box(((a+c)/2,depth/2,.025),(c-a,depth,.05),FLOOR,label='Through passage/threshold flags')
+    # Two soffit bands and three pairs of round wall details are visible from the park sign.
+    # Their function and exact metal composition are undocumented.
+    for along in [1.67,4.93]:
+        b.box(((a+c)/2,along,top-.037),(c-a,.17,.084),WALL,label='Through passage/cross soffit')
+    station=np.asarray(json.loads((HERE.parent/'measurements/passage-station.json').read_bytes())['projection'])
+    back_projection=np.linalg.inv(station[:,:3]);eye=-back_projection@station[:,3]
+    for i,uv in enumerate([(957,381),(972,381),(995,382),(958,397),(974,397),(993,400)]):
+        ray=back_projection@[*uv,1];centre=eye+ray*((c-.030-eye[0])/ray[0])
+        _,y,z=centre
+        b.tube([(c+.002,y,z),(c-.017,y,z)],.079,'patinated bronze boss',10 if lod else 20,'Through passage/round surround '+str(i+1))
+        b.tube([(c-.016,y,z),(c-.030,y,z)],.039,'warm inset circle',9 if lod else 16,'Through passage/round inset '+str(i+1))
     # Ground arcade is one walkable recess, with the entry visible behind the first arch.
     u0,u1=arch_shapes[0].bounds[0],arch_shapes[-1].bounds[2]
     arcdepth=2.08
@@ -106,7 +133,10 @@ def add_building(b,lod=False):
         face.box(u,(foot+top)/2,.15,top-foot,.16,0,BEAM,'Timber post '+str(i+1))
     face.box((posts[0]+posts[-1])/2,eaves-.10,posts[-1]-posts[0]+.17,.20,.23,.015,BEAM,'Continuous timber plate')
     for i,(a,c) in enumerate(zip(posts,posts[1:])):
-        low=(feet[i]+feet[i+1])/2+.055;high=low+.85
+        low=(feet[i]+feet[i+1])/2+.045
+        # Upper rails are read independently at the seven mid-spans.
+        px,py=[(409,376),(491,381),(571,386),(645,389),(711,393),(780,396),(843,399)][i]
+        high=plane.at_depth(px,py,-.02)[1]
         for z,h in [(low,.10),(high,.084)]:
             face.box((a+c)/2,z,c-a-.15,h,.089,0,BEAM,'Balcony rail bay '+str(i+1))
         n=[8,8,7,7,7,7,7][i]
@@ -121,9 +151,15 @@ def add_building(b,lod=False):
     for i,q in enumerate(doors[:3]):
         x0,z0,x1,z1=q.bounds
         b.box(((x0+x1)/2,gallery_depth+.28,(z0+z1)/2),(x1-x0+.02,.12,z1-z0+.02),STEEL,label='Gallery return/shaded doorway '+str(i+1))
-    for n,(x,y) in enumerate([(270,440),(885,440)]):
-        u=plane.x(x,y)
+    for n,(x,y) in enumerate([(270,440),(886.3,440)]):
+        u=plane.at_depth(x,y,-.067)[0]
         b.tube([(u,-.067,.14),(u,-.067,eaves-.38),(u,-.20,eaves-.28),(u,-.20,eaves-.12)],.058,EDGE,6 if lod else 10,'Eaves/downpipe '+str(n+1))
+    # Hopper below two unequal eaves. The collector and two branches recur in both photographs.
+    u=plane.at_depth(270,440,-.067)[0]
+    base=plane.at_depth(270,339,-.08)[1]
+    for z,w,h,depth_in in [(base+.12,.22,.24,.20),(base+.25,.31,.11,.23)]:
+        face.box(u,z,w,h,depth_in,.083,EDGE,'Stepped eaves/rainwater hopper')
+    b.tube([(u-.22,-.20,eaves-.18),(u-.22,-.14,base+.36),(u-.07,-.14,base+.29)],.050,EDGE,7 if lod else 12,'Stepped eaves/second inlet')
     shift=plane.x(247,291)
     add_roof(b,left-.06,shift,depth,eaves-.07,1.64,lod)
     add_roof(b,shift+.002,right+.13,depth,eaves+.033,1.92,lod)
