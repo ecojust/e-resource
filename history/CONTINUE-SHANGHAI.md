@@ -56,6 +56,8 @@
 
 [新华村14号楼的四座老虎窗与南侧瓦坡](projects/shanghai/xinhuacun-14-dormer-roof.html) · [固定制作版](https://raw.githubusercontent.com/ecojust/e-resource/99e2d9c0612045db115cacc5cedd30ac60d21a3b/projects/shanghai/xinhuacun-14-dormer-roof.html)
 
+亦村4号贺绿汀旧居院门及三孔山墙　[查看模型](../projects/shanghai/yicun-no4-garden-gate.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
