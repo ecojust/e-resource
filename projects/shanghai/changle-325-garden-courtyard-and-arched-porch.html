@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>长乐路325号院落券廊与弧窗三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">徐汇区 · 长乐路</p><h1>长乐路325号院落券廊与弧窗</h1></header>
+<main aria-label="长乐路325号院落券廊三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">十级石阶通向红瓦券廊。石栏下端立着浅盘，上端收为圆球。券内双扇玻璃的拉手、横锁和底夹可放大查看。院内另一侧是带弧形转角的窗墙。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/xuhui-changle-325-garden-courtyard-and-arched-porch/xuhui-changle-325-garden-courtyard-and-arched-porch-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>院内近照和街口远景均摄于2015年4月。街口方向主要看见弧窗所在的侧翼，玻璃门五金的尺寸取自院内近照。窗前高杆立在带斜肩的多面石座上。左窗上方的浅色弯管从墙面穿出，在檐底向右伸展。</p>
+<p><a target="_blank" rel="noopener" href="data/audit/changle-325-garden-courtyard-and-arched-porch-v1/registration/courtyard-stations-model.jpg">两处摄影站的模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/changle-325-garden-courtyard-and-arched-porch-v1/registration/courtyard-2015-model.jpg">放大院内模型图</a> · <a target="_blank" rel="noopener" href="data/audit/changle-325-garden-courtyard-and-arched-porch-v1/registration/street-april-2015-model.jpg">放大街口模型图</a></p>
+<p>院内照片由 Fayhoo 于2015年4月4日拍摄，采用 CC BY-SA 3.0 许可。街口视角依据百度地图2015年4月街景校准。这里的三张图均由模型渲染。</p>
+<p><a href="https://commons.wikimedia.org/wiki/Special:Redirect/page/39388838">Fayhoo 原照与署名</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> · <a href="https://map.baidu.com/">百度地图街景</a> · <a href="https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html">市房管局历史建筑登记</a> · <a href="http://sh.people.com.cn/n2/2024/0711/c134768-40909246.html">人民网长乐路报道</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/xuhui-changle-325-garden-courtyard-and-arched-porch/source/viewer.js" type="module"></script>
+</body></html>

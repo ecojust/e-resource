@@ -26,6 +26,101 @@ INTEGRATIONS = ROOT / 'projects/shanghai/data/candidate-city-integrations.json'
 MARKER = r'\n?<!-- district-candidates:[^>]+:start -->.*?<!-- district-candidates:[^>]+:end -->\n?'
 
 
+def verified_component_placement(project, placement, row, manifest):
+    """Match a separately published map component to its full-resolution source geometry."""
+    from hashlib import sha256
+    note = placement.get('derived_asset_note')
+    if not isinstance(note, dict) or note.get('method') != 'published-component-subset-v1':
+        return False
+    if note.get('work_commit') != row['published_commit'] or not placement.get('partial_model'):
+        return False
+    if placement.get('replacement_geometry') or any(placement['source_feature_ids'].values()):
+        return False
+    original = manifest['assets']
+    if placement.get('model_geometry_sha256') != {
+            key: original[role]['sha256'] for key, role in [('raw','raw'),('web','full'),('lod','lod')]}:
+        return False
+    def evidence(key):
+        ref = note[key]
+        path = Path(ref['file'])
+        if path.is_absolute() or '..' in path.parts or path.parts[:2] != ('data','audit'):
+            raise ValueError('Invalid component evidence path')
+        data = (project/path).read_bytes()
+        if sha256(data).hexdigest() != ref['sha256']:
+            raise ValueError('Component evidence hash mismatch')
+        return json.loads(data)
+    separation = evidence('separation')
+    original_mesh = evidence('encoding')
+    if separation.get('native_ids_hidden') != []:
+        return False
+    for key, role in [('web','full'),('lod','lod')]:
+        part = separation['map_meshes'][key]
+        asset = placement['assets'][key]
+        if not part['source_matched'] or part['complete_source'] != original_mesh[role]['source']['sha256']:
+            return False
+        if key == 'web' and part['complete_source'] != original['raw']['sha256']:
+            return False
+        if (part['packed'],part['component_triangles']) != (asset['sha256'],asset['triangles']):
+            return False
+        if not 0 < part['component_triangles'] < part['complete_triangles'] == original[role]['triangles']:
+            return False
+        if Path(asset['file']).parent != Path(placement['candidate_manifest']).parent:
+            return False
+        data = (project/asset['file']).read_bytes()
+        if len(data) != asset['bytes'] or sha256(data).hexdigest() != asset['sha256']:
+            return False
+    from hashlib import sha1
+    from base64 import b64decode
+    import gzip
+    tree_ref = note['work_tree']
+    tree_path = Path(tree_ref['file'])
+    if tree_path.is_absolute() or '..' in tree_path.parts or tree_path.parts[:2] != ('data','audit'):
+        return False
+    raw = (project/tree_path).read_bytes()
+    if sha256(raw).hexdigest() != tree_ref['sha256']:
+        return False
+    packet = json.loads(gzip.decompress(raw))
+    def git_object(kind, oid):
+        data = b64decode(packet['git_objects'][oid],validate=True)
+        if sha1(kind+b' '+str(len(data)).encode()+b'\0'+data).hexdigest() != oid:
+            raise ValueError('Corrupt published work tree')
+        return data
+    work = row['published_commit']
+    if packet['commit'] != work:
+        return False
+    tree = git_object(b'commit',work).splitlines()[0]
+    if not tree.startswith(b'tree '):
+        return False
+    top = tree[5:].decode()
+    cache = {}
+    def leaves(oid):
+        if oid not in cache:
+            data = git_object(b'tree',oid)
+            children = {}
+            start = 0
+            while start < len(data):
+                mid = data.index(b' ',start)
+                end = data.index(b'\0',mid)
+                children[data[mid+1:end].decode('utf8','surrogateescape')] = (data[start:mid],data[end+1:end+21].hex())
+                start=end+21
+            cache[oid] = children
+        return cache[oid]
+    master_manifest = Path(placement['candidate_manifest'])
+    files = [master_manifest,*[master_manifest.parent/original[role]['file'] for role in ('raw','full','lod')],
+             *[Path(placement['assets'][role]['file']) for role in ('web','lod')],
+             Path(note['separation']['file']),Path(note['encoding']['file'])]
+    for path in files:
+        node = top
+        for part in ('projects','shanghai',*path.parts):
+            mode,node = leaves(node)[part]
+        if mode not in (b'100644',b'100755'):
+            return False
+        data = (project/path).read_bytes()
+        if sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()!=node:
+            return False
+    return True
+
+
 def candidates():
     queue = json.loads((DATA / 'queue.json').read_text())
     viewers = {x['id']: x for x in json.loads((ROOT / 'projects/shanghai/data/model-viewers.json').read_text())}
@@ -85,7 +180,9 @@ def candidates():
             encoded = placement['assets'][key]
             path = str(Path(relative).parent/source['file'])
             if (encoded['file'],encoded['bytes'],encoded['sha256']) != (path,source['bytes'],source['sha256']):
-                raise ValueError('City placement differs from registered '+key+' asset: '+model_id)
+                if not verified_component_placement(project, placement, row, manifest):
+                    raise ValueError('City placement differs from registered '+key+' asset: '+model_id)
+                break
         result[model_id] = {'id':model_id,'name':manifest['name'],'district':viewer['district'],
                             'page':page,'published_commit':row['published_commit']}
     return list(result.values())
