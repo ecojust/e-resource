@@ -567,7 +567,7 @@
 |sh-historic-b5-xh-j-096-v|住宅|淮海中路1200弄|[名录][5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-097-v|住宅|永嘉路590弄、永嘉路588弄|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-098-v|住宅|长乐路327，329号|[名录][5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-099-v|住宅|长乐路335，337号|[名录][5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-099-v|长乐坊337号院门与相邻临街窗墙|长乐路335，337号|[名录][5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/e76ff9aa197a4f4d0c5dc0edcbc05d7efa7242cb/projects/shanghai/changle-337-courtyard-gate-and-street-house.html>)|已建337号绿牌院门、双开间绿窗与倾板、退进侧翼百叶罩与落水斗、三层高窗和瓦檐。同组335号院门和院内其余住宅待核，西端红木窗的折进深度、背墙及室内待实测。|
 |sh-historic-b5-xh-j-100-v|住宅|陕西南路214弄|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-101-v|住宅|常熟路139号|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-102-v|住宅|延庆路42号|[名录][5] · 照片待核|待核外观／拆栋|
