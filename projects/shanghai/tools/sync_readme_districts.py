@@ -390,6 +390,11 @@ def normalize_model_view_links(text, project=False):
     return text
 
 
+def district_model_row(name, date, links, project):
+    padding = ' ' if project else ''
+    return '|' + '|'.join(padding + value + padding for value in (name, date, links)) + '|'
+
+
 def render(text, items, times, project=False):
     text = normalize_model_view_links(text, project)
     text = text.replace('以下七个建筑模型均可独立预览', '下列早期模型均可独立预览')
@@ -477,7 +482,7 @@ def render(text, items, times, project=False):
             date = '未记录'
             if info.get('committer_date_utc'):
                 date = datetime.fromisoformat(info['committer_date_utc'].replace('Z', '+00:00')).astimezone(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
-            rows.append(f'| {name} | {date} | [查看网页]({route}) |')
+            rows.append(district_model_row(name, date, f'[查看网页]({route})', project))
         for item in group:
             record = times.get(item['id'], {})
             if item.get('published_commit') and record.get('commit') != item['published_commit']:
@@ -499,7 +504,7 @@ def render(text, items, times, project=False):
                     links += f" · {view['listed_year']} 年入录，约 {view['approximate_loss_year']} 年灭失，地点卡可查看历史照片复原"
                 else:
                     links += f" · {view['listed_year']} 年入录，约 {view['approximate_loss_year']} 年灭失，地点卡可查看出版画稿复原"
-            rows.append(f"| {name} | {date} | {links} |")
+            rows.append(district_model_row(name, date, links, project))
             placed.add(item['id'])
         parts[i] = block + '\n' + '\n'.join(rows) + '\n\n'
     assert counted_districts == set(counts), 'A district count heading is missing'
