@@ -19,3 +19,7 @@
 主图检查了两条街的 52 处地面、门槛与保留楼身位置，以及 14 栋邻屋。桌面鼠标和手机触屏均从地图标记进入本栋。十幅主图截图和六幅独立页截图记录了两侧近景、屋顶与远景。四件模型已从独立页逐件保存并校验，三档网格各经 227 条射线检查。窗深、屋顶条带及内侧接缝依照片估计。
 
 [打开城市主图](../../../index.html#landmark=huangpu-arnhold-building-southwest-corner&mode=overview) · [四川中路入口的地图近景](city-31279/map-sichuan-road-320-and-stone-arch.png) · [可编辑模型中的四字门楣](photo-recheck/sichuan-320-gold-door.png) · [九江路砖窗与深檐](city-31279/map-jiujiang-road-red-brick-bays-and-cornice.png) · [原照片、屋顶高度与网格复核](photo-recheck/README.md) · [逐图观察](city-31279/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/ffbc2abfea7f2a480cf8b4197220cd0fd3a55ee4/projects/shanghai/index.html#landmark=huangpu-arnhold-building-southwest-corner&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，9 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
