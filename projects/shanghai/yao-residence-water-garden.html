@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>姚氏住宅水庭转角与水平格栅三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 淮阴路200号</p><h1>姚氏住宅水庭转角与水平格栅</h1></header>
+<main aria-label="姚氏住宅水庭三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">姚氏住宅的水庭由白色水平格栅、暗红窗框及回折薄檐围合，石砌池沿沿窗前露台展开。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-yao-residence-water-garden/changning-yao-residence-water-garden-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>淮阴路姚氏住宅现为西郊宾馆4号楼。2017年报道的远景和2019年报道的近景都能认出浅帘大窗与两组五层白色格栅。取景名称采用报道年份，照片的拍摄日期待考。</p>
+<p><a target="_blank" rel="noopener" href="data/audit/yao-residence-water-garden-v1/registration/registered-garden.jpg">两个取景的模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/yao-residence-water-garden-v1/registration/garden2017-model.jpg">2017年报道的水池视角</a> · <a target="_blank" rel="noopener" href="data/audit/yao-residence-water-garden-v1/registration/whb2019-model.jpg">2019年报道的庭院视角</a></p>
+<p>两站共用约2.25米窗净高作为尺度。对照图采用原创模型渲染。原报道记1948年建造，其他资料另记1946年。</p>
+<p><a href="https://fgj.sh.gov.cn/yxlsjz/20200331/fe7b4d6f35774b708a2c5122849065bd.html">市房管局第一批名录</a> · <a href="https://www.jfdaily.com/wx/detail.do?id=65129">《解放日报》采访</a> · <a href="https://news.sina.cn/2017-09-16/detail-ifykyfwq7849691.d.html?vt=4">2017年转载照片</a> · <a href="https://wenhui.whb.cn/third/yidian/201907/11/276235.html">《文汇报》庭院照片</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-yao-residence-water-garden/source/viewer.js" type="module"></script>
+</body></html>
