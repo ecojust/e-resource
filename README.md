@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 317 处入口。最近接入[汉口路花园住宅临街错层楼梯窗](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 318 处入口。最近接入[汉口路花园住宅临街错层楼梯窗](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -571,7 +571,7 @@
 |sh-historic-b5-xh-j-100-v|住宅|陕西南路214弄|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-101-v|住宅|常熟路139号|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-102-v|住宅|延庆路42号|[名录][5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-103-v|住宅|襄阳南路313弄|[名录][5]|待核外观／拆栋|
+|sh-historic-b5-xh-j-103-v|襄阳南路313号修缮后住宅|襄阳南路313弄|[名录][5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xiangyang-313-restored-courtyard-fronts&mode=overview>)|已建313号院内三层住宅的南北院面、西折墙、二十格大窗、服务阳台、退台和平屋顶，并在主图原址更新3304号地物。东侧隐蔽开窗、初建屋面和室内仍待实测，相邻311号门与临街乔家栅另行核对。|
 |sh-historic-b5-xh-j-104-v|住宅|复兴西路299弄1号|[名录][5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-105-v|慎成里|永嘉路291弄1-90号（66号为区保）|[名录][5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-106-v|住宅|新乐路44号|[名录][5]|待核外观／拆栋|
@@ -3625,7 +3625,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；317处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中277件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；318处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中277件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3633,7 +3633,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增277处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增278处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3655,7 +3655,7 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，317处建筑与构件模型入口（40处既有＋277处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增277处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，318处建筑与构件模型入口（40处既有＋278处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增278处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
 ### 黄浦区（152处）
@@ -3817,7 +3817,7 @@
 | 九江路原教会学校入口与双山墙 | 2026-11-23 19:41:59 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview) |
 | 汉口路花园住宅临街错层楼梯窗 | 2026-11-23 20:23:17 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-bund-garden-residence-stair-bay&mode=overview) |
 
-### 徐汇区（55处）
+### 徐汇区（56处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310104&mode=walk)
 
@@ -3829,6 +3829,7 @@
 | 徐汇武康路129号二层住宅 | [2026-10-26 17:42:00](https://github.com/ecojust/e-resource/commit/b296b5ac4f68b4e6743f02fb2bb3c01091cab841) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-129&mode=walk) |
 | 徐汇武康路210号二层住宅 | [2026-10-26 20:39:46][R3] | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-wukang-210&mode=walk) |
 | 龙华塔 | [2026-10-27 01:37:07](https://github.com/ecojust/e-resource/commit/e501cc11f6c45bdd069d6ff88e870ea18c1bf93f) | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-longhua-pagoda&mode=walk) |
+| 襄阳南路313号住宅 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-xiangyang-313-restored-courtyard-fronts&mode=overview) |
 | 上海宋庆龄故居主楼 | 2026-10-29 21:05:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-soong-ching-ling-residence&mode=overview) |
 | 徐家汇藏书楼北楼（原藏书楼） | 2026-11-20 18:50:09 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zikawei-north-library&mode=overview) |
 | 中山医院3号楼（历史中央主楼） | 2026-11-20 18:53:03 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=xuhui-zhongshan-hospital-main-building&mode=overview) |

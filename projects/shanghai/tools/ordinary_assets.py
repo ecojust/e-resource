@@ -15,6 +15,7 @@ LIMIT=100_000_000
 CHECKS=('source_photos','identity_footprint','height_evidence','visible_facade_opening_grid','roof','texture_mapping_qa','geometry_proof','size_proof','browser_proof','uncertainty')
 SHA=re.compile(r'^[a-f0-9]{64}$')
 REMOTE_POLICY='remote-research-only-v1'
+REMOTE_PAIRED_POLICY='remote-observation-paired-materials-v1'
 LICENSED_PBR_POLICY='licensed-reference-procedural-pbr-v1'
 MATERIAL_ROLES={'basecolor','normal','orm'}
 def require(value,message):
@@ -38,12 +39,15 @@ def read(project,meta):
 def remote_reference_contract(row):
     """Explicit alternative to a redistributed photograph; never substitutes a material sample."""
     ident=row['id'];prefix='source/precise/'+ident+'/'
-    require(row.get('reference_policy')==REMOTE_POLICY,'Unknown ordinary reference policy')
+    require(row.get('reference_policy') in (REMOTE_POLICY,REMOTE_PAIRED_POLICY),'Unknown ordinary reference policy')
     require(row.get('source_photos')==[] and 'reference' not in row,
             'Remote research must not declare a local reference photograph')
     register=row.get('source_reference_register',{})
     require(descriptor(register)==prefix+'source-reference-register.json','Remote reference register must be model-local')
-    procedural_material_contract(row)
+    if row['reference_policy']==REMOTE_PAIRED_POLICY:
+        paired_material_contract(row)
+    else:
+        procedural_material_contract(row)
 
 def procedural_material_contract(row):
     prefix='source/precise/'+row['id']+'/'
@@ -69,10 +73,91 @@ def procedural_material_contract(row):
             and texture.get('expected_images')=={'raw':3,'web':3,'lod':3},'Original material image-count contract differs')
     require('photo_texture' not in row,'Original procedural PBR must not be represented as photographic texture')
 
+def paired_material_contract(row):
+    prefix = 'source/precise/' + row['id'] + '/'
+    images = row.get('material_images', [])
+    texture = row.get('material_texture', {})
+    require(texture.get('mode') == 'original-paired-basecolor-normal' and
+            texture.get('expected_images') == dict(raw=4, web=4, lod=4) and 'photo_texture' not in row,
+            'Expected original paired color and normal textures')
+    pairs = texture.get('surfaces', {})
+    require(isinstance(pairs, dict) and len(pairs) == 2 and all(isinstance(n, str) and n for n in pairs),
+            'Expected two named procedural materials')
+    for surface in pairs.values():
+        require(all(type(surface.get(k)) in (int,float) and 0 <= surface[k] <= 1 for k in ('roughness','metallic')),
+                'Paired surface must declare scalar roughness and metallic factors')
+    require(len(images) == 4 and len({v['sha256'] for v in images}) == 4 and len({v['file'] for v in images}) == 4 and
+            {(v.get('material'),v.get('role')) for v in images} == {(name,role) for name in pairs for role in ('basecolor','normal')},
+            'Each named material requires its own color and normal')
+    for v in images:
+        require(descriptor(v).startswith(prefix+'source/') and v['file'].endswith('.png') and
+                v.get('kind') == 'procedural_material' and v.get('embedded_as_texture') is True and v.get('license') == 'MIT',
+                'Invalid paired procedural image declaration')
+        require(descriptor(v.get('generator',{})).startswith(prefix+'source/') and v['generator']['file'].endswith('.py'),
+                'Model-local procedural generator required')
+        require(isinstance(v.get('pixels'),list) and len(v['pixels'])==2 and all(type(n) is int and 0<n<=4096 for n in v['pixels']),
+                'Invalid paired material pixel dimensions')
+        require(all(isinstance(v.get(k),str) and v[k].strip() for k in ('author','limitations','source','license_url')),
+                'Missing paired material authorship')
+        url(v['source']);url(v['license_url'])
+    require(descriptor(texture.get('model_license',{})) == prefix+'SOURCES-LICENSE.md' and
+            descriptor(texture.get('asset_manifest',{})) == 'assets/models/candidates/'+row['id']+'/manifest.json',
+            'Model-local authorship record and four-role manifest required')
+
+
+def verify_paired_attribution(project, row):
+    texture=row['material_texture']
+    license_text=read(project,texture['model_license']).decode()
+    manifest=json.loads(read(project,texture['asset_manifest']))
+    require('MIT' in license_text and manifest.get('geometry_license') == manifest.get('texture_license') == 'MIT' and
+            manifest.get('id') == manifest.get('model_id') == row['id'] and manifest.get('photos_embedded') is False,
+            'Model license or attribution manifest differs')
+    for ordinary,role in [('raw','raw'),('web','full'),('lod','lod'),('native','native')]:
+        asset=manifest['assets'][role]
+        require(descriptor(asset)==PurePosixPath(row['assets'][ordinary]['file']).name and
+                all(asset[k]==row['assets'][ordinary][k] for k in ('sha256','bytes')),
+                'Published four-role source differs from the ordinary asset: '+ordinary)
+
+
+def verify_paired_slots(doc, images, row):
+    textures=doc.get('textures',[])
+    surfaces=row['material_texture']['surfaces']
+    expected={(v['material'],v['role']):v['sha256'] for v in row['material_images']}
+    require(len(images)==4 and set(images)==set(expected.values()), 'Embedded procedural images differ')
+    found=set()
+    for i,mat in enumerate(doc.get('materials',[])):
+        pbr=mat.get('pbrMetallicRoughness',{})
+        name=mat.get('name','')
+        require('metallicRoughnessTexture' not in pbr and 'occlusionTexture' not in mat and 'emissiveTexture' not in mat,
+                'Paired material policy has no ORM or emissive texture')
+        slots={'basecolor':pbr.get('baseColorTexture'),'normal':mat.get('normalTexture')}
+        if not any(slot is not None for slot in slots.values()):
+            continue
+        require(name in surfaces and name not in found and all(isinstance(s,dict) for s in slots.values()),
+                'Paired original material slots differ')
+        require(abs(pbr.get('roughnessFactor',1)-surfaces[name]['roughness'])<1e-6 and
+                abs(pbr.get('metallicFactor',1)-surfaces[name]['metallic'])<1e-6,
+                'Scalar material factors changed')
+        used=[pr for m in doc.get('meshes',[]) for pr in m['primitives'] if pr.get('material')==i]
+        require(used and all('TEXCOORD_0' in pr.get('attributes',{}) for pr in used),
+                'Original procedural surface is missing a real UV-bearing primitive')
+        for role,slot in slots.items():
+            require(type(slot.get('index')) is int and 0<=slot['index']<len(textures) and slot.get('texCoord',0)==0,
+                    'Invalid paired texture index or UV set')
+            tex=textures[slot['index']]
+            index=tex.get('source')
+            require(type(index) is int and 0<=index<len(images) and images[index]==expected[name,role],
+                    'Embedded image assigned to the wrong material or slot')
+            sampler=doc['samplers'][tex['sampler']] if 'sampler' in tex else {}
+            require(sampler.get('wrapS',10497)==sampler.get('wrapT',10497)==10497, 'Paired textures require repeat wrapping')
+        found.add(name)
+    require(found==set(surfaces), 'A named procedural surface is unused')
+
+
 def verify_reference_register(project,row):
     register=json.loads(read(project,row['source_reference_register']))
     require(register.get('schema')=='building-reference-register-v1'
-            and register.get('model_id')==row['id'] and register.get('reference_policy')==REMOTE_POLICY,
+            and register.get('model_id')==row['id'] and register.get('reference_policy')==row['reference_policy'],
             'Remote reference register identity differs')
     refs=register.get('references')
     require(isinstance(refs,list) and 0<len(refs)<=32,'Remote reference register is empty or oversized')
@@ -117,7 +202,7 @@ def record_contract(row,districts,*,candidate_only=False):
     require(re.fullmatch(r'building:[a-f0-9-]{36}',owner.get('feature_key','')) and re.fullmatch(r'\d+-\d+-\d+',owner.get('macro_id','')),'Invalid ordinary macro/source owner')
     for field in ('baseline_configuration_sha256','baseline_ready_sha256','baseline_feature_table_sha256','baseline_near_sha256'):
         require(SHA.fullmatch(str(owner.get(field,''))),'Missing ordinary baseline hash: '+field)
-    if row.get('reference_policy')==REMOTE_POLICY:
+    if row.get('reference_policy') in (REMOTE_POLICY,REMOTE_PAIRED_POLICY):
         remote_reference_contract(row)
     else:
         require(row.get('reference_policy') in (None,'local-licensed-reference-v1',LICENSED_PBR_POLICY),'Unknown ordinary reference policy')
@@ -160,7 +245,9 @@ def glb_images(data):
     return doc,images
 
 def verify_assets(project,row):
-    remote=row.get('reference_policy')==REMOTE_POLICY
+    paired=row.get('reference_policy')==REMOTE_PAIRED_POLICY
+    remote=paired or row.get('reference_policy')==REMOTE_POLICY
+    if paired:verify_paired_attribution(project,row)
     procedural=remote or row.get('reference_policy')==LICENSED_PBR_POLICY
     if remote:verify_reference_register(project,row)
     else:
@@ -180,6 +267,13 @@ def verify_assets(project,row):
         doc,images=glb_images(data)
         expected=row.get('material_texture' if procedural else 'photo_texture',{}).get('expected_images',{}).get(role)
         require(type(expected)is int and len(images)==expected and set(images)<=set(embedded),'Ordinary embedded image count/original bytes differ: '+role)
+        if paired:
+            verify_paired_slots(doc,images,row)
+            # Some production encoders omit the optional glTF asset.copyright.
+            # The exact four delivered files are bound to the public MIT source record above.
+            if role=='raw' or 'copyright' in doc['asset']:
+                require('MIT' in doc['asset'].get('copyright',''), 'Declared geometry attribution differs')
+            continue
         if procedural:
             require(set(images)==set(embedded),'Original PBR must embed each of its three declared images')
             used_slots=set()

@@ -38,7 +38,11 @@ def ordinary_revision_owner(manifest, path, ordinary_by_id):
         raise ValueError('Ordinary revision model ID differs: ' + path)
     if path != f'assets/models/candidates/{model_id}/manifest.json' or model_id not in ordinary_by_id:
         raise ValueError('Ordinary revision has no matching directory record: ' + path)
-    row = ordinary_by_id[model_id]
+    return matching_ordinary_owner(manifest, path, ordinary_by_id[model_id])
+
+
+def matching_ordinary_owner(manifest, path, row):
+    model_id = row['id']
     role_map = {'raw': 'raw', 'full': 'web', 'lod': 'lod', 'native': 'native'}
     candidates = manifest.get('assets', {})
     catalog = row.get('assets', {})
@@ -67,6 +71,30 @@ def ordinary_revision_owner(manifest, path, ordinary_by_id):
             or ('source_local_id' in manifest and manifest['source_local_id'] != local_id)):
         raise ValueError('Ordinary revision source ownership differs: ' + path)
     return {'id': model_id, 'manifest': path, 'source_key': key, 'source_local_id': local_id}
+
+
+def overview_replacement_owner(manifest, path, ordinary_by_id, landmark_rows):
+    model_id = manifest['id']
+    if (manifest.get('model_id') != model_id or
+            path != f'assets/models/candidates/{model_id}/manifest.json' or
+            manifest.get('map_replacement') is not True or manifest.get('walk_integration') is not False):
+        raise ValueError('Invalid map replacement or walking declaration: ' + path)
+    row = ordinary_by_id.get(model_id)
+    landmark = next((item for item in landmark_rows if item['id'] == model_id), None)
+    if row is None or landmark is None or row.get('accepted') is not True or landmark.get('accepted') is not True:
+        raise ValueError('Overview replacement requires accepted matching ordinary registration: ' + path)
+    for item in (row, landmark):
+        nav = item.get('navigation', {})
+        if (nav.get('listed') is not True or nav.get('mode') != 'overview' or
+                'walkStart' in item or 'walkStart' in nav or 'bearing' in nav):
+            raise ValueError('Overview replacement contradicts its navigation record: ' + path)
+        owner = item['owner']
+        if (not manifest.get('source_owner') or manifest['source_owner'] != owner['feature_key'] or
+                type(manifest.get('source_local_id')) is not int or manifest['source_local_id'] != owner['feature_local_id']):
+            raise ValueError('Overview replacement owner differs: ' + path)
+    result = matching_ordinary_owner(manifest, path, row)
+    matching_ordinary_owner(manifest, path, landmark)
+    return result
 
 
 def build(project):
@@ -115,6 +143,10 @@ def build(project):
    existing=next(m for m in models if m['id']==owner['id'])
    existing['registered_revision']=owner
    continue
+  if d.get('map_replacement') is True and d.get('walk_integration') is False:
+   overview_replacement_owner(d,path,ordinary_by_id,read('data/landmarks.json'))
+   assert any(row['id']==d['id'] and row['href'].endswith('&mode=overview') for row in nav)
+   integrated_previews.append({'id':d['id'],'manifest':path});continue
   if d.get('map_replacement') or d.get('walk_integration'):
    assert d.get('map_replacement') is True and d.get('walk_integration') is True and d['id'] in {m['id'] for m in models} and d['id'] in {r['id'] for r in nav}, 'Integrated preview lacks registered model/navigation'
    integrated_previews.append({'id':d['id'],'manifest':path});continue

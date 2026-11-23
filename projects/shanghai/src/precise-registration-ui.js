@@ -30,6 +30,12 @@ export function walkingPose(place) {
   if (place.kind === 'historical-site') return null;
   if (place.kind === 'building') {
     if (place.navigation?.listed !== true) return null;
+    if (place.navigation.mode === 'overview') {
+      if ('walkStart' in place.navigation || 'bearing' in place.navigation || 'walkStart' in place) {
+        throw Error('Overview-only ordinary navigation must not specify a walking pose');
+      }
+      return null;
+    }
     const {walkStart, bearing} = place.navigation;
     if (!Array.isArray(walkStart) || walkStart.length !== 2 || !walkStart.every(Number.isFinite)
       || !Number.isFinite(bearing)) throw Error('Ordinary navigation lacks a reviewed walking pose');

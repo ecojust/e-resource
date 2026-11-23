@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def render(root: Path = ROOT) -> str:
-    from sync_readme_districts import candidates
+    from sync_readme_districts import candidates, ordinary_view_mode
 
     base = json.loads((root / 'data/landmarks.json').read_text())
     integration = json.loads((root / 'data/candidate-city-integrations.json').read_text())
@@ -21,7 +21,7 @@ def render(root: Path = ROOT) -> str:
     records = base + additions
     integrated_ids = {item['id'] for item in additions}
     assert len({p['id'] for p in records}) == len(records), 'Duplicate global destination IDs'
-    assert len(base) == 40
+    ordinary_modes = {item['id']: ordinary_view_mode(item) for item in base}
     viewers = {p['id']: p for p in json.loads((root / 'data/model-viewers.json').read_text())}
     candidates_by_id = {p['id']: p for p in candidates()}
     assert integrated_ids == set(candidates_by_id), 'Every delivered candidate must appear in the global directory'
@@ -43,15 +43,16 @@ def render(root: Path = ROOT) -> str:
             ident = item['id']
             integrated = ident in integrated_ids
             viewer = viewers.get(ident, candidates_by_id.get(ident, {}))
-            href = 'index.html#landmark=' + quote(ident, safe='') + ('&mode=overview' if integrated else '&mode=walk')
+            view_mode = 'overview' if integrated else ordinary_modes[ident]
+            href = 'index.html#landmark=' + quote(ident, safe='') + '&mode=' + view_mode
             description = (viewer.get('description') or item.get('architecture_style') or ('近似定位的建筑外观模型；尺寸与未见细节含估计。' if integrated else '逐栋建筑外观模型。'))
             historical = item.get('kind') == 'historical-site'
             location_note = '历史原址 · 近似定位' if historical else '近似定位' if integrated else '城市地标'
-            actions = [f'<a href="{esc(href, quote=True)}">{"当代地图原址" if historical else "全局查看" if integrated else "进入漫游"} ↗</a>']
+            actions = [f'<a href="{esc(href, quote=True)}">{"当代地图原址" if historical else "全局查看" if view_mode == "overview" else "进入漫游"} ↗</a>']
             if integrated and item.get('navigation', {}).get('listed'):
                 walk = 'index.html#landmark=' + quote(ident, safe='') + '&mode=walk'
                 actions.append(f'<a href="{esc(walk, quote=True)}">室外漫游 ↗</a>')
-            viewer_page = viewer.get('page') or item.get('standalone_page')
+            viewer_page = viewer.get('page') or item.get('standalone_page') or item.get('viewer_page')
             if viewer_page:
                 assert viewer_page.endswith('.html') and '/' not in viewer_page, 'Viewer must be a project page'
                 actions.append(f'<a href="{esc(viewer_page, quote=True)}">{"查看历史立面" if historical else "单体预览"} ↗</a>')

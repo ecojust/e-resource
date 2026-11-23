@@ -97,7 +97,10 @@ export function validateMacroIndex(index, entry, registry, districts) {
       && row.lng === row.anchor[0] && row.lat === row.anchor[1] && bounds(row.bbox)
       && Number.isFinite(row.height_m) && row.height_m > 0 && typeof row.height_estimated === 'boolean', 'Invalid anchor/height metadata');
     ok(typeof row.navigation?.listed === 'boolean', 'Navigation inclusion must be explicit');
-    if (row.navigation.listed) ok(Array.isArray(row.navigation.walkStart) && row.navigation.walkStart.length === 2
+    if (row.navigation.mode === 'overview') {
+      ok(row.navigation.listed === true && !('walkStart' in row.navigation) && !('bearing' in row.navigation)
+        && !('walkStart' in row), 'Overview-only ordinary record declares a walking pose');
+    } else if (row.navigation.listed) ok(Array.isArray(row.navigation.walkStart) && row.navigation.walkStart.length === 2
       && row.navigation.walkStart.every(Number.isFinite) && Number.isFinite(row.navigation.bearing), 'Curated navigation lacks a reviewed pose');
     fileMetadata(web, 100000000); fileMetadata(lod, 100000000);
     ok(row.model === web.file && row.lod_model === lod.file && row.web_sha256 === web.sha256

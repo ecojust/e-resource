@@ -14,7 +14,7 @@ import subprocess
 import tempfile
 
 from ordinary_assets import inspect as inspect_ordinary
-from restoration_progress import candidate_status_fields, ordinary_revision_owner
+from restoration_progress import candidate_status_fields, ordinary_revision_owner, overview_replacement_owner
 
 
 def require(value, message):
@@ -119,6 +119,13 @@ def build(project, output):
             owner = joined.get(revision['source_key'])
             require(owner and owner['model_id'] == revision['id'] and owner['local_id'] == revision['source_local_id'],
                     'Ordinary revision does not match the verified replacement registry')
+            continue
+        if candidate.get('map_replacement') is True and candidate.get('walk_integration') is False:
+            registered = overview_replacement_owner(candidate, name, ordinary['records'], landmarks)
+            owner = joined.get(registered['source_key'])
+            require(owner and owner['model_id'] == registered['id'] and owner['local_id'] == registered['source_local_id'],
+                    'Overview-only ordinary building lacks its verified replacement registry owner')
+            integrated_previews.append({'id': candidate['id'], 'manifest': name, 'source_key': registered['source_key']})
             continue
         if candidate.get('map_replacement') or candidate.get('walk_integration'):
             require(candidate.get('map_replacement') is True and candidate.get('walk_integration') is True, 'Partial candidate integration declaration')

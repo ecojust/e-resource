@@ -1,9 +1,9 @@
-import { createShanghaiScene } from './map-scene.js?v=bund-garden-residence-stair-bay-v1-owner-index-v1-taiwan-facade-v1-bridge-walk-v1';
+import { createShanghaiScene } from './map-scene.js?v=bund-garden-residence-stair-bay-v1-owner-index-v1-taiwan-facade-v1-bridge-walk-v1&xiangyang313-ordinary=1';
 import { WalkController } from './walk-controller.js';
 import {historicalSiteCaption,setupHistoricalView} from './historical-view.js?v=bund-garden-residence-stair-bay-v1';
 import { districtAt } from './geography.js';
-import { placeDescription, walkingPose } from './precise-registration-ui.js?v=bund-garden-residence-stair-bay-v1';
-import { readVerifiedBytes } from './ordinary-building-catalog.js?v=ordinary-metadata-sha-v1';
+import { placeDescription, walkingPose } from './precise-registration-ui.js?v=bund-garden-residence-stair-bay-v1&ordinary-overview=1';
+import { readVerifiedBytes } from './ordinary-building-catalog.js?v=ordinary-metadata-sha-v1&xiangyang313-ordinary=1';
 import { resolveNavigationRoute } from './landmark-navigation.js';
 import {mergeCandidateCityModels} from './candidate-city-integrations.js?v=bund-garden-residence-stair-bay-v1-bridge-walk-v1';
 import {candidateOverviewCamera,OVERVIEW_CAMERA_RESET} from './candidate-overview-camera.js?v=jewish-club-courtyard-v1-riyue-courtyard-v1-yongjia-porch-view-v1-shangfang-gate-view-v1';
@@ -110,7 +110,7 @@ async function selectPlace(place, {mode: requestedMode} = {}) {
   const pose=walkingPose(place);
   if(!pose){
     // A selected approximate placement is still a shareable global destination.
-    if(place.city_integration||place.kind==='historical-site')history.replaceState(null,'',`#landmark=${encodeURIComponent(place.id)}&mode=overview`);
+    if(place.city_integration||place.kind==='historical-site'||(place.kind==='building'&&place.navigation?.mode==='overview'))history.replaceState(null,'',`#landmark=${encodeURIComponent(place.id)}&mode=overview`);
     if(mobile())togglePanel(false);
     showOverview({...place,overviewZoom:place.overviewZoom??18.2});return;
   }

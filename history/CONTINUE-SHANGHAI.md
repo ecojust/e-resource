@@ -10,6 +10,8 @@
 
 [长乐坊337号院门与相邻临街窗墙](../projects/shanghai/changle-337-courtyard-gate-and-street-house.html)。337号院门与窗墙已独立发布，名录已链接30项。
 
+[襄阳南路313号院内住宅](../projects/shanghai/xiangyang-313-restored-courtyard-fronts.html)已在原地物3304更新，优秀历史建筑名录已链接31项。
+
 当前主图已更新第 282 项汉口路花园住宅临街错层楼梯窗，共有 317 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/bund-garden-residence-stair-bay-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 283 项旗昌洋行福州路三开间石墙与尖券窗。

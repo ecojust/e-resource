@@ -101,22 +101,40 @@ def integrations():
     return {item['id']: item for item in items}
 
 
+
+def ordinary_view_mode(row):
+    """A normal catalog destination may be listed without a surveyed walk pose."""
+    navigation = row.get('navigation') or {}
+    if navigation.get('mode') == 'overview':
+        if (navigation.get('listed') is not True or 'walkStart' in row
+                or 'walkStart' in navigation or 'bearing' in navigation):
+            raise ValueError('Conflicting overview-only navigation: ' + row['id'])
+        return 'overview'
+    if not row.get('walkStart'):
+        raise ValueError('Ordinary destination has no walk start or overview declaration: ' + row['id'])
+    return 'walk'
+
 @lru_cache(maxsize=1)
 def model_view_routes():
     """Use current city registration to route each historical standalone page."""
     base = json.loads((ROOT / 'projects/shanghai/data/landmarks.json').read_text())
     added = list(integrations().values())
-    base_ids = {item['id'] for item in base}
+    base_modes = {item['id']: ordinary_view_mode(item) for item in base}
     records = {item['id']: item for item in base + added}
-    routes = {ident: CURRENT + f"index.html#landmark={ident}&mode={'walk' if ident in base_ids else 'overview'}" for ident in records}
+    routes = {ident: CURRENT + f"index.html#landmark={ident}&mode={base_modes.get(ident, 'overview')}" for ident in records}
     pages = {}
     for item in added:
         pages[item['individual_page']] = routes[item['id']]
     for item in json.loads((ROOT / 'projects/shanghai/data/model-viewers.json').read_text()):
-        if item.get('kind') == 'candidate' and item['id'] in routes:
+        if item['id'] in routes and (item.get('kind') == 'candidate' or base_modes.get(item['id']) == 'overview'):
             page, route = item['page'], routes[item['id']]
             assert page not in pages or pages[page] == route, 'Ambiguous model page'
             pages[page] = route
+    for item in base:
+        page = item.get('viewer_page')
+        if page and base_modes[item['id']] == 'overview':
+            assert page not in pages or pages[page] == routes[item['id']]
+            pages[page] = routes[item['id']]
     assert all(page.endswith('.html') and '/' not in page for page in pages)
     return routes, pages
 
@@ -210,8 +228,9 @@ def render(text, items, times, project=False):
     old_city_ids = re.findall(r'#landmark=([^&]+)&mode=walk', section)
     base = json.loads((ROOT / 'projects/shanghai/data/landmarks.json').read_text())
     base_ids = {item['id'] for item in base}
-    assert len(old_city_ids) == len(set(old_city_ids)) == len(base_ids) == 40, 'Expected 40 existing city destinations'
-    assert set(old_city_ids) == base_ids
+    walk_ids = {item['id'] for item in base if ordinary_view_mode(item) == 'walk'}
+    overview_ordinary = {item['id']: item for item in base if item['id'] not in walk_ids}
+    assert len(old_city_ids) == len(set(old_city_ids)) and set(old_city_ids) == walk_ids, 'Original walking rows differ from registered walking poses'
     for ident, revision in ordinary_revisions().items():
         record = times.get(ident, {})
         commit = revision.get('published_commit')
@@ -235,7 +254,9 @@ def render(text, items, times, project=False):
     latest = next(reversed(city.values())) if city else base[-1]
     if revision_id:
         latest = next(row for row in [*base, *city.values()] if row['id'] == revision_id)
-    latest_mode = 'overview' if latest['id'] in city else 'walk'
+    if latest_job.get('id') in overview_ordinary:
+        latest = overview_ordinary[latest_job['id']]
+    latest_mode = 'overview' if latest['id'] in city or latest['id'] in overview_ordinary else 'walk'
     action = '最近细化' if revision_id else '最近接入'
     latest_url = f"{CURRENT}index.html#landmark={latest['id']}&mode={latest_mode}"
     state_path = 'CURRENT_STATE.md' if project else 'projects/shanghai/CURRENT_STATE.md'
@@ -249,7 +270,8 @@ def render(text, items, times, project=False):
     placement = 'data/candidate-city-integrations.json' if project else 'projects/shanghai/data/candidate-city-integrations.json'
     archives = sum(row.get('kind') == 'historical-site' for row in city.values())
     archive_note = f'其中 {archives} 处为历史原址，可在地点卡中打开独立历史模型。' if archives else ''
-    intro = f'<!-- district-candidates:summary:start -->\n**汇总：16区，{len(base_ids) + len(city)}处建筑与构件模型入口（{len(base_ids)}处既有＋{len(city)}处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原{len(base_ids)}处保留室外漫游；新增{len(city)}处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。{archive_note}入口随master更新。[定位依据]({placement}) · [候选版本时间]({evidence})。\n<!-- district-candidates:summary:end -->\n'
+    overview_total = len(city) + len(overview_ordinary)
+    intro = f'<!-- district-candidates:summary:start -->\n**汇总：16区，{len(base_ids) + len(city)}处建筑与构件模型入口（{len(walk_ids)}处既有＋{overview_total}处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原{len(walk_ids)}处保留室外漫游；新增{overview_total}处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。{archive_note}入口随master更新。[定位依据]({placement}) · [候选版本时间]({evidence})。\n<!-- district-candidates:summary:end -->\n'
     parts[0] = parts[0].rstrip() + '\n\n' + intro + '\n'
     placed, counted_districts = set(), set()
     for i in range(1, len(parts)):
@@ -260,7 +282,9 @@ def render(text, items, times, project=False):
         counted_districts.add(district)
         parts[i] = f'### {district}（{counts[district]}处）\n' + body
         group = [item for item in items if item['district'] == district]
-        if not group:
+        ordinary_group = [row for row in overview_ordinary.values()
+                          if district_names[str(row['districtId'])] == district]
+        if not group and not ordinary_group:
             continue
         block = parts[i].rstrip()
         for obsolete in (
@@ -271,6 +295,14 @@ def render(text, items, times, project=False):
         if '| 主要建筑 |' not in block:
             block += '\n\n| 主要建筑 | 模型版本提交（UTC+8） | 直接查看 |\n|---|---|---|'
         rows = []
+        for row in ordinary_group:
+            name = row['name'].replace('|', '／')
+            route = CURRENT + 'index.html#landmark=' + row['id'] + '&mode=overview'
+            info = times.get(row['id'], {})
+            date = '未记录'
+            if info.get('committer_date_utc'):
+                date = datetime.fromisoformat(info['committer_date_utc'].replace('Z', '+00:00')).astimezone(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
+            rows.append(f'| {name} | {date} | [查看网页]({route}) |')
         for item in group:
             record = times.get(item['id'], {})
             if item.get('published_commit') and record.get('commit') != item['published_commit']:
@@ -298,14 +330,14 @@ def render(text, items, times, project=False):
     assert counted_districts == set(counts), 'A district count heading is missing'
     assert placed == set(city), 'Candidate without matching district section'
     updated_section = ''.join(parts).rstrip()
-    assert set(re.findall(r'#landmark=([^&]+)&mode=overview', updated_section)) == set(city)
+    assert set(re.findall(r'#landmark=([^&]+)&mode=overview', updated_section)) == set(city) | set(overview_ordinary)
     result = before + HEADING + updated_section + '\n\n## ' + after
     # Keep the current overview prose in step with the generated district table.
     # Match these specific current-summary sentences, not historical model data.
     result = re.sub(r'全市\d+区底图可浏览；\d+处建筑与构件模型已归入按区目录', f'全市{len(counts)}区底图可浏览；{len(base_ids) + len(city)}处建筑与构件模型已归入按区目录', result)
     result = re.sub(r'其中\d+件新增接入采用近似定位', f'其中{len(city)}件新增接入采用近似定位', result)
-    result = re.sub(r'原\d+处入口保留室外漫游，新增\d+处打开俯瞰定位', f'原{len(base_ids)}处入口保留室外漫游，新增{len(city)}处打开俯瞰定位', result)
-    result = re.sub(r'原\d+处开放室外漫游，新增\d+处提供俯瞰定位', f'原{len(base_ids)}处开放室外漫游，新增{len(city)}处提供俯瞰定位', result)
+    result = re.sub(r'原\d+处入口保留室外漫游，新增\d+处打开俯瞰定位', f'原{len(walk_ids)}处入口保留室外漫游，新增{overview_total}处打开俯瞰定位', result)
+    result = re.sub(r'原\d+处开放室外漫游，新增\d+处提供俯瞰定位', f'原{len(walk_ids)}处开放室外漫游，新增{overview_total}处提供俯瞰定位', result)
     return normalize_model_view_links(result, project)
 
 
