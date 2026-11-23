@@ -1,0 +1,6681 @@
+{
+  "passed": true,
+  "stage": 270,
+  "published": false,
+  "model": "huangpu-central-trust-beijing-front",
+  "port": 31270,
+  "production_sha256": "fdb8ef2d9549f41c9982ec67460598c96642756aa8d0d2ebf1ff11dbac892135",
+  "catalog_sha256": "6ebc003ae91addb9833e1736595404b47cc21a2960a303c55d7fabecc698bf5c",
+  "comparison_receipt_sha256": "34b76570a0685959cf0c87668baf10b6c0a4c6135b14c08c9f6aad751525a2b7",
+  "prior_catalog_items": 265,
+  "placement_sha256": "1a7f59770efd5c8e614f1d2f526689a6fdc77ffe617bc710510d0341254e14d7",
+  "input_modules_and_assets": {
+    "data/candidate-city-integrations.json": {
+      "url": "http://127.0.0.1:31270/data/candidate-city-integrations.json",
+      "bytes": 3370682,
+      "sha256": "6ebc003ae91addb9833e1736595404b47cc21a2960a303c55d7fabecc698bf5c"
+    },
+    "assets/city-detail/macros/14-13720-6693/READY.json": {
+      "url": "http://127.0.0.1:31270/assets/city-detail/macros/14-13720-6693/READY.json",
+      "bytes": 1110247,
+      "sha256": "506d6ab2aaebb9004adcbf04ac48ad7a02f06abb401617d05053674383015281"
+    },
+    "assets/city-detail/macros/14-13720-6693/feature-table.json.gz": {
+      "url": "http://127.0.0.1:31270/assets/city-detail/macros/14-13720-6693/feature-table.json.gz",
+      "bytes": 483689,
+      "sha256": "d9b50cd29e04014e5017669347a3849a29a60171d1586325bdd6bd5096072762"
+    },
+    "assets/city-detail/macros/14-13720-6693/far.glb": {
+      "url": "http://127.0.0.1:31270/assets/city-detail/macros/14-13720-6693/far.glb",
+      "bytes": 1161544,
+      "sha256": "56eb90b01d7947a5ff5472f929b3ea48570caa79915df7113f0a7189631aa079"
+    },
+    "assets/city-detail/macros/14-13720-6693/near/1_3-s0-s1-s1.glb.gz": {
+      "url": "http://127.0.0.1:31270/assets/city-detail/macros/14-13720-6693/near/1_3-s0-s1-s1.glb.gz",
+      "bytes": 51885,
+      "sha256": "d937be6f58b9c8ad2e3da5ccab5504ea8ff8b7c4091391d68cd5f6418bb01d57"
+    },
+    "src/candidate-city-clipping.js": {
+      "url": "http://127.0.0.1:31270/src/candidate-city-clipping.js",
+      "bytes": 17066,
+      "sha256": "3f97e98dbcb22b3edfd1be5f2fc1d603c7fe67b8da30bc4127639375d34afd52"
+    },
+    "src/candidate-bridge-walk.js": {
+      "url": "http://127.0.0.1:31270/src/candidate-bridge-walk.js",
+      "bytes": 7882,
+      "sha256": "08beb4aa4fd708ddcb5d325f40b31a201d9d67babea18355126a03d205d851c1"
+    },
+    "src/candidate-city-integrations.js": {
+      "url": "http://127.0.0.1:31270/src/candidate-city-integrations.js",
+      "bytes": 10042,
+      "sha256": "6607b389fae8d8ba7dea25639cd95335577f26abb3181a2b5511e1a505c65364"
+    },
+    "src/candidate-vector-clipping.js": {
+      "url": "http://127.0.0.1:31270/src/candidate-vector-clipping.js",
+      "bytes": 2628,
+      "sha256": "b752ff0d60a0cbd7c21c71f9e928238a8add13d1a2ef0611f61aaad1fdc1a84a"
+    },
+    "src/candidate-vector-geometry.js": {
+      "url": "http://127.0.0.1:31270/src/candidate-vector-geometry.js",
+      "bytes": 284,
+      "sha256": "8b566bbf2141c0c6920b347be3a7a24763325f0e10d4db87fd96ff3578980456"
+    },
+    "src/candidate-source-sections.js": {
+      "url": "http://127.0.0.1:31270/src/candidate-source-sections.js",
+      "bytes": 3822,
+      "sha256": "9832cbd628e4c0c72e2edf1e6caae38a397dbe5526e077ebd4bf04a688d36884"
+    },
+    "src/historical-view.js": {
+      "url": "http://127.0.0.1:31270/src/historical-view.js",
+      "bytes": 5374,
+      "sha256": "579f50179c9dac34cd1642d81b96c37831fdb785fa3b8508802aeec05e0d859d"
+    },
+    "src/ordinary-scene-adapter.js": {
+      "url": "http://127.0.0.1:31270/src/ordinary-scene-adapter.js",
+      "bytes": 8560,
+      "sha256": "38d52ba1000489e0f80ef8712fb28ecb65a7d3d0179c06d386cd6d4a8447cabe"
+    },
+    "src/ordinary-building-catalog.js": {
+      "url": "http://127.0.0.1:31270/src/ordinary-building-catalog.js",
+      "bytes": 16722,
+      "sha256": "b1535fc29d104445946b02ef00341c169630ceed2d07d9b76f50b99800312840"
+    },
+    "src/ordinary-contracts.js": {
+      "url": "http://127.0.0.1:31270/src/ordinary-contracts.js",
+      "bytes": 504,
+      "sha256": "92784b2e19b90cb5869f122366592aadaaef184d72b1b10586109decd3287d58"
+    },
+    "src/model-resources.js": {
+      "url": "http://127.0.0.1:31270/src/model-resources.js",
+      "bytes": 6594,
+      "sha256": "b435ca50c88a9ae33e9b1e981eeaf7ffae3a595970de01a7155184ac5c19e8d4"
+    },
+    "src/local-model-streamer.js": {
+      "url": "http://127.0.0.1:31270/src/local-model-streamer.js",
+      "bytes": 19788,
+      "sha256": "ae33fb31124378c278813e1134f087d5aa8c0073b6b965d79d0ac40b32331291"
+    },
+    "src/ordinary-asset-verification.js": {
+      "url": "http://127.0.0.1:31270/src/ordinary-asset-verification.js",
+      "bytes": 909,
+      "sha256": "554785bc28fb96a0d5dda1597fafad235b2187b8b754705ab4ef61c5d7b8c8f3"
+    },
+    "vendor/polygon-clipping.umd.min.js": {
+      "url": "http://127.0.0.1:31270/vendor/polygon-clipping.umd.min.js",
+      "bytes": 29106,
+      "sha256": "7f8619e84a86ce8dd400c9b50430e9c8cf8f26027b19eeb479f109f5c1a9d688"
+    },
+    "vendor/three.module.js": {
+      "url": "http://127.0.0.1:31270/vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "vendor/three.core.js": {
+      "url": "http://127.0.0.1:31270/vendor/three.core.js",
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "vendor/GLTFLoader.js": {
+      "url": "http://127.0.0.1:31270/vendor/GLTFLoader.js",
+      "bytes": 114732,
+      "sha256": "adbbafe8ce40416525b6be0ee5cac0d3782482bcf0122c8ca8ec1ffa77d3440b"
+    },
+    "vendor/BufferGeometryUtils.js": {
+      "url": "http://127.0.0.1:31270/vendor/BufferGeometryUtils.js",
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "vendor/meshopt_decoder.module.js": {
+      "url": "http://127.0.0.1:31270/vendor/meshopt_decoder.module.js",
+      "bytes": 24848,
+      "sha256": "784315b6959c85459eab77f51776158cc381d7e7d77b919ff7c4935f088a7c5c"
+    },
+    "vendor/maplibre-gl.js": {
+      "url": "http://127.0.0.1:31270/vendor/maplibre-gl.js",
+      "bytes": 1056837,
+      "sha256": "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb"
+    },
+    "src/map-scene.js": {
+      "url": "http://127.0.0.1:31270/src/map-scene.js",
+      "bytes": 61885,
+      "sha256": "e228722e069e2ed795048f8d35acb1693cafe941aa0940fb3ffc5e7fc31ec930"
+    }
+  },
+  "models": {
+    "full": {
+      "modelId": "huangpu-central-trust-beijing-front",
+      "variant": "web",
+      "sha256": "5388efdff771c8367632c51f6ee3cc5f5b7e1ce91b3b43511f0c021a128dcf3d",
+      "file": "full.glb",
+      "bytes": 1411168,
+      "serial": 1,
+      "meshes": 32,
+      "triangles": 62138,
+      "transfer": "private-signed-geometry-http"
+    },
+    "distant": {
+      "modelId": "huangpu-central-trust-beijing-front",
+      "variant": "lod",
+      "sha256": "f20e1a388cd8d86de88a85cb0b71ca3757bdcc3b947e6a2e721b7330b2ef00bd",
+      "file": "lod.glb",
+      "bytes": 910200,
+      "serial": 2,
+      "meshes": 32,
+      "triangles": 41146,
+      "transfer": "private-signed-geometry-http"
+    }
+  },
+  "vector_feature_count": 31,
+  "local_parent_vector_clips": [
+    "huangpu-ningpo-commercial-bank-corner",
+    "huangpu-zhongken-bank-239-corner"
+  ],
+  "ground_cases": 97,
+  "height_cases_per_state": 144,
+  "results": [
+    {
+      "step": "before",
+      "active": [],
+      "revision": 1,
+      "groundCutCount": 0,
+      "displayCutCount": 0,
+      "targets": [
+        {
+          "id": 2808,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2652,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 968,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 718,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 3201,
+          "near": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "far": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "near_rows": 8,
+          "far_rows": 8
+        },
+        {
+          "id": 1082,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2550,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        }
+      ],
+      "texture_triangle_count": 1899,
+      "courtyard_sha256": "712225dafd07851c8574c9c1697ee2753ea82074d2bfcfe612960c6390f33a4d",
+      "courtyard_probes": 144,
+      "ground": [
+        {
+          "x": 9.64075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.212,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.242,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.253,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.275,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.295,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.312,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.343,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.212,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.242,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.253,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.275,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.295,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.312,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.343,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.04,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.41075,
+          "y": 0.53,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 8.73075,
+          "y": -0.15,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.54,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.04,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.51075,
+          "y": 0.53,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.83075,
+          "y": -0.15,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.54,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.194,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.216,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.321,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.336,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.359,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.421,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.194,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.216,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.321,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.336,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.359,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.421,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.32075,
+          "y": 0.156,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        }
+      ],
+      "vector_parts": [
+        {
+          "id": 23711710,
+          "component": 322,
+          "changed": false,
+          "geometry": "f5a3ed500f51204fdb8e0593abbdf5c60159a6977addc06819e7a52717c13cf3"
+        },
+        {
+          "id": 23711710,
+          "component": 323,
+          "changed": false,
+          "geometry": "ec982bb365ecd500c552d61c54eee1bd33e17d9d36bbf6a7589d5314427f30cf"
+        },
+        {
+          "id": 23711710,
+          "component": 324,
+          "changed": false,
+          "geometry": "17c2b80c1f566b1015edc78fb649d37a1359039954397f14f00b57b9ea94af33"
+        },
+        {
+          "id": 23711710,
+          "component": 325,
+          "changed": false,
+          "geometry": "21681299e01c384b2ba92b0d76620a28583f13daa0ea4d23627e365e0dbf004f"
+        },
+        {
+          "id": 23711710,
+          "component": 326,
+          "changed": false,
+          "geometry": "52ddec5f15ab6a3d74d3bd7455253dc7d01dd4ddf0ea31114f34fa2f1e5b55ee"
+        },
+        {
+          "id": 23711710,
+          "component": 327,
+          "changed": false,
+          "geometry": "23397abe3bef78894b82914d0b7e670ca064af17dac2024c51dc84c8ef247b81"
+        },
+        {
+          "id": 23711710,
+          "component": 328,
+          "changed": false,
+          "geometry": "6ea0e149447797d2c7db1e74da320464c6927c4728ebfc5978132122b905d505"
+        },
+        {
+          "id": 23711710,
+          "component": 329,
+          "changed": false,
+          "geometry": "20e4b7c34e06ad53edda7dbf8575a0a6c70524a381dd38d3e85ae222df5e07b3"
+        },
+        {
+          "id": 23711710,
+          "component": 336,
+          "changed": false,
+          "geometry": "abc29aed03dfd0c59dd74ee1d5e108d80ea068a2d824d495bb8314e3f9fd101f"
+        },
+        {
+          "id": 23711710,
+          "component": 349,
+          "changed": false,
+          "geometry": "8a7eb55c19b3095d01818bb211789fd36a1da6ba28c8d57cb1ff8d039e79c077"
+        },
+        {
+          "id": 23711710,
+          "component": 350,
+          "changed": false,
+          "geometry": "40372deb4eaf063d4f4b2e653d1223f50fd7ab1934a5dbeb17b3dca1dd068546"
+        },
+        {
+          "id": 23711710,
+          "component": 351,
+          "changed": false,
+          "geometry": "64eb595df56e71f44d3ca037c8ca8f3ac4e8e6a2df72cce2555853fc3b6be9b5"
+        },
+        {
+          "id": 23711710,
+          "component": 352,
+          "changed": false,
+          "geometry": "c1672dd1c4a5e6fe65169204f23399007d0b25a1f1767209f01b440a6069bbb4"
+        },
+        {
+          "id": 23711710,
+          "component": 353,
+          "changed": false,
+          "geometry": "0b5d0947eb5f95b27556d083d4e2ef8ee64dc5e7f77e43c3ba96fad21c0674a3"
+        },
+        {
+          "id": 23711710,
+          "component": 354,
+          "changed": false,
+          "geometry": "e692784753f44b11c2bc9e9d87321b905f0fa4453cc58a3826f66f780daee74e"
+        },
+        {
+          "id": 23711710,
+          "component": 356,
+          "changed": false,
+          "geometry": "2917c47b522698159e32df0edc31f01d47122a4287d089fd79130009c0c38aed"
+        },
+        {
+          "id": 23711710,
+          "component": 357,
+          "changed": false,
+          "geometry": "7ad40f802e2735fe3949d81a4fcec36415b1620ebf8309bbdd742126adbd89e0"
+        },
+        {
+          "id": 23711710,
+          "component": 360,
+          "changed": false,
+          "geometry": "acc17026588a661754b295f98b6684cda35433079cb669b52bf9ab58e4c4fd0c"
+        },
+        {
+          "id": 23711710,
+          "component": 371,
+          "changed": false,
+          "geometry": "046bcc30192aa985225b98424c782b8144cd4f31edea4925a3a4be16f63d2fac"
+        },
+        {
+          "id": 23711710,
+          "component": 372,
+          "changed": false,
+          "geometry": "687c864c6d7b1cfcb7abb9215811ee2ebb54119958b0b08fd830cd771ee13dc3"
+        },
+        {
+          "id": 23711710,
+          "component": 379,
+          "changed": false,
+          "geometry": "3767426e6304b063567b62ebc8ae32d2498c9148fae9d1b3cc61c6ed1c6e4c74"
+        },
+        {
+          "id": 3803399710,
+          "component": 6,
+          "changed": true,
+          "geometry": "df911a23d464dc3fccc72011751a0750acff2a54cf4c7ca05fb2acb63985679c"
+        },
+        {
+          "id": 116293700,
+          "component": 4,
+          "changed": false,
+          "geometry": "5e13018b51faef83b70fd97bff5a22947e57b58f75343a77eef584155d33ab47"
+        },
+        {
+          "id": 116367960,
+          "component": 17,
+          "changed": false,
+          "geometry": "1ba427def905b030197916a866cf5014c549400174cdcb5ce2c9e32f5aec8d3d"
+        },
+        {
+          "id": 116367860,
+          "component": 9,
+          "changed": false,
+          "geometry": "e0660ca1e555ed1f5c07a853341fefef84e4877e47fad8e6bae33dc8e7ec8ce2"
+        },
+        {
+          "id": 116367860,
+          "component": 12,
+          "changed": false,
+          "geometry": "73b215317ea6a6b7037e4cd9f47eaeb6cef82a09a7a7d81df68912afb342cec4"
+        },
+        {
+          "id": 116367720,
+          "component": 2,
+          "changed": false,
+          "geometry": "ffce82d619075b76e70ab76010b5f8d4054a9d18adab3e12dfb90241e09f75b2"
+        },
+        {
+          "id": 116367720,
+          "component": 4,
+          "changed": false,
+          "geometry": "bb60ea33fde58e90d6c22208e00b52ee6eee6f651b8f672188a6a08562da4731"
+        },
+        {
+          "id": 116367720,
+          "component": 5,
+          "changed": false,
+          "geometry": "a598523a1c4d95a107a8e93eb14e803ee4dbdceab3d807892e5899712dd73f2c"
+        },
+        {
+          "id": 116367720,
+          "component": 8,
+          "changed": false,
+          "geometry": "5ec3fa38a25bd2f8146c82de794223486446e014d272165cc3648e0ad54b14f0"
+        },
+        {
+          "id": 156761670,
+          "component": 6,
+          "changed": true,
+          "geometry": "6a8c2d918347d4db8d56664a18d6fa335c6b2c6f7c5dfab952dc6602eb089d08"
+        }
+      ],
+      "native_vector_parts": [
+        {
+          "id": "3a0080f4-3920-4f96-98f7-a571a3c038f4",
+          "component": null,
+          "changed": false,
+          "geometry": "0b8443d1cbf8fe4ca42afb59424c8ea8d3ee0ef2c82881bacdb536d81c672716"
+        },
+        {
+          "id": "4cc6c2e8-a9fa-4a24-b8ad-b42d11469974",
+          "component": null,
+          "changed": false,
+          "geometry": "0cf5bf23cbfc62ac46f8dedb7bbe47511bec15f1a886269d0ab0fadc7ed3417c"
+        },
+        {
+          "id": "557ecb20-0ba9-4d41-ad98-d7171dfa6aa3",
+          "component": null,
+          "changed": false,
+          "geometry": "8dc67b21af5036e9c49c677a6149cfc7121a016778e53ade4d98e1dffabce7ce"
+        },
+        {
+          "id": "c965d4bc-6652-4942-b931-ced97319bfb1",
+          "component": null,
+          "changed": false,
+          "geometry": "b0488e92f8837a26087d044123cdb622f3b370ee2e9b7ed550ca96eceaef5675"
+        },
+        {
+          "id": "d1bfafc0-a5e6-4c8c-8a3a-f813bd4eb149",
+          "component": null,
+          "changed": false,
+          "geometry": "8b2c0902e5ba8ace1e412dbc7f9eb51bf90e96882fd10117db27adf6898a4eea"
+        },
+        {
+          "id": "dd9a9a9b-f8e9-42ad-a21f-b82de2d36a45",
+          "component": null,
+          "changed": false,
+          "geometry": "b23acab9ba2616fc4df34342b28f91863f23cf837395afc6427f7b16ec32b9a6"
+        },
+        {
+          "id": "fcc2def2-cd54-4398-a9a7-935c19618845",
+          "component": null,
+          "changed": true,
+          "geometry": "d69dce7ee6e2f850d4cd209c91a67883acb3986bec8f70078bbb76b0e26eff4f"
+        }
+      ],
+      "grouped_vector": {
+        "queriedFeatures": 31,
+        "candidateIDs": 7,
+        "partialIDs": 2,
+        "residualComponents": 2,
+        "removedComponents": 2,
+        "retainedCrossingIDs": 5,
+        "clippingErrors": 0
+      },
+      "grouped_signature": "b52673c3f4d3bd328293bd41755f37c1c64ece015c7f39e59451f4fb6585020b"
+    },
+    {
+      "step": "full",
+      "active": [
+        {
+          "id": "huangpu-central-trust-beijing-front",
+          "variant": "full",
+          "assetSha256": "5388efdff771c8367632c51f6ee3cc5f5b7e1ce91b3b43511f0c021a128dcf3d"
+        }
+      ],
+      "revision": 2,
+      "groundCutCount": 1,
+      "displayCutCount": 2,
+      "targets": [
+        {
+          "id": 2808,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2652,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 968,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 718,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 3201,
+          "near": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "far": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "near_rows": 8,
+          "far_rows": 8
+        },
+        {
+          "id": 1082,
+          "near": "ae7c16acf1188d849d7d507b6e004107a670d47a6c17435f6dbca79863439bab",
+          "far": "ae7c16acf1188d849d7d507b6e004107a670d47a6c17435f6dbca79863439bab",
+          "near_rows": 10,
+          "far_rows": 10
+        },
+        {
+          "id": 2550,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        }
+      ],
+      "texture_triangle_count": 1909,
+      "courtyard_sha256": "acf73f2df347d5d18e2dd7e52694e35102cc761882e7f04de6f788702684bdd5",
+      "courtyard_probes": 144,
+      "ground": [
+        {
+          "x": 9.64075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.16,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.212,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.242,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.253,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.275,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.295,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.312,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.343,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.16,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.212,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.242,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.253,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.275,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.295,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.312,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.343,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.04,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.41075,
+          "y": 0.53,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 8.73075,
+          "y": -0.15,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.54,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.04,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.51075,
+          "y": 0.53,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.83075,
+          "y": -0.15,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.54,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.194,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.216,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.321,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.336,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.359,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.421,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.194,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.216,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.321,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.336,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.359,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.421,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.32075,
+          "y": 0.156,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        }
+      ],
+      "vector_parts": [
+        {
+          "id": 23711710,
+          "component": 322,
+          "changed": false,
+          "geometry": "f5a3ed500f51204fdb8e0593abbdf5c60159a6977addc06819e7a52717c13cf3"
+        },
+        {
+          "id": 23711710,
+          "component": 323,
+          "changed": false,
+          "geometry": "ec982bb365ecd500c552d61c54eee1bd33e17d9d36bbf6a7589d5314427f30cf"
+        },
+        {
+          "id": 23711710,
+          "component": 324,
+          "changed": false,
+          "geometry": "17c2b80c1f566b1015edc78fb649d37a1359039954397f14f00b57b9ea94af33"
+        },
+        {
+          "id": 23711710,
+          "component": 325,
+          "changed": false,
+          "geometry": "21681299e01c384b2ba92b0d76620a28583f13daa0ea4d23627e365e0dbf004f"
+        },
+        {
+          "id": 23711710,
+          "component": 326,
+          "changed": false,
+          "geometry": "52ddec5f15ab6a3d74d3bd7455253dc7d01dd4ddf0ea31114f34fa2f1e5b55ee"
+        },
+        {
+          "id": 23711710,
+          "component": 327,
+          "changed": false,
+          "geometry": "23397abe3bef78894b82914d0b7e670ca064af17dac2024c51dc84c8ef247b81"
+        },
+        {
+          "id": 23711710,
+          "component": 328,
+          "changed": false,
+          "geometry": "6ea0e149447797d2c7db1e74da320464c6927c4728ebfc5978132122b905d505"
+        },
+        {
+          "id": 23711710,
+          "component": 329,
+          "changed": false,
+          "geometry": "20e4b7c34e06ad53edda7dbf8575a0a6c70524a381dd38d3e85ae222df5e07b3"
+        },
+        {
+          "id": 23711710,
+          "component": 336,
+          "changed": false,
+          "geometry": "abc29aed03dfd0c59dd74ee1d5e108d80ea068a2d824d495bb8314e3f9fd101f"
+        },
+        {
+          "id": 23711710,
+          "component": 349,
+          "changed": false,
+          "geometry": "8a7eb55c19b3095d01818bb211789fd36a1da6ba28c8d57cb1ff8d039e79c077"
+        },
+        {
+          "id": 23711710,
+          "component": 350,
+          "changed": false,
+          "geometry": "40372deb4eaf063d4f4b2e653d1223f50fd7ab1934a5dbeb17b3dca1dd068546"
+        },
+        {
+          "id": 23711710,
+          "component": 351,
+          "changed": false,
+          "geometry": "64eb595df56e71f44d3ca037c8ca8f3ac4e8e6a2df72cce2555853fc3b6be9b5"
+        },
+        {
+          "id": 23711710,
+          "component": 352,
+          "changed": false,
+          "geometry": "c1672dd1c4a5e6fe65169204f23399007d0b25a1f1767209f01b440a6069bbb4"
+        },
+        {
+          "id": 23711710,
+          "component": 353,
+          "changed": false,
+          "geometry": "0b5d0947eb5f95b27556d083d4e2ef8ee64dc5e7f77e43c3ba96fad21c0674a3"
+        },
+        {
+          "id": 23711710,
+          "component": 354,
+          "changed": false,
+          "geometry": "e692784753f44b11c2bc9e9d87321b905f0fa4453cc58a3826f66f780daee74e"
+        },
+        {
+          "id": 23711710,
+          "component": 356,
+          "changed": false,
+          "geometry": "2917c47b522698159e32df0edc31f01d47122a4287d089fd79130009c0c38aed"
+        },
+        {
+          "id": 23711710,
+          "component": 357,
+          "changed": false,
+          "geometry": "7ad40f802e2735fe3949d81a4fcec36415b1620ebf8309bbdd742126adbd89e0"
+        },
+        {
+          "id": 23711710,
+          "component": 360,
+          "changed": false,
+          "geometry": "acc17026588a661754b295f98b6684cda35433079cb669b52bf9ab58e4c4fd0c"
+        },
+        {
+          "id": 23711710,
+          "component": 371,
+          "changed": false,
+          "geometry": "046bcc30192aa985225b98424c782b8144cd4f31edea4925a3a4be16f63d2fac"
+        },
+        {
+          "id": 23711710,
+          "component": 372,
+          "changed": false,
+          "geometry": "687c864c6d7b1cfcb7abb9215811ee2ebb54119958b0b08fd830cd771ee13dc3"
+        },
+        {
+          "id": 23711710,
+          "component": 379,
+          "changed": false,
+          "geometry": "3767426e6304b063567b62ebc8ae32d2498c9148fae9d1b3cc61c6ed1c6e4c74"
+        },
+        {
+          "id": 3803399710,
+          "component": 6,
+          "changed": true,
+          "geometry": "df911a23d464dc3fccc72011751a0750acff2a54cf4c7ca05fb2acb63985679c"
+        },
+        {
+          "id": 116293700,
+          "component": 4,
+          "changed": true,
+          "geometry": "9e8847b4713a72512039080d411394f65f5bd8ad6a326cad4190b50d318f2ed4"
+        },
+        {
+          "id": 116367960,
+          "component": 17,
+          "changed": false,
+          "geometry": "1ba427def905b030197916a866cf5014c549400174cdcb5ce2c9e32f5aec8d3d"
+        },
+        {
+          "id": 116367860,
+          "component": 9,
+          "changed": false,
+          "geometry": "e0660ca1e555ed1f5c07a853341fefef84e4877e47fad8e6bae33dc8e7ec8ce2"
+        },
+        {
+          "id": 116367860,
+          "component": 12,
+          "changed": false,
+          "geometry": "73b215317ea6a6b7037e4cd9f47eaeb6cef82a09a7a7d81df68912afb342cec4"
+        },
+        {
+          "id": 116367720,
+          "component": 2,
+          "changed": false,
+          "geometry": "ffce82d619075b76e70ab76010b5f8d4054a9d18adab3e12dfb90241e09f75b2"
+        },
+        {
+          "id": 116367720,
+          "component": 4,
+          "changed": false,
+          "geometry": "bb60ea33fde58e90d6c22208e00b52ee6eee6f651b8f672188a6a08562da4731"
+        },
+        {
+          "id": 116367720,
+          "component": 5,
+          "changed": false,
+          "geometry": "a598523a1c4d95a107a8e93eb14e803ee4dbdceab3d807892e5899712dd73f2c"
+        },
+        {
+          "id": 116367720,
+          "component": 8,
+          "changed": false,
+          "geometry": "5ec3fa38a25bd2f8146c82de794223486446e014d272165cc3648e0ad54b14f0"
+        },
+        {
+          "id": 156761670,
+          "component": 6,
+          "changed": true,
+          "geometry": "6a8c2d918347d4db8d56664a18d6fa335c6b2c6f7c5dfab952dc6602eb089d08"
+        }
+      ],
+      "native_vector_parts": [
+        {
+          "id": "3a0080f4-3920-4f96-98f7-a571a3c038f4",
+          "component": null,
+          "changed": false,
+          "geometry": "0b8443d1cbf8fe4ca42afb59424c8ea8d3ee0ef2c82881bacdb536d81c672716"
+        },
+        {
+          "id": "4cc6c2e8-a9fa-4a24-b8ad-b42d11469974",
+          "component": null,
+          "changed": false,
+          "geometry": "0cf5bf23cbfc62ac46f8dedb7bbe47511bec15f1a886269d0ab0fadc7ed3417c"
+        },
+        {
+          "id": "557ecb20-0ba9-4d41-ad98-d7171dfa6aa3",
+          "component": null,
+          "changed": true,
+          "geometry": "4fb4b2f8ca3634df95e9d8643712ab26d93e3ad2d46b6ed68fddd3fe7d6f36d5"
+        },
+        {
+          "id": "c965d4bc-6652-4942-b931-ced97319bfb1",
+          "component": null,
+          "changed": false,
+          "geometry": "b0488e92f8837a26087d044123cdb622f3b370ee2e9b7ed550ca96eceaef5675"
+        },
+        {
+          "id": "d1bfafc0-a5e6-4c8c-8a3a-f813bd4eb149",
+          "component": null,
+          "changed": false,
+          "geometry": "8b2c0902e5ba8ace1e412dbc7f9eb51bf90e96882fd10117db27adf6898a4eea"
+        },
+        {
+          "id": "dd9a9a9b-f8e9-42ad-a21f-b82de2d36a45",
+          "component": null,
+          "changed": false,
+          "geometry": "b23acab9ba2616fc4df34342b28f91863f23cf837395afc6427f7b16ec32b9a6"
+        },
+        {
+          "id": "fcc2def2-cd54-4398-a9a7-935c19618845",
+          "component": null,
+          "changed": true,
+          "geometry": "d69dce7ee6e2f850d4cd209c91a67883acb3986bec8f70078bbb76b0e26eff4f"
+        }
+      ],
+      "grouped_vector": {
+        "queriedFeatures": 31,
+        "candidateIDs": 7,
+        "partialIDs": 3,
+        "residualComponents": 3,
+        "removedComponents": 3,
+        "retainedCrossingIDs": 4,
+        "clippingErrors": 0
+      },
+      "grouped_signature": "396dc97e3fdb5d38d87835282450bee21b51e6f17a7364769b66d1681940a660"
+    },
+    {
+      "step": "hidden",
+      "active": [],
+      "revision": 3,
+      "groundCutCount": 0,
+      "displayCutCount": 0,
+      "targets": [
+        {
+          "id": 2808,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2652,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 968,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 718,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 3201,
+          "near": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "far": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "near_rows": 8,
+          "far_rows": 8
+        },
+        {
+          "id": 1082,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2550,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        }
+      ],
+      "texture_triangle_count": 1899,
+      "courtyard_sha256": "712225dafd07851c8574c9c1697ee2753ea82074d2bfcfe612960c6390f33a4d",
+      "courtyard_probes": 144,
+      "ground": [
+        {
+          "x": 9.64075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.212,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.242,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.253,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.275,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.295,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.312,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.343,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.212,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.242,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.253,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.275,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.295,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.312,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.343,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.04,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.41075,
+          "y": 0.53,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 8.73075,
+          "y": -0.15,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.54,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.04,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.51075,
+          "y": 0.53,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.83075,
+          "y": -0.15,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.54,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.194,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.216,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.321,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.336,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.359,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.421,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.194,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.216,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.321,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.336,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.359,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.421,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.32075,
+          "y": 0.156,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        }
+      ],
+      "vector_parts": [
+        {
+          "id": 23711710,
+          "component": 322,
+          "changed": false,
+          "geometry": "f5a3ed500f51204fdb8e0593abbdf5c60159a6977addc06819e7a52717c13cf3"
+        },
+        {
+          "id": 23711710,
+          "component": 323,
+          "changed": false,
+          "geometry": "ec982bb365ecd500c552d61c54eee1bd33e17d9d36bbf6a7589d5314427f30cf"
+        },
+        {
+          "id": 23711710,
+          "component": 324,
+          "changed": false,
+          "geometry": "17c2b80c1f566b1015edc78fb649d37a1359039954397f14f00b57b9ea94af33"
+        },
+        {
+          "id": 23711710,
+          "component": 325,
+          "changed": false,
+          "geometry": "21681299e01c384b2ba92b0d76620a28583f13daa0ea4d23627e365e0dbf004f"
+        },
+        {
+          "id": 23711710,
+          "component": 326,
+          "changed": false,
+          "geometry": "52ddec5f15ab6a3d74d3bd7455253dc7d01dd4ddf0ea31114f34fa2f1e5b55ee"
+        },
+        {
+          "id": 23711710,
+          "component": 327,
+          "changed": false,
+          "geometry": "23397abe3bef78894b82914d0b7e670ca064af17dac2024c51dc84c8ef247b81"
+        },
+        {
+          "id": 23711710,
+          "component": 328,
+          "changed": false,
+          "geometry": "6ea0e149447797d2c7db1e74da320464c6927c4728ebfc5978132122b905d505"
+        },
+        {
+          "id": 23711710,
+          "component": 329,
+          "changed": false,
+          "geometry": "20e4b7c34e06ad53edda7dbf8575a0a6c70524a381dd38d3e85ae222df5e07b3"
+        },
+        {
+          "id": 23711710,
+          "component": 336,
+          "changed": false,
+          "geometry": "abc29aed03dfd0c59dd74ee1d5e108d80ea068a2d824d495bb8314e3f9fd101f"
+        },
+        {
+          "id": 23711710,
+          "component": 349,
+          "changed": false,
+          "geometry": "8a7eb55c19b3095d01818bb211789fd36a1da6ba28c8d57cb1ff8d039e79c077"
+        },
+        {
+          "id": 23711710,
+          "component": 350,
+          "changed": false,
+          "geometry": "40372deb4eaf063d4f4b2e653d1223f50fd7ab1934a5dbeb17b3dca1dd068546"
+        },
+        {
+          "id": 23711710,
+          "component": 351,
+          "changed": false,
+          "geometry": "64eb595df56e71f44d3ca037c8ca8f3ac4e8e6a2df72cce2555853fc3b6be9b5"
+        },
+        {
+          "id": 23711710,
+          "component": 352,
+          "changed": false,
+          "geometry": "c1672dd1c4a5e6fe65169204f23399007d0b25a1f1767209f01b440a6069bbb4"
+        },
+        {
+          "id": 23711710,
+          "component": 353,
+          "changed": false,
+          "geometry": "0b5d0947eb5f95b27556d083d4e2ef8ee64dc5e7f77e43c3ba96fad21c0674a3"
+        },
+        {
+          "id": 23711710,
+          "component": 354,
+          "changed": false,
+          "geometry": "e692784753f44b11c2bc9e9d87321b905f0fa4453cc58a3826f66f780daee74e"
+        },
+        {
+          "id": 23711710,
+          "component": 356,
+          "changed": false,
+          "geometry": "2917c47b522698159e32df0edc31f01d47122a4287d089fd79130009c0c38aed"
+        },
+        {
+          "id": 23711710,
+          "component": 357,
+          "changed": false,
+          "geometry": "7ad40f802e2735fe3949d81a4fcec36415b1620ebf8309bbdd742126adbd89e0"
+        },
+        {
+          "id": 23711710,
+          "component": 360,
+          "changed": false,
+          "geometry": "acc17026588a661754b295f98b6684cda35433079cb669b52bf9ab58e4c4fd0c"
+        },
+        {
+          "id": 23711710,
+          "component": 371,
+          "changed": false,
+          "geometry": "046bcc30192aa985225b98424c782b8144cd4f31edea4925a3a4be16f63d2fac"
+        },
+        {
+          "id": 23711710,
+          "component": 372,
+          "changed": false,
+          "geometry": "687c864c6d7b1cfcb7abb9215811ee2ebb54119958b0b08fd830cd771ee13dc3"
+        },
+        {
+          "id": 23711710,
+          "component": 379,
+          "changed": false,
+          "geometry": "3767426e6304b063567b62ebc8ae32d2498c9148fae9d1b3cc61c6ed1c6e4c74"
+        },
+        {
+          "id": 3803399710,
+          "component": 6,
+          "changed": true,
+          "geometry": "df911a23d464dc3fccc72011751a0750acff2a54cf4c7ca05fb2acb63985679c"
+        },
+        {
+          "id": 116293700,
+          "component": 4,
+          "changed": false,
+          "geometry": "5e13018b51faef83b70fd97bff5a22947e57b58f75343a77eef584155d33ab47"
+        },
+        {
+          "id": 116367960,
+          "component": 17,
+          "changed": false,
+          "geometry": "1ba427def905b030197916a866cf5014c549400174cdcb5ce2c9e32f5aec8d3d"
+        },
+        {
+          "id": 116367860,
+          "component": 9,
+          "changed": false,
+          "geometry": "e0660ca1e555ed1f5c07a853341fefef84e4877e47fad8e6bae33dc8e7ec8ce2"
+        },
+        {
+          "id": 116367860,
+          "component": 12,
+          "changed": false,
+          "geometry": "73b215317ea6a6b7037e4cd9f47eaeb6cef82a09a7a7d81df68912afb342cec4"
+        },
+        {
+          "id": 116367720,
+          "component": 2,
+          "changed": false,
+          "geometry": "ffce82d619075b76e70ab76010b5f8d4054a9d18adab3e12dfb90241e09f75b2"
+        },
+        {
+          "id": 116367720,
+          "component": 4,
+          "changed": false,
+          "geometry": "bb60ea33fde58e90d6c22208e00b52ee6eee6f651b8f672188a6a08562da4731"
+        },
+        {
+          "id": 116367720,
+          "component": 5,
+          "changed": false,
+          "geometry": "a598523a1c4d95a107a8e93eb14e803ee4dbdceab3d807892e5899712dd73f2c"
+        },
+        {
+          "id": 116367720,
+          "component": 8,
+          "changed": false,
+          "geometry": "5ec3fa38a25bd2f8146c82de794223486446e014d272165cc3648e0ad54b14f0"
+        },
+        {
+          "id": 156761670,
+          "component": 6,
+          "changed": true,
+          "geometry": "6a8c2d918347d4db8d56664a18d6fa335c6b2c6f7c5dfab952dc6602eb089d08"
+        }
+      ],
+      "native_vector_parts": [
+        {
+          "id": "3a0080f4-3920-4f96-98f7-a571a3c038f4",
+          "component": null,
+          "changed": false,
+          "geometry": "0b8443d1cbf8fe4ca42afb59424c8ea8d3ee0ef2c82881bacdb536d81c672716"
+        },
+        {
+          "id": "4cc6c2e8-a9fa-4a24-b8ad-b42d11469974",
+          "component": null,
+          "changed": false,
+          "geometry": "0cf5bf23cbfc62ac46f8dedb7bbe47511bec15f1a886269d0ab0fadc7ed3417c"
+        },
+        {
+          "id": "557ecb20-0ba9-4d41-ad98-d7171dfa6aa3",
+          "component": null,
+          "changed": false,
+          "geometry": "8dc67b21af5036e9c49c677a6149cfc7121a016778e53ade4d98e1dffabce7ce"
+        },
+        {
+          "id": "c965d4bc-6652-4942-b931-ced97319bfb1",
+          "component": null,
+          "changed": false,
+          "geometry": "b0488e92f8837a26087d044123cdb622f3b370ee2e9b7ed550ca96eceaef5675"
+        },
+        {
+          "id": "d1bfafc0-a5e6-4c8c-8a3a-f813bd4eb149",
+          "component": null,
+          "changed": false,
+          "geometry": "8b2c0902e5ba8ace1e412dbc7f9eb51bf90e96882fd10117db27adf6898a4eea"
+        },
+        {
+          "id": "dd9a9a9b-f8e9-42ad-a21f-b82de2d36a45",
+          "component": null,
+          "changed": false,
+          "geometry": "b23acab9ba2616fc4df34342b28f91863f23cf837395afc6427f7b16ec32b9a6"
+        },
+        {
+          "id": "fcc2def2-cd54-4398-a9a7-935c19618845",
+          "component": null,
+          "changed": true,
+          "geometry": "d69dce7ee6e2f850d4cd209c91a67883acb3986bec8f70078bbb76b0e26eff4f"
+        }
+      ],
+      "grouped_vector": {
+        "queriedFeatures": 31,
+        "candidateIDs": 7,
+        "partialIDs": 2,
+        "residualComponents": 2,
+        "removedComponents": 2,
+        "retainedCrossingIDs": 5,
+        "clippingErrors": 0
+      },
+      "grouped_signature": "b52673c3f4d3bd328293bd41755f37c1c64ece015c7f39e59451f4fb6585020b"
+    },
+    {
+      "step": "restored",
+      "active": [
+        {
+          "id": "huangpu-central-trust-beijing-front",
+          "variant": "full",
+          "assetSha256": "5388efdff771c8367632c51f6ee3cc5f5b7e1ce91b3b43511f0c021a128dcf3d"
+        }
+      ],
+      "revision": 4,
+      "groundCutCount": 1,
+      "displayCutCount": 2,
+      "targets": [
+        {
+          "id": 2808,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2652,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 968,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 718,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 3201,
+          "near": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "far": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "near_rows": 8,
+          "far_rows": 8
+        },
+        {
+          "id": 1082,
+          "near": "ae7c16acf1188d849d7d507b6e004107a670d47a6c17435f6dbca79863439bab",
+          "far": "ae7c16acf1188d849d7d507b6e004107a670d47a6c17435f6dbca79863439bab",
+          "near_rows": 10,
+          "far_rows": 10
+        },
+        {
+          "id": 2550,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        }
+      ],
+      "texture_triangle_count": 1909,
+      "courtyard_sha256": "acf73f2df347d5d18e2dd7e52694e35102cc761882e7f04de6f788702684bdd5",
+      "courtyard_probes": 144,
+      "ground": [
+        {
+          "x": 9.64075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.16,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.212,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.242,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.253,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.275,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.295,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.312,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.343,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.16,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.212,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.242,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.253,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.275,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.295,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.312,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.343,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.04,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.41075,
+          "y": 0.53,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 8.73075,
+          "y": -0.15,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.54,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.04,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.51075,
+          "y": 0.53,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.83075,
+          "y": -0.15,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.54,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.194,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.216,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.321,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.336,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.359,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.421,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.194,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.216,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.321,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.336,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.359,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.421,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.32075,
+          "y": 0.156,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        }
+      ],
+      "vector_parts": [
+        {
+          "id": 23711710,
+          "component": 322,
+          "changed": false,
+          "geometry": "f5a3ed500f51204fdb8e0593abbdf5c60159a6977addc06819e7a52717c13cf3"
+        },
+        {
+          "id": 23711710,
+          "component": 323,
+          "changed": false,
+          "geometry": "ec982bb365ecd500c552d61c54eee1bd33e17d9d36bbf6a7589d5314427f30cf"
+        },
+        {
+          "id": 23711710,
+          "component": 324,
+          "changed": false,
+          "geometry": "17c2b80c1f566b1015edc78fb649d37a1359039954397f14f00b57b9ea94af33"
+        },
+        {
+          "id": 23711710,
+          "component": 325,
+          "changed": false,
+          "geometry": "21681299e01c384b2ba92b0d76620a28583f13daa0ea4d23627e365e0dbf004f"
+        },
+        {
+          "id": 23711710,
+          "component": 326,
+          "changed": false,
+          "geometry": "52ddec5f15ab6a3d74d3bd7455253dc7d01dd4ddf0ea31114f34fa2f1e5b55ee"
+        },
+        {
+          "id": 23711710,
+          "component": 327,
+          "changed": false,
+          "geometry": "23397abe3bef78894b82914d0b7e670ca064af17dac2024c51dc84c8ef247b81"
+        },
+        {
+          "id": 23711710,
+          "component": 328,
+          "changed": false,
+          "geometry": "6ea0e149447797d2c7db1e74da320464c6927c4728ebfc5978132122b905d505"
+        },
+        {
+          "id": 23711710,
+          "component": 329,
+          "changed": false,
+          "geometry": "20e4b7c34e06ad53edda7dbf8575a0a6c70524a381dd38d3e85ae222df5e07b3"
+        },
+        {
+          "id": 23711710,
+          "component": 336,
+          "changed": false,
+          "geometry": "abc29aed03dfd0c59dd74ee1d5e108d80ea068a2d824d495bb8314e3f9fd101f"
+        },
+        {
+          "id": 23711710,
+          "component": 349,
+          "changed": false,
+          "geometry": "8a7eb55c19b3095d01818bb211789fd36a1da6ba28c8d57cb1ff8d039e79c077"
+        },
+        {
+          "id": 23711710,
+          "component": 350,
+          "changed": false,
+          "geometry": "40372deb4eaf063d4f4b2e653d1223f50fd7ab1934a5dbeb17b3dca1dd068546"
+        },
+        {
+          "id": 23711710,
+          "component": 351,
+          "changed": false,
+          "geometry": "64eb595df56e71f44d3ca037c8ca8f3ac4e8e6a2df72cce2555853fc3b6be9b5"
+        },
+        {
+          "id": 23711710,
+          "component": 352,
+          "changed": false,
+          "geometry": "c1672dd1c4a5e6fe65169204f23399007d0b25a1f1767209f01b440a6069bbb4"
+        },
+        {
+          "id": 23711710,
+          "component": 353,
+          "changed": false,
+          "geometry": "0b5d0947eb5f95b27556d083d4e2ef8ee64dc5e7f77e43c3ba96fad21c0674a3"
+        },
+        {
+          "id": 23711710,
+          "component": 354,
+          "changed": false,
+          "geometry": "e692784753f44b11c2bc9e9d87321b905f0fa4453cc58a3826f66f780daee74e"
+        },
+        {
+          "id": 23711710,
+          "component": 356,
+          "changed": false,
+          "geometry": "2917c47b522698159e32df0edc31f01d47122a4287d089fd79130009c0c38aed"
+        },
+        {
+          "id": 23711710,
+          "component": 357,
+          "changed": false,
+          "geometry": "7ad40f802e2735fe3949d81a4fcec36415b1620ebf8309bbdd742126adbd89e0"
+        },
+        {
+          "id": 23711710,
+          "component": 360,
+          "changed": false,
+          "geometry": "acc17026588a661754b295f98b6684cda35433079cb669b52bf9ab58e4c4fd0c"
+        },
+        {
+          "id": 23711710,
+          "component": 371,
+          "changed": false,
+          "geometry": "046bcc30192aa985225b98424c782b8144cd4f31edea4925a3a4be16f63d2fac"
+        },
+        {
+          "id": 23711710,
+          "component": 372,
+          "changed": false,
+          "geometry": "687c864c6d7b1cfcb7abb9215811ee2ebb54119958b0b08fd830cd771ee13dc3"
+        },
+        {
+          "id": 23711710,
+          "component": 379,
+          "changed": false,
+          "geometry": "3767426e6304b063567b62ebc8ae32d2498c9148fae9d1b3cc61c6ed1c6e4c74"
+        },
+        {
+          "id": 3803399710,
+          "component": 6,
+          "changed": true,
+          "geometry": "df911a23d464dc3fccc72011751a0750acff2a54cf4c7ca05fb2acb63985679c"
+        },
+        {
+          "id": 116293700,
+          "component": 4,
+          "changed": true,
+          "geometry": "9e8847b4713a72512039080d411394f65f5bd8ad6a326cad4190b50d318f2ed4"
+        },
+        {
+          "id": 116367960,
+          "component": 17,
+          "changed": false,
+          "geometry": "1ba427def905b030197916a866cf5014c549400174cdcb5ce2c9e32f5aec8d3d"
+        },
+        {
+          "id": 116367860,
+          "component": 9,
+          "changed": false,
+          "geometry": "e0660ca1e555ed1f5c07a853341fefef84e4877e47fad8e6bae33dc8e7ec8ce2"
+        },
+        {
+          "id": 116367860,
+          "component": 12,
+          "changed": false,
+          "geometry": "73b215317ea6a6b7037e4cd9f47eaeb6cef82a09a7a7d81df68912afb342cec4"
+        },
+        {
+          "id": 116367720,
+          "component": 2,
+          "changed": false,
+          "geometry": "ffce82d619075b76e70ab76010b5f8d4054a9d18adab3e12dfb90241e09f75b2"
+        },
+        {
+          "id": 116367720,
+          "component": 4,
+          "changed": false,
+          "geometry": "bb60ea33fde58e90d6c22208e00b52ee6eee6f651b8f672188a6a08562da4731"
+        },
+        {
+          "id": 116367720,
+          "component": 5,
+          "changed": false,
+          "geometry": "a598523a1c4d95a107a8e93eb14e803ee4dbdceab3d807892e5899712dd73f2c"
+        },
+        {
+          "id": 116367720,
+          "component": 8,
+          "changed": false,
+          "geometry": "5ec3fa38a25bd2f8146c82de794223486446e014d272165cc3648e0ad54b14f0"
+        },
+        {
+          "id": 156761670,
+          "component": 6,
+          "changed": true,
+          "geometry": "6a8c2d918347d4db8d56664a18d6fa335c6b2c6f7c5dfab952dc6602eb089d08"
+        }
+      ],
+      "native_vector_parts": [
+        {
+          "id": "3a0080f4-3920-4f96-98f7-a571a3c038f4",
+          "component": null,
+          "changed": false,
+          "geometry": "0b8443d1cbf8fe4ca42afb59424c8ea8d3ee0ef2c82881bacdb536d81c672716"
+        },
+        {
+          "id": "4cc6c2e8-a9fa-4a24-b8ad-b42d11469974",
+          "component": null,
+          "changed": false,
+          "geometry": "0cf5bf23cbfc62ac46f8dedb7bbe47511bec15f1a886269d0ab0fadc7ed3417c"
+        },
+        {
+          "id": "557ecb20-0ba9-4d41-ad98-d7171dfa6aa3",
+          "component": null,
+          "changed": true,
+          "geometry": "4fb4b2f8ca3634df95e9d8643712ab26d93e3ad2d46b6ed68fddd3fe7d6f36d5"
+        },
+        {
+          "id": "c965d4bc-6652-4942-b931-ced97319bfb1",
+          "component": null,
+          "changed": false,
+          "geometry": "b0488e92f8837a26087d044123cdb622f3b370ee2e9b7ed550ca96eceaef5675"
+        },
+        {
+          "id": "d1bfafc0-a5e6-4c8c-8a3a-f813bd4eb149",
+          "component": null,
+          "changed": false,
+          "geometry": "8b2c0902e5ba8ace1e412dbc7f9eb51bf90e96882fd10117db27adf6898a4eea"
+        },
+        {
+          "id": "dd9a9a9b-f8e9-42ad-a21f-b82de2d36a45",
+          "component": null,
+          "changed": false,
+          "geometry": "b23acab9ba2616fc4df34342b28f91863f23cf837395afc6427f7b16ec32b9a6"
+        },
+        {
+          "id": "fcc2def2-cd54-4398-a9a7-935c19618845",
+          "component": null,
+          "changed": true,
+          "geometry": "d69dce7ee6e2f850d4cd209c91a67883acb3986bec8f70078bbb76b0e26eff4f"
+        }
+      ],
+      "grouped_vector": {
+        "queriedFeatures": 31,
+        "candidateIDs": 7,
+        "partialIDs": 3,
+        "residualComponents": 3,
+        "removedComponents": 3,
+        "retainedCrossingIDs": 4,
+        "clippingErrors": 0
+      },
+      "grouped_signature": "396dc97e3fdb5d38d87835282450bee21b51e6f17a7364769b66d1681940a660"
+    },
+    {
+      "step": "distant",
+      "active": [
+        {
+          "id": "huangpu-central-trust-beijing-front",
+          "variant": "distant",
+          "assetSha256": "f20e1a388cd8d86de88a85cb0b71ca3757bdcc3b947e6a2e721b7330b2ef00bd"
+        }
+      ],
+      "revision": 5,
+      "groundCutCount": 1,
+      "displayCutCount": 2,
+      "targets": [
+        {
+          "id": 2808,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2652,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 968,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 718,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 3201,
+          "near": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "far": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "near_rows": 8,
+          "far_rows": 8
+        },
+        {
+          "id": 1082,
+          "near": "ae7c16acf1188d849d7d507b6e004107a670d47a6c17435f6dbca79863439bab",
+          "far": "ae7c16acf1188d849d7d507b6e004107a670d47a6c17435f6dbca79863439bab",
+          "near_rows": 10,
+          "far_rows": 10
+        },
+        {
+          "id": 2550,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        }
+      ],
+      "texture_triangle_count": 1909,
+      "courtyard_sha256": "acf73f2df347d5d18e2dd7e52694e35102cc761882e7f04de6f788702684bdd5",
+      "courtyard_probes": 144,
+      "ground": [
+        {
+          "x": 9.64075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.14,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.06,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.38,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.81,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 1.1,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.16,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.212,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.242,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.253,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.275,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.295,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.312,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.343,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.16,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.212,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.242,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.253,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.275,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.295,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.312,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.343,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.04,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.41075,
+          "y": 0.53,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 8.73075,
+          "y": -0.15,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.54,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.04,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.51075,
+          "y": 0.53,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.83075,
+          "y": -0.15,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.54,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.194,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.216,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.321,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.336,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.359,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.421,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.194,
+          "cut": true,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.216,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.321,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.336,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.359,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.421,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.32075,
+          "y": 0.156,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": 0.16,
+          "cut": true,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        }
+      ],
+      "vector_parts": [
+        {
+          "id": 23711710,
+          "component": 322,
+          "changed": false,
+          "geometry": "f5a3ed500f51204fdb8e0593abbdf5c60159a6977addc06819e7a52717c13cf3"
+        },
+        {
+          "id": 23711710,
+          "component": 323,
+          "changed": false,
+          "geometry": "ec982bb365ecd500c552d61c54eee1bd33e17d9d36bbf6a7589d5314427f30cf"
+        },
+        {
+          "id": 23711710,
+          "component": 324,
+          "changed": false,
+          "geometry": "17c2b80c1f566b1015edc78fb649d37a1359039954397f14f00b57b9ea94af33"
+        },
+        {
+          "id": 23711710,
+          "component": 325,
+          "changed": false,
+          "geometry": "21681299e01c384b2ba92b0d76620a28583f13daa0ea4d23627e365e0dbf004f"
+        },
+        {
+          "id": 23711710,
+          "component": 326,
+          "changed": false,
+          "geometry": "52ddec5f15ab6a3d74d3bd7455253dc7d01dd4ddf0ea31114f34fa2f1e5b55ee"
+        },
+        {
+          "id": 23711710,
+          "component": 327,
+          "changed": false,
+          "geometry": "23397abe3bef78894b82914d0b7e670ca064af17dac2024c51dc84c8ef247b81"
+        },
+        {
+          "id": 23711710,
+          "component": 328,
+          "changed": false,
+          "geometry": "6ea0e149447797d2c7db1e74da320464c6927c4728ebfc5978132122b905d505"
+        },
+        {
+          "id": 23711710,
+          "component": 329,
+          "changed": false,
+          "geometry": "20e4b7c34e06ad53edda7dbf8575a0a6c70524a381dd38d3e85ae222df5e07b3"
+        },
+        {
+          "id": 23711710,
+          "component": 336,
+          "changed": false,
+          "geometry": "abc29aed03dfd0c59dd74ee1d5e108d80ea068a2d824d495bb8314e3f9fd101f"
+        },
+        {
+          "id": 23711710,
+          "component": 349,
+          "changed": false,
+          "geometry": "8a7eb55c19b3095d01818bb211789fd36a1da6ba28c8d57cb1ff8d039e79c077"
+        },
+        {
+          "id": 23711710,
+          "component": 350,
+          "changed": false,
+          "geometry": "40372deb4eaf063d4f4b2e653d1223f50fd7ab1934a5dbeb17b3dca1dd068546"
+        },
+        {
+          "id": 23711710,
+          "component": 351,
+          "changed": false,
+          "geometry": "64eb595df56e71f44d3ca037c8ca8f3ac4e8e6a2df72cce2555853fc3b6be9b5"
+        },
+        {
+          "id": 23711710,
+          "component": 352,
+          "changed": false,
+          "geometry": "c1672dd1c4a5e6fe65169204f23399007d0b25a1f1767209f01b440a6069bbb4"
+        },
+        {
+          "id": 23711710,
+          "component": 353,
+          "changed": false,
+          "geometry": "0b5d0947eb5f95b27556d083d4e2ef8ee64dc5e7f77e43c3ba96fad21c0674a3"
+        },
+        {
+          "id": 23711710,
+          "component": 354,
+          "changed": false,
+          "geometry": "e692784753f44b11c2bc9e9d87321b905f0fa4453cc58a3826f66f780daee74e"
+        },
+        {
+          "id": 23711710,
+          "component": 356,
+          "changed": false,
+          "geometry": "2917c47b522698159e32df0edc31f01d47122a4287d089fd79130009c0c38aed"
+        },
+        {
+          "id": 23711710,
+          "component": 357,
+          "changed": false,
+          "geometry": "7ad40f802e2735fe3949d81a4fcec36415b1620ebf8309bbdd742126adbd89e0"
+        },
+        {
+          "id": 23711710,
+          "component": 360,
+          "changed": false,
+          "geometry": "acc17026588a661754b295f98b6684cda35433079cb669b52bf9ab58e4c4fd0c"
+        },
+        {
+          "id": 23711710,
+          "component": 371,
+          "changed": false,
+          "geometry": "046bcc30192aa985225b98424c782b8144cd4f31edea4925a3a4be16f63d2fac"
+        },
+        {
+          "id": 23711710,
+          "component": 372,
+          "changed": false,
+          "geometry": "687c864c6d7b1cfcb7abb9215811ee2ebb54119958b0b08fd830cd771ee13dc3"
+        },
+        {
+          "id": 23711710,
+          "component": 379,
+          "changed": false,
+          "geometry": "3767426e6304b063567b62ebc8ae32d2498c9148fae9d1b3cc61c6ed1c6e4c74"
+        },
+        {
+          "id": 3803399710,
+          "component": 6,
+          "changed": true,
+          "geometry": "df911a23d464dc3fccc72011751a0750acff2a54cf4c7ca05fb2acb63985679c"
+        },
+        {
+          "id": 116293700,
+          "component": 4,
+          "changed": true,
+          "geometry": "9e8847b4713a72512039080d411394f65f5bd8ad6a326cad4190b50d318f2ed4"
+        },
+        {
+          "id": 116367960,
+          "component": 17,
+          "changed": false,
+          "geometry": "1ba427def905b030197916a866cf5014c549400174cdcb5ce2c9e32f5aec8d3d"
+        },
+        {
+          "id": 116367860,
+          "component": 9,
+          "changed": false,
+          "geometry": "e0660ca1e555ed1f5c07a853341fefef84e4877e47fad8e6bae33dc8e7ec8ce2"
+        },
+        {
+          "id": 116367860,
+          "component": 12,
+          "changed": false,
+          "geometry": "73b215317ea6a6b7037e4cd9f47eaeb6cef82a09a7a7d81df68912afb342cec4"
+        },
+        {
+          "id": 116367720,
+          "component": 2,
+          "changed": false,
+          "geometry": "ffce82d619075b76e70ab76010b5f8d4054a9d18adab3e12dfb90241e09f75b2"
+        },
+        {
+          "id": 116367720,
+          "component": 4,
+          "changed": false,
+          "geometry": "bb60ea33fde58e90d6c22208e00b52ee6eee6f651b8f672188a6a08562da4731"
+        },
+        {
+          "id": 116367720,
+          "component": 5,
+          "changed": false,
+          "geometry": "a598523a1c4d95a107a8e93eb14e803ee4dbdceab3d807892e5899712dd73f2c"
+        },
+        {
+          "id": 116367720,
+          "component": 8,
+          "changed": false,
+          "geometry": "5ec3fa38a25bd2f8146c82de794223486446e014d272165cc3648e0ad54b14f0"
+        },
+        {
+          "id": 156761670,
+          "component": 6,
+          "changed": true,
+          "geometry": "6a8c2d918347d4db8d56664a18d6fa335c6b2c6f7c5dfab952dc6602eb089d08"
+        }
+      ],
+      "native_vector_parts": [
+        {
+          "id": "3a0080f4-3920-4f96-98f7-a571a3c038f4",
+          "component": null,
+          "changed": false,
+          "geometry": "0b8443d1cbf8fe4ca42afb59424c8ea8d3ee0ef2c82881bacdb536d81c672716"
+        },
+        {
+          "id": "4cc6c2e8-a9fa-4a24-b8ad-b42d11469974",
+          "component": null,
+          "changed": false,
+          "geometry": "0cf5bf23cbfc62ac46f8dedb7bbe47511bec15f1a886269d0ab0fadc7ed3417c"
+        },
+        {
+          "id": "557ecb20-0ba9-4d41-ad98-d7171dfa6aa3",
+          "component": null,
+          "changed": true,
+          "geometry": "4fb4b2f8ca3634df95e9d8643712ab26d93e3ad2d46b6ed68fddd3fe7d6f36d5"
+        },
+        {
+          "id": "c965d4bc-6652-4942-b931-ced97319bfb1",
+          "component": null,
+          "changed": false,
+          "geometry": "b0488e92f8837a26087d044123cdb622f3b370ee2e9b7ed550ca96eceaef5675"
+        },
+        {
+          "id": "d1bfafc0-a5e6-4c8c-8a3a-f813bd4eb149",
+          "component": null,
+          "changed": false,
+          "geometry": "8b2c0902e5ba8ace1e412dbc7f9eb51bf90e96882fd10117db27adf6898a4eea"
+        },
+        {
+          "id": "dd9a9a9b-f8e9-42ad-a21f-b82de2d36a45",
+          "component": null,
+          "changed": false,
+          "geometry": "b23acab9ba2616fc4df34342b28f91863f23cf837395afc6427f7b16ec32b9a6"
+        },
+        {
+          "id": "fcc2def2-cd54-4398-a9a7-935c19618845",
+          "component": null,
+          "changed": true,
+          "geometry": "d69dce7ee6e2f850d4cd209c91a67883acb3986bec8f70078bbb76b0e26eff4f"
+        }
+      ],
+      "grouped_vector": {
+        "queriedFeatures": 31,
+        "candidateIDs": 7,
+        "partialIDs": 3,
+        "residualComponents": 3,
+        "removedComponents": 3,
+        "retainedCrossingIDs": 4,
+        "clippingErrors": 0
+      },
+      "grouped_signature": "396dc97e3fdb5d38d87835282450bee21b51e6f17a7364769b66d1681940a660"
+    },
+    {
+      "step": "unloaded",
+      "active": [],
+      "revision": 6,
+      "groundCutCount": 0,
+      "displayCutCount": 0,
+      "targets": [
+        {
+          "id": 2808,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2652,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 968,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 718,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 3201,
+          "near": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "far": "2f41127de6dc7b433c89a5d2e04607e67fb370e0c4a40cf404b48e9c307587e2",
+          "near_rows": 8,
+          "far_rows": 8
+        },
+        {
+          "id": 1082,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        },
+        {
+          "id": 2550,
+          "near": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "far": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "near_rows": 0,
+          "far_rows": 0
+        }
+      ],
+      "texture_triangle_count": 1899,
+      "courtyard_sha256": "712225dafd07851c8574c9c1697ee2753ea82074d2bfcfe612960c6390f33a4d",
+      "courtyard_probes": 144,
+      "ground": [
+        {
+          "x": 9.64075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.64075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.07075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.39075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.62075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.85075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.17075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.4,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": -0.14,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.06,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.38,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 0.81,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.60075,
+          "y": 1.1,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.212,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.242,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.253,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.275,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.295,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.312,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.343,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 10.00075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.212,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.242,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.253,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.275,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.295,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.312,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.343,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.24075,
+          "y": 1.386,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.04,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.41075,
+          "y": 0.53,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 8.73075,
+          "y": -0.15,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 9.07075,
+          "y": 0.54,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.04,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.51075,
+          "y": 0.53,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 11.83075,
+          "y": -0.15,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 12.17075,
+          "y": 0.54,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.194,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.216,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.321,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.336,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.359,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.421,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 16.84075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.194,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.216,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.321,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.336,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.359,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.421,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.482,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.80075,
+          "y": 0.56,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 17.32075,
+          "y": 0.156,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 2.1,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 3.3,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 5.5,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 6.67075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 14.45075,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": 0.16,
+          "cut": false,
+          "blocked": true,
+          "vectorBlocked": true,
+          "vectorGroundError": false
+        },
+        {
+          "x": 19.8,
+          "y": -0.23,
+          "cut": false,
+          "blocked": false,
+          "vectorBlocked": false,
+          "vectorGroundError": false
+        }
+      ],
+      "vector_parts": [
+        {
+          "id": 23711710,
+          "component": 322,
+          "changed": false,
+          "geometry": "f5a3ed500f51204fdb8e0593abbdf5c60159a6977addc06819e7a52717c13cf3"
+        },
+        {
+          "id": 23711710,
+          "component": 323,
+          "changed": false,
+          "geometry": "ec982bb365ecd500c552d61c54eee1bd33e17d9d36bbf6a7589d5314427f30cf"
+        },
+        {
+          "id": 23711710,
+          "component": 324,
+          "changed": false,
+          "geometry": "17c2b80c1f566b1015edc78fb649d37a1359039954397f14f00b57b9ea94af33"
+        },
+        {
+          "id": 23711710,
+          "component": 325,
+          "changed": false,
+          "geometry": "21681299e01c384b2ba92b0d76620a28583f13daa0ea4d23627e365e0dbf004f"
+        },
+        {
+          "id": 23711710,
+          "component": 326,
+          "changed": false,
+          "geometry": "52ddec5f15ab6a3d74d3bd7455253dc7d01dd4ddf0ea31114f34fa2f1e5b55ee"
+        },
+        {
+          "id": 23711710,
+          "component": 327,
+          "changed": false,
+          "geometry": "23397abe3bef78894b82914d0b7e670ca064af17dac2024c51dc84c8ef247b81"
+        },
+        {
+          "id": 23711710,
+          "component": 328,
+          "changed": false,
+          "geometry": "6ea0e149447797d2c7db1e74da320464c6927c4728ebfc5978132122b905d505"
+        },
+        {
+          "id": 23711710,
+          "component": 329,
+          "changed": false,
+          "geometry": "20e4b7c34e06ad53edda7dbf8575a0a6c70524a381dd38d3e85ae222df5e07b3"
+        },
+        {
+          "id": 23711710,
+          "component": 336,
+          "changed": false,
+          "geometry": "abc29aed03dfd0c59dd74ee1d5e108d80ea068a2d824d495bb8314e3f9fd101f"
+        },
+        {
+          "id": 23711710,
+          "component": 349,
+          "changed": false,
+          "geometry": "8a7eb55c19b3095d01818bb211789fd36a1da6ba28c8d57cb1ff8d039e79c077"
+        },
+        {
+          "id": 23711710,
+          "component": 350,
+          "changed": false,
+          "geometry": "40372deb4eaf063d4f4b2e653d1223f50fd7ab1934a5dbeb17b3dca1dd068546"
+        },
+        {
+          "id": 23711710,
+          "component": 351,
+          "changed": false,
+          "geometry": "64eb595df56e71f44d3ca037c8ca8f3ac4e8e6a2df72cce2555853fc3b6be9b5"
+        },
+        {
+          "id": 23711710,
+          "component": 352,
+          "changed": false,
+          "geometry": "c1672dd1c4a5e6fe65169204f23399007d0b25a1f1767209f01b440a6069bbb4"
+        },
+        {
+          "id": 23711710,
+          "component": 353,
+          "changed": false,
+          "geometry": "0b5d0947eb5f95b27556d083d4e2ef8ee64dc5e7f77e43c3ba96fad21c0674a3"
+        },
+        {
+          "id": 23711710,
+          "component": 354,
+          "changed": false,
+          "geometry": "e692784753f44b11c2bc9e9d87321b905f0fa4453cc58a3826f66f780daee74e"
+        },
+        {
+          "id": 23711710,
+          "component": 356,
+          "changed": false,
+          "geometry": "2917c47b522698159e32df0edc31f01d47122a4287d089fd79130009c0c38aed"
+        },
+        {
+          "id": 23711710,
+          "component": 357,
+          "changed": false,
+          "geometry": "7ad40f802e2735fe3949d81a4fcec36415b1620ebf8309bbdd742126adbd89e0"
+        },
+        {
+          "id": 23711710,
+          "component": 360,
+          "changed": false,
+          "geometry": "acc17026588a661754b295f98b6684cda35433079cb669b52bf9ab58e4c4fd0c"
+        },
+        {
+          "id": 23711710,
+          "component": 371,
+          "changed": false,
+          "geometry": "046bcc30192aa985225b98424c782b8144cd4f31edea4925a3a4be16f63d2fac"
+        },
+        {
+          "id": 23711710,
+          "component": 372,
+          "changed": false,
+          "geometry": "687c864c6d7b1cfcb7abb9215811ee2ebb54119958b0b08fd830cd771ee13dc3"
+        },
+        {
+          "id": 23711710,
+          "component": 379,
+          "changed": false,
+          "geometry": "3767426e6304b063567b62ebc8ae32d2498c9148fae9d1b3cc61c6ed1c6e4c74"
+        },
+        {
+          "id": 3803399710,
+          "component": 6,
+          "changed": true,
+          "geometry": "df911a23d464dc3fccc72011751a0750acff2a54cf4c7ca05fb2acb63985679c"
+        },
+        {
+          "id": 116293700,
+          "component": 4,
+          "changed": false,
+          "geometry": "5e13018b51faef83b70fd97bff5a22947e57b58f75343a77eef584155d33ab47"
+        },
+        {
+          "id": 116367960,
+          "component": 17,
+          "changed": false,
+          "geometry": "1ba427def905b030197916a866cf5014c549400174cdcb5ce2c9e32f5aec8d3d"
+        },
+        {
+          "id": 116367860,
+          "component": 9,
+          "changed": false,
+          "geometry": "e0660ca1e555ed1f5c07a853341fefef84e4877e47fad8e6bae33dc8e7ec8ce2"
+        },
+        {
+          "id": 116367860,
+          "component": 12,
+          "changed": false,
+          "geometry": "73b215317ea6a6b7037e4cd9f47eaeb6cef82a09a7a7d81df68912afb342cec4"
+        },
+        {
+          "id": 116367720,
+          "component": 2,
+          "changed": false,
+          "geometry": "ffce82d619075b76e70ab76010b5f8d4054a9d18adab3e12dfb90241e09f75b2"
+        },
+        {
+          "id": 116367720,
+          "component": 4,
+          "changed": false,
+          "geometry": "bb60ea33fde58e90d6c22208e00b52ee6eee6f651b8f672188a6a08562da4731"
+        },
+        {
+          "id": 116367720,
+          "component": 5,
+          "changed": false,
+          "geometry": "a598523a1c4d95a107a8e93eb14e803ee4dbdceab3d807892e5899712dd73f2c"
+        },
+        {
+          "id": 116367720,
+          "component": 8,
+          "changed": false,
+          "geometry": "5ec3fa38a25bd2f8146c82de794223486446e014d272165cc3648e0ad54b14f0"
+        },
+        {
+          "id": 156761670,
+          "component": 6,
+          "changed": true,
+          "geometry": "6a8c2d918347d4db8d56664a18d6fa335c6b2c6f7c5dfab952dc6602eb089d08"
+        }
+      ],
+      "native_vector_parts": [
+        {
+          "id": "3a0080f4-3920-4f96-98f7-a571a3c038f4",
+          "component": null,
+          "changed": false,
+          "geometry": "0b8443d1cbf8fe4ca42afb59424c8ea8d3ee0ef2c82881bacdb536d81c672716"
+        },
+        {
+          "id": "4cc6c2e8-a9fa-4a24-b8ad-b42d11469974",
+          "component": null,
+          "changed": false,
+          "geometry": "0cf5bf23cbfc62ac46f8dedb7bbe47511bec15f1a886269d0ab0fadc7ed3417c"
+        },
+        {
+          "id": "557ecb20-0ba9-4d41-ad98-d7171dfa6aa3",
+          "component": null,
+          "changed": false,
+          "geometry": "8dc67b21af5036e9c49c677a6149cfc7121a016778e53ade4d98e1dffabce7ce"
+        },
+        {
+          "id": "c965d4bc-6652-4942-b931-ced97319bfb1",
+          "component": null,
+          "changed": false,
+          "geometry": "b0488e92f8837a26087d044123cdb622f3b370ee2e9b7ed550ca96eceaef5675"
+        },
+        {
+          "id": "d1bfafc0-a5e6-4c8c-8a3a-f813bd4eb149",
+          "component": null,
+          "changed": false,
+          "geometry": "8b2c0902e5ba8ace1e412dbc7f9eb51bf90e96882fd10117db27adf6898a4eea"
+        },
+        {
+          "id": "dd9a9a9b-f8e9-42ad-a21f-b82de2d36a45",
+          "component": null,
+          "changed": false,
+          "geometry": "b23acab9ba2616fc4df34342b28f91863f23cf837395afc6427f7b16ec32b9a6"
+        },
+        {
+          "id": "fcc2def2-cd54-4398-a9a7-935c19618845",
+          "component": null,
+          "changed": true,
+          "geometry": "d69dce7ee6e2f850d4cd209c91a67883acb3986bec8f70078bbb76b0e26eff4f"
+        }
+      ],
+      "grouped_vector": {
+        "queriedFeatures": 31,
+        "candidateIDs": 7,
+        "partialIDs": 2,
+        "residualComponents": 2,
+        "removedComponents": 2,
+        "retainedCrossingIDs": 5,
+        "clippingErrors": 0
+      },
+      "grouped_signature": "b52673c3f4d3bd328293bd41755f37c1c64ece015c7f39e59451f4fb6585020b"
+    }
+  ]
+}

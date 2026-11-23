@@ -1,3 +1,11 @@
+# 中一信托大楼北京东路正立面与银行大厅彩绘天棚
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-central-trust-beijing-front&mode=overview) · [单体旋转与下载](central-trust-beijing-front.html) · [来源与制作范围](source/precise/huangpu-central-trust-beijing-front/README.md) · [验收记录](data/audit/central-trust-beijing-front-v1/README.md)
+
+第四批4A009，北京东路270号。华建修复图、市城建档案馆二层平面和区方报道可核前楼正立面、二至三层之间的中央彩绘天棚及上部可见天井。OSM 414733185与原城1082相符，分立于西邻盐业大楼。
+
+近景 62,138 个三角面，远景 41,146 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 7,184,421 字节。上海主图现有 306 处独立入口，黄浦区 141 处。[资产清单](assets/models/candidates/huangpu-central-trust-beijing-front/manifest.json)
+
 # 中垦大楼北京东路239号东北转角门楼
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-zhongken-bank-239-corner&mode=overview) · [单体旋转与下载](zhongken-bank-239-corner.html) · [来源与制作范围](source/precise/huangpu-zhongken-bank-239-corner/README.md) · [验收记录](data/audit/zhongken-bank-239-corner-v1/README.md)
