@@ -137,8 +137,10 @@ def add_court(b,lod,layout):
     pts=layout['court_corners'];outer=Polygon(layout['outer_corners']);court=Polygon(pts);depth=layout['gallery_depth'];behind=court.buffer(depth,join_style=2)
     h=layout['storey_pitch']
     b.plan_prism(court,-.16,.015,SL,'Central court paving')
+    # The concrete deck ends inside the brick shell. The courtyard edge stays visible.
+    floor_outline=outer.buffer(-.12,join_style=2).difference(court)
     for n in range(1,6):
-        b.plan_prism(outer.difference(court),n*h-layout['slab_thickness'],n*h,SL,f'Housing floor {n}' if n<5 else 'Roof deck')
+        b.plan_prism(floor_outline,n*h-layout['slab_thickness'],n*h,SL,f'Housing floor {n}' if n<5 else 'Roof deck')
     b.plan_prism(outer.buffer(-.2,join_style=2).difference(court.buffer(.20,join_style=2)),5*h,5*h+.035,F,'Four wings roof felt')
     for i in range(4):
         w=frame(b,layout,i);reg=layout['stairs'].get(w.name);prof=layout['parapet_height']; gap=(reg['along']-reg['width']/2,reg['along']+reg['width']/2) if reg else (0,0)
