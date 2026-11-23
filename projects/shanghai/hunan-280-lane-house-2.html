@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>湖南路280弄2号的转角钢窗住宅三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">徐汇区 · 湖南路</p><h1>湖南路280弄2号的转角钢窗住宅</h1></header>
+<main aria-label="湖南路280弄2号三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">四层钢窗沿住宅西南角转折，下方是通往弄内的双扇门。转到临街一侧，可以看见五层窗列与两组外挑窗墙。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/xuhui-hunan-280-lane-house-2/xuhui-hunan-280-lane-house-2-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>入口左侧绿牌写着“2”，下列“湖南路二八〇弄”。2016年3月13日的两张照片分别从弄内和湖南路拍摄，同日的近照能读清门牌。门扇下方的部分横片被照片日期遮住，模型依据上下可见横片的间距接续。</p>
+<p><a target="_blank" rel="noopener" href="data/audit/hunan-280-lane-house-2-v1/registration/three-stations-model.jpg">三处摄影站的模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/hunan-280-lane-house-2-v1/registration/lane-2016-model.jpg">2016年弄内视角</a> · <a target="_blank" rel="noopener" href="data/audit/hunan-280-lane-house-2-v1/registration/corner-2016-model.jpg">2016年街角视角</a> · <a target="_blank" rel="noopener" href="data/audit/hunan-280-lane-house-2-v1/registration/street-2015-model.jpg">2015年临街窗墙视角</a></p>
+<p>三处摄影站均展示模型渲染。2016年参考照片由“中国の風景”拍摄，2015年临街窗墙采用百度地图12月街景校准。各层窗框与门牌尺寸由照片反投求得。</p>
+<p><a href="https://4travel.jp/travelogue/11116083">中国の風景的湖南路原图与游记</a> · <a href="https://map.baidu.com/">百度地图街景</a> · <a href="https://fgj.sh.gov.cn/yxlsjz/20200414/b9946bf8508e4b9689671fcd4146bb86.html">上海市房管局历史建筑登记</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/xuhui-hunan-280-lane-house-2/source/viewer.js" type="module"></script>
+</body></html>

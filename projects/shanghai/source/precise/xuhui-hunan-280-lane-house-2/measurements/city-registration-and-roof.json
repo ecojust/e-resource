@@ -1,0 +1,76 @@
+{
+  "scope": "Exact projected architecture beside retained ordinary features; adjacent red tiled roof never used as source for a replacement. No archive pixels are distributed.",
+  "public_inputs": {
+    "git_commit": "21478cf5bb67d53ecffcb35407c618a519e0ebb5",
+    "repo": "https://github.com/ecojust/e-resource",
+    "tree_path": "projects/shanghai/assets/city-detail/macros/14-13718-6695",
+    "blobs": {
+      "feature-table.json.gz": "64819f586b372db555e211599a7f3bbf35f89569",
+      "ownership.json.gz": "ae849fc3c653b1433bad3b87541ea3c02164ab1f",
+      "far.glb": "34a6b532000c2254ac983200f2a093f465f61608",
+      "near/1_1-s0-s0.glb.gz": "34e38e4cb4b8fbe5451d146d44100e5569c53431",
+      "near/0_1-s0-s1.glb.gz": "de698df07bd4b7dc2136565aea67117a101fe7b8"
+    },
+    "full_source_feature_table_sha256": "ae08831809b5d7651774e04ea3a6d11e8ad59cfc156c92d3ee1b95c7e5659512",
+    "source_features": 4157,
+    "offline_numeric_subset_sha256": "93bb55035f24e67740ee24361d3f3c9dd6e1babe38530084fa1026e63bd6b0e5"
+  },
+  "type": "additive photographed facade representation",
+  "replacement_feature_ids": [],
+  "removed_ordinary_features": [],
+  "bounds": {
+    "origin_wgs84": [
+      121.43449936567119,
+      31.21035215313022
+    ],
+    "true_x_azimuth_deg": 90.30660566917068,
+    "unbuilt": "North and west roof perimeter where the archive views are obscured. No new roof over the full ground envelope."
+  },
+  "archived_nearby_city_ids": {
+    "716": "14-13718-6695-1_1-s0-s0",
+    "1629": "14-13718-6695-1_1-s0-s0",
+    "369": "14-13718-6695-0_1-s0-s1"
+  },
+  "archive_reading": {
+    "13240": {
+      "date": 20100722,
+      "front_eave_m": 15.120735861331232,
+      "east_edge_m": null
+    },
+    "8432": {
+      "date": 20191109,
+      "front_eave_m": 15.652638980004467,
+      "east_edge_m": 8.614659216872726
+    },
+    "39767": {
+      "date": 20211125,
+      "front_eave_m": 19.490138975918494,
+      "east_edge_m": 8.235379949777165
+    },
+    "3692": {
+      "date": 20250407,
+      "front_eave_m": null,
+      "east_edge_m": 9.988785484005751
+    }
+  },
+  "two_lods": {
+    "full": {
+      "report": "final-full-city-projection.json",
+      "report_sha256": "1931f66dadd8dc0ad23411b6a6e102c8750f1b62c4f074da769d444a6cc86452",
+      "mesh_sha256": "1378a86fd86d7cc0da0ea913dc775191b0baca63fba560c5b4d3a08c7e7d9809",
+      "roof_ledge_clearance_m": 0.17592430114746094
+    },
+    "lod": {
+      "report": "final-lod-city-projection.json",
+      "report_sha256": "9afa7f0800ad3f12155e93d21d5e5e651b17fc266d68778ea5cb16c26bfce790",
+      "mesh_sha256": "614a1162ec4fc56b7f5d75428218e8d14327624a2d22c116c8a9b0cb42cad274",
+      "roof_ledge_clearance_m": 0.17592430114746094
+    }
+  },
+  "recompute": {
+    "geometry": "python measurements/project_house.py MODEL FULL_TABLE.json.gz measurements/house-cameras.json OUTPUT.json; the included nearby-source-features.json.gz reproduces local geometries and distances while reporting its own subset hash.",
+    "vertical": "python measurements/vertical_clearance.py MODEL PROJECTION.json OUTPUT.json",
+    "aerial": "python measurements/read_roof_context.py measurements/wayback-numeric-sources OUTPUT.json"
+  },
+  "ordinary_mesh_test": "Municipal source-footprint full and near boundaries can differ at eaves. Separate numerical ray comparison against retained decoded near/far tiles is recorded in the city publication ledger."
+}

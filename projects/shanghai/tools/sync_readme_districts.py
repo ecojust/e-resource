@@ -26,11 +26,52 @@ INTEGRATIONS = ROOT / 'projects/shanghai/data/candidate-city-integrations.json'
 MARKER = r'\n?<!-- district-candidates:[^>]+:start -->.*?<!-- district-candidates:[^>]+:end -->\n?'
 
 
+def verified_clearance_source(project, placement, row, manifest, note, evidence, encoding):
+    """Check a published local contact relief, original meshes and decoded city intersections."""
+    report = evidence('separation')
+    contacts = evidence('intersections')['comparisons']
+    previous = report['standalone_original']
+    site = report['original_city']
+    if report['subject'] != manifest['id'] or previous['individual_page'] != row['page']:
+        return False
+    if (site['replacements'] or not site['retained_ids'] or
+            len(set(site['retained_ids'])) != len(site['retained_ids']) or
+            any(report['position'][key] != placement[key] for key in report['position'])):
+        return False
+    if placement.get('owner') or placement.get('source_owner') or placement['navigation']['listed']:
+        return False
+    if previous['full'] != manifest['assets']['raw']['sha256']:
+        return False
+    original_tiles = {(p['original_tile'], p['original_sha256']) for p in contacts}
+    if len(original_tiles) < 2 or not any(t.startswith('near/') for t, _ in original_tiles):
+        return False
+    for role, key in [('full','web'), ('lod','lod')]:
+        item = report['per_lod'][role]
+        delivered = placement['assets'][key]
+        if previous[role] != encoding[role]['source']['sha256']:
+            return False
+        if (any(item[field] != delivered[field] for field in ('file','bytes','triangles','sha256')) or
+                Path(item['file']).parent != Path(placement['candidate_manifest']).parent):
+            return False
+        if not 0 < item['untouched_components'] < item['closed_components']:
+            return False
+        if not item['cut_cubic_metres'] or not all(v > 0 for v in item['cut_cubic_metres'].values()):
+            return False
+        for ident, sha in [(role+'-city-source.glb',item['source_sha256']),('decoded-'+role+'.glb',item['decoded_sha256'])]:
+            results = [p for p in contacts if p['model'] == ident]
+            keys = {(p['original_tile'],p['original_sha256']) for p in results}
+            if len(results) != len(keys) or keys != original_tiles:
+                return False
+            if any(p['model_sha256'] != sha or p['surface_contacts'] != 0 for p in results):
+                return False
+    return True
+
+
 def verified_component_placement(project, placement, row, manifest):
     """Match a separately published map component to its full-resolution source geometry."""
     from hashlib import sha256
     note = placement.get('derived_asset_note')
-    if not isinstance(note, dict) or note.get('method') != 'published-component-subset-v1':
+    if not isinstance(note, dict) or note.get('method') not in ('published-component-subset-v1', 'published-contact-relief-v1'):
         return False
     if note.get('work_commit') != row['published_commit'] or not placement.get('partial_model'):
         return False
@@ -51,24 +92,28 @@ def verified_component_placement(project, placement, row, manifest):
         return json.loads(data)
     separation = evidence('separation')
     original_mesh = evidence('encoding')
-    if separation.get('native_ids_hidden') != []:
-        return False
-    for key, role in [('web','full'),('lod','lod')]:
-        part = separation['map_meshes'][key]
-        asset = placement['assets'][key]
-        if not part['source_matched'] or part['complete_source'] != original_mesh[role]['source']['sha256']:
+    if note['method'] == 'published-contact-relief-v1':
+        if not verified_clearance_source(project, placement, row, manifest, note, evidence, original_mesh):
             return False
-        if key == 'web' and part['complete_source'] != original['raw']['sha256']:
+    else:
+        if separation.get('native_ids_hidden') != []:
             return False
-        if (part['packed'],part['component_triangles']) != (asset['sha256'],asset['triangles']):
-            return False
-        if not 0 < part['component_triangles'] < part['complete_triangles'] == original[role]['triangles']:
-            return False
-        if Path(asset['file']).parent != Path(placement['candidate_manifest']).parent:
-            return False
-        data = (project/asset['file']).read_bytes()
-        if len(data) != asset['bytes'] or sha256(data).hexdigest() != asset['sha256']:
-            return False
+        for key, role in [('web','full'),('lod','lod')]:
+            part = separation['map_meshes'][key]
+            asset = placement['assets'][key]
+            if not part['source_matched'] or part['complete_source'] != original_mesh[role]['source']['sha256']:
+                return False
+            if key == 'web' and part['complete_source'] != original['raw']['sha256']:
+                return False
+            if (part['packed'],part['component_triangles']) != (asset['sha256'],asset['triangles']):
+                return False
+            if not 0 < part['component_triangles'] < part['complete_triangles'] == original[role]['triangles']:
+                return False
+            if Path(asset['file']).parent != Path(placement['candidate_manifest']).parent:
+                return False
+            data = (project/asset['file']).read_bytes()
+            if len(data) != asset['bytes'] or sha256(data).hexdigest() != asset['sha256']:
+                return False
     from hashlib import sha1
     from base64 import b64decode
     import gzip
@@ -109,6 +154,8 @@ def verified_component_placement(project, placement, row, manifest):
     files = [master_manifest,*[master_manifest.parent/original[role]['file'] for role in ('raw','full','lod')],
              *[Path(placement['assets'][role]['file']) for role in ('web','lod')],
              Path(note['separation']['file']),Path(note['encoding']['file'])]
+    if note['method'] == 'published-contact-relief-v1':
+        files.append(Path(note['intersections']['file']))
     for path in files:
         node = top
         for part in ('projects','shanghai',*path.parts):
