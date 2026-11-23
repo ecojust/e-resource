@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>国际礼拜堂庭院花窗三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">徐汇区 · 衡山路</p><h1>国际礼拜堂庭院花窗</h1></header>
+<main aria-label="国际礼拜堂庭院花窗三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">庭院一侧的高山墙上，石券围住七扇竖向花窗。用三处实拍机位可以对照窗格与两带圆花饰。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/xuhui-community-church-garden-tracery/xuhui-community-church-garden-tracery-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>上海市优秀历史建筑名录编号1D002，名录地址为衡山路58号。<a href="https://www.ccctspm.org/churchinfo/199">中国基督教网堂点简介</a>所列地址为衡山路53号。</p>
+<p><a target="_blank" rel="noopener" href="data/audit/community-church-garden-tracery-v1/final/registration/registered-tracery.jpg">三处摄影机位模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/community-church-garden-tracery-v1/final/registration/fayhoo2017-model.jpg">Fayhoo，2017年1月21日</a> · <a target="_blank" rel="noopener" href="data/audit/community-church-garden-tracery-v1/final/registration/livelikerw2013-model.jpg">Livelikerw，2013年12月18日</a> · <a target="_blank" rel="noopener" href="data/audit/community-church-garden-tracery-v1/final/registration/szalai2018-model.jpg">Szalai.laci，2018年3月4日</a></p>
+<p>原照与授权见 Wikimedia Commons。<a href="https://commons.wikimedia.org/wiki/File:Community_Church,_Shanghai.jpg">Fayhoo，2017年1月21日（CC BY-SA 3.0）</a> · <a href="https://commons.wikimedia.org/wiki/File:Shanghai_Community_Church.JPG">Livelikerw，2013年12月18日（CC BY-SA 3.0）</a> · <a href="https://commons.wikimedia.org/wiki/File:Christian_Church_International_Chapel_Shanghai_view_from_entrance.jpeg">Szalai.laci，2018年3月4日（CC BY-SA 4.0）</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/xuhui-community-church-garden-tracery/source/viewer.js" type="module"></script>
+</body></html>
