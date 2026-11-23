@@ -17,9 +17,8 @@ from register_court import Camera
 
 HERE=Path(__file__).absolute().parent
 PRECISE=HERE.parents[1]
-R8=PRECISE/'xuhui-yuqing-80-twin-winter-gardens/measurements'
-sys.path.insert(0,str(R8))
-from render_garden_daylight import sky_maps, SAMPLES, DEPTH_RESOLUTION
+from sky_sampling import sky_maps, SAMPLES, DEPTH_RESOLUTION
+sys.path.insert(0,str(PRECISE/'huangpu-yuanmingyuan-apartments-street-front/measurements'))
 backend=runpy.run_path(str(PRECISE/'changning-hongji-yuyuan-garden-houses-8-and-9/measurements/render-garden-stations.py'))
 VIEWS={'commons':('2015-02-07T13:38:39','Fayhoo | 7 Feb 2015'),
        '05':('2018-09-09T16:33:22','Courtyard | 9 Sep 2018'),

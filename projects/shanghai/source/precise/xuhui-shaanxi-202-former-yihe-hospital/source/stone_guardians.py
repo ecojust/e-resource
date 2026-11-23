@@ -146,9 +146,9 @@ def add_guardians(builder,lod=False,layout=None):
     """Attach separately observed left and right carvings; centres refer to the grey bases."""
     l=layout or {}
     for k,v in PALETTE.items():builder.palette.setdefault(k,v)
-    centers=l.get('centers',[(-2.795,-2.48),(.395,-2.48)])
+    centers=l.get('centers',[(-2.782,-2.403),(.408,-2.403)])
     for i,(x,y) in enumerate(centers):
-        base=l.get('plinth_top',.55);h=l.get('carved_heights',(.974,1.005))[i]
+        base=l.get('plinth_top',.301);h=l.get('carved_heights',(.906,.920))[i]
         g=Carving(builder,x,y,base,h,['left seen from court','right seen from court'][i],lod)
         width=l.get('plinth_widths',(.66,.66))[i];depth=l.get('plinth_depth',.72)
         builder.box((x,y,base*.47),(width-.036,depth-.041,base*.94),PLINTH,label=g.label('grey squared support'))

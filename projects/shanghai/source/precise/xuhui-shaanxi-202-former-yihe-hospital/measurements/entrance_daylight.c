@@ -35,11 +35,11 @@ void set_globe(int material,float red,float green,float blue){
 /* Local diffuse contribution in the photographed section of the vestibule.
  * The two positions match the model; intensity is an illustrative estimate. */
 static float pendant_light(float x,float y,float z,float nx,float ny,float nz){
-    if(y<.09f||y>3.f||x< -2.4f||x>.17f||z>4.10f)return 0;
-    const float ys[]={.85f,2.38f},zs[]={3.34f,3.23f};
+    if(y<.09f||y>6.74f||x< -2.4f||x>.17f||z>4.10f)return 0;
+    const float xs[]={-1.099f,-1.142f},ys[]={.863f,6.155f},zs[]={3.24f,3.24f};
     float total=0;
     for(int i=0;i<2;i++){
-        float a=-1.1f-x,b=ys[i]-y,c=zs[i]-z,d2=a*a+b*b+c*c;
+        float a=xs[i]-x,b=ys[i]-y,c=zs[i]-z,d2=a*a+b*b+c*c;
         float incidence=fmaxf(0,(a*nx+b*ny+c*nz)/sqrtf(fmaxf(d2,.02f)));
         total+=.69f*incidence/(.22f+d2);
     }

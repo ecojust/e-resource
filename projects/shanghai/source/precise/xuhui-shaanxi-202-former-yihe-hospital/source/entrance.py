@@ -20,10 +20,12 @@ LAMP='Yihe | amber opal glass'
 GLOBE='Yihe | illuminated vestibule globe'
 SHADOW='Yihe | shaded vestibule'
 PAVER='Yihe | grey step granite'
+RUNNER='Yihe | muted red mat'
+INLAY='Yihe | dark threshold inlay'
 PALETTE={ASH:('#b5ada0',.9),JOINT:('#898577',.92),CREAM:('#ddcaae',.85),
          SOFFIT:('#d7cbb6',.92),CAP:('#90918c',.7),OAK:('#50372d',.64),
          IRON:('#372a25',.63),BRASS:('#786858',.55),LAMP:('#d0c9a9',.44),GLOBE:('#ffdb8c',.34),
-         SHADOW:('#53483a',.97),PAVER:('#aca69c',.93)}
+         SHADOW:('#53483a',.97),PAVER:('#aca69c',.93),RUNNER:('#805046',.97),INLAY:('#68675e',.83)}
 def material(hexcolor,roughness):
     rgb=np.asarray(list(bytes.fromhex(hexcolor.lstrip('#'))),dtype=float)/255.
     return dict(color=np.where(rgb<.04045,rgb/12.92,((rgb+.055)/1.055)**2.4).tolist(),roughness=roughness)
@@ -122,16 +124,30 @@ def vestibule(b,cx,l,r,lod):
                 scroll.append(LineString(list(zip(c+hand*w*.56+rad*np.cos(ang),3.73+rad*np.sin(ang)))).buffer(.01))
     face(b,unary_union(scroll).intersection(upper),back+.012,back+.038,IRON,'Entrance | scrollwork in four transom lights')
     for x in [inner_l,inner_r]:cut_gate(b,x,back+.02,lod)
-    deep=2.95
+    deep=6.70
     for x in [l,r]:
         solid(b,x-.06,x+.06,back,deep,.54,top,SHADOW,'Entrance | visible shaded side reveal')
         solid(b,x-.065,x+.065,back,deep,.55,1.69,OAK,'Entrance | darker vestibule dado')
     solid(b,l,r,back,deep,top,top+.11,SOFFIT,'Entrance | light vestibule ceiling')
     solid(b,l,r,back,deep,.51,.55,PAVER,'Entrance | threshold floor')
+    # The 2018 close photograph resolves a red mat and a rectangular dark stone inlay in front of it.
+    solid(b,cx-.61,cx+.61,-.105,.47,.551,.558,RUNNER,'Entrance | broad vermilion threshold mat')
+    solid(b,cx-.49,cx+.49,.46,1.70,.552,.557,RUNNER,'Entrance | visible runner into recess')
+    left,right=cx-.58,cx+.58
+    mark=box(left,-.78,right,-.19).difference(box(left+.025,-.755,right-.025,-.215))
+    center=Point(cx,-.49).buffer(.092,quad_segs=10 if lod else 22)
+    loops=[mark,center]
+    for x in (left+.065,right-.065):
+        for y in (-.69,-.28):
+            disc=Point(x,y).buffer(.052,quad_segs=6 if lod else 14)
+            loops.append(disc.difference(Point(x,y).buffer(.034,quad_segs=6 if lod else 14)))
+    b.plan_prism(unary_union(loops),.5505,.553,INLAY,'Entrance | dark stone threshold motif')
     solid(b,l,r,deep,deep+.08,.55,top,SHADOW,'Entrance | limit of photographically visible recess')
-    for y,z,rad in [(.85,3.34,.122),(2.38,3.23,.091)]:
-        b.tube([(cx,y,z),(cx,y,top)],.011,BRASS,6,'Entrance | chain of pendant globe')
-        b.lathe((cx,y),[(z-rad,.012),(z-rad*.72,rad*.72),(z,rad),(z+rad*.7,rad*.72),(z+rad,.018)],
+    # The photographs give image positions, not distances. Use a common hanging height
+    # and intersect both observed globe centres with that plane in the frontal camera.
+    for lx,y,z,rad in [(-1.099,.863,3.24,.134),(-1.142,6.155,3.24,.149)]:
+        b.tube([(lx,y,z),(lx,y,top)],.011,BRASS,6,'Entrance | chain of pendant globe')
+        b.lathe((lx,y),[(z-rad,.012),(z-rad*.72,rad*.72),(z,rad),(z+rad*.7,rad*.72),(z+rad,.018)],
                 GLOBE,12 if lod else 24,'Entrance | warm opal globe visible through doorway')
 
 def add_entrance(b,lod=False):
