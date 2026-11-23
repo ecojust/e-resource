@@ -216,7 +216,7 @@
 | 上海美丰银行河南中路宁波路弧形转角 | 2026-11-23 14:54:36 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-american-oriental-bank-rounded-corner&mode=overview) |
 | 恒利银行河南中路天津路转角入口与竖窗立面 | 2026-11-23 15:47:05 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-hengli-bank-henan-tianjin-corner&mode=overview) |
 | 上海钱业公会大楼（宁波路三开间正面） | 2026-11-23 16:15:14 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-shanghai-money-guild-front&mode=overview) |
-| 南京饭店山西南路入口与钝角阳台 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) |
+| 南京饭店山西南路入口与钝角阳台 | 2026-11-23 16:49:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) |
 
 ### 徐汇区（55处）
 

@@ -23,3 +23,7 @@
 桌面鼠标和手机触屏分别从地图标记返回南京饭店。主图留存了十幅城市截图，包括山西南路方向的街面、屋顶、三片门篷以及上层阳台。主图逐点核验了 58 个地面及相邻建筑位置。独立页分别在桌面和手机重开近景和远景，四个下载文件均按实际保存的字节验证。主图库与独立页的十四幅截图可逐张对照核查记录。
 
 [打开城市主图](../../../index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) · [街面](city-31278/map-street-facade.png) · [入口与三片门篷](city-31278/map-nankin-door-canopies.png) · [四、五层折角阳台](city-31278/map-nankin-angled-balconies.png) · [照片来源、阳台实测与三档射线复算](photo-recheck/README.md) · [逐图观察](city-31278/visual-review.json)
+
+GitHub 公开固定版本中，地图、入口页、来源说明和四件下载文件等共 39 项均返回 HTTP 200，字节数和 SHA-256 与提交一致。[打开本次提交的地图](https://raw.githack.com/ecojust/e-resource/d8f65bff3476e16d4bad1660f4fd0df581e71540/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) · [固定版本逐文件核对](publication.json)
+
+首次在 master 检查 39 项，10 项返回其他版本的内容，0 项未返回 HTTP 200。[首次 master 核验](publication-master-initial.json)
