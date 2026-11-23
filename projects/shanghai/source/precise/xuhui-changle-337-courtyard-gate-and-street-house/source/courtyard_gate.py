@@ -22,8 +22,11 @@ PALETTE = {
     GREEN: {"color":[.075,.255,.19],"roughness":.52},
     WHITE: {"color":[.88,.86,.76],"roughness":.70},
 }
-GATE_EAST, GATE_WEST = 11.72, 13.44
-FRONT_Y = -.21
+GATE_EAST, GATE_WEST = 11.90, 13.62
+FRONT_Y = -.174
+WALL_COPING = 2.44
+LEAF_TOP = 2.38
+TABLET_CENTRE = 2.15
 START_X, END_X = 4.10, 16.86
 
 def tapered_rectangle(b, bottom, top, material, label):
@@ -65,9 +68,9 @@ def gatepost(b, x, name, crest):
                        (x-.123,x+.123,y+.06,y+.355,crest),STONE,name+" weathered coping")
 
 def address(b):
-    x,z=GATE_EAST,1.84
+    x,z=GATE_EAST,TABLET_CENTRE
     y=FRONT_Y-.002
-    block(b,x-.103,x+.103,y-.016,y+.016,z-.073,z+.073,GREEN,"green street number tablet")
+    block(b,x-.107,x+.107,y-.016,y+.016,z-.082,z+.082,GREEN,"green street number tablet")
     curves={"3":[(-.019,.039),(.004,.043),(.018,.032),(.017,.019),(.008,.006),(-.003,.002),(.010,-.004),(.020,-.017),(.018,-.032),(.004,-.042),(-.016,-.036)],
             "7":[(-.020,.037),(.018,.037),(.006,.013),(-.006,-.014),(-.014,-.042)]}
     for i,digit in enumerate("337"):
@@ -77,16 +80,18 @@ def address(b):
 
 def leaf(b, x0,x1,name,lod):
     y=FRONT_Y+.165
-    block(b,x0,x1,y,y+.045,.035,2.045,STEEL,name+" steel leaf")
+    # Heights between the photographed threshold and the independent top sightline.
+    rise=lambda old: .035 + (old-.035)*(LEAF_TOP-.035)/(2.045-.035)
+    block(b,x0,x1,y,y+.045,.035,LEAF_TOP,STEEL,name+" steel leaf")
     for a in (x0+.014,x1-.014):
-        block(b,a-.013,a+.013,y-.013,y,.042,2.039,FRAME,name+" stile")
+        block(b,a-.013,a+.013,y-.013,y,rise(.042),LEAF_TOP-.006,FRAME,name+" stile")
     for z in (.066,.99,2.018):
-        block(b,x0+.027,x1-.027,y-.013,y,z-.011,z+.011,FRAME,name+" horizontal frame")
+        block(b,x0+.027,x1-.027,y-.013,y,rise(z)-.011,rise(z)+.011,FRAME,name+" horizontal frame")
     if not lod:
         axis=(x0+x1)*.5
-        block(b,axis-.009,axis+.009,y-.008,y,.077,2.007,FRAME,name+" pressed central rib")
+        block(b,axis-.009,axis+.009,y-.008,y,rise(.077),rise(2.007),FRAME,name+" pressed central rib")
         for z in (.445,.745,1.36,1.67):
-            block(b,x0+.027,x1-.027,y-.009,y,z-.007,z+.007,FRAME,name+" shallow panel fold")
+            block(b,x0+.027,x1-.027,y-.009,y,rise(z)-.007,rise(z)+.007,FRAME,name+" shallow panel fold")
 
 def add_courtyard_gate(b,lod=False):
     """Make the boundary from the house-wall joint up to the next property's pier."""
@@ -96,11 +101,11 @@ def add_courtyard_gate(b,lod=False):
            (GATE_WEST+.183,END_X,"west return")]
     for x0,x1,name in spans:
         block(b,x0,x1,y,y+.275,0,.17,BASE,name+" plinth")
-        block(b,x0,x1,y+.012,y+.26,.17,2.008,WALL,name+" roughcast")
-        block(b,x0,x1,y-.014,y+.286,2.008,2.065,STONE,name+" wall coping")
-    block(b,7.63-.15,7.63+.15,FRONT_Y+.007,FRONT_Y+.35,.17,2.045,STONE,"intermediate wall pilaster")
-    gatepost(b,GATE_EAST,"numbered east side",2.22)
-    gatepost(b,GATE_WEST,"west side",2.24)
+        block(b,x0,x1,y+.012,y+.26,.17,WALL_COPING-.057,WALL,name+" roughcast")
+        block(b,x0,x1,y-.014,y+.286,WALL_COPING-.057,WALL_COPING,STONE,name+" wall coping")
+    block(b,7.63-.15,7.63+.15,FRONT_Y+.007,FRONT_Y+.35,.17,WALL_COPING-.02,STONE,"intermediate wall pilaster")
+    gatepost(b,GATE_EAST,"numbered east side",2.545)
+    gatepost(b,GATE_WEST,"west side",2.565)
     l,r=GATE_EAST+.193,GATE_WEST-.193
     cut=(l+r)/2
     leaf(b,l,cut-.008,"east",lod)

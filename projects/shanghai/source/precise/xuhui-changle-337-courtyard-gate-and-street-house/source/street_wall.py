@@ -133,7 +133,7 @@ def service_pipe(f,lod):
 def add_rear_wing(b,lod=False):
     f=Facade(b,(-1,REAR_Y),(1,REAR_Y),'337 recessed wing')
     x0,x1=4.03,11.38;top=5.64
-    window=(4.23,2.77,5.70,4.47);hole=box(*window)
+    window=(4.23,3.235,5.84,4.615);hole=box(*window)
     wall=box(x0,0,x1,top).difference(hole)
     f.prism(wall,-.22,0,UPPER,'roughcast-face-with-recessed-window')
     f.prism(hole,-.235,-.22,DARK,'dark-window-backing')
@@ -148,18 +148,44 @@ def add_rear_wing(b,lod=False):
     wing.prism(frame.difference(glass),-.018,.019,GREEN,'painted-casement')
     wing.prism(glass,-.011,.002,GLASS_LIGHT,'glass-pane')
     f.box((a+c)/2,lo-.04,c-a+.10,.080,.149,.008,SILL,'window-sill')
-    # The photos show an off-white, open-slatted rectangular screen standing
-    # proud of this wall. Its internal equipment is concealed.
-    left,right=8.22,9.32;bottom,head=2.69,3.43;depth=.26
-    f.prism(box(left,bottom,right,head).difference(box(left+.042,bottom+.041,right-.042,head-.041)),depth-.042,depth,LOUVER,'louvre/front-frame')
-    f.box((left+right)/2,head-.018,right-left,.036,depth,depth/2,LOUVER,'louvre/top-return')
-    for side in (left+.014,right-.014):f.box(side,(bottom+head)/2,.028,head-bottom,depth,depth/2,LOUVER,'louvre/side-return')
-    count=11 if not lod else 8
-    for i in range(count):
-        z=bottom+.07+i*(head-bottom-.13)/(count-1)
-        f.box((left+right)/2,z,right-left-.068,.032,.045,depth-.022,LOUVER,'louvre/horizontal-slat')
-    diameter=.066
-    f.line((10.27,2.67,.079),(10.32,5.02,.079),diameter/2,IRON,8 if lod else 14,'rainwater-downpipe')
-    f.prism(Polygon([(10.23,4.98),(10.42,4.98),(10.49,5.21),(10.18,5.21)]),.024,.153,IRON,'rainwater-hopper')
-    f.line((10.33,5.2,.077),(10.33,top,.077),.041,IRON,8 if lod else 14,'upper-pipe')
-    for z in (3.17,4.13,4.91):f.box(10.30,z,.106,.044,.105,.043,IRON,'downpipe-collar')
+    # A shallow closed panel extends from the lower sash to the foreground
+    # wall coping. The roughcast return and wooden sill remain visible above it.
+    f.box((a+c)/2,lo-.234,c-a-.09,.37,.11,-.036,SILL,'below-sash rendered panel')
+    add_louvred_unit(b,f,lod)
+    # 2017 hopper, outlet and inclined downpipe are measured independently.
+    f.line((10.40,2.75,.079),(10.378,4.84,.079),.037,IRON,8 if lod else 14,'rainwater-downpipe')
+    f.prism(Polygon([(10.264,4.82),(10.501,4.82),(10.593,5.143),(10.237,5.115)]),.024,.153,IRON,'rainwater-hopper')
+    f.line((10.39,5.13,.077),(10.34,top,.077),.043,IRON,8 if lod else 14,'upper-pipe')
+    for z in (3.17,4.13,4.79):f.box(10.39,z,.12,.046,.117,.049,IRON,'downpipe-collar')
+
+
+def add_louvred_unit(b,f,lod):
+    # A 2017 transect at native x=4425 records ten exposed slats, spaced
+    # 17–18 px apart. The penultimate member visibly bends toward its middle.
+    left,right=8.238,9.39
+    bottom,head,depth=2.659,3.426,.26
+    cx=(left+right)/2
+    f.prism(box(left,bottom,right,head).difference(box(left+.040,bottom+.031,right-.040,head-.053)),depth-.033,depth,LOUVER,'louvre/front-frame')
+    f.box(cx,head-.024,right-left,.048,depth,depth/2,LOUVER,'louvre/top-return')
+    # The casing, closely finned black coil and pale uprights are all visible
+    # behind the screen on the original. A fan profile is concealed.
+    f.box(cx-.018,3.008,.977,.634,.077,.037,SILL,'louvre/condensing-unit-case')
+    f.box(cx-.055,3.005,.552,.503,.036,.093,DARK,'louvre/dark-heat-exchanger')
+    fins=39 if not lod else 19
+    for n in range(fins):
+        a=cx-.313+.514*n/(fins-1)
+        f.box(a,3.009,.0045 if not lod else .007,.49,.012,.114,IRON,'louvre/coil fins')
+    for a in (left+.018,right-.018):
+        f.box(a,(bottom+head)/2,.036,head-bottom,.042,depth-.021,LOUVER,'louvre/front-stile')
+        f.box(a,(bottom+head)/2,.026,head-bottom,.030,.021,LOUVER,'louvre/wall-stile')
+    for n in range(10):
+        z=head-.094-n*.0703
+        sag=.028 if n==8 else 0.
+        if sag:
+            # Two sloping splits visibly follow the lowered centre of this member.
+            for a,za,c,zc in ((left+.032,z,cx,z-sag),(cx,z-sag,right-.032,z)):
+                f.prism(Polygon([(a,za-.012),(c,zc-.012),(c,zc+.012),(a,za+.012)]),depth-.034,depth-.001,LOUVER,'louvre/dropped horizontal slat')
+        else:
+            f.box(cx,z,right-left-.063,.023,.039,depth-.019,LOUVER,'louvre/horizontal-slat')
+        for a in (left+.014,right-.014):
+            f.box(a,z,.027,.022,depth-.049,depth/2-.002,LOUVER,'louvre/return slat')

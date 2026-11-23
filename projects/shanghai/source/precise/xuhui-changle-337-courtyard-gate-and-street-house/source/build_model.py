@@ -16,10 +16,13 @@ from crown_builder import CrownBuilder
 import courtyard_gate
 import street_finishes
 import street_wall
+import street_returns
+import hipped_eaves
+import upper_storey
 
 ID = 'xuhui-changle-337-courtyard-gate-and-street-house'
 SLUG = 'changle-337-courtyard-gate-and-street-house'
-PALETTE = {**street_wall.PALETTE, **courtyard_gate.PALETTE, **street_finishes.PALETTE}
+PALETTE = {**street_wall.PALETTE, **courtyard_gate.PALETTE, **street_finishes.PALETTE, **hipped_eaves.PALETTE, **upper_storey.PALETTE}
 META = {
     'id': ID,
     'name': '长乐坊337号院门与相邻临街窗墙',
@@ -35,7 +38,8 @@ META = {
     'license_url': 'https://creativecommons.org/licenses/by-sa/4.0/',
     'viewer_page': SLUG + '.html',
     'local_axes': 'X runs along the facade toward the west-southwest, positive Y toward the courtyard, Z upwards. Origin at the centreline of the left upper window, at street level.',
-    'scope': '337号双扇院门、绿牌与院墙，相邻两开间街窗、内凹小门及退进窗墙。2017年实照为主，2015/2021年街面影像用于量测。',
+    'camera_views': json.loads((HERE / 'cameras.json').read_bytes()),
+    'scope': '337号院门、绿牌与院墙，街面双开间绿窗与外倾挡板，退进窗墙、两座瓦檐及后起高层窗口。开合采用2017年实照，2015/2021年街面影像补充测量。',
 }
 
 class Builder(CrownBuilder):
@@ -52,7 +56,11 @@ class Builder(CrownBuilder):
 def add_building(builder, lod=False):
     street_wall.add_front(builder, lod)
     street_wall.add_rear_wing(builder, lod)
+    street_returns.add_returns(builder, lod)
     courtyard_gate.add_courtyard_gate(builder, lod)
+    hipped_eaves.add_roofs(builder, lod)
+    street_returns.fit_walls_to_roof_decks(builder)
+    upper_storey.add_upper_storey(builder, lod)
 
 if __name__ == '__main__':
     cli = argparse.ArgumentParser(description=__doc__)
