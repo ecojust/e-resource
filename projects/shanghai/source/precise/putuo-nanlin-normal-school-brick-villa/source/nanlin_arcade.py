@@ -202,6 +202,7 @@ def add_arcade(b,lod=False,layout=None,point=None):
         c.rect(x-.052,1.797,x+.052,1.837,.22,c.corridor,TIMBER,'visible upper ceiling beam '+str(i+1))
     if layout.get('arcade_backing',True):
         add_visible_back(c)
+    add_west_return(c)
     return b
 
 
@@ -236,3 +237,46 @@ def add_visible_back(c):
         # Upper rear wall seen in shade. Narrow dark recesses are left beneath the beams.
         lower_band=box(a,1.014,b,1.24); cap=box(a,1.73,b,1.837)
         c.solid(unary_union([lower_band,cap]),depth,depth+.19,GRAY,f'rear bay {i+1} visible upper brick bands')
+
+def add_west_return(c):
+    """Blind red arch photographed on the west wall at the open arcade corner."""
+    import json
+    from pathlib import Path
+    from shapely.geometry import LineString
+    data = json.loads((Path(__file__).resolve().parent.parent /
+                       'measurements/arcade-west-return.json').read_text())
+    outlines = data['normalized_d_z']
+    west_s = data['plane_s_pitch']
+
+    def raised(shape, front, back, material, label):
+        for part in polygons(shape):
+            c.builder.prism(part, -front, -back,
+                            lambda d, z, n: c.world(west_s + n / c.pitch, d * c.pitch, z),
+                            material, 'Arcade | west blind arch ' + label)
+
+    import numpy as np
+    inner, outer = (np.asarray(outlines[k]) for k in ('intrados', 'extrados'))
+    ring = Polygon([*inner, *outer[::-1]])
+    raised(ring, .052, -.003, MORTAR, 'mortar bed')
+    for i,(p,q,r,t) in enumerate(zip(inner,inner[1:],outer,outer[1:])):
+        pieces = 2 if not c.lod else 1
+        for j in range(pieces):
+            a = (j + .026) / pieces
+            b = (j + .974) / pieces
+            wedge = Polygon([p+(q-p)*a,p+(q-p)*b,r+(t-r)*b,r+(t-r)*a])
+            raised(wedge, .069, .052, CLAY_DARK if (i+j)%5==0 else CLAY,
+                   f'radial brick {i+1:02d}.{j+1}')
+    raised(Polygon(outlines['keystone']), .102, .064, ASHLAR, 'pale crown wedge')
+    for end in ('far', 'near'):
+        raised(Polygon(outlines[end+'_corbel']), .084, .005, ASHLAR, end+' carved shoulder')
+        raised(Polygon(outlines[end+'_cap']), .123, .004, CLAY_DARK, end+' cap')
+        for branch in ('a','b'):
+            # Buffer in metres so the stroke has the same width in both directions.
+            from shapely.affinity import scale
+            line = LineString(outlines[end+'_leaf_'+branch])
+            relief = scale(line, c.pitch, c.storey, origin=(0,0)).buffer(.016,quad_segs=2)
+            raised(scale(relief,1/c.pitch,1/c.storey,origin=(0,0)),.097,.084,STONE,
+                   end+' curled shoulder leaf '+branch)
+    for name in ('upper_red_belt','spring_red_belt','lower_red_belt','lower_course_coping'):
+        raised(Polygon(outlines[name]), .029 if name=='lower_course_coping' else .011,
+               -.003, RED if name!='lower_course_coping' else CLAY_DARK, name.replace('_',' '))

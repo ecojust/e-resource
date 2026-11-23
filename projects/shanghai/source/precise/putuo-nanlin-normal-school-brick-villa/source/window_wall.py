@@ -8,7 +8,7 @@ from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 
 from fabric import (DARK, FRAME, GLASS, GRAY, MORTAR, RED, RED_STONE, STONE,
-                    chart, face, metric, paint)
+                    chart, face, metric, paint, LAYOUT)
 
 SOURCE = Path(__file__).absolute().parent
 READINGS = json.loads((SOURCE.parent/'measurements/window-wall-2016.json').read_text())
@@ -93,15 +93,44 @@ def window_sash(b,row,hole,lod):
     lo,base,hi,top=inner.bounds
     mid=(lo+hi)/2
     transom=metric(sum(row['jamb_x'])/2,row['main_transom_y'])[1]
-    bars=[box(lo-.03,transom-.033,hi+.03,transom+.033)]
-    nx=row['vertical_lights'];ny=row['lower_rows']
-    for k in range(1,nx):
-        x=lo+(hi-lo)*k/nx
-        half=.032 if nx%2==0 and k==nx//2 else .017
-        bars.append(box(x-half,base-.01,x+half,top+.01))
-    for k in range(1,ny):
-        z=base+(transom-base)*k/ny
-        bars.append(box(lo-.01,z-.018,hi+.01,z+.018))
+    if name in READINGS['stepped_sash_lines']:
+        # Read each sash line at the plane of the actual recessed frame. At
+        # the northern end the ray can shift 5–7 px between bricks and glass.
+        from nanlin_ornaments import balcony_eye
+        eye=balcony_eye(metric)
+        def at_frame(point):
+            x,z=metric(*point)
+            q=eye+(np.array([x,0.,z])-eye)*((.134-eye[1])/-eye[1])
+            return tuple(q[[0,2]])
+        marks=READINGS['stepped_sash_lines'][name]
+        bars=[]
+        for i,line in enumerate(marks['uprights_uv']):
+            uv0,uv1=line
+            start,end=np.array(at_frame(uv0)),np.array(at_frame(uv1))
+            v=(end-start)/np.linalg.norm(end-start)
+            if name!='stepped-east':
+                start-=v*.23;end+=v*.16
+            elif i<3:
+                start-=v*.15;end+=v*.065
+            else:
+                start-=v*.07;end+=v*.09
+            thick=.035 if i in marks['heavy_uprights'] else .016
+            bars.append(LineString([start,end]).buffer(thick,cap_style='flat'))
+        for i,line in enumerate(marks['horizontal_uv']):
+            a,d=np.array(at_frame(line[0])),np.array(at_frame(line[1]))
+            v=(d-a)/np.linalg.norm(d-a)
+            bars.append(LineString([a-.21*v,d+.21*v]).buffer(
+                .033 if name=='stepped-east' and i==0 else .020,cap_style='flat'))
+    else:
+        bars=[box(lo-.03,transom-.033,hi+.03,transom+.033)]
+        nx=row['vertical_lights'];ny=row['lower_rows']
+        for k in range(1,nx):
+            x=lo+(hi-lo)*k/nx
+            half=.032 if nx%2==0 and k==nx//2 else .017
+            bars.append(box(x-half,base-.01,x+half,top+.01))
+        for k in range(1,ny):
+            z=base+(transom-base)*k/ny
+            bars.append(box(lo-.01,z-.018,hi+.01,z+.018))
     grille=inner.intersection(unary_union(bars))
     face(b,grille,.131,.194,FRAME,name+' transom and muntins')
     glass=inner.difference(grille)
@@ -135,6 +164,35 @@ def apron(b,name,l,r,z,lod):
          -.101,-.036,STONE,name+' carved centre leaf')
 
 
+def blind_arch_stone(b,lod):
+    # These three pieces belong to the river-front blind opening at the south
+    # end. The blind opening visible on the other side of the arcade has its
+    # own source photo and relief.
+    name='south end of east window wall'
+    stone_key=chart([(214.0,526.5),(232.0,526.5),(229.4,551.8),(216.6,551.8)])
+    face(b,stone_key,-.102,-.038,STONE,name+' flared pale keystone')
+    for x in (218.8,222.7,226.6):
+        stem=chart([(x-.45,530.5),(x+.55,530.5),(x+.31,548.5),(x-.31,548.5)])
+        face(b,stem,-.109,-.100,STONE,name+' keystone shallow flute')
+    for label,limits in [('southern shoulder',(91.,166.)),('northern shoulder',(267.,319.))]:
+        a,c=limits;w=c-a
+        form=chart([(a,605),(c,605),(c-3.2,618),(c-8.2,628),
+                    (a+7.8,628),(a+4,619)])
+        face(b,form,-.137,-.004,STONE,name+' '+label+' carved stone capital')
+        lip=chart([(a-2.6,598.7),(c+2.0,598.7),(c+2.0,602.7),(c-1.8,605.1),
+                   (a+1.0,605.1),(a-2.6,602.6)])
+        face(b,lip,-.182,-.013,RED_STONE,name+' '+label+' projecting cap')
+        pts=[]
+        for t in np.linspace(0,1,16 if lod else 32):
+            u=a+w*(.10+.80*t)
+            v=612.2+5.6*sin(pi*t)-3.1*sin(3*pi*t)**2
+            pts.append(metric(u,v))
+        face(b,LineString(pts).buffer(.023,quad_segs=2),-.166,-.135,STONE,name+' '+label+' curved garland')
+        for i in (.16,.49,.84):
+            x,z=metric(a+w*i,616.3)
+            face(b,Point(x,z).buffer(.035,quad_segs=4),-.17,-.134,STONE,name+' '+label+' carved rosette')
+
+
 def lower_openings():
     # The central three and the entrance can be seen individually through or
     # above the garden planting. Sills behind the screen wall are approximate.
@@ -160,6 +218,12 @@ def add_window_wall(b,lod=False):
     top=[metric(u,v) for u,v in CORNICE]
     front=Polygon([(top[0][0],0),(top[-1][0],0),*reversed(top)])
     cut=unary_union(openings)
+    # The south arcade's red end pier owns this external corner. Both faces
+    # previously occupied the same plane under the upper capital.
+    south=top[0][0];storey=LAYOUT['arcade_storey_m']
+    pier=unary_union([box(south-.1,0.,south+.389,.949*storey),
+                      box(south-.1,1.015*storey,south+.369,1.495*storey)])
+    front=front.intersection(box(south+.019,-.01,top[-1][0]+.3,20.)).difference(pier)
     face(b,front.difference(cut),0,.34,GRAY,'2016 window wall with recessed doors and windows')
     belt=READINGS['mid_red_belt_pixels']
     belt=[(119,606),*belt,(2074,667)]
@@ -173,6 +237,7 @@ def add_window_wall(b,lod=False):
     blind=dict(id='left blind arch',jamb_x=[164,282],intrados_crown_y=554,
                impost_y=603,sill_y=615)
     arch_bricks(b,blind,lod)
+    blind_arch_stone(b,lod)
     # The taller right-hand return runs behind the scroll gable at its end.
     # At the left it turns inward above the terminal pier of the stone rail.
     short=chart([(119,452),(234,451),(234,415),(132,415),(119,407)])

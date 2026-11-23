@@ -68,9 +68,12 @@ def main():
     study=json.loads((m/'arcade-photograph-registration.json').read_text())
     layout=json.loads(args.layout.read_bytes()) if args.layout else json.loads((m.parent/'source/building-layout.json').read_bytes())
     if 'arcade_outer_width_m' in layout:
+        import sys
+        sys.path.insert(0,str(m.parent/'source'))
+        from fabric import metric
         width=layout['arcade_outer_width_m']; span=width/(1.+.245/7.)
         layout={'arcade_length':span,'arcade_storey':layout['arcade_storey_m'],
-                'arcade_origin':[0.,width-(width-span)/2,0.],
+                'arcade_origin':[metric(119,452)[0],width-(width-span)/2,0.],
                 'arcade_tangent':[0.,-1.,0.],'arcade_inward':[1.,0.,0.]}
     out=[check(f,study,layout.get('arcade_length',25.8)/7,layout.get('arcade_storey',4.90),
                layout.get('arcade_origin',[0,0,0]),layout.get('arcade_tangent',[1,0,0]),

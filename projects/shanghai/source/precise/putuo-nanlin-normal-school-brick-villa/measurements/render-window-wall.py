@@ -11,6 +11,7 @@ import tempfile
 from unittest.mock import patch
 
 import numpy as np
+from PIL import Image
 from scipy.optimize import least_squares
 
 HERE=Path(__file__).absolute().parent
@@ -78,7 +79,9 @@ def render(path,out,width):
         for name,station,crop in views:
             projected=shared['projected_parts'](parts,station)
             with patch.object(renderer,'read_glb',return_value=projected):
-                im,read=renderer.raster(path,ctypes.CDLL(str(so)),width,station,crop,light,azel)
+                im,read=renderer.raster(path,ctypes.CDLL(str(so)),width*3,station,crop,light,azel)
+            im.thumbnail((width,round(width*(crop[3]-crop[1])/(crop[2]-crop[0]))),Image.Resampling.LANCZOS)
+            read.update(supersampling=3,final_dimensions=list(im.size))
             dest=out/(name+'.jpg');im.save(dest,quality=92,subsampling=0)
             report['views'][name]=dict(**read,projection=station.tolist(),sha256=hashlib.sha256(dest.read_bytes()).hexdigest())
     (out/'render-record.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
