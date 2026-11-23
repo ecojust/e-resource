@@ -33,7 +33,9 @@ def compact_repeated_links(text,reserved=()):
  counts=Counter(destination(m) for m in pattern.finditer(text));refs={}
  for url,count in sorted(counts.items()):
   if count<2:continue
-  ref=available_reference(f'T{len(refs)+1}',reserved)
+  slot=len(refs)
+  label=chr(ord('a')+slot) if slot<26 else f'T{slot+1}'
+  ref=available_reference(label,set(reserved)|set(reference_labels(text))|set(refs.values()))
   # Use the smaller, unwrapped spelling for a conservative savings estimate.
   if count*(len(url.encode())-len(ref))>len(f'[{ref}]: <{url}>\n'.encode())+1:
    refs[url]=ref
@@ -73,7 +75,7 @@ def official_road_lines(prefix, *, compact=False,reserved=()):
  counts=Counter(r['match_status'] for r in rows)
  assert set(counts).issubset(states), 'Unknown official road match state'
  sources=sorted({r['source_url'] for r in rows})
- source_refs={url:(available_reference(f'O{i}',reserved) if compact else 'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8]) for i,url in enumerate(sources,1)}
+ source_refs={url:(available_reference(('u' if i==1 else 'v' if i==2 else f'O{i}'),reserved) if compact else 'OR-'+hashlib.sha256(url.encode()).hexdigest()[:8]) for i,url in enumerate(sources,1)}
  lines=['### 官方专题道路清单补充 TODO','',f"另收录 **{len(rows)} 条官方原表记录**：2022年主要道路范围及2023年绿化特色道路名录。包含 {counts['existing_name']} 条已有名称初步匹配、{counts['new_name_candidate']} 条新名称候选、{counts['composite_review']} 条组合名称待拆分；均不等于新增独立道路数，不能与上方名称数量直接相加。两份专题清单均不是全市道路底册，文件年代也不代表2026年现状已核验。",'',
  '以下仅整理道路名称、原表范围和明确区属，继续查沿街建筑及照片／文字资料。区属缺项保留待核，不从道路名推断。'+link('来源、匹配依据及机器可读记录',prefix+'official-road-leads.json'),'','<details><summary>展开全部官方道路／路段资料待办</summary>','','| ID | 原表道路名称 | 明确区属 | 原表范围 | 来源 | TODO |','|---|---|---|---|---|---|']
  lines[4:4]=[f"名称复核已覆盖其余 {len(reviewed)} 个源行，提出 {review['summary']['proposed_new_name_leads_distinct_strings']} 个待查名称；仅为名称关联及拆分建议，不增加已确认道路数。组合范围仍属于原表整组，不能赋给每个拆分名称。"+link('逐行复核与未解项',prefix+'official-road-reconciliation.json'),'']
@@ -122,7 +124,7 @@ def map_road_label_lines(prefix, *, compact=False,reserved=()):
  for r in unmatched:
   assert set(r['label_review_flags']).issubset(flags), 'Unknown map label review flag'
   review_flags='、'.join(flags[f] for f in r['label_review_flags'])+'；class：'+'／'.join(r['classes'])
-  refs=' · '.join(f"[{key}][]" if tile_refs[key]==key else f"[{key}][{tile_refs[key]}]" for key in r['tile_ids'])
+  refs=' · '.join(f"[{key}]" if tile_refs[key]==key else f"[{key}][{tile_refs[key]}]" for key in r['tile_ids'])
   todo=r['todo']
   if r['reconciliation_proposed_name_matches']:
    todo+='；官方待查名称同名：'+'、'.join(x['name'] for x in r['reconciliation_proposed_name_matches'])+'（实体仍待核）'
