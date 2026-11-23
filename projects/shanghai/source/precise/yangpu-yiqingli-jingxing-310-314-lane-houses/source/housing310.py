@@ -135,7 +135,11 @@ def entrance_sides(b,lod):
         tile_quad(b,[profile[k],profile[k+1],far[k+1],far[k]],TILE,'310 small west tiled gable plane')
     shell=Polygon([(p[1],p[2]-.09) for p in profile]+[(profile[-1][1],2.2),(profile[0][1],2.2)])
     b.prism(shell,x-.15,x-.008,lambda y,z,x:(x,y,z),ochre,'310 small west gable wall')
-    wall_segment(b,far[0][:2],profile[0][:2],0,[far[0][2]-.092,profile[0][2]-.092],ochre,'310 west annex street wall')
+    # The street eave projects over the ochre house. Keep its wall behind the
+    # full depth of the existing grey boundary wall, including its red plinth.
+    recess=np.array([0.,.47])
+    wall_segment(b,far[0][:2]+recess,profile[0][:2]+recess,0,
+                 [far[0][2]-.092,profile[0][2]-.092],ochre,'310 west annex street wall')
     wall_segment(b,profile[-1][:2],far[-1][:2],0,[profile[-1][2]-.092,far[-1][2]-.092],BASE,'310 west annex rear')
     for i in [0,1]:
         a,c=far[i+1],far[i]
