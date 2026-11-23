@@ -6,19 +6,19 @@ from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation
 
 HERE = Path(__file__).resolve().parent
-NAMES = ('pitch', 'eave_z', 'rail_z', 'sill_z', 'head_z', 'sash_y', 'ridge_z', 'ridge_y', 'half_sash', 'overhang')
-START = [4.8, 8.8, 6.7, 9.45, 11.24, .78, 12.7, 4.8, 1.39, .39]
-UNCERTAINTY = [.045, .35, .30, .40, .40, .38, .55, .66, .17, .15]
+NAMES = ('pitch', 'pier_pitch', 'eave_z', 'rail_z', 'sill_z', 'head_z', 'sash_y', 'ridge_z', 'ridge_y', 'half_sash', 'overhang')
+START = [14.8/3, 5.30, 8.8, 6.7, 9.45, 11.24, .78, 12.7, 4.8, 1.39, .39]
+UNCERTAINTY = [.060, .10, .35, .30, .40, .40, .38, .55, .66, .17, .15]
 
 def landmarks(p):
-    pitch, eave, rail, sill, head, y, ridge, depth, half, overhang = p
+    pitch, pier_pitch, eave, rail, sill, head, y, ridge, depth, half, overhang = p
     points = {}
     for index in range(5):
-        x = (index-2)*pitch
+        x = (index-2)*pier_pitch
         points['rail'+str(index)] = [x, 0, rail]
         points['pier'+str(index)] = [x, 0, eave-.24]
     for side, sign in [('L', -1), ('R', 1)]:
-        points['eave'+side] = [sign*(2*pitch+overhang), -.48, eave]
+        points['eave'+side] = [sign*(2*pier_pitch+overhang), -.48, eave]
     for index in range(4):
         x = (index-1.5)*pitch
         for suffix, height in [('head', head), ('sill', sill)]:
@@ -42,6 +42,7 @@ def fit(raw):
     def evaluate(q, details=False):
         geometry = landmarks(q[:len(NAMES)])
         out=list((q[:len(NAMES)]-START)/UNCERTAINTY)
+        out.append((4*q[1]+2*q[len(NAMES)-1]-22.35)/.18)
         report={}
         for i,(key,s) in enumerate(raw.items()):
             b=len(NAMES)+7*i;eye=q[b:b+3];r=Rotation.from_rotvec(q[b+3:b+6]).as_matrix();f=np.exp(q[b+6]);w,h=s['size']

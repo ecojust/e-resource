@@ -25,12 +25,12 @@ META = dict(id=ID, model_id=ID, heritage_id='sh-historic-b3-102', official_id='3
             camera_views=json.loads((HERE/'cameras.json').read_text()))
 M= json.loads((HERE.parent/'measurements/roof-registration.json').read_text())['parameters']
 X=M['pitch']; E=M['eave_z']; R=M['ridge_z']; Y=M['ridge_y']; H=M['head_z']; B=M['sill_z']; F=M['sash_y']; A=M['half_sash']
-FRONT=-.48; END=2*X+M['overhang']; HIPS=2.35
+PX=M['pier_pitch']; FRONT=-.48; END=2*PX+M['overhang']; HIPS=2.35
 BRICK=finish.BRICK; TILE=finish.TILE
 GREEN='Xinhua 14 | weathered green sash'; STEEL='Xinhua 14 | dark metal edge'; GLASS='Xinhua 14 | garden window glass'
-SHADE='Xinhua 14 | shadow in roof'; OCHRE='Xinhua 14 | painted dormer cheeks'; STONE='Xinhua 14 | warm coping stone'
+SHADE='Xinhua 14 | shadow in roof';REFLECT='Xinhua 14 | reflected courtyard light'; OCHRE='Xinhua 14 | painted dormer cheeks'; STONE='Xinhua 14 | warm coping stone'
 PALETTE={**finish.PALETTE, GREEN:dict(color=[.16,.22,.20],roughness=.74), STEEL:dict(color=[.10,.13,.12],roughness=.64),
-         GLASS:dict(color=[.36,.48,.51],alpha=.63,roughness=.29), SHADE:dict(color=[.105,.118,.12],roughness=.96),
+         GLASS:dict(color=[.36,.48,.51],alpha=.63,roughness=.29), SHADE:dict(color=[.086,.105,.112],roughness=.96), REFLECT:dict(color=[.18,.26,.30],roughness=.90),
          OCHRE:dict(color=[.53,.37,.26],roughness=.90), STONE:dict(color=[.56,.51,.46],roughness=.91)}
 class Builder(CrownBuilder):
     def add(self,vertices,faces,material='limestone',label='detail'):
@@ -62,13 +62,13 @@ def sash(b,cx,lod,prefix):
             z=B+(H-B)*row/4; thick=.019 if not lod else .016
             cuboid(b,left+.026,right-.026,F-.062,F+.009,z-thick,z+thick,GREEN,prefix+' / lead crossbar')
         cuboid(b,left+.022,right-.022,F+.060,F+.082,B+.035,H-.035,GLASS,prefix+' / eight lights')
-    cuboid(b,cx-A-.045,cx+A+.045,F+.26,F+.315,B-.01,H+.03,SHADE,prefix+' / dark interior')
+    cuboid(b,cx-A-.045,cx+A+.045,F+.26,F+.315,B-.01,H+.03,REFLECT,prefix+' / dark interior')
     for edge in [cx-A-.07,cx+A+.07]:
         cuboid(b,edge-.051,edge+.051,F-.09,F+.13,B-.075,H+.09,GREEN,prefix+' / outside lining')
 
 def dormer(b,cx,lod,prefix,back):
     sash(b,cx,lod,prefix);half=A+.16
-    cuboid(b,cx-half-.035,cx+half+.035,F-.21,F+.12,B-.094,B+.015,STEEL,prefix+' / projecting sill nose')
+    cuboid(b,cx-half-.035,cx+half+.035,F-.21,F+.12,B-.145,B+.025,STEEL,prefix+' / projecting sill nose')
     cheek=Polygon([(F,B-.045),(back,slope(back)-.07),(back,H+.30),(F,H+.08)])
     for x in (cx-half,cx+half):
         b.prism(cheek,x-.060,x+.060,lambda y,z,t:(t,y,z),OCHRE,prefix+' / tapered rendered cheek')
@@ -105,26 +105,36 @@ def front_pitch(b,lod):
     cuboid(b,-END,END,FRONT-.06,.31,E-.165,E-.015,GREEN,'eave / continuous painted fascia')
     b.tube([(-END,FRONT-.07,E-.018),(END,FRONT-.07,E-.018)],.067,STEEL,8,'eave / rain gutter')
     for i,cx in enumerate(centres):dormer(b,cx,lod,'dormer '+str(i+1),back)
-    for j,cx in enumerate([-1.56*X,0,1.56*X]):
-        base=R-.38;z=R+(1.56 if j==1 else .93)
-        cuboid(b,cx-.24,cx+.24,Y-.32,Y+.30,base,z-.10,BRICK,'chimney '+str(j+1)+' / stack')
-        cuboid(b,cx-.29,cx+.29,Y-.35,Y+.34,z-.15,z,BRICK,'chimney '+str(j+1)+' / brick cap')
-        cuboid(b,cx-.14,cx+.14,Y-.16,Y+.16,z,z+.008,SHADE,'chimney '+str(j+1)+' / dark opening')
+    surveyed=json.loads((HERE.parent/'measurements/upper-stack-readings.json').read_text())
+    for j,stack in enumerate(surveyed['stacks']):
+        cx,top=stack['x_m'],stack['cap_elevation_m']
+        # At the two ends, the front and side hip fall below the nominal ridge.
+        local_ridge=R if abs(cx)<=END-HIPS else E+(R-E)*(END-abs(cx))/HIPS
+        base=min(local_ridge-.45,slope(Y-.33)-.24)
+        cuboid(b,cx-.24,cx+.24,Y-.32,Y+.30,base,top-.10,BRICK,'chimney '+str(j+1)+' / stack')
+        cuboid(b,cx-.29,cx+.29,Y-.35,Y+.34,top-.15,top,BRICK,'chimney '+str(j+1)+' / brick cap')
+        cuboid(b,cx-.14,cx+.14,Y-.16,Y+.16,top,top+.008,SHADE,'chimney '+str(j+1)+' / dark flue')
 
 def gallery_band(b,lod):
     rail=M['rail_z'];base=rail-.64;deck=rail-.83
-    cuboid(b,-2*X-.21,2*X+.21,0,1.55,deck-.16,deck,STONE,'upper gallery / floor edge')
-    cuboid(b,-2*X-.20,2*X+.20,1.54,1.69,deck,E-.15,SHADE,'upper gallery / recessed unmeasured shade')
+    cuboid(b,-2*PX-.21,2*PX+.21,0,1.55,deck-.16,deck,STONE,'upper gallery / floor edge')
+    cuboid(b,-2*PX-.20,2*PX+.20,1.54,1.69,deck,E-.15,SHADE,'upper gallery / recessed unmeasured shade')
+    cuboid(b,-2*PX-.23,2*PX+.23,FRONT,1.69,E-.198,E-.148,GREEN,'upper gallery / continuous soffit behind capitals')
     for i in range(5):
-        x=(i-2)*X
+        x=(i-2)*PX
         cuboid(b,x-.235,x+.235,.035,.61,deck,E-.26,BRICK,'pier '+str(i+1)+' / upper shaft')
         for dz,half in [(.40,.28),(.31,.32),(.22,.365)]:
             cuboid(b,x-half,x+half,-.032,.67,E-dz,E-dz+.10,STONE,'pier '+str(i+1)+' / flared capital')
-        profile=Polygon([(-.46,E-.16),(.32,E-.16),(.32,E-.93),(.13,E-.93),(.07,E-.75),(-.045,E-.59),(-.18,E-.44),(-.39,E-.34)])
-        for offset in (-.16,.16):
-            b.prism(profile,x+offset-.073,x+offset+.073,lambda y,z,t:(t,y,z),OCHRE,'pier '+str(i+1)+' / paired eave corbel')
+        # The central pale face continues down the brick pier to a small moulded foot.
+        profile=Polygon([(-.47,E-.185),(.12,E-.185),(.12,E-1.60),(-.12,E-1.60),(-.13,E-1.38),(-.15,E-1.10),(-.21,E-.82),(-.31,E-.60),(-.46,E-.46)])
+        b.prism(profile,x-.120,x+.120,lambda y,z,t:(t,y,z),OCHRE,'pier '+str(i+1)+' / curved corbel face')
+        cuboid(b,x-.159,x+.159,-.208,.13,E-1.65,E-1.55,STONE,'pier '+str(i+1)+' / corbel foot')
+        cuboid(b,x-.155,x+.155,-.50,.13,E-.32,E-.24,STONE,'pier '+str(i+1)+' / corbel top molding')
+        if not lod:
+            for edge in (x-.095,x+.095):
+                b.tube([(edge,-.43,E-.42),(edge,-.26,E-.70),(edge,-.17,E-1.10),(edge,-.147,E-1.52)],.020,STONE,7,'pier '+str(i+1)+' / side bead')
     for i in range(4):
-        x0=(i-2)*X+.24;x1=x0+X-.48
+        x0=(i-2)*PX+.24;x1=x0+PX-.48
         cuboid(b,x0,x1,-.055,.33,rail-.08,rail+.02,STONE,'upper gallery / coping')
         cuboid(b,x0,x1,0,.30,deck,base+.09,STONE,'upper gallery / rail base')
         for k in range(13):
