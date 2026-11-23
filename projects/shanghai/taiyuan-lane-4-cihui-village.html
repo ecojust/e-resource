@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>慈惠村太原路4弄1—2号临街转角 · 上海徐汇</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="src/dacheng-hall.css">
+  <style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header><a href="landmarks.html">← 上海历史建筑目录</a>
+    <p class="eyebrow">徐汇区 · 太原路4弄1—2号</p><h1>慈惠村太原路4弄1—2号临街转角</h1>
+  </header>
+  <main id="model-view" aria-label="慈惠村太原路4弄1—2号临街转角三维模型"></main>
+  <aside class="panel" aria-label="观察机位与模型下载">
+    <p class="scope">慈惠村建于1922年。太原路一面有上下两排券窗，三楼凸窗下挂着三块花铁。绕过墙角，汾阳路一面的钢窗随檐口逐级升高。</p>
+    <label for="detail">模型细节</label>
+    <select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+    <div class="buttons">
+      <button type="button" data-view="overview">两条街面的转角</button>
+      <button type="button" data-view="front">太原路双层券窗</button>
+      <button type="button" data-view="sash">底层修复后的两扇券窗</button>
+      <button type="button" data-view="grille">凸窗铁饰的阶折边</button>
+      <button type="button" data-view="canopy">矩形上窗与阶折檐口</button>
+      <button type="button" data-view="return">汾阳路沿街窗湾</button>
+      <button type="button" data-view="dark-arch">汾阳路黑框券与下窗栅</button>
+      <button type="button" id="retry" hidden>重新加载</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">正在读取模型…</p>
+    <div id="downloads" class="downloads" aria-label="下载模型"></div>
+    <p><a href="source/precise/xuhui-taiyuan-lane-4-cihui-village/README.md">历史与模型范围</a> · <a href="source/precise/xuhui-taiyuan-lane-4-cihui-village/measurements/identity-and-street-photos.json">建筑照片及出处</a></p>
+    <p><a href="data/audit/taiyuan-lane-4-cihui-village-v1/street-corner-study.jpg">双街面与凸窗铁饰模型图</a></p>
+  </aside>
+  <footer>拖动旋转 · 滚轮或双指缩放</footer>
+  <script type="module" src="source/precise/xuhui-taiyuan-lane-4-cihui-village/source/viewer.js"></script>
+</body></html>
