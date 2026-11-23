@@ -6,7 +6,19 @@ from shapely.geometry import box as rectangle,Polygon
 HERE=Path(__file__).resolve().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source/common'))
-from photo_architecture import Builder
+from photo_architecture import Builder as BaseBuilder
+sys.path.insert(0,str(HERE))
+sys.path.insert(0,str(PROJECT/'source/precise/hongkou-tanggu-road-apartment-dated-crown/source'))
+from crown_builder import CrownBuilder
+from glass_and_guard import glass_field,guard
+import round_finishes
+class Builder(CrownBuilder):
+    def add(self,vertices,faces,material='limestone',label='detail'):
+        super().add(vertices,faces,material,label)
+        if material in round_finishes.STEMS:round_finishes.metric_uv(self.parts[-1])
+    def save(self,path,metadata=None):
+        BaseBuilder.save(self,path,metadata)
+        return round_finishes.writer.embed_normals(path)
 ID='changning-xinhua-329-no36-cake-villa'
 PLASTER='Cake house | pale mineral render';BRICK='Cake house | brown face brick'
 GLASS='Cake house | garden glass';BLOCK='Cake house | translucent glass blocks'
@@ -18,6 +30,7 @@ PALETTE={PLASTER:{'color':[.66,.61,.54],'roughness':.89},BRICK:{'color':[.27,.15
         IRON:{'color':[.60,.57,.51],'roughness':.60,'metallic':.15},STONE:{'color':[.34,.32,.29],'roughness':.91},
         ROOF:{'color':[.34,.16,.112],'roughness':.85},GUTTER:{'color':[.099,.082,.071],'roughness':.81},
         RECESS:{'color':[.115,.108,.084],'roughness':.90}}
+PALETTE.update(round_finishes.PALETTE)
 PARAM=json.loads((HERE.parent/'measurements/garden-registration.json').read_bytes())['parameters']
 META={'id':ID,'name':'新华路329弄36号双层圆形住宅庭院立面','official_id':'3M014','heritage_id':'sh-historic-b3-112','address':'上海市长宁区新华路329弄36号','geometry_license':'MIT','texture_license':'MIT','photos_embedded':False,'source':'https://www.shcn.gov.cn/col7343/20241227/1275366.html','photo_source':'https://www.meet-in-shanghai.net/en/guide/xinhua-road-a-witness-to-urban-life-development-over-past-century-160847/','viewer_page':'xinhua-329-no36-cake-villa.html','camera_views':json.loads((HERE/'cameras.json').read_bytes()),'scope':'Garden-facing sector of the round house. Central garden door, two fields of glass blocks, recessed three-bay balcony, brick flanks and visible radial roof slopes. Rear rooms and internal fountain are outside the observed sector. Neither photograph has a documented exposure date.'}
 
@@ -45,18 +58,21 @@ def facade(b,i,lod):
     if brick:
         sheet('brick floor fields',[],.14,6.41,-.26,-.035,BRICK)
         bar('pale waist',-h,h,mid-.37,mid-.06,-.03,.018,PLASTER)
+        bar('brick lower plinth',-h,h,.11,.30,-.036,.008,STONE)
         return
     if central or abs(i) in (3,4):
         lower_open=(-width/2,bottom,width/2,head)
         sheet('lower pierced frame',[lower_open],.13,mid-.22,-.27,0,PLASTER)
         glazed_blocks=abs(i)==1
         if glazed_blocks:
-            bar('glass-block field',-width/2+.012,width/2-.012,bottom+.012,head-.012,-.14,-.115,BLOCK)
-            cols,rows=(8,13)
+            if lod:bar('glass-block field',-width/2+.008,width/2-.008,bottom+.008,head-.008,-.14,-.115,BLOCK)
+            else:glass_field(b,xyz,width,bottom,head,BLOCK,tag+' / individually bevelled glass blocks')
+            bar('shaded recess behind glass blocks',-width/2,width/2,bottom,head,-.48,-.45,RECESS)
+            cols,rows=(10,14)
             for k in range(1,cols): 
-                u=width*(k/cols-.5);bar('vertical glass block joint '+str(k),u-.011,u+.011,bottom,head,-.112,-.093,IRON)
+                u=width*(k/cols-.5);bar('vertical glass block joint '+str(k),u-.008,u+.008,bottom,head,-.123,-.098,IRON)
             for k in range(1,rows):
-                z=bottom+(head-bottom)*k/rows;bar('horizontal glass block joint '+str(k),-width/2,width/2,z-.012,z+.012,-.111,-.094,IRON)
+                z=bottom+(head-bottom)*k/rows;bar('horizontal glass block joint '+str(k),-width/2,width/2,z-.008,z+.008,-.123,-.099,IRON)
         else:
             bar('recessed steel and glass filling',-width/2+.012,width/2-.012,bottom+.012,head-.012,-.17,-.143,GLASS)
             zlist=[bottom+.032,head-.030,p['door_transom'],bottom+.90]if i==0 else [bottom+.025,head-.025,bottom+.55*(head-bottom)]
@@ -75,9 +91,14 @@ def facade(b,i,lod):
             bar('balcony foot',-upper_width/2,upper_width/2,mid,mid+.075,-.033,.030,STONE)
             zrail=p['rail_top']
             bar('guard rail',-upper_width/2,upper_width/2,zrail-.032,zrail+.032,-.039,.028,IRON)
-            count=8 if i==0 else 6
-            for k in range(count+1):
-                u=(k/count-.5)*(upper_width-.06);bar('guard post '+str(k),u-.017,u+.017,mid+.072,zrail-.02,-.028,.010,IRON)
+            guard(bar,upper_width,mid,zrail,i==0,IRON)
+            if i:
+                sign=-1 if i<0 else 1
+                u=sign*(upper_width/2-.022)
+                bar('balcony inner side reveal',u-.022,u+.022,mid,crown,-1.24,-.28,PLASTER)
+                # Tops of the side lights recede towards the door at the rear of the gallery.
+                b.tube([xyz(u,crown-.24,-.31),xyz(u,crown-.56,-1.23)],.029,IRON,6 if lod else 9,tag+' / receding steel header')
+            bar('balcony ceiling',-h,h,crown-.052,crown,-1.30,-.23,PLASTER)
         else:
             bar('high return window',-width/2,width/2,upper_base,crown,-.15,-.123,GLASS)
             for k,u in enumerate([-width/2+.02,0,width/2-.02]):bar('upper return window stile '+str(k),u-.018,u+.018,upper_base,crown,-.122,-.094,IRON)
