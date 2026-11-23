@@ -35,7 +35,13 @@ const h=placement.heading*Math.PI/180,deg=Math.PI/180,k=6371008.8*Math.cos(place
 function wgs([x,y]){return [placement.lng+(x*Math.cos(h)+y*Math.sin(h))/k/deg,Math.atan(Math.sinh(log(placement.lat)+(-x*Math.sin(h)+y*Math.cos(h))/k))/deg];}
 const published=catalog.models.some(m=>m.id===placement.id),actual=catalog.models.find(m=>m.id===placement.id);
 if(Number(stage)===345)assert(published);else assert(!published);
-if(actual){for(const key of ['lng','lat','heading','owner','source_feature_ids','replacement_geometry','collision_geometry','display_height_clips','source_section_caps','model_geometry_sha256'])assert.deepEqual(actual[key],placement[key],key);}
+if(actual){for(const key of ['lng','lat','heading','owner','source_feature_ids','replacement_geometry','collision_geometry','display_height_clips','source_section_caps','model_geometry_sha256']){
+  if (key === 'source_feature_ids' && placement.owner === undefined && placement[key] === undefined && actual[key] !== undefined) {
+    assert.deepEqual(actual[key], {building: [], building_part: []}, key);
+  } else {
+    assert.deepEqual(actual[key], placement[key], key);
+  }
+}}
 const parents=catalog.models.filter(m=>m.id!==placement.id),groundRows=parents.flatMap(m=>[...(m.replacement_geometry?[{...m,geometry:m.replacement_geometry}]:[]),...(m.site_replacement?[m.site_replacement]:[])]),oldRows=[...groundRows,...parents.flatMap(m=>m.display_height_clips??[])];
 let server;let address=base,assets=actual?.assets;
 if(!actual){const def={web:'full.glb',lod:'lod.glb'};assets={};for(const [key,file] of Object.entries(def)){const bytes=fs.readFileSync(path.join(pilot,file));assert.equal(sha(bytes),placement.model_geometry_sha256[key]);assets[key]={file,sha256:sha(bytes),bytes:bytes.length};}

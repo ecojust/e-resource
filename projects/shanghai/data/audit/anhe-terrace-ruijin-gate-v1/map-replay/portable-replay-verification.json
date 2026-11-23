@@ -1,0 +1,22 @@
+{
+  "order": 345,
+  "old_checker_sha256": "4196ccd120d39794ae256920226254d78594f77cf4d04f8e7af3c487116c8ac2",
+  "corrected_checker_sha256": "eef66bd7373ca51b538235df6cafc6a88f8969611fcfd05a4f3c706a367daa2e",
+  "published_receipt_replays": {
+    "344": {
+      "report_sha256": "82f01f3d5d054d5342538a288c6e73bcf8460c76614911b880c8b4d8bf8eab9c",
+      "same_as_issued": true
+    },
+    "345": {
+      "report_sha256": "5d945dbf5e91a4f1d7898abef9dc20659c06e94b59603409d76504ca8b94f655",
+      "same_as_issued": true
+    }
+  },
+  "field_rule": "When the detached gate placement omits both owner and source_feature_ids, a catalog entry may omit the field or give both empty arrays. An explicitly supplied field must match the placement exactly. A nonempty source ID is tested on both building and building_part.",
+  "legacy_omitted_pair_matches": true,
+  "matching_explicit_nonempty_sources_match": true,
+  "mismatched_explicit_sources_rejected": true,
+  "missing_array_in_catalog_rejected": true,
+  "old_checker_rejects_signed_empty_source_map": true,
+  "corrected_checker_rejects_nonempty_source_map": true
+}
