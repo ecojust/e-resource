@@ -1,3 +1,11 @@
+# 大清银行上海分行旧址（西南八角塔楼）
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) · [单体旋转与下载](ta-ching-bank-southwest-tower.html) · [来源与制作范围](source/precise/huangpu-ta-ching-bank-southwest-tower/README.md) · [验收记录](data/audit/ta-ching-bank-southwest-tower-v1/README.md)
+
+第四批4A018，四川中路268–270号、汉口路50号。原城59与OSM 380339903匹配。按2013年12月19日及2017年12月24日两期街照制作西南八角塔身、外露窗轴、低鼓座绿铜矮穹和两街各第一窗间。中国人寿为后期使用方。
+
+近景 23,336 个三角面，远景 12,816 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,305,611 字节。上海主图现有 315 处独立入口，黄浦区 150 处。[资产清单](assets/models/candidates/huangpu-ta-ching-bank-southwest-tower/manifest.json)
+
 # 安利大楼西南转角入口与两街红砖窗带
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-arnhold-building-southwest-corner&mode=overview) · [单体旋转与下载](arnhold-building-southwest-corner.html) · [来源与制作范围](source/precise/huangpu-arnhold-building-southwest-corner/README.md) · [验收记录](data/audit/arnhold-building-southwest-corner-v1/README.md)
