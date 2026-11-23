@@ -23,12 +23,16 @@ class Directory(HTMLParser):
  def handle_data(self,data):
   if self.title and self.current:self.current['name']+=data
 
-def candidate_status_fields(manifest,path):
+def candidate_status_fields(manifest,path,project=None):
  if 'status' in manifest:
   return {'status':manifest['status']}
  if (manifest.get('model_id')==manifest['id'] and manifest.get('viewer_page') and manifest.get('scope')
      and {'raw','full','lod','native'}<=manifest.get('assets',{}).keys()):
   return {'status':'standalone-exterior-study','scope':manifest['scope'],'viewer_page':manifest['viewer_page']}
+ if project is not None:
+  from registered_public_study import registered_public_study
+  source=registered_public_study(manifest,path,project)
+  if source is not None:return source
  raise ValueError('Candidate manifest has no recorded status or recognizable standalone exterior delivery: '+path)
 
 def ordinary_revision_owner(manifest, path, ordinary_by_id):
@@ -152,7 +156,7 @@ def build(project):
    integrated_previews.append({'id':d['id'],'manifest':path});continue
   assert not d.get('map_replacement') and not d.get('walk_integration'), 'Candidate integration status changed; reassess report categories'
   item={'id':d['id'],'name':d['name']}
-  item.update(candidate_status_fields(d,path))
+  item.update(candidate_status_fields(d,path,project))
   item.update(manifest=path,assets_revalidated=False)
   if d['id'] in placements:
    item.update(city_integration='data/candidate-city-integrations.json',registration_note=placements[d['id']].get('registration_note','近似定位'),accepted_source_replacement=False)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>沙逊别墅辅楼的院面与屋窗三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 虹桥路2409号</p><h1>沙逊别墅辅楼的院面与屋窗</h1></header>
+<main aria-label="沙逊别墅辅楼三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">低矮的辅楼以三座屋窗面向花园，左侧木架沿砖墙转折，右端接一段低廊。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-sassoon-villa-service-wing/changning-sassoon-villa-service-wing-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p>1937年的沙逊相册能辨认院面三窗、返墙上的一扇暗窗及通往高屋的低廊。彩色模型采用2014年修缮设计透视中的砖色、木筋与门窗。设计图在返墙画出两处开窗，和老照片存在差异。</p>
+<p><a target="_blank" rel="noopener" href="data/audit/sassoon-villa-service-wing-v1/registration/two-dated-views.jpg">两幅原视角的模型对照</a> · <a target="_blank" rel="noopener" href="data/audit/sassoon-villa-service-wing-v1/registration/album-1937-model.jpg">1937年相册取景</a> · <a target="_blank" rel="noopener" href="data/audit/sassoon-villa-service-wing-v1/registration/restoration-proposal-model.jpg">2014年设计透视取景</a></p>
+<p><a target="_blank" rel="noopener" href="data/audit/sassoon-villa-service-wing-v1/registration/west-return-comparison.jpg">返墙小窗的两期位置对照</a> · <a download href="data/audit/sassoon-villa-service-wing-v1/registration/west-return-1937.glb" id="download-1937-wall">下载1937年返墙局部（GLB）</a>。相册能辨出一处深色窗洞。局部原网保留洞深，砖墙用色参照修缮方案。</p>
+<p>对照图均为模型自渲，保留原始观察方向与图像裁切。院面宽度暂按14.8米估算。返墙尽端的另一个暗段被树和屋面遮挡，形态与范围仍待确认。</p>
+<p><a href="https://digitalcollections.smu.edu/digital/collection/vsp/id/52">1937年《Eves》，沙逊摄，南卫理公会大学德戈利尔图书馆藏</a> · <a href="https://www.jianweigroup.com/site/10/category0051/b1216655955211e89cd6408d5c6f7eaa.html">上海建为历保，沙逊别墅辅楼保护修复工程设计</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-sassoon-villa-service-wing/source/viewer.js" type="module"></script>
+</body></html>

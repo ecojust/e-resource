@@ -133,7 +133,7 @@ def build(project, output):
             require(owner and owner['model_id']==candidate['id'] and owner['local_id']==candidate.get('source_local_id') and any(r['id']==candidate['id'] and r.get('accepted') and r.get('navigation',{}).get('listed') for r in landmarks), 'Integrated preview lacks matching source owner and navigation')
             integrated_previews.append({'id':candidate['id'],'manifest':name,'source_key':candidate['source_owner']})
             continue
-        status_fields = candidate_status_fields(candidate, name)
+        status_fields = candidate_status_fields(candidate, name, project)
         # Original candidate manifests must explicitly disclaim both kinds of integration.
         # The standalone four-file delivery schema declares its separate viewer instead.
         default_flag = False if 'status' not in candidate else None
