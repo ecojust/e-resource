@@ -519,5 +519,87 @@
       ]
     ]
   },
-  "condition": "Aerial ends select the footprint length. Front image supplies a near-orthographic vertical estimate; original cameras have no EXIF. Photograph 10 is a separate elevated view."
+  "condition": "Aerial ends select the footprint length. Front image supplies a near-orthographic vertical estimate; original cameras have no EXIF. Photograph 10 is a separate elevated view.",
+  "effective_vertical_to_horizontal_scale": 1.23,
+  "section_scale_constraint": {
+    "aerial_glazing_inner_edge_pixels": [
+      [
+        76.8,
+        219.2
+      ],
+      [
+        79,
+        218.2
+      ],
+      [
+        81,
+        218.3
+      ],
+      [
+        84.7,
+        220.1
+      ],
+      [
+        87.5,
+        223.4
+      ],
+      [
+        88.2,
+        227
+      ],
+      [
+        86.8,
+        230.7
+      ],
+      [
+        84.2,
+        231.8
+      ],
+      [
+        81,
+        230.9
+      ],
+      [
+        77.1,
+        227.2
+      ],
+      [
+        75.5,
+        223.3
+      ]
+    ],
+    "round_glazing_ellipse_in_reference_extended_beyond_crop": "Small aerial aperture implies vertical/horizontal scale close to 1.38, with +/-0.19 from choosing the inner glass edge in a 13px-wide aperture. Independent pair of oblique stations selects 1.23. Ground scale is much better constrained than height.",
+    "trial_z_scale_ground_and_aerial_median_px": [
+      [
+        0.9,
+        1.319,
+        3.866
+      ],
+      [
+        1.0,
+        1.306,
+        2.755
+      ],
+      [
+        1.12,
+        1.375,
+        2.154
+      ],
+      [
+        1.23,
+        1.305,
+        1.453
+      ],
+      [
+        1.38,
+        1.575,
+        2.401
+      ]
+    ]
+  },
+  "frontal_depth_condition": {
+    "eye_z_m": 1.6,
+    "stand_off_m": 18.0,
+    "basis": "The low main tiled slope scarcely rises above its front eave in the restored front photograph. For the measured 4.43m-deep roof band, edge-to-edge pitch 0.59 and 13.2m eave, matching the main front/back apparent level requires a standoff near (13.2-1.6)/0.59 = 19.7m. A photographic crop/shift is permitted. Use 18m within ±3m; the unshifted C height of 9.06m in the first metric study made the main roof hide the small upswept sections. All measured frontage points retain their exact pixel positions."
+  }
 }
