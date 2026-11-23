@@ -19,7 +19,7 @@ shared = runpy.run_path(str(PROJECT / ARCHIVE_HELPER))
 
 README = """# 中山公园白色石亭
        
-几何依据三处照片视角重建。石质柱面和石栏使用程序生成的颜色与法线。摄影署名、来源和实证范围见本栋 SOURCES-LICENSE.md。
+几何依据三处照片视角重建。石质柱面和石栏使用程序生成的颜色与法线。摄影署名和图源列在本栋 measurements/pavilion-observations.json，模型覆盖范围和测量误差见本栋 README.md。
         
 解压后，从本目录运行下列命令。建模使用 Python 3、NumPy、Shapely 和 Pillow；重新拟合机位另需 SciPy，GLB 编码需 Node.js 和 gltfpack，原生与交换格式需 Blender 4.3 或较新版本。
 

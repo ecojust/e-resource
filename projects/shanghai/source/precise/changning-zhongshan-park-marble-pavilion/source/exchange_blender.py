@@ -124,16 +124,44 @@ def material_images(socket):
     return sorted(images)
 
 
+def required_texture_slots(raw):
+    """Resolve the exact authored color and relief image names from the GLB."""
+    with raw.open('rb') as stream:
+        header=stream.read(20)
+        if header[:4]!=b'glTF' or header[16:20]!=b'JSON':
+            raise ValueError('Missing glTF JSON chunk')
+        doc=json.loads(stream.read(int.from_bytes(header[12:16],'little')))
+    def image(slot):
+        texture=doc['textures'][slot['index']]
+        return doc['images'][texture['source']]['name']
+    required={}
+    for mat in doc['materials']:
+        color=mat.get('pbrMetallicRoughness',{}).get('baseColorTexture')
+        normal=mat.get('normalTexture')
+        if color is None and normal is None:
+            continue
+        if color is None or normal is None:
+            raise ValueError(('Missing one of the authored texture slots',mat['name']))
+        required[mat['name']]=(image(color),image(normal))
+    return required
+
+
 def verify_finishes():
-    sys.path.insert(0,str(Path(__file__).absolute().parent))
-    from marble_finishes import STEMS as stems
+    pack=Path(blend).parent
+    info=json.loads((pack/'manifest.json').read_bytes())['assets']['raw']
+    raw=pack/info['file']
+    if digest(raw)!=info['sha256']:
+        raise ValueError('Raw material reference differs from the signed edition')
+    expected=required_texture_slots(raw)
+    if len(expected)!=2:
+        raise ValueError(('Expected two textured pavilion stones',expected))
     mats={material_key(m.name):m for m in bpy.data.materials}
     result={}
-    for name,stem in stems.items():
+    for name,(color_file,normal_file) in expected.items():
         mat=mats[material_key(name)]
         node=next(n for n in mat.node_tree.nodes if n.type=='BSDF_PRINCIPLED')
         colour=material_images(node.inputs['Base Color']);normal=material_images(node.inputs['Normal'])
-        if colour!=[stem+'.png'] or normal!=[stem+'-normal.png']:
+        if colour!=[color_file] or normal!=[normal_file]:
             raise ValueError(('The reopened material changed image slots',name,colour,normal))
         result[name]={'base_color':colour,'normal':normal}
     return {'bound_finishes':result}
