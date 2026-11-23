@@ -166,6 +166,19 @@ def repository_json(relative_path):
  raw=path.read_bytes() if path.exists() else subprocess.check_output(['git','show','HEAD:'+relative_path],cwd=ROOT)
  return json.loads(raw)
 
+def standalone_heritage_models(records):
+ data=repository_json('projects/shanghai/data/model-todo/standalone-heritage-models.json')
+ assert data['schema']=='standalone-heritage-models-v1'
+ known={record['id'] for record in records}
+ by_heritage={}
+ for entry in data['records']:
+  heritage_id=entry['heritage_id']
+  assert heritage_id in known and heritage_id not in by_heritage, 'Unknown or repeated standalone heritage ID'
+  assert re.fullmatch(r'[a-z0-9-]+\.html',entry['page']) and re.fullmatch(r'[0-9a-f]{40}',entry['published_commit'])
+  assert all(entry[key].strip() for key in ('title','modeled_scope','remaining'))
+  by_heritage[heritage_id]=entry
+ return by_heritage
+
 def delivered_source_object_models(delivered_ids):
  # These are identity associations, not assertions of full source coverage.
  # Keep building and building_part IDs separate even if their strings coincide.
@@ -209,6 +222,7 @@ def build(reserved=()):
  assert len(set(map_keys))==len(map_keys), 'Duplicate named source object'
  active_maps=[m for m in maps if (m['source_layer'],m['id']) not in source_models]
  associated_map_count=len(maps)-len(active_maps)
+ standalone=standalone_heritage_models(records)
  scope_reviews=completed_scope_reviews(queue,records,delivered_ids)
  active_records=[r for r in records if r['id'] not in scope_reviews or scope_reviews[r['id']]['active_tasks']]
  hidden_record_count=len(records)-len(active_records)
@@ -246,7 +260,11 @@ def build(reserved=()):
   for r in group:
    title=r['name']
    refs=f"[名录][{batch_refs[r['batch']]}]"
-   if r.get('photo_url'):refs+=' · 照片待核'
+   project=standalone.get(r['id'])
+   if project:
+    view_url=f"https://raw.githack.com/ecojust/e-resource/{project['published_commit']}/projects/shanghai/{project['page']}"
+    refs+=' · '+link('公开模型',view_url)
+   elif r.get('photo_url'):refs+=' · 照片待核'
    todo='待核外观／拆栋'
    if r.get('possible_existing_models'):todo='已有模型可能关联：'+ '、'.join(r['possible_existing_models'])+'；待核对范围'
    if r['id'] in scope_reviews:
@@ -260,6 +278,12 @@ def build(reserved=()):
     if review['existing_models']:
      todo='已关联单体：'+'、'.join(m['id'] for m in review['existing_models'])+'；'+review['modeled_scope_or_gap']+'；未将整处名录判为完成'
     else:todo+='；'+review['split_review']['note']
+   if project:
+    if r['id'] not in scope_reviews:
+     title=project['title']
+     todo=project['modeled_scope']+project['remaining']
+    else:
+     todo=project['modeled_scope']+todo
    if r.get('demolition_or_condition_note'):todo+='；'+r['demolition_or_condition_note']
    lines.append(f"|{cell(r['id'])}|{cell(title)}|{cell(r['address'])}|{refs}|{cell(todo)}|")
   lines+=['','</details>','']

@@ -466,23 +466,23 @@
 |sh-historic-b4-135|龙华机场候机楼|龙华西路1号|[名录][H4] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-001-v|住宅|华山路913号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-002-v|和平官邸|东平路16号|[名录][H5]|待核外观／拆栋|
-|sh-historic-b5-xh-j-003-v|住宅|高安路60弄|[名录][H5]|待核外观／拆栋|
+|sh-historic-b5-xh-j-003-v|高安路60号住宅|高安路60弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/54c9dceb4f45c1c3369dcbb0e9790ced607b6615/projects/shanghai/gaoan-60-gabled-balcony-front.html>)|中央山花、双列阳台、窗扇与砖花栏已建。外翼、后墙和室内范围待图纸核定。|
 |sh-historic-b5-xh-j-004-v|住宅|淮海中路1323号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-005-v|住宅|太原路238号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-xh-j-006-v|襄阳公寓|襄阳南路254号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-007-v|白赛仲公寓|复兴西路26号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-007-v|白赛仲公寓|复兴西路26号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/a81d4fea9eb12cf1cd5662aa8579c06775514673/projects/shanghai/baisaizhong-apartments-fuxing-road-corner.html>)|街角五层主体、局部六层、两条街翼、内梯和早期汽车间门扇已建。后部细节和住宅分户待核。|
 |sh-historic-b5-xh-j-008-v|剑桥角公寓|复兴中路1462号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-009-v|潘兴公寓|淮海中路1706号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-010-v|良友公寓|永福路68号、复兴西路91、93号|[名录][H5]|待核外观／拆栋|
-|sh-historic-b5-xh-j-011-v|开普敦公寓|武康路240、242、246号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-011-v|开普敦公寓|武康路240、242、246号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/ba39be3553ba263f3435680f591881dfdec7b1e5/projects/shanghai/capetown-apartments-wukang-road-wedge.html>)|街角舷窗、圆头横窗、成列凸窗与水刷石底层已建。背面和室内分户待核。|
 |sh-historic-b5-xh-j-012-v|国富门公寓|武康路230、232号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-013-v|漕溪北路小高层|漕溪北路750、800、850、900、950、1000号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-014-v|住宅|武康路210号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-015-v|住宅|高邮路5弄32号|[名录][H5]|待核外观／拆栋|
+|sh-historic-b5-xh-j-015-v|高邮路5弄32号住宅|高邮路5弄32号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/1b0b61d70b14d3e9c8eca5cd1b2b3247b38ca3be/projects/shanghai/gaoyou-lane-5-no-32-garden-balcony.html>)|已建清水砖花园立面、32号二层阳台、砖柱转角与雨篷。同栋34号入口和院内遮挡面待核。|
 |sh-historic-b5-xh-j-016-v|住宅|湖南路276号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-017-v|住宅|武康路392号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-018-v|住宅|武康路376号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-019-v|花园住宅|五原路289弄1-2、3-4号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-019-v|五原路289弄花园住宅|五原路289弄1-2、3-4号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/212791377716fc6c6398895fce2d2d6e7b5a813c/projects/shanghai/wuyuan-289-garden-houses.html>)|北栋1–2号、南栋3–4号、外梯与弄口铁门已建。后院遮挡处和内部划界待核。|
 |sh-historic-b5-xh-j-020-v|住宅|淮海中路1380号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-021-v|住宅|复兴西路147号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-022-v|台拉新村|建国西路365弄|[名录][H5] · 照片待核|待核外观／拆栋|
@@ -1028,23 +1028,23 @@
 |sh-historic-b4-176|叶家花园（白楼）|政民路511号|[名录][H4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-178|国立音乐专科学校主楼|民京路918号|[名录][H4]|待核外观／拆栋|
 |sh-historic-b5-yp-j-001-v|住宅|龙江路2号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-yp-j-002-v|住宅|隆昌路362号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-yp-j-002-v|隆昌公寓北院|隆昌路362号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/ee16ec034a33e04f6be481f1dc7a29adbb384094/projects/shanghai/longchang-apartments-grant-road-barracks-courtyard.html>)|北院四翼、绿色院门、梯塔与连续外廊已建。院内遮挡处及周边地块范围待核。|
 |sh-historic-b5-yp-j-003-v|住宅|吉林路5号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-004-v|动迁工作组办公用房|平凉路250号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-005-v|住宅|辽阳路51弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-yp-j-006-v|平凉路派出所|杨树浦路713号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-yp-j-006-v|杨树浦路713号住宅|杨树浦路713号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/f415efdc98e2f6278f07582967049d2adc8ef981/projects/shanghai/yangshupu-road-713-historic-residence.html>)|沿街红砖山花、放射扇肋、通风圆眼与旧檐已建。整栋屋身与院内其余立面待核。|
 |sh-historic-b5-yp-j-007-v|杨浦区政府|江浦路549号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-008-v|住宅|平凉路629号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-009-v|缉槼中学教学楼|荆州路42号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-yp-j-010-v|公共租界杨树浦救火会旧址|杨树浦路1307号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-yp-j-010-v|杨树浦救火会旧址|杨树浦路1307号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/0c464bddfd326e8742c2df445afb9d0e5e2f34cb/projects/shanghai/yangshupu-fire-brigade-historic-tower-crown.html>)|依历史照片复建了方塔两面、挑檐与亭帽。其余车库和院落的分栋与现况待核。|
 |sh-historic-b5-yp-j-011-v|上海市公安局杨浦分局，上海市国家安全局杨浦分局|平凉路2049号|[名录][H5]|待核外观／拆栋|
 |sh-historic-b5-yp-j-012-v|日商上海纺织株式会社旧址|杨树浦路2086号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-013-v|瑞瑢船厂旧址|杨树浦路640号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-yp-j-014-v|住宅|景星路310、314弄|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-yp-j-014-v|颐庆里住宅|景星路310、314弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/b299624cd80a43e6cfa6178b24ce36ad13a2866e/projects/shanghai/yiqingli-jingxing-310-314-lane-houses.html>)|310弄门楼、314弄砖立面、住宅屋盖及弄内通道已建。后栋分户和被遮挡的屋盖待核。|
 |sh-historic-b5-yp-j-015-v|住宅|福禄街193-209号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-016-v|住宅|龙江路50-66号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-yp-j-017-v|华一印刷股份有限公司|榆林路308号|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-yp-j-018-v|国顺路650弄住宅|国顺路650弄|[名录][H5]|待核外观／拆栋|
+|sh-historic-b5-yp-j-018-v|复旦九宿舍陈望道旧居|国顺路650弄|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/ca270f67fd8b872ccab55dd45487809212cb9a7c/projects/shanghai/fudan-jiuyuan-chen-wangdao-former-residence.html>)|已建国福路51号花园立面、悬挑阳台与弧窗。国顺路650弄其余住宅按栋续做。|
 |sh-historic-b5-yp-j-019-v|白庐（原上海浚浦局职员俱乐部）|共青路386号|[名录][H5] · 照片待核|待核外观／拆栋|
 
 </details>
