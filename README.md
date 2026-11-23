@@ -534,7 +534,7 @@
 |sh-historic-b5-xh-j-064-v|住宅|新乐路59号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-065-v|住宅|东湖路56弄51,53,55号|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-066-v|住宅|宝庆路9弄|[名录][H5] · 照片待核|待核外观／拆栋|
-|sh-historic-b5-xh-j-067-v|住宅|延庆路4弄，2号|[名录][H5] · 照片待核|待核外观／拆栋|
+|sh-historic-b5-xh-j-067-v|延庆路2号浅绿住宅|延庆路4弄，2号|[名录][H5] · [公开模型](<https://raw.githack.com/ecojust/e-resource/adf9872a9e1b8c8706d8d30b9f89b5cd442f17e1/projects/shanghai/yanqing-2-green-street-residence.html>)|已建2号临街楼体、弧形楼梯间、折面凸窗、双层阳台、瓦顶山墙及两组阶梯烟道。沿街4、6号暨4弄2–44号各户的边界、后立面与室内待核。|
 |sh-historic-b5-xh-j-068-v|住宅|延庆路43-49号、51弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-069-v|住宅|五原路84弄|[名录][H5] · 照片待核|待核外观／拆栋|
 |sh-historic-b5-xh-j-070-v|华邸|五原路76弄|[名录][H5] · 照片待核|待核外观／拆栋|
