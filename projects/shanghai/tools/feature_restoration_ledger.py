@@ -106,7 +106,7 @@ def build(project, output):
 
     repo = Path(subprocess.check_output(['git', 'rev-parse', '--show-toplevel'], cwd=project, text=True).strip())
     prefix = project.relative_to(repo).as_posix() + '/'
-    tracked = subprocess.check_output(['git', 'ls-files', '--', prefix + 'assets/models/candidates/*/manifest.json'],
+    tracked = subprocess.check_output(['git', 'ls-files', '--', ':(glob)' + prefix + 'assets/models/candidates/*/manifest.json'],
                                       cwd=repo, text=True).splitlines()
     candidates = []
     integrated_previews = []

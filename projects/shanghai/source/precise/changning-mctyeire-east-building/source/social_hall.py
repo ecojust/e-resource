@@ -4,6 +4,7 @@ import numpy as np
 from shapely import union_all
 from shapely.geometry import box, Polygon, LineString
 from photo_architecture import Facade, opening
+from lawn_return import add_lawn_return
 
 PALETTE = {
     'court ashlar': {'color':[.66,.614,.483], 'roughness':.84},
@@ -251,3 +252,4 @@ def building(b,lod):
     wing(b,-34.20,-10.16,4.00,lod,'NW gallery')
     wing(b,10.16,36.49,3.76,lod,'SE gallery')
     centre(b,lod)
+    add_lawn_return(b,lod)

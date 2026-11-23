@@ -135,7 +135,7 @@ def build(project):
  assert {m['id'] for m in models}.issubset({r['id'] for r in nav})
  # Use tracked files, so a sparse checkout cannot silently omit candidates.
  repo=Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=project,text=True).strip());prefix=project.relative_to(repo).as_posix()+'/'
- files=subprocess.check_output(['git','ls-files','--',prefix+'assets/models/candidates/*/manifest.json'],cwd=repo,text=True).splitlines()
+ files=subprocess.check_output(['git','ls-files','--',':(glob)' + prefix+'assets/models/candidates/*/manifest.json'],cwd=repo,text=True).splitlines()
  integration=read('data/candidate-city-integrations.json') if (project/'data/candidate-city-integrations.json').exists() else {'models':[]}
  placements={m['id']:m for m in integration['models']}
  assert len(placements)==len(integration['models']) and set(placements).issubset({r['id'] for r in nav}), 'City placement/navigation mismatch'
