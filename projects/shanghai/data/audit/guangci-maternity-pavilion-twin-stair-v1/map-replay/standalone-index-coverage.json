@@ -1,0 +1,19 @@
+{
+  "order": 344,
+  "scope": "Independent exhibit. The four map bindings retain the hashes of release 343.",
+  "base_git_test_sha256": "0ace909ea9554c8515cd51c363163af5d1f11da42e9f4cbcca5717784ab1d386",
+  "standalone_test_programs_sha256": {
+    "signed_city_and_staged_files": "488ae5820ba39ed7eb97eb12db736b8d20ca13b38a695c0be7959266e04c3da8",
+    "standalone_documentation_fixture": "96c5ab5bfa7f569eaf2b6509598d29374308a6bdc7851e985202efe947eccbe0",
+    "stage_exhibit_fixture": "8709d84b4633bde8614250dee82e10edaf73d0418ff0f2b7438d282d65d85180",
+    "run_isolated_git_index_exercise": "bc43099a8bcb938a2ac0796e08c6d06a1c35dce3906f3539c220ef768ff5ab0f"
+  },
+  "actual_result_sha256": "d6ed7770353dd4c1f4b99260807c20afafb77ad8fec1212ee1f7383fdacfc2d3",
+  "total_executed_checks": 9,
+  "tested_negative_cases": [
+    "Edited independent four-download manifest",
+    "Edited city catalog",
+    "Edited staged camera module"
+  ],
+  "compatibility_note": "The general documentation fixture expects every delivered model to be in the city catalog. This test renders the signed city entries with that generator and lists the independent model at its signed standalone URL. The historical special-purpose index script was unavailable. The replacement reads the actual staged Git blobs and compares them with the model and camera release records."
+}
