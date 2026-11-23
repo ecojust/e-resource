@@ -11,7 +11,7 @@ def projection(name=None):
     from build_model import SCALE
     ref=json.loads((HERE/'registered-street-camera.json').read_bytes())
     K,R,C=(np.array(ref[k]) for k in ('intrinsic','world_to_camera','camera_centre'))
-    return K@R@np.column_stack([np.eye(3),-C*SCALE])
+    return K@R@np.column_stack([np.diag(1/np.asarray(SCALE)),-C])
 backend=runpy.run_path(str(PRECISE/'changning-hongji-yuyuan-garden-houses-8-and-9/measurements/render-garden-stations.py'))
 def render(mesh,out):
     engine=backend['renderer'];parts=engine.read_glb(mesh);out.mkdir(parents=True,exist_ok=True)

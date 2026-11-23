@@ -6,6 +6,7 @@ needs NumPy and Pillow. Dimensions refer to the registered 22 m working model.
 import argparse
 import hashlib
 import json
+import re
 import struct
 import sys
 from pathlib import Path
@@ -17,7 +18,7 @@ HERE = Path(__file__).resolve().parent
 RED = 'Wanping 42 | red facing brick'
 YELLOW = 'Wanping 42 | ochre facing brick'
 SOLDIER = 'Wanping 42 | vertical red soldier brick'
-REPEAT_METRES = {RED: (1.576, .900), YELLOW: (1.576, .972), SOLDIER: (.680, 1.000)}
+REPEAT_METRES = {RED: (1.576, .9084), YELLOW: (1.576, .9645), SOLDIER: (.664, .960)}
 STEMS = {RED: 'wanping-red-facing', YELLOW: 'wanping-ochre-facing', SOLDIER: 'wanping-red-soldiers'}
 FILENAMES = {name: stem + '.png' for name, stem in STEMS.items()}
 NORMAL_FILENAMES = {name: stem + '-normal.png' for name, stem in STEMS.items()}
@@ -28,6 +29,56 @@ PALETTE = {name: {'color': [1., 1., 1.], 'roughness': roughness,
 RECIPES = {RED: ((512, 320), (130, 54, 35), (214, 177, 157), .0105, .0029, 4219),
            YELLOW: ((512, 320), (164, 123, 52), (194, 153, 82), .0090, .0024, 4241),
            SOLDIER: ((256, 384), (137, 59, 38), (214, 168, 146), .0100, .0029, 4287)}
+
+
+# Shifts in study metres, in the exported U and V directions. Rectified
+# samples for each material have a held-out right third. The western two bays
+# have too little resolution to fit their individual absolute starting joints.
+WALL_PHASE = {RED: (-.1354, -.0166), YELLOW: (.0062, 0.), SOLDIER: (.0765, -.0581)}
+SOLDIER_PHASE = {3: (.0804, -.0525), 4: (.0726, -.0638)}
+
+
+def apply_brick_uv(part, scale=1.):
+    """Use CrownBuilder's directed surface axes, calibrated brick pitch, and continuous front folds."""
+    name = part['material']
+    width, height = REPEAT_METRES[name]
+    vertices = np.asarray(part['vertices'], float) / np.asarray(scale, float)
+    ids = np.asarray(part['triangles'])
+    xyz = vertices[ids]
+    normals = np.cross(xyz[:, 1] - xyz[:, 0], xyz[:, 2] - xyz[:, 0])
+    normals /= np.linalg.norm(normals, axis=1)[:, None]
+    wall = np.abs(normals[:, 2]) <= .9
+    # Recover the axes from the unscaled study triangles. Roof caps map to
+    # the ground plane. A vertical face's V follows up, including at a fold.
+    tangent = np.column_stack([-normals[:, 1], normals[:, 0], np.zeros(len(ids))])
+    tangent[wall] /= np.linalg.norm(tangent[wall], axis=1)[:, None]
+    up = np.cross(normals, tangent)
+    tangent[~wall], up[~wall] = (1., 0., 0.), (0., 1., 0.)
+    mapped = np.stack([np.einsum('tvi,ti->tv', xyz, axis) for axis in (tangent, up)], axis=-1)
+    uv = np.empty((len(vertices), 2))
+    uv[ids.ravel()] = mapped.reshape(-1, 2)
+    shift = WALL_PHASE[name]
+    bay = re.search(r'red projecting bay (\d+) \| (left flank|front|right flank) \|', part['label'])
+    if bay:
+        number, face = int(bay[1]), bay[2]
+        if name == SOLDIER:
+            shift = SOLDIER_PHASE.get(number, shift)
+        if face != 'front':
+            from four_window_bays import BAYS
+            x0, left, right, x1, depth = BAYS[number - 1]
+            if face == 'left flank':
+                anchor = np.array([left, -depth])
+                run = anchor - np.array([x0, .015])
+            else:
+                anchor = np.array([right, -depth])
+                run = np.array([x1, .015]) - anchor
+            tangent = run / np.linalg.norm(run)
+            outward = np.array([tangent[1], -tangent[0], 0.])
+            outer = np.unique(ids[normals @ outward > .99999])
+            # The street-facing centre facet has U = world X. Start the two side
+            # facets at the exact same U on their shared, projecting masonry corner.
+            uv[outer, 0] += anchor[0] - anchor @ tangent
+    part['texcoords'] = ((uv + shift) / [width, height]).tolist()
 
 
 def field(u, v, nx, ny, rng):

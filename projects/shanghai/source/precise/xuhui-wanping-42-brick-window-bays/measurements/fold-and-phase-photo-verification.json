@@ -1,0 +1,182 @@
+{
+  "first_glb": "9334b34b305aae593a1df7993324a7ca8a1d17bbf62dbf690a7a3b654234c82f",
+  "registered_glb": "d8490da467332e136e308d19fe68c1523407890a86338389645d637cb7c2b9f2",
+  "registered_lod_glb": "4dccb44420511b895eaf8cd05b3c7762c45aef60e15e0edb7600bf3632b0f360",
+  "methodology": "Barycentric UV from each actual front triangle at its measured depth. Embedded colour PNG is read at nine subpixel offsets per registered photo pixel, both fields receive a 6 px Gaussian high-pass. Compare every colour-valid, facade-bound sample in the held-out right third. This compares joint placement and pitch, not full scene tones or normal shading.",
+  "limitations": "First and second bay joints are blurred and the photo registration varies across the width. Angled facets are covered by the fold test. The 2019 rectification includes surfaces on more than one depth plane.",
+  "phase_test": "The shorter-wavelength common grout mask was compared in the left two thirds. The same-phase colour map is then read from each exported GLB in all eight held-out strips. The resolution on the first two bay fronts did not support individual phase fitting; they share the mean of the better resolved third and fourth bays.",
+  "pictures": [
+    {
+      "region": "red lower pier",
+      "at": [
+        1386,
+        640,
+        1517,
+        771
+      ],
+      "held_out_pixels": 5764,
+      "original_r": -0.17859806298474873,
+      "revised_r": 0.542682357703604,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "red upper pier",
+      "at": [
+        1387,
+        405,
+        1507,
+        488
+      ],
+      "held_out_pixels": 3320,
+      "original_r": -0.19051482505569836,
+      "revised_r": 0.10386692548307992,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "ochre first floor",
+      "at": [
+        1408,
+        886,
+        1530,
+        1013
+      ],
+      "held_out_pixels": 5207,
+      "original_r": -0.011455843253560154,
+      "revised_r": 0.3301464789957801,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "ochre lower floor",
+      "at": [
+        406,
+        1163,
+        486,
+        1240
+      ],
+      "held_out_pixels": 2079,
+      "original_r": 0.3110162919054263,
+      "revised_r": 0.20678605583865228,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "first bay vertical bricks",
+      "at": [
+        225,
+        474,
+        316,
+        553
+      ],
+      "held_out_pixels": 2449,
+      "original_r": 0.16804130183019692,
+      "revised_r": 0.20470575727544033,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "second bay vertical bricks",
+      "at": [
+        565,
+        474,
+        632,
+        547
+      ],
+      "held_out_pixels": 1679,
+      "original_r": 0.3475751726416989,
+      "revised_r": 0.3284015164456269,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "third bay vertical bricks",
+      "at": [
+        1150,
+        488,
+        1205,
+        550
+      ],
+      "held_out_pixels": 1178,
+      "original_r": 0.4984660406282769,
+      "revised_r": 0.646972015390444,
+      "visible_fraction": 1.0
+    },
+    {
+      "region": "fourth bay vertical bricks",
+      "at": [
+        1580,
+        472,
+        1648,
+        549
+      ],
+      "held_out_pixels": 1771,
+      "original_r": -0.17386119912118347,
+      "revised_r": 0.46601441985510567,
+      "visible_fraction": 1.0
+    }
+  ],
+  "fold_test": [
+    {
+      "digest": "9334b34b305aae593a1df7993324a7ca8a1d17bbf62dbf690a7a3b654234c82f",
+      "fold_sample_count": 32,
+      "worst_uv_cycles": [
+        0.49069987,
+        0.0
+      ],
+      "material_edge_measurements": {
+        "Wanping 42 | ochre facing brick": [
+          636,
+          1.0871887203833808e-06
+        ],
+        "Wanping 42 | red facing brick": [
+          1056,
+          1.2588500976074002e-06
+        ],
+        "Wanping 42 | vertical red soldier brick": [
+          432,
+          1.1825561523348682e-06
+        ]
+      }
+    },
+    {
+      "digest": "d8490da467332e136e308d19fe68c1523407890a86338389645d637cb7c2b9f2",
+      "fold_sample_count": 32,
+      "worst_uv_cycles": [
+        1.2e-07,
+        0.0
+      ],
+      "material_edge_measurements": {
+        "Wanping 42 | ochre facing brick": [
+          636,
+          1.2541490583828363e-06
+        ],
+        "Wanping 42 | red facing brick": [
+          2016,
+          1.3893818041621486e-06
+        ],
+        "Wanping 42 | vertical red soldier brick": [
+          432,
+          8.996253672011179e-07
+        ]
+      }
+    },
+    {
+      "digest": "4dccb44420511b895eaf8cd05b3c7762c45aef60e15e0edb7600bf3632b0f360",
+      "fold_sample_count": 32,
+      "worst_uv_cycles": [
+        1.2e-07,
+        0.0
+      ],
+      "material_edge_measurements": {
+        "Wanping 42 | ochre facing brick": [
+          636,
+          1.2541490583828363e-06
+        ],
+        "Wanping 42 | red facing brick": [
+          1504,
+          1.2627736269976708e-06
+        ],
+        "Wanping 42 | vertical red soldier brick": [
+          432,
+          8.996253672011179e-07
+        ]
+      }
+    }
+  ]
+}

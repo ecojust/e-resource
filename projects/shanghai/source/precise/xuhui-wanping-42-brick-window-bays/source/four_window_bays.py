@@ -103,12 +103,30 @@ def _relief(b,a,c,left,right,prefix,lod):
               (.68,.584-t)],.012,'right curled leaflet '+str(i+1))
 
 
+def _brick_arris(b, centre, low, high, lod, label):
+    # The sunny edge of each folded brick pier has a narrow round arris.
+    n=8 if lod else 16
+    cx,cy=centre
+    radius=.075
+    ring=[(cx+radius*cos(2*pi*i/n),cy+.041+radius*sin(2*pi*i/n)) for i in range(n)]
+    vertices=[(x,y,z) for z in (low,high) for x,y in ring]
+    faces=[]
+    for i in range(n):
+        j=(i+1)%n
+        faces.extend(((i,j,n+j),(i,n+j,n+i)))
+    for i in range(1,n-1):faces.extend(((0,i+1,i),(n,n+i,n+i+1)))
+    b.add(vertices,faces,RED,label)
+
+
 def _bay(b,index,profile,lod):
     left,fl,fr,right,depth=profile
     corners=((left,.015),(fl,-depth),(fr,-depth),(right,.015))
     prefix='Wanping Road | red projecting bay '+str(index)
     _slab(b,corners,BASE,BASE+.055,SHADE,prefix+' | visible soffit')
     _slab(b,corners,TOP-.07,TOP,RED,prefix+' | weathering cap')
+    for ix in (1,2):
+        for row,(low,high) in enumerate(ROWS,3):
+            _brick_arris(b,corners[ix],low,high,lod,prefix+' | rounded brick corner '+str(ix)+' | storey '+str(row))
     for n,(a,c) in enumerate(zip(corners,corners[1:])):
         width=hypot(c[0]-a[0],c[1]-a[1]);face=prefix+' | '+('left flank','front','right flank')[n]
         central=n==1;hh=.105 if central else .095

@@ -50,3 +50,10 @@ def add_portal(face,hole,lod):
         face.rect(x-.009,x+.009,head*.45,head-.09,-.091,-.073,GREEN,label+'upper gate bars')
     for z in np.linspace(.12,head*.43,7 if lod else 12):
         face.rect(x0+.045,x1-.045,z-.012,z+.012,-.092,-.065,GREEN,label+'lower gate louvres')
+    # Green street number plate, visible alongside the entrance in the 2015 detail.
+    plaque=box(*located(686,493),*located(741,457))
+    face.solid(plaque,.001,.025,GREEN,label+'number 42 plaque')
+    digits=[[(697,463),(692,473),(701,473)],[(699,461),(699,478)],
+            [(705,465),(708,462),(713,462),(716,465),(716,468),(707,477),(717,477)]]
+    for path in digits:
+        face.band(convert(path),.007,.025,.029,LIME,label+'raised address numerals')
