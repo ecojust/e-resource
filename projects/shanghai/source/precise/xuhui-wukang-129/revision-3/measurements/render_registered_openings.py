@@ -15,7 +15,7 @@ import tempfile
 from unittest.mock import patch
 
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 from register_openings import Camera
 
@@ -98,19 +98,34 @@ def frames(mesh, out, width, role):
     return note
 
 def sheet(out):
-    panel_width,panel_height=235,290
-    canvas=Image.new('RGB',(1000,740),'#edeae3')
+    panel_width,panel_height=235,280
+    canvas=Image.new('RGB',(1000,780),'#edeae3')
     draw=ImageDraw.Draw(canvas)
-    draw.text((18,7),'129 Wukang Road | Door casing and balcony casements',fill='#20211f')
+    fontfile=Path('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
+    chinese=fontfile.is_file()
+    def font(size):
+        if chinese:return ImageFont.truetype(str(fontfile),size=size,index=2)
+        return ImageFont.load_default(size=size)
+    title='武康路129号的街门与阳台' if chinese else '129 Wukang Road | Gate and balcony'
+    draw.text((18,7),title,font=font(23),fill='#20211f')
     for row,year in enumerate(STATIONS):
-        y=34+row*344
-        draw.text((18,y),year+' photograph station: same measured crop at each model revision',fill='#353c3e')
-        for col,(role,part,label) in enumerate([('v2','gate','V2 / entry'),('v3','gate','V3 / entry'),('v2','balcony','V2 / balcony'),('v3','balcony','V3 / balcony')]):
-            tile=Image.open(out/f'{role}-{year}-{part}.jpg');tile.thumbnail((panel_width,panel_height),Image.Resampling.LANCZOS)
+        y=49+row*334
+        photographer=REFERENCE[year]['author']
+        title=f'{year}年街面拍摄位置   {photographer}' if chinese else f'{year} photograph station   {photographer}'
+        draw.text((18,y),title,font=font(15),fill='#353c3e')
+        for col,(role,part,en,zh) in enumerate([('v2','gate','Earlier gate','原版街门'),('v3','gate','Revised gate','修订街门'),
+                                            ('v2','balcony','Earlier balcony','原版阳台'),('v3','balcony','Revised balcony','修订阳台')]):
+            tile=Image.open(out/f'{role}-{year}-{part}.jpg')
+            tile.thumbnail((panel_width,panel_height),Image.Resampling.LANCZOS)
             x=10+246*col
-            canvas.paste(tile,(x+(panel_width-tile.width)//2,y+20+(panel_height-tile.height)//2))
-            draw.text((x+5,y+314),label,fill='#2f3839')
-    draw.text((18,724),'V3: diagonal grooves around the lower entrance; fanlight, two separately opened leaves and the dark recess above.',fill='#343b3d')
+            canvas.paste(tile,(x+(panel_width-tile.width)//2,y+25+(panel_height-tile.height)//2))
+            draw.text((x+5,y+306),zh if chinese else en,font=font(14),fill='#2f3839')
+    notes=['门牌外的灰色拱套沿直边和半圆连续起槽。两期都能看见阳台两扇木框门之间的暗处和上方固定扇。',
+           '图中建筑全部由模型渲染。摄影参照来自 Antigng（2017）和 Windmemories（2026），CC BY-SA 4.0。'] if chinese else [
+           'Diagonal grooves continue around the gate. Both stations show an open centre and a fixed upper fanlight.',
+           'Original model renders. Photo references: Antigng (2017) and Windmemories (2026), CC BY-SA 4.0.']
+    for i,line in enumerate(notes):
+        draw.text((18,726+i*23),line,font=font(14),fill='#343b3d')
     dest=out/'registered-openings.jpg';canvas.save(dest,quality=95,subsampling=0,optimize=True)
     return sha(dest)
 

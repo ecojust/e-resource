@@ -40,7 +40,11 @@ def components(path):
     return report['sha256'],out
 
 def revised_opening(label):
-    return label.startswith('E-upper-arched-door/') or any(label=='D-low-entrance/'+n for n in ('thick-arched-door-surround','nested-arch-moulding'))
+    if label.startswith(('E-upper-arched-door/', 'D-low-entrance/address-numeral-')):
+        return True
+    return label in {'D-low-entrance/'+name for name in (
+        'thick-arched-door-surround','nested-arch-moulding','red-arched-entry-leaf',
+        'entry-raised-lower-panel','letter-slot','door-pull','129-address-plate')}
 
 def check(original,changed,lod):
     base,a=components(original);sig,b=components(changed)

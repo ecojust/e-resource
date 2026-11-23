@@ -92,16 +92,23 @@ def probes(mesh):
             features.append({'feature':name,'original_pixel':xy,'first_hit':scene.profile([xy])[0]})
         plate_inputs=json.loads((HERE/'plaque-surround-independent-pixels.json').read_text())['images'][year]
         plate=[]
+        def role_matches(hit,role):
+            name=hit['material'].lower() if hit else ''
+            return {'green':'green' in name and any(w in name for w in ('address','plaque','plate')),
+                    'stone':'archivolt' in name or name=='gray render',
+                    'wood':any(w in name for w in ('joinery','wood','oxblood'))}[role]
         for control in plate_inputs:
             hit=scene.profile([control['pixel']])[0]
-            name=hit['material'].lower() if hit else ''
-            green='green' in name and ('address' in name or 'plaque' in name or 'plate' in name)
-            stone='archivolt' in name or name=='gray render'
-            wood='joinery' in name or 'wood' in name or 'oxblood' in name
-            matched={'green':green,'stone':stone,'wood':wood}[control['role']]
-            plate.append({**control,'first_hit':hit,'matched_role':matched})
+            matched=role_matches(hit,control['role'])
+            nearest=[0,0] if matched else None
+            if not matched:
+                offsets=[(0,-1),(-1,0),(1,0),(0,1)]
+                around=scene.profile([np.array(control['pixel'])+offset for offset in offsets])
+                nearest=next((list(offset) for offset,v in zip(offsets,around) if role_matches(v,control['role'])),None)
+            plate.append({**control,'first_hit':hit,'matched_role':matched,'nearest_match_within_one_original_pixel':nearest})
         report['years'][year]={'fixed_feature_first_hits':features,'archivolt_leg_profiles':legs,
-                               'plaque_and_surround':plate,'matched_plaque_roles':sum(v['matched_role'] for v in plate)}
+                               'plaque_and_surround':plate,'matched_plaque_roles':sum(v['matched_role'] for v in plate),
+                               'plaque_roles_within_one_native_pixel':sum(v['nearest_match_within_one_original_pixel'] is not None for v in plate)}
     return report
 
 if __name__=='__main__':

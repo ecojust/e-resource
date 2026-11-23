@@ -123,7 +123,7 @@ def check_parts(builder):
     return {'passed':all(r['passed'] for r in rows),'scope':'Each part FLOAT32 position-welded: closed oriented shell, positive volume. Separate architectural parts intentionally meet/overlap; no claim of global Boolean union.', 'parts':rows}
 
 
-def build(output, *, builder_factory=Builder, archivolt=None, balcony_doors=None, low_detail=False):
+def build(output, *, builder_factory=Builder, archivolt=None, street_door=None, balcony_doors=None, low_detail=False):
     """Generate the original published design or supply newly measured details for its two openings."""
     if output is not None:
         output.mkdir(parents=True,exist_ok=True)
@@ -214,18 +214,21 @@ def build(output, *, builder_factory=Builder, archivolt=None, balcony_doors=None
             F.prism(ring,.075,.092,'gray render','nested-arch-moulding')
     else:
         archivolt(b,F,door,low_detail)
-    F.prism(door.buffer(-.015),-.09,-.045,'red brown joinery','red-arched-entry-leaf')
-    # Inset panel shape and restrained visible iron/brass fittings.
-    F.prism(opening(door_u,.34,.71,1.05,.08),-.044,-.034,'red brown joinery','entry-raised-lower-panel')
-    F.box(door_u,1.26,.33,.018,.018,-.015,'brass fitting','letter-slot')
-    F.line((door_u+.34,.90,-.005),(door_u+.34,1.13,-.005),.012,'wrought iron',8,'door-pull')
-    F.box(door_u,1.91,.24,.16,.028,.0,'address green','129-address-plate')
-    # Seven-segment physical numerals, deliberately simple legible plate lettering.
-    digits={'1':'bc','2':'abdeg','9':'abcdfg'};seg={'a':(-.023,.05,.023,.05),'b':(.023,.05,.023,.0),'c':(.023,.0,.023,-.05),'d':(-.023,-.05,.023,-.05),'e':(-.023,.0,-.023,-.05),'f':(-.023,.05,-.023,.0),'g':(-.023,0,.023,0)}
-    for i,ch in enumerate('129'):
-        for s in digits[ch]:
-            x0,z0,x1,z1=seg[s];cx=door_u+(i-1)*.065
-            F.line((cx+x0,1.91+z0,.018),(cx+x1,1.91+z1,.018),.0035,'painted white metal',6,'address-numeral-'+ch)
+    if street_door is None:
+        F.prism(door.buffer(-.015),-.09,-.045,'red brown joinery','red-arched-entry-leaf')
+        # Inset panel shape and restrained visible iron/brass fittings.
+        F.prism(opening(door_u,.34,.71,1.05,.08),-.044,-.034,'red brown joinery','entry-raised-lower-panel')
+        F.box(door_u,1.26,.33,.018,.018,-.015,'brass fitting','letter-slot')
+        F.line((door_u+.34,.90,-.005),(door_u+.34,1.13,-.005),.012,'wrought iron',8,'door-pull')
+        F.box(door_u,1.91,.24,.16,.028,.0,'address green','129-address-plate')
+        # Seven-segment physical numerals, deliberately simple legible plate lettering.
+        digits={'1':'bc','2':'abdeg','9':'abcdfg'};seg={'a':(-.023,.05,.023,.05),'b':(.023,.05,.023,.0),'c':(.023,.0,.023,-.05),'d':(-.023,-.05,.023,-.05),'e':(-.023,.0,-.023,-.05),'f':(-.023,.05,-.023,.0),'g':(-.023,0,.023,0)}
+        for i,ch in enumerate('129'):
+            for s in digits[ch]:
+                x0,z0,x1,z1=seg[s];cx=door_u+(i-1)*.065
+                F.line((cx+x0,1.91+z0,.018),(cx+x1,1.91+z1,.018),.0035,'painted white metal',6,'address-numeral-'+ch)
+    else:
+        street_door(b,F,door,low_detail)
     F.box(door_u,.04,1.20,.08,.40,.10,'gray render','entry-threshold')
     # Round-end wall is a real bent shell with an arched void, not a rectangular block.
     radius=1.65;cx=5.5;cy=1.67

@@ -24,6 +24,14 @@ def fitted_bounds(door):
             'width_scale': width, 'wood_face': -.045 * width}
 
 
+# Lateral change of the visible moulding across its section. The independently
+# registered sides have different visible widths. Inner timber contact stays fixed.
+WIDTH_CORRECTIONS = [
+    (0.,0.,0.), (.040,-.002,-.012), (.089,-.010,-.047),
+    (.125,-.026,-.066), (.158,-.030,-.084), (.195,-.028,-.085),
+    (.225,-.023,-.072), (.270,-.014,-.041),
+]
+
 def _sweep(builder, facade, fit, profile, stations, pitch_count, label):
     # Each cross-section forms a closed loop, including the rear of the casing.
     # A right-handed curved sweep joins sections continuously around both spring points.
@@ -33,6 +41,8 @@ def _sweep(builder, facade, fit, profile, stations, pitch_count, label):
     guide = radius + .164 * scale
     arc = math.pi * guide
     total = 2 * upright + arc
+    sections=np.array(WIDTH_CORRECTIONS)
+    offsets={r:(np.interp(r,sections[:,0],sections[:,1]),np.interp(r,sections[:,0],sections[:,2])) for r,_,_,_ in profile}
     vertices = []
     faces = []
     for distance, phase in stations:
@@ -48,6 +58,9 @@ def _sweep(builder, facade, fit, profile, stations, pitch_count, label):
                 z = fit['spring'] + offset*math.sin(angle)
             else:
                 u, z = fit['center']+offset, fit['bottom']+total-s
+            left_shift,right_shift=offsets[r]
+            side=((u-fit['center'])/offset+1.)*.5
+            u+=((1.-side)*left_shift+side*right_shift)*scale
             # The door sill sits above the pavement. Both 2017 and 2026
             # show the foot of the outer casting descending beside that sill.
             end_distance=min(s,total-s)

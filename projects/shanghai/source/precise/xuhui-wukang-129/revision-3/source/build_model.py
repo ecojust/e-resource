@@ -17,14 +17,16 @@ from crown_builder import CrownBuilder
 import finish_surfaces
 import wukang_archivolt
 import wukang_balcony
+import wukang_street_door
 
 ID='xuhui-wukang-129'
 SLUG='wukang-129-arched-door-and-balcony'
-PALETTE={**wukang_archivolt.PALETTE,**wukang_balcony.PALETTE,**finish_surfaces.PALETTE}
+PALETTE={**wukang_archivolt.PALETTE,**wukang_balcony.PALETTE,**wukang_street_door.PALETTE,**finish_surfaces.PALETTE}
 META=dict(id=ID,name='武康路129号德利那齐宅',address='上海市徐汇区武康路129号',
           gers_id='e73638a1-a217-47f7-a17b-151902f0fece',source_local_id=3733,
           heritage_id='sh-historic-b5-xh-j-091-v',city_object=ID,
           geometry_license='CC-BY-SA-4.0',geometry_source_license='ODbL-1.0',
+          texture_license='CC-BY-SA-4.0',photo_reference_license='CC-BY-SA-4.0',
           geometry_source_attribution='© OpenStreetMap contributors, way 582319150. Overture Maps Foundation Buildings.',
           photo_source='https://commons.wikimedia.org/wiki/File:20260209_129_Wukang_Road.jpg',
           earlier_view='https://commons.wikimedia.org/?curid=61788292',
@@ -32,7 +34,7 @@ META=dict(id=ID,name='武康路129号德利那齐宅',address='上海市徐汇�
           original_model_commit='b296b5ac4f68b4e6743f02fb2bb3c01091cab841',
           original_mesh_sha256='c0915a9d76761865b4020d31397b8ef66ddb6efc4112bbee150264119754afa9',
           camera_views=json.loads((HERE/'cameras.json').read_bytes()),viewer_page=SLUG+'.html',
-          photos_embedded=False,scope='保留城市原有建筑本体与地块，按两期照片细化街面拱套和二层外开双扇。模型采用2026年可辨的开启角度。')
+          photos_embedded=False,scope='按2017及2026年实拍修订街门斜纹灰拱、漆木门扇、129号牌和二层外开双扇。地块、其余主体与旧铁栏沿用原件。阳台采用2026年可辨的开启角度。')
 
 class Builder(CrownBuilder):
     """Keep the original building coordinate frame and add metric UVs to new finishes."""
@@ -56,6 +58,7 @@ def add_building(builder,lod=False):
         return builder
     return original.build(None,builder_factory=use_existing_palette,
                           archivolt=wukang_archivolt.add_archivolt,
+                          street_door=wukang_street_door.add_street_door,
                           balcony_doors=wukang_balcony.add_balcony_doors,
                           low_detail=lod)
 
