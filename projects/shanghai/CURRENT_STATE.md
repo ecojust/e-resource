@@ -1,3 +1,11 @@
+# 九江路原教会学校入口与双山墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview) · [单体旋转与下载](cathedral-school-jiujiang-front.html) · [来源与制作范围](source/precise/huangpu-cathedral-school-jiujiang-front/README.md) · [验收记录](data/audit/cathedral-school-jiujiang-front-v1/README.md)
+
+第四批4A019，九江路219号。1928年英童学校，1937年同仁医院迁入。原城14-13720-6694/1810与具名OSM 292718777相交并集比98.503%。按2018修缮实录及街面实照制作九江路入口、双山墙和贯通钢窗套。
+
+近景 34,428 个三角面，远景 10,392 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 3,879,005 字节。上海主图现有 316 处独立入口，黄浦区 151 处。[资产清单](assets/models/candidates/huangpu-cathedral-school-jiujiang-front/manifest.json)
+
 # 大清银行上海分行旧址（西南八角塔楼）
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) · [单体旋转与下载](ta-ching-bank-southwest-tower.html) · [来源与制作范围](source/precise/huangpu-ta-ching-bank-southwest-tower/README.md) · [验收记录](data/audit/ta-ching-bank-southwest-tower-v1/README.md)

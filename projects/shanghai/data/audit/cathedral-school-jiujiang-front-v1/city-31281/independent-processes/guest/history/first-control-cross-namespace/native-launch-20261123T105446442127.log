@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/tmp/jingu-shaoxing346/handoff/run-phase-live.py", line 7, in <module>
+    k=sys.argv[1];ticket=read(h/(k+'-window.json'));now,_=common['grant'](k,Path(ticket['receipt']));assert now==ticket
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/jingu-shaoxing346/handoff/admit-window-live.py", line 48, in grant
+    row=host(kind,path);pkg=runpy.run_path(str(h/'read-physical-prior.py'));cfg=pkg['cfg'];parent=Path(cfg['previous'])
+        ^^^^^^^^^^^^^^^
+  File "/tmp/jingu-shaoxing346/handoff/admit-window-live.py", line 14, in host
+    expected=work/'isolated-evidence'/phase/'closed.json';assert source.samefile(expected)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 998, in samefile
+    st = self.stat()
+         ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 840, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/tmp/shanghai-main-281/formal-31281/isolated-evidence/control/closed.json'

@@ -5,7 +5,7 @@
 [协作规范](AGENTS.md) · [开发历史](history/INDEX.md) · [记录约定](history/README.md) · [继续上海建模](history/CONTINUE-SHANGHAI.md)
 
 <!-- current-shanghai-model:start -->
-上海主图现有 315 处入口。最近接入[大清银行上海分行旧址（西南八角塔楼）](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
+上海主图现有 316 处入口。最近接入[九江路原教会学校入口与双山墙](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview)。[制作范围与验收记录](projects/shanghai/CURRENT_STATE.md)
 <!-- current-shanghai-model:end -->
 
 <!-- model-todo:start -->
@@ -21,17 +21,13 @@
 
 [机器可读制作队列][TD5] · [建筑线索全集](projects/shanghai/data/model-todo/discovered-buildings.json) · [街道索引与覆盖缺口][TD2] · [来源、许可与更新规则][TD1]
 
-已交付的280项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
+已交付的281项制作任务与已登记的46项模型库存不重复列入活动TODO；完成记录保留在[制作队列][TD5]和[按区查看主要建筑](#按区查看主要建筑)中。局部模型交付不等于整处名录完成，未解决的楼栋范围与资料调查继续保留。
 
 另按[当前完成范围复核][TD3]移除11条已完成主楼的重复新建任务，当前按区列出 **1,047 条建筑／构件及调查线索**；有未建部分的条目只列具体剩余范围。原始1,058条名录、源ID与旧审计保留，尺寸或隐面估计继续记在模型说明中。
 
 ### 按顺序执行的模型
 
-在线查看首次访问若出现托管服务提示，请点击 **Open the page**。
-
-| 顺序 | 模型 | 区域／街道 | 状态 | 模型大小 | 参考与下一步 |
-|---:|---|---|---|---|---|
-| 281 | 九江路原教会学校入口与双山墙 | 黄浦区／九江路219号 | 制作中 | — | [市房屋管理局第四批优秀历史建筑登记表](<https://fgj.sh.gov.cn/yxlsjz/20200331/e3b99cf457ae48cab87ad5c02aa0fee3.html>)；另查其余沿街两翼、背面和室内。 |
+当前没有尚未交付的制作任务；已完成条目不再占用活动列表。
 
 ### 按区列出的未完成建筑与构件 TODO
 
@@ -196,7 +192,7 @@
 |sh-historic-b4-016|南京饭店其余转角和街翼|山西南路182-200号，天津路191号-211弄|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查西北斜角、其余街翼、背面和天井。|
 |sh-historic-b4-017|安利大楼两街远端及背面|四川中路320号，九江路80号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查两街远端、背面和室内。|
 |sh-historic-b4-018|大清银行上海分行旧址南入口与其余街墙|四川中路268-270号，汉口路50号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查南主入口的较高穹顶、连续街墙、院后及内部。|
-|sh-historic-b4-019|百乐饭店 /同仁医院/教会学校|九江路219号|[名录][H4] · 照片待核|待核外观／拆栋|
+|sh-historic-b4-019|九江路原教会学校其余两翼与背面|九江路219号|[名录][H4] · 照片待核 · [当前完成范围][TD3]|另查其余沿街两翼、背面和室内。|
 |sh-historic-b4-020|花园住宅|汉口路210号|[名录][H4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-021|旗昌洋行大楼|福州路17、19号|[名录][H4] · 照片待核|待核外观／拆栋|
 |sh-historic-b4-022|中兴银行|福州路89号|[名录][H4] · 照片待核|待核外观／拆栋|
@@ -2659,9 +2655,9 @@
 [14/13721/6693]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6693.pbf>
 [14/13721/6694]: <https://tiles.openfreemap.org/planet/20261018_080001_pt/14/13721/6694.pbf>
 
-### 既有地图中的具名建筑待查线索（剩余931条／已关联105条）
+### 既有地图中的具名建筑待查线索（剩余930条／已关联106条）
 
-原始1,036条具名地图要素中，105条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余931条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
+原始1,036条具名地图要素中，106条已按源图层和ID精确关联已交付模型，不再重复列为身份待查；以下保留其余930条。关联不代表整个源对象已精确测绘或所有翼部完成，具体未做范围保留在上方建筑与构件TODO。可能与名录重叠，不能相加当作独立建筑总数。[来源和全部原始ID](projects/shanghai/data/model-todo/named-map-leads.json)；© OpenStreetMap contributors，派生资料按ODbL-1.0标注。
 
 <details><summary>展开剩余具名地图线索</summary>
 
@@ -2888,7 +2884,6 @@
 |9a8f8183-c681-49d5-a4c9-7d13bb0a90f7|市政大厦|黄浦区|核身份／去重／查建筑参考|
 |9b4fe8c3-24b8-427f-9f16-9dedd85fbc71|达丰大楼|黄浦区|核身份／去重／查建筑参考|
 |9b7d539c-a54e-4276-829c-f631049f778a|宝龙大厦|黄浦区|核身份／去重／查建筑参考|
-|9bc199c4-8f76-4b5f-aa7a-e35d9d365003|曾为黄浦区人民政府大楼|黄浦区|核身份／去重／查建筑参考|
 |9c71b186-539e-4ff9-a13b-02da635334e7|长江新能源大厦|黄浦区|核身份／去重／查建筑参考|
 |a03b738a-3670-450b-9657-4319e8aa4498|淮海大厦|黄浦区|核身份／去重／查建筑参考|
 |a0942bc3-3683-4039-8668-7d71e7175c64|黄浦区区机关党工委|黄浦区|核身份／去重／查建筑参考|
@@ -3624,7 +3619,7 @@
 
 **[打开全部模型与地标](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/landmarks.html)** · [进入第三人称漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#mode=walk) · [项目说明与模型下载](projects/shanghai/) · [当前交付状态][R7]
 
-全市16区底图可浏览；315处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中275件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
+全市16区底图可浏览；316处建筑与构件模型已归入按区目录，并提供全局场景直达链接。其中276件新增接入采用近似定位，局部模型及尺寸估计仍按原范围说明。1,796,419个建筑及部件要素尚未全部按照片逐栋复原。
 
 [逐要素复原台账](projects/shanghai/data/feature-restoration/README.md)覆盖全部1,796,419个渲染要素，可按源 ID 查询模型登记、独立候选及父体剩余关系；身份关联不代表精细复原验收完成。
 
@@ -3632,7 +3627,7 @@
 
 ## 建筑模型与地面水系
 
-下列模型统一从主图查看：原40处入口保留室外漫游，新增275处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
+下列模型统一从主图查看：原40处入口保留室外漫游，新增276处打开俯瞰定位。尺寸、隐蔽构造与近似位置仍按各项说明。首次访问若出现提示，请点击 **Open the page**。
 
 | 区域 | 模型 | 主图查看 | 来源与限制 |
 |---|---|---|---|
@@ -3654,10 +3649,10 @@
 时间按上海时区（UTC+8）显示，依据当前模型资产版本的实际提交记录；不是建筑落成年份，也不是本次README编辑时间。已链接的时间可核对对应提交。[时间与区属依据](https://github.com/ecojust/e-resource/blob/master/projects/shanghai/data/audit/model-directory-v21/building-publication-times.json)。
 
 <!-- district-candidates:summary:start -->
-**汇总：16区，315处建筑与构件模型入口（40处既有＋275处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增275处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
+**汇总：16区，316处建筑与构件模型入口（40处既有＋276处新增接入）。** 各区数量见标题；每处均有地图精灵灯牌和全局直达链接。灯牌在视野内常显，密集时显示编号，点选查看名称。原40处保留室外漫游；新增276处按资料近似定位并提供全局查看，尺寸与细节限制保留；“查看网页”统一进入主图，按已开放能力提供俯瞰或室外漫游。其中 12 处为历史原址，可在地点卡中打开独立历史模型。入口随master更新。[定位依据](projects/shanghai/data/candidate-city-integrations.json) · [候选版本时间](projects/shanghai/data/model-todo/candidate-publication-times.json)。
 <!-- district-candidates:summary:end -->
 
-### 黄浦区（150处）
+### 黄浦区（151处）
 
 [进入本区漫游](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#district=310101&mode=walk)
 
@@ -3813,6 +3808,7 @@
 | 南京饭店山西南路入口与钝角阳台 | 2026-11-23 16:49:26 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nankin-hotel-shanxi-front&mode=overview) |
 | 安利大楼西南转角入口与两街红砖窗带 | 2026-11-23 17:36:47 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-arnhold-building-southwest-corner&mode=overview) |
 | 大清银行上海分行旧址（西南八角塔楼） | 2026-11-23 18:44:57 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-ta-ching-bank-southwest-tower&mode=overview) |
+| 九江路原教会学校入口与双山墙 | 未记录 | [查看网页](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-cathedral-school-jiujiang-front&mode=overview) |
 
 ### 徐汇区（55处）
 
