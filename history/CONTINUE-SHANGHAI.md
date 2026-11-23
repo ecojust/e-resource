@@ -20,6 +20,8 @@
 
 息焉堂北侧独立钟楼　[查看模型](../projects/shanghai/xiyan-church-north-belfry.html)
 
+[新华路329弄36号双层圆形住宅庭院面](../projects/shanghai/xinhua-329-no36-cake-villa.html)。庭园入口、两侧十列十四行玻璃砖、三跨上廊、短横档错列的铁栏、侧转砖墙与可见瓦面。两张摄影位自渲、九个视角、八项下载。门高提供条件尺度。2019与2025年圆顶和城市粗模411只部分重合，门的绝对方位仍待核实。 [固定工作版](https://raw.githack.com/ecojust/e-resource/01ea2a17f207755854c2bf0f05ed1203f48d2995/projects/shanghai/xinhua-329-no36-cake-villa.html)
+
 当前主图已更新第 284 项中兴银行前楼（福州路与四川中路圆弧窗墙），共有 320 处入口。制作范围、下载文件及各项检查见[本栋记录](../projects/shanghai/data/audit/zhongxing-bank-curved-front-v1/README.md)和[本轮记录](2026-11-20-001.md)。第 38 项上海邮政总局和第 39 项宏恩医院花园立面已推送，后者的 28 项 master 链接亦已完成公开字节复查。依次按队列逐栋接入并推送，登记模型时间及公开核验以该模型真实提交记录为准。
 
 下一项核对第 285 项金陵东路原洋行南立面尖券窗与入口。
