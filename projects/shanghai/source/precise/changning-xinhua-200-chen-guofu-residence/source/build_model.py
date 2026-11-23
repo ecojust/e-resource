@@ -5,6 +5,8 @@ Y runs into the building, Z is up. The rear roof depth uses aerial controls.
 """
 import argparse
 import math
+import json
+import numpy as np
 from pathlib import Path
 import sys
 
@@ -14,15 +16,19 @@ sys.path.insert(0,str(PROJECT/'source/precise/hongkou-general-post-office/source
 from photo_architecture import Builder
 from shapely.geometry import Polygon, box
 from shapely.ops import unary_union
+from reclining_lions import add_lions
 
 ID = 'changning-xinhua-200-chen-guofu-residence'
-META = dict(id=ID,name='新华路200号陈果夫住宅南面重檐外廊',address='长宁区新华路200号',heritage_id='sh-historic-b3-109',protection_number='3M011',unit='metre')
+META = dict(id=ID,name='新华路200号陈果夫住宅南面重檐外廊',address='长宁区新华路200号',heritage_id='sh-historic-b3-109',protection_number='3M011',unit='metre',geometry_license='MIT',photos_embedded=False,viewer_page='xinhua-200-chen-guofu-residence.html',scope='南园双层透廊、卧狮入口、上堂立面和两重琉璃瓦檐；屋背未作室内外调查。')
 CREAM='pale stucco'; BUFF='warm ochre stucco'; RED='red glazed pantile'; EDGE='dark red tile noses'
 STONE='cut stone'; TIMBER='brown lacquerwork'; GLASS='recessed garden glazing'; JADE='painted bracket'; DARK='stained soffit'
 PALETTE={k:{'color':c,'roughness':r} for k,c,r in (
  (CREAM,[.80,.795,.70],.91),(BUFF,[.858,.667,.357],.88),(RED,[.60,.112,.061],.46),
  (EDGE,[.47,.087,.051],.38),(STONE,[.555,.526,.453],.9),(TIMBER,[.155,.125,.096],.66),
  (GLASS,[.128,.176,.164],.27),(JADE,[.181,.290,.259],.72),(DARK,[.185,.106,.074],.77))}
+
+PALETTE[GLASS]["alpha"]=.88
+META["camera_views"]=json.loads((HERE/"cameras.json").read_bytes())
 
 def block(b,x,y,z,w,d,h,mat,name):
     b.box((x,y,z),(w,d,h),mat,label=name)
@@ -94,6 +100,28 @@ def gallery(b,lod):
     wings=[(x,1.53,w,1.98,3 if w>1.7 else 2,'window '+str(i+1)) for i,(x,w) in enumerate(((-8.45,1.66),(-5.54,1.85),(5.62,1.85),(8.44,1.65)))]
     doors=[(x,.57,w,3.05,n,'recessed door '+str(j+1)) for j,(x,w,n) in enumerate(((-1.77,1.15,2),(0,1.70,2),(1.77,1.15,2)))]
     masonry(b,3.03,.57,5.08,10.99,wings+doors,CREAM,'ground garden wall',lod)
+    # A second pierced floral band hangs below the landing. Its four-petal
+    # openings and paired cusps are distinct from the balcony rail above.
+    for i,(left,right) in enumerate(zip(PIERS,PIERS[1:])):
+        width=right-left
+        if width<1.1:continue
+        yy=-.75 if i==3 else -.065
+        def open_fan(cx,z,r):
+            from shapely.geometry import Point
+            leaves=[Point(cx+r*.44*math.cos(a),z+r*.36*math.sin(a)).buffer(r*.63,quad_segs=3 if lod else 6) for a in (.32,1.85,3.48,5.02)]
+            return unary_union(leaves)
+        blank=box(left+.18,4.48,right-.18,4.87)
+        repeats=max(2,int(width/.55))
+        holes=[open_fan(left+(j+.5)*width/repeats,4.695,.135) for j in range(repeats)]
+        facing(b,blank.difference(unary_union(holes)),yy,.159,CREAM,'pierced lower beam floral fret bay '+str(i+1))
+        block(b,(left+right)/2,yy+.07,4.454,width-.18,.235,.074,CREAM,'lower beam lip '+str(i+1))
+        block(b,(left+right)/2,yy+.065,4.924,width-.12,.26,.085,CREAM,'lower beam moulding '+str(i+1))
+        # Each rafter-end bracket under the tiled roof has a dark painted V web.
+        n=max(3,round(width/.80))
+        for j in range(n):
+            cx=left+width*(j+.5)/n
+            for sign in (-1,1):
+                beams(b,[(cx+sign*.21,yy-.017,9.45),(cx+sign*.078,yy-.027,9.19),(cx,yy-.030,9.14)],.036,JADE,'painted rafter scroll '+str((i,j,sign)),lod)
     windows=[(x,6.08,w,2.35,n,'bay '+str(j+1)) for j,(x,w,n) in enumerate(((-8.36,1.94,3),(-5.55,1.99,3),(-1.94,1.6,3),(0,1.78,3),(1.94,1.6,3),(5.55,1.99,3),(8.36,1.94,3)))]
     masonry(b,3.03,5.30,9.54,10.99,windows,CREAM,'upper gallery back wall',lod)
     for j in range(5):
@@ -116,13 +144,6 @@ def attic(b,lod):
         block(b,3.48*side,2.71,11.74,.23,.34,3.50,BUFF,'upper porch pier '+str(side))
         block(b,side*9.57,6.42,11.78,.28,7.16,3.72,BUFF,'observed eaves return '+str(side))
     block(b,0,2.71,10.51,5.74,.39,.21,CREAM,'recessed opening sill')
-
-def roof_panel(b,rings,mat,label):
-    n=len(rings[0]);vs=[v for row in rings for v in row];faces=[]
-    for j in range(len(rings)-1):
-        for i in range(n):faces.append((j*n+i,j*n+(i+1)%n,(j+1)*n+(i+1)%n,(j+1)*n+i))
-    faces.extend([tuple(reversed(range(n))),tuple((len(rings)-1)*n+i for i in range(n))])
-    b.add(vs,faces,mat,label)
 
 def swept_roof(b,w,d,y,base,rise,ridge,rise_tip,name,lod):
     # The centreline remains low at the eaves while the four corner rafters turn up.
@@ -167,11 +188,22 @@ def swept_roof(b,w,d,y,base,rise,ridge,rise_tip,name,lod):
     beams(b,[(-ridge-.14,y,base+rise+.26),(-ridge+.14,y,base+rise+.12),(ridge-.14,y,base+rise+.12),(ridge+.14,y,base+rise+.26)],.14,EDGE,name+'/ridge with raised ends',lod)
 
 def build(lod=False):
-    b=Builder(PALETTE);gallery(b,lod);attic(b,lod)
+    b=Builder(PALETTE);gallery(b,lod);attic(b,lod);add_lions(b,lod,STONE)
     # Lower main apron sits partly behind the centre pavilion eave.
     swept_roof(b,12.23,6.78,6.08,9.61,.94,7.2,.54,'lower glazed roof',lod)
-    swept_roof(b,4.03,1.48,.16,9.84,.61,2.27,.47,'central projecting porch roof',lod)
+    swept_roof(b,4.03,.98,-.34,9.84,.30,2.27,.47,'central projecting porch roof',lod)
     swept_roof(b,11.70,8.63,10.0,13.59,2.03,4.37,1.20,'upper glazed hip roof',lod)
+    correction=json.loads((HERE.parent/'measurements/elevation-corrections.json').read_bytes())
+    for part in b.parts:
+        vertices=np.asarray(part['vertices']);vs=vertices.copy()
+        vs[:,2]=np.interp(vertices[:,2],correction['original_levels'],correction['adopted_levels'])+np.maximum(0,vertices[:,2]-correction['original_levels'][-1])
+        if part['label'].startswith('central projecting porch roof/'):
+            vs[:,0]*=correction['porch_eave_width_factor']
+        elif part['label'].startswith('upper glazed hip roof/'):
+            # Scale the ridge end displacement continuously to zero at the full-width eaves.
+            inward=np.clip(1-np.abs(vertices[:,1]-10.)/8.63,0,1)
+            vs[:,0]*=1+(correction['ridge_length_factor']-1)*inward
+        part['vertices']=vs.tolist()
     return b
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--lod',action='store_true');a=p.parse_args()

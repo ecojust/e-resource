@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>新华路200号陈果夫住宅三维模型</title>
+<link href="assets/favicon.svg" rel="icon"/>
+<link href="src/dacheng-hall.css" rel="stylesheet"/>
+<style>
+    .panel label:not(:first-child) {margin-top:10px}
+    button[aria-pressed=true] {outline:1px solid #d6e6d4;outline-offset:1px}
+    select:disabled {opacity:.58}
+    @media(max-width:650px) {
+      body {display:grid;grid-template-rows:auto minmax(240px,44svh) auto auto;min-height:100svh}
+      header,.panel,footer,#model-view {position:static}
+      header {padding:10px 16px 5px}
+      #model-view {min-width:0;overflow:hidden}
+      .panel {margin:0 10px;max-height:none;overflow:visible}
+      footer {padding:6px 16px}
+    }
+  </style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<header><a href="landmarks.html">← 上海历史建筑目录</a>
+<p class="eyebrow">长宁区 · 新华路200号</p><h1>新华路200号陈果夫住宅</h1></header>
+<main aria-label="新华路200号陈果夫住宅三维模型" id="model-view"></main>
+<aside aria-label="观察机位与模型下载" class="panel">
+<p class="scope">从花园看去，两层外廊在中央入口叠起。沿台阶上行，可近看并柱、卧狮和二层石栏的镂空纹样。</p>
+<label for="detail">模型细节</label>
+<select id="detail"><option value="auto">随距离切换</option><option value="full">完整近景</option><option value="lod">简化远景</option></select>
+<div aria-label="摄影与模型机位" class="buttons" id="model-cameras"></div>
+<button hidden id="retry" type="button">重新加载</button>
+<p aria-live="polite" id="status" role="status">正在读取模型…</p>
+<div aria-label="下载模型" class="downloads" id="downloads"></div>
+<p><a download href="assets/models/candidates/changning-xinhua-200-chen-guofu-residence/changning-xinhua-200-chen-guofu-residence-source.zip" id="download-source">下载可重建模型的 Python 源码包（ZIP）</a></p>
+<p><a href="data/audit/xinhua-200-chen-guofu-residence-v1/final/registration/registered-views.jpg" target="_blank" rel="noopener">两期庭院机位对照</a> · <a href="data/audit/xinhua-200-chen-guofu-residence-v1/final/registration/garden-2010-model.jpg" target="_blank" rel="noopener">2010年庭院正面</a> · <a href="data/audit/xinhua-200-chen-guofu-residence-v1/final/registration/garden-2023-model.jpg" target="_blank" rel="noopener">2023年发表的庭院视角</a></p>
+<p>上海市历史建筑保护事务中心记载，住宅始建于1934年，由甘少明设计、安泰营造厂承建，1948年改建。这里曾用于编纂《汉语大词典》，2023年修缮后成为上海电影艺术中心。<a href="https://www.jfdaily.com/sgh/detail?id=1697461">保护事务中心的建筑记录</a></p>
+<p>2010年1月15日，Kgbkgbkgb从庭院拍下了南立面，原照采用CC BY-SA 3.0许可。2023年市文旅局公布的修缮后照片可对照入口并柱、卧狮和石栏。上方三幅图均为模型渲染。<a href="https://commons.wikimedia.org/wiki/File:Chenguofu%27s_home_in_shanghai.jpg">2010年原照与许可</a> · <a href="https://sh.people.com.cn/n2/2023/0627/c350122-40472567.html">2023年市文旅局资料</a></p>
+</aside><footer>拖动旋转 · 滚轮或双指缩放</footer>
+<script src="source/precise/changning-xinhua-200-chen-guofu-residence/source/viewer.js" type="module"></script>
+</body></html>
