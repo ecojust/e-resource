@@ -1,3 +1,11 @@
+# 浦光大楼（上海基督教青年会）四川中路门头与东立面窗墙
+
+[上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-puguang-ymca-east-entrance&mode=overview) · [单体旋转与下载](puguang-ymca-east-entrance.html) · [来源与制作范围](source/precise/huangpu-puguang-ymca-east-entrance/README.md) · [验收记录](data/audit/puguang-ymca-east-entrance-v1/README.md)
+
+第四批4A001记四川中路595至607号、原上海基督教青年会，登记时名浦光大楼、浦光中学。按具名建筑足印w495114797与原城2382及跨年街照，制作四川中路门头与东立面可辨的窗墙。
+
+近景 56,692 个三角面，远景 42,768 个。原始、网页、远景 GLB 及可编辑 Blender 文件共 5,613,327 字节。上海主图现有 298 处独立入口，黄浦区 133 处。[资产清单](assets/models/candidates/huangpu-puguang-ymca-east-entrance/manifest.json)
+
 # 上海电话局南市总局中华路钟楼立面
 
 [上海主图](https://raw.githack.com/ecojust/e-resource/master/projects/shanghai/index.html#landmark=huangpu-nanshi-telephone-exchange&mode=overview) · [单体旋转与下载](nanshi-telephone-exchange.html) · [来源与制作范围](source/precise/huangpu-nanshi-telephone-exchange/README.md) · [验收记录](data/audit/nanshi-telephone-clock-front-v1/README.md)
