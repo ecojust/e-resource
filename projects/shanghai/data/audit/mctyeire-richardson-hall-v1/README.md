@@ -5,3 +5,5 @@
 用2017年门厅照片检验开启的中央右门扇，照片反算的门隙约0.60至0.63米，成品横剖面为0.57米。侧门照片有独立相机和近远两个下载文件，两扇木门外开，右侧保留两扇完整石框窗。现有照片难以定位它与主楼的接点。草坪、门厅与礼堂各有实照机位，登记表保存相机、原图像点和模型射线。[门厅门扇与吊灯](final/registration/vestibule-clearances-full.json) · [三份下载网格的草坪和门厅量测](final/registration/encoded/three-delivered-roles.json) · [礼堂窗及楼座](registration/raw-auditorium-probes.json) · [侧门量测](final/registration/side-entrance-check.json)
  
 网页近远景、原始GLB、Blender、FBX、带材质OBJ、STL及可复建源码均可下载。可编辑工程含十一台主楼相机。源码包在新目录生成近远档、网页模型和六张原创材质贴图。[十一台原生相机出图](editable/eleven-native-cameras.jpg) · [源码包重建](source-archive/changning-mctyeire-richardson-hall-source.verification.json) · [两份年报与东楼楼名核对](../../../source/precise/changning-mctyeire-richardson-hall/measurements/east-building-dates.json)
+
+桌面和手机分别打开主楼十一台相机及独立侧门，并保存八份主楼下载和两档侧门。逐件核对文件大小和SHA-256。[普通浏览器实测](ordinary-ui/closed.json)
