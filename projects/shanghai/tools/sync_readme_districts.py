@@ -353,7 +353,8 @@ def sync(check=False):
             assert before == after, f'{file.relative_to(ROOT)} district directory is stale'
         elif before != after:
             file.write_text(after)
-    print(f'README district candidates {"verified" if check else "synchronized"}: {len(items)}; global destinations: {40 + len(items)}')
+    ordinary_count = len(json.loads((ROOT / 'projects/shanghai/data/landmarks.json').read_text()))
+    print(f'README district candidates {"verified" if check else "synchronized"}: {len(items)}; global destinations: {ordinary_count + len(items)}')
 
 
 if __name__ == '__main__':

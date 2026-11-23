@@ -250,6 +250,23 @@ def incremental_delivery_context(previous, manifests, requested_directory):
     return directory, prior
 
 
+def current_ordinary_ids(baseline_ids):
+    """Include newly registered ordinary buildings alongside the frozen original inventory."""
+    ordinary = json.loads((PROJECT / "data/landmarks.json").read_bytes())
+    listed = {row["id"] for row in ordinary}
+    assert len(listed) == len(ordinary) and baseline_ids.issubset(listed)
+    for row in ordinary:
+        if row["id"] in baseline_ids:
+            continue
+        assert row.get("accepted") is True and row.get("navigation", {}).get("listed") is True
+        pointer_file = Path("projects/shanghai/data/precise-buildings/by-id") / (row["id"] + ".json")
+        pointer = json.loads(read_file(pointer_file, "HEAD"))
+        assert pointer["id"] == row["id"] and pointer["feature_local_id"] == row["owner"]["feature_local_id"]
+        index = json.loads(read_file(Path("projects/shanghai") / pointer["macro_index"], "HEAD"))
+        assert [entry for entry in index["models"] if entry["id"] == row["id"]] == [row]
+    return listed
+
+
 def build_incremental_inventory(manifests, revision, audit_directory, prior_increment=None):
     """Retain the original 32-record evidence and verify only explicit additions.
 
@@ -279,7 +296,7 @@ def build_incremental_inventory(manifests, revision, audit_directory, prior_incr
         records.extend(frozen["records"])
         frozen_files = sum(len(row["assets"]) for row in frozen["records"])
         frozen_bytes = sum(asset["bytes"] for row in frozen["records"] for asset in row["assets"].values())
-    existing_ids = set(baseline["existing_city_ids"])
+    existing_ids = current_ordinary_ids(set(baseline["existing_city_ids"]))
     viewers = {row["id"]: row for row in json.loads((PROJECT / "data/model-viewers.json").read_text())}
     queue = json.loads((PROJECT / "data/model-todo/queue.json").read_text())
     jobs = {row["id"]: row for row in queue["existing_models"] + queue["production_queue"]}
@@ -299,6 +316,7 @@ def build_incremental_inventory(manifests, revision, audit_directory, prior_incr
     assert len({row["id"] for row in records}) == len(records)
     new = [row for row in records if not row["already_in_city"]]
     result = {**baseline,
+              "existing_city_ids": sorted(existing_ids), "existing_city_count": len(existing_ids),
               "baseline_inventory": baseline_binding,
               "incremental_manifests": sorted(paths), "incremental_asset_revision": revision,
               "incremental_audit_directory": audit_directory,
