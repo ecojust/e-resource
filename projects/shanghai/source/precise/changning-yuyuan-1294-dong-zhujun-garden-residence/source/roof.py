@@ -52,6 +52,21 @@ def add_roof(b,lod,mat,stone,brick):
         for side in [-1,1]:beam(side*.10,y,side*3.63,y,.021,'gable/tile pitch row '+str((side,i)))
     for i in range(10 if lod else 33):
         x=-9.85+i*(5.77/(9 if lod else 32));beam(x,.39,x,4.10,.024,'gallery/tile pitch row '+str(i+1))
+    # The 2018 numbered elevation has a separate tile skirt below the attic sash.
+    # Its west end projects past the gable into the first gallery bay. Foliage
+    # hides its final eastern tiles, so end it at the measured gable margin.
+    skirt=Polygon([(-5.66,-.83),(3.91,-.83),(3.70,.018),(-4.97,.018)])
+    def skirt_level(y):return 10.49+(y+.83)*.645
+    b.prism(skirt,0,.086,lambda x,y,t:(x,y,skirt_level(y)+t),mat,'attic skirt/pitched tile plane')
+    b.box((-.875,-.787,10.443),(9.57,.087,.10),stone,label='attic skirt/pale fascia at drip')
+    b.prism(skirt,0,.069,lambda x,y,t:(x,y,10.391+t),stone,'attic skirt/projecting soffit')
+    for i in range(24 if lod else 59):
+        x=-5.60+i*(9.44/(23 if lod else 58))
+        # Each roll ends at the oblique outer verge, without running beyond the skirt.
+        if x < -4.97:back=-.83+.848*(x+5.66)/.69
+        elif x > 3.70:back=-.83+.848*(3.91-x)/.21
+        else:back=.018
+        b.tube([(x,-.834,skirt_level(-.834)+.085),(x,back,skirt_level(back)+.085)],.026,mat,6 if lod else 8,'attic skirt/visible tile roll '+str(i+1))
     # The 2007 vignette records a tall red brick stack with a stepped ledge and two crown recesses.
     cx,cy=-2.84,2.55;bottom=roof(cx,cy)-.08
     for name,z0,z1,w,d in [('shoe',bottom,bottom+.24,1.02,.70),('shaft',bottom+.24,14.79,.77,.49),('upper shoulder',14.79,14.9,.87,.60)]:

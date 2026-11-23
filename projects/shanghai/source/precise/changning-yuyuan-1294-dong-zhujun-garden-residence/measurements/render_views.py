@@ -6,6 +6,18 @@ import numpy as np
 HERE=Path(__file__).absolute().parent
 PROJECT=next(p for p in HERE.parents if (p/'tools/package_architectural_model.py').is_file())
 raster=runpy.run_path(str(PROJECT/'source/precise/changning-st-johns-gezhi-science-hall/measurements/render_science_views.py'))['raster']
+def render_in_stripes(model,camera,width):
+    source_w,source_h=camera['size']
+    scale=width/source_w
+    height=round(source_h*scale)
+    image=Image.new('RGB',(width,height))
+    for top in range(0,height,160):
+        bottom=min(height,top+160)
+        stripe=raster(model,camera,(0,top/scale,source_w,bottom/scale),width)
+        assert stripe.size==(width,bottom-top)
+        image.paste(stripe,(0,top))
+    return image
+
 def render(model,out):
     out.mkdir(parents=True,exist_ok=True)
     cams=json.loads((HERE/'two-stations.json').read_bytes())
@@ -17,7 +29,7 @@ def render(model,out):
     records={};head=['18号山墙 · 2018年街道照片的机位','室外石阶 · 照片局部条件配准','三道券廊与山墙 · 全景']
     for i,(name,q)in enumerate(cams.items()):
         w,h=q['size'];ratio=min(1000/w,1060/h)
-        frame=raster(model,q,(0,0,w,h),round(w*ratio))
+        frame=render_in_stripes(model,q,round(w*ratio))
         fname=name+('-model.jpg'if name!='independent-overview'else'.jpg')
         frame.save(out/fname,quality=93,subsampling=0)
         records[name]={'file':fname,'pixels':frame.size,'sha256':hashlib.sha256((out/fname).read_bytes()).hexdigest()}
